@@ -221,11 +221,21 @@ $ nbfc config -a "Asus Zenbook UX430UA"
 
 ```
 
-**Note:** If you are getting error message "*File Descriptor does not support writing*" - append `ec_sys.write_support=1` to kernel parameters.
-
 If there are no recommended models, go to [NBFC git repository](https://github.com/hirschmann/nbfc/tree/master/Configs) or `/opt/nbfc/Configs/` and check if there are any similar models available from the same manufacturer. For example, on **Asus Zenbook UX430UQ**, the configuration **Asus Zenbook UX430UA** did not work well (fans completelly stopped all the time), but **Asus Zenbook UX410UQ** worked fantastically.
 
 Run `nbfc` to see all options. More information about configuration is available at [upstream wiki](https://github.com/hirschmann/nbfc/wiki/).
+
+**Note:** If you are getting `File Descriptor does not support writing` or fan speed is just not changing (even if your laptop is supported), the following workarounds may be used:
+
+*   [Append](/index.php/Append "Append") `ec_sys.write_support=1` to [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+*   Rename `StagWare.Plugins.ECSysLinux.dll` [[2]](https://github.com/hirschmann/nbfc/issues/439):
+
+```
+# mv /opt/nbfc/Plugins/StagWare.Plugins.ECSysLinux.dll /opt/nbfc/Plugins/StagWare.Plugins.ECSysLinux.dll.old
+
+```
+
+[Restart](/index.php/Restart "Restart") `nbfc.service`.
 
 ## Dell laptops
 
@@ -393,14 +403,12 @@ If you were able to modify fan speed with above commands, then continue with [#G
 
 ### asus_fan
 
-Install [asus-fan-dkms-git](https://aur.archlinux.org/packages/asus-fan-dkms-git/). Load kernel module:
+Install the [DKMS](/index.php/DKMS "DKMS") [asus-fan-dkms-git](https://aur.archlinux.org/packages/asus-fan-dkms-git/) [kernel module](/index.php/Kernel_module "Kernel module"), providing `asus_fan`:
 
 ```
 # modprobe asus_fan
 
 ```
-
-**Note:** For unknown reasons this is likely going to fail (no asus_fan module found in your system). [Mkinitcpio#Image creation and activation](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") and system reboot usually fix this issue.
 
 Check if you have any control over both fans:
 
@@ -417,11 +425,10 @@ Check if you have any control over both fans:
 
 ```
 
-If everything works, you might want to load this kernel module on boot:
+If everything works, you might want to load this kernel module [on boot](/index.php/Kernel_module#Automatic_module_handling "Kernel module"):
 
  `/etc/modules-load.d/asus_fan.conf` 
 ```
-# Load asus_fan module on boot:
 asus_fan
 
 ```

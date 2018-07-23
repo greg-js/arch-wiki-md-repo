@@ -75,7 +75,7 @@ The basic format for an incrontab is:
 
 #### Mask types
 
-Incrontab uses mask types to specify which file system event to monitor for.
+Incrontab uses mask types to specify which file system event to monitor for. For more options see [inotify(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/inotify.7)
 
 To trigger an command if a file is accessed or read:
 
@@ -84,7 +84,7 @@ To trigger an command if a file is accessed or read:
 
 ```
 
-To trigger an command if file attributes change (e.g. *timestamps*, *permissons*):
+To trigger an command if metadata of a file change (e.g. *timestamps*, *permissons*):
 
 ```
 **IN_ATTRIB**
@@ -98,30 +98,65 @@ To trigger a command if a file opened for writing is closed:
 
 ```
 
-To trigger a command if a file or directory open for writing is closed:
+To trigger a command if a file or directory not opened for writing is closed:
 
 ```
 **IN_CLOSE_NOWRITE**
 
 ```
 
-To trigger a command if a file is created in a watched directory:
+To trigger a command if a file or directory is created in a watched directory:
 
 ```
 **IN_CREATE**
 
 ```
 
-To trigger a command if a file or directory is deleted from the watched directory:
+To trigger a command if a file or directory is deleted from a watched directory:
 
 ```
 **IN_DELETE**
 
 ```
 
-To tirgger a command if a file was modified:
+To trigger a command if a watched file or directory is deleted (or moved to a different filesystem):
+
+```
+**IN_DELETE_SELF**
+
+```
+
+To trigger a command if a file was modified:
 
 ```
 **IN_MODIFY**
+
+```
+
+To trigger a command if a watched file or directory is moved within the filesystem:
+
+```
+**IN_MOVE_SELF**
+
+```
+
+To trigger a command if a file or directory is moved out of the watched directory:
+
+```
+**IN_MOVED_FROM**
+
+```
+
+To trigger a command if a file or directory is moved to the watched directory:
+
+```
+**IN_MOVED_TO**
+
+```
+
+To trigger a command if a watched file or directory is opened:
+
+```
+**IN_OPEN**
 
 ```

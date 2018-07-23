@@ -186,6 +186,8 @@ To remove a package, its dependencies and all the packages that depend on the ta
 
 To remove a package, which is required by another package, without removing the dependent package:
 
+**Warning:** The following operation can break a system and should be avoided. See [System maintenance#Avoid certain pacman commands](/index.php/System_maintenance#Avoid_certain_pacman_commands "System maintenance").
+
 ```
 # pacman -Rdd *package_name*
 
@@ -615,9 +617,9 @@ The problem is usually trivial to solve. A safe way is to first check if another
 
 If you had installed a program manually without using *pacman*, for example through `make install`, you have to remove/uninstall this program with all of its files. See also [Pacman tips#Identify files not owned by any package](/index.php/Pacman_tips#Identify_files_not_owned_by_any_package "Pacman tips").
 
-Every installed package provides a `/var/lib/pacman/local/*package-version*/files` file that contains metadata about this package. If this file gets corrupted, is empty or goes missing, it results in `file exists in filesystem` errors when trying to update the package. Such an error usually concerns only one package. Instead of manually renaming and later removing all the files that belong to the package in question, you may exceptionally run `pacman -S --overwrite *package*` to force *pacman* to overwrite these files.
+Every installed package provides a `/var/lib/pacman/local/*package-version*/files` file that contains metadata about this package. If this file gets corrupted, is empty or goes missing, it results in `file exists in filesystem` errors when trying to update the package. Such an error usually concerns only one package. Instead of manually renaming and later removing all the files that belong to the package in question, you may explicitly run `pacman -S --overwrite *glob* *package*` to force *pacman* to overwrite files that match `*glob*`.
 
-**Warning:** Take care when using the `--overwrite` switch (for example `pacman -S --overwrite *package*`) as it can cause major problems if used improperly. It is highly recommended to only use this option when the Arch news instructs the user to do so and/or if the user is aware of which files may be overwritten.
+**Warning:** Generally avoid using the `--overwrite` switch. See [System maintenance#Avoid certain pacman commands](/index.php/System_maintenance#Avoid_certain_pacman_commands "System maintenance").
 
 ### "Failed to commit transaction (invalid or corrupted package)" error
 

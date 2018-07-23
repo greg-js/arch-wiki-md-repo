@@ -1,4 +1,4 @@
-[xmobar](https://github.com/jaor/xmobar) is a lightweight, text-based, status bar written in [Haskell](https://en.wikipedia.org/wiki/Haskell_(programming_language) "wikipedia:Haskell (programming language)"). It was originally designed to be used together with [Xmonad](/index.php/Xmonad "Xmonad"), but it is also usable with any other [window manager](/index.php/Window_manager "Window manager"). While *xmobar* is written in Haskell, no knowledge of the language is required to install and use it.
+[xmobar](https://github.com/jaor/xmobar) is a lightweight, text-based, status bar written in [Haskell](https://en.wikipedia.org/wiki/Haskell_(programming_language) "wikipedia:Haskell (programming language)"). It was originally designed to be used together with [xmonad](/index.php/Xmonad "Xmonad"), but it is also usable with any other [window manager](/index.php/Window_manager "Window manager"). While *xmobar* is written in Haskell, no knowledge of the language is required to install and use it.
 
 ## Contents
 

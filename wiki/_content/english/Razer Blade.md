@@ -5,6 +5,9 @@ Razer Blade is Razer's line of gaming laptops. There is currently a 12" model (R
 *   [1 Late-2017 version Razer Blade Stealth](#Late-2017_version_Razer_Blade_Stealth)
     *   [1.1 Infinite suspend loop](#Infinite_suspend_loop)
     *   [1.2 Screen flickering / distorted / noise](#Screen_flickering_.2F_distorted_.2F_noise)
+        *   [1.2.1 Option 1: Change edp_vswing=2](#Option_1:_Change_edp_vswing.3D2)
+        *   [1.2.2 Option 2: Use LTS Kernel With enable_rc6=0](#Option_2:_Use_LTS_Kernel_With_enable_rc6.3D0)
+        *   [1.2.3 Option 3: Use intel_idle.max_cstate=1](#Option_3:_Use_intel_idle.max_cstate.3D1)
     *   [1.3 pcieport PCIe Bus Error](#pcieport_PCIe_Bus_Error)
 *   [2 2016 version (Razer Blade & Razer Blade Stealth)](#2016_version_.28Razer_Blade_.26_Razer_Blade_Stealth.29)
     *   [2.1 Touchpad](#Touchpad)
@@ -40,6 +43,8 @@ to fix the suspend-resume-loop after closing the lid the first time after boot.
 
 ## Screen flickering / distorted / noise
 
+### Option 1: Change edp_vswing=2
+
 Add kernel param:
 
 ```
@@ -49,6 +54,8 @@ i915.edp_vswing=2
 
 Other fixes (changing xf86-video-intel settings like DRI and AccelMode don't seem to help)
 
+### Option 2: Use LTS Kernel With enable_rc6=0
+
 If the above does not work try adding the following kernel param instead:
 
 ```
@@ -57,6 +64,17 @@ i915.enable_rc6=0
 ```
 
 The parameter is not available in the latest kernels (e.g. "4.17.5-1") but the linux-lts kernel does (e.g. "4.14.54-1-lts"). This was the only thing I found that worked on my Razer Blade Stealth 13 with i7-8550U cpu.
+
+### Option 3: Use intel_idle.max_cstate=1
+
+Instead of reverting to the LTS release, I was able to add the following kernel parameter:
+
+```
+intel_idle.max_cstate=1
+
+```
+
+This changes the power options for the kernel. This will increase power usage, as it keeps the processor on all the time. More information can be found here: [https://gist.github.com/wmealing/2dd2b543c4d3cff6cab7](https://gist.github.com/wmealing/2dd2b543c4d3cff6cab7) . I did not try any other cstates. It may be worth setting max_cstate as high as possible to reduce power usage. I have tested from 8 downward and the first one to work was "intel_idle.max_cstate=4"
 
 ## pcieport PCIe Bus Error
 

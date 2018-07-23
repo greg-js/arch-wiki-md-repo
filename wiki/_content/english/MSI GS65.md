@@ -32,11 +32,13 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
             *   [1.6.2.1 Unmapped Buttons](#Unmapped_Buttons)
     *   [1.7 Touchpad](#Touchpad)
 *   [2 Troubleshooting](#Troubleshooting)
+    *   [2.1 Webcam is not detected](#Webcam_is_not_detected)
 *   [3 Tips and Tricks](#Tips_and_Tricks)
 *   [4 Known Issues](#Known_Issues)
     *   [4.1 Lockup Issue (lspci and poweroff hang)](#Lockup_Issue_.28lspci_and_poweroff_hang.29)
     *   [4.2 Cheese Hangs While Opening Camera](#Cheese_Hangs_While_Opening_Camera)
     *   [4.3 Wifi is hardblocked (airplane mode) after waking up from suspend](#Wifi_is_hardblocked_.28airplane_mode.29_after_waking_up_from_suspend)
+    *   [4.4 System freeze](#System_freeze)
 *   [5 More Information](#More_Information)
     *   [5.1 MS-16Q2](#MS-16Q2)
         *   [5.1.1 Microarchitecture, Processor and Platform](#Microarchitecture.2C_Processor_and_Platform)
@@ -262,6 +264,10 @@ Single tap and double finger scrolling work. Multi gestures do not work out the 
 
 ## Troubleshooting
 
+### Webcam is not detected
+
+If `/dev/video0` is unavailable and `lsusb` does not list the webcam, make sure that hard webcam switch is activated. The switch is indicated on the F6 key and can be toggled with `FN + F6`.
+
 ## Tips and Tricks
 
 ## Known Issues
@@ -316,6 +322,20 @@ Wifi can be reactivated in a few ways:
 ```
 
 Or by hibernating and rebooting.
+
+### System freeze
+
+From time to time the graphical interface will freeze and the keyboard will be unresponsive, though audio keeps running. It tends to happen when CPU temperature is high and CPUs are throttling.
+
+There is no known solution for this.
+
+It is not clear what causes this issue:
+
+ `$ journalctl -r --boot -1 ` 
+```
+Jul 22 20:27:40 almsi kernel: nvidia-modeset: ERROR: GPU:0: Failed to allocate memory for the display color lookup table.
+
+```
 
 ## More Information
 

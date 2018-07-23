@@ -704,6 +704,10 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[https://www.backblaze.com/b2/cloud-storage.html](https://www.backblaze.com/b2/cloud-storage.html) || [backblaze-b2](https://aur.archlinux.org/packages/backblaze-b2/)
 
+*   **CloudCross** — Synchronize local files and folders with many cloud providers. Mail.ru Cloud, Yandex Disk, Google Drive, OneDrive and Dropbox support is available.
+
+	[https://cloudcross.mastersoft24.ru/](https://cloudcross.mastersoft24.ru/) || [cloudcross](https://aur.archlinux.org/packages/cloudcross/)
+
 *   **[Cozy](/index.php/Cozy "Cozy") Drive** — Desktop client for Cozy.
 
 	[https://cozy-labs.github.io/cozy-desktop/](https://cozy-labs.github.io/cozy-desktop/) || [cozy-desktop](https://www.archlinux.org/packages/?name=cozy-desktop)

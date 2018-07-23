@@ -21,16 +21,25 @@ Install [cocos2d-x-src](https://aur.archlinux.org/packages/cocos2d-x-src/) from 
 
 ### PATH Environment Variable
 
-After installation, add `/opt/cocos2d-x/tools/cocos2d-console/bin`, and `/opt/cocos2d-x/tools/cocos2d-console/plugins/plugin_package` to your **PATH** environment variable mostly to run the `cocos` python2 script to create projects, and also run `sdkbox` respectively. Add the following to your respective shell configuration file (**~/.bashprofile**, **~/.zshenv**, etc):
+If you install manually, add `/<your-cocos2d-x-dir>/tools/cocos2d-console/bin`, and `/<your-cocos2d-x-dir>/tools/cocos2d-console/plugins/plugin_package` to your **PATH** environment variable mostly to run the `cocos` python2 script to create projects, and also run `sdkbox` respectively. Add the following to your respective shell configuration file (**~/.bashprofile**, **~/.zshenv**, etc):
 
 ```
 export PATH=/opt/cocos2d-x/tools/cocos2d-console/bin:/opt/cocos2d-x/tools/cocos2d-console/plugins/plugin_package:${PATH}
 
 ```
 
+If you use the version from AUR, package will automatically add all the necessary environment variables to the PATH. After installation, you need to reload the environment variables from /etc/profile. You can do it manually:
+
+```
+source /etc/profile
+
+```
+
+or just reload session.
+
 ### Python Scripts Workaround
 
-Since some Cocos2D-X scripts use `python2` instead of `python3`, like `sdkbox`, simply calling `python2 foo.pyc` will not suffice since other modules will be called with "env python" which could point to python3\. To fix this, read [here](/index.php/Python#Dealing_with_version_problem_in_build_scripts "Python"). Don't forget to add `/usr/local/bin`, or whichever directory the workaround shell script is installed at, before `/usr/bin` in your PATH environment variable. The following should suffice:
+Since some Cocos2D-X scripts use `python2` instead of `python3`, like `sdkbox`, simply calling `python2 foo.pyc` will not suffice since other modules will be called with "env python" which could point to python3\. To avoid this, install version from AUR, or change script headers or read [here](/index.php/Python#Dealing_with_version_problem_in_build_scripts "Python"). Don't forget to add `/usr/local/bin`, or whichever directory the workaround shell script is installed at, before `/usr/bin` in your PATH environment variable. The following should suffice:
 
 ```
 export PATH=/usr/local/bin:${PATH}

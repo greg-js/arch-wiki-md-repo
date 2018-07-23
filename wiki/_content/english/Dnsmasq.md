@@ -79,11 +79,10 @@ listen-address=192.168.1.1
 
 ```
 
-Set the number of cached domain names with `cache-size=*size*` (the default is `150`) and optionally disable caching of "no such domain" responses with `no-negcache`:
+Set the number of cached domain names with `cache-size=*size*` (the default is `150`):
 
 ```
 cache-size=1000
-no-negcache
 
 ```
 
@@ -92,6 +91,7 @@ To validate [DNSSEC](/index.php/DNSSEC "DNSSEC") load the DNSSEC trust anchors p
 ```
 conf-file=/usr/share/dnsmasq/trust-anchors.conf
 dnssec
+dnssec-check-unsigned
 
 ```
 

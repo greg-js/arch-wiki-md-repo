@@ -171,10 +171,10 @@ Server = https://mirror.archstrike.org/$arch/$repo
 
 ### archzfs
 
-*   **Maintainer:** [Jesus Alvarez (demizer)](http://archzfs.com)
+*   **Maintainer:** [Jan Houben (minextu)](https://aur.archlinux.org/account/minextu)
 *   **Description:** Packages for ZFS on Arch Linux.
 *   **Upstream page:** [https://github.com/archzfs/archzfs](https://github.com/archzfs/archzfs)
-*   **Key-ID:** 5E1ABF240EE7A126
+*   **Key-ID:** F75D9D76
 
 ```
 [archzfs]

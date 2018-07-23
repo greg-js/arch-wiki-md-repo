@@ -1,3 +1,7 @@
+Related articles
+
+*   [Gobby](/index.php/Gobby "Gobby")
+
 [Etherpad-Lite](http://etherpad.org) or just Etherpad, is a collaborative, multi-user web-editor based on [Node.js](/index.php/Node.js "Node.js") with the ability to import/export various office file formats.
 
 ## Contents
@@ -24,7 +28,7 @@ For testing purposes, the default database backend for Etherpad is the file-base
 
 If you want to use [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") or [SQLite](/index.php/SQLite "SQLite"), you can adjust those settings in the settings.json file. Further, you can set a password for the administrator interface on [http://localhost:9001/admin](http://localhost:9001/admin), change port and listening address, etc.
 
-At least, don't forget to set a sessionkey, e.g. generate with [pwgen](https://www.archlinux.org/packages/?name=pwgen) and `pwgen -y 10 1` and write it down to:
+At least, don't forget to set a sessionkey, e.g. generate with [pwgen](https://www.archlinux.org/packages/?name=pwgen) and `pwgen --symbols 10 1` and write it down to:
 
  `/usr/share/webapps/etherpad-lite/settings.json` 
 ```

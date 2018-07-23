@@ -18,6 +18,9 @@ Regular system maintenance is necessary for the proper function of Arch over a p
 *   [3 Upgrading the system](#Upgrading_the_system)
     *   [3.1 Read before upgrading the system](#Read_before_upgrading_the_system)
     *   [3.2 Avoid certain pacman commands](#Avoid_certain_pacman_commands)
+        *   [3.2.1 Avoid partial upgrades](#Avoid_partial_upgrades)
+        *   [3.2.2 Avoid bypassing file conflicts](#Avoid_bypassing_file_conflicts)
+        *   [3.2.3 Avoid skipping dependency checks](#Avoid_skipping_dependency_checks)
     *   [3.3 Partial upgrades are unsupported](#Partial_upgrades_are_unsupported)
     *   [3.4 Act on alerts during an upgrade](#Act_on_alerts_during_an_upgrade)
     *   [3.5 Deal promptly with new configuration files](#Deal_promptly_with_new_configuration_files)
@@ -111,11 +114,45 @@ Users must equally be aware that upgrading packages can raise **unexpected** pro
 
 ### Avoid certain pacman commands
 
-Avoid doing [partial upgrades](#Partial_upgrades_are_unsupported). In other words, never run `pacman -Sy`; instead, always use `pacman -Syu`.
+**Warning:** These are commands to **avoid**. Do **not** run these commands.
 
-Avoid using the `--force` option with pacman, **especially** in commands such as `pacman -Syu --force` involving more than one package. The `--force` option ignores file conflicts and can even cause file loss when files are relocated between different packages! In a properly maintained system, it should only be used when explicitly recommended by the Arch developers (see [#Read before upgrading the system](#Read_before_upgrading_the_system)).
+#### Avoid partial upgrades
 
-Avoid using the `-d` option with pacman. `pacman -Rdd *package*` skips dependency checks during package removal. As a result, a package providing a critical dependency could be removed, resulting in a broken system.
+Avoid doing [partial upgrades](#Partial_upgrades_are_unsupported). In other words, **never run**
+
+```
+# pacman -Sy
+
+```
+
+Instead always run:
+
+```
+# pacman -Syu
+
+```
+
+#### Avoid bypassing file conflicts
+
+Generally avoid using the `--overwrite` option with pacman. For example **do not** do:
+
+```
+# pacman -Syu --overwrite *glob*
+
+```
+
+The `--overwrite` option takes an argument containing a `*glob*`. When used pacman will bypass file conflict checks for files that match the glob. In a properly maintained system, it should only be used when explicitly recommended by the Arch developers. See the [#Read before upgrading the system](#Read_before_upgrading_the_system) section.
+
+#### Avoid skipping dependency checks
+
+Avoid using the `-d` option with pacman. For example, **do not** run:
+
+```
+# pacman -Rdd *package*
+
+```
+
+This commands skips dependency checks during package removal. As a result, a package providing a critical dependency could be removed, resulting in a broken system.
 
 ### Partial upgrades are unsupported
 

@@ -8,6 +8,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/RuneScape "wikipedia:RuneScape"):
     *   [1.1 RuneScape NXT](#RuneScape_NXT)
     *   [1.2 Rsu-client](#Rsu-client)
     *   [1.3 OSBuddy (Old School RuneScape only)](#OSBuddy_.28Old_School_RuneScape_only.29)
+    *   [1.4 RuneLite (Old School RuneScape only)](#RuneLite_.28Old_School_RuneScape_only.29)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Audio issues](#Audio_issues)
 
@@ -26,6 +27,10 @@ Install the official RuneScape NXT client with the [runescape-launcher](https://
 ### OSBuddy (Old School RuneScape only)
 
 [OSBuddy](https://rsbuddy.com/osbuddy/) is a third-party toolkit for Old School RuneScape which in addition to a client offers useful features, such as highscores, notes, price checker etc. It's available for installation from the AUR, [osbuddy](https://aur.archlinux.org/packages/osbuddy/).
+
+### RuneLite (Old School RuneScape only)
+
+[RuneLite](https://runelite.net/) is an open-source alternative to other third-party Old School RuneScape clients.
 
 ## Troubleshooting
 

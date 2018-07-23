@@ -26,7 +26,7 @@
 
 First create a script to set the numlock on relevant TTYs:
 
- `/usr/bin/numlock` 
+ `/usr/local/bin/numlock` 
 ```
 #!/bin/bash
 
@@ -45,7 +45,7 @@ Then create and [enable](/index.php/Enable "Enable") a systemd service:
 Description=numlock
 
 [Service]
-ExecStart=/usr/bin/numlock
+ExecStart=/usr/local/bin/numlock
 StandardInput=tty
 RemainAfterExit=yes
 
@@ -70,7 +70,7 @@ To disable the num-lock activation hint displaying on the login screen, [edit](/
 ```
 [Service]
 ExecStart=
-ExecStart=-/sbin/agetty --nohints --noclear %I $TERM
+ExecStart=-/sbin/agetty '-p -- \\u' --nohints --noclear %I $TERM
 
 ```
 

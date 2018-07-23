@@ -32,6 +32,7 @@ Related articles
         *   [4.7.1 dnsmasq](#dnsmasq)
             *   [4.7.1.1 Custom configuration](#Custom_configuration)
             *   [4.7.1.2 IPv6](#IPv6)
+            *   [4.7.1.3 DNSSEC](#DNSSEC)
         *   [4.7.2 systemd-resolved](#systemd-resolved)
         *   [4.7.3 Other methods](#Other_methods)
     *   [4.8 Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher)
@@ -328,8 +329,6 @@ dns=dnsmasq
 
 Now [restart](/index.php/Restart "Restart") `NetworkManager.service`. NetworkManager will automatically start dnsmasq and add `127.0.0.1` to `/etc/resolv.conf`. The actual DNS servers can be found in `/run/NetworkManager/resolv.conf`. You can verify dnsmasq is being used by doing the same DNS lookup twice with `$ drill example.com` and verifying the server and query times.
 
-**Note:** The dnsmasq instance started by NetworkManager will not validate [DNSSEC](/index.php/DNSSEC "DNSSEC") since it is started with the `--proxy-dnssec` option. It will trust whatever DNSSEC information it gets from the upstream DNS server.
-
 ##### Custom configuration
 
 Custom configurations can be created for *dnsmasq* by creating configuration files in `/etc/NetworkManager/dnsmasq.d/`. For example, to change the size of the DNS cache (which is stored in RAM):
@@ -346,6 +345,19 @@ Enabling `dnsmasq` in NetworkManager may break IPv6-only DNS lookups (i.e. `dril
  `/etc/NetworkManager/dnsmasq.d/ipv6_listen.conf`  `listen-address=::1` 
 
 In addition, `dnsmasq` also does not prioritize upstream IPv6 DNS. Unfortunately NetworkManager does not do this ([Ubuntu Bug](https://bugs.launchpad.net/ubuntu/+source/network-manager/+bug/936712)). A workaround would be to disable IPv4 DNS in the NetworkManager config, assuming one exists
+
+##### DNSSEC
+
+The dnsmasq instance started by NetworkManager by default will not validate [DNSSEC](/index.php/DNSSEC "DNSSEC") since it is started with the `--proxy-dnssec` option. It will trust whatever DNSSEC information it gets from the upstream DNS server.
+
+For dnsmasq to properly validate DNSSEC, create the following configuration file:
+
+ `/etc/NetworkManager/dnsmasq.d/dnssec.conf` 
+```
+conf-file=/usr/share/dnsmasq/trust-anchors.conf
+dnssec
+dnssec-check-unsigned
+```
 
 #### systemd-resolved
 

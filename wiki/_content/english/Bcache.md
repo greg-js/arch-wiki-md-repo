@@ -17,16 +17,17 @@ Bcache needs the backing device to be formatted as a bcache block device. In mos
     *   [1.2 Converting existing disks](#Converting_existing_disks)
         *   [1.2.1 Troubleshooting](#Troubleshooting)
 *   [2 Installation to a bcache device](#Installation_to_a_bcache_device)
-*   [3 Configuring](#Configuring)
-*   [4 Advanced operations](#Advanced_operations)
-    *   [4.1 Resize backing device](#Resize_backing_device)
-        *   [4.1.1 Example of growing](#Example_of_growing)
-        *   [4.1.2 Example of shrinking](#Example_of_shrinking)
-            *   [4.1.2.1 Force flush of cache to backing device](#Force_flush_of_cache_to_backing_device)
-*   [5 Troubleshooting](#Troubleshooting_2)
-    *   [5.1 /dev/bcache device does not exist on bootup](#.2Fdev.2Fbcache_device_does_not_exist_on_bootup)
-    *   [5.2 /sys/fs/bcache/ does not exist](#.2Fsys.2Ffs.2Fbcache.2F_does_not_exist)
-*   [6 See also](#See_also)
+*   [3 Accessing from the install disk](#Accessing_from_the_install_disk)
+*   [4 Configuring](#Configuring)
+*   [5 Advanced operations](#Advanced_operations)
+    *   [5.1 Resize backing device](#Resize_backing_device)
+        *   [5.1.1 Example of growing](#Example_of_growing)
+        *   [5.1.2 Example of shrinking](#Example_of_shrinking)
+            *   [5.1.2.1 Force flush of cache to backing device](#Force_flush_of_cache_to_backing_device)
+*   [6 Troubleshooting](#Troubleshooting_2)
+    *   [6.1 /dev/bcache device does not exist on bootup](#.2Fdev.2Fbcache_device_does_not_exist_on_bootup)
+    *   [6.2 /sys/fs/bcache/ does not exist](#.2Fsys.2Ffs.2Fbcache.2F_does_not_exist)
+*   [7 See also](#See_also)
 
 ## Setting up a bcache device on an existing system
 
@@ -262,6 +263,24 @@ Before you edit `/etc/mkinitcpio.conf` and run `mkinitcpio -p linux`:
     *   add the "bcache" hook between block and filesystem hooks
 
 **Note:** Should you want to open the backing device from the installation media for any reason after a reboot you must register it manually. Make sure the bcache module is loaded and then echo the relevant devices to /sys/bcache/register. You should see whether this worked or not by using dmesg.
+
+## Accessing from the install disk
+
+This is how to access a bcache partition from the install disk that was present before the install disk was booted. Boot the install disk and install [bcache-tools](https://aur.archlinux.org/packages/bcache-tools/) from the AUR, just as in the previous section. Then, add the module to the kernel:
+
+```
+# modprobe bcache
+
+```
+
+Your device will not appear immediately at `/dev/bcache*`. To force the kernel to find it, tell it to reread the partition table:
+
+```
+# partprobe
+
+```
+
+Now, `/dev/bcache*` should be present, and you can carry on mounting, reformatting, etc. from here.
 
 ## Configuring
 

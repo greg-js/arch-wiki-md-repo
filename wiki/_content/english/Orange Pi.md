@@ -87,8 +87,9 @@ Compile it and write it to the SD-card using the package [uboot-tools](https://w
 The next step is creating a u-boot image. Make sure you have [arm-none-eabi-gcc](https://www.archlinux.org/packages/?name=arm-none-eabi-gcc), [dtc](https://www.archlinux.org/packages/?name=dtc), [git](https://www.archlinux.org/packages/?name=git), [swig](https://www.archlinux.org/packages/?name=swig) and [uboot-tools](https://www.archlinux.org/packages/?name=uboot-tools) installed on your system. If you compile for a different H3 Orange Pi than the One, replace orangepi_one_config accordingly. Then clone the u-boot source code and compile a Orange Pi image:
 
 ```
-$ git clone --depth 1 [git://git.denx.de/u-boot.git](git://git.denx.de/u-boot.git)
+$ git clone [git://git.denx.de/u-boot.git](git://git.denx.de/u-boot.git)
 $ cd u-boot
+$ git checkout tags/v2018.07
 $ make -j4 ARCH=arm CROSS_COMPILE=arm-none-eabi- orangepi_one_defconfig
 $ make -j4 ARCH=arm CROSS_COMPILE=arm-none-eabi-
 

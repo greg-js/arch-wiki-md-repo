@@ -33,7 +33,7 @@ From the [Redshift project web page](http://jonls.dk/redshift/):
 
 The *redshift-gtk* command comes with the [redshift](https://www.archlinux.org/packages/?name=redshift) package and provides a system tray icon for controlling Redshift. See optional dependencies.
 
-Alternatives are [redshiftgui-bin](https://aur.archlinux.org/packages/redshiftgui-bin/) (GTK) and [redshift-qt](https://aur.archlinux.org/packages/redshift-qt/), [redshiftconf](https://aur.archlinux.org/packages/redshiftconf/) or [plasma5-applets-redshift-control-git](https://aur.archlinux.org/packages/plasma5-applets-redshift-control-git/) (Qt).
+Alternatives are [redshiftgui-bin](https://aur.archlinux.org/packages/redshiftgui-bin/) (GTK) and [redshift-qt](https://aur.archlinux.org/packages/redshift-qt/), [redshiftconf](https://aur.archlinux.org/packages/redshiftconf/) or [plasma5-applets-redshift-control](https://www.archlinux.org/packages/?name=plasma5-applets-redshift-control) and [plasma5-applets-redshift-control-git](https://aur.archlinux.org/packages/plasma5-applets-redshift-control-git/) (Qt).
 
 ## Configuration
 
@@ -93,7 +93,26 @@ users=
 
 [Restart](/index.php/Restart "Restart") `redshift.service` and/or any other Redshift instance to apply the chances.
 
-**Note:** If using [GNOME](/index.php/GNOME "GNOME"), also toggle Location Services to "On" in "Settings -> Privacy"
+**Note:**
+
+*   If using [GNOME](/index.php/GNOME "GNOME"), also toggle Location Services to "On" in "Settings -> Privacy"
+*   Due possible bugs with geoclue2 and Redshift [[2]](https://github.com/jonls/redshift/issues/318), it may be required to use the `manual` location-provider instead, e.g. for Paris:
+
+ `~/.config/redshift/redshift.conf` 
+```
+; Set the location-provider: 'geoclue2', 'manual'
+; type 'redshift -l list' to see possible values.
+; The location provider settings are in a different section.
+location-provider=manual
+
+...
+
+; Keep in mind that longitudes west of Greenwich (e.g. the Americas)
+; are negative numbers.
+[manual]
+lat=48.853
+lon=2.349
+```
 
 ### Automatic location based on GPS
 
@@ -117,7 +136,7 @@ For more information, see [this](https://bbs.archlinux.org/viewtopic.php?pid=138
 
 ### Use real screen brightness
 
-Redshift has a brightness adjustment setting, but it does not work the way most people might expect. In fact it is a fake brightness adjustment obtained by manipulating the gamma ramps, which means that it does not reduce the backlight of the screen. [[2]](http://jonls.dk/redshift/#known-bugs-and-limitations)
+Redshift has a brightness adjustment setting, but it does not work the way most people might expect. In fact it is a fake brightness adjustment obtained by manipulating the gamma ramps, which means that it does not reduce the backlight of the screen. [[3]](http://jonls.dk/redshift/#known-bugs-and-limitations)
 
 Changing screen backlight is possible with redshift hooks and [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr) and [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) but, please see [Backlight#xbacklight](/index.php/Backlight#xbacklight "Backlight") as there are some limitations and you may have to find another method of controlling the backlight depending on your hardware.
 
@@ -185,7 +204,7 @@ Locate configuration-file "redshift.conf" in your distribution and change "scree
 
 ### Left/right clicking the tray icon doesn't work
 
-Install [libappindicator-gtk3](https://www.archlinux.org/packages/?name=libappindicator-gtk3). See [[3]](https://github.com/jonls/redshift/issues/363) and [[4]](https://bugs.archlinux.org/task/49971)
+Install [libappindicator-gtk3](https://www.archlinux.org/packages/?name=libappindicator-gtk3). See [[4]](https://github.com/jonls/redshift/issues/363) and [[5]](https://bugs.archlinux.org/task/49971)
 
 ### Redshift makes the screen quickly flicker between the set color value of the screen and the default color value
 
@@ -208,7 +227,7 @@ and the service should initialize properly.
 
 ### Redshift temporarily resets using some wine apps that reset gamma values
 
-If you notice that using some wine apps, redshift seems to reset temporarily upon launch, or adjusting settings, or etc, then there is a useful registry key that seems to alleviate this. See [[5]](https://www.winehq.org/pipermail/wine-bugs/2015-January/403770.html) and [[6]](https://wiki.winehq.org/UsefulRegistryKeys). Set or create the string value
+If you notice that using some wine apps, redshift seems to reset temporarily upon launch, or adjusting settings, or etc, then there is a useful registry key that seems to alleviate this. See [[6]](https://www.winehq.org/pipermail/wine-bugs/2015-January/403770.html) and [[7]](https://wiki.winehq.org/UsefulRegistryKeys). Set or create the string value
 
  `HKEY_CURRENT_USER\Software\Wine\X11 Driver`  `UseXVidMode="N"` using the registry editor, or import/set it otherwise.
 

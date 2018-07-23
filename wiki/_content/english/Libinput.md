@@ -145,7 +145,7 @@ The input device can then be configured with any of the lines in the CONFIGURATI
 
 *   `Option "Tapping" "on"`: tapping a.k.a. tap-to-click
 *   `Option "ClickMethod" "clickfinger"`: trackpad no longer has middle and right button areas and instead two-finger click is a context click and three-finger click is a middle click, see the [docs](https://wayland.freedesktop.org/libinput/doc/latest/clickpad_softbuttons.html#clickfinger).
-*   `Option "NaturalScrolling" "true"`: natural (reverse) scrolling
+*   `Option "Natural Scrolling" "true"`: natural (reverse) scrolling
 *   `Option "ScrollMethod" "edge"`: edge (vertical) scrolling
 
 Bear in mind that some of them may only apply to certain devices and you'll need to restart X for changes to take effect.

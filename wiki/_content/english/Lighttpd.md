@@ -1,4 +1,4 @@
-[Lighttpd](https://www.lighttpd.net/) is "a secure, fast, compliant, and very flexible [web-server](https://en.wikipedia.org/wiki/Web_server "wikipedia:Web server") that has been optimized for high-performance environments. It has a very low memory footprint compared to other webservers and takes care of cpu-load. Its advanced feature-set ([FastCGI](https://en.wikipedia.org/wiki/FastCGI "wikipedia:FastCGI"), [CGI](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface"), Auth, Output-Compression, URL-Rewriting and many more) make lighttpd the perfect webserver-software for every server that suffers load problems."
+[lighttpd](https://www.lighttpd.net/) is "a secure, fast, compliant, and very flexible [web-server](https://en.wikipedia.org/wiki/Web_server "wikipedia:Web server") that has been optimized for high-performance environments. It has a very low memory footprint compared to other webservers and takes care of cpu-load. Its advanced feature-set ([FastCGI](https://en.wikipedia.org/wiki/FastCGI "wikipedia:FastCGI"), [CGI](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface"), Auth, Output-Compression, URL-Rewriting and many more) make lighttpd the perfect webserver-software for every server that suffers load problems."
 
 ## Contents
 
@@ -55,7 +55,7 @@ Example configuration files are available in `/usr/share/doc/lighttpd/`.
 
 #### Basic logging
 
-Lighttpd can write out both errors and access to log files. To enable both of the logging options, edit `/etc/lighttpd/lighttpd.conf` as follows:
+lighttpd can write out both errors and access to log files. To enable both of the logging options, edit `/etc/lighttpd/lighttpd.conf` as follows:
 
 ```
 server.modules += (
@@ -158,7 +158,7 @@ auth.require = ( "/secret" =>
 
 ### CGI
 
-[Common Gateway Interface](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface") (CGI) scripts work with Lighttpd out of box, you just need to enable the CGI module, include the configuration file and make sure your chosen programming language interpreter is installed. (i.e. for python you would install [python](https://www.archlinux.org/packages/?name=python))
+[Common Gateway Interface](https://en.wikipedia.org/wiki/Common_Gateway_Interface "wikipedia:Common Gateway Interface") (CGI) scripts work with lighttpd out of box, you just need to enable the CGI module, include the configuration file and make sure your chosen programming language interpreter is installed. (i.e. for python you would install [python](https://www.archlinux.org/packages/?name=python))
 
 Create the file `/etc/lighttpd/conf.d/cgi.conf` Add the following to it:
 
@@ -187,7 +187,7 @@ cgi.fix_pathinfo = 1
 
 ```
 
-In your Lighttpd configuration file, `/etc/lighttpd/lighttpd.conf` add:
+In your lighttpd configuration file, `/etc/lighttpd/lighttpd.conf` add:
 
 ```
 include "conf.d/cgi.conf"
@@ -475,4 +475,4 @@ compress.filetype           = ("text/plain", "text/html", "text/javascript", "te
 
 ## See also
 
-*   [Lighttpd wiki](https://redmine.lighttpd.net/projects/lighttpd/wiki)
+*   [lighttpd wiki](https://redmine.lighttpd.net/projects/lighttpd/wiki)

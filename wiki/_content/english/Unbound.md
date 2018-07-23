@@ -21,10 +21,12 @@ Related articles
         *   [2.3.1 Testing validation](#Testing_validation)
     *   [2.4 Forwarding queries](#Forwarding_queries)
         *   [2.4.1 Allow local network to use DNS](#Allow_local_network_to_use_DNS)
-        *   [2.4.2 Include local DNS server](#Include_local_DNS_server)
-        *   [2.4.3 Forward all remaining requests](#Forward_all_remaining_requests)
-            *   [2.4.3.1 Using openresolv](#Using_openresolv)
-            *   [2.4.3.2 Manually specifying DNS servers](#Manually_specifying_DNS_servers)
+            *   [2.4.1.1 Using openresolv](#Using_openresolv)
+            *   [2.4.1.2 Manually specifying DNS servers](#Manually_specifying_DNS_servers)
+                *   [2.4.1.2.1 Include local DNS server](#Include_local_DNS_server)
+        *   [2.4.2 Forward all remaining requests](#Forward_all_remaining_requests)
+            *   [2.4.2.1 Using openresolv](#Using_openresolv_2)
+            *   [2.4.2.2 Manually specifying DNS servers](#Manually_specifying_DNS_servers_2)
     *   [2.5 Access control](#Access_control)
 *   [3 Usage](#Usage)
     *   [3.1 Starting Unbound](#Starting_Unbound)
@@ -136,6 +138,61 @@ If you only want to forward queries to an external DNS server, skip ahead to [#F
 
 #### Allow local network to use DNS
 
+##### Using openresolv
+
+If your network manager supports [openresolv](/index.php/Openresolv "Openresolv"), you can configure it to provide local DNS servers and search domains to Unbound. [[1]](https://roy.marples.name/projects/openresolv/config)
+
+ `/etc/resolvconf.conf` 
+```
+...
+private_interfaces="*"
+
+# Write out unbound configuration file
+unbound_conf=/etc/unbound-resolvconf.conf
+```
+
+Run `resolvconf -u` to generate the file.
+
+Configure Unbound to read the openresolv's generated file and allow replies with [private IP address ranges](https://en.wikipedia.org/wiki/Private_network "wikipedia:Private network"):
+
+ `/etc/unbound/unbound.conf` 
+```
+include: "/etc/unbound-resolvconf.conf"
+...
+server:
+...
+	private-domain: "intranet"
+	private-domain: "internal"
+	private-domain: "private"
+	private-domain: "corp"
+	private-domain: "home"
+	private-domain: "lan"
+
+	unblock-lan-zones: yes
+	insecure-lan-zones: yes
+...
+
+```
+
+Additionally you may want to disable DNSSEC validation for private DNS namespaces[[2]](https://tools.ietf.org/html/rfc6762#appendix-G):
+
+ `/etc/unbound/unbound.conf` 
+```
+...
+server:
+...
+	domain-insecure: "intranet"
+	domain-insecure: "internal"
+	domain-insecure: "private"
+	domain-insecure: "corp"
+	domain-insecure: "home"
+	domain-insecure: "lan"
+...
+
+```
+
+##### Manually specifying DNS servers
+
 If you have a local network which you wish to have DNS queries for and there is a local DNS server that you would like to forward queries to then you should include this line:
 
 ```
@@ -152,7 +209,7 @@ private-address: 10.0.0.0/24
 
 **Note:** You can use private-address to protect against DNS Rebind attacks. Therefore you may enable RFC1918 networks (10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 169.254.0.0/16 fd00::/8 fe80::/10). Unbound may enable this feature by default in future releases.
 
-#### Include local DNS server
+###### Include local DNS server
 
 To include a local DNS server for both forward and reverse local addresses a set of lines similar to these below is necessary with a forward and reverse lookup (choose the IP address of the server providing DNS for the local network accordingly by changing 10.0.0.1 in the lines below):
 
@@ -197,7 +254,7 @@ local-data: "1.0.0.127.in-addr.arpa. 10800 IN PTR localhost."
 
 ##### Using openresolv
 
-If your network manager supports [openresolv](/index.php/Openresolv "Openresolv"), you can configure it to provide upstream DNS servers to Unbound. [[1]](https://roy.marples.name/projects/openresolv/config)
+If your network manager supports [openresolv](/index.php/Openresolv "Openresolv"), you can configure it to provide upstream DNS servers to Unbound. [[3]](https://roy.marples.name/projects/openresolv/config)
 
  `/etc/resolvconf.conf` 
 ```

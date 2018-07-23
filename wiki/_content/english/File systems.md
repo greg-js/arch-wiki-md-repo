@@ -84,6 +84,10 @@ Some FUSE-based file systems:
 
 	[http://collectskin.com/adbfs/](http://collectskin.com/adbfs/) || [adbfs-git](https://aur.archlinux.org/packages/adbfs-git/)
 
+*   **CloudFusion** — Linux file system (FUSE) to access Dropbox, Sugarsync, Amazon S3, Google Drive or WebDAV servers.
+
+	[https://joe42.github.io/CloudFusion/](https://joe42.github.io/CloudFusion/) || [cloudfusion-git](https://aur.archlinux.org/packages/cloudfusion-git/)
+
 *   **[CurlFtpFS](/index.php/CurlFtpFS "CurlFtpFS")** — Filesystem for accessing FTP hosts based on FUSE and libcurl.
 
 	[http://curlftpfs.sourceforge.net/](http://curlftpfs.sourceforge.net/) || [curlftpfs](https://www.archlinux.org/packages/?name=curlftpfs)
@@ -143,6 +147,8 @@ Some FUSE-based file systems:
 *   **xmlfs** — Represent an XML file as a directory structure for easy access.
 
 	[https://github.com/halhen/xmlfs](https://github.com/halhen/xmlfs) || [xmlfs](https://aur.archlinux.org/packages/xmlfs/)
+
+*   [Media Transfer Protocol#FUSE filesystems](/index.php/Media_Transfer_Protocol#FUSE_filesystems "Media Transfer Protocol")
 
 See [Wikipedia:Filesystem in Userspace#Example uses](https://en.wikipedia.org/wiki/Filesystem_in_Userspace#Example_uses "wikipedia:Filesystem in Userspace") for more.
 

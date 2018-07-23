@@ -672,7 +672,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **Ktikz** — Small application helping you to create [PGF/TikZ](https://en.wikipedia.org/wiki/PGF/TikZ "wikipedia:PGF/TikZ") diagrams for your publications.
 
-	[http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language/](http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language/) || [ktikz](https://www.archlinux.org/packages/?name=ktikz)
+	[http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language/](http://www.hackenberger.at/blog/ktikz-editor-for-the-tikz-language/) || KDE: [ktikz](https://www.archlinux.org/packages/?name=ktikz), Qt: [qtikz](https://www.archlinux.org/packages/?name=qtikz)
 
 *   **[LyX](https://en.wikipedia.org/wiki/LyX "wikipedia:LyX")** — Document processor that encourages an approach to writing based on the structure of your documents (WYSIWYM) and not simply their appearance (WYSIWYG).
 

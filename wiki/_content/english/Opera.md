@@ -59,7 +59,7 @@ Install Adblock support using the [opera-adblock-complete](https://aur.archlinux
 
 ## Performance tweaks
 
-Although Opera is quite fast on modern hardware, it can be tweaked even more. For further examples, see the [Opera wiki page](http://operawiki.info/operaperformance) on performance.
+Although Opera is fast on modern hardware, it can be made even faster.
 
 ### Disabling features and services
 

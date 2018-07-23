@@ -62,7 +62,7 @@ You might need to install [perl-archive-zip](https://www.archlinux.org/packages/
 
 ### Accessing serial
 
-The arduino board communicates with the computer via a serial connection or a serial over USB connection. So the user needs read/write access to the serial device file. [Udev](/index.php/Udev "Udev") creates files in `/dev/tts/` owned by group `uucp` so adding the user to the `uucp` group gives the required read/write access. If you are planning to use the default Java IDE, add your user to the lock group for `/var/lock/lockdev` access.
+The arduino board communicates with the computer via a serial connection or a serial-over-USB connection, so the user needs read/write access to the serial device file. [Udev](/index.php/Udev "Udev") creates files such as `/dev/ttyUSB0` owned by group `uucp` so adding the user to the `uucp` group gives the required read/write access. Also, if you are planning to use the default Java IDE, add your user to the lock group for `/var/lock/lockdev` access.
 
 ```
 # gpasswd -a $USER uucp

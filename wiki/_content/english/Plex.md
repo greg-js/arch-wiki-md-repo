@@ -129,8 +129,8 @@ In case there are no logs or they are not helpful, you might want to launch PMS 
 ```
 sudo -u plex /usr/bin/bash
 source /etc/conf.d/plexmediaserver
-export LD_LIBRARY_PATH=/opt/plexmediaserver
-/opt/plexmediaserver/Plex\ Media\ Server
+export LD_LIBRARY_PATH=/usr/lib/plexmediaserver
+/usr/lib/plexmediaserver/Plex\ Media\ Server
 
 ```
 

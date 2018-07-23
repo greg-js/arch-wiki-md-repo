@@ -25,7 +25,7 @@ An [electronic identification](https://en.wikipedia.org/wiki/Electronic_identifi
 
 Install the [eid-mw](https://aur.archlinux.org/packages/eid-mw/) package. Before installation, import the (continuous build) keys from [[1]](https://files.eid.belgium.be/). See [makepkg#Signature checking](/index.php/Makepkg#Signature_checking "Makepkg").
 
-There is no plugin for Chrome, but there is one for Firefox. Add the [Firefox plugin](https://addons.mozilla.org/nl/firefox/addon/belgium-eid) to your browser. In recent versions, you'll need to manually [add the eID module](https://eid.belgium.be/nl/aanmelden-met-eid#7504) to the Firefox security devices configuration. Your module path might be different than the one in the guide. List the different devices by doing:
+There is no plugin for Chrome, but there is one for Firefox. Add the [Firefox plugin](https://addons.mozilla.org/nl/firefox/addon/belgium-eid) to your browser. In recent versions, you'll need to manually [add the eID module](https://eid.belgium.be/en/log-eid#7507) to the Firefox security devices configuration. Your module path might be different than the one in the guide. List the different devices by doing:
 
 ```
 # p11tool --list-tokens
@@ -35,13 +35,13 @@ There is no plugin for Chrome, but there is one for Firefox. Add the [Firefox pl
 Here you'll see the module, which might be beidpkcs11.so. Now to find the full path you do:
 
 ```
-# find /usr/lib --name beidpkcs11.so
+# find /usr/lib -name beidpkcs11.so
 
 ```
 
-You should now be able to use your eID reader in Firefox. Try it out using the [test page](http://test.eid.belgium.be)
+You should now be able to use your eID reader in Firefox. Try it out using the [test page](https://iamapps.belgium.be/tma/?lang=en).
 
-You may find hints for troubleshooting in the [official documentation (Dutch)](http://faq.eid.belgium.be/nl/index.html) but note that Arch Linux is not officially supported.
+You may find hints for troubleshooting in the [official documentation](http://faq.eid.belgium.be/nl/index.html) but keep in mind that Arch Linux is not officially supported.
 
 ### Estonia
 

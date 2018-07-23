@@ -504,8 +504,6 @@ The default uses `/usr/bin/pinentry-gnome3`, falling back to `/usr/bin/pinentry-
 
  `~/.gnupg/gpg-agent.conf` 
 ```
-
-# PIN entry program
 # pinentry-program /usr/bin/pinentry-gnome3
 # pinentry-program /usr/bin/pinentry-qt
 # pinentry-program /usr/bin/pinentry-curses
@@ -517,7 +515,7 @@ pinentry-program /usr/bin/pinentry-gtk-2
 
 **Tip:** For using `/usr/bin/pinentry-kwallet` you have to install the [kwalletcli](https://aur.archlinux.org/packages/kwalletcli/) package.
 
-After making this change, reload the gpg-agent.
+After making this change, [#Reload the agent](#Reload_the_agent).
 
 ### Unattended passphrase
 
@@ -575,12 +573,8 @@ Also set the GPG_TTY and refresh the TTY in case user has switched into an X ses
 
  `~/.bashrc` 
 ```
-# Set GPG TTY
 export GPG_TTY=$(tty)
-
-# Refresh gpg-agent tty in case user switches into an X session
 gpg-connect-agent updatestartuptty /bye >/dev/null
-
 ```
 
 #### Add SSH keys
@@ -601,18 +595,9 @@ max-cache-ttl-ssh 10800
 If the `enable-ssh-agent` option is enabled for `gpg-agent`, you can use your PGP key as an SSH key. This requires a key with the `Authentication` capability (see [#Custom capabilities](#Custom_capabilities)). There are various benefits gained by using a PGP key for SSH authentication, including:
 
 *   Reduced key maintenance, as you will no longer need to maintain an SSH key
-*   The ability to store the authentication key on a smartcard. GnuPG will automatically detect the key when the card is available, and add it to the agent (check with `ssh-add -l` or `ssh-add -L`). The comment for the key should be something like: `openpgp:*key-id*` or `cardno:*card-id*`. Note that your key may not be added to `$HOME/.gnupg/sshcontrol`, which is where normal SSH keys are listed.
+*   The ability to store the authentication key on a smartcard. GnuPG will automatically detect the key when the card is available, and add it to the agent (check with `ssh-add -l` or `ssh-add -L`). The comment for the key should be something like: `openpgp:*key-id*` or `cardno:*card-id*`.
 
-To add your key to the agent for the first time, you need to add the keygrip for your key with the Authentication capability to `$HOME/.gnupg/sshcontrol`. You can get the keygrip of your key by executing `gpg --list-keys --with-keygrip`, like so:
-
-```
-$ gpg --list-keys --with-keygrip
-  sub   rsa4096/1234ABCD1234ABCD 2001-01-01 [A] [expires: 2002-01-01]
-        Keygrip = < put this value on its own line in $HOME/.gnupg/sshcontrol >
-
-```
-
-Adding the keygrip to `$HOME/.gnupg/sshcontrol` is a one-time action; you will not need to edit the file again, unless you are adding additional keygrips. You can retrieve the public key for your Authentication key by executing `ssh-add -L`.
+**Note:** Your key may not be added to `$GNUPGHOME/sshcontrol`, which is where normal SSH keys are listed.
 
 ## Smartcards
 

@@ -5,8 +5,9 @@
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
 *   [3 Users](#Users)
-*   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Defining multiple values for options](#Defining_multiple_values_for_options)
+*   [4 Subscribers](#Subscribers)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Defining multiple values for options](#Defining_multiple_values_for_options)
 
 ## Installation
 
@@ -18,11 +19,9 @@ Openresolv provides [resolvconf(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/r
 
 Running `resolvconf -u` will generate `/etc/resolv.conf`.
 
-Openresolv can additionally be configured to pass DNS server addresses to [unbound](/index.php/Unbound "Unbound"), [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), [BIND](/index.php/BIND "BIND") and [pdnsd](/index.php/Pdnsd "Pdnsd") resolvers. See the [official documentation](https://roy.marples.name/projects/openresolv/config) for instructions.
-
 ## Users
 
-Stand-alone DHCP clients:
+Stand-alone [DHCP](/index.php/DHCP "DHCP") clients:
 
 *   [dhcpcd](/index.php/Dhcpcd "Dhcpcd") has a hook which uses *resolvconf* if it is installed.
 
@@ -36,6 +35,17 @@ Stand-alone DHCP clients:
 *   [OpenVPN#DNS](/index.php/OpenVPN#DNS "OpenVPN")
 *   [strongSwan](/index.php/StrongSwan "StrongSwan")
 *   [WireGuard](/index.php/WireGuard "WireGuard")
+
+## Subscribers
+
+Openresolv can be configured to pass name servers and search domains to DNS resolvers. The supported resolvers are:
+
+*   [unbound](/index.php/Unbound "Unbound")
+*   [dnsmasq#openresolv](/index.php/Dnsmasq#openresolv "Dnsmasq")
+*   [BIND](/index.php/BIND "BIND")
+*   [pdnsd](/index.php/Pdnsd "Pdnsd")
+
+See the [official documentation](https://roy.marples.name/projects/openresolv/config) for instructions.
 
 ## Tips and tricks
 

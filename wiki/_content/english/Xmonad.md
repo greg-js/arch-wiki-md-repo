@@ -33,7 +33,7 @@ Layouts are applied dynamically, and different layouts may be used on each works
     *   [5.11 Example configurations](#Example_configurations)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 GNOME 3 and xmonad](#GNOME_3_and_xmonad)
-        *   [6.1.1 Compositing in GNOME and Xmonad](#Compositing_in_GNOME_and_Xmonad)
+        *   [6.1.1 Compositing in GNOME and xmonad](#Compositing_in_GNOME_and_xmonad)
     *   [6.2 Xfce 4 and xmonad](#Xfce_4_and_xmonad)
     *   [6.3 Missing xmonad-i386-linux or xmonad-x86_64-linux](#Missing_xmonad-i386-linux_or_xmonad-x86_64-linux)
     *   [6.4 Problems with Java applications](#Problems_with_Java_applications)
@@ -62,7 +62,7 @@ Run `xmonad` with [xinit](/index.php/Xinit "Xinit").
 
 Alternatively, select *Xmonad* from the session menu in a [display manager](/index.php/Display_manager "Display manager") of choice.
 
-Make sure you have the [Xterm](/index.php/Xterm "Xterm") package installed or have changed the terminal emulator in the configuration. Otherwise you will not be able to do anything in Xmonad.
+Make sure you have the [Xterm](/index.php/Xterm "Xterm") package installed or have changed the terminal emulator in the configuration. Otherwise you will not be able to do anything in xmonad.
 
 **Note:** By default, xmonad does not set an X cursor, therefore the "cross" cursor is usually displayed. To set the expected left-pointer, see [Cursor themes#Change X shaped default cursor](/index.php/Cursor_themes#Change_X_shaped_default_cursor "Cursor themes").
 
@@ -175,7 +175,7 @@ To end the current xmonad session, press `Mod+Shift+Q`. By default, `Mod` is the
 
 ### X-Selection-Paste
 
-The keyboard-centered operation in Xmonad can be further supported with a keyboard shortcut for [X-Selection-Paste](/index.php/Keyboard_shortcuts#Key_binding_for_X-selection-paste "Keyboard shortcuts").
+The keyboard-centered operation in xmonad can be further supported with a keyboard shortcut for [X-Selection-Paste](/index.php/Keyboard_shortcuts#Key_binding_for_X-selection-paste "Keyboard shortcuts").
 
 Also, there exists a function "pasteSelection" in XMonad.Util.Paste that can be bound to a key using a line like:
 
@@ -195,7 +195,7 @@ Default keyboard shortcuts are listed in the man page of xmonad.
 
 ### Targeting unbound keys:
 
-If you use Xmonad as a stand alone window manager, you can edit the xmonad.hs to add unbound keyboard keys. You just need to find the Xf86 name of the key (such as XF86PowerDown) and look it up in `/usr/include/X11/XF86keysym.h`. It will give you a keycode (like 0x1008FF2A) which you can use to add a line like the following in the keybindings section of your `xmonad.hs`:
+If you use xmonad as a stand alone window manager, you can edit the xmonad.hs to add unbound keyboard keys. You just need to find the Xf86 name of the key (such as XF86PowerDown) and look it up in `/usr/include/X11/XF86keysym.h`. It will give you a keycode (like 0x1008FF2A) which you can use to add a line like the following in the keybindings section of your `xmonad.hs`:
 
 ```
 ((0,               0x1008FF2A), spawn "sudo pm-suspend")
@@ -498,11 +498,11 @@ import XMonad.Config.Gnome
 main = xmonad gnomeConfig
 ```
 
-Xmonad should now appear in the list of GDM sessions and also play nicely with gnome-session itself.
+xmonad should now appear in the list of GDM sessions and also play nicely with gnome-session itself.
 
-#### Compositing in GNOME and Xmonad
+#### Compositing in GNOME and xmonad
 
-Some applications look better (e.g. GNOME Do) when composition is enabled. This, however, is not the case in the default Xmonad window manager. To enable it add an additional .desktop file `/usr/share/xsessions/xmonad-gnome-session-composite.desktop`:
+Some applications look better (e.g. GNOME Do) when composition is enabled. This, however, is not the case in the default xmonad window manager. To enable it add an additional .desktop file `/usr/share/xsessions/xmonad-gnome-session-composite.desktop`:
 
 ```
 [Desktop Entry]
@@ -541,7 +541,7 @@ Also add an entry to *Settings > Session and Startup > Application Autostart* th
 
 ### Missing xmonad-i386-linux or xmonad-x86_64-linux
 
-Xmonad should automatically create the `xmonad-i386-linux` file (in `~/.xmonad/`). If this it not the case, grab a configuration file from the [xmonad wiki](http://wiki.haskell.org/Xmonad/Config_archive) or create your [own](http://wiki.haskell.org/Xmonad/Config_archive/John_Goerzen's_Configuration). Put the `.hs` and all others files in `~/.xmonad/` and run this command from the folder:
+xmonad should automatically create the `xmonad-i386-linux` file (in `~/.xmonad/`). If this it not the case, grab a configuration file from the [xmonad wiki](http://wiki.haskell.org/Xmonad/Config_archive) or create your [own](http://wiki.haskell.org/Xmonad/Config_archive/John_Goerzen's_Configuration). Put the `.hs` and all others files in `~/.xmonad/` and run this command from the folder:
 
 ```
 xmonad --recompile
@@ -623,7 +623,7 @@ Another solution is to float the window of the game using the manage hook. For e
 
 ```
 
-This can also be worked around by making XMonad pay attention to EWMH hints and including its fullscreen hook [[2]](http://xmonad.org/xmonad-docs/xmonad-contrib/XMonad-Hooks-EwmhDesktops.html):
+This can also be worked around by making xmonad pay attention to EWMH hints and including its fullscreen hook [[2]](http://xmonad.org/xmonad-docs/xmonad-contrib/XMonad-Hooks-EwmhDesktops.html):
 
 ```
   main = xmonad $ ewmh defaultConfig{ handleEventHook =

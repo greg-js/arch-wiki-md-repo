@@ -1079,5 +1079,6 @@ You can use the following website to get your device's coordinates along with a 
 45.4926259,-73.5809213 "Alex Vanparse" # Kermanshah, Iran
 39.7456528,-8.8072173 "FFY00" # Leiria, Portugal
 52.5050191, 13.4328069 "dvzrv" # Berlin, Germany
+54.763989, 25.404788 "riddle00" # Vilnius, Lithuania
 
 ```

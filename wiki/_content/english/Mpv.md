@@ -177,8 +177,8 @@ Alt+BS set video-zoom 0; set video-pan-x 0; set video-pan-y 0
 
 In addition there are a few more configuration files one can create:
 
-*   `~/.config/mpv/lua-settings/osc.conf` manages the [On Screen Controller](https://mpv.io/manual/master/#on-screen-controller)
-*   If you are using any Lua scripts then you can create a corresponding conf file for each one here: `~/.config/mpv/lua-settings/*scriptname*.conf`
+*   `~/.config/mpv/script-opts/osc.conf` manages the [On Screen Controller](https://mpv.io/manual/master/#on-screen-controller)
+*   If you are using any Lua scripts then you can create a corresponding conf file for each one here: `~/.config/mpv/script-opts/*scriptname*.conf`
 *   [lots more](https://mpv.io/manual/master/#files)
 
 ## Scripts

@@ -19,8 +19,8 @@
         *   [3.2.2 TCP rfc1337](#TCP_rfc1337)
         *   [3.2.3 Reverse path filtering](#Reverse_path_filtering)
         *   [3.2.4 Log martian packets](#Log_martian_packets)
-        *   [3.2.5 Ignore echo broadcast requests](#Ignore_echo_broadcast_requests)
-        *   [3.2.6 ICMP routing and redirecting](#ICMP_routing_and_redirecting)
+        *   [3.2.5 Disable ICMP redirecting](#Disable_ICMP_redirecting)
+        *   [3.2.6 Enable Ignoring to ICMP Request](#Enable_Ignoring_to_ICMP_Request)
 *   [4 Virtual memory](#Virtual_memory)
 *   [5 MDADM](#MDADM)
 *   [6 Troubleshooting](#Troubleshooting)
@@ -83,64 +83,64 @@ See [Security#Kernel hardening](/index.php/Security#Kernel_hardening "Security")
 
 The received frames will be stored in this queue after taking them from the ring buffer on the network card.
 
-Increasing this value for high speed cards may help prevent losing packets.
+Increasing this value for high speed cards may help prevent losing packets:
 
 ```
-net.core.netdev_max_backlog = 65536
+net.core.netdev_max_backlog = 100000
+net.core.netdev_budget = 50000
+net.core.netdev_budget_usecs = 5000
 
 ```
 
 **Note:** In real time application like SIP routers, this option requires a high speed CPU otherwise the data in the queue will be out of date.
 
-Increase the maximum ancillary buffer size allowed per socket.
-
-The ancillary buffer is a sequence that contains the size and protocol of incoming packets.
-
-```
-net.core.optmem_max = 65536
-
-```
-
 #### Increase the maximum connections
 
-The upper limit on how many connections the kernel will accept.
+The upper limit on how many connections the kernel will accept (default 128):
 
 ```
-net.core.somaxconn = 16384
+net.core.somaxconn = 1024
 
 ```
 
-**Note:** Increasing this value will only improve performance in high load servers with high/bursty traffic
+**Warning:** Increasing this value may only increase performance on high-loaded servers and may cause as slow processing rate (e.g. a single threaded blocking server) or insufficient number of worker threads/processes [[1]](https://serverfault.com/questions/518862/will-increasing-net-core-somaxconn-make-a-difference/519152).
 
 #### Increase the memory dedicated to the network interfaces
 
-*   The default and maximum amount for the receive/send socket memory
-*   By default the Linux network stack is not configured for high speed large file transfer across WAN links.
-*   This is done to save memory resources.
-*   You can easily tune Linux network stack by increasing network buffers size for high-speed networks that connect server systems to handle more network packets.
+The default the Linux network stack is not configured for high speed large file transfer across WAN links (i.e. handle more network packets) and setting the correct values may save memory resources:
 
 ```
 net.core.rmem_default = 1048576
-net.core.wmem_default = 1048576
 net.core.rmem_max = 16777216
+net.core.wmem_default = 1048576
 net.core.wmem_max = 16777216
-net.ipv4.tcp_rmem = 4096 87380 16777216
+net.core.optmem_max = 65536
+net.ipv4.tcp_rmem = 4096 1048576 2097152
 net.ipv4.tcp_wmem = 4096 65536 16777216
-net.ipv4.udp_rmem_min = 16384
-net.ipv4.udp_wmem_min = 16384
 
 ```
 
+It is also possible increase the default `4096` UDP limits:
+
+```
+net.ipv4.udp_rmem_min = 8192
+net.ipv4.udp_wmem_min = 8192
+
+```
+
+See the following sources for more information and recommend values:
+
+*   [http://www.nateware.com/linux-network-tuning-for-2013.html](http://www.nateware.com/linux-network-tuning-for-2013.html)
+*   [https://blog.cloudflare.com/the-story-of-one-latency-spike/](https://blog.cloudflare.com/the-story-of-one-latency-spike/)
+
 #### Enable TCP Fast Open
 
-TCP Fast Open is an extension to the transmission control protocol (TCP) that helps reduce network latency by enabling data to be exchanged during the sender’s initial TCP SYN.
+TCP Fast Open is an extension to the transmission control protocol (TCP) that helps reduce network latency by enabling data to be exchanged during the sender’s initial TCP SYN [[2]](https://www.keycdn.com/support/tcp-fast-open/). Using the value `3` instead of the default `1` allows TCP Fast Open for both incoming and outgoing connections:
 
 ```
 net.ipv4.tcp_fastopen = 3
 
 ```
-
-**Note:** If both of your server and client are deployed on Linux 3.7.1 or higher, you can turn on fast_open for lower latency
 
 #### Tweak the pending connection handling
 
@@ -151,7 +151,7 @@ In the event of a synflood DOS attack, this queue can fill up pretty quickly, at
 If the server suffers from overloads at peak times, you may want to increase this value a little bit:
 
 ```
-net.ipv4.tcp_max_syn_backlog = 65536
+net.ipv4.tcp_max_syn_backlog = 30000
 
 ```
 
@@ -162,16 +162,7 @@ After reaching this number the system will start destroying the socket that are 
 Increase this to prevent simple DOS attacks:
 
 ```
-net.ipv4.tcp_max_tw_buckets = 65536
-
-```
-
-`tcp_slow_start_after_idle` sets whether TCP should start at the default window size only for new connections or also for existing connections that have been idle for too long.
-
-This setting kills persistent single connection performance and could be turned off:
-
-```
-net.ipv4.tcp_slow_start_after_idle = 0
+net.ipv4.tcp_max_tw_buckets = 2000000
 
 ```
 
@@ -184,17 +175,19 @@ net.ipv4.tcp_tw_reuse = 1
 
 ```
 
-Fast-fail FIN connections which are useless:
+Specify how many seconds to wait for a final FIN packet before the socket is forcibly closed. This is strictly a violation of the TCP specification, but required to prevent denial-of-service attacks. In Linux 2.2, the default value was 180 [[3]](https://access.redhat.com/solutions/41776):
 
 ```
-net.ipv4.tcp_fin_timeout = 15
+net.ipv4.tcp_fin_timeout = 10
 
 ```
 
-The TCP window scale option is an option to increase the receive window size allowed in Transmission Control Protocol above its former maximum value of 65,535 bytes:
+`tcp_slow_start_after_idle` sets whether TCP should start at the default window size only for new connections or also for existing connections that have been idle for too long.
+
+This setting kills persistent single connection performance and could be turned off:
 
 ```
-net.ipv4.tcp_window_scaling = 1
+net.ipv4.tcp_slow_start_after_idle = 0
 
 ```
 
@@ -217,16 +210,18 @@ net.ipv4.tcp_keepalive_probes = 6
 
 The longer the MTU the better for performance, but the worse for reliability.
 
-This is because a lost packet means more data to be retransmitted and because many routers on the Internet can't deliver very long packets.
+This is because a lost packet means more data to be retransmitted and because many routers on the Internet can't deliver very long packets:
 
 ```
 net.ipv4.tcp_mtu_probing = 1
 
 ```
 
+See [https://blog.cloudflare.com/path-mtu-discovery-in-practice/](https://blog.cloudflare.com/path-mtu-discovery-in-practice/) for more information.
+
 #### TCP Timestamps
 
-TCP timestamps protect against wrapping sequence numbers (at gigabit speeds) and round trip time calculation implemented in TCP.
+**Warning:** TCP timestamps protect against wrapping sequence numbers (at gigabit speeds) and round trip time calculation implemented in TCP. It is not recommended to turn off TCP timestamps as it may cause a security risk [[4]](https://access.redhat.com/sites/default/files/attachments/20150325_network_performance_tuning.pdf).
 
 Disabling timestamp generation will reduce spikes and may give a performance boost on gigabit networks:
 
@@ -277,50 +272,66 @@ net.ipv4.conf.all.log_martians = 1
 
 ```
 
-#### Ignore echo broadcast requests
+#### Disable ICMP redirecting
 
-Prevent being part of smurf attacks:
-
-```
-net.ipv4.icmp_echo_ignore_broadcasts = 1
+To disable ICMP redirect acceptance:
 
 ```
-
-#### ICMP routing and redirecting
-
-```
-net.ipv4.icmp_ignore_bogus_error_responses = 1
-#net.ipv4.conf.default.secure_redirects = 1 (default)
-#net.ipv4.conf.all.secure_redirects = 1 (default)
-net.ipv4.conf.default.send_redirects = 0
-net.ipv4.conf.all.send_redirects = 0
-net.ipv4.conf.default.accept_redirects = 0
 net.ipv4.conf.all.accept_redirects = 0
-net.ipv6.conf.default.accept_redirects = 0
+net.ipv4.conf.default.accept_redirects = 0
+net.ipv4.conf.all.secure_redirects = 0
+net.ipv4.conf.default.secure_redirects = 0
 net.ipv6.conf.all.accept_redirects = 0
+net.ipv6.conf.default.accept_redirects = 0
 
 ```
+
+To disable ICMP redirect sending when on a non router:
+
+```
+net.ipv4.conf.all.send_redirects = 0
+net.ipv4.conf.default.send_redirects = 0
+
+```
+
+#### Enable Ignoring to ICMP Request
+
+To disable ICMP echo 'ping' requests:
+
+```
+net.ipv4.icmp_echo_ignore_all = 1
+
+```
+
+**Note:** Beware this may cause issues with monitoring tools and/or applications relying on ICMP echo responses.
 
 ## Virtual memory
 
 There are several key parameters to tune the operation of the virtual memory (VM) subsystem of the Linux kernel and the write out of dirty data to disk. See the official [Linux kernel documentation](https://www.kernel.org/doc/Documentation/sysctl/vm.txt) for more information. For example:
 
-*   `vm.dirty_ratio = 3`
+*   `vm.dirty_ratio = 10`
 
 	Contains, as a percentage of total available memory that contains free pages and reclaimable pages, the number of pages at which a process which is generating disk writes will itself start writing out dirty data.
 
-*   `vm.dirty_background_ratio = 2`
+*   `vm.dirty_background_ratio = 5`
 
 	Contains, as a percentage of total available memory that contains free pages and reclaimable pages, the number of pages at which the background kernel flusher threads will start writing out dirty data.
 
 As noted in the comments for the parameters, one needs to consider the total amount of RAM when setting these values. For example, simplifying by taking the installed system RAM instead of available memory:
 
-*   Consensus is that setting `vm.dirty_ratio` to 10% of RAM is a sane value if RAM is say 1 GB (so 10% is 100 MB). But if the machine has much more RAM, say 16 GB (10% is 1.6 GB), the percentage may be out of proportion as it becomes several seconds of writeback on spinning disks. A more sane value in this case is 3 (3% of 16 GB is approximately 491 MB).
-*   Similarly, setting `vm.dirty_background_ratio` to 5 may be just fine for small memory values, but again, consider and adjust accordingly for the amount of RAM on a particular system.
+**Warning:**
 
-Another parameter is:
+*   Higher ratio values may increase performance, it also increases the risk of data loss.
+*   Setting this value to `0` may cause higher latency on disks and spikes.
 
-*   `vm.vfs_cache_pressure = 60`
+See [https://lonesysadmin.net/2013/12/22/better-linux-disk-caching-performance-vm-dirty_ratio/](https://lonesysadmin.net/2013/12/22/better-linux-disk-caching-performance-vm-dirty_ratio/) for more information.
+
+*   Consensus is that setting `vm.dirty_ratio` to 10% of RAM is a sane value if RAM is say 1 GB (so 10% is 100 MB). But if the machine has much more RAM, say 16 GB (10% is 1.6 GB), the percentage may be out of proportion as it becomes several seconds of writeback on spinning disks. A more sane value in this case may be `3` (3% of 16 GB is approximately 491 MB).
+*   Similarly, setting `vm.dirty_background_ratio` to `5` may be just fine for small memory values, but again, consider and adjust accordingly for the amount of RAM on a particular system.
+
+Decreasing the VFS cache parameter value may improve system responsiveness:
+
+*   `vm.vfs_cache_pressure = 50`
 
 	The value controls the tendency of the kernel to reclaim the memory which is used for caching of directory and inode objects (VFS cache). Lowering it from the default value of 100 makes the kernel less inclined to reclaim VFS cache (do not set it to 0, this may produce out-of-memory conditions).
 
@@ -348,6 +359,8 @@ vm.dirty_bytes = 4194304
 
 ```
 
+**Note:** The `dirty_background_bytes` and `dirty_bytes` parameters are counterparts of `dirty_background_ratio` and `dirty_ratio` (as seen in [#Virtual memory](#Virtual_memory)). Only one of the parameters may be specified at a time.
+
 Try to change `kernel.io_delay_type` (x86 only):
 
 *   0 - IO_DELAY_TYPE_0X80
@@ -362,3 +375,5 @@ Try to change `kernel.io_delay_type` (x86 only):
 *   Kernel Documentation: [IP Sysctl](https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt)
 *   [Kernel network parameters for sysctl](http://tldp.org/HOWTO/Adv-Routing-HOWTO/lartc.kernel.html)
 *   [sysctl-explorer.net – an initiative to facilitate the access of Linux' sysctl reference documentation](https://sysctl-explorer.net)
+*   [Disable Source Routing - Red Hat Customer Portal](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/security_guide/sect-security_guide-server_security-disable-source-routing)
+*   [SUSE handbook about Security Features in the Kernel](https://www.suse.com/documentation/sles11/book_hardening/data/sec_sec_prot_general_kernel.html)

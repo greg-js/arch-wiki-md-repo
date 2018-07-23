@@ -17,7 +17,8 @@ Related articles
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 KDE file dialogs for GTK+ applications](#KDE_file_dialogs_for_GTK.2B_applications)
     *   [4.2 Using a GTK+ icon theme in Qt apps](#Using_a_GTK.2B_icon_theme_in_Qt_apps)
-    *   [4.3 Improve subpixel rendering of GTK apps under KDE Plasma](#Improve_subpixel_rendering_of_GTK_apps_under_KDE_Plasma)
+    *   [4.3 Add Title bar and frame to GTK3 applications under KDE Plasma](#Add_Title_bar_and_frame_to_GTK3_applications_under_KDE_Plasma)
+    *   [4.4 Improve subpixel rendering of GTK apps under KDE Plasma](#Improve_subpixel_rendering_of_GTK_apps_under_KDE_Plasma)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Qt applications do not use QGtkStyle](#Qt_applications_do_not_use_QGtkStyle)
     *   [5.2 Themes not working in GTK+ apps](#Themes_not_working_in_GTK.2B_apps)
@@ -147,6 +148,17 @@ $ echo 'export DESKTOP_SESSION=gnome' >> /etc/profile
 Set `export DESKTOP_SESSION=gnome` somewhere in your `~/.xinitrc` or, if you are using a [Display manager](/index.php/Display_manager "Display manager") in [Xprofile](/index.php/Xprofile "Xprofile").
 
 **Note:** If the icon theme was not applied, you might want to check if the name that you entered of your preferred theme, was in the correct format. For example, if you want to apply the currently active icon theme to your QT applications, you can find the correct format of it's name with the command: `$ cat ~/.gtkrc-2.0 | grep icon-theme | cut -d= -f2` 
+
+### Add Title bar and frame to GTK3 applications under KDE Plasma
+
+To have Gnome/GTK applications display with a KDE/Plasma title bar and frame, install [gtk3-nocsd-git](https://aur.archlinux.org/packages/gtk3-nocsd-git/) and restart your window manager to load the updated library path.
+
+You can also run Gtk application with the wrapper:
+
+```
+$ gtk3-nocsd gedit
+
+```
 
 ### Improve subpixel rendering of GTK apps under KDE Plasma
 

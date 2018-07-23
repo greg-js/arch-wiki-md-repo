@@ -491,4 +491,8 @@ Same with optirun that uses primus as a bridge.
 
 `vblank_mode=0 optirun -b primus steam`
 
+If that did not work try:
+
+`LD_PRELOAD="libpthread.so.0 libGL.so.1" __GL_THREADED_OPTIMIZATIONS=1 optirun steam`
+
 For more details see [Bumblebee#Primusrun mouse delay (disable VSYNC)](/index.php/Bumblebee#Primusrun_mouse_delay_.28disable_VSYNC.29 "Bumblebee").

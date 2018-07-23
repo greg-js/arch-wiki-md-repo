@@ -13,9 +13,6 @@ This article is about installing Arch Linux in a [VMware](/index.php/VMware "VMw
     *   [3.1 Utilities](#Utilities)
     *   [3.2 Modules](#Modules)
     *   [3.3 Installation](#Installation)
-        *   [3.3.1 Multi-User Target](#Multi-User_Target)
-        *   [3.3.2 Graphical Target](#Graphical_Target)
-    *   [3.4 Host/Guest interaction](#Host.2FGuest_interaction)
 *   [4 Official VMware Tools](#Official_VMware_Tools)
     *   [4.1 Modules](#Modules_2)
     *   [4.2 Installation (from guest)](#Installation_.28from_guest.29)
@@ -113,34 +110,9 @@ The [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) pack
 
 ### Installation
 
-[Install](/index.php/Install "Install") the [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools). If you want to use shared folders you also need to install the [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) package.
+[Install](/index.php/Install "Install") the [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools). If you want to use shared folders you also need to install the [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) package. [Start](/index.php/Start "Start") and/or [enable](/index.php/Enable "Enable") `vmtoolsd.service` and `vmware-vmblock-fuse.service`.
 
-Open-VM-Tools reads version information from `/etc/arch-release`, which is empty:
-
-```
-# cat /proc/version > /etc/arch-release
-
-```
-
-#### Multi-User Target
-
-If you're booting into the `multi-user.target` then follow the steps mentioned here. If you're booting into the graphical.target then please skip this section and read the instructions for the `graphical.target`.
-
-[Start](/index.php/Start "Start") `vmtoolsd.service` and enable it on boot, if desired.
-
-#### Graphical Target
-
-If you are booting into a graphical environment then follow these steps to enable the VMware tools.
-
-Enable the `vmware-vmblock-fuse.service` Systemd service. NOTE: as of 2018/01/01 it appears that vmtoolsd (as described in above multi-user section) must also be enabled in order for this to work properly.
-
-If you have installed [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) then you should enable the `dkms.service` Systemd service which automatically recompiles the kernel modules after a kernel update.
-
-Try to install [gtkmm3](https://www.archlinux.org/packages/?name=gtkmm3) manually if it does not work properly. To enable copy&paste between host and guest [gtkmm3](https://www.archlinux.org/packages/?name=gtkmm3) is required.
-
-### Host/Guest interaction
-
-For automatic resolution update on window resize and in order to enable copy&paste between host and guest [start](https://bbs.archlinux.org/viewtopic.php?pid=1081629#p1081629) `/usr/bin/vmware-user` from within X. This may throw warnings like "vmware-user: could not open /proc/fs/vmblock/dev" and warnings about GTK which can be ignored.
+Try to install [gtkmm3](https://www.archlinux.org/packages/?name=gtkmm3) manually if it does not work properly. To enable copy and paste between host and guest [gtkmm3](https://www.archlinux.org/packages/?name=gtkmm3) is required.
 
 ## Official VMware Tools
 

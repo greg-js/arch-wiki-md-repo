@@ -147,10 +147,12 @@ While Ansible expects to ssh as root, AUR helpers do not allow executing operati
 ```
 - user: name=*aur_builder*
 
-- copy:
+- lineinfile:
      path: /etc/sudoers.d/*aur_builder-allow-to-sudo-pacman*
-     content: *aur_builder* ALL=(ALL) NOPASSWD: /usr/bin/pacman
+     state: present
+     line: "*aur_builder* ALL=(ALL) NOPASSWD: /usr/bin/pacman"
      validate: /usr/sbin/visudo -cf %s
+     create: yes
 ```
 
 Then, AUR helpers or [makepkg](/index.php/Makepkg "Makepkg") can be used associated with the Ansible parameters `become: yes` and `become_user: aur_builder`

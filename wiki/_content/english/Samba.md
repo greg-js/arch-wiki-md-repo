@@ -18,13 +18,14 @@ Related articles
             *   [1.2.1.3 Changing user password](#Changing_user_password)
         *   [1.2.2 Creating a share](#Creating_a_share)
         *   [1.2.3 Starting services](#Starting_services)
-    *   [1.3 Tips and tricks](#Tips_and_tricks)
+    *   [1.3 Advanced Configuration](#Advanced_Configuration)
         *   [1.3.1 Enable usershares](#Enable_usershares)
         *   [1.3.2 Set and forcing permissions](#Set_and_forcing_permissions)
         *   [1.3.3 Restrict protocols for better security](#Restrict_protocols_for_better_security)
         *   [1.3.4 Use native SMB transport encryption](#Use_native_SMB_transport_encryption)
-        *   [1.3.5 Disable printer share](#Disable_printer_share)
+        *   [1.3.5 Disable printer sharing](#Disable_printer_sharing)
         *   [1.3.6 Block certain file extensions on Samba share](#Block_certain_file_extensions_on_Samba_share)
+        *   [1.3.7 Improve throughput](#Improve_throughput)
 *   [2 Client](#Client)
     *   [2.1 List public shares](#List_public_shares)
     *   [2.2 NetBIOS/WINS host names](#NetBIOS.2FWINS_host_names)
@@ -41,10 +42,9 @@ Related articles
         *   [2.5.1 GNOME Files, Nemo, Caja, Thunar and PCManFM](#GNOME_Files.2C_Nemo.2C_Caja.2C_Thunar_and_PCManFM)
         *   [2.5.2 KDE](#KDE)
         *   [2.5.3 Other graphical environments](#Other_graphical_environments)
-*   [3 Tips and tricks](#Tips_and_tricks_2)
-    *   [3.1 Improve performance](#Improve_performance)
-    *   [3.2 Discovering network shares](#Discovering_network_shares)
-    *   [3.3 Remote control of Windows computer](#Remote_control_of_Windows_computer)
+*   [3 Tips and tricks](#Tips_and_tricks)
+    *   [3.1 Discovering network shares](#Discovering_network_shares)
+    *   [3.2 Remote control of Windows computer](#Remote_control_of_Windows_computer)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Failed to start Samba SMB/CIFS server](#Failed_to_start_Samba_SMB.2FCIFS_server)
     *   [4.2 No dialect specified on mount](#No_dialect_specified_on_mount)
@@ -147,7 +147,7 @@ To provide basic file sharing through SMB [start/enable](/index.php/Start/enable
 
 **Note:** In [samba](https://www.archlinux.org/packages/?name=samba) 4.8.0-1, the units were renamed from `smbd.service` and `nmbd.service` to `smb.service` and `nmb.service`.
 
-### Tips and tricks
+### Advanced Configuration
 
 #### Enable usershares
 
@@ -222,7 +222,8 @@ Permissions may be applied to both the server and shares:
   ...
 
 [media]
-  comment = Media share
+  comment = Media share accessible by *greg* and *pcusers*
+  path = */path/to/media*
   valid users = *greg @pcusers*
   force group = *+pcusers*
   public = no
@@ -231,7 +232,22 @@ Permissions may be applied to both the server and shares:
   directory mask = 2775
   force create mode = 0664
   force directory mode = 2775
-  ...
+
+[public]
+  comment = Public share where *archie* has write access
+  path = */path/to/public*
+  public = yes
+  read only = yes
+  write list = *archie*
+  printable = no
+
+[guests]
+  comment = Allow all users to read/write
+  path = */path/to/guests*
+  public = yes
+  only guest = yes
+  writable = yes
+  printable = no
 ```
 
 See [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) for a full overview of possible permission flags and settings.
@@ -283,7 +299,7 @@ See [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) for mor
 
 When [mounting](/index.php/Samba#Manual_mounting "Samba") a share, specify `seal` mount option to force encryption.
 
-#### Disable printer share
+#### Disable printer sharing
 
 By default Samba share printers configured using [CUPS](/index.php/CUPS "CUPS").
 
@@ -314,6 +330,68 @@ Samba offers an option to block files with certain patterns, like file extension
   read only = no
   veto files = /*.exe/*.com/*.dll/*.bat/*.vbs/*.tmp/*.mp3/*.avi/*.mp4/*.wmv/*.wma/
 ```
+
+#### Improve throughput
+
+**Warning:** Beware this may lead to corruption/connection issues and potentially cripple your TCP/IP stack.
+
+The default settings should be sufficient for most users. However setting the 'socket options' correct can improve performance, but getting them wrong can degrade it by just as much. Test the effect before making any large changes.
+
+Read the [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) man page before applying any of the options listed below.
+
+The following settings should be [append](/index.php/Append "Append") to the `[global]` section of `/etc/samba/smb.conf`.
+
+SMB3 multi-channel may improve performance, however it may result in data corruption under some race conditions. Future releases may improve this situation:
+
+```
+server multi channel support = yes
+
+```
+
+Setting a deadtime is useful to stop a server's resources being exhausted by a large number of inactive connections:
+
+```
+deadtime = 30
+
+```
+
+The usage of sendfile may make more efficient use of the system CPU's and cause Samba to be faster:
+
+```
+use sendfile = yes
+
+```
+
+The write cache allows Samba to batch client writes into a more efficient write size for [RAID](/index.php/RAID "RAID") disks (i.e. writes may be tuned to be the RAID stripe size) and can improve performance on systems where the disk subsystem is a bottleneck but there is free memory for userspace programs:
+
+```
+write cache size = 262144
+
+```
+
+Setting min receivefile size allows zero-copy writes directly from network socket buffers into the filesystem buffer cache (if available). It may improve performance but user testing is recommended:
+
+```
+min receivefile size = 16384
+
+```
+
+Reading/writing files asynchronously may improve performance instead of using synchronously writes:
+
+```
+aio read size = 1
+aio write size = 1
+
+```
+
+Increasing the receive/send buffers size and socket optimize flags might be useful to improve throughput. It is recommended to test each flag separately as it may cause issues on some networks:
+
+```
+socket options = IPTOS_LOWDELAY TCP_NODELAY IPTOS_THROUGHPUT SO_RCVBUF=131072 SO_SNDBUF=131072
+
+```
+
+**Note:** Network-interface adjustments may be needed for some options to work, see [Sysctl#Networking](/index.php/Sysctl#Networking "Sysctl").
 
 ## Client
 
@@ -597,26 +675,6 @@ There are a number of useful programs, but they may need to have packages create
 *   LinNeighborhood, RUmba, xffm-samba plugin for Xffm are not available in the official repositories or the AUR. As they are not officially (or even unofficially supported), they may be obsolete and may not work at all.
 
 ## Tips and tricks
-
-### Improve performance
-
-It is possible to improve performance, however this may lead to **corruption and/or connection issues**.
-
-Read the [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) man page before applying any of the options listed below.
-
-**Note:** Network-interface adjustments may be needed for some options to work, see [Sysctl#Networking](/index.php/Sysctl#Networking "Sysctl").
- `/etc/samba/smb.conf` 
-```
-[global]
-  server multi channel support = yes
-  socket options = SO_RCVBUF=131072 SO_SNDBUF=131072 IPTOS_LOWDELAY TCP_NODELAY IPTOS_THROUGHPUT
-  deadtime = 30
-  use sendfile = Yes
-  write cache size = 262144
-  min receivefile size = 16384
-  aio read size = 16384
-  aio write size = 16384
-```
 
 ### Discovering network shares
 

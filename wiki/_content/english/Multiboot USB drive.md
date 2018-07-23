@@ -24,7 +24,7 @@ A multiboot USB flash drive allows booting multiple ISO files from a single devi
     *   [2.2 Install the memdisk module](#Install_the_memdisk_module)
     *   [2.3 Configuration](#Configuration)
     *   [2.4 Caveat for 32-bit systems](#Caveat_for_32-bit_systems)
-*   [3 Using MultiBootUSB](#Using_MultiBootUSB)
+*   [3 Automated tools](#Automated_tools)
 *   [4 See also](#See_also)
 
 ## Using GRUB and loopback devices
@@ -280,11 +280,15 @@ modprobe: ERROR: could not insert 'phram': Input/output error
 
 ```
 
-## Using MultiBootUSB
+## Automated tools
 
-[MultiBootUSB](http://multibootusb.org/) is a cross platform software written in python which allows you to install multiple live linux on a USB disk non destructively and option to uninstall distros. Try out the world's first true cross platform multi boot live usb creator for free.
+*   **MultiSystem** — A graphical tool that allows to install, manage, and remove multiple ISO images on a USB device.
 
-The package [multibootusb](https://aur.archlinux.org/packages/multibootusb/) can be installed from the AUR. It includes both graphical and command line interfaces.
+	[http://liveusb.info/dotclear/](http://liveusb.info/dotclear/) || [multisystem](https://aur.archlinux.org/packages/multisystem/)
+
+*   **MultiBootUSB** — A cross platform Python software with CLI and GUI interfaces which allows you to install and remove multiple live Linux images on a USB stick.
+
+	[http://multibootusb.org/](http://multibootusb.org/) || [multibootusb](https://aur.archlinux.org/packages/multibootusb/)
 
 ## See also
 

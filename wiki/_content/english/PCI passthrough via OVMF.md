@@ -1166,7 +1166,7 @@ This issue seems to primarily affect users running a Windows 10 guest and usuall
 
 ### Host lockup if guest is left running during sleep
 
-VFIO-enabled virtual machines tend to become unstable if left running through a sleep/wakeup cycle and have been known to cause the host machine to lockup when an attempt is then made to shut them down. In order to avoid this, one can simply prevent the host from going into sleep while the guest is running using the following libvirt hook script and systemd unit.
+VFIO-enabled virtual machines tend to become unstable if left running through a sleep/wakeup cycle and have been known to cause the host machine to lockup when an attempt is then made to shut them down. In order to avoid this, one can simply prevent the host from going into sleep while the guest is running using the following libvirt hook script and systemd unit. The hook file needs executable permissions to work.
 
  `/etc/libvirt/hooks/qemu` 
 ```
