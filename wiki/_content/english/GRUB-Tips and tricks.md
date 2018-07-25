@@ -69,7 +69,7 @@ Optionally backup configuration files of `grub.cfg`:
 
 #### EFI
 
-To have grub write its EFI image to `/boot/efi/EFI/BOOT/BOOTX64.efi`, which the boot firmware will be able to find without any UEFI boot entry, use `--removable` when you run `grub-install`.
+To have grub write its EFI image to `*esp*/EFI/BOOT/BOOTX64.efi`, which the boot firmware will be able to find without any UEFI boot entry, use `--removable` when you run `grub-install`.
 
 ### Install to partition or partitionless disk
 

@@ -9,6 +9,7 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 NetworkManager](#NetworkManager)
 *   [2 Usage](#Usage)
     *   [2.1 iwctl](#iwctl)
 *   [3 WPA Enterprise](#WPA_Enterprise)
@@ -21,6 +22,16 @@ Related articles
 ## Installation
 
 [Install](/index.php/Install "Install") the [iwd](https://www.archlinux.org/packages/?name=iwd) package.
+
+### NetworkManager
+
+To enable the (experimental) [iwd](https://www.archlinux.org/packages/?name=iwd) backend in [NetworkManager](/index.php/NetworkManager "NetworkManager") modify `/etc/NetworkManager/NetworkManager.conf`
+
+ `/etc/NetworkManager/NetworkManager.conf` 
+```
+[device]
+wifi.backend=iwd
+```
 
 ## Usage
 
@@ -69,7 +80,10 @@ Connect to a WPA2 protected network (will prompt you for the passphrase):
 
 ```
 
-**Note:** `iwd` automatically stores network passphrases (as encrypted `PreSharedKey`) in the `/var/lib/iwd` directory and uses them to auto-connect in the future.
+**Note:**
+
+*   `iwd` automatically stores network passphrases (as encrypted `PreSharedKey`) in the `/var/lib/iwd` directory and uses them to auto-connect in the future.
+*   To connect to a network with spaces in the SSID, the network name should be double quoted when connecting.
 
 Displaying details of a WiFi device (like MAC address, state and connected network):
 

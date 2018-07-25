@@ -14,6 +14,7 @@ Related articles
     *   [2.4 Font declaration methods](#Font_declaration_methods)
     *   [2.5 Font spacing](#Font_spacing)
     *   [2.6 Colors](#Colors)
+    *   [2.7 Printing](#Printing)
 *   [3 Cut and paste](#Cut_and_paste)
 *   [4 Perl extensions](#Perl_extensions)
     *   [4.1 Clickable URLs](#Clickable_URLs)
@@ -155,6 +156,17 @@ By default, rxvt-unicode is compiled with color support. In addition to the defa
 It is also possible to specify the color values of foreground, background, cursorColor, cursorColor2, colorBD, colorUL as a number 0-15, as a convenient shorthand to reference the color name of color0-color15\. See [#Xresources](#Xresources) for details.
 
 **Note:** By default `urxvt` uses the same colors as [Xterm](/index.php/Xterm "Xterm"), except one. Add `URxvt.color12: rgb:5c/5c/ff` to Xresources to change this.
+
+### Printing
+
+By default, rxvt-unicode will print out a screen dump, via lpr, when `PrintScreen` is pressed. Using `Ctrl+PrintScreen` or `Shift-PrintScreen` will include the terminal's scroll back in the printout as well. This behavior can be changed, or disabled entirely, based on personal preference and need.
+
+ `~/.Xresources` 
+```
+! Disable printing the terminal contents when pressing PrintScreen.
+URxvt.print-pipe: "cat > /dev/null"
+
+```
 
 ## Cut and paste
 

@@ -31,7 +31,7 @@ Chances are, your system already has [FFmpeg](/index.php/FFmpeg "FFmpeg") instal
 #!/bin/bash
 
 for a in ./*.flac; do
-  ffmpeg -i "$a" -qscale:a 0 "${a[@]/%flac/mp3}"
+  < /dev/null ffmpeg -i "$a" -qscale:a 0 "${a[@]/%flac/mp3}"
 done
 
 ```

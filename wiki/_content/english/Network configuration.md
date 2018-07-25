@@ -338,7 +338,7 @@ To make your machine accessible in your LAN via its hostname you can:
 *   edit the `/etc/hosts` file for every device in your LAN, see [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5)
 *   set up a [DNS server](/index.php/DNS_server "DNS server") to resolve your hostname and make the LAN devices use it (e.g. via [#DHCP](#DHCP))
 *   or the easy way: use a [Zero-configuration networking](https://en.wikipedia.org/wiki/Zero-configuration_networking "wikipedia:Zero-configuration networking") service:
-    *   [Samba](/index.php/Samba "Samba") provides hostname resolution via Microsoft's **NetBIOS**. It only requires installation of [samba](https://www.archlinux.org/packages/?name=samba) and enabling of the `nmbd.service` service. Computers running Windows, macOS, or Linux with `nmbd` running, will be able to find your machine.
+    *   [Samba](/index.php/Samba "Samba") provides hostname resolution via Microsoft's **NetBIOS**. It only requires installation of [samba](https://www.archlinux.org/packages/?name=samba) and enabling of the `nmb.service` service. Computers running Windows, macOS, or Linux with `nmb` running, will be able to find your machine.
     *   [Avahi](/index.php/Avahi "Avahi") provides hostname resolution via **zeroconf**, also known as Avahi or Bonjour. It requires slightly more complex configuration than Samba: see [Avahi#Hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") for details. Computers running macOS, or Linux with an Avahi daemon running, will be able to find your machine. Windows does not have a built-in Avahi client or daemon.
 
 ## Tips and tricks

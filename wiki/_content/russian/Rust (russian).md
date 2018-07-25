@@ -22,6 +22,16 @@
 *   [6 Cargo](#Cargo)
     *   [6.1 Использование](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
 *   [7 Поддержка в IDE](#.D0.9F.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B0_.D0.B2_IDE)
+    *   [7.1 Инструменты](#.D0.98.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B)
+        *   [7.1.1 Racer](#Racer)
+        *   [7.1.2 Clippy](#Clippy)
+    *   [7.2 Редакторы](#.D0.A0.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.BE.D1.80.D1.8B)
+        *   [7.2.1 Atom](#Atom)
+        *   [7.2.2 IntelliJ IDEA](#IntelliJ_IDEA)
+        *   [7.2.3 Visual Studio Code](#Visual_Studio_Code)
+        *   [7.2.4 Vim](#Vim)
+        *   [7.2.5 Emacs](#Emacs)
+        *   [7.2.6 Kate](#Kate)
 *   [8 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ### Rust Core Library
@@ -172,6 +182,57 @@ authors = ["Ваше Имя <you@example.com>"]
 ```
 
 ## Поддержка в IDE
+
+### Инструменты
+
+#### Racer
+
+Движок автозаполнения [Racer](https://github.com/phildawes/racer) является лучшим способом получения поддержки автозаполнения на данный момент, однако для этого требуется также установить копию исходного кода Rust, которую вы можете получить одним из нескольких способов:
+
+*   С помощью rustup: `rustup component add rust-src`
+*   Из AUR: [rust-src](https://aur.archlinux.org/packages/rust-src/) или [rust-nightly-src](https://aur.archlinux.org/packages/rust-nightly-src/), в этом случае вы должны установить переменную окружения `RUST_SRC_PATH`.
+
+После установки исходного кода вы можете использовать `Cargo` для установки racer или получить его из репозиториев ([rust-racer](https://www.archlinux.org/packages/?name=rust-racer)).
+
+```
+$ cargo install racer
+
+```
+
+#### Clippy
+
+[Clippy](https://github.com/Manishearth/rust-clippy) использует поддержку плагинов компилятора в Nightly-сборках Rust, чтобы обеспечить большое количество дополнительных проверок для обнаружения и предупреждения о более широком разнообразии ошибок и неидиоматическом Rust. Поскольку для работы требуется поддержка плагинов компилятора, clippy не будет работать при компиляции с помощью стабильной версии компилятора Rust.
+
+```
+$ cargo +nightly install clippy
+
+```
+
+### Редакторы
+
+#### Atom
+
+[Atom](/index.php/Atom "Atom") поддерживает программирование на Rust, когда установлены оба следующих модуля: [language-rust](https://atom.io/packages/language-rust) и [linter-rust](https://atom.io/packages/linter-rust).
+
+#### IntelliJ IDEA
+
+В [IntelliJ IDEA](https://www.jetbrains.com/idea/) имеется [Rust plugin](https://github.com/intellij-rust/intellij-rust). Этот плагин также работает с CLion. При настройке toolchain используйте rustup для загрузки исходников (`rustup component add rust-src`), а затем выберите `~/.rustup/toolchains/<your toolchain>/bin` в качестве расположения toolchain.
+
+#### Visual Studio Code
+
+В [Visual Studio Code](/index.php/Visual_Studio_Code "Visual Studio Code") поддержка Rust может быть получена через официальное [kalitaalexey.vscode-rust](https://marketplace.visualstudio.com/items?itemName=kalitaalexey.vscode-rust) дополнение.
+
+#### Vim
+
+В [Vim](/index.php/Vim "Vim") поддержка Rust может быть получена через официальный [rust.vim](https://github.com/rust-lang/rust.vim) плагин.
+
+#### Emacs
+
+В [Emacs](/index.php/Emacs "Emacs") поддержка Rust может быть получена через официальный [rust-mode](https://github.com/rust-lang/rust-mode) плагин или [emacs-rust-mode](https://aur.archlinux.org/packages/emacs-rust-mode/) пакет.
+
+#### Kate
+
+В Kate поддержка Rust может быть получена через официальный [kate](https://github.com/rust-lang/kate-config) плагин. Он устанавливается по-умолчанию пакетом [kate](https://www.archlinux.org/packages/?name=kate), требует установки [racer](https://aur.archlinux.org/packages/racer/) и ручной активации.
 
 ## Смотрите также
 

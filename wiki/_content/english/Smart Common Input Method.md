@@ -4,7 +4,7 @@ Its stated goals are to:
 
 *   Act as an unified front-end for current available input method libraries. Currently bindings to [uim](/index.php/Uim "Uim") and [m17n](http://www.m17n.org/m17n-lib-en/) library are available.
 *   Act as a language engine of [IIIMF](https://en.wikipedia.org/wiki/Internet/Intranet_Input_Method_Framework "wikipedia:Internet/Intranet Input Method Framework") input method framework.
-*   Provide as many native [IMEngines](http://www.scim-im.org/projects/imengines) as possible.
+*   Provide as many native [IMEngines](https://web.archive.org/web/20130318035826/http://www.scim-im.org/projects/imengines) as possible.
 *   Support as many input method protocols/interfaces as possible.
 *   Support as many operating systems as possible.
 
@@ -33,7 +33,7 @@ Its stated goals are to:
 
 ### Input method engines
 
-Currently the SCIM project has a wide range of input methods (some may need other libraries), covering more than 30 languages, including (Simplified/Traditional) Chinese, Japanese, Korean and many European languages. These are some of the examples (more can be found [here](http://www.scim-im.org/projects/imengines)):
+Currently the SCIM project has a wide range of input methods (some may need other libraries), covering more than 30 languages, including (Simplified/Traditional) Chinese, Japanese, Korean and many European languages. These are some of the examples (more can be found [here](https://web.archive.org/web/20130318035826/http://www.scim-im.org/projects/imengines)):
 
 *   [scim-chewing](https://www.archlinux.org/packages/?name=scim-chewing) - Chinese
 *   [scim-pinyin](https://www.archlinux.org/packages/?name=scim-pinyin) - Chinese Smart PinYin .
@@ -105,7 +105,7 @@ export QT_IM_MODULE="scim-bridge"
 
 #### Note for KDE3
 
-For KDE3 you should `export QT_IM_MODULE="xim"` instead of *scim* and also install [qtimm](http://www.scim-im.org/projects/scim_qtimm)] for Qt3.
+For KDE3 you should `export QT_IM_MODULE="xim"` instead of *scim* and also install [qtimm](https://web.archive.org/web/20130715195838/http://www.scim-im.org/projects/scim_qtimm) for Qt3.
 
 ### Locale-related files
 

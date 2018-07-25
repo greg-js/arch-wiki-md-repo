@@ -207,8 +207,6 @@ $ lxc profile set default security.syscalls.blacklist "keyctl errno 38"
 
 	stgraber: "The reason is that the networkd systemd unit somehow makes use of the kernel keyring, which doesn't work inside unprivileged containers right now. The line above makes that system call return not-implemented which is enough of a workaround to get things going again."
 
-As of systemd v239, this issue has been [fixed](https://github.com/lxc/lxd/issues/4071#issuecomment-405868612). Updating [systemd](https://www.archlinux.org/packages/?name=systemd) should fix this issue without the workaround above.
-
 ### Resource limits are not applied when viewed from inside a container
 
 The service lxcfs (found in the Community repository) needs to be installed and started :

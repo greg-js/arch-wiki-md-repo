@@ -21,14 +21,15 @@ Features include: vi-style key bindings, bookmarks, selections, tagging, tabs, c
         *   [4.1.1 Archive extraction](#Archive_extraction)
         *   [4.1.2 Compression](#Compression)
     *   [4.2 External drives](#External_drives)
-    *   [4.3 Image mounting](#Image_mounting)
-    *   [4.4 New tab in current folder](#New_tab_in_current_folder)
-    *   [4.5 PDF file preview](#PDF_file_preview)
-    *   [4.6 Shell tips](#Shell_tips)
-        *   [4.6.1 Synchronize path](#Synchronize_path)
-        *   [4.6.2 Start a shell from ranger](#Start_a_shell_from_ranger)
-            *   [4.6.2.1 A simpler solution](#A_simpler_solution)
-        *   [4.6.3 Preventing nested ranger instances](#Preventing_nested_ranger_instances)
+    *   [4.3 Hidden files](#Hidden_files)
+    *   [4.4 Image mounting](#Image_mounting)
+    *   [4.5 New tab in current folder](#New_tab_in_current_folder)
+    *   [4.6 PDF file preview](#PDF_file_preview)
+    *   [4.7 Shell tips](#Shell_tips)
+        *   [4.7.1 Synchronize path](#Synchronize_path)
+        *   [4.7.2 Start a shell from ranger](#Start_a_shell_from_ranger)
+            *   [4.7.2.1 A simpler solution](#A_simpler_solution)
+        *   [4.7.3 Preventing nested ranger instances](#Preventing_nested_ranger_instances)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Artifacts in image preview](#Artifacts_in_image_preview)
 *   [6 See also](#See_also)
@@ -224,6 +225,20 @@ class compress(Command):
 
 External drives can be automatically mounted with [udev](/index.php/Udev "Udev") or [udisks](/index.php/Udisks "Udisks"). Drives mounted under `/media` can be easily accessed by pressing `gm` (go, media).
 
+### Hidden files
+
+You can toggle the visibility of hidden files with the following command: `:set show_hidden!`, or use `:set show_hidden true` to make hidden files visible.
+
+To make this permanent, add the setting to your configuration file:
+
+ `rc.conf` 
+```
+set show_hidden true
+
+```
+
+Alternatively, hidden files can be toggled by pressing `zh`.
+
 ### Image mounting
 
 The following command assumes you are using [CDemu](/index.php/CDemu "CDemu") as your image mounter and some kind of system like [autofs](/index.php/Autofs "Autofs") which mounts the virtual drive to a specified location ('/media/virtualrom' in this case). **Do not forget to change mountpath to reflect your system settings**.
@@ -300,6 +315,12 @@ By default ranger will preview PDF files as text. However, you can preview PDF f
 To enable this feature, uncomment the appropriate lines in `/usr/share/doc/ranger/config/scope.sh`, or add/uncomment these lines in your local file `~/.config/ranger/scope.sh`.
 
 ### Shell tips
+
+ `rc.conf` 
+```
+map S shell shellcd %d
+
+```
 
 #### Synchronize path
 

@@ -261,13 +261,13 @@ By default Samba allows the usage of (possible) insecure and out-of-dated protoc
  `/etc/samba/smb.conf` 
 ```
 [global]
-  server min protocol = SMB2
+  server min protocol = NT1
   ; server max protocol = SMB3
 ```
 
 **Note:** See `server max protocol` in [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) for an overview of supported protocols.
 
-**Tip:** Set `server min protocol = SMB3` when clients should only connect using the latest SMB3 protocol, e.g. on clients running Windows 8 and later.
+**Tip:** Use `server min protocol = SMB3` when clients should only connect using the latest SMB3 protocol, e.g. on clients running Windows 8 and later.
 
 [Clients](/index.php/Samba#Manual_mounting "Samba") using `mount.cifs` should specify the correct `vers=*`, e.g.:
 
@@ -282,22 +282,22 @@ See [mount.cifs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.cifs.8) for
 
 Native SMB transport encryption is available in SMB version 3.0 or newer. It is only offered by Samba if `server max protocol` is set to `SMB3` or newer. Clients supporting this type of encryption include Windows 8 and newer, Windows server 2012 and newer, and smbclient of Samba 4.1 and newer.
 
-To use native SMB transport encryption by default, set the `smb encrypt` parameter globally and/or share. Possible values are *off* (or disabled), *enabled* (or *auto* or *if_required*), *desired*, and *required* (or *mandatory*). A special value is default which is the implicit default setting of *enabled*:
+To use native SMB transport encryption by default, set the `smb encrypt` parameter globally and/or by share. Possible values are *off* (or disabled), *enabled* (or *auto* or *if_required*), *desired*, and *required* (or *mandatory*). A special value is *default* which is the implicit default setting of *enabled*:
 
  `/etc/samba/smb.conf` 
 ```
 [global]
-  ...
   smb encrypt = required
+  ...
 
 [media]
-  ...
   smb encrypt = desired
+  ...
 ```
 
 See [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) for more information.
 
-When [mounting](/index.php/Samba#Manual_mounting "Samba") a share, specify `seal` mount option to force encryption.
+When [mounting](/index.php/Samba#Manual_mounting "Samba") a share, specify the `seal` mount option to force usage of encryption.
 
 #### Disable printer sharing
 
@@ -522,9 +522,7 @@ This is an simple example of a `cifs` [mount entry](/index.php/Fstab "Fstab") th
  `/etc/fstab`  `//*SERVER*/*sharename* /mnt/*mountpoint* cifs username=*myuser*,password=*mypass* 0 0` 
 **Note:** Space in sharename should be replaced by `\040` (ASCII code for space in octal). For example, `//*SERVER*/share name` on the command line should be `//*SERVER*/share\040name` in `/etc/fstab`.
 
-To speed up the service on boot, add the `x-systemd.automount` option to the entry:
-
- `/etc/fstab`  `//*SERVER*/*SHARENAME* /mnt/*mountpoint* cifs credentials=*/path/to/smbcredentials/share*,x-systemd.automount 0 0` 
+**Tip:** Use `x-systemd.automount` if you want them to be mounted only upon access. See [Fstab#Remote filesystem](/index.php/Fstab#Remote_filesystem "Fstab") for details.
 
 #### As systemd unit
 

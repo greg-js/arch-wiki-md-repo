@@ -266,11 +266,17 @@ net.ipv4.conf.all.rp_filter = 1
 
 #### Log martian packets
 
+A Martian packet is an IP packet which specifies a source or destination address that is reserved for special-use by Internet Assigned Numbers Authority (IANA). See [Reserved IP addresses](https://en.wikipedia.org/wiki/Reserved_IP_addresses "wikipedia:Reserved IP addresses") for more details.
+
+Often martian and unroutable packet may be used for a dangerous purpose. Logging these packets for further inspection may be useful [[6]](https://www.cyberciti.biz/faq/linux-log-suspicious-martian-packets-un-routable-source-addresses/):
+
 ```
 net.ipv4.conf.default.log_martians = 1
 net.ipv4.conf.all.log_martians = 1
 
 ```
+
+**Note:** This can fill up your logs with a lot of information, it is advisable to only enable this for testing.
 
 #### Disable ICMP redirecting
 

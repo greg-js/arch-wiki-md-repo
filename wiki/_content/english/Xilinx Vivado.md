@@ -14,6 +14,7 @@ ArchLinux is not officially supported by Vivado, but as happens with [Xilinx ISE
     *   [4.1 Synthesis segfaults](#Synthesis_segfaults)
     *   [4.2 xsct segfault](#xsct_segfault)
     *   [4.3 Vivado HLS testbench error with GCC](#Vivado_HLS_testbench_error_with_GCC)
+    *   [4.4 Vivado Crashes with Wayland](#Vivado_Crashes_with_Wayland)
 
 ## Prerequisites
 
@@ -180,3 +181,25 @@ For vivado 2017 and newer, run:
  # /opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc/libexec/gcc/x86_64-unknown-linux-gnu/4.6.3/install-tools/mkheaders /opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc
 
 ```
+
+### Vivado Crashes with Wayland
+
+If Vivado crashes and the error file contains something similar to this:
+
+ `hs_err_pid*.log` 
+```
+#
+# An unexpected error has occurred (11)
+#
+Stack:
+/opt/Xilinx/Vivado/2018.2/tps/lnx64/jre/lib/amd64/server/libjvm.so(+0x923da9) [0x7fced0c19da9]
+/opt/Xilinx/Vivado/2018.2/tps/lnx64/jre/lib/amd64/server/libjvm.so(JVM_handle_linux_signal+0xb6) [0x7fced0c203f6]
+/opt/Xilinx/Vivado/2018.2/tps/lnx64/jre/lib/amd64/server/libjvm.so(+0x9209d3) [0x7fced0c169d3]
+/usr/lib/libc.so.6(+0x368f0) [0x7fcf0ea408f0]
+/opt/Xilinx/Vivado/2018.2/tps/lnx64/jre/lib/amd64/libawt_xawt.so(+0x42028) [0x7fceb1a20028]
+/opt/Xilinx/Vivado/2018.2/tps/lnx64/jre/lib/amd64/libawt_xawt.so(+0x42288) [0x7fceb1a20288]
+/opt/Xilinx/Vivado/2018.2/tps/lnx64/jre/lib/amd64/libawt_xawt.so(Java_sun_awt_X11_XRobotPeer_getRGBPixelsImpl+0x17c) [0x7fceb1a1867c]
+[0x7fcec0cb94cf]
+```
+
+Switch to using Xorg instead of Wayland. The version of Java Vivado uses has compatibility problems with Wayland.

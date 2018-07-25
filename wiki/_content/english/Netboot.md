@@ -35,17 +35,17 @@ The ipxe.efi image can be used to launch Arch Linux netboot in UEFI mode. Only 6
 
 First install the [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) package, then download the [UEFI netboot image](https://www.archlinux.org/releng/netboot/).
 
-Assuming your EFI System Partition (ESP) is mounted under `/boot/efi`, you should move it as follows - let's also give it a more friendly name:
+Assuming your [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) is mounted under `*esp*`, you should move it as follows - let's also give it a more friendly name:
 
 ```
-   mkdir /boot/efi/EFI/arch_netboot
-   mv ipxe.*.efi /boot/efi/EFI/arch_netboot/arch_netboot.efi
+# mkdir *esp*/EFI/arch_netboot
+# mv ipxe.*.efi *esp*/EFI/arch_netboot/arch_netboot.efi
 
 ```
 
 Then you can create a boot entry as follows:
 
 ```
-   efibootmgr --create --disk /dev/sda --part 1 --loader /EFI/arch_netboot/arch_netboot.efi --label "Arch Linux Netboot"
+# efibootmgr --create --disk /dev/sda --part 1 --loader /EFI/arch_netboot/arch_netboot.efi --label "Arch Linux Netboot"
 
 ```

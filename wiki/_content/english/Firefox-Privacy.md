@@ -32,13 +32,10 @@ This article overviews how to configure [Firefox](/index.php/Firefox "Firefox") 
     *   [2.7 NoScript](#NoScript)
     *   [2.8 uMatrix](#uMatrix)
     *   [2.9 Cookie AutoDelete](#Cookie_AutoDelete)
-    *   [2.10 RefControl](#RefControl)
-    *   [2.11 RequestPolicy Continued](#RequestPolicy_Continued)
-    *   [2.12 Decentraleyes](#Decentraleyes)
-    *   [2.13 CanvasBlocker](#CanvasBlocker)
-    *   [2.14 Random User Agent](#Random_User_Agent)
-    *   [2.15 Privacy Settings](#Privacy_Settings)
-    *   [2.16 Stop Fingerprinting](#Stop_Fingerprinting)
+    *   [2.10 RequestPolicy Continued](#RequestPolicy_Continued)
+    *   [2.11 Decentraleyes](#Decentraleyes)
+    *   [2.12 CanvasBlocker](#CanvasBlocker)
+    *   [2.13 Privacy Settings](#Privacy_Settings)
 *   [3 Remove system-wide hidden extensions](#Remove_system-wide_hidden_extensions)
 *   [4 See also](#See_also)
 
@@ -216,14 +213,6 @@ For more Information visit the [project site](https://github.com/gorhill/uMatrix
 
 [Cookie AutoDelete](https://addons.mozilla.org/firefox/addon/cookie-autodelete/) is an extension that deletes cookies as soon as the tab closes. Supports automatic and manual cookie cleaning modes. (Support for clearing LocalStorage was added in version 2.1, but only for Firefox versions 58+. The same release added support for first party isolation, but only for Firefox versions 59+).
 
-### RefControl
-
-[RefControl](http://www.stardrifter.org/refcontrol/) is an extension to control what gets sent as the HTTP Referer. Once installed RefControl can be configured so that no referer gets sent when navigating to a new webpage. This prevents the server from knowing which website you originated from.
-
-To do this open RefControl's preferences and change the setting for "Default for sites not listed:" to <Block>.
-
-**Note:** This extension has not been updated since 2014 and will not work with modern versions of Firefox. However Firefox now has native options to control emitted HTTP referers, possibly replacing plugins such as RefControl and Smart Referer. See [Firefox tweaks#Referrer header control](/index.php/Firefox_tweaks#Referrer_header_control "Firefox tweaks").
-
 ### RequestPolicy Continued
 
 [RequestPolicy Continued](https://addons.mozilla.org/firefox/addon/requestpolicy-continued/) (a successor to the original [RequestPolicy](https://addons.mozilla.org/firefox/addon/requestpolicy/)) is an extension for Mozilla browsers which lets you have control over cross-site requests. It also lets you blacklist or whitelist requests by default. Disabling unnecessary cross-site requests leads to better privacy, safety and faster browsing.
@@ -240,19 +229,9 @@ To do this open RefControl's preferences and change the setting for "Default for
 
 **Note:** Mozilla is adding a built-in permission system to allow blocking of HTML5 canvas image track requests, [targeted for release with verion 59](https://wiki.mozilla.org/Security/Fingerprinting "mozillawiki:Security/Fingerprinting").
 
-### Random User Agent
-
-[Random User Agent](https://addons.mozilla.org/firefox/addon/random-agent-spoofer/) rotates complete browser profiles (from real browsers/devices) at a user defined time interval. It includes many extra privacy enhancing options.
-
 ### Privacy Settings
 
 [Privacy Settings](https://addons.mozilla.org/firefox/addon/privacy-settings/) provides a toolbar panel for easily altering Firefox's built-in privacy settings.
-
-### Stop Fingerprinting
-
-[Stop Fingerprinting](https://addons.mozilla.org/firefox/addon/stop-fingerprinting/) disables / modifies some browser APIs that would otherwise allow browser fingerprinting. However, this addon is not compatible with newer versions of Firefox (57+).
-
-**Note:** Firefox now has a native config option to prevent fingerprinting, see [#Enable Anti-Fingerprinting](#Enable_Anti-Fingerprinting).
 
 ## Remove system-wide hidden extensions
 

@@ -70,9 +70,9 @@ On the Chrome OS devices that shipped with SeaBIOS, the installation process of 
 
 One of the following approaches can be taken in order to install Arch Linux on Chrome OS devices that did not shipped with SeaBIOS as part of the installed firmware:
 
-*   With a very few models it is possible to only flash a SeaBIOS payload to the `RW_LEGACY` part of the firmware flash memory (e.g. Acer C740, Acer C910 and Google Chromebook Pixel 2), it is possible to update the `RW_LEGACY` manually with Chrome OS' `flashrom` or leave it to John Lewis' `flash_chromebook_rom.sh` script to flash SeaBIOS if the script support for a specific device is limited to `RW_LEGACY` update, the advantage with this method is that the stock firmware is not changed (as `RW_LEGACY` was missing).
-*   Flash a full [custom firmware](/index.php/Custom_firmware_for_Chrome_OS_devices "Custom firmware for Chrome OS devices") which includes a SeaBIOS payload.
-*   Only write to the `BOOT_STUB` part of the firmware flash memory, this method adds a SeaBIOS payload and update the firmware to only load this payload, it is a much safer approach than flashing the full firmware but there might be some limitations (e.g. no support in suspend or VMX), this is the `Modify ROM to run SeaBIOS exclusively` option in John Lewis' `flash_chromebook_rom.sh` script.
+*   On all modern Intel-based models (starting with the 2013 Chromebook Pixel), it is possible to only flash a SeaBIOS payload to the `RW_LEGACY` part of the firmware flash memory. This is 100% safe, as it writes to a user-writeable area of the firmware image which is completely separate from/does not affect ChromeOS. The easiest way to install/update the RW_LEGACY firmware on your ChromeOS device is via MrChromebox's [Firmware Utility Script](/index.php/Chrome_OS_devices/Custom_firmware#Flashing_with_MrChromebox.27s_Firmware_Utility_Script "Chrome OS devices/Custom firmware"), which supports the widest range of devices and offers the most up-to-date SeaBIOS builds; one can also update the `RW_LEGACY` firmware manually with Chrome OS' `flashrom` (requires downloading/compiling your own build), or use John Lewis' `flash_chromebook_rom.sh` script.
+*   Flash a full [custom firmware](/index.php/Custom_firmware_for_Chrome_OS_devices "Custom firmware for Chrome OS devices") which includes either a SeaBIOS or UEFI payload.
+*   Only write to the `BOOT_STUB` part of the firmware flash memory. This method replaces the stock ChromeOS payload (depthcharge) with SeaBIOS. This is theoretically a safer approach than flashing the full firmware but there might be some limitations (e.g. no support in suspend or VMX). This is the `Modify ROM to run SeaBIOS exclusively` option in John Lewis' `flash_chromebook_rom.sh` script and `Flash BOOT_STUB firmware` option in MrChromebox's.
 *   Take the ChrUbuntu approach which uses the Chrome OS kernel and modules.
 *   Build and sign your own kernel, see [[1]](https://plus.google.com/+OlofJohansson/posts/34PYU79eUqP) [[2]](http://pomozok.wordpress.com/2014/10/11/building-chromeos-kernel-without-chroot/) [[3]](https://github.com/drsn0w/chromebook_kernel_tools/blob/master/install_linux.md).
 
@@ -152,14 +152,14 @@ If you have configured Chrome OS already:
 
 ### Enabling SeaBIOS
 
-If your Chrome OS device did not ship with SeaBIOS or you prefer to install a custom firmware, then continue to [Flashing a custom firmware](#Flashing_a_custom_firmware).
+If your Chrome OS device did not ship with Legacy Boot Mode support via SeaBIOS, or you prefer to install a custom firmware, then continue to [Flashing a custom firmware](#Flashing_a_custom_firmware).
 
 This method will allow you to access the pre-installed version of SeaBIOS through the Developer Mode screen in Coreboot.
 
 *   Inside your superuser shell enter:
 
 ```
-# crossystem dev_boot_usb=1 dev_boot_legacy=1
+# crossystem dev_boot_legacy=1
 
 ```
 
@@ -175,9 +175,9 @@ You should now have SeaBIOS enabled on your Chrome OS device, if you choose to n
 
 To boot SeaBIOS by default, you will need to run [`set_gbb_flags.sh`](https://chromium.googlesource.com/chromiumos/platform/vboot_reference/+/master/scripts/image_signing/set_gbb_flags.sh) in Chrome OS (already included in Chrome OS, it will not work correctly in Arch Linux).
 
-**Warning:** If you do not set the GBB flags then your system might become corrupted on empty battery, resetting `dev_boot_usb` `dev_boot_legacy` to their default values, forcing you to recover Chrome OS and wiping your Arch Linux installation on the internal storage, though it might be possible to modify Chrome OS recovery image to set these values again [[7]](http://dev.chromium.org/chromium-os/developer-information-for-chrome-os-devices/workaround-for-battery-discharge-in-dev-mode).
+**Warning:** If you do not set the GBB flags, then a fully discharged or disconnected battery will reset `dev_boot_legacy` crossystem flag to its default value, removing the ability to boot in Legacy Boot Mode. While this used to require you to recover Chrome OS and wipe your Arch Linux installation on the internal storage, the GalliumOS developers have created a set of "fixflags" recovery images, which rather than wiping internal storage, will instead simply re-set the `dev_boot_legacy` crossystem flag. See [galliumos.org/fixflags](https://galliumos.org/fixflags)
 
-**Warning:** If you do not disable the write protection before setting the GBB flags you endanger wiping out the RW-LEGACY part of the firmware (i.e. SeaBIOS) and your system might not boot (should be recoverable with Chrome OS recovery media). Updated versions of [`set_gbb_flags.sh`](https://chromium.googlesource.com/chromiumos/platform/vboot_reference/+/master/scripts/image_signing/set_gbb_flags.sh) will not let you set the GBB flags without disabling the write protection.
+**Warning:** If you do not disable the write protection before setting the GBB flags you endanger wiping out the RW-LEGACY part of the firmware (i.e. SeaBIOS) and your system might not boot (should be recoverable with Chrome OS recovery media). [`set_gbb_flags.sh`](https://chromium.googlesource.com/chromiumos/platform/vboot_reference/+/master/scripts/image_signing/set_gbb_flags.sh) will not let you set the GBB flags without disabling the write protection.
 
 *   Disable the hardware write protection.
 
@@ -210,7 +210,7 @@ More information about the firmware protection available at the [Custom firmware
 
 **Note:** Recent versions of Chrome OS have moved the script to /usr/share/vboot/bin/set_gbb_flags.sh which is not in $PATH by default.
 
-*   Make sure you get the following output, see [[8]](https://johnlewis.ie/how-to-make-seabios-the-default-on-your-acer-c720/).
+*   Make sure you get the following output, see [[7]](https://johnlewis.ie/how-to-make-seabios-the-default-on-your-acer-c720/).
 
 ```
 GBB_FLAG_DEV_SCREEN_SHORT_DELAY 0x00000001
@@ -246,7 +246,7 @@ To find the location of the hardware write-protect screw/switch/jumper and how t
 
 More information about the firmware protection available at the [Custom firmware for Chrome OS devices](/index.php/Custom_firmware_for_Chrome_OS_devices#Firmware_write_protection "Custom firmware for Chrome OS devices") page.
 
-*   Enter the command shown on the [Download ROM page at John Lewis site](https://johnlewis.ie/custom-chromebook-firmware/rom-download/).
+*   Enter the command to run either MrChromebox's or John Lewis's firmware script.
 
 **Note:** The reason for not posting here is to force you to visit the site and read the page before proceeding.
 
@@ -307,7 +307,7 @@ Since kernel 3.17 all the related patches merged into the upstream sources, mean
 *   If there is no such patch do not worry as the developers should be able to add it by request as the Chromium OS sources includes the related changes.
 *   You can also try to find the related commits by yourself and create a proper patch, some hints:
     *   Dig into your Chrome OS system, look at the obvious suspects like boot log, `/proc/bus/input/devices` and `/sys/devices`.
-    *   The Linux kernel sources for Chromium OS are at [[9]](https://chromium.googlesource.com/chromiumos/third_party/kernel).
+    *   The Linux kernel sources for Chromium OS are at [[8]](https://chromium.googlesource.com/chromiumos/third_party/kernel).
     *   Each kernel source for the latest Chromium OS release has its own branch, name convention: `release-R*-*-chromeos-KERNELVER`, where `R*-*` is the Chromium OS release and `KERNELVER` is the kernel version.
     *   Review the git log of `drivers/platform`, `drivers/i2c/busses` and `drivers/input/touchscreen`.
 *   [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/) includes touchpad and touchscreen support for the Chromebook Pixel 2015\. More information is available at [its GitHub page](https://github.com/raphael/linux-samus).
@@ -347,7 +347,7 @@ After reboot, you should be able to use the touchpad normally.
 
 The following are instructions to fix the suspend functionality. Users of a pre-installed SeaBIOS or John Lewis' pre-built SeaBIOS you will need this fix. This procedure is not needed with Matt DeVillier's custom firmware since problematic ACPI wake devices (such as `TPAD`) are firmware-disabled.
 
-There have been a few alternatives discussed and those may work better for some. [[10]](https://bbs.archlinux.org/viewtopic.php?pid=1364376#p1364376) [[11]](https://bbs.archlinux.org/viewtopic.php?pid=1364521#p1364521)
+There have been a few alternatives discussed and those may work better for some. [[9]](https://bbs.archlinux.org/viewtopic.php?pid=1364376#p1364376) [[10]](https://bbs.archlinux.org/viewtopic.php?pid=1364521#p1364521)
 
 To fix suspend, the general idea is to disable the EHCI_PCI module, which interferes with the suspend cycle. There are multiple ways to achieve this.
 
@@ -444,7 +444,7 @@ Then [rebuild your grub config](/index.php/GRUB#Generate_the_main_configuration_
 
 #### Baytrail based models
 
-Most baytrail models will work on [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) but a regression introduced by 4.5.0 broke it so if you desire a newer kernel then you can install [linux-max98090](https://aur.archlinux.org/packages/linux-max98090/). It is likely that you will also need to use `alsamixer` from [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) to turn on "Left Speaker Mixer Left DAC" and "Right Speaker Mixer Right DAC". For more information, see [[12]](https://bugs.archlinux.org/task/48936).
+Most baytrail models will work on [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) but a regression introduced by 4.5.0 broke it so if you desire a newer kernel then you can install [linux-max98090](https://aur.archlinux.org/packages/linux-max98090/). It is likely that you will also need to use `alsamixer` from [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) to turn on "Left Speaker Mixer Left DAC" and "Right Speaker Mixer Right DAC". For more information, see [[11]](https://bugs.archlinux.org/task/48936).
 
 #### Haswell based models
 
@@ -454,11 +454,11 @@ One or more of followings might help solving audio related issues, setting `snd_
 
  `/etc/modprobe.d/alsa.conf`  `options snd_hda_intel index=1 model=,alc283-chrome` 
 
-*   Use the `~/.asoundrc` file from [[13]](https://gist.githubusercontent.com/dhead666/52d6d7d97eff76935713/raw/5b32ee11a2ebbe7a3ee0f928e49b980361a57548/.asoundrc).
+*   Use the `~/.asoundrc` file from [[12]](https://gist.githubusercontent.com/dhead666/52d6d7d97eff76935713/raw/5b32ee11a2ebbe7a3ee0f928e49b980361a57548/.asoundrc).
 
 *   If having problems with headphones (perhaps no audio playing), try `alsactl restore` in terminal. Now, ALSA should automatically switch between channels when using headphones/speakers.
 
-*   To fix [Flash](/index.php/Flash "Flash") audio with PulseAudio, use the `~/.asoundrc` file from [[14]](https://gist.githubusercontent.com/dhead666/0eebff16cd9578c5e035/raw/d4c974fcd50565bf116c57b1884170ecb47f8bf6/.asoundrc).
+*   To fix [Flash](/index.php/Flash "Flash") audio with PulseAudio, use the `~/.asoundrc` file from [[13]](https://gist.githubusercontent.com/dhead666/0eebff16cd9578c5e035/raw/d4c974fcd50565bf116c57b1884170ecb47f8bf6/.asoundrc).
 
 #### Chromebook Pixel 2015
 
@@ -476,20 +476,20 @@ One or more of followings might help solving audio related issues, setting `snd_
 
 One way to set the hotkeys would be by using the [Sxhkd](/index.php/Sxhkd "Sxhkd") daemon. Besides [sxhkd](https://www.archlinux.org/packages/?name=sxhkd), this also requires [amixer](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture"), [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight), and [xautomation](https://www.archlinux.org/packages/?name=xautomation).
 
-*   See [[15]](https://gist.github.com/dhead666/191722ec04842d8d330b) for an example configuration in `~/.config/sxhkd/sxhkdrc`.
+*   See [[14]](https://gist.github.com/dhead666/191722ec04842d8d330b) for an example configuration in `~/.config/sxhkd/sxhkdrc`.
 
 #### Xbindkeys configuration
 
 Another way to configure hotkeys would be by using [Xbindkeys](/index.php/Xbindkeys "Xbindkeys"). Besides [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys) this requires [amixer](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") and [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) and [xvkbd](https://aur.archlinux.org/packages/xvkbd/).
 
-*   See [[16]](https://gist.github.com/dhead666/08562a9a760b18b6e758) for an example configuration in `~/.xbindkeysrc`.
+*   See [[15]](https://gist.github.com/dhead666/08562a9a760b18b6e758) for an example configuration in `~/.xbindkeysrc`.
 *   See [vilefridge's xbindkeys configuration](https://bbs.archlinux.org/viewtopic.php?id=173418&p=3) for another example.
 
 ##### Alternate xbindkeys configuration
 
 [Volchange](http://pastie.org/9550960) (originated in the [Debian User Forums](http://www.debianuserforums.org/viewtopic.php?f=55&t=1453#p14351))) can manipulate the volume with PulseAudio instead of using [amixer](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture"). Besides [Volchange](http://pastie.org/9550960) this requires [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) and [xvkbd](https://aur.archlinux.org/packages/xvkbd/).
 
-*   Download the script from [[17]](http://pastie.org/9550960).
+*   Download the script from [[16]](http://pastie.org/9550960).
 *   Make it executable
 
 ```
@@ -497,11 +497,11 @@ $ chmod u+x ~/.local/bin/volchange
 
 ```
 
-See [[18]](https://gist.github.com/dhead666/4e23b506441ad424e26e) for a matching `~/.xbindkeysrc`.
+See [[17]](https://gist.github.com/dhead666/4e23b506441ad424e26e) for a matching `~/.xbindkeysrc`.
 
 #### Patch xkeyboard-config
 
-Another option is to install [xkeyboard-config-chromebook](https://aur.archlinux.org/packages/xkeyboard-config-chromebook/), for more details visit [[19]](https://github.com/dhead666/archlinux-pkgbuilds/tree/master/xkeyboard-config-chromebook).
+Another option is to install [xkeyboard-config-chromebook](https://aur.archlinux.org/packages/xkeyboard-config-chromebook/), for more details visit [[18]](https://github.com/dhead666/archlinux-pkgbuilds/tree/master/xkeyboard-config-chromebook).
 
 #### Mapping in Gnome with gsettings set
 
@@ -539,6 +539,6 @@ Follow Syslinux installation instructions carefully. Try manual installation to 
 
 *   [Developer Information for Chrome OS Devices at the Chromium Projects site](http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices)
 *   [BBS topic about the Acer C720](https://bbs.archlinux.org/viewtopic.php?id=173418) which include generic information on Haswell Based Chromebooks.
-*   Re-partitioning in Chrome OS [[20]](http://chromeos-cr48.blogspot.co.uk/2012/04/chrubuntu-1204-now-with-double-bits.html), [[21]](http://goo.gl/i817v)
+*   Re-partitioning in Chrome OS [[19]](http://chromeos-cr48.blogspot.co.uk/2012/04/chrubuntu-1204-now-with-double-bits.html), [[20]](http://goo.gl/i817v)
 *   [Brent Sullivan's the always updated list of Chrome OS devices](http://bit.ly/NewChromebooks)
 *   [Google Chromebook Comparison Chart](http://prodct.info/chromebooks/)

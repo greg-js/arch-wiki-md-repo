@@ -32,6 +32,7 @@ Related articles
     *   [6.5 Timeout delay](#Timeout_delay)
 *   [7 Known issues](#Known_issues)
     *   [7.1 dhcpcd@.service causes slow startup](#dhcpcd.40.service_causes_slow_startup)
+    *   [7.2 dhcpcd does not remove IP address from interface on release](#dhcpcd_does_not_remove_IP_address_from_interface_on_release)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -341,6 +342,10 @@ ExecStart=/usr/bin/dhcpcd -b -q %I
 ```
 
 See also [FS#49685](https://bugs.archlinux.org/task/49685).
+
+### dhcpcd does not remove IP address from interface on release
+
+The issue is described in [https://roy.marples.name/archives/dhcpcd-discuss/0002131.html](https://roy.marples.name/archives/dhcpcd-discuss/0002131.html). It will be fixed in dhcpcd version 7.0.6.
 
 ## See also
 

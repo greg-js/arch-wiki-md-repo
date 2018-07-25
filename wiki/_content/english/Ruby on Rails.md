@@ -22,6 +22,8 @@ This document describes how to set up the Ruby on Rails Framework on an Arch Lin
     *   [4.1 SQLite](#SQLite)
     *   [4.2 PostgreSQL](#PostgreSQL)
     *   [4.3 MySQL](#MySQL)
+    *   [4.4 Database Access Configuration](#Database_Access_Configuration)
+    *   [4.5 Create the databases from Rails](#Create_the_databases_from_Rails)
 *   [5 The Perfect Rails Setup](#The_Perfect_Rails_Setup)
     *   [5.1 Step 0: SQLite](#Step_0:_SQLite)
     *   [5.2 Step 1: RVM](#Step_1:_RVM)
@@ -41,7 +43,7 @@ This document describes how to set up the Ruby on Rails Framework on an Arch Lin
 
 ## Installation
 
-Ruby on Rails requires [Ruby](/index.php/Ruby "Ruby") to be installed, so read that article first for installation instructions. The [nodejs](https://www.archlinux.org/packages/?name=nodejs) package is also required if using uglifier (Ruby wrapper for [UglifyJS JavaScript compressor](https://github.com/mishoo/UglifyJS2), optional)
+Ruby on Rails requires [Ruby](/index.php/Ruby "Ruby") to be installed, so read that article first for installation instructions. The [nodejs](https://www.archlinux.org/packages/?name=nodejs) package is also required if using uglifier (Ruby wrapper for [UglifyJS JavaScript compressor](https://github.com/mishoo/UglifyJS2), optional) The Rails framework is linked to a version of Ruby (or the system Ruby installation). Ruby version(s) installed can be from system or from rbenv or from rvm (Ruby Version Manager).
 
 ### RubyGems
 
@@ -109,7 +111,7 @@ A test-page should be shown greeting you "Welcome aboard".
 
 ## Application servers
 
-The built-in Ruby On Rails HTTP server (WeBrick) is convenient for basic development, but it is not recommended for production use. Instead, you should use an application server such as [#Thin](#Thin), [#Unicorn](#Unicorn) or [Phusion Passenger](#Apache.2FNginx_.28using_Phusion_Passenger.29).
+The built-in Ruby On Rails HTTP server (WeBrick for version 4.X of Rails, and Puma for version 5.X) is convenient for basic development, but it is not recommended for production use. Instead, you should use an application server such as [#Thin](#Thin), [#Unicorn](#Unicorn) or [Phusion Passenger](#Apache.2FNginx_.28using_Phusion_Passenger.29).
 
 ### Thin
 
@@ -227,7 +229,16 @@ http {
 
 [Passenger](http://www.modrails.com/) also known as `mod_rails` is a module available for [Nginx](/index.php/Nginx "Nginx") and [Apache](/index.php/Apache "Apache"), that greatly simplifies setting up a Rails server environment. Nginx does not support modules as Apache and has to be compiled with `mod_rails` in order to support Passenger; let Passenger compile it for you. As for Apache, let Passenger set up the module for you.
 
-Start by installing the 'passenger' gem:
+Two differents choices (one or the other, not both in same time):
+
+1/ Archlinux now has packages officialy support server modules to be compiled with passenger:
+
+```
+ # pacman -Syu passenger
+
+```
+
+2/ Start by installing the 'passenger' gem from any version of ruby (user setting):
 
 ```
 # gem install passenger
@@ -237,6 +248,7 @@ Start by installing the 'passenger' gem:
 If you are aiming to use [Apache](/index.php/Apache "Apache"), run:
 
 ```
+# pacman -Syu mod_passenger (if passenger is not installed from gem)
 # passenger-install-apache2-module
 
 ```
@@ -246,6 +258,7 @@ In case a rails application is deployed with a sub-URI, like [http://example.com
 For [Nginx](/index.php/Nginx "Nginx"):
 
 ```
+# pacman -Syu nginx-mod-passenger (if passenger is not installed from gem)
 # passenger-install-nginx-module
 
 ```
@@ -474,7 +487,7 @@ For further reading take a look at [#References](#References). Also, for easily 
 
 ## Databases
 
-Most web applications will need to interact with some sort of database. ActiveRecord (the ORM used by Rails to provide database abstraction) supports several database vendors, the most popular of which are MySQL, SQLite, and PostgreSQL.
+Most web applications will need to interact with some sort of database. ActiveRecord (the ORM used by Rails to provide database abstraction) supports several database vendors, the most popular of which are MySQL, SQLite, and PostgreSQL. And then you will have next to configure the file "config/database.yml" for Rails application web site able to connect on your database.
 
 ### SQLite
 
@@ -483,6 +496,22 @@ SQLite is the default lightweight database for Ruby on Rails. To enable SQLite, 
 ### PostgreSQL
 
 Install [postgresql](https://www.archlinux.org/packages/?name=postgresql).
+
+Install for Rails:
+
+```
+# gem install pg
+
+```
+
+Or add the gem inside your Gemfile of your project, then use bundle.
+
+create a new Rails web site:
+
+```
+# rails new my_web_site -d postgresql
+
+```
 
 ### MySQL
 
@@ -502,21 +531,35 @@ $ rails new testapp_name -d mysql
 
 ```
 
-You then need to edit `config/database.yml`. Rails uses different databases for development, testing, production and other environments. Here is an example development configuration for MySQL running on localhost:
+### Database Access Configuration
+
+What ever Database (MySQL or Postgresql or SQlite (the default one) you use, you then need to edit `config/database.yml`. Rails uses different databases for development, testing, production and other environments. Here is an example development configuration for MySQL running on localhost:
 
 ```
- development:
-   adapter: mysql
-   database: my_application_database
-   username: development
+ default:
+   adapter: mysql (or postgresql or sqlite)
+   username: my_user_name_access
    password: my_secret_password
 
 ```
 
-Note that you do not have to actually create the database using MySQL, as this can be done via Rails with:
+For safety reasons, it is a good practice to not directly put password (who will be no more secret) as clear text in a text file. Instead you can replace "my_secret_password' by "'<%= ENV["MYSQL_PASSWD"] %>'" where MYSQL_PASSWD can be an environment variable exported from the user environment the server use (~/.profile or ~/.bashrc or ~/.zshrc depend of your choice and utility). Surrounding <%= ENV.... %> by "'" searve in case of your password has some special chars like # or !, etc...
+
+### Create the databases from Rails
+
+Note that you do not have to actually create the database using MySQL or Postgresql or Sqlite, as this can be done via Rails directly with:
+
+For rails-4.X version:
 
 ```
 # rake db:create
+
+```
+
+For rails-5.X version:
+
+```
+# rails db:create (for version of Rails-5.X)
 
 ```
 

@@ -592,12 +592,25 @@ max-cache-ttl-ssh 10800
 
 #### Using a PGP key for SSH authentication
 
-If the `enable-ssh-agent` option is enabled for `gpg-agent`, you can use your PGP key as an SSH key. This requires a key with the `Authentication` capability (see [#Custom capabilities](#Custom_capabilities)). There are various benefits gained by using a PGP key for SSH authentication, including:
+You can also use your PGP key as an SSH key. This requires a key with the `Authentication` capability (see [#Custom capabilities](#Custom_capabilities)). There are various benefits gained by using a PGP key for SSH authentication, including:
 
 *   Reduced key maintenance, as you will no longer need to maintain an SSH key
 *   The ability to store the authentication key on a smartcard. GnuPG will automatically detect the key when the card is available, and add it to the agent (check with `ssh-add -l` or `ssh-add -L`). The comment for the key should be something like: `openpgp:*key-id*` or `cardno:*card-id*`.
 
 **Note:** Your key may not be added to `$GNUPGHOME/sshcontrol`, which is where normal SSH keys are listed.
+
+To retrieve the public key part of your GPG/SSH key, run `gpg --export-ssh-key *gpg-key*`.
+
+If your key is not added to `$GNUPGHOME/sshcontrol` automatically, you can add the keygrip for your key with the Authentication capability manually. You can get the keygrip of your key by executing `gpg --list-keys --with-keygrip`, like so:
+
+```
+$ gpg --list-keys --with-keygrip
+  sub   rsa4096/1234ABCD1234ABCD 2001-01-01 [A] [expires: 2002-01-01]
+        Keygrip = < put this value on its own line in $GNUPGHOME/sshcontrol >
+
+```
+
+Adding the keygrip to `$HOME/.gnupg/sshcontrol` is a one-time action; you will not need to edit the file again, unless you are adding additional keygrips.
 
 ## Smartcards
 

@@ -122,6 +122,13 @@ GNOME 3.6 brought changes to Files. The option to create an empty document has b
 
 On non-English installations, the templates directory might have another name. One can find the actual directory with `xdg-user-dir TEMPLATES`.
 
+The templates directory can be configure in `~/.config/user-dirs.dirs`
+
+```
+XDG_TEMPLATES_DIR="$HOME/some/path"
+
+```
+
 ### Music files metadata in list view
 
 **Note:** The script linked to below is slightly modified to fix an error. The original can be found [here](http://bazaar.launchpad.net/~team1/+junk/devel/view/head:/bsc-v2.py).

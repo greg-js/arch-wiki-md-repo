@@ -65,7 +65,7 @@ During the installation, you are asked if you want symlinks to be created. If yo
 
 ```
 
-Or you could add MATLAB install path to {{ic|PATH} environment variable.
+Or you could add MATLAB install path to `PATH` environment variable.
 
 #### Desktop entry
 
@@ -115,7 +115,7 @@ The [matlab](https://aur.archlinux.org/packages/matlab/) package from the [AUR](
 
 ### Java
 
-The MATLAB software is bundled with a JVM and therefore it is not necessary to install [Java](/index.php/Java "Java"). The JVM version supported by AMTLAB is listed in [System Requirements & Platform Availability](https://ww2.mathworks.cn/support/compilers.html) or simply type `version -java` in MATLAB. One could set the `MATLAB_JAVA` environment variable to use custom JVM, for example, to specify the [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) JRE, launch MATLAB with:
+The MATLAB software is bundled with a JVM and therefore it is not necessary to install [Java](/index.php/Java "Java"). The JVM version supported by MATLAB is listed in [System Requirements & Platform Availability](https://ww2.mathworks.cn/support/compilers.html) or simply type `version -java` in MATLAB. One could set the `MATLAB_JAVA` environment variable to use custom JVM, for example, to specify the [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) JRE, launch MATLAB with:
 
 ```
 $ env MATLAB_JAVA=/usr/lib/jvm/java-8-openjdk/jre matlab

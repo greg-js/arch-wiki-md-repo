@@ -452,6 +452,8 @@ killall baloo_file ; mv /usr/bin/baloo_file /usr/bin/baloo_file.bak ; echo '#!
 
 	[https://mozilla.org/firefox](https://mozilla.org/firefox) || [firefox](https://www.archlinux.org/packages/?name=firefox)
 
+**Tip:** Starting from Plasma 5.13, one can integrate [Firefox](/index.php/Firefox "Firefox") or [Chrome](/index.php/Chrome "Chrome") with Plasma: providing media playback control from the Plasma tray, download notifications and find open tabs in krunner. [Install](/index.php/Install "Install") [plasma-browser-integration](https://www.archlinux.org/packages/?name=plasma-browser-integration) and the corresponding browser add-on ([Firefox add-on](https://addons.mozilla.org/en-US/firefox/addon/plasma-integration) - Chrome/Chromium support should already be included).
+
 ### PIM
 
 KDE offers its own stack for personal information management. This includes emails, contacts, calendar, etc. To install all the PIM packages, you could use the meta-package [kdepim-meta](https://www.archlinux.org/packages/?name=kdepim-meta).

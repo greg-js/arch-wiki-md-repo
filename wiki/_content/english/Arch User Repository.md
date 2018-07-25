@@ -97,11 +97,11 @@ Next choose an appropriate build directory. A build directory is simply a direct
 
 ### Acquire build files
 
-Locate the package in the AUR. This is done using the search feature (text field at the top of the [AUR home page](https://aur.archlinux.org/)). Clicking the application's name in the search list brings up an information page on the package. Read through the description to confirm that this is the desired package, note when the package was last updated, and read any comments.
+Locate the package in the AUR. This is done using the search field at the top of the [AUR home page](https://aur.archlinux.org/). Clicking the application's name in the search list brings up an information page on the package. Read through the description to confirm that this is the desired package, note when the package was last updated, and read any comments.
 
 There are several methods for acquiring the build files:
 
-*   Clone the [git](/index.php/Git "Git") repository that is labeled as the "Git Clone URL" in the "Package Details":
+*   Clone the [git](/index.php/Git "Git") repository that is labelled as the "Git Clone URL" in the "Package Details". This is the preferred method.
 
 ```
 $ git clone https://aur.archlinux.org/*package_name*.git
@@ -128,16 +128,26 @@ $ curl -L -O https://aur.archlinux.org/cgit/aur.git/snapshot/*package_name*.tar.
 
 Change directories to the directory containing the package's [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
 
-**Warning:** **Carefully check all files.** Carefully check the `PKGBUILD` and any *.install* file for malicious commands. `PKGBUILD`s are [bash](/index.php/Bash "Bash") scripts containing functions to be executed by *makepkg*: these functions can contain *any* valid commands or Bash syntax, so it is totally possible for a `PKGBUILD` to contain dangerous commands through malice or ignorance on the part of the author. Since *makepkg* uses *fakeroot* (and should never be run as root), there is some level of protection but you should never count on it. If in doubt, do not build the package and seek advice on the forums or mailing list.
-
 ```
 $ cd *package_name*
-$ less PKGBUILD
-$ less *package_name*.install
 
 ```
 
-Make the package. After manually confirming the integrity of the files, run [makepkg](/index.php/Makepkg "Makepkg") as a normal user:
+**Warning:** Carefully check the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"), any *.install* files, and any other files in the package's git repository for malicious or dangerous commands. If in doubt, do not build the package, and [seek advice](/index.php/General_troubleshooting#Additional_support "General troubleshooting") on the forums or mailing list. Malicious code has been found in packages before. [[1]](https://lists.archlinux.org/pipermail/aur-general/2018-July/034151.html)
+
+View the contents of all provided files. For example, to use the pager *less* to view `PKGBUILD` do:
+
+```
+$ less PKGBUILD
+
+```
+
+**Tip:** If you are updating a package, you may want to look at the changes since the last commit.
+
+*   To view changes since the last git commit you can use `git show`.
+*   To view changes since the last commit using *vimdiff*, do `git difftool @~..@ vimdiff`. The advantage of *vimdiff* is that you view the entire contents of each file along with indicators on what has changed.
+
+Make the package. After manually confirming the contents of the files, run [makepkg](/index.php/Makepkg "Makepkg") as a normal user:
 
 ```
 $ makepkg -si

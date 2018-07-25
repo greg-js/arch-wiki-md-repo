@@ -193,11 +193,10 @@ External devices that are to be mounted when present but ignored if absent may r
 
 The `nofail` option is best combined with the `x-systemd.device-timeout` option. This is because the default device timeout is 90 seconds, so a disconnected external device with only `nofail` will make your boot take 90 seconds longer, unless you reconfigure the timeout as shown. Make sure not to set the timeout to 0, as this translates to infinite timeout.
 
-If your external device requires another systemd unit to be loaded (for example the network for a network share) you can use `x-systemd.requires=x` combined with `x-systemd.automount`to postpone automounting until after the unit is available. For example:
+If your external device requires another systemd unit to be loaded (for example the network for a network share) you can use `x-systemd.requires=x` combined with `x-systemd.automount` to postpone automounting until after the unit is available. For example:
 
- `/etc/fstab`  `//host/share        /net/share        cifs        noauto,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10,workgroup=workgroup,credentials=/foo/credentials        0 0` 
-
-However it is also possible to [enable](/index.php/Enable "Enable") [NetworkManager-wait-online](/index.php/NetworkManager#Enable_NetworkManager_Wait_Online "NetworkManager") or [systemd-networkd-wait-online](/index.php/Systemd-networkd#Mount_services_at_boot_fail "Systemd-networkd") instead.
+ `/etc/fstab`  `//host/share    /net/share        cifs   defaults,noauto,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10,workgroup=workgroup,credentials=/foo/credentials    0 0` 
+**Note:** This is an alternative to [NetworkManager-wait-online](/index.php/NetworkManager#Enable_NetworkManager_Wait_Online "NetworkManager") or [systemd-networkd-wait-online](/index.php/Systemd-networkd#Mount_services_at_boot_fail "Systemd-networkd") and does not stall the boot process.
 
 ### Filepath spaces
 

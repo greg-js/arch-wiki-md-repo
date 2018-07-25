@@ -80,7 +80,7 @@ Run `go help gopath` for more information.
 
 ### Enable cross compilation for other platforms
 
-The [go](https://www.archlinux.org/packages/?name=go) package only supports Linux *amd64*, *i386*, and *arm*. However you may compile go from source and enable cross-compiling for additional architectures. The following paragraph will outline the basics steps to enable cross-compilation support for *Darwin*, *FreeBSD* and *MS Windows*.
+The following paragraph will outline the basics steps to enable cross-compilation support for *Darwin*, *FreeBSD* and *MS Windows*.
 
 Download a copy of the source code from the [official website](https://golang.org/) and extracts its content to e.g. `~/downloads/go`.
 

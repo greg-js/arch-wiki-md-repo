@@ -38,7 +38,7 @@ O Arch Build System (em português, "Sistema de Compilação do Arch") é sistem
 
 ### O que é um sistema tipo portação?
 
-*Ports* é um sistema usado por *BSD para automatizar o processo de compilação de software a partir do código-fonte. O sistema usa um *port* para baixar, descompactar, patch, compilar e instalar o software dado. Um *port* é meramente um pequeno diretório no computador do usuário, nomeado pelo software correspondente para ser instalado, que contém uns poucos arquivos com as instruções para compilar e instalar o software a partir dos fontes. Isso tornar a instalação softwares tão simples quanto digitar `make` ou `make install clean` dentro de diretório de portação.
+*Ports* é um sistema usado por *BSD para automatizar o processo de compilação de software a partir do código-fonte. O sistema usa um *port* para baixar, descompactar, patch, compilar e instalar o software dado. Um *port* é meramente um pequeno diretório no computador do usuário, nomeado pelo software correspondente para ser instalado, que contém uns poucos arquivos com as instruções para compilar e instalar o software a partir dos fontes. Isso torna a instalação de softwares tão simples quanto digitar `make` ou `make install clean` dentro de diretório de portação.
 
 ### ABS é um conceito similar
 

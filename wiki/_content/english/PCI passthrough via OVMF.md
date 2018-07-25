@@ -39,7 +39,8 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
         *   [6.3.1 Adding IVSHMEM Device to VM](#Adding_IVSHMEM_Device_to_VM)
         *   [6.3.2 Installing the IVSHMEM Host to Windows guest](#Installing_the_IVSHMEM_Host_to_Windows_guest)
         *   [6.3.3 Getting a client](#Getting_a_client)
-    *   [6.4 Bypassing the IOMMU groups (ACS override patch)](#Bypassing_the_IOMMU_groups_.28ACS_override_patch.29)
+    *   [6.4 Swap peripherals to and from the Host](#Swap_peripherals_to_and_from_the_Host)
+    *   [6.5 Bypassing the IOMMU groups (ACS override patch)](#Bypassing_the_IOMMU_groups_.28ACS_override_patch.29)
 *   [7 Plain QEMU without libvirt](#Plain_QEMU_without_libvirt)
 *   [8 Passing though other devices](#Passing_though_other_devices)
     *   [8.1 USB controller](#USB_controller)
@@ -311,7 +312,7 @@ However, you should pay special attention to the following steps :
 *   If you want to minimize IO overhead, go into "Add Hardware" and add a Controller for SCSI drives of the "VirtIO SCSI" model. You can then change the default IDE disk for a SCSI disk, which will bind to said controller.
     *   Windows VMs will not recognize those drives by default, so you need to download the ISO containing the drivers from [here](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/) and add an IDE (or SATA for Windows 8.1 and newer) CD-ROM storage device linking to said ISO, otherwise you will not be able to get Windows to recognize it during the installation process. When prompted to select a disk to install windows on, load the drivers contained on the CD-ROM under *vioscsi*.
 
-The rest of the installation process will take place as normal using a standard QXL video adapter running in a window. At this point, there is no need to install additional drivers for the rest of the virtual devices, since most of them will be removed later on. Once the guest OS is done installing, simply turn off the virtual machine.
+The rest of the installation process will take place as normal using a standard QXL video adapter running in a window. At this point, there is no need to install additional drivers for the rest of the virtual devices, since most of them will be removed later on. Once the guest OS is done installing, simply turn off the virtual machine. It is possible you will be dropped into the UEFI menu instead of starting the installation upon powering your VM for the first time. Sometimes the correct ISO file was not automatically detected and you will need to manually specify the drive to boot. By typing exit and navigating to "boot manager" you will enter a menu that allows you to choose between devices.
 
 ### Attaching the PCI devices
 
@@ -666,28 +667,87 @@ Once the driver is installed you must download the latest [looking-glass-host](h
 
 #### Getting a client
 
-Looking glass client can be installed from AUR using [looking-glass](https://aur.archlinux.org/packages/looking-glass/) or [looking-glass-git](https://aur.archlinux.org/packages/looking-glass-git/) packages. You can start it once the VM is set up and running
+Looking glass client can be installed from AUR using [looking-glass](https://aur.archlinux.org/packages/looking-glass/) or [looking-glass-git](https://aur.archlinux.org/packages/looking-glass-git/) packages.
+
+**Warning:** If you experience issues with [looking-glass-git](https://aur.archlinux.org/packages/looking-glass-git/), switch to [looking-glass](https://aur.archlinux.org/packages/looking-glass/). **The git version is unsupported upstream and may break at any time**. Only the versioned releases are supported and guaranteed to work with the host application running on the Windows VM!
+
+You can start it once the VM is set up and running
 
 ```
 $ looking-glass-client
 
 ```
 
-If you do not want to use Spice to control the guest mouse and keyboard you can disable the Spice server
+If you do not want to use Spice to control the guest mouse and keyboard you can disable the Spice server.
 
 ```
 $ looking-glass-client -s
 
 ```
 
-Refer to
+Additionally you may want to start Looking Glass Client as full screen, otherwise the image may be scaled down resulting in poor image fidelity.
 
 ```
-$ looking-glass-client --help
+$ looking-glass-client -F
 
 ```
 
-for more info
+Launch with the `--help` option for further information.
+
+### Swap peripherals to and from the Host
+
+Looking Glass includes a Spice client in order to control mouse movement on the Windows guest. However this may have too much latency for certain applications, such as gaming. An alternative method is passing through specific USB devices for minimal latency. This allows for switching the devices between host and guest.
+
+First create a .xml file for the device(s) you wish to pass-through, which libvirt will use to identify the device.
+
+ `/home/$USER/.VFIOinput/input_1.xml` 
+```
+<hostdev mode='subsystem' type='usb' managed='no'>
+<source>
+<vendor id='0x[Before Colon]'/>
+<product id='0x[After Colon]'/>
+</source>
+</hostdev>
+```
+
+Replace [Before/After Colon] with the contents of the 'lsusb' command, specific to the device you want to pass-through.
+
+For instance my mouse is `Bus 005 Device 002: ID 1532:0037 Razer USA, Ltd` so I would replace `vendor id` with 1532, and `product id` with 1037.
+
+Repeat this process for any additional USB devices you want to pass-through. If your mouse / keyboard has multiple entries in `lsusb`, perhaps if it is wireless, then create additional xml files for each.
+
+**Note:** Don't forget to change the path & name of the script(s) above and below to match your user and specific system.
+
+Next a bash script file is needed to tell libvirt what to attach/detach the USB devices to the guest.
+
+ `/home/$USER/.VFIOinput/input_attach.sh` 
+```
+#!/bin/bash
+
+virsh attach-device [VM-Name] [USBdevice]
+```
+
+Replace [VM-Name] with the name of your virtual machine, which can be seen under virt-manager. Additionally replace [USBdevice] with the **full** path to the .xml file for the device you wish to pass-through. Add additional lines for more than 1 device. For example here is my script:
+
+ `/home/ajmar/.VFIOinput/input_attach.sh` 
+```
+#!/bin/bash
+
+virsh attach-device win10 /home/ajmar/.VFIOinput/input_mouse.xml
+virsh attach-device win10 /home/ajmar/.VFIOinput/input_keyboard.xml
+```
+
+Next duplicate the script file and replace `attach-device` with `detach-device`. Ensure both scripts are executable with `chmod +x $script.sh`
+
+This 2 script files can now be executed to attach or detach your USB devices from the host to the guest VM. It is important to note that they may need to be executed as root. To run the script from the Windows VM, one possibility is using [PuTTY](/index.php/PuTTY "PuTTY") to [SSH](/index.php/Secure_Shell "Secure Shell") into the host, and execute the script. On Windows PuTTY comes with plink.exe which can execute singular commands over SSH before then logging out, instead of opening a SSH terminal, all in the background.
+
+ `detach_devices.bat`  `"C:\Program Files\PuTTY\plink.exe" root@$HOST_IP -pw $ROOTPASSWORD /home/$USER/.VFIOinput/input_detach.sh` 
+
+Replace `$HOST_IP` with the Host [IP Address](/index.php/Network_Configuration#IP_Addresses "Network Configuration") and $ROOTPASSWORD with the root password.
+
+**Warning:** This method is insecure if somebody has access to your VM, since they could open the file and read your password. It is advisable to use [SSH keys](/index.php/SSH_keys "SSH keys") instead!
+
+You may also want to execute the script files using key binds. On Windows one option is [Autohotkey](https://autohotkey.com/), and on the Host [Xbindkeys](/index.php/Xbindkeys "Xbindkeys"). Because of the need to run the scripts as root, you may also need to use [Polkit](/index.php/Polkit "Polkit") which can be used to authenticate specific executables as able to run as root without needing a password.
 
 ### Bypassing the IOMMU groups (ACS override patch)
 

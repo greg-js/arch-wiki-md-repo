@@ -64,7 +64,7 @@
 | [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)") | Información/Posinstalación | `2016-11` |
 | [Getting involved (Español)](/index.php/Getting_involved_(Espa%C3%B1ol) "Getting involved (Español)") | Ayuda/Colaboración | `2016-09` |
 | [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") | Gestor de arranque | `2015-06` |
-| [GRUB/Tips and tricks (Español)](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol) "GRUB/Tips and tricks (Español)") | Gestor de arranque | `2015-06` |
+| [GRUB/Tips and tricks (Español)](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol) "GRUB/Tips and tricks (Español)") | Gestor de arranque | `2018-06` | [Phenom](/index.php?title=User:Phenom&action=edit&redlink=1 "User:Phenom (page does not exist)") |
 | [GUID Partition Table (Español)](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)") | Tabla de particionado | `2013-09` |
 | [Help:Category (Español)](/index.php/Help:Category_(Espa%C3%B1ol) "Help:Category (Español)") | Ayuda/Edición wiki | `2014-04` |
 | [Help:Article naming guidelines (Español)](/index.php/Help:Article_naming_guidelines_(Espa%C3%B1ol) "Help:Article naming guidelines (Español)") | Ayuda/Edición wiki | `2014-04` |
@@ -174,7 +174,7 @@ creado en un intento de recopilar información sobre Arch Linux en prensa hispan
 | [Arch64 FAQ (Español)](/index.php/Arch64_FAQ_(Espa%C3%B1ol) "Arch64 FAQ (Español)") | Información/Arch | `2010-08` |
 | [ASUS Eee PC 1005HA (Español)](/index.php/ASUS_Eee_PC_1005HA_(Espa%C3%B1ol) "ASUS Eee PC 1005HA (Español)") | Hardware | `2010-08` |
 | [Audacious (Español)](/index.php/Audacious_(Espa%C3%B1ol) "Audacious (Español)") | Reproductor multimedia | `2011-07` |
-| [AUR helpers (Español)](/index.php/AUR_helpers_(Espa%C3%B1ol) "AUR helpers (Español)") | Gestión de paquetes | `--` | Sin traducir |
+| [AUR helpers (Español)](/index.php/AUR_helpers_(Espa%C3%B1ol) "AUR helpers (Español)") | Gestión de paquetes | `2018-07` | [Phenom](/index.php?title=User:Phenom&action=edit&redlink=1 "User:Phenom (page does not exist)") |
 | [AUR Trusted User Guidelines (Español)](/index.php/AUR_Trusted_User_Guidelines_(Espa%C3%B1ol) "AUR Trusted User Guidelines (Español)") | Repositorios no oficiales | `2009-12` |
 | [Autofs (Español)](/index.php/Autofs_(Espa%C3%B1ol) "Autofs (Español)") | Sistema de archivos | `2008-05` |
 | [Automatic login to virtual console (Español)](/index.php/Automatic_login_to_virtual_console_(Espa%C3%B1ol) "Automatic login to virtual console (Español)") | Proceso de arranque | `2013-09` |
@@ -295,7 +295,7 @@ Versión inglesa redirigida a [Apache HTTP Server](/index.php/Apache_HTTP_Server
 | [Offline installation of packages (Español)](/index.php/Offline_installation_of_packages_(Espa%C3%B1ol) "Offline installation of packages (Español)") | Gestión de paquetes | `2010-08` | Versión inglesa desactualizada |
 | [Openbox (Español)](/index.php/Openbox_(Espa%C3%B1ol) "Openbox (Español)") | Gestor de ventanas | `2012-11` |
 | [Openbox Themes and Apps (Español)](/index.php/Openbox_Themes_and_Apps_(Espa%C3%B1ol) "Openbox Themes and Apps (Español)") | Gestor de ventanas | `2012-11` | Versión inglesa redirigida a [Openbox](/index.php/Openbox "Openbox") |
-| [Pacman Tips (Español)](/index.php/Pacman_Tips_(Espa%C3%B1ol) "Pacman Tips (Español)") | Gestión de paquetes | `2018-04` | [phenom](/index.php?title=User:Phenom&action=edit&redlink=1 "User:Phenom (page does not exist)") | Traducción completada |
+| [Pacman Tips (Español)](/index.php/Pacman_Tips_(Espa%C3%B1ol) "Pacman Tips (Español)") | Gestión de paquetes | `2018-04` | [Phenom](/index.php?title=User:Phenom&action=edit&redlink=1 "User:Phenom (page does not exist)") |
 | [Pacman-key (Español)](/index.php/Pacman-key_(Espa%C3%B1ol) "Pacman-key (Español)") | Gestión de paquetes | `2013-03` |
 | [Pacnew and Pacsave Files (Español)](/index.php/Pacnew_and_Pacsave_Files_(Espa%C3%B1ol) "Pacnew and Pacsave Files (Español)") | Gestión de paquetes | `2009-04` | Propuesto para su eliminación |
 | [Parallels (Español)](/index.php?title=Parallels_(Espa%C3%B1ol)&action=edit&redlink=1 "Parallels (Español) (page does not exist)")

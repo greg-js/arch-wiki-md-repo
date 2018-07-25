@@ -1,8 +1,10 @@
-From the [project web page](http://newsbeuter.org/):
+[Newsboat](https://newsboat.org/) is an open source news aggregator licensed under the MIT License.
 
-	Newsbeuter is an open-source RSS/Atom feed reader for text terminals. It runs on Linux, FreeBSD, Mac OS X and other Unix-like operating systems. Newsbeuter's great configurability and vast number of features make it a perfect choice for people that need a slick and fast feed reader that can be completely controlled via keyboard.
+From the [documentation](https://newsboat.org/releases/2.12/docs/newsboat.html#_introduction):
 
-Development on Newsbeuter has ceased, and it has been [forked](https://groups.google.com/forum/#!topic/newsbeuter/RPtlWX8CPGU) into [newsboat](https://www.archlinux.org/packages/?name=newsboat).
+	Newsboat is an RSS/Atom feedreader. RSS and Atom are a number of widely-used XML formats to transmit, publish and syndicate articles, for example news or blog articles. Newsboat is designed to be used on text terminals on Unix or Unix-like systems such as GNU/Linux, FreeBSD or macOS.
+
+Newsboat is a [fork](https://groups.google.com/forum/#!topic/newsbeuter/RPtlWX8CPGU) of Newsbeuter. The only difference is that Newsboat is actively maintained while Newsbeuter isn't.
 
 ## Contents
 
@@ -19,35 +21,33 @@ Development on Newsbeuter has ceased, and it has been [forked](https://groups.go
     *   [5.1 Automatic feed reloads](#Automatic_feed_reloads)
     *   [5.2 Pass article URL to external command](#Pass_article_URL_to_external_command)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Newsbeuter won't start](#Newsbeuter_won.27t_start)
+    *   [6.1 Newsboat won't start](#Newsboat_won.27t_start)
 *   [7 See Also](#See_Also)
 
 ## Installation
 
-Install the [newsboat](https://www.archlinux.org/packages/?name=newsboat) package. For the development version, install the [newsbeuter-git](https://aur.archlinux.org/packages/newsbeuter-git/) or [newsboat-git](https://aur.archlinux.org/packages/newsboat-git/) package.
+Install the [newsboat](https://www.archlinux.org/packages/?name=newsboat) package. For the development version, install the [newsboat-git](https://aur.archlinux.org/packages/newsboat-git/) package.
 
 ## Usage
 
-Newsbeuter can't start without any configured feeds. Feeds can be configured in `~/.newsbeuter/urls`.
+Newsboat can't start without any configured feeds. Feeds can be configured in `~/.newsboat/urls`.
 
-Newsbeuter can be started from the command line with
+Newsboat can be started from the command line with
 
 ```
-newsbeuter
+newsboat
 
 ```
 
 Press the `?` key to see a list of all keybindings. Keybindings can be rebound, see [#Configuration](#Configuration).
 
-**Note:** If you only have a single feed newsbeuter won't cache fetched items (this bug is fixed in the development version).
-
 ## Managing feeds
 
-Adding, removing, and tagging feeds is done by editing the urls file. By default that is `~/.newsbeuter/urls`.
+Adding, removing, and tagging feeds is done by editing the urls file. By default that is `~/.newsboat/urls`.
 
 ### Adding/Removing feeds
 
-To add URLs, open `~/.newsbeuter/urls` with your favorite text editor and add the URLs, one per line:
+To add URLs, open `~/.newsboat/urls` with your favorite text editor and add the URLs, one per line:
 
 ```
 http://rss.cnn.com/rss/cnn_topstories.rss
@@ -62,11 +62,11 @@ http://username:password@hostname.domain.tld/feed.rss
 
 ```
 
-In order to protect username and password, make sure that `~/.newsbeuter/urls` has the appropriate permissions.
+In order to protect username and password, make sure that `~/.newsboat/urls` has the appropriate permissions.
 
-Newsbeuter also makes sure that usernames and passwords within URLs aren’t displayed in its user interface. In case there is a @ in the username, you need to write it as %40 instead so that it can be distinguished from the @ that separates the username/password part from the hostname part.
+Newsboat also makes sure that usernames and passwords within URLs aren’t displayed in its user interface. In case there is a @ in the username, you need to write it as %40 instead so that it can be distinguished from the @ that separates the username/password part from the hostname part.
 
-You can also configure local files as feeds, by prefixing the local path with `file://` and adding it to the `~/.newsbeuter/urls` file:
+You can also configure local files as feeds, by prefixing the local path with `file://` and adding it to the `~/.newsboat/urls` file:
 
 ```
 file:///var/log/rss_eventlog.xml
@@ -79,7 +79,7 @@ To **remove** a feed, simply delete the line from your urls file
 
 Every feed can be assigned 0 or more tags. This makes it easy to categorize your feeds as well as the ability to easily apply commands to multiple feeds at once.
 
-Usually, the `~/.newsbeuter/urls` file contains one RSS feed URL per line. To assign a tag to an RSS feed, simply attach it as a single word, separated by blanks such as space or tab. If the tag needs to contain spaces, you must use quotes (") around the tag (see example below). An example may look like this:
+Usually, the `~/.newsboat/urls` file contains one RSS feed URL per line. To assign a tag to an RSS feed, simply attach it as a single word, separated by blanks such as space or tab. If the tag needs to contain spaces, you must use quotes (") around the tag (see example below). An example may look like this:
 
 ```
 http://blog.fefe.de/rss.xml?html interesting conspiracy news "cool stuff"                                       
@@ -88,7 +88,7 @@ http://www.heise.de/newsticker/heise.rdf news interesting
 
 ```
 
-When you now start newsbeuter with this configuration, you can press `t` to select a tag. When you select the tag "news", you will see all three RSS feeds. Pressing `t` again and e.g. selecting the "conspiracy" tag, you will only see the `http://blog.fefe.de/rss.xml?html` RSS feed. Pressing `Ctrl-T` clears the current tag, and again shows all RSS feeds, regardless of their assigned tags.
+When you now start Newsboat with this configuration, you can press `t` to select a tag. When you select the tag "news", you will see all three RSS feeds. Pressing `t` again and e.g. selecting the "conspiracy" tag, you will only see the `http://blog.fefe.de/rss.xml?html` RSS feed. Pressing `Ctrl-T` clears the current tag, and again shows all RSS feeds, regardless of their assigned tags.
 
 **Note:** If the tag name contains spaces, the tag must be bounded by `"`
 
@@ -122,7 +122,7 @@ The content of a **hidden** feed can only be found through a query feed.
 
 ## Configuration
 
-Several aspects of newsbeuter’s behaviour can be configured via a configuration file which is located, by default, in `~/.newsbeuter/config`. This configuration file contains lines of the form:
+Several aspects of Newsboat’s behaviour can be configured via a configuration file which is located, by default, in `~/.newsboat/config`. This configuration file contains lines of the form:
 
 ```
 <config-command> <arg1> ...
@@ -139,30 +139,30 @@ See [[1]](https://gist.github.com/anonymous/42d2f5956e7bc8ee1ebc) and [[2]](http
 
 ### Automatic feed reloads
 
-You can use [cron](/index.php/Cron "Cron") or [systemd](/index.php/Systemd "Systemd") to automatically reload your feeds. Just add a line in your crontab, or create a systemd service/timer unit combo that issues the following command:
-
-```
-/usr/bin/newsbeuter -x reload
-
-```
-
-Alternatively, you can set Newsbeuter to automatically reload all of your feeds at startup with the following configuration:
+You can set Newsboat to automatically reload all of your feeds at startup with the following configuration:
 
 ```
 auto-reload yes
 
 ```
 
-With this setting, Newsbeuter also runs periodic auto-reloads -- by default, every 60 minutes. The number of minutes between automatic reloads can be configured like so:
+With this setting, Newsboat also runs periodic auto-reloads -- by default, every 60 minutes. The number of minutes between automatic reloads can be configured like so:
 
 ```
 reload-time <desired number of minutes>
 
 ```
 
+Alternatively, you can use [cron](/index.php/Cron "Cron") or [systemd](/index.php/Systemd "Systemd") to automatically reload your feeds. Just add a line in your crontab, or create a systemd service/timer unit combo that issues the following command:
+
+```
+/usr/bin/newsboat -x reload
+
+```
+
 ### Pass article URL to external command
 
-A clever little hack allows you to pass the url of an article to an external command. The idea is to use a macro to set the browser that newsbeuter opens the article with to the path of some other command and then change it back afterwords.
+A clever little hack allows you to pass the url of an article to an external command. The idea is to use a macro to set the browser that Newsboat opens the article with to the path of some other command and then change it back afterwords.
 
 For example, if you subscribe to a youtube channel and you would like to open the video with [mpv](/index.php/Mpv "Mpv"), do the following:
 
@@ -175,21 +175,21 @@ macro y set browser "mpv %u"; open-in-browser ; set browser "elinks %u"
 
 ## Troubleshooting
 
-### Newsbeuter won't start
+### Newsboat won't start
 
-Newsbeuter cannot start without any configured feeds! If you try to do this you will get the following error:
+Newsboat cannot start without any configured feeds! If you try to do this you will get the following error:
 
 ```
-Error: no URLs configured. Please fill the file /home/ak/.newsbeuter/urls with RSS feed URLs or import an OPML file.
+Error: no URLs configured. Please fill the file /home/ak/.newsboat/urls with RSS feed URLs or import an OPML file.
 
 ```
 
 To add urls, see [#Managing feeds](#Managing_feeds)
 
-If that is not the problem, then you probably have another instance of newsbeuter running. Newsbeuter issues a lock on its database so that only one instance can access it at a time; thus, attempting to open a second instance will fail.
+If that is not the problem, then you probably have another instance of Newsboat running. Newsboat issues a lock on its database so that only one instance can access it at a time; thus, attempting to open a second instance will fail.
 
 ## See Also
 
-*   [Official web site](http://newsbeuter.org/)
-*   [Full documentation](http://www.newsbeuter.org/doc/newsbeuter.html)
+*   [Official web site](https://newsboat.org/)
+*   [Full documentation](https://newsboat.org/releases/2.12/docs/newsboat.html)
 *   [Arabesque: Rss with Newsbeuter](http://blog.sanctum.geek.nz/rss-with-newsbeuter/)

@@ -19,15 +19,14 @@ Related articles
             *   [2.2.1.3 Conclusions](#Conclusions)
         *   [2.2.2 Running the script in Chrome OS](#Running_the_script_in_Chrome_OS)
         *   [2.2.3 Running the script in Arch Linux](#Running_the_script_in_Arch_Linux)
-    *   [2.3 Flashing with Matt DeVillier's Firmware Utility Script](#Flashing_with_Matt_DeVillier.27s_Firmware_Utility_Script)
+    *   [2.3 Flashing with MrChromebox's Firmware Utility Script](#Flashing_with_MrChromebox.27s_Firmware_Utility_Script)
         *   [2.3.1 Introduction to the firmware](#Introduction_to_the_firmware)
         *   [2.3.2 Flashing the firmware](#Flashing_the_firmware)
         *   [2.3.3 Using the script from Arch Linux](#Using_the_script_from_Arch_Linux)
-    *   [2.4 Flashing with ezScript](#Flashing_with_ezScript)
-    *   [2.5 Manually with flashrom](#Manually_with_flashrom)
-        *   [2.5.1 Get flashrom for Arch Linux](#Get_flashrom_for_Arch_Linux)
-        *   [2.5.2 Get flashrom for Chrome OS](#Get_flashrom_for_Chrome_OS)
-        *   [2.5.3 Basic use of flashrom](#Basic_use_of_flashrom)
+    *   [2.4 Manually with flashrom](#Manually_with_flashrom)
+        *   [2.4.1 Get flashrom for Arch Linux](#Get_flashrom_for_Arch_Linux)
+        *   [2.4.2 Get flashrom for Chrome OS](#Get_flashrom_for_Chrome_OS)
+        *   [2.4.3 Basic use of flashrom](#Basic_use_of_flashrom)
 *   [3 Flashing back stock firmware](#Flashing_back_stock_firmware)
 *   [4 Unbricking your Chrome OS device](#Unbricking_your_Chrome_OS_device)
     *   [4.1 Required tools](#Required_tools)
@@ -46,7 +45,7 @@ Related articles
 
 *   Adds a much recent version of SeaBIOS.
 *   Adds SeaBIOS payload of coreboot to Chrome OS devices that did not shipped with SeaBIOS.
-*   Possibility of using a [UEFI](/index.php/UEFI "UEFI") coreboot payload (only with Matt DeVillier's custom firmware).
+*   Possibility of using a [UEFI](/index.php/UEFI "UEFI") coreboot payload (only with MrChromebox's custom firmware).
 *   Reduce boot time.
 *   Remove developer Mode screen.
 *   Enables VMX in models in which it is not active by default.
@@ -56,15 +55,14 @@ Related articles
 
 *   Dangerous, might brick your device.
 *   Cannot boot stock Chrome OS (you can install [Arnold the Bat’s Chromium OS build](https://arnoldthebat.co.uk/wordpress/chromium-os/) and it should be possible upgrade it to full blown Chrome OS with a script).
-*   It is possible that some quirks will be added.[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1460520#p1460520) Keep in mind that some of this quirks are the result of using the old fallback read-only Embedded Controller (EC) firmware image, and thus they may be resolved (e.g. [the one linked before](https://github.com/MattDevo/firmware/issues/15)) in firmware images which provide EC image updates, such as Matt DeVillier's one.
+*   It is possible that some quirks will be added.[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1460520#p1460520) Keep in mind that some of this quirks are the result of using the old fallback read-only Embedded Controller (EC) firmware image, and thus they may be resolved (e.g. [the one linked before](https://github.com/MrChromebox/firmware/issues/15)) in firmware images which provide EC image updates, such as MrChromebox's one.
 
 ## Flashing the custom firmware
 
 There are several approaches for flashing a custom firmware:
 
 *   Use John Lewis' script.
-*   Use Matt DeVillier's [Firmware Utility Script](https://mrchromebox.tech/#fwscript).
-*   Use Matt DeVillier's [ezScript](http://forum.kodi.tv/showthread.php?tid=194362) (currently supports only Chromeboxes).
+*   Use MrChromebox's [Firmware Utility Script](https://mrchromebox.tech/#fwscript).
 *   Manually with `flashrom`, in this case you will need to obtain the firmware by yourself or to compile it from the Coreboot sources ([official](http://www.coreboot.org/Download_coreboot) or [Chromium OS fork](https://chromium.googlesource.com/chromiumos/third_party/coreboot/)).
 
 **Note:** With Linux kernel versions greater than 4.4, CONFIG_IO_STRICT_DEVMEM a new kernel security measure can make flashrom stop working, in that case you can try adding "iomem=relaxed" to your kernel parameters. [[2]](https://www.flashrom.org/FAQ#What_can_I_do_about_.2Fdev.2Fmem_errors.3F﻿).
@@ -128,11 +126,11 @@ You should now have a custom firmware installed on your device, cross you finger
 
 If the custom firmware boots Arch Linux correctly then you might want to enable back the hardware write protection, although [John Lewis states](https://blogs.fsfe.org/the_unconventional/2014/09/19/c720-coreboot/) that it's not necessary and will only make upgrading more difficult later. However, if you do not re-enable it you want to be careful not to use flashrom.
 
-### Flashing with Matt DeVillier's Firmware Utility Script
+### Flashing with MrChromebox's Firmware Utility Script
 
 #### Introduction to the firmware
 
-Matt DeVillier's firmware for Chromebooks and Chromeboxes has some differences compared to other third-party custom firmware, namely:
+MrChromebox's firmware for Chromebooks and Chromeboxes has some differences compared to other third-party custom firmware, namely:
 
 *   Provides a [UEFI](/index.php/UEFI "UEFI") implementation via the Tianocore coreboot payload.
 
@@ -144,19 +142,13 @@ The current major limitation of this firmware is the lack of proper UEFI NVRAM s
 
 #### Flashing the firmware
 
-Ensure that your device is supported by looking at the [supported device list](https://mrchromebox.tech/#devices). For some devices there is a legacy SeaBIOS (non-UEFI) firmware also available, although those are [deprecated](https://github.com/MattDevo/firmware/issues/46) and will generally not receive further updates. Legacy firmware images also do not provide Embedded Controller updates.
+Ensure that your device is supported by looking at the [supported device list](https://mrchromebox.tech/#devices). For some devices there is a legacy SeaBIOS (non-UEFI) firmware also available, although those are [deprecated](https://github.com/MrChromebox/firmware/issues/46) and will generally not receive further updates. Legacy firmware images also do not provide Embedded Controller updates.
 
 If a UEFI ROM for your device is available, you can flash the Full ROM firmware using the [Firmware Utility Script](https://mrchromebox.tech/#fwscript) (after ensuring that you have removed your device's firmware write-protection screw). After successfully flashing the firmware, you can follow the [Installation guide](/index.php/Installation_guide "Installation guide") and install Arch Linux just like on any UEFI computer. [Systemd-boot](/index.php/Systemd-boot "Systemd-boot") is the recommended bootloader since it installs itself by default in `*esp*/EFI/Boot/BOOTX64.EFI`, the path that this firmware tries to boot from by default.
 
 #### Using the script from Arch Linux
 
 You will need to install [dmidecode](https://www.archlinux.org/packages/?name=dmidecode). Furthermore, to ensure that `flashrom` can correctly flash the firmware it is necessary to boot with both the `nopat` and the `iomem=relaxed` [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). This is due to an [issue](https://www.flashrom.org/FAQ#What_can_I_do_about_.2Fdev.2Fmem_errors.3F) with the relatively old statically linked `flashrom` binary used by the script, which is required since upstream `flashrom` can't directly be used to flash firmware images in Chromebooks/Chromeboxes.
-
-### Flashing with ezScript
-
-Currently ezScript supports only Intel based Chromeboxes.
-
-Before installing this custom firmware carefully read instructions at [ezScript official page](http://forum.kodi.tv/showthread.php?tid=194362). To install firmware only use install option #5 (`Install/update: custom coreboot Firmware`).
 
 ### Manually with flashrom
 
