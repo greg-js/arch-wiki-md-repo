@@ -138,7 +138,7 @@ LD_DEBUG=files appname > appname.log 2>&1
 
 The output will end up in `appname.log`.
 
-For more information, see [ld-linux(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ld-linux.8).
+For more information, see [ld-linux(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ld-linux.8).
 
 ### Readelf
 

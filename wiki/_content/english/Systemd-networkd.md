@@ -1,6 +1,7 @@
 Related articles
 
 *   [systemd](/index.php/Systemd "Systemd")
+*   [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved")
 *   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
 *   [Network bridge](/index.php/Network_bridge "Network bridge")
 *   [Network configuration](/index.php/Network_configuration "Network configuration")

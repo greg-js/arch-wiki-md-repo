@@ -63,6 +63,7 @@ Related articles
     *   [6.10 Working with wired connections](#Working_with_wired_connections)
     *   [6.11 resolv.conf](#resolv.conf)
         *   [6.11.1 Use openresolv](#Use_openresolv)
+    *   [6.12 Using iwd as the Wi-Fi backend](#Using_iwd_as_the_Wi-Fi_backend)
 *   [7 Troubleshooting](#Troubleshooting_2)
     *   [7.1 No prompt for password of secured Wi-Fi networks](#No_prompt_for_password_of_secured_Wi-Fi_networks)
     *   [7.2 No traffic via PPTP tunnel](#No_traffic_via_PPTP_tunnel)
@@ -87,7 +88,7 @@ Related articles
 
 ## Installation
 
-NetworkManager can be [installed](/index.php/Install "Install") with the package [networkmanager](https://www.archlinux.org/packages/?name=networkmanager), which contains a daemon, a command line interface (`nmcli`) and a curses‐based interface (`nmtui`). It has functionality for basic DHCP support. For full featured DHCP and if you require IPv6 support, [dhclient](https://www.archlinux.org/packages/?name=dhclient) integrates it.
+NetworkManager can be [installed](/index.php/Install "Install") with the package [networkmanager](https://www.archlinux.org/packages/?name=networkmanager), which contains a daemon, a command line interface (`nmcli`) and a curses‐based interface (`nmtui`). It has functionality for basic DHCP support. For full featured DHCP and if you require IPv6 support, [dhclient](https://www.archlinux.org/packages/?name=dhclient) integrates it. After installed, you should [enable the daemon](#Enable_NetworkManager).
 
 Additional interfaces:
 
@@ -829,6 +830,16 @@ rc-manager=resolvconf
 ```
 
 Others options are available in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).
+
+### Using iwd as the Wi-Fi backend
+
+To enable the experimental [iwd](/index.php/Iwd "Iwd") backend create the following configuration file:
+
+ `/etc/NetworkManager/conf.d/wifi_backend.conf` 
+```
+[device]
+wifi.backend=iwd
+```
 
 ## Troubleshooting
 

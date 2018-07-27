@@ -53,7 +53,7 @@ Asterisk indicates the year of first public release based on Arch Linux.
 *   [Bluestar Linux](https://sourceforge.net/projects/bluestarlinux/) 
 *   [Chakra](https://sourceforge.net/projects/chakra/) 
 *   [Condres OS](https://sourceforge.net/projects/condres-os-gnu-linux/) 
-*   [Ctlos Linux](https://ctlos.github.io/) 
+*   [Ctlos Linux](https://ctlos.gitlab.io/) 
 *   [Hyperbola](https://www.hyperbola.info/) 
 *   [KaOS](https://sourceforge.net/projects/kaosx/) 
 *   [LinHES](http://linhes.org/) 

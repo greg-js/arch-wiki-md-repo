@@ -19,6 +19,8 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 *   [3 TrackPoint and Touchpad](#TrackPoint_and_Touchpad)
 *   [4 Power management/Throttling issues](#Power_management.2FThrottling_issues)
 *   [5 UEFI](#UEFI)
+*   [6 Screen backlight](#Screen_backlight)
+*   [7 Special buttons](#Special_buttons)
 
 ## Hardware
 
@@ -116,3 +118,35 @@ Sollution is to rename the .efi to that specific file.
 ```
 
 Source: [http://www.rodsbooks.com/efi-bootloaders/installation.html#alternative-naming](http://www.rodsbooks.com/efi-bootloaders/installation.html#alternative-naming)
+
+## Screen backlight
+
+Without the intel driver (xf86-video-intel), neither xbacklight or xrandr brightness control are working.
+
+## Special buttons
+
+Some special buttons are not supported by X server due to keycode number limit.
+
+| Key combination | Scancode | Keycode |
+| `Fn+F11` | `0x49` | `374` `KEY_KEYBOARD` |
+| `Fn+F12` | `0x45` | `364` `KEY_FAVORITES` |
+
+You can remap unsupported keys using [udev hwdb](/index.php/Map_scancodes_to_keycodes "Map scancodes to keycodes"):
+
+ `/etc/udev/hwdb.d/90-thinkpad-keyboard.hwdb` 
+```
+evdev:name:ThinkPad Extra Buttons:dmi:bvn*:bvr*:bd*:svnLENOVO*:pn*
+ KEYBOARD_KEY_45=prog1
+ KEYBOARD_KEY_49=prog2
+
+```
+
+Update hwdb after editing the rule.
+
+```
+# udevadm hwdb --update
+# udevadm trigger --sysname-match="event*"
+
+```
+
+Their names will be "XF86Launch2" (KEY_KEYBOARD) and "XF86Launch1" (KEY_FAVORITES)

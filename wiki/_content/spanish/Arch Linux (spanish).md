@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Arch Linux](/index.php/Arch_Linux "Arch Linux"). Fecha de la última traducción/revisión: **2018-05-03**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=423847).
+**Estado de la traducción:** este artículo es una versión traducida de [Arch Linux](/index.php/Arch_Linux "Arch Linux"). Fecha de la última traducción/revisión: **2018-07-27**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=507441).
 
 Arch Linux es una distribución GNU/Linux independiente, de propósito general, desarrollada para x86-64\. Se esfuerza en ofrecer las últimas versiones estables de la mayoría del software, siguiendo un modelo rolling-release (lanzamiento continuo). La instalación por defecto deja un sistema de base mínima, que el usuario configurará posteriormente agregando lo que necesite.
 
@@ -17,7 +17,7 @@ Arch Linux es una distribución GNU/Linux independiente, de propósito general, 
     *   [2.4 El amanecer de la era de A. Griffin](#El_amanecer_de_la_era_de_A._Griffin)
     *   [2.5 Scripts de instalación de Arch](#Scripts_de_instalaci.C3.B3n_de_Arch)
     *   [2.6 La era de systemd](#La_era_de_systemd)
-    *   [2.7 Finaliza soporte de i686](#Finaliza_soporte_de_i686)
+    *   [2.7 Finaliza el soporte de i686](#Finaliza_el_soporte_de_i686)
 
 ## Principios
 
@@ -37,7 +37,7 @@ Arch incorpora muchas de las nuevas tecnologías disponibles para los usuarios d
 
 Arch es una distribución pragmática antes que idealista. Los principios aquí solo sirven como directrices útiles. En última instancia, las decisiones de diseño se realizan caso por caso a través de un desarrollo consensuado. Las técnicas de análisis se basan en la evidencia y los debates, no en la política o las opiniones públicas.
 
-Se ofrece un gran número de paquetes y script de compilación en los diferentes repositorios de Arch Linux tanto de software libre y de código abierto para aquellos que lo prefieran, así como de software propietario para aquellos que abrazan la *funcionalidad sobre la ideología*.
+Se ofrece un gran número de paquetes y script de compilación en los diferentes repositorios de Arch Linux tanto de software libre y de código abierto para aquellos que lo prefieran, así como de software propietario para aquellos que abrazan la funcionalidad sobre la ideología.
 
 ### Centrado en el usuario
 
@@ -53,13 +53,17 @@ Arch está respaldado por [pacman](/index.php/Pacman "Pacman"), un gestor de paq
 
 ## Historia
 
+La comunidad Arch ha crecido y madurado hasta convertirse en una de las distribuciones GNU/Linux más populares e influyentes, también atestiguada por la [atención y crítica](/index.php/Arch_Linux_press_coverage "Arch Linux press coverage") recibidas a lo largo de los años.
+
+Los desarrolladores de Arch son voluntarios no remunerados, a tiempo parcial, y no hay perspectivas de monetizar Arch Linux, por lo que seguirá siendo libre en todos los sentidos de la palabra. Aquellos con curiosidad por leer más detalles sobre el historial de desarrollo de Arch pueden navegar por el [registro de Arch en Internet Archive Wayback Machine](http://web.archive.org/web/*/archlinux.org) y los [archivos de noticias de Arch Linux](https://www.archlinux.org/news/).
+
 ### Los primeros años
 
-Judd Vinet, un guitarrista ocasional y programador canadiense, comenzó a desarrollar Arch Linux a principios de 2001\. Su primer lanzamiento oficial, Arch Linux 0.1, fue el 11 de marzo de 2002\. Motivado por la elegante sencillez de [Slackware](http://www.slackware.com/), [BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution "wikipedia:Berkeley Software Distribution"), [PLD Linux](http://www.pld-linux.org/) y [CRUX](http://crux.nu/), y, sin embargo, decepcionado ante la falta de gestión de paquetes en ese momento, Vinet construyó su propia distribución basada en principios similares a aquellas distribuciones. Pero, también escribió un programa de gestión de paquetes llamado [pacman](/index.php/Pacman "Pacman") para manejar, de forma automática, la instalación, eliminación y actualización de paquetes.
+Judd Vinet, un guitarrista ocasional y programador canadiense, comenzó a desarrollar Arch Linux a principios de 2001\. Su primer lanzamiento oficial, Arch Linux 0.1, fue el 11 de marzo de 2002\. [Motivado](https://distrowatch.com/dwres.php?resource=interview-arch) por la elegante sencillez de Slackware, BSD, PLD Linux y CRUX, y también decepcionado ante la falta de gestión de paquetes en ese momento, Vinet construyó su propia distribución basada en principios similares a aquellas distribuciones. Pero, también escribió un programa de gestión de paquetes llamado [pacman](/index.php/Pacman "Pacman") para manejar, de forma automática, la instalación, eliminación y actualización de paquetes.
 
 ### Los años intermedios
 
-La primera comunidad de Arch creció de manera constante, como lo demuestra [este gráfico de publicaciones, usuarios e informes de errores en el foro](https://dev.archlinux.org/~dan/archstats.svg). Por otra parte, fue desde sus primeros días conocida como [una comunidad abierta, amigable y colaboradora](http://www.osnews.com/story/4827).
+La primera comunidad de Arch creció de manera constante, como lo demuestra [este gráfico de publicaciones, usuarios e informes de errores en el foro](/images/8/8d/Archstats2002-2011.png "Archstats2002-2011.png"). Por otra parte, fue desde sus primeros días conocida como [una comunidad abierta, amigable y colaboradora](http://www.osnews.com/story/4827).
 
 ### El nacimiento de ArchWiki
 
@@ -67,7 +71,7 @@ En 2005-07-08 la ArchWiki fue [iniciada](/index.php/ArchWiki:About#History "Arch
 
 ### El amanecer de la era de A. Griffin
 
-A finales de 2007, Judd Vinet se retiró de la participación activa como desarrollador de Arch, y [transfirió sin problemas las riendas al programador estadounidense Aaron Griffin](https://bbs.archlinux.org/viewtopic.php?id=38024), también conocido como Phrakture, quien sigue siendo el principal desarrollador de Arch hasta el día de hoy.
+A finales de 2007, Judd Vinet se retiró de la participación activa como desarrollador de Arch, y [transfirió sin problemas las riendas al programador estadounidense Aaron Griffin](https://bbs.archlinux.org/viewtopic.php?id=38024), también conocido como Phrakture.
 
 Con los años, la comunidad de Arch continuó creciendo y madurando, y ha recibido recientemente una atención inusual de la [prensa](/index.php/Arch_Linux_Press_Review "Arch Linux Press Review"), teniendo en cuenta el tamaño modesto de esta distribución Linux.
 
@@ -81,6 +85,6 @@ El lanzamiento del medio de instalación en 2012-07-15 hizo que la estructura de
 
 Entre 2012 y 2013 el sistema de inicio tradicional (system V) fue remplazado por systemd.[[1]](https://www.archlinux.org/news/install-medium-20121006-introduces-systemd/)[[2]](https://www.archlinux.org/news/systemd-is-now-the-default-on-new-installations/)[[3]](https://www.archlinux.org/news/end-of-initscripts-support/)[[4]](https://www.archlinux.org/news/final-sysvinit-deprecation-warning/)
 
-### Finaliza soporte de i686
+### Finaliza el soporte de i686
 
-En 2017-01-25 se [anuncio](https://www.archlinux.org/news/phasing-out-i686-support/) que el soporte para la arquitectura de i686 seria finalizado debido a la poca popularidad entre los desarrolladores y la comunidad. Al final de [noviembre 2017](https://www.archlinux.org/news/the-end-of-i686-support/), todos los paquetes fueron removidos de los servidores replicas.
+En 2017-01-25 se [anuncio](https://www.archlinux.org/news/phasing-out-i686-support/) que el soporte para la arquitectura de i686 seria finalizado debido a la poca popularidad entre los desarrolladores y la comunidad. Al final de [noviembre 2017](https://www.archlinux.org/news/the-end-of-i686-support/), todos los paquetes fueron eliminados de los servidores replicas.

@@ -122,19 +122,11 @@ No blocklist, no DNSSEC:
 
 [UncensoredDNS](https://censurfridns.dk) is a free uncensored DNS service. It is run by a private individual and consists in one anycast served by multiple servers and one unicast node hosted in Denmark.
 
-anycast.censurfridns.dk:
-
 ```
-91.239.100.100
-2001:67c:28a4::
-
-```
-
-unicast.censurfridns.dk:
-
-```
-89.233.43.71
-2a01:3a0:53:53::
+91.239.100.100   # anycast.censurfridns.dk
+89.233.43.71     # unicast.censurfridns.dk
+2001:67c:28a4::  # anycast.censurfridns.dk
+2a01:3a0:53:53:: # unicast.censurfridns.dk
 
 ```
 
@@ -144,7 +136,7 @@ unicast.censurfridns.dk:
 
 [Yandex.DNS](https://dns.yandex.com/advanced/) has servers in Russia, Eastern and Western Europe and has three options, *Basic*, *Safe* and *Family*.
 
-Basic Yandex.DNS - no traffic filtering:
+Basic - no traffic filtering:
 
 ```
 77.88.8.8
@@ -154,7 +146,7 @@ Basic Yandex.DNS - no traffic filtering:
 
 ```
 
-Safe Yandex.DNS - protection from infected and fraudulent sites:
+Safe - protection from infected and fraudulent sites:
 
 ```
 77.88.8.88
@@ -164,7 +156,7 @@ Safe Yandex.DNS - protection from infected and fraudulent sites:
 
 ```
 
-Family Yandex.DNS - protection from dangerous sites and sites with adult content:
+Family - protection from dangerous sites and sites with adult content:
 
 ```
 77.88.8.7

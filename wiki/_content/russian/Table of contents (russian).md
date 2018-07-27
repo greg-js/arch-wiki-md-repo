@@ -70,7 +70,7 @@
 | <small>3.1.</small> [Разработка Arch](/index.php/Category:Arch_development_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Arch development (Русский)") <small>(2) (Также в [Об Arch](/index.php/Category:About_Arch_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:About Arch (Русский)"))</small> | <small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(18) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
 | <small>3.1.1.</small> [Разработка пакетов](/index.php/Category:Package_development_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Package development (Русский)") <small>(10)</small> | <small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(47)</small> |
  <small>3.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
- <small>3.2.</small> [Framework](/index.php/Category:Framework "Category:Framework") <small>(4)</small> |
+ <small>3.2.</small> [Framework](/index.php?title=Category:Framework&action=edit&redlink=1 "Category:Framework (page does not exist)") <small>(4)</small> |
  <small>3.3.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems") <small>(6) (also in [Web applications](/index.php/Category:Web_applications "Category:Web applications"))</small> |
 | <small>3.2.</small> [Языки программирования](/index.php/Category:Programming_languages_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Programming languages (Русский)") <small>(7)</small> | <small>3.4.</small> [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages") <small>(24)</small> |
  <small>3.5.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(14) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
@@ -122,7 +122,7 @@
  <small>5.1.</small> [DHCP](/index.php/Category:DHCP "Category:DHCP") <small>(3)</small> |
 | <small>5.1.</small> [Distributed computing](/index.php/Category:Distributed_computing_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Distributed computing (Русский)") <small>(1)</small> | <small>5.2.</small> [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing") <small>(5)</small> |
  <small>5.3.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(18)</small> |
- <small>5.4.</small> [Email](/index.php/Category:Email "Category:Email") <small>(2)</small> |
+ <small>5.4.</small> [Email](/index.php/Category:Email "Category:Email") <small>(3)</small> |
  <small>5.4.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(11) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
  <small>5.4.2.</small> [Mail retrieval agents](/index.php/Category:Mail_retrieval_agents "Category:Mail retrieval agents") <small>(5)</small> |
  <small>5.4.3.</small> [Mail server](/index.php/Category:Mail_server "Category:Mail server") <small>(19) (also in [Servers](/index.php/Category:Servers "Category:Servers"))</small> |

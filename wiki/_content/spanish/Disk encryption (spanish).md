@@ -5,8 +5,10 @@ Artículos relacionados
 *   [TrueCrypt](/index.php/TrueCrypt "TrueCrypt")
 *   [eCryptfs](/index.php/ECryptfs "ECryptfs")
 *   [EncFS](/index.php/EncFS "EncFS")
+*   [gocryptfs](/index.php/Gocryptfs "Gocryptfs")
 *   [Tomb](/index.php/Tomb "Tomb")
 *   [tcplay](/index.php/Tcplay "Tcplay")
+*   [Self-Encrypting Drives](/index.php/Self-Encrypting_Drives "Self-Encrypting Drives")
 
 **Estado de la traducción:** este artículo es una versión traducida de [Disk encryption](/index.php/Disk_encryption "Disk encryption"). Fecha de la última traducción/revisión: **2015-06-21**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Disk_encryption&diff=0&oldid=378165).
 

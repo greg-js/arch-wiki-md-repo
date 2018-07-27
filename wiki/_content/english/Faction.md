@@ -115,4 +115,4 @@ In extended mode,
 ## See also
 
 *   [Faction Homepage](https://timetoplatypus.com/static/faction/index.html)
-*   [Faction Example Project](https://github.com/timetoplatypus/three_b)
+*   [Faction Example Project](https://git.timetoplatypus.com/timetoplatypus/three_b)

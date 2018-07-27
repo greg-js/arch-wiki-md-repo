@@ -1,19 +1,20 @@
 Related articles
 
+*   [Browser extensions](/index.php/Browser_extensions "Browser extensions")
 *   [Opera](/index.php/Opera "Opera")
 *   [Firefox](/index.php/Firefox "Firefox")
 *   [Chromium](/index.php/Chromium "Chromium")
 
 There are two types of browser plugins, based on the plugin API they use:
 
-*   Netscape plugin API (NPAPI): these plugins work in most smaller browsers ([Firefox supports only the Flash Player plugin](/index.php/Firefox#Plugins "Firefox"), Chromium and Opera do **not** support these plugins).
-*   Pepper plugin API (PPAPI): these plugins work in [Chromium](/index.php/Chromium "Chromium") (and Chrome), [Opera](/index.php/Opera "Opera") and [Vivaldi](/index.php/Vivaldi "Vivaldi").
+*   Netscape plugin API ([NPAPI](https://en.wikipedia.org/wiki/NPAPI "wikipedia:NPAPI")): these plugins work in most smaller browsers ([Firefox supports only the Flash Player plugin](/index.php/Firefox#Plugins "Firefox"), Chromium and Opera do **not** support these plugins).
+*   Pepper plugin API (**PPAPI**): these plugins work in [Chromium](/index.php/Chromium "Chromium") (and Chrome), [Opera](/index.php/Opera "Opera") and [Vivaldi](/index.php/Vivaldi "Vivaldi").
 
 Most plugins on this page are NPAPI-only, unless noted otherwise.
 
 ## Contents
 
-*   [1 Flash Player](#Flash_Player)
+*   [1 Flash players](#Flash_players)
     *   [1.1 Adobe Flash Player](#Adobe_Flash_Player)
         *   [1.1.1 Installation](#Installation)
         *   [1.1.2 Upgrade](#Upgrade)
@@ -41,7 +42,7 @@ Most plugins on this page are NPAPI-only, unless noted otherwise.
     *   [10.5 Firefox: old Flash Player version shown after upgrade](#Firefox:_old_Flash_Player_version_shown_after_upgrade)
     *   [10.6 Firefox: plugins are installed but not working](#Firefox:_plugins_are_installed_but_not_working)
 
-## Flash Player
+## Flash players
 
 ### Adobe Flash Player
 

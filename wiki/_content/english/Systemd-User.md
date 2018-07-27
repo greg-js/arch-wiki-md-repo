@@ -42,7 +42,7 @@ Similarly to system units, user units are located in the following directories (
 *   `/usr/lib/systemd/user/` where units provided by installed packages belong.
 *   `~/.local/share/systemd/user/` where units of packages that have been installed in the home directory belong.
 *   `/etc/systemd/user/` where system-wide user units are placed by the system administrator.
-*   `~/.config/systemd/user/` where the user puts his own units.
+*   `~/.config/systemd/user/` where the user puts their own units.
 
 When systemd user instance starts, it brings up the target `default.target`. Other units can be controlled manually with `systemctl --user`.
 

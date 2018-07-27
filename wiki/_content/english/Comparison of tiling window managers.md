@@ -73,4 +73,4 @@ Tiling window managers are usually designed to be used entirely with the keyboar
 
 ## External links
 
-*   [Comparison of extensible window managers](http://sawfish.wikia.com/wiki/Comparison_of_extensible_window_managers) compares WMs "extensible" by scripting, like Xmonad and Sawfish.
+*   [Comparison of extensible window managers](http://sawfish.wikia.com/wiki/Comparison_of_extensible_window_managers) compares WMs "extensible" by scripting, like xmonad and Sawfish.

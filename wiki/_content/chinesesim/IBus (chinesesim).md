@@ -1,3 +1,9 @@
+相关文章
+
+*   [Fcitx](/index.php/Fcitx "Fcitx")
+*   [SCIM](/index.php/SCIM "SCIM")
+*   [UIM](/index.php/UIM "UIM")
+
 [IBus](https://en.wikipedia.org/wiki/Intelligent_Input_Bus 和 [UIM](/index.php/UIM "UIM") 类似。
 
 ## Contents
@@ -94,14 +100,7 @@ $ qtconfig-qt4
 
 ### GNOME
 
-GNOME现在已经默认集成了IBus， 所以你只需要安装的输入法引擎并在*Region & Language* 添加输入源。默认切换输入法的快捷键是 `Super+space`; 你可以在终端输入
-
-```
-$ ibus-setup
-
-```
-
-进入设置页面来修改。
+GNOME现在已经默认集成了IBus， 所以你只需要安装的输入法引擎,并在*Region & Language* 中的 “ Input Sources” 添加进去。在你添加至少两个输入源后，GNOME会在托盘中显示输入选择图标。如果如此操作之后你没有成功，很可能你没有完成locale-gen。默认切换输入法的快捷键是 `Super+space`; 请忽视ibus-setup中的添加方法，这不会真的添加新的输入法。
 
 ## 配置
 

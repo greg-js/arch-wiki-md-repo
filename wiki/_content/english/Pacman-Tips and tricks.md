@@ -677,11 +677,7 @@ There are other downloading applications that you can use with *pacman*. Here th
 
 ### Graphical front-ends
 
-**Warning:** Some front-ends such as [octopi](https://aur.archlinux.org/packages/octopi/) [[2]](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) perform [partial upgrades](/index.php/Partial_upgrade "Partial upgrade") periodically.
-
-*   **Aarchup** — Fork of archup. Has the same options as archup plus a few other features. For differences between both please check [changelog](https://bbs.archlinux.org/viewtopic.php?id=119129).
-
-	[https://github.com/aericson/aarchup/](https://github.com/aericson/aarchup/) || [aarchup](https://aur.archlinux.org/packages/aarchup/)
+See also [AUR helpers#Graphical](/index.php/AUR_helpers#Graphical "AUR helpers").
 
 *   **Apper** — Application and package manager for KDE using PackageKit.
 
@@ -690,10 +686,6 @@ There are other downloading applications that you can use with *pacman*. Here th
 *   **Arch-Update** — Update indicator for Gnome-Shell.
 
 	[https://github.com/RaphaelRochet/arch-update](https://github.com/RaphaelRochet/arch-update) || [gnome-shell-extension-arch-update](https://aur.archlinux.org/packages/gnome-shell-extension-arch-update/)
-
-*   **Arch-Update-Notifier** — Update indicator for KDE.
-
-	[https://github.com/I-Dream-in-Code/kde-arch-update-plasmoid](https://github.com/I-Dream-in-Code/kde-arch-update-plasmoid) || [plasma5-applets-kde-arch-update-notifier-git](https://aur.archlinux.org/packages/plasma5-applets-kde-arch-update-notifier-git/)
 
 *   **Discover** — Collection of package management tools for KDE, using PackageKit.
 
@@ -707,17 +699,9 @@ There are other downloading applications that you can use with *pacman*. Here th
 
 	[https://wiki.gnome.org/Apps/Software](https://wiki.gnome.org/Apps/Software) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
 
-*   **kalu** — Small application that will add an icon to your systray and sit there, regularly checking if there's anything new for you to upgrade.
-
-	[https://jjacky.com/kalu/](https://jjacky.com/kalu/) || [kalu](https://aur.archlinux.org/packages/kalu/)
-
 *   **pcurses** — Package management in a curses frontend.
 
 	[https://github.com/schuay/pcurses](https://github.com/schuay/pcurses) || [pcurses](https://www.archlinux.org/packages/?name=pcurses)
-
-*   **PkgBrowser** — Application for searching and browsing Arch packages, showing details on selected packages.
-
-	[https://bitbucket.org/kachelaqa/pkgbrowser/wiki/Home](https://bitbucket.org/kachelaqa/pkgbrowser/wiki/Home) || [pkgbrowser](https://aur.archlinux.org/packages/pkgbrowser/)
 
 *   **tkPacman** — Depends only on Tcl/Tk and X11, and interacts with the package database via the CLI of *pacman*.
 

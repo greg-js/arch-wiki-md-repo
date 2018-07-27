@@ -14,12 +14,11 @@ In general, a [domain name](https://en.wikipedia.org/wiki/Domain_name "wikipedia
     *   [2.2 Limit lookup time](#Limit_lookup_time)
     *   [2.3 Hostname lookup delayed with IPv6](#Hostname_lookup_delayed_with_IPv6)
     *   [2.4 Local domain names](#Local_domain_names)
-*   [3 Systemd-resolved](#Systemd-resolved)
-*   [4 Resolvers](#Resolvers)
-*   [5 Performance](#Performance)
-*   [6 Privacy](#Privacy)
-*   [7 Lookup utilities](#Lookup_utilities)
-*   [8 See also](#See_also)
+*   [3 Resolvers](#Resolvers)
+*   [4 Performance](#Performance)
+*   [5 Privacy](#Privacy)
+*   [6 Lookup utilities](#Lookup_utilities)
+*   [7 See also](#See_also)
 
 ## Name Service Switch
 
@@ -32,7 +31,7 @@ The [Name Service Switch](https://en.wikipedia.org/wiki/Name_Service_Switch "wik
 
 [Systemd](/index.php/Systemd "Systemd") provides three NSS services for hostname resolution:
 
-*   [nss-resolve(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nss-resolve.8) - a caching DNS stub resolver, described in [#Systemd-resolved](#Systemd-resolved)
+*   [nss-resolve(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nss-resolve.8) - a caching DNS stub resolver, described in [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved")
 *   [nss-myhostname(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nss-myhostname.8) - provides hostname resolution without having to edit `/etc/hosts`, described in [Network configuration#Local hostname resolution](/index.php/Network_configuration#Local_hostname_resolution "Network configuration")
 *   [nss-mymachines(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nss-mymachines.8) - provides hostname resolution for the names of local [systemd-machined(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-machined.8) containers
 
@@ -96,42 +95,6 @@ domain example.com
 
 That way you can refer to local hosts such as `mainmachine1.example.com` as simply `mainmachine1` when using the *ssh* command, but the *drill* command still requires the fully qualified domain names in order to perform lookups.
 
-## Systemd-resolved
-
-[systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8) is a [systemd](/index.php/Systemd "Systemd") service that provides network name resolution to local applications via a [D-Bus](/index.php/D-Bus "D-Bus") interface, the `resolve` NSS service ([nss-resolve(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nss-resolve.8)), and a local DNS stub listener on `127.0.0.53`.
-
-*systemd-resolved* has four different modes for handling the [glibc resolver](#Glibc_resolver)'s *resolv.conf* (described in [systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8#.2FETC.2FRESOLV.CONF)). We will focus here on the two most relevant modes.
-
-1.  The mode in which *systemd-resolved* is a client of the `/etc/resolv.conf`. This mode preserves `/etc/resolv.conf` and is **compatible** with the procedures described in this page.
-2.  The *systemd-resolved'*s **recommended** mode of operation: the DNS stub file `/run/systemd/resolve/stub-resolv.conf` contains both the local stub `127.0.0.53` as the only DNS servers and a list of search domains.
-
-The service users are advised to redirect the `/etc/resolv.conf` file to the local stub DNS resolver file `/run/systemd/resolve/stub-resolv.conf` managed by *systemd-resolved*. This propagates the systemd managed configuration to all the clients. This can be done by replacing `/etc/resolv.conf` with a symbolic link to the systemd stub:
-
-```
-# ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-
-```
-
-In this mode, the DNS servers are provided in the [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5) file:
-
- `/etc/systemd/resolved.conf.d/dns_servers.conf` 
-```
-[Resolve]
-**DNS=91.239.100.100 89.233.43.71**
-```
-
-In order to check the DNS actually used by *systemd-resolved*, the command to use is:
-
-```
-$ resolvectl status
-
-```
-
-**Tip:**
-
-*   To understand the context around the DNS choices and switches, one can turn on detailed debug information for *systemd-resolved* as described in [Systemd#Diagnosing a service](/index.php/Systemd#Diagnosing_a_service "Systemd").
-*   The mode of operation of *systemd-resolved* is detected automatically, depending on whether `/etc/resolv.conf` is a symlink to the local stub DNS resolver file or contains server names.
-
 ## Resolvers
 
 The Glibc resolver provides only the most basic necessities, it does not cache queries or provide any security or privacy features. If you desire more functionality use another resolver.
@@ -151,14 +114,14 @@ The columns have the following meaning:
 | [dnscrypt-proxy](/index.php/Dnscrypt-proxy "Dnscrypt-proxy") | Yes | No | No |  ? | No | Yes | Implements the [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt") protocol. |
 | [dnsmasq](/index.php/Dnsmasq "Dnsmasq") | Yes | No | [openresolv](/index.php/Openresolv "Openresolv") subscriber | Yes | No | No |
 | [Knot Resolver](/index.php/Knot_Resolver "Knot Resolver") | Yes | Yes | No | Yes | Yes | No [[1]](https://gitlab.labs.nic.cz/knot/knot-resolver/issues/243) |
-| [pdnsd](/index.php/Pdnsd "Pdnsd") | Yes |  ? | [openresolv](/index.php/Openresolv "Openresolv") subscriber | Yes | No | No |
+| [pdnsd](/index.php/Pdnsd "Pdnsd") | Yes | Yes | [openresolv](/index.php/Openresolv "Openresolv") subscriber | No | No | No |
 | [Stubby](/index.php/Stubby "Stubby") | No | No | No |  ? | Yes |  ? |
-| [systemd-resolved](#Systemd-resolved) | Yes | No | [systemd-resolvconf](https://www.archlinux.org/packages/?name=systemd-resolvconf) | Yes | Limited | No [[2]](https://github.com/systemd/systemd/issues/8639) |
+| [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") | Yes | No | [systemd-resolvconf](https://www.archlinux.org/packages/?name=systemd-resolvconf) | Yes | Limited | No [[2]](https://github.com/systemd/systemd/issues/8639) |
 | [Unbound](/index.php/Unbound "Unbound") | Yes | Yes | [openresolv](/index.php/Openresolv "Openresolv") subscriber | Yes | Yes |  ? |
 
 ## Performance
 
-The [#Glibc resolver](#Glibc_resolver) does not cache queries. If you want local caching use [#Systemd-resolved](#Systemd-resolved) or set up a local caching [DNS server](/index.php/DNS_server "DNS server") and use `127.0.0.1`.
+The [#Glibc resolver](#Glibc_resolver) does not cache queries. If you want local caching use [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") or set up a local caching [DNS server](/index.php/DNS_server "DNS server") and use `127.0.0.1`.
 
 **Tip:** The *drill* or *dig* [#Lookup utilities](#Lookup_utilities) report the query time.
 

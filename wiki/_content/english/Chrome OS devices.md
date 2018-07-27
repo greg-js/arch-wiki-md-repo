@@ -12,8 +12,8 @@ This article was created to provide information on how to get Arch installed on 
 ## Contents
 
 *   [1 Introduction](#Introduction)
-    *   [1.1 Legacy boot](#Legacy_boot)
-        *   [1.1.1 Models without SeaBIOS](#Models_without_SeaBIOS)
+    *   [1.1 Legacy Boot Mode](#Legacy_Boot_Mode)
+        *   [1.1.1 Models without Legacy Boot Mode/SeaBIOS](#Models_without_Legacy_Boot_Mode.2FSeaBIOS)
     *   [1.2 Firmware write protection intro](#Firmware_write_protection_intro)
     *   [1.3 Prerequisites](#Prerequisites)
 *   [2 Chrome OS devices](#Chrome_OS_devices)
@@ -21,9 +21,9 @@ This article was created to provide information on how to get Arch installed on 
 *   [3 Installation](#Installation)
     *   [3.1 Enabling developer mode](#Enabling_developer_mode)
     *   [3.2 Accessing the superuser shell](#Accessing_the_superuser_shell)
-        *   [3.2.1 Accessing the superuser shell without Chrome OS configuration](#Accessing_the_superuser_shell_without_Chrome_OS_configuration)
-        *   [3.2.2 Accessing the superuser shell with Chrome OS configuration](#Accessing_the_superuser_shell_with_Chrome_OS_configuration)
-    *   [3.3 Enabling SeaBIOS](#Enabling_SeaBIOS)
+        *   [3.2.1 Accessing the superuser shell without logging into ChromeOS](#Accessing_the_superuser_shell_without_logging_into_ChromeOS)
+        *   [3.2.2 Accessing the superuser shell when logged into ChromeOS](#Accessing_the_superuser_shell_when_logged_into_ChromeOS)
+    *   [3.3 Enabling Legacy Boot Mode](#Enabling_Legacy_Boot_Mode)
         *   [3.3.1 Boot to SeaBIOS by default](#Boot_to_SeaBIOS_by_default)
     *   [3.4 Flashing a custom firmware](#Flashing_a_custom_firmware)
     *   [3.5 Installing Arch Linux](#Installing_Arch_Linux)
@@ -60,27 +60,31 @@ This article was created to provide information on how to get Arch installed on 
 
 ## Introduction
 
-### Legacy boot
+### Legacy Boot Mode
 
-Some of the newer Chrome OS devices (Intel's Haswell and Broadwell based models) feature a "legacy boot" mode that makes it easier to boot Linux and other operating systems. The legacy boot mode is provided by the [SeaBIOS](http://www.coreboot.org/SeaBIOS) payload of [Coreboot](http://www.coreboot.org/), which is the firmware for the Intel based Chrome OS devices (with the exception of the first generation of Chromebooks). SeaBIOS behaves like a traditional BIOS that boots into the MBR of the disk, and from there into standard bootloaders like Syslinux and GRUB.
+All recent Intel-based Chrome OS devices (starting with the 2013 Chromebook Pixel) feature a Legacy Boot Mode, designed to allow the user to boot Linux. Legacy Boot Mode has a dedicated firmware region, `RW_LEGACY`, which is designed to be user-writeable (hence the 'RW' notation) and is completely separate from the ChromeOS portion of the firmware (ie, it is safe to update and cannot brick the device). It is enabled by the [SeaBIOS](http://www.coreboot.org/SeaBIOS) payload of [coreboot](http://www.coreboot.org/), the open-source firmware used for all Chrome OS devices (with the exception of the first generation of Chromebooks and a few early ARM models). SeaBIOS behaves like a traditional BIOS that boots into the MBR of the disk, and from there into standard bootloaders like Syslinux and GRUB.
 
-On the Chrome OS devices that shipped with SeaBIOS, the installation process of Arch Linux should be similar with a few minor adjustments.
+Models with a Core-i based SoC (Haswell, Broadwell, Skylake, KabyLake) mostly ship with a functional Legacy Boot Mode payload; updating to a 3rd party build can provide bug fixes and additional features. Models with an Atom-based SoC (Baytrail, Braswell, Apollolake) have Legacy Boot Mode capability, but do not ship with a RW_LEGACY/SeaBIOS payload (that part of the firmware is blank). These models require a 3rd party RW_LEGACY firmware to be loaded for Legacy Boot Mode to be functional.
 
-#### Models without SeaBIOS
+#### Models without Legacy Boot Mode/SeaBIOS
 
-One of the following approaches can be taken in order to install Arch Linux on Chrome OS devices that did not shipped with SeaBIOS as part of the installed firmware:
+One of the following approaches can be taken in order to install Arch Linux on Chrome OS devices which did not ship with SeaBIOS as part of the installed firmware:
 
-*   On all modern Intel-based models (starting with the 2013 Chromebook Pixel), it is possible to only flash a SeaBIOS payload to the `RW_LEGACY` part of the firmware flash memory. This is 100% safe, as it writes to a user-writeable area of the firmware image which is completely separate from/does not affect ChromeOS. The easiest way to install/update the RW_LEGACY firmware on your ChromeOS device is via MrChromebox's [Firmware Utility Script](/index.php/Chrome_OS_devices/Custom_firmware#Flashing_with_MrChromebox.27s_Firmware_Utility_Script "Chrome OS devices/Custom firmware"), which supports the widest range of devices and offers the most up-to-date SeaBIOS builds; one can also update the `RW_LEGACY` firmware manually with Chrome OS' `flashrom` (requires downloading/compiling your own build), or use John Lewis' `flash_chromebook_rom.sh` script.
-*   Flash a full [custom firmware](/index.php/Custom_firmware_for_Chrome_OS_devices "Custom firmware for Chrome OS devices") which includes either a SeaBIOS or UEFI payload.
-*   Only write to the `BOOT_STUB` part of the firmware flash memory. This method replaces the stock ChromeOS payload (depthcharge) with SeaBIOS. This is theoretically a safer approach than flashing the full firmware but there might be some limitations (e.g. no support in suspend or VMX). This is the `Modify ROM to run SeaBIOS exclusively` option in John Lewis' `flash_chromebook_rom.sh` script and `Flash BOOT_STUB firmware` option in MrChromebox's.
+*   If the device supports Legacy Boot Mode, but does not ship with a functional `RW_LEGACY` payload (or doesn't ship with one at all), one can flash a SeaBIOS payload to the `RW_LEGACY` part of the firmware. This is 100% safe, as it writes to a user-writeable area of the firmware image which is completely separate from/does not affect ChromeOS. The easiest way to install/update the RW_LEGACY firmware on your ChromeOS device is via MrChromebox's [Firmware Utility Script](/index.php/Chrome_OS_devices/Custom_firmware#Flashing_with_MrChromebox.27s_Firmware_Utility_Script "Chrome OS devices/Custom firmware"), which supports the widest range of devices and offers the most up-to-date SeaBIOS builds; one can also update the `RW_LEGACY` firmware manually with Chrome OS' `flashrom` (requires downloading/compiling your own build), or use John Lewis' `flash_chromebook_rom.sh` script (no longer supported).
+
+*   Flash a full [custom firmware](/index.php/Custom_firmware_for_Chrome_OS_devices "Custom firmware for Chrome OS devices") which includes either a SeaBIOS or UEFI payload, and removes all the ChromeOS-specific parts.
+
+*   Flash the `BOOT_STUB` part of the firmware. This method replaces the stock ChromeOS payload (depthcharge) with SeaBIOS. This is theoretically a safer approach than flashing the full firmware but there might be some limitations (e.g. no support in suspend or VMX). This is the `Modify ROM to run SeaBIOS exclusively` option in John Lewis' `flash_chromebook_rom.sh` script and `Flash BOOT_STUB firmware` option in MrChromebox's.
+
 *   Take the ChrUbuntu approach which uses the Chrome OS kernel and modules.
+
 *   Build and sign your own kernel, see [[1]](https://plus.google.com/+OlofJohansson/posts/34PYU79eUqP) [[2]](http://pomozok.wordpress.com/2014/10/11/building-chromeos-kernel-without-chroot/) [[3]](https://github.com/drsn0w/chromebook_kernel_tools/blob/master/install_linux.md).
 
-The [Installation](#Installation) process described on this page tries to cover the method of installing Arch Linux on these non SeaBIOS models by flashing a custom firmware.
+The [Installation](#Installation) process described on this page tries to cover the method of installing Arch Linux on models without SeaBIOS by flashing a custom firmware.
 
 ### Firmware write protection intro
 
-All Chrome OS devices features a firmware write protection. It is important to be aware of it as one might need to disable the write protection as part of the installation process (to update GBB flags or flash a custom firmware).
+All Chrome OS devices features firmware write protection, which restricts write access to certain regions of the flash chip. It is important to be aware of it as one might need to disable the hardware write protection as part of the installation process (to update GBB flags or flash a custom firmware).
 
 For more details see [Firmware write protection](/index.php/Custom_firmware_for_Chrome_OS_devices#Firmware_write_protection "Custom firmware for Chrome OS devices").
 
@@ -102,59 +106,62 @@ See [Chromebook models](/index.php/Chrome_OS_devices/Chromebook "Chrome OS devic
 
 ## Installation
 
-**Warning:** Installation on Chrome OS devices that do not ship with SeaBIOS requires flashing a custom firmware, a process that may brick your device. Proceed at your own risk.
+**Warning:** Installation on ChromeOS devices that do not ship with SeaBIOS requires flashing a custom firmware, certain types of which have the potential to brick your device. Proceed at your own risk.
 
-**Note:** While the following information should fit all the Chrome OS devices with Coreboot firmware (shipped with SeaBIOS payload or without), it is possible that with some models you may need to make further adjustments.
+**Note:** While the following information should fit all the ChromeOS devices with coreboot firmware (shipped with SeaBIOS payload or without), it is possible that with some models you may need to make further adjustments.
 
 The general installation procedure:
 
 *   Enable developer mode.
-*   Chrome OS device with SeaBIOS:
-    *   Enable legacy boot / SeaBIOS.
-    *   Set SeaBIOS as default (optional but recommended, requires disabling the write protection).
-*   Chrome OS device without SeaBIOS:
-    *   Flash a custom firmware.
+*   ChromeOS device with functional Legacy Boot Mode/SeaBIOS:
+    *   Enable Legacy Boot Mode.
+    *   Set SeaBIOS as default (optional but highly recommended, requires disabling the write protection).
+*   ChromeOS device without functional Legacy Boot Mode:
+    *   Flash one of the following types of custom firmware
+        *   Flash RW_LEGACY firmware (zero risk)
+        *   Flash BOOT_STUB firmware (very low risk).
+        *   Flash Full custom firmware (low risk).
 *   Prepare the installation media.
 *   Boot Arch Linux installation media and install Arch.
 
 ### Enabling developer mode
 
-[Developer Mode](http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/acer-c720-chromebook#TOC-Developer-Mode) is necessary in order to access the superuser shell inside Chrome OS, which is required for making changes to the system like allow booting through SeaBIOS.
+[Developer Mode](http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/acer-c720-chromebook#TOC-Developer-Mode) is necessary in order to access the superuser shell inside ChromeOS, which is required for making changes to the system like allow booting through SeaBIOS.
 
 **Warning:** Enabling Developer Mode will wipe all of your data.
 
 To enable developer mode:
 
-*   Turn on the Chrome OS device.
 *   Press and hold the `Esc + F3 (Refresh)` keys, then press the `Power` button. This enters Recovery Mode.
+    *   Chromeboxes have a dedicated Recovery button, which should be pressed/held while powering on
 *   Press `Ctrl + D` (no prompt). It will ask you to confirm, then the system will revert its state and enable Developer Mode.
 
-**Note:** Press `Ctrl + D` (or wait 30 seconds for the beep and boot) at the white boot splash screen to enter Chrome OS.
+**Note:** Press `Ctrl + D` (or wait 30 seconds for the beep and boot) at the white boot splash screen to enter ChromeOS.
 
 ### Accessing the superuser shell
 
-After you have enabled the Developer Mode you will need to access the superuser shell. How you do this depends on whether you have configured Chrome OS or not.
+After you have enabled the Developer Mode you will need to access the superuser shell. How you do this depends on whether you have configured ChromeOS or not.
 
-#### Accessing the superuser shell without Chrome OS configuration
+#### Accessing the superuser shell without logging into ChromeOS
 
-If you have not configured Chrome OS, just press `Ctrl + Alt + F2` (F2 is the "forward" arrow on the top row, →), you will see a login prompt.
+If you have not configured ChromeOS, just press `Ctrl + Alt + F2` (F2 is the "forward" arrow on the top row, →), you will see a login prompt.
 
 *   Use `chronos` as the username, it should not prompt you for a password.
 *   Become superuser with [sudo](/index.php/Sudo "Sudo"), use the command `sudo su -`.
 
-#### Accessing the superuser shell with Chrome OS configuration
+#### Accessing the superuser shell when logged into ChromeOS
 
-If you have configured Chrome OS already:
+If you have configured ChromeOS already:
 
 *   Open a crosh window with `Ctrl + Alt + T`.
 *   Open a bash shell with the `shell` command.
 *   Become superuser with [sudo](/index.php/Sudo "Sudo"), use the command `sudo su -` to accomplish that.
 
-### Enabling SeaBIOS
+### Enabling Legacy Boot Mode
 
-If your Chrome OS device did not ship with Legacy Boot Mode support via SeaBIOS, or you prefer to install a custom firmware, then continue to [Flashing a custom firmware](#Flashing_a_custom_firmware).
+If your ChromeOS device did not ship with Legacy Boot Mode support via SeaBIOS, or you prefer to install a custom firmware, then continue to [Flashing a custom firmware](#Flashing_a_custom_firmware).
 
-This method will allow you to access the pre-installed version of SeaBIOS through the Developer Mode screen in Coreboot.
+This will enable the pre-installed version of SeaBIOS through the Developer Mode screen in coreboot.
 
 *   Inside your superuser shell enter:
 
@@ -167,23 +174,21 @@ This method will allow you to access the pre-installed version of SeaBIOS throug
 
 You can now start SeaBIOS by pressing `Ctrl + L` at the white boot splash screen.
 
-**Note:** If you intend to stay using pre-installed SeaBIOS route and think you will not appreciate having to press `Ctrl + L` every time you boot to reach SeaBIOS then you can set Coreboot to boot to SeaBIOS by default. This currently must be done inside of Chrome OS and requires disabling the write protection (hardware and software), it might be a good idea to do this now so that you will not have to re-install Chrome OS later with recovery install media. If you are choosing to keep Chrome OS (installing Arch on external storage or [on the internal storage side by side with Chrome OS](#Alternative_installation.2C_Install_Arch_Linux_in_addition_to_Chrome_OS) then set SeaBIOS to default later.
+**Note:** If you intend to stay using pre-installed SeaBIOS route and think you will not appreciate having to press `Ctrl + L` every time you boot to reach SeaBIOS, then you can set coreboot to boot to SeaBIOS by default. This requires disabling the hardware firmware write protection.
 
-You should now have SeaBIOS enabled on your Chrome OS device, if you choose to not set it as default then you can continue to [Installing Arch Linux](#Installing_Arch_Linux).
+You should now have SeaBIOS enabled on your ChromeOS device, if you choose to not set it as default then you can continue to [Installing Arch Linux](#Installing_Arch_Linux).
 
 #### Boot to SeaBIOS by default
 
-To boot SeaBIOS by default, you will need to run [`set_gbb_flags.sh`](https://chromium.googlesource.com/chromiumos/platform/vboot_reference/+/master/scripts/image_signing/set_gbb_flags.sh) in Chrome OS (already included in Chrome OS, it will not work correctly in Arch Linux).
+To boot SeaBIOS by default, you will need to run the [`set_gbb_flags.sh`](https://chromium.googlesource.com/chromiumos/platform/vboot_reference/+/master/scripts/image_signing/set_gbb_flags.sh) script, which is part of ChromeOS. The script uses flashrom and gbb_utility to read the RO_GBB firmware region, modify the flags, and write it back to flash. The GBB flags can also be set using MrChromebox's [Firmware Utility Script](https://mrchromebox.tech/#fwscript) under either ChromeOS or Arch (the latter requiring booting with specific kernel parameters to relax memory access restrictions).
 
 **Warning:** If you do not set the GBB flags, then a fully discharged or disconnected battery will reset `dev_boot_legacy` crossystem flag to its default value, removing the ability to boot in Legacy Boot Mode. While this used to require you to recover Chrome OS and wipe your Arch Linux installation on the internal storage, the GalliumOS developers have created a set of "fixflags" recovery images, which rather than wiping internal storage, will instead simply re-set the `dev_boot_legacy` crossystem flag. See [galliumos.org/fixflags](https://galliumos.org/fixflags)
 
-**Warning:** If you do not disable the write protection before setting the GBB flags you endanger wiping out the RW-LEGACY part of the firmware (i.e. SeaBIOS) and your system might not boot (should be recoverable with Chrome OS recovery media). [`set_gbb_flags.sh`](https://chromium.googlesource.com/chromiumos/platform/vboot_reference/+/master/scripts/image_signing/set_gbb_flags.sh) will not let you set the GBB flags without disabling the write protection.
-
 *   Disable the hardware write protection.
 
-To find the location of the hardware write-protect screw/switch/jumper and how to disable it visit the ArchWiki page for your [Chrome OS device](#Chrome_OS_devices). If there is no information about your device on the ArchWiki then turn to [Developer Information for Chrome OS Devices](http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices) and [Coreboot's Chromebooks page](http://www.coreboot.org/Chromebooks).
+To find the location of the hardware write-protect screw/switch/jumper and how to disable it visit the ArchWiki page for your [ChromeOS device](#ChromeOS_devices). If there is no information about your device on the ArchWiki then turn to [Developer Information for ChromeOS Devices](http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices) and [coreboot's Chromebooks page](http://www.coreboot.org/Chromebooks).
 
-More information about the firmware protection available at the [Custom firmware for Chrome OS devices](/index.php/Custom_firmware_for_Chrome_OS_devices#Firmware_write_protection "Custom firmware for Chrome OS devices") page.
+More information about the firmware protection available at the [Custom firmware for ChromeOS devices](/index.php?title=Custom_firmware_for_ChromeOS_devices&action=edit&redlink=1 "Custom firmware for ChromeOS devices (page does not exist)") page.
 
 *   Switch to the [superuser shell](#Accessing_the_superuser_shell).
 
@@ -204,13 +209,11 @@ More information about the firmware protection available at the [Custom firmware
 *   Run `set_gbb_flags.sh` with no parameters.
 
 ```
-# set_gbb_flags.sh
+# /usr/share/vboot/bin/set_gbb_flags.sh
 
 ```
 
-**Note:** Recent versions of Chrome OS have moved the script to /usr/share/vboot/bin/set_gbb_flags.sh which is not in $PATH by default.
-
-*   Make sure you get the following output, see [[7]](https://johnlewis.ie/how-to-make-seabios-the-default-on-your-acer-c720/).
+*   This will list all of the available flags. The ones of interest to us are:
 
 ```
 GBB_FLAG_DEV_SCREEN_SHORT_DELAY 0x00000001
@@ -220,10 +223,10 @@ GBB_FLAG_DEFAULT_DEV_BOOT_LEGACY 0x00000400
 
 ```
 
-*   Now set SeaBIOS as default.
+*   So, to set SeaBIOS as default, with a 1s timeout, prevent accidentally exiting Developer Mode via spacebar, and ensure Legacy Boot Mode remains enabled in the event of battery drain/disconnect, we set the flags as such:
 
 ```
-# set_gbb_flags.sh 0x489
+# /usr/share/vboot/bin/set_gbb_flags.sh 0x489
 
 ```
 
@@ -234,23 +237,25 @@ GBB_FLAG_DEFAULT_DEV_BOOT_LEGACY 0x00000400
 
 ```
 
-Your Chrome OS device now will boot to SeaBIOS by default, you can continue to [Installing Arch Linux](#Installing_Arch_Linux), if your device is booting correctly then you should re-enable the hardware write protection.
+**Note:** All of these steps are automated by MrChromebox's Firmware Utility Script, so if using that to install/update your RW_LEGACY firmware, easiest to just set the flags via the script as well.
+
+Your ChromeOS device now will boot to SeaBIOS by default, you can continue to [Installing Arch Linux](#Installing_Arch_Linux), if your device is booting correctly then you can optionally re-enable the hardware write protection.
 
 ### Flashing a custom firmware
 
-**Note:** The following steps explain how to flash a custom firmware from Chrome OS, for information on how to flash a custom firmware from Arch Linux visit the [Custom firmware for Chrome OS devices](/index.php/Custom_firmware_for_Chrome_OS_devices "Custom firmware for Chrome OS devices") page
+**Note:** The following steps explain how to flash a custom firmware from ChromeOS, for information on how to flash a custom firmware from Arch Linux visit the [Custom firmware for ChromeOS devices](/index.php?title=Custom_firmware_for_ChromeOS_devices&action=edit&redlink=1 "Custom firmware for ChromeOS devices (page does not exist)") page
 
 *   Disable the hardware write protection.
 
-To find the location of the hardware write-protect screw/switch/jumper and how to disable it visit the ArchWiki page for your [Chrome OS device](#Chrome_OS_devices). If there is no information about your device on the ArchWiki then turn to [Information for Chrome OS Devices](http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devicesDeveloper) and [Coreboot's Chromebooks page](http://www.coreboot.org/Chromebooks).
+To find the location of the hardware write-protect screw/switch/jumper and how to disable it visit the ArchWiki page for your [ChromeOS device](#ChromeOS_devices). If there is no information about your device on the ArchWiki then turn to [Information for ChromeOS Devices](http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devicesDeveloper) and [coreboot's Chromebooks page](http://www.coreboot.org/Chromebooks).
 
-More information about the firmware protection available at the [Custom firmware for Chrome OS devices](/index.php/Custom_firmware_for_Chrome_OS_devices#Firmware_write_protection "Custom firmware for Chrome OS devices") page.
+More information about the firmware protection available at the [Custom firmware for ChromeOS devices](/index.php?title=Custom_firmware_for_ChromeOS_devices&action=edit&redlink=1 "Custom firmware for ChromeOS devices (page does not exist)") page.
 
 *   Enter the command to run either MrChromebox's or John Lewis's firmware script.
 
-**Note:** The reason for not posting here is to force you to visit the site and read the page before proceeding.
+**Note:** The reason for not posting here is to force you to visit the site and read the instructions before proceeding.
 
-*   After the script exited copy the backed up firmware to an external storage before rebooting the system.
+*   After the exiting the script, be sure to copy the backed up firmware to an external storage before rebooting the system (if the script doesn't provide that option for you).
 
 You should now have a custom firmware installed on your device, cross your fingers and reboot.
 
@@ -266,7 +271,7 @@ Create an [Arch Linux Installer USB drive](/index.php/USB_flash_installation_med
 
 #### Booting the installation media
 
-*   Plug the USB drive to the Chrome OS device and start SeaBIOS with `Ctrl + L` at the white boot splash screen (if SeaBIOS is not set as default).
+*   Plug the USB drive to the ChromeOS device and start SeaBIOS with `Ctrl + L` at the white boot splash screen (if SeaBIOS is not set as default).
 *   Press `Esc` to get a boot menu and select the number corresponding to your USB drive.
 
 The Arch Linux installer boot menu should appear and the [installation](/index.php/Installation "Installation") process can proceed as normal.
@@ -307,7 +312,7 @@ Since kernel 3.17 all the related patches merged into the upstream sources, mean
 *   If there is no such patch do not worry as the developers should be able to add it by request as the Chromium OS sources includes the related changes.
 *   You can also try to find the related commits by yourself and create a proper patch, some hints:
     *   Dig into your Chrome OS system, look at the obvious suspects like boot log, `/proc/bus/input/devices` and `/sys/devices`.
-    *   The Linux kernel sources for Chromium OS are at [[8]](https://chromium.googlesource.com/chromiumos/third_party/kernel).
+    *   The Linux kernel sources for Chromium OS are at [[7]](https://chromium.googlesource.com/chromiumos/third_party/kernel).
     *   Each kernel source for the latest Chromium OS release has its own branch, name convention: `release-R*-*-chromeos-KERNELVER`, where `R*-*` is the Chromium OS release and `KERNELVER` is the kernel version.
     *   Review the git log of `drivers/platform`, `drivers/i2c/busses` and `drivers/input/touchscreen`.
 *   [linux-samus4](https://aur.archlinux.org/packages/linux-samus4/) includes touchpad and touchscreen support for the Chromebook Pixel 2015\. More information is available at [its GitHub page](https://github.com/raphael/linux-samus).
@@ -347,7 +352,7 @@ After reboot, you should be able to use the touchpad normally.
 
 The following are instructions to fix the suspend functionality. Users of a pre-installed SeaBIOS or John Lewis' pre-built SeaBIOS you will need this fix. This procedure is not needed with Matt DeVillier's custom firmware since problematic ACPI wake devices (such as `TPAD`) are firmware-disabled.
 
-There have been a few alternatives discussed and those may work better for some. [[9]](https://bbs.archlinux.org/viewtopic.php?pid=1364376#p1364376) [[10]](https://bbs.archlinux.org/viewtopic.php?pid=1364521#p1364521)
+There have been a few alternatives discussed and those may work better for some. [[8]](https://bbs.archlinux.org/viewtopic.php?pid=1364376#p1364376) [[9]](https://bbs.archlinux.org/viewtopic.php?pid=1364521#p1364521)
 
 To fix suspend, the general idea is to disable the EHCI_PCI module, which interferes with the suspend cycle. There are multiple ways to achieve this.
 
@@ -444,7 +449,7 @@ Then [rebuild your grub config](/index.php/GRUB#Generate_the_main_configuration_
 
 #### Baytrail based models
 
-Most baytrail models will work on [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) but a regression introduced by 4.5.0 broke it so if you desire a newer kernel then you can install [linux-max98090](https://aur.archlinux.org/packages/linux-max98090/). It is likely that you will also need to use `alsamixer` from [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) to turn on "Left Speaker Mixer Left DAC" and "Right Speaker Mixer Right DAC". For more information, see [[11]](https://bugs.archlinux.org/task/48936).
+Most baytrail models will work on [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) but a regression introduced by 4.5.0 broke it so if you desire a newer kernel then you can install [linux-max98090](https://aur.archlinux.org/packages/linux-max98090/). It is likely that you will also need to use `alsamixer` from [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) to turn on "Left Speaker Mixer Left DAC" and "Right Speaker Mixer Right DAC". For more information, see [[10]](https://bugs.archlinux.org/task/48936).
 
 #### Haswell based models
 
@@ -454,11 +459,11 @@ One or more of followings might help solving audio related issues, setting `snd_
 
  `/etc/modprobe.d/alsa.conf`  `options snd_hda_intel index=1 model=,alc283-chrome` 
 
-*   Use the `~/.asoundrc` file from [[12]](https://gist.githubusercontent.com/dhead666/52d6d7d97eff76935713/raw/5b32ee11a2ebbe7a3ee0f928e49b980361a57548/.asoundrc).
+*   Use the `~/.asoundrc` file from [[11]](https://gist.githubusercontent.com/dhead666/52d6d7d97eff76935713/raw/5b32ee11a2ebbe7a3ee0f928e49b980361a57548/.asoundrc).
 
 *   If having problems with headphones (perhaps no audio playing), try `alsactl restore` in terminal. Now, ALSA should automatically switch between channels when using headphones/speakers.
 
-*   To fix [Flash](/index.php/Flash "Flash") audio with PulseAudio, use the `~/.asoundrc` file from [[13]](https://gist.githubusercontent.com/dhead666/0eebff16cd9578c5e035/raw/d4c974fcd50565bf116c57b1884170ecb47f8bf6/.asoundrc).
+*   To fix [Flash](/index.php/Flash "Flash") audio with PulseAudio, use the `~/.asoundrc` file from [[12]](https://gist.githubusercontent.com/dhead666/0eebff16cd9578c5e035/raw/d4c974fcd50565bf116c57b1884170ecb47f8bf6/.asoundrc).
 
 #### Chromebook Pixel 2015
 
@@ -476,20 +481,20 @@ One or more of followings might help solving audio related issues, setting `snd_
 
 One way to set the hotkeys would be by using the [Sxhkd](/index.php/Sxhkd "Sxhkd") daemon. Besides [sxhkd](https://www.archlinux.org/packages/?name=sxhkd), this also requires [amixer](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture"), [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight), and [xautomation](https://www.archlinux.org/packages/?name=xautomation).
 
-*   See [[14]](https://gist.github.com/dhead666/191722ec04842d8d330b) for an example configuration in `~/.config/sxhkd/sxhkdrc`.
+*   See [[13]](https://gist.github.com/dhead666/191722ec04842d8d330b) for an example configuration in `~/.config/sxhkd/sxhkdrc`.
 
 #### Xbindkeys configuration
 
 Another way to configure hotkeys would be by using [Xbindkeys](/index.php/Xbindkeys "Xbindkeys"). Besides [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys) this requires [amixer](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") and [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) and [xvkbd](https://aur.archlinux.org/packages/xvkbd/).
 
-*   See [[15]](https://gist.github.com/dhead666/08562a9a760b18b6e758) for an example configuration in `~/.xbindkeysrc`.
+*   See [[14]](https://gist.github.com/dhead666/08562a9a760b18b6e758) for an example configuration in `~/.xbindkeysrc`.
 *   See [vilefridge's xbindkeys configuration](https://bbs.archlinux.org/viewtopic.php?id=173418&p=3) for another example.
 
 ##### Alternate xbindkeys configuration
 
 [Volchange](http://pastie.org/9550960) (originated in the [Debian User Forums](http://www.debianuserforums.org/viewtopic.php?f=55&t=1453#p14351))) can manipulate the volume with PulseAudio instead of using [amixer](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture"). Besides [Volchange](http://pastie.org/9550960) this requires [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) and [xvkbd](https://aur.archlinux.org/packages/xvkbd/).
 
-*   Download the script from [[16]](http://pastie.org/9550960).
+*   Download the script from [[15]](http://pastie.org/9550960).
 *   Make it executable
 
 ```
@@ -497,11 +502,11 @@ $ chmod u+x ~/.local/bin/volchange
 
 ```
 
-See [[17]](https://gist.github.com/dhead666/4e23b506441ad424e26e) for a matching `~/.xbindkeysrc`.
+See [[16]](https://gist.github.com/dhead666/4e23b506441ad424e26e) for a matching `~/.xbindkeysrc`.
 
 #### Patch xkeyboard-config
 
-Another option is to install [xkeyboard-config-chromebook](https://aur.archlinux.org/packages/xkeyboard-config-chromebook/), for more details visit [[18]](https://github.com/dhead666/archlinux-pkgbuilds/tree/master/xkeyboard-config-chromebook).
+Another option is to install [xkeyboard-config-chromebook](https://aur.archlinux.org/packages/xkeyboard-config-chromebook/), for more details visit [[17]](https://github.com/dhead666/archlinux-pkgbuilds/tree/master/xkeyboard-config-chromebook).
 
 #### Mapping in Gnome with gsettings set
 
@@ -539,6 +544,6 @@ Follow Syslinux installation instructions carefully. Try manual installation to 
 
 *   [Developer Information for Chrome OS Devices at the Chromium Projects site](http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices)
 *   [BBS topic about the Acer C720](https://bbs.archlinux.org/viewtopic.php?id=173418) which include generic information on Haswell Based Chromebooks.
-*   Re-partitioning in Chrome OS [[19]](http://chromeos-cr48.blogspot.co.uk/2012/04/chrubuntu-1204-now-with-double-bits.html), [[20]](http://goo.gl/i817v)
+*   Re-partitioning in Chrome OS [[18]](http://chromeos-cr48.blogspot.co.uk/2012/04/chrubuntu-1204-now-with-double-bits.html), [[19]](http://goo.gl/i817v)
 *   [Brent Sullivan's the always updated list of Chrome OS devices](http://bit.ly/NewChromebooks)
 *   [Google Chromebook Comparison Chart](http://prodct.info/chromebooks/)

@@ -883,6 +883,13 @@ To limit the width of text to 72 characters, edit your .nanorc file and add:
 
 ```
 
+Maybe you do not want to limit the width of text globally. In this case, you can also pass the column number as an argument to the hard-wrap option in your muttrc file, e.g.:
+
+```
+ set editor="nano -r 72"
+
+```
+
 Also, in muttrc file, you can specify the line to start editing so that you will skip the mail header:
 
 ```

@@ -7,7 +7,7 @@ From [Wikipedia:Clipboard (computing)](https://en.wikipedia.org/wiki/Clipboard_(
 *   [1 History](#History)
 *   [2 Background](#Background)
 *   [3 Application specific notes](#Application_specific_notes)
-    *   [3.1 CLIPBOARD in vim](#CLIPBOARD_in_vim)
+    *   [3.1 Vim](#Vim)
     *   [3.2 Disable paste on middle mouse click](#Disable_paste_on_middle_mouse_click)
         *   [3.2.1 Firefox](#Firefox)
         *   [3.2.2 GTK](#GTK)
@@ -29,13 +29,13 @@ Of the three selections, users should only be concerned with PRIMARY and CLIPBOA
 
 See the [Keyboard shortcuts](/index.php/Keyboard_shortcuts "Keyboard shortcuts") page which lists the default shortcuts in many programs.
 
-It is also important to realize that according to the selection protocols, nothing is copied anywhere [until it is pasted](https://unix.stackexchange.com/questions/213840/how-to-toggle-or-turn-off-text-selection-being-sent-to-the-clipboard/213843#213843). For example, if you select some word in a terminal window, close the terminal and then want to paste it somewhere else, it will not work because the terminal is gone and the text has not been copied anywhere.
+It is also important to realize that according to the selection protocols, nothing is copied anywhere [until it is pasted](https://unix.stackexchange.com/questions/213840/how-to-toggle-or-turn-off-text-selection-being-sent-to-the-clipboard/213843#213843). For example, if you select some word in a terminal window, close the terminal and then want to paste it somewhere else, it will not work because the terminal is gone and the text has not been copied anywhere. Ubuntu refers to it as the [ClipboardPersistence](https://wiki.ubuntu.com/ClipboardPersistence) problem. If you want the word to preserve after closing terminal window please consider installing a [clipboard manager](#List_of_clipboard_managers).
 
 **Note:** [Clipboard managers](#List_of_clipboard_managers) can significantly change the user experience, for example they might synchronize the PRIMARY and CLIPBOARD selections to emulate a single-clipboard system.
 
 ## Application specific notes
 
-### CLIPBOARD in vim
+### Vim
 
 See [Vim#Clipboard](/index.php/Vim#Clipboard "Vim").
 

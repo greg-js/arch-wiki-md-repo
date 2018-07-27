@@ -411,3 +411,4 @@ For user provided fontconfig [substitutions](/index.php/Fonts#Font_alias "Fonts"
 ## See also
 
 *   [Gentoo forums](http://forums.gentoo.org/viewtopic-p-7273876.html#7273876)
+*   [Thoroughly explained configuration that changes default fonts and sets fallback fonts for emoji and traditional Chinese characters](https://github.com/meribold/dotfiles/tree/master/home/config/fontconfig)

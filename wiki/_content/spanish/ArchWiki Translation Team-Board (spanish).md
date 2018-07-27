@@ -30,7 +30,7 @@
 | [Archboot (Español)](/index.php/Archboot_(Espa%C3%B1ol) "Archboot (Español)") | Instalación | `2016-04` |
 | [Arch Build System (Español)](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)") | Gestión de paquetes | `2018-01` |
 | [Arch compared to other distributions (Español)](/index.php/Arch_compared_to_other_distributions_(Espa%C3%B1ol) "Arch compared to other distributions (Español)") | Información/Arch | `2014-11` |
-| [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") | Información/Arch | `2016-04` |
+| [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") | Información/Arch | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") |
 | [Arch User Repository (Español)](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") | Repositorios | `2018-01` |
 | [Arch boot process (Español)](/index.php/Arch_boot_process_(Espa%C3%B1ol) "Arch boot process (Español)") | Proceso de arranque | `2013-09` |
 | [Archiso (Español)](/index.php/Archiso_(Espa%C3%B1ol) "Archiso (Español)") | Instalación | `2013-09` |

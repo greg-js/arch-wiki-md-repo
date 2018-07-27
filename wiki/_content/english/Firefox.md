@@ -38,10 +38,9 @@ Related articles
     *   [6.13 Javascript context menu does not appear on some sites](#Javascript_context_menu_does_not_appear_on_some_sites)
     *   [6.14 Firefox does not remember default spell check language](#Firefox_does_not_remember_default_spell_check_language)
     *   [6.15 Some MathML symbols are missing](#Some_MathML_symbols_are_missing)
-    *   [6.16 Picture flickers while scrolling](#Picture_flickers_while_scrolling)
-    *   [6.17 Tearing video in fullscreen mode](#Tearing_video_in_fullscreen_mode)
-    *   [6.18 Firefox ESR 52 looks bad](#Firefox_ESR_52_looks_bad)
-    *   [6.19 Firefox WebRTC module cannot detect a microphone](#Firefox_WebRTC_module_cannot_detect_a_microphone)
+    *   [6.16 Tearing video in fullscreen mode](#Tearing_video_in_fullscreen_mode)
+    *   [6.17 Firefox ESR 52 looks bad](#Firefox_ESR_52_looks_bad)
+    *   [6.18 Firefox WebRTC module cannot detect a microphone](#Firefox_WebRTC_module_cannot_detect_a_microphone)
 *   [7 See also](#See_also)
 
 ## Installing
@@ -66,15 +65,13 @@ Other alternatives include:
 
 	[https://www.mozilla.org/firefox/channel/desktop/#nightly](https://www.mozilla.org/firefox/channel/desktop/#nightly) || [firefox-nightly](https://aur.archlinux.org/packages/firefox-nightly/)
 
-*   **Firefox KDE** — Version of Firefox that incorporates an OpenSUSE patch for better KDE integration than is possible through simple Firefox plugins.
+*   **Firefox KDE** — Version of Firefox that incorporates an OpenSUSE patch for better [KDE integration](#KDE.2FGNOME_integration) than is possible through simple Firefox plugins.
 
 	[https://build.opensuse.org/package/show/mozilla:Factory/MozillaFirefox](https://build.opensuse.org/package/show/mozilla:Factory/MozillaFirefox) || [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/)
 
 *   On top of the different Mozilla build channels, a number of forks exist with more or less special features; see [List of applications#Gecko-based](/index.php/List_of_applications#Gecko-based "List of applications").
 
-Here you can find an overview of Mozilla's [releases](https://wiki.mozilla.org/Releases "mozillawiki:Releases").
-
-There are a number of language packs available for Firefox, other than the standard English. Language packs are usually named as `firefox-i18n-*languagecode*` (where `*languagecode*` can be any language code, such as **de**, **ja**, **fr**, etc.). For a list of available language packs see [firefox-i18n](https://www.archlinux.org/packages/extra/any/firefox-i18n/) for [firefox](https://www.archlinux.org/packages/?name=firefox) and [firefox-developer-edition-i18n](https://www.archlinux.org/packages/community/any/firefox-developer-edition-i18n/) for [firefox-developer-edition](https://www.archlinux.org/packages/?name=firefox-developer-edition).
+A number of language packs are available for Firefox, other than the standard English. Language packs are usually named as `firefox-i18n-*languagecode*` (where `*languagecode*` can be any language code, such as **de**, **ja**, **fr**, etc.). For a list of available language packs see [firefox-i18n](https://www.archlinux.org/packages/extra/any/firefox-i18n/) for [firefox](https://www.archlinux.org/packages/?name=firefox) and [firefox-developer-edition-i18n](https://www.archlinux.org/packages/community/any/firefox-developer-edition-i18n/) for [firefox-developer-edition](https://www.archlinux.org/packages/?name=firefox-developer-edition).
 
 ## Add-ons
 
@@ -184,13 +181,12 @@ When your default language choice does not stick, see [#Firefox does not remembe
 
 ### KDE/GNOME integration
 
-*   To bring the [KDE](/index.php/KDE "KDE") look to GTK apps (including Firefox), install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config). Afterwards, go to *System Settings > Application Style > GTK*. Be sure to choose 'Breeze' in 'Select a GTK2/GTK3 Theme' and check 'Show icons in GTK buttons' and 'Show icons in GTK'.
-*   For integration with KDE’s mime type system and file dialogs, one can use [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/) variant from AUR with OpenSUSE’s patches applied.
-*   Add-ons may provide some integration, such as:
-    *   [firefox-extension-unity-launcher-api-e10s](https://aur.archlinux.org/packages/firefox-extension-unity-launcher-api-e10s/) for [Unity](/index.php/Unity "Unity").
-    *   [Plasma Integration](https://addons.mozilla.org/firefox/addon/plasma-integration/) (requires [plasma-browser-integration](https://www.archlinux.org/packages/?name=plasma-browser-integration)) for [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma").
-*   Install [mozilla-extension-gnome-keyring-git](https://aur.archlinux.org/packages/mozilla-extension-gnome-keyring-git/) (all-JavaScript implementation) to integrate Firefox with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"). To make firefox-gnome-keyring use your login keychain, set `extensions.gnome-keyring.keyringName` to `login` in `about:config`. Note the lowercase 'l' despite the the keychain name having an uppercase 'L' in Seahorse.
+*   To bring the [KDE](/index.php/KDE "KDE") look to GTK apps (including Firefox), [install](/index.php/Install "Install") [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config). Afterwards, go to *System Settings > Application Style > GTK*. Be sure to choose 'Breeze' in 'Select a GTK2/GTK3 Theme' and check 'Show icons in GTK buttons' and 'Show icons in GTK'.
 *   To make the left mouse button warp the scrollbar instead of the middle one on KDE, go to *System Settings > Application Style > GTK* and set the checkbox for "Left mouse button warps scrollbar".
+*   For integration with [KDE](/index.php/KDE "KDE") mime type system and file dialog, one can use [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/) variant from AUR with OpenSUSE’s patches applied.
+*   Extensions/add-ons may provide additional integration, such as:
+    *   Browser integration in [Plasma](/index.php/Plasma "Plasma"): requires [plasma-browser-integration](https://www.archlinux.org/packages/?name=plasma-browser-integration) and the [plasma-integration add-on](https://addons.mozilla.org/firefox/addon/plasma-integration/).
+    *   [mozilla-extension-gnome-keyring-git](https://aur.archlinux.org/packages/mozilla-extension-gnome-keyring-git/) (all-JavaScript implementation) to integrate Firefox with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"). To make firefox-gnome-keyring use your login keychain, set `extensions.gnome-keyring.keyringName` to `login` in `about:config`. Note the lowercase 'l' despite the the keychain name having an uppercase 'L' in Seahorse.
 
 ## Plugins
 
@@ -213,25 +209,9 @@ For general enhancements see [Firefox/Tweaks](/index.php/Firefox/Tweaks "Firefox
 
 ### Screenshot of webpage
 
-To use Firefox to take a screenshot of a webpage open the developer console using `Shift+F2`. Then type in:
+To take a screenshot of a webpage right click on the webpage or click on the three horizontal dots in the address bar and select *Take a Screenshot*.
 
-```
-screenshot *filename*
-
-```
-
-where *filename* is optional.
-
-To take a screenshot of the entire page (not just the section displayed on the screen) use the `--fullpage` option:
-
-```
-screenshot --fullpage *filename*
-
-```
-
-Since Firefox 57 you can *Take a Screenshot* by either clicking the *Page actions* button (the three horizontal dots) in the address bar or by right clicking on the webpage.
-
-Toggle `extensions.screenshots.upload-disabled` to disable the misleading default "save" button. See [[1]](https://github.com/mozilla-services/screenshots/issues/3503)
+Note that the *Save* button misleadingly uploads your screenshot to firefox.com.[[1]](https://github.com/mozilla-services/screenshots/issues/3503) The "Save" button can be disabled with `extensions.screenshots.upload-disabled`.
 
 ## Troubleshooting
 
@@ -358,12 +338,6 @@ Related bug reports: [Bugzilla 776028](https://bugzilla.mozilla.org/show_bug.cgi
 You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[7]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
 
 In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) **and** [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra), but they are not available to fontconfig by default. See [TeX Live#Fonts](/index.php/TeX_Live#Fonts "TeX Live") for details. You can also try other [Math fonts](/index.php/Fonts#Math "Fonts").
-
-### Picture flickers while scrolling
-
-**Note:** Problem available in some MATE desktops
-
-Uncheck the "Use smooth scrolling" setting in *Preferences > General > Browsing*.
 
 ### Tearing video in fullscreen mode
 

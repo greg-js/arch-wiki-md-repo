@@ -12,33 +12,35 @@
         *   [1.1.2 Computer algebra system](#Computer_algebra_system)
         *   [1.1.3 Scientific or technical computing](#Scientific_or_technical_computing)
         *   [1.1.4 Statistics](#Statistics)
-        *   [1.1.5 Data evaluation](#Data_evaluation)
+        *   [1.1.5 Data analysis and plotting](#Data_analysis_and_plotting)
         *   [1.1.6 Proof assistants](#Proof_assistants)
-    *   [1.2 Chemistry and biology](#Chemistry_and_biology)
-        *   [1.2.1 Computational biology and bioinformatics](#Computational_biology_and_bioinformatics)
-        *   [1.2.2 Molecules](#Molecules)
-            *   [1.2.2.1 Viewers](#Viewers)
-            *   [1.2.2.2 Drawing](#Drawing)
-            *   [1.2.2.3 Modeling](#Modeling)
-        *   [1.2.3 Periodic table](#Periodic_table)
-        *   [1.2.4 Biochemistry](#Biochemistry)
-        *   [1.2.5 Image manipulation](#Image_manipulation)
-    *   [1.3 Meteorology](#Meteorology)
-    *   [1.4 Astronomy](#Astronomy)
-    *   [1.5 Engineering](#Engineering)
-        *   [1.5.1 Computer-aided design](#Computer-aided_design)
-    *   [1.6 Physics](#Physics)
-        *   [1.6.1 Electronics](#Electronics)
-            *   [1.6.1.1 Digital logic](#Digital_logic)
-            *   [1.6.1.2 HDL](#HDL)
-            *   [1.6.1.3 MCU IDE](#MCU_IDE)
-            *   [1.6.1.4 Schematic capture editor](#Schematic_capture_editor)
-        *   [1.6.2 Physics simulation](#Physics_simulation)
-        *   [1.6.3 Unit conversion](#Unit_conversion)
-    *   [1.7 Geography](#Geography)
-    *   [1.8 Communication systems](#Communication_systems)
-        *   [1.8.1 Amateur radio](#Amateur_radio)
-    *   [1.9 Simulation modeling](#Simulation_modeling)
+    *   [1.2 Physics](#Physics)
+        *   [1.2.1 Electronics](#Electronics)
+            *   [1.2.1.1 Digital logic](#Digital_logic)
+            *   [1.2.1.2 HDL](#HDL)
+            *   [1.2.1.3 MCU IDE](#MCU_IDE)
+            *   [1.2.1.4 Schematic capture editor](#Schematic_capture_editor)
+        *   [1.2.2 Physics simulation](#Physics_simulation)
+        *   [1.2.3 Unit conversion](#Unit_conversion)
+    *   [1.3 Chemistry and biology](#Chemistry_and_biology)
+        *   [1.3.1 Computational biology and bioinformatics](#Computational_biology_and_bioinformatics)
+        *   [1.3.2 Molecules](#Molecules)
+            *   [1.3.2.1 Viewers](#Viewers)
+            *   [1.3.2.2 Drawing](#Drawing)
+            *   [1.3.2.3 Modeling](#Modeling)
+        *   [1.3.3 Periodic table](#Periodic_table)
+        *   [1.3.4 Biochemistry](#Biochemistry)
+        *   [1.3.5 Image manipulation](#Image_manipulation)
+    *   [1.4 Geography](#Geography)
+        *   [1.4.1 Meteorology](#Meteorology)
+    *   [1.5 Astronomy](#Astronomy)
+    *   [1.6 Engineering](#Engineering)
+        *   [1.6.1 Computer-aided design](#Computer-aided_design)
+    *   [1.7 Telecommunication](#Telecommunication)
+        *   [1.7.1 Amateur radio](#Amateur_radio)
+    *   [1.8 Simulation modeling](#Simulation_modeling)
+    *   [1.9 Computer science](#Computer_science)
+        *   [1.9.1 Artificial intelligence](#Artificial_intelligence)
 
 ## Science
 
@@ -234,7 +236,7 @@ See also [Wikipedia:Comparison of statistical packages](https://en.wikipedia.org
 
 	[https://www.rstudio.com/](https://www.rstudio.com/) || [rstudio-desktop-bin](https://aur.archlinux.org/packages/rstudio-desktop-bin/)
 
-#### Data evaluation
+#### Data analysis and plotting
 
 See also [Wikipedia:List of information graphics software](https://en.wikipedia.org/wiki/List_of_information_graphics_software "wikipedia:List of information graphics software").
 
@@ -295,214 +297,6 @@ See also [Wikipedia:Proof assistant](https://en.wikipedia.org/wiki/Proof_assista
 *   **[Isabelle](https://en.wikipedia.org/wiki/Isabelle_(proof_assistant) "wikipedia:Isabelle (proof assistant)")** — Generic proof assistant that allows mathematical formulas to be expressed in a formal language and provides tools for proving those formulas in a logical calculus.
 
 	[https://www.cl.cam.ac.uk/research/hvg/Isabelle/](https://www.cl.cam.ac.uk/research/hvg/Isabelle/) || [isabelle](https://aur.archlinux.org/packages/isabelle/)
-
-### Chemistry and biology
-
-#### Computational biology and bioinformatics
-
-See also [Wikipedia:List of open source bioinformatics software](https://en.wikipedia.org/wiki/List_of_open_source_bioinformatics_software "wikipedia:List of open source bioinformatics software").
-
-*   **[BALL](https://en.wikipedia.org/wiki/BALL "wikipedia:BALL") (Biochemical Algorithms Library)** — Application framework in C++ that provides an extensive set of data structures as well as classes for molecular mechanics, advanced solvation methods, comparison and analysis of protein structures, file import/export, and visualization.
-
-	[http://www.ball-project.org/](http://www.ball-project.org/) || [ball](https://aur.archlinux.org/packages/ball/)
-
-*   **[BioJava](https://en.wikipedia.org/wiki/BioJava "wikipedia:BioJava")** — Set of Java tools for computational biology, as well as bioinformatics.
-
-	[http://biojava.org](http://biojava.org) || [biojava](https://aur.archlinux.org/packages/biojava/)
-
-*   **[Biopython](https://en.wikipedia.org/wiki/Biopython "wikipedia:Biopython")** — Python package with tools for computational biology, as well as bioinformatics.
-
-	[http://biopython.org/wiki/Biopython](http://biopython.org/wiki/Biopython) || [python-biopython](https://www.archlinux.org/packages/?name=python-biopython) [python2-biopython](https://www.archlinux.org/packages/?name=python2-biopython)
-
-*   **[EMBOSS](https://en.wikipedia.org/wiki/EMBOSS "wikipedia:EMBOSS") (European Molecular Biology Open Software Suite)** — Open source software analysis package specially developed for the needs of the molecular biology and bioinformatics user community.
-
-	[http://emboss.sourceforge.net/](http://emboss.sourceforge.net/) || [emboss](https://aur.archlinux.org/packages/emboss/)
-
-*   **[MEGA](https://en.wikipedia.org/wiki/MEGA,_Molecular_Evolutionary_Genetics_Analysis "wikipedia:MEGA, Molecular Evolutionary Genetics Analysis") (Molecular Evolutionary Genetics Analysis)** — Integrated tool for conducting automatic and manual sequence alignment, inferring phylogenetic trees, mining web-based databases, estimating rates of molecular evolution, inferring ancestral sequences, and testing evolutionary hypotheses.
-
-	[http://www.megasoftware.net/](http://www.megasoftware.net/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
-*   **[MUMmer](https://en.wikipedia.org/wiki/MUMmer "wikipedia:MUMmer")** — Bioinformatics software system for sequence alignment based on suffix trees.
-
-	[http://mummer.sourceforge.net/](http://mummer.sourceforge.net/) || [mummer](https://aur.archlinux.org/packages/mummer/)
-
-*   **[UGENE](https://en.wikipedia.org/wiki/UGENE "wikipedia:UGENE")** — Application that integrates dozens of well-known biological tools and algorithms, providing both graphical user and command-line interfaces.
-
-	[http://ugene.net/](http://ugene.net/) || [ugene-bin](https://aur.archlinux.org/packages/ugene-bin/)
-
-#### Molecules
-
-##### Viewers
-
-See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org/wiki/List_of_molecular_graphics_systems "wikipedia:List of molecular graphics systems").
-
-*   **[Avogadro](https://en.wikipedia.org/wiki/Avogadro_(software) "wikipedia:Avogadro (software)")** — Editor, viewer and simulator for 3D molecule structures (also supports downloading files from the [Protein Data Bank](https://en.wikipedia.org/wiki/Protein_Data_Bank "wikipedia:Protein Data Bank")).
-
-	[http://avogadro.cc/](http://avogadro.cc/) || [avogadro](https://aur.archlinux.org/packages/avogadro/)
-
-*   **BALLView** — Standalone molecular modeling and visualization application, part of the [BALL](https://en.wikipedia.org/wiki/BALL "wikipedia:BALL") framework.
-
-	[http://www.ball-project.org/](http://www.ball-project.org/) || [ball](https://aur.archlinux.org/packages/ball/)
-
-*   **[Ghemical](https://en.wikipedia.org/wiki/Ghemical "wikipedia:Ghemical")** — Computational chemistry software package used to edit, view and simulate molecular structures.
-
-	[http://bioinformatics.org/ghemical/ghemical/index.html](http://bioinformatics.org/ghemical/ghemical/index.html) || [ghemical](https://aur.archlinux.org/packages/ghemical/)
-
-*   **[PyMOL](https://en.wikipedia.org/wiki/PyMOL "wikipedia:PyMOL")** — Open-source molecular visualization system that can produce high quality 3D images of small molecules and biological macromolecules, such as proteins.
-
-	[https://pymol.org/](https://pymol.org/) || [pymol](https://www.archlinux.org/packages/?name=pymol)
-
-##### Drawing
-
-*   **[BKChem](https://en.wikipedia.org/wiki/BKchem "wikipedia:BKchem")** — Practical and goodlooking skeletal formula molecule drawing program.
-
-	[http://bkchem.zirael.org/](http://bkchem.zirael.org/) || [bkchem](https://aur.archlinux.org/packages/bkchem/)
-
-*   **[Chemtool](https://en.wikipedia.org/wiki/Chemtool "wikipedia:Chemtool")** — GTK+-based program for drawing chemical structural formulas.
-
-	[http://ruby.chemie.uni-freiburg.de/~martin/chemtool/chemtool.html](http://ruby.chemie.uni-freiburg.de/~martin/chemtool/chemtool.html) || [chemtool](https://www.archlinux.org/packages/?name=chemtool)
-
-*   **EasyChem** — Simple skeletal formula molecule drawing program with a focus on producing press-quality figures.
-
-	[http://easychem.sourceforge.net/](http://easychem.sourceforge.net/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
-*   **[Gabedit](https://en.wikipedia.org/wiki/Gabedit "wikipedia:Gabedit")** — Graphical user interface to computational chemistry packages like [GAMESS](https://en.wikipedia.org/wiki/GAMESS_(US) "wikipedia:GAMESS (US)"), [Gaussian](https://en.wikipedia.org/wiki/Gaussian_(software) "wikipedia:Gaussian (software)"), [MOLCAS](https://en.wikipedia.org/wiki/MOLCAS "wikipedia:MOLCAS"), [MOLPRO](https://en.wikipedia.org/wiki/MOLPRO "wikipedia:MOLPRO"), [MPQC](https://en.wikipedia.org/wiki/MPQC "wikipedia:MPQC"), [OpenMopac](https://en.wikipedia.org/wiki/MOPAC "wikipedia:MOPAC"), [Firefly](https://en.wikipedia.org/wiki/PC_GAMESS "wikipedia:PC GAMESS") (previously PC GAMESS) and [Q-Chem](https://en.wikipedia.org/wiki/Q-Chem "wikipedia:Q-Chem").
-
-	[http://gabedit.sourceforge.net/](http://gabedit.sourceforge.net/) || [gabedit](https://aur.archlinux.org/packages/gabedit/)
-
-##### Modeling
-
-*   **[GROMACS](/index.php/GROMACS "GROMACS") (GROningen MAchine for Chemical Simulations)** — Versatile package to perform molecular dynamics, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.
-
-	[http://www.gromacs.org](http://www.gromacs.org) || [gromacs](https://aur.archlinux.org/packages/gromacs/)
-
-*   **[Quantum ESPRESSO](https://en.wikipedia.org/wiki/Quantum_ESPRESSO "wikipedia:Quantum ESPRESSO")** — Integrated suite of applications for electronic-structure calculations and materials modeling at nanoscale. It is based on density-functional theory, plane waves, and pseudopotentials (both norm-conserving and ultrasoft).
-
-	[http://www.quantum-espresso.org/](http://www.quantum-espresso.org/) || [quantum-espresso](https://aur.archlinux.org/packages/quantum-espresso/)
-
-#### Periodic table
-
-*   **eperiodique** — A simple Periodic Table Of Elements viewer using the EFL.
-
-	[http://eperiodique.sourceforge.net/](http://eperiodique.sourceforge.net/) || [eperiodique](https://aur.archlinux.org/packages/eperiodique/)
-
-*   **gElemental** — Periodic table of the elements with additional information.
-
-	[http://freecode.com/projects/gelemental](http://freecode.com/projects/gelemental) || [gelemental](https://aur.archlinux.org/packages/gelemental/)
-
-*   **Kalzium** — Periodic table of the elements with molecule editor and equation solver. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
-
-	[https://www.kde.org/applications/education/kalzium/](https://www.kde.org/applications/education/kalzium/) || [kalzium](https://www.archlinux.org/packages/?name=kalzium)
-
-#### Biochemistry
-
-*   **[Bioclipse](https://en.wikipedia.org/wiki/Bioclipse "wikipedia:Bioclipse")** — Java-based visual platform for biochemistry that uses the Eclipse Rich Client Platform (RCP).
-
-	[http://www.bioclipse.net/](http://www.bioclipse.net/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
-#### Image manipulation
-
-*   **[ImageJ](https://en.wikipedia.org/wiki/ImageJ "wikipedia:ImageJ")** — Java-based image processing and analysing program that provides extensibility via plugins and macros. It is widely used in microscopy (e.g. for cell counting).
-
-	[https://imagej.nih.gov/ij/](https://imagej.nih.gov/ij/) || [imagej](https://aur.archlinux.org/packages/imagej/)
-
-*   **[Fiji](https://en.wikipedia.org/wiki/FIJI_(software) "wikipedia:FIJI (software)")** — ImageJ distribution (and soon ImageJ2) with a lot of plugins organized into a coherent menu structure.
-
-	[http://fiji.sc](http://fiji.sc) || [fiji-binary](https://aur.archlinux.org/packages/fiji-binary/)
-
-### Meteorology
-
-*   **Gis Weather** — Customizable weather forecast desktop widget.
-
-	[https://sourceforge.net/projects/gis-weather/](https://sourceforge.net/projects/gis-weather/) || [gis-weather](https://aur.archlinux.org/packages/gis-weather/)
-
-*   **GNOME Weather** — Small application for GNOME that allows you to monitor the current weather conditions for your city, or anywhere in the world, and to access updated forecasts provided by various internet services.
-
-	[https://wiki.gnome.org/Apps/Weather](https://wiki.gnome.org/Apps/Weather) || [gnome-weather](https://www.archlinux.org/packages/?name=gnome-weather)
-
-*   **meteo-qt** — System tray application for weather status information.
-
-	[https://github.com/dglent/meteo-qt](https://github.com/dglent/meteo-qt) || [meteo-qt](https://aur.archlinux.org/packages/meteo-qt/)
-
-*   **Xfce Weather Panel Plugin** — Weather forecast plugin for the Xfce4 panel.
-
-	[https://goodies.xfce.org/projects/panel-plugins/xfce4-weather-plugin](https://goodies.xfce.org/projects/panel-plugins/xfce4-weather-plugin) || [xfce4-weather-plugin](https://www.archlinux.org/packages/?name=xfce4-weather-plugin)
-
-### Astronomy
-
-*   **[Celestia](https://en.wikipedia.org/wiki/Celestia "wikipedia:Celestia")** — 3D astronomy simulation program that allows users to travel through an extensive universe, modeled after reality, at any speed, in any direction and at any time in history.
-
-	[https://celestiaproject.net/](https://celestiaproject.net/) || [celestia](https://www.archlinux.org/packages/?name=celestia)
-
-*   **GIMP Astronomy Plugins** — Set of GIMP plugins for astronomical image processing.
-
-	[http://hennigbuam.de/georg/gimp.html](http://hennigbuam.de/georg/gimp.html) || [gimp-plugin-astronomy](https://aur.archlinux.org/packages/gimp-plugin-astronomy/)
-
-*   **GoQat** — Camera acquisition software, especially for QSI cameras, that provides other features such as autoguiding, focusing help and others.
-
-	[http://canburytech.net/GoQat/](http://canburytech.net/GoQat/) || [goqat](https://aur.archlinux.org/packages/goqat/)
-
-*   **[KStars](https://en.wikipedia.org/wiki/KStars "wikipedia:KStars")** — Planetarium application that provides an accurate graphical simulation of the night sky, from any location on Earth, at any date and time. It is included in KDE Edu.
-
-	[https://edu.kde.org/kstars/](https://edu.kde.org/kstars/) || [kstars](https://www.archlinux.org/packages/?name=kstars)
-
-*   **Qastrocam-g2** — Webcam acquisition software for planetary imaging.
-
-	[https://sourceforge.net/projects/qastrocam-g2/](https://sourceforge.net/projects/qastrocam-g2/) || [qastrocam-g2](https://aur.archlinux.org/packages/qastrocam-g2/)
-
-*   **[Skychart / Cartes du Ciel](https://en.wikipedia.org/wiki/Cartes_du_Ciel "wikipedia:Cartes du Ciel")** — Planetarium that maps out and labels most of the constellations, planets, and objects you can see with a telescope. It can also download Digitized Sky Survey Charts and superimpose images over these charts.
-
-	[https://www.ap-i.net/skychart/](https://www.ap-i.net/skychart/) || [skychart](https://aur.archlinux.org/packages/skychart/)
-
-*   **StarPlot** — 3-dimensional star chart viewer.
-
-	[http://starplot.org/](http://starplot.org/) || [starplot](https://aur.archlinux.org/packages/starplot/)
-
-*   **[Stellarium](https://en.wikipedia.org/wiki/Stellarium_(computer_program) "wikipedia:Stellarium (computer program)")** — Beautiful 3D planetarium that uses OpenGL to render a realistic sky in real time.
-
-	[http://www.stellarium.org/](http://www.stellarium.org/) || [stellarium](https://www.archlinux.org/packages/?name=stellarium)
-
-*   **Where Is M13** — Application to visualize the locations and physical properties of deep sky objects.
-
-	[http://www.thinkastronomy.com/M13/](http://www.thinkastronomy.com/M13/) || [where-is-m13](https://aur.archlinux.org/packages/where-is-m13/)
-
-*   **[XEphem](https://en.wikipedia.org/wiki/XEphem "wikipedia:XEphem")** — Motif-based ephemeris and planetarium program.
-
-	[http://www.clearskyinstitute.com/xephem/xephem.html](http://www.clearskyinstitute.com/xephem/xephem.html) || [xephem](https://aur.archlinux.org/packages/xephem/)
-
-### Engineering
-
-#### Computer-aided design
-
-See also [Wikipedia:List of computer-aided design editors](https://en.wikipedia.org/wiki/List_of_computer-aided_design_editors "wikipedia:List of computer-aided design editors").
-
-*   **[BRL-CAD](https://en.wikipedia.org/wiki/BRL-CAD "wikipedia:BRL-CAD")** — Constructive solid geometry (CSG) solid modeling computer-aided design (CAD) system that includes an interactive geometry editor, ray tracing support for graphics rendering and geometric analysis, computer network distributed framebuffer support, scripting, image-processing and signal-processing tools.
-
-	[http://brlcad.org/](http://brlcad.org/) || [brlcad](https://aur.archlinux.org/packages/brlcad/)
-
-*   **DraftSight** — Dassault Systemes' freeware 2D CAD application. DraftSight allows users to access DWG/DXF files, regardless of which CAD software was originally used to create them.
-
-	[http://www.3ds.com/products-services/draftsight/overview/](http://www.3ds.com/products-services/draftsight/overview/) || [draftsight](https://aur.archlinux.org/packages/draftsight/)
-
-*   **[FreeCAD](https://en.wikipedia.org/wiki/FreeCAD "wikipedia:FreeCAD")** — CAD/CAE program, based on OpenCascade, Qt and Python with features such as macro recording, workbenches and the ability to run as server.
-
-	[https://github.com/FreeCAD/FreeCAD](https://github.com/FreeCAD/FreeCAD) || [freecad](https://aur.archlinux.org/packages/freecad/)
-
-*   **LeoCAD** — CAD program for creating virtual LEGO models. It has an easy to use interface and currently includes over 6000 different pieces created by the LDraw community.
-
-	[http://leocad.org](http://leocad.org) || [leocad](https://aur.archlinux.org/packages/leocad/)
-
-*   **[LibreCAD](https://en.wikipedia.org/wiki/LibreCAD "wikipedia:LibreCAD")** — Powerful 2D CAD application based on Qt. It has been forked from QCad Community Edition.
-
-	[http://www.librecad.org/](http://www.librecad.org/) || [librecad](https://www.archlinux.org/packages/?name=librecad)
-
-*   **[OpenSCAD](https://en.wikipedia.org/wiki/OpenSCAD "wikipedia:OpenSCAD")** — Open source 2D/3D CAD using programmers approach.
-
-	[http://www.openscad.org](http://www.openscad.org) || [openscad](https://www.archlinux.org/packages/?name=openscad)
-
-*   **[QCAD](https://en.wikipedia.org/wiki/QCad "wikipedia:QCad")** — Powerful 2D CAD application that began in 1999\. QCaD includes DFX standard file format and supports HPGL format.
-
-	[http://www.qcad.org/](http://www.qcad.org/) || [qcad](https://www.archlinux.org/packages/?name=qcad)
 
 ### Physics
 
@@ -618,6 +412,120 @@ Also see [Wikipedia:Hardware description language](https://en.wikipedia.org/wiki
 
 	[https://www.gnu.org/software/units/](https://www.gnu.org/software/units/) || [units](https://www.archlinux.org/packages/?name=units)
 
+### Chemistry and biology
+
+#### Computational biology and bioinformatics
+
+See also [Wikipedia:List of open source bioinformatics software](https://en.wikipedia.org/wiki/List_of_open_source_bioinformatics_software "wikipedia:List of open source bioinformatics software").
+
+*   **[BALL](https://en.wikipedia.org/wiki/BALL "wikipedia:BALL") (Biochemical Algorithms Library)** — Application framework in C++ that provides an extensive set of data structures as well as classes for molecular mechanics, advanced solvation methods, comparison and analysis of protein structures, file import/export, and visualization.
+
+	[http://www.ball-project.org/](http://www.ball-project.org/) || [ball](https://aur.archlinux.org/packages/ball/)
+
+*   **[BioJava](https://en.wikipedia.org/wiki/BioJava "wikipedia:BioJava")** — Set of Java tools for computational biology, as well as bioinformatics.
+
+	[http://biojava.org](http://biojava.org) || [biojava](https://aur.archlinux.org/packages/biojava/)
+
+*   **[Biopython](https://en.wikipedia.org/wiki/Biopython "wikipedia:Biopython")** — Python package with tools for computational biology, as well as bioinformatics.
+
+	[http://biopython.org/wiki/Biopython](http://biopython.org/wiki/Biopython) || [python-biopython](https://www.archlinux.org/packages/?name=python-biopython) [python2-biopython](https://www.archlinux.org/packages/?name=python2-biopython)
+
+*   **[EMBOSS](https://en.wikipedia.org/wiki/EMBOSS "wikipedia:EMBOSS") (European Molecular Biology Open Software Suite)** — Open source software analysis package specially developed for the needs of the molecular biology and bioinformatics user community.
+
+	[http://emboss.sourceforge.net/](http://emboss.sourceforge.net/) || [emboss](https://aur.archlinux.org/packages/emboss/)
+
+*   **[MEGA](https://en.wikipedia.org/wiki/MEGA,_Molecular_Evolutionary_Genetics_Analysis "wikipedia:MEGA, Molecular Evolutionary Genetics Analysis") (Molecular Evolutionary Genetics Analysis)** — Integrated tool for conducting automatic and manual sequence alignment, inferring phylogenetic trees, mining web-based databases, estimating rates of molecular evolution, inferring ancestral sequences, and testing evolutionary hypotheses.
+
+	[http://www.megasoftware.net/](http://www.megasoftware.net/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **[MUMmer](https://en.wikipedia.org/wiki/MUMmer "wikipedia:MUMmer")** — Bioinformatics software system for sequence alignment based on suffix trees.
+
+	[http://mummer.sourceforge.net/](http://mummer.sourceforge.net/) || [mummer](https://aur.archlinux.org/packages/mummer/)
+
+*   **[UGENE](https://en.wikipedia.org/wiki/UGENE "wikipedia:UGENE")** — Application that integrates dozens of well-known biological tools and algorithms, providing both graphical user and command-line interfaces.
+
+	[http://ugene.net/](http://ugene.net/) || [ugene-bin](https://aur.archlinux.org/packages/ugene-bin/)
+
+#### Molecules
+
+##### Viewers
+
+See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org/wiki/List_of_molecular_graphics_systems "wikipedia:List of molecular graphics systems").
+
+*   **[Avogadro](https://en.wikipedia.org/wiki/Avogadro_(software) "wikipedia:Avogadro (software)")** — Editor, viewer and simulator for 3D molecule structures (also supports downloading files from the [Protein Data Bank](https://en.wikipedia.org/wiki/Protein_Data_Bank "wikipedia:Protein Data Bank")).
+
+	[http://avogadro.cc/](http://avogadro.cc/) || [avogadro](https://aur.archlinux.org/packages/avogadro/)
+
+*   **BALLView** — Standalone molecular modeling and visualization application, part of the [BALL](https://en.wikipedia.org/wiki/BALL "wikipedia:BALL") framework.
+
+	[http://www.ball-project.org/](http://www.ball-project.org/) || [ball](https://aur.archlinux.org/packages/ball/)
+
+*   **[Ghemical](https://en.wikipedia.org/wiki/Ghemical "wikipedia:Ghemical")** — Computational chemistry software package used to edit, view and simulate molecular structures.
+
+	[http://bioinformatics.org/ghemical/ghemical/index.html](http://bioinformatics.org/ghemical/ghemical/index.html) || [ghemical](https://aur.archlinux.org/packages/ghemical/)
+
+*   **[PyMOL](https://en.wikipedia.org/wiki/PyMOL "wikipedia:PyMOL")** — Open-source molecular visualization system that can produce high quality 3D images of small molecules and biological macromolecules, such as proteins.
+
+	[https://pymol.org/](https://pymol.org/) || [pymol](https://www.archlinux.org/packages/?name=pymol)
+
+##### Drawing
+
+*   **[BKChem](https://en.wikipedia.org/wiki/BKchem "wikipedia:BKchem")** — Practical and goodlooking skeletal formula molecule drawing program.
+
+	[http://bkchem.zirael.org/](http://bkchem.zirael.org/) || [bkchem](https://aur.archlinux.org/packages/bkchem/)
+
+*   **[Chemtool](https://en.wikipedia.org/wiki/Chemtool "wikipedia:Chemtool")** — GTK+-based program for drawing chemical structural formulas.
+
+	[http://ruby.chemie.uni-freiburg.de/~martin/chemtool/chemtool.html](http://ruby.chemie.uni-freiburg.de/~martin/chemtool/chemtool.html) || [chemtool](https://www.archlinux.org/packages/?name=chemtool)
+
+*   **EasyChem** — Simple skeletal formula molecule drawing program with a focus on producing press-quality figures.
+
+	[http://easychem.sourceforge.net/](http://easychem.sourceforge.net/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **[Gabedit](https://en.wikipedia.org/wiki/Gabedit "wikipedia:Gabedit")** — Graphical user interface to computational chemistry packages like [GAMESS](https://en.wikipedia.org/wiki/GAMESS_(US) "wikipedia:GAMESS (US)"), [Gaussian](https://en.wikipedia.org/wiki/Gaussian_(software) "wikipedia:Gaussian (software)"), [MOLCAS](https://en.wikipedia.org/wiki/MOLCAS "wikipedia:MOLCAS"), [MOLPRO](https://en.wikipedia.org/wiki/MOLPRO "wikipedia:MOLPRO"), [MPQC](https://en.wikipedia.org/wiki/MPQC "wikipedia:MPQC"), [OpenMopac](https://en.wikipedia.org/wiki/MOPAC "wikipedia:MOPAC"), [Firefly](https://en.wikipedia.org/wiki/PC_GAMESS "wikipedia:PC GAMESS") (previously PC GAMESS) and [Q-Chem](https://en.wikipedia.org/wiki/Q-Chem "wikipedia:Q-Chem").
+
+	[http://gabedit.sourceforge.net/](http://gabedit.sourceforge.net/) || [gabedit](https://aur.archlinux.org/packages/gabedit/)
+
+##### Modeling
+
+*   **[GROMACS](/index.php/GROMACS "GROMACS") (GROningen MAchine for Chemical Simulations)** — Versatile package to perform molecular dynamics, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.
+
+	[http://www.gromacs.org](http://www.gromacs.org) || [gromacs](https://aur.archlinux.org/packages/gromacs/)
+
+*   **[Quantum ESPRESSO](https://en.wikipedia.org/wiki/Quantum_ESPRESSO "wikipedia:Quantum ESPRESSO")** — Integrated suite of applications for electronic-structure calculations and materials modeling at nanoscale. It is based on density-functional theory, plane waves, and pseudopotentials (both norm-conserving and ultrasoft).
+
+	[http://www.quantum-espresso.org/](http://www.quantum-espresso.org/) || [quantum-espresso](https://aur.archlinux.org/packages/quantum-espresso/)
+
+#### Periodic table
+
+*   **eperiodique** — A simple Periodic Table Of Elements viewer using the EFL.
+
+	[http://eperiodique.sourceforge.net/](http://eperiodique.sourceforge.net/) || [eperiodique](https://aur.archlinux.org/packages/eperiodique/)
+
+*   **gElemental** — Periodic table of the elements with additional information.
+
+	[http://freecode.com/projects/gelemental](http://freecode.com/projects/gelemental) || [gelemental](https://aur.archlinux.org/packages/gelemental/)
+
+*   **Kalzium** — Periodic table of the elements with molecule editor and equation solver. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
+
+	[https://www.kde.org/applications/education/kalzium/](https://www.kde.org/applications/education/kalzium/) || [kalzium](https://www.archlinux.org/packages/?name=kalzium)
+
+#### Biochemistry
+
+*   **[Bioclipse](https://en.wikipedia.org/wiki/Bioclipse "wikipedia:Bioclipse")** — Java-based visual platform for biochemistry that uses the Eclipse Rich Client Platform (RCP).
+
+	[http://www.bioclipse.net/](http://www.bioclipse.net/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+#### Image manipulation
+
+*   **[ImageJ](https://en.wikipedia.org/wiki/ImageJ "wikipedia:ImageJ")** — Java-based image processing and analysing program that provides extensibility via plugins and macros. It is widely used in microscopy (e.g. for cell counting).
+
+	[https://imagej.nih.gov/ij/](https://imagej.nih.gov/ij/) || [imagej](https://aur.archlinux.org/packages/imagej/)
+
+*   **[Fiji](https://en.wikipedia.org/wiki/FIJI_(software) "wikipedia:FIJI (software)")** — ImageJ distribution (and soon ImageJ2) with a lot of plugins organized into a coherent menu structure.
+
+	[http://fiji.sc](http://fiji.sc) || [fiji-binary](https://aur.archlinux.org/packages/fiji-binary/)
+
 ### Geography
 
 *   **BT747** — The swiss army knife for MTK GPS dataloggers.
@@ -712,7 +620,101 @@ Also see [Wikipedia:Hardware description language](https://en.wikipedia.org/wiki
 
 	[https://sourceforge.net/projects/viking/](https://sourceforge.net/projects/viking/) || [viking](https://www.archlinux.org/packages/?name=viking)
 
-### Communication systems
+#### Meteorology
+
+*   **Gis Weather** — Customizable weather forecast desktop widget.
+
+	[https://sourceforge.net/projects/gis-weather/](https://sourceforge.net/projects/gis-weather/) || [gis-weather](https://aur.archlinux.org/packages/gis-weather/)
+
+*   **GNOME Weather** — Small application for GNOME that allows you to monitor the current weather conditions for your city, or anywhere in the world, and to access updated forecasts provided by various internet services.
+
+	[https://wiki.gnome.org/Apps/Weather](https://wiki.gnome.org/Apps/Weather) || [gnome-weather](https://www.archlinux.org/packages/?name=gnome-weather)
+
+*   **meteo-qt** — System tray application for weather status information.
+
+	[https://github.com/dglent/meteo-qt](https://github.com/dglent/meteo-qt) || [meteo-qt](https://aur.archlinux.org/packages/meteo-qt/)
+
+*   **Xfce Weather Panel Plugin** — Weather forecast plugin for the Xfce4 panel.
+
+	[https://goodies.xfce.org/projects/panel-plugins/xfce4-weather-plugin](https://goodies.xfce.org/projects/panel-plugins/xfce4-weather-plugin) || [xfce4-weather-plugin](https://www.archlinux.org/packages/?name=xfce4-weather-plugin)
+
+### Astronomy
+
+*   **[Celestia](https://en.wikipedia.org/wiki/Celestia "wikipedia:Celestia")** — 3D astronomy simulation program that allows users to travel through an extensive universe, modeled after reality, at any speed, in any direction and at any time in history.
+
+	[https://celestiaproject.net/](https://celestiaproject.net/) || [celestia](https://www.archlinux.org/packages/?name=celestia)
+
+*   **GIMP Astronomy Plugins** — Set of GIMP plugins for astronomical image processing.
+
+	[http://hennigbuam.de/georg/gimp.html](http://hennigbuam.de/georg/gimp.html) || [gimp-plugin-astronomy](https://aur.archlinux.org/packages/gimp-plugin-astronomy/)
+
+*   **GoQat** — Camera acquisition software, especially for QSI cameras, that provides other features such as autoguiding, focusing help and others.
+
+	[http://canburytech.net/GoQat/](http://canburytech.net/GoQat/) || [goqat](https://aur.archlinux.org/packages/goqat/)
+
+*   **[KStars](https://en.wikipedia.org/wiki/KStars "wikipedia:KStars")** — Planetarium application that provides an accurate graphical simulation of the night sky, from any location on Earth, at any date and time. It is included in KDE Edu.
+
+	[https://edu.kde.org/kstars/](https://edu.kde.org/kstars/) || [kstars](https://www.archlinux.org/packages/?name=kstars)
+
+*   **Qastrocam-g2** — Webcam acquisition software for planetary imaging.
+
+	[https://sourceforge.net/projects/qastrocam-g2/](https://sourceforge.net/projects/qastrocam-g2/) || [qastrocam-g2](https://aur.archlinux.org/packages/qastrocam-g2/)
+
+*   **[Skychart / Cartes du Ciel](https://en.wikipedia.org/wiki/Cartes_du_Ciel "wikipedia:Cartes du Ciel")** — Planetarium that maps out and labels most of the constellations, planets, and objects you can see with a telescope. It can also download Digitized Sky Survey Charts and superimpose images over these charts.
+
+	[https://www.ap-i.net/skychart/](https://www.ap-i.net/skychart/) || [skychart](https://aur.archlinux.org/packages/skychart/)
+
+*   **StarPlot** — 3-dimensional star chart viewer.
+
+	[http://starplot.org/](http://starplot.org/) || [starplot](https://aur.archlinux.org/packages/starplot/)
+
+*   **[Stellarium](https://en.wikipedia.org/wiki/Stellarium_(computer_program) "wikipedia:Stellarium (computer program)")** — Beautiful 3D planetarium that uses OpenGL to render a realistic sky in real time.
+
+	[http://www.stellarium.org/](http://www.stellarium.org/) || [stellarium](https://www.archlinux.org/packages/?name=stellarium)
+
+*   **Where Is M13** — Application to visualize the locations and physical properties of deep sky objects.
+
+	[http://www.thinkastronomy.com/M13/](http://www.thinkastronomy.com/M13/) || [where-is-m13](https://aur.archlinux.org/packages/where-is-m13/)
+
+*   **[XEphem](https://en.wikipedia.org/wiki/XEphem "wikipedia:XEphem")** — Motif-based ephemeris and planetarium program.
+
+	[http://www.clearskyinstitute.com/xephem/xephem.html](http://www.clearskyinstitute.com/xephem/xephem.html) || [xephem](https://aur.archlinux.org/packages/xephem/)
+
+### Engineering
+
+#### Computer-aided design
+
+See also [Wikipedia:List of computer-aided design editors](https://en.wikipedia.org/wiki/List_of_computer-aided_design_editors "wikipedia:List of computer-aided design editors").
+
+*   **[BRL-CAD](https://en.wikipedia.org/wiki/BRL-CAD "wikipedia:BRL-CAD")** — Constructive solid geometry (CSG) solid modeling computer-aided design (CAD) system that includes an interactive geometry editor, ray tracing support for graphics rendering and geometric analysis, computer network distributed framebuffer support, scripting, image-processing and signal-processing tools.
+
+	[http://brlcad.org/](http://brlcad.org/) || [brlcad](https://aur.archlinux.org/packages/brlcad/)
+
+*   **DraftSight** — Dassault Systemes' freeware 2D CAD application. DraftSight allows users to access DWG/DXF files, regardless of which CAD software was originally used to create them.
+
+	[http://www.3ds.com/products-services/draftsight/overview/](http://www.3ds.com/products-services/draftsight/overview/) || [draftsight](https://aur.archlinux.org/packages/draftsight/)
+
+*   **[FreeCAD](https://en.wikipedia.org/wiki/FreeCAD "wikipedia:FreeCAD")** — CAD/CAE program, based on OpenCascade, Qt and Python with features such as macro recording, workbenches and the ability to run as server.
+
+	[https://github.com/FreeCAD/FreeCAD](https://github.com/FreeCAD/FreeCAD) || [freecad](https://aur.archlinux.org/packages/freecad/)
+
+*   **LeoCAD** — CAD program for creating virtual LEGO models. It has an easy to use interface and currently includes over 6000 different pieces created by the LDraw community.
+
+	[http://leocad.org](http://leocad.org) || [leocad](https://aur.archlinux.org/packages/leocad/)
+
+*   **[LibreCAD](https://en.wikipedia.org/wiki/LibreCAD "wikipedia:LibreCAD")** — Powerful 2D CAD application based on Qt. It has been forked from QCad Community Edition.
+
+	[http://www.librecad.org/](http://www.librecad.org/) || [librecad](https://www.archlinux.org/packages/?name=librecad)
+
+*   **[OpenSCAD](https://en.wikipedia.org/wiki/OpenSCAD "wikipedia:OpenSCAD")** — Open source 2D/3D CAD using programmers approach.
+
+	[http://www.openscad.org](http://www.openscad.org) || [openscad](https://www.archlinux.org/packages/?name=openscad)
+
+*   **[QCAD](https://en.wikipedia.org/wiki/QCad "wikipedia:QCad")** — Powerful 2D CAD application that began in 1999\. QCaD includes DFX standard file format and supports HPGL format.
+
+	[http://www.qcad.org/](http://www.qcad.org/) || [qcad](https://www.archlinux.org/packages/?name=qcad)
+
+### Telecommunication
 
 *   **CupCarbon** — A Smart City & IoT Wireless Sensor Network Simulator.
 
@@ -749,3 +751,29 @@ See also [Wikipedia:List of software-defined radios](https://en.wikipedia.org/wi
 *   **Netlogo** — NetLogo is a multi-agent programmable modeling environment.
 
 	[http://ccl.northwestern.edu/netlogo/](http://ccl.northwestern.edu/netlogo/) || [netlogo](https://aur.archlinux.org/packages/netlogo/)
+
+### Computer science
+
+#### Artificial intelligence
+
+See also [Wikipedia:Comparison of deep learning software](https://en.wikipedia.org/wiki/Comparison_of_deep_learning_software "wikipedia:Comparison of deep learning software").
+
+*   **[Fast Artificial Neural Network](https://en.wikipedia.org/wiki/Fast_Artificial_Neural_Network "wikipedia:Fast Artificial Neural Network")** — Library for developing feedforward Artificial Neural Networks.
+
+	[http://leenissen.dk/fann/wp/](http://leenissen.dk/fann/wp/) || [fann](https://aur.archlinux.org/packages/fann/)
+
+*   **[Mycroft](https://en.wikipedia.org/wiki/Mycroft_(software) "wikipedia:Mycroft (software)")** — Intelligent personal assistant and knowledge navigator with speech recognition.
+
+	[https://mycroft.ai/](https://mycroft.ai/) || [mycroft-core](https://aur.archlinux.org/packages/mycroft-core/)
+
+*   **[Orange](https://en.wikipedia.org/wiki/Orange_(software) "wikipedia:Orange (software)")** — Data visualization, machine learning and data mining toolkit, accessible via visual programming and Python.
+
+	[https://orange.biolab.si/](https://orange.biolab.si/) || [python-orange](https://aur.archlinux.org/packages/python-orange/)
+
+*   **[Torch](https://en.wikipedia.org/wiki/Torch_(machine_learning) "wikipedia:Torch (machine learning)")** — Machine learning library, scientific computing framework, and script language based on LuaJIT.
+
+	[http://torch.ch/](http://torch.ch/) || [torch7-git](https://aur.archlinux.org/packages/torch7-git/)
+
+*   **[X Neural Switcher](https://en.wikipedia.org/wiki/X_Neural_Switcher "wikipedia:X Neural Switcher")** — Automatic (intelligent) keyboard layout adaption.
+
+	[https://xneur.ru/](https://xneur.ru/) || [xneur](https://aur.archlinux.org/packages/xneur/), [gxneur](https://aur.archlinux.org/packages/gxneur/)

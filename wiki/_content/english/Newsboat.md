@@ -192,4 +192,4 @@ If that is not the problem, then you probably have another instance of Newsboat 
 
 *   [Official web site](https://newsboat.org/)
 *   [Full documentation](https://newsboat.org/releases/2.12/docs/newsboat.html)
-*   [Arabesque: Rss with Newsbeuter](http://blog.sanctum.geek.nz/rss-with-newsbeuter/)
+*   [Arabesque: RSS with Newsboat](https://sanctum.geek.nz/arabesque/rss-with-newsboat/)

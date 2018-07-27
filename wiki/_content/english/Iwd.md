@@ -9,7 +9,6 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 NetworkManager](#NetworkManager)
 *   [2 Usage](#Usage)
     *   [2.1 iwctl](#iwctl)
 *   [3 WPA Enterprise](#WPA_Enterprise)
@@ -22,16 +21,6 @@ Related articles
 ## Installation
 
 [Install](/index.php/Install "Install") the [iwd](https://www.archlinux.org/packages/?name=iwd) package.
-
-### NetworkManager
-
-To enable the (experimental) [iwd](https://www.archlinux.org/packages/?name=iwd) backend in [NetworkManager](/index.php/NetworkManager "NetworkManager") modify `/etc/NetworkManager/NetworkManager.conf`
-
- `/etc/NetworkManager/NetworkManager.conf` 
-```
-[device]
-wifi.backend=iwd
-```
 
 ## Usage
 

@@ -12,17 +12,20 @@ Related articles
     *   [1.2 Cons](#Cons)
 *   [2 Flashing the custom firmware](#Flashing_the_custom_firmware)
     *   [2.1 Disable the hardware write protection](#Disable_the_hardware_write_protection)
-    *   [2.2 Flashing with John Lewis' script](#Flashing_with_John_Lewis.27_script)
-        *   [2.2.1 Understanding the script](#Understanding_the_script)
-            *   [2.2.1.1 What John Lewis' flash_chromebook_rom.sh script does ?](#What_John_Lewis.27_flash_chromebook_rom.sh_script_does_.3F)
-            *   [2.2.1.2 What the script does not do ?](#What_the_script_does_not_do_.3F)
-            *   [2.2.1.3 Conclusions](#Conclusions)
-        *   [2.2.2 Running the script in Chrome OS](#Running_the_script_in_Chrome_OS)
-        *   [2.2.3 Running the script in Arch Linux](#Running_the_script_in_Arch_Linux)
-    *   [2.3 Flashing with MrChromebox's Firmware Utility Script](#Flashing_with_MrChromebox.27s_Firmware_Utility_Script)
-        *   [2.3.1 Introduction to the firmware](#Introduction_to_the_firmware)
-        *   [2.3.2 Flashing the firmware](#Flashing_the_firmware)
-        *   [2.3.3 Using the script from Arch Linux](#Using_the_script_from_Arch_Linux)
+    *   [2.2 Flashing with MrChromebox's Firmware Utility Script](#Flashing_with_MrChromebox.27s_Firmware_Utility_Script)
+        *   [2.2.1 Introduction to the firmware](#Introduction_to_the_firmware)
+        *   [2.2.2 Understanding the script](#Understanding_the_script)
+            *   [2.2.2.1 What MrChromebox's Firmware Utility Script script does ?](#What_MrChromebox.27s_Firmware_Utility_Script_script_does_.3F)
+            *   [2.2.2.2 What the script does not do ?](#What_the_script_does_not_do_.3F)
+        *   [2.2.3 Flashing the firmware](#Flashing_the_firmware)
+        *   [2.2.4 Using the script from Arch Linux](#Using_the_script_from_Arch_Linux)
+    *   [2.3 Flashing with John Lewis' script](#Flashing_with_John_Lewis.27_script)
+        *   [2.3.1 Understanding the script](#Understanding_the_script_2)
+            *   [2.3.1.1 What John Lewis' flash_chromebook_rom.sh script does ?](#What_John_Lewis.27_flash_chromebook_rom.sh_script_does_.3F)
+            *   [2.3.1.2 What the script does not do ?](#What_the_script_does_not_do_.3F_2)
+            *   [2.3.1.3 Conclusions](#Conclusions)
+        *   [2.3.2 Running the script in Chrome OS](#Running_the_script_in_Chrome_OS)
+        *   [2.3.3 Running the script in Arch Linux](#Running_the_script_in_Arch_Linux)
     *   [2.4 Manually with flashrom](#Manually_with_flashrom)
         *   [2.4.1 Get flashrom for Arch Linux](#Get_flashrom_for_Arch_Linux)
         *   [2.4.2 Get flashrom for Chrome OS](#Get_flashrom_for_Chrome_OS)
@@ -61,8 +64,8 @@ Related articles
 
 There are several approaches for flashing a custom firmware:
 
-*   Use John Lewis' script.
 *   Use MrChromebox's [Firmware Utility Script](https://mrchromebox.tech/#fwscript).
+*   Use John Lewis' script.
 *   Manually with `flashrom`, in this case you will need to obtain the firmware by yourself or to compile it from the Coreboot sources ([official](http://www.coreboot.org/Download_coreboot) or [Chromium OS fork](https://chromium.googlesource.com/chromiumos/third_party/coreboot/)).
 
 **Note:** With Linux kernel versions greater than 4.4, CONFIG_IO_STRICT_DEVMEM a new kernel security measure can make flashrom stop working, in that case you can try adding "iomem=relaxed" to your kernel parameters. [[2]](https://www.flashrom.org/FAQ#What_can_I_do_about_.2Fdev.2Fmem_errors.3F﻿).
@@ -70,6 +73,51 @@ There are several approaches for flashing a custom firmware:
 ### Disable the hardware write protection
 
 See the [Disabling the hardware write protection](#Disabling_the_hardware_write_protection) at the [Firmware write protection](#Firmware_write_protection).
+
+### Flashing with MrChromebox's Firmware Utility Script
+
+#### Introduction to the firmware
+
+MrChromebox's firmware for Chromebooks and Chromeboxes has some differences compared to other third-party custom firmware, namely:
+
+*   Provides a [UEFI](/index.php/UEFI "UEFI") implementation via the Tianocore coreboot payload.
+
+*   Provides updates for the Embedded Controller (EC) of some of the devices it supports, solving some hardware idiosyncrasies associated with other custom firmware.
+
+*   Built based on latest coreboot upstream, rather than on the frozen source snapshot provided by Google.
+
+*   Full source code and build scripts available on [github](https://github.com/MrChromebox)
+
+The current major limitation of this firmware is the lack of proper UEFI NVRAM support, resulting in the impossibility of modifying [UEFI Variables](/index.php/Unified_Extensible_Firmware_Interface#UEFI_variables "Unified Extensible Firmware Interface"). This means that it defaults to booting from external devices if a valid EFI partition with a boot EFI program at the default path is detected in one of them and that it defaults to booting from `*esp*/EFI/Boot/BOOTX64.EFI` (`*esp*` being the [EFI system partition](/index.php/EFI_system_partition "EFI system partition")) with no option of changing this default behaviour.
+
+#### Understanding the script
+
+##### What MrChromebox's Firmware Utility Script script does ?
+
+*   Automatically downloads statically compiled 64-bit versions of chromium `flashrom`, `cbfstool`, and `gbb_utility`.
+*   Automatically detects your device/board name, current firmware, and hardware write-protect state
+*   Provides the option to backup your current firmware on USB (when flashing full/custom UEFI firmware).
+*   Disables software write protection by running `# ./flashrom --wp-disable` and clears the write-protect range (when needed).
+*   Provides choice between RW_LEGACY, BOOT_STUB, and UEFI Full ROM firmware (types available vary based on device).
+*   Provides the ability to set the stock firmware's GBB flags outside of ChromeOS
+*   Provides the ability to remove the white Developer Mode splash screen (select models only)
+*   Writes and verifies the custom firmware.
+
+##### What the script does not do ?
+
+*   Does not make you a sandwich.
+
+**Warning:** If you are flashing a custom firmware be prepared to the possibility that you might brick your device and make yourself familiar with the [unbricking methods](#Unbricking_your_Chrome_OS_device).
+
+#### Flashing the firmware
+
+Ensure that your device is supported by looking at the [supported device list](https://mrchromebox.tech/#devices). For some devices there is a legacy SeaBIOS (non-UEFI) firmware also available, although those are [deprecated](https://github.com/MrChromebox/firmware/issues/46) and will generally not receive further updates. Legacy firmware images also do not provide Embedded Controller updates.
+
+If a UEFI ROM for your device is available, you can flash the Full ROM firmware using the [Firmware Utility Script](https://mrchromebox.tech/#fwscript) (after ensuring that you have removed your device's firmware write-protection screw). After successfully flashing the firmware, you can follow the [Installation guide](/index.php/Installation_guide "Installation guide") and install Arch Linux just like on any UEFI computer. [Systemd-boot](/index.php/Systemd-boot "Systemd-boot") is the recommended bootloader since it installs itself by default in `*esp*/EFI/Boot/BOOTX64.EFI`, the path that this firmware tries to boot from by default.
+
+#### Using the script from Arch Linux
+
+You will need to install [dmidecode](https://www.archlinux.org/packages/?name=dmidecode). Furthermore, to ensure that `flashrom` can correctly flash the firmware it is necessary to boot with both the `nopat` and the `iomem=relaxed` [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). This is due to an [issue](https://www.flashrom.org/FAQ#What_can_I_do_about_.2Fdev.2Fmem_errors.3F) with the chromium build of `flashrom` used by the script, which is required since upstream `flashrom` can't be used to set/clear the software write-protect state or range.
 
 ### Flashing with John Lewis' script
 
@@ -96,6 +144,8 @@ See the [Disabling the hardware write protection](#Disabling_the_hardware_write_
 *   Make sure you disabled the hardware write protection.
 *   Read the [FAQ](https://johnlewis.ie/custom-chromebook-firmware/faq/).
 *   [Confirm that your Chromebook model is supported](https://johnlewis.ie/custom-chromebook-firmware/rom-download/), if your model is untested then visit the [coreboot on Chromebooks Google+ community](https://plus.google.com/communities/112479827373921524726) and ask for advice.
+
+**Note:** John Lewis shut down his Google+ community in December 2017; his firmware is presumed to now be unsupported.
 
 **Warning:** If you are flashing a custom firmware be prepared to the possibility that you might brick your device and make yourself familiar with the [unbricking methods](#Unbricking_your_Chrome_OS_device).
 
@@ -125,30 +175,6 @@ If you flashed the firmware as part of the installation process then continue by
 You should now have a custom firmware installed on your device, cross you fingers and reboot.
 
 If the custom firmware boots Arch Linux correctly then you might want to enable back the hardware write protection, although [John Lewis states](https://blogs.fsfe.org/the_unconventional/2014/09/19/c720-coreboot/) that it's not necessary and will only make upgrading more difficult later. However, if you do not re-enable it you want to be careful not to use flashrom.
-
-### Flashing with MrChromebox's Firmware Utility Script
-
-#### Introduction to the firmware
-
-MrChromebox's firmware for Chromebooks and Chromeboxes has some differences compared to other third-party custom firmware, namely:
-
-*   Provides a [UEFI](/index.php/UEFI "UEFI") implementation via the Tianocore coreboot payload.
-
-*   Provides updates for the Embedded Controller (EC) of some of the devices it supports, solving some hardware idiosyncrasies associated with other custom firmware.
-
-*   Built based on latest coreboot upstream, rather than on the frozen source snapshot provided by Google.
-
-The current major limitation of this firmware is the lack of proper UEFI NVRAM support, resulting in the impossibility of modifying [UEFI Variables](/index.php/Unified_Extensible_Firmware_Interface#UEFI_variables "Unified Extensible Firmware Interface"). This means that it defaults to booting from external devices if a valid EFI partition with a boot EFI program at the default path is detected in one of them and that it defaults to booting from `*esp*/EFI/Boot/BOOTX64.EFI` (`*esp*` being the [EFI system partition](/index.php/EFI_system_partition "EFI system partition")) with no option of changing this default behaviour.
-
-#### Flashing the firmware
-
-Ensure that your device is supported by looking at the [supported device list](https://mrchromebox.tech/#devices). For some devices there is a legacy SeaBIOS (non-UEFI) firmware also available, although those are [deprecated](https://github.com/MrChromebox/firmware/issues/46) and will generally not receive further updates. Legacy firmware images also do not provide Embedded Controller updates.
-
-If a UEFI ROM for your device is available, you can flash the Full ROM firmware using the [Firmware Utility Script](https://mrchromebox.tech/#fwscript) (after ensuring that you have removed your device's firmware write-protection screw). After successfully flashing the firmware, you can follow the [Installation guide](/index.php/Installation_guide "Installation guide") and install Arch Linux just like on any UEFI computer. [Systemd-boot](/index.php/Systemd-boot "Systemd-boot") is the recommended bootloader since it installs itself by default in `*esp*/EFI/Boot/BOOTX64.EFI`, the path that this firmware tries to boot from by default.
-
-#### Using the script from Arch Linux
-
-You will need to install [dmidecode](https://www.archlinux.org/packages/?name=dmidecode). Furthermore, to ensure that `flashrom` can correctly flash the firmware it is necessary to boot with both the `nopat` and the `iomem=relaxed` [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). This is due to an [issue](https://www.flashrom.org/FAQ#What_can_I_do_about_.2Fdev.2Fmem_errors.3F) with the relatively old statically linked `flashrom` binary used by the script, which is required since upstream `flashrom` can't directly be used to flash firmware images in Chromebooks/Chromeboxes.
 
 ### Manually with flashrom
 

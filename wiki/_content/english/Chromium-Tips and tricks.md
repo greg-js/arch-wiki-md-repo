@@ -307,7 +307,7 @@ To confirm this is working run [this test](https://panopticlick.eff.org) and mak
 
 ### Privacy extensions
 
-Popular privacy extensions for the [Firefox](/index.php/Firefox "Firefox") browser are typically also available for Chromium. See [Firefox/Privacy#Extensions](/index.php/Firefox/Privacy#Extensions "Firefox/Privacy") for details.
+Popular privacy extensions for the [Firefox](/index.php/Firefox "Firefox") browser are typically also available for Chromium. See [Browser extensions#Privacy](/index.php/Browser_extensions#Privacy "Browser extensions").
 
 **Tip:** Installing too many extensions might take up much space in the toolbar. Those extensions which you wouldn't interact with anyway (e.g. [HTTPS Everywhere](https://chrome.google.com/webstore/detail/gcbommkclmclpchllfjekcdonpmejbdp)) can be hidden by right-clicking on the extension and choosing **Hide in Chromium menu**.
 

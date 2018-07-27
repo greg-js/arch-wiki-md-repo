@@ -11,8 +11,6 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [2.3 Gotchas](#Gotchas)
         *   [2.3.1 Plugging your guest GPU in an unisolated CPU-based PCIe slot](#Plugging_your_guest_GPU_in_an_unisolated_CPU-based_PCIe_slot)
 *   [3 Isolating the GPU](#Isolating_the_GPU)
-    *   [3.1 Using vfio-pci](#Using_vfio-pci)
-    *   [3.2 Using pci-stub (legacy method, pre-4.1 kernels)](#Using_pci-stub_.28legacy_method.2C_pre-4.1_kernels.29)
 *   [4 Setting up an OVMF-based guest VM](#Setting_up_an_OVMF-based_guest_VM)
     *   [4.1 Configuring libvirt](#Configuring_libvirt)
     *   [4.2 Setting up the guest OS](#Setting_up_the_guest_OS)
@@ -177,9 +175,7 @@ The following section details how to configure a GPU so those placeholder driver
 
 **Warning:** Once you reboot after this procedure, whatever GPU you have configured will no longer be usable on the host until you reverse the manipulation. Make sure the GPU you intend to use on the host is properly configured before doing this - your motherboard should be set to display using the host GPU.
 
-### Using vfio-pci
-
-Starting with Linux 4.1, the kernel includes vfio-pci. This is a VFIO driver, meaning it fulfills the same role as pci-stub, but it can also control devices to an extent, such as by switching them into their D3 state when they are not in use. If your system supports it, which you can try by running the following command, you should use it. If it returns an error, use pci-stub instead.
+Starting with Linux 4.1, the kernel includes vfio-pci. This is a VFIO driver, meaning it fulfills the same role as pci-stub did, but it can also control devices to an extent, such as by switching them into their D3 state when they are not in use.
 
  `$ modinfo vfio-pci` 
 ```
@@ -241,41 +237,6 @@ It is not necessary for all devices (or even expected device) from `vfio.conf` t
 06:00.1 Audio device: NVIDIA Corporation GM204 High Definition Audio Controller [10de:0fbb] (rev a1)
 	Kernel driver in use: vfio-pci
 	Kernel modules: snd_hda_intel
-
-```
-
-### Using pci-stub (legacy method, pre-4.1 kernels)
-
-If your kernel does not support vfio-pci, you can use the pci-stub module instead, which is a dummy driver used to claim a device and prevent other drivers from using it.
-
-Pci-stub normally targets PCI devices by ID, meaning you only need to specify the IDs of the devices you intend to passthrough. For the following IOMMU group, you would want to bind vfio-pci with `10de:13c2` and `10de:0fbb`, which will be used as example values for the rest of this section.
-
-```
-IOMMU group 13 06:00.0 VGA compatible controller: NVIDIA Corporation GM204 [GeForce GTX 970] [10de:13c2] (rev a1)
-IOMMU group 13 06:00.1 Audio device: NVIDIA Corporation GM204 High Definition Audio Controller [10de:0fbb] (rev a1)}}
-
-```
-
-**Note:** You cannot specify which device to isolate using vendor-device ID pairs if the host GPU and the guest GPU share the same pair (i.e : if both are the same model). If this is your case, read [#Using identical guest and host GPUs](#Using_identical_guest_and_host_GPUs) instead.
-
-[linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) have pci-stub built as a module. You will need to add it to MODULES array in `mkinitpcio.conf`:
-
- `/etc/mkinitcpio.conf`  `MODULES=(... pci-stub ...)` 
-
-If you did need to add this module to your kernel image configuration manually, you must also [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs").
-
-Add the relevant PCI device IDs to the `pci-stubs.ids` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), e.g. `pci-stub.ids=10de:13c2,10de:0fbb`.
-
-**Note:** If, as noted in [#Plugging your guest GPU in an unisolated CPU-based PCIe slot](#Plugging_your_guest_GPU_in_an_unisolated_CPU-based_PCIe_slot), your pci root port is part of your IOMMU group, you **must not** pass its ID to `pci-stub`, as it needs to remain attached to the host to function properly. Any other device within that group, however, should be left for `pci-stub` to bind with.
-
-Check dmesg output for successful assignment of the device to pci-stub:
-
- `dmesg | grep pci-stub` 
-```
-[    2.390128] pci-stub: add 10DE:13C2 sub=FFFFFFFF:FFFFFFFF cls=00000000/00000000
-[    2.390143] pci-stub 0000:06:00.0: claimed by stub
-[    2.390150] pci-stub: add 10DE:0FBB sub=FFFFFFFF:FFFFFFFF cls=00000000/00000000
-[    2.390159] pci-stub 0000:06:00.1: claimed by stub
 
 ```
 
@@ -508,7 +469,7 @@ Certain setups require specific configuration tweaks in order to work properly. 
 
 ### Using identical guest and host GPUs
 
-Due to how both pci-stub and vfio-pci use your vendor and device id pair to identify which device they need to bind to at boot, if you have two GPUs sharing such an ID pair you will not be able to get your passthough driver to bind with just one of them. This sort of setup makes it necessary to use a script, so that whichever driver you are using is instead assigned by pci bus address using the `driver_override` mechanism.
+Due to how vfio-pci uses your vendor and device id pair to identify which device they need to bind to at boot, if you have two GPUs sharing such an ID pair you will not be able to get your passthough driver to bind with just one of them. This sort of setup makes it necessary to use a script, so that whichever driver you are using is instead assigned by pci bus address using the `driver_override` mechanism.
 
 #### Script variants
 

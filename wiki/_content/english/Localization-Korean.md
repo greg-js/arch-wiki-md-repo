@@ -36,6 +36,7 @@ The following [input methods](/index.php/Input_method "Input method") are availa
 *   [ibus-hangul](https://www.archlinux.org/packages/?name=ibus-hangul) for [IBus](/index.php/IBus "IBus")
 *   [scim-hangul](https://www.archlinux.org/packages/?name=scim-hangul) for [SCIM](/index.php/SCIM "SCIM")
 *   *uim-byeoru* of [uim](/index.php/Uim "Uim")
+*   [Nimf](/index.php/Nimf "Nimf")
 *   [#Nabi](#Nabi)
 
 ### Configuration

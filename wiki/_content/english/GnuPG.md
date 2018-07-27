@@ -39,12 +39,13 @@ According to the [official website](https://www.gnupg.org/):
     *   [6.1 Configuration](#Configuration_2)
     *   [6.2 Reload the agent](#Reload_the_agent)
     *   [6.3 pinentry](#pinentry)
-    *   [6.4 Unattended passphrase](#Unattended_passphrase)
-    *   [6.5 SSH agent](#SSH_agent)
-        *   [6.5.1 Set SSH_AUTH_SOCK](#Set_SSH_AUTH_SOCK)
-        *   [6.5.2 Configure pinentry to use the correct TTY](#Configure_pinentry_to_use_the_correct_TTY)
-        *   [6.5.3 Add SSH keys](#Add_SSH_keys)
-        *   [6.5.4 Using a PGP key for SSH authentication](#Using_a_PGP_key_for_SSH_authentication)
+    *   [6.4 Cache passwords](#Cache_passwords)
+    *   [6.5 Unattended passphrase](#Unattended_passphrase)
+    *   [6.6 SSH agent](#SSH_agent)
+        *   [6.6.1 Set SSH_AUTH_SOCK](#Set_SSH_AUTH_SOCK)
+        *   [6.6.2 Configure pinentry to use the correct TTY](#Configure_pinentry_to_use_the_correct_TTY)
+        *   [6.6.3 Add SSH keys](#Add_SSH_keys)
+        *   [6.6.4 Using a PGP key for SSH authentication](#Using_a_PGP_key_for_SSH_authentication)
 *   [7 Smartcards](#Smartcards)
     *   [7.1 GnuPG only setups](#GnuPG_only_setups)
     *   [7.2 GnuPG with pcscd (PCSC Lite)](#GnuPG_with_pcscd_.28PCSC_Lite.29)
@@ -58,7 +59,6 @@ According to the [official website](https://www.gnupg.org/):
     *   [8.6 Using caff for keysigning parties](#Using_caff_for_keysigning_parties)
     *   [8.7 Always show long ID's and fingerprints](#Always_show_long_ID.27s_and_fingerprints)
     *   [8.8 Custom capabilities](#Custom_capabilities)
-    *   [8.9 Cache passwords](#Cache_passwords)
 *   [9 Troubleshooting](#Troubleshooting)
     *   [9.1 Not enough random bytes available](#Not_enough_random_bytes_available)
     *   [9.2 su](#su)
@@ -212,7 +212,7 @@ $ gpg --recv-keys *key-id*
 
 **Tip:**
 
-*   Adding `keyserver-options auto-key-retrieve` to `gpg.conf` will automatically fetch keys from the key server as needed.
+*   Adding `keyserver-options auto-key-retrieve` to `gpg.conf` will automatically fetch keys from the key server as needed, but this can be considered a **privacy violation**; see `web bug' in gpg(1).
 *   An alternative key server is `pool.sks-keyservers.net` and can be specified with `keyserver` in `dirmngr.conf`; see also [wikipedia:Key server (cryptographic)#Keyserver examples](https://en.wikipedia.org/wiki/Key_server_(cryptographic)#Keyserver_examples "wikipedia:Key server (cryptographic)").
 *   If your network blocks ports used for hkp/hkps, you may need to specify port 80, i.e. `pool.sks-keyservers.net:80`
 *   You can connect to the keyserver over [Tor](/index.php/Tor "Tor") using `--use-tor`. See this [GnuPG blog post](https://gnupg.org/blog/20151224-gnupg-in-november-and-december.html) for more information.
@@ -500,7 +500,7 @@ However in some cases only the restart may not be sufficient, like when `keep-sc
 
 Finally, the agent needs to know how to ask the user for the password. This can be set in the gpg-agent configuration file.
 
-The default uses `/usr/bin/pinentry-gnome3`, falling back to `/usr/bin/pinentry-qt`, `/usr/bin/pinentry-gtk-2` and at last `/usr/bin/pinentry-curses` if none of the previous were functioning. However there are other options - see `info pinentry`. To change the dialog implementation set `pinentry-program` configuration option:
+The default uses `/usr/bin/pinentry-gtk-2`, falling back to `/usr/bin/pinentry-curses` if gtk2 is unavailable. However there are other options - see `pacman -Ql pinentry | grep /usr/bin/`. To change the dialog implementation set `pinentry-program` configuration option:
 
  `~/.gnupg/gpg-agent.conf` 
 ```
@@ -516,6 +516,26 @@ pinentry-program /usr/bin/pinentry-gtk-2
 **Tip:** For using `/usr/bin/pinentry-kwallet` you have to install the [kwalletcli](https://aur.archlinux.org/packages/kwalletcli/) package.
 
 After making this change, [#Reload the agent](#Reload_the_agent).
+
+### Cache passwords
+
+`max-cache-ttl` and `default-cache-ttl` defines how many seconds gpg-agent should cache the passwords. To enter a password once a session, set them to something very high, for instance:
+
+ `gpg-agent.conf` 
+```
+max-cache-ttl 60480000
+default-cache-ttl 60480000
+
+```
+
+For password caching in SSH emulation mode, set `default-cache-ttl-ssh` and `max-cache-ttl-ssh` instead, for example:
+
+ `gpg-agent.conf` 
+```
+default-cache-ttl-ssh 60480000
+max-cache-ttl-ssh 60480000
+
+```
 
 ### Unattended passphrase
 
@@ -581,14 +601,7 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 
 Once *gpg-agent* is running you can use *ssh-add* to approve keys, following the same steps as for [ssh-agent](/index.php/SSH_keys#ssh-agent "SSH keys"). The list of approved keys is stored in the `~/.gnupg/sshcontrol` file.
 
-Once your key is approved, you will get a *pinentry* dialog every time your passphrase is needed. You can control passphrase caching in the `~/.gnupg/gpg-agent.conf` file. The following example would have *gpg-agent* cache your keys for 3 hours:
-
- `~/.gnupg/gpg-agent.conf` 
-```
-default-cache-ttl-ssh 10800
-max-cache-ttl-ssh 10800
-
-```
+Once your key is approved, you will get a *pinentry* dialog every time your passphrase is needed. For password caching see [#Cache passwords](#Cache_passwords).
 
 #### Using a PGP key for SSH authentication
 
@@ -597,20 +610,31 @@ You can also use your PGP key as an SSH key. This requires a key with the `Authe
 *   Reduced key maintenance, as you will no longer need to maintain an SSH key
 *   The ability to store the authentication key on a smartcard. GnuPG will automatically detect the key when the card is available, and add it to the agent (check with `ssh-add -l` or `ssh-add -L`). The comment for the key should be something like: `openpgp:*key-id*` or `cardno:*card-id*`.
 
-**Note:** Your key may not be added to `$GNUPGHOME/sshcontrol`, which is where normal SSH keys are listed.
-
 To retrieve the public key part of your GPG/SSH key, run `gpg --export-ssh-key *gpg-key*`.
 
-If your key is not added to `$GNUPGHOME/sshcontrol` automatically, you can add the keygrip for your key with the Authentication capability manually. You can get the keygrip of your key by executing `gpg --list-keys --with-keygrip`, like so:
+Unless you have your GPG key on a keycard, you need to add your key to `$GNUPGHOME/sshcontrol` to be recognized as a SSH key. If your key is on a keycard, its keygrip is added to `sshcontrol` implicitly. If not, get the keygrip of your key this way:
 
 ```
 $ gpg --list-keys --with-keygrip
-  sub   rsa4096/1234ABCD1234ABCD 2001-01-01 [A] [expires: 2002-01-01]
-        Keygrip = < put this value on its own line in $GNUPGHOME/sshcontrol >
 
 ```
 
-Adding the keygrip to `$HOME/.gnupg/sshcontrol` is a one-time action; you will not need to edit the file again, unless you are adding additional keygrips.
+```
+sub   rsa4096 2018-07-25 [A]
+      Keygrip = *1531C8084D16DC4C36911F1585AF0ACE7AAFD7E7*
+```
+
+Then edit `sshcontrol` like this. Adding the keygrip is a one-time action; you will not need to edit the file again, unless you are adding additional keys.
+
+```
+$GNUPGHOME/sshcontrol
+
+```
+
+```
+*1531C8084D16DC4C36911F1585AF0ACE7AAFD7E7*
+
+```
 
 ## Smartcards
 
@@ -624,9 +648,9 @@ If you do not plan to use other cards but those based on GnuPG, you should check
 
 ### GnuPG with pcscd (PCSC Lite)
 
-**Note:** [pcsclite](https://www.archlinux.org/packages/?name=pcsclite) and [ccid](https://www.archlinux.org/packages/?name=ccid) have to be installed, and the contained [systemd](/index.php/Systemd#Using_units "Systemd") service `pcscd.service` has to be running, or the socket `pcscd.socket` has to be listening.
+Pcscd is a daemon which handles access to smartcard (SCard API). If GnuPG's scdaemon fails to connect the smartcard directly (e.g. by using its integrated CCID support), it will fallback and try to find a smartcard using the PCSC Lite driver.
 
-pcscd is a daemon which handles access to smartcard (SCard API). If GnuPG's scdaemon fails to connect the smartcard directly (e.g. by using its integrated CCID support), it will fallback and try to find a smartcard using the PCSC Lite driver.
+To use pscsd [install](/index.php/Install "Install") [pcsclite](https://www.archlinux.org/packages/?name=pcsclite) and [ccid](https://www.archlinux.org/packages/?name=ccid). Then [start](/index.php/Start "Start") and/or [enable](/index.php/Enable "Enable") `pcscd.service`. Alternatively start and/or enable `pcscd.socket` to activate the daemon when needed.
 
 #### Always use pcscd
 
@@ -749,19 +773,6 @@ $ gpg --full-generate-key --expert
 And select an option that allows you to set your own capabilities.
 
 Comparably, to specify custom capabilities for subkeys, add the `--expert` flag to `gpg --edit-key`, see [#Edit your key](#Edit_your_key) for more information.
-
-### Cache passwords
-
-To be asked for your GnuPG password only once per session, set `max-cache-ttl` and `default-cache-ttl` to something very high, for instance:
-
- `gpg-agent.conf` 
-```
-max-cache-ttl 60480000
-default-cache-ttl 60480000
-
-```
-
-See [#gpg-agent](#gpg-agent).
 
 ## Troubleshooting
 

@@ -544,79 +544,7 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 #### Screenshot
 
-See also [Screen capture](/index.php/Screen_capture "Screen capture").
-
-*   **Deepin Screenshot** — Quite easy-to-use screenshot tool. Features: global hotkey to trigger screenshot tool, take screenshot of a selected area, easy to add text and line drawings onto the screenshot. Python/Qt5 based.
-
-	[https://www.deepin.org/en/original/deepin-screenshot/](https://www.deepin.org/en/original/deepin-screenshot/) || [deepin-screenshot](https://www.archlinux.org/packages/?name=deepin-screenshot)
-
-*   **Escrotum** — Screen capture using pygtk, inspired by scrot.
-
-	[https://github.com/Roger/escrotum](https://github.com/Roger/escrotum) || [escrotum-git](https://aur.archlinux.org/packages/escrotum-git/)
-
-*   **Flameshot** — Qt5 based software for interactive screenshot taking. Select the desired area, draw with different tools and enjoy the customization capabilities.
-
-	[https://github.com/lupoDharkael/flameshot](https://github.com/lupoDharkael/flameshot) || [flameshot](https://www.archlinux.org/packages/?name=flameshot)
-
-*   **[GNOME Screenshot](https://en.wikipedia.org/wiki/GNOME_Screenshot "wikipedia:GNOME Screenshot")** — Screenshot tool for the GNOME desktop.
-
-	[https://gitlab.gnome.org/GNOME/gnome-screenshot/](https://gitlab.gnome.org/GNOME/gnome-screenshot/) || [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot)
-
-*   **gscreenshot** — Simple GTK+ screenshot utility with delays, selection, and copy-to-clipboard functionality.
-
-	[https://github.com/thenaterhood/gscreenshot](https://github.com/thenaterhood/gscreenshot) || [gscreenshot](https://aur.archlinux.org/packages/gscreenshot/)
-
-*   **imgur-screenshot** — Take screenshot selection, upload to [imgur](http://imgur.com). + more cool things
-
-	[https://github.com/jomo/imgur-screenshot](https://github.com/jomo/imgur-screenshot) || [imgur-screenshot-git](https://aur.archlinux.org/packages/imgur-screenshot-git/)
-
-*   **KShare** — ShareX inspired cross platform utility written with Qt.
-
-	[https://kshare.arsenarsen.com](https://kshare.arsenarsen.com) || [kshare](https://aur.archlinux.org/packages/kshare/)
-
-*   **Lightscreen** — Simple tool to automate the tedious process of saving and cataloging screenshots, it operates as a hidden background process that is invoked with one (or multiple) hotkeys and then saves a screenshot file to disk according to the user's preferences.
-
-	[http://lightscreen.com.ar](http://lightscreen.com.ar) || [lightscreen](https://aur.archlinux.org/packages/lightscreen/)
-
-*   **LXQt Screenshot** — Screenshot tool for LXQt. Run with `lximage-qt --screenshot`.
-
-	[https://github.com/lxde/lximage-qt](https://github.com/lxde/lximage-qt) || [lximage-qt](https://www.archlinux.org/packages/?name=lximage-qt)
-
-*   **maim** — Simple command line utility that takes screenshots. It's meant to replace scrot and performs better than scrot in many ways.
-
-	[https://github.com/naelstrof/maim](https://github.com/naelstrof/maim) || [maim](https://www.archlinux.org/packages/?name=maim)
-
-*   **MATE Screenshot** — Screenshot tool for the MATE desktop.
-
-	[http://mate-desktop.org](http://mate-desktop.org) || [mate-utils](https://www.archlinux.org/packages/?name=mate-utils)
-
-*   **ScreenCloud** — Take a screenshot of the entire screen or to select an area and then uploading the screenshot to [imgur](http://imgur.com)+auth. has plugins and system tray.
-
-	[http://screencloud.net/](http://screencloud.net/) || [screencloud](https://aur.archlinux.org/packages/screencloud/)
-
-*   **ScreenGrab** — Cross-platform application designed to quickly take screenshots (Qt).
-
-	[https://github.com/DOOMer/screengrab](https://github.com/DOOMer/screengrab) || [screengrab](https://aur.archlinux.org/packages/screengrab/)
-
-*   **[Scrot](https://en.wikipedia.org/wiki/Scrot "wikipedia:Scrot")** — Simple command-line screenshot utility for X.
-
-	[http://freecode.com/projects/scrot](http://freecode.com/projects/scrot) || [scrot](https://www.archlinux.org/packages/?name=scrot)
-
-*   **Shutter** — Rich screenshot and editing program. Supports [delay](https://hyp.is/AVQUNTRUH9ZO4OKSlue9/askubuntu.com/questions/252281/how-do-i-take-screenshots-with-a-delay/260178).
-
-	[http://shutter-project.org/](http://shutter-project.org/) || [shutter](https://aur.archlinux.org/packages/shutter/)
-
-*   **Spectacle** — [KDE](/index.php/KDE "KDE") application for taking screenshots. It is capable of capturing images of the whole desktop, a single window, a section of a window, a selected rectangular region or a freehand region. Part of [kdegraphics](https://www.archlinux.org/groups/x86_64/kdegraphics/).
-
-	[https://github.com/KDE/spectacle/](https://github.com/KDE/spectacle/) || [spectacle](https://www.archlinux.org/packages/?name=spectacle)
-
-*   **Xfce4 Screenshooter** — Application and Xfce4 panel plugin to take screenshots about the entire screen, the active window or a selected region. Part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/).
-
-	[http://goodies.xfce.org/projects/applications/xfce4-screenshooter](http://goodies.xfce.org/projects/applications/xfce4-screenshooter) || [xfce4-screenshooter](https://www.archlinux.org/packages/?name=xfce4-screenshooter)
-
-*   **xwd** — X Window System image dumping utility
-
-	[http://xorg.freedesktop.org/](http://xorg.freedesktop.org/) || [xorg-xwd](https://www.archlinux.org/packages/?name=xorg-xwd)
+See [Screen capture#Screenshot software](/index.php/Screen_capture#Screenshot_software "Screen capture").
 
 #### Digital camera managers
 
@@ -1768,57 +1696,7 @@ See also [Wikipedia:Comparison of subtitle editors](https://en.wikipedia.org/wik
 
 #### Screencast
 
-See also [FFmpeg#Screen capture](/index.php/FFmpeg#Screen_capture "FFmpeg") and [Wikipedia:Comparison of screencasting software](https://en.wikipedia.org/wiki/Comparison_of_screencasting_software "wikipedia:Comparison of screencasting software").
-
-Screencast utilities allow you to create a video of your desktop or individual windows.
-
-*   **Byzanz** — Simple screencast tool that produces GIF animations.
-
-	[http://blogs.gnome.org/otte/2009/08/30/byzanz-0-2-0/](http://blogs.gnome.org/otte/2009/08/30/byzanz-0-2-0/) || [byzanz](https://www.archlinux.org/packages/?name=byzanz)
-
-*   **Deepin Screen Recorder** — Screen recorder application for Deepin desktop.
-
-	[https://www.deepin.org/en/original/deepin-screen-recorder/](https://www.deepin.org/en/original/deepin-screen-recorder/) || [deepin-screen-recorder](https://www.archlinux.org/packages/?name=deepin-screen-recorder)
-
-*   **FFcast** — FFmpeg-based screencast tool written in Bash.
-
-	[https://github.com/lolilolicon/FFcast](https://github.com/lolilolicon/FFcast) || [ffcast](https://aur.archlinux.org/packages/ffcast/)
-
-*   **Green Recorder** — Simple yet functional desktop recorder for Linux systems.
-
-	[https://github.com/green-project/green-recorder](https://github.com/green-project/green-recorder) || [green-recorder](https://aur.archlinux.org/packages/green-recorder/)
-
-*   **Kazam** — Screencasting program with design in mind. Handles multiscreen setups.
-
-	[https://launchpad.net/kazam](https://launchpad.net/kazam) || [kazam](https://aur.archlinux.org/packages/kazam/)
-
-*   **[OBS](https://en.wikipedia.org/wiki/Open_Broadcaster_Software "wikipedia:Open Broadcaster Software")** — Video recording and live streaming application.
-
-	[https://obsproject.com/](https://obsproject.com/) || [obs-studio](https://www.archlinux.org/packages/?name=obs-studio)
-
-*   **[Peek](https://en.wikipedia.org/wiki/Peek "wikipedia:Peek")** — Simple screencast tool that produces GIF, APNG, WebM or MP4 animations.
-
-	[https://github.com/phw/peek](https://github.com/phw/peek) || [peek](https://aur.archlinux.org/packages/peek/)
-
-*   **RecordItNow** — Plugin based desktop recorder for KDE.
-
-	[http://recorditnow.sourceforge.net/](http://recorditnow.sourceforge.net/) || [recorditnow](https://www.archlinux.org/packages/?name=recorditnow)
-
-*   **[RecordMyDesktop](/index.php/RecordMyDesktop "RecordMyDesktop")** — Easy to use utility that records your desktop into the ogg format with a CLI, GTK+ or Qt interface. (inactive development)
-
-	[http://recordmydesktop.sourceforge.net/](http://recordmydesktop.sourceforge.net/) || CLI: [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop), GTK+: [gtk-recordmydesktop](https://www.archlinux.org/packages/?name=gtk-recordmydesktop), Qt: [qt-recordmydesktop](https://aur.archlinux.org/packages/qt-recordmydesktop/)
-
-*   **[SimpleScreenRecorder](https://en.wikipedia.org/wiki/SimpleScreenRecorder "wikipedia:SimpleScreenRecorder")** — Feature-rich screen recorder written in C++/Qt5 that supports X11 and OpenGL.
-
-	[http://www.maartenbaert.be/simplescreenrecorder/](http://www.maartenbaert.be/simplescreenrecorder/) || [simplescreenrecorder](https://www.archlinux.org/packages/?name=simplescreenrecorder)
-
-*   **VokoScreen** — Simple screencast GUI tool using FFmpeg.
-
-	[http://www.kohaupt-online.de/hp](http://www.kohaupt-online.de/hp) || [vokoscreen](https://aur.archlinux.org/packages/vokoscreen/)
-
-*   **[XVidCap](https://en.wikipedia.org/wiki/XVidCap "wikipedia:XVidCap")** — Application used for recording a screencast or digital recording of an X Window System screen output with an audio narration.
-
-	[http://xvidcap.sourceforge.net/](http://xvidcap.sourceforge.net/) || [xvidcap](https://aur.archlinux.org/packages/xvidcap/)
+See [Screen capture#Screencast software](/index.php/Screen_capture#Screencast_software "Screen capture").
 
 #### Webcam
 

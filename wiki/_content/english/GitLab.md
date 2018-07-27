@@ -220,7 +220,11 @@ For more info and other ways to create/manage MySQL databases, see the [MariaDB 
 
 #### PostgreSQL
 
-Login to PostgreSQL and create the `gitlabhq_production` database with along with its user. Remember to change `your_username_here` and `your_password_here` to the real values:
+Login to PostgreSQL and create the `gitlabhq_production` database with along with its user.
+
+**Note:** Make sure that the table `template1` has the correct encoding. It can be changed by following these steps [here](https://ptpb.pw/Hp3W)
+
+Remember to change `your_username_here` and `your_password_here` to the real values:
 
 ```
 # psql -d template1

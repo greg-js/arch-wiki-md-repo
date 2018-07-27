@@ -2,107 +2,115 @@ Related articles
 
 *   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
 
-This article explains different methods to capture your screen.
-
-For a list of [screenshot](https://en.wikipedia.org/wiki/Screenshot "wikipedia:Screenshot") software, see [List of applications/Multimedia#Screenshot](/index.php/List_of_applications/Multimedia#Screenshot "List of applications/Multimedia").
-
-For a list of [screencast](https://en.wikipedia.org/wiki/Screencast "wikipedia:Screencast") software, see [List of applications/Multimedia#Screencast](/index.php/List_of_applications/Multimedia#Screencast "List of applications/Multimedia").
+This article lists and describes [screenshot](https://en.wikipedia.org/wiki/Screenshot "wikipedia:Screenshot") and [screencast](https://en.wikipedia.org/wiki/Screencast "wikipedia:Screencast") software.
 
 ## Contents
 
 *   [1 Screenshot software](#Screenshot_software)
-    *   [1.1 ImageMagick/GraphicsMagick](#ImageMagick.2FGraphicsMagick)
-        *   [1.1.1 Screenshot of multiple X screens](#Screenshot_of_multiple_X_screens)
-        *   [1.1.2 Screenshot of individual Xinerama heads](#Screenshot_of_individual_Xinerama_heads)
-        *   [1.1.3 Screenshot of the active/focused window](#Screenshot_of_the_active.2Ffocused_window)
-    *   [1.2 GIMP](#GIMP)
-    *   [1.3 xwd](#xwd)
-    *   [1.4 scrot](#scrot)
-    *   [1.5 escrotum](#escrotum)
-    *   [1.6 imlib2](#imlib2)
-    *   [1.7 maim](#maim)
-    *   [1.8 FFmpeg](#FFmpeg)
-    *   [1.9 Weston](#Weston)
-    *   [1.10 Flameshot](#Flameshot)
-*   [2 Details: desktop environment specific](#Details:_desktop_environment_specific)
-    *   [2.1 Spectacle](#Spectacle)
-    *   [2.2 Xfce Screenshooter](#Xfce_Screenshooter)
-    *   [2.3 GNOME](#GNOME)
-    *   [2.4 Cinnamon](#Cinnamon)
-    *   [2.5 Other desktop environments or window managers](#Other_desktop_environments_or_window_managers)
-*   [3 Terminal](#Terminal)
-    *   [3.1 Capture with ANSI codes](#Capture_with_ANSI_codes)
-    *   [3.2 Framebuffer](#Framebuffer)
-    *   [3.3 Virtual console](#Virtual_console)
+    *   [1.1 Dedicated software](#Dedicated_software)
+        *   [1.1.1 xwd](#xwd)
+        *   [1.1.2 scrot](#scrot)
+        *   [1.1.3 escrotum](#escrotum)
+        *   [1.1.4 maim](#maim)
+        *   [1.1.5 Flameshot](#Flameshot)
+    *   [1.2 Desktop environment specific](#Desktop_environment_specific)
+        *   [1.2.1 Spectacle](#Spectacle)
+        *   [1.2.2 Xfce Screenshooter](#Xfce_Screenshooter)
+        *   [1.2.3 GNOME](#GNOME)
+        *   [1.2.4 Cinnamon](#Cinnamon)
+        *   [1.2.5 Other desktop environments or window managers](#Other_desktop_environments_or_window_managers)
+    *   [1.3 Packages including a screenshot utility](#Packages_including_a_screenshot_utility)
+        *   [1.3.1 ImageMagick/GraphicsMagick](#ImageMagick.2FGraphicsMagick)
+            *   [1.3.1.1 Screenshot of multiple X screens](#Screenshot_of_multiple_X_screens)
+            *   [1.3.1.2 Screenshot of individual Xinerama heads](#Screenshot_of_individual_Xinerama_heads)
+            *   [1.3.1.3 Screenshot of the active/focused window](#Screenshot_of_the_active.2Ffocused_window)
+        *   [1.3.2 GIMP](#GIMP)
+        *   [1.3.3 imlib2](#imlib2)
+        *   [1.3.4 FFmpeg](#FFmpeg)
+*   [2 Screencast software](#Screencast_software)
+*   [3 Weston](#Weston)
+*   [4 Terminal](#Terminal)
+    *   [4.1 Capture with ANSI codes](#Capture_with_ANSI_codes)
+    *   [4.2 Framebuffer](#Framebuffer)
+    *   [4.3 Virtual console](#Virtual_console)
 
 ## Screenshot software
 
-### ImageMagick/GraphicsMagick
+### Dedicated software
 
-An easy way to take a screenshot of your current system is using the [import(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/import.1) command:
+*   **Deepin Screenshot** — Quite easy-to-use screenshot tool. Features: global hotkey to trigger screenshot tool, take screenshot of a selected area, easy to add text and line drawings onto the screenshot. Python/Qt5 based.
 
-```
-$ import -window root screenshot.jpg
+	[https://www.deepin.org/en/original/deepin-screenshot/](https://www.deepin.org/en/original/deepin-screenshot/) || [deepin-screenshot](https://www.archlinux.org/packages/?name=deepin-screenshot)
 
-```
+*   **Escrotum** — Screen capture using pygtk, inspired by scrot.
 
-`import` is part of the [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) package.
+	[https://github.com/Roger/escrotum](https://github.com/Roger/escrotum) || [escrotum-git](https://aur.archlinux.org/packages/escrotum-git/)
 
-Running `import` without the `-window` option allows selecting a window or an arbitrary region interactively.
+*   **Flameshot** — Qt5 based software for interactive screenshot taking. Select the desired area, draw with different tools and enjoy the customization capabilities.
 
-**Note:** If you prefer **graphicsmagick** alternative, just prepend "gm", e.g. `$ gm import -window root screenshot.jpg`.
+	[https://github.com/lupoDharkael/flameshot](https://github.com/lupoDharkael/flameshot) || [flameshot](https://www.archlinux.org/packages/?name=flameshot)
 
-#### Screenshot of multiple X screens
+*   **[GNOME Screenshot](https://en.wikipedia.org/wiki/GNOME_Screenshot "wikipedia:GNOME Screenshot")** — Screenshot tool for the GNOME desktop.
 
-If you run twinview or dualhead, simply take the screenshot twice and use `imagemagick` to paste them together:
+	[https://gitlab.gnome.org/GNOME/gnome-screenshot/](https://gitlab.gnome.org/GNOME/gnome-screenshot/) || [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot)
 
-```
-import -window root -display :0.0 -screen /tmp/0.png
-import -window root -display :0.1 -screen /tmp/1.png
-convert +append /tmp/0.png /tmp/1.png screenshot.png
-rm /tmp/{0,1}.png
+*   **gscreenshot** — Simple GTK+ screenshot utility with delays, selection, and copy-to-clipboard functionality.
 
-```
+	[https://github.com/thenaterhood/gscreenshot](https://github.com/thenaterhood/gscreenshot) || [gscreenshot](https://aur.archlinux.org/packages/gscreenshot/)
 
-#### Screenshot of individual Xinerama heads
+*   **imgur-screenshot** — Take screenshot selection, upload to [imgur](http://imgur.com). + more cool things
 
-Xinerama-based multi-head setups have only one virtual screen. If the physical screens are different in height, you will find dead space in the screenshot. In this case, you may want to take screenshot of each physical screen individually. As long as Xinerama information is available from the X server, the following will work:
+	[https://github.com/jomo/imgur-screenshot](https://github.com/jomo/imgur-screenshot) || [imgur-screenshot-git](https://aur.archlinux.org/packages/imgur-screenshot-git/)
 
-```
-#!/bin/sh
-xdpyinfo -ext XINERAMA | sed '/^  head #/!d;s///' |
-while IFS=' :x@,' read i w h x y; do
-        import -window root -crop ${w}x$h+$x+$y head_$i.png
-done
+*   **KShare** — ShareX inspired cross platform utility written with Qt.
 
-```
+	[https://kshare.arsenarsen.com](https://kshare.arsenarsen.com) || [kshare](https://aur.archlinux.org/packages/kshare/)
 
-#### Screenshot of the active/focused window
+*   **Lightscreen** — Simple tool to automate the tedious process of saving and cataloging screenshots, it operates as a hidden background process that is invoked with one (or multiple) hotkeys and then saves a screenshot file to disk according to the user's preferences.
 
-The following script takes a screenshot of the currently focused window. It works with EWMH/NetWM compatible X Window Managers. To avoid overwriting previous screenshots, the current date is used as the filename.
+	[http://lightscreen.com.ar](http://lightscreen.com.ar) || [lightscreen](https://aur.archlinux.org/packages/lightscreen/)
 
-```
-#!/bin/sh
-activeWinLine=$(xprop -root | grep "_NET_ACTIVE_WINDOW(WINDOW)")
-activeWinId=${activeWinLine:40}
-import -window "$activeWinId" /tmp/$(date +%F_%H%M%S_%N).png
+*   **LXQt Screenshot** — Screenshot tool for LXQt. Run with `lximage-qt --screenshot`.
 
-```
+	[https://github.com/lxde/lximage-qt](https://github.com/lxde/lximage-qt) || [lximage-qt](https://www.archlinux.org/packages/?name=lximage-qt)
 
-Alternatively, the following should work regardless of EWMH support:
+*   **maim** — Simple command line utility that takes screenshots. It's meant to replace scrot and performs better than scrot in many ways.
 
-```
-$ import -window "$(xdotool getwindowfocus -f)" /tmp/$(date +%F_%H%M%S_%N).png
+	[https://github.com/naelstrof/maim](https://github.com/naelstrof/maim) || [maim](https://www.archlinux.org/packages/?name=maim)
 
-```
+*   **MATE Screenshot** — Screenshot tool for the MATE desktop.
 
-**Note:** If screenshots of some programs (dwb and zathura) appear blank, try appending `-frame` or removing `-f` from the `xdotool` command.
+	[http://mate-desktop.org](http://mate-desktop.org) || [mate-utils](https://www.archlinux.org/packages/?name=mate-utils)
 
-### GIMP
+*   **ScreenCloud** — Take a screenshot of the entire screen or to select an area and then uploading the screenshot to [imgur](http://imgur.com)+auth. has plugins and system tray.
 
-You also can take screenshots with [GIMP](/index.php/GIMP "GIMP") (*File > Create > Screenshot*...).
+	[http://screencloud.net/](http://screencloud.net/) || [screencloud](https://aur.archlinux.org/packages/screencloud/)
 
-### xwd
+*   **ScreenGrab** — Cross-platform application designed to quickly take screenshots (Qt).
+
+	[https://github.com/DOOMer/screengrab](https://github.com/DOOMer/screengrab) || [screengrab](https://aur.archlinux.org/packages/screengrab/)
+
+*   **[Scrot](https://en.wikipedia.org/wiki/Scrot "wikipedia:Scrot")** — Simple command-line screenshot utility for X.
+
+	[http://freecode.com/projects/scrot](http://freecode.com/projects/scrot) || [scrot](https://www.archlinux.org/packages/?name=scrot)
+
+*   **Shutter** — Rich screenshot and editing program. Supports [delay](https://hyp.is/AVQUNTRUH9ZO4OKSlue9/askubuntu.com/questions/252281/how-do-i-take-screenshots-with-a-delay/260178).
+
+	[http://shutter-project.org/](http://shutter-project.org/) || [shutter](https://aur.archlinux.org/packages/shutter/)
+
+*   **Spectacle** — [KDE](/index.php/KDE "KDE") application for taking screenshots. It is capable of capturing images of the whole desktop, a single window, a section of a window, a selected rectangular region or a freehand region. Part of [kdegraphics](https://www.archlinux.org/groups/x86_64/kdegraphics/).
+
+	[https://github.com/KDE/spectacle/](https://github.com/KDE/spectacle/) || [spectacle](https://www.archlinux.org/packages/?name=spectacle)
+
+*   **Xfce4 Screenshooter** — Application and Xfce4 panel plugin to take screenshots about the entire screen, the active window or a selected region. Part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/).
+
+	[http://goodies.xfce.org/projects/applications/xfce4-screenshooter](http://goodies.xfce.org/projects/applications/xfce4-screenshooter) || [xfce4-screenshooter](https://www.archlinux.org/packages/?name=xfce4-screenshooter)
+
+*   **xwd** — X Window System image dumping utility
+
+	[http://xorg.freedesktop.org/](http://xorg.freedesktop.org/) || [xorg-xwd](https://www.archlinux.org/packages/?name=xorg-xwd)
+
+#### xwd
 
 [xwd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xwd.1) provided by [xorg-xwd](https://www.archlinux.org/packages/?name=xorg-xwd)
 
@@ -115,7 +123,7 @@ $ xwd -root -out screenshot.xwd
 
 **Note:** The methods for taking shots of active windows with `import` can also be used with `xwd`.
 
-### scrot
+#### scrot
 
 [scrot](https://www.archlinux.org/packages/?name=scrot) enables taking screenshots from the CLI and offers features such as a user-definable time delay. Unless instructed otherwise, it saves the file in the current working directory.
 
@@ -139,7 +147,7 @@ See [scrot(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/scrot.1) for more info
 
 **Note:** In some window managers ([dwm](https://aur.archlinux.org/packages/dwm/), [xmonad](https://www.archlinux.org/packages/?name=xmonad) and possibly others) `scrot -s` does not work properly when running via window manager's keyboard shortcut, this can be worked around by prepending scrot invocation with a short pause `sleep 0.2; scrot -s`.
 
-### escrotum
+#### escrotum
 
 [escrotum-git](https://aur.archlinux.org/packages/escrotum-git/) screen capture using pygtk, inspired by scrot
 
@@ -147,44 +155,25 @@ Created because scrot has glitches when selection mode is used with refreshing w
 
 Because the command line interface its almost the same as scrot, can be used as a replacement of it.
 
-### imlib2
-
-[imlib2](https://www.archlinux.org/packages/?name=imlib2) provides a binary `imlib2_grab` to take screenshots. To take a screenshot of the full screen, type:
-
-```
-$ imlib2_grab screenshot.png
-
-```
-
-Note that [scrot](https://www.archlinux.org/packages/?name=scrot) actually uses `imlib2`.
-
-### maim
+#### maim
 
 [maim](https://www.archlinux.org/packages/?name=maim) is aimed to be an improved scrot.
 
 Takes screenshots of your desktop using [slop](https://github.com/naelstrof/slop) for regions. It's meant to overcome shortcomings of scrot.
 
-### FFmpeg
-
-See [FFmpeg#Screen capture](/index.php/FFmpeg#Screen_capture "FFmpeg").
-
-### Weston
-
-In the [Weston](/index.php/Wayland#Weston "Wayland") Wayland compositor, screenshots can be taking by pressing `Super+s`, which are stored in Weston's current working directory. Screencasts are also supported; recording is started and stopped by pressing `Super+r`, which will create a file called `capture.wcap` in Weston's current working directory. The capture can be decoded to YUV format by running `wcap-decode --yuv4mpeg2 capture.wcap`; the output of this command can be written to a file or piped into FFmpeg for further processing.
-
-### Flameshot
+#### Flameshot
 
 [flameshot](https://www.archlinux.org/packages/?name=flameshot) allows you to add simple shapes to your screenshot as you are taking it (either fullscreen or a selected region).
 
-## Details: desktop environment specific
+### Desktop environment specific
 
-### Spectacle
+#### Spectacle
 
 If you use [KDE](/index.php/KDE "KDE"), you might want to use `Spectacle`.
 
 Spectacle is provided by the [spectacle](https://www.archlinux.org/packages/?name=spectacle).
 
-### Xfce Screenshooter
+#### Xfce Screenshooter
 
 If you use [Xfce](/index.php/Xfce "Xfce") you can install [xfce4-screenshooter](https://www.archlinux.org/packages/?name=xfce4-screenshooter) and then add a keyboard binding:
 
@@ -192,15 +181,15 @@ If you use [Xfce](/index.php/Xfce "Xfce") you can install [xfce4-screenshooter](
 
 If you want to skip the Screenshot prompt, type `$ xfce4-screenshooter -h` in terminal for the options.
 
-### GNOME
+#### GNOME
 
 [GNOME](/index.php/GNOME "GNOME") users can press `Prnt Scr` or *Apps > Accessories > Take Screenshot*. You may need to install [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot).
 
-### Cinnamon
+#### Cinnamon
 
 The default installation of [Cinnamon](/index.php/Cinnamon "Cinnamon") does not provide a screenshot utility. Installing [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot) will enable screenshots through the *Menu > Accessories > Screenshot* or by pressing `Prnt Scr`.
 
-### Other desktop environments or window managers
+#### Other desktop environments or window managers
 
 For other desktop environments such as [LXDE](/index.php/LXDE "LXDE") or window managers such as [Openbox](/index.php/Openbox "Openbox") and [Compiz](/index.php/Compiz "Compiz"), one can add the above commands to the hotkey to take the screenshot. For example,
 
@@ -223,6 +212,146 @@ Adding the above command to the `Prnt Scr` key to Compiz allows to take the scre
 ```
 
 If the `Print` above does not work, see [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") and use different *keysym* or *keycode*.
+
+### Packages including a screenshot utility
+
+#### ImageMagick/GraphicsMagick
+
+An easy way to take a screenshot of your current system is using the [import(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/import.1) command:
+
+```
+$ import -window root screenshot.jpg
+
+```
+
+`import` is part of the [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) package.
+
+Running `import` without the `-window` option allows selecting a window or an arbitrary region interactively.
+
+**Note:** If you prefer **graphicsmagick** alternative, just prepend "gm", e.g. `$ gm import -window root screenshot.jpg`.
+
+##### Screenshot of multiple X screens
+
+If you run twinview or dualhead, simply take the screenshot twice and use `imagemagick` to paste them together:
+
+```
+import -window root -display :0.0 -screen /tmp/0.png
+import -window root -display :0.1 -screen /tmp/1.png
+convert +append /tmp/0.png /tmp/1.png screenshot.png
+rm /tmp/{0,1}.png
+
+```
+
+##### Screenshot of individual Xinerama heads
+
+Xinerama-based multi-head setups have only one virtual screen. If the physical screens are different in height, you will find dead space in the screenshot. In this case, you may want to take screenshot of each physical screen individually. As long as Xinerama information is available from the X server, the following will work:
+
+```
+#!/bin/sh
+xdpyinfo -ext XINERAMA | sed '/^  head #/!d;s///' |
+while IFS=' :x@,' read i w h x y; do
+        import -window root -crop ${w}x$h+$x+$y head_$i.png
+done
+
+```
+
+##### Screenshot of the active/focused window
+
+The following script takes a screenshot of the currently focused window. It works with EWMH/NetWM compatible X Window Managers. To avoid overwriting previous screenshots, the current date is used as the filename.
+
+```
+#!/bin/sh
+activeWinLine=$(xprop -root | grep "_NET_ACTIVE_WINDOW(WINDOW)")
+activeWinId=${activeWinLine:40}
+import -window "$activeWinId" /tmp/$(date +%F_%H%M%S_%N).png
+
+```
+
+Alternatively, the following should work regardless of EWMH support:
+
+```
+$ import -window "$(xdotool getwindowfocus -f)" /tmp/$(date +%F_%H%M%S_%N).png
+
+```
+
+**Note:** If screenshots of some programs (dwb and zathura) appear blank, try appending `-frame` or removing `-f` from the `xdotool` command.
+
+#### GIMP
+
+You also can take screenshots with [GIMP](/index.php/GIMP "GIMP") (*File > Create > Screenshot*...).
+
+#### imlib2
+
+[imlib2](https://www.archlinux.org/packages/?name=imlib2) provides a binary `imlib2_grab` to take screenshots. To take a screenshot of the full screen, type:
+
+```
+$ imlib2_grab screenshot.png
+
+```
+
+Note that [scrot](https://www.archlinux.org/packages/?name=scrot) actually uses `imlib2`.
+
+#### FFmpeg
+
+See [FFmpeg#Screen capture](/index.php/FFmpeg#Screen_capture "FFmpeg").
+
+## Screencast software
+
+See also [FFmpeg#Screen capture](/index.php/FFmpeg#Screen_capture "FFmpeg") and [Wikipedia:Comparison of screencasting software](https://en.wikipedia.org/wiki/Comparison_of_screencasting_software "wikipedia:Comparison of screencasting software").
+
+Screencast utilities allow you to create a video of your desktop or individual windows.
+
+*   **Byzanz** — Simple screencast tool that produces GIF animations.
+
+	[http://blogs.gnome.org/otte/2009/08/30/byzanz-0-2-0/](http://blogs.gnome.org/otte/2009/08/30/byzanz-0-2-0/) || [byzanz](https://www.archlinux.org/packages/?name=byzanz)
+
+*   **Deepin Screen Recorder** — Screen recorder application for Deepin desktop.
+
+	[https://www.deepin.org/en/original/deepin-screen-recorder/](https://www.deepin.org/en/original/deepin-screen-recorder/) || [deepin-screen-recorder](https://www.archlinux.org/packages/?name=deepin-screen-recorder)
+
+*   **FFcast** — FFmpeg-based screencast tool written in Bash.
+
+	[https://github.com/lolilolicon/FFcast](https://github.com/lolilolicon/FFcast) || [ffcast](https://aur.archlinux.org/packages/ffcast/)
+
+*   **Green Recorder** — Simple yet functional desktop recorder for Linux systems.
+
+	[https://github.com/green-project/green-recorder](https://github.com/green-project/green-recorder) || [green-recorder](https://aur.archlinux.org/packages/green-recorder/)
+
+*   **Kazam** — Screencasting program with design in mind. Handles multiscreen setups.
+
+	[https://launchpad.net/kazam](https://launchpad.net/kazam) || [kazam](https://aur.archlinux.org/packages/kazam/)
+
+*   **[OBS](https://en.wikipedia.org/wiki/Open_Broadcaster_Software "wikipedia:Open Broadcaster Software")** — Video recording and live streaming application.
+
+	[https://obsproject.com/](https://obsproject.com/) || [obs-studio](https://www.archlinux.org/packages/?name=obs-studio)
+
+*   **[Peek](https://en.wikipedia.org/wiki/Peek "wikipedia:Peek")** — Simple screencast tool that produces GIF, APNG, WebM or MP4 animations.
+
+	[https://github.com/phw/peek](https://github.com/phw/peek) || [peek](https://aur.archlinux.org/packages/peek/)
+
+*   **RecordItNow** — Plugin based desktop recorder for KDE.
+
+	[http://recorditnow.sourceforge.net/](http://recorditnow.sourceforge.net/) || [recorditnow](https://www.archlinux.org/packages/?name=recorditnow)
+
+*   **[RecordMyDesktop](/index.php/RecordMyDesktop "RecordMyDesktop")** — Easy to use utility that records your desktop into the ogg format with a CLI, GTK+ or Qt interface. (inactive development)
+
+	[http://recordmydesktop.sourceforge.net/](http://recordmydesktop.sourceforge.net/) || CLI: [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop), GTK+: [gtk-recordmydesktop](https://www.archlinux.org/packages/?name=gtk-recordmydesktop), Qt: [qt-recordmydesktop](https://aur.archlinux.org/packages/qt-recordmydesktop/)
+
+*   **[SimpleScreenRecorder](https://en.wikipedia.org/wiki/SimpleScreenRecorder "wikipedia:SimpleScreenRecorder")** — Feature-rich screen recorder written in C++/Qt5 that supports X11 and OpenGL.
+
+	[http://www.maartenbaert.be/simplescreenrecorder/](http://www.maartenbaert.be/simplescreenrecorder/) || [simplescreenrecorder](https://www.archlinux.org/packages/?name=simplescreenrecorder)
+
+*   **VokoScreen** — Simple screencast GUI tool using FFmpeg.
+
+	[http://www.kohaupt-online.de/hp](http://www.kohaupt-online.de/hp) || [vokoscreen](https://aur.archlinux.org/packages/vokoscreen/)
+
+*   **[XVidCap](https://en.wikipedia.org/wiki/XVidCap "wikipedia:XVidCap")** — Application used for recording a screencast or digital recording of an X Window System screen output with an audio narration.
+
+	[http://xvidcap.sourceforge.net/](http://xvidcap.sourceforge.net/) || [xvidcap](https://aur.archlinux.org/packages/xvidcap/)
+
+## Weston
+
+In the [Weston](/index.php/Wayland#Weston "Wayland") Wayland compositor, screenshots can be taking by pressing `Super+s`, which are stored in Weston's current working directory. Screencasts are also supported; recording is started and stopped by pressing `Super+r`, which will create a file called `capture.wcap` in Weston's current working directory. The capture can be decoded to YUV format by running `wcap-decode --yuv4mpeg2 capture.wcap`; the output of this command can be written to a file or piped into FFmpeg for further processing.
 
 ## Terminal
 

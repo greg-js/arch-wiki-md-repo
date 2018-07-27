@@ -23,19 +23,10 @@ This article overviews how to configure [Firefox](/index.php/Firefox "Firefox") 
     *   [1.10 Disable Safe Browsing service](#Disable_Safe_Browsing_service)
     *   [1.11 Disable WebGL](#Disable_WebGL)
 *   [2 Extensions](#Extensions)
-    *   [2.1 HTTPS Everywhere](#HTTPS_Everywhere)
-    *   [2.2 uBlock Origin](#uBlock_Origin)
-    *   [2.3 AdNauseam](#AdNauseam)
-    *   [2.4 Adblock Plus](#Adblock_Plus)
-    *   [2.5 Privacy Badger](#Privacy_Badger)
-    *   [2.6 Disconnect](#Disconnect)
-    *   [2.7 NoScript](#NoScript)
-    *   [2.8 uMatrix](#uMatrix)
-    *   [2.9 Cookie AutoDelete](#Cookie_AutoDelete)
-    *   [2.10 RequestPolicy Continued](#RequestPolicy_Continued)
-    *   [2.11 Decentraleyes](#Decentraleyes)
-    *   [2.12 CanvasBlocker](#CanvasBlocker)
-    *   [2.13 Privacy Settings](#Privacy_Settings)
+    *   [2.1 NoScript](#NoScript)
+    *   [2.2 RequestPolicy Continued](#RequestPolicy_Continued)
+    *   [2.3 Decentraleyes](#Decentraleyes)
+    *   [2.4 CanvasBlocker](#CanvasBlocker)
 *   [3 Remove system-wide hidden extensions](#Remove_system-wide_hidden_extensions)
 *   [4 See also](#See_also)
 
@@ -157,41 +148,7 @@ WebGL is a potential security risk.[[1]](http://security.stackexchange.com/quest
 
 ## Extensions
 
-### HTTPS Everywhere
-
-[HTTPS Everywhere](https://www.eff.org/https-everywhere) is an extension which encrypts your communication with a website. It forces a connection over HTTPS instead of HTTP wherever possible.
-
-HTTPS Everywhere will be automatically configured and enabled upon restarting Firefox. For information on how to set up your own rules for different websites please visit [the official website](https://www.eff.org/https-everywhere/rulesets).
-
-**Note:** HTTPS Everywhere does not magically enable HTTPS for every site on the internet. The site needs to support HTTPS and HTTPS Everywhere should have a ruleset configured for that site.
-
-### uBlock Origin
-
-uBlock Origin is a lightweight, efficient blocker which is easy on [memory and CPU](https://github.com/gorhill/uBlock#performance). It comes with several filter lists ready to use out-of-the-box (including EasyList, Peter Lowe's, several malware filter lists).
-
-The lead developer of uBlock forked the project and created uBlock Origin. As of July 2015, most of the development is being done on uBlock Origin and the codebases are deviating substantially.
-
-uBlock Origin: [Github](https://github.com/gorhill/uBlock); [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/ublock-origin/).
-
-### AdNauseam
-
-[AdNauseam](https://adnauseam.io/) is a lightweight browser extension that blends software tool and artware intervention to fight back against tracking by advertising networks. AdNauseam works like an ad-blocker (it is built atop uBlock-Origin) to silently simulate clicks on each blocked ad, confusing trackers as to one's real interests [[2]](https://github.com/dhowe/AdNauseam/).
-
-### Adblock Plus
-
-[Adblock Plus](https://adblockplus.org/en/) was a popular extension to block ads. Now that it is not blocking some ads on purpose [[3]](https://adblockplus.org/acceptable-ads), it may be a better idea to use a different blocker like [#uBlock Origin](#uBlock_Origin).
-
-### Privacy Badger
-
-[Privacy Badger](https://www.eff.org/privacybadger) is an extension by the EFF that monitors third-party trackers loaded with web content. It blocks trackers once they appear on different sites. It does not block advertisements in the first place, but since a lot of ads are served based on tracking information these are blocked as well. For more information on the mechanism, see its [FAQ](https://www.eff.org/privacybadger#faq-How-is-Privacy-Badger-different-to-Disconnect,-Adblock-Plus,-Ghostery,-and-other-blocking-extensions?).
-
-### Disconnect
-
-Disconnect is a open source project aimed at stopping 2,000 third-party sites from tracking a user. It encrypts data sent to popular sites and claims to loads web pages 27 percent faster. Disconnect shows its users, in real time, how many tracking attempts from Google, Twitter, Facebook, and more are stopped. It categorizes tracking attempts into advertising, analytical, social, and content, which makes it easy to monitor how one is being tracked.
-
-Disconnect can also stop side-jacking, which utilizes stolen cookies to steal personal data. It is easy to use and well supported. It can be added to Firefox at the [official website](https://disconnect.me/).
-
-**Note:** Firefox gained a feature based on the Disconnect list. See [#Enable tracking protection](#Enable_tracking_protection).
+This section lists Firefox-only privacy extensions, for cross-browser privacy extensions, see [Browser extensions#Privacy](/index.php/Browser_extensions#Privacy "Browser extensions").
 
 ### NoScript
 
@@ -202,16 +159,6 @@ Once installed you can configure settings for NoScript by either clicking its ic
 Be aware a lot of modern websites use scripts for layout purposes, hence content may look different. For example, failed rendering due to missing fonts might occur on websites that load fonts at runtime via scripts, which were blocked by NoScript.
 
 For more detailed configuration see the [NoScript FAQ](http://noscript.net/faq).
-
-### uMatrix
-
-[uMatrix](https://addons.mozilla.org/firefox/addon/umatrix/) is forked and refactored from HTTP Switchboard. It allows you to selectively block Javascript, plugins or other resources and control third-party resources. It also features extensive privacy features like user-agent masquerading, referering blocking and so on. It effectively replaces NoScript and RequestPolicy. See the [old HTTP Switchboard wiki](https://github.com/gorhill/httpswitchboard/wiki/How-to-use-HTTP-Switchboard:-Two-opposing-views) for different ways how to use it.
-
-For more Information visit the [project site](https://github.com/gorhill/uMatrix).
-
-### Cookie AutoDelete
-
-[Cookie AutoDelete](https://addons.mozilla.org/firefox/addon/cookie-autodelete/) is an extension that deletes cookies as soon as the tab closes. Supports automatic and manual cookie cleaning modes. (Support for clearing LocalStorage was added in version 2.1, but only for Firefox versions 58+. The same release added support for first party isolation, but only for Firefox versions 59+).
 
 ### RequestPolicy Continued
 
@@ -229,15 +176,11 @@ For more Information visit the [project site](https://github.com/gorhill/uMatrix
 
 **Note:** Mozilla is adding a built-in permission system to allow blocking of HTML5 canvas image track requests, [targeted for release with verion 59](https://wiki.mozilla.org/Security/Fingerprinting "mozillawiki:Security/Fingerprinting").
 
-### Privacy Settings
-
-[Privacy Settings](https://addons.mozilla.org/firefox/addon/privacy-settings/) provides a toolbar panel for easily altering Firefox's built-in privacy settings.
-
 ## Remove system-wide hidden extensions
 
 Several extensions, hidden to the user, are installed by default in `/usr/lib/firefox/browser/features`. Many can be safely removed via `rm *extension-name*.xpi` in order to completely remove unwanted features. Many of these extensions are not enabled by default and have a menu option for enabling or disabling. Note that any files removed will return upon update of the [firefox](https://www.archlinux.org/packages/?name=firefox) package. Below are a few examples of these extensions and their features.
 
-*   `activity-stream@mozilla.org.xpi` - "Activity Stream" which replaces the new tab page. See [[4]](https://github.com/mozilla/activity-stream)
+*   `activity-stream@mozilla.org.xpi` - "Activity Stream" which replaces the new tab page. See [[2]](https://github.com/mozilla/activity-stream)
 
 *   `firefox@getpocket.com.xpi` - [Pocket](https://getpocket.com/firefox/)
 
@@ -245,7 +188,7 @@ Several extensions, hidden to the user, are installed by default in `/usr/lib/fi
 
 *   `shield-recipe-client@mozilla.org.xpi` [SHIELD studies](https://support.mozilla.org/en-US/kb/shield)
 
-See also [[5]](https://dxr.mozilla.org/mozilla-release/source/browser/extensions/) for a full list of system extensions including README files describing their functions.
+See also [[3]](https://dxr.mozilla.org/mozilla-release/source/browser/extensions/) for a full list of system extensions including README files describing their functions.
 
 ## See also
 

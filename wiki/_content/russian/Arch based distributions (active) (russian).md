@@ -129,7 +129,7 @@ ArchPwn дистрибутив, во главу угла ставящий без
 
 Легковесный дистрибутив, использующий [Openbox](https://ru.wikipedia.org/wiki/Openbox) и [XFCE](https://xfce.org). Полностью на русском.
 
-*   Домашняя страница: [ctlos.github.io](https://ctlos.github.io)
+*   Домашняя страница: [ctlos.gitlab.io](https://ctlos.gitlab.io)
 
 ### Elegance
 
