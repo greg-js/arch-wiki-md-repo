@@ -20,8 +20,10 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
     *   [2.1 Enable early KMS](#Enable_early_KMS)
     *   [2.2 Enable GuC / HuC firmware loading](#Enable_GuC_.2F_HuC_firmware_loading)
 *   [3 Xorg configuration](#Xorg_configuration)
-*   [4 Module-based Powersaving Options](#Module-based_Powersaving_Options)
+*   [4 Module-based options](#Module-based_options)
     *   [4.1 Framebuffer compression (enable_fbc)](#Framebuffer_compression_.28enable_fbc.29)
+    *   [4.2 Fastboot](#Fastboot)
+    *   [4.3 Intel GVT-g Graphics Virtualization Support](#Intel_GVT-g_Graphics_Virtualization_Support)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Tear-free video](#Tear-free_video)
     *   [5.2 Disable Vertical Synchronization (VSYNC)](#Disable_Vertical_Synchronization_.28VSYNC.29)
@@ -121,7 +123,7 @@ Additional options are added by the user on new lines below `Driver`. For the fu
 *   You may need to indicate `Option "AccelMethod"` when creating a configuration file, even just to set it to the default method (currently `"sna"`); otherwise, X may crash.
 *   You might need to add more device sections than the one listed above. This will be indicated where necessary.
 
-## Module-based Powersaving Options
+## Module-based options
 
 The `i915` kernel module allows for configuration via [module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). Some of the module options impact power saving.
 
@@ -143,7 +145,11 @@ You will note that many options default to -1, resulting in per-chip powersaving
 
 **Warning:** Diverting from the defaults will mark the kernel as [tainted](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=fc9740cebc3ab7c65f3c5f6ce0caf3e4969013ca) from Linux 3.18 onwards. This basically implies using other options than the per-chip defaults is considered experimental and not supported by the developers.
 
-The following option should be generally safe to enable:
+### Framebuffer compression (enable_fbc)
+
+Making use of Framebuffer compression (FBC) can reduce power consumption while reducing memory bandwidth needed for screen refreshes.
+
+To enable FBC, use `i915.enable_fbc=1` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") or set in `/etc/modprobe/i915.conf`:
 
  `/etc/modprobe.d/i915.conf` 
 ```
@@ -151,10 +157,7 @@ options i915 enable_fbc=1
 
 ```
 
-### Framebuffer compression (enable_fbc)
-
-Framebuffer compression may be unreliable or unavailable on Intel GPU generations before Sandy Bridge (generation 6). This results in messages logged to the system journal similar to this one:
-
+**Note:** Framebuffer compression may be unreliable or unavailable on Intel GPU generations before Sandy Bridge (generation 6). This results in messages logged to the system journal similar to this one:
 ```
 kernel: drm: not enough stolen space for compressed buffer, disabling.
 
@@ -162,14 +165,37 @@ kernel: drm: not enough stolen space for compressed buffer, disabling.
 
 Enabling frame buffer compression on pre-Sandy Bridge CPUs results in endless error messages:
 
+ `$ dmesg` 
 ```
-$ dmesg |tail 
 [ 2360.475430] [drm] not enough stolen space for compressed buffer (need 4325376 bytes), disabling
 [ 2360.475437] [drm] hint: you may be able to increase stolen memory size in the BIOS to avoid this
 
 ```
-
 The solution is to disable frame buffer compression which will imperceptibly increase power consumption (around 0.06 W). In order to disable it add `i915.enable_fbc=0` to the kernel line parameters. More information on the results of disabled compression can be found [here](http://kernel.ubuntu.com/~cking/power-benchmarking/background-colour-and-framebuffer-compression/).
+
+### Fastboot
+
+The goal of Intel Fastboot is to preserve the frame-buffer as setup by the BIOS or [bootloader](/index.php/Bootloader "Bootloader") to avoid any flickering until [Xorg](/index.php/Xorg "Xorg") has started [[3]](https://www.phoronix.com/scan.php?page=news_item&px=MTEwNzc).
+
+To enable fastboot, set `i915.fastboot=1` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") or set in `/etc/modprobe/i915.conf`:
+
+ `/etc/modprobe.d/i915.conf` 
+```
+options i915 fastboot=1
+
+```
+
+**Warning:** This parameter is not enabled by default and may cause issues on some systems [[4]](https://www.phoronix.com/scan.php?page=news_item&px=i915-Fastboot-Default-2017).
+
+### Intel GVT-g Graphics Virtualization Support
+
+To enable GVT support, mainly used for allowing [Xen](/index.php/Xen "Xen")/[KVM](/index.php/KVM "KVM") guests to access the Intel GPU of the host, the `enable_gvt=1` has to be set:
+
+ `/etc/modprobe.d/i915.conf` 
+```
+options i915 enable_gvt=1
+
+```
 
 ## Tips and tricks
 
@@ -177,9 +203,13 @@ The solution is to disable frame buffer compression which will imperceptibly inc
 
 The SNA acceleration method causes tearing for some people. To fix this, enable the `"TearFree"` option in the driver by adding the following line to your [configuration file](#Xorg_configuration):
 
+ `/etc/X11/xorg.conf.d/20-intel.conf` 
 ```
-Option "TearFree" "true"
-
+Section "Device"
+  Identifier  "Intel Graphics"
+  Driver      "intel"
+  Option      "TearFree" "true"
+EndSection
 ```
 
 See the [original bug report](https://bugs.freedesktop.org/show_bug.cgi?id=37686) for more info.
@@ -187,7 +217,7 @@ See the [original bug report](https://bugs.freedesktop.org/show_bug.cgi?id=37686
 **Note:**
 
 *   This option may not work when `SwapbuffersWait` is `false`.
-*   This option may increases memory allocation considerably and reduce performance. [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=37686#c123)
+*   This option may increases memory allocation considerably and reduce performance. [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=37686#c123)
 *   This option is problematic for applications that are very picky about vsync timing, like [Super Meat Boy](https://en.wikipedia.org/wiki/Super_Meat_Boy "wikipedia:Super Meat Boy").
 *   This option does not work with UXA acceleration method, only with SNA.
 
@@ -235,7 +265,7 @@ $ xrandr --output LVDS1 --set "scaling mode" *param*
 
 where `*param*` is one of `"Full"`, `"Center"` or `"Full aspect"`.
 
-**Note:** This option currently does not work for external displays (e.g. VGA, DVI, HDMI, DP). [[4]](https://bugs.freedesktop.org/show_bug.cgi?id=90989)
+**Note:** This option currently does not work for external displays (e.g. VGA, DVI, HDMI, DP). [[6]](https://bugs.freedesktop.org/show_bug.cgi?id=90989)
 
 ### KMS Issue: console is limited to small area
 
@@ -245,7 +275,7 @@ If that does not work, try disabling TV1 or VGA1 instead of SVIDEO-1\. Video por
 
 ### Hardware accelerated H.264 decoding on GMA 4500
 
-The [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) package only provides hardware accelerated MPEG-2 decoding for GMA 4500 series GPUs. The H.264 decoding support is maintained in a separated g45-h264 branch, which can be used by installing [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) package. Note however that this support is experimental and its development has been abandoned. Using the VA-API with this driver on a GMA 4500 series GPU will offload the CPU but may not result in as smooth a playback as non-accelerated playback. Tests using mplayer showed that using vaapi to play back an H.264 encoded 1080p video halved the CPU load (compared to the XV overlay) but resulted in very choppy playback, while 720p worked reasonably well [[5]](https://bbs.archlinux.org/viewtopic.php?id=150550). This is echoed by other experiences [[6]](http://www.emmolution.org/?p=192&cpage=1#comment-12292). Setting the preallocated video ram size higher in bios results in much better hardware decoded playback. Even 1080p h264 works well if this is done. Smooth playback (1080p/720p) works also with [mpv-git](https://aur.archlinux.org/packages/mpv-git/) in combination with [ffmpeg-git](https://aur.archlinux.org/packages/ffmpeg-git/) and [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/). With MPV and the Firefox plugin "Watch with MPV"[[7]](https://addons.mozilla.org/de/firefox/addon/watch-with-mpv/) it is possible to watch hardware accelerated YouTube videos.
+The [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) package only provides hardware accelerated MPEG-2 decoding for GMA 4500 series GPUs. The H.264 decoding support is maintained in a separated g45-h264 branch, which can be used by installing [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) package. Note however that this support is experimental and its development has been abandoned. Using the VA-API with this driver on a GMA 4500 series GPU will offload the CPU but may not result in as smooth a playback as non-accelerated playback. Tests using mplayer showed that using vaapi to play back an H.264 encoded 1080p video halved the CPU load (compared to the XV overlay) but resulted in very choppy playback, while 720p worked reasonably well [[7]](https://bbs.archlinux.org/viewtopic.php?id=150550). This is echoed by other experiences [[8]](http://www.emmolution.org/?p=192&cpage=1#comment-12292). Setting the preallocated video ram size higher in bios results in much better hardware decoded playback. Even 1080p h264 works well if this is done. Smooth playback (1080p/720p) works also with [mpv-git](https://aur.archlinux.org/packages/mpv-git/) in combination with [ffmpeg-git](https://aur.archlinux.org/packages/ffmpeg-git/) and [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/). With MPV and the Firefox plugin "Watch with MPV"[[9]](https://addons.mozilla.org/de/firefox/addon/watch-with-mpv/) it is possible to watch hardware accelerated YouTube videos.
 
 ### Setting brightness and gamma
 
@@ -344,7 +374,7 @@ Unfortunately, the Intel driver does not support setting the color range through
 
 A [bug report](https://bugzilla.kernel.org/show_bug.cgi?id=94921) is filed and a patch can be found in the attachment.
 
-Also there are other related problems which can be fixed editing GPU registers. More information can be found [[8]](http://lists.freedesktop.org/archives/intel-gfx/2012-April/016217.html) and [[9]](http://github.com/OpenELEC/OpenELEC.tv/commit/09109e9259eb051f34f771929b6a02635806404c).
+Also there are other related problems which can be fixed editing GPU registers. More information can be found [[10]](http://lists.freedesktop.org/archives/intel-gfx/2012-April/016217.html) and [[11]](http://github.com/OpenELEC/OpenELEC.tv/commit/09109e9259eb051f34f771929b6a02635806404c).
 
 ### Backlight is not adjustable
 

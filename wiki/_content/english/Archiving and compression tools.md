@@ -5,7 +5,7 @@ The traditional Unix archiving and compression tools are separated according to 
 
 These tools are often used in sequence by firstly creating an archive file and then compressing it.
 
-Of course there are also [programs that do both](#Archiving_and_compression), which additionally tend to offer encryption, error detection and recovery.
+Of course there are also [tools that do both](#Archiving_and_compression), which tend to additionally offer encryption, error detection and recovery.
 
 ## Contents
 
@@ -26,12 +26,14 @@ Of course there are also [programs that do both](#Archiving_and_compression), wh
 
 ## Archiving only
 
-| Name | Packages | Manual | Description |
-| [tar](https://en.wikipedia.org/wiki/tar_(computing) | [coreutils](https://www.archlinux.org/packages/?name=coreutils) | [tar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1) | GNU utility for manipulating the ubiquitous tar archives (tarballs), see [tar](/index.php/Tar "Tar") for usage examples. |
+| Name | Packages | Manuals | Description |
 | [ar](https://en.wikipedia.org/wiki/ar_(Unix) | [binutils](https://www.archlinux.org/packages/?name=binutils) | [ar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ar.1) | Legacy Unix archiver before *tar*. Today only used for creating [static library](https://en.wikipedia.org/wiki/Static_library "wikipedia:Static library") files. |
 | [cpio](https://en.wikipedia.org/wiki/cpio "wikipedia:cpio") | [cpio](https://www.archlinux.org/packages/?name=cpio) | [cpio(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cpio.1) | File archiver via stdin/stdout, supports cpio and tar formats. |
+| GNU [tar](https://en.wikipedia.org/wiki/tar_(computing) | [coreutils](https://www.archlinux.org/packages/?name=coreutils) | [tar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1) | GNU utility for manipulating the ubiquitous tar archives (tarballs), see [tar](/index.php/Tar "Tar") for usage examples. |
+| [libarchive](http://libarchive.org/) | [libarchive](https://www.archlinux.org/packages/?name=libarchive) | [bsdtar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bsdtar.1)
+[bsdcpio(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bsdcpio.1) | Implementation of *tar* and *cpio* that also offers a library. Used by [pacman](/index.php/Pacman "Pacman") and [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). |
 
-**Note:** When GNU **tar** is given a compressed file it automatically invokes the right compression program based on the file extension. bzip2, xz, lzip, lxma, lzop, gzip and compress are supported.
+**Tip:** Both GNU and BSD tar automatically do decompression delegation for bzip2, compress, gzip, lzip, lzma and xz compressed archives. When creating archives both support the `-a` switch to automatically filter the created archive through the right compression program based on the file extension. While BSD tar recognizes compression formats based on the format, GNU tar only guesses based on the file extension.
 
 ## Compression tools
 
@@ -42,7 +44,7 @@ These compression programs implement their own file format.
 | Name | Packages | Manual | Ext | Tar ext | Description | Parallel implementations |
 | [bzip2](https://en.wikipedia.org/wiki/bzip2 "wikipedia:bzip2") | [bzip2](https://www.archlinux.org/packages/?name=bzip2) | [bzip2(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bzip2.1) | .bz2, .bz | .tbz2, .tbz | Uses the [Burrows–Wheeler algorithm](https://en.wikipedia.org/wiki/Burrows%E2%80%93Wheeler_transform "wikipedia:Burrows–Wheeler transform"). | [lbzip2](https://www.archlinux.org/packages/?name=lbzip2), [pbzip2](https://www.archlinux.org/packages/?name=pbzip2) |
 | [gzip](https://en.wikipedia.org/wiki/gzip "wikipedia:gzip") | [gzip](https://www.archlinux.org/packages/?name=gzip) | [gzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gzip.1) | .gz, .z | .tgz, .taz | GNU zip, based on [DEFLATE](https://en.wikipedia.org/wiki/DEFLATE "wikipedia:DEFLATE") algorithm. | [pigz](https://www.archlinux.org/packages/?name=pigz) |
-| [lrzip](/index.php/Lrzip "Lrzip") | [lrzip](https://www.archlinux.org/packages/?name=lrzip) | [lrzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lrzip.1) | .lrz | Improved version of [rzip](https://en.wikipedia.org/wiki/rzip "wikipedia:rzip"), uses multiple compression algorithms. |
+| [lrzip](/index.php/Lrzip "Lrzip") | [lrzip](https://www.archlinux.org/packages/?name=lrzip) | [lrzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lrzip.1) | .lrz | Improved version of [rzip](https://en.wikipedia.org/wiki/rzip "wikipedia:rzip"), uses multiple algorithms. | is multithreaded |
 | [lzip](https://en.wikipedia.org/wiki/lzip "wikipedia:lzip") | [lzip](https://www.archlinux.org/packages/?name=lzip) | [lzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lzip.1) | .lz | Uses [LZMA](https://en.wikipedia.org/wiki/LZMA "wikipedia:LZMA"). |
 | [lzop](https://en.wikipedia.org/wiki/lzop "wikipedia:lzop") | [lzop](https://www.archlinux.org/packages/?name=lzop) | [lzop(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lzop.1) | .lzop | .tzo | Uses [LZO](https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Oberhumer "wikipedia:Lempel–Ziv–Oberhumer"). |
 | [xz](https://en.wikipedia.org/wiki/xz "wikipedia:xz") | [xz](https://www.archlinux.org/packages/?name=xz) | [xz(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xz.1) | .xz, .lzma | .txz, .tlz | Uses [LZMA](https://en.wikipedia.org/wiki/LZMA "wikipedia:LZMA"), default for GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) and kernel archive files. | [pixz](https://www.archlinux.org/packages/?name=pixz), [pxz](https://aur.archlinux.org/packages/pxz/) |
@@ -65,6 +67,7 @@ These compression programs implement their own file format.
 | [ARJ](https://en.wikipedia.org/wiki/ARJ "wikipedia:ARJ") | [arj](https://www.archlinux.org/packages/?name=arj) | .arj | An archiver used on DOS/Windows in mid-1990s. This is an open source clone. |
 | [compress](https://en.wikipedia.org/wiki/compress "wikipedia:compress") | [ncompress](https://aur.archlinux.org/packages/ncompress/) | .Z | The classic unix compression utility which can handle the ancient .Z archive. |
 | [PAR2](https://en.wikipedia.org/wiki/Parchive "wikipedia:Parchive") | [par2cmdline](https://www.archlinux.org/packages/?name=par2cmdline) | .par2 | Parity archiver for increased data integrity. See also [Parchive](/index.php/Parchive "Parchive"). |
+| [shar](https://en.wikipedia.org/wiki/shar "wikipedia:shar") | [sharutils](https://www.archlinux.org/packages/?name=sharutils) | .shar | Creates self-extracting archives that are valid shell scripts. |
 
 ### Feature charts
 
@@ -132,3 +135,4 @@ Otherwise you can use the [file](https://www.archlinux.org/packages/?name=file) 
 *   [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/Comparison_of_file_archivers "wikipedia:Comparison of file archivers")
 *   [Wikipedia:List of archive formats](https://en.wikipedia.org/wiki/List_of_archive_formats "wikipedia:List of archive formats")
 *   [Wikipedia:Comparison of archive formats](https://en.wikipedia.org/wiki/Comparison_of_archive_formats "wikipedia:Comparison of archive formats")
+*   [List of applications/Multimedia#Image compression](/index.php/List_of_applications/Multimedia#Image_compression "List of applications/Multimedia")

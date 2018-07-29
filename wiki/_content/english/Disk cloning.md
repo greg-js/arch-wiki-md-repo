@@ -175,8 +175,8 @@ See also [Synchronization and backup programs](/index.php/Synchronization_and_ba
 	[https://github.com/p5n/archlinux-stuff/tree/master/arch-backup/](https://github.com/p5n/archlinux-stuff/tree/master/arch-backup/) || [arch-backup](https://aur.archlinux.org/packages/arch-backup/)
 
 *   **[Clonezilla](https://en.wikipedia.org/wiki/Clonezilla "wikipedia:Clonezilla")** — A disaster recovery, disk cloning, disk imaging and deployment solution.
-    *   Boots from live CD, USB flash drive, or PXE server.
-    *   Supports ext2, ext3, ext4, reiserfs, reiser4, xfs, jfs, btrfs FAT32, NTFS, HFS+ and others.
+    *   Boots from live CD, USB flash drive or PXE server.
+    *   Supports ext2, ext3, ext4, reiserfs, reiser4, xfs, jfs, btrfs, FAT32, NTFS, HFS+ and others.
     *   Uses Partclone (default), Partimage (optional), ntfsclone (optional), or dd to image or clone a partition.
     *   Multicasting server to restore to many machines at once.
     *   Included on the Arch Linux installation media.

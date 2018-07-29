@@ -45,7 +45,7 @@ Not tested : plugging an external microphone, audio through HDMI.
 | Screen backlighting control | Yes |
 | Keyboard backlighting control | Partially | Function keys can control the brightness but not the color or the pattern of the backlighting.
 
-Open-source tools such as [MSIKLM](https://github.com/Gibtnix/MSIKLM) do not work for this particular laptop model.
+Open-source tools such as [MSIKLM](https://github.com/Gibtnix/MSIKLM) do not work for this particular laptop model. However, the configuration is stored into the keyboard itself, so you can set it up in Windows and it will persist after rebooting into Linux.
 
  |
 | SD card reader | Not tested | A "wrong version" warning is thrown at boot about the SD controller. |

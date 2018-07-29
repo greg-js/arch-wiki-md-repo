@@ -373,7 +373,7 @@ bind-dynamic
 
 ```
 
-**Note:** This is default in libvirt.
+**Note:** This is default in [libvirt](/index.php/Libvirt "Libvirt").
 
 ### Adding a custom domain
 

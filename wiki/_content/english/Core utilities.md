@@ -31,6 +31,7 @@ Most command-line interfaces are documented in [man pages](/index.php/Man_page "
     *   [1.8 chown](#chown)
     *   [1.9 find](#find)
     *   [1.10 locate](#locate)
+    *   [1.11 diff](#diff)
 *   [2 Text streams](#Text_streams)
     *   [2.1 grep](#grep)
     *   [2.2 sed](#sed)
@@ -235,6 +236,25 @@ The *locate* command is a common Unix tool for quickly finding files by name. It
 Before *locate* can be used, the database will need to be created. To do this, execute `updatedb` as root.
 
 See also [How locate works and rewrite it in one minute](http://jvns.ca/blog/2015/03/05/how-the-locate-command-works-and-lets-rewrite-it-in-one-minute/).
+
+### diff
+
+*diff* compares files line by line. The default Arch Linux *diff* is from the GNU [diffutils](https://www.archlinux.org/packages/?name=diffutils), which also provides *cmp* to compare files byte by byte.
+
+When comparing text files a word per word diff is often more desirable:
+
+*   [git](/index.php/Git "Git")'s `git diff` can do a word diff with `--color-words`, using `--no-index` it can be used for files outside of Git working trees.
+*   **dwdiff** — A word diff front-end for the diff program, supports colors.
+
+	[https://os.ghalkes.nl/dwdiff.html](https://os.ghalkes.nl/dwdiff.html) || [dwdiff](https://www.archlinux.org/packages/?name=dwdiff)
+
+*   **GNU wdiff** — A wordwise implementation of GNU diff, does not support colors.
+
+	[https://www.gnu.org/software/wdiff/](https://www.gnu.org/software/wdiff/) || [wdiff](https://aur.archlinux.org/packages/wdiff/)
+
+*   **cwdiff** — A GNU wdiff wrapper that colorizes the output.
+
+	[https://github.com/junghans/cwdiff](https://github.com/junghans/cwdiff) || [cwdiff](https://aur.archlinux.org/packages/cwdiff/), [cwdiff-git](https://aur.archlinux.org/packages/cwdiff-git/)
 
 ## Text streams
 

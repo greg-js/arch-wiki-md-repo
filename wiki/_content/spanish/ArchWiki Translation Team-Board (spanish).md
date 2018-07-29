@@ -29,12 +29,12 @@
 | [AMD Catalyst (Español)](/index.php/AMD_Catalyst_(Espa%C3%B1ol) "AMD Catalyst (Español)") | Tarjeta gráfica | `2013-09` |
 | [Archboot (Español)](/index.php/Archboot_(Espa%C3%B1ol) "Archboot (Español)") | Instalación | `2016-04` |
 | [Arch Build System (Español)](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)") | Gestión de paquetes | `2018-01` |
-| [Arch compared to other distributions (Español)](/index.php/Arch_compared_to_other_distributions_(Espa%C3%B1ol) "Arch compared to other distributions (Español)") | Información/Arch | `2014-11` |
+| [Arch compared to other distributions (Español)](/index.php/Arch_compared_to_other_distributions_(Espa%C3%B1ol) "Arch compared to other distributions (Español)") | Información/Arch | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Actualizando los contenidos... |
 | [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") | Información/Arch | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") |
 | [Arch User Repository (Español)](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") | Repositorios | `2018-01` |
 | [Arch boot process (Español)](/index.php/Arch_boot_process_(Espa%C3%B1ol) "Arch boot process (Español)") | Proceso de arranque | `2013-09` |
 | [Archiso (Español)](/index.php/Archiso_(Espa%C3%B1ol) "Archiso (Español)") | Instalación | `2013-09` |
-| [ArchWiki:About (Español)](/index.php/ArchWiki:About_(Espa%C3%B1ol) "ArchWiki:About (Español)") | Información/Arch | `2014-04` |
+| [ArchWiki:About (Español)](/index.php/ArchWiki:About_(Espa%C3%B1ol) "ArchWiki:About (Español)") | Información/Arch | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") |
 | [ArchWiki:Contributing (Español)](/index.php/ArchWiki:Contributing_(Espa%C3%B1ol) "ArchWiki:Contributing (Español)") | Ayuda/Colaboración | `2014-04` |
 | [ATI (Español)](/index.php/ATI_(Espa%C3%B1ol) "ATI (Español)") | Tarjeta gráfica | `2013-09` |
 | [Beginners' guide (Español)](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)") | Información/Guía/Instalación | `2016-08` | Redirigida a Installation guide (Español) |
@@ -43,7 +43,7 @@
 | [Change root (Español)](/index.php/Change_root_(Espa%C3%B1ol) "Change root (Español)") | Recuperación del sistema | `2013-09` |
 | [ClamAV (Español)](/index.php/ClamAV_(Espa%C3%B1ol) "ClamAV (Español)") | Seguridad/Antivirus | `2013-09` |
 | [Codecs (Español)](/index.php/Codecs_(Espa%C3%B1ol) "Codecs (Español)") | Audio/vídeo | `2013-09` |
-| [Code of conduct (Español)](/index.php/Code_of_conduct_(Espa%C3%B1ol) "Code of conduct (Español)") | Información/Foro | `2016-09` |
+| [Code of conduct (Español)](/index.php/Code_of_conduct_(Espa%C3%B1ol) "Code of conduct (Español)") | Información/Foro | `2016-09` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Necesita un repaso general ya que he encontrado incoherencias con respecto al original. Parece que la traducción venía de una versión anterior a la que indicaba. |
 | [CUPS (Español)](/index.php/CUPS_(Espa%C3%B1ol) "CUPS (Español)") | Periféricos/Impresoras | `2013-09` |
 | [Daemons List (Español)](/index.php/Daemons_List_(Espa%C3%B1ol) "Daemons List (Español)") | Configuración del sistema/Demonios | `2013-09` |
 | [Desktop environment (Español)](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") | GUI | `2015-07` | [Cabrokimer](/index.php?title=User:Cabrokimer&action=edit&redlink=1 "User:Cabrokimer (page does not exist)") |
@@ -134,7 +134,7 @@
 <small>**Remitido desde Beginners' guide (Español)**</small> | Configuración del sistema/Gestión redes | `2016-10` | [SignoSN](/index.php/User:SignoSN "User:SignoSN") | En proceso de traducción |
 | [systemd/User (Español)](/index.php/Systemd/User_(Espa%C3%B1ol) "Systemd/User (Español)") | Configuración del sistema/Gestor del sistema | `2013-09` |
 | [Table of contents (Español)](/index.php/Table_of_contents_(Espa%C3%B1ol) "Table of contents (Español)") | Información/Wiki | `2014-04` | Su contenido se actualiza automáticamente (no la traducción de los títulos) |
-| [The Arch Way (Español)](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)") | Información/Arch | `2013-09` |
+| [The Arch Way (Español)](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)") | Información/Arch | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Redirigido a [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)"), tal y como ocurre con el documento original en inglés, para mantener la coherencia. *Propuesto para eliminar esta entrada de la tabla* |
 | [Time (Español)](/index.php/Time_(Espa%C3%B1ol) "Time (Español)") | Configuración del sistema/Horario | `2013-09` |
 | [Touchpad Synaptics (Español)](/index.php/Touchpad_Synaptics_(Espa%C3%B1ol) "Touchpad Synaptics (Español)") | Periféricos/Panel táctil | `2013-09` |
 | [Udev (Español)](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") | Configuración del sistema/Gestión hardware | `2013-09` |
@@ -164,7 +164,6 @@ No tiene versión inglesa correlativa. |
 | [Allow users to shutdown (Español)](/index.php/Allow_users_to_shutdown_(Espa%C3%B1ol) "Allow users to shutdown (Español)") | Seguridad | `2012-10` |
 | [Apache and FastCGI (Español)](/index.php/Apache_and_FastCGI_(Espa%C3%B1ol) "Apache and FastCGI (Español)") | Servidor web | `2008-05` |
 | [Apache, suEXEC and Virtual Hosts (Español)](/index.php/Apache,_suEXEC_and_Virtual_Hosts_(Espa%C3%B1ol) "Apache, suEXEC and Virtual Hosts (Español)") | Servidor web | `2008-05` |
-| [Arch based distributions (active) (Español)](/index.php/Arch_based_distributions_(active)_(Espa%C3%B1ol) "Arch based distributions (active) (Español)") | Información | `2013-10` |
 | [Arch Hurd Project (Español)](/index.php/Arch_Hurd_Project_(Espa%C3%B1ol) "Arch Hurd Project (Español)") | Kernel | `2010-04` |
 | [Arch Linux press coverage](/index.php/Arch_Linux_press_coverage "Arch Linux press coverage") | Información/general | `--` | *No necesita traducción*.
 No obstante, hay un artículo en español, [Arch Linux press coverage (Español)](/index.php/Arch_Linux_press_coverage_(Espa%C3%B1ol) "Arch Linux press coverage (Español)"),
@@ -229,7 +228,6 @@ Versión inglesa propuesta para su eliminación. |
 | [Feh (Español)](/index.php/Feh_(Espa%C3%B1ol) "Feh (Español)") | Visor de imágenes | `2008-05` |
 | [Firefox (Español)](/index.php/Firefox_(Espa%C3%B1ol) "Firefox (Español)") | Navegador web | `2011-10` |
 | [Firewalls (Español)](/index.php/Firewalls_(Espa%C3%B1ol) "Firewalls (Español)") | Seguridad/Cortafuegos | `2013-09` |
-| [Flumotion (Español)](/index.php/Flumotion_(Espa%C3%B1ol) "Flumotion (Español)") | Servidor multimedia | `2008-05` | La versión inglesa es tan solo un esbozo |
 | [Fluxbox (Español)](/index.php/Fluxbox_(Espa%C3%B1ol) "Fluxbox (Español)") | Gestor de ventanas | `2011-09` |
 | [Fluxbox Style Guide (Español)](/index.php/Fluxbox_Style_Guide_(Espa%C3%B1ol) "Fluxbox Style Guide (Español)") | Complementos de fluxbox | `2011-09` | Parcialmente sin traducir |
 | [Gamin (Español)](/index.php/Gamin_(Espa%C3%B1ol) "Gamin (Español)") | Monitorización del sistema | `2008-01` | Versión inglesa propuesta para su fusión con [File manager functionality](/index.php/File_manager_functionality "File manager functionality") |

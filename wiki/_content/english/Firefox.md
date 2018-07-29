@@ -209,9 +209,9 @@ For general enhancements see [Firefox/Tweaks](/index.php/Firefox/Tweaks "Firefox
 
 ### Screenshot of webpage
 
-To take a screenshot of a webpage right click on the webpage or click on the three horizontal dots in the address bar and select *Take a Screenshot*.
+You can *Take a Screenshot* by either clicking the *Page actions* button (the three horizontal dots) in the address bar or by right clicking on the webpage.
 
-Note that the *Save* button misleadingly uploads your screenshot to firefox.com.[[1]](https://github.com/mozilla-services/screenshots/issues/3503) The "Save" button can be disabled with `extensions.screenshots.upload-disabled`.
+Note that the *Save* button misleadingly uploads your screenshot to a firefox.com subdomain. Toggle `extensions.screenshots.upload-disabled` to disable this default behaviour. See [[1]](https://github.com/mozilla-services/screenshots/issues/3503)
 
 ## Troubleshooting
 

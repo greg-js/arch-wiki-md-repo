@@ -5,8 +5,9 @@
 *   [1 Instalação](#Instala.C3.A7.C3.A3o)
 *   [2 Uso](#Uso)
 *   [3 Usuários](#Usu.C3.A1rios)
-*   [4 Dicas e truques](#Dicas_e_truques)
-    *   [4.1 Definindo vários servidores de nome](#Definindo_v.C3.A1rios_servidores_de_nome)
+*   [4 Assinantes](#Assinantes)
+*   [5 Dicas e truques](#Dicas_e_truques)
+    *   [5.1 Definindo vários valores por opções](#Definindo_v.C3.A1rios_valores_por_op.C3.A7.C3.B5es)
 
 ## Instalação
 
@@ -18,11 +19,9 @@ Openresolv fornece [resolvconf(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/re
 
 A execução de `resolvconf -u` vai gerar `/etc/resolv.conf`.
 
-Openresolv também pode ser configurado para passar endereços de servidores DNS para resolvedores [unbound](/index.php/Unbound "Unbound"), [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), [BIND](/index.php/BIND "BIND") e [pdnsd](/index.php/Pdnsd "Pdnsd"). Veja a [documentação oficial](https://roy.marples.name/projects/openresolv/config) para instruções.
-
 ## Usuários
 
-Clientes DHCP autônomos:
+Clientes [DHCP](/index.php/DHCP "DHCP") autônomos:
 
 *   [dhcpcd](/index.php/Dhcpcd "Dhcpcd") tem um *hook* que usa *resolvconf* se ele estiver instalado.
 
@@ -37,10 +36,25 @@ Clientes [VPN](/index.php/VPN "VPN"):
 *   [strongSwan](/index.php/StrongSwan "StrongSwan")
 *   [WireGuard](/index.php/WireGuard "WireGuard")
 
+## Assinantes
+
+Openresolv pode ser configurado para passar servidores de nome e domínios de pesquisa para resolvedores de DNS. Há suporte aos seguintes resolvedores:
+
+*   [unbound](/index.php/Unbound "Unbound")
+*   [dnsmasq#openresolv](/index.php/Dnsmasq#openresolv "Dnsmasq")
+*   [BIND](/index.php/BIND "BIND")
+*   [pdnsd](/index.php/Pdnsd "Pdnsd")
+
+Veja a [documentação oficial](https://roy.marples.name/projects/openresolv/config) para instruções.
+
 ## Dicas e truques
 
-### Definindo vários servidores de nome
+### Definindo vários valores por opções
 
-A página man não menciona isso, mas para definir vários servidores de nome no `/etc/resolvconf.conf` você precisa escrevê-los separados por espaço entre aspas. Por exemplo:
+A página man não menciona isso, mas para definir vários valores, para opções que oferecem suporte a isso (p.ex., `name-servers`, `/etc/resolv_conf_options` etc.) no `/etc/resolvconf.conf`, você precisa escrevê-los separados por espaço entre aspas. Por exemplo:
 
- `/etc/resolvconf.conf`  `name_servers="dns1.example.com dns2.example.com dns3.example.com"`
+ `/etc/resolvconf.conf` 
+```
+resolv_conf_options="edns0 single-request"
+name_servers="dns1.example.com dns2.example.com dns3.example.com"
+```

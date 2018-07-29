@@ -168,7 +168,7 @@ Open the appropriate file with your text editor, ie e4_default_gtk.css if you ar
 
 ### Disable GTK+ 3
 
-When the SWT GTK+ 3 UI is buggy and sometimes unusable, You can try to disable the use of GTK+ 3 with the SWT_GTK3=0 environment variable when you start eclipse:
+When the SWT GTK+ 3 UI is buggy and sometimes unusable, You can try to disable the use of GTK+ 3 with the SWT_GTK3=0 [environment variable](/index.php/Environment_variable "Environment variable") when you start eclipse:
 
 ```
 SWT_GTK3=0 eclipse

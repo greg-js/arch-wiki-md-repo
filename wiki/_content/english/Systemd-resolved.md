@@ -72,7 +72,10 @@ For the first case no configuration is required since *systemd-resolved* will be
 
 For the second case you need to [install](/index.php/Install "Install") [systemd-resolvconf](https://www.archlinux.org/packages/?name=systemd-resolvconf), it will provide the `/usr/bin/resolvconf` symlink.
 
-**Note:** *systemd-resolved'*s *resolvconf* interface is limited and may not work with all software that use it. See [resolvectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolvectl.1) for more information.
+**Note:**
+
+*   *systemd-resolved'*s *resolvconf* interface is limited and may not work with all software that use it. See [resolvectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolvectl.1) for more information.
+*   The *resolvconf* interface in systemd 290 does not set nameservers. See [FS#59459](https://bugs.archlinux.org/task/59459) and [systemd issue 9423](https://github.com/systemd/systemd/issues/9423).
 
 ##### Manually
 

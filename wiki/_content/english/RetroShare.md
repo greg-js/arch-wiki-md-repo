@@ -1,39 +1,8 @@
-**RetroShare** – open source, cross-platform [Friend-to-Friend](https://en.wikipedia.org/wiki/Friend-to-friend "wikipedia:Friend-to-friend") application that offers secure chat and file sharing features.
+**RetroShare** – An open source, cross-platform [Friend-to-Friend](https://en.wikipedia.org/wiki/Friend-to-friend "wikipedia:Friend-to-friend") application that offers secure chat and file sharing features.
 
-## Contents
+## Installation
 
-*   [1 Installation from unofficial repository](#Installation_from_unofficial_repository)
-*   [2 Installation from AUR](#Installation_from_AUR)
-*   [3 Usage](#Usage)
-*   [4 External Links](#External_Links)
-
-## Installation from unofficial repository
-
-1\. Add this repo:
-
-```
-/etc/pacman.conf
-------------------------------
-
-[home_AsamK_RetroShare_Arch_Community_standard]
-SigLevel = Never
-Server = [http://download.opensuse.org/repositories/home:/AsamK:/RetroShare/Arch_Community_standard/x86_64](http://download.opensuse.org/repositories/home:/AsamK:/RetroShare/Arch_Community_standard/x86_64)
-
-```
-
-2\. Install RetroShare:
-
-```
-# pacman -Syu
-# pacman -S home_AsamK_RetroShare_Arch_Community_standard/retroshare06
-
-```
-
-## Installation from AUR
-
-RetroShare is available in the [retroshare-git](https://aur.archlinux.org/packages/retroshare-git/) package providing compilation from source.
-
-Note: this is unstable package! This package may not work!
+RetroShare is available in [AUR](/index.php/AUR "AUR") as [retroshare](https://aur.archlinux.org/packages/retroshare/) and [retroshare-git](https://aur.archlinux.org/packages/retroshare-git/).
 
 ## Usage
 

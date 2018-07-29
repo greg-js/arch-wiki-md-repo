@@ -187,11 +187,11 @@ Cargo is a tool that allows Rust projects to declare their various dependencies,
 To create a new project using Cargo:
 
 ```
-$ cargo new hello_world --bin
+$ cargo new hello_world 
 
 ```
 
-This creates a directory with a default `Cargo.toml` file, set to build an executable (because we included `--bin`, otherwise it would build a library).
+This creates a directory with a default `Cargo.toml` file, set to build an executable.
 
 **Note:** Cargo uses this `Cargo.toml` as a manifest containing all of the metadata required to compile your project. `Cargo.toml` 
 ```
@@ -240,7 +240,7 @@ $ cargo +nightly install clippy
 
 #### Visual Studio Code
 
-[Visual Studio Code](/index.php/Visual_Studio_Code "Visual Studio Code") support for Rust can be obtained via the [kalitaalexey.vscode-rust](https://marketplace.visualstudio.com/items?itemName=kalitaalexey.vscode-rust) extension.
+[Visual Studio Code](/index.php/Visual_Studio_Code "Visual Studio Code") support for Rust can be obtained via [rust-lang.rls](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust) extension or the [kalitaalexey.vscode-rust](https://marketplace.visualstudio.com/items?itemName=kalitaalexey.vscode-rust) extension.
 
 #### Vim
 

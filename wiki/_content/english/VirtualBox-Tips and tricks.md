@@ -80,12 +80,10 @@ Pay a close attention to the firmware interface (BIOS or UEFI) used to install t
 
  `ArchLinux_vm.vmx`  `firmware = "efi"` 
 
-Finally, ask your hypervisor to use the existing virtual disk you have converted and launch the virtual machine.
+Finally, ask your hypervisor to use the existing virtual disk you have converted and launch the virtual machine. {{Tip|
 
-**Tip:**
-
-*   On VirtualBox, if you do not want to browse the whole GUI to find the right location to add your new virtual drive device, you can [#Replace a virtual disk manually from the .vbox file](#Replace_a_virtual_disk_manually_from_the_.vbox_file), or use the `VBoxManage storageattach` described in [#Increase virtual disks](#Increase_virtual_disks) or in the [VirtualBox manual page](https://www.virtualbox.org/manual/ch08.html#vboxmanage-storageattach).
-*   Similarly, in VMware products, you can replace the location of the current virtual disk location by adapting the *.vmdk* file location in your *.vmx* configuration file.
+*   On VirtualBox, if you do not want to browse the whole GUI to find the right location to add your new virtual drive device, you can [Replace a virtual disk manually from the .vbox file](/index.php/VirtualBox#Replace_a_virtual_disk_manually_from_the_.vbox_file "VirtualBox"), or use the `VBoxManage storageattach` described in [[VirtualBox#Increasing the size of VDI disks] or in the [VirtualBox manual page](https://www.virtualbox.org/manual/ch08.html#vboxmanage-storageattach).
+*   Similarly, in VMware products, you can replace the location of the current virtual disk location by adapting the *.vmdk* file location in your *.vmx* configuration file.}}
 
 ## Virtual machine launch management
 
@@ -142,7 +140,7 @@ XF86Battery
 
 ### Using USB webcam / microphone
 
-**Note:** You will need to have VirtualBox extension pack installed before following the steps below. See [#Extension pack](#Extension_pack) for details.
+**Note:** You will need to have VirtualBox extension pack installed before following the steps below. See [VirtualBox#Extension pack](/index.php/VirtualBox#Extension_pack "VirtualBox") for details.
 
 1.  Make sure the virtual machine is not running and your webcam / microphone is not being used.
 2.  Bring up the main VirtualBox window and go to settings for Arch machine. Go to USB section.
@@ -248,7 +246,7 @@ This guide will let you reuse, in a virtual machine, your native Arch Linux inst
 
 Depending on your hard drive setup, device files representing your hard drives may appear differently when you will run your Arch Linux installation natively or in virtual machine. This problem occurs when using [FakeRAID](/index.php/RAID#Implementation "RAID") for example. The fake RAID device will be mapped in `/dev/mapper/` when you run your GNU/Linux distribution natively, while the devices are still accessible separately. However, in your virtual machine, it can appear without any mapping in `/dev/sdaX` for example, because the drivers controlling the fake RAID in your host operating system (e.g. Windows) are abstracting the fake RAID device.
 
-To circumvent this problem, we will need to use an addressing scheme that is persistent to both systems. This can be achieved using [UUIDs](/index.php/Fstab#UUIDs "Fstab"). Make sure your [boot loader](/index.php/Boot_loader "Boot loader") and [fstab](/index.php/Fstab "Fstab") file is using UUIDs, otherwise fix this issue. Read [fstab](/index.php/Fstab "Fstab") and [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
+To circumvent this problem, we will need to use an addressing scheme that is persistent to both systems. This can be achieved using [UUIDs](/index.php/UUID "UUID"). Make sure your [boot loader](/index.php/Boot_loader "Boot loader") and [fstab](/index.php/Fstab "Fstab") file is using UUIDs, otherwise fix this issue. Read [fstab](/index.php/Fstab "Fstab") and [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
 
 **Warning:**
 
@@ -368,9 +366,9 @@ $ VBoxManage storageattach *VM_name* --storagectl "SATA Controller" --port 0 --d
 
 While you continue using the CLI, it is recommended to use the VirtualBox GUI, to personalise the virtual machine configuration. Indeed, you must specify its hardware configuration as close as possible as your native machine: turning on the 3D acceleration, increasing video memory, setting the network interface, etc.
 
-Finally, you may want to seamlessly integrate your Arch Linux with your host operating system and allow copy pasting between both OSes. Please refer to [#Install the Guest Additions](#Install_the_Guest_Additions) for that, since this Arch Linux virtual machine is basically an Arch Linux guest.
+Finally, you may want to seamlessly integrate your Arch Linux with your host operating system and allow copy pasting between both OSes. Please refer to [VirtualBox#Install the Guest Additions](/index.php/VirtualBox#Install_the_Guest_Additions "VirtualBox") for that, since this Arch Linux virtual machine is basically an Arch Linux guest.
 
-**Warning:** For [Xorg](/index.php/Xorg "Xorg") to work in natively and in the virtual machine, since obviously it will be using different drivers, it is best if there is no `/etc/X11/xorg.conf`, so Xorg will pick up everything it needs on the fly. However, if you really do need your own Xorg configuration, maybe is it worth to set your default systemd target to `multi-user.target` with `systemctl isolate graphical.target` as root (more details at [Systemd#Targets table](/index.php/Systemd#Targets_table "Systemd") and [Systemd#Change current target](/index.php/Systemd#Change_current_target "Systemd")). In that way, the graphical interface is disabled (i.e. Xorg is not launched) and after you logged in, you can `startx`} manually with a custom `xorg.conf`.
+**Warning:** For [Xorg](/index.php/Xorg "Xorg") to work in natively and in the virtual machine, since obviously it will be using different drivers, it is best if there is no `/etc/X11/xorg.conf`, so Xorg will pick up everything it needs on the fly. However, if you really do need your own Xorg configuration, maybe is it worth to set your default systemd target to `multi-user.target` with `systemctl isolate graphical.target` as root (more details at [Systemd#Targets](/index.php/Systemd#Targets "Systemd") and [Systemd#Change current target](/index.php/Systemd#Change_current_target "Systemd")). In that way, the graphical interface is disabled (i.e. Xorg is not launched) and after you logged in, you can `startx`} manually with a custom `xorg.conf`.
 
 ## Install a native Arch Linux system from VirtualBox
 
@@ -378,7 +376,7 @@ In some cases it may be useful to install a native Arch Linux system while runni
 
 This scenario is very similar to [#Run a native Arch Linux installation inside VirtualBox](#Run_a_native_Arch_Linux_installation_inside_VirtualBox), but will follow those steps in a different order: start by [#Create a raw disk .vmdk image](#Create_a_raw_disk_.vmdk_image), then [#Create the VM configuration file](#Create_the_VM_configuration_file).
 
-Now, you should have a working VM configuration whose virtual VMDK disk is tied to a real disk. The installation process is exactly the same as the steps described in [#Installation steps for Arch Linux guests](#Installation_steps_for_Arch_Linux_guests), but [#Make sure you have a persistent naming scheme](#Make_sure_you_have_a_persistent_naming_scheme) and [#Make sure your mkinitcpio image is correct](#Make_sure_your_mkinitcpio_image_is_correct).
+Now, you should have a working VM configuration whose virtual VMDK disk is tied to a real disk. The installation process is exactly the same as the steps described in [VirtualBox#Installation steps for Arch Linux guests](/index.php/VirtualBox#Installation_steps_for_Arch_Linux_guests "VirtualBox"), but [#Make sure you have a persistent naming scheme](#Make_sure_you_have_a_persistent_naming_scheme) and [#Make sure your mkinitcpio image is correct](#Make_sure_your_mkinitcpio_image_is_correct).
 
 **Warning:**
 
@@ -390,7 +388,7 @@ Now, you should have a working VM configuration whose virtual VMDK disk is tied 
 
 *   This is why, it is recommended to create your partitions in a native installation first, otherwize the partitions will not be taken into consideration in your MBR/GPT partition table.
 
-After completing the installation, boot your computer natively with an GNU/Linux installation media (whether it be Arch Linux or not), [chroot](/index.php/Beginner%27s_Guide#Chroot_and_configure_the_base_system "Beginner's Guide") into your installed Arch Linux installation and [#Install and configure a bootloader](/index.php/Beginner%27s_Guide#Install_and_configure_a_bootloader "Beginner's Guide").
+After completing the installation, boot your computer natively with an GNU/Linux installation media (whether it be Arch Linux or not), [chroot](/index.php/Installation_guide#Chroot "Installation guide") into your installed Arch Linux installation and install and configure a [bootloader](/index.php/Bootloader "Bootloader").
 
 ## Move a native Windows installation to a virtual machine
 
@@ -428,7 +426,7 @@ Boot into Windows, clean up the installation (with [CCleaner](http://www.pirifor
 
 	If only the previous test succeeded, execute this command again, but this time without the aforementioned test flag.
 
-*   Install VirtualBox on your GNU/Linux host (see [#Installation steps for Arch Linux hosts](#Installation_steps_for_Arch_Linux_hosts) if your host is Arch Linux).
+*   Install VirtualBox on your GNU/Linux host (see [VirtualBox#Installation steps for Arch Linux hosts](/index.php/VirtualBox#Installation_steps_for_Arch_Linux_hosts "VirtualBox") if your host is Arch Linux).
 
 *   Create the Windows disk image from the beginning of the drive to the end of the first partition where is located your Windows installation. Copying from the beginning of the disk is necessary because the MBR space at the beginning of the drive needs to be on the virtual drive along with the Windows partition. In this example two following partitions `sda2` and `sda3`will be later removed from the partition table and the MBR bootloader will be updated.
 

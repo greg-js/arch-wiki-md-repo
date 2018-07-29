@@ -14,6 +14,7 @@
             *   [1.2.1.2 Graphical](#Graphical)
         *   [1.2.2 Image organizers](#Image_organizers)
         *   [1.2.3 Image processing](#Image_processing)
+            *   [1.2.3.1 Image compression](#Image_compression)
         *   [1.2.4 Raster graphics editors](#Raster_graphics_editors)
         *   [1.2.5 Photo editors](#Photo_editors)
         *   [1.2.6 Vector graphics editors](#Vector_graphics_editors)
@@ -269,6 +270,20 @@ See also [Wikipedia:Image organizer](https://en.wikipedia.org/wiki/Image_organiz
 *   **[ImageMagick](https://en.wikipedia.org/wiki/ImageMagick "wikipedia:ImageMagick")** — Command-line image manipulation program. It is known for its accurate format conversions with support for over 100 formats. Its API enables it to be scripted and it is usually used as a backend processor.
 
 	[http://www.imagemagick.org/script/index.php](http://www.imagemagick.org/script/index.php) || [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)
+
+##### Image compression
+
+*   **[Guetzli](https://en.wikipedia.org/wiki/Guetzli "wikipedia:Guetzli")** — A perceptual JPEG encoder, aiming for excellent compression density at high visual quality.
+
+	[https://github.com/google/guetzli](https://github.com/google/guetzli) || [guetzli](https://www.archlinux.org/packages/?name=guetzli)
+
+*   **jpegoptim** — JPEG optimization utility providing lossless and lossy compression.
+
+	[http://www.kokkonen.net/tjko/projects.html#jpegoptim](http://www.kokkonen.net/tjko/projects.html#jpegoptim) || [jpegoptim](https://www.archlinux.org/packages/?name=jpegoptim)
+
+*   **optipng** — Lossless PNG compressor.
+
+	[http://optipng.sourceforge.net/](http://optipng.sourceforge.net/) || [optipng](https://www.archlinux.org/packages/?name=optipng)
 
 #### Raster graphics editors
 

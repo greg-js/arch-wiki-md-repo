@@ -13,12 +13,12 @@ With the multilib repository enabled, the 32-bit compatible libraries are locate
 
 ## Enabling
 
-To use the [multilib](/index.php/Official_repositories#multilib "Official repositories") repository, uncomment the `[multilib]` section in `/etc/pacman.conf` (Please be sure to uncomment both lines):
+To use the [multilib](/index.php/Official_repositories#multilib "Official repositories") repository, uncomment the `[multilib]` section in `/etc/pacman.conf`. Be sure to uncomment both lines.
 
+ `/etc/pacman.conf` 
 ```
 [multilib]
 Include = /etc/pacman.d/mirrorlist
-
 ```
 
 Then [upgrade](/index.php/Upgrade "Upgrade") the system and install the desired multilib packages.
@@ -27,12 +27,10 @@ Then [upgrade](/index.php/Upgrade "Upgrade") the system and install the desired 
 
 ## Disabling
 
-To revert to a pure 64-bit system:
-
 Execute the following command to remove all packages that were installed from *multilib*:
 
 ```
-# pacman -R $(paclist multilib | cut -f1 -d' ')
+# pacman -R $(comm -12 <(pacman -Qq | sort) <(pacman -Slq multilib | sort))
 
 ```
 
@@ -40,10 +38,10 @@ If you have conflicts with gcc-libs reinstall the [gcc-libs](https://www.archlin
 
 Comment out the `[multilib]` section in `/etc/pacman.conf`:
 
+ `/etc/pacman.conf` 
 ```
 #[multilib]
 #Include = /etc/pacman.d/mirrorlist
-
 ```
 
 Then [upgrade](/index.php/Upgrade "Upgrade") the system.

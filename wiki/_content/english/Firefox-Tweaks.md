@@ -545,7 +545,7 @@ You can enable [DNSSEC](/index.php/DNSSEC "DNSSEC") support for safer browsing.
 
 In `about:config` set `network.protocol-handler.expose.magnet` to `false`. In case it does not exist, it needs to be created, right click on a free area and select *New > Boolean*, input `network.protocol-handler.expose.magnet` and set it to `false`.
 
-The next time you open a magnet link, you will be prompted with a *Launch Application* dialogue. From there simply select your chosen torrent client. This technique can also be used with other protocols.
+The next time you open a magnet link, you will be prompted with a *Launch Application* dialogue. From there simply select your chosen [BitTorrent client](/index.php/List_of_applications/Internet#BitTorrent_clients "List of applications/Internet"). This technique can also be used with other protocols: `network.protocol-handler.expose.<protocol>`.
 
 ### Prevent accidental closing
 

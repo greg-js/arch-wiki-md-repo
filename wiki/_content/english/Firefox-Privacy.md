@@ -25,8 +25,7 @@ This article overviews how to configure [Firefox](/index.php/Firefox "Firefox") 
 *   [2 Extensions](#Extensions)
     *   [2.1 NoScript](#NoScript)
     *   [2.2 RequestPolicy Continued](#RequestPolicy_Continued)
-    *   [2.3 Decentraleyes](#Decentraleyes)
-    *   [2.4 CanvasBlocker](#CanvasBlocker)
+    *   [2.3 CanvasBlocker](#CanvasBlocker)
 *   [3 Remove system-wide hidden extensions](#Remove_system-wide_hidden_extensions)
 *   [4 See also](#See_also)
 
@@ -117,7 +116,7 @@ Then consider checking your SSL configuration at [https://www.howsmyssl.com/](ht
 
 ### Disable telemetry
 
-Set `toolkit.telemetry.enabled` to `false` and/or disable it under Preferences, Advanced, Data Choices.
+Set `toolkit.telemetry.enabled` to `false` and/or disable it under *Preferences > Privacy & Security > Firefox Data Collection and Use*.
 
 ### Enable Do Not Track Header (DNT)
 
@@ -125,7 +124,7 @@ Set `toolkit.telemetry.enabled` to `false` and/or disable it under Preferences, 
 
 **Warning:** The Do Not Track header may be used to fingerprint your browser, since most users leave the option disabled.
 
-Set `privacy.donottrackheader.enabled` to `true` or toggle it in *Preferences > Privacy > Manage your Do Not Track settings*.
+Set `privacy.donottrackheader.enabled` to `true` or toggle it in *Preferences > Privacy & Security > Tracking Protection*
 
 ### Disable geolocation
 
@@ -152,7 +151,7 @@ This section lists Firefox-only privacy extensions, for cross-browser privacy ex
 
 ### NoScript
 
-[NoScript](http://noscript.net/) is an extension which disables JavaScript, Java, Flash and other plugins on any website not specifically whitelisted by the user. This extension will protect you from exploitation of security vulnerabilities by not letting anything but trusted sites (e.g: your bank, webmail) serve you executable content.
+[NoScript](http://noscript.net/) is an extension which disables JavaScript and Flash on any website not specifically whitelisted by the user. This extension will protect you from exploitation of security vulnerabilities by not letting anything but trusted sites (e.g: your bank, webmail) serve you executable content.
 
 Once installed you can configure settings for NoScript by either clicking its icon on the toolbar or right clicking a page and navigating to NoScript. You will then have the option to enable/disable scripts for the current page, as well as any third party scripts that the page is linking to. Alternatively you can choose to enable scripts temporarily for that session only.
 
@@ -166,10 +165,6 @@ For more detailed configuration see the [NoScript FAQ](http://noscript.net/faq).
 
 **Note:** This addon is currently [in the process of being updated](https://github.com/RequestPolicyContinued/requestpolicy/issues/704) for use on modern versions of Firefox (57+).
 
-### Decentraleyes
-
-[Decentraleyes](https://addons.mozilla.org/firefox/addon/decentraleyes/) protects you against tracking through "free", centralized, content delivery. It prevents a lot of requests from reaching networks like Google Hosted Libraries, and serves local files to keep sites from breaking. Complements regular content blockers.
-
 ### CanvasBlocker
 
 [CanvasBlocker](https://addons.mozilla.org/firefox/addon/canvasblocker/) Blocks or fakes the JS-API for modifying <canvas> to prevent Canvas-Fingerprinting.</canvas>
@@ -178,7 +173,7 @@ For more detailed configuration see the [NoScript FAQ](http://noscript.net/faq).
 
 ## Remove system-wide hidden extensions
 
-Several extensions, hidden to the user, are installed by default in `/usr/lib/firefox/browser/features`. Many can be safely removed via `rm *extension-name*.xpi` in order to completely remove unwanted features. Many of these extensions are not enabled by default and have a menu option for enabling or disabling. Note that any files removed will return upon update of the [firefox](https://www.archlinux.org/packages/?name=firefox) package. Below are a few examples of these extensions and their features.
+Several extensions, hidden to the user, are installed by default in `/usr/lib/firefox/browser/features`. Many can be safely removed via `rm *extension-name*.xpi` in order to completely remove unwanted features. Many of these extensions are not enabled by default and have a menu option for enabling or disabling. Note that any files removed will return upon update of the [firefox](https://www.archlinux.org/packages/?name=firefox) package. To keep these extensions removed, consider adding the directories to `NoExtract=` in `pacman.conf`, see [Pacman#Skip files from being installed to system](/index.php/Pacman#Skip_files_from_being_installed_to_system "Pacman"). Below are a few examples of these extensions and their features.
 
 *   `activity-stream@mozilla.org.xpi` - "Activity Stream" which replaces the new tab page. See [[2]](https://github.com/mozilla/activity-stream)
 

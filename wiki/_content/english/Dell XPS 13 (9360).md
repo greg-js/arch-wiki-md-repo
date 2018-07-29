@@ -122,7 +122,7 @@ modeset=1 enable_fbc=1
 The first argument is to enable modesetting if it's not set by default. The second argument is needed to activate framebuffer compression power savings. These values should work well!
 
 ```
-enable_guc=1
+enable_guc=3
 
 ```
 

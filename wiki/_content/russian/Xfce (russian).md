@@ -8,7 +8,7 @@
 *   [LXDE (Русский)](/index.php/LXDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LXDE (Русский)")
 *   [GNOME (Русский)](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)")
 
-[Xfce](http://www.xfce.org) — легковесная модульная [среда рабочего стола](/index.php/%D0%A1%D1%80%D0%B5%D0%B4%D0%B0_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Среда рабочего стола"), на данный момент работающая на основе на GTK+ 2\. Она включает в себя оконный менеджер, файловый менеджер, рабочий стол и основную панель.
+[Xfce](http://www.xfce.org) — легковесная модульная [среда рабочего стола](/index.php/%D0%A1%D1%80%D0%B5%D0%B4%D0%B0_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B5%D0%B3%D0%BE_%D1%81%D1%82%D0%BE%D0%BB%D0%B0 "Среда рабочего стола"), на данный момент работающая на основе GTK+ 2 и GTK+ 3\. Она включает в себя оконный менеджер, файловый менеджер, рабочий стол и основную панель.
 
 ## Contents
 
@@ -37,17 +37,18 @@
         *   [3.4.3 Значки](#.D0.97.D0.BD.D0.B0.D1.87.D0.BA.D0.B8)
         *   [3.4.4 Шрифты](#.D0.A8.D1.80.D0.B8.D1.84.D1.82.D1.8B)
     *   [3.5 Звук](#.D0.97.D0.B2.D1.83.D0.BA)
-        *   [3.5.1 Настройка xfce4-mixer](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_xfce4-mixer)
-        *   [3.5.2 Xfce4-mixer и OSS4](#Xfce4-mixer_.D0.B8_OSS4)
-        *   [3.5.3 Xfce4-mixer и pulseaudio](#Xfce4-mixer_.D0.B8_pulseaudio)
-        *   [3.5.4 Звуковые мультимедиа-клавиши](#.D0.97.D0.B2.D1.83.D0.BA.D0.BE.D0.B2.D1.8B.D0.B5_.D0.BC.D1.83.D0.BB.D1.8C.D1.82.D0.B8.D0.BC.D0.B5.D0.B4.D0.B8.D0.B0-.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8)
-            *   [3.5.4.1 ALSA](#ALSA)
-            *   [3.5.4.2 PulseAudio](#PulseAudio)
-            *   [3.5.4.3 OSS](#OSS)
-            *   [3.5.4.4 Xfce4-volumed](#Xfce4-volumed)
-            *   [3.5.4.5 Volumeicon](#Volumeicon)
-            *   [3.5.4.6 Специальные клавиши](#.D0.A1.D0.BF.D0.B5.D1.86.D0.B8.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8)
-        *   [3.5.5 Добавление звука запуска системы](#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B7.D0.B2.D1.83.D0.BA.D0.B0_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
+        *   [3.5.1 Звуковая тема](#.D0.97.D0.B2.D1.83.D0.BA.D0.BE.D0.B2.D0.B0.D1.8F_.D1.82.D0.B5.D0.BC.D0.B0)
+        *   [3.5.2 Настройка xfce4-mixer](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_xfce4-mixer)
+        *   [3.5.3 Xfce4-mixer и OSS4](#Xfce4-mixer_.D0.B8_OSS4)
+        *   [3.5.4 Xfce4-mixer и pulseaudio](#Xfce4-mixer_.D0.B8_pulseaudio)
+        *   [3.5.5 Звуковые мультимедиа-клавиши](#.D0.97.D0.B2.D1.83.D0.BA.D0.BE.D0.B2.D1.8B.D0.B5_.D0.BC.D1.83.D0.BB.D1.8C.D1.82.D0.B8.D0.BC.D0.B5.D0.B4.D0.B8.D0.B0-.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8)
+            *   [3.5.5.1 ALSA](#ALSA)
+            *   [3.5.5.2 PulseAudio](#PulseAudio)
+            *   [3.5.5.3 OSS](#OSS)
+            *   [3.5.5.4 Xfce4-volumed](#Xfce4-volumed)
+            *   [3.5.5.5 Volumeicon](#Volumeicon)
+            *   [3.5.5.6 Специальные клавиши](#.D0.A1.D0.BF.D0.B5.D1.86.D0.B8.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8)
+        *   [3.5.6 Добавление звука запуска системы](#.D0.94.D0.BE.D0.B1.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B7.D0.B2.D1.83.D0.BA.D0.B0_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
     *   [3.6 Сочетания клавиш](#.D0.A1.D0.BE.D1.87.D0.B5.D1.82.D0.B0.D0.BD.D0.B8.D1.8F_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88)
         *   [3.6.1 Сложные сочетания](#.D0.A1.D0.BB.D0.BE.D0.B6.D0.BD.D1.8B.D0.B5_.D1.81.D0.BE.D1.87.D0.B5.D1.82.D0.B0.D0.BD.D0.B8.D1.8F)
     *   [3.7 Агент аутентификаци Polkit](#.D0.90.D0.B3.D0.B5.D0.BD.D1.82_.D0.B0.D1.83.D1.82.D0.B5.D0.BD.D1.82.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.86.D0.B8_Polkit)
@@ -341,6 +342,20 @@ $ cp /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml ~/.config/xfce4
 Смотрите [настройка шрифтов](/index.php/Font_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Font configuration (Русский)"). Установить шрифты в Xfce можно через меню *Settings > Appearance*.
 
 ### Звук
+
+#### Звуковая тема
+
+XFCE4 поддерживает [спецификацию звуковых тем freedesktop](https://www.freedesktop.org/wiki/Specifications/sound-theme-spec/), однако системные звуки не настроены по умолчанию.
+
+Чтобы включить системные звуки:
+
+1.  Установите [libcanberra](https://www.archlinux.org/packages/?name=libcanberra) и [libcanberra-pulse](https://www.archlinux.org/packages/?name=libcanberra-pulse) для поддержки [PulseAudio](/index.php/PulseAudio "PulseAudio");
+2.  Подстрока "canberra-gtk-module" должна присутствовать в переменной окружения GTK_MODULES (возможно потребуется выйти из системы и войти заново после установки соответствующих модулей);
+3.  Отметьте "Включить звуки событий" во вкладке Настройки → Внешний вид → Настройки;
+4.  Укажите название звуковой темы, установленной в `/usr/share/sounds/`, в редакторе настроек в поле "xsettings/Net/SoundThemeName";
+5.  Включите системные звуки в аудиомикшере (например, в pavucontrol).
+
+[sound-theme-freedesktop](https://www.archlinux.org/packages/?name=sound-theme-freedesktop) предоставляет совместимую звуковую тему, в которой, однако, отсутствует множество необходимых событий. Более подходящим выбором может стать [sound-theme-smooth](https://aur.archlinux.org/packages/sound-theme-smooth/) (поле SoundThemeName должно содержать "Smooth").
 
 #### Настройка xfce4-mixer
 

@@ -30,7 +30,7 @@ Install the official RuneScape NXT client with the [runescape-launcher](https://
 
 ### RuneLite (Old School RuneScape only)
 
-[RuneLite](https://runelite.net/) is an open-source alternative to other third-party Old School RuneScape clients.
+[RuneLite](https://runelite.net/) is an open-source alternative to other third-party Old School RuneScape clients. It is available on the AUR: [runelite](https://aur.archlinux.org/packages/runelite/)
 
 ## Troubleshooting
 

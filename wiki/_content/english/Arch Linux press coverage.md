@@ -143,8 +143,6 @@ See also [Wikipedia:Arch Linux](https://en.wikipedia.org/wiki/Arch_Linux "wikipe
 
 *   [Arch Linux: First Impressions](http://zuttobenkyou.wordpress.com/2009/01/08/arch-linux-first-impressions/) Shinobu - Zuttobenkyou.WordPress.com 2009-01-08
 
-[link title](http://www.example.com)
-
 ## 2008
 
 *   [Review: Arch Linux - A sleek, fast Linux distribution](http://linuxhelp.blogspot.com/2008/12/review-arch-linux-sleek-fast-linux.html) Ravi - LinuxHelp.BlogSpot.com 2008-12-12
@@ -185,7 +183,7 @@ See also [Wikipedia:Arch Linux](https://en.wikipedia.org/wiki/Arch_Linux "wikipe
 
 ## 2007
 
-*   The Linux Link Tech Show - Interview with Aaron Griffin, lead developer of Arch Linux Episode #223 12-12-07
+*   [The Linux Link Tech Show](http://www.tllts.org/rsspage.php) - Interview with Aaron Griffin, lead developer of Arch Linux Episode #223 12-12-07
 
 *   [Arch Linux, really impressive. Even when virtualized.](http://tuxtoday.wordpress.com/2007/11/14/arch-linux-really-impressive-even-when-virtualized/) TuxToday.WordPress.com 2007-11-14
 
@@ -223,64 +221,42 @@ See also [Wikipedia:Arch Linux](https://en.wikipedia.org/wiki/Arch_Linux "wikipe
 
 ## 2006
 
-*   [Review: Arch Linux 0.7.2](http://karuppuswamy.com/wordpress/2006/11/12/review-arch-linux-072/) swamytk - KaruppuSwamy.com 2006-11-12
-
-*   [Watching the Evolution of Arch Linux](http://www.osnews.com/story/15075) Eugenia Loli-Queru - OSNews.com 2006-07-03
-
-*   [Distribution Release: Arch Linux 0.7.2](http://distrowatch.com/?newsid=03456) DistroWatch.com 2006-05-23
-
-*   [The Simplicity of Arch (PDF Document)](http://www.linux-magazine.com/issue/64/Arch_Linux_Review.pdf) Jon Kent - Linux-Magazine Issue #64 2006-03
-
-*   The Linux Link Tech Show - Interview with Judd Vinet, founder of Arch Linux Episode #122 2006-02-08
-
-*   [Distribution Release: Arch Linux 0.7.1](http://distrowatch.com/?newsid=03157) DistroWatch.com 2006-01-05
+*   [Review: Arch Linux 0.7.2](http://karuppuswamy.com/wordpress/2006/11/12/review-arch-linux-072/) – swamytk, KaruppuSwamy.com 2006-11-12
+*   [Watching the Evolution of Arch Linux](https://www.osnews.com/story/15075) – Eugenia Loli-Queru, OSNews.com 2006-07-03
+*   [Distribution Release: Arch Linux 0.7.2](https://distrowatch.com/?newsid=03456) – DistroWatch.com 2006-05-23
+*   [The Simplicity of Arch (PDF Document)](https://www.linux-magazine.com/Issues/2006/64/Arch-Linux) – Jon Kent, Linux-Magazine Issue #64 2006-03
+*   [The Linux Link Tech Show](https://www.tllts.org/rsspage.php) – Interview with Judd Vinet, founder of Arch Linux Episode #122 2006-02-08
+*   [Distribution Release: Arch Linux 0.7.1](https://distrowatch.com/?newsid=03157) – DistroWatch.com 2006-01-05
 
 ## 2005
 
-*   The Linux Link Tech Show - Interview with James Rayner, creator of the Archie Live CD Episode #91 2005-07-06
-
-*   [The Big Arch Linux Interview](http://www.osnews.com/story/10142) Eugenia Loli-Queru - OSNews.com 2005-03-29
-
-*   [Arch Linux: Why It Rocks](http://www.osnews.com/story/10047) Eugenia Loli-Queru - OSNews.com 2005-03-21
-
-*   [Make your Arch Linux a Bluetooth Access Point](http://www.osnews.com/story/9836) Eugenia Loli-Queru - OSNews.com 2005-02-27
-
-*   [Arch Linux for Power Users](http://lwn.net/Articles/121784/) Ladislav Bodnar - Linux Weekly News 2005-02-02
-
-*   [A Week in the Life of an Arch Linux Newbie](http://www.osnews.com/story/9540) Andrew Roberts - OSNews.com 2005-01-27
-
-*   [Distribution Release: Arch Linux 0.7](http://distrowatch.com/?newsid=02291) DistroWatch.com 2005-01-25
+*   [The Linux Link Tech Show](https://www.tllts.org/rsspage.php) – Interview with James Rayner, creator of the Archie Live CD Episode #91 2005-07-06
+*   [The Big Arch Linux Interview](https://www.osnews.com/story/10142) – Eugenia Loli-Queru, OSNews.com 2005-03-29
+*   [Arch Linux: Why It Rocks](https://www.osnews.com/story/10047) – Eugenia Loli-Queru, OSNews.com 2005-03-21
+*   [Make your Arch Linux a Bluetooth Access Point](https://www.osnews.com/story/9836) – Eugenia Loli-Queru, OSNews.com 2005-02-27
+*   [Arch Linux for Power Users](https://lwn.net/Articles/121784/) – Ladislav Bodnar, Linux Weekly News 2005-02-02
+*   [A Week in the Life of an Arch Linux Newbie](https://www.osnews.com/story/9540) – Andrew Roberts, OSNews.com 2005-01-27
+*   [Distribution Release: Arch Linux 0.7](https://distrowatch.com/?newsid=02291) – DistroWatch.com 2005-01-25
 
 ## 2004
 
-*   [Arch Linux Vs Slackware: The Best of All Worlds](http://www.osnews.com/story/8761) Eugenia Loli-Queru - OSNews.com 2004-11-03
-
-*   [WRBurns' Review of Arch Linux 0.6](http://discuss.extremetech.com/forums/thread/536482008.aspx) WRBurns - ExtremeTech.com 2004-04-14
-
-*   [LinuxLookup: Arch Linux version 0.6 (Widget) Review](http://www.linuxlookup.com/review/arch_linux_version_0_6_widget) Ty - LinuxLookUp.com 2004-03-23
-
-*   [Distribution Release: Arch Linux 0.6](http://distrowatch.com/?newsid=01410) DistroWatch.com 2004-03-01
-
-*   [Arch Linux: An End To My Distro Shuffle?](http://www.osnews.com/story/5971) Andrew Barilla - OSNews.com 2004-02-10
+*   [Arch Linux Vs Slackware: The Best of All Worlds](https://www.osnews.com/story/8761) – Eugenia Loli-Queru, OSNews.com 2004-11-03
+*   [WRBurns' Review of Arch Linux 0.6](https://web.archive.org/web/20110718040758/discuss.extremetech.com/forums/thread/536482008.aspx) – WRBurns, ExtremeTech.com 2004-04-14
+*   [LinuxLookup: Arch Linux version 0.6 (Widget) Review](http://www.linuxlookup.com/review/arch_linux_version_0_6_widget) – LinuxLookUp.com 2004-03-23
+*   [Distribution Release: Arch Linux 0.6](https://distrowatch.com/?newsid=01410) – DistroWatch.com 2004-03-01
+*   [Arch Linux: An End To My Distro Shuffle?](https://www.osnews.com/story/5971) – Andrew Barilla, OSNews.com 2004-02-10
 
 ## 2003
 
-*   [Arch Linux: A Better Distribution](http://www.osnews.com/story/4827) Ben Mazer - OSNews.com 2003-10-15
-
-*   [Interview with Judd Vinet](http://distrowatch.com/dwres.php?resource=interview-arch) Ladislav Bodnar - DistroWatch.com 2003-08-03
-
-*   [My look at Arch Linux 0.2, 0.3, and 0.4](http://lwn.net/Articles/42095/) rabnud - Linux Weekly News 2003-08-01
-
-*   [A Look at Arch Linux](http://lwn.net/Articles/40952/) Ladislav Bodnar - Linux Weekly News 2003-07-23
-
-*   [Distribution Release: Arch Linux 0.5](http://distrowatch.com/?newsid=00870) DistroWatch.com 2003-07-21
+*   [Arch Linux: A Better Distribution](https://www.osnews.com/story/4827) – Ben Mazer, OSNews.com 2003-10-15
+*   [Interview with Judd Vinet](https://distrowatch.com/dwres.php?resource=interview-arch) – Ladislav Bodnar, DistroWatch.com 2003-08-03
+*   [My look at Arch Linux 0.2, 0.3, and 0.4](https://lwn.net/Articles/42095/) – rabnud, Linux Weekly News 2003-08-01
+*   [A Look at Arch Linux](https://lwn.net/Articles/40952/) – Ladislav Bodnar, Linux Weekly News 2003-07-23
+*   [Distribution Release: Arch Linux 0.5](https://distrowatch.com/?newsid=00870) – DistroWatch.com 2003-07-21
 
 ## 2002
 
-*   [Distribution Release: Arch Linux 0.4](http://distrowatch.com/?newsid=00538) DistroWatch.com 2002-12-18
-
-*   [Introduction to Arch Linux](http://www.osnews.com/story/2264) Jon "Trekboy" - OSNews.com 2002-12-01
-
-*   [Distribution Release: Arch Linux 0.3](http://distrowatch.com/?newsid=00346) DistroWatch.com 2002-08-08
-
-*   [Distribution Release: Arch Linux 0.2](http://distrowatch.com/?newsid=00201) DistroWatch.com 2002-04-18
+*   [Distribution Release: Arch Linux 0.4](https://distrowatch.com/?newsid=00538) – DistroWatch.com 2002-12-18
+*   [Introduction to Arch Linux](https://www.osnews.com/story/2264) – Jon "Trekboy", OSNews.com 2002-12-01
+*   [Distribution Release: Arch Linux 0.3](https://distrowatch.com/?newsid=00346) – DistroWatch.com 2002-08-08
+*   [Distribution Release: Arch Linux 0.2](https://distrowatch.com/?newsid=00201) – DistroWatch.com 2002-04-18

@@ -16,21 +16,22 @@ Packages in the official repositories are constantly upgraded: when a package is
 
 ## Contents
 
-*   [1 Repositories](#Repositories)
+*   [1 Stable repositories](#Stable_repositories)
     *   [1.1 core](#core)
     *   [1.2 extra](#extra)
     *   [1.3 community](#community)
     *   [1.4 multilib](#multilib)
-    *   [1.5 testing](#testing)
-        *   [1.5.1 community-testing](#community-testing)
-        *   [1.5.2 multilib-testing](#multilib-testing)
-        *   [1.5.3 gnome-unstable](#gnome-unstable)
-        *   [1.5.4 kde-unstable](#kde-unstable)
-        *   [1.5.5 Disabling testing repositories](#Disabling_testing_repositories)
-    *   [1.6 staging](#staging)
-*   [2 Historical background](#Historical_background)
+*   [2 Testing repositories](#Testing_repositories)
+    *   [2.1 testing](#testing)
+    *   [2.2 community-testing](#community-testing)
+    *   [2.3 multilib-testing](#multilib-testing)
+    *   [2.4 gnome-unstable](#gnome-unstable)
+    *   [2.5 kde-unstable](#kde-unstable)
+    *   [2.6 Disabling testing repositories](#Disabling_testing_repositories)
+*   [3 Staging repositories](#Staging_repositories)
+*   [4 Historical background](#Historical_background)
 
-## Repositories
+## Stable repositories
 
 ### core
 
@@ -48,7 +49,7 @@ as well as dependencies of the above (not necessarily [makedepends](/index.php/P
 
 *core* has fairly strict quality requirements. Developers/users need to signoff on updates before package updates are accepted. For packages with low usage, a reasonable exposure is enough: informing people about update, requesting signoffs, keeping in [#testing](#testing) up to a week depending on the severity of the change, lack of outstanding bug reports, along with the implicit signoff of the package maintainer.
 
-**Note:** To create a local repository with packages from *core* (or other repositories) without an internet connection see [Pacman tips#Installing packages from a CD/DVD or USB stick](/index.php/Pacman_tips#Installing_packages_from_a_CD.2FDVD_or_USB_stick "Pacman tips")
+**Tip:** To create a local repository with packages from *core* (or other repositories) without an internet connection see [Pacman tips#Installing packages from a CD/DVD or USB stick](/index.php/Pacman_tips#Installing_packages_from_a_CD.2FDVD_or_USB_stick "Pacman tips")
 
 ### extra
 
@@ -70,9 +71,14 @@ This repository can be found in `.../multilib/os/` on your favorite mirror.
 
 For more information, see [Multilib](/index.php/Multilib "Multilib").
 
-### testing
+## Testing repositories
 
-**Warning:** Be careful when enabling the *testing* repositories. Your system may break after performing an update. Only experienced users who know how to deal with potential system breakage should use it.
+**Warning:**
+
+*   Be careful when enabling the *testing* repositories. Your system may break after performing an update. Only experienced users who know how to deal with potential system breakage should use it.
+*   If you enable *testing*, you must also enable *community-testing*. If you enable any other testing repository listed in the following subsections, you must also enable both *testing* and *community-testing*.
+
+### testing
 
 This repository can be found in `.../testing/os/` on your favorite mirror.
 
@@ -88,17 +94,15 @@ New packages go into *testing* if:
 
 **Note:** *testing* is not for the "newest of the new" package versions. Part of its purpose is to hold package updates that have the potential to break the system, either by being part of the *core* set of packages, or by being critical in other ways. As such, users of *testing* are strongly encouraged to subscribe to the [arch-dev-public mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public), watch the [testing repository forum](https://bbs.archlinux.org/viewforum.php?id=49), and to [report all bugs](/index.php/Reporting_bug_guidelines "Reporting bug guidelines").
 
-**Warning:** If you enable *testing*, you must also enable *community-testing*. If you enable any other testing repository listed in the following subsections, you must also enable both *testing* and *community-testing*.
-
-#### community-testing
+### community-testing
 
 This repository is similar to the *testing* repository, but for packages that are candidates for the *community* repository.
 
-#### multilib-testing
+### multilib-testing
 
 This repository is similar to the *testing* repository, but for packages that are candidates for the *multilib* repository.
 
-#### gnome-unstable
+### gnome-unstable
 
 This repository contains the latest version of the [GNOME](/index.php/GNOME "GNOME") desktop environment, before it moves to the main *testing* repository.
 
@@ -114,7 +118,7 @@ The *gnome-unstable* entry should be first in the list of repositories (*i.e.*, 
 
 Please report packaging related bugs in our [bug tracker](https://bugs.archlinux.org/), while anything else should be reported upstream to [GNOME Bugzilla](https://bugzilla.gnome.org/).
 
-#### kde-unstable
+### kde-unstable
 
 This repository contains the latest *beta* or *Release Candidate* of [KDE](/index.php/KDE "KDE") Plasma and Applications.
 
@@ -130,7 +134,7 @@ The *kde-unstable* entry should be first in the list of repositories (*i.e.*, ab
 
 Make sure [you make bug reports](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") if you find any problems.
 
-#### Disabling testing repositories
+### Disabling testing repositories
 
 If you enabled testing repositories, but later on decided to disable them, you should:
 
@@ -139,7 +143,7 @@ If you enabled testing repositories, but later on decided to disable them, you s
 
 The second item is optional, but keep it in mind if you notice any problems.
 
-### staging
+## Staging repositories
 
 **Warning:** Do not enable the *staging* repositories for any reason. Your system will unquestionably break after performing an update. This repository is only meant for backend developer use.
 

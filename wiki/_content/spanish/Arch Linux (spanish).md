@@ -1,6 +1,6 @@
 **Estado de la traducción:** este artículo es una versión traducida de [Arch Linux](/index.php/Arch_Linux "Arch Linux"). Fecha de la última traducción/revisión: **2018-07-27**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=507441).
 
-Arch Linux es una distribución GNU/Linux independiente, de propósito general, desarrollada para x86-64\. Se esfuerza en ofrecer las últimas versiones estables de la mayoría del software, siguiendo un modelo rolling-release (lanzamiento continuo). La instalación por defecto deja un sistema de base mínima, que el usuario configurará posteriormente agregando lo que necesite.
+Arch Linux es una distribución GNU/Linux de propósito general, desarrollada independientemente para x86-64, que se esfuerza por proporcionar las últimas versiones estables de la mayoría del software, siguiendo un modelo de lanzamiento continuo (rolling-release). La instalación por defecto deja un sistema de base mínima, que el usuario configurará posteriormente agregando lo que necesite.
 
 ## Contents
 

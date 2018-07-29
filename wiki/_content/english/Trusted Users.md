@@ -62,7 +62,7 @@ For more information, see the [Trusted User Bylaws](https://aur.archlinux.org/tr
 | [foxxx0](https://aur.archlinux.org/packages.php?K=foxxx0&SeB=m) | Thore Bödecker | me [at] foxxx0 [dot] de |
 | [giniu](https://aur.archlinux.org/packages.php?K=giniu&SeB=m) | [Andrzej Giniewicz](/index.php/User:Giniu "User:Giniu") | gginiu@gmail.com |
 | [grazzolini](https://aur.archlinux.org/packages/?SeB=m&K=grazzolini) | Giancarlo Razzolini | grazzolini [at] gmail [dot] com |
-| [heftig](https://aur.archlinux.org/packages.php?K=heftig&SeB=m) | Jan Steffens | jan.steffens@student.kit.edu |
+| [heftig](https://aur.archlinux.org/packages.php?K=heftig&SeB=m) | Jan Alexander Steffens | jan.steffens@gmail.com |
 | [jelly](https://aur.archlinux.org/packages.php?K=jelly&SeB=m) | Jelle van der Waa | jelle vdwaa nl |
 | [jleclanche](https://aur.archlinux.org/packages.php?K=jleclanche&SeB=m) | [Jerome Leclanche](/index.php/User:Jleclanche "User:Jleclanche") | jerome*@*leclan*.*ch |
 | [jsteel](https://aur.archlinux.org/packages.php?K=jsteel&SeB=m) | Jonathan Steel | jsteel at aur.archlinux.org |

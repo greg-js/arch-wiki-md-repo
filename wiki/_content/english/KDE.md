@@ -100,6 +100,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [6.11 Problems with saving credentials and persistently occurring KWallet dialogs](#Problems_with_saving_credentials_and_persistently_occurring_KWallet_dialogs)
     *   [6.12 Weird "q" symbol in konsole](#Weird_.22q.22_symbol_in_konsole)
     *   [6.13 Discover does not show any applications](#Discover_does_not_show_any_applications)
+    *   [6.14 High CPU usage of kscreenlocker_greet with NVidia drivers](#High_CPU_usage_of_kscreenlocker_greet_with_NVidia_drivers)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -799,6 +800,12 @@ You will need to disable these escape sequences in the programs that use them. S
 ### Discover does not show any applications
 
 This can be solved by installing [packagekit-qt5](https://www.archlinux.org/packages/?name=packagekit-qt5).
+
+### High CPU usage of kscreenlocker_greet with NVidia drivers
+
+As described in [KDE Bug 347772](https://bugs.kde.org/show_bug.cgi?id=347772) NVidia OpenGL drivers and QML may not play well together with Qt5\. This may lead `kscreenlocker_greet` to high CPU usage after unlocking the session. To work around this issue, set the `$QSG_RENDERER_LOOP` [environment variable](/index.php/Environment_variable "Environment variable") to `basic`.
+
+Then kill previous instances of the greeter with `killall kscreenlocker_greet`.
 
 ## See also
 

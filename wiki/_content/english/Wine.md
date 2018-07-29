@@ -43,8 +43,7 @@ Related articles
     *   [4.13 Temp directory on tmpfs](#Temp_directory_on_tmpfs)
     *   [4.14 Prevent installing Mono/Gecko](#Prevent_installing_Mono.2FGecko)
     *   [4.15 Vulkan](#Vulkan)
-    *   [4.16 Flash](#Flash)
-    *   [4.17 Remove Wine file bindings](#Remove_Wine_file_bindings)
+    *   [4.16 Remove Wine file bindings](#Remove_Wine_file_bindings)
 *   [5 Third-party applications](#Third-party_applications)
 *   [6 See also](#See_also)
 
@@ -532,16 +531,6 @@ If Gecko and/or Mono are not present on the system nor in the Wine prefix, Wine 
 Vulkan support is included, since Wine 3.3\. The default Wine Vulkan ICD loader works fine for most applications, but does not support advanced features, like Vulkan layers. To use these features, you have to install the official Vulkan SDK, see step 2-4 on the original Vulkan patches author's [GitHub page](https://github.com/roderickc/wine-vulkan).
 
 **Note:** The Wine ICD loader was added in Wine 3.5, you need to install the official Vulkan SDK to use Vulkan in Wine 3.3 and 3.4
-
-### Flash
-
-To run flash websites(i.e. HBOGO) in Firefox follow these steps:
-
-1.  Use `winecfg` to set the Windows Version to windows 7
-2.  Install Firefox 57([https://ftp.mozilla.org/pub/firefox/releases/57.0.4/](https://ftp.mozilla.org/pub/firefox/releases/57.0.4/)) with `wine`
-3.  Install Flash for firefox ([https://get.adobe.com/flashplayer/otherversions/](https://get.adobe.com/flashplayer/otherversions/))
-4.  Reset Windows Version to windows XP with `winecfg`
-5.  Run Firefox with wine(i.e. `wine $WINEPREFIX/drive_c/Program\ Files/Mozilla\ Firefox/firefox.exe`) and goto the flash website.
 
 ### Remove Wine file bindings
 

@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Code of conduct](/index.php/Code_of_conduct "Code of conduct"). Fecha de la última traducción/revisión: **2016-09-20**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Code_of_conduct&diff=0&oldid=447157).
+**Estado de la traducción:** este artículo es una versión traducida de [Code of conduct](/index.php/Code_of_conduct "Code of conduct"). Fecha de la última traducción/revisión: **2018-07-27**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Code_of_conduct&diff=0&oldid=513170).
 
 La comunidad de Arch es una comunidad técnica cuyo propósito común es apoyar y mejorar Arch Linux.
 
@@ -17,8 +17,9 @@ Familiarizarse con los principios y directrices que aquí se recogen es, a la ve
         *   [2.1.4 Evite el *trolling*](#Evite_el_trolling)
         *   [2.1.5 Evite el *flaming*](#Evite_el_flaming)
         *   [2.1.6 Sea responsable](#Sea_responsable)
+        *   [2.1.7 Cuentas de miembros](#Cuentas_de_miembros)
     *   [2.2 Legalidad](#Legalidad)
-        *   [2.2.1 Incitar a actos ilegales](#Incitar_a_actos_ilegales)
+        *   [2.2.1 Incitar actos ilegales](#Incitar_actos_ilegales)
         *   [2.2.2 Spam/Publicidad/Solicitudes](#Spam.2FPublicidad.2FSolicitudes)
     *   [2.3 Exactitud](#Exactitud)
         *   [2.3.1 Soporte *solo* para la distribución Arch Linux](#Soporte_.2Asolo.2A_para_la_distribuci.C3.B3n_Arch_Linux)
@@ -33,12 +34,11 @@ Familiarizarse con los principios y directrices que aquí se recogen es, a la ve
         *   [3.1.3 La vida es una calle de doble sentido](#La_vida_es_una_calle_de_doble_sentido)
         *   [3.1.4 Pedir recomendaciones sobre productos](#Pedir_recomendaciones_sobre_productos)
         *   [3.1.5 Temas antiguos/*«necro-bumping»*](#Temas_antiguos.2F.C2.ABnecro-bumping.C2.BB)
-        *   [3.1.6 Las cuentas de los miembros del foro](#Las_cuentas_de_los_miembros_del_foro)
-        *   [3.1.7 Evite las publicaciones vacías/*power-posting*](#Evite_las_publicaciones_vac.C3.ADas.2Fpower-posting)
-        *   [3.1.8 Evite el *bumping*](#Evite_el_bumping)
-        *   [3.1.9 Evite el *cross-posting*](#Evite_el_cross-posting)
-        *   [3.1.10 Evite el *thread hijacking*](#Evite_el_thread_hijacking)
-        *   [3.1.11 Política Dustbin (temas marcados para su eliminación)](#Pol.C3.ADtica_Dustbin_.28temas_marcados_para_su_eliminaci.C3.B3n.29)
+        *   [3.1.6 Evite las publicaciones vacías/*power-posting*](#Evite_las_publicaciones_vac.C3.ADas.2Fpower-posting)
+        *   [3.1.7 Evite el *bumping*](#Evite_el_bumping)
+        *   [3.1.8 Evite el *cross-posting*](#Evite_el_cross-posting)
+        *   [3.1.9 Evite el *thread hijacking*](#Evite_el_thread_hijacking)
+        *   [3.1.10 Política Dustbin (temas marcados para su eliminación)](#Pol.C3.ADtica_Dustbin_.28temas_marcados_para_su_eliminaci.C3.B3n.29)
     *   [3.2 Listas de correo](#Listas_de_correo)
         *   [3.2.1 Publicar por encima](#Publicar_por_encima)
         *   [3.2.2 Citas](#Citas)
@@ -58,7 +58,7 @@ Familiarizarse con los principios y directrices que aquí se recogen es, a la ve
 
 *   Arch es una comunidad de voluntarios. Por lo tanto, todo este documento se puede condensar en una sola leyenda:
 
-***Trate de darse a sí mismo de forma proactiva y de conducirse únicamente en beneficio de sus iguales y de la comunidad.***
+***Trate dar más de sí mismo de forma proactiva y buscar únicamente el beneficio de sus compañeros y de la comunidad.***
 
 ## Código de conducta
 
@@ -68,7 +68,7 @@ Las *normas mínimas necesarias* en la interacción con otras personas de la com
 
 #### Respete a los demás usuarios
 
-En pocas palabras, trate a los demás como quisiera ser tratado, respete al otro y sus puntos de vista, incluso si no está de acuerdo con ellos. Cuando esté en desacuerdo con alguna idea o argumento, no realice ataques ad hominem.
+Arch Linux es una comunidad respetuosa e inclusiva. No se tolerarán comportamientos antisociales u ofensivos. En pocas palabras, trate a los demás como desee ser tratado, respete a los demás y sus puntos de vista, incluso si no está de acuerdo con ellos. Cuando esté en desacuerdo con alguna idea o argumento, no realice ataques *ad hominem*.
 
 #### Respete otros sistemas operativos y proyectos
 
@@ -92,9 +92,15 @@ En general, los *«trolls»* son engañosos y utilizan la ambigüedad como méto
 
 Si surge un problema interpersonal, por favor admita la posibilidad de que su comportamiento puede haber contribuido a crear el problema. Asumir la responsabilidad de nuestras acciones es, a menudo, un primer paso para una reconciliación pacífica.
 
+#### Cuentas de miembros
+
+Por favor, utilice solo una cuenta. Tener múltiples cuentas es un gasto innecesario de recursos. Además, se puede interpretar como un comportamiento inadecuado.
+
+Cualquier forma de [sockpuppetry](https://en.wikipedia.org/wiki/Sockpuppet_(Internet) "w:Sockpuppet (Internet)") o suplantación está estrictamente prohibida.
+
 ### Legalidad
 
-#### Incitar a actos ilegales
+#### Incitar actos ilegales
 
 [Criminal solicitation](http://definitions.uslegal.com/c/criminal-solicitation/) (*«la incitación a actos ilegales»*) está estrictamente prohibida en este sitio web. En este contexto, *«criminal solicitation»* significa: «Informar, de forma activa o pasiva, acerca de, facilitar, incitar, mover o persuadir a otros de algún acto de infracción de la ley o de actividad ilegal».
 
@@ -114,7 +120,7 @@ Otras consideraciones en esta categoría incluyen:
 
 #### Soporte *solo* para la distribución Arch Linux
 
-Las distribuciones basadas en Arch a menudo utilizan versiones de paquetes diferentes, repositorios personalizados y configuraciones oscuras, por lo tanto contribuir al soporte de esos proyectos no es posible en Arch Linux. El apoyo técnico de la Comunidad solo se proporciona para Arch Linux y el *Arch User Repository*. Temas relativos a problemas con, y solicitudes de apoyo para, distribuciones derivadas, o sistemas operativos que no sean Arch Linux, están estrictamente prohibidos.
+Las distribuciones basadas en Arch tienen sus propios foros de soporte y los usuarios de esas distribuciones deben ser alentados a buscar apoyo allí. Estas distribuciones a menudo utilizan diferentes paquetes, versiones de paquetes, repositorios o configuraciones de sistema personalizadas de forma silenciosa, prácticamente imposibilitando el soporte para tales proyectos dentro de Arch Linux. El soporte técnico de la comunidad solo se proporcionará para la distribución de Arch Linux y Arch User Repository (AUR). Se prohíbe publicar problemas y solicitar soporte para distribuciones derivadas o sistemas operativos que no sean Arch Linux.
 
 #### Temas personales/fuera de tono
 
@@ -149,6 +155,7 @@ Además del [código común](#C.C3.B3digo_de_conducta_.28Espa.C3.B1ol.29), cada 
 *   Al hacer preguntas, proporcione tanta información como le sea posible, incluyendo los mensajes de errores, salida del terminal, los registros, lo que se ha intentado anteriormente, qué documentación y búsquedas se han hecho y los archivos de configuración relacionados.
 *   Elija un hilo por tema. Las discusiones largas son normalmente desaconsejadas en los subforos de cuestiones técnicas.
 *   Envíe la pregunta a un solo subforo, escoja el más relevante, y publique allí.
+*   No publique tutoriales ni "cómo hacerlo": esta documentación pertenece a la wiki, donde se puede mantener.
 *   Cuando responda a un tema existente, lea siempre la publicación inicial y trate de centrarse en el tema que la originó.
 *   Por último, cuando se encuentre una solución, marque su hilo como resuelto, mediante la edición del primer envío y anteponiendo la etiqueta [SOLVED] al título en el campo «Subject».
     Tenga en cuenta que debe evitar el uso de [CLOSED], ya que es utilizado por el sistema para marcar un hilo que ya no es accesible para los nuevos envíos.
@@ -156,7 +163,7 @@ Además del [código común](#C.C3.B3digo_de_conducta_.28Espa.C3.B1ol.29), cada 
 
 #### Colocar código e imágenes
 
-Por favor, use etiquetas [code] al pegar fragmentos de consola. Use también, por favor, el [cliente pastebin](/index.php/Pastebin#Pastebin_clients "Pastebin") a la hora de enviar una gran cantidad de código. Para los usuarios de idioma distinto del inglés: por favor, antepongan `LC_ALL=C` a las órdenes enviadas, de modo que la salida se vea en inglés. No publique fotos a pantalla completa, use miniaturas en su lugar. Cualquier imagen de dimensiones superiores a 250x250px o de tamaño mayor de 50Kb será eliminada. No publicar capturas de pantalla de salida de texto; publicar [the actual text](/index.php/Copying_text_from_a_terminal "Copying text from a terminal").
+Por favor, use etiquetas [code] al pegar fragmentos de consola. Use también, por favor, el [cliente pastebin](/index.php/Pastebin#Pastebin_clients "Pastebin") a la hora de enviar una gran cantidad de código. **No** use [pastebin.com](http://pastebin.com/)—está bloqueado para algunos usuarios y tiene un historial de problemas molestos (javascript, anuncios, formato deficiente, etc). Para los usuarios de idiomas distintos al inglés: por favor, antepongan `LC_ALL=C` a las órdenes enviadas, de modo que la salida se vea en inglés. No publique fotos a pantalla completa, use miniaturas en su lugar. Cualquier imagen de dimensiones superiores a 250x250px o de tamaño mayor de 50Kb será eliminada. No publicar capturas de pantalla de salida de texto; publicar [the actual text](/index.php/Copying_text_from_a_terminal "Copying text from a terminal").
 
 #### La vida es una calle de doble sentido
 
@@ -170,17 +177,13 @@ Los temas que busquen asesoramiento sobre recomendaciones de productos informát
 
 #### Temas antiguos/*«necro-bumping»*
 
-Ponga de su parte por mantener los foros ordenados. Retomar temas antiguos, o reabrir temas cerrados, *«necrobumping»*, está generalmente desaconsejado y no exento de problemas técnicos para los subforos, ya que, potencialmente, pueden crear información *«zombie»* inconexa; es decir, se combinan mensajes obsoletos que contienen datos que ya no son relevantes debido a la naturaleza *«rolling»* de Arch con mensajes más recientes que reflejan más las circunstancias actuales. Además, los hilos de soporte técnicos deben mantenerse concentrados, y se debe evitar que estén en múltiples páginas, si es posible.
+Ponga de su parte por mantener los foros ordenados. Como Arch está documentado en Wiki, publicar temas antiguos, o reabrir temas cerrados, *«necrobumping»*, está generalmente desaconsejado y no exento de problemas técnicos para los subforos, ya que, potencialmente, pueden crear información *«zombie»* inconexa; es decir, se combinan mensajes obsoletos que contienen datos que ya no son relevantes debido a la naturaleza *«rolling»* de Arch con mensajes más recientes que reflejan más las circunstancias actuales.
 
 **Reglas básicas**
 
-*   Si tiene una pregunta, inicie un nuevo hilo y enlace con el antiguo, si procede.
+*   Si tiene una pregunta, inicie un nuevo hilo y enlace con el antiguo, si procede. También puede reportar el hilo antiguo para que los moderadores puedan cerrarlo.
 *   Si tiene algo que añadir o juzga que su información está relacionada pero es más actual, inicie un nuevo hilo y enlácelo al antiguo, si se desea, pero evite la duplicación de esfuerzos publicando información que ya figura en la wiki de Arch.
-*   Si tiene una solución independiente de la versión o adecuada, el *«necrobumping»* puede ser apropiado.
-
-#### Las cuentas de los miembros del foro
-
-Por favor, limite su pertenencia al foro a una única cuenta. Tener varias cuentas es una utilización innecesaria de recursos. Además, puede ser interpretado como un comportamiento *trolling*.
+*   Si tiene una solución independiente de la versión o adecuada, el *«necrobumping»* podría ser apropiado si el hilo no tiene más de un año o dos.
 
 #### Evite las publicaciones vacías/*power-posting*
 
@@ -207,6 +210,8 @@ Publicar una sola palabra o mensaje inútil (*«bumping»* -golpear-) para atrae
 Los temas que estén bloqueados/cerrados, ya sea porque estén documentados en las bases o la Wiki, ya sea por que son incompatibles con la filosofía de Arch, se moverán a *«Dust/troll-bin»*. Después de un período de cinco días, el tema será borrado. El Moderador responsable marcará claramente el hilo como *«Binned»* o *«For deletion»*.
 
 ### [Listas de correo](https://lists.archlinux.org//listinfo/)
+
+Consulte el [estilo de publicación de la lista de correo](https://lists.archlinux.org/pipermail/arch-general/2014-August/036950.html).
 
 #### Publicar por encima
 

@@ -470,7 +470,11 @@ Configuration files are usually provided together with service files, and they a
 
 Configuration files may also be used to write values into certain files on boot. For example, if you used `/etc/rc.local` to disable wakeup from USB devices with `echo USBE > /proc/acpi/wakeup`, you may use the following tmpfile instead:
 
- `/etc/tmpfiles.d/disable-usb-wake.conf`  `w /proc/acpi/wakeup - - - - USBE` 
+ `/etc/tmpfiles.d/disable-usb-wake.conf` 
+```
+#    Path                  Mode UID  GID  Age Argument
+w    /proc/acpi/wakeup     -    -    -    -   USBE
+```
 
 See the [systemd-tmpfiles(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles.8) and [tmpfiles.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5) man pages for details.
 

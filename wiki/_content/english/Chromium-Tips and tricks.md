@@ -35,9 +35,7 @@ The following tips and tricks should work for both Chromium and Chrome unless ex
     *   [3.3 Canvas Fingerprinting](#Canvas_Fingerprinting)
     *   [3.4 Privacy extensions](#Privacy_extensions)
         *   [3.4.1 ScriptBlock](#ScriptBlock)
-        *   [3.4.2 ScriptSafe](#ScriptSafe)
-        *   [3.4.3 Vanilla Cookie Manager](#Vanilla_Cookie_Manager)
-        *   [3.4.4 TrackMeNot](#TrackMeNot)
+        *   [3.4.2 Vanilla Cookie Manager](#Vanilla_Cookie_Manager)
     *   [3.5 Do Not Track](#Do_Not_Track)
     *   [3.6 Force a password store](#Force_a_password_store)
 *   [4 Making flags persistent](#Making_flags_persistent)
@@ -307,51 +305,27 @@ To confirm this is working run [this test](https://panopticlick.eff.org) and mak
 
 ### Privacy extensions
 
-Popular privacy extensions for the [Firefox](/index.php/Firefox "Firefox") browser are typically also available for Chromium. See [Browser extensions#Privacy](/index.php/Browser_extensions#Privacy "Browser extensions").
+See [Browser extensions#Privacy](/index.php/Browser_extensions#Privacy "Browser extensions") for general advise and cross-browser privacy extensions.
 
 **Tip:** Installing too many extensions might take up much space in the toolbar. Those extensions which you wouldn't interact with anyway (e.g. [HTTPS Everywhere](https://chrome.google.com/webstore/detail/gcbommkclmclpchllfjekcdonpmejbdp)) can be hidden by right-clicking on the extension and choosing **Hide in Chromium menu**.
 
-**Tip:** It's not recommended to install all the privacy extensions. It can be counterproductive as they conflict with each other and doesn't increase security whatsoever.
-
-*   [HTTPS Everywhere](https://chrome.google.com/webstore/detail/gcbommkclmclpchllfjekcdonpmejbdp)
-*   [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en)
-*   [Adblock Plus](https://chrome.google.com/webstore/detail/adblock-plus/cfhdojbkjhnklbpkdaibdccddilifddb?hl=en)
-*   [Privacy Badger](https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp?hl=en)
-*   [Disconnect](https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo?hl=en)
-*   [Decentraleyes](https://chrome.google.com/webstore/detail/decentraleyes/ldpochfccmkkmhdbclfhpagapcfdljkj?hl=en)
-*   [AdNauseam](https://github.com/dhowe/AdNauseam/releases)
-
 #### ScriptBlock
 
-ScriptBlock is similar to NoScript, which is a Firefox add-on. Both extensions stop a website from executing any kind of JavaScript. However, ScriptBlock is a much simpler design thus it's easier to use. It blocks JavaScript by default. You can allow and temporary allow JavaScripts. Once you allow them to run, it lets all the JavaScripts run on that page so you might want ScriptBlock to work in conjunction with [Privacy Badger](https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp?hl=en).
+[ScriptBlock](https://github.com/compvid30/scriptblock) is similar to NoScript, which is a Firefox add-on. Both extensions stop a website from executing any kind of JavaScript. However, ScriptBlock is a much simpler design thus it's easier to use. It blocks JavaScript by default. You can allow and temporary allow JavaScripts. Once you allow them to run, it lets all the JavaScripts run on that page so you might want ScriptBlock to work in conjunction with [Privacy Badger](https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp?hl=en).
 
 It's also worth checking it's default whitelist, which might be permissive to you.
 
-Extension is available in the [Chrome Web Store](https://chrome.google.com/webstore/detail/scriptblock/hcdjknjpbnhdoabbngpmfekaecnpajba?hl=en-US)
-
-#### ScriptSafe
-
-ScriptSafe is a browser extension that gives users control of the web and more secure browsing while emphasizing simplicity and intuitiveness.
-
-**Note:** Due to the nature of this extension, this will break most sites! It is designed to learn over time with sites that you allow.
-
-Check it on [GitHub](https://github.com/andryou/scriptsafe) or in the [Chrome Web Store](https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf?hl=en).
+[Chrome Web Store](https://chrome.google.com/webstore/detail/scriptblock/hcdjknjpbnhdoabbngpmfekaecnpajba)
 
 #### Vanilla Cookie Manager
 
-A Cookie Whitelist Manager for Chrome that helps protect your privacy. Automatically removes unwanted cookies. Cookies can be used for authentication, storing your site preferences or anything else that can be saved as text data. Unfortunately they can also be used to track you.
+[Vanilla Cookie Manager](https://github.com/laktak/vanilla-chrome) is a cookie whitelist manager that automatically removes unwanted cookies. Cookies can be used for authentication, storing your site preferences or anything else that can be saved as text data. Unfortunately they can also be used to track you.
 
 You could turn off cookies completely or just shut off third-party cookies. But that would also keep out useful cookies that many web apps rely upon to work (like Google Mail or Calendar).
 
 With Vanilla you can select which cookies you want to keep on a whitelist. All unwanted cookies are deleted automatically (or manually if you prefer).
 
-Vanilla Cookie Manager on [GitHub](https://github.com/laktak/vanilla-chrome) or in the [Chrome Web Store](https://chrome.google.com/webstore/detail/vanilla-cookie-manager/gieohaicffldbmiilohhggbidhephnjj).
-
-#### TrackMeNot
-
-TrackMeNot periodically issues randomized search-queries to popular search engines and helps you hide your real ones in a cloud of 'ghost' queries.
-
-Extension is available in the [Chrome Web Store](https://chrome.google.com/webstore/detail/trackmenot/cgllkjmdafllcidaehjejjhpfkmanmka?hl=en-US)
+[Chrome Web Store](https://chrome.google.com/webstore/detail/vanilla-cookie-manager/gieohaicffldbmiilohhggbidhephnjj)
 
 ### Do Not Track
 

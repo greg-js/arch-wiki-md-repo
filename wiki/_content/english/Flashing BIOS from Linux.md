@@ -5,7 +5,7 @@ This article aims on providing information on flashing your system BIOS under Li
 **Note:**
 
 *   HP users may download Windows BIOS updater from HP website, extract *.exe file and locate ISO image for burning to a CD. Using CD, upgrade is possible from BIOS menu using 'Firmware Upgrade' without using below tools. See [this](https://h30434.www3.hp.com/t5/Notebook-Operating-System-and-Recovery/How-to-update-BIOS-on-Linux/td-p/4869835) thread for details.
-*   For users with Dell computers, Dell recommends Linux users flash their BIOS following information located [here](https://www.dell.com/support/article/us/en/19/sln171755/updating-the-dell-bios-in-linux-and-ubuntu-environments).
+*   For users with Dell computers, Dell recommends Linux users flash their BIOS following information located [here](https://www.dell.com/support/article/us/en/19/sln171755/updating-the-dell-bios-in-linux-and-ubuntu-environments) (in short, put the .EXE on a USB stick and use the F12 boot menu to access the firmware's flash utility).
 
 ## Contents
 

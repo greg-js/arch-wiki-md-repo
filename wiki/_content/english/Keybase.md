@@ -16,20 +16,21 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Keybase "wikipedia:Keybase"):
 
 ## Installation
 
-Keybase is provided by the [keybase](https://www.archlinux.org/packages/?name=keybase) package, however this does not yet include the GUI or the KBFS filesystem. If you want the GUI and KBFS filesystem install [keybase-bin](https://aur.archlinux.org/packages/keybase-bin/). See also the [install instructions on keybase.io.](https://keybase.io/docs/the_app/install_linux)
-
-After installing or updating, run:
-
-```
-$ run_keybase
-
-```
+Keybase is provided by the [keybase](https://www.archlinux.org/packages/?name=keybase) package. The KBFS filesystem and Keybase GUI can be additionally installed with the [kbfs](https://www.archlinux.org/packages/?name=kbfs) and [keybase-gui](https://www.archlinux.org/packages/?name=keybase-gui) packages. Alternatively, [keybase-bin](https://aur.archlinux.org/packages/keybase-bin/) is available on the AUR which includes everything in a single package. See also the [install instructions on keybase.io](https://keybase.io/docs/the_app/install_linux).
 
 ## Signup / Login
 
 If you installed the GUI via [keybase-bin](https://aur.archlinux.org/packages/keybase-bin/), it will walk you through signup. These instructions are for the CLI-only [keybase](https://www.archlinux.org/packages/?name=keybase) package.
 
-**Note:** The signup and login commands will fail with keybase-1.0.41 because the `keybase.service` does not ship with the package (see [#56831](https://bugs.archlinux.org/task/56831)). Run the following command in another terminal:
+Keybase requires its service to be running so you can interact with it. First start the keybase service by starting the included systemd service as your user (enable this service to run on boot):
+
+```
+ $ systemctl start --user keybase
+
+```
+
+Or alternatively, run the keybase service manually:
+
 ```
 $ keybase service
 
@@ -62,11 +63,27 @@ This will interactively generate a key pair and securely upload the keys.
 
 ## Keybase Filesystem (KBFS)
 
-KBFS uses [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace") to mount the remote cryptographic filesystem via the [systemd](/index.php/Systemd "Systemd") unit `keybase.mount`.
+KBFS uses [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace") to mount the remote cryptographic filesystem. It comes with the [keybase-bin](https://aur.archlinux.org/packages/keybase-bin/) package, or can be installed separately with [kbfs](https://www.archlinux.org/packages/?name=kbfs).
 
-Keybase allows users to store up to 10 GB of files in a cloud storage called the Keybase filesystem. The filesystem is divided into three parts: public files, private files, and team files. The filesystem is mounted to `/keybase`.
+Keybase allows users to store up to 250 GB of files in a cloud storage called the Keybase filesystem. The filesystem is divided into three parts: public files, private files, and team files. The filesystem is mounted to `/keybase` by default if installed through [keybase-bin](https://aur.archlinux.org/packages/keybase-bin/).
 
-All files under `/keybase/public` are automatically signed by the client. All files under `/keybase/private` are both encrypted and signed before being uploaded, making them end-to-end encrypted.
+To configure kbfs if installed via the [kbfs](https://www.archlinux.org/packages/?name=kbfs) package, first ensure the keybase service is running (see instructions above). Then configure the desired mountpoint for the KBFS:
+
+```
+ $ keybase config set mountdir /path/to/kbfs
+
+```
+
+Now the `kbfs` service can be started:
+
+```
+ $ systemctl start --user kbfs
+
+```
+
+Enable this service to have the kbfs mounted on boot.
+
+All files under `/path/to/kbfs/public` are automatically signed by the client. All files under `/path/to/kbfs/private` are both encrypted and signed before being uploaded, making them end-to-end encrypted. See the [KBFS docs on keybase.io](https://keybase.io/docs/kbfs) for more information and usage instructions.
 
 ## See also
 

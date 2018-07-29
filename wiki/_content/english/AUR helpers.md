@@ -21,9 +21,9 @@ Since AUR helpers are unsupported, they are not present in the [official reposit
 
 The columns have the following meaning:
 
-*   *Secure*: does not [source](/index.php/Source "Source") the PKGBUILD at all by default; or, alerts the user and offers the opportunity to inspect the PKGBUILD manually before it is sourced. Some helpers are known to source PKGBUILDs before the user can inspect them, **allowing malicious code to be executed**. *Optional* means that there is a command line flag or configuration option to prevent the automatic sourcing before viewing.
+*   *File review*: does not [source](/index.php/Source "Source") the PKGBUILD at all by default; or, alerts the user and offers the opportunity to inspect the PKGBUILD manually before it is sourced. Some helpers are known to source PKGBUILDs before the user can inspect them, **allowing malicious code to be executed**. *Optional* means that there is a command line flag or configuration option to prevent the automatic sourcing before viewing.
 *   *Clean build*: does not export new variables that can prevent a successful build process.
-*   *Native pacman*: when used as replacement for [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) commands such as `pacman -Syu`, the following are obeyed *by default*: [[1]](https://wiki.archlinux.org/index.php?title=Talk:AUR_helpers&oldid=515160#Add_.22pacman_wrap.22_column)
+*   *Pacman wrapper*: when used as replacement for [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) commands such as `pacman -Syu`, the following are obeyed *by default*: [[1]](https://wiki.archlinux.org/index.php?title=Talk:AUR_helpers&oldid=515160#Add_.22pacman_wrap.22_column)
 
 	– do not separate commands, for example `pacman -Syu` is not split to `pacman -Sy` and `pacman -S *packages*`;
 
@@ -62,7 +62,7 @@ The columns have the following meaning:
 
 ### Active
 
-| Name | Written In | Native pacman | Secure | Clean build | Reliable parser | Reliable solver | Split packages | Git clone | Diff view | Batch interaction | Shell completion | Specificity |
+| Name | Written In | Pacman wrapper | File review | Clean build | Reliable parser | Reliable solver | Split packages | Git clone | Diff view | Batch interaction | Shell completion | Specificity |
 | [aurman](https://aur.archlinux.org/packages/aurman/) | Python | Yes | Yes | Yes | Yes | [Yes](https://github.com/polygamma/aurman/wiki/Description-of-the-aurman-dependency-solving) | Yes | Yes | Yes | 1, [2*, 3*](https://github.com/polygamma/aurman#question-6) | bash, fish | fetch PGP keys, sort by votes/popularity, print news |
 | [aurutils](https://aur.archlinux.org/packages/aurutils/) | Bash/C | – | Yes | Yes | Yes | Yes | Yes | Yes | Yes | 1 | zsh | [vifm](/index.php/Vifm "Vifm"), [local repository](/index.php/Local_repository "Local repository"), [package signing](/index.php/Package_signing "Package signing"), [clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot") support, sort by votes/popularity |
 | [yay](https://aur.archlinux.org/packages/yay/) | Go | Yes | Yes | Yes | Yes | Yes | Yes | [Yes](https://github.com/Jguer/yay/pull/297) | [Yes](https://github.com/Jguer/yay/pull/447) | 1, [2*](https://github.com/Jguer/yay/commit/3bdb5343218d99d40f8a449b887348611f6bdbfc), [3*](https://github.com/Jguer/yay/commit/ea5a94e0f8bb5f76879099e6d319c0c0102231c2) | bash, fish, zsh | sort by votes, fetch PGP keys, [prompt architecture](https://github.com/Jguer/yay/commit/4bcd3a6297052714e91e3f886602ce5c12d15786) |
@@ -78,7 +78,7 @@ The columns have the following meaning:
 
 ### Search-only
 
-| Name | Written In | Secure | Reliable parser | Reliable solver | Git clone | Shell completion | Specificity |
+| Name | Written In | File review | Reliable parser | Reliable solver | Git clone | Shell completion | Specificity |
 | [pbget](https://aur.archlinux.org/packages/pbget/) | Python | Yes | Yes | – | Yes | – | – |
 | [yaah](https://aur.archlinux.org/packages/yaah/) | Bash | Yes | Yes | – | Optional | bash | – |
 | [auracle-git](https://aur.archlinux.org/packages/auracle-git/) | C++ | Yes | Yes | Yes | No | – | print build order |
@@ -90,14 +90,14 @@ The columns have the following meaning:
 
 This table describes projects which either are discontinued by their authors, or have issues on *Security*, *Clean build* or *Native pacman* (see [#Build_and_search](#Build_and_search)) unaddressed in the last 6 months.
 
-| Name | Written In | Native pacman | Secure | Clean build | Reliable parser | Reliable solver | Split packages | Git clone | Diff view | Batch interaction | Shell completion | Specificity |
+| Name | Written In | Pacman wrapper | File review | Clean build | Reliable parser | Reliable solver | Split packages | Git clone | Diff view | Batch interaction | Shell completion | Specificity |
 | [aurel](https://aur.archlinux.org/packages/aurel/) [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1522459#p1522459) | Emacs Lisp | – | Yes | – | – | – | – | No | – | – | – | Emacs integration, no automatic builds |
 | [pacaur](https://aur.archlinux.org/packages/pacaur/) [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1755144#p1755144) | Bash/C | [uses](https://github.com/rmarquis/pacaur/commit/d8f49188452785fb28afc017baadd01d9e24ba21) `-Ud` | Yes | Yes | Yes | Yes | Yes | Yes | Yes | 1, 3 | bash, zsh | multilingual, sort by votes/popularity |
 | [wrapaur](https://aur.archlinux.org/packages/wrapaur/) | Bash | Yes | Yes | Yes | No | No | No | Yes | No | – | – | Mirror updates, print news and AUR comments |
 | [spinach](https://aur.archlinux.org/packages/spinach/) [[6]](https://github.com/floft/spinach) | Bash | – | [Yes](https://github.com/floft/spinach/commit/545574700812eb369b9537370f085ec9e5c3f01a) | Yes | No | No | No | No | No | – | – | – |
 | [burgaur](https://aur.archlinux.org/packages/burgaur/) [[7]](https://github.com/m45t3r/burgaur/issues/7#issuecomment-365599675) | Python/C | – | Optional | Yes | No | No | No | No | No | – | – | Wrapper for *cower* |
 | [packer](https://aur.archlinux.org/packages/packer/) | Bash | Yes | No | Yes | No | No | No | No | No | – | – | – |
-| [yaourt](https://aur.archlinux.org/packages/yaourt/) | Bash/C | splits `-Syu`, [modifies db](https://github.com/archlinuxfr/yaourt/blob/5a82dfe/src/lib/alpm_backup.sh#L38) | No [[8]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) [[9]](https://github.com/archlinuxfr/yaourt/blob/d9790e29cd7194535c793f51d185b7130a396916/src/lib/pkgbuild.sh.in#L415-L438) | [No](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | [No](https://github.com/archlinuxfr/yaourt/issues/186) | [No](https://github.com/archlinuxfr/yaourt/issues/85) | Optional | Optional | 2 | bash, zsh, fish | Backup, ABS support, print AUR comments, multilingual |
+| [yaourt](https://aur.archlinux.org/packages/yaourt/) | Bash/C | splits `-Syu`, [modifies db](https://github.com/archlinuxfr/yaourt/blob/5a82dfe/src/lib/alpm_backup.sh#L38) | No [[8]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) [[9]](https://github.com/archlinuxfr/yaourt/blob/d9790e29cd7194535c793f51d185b7130a396916/src/lib/pkgbuild.sh.in#L415-L438) | [No](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | [No](https://github.com/archlinuxfr/yaourt/issues/186) | [No](https://github.com/archlinuxfr/yaourt/issues/85) | Optional | Optional | 2 | bash, zsh, fish | Backup, ABS support, print AUR comments, multilingual |
 
 ## Graphical
 

@@ -426,7 +426,7 @@ Then [start/enable](/index.php/Start/enable "Start/enable") the `postgrey` servi
 
 #### Configuration
 
-Configuration is done via editing the `greylist.service` file. First copy it over to edit it.
+Configuration is done via editing the `postgrey.service` file. First copy it over to edit it.
 
 ```
 # cp /usr/lib/systemd/system/postgrey.service /etc/systemd/system/
@@ -846,7 +846,7 @@ policy-spf  unix  -       n       n       -       0       spawn
      user=nobody argv=/usr/bin/policyd-spf
 ```
 
-Lastly you need to add the policyd to the `smtpd_recipient_restrictions`. To minimize load put it to the end of the restrictions:
+Lastly you need to add the policyd to the `smtpd_recipient_restrictions`. To minimize load put it to the end of the restrictions but above any `reject_rbl_client` DNSBL line:
 
  `/etc/postfix/main.cf` 
 ```

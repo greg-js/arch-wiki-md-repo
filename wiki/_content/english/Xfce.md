@@ -7,7 +7,7 @@ Related articles
 *   [LXDE](/index.php/LXDE "LXDE")
 *   [GNOME](/index.php/GNOME "GNOME")
 
-[Xfce](http://www.xfce.org) is a lightweight and modular [desktop environment](/index.php/Desktop_environment "Desktop environment") currently based on GTK+ 2\. To provide a complete user experience, it includes a window manager, a file manager, desktop and panel.
+[Xfce](http://www.xfce.org) is a lightweight and modular [desktop environment](/index.php/Desktop_environment "Desktop environment") currently based on both GTK+ 2 and GTK+ 3\. To provide a complete user experience, it includes a window manager, a file manager, desktop and panel.
 
 ## Contents
 
@@ -30,8 +30,9 @@ Related articles
         *   [3.3.5 Use a different window manager](#Use_a_different_window_manager)
     *   [3.4 Theming](#Theming)
     *   [3.5 Sound](#Sound)
-        *   [3.5.1 Keyboard volume buttons](#Keyboard_volume_buttons)
-            *   [3.5.1.1 Shortcuts](#Shortcuts)
+        *   [3.5.1 Sound themes](#Sound_themes)
+        *   [3.5.2 Keyboard volume buttons](#Keyboard_volume_buttons)
+            *   [3.5.2.1 Shortcuts](#Shortcuts)
     *   [3.6 Keyboard Shortcuts](#Keyboard_Shortcuts)
     *   [3.7 Polkit Authentication Agent](#Polkit_Authentication_Agent)
     *   [3.8 Display blanking](#Display_blanking)
@@ -340,6 +341,20 @@ To achieve a uniform look for all applications, see [Uniform look for Qt and GTK
 See also [Cursor themes](/index.php/Cursor_themes "Cursor themes"), [Icons](/index.php/Icons "Icons"), and [Font configuration](/index.php/Font_configuration "Font configuration").
 
 ### Sound
+
+#### Sound themes
+
+XFCE4 supports [freedesktop system sounds](https://www.freedesktop.org/wiki/Specifications/sound-theme-spec/), but it does not configured out of the box.
+
+To enable sound theme:
+
+1.  Install [libcanberra](https://www.archlinux.org/packages/?name=libcanberra) and [libcanberra-pulse](https://www.archlinux.org/packages/?name=libcanberra-pulse) for [PulseAudio](/index.php/PulseAudio "PulseAudio") support;
+2.  "canberra-gtk-module" should be in the GTK_MODULES environment variable (re-login may be required);
+3.  Check "Enable event sounds" in Settings Manager → Appearance → Settings tab;
+4.  In the Settings Editor set "xsettings/Net/SoundThemeName" to a sound theme located in `/usr/share/sounds/`;
+5.  Turn on "System Sounds" in audio mixer (e.g. pavucontrol).
+
+[sound-theme-freedesktop](https://www.archlinux.org/packages/?name=sound-theme-freedesktop) provides a compatible sound theme, but it lacks many required events. Better choice is [sound-theme-smooth](https://aur.archlinux.org/packages/sound-theme-smooth/) (SoundThemeName should be "Smooth").
 
 #### Keyboard volume buttons
 

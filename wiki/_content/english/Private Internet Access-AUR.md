@@ -41,7 +41,7 @@ If there are any issues with connectivity and you are running [connman](https://
 
 **Note:** This is a limitation of [OpenVPN](/index.php/OpenVPN "OpenVPN"). See PIA'S Support Center: [How can I make OpenVPN remember my username and password?](https://helpdesk.privateinternetaccess.com/hc/en-us/articles/219458787-How-can-I-make-OpenVPN-remember-my-username-and-password-)
 
-Enabling auto-login allows a user to connect to the VPN service without having type any passwords on the command line (needed when using [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)). To set this up, you must do the following:
+Enabling auto-login allows a user to connect to the VPN service without having to type any passwords on the command line (needed when using [networkmanager](https://www.archlinux.org/packages/?name=networkmanager)). To set this up, you must do the following:
 
 *   Create `/etc/private-internet-access/login.conf`
 *   Add your username and password in the file. Make sure LINE 1 is your username and LINE 2 is your password. Do not add any other text to the file or it will not work (this is a limitation of [OpenVPN](/index.php/OpenVPN "OpenVPN")):

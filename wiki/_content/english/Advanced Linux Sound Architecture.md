@@ -115,6 +115,8 @@ Unmuting the sound card's master volume can be done by using *amixer*:
 
 ```
 $ amixer sset Master unmute
+$ amixer sset Speaker unmute
+$ amixer sset Headphone unmute
 
 ```
 
