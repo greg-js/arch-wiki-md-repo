@@ -35,7 +35,7 @@ For more information, see the [Trusted User Bylaws](https://aur.archlinux.org/tr
 ## Active Trusted Users
 
 | Nick | Name | E-Mail |
-| [alad](https://aur.archlinux.org/packages/?K=Alad&SeB=m) | [Alad Wenter](/index.php/User:Alad "User:Alad") | nynq ng znvyobk qbg bet (rot13) |
+| [alad](https://aur.archlinux.org/packages/?K=Alad&SeB=m) | [Alad Wenter](/index.php/User:Alad "User:Alad") | alad@archlinux.org |
 | [alucryd](https://aur.archlinux.org/packages.php?K=alucryd&SeB=m) | Maxime Gauduin | alucryd@archlinux.org |
 | [Ambrevar](https://aur.archlinux.org/packages.php?K=Ambrevar&SeB=m) | [Pierre Neidhardt](/index.php/User:Ambrevar "User:Ambrevar") | ambrevar@gmail.com |
 | [anatolik](https://aur.archlinux.org/packages.php?K=anatolik&SeB=m) | Anatol Pomozov | anatol dot pomozov + arch at gmail |

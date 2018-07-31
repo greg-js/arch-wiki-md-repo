@@ -411,6 +411,8 @@ Btrfs 提供对 RAID 一类的 [多设备文件系统](#Multi-device_file_system
 
 ```
 
+`*source*`为要创建快照的对象，`[*dest*/]*name*`为快照安放路径。
+
 加入 `-r` 参数可以创建一个只读快照. 为只读快照创建一个快照可以获得一个只读快照的可写入版本.
 
 **Note:** 快照不是递归包含的，这意味着子卷内的子卷在快照里是空目录。
@@ -443,7 +445,7 @@ Btrfs 提供对 RAID 一类的 [多设备文件系统](#Multi-device_file_system
 
 ### 加密
 
-Btrfs 目前还没有内建的加密支持，但可以在运行`mkfs.btrfs`前加密分区，参阅[Dm-crypt with LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS").
+Btrfs 目前还没有内建的加密支持，但未来[可能](https://lwn.net/Articles/700487/)加入此功能。可以在运行`mkfs.btrfs`前加密分区，参阅[Dm-crypt with LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS").
 
 (如果已经创建了文件系统，可以使用[EncFS](/index.php/EncFS "EncFS")或[TrueCrypt](/index.php/TrueCrypt "TrueCrypt"),但是这样会无法使用 btrfs 的一些功能。)
 

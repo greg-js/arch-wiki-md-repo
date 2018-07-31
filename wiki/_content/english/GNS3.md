@@ -1,4 +1,4 @@
-[GNS3](https://www.gns3.com/) is a **G**raphical **N**etwork **S**imulator. It allows you to simulate a network on your computer.
+[Graphical Network Simulator](https://www.gns3.com/) (GNS3) allows you to simulate a network on your computer.
 
 From the webpage:
 

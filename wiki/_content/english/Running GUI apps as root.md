@@ -1,6 +1,6 @@
 **Warning:** All of the following methods have security implications that users should be aware of. As put by Emmanuele Bassi, a GNOME developer: "*there are no *real*, substantiated, technological reasons why anybody should run a GUI application as root. By running GUI applications as an admin user you're literally running millions of lines of code that have not been audited properly to run under elevated privileges; you're also running code that will touch files inside your $HOME and may change their ownership on the file system; connect, via IPC, to even more running code, etc. You're opening up a massive, gaping security hole [...].*"[[1]](https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5)
 
-Avoid running graphical applications as root if possible, see [#Circumvent running graphical apps as root](#Circumvent_running_graphical_apps_as_root).
+Avoid running graphical applications as [root](/index.php/Root "Root") if possible, see [#Circumvent running graphical apps as root](#Circumvent_running_graphical_apps_as_root).
 
 ## Contents
 

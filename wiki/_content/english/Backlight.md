@@ -210,7 +210,7 @@ Brightness can be set using the [xorg-xbacklight](https://www.archlinux.org/pack
 
 **Note:**
 
-*   xbacklight only works with intel. Radeon does not support the RandR backlight property.
+*   xbacklight only works with [Intel](/index.php/Intel "Intel"). [Radeon](/index.php/Radeon "Radeon") does not support the RandR backlight property.
 *   xbacklight currently does not work with the modesetting driver [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=96572).
 
 To set brightness to 50% of maximum:
@@ -228,7 +228,7 @@ $ xbacklight -dec 10
 
 ```
 
-Gamma can be set using either the [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr) or [xorg-xgamma](https://www.archlinux.org/packages/?name=xorg-xgamma) package. The following commands create the same effect.
+Gamma can be set using either the [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr) or [xorg-xgamma](https://www.archlinux.org/packages/?name=xorg-xgamma) package. The following commands create the same effect:
 
 ```
 $ xrandr --output LVDS1 --gamma 1.0:1.0:1.0
@@ -238,20 +238,18 @@ $ xgamma -rgamma 1 -ggamma 1 -bgamma 1
 
 **Tip:** These commands can be bound to keyboard keys as described in [Xorg keybinding](/index.php/Xorg_keybinding "Xorg keybinding").
 
-If you get the "No outputs have backlight property" error, it is because xrandr/xbacklight does not choose the right directory in `/sys/class/backlight`. You can specify the directory by setting the `Backlight` option of the device section in xorg.conf. For instance, if the name of the directory is `intel_backlight`, the device section can be configured as follows:
+If you get the "No outputs have backlight property" error, it is because xrandr/xbacklight does not choose the right directory in `/sys/class/backlight`. You can specify the directory by setting the `Backlight` option of the device section in `/etc/X11/xorg.conf.d/20-*video*.conf`. For instance, if the name of the directory is `intel_backlight` and using the [Intel](/index.php/Intel "Intel") driver, the device section may be configured as follows:
 
- `/etc/X11/xorg.conf` 
+ `/etc/X11/xorg.conf.d/20-intel.conf` 
 ```
 Section "Device"
-    Identifier  "Card0"
+    Identifier  "Intel Graphics" 
     Driver      "intel"
     Option      "Backlight"  "intel_backlight"
 EndSection
 ```
 
-Note: You'd need to install [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) to reference the intel driver.
-
-See [FS#27677](https://bugs.archlinux.org/task/27677) and [[2]](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741) for details.
+See [FS#27677](https://bugs.archlinux.org/task/27677) and [https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741) for details.
 
 ### setpci
 

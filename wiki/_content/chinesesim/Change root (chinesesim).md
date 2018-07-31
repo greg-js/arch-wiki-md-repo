@@ -34,7 +34,7 @@
 *   另一个 linux 环境，例如 liveCD、USB 闪存介质或者一个已经安装的另一个 linux 发行版。
 *   匹配的架构，chroot 前后的环境架构要一致(例如，都是 i686 或 x86_64)。可以用以下命令查看当前环境的架构 `uname -m` 
 *   提前加载 chroot 环境需要的内核模块
-*   如果需要 swap， chroot 前先启用 swap (`swapon /dev/sdxY`
+*   如果需要 swap， chroot 前先启用 swap （`swapon /dev/sdxY`）
 *   如果需要网络，chroot 之前先建立好网络连接。
 
 ## 用法
@@ -160,7 +160,7 @@ chroot 到新环境中并启用指定 shell
 如果出现 `/mnt`(或其它任何分区) is busy, 这可能意味着：
 
 *   chroot环境中残留了一个运行的程序或者还有分区没有被卸载，退出程序并用 `mount` 查找未卸载的分区。
-*   如果你仍然不能卸载分区，使用`--force`选项： `# umount -f /mnt` }}， 或使用 `umount --lazy` 直接释放挂载。这是，请立即重启系统以避免不一致的状态导致冲突。
+*   如果你仍然不能卸载分区，使用`--force`选项： `# umount -f /mnt` ， 或使用 `umount --lazy` 直接释放挂载。这是，请立即重启系统以避免不一致的状态导致冲突。
 
 ## 在 chroot 中运行图形程序
 

@@ -66,11 +66,11 @@ Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia
 
 ## Prerequisites
 
-Nextcloud requires several components:
+Nextcloud requires several components:[[1]](https://docs.nextcloud.com/server/13/admin_manual/installation/system_requirements.html#server)
 
 *   A web server: [Apache](/index.php/Apache "Apache") or [nginx](/index.php/Nginx "Nginx")
-*   A database: [MariaDB](/index.php/MariaDB "MariaDB")/MySQL or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")
-*   [PHP](/index.php/PHP "PHP") with [additional modules](#PHP_setup).
+*   A database: [MariaDB](/index.php/MariaDB "MariaDB")/MySQL, [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") or [Oracle](/index.php/Oracle "Oracle")
+*   [PHP](/index.php/PHP "PHP") with [additional modules](#PHP_setup)
 
 These will be configured in [#Setup](#Setup).
 
@@ -135,7 +135,7 @@ mysql> GRANT ALL PRIVILEGES ON `**nextcloud**`.* TO `**nextcloud**`@`localhost`;
 mysql> \q
 ```
 
-**Note:** Create or convert the database with MySQL 4-byte support in order to use Emojis (textbased smilies) on your Nextcloud server [[1]](https://docs.nextcloud.com/server/13/admin_manual/configuration_database/mysql_4byte_support.html).
+**Note:** Create or convert the database with MySQL 4-byte support in order to use Emojis (textbased smilies) on your Nextcloud server [[2]](https://docs.nextcloud.com/server/13/admin_manual/configuration_database/mysql_4byte_support.html).
 
 #### PostgreSQL
 
@@ -184,7 +184,7 @@ Now restart Apache (`httpd.service`).
 
 ##### WebDAV
 
-Nextcloud comes with its own [WebDAV](/index.php/WebDAV "WebDAV") implementation enabled, which may conflict with the one shipped with Apache. If you have enabled WebDAV in Apache (not enabled by default), disable the modules `mod_dav` and `mod_dav_fs` in `/etc/httpd/conf/httpd.conf`. See [[2]](https://forum.owncloud.org/viewtopic.php?f=17&t=7240) for details.
+Nextcloud comes with its own [WebDAV](/index.php/WebDAV "WebDAV") implementation enabled, which may conflict with the one shipped with Apache. If you have enabled WebDAV in Apache (not enabled by default), disable the modules `mod_dav` and `mod_dav_fs` in `/etc/httpd/conf/httpd.conf`. See [[3]](https://forum.owncloud.org/viewtopic.php?f=17&t=7240) for details.
 
 #### Nginx
 
@@ -597,7 +597,7 @@ Then import `CA.der.crt` to your Android device:
 
 Put the `CA.der.crt` file onto the sdcard of your Android device (usually to the internal one, e.g. save from a mail attachment). It should be in the root directory. Go to *Settings > Security > Credential storage* and select *Install from device storage*. The `.crt` file will be detected and you will be prompted to enter a certificate name. After importing the certificate, you will find it in *Settings > Security > Credential storage > Trusted credentials > User*.
 
-Thanks to: [[3]](http://www.leftbrainthings.com/2013/10/13/creating-and-importing-self-signed-certificate-to-android-device/)
+Thanks to: [[4]](http://www.leftbrainthings.com/2013/10/13/creating-and-importing-self-signed-certificate-to-android-device/)
 
 Another way is to import the certificate directly from your server via [CAdroid](https://play.google.com/store/apps/details?id=at.bitfire.cadroid) and follow the instructions there.
 
@@ -653,7 +653,7 @@ This should delete the relevant configuration from the table and add it again.
 
 ### GUI sync client fails to connect
 
-If using HTTP basic authentication, make sure to exclude "status.php", which must be publicly accessible. [[4]](https://github.com/owncloud/mirall/issues/734)
+If using HTTP basic authentication, make sure to exclude "status.php", which must be publicly accessible. [[5]](https://github.com/owncloud/mirall/issues/734)
 
 ### Some files upload, but give an error 'Integrity constraint violation...'
 
@@ -761,7 +761,7 @@ FolderSync needs access to `/owncloud/remote.php/webdav`, so you could create an
 
 ### Nextcloud 13 : "Unable to load dynamic library 'mcrypt.so"
 
-Starting with php 7.2 the extension mcrypt was removed.[[5]](https://wiki.php.net/rfc/mcrypt-viking-funeral)
+Starting with php 7.2 the extension mcrypt was removed.[[6]](https://wiki.php.net/rfc/mcrypt-viking-funeral)
 
 To fix the error about mcrypt in Nextcloud logs, a version of this extension compatible with php 7.2 can be installed via PECL.
 

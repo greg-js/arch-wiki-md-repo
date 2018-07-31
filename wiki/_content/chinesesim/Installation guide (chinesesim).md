@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Installation_guide](/index.php/Installation_guide "Installation guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-06-06，点击[这里](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=523580)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Installation_guide](/index.php/Installation_guide "Installation guide") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-07-29，点击[这里](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=529413)可以查看翻译后英文页面的改动。
 
 本文将指导如何用官方安装镜像启动的 Live 系统安装 [Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")。建议在安装前阅读 [FAQ](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")。对于本文中使用的惯用术语，请参阅 [Help:Reading](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:Reading (简体中文)").请注意, 代码段可能会有占位符(格式是 `*italics*`),你可能需要手动去掉它们.
 
@@ -23,7 +23,7 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
     *   [3.1 Fstab](#Fstab)
     *   [3.2 Chroot](#Chroot)
     *   [3.3 时区](#.E6.97.B6.E5.8C.BA)
-    *   [3.4 Locale](#Locale)
+    *   [3.4 本地化](#.E6.9C.AC.E5.9C.B0.E5.8C.96)
     *   [3.5 主机名](#.E4.B8.BB.E6.9C.BA.E5.90.8D)
     *   [3.6 网络配置](#.E7.BD.91.E7.BB.9C.E9.85.8D.E7.BD.AE)
     *   [3.7 Initramfs](#Initramfs)
@@ -175,7 +175,7 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 ```
 
-这个组并没有包含全部 live 环境中的程序，有些需要额外安装，例如[btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs)。[packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both) 页面包含了它们的差异。
+这个组并没有包含全部 live 环境中的程序，有些需要额外安装，例如[btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs)。[packages.x86_64](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) 页面包含了它们的差异。
 
 如果你还想安装其他软件包组比如[base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), 请将他们的名字添加到*pacstrap*后,并用空格隔开.你也可以在[#Chroot](#Chroot)之后使用[pacman](/index.php/Pacman "Pacman")手动安装软件包或组.
 
@@ -231,7 +231,7 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 这个命令假定硬件时间已经被设置为[UTC时间](https://en.wikipedia.org/wiki/UTC "wikipedia:UTC"). 详细信息请查看[Time#Time standard](/index.php/Time#Time_standard "Time").
 
-### Locale
+### 本地化
 
 本地化的程序与库若要本地化文本，都依赖 [Locale](/index.php/Locale "Locale"), 后者明确规定地域、货币、时区日期的格式、字符排列方式和其他本地化标准等等。在下面两个文件设置：`locale.gen` 与 `locale.conf`.
 

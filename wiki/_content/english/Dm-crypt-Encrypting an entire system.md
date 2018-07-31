@@ -150,12 +150,12 @@ This scenario also employs USB devices for `/boot` and key storage, which may be
 | [#Encrypted boot partition (GRUB)](#Encrypted_boot_partition_.28GRUB.29)
 
 shows how to encrypt the boot partition using the GRUB bootloader.
-This scenario also employs an ESP partition, which may be applied to the other scenarios.
+This scenario also employs an EFI system partition, which may be applied to the other scenarios.
 
  | 
 
 *   Same advantages as the scenario the installation is based on (LVM on LUKS for this particular example)
-*   Less data is left unencrypted, i.e. the boot loader and the ESP partition, if present
+*   Less data is left unencrypted, i.e. the boot loader and the EFI system partition, if present
 
  | 
 
@@ -907,15 +907,15 @@ This setup utilizes the same partition layout and configuration for the system's
 The disk layout in this example is:
 
 ```
-+---------------------+---------------------+----------------+----------------------+----------------------+----------------------+
-| BIOS boot partition | ESP partition       | Boot partition | Logical volume 1     | Logical volume 2     | Logical volume 3     |
-|                     |                     |                |                      |                      |                      |
-|                     | /boot/efi           | /boot          | /root                | [SWAP]               | /home                |
-|                     |                     |                |                      |                      |                      |
-|                     |                     |                | /dev/MyVolGroup/root | /dev/MyVolGroup/swap | /dev/MyVolGroup/home |
-| /dev/sda1           | /dev/sda2           | /dev/sda3      +----------------------+----------------------+----------------------+
-| **un**encrypted         | **un**encrypted         | LUKS encrypted | /dev/sda4 encrypted using LVM on LUKS                              |
-+---------------------+---------------------+----------------+--------------------------------------------------------------------+
++---------------------+----------------------+----------------+----------------------+----------------------+----------------------+
+| BIOS boot partition | EFI system partition | Boot partition | Logical volume 1     | Logical volume 2     | Logical volume 3     |
+|                     |                      |                |                      |                      |                      |
+|                     | /boot/efi            | /boot          | /root                | [SWAP]               | /home                |
+|                     |                      |                |                      |                      |                      |
+|                     |                      |                | /dev/MyVolGroup/root | /dev/MyVolGroup/swap | /dev/MyVolGroup/home |
+| /dev/sda1           | /dev/sda2            | /dev/sda3      +----------------------+----------------------+----------------------+
+| **un**encrypted         | **un**encrypted          | LUKS encrypted | /dev/sda4 encrypted using LVM on LUKS                              |
++---------------------+----------------------+----------------+--------------------------------------------------------------------+
 
 ```
 
@@ -1138,13 +1138,13 @@ Additionally an optional plain-encrypted [swap](/index.php/Swap "Swap") partitio
 **Warning:** Do not use a [swap file](/index.php/Swap_file "Swap file") instead of a separate partition, because this may result in data loss. See [Btrfs#Swap file](/index.php/Btrfs#Swap_file "Btrfs").
 
 ```
-+--------------------------+--------------------------+--------------------------+
-|ESP                       |System partition          |Swap partition            |
-|**un**encrypted               |LUKS-encrypted            |plain-encrypted           |
-|                          |                          |                          |
-|/boot/efi                 |/                         |[SWAP]                    |
-|/dev/sda1                 |/dev/sda2                 |/dev/sda3                 |
-|--------------------------+--------------------------+--------------------------+
++----------------------+----------------------+----------------------+
+| EFI system partition | System partition     | Swap partition       |
+| **un**encrypted          | LUKS-encrypted       | plain-encrypted      |
+|                      |                      |                      |
+| /boot/efi            | /                    | [SWAP]               |
+| /dev/sda1            | /dev/sda2            | /dev/sda3            |
+|----------------------+----------------------+----------------------+
 
 ```
 

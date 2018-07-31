@@ -1,4 +1,4 @@
-This article explains how to create a transparent Squid proxy server using mogrify to flip the images upside down.
+This article explains how to create a transparent [Squid](/index.php/Squid "Squid") proxy server using [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)'s mogrify to flip the images upside down.
 
 ## Contents
 

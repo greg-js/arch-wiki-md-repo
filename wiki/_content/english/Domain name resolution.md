@@ -44,7 +44,7 @@ $ getent hosts *domain_name*
 
 ```
 
-**Note:** While most programs resolve domain names using NSS, some may read `resolv.conf` and/or `/etc/hosts` directly. See [Network configuration#Local hostname resolution](/index.php/Network_configuration#Local_hostname_resolution "Network configuration").
+**Note:** While most programs resolve domain names using NSS, some may read `/etc/resolv.conf` and/or `/etc/hosts` directly. See [Network configuration#Local hostname resolution](/index.php/Network_configuration#Local_hostname_resolution "Network configuration").
 
 ## Glibc resolver
 
@@ -56,15 +56,15 @@ The glibc resolver reads `/etc/resolv.conf` for every resolution to determine th
 
 ### Overwriting of resolv.conf
 
-[Network managers](/index.php/Network_manager "Network manager") tend to overwrite `resolv.conf`, for specifics see the corresponding section:
+[Network managers](/index.php/Network_manager "Network manager") tend to overwrite `/etc/resolv.conf`, for specifics see the corresponding section:
 
 *   [dhcpcd#resolv.conf](/index.php/Dhcpcd#resolv.conf "Dhcpcd")
 *   [netctl#resolv.conf](/index.php/Netctl#resolv.conf "Netctl")
 *   [NetworkManager#resolv.conf](/index.php/NetworkManager#resolv.conf "NetworkManager")
 
-To prevent programs from overwriting `resolv.conf` you can also write-protect it by setting the immutable [file attribute](/index.php/File_attribute "File attribute").
+To prevent programs from overwriting `/etc/resolv.conf` you can also write-protect it by setting the immutable [file attribute](/index.php/File_attribute "File attribute").
 
-**Tip:** If you want multiple processes to write to `resolv.conf`, you can use [openresolv](/index.php/Openresolv "Openresolv").
+**Tip:** If you want multiple processes to write to `/etc/resolv.conf`, you can use [openresolv](/index.php/Openresolv "Openresolv").
 
 ### Limit lookup time
 
@@ -86,7 +86,7 @@ options single-request
 
 ### Local domain names
 
-If you want to be able to use the hostname of local machine names without the fully qualified domain names, then add a line to `resolv.conf` with the local domain such as:
+If you want to be able to use the hostname of local machine names without the fully qualified domain names, then add a line to `/etc/resolv.conf` with the local domain such as:
 
 ```
 domain example.com

@@ -16,7 +16,7 @@ Related articles
     *   [2.1 Updates](#Updates)
 *   [3 Suspend issues](#Suspend_issues)
     *   [3.1 Suspend-to-RAM (S3) not supported by default](#Suspend-to-RAM_.28S3.29_not_supported_by_default)
-    *   [3.2 S0i3 sleep support](#S0i3_sleep_support)
+    *   [3.2 S2idle support](#S2idle_support)
     *   [3.3 BIOS configurations](#BIOS_configurations)
 *   [4 Power management/Throttling issues](#Power_management.2FThrottling_issues)
     *   [4.1 Temporary fix](#Temporary_fix)
@@ -81,16 +81,34 @@ The 6th Generation X1 Carbon supports S0i3 (also known as Windows Modern Standby
 
 A [forum thread](https://bbs.archlinux.org/viewtopic.php?id=234913) has further discussion related to this issue.
 
-### S0i3 sleep support
+### S2idle support
 
-From [the Lenovo forums](https://forums.lenovo.com/t5/Linux-Discussion/X1-Carbon-Gen-6-cannot-enter-deep-sleep-S3-state-aka-Suspend-to/m-p/4016317/highlight/true#M10682): Add the following [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to enable s0i3 sleep support:
+From [the Lenovo forums](https://forums.lenovo.com/t5/Linux-Discussion/X1-Carbon-Gen-6-cannot-enter-deep-sleep-S3-state-aka-Suspend-to/m-p/4016317/highlight/true#M10682): Add the following [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to enable S2idle support:
 
 ```
 acpi.ec_no_wakeup=1
 
 ```
 
+For example, for GRUB, one might edit `/etc/default/grub` and edit `GRUB_CMDLINE_LINUX_DEFAULT`:
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet acpi.ec_no_wakeup=1"
+
+```
+
+then perform
+
+```
+sudo update-grub
+
+```
+
+and restart the system.
+
 **Note:** This disables wakeup/resume via lid open.
+
+**Note:** This supports S2idle state, not S0i3 state as some seem to have been led to believe!
 
 You might also need to disable the Realtek memory card reader (which appears to use a constant 2-3 W) either via the BIOS or via
 
@@ -98,6 +116,8 @@ You might also need to disable the Realtek memory card reader (which appears to 
 echo "2-3" | sudo tee /sys/bus/usb/drivers/usb/unbind
 
 ```
+
+The power consumption might still be higher than that of the S3 state in this case.
 
 ### BIOS configurations
 

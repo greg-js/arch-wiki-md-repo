@@ -18,7 +18,7 @@ The following packages provide VSCode:
 
 ## Usage
 
-Run `code`.
+Run `code` (or `code-oss` if you are using [code](https://aur.archlinux.org/packages/code/) or [code-git](https://aur.archlinux.org/packages/code-git/) instead of [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/)).
 
 If for any reason you wish to launch multiple instances of Visual Studio Code, the `-n` flag can be used.
 

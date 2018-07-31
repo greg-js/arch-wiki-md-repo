@@ -309,7 +309,7 @@ To avoid it, enable *dhcpcd* per interface it should bind to as described in [#R
 
 If *dhcpcd* operates on a single interface and fails to obtain a lease after 30 seconds (for example when the server is not ready or the cable not plugged), it will exit with an error.
 
-To have *dhcpcd* wait indefinitely for one-time, set the `timeout` option to `0`:
+To have *dhcpcd* wait indefinitely for one-time, [edit](/index.php/Edit "Edit") the unit and set the `timeout` option to `0`:
 
  `/etc/systemd/system/dhcpcd@.service.d/timeout.conf` 
 ```
@@ -325,8 +325,6 @@ To have it wait indefinitely, let the unit restart after it exited:
 [Service]
 Restart=always
 ```
-
-After making changes, [reload the configuration](/index.php/Systemd#Editing_provided_units "Systemd").
 
 ## Known issues
 

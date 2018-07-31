@@ -8,37 +8,37 @@ Spotify also offers free users the ability to create playlist which can be shuff
     *   [1.1 Official Linux client](#Official_Linux_client)
     *   [1.2 Third-party clients](#Third-party_clients)
 *   [2 Tips & tricks](#Tips_.26_tricks)
-    *   [2.1 Global media hotkeys](#Global_media_hotkeys)
-        *   [2.1.1 MPRIS](#MPRIS)
-            *   [2.1.1.1 Playerctl](#Playerctl)
-            *   [2.1.1.2 D-Bus](#D-Bus)
-        *   [2.1.2 xdotool](#xdotool)
-    *   [2.2 Disable track notifications](#Disable_track_notifications)
-    *   [2.3 Show track notifications](#Show_track_notifications)
-    *   [2.4 Skip overplayed radio tracks](#Skip_overplayed_radio_tracks)
-    *   [2.5 Mute commercials](#Mute_commercials)
-        *   [2.5.1 blockify](#blockify)
-        *   [2.5.2 spotblock](#spotblock)
-        *   [2.5.3 Spotify-AdKiller](#Spotify-AdKiller)
-        *   [2.5.4 Hosts file](#Hosts_file)
-    *   [2.6 Remote Control](#Remote_Control)
-        *   [2.6.1 Send commands via SSH](#Send_commands_via_SSH)
-        *   [2.6.2 Grab the Spotify window via SSH](#Grab_the_Spotify_window_via_SSH)
-    *   [2.7 HiDPI Mode](#HiDPI_Mode)
+    *   [2.1 Limit storage size](#Limit_storage_size)
+    *   [2.2 Global media hotkeys](#Global_media_hotkeys)
+        *   [2.2.1 MPRIS](#MPRIS)
+            *   [2.2.1.1 Playerctl](#Playerctl)
+            *   [2.2.1.2 D-Bus](#D-Bus)
+        *   [2.2.2 xdotool](#xdotool)
+    *   [2.3 Disable track notifications](#Disable_track_notifications)
+    *   [2.4 Show track notifications](#Show_track_notifications)
+    *   [2.5 Skip overplayed radio tracks](#Skip_overplayed_radio_tracks)
+    *   [2.6 Mute commercials](#Mute_commercials)
+        *   [2.6.1 blockify](#blockify)
+        *   [2.6.2 spotblock](#spotblock)
+        *   [2.6.3 Spotify-AdKiller](#Spotify-AdKiller)
+        *   [2.6.4 Hosts file](#Hosts_file)
+    *   [2.7 Remote Control](#Remote_Control)
+        *   [2.7.1 Send commands via SSH](#Send_commands_via_SSH)
+        *   [2.7.2 Grab the Spotify window via SSH](#Grab_the_Spotify_window_via_SSH)
+    *   [2.8 HiDPI Mode](#HiDPI_Mode)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Desktop Environment alerts (beeps) mutes Spotify](#Desktop_Environment_alerts_.28beeps.29_mutes_Spotify)
     *   [3.2 Using search causes the whole interface to blink and then crash](#Using_search_causes_the_whole_interface_to_blink_and_then_crash)
     *   [3.3 Blinking images and improper rendering while using Spotify Linux with DWM](#Blinking_images_and_improper_rendering_while_using_Spotify_Linux_with_DWM)
     *   [3.4 Broken search, browsing or radio](#Broken_search.2C_browsing_or_radio)
     *   [3.5 Deadlock GUI Thread](#Deadlock_GUI_Thread)
-    *   [3.6 PulseAudio](#PulseAudio)
-    *   [3.7 Album art and images are missing, show up as squares](#Album_art_and_images_are_missing.2C_show_up_as_squares)
-    *   [3.8 Spotify does not detect other devices on local network](#Spotify_does_not_detect_other_devices_on_local_network)
-    *   [3.9 Search Bar text is invisible when using a dark theme](#Search_Bar_text_is_invisible_when_using_a_dark_theme)
-    *   [3.10 Can't play local files](#Can.27t_play_local_files)
-    *   [3.11 Not respecting window manager rules](#Not_respecting_window_manager_rules)
-    *   [3.12 GUI hangs while the music plays](#GUI_hangs_while_the_music_plays)
-    *   [3.13 Can't open settings in Wayland](#Can.27t_open_settings_in_Wayland)
+    *   [3.6 Album art and images are missing, show up as squares](#Album_art_and_images_are_missing.2C_show_up_as_squares)
+    *   [3.7 Spotify does not detect other devices on local network](#Spotify_does_not_detect_other_devices_on_local_network)
+    *   [3.8 Search Bar text is invisible when using a dark theme](#Search_Bar_text_is_invisible_when_using_a_dark_theme)
+    *   [3.9 Can't play local files](#Can.27t_play_local_files)
+    *   [3.10 Not respecting window manager rules](#Not_respecting_window_manager_rules)
+    *   [3.11 GUI hangs while the music plays](#GUI_hangs_while_the_music_plays)
+    *   [3.12 Can't open settings in Wayland](#Can.27t_open_settings_in_Wayland)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -72,6 +72,14 @@ Initially, Spotify was unavailable for Linux and the workaround was to run it un
 	[https://www.tomahawk-player.org/](https://www.tomahawk-player.org/) || [tomahawk](https://aur.archlinux.org/packages/tomahawk/) [tomahawk-git](https://aur.archlinux.org/packages/tomahawk-git/) [tomahawk-qt5](https://aur.archlinux.org/packages/tomahawk-qt5/)
 
 ## Tips & tricks
+
+### Limit storage size
+
+Spotify automatically manage a storage size for caching, however one may want to force the size limit preventing the [filesystem](/index.php/Filesystem "Filesystem") from filling up.
+
+[Append](/index.php/Append "Append") `storage.size` (measured in MB) to `/home/*user*/.config/spotifiy/prefs`, e.g. a storage size of 3072MB:
+
+ `~/.config/spotify/prefs`  `storage.size=3072` 
 
 ### Global media hotkeys
 
@@ -240,6 +248,8 @@ GLib.MainLoop().run()
 ```
 
 ### Mute commercials
+
+**Warning:** Muting commercials is of course not supported by Spotfiy and may result in a temporary ban [[2]](https://www.theverge.com/2018/3/5/17080920/spotify-cracking-down-pirating-premium-free-account)
 
 #### blockify
 
@@ -461,13 +471,9 @@ ui.track_notifications_enabled=false
 
 Restart Spotify. Note that several causes appear to exist for this problem, and this particular fix only applies to select versions of Spotify client, i3 and Awesome, and it may be that additional root causes exist for the Debian and Ubuntu users reporting this issue. Observed with Spotify 0.9.17.1.g9b85d436 and Awesome 3.4.15 and i3-gaps 4.13-2 and Spotify 1.0.64.407.g9bd02c2d.
 
-**Note:** As of Spotify 1.0.17.75-2, `ui.track_notifications_enabled=false` seems to be ignored. On the other hand, some users report not experiencing the deadlock anymore as of Awesome 3.5.6\. Deadlocks could be caused by scripts called by Awesome, which rely on buggy spotify dbus properties. See [[2]](https://github.com/acrisci/playerctl/issues/20).
+**Note:** As of Spotify 1.0.17.75-2, `ui.track_notifications_enabled=false` seems to be ignored. On the other hand, some users report not experiencing the deadlock anymore as of Awesome 3.5.6\. Deadlocks could be caused by scripts called by Awesome, which rely on buggy spotify dbus properties. See [[3]](https://github.com/acrisci/playerctl/issues/20).
 
 **Note:** This issue has multiple causes, so keep track of what you change while researching this. Update this section with additional scenarios and fixes.
-
-### PulseAudio
-
-See [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting") and [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1393465#p1393465)
 
 ### Album art and images are missing, show up as squares
 

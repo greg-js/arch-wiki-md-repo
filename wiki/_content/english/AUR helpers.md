@@ -62,7 +62,7 @@ The columns have the following meaning:
 
 ### Active
 
-| Name | Written In | Pacman wrapper | File review | Clean build | Reliable parser | Reliable solver | Split packages | Git clone | Diff view | Batch interaction | Shell completion | Specificity |
+| Name | Written in | Pacman wrapper | File review | Clean build | Reliable parser | Reliable solver | Split packages | Git clone | Diff view | Batch interaction | Shell completion | Specificity |
 | [aurman](https://aur.archlinux.org/packages/aurman/) | Python | Yes | Yes | Yes | Yes | [Yes](https://github.com/polygamma/aurman/wiki/Description-of-the-aurman-dependency-solving) | Yes | Yes | Yes | 1, [2*, 3*](https://github.com/polygamma/aurman#question-6) | bash, fish | fetch PGP keys, sort by votes/popularity, print news |
 | [aurutils](https://aur.archlinux.org/packages/aurutils/) | Bash/C | – | Yes | Yes | Yes | Yes | Yes | Yes | Yes | 1 | zsh | [vifm](/index.php/Vifm "Vifm"), [local repository](/index.php/Local_repository "Local repository"), [package signing](/index.php/Package_signing "Package signing"), [clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot") support, sort by votes/popularity |
 | [yay](https://aur.archlinux.org/packages/yay/) | Go | Yes | Yes | Yes | Yes | Yes | Yes | [Yes](https://github.com/Jguer/yay/pull/297) | [Yes](https://github.com/Jguer/yay/pull/447) | 1, [2*](https://github.com/Jguer/yay/commit/3bdb5343218d99d40f8a449b887348611f6bdbfc), [3*](https://github.com/Jguer/yay/commit/ea5a94e0f8bb5f76879099e6d319c0c0102231c2) | bash, fish, zsh | sort by votes, fetch PGP keys, [prompt architecture](https://github.com/Jguer/yay/commit/4bcd3a6297052714e91e3f886602ce5c12d15786) |
@@ -78,7 +78,7 @@ The columns have the following meaning:
 
 ### Search-only
 
-| Name | Written In | File review | Reliable parser | Reliable solver | Git clone | Shell completion | Specificity |
+| Name | Written in | File review | Reliable parser | Reliable solver | Git clone | Shell completion | Specificity |
 | [pbget](https://aur.archlinux.org/packages/pbget/) | Python | Yes | Yes | – | Yes | – | – |
 | [yaah](https://aur.archlinux.org/packages/yaah/) | Bash | Yes | Yes | – | Optional | bash | – |
 | [auracle-git](https://aur.archlinux.org/packages/auracle-git/) | C++ | Yes | Yes | Yes | No | – | print build order |
@@ -90,27 +90,30 @@ The columns have the following meaning:
 
 This table describes projects which either are discontinued by their authors, or have issues on *Security*, *Clean build* or *Native pacman* (see [#Build_and_search](#Build_and_search)) unaddressed in the last 6 months.
 
-| Name | Written In | Pacman wrapper | File review | Clean build | Reliable parser | Reliable solver | Split packages | Git clone | Diff view | Batch interaction | Shell completion | Specificity |
+| Name | Written in | Pacman wrapper | File review | Clean build | Reliable parser | Reliable solver | Split packages | Git clone | Diff view | Batch interaction | Shell completion | Specificity |
 | [aurel](https://aur.archlinux.org/packages/aurel/) [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1522459#p1522459) | Emacs Lisp | – | Yes | – | – | – | – | No | – | – | – | Emacs integration, no automatic builds |
 | [pacaur](https://aur.archlinux.org/packages/pacaur/) [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1755144#p1755144) | Bash/C | [uses](https://github.com/rmarquis/pacaur/commit/d8f49188452785fb28afc017baadd01d9e24ba21) `-Ud` | Yes | Yes | Yes | Yes | Yes | Yes | Yes | 1, 3 | bash, zsh | multilingual, sort by votes/popularity |
 | [wrapaur](https://aur.archlinux.org/packages/wrapaur/) | Bash | Yes | Yes | Yes | No | No | No | Yes | No | – | – | Mirror updates, print news and AUR comments |
 | [spinach](https://aur.archlinux.org/packages/spinach/) [[6]](https://github.com/floft/spinach) | Bash | – | [Yes](https://github.com/floft/spinach/commit/545574700812eb369b9537370f085ec9e5c3f01a) | Yes | No | No | No | No | No | – | – | – |
 | [burgaur](https://aur.archlinux.org/packages/burgaur/) [[7]](https://github.com/m45t3r/burgaur/issues/7#issuecomment-365599675) | Python/C | – | Optional | Yes | No | No | No | No | No | – | – | Wrapper for *cower* |
 | [packer](https://aur.archlinux.org/packages/packer/) | Bash | Yes | No | Yes | No | No | No | No | No | – | – | – |
-| [yaourt](https://aur.archlinux.org/packages/yaourt/) | Bash/C | splits `-Syu`, [modifies db](https://github.com/archlinuxfr/yaourt/blob/5a82dfe/src/lib/alpm_backup.sh#L38) | No [[8]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) [[9]](https://github.com/archlinuxfr/yaourt/blob/d9790e29cd7194535c793f51d185b7130a396916/src/lib/pkgbuild.sh.in#L415-L438) | [No](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | [No](https://github.com/archlinuxfr/yaourt/issues/186) | [No](https://github.com/archlinuxfr/yaourt/issues/85) | Optional | Optional | 2 | bash, zsh, fish | Backup, ABS support, print AUR comments, multilingual |
+| [yaourt](https://aur.archlinux.org/packages/yaourt/) | Bash/C | splits `-Syu` | No [[8]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) [[9]](https://github.com/archlinuxfr/yaourt/blob/d9790e29cd7194535c793f51d185b7130a396916/src/lib/pkgbuild.sh.in#L415-L438) | [No](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | [No](https://github.com/archlinuxfr/yaourt/issues/186) | [No](https://github.com/archlinuxfr/yaourt/issues/85) | Optional | Optional | 2 | bash, zsh, fish | Backup ([modifies pacman database!](https://github.com/archlinuxfr/yaourt/blob/5a82dfe/src/lib/alpm_backup.sh#L38)), ABS support, print AUR comments, multilingual |
 
 ## Graphical
 
-**Warning:** Graphical AUR helpers are typically aimed at [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"). Their use in [Arch Linux](/index.php/Arch_Linux "Arch Linux") may lead to a defective system, for example through unattended [partial upgrades](/index.php/Partial_upgrades "Partial upgrades"). If a helper has *known* problematic behavior, it is colored with a red entry.
+**Warning:**
 
-| Name | Written In |
-| [octopi](https://aur.archlinux.org/packages/octopi/) [[10]](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) | C++ |
-| [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/) | Vala |
-| [pacui](https://aur.archlinux.org/packages/pacui/) [[11]](https://forum.manjaro.org/t/pacui-bash-script-providing-advanced-pacman-and-yay-pikaur-aurman-pakku-trizen-pacaur-functionality-in-a-simple-ui/677/466) | Bash |
-| [yaourt-gui](https://aur.archlinux.org/packages/yaourt-gui/) [[12]](https://github.com/alexiobash/yaourt-gui/blob/master/yaourt-gui#L57) | Bash |
-| [aarchup](https://aur.archlinux.org/packages/aarchup/) | C |
-| [kalu](https://aur.archlinux.org/packages/kalu/) | C |
-| [pkgbrowser](https://aur.archlinux.org/packages/pkgbrowser/) | Python |
+*   Graphical AUR helpers are typically aimed at [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"). Their use in [Arch Linux](/index.php/Arch_Linux "Arch Linux") may lead to a defective system, for example through unattended [partial upgrades](/index.php/Partial_upgrades "Partial upgrades").
+*   If a helper has known problematic behavior by default, it is colored with a red entry.
+
+| Name | Written in | GUI toolkit | Backend helper | Notes |
+| [aarchup](https://aur.archlinux.org/packages/aarchup/) | C | GTK+ 2 | auracle | – |
+| [kalu](https://aur.archlinux.org/packages/kalu/) | C | GTK+ 3 | – | – |
+| [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/) | Vala | GTK+ 3 | – | – |
+| [pkgbrowser](https://aur.archlinux.org/packages/pkgbrowser/) | Python | Qt 5 | – | – |
+| [argon](https://aur.archlinux.org/packages/argon/) | Python | GTK+ 3 | auracle + pacaur | – |
+| [yaourt-gui](https://aur.archlinux.org/packages/yaourt-gui/) | Bash | TUI | yaourt | only has options that [perform partial upgrades](https://github.com/alexiobash/yaourt-gui/blob/2bbfc01/yaourt-gui#L56) |
+| [octopi](https://aur.archlinux.org/packages/octopi/) | C++ | Qt 5 | pikaur, trizen, pacaur, yaourt | [enabled on install](https://github.com/aarnt/octopi/blob/271c7e1/octopi.install) notifier service regularly [performs partial upgrades](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) |
 
 ## Libraries
 
@@ -144,4 +147,6 @@ This table describes projects which either are discontinued by their authors, or
 
 *   [aur4_import.sh](https://github.com/JonnyJD/PKGBUILDs/blob/master/_bin/aur4_import.sh) — Splits a package from a git repository with multiple packages, adding/updating `.SRCINFO` for every commit
 *   [aur4_make_submodule.sh](https://github.com/JonnyJD/PKGBUILDs/blob/master/_bin/aur4_make_submodule.sh) — Replaces a package in a bigger git repository with an AUR 4 submodule, including `.SRCINFO`
-*   [aurpublish](https://github.com/eli-schwartz/aurpublish) — PKGBUILD management framework for AUR
+*   **aurpublish** — Helper script to manage and upload AUR packages using [git-subtree(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-subtree.1). Uses [githooks(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/githooks.5) to verify the PKGBUILD integrity, generate .SRCINFO automatically, and create a commit message template.
+
+	[https://github.com/eli-schwartz/aurpublish](https://github.com/eli-schwartz/aurpublish) || [aurpublish](https://www.archlinux.org/packages/?name=aurpublish)

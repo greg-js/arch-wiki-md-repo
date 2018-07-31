@@ -22,8 +22,7 @@
         *   [1.2.2 Trash management](#Trash_management)
         *   [1.2.3 File synchronization](#File_synchronization)
         *   [1.2.4 Archiving and compression tools](#Archiving_and_compression_tools)
-            *   [1.2.4.1 Console](#Console_2)
-            *   [1.2.4.2 Graphical](#Graphical_2)
+            *   [1.2.4.1 Archive managers](#Archive_managers)
         *   [1.2.5 Comparison, diff, merge](#Comparison.2C_diff.2C_merge)
         *   [1.2.6 Batch renamers](#Batch_renamers)
         *   [1.2.7 Finders](#Finders)
@@ -57,8 +56,8 @@
         *   [1.6.1 System monitoring](#System_monitoring)
         *   [1.6.2 Hardware sensor monitoring](#Hardware_sensor_monitoring)
         *   [1.6.3 System information viewers](#System_information_viewers)
-            *   [1.6.3.1 Console](#Console_3)
-            *   [1.6.3.2 Graphical](#Graphical_3)
+            *   [1.6.3.1 Console](#Console_2)
+            *   [1.6.3.2 Graphical](#Graphical_2)
         *   [1.6.4 System log viewers](#System_log_viewers)
         *   [1.6.5 Font viewers](#Font_viewers)
         *   [1.6.6 Help viewers](#Help_viewers)
@@ -503,51 +502,9 @@ See also [Synchronization and backup programs#Data synchronization](/index.php/S
 
 #### Archiving and compression tools
 
-See also [Wikipedia:Comparison of file archivers](https://en.wikipedia.org/wiki/Comparison_of_file_archivers "wikipedia:Comparison of file archivers").
+For archiving and compression command-line tools, see [Archiving and compression](/index.php/Archiving_and_compression "Archiving and compression").
 
-##### Console
-
-*   **[dar](https://en.wikipedia.org/wiki/Dar_(disk_archiver) (Disk ARchive)** — An archiving and compression utility avoiding the drawbacks of tar
-
-	[http://dar.linux.free.fr/](http://dar.linux.free.fr/) || [dar](https://aur.archlinux.org/packages/dar/)
-
-*   **lha** — Archiver to create LH-7 format archives. 32-bit only (require multilib on x86_64).
-
-	[http://www.infor.kanazawa-it.ac.jp/~ishii/lhaunix](http://www.infor.kanazawa-it.ac.jp/~ishii/lhaunix) || [lha](https://aur.archlinux.org/packages/lha/)
-
-*   **lrzip** — Multi-threaded compressor using the rzip/lzma, lzo, and zpaq algorithms.
-
-	[http://lrzip.kolivas.org/](http://lrzip.kolivas.org/) || [lrzip](https://www.archlinux.org/packages/?name=lrzip)
-
-*   **lz4** — A file compressor using lz4 - An extremely fast compression algorithm.
-
-	[https://github.com/lz4/lz4](https://github.com/lz4/lz4) || [lz4](https://www.archlinux.org/packages/?name=lz4)
-
-*   **lzop** — Fast file compressor using lzo lib.
-
-	[http://www.lzop.org/](http://www.lzop.org/) || [lzop](https://www.archlinux.org/packages/?name=lzop)
-
-*   **[p7zip](/index.php/P7zip "P7zip")** — Port of 7-Zip for POSIX systems, including Linux. The commandline tool is called **7z**.
-
-	[http://p7zip.sourceforge.net/](http://p7zip.sourceforge.net/) || [p7zip](https://www.archlinux.org/packages/?name=p7zip)
-
-*   **pixz** — A multi-threaded and indexed compressor that avoiding the drawbacks of xz.
-
-	[https://github.com/vasi/pixz](https://github.com/vasi/pixz) || [pixz](https://www.archlinux.org/packages/?name=pixz)
-
-*   **[zpaq](https://en.wikipedia.org/wiki/ZPAQ "wikipedia:ZPAQ")** — A high compression ratio archiver written in C++. Powered by Context-Model, LZ77 and BWT algorithm.
-
-	[http://mattmahoney.net/dc/zpaq.html](http://mattmahoney.net/dc/zpaq.html) || [zpaq](https://aur.archlinux.org/packages/zpaq/)
-
-*   **zopfli** — High compress ratio file compressor from Google, using a deflate-compatible algorithm called zopfli.
-
-	[https://github.com/google/zopfli](https://github.com/google/zopfli) || [zopfli-git](https://aur.archlinux.org/packages/zopfli-git/)
-
-*   **[zoo](https://en.wikipedia.org/wiki/Zoo_(file_format) "wikipedia:Zoo (file format)")** — Rarely used archiver that was mostly used in VMS world before PKZIP became popular.
-
-	[http://www.ibiblio.org/pub/Linux/utils/compress/zoo-2.10-3.src.rpm](http://www.ibiblio.org/pub/Linux/utils/compress/zoo-2.10-3.src.rpm) || [zoo](https://aur.archlinux.org/packages/zoo/)
-
-##### Graphical
+##### Archive managers
 
 *   **[Ark](https://en.wikipedia.org/wiki/Ark_(software) "wikipedia:Ark (software)")** — Archiving tool included in the KDE desktop.
 

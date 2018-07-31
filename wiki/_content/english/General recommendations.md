@@ -343,7 +343,7 @@ This section is covered in [Color output in console](/index.php/Color_output_in_
 
 ### Compressed files
 
-Compressed files, or archives, are frequently encountered on a GNU/Linux system. [Tar](/index.php/Tar "Tar") is one of the most commonly used archiving tools, and users should be familiar with its syntax (Arch Linux packages, for example, are simply xzipped tarballs). See [Archiving and compression tools](/index.php/Archiving_and_compression_tools "Archiving and compression tools").
+Compressed files, or archives, are frequently encountered on a GNU/Linux system. [Tar](/index.php/Tar "Tar") is one of the most commonly used archiving tools, and users should be familiar with its syntax (Arch Linux packages, for example, are simply xzipped tarballs). See [Archiving and compression](/index.php/Archiving_and_compression "Archiving and compression").
 
 ### Console prompt
 

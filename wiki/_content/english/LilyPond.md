@@ -1,19 +1,28 @@
-[LilyPond](http://lilypond.org/) is a free score writing application. Its input is a plain text file in the lilypond music writing format, and its output is in either postscript or Portable Document Format.
+[LilyPond](http://lilypond.org/) is a free score writing application. Its input is a plain text file in the LilyPond music writing format, and its output is in either PostScript or PDF.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Example Score](#Example_Score)
-*   [3 Tweaking](#Tweaking)
-    *   [3.1 Which editor to use?](#Which_editor_to_use.3F)
-    *   [3.2 Speed up writing notes](#Speed_up_writing_notes)
-    *   [3.3 More useful info](#More_useful_info)
+    *   [1.1 Front-ends](#Front-ends)
+*   [2 Usage](#Usage)
+*   [3 Text editor support](#Text_editor_support)
+*   [4 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [lilypond](https://www.archlinux.org/packages/?name=lilypond) package.
 
-## Example Score
+### Front-ends
+
+*   **[Denemo](https://en.wikipedia.org/wiki/Denemo "wikipedia:Denemo")** — Supports keyboard, MIDI and acoustic input, written in C.
+
+	[http://denemo.org/](http://denemo.org/) || [denemo](https://aur.archlinux.org/packages/denemo/)
+
+*   **[Frescobaldi](https://en.wikipedia.org/wiki/Frescobaldi_(software) "wikipedia:Frescobaldi (software)")** — Provides music view with two-way point & click, MIDI capturing and playback, written in Python with PyQt.
+
+	[http://www.frescobaldi.org/index.html](http://www.frescobaldi.org/index.html) || [frescobaldi](https://aur.archlinux.org/packages/frescobaldi/)
+
+## Usage
 
 Create a test file like:
 
@@ -34,53 +43,17 @@ $ lilypond test.ly
 
 It will create `test.pdf` and `test.ps` files that contain your score.
 
-## Tweaking
+LilyPond provides [musicxml2ly(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/musicxml2ly.1) to convert [MusicXML](https://en.wikipedia.org/wiki/MusicXML "wikipedia:MusicXML") to the LilyPond format.
 
-### Which editor to use?
+For more information, see `info lilypond`, [lilypond(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lilypond.1) and the [documentation](http://lilypond.org/manuals.html).
 
-*   VIM
+## Text editor support
 
-Vim with the possibilities of compiling the code within the program along with syntax coloring tools and indenting. First install the [vim](/index.php/Vim "Vim") editor, then go to this Lilypond website [[1]](http://lilypond.org/doc/v2.11/Documentation/user/lilypond-program/Vim-mode) and follow the instructions on how to enable the vim mode.
+LilyPond comes with modes for [Emacs](/index.php/Emacs "Emacs") and [Vim](/index.php/Vim "Vim"), see the [documentation](http://lilypond.org/doc/Documentation/usage/text-editor-support).
 
-The next thing you need to do is enable the syntaxes. To do so edit `~/.vimrc` with your favorite editor and after editing your file should look like this:
+For Vim see the filetype plugin `/usr/share/vim/vimfiles/ftplugin/lilypond.vim` for the available key mappings.
 
- `~/.vimrc` 
-```
-set runtimepath+=/usr/share/lilypond/2.18.2/vim/ 
-syntax on		" Turn on colors
-filetype plugin on	" Enables the ftplugin options
-set autoindent		" Automaticaly indent while writing.
-```
+## See also
 
-Now when you edit a `*.ly` file you can compile your code with `F5` button, open PDF viewer with `F6` and play midi with `F4` (using timidity). A configuration file is in `/usr/share/lilypond/2.18.2/vim/ftplugin/lilypond.vim` which is easy to customize.
-
-Click-and-point using evince. [[2]](https://github.com/markk/textedit-ly)
-
-*   [frescobaldi](https://aur.archlinux.org/packages/frescobaldi/)
-*   [denemo](https://aur.archlinux.org/packages/denemo/)
-
-You can find both in the [AUR](/index.php/AUR "AUR").
-
-*   jEdit with lilyPondTools plugin.
-
-[Install](/index.php/Install "Install") [jedit](https://www.archlinux.org/packages/?name=jedit) from the [official repositories](/index.php/Official_repositories "Official repositories").
-
-Open jEdit and go to *Plugins > Plugin Manager*. Select the *Install* tab and click on *LilyPondTools*. Hit the *Install* button.
-
-*   Emacs
-
-Lilypond includes an emacs mode. Add the following line to your `~/.emacs`:
-
- `~/.emacs`  `(load-library "lilypond-init.el")` 
-
-### Speed up writing notes
-
-LilyComp [[3]](http://lilycomp.sourceforge.net/) can be used to speed up writing notes. It requires [python](/index.php/Python "Python") and tk. Lines 67 and 68 in `lilycomp.py` should be edited to enable `deutsch.ly` dictionary for sharp and flat symbols. It uses absolute notation (\relative is not used.)
-
-### More useful info
-
-*   For JEdit: Under plugins install *LookAndFeel*. You can find good stuff under Visual.
-
-For better usability my settings are: under *Global Options > Docking* put the *Console* and *Error List* to *right* and *LilyPond PDF preview* to *bottom* under *Docking* position. Then under *View* push *Alternate docked window placement* and *Alternate tool bar placement* buttons.
-
-*   For a tutorial on how to use this software visit LilyPond [[4]](http://lilypond.org/) website.
+*   [Wikipedia:LilyPond](https://en.wikipedia.org/wiki/LilyPond "wikipedia:LilyPond")
+*   [List of applications/Multimedia#Scorewriters](/index.php/List_of_applications/Multimedia#Scorewriters "List of applications/Multimedia")

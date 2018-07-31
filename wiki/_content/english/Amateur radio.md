@@ -71,7 +71,7 @@ then logoff and logon.
 
 	[http://james.ahlstrom.name/quisk/](http://james.ahlstrom.name/quisk/) || [quisk](https://aur.archlinux.org/packages/quisk/)
 
-*   **[owx](/index.php/Owx "Owx")** — command-line utility for programming Wouxun radios
+*   **owx** — Command-line utility for programming Wouxun radios using CSV spreadsheets.
 
 	[http://owx.chmurka.net](http://owx.chmurka.net) || [owx](https://aur.archlinux.org/packages/owx/)
 

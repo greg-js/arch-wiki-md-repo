@@ -133,6 +133,7 @@ Actually, for this to work, we will need to add the primary and secondary groups
 | [ceph](https://www.archlinux.org/packages/?name=ceph) | ceph | 340 |
  ldap | 439 |
  oprofile | 492 |
+| [oidentd](https://www.archlinux.org/packages/?name=oidentd) | oidentd | 493 |
  alias | 7790 |
  qmaild | 7791 |
  qmaill | 7792 |
@@ -296,5 +297,6 @@ Actually, for this to work, we will need to add the primary and secondary groups
 | [ceph](https://www.archlinux.org/packages/?name=ceph) | ceph | 340 |
  ldap | 439 |
  oprofile | 492 |
+| [oidentd](https://www.archlinux.org/packages/?name=oidentd) | oidentd | 493 |
  qmail | 2107 |
  nofiles | 2108 |

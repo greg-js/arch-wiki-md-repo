@@ -1081,5 +1081,6 @@ You can use the following website to get your device's coordinates along with a 
 52.5050191, 13.4328069 "dvzrv" # Berlin, Germany
 54.763989, 25.404788 "riddle00" # Vilnius, Lithuania
 30.380417, 76.782576 "lll2yu" # Ambala, India
+47.197523, 7.698578  "thatfatnerdfromnextdoor" # Herzogenbuchsee, Switzerland
 
 ```

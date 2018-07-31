@@ -173,6 +173,10 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[http://photoqt.org/](http://photoqt.org/) || [photoqt](https://aur.archlinux.org/packages/photoqt/)
 
+*   **pqiv** — GTK 3 based command-line image viewer with a minimal UI supporting images in compressed archives, rewrite of qiv.
+
+	[https://github.com/phillipberndt/pqiv/](https://github.com/phillipberndt/pqiv/) || [pqiv](https://aur.archlinux.org/packages/pqiv/)
+
 *   **qimgv** — Fast and easy to use Qt5 image viewer. Supports webm/mp4 playback via mpv.
 
 	[https://github.com/easymodo/qimgv/](https://github.com/easymodo/qimgv/) || [qimgv](https://aur.archlinux.org/packages/qimgv/)
@@ -1061,7 +1065,7 @@ See also [Professional audio](/index.php/Professional_audio "Professional audio"
 
 #### Scorewriters
 
-See also [Wikipedia:Comparison of scorewriters](https://en.wikipedia.org/wiki/Comparison_of_scorewriters "wikipedia:Comparison of scorewriters").
+See also [LilyPond#Front-ends](/index.php/LilyPond#Front-ends "LilyPond") and [Wikipedia:Comparison of scorewriters](https://en.wikipedia.org/wiki/Comparison_of_scorewriters "wikipedia:Comparison of scorewriters").
 
 *   **[Aria Maestosa](https://en.wikipedia.org/wiki/Aria_Maestosa "wikipedia:Aria Maestosa")** — MIDI sequencer/editor. It lets you compose, edit and play MIDI files with a few clicks in a user-friendly interface offering score, keyboard, guitar, drum and controller views.
 
@@ -1070,14 +1074,6 @@ See also [Wikipedia:Comparison of scorewriters](https://en.wikipedia.org/wiki/Co
 *   **[Canorus](https://en.wikipedia.org/wiki/Canorus "wikipedia:Canorus")** — Music score editor. It supports an unlimited number and length of staffs, polyphony, a MIDI playback of notes, chord markings, lyrics, import/export filters to formats like MIDI, MusicXML, ABC Music, MusiXTeX and LilyPond.
 
 	[https://sourceforge.net/projects/canorus/](https://sourceforge.net/projects/canorus/) || [canorus](https://www.archlinux.org/packages/?name=canorus)
-
-*   **[Denemo](https://en.wikipedia.org/wiki/Denemo "wikipedia:Denemo")** — Music notation editor.
-
-	[http://denemo.org/](http://denemo.org/) || [denemo](https://aur.archlinux.org/packages/denemo/)
-
-*   **[Frescobaldi](https://en.wikipedia.org/wiki/Frescobaldi_(software) "wikipedia:Frescobaldi (software)")** — Sheet music text editor for LilyPond files.
-
-	[http://frescobaldi.org/](http://frescobaldi.org/) || [frescobaldi](https://aur.archlinux.org/packages/frescobaldi/)
 
 *   **[Impro-Visor](https://en.wikipedia.org/wiki/Impro-Visor "wikipedia:Impro-Visor")** — Music notation program designed to help jazz musicians compose and hear solos similar to ones that might be improvised.
 

@@ -34,6 +34,7 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 956
     *   [3.4 Enable NVME APST](#Enable_NVME_APST)
     *   [3.5 Enable power saving features for the i915 kernel module](#Enable_power_saving_features_for_the_i915_kernel_module)
     *   [3.6 Wifi and Bluetooth](#Wifi_and_Bluetooth)
+    *   [3.7 Undervolt intel CPU and GPU](#Undervolt_intel_CPU_and_GPU)
 *   [4 Graphics](#Graphics)
     *   [4.1 Intel card only](#Intel_card_only)
     *   [4.2 Open source driver with PRIME render offloading](#Open_source_driver_with_PRIME_render_offloading)
@@ -137,7 +138,7 @@ Disabling the touchscreen can be done in the UEFI settings and results in signif
 
 ### Enable NVME APST
 
-Before Kernel 4.11 Linux does not support NVME APST, so the NVME SSD is in its highest power state all the time. Significant power savings can be achieved by running a Kernel with patches and appropriate parameters to enable APST. See [Solid State Drives/NVMe#Power Saving APST](/index.php/Solid_State_Drives/NVMe#Power_Saving_APST "Solid State Drives/NVMe"). Even when running such a kernel, it may be necessary to adjust the `default_ps_max_latency_us` parameter to the `nvme_core` module in order to make ASPT work.
+Starting from linux 4.11, NVME APST is supported and enabled by default, allowing NVME SSDs to be switched to lower power states when idle, achieving significant power savings. See [Solid State Drives/NVMe#Power Saving APST](/index.php/Solid_State_Drives/NVMe#Power_Saving_APST "Solid State Drives/NVMe"). Depending on the specific SSD, it may also be necessary to adjust the `default_ps_max_latency_us` parameter to the `nvme_core` module in order to make ASPT work. This is necessary with the Toshiba THNSN5512GPUK for example.
 
 ### Enable power saving features for the i915 kernel module
 
@@ -146,6 +147,10 @@ Passing the following options to the i915 kernel module results in significant p
 ### Wifi and Bluetooth
 
 For the Precision 5520 which has an Intel 8265 wifi card, the `power_save` option for the `iwlwifi` kernel module can be set from 1 to 5 with potential power savings. See [Kernel modules#Setting module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). Bluetooth and Wifi can seperately be disabled with rfkill. See [Wireless network configuration#Rfkill caveat](/index.php/Wireless_network_configuration#Rfkill_caveat "Wireless network configuration").
+
+### Undervolt intel CPU and GPU
+
+It is possible to reduce the voltage supplied to the CPU and integrated intel GPU in order to reduce their power consumption. Usually some reduction is possible without any instability, depending on the specific system. Often the first signs of instability come during suspend, resume, and transitions between load and idle, not necessarily during extended periods of high load. See [intel-undervolt](https://aur.archlinux.org/packages/intel-undervolt/) and [linux-intel-undervolt-tool](https://aur.archlinux.org/packages/linux-intel-undervolt-tool/) which can automate the process of undervolting on each boot/resume.
 
 ## Graphics
 
@@ -161,11 +166,11 @@ With this setup it is possible to use the integrated GPU by default and to offlo
 
 ### Proprietary driver with bumblebee
 
-With this setup the integrated GPU is used by default but some applications can be rendered on the discrete GPU with the `optirun` or `primusrun` launchers. See [Bumblebee](/index.php/Bumblebee "Bumblebee") for detailed instructions. The lack of proper v-sync support means that with this method applications rendered on the discrete GPU exhibit tearing. There is also some overhead introduced as a result of moving data inefficiently between the discrete and integrated GPUs, but the Nvidia GPU performs much better than it does with Nouveau. The current stable [NVIDIA](/index.php/NVIDIA "NVIDIA") release (378.13) does not work (rmInitAdapterFailed in dmesg), however the latest beta drivers [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/), [nvidia-utils-beta](https://aur.archlinux.org/packages/nvidia-utils-beta/), and [lib32-nvidia-utils-beta](https://aur.archlinux.org/packages/lib32-nvidia-utils-beta/) are working. To use them with a custom kernel it is necessary to use the [DKMS](/index.php/DKMS "DKMS") version [nvidia-beta-dkms](https://aur.archlinux.org/packages/nvidia-beta-dkms/) and to edit the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") to update it to the same version as the utils package. Alternatively the current long lived branch release (375.66) works too ([nvidia-llb-dkms](https://aur.archlinux.org/packages/nvidia-llb-dkms/), [nvidia-utils-llb](https://aur.archlinux.org/packages/nvidia-utils-llb/), [lib32-nvidia-utils-llb](https://aur.archlinux.org/packages/lib32-nvidia-utils-llb/)).
+With this setup the integrated GPU is used by default but some applications can be rendered on the discrete GPU with the `optirun` or `primusrun` launchers. See [Bumblebee](/index.php/Bumblebee "Bumblebee") for detailed instructions. The lack of proper v-sync support means that with this method applications rendered on the discrete GPU exhibit tearing. There is also some overhead introduced as a result of moving data inefficiently between the discrete and integrated GPUs, but the Nvidia GPU performs much better than it does with Nouveau.
 
 ### Proprietary driver with PRIME output offloading
 
-With this setup the discrete GPU is used for all rendering and the integrated GPU is used only to display the rendered output. Power consumption is much higher during light usage because the discrete GPU cannot be disabled. Performance for graphics intensive applications is significantly better than with Bumblebee, and v-sync works due to [PRIME Synchronization](https://devtalk.nvidia.com/default/topic/957814/linux/prime-and-prime-synchronization/1) so tearing is eliminated. Remove [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) and follow the instructions in [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus"), [Nvidia README](http://us.download.nvidia.com/XFree86/Linux-x86_64/375.66/README/randr14.html), or [PRIME Synchronization thread](https://devtalk.nvidia.com/default/topic/957814/linux/prime-and-prime-synchronization/1) using `PCI:1:0:0` as the BusID. Add the `modeset=1` parameter to the `nvidia_drm` kernel module (on boot, not with modprobe) to enable PRIME synchronization and remove tearing (see [Kernel modules#Setting module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules")). It is necessary to use the long lived branch of the [NVIDIA](/index.php/NVIDIA "NVIDIA") driver ([nvidia-llb-dkms](https://aur.archlinux.org/packages/nvidia-llb-dkms/), [nvidia-utils-llb](https://aur.archlinux.org/packages/nvidia-utils-llb/), [lib32-nvidia-utils-llb](https://aur.archlinux.org/packages/lib32-nvidia-utils-llb/)) since the latest version (375.66) contains [bugfixes](https://devtalk.nvidia.com/default/topic/957814/linux/prime-and-prime-synchronization/post/5141480/#5141480) making PRIME Synchronization usable on the GTX 1050, which are not present in the latest stable (378.13) and beta (381.09) releases.
+With this setup the discrete GPU is used for all rendering and the integrated GPU is used only to display the rendered output. Power consumption is much higher during light usage because the discrete GPU cannot be disabled. Performance for graphics intensive applications is significantly better than with Bumblebee, and v-sync works due to [PRIME Synchronization](https://devtalk.nvidia.com/default/topic/957814/linux/prime-and-prime-synchronization/1) so tearing is eliminated. Remove [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) and follow the instructions in [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus"), [Nvidia README](http://us.download.nvidia.com/XFree86/Linux-x86_64/375.66/README/randr14.html), or [PRIME Synchronization thread](https://devtalk.nvidia.com/default/topic/957814/linux/prime-and-prime-synchronization/1) using `PCI:1:0:0` as the BusID. Add the `modeset=1` parameter to the `nvidia_drm` kernel module (on boot, not with modprobe) to enable PRIME synchronization and remove tearing (see [Kernel modules#Setting module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules")).
 
 ## Touchpad
 

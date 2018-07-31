@@ -1,10 +1,14 @@
+Related articles
+
+*   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
+
 关于在 Linux 中 Secure Boot 的概述请参考文章 [Rodsbooks' Secure Boot](http://www.rodsbooks.com/efi-bootloaders/secureboot.html).
 
-## Using a signed boot loader
+## 使用经过签名的boot loader
 
 ### Booting archiso
 
-本节的重点在于如何在 Arch Linux 中设置安全启动。本节暂时仅介绍在开启 Secure Boot 模式的情况下启动 archiso 的步骤。因为 EFI 程序 `PreLoader.efi` 和 `HashTool.efi` 已经添加到 archiso 中，所以在开启 Secure Boot 模式的情况下启动 archiso 是可以的，将会显示一条 "Failed to Start loader...I will now execute HashTool". 的消息。要使用 HashTool 来注册 `loader.efi` 和 `vmlinuz.efi` 的 hash 值，执行如下步骤：
+本节的重点在于如何在 Arch Linux 中设置安全启动。本节暂时仅介绍在开启 Secure Boot 模式的情况下启动 archiso 的步骤。因为 EFI 程序 `PreLoader.efi` 和 `HashTool.efi` 已经添加到 archiso 中，所以在开启 Secure Boot 模式的情况下启动 archiso 是可行的，将会显示一条 "Failed to Start loader...I will now execute HashTool". 的消息。要使用 HashTool 来注册 `loader.efi` 和 `vmlinuz.efi` 的 hash 值，执行如下步骤：
 
 *   选择 `OK`
 *   在 HashTool 主菜单先选择 `Enroll Hash`，再选择 `\loader.efi`，然后点击 `Yes` 确认。再选择 `Enroll Hash` 和 `archiso`，进入 archiso 目录，然后选择 `vmlinuz-efi` 并且点击 `Yes` 确认，最后点击 `Exit` 返回启动设备选择菜单。

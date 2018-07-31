@@ -1,4 +1,4 @@
-Cloud-init is a package that contains utilities for early initialization of cloud instances. It is needed in Arch Linux images that are built with the intention of being launched in cloud like [OpenStack](/index.php/OpenStack "OpenStack"), [AWS](/index.php/AWS "AWS") etc.
+[Cloud-init](https://cloud-init.io/) is a package that contains utilities for early initialization of cloud instances. It is needed in Arch Linux images that are built with the intention of being launched in cloud like [OpenStack](/index.php/OpenStack "OpenStack"), [AWS](/index.php/AWS "AWS") etc.
 
 ## Contents
 
@@ -19,7 +19,7 @@ Cloud-init is a package that contains utilities for early initialization of clou
 In order to make an Arch image cloud ready, a few steps have to be followed:
 
 *   Create a default user. You can login to your instance as this user. We will create and use a user called `arch`.
-*   Install sudo and add the default user to sudo group. This can be used later to execute commands as privileged user.
+*   Install [sudo](/index.php/Sudo "Sudo") and add the default user to sudo group. This can be used later to execute commands as privileged user.
 *   Enable password less sudo for the default user.
 *   Configure cloud-init to pull instance metadata to configure the instance. This includes but not limited to:
     *   Setting up the instance `hostname`

@@ -1,4 +1,4 @@
-FreeIPA is an open-source Identity, Policy and Audit (IPA) suite, sponsored by RedHat, which provides services similar to Microsoft's Active Directory
+[FreeIPA](https://www.freeipa.org/) is an open-source Identity, Policy and Audit (IPA) suite, sponsored by RedHat, which provides services similar to Microsoft's Active Directory
 
 ## Contents
 
@@ -6,7 +6,7 @@ FreeIPA is an open-source Identity, Policy and Audit (IPA) suite, sponsored by R
     *   [1.1 SSH integration](#SSH_integration)
         *   [1.1.1 authorized_keys](#authorized_keys)
         *   [1.1.2 known_hosts](#known_hosts)
-    *   [1.2 See Also](#See_Also)
+    *   [1.2 See also](#See_also)
 
 ## Configure as IPA client
 
@@ -118,7 +118,8 @@ You can configure SSH to fetch hosts public key information from their directory
 
 ```
 
-### See Also
+### See also
 
+*   [Wikipedia:FreeIPA](https://en.wikipedia.org/wiki/FreeIPA "wikipedia:FreeIPA")
 *   [Manually Configuring a Linux Client](https://docs.fedoraproject.org/en-US/Fedora/15/html/FreeIPA_Guide/linux-manual.html) from the FreeIPA user guide
 *   [Freeipa30_SSSD_OpenSSH_integration.pdf](https://www.freeipa.org/images/1/10/Freeipa30_SSSD_OpenSSH_integration.pdf)

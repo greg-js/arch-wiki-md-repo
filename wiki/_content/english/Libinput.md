@@ -242,7 +242,7 @@ To use [libinput-gestures](https://github.com/bulletmark/libinput-gestures), ins
 
 #### fusuma
 
-[Fusama](https://github.com/iberianpig/fusuma) is a multitouch gesture recognizer, written in [Ruby](/index.php/Ruby "Ruby"), which can be used as an alternative to libinput-gestures.
+[Fusuma](https://github.com/iberianpig/fusuma) is a multitouch gesture recognizer, written in [Ruby](/index.php/Ruby "Ruby"), which can be used as an alternative to libinput-gestures.
 
 Install the `fusuma` [Ruby gem](/index.php/Ruby#RubyGems "Ruby"):
 

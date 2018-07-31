@@ -1,3 +1,8 @@
+Related articles
+
+*   [Syncthing](/index.php/Syncthing "Syncthing")
+*   [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs")
+
 [Resilio Sync](https://www.resilio.com/individuals/) (formerly: BitTorrent Sync or BTSync) is a proprietary file sharing system that relies on the [BitTorrent](https://en.wikipedia.org/wiki/Bittorrent "wikipedia:Bittorrent") protocol.
 
 Peer-to-peer (P2P) sync, instead of having a central server which archives every file, uses peer-to-peer connections between the devices themselves therefore there is no limit on data storage and/or transfer speed. The user's data is exclusively stored on the devices with which the user chose to be in sync with, hence it is required to have at least two user devices, or "nodes" to be online. If many devices are connected simultaneously, files are shared between them in a mesh networking topology.
@@ -40,9 +45,10 @@ Once installed, you'll first need to create a configuration file at `~/.config/r
 
 The service will run as the user invoking the command. Note that the above command is *not* run as root: doing so may lead to a cryptic error stating that D-Bus has refused the connection.
 
-**Note:** It is important to make sure that when `rslsync` is run as the user, the `rslsync.conf` file and directory where the `rslsync.pid` file will be located have the correct user permissions, i.e. are owned by the user invoking the command. Failure to do so will prevent the service from running. If the user permissions are correct but `rslsync` still fails to run after being enabled, restart your system.
+**Note:**
 
-**Note:** If running `rslsync` on a headless server, enable lingering to start `rslsync` and keep it running outside user sessions: [Systemd/User#Automatic start-up of systemd user instances](/index.php/Systemd/User#Automatic_start-up_of_systemd_user_instances "Systemd/User").
+*   It is important to make sure that when `rslsync` is run as the user, the `rslsync.conf` file and directory where the `rslsync.pid` file will be located have the correct user permissions, i.e. are owned by the user invoking the command. Failure to do so will prevent the service from running. If the user permissions are correct but `rslsync` still fails to run after being enabled, restart your system.
+*   If running `rslsync` on a headless server, enable lingering to start `rslsync` and keep it running outside user sessions: [Systemd/User#Automatic start-up of systemd user instances](/index.php/Systemd/User#Automatic_start-up_of_systemd_user_instances "Systemd/User").
 
 You can also run it as the `rslsync.service` system user (without the `--user` flag).
 
@@ -64,11 +70,11 @@ You'll probably want to change some of the settings, including:
 *   webui/login
 *   webui/password
 
-**Note:** The `rslsync` executable does not create the `storage_path` directory if it doesn't exist, you will have to do this manually or use [#Automatic config file creation](#Automatic_config_file_creation).
+**Note:**
 
-**Note:** The storage_path setting defines where metadata will be saved, **not** the synced files themselves. Where synced files are saved is configured on a per-folder basis in the WebGUI.
-
-**Note:** The configuration option `webui/password_hash` does not seem to be working correctly with recent versions of `rslsync`. Use `webui/password` instead for specifying credentials.
+*   The `rslsync` executable does not create the `storage_path` directory if it doesn't exist, you will have to do this manually or use [#Automatic config file creation](#Automatic_config_file_creation).
+*   The storage_path setting defines where metadata will be saved, **not** the synced files themselves. Where synced files are saved is configured on a per-folder basis in the WebGUI.
+*   The configuration option `webui/password_hash` does not seem to be working correctly with recent versions of `rslsync`. Use `webui/password` instead for specifying credentials.
 
 ### Automatic config file creation
 

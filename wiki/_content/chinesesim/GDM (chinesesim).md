@@ -7,7 +7,7 @@
 *   [LightDM](/index.php/LightDM "LightDM")
 *   [LXDM](/index.php/LXDM "LXDM")
 
-**翻译状态：** 本文是英文页面 [GDM](/index.php/GDM "GDM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-06-09，点击[这里](https://wiki.archlinux.org/index.php?title=GDM&diff=0&oldid=525308)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [GDM](/index.php/GDM "GDM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-07-30，点击[这里](https://wiki.archlinux.org/index.php?title=GDM&diff=0&oldid=525308)可以查看翻译后英文页面的改动。
 
 来自[GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM)：“The GNOME Display Manager (GDM) is a program that manages graphical display servers and handles graphical user logins."
 
@@ -61,7 +61,7 @@ You might also wish to install the following:
 
 ## 开始
 
-To start GDM at boot time [enable](/index.php/Enable "Enable") `gdm.service`.
+可通过[enable](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)")`gdm.service`来在开机时启动GDM。
 
 ### 自动启动软件
 
@@ -305,29 +305,29 @@ where *action* can be one of `nothing`, `suspend` or `hibernate`.
 
 #### 开启轻触以点击
 
-Tap-to-click is disabled in GDM (and GNOME) by default, but you can easily enable it with a dconf setting.
+轻触以点击在GDM（和GNOME）中被默认关闭，但是你可以使用dconf设置轻松地开启它。
 
-**Note:** If you want to do this under X, you have to first set up correct X server access permissions - see [#Configure X server access permission](#Configure_X_server_access_permission).
+**Note:** 如果你想要在X下这么做，you have to first set up correct X server access permissions - see [#Configure X server access permission](#Configure_X_server_access_permission).
 
-To directly enable tap-to-click, use:
+可用以下命令直接开启轻触以点击：
 
  `# sudo -u gdm gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true` 
 
-If you prefer to do this with a GUI, use:
+如果你想使用GUI，请使用：
 
  `# sudo -u gdm dconf-editor` 
 
-To check the if it was set correctly, use:
+检查它是否被正确开启：
 
  `$ sudo -u gdm gsettings get org.gnome.desktop.peripherals.touchpad tap-to-click` 
 
-If you get the error `dconf-WARNING **: failed to commit changes to dconf: Error spawning command line`, make sure dbus is running:
+如果你得到一个错误：`dconf-WARNING **: failed to commit changes to dconf: Error spawning command line`，请确认dbus正在运行：
 
  `$ sudo -u gdm dbus-launch gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true` 
 
 #### 开启或关闭无障碍菜单
 
-To disable or enable the Accessibility Menu, set the following key in dconf editor:
+在dconf编辑器中设置以下key以关闭或开启无障碍菜单。
 
 ```
 # machinectl shell gdm@
@@ -335,17 +335,17 @@ To disable or enable the Accessibility Menu, set the following key in dconf edit
 # exit
 ```
 
-The menu is disabled when the key is false, enabled when it is true.
+当key是false时，无障碍菜单被默认关闭；true时为开启。
 
 ### 键盘布局
 
-The system keyboard layout will be applied to GDM. See [Keyboard configuration in Xorg#Using X configuration files](/index.php/Keyboard_configuration_in_Xorg#Using_X_configuration_files "Keyboard configuration in Xorg").
+系统键盘布局会被应用到GDM。参见[Keyboard configuration in Xorg#Using X configuration files](/index.php/Keyboard_configuration_in_Xorg#Using_X_configuration_files "Keyboard configuration in Xorg")。
 
 **Tip:** See [Wikipedia:ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1 "wikipedia:ISO 3166-1") for a list of keymaps.
 
 If a system has multiple users, it is possible to specify a keyboard layout for GDM to use which is different from the system keyboard layout. Firstly, ensure the package [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) is installed. Then start *gnome-control-center* and navigate to *Region & Language -> Input Sources*. In the header bar, hit the *Login Screen* toggle button and then choose a keyboard layout from the list. Note that the *Login Screen* button will not be visible in the header bar unless multiple users are present on the system [[5]](https://bugzilla.gnome.org/show_bug.cgi?id=741500).
 
-Users of GDM 2.x (legacy GDM) may need to edit `~/.dmrc` as shown below:
+GDM 2.x（legacy GDM）的用户需要将`~/.dmrc`更改为以下内容：
 
  `~/.dmrc` 
 ```
@@ -364,7 +364,7 @@ The system language will be applied to GDM. If a system has multiple users, it i
 
 #### 自动登录
 
-To enable automatic login with GDM, add the following to `/etc/gdm/custom.conf` (replace *username* with your own):
+将以下内容添加至`/etc/gdm/custom.conf`以开启自动登陆（将*username*替换为你的用户名）：
 
  `/etc/gdm/custom.conf` 
 ```
@@ -406,7 +406,7 @@ Now, add your user to the `nopasswdlogin` group and you will only have to click 
 
 **Warning:**
 
-*   Do **not** do this for a **root** account.
+*   **不要**对**root**账户这么做。
 *   You won't be able to change your session type at login with GDM anymore. If you want to change your default session type, you will first need to remove your user from the `nopasswdlogin` group.
 
 #### Passwordless shutdown for multiple sessions

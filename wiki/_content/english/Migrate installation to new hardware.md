@@ -21,12 +21,12 @@ Which way you choose depends heavily on how the new system differs from your old
         *   [1.2.3 Install software](#Install_software)
 *   [2 Top to Bottom](#Top_to_Bottom)
     *   [2.1 Move the system to the new HDDs](#Move_the_system_to_the_new_HDDs)
-        *   [2.1.1 Update fstab](#Update_fstab)
-    *   [2.2 Reconfigure the bootloader](#Reconfigure_the_bootloader)
-    *   [2.3 Regenerate kernel image](#Regenerate_kernel_image)
-    *   [2.4 Update the graphic drivers](#Update_the_graphic_drivers)
-    *   [2.5 Reconfigure audio](#Reconfigure_audio)
-    *   [2.6 Reconfigure network](#Reconfigure_network)
+    *   [2.2 Update fstab](#Update_fstab)
+    *   [2.3 Reconfigure the bootloader](#Reconfigure_the_bootloader)
+    *   [2.4 Regenerate kernel image](#Regenerate_kernel_image)
+    *   [2.5 Update the graphic drivers](#Update_the_graphic_drivers)
+    *   [2.6 Reconfigure audio](#Reconfigure_audio)
+    *   [2.7 Reconfigure network](#Reconfigure_network)
 *   [3 See also](#See_also)
 
 ## Bottom to Top
@@ -100,7 +100,7 @@ At the same time there are many different methods for how to transport the data 
 
 For the first two options, consider that you might need adapters to connect the HDDs (PATA->SATA, USB-HDD-Cases, etc.), and choose a connection that is sufficiently fast. The last two options require you to use a live system on the new computer, as it is not possible to boot from the new harddrive at this point. It is also worth to clean up your system before cloning it. See [List of applications#Disk usage display](/index.php/List_of_applications#Disk_usage_display "List of applications") for useful tools.
 
-#### Update fstab
+### Update fstab
 
 *   using /dev paths: this should change depending on how the new drives are connected to the mainboard, on the BIOS and on the new partitions scheme
 *   using fs labels: should be safe
@@ -114,12 +114,14 @@ For the first two options, consider that you might need adapters to connect the 
 *   GRUB allows to edit entries with 'e'
 *   use a live system?
 *   update framebuffer mode (if new gpu)
+*   USB to SATA/NVMe migration?
+    *   often UEFI doesn't boot [EFISTUB](/index.php/EFISTUB "EFISTUB") of a non-removable medium without explicit configuration, use f.e. `efibootmgr`
 
 ### Regenerate kernel image
 
 *   initially the Fallback image could work
 *   regenerate image
-    *   mkinitcpio -p linux
+    *   `mkinitcpio -p linux`
 
 ### Update the graphic drivers
 
@@ -136,7 +138,11 @@ For the first two options, consider that you might need adapters to connect the 
     *   [hostnamectl](/index.php/Network_configuration#Set_the_hostname "Network configuration")
     *   /etc/hosts
     *   other apps using hostname: synergy, nut (network ups tools)
-        *   "`# grep -Ri 'hostname' /etc`" should give some hints on the files to be updated
+        *   `# grep -Ri 'hostname' /etc` should give some hints on the files to be updated
+*   if using [dhcpcd](/index.php/Dhcpcd "Dhcpcd") with named network interfaces:
+    *   `$ dmesg | grep 'renamed from eth'` might help to find the new interface name
+    *   remove old `# systemctl remove dhcpcd@enp*X*s0.service`
+    *   activate new `# systemctl start dhcpcd@enp*X*s0.service`
 
 ## See also
 

@@ -19,7 +19,7 @@ Related articles
         *   [2.4.1 Proxy configuration](#Proxy_configuration)
         *   [2.4.2 Container configuration](#Container_configuration)
     *   [2.5 Configuring DNS](#Configuring_DNS)
-    *   [2.6 Running Docker with a manually-defined network](#Running_Docker_with_a_manually-defined_network)
+    *   [2.6 Running Docker with a manually-defined network on systemd-networkd](#Running_Docker_with_a_manually-defined_network_on_systemd-networkd)
     *   [2.7 Images location](#Images_location)
     *   [2.8 Insecure registries](#Insecure_registries)
 *   [3 Images](#Images)
@@ -146,11 +146,11 @@ ENV https_proxy="https://192.168.1.1:3128"
 
 By default, docker will make `resolv.conf` in the container match `/etc/resolv.conf` on the host machine, filtering out local addresses (e.g. `127.0.0.1`). If this yields an empty file, then [Google DNS servers](https://developers.google.com/speed/public-dns/) are used. If you are using a service like [dnsmasq](/index.php/Dnsmasq "Dnsmasq") to provide name resolution, you may need to add an entry to the `/etc/resolv.conf` for docker's network interface so that it is not filtered out.
 
-### Running Docker with a manually-defined network
+### Running Docker with a manually-defined network on systemd-networkd
 
-If you manually configure your network using systemd-network version **220 or higher**, containers you start with Docker may be unable to access your network. Beginning with version 220, the forwarding setting for a given network (`net.ipv4.conf.<interface>.forwarding`) defaults to `off`. This setting prevents IP forwarding. It also conflicts with Docker which enables the `net.ipv4.conf.all.forwarding` setting within a container.
+If you manually configure your network using [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") version **220 or higher**, containers you start with Docker may be unable to access your network. Beginning with version 220, the forwarding setting for a given network (`net.ipv4.conf.<interface>.forwarding`) defaults to `off`. This setting prevents IP forwarding. It also conflicts with Docker which enables the `net.ipv4.conf.all.forwarding` setting within a container.
 
-To work around this, edit the `<interface>.network` file in `/etc/systemd/network/` on your Docker host add the following block:
+A workaround is to edit the `<interface>.network` file in `/etc/systemd/network/`, adding `IPForward=kernel` on the Docker host:
 
  `/etc/systemd/network/<interface>.network` 
 ```

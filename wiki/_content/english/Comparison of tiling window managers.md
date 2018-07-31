@@ -6,7 +6,7 @@ This article provides an unbiased comparison of the most popular *tiling* [windo
     *   [1.1 Management style](#Management_style)
     *   [1.2 Layouts](#Layouts)
     *   [1.3 Key bindings](#Key_bindings)
-*   [2 External links](#External_links)
+*   [2 See also](#See_also)
 
 ## Comparison table
 
@@ -71,6 +71,6 @@ A number of common layout types appear in several tiling WMs, although the termi
 
 Tiling window managers are usually designed to be used entirely with the keyboard or with keyboard & mouse. This is for speed (reaching for and moving a mouse is slow) and ease of use. Sensible key bindings are crucial to making workflow fast and efficient. Some default sets are better than others, but generally the keys can be rebound as desired by the user.
 
-## External links
+## See also
 
 *   [Comparison of extensible window managers](http://sawfish.wikia.com/wiki/Comparison_of_extensible_window_managers) compares WMs "extensible" by scripting, like xmonad and Sawfish.

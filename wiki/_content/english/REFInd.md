@@ -517,5 +517,6 @@ Currently, VirtualBox will only boot the default `*esp*/EFI/BOOT/bootx64.efi` pa
 ## See also
 
 *   [The rEFInd Boot Manager](https://www.rodsbooks.com/refind/) by Roderick W. Smith.
+*   [Wikipedia:rEFInd](https://en.wikipedia.org/wiki/rEFInd "wikipedia:rEFInd")
 *   `/usr/share/refind/docs/README.txt`
 *   [rEFInd discussion forum on Sourceforge](https://sourceforge.net/p/refind/discussion/)

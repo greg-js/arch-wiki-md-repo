@@ -73,7 +73,7 @@ Check whether the dir `/sys/firmware/efi` exists, if it exists it means the kern
 
 ### Apple Macs
 
-Pre-2008 [Macs](/index.php?title=Macs&action=edit&redlink=1 "Macs (page does not exist)") mostly have IA32 EFI firmware while >=2008 Macs have mostly x86_64 EFI. All Macs capable of running Mac OS X Snow Leopard 64-bit Kernel have x86_64 EFI 1.x firmware.
+Pre-2008 [Macs](/index.php/Mac "Mac") mostly have IA32 EFI firmware while >=2008 Macs have mostly x86_64 EFI. All Macs capable of running Mac OS X Snow Leopard 64-bit Kernel have x86_64 EFI 1.x firmware.
 
 To find out the arch of the EFI firmware in a Mac, type the following into the Mac OS X terminal:
 
@@ -138,7 +138,7 @@ Linux kernel exposes UEFI variables data to userspace via **efivarfs** (**EFI** 
 ### Requirements for UEFI variable support
 
 1.  Kernel processor [bitness](#UEFI_firmware_bitness) and UEFI processor bitness should match.
-2.  Kernel should be booted in UEFI mode (via [EFISTUB](/index.php/EFISTUB "EFISTUB") or any [UEFI bootloader](/index.php?title=UEFI_bootloader&action=edit&redlink=1 "UEFI bootloader (page does not exist)"), not via BIOS/CSM or Apple's "bootcamp" which is also BIOS/CSM).
+2.  Kernel should be booted in UEFI mode (via [EFISTUB](/index.php/EFISTUB "EFISTUB") or any UEFI [bootloader](/index.php/Bootloader "Bootloader"), not via BIOS/CSM or Apple's "bootcamp" which is also BIOS/CSM).
 3.  EFI Runtime Services support should be present in the kernel (`CONFIG_EFI=y`, check if present with `zgrep CONFIG_EFI /proc/config.gz`).
 4.  EFI Runtime Services in the kernel SHOULD NOT be disabled via kernel cmdline, i.e. `noefi` kernel parameter SHOULD NOT be used.
 5.  `efivarfs` filesystem should be mounted at `/sys/firmware/efi/efivars`, otherwise follow [#Mount efivarfs](#Mount_efivarfs) section below.

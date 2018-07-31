@@ -19,7 +19,6 @@ This mechanism differs from [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd") 
 *   [1 Installation](#Installation)
 *   [2 Examples](#Examples)
     *   [2.1 Create and boot a minimal Arch Linux distribution in a container](#Create_and_boot_a_minimal_Arch_Linux_distribution_in_a_container)
-        *   [2.1.1 Bootstrap Arch Linux i686 inside x86_64 host](#Bootstrap_Arch_Linux_i686_inside_x86_64_host)
     *   [2.2 Create a Debian or Ubuntu environment](#Create_a_Debian_or_Ubuntu_environment)
     *   [2.3 Creating private users (unprivileged containers)](#Creating_private_users_.28unprivileged_containers.29)
     *   [2.4 Enable container on boot](#Enable_container_on_boot)
@@ -84,26 +83,6 @@ After the container starts, log in as "root" with no password.
 The container can be powered off by running `poweroff` from within the container. From the host, containers can be controlled by the [machinectl](#machinectl) tool.
 
 **Note:** To terminate the *session* from within the container, hold `Ctrl` and rapidly press `]` three times. Non-US keyboard users should use `%` instead of `]`.
-
-#### Bootstrap Arch Linux i686 inside x86_64 host
-
-It is possible to install a minimal i686 Arch Linux inside a subdirectory and use it as systemd-nspawn container instead of [chroot](/index.php/Chroot "Chroot") or [virtualization](/index.php/Virtualization "Virtualization"). This is useful for testing `PKGBUILD` compilation for i686 and other tasks. Make sure you use a `pacman.conf` **without** `multilib` repository.
-
-```
- # pacman_conf=/tmp/pacman.conf # this is pacman.conf without multilib
- # mkdir /mnt/i686-archlinux
- # linux32 pacstrap -C "$pacman_conf" -i /mnt/i686-archlinux base base-devel
-
-```
-
-You may deselect `linux` from `base` group, since the resulting bootstrap directory is not meant to be booted on real or virtualized hardware.
-
-To start the resulting i686 Arch Linux systemd-nspawn instance, just issue the following command.
-
-```
- # linux32 systemd-nspawn -D /mnt/i686-archlinux
-
-```
 
 ### Create a Debian or Ubuntu environment
 

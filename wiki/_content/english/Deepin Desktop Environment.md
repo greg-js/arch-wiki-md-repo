@@ -9,12 +9,12 @@ The [Deepin Desktop Environment](https://www.deepin.org/en/?language=en) (DDE) i
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Launching Deepin Desktop Environment](#Launching_Deepin_Desktop_Environment)
-    *   [2.1 Via a Display Manager](#Via_a_Display_Manager)
+*   [2 Starting](#Starting)
+    *   [2.1 Via a display manager](#Via_a_display_manager)
     *   [2.2 Via xinit](#Via_xinit)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 No background after resuming from standby](#No_background_after_resuming_from_standby)
-*   [4 Bug Reporting](#Bug_Reporting)
+*   [4 Bug reporting](#Bug_reporting)
 
 ## Installation
 
@@ -24,9 +24,9 @@ The [deepin-extra](https://www.archlinux.org/groups/x86_64/deepin-extra/) groups
 
 To be able to use the integrated network administration, the [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) package is required, and the `NetworkManager.service` must be [started and enabled](/index.php/Systemd#Using_units "Systemd").
 
-## Launching Deepin Desktop Environment
+## Starting
 
-### Via a Display Manager
+### Via a display manager
 
 To use the default DDE's lightdm greeter you have to modify the configuration file under the `[Seat:*]` section, to state:.
 
@@ -90,6 +90,6 @@ Once those two files are created in the correct directories, in order to enable 
 
 The first command makes the script you created executable, the second makes sure that the service always start at boot and the last one starts the service immediately so you can test the workaround without having to reboot the system.
 
-## Bug Reporting
+## Bug reporting
 
-Any upstream or arch packaging related bugs should be reported [here](https://github.com/linuxdeepin/developer-center/issues). All deepin developers will see the bug reports and solve them as soon as possible.
+Any upstream or Arch packaging related bugs should be reported [here](https://github.com/linuxdeepin/developer-center/issues). All Deepin developers will see the bug reports and solve them as soon as possible.

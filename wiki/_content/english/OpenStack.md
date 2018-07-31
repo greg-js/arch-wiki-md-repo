@@ -1,4 +1,4 @@
-OpenStack is a global collaboration of developers and cloud computing technologists producing the ubiquitous open source cloud computing platform for public and private clouds. The project aims to deliver solutions for all types of clouds by being simple to implement, massively scalable, and feature rich. The technology consists of a series of interrelated projects delivering various components for a cloud infrastructure solution
+[OpenStack](https://www.openstack.org/) is a global collaboration of developers and cloud computing technologists producing the ubiquitous open source cloud computing platform for public and private clouds. The project aims to deliver solutions for all types of clouds by being simple to implement, massively scalable, and feature rich. The technology consists of a series of interrelated projects delivering various components for a cloud infrastructure solution
 
 ## Contents
 
@@ -64,9 +64,9 @@ For manual creation, the *essential* steps are:
 *   Installing a boot loader (e.g. [GRUB](/index.php/GRUB "GRUB") or [extlinux](/index.php/Extlinux "Extlinux"))
 *   Installing and configuring [cloud-init](/index.php/Cloud-init "Cloud-init")
 *   Adding an unpriviliged user able to run [sudo](/index.php/Sudo "Sudo") without a password
-*   Configuring `eth0` for [DHCP](/index.php?title=DHCP&action=edit&redlink=1 "DHCP (page does not exist)")
+*   Configuring `eth0` for [DHCP](/index.php/DHCP "DHCP")
     *   Configuring [udev](/index.php/Udev "Udev") to name network interfaces `eth*`
-    *   Configuring [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") to use [DHCP](/index.php?title=DHCP&action=edit&redlink=1 "DHCP (page does not exist)") on `eth0`
+    *   Configuring [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") to use [DHCP](/index.php/DHCP "DHCP") on `eth0`
 *   Installing [SSH](/index.php/SSH "SSH") server
 *   Adjusting [initramfs](/index.php/Initramfs "Initramfs") creation and regenerating initramfs images
     *   Disabling the `autodetect` hook (since autodetection works differently from a chroot)
@@ -77,4 +77,4 @@ For manual creation, the *essential* steps are:
 
 ## See also
 
-*   [Openstack web site](http://www.openstack.org/)
+*   [Wikipedia:OpenStack](https://en.wikipedia.org/wiki/OpenStack "wikipedia:OpenStack")

@@ -1,4 +1,4 @@
-Netatalk is a free, open-source implementation of the Apple Filing Protocol (AFP). It allows Unix-like operating systems to serve as file servers for Macintosh computers.
+[Netatalk](http://netatalk.sourceforge.net/) is a free, open-source implementation of the Apple Filing Protocol (AFP). It allows Unix-like operating systems to serve as file servers for Macintosh computers.
 
 ## Contents
 

@@ -9,7 +9,7 @@ Related articles
 *   [Securely wipe disk#shred](/index.php/Securely_wipe_disk#shred "Securely wipe disk")
 *   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
 *   [Color output in console](/index.php/Color_output_in_console "Color output in console")
-*   [Archiving and compression tools](/index.php/Archiving_and_compression_tools "Archiving and compression tools")
+*   [Archiving and compression](/index.php/Archiving_and_compression "Archiving and compression")
 
 This article deals with so-called *core* utilities on a GNU/Linux system, such as *less*, *ls*, and *grep*. The scope of this article includes, but is not limited to, those utilities included with the GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) package. What follows are various tips and tricks and other helpful information related to these utilities.
 
