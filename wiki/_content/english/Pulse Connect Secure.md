@@ -70,7 +70,7 @@ $ nmcli con add type vpn con-name "Connection Name" ifname "*" vpn-type openconn
 
 1\. Go to your company's VPN site, log in and download/install the Juniper client.
 
-2\. Install [jnc](https://aur.archlinux.org/packages/jnc/). You need to enable the [Multilib](/index.php/Multilib "Multilib") repository: see the [upstream website](http://www.scc.kit.edu/scc/net/juniper-vpn/linux/).
+2\. Install [jnc](https://aur.archlinux.org/packages/jnc/). You need to enable the [multilib](/index.php/Multilib "Multilib") repository: see the [upstream website](http://www.scc.kit.edu/scc/net/juniper-vpn/linux/).
 
 3\. Make a directory for the *.config* file:
 
@@ -123,7 +123,7 @@ The [Mad Scientist's "msjnc" script](http://mad-scientist.us/juniper.html) requi
 
 #### Instructions for 64-bit users
 
-[Enable multilib](/index.php/Multilib#Enabling "Multilib") and then [install](/index.php/Install "Install") [lib32-zlib](https://www.archlinux.org/packages/?name=lib32-zlib), [net-tools](https://www.archlinux.org/packages/?name=net-tools), [glib-perl](https://www.archlinux.org/packages/?name=glib-perl), [perl-libwww](https://www.archlinux.org/packages/?name=perl-libwww) and [gtk2-perl](https://www.archlinux.org/packages/?name=gtk2-perl).
+Enable [multilib](/index.php/Multilib "Multilib") and then [install](/index.php/Install "Install") [lib32-zlib](https://www.archlinux.org/packages/?name=lib32-zlib), [net-tools](https://www.archlinux.org/packages/?name=net-tools), [glib-perl](https://www.archlinux.org/packages/?name=glib-perl), [perl-libwww](https://www.archlinux.org/packages/?name=perl-libwww) and [gtk2-perl](https://www.archlinux.org/packages/?name=gtk2-perl).
 
 Access the the Juniper VPN website you need to use. Log in and allow the installation to attempt and fail (due to non-32 bit Java). You should get an error similar to the following:
 

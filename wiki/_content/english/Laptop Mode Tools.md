@@ -339,5 +339,8 @@ Multiple IDs can be seperated with spaces.
 
 ## See also
 
-*   [Laptop Mode Tools](http://samwel.tk/laptop_mode/)
-*   [Mailing List Archives](http://mailman.samwel.tk/pipermail/laptop-mode/)
+*   [Laptop Mode Tools wiki](https://github.com/rickysarraf/laptop-mode-tools/wiki)
+*   [FAQ](https://github.com/rickysarraf/laptop-mode-tools/wiki/FAQ)
+*   [Mailing List](https://groups.google.com/forum/#!forum/laptop-mode-tools)
+*   [Laptop Mode Tools old site](http://samwel.tk/laptop_mode/)
+*   [Mailing List Archives old site](http://mailman.samwel.tk/pipermail/laptop-mode/)

@@ -33,7 +33,7 @@ Steam for Linux only supports Ubuntu 12.04 LTS and newer [[1]](https://support.s
 
 ## Installation
 
-Enable the [Multilib](/index.php/Multilib "Multilib") repository and [install](/index.php/Install "Install") the [steam](https://www.archlinux.org/packages/?name=steam) package.
+Enable the [multilib](/index.php/Multilib "Multilib") repository and [install](/index.php/Install "Install") the [steam](https://www.archlinux.org/packages/?name=steam) package.
 
 The following requirements must be fulfilled in order to run Steam on Arch Linux:
 

@@ -45,18 +45,27 @@ $ git clone https://github.com/mattermost/mattermost-docker.git
 
 ```
 
-*   For Team edition, edit the `docker-compose.yml` file by commenting out the line: `dockerfile: Dockerfile-enterprise`
+*   Edit the `docker-compose.yml` file
+    *   Uncomment the `args:` line.
+    *   For Team edition, remove the comments on the line: `- edition=team`.
+    *   Adopt the UID/GID in the section to those of the owner of your `./volumes/app/mattermost/*` folders.
+    *   Add the port forwarding statements as a child of `app` section (e.g. between `build` and `restart`)
+
+```
+ports:
+  - "127.0.0.1:8065:8000"
+```
+
 *   Build and start the docker container:
 
 ```
 $ cd mattermost-docker
 $ docker-compose build
 $ docker-compose up -d
-$ docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
 
 ```
 
-*   Open `[http://localhost:8065/](http://localhost:8065/)` in your browser.
+*   Open `[http://localhost:8000/](http://localhost:8000/)` in your browser.
 
 Please refer to [the official guide](https://docs.mattermost.com/install/prod-docker.html) for how to configure TLS, email, enable Enterprise features and use several server nodes using Docker Compose.
 

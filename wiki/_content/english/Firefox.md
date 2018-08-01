@@ -2,6 +2,7 @@ Related articles
 
 *   [Browser plugins](/index.php/Browser_plugins "Browser plugins")
 *   [Firefox/Tweaks](/index.php/Firefox/Tweaks "Firefox/Tweaks")
+*   [Firefox/Profile on RAM](/index.php/Firefox/Profile_on_RAM "Firefox/Profile on RAM")
 *   [Firefox/Privacy](/index.php/Firefox/Privacy "Firefox/Privacy")
 *   [Chromium](/index.php/Chromium "Chromium")
 *   [Opera](/index.php/Opera "Opera")

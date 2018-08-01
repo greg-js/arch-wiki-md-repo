@@ -49,7 +49,7 @@ Related articles
 
 ## Installation
 
-Wine can be installed by enabling the [Multilib](/index.php/Multilib "Multilib") repository and [installing](/index.php/Install "Install") the [wine](https://www.archlinux.org/packages/?name=wine) (stable) or [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) (testing) package. [Wine Staging](https://wine-staging.com/) is a patched version of [Wine](https://www.winehq.org/), which contains bug fixes and features that have not been integrated into the stable branch yet. See also [#Graphics drivers](#Graphics_drivers) and [#Sound](#Sound).
+Wine can be installed by enabling the [multilib](/index.php/Multilib "Multilib") repository and [installing](/index.php/Install "Install") the [wine](https://www.archlinux.org/packages/?name=wine) (stable) or [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) (testing) package. [Wine Staging](https://wine-staging.com/) is a patched version of [Wine](https://www.winehq.org/), which contains bug fixes and features that have not been integrated into the stable branch yet. See also [#Graphics drivers](#Graphics_drivers) and [#Sound](#Sound).
 
 Consider installing [wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) and [wine-mono](https://www.archlinux.org/packages/?name=wine-mono) for applications that depend on Internet Explorer and .NET, respectively. These packages are not strictly required as Wine will download the relevant files as needed. However, having the files downloaded in advance allows you to work off-line and makes it so Wine does not download the files for each Wine prefix needing them.
 
@@ -100,7 +100,7 @@ WINEARCH=win32 WINEPREFIX=~/.local/share/wineprefixes/steam winetricks steam
 
 ### Graphics drivers
 
-You need to install the 32-bit version of your graphics driver. Please install the package that is listed in the *OpenGL (Multilib)* column in the table in [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg").
+You need to install the 32-bit version of your graphics driver. Please install the package that is listed in the *OpenGL (multilib)* column in the table in [Xorg#Driver installation](/index.php/Xorg#Driver_installation "Xorg").
 
 A good sign that your drivers are inadequate or not properly configured is when Wine reports the following in your terminal window:
 

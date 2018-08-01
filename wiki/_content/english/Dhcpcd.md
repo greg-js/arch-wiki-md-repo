@@ -305,6 +305,13 @@ error changing net interface name wlan0 to wlp4s0: Device or resource busy"
 
 To avoid it, enable *dhcpcd* per interface it should bind to as described in [#Running](#Running). The downside of the template unit is, however, that it does not support hot-plugging of a wired connection and will fail if the network cable is not connected. To work-around the failure, see [#Timeout delay](#Timeout_delay).
 
+It is also possible to use `denyinterfaces` or `allowinterfaces` in [dhcpcd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd.conf.5) to stop dhcpcd from binding to kernel names, for example
+
+```
+denyinterfaces wlan* eth*
+
+```
+
 ### Timeout delay
 
 If *dhcpcd* operates on a single interface and fails to obtain a lease after 30 seconds (for example when the server is not ready or the cable not plugged), it will exit with an error.

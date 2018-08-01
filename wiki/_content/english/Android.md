@@ -379,7 +379,7 @@ Make sure you've exported the variable `ANDROID_HOME` as explained in [#Android 
 
 ### Android Studio: 'failed to create the SD card'
 
-If you try to run an AVD (Android Virtual Device) under x86_64 Arch and get the error above, install the [lib32-gcc-libs](https://www.archlinux.org/packages/?name=lib32-gcc-libs) package from the [Multilib](/index.php/Multilib "Multilib") repository.
+If you try to run an AVD (Android Virtual Device) under x86_64 Arch and get the error above, install the [lib32-gcc-libs](https://www.archlinux.org/packages/?name=lib32-gcc-libs) package from the [multilib](/index.php/Multilib "Multilib") repository.
 
 ### Eclipse: During Debugging "Source not found"
 

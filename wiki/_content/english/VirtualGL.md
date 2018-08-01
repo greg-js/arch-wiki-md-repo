@@ -229,7 +229,7 @@ ERROR: ld.so: object 'librrfaker.so' from LD_PRELOAD cannot be preloaded: ignore
 
 *   **The VirtualGL libraries for the correct architecture are not installed**
 
-	To run a 32-bit application (like [Wine](/index.php/Wine "Wine")) with VirtualGL, you need to install [lib32-virtualgl](https://www.archlinux.org/packages/?name=lib32-virtualgl) from the [Multilib](/index.php/Multilib "Multilib") repository.
+	To run a 32-bit application (like [Wine](/index.php/Wine "Wine")) with VirtualGL, you need to install [lib32-virtualgl](https://www.archlinux.org/packages/?name=lib32-virtualgl) from the [multilib](/index.php/Multilib "Multilib") repository.
 
 *   **The application executable has the setuid/setgid flag set**
 

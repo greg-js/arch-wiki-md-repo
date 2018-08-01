@@ -58,6 +58,7 @@ For more information, see the [Trusted User Bylaws](https://aur.archlinux.org/tr
 | [escondida](https://aur.archlinux.org/packages.php?K=escondida&SeB=m) | Ivy Foster | code @ escondida dot tk |
 | [farseerfc](https://aur.archlinux.org/packages.php?K=farseerfc&SeB=m) | Jiachen Yang | farseerfc[at]gmail[dot]com |
 | [felixonmars](https://aur.archlinux.org/packages.php?K=felixonmars&SeB=m) | Felix Yan | felixonmars@archlinux.org |
+| [FFY00](https://aur.archlinux.org/packages.php?K=FFY00&SeB=m) | Filipe Laíns | [lains@archlinux.org](mailto:lains@archlinux.org) |
 | [Foxboron](https://aur.archlinux.org/packages.php?K=Foxboron&SeB=m) | Morten Linderud | foxboron@archlinux.org |
 | [foxxx0](https://aur.archlinux.org/packages.php?K=foxxx0&SeB=m) | Thore Bödecker | me [at] foxxx0 [dot] de |
 | [giniu](https://aur.archlinux.org/packages.php?K=giniu&SeB=m) | [Andrzej Giniewicz](/index.php/User:Giniu "User:Giniu") | gginiu@gmail.com |

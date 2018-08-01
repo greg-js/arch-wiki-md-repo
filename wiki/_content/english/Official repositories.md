@@ -21,6 +21,8 @@ Packages in the official repositories are constantly upgraded: when a package is
     *   [1.2 extra](#extra)
     *   [1.3 community](#community)
     *   [1.4 multilib](#multilib)
+        *   [1.4.1 Enabling multilib](#Enabling_multilib)
+        *   [1.4.2 Disabling multilib](#Disabling_multilib)
 *   [2 Testing repositories](#Testing_repositories)
     *   [2.1 testing](#testing)
     *   [2.2 community-testing](#community-testing)
@@ -67,9 +69,44 @@ This repository can be found in `.../community/os/` on your favorite mirror.
 
 This repository can be found in `.../multilib/os/` on your favorite mirror.
 
-*multilib* contains 32 bit software and libraries that can be used to run and build 32 bit applications on 64 bit installs (e.g. [wine](https://www.archlinux.org/packages/?name=wine), [steam](https://www.archlinux.org/packages/?name=steam), etc).
+*multilib* contains 32-bit software and libraries that can be used to run and build 32-bit applications on 64-bit installs (e.g. [wine](https://www.archlinux.org/packages/?name=wine), [steam](https://www.archlinux.org/packages/?name=steam), etc).
 
-For more information, see [Multilib](/index.php/Multilib "Multilib").
+With the multilib repository enabled, the 32-bit compatible libraries are located under `/usr/lib32/`.
+
+#### Enabling multilib
+
+To enable multilib repository, uncomment the `[multilib]` section in `/etc/pacman.conf`:
+
+ `/etc/pacman.conf` 
+```
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+```
+
+Then [upgrade](/index.php/Upgrade "Upgrade") the system and install the desired multilib packages.
+
+**Tip:** Run `pacman -Sl multilib` to list all packages in the *multilib* repository. 32-bit library package names begin with `lib32-`.
+
+#### Disabling multilib
+
+Execute the following command to remove all packages that were installed from *multilib*:
+
+```
+# pacman -R $(comm -12 <(pacman -Qq | sort) <(pacman -Slq multilib | sort))
+
+```
+
+If you have conflicts with gcc-libs reinstall the [gcc-libs](https://www.archlinux.org/packages/?name=gcc-libs) package and the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group.
+
+Comment out the `[multilib]` section in `/etc/pacman.conf`:
+
+ `/etc/pacman.conf` 
+```
+#[multilib]
+#Include = /etc/pacman.d/mirrorlist
+```
+
+Then [upgrade](/index.php/Upgrade "Upgrade") the system.
 
 ## Testing repositories
 

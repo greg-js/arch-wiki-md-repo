@@ -21,8 +21,10 @@ Related articles
 *   [4 Power management/Throttling issues](#Power_management.2FThrottling_issues)
     *   [4.1 Temporary fix](#Temporary_fix)
 *   [5 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
-*   [6 References](#References)
-*   [7 Additional resources](#Additional_resources)
+*   [6 Full-disk encryption](#Full-disk_encryption)
+    *   [6.1 Ramdisk module](#Ramdisk_module)
+*   [7 References](#References)
+*   [8 Additional resources](#Additional_resources)
 
 ## Model description
 
@@ -80,6 +82,8 @@ The ThinkPad X1 Carbon supports setting a custom splash image at the earliest bo
 The 6th Generation X1 Carbon supports S0i3 (also known as Windows Modern Standby) and does not support the S3 sleep state. A guide exists with [instructions for patching ACPI DSDT tables](https://delta-xi.net/#056) to add S3 support.
 
 A [forum thread](https://bbs.archlinux.org/viewtopic.php?id=234913) has further discussion related to this issue.
+
+Missing S3 also causes hybrid-suspend to go directly to hibernate; the mentioned patch fixes this issue.
 
 ### S2idle support
 
@@ -192,6 +196,8 @@ Reboot and check with:
 
 ```
 
+**Note:** If the rdmsr command outputs: 'rdmsr: open: No such file or directory', you may have to configure the msr module to load automatically. See [https://wiki.archlinux.org/index.php/Kernel_module#Automatic_module_handling](https://wiki.archlinux.org/index.php/Kernel_module#Automatic_module_handling) for more details.
+
 ## TrackPoint and Touchpad issues
 
 On the 20KG model, the Touchpad(Synaptics) and TrackPoint(Elantech) do not work together, one has to disable the TrackPoint in BIOS to get the Touchpad to work reliably out of the box. The root of the issue seems to be that the default loading of the TrackPoint via ancient PS/2 drivers conflicts with Touchpad loading. Synaptics has introduced a new way of doing things named RMI(4) that fixes some those issues. Further explanation is collected [in this thread](https://bbs.archlinux.org/viewtopic.php?id=236367).
@@ -219,6 +225,12 @@ echo -n "none" | sudo tee /sys/bus/serio/devices/serio1/drvctl
 echo -n "reconnect" | sudo tee /sys/bus/serio/devices/serio1/drvctl
 ```
 
+## Full-disk encryption
+
+### Ramdisk module
+
+With LUKS for root, i915 needs to be loaded in ramdisk in order to access the password prompt. Add i915 to MODULES list in `/etc/mkinitcpio.conf` and regenerate the ramdisk.
+
 ## References
 
 *   [A good night's sleep for the Lenovo X1 Carbon Gen6](https://delta-xi.net/#056): Patching ACPI DSDT tables to add S3 support
@@ -230,6 +242,7 @@ echo -n "reconnect" | sudo tee /sys/bus/serio/devices/serio1/drvctl
 *   [StackExchange: Success with enabling RMI4 config flags for Touchpad and TrackPoint](https://unix.stackexchange.com/a/431820)
 *   [Kernel patch - Input: elantech - add support for SMBus devices](https://patchwork.kernel.org/patch/10324633/)
 *   [Kernel patch - Input: synaptics - add Lenovo 80 series ids to SMBus](https://patchwork.kernel.org/patch/10330857/)
+*   [Early KMS start](https://wiki.archlinux.org/index.php/Intel_graphics): Adding i915 to ramdisk
 
 ## Additional resources
 

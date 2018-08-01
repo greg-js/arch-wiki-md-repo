@@ -326,3 +326,4 @@ Of course your window title string can include output from [embedding commands](
 *   [Liquid Prompt — a useful adaptive prompt for Bash & zsh](https://github.com/nojhan/liquidprompt)
 *   [Bash POWER PROMPT](https://www.askapache.com/linux/bash-power-prompt/)
 *   [Wikipedia:ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code "wikipedia:ANSI escape code")
+*   [GNU Bash manual: Controlling the Prompt](https://www.gnu.org/software/bash/manual/html_node/Controlling-the-Prompt.html)

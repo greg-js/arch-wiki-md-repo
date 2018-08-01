@@ -107,7 +107,7 @@ keycode  49 = ugrave Ugrave ugrave Ugrave notsign notsign
 
 With German layout, circumflex/degree symbol and </> are exchanged. With French layout, @/# are exchanged. With the US layout, `/~ and </> are exchanged.
 
-To change the behavior temporarily, [append](/index.php/Append "Append") `0` to `/sys/module/hid_apple/parameters/iso_layout`. To make the change permanent, [set](/index.php/Kernel_modules#Setting_module_options "Kernel modules") the `hid_apple` `iso_layout` option to 0.
+To change the behavior temporarily, [overwrite](/index.php/Help:Reading#Append.2C_add.2C_create.2C_edit "Help:Reading") `/sys/module/hid_apple/parameters/iso_layout` with `0`. To make the change permanent, [set](/index.php/Kernel_modules#Setting_module_options "Kernel modules") the `hid_apple` `iso_layout` option to 0.
 
 ## PrintScreen and SysRq
 

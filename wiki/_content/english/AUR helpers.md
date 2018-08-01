@@ -104,7 +104,7 @@ This table describes projects which either are discontinued by their authors, or
 **Warning:**
 
 *   Graphical AUR helpers are typically aimed at [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"). Their use in [Arch Linux](/index.php/Arch_Linux "Arch Linux") may lead to a defective system, for example through unattended [partial upgrades](/index.php/Partial_upgrades "Partial upgrades").
-*   If a helper has known problematic behavior by default, it is colored with a red entry.
+*   If a helper has *known* problematic behavior, it is colored with a red entry.
 
 | Name | Written in | GUI toolkit | Backend helper | Notes |
 | [aarchup](https://aur.archlinux.org/packages/aarchup/) | C | GTK+ 2 | auracle | – |

@@ -41,7 +41,7 @@ Many tools can be used to determine system performance, the following provides a
 
 glxgears is a popular OpenGL test that renders a very simple OpenGL performance and outputs the frame rate. Though glxgears can be useful as a test of direct rendering capabilities of the graphics driver, it is an outdated tool that is not representative of the current state of GNU/Linux graphics and overall OpenGL possibilities. glxgears only tests a small segment of the OpenGL capabilities that might be used in a game. Performance increases noted in glxgears will not necessarily be realized in any given game. See [here](http://wiki.cchtml.com/index.php/Glxgears_is_not_a_Benchmark) for more information.
 
-glxgears can be installed via the [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos) and [lib32-mesa-demos](https://www.archlinux.org/packages/?name=lib32-mesa-demos) (for [Multilib](/index.php/Multilib "Multilib")) packages.
+glxgears can be installed via the [mesa-demos](https://www.archlinux.org/packages/?name=mesa-demos) and [lib32-mesa-demos](https://www.archlinux.org/packages/?name=lib32-mesa-demos) (for [multilib](/index.php/Multilib "Multilib")) packages.
 
 ### UnixBench
 

@@ -7,7 +7,7 @@ Labels burnt using LightScribe are monochromatic, as it works by making a chemic
 **Note:**
 
 *   The official home of LightScribe [www.lightscribe.com](http://www.lightscribe.com) is discontinued since 2013\. The lightscribe system software is only available from third parties like [pawtec](http://www.pawtec.com/lightscribe/).
-*   x86_64 is only partially supported with [Multilib](/index.php/Multilib "Multilib").
+*   x86_64 is only partially supported with [multilib](/index.php/Multilib "Multilib").
 
 ## Contents
 
@@ -23,7 +23,7 @@ To use LightScribe, regardless of which operating system you are using, you need
 On Arch, the LightScribe System Software is available from the [AUR](/index.php/AUR "AUR"):
 
 *   **i686**: [lightscribe](https://aur.archlinux.org/packages/lightscribe/)
-*   [Multilib](/index.php/Multilib "Multilib") **x86_64**: [bin32-lightscribe](https://aur.archlinux.org/packages/bin32-lightscribe/)
+*   [multilib](/index.php/Multilib "Multilib") **x86_64**: [bin32-lightscribe](https://aur.archlinux.org/packages/bin32-lightscribe/)
 
 ## Labelers
 

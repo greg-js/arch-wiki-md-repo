@@ -25,7 +25,7 @@ Install the stable [pcsxr](https://aur.archlinux.org/packages/pcsxr/) package or
 
 Additionally, you can also install the [pcsxr-gtk2](https://aur.archlinux.org/packages/pcsxr-gtk2/) package for the GTK2 version, which allows to run GTK based plugin interfaces without having to install [lib32-gtk](https://aur.archlinux.org/packages/lib32-gtk/) from the [AUR](/index.php/AUR "AUR").
 
-Notice, however, that if you have a 64 bit machine and you choose to grab one of the [AUR](/index.php/AUR "AUR") versions, PCSXR will be compiled to 64 bit architecture, rendering it incompatible with the vast majority of the plugins, which are 32bit only. If you intend to use any plugins other than the ones that come with the emulator, you should install the 32 bit package from the [Multilib](/index.php/Multilib "Multilib") repositories.
+Notice, however, that if you have a 64 bit machine and you choose to grab one of the [AUR](/index.php/AUR "AUR") versions, PCSXR will be compiled to 64 bit architecture, rendering it incompatible with the vast majority of the plugins, which are 32bit only. If you intend to use any plugins other than the ones that come with the emulator, you should install the 32 bit package from the [multilib](/index.php/Multilib "Multilib") repositories.
 
 ## Usage
 
@@ -72,7 +72,7 @@ Load a state by clicking `Emulator > Load States` and selecting a state previous
 
 ### wrong ELF class: ELFCLASS32
 
-You installed a 64 bit version of the emulator and is trying to run a 32 bit plugin. Install the 32 bit version of [pcsxr](https://aur.archlinux.org/packages/pcsxr/) found on the [Multilib](/index.php/Multilib "Multilib") repository
+You installed a 64 bit version of the emulator and is trying to run a 32 bit plugin. Install the 32 bit version of [pcsxr](https://aur.archlinux.org/packages/pcsxr/) found on the [multilib](/index.php/Multilib "Multilib") repository
 
 ### cfgPeteXGL2, cfgPeteMesaGL or cfgPeopsOSS not found
 

@@ -65,7 +65,7 @@ If the migration fails halfway through, there are packages that can help sort ou
 
 One package is [busybox](https://www.archlinux.org/packages/?name=busybox), which can be used to revert changes. It is statically linked and does not depend on any libraries. The 32-bit (i686) version should be installed.
 
-Another package is [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc), from the [Multilib](/index.php/Multilib "Multilib") x86_64 repository. It is probably only useful when migrating *away* from 32 bits; in any case you may safely skip this package. You can use the package to run 32 bit programs by explicitly calling `/lib/ld-linux.so.2`.
+Another package is [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc), from the [multilib](/index.php/Multilib "Multilib") x86_64 repository. It is probably only useful when migrating *away* from 32 bits; in any case you may safely skip this package. You can use the package to run 32 bit programs by explicitly calling `/lib/ld-linux.so.2`.
 
 ## Method 1: using the Arch LiveCD
 

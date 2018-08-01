@@ -79,7 +79,7 @@ Before installing Bumblebee, check your BIOS and activate Optimus (older laptops
 *   An appropriate version of the NVIDIA driver, see [NVIDIA#Installation](/index.php/NVIDIA#Installation "NVIDIA").
 *   Optionally install [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) - Intel [Xorg](/index.php/Xorg "Xorg") driver.
 
-For 32-bit application support, enable the [Multilib](/index.php/Multilib "Multilib") repository and install:
+For 32-bit application support, enable the [multilib](/index.php/Multilib "Multilib") repository and install:
 
 *   [lib32-virtualgl](https://www.archlinux.org/packages/?name=lib32-virtualgl) - A render/display bridge for 32 bit applications.
 *   [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) or [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) (match the version of the regular NVIDIA driver).

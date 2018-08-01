@@ -12,17 +12,14 @@ In either case, the tty is optional. It is used if you wish to talk to a local u
 
 ### Using xinetd
 
-1.  First, install the inetutils package, which contains talk and talkd. These also rely on xinetd, so install that as well. You might also need the screen command; it's in the screen package. `# pacman -S inetutils xinetd screen` 
-2.  Configure the xinetd service entry by editing `/etc/xinetd.d/talk` and setting "disable = no".
-3.  If you are using tcp_wrappers or something similar, add an entry to `/etc/hosts.allow`: `talkd: 127.0.0.1` 
-4.  Now start xinetd: `# systemctl start xinetd.service` 
-5.  If you're on the local system, you might need to start a screen session to make yourself show up on the "w" and "who" commands -- you need to show up there or talk won't work.
-6.  Allow write access in your terminal if needed: `$ mesg y` 
-
-Talk should work now.
+1.  First, install the inetutils package, which contains talk and talkd. These also rely on xinetd, so install that as well. You might also need the screen command; it's in the screen package.
+2.  [Install](/index.php/Install "Install") [inetutils](https://www.archlinux.org/packages/?name=inetutils), [xinetd](https://www.archlinux.org/packages/?name=xinetd) and [Screen](/index.php/Screen "Screen").
+3.  Configure the xinetd service entry by editing `/etc/xinetd.d/talk` and setting "disable = no".
+4.  If you are using tcp_wrappers or something similar, add an entry to `/etc/hosts.allow`: `talkd: 127.0.0.1` 
+5.  Now [start](/index.php/Start "Start") `xinetd.service`.
+6.  If you are on the local system, you might need to start a screen session to make yourself show up on the "w" and "who" commands -- you need to show up there or talk won't work.
+7.  Allow write access in your terminal if needed: `$ mesg y` 
 
 ### Using systemd directly
 
-Starting from inetutils 1.9.1.341-2, talk.service and talk.socket files are provided. Just upgrade and then activate the talk daemon:
-
- `# systemctl start talk.socket`  `# systemctl start talk.service`
+[Start](/index.php/Start "Start") `talk.socket` and `talk.service`.

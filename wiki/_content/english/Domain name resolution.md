@@ -15,10 +15,9 @@ In general, a [domain name](https://en.wikipedia.org/wiki/Domain_name "wikipedia
     *   [2.3 Hostname lookup delayed with IPv6](#Hostname_lookup_delayed_with_IPv6)
     *   [2.4 Local domain names](#Local_domain_names)
 *   [3 Resolvers](#Resolvers)
-*   [4 Performance](#Performance)
-*   [5 Privacy](#Privacy)
-*   [6 Lookup utilities](#Lookup_utilities)
-*   [7 See also](#See_also)
+*   [4 Privacy](#Privacy)
+*   [5 Lookup utilities](#Lookup_utilities)
+*   [6 See also](#See_also)
 
 ## Name Service Switch
 
@@ -52,7 +51,7 @@ The glibc resolver reads `/etc/resolv.conf` for every resolution to determine th
 
 [resolv.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolv.conf.5) lists nameservers together with some configuration options. Nameservers listed first are tried first, up to three nameservers may be listed. Lines starting with a number sign are ignored.
 
-**Note:** The glibc resolver does not cache queries. See [#Performance](#Performance) for more information.
+**Note:** The glibc resolver does not cache queries. To improve query lookup time you can set up a caching resolver. See [#Resolvers](#Resolvers) for more information.
 
 ### Overwriting of resolv.conf
 
@@ -99,33 +98,31 @@ That way you can refer to local hosts such as `mainmachine1.example.com` as simp
 
 The Glibc resolver provides only the most basic necessities, it does not cache queries or provide any security or privacy features. If you desire more functionality use another resolver.
 
+**Tip:**
+
+*   The *drill* or *dig* [lookup utilities](#Lookup_utilities) report the query time.
+*   A router usually sets its own caching resolver as the network's DNS server thus proving DNS cache for the whole network.
+*   If it takes too long to switch to the next DNS server you can try [decreasing the timeout](#Limit_lookup_time).
+
 The columns have the following meaning:
 
 *   *Cache*: [caches](https://en.wikipedia.org/wiki/Name_server#Caching_name_server "wikipedia:Name server") the DNS queries to improve lookup times of subsequent identical requests.
 *   *Recursor*: can [recursively query](https://en.wikipedia.org/wiki/Name_server#Recursive_query "wikipedia:Name server") the domain name starting from the [DNS root zone](https://en.wikipedia.org/wiki/DNS_root_zone "wikipedia:DNS root zone").
 *   *resolvconf compatibility*: can acquire name servers and search domains, to use for forwarding requests, from software that sets them using [resolvconf](https://en.wikipedia.org/wiki/resolvconf "wikipedia:resolvconf").
-*   *Validates DNSSEC*: validates DNS query responses using [DNSSEC](/index.php/DNSSEC "DNSSEC").
+*   *Validates DNSSEC*: [validates](https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions#The_lookup_procedure "wikipedia:Domain Name System Security Extensions") DNS query responses using [DNSSEC](/index.php/DNSSEC "DNSSEC").
 *   *DNS over TLS*: supports the [DNS over TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS") protocol for encrypted communicating with the DNS server.
 *   *DNS over HTTPS*: supports the [DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") protocol for encrypted communicating with the DNS server.
 
 | Resolver | Cache | Recursor | *resolvconf* compatibility | Validates DNSSEC | DNS over TLS | DNS over HTTPS | Notes |
 | [glibc](#Glibc_resolver) | No | No | No | No | No | No |
 | [BIND](/index.php/BIND "BIND") | Yes | Yes | [openresolv](/index.php/Openresolv "Openresolv") subscriber | Yes |  ? |  ? |
-| [dnscrypt-proxy](/index.php/Dnscrypt-proxy "Dnscrypt-proxy") | Yes | No | No |  ? | No | Yes | Implements the [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt") protocol. |
+| [dnscrypt-proxy](/index.php/Dnscrypt-proxy "Dnscrypt-proxy") | Yes | No | No | No | No | Yes | Implements the [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt") protocol. |
 | [dnsmasq](/index.php/Dnsmasq "Dnsmasq") | Yes | No | [openresolv](/index.php/Openresolv "Openresolv") subscriber | Yes | No | No |
 | [Knot Resolver](/index.php/Knot_Resolver "Knot Resolver") | Yes | Yes | No | Yes | Yes | No [[1]](https://gitlab.labs.nic.cz/knot/knot-resolver/issues/243) |
 | [pdnsd](/index.php/Pdnsd "Pdnsd") | Yes | Yes | [openresolv](/index.php/Openresolv "Openresolv") subscriber | No | No | No |
-| [Stubby](/index.php/Stubby "Stubby") | No | No | No |  ? | Yes |  ? |
-| [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") | Yes | No | [systemd-resolvconf](https://www.archlinux.org/packages/?name=systemd-resolvconf) | Yes | Limited | No [[2]](https://github.com/systemd/systemd/issues/8639) |
+| [Stubby](/index.php/Stubby "Stubby") | No | No | No | Yes | Yes |  ? |
+| [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") | Yes | No | [systemd-resolvconf](/index.php/Systemd-resolvconf "Systemd-resolvconf") | Yes | Limited | No [[2]](https://github.com/systemd/systemd/issues/8639) |
 | [Unbound](/index.php/Unbound "Unbound") | Yes | Yes | [openresolv](/index.php/Openresolv "Openresolv") subscriber | Yes | Yes |  ? |
-
-## Performance
-
-The [#Glibc resolver](#Glibc_resolver) does not cache queries. If you want local caching use [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") or set up a local caching [DNS server](/index.php/DNS_server "DNS server") and use `127.0.0.1`.
-
-**Tip:** The *drill* or *dig* [#Lookup utilities](#Lookup_utilities) report the query time.
-
-Internet service providers usually provide working DNS servers. A router may also add an extra DNS server in case it has its own cache server. Switching between DNS servers is transparent for Windows users, because if a DNS server is slow or does not work it will immediately switch to a better one. However, Linux usually takes longer to timeout, which could cause delays.
 
 ## Privacy
 
