@@ -151,7 +151,7 @@ Es posible obtener estas herramientas gráficas instalando los siguientes paquet
 
 *   **grub-customizer** — Para personalizar el gestor de arranque (GRUB o BURG)
 
-	[https://launchpad.net/grub-customizer](https://launchpad.net/grub-customizer) || [grub-customizer](https://aur.archlinux.org/packages/grub-customizer/)
+	[https://launchpad.net/grub-customizer](https://launchpad.net/grub-customizer) || [grub-customizer](https://www.archlinux.org/packages/?name=grub-customizer)
 
 *   **grub2-editor-frameworks** — Un módulo de control de KDE para configurar el gestor de arranque GRUB2\. *Port* no oficial KF5
 

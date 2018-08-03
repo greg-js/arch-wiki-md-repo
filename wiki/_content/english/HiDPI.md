@@ -225,6 +225,7 @@ If automatic detection of DPI does not produce the desired effect, scaling can b
 *   If you manually set the screen factor, it is important to set `QT_AUTO_SCREEN_SCALE_FACTOR=0` otherwise some applications which explicitly force high DPI enabling get scaled twice.
 *   `QT_SCALE_FACTOR` scales fonts, but `QT_SCREEN_SCALE_FACTORS` does not scale fonts.
 *   If you also set the font DPI manually in *xrdb* to support other toolkits, `QT_SCALE_FACTORS` will give you huge fonts.
+*   If you have multiple screens of differing DPI ie: [HiDPI#Side_display](/index.php/HiDPI#Side_display "HiDPI") you may need to do `QT_SCREEN_SCALE_FACTORS="2;2"`
 
 ### GDK 3 (GTK+ 3)
 

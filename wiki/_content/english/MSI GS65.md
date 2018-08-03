@@ -65,19 +65,19 @@ Support for the Killer 1550 is not there yet but is coming. [[1]](https://www.sp
 
 It should be possible to add support by patching the kernel [[4]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/intel/iwlwifi/pcie/drv.c#n799) to add `{IWL_PCI_DEVICE(0xA370, 0x1552, iwl9560_2ac_cfg_soc)},`
 
-Using the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") it is possible to rebuild the kernel using this patch which add the mapping for the wifi on kernel 4.17.6
+Using the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") it is possible to rebuild the kernel using this patch which add the mapping for the wifi on kernel 4.17.11
 
  `0001-Add-patch-for-MSI-GS65-wifi.patch` 
 ```
-From d4156c9f4dfb872da1e512cfdf6aa0648c839210 Mon Sep 17 00:00:00 2001
+From 740ff066915a8ef636fc7f14fe9c7023bc61e488 Mon Sep 17 00:00:00 2001
 From: Sandy Carter <bwrsandman@gmail.com>
 Date: Tue, 19 Jun 2018 09:38:08 -0700
 Subject: [PATCH] Add patch for MSI GS65 wifi
 
 ---
- repos/core-x86_64/0005-Add-wifi-support.patch | 10 ++++++++++
- repos/core-x86_64/PKGBUILD                    |  7 ++++++-
- 2 files changed, 16 insertions(+), 1 deletion(-)
+ repos/core-x86_64/0005-Add-wifi-support.patch | 10 ++++++
+ repos/core-x86_64/PKGBUILD                    | 34 ++++++++++++++++++-
+ 2 files changed, 43 insertions(+), 1 deletion(-)
  create mode 100644 repos/core-x86_64/0005-Add-wifi-support.patch
 
 diff --git a/repos/core-x86_64/0005-Add-wifi-support.patch b/repos/core-x86_64/0005-Add-wifi-support.patch
@@ -97,37 +97,64 @@ index 0000000..b7e62ef
 + 	{IWL_PCI_DEVICE(0xA370, 0x2034, iwl9560_2ac_cfg_soc)},
 + 	{IWL_PCI_DEVICE(0xA370, 0x4030, iwl9560_2ac_cfg_soc)},
 diff --git a/repos/core-x86_64/PKGBUILD b/repos/core-x86_64/PKGBUILD
-index b19eea1..1747bd8 100644
+index c571d68..8f03362 100644
 --- a/repos/core-x86_64/PKGBUILD
 +++ b/repos/core-x86_64/PKGBUILD
-@@ -23,6 +23,7 @@ source=(
-   0002-Revert-drm-i915-edp-Allow-alternate-fixed-mode-for-e.patch
-   0003-ACPI-watchdog-Prefer-iTCO_wdt-always-when-WDAT-table.patch
-   0004-mac80211-disable-BHs-preemption-in-ieee80211_tx_cont.patch
+@@ -19,6 +19,7 @@ source=(
+   60-linux.hook  # pacman hook for depmod
+   90-linux.hook  # pacman hook for initramfs regeneration
+   linux.preset   # standard config files for mkinitcpio ramdisk
 +  0005-Add-wifi-support.patch
  )
  validpgpkeys=(
    'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
-@@ -39,7 +40,8 @@ sha256sums=('9faa1dd896eaea961dc6e886697c0b3301277102e5bc976b2758f9a62d3ccd13'
-             '92f848d0e21fbb2400e50d1c1021514893423641e5450896d7b1d88aa880b2b9'
-             'fc3c50ae6bd905608e0533a883ab569fcf54038fb9d6569b391107d9fd00abbc'
-             'bc50c605bd0e1fa7437c21ddef728b83b6de3322b988e14713032993dfa1fc69'
--            '66284102261c4ed53db050e9045c8672ba0e5171884b46e58f6cd417774d8578')
-+            '66284102261c4ed53db050e9045c8672ba0e5171884b46e58f6cd417774d8578'
+@@ -29,7 +30,8 @@ sha256sums=('SKIP'
+             'aa7b6756f193f3b3a3fc4947e7a77b09e249df2e345e6495292055d757ba8be6'
+             'ae2e95db94ef7176207c690224169594d49445e04249d2499e9d2fbc117a0b21'
+             '75f99f5239e03238f88d1a834c50043ec32b1dc568f2cc291b07d04718483919'
+-            'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65')
++            'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65'
 +            '54b32090a6ac96e95da8cfd54634310adbff6fbebb8dbbef176d1d3facf4d1a5')
 
  _kernelname=${pkgbase#linux}
- : ${_kernelname:=-ARCH}
-@@ -65,6 +67,9 @@ prepare() {
-   # Fix iwd provoking a BUG
-   patch -Np1 -i ../0004-mac80211-disable-BHs-preemption-in-ieee80211_tx_cont.patch
-
+ : ${_kernelname:=-arch}
+@@ -39,6 +41,36 @@ prepare() {
+   scripts/setlocalversion --save-scmversion
+   cp ../config .config
+   make olddefconfig
++
 +  # GS65 Wifi support
 +  patch -Np1 -i ../0005-Add-wifi-support.patch
 +
-   cat ../config - >.config <<END
- CONFIG_LOCALVERSION="${_kernelname}"
- CONFIG_LOCALVERSION_AUTO=n
++  cat ../config - >.config <<END
++CONFIG_LOCALVERSION="${_kernelname}"
++CONFIG_LOCALVERSION_AUTO=n
++END
++
++  # set extraversion to pkgrel and empty localversion
++  sed -e "/^EXTRAVERSION =/s/=.*/= -${pkgrel}/" \
++      -e "/^EXTRAVERSION =/aLOCALVERSION =" \
++      -i Makefile
++
++  # don't run depmod on 'make install'. We'll do this ourselves in packaging
++  sed -i '2iexit 0' scripts/depmod.sh
++
++  # get kernel version
++  make prepare
++
++  # load configuration
++  # Configure the kernel. Replace the line below with one of your choice.
++  #make menuconfig # CLI menu for configuration
++  #make nconfig # new CLI menu for configuration
++  #make xconfig # X-based configuration
++  #make oldconfig # using old config from previous kernel version
++  # ... or manually edit .config
++
++  # rewrite configuration
++  yes "" | make config >/dev/null
+ }
+
+ build() {
 -- 
 2.18.0
 

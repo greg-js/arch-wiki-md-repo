@@ -151,7 +151,7 @@ Following package may be installed:
 
 *   **grub-customizer** — GTK+ customizer for GRUB or BURG
 
-	[https://launchpad.net/grub-customizer](https://launchpad.net/grub-customizer) || [grub-customizer](https://aur.archlinux.org/packages/grub-customizer/)
+	[https://launchpad.net/grub-customizer](https://launchpad.net/grub-customizer) || [grub-customizer](https://www.archlinux.org/packages/?name=grub-customizer)
 
 *   **grub2-editor-frameworks** — Unofficial KF5 port of grub2-editor
 

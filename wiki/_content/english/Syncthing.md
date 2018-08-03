@@ -210,6 +210,8 @@ You must then reload systemd daemons configurations:
 
 and [restart](/index.php/Restart "Restart") the `syncthing@*myusername*.service`.
 
+This file can be edited using systemd facility `systemd edit --full syncthing@*myusername*.service` according to the [Systemd: Editing provided units](https://wiki.archlinux.org/index.php/Systemd#Editing_provided_units).
+
 ## Troubleshooting
 
 See [Debugging Syncthing](http://docs.syncthing.net/dev/debugging.html).

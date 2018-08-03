@@ -44,7 +44,7 @@ The following command prints *in use* voltage settings:
 
 Now edit the configuration file `/etc/intel-undervolt.conf`. Example config with undervolted CPU Cache by -100mV:
 
-**Note:** Looks like 'CPU' and 'GPU' values does not have any effect (at least on [ASUS Zenbook UX430UQ](/index.php/ASUS_Zenbook_UX430/UX530 "ASUS Zenbook UX430/UX530") laptop).
+**Note:** Looks like 'CPU' and 'GPU' values does not have any effect (at least on [ASUS Zenbook UX430UQ](/index.php/ASUS_Zenbook_UX430UQ "ASUS Zenbook UX430UQ") laptop).
  `/etc/intel-undervolt.conf` 
 ```
 ...

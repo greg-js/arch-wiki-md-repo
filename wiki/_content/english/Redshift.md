@@ -212,18 +212,7 @@ Make sure there aren't multiple instances of redshift running.
 
 ### Redshift works fine when invoked as a command but fails when run as a systemd service
 
-The [systemd](/index.php/Systemd "Systemd") unit has a line in the `redshift.service` file that makes the service wait until the `display-manager.service` unit is started by a [Display Manager](/index.php/Display_Manager "Display Manager") before the unit will invoke `redshift`. In lightweight setups, such as [i3](/index.php/I3 "I3"), one often uses a [Window Manager](/index.php/Window_Manager "Window Manager") or no manager at all and thus the `display-manager.service` is never started. Delete the line:
-
- `/usr/lib/systemd/user/redshift.service`  `After=display-manager.service` 
-
-from the `redshift.service` file and run:
-
-```
-# systemctl --user daemon-reload
-
-```
-
-and the service should initialize properly.
+The [systemd](/index.php/Systemd "Systemd") unit has a line in the `redshift.service` file that makes the service wait until the `display-manager.service` unit is started by a [display manager](/index.php/Display_manager "Display manager") before the unit will invoke `redshift`. If you do not use a display manager, [edit](/index.php/Edit "Edit") the `redshift.service` user service and delete the `After=display-manager.service` line. Run `systemctl --user daemon-reload` and the service should initialize properly.
 
 ### Redshift temporarily resets using some wine apps that reset gamma values
 

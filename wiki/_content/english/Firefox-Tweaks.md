@@ -174,7 +174,7 @@ Firefox provides a tool to defragment and optimize the places database, which is
 
 ### Cache the entire profile into RAM via tmpfs
 
-If the system has memory to spare, `tmpfs` can be used to [cache the entire profile directory](/index.php/Firefox_on_RAM "Firefox on RAM"), which might result in increased Firefox responsiveness.
+If the system has memory to spare, `tmpfs` can be used to [cache the entire profile directory](/index.php/Firefox/Profile_on_RAM "Firefox/Profile on RAM"), which might result in increased Firefox responsiveness.
 
 ### Turn off sponsored content and tiles
 

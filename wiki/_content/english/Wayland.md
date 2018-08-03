@@ -63,7 +63,9 @@ Weston is the reference implementation of a Wayland compositor.
 
 ### Usage
 
-<caption>***Keyboard Shortcuts** (super = windows key - can be changed, see weston.ini)* `Ctrl-b`</caption>
+**Tip:** Super (windows key) can be changed, see [weston.ini](/index.php/Wayland#Configuration "Wayland")
+
+<caption>**Keyboard Shortcuts**</caption>
 | Cmd | Action |
 | `Ctrl+Alt+Backspace` | Quit Weston |
 | `Super+Scroll` (or `PageUp`/`PageDown`) | Zoom in/out of desktop |
@@ -81,21 +83,14 @@ Weston is the reference implementation of a Wayland compositor.
 
 Now that Wayland and its requirements are installed you should be ready to test it out.
 
-It is possible to run Weston inside a running X session:
+To launch Weston natively (from a TTY) or to run Weston inside a running X session:
 
 ```
 $ weston
 
 ```
 
-Alternatively, to try to launch Weston natively, switch to a terminal and run:
-
-```
-$ weston-launch
-
-```
-
-Then at a TTY within Weston, you can run the demos. To launch a terminal emulator:
+Then within Weston, you can run the demos. To launch a terminal emulator:
 
 ```
 $ weston-terminal
@@ -118,7 +113,7 @@ $ weston-image image1.jpg image2.jpg...
 
 ### Configuration
 
-Example configuration file for keyboard layout, module selection and UI modifications. See [weston.ini(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/weston.ini.5) for full details. The Weston outputs differ slightly from `xorg.conf`'s Monitors:
+Weston's outputs differ slightly from those of `xorg.conf` Monitors:
 
 ```
 $ ls /sys/class/drm
@@ -133,6 +128,8 @@ card1-VGA-2
 
 `card0` is the unused built-in video adapter. The add-on adapter `card1` is cabled to one HDMI and one DVI monitor, so the output names are `HDMI-A-1` and `DVI-I-1`.
 
+Following is an example configuration file. See [weston.ini(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/weston.ini.5) for more.
+
  `~/.config/weston.ini` 
 ```
 [core]
@@ -143,28 +140,36 @@ xwayland=true
 enable_tap=true
 
 [shell]
-background-image=/usr/share/backgrounds/gnome/Aqua.jpg
-background-color=0xff002244
-panel-color=0x90ff0000
-locking=true
-animation=zoom
-close-animation=fade
+#background-image=/usr/share/backgrounds/gnome/Aqua.jpg
+background-type=scale-crop
+background-color=0xff000000
+#background-color=0xff002244
+#panel-color=0x90ff0000
+panel-color=0x00ffffff
+panel-position=left
+clock-format=none
+#animation=zoom
+#startup-animation=none
+close-animation=none
 focus-animation=dim-layer
 #binding-modifier=ctrl
-#num-workspaces=6
-### for cursor themes install xcursor-themes pkg from Extra. ###
+num-workspaces=6
+locking=false
+
+# for cursor themes install xcursor-themes pkg from Extra
 #cursor-theme=whiteglass
 #cursor-size=24
 
-### tablet options ###
+# tablet options
 #lockscreen-icon=/usr/share/icons/gnome/256x256/actions/lock.png
 #lockscreen=/usr/share/backgrounds/gnome/Garden.jpg
 #homescreen=/usr/share/backgrounds/gnome/Blinds.jpg
 #animation=fade
 
-###  for Laptop displays  ###
-#[output]
-#name=LVDS1
+# for Laptop displays
+[output]
+name=LVDS1
+mode=preferred
 #mode=1680x1050
 #transform=90
 
@@ -179,23 +184,33 @@ focus-animation=dim-layer
 #mode=1024x768
 #transform=flipped-270
 
-[input-method]
+# on screen keyboard input method
+#[input-method]
 #path=/usr/lib/weston/weston-keyboard
 
 [keyboard]
 keymap_rules=evdev
-#keymap_layout=gb,de
+#keymap_layout=us,de
+#keymap_variant=colemak,
+#keymap_options=grp:shifts_toggle
 #keymap_options=caps:ctrl_modifier,shift:both_capslock_cancel
-### keymap_options from /usr/share/X11/xkb/rules/base.lst ###
-numlock-on=true
+repeat-rate=30
+repeat-delay=300
+
+# keymap_options from /usr/share/X11/xkb/rules/base.lst
+#numlock-on=true
 
 [terminal]
-#font=DroidSansMono
-#font-size=14
+font=monospace
+font-size=18
+
+[launcher]
+icon=/usr/share/weston/icon_flower.png
+path=/usr/bin/weston-flower
 
 [launcher]
 icon=/usr/share/icons/gnome/24x24/apps/utilities-terminal.png
-path=/usr/bin/weston-terminal
+path=/usr/bin/weston-terminal --shell=/usr/bin/bash
 
 [launcher]
 icon=/usr/share/icons/gnome/24x24/apps/utilities-terminal.png
@@ -203,16 +218,11 @@ path=/usr/bin/gnome-terminal
 
 [launcher]
 icon=/usr/share/icons/hicolor/24x24/apps/firefox.png
-path=/usr/bin/firefox
+path=MOZ_GTK_TITLEBAR_DECORATION=client /usr/bin/firefox
 
-[launcher]
-icon=/usr/share/weston/icon_flower.png
-path=/usr/bin/weston-flower
-
-[screensaver]
-# Uncomment path to disable screensaver
-path=/usr/libexec/weston-screensaver
-duration=600
+#[launcher]
+#icon=/usr/share/icons/Adwaita/32x32/apps/multimedia-volume-control.png
+#path=/usr/bin/st alsamixer
 
 ```
 
@@ -330,9 +340,9 @@ EFL has complete Wayland support. To run a EFL application on Wayland, see Wayla
 | KDE Plasma | Stacking | See [KDE#Starting Plasma](/index.php/KDE#Starting_Plasma "KDE") |
 | Orbment | Tiling | [orbment](https://github.com/Cloudef/orbment) (previously loliwm) is an abandonned tiling WM for Wayland. |
 | Velox | Tiling | [Velox](/index.php/Velox "Velox") is a simple window manager based on swc. It is inspired by [dwm](/index.php/Dwm "Dwm") and [xmonad](/index.php/Xmonad "Xmonad"). |
-| Orbital | Stacking | [Orbital](https://github.com/giucam/orbital) is a Wayland compositor and shell, using Qt5 and Weston. The goal of the project is to build a simple yet flexible and good looking Wayland desktop. It is not a full fledged DE but rather the analogue of a WM in the X11 world, such as [Awesome](/index.php/Awesome "Awesome") or [Fluxbox](/index.php/Fluxbox "Fluxbox"). |
+| Orbital | Stacking | [Orbital](https://github.com/giucam/orbital) is a Wayland compositor and shell (more akin to a WM than a DE) using Qt5 and Weston. The goal of the project is to build a simple but flexible and good looking Wayland desktop. |
 | Liri Shell | Stacking | [Liri Shell](https://github.com/lirios/shell) is the desktop shell for [Liri](/index.php/Liri "Liri"), built using QtQuick and QtCompositor as a compositor for Wayland. |
-| Maynard | *(Unclear)* | [Maynard](https://github.com/raspberrypi/maynard) is a desktop shell client for Weston based on GTK. It was based on weston-gtk-shell, a project by Tiago Vignatti. |
+| Maynard | *(Unclear)* | [Maynard](https://github.com/raspberrypi/maynard) is a desktop shell client for Weston based on GTK. It was based on weston-gtk-shell, a project by Tiago Vignatti. Not under development. [[1]](https://github.com/raspberrypi/maynard/issues/54#issuecomment-303422302)[[2]](https://github.com/raspberrypi/maynard/issues/55#issuecomment-373808518) |
 | Motorcar | *(Unclear)* | [Motorcar](https://github.com/evil0sheep/motorcar) is a Wayland compositor to explore 3D windowing using virtual reality. |
 | Way Cooler | Tiling | [way-cooler](https://aur.archlinux.org/packages/way-cooler/) is a customizable (Lua config files) Wayland compositor written in Rust. Inspired by i3 and awesome. |
 | Maze Compositor | Floating 3D | [Maze Compositor](https://github.com/capisce/mazecompositor) is a 3D Qt based Wayland compositor |

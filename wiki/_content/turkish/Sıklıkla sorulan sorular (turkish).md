@@ -14,7 +14,7 @@
 
 ### Arch Linux nedir?
 
-Bilgi için [Arch Linux](https://wiki.archlinux.org/index.php/Arch_Linux) sayfasını ziyaret edin.
+Bilgi için [Arch Linux](/index.php/Arch_Linux "Arch Linux") sayfasını ziyaret edin.
 
 ### Niçin Arch Linux kullanmamalıyım?
 

@@ -24,7 +24,7 @@ Several solutions are available:
 
 The following packages use the [group](/index.php/Group "Group") plugdev, create the group (if doesn't exists), and add users to this group to avoid the need of running these as root:
 
-*   [solaar](https://aur.archlinux.org/packages/solaar/)
+*   [solaar](https://www.archlinux.org/packages/?name=solaar)
 *   [ltunify-git](https://aur.archlinux.org/packages/ltunify-git/)
 
 ## Usage

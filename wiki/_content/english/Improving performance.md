@@ -4,6 +4,7 @@ Related articles
 *   [Pacman/Tips and tricks#Performance](/index.php/Pacman/Tips_and_tricks#Performance "Pacman/Tips and tricks")
 *   [SSH#Speeding up SSH](/index.php/SSH#Speeding_up_SSH "SSH")
 *   [LibreOffice#Speed up LibreOffice](/index.php/LibreOffice#Speed_up_LibreOffice "LibreOffice")
+
 *   [Openoffice#Speed up OpenOffice](/index.php/Openoffice#Speed_up_OpenOffice "Openoffice")
 *   [Laptop](/index.php/Laptop "Laptop")
 *   [Preload](/index.php/Preload "Preload")

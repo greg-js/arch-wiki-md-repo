@@ -20,20 +20,19 @@ From [Home - LibreOffice](https://www.libreoffice.org/):
     *   [4.4 Grammar checking](#Grammar_checking)
     *   [4.5 Offline help for en-US](#Offline_help_for_en-US)
 *   [5 Installing macros](#Installing_macros)
-*   [6 Speed up LibreOffice](#Speed_up_LibreOffice)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Font substitution](#Font_substitution)
-    *   [7.2 Anti-aliasing](#Anti-aliasing)
-    *   [7.3 Hanging when using NFSv3 shares](#Hanging_when_using_NFSv3_shares)
-    *   [7.4 LibreOffice does not detect my certificates](#LibreOffice_does_not_detect_my_certificates)
-    *   [7.5 Run .pps files in edit mode (without slideshow)](#Run_.pps_files_in_edit_mode_.28without_slideshow.29)
-    *   [7.6 Exit while pushing the save button](#Exit_while_pushing_the_save_button)
-    *   [7.7 Media support](#Media_support)
-    *   [7.8 Default paper size in Writer and Draw](#Default_paper_size_in_Writer_and_Draw)
-    *   [7.9 LibreOffice toolbars unreadable with dark themes](#LibreOffice_toolbars_unreadable_with_dark_themes)
-    *   [7.10 LibreOffice toolbars unreadable with dark Breeze/Plasma 5 theme](#LibreOffice_toolbars_unreadable_with_dark_Breeze.2FPlasma_5_theme)
-    *   [7.11 AutoText expected default behaviour not functional in system locales other than en_US](#AutoText_expected_default_behaviour_not_functional_in_system_locales_other_than_en_US)
-*   [8 See also](#See_also)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Font substitution](#Font_substitution)
+    *   [6.2 Anti-aliasing](#Anti-aliasing)
+    *   [6.3 Hanging when using NFSv3 shares](#Hanging_when_using_NFSv3_shares)
+    *   [6.4 LibreOffice does not detect my certificates](#LibreOffice_does_not_detect_my_certificates)
+    *   [6.5 Run .pps files in edit mode (without slideshow)](#Run_.pps_files_in_edit_mode_.28without_slideshow.29)
+    *   [6.6 Exit while pushing the save button](#Exit_while_pushing_the_save_button)
+    *   [6.7 Media support](#Media_support)
+    *   [6.8 Default paper size in Writer and Draw](#Default_paper_size_in_Writer_and_Draw)
+    *   [6.9 LibreOffice toolbars unreadable with dark themes](#LibreOffice_toolbars_unreadable_with_dark_themes)
+    *   [6.10 LibreOffice toolbars unreadable with dark Breeze/Plasma 5 theme](#LibreOffice_toolbars_unreadable_with_dark_Breeze.2FPlasma_5_theme)
+    *   [6.11 AutoText expected default behaviour not functional in system locales other than en_US](#AutoText_expected_default_behaviour_not_functional_in_system_locales_other_than_en_US)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -136,19 +135,6 @@ As of version 5.2.2, [libreoffice-fresh](https://www.archlinux.org/packages/?nam
 If you intend to use macros, you must have a Java Runtime Environment enabled. A Java Runtime Environment is enabled by default, but disabling it [speeds up the program](#Speed_up_LibreOffice).
 
 The default path for macros in Arch Linux is different from most Linux distributions. Its location is: `~/.config/libreoffice/4/user/Scripts/`.
-
-## Speed up LibreOffice
-
-Some settings may improve LibreOffice's loading time and responsiveness. However, some also increase RAM usage, so use them carefully. They can all be accessed under *Tools > Options*.
-
-*   Under *Memory*:
-    *   Reduce the number of Undo steps to a figure lower than 100, to something like 20 or 30 steps
-    *   Under *Graphics cache*, set Use for LibreOffice to 128 MB (up from the original 20 MB)
-    *   Set *Memory per object* to 20 MB (up from the default 5 MB).
-    *   If LibreOffice is used often, check *Enable systray Quickstarter*
-*   Under *Advanced*, uncheck *Use a Java runtime environment*
-
-**Note:** For a list of functionality written in Java only, see: [https://wiki.documentfoundation.org/Development/Java](https://wiki.documentfoundation.org/Development/Java).
 
 ## Troubleshooting
 

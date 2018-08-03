@@ -47,7 +47,7 @@ Las convenciones de los nombres de los mapas de teclado de la consola no son muy
 
 ### Configuración permanente
 
-La configuración de alto nivel puede realizarse en `/etc/vconsole.conf`, que es leído por [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") en el arranque. La variable `KEYMAP` se utiliza para especificar la distribución de teclado. Si la variable está vacía o no se establece, la distribución del teclado usada por defecto es `us`. Véase [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) para obtener más ejemplos. Por ejemplo:
+La configuración de alto nivel puede realizarse en `/etc/vconsole.conf`, que es leído por [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") en el arranque. La variable `KEYMAP` se utiliza para especificar la distribución de teclado. Si la variable está vacía o no se establece, la distribución del teclado usada por defecto es `us`. Véase [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) para obtener más ejemplos. Por ejemplo:
 
  `/etc/vconsole.conf` 
 ```
@@ -63,7 +63,7 @@ $ localectl set-keymap --no-convert *mapa_de_teclas*
 
 ```
 
-Véase [localectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) para obtener más detalles.
+Véase [localectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/localectl.1) para obtener más detalles.
 
 ### Configuración temporal
 
@@ -76,7 +76,7 @@ La utilidad *loadkeys* se utiliza para este propósito, utilizado internamente p
 
 ```
 
-Véase [loadkeys(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1) para obtener más detalles.
+Véase [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1) para obtener más detalles.
 
 ## Otras opciones
 
@@ -94,7 +94,7 @@ FONT_MAP=8859-15
 
 ```
 
-Si la variable `FONT` está vacía o no se establece, se utiliza, por defecto, el tipo de letra incorporado en el kernel. Véase [vconsole.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) para conocer más detalles.
+Si la variable `FONT` está vacía o no se establece, se utiliza, por defecto, el tipo de letra incorporado en el kernel. Véase [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) para conocer más detalles.
 
 ### Ajustar el retardo y la velocidad de typematic
 

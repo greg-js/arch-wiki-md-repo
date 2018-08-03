@@ -177,7 +177,7 @@ Computers that come with newer versions of Windows often have [Secure Boot](/ind
 
 #### Couldn't create a new partition or locate an existing one
 
-See [#Windows_UEFI_vs_BIOS_limitations](#Windows_UEFI_vs_BIOS_limitations)
+See [#Windows UEFI vs BIOS limitations](#Windows_UEFI_vs_BIOS_limitations)
 
 #### Cannot boot Linux after installing Windows
 

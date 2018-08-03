@@ -32,7 +32,7 @@ Related articles
 
 ## Iniciando
 
-Para começar o bspwm ao iniciar sessão, adicione ao arquivo `~/.xinitrc` ou `~/.xprofile` (dependendo de como escolheu iniciar o X [[[1]](https://wiki.archlinux.org/index.php/Xorg_(Portugu%C3%AAs)#Running_Xorg)]):
+Para começar o bspwm ao iniciar sessão, adicione ao arquivo `~/.xinitrc` ou `~/.xprofile` (dependendo de como escolheu iniciar o X [Xorg (Português)#Running Xorg](/index.php/Xorg_(Portugu%C3%AAs)#Running_Xorg "Xorg (Português)")):
 
 ```
 sxhkd &
@@ -127,7 +127,7 @@ done &
 
 #### Usando polybar
 
-Polybar é uma ferramenta rápida e fácil de usar para criar barra de status; e também é altamente personalizável. Polybar possui um módulo para bspwm que permite gerenciar as áreas de trabalho e exibe informações da mesma semelhante ao i3status no [i3](https://www.archlinux.org/groups/x86_64/i3/). Polybar pode ser instalado pelo [bspwm](https://aur.archlinux.org/packages/bspwm/) e [bspwm-git](https://aur.archlinux.org/packages/bspwm-git/). Então crie o diretório `~/.config/polybar` e copie para o mesmo o arquivo `/usr/share/doc/polybar/config`. Agora é só adicionar no seu bspwmrc:
+Polybar é uma ferramenta rápida e fácil de usar para criar barra de status; e também é altamente personalizável. Polybar possui um módulo para bspwm que permite gerenciar as áreas de trabalho e exibe informações da mesma semelhante ao i3status no [i3](https://www.archlinux.org/groups/x86_64/i3/). Polybar pode ser instalado pelo [bspwm](https://www.archlinux.org/packages/?name=bspwm) e [bspwm-git](https://aur.archlinux.org/packages/bspwm-git/). Então crie o diretório `~/.config/polybar` e copie para o mesmo o arquivo `/usr/share/doc/polybar/config`. Agora é só adicionar no seu bspwmrc:
 
 ```
 polybar example &
@@ -163,7 +163,7 @@ bspc node $id --flag hidden;bspc node -f $id
 
 ```
 
-Para um scratchpad que possa usar qualquer tipo de janela sem regras predefinidas, consulte [[2]](https://www.reddit.com/r/bspwm/comments/3xnwdf/i3_like_scratch_for_any_window_possible/cy6i585)
+Para um scratchpad que possa usar qualquer tipo de janela sem regras predefinidas, consulte [[1]](https://www.reddit.com/r/bspwm/comments/3xnwdf/i3_like_scratch_for_any_window_possible/cy6i585)
 
 Para um script de rascunho mais sofisticado que suporte muitos terminais prontos para usar e tenha flags para fazer coisas como iniciar opcionalmente uma sessão tmuxinator / tmux, transformar qualquer janela em um scratchpad imediatamente e redimensionar automaticamente um scratchpad para ajustar-se ao monitor atual, instale [tdrop-git](https://aur.archlinux.org/packages/tdrop-git/).
 
@@ -235,7 +235,7 @@ Isso pode acontecer se você estiver usando aplicativos GTK3 e, geralmente, para
 
 ### Problemas com aplicações java
 
-Se você tiver problemas com o aplicações Java, tal como a janela não está redimensionando ou os menus fecham imediatamente após o clique, consulte [[3]](https://wiki.archlinux.org/index.php/Java_(Portugu%C3%AAs)#Aplica.C3.A7.C3.B5es_sem_redimensionamento_com_o_WM.2C_menus_fechando_imediatamente).
+Se você tiver problemas com o aplicações Java, tal como a janela não está redimensionando ou os menus fecham imediatamente após o clique, consulte [Java (Português)#Aplicações sem redimensionamento com o WM, menus fechando imediatamente](/index.php/Java_(Portugu%C3%AAs)#Aplica.C3.A7.C3.B5es_sem_redimensionamento_com_o_WM.2C_menus_fechando_imediatamente "Java (Português)").
 
 ### Problemas com atalhos de teclado usando fish
 

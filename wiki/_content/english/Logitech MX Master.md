@@ -119,7 +119,7 @@ $ pkill xbindkeys && xbindkeys
 
 ## Power
 
-Battery status can be read as described on [Logitech Unifying Receiver](/index.php/Logitech_Unifying_Receiver "Logitech Unifying Receiver"). e.g. Solaar ([solaar](https://aur.archlinux.org/packages/solaar/)) has s system tray utility.
+Battery status can be read as described on [Logitech Unifying Receiver](/index.php/Logitech_Unifying_Receiver "Logitech Unifying Receiver"). e.g. Solaar ([solaar](https://www.archlinux.org/packages/?name=solaar)) has s system tray utility.
 
 ## Smart shift
 

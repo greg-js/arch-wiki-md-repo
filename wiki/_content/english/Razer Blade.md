@@ -2,31 +2,41 @@ Razer Blade is Razer's line of gaming laptops. There is currently a 12" model (R
 
 ## Contents
 
-*   [1 Late-2017 version Razer Blade Stealth](#Late-2017_version_Razer_Blade_Stealth)
-    *   [1.1 Infinite suspend loop](#Infinite_suspend_loop)
-    *   [1.2 Screen flickering / distorted / noise](#Screen_flickering_.2F_distorted_.2F_noise)
-        *   [1.2.1 Option 1: Change edp_vswing=2](#Option_1:_Change_edp_vswing.3D2)
-        *   [1.2.2 Option 2: Use LTS Kernel With enable_rc6=0](#Option_2:_Use_LTS_Kernel_With_enable_rc6.3D0)
-        *   [1.2.3 Option 3: Use intel_idle.max_cstate=1](#Option_3:_Use_intel_idle.max_cstate.3D1)
-    *   [1.3 pcieport PCIe Bus Error](#pcieport_PCIe_Bus_Error)
-*   [2 2016 version (Razer Blade & Razer Blade Stealth)](#2016_version_.28Razer_Blade_.26_Razer_Blade_Stealth.29)
-    *   [2.1 Touchpad](#Touchpad)
-    *   [2.2 Touchscreen](#Touchscreen)
-    *   [2.3 Graphics Drivers](#Graphics_Drivers)
-    *   [2.4 Hybrid graphics](#Hybrid_graphics)
-    *   [2.5 Suspend Loop](#Suspend_Loop)
-        *   [2.5.1 GRUB](#GRUB)
-    *   [2.6 Tweaking](#Tweaking)
-    *   [2.7 Audio](#Audio)
-    *   [2.8 Webcam](#Webcam)
-    *   [2.9 Keyboard](#Keyboard)
-*   [3 2014 version](#2014_version)
-    *   [3.1 Problems](#Problems)
-    *   [3.2 Possible trackpad solution](#Possible_trackpad_solution)
-*   [4 2013 version](#2013_version)
-    *   [4.1 What works](#What_works)
-    *   [4.2 Problems](#Problems_2)
-    *   [4.3 Possible trackpad solution](#Possible_trackpad_solution_2)
+*   [1 2018 version](#2018_version)
+    *   [1.1 Touchpad](#Touchpad)
+*   [2 Late-2017 version Razer Blade Stealth](#Late-2017_version_Razer_Blade_Stealth)
+    *   [2.1 Infinite suspend loop](#Infinite_suspend_loop)
+    *   [2.2 Screen flickering / distorted / noise](#Screen_flickering_.2F_distorted_.2F_noise)
+        *   [2.2.1 Option 1: Change edp_vswing=2](#Option_1:_Change_edp_vswing.3D2)
+        *   [2.2.2 Option 2: Use LTS Kernel With enable_rc6=0](#Option_2:_Use_LTS_Kernel_With_enable_rc6.3D0)
+        *   [2.2.3 Option 3: Use intel_idle.max_cstate=1](#Option_3:_Use_intel_idle.max_cstate.3D1)
+    *   [2.3 pcieport PCIe Bus Error](#pcieport_PCIe_Bus_Error)
+*   [3 2016 version (Razer Blade & Razer Blade Stealth)](#2016_version_.28Razer_Blade_.26_Razer_Blade_Stealth.29)
+    *   [3.1 Touchpad](#Touchpad_2)
+    *   [3.2 Touchscreen](#Touchscreen)
+    *   [3.3 Graphics Drivers](#Graphics_Drivers)
+    *   [3.4 Hybrid graphics](#Hybrid_graphics)
+    *   [3.5 Suspend Loop](#Suspend_Loop)
+        *   [3.5.1 GRUB](#GRUB)
+    *   [3.6 Tweaking](#Tweaking)
+    *   [3.7 Audio](#Audio)
+    *   [3.8 Webcam](#Webcam)
+    *   [3.9 Keyboard](#Keyboard)
+*   [4 2014 version](#2014_version)
+    *   [4.1 Problems](#Problems)
+    *   [4.2 Possible trackpad solution](#Possible_trackpad_solution)
+*   [5 2013 version](#2013_version)
+    *   [5.1 What works](#What_works)
+    *   [5.2 Problems](#Problems_2)
+    *   [5.3 Possible trackpad solution](#Possible_trackpad_solution_2)
+
+# 2018 version
+
+## Touchpad
+
+The touchpad doesn't work with the vanilla kernel as of version 4.17.11, however there have been [patches](https://github.com/jbdrthapa/razerblade15/tree/master/razerfiles/touchpad) made by Github user **jbdrthapa** that fix this issue.
+
+You can patch them into your kernel manually, or install them automatically via [linux-razerblade-2018](https://aur.archlinux.org/packages/linux-razerblade-2018/).
 
 # Late-2017 version Razer Blade Stealth
 

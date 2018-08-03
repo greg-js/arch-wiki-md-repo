@@ -700,11 +700,11 @@ virsh attach-device win10 /home/ajmar/.VFIOinput/input_keyboard.xml
 
 Next duplicate the script file and replace `attach-device` with `detach-device`. Ensure both scripts are executable with `chmod +x $script.sh`
 
-This 2 script files can now be executed to attach or detach your USB devices from the host to the guest VM. It is important to note that they may need to be executed as root. To run the script from the Windows VM, one possibility is using [PuTTY](/index.php/PuTTY "PuTTY") to [SSH](/index.php/Secure_Shell "Secure Shell") into the host, and execute the script. On Windows PuTTY comes with plink.exe which can execute singular commands over SSH before then logging out, instead of opening a SSH terminal, all in the background.
+This 2 script files can now be executed to attach or detach your USB devices from the host to the guest VM. It is important to note that they may need to be executed as root. To run the script from the Windows VM, one possibility is using [PuTTY](/index.php/PuTTY "PuTTY") to [SSH](/index.php/SSH "SSH") into the host, and execute the script. On Windows PuTTY comes with plink.exe which can execute singular commands over SSH before then logging out, instead of opening a SSH terminal, all in the background.
 
  `detach_devices.bat`  `"C:\Program Files\PuTTY\plink.exe" root@$HOST_IP -pw $ROOTPASSWORD /home/$USER/.VFIOinput/input_detach.sh` 
 
-Replace `$HOST_IP` with the Host [IP Address](/index.php/Network_Configuration#IP_Addresses "Network Configuration") and $ROOTPASSWORD with the root password.
+Replace `$HOST_IP` with the Host [IP Address](/index.php/Network_configuration#IP_addresses "Network configuration") and $ROOTPASSWORD with the root password.
 
 **Warning:** This method is insecure if somebody has access to your VM, since they could open the file and read your password. It is advisable to use [SSH keys](/index.php/SSH_keys "SSH keys") instead!
 

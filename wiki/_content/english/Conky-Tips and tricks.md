@@ -41,6 +41,8 @@ One of the nice features of *conky* is to pipe to your desktop some `/var/log/` 
 
 See [this thread](https://bbs.archlinux.org/viewtopic.php?id=37381).
 
+Another weather script in lua: [here](https://bbs.archlinux.org/viewtopic.php?id=222998)
+
 ## Display a countdown timer
 
 [ConkyTimer](https://github.com/orschiro/scriptlets/tree/master/ConkyTimer) is a simple countdown timer that displays the remaining time of a defined task.

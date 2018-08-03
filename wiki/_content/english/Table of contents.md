@@ -26,7 +26,7 @@
 | <small>2.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(14)</small> |
 | <small>2.10.1.</small> [Anonymity networks](/index.php/Category:Anonymity_networks "Category:Anonymity networks") <small>(4)</small> |
 | <small>2.10.2.</small> [BitTorrent clients](/index.php/Category:BitTorrent_clients "Category:BitTorrent clients") <small>(6)</small> |
-| <small>2.10.3.</small> [Cryptocurrencies](/index.php/Category:Cryptocurrencies "Category:Cryptocurrencies") <small>(4)</small> |
+| <small>2.10.3.</small> [Cryptocurrencies](/index.php/Category:Cryptocurrencies "Category:Cryptocurrencies") <small>(4) (also in [Cryptography](/index.php/Category:Cryptography "Category:Cryptography"))</small> |
 | <small>2.10.4.</small> [Download utilities](/index.php/Category:Download_utilities "Category:Download utilities") <small>(6)</small> |
 | <small>2.10.5.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(11) (also in [Email](/index.php/Category:Email "Category:Email"))</small> |
 | <small>2.10.6.</small> [File sharing](/index.php/Category:File_sharing "Category:File sharing") <small>(4)</small> |
@@ -176,7 +176,7 @@
 | <small>6.5.1.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(3) (also in [Boot process](/index.php/Category:Boot_process "Category:Boot process"))</small> |
 | <small>6.5.2.</small> [Fonts](/index.php/Category:Fonts "Category:Fonts") <small>(7)</small> |
 | <small>6.6.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(48)</small> |
-| <small>6.6.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(15) (also in [Encryption](/index.php/Category:Encryption "Category:Encryption"))</small> |
+| <small>6.6.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(16) (also in [Encryption](/index.php/Category:Encryption "Category:Encryption"))</small> |
 | <small>6.6.2.</small> [FUSE](/index.php/Category:FUSE "Category:FUSE") <small>(8)</small> |
 | <small>6.6.3.</small> [Storage virtualization](/index.php/Category:Storage_virtualization "Category:Storage virtualization") <small>(7)</small> |
 | <small>6.7.</small> [Freedesktop.org](/index.php/Category:Freedesktop.org "Category:Freedesktop.org") <small>(7)</small> |
@@ -194,14 +194,15 @@
 | <small>6.8.5.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(56)</small> |
 | <small>6.9.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(33)</small> |
 | <small>6.10.</small> [Keyboard configuration](/index.php/Category:Keyboard_configuration "Category:Keyboard configuration") <small>(9) (also in [Keyboards](/index.php/Category:Keyboards "Category:Keyboards"))</small> |
-| <small>6.11.</small> [Linux console](/index.php/Category:Linux_console "Category:Linux console") <small>(3)</small> |
+| <small>6.11.</small> [Linux console](/index.php/Category:Linux_console "Category:Linux console") <small>(4)</small> |
 | <small>6.12.</small> [Localization](/index.php/Category:Localization "Category:Localization") <small>(17)</small> |
-| <small>6.13.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(30)</small> |
+| <small>6.13.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(29)</small> |
 | <small>6.14.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(19)</small> |
-| <small>6.15.</small> [Security](/index.php/Category:Security "Category:Security") <small>(71)</small> |
+| <small>6.15.</small> [Security](/index.php/Category:Security "Category:Security") <small>(70)</small> |
 | <small>6.15.1.</small> [Cryptography](/index.php/Category:Cryptography "Category:Cryptography") <small>(5)</small> |
-| <small>6.15.1.1.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(9)</small> |
-| <small>6.15.1.1.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(15) (also in [File systems](/index.php/Category:File_systems "Category:File systems"))</small> |
+| <small>6.15.1.1.</small> [Cryptocurrencies](/index.php/Category:Cryptocurrencies "Category:Cryptocurrencies") <small>(4) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
+| <small>6.15.1.2.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(9)</small> |
+| <small>6.15.1.2.1.</small> [Disk encryption](/index.php/Category:Disk_encryption "Category:Disk encryption") <small>(16) (also in [File systems](/index.php/Category:File_systems "Category:File systems"))</small> |
 | <small>6.15.2.</small> [Firewalls](/index.php/Category:Firewalls "Category:Firewalls") <small>(13) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>6.15.3.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(7) (also in [Servers](/index.php/Category:Servers "Category:Servers"))</small> |
 | <small>6.15.4.</small> [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell") <small>(18) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |

@@ -489,7 +489,7 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 *   **LuxRender** — Rendering system for physically correct, unbiased image synthesis.
 
-	[http://luxrender.net/](http://luxrender.net/) || [luxrender](https://www.archlinux.org/packages/?name=luxrender)
+	[http://luxrender.net/](http://luxrender.net/) || [luxrender-hg](https://aur.archlinux.org/packages/luxrender-hg/)
 
 *   **[MakeHuman™](https://en.wikipedia.org/wiki/MakeHuman "wikipedia:MakeHuman")** — Parametrical modeling program for creating human bodies.
 

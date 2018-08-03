@@ -16,7 +16,7 @@ InfluxDB is a time series database built from the ground up to handle high write
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [influxdb](https://aur.archlinux.org/packages/influxdb/) and [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `influxdb` service.
+[Install](/index.php/Install "Install") the [influxdb](https://www.archlinux.org/packages/?name=influxdb) and [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `influxdb` service.
 
 ## Configuration
 

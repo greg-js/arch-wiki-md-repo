@@ -7,7 +7,8 @@
     *   [1.2 Usage](#Usage)
 *   [2 Automatic](#Automatic)
     *   [2.1 Official installation script](#Official_installation_script)
-    *   [2.2 Packages](#Packages)
+    *   [2.2 Official Linux client](#Official_Linux_client)
+    *   [2.3 Packages](#Packages)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Internet "kill switch"](#Internet_.22kill_switch.22)
     *   [3.2 Setting PIA DNS](#Setting_PIA_DNS)
@@ -38,6 +39,10 @@ To test to see if you have successfully connected to the VPN, see [this article]
 ### Official installation script
 
 Private Internet Access has an installation script that sets up [NetworkManager](/index.php/NetworkManager "NetworkManager") for use with the VPN. Download the script [here](http://www.privateinternetaccess.com/installer/pia-nm.sh) and then run to set up.
+
+### Official Linux client
+
+Private Internet Access has now an official client for Linux with support for Arch. Download the client from [this page](https://www.privateinternetaccess.com/pages/download), unzip the file (e.g. `pia-v81-installer-linux.tar.gz`) and run the installation script (.e.g. `# ./pia-v81-installer-linux.sh`).
 
 ### Packages
 

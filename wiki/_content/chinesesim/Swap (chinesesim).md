@@ -47,9 +47,7 @@ $ free -m
 
 ## 交换分区
 
-交换分区可以用大多数 GNU/Linux 分区工具(例如 `fdisk`, `cfdisk`)创建。交换分区被分配为类型 `82`。尽管可以使用任何分区类型作为交换分区，但是在大多数情况下，建议使用 `82`，因为 [systemd](/index.php/Systemd "Systemd") 会自动检测并挂载它（见下文）。
-
-A swap partition can be created with most GNU/Linux [partitioning tools](/index.php/Partitioning_tools "Partitioning tools"). Swap partitions are typically designated as type `82`. Even though it is possible to use any partition type as swap, it is recommended to use type `82` in most cases since [systemd](/index.php/Systemd "Systemd") will automatically detect it and mount it (see below).
+交换分区可以用大多数 GNU/Linux [分区工具](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)")(例如 `fdisk`, `cfdisk`)创建。交换分区被分配为类型 `82`。尽管可以使用任何分区类型作为交换分区，但是在大多数情况下，建议使用 `82`，因为 [systemd](/index.php/Systemd "Systemd") 会自动检测并挂载它（见下文）。
 
 想安装一个 Linux 交换区域，使用 `mkswap` 命令。例如：
 
@@ -88,8 +86,6 @@ lsblk -no UUID /dev/sd*xy*
 *   如果交换分区位于使用 GPT 的设备上，那么 [fstab](/index.php/Fstab "Fstab") 中的 swap 条目是可选的，参阅下一小节。
 *   如果使用支持 [TRIM](/index.php/TRIM "TRIM") 的 SSD，请考虑在 [fstab](/index.php/Fstab "Fstab") 的 swap 条目中使用 `defaults,discard`。 如果使用 *swapon* 命令手动激活交换分区，则使用 `-d`/`--discard` 参数实现相同功能。详细信息，请参阅 [swapon(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/swapon.8)。
 
-**Warning:** Enabling discard on RAID setups using mdadm will cause system lockup on boot and during runtime, if using swapon.
-
 **警告:** 在使用 madam 进行 RAID 设置时，如果开启 swapon 命令的 discard 参数，将导致系统在启动和运行时锁定。
 
 ### 通过 Systemd 激活
@@ -98,7 +94,7 @@ lsblk -no UUID /dev/sd*xy*
 
 ### 关闭交换分区
 
-关闭交换分区使用下面的命令:
+使用下面的命令关闭交换分区：
 
 ```
 # swapoff /dev/sd*xy*
@@ -107,7 +103,7 @@ lsblk -no UUID /dev/sd*xy*
 
 也可以使用 `-a` 参数来关闭所有的交换分区。
 
-因为 swap 通过 systemd 管理， 因此会在下一次系统启动时再次激活。 要永久禁用该特性，运行 `systemctl --type swap` 来查找 *.swap* 单元，然后 [mask](/index.php/Mask "Mask") 它。
+因为 swap 通过 systemd 管理，因此会在下一次系统启动时再次激活。要永久禁用该特性，运行 `systemctl --type swap` 来查找 *.swap* 单元，然后 [mask](/index.php/Mask "Mask") 它。
 
 ## 交换文件
 
@@ -229,7 +225,7 @@ This guide will work for other memory such as SD cards, etc.
 
 ## 交换测试
 
-Ensure that swap is activated with `swapon` of `free`:
+用`swapon` 或 `free`确定Swap已激活：
 
 ```
 $ swapon -s
@@ -238,8 +234,6 @@ $ free -m
 ```
 
 ## 性能优化
-
-Swap 参数之可以调整来优化性能。
 
 ### Swappiness
 

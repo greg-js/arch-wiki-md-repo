@@ -4,6 +4,7 @@ Artículos relacionados
 *   [Improve pacman performance](/index.php/Improve_pacman_performance "Improve pacman performance")
 *   [SSH#Speeding up SSH](/index.php/SSH#Speeding_up_SSH "SSH")
 *   [LibreOffice#Speed up Libreoffice](/index.php/LibreOffice#Speed_up_Libreoffice "LibreOffice")
+
 *   [Openoffice#Speed up OpenOffice](/index.php/Openoffice#Speed_up_OpenOffice "Openoffice")
 *   [Laptop](/index.php/Laptop "Laptop")
 *   [Swap#Swappiness](/index.php/Swap#Swappiness "Swap")

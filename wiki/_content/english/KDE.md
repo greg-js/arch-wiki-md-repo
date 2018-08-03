@@ -279,24 +279,13 @@ If you want to have access to Windows services, install [Samba](/index.php/Samba
 
 The Dolphin share functionality requires the package [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing) and usershares, which the stock `smb.conf` does not have enabled. Instructions to add them are in [Samba#Enable usershares](/index.php/Samba#Enable_usershares "Samba"), after which sharing in Dolphin should work out of the box after restarting Samba.
 
-Plasma's abilities to access SMB shares are limited, though. Writing to Windows shares is problematic and opening files from such shares, e.g. large videos, makes Plasma copying the whole file to the local system first. To workaround this, you can install a GTK based file browser like [thunar](https://www.archlinux.org/packages/?name=thunar) with [gvfs](https://www.archlinux.org/packages/?name=gvfs) and [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) (and [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) for saving login credentials) to access SMB shares in a more able way. Another possible workaround is to [mount](/index.php/Mount "Mount") a Samba share via [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) to make it look to Plasma like if the SMB share was just a normal local folder and thus can be accessed normally. The mount command could look like the following for write access to a public share:
+**Note:** Use "*" for both username and password when accessing a Windows share without authentification in Dolphin's prompt.
 
-```
-# mount -t cifs -o username=*,password=*,uid=1000,gid=1000,file_mode=0660,dir_mode=0770 //networkhost/share/ /home/user/localmountpoint/
+Unlike GTK file browsers which utilize GVfs also for the launched program, opening files from Samba shares in Dolphin via KIO makes Plasma copy the whole file to the local system first with most programs (VLC is an exception). To workaround this, you can use a GTK based file browser like [thunar](https://www.archlinux.org/packages/?name=thunar) with [gvfs](https://www.archlinux.org/packages/?name=gvfs) and [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb) (and [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) for saving login credentials) to access SMB shares in a more able way.
 
-```
+Another possibility is to [mount](/index.php/Mount "Mount") a Samba share via [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) to make it look to Plasma like if the SMB share was just a normal local folder and thus can be accessed normally. See [Samba#Manual_mounting](/index.php/Samba#Manual_mounting "Samba") and [Samba#Automatic_mounting](/index.php/Samba#Automatic_mounting "Samba").
 
-Make it permanent:
-
- `/etc/fstab` 
-```
-//networkhost/share/ /home/user/localmountpoint/ cifs defaults,username=*,password=*,uid=1000,gid=1000,file_mode=0660,dir_mode=0770 0 2
-
-```
-
-It might be necessary to append `.local` to the hostname. For some NAS devices it might also be necessary to append `vers=1.0` to the argument line to enforce SMB 1.0 compatibility.
-
-An easier solution is to use [samba-mounter-git](https://aur.archlinux.org/packages/samba-mounter-git/), which offers basically the same functionality via an easy to use option located at *System Settings* > *Network Drivers*.
+An GUI solution is available with [samba-mounter-git](https://aur.archlinux.org/packages/samba-mounter-git/), which offers basically the same functionality via an easy to use option located at *System Settings* > *Network Drivers*. However, it might break with new KDE Plasma versions.
 
 ### KDE Desktop activities
 

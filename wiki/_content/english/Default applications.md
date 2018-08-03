@@ -2,7 +2,7 @@ Programs sometimes need to open a file or a [URI](https://en.wikipedia.org/wiki/
 
 *   Some programs (particularly command-line programs) detect default programs using [environment variables](/index.php/Environment_variables "Environment variables"), see [Environment variables#Default programs](/index.php/Environment_variables#Default_programs "Environment variables").
 *   Some programs (particularly heirloom UNIX programs) use [mime.types](https://en.wikipedia.org/wiki/Media_type#mime.types "wikipedia:Media type") for MIME type detection and [mailcap](https://en.wikipedia.org/wiki/Media_type#Mailcap "wikipedia:Media type") for application association.
-*   Many programs outsource the task completely to a [#Resource opener](#Resource_openers).
+*   Many programs outsource the task completely to a [resource opener](#Resource_openers).
 
 Freedesktop.org has standardized filetype detection with the [Shared MIME database](/index.php/Shared_MIME_database "Shared MIME database") specification and application association with the [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications") specification.
 

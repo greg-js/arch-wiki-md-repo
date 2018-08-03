@@ -1,4 +1,4 @@
-The [up-board](http://up-board.org) is a Intel based SOC.
+The [UP Board](http://up-board.org) is a Intel based SOC device by Aaeon. There is a companion device, the UP Core, that uses the same chipset and devices. Installation of Arch is no different, except that you do not have the GPIO bus to enable.
 
 ## Contents
 
@@ -8,12 +8,13 @@ The [up-board](http://up-board.org) is a Intel based SOC.
     *   [3.1 Compilation](#Compilation)
         *   [3.1.1 Manual](#Manual)
         *   [3.1.2 Arch Build System](#Arch_Build_System)
+*   [4 See Also](#See_Also)
 
 ## Installation
 
-The up-board features a [UEFI](/index.php/UEFI "UEFI") only setup (no BIOS emulation). The standard UEFI installation process may be followed. [systemd-boot](/index.php/Systemd-boot "Systemd-boot") works well as a simple bootloader.
+The UP Board features a [UEFI](/index.php/UEFI "UEFI") only setup (no BIOS emulation). The standard UEFI installation process may be followed. [systemd-boot](/index.php/Systemd-boot "Systemd-boot") works well as a simple bootloader.
 
-**Note:** The installation disk for the up-board is `/dev/mmcblk0`. [GPT](/index.php/GPT "GPT") is the recommended partition type.
+**Note:** The installation disk for the UP Board is `/dev/mmcblk0`. [GPT](/index.php/GPT "GPT") is the recommended partition type.
 
 ## GPIO
 
@@ -21,11 +22,11 @@ The GPIO pins on the UP board are routed through a CPLD that requires a custom d
 
 ## Sound
 
-As of August 2016, the mainline kernel does not support sound through HDMI for cherry trail based devices like the up-board. There are plans on adding support to the mainline kernel as noted [here](https://bugzilla.kernel.org/show_bug.cgi?id=113971#c6), but in the mean time if you wish to have sound you will need to manually patch your kernel. There is currently no AUR package including these patches.
+As of August 2016, the mainline kernel does not support sound through HDMI for cherry trail based devices like the UP Board. There are plans on adding support to the mainline kernel as noted [here](https://bugzilla.kernel.org/show_bug.cgi?id=113971#c6), but in the mean time if you wish to have sound you will need to manually patch your kernel. There is currently no AUR package including these patches.
 
 ### Compilation
 
-Without any optimizations, compilation on the up-board takes around 5-6 hours. Setting your `MAKEFLAGS` beforehand will drastically improve the compilation time. If you're using the ABS the [makepkg](/index.php/Makepkg "Makepkg") page has information on how to set the variable in there.
+Without any optimizations, compilation on the UP Board takes around 5-6 hours. Setting your `MAKEFLAGS` beforehand will drastically improve the compilation time. If you're using the ABS the [makepkg](/index.php/Makepkg "Makepkg") page has information on how to set the variable in there.
 
 #### Manual
 
@@ -58,3 +59,8 @@ $ patch -p1 < cherry.patch
 #### Arch Build System
 
 If you wish to build the kernel using the ABS, follow the steps provided in [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System"). Remember to add the patch to the prepare function and run *updpkgsums* to update the checksum for the changed config file.
+
+## See Also
+
+*   [Up-squared](/index.php/Up-squared "Up-squared")
+*   [Homepage](https://www.up-board.org)

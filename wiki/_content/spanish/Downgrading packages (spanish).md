@@ -58,7 +58,7 @@ Si el paquete no está disponible, busque el [PKGBUILD](/index.php/PKGBUILD_(Esp
 
 Para los paquetes de los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"), recupere el *PKGBUILD* con [ABS](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)") y cambie la versión del software. Alternativamente, busque el paquete en el sitio web [Paquetes](https://www.archlinux.org/packages), haga clic en "Ver cambios" y navegue hasta la versión deseada. Los archivos están disponibles a través de una instantánea `.tar.gz` y a través de la vista *Árbol*.
 
-Consulte también [Arch Build System (Español)#Revisión de un paquete antiguo](/index.php/Arch_Build_System_(Espa%C3%B1ol)#Revisi.C3.B3n_de_un_paquete_antiguo "Arch Build System (Español)").
+Consulte también [Revisión de un paquete antiguo](/index.php/Arch_Build_System_(Espa%C3%B1ol)#Revisi.C3.B3n_de_un_paquete_antiguo "Arch Build System (Español)").
 
 Los paquetes antiguos de AUR pueden construirse revisando un compromiso antiguo en el repositorio de GIT del paquete AUR. Para los PKGBUILD anteriores a 2015 AUR3 PKGBUILDs, consulte los [Arch User Repository#Git repositories for AUR3 packages](/index.php/Arch_User_Repository#Git_repositories_for_AUR3_packages "Arch User Repository").
 

@@ -1,3 +1,7 @@
+Related articles
+
+*   [Calibrating Touchscreen](/index.php/Calibrating_Touchscreen "Calibrating Touchscreen")
+
 If you ever tried to set up a touchscreen device in linux, you might have noticed that it's either working out of the box (besides some calibration) or is very tedious, especially when it is not supported by the kernel.
 
 ## Contents

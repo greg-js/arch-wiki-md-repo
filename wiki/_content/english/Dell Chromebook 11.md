@@ -1,3 +1,7 @@
+Related articles
+
+*   [Chromebook](/index.php/Chromebook "Chromebook")
+
 The Dell Chromebook 11 (and newer chromebooks in general) features a "legacy boot" mode that makes it easy to boot Linux and other operating systems. The legacy boot mode is provided by the [SeaBIOS](http://www.coreboot.org/SeaBIOS) payload of coreboot. SeaBIOS behaves like a traditional BIOS that boots into the MBR of a disk, and from there into your standard bootloaders like Syslinux and GRUB.
 
 The instructions for getting Arch Linux to work on this machine are similar to the [Acer C720 Chromebook](/index.php/Acer_C720_Chromebook "Acer C720 Chromebook"), with a few differences.

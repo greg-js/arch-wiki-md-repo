@@ -71,7 +71,7 @@ In case your `efivars` are not properly set it is most likely due to you not bei
 
 ### Updates
 
-[BIOS update 1.25](https://pcsupport.lenovo.com/de/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-carbon-6th-gen-type-20kh-20kg/downloads) was released on 2018-06-28\. Obtain [geteltorito](https://aur.archlinux.org/packages/geteltorito/) and run `./geteltorito.pl -o bios-update.img n23ur08w.iso` on the downloaded ISO file to create a valid [El Torito](https://en.wikipedia.org/wiki/El_Torito_(CD-ROM_standard)) image file, then flash this file on a USB drive via `dd` like you would flash [Arch installation media](/index.php/USB_flash_installation_media "USB flash installation media"). For further information see [flashing BIOS from Linux](/index.php/Flashing_BIOS_from_Linux#Bootable_optical_disk_emulation "Flashing BIOS from Linux").
+[BIOS update 1.25](https://pcsupport.lenovo.com/de/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-carbon-6th-gen-type-20kh-20kg/downloads) was released on 2018-06-28\. Obtain [geteltorito](https://aur.archlinux.org/packages/geteltorito/) and run `./geteltorito.pl -o bios-update.img n23ur08w.iso` on the downloaded ISO file to create a valid [El Torito](https://en.wikipedia.org/wiki/El_Torito_(CD-ROM_standard) image file, then flash this file on a USB drive via `dd` like you would flash [Arch installation media](/index.php/USB_flash_installation_media "USB flash installation media"). For further information see [flashing BIOS from Linux](/index.php/Flashing_BIOS_from_Linux#Bootable_optical_disk_emulation "Flashing BIOS from Linux").
 
 The ThinkPad X1 Carbon supports setting a custom splash image at the earliest boot stage(instead of the red "Lenovo" logo), more information can be found in the `README.TXT` located in the `FLASH` folder of the update image.
 
@@ -196,7 +196,7 @@ Reboot and check with:
 
 ```
 
-**Note:** If the rdmsr command outputs: 'rdmsr: open: No such file or directory', you may have to configure the msr module to load automatically. See [https://wiki.archlinux.org/index.php/Kernel_module#Automatic_module_handling](https://wiki.archlinux.org/index.php/Kernel_module#Automatic_module_handling) for more details.
+**Note:** If the rdmsr command outputs: 'rdmsr: open: No such file or directory', you may have to configure the msr module to load automatically. See [Kernel module#Automatic module handling](/index.php/Kernel_module#Automatic_module_handling "Kernel module") for more details.
 
 ## TrackPoint and Touchpad issues
 
@@ -242,7 +242,7 @@ With LUKS for root, i915 needs to be loaded in ramdisk in order to access the pa
 *   [StackExchange: Success with enabling RMI4 config flags for Touchpad and TrackPoint](https://unix.stackexchange.com/a/431820)
 *   [Kernel patch - Input: elantech - add support for SMBus devices](https://patchwork.kernel.org/patch/10324633/)
 *   [Kernel patch - Input: synaptics - add Lenovo 80 series ids to SMBus](https://patchwork.kernel.org/patch/10330857/)
-*   [Early KMS start](https://wiki.archlinux.org/index.php/Intel_graphics): Adding i915 to ramdisk
+*   [Early KMS start](/index.php/Intel_graphics "Intel graphics"): Adding i915 to ramdisk
 
 ## Additional resources
 

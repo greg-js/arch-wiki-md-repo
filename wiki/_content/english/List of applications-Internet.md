@@ -1450,7 +1450,7 @@ See also [Wikipedia:List of SIP software#Clients](https://en.wikipedia.org/wiki/
 
 *   **[Ring](/index.php/Ring "Ring") KDE** — SIP-compatible softphone and instant messenger for the decentralized Ring network. KDE client.
 
-	[https://cgit.kde.org/ring-kde.git/](https://cgit.kde.org/ring-kde.git/) || [ring-kde](https://aur.archlinux.org/packages/ring-kde/)
+	[https://cgit.kde.org/ring-kde.git/](https://cgit.kde.org/ring-kde.git/) || [ring-kde](https://www.archlinux.org/packages/?name=ring-kde)
 
 *   **[Twinkle](https://en.wikipedia.org/wiki/Twinkle_(software) "wikipedia:Twinkle (software)")** — Qt softphone for VoIP and IM communication using SIP.
 
@@ -1624,7 +1624,7 @@ See also [Bonjour](/index.php/Avahi#Link-Local_.28Bonjour.2FZeroconf.29_chat "Av
 
 *   **[Viber](https://en.wikipedia.org/wiki/Viber "wikipedia:Viber")** — Proprietary cross-platform IM and VoIP software.
 
-	[https://www.viber.com/hu/products/linux/](https://www.viber.com/hu/products/linux/) || [viber](https://aur.archlinux.org/packages/viber/)
+	[https://www.viber.com/products/linux/](https://www.viber.com/products/linux/) || [viber](https://aur.archlinux.org/packages/viber/)
 
 *   **[Wire](https://en.wikipedia.org/wiki/Wire_(software) "wikipedia:Wire (software)")** — Modern, private messenger. Based on the [Electron](https://electronjs.org/) platform.
 
@@ -1866,13 +1866,13 @@ See also [Wikipedia:List of podcatchers](https://en.wikipedia.org/wiki/List_of_p
 
 	[https://github.com/z-------------/cumulonimbus](https://github.com/z-------------/cumulonimbus) || [cpod](https://aur.archlinux.org/packages/cpod/)
 
+*   **GNOME Podcasts** — Podcast client for the GNOME Desktop written in Rust.
+
+	[https://gitlab.gnome.org/World/podcasts](https://gitlab.gnome.org/World/podcasts) || [gnome-podcasts](https://aur.archlinux.org/packages/gnome-podcasts/)
+
 *   **gPodder** — Podcast client and media aggregator (GTK+ interface).
 
 	[http://gpodder.org/](http://gpodder.org/) || [gpodder](https://www.archlinux.org/packages/?name=gpodder)
-
-*   **Hammond** — Podcast client for the GNOME Desktop written in Rust.
-
-	[https://gitlab.gnome.org/World/hammond](https://gitlab.gnome.org/World/hammond) || [hammond](https://aur.archlinux.org/packages/hammond/)
 
 *   **Vocal** — Simple podcast client for the Modern Desktop (GTK+).
 

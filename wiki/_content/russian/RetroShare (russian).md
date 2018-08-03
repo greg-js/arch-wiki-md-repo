@@ -12,7 +12,7 @@
 1\. Добавьте репозиторий пакетов, отредактировав файл */etc/pacman.conf*:
 
 ```
-[home_Arch_Community_standard]
+[home_AsamK_RetroShare_Arch_Community_standard]
 SigLevel = Never
 Server = [http://download.opensuse.org/repositories/home:/AsamK:/RetroShare/Arch_Community_standard/x86_64](http://download.opensuse.org/repositories/home:/AsamK:/RetroShare/Arch_Community_standard/x86_64)
 
@@ -22,7 +22,7 @@ Server = [http://download.opensuse.org/repositories/home:/AsamK:/RetroShare/Arch
 
 ```
 # pacman -Syu
-# pacman -S home_Arch_Community_standard/retroshare06
+# pacman -S home_AsamK_RetroShare_Arch_Community_standard/retroshare06
 
 ```
 

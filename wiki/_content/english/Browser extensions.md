@@ -73,7 +73,7 @@ The lead developer of uBlock forked the project and created uBlock Origin. As of
 
 Disconnect can also stop side-jacking, which utilizes stolen cookies to steal personal data. It is easy to use and well supported.
 
-**Note:** Firefox gained a feature based on the Disconnect list. See [Firefox#Enable tracking protection](/index.php/Firefox#Enable_tracking_protection "Firefox").
+**Note:** Firefox gained a feature based on the Disconnect list. See [Firefox/Privacy#Enable tracking protection](/index.php/Firefox/Privacy#Enable_tracking_protection "Firefox/Privacy").
 
 ### Noise generators
 

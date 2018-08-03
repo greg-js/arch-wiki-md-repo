@@ -242,7 +242,7 @@ To polecenie najpierw skonfiguruje trzy partycje jako woluminy fizyczne (jeśli 
 
 ### Utwórz woluminy logiczne
 
-**Tip:** Jeśli chcesz używać migawek, buforowania woluminów logicznych, woluminów logicznych lub macierzy lub RAID, zobacz [#Logical volume types](#Logical_volume_types).
+**Tip:** Jeśli chcesz używać migawek, buforowania woluminów logicznych, woluminów logicznych lub macierzy lub RAID, zobacz [#Logical volumes](#Logical_volumes).
 
 Teraz musimy utworzyć woluminy logiczne w tej grupie woluminów. Użytkownik tworzy wolumin logiczny za pomocą następnego polecenia, podając nazwę nowego woluminu logicznego, jego rozmiar i grupę woluminów, na której będzie on działał:
 
@@ -336,7 +336,7 @@ Następnie możesz kontynuować w normalnej instrukcji instalacji, [utwórz pocz
 **Tip:**
 
 *   Haki `lvm2` i `sd-lvm2` są instalowane przez [lvm2](https://www.archlinux.org/packages/?name=lvm2), nie [mkinitcpio](https://www.archlinux.org/packages/?name=mkinitcpio). Jeśli uruchamiasz *mkinitcpio* w arch-chroot dla nowej instalacji, [lvm2](https://www.archlinux.org/packages/?name=lvm2) musi być zainstalowany wewnątrz *arch-chroot* dla *mkinitcpio*, aby znaleźć `lvm2` lub `sd-lvm2` hak. Jeśli [lvm2](https://www.archlinux.org/packages/?name=lvm2) stnieje tylko poza *arch-chroot*, *mkinitcpio* wyświetli `Error: Hook 'lvm2' cannot be found`.
-*   Jeśli twój główny system plików jest na LVM RAID, zobacz [#Configure mkinitcpio for RAID](#Configure_mkinitcpio_for_RAID).
+*   Jeśli twój główny system plików jest na LVM RAID, zobacz [#Skonfiguruj mkinitcpio dla RAID](#Skonfiguruj_mkinitcpio_dla_RAID).
 
 ### Opcje jądra
 

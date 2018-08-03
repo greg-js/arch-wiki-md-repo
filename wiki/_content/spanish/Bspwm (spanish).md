@@ -41,7 +41,7 @@ Cree los directorios `~/.config/bspwm/` y `~/.config/sxhkd/`, y luego copie `/us
 
 **Note:** Asegúrese de que su variable de entorno $XDG_CONFIG_HOME esté indicada en el sistema, o su bspwmrc no será tomado en cuenta. Para indicarla, escriba `XDG_CONFIG_HOME="$HOME/.config"` y `export XDG_CONFIG_HOME` en ~/.profile, en líneas aparte.
 
-Las opciones de configuración para cada archivo se encuentran enlistadas y descritas en [bspwm(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/bspwm.1) y [sxhkd(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/sxhkd.1).
+Las opciones de configuración para cada archivo se encuentran enlistadas y descritas en [bspwm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bspwm.1) y [sxhkd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sxhkd.1).
 
 #### Para múltiples monitores
 

@@ -75,7 +75,7 @@ If you have not actually patched or customized a kernel before it is not that ha
 
 	[http://ck.kolivas.org/patches/](http://ck.kolivas.org/patches/) || [linux-ck](https://aur.archlinux.org/packages/linux-ck/)
 
-*   **[pf-kernel](https://pfactum.github.io/pf-kernel/)** — Provides you with a handful of awesome features not merged into mainline. It is based on neither existing Linux fork nor patchset, although some unofficial ports may be used if required patches have not been released officially. The most prominent patches of linux-pf are PDS CPU scheduler and UKSM.
+*   **[pf-kernel](https://gitlab.com/post-factum/pf-kernel/)** — Provides you with a handful of awesome features not merged into mainline. It is based on neither existing Linux fork nor patchset, although some unofficial ports may be used if required patches have not been released officially. The most prominent patches of linux-pf are PDS CPU scheduler and UKSM.
 
 	[https://pfactum.github.io/pf-kernel/](https://pfactum.github.io/pf-kernel/) || Packages:
 

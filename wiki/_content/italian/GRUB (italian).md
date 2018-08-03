@@ -1459,7 +1459,7 @@ Si vedano gli esempi in [#Usare la console di emergenza](#Usare_la_console_di_em
 
 *   **grub-customizer** — Consente di personalizzare il bootloader (GRUB o BURG)
 
-	[https://launchpad.net/grub-customizer](https://launchpad.net/grub-customizer) || [grub-customizer](https://aur.archlinux.org/packages/grub-customizer/)
+	[https://launchpad.net/grub-customizer](https://launchpad.net/grub-customizer) || [grub-customizer](https://www.archlinux.org/packages/?name=grub-customizer)
 
 *   **grub2-editor** — Control module di KDE4 per configurare GRUB
 

@@ -79,21 +79,13 @@ Because the patch for alsa-lib is an optional dependency, it must be installed m
 
 #### WiFi
 
-Install the AUR package [https://aur.archlinux.org/packages/gpd-pocket-support-bcm4356-git/](https://aur.archlinux.org/packages/gpd-pocket-support-bcm4356-git/) OR copy `brcmfmac4356-pcie.txt` from [here](https://raw.githubusercontent.com/njkli/gpd-pocket/master/gpd-pocket-support/brcmfmac4356-pcie.txt) to `/usr/lib/firmware/brcm/` then reload the WiFi kernel module:
+Install the package [gpd-pocket-support-bcm4356-git](https://aur.archlinux.org/packages/gpd-pocket-support-bcm4356-git/) and reload the WiFi kernel module:
 
 ```
 # modprobe -r brcmfmac
 # modprobe brcmfmac
 
 ```
-
-**Note:** This did not work for me right away. I would get this error on boot:
-```
-brcmfmac: brcmf_chip_recognition: chip backplane type 15 is not supported
-brcmfmac: brcmf_pcie_probe: failed 14e4:43ec
-
-```
-To fix this, I installed [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) and tested and then removed it now the wifi works just fine.
 
 #### Backlight and KMS
 
@@ -245,7 +237,7 @@ With the latest kernel your fan should work out of the box.
 
 ```
 
-Once this has been completed - you should hear your fan start up at 40c - if you hear a clicking sound - power off the device, remove the back panel and very gently push the fan around a few times. Then re-attach the panel and power on the device - running the above commands again once logged in. It seems to be an issue with some devices that the fan cannot start properly when it has not been powered on in a while. This resolved the issue for me.
+Once this has been completed - you should hear your fan start up at 40c - if you hear a clicking sound - power off the device, remove the back panel and very gently push the fan around a few times. Then re-attach the panel and power on the device - running the above commands again once logged in. It seems to be an issue with some devices that the fan cannot start properly when it has not been powered on in a while.
 
 Once you have completed these steps and the fan is working properly - you should then either reboot or reload the fan kernel module in order to return the temperature limits to default:
 

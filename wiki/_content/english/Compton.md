@@ -12,12 +12,12 @@
         *   [2.3.1 Disable shadows for some windows](#Disable_shadows_for_some_windows)
 *   [3 Multihead](#Multihead)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Freezing video playback](#Freezing_video_playback)
-    *   [4.2 Conky](#Conky)
-    *   [4.3 dwm | dmenu](#dwm_.7C_dmenu)
-    *   [4.4 Firefox](#Firefox)
-    *   [4.5 slock](#slock)
-    *   [4.6 Corrupted screen contents with Intel graphics](#Corrupted_screen_contents_with_Intel_graphics)
+    *   [4.1 Conky](#Conky)
+    *   [4.2 dwm | dmenu](#dwm_.7C_dmenu)
+    *   [4.3 Firefox](#Firefox)
+    *   [4.4 slock](#slock)
+    *   [4.5 Corrupted screen contents with Intel graphics](#Corrupted_screen_contents_with_Intel_graphics)
+    *   [4.6 Freezing video playback](#Freezing_video_playback)
     *   [4.7 Flicker](#Flicker)
     *   [4.8 Fullscreen tearing](#Fullscreen_tearing)
     *   [4.9 Lag when using xft fonts](#Lag_when_using_xft_fonts)
@@ -116,7 +116,7 @@ To disable shadows for menus add the following to wintypes in `compton.conf`:
 # menu        = { shadow = false; };
 dropdown_menu = { shadow = false; };
 popup_menu    = { shadow = false; };
-# utility     = { shadow = false; };
+utility       = { shadow = false; };
 
 ```
 
@@ -139,12 +139,6 @@ seq 0 3 | xargs -l1 -I@ compton -b -d :0.@
 ## Troubleshooting
 
 The use of compositing effects may on occasion cause issues such as visual glitches when not configured correctly for use with other applications and programs.
-
-### Freezing video playback
-
-Some media players may experience an issue where the video will momentarily freeze while the audio continues to play. There is currently no known fix aside from stopping Compton while playing videos.
-
-See the [bug report](https://github.com/chjj/compton/issues/494).
 
 ### Conky
 
@@ -174,6 +168,8 @@ focus-exclude = "x = 0 && y = 0 && override_redirect = true";
 The override redirect property seems to be false for most windows- having this in the exclusion rule prevents other windows drawn in the upper left corner from being excluded (for example, when dwm statusbar is hidden, x0 y0 will match whatever is in dwm's master stack).
 
 ### Firefox
+
+See [#Disable_shadows_for_some_windows](#Disable_shadows_for_some_windows)
 
 To disable shadows for Firefox elements add the following to shadow-exclude in `compton.conf`:
 
@@ -242,6 +238,12 @@ focus-exclude = "id = 0x1800001";
 ### Corrupted screen contents with Intel graphics
 
 On at least some Intel chipsets, DRI3 is known to cause [trouble](https://bugs.freedesktop.org/show_bug.cgi?id=97916) for compton when the display resolution is changed or a new monitor is connected. This can happen with either the `intel` or `modesetting` driver. A workaround is to run compton with the `--paint-on-overlay` option.
+
+### Freezing video playback
+
+Some media players may experience an issue where the video will momentarily freeze while the audio continues to play. There is currently no known fix aside from stopping Compton while playing videos.
+
+See the [bug report](https://github.com/chjj/compton/issues/494).
 
 ### Flicker
 
@@ -333,7 +335,7 @@ See [[6]](https://github.com/chjj/compton/issues/162) for more information.
 
 ### Lag with Nvidia proprietary drivers and FullCompositionPipeline
 
-See [Screen artifacts/screenshot issues when using AMD's Catalyst driver](https://wiki.archlinux.org/index.php/Compton#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver).
+See [#Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver).
 
 ## See also
 

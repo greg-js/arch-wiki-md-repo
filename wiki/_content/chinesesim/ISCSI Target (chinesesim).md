@@ -1,3 +1,8 @@
+Related articles
+
+*   [iSCSI initiator (简体中文)](/index.php/ISCSI_initiator_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ISCSI initiator (简体中文)")
+*   [iSCSI Boot](/index.php/ISCSI_Boot "ISCSI Boot")
+
 **翻译状态：** 本文是英文页面 [ISCSI_Target](/index.php/ISCSI_Target "ISCSI Target") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-06-11，点击[这里](https://wiki.archlinux.org/index.php?title=ISCSI_Target&diff=0&oldid=373078)可以查看翻译后英文页面的改动。
 
 使用 [iSCSI](https://en.wikipedia.org/wiki/iSCSI "wikipedia:iSCSI") 可以通过 IP 网络访问磁盘。

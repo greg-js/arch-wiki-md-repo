@@ -6,7 +6,7 @@ Related articles
 
 This method is convenient for auto-starting services commonly run for a single user, such as [mpd](/index.php/Mpd "Mpd"). Or to perform automated tasks like fetching mail.
 
-Compared with [XDG_Autostart](/index.php/XDG_Autostart "XDG Autostart"), [systemd](/index.php/Systemd "Systemd") makes services simpler to supervise, glue, and error proof. Like automatically recovering them in case of failure.
+Compared with [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart"), [systemd](/index.php/Systemd "Systemd") makes services simpler to supervise, glue, and error proof. Like automatically recovering them in case of failure.
 
 ## Contents
 

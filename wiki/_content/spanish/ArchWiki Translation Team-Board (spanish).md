@@ -61,7 +61,7 @@
 | [Fonts (Español)](/index.php/Fonts_(Espa%C3%B1ol) "Fonts (Español)") | Tipos de letras | `2008-06` |
 | [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)") | Configuración del sistema/Sistema archivos | `2013-09` |
 | [Frequently asked questions (Español)](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)") | Información/General | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Mantenimiento "User:AlonsoLP") para más detalles. |
-| [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)") | Información/Posinstalación | `2016-11` |
+| [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)") | Información/Posinstalación | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Mantenimiento "User:AlonsoLP") para más detalles. |
 | [Getting involved (Español)](/index.php/Getting_involved_(Espa%C3%B1ol) "Getting involved (Español)") | Ayuda/Colaboración | `2016-09` |
 | [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") | Gestor de arranque | `2015-06` |
 | [GRUB/Tips and tricks (Español)](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol) "GRUB/Tips and tricks (Español)") | Gestor de arranque | `2018-06` | [Phenom](/index.php?title=User:Phenom&action=edit&redlink=1 "User:Phenom (page does not exist)") |

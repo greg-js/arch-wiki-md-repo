@@ -471,7 +471,7 @@ macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
 
 Keep in mind that writing your password in `.muttrc` is a security risk. One solution is to always enter the password manually, but this becomes cumbersome.
 
-An alternative solution is to encrypt your password with [GnuPG](/index.php/GnuPG "GnuPG") in an encrypted file. [Setup your own keypair](/index.php/GnuPG#Create_key_pair "GnuPG") if you have not done so already. [Create](/index.php/Create "Create") a file in a [tmpfs](/index.php/Tmpfs "Tmpfs") with the following contents:
+An alternative solution is to encrypt your password with [GnuPG](/index.php/GnuPG "GnuPG") in an encrypted file. [Setup your own keypair](/index.php/GnuPG#Create_a_key_pair "GnuPG") if you have not done so already. [Create](/index.php/Create "Create") a file in a [tmpfs](/index.php/Tmpfs "Tmpfs") with the following contents:
 
 ```
 set my_pass = " *password*"

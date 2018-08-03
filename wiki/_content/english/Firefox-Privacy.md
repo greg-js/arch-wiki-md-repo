@@ -6,7 +6,7 @@ Related articles
 *   [Firefox/Tweaks](/index.php/Firefox/Tweaks "Firefox/Tweaks")
 *   [Firefox/Profile on RAM](/index.php/Firefox/Profile_on_RAM "Firefox/Profile on RAM")
 
-This article overviews how to configure [Firefox](/index.php/Firefox "Firefox") to enhance security and privacy.
+This article overviews how to configure Firefox to enhance security and privacy.
 
 ## Contents
 
@@ -16,12 +16,11 @@ This article overviews how to configure [Firefox](/index.php/Firefox "Firefox") 
     *   [1.3 Change browser time zone](#Change_browser_time_zone)
     *   [1.4 Change user agent and platform](#Change_user_agent_and_platform)
     *   [1.5 WebRTC exposes LAN IP address](#WebRTC_exposes_LAN_IP_address)
-    *   [1.6 Disable 1024-bit Diffie-Hellman primes](#Disable_1024-bit_Diffie-Hellman_primes)
-    *   [1.7 Disable telemetry](#Disable_telemetry)
-    *   [1.8 Enable Do Not Track Header (DNT)](#Enable_Do_Not_Track_Header_.28DNT.29)
-    *   [1.9 Disable geolocation](#Disable_geolocation)
-    *   [1.10 Disable Safe Browsing service](#Disable_Safe_Browsing_service)
-    *   [1.11 Disable WebGL](#Disable_WebGL)
+    *   [1.6 Disable telemetry](#Disable_telemetry)
+    *   [1.7 Enable Do Not Track Header (DNT)](#Enable_Do_Not_Track_Header_.28DNT.29)
+    *   [1.8 Disable geolocation](#Disable_geolocation)
+    *   [1.9 Disable Safe Browsing service](#Disable_Safe_Browsing_service)
+    *   [1.10 Disable WebGL](#Disable_WebGL)
 *   [2 Extensions](#Extensions)
     *   [2.1 NoScript](#NoScript)
     *   [2.2 RequestPolicy Continued](#RequestPolicy_Continued)
@@ -33,16 +32,9 @@ This article overviews how to configure [Firefox](/index.php/Firefox "Firefox") 
 
 The following are privacy-focused configuration tweaks to prevent [browser fingerprinting](https://panopticlick.eff.org/) and tracking.
 
-In addition, see the following links:
-
-*   [MozillaWiki:Privacy/Privacy Task Force/firefox about config privacy tweeks](https://wiki.mozilla.org/Privacy/Privacy_Task_Force/firefox_about_config_privacy_tweeks "mozillawiki:Privacy/Privacy Task Force/firefox about config privacy tweeks") - a wiki page maintained by Mozilla with descriptions of privacy specific settings.
-*   [How to stop Firefox from making automatic connections](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections) - Is an annotated list of corresponding Firefox functionality and settings to disable it case-by-case.
-*   [ffprofile.com](https://ffprofile.com/) - You select which features you want to enable and disable and in the end you get a download link for a zip-file with your profile template. You can for example disable some functions, which send data to Mozilla and Google, or disable several annoying Firefox functions like Mozilla Hello or the Pocket integration.
-*   [pyllyukko/user.js](https://github.com/pyllyukko/user.js) - Firefox configuration hardening and documentation
-
 ### Enable Anti-Fingerprinting
 
-Mozilla has started an [anti-fingerprinting project in Firefox](https://wiki.mozilla.org/Security/Fingerprinting "mozillawiki:Security/Fingerprinting"), as part of a project to upstream features from [Tor Browser](/index.php/Tor "Tor"). Many of these anti-fingerprinting features are enabled by setting `about:config`:
+Mozilla has started an [anti-fingerprinting project in Firefox](https://wiki.mozilla.org/Security/Fingerprinting "mozillawiki:Security/Fingerprinting"), as part of a project to upstream features from [Tor Browser](/index.php/Tor_Browser "Tor Browser"). Many of these anti-fingerprinting features are enabled by setting `about:config`:
 
 *   `privacy.resistFingerprinting` `true`
 
@@ -56,7 +48,7 @@ Firefox gained an option for [tracking protection](https://support.mozilla.org/e
 
 Apart from privacy benefits, enabling [tracking protection](http://venturebeat.com/2015/05/24/firefoxs-optional-tracking-protection-reduces-load-time-for-top-news-sites-by-44/) may also reduce load time by 44%.
 
-Note that this is not a replacement for ad blocking extensions such as [#uBlock Origin](#uBlock_Origin) and it may or may not work with [Firefox forks](/index.php/List_of_applications/Internet#Firefox_spin-offs "List of applications/Internet"). If you are already running such an ad blocker with the correct lists, tracking protection might be redundant.
+Note that this is not a replacement for ad blocking extensions such as [Browser extensions#uBlock Origin](/index.php/Browser_extensions#uBlock_Origin "Browser extensions") and it may or may not work with [Firefox forks](/index.php/List_of_applications/Internet#Firefox_spin-offs "List of applications/Internet"). If you are already running such an ad blocker with the correct lists, tracking protection might be redundant.
 
 ### Change browser time zone
 
@@ -101,18 +93,6 @@ To prevent websites from getting your local IP address via [WebRTC](https://en.w
 *   `media.peerconnection.enabled` to `false`. (only if you want to completely disable WebRTC)
 
 You can use this [WebRTC test page](http://net.ipcalf.com/) and [WebRTC IP Leak VPN / Tor IP Test](https://www.privacytools.io/webrtc.html) to confirm that your internal/external IP address is no longer leaked.
-
-### Disable 1024-bit Diffie-Hellman primes
-
-Following [recent research](https://freedom-to-tinker.com/blog/haldermanheninger/how-is-nsa-breaking-so-much-crypto/) it is likely that the NSA has been breaking 1024-bit Diffie-Hellman for some time now. To disable these switch the [following](https://www.eff.org/deeplinks/2015/10/how-to-protect-yourself-from-nsa-attacks-1024-bit-DH) settings to `false` in `about:config`:
-
-```
-security.ssl3.dhe_rsa_aes_128_sha
-security.ssl3.dhe_rsa_aes_256_sha
-
-```
-
-Then consider checking your SSL configuration at [https://www.howsmyssl.com/](https://www.howsmyssl.com/).
 
 ### Disable telemetry
 
@@ -189,3 +169,7 @@ See also [[3]](https://dxr.mozilla.org/mozilla-release/source/browser/extensions
 
 *   [privacytools.io Firefox Privacy Add-ons](https://www.privacytools.io/#addons)
 *   [prism-break.org Web Browser Addons](https://prism-break.org/en/categories/gnu-linux/#web-browser-addons)
+*   [MozillaWiki:Privacy/Privacy Task Force/firefox about config privacy tweeks](https://wiki.mozilla.org/Privacy/Privacy_Task_Force/firefox_about_config_privacy_tweeks "mozillawiki:Privacy/Privacy Task Force/firefox about config privacy tweeks") - a wiki page maintained by Mozilla with descriptions of privacy specific settings.
+*   [How to stop Firefox from making automatic connections](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections) - Is an annotated list of corresponding Firefox functionality and settings to disable it case-by-case.
+*   [ffprofile.com](https://ffprofile.com/) - You select which features you want to enable and disable and in the end you get a download link for a zip-file with your profile template. You can for example disable some functions, which send data to Mozilla and Google, or disable several annoying Firefox functions like Mozilla Hello or the Pocket integration.
+*   [pyllyukko/user.js](https://github.com/pyllyukko/user.js) - Firefox configuration hardening and documentation

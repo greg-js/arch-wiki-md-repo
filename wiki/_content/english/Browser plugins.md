@@ -156,7 +156,7 @@ When using Firefox, you may need to change 2 values in `about:config`:
 *   Change `pdfjs.disabled`'s value to *true*;
 *   Change `plugin.disable_full_page_plugin_for_types`'s value to an empty value.
 
-Restart and it should work like a charm!
+Then restart Firefox to use the plugin.
 
 ## UnionPay Online Pay
 

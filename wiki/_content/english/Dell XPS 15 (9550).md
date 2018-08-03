@@ -161,6 +161,7 @@ It should also be noted that the TB16 dock will crash when hot plugged on all BI
 | [StarTech TBT3TBTADAP Thunderbolt 3 to Thunderbolt Adapter](https://www.amazon.com/StarTech-com-Thunderbolt-Adapter-Compatible-DisplayPort/dp/B019FPJDQ2) | Thunderbolt 2, Thunderbolt | Working |
 | [Apple Thunderbolt 3 (USB-C) to Thunderbolt 2 Adapter](https://www.apple.com/shop/product/MMEL2AM/A/thunderbolt-3-usb-c-to-thunderbolt-2-adapter) | Thunderbolt 2, Thunderbolt | Not Working |
 | [CHOETECH USB-C to DisplayPort Cable (4K@60Hz)](https://www.amazon.co.uk/DisplayPort-CHOETECH-Thunderbolt-Compatible-ChromeBook/dp/B01N5RFAI4) | DisplayPort | Working |
+| [CableCreation USB-C to HDMI DVI DP](https://www.amazon.com/CableCreation-Chromebook-Supported-Thunderbolt-Compatible/dp/B06WVD5JYT) | HDMI, DVI, DisplayPort | Working |
 
 [This chart](/index.php/Dell_XPS_13_(9360)#USB-C_Compatibility_Chart "Dell XPS 13 (9360)") may also be helpful.
 

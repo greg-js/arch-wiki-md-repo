@@ -72,7 +72,7 @@ The columns have the following meaning:
 | [bauerbill](https://aur.archlinux.org/packages/bauerbill/) | Python | Yes | Yes | Yes | Yes | Yes | Yes | Yes | No | 1 | bash, zsh | Trust management, [ABS](/index.php/ABS "ABS") support, extends Powerpill |
 | [PKGBUILDer](https://aur.archlinux.org/packages/PKGBUILDer/) | Python | [Yes](https://github.com/Kwpolska/pkgbuilder/blob/master/docs/wrapper.rst) | Optional | Yes | Yes | Yes | [Partial](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | [No](https://github.com/Kwpolska/pkgbuilder/issues/36) | 1* | – | Automatic builds by default, use `-F` to disable; multilingual |
 | [naaman](https://aur.archlinux.org/packages/naaman/) | Python | – | Optional | Yes | Yes | [Partial](https://github.com/enckse/naaman/issues/19) | [Partial](https://github.com/enckse/naaman/issues/20) | Yes | No | 1* | bash | Automatic builds by default, use `--fetch` to disable, use `-d` to enable the solver |
-| [aura](https://aur.archlinux.org/packages/aura/) | Haskell | [Yes](https://github.com/aurapm/aura/blob/master/aura/src/Aura/Pacman.hs) | Optional | Yes | [Yes](https://github.com/aurapm/aura/commit/7848e9830cd880215f1d12a1c0294992428ea778) | No | [No](https://github.com/aurapm/aura/issues/353) | [No](https://github.com/aurapm/aura/pull/346) | [Partial](https://github.com/aurapm/aura/blob/89bf702bd0539fa757265c4c54ea2192155f85ed/aura/src/Aura/Pkgbuild/Records.hs) | 1* | bash, zsh | Automatic builds by default, use `--dryrun` to disable, [downgrade](/index.php/Downgrade "Downgrade") support, multilingual |
+| [aura](https://aur.archlinux.org/packages/aura/) | Haskell | [Yes](https://github.com/aurapm/aura/blob/master/aura/lib/Aura/Pacman.hs) | Optional | Yes | [Yes](https://github.com/aurapm/aura/commit/7848e9830cd880215f1d12a1c0294992428ea778) | No | [No](https://github.com/aurapm/aura/issues/353) | [No](https://github.com/aurapm/aura/pull/346) | [Partial](https://github.com/aurapm/aura/blob/89bf702bd0539fa757265c4c54ea2192155f85ed/aura/src/Aura/Pkgbuild/Records.hs) | 1* | bash, zsh | Automatic builds by default, use `--dryrun` to disable, [downgrade](/index.php/Downgrade "Downgrade") support, multilingual |
 | [repofish](https://aur.archlinux.org/packages/repofish/) | Bash | – | Optional | Yes | No | No | No | Yes | Yes | 1* | – | Automatic builds by default, use `check` or `update` to disable, [local repository](/index.php/Local_repository "Local repository") support |
 | [aurget](https://aur.archlinux.org/packages/aurget/) | Bash | – | Optional | Yes | No | No | [No](https://github.com/pbrisbin/aurget/issues/40) | No | [No](https://github.com/pbrisbin/aurget/issues/41) | – | bash, zsh | sort by votes |
 
@@ -88,7 +88,7 @@ The columns have the following meaning:
 
 ### Discontinued or problematic
 
-This table describes projects which either are discontinued by their authors, or have issues on *Security*, *Clean build* or *Native pacman* (see [#Build_and_search](#Build_and_search)) unaddressed in the last 6 months.
+This table describes projects which either are discontinued by their authors, or have issues on *Security*, *Clean build* or *Native pacman* (see [#Build and search](#Build_and_search)) unaddressed in the last 6 months.
 
 | Name | Written in | Pacman wrapper | File review | Clean build | Reliable parser | Reliable solver | Split packages | Git clone | Diff view | Batch interaction | Shell completion | Specificity |
 | [aurel](https://aur.archlinux.org/packages/aurel/) [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1522459#p1522459) | Emacs Lisp | – | Yes | – | – | – | – | No | – | – | – | Emacs integration, no automatic builds |
@@ -108,12 +108,15 @@ This table describes projects which either are discontinued by their authors, or
 
 | Name | Written in | GUI toolkit | Backend helper | Notes |
 | [aarchup](https://aur.archlinux.org/packages/aarchup/) | C | GTK+ 2 | auracle | – |
+| [argon](https://aur.archlinux.org/packages/argon/) | Python | GTK+ 3 | auracle, pacaur | – |
+| [cylon](https://aur.archlinux.org/packages/cylon/) | Bash | TUI | auracle, trizen | – |
 | [kalu](https://aur.archlinux.org/packages/kalu/) | C | GTK+ 3 | – | – |
-| [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/) | Vala | GTK+ 3 | – | – |
+| [pactray](https://aur.archlinux.org/packages/pactray/) | Python | GTK+3 | auracle | – |
+| [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/) | Vala | GTK+ 3 | – | Uses [libalpm(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3) instead of [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) |
+| [pakku-gui](https://aur.archlinux.org/packages/pakku-gui/) | Python | GTK+ 3 | pakku | – |
 | [pkgbrowser](https://aur.archlinux.org/packages/pkgbrowser/) | Python | Qt 5 | – | – |
-| [argon](https://aur.archlinux.org/packages/argon/) | Python | GTK+ 3 | auracle + pacaur | – |
-| [yaourt-gui](https://aur.archlinux.org/packages/yaourt-gui/) | Bash | TUI | yaourt | only has options that [perform partial upgrades](https://github.com/alexiobash/yaourt-gui/blob/2bbfc01/yaourt-gui#L56) |
-| [octopi](https://aur.archlinux.org/packages/octopi/) | C++ | Qt 5 | pikaur, trizen, pacaur, yaourt | [enabled on install](https://github.com/aarnt/octopi/blob/271c7e1/octopi.install) notifier service regularly [performs partial upgrades](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) |
+| [updatehint](https://aur.archlinux.org/packages/updatehint/) | Bash | GTK+ 3 | auracle | – |
+| [octopi](https://aur.archlinux.org/packages/octopi/) | C++ | Qt 5 | trizen, pacaur, yaourt | [enabled on install](https://github.com/aarnt/octopi/blob/271c7e1/octopi.install) notifier service regularly [performs partial upgrades](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) |
 
 ## Libraries
 

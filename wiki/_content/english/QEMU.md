@@ -18,6 +18,7 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [3.1 Creating a hard disk image](#Creating_a_hard_disk_image)
         *   [3.1.1 Overlay storage images](#Overlay_storage_images)
         *   [3.1.2 Resizing an image](#Resizing_an_image)
+        *   [3.1.3 Converting an image](#Converting_an_image)
     *   [3.2 Preparing the installation media](#Preparing_the_installation_media)
     *   [3.3 Installing the operating system](#Installing_the_operating_system)
 *   [4 Running virtualized system](#Running_virtualized_system)
@@ -212,6 +213,17 @@ $ qemu-img resize *disk_image* +10G
 ```
 
 After enlarging the disk image, you must use file system and partitioning tools inside the virtual machine to actually begin using the new space. When shrinking a disk image, you must **first reduce the allocated file systems and partition sizes** using the file system and partitioning tools inside the virtual machine and then shrink the disk image accordingly, otherwise shrinking the disk image will result in data loss!
+
+#### Converting an image
+
+You can convert an image to other formats using `qemu-img convert`. This example shows how to convert a *raw* image to *qcow2*:
+
+```
+$ qemu-img convert -f raw -O qcow2 *input*.img *output*.qcow2
+
+```
+
+This will not remove the original input file.
 
 ### Preparing the installation media
 

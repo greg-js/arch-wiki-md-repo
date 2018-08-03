@@ -186,7 +186,7 @@ To boot SeaBIOS by default, you will need to run the [`set_gbb_flags.sh`](https:
 
 *   Disable the hardware write protection.
 
-To find the location of the hardware write-protect screw/switch/jumper and how to disable it visit the ArchWiki page for your [ChromeOS device](#ChromeOS_devices). If there is no information about your device on the ArchWiki then turn to [Developer Information for ChromeOS Devices](http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices) and [coreboot's Chromebooks page](http://www.coreboot.org/Chromebooks).
+To find the location of the hardware write-protect screw/switch/jumper and how to disable it visit the ArchWiki page for your [ChromeOS device](#Chrome_OS_devices). If there is no information about your device on the ArchWiki then turn to [Developer Information for ChromeOS Devices](http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices) and [coreboot's Chromebooks page](http://www.coreboot.org/Chromebooks).
 
 More information about the firmware protection available at the [Custom firmware for ChromeOS devices](/index.php?title=Custom_firmware_for_ChromeOS_devices&action=edit&redlink=1 "Custom firmware for ChromeOS devices (page does not exist)") page.
 
@@ -247,7 +247,7 @@ Your ChromeOS device now will boot to SeaBIOS by default, you can continue to [I
 
 *   Disable the hardware write protection.
 
-To find the location of the hardware write-protect screw/switch/jumper and how to disable it visit the ArchWiki page for your [ChromeOS device](#ChromeOS_devices). If there is no information about your device on the ArchWiki then turn to [Information for ChromeOS Devices](http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devicesDeveloper) and [coreboot's Chromebooks page](http://www.coreboot.org/Chromebooks).
+To find the location of the hardware write-protect screw/switch/jumper and how to disable it visit the ArchWiki page for your [ChromeOS device](#Chrome_OS_devices). If there is no information about your device on the ArchWiki then turn to [Information for ChromeOS Devices](http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devicesDeveloper) and [coreboot's Chromebooks page](http://www.coreboot.org/Chromebooks).
 
 More information about the firmware protection available at the [Custom firmware for ChromeOS devices](/index.php?title=Custom_firmware_for_ChromeOS_devices&action=edit&redlink=1 "Custom firmware for ChromeOS devices (page does not exist)") page.
 

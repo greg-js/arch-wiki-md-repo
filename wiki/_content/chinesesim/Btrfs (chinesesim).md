@@ -79,13 +79,20 @@ Btrfs 能在整个设备上使用,替代 [MBR](/index.php/MBR "MBR") 或 [GPT](/
 这是在单个设备上使用 btrfs 文件系统的限制:
 
 *   不能在不同的 [挂载点](/index.php/Fstab "Fstab") 上使用不同的[文件系统](/index.php/File_systems "File systems").
-*   不能使用 [交换空间](/index.php/Swap "Swap") (因为 btrfs 不支持 [交换文件](/index.php/Swap#Swap_file "Swap") 而且硬盘上没有空间用来创建 [交换分区](/index.php/Swap#Swap_partition "Swap").) 这同时也限制了睡眠和休眠 (因为需要交换空间) .
+*   不能使用 [交换空间](/index.php/Swap_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Swap (简体中文)") (因为 btrfs 不支持 [交换文件](/index.php/Swap_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BA.A4.E6.8D.A2.E6.96.87.E4.BB.B6 "Swap (简体中文)") 而且硬盘上没有空间用来创建 [交换分区](/index.php/Swap_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BA.A4.E6.8D.A2.E5.88.86.E5.8C.BA "Swap (简体中文)").) 这同时也限制了睡眠和休眠 (因为需要交换空间) .
 *   不能使用 [UEFI](/index.php/UEFI "UEFI") 启动.
 
 运行下面的命令把整个设备的分区表替换成 btrfs:
 
 ```
 # mkfs.btrfs /dev/sd*X*
+
+```
+
+如果设备上存在分区表，则需要使用：
+
+```
+# mkfs.btrfs -f /dev/sd*X*
 
 ```
 
@@ -173,8 +180,6 @@ Btrfs 的默认块大小为 16KB. 使用更大的blocksize数据/元数据,为`n
 ```
 
 这会为这个文件的单个引用停用写时复制,如果这个文件不只有一个引用(例如通过 `cp --reflink=always` 生成或者在文件系统快照中),写时复制依然生效.
-
-This will disable copy-on-write for those operation in which there is only one reference to the file. If there is more than one reference (e.g. through `cp --reflink=always` or because of a filesystem snapshot), copy-on-write still occurs.
 
 **Note:** 来自 chattr 的手册页:在btrfs上，'C' 标志应该被设置在新建的或者是空白的文件/目录，如果被设置在已有数据的文件,当块分配给该文件时，文件将不确定是否完全稳定。如果'C' 标志被设置给一个目录，将不会影响目前的目录，但在该目录创建的新文件将具有No_COW属性。
 
@@ -359,7 +364,7 @@ btrfs 支持在线碎片整理,要整理根文件夹:
 
 ```
 
-这*并不会'整理整个文件系统参阅 [Btrfs Wiki上的这个页面](https://btrfs.wiki.kernel.org/index.php/Problem_FAQ#Defragmenting_a_directory_doesn.27t_work) 获得更多信息.*
+这*并不会*整理整个文件系统参阅 [Btrfs Wiki上的这个页面](https://btrfs.wiki.kernel.org/index.php/Problem_FAQ#Defragmenting_a_directory_doesn.27t_work) 获得更多信息.
 
 要整理整个文件系统并观看冗长的输出:
 
@@ -440,8 +445,6 @@ Btrfs 提供对 RAID 一类的 [多设备文件系统](#Multi-device_file_system
 参阅 [Btrfs Wiki's Incremental Backup page](https://btrfs.wiki.kernel.org/index.php/Incremental_Backup) 获得更多信息 (例如使用工具自动化这一过程)
 
 ## 局限性
-
-使用前请了解如下局限。
 
 ### 加密
 

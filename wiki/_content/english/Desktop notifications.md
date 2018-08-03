@@ -50,12 +50,7 @@ In order to use libnotify, you have to install a [notification server](#Notifica
 
 ### Built-in
 
-The following desktop environments use their own implementations to display notifications, and you cannot replace them. Their notification servers are started automatically on login to receive notifications from applications via DBus.
-
-*   [Cinnamon](/index.php/Cinnamon "Cinnamon") provides a notification server itself. Notifications are displayed at the top right corner of the screen.
-*   [Enlightenment](/index.php/Enlightenment "Enlightenment") provides a notification server through its Notification extension. Notification options [are configurable](/index.php/Enlightenment#Notifications "Enlightenment").
-*   [GNOME](/index.php/GNOME "GNOME") provides a notification server itself. Notifications are displayed at the top of the screen.
-*   [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") provides a notification server itself. Notifications are displayed at the bottom right corner of the screen.
+[Cinnamon](/index.php/Cinnamon "Cinnamon"), [Deepin](/index.php/Deepin "Deepin"), [Enlightenment](/index.php/Enlightenment "Enlightenment"), [GNOME](/index.php/GNOME "GNOME"), [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback") and [KDE Plasma](/index.php/KDE_Plasma "KDE Plasma") use their own implementations to display notifications, and it cannot be replaced. Their notification servers are started automatically on login to receive notifications from applications via DBus.
 
 ### Standalone
 
@@ -76,10 +71,6 @@ You can choose one of the following implementations:
 
 	[https://github.com/p12tic/awn-extras](https://github.com/p12tic/awn-extras) || [awn-extras-applets](https://aur.archlinux.org/packages/awn-extras-applets/)
 
-*   **Deepin Notifications** — Notification server for [Deepin](/index.php/Deepin "Deepin").
-
-	[https://github.com/linuxdeepin/deepin-notifications](https://github.com/linuxdeepin/deepin-notifications) || [deepin-notifications](https://www.archlinux.org/packages/?name=deepin-notifications)
-
 *   **[Dunst](/index.php/Dunst "Dunst")** — Minimalistic notification daemon for Linux designed to fit nicely into minimalistic windowmanagers like [dwm](/index.php/Dwm "Dwm").
 
 	[http://www.knopwob.org/dunst/](http://www.knopwob.org/dunst/) || [dunst](https://www.archlinux.org/packages/?name=dunst)
@@ -88,7 +79,7 @@ You can choose one of the following implementations:
 
 	[https://github.com/lxde/lxqt-notificationd](https://github.com/lxde/lxqt-notificationd) || [lxqt-notificationd](https://www.archlinux.org/packages/?name=lxqt-notificationd)
 
-*   **Notification Daemon** — The notification server used by [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback").
+*   **Notification Daemon** — The original notification server.
 
 	[https://github.com/GNOME/notification-daemon](https://github.com/GNOME/notification-daemon) || [notification-daemon](https://www.archlinux.org/packages/?name=notification-daemon)
 

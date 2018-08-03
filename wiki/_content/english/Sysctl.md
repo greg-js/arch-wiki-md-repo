@@ -25,6 +25,7 @@
 *   [5 MDADM](#MDADM)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Small periodic system freezes](#Small_periodic_system_freezes)
+    *   [6.2 Long system freezes while swapping to disk](#Long_system_freezes_while_swapping_to_disk)
 *   [7 See also](#See_also)
 
 ## Configuration
@@ -373,6 +374,10 @@ Try to change `kernel.io_delay_type` (x86 only):
 *   1 - IO_DELAY_TYPE_0XED
 *   2 - IO_DELAY_TYPE_UDELAY
 *   3 - IO_DELAY_TYPE_NONE
+
+### Long system freezes while swapping to disk
+
+Increase `vm.min_free_kbytes` to improve desktop responsiveness and reduce long pauses due to swapping to disk. One should increase this to `installed_mem / num_of_cores * 0.05`. See [https://askubuntu.com/a/45009](https://askubuntu.com/a/45009) & [https://www.linbit.com/en/kernel-min_free_kbytes/](https://www.linbit.com/en/kernel-min_free_kbytes/) for more details.
 
 ## See also
 

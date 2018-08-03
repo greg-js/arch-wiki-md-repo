@@ -269,7 +269,7 @@ By default Samba allows the usage of (possible) insecure and out-of-dated protoc
 
 **Tip:** Use `server min protocol = SMB3` when clients should only connect using the latest SMB3 protocol, e.g. on clients running Windows 8 and later.
 
-[Clients](/index.php/Samba#Manual_mounting "Samba") using `mount.cifs` should specify the correct `vers=*`, e.g.:
+[Clients](#Manual_mounting) using `mount.cifs` should specify the correct `vers=*`, e.g.:
 
 ```
 # mount -t cifs //*SERVER*/*sharename* /mnt/*mountpoint* -o username=*username*,password=*password*,iocharset=*utf8*,vers=*3.1.1*
@@ -297,7 +297,7 @@ To use native SMB transport encryption by default, set the `smb encrypt` paramet
 
 See [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) for more information.
 
-When [mounting](/index.php/Samba#Manual_mounting "Samba") a share, specify the `seal` mount option to force usage of encryption.
+When [mounting](#Manual_mounting) a share, specify the `seal` mount option to force usage of encryption.
 
 #### Disable printer sharing
 
@@ -465,6 +465,7 @@ The options `uid` and `gid` corresponds to the local (e.g. client) [user](/index
 
 *   If the `uid` and `gid` being used does not match the user of the server, the `forceuid` and `forcegid` options may be helpful. However note permissions assigned to a file when `forceuid` or `forcegid` are in effect may not reflect the the real (server) permissions. See the *File And Directory Ownership And Permissions* section in [cifs.mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cifs.mount.8) for more information.
 *   To allow users to mount it as long as the mount point resides in a directory controllable by the user; i.e. the user's home, append the `users` mount option. The option is user**s** (plural). For other filesystem types handled by mount, this option is usually *user*; sans the "**s**".
+*   To mount a Windows share without authentification, use `"username=*"`.
 
 **Warning:** Using `uid` and/or `gid` as mount options may cause I/O errors, it is recommended to set/check correct [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes") instead.
 

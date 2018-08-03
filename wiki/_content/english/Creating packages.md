@@ -62,7 +62,7 @@ The advantage of a meta package, compared to a group, is that any new member pac
 
 ### Prerequisite software
 
-First, ensure that the necessary tools are [installed](/index.php/Install "Install"): the package group [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) should be sufficient, it includes **make** and additional tools needed for compiling from source.
+First, ensure that the necessary tools are [installed](/index.php/Install "Install"): the package group [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) should be sufficient, it includes `make` and additional tools needed for compiling from source.
 
 The key tool for building packages is [makepkg](/index.php/Makepkg "Makepkg") (provided by [pacman](https://www.archlinux.org/packages/?name=pacman)), which does the following:
 
@@ -73,7 +73,7 @@ The key tool for building packages is [makepkg](/index.php/Makepkg "Makepkg") (p
 5.  Strips symbols from binaries and libraries.
 6.  Generates the package meta file which is included with each package.
 7.  Compresses the fakeroot environment into a package file.
-8.  Stores the package file in the configured destination directory, which is the present working directory by default.
+8.  Stores the package file in the configured destination directory, which is the current working directory by default.
 
 ### Download and test the installation
 
@@ -92,7 +92,7 @@ This is a good time to make sure the program is working correctly.
 
 ## Creating a PKGBUILD
 
-When `makepkg` is run, it looks for a `PKGBUILD` file in the present working directory. If it finds one, it downloads the software's source code and compile it according to the instructions specified in the `PKGBUILD` file. The instructions must be fully interpretable by the [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell) shell. After successful completion, the resulting binaries and metadata of the package, i.e. package version and dependencies, are packed in a `pkgname.pkg.tar.xz` package file. The newly created package can be installed by simply using `makepkg --install` which will call pacman in the background, or by directly using `pacman -U *pkgname.pkg.tar.xz*`.
+When `makepkg` is run, it looks for a `PKGBUILD` file in the current working directory. If it finds one, it downloads the software's source code and compile it according to the instructions specified in the `PKGBUILD` file. The instructions must be fully interpretable by the [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell) shell. After successful completion, the resulting binaries and metadata of the package, i.e. package version and dependencies, are packed in a `pkgname.pkg.tar.xz` package file. The newly created package can be installed by simply using `makepkg --install` which will call pacman in the background, or by directly using `pacman -U *pkgname.pkg.tar.xz*`.
 
 To start building a new package, first create a new directory for the package and change current directory into this one. Then, a `PKGBUILD` file needs to be created: a prototype PKGBUILD found in `/usr/share/pacman/` can be used or you can start from a `PKGBUILD` from another package. The latter may be a good choice if a similar package already exists.
 

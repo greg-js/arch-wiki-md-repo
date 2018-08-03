@@ -5,7 +5,7 @@
 | <small>1.1.2.</small> [Desarrollo de pacman](/index.php/Category:Pacman_development_(Espa%C3%B1ol) "Category:Pacman development (Español)") <small>(1)</small> |
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(Espa%C3%B1ol) "Category:ArchWiki (Español)") <small>(9)</small> |
 | <small>1.2.1.</small> [Ayuda](/index.php/Category:Help_(Espa%C3%B1ol) "Category:Help (Español)") <small>(10)</small> |
-| <small>1.3.</small> [Obtener e instalar Arch](/index.php/Category:Getting_and_installing_Arch_(Espa%C3%B1ol) "Category:Getting and installing Arch (Español)") <small>(12)</small> |
+| <small>1.3.</small> [Obtener e instalar Arch](/index.php/Category:Getting_and_installing_Arch_(Espa%C3%B1ol) "Category:Getting and installing Arch (Español)") <small>(11)</small> |
 | <small>1.4.</small> [Sistemas live de Arch](/index.php/Category:Live_Arch_systems_(Espa%C3%B1ol) "Category:Live Arch systems (Español)") <small>(2)</small> |
 | <small>2.</small> [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)") <small>(7)</small> |
 | <small>2.1.</small> [Lanzadores de aplicaciones](/index.php/Category:Application_launchers_(Espa%C3%B1ol) "Category:Application launchers (Español)") <small>(1)</small> |
@@ -73,7 +73,7 @@
 | <small>5.10.</small> [Intérprete de órdenes seguras](/index.php/Category:Secure_Shell_(Espa%C3%B1ol) "Category:Secure Shell (Español)") <small>(5) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small> |
 | <small>5.11.</small> [Servidor web](/index.php/Category:Web_server_(Espa%C3%B1ol) "Category:Web server (Español)") <small>(7)</small> |
 | <small>5.12.</small> [Redes inalámbricas](/index.php/Category:Wireless_networking_(Espa%C3%B1ol) "Category:Wireless networking (Español)") <small>(2)</small> |
-| <small>6.</small> [Administración del sistema](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)") <small>(7)</small> |
+| <small>6.</small> [Administración del sistema](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)") <small>(8)</small> |
 | <small>6.1.</small> [Proceso de arranque](/index.php/Category:Boot_process_(Espa%C3%B1ol) "Category:Boot process (Español)") <small>(25)</small> |
 | <small>6.1.1.</small> [Cargadores de arranque](/index.php/Category:Boot_loaders_(Espa%C3%B1ol) "Category:Boot loaders (Español)") <small>(8)</small> |
 | <small>6.1.2.</small> [Arranque gráfico](/index.php/Category:Bootsplash_(Espa%C3%B1ol) "Category:Bootsplash (Español)") <small>(3) (también en [Mejoras visuales](/index.php/Category:Eye_candy_(Espa%C3%B1ol) "Category:Eye candy (Español)"))</small> |

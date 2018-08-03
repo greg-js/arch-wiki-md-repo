@@ -42,7 +42,6 @@ Related articles
 *   [4 64-bit](#64-bit)
     *   [4.1 How do I determine if my processor is x86_64 compatible?](#How_do_I_determine_if_my_processor_is_x86_64_compatible.3F)
     *   [4.2 Why 64-bit?](#Why_64-bit.3F)
-    *   [4.3 Can I switch from i686 to x86_64 without reinstalling?](#Can_I_switch_from_i686_to_x86_64_without_reinstalling.3F)
 
 ## General
 
@@ -238,11 +237,3 @@ It is faster under most circumstances and as an added bonus also inherently more
 Programmers also increasingly tend to care less about 32-bit ("legacy") as "new" x86 CPUs typically support the 64-bit extensions.
 
 There are many more reasons we could list here to tell you to avoid 32-bit, but between the kernel, userspace and individual programs it is simply not viable to list every last thing that 64-bit does much better these days.
-
-### Can I switch from i686 to x86_64 without reinstalling?
-
-No. All packages need to be reinstalled for the new architecture and configuration changes may be necessary. However, you do not need to repartition or reformat your hard drives during installation, so it is possible to migrate all of your old data. A forum thread has been created [here](https://bbs.archlinux.org/viewtopic.php?id=64485) which outlines steps taken to migrate an install from 32 to 64 bit without losing any configurations/settings/data using a large external hard drive.
-
-However, you can also start the system with the 64-bit installation ISO, mount the disk, backup anything you may want to keep that is not a 32-bit binary (e.g: `/home` & `/etc`), and install.
-
-You may also want to read about [migrating between architectures](/index.php/Migrating_between_architectures "Migrating between architectures").

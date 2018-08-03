@@ -529,7 +529,7 @@ If you have multiple `tun` or `tap` interfaces, or more than one VPN configurati
 
 ### Prevent leaks if VPN goes down
 
-The idea is simple: prevent all traffic through our default interface (enp3s0 for example) and only allow tun0. If the OpenVPN connection drops, your computer will lose its internet access and therefore, avoid your programs to continue connecting through an insecure network adapter.
+This prevents all traffic through your default interface (enp3s0 for example) and only allows traffic through tun0. If the OpenVPN connection drops, your computer will lose its internet access and therefore, avoid your programs to continue connecting through an insecure network adapter.
 
 Be sure to set up a script to restart OpenVPN if it goes down if you do not want to manually restart it.
 

@@ -19,7 +19,8 @@ This can be done in a destructive write-mode that effectively [wipes](/index.php
 *   [5 Have File System Incorporate Bad Sectors](#Have_File_System_Incorporate_Bad_Sectors)
     *   [5.1 During Filesystem Check](#During_Filesystem_Check)
     *   [5.2 Before Filesystem Creation](#Before_Filesystem_Creation)
-        *   [5.2.1 Block size](#Block_size)
+        *   [5.2.1 Ext4](#Ext4)
+        *   [5.2.2 Block size](#Block_size)
 *   [6 References](#References)
 
 ## Installation
@@ -192,6 +193,19 @@ Then (re-)create the file system with the information:
 ```
 
 **Note:** The meaning of `0/0/527405` errors is <number of read errors>/<number of write errors>/<number of corruption errors>.
+
+#### Ext4
+
+As noted in man page of mke2fs "Note that the block numbers in the bad block list must be generated using the same block size as used by mke2fs. As a result, the -c option to mke2fs is a much simpler and less error-prone method of checking a disk for bad blocks before formatting it"
+
+So the recommended method is to use:
+
+```
+# mkfs.ext4 -c /dev/<device>
+
+```
+
+Double the c to get a read-write badblock test.
 
 #### Block size
 

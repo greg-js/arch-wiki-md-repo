@@ -581,7 +581,16 @@ Add the new device the array:
 
 ```
 
-This should not take long for mdadm to do. Again, check the progress with:
+This should not take long for mdadm to do.
+
+Depending on the type of RAID (for example, with RAID1), mdadm may add the device as a spare without syncing data to it. You can increase the number of disks the RAID uses by using --grow with the --raid-devices flag. For example, to increase an array to four disks:
+
+```
+# mdadm --grow /dev/md0 --raid-devices=4
+
+```
+
+You can check the progress with:
 
 ```
 # cat /proc/mdstat

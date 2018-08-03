@@ -77,7 +77,7 @@ Most executables of the Java installation are provided by direct links in `/usr/
 
 **OpenJDK 9** — The open-source implementation of the ninth edition of Java SE.
 
-	[http://openjdk.java.net/projects/jdk9/](http://openjdk.java.net/projects/jdk9/) || [jre9-openjdk-headless](https://www.archlinux.org/packages/?name=jre9-openjdk-headless) [jre9-openjdk](https://www.archlinux.org/packages/?name=jre9-openjdk) [jdk9-openjdk](https://www.archlinux.org/packages/?name=jdk9-openjdk) [openjdk9-doc](https://www.archlinux.org/packages/?name=openjdk9-doc) [openjdk9-src](https://www.archlinux.org/packages/?name=openjdk9-src)
+	[http://openjdk.java.net/projects/jdk9/](http://openjdk.java.net/projects/jdk9/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=jre9-openjdk)</small> <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=jdk9-openjdk)</small>
 
 **Java SE** — Oracle's implementation of JRE and JDK.
 

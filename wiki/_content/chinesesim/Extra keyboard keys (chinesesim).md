@@ -1,3 +1,10 @@
+相关文章
+
+*   [Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)")
+*   [Xmodmap](/index.php/Xmodmap "Xmodmap")
+*   [Extra keyboard keys in Xorg](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg")
+*   [Extra keyboard keys in console](/index.php/Extra_keyboard_keys_in_console "Extra keyboard keys in console")
+
 许多键盘都有一些"特殊按键"(也叫热键)，用于执行某个应用程序或者输入那些不被包含在标准键盘映射表中的特殊字符。由于没有相应的规格标准，内核无法知道如何处处理它们，这也是为什么我们需要(手工的)将这些按键映射到特定的动作。我们有两种方法来实现：
 
 *   通用的做法，使用 [Xorg](/index.php/Xorg "Xorg") 提供的工具 (以及桌面环境的工具)

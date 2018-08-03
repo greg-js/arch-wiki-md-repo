@@ -5,7 +5,7 @@
 | Audio | Working | snd_hda_intel |
 | Touchpad | Working | hid_multitouch |
 | Webcam | Working ¹ | uvcvideo |
-| USB-C / Thunderbolt 3 | Working |  ? |
+| USB-C / Thunderbolt 3 | Working | intel_wmi_thunderbolt |
 | Wireless switch | Working | intel_hid |
 | Function/Multimedia Keys | Working |  ? |
 | Fingerprint sensor | Not working |  ? |
@@ -37,7 +37,7 @@ To boot from a USB device attached via the USB-C to USB-A adapter included in th
 
 ## Content Adaptive Brightness Control
 
-In the XPS 13 the display panels (both FHD and QHD+) come with Content Adaptive Brightness Control (usually referred to as CABC or DBC) enabled by default. While disabling required flashing the display firmware in previous generations, DBC can now be disabled in recent BIOS versions. To test if DBS is enabled, go to this [test page](https://tylerwatt12.com/dc/).
+In the XPS 13 the display panels (both FHD and 4K UHD) come with Content Adaptive Brightness Control (usually referred to as CABC or DBC) enabled by default. While disabling required flashing the display firmware in previous generations, DBC can now be disabled in recent BIOS versions. To test if DBS is enabled, go to this [test page](https://tylerwatt12.com/dc/).
 
 ## Video
 
@@ -45,7 +45,7 @@ The video should work with the `i915` driver of the current [linux](https://www.
 
 If you have the 4K (3840x2160) model, also check out [HiDPI](/index.php/HiDPI "HiDPI") for UI scaling configurations.
 
-Note that the 'enable_psr=1' option appears not to work properly, at least on the touchscreen model.
+Note that the `enable_psr=1` kernel parameter appears not to work properly, at least on the touchscreen model.
 
 [Some user support requests indicate that currently-shipping 9370 models may bundle webcams that use UVC 1.5 firmware rather than 1.0](https://www.dell.com/community/Linux-General/Dell-xps-13-9370-Webcam-support/td-p/6032049), which was not supported [prior to kernel 4.17.4](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/diff/drivers/media/usb/uvc/uvc_video.c?id=v4.17.4&id2=v4.17.3).
 
@@ -53,7 +53,7 @@ Note that the 'enable_psr=1' option appears not to work properly, at least on th
 
 The Wifi adapter is a Killer card with contains a Qualcomm Atheros QCA6174 module. It should work out of the box with the `ath10k_pci` driver in recent [linux](https://www.archlinux.org/packages/?name=linux) kernels. (In my case) the Wifi firmware sometimes crashes when waking up from suspend. (firmware version `WLAN.RM.4.4.1-00051-QCARMSWP-1`; [dmesg](https://gist.github.com/dsprenkels/eb1c7095385fe16ee9b128ab0834be21)) (In my case) the crash has not again occurred after booting `linux-4.15.7` or newer.
 
-If you experience a firmware crash you can try to update the firmware. [Here are the Ubuntu instructions from Dell](https://www.dell.com/support/article/us/en/19/sln306440/killer-n1535-wireless-firmware-manual-update-guide-for-ubuntu-systems?lang=en); the [latest firmware releases can be found here](https://github.com/kvalo/ath10k-firmware). Usually it takes some time for the latest one to get into the linux-firmware packages.
+If you experience a firmware crash you can try to update the ath10k firmware. [Here are the Ubuntu instructions from Dell](https://www.dell.com/support/article/us/en/19/sln306440/killer-n1535-wireless-firmware-manual-update-guide-for-ubuntu-systems?lang=en); the [latest firmware releases can be found here](https://github.com/kvalo/ath10k-firmware). Usually it takes some time for the latest one to get into the linux-firmware packages.
 
 ## Bluetooth
 
@@ -61,7 +61,7 @@ The Bluetooth adapter sometimes becomes unavailable after waking up from suspend
 
 ## Keyboard
 
-With older firmware, some keys were skipped when typing fast. The issue is fixed in system firmware 0.1.3.3.
+With older firmware, some keys were skipped when typing fast. The issue is fixed in system firmware 1.3.3.
 
 The keyboard backlight has a feature that makes it automatically turn off after a given timeout. This timeout can be adjusted by writing into `/sys/class/leds/dell\:\:kbd_backlight/stop_timeout`. For example,
 
@@ -78,7 +78,7 @@ If the laptop seems to have an high drain when in sleep mode. As a possible work
 
 According to the manufacturer (see [this upstream kernel bug](https://bugzilla.kernel.org/show_bug.cgi?id=199689)), the machine uses S2 intentionally instead of S3, and they are working towards fixing the power drain on S2.
 
-Note: on older BIOS and/or kernel versions the power button cannot be used to wake the laptop from sleep. In this case the Sleep button (Fn + End, or just End if you have Fn lock enabled) can still wake up the machine. This has been fixed by a BIOS update.
+Note: on older BIOS and/or kernel versions [the power button cannot be used to wake the laptop from sleep](https://www.spinics.net/lists/platform-driver-x86/msg15644.html). In this case the Sleep button (Fn + End, or just End if you have Fn lock enabled) can still wake up the machine. This has been fixed by a BIOS update.
 
 ## Firmware Updates
 
@@ -95,7 +95,7 @@ Package temperature above threshold, cpu clock throttled (total events = 971)
 
 ```
 
-This can be resolved using [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/). Despite originally conceived to resolve the same issue with Lenovo laptops, it works with the XPS 9370.
+This can be resolved using [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/). Despite originally conceived to resolve the same issue with Lenovo laptops, it works with the XPS 9370 (and should work well with other Skylake or newer laptops).
 
 ## Touchpad
 
@@ -114,7 +114,7 @@ Works correctly, but the audio controller cannot figure out what kind of device 
 
 ## USB Type-C ports
 
-The 9370 has only three Type-C ports (and no other ports, just an audio jack). Two of these (on the left side) support Thunderbolt 3\. There is no power jack. A 45 W Type-C charger is included in the box. Any of the three Type-C ports can be used for charging. Since the laptop has no USB-A ports, one Dell-branded Type-C to A adapter is included.
+The 9370 has only three Type-C ports (and no other ports, just an audio jack). Two of these (on the left side) support Thunderbolt 3\. There is no power jack. A 45 W USB Type-C charger is included in the box. Any of the three Type-C ports can be used for charging. Since the laptop has no USB-A ports, one Dell-branded Type-C to A adapter is included.
 
 Also all three Type-C ports support DisplayPort alternate mode. It is taken care of by the firmware, so it will work even with older kernels that do not otherwise support it. To the operating system it appears as if the laptop had two DisplayPort connectors (in addition to the embedded DP that the internal screen uses). So far I've tested the following adapters. All of these will appear to the operating system as if you plugged something into one of the DP connectors.
 

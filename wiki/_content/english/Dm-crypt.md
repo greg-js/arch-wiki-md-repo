@@ -31,7 +31,7 @@ See [dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_an_ent
 
 ## Device encryption
 
-[dm-crypt/Device encryption](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption") covers how to manually utilize dm-crypt to encrypt a system through the [cryptsetup](/index.php/Dm-crypt/Device_encryption#Cryptsetup_usage "Dm-crypt/Device encryption") command. It covers examples of the [Encryption options with dm-crypt](/index.php/Dm-crypt/Device_encryption#Encryption_options_with_dm-crypt "Dm-crypt/Device encryption"), deals with the creation of [keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption"), LUKS specific commands for [key management](/index.php/Dm-crypt/Device_encryption#Key_management "Dm-crypt/Device encryption") as well as for [Backup and restore](/index.php/Dm-crypt/Device_encryption#Backup_and_restore "Dm-crypt/Device encryption").
+[dm-crypt/Device encryption](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption") covers how to manually utilize dm-crypt to encrypt a system through the [cryptsetup](/index.php/Cryptsetup "Cryptsetup") command. It covers examples of the [Encryption options with dm-crypt](/index.php/Dm-crypt/Device_encryption#Encryption_options_with_dm-crypt "Dm-crypt/Device encryption"), deals with the creation of [keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption"), LUKS specific commands for [key management](/index.php/Dm-crypt/Device_encryption#Key_management "Dm-crypt/Device encryption") as well as for [Backup and restore](/index.php/Dm-crypt/Device_encryption#Backup_and_restore "Dm-crypt/Device encryption").
 
 ## System configuration
 

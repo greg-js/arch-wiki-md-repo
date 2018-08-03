@@ -252,7 +252,7 @@ A separate client is needed to control MPD. See a long list of clients at the [m
 
 *   **clerk** — MPD client using rofi.
 
-	[https://github.com/carnager/clerk](https://github.com/carnager/clerk) || [clerk](https://aur.archlinux.org/packages/clerk/)
+	[https://github.com/carnager/clerk](https://github.com/carnager/clerk) || [clerk-git](https://aur.archlinux.org/packages/clerk-git/)
 
 *   **FMUI** — Console user interface created with fzf and mpc.
 

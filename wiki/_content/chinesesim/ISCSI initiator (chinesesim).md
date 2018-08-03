@@ -1,3 +1,8 @@
+Related articles
+
+*   [iSCSI Target (简体中文)](/index.php/ISCSI_Target_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ISCSI Target (简体中文)")
+*   [iSCSI Boot](/index.php/ISCSI_Boot "ISCSI Boot")
+
 **翻译状态：** 本文是英文页面 [ISCSI_Initiator](/index.php/ISCSI_Initiator "ISCSI Initiator") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-05-10，点击[这里](https://wiki.archlinux.org/index.php?title=ISCSI_Initiator&diff=0&oldid=332214)可以查看翻译后英文页面的改动。
 
 来自 [维基百科：iSCSI](https://en.wikipedia.org/wiki/iSCSI "wikipedia:iSCSI") 可以通过基于 IP 的网络访问存储设备。

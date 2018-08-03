@@ -1,4 +1,4 @@
-[Velox](https://github.com/michaelforney/velox) is a dynamic tiling window manager for wayland. Is is currently under development.
+[Velox](https://github.com/michaelforney/velox) is a dynamic tiling window manager for wayland. It is currently under development.
 
 ## Installation
 

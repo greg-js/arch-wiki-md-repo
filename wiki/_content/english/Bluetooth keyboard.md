@@ -124,7 +124,7 @@ Done. Leave the `bluetoothctl` utility:
 
 ```
 
-Now the external device (i.e. keyboard) and the USB BT dongle are paired permanently, unless you break the pairing intentionally. This does not mean that the keyboard will connect automatically to your BT device after a boot. This is mainly due to the fact that the bluetooth controller will be automatically turned off after each reboot. To automatically connect the keyboard after a reboot, see [Bluetooth#Auto_power-on_after_boot](/index.php/Bluetooth#Auto_power-on_after_boot "Bluetooth").
+Now the external device (i.e. keyboard) and the USB BT dongle are paired permanently, unless you break the pairing intentionally. This does not mean that the keyboard will connect automatically to your BT device after a boot. This is mainly due to the fact that the bluetooth controller will be automatically turned off after each reboot. To automatically connect the keyboard after a reboot, see [Bluetooth#Auto power-on after boot](/index.php/Bluetooth#Auto_power-on_after_boot "Bluetooth").
 
 ## Legacy method for auto-connect
 

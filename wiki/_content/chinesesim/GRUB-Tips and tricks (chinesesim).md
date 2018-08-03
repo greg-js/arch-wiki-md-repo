@@ -142,7 +142,7 @@ Installation finished. No error reported.
 
 *   **grub-customizer** — 定制bootloader(GRUB or BURG)
 
-	[https://launchpad.net/grub-customizer](https://launchpad.net/grub-customizer) || [grub-customizer](https://aur.archlinux.org/packages/grub-customizer/)
+	[https://launchpad.net/grub-customizer](https://launchpad.net/grub-customizer) || [grub-customizer](https://www.archlinux.org/packages/?name=grub-customizer)
 
 *   **grub2-editor** — KDE4上配置GRUB的控制模组
 

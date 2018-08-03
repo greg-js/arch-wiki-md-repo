@@ -171,7 +171,7 @@ Ansible can manage user accounts and in particular it is able to create new ones
 
 ```
 
-**Tip:** The salt should be fixed and explicitely supplied as a second parameter of the hash function for the operation to be idempotent (can be repeated without changing the state of the system).
+**Tip:** The salt should be fixed and explicitly supplied as a second parameter of the hash function for the operation to be idempotent (can be repeated without changing the state of the system).
 
 With this approach it is recommended to vault-encrypt *user_password* so that it does not appear in plain text, see [#Vault](#Vault). However, an encrypted variable cannot be piped directly and will first need to be assigned to another one that will be piped.
 
