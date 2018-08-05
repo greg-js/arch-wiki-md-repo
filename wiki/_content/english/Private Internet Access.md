@@ -17,13 +17,13 @@
 
 ### Installation
 
-Download [[1]](https://www.privateinternetaccess.com/openvpn/openvpn-strong.zip). Unzip the file and move all files to `/etc/openvpn/client`. Ensure the files have `root` as the owner.
+Download [OpenVPN configurations from PIA](https://www.privateinternetaccess.com/openvpn/openvpn-strong.zip). Unzip the file and move all files to `/etc/openvpn/client`. Ensure the files have `root` as the owner.
 
-**Tip:** Rename the `.opvn` extensions to `.conf` and remove or replace spaces in configuration file names to be able to use [OpenVPN#systemd service configuration](/index.php/OpenVPN#systemd_service_configuration "OpenVPN").
+**Tip:** To be able to use [OpenVPN#systemd service configuration](/index.php/OpenVPN#systemd_service_configuration "OpenVPN") (e.g `systemctl start openvpn-client@*<config>*`), rename the all the files and replace `.opvn` extension with `.conf` and replace spaces in configuration file names with underscores.
 
 **Note:**
 
-*   [Disable ipv6](/index.php/Disable_ipv6 "Disable ipv6") since it is not supported by PIA.[[2]](https://helpdesk.privateinternetaccess.com/hc/en-us/articles/232324908-Why-Do-You-Block-IPv6-)
+*   [Disable ipv6](/index.php/Disable_ipv6 "Disable ipv6") since it is not supported by PIA.[[1]](https://helpdesk.privateinternetaccess.com/hc/en-us/articles/232324908-Why-Do-You-Block-IPv6-)
 *   Ensure you are using PIA's [DNS](/index.php/DNS "DNS") servers, listed on their website.
 
 ### Usage

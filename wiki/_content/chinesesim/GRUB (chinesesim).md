@@ -18,9 +18,10 @@
 
 *   [1 前言](#.E5.89.8D.E8.A8.80)
 *   [2 BIOS 系统](#BIOS_.E7.B3.BB.E7.BB.9F)
-    *   [2.1 GUID分区表(GPT)特殊操作](#GUID.E5.88.86.E5.8C.BA.E8.A1.A8.28GPT.29.E7.89.B9.E6.AE.8A.E6.93.8D.E4.BD.9C)
-    *   [2.2 主引导记录(MBR)特殊操作](#.E4.B8.BB.E5.BC.95.E5.AF.BC.E8.AE.B0.E5.BD.95.28MBR.29.E7.89.B9.E6.AE.8A.E6.93.8D.E4.BD.9C)
-    *   [2.3 安装](#.E5.AE.89.E8.A3.85)
+    *   [2.1 特殊操作](#.E7.89.B9.E6.AE.8A.E6.93.8D.E4.BD.9C)
+        *   [2.1.1 GUID分区表（GPT）特殊操作](#GUID.E5.88.86.E5.8C.BA.E8.A1.A8.EF.BC.88GPT.EF.BC.89.E7.89.B9.E6.AE.8A.E6.93.8D.E4.BD.9C)
+        *   [2.1.2 主引导记录（MBR）特殊操作](#.E4.B8.BB.E5.BC.95.E5.AF.BC.E8.AE.B0.E5.BD.95.EF.BC.88MBR.EF.BC.89.E7.89.B9.E6.AE.8A.E6.93.8D.E4.BD.9C)
+    *   [2.2 安装](#.E5.AE.89.E8.A3.85)
 *   [3 UEFI 系统](#UEFI_.E7.B3.BB.E7.BB.9F)
     *   [3.1 检查你是否使用GPT且有ESP分区](#.E6.A3.80.E6.9F.A5.E4.BD.A0.E6.98.AF.E5.90.A6.E4.BD.BF.E7.94.A8GPT.E4.B8.94.E6.9C.89ESP.E5.88.86.E5.8C.BA)
     *   [3.2 安装](#.E5.AE.89.E8.A3.85_2)
@@ -79,7 +80,9 @@ GRUB 不支持[F2FS](/index.php/F2FS "F2FS")格式的根目录,所以你需要�
 
 ## BIOS 系统
 
-### GUID分区表(GPT)特殊操作
+### 特殊操作
+
+#### GUID分区表（GPT）特殊操作
 
 BIOS/[GPT](/index.php/GPT "GPT")配置中，必须使用 [BIOS 启动分区](https://www.gnu.org/software/grub/manual/grub/html_node/BIOS-installation.html#BIOS-installation)。GRUB将`core.img`嵌入到这个分区。
 
@@ -93,7 +96,7 @@ BIOS/[GPT](/index.php/GPT "GPT")配置中，必须使用 [BIOS 启动分区](htt
 
 GPT 后面的空间也可以用作 BIOS 启动分区，但是这会违反 GPT 对齐规范。因为这个分区不会经常访问，所以性能的影响很小。只不过有些分区工具会发出警告。在 `fdisk` 或 `gdisk` 中创建一个新分区，从 34 扇区开始，一直到 2047，然后设置类型。为了让其它分区对齐，可以最后再创建此分区。
 
-### 主引导记录(MBR)特殊操作
+#### 主引导记录（MBR）特殊操作
 
 一般来说,如果使用兼容 DOS 的分区对齐模式, [MBR](/index.php/MBR "MBR") 512 byte 结束位置和第一个分区之间都有 31KB 的空闲空间。不过,为了提供足够的空间嵌入GRUB的`core.img`文件,建议将这个空间设置为 1 到 2 Mib([FS#24103](https://bugs.archlinux.org/task/24103)). 建议使用支持 1 MiB分区对齐的分区软件来分区, 因为这样也能满足非512B扇区磁盘分区的需求.
 

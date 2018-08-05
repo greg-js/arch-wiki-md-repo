@@ -168,7 +168,6 @@ Remember to [#Generate the main configuration file](#Generate_the_main_configura
 
 **Note:**
 
-*   While some distributions require a `/boot/efi` or `/boot/EFI` directory, Arch does not.
 *   `--efi-directory` and `--bootloader-id` are specific to GRUB UEFI, `--efi-directory` replaces `--root-directory` which is deprecated.
 *   You might note the absence of a *device_path* option (e.g.: `/dev/sda`) in the `grub-install` command. In fact any *device_path* provided will be ignored by the GRUB UEFI install script. Indeed, UEFI bootloaders do not use a MBR bootcode or partition boot sector at all.
 

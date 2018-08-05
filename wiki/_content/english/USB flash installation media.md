@@ -58,7 +58,7 @@ Run the following command, replacing `/dev/**sdx**` with your drive, e.g. `/dev/
 
 ```
 
-See [Core utilities#dd](/index.php/Core_utilities#dd "Core utilities") for more information about `dd`. See [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1#DESCRIPTION) for more information about `oflag=sync`.
+See [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) for more information about `dd`. See [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1#DESCRIPTION) for more information about `oflag=sync`.
 
 #### In Windows
 

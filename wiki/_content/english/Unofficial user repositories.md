@@ -34,30 +34,29 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.17 eschwartz](#eschwartz)
     *   [2.18 herecura](#herecura)
     *   [2.19 holo](#holo)
-    *   [2.20 icinga2](#icinga2)
-    *   [2.21 ivasilev](#ivasilev)
-    *   [2.22 jlk](#jlk)
-    *   [2.23 linux-macbook](#linux-macbook)
-    *   [2.24 llvm-svn](#llvm-svn)
-    *   [2.25 markzz](#markzz)
-    *   [2.26 miffe](#miffe)
-    *   [2.27 mikelpint](#mikelpint)
-    *   [2.28 mobile](#mobile)
-    *   [2.29 nah](#nah)
-    *   [2.30 pkgbuilder](#pkgbuilder)
-    *   [2.31 qt-debug](#qt-debug)
-    *   [2.32 quarry](#quarry)
-    *   [2.33 repo-ck](#repo-ck)
-    *   [2.34 seblu](#seblu)
-    *   [2.35 seiichiro](#seiichiro)
-    *   [2.36 sergej-repo](#sergej-repo)
-    *   [2.37 siosm-aur](#siosm-aur)
-    *   [2.38 sublime-text](#sublime-text)
-    *   [2.39 subtitlecomposer](#subtitlecomposer)
-    *   [2.40 tredaelli-systemd](#tredaelli-systemd)
-    *   [2.41 trinity](#trinity)
-    *   [2.42 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-    *   [2.43 xyne-x86_64](#xyne-x86_64)
+    *   [2.20 ivasilev](#ivasilev)
+    *   [2.21 jlk](#jlk)
+    *   [2.22 linux-macbook](#linux-macbook)
+    *   [2.23 llvm-svn](#llvm-svn)
+    *   [2.24 markzz](#markzz)
+    *   [2.25 miffe](#miffe)
+    *   [2.26 mikelpint](#mikelpint)
+    *   [2.27 mobile](#mobile)
+    *   [2.28 nah](#nah)
+    *   [2.29 pkgbuilder](#pkgbuilder)
+    *   [2.30 qt-debug](#qt-debug)
+    *   [2.31 quarry](#quarry)
+    *   [2.32 repo-ck](#repo-ck)
+    *   [2.33 seblu](#seblu)
+    *   [2.34 seiichiro](#seiichiro)
+    *   [2.35 sergej-repo](#sergej-repo)
+    *   [2.36 siosm-aur](#siosm-aur)
+    *   [2.37 sublime-text](#sublime-text)
+    *   [2.38 subtitlecomposer](#subtitlecomposer)
+    *   [2.39 tredaelli-systemd](#tredaelli-systemd)
+    *   [2.40 trinity](#trinity)
+    *   [2.41 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+    *   [2.42 xyne-x86_64](#xyne-x86_64)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -343,21 +342,6 @@ Server = https://repo.herecura.be/$repo/$arch
 ```
 [holo]
 Server = https://repo.holocm.org/archlinux/x86_64
-
-```
-
-### icinga2
-
-*   **Maintainer:** Josef Stautner <archwiki@veloc1ty.de>
-*   **Description:** Unofficial packages for [Icinga 2](https://www.icinga.com/products/icinga-2/)
-*   **Upstream page:** [https://github.com/Icinga/icinga2](https://github.com/Icinga/icinga2)
-*   **Package list:** [https://icinga2.mirror.veloc1ty.de/](https://icinga2.mirror.veloc1ty.de/)
-*   **Key-ID:** [0x1BE14C72D90E6C00](http://icinga2.mirror.veloc1ty.de/icinga2.pub)
-*   **More details:** ["Unofficial Icinga 2 Archlinux Mirror Server"](https://blog.veloc1ty.de/2018/01/24/inofficial-icinga-2-archlinux-mirror-server)
-
-```
-[icinga2]
-Server = https://icinga2.mirror.veloc1ty.de/
 
 ```
 

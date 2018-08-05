@@ -1,0 +1,1 @@
+The Lenovo P52 is a quad or hex core Intel 8th generation Laptop.

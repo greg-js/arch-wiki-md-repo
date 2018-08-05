@@ -417,6 +417,8 @@ Yubikey can be used to strenghen the security of your cryptsetup encrypted parti
 
 A robust and comfortable to use implementation of a initramfs hook to integrate your yubikey using Challenge-Response (using a static non-private challenge) and optionally a password on top of it [can be found here](https://github.com/agherzan/yubikey-full-disk-encryption).
 
+Another way of using YubiKey for full disk encryption is to utilize its OpenPGP applet to decrypt the LUKS keyfile during boot. [initramfs-scencrypt](https://github.com/fuhry/initramfs-scencrypt) is a set of hooks for initramfs that automate this process.
+
 ### Yubikey and KeePass
 
 Yubikey can be integrated with [KeePass](/index.php/KeePass "KeePass") using [plugins](/index.php/KeePass#Yubikey "KeePass").

@@ -113,8 +113,8 @@ available |
 | Jun 2014 | Lenovo | N20/N20P
 Chromebook | 2.1 GHz Intel BayTrail-M N2830 | 2GB DDR3 | No | 11.6 in
 (29.5 cm) | Requires writing
-SeaBIOS | Custom firmware script
-only writes to BOOT_STUB |
+SeaBIOS | Custom firmware
+available |
 | Asus | Chromebook
 C200/C300 | 2GB DDR3
 4GB DDR3 | 16GB eMMC
@@ -122,17 +122,17 @@ C200/C300 | 2GB DDR3
 (29.5 cm)
 13.3 in
 (33.8 cm) | Requires writing
-SeaBIOS | Custom firmware script
-only writes to BOOT_STUB |
+SeaBIOS | Custom firmware
+available |
 | Lenovo | ThinkPad 11e
 Chromebook | 1.83 GHz Intel BayTrail-M N2930 | 4GB DDR3 | 16GB eMMC | No | 11.6 in
 (29.5 cm) | Requires writing
-SeaBIOS | Custom firmware script
-only writes to BOOT_STUB |
+SeaBIOS | Custom firmware
+available |
 | ThinkPad Yoga 11e
 Chromebook | No | Requires writing
-SeaBIOS | Custom firmware script
-only writes to BOOT_STUB |
+SeaBIOS | Custom firmware
+available |
 | Samsung | Chromebook 2
 XE503C12/C32 | 1.9 GHz Exynos 5 Octa 5420
 2 GHz Exynos 5 Octa 5800 | No | 11.6 in
@@ -147,7 +147,7 @@ Arch Linux ARM](http://archlinuxarm.org/platforms/armv7/samsung/samsung-chromebo
 | Jul 2014 | HEXA | Chromebook Pi | 2.1 GHz Intel BayTrail-M N2830 | 32GB eMMC | No | 11.6 in
 (29.5 cm) | 1366x768
 (16:9) | No | Custom firmware
-not available yet |
+available |
 | Aug 2014 | Acer | CB5-311
 Chromebook 13 | 2.1 GHz Nvidia Tegra K1 | 2GB DDR3
 4GB DDR3 | 16GB eMMC
@@ -160,20 +160,20 @@ on ARM | Unsupported by
 Arch Linux ARM |
 | Sep 2014 | Toshiba | [CB30/CB35
 Chromebook 2](/index.php/Toshiba_Chromebook_2 "Toshiba Chromebook 2") | 2.16 GHz Intel BayTrail-M N2840 | 16GB eMMC | No | Requires writing
-SeaBIOS | Custom firmware script
-only writes to BOOT_STUB |
+SeaBIOS | Custom firmware
+available |
 | Acer | [CB3-111](/index.php/CB3-111 "CB3-111")
 Chromebook 11 | 2.1 GHz Intel BayTrail-M N2830 | 2GB DDR3 | No | 11.6 in
 (29.5 cm) | 1366x768
 (16:9) | Requires writing
-SeaBIOS | Custom firmware script
-only writes to BOOT_STUB |
+SeaBIOS | Custom firmware
+available |
 | Oct 2014 | C730
 Chromebook 11 | 2.16 GHz Intel BayTrail-M N2840 | 2GB DDR3
 4GB DDR3 | 16GB eMMC
 32GB eMMC | No | Requires writing
-SeaBIOS | Custom firmware script
-only writes to BOOT_STUB |
+SeaBIOS | Custom firmware
+available |
 | HP | Chromebook 14
 G3 | 2.1 GHz Nvidia Tegra K1 | No | 14 in
 (35.6 cm) | 1366x768
@@ -186,24 +186,24 @@ Arch Linux ARM |
 G3 | 2.16 GHz Intel BayTrail-M N2840 | 16GB eMMC | No | 11.6 in
 (29.5 cm) | 1366x768
 (16:9) | Requires writing
-SeaBIOS | Custom firmware script
-only writes to BOOT_STUB |
+SeaBIOS | Custom firmware
+available |
 | Samsung | Chromebook 2
 XE500C12 | 2GB DDR3 | No | Requires writing
-SeaBIOS | Custom firmware script
-only writes to BOOT_STUB |
+SeaBIOS | Custom firmware
+available |
 | Feb 2015 | Dell | Chromebook 11
 3120 | 2GB DDR3
 4GB DDR3 | No | Requires writing
-SeaBIOS | Custom firmware script
-only writes to BOOT_STUB |
+SeaBIOS | Custom firmware
+available |
 | Acer | C740 (EDU)
 Chromebook 11 | 1.5 GHz Intel Celeron 3205U
 2.00 GHz Intel Core i3-5005U | 16GB SSD
 32GB SSD | 42mm M.2
 NGFF | Requires writing
-SeaBIOS | Custom firmware script
-only writes to RW_LEGACY |
+SeaBIOS | Custom firmware
+available |
 | CB5-571
 Chromebook 15 | 16GB
 32GB | 42mm M.2
@@ -212,31 +212,31 @@ NGFF | 15.6 in
 (16:9)
 1920x1080
 (16:9) | Requires writing
-SeaBIOS | Custom firmware script
-only writes to RW_LEGACY |
+SeaBIOS | Custom firmware
+available |
 | Mar 2015 | C910 (EDU)
 Chromebook 15 | 1.5 GHz Intel Celeron 3205U
 2.00 GHz Intel Core i3-5005U
 2.2 GHz Intel Core i5-5200U | 4GB DDR3 | 16GB SSD
 32GB SSD | [42mm M.2
 NGFF](https://www.reddit.com/r/chromeos/comments/3asc4f/no_physical_differences_beteen_acer_chromebook/) | Requires writing
-SeaBIOS | Custom firmware script
-only writes to RW_LEGACY |
+SeaBIOS | Custom firmware
+available |
 | Google | [Chromebook
 Pixel 2](/index.php/Chromebook_Pixel_2 "Chromebook Pixel 2") | 2.2 GHz Intel Core i5-5200U
 2.4 GHz Intel Core i7-5500U | 8GB DDR3
 16GB DDR3 | 32GB
 64GB | No | 12.85 in
 (32.6 cm) | 2560x1700
-(3:2) | Yes | Custom firmware script
-only writes to RW_LEGACY |
+(3:2) | Yes | Custom firmware
+available |
 | Lenovo | N21
 Chromebook | 2.16 GHz Intel BayTrail-M N2840 | 2GB DDR3
 4GB DDR3 | 16GB eMMC | No | 11.6 in
 (29.5 cm) | 1366x768
 (16:9) | Requires writing
-SeaBIOS | Custom firmware script
-only writes to BOOT_STUB |
+SeaBIOS | Custom firmware
+available |
 | Haier | HR-166R
 Chromebook 11 | 1.8 GHz Rockchip RK3288 | 2GB DDR3 | No | 11.6 in
 (29.5 cm) | 1366x768
@@ -260,7 +260,8 @@ DDR3 | 16GB
 eMMC | No | 11.6 in
 (29.5 cm) | 1366x768
 (16:9) | Requires writing
-SeaBIOS |
+SeaBIOS | Custom firmware
+available |
 | Oct 2017 | Google | [Pixelbook](/index.php?title=Pixelbook&action=edit&redlink=1 "Pixelbook (page does not exist)") | Intel Core i5-7Y57
 Intel Core i5-7Y57
 Intel Core i7-7Y75 | 8GB DDR3
@@ -269,7 +270,8 @@ Intel Core i7-7Y75 | 8GB DDR3
 256GB
 512GB | No | 12.3 in
 (31.2 cm) | 2400x1600
-(3:2) | Yes |
+(3:2) | Yes | Custom firmware
+available |
 
 </center>
 

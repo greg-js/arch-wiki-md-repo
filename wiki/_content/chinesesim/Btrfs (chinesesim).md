@@ -403,7 +403,7 @@ btrfs 支持在线碎片整理,要整理根文件夹:
 
 ### RAID
 
-Btrfs 提供对 RAID 一类的 [多设备文件系统](#Multi-device_file_system)的原生支持.参阅 [the Btrfs wiki page](https://btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices) 获得更多信息. [Btrfs 管理员手册](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#RAID_and_data_replication) 提供了技术背景信息.
+Btrfs 提供对 RAID 一类的 [#多设备文件系统](#.E5.A4.9A.E8.AE.BE.E5.A4.87.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)的原生支持.参阅 [the Btrfs wiki page](https://btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices) 获得更多信息. [Btrfs 管理员手册](https://btrfs.wiki.kernel.org/index.php/SysadminGuide#RAID_and_data_replication) 提供了技术背景信息.
 
 ### 快照
 

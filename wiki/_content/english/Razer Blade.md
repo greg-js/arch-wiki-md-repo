@@ -4,6 +4,7 @@ Razer Blade is Razer's line of gaming laptops. There is currently a 12" model (R
 
 *   [1 2018 version](#2018_version)
     *   [1.1 Touchpad](#Touchpad)
+    *   [1.2 Openrazer](#Openrazer)
 *   [2 Late-2017 version Razer Blade Stealth](#Late-2017_version_Razer_Blade_Stealth)
     *   [2.1 Infinite suspend loop](#Infinite_suspend_loop)
     *   [2.2 Screen flickering / distorted / noise](#Screen_flickering_.2F_distorted_.2F_noise)
@@ -34,9 +35,13 @@ Razer Blade is Razer's line of gaming laptops. There is currently a 12" model (R
 
 ## Touchpad
 
-The touchpad doesn't work with the vanilla kernel as of version 4.17.11, however there have been [patches](https://github.com/jbdrthapa/razerblade15/tree/master/razerfiles/touchpad) made by Github user **jbdrthapa** that fix this issue.
+The touchpad doesn't work with the vanilla kernel as of version 4.17.11, however there has been a [patch](https://github.com/jbdrthapa/razerblade15/blob/master/razerfiles/touchpad/translation_fix/pinctrl-intel-translation-fix.patch) made by Github user **jbdrthapa** that fixes this issue.
 
-You can patch them into your kernel manually, or install them automatically via [linux-razerblade-2018](https://aur.archlinux.org/packages/linux-razerblade-2018/).
+You can patch it into your kernel manually, or install the patched kernel automatically via [linux-razerblade-2018](https://aur.archlinux.org/packages/linux-razerblade-2018/).
+
+## Openrazer
+
+Openrazer doesn't currently support the 2018 model's peripherals. There is however a fork with added support, and can be installed via [openrazer-daemon-2018](https://aur.archlinux.org/packages/openrazer-daemon-2018/).
 
 # Late-2017 version Razer Blade Stealth
 

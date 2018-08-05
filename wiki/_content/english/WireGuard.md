@@ -116,8 +116,8 @@ Wireguard comes with a tool to quickly create and tear down VPN servers and clie
 ```
 [Interface]
 Address = 10.200.100.1/24
-PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+PostUp   = iptables -A FORWARD -i %i -j ACCEPT; iptables -A FORWARD -o %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -D FORWARD -o %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 ListenPort = 51820
 PrivateKey = [SERVER PRIVATE KEY]
 
@@ -126,7 +126,16 @@ PublicKey = [CLIENT PUBLIC KEY]
 AllowedIPs = 10.200.100.2/32  # This denotes the clients IP.
 ```
 
-Bring this interface up by using `wg-quick up wg0server`, and use `wg-quick down wg0server` to bring it down.
+In order for the iptables rules to work, IPv4 forwarding should be enabled:
+
+```
+# sysctl net.ipv4.ip_forward=1
+
+```
+
+To make the change permanent, add `net.ipv4.ip_forward = 1` to `/etc/sysctl.d/99-sysctl.conf`.
+
+Bring the interface up by using `wg-quick up wg0server`, and use `wg-quick down wg0server` to bring it down.
 
 #### Client
 

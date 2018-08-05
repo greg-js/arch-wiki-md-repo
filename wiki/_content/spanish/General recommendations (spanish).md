@@ -4,7 +4,7 @@ Artículos relacionados
 *   [Guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)")
 *   [Lista de aplicaciones](/index.php/List_of_applications_(Espa%C3%B1ol) "List of applications (Español)")
 
-**Estado de la traducción:** este artículo es una versión traducida de [General recommendations](/index.php/General_recommendations "General recommendations"). Fecha de la última traducción/revisión: **2018-08-02**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=531455).
+**Estado de la traducción:** este artículo es una versión traducida de [General recommendations](/index.php/General_recommendations "General recommendations"). Fecha de la última traducción/revisión: **2018-08-03**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=531455).
 
 Este documento es un índice con anotaciones a otros artículos populares e información importante para mejorar y añadir funcionalidades al sistema Arch instalado. Se supone que los lectores han leído y seguido la [guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") para instalar un sistema básico de Arch Linux. Es necesario haber leído y comprendido los conceptos explicados en [#Administración el sistema](#Administraci.C3.B3n_el_sistema) y [#Administración de paquetes](#Administraci.C3.B3n_de_paquetes) antes de continuar con las otras secciones de esta página y de otros artículos de la wiki.
 
@@ -12,8 +12,8 @@ Este documento es un índice con anotaciones a otros artículos populares e info
 
 *   [1 Administración el sistema](#Administraci.C3.B3n_el_sistema)
     *   [1.1 Usuarios y grupos](#Usuarios_y_grupos)
-    *   [1.2 Escalado privilegios](#Escalado_privilegios)
-    *   [1.3 Gestionar los servicios](#Gestionar_los_servicios)
+    *   [1.2 Escalado de privilegios](#Escalado_de_privilegios)
+    *   [1.3 Administración de servicios](#Administraci.C3.B3n_de_servicios)
     *   [1.4 Mantenimiento del sistema](#Mantenimiento_del_sistema)
 *   [2 Administración de paquetes](#Administraci.C3.B3n_de_paquetes)
     *   [2.1 pacman](#pacman)
@@ -77,25 +77,25 @@ Este documento es un índice con anotaciones a otros artículos populares e info
 
 ## Administración el sistema
 
-Esta sección se ocupa de las tareas administrativas y de gestión del sistema. Para más información, consulte [Core utilities](/index.php/Core_utilities "Core utilities") y [Category:System administration](/index.php/Category:System_administration "Category:System administration").
+Esta sección se ocupa de las tareas administrativas y de gestión del sistema. Para más información, consulte [Core utilities (Español)](/index.php/Core_utilities_(Espa%C3%B1ol) "Core utilities (Español)") y [Category:System administration (Español)](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)").
 
 ### Usuarios y grupos
 
-Una instalación nueva deja a los usuarios sólo con la cuenta de [superusuario](https://en.wikipedia.org/wiki/Superuser "wikipedia:Superuser"), conocido como «root». El inicio de sesión como root durante prolongados periodos de tiempo, incluso exponiéndose, posiblemente, a través de un servidor [SSH](/index.php/SSH "SSH"), es considerado sumamente inseguro. En lugar de ello, los usuarios deben crear y usar cuentas de usuario sin privilegios para la mayoría de las tareas, dejando la cuenta de root para la administración del sistema. Véase [Users and groups#Example adding a user](/index.php/Users_and_groups#Example_adding_a_user "Users and groups") para más detalles.
+Una instalación nueva deja solamente la cuenta de [superusuario](https://en.wikipedia.org/wiki/es:Root en un servidor, [es inseguro](https://apple.stackexchange.com/questions/192365/is-it-ok-to-use-the-root-user-as-a-normal-user/192422#192422). En su lugar, debe crear y usar cuentas de usuario sin privilegios para la mayoría de las tareas, solo utilizando la cuenta root para la administración del sistema. Consulte la [administración de usuarios](/index.php/Users_and_groups_(Espa%C3%B1ol)#Administraci.C3.B3n_de_usuarios "Users and groups (Español)") para obtener más detalles.
 
-Los usuarios y grupos se utilizan para el *control de acceso*; los administradores pueden ajustar la pertenencia y propiedad a un grupo para conceder o denegar a los usuarios el acceso a los servicios y recursos del sistema. Lea el artículo [Users and groups (Español)](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") para más detalles y conocer potenciales riesgos de seguridad.
+Los usuarios y grupos son un mecanismo para el *control de acceso*; los administradores pueden ajustar la pertenencia y propiedad de grupo para otorgar o denegar a los usuarios y servicios el acceso a los recursos del sistema. Consulte el artículo [usuarios y grupos](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") para más detalles y conocer potenciales riesgos de seguridad.
 
-### Escalado privilegios
+### Escalado de privilegios
 
-Los comandos [su](/index.php/Su_(Espa%C3%B1ol) "Su (Español)") y [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") le permiten ejecutar comandos como otro usuario. Por defecto, *su* lo lleva a un shell de inicio de sesión como usuario root, y *sudo* le otorga de manera temporal privilegios de root para un solo comando. Consulte sus respectivos artículos para las diferencias.
+Los comandos [su](/index.php/Su_(Espa%C3%B1ol) "Su (Español)") y [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") le permiten ejecutar comandos como otro usuario. Por defecto, *su* lo transfiere a un shell de inicio de sesión como usuario root, y *sudo* le concede temporalmente privilegios de root para un solo comando. Consulte sus respectivos artículos para las diferencias.
 
-### Gestionar los servicios
+### Administración de servicios
 
-Arch Linux utiliza [systemd](/index.php/Systemd "Systemd") como [init](/index.php/Init "Init"), el cual es un gestor del sistema y de los servicios para Linux. Para el mantenimiento de su instalación de Arch Linux, sería una buena idea aprender los conceptos básicos sobre el mismo. La interacción con systemd se realiza mediante la orden *systemctl*. Lea [Systemd (Español)#Uso básico de systemctl](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)") para obtener más información.
+Arch Linux usa [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") como proceso [init](/index.php/Init "Init"), que es un administrador de sistemas y servicios para Linux. Para el mantenimiento de su instalación de Arch Linux, es una buena idea aprender los conceptos básicos al respecto. La interacción con *systemd* se realiza a través del comando *systemctl*. Consulte [uso básico de systemctl](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)") para obtener más información.
 
 ### Mantenimiento del sistema
 
-Arch es un sistema «rolling release» y tiene una rápida actualización de paquetes, de manera que los usuarios tienen que dedicar algo de tiempo al [mantenimiento del sistema](/index.php/System_maintenance "System maintenance"). Y la página [Mejorando la estabilidad de Arch Linux](/index.php/Enhance_system_stability "Enhance system stability") provee consejos para hacer el sistema Arch Linux tan estable como sea posible.
+Arch es un sistema de lanzamiento continuo y cuenta con una rápida rotación de paquetes, por lo que los usuarios deben dedicar un tiempo a realizar el [mantenimiento del sistema](/index.php/System_maintenance_(Espa%C3%B1ol) "System maintenance (Español)"). Consulte [Security](/index.php/Security "Security") para obtener recomendaciones y buenas prácticas sobre el fortalecimiento *(hardening)* del sistema.
 
 ## Administración de paquetes
 

@@ -123,7 +123,7 @@ To install fonts system-wide (available for all users), move the folder to the `
 
 For Xserver to load fonts directly (as opposed to the use of a *font server*) the directory for your newly added font must be added with a FontPath entry. This entry is located in the *Files* section [of your Xorg configuration file](/index.php/Xorg#Configuration "Xorg") (e.g. `/etc/X11/xorg.conf` or `/etc/xorg.conf`). See [#Older applications](#Older_applications) for more detail.
 
-Then update the fontconfig font cache: (usually unnecessary as software using the fontconfig library do this.)
+Then update the fontconfig font cache: (usually unnecessary as software using the fontconfig library does this)
 
 ```
 $ fc-cache

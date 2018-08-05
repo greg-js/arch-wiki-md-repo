@@ -910,7 +910,7 @@ The disk layout in this example is:
 +---------------------+----------------------+----------------+----------------------+----------------------+----------------------+
 | BIOS boot partition | EFI system partition | Boot partition | Logical volume 1     | Logical volume 2     | Logical volume 3     |
 |                     |                      |                |                      |                      |                      |
-|                     | /boot/efi            | /boot          | /root                | [SWAP]               | /home                |
+|                     | /efi                 | /boot          | /root                | [SWAP]               | /home                |
 |                     |                      |                |                      |                      |                      |
 |                     |                      |                | /dev/MyVolGroup/root | /dev/MyVolGroup/swap | /dev/MyVolGroup/home |
 | /dev/sda1           | /dev/sda2            | /dev/sda3      +----------------------+----------------------+----------------------+
@@ -930,7 +930,7 @@ Prior to creating any partitions, you should inform yourself about the importanc
 
 For [BIOS systems](/index.php/GRUB#BIOS_systems "GRUB") create a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") with size of 1 MiB for GRUB to store the second stage of BIOS bootloader. Do not mount the partition.
 
-For [UEFI systems](/index.php/GRUB#UEFI_systems "GRUB") create an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") with an appropriate size, it will later be mounted at `/boot/efi`.
+For [UEFI systems](/index.php/GRUB#UEFI_systems "GRUB") create an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") with an appropriate size, it will later be mounted at `/efi`.
 
 Create a partition to be mounted at `/boot` of type `8300` with a size of 200 MiB or more.
 
@@ -1011,11 +1011,11 @@ Mount the partition to `/mnt/boot`:
 
 ```
 
-Create a mountpoint for the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") at `/boot/efi` for compatibility with `grub-install` and mount it:
+Create a mountpoint for the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") at `/efi` for compatibility with `grub-install` and mount it:
 
 ```
-# mkdir /mnt/boot/efi
-# mount /dev/sda2 /mnt/boot/efi
+# mkdir /mnt/efi
+# mount /dev/sda2 /mnt/efi
 
 ```
 
@@ -1026,7 +1026,7 @@ At this point, you should have the following partitions and logical volumes insi
 NAME                  MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
 sda                   8:0      0   200G  0 disk
 ├─sda1                8:1      0     1M  0 part
-├─sda2                8:2      0   550M  0 part  /boot/efi
+├─sda2                8:2      0   550M  0 part  /efi
 ├─sda3                8:3      0   200M  0 part
 │ └─cryptboot         254:0    0   198M  0 crypt /boot
 └─sda4                8:4      0   100G  0 part
@@ -1085,7 +1085,7 @@ Generate GRUB's [configuration](/index.php/GRUB#Generate_the_main_configuration_
 [install GRUB](/index.php/GRUB#Installation_2 "GRUB") to the mounted ESP for UEFI booting:
 
 ```
-# grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB --recheck
+# grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB --recheck
 
 ```
 
@@ -1104,7 +1104,7 @@ This section deals with extra configuration to let the system **mount** the encr
 
 While GRUB asks for a passphrase to unlock the encrypted `/boot` after above instructions, the partition unlock is not passed on to the initramfs. Hence, `/boot` will not be available after the system has re-/booted, because the `encrypt` hook only unlocks the system's root.
 
-If you used the *genfstab* script during installation, it will have generated `/etc/fstab` entries for the `/boot` and `/boot/efi` mount points already, but the system will fail to find the generated device mapper for the boot partition. To make it available, add it to [crypttab](/index.php/Crypttab "Crypttab"). For example:
+If you used the *genfstab* script during installation, it will have generated `/etc/fstab` entries for the `/boot` and `/efi` mount points already, but the system will fail to find the generated device mapper for the boot partition. To make it available, add it to [crypttab](/index.php/Crypttab "Crypttab"). For example:
 
  `/etc/crypttab` 
 ```
@@ -1129,7 +1129,7 @@ If for some reason the keyfile fails to unlock the boot partition, systemd will 
 
 The following example creates a full system encryption with LUKS using [Btrfs](/index.php/Btrfs "Btrfs") subvolumes to [simulate partitions](/index.php/Btrfs#Mounting_subvolumes "Btrfs").
 
-If using UEFI, an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) is required. `/boot` itself may reside on `/` and be encrypted; however, the ESP itself cannot be encrypted. In this example layout, the ESP is `/dev/sda1` and is mounted at `/boot/efi`. `/boot` itself is located on the system partition, `/dev/sda2`.
+If using UEFI, an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) is required. `/boot` itself may reside on `/` and be encrypted; however, the ESP itself cannot be encrypted. In this example layout, the ESP is `/dev/sda1` and is mounted at `/efi`. `/boot` itself is located on the system partition, `/dev/sda2`.
 
 Since `/boot` resides on the encrypted `/`, [GRUB](/index.php/GRUB "GRUB") must be used as the bootloader because only GRUB can load modules necessary to decrypt `/boot` (e.g., crypto.mod, cryptodisk.mod and luks.mod) [[1]](http://www.pavelkogan.com/2014/05/23/luks-full-disk-encryption/).
 
@@ -1142,7 +1142,7 @@ Additionally an optional plain-encrypted [swap](/index.php/Swap "Swap") partitio
 | EFI system partition | System partition     | Swap partition       |
 | **un**encrypted          | LUKS-encrypted       | plain-encrypted      |
 |                      |                      |                      |
-| /boot/efi            | /                    | [SWAP]               |
+| /efi                 | /                    | [SWAP]               |
 | /dev/sda1            | /dev/sda2            | /dev/sda3            |
 |----------------------+----------------------+----------------------+
 
@@ -1152,7 +1152,7 @@ Additionally an optional plain-encrypted [swap](/index.php/Swap "Swap") partitio
 
 **Note:** It is not possible to use btrfs partitioning as described in [Btrfs#Partitionless Btrfs disk](/index.php/Btrfs#Partitionless_Btrfs_disk "Btrfs") when using LUKS. Traditional partitioning must be used, even if it is just to create one partition.
 
-Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"). If you are using [UEFI](/index.php/UEFI "UEFI") create an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") with an appropriate size. It will later be mounted at `/boot/efi`. If you are going to create an encrypted swap partition, create the partition for it, but do **not** mark it as swap, since plain *dm-crypt* will be used with the partition.
+Prior to creating any partitions, you should inform yourself about the importance and methods to securely erase the disk, described in [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"). If you are using [UEFI](/index.php/UEFI "UEFI") create an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") with an appropriate size. It will later be mounted at `/efi`. If you are going to create an encrypted swap partition, create the partition for it, but do **not** mark it as swap, since plain *dm-crypt* will be used with the partition.
 
 Create the needed partitions, at least one for `/` (e.g. `/dev/sda2`). See the [Partitioning](/index.php/Partitioning "Partitioning") article.
 
@@ -1244,7 +1244,7 @@ Other directories you may wish to do this with are `/var/abs`, `/var/tmp`, and `
 
 If you prepared an EFI system partition earlier, create its mount point and mount it now.
 
-**Note:** Btrfs snapshots will exclude `/boot/efi`, since it is not a btrfs file system.
+**Note:** Btrfs snapshots will exclude `/efi`, since it is not a btrfs file system.
 
 At the [pacstrap](/index.php/Installation_guide#Install_the_base_packages "Installation guide") installation step, the [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) must be installed in addition to the base group.
 

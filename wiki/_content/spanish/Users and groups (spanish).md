@@ -12,7 +12,7 @@ Los usuarios y los grupos son usados ​​en los sistemas GNU/Linux para el [co
 *   [1 Descripción](#Descripci.C3.B3n)
 *   [2 Permisos y propiedad](#Permisos_y_propiedad)
 *   [3 Lista de archivos](#Lista_de_archivos)
-*   [4 Gestión de usuarios](#Gesti.C3.B3n_de_usuarios)
+*   [4 Administración de usuarios](#Administraci.C3.B3n_de_usuarios)
     *   [4.1 Base de datos del usuario](#Base_de_datos_del_usuario)
 *   [5 Gestión de grupos](#Gesti.C3.B3n_de_grupos)
 *   [6 Lista de grupos](#Lista_de_grupos)
@@ -109,7 +109,7 @@ Véase [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)
 | `/etc/sudoers` | Lista lo que se puede ejecutar con sudo |
 | `/home/*` | Carpeta personal del usuario |
 
-## Gestión de usuarios
+## Administración de usuarios
 
 Para visualizar una lista de los usuarios actualmente conectados al sistema, se puede usar la orden `who`.
 

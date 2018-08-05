@@ -209,15 +209,15 @@ icon=/usr/share/weston/icon_flower.png
 path=/usr/bin/weston-flower
 
 [launcher]
-icon=/usr/share/icons/gnome/24x24/apps/utilities-terminal.png
+icon=/usr/share/icons/gnome/32x32/apps/utilities-terminal.png
 path=/usr/bin/weston-terminal --shell=/usr/bin/bash
 
 [launcher]
-icon=/usr/share/icons/gnome/24x24/apps/utilities-terminal.png
+icon=/usr/share/icons/gnome/32x32/apps/utilities-terminal.png
 path=/usr/bin/gnome-terminal
 
 [launcher]
-icon=/usr/share/icons/hicolor/24x24/apps/firefox.png
+icon=/usr/share/icons/hicolor/32x32/apps/firefox.png
 path=MOZ_GTK_TITLEBAR_DECORATION=client /usr/bin/firefox
 
 #[launcher]

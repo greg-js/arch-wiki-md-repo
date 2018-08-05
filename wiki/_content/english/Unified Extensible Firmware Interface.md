@@ -202,12 +202,12 @@ To add a new boot option using *efibootmgr* you need to know three things:
 2.  The partition number of the ESP on that disk: the `*Y*` in `/dev/sdX*Y*`
 3.  The path to the EFI application (relative to the root of the ESP)
 
-For example, if you want to add a boot option for `/boot/efi/EFI/refind/refind_x64.efi` where `/boot/efi` is the mount point of the ESP, run
+For example, if you want to add a boot option for `/efi/EFI/refind/refind_x64.efi` where `/efi` is the mount point of the ESP, run
 
- `$ findmnt /boot/efi` 
+ `$ findmnt /efi` 
 ```
-TARGET    SOURCE     FSTYPE OPTIONS
-/boot/efi /dev/sda1  vfat   rw,flush,tz=UTC
+TARGET SOURCE    FSTYPE OPTIONS
+/efi   /dev/sda1 vfat   rw,flush,tz=UTC
 ```
 
 In this example, this indicates that the ESP is on disk `/dev/sda` and has partition number 1\. The path to the EFI application relative to the root of the ESP is `/EFI/refind/refind_x64.efi`. So you would create the boot entry as follows:

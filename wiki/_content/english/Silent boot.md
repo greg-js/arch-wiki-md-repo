@@ -3,10 +3,10 @@ This page is for those who prefer to limit the verbosity of their system to a st
 ## Contents
 
 *   [1 Kernel parameters](#Kernel_parameters)
-*   [2 sysctl](#sysctl)
-*   [3 startx](#startx)
-*   [4 fsck](#fsck)
-*   [5 Remove console cursor blinking](#Remove_console_cursor_blinking)
+*   [2 Remove console cursor blinking](#Remove_console_cursor_blinking)
+*   [3 sysctl](#sysctl)
+*   [4 startx](#startx)
+*   [5 fsck](#fsck)
 *   [6 Make GRUB silent](#Make_GRUB_silent)
 
 ## Kernel parameters
@@ -40,9 +40,20 @@ If you are using the `systemd` hook in the [initramfs](/index.php/Initramfs "Ini
 
 Also `touch ~/.hushlogin` to remove the Last login message.
 
+## Remove console cursor blinking
+
+The console cursor at boot keeps blinking if you follow these instructions. This can be solved by passing `vt.global_cursor_default=0` to the kernel [[1]](http://www.friendlyarm.net/forum/topic/2998).
+
+To recover the cursor in the TTY, run:
+
+```
+# setterm -cursor on >> /etc/issue
+
+```
+
 ## sysctl
 
-To hide any kernel messages from the console, add or modify the `kernel.printk` line according to [[1]](http://unix.stackexchange.com/a/45525/27433):
+To hide any kernel messages from the console, add or modify the `kernel.printk` line according to [[2]](http://unix.stackexchange.com/a/45525/27433):
 
  `/etc/sysctl.d/20-quiet-printk.conf`  `kernel.printk = 3 3 3 3` 
 
@@ -89,17 +100,6 @@ TimeoutSec=0
 ```
 
 See [this](http://www.freedesktop.org/software/systemd/man/systemd-fsck@.service.html) for more info on the options you can pass to `systemd-fsck` - you can change how often the service will check (or not) your filesystems.
-
-## Remove console cursor blinking
-
-The console cursor at boot keeps blinking if you follow these instructions. This can be solved by passing `vt.global_cursor_default=0` to the kernel [[2]](http://www.friendlyarm.net/forum/topic/2998).
-
-To recover the cursor in the TTY, run:
-
-```
-# setterm -cursor on >> /etc/issue
-
-```
 
 ## Make GRUB silent
 

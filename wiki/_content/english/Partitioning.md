@@ -211,7 +211,7 @@ To use hibernation (a.k.a suspend to disk) it is advised to create the swap part
 #### UEFI/GPT example layout
 
 | Mount point | Partition | [Partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") | [Partition attributes](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries_.28LBA_2-33.29 "wikipedia:GUID Partition Table") | Suggested size |
-| `/boot` or `/boot/efi` | `/dev/sda1` | `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`: [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | 550 MiB |
+| `/boot` or `/efi` | `/dev/sda1` | `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`: [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | 550 MiB |
 | `/` | `/dev/sda2` | `4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709`: Linux x86-64 root (/) | 23 - 32 GiB |
 | `[SWAP]` | `/dev/sda3` | `0657FD6D-A4AB-43C4-84E5-0933C84B4F4F`: Linux [swap](/index.php/Swap "Swap") | More than 512 MiB |
 | `/home` | `/dev/sda4` | `933AC7E1-2EB4-4F13-B844-0E14E2AEF915`: Linux /home | Remainder of the device |

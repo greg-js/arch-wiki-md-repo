@@ -31,6 +31,7 @@ For general help on the install preocedure see the [Installation guide](/index.p
     *   [3.2 Users](#Users)
     *   [3.3 Wireless](#Wireless)
         *   [3.3.1 Wireless Flakiness](#Wireless_Flakiness)
+        *   [3.3.2 Keyboard Backlight](#Keyboard_Backlight)
     *   [3.4 Xorg](#Xorg)
 *   [4 Bells & Whistles](#Bells_.26_Whistles)
     *   [4.1 Emulating OSX Touchpad Gestures](#Emulating_OSX_Touchpad_Gestures)
@@ -195,6 +196,10 @@ The only connection manager combination with BCM4331 that doesn't result in flak
 [General]
 BackgroundScanning = false
 ```
+
+#### Keyboard Backlight
+
+A "just works" solution is the [acpibacklight](https://aur.archlinux.org/packages/acpibacklight/) package. It provides the just work case when controlling it with the keyboard shortcuts.
 
 ### Xorg
 

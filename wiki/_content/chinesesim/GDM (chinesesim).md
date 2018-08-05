@@ -485,7 +485,7 @@ If you have your monitors setup as you like (orientation, primary and so on) in 
 
 Changes will take effect on logout. This is necessary because GDM does not respect `xorg.conf`.
 
-**Note:** If you use GDM under Wayland, you must also use a `monitors.xml` that was created under Wayland. See [GNOME bug 748098](https://bugzilla.gnome.org/show_bug.cgi?id=748098) for more info. Alternatively, you can force GDM to [#Use Xorg backend](#Use_Xorg_backend), and use a `monitors.xml` that was created under Xorg.
+**Note:** If you use GDM under Wayland, you must also use a `monitors.xml` that was created under Wayland. See [GNOME bug 748098](https://bugzilla.gnome.org/show_bug.cgi?id=748098) for more info. Alternatively, you can force GDM to [#使用Xorg作为后端](#.E4.BD.BF.E7.94.A8Xorg.E4.BD.9C.E4.B8.BA.E5.90.8E.E7.AB.AF), and use a `monitors.xml` that was created under Xorg.
 
 ### Configure X server access permission
 

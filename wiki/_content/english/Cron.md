@@ -306,7 +306,7 @@ $ crontab -r
 
 ```
 
-If a user has a saved crontab and would like to completely overwrite their old crontab, he or she should use:
+If a user has a saved crontab and would like to completely overwrite their old crontab, they should use:
 
 ```
 $ crontab *saved_crontab_filename*

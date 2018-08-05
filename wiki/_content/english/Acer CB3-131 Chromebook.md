@@ -15,7 +15,7 @@ This chromebook is based on Intel's Baytrail platform and Google's product name 
 
 ## SeaBIOS support
 
-Booting from external USB or SD cards is **not supported**, so firmware has to be flashed. If dual-boot between Chrome OS and Arch Linux installed on external media is preferred, then there is no need to open up the laptop to remove write protection.
+Like all other Baytrail Chromebooks, the CB3-131 does not have functional Legacy Boot/SeaBIOS firmware in the stock firmware image, so custom firmware has to be flashed. If dual-boot between Chrome OS and Arch Linux installed on external media is preferred, then there is no need to open up the laptop to remove write protection.
 
 For installing firmware to enable USB/SD boot, follow the instructions in [https://mrchromebox.tech/](https://mrchromebox.tech/) to update the RW_LEGACY firmware with a fixed SeaBIOS payload that will allow booting an Arch Linux iso. Once that is done, press CTRL-L when booting and install Arch as usual.
 

@@ -126,6 +126,13 @@ $ setxkbmap -model pc104 -layout cz,us -variant ,dvorak -option grp:alt_shift_to
 
 ```
 
+For having us layout to be used with AltGr for umlauts and other special characters.
+
+```
+$ setxkbmap -layout "us(altgr-intl),ru" -option "grp:caps_toggle,grp_led:scroll"
+
+```
+
 ### Using X configuration files
 
 **Note:** `xorg.conf` is parsed by the X server at start-up. To apply changes, restart X.

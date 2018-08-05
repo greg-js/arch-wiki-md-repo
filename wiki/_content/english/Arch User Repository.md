@@ -45,14 +45,15 @@ A good number of new packages that enter the official repositories start in the 
     *   [8.5 What is the difference between the Arch User Repository and the community repository?](#What_is_the_difference_between_the_Arch_User_Repository_and_the_community_repository.3F)
     *   [8.6 Foo in the AUR is outdated; what should I do?](#Foo_in_the_AUR_is_outdated.3B_what_should_I_do.3F)
     *   [8.7 Foo in the AUR does not compile when I run makepkg; what should I do?](#Foo_in_the_AUR_does_not_compile_when_I_run_makepkg.3B_what_should_I_do.3F)
-    *   [8.8 How do I create a PKGBUILD?](#How_do_I_create_a_PKGBUILD.3F)
-    *   [8.9 I have a PKGBUILD I would like to submit; can someone check it to see if there are any errors?](#I_have_a_PKGBUILD_I_would_like_to_submit.3B_can_someone_check_it_to_see_if_there_are_any_errors.3F)
-    *   [8.10 How to get a PKGBUILD into the community repository?](#How_to_get_a_PKGBUILD_into_the_community_repository.3F)
-    *   [8.11 How can I speed up repeated build processes?](#How_can_I_speed_up_repeated_build_processes.3F)
-    *   [8.12 What is the difference between foo and foo-git packages?](#What_is_the_difference_between_foo_and_foo-git_packages.3F)
-    *   [8.13 Why has foo disappeared from the AUR?](#Why_has_foo_disappeared_from_the_AUR.3F)
-    *   [8.14 How do I find out if any of my installed packages disappeared from AUR?](#How_do_I_find_out_if_any_of_my_installed_packages_disappeared_from_AUR.3F)
-    *   [8.15 How can I obtain a list of all AUR packages?](#How_can_I_obtain_a_list_of_all_AUR_packages.3F)
+    *   [8.8 ERROR: One or more PGP signatures could not be verified!; what should I do?](#ERROR:_One_or_more_PGP_signatures_could_not_be_verified.21.3B_what_should_I_do.3F)
+    *   [8.9 How do I create a PKGBUILD?](#How_do_I_create_a_PKGBUILD.3F)
+    *   [8.10 I have a PKGBUILD I would like to submit; can someone check it to see if there are any errors?](#I_have_a_PKGBUILD_I_would_like_to_submit.3B_can_someone_check_it_to_see_if_there_are_any_errors.3F)
+    *   [8.11 How to get a PKGBUILD into the community repository?](#How_to_get_a_PKGBUILD_into_the_community_repository.3F)
+    *   [8.12 How can I speed up repeated build processes?](#How_can_I_speed_up_repeated_build_processes.3F)
+    *   [8.13 What is the difference between foo and foo-git packages?](#What_is_the_difference_between_foo_and_foo-git_packages.3F)
+    *   [8.14 Why has foo disappeared from the AUR?](#Why_has_foo_disappeared_from_the_AUR.3F)
+    *   [8.15 How do I find out if any of my installed packages disappeared from AUR?](#How_do_I_find_out_if_any_of_my_installed_packages_disappeared_from_AUR.3F)
+    *   [8.16 How can I obtain a list of all AUR packages?](#How_can_I_obtain_a_list_of_all_AUR_packages.3F)
 *   [9 See also](#See_also)
 
 ## Getting started
@@ -363,6 +364,14 @@ You are probably missing something trivial.
 Be sure to first read the PKGBUILD and the comments on the AUR page of the package in question. The reason might not be trivial after all. Custom CFLAGS, LDFLAGS and MAKEFLAGS can cause failures. It is also possible that the PKGBUILD is broken for everyone. If you cannot figure it out on your own, just report it to the maintainer e.g. by posting the errors you are getting in the comments on the AUR page.
 
 To check if the PKGBUILD is broken, or your system is misconfigured, consider building in a clean chroot. It will build your package in a clean Arch Linux environment, with only (build) dependencies installed, and without user customization. Do do this [install](/index.php/Install "Install") [devtools](https://www.archlinux.org/packages/?name=devtools) and run `extra-x86_64-build` instead of `makepkg`. For [multilib](/index.php/Multilib "Multilib") packages, run `multilib-build` See [DeveloperWiki:Building in a Clean Chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot") for more information. If the build process still fails in a clean chroot, the issue is probably with the PKGBUILD.
+
+### ERROR: One or more PGP signatures could not be verified!; what should I do?
+
+Most likely you do not have the required public key(s) in you personal keyring to verify downloaded files. If one or more .sig files are downloaded while building the package, [*makepkg* will automatically verify corresponding file(s) with the public key of its signer.](/index.php/Makepkg#Signature_checking "Makepkg") If you do not have the required key in your personal keyring, *makepkg* will fail to do the verification.
+
+The recommended way to deal with this problem is to import the required public key, either [manually](/index.php/GnuPG#Import_a_public_key "GnuPG") or [from a key server](/index.php/GnuPG#Use_a_keyserver "GnuPG"). Often, you can simply find the fingerprint of the needed public key(s) in the [validpgpkeys](/index.php/PKGBUILD#validpgpkeys "PKGBUILD") section of the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
+
+The less secure way to deal with this is to skip the verification of PGP signatures completely by using the `--skippgpcheck` option in [*makepkg*](/index.php/Makepkg "Makepkg").
 
 ### How do I create a PKGBUILD?
 

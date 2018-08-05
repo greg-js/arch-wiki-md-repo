@@ -48,7 +48,7 @@ Related articles
 
 *   Adds a much recent version of SeaBIOS.
 *   Adds SeaBIOS payload of coreboot to Chrome OS devices that did not shipped with SeaBIOS.
-*   Possibility of using a [UEFI](/index.php/UEFI "UEFI") coreboot payload (only with MrChromebox's custom firmware).
+*   Option of using a [UEFI](/index.php/UEFI "UEFI") coreboot payload (with MrChromebox's custom firmware).
 *   Reduce boot time.
 *   Remove developer Mode screen.
 *   Enables VMX in models in which it is not active by default.
@@ -66,7 +66,7 @@ There are several approaches for flashing a custom firmware:
 
 *   Use MrChromebox's [Firmware Utility Script](https://mrchromebox.tech/#fwscript).
 *   Use John Lewis' script.
-*   Manually with `flashrom`, in this case you will need to obtain the firmware by yourself or to compile it from the Coreboot sources ([official](http://www.coreboot.org/Download_coreboot) or [Chromium OS fork](https://chromium.googlesource.com/chromiumos/third_party/coreboot/)).
+*   Manually with `flashrom`, in this case you will need to obtain the firmware by yourself or to compile it from the coreboot sources ([official](http://www.coreboot.org/Download_coreboot) or [Chromium OS fork](https://chromium.googlesource.com/chromiumos/third_party/coreboot/)).
 
 **Note:** With Linux kernel versions greater than 4.4, CONFIG_IO_STRICT_DEVMEM a new kernel security measure can make flashrom stop working, in that case you can try adding "iomem=relaxed" to your kernel parameters. [[2]](https://www.flashrom.org/FAQ#What_can_I_do_about_.2Fdev.2Fmem_errors.3F﻿).
 
@@ -97,7 +97,7 @@ The current major limitation of this firmware is the lack of proper UEFI NVRAM s
 *   Automatically downloads statically compiled 64-bit versions of chromium `flashrom`, `cbfstool`, and `gbb_utility`.
 *   Automatically detects your device/board name, current firmware, and hardware write-protect state
 *   Provides the option to backup your current firmware on USB (when flashing full/custom UEFI firmware).
-*   Disables software write protection by running `# ./flashrom --wp-disable` and clears the write-protect range (when needed).
+*   Automatically disables, clears, sets, and enables the software write protection as needed.
 *   Provides choice between RW_LEGACY, BOOT_STUB, and UEFI Full ROM firmware (types available vary based on device).
 *   Provides the ability to set the stock firmware's GBB flags outside of ChromeOS
 *   Provides the ability to remove the white Developer Mode splash screen (select models only)
@@ -249,7 +249,7 @@ Chrome OS already includes `flashrom`.
 ### Recommended reading about unbricking
 
 *   Flashrom's wiki pages on [ISP](http://flashrom.org/ISP), [Bus Pirate](http://flashrom.org/Bus_Pirate), [Raspberry Pi](http://flashrom.org/RaspberryPi) and [SOIC8](http://flashrom.org/Technology#SO8.2FSOIC8:_Small-Outline_Integrated_Circuit.2C_8_pins).
-*   [Coreboot's wiki page on Chromebooks](http://www.coreboot.org/Chromebooks).
+*   [coreboot's wiki page on Chromebooks](http://www.coreboot.org/Chromebooks).
 *   Examples of unbricking the C720: [guide](http://www.tnhh.net/2014/08/25/unbricking-chromebook-with-beaglebone.html), [pictures](https://drive.google.com/folderview?id=0B9f62MH0umbmRTA2Xzd5WHhjWEU&usp=sharing).
 *   Example of unbricking HP Chromebox: [guide](https://pomozok.wordpress.com/2015/01/10/chromebook-vivisection-readingwriting-rom-chip-data/)
 
@@ -257,36 +257,38 @@ Chrome OS already includes `flashrom`.
 
 **Note:** The information on this topic only intended to give you the basic understanding on the write protection feature in your Chromebook. The ArchWiki is not the place for detailed hardware hacking guides so there is no sense in expanding this topic.
 
-The firmware (Coreboot and its payloads) stored on a SPI chip (usually SOIC8) that some of its storage is protected from writing (mostly Coreboot).
+The firmware (coreboot and its payloads) is stored on a SPI flash chip (usually SOIC8), portions of which are protected from writing by a combination of hardware and software measures.
 
-As long as the write protection was not disabled or the protected range was not set to (0,0) any change made to the unprotected part of the firmware (mainly SeaBIOS) should be recoverable with Chrome OS recovery media.
+As long as the write protection has not been disabled and the protected range not cleared (set to 0,0), any changes made to the unprotected (RW) parts of the firmware (mainly SeaBIOS) can be reverted via either a booted Chrome OS install or Chrome OS recovery media.
 
-There are two parts of the write protection: hardware and software.
+There are two parts to the firmware write protection: hardware and software.
 
 ### Hardware write protection
 
-The hardware write protection is an electrical circuit that when it's closed or open it prevent writing to the software protection special registers, thus the hardware write protection only protect directly these special registers but indirectly also the data in the firmware chip.
+The hardware write protection is an electrical circuit which prevents writing to the software protection special registers; it's normally enforced by the grounding of the !WP pin on the SOIC8 chip. Thus the hardware write protection only protects directly these special registers, but indirectly also the data in the firmware chip.
 
-To disable the hardware write protection you may need to remove a screw, press a switch or short a jumper.
+Early Chromebook models (2012-2013) used a jumper or switch to implement hardware write protection. Most models from 2014-2017 used a screw, and Kabylake/Apollolake (and newer) models from 2017 on use the battery sense line (so disconnecting the battery is necessary to disable the hardware write protect).
 
 ### Software write protection
 
-The software write protection are special registers which determining if the data stored in the firmware chip is protected and also holds the range of addresses of the protected data.
+The software write protection is implemented via a special register on the firmware chip, which contain an enabled/disabled flag, as well as one or more ranges of addresses to be protected / marked as read-only.
 
 ### Understanding the Process of Disabling the Write Protection
 
-To disable the write protection one would need to:
+To fully disable the write protection one would need to:
 
 *   Disable the hardware write protection of the special software register.
-*   Change the value of the special software register to disable software write protection or change the range of the protected addresses so no data will be protected (start and end at 0).
+*   Change the value of the special software register to disable software write protection, and clear the range of the protected addresses so no data will be protected (start and end at 0).
 
-Conclusion: If we will disable the software write protection and will not enable it back, then even if we will enable the hardware write protection the firmware chip will stay unprotected.
+Conclusion: If one disables the software write protection and does not enable it back, then even if the hardware write protection is re-enabled, the firmware chip will remain unprotected.
 
 #### Disabling the hardware write protection
 
-To find the location of the hardware write-protect screw/switch/jumper and how to disable it visit the ArchWiki page for your Chromebook model (see [Chromebook Models](/index.php/Chromebook#Chromebook_Models "Chromebook")). If there is no information about your device on the ArchWiki then turn to [Developer Information for Chrome OS Devices](http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices) and [Coreboot's Chromebooks page](http://www.coreboot.org/Chromebooks).
+To find the location of the hardware write-protect screw/switch/jumper and how to disable it visit the ArchWiki page for your Chromebook model (see [Chromebook Models](/index.php/Chromebook#Chromebook_Models "Chromebook")). If there is no information about your device on the ArchWiki then turn to [Developer Information for Chrome OS Devices](http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices) and [coreboot's Chromebooks page](http://www.coreboot.org/Chromebooks).
 
 #### Disabling the software write protection
+
+**Note:** If using MrChromebox's Firmware Utility Script to flash the firmware or set the GBB flags on your device, it is not necessary (nor recommended) to manually disable the software write protection. The Firmware Utility Script will automatically disable/clear/set/enable the software write protection as required.
 
 Chromium OS's `flashrom` can manipulate the software write protection special registers.
 

@@ -367,9 +367,9 @@ gtk-primary-button-warps-slider = false
 
 ### Disable overlay scrollbars
 
-Since GTK+ 3.15, overlay scrollbars are enabled by default, meaning that scrollbars will be shown only on mouseover in GTK+ 3 applications. This behavior can be reverted by setting the following environment variable: `GTK_OVERLAY_SCROLLING=0`.
+Since GTK+ 3.15, overlay scrollbars are enabled by default, meaning that scrollbars will be shown only on mouseover in GTK+ 3 applications. This behavior can be reverted by setting the following environment variable: `GTK_OVERLAY_SCROLLING=0`. See [Environment variables#Graphical applications](/index.php/Environment_variables#Graphical_applications "Environment variables").
 
-See [Environment variables#Graphical applications](/index.php/Environment_variables#Graphical_applications "Environment variables").
+GTK+ 4 will no longer support `GTK_OVERLAY_SCROLLING`. It has already been [dropped](https://github.com/GNOME/gtk/commit/e49615184a9d85bb0bb4e289b3ee8252adee3813#diff-3cf94c6e1eb009e20985034bc2210bfd) from master. As of GTK+ 4, the overlay nature of the scrollbars is part of the toolkit. The blanket toggle has been removed to prevent developers from breaking applications that haven't been tested with both combinations. To allow application developers to decide what their applications should look like, the toolkit instead provides a mechanism to opt-out or add a setting for users. The function [gtk_scrolled_window_set_overlay_scrolling()](https://developer.gnome.org/gtk3/stable/GtkScrolledWindow.html#gtk-scrolled-window-set-overlay-scrolling) can be used to enable/disable overlay scrolling on a *per-application* basis. Application developers can optionally use [GSettings](https://blog.gtk.org/2017/05/01/first-steps-with-gsettings/) to have a user setting bound to the property.
 
 #### Remove overlay scroll indicators
 
@@ -384,7 +384,7 @@ undershoot.top, undershoot.right, undershoot.bottom, undershoot.left { backgroun
 
 ### Hide CSD buttons
 
-Add `gtk-decoration-layout=menu:close` to `~/.config/gtk-3.0/settings.ini` to remove minimize and maximize buttons. See [[3]](https://developer.gnome.org/gtk3/3.22/GtkSettings.html#GtkSettings--gtk-decoration-layout)
+Add `gtk-decoration-layout=menu:close` to `~/.config/gtk-3.0/settings.ini` to remove minimize and maximize buttons. [[3]](https://developer.gnome.org/gtk3/3.22/GtkSettings.html#GtkSettings--gtk-decoration-layout)
 
 ## GDK backends
 

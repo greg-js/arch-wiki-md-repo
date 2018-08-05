@@ -221,8 +221,9 @@ To set the timezone automatically based on the IP address location, one can use 
 *   [http://ip-api.com/](http://ip-api.com/)
 *   [https://ipstack.com/](https://ipstack.com/)
 *   [https://timezoneapi.io/](https://timezoneapi.io/)
+*   [https://ipdata.co](https://ipdata.co)
 
-Alternatively, the tool [tzupdate](https://aur.archlinux.org/packages/tzupdate/) automatically sets the timezone based on the geolocation of the IP address.
+Alternatively, the tool [tzupdate](https://aur.archlinux.org/packages/tzupdate/) automatically sets the timezone based on the geolocation of the IP address. This [comparison of the most popular IP geolocation apis](https://medium.com/@ipdata_co/what-is-the-best-commercial-ip-geolocation-api-d8195cda7027) may be helpful in deciding which API to use in production.
 
 ## Time skew
 

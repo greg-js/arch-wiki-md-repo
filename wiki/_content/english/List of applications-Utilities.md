@@ -758,13 +758,17 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[https://scratch.mit.edu/](https://scratch.mit.edu/) || [scratch](https://www.archlinux.org/packages/?name=scratch)
 
-*   **[Spyder](https://en.wikipedia.org/wiki/Spyder_(software) "wikipedia:Spyder (software)")** — Scientific PYthon Development EnviRonment providing MATLAB-like features.
+*   **[Spyder](https://en.wikipedia.org/wiki/Spyder_(software) "wikipedia:Spyder (software)")** — Scientific Python Development Environment providing MATLAB-like features.
 
 	[https://github.com/spyder-ide/spyder](https://github.com/spyder-ide/spyder) || [spyder2](https://www.archlinux.org/packages/?name=spyder2) (Python 2) or [spyder3](https://www.archlinux.org/packages/?name=spyder3) (Python 3)
 
-*   **Thonny** — Python IDE for beginners.
+*   **[Thonny](https://en.wikipedia.org/wiki/Thonny "wikipedia:Thonny")** — Python IDE for beginners.
 
 	[http://thonny.org/](http://thonny.org/) || [thonny](https://aur.archlinux.org/packages/thonny/)
+
+*   **[WingIDE](https://en.wikipedia.org/wiki/Wing_IDE "wikipedia:Wing IDE")** — Proprietary python development environment. It is fully featured and meant for professional use.
+
+	[http://www.wingware.com](http://www.wingware.com) || [wingide](https://aur.archlinux.org/packages/wingide/)
 
 #### GUI builders
 

@@ -233,9 +233,13 @@ These applications support time, task and contacts management.
 
 ##### Console
 
-*   **DevTodo** — Is a small command line application for maintaining lists of tasks.
+*   **DevTodo** — Small command line application for maintaining lists of tasks.
 
 	[http://swapoff.org/devtodo1.html](http://swapoff.org/devtodo1.html) || [devtodo](https://aur.archlinux.org/packages/devtodo/)
+
+*   **Taskbook** — Tasks, boards & notes for the command-line habitat.
+
+	[https://github.com/klauscfhq/taskbook](https://github.com/klauscfhq/taskbook) || [taskbook](https://aur.archlinux.org/packages/taskbook/)
 
 *   **[Taskwarrior](https://en.wikipedia.org/wiki/Taskwarrior "wikipedia:Taskwarrior")** — Command-line To-do list application with support for lua customization and more.
 

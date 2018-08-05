@@ -80,7 +80,7 @@ The kernels and initramfs files need to be accessible by the [boot loader](/inde
 
 The simplest scenarios for mounting EFI system partition are:
 
-*   [mount](/index.php/Mount "Mount") ESP to `/boot/efi` and use a [boot loader](/index.php/Boot_loader "Boot loader") which has a driver for your root file system (eg. [GRUB](/index.php/GRUB "GRUB"), [rEFInd](/index.php/REFInd "REFInd")).
+*   [mount](/index.php/Mount "Mount") ESP to `/efi` and use a [boot loader](/index.php/Boot_loader "Boot loader") which has a driver for your root file system (eg. [GRUB](/index.php/GRUB "GRUB"), [rEFInd](/index.php/REFInd "REFInd")).
 *   [mount](/index.php/Mount "Mount") ESP to `/boot`. This is the preferred method when directly booting a [EFISTUB](/index.php/EFISTUB "EFISTUB") kernel from UEFI.
 
 ### Alternative mount points
@@ -99,7 +99,17 @@ If you do not use one of the simple methods from [#Mount the partition](#Mount_t
 
 Furthermore, you will need to keep the files on the ESP up-to-date with later kernel updates. Failure to do so could result in an unbootable system. The following sections discuss several mechanisms for automating it.
 
-**Note:** If ESP is mounted to `/efi`, make sure to not rely on automount mechanism by *systemd-gpt-auto-generator*. Always have it mounted manually or using `/etc/fstab` prior to the any system or kernel update, otherwise you may not be able to mount it after the update, locking you in the currently running kernel with no ability to update the copy of kernel on ESP.
+**Note:** If ESP is not mounted to `/boot`, make sure to not rely on the [systemd automount mechanism](/index.php/Fstab#Automount_with_systemd "Fstab") (including that of [systemd-gpt-auto-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-gpt-auto-generator.8)). Always have it mounted manually prior to the any system or kernel update, otherwise you may not be able to mount it after the update, locking you in the currently running kernel with no ability to update the copy of kernel on ESP.
+
+Alternatively [preload the required kernel modules on boot](/index.php/Kernel_module#Automatic_module_handling "Kernel module"), e.g.:
+
+ `/etc/modules-load.d/vfat.conf` 
+```
+vfat
+nls_cp437
+nls_iso8859-1
+
+```
 
 #### Using bind mount
 
