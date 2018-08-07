@@ -199,13 +199,13 @@ This is the main configuration file to configure the daemon itself. It defines b
 **Note:** The default behavior upstream can sometimes be confusing and some applications, unaware of this feature, can set their volume to 100% at startup, potentially blowing your speakers or your ears. This is why Arch defaults to the classic (ALSA) behavior by setting this to `no`.
  |<caption></caption>
 | realtime-scheduling | If your [kernel](/index.php/Kernel "Kernel") supports realtime scheduling (for instance, [Realtime kernel](/index.php/Realtime_kernel "Realtime kernel") or [Linux-ck](/index.php/Linux-ck "Linux-ck")), set this to `yes` to ensure PulseAudio can deliver low-latency glitch-free playback. You can adjust `realtime-priority` as well to have it use the correct priority, especially when [JACK](/index.php/JACK "JACK") is also running on the system. |<caption></caption>
-| nice-level | Since PulseAudio runs in userspace and involves inter-process communication, audio can be subject to dropouts if the daemon doesn't have enough CPU time to process the audio. The default usually is enough, but can be tweaked to give pulse the wanted priority over (or below) other applications. |<caption></caption>
+| nice-level | Since PulseAudio runs in userspace and involves inter-process communication, audio can be subject to dropouts if the daemon does not have enough CPU time to process the audio. The default usually is enough, but can be tweaked to give pulse the wanted priority over (or below) other applications. |<caption></caption>
 | exit-idle-time | If you want to run PulseAudio only when needed and use ALSA otherwise, you can set a delay in seconds after which the daemon will automatically shutdown after all clients are disconnected. Set it to -1 to disable this feature. |<caption></caption>
 | log-level | When debugging, you may want to increase the logging level of the daemon to see exactly why a specific module fails to load. High logging levels will sometimes print useful information such as detected minimum latency for the system, which can then be used to tweak `default-fragments` and `default-fragment-size-msec`. |<caption></caption>
-| default-sample-format | Usually doesn't need change, but if your sound card's native format is diffent performance and quality can be improved by setting the right format here. |<caption></caption>
-| default-sample-rate | The default sample rate user by pulse unless overriden at module level. Change this if your sound card doesn't support 44100Hz or if you wish to upsample all audio. See previous note about CPU usage. |<caption></caption>
-| alternate-sample-rate | To fix a common limitation where movies at 48000Hz were needlessly downsampled to 44100Hz, some modules support changing their sample rate dynamically to avoid resampling when possible. See manual for more in-depth information. Usually don't need any change. |<caption></caption>
-| default-channels | The default number of channels when not specified. Usually don't need any change as you can configure more channels on per-module basis. |<caption></caption>
+| default-sample-format | Usually does not need change, but if your sound card's native format is diffent performance and quality can be improved by setting the right format here. |<caption></caption>
+| default-sample-rate | The default sample rate user by pulse unless overriden at module level. Change this if your sound card does not support 44100Hz or if you wish to upsample all audio. See previous note about CPU usage. |<caption></caption>
+| alternate-sample-rate | To fix a common limitation where movies at 48000Hz were needlessly downsampled to 44100Hz, some modules support changing their sample rate dynamically to avoid resampling when possible. See manual for more in-depth information. Usually do not need any change. |<caption></caption>
+| default-channels | The default number of channels when not specified. Usually do not need any change as you can configure more channels on per-module basis. |<caption></caption>
 | default-fragments | Audio samples are split into multiple fragments of `default-fragment-size-msec` each. The larger the buffer is, the less likely audio will skip when the system is overloaded. On the downside this will increase the overall latency. Increase this value if you have issues. |<caption></caption>
 | default-fragment-size-msec | The size in milliseconds of each fragment. This is the amount of data that will be processed at once by the daemon. TODO: Verify |
 
@@ -394,6 +394,14 @@ Install [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-
 
 OpenAL Soft should use PulseAudio by default, but can be explicitly configured to do so: `/etc/openal/alsoft.conf`  `drivers=pulse,alsa` 
 
+By default, OpenAL does not allow pulseaudio to move audio streams to a different device. To change this, add the allow-moves option:
+
+ `/etc/openal/alsoft.conf` 
+```
+[pulse]
+allow-moves=true
+```
+
 ### libao
 
 Edit the libao configuration file:
@@ -494,7 +502,7 @@ $ nyxmms2 server config output.plugin alsa
 To make xmms2 use a different output sink, e.g.
 
 ```
- $ nyxmms2 server config pulse.sink alsa_output.pci-0000_04_01.0.analog-stereo.monitor
+$ nyxmms2 server config pulse.sink alsa_output.pci-0000_04_01.0.analog-stereo.monitor
 
 ```
 
@@ -553,12 +561,12 @@ Play sound through the outputs of another computer on the network
 
 ### Basic setup with direct connection
 
-##### On the server
+#### On the server
 
 Edit `~/.config/pulse/default.pa` or `/etc/pulse/default.pa` (or `/etc/pulse/system.pa` if PulseAudio is started in system mode) and add the following line:
 
 ```
- load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1;172.16.0.0/16
+load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1;172.16.0.0/16
 
 ```
 
@@ -567,7 +575,7 @@ Here only client from the IPs or IPs range specified here can stream sound.
 To allow access from everywhere:
 
 ```
- load-module module-native-protocol-tcp auth-anonymous=true
+load-module module-native-protocol-tcp auth-anonymous=true
 
 ```
 
@@ -575,12 +583,12 @@ To allow access from everywhere:
 
 By default PulseAudio listens on port `tcp/4713` for incoming connections, you may need to open this port in your [firewall](/index.php/Firewall "Firewall").
 
-##### On the client
+#### On the client
 
 Edit `~/.config/pulse/client.conf` or `/etc/pulse/client.conf`, to respectively apply this directive to one user or to all, and add :
 
 ```
- default-server = *server-address*
+default-server = *server-address*
 
 ```
 
@@ -594,10 +602,10 @@ It is also possible to set the server address in the environment variable `$PULS
 
 [Bind](/index.php/Xorg_keybinding "Xorg keybinding") the following commands to your volume keys: `XF86AudioRaiseVolume`, `XF86AudioLowerVolume`, `XF86AudioMute`.
 
-First find out which sink corresponds to the audio output you'd like to control. To list available sinks:
+First find out which sink corresponds to the audio output you would like to control. To list available sinks:
 
 ```
-pactl list sinks short
+$ pactl list sinks short
 
 ```
 
@@ -611,21 +619,21 @@ sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%"
 To lower the volume:
 
 ```
-sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%"
+$ sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%"
 
 ```
 
 To mute/unmute the volume:
 
 ```
-pactl set-sink-mute 0 toggle
+$ pactl set-sink-mute 0 toggle
 
 ```
 
 To mute/unmute the microphone:
 
 ```
-pactl set-source-mute 1 toggle
+$ pactl set-source-mute 1 toggle
 
 ```
 
@@ -636,7 +644,7 @@ pactl set-source-mute 1 toggle
 Set `XDG_RUNTIME_DIR` before the command (replace `*user_id*` with the ID of the user running PulseAudio):
 
 ```
-XDG_RUNTIME_DIR=/run/user/*user_id* paplay /usr/share/sounds/freedesktop/stereo/complete.oga
+$ XDG_RUNTIME_DIR=/run/user/*user_id* paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 
 ```
 
@@ -652,15 +660,15 @@ Or use `machinectl`:
 To get pulseaudio to handle X11 bell events, run the following commands after the X11 session has been started:
 
 ```
-pactl upload-sample /usr/share/sounds/freedesktop/stereo/bell.oga x11-bell
-pactl load-module module-x11-bell sample=x11-bell display=$DISPLAY
+$ pactl upload-sample /usr/share/sounds/freedesktop/stereo/bell.oga x11-bell
+$ pactl load-module module-x11-bell sample=x11-bell display=$DISPLAY
 
 ```
 
 To adjust the volume of the X11 bell, run the following command:
 
 ```
-xset b 100
+$ xset b 100
 
 ```
 

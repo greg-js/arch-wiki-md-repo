@@ -10,7 +10,7 @@ Related articles
 
 The [Unified Extensible Firmware Interface](http://www.uefi.org/) (UEFI or EFI for short) is a new model for the interface between operating systems and firmware. It provides a standard environment for booting an operating system and running pre-boot applications.
 
-It is distinct from the commonly used "[MBR boot code](/index.php/Partitioning#Master_Boot_Record_.28bootstrap_code.29 "Partitioning")" method followed for [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") systems. See [Arch boot process](/index.php/Arch_boot_process "Arch boot process") for their differences and the boot process using UEFI. To set up UEFI Boot Loaders, see [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders").
+It is distinct from the commonly used "[MBR boot code](/index.php/Partitioning#Master_Boot_Record_.28bootstrap_code.29 "Partitioning")" method followed for [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") systems. See [Arch boot process](/index.php/Arch_boot_process "Arch boot process") for their differences and the boot process using UEFI. To set up UEFI boot loaders, see [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders").
 
 ## Contents
 
@@ -55,19 +55,19 @@ It is distinct from the commonly used "[MBR boot code](/index.php/Partitioning#M
 *   Unless specified as EFI 1.x, EFI and UEFI terms are used interchangeably to denote UEFI 2.x firmware.
 *   Apple's EFI implementation is neither a EFI 1.x version nor UEFI 2.x version but mixes up both. This kind of firmware does not fall under any one (U)EFI specification and therefore is not a standard UEFI firmware. Unless stated explicitly, these instructions are general and some of them may not work or may be different in [Apple Macs](/index.php/MacBook "MacBook").
 
-The latest UEFI Specification can be found at [http://uefi.org/specifications](http://uefi.org/specifications).
+The latest UEFI specification can be found at [http://uefi.org/specifications](http://uefi.org/specifications).
 
 ## UEFI firmware bitness
 
-Under UEFI, every program whether it is an OS loader or a utility (e.g. a memory testing app or recovery tool), should be a EFI Application corresponding to the UEFI firmware bitness/architecture.
+Under UEFI, every program whether it is an OS loader or a utility (e.g. a memory testing app or recovery tool), should be a EFI application corresponding to the UEFI firmware bitness/architecture.
 
-The vast majority of UEFI firmwares, including recent Apple Macs, use x86_64 UEFI firmware. The only known devices that use IA32 (32-bit) UEFI are older (pre 2008) Apple Macs, some Intel Cloverfield ultrabooks and some older Intel Server boards that are known to operate on Intel EFI 1.10 firmware.
+The vast majority of UEFI firmwares, including recent Apple Macs, use x86_64 UEFI firmware. The only known devices that use IA32 (32-bit) UEFI are older (pre 2008) Apple Macs, some Intel Cloverfield ultrabooks and some older Intel server boards that are known to operate on Intel EFI 1.10 firmware.
 
 An x86_64 UEFI firmware does not include support for launching 32-bit EFI applications (unlike x86_64 Linux and Windows versions which include such support). Therefore the EFI application must be compiled for that specific firmware processor bitness/architecture.
 
 ### Non Macs
 
-Check whether the dir `/sys/firmware/efi` exists, if it exists it means the kernel has booted in UEFI mode. In that case the UEFI bitness is same as kernel bitness.
+Check whether the directory `/sys/firmware/efi` exists, if it exists it means the kernel has booted in UEFI mode. In that case the UEFI bitness is same as kernel bitness.
 
 **Note:** Intel Atom System-on-Chip systems ship with 32-bit UEFI (as on 2 November 2013). See [#Booting 64-bit kernel on 32-bit UEFI](#Booting_64-bit_kernel_on_32-bit_UEFI) for more info. Also see [this Intel blog post](https://software.intel.com/en-us/blogs/2015/07/22/why-cheap-systems-run-32-bit-uefi-on-x64-systems).
 
@@ -82,7 +82,7 @@ $ ioreg -l -p IODeviceTree | grep firmware-abi
 
 ```
 
-If the command returns EFI32 then it is IA32 (32-bit) EFI firmware. If it returns EFI64 then it is x86_64 EFI firmware. Most of the Macs do not have UEFI 2.x firmware as Apple's EFI implementation is not fully compliant with UEFI 2.x Specification.
+If the command returns EFI32 then it is IA32 (32-bit) EFI firmware. If it returns EFI64 then it is x86_64 EFI firmware. Most of the Macs do not have UEFI 2.x firmware as Apple's EFI implementation is not fully compliant with UEFI 2.x specification.
 
 ## Linux kernel config options for UEFI
 
@@ -97,7 +97,7 @@ CONFIG_FRAMEBUFFER_CONSOLE=y
 
 ```
 
-UEFI Runtime Variables Support (**efivarfs** filesystem - `/sys/firmware/efi/efivars`). This option is important as this is required to manipulate UEFI Runtime Variables using tools like `/usr/bin/efibootmgr`. The below config option has been added in kernel 3.10 and above.
+UEFI Runtime Variables Support (**efivarfs** filesystem - `/sys/firmware/efi/efivars`). This option is important as this is required to manipulate UEFI runtime variables using tools like `/usr/bin/efibootmgr`. The below config option has been added in kernel 3.10 and above.
 
 ```
 CONFIG_EFIVAR_FS=y
@@ -111,20 +111,20 @@ CONFIG_EFI_VARS=n
 
 ```
 
-GUID Partition Table [GPT](/index.php/GPT "GPT") config option - mandatory for UEFI support
+[GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") (GPT) config option - mandatory for UEFI support
 
 ```
 CONFIG_EFI_PARTITION=y
 
 ```
 
-**Note:** All of the above options are required to boot Linux via UEFI, and are enabled in Archlinux kernels in official repos.
-
 Retrieved from [https://www.kernel.org/doc/Documentation/x86/x86_64/uefi.txt](https://www.kernel.org/doc/Documentation/x86/x86_64/uefi.txt).
+
+**Note:** All of the above options are required to boot Linux via UEFI, and are enabled in Arch Linux [kernels](/index.php/Kernels "Kernels") in the official repositories.
 
 ## UEFI variables
 
-UEFI defines variables through which an operating system can interact with the firmware. UEFI Boot Variables are used by the boot-loader and used by the OS only for early system start-up. UEFI Runtime Variables allow an OS to manage certain settings of the firmware like the UEFI Boot Manager or managing the keys for UEFI Secure Boot Protocol etc. You can get the list using
+UEFI defines variables through which an operating system can interact with the firmware. UEFI boot variables are used by the boot loader and used by the OS only for early system start-up. UEFI runtime variables allow an OS to manage certain settings of the firmware like the UEFI boot manager or managing the keys for UEFI Secure Boot protocol etc. You can get the list using:
 
 ```
 $ efivar --list
@@ -142,14 +142,14 @@ Linux kernel exposes UEFI variables data to userspace via **efivarfs** (**EFI** 
 3.  EFI Runtime Services support should be present in the kernel (`CONFIG_EFI=y`, check if present with `zgrep CONFIG_EFI /proc/config.gz`).
 4.  EFI Runtime Services in the kernel SHOULD NOT be disabled via kernel cmdline, i.e. `noefi` kernel parameter SHOULD NOT be used.
 5.  `efivarfs` filesystem should be mounted at `/sys/firmware/efi/efivars`, otherwise follow [#Mount efivarfs](#Mount_efivarfs) section below.
-6.  `efivar` should list (option `-l`) the UEFI Variables without any error.
+6.  `efivar` should list (option `-l`) the UEFI variables without any error.
 
 If UEFI Variables support does not work even after the above conditions are satisfied, try the below workarounds:
 
-1.  If any userspace tool is unable to modify UEFI variables data, check for existence of `/sys/firmware/efi/efivars/dump-*` files. If they exist, delete them, reboot and retry again.
+1.  If any userspace tool is unable to modify UEFI variable data, check for existence of `/sys/firmware/efi/efivars/dump-*` files. If they exist, delete them, reboot and retry again.
 2.  If the above step does not fix the issue, try booting with `efi_no_storage_paranoia` kernel parameter to disable kernel UEFI variable storage space check that may prevent writing/modification of UEFI variables.
 
-**Note:** `efi_no_storage_paranoia` should only be used when needed and should not be left as a normal boot option. The effect of this kernel command line parameter turns off a safeguard that was put in place to help avoid the bricking of machines when the NVRAM gets too full.
+**Warning:** `efi_no_storage_paranoia` should only be used when needed and should not be left as a normal boot option. The effect of this kernel command line parameter turns off a safeguard that was put in place to help avoid the bricking of machines when the NVRAM gets too full.
 
 #### Mount efivarfs
 
@@ -168,7 +168,7 @@ See [efivarfs.txt](https://www.kernel.org/doc/Documentation/filesystems/efivarfs
 
 There are few tools that can access/modify the UEFI variables, namely
 
-*   **efivar** — Library and Tool to manipulate UEFI Variables (used by efibootmgr)
+*   **efivar** — Library and Tool to manipulate UEFI variables (used by efibootmgr)
 
 	[https://github.com/rhboot/efivar](https://github.com/rhboot/efivar) || [efivar](https://www.archlinux.org/packages/?name=efivar), [efivar-git](https://aur.archlinux.org/packages/efivar-git/)
 
@@ -194,7 +194,7 @@ There are few tools that can access/modify the UEFI variables, namely
 
 *   If *efibootmgr* does not work on your system, you can reboot into [#UEFI Shell](#UEFI_Shell) and use `bcfg` to create a boot entry for the bootloader.
 *   If you are unable to use `efibootmgr`, some UEFI firmwares allow users to directly manage UEFI boot entries from within its boot-time interface. For example, some firmwares have an "Add New Boot Option" choice which enables you to select a local EFI system partition and manually enter the EFI application location e.g. `\EFI\refind\refind_x64.efi`.
-*   The below commands use [rEFInd](/index.php/REFInd "REFInd") boot-loader as example.
+*   The below commands use [rEFInd](/index.php/REFInd "REFInd") boot manager as example.
 
 To add a new boot option using *efibootmgr* you need to know three things:
 
@@ -227,13 +227,13 @@ The UEFI Shell is a shell/terminal for the firmware which allows launching EFI a
 
 ### Obtaining UEFI Shell
 
-You can download a BSD licensed UEFI Shell from Intel's Tianocore UDK/EDK2 project:
+You can download a BSD licensed UEFI Shell from Intel's TianoCore UDK/EDK2 project:
 
-*   [AUR](/index.php/AUR "AUR") package [uefi-shell-git](https://aur.archlinux.org/packages/uefi-shell-git/) (recommended) - provides x86_64 Shell for x86_64 (64-bit) UEFI and IA32 Shell for IA32 (32-bit) UEFI - compiled directly from latest Tianocore EDK2 source
+*   [AUR](/index.php/AUR "AUR") package [uefi-shell-git](https://aur.archlinux.org/packages/uefi-shell-git/) (recommended) - provides x86_64 Shell for x86_64 (64-bit) UEFI and IA32 Shell for IA32 (32-bit) UEFI - compiled directly from latest TianoCore EDK2 source.
 *   There are copies of Shell v1 and Shell v2 in the EFI directory on the Arch install media image.
-*   [Precompiled UEFI Shell v2 binaries](https://github.com/tianocore/edk2/tree/master/ShellBinPkg) (may not be up-to-date)
-*   [Precompiled UEFI Shell v1 binaries](https://github.com/tianocore/edk2/tree/master/EdkShellBinPkg) (not updated anymore upstream)
-*   [Precompiled UEFI Shell v2 binary with bcfg modified to work with UEFI pre-2.3 firmware](https://ptpb.pw/~Shell2.zip) - from Clover EFI bootloader
+*   [Precompiled UEFI Shell v2 binaries](https://github.com/tianocore/edk2/tree/master/ShellBinPkg) (may not be up-to-date).
+*   [Precompiled UEFI Shell v1 binaries](https://github.com/tianocore/edk2/tree/master/EdkShellBinPkg) (not updated anymore upstream).
+*   [Precompiled UEFI Shell v2 binary with bcfg modified to work with UEFI pre-2.3 firmware](https://ptpb.pw/~Shell2.zip) - from Clover EFI bootloader.
 
 Shell v2 works best in UEFI 2.3+ systems and is recommended over Shell v1 in those systems. Shell v1 should work in all UEFI systems irrespective of the spec. version the firmware follows. More info at [ShellPkg](https://github.com/tianocore/tianocore.github.io/wiki/ShellPkg) and [this mail](http://edk2-devel.narkive.com/zCN4CEnb/inclusion-of-uefi-shell-in-linux-distro-iso).
 
@@ -362,7 +362,7 @@ Most of the 32-bit EFI Macs and some 64-bit EFI Macs refuse to boot from a UEFI(
 
 ```
 
-*   Then rebuild the ISO, excluding the UEFI Optical Media booting support, using `xorriso` from [libisoburn](https://www.archlinux.org/packages/?name=libisoburn). Be sure to set the correct archisolabel, e.g. "ARCH_201411" or similar:
+*   Then rebuild the ISO, excluding the UEFI optical media booting support, using `xorriso` from [libisoburn](https://www.archlinux.org/packages/?name=libisoburn). Be sure to set the correct archisolabel, e.g. "ARCH_201411" or similar:
 
 ```
 $ xorriso -as mkisofs -iso-level 3 \
@@ -382,7 +382,7 @@ $ xorriso -as mkisofs -iso-level 3 \
 
 ### Booting 64-bit kernel on 32-bit UEFI
 
-Official ISO ([Archiso](/index.php/Archiso "Archiso")) does not support booting on 32-bit (IA32) UEFI systems ([FS#53182](https://bugs.archlinux.org/task/53182)) since it uses EFISTUB (via [systemd-boot](/index.php/Systemd-boot "Systemd-boot") Boot Manager for menu) for booting the kernel in UEFI mode. To boot a 64-bit kernel with 32-bit UEFI you have to use a boot loader that does not rely on EFI boot stub for launching kernels.
+Official ISO ([Archiso](/index.php/Archiso "Archiso")) does not support booting on 32-bit (IA32) UEFI systems ([FS#53182](https://bugs.archlinux.org/task/53182)) since it uses EFISTUB (via [systemd-boot](/index.php/Systemd-boot "Systemd-boot") boot manager for menu) for booting the kernel in UEFI mode. To boot a 64-bit kernel with 32-bit UEFI you have to use a boot loader that does not rely on EFI boot stub for launching kernels.
 
 **Tip:** [Archboot](/index.php/Archboot "Archboot") iso supports booting on 32-bit (IA32) UEFI systems.
 
@@ -441,7 +441,7 @@ menuentry "Arch Linux archiso x86_64 UEFI USB" {
 
 ### OVMF for virtual machines
 
-[OVMF](https://tianocore.github.io/ovmf/) is a tianocore project to enable UEFI support for Virtual Machines. OVMF contains a sample UEFI firmware and a separate non-volatile variable store for QEMU.
+[OVMF](https://tianocore.github.io/ovmf/) is a TianoCore project to enable UEFI support for Virtual Machines. OVMF contains a sample UEFI firmware and a separate non-volatile variable store for QEMU.
 
 You can install [ovmf](https://www.archlinux.org/packages/?name=ovmf) from the extra repository.
 
@@ -469,7 +469,7 @@ $ qemu-system-x86_64 -enable-kvm -m 1G -drive if=pflash,format=raw,readonly,file
 
 ### DUET for BIOS only systems
 
-DUET is a tianocore project that enables chainloading a full UEFI environment from a BIOS system, in a way similar to BIOS OS booting. This method is being discussed extensively in [http://www.insanelymac.com/forum/topic/186440-linux-and-windows-uefi-boot-using-tianocore-duet-firmware/](http://www.insanelymac.com/forum/topic/186440-linux-and-windows-uefi-boot-using-tianocore-duet-firmware/). Pre-build DUET images can be downloaded from one of the repos at [https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer). Specific instructions for setting up DUET is available at [https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/blob/master/Migle_BootDuet_INSTALL.txt](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/blob/master/Migle_BootDuet_INSTALL.txt) .
+DUET is a TianoCore project that enables chainloading a full UEFI environment from a BIOS system, in a way similar to BIOS OS booting. This method is being discussed extensively in [http://www.insanelymac.com/forum/topic/186440-linux-and-windows-uefi-boot-using-tianocore-duet-firmware/](http://www.insanelymac.com/forum/topic/186440-linux-and-windows-uefi-boot-using-tianocore-duet-firmware/). Pre-build DUET images can be downloaded from one of the repos at [https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer). Specific instructions for setting up DUET is available at [https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/blob/master/Migle_BootDuet_INSTALL.txt](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/blob/master/Migle_BootDuet_INSTALL.txt) .
 
 You can also try [https://sourceforge.net/projects/cloverefiboot/](https://sourceforge.net/projects/cloverefiboot/) which provides modified DUET images that may contain some system specific fixes and is more frequently updated compared to the gitorious repos.
 
@@ -491,7 +491,7 @@ If you [dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot wit
 *   Ensure [Fast Startup](/index.php/Dual_boot_with_Windows#Fast_Start-Up "Dual boot with Windows") is disabled in your Windows power options
 *   Ensure [Secure Boot](/index.php/Secure_Boot "Secure Boot") is disabled in your BIOS (if you are not using a signed boot loader)
 *   Ensure your UEFI boot order does not have Windows Boot Manager set first e.g. using [#efibootmgr](#efibootmgr) and what you see in the configuration tool of the UEFI. Some motherboards override by default any settings set with efibootmgr by Windows if it detects it. This is confirmed in a Packard Bell laptop.
-*   If your motherboard is booting the default booth path (`\EFI\BOOT\BOOTX64.EFI`), this file may have been overwritten with the Windows boot loader. Try setting the correct boot path e.g. using [#efibootmgr](#efibootmgr).
+*   If your motherboard is booting the default boot path (`\EFI\BOOT\BOOTX64.EFI`), this file may have been overwritten with the Windows boot loader. Try setting the correct boot path e.g. using [#efibootmgr](#efibootmgr).
 *   If the previous steps do not work, you can tell the Windows boot loader to run a different EFI application. From a Windows Administrator command prompt: `# bcdedit /set "{bootmgr}" path "\EFI\*path*\*to*\*app.efi*"` 
 *   Alternatively, you can set a startup script in Windows that ensures that the boot order is set correctly every time you boot Windows.
     1.  Open a command prompt with admin privlages. Run `bcdedit /enum firmware` and find your desired boot entry.
@@ -536,7 +536,7 @@ After reboot, any entries added to NVRAM should show up in the boot menu.
 *   [LPC 2012 Plumbing UEFI into Linux](https://linuxplumbers.ubicast.tv/videos/plumbing-uefi-into-linux/)
 *   [LPC 2012 UEFI Tutorial : part 1](https://linuxplumbers.ubicast.tv/videos/uefi-tutorial-part-1/)
 *   [LPC 2012 UEFI Tutorial : part 2](https://linuxplumbers.ubicast.tv/videos/uefi-tutorial-part-2/)
-*   [Intel's Tianocore Project](http://www.tianocore.org/) for Open-Source UEFI firmware which includes DuetPkg for direct BIOS based booting and OvmfPkg used in QEMU and Oracle VirtualBox
+*   [Intel's TianoCore Project](http://www.tianocore.org/) for Open-Source UEFI firmware which includes DuetPkg for direct BIOS based booting and OvmfPkg used in QEMU and Oracle VirtualBox
 *   [FGA: The EFI boot process](https://jdebp.eu/FGA/efi-boot-process.html)
 *   [Microsoft's Windows and GPT FAQ](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq)
 *   [Convert Windows x64 from BIOS-MBR mode to UEFI-GPT mode without Reinstall](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/wikis/Windows_x64_BIOS_to_UEFI)

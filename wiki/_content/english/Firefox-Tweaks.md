@@ -149,7 +149,7 @@ This method has some drawbacks:
 
 Firefox stores the current session status (opened urls, cookies, history and form data) to the disk on a regular basis. It is used to recover a previous session in case of crash. The default setting is to save the session every 15 seconds, resulting in frequent disk access.
 
-To increase the save interval to 10 minutes for example, change in `about:config` the setting of `browser.sessionstore.interval` to `600000`
+To increase the save interval to 10 minutes (600000 milliseconds) for example, change in `about:config` the setting of `browser.sessionstore.interval` to `600000`
 
 To disable completely this feature, change `browser.sessionstore.resume_from_crash` to `false`
 
@@ -620,7 +620,9 @@ Once your container is booted, run the Xorg binary like so:
 
 ### Show search matches position in scroll bar
 
-This chrome feature can be achieved via [FindBar Tweak](https://addons.mozilla.org/firefox/addon/findbar-tweak/) extension.
+**Warning:** Not compatible with Firefox Quantum (version 57 and above).
+
+This Chrome-like feature can be added to Firefox via the [FindBar Tweak](https://addons.mozilla.org/firefox/addon/findbar-tweak/) extension.
 
 ### Disable WebRTC audio post processing
 

@@ -20,7 +20,7 @@
     *   [1.15 Rumania](#Rumania)
     *   [1.16 Rusia](#Rusia)
     *   [1.17 Serbia](#Serbia)
-    *   [1.18 España y América Latina)](#Espa.C3.B1a_y_Am.C3.A9rica_Latina.29)
+    *   [1.18 España y América Latina](#Espa.C3.B1a_y_Am.C3.A9rica_Latina)
     *   [1.19 Suecia](#Suecia)
     *   [1.20 Taiwán](#Taiw.C3.A1n)
     *   [1.21 Turquía](#Turqu.C3.ADa)
@@ -132,12 +132,13 @@ Esta lista no está en ninguna manera completa. Si sabe de una comunidad que no 
 *   Foro: [http://bbs.archlinux.rs/](http://bbs.archlinux.rs/)
 *   Wiki: [http://wiki.archlinux.rs/](http://wiki.archlinux.rs/)
 
-### España y América Latina)
+### España y América Latina
 
 *   Página principal: [http://www.archlinux-es.org/](http://www.archlinux-es.org/)
 *   Foro: [http://foros.archlinux-es.org/](http://foros.archlinux-es.org/)
 *   Wiki: [Main page (Español)](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)")
 *   Planeta: [http://planeta.archlinux-es.org](http://planeta.archlinux-es.org)
+*   ArchlinuxLatinoamerica: [https://archlinuxlatinoamerica.wordpress.com/](https://archlinuxlatinoamerica.wordpress.com/)
 
 ### Suecia
 

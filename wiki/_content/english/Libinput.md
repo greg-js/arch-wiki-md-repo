@@ -217,7 +217,9 @@ done
 
 ### Change touchpad sensitivity
 
-To change the pressure at which the touchpad is registered, follow [this article](https://wayland.freedesktop.org/libinput/doc/latest/touchpad_pressure.html#touchpad_pressure_hwdb) in the upstream documentation.
+The method of finding the correct thresholds for when libinput registers a touch as DOWN and back UP again can be found [[2]](https://wayland.freedesktop.org/libinput/doc/latest/touchpad-pressure.html) in the upstream documentation. Their method of setting the sensitivity, via .quirk may not work.
+
+If so, to change the pressure at which the touchpad is registered, follow the answer on this [AskUbuntu question](https://askubuntu.com/questions/973090/how-to-configure-touchpad-tap-sensitivity).
 
 ### Disable touchpad
 

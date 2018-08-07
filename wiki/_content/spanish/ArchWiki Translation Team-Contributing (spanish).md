@@ -101,7 +101,7 @@ Como en cualquier proyecto de colaboración siempre hay necesidad de usuarios di
 
 A modo ilustrativo, vamos a crear una página ficticia, a fin de exponer someramente el proceso básico de creación y publicación de una traducción desde cero.
 
-1.  [Special:UserLogin|Inicie sesión] para poder editar la wiki.
+1.  [Inicie sesión](/index.php/Special:UserLogin "Special:UserLogin") para poder editar la wiki.
 2.  Para crear una nueva página (en nuestro caso una traducción) escribiremos en la barra de direcciones del navegador, el título en inglés (de la página a traducir), uniéndole, con un guión bajo, la palabra: Español, entre parentesis. Nos quedaría de la siguiente manera: **http://wiki.archlinux.org/index.php/**`Título_del_Artículo_en_Inglés**_(Español)**`.
 3.  Pulsaremos Intro y se nos abrirá una pantalla que nos mostrará el siguiente mensaje, advirtiéndonos que la página aún no existe: *«En este momento no hay texto en esta página. Puedes buscar el título de esta página en otras páginas, buscar en los registros, o editar esta página».*
 4.  Si pinchamos en **«editar esta página»**, o en las pestañas **«página»** o **«crear»** situadas en la parte superior de dicha pantalla, se nos abrirá el recuadro de edición, donde podremos plasmar la traducción correspondiente.

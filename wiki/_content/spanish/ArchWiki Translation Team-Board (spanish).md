@@ -60,7 +60,7 @@
 | [File systems (Español)](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)") | Configuración del sistema/Sistema archivos | `2014-11` |
 | [Fonts (Español)](/index.php/Fonts_(Espa%C3%B1ol) "Fonts (Español)") | Tipos de letras | `2008-06` |
 | [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)") | Configuración del sistema/Sistema archivos | `2013-09` |
-| [Frequently asked questions (Español)](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)") | Información/General | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Mantenimiento "User:AlonsoLP") para más detalles. |
+| [Frequently asked questions (Español)](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)") | Información/General | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Mantenimiento "User:AlonsoLP") para más detalles. |
 | [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)") | Información/Posinstalación | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Mantenimiento "User:AlonsoLP") para más detalles. |
 | [Getting involved (Español)](/index.php/Getting_involved_(Espa%C3%B1ol) "Getting involved (Español)") | Ayuda/Colaboración | `2016-09` |
 | [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") | Gestor de arranque | `2015-06` |
@@ -90,7 +90,7 @@
 | [List of applications/Documents (Español)](/index.php/List_of_applications/Documents_(Espa%C3%B1ol) "List of applications/Documents (Español)") | Aplicaciones/general | `2013-10` |
 | [List of applications/Internet (Español)](/index.php/List_of_applications/Internet_(Espa%C3%B1ol) "List of applications/Internet (Español)") | Aplicaciones/general | `2013-10` |
 | [List of applications/Multimedia (Español)](/index.php/List_of_applications/Multimedia_(Espa%C3%B1ol) "List of applications/Multimedia (Español)") | Aplicaciones/general | `2013-10` |
-| [List of applications/Other (Español)](/index.php/List_of_applications/Other_(Espa%C3%B1ol) "List of applications/Other (Español)") | Aplicaciones/general | `2015-05` | [Hugo](/index.php/User:Hugo "User:Hugo") |
+| [List of applications/Other (Español)](/index.php/List_of_applications/Other_(Espa%C3%B1ol) "List of applications/Other (Español)") | Aplicaciones/general | `2015-05` |
 | [List of applications/Science (Español)](/index.php/List_of_applications/Science_(Espa%C3%B1ol) "List of applications/Science (Español)") | Aplicaciones/general | `2013-10` |
 | [List of applications/Security (Español)](/index.php/List_of_applications/Security_(Espa%C3%B1ol) "List of applications/Security (Español)") | Aplicaciones/general | `2013-10` |
 | [List of applications/Utilities (Español)](/index.php/List_of_applications/Utilities_(Espa%C3%B1ol) "List of applications/Utilities (Español)") | Aplicaciones/general | `2013-10` |
@@ -110,7 +110,7 @@
 | [NVIDIA (Español)](/index.php/NVIDIA_(Espa%C3%B1ol) "NVIDIA (Español)") | Tarjeta gráfica | `2013-09` |
 | [Official repositories (Español)](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") | Repositorios | `2013-09` |
 | [Optical disc drive (Español)](/index.php/Optical_disc_drive_(Espa%C3%B1ol) "Optical disc drive (Español)") | Grabación | `2013-12` |
-| [Pacman (Español)](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") | Gestión de paquetes | `2017-10` |
+| [Pacman (Español)](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") | Gestión de paquetes | `2017-10` | [Arlesy](/index.php/User:Arlesy "User:Arlesy") |
 | [Pacman Rosetta (Español)](/index.php/Pacman_Rosetta_(Espa%C3%B1ol) "Pacman Rosetta (Español)") | Gestión de paquetes | `2013-09` |
 | [Partitioning (Español)](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") | Particionado | `2014-11` |
 | [Persistent block device naming (Español)](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol) "Persistent block device naming (Español)") | Sistema de archivos | `2014-12` |
@@ -130,8 +130,7 @@
 | [systemd (Español)](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") | Configuración del sistema/Gestor del sistema | `2013-09` |
 | [systemd FAQ (Español)](/index.php/Systemd_FAQ_(Espa%C3%B1ol) "Systemd FAQ (Español)") | Configuración del sistema/Gestor del sistema | `2013-09` |
 | [systemd-boot (Español)](/index.php/Systemd-boot_(Espa%C3%B1ol) "Systemd-boot (Español)") | Gestor de arranque | `2016-09` |
-| [systemd-networkd (Español)](/index.php/Systemd-networkd_(Espa%C3%B1ol) "Systemd-networkd (Español)")
-<small>**Remitido desde Beginners' guide (Español)**</small> | Configuración del sistema/Gestión redes | `2016-10` | [SignoSN](/index.php/User:SignoSN "User:SignoSN") | En proceso de traducción |
+| [systemd-networkd (Español)](/index.php/Systemd-networkd_(Espa%C3%B1ol) "Systemd-networkd (Español)") | Configuración del sistema/Gestión redes | `2016-10` |
 | [systemd/User (Español)](/index.php/Systemd/User_(Espa%C3%B1ol) "Systemd/User (Español)") | Configuración del sistema/Gestor del sistema | `2013-09` |
 | [Table of contents (Español)](/index.php/Table_of_contents_(Espa%C3%B1ol) "Table of contents (Español)") | Información/Wiki | `2014-04` | Su contenido se actualiza automáticamente (no la traducción de los títulos) |
 | [The Arch Way (Español)](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)") | Información/Arch | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Redirigido a [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)"). |
@@ -268,7 +267,7 @@ Versión inglesa redirigida a [Apache HTTP Server](/index.php/Apache_HTTP_Server
 | [MAC address spoofing (Español)](/index.php/MAC_address_spoofing_(Espa%C3%B1ol) "MAC address spoofing (Español)") | Seguridad | `2010-11` |
 | [Makepkg (Español)](/index.php/Makepkg_(Espa%C3%B1ol) "Makepkg (Español)") | Gestión de paquetes | `2010-07` |
 | [Making a Custom Package CD (Español)](/index.php/Making_a_Custom_Package_CD_(Espa%C3%B1ol) "Making a Custom Package CD (Español)") | Gestión de paquetes | `2008-05` | Versión inglesa redirigida a [pacman tips](/index.php/Pacman_tips "Pacman tips") |
-| [man page (Español)](/index.php/Man_page_(Espa%C3%B1ol) "Man page (Español)") | Administración sistema | `2015-4` | [Hugo](/index.php/User:Hugo "User:Hugo") |
+| [man page (Español)](/index.php/Man_page_(Espa%C3%B1ol) "Man page (Español)") | Administración sistema | `2015-4` |
 | [MATE (Español)](/index.php/MATE_(Espa%C3%B1ol) "MATE (Español)") | Entorno de escritorio | `2012-12` |
 | [Maximizing performance (Español)](/index.php/Maximizing_performance_(Espa%C3%B1ol) "Maximizing performance (Español)") | Administración del sistema | `2011-08` |
 | [MEncoder (Español)](/index.php/MEncoder_(Espa%C3%B1ol) "MEncoder (Español)") | Codificador Audio/vídeo | `2009-11` |
@@ -285,7 +284,7 @@ Versión inglesa redirigida a [Apache HTTP Server](/index.php/Apache_HTTP_Server
 | [Music Player Daemon (Español)](/index.php/Music_Player_Daemon_(Espa%C3%B1ol) "Music Player Daemon (Español)") | Reproductor música | `2009-12` | Parcialmente sin traducir |
 | [Mutt (Español)](/index.php/Mutt_(Espa%C3%B1ol) "Mutt (Español)") | Cliente e-mail | `2010-08` |
 | [MySQL (Español)](/index.php/MySQL_(Espa%C3%B1ol) "MySQL (Español)") | Base de datos | `2008-08` |
-| [nano (Español)](/index.php/Nano_(Espa%C3%B1ol) "Nano (Español)") | Editor de texto | `2015-08` | [SignoSN](/index.php/User:SignoSN "User:SignoSN") |
+| [nano (Español)](/index.php/Nano_(Espa%C3%B1ol) "Nano (Español)") | Editor de texto | `2015-08` |
 | [Nautilus (Español)](/index.php/Nautilus_(Espa%C3%B1ol) "Nautilus (Español)") | Gestor de archivos | `2013-09` |
 | [Netbeans (Español)](/index.php/Netbeans_(Espa%C3%B1ol) "Netbeans (Español)") | Desarrollo | `2013-02` |
 | [Nitrogen (Español)](/index.php/Nitrogen_(Espa%C3%B1ol) "Nitrogen (Español)") | Gestor fondos de escritorio | `2011-08` |
@@ -317,6 +316,7 @@ Versión inglesa redirigida a [Apache HTTP Server](/index.php/Apache_HTTP_Server
 | [Rxvt-unicode (Español)](/index.php/Rxvt-unicode_(Espa%C3%B1ol) "Rxvt-unicode (Español)") | Emulador de terminal | `2010-12` |
 | [Samba (Español)](/index.php/Samba_(Espa%C3%B1ol) "Samba (Español)") | Protocolo de red | `2011-04` |
 | [Samsung N150 (Español)](/index.php/Samsung_N150_(Espa%C3%B1ol) "Samsung N150 (Español)") | Hardware | `2010-06` |
+| [Security (Español)](/index.php?title=Security_(Espa%C3%B1ol)&action=edit&redlink=1 "Security (Español) (page does not exist)") | Seguridad | `0000-00` | No existe artículo en Español. Original [Security](/index.php/Security "Security"). |
 | [Silent boot (Español)](/index.php/Silent_boot_(Espa%C3%B1ol) "Silent boot (Español)") | Proceso arranque | `2013-12` |
 | [SLiM (Español)](/index.php/SLiM_(Espa%C3%B1ol) "SLiM (Español)") | Gestor de pantallas | `2011-01` |
 | [Smbclient (Español)](/index.php/Smbclient_(Espa%C3%B1ol) "Smbclient (Español)") | Protocolo de red | `2012-01` | Esbozo |

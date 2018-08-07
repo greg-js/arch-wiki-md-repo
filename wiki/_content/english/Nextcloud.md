@@ -61,6 +61,9 @@ Nextcloud is a fork of ownCloud. For differences between the two, see [wikipedia
     *   [8.2 Docker](#Docker)
     *   [8.3 Upload and share from File Manager](#Upload_and_share_from_File_Manager)
     *   [8.4 Defining Background Jobs](#Defining_Background_Jobs)
+        *   [8.4.1 Manual install](#Manual_install)
+        *   [8.4.2 AUR package](#AUR_package)
+        *   [8.4.3 Activate timer](#Activate_timer)
     *   [8.5 Collabora Online Office integration](#Collabora_Online_Office_integration)
 *   [9 See also](#See_also)
 
@@ -765,7 +768,7 @@ Starting with php 7.2 the extension mcrypt was removed.[[6]](https://wiki.php.ne
 
 To fix the error about mcrypt in Nextcloud logs, a version of this extension compatible with php 7.2 can be installed via PECL.
 
-1\. Install [php-pear](https://wiki.php.net/rfc/mcrypt-viking-funeral/) if you don't have it already
+1\. Install [php-pear](https://aur.archlinux.org/packages/php-pear/) if you don't have it already
 
 2\. Update PECL channels
 
@@ -895,6 +898,8 @@ See the [ownCloud](https://hub.docker.com/_/owncloud/) or [Nextcloud](https://gi
 
 Nextcloud requires scheduled execution of some tasks, and by default it achieves this by using AJAX, however AJAX is the least reliable method, and it is recommended to use [Cron](/index.php/Cron "Cron") instead. However, ArchLinux ships with [systemd](https://www.archlinux.org/packages/?name=systemd), so the preferred way of executing scheduled tasks is a [systemd timer](/index.php/Systemd#Timers "Systemd").
 
+#### Manual install
+
 First create a service:
 
  `/etc/systemd/system/nextcloudcron.service` 
@@ -927,6 +932,12 @@ Unit=nextcloudcron.service
 WantedBy=timers.target
 
 ```
+
+#### AUR package
+
+Install [nextcloud-systemd-cron](https://aur.archlinux.org/packages/nextcloud-systemd-cron/).
+
+#### Activate timer
 
 [Start/enable](/index.php/Start/enable "Start/enable") `nextcloudcron.timer`.
 

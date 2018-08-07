@@ -158,7 +158,7 @@ You can add minor privileged MySQL users for your web scripts. You might also wa
 
 ### Redis
 
-Install and configure [Redis](/index.php/Redis "Redis"), then install either [php-redis](https://aur.archlinux.org/packages/php-redis/) or [phpredis-git](https://aur.archlinux.org/packages/phpredis-git/).
+Install and configure [Redis](/index.php/Redis "Redis"), then install [phpredis-git](https://aur.archlinux.org/packages/phpredis-git/).
 
 Uncomment the line of the package, e.g. `/etc/php/conf.d/redis.ini`.
 

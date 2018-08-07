@@ -30,7 +30,7 @@ Other drivers may be installed manually instead:
 *   PowerVR: [https://imgtec.com/vulkan](https://imgtec.com/vulkan)
 *   Adreno: [https://developer.qualcomm.com/software/adreno-gpu-sdk/gpu](https://developer.qualcomm.com/software/adreno-gpu-sdk/gpu)
 
-For Vulkan application development, [install](/index.php/Install "Install") [vulkan-headers](https://www.archlinux.org/packages/?name=vulkan-headers), and optional [vulkan-validation-layers](https://www.archlinux.org/packages/?name=vulkan-validation-layers) (you can find vulkaninfo tool in here).
+For Vulkan application development, [install](/index.php/Install "Install") [vulkan-headers](https://www.archlinux.org/packages/?name=vulkan-headers), and optionally [vulkan-validation-layers](https://www.archlinux.org/packages/?name=vulkan-validation-layers) and [vulkan-tools](https://www.archlinux.org/packages/?name=vulkan-tools) (you can find the vulkaninfo tool in here).
 
 ## Vulkan Hardware Database
 
@@ -49,15 +49,11 @@ Section "Device"
    Driver      "intel"
    Option      "DRI"    "3"
 EndSection
+
 ```
 
 ### Nvidia - vulkan is not working and can not initialize
 
 Check if you have [vulkan-intel](https://www.archlinux.org/packages/?name=vulkan-intel) installed, it may prevent Nvidia's vulkan driver from being detected.
 
-Alternatively export `VK_ICD_FILENAMES` by an [environment variable](/index.php/Environment_variable "Environment variable"):
-
-```
- export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json
-
-```
+Alternatively set the [environment variable](/index.php/Environment_variable "Environment variable") `VK_ICD_FILENAMES` to `/usr/share/vulkan/icd.d/nvidia_icd.json`.

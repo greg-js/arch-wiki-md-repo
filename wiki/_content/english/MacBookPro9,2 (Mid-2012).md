@@ -30,14 +30,14 @@ For general help on the install preocedure see the [Installation guide](/index.p
     *   [3.1 SD Card Reader](#SD_Card_Reader)
     *   [3.2 Users](#Users)
     *   [3.3 Wireless](#Wireless)
-        *   [3.3.1 Wireless Flakiness](#Wireless_Flakiness)
-        *   [3.3.2 Keyboard Backlight](#Keyboard_Backlight)
-    *   [3.4 Xorg](#Xorg)
+    *   [3.4 Inverting FN keys](#Inverting_FN_keys)
+        *   [3.4.1 Wireless Flakiness](#Wireless_Flakiness)
+        *   [3.4.2 Keyboard Backlight](#Keyboard_Backlight)
+    *   [3.5 Xorg](#Xorg)
 *   [4 Bells & Whistles](#Bells_.26_Whistles)
     *   [4.1 Emulating OSX Touchpad Gestures](#Emulating_OSX_Touchpad_Gestures)
         *   [4.1.1 Using synclient](#Using_synclient)
         *   [4.1.2 Using Touchegg](#Using_Touchegg)
-    *   [4.2 Inverting FN keys](#Inverting_FN_keys)
 
 ## Preparation
 
@@ -187,6 +187,10 @@ In order to be able to access a OSX user's directory, only the uid and gid need 
 
 Macbooks 8,1 to 9,2 (and possibly newer) use BCM4331 for Wifi. See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for details.
 
+### Inverting FN keys
+
+To make the FN keys function as normal FN keys, follow [Apple Keyboard#Function keys do not work](/index.php/Apple_Keyboard#Function_keys_do_not_work "Apple Keyboard").
+
 #### Wireless Flakiness
 
 The only connection manager combination with BCM4331 that doesn't result in flakiness seems to be connman + disabled background scanning.
@@ -245,7 +249,3 @@ To make settings permanent, just modify `/etc/X11/xorg.conf.d/10-synaptics.conf`
 </application>
 ...
 ```
-
-### Inverting FN keys
-
-To make the FN keys function as normal FN keys, follow [Apple Keyboard#Function keys do not work](/index.php/Apple_Keyboard#Function_keys_do_not_work "Apple Keyboard").

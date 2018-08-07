@@ -1219,7 +1219,7 @@ ExecStart=/usr/bin/systemd-inhibit --what=sleep --why="Libvirt domain \"%i\" is 
 
 ### AMD显卡直通后无法重启虚拟机
 
-某些AMD显卡在Windows虚拟机中可能无法正常Reset，导致虚拟机无法重新正常重新启动。
+某些AMD显卡在Windows虚拟机中可能无法正常Reset，导致虚拟机无法重新启动。
 
 您可以通过在关闭虚拟机之前手动安全移除显卡（就像移除U盘那样）来避免这个问题。当您安装VirtIO驱动程序映像中的`guest-agent`之后，您就可以在安全移除菜单中看到相关的设备。
 

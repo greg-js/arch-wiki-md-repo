@@ -22,7 +22,8 @@ Related articles
     *   [2.7 Desktop launcher menus](#Desktop_launcher_menus)
         *   [2.7.1 Creating menu entries for Wine utilities](#Creating_menu_entries_for_Wine_utilities)
         *   [2.7.2 Removing menu entries](#Removing_menu_entries)
-    *   [2.8 Printing](#Printing)
+    *   [2.8 Appearance](#Appearance)
+    *   [2.9 Printing](#Printing)
 *   [3 Usage](#Usage)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Wineconsole](#Wineconsole)
@@ -279,6 +280,10 @@ $ rm ~/.local/share/mime/application/x-wine-extension*
 
 ```
 
+### Appearance
+
+A similar to XP looking theme can be downloaded from [here](http://download.microsoft.com/download/e/a/9/ea9af5ae-b48e-473e-85fe-dcde7472e644/ZuneDesktopTheme.msi). To install it see [here](https://wiki.winehq.org/Wine_User%27s_Guide#Running_.msi_files). Lastly use *winecfg* to select it.
+
 ### Printing
 
 In order to use your installed printers (both local and network) with wine applications in *win32 prefixes* (e.g. MS Word), install the [lib32-libcups](https://www.archlinux.org/packages/?name=lib32-libcups) package, reboot wine (*wineboot*) and restart your wine application.
@@ -465,8 +470,6 @@ Wine features an embedded FPS monitor which works for all graphical applications
 
 ### Running Wine under a separate user account
 
-**Note:** The following approach only works when enabling root for Xorg. See [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg") for more information.
-
 It may be desirable to run Wine under a specifically created user account in order to reduce concerns about Windows applications having access to your home directory.
 
 First, create a [user account](/index.php/Users_and_groups "Users and groups") for Wine:
@@ -475,6 +478,10 @@ First, create a [user account](/index.php/Users_and_groups "Users and groups") f
 # useradd -m -s /bin/bash wineuser
 
 ```
+
+Now switch to another TTY and start your X WM or DE as you normally would or keep reading...
+
+**Note:** The following approach only works when enabling root for Xorg. See [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg") for more information.
 
 Afterwards, in order to open Wine applications using this new user account you need to add the new user to the X server permissions list:
 

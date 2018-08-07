@@ -371,8 +371,6 @@ Most likely you do not have the required public key(s) in you personal keyring t
 
 The recommended way to deal with this problem is to import the required public key, either [manually](/index.php/GnuPG#Import_a_public_key "GnuPG") or [from a key server](/index.php/GnuPG#Use_a_keyserver "GnuPG"). Often, you can simply find the fingerprint of the needed public key(s) in the [validpgpkeys](/index.php/PKGBUILD#validpgpkeys "PKGBUILD") section of the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
 
-The less secure way to deal with this is to skip the verification of PGP signatures completely by using the `--skippgpcheck` option in [*makepkg*](/index.php/Makepkg "Makepkg").
-
 ### How do I create a PKGBUILD?
 
 The best resource is the wiki page about [creating packages](/index.php/Creating_packages "Creating packages"). Remember to look in AUR before creating the PKGBUILD as to not duplicate efforts.

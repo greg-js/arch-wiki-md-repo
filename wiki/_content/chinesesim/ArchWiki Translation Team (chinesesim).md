@@ -155,6 +155,7 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [Libvirt (简体中文)](/index.php/Libvirt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Libvirt (简体中文)") | 完成 | Kurobac | 需要格式改进 |
 | [Local Mirror (简体中文)](/index.php/Local_Mirror_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Local Mirror (简体中文)") | 完成 | Jason Zhang | 完善中 |
 | [Matlab (简体中文)](/index.php/Matlab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Matlab (简体中文)") | 部分翻译 | Liu Qinyang |
+| [Minecraft (简体中文)](/index.php/Minecraft_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Minecraft (简体中文)") | 完成 | Xavier Lau | 页面已经与英文版同步，长期维护中 |
 | [NetworkManager (简体中文)](/index.php/NetworkManager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "NetworkManager (简体中文)") | 翻译中 | Jack-lijing, leeking | 请优先翻译 |
 | [Network Time Protocol daemon (简体中文)](/index.php/Network_Time_Protocol_daemon_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network Time Protocol daemon (简体中文)") | 完成 | sid | 完善中 |
 | [OpenOffice (简体中文)](/index.php/OpenOffice_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "OpenOffice (简体中文)") | 过期 | 无 | 无 |

@@ -102,6 +102,13 @@ $ expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(pacman -Qqen | sort) <(pacman -Qq
 
 ```
 
+To list the packages marked for upgrade with their download size
+
+```
+$ pacman -Quq|xargs expac -S -H M '%k\t%n' | sort -sh
+
+```
+
 #### By date
 
 To list the 20 last installed packages with [expac](https://www.archlinux.org/packages/?name=expac), run:

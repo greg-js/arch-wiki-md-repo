@@ -20,6 +20,7 @@ As PCI passthrough is quite tricky to get right (both on the hardware and softwa
     *   [1.13 Eduxstad's Infidelity](#Eduxstad.27s_Infidelity)
     *   [1.14 Pi's vr-vm](#Pi.27s_vr-vm)
     *   [1.15 coghex's gaming box](#coghex.27s_gaming_box)
+    *   [1.16 Roobre's VFIO setup](#Roobre.27s_VFIO_setup)
 *   [2 Adding your own setup](#Adding_your_own_setup)
 
 ## Users' setups
@@ -419,6 +420,30 @@ Configuration:
 *   if anyone else uses this exact motherboard, there are two internal USB IOMMU groups, even with the ACS patch. one will include the usb labeled "USB 3.1", and the other will include all the other USBs. this means if you want more than just a keyboard and mouse, you will need either a usb hub to plug into the 3.1 slot and passthrough, or a PCIE USB bus, i went with the latter. this works great with the oculus rift.
 *   my CPU performance was enhanced most when i switched from linux-zen with CPU pinning to the custom kernel with 100Hz clock and installed irqbalance and ananicy. letting the MuQSS scheduler bounce around the virtual cpus as threads seems to increase my responsiveness drastically but decrease my overall performance slightly. this may be because i am running 4-5 VMs at once, i imagine on a machine designed to just run windows, CPU pinning would be unquestionably faster.
 *   one last thing is the audio, i spent far too much time trying to figure out the stuttering choppy sound that i see around the web in relation to vfio. for me, the solution was using pulseaudio with pulseeffects from the aur. pulseeffects is an effects program that will handle the correct levels and create an audio buffer, mixing everything how i like. then, go into advance speaker properties in windows 10 and set the format to 44100Hz. this solved it for me
+
+### Roobre's VFIO setup
+
+Hardware:
+
+*   **CPU**: Intel(R) Core(TM) i5-6600K CPU @ 3.50GHz (OC'ed to 4.50)
+*   **Motherboard**: ASUS ROG MAXIMUS VIII GENE, v3801
+*   **GPU**: EVGA 1060 Superclocked, 6GB
+*   **RAM**: 16GB DDR4 (2x Kingston HyperX Fury)
+
+Configuration:
+
+*   **Kernel**: Latest -ARCH or -zen (4.17.10-1-zen at the time of writing)
+*   Using **libvirt/QEMU**: libvirt 4.5.0-1, qemu 2.12.0-2\. Config: [https://gist.github.com/roobre/d2d20cc638c5030f360b500000da0f88](https://gist.github.com/roobre/d2d20cc638c5030f360b500000da0f88)
+*   **ZFS** volumes passed as raw devices for hard drives.
+*   **VirtIO all the things!** Download drivers from [https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/)
+
+Issues:
+
+*   Pulseaudio never worked good (too much crackling), so I ended up passing-through an USB 3.1 PCI controller and connecting an USB audio card to it. That card is then connected to one of my MoBo's inputs, and echoed using pulseaudio's `loopback` module.
+
+*   Synergy works really great. On some games (ones who take control of the mouse pointer, e.g. first-person), you need to lock the mouse cursor to the VM window to avoid issues (camera moving too fast).
+
+*   Do not forget to add the needed snippet for the nvidia driver to run ([PCI passthrough via OVMF#"Error 43: Driver failed to load" on Nvidia GPUs passed to Windows VMs](/index.php/PCI_passthrough_via_OVMF#.22Error_43:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs "PCI passthrough via OVMF"))
 
 ## Adding your own setup
 

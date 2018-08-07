@@ -314,6 +314,8 @@ To override those, open Firefox advanced preferences page (`about:config`) and s
 
 ```
 
+**Warning:** The following extension is not compatible with Firefox Quantum (version 57 and above).
+
 If you use a HiDPI monitor such as Retina display together with another monitor, you can use [AutoHiDPI](https://addons.mozilla.org/en-US/firefox/addon/autohidpi/) add-on in order to automatically adjust `layout.css.devPixelsPerPx` setting for the active screen. Also, since Firefox version 49, it auto-scales based on your screen resolution, making it easier to deal with 2 or more screens.
 
 #### Chromium / Google Chrome

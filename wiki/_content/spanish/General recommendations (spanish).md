@@ -4,7 +4,7 @@ Artículos relacionados
 *   [Guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)")
 *   [Lista de aplicaciones](/index.php/List_of_applications_(Espa%C3%B1ol) "List of applications (Español)")
 
-**Estado de la traducción:** este artículo es una versión traducida de [General recommendations](/index.php/General_recommendations "General recommendations"). Fecha de la última traducción/revisión: **2018-08-03**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=531455).
+**Estado de la traducción:** este artículo es una versión traducida de [General recommendations](/index.php/General_recommendations "General recommendations"). Fecha de la última traducción/revisión: **2018-08-05**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=531455).
 
 Este documento es un índice con anotaciones a otros artículos populares e información importante para mejorar y añadir funcionalidades al sistema Arch instalado. Se supone que los lectores han leído y seguido la [guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") para instalar un sistema básico de Arch Linux. Es necesario haber leído y comprendido los conceptos explicados en [#Administración el sistema](#Administraci.C3.B3n_el_sistema) y [#Administración de paquetes](#Administraci.C3.B3n_de_paquetes) antes de continuar con las otras secciones de esta página y de otros artículos de la wiki.
 
@@ -19,10 +19,10 @@ Este documento es un índice con anotaciones a otros artículos populares e info
     *   [2.1 pacman](#pacman)
     *   [2.2 Repositorios](#Repositorios)
     *   [2.3 Servidores de réplicas](#Servidores_de_r.C3.A9plicas)
-    *   [2.4 Arch Build System](#Arch_Build_System)
-    *   [2.5 Arch User Repository](#Arch_User_Repository)
-*   [3 Fase de arranque](#Fase_de_arranque)
-    *   [3.1 Autorreconocimiento del hardware](#Autorreconocimiento_del_hardware)
+    *   [2.4 Sistema de construcción de Arch](#Sistema_de_construcci.C3.B3n_de_Arch)
+    *   [2.5 Repositorio de usuario de Arch](#Repositorio_de_usuario_de_Arch)
+*   [3 Arranque](#Arranque)
+    *   [3.1 Reconocimiento automático del hardware](#Reconocimiento_autom.C3.A1tico_del_hardware)
     *   [3.2 Microcódigo](#Microc.C3.B3digo)
     *   [3.3 Conservar los mensajes del arranque](#Conservar_los_mensajes_del_arranque)
     *   [3.4 Activar Bloq Num al inicio](#Activar_Bloq_Num_al_inicio)
@@ -99,75 +99,75 @@ Arch es un sistema de lanzamiento continuo y cuenta con una rápida rotación de
 
 ## Administración de paquetes
 
-Esta sección contiene información útil relacionada con la administración de los paquetes. Para más información, vea [FAQ#Package management](/index.php/FAQ#Package_management "FAQ") y [Category:Package management](/index.php/Category:Package_management "Category:Package management").
+Esta sección contiene información útil relacionada con la administración de los paquetes. Para más información, consulte [Frequently asked questions (Español)#Administración de paquetes](/index.php/Frequently_asked_questions_(Espa%C3%B1ol)#Administraci.C3.B3n_de_paquetes "Frequently asked questions (Español)") y [Category:Package management (Español)](/index.php/Category:Package_management_(Espa%C3%B1ol) "Category:Package management (Español)").
 
 **Nota:** Es imprescindible mantenerse al día de los cambios en Arch Linux para conocer aquellos que requieren una intervención manual, **antes** de actualizar su sistema. Suscríbase a la [arch-announce mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) y compruebe la página principal de [Arch news](https://www.archlinux.org/) antes de realizar cualquier actualización. Por otro lado, puede encontrar útil suscribirse a este [RSS feed](https://www.archlinux.org/feeds/news/).
 
 ### pacman
 
-[pacman](/index.php/Pacman "Pacman") es el gestor de paquetes de Arch Linux (**pac**kage **man**ager): todos los usuarios están obligados a familiarizarse con él antes de leer cualquier otro artículo.
+[pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") es el *administrador de paquetes* de Arch Linux: todos los usuarios deben familiarizarse con él antes de leer cualquier otro artículo.
 
-Consulte [pacman/Tips and tricks (Español)](/index.php/Pacman/Tips_and_tricks_(Espa%C3%B1ol) "Pacman/Tips and tricks (Español)") para obtener sugerencias sobre cómo mejorar su interacción con pacman y la gestión de paquetes en general.
+Consulte [pacman/Tips and tricks (Español)](/index.php/Pacman/Tips_and_tricks_(Espa%C3%B1ol) "Pacman/Tips and tricks (Español)") para obtener sugerencias sobre cómo mejorar su interacción con pacman y la administración de paquetes en general.
 
 ### Repositorios
 
-Consulte [Official repositories (Español)](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") para más detalles sobre el propósito de cada repositorio mantenido oficialmente.
+Consulte los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") para más detalles sobre el propósito de cada repositorio mantenido oficialmente.
 
-Si planea utilizar aplicaciones de 32 bits, tendrá que activar el repositorio [multilib](/index.php/Multilib "Multilib").
+Si planea utilizar aplicaciones de 32 bits, tendrá que activar el repositorio [multilib](/index.php/Official_repositories_(Espa%C3%B1ol)#multilib "Official repositories (Español)").
 
-El artículo [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") enumera otros repositorios no apoyados oficialmente.
+El artículo sobre los [repositorios no oficiales](/index.php/Unofficial_user_repositories "Unofficial user repositories") enumera otros repositorios no apoyados oficialmente.
 
-Considere instalar el servicio [pkgstats](/index.php/Pkgstats "Pkgstats").
+Considere instalar el servicio [pkgstats](/index.php/Pkgstats_(Espa%C3%B1ol) "Pkgstats (Español)").
 
 ### Servidores de réplicas
 
-Consulte el artículo [Mirrors](/index.php/Mirrors "Mirrors") para conocer los pasos a seguir para aprovechar al máximo el uso y obtener los mirrors de los repositorios oficiales más actualizados. Como se explica en el artículo, un consejo especialmente bueno consiste en verificar periódicamente la página [Mirror Status](https://www.archlinux.org/mirrors/status/) para ver la lista de mirrors que han sido recientemente sincronizados.
+Consulte el artículo [Réplicas](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)") *(mirrors)* para conocer los pasos a seguir para aprovechar al máximo el uso y obtener las réplicas de los repositorios oficiales más actualizados. Como se explica en el artículo, un consejo especialmente bueno consiste en verificar periódicamente la página del [estado de las réplicas](https://www.archlinux.org/mirrors/status/) para consultar la lista de las réplicas que han sido recientemente sincronizadas.
 
-### Arch Build System
+### Sistema de construcción de Arch
 
-El sistema de *Puertos* es un sistema utilizado inicialmente por las distribuciones BSD consistente en scripts de compilaciones que se encuentran en un árbol de directorios presentes en el sistema local. En pocas palabras, cada puerto contiene un script dentro de un directorio con un nombre intuitivo que hace referencia a la aplicación instalable de terceros.
+Los *ports* son un sistema usado inicialmente por distribuciones BSD que consisten en secuencias de comandos *(scripts)* de compilación que se encuentran en un árbol de directorios en el sistema local. En pocas palabras, cada *port* contiene una secuencia de comandos dentro de un directorio con un nombre intuitivo que hace referencia a la aplicación de terceros instalable.
 
-[Arch Build System](/index.php/Arch_Build_System "Arch Build System") ofrece la misma funcionalidad al proporcionar scripts de compilación llamados [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"), que se cargan con información conocida para una determinada pieza de software: control de la integridad, URL del proyecto, versión, licencia e instrucciones de compilación. Estos PKGBUILDs son analizados posteriormente por [makepkg](/index.php/Makepkg "Makepkg"), el programa que actualmente genera paquetes es manejado por pacman.
+El [sistema de construcción de Arch](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)") (ABS, *Arch Build System*) ofrece la misma funcionalidad al proporcionar unas secuencias de comandos de compilación llamadas [PKGBUILDs](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)"), que se cargan con información conocida para una determinada pieza de software: control de la integridad, URL del proyecto, versión, licencia e instrucciones de compilación. Estos PKGBUILDs son analizados posteriormente por [makepkg](/index.php/Makepkg_(Espa%C3%B1ol) "Makepkg (Español)"), el programa que actualmente genera paquetes es gestionado limpiamente por pacman.
 
 Cada paquete de los repositorios junto con los presentes en AUR están sujetos a recompilación con makepkg.
 
-### Arch User Repository
+### Repositorio de usuario de Arch
 
-Así como Arch Build System permite la posibilidad de compilar el software disponible en los repositorios oficiales, el [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") (AUR) es el equivalente para los paquetes enviados por los usuarios. Se trata de un repositorio, sin soporte oficial, que contiene scripts accesibles a través de la [interfaz web](https://aur.archlinux.org/index.php) o a través de [Aurweb RPC interface](/index.php/Aurweb_RPC_interface "Aurweb RPC interface").
+Si bien el sistema de construcción de Arch (ABS) permite la posibilidad de construir los programas disponibles en los repositorios oficiales, el [repositorio de usuario de Arch](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") (AUR, *Arch User Repository*) es el equivalente para los paquetes enviados por los usuarios. Es un repositorio sin soporte oficial de secuencias de comandos de compilación, accesibles a través de la [interfaz web](https://aur.archlinux.org/) o a través de la interfaz [Aurweb RPC](/index.php/Aurweb_RPC_interface "Aurweb RPC interface").
 
-## Fase de arranque
+## Arranque
 
-Esta sección contiene información relacionada con el proceso de arranque. Una visión general del proceso de arranque de Arch se puede encontrar en [Arch Boot Process](/index.php/Arch_boot_process_(Espa%C3%B1ol) "Arch boot process (Español)"). Para más información, consulte [Category:Boot process](/index.php/Category:Boot_process "Category:Boot process").
+Esta sección contiene información relacionada con el proceso de arranque. Se puede encontrar una descripción general del proceso de arranque de Arch en el artículo [proceso de arranque](/index.php/Arch_boot_process_(Espa%C3%B1ol) "Arch boot process (Español)"). Para obtener más información, consulte la categoría [proceso de arranque](/index.php/Category:Boot_process_(Espa%C3%B1ol) "Category:Boot process (Español)").
 
-### Autorreconocimiento del hardware
+### Reconocimiento automático del hardware
 
-El hardware debe ser detectado automáticamente por [udev](/index.php/Udev "Udev") durante el proceso de arranque por defecto. Una mejora potencial en la reducción del tiempo de arranque se puede lograr mediante la desactivación de la carga automática de los módulos y especificar manualmente los módulos necesarios a cargar, como se describe en [Kernel modules (Español)](/index.php/Kernel_modules_(Espa%C3%B1ol) "Kernel modules (Español)"). Adicionalmente [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") debe ser capaz de detectar automáticamente los controladores necesarios mediante `udev`, aunque los usuarios tienen también la opción de configurar el servidor X manualmente.
+El hardware debe ser detectado automáticamente por [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") durante el proceso de arranque de forma predeterminada. Se puede lograr una mejora potencial en el tiempo de arranque desactivando la carga automática de los módulos y especificando los módulos requeridos manualmente, como se describe en [módulos del núcleo](/index.php/Kernel_modules_(Espa%C3%B1ol) "Kernel modules (Español)"). Además, [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") debería ser capaz de detectar automáticamente los controladores necesarios mediante `udev`, aunque los usuarios también tienen la opción de configurar el servidor X manualmente.
 
 ### Microcódigo
 
-Los procesadores pueden tener [comportamientos defectuosos](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), que el kernel puede corregir mediante la actualización del *microcódigo*. Los procesadores de Intel requieren un paquete separado para este fin. Véase [Microcode](/index.php/Microcode "Microcode") para más detalles.
+Los procesadores pueden tener un [comportamiento defectuoso](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), que el núcleo puede corregir mediante la actualización del *microcódigo* al inicio. Los procesadores de Intel requieren un paquete separado para este fin. Consulte [microcódigo](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)") para más detalles.
 
 ### Conservar los mensajes del arranque
 
-Una vez que se termina de arrancar el sistema, la pantalla se borra y aparece la pantalla del login, dejando a los usuarios sin retroalimentación informativa sobre el proceso de arranque. Para superar esta limitación [desactive el borrado de mensajes de arranque](/index.php/Disable_clearing_of_boot_messages "Disable clearing of boot messages").
+Una vez que concluye el arranque, la pantalla se borra y aparece el inicio de sesión, lo que deja a los usuarios sin poder recabar información del proceso de arranque. [Desactive la eliminación de los mensajes de inicio](/index.php/General_troubleshooting_(Espa%C3%B1ol)#Mensajes_de_la_consola "General troubleshooting (Español)") para superar esta limitación.
 
 ### Activar Bloq Num al inicio
 
-Bloq Num es una tecla de alternancia existente en la mayoría de los teclados para activar/desactivar el teclado numérico. Para activar Bloq Num de modo que permanezca activo el teclado numérico durante el arranque, consulte [Activating Numlock on Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup").
+Bloq Num es una tecla de alternancia que se encuentra en la mayoría de los teclados. Para activar Bloq Num de modo que permanezca activo el teclado numérico durante el arranque, consulte [activando Bloq Num al inicio](/index.php/Activating_Numlock_on_Bootup_(Espa%C3%B1ol) "Activating Numlock on Bootup (Español)").
 
 ## Interfaz gráfica de usuario
 
-En esta sección se proporciona orientación para los usuarios que deseen ejecutar aplicaciones gráficas en su sistema. Véase [Category:Graphical user interfaces](/index.php/Category:Graphical_user_interfaces "Category:Graphical user interfaces") para conocer recursos adicionales.
+Esta sección proporciona orientación para los usuarios que deseen ejecutar aplicaciones gráficas en su sistema. Consulte la categoría [interfaces gráficos de usuario](/index.php/Category:Graphical_user_interfaces "Category:Graphical user interfaces") para obtener información adicional.
 
 ### Servidor de pantalla
 
-[Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") es una aplicación pública, una implementación de código abierto del [sistema de ventanas X](https://en.wikipedia.org/wiki/es:X_Window_System "wikipedia:es:X Window System") versión 11\. Si se desea usar una interfaz gráfica, la mayoría de los usuarios lo harán mediante Xorg. Véase [Category:X server](/index.php/Category:X_server "Category:X server") para recursos adicionales.
+[Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") es una aplicación pública, una implementación de código abierto del [sistema de ventanas X](https://en.wikipedia.org/wiki/es:X_Window_System "wikipedia:es:X Window System") (comúnmente X11, o X). Es necesario para ejecutar aplicaciones con interfaces gráficas de usuario (GUI), y la mayoría de los usuarios querrán instalarlo.
 
-[Wayland](/index.php/Wayland "Wayland") es un protocolo más nuevo de servidor de pantalla alternativo que implementa la referencia Weston disponible.
+[Wayland](/index.php/Wayland_(Espa%C3%B1ol) "Wayland (Español)") es un protocolo de servidor de pantalla alternativo más nuevo y la implementación de referencia de Weston está disponible.
 
 ### Controladores de pantalla
 
-El controlador gráfico por defecto, *vesa*, funciona con la mayoría de tarjetas de vídeo, pero el rendimiento puede ser significativamente mejorado en características y ajustes adicionales al instalar el controlador apropiado para los productos [ATI](/index.php/ATI_(Espa%C3%B1ol) "ATI (Español)"), [Intel](/index.php/Intel_(Espa%C3%B1ol) "Intel (Español)"), o [NVIDIA](/index.php/NVIDIA_(Espa%C3%B1ol) "NVIDIA (Español)").
+El controlador de pantalla predeterminado *vesa* funcionará con la mayoría de las tarjetas de vídeo, pero el rendimiento puede mejorarse significativamente y las características adicionales pueden aprovecharse instalando el controlador apropiado para los productos [ATI](/index.php/ATI_(Espa%C3%B1ol) "ATI (Español)"), [Intel](/index.php/Intel_(Espa%C3%B1ol) "Intel (Español)"), o [NVIDIA](/index.php/NVIDIA_(Espa%C3%B1ol) "NVIDIA (Español)").
 
 ### Entornos de escritorio
 

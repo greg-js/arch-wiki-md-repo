@@ -1,3 +1,11 @@
+Related articles
+
+*   [Pdepend](/index.php/Pdepend "Pdepend")
+*   [Php-codesniffer-drupal](/index.php/Php-codesniffer-drupal "Php-codesniffer-drupal")
+*   [PhpMetrics](/index.php/PhpMetrics "PhpMetrics")
+*   [PHPLOC](/index.php/PHPLOC "PHPLOC")
+*   [PhpDox](/index.php/PhpDox "PhpDox")
+
 **翻译状态：** 本文是英文页面 [PHP](/index.php/PHP "PHP") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-07，点击[这里](https://wiki.archlinux.org/index.php?title=PHP&diff=0&oldid=449127)可以查看翻译后英文页面的改动。
 
 [PHP](http://www.php.net/)是一种广泛使用的通用脚本语言，特别适合于Web开发，可嵌入到HTML。
@@ -194,9 +202,9 @@ PHP有两种缓存： *opcode*/*bytecode* 缓存和*userland*/*user data* 缓存
 
 ### OPCache
 
-OPCache随PHP发布，因此在[PHP configuration file](#Configuration)中开启或添加下面两行即可：
+OPCache随PHP发布，因此在[PHP configuration file](#Configuration)中开启或添加此行即可：
 
- `/etc/php/php.ini`  `zend_extension=opcache.so` 
+ `/etc/php/php.ini`  `zend_extension=opcache` 
 
 你可在[官网](https://secure.php.net/manual/en/book.opcache.php) 找到其他设置以及建议设置。
 

@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions"). Fecha de la última traducción/revisión: **2018-07-30**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=529561).
+**Estado de la traducción:** este artículo es una versión traducida de [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions"). Fecha de la última traducción/revisión: **2018-08-05**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=532225).
 
 Artículos relacionados
 
@@ -24,7 +24,7 @@ Artículos relacionados
     *   [1.13 ¿Por qué va mi internet tan lento en comparación con otros sistemas operativos?](#.C2.BFPor_qu.C3.A9_va_mi_internet_tan_lento_en_comparaci.C3.B3n_con_otros_sistemas_operativos.3F)
     *   [1.14 ¿Por qué Arch está usando toda mi RAM?](#.C2.BFPor_qu.C3.A9_Arch_est.C3.A1_usando_toda_mi_RAM.3F)
     *   [1.15 ¿De dónde vino todo mi espacio libre?](#.C2.BFDe_d.C3.B3nde_vino_todo_mi_espacio_libre.3F)
-*   [2 Gestión de paquetes](#Gesti.C3.B3n_de_paquetes)
+*   [2 Administración de paquetes](#Administraci.C3.B3n_de_paquetes)
     *   [2.1 He encontrado un error con el paquete X. ¿Qué debo hacer?](#He_encontrado_un_error_con_el_paquete_X._.C2.BFQu.C3.A9_debo_hacer.3F)
     *   [2.2 Los paquetes que Arch deberían usar una única extensión. «.pkg.tar.gz» y «.pkg.tar.xz» son demasiado largos y/o confusos](#Los_paquetes_que_Arch_deber.C3.ADan_usar_una_.C3.BAnica_extensi.C3.B3n._.C2.AB.pkg.tar.gz.C2.BB_y_.C2.AB.pkg.tar.xz.C2.BB_son_demasiado_largos_y.2Fo_confusos)
     *   [2.3 Pacman necesita una biblioteca para que otras aplicaciones puedan acceder fácilmente a la información del paquete](#Pacman_necesita_una_biblioteca_para_que_otras_aplicaciones_puedan_acceder_f.C3.A1cilmente_a_la_informaci.C3.B3n_del_paquete)
@@ -44,7 +44,6 @@ Artículos relacionados
 *   [4 64 bits](#64_bits)
     *   [4.1 ¿Cómo puedo saber si mi procesador es compatible con x86_64?](#.C2.BFC.C3.B3mo_puedo_saber_si_mi_procesador_es_compatible_con_x86_64.3F)
     *   [4.2 ¿Por qué 64 bits?](#.C2.BFPor_qu.C3.A9_64_bits.3F)
-    *   [4.3 ¿Puedo cambiar de i686 a x86_64 sin reinstalar?](#.C2.BFPuedo_cambiar_de_i686_a_x86_64_sin_reinstalar.3F)
 
 ## General
 
@@ -139,7 +138,7 @@ Consulte [este maravilloso artículo](http://www.linuxjournal.com/article/2770) 
 
 La respuesta a esta pregunta depende de su sistema. Hay algunas [utilidades de discoque](/index.php/Common_Applications#Disk_usage_display_programs "Common Applications") pueden ayudarle a encontrar la respuesta.
 
-## Gestión de paquetes
+## Administración de paquetes
 
 Consulte las páginas [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)"), [pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks_(Espa%C3%B1ol) "Pacman/Tips and tricks (Español)") y [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") para obtener más respuestas.
 
@@ -240,11 +239,3 @@ Es más rápido en la mayoría de los casos, y como razón adicional también in
 Los programadores también tienden cada vez más a preocuparse menos de 32 bits ("legacy") y tratarlo como «nuevas» CPU de x86 que soportan normalmente extensiones de 64-bit.
 
 Hay muchas más razones que podríamos enumerar aquí para decirle que evite los 32 bits, razones relativas al kernel, al espacio de usuario y a los programas individuales que simplemente hacen mejor opción los 64 bits de momento.
-
-### ¿Puedo cambiar de i686 a x86_64 sin reinstalar?
-
-No. Todos los paquetes deben volver a ser instalados en la nueva arquitectura y realizar los cambios de configuración que sean necesarios. Sin embargo, no es necesario volver a particionar o formatear unidades de disco duro durante la instalación, por lo que es posible migrar todos los datos antiguos. Un hilo del foro ha sido creado [aquí](https://bbs.archlinux.org/viewtopic.php?id=64485) que describe las medidas adoptadas para migrar una instalación desde 32 a 64 bits sin perder ninguna configuración/ajustes/datos utilizando un gran disco duro externo.
-
-Sin embargo, también puede iniciar el sistema con la ISO de instalación de 64 bits, montar el disco, hacer copia de seguridad de todo lo que puede desee mantener que no sea un binario de 32 bits (por ejemplo: `/home` & `/etc`), e instalar.
-
-También es posible que desee leer acerca de [migrating between architectures](/index.php/Migrating_between_architectures "Migrating between architectures").

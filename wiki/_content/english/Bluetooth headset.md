@@ -795,7 +795,7 @@ First of all ensure your headset is correctly paired and connected to the system
 
 Install [bluez-alsa-git](https://aur.archlinux.org/packages/bluez-alsa-git/), start and possibly enable the `bluealsa` service.
 
-Edit the file `/etc/dbus-1/system.d/bluetooth.conf` and add this lines to the bottom, just before the closing `</busconfig>`.
+Edit the file `/etc/dbus-1/system.d/bluetooth.conf` and add these lines to the bottom, just before the closing `</busconfig>`.
 
 ```
 <policy user="bluealsa">

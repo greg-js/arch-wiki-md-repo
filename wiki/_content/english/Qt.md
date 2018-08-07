@@ -43,7 +43,7 @@ The Qt framework is emerging as a major development platform and is the basis of
     *   [5.3 Icon theme is not applied](#Icon_theme_is_not_applied)
     *   [5.4 Theme not applied to root applications](#Theme_not_applied_to_root_applications)
     *   [5.5 Qt4 style not respected](#Qt4_style_not_respected)
-    *   [5.6 Applications using QML crash or don't work with Qt 5.8](#Applications_using_QML_crash_or_don.27t_work_with_Qt_5.8)
+    *   [5.6 Applications using QML crash or don't work with Qt 5.8 - 5.10](#Applications_using_QML_crash_or_don.27t_work_with_Qt_5.8_-_5.10)
     *   [5.7 All Qt5-based applications fail to run after Qt5 update](#All_Qt5-based_applications_fail_to_run_after_Qt5_update)
 *   [6 See also](#See_also)
 
@@ -496,9 +496,11 @@ Alternatively, you can symlink the Qt4 styles directory to the KDE4 styles one:
 
 ```
 
-### Applications using QML crash or don't work with Qt 5.8
+### Applications using QML crash or don't work with Qt 5.8 - 5.10
 
-Starting with Qt 5.8, applications that rely on QML (such as [SDDM](/index.php/SDDM "SDDM") or some [KDE](/index.php/KDE "KDE") programs) may crash or fail to function correctly if they do not have execution privileges under `/home` or `/var` (e.g. if these are separate filesystems mounted as '`noexec`'). This is a result of the **qmlcache** feature, which relies on being able to write files out to `.cache` directories and then execute them. See also BBS thread [222486: sddm-helper crashes](https://bbs.archlinux.org/viewtopic.php?id=222486).
+**Note:** This is meant to be resolved with Qt 5.11 (see BBS thread [222486: sddm-helper crashes](https://bbs.archlinux.org/viewtopic.php?id=222486)), published into the main repositories in late May 2018.
+
+Between Qt 5.8 and 5.10, applications that rely on QML (such as [SDDM](/index.php/SDDM "SDDM") or some [KDE](/index.php/KDE "KDE") programs) may crash or fail to function correctly if they do not have execution privileges under `/home` or `/var` (e.g. if these are separate filesystems mounted as '`noexec`'). This is a result of the **qmlcache** feature, which relies on being able to write files out to `.cache` directories and then execute them.
 
 If you do not want to -- or cannot -- allow such execution privileges, a workaround is to set the following as appropriate in your [environment variables](/index.php/Environment_variables "Environment variables"):
 

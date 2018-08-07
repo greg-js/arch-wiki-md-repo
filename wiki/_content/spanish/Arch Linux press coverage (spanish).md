@@ -1,3 +1,7 @@
+## 2017
+
+*   [Cinco razones por las que Arch Linux sigue siendo una de las mejores distribuciones actuales](https://www.genbeta.com/a-fondo/cinco-razones-por-las-que-uso-arch-linux-y-por-las-que-creo-que-vale-la-pena-probarlo) genbeta.com 2017-02-01
+
 ## 2009
 
 *   [Infidelidad](http://www.muylinux.com/2009/04/13/infidelidad/) muylinux.com 2009-04-13

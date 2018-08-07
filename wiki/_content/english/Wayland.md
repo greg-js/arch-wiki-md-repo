@@ -17,6 +17,8 @@ Related articles
         *   [2.3.2 Screencast recording](#Screencast_recording)
         *   [2.3.3 High DPI displays](#High_DPI_displays)
         *   [2.3.4 Shell font](#Shell_font)
+    *   [2.4 Tips and tricks](#Tips_and_tricks)
+        *   [2.4.1 Window switching](#Window_switching)
 *   [3 GUI libraries](#GUI_libraries)
     *   [3.1 GTK+ 3](#GTK.2B_3)
     *   [3.2 Qt 5](#Qt_5)
@@ -37,6 +39,7 @@ Related articles
     *   [5.8 screen recording](#screen_recording)
     *   [5.9 remote display](#remote_display)
     *   [5.10 Input grabbing in games, remote desktop and VM windows](#Input_grabbing_in_games.2C_remote_desktop_and_VM_windows)
+        *   [5.10.1 wlroots input inhibitor protocol](#wlroots_input_inhibitor_protocol)
 *   [6 See also](#See_also)
 
 ## Requirements
@@ -146,8 +149,8 @@ background-color=0xff000000
 #background-color=0xff002244
 #panel-color=0x90ff0000
 panel-color=0x00ffffff
-panel-position=left
-clock-format=none
+panel-position=bottom
+#clock-format=none
 #animation=zoom
 #startup-animation=none
 close-animation=none
@@ -222,7 +225,7 @@ path=MOZ_GTK_TITLEBAR_DECORATION=client /usr/bin/firefox
 
 #[launcher]
 #icon=/usr/share/icons/Adwaita/32x32/apps/multimedia-volume-control.png
-#path=/usr/bin/st alsamixer
+#path=/usr/bin/st alsamixer -c0
 
 ```
 
@@ -294,6 +297,38 @@ scale=2
 #### Shell font
 
 Weston uses the default sans-serif font for window title bars, clocks, etc. See [Font configuration#Replace or set default fonts](/index.php/Font_configuration#Replace_or_set_default_fonts "Font configuration") for instructions on how to change this font.
+
+### Tips and tricks
+
+#### Window switching
+
+To switch windows with `Super+Space` instead of `Super+Tab` use the following patch:
+
+```
+diff --git a/shell.c b/shell.c
+index b846e30..ffe5e48 100644
+--- a/shell.c
++++ b/shell.c
+@@ -4457,7 +4457,7 @@ switcher_key(struct weston_keyboard_grab *grab,
+ 	struct switcher *switcher = container_of(grab, struct switcher, grab);
+ 	enum wl_keyboard_key_state state = state_w;
+
+-	if (key == KEY_TAB && state == WL_KEYBOARD_KEY_STATE_PRESSED)
++	if (key == KEY_SPACE && state == WL_KEYBOARD_KEY_STATE_PRESSED)
+ 		switcher_next(switcher);
+ }
+
+@@ -4949,7 +4949,7 @@ shell_add_bindings(struct weston_compositor *ec, struct desktop_shell *shell)
+ 		weston_compositor_add_button_binding(ec, BTN_MIDDLE, mod,
+ 						     rotate_binding, NULL);
+
+-	weston_compositor_add_key_binding(ec, KEY_TAB, mod, switcher_binding,
++	weston_compositor_add_key_binding(ec, KEY_SPACE, mod, switcher_binding,
+ 					  shell);
+ 	weston_compositor_add_key_binding(ec, KEY_F9, mod, backlight_binding,
+ 					  ec);
+
+```
 
 ## GUI libraries
 
@@ -424,6 +459,12 @@ Supporting Wayland compositors:
 Supporting widget toolkits:
 
 *   GTK since release 3.22.18.
+
+#### wlroots input inhibitor protocol
+
+[Input inhibitor](https://github.com/swaywm/wlr-protocols/blob/master/unstable/wlr-input-inhibitor-unstable-v1.xml) is a Wayland protocol which was defined the by developers of Sway and wlroots and is overlapping Wayland's Compositor shortcuts inhibit protocol.
+Sway and wlroots do not support the Compositor shortcuts inhibit and XWayland keyboard grabbing protocols, and least for the latter it seems like they are against adding support for it [[3]](https://github.com/swaywm/wlroots/pull/635#issuecomment-366385856) [[4]](https://github.com/swaywm/wlroots/issues/624#issuecomment-367276476).
+No widget toolkit or application is known to support this protocol.
 
 ## See also
 

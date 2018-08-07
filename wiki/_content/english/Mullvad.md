@@ -24,7 +24,7 @@ In order to use the nameservers supplied by Mullvad, [update-resolv-conf script]
 
 ```
 
-The script can be kept updated with the AUR package [openvpn-update-resolv-conf](https://aur.archlinux.org/packages/openvpn-update-resolv-conf/), which also contains a fix for DNS leaks.
+The script can be kept updated with the [openvpn-update-resolv-conf](https://github.com/masterkorp/openvpn-update-resolv-conf) script, which also contains a fix for DNS leaks.
 
 After configuration the VPN connection can be [managed](/index.php/Enabled "Enabled") with `openvpn-client@mullvad.service`. If the service fails to start with an error like `Cannot open TUN/TAP dev /dev/net/tun: No such device (errno=19)`, you might need to reboot the system to enable OpenVPN creating the correct network device for the task.
 
@@ -32,4 +32,4 @@ After configuration the VPN connection can be [managed](/index.php/Enabled "Enab
 
 By default, Mullvad configurations allow DNS leaks and for usual VPN use cases this is an unfavourable privacy defect. Mullvad's GUI client settings have an option called "Stop DNS leaks" to prevent this from happening by removing every DNS server IP from the system configuration and replacing them with an IP pointing out to Mullvad's own *allegedly* non-logging DNS server, valid during the VPN connection. This fix can also be applied with the plain OpenVPN method by configuring [resolv.conf](/index.php/Resolv.conf "Resolv.conf") to use **only** the Mullvad DNS server IP specified on their [website](https://www.mullvad.net/guides/dns-leaks/).
 
-The resolv.conf update script version in [openvpn-update-resolv-conf](https://aur.archlinux.org/packages/openvpn-update-resolv-conf/) implements a different fix for the leaks by using the exclusive interface switch `-x` when running the `resolvconf` command, but this might cause another form of DNS leakage by making even every local network address resolve via the DNS server provided by Mullvad, as noted in the [script's GitHub issue page](https://github.com/masterkorp/openvpn-update-resolv-conf/issues/18).
+The resolv.conf update script version in [openvpn-update-resolv-conf](https://github.com/masterkorp/openvpn-update-resolv-conf) implements a different fix for the leaks by using the exclusive interface switch `-x` when running the `resolvconf` command, but this might cause another form of DNS leakage by making even every local network address resolve via the DNS server provided by Mullvad, as noted in the [script's GitHub issue page](https://github.com/masterkorp/openvpn-update-resolv-conf/issues/18).

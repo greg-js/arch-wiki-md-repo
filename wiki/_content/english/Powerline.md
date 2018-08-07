@@ -75,7 +75,7 @@ After installing [powerline](https://www.archlinux.org/packages/?name=powerline)
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
-. /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+. /usr/share/powerline/bindings/bash/powerline.sh
 
 ```
 
