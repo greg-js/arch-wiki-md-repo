@@ -97,10 +97,18 @@ If *systemd-resolved* does not receive DNS server addresses from the [network ma
 
 The addresses can be changed by setting `FallbackDNS=` in [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5). E.g.:
 
- `/etc/systemd/resolved.conf.d/fallback_to_localhost.conf` 
+ `/etc/systemd/resolved.conf.d/fallback_dns.conf` 
 ```
 [Resolve]
 FallbackDNS=127.0.0.1 ::1
+```
+
+To disable the fallback DNS funtionality set the `FallbackDNS` option without specifying any addresses:
+
+ `/etc/systemd/resolved.conf.d/fallback_dns.conf` 
+```
+[Resolve]
+FallbackDNS=
 ```
 
 #### DNSSEC

@@ -31,8 +31,9 @@
         *   [1.3.3 Periodic table](#Periodic_table)
         *   [1.3.4 Biochemistry](#Biochemistry)
         *   [1.3.5 Image manipulation](#Image_manipulation)
-    *   [1.4 Geography](#Geography)
-        *   [1.4.1 Meteorology](#Meteorology)
+    *   [1.4 Earth science](#Earth_science)
+        *   [1.4.1 Geography](#Geography)
+        *   [1.4.2 Meteorology](#Meteorology)
     *   [1.5 Astronomy](#Astronomy)
     *   [1.6 Engineering](#Engineering)
         *   [1.6.1 Computer-aided design](#Computer-aided_design)
@@ -526,7 +527,9 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 	[http://fiji.sc](http://fiji.sc) || [fiji-binary](https://aur.archlinux.org/packages/fiji-binary/)
 
-### Geography
+### Earth science
+
+#### Geography
 
 *   **BT747** — The swiss army knife for MTK GPS dataloggers.
 

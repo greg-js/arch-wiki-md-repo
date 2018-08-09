@@ -6,15 +6,13 @@ Configurations can vary to a degree. Please post Fontconfig configurations with 
 
 *   [1 Hinted fonts](#Hinted_fonts)
 *   [2 No hinting for *italic* or **bold**](#No_hinting_for_italic_or_bold)
-*   [3 Sharp fonts](#Sharp_fonts)
-*   [4 Enable anti-aliasing only for bigger fonts](#Enable_anti-aliasing_only_for_bigger_fonts)
-*   [5 Disable bold font](#Disable_bold_font)
-*   [6 Default fonts](#Default_fonts)
-    *   [6.1 Japanese](#Japanese)
-    *   [6.2 Chinese](#Chinese)
-*   [7 Patched packages](#Patched_packages)
-*   [8 Infinality-like font substitution](#Infinality-like_font_substitution)
-*   [9 See also](#See_also)
+*   [3 Enable anti-aliasing only for bigger fonts](#Enable_anti-aliasing_only_for_bigger_fonts)
+*   [4 Disable bold font](#Disable_bold_font)
+*   [5 Default fonts](#Default_fonts)
+    *   [5.1 Japanese](#Japanese)
+    *   [5.2 Chinese](#Chinese)
+*   [6 Patched packages](#Patched_packages)
+*   [7 See also](#See_also)
 
 ## Hinted fonts
 
@@ -80,22 +78,6 @@ Configurations can vary to a degree. Please post Fontconfig configurations with 
     <edit mode="assign" name="lcdfilter"><const>lcdlight</const></edit>
   </match>
 
-</fontconfig>
-
-```
-
-## Sharp fonts
-
-```
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-<fontconfig>
-  <match target="font">
-    <edit name="antialias" mode="assign"><bool>true</bool></edit>
-    <edit name="hinting" mode="assign"><bool>true</bool></edit>
-    <edit name="hintstyle" mode="assign"><const>hintfull</const></edit>   <!-- try hintmedium if it looks bad -->
-    <edit name="lcdfilter" mode="assign"><const>lcddefault</const></edit>
-    <edit name="rgba" mode="assign"><const>rgb</const></edit>             <!-- set to match your display -->
-  </match>
 </fontconfig>
 
 ```
@@ -404,11 +386,6 @@ or
 
 To restore the original packages, reinstall [freetype2](https://www.archlinux.org/packages/?name=freetype2), [cairo](https://www.archlinux.org/packages/?name=cairo), and [fontconfig](https://www.archlinux.org/packages/?name=fontconfig) as dependencies (use the `--asdeps` flag with pacman when reinstalling). Include [lib32-cairo](https://www.archlinux.org/packages/?name=lib32-cairo), [lib32-fontconfig](https://www.archlinux.org/packages/?name=lib32-fontconfig), and [lib32-freetype2](https://www.archlinux.org/packages/?name=lib32-freetype2) if you also installed 32-bit versions.
 
-## Infinality-like font substitution
-
-For user provided fontconfig [substitutions](/index.php/Fonts#Font_alias "Fonts") replicating those offered with the [bundle](https://github.com/bohoomil/fontconfig-ultimate) install either [fonts-meta-extended-lt](https://aur.archlinux.org/packages/fonts-meta-extended-lt/) (light version) or [fonts-meta-extended](https://aur.archlinux.org/packages/fonts-meta-extended/) (complete version) and [enable](/index.php/Font_configuration#Presets "Font configuration") the provided `30-infinality-aliases.conf` preset.
-
 ## See also
 
 *   [Gentoo forums](http://forums.gentoo.org/viewtopic-p-7273876.html#7273876)
-*   [Thoroughly explained configuration that changes default fonts and sets fallback fonts for emoji and traditional Chinese characters](https://github.com/meribold/dotfiles/tree/master/home/config/fontconfig)

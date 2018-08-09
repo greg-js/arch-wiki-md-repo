@@ -93,9 +93,7 @@ To query the units activity and status, see [journalctl](/index.php/Journalctl "
 
 The main benefit of continuous TRIM is speed; an SSD can perform more efficient [garbage collection](https://arstechnica.com/gadgets/2015/04/ask-ars-my-ssd-does-garbage-collection-so-i-dont-need-trim-right/). However, results vary and particularly earlier SSD generations may also show just the opposite effect. Also for this reason, some distributions decided against using it (e.g. Ubuntu [[5]](https://www.phoronix.com/scan.php?page=news_item&px=MTUxOTY) [[6]](https://blueprints.launchpad.net/ubuntu/+spec/core-1311-ssd-trimming)).
 
-**Note:**
-
-*   Before [SATA 3.1](https://en.wikipedia.org/wiki/Serial_ATA#SATA_revision_3.1 for details.
+**Note:** Before [SATA 3.1](https://en.wikipedia.org/wiki/Serial_ATA#SATA_revision_3.1 for details.
 
 Using the `discard` option for a mount in `/etc/fstab` enables continuous TRIM in device operations:
 

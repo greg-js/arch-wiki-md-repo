@@ -38,7 +38,7 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 
 	[https://github.com/cylgom/ly](https://github.com/cylgom/ly) || [ly-git](https://aur.archlinux.org/packages/ly-git/)
 
-*   **tbsm** — A pure bash session or application launcher
+*   **tbsm** — A pure bash session or application launcher.
 
 	[https://loh-tar.github.io/tbsm/](https://loh-tar.github.io/tbsm/) || [tbsm](https://aur.archlinux.org/packages/tbsm/)
 

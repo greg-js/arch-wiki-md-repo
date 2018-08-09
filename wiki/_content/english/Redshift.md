@@ -100,6 +100,8 @@ users=
 
  `~/.config/redshift/redshift.conf` 
 ```
+[redshift]
+...
 ; Set the location-provider: 'geoclue2', 'manual'
 ; type 'redshift -l list' to see possible values.
 ; The location provider settings are in a different section.

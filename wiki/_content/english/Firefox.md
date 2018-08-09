@@ -155,7 +155,7 @@ security.sandbox.content.write_path_whitelist
 
 **Note:** The trailing slash on `/dev/snd/` is important, otherwise *apulse* will report "Permission denied" errors.
 
-If you are using Firefox 58 or above and have no audio even when using *apulse*, try adding `16` to `security.sandbox.content.syscall_whitelist` in `about:config`
+If you are using Firefox 58 or above and have no audio even when using *apulse*, try adding `16` to `security.sandbox.content.syscall_whitelist` in `about:config`.
 
 #### Open-with extension
 

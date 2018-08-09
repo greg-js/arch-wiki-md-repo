@@ -113,7 +113,7 @@ The examples add the following options to the address:
 *   `lzo`: Enables LZO compression for this TCP or SSH host (slave).
 *   `cpp`: Enables distcc-pump mode for this host (slave). Note: the build command must be wrapped in the pump script in order to start the include server.
 
-A description for the pump mode can be found here: [HOW DISTCC-PUMP MODE WORKS](http://distcc.googlecode.com/svn%20...%20%3Cdiv%20class=/trunk/doc/web/man/distcc_1.html#TOC_8) and [distcc's pump mode: A New Design for Distributed C/C++ Compilation](http://google-opensource.blogspot.de/2008/08/distccs-pump-mode-new-design-for.html)
+A description for the pump mode can be found here: [distcc's pump mode: A New Design for Distributed C/C++ Compilation](http://google-opensource.blogspot.de/2008/08/distccs-pump-mode-new-design-for.html)
 
 To use distcc-pump mode for a slave, users must start the compilation using the pump script otherwise the compilation will fail.
 

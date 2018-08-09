@@ -16,7 +16,7 @@ Un [repositorio de software](https://en.wikipedia.org/wiki/es:Repositorio "wikip
 *   [2 [core]](#.5Bcore.5D)
 *   [3 [extra]](#.5Bextra.5D)
 *   [4 [community]](#.5Bcommunity.5D)
-*   [5 [multilib]](#.5Bmultilib.5D)
+*   [5 multilib](#multilib)
 *   [6 [testing]](#.5Btesting.5D)
 *   [7 [community-testing]](#.5Bcommunity-testing.5D)
 *   [8 [multilib-testing]](#.5Bmultilib-testing.5D)
@@ -70,7 +70,7 @@ Este depósito se encuentra en `.../community/os/` con su mirror favorito.
 
 Contiene los paquetes provenientes del repositorio [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") que obtivieron los votos suficientes para ser adoptadas por un [Usuario de Confianza](/index.php/Trusted_Users "Trusted Users").
 
-## [multilib]
+## multilib
 
 Este depósito se encuentra en `.../multilib/os/` desde su mirror favorito.
 

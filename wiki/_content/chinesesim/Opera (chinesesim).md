@@ -8,6 +8,8 @@ Related articles
 
 [Opera](http://www.opera.com)浏览器，是一款自1994年以来由挪威[Opera Software](https://en.wikipedia.org/wiki/Opera_Software "wikipedia:Opera Software")公司开发的免费浏览器软件。该浏览器因曾经最先引入诸如标签式浏览、内置搜索等功能而闻名。
 
+[Template:不准确](/index.php?title=Template:%E4%B8%8D%E5%87%86%E7%A1%AE&action=edit&redlink=1 "Template:不准确 (page does not exist)")
+
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
@@ -44,7 +46,7 @@ Related articles
 
 ### 旧的 Presto 版本
 
-现在的 Opera 浏览器使用现代的、开源的 Blick 引擎。你仍然可以通安装 Opera 12.16 即 [opera-legacy](https://aur.archlinux.org/packages/opera-legacy/) 软件包，来使用旧版的 Presto 布局引擎
+现在的 Opera 浏览器使用现代的、开源的 Blick 引擎。你仍然可以通安装 Opera 12.16 即 [opera-legacy](https://aur.archlinux.org/packages/opera-legacy/) 软件包，来使用旧版的 Presto 布局引擎。因安全性及与现代互联网的兼容性，不建议使用Presto布局引擎的Opera。想体验旧版界面可以安装Opera旧成员开发的[Vivaldi](/index.php/Vivaldi "Vivaldi")浏览器。
 
 ## 插件
 

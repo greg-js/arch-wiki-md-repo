@@ -31,7 +31,7 @@ There are several options:
 *   [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) - daemon, with CLI, and [#Web Interface](#Web_Interface).
 *   [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) - GTK+ 3 package.
 *   [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt) - Qt5 package.
-*   [tremc-git](https://aur.archlinux.org/packages/tremc-git/) - Curses interface for the daemon.
+*   [tremc](https://aur.archlinux.org/packages/tremc/) or [tremc-git](https://aur.archlinux.org/packages/tremc-git/) - Curses interface for the daemon.
 
 **Note:** The GTK+ client cannot connect to the daemon, so users wishing to use the daemon will need to consider using the Qt package for a GUI or the tremc package for a curses-based GUI.
 

@@ -32,7 +32,10 @@ There are several ways to achieve this on Linux:
 
 ### Formats
 
-**Note:** To choose the correct driver see [#Installation](#Installation).
+**Note:**
+
+*   To choose the correct driver see [#Installation](#Installation).
+*   The features supported by your GPU may vary. To see what your GPU supports see [#Verification](#Verification).
 
 <caption>VA-API</caption>
  [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) [[1]](https://github.com/01org/intel-vaapi-driver/blob/master/README) | [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) | [Catalyst XvBA](/index.php/AMD_Catalyst#Video_acceleration "AMD Catalyst") | [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)
@@ -56,7 +59,8 @@ There are several ways to achieve this on Linux:
 | VP9 | Kaby Lake and newer |  ? |
 
 <caption>VDPAU</caption>
- [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) | [amdgpu-pro-vdpau](https://aur.archlinux.org/packages/amdgpu-pro-vdpau/) | [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl)
+ [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) | [amdgpu-pro-vdpau](https://aur.archlinux.org/packages/amdgpu-pro-vdpau/)
+([AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU") only) | [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl)
 (VA-API adapter) |
 | Decoding |
 | MPEG2 | Radeon 9500 and newer, GeForce 8 and newer | GeForce 8 and newer |  ? | ✗ |
@@ -78,10 +82,6 @@ There are several ways to achieve this on Linux:
 | HEVC (H.265) | Pascal and newer | Pascal and newer |
 | VP8 | Maxwell2 and newer | ✗ |
 | VP9 | Pascal and newer | ✗ |
-
-The features supported by your GPU may vary. To see what your GPU supports see [#Verification](#Verification).
-
-Regarding the [amdgpu-pro-vdpau](https://aur.archlinux.org/packages/amdgpu-pro-vdpau/) package, see [AMDGPU#AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU").
 
 ### Software
 

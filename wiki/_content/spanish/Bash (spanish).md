@@ -3,12 +3,13 @@ Un lugar para que los usuarios de Arch pongan sus consejos y trucos sobre el arc
 ## Contents
 
 *   [1 PS1](#PS1)
-*   [2 Los alias](#Los_alias)
+*   [2 Alias](#Alias)
     *   [2.1 Cambiar el uso por defecto de distintas órdenes](#Cambiar_el_uso_por_defecto_de_distintas_.C3.B3rdenes)
     *   [2.2 Atajos](#Atajos)
-*   [3 Variables de entorno útiles](#Variables_de_entorno_.C3.BAtiles)
-*   [4 Funciones/Guiones](#Funciones.2FGuiones)
-*   [5 inputrc](#inputrc)
+*   [3 Consejos y trucos](#Consejos_y_trucos)
+*   [4 Variables de entorno útiles](#Variables_de_entorno_.C3.BAtiles)
+*   [5 Funciones/Guiones](#Funciones.2FGuiones)
+*   [6 inputrc](#inputrc)
 
 ## PS1
 
@@ -28,7 +29,7 @@ PS1='\[\e[0;31m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[0;31m\]\$ \[\e[m\]\[\e[0
 
 Vea también [esta página de la wiki](/index.php/Colorear_Indicador_Bash_(Espa%C3%B1ol) "Colorear Indicador Bash (Español)")
 
-## Los alias
+## Alias
 
 ### Cambiar el uso por defecto de distintas órdenes
 
@@ -55,6 +56,8 @@ alias nano='vi'
 ```
 
 ### Atajos
+
+## Consejos y trucos
 
 ## Variables de entorno útiles
 

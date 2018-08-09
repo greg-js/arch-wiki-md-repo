@@ -328,7 +328,7 @@ For a comparison of protocols see the following [table](http://deployingradius.c
 
 #### wpa_supplicant
 
-[WPA supplicant](/index.php/WPA_supplicant#Advanced_usage "WPA supplicant") can be configured directly by its config file or by use of its CLI/GUI front ends and used in combination with a DHCP client or with systemd. See the examples in `/usr/share/doc/wpa_supplicant/wpa_supplicant.conf` for configuring the connection details.
+[WPA supplicant](/index.php/WPA_supplicant#Advanced_usage "WPA supplicant") can be configured directly by its configuration file or using its CLI/GUI front ends and used in combination with a DHCP client. See the examples in `/usr/share/doc/wpa_supplicant/wpa_supplicant.conf` for configuring the connection details.
 
 #### NetworkManager
 

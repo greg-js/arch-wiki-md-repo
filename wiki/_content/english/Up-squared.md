@@ -2,11 +2,11 @@ The [UP Squared](http://up-board.org) is a larger and more powerful version of t
 
 ## Installation
 
-See [[1]](https://wiki.archlinux.org/index.php/Up-board#Installation).
+See [Up-board#Installation](/index.php/Up-board#Installation "Up-board").
 
 ## GPIO
 
-See [[2]](https://wiki.archlinux.org/index.php/Up-board#GPIO)
+See [Up-board#GPIO](/index.php/Up-board#GPIO "Up-board")
 
 ## See Also
 

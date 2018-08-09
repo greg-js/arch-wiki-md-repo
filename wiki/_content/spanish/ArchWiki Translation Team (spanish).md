@@ -2,9 +2,7 @@
 
 Esta página está destinada a todos los que quieran colaborar en la traducción, corrección y/o mantenimiento de la wiki en español de Arch Linux. Buscamos construir un grupo abierto y colaborativo de usuarios, que tenga por objetivo traducir, actualizar, ampliar y mejorar la documentación de ArchWiki al español, de modo que se pueda ofrecer el mejor servicio posible a la comunidad.
 
-Para comenzar obtenga una cuenta de usuario ArchWiki mediante [este](/index.php/Special:UserLogin "Special:UserLogin") enlace.
-
-### Secciones disponibles
+Antes de empezar, obtenga una cuenta de usuario de ArchWiki a través de [este](/index.php/Special:UserLogin "Special:UserLogin") enlace. Después consulte cada una de las secciones siguientes:
 
 *   [Equipo y traductores](/index.php/ArchWiki_Translation_Team/About_(Espa%C3%B1ol) "ArchWiki Translation Team/About (Español)"): Únase al equipo de traducción.
 

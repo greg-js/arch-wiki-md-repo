@@ -14,7 +14,8 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
     *   [2.4 Persistent configuration](#Persistent_configuration)
 *   [3 Setup a VPN server](#Setup_a_VPN_server)
     *   [3.1 Server](#Server)
-    *   [3.2 Client](#Client)
+    *   [3.2 Client (tunnel all traffic)](#Client_.28tunnel_all_traffic.29)
+    *   [3.3 Client (don't tunnel all traffic)](#Client_.28don.27t_tunnel_all_traffic.29)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 DKMS module not available](#DKMS_module_not_available)
 *   [5 Tips and tricks](#Tips_and_tricks)
@@ -29,7 +30,9 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
 To create a public and private key
 
 ```
-$ wg genkey | tee privatekey | wg pubkey > publickey
+cd /etc/wireguard
+wg genkey | tee privatekey | wg pubkey > publickey
+chmod 600 privatekey # /etc/wireguard is already 700 but you're never too safe
 
 ```
 
@@ -47,11 +50,11 @@ The external addresses should already exist. For example, peer A should be able 
 This peer will listen on UDP port 48574 and will accept connection from peer B by linking its public key with both its inner and outer IPs addresses.
 
 ```
-# ip link add dev wg0 type wireguard
-# ip addr add 10.0.0.1/24 dev wg0
-# wg set wg0 listen-port 48574 private-key ./privatekey
-# wg set wg0 peer [Peer B public key] persistent-keepalive 25 allowed-ips 10.0.0.2/32 endpoint 10.10.10.2:39814
-# ip link set wg0 up
+ip link add dev wg0 type wireguard
+ip addr add 10.0.0.1/24 dev wg0
+wg set wg0 listen-port 48574 private-key /etc/wireguard/privatekey
+wg set wg0 peer [Peer B public key] persistent-keepalive 25 allowed-ips 10.0.0.2/32 endpoint 10.10.10.2:39814
+ip link set wg0 up
 
 ```
 
@@ -62,11 +65,11 @@ This peer will listen on UDP port 48574 and will accept connection from peer B b
 As with Peer A, whereas the wireguard daemon is listening on the UDP port 39814 and accept connection from peer A only.
 
 ```
-# ip link add dev wg0 type wireguard
-# ip addr add 10.0.0.2/24 dev wg0
-# wg set wg0 listen-port 39814 private-key ./privatekey
-# wg set wg0 peer [Peer A public key] persistent-keepalive 25 allowed-ips 10.0.0.1/32 endpoint 10.10.10.1:48574
-# ip link set wg0 up
+ip link add dev wg0 type wireguard
+ip addr add 10.0.0.2/24 dev wg0
+wg set wg0 listen-port 39814 private-key /etc/wireguard/privatekey
+wg set wg0 peer [Peer A public key] persistent-keepalive 25 allowed-ips 10.0.0.1/32 endpoint 10.10.10.1:48574
+ip link set wg0 up
 
 ```
 
@@ -101,8 +104,8 @@ At this point one could reach the end of the tunnel:
 The config can be saved by utilizing `showconf`
 
 ```
-# wg showconf wg0 > /etc/wireguard/wg0.conf
-# wg setconf wg0 /etc/wireguard/wg0.conf
+wg showconf wg0 > /etc/wireguard/wg0.conf
+wg setconf wg0 /etc/wireguard/wg0.conf
 
 ```
 
@@ -115,7 +118,7 @@ Wireguard comes with a tool to quickly create and tear down VPN servers and clie
  `/etc/wireguard/wg0server.conf` 
 ```
 [Interface]
-Address = 10.200.100.1/24
+Address = 10.200.100.1/24  # This is the virtual IP address, with the subnet mask we will use for the VPN
 PostUp   = iptables -A FORWARD -i %i -j ACCEPT; iptables -A FORWARD -o %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -D FORWARD -o %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 ListenPort = 51820
@@ -123,13 +126,13 @@ PrivateKey = [SERVER PRIVATE KEY]
 
 [Peer]
 PublicKey = [CLIENT PUBLIC KEY]
-AllowedIPs = 10.200.100.2/32  # This denotes the clients IP.
+AllowedIPs = 10.200.100.2/32  # This denotes the clients IP with a /32: the client only has ONE IP.
 ```
 
 In order for the iptables rules to work, IPv4 forwarding should be enabled:
 
 ```
-# sysctl net.ipv4.ip_forward=1
+sysctl net.ipv4.ip_forward=1
 
 ```
 
@@ -137,18 +140,18 @@ To make the change permanent, add `net.ipv4.ip_forward = 1` to `/etc/sysctl.d/99
 
 Bring the interface up by using `wg-quick up wg0server`, and use `wg-quick down wg0server` to bring it down.
 
-#### Client
+#### Client (tunnel all traffic)
 
  `/etc/wireguard/wg0.conf` 
 ```
 [Interface]
-Address = 10.200.100.2/32  # The client IP from wg0server.conf
+Address = 10.200.100.2/24  # The client IP from wg0server.conf with the same subnet mask
 PrivateKey = [CLIENT PRIVATE KEY]
 DNS = 10.200.100.1
 
 [Peer]
 PublicKey = [SERVER PUBLICKEY]
-AllowedIPs = 0.0.0.0/0
+AllowedIPs = 0.0.0.0/0, ::0/0
 Endpoint = [SERVER ENDPOINT]:51820
 PersistentKeepalive = 25
 ```
@@ -162,6 +165,22 @@ If you use [NetworkManager](/index.php/NetworkManager "NetworkManager"), it may 
 or if you're using systemd-networkd, to enable systemd-networkd-wait-online.service `systemctl enable systemd-networkd-wait-online.service`
 
 to wait until devices are network ready before attempting wireguard connection.
+
+#### Client (don't tunnel all traffic)
+
+ `/etc/wireguard/wg0.conf` 
+```
+[Interface]
+Address = 10.200.100.2/24  # The client IP from wg0server.conf with the same subnet mask
+PrivateKey = [CLIENT PRIVATE KEY]
+DNS = 10.200.100.1
+
+[Peer]
+PublicKey = [SERVER PUBLICKEY]
+AllowedIPs = 10.200.100.0/24, 10.123.45.0/24, 1234:4567:89ab::/48 # Denotes all subnets that are available only through the VPN server
+Endpoint = [SERVER ENDPOINT]:51820
+PersistentKeepalive = 25
+```
 
 ## Troubleshooting
 

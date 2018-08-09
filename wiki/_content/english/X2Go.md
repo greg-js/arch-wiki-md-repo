@@ -9,7 +9,8 @@
     *   [2.1 Configure Secure Shell daemon](#Configure_Secure_Shell_daemon)
     *   [2.2 Load fuse kernel module](#Load_fuse_kernel_module)
     *   [2.3 Setup SQLite database](#Setup_SQLite_database)
-    *   [2.4 Start X2Go server daemon](#Start_X2Go_server_daemon)
+    *   [2.4 Control published applications](#Control_published_applications)
+    *   [2.5 Start X2Go server daemon](#Start_X2Go_server_daemon)
 *   [3 Desktop Shadowing](#Desktop_Shadowing)
 *   [4 Client configuration](#Client_configuration)
     *   [4.1 Common mistakes](#Common_mistakes)
@@ -57,6 +58,12 @@ Run the following command on the server to initialize the SQLite database (which
 
 ```
 
+### Control published applications
+
+X2Go can publish the installed applications in a menu to the client. This is controlled by the files in `/etc/x2go/applications/`. This location however is not created by default and can be created by creating a symlink to `/usr/share/applications/`. Alternatively instead of creating a symlink one could also create a folder and link only the desired applications instead.
+
+See [[1]](https://wiki.x2go.org/doku.php/wiki:advanced:published-applications) for more information.
+
 ### Start X2Go server daemon
 
 Now all you need to do is [start](/index.php/Start "Start") `x2goserver.service`.
@@ -103,9 +110,9 @@ Another special feature of X2Go is the possibility of suspending a session. This
 
 ### No selection screen in x2goclient
 
-A regression in [iproute2](https://www.archlinux.org/packages/?name=iproute2) causes *ss* to show no result when specifying the `-u` flag, as done in `/usr/bin/x2golistdesktops`. [[1]](https://marc.info/?l=linux-netdev&m=143018447007958&w=2)
+A regression in [iproute2](https://www.archlinux.org/packages/?name=iproute2) causes *ss* to show no result when specifying the `-u` flag, as done in `/usr/bin/x2golistdesktops`. [[2]](https://marc.info/?l=linux-netdev&m=143018447007958&w=2)
 
-See [[2]](http://bugs.x2go.org/cgi-bin/bugreport.cgi?bug=799), [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1541035) for more information.
+See [[3]](http://bugs.x2go.org/cgi-bin/bugreport.cgi?bug=799), [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1541035) for more information.
 
 ### Sessions do not logoff correctly
 
@@ -137,7 +144,7 @@ This can be solved on the windows side by generating different type of key:
 
 And simply replace `c:\Users\User\.x2go\etc\ssh_host_dsa_key` and `c:\Users\User\.x2go\etc\ssh_host_dsa_key.pub` with the newly generated key files.
 
-Other workarrounds from [[4]](http://bugs.x2go.org/cgi-bin/bugreport.cgi?bug=1009) might help, too.
+Other workarrounds from [[5]](http://bugs.x2go.org/cgi-bin/bugreport.cgi?bug=1009) might help, too.
 
 ### Workaround for failing compositing window manager for remote session
 

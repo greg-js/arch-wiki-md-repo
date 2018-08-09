@@ -4,7 +4,9 @@
 
 *   [1 Project Status](#Project_Status)
 *   [2 Installation](#Installation)
-    *   [2.1 Unofficial repository](#Unofficial_repository)
+    *   [2.1 Packages](#Packages)
+        *   [2.1.1 Unofficial repository](#Unofficial_repository)
+        *   [2.1.2 AUR](#AUR)
     *   [2.2 Desktop Environment](#Desktop_Environment)
     *   [2.3 Services and Configuration](#Services_and_Configuration)
     *   [2.4 Theme](#Theme)
@@ -35,9 +37,9 @@ Although the [elementary OS](https://elementary.io/) release schedule and toolch
 
 ## Installation
 
-**Warning:** Installing [pantheon-git-meta](https://aur.archlinux.org/packages/pantheon-git-meta/) is *not* a recommended method. This package attempts to install the entire desktop environment and software suite, with all extras, all at once and is likely to fail as some packages may not build.
+### Packages
 
-### Unofficial repository
+#### Unofficial repository
 
 **Warning:** The pantheon repository is no more, from now on pantheon packages will be available in the extra-alucryd repository, and they will be signed.
 
@@ -49,7 +51,9 @@ Server = https://pkgbuild.com/~alucryd/$repo/$arch
 
 ```
 
-**Note:** The PKGBUILDs for these packages are also available in the [AUR](/index.php/AUR "AUR").
+#### AUR
+
+The [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for the pantheon packages are also available in the [AUR](/index.php/AUR "AUR").
 
 ### Desktop Environment
 
@@ -92,7 +96,7 @@ These are some of the original, patched, and selected packages that comprise the
 
 *   [pantheon-files](https://www.archlinux.org/packages/?name=pantheon-files) or [pantheon-files-git](https://aur.archlinux.org/packages/pantheon-files-git/): File explorer developed from Marlin
 *   [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal) or [pantheon-terminal-git](https://aur.archlinux.org/packages/pantheon-terminal-git/): Terminal emulator
-*   [scratch-text-editor](https://www.archlinux.org/packages/?name=scratch-text-editor) or [pantheon-code-git](https://aur.archlinux.org/packages/pantheon-code-git/): Text editor formerly known as "Scratch"
+*   [pantheon-code](https://www.archlinux.org/packages/?name=pantheon-code) or [pantheon-code-git](https://aur.archlinux.org/packages/pantheon-code-git/): Text editor formerly known as "Scratch"
 *   [pantheon-calculator](https://aur.archlinux.org/packages/pantheon-calculator/) or [pantheon-calculator-git](https://aur.archlinux.org/packages/pantheon-calculator-git/): Calculator
 *   [pantheon-music](https://www.archlinux.org/packages/?name=pantheon-music) or [pantheon-music-git](https://aur.archlinux.org/packages/pantheon-music-git/): Audio player formerly known as "Noise"
 *   [pantheon-videos](https://www.archlinux.org/packages/?name=pantheon-videos) or [pantheon-videos-git](https://aur.archlinux.org/packages/pantheon-videos-git/): Video player formerly known as "Audience"

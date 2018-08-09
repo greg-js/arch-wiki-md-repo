@@ -43,7 +43,7 @@ $ cd $ROOTDIR
 Assume that you have done some modifications and have a patch *some.patch* (against the source tree after a `makepkg -o`, not the vanilla kernel of version *x.y*) in the working directory. Launch the kpatch utility,
 
 ```
-$ kpatch-build -s $(pwd) -t $(pwd)/vmlinux *some.patch*
+$ kpatch-build -s $(pwd) -v $(pwd)/vmlinux *some.patch*
 
 ```
 

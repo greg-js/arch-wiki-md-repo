@@ -3,15 +3,15 @@
 *   [Display manager (简体中文)](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")
 *   [GNOME (简体中文)](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)")
 *   [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [LightDM](/index.php/LightDM "LightDM")
-*   [LXDM](/index.php/LXDM "LXDM")
+*   [Display_manager_(简体中文)](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")
+*   [LightDM_(简体中文)](/index.php/LightDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LightDM (简体中文)")
+*   [LXDM_(简体中文)](/index.php/LXDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LXDM (简体中文)")
 
-**翻译状态：** 本文是英文页面 [GDM](/index.php/GDM "GDM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-07-30，点击[这里](https://wiki.archlinux.org/index.php?title=GDM&diff=0&oldid=525308)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [GDM](/index.php/GDM "GDM") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-08-08，点击[这里](https://wiki.archlinux.org/index.php?title=GDM&diff=0&oldid=525308)可以查看翻译后英文页面的改动。
 
-来自[GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM)：“The GNOME Display Manager (GDM) is a program that manages graphical display servers and handles graphical user logins."
+来自[GDM - GNOME显示管理器](https://wiki.gnome.org/Projects/GDM)：“GNOME显示管理器（GDM）是一个管理图形显示服务和处理图形用户登录的程序。
 
-[Display managers](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)") provide [X Window System](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)") and [Wayland](/index.php/Wayland_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wayland (简体中文)") users with a graphical login prompt.
+[显示管理器s](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)") provide [X Window System](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)") and [Wayland](/index.php/Wayland_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wayland (简体中文)") users with a graphical login prompt.
 
 ## Contents
 
@@ -49,13 +49,13 @@
 
 ## 安装
 
-GDM can be [installed](/index.php/Installed "Installed") with the [gdm](https://www.archlinux.org/packages/?name=gdm) package, and it is installed as part of the [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group.
+可通过安装[gdm](https://www.archlinux.org/packages/?name=gdm)包来安装GDM，或作为[gnome](https://www.archlinux.org/groups/x86_64/gnome/)组的一部分安装。
 
-If you would prefer to use legacy GDM which was used in GNOME 2 and has its own configuration utility, install the [gdm-old](https://aur.archlinux.org/packages/gdm-old/) package. Note that the rest of this article discusses current GDM, not legacy GDM, unless indicated otherwise.
+如果你更希望使用在GNOME 2中使用的旧的GDM和它的实用配置程序，安装[gdm-old](https://aur.archlinux.org/packages/gdm-old/)软件包。请注意，除非另有说明，否则本条目的其余部分均为讨论当前的GDM，而非旧的GDM。
 
-You might also wish to install the following:
+您可能还希望安装以下内容：
 
-*   **gdm3setup** — An interface to configure GDM3, autologin options and change Shell theme
+*   **gdm3setup** — 一个用来配置GDM3的接口，有自动登陆选项并且能更改Shell的主题
 
 	[https://github.com/Nano77/gdm3setup](https://github.com/Nano77/gdm3setup) || [gdm3setup-utils](https://aur.archlinux.org/packages/gdm3setup-utils/)
 
@@ -67,7 +67,7 @@ You might also wish to install the following:
 
 One might want to autostart certain commands, such as *xrandr* for instance, on login. This can be achieved by adding a command or script to a location that is sourced by the display manager. See [Display manager#Autostarting](/index.php/Display_manager#Autostarting "Display manager") for a list of supported locations.
 
-**Note:** The `/etc/gdm/Init` directory is no longer a supported location, see [[1]](https://bugzilla.gnome.org/show_bug.cgi?id=751602#c2).
+**Note:** `/etc/gdm/Init`目录不再是受支持的位置，参见[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=751602#c2).
 
 ## 配置
 

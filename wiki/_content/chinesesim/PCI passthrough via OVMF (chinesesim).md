@@ -420,7 +420,7 @@ core id		: 3
 
 ### CPU调速器
 
-根据您 [CPU 调速器](/index.php/CPU_frequency_scaling "CPU frequency scaling")的配置方式，虚拟机的线程可能无法达到负载阈值以提升频率。实际上，KVM 自身无法更改 CPU 频率，如果 CPU 频率并不能随着虚拟 CPU 的负载使用而提升，这可能是一个严重的性能问题。检查此问题最简单的方法是在虚拟机上运行 CPU 密集型任务的同时在宿主机上运行`watch lscpu`检查CPU频率是否上升。如果您的 CPU 频率无法正常上升且无法达到所报告的最大值，可能是由于[主机操作系统限制了 CPU 升频](https://lime-technology.com/forum/index.php?topic=46664.msg447678#msg447678)。这种情况下，尝试手动将所有CPU内核设为最大频率查看是否能够提升性能。请注意，如果您使用带有默认pstate驱动程序的现代Intel芯片，则cpupower命令[无效](/index.php/CPU_frequency_scaling#CPU_frequency_driver "CPU frequency scaling")，因此请监视`/proc/cpuinfo`确保您的CPU处于最大频率。
+根据您[CPU 调速器](/index.php/CPU_frequency_scaling "CPU frequency scaling")的配置方式，虚拟机的线程可能无法达到负载阈值以提升频率。实际上，KVM 自身无法更改 CPU 频率，如果 CPU 频率并不能随着虚拟 CPU 的负载使用而提升，这可能是一个严重的性能问题。检查此问题最简单的方法是在虚拟机上运行 CPU 密集型任务的同时在宿主机上运行`watch lscpu`检查CPU频率是否上升。如果您的 CPU 频率无法正常上升且无法达到所报告的最大值，可能是由于[主机操作系统限制了 CPU 升频](https://lime-technology.com/forum/index.php?topic=46664.msg447678#msg447678)。这种情况下，尝试手动将所有CPU内核设为最大频率查看是否能够提升性能。请注意，如果您使用带有默认pstate驱动程序的现代Intel芯片，则cpupower命令[无效](/index.php/CPU_frequency_scaling#CPU_frequency_driver "CPU frequency scaling")，因此请监视`/proc/cpuinfo`确保您的CPU处于最大频率。
 
 ### 高DPC延迟
 

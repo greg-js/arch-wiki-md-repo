@@ -25,7 +25,7 @@ Users may wish to disable automatic core dumps for a number of reasons:
 
  `/etc/sysctl.d/50-coredump.conf`  `kernel.core_pattern=|/bin/false` 
 
-To apply the setting immediately, use `systctl`:
+To apply the setting immediately, use `sysctl`:
 
 ```
 # sysctl -p /etc/sysctl.d/50-coredump.conf

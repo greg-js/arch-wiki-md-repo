@@ -39,7 +39,8 @@ Este artículo trata sobre las utilidades de los sistemas GNU/Linux denominadas 
 *   [12 rm](#rm)
 *   [13 sed](#sed)
 *   [14 seq](#seq)
-*   [15 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [15 tar](#tar)
+*   [16 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
 ## Comandos básicos
 
@@ -502,6 +503,8 @@ Aquí hay un puñado [list](http://sed.sourceforge.net/sed1line.txt) de ejemplo 
 ## seq
 
 **seq** (*sequence*) es una utilidad para generar secuencias de números. Hay alternativas integradas en la shell disponibles, por lo que es una buena práctica usarlas como se explica en [Wikipedia](https://en.wikipedia.org/wiki/Seq_(Unix) "wikipedia:Seq (Unix)").
+
+## tar
 
 ## Véase también
 

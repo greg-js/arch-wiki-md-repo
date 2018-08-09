@@ -1,6 +1,4 @@
-[GNU Screen](http://www.gnu.org/s/screen/) 是一个封装器，允许命令行程序和启动它的shell相分离。例如，可以在X下的终端中启动一个程序，关闭X，而继续使用此程序。以下有技巧和提示。
-
-如果想看教程，Gentoo的维基有一个很好的教程：[http://wiki.gentoo.org/wiki/Screen](http://wiki.gentoo.org/wiki/Screen)
+[GNU Screen](https://www.gnu.org/software/screen/)是一个全屏窗口管理器，它在多个进程（通常是交互式shell）之间复用物理终端。当屏幕当前不可见时，甚至整个屏幕会话与用户终端分离时，Screen中运行的程序也会继续运行。 有关功能的说明，请参阅官方GNU手册（[GNU Screen manual](https://www.gnu.org/software/screen/manual/screen.html#Overview)）。
 
 ## Contents
 

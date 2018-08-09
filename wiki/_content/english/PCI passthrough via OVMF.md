@@ -630,8 +630,6 @@ Once the driver is installed you must download the latest [looking-glass-host](h
 
 Looking glass client can be installed from AUR using [looking-glass](https://aur.archlinux.org/packages/looking-glass/) or [looking-glass-git](https://aur.archlinux.org/packages/looking-glass-git/) packages.
 
-**Warning:** If you experience issues with [looking-glass-git](https://aur.archlinux.org/packages/looking-glass-git/), switch to [looking-glass](https://aur.archlinux.org/packages/looking-glass/). **The git version is unsupported upstream and may break at any time**. Only the versioned releases are supported and guaranteed to work with the host application running on the Windows VM!
-
 You can start it once the VM is set up and running
 
 ```

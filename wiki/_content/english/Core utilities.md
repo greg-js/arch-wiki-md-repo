@@ -154,9 +154,7 @@ See [List of applications#Terminal pagers](/index.php/List_of_applications#Termi
 
 #### Vim as alternative pager
 
-[Vim](/index.php/Vim "Vim") includes a script to view the content of text files, compressed files, binaries and directories. Add the following line to your shell configuration file to use it as a pager:
-
- `~/.bashrc`  `alias less='/usr/share/vim/vim80/macros/less.sh'` 
+[Vim](/index.php/Vim "Vim") includes a script to view the content of text files, compressed files, binaries and directories. Add the following line to your shell configuration file to use it as a pager: `~/.bashrc`  `alias less='/usr/share/vim/vim80/macros/less.sh'` 
 
 There is also an alternative to the *less.sh* macro, which may work as the `PAGER` environment variable. Install [vimpager](https://www.archlinux.org/packages/?name=vimpager) and add the following to your shell configuration file:
 
@@ -371,7 +369,7 @@ The `help` command is available for all objects. For example, typing `ip addr he
 
 The [Network configuration](/index.php/Network_configuration "Network configuration") article shows how the *ip* command is used in practice for various common tasks.
 
-**Note:** You might be familiar with the [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig") command, which is deprecated in Arch Linux; use *ip* instead.
+**Note:** You might be familiar with the [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig") command, which was used in older Linux systems. It is deprecated in Arch Linux; use *ip* instead.
 
 ### ss
 

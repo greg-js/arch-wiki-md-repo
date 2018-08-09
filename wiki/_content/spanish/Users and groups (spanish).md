@@ -99,7 +99,7 @@ Véase [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)
 
 ## Lista de archivos
 
-**Advertencia:** No modifique estos archivos manualmente. Existen utilidades que bloquean el manejo de las propiedades y evitan invalidar el formato de la base de datos. Véase [#Gestión de usuarios](#Gesti.C3.B3n_de_usuarios) y [#Gestión de grupos](#Gesti.C3.B3n_de_grupos) para más detalles.
+**Advertencia:** No modifique estos archivos manualmente. Existen utilidades que bloquean el manejo de las propiedades y evitan invalidar el formato de la base de datos. Consulte [administración de usuarios](#Administraci.C3.B3n_de_usuarios) y [#Gestión de grupos](#Gesti.C3.B3n_de_grupos) para más detalles.
 
 | Archivo | Contenido |
 | `/etc/shadow` | Información reservada de las cuentas de usuario |
@@ -289,8 +289,6 @@ Los usuarios de estaciones de trabajo/escritorios suelen añadir su propio usuar
 ### Grupos del sistema
 
 Los grupos siguientes se utilizan para los fines del sistema y no son apropiados de ser utilizados por un usuario inexperto en Arch:
-
-**Nota:** Algunos de estos grupos solían ser necesarios antes de que Arch migrara a systemd. Actualmente no es el caso. Véase [esta sección](/index.php/Systemd_(Espa%C3%B1ol)#Informaci.C3.B3n_complementariasection_for_systemd "Systemd (Español)") para más información.
 
 | Grupo | Archivos afectados | Propósito |
 | audio | `/dev/audio`, `/dev/snd/*`, `/dev/rtc0` | Permite el acceso directo al hardware de sonido, para todas las sesiones (requisito necesario, por tanto, para [ALSA](/index.php/ALSA_(Espa%C3%B1ol) "ALSA (Español)") y [OSS](/index.php/OSS_(Espa%C3%B1ol) "OSS (Español)")). Las sesiones locales tienen ya la capacidad de poner en marcha los controles del sonido y del acceso al mezclador. |

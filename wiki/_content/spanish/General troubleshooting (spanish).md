@@ -18,11 +18,12 @@ Este artículo explica algunos métodos para solucionar problemas de forma gener
     *   [1.3 Sea más específico](#Sea_m.C3.A1s_espec.C3.ADfico)
     *   [1.4 Obtenga apoyo adicional](#Obtenga_apoyo_adicional)
 *   [2 Problemas de arranque](#Problemas_de_arranque)
-    *   [2.1 Pantalla en blanco con el vídeo Intel](#Pantalla_en_blanco_con_el_v.C3.ADdeo_Intel)
-    *   [2.2 Atascado mientras se carga el kernel](#Atascado_mientras_se_carga_el_kernel)
-    *   [2.3 Sistema no arrancable](#Sistema_no_arrancable)
-    *   [2.4 Depurar errores de módulos del kernel](#Depurar_errores_de_m.C3.B3dulos_del_kernel)
-    *   [2.5 Depurar errores de hardware](#Depurar_errores_de_hardware)
+    *   [2.1 Mensajes de la consola](#Mensajes_de_la_consola)
+    *   [2.2 Pantalla en blanco con el vídeo Intel](#Pantalla_en_blanco_con_el_v.C3.ADdeo_Intel)
+    *   [2.3 Atascado mientras se carga el kernel](#Atascado_mientras_se_carga_el_kernel)
+    *   [2.4 Sistema no arrancable](#Sistema_no_arrancable)
+    *   [2.5 Depurar errores de módulos del kernel](#Depurar_errores_de_m.C3.B3dulos_del_kernel)
+    *   [2.6 Depurar errores de hardware](#Depurar_errores_de_hardware)
 *   [3 Administrar paquetes](#Administrar_paquetes)
 *   [4 fuser](#fuser)
 *   [5 Permisos de sesión](#Permisos_de_sesi.C3.B3n)
@@ -82,6 +83,8 @@ Si necesita ayuda adicional, puede encontrarla en los [foros](https://bbs.archli
 ## Problemas de arranque
 
 Véase [Boot debugging](/index.php/Boot_debugging "Boot debugging") para recuperar información adicional.
+
+### Mensajes de la consola
 
 ### Pantalla en blanco con el vídeo Intel
 

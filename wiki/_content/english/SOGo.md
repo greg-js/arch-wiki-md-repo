@@ -1230,13 +1230,13 @@ Add the following to your server definition for SOGo in `/etc/nginx/nginx.com`:
 ```
 ...
         location ^~ /Microsoft-Server-ActiveSync {
-                proxy_pass [http://127.0.0.1:20000/SOGo/Microsoft-Server-ActiveSync](http://127.0.0.1:20000/SOGo/Microsoft-Server-ActiveSync);
-                proxy_redirect [http://127.0.0.1:20000/Microsoft-Server-ActiveSync](http://127.0.0.1:20000/Microsoft-Server-ActiveSync) /;
+                proxy_pass http://127.0.0.1:20000/SOGo/Microsoft-Server-ActiveSync;
+                proxy_redirect http://127.0.0.1:20000/Microsoft-Server-ActiveSync /;
         }
 
         location ^~ /SOGo/Microsoft-Server-ActiveSync {
-                proxy_pass [http://127.0.0.1:20000/SOGo/Microsoft-Server-ActiveSync](http://127.0.0.1:20000/SOGo/Microsoft-Server-ActiveSync);
-                proxy_redirect [http://127.0.0.1:20000/SOGo/Microsoft-Server-ActiveSync](http://127.0.0.1:20000/SOGo/Microsoft-Server-ActiveSync) /;
+                proxy_pass http://127.0.0.1:20000/SOGo/Microsoft-Server-ActiveSync;
+                proxy_redirect http://127.0.0.1:20000/SOGo/Microsoft-Server-ActiveSync /;
         }
 ...
 

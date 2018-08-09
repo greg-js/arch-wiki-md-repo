@@ -62,7 +62,7 @@ You may **not** want to use Arch, if:
 
 ### What architectures does Arch support?
 
-Arch only supports the x86_64 (sometimes called amd64) architecture. Support for i686 was dropped in November 2017[[1]](https://www.archlinux.org/news/the-end-of-i686-support/). If your machine still runs the i686 version of Arch but has a x86_64 CPU, see [#Can I switch from i686 to x86_64 without reinstalling?](#Can_I_switch_from_i686_to_x86_64_without_reinstalling.3F). If your machine is not capable, consider switching to [Arch Linux 32](https://archlinux32.org/).
+Arch only supports the x86_64 (sometimes called amd64) architecture. Support for i686 was dropped in November 2017[[1]](https://www.archlinux.org/news/the-end-of-i686-support/). If your machine is not capable, consider switching to [Arch Linux 32](https://archlinux32.org/).
 
 ### Does Arch support ARM CPUs?
 

@@ -29,12 +29,12 @@
 | [AMD Catalyst (Español)](/index.php/AMD_Catalyst_(Espa%C3%B1ol) "AMD Catalyst (Español)") | Tarjeta gráfica | `2013-09` |
 | [Archboot (Español)](/index.php/Archboot_(Espa%C3%B1ol) "Archboot (Español)") | Instalación | `2016-04` |
 | [Arch Build System (Español)](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)") | Gestión de paquetes | `2018-01` |
-| [Arch compared to other distributions (Español)](/index.php/Arch_compared_to_other_distributions_(Espa%C3%B1ol) "Arch compared to other distributions (Español)") | Información/Arch | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") |
-| [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") | Información/Arch | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") |
+| [Arch compared to other distributions (Español)](/index.php/Arch_compared_to_other_distributions_(Espa%C3%B1ol) "Arch compared to other distributions (Español)") | Información/Arch | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
+| [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") | Información/Arch | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
 | [Arch User Repository (Español)](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") | Repositorios | `2018-01` |
 | [Arch boot process (Español)](/index.php/Arch_boot_process_(Espa%C3%B1ol) "Arch boot process (Español)") | Proceso de arranque | `2013-09` |
 | [Archiso (Español)](/index.php/Archiso_(Espa%C3%B1ol) "Archiso (Español)") | Instalación | `2013-09` |
-| [ArchWiki:About (Español)](/index.php/ArchWiki:About_(Espa%C3%B1ol) "ArchWiki:About (Español)") | Información/Arch | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") |
+| [ArchWiki:About (Español)](/index.php/ArchWiki:About_(Espa%C3%B1ol) "ArchWiki:About (Español)") | Información/Arch | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
 | [ArchWiki:Contributing (Español)](/index.php/ArchWiki:Contributing_(Espa%C3%B1ol) "ArchWiki:Contributing (Español)") | Ayuda/Colaboración | `2014-04` |
 | [ATI (Español)](/index.php/ATI_(Espa%C3%B1ol) "ATI (Español)") | Tarjeta gráfica | `2013-09` |
 | [Beginners' guide (Español)](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)") | Información/Guía/Instalación | `2016-08` | Redirigida a Installation guide (Español) |
@@ -43,7 +43,7 @@
 | [Change root (Español)](/index.php/Change_root_(Espa%C3%B1ol) "Change root (Español)") | Recuperación del sistema | `2013-09` |
 | [ClamAV (Español)](/index.php/ClamAV_(Espa%C3%B1ol) "ClamAV (Español)") | Seguridad/Antivirus | `2013-09` |
 | [Codecs (Español)](/index.php/Codecs_(Espa%C3%B1ol) "Codecs (Español)") | Audio/vídeo | `2013-09` |
-| [Code of conduct (Español)](/index.php/Code_of_conduct_(Espa%C3%B1ol) "Code of conduct (Español)") | Información/Foro | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Mantenimiento "User:AlonsoLP") para más detalles. |
+| [Code of conduct (Español)](/index.php/Code_of_conduct_(Espa%C3%B1ol) "Code of conduct (Español)") | Información/Foro | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
 | [CUPS (Español)](/index.php/CUPS_(Espa%C3%B1ol) "CUPS (Español)") | Periféricos/Impresoras | `2013-09` |
 | [Daemons List (Español)](/index.php/Daemons_List_(Espa%C3%B1ol) "Daemons List (Español)") | Configuración del sistema/Demonios | `2013-09` |
 | [Desktop environment (Español)](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") | GUI | `2015-07` | [Cabrokimer](/index.php?title=User:Cabrokimer&action=edit&redlink=1 "User:Cabrokimer (page does not exist)") |
@@ -56,12 +56,12 @@
 | [DNSCrypt (Español)](/index.php/DNSCrypt_(Espa%C3%B1ol) "DNSCrypt (Español)") | Encriptación tráfico DNS | `2014-09` |
 | [dnsmasq (Español)](/index.php/Dnsmasq_(Espa%C3%B1ol) "Dnsmasq (Español)") | Información | `2014-09` |
 | [EFISTUB (Español)](/index.php/EFISTUB_(Espa%C3%B1ol) "EFISTUB (Español)") | Gestor de arranque | `2014-12` |
-| [FAQ (Español)](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)") | Información/General | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Redirigido a [Frequently asked questions (Español)](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)"). |
+| [FAQ (Español)](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)") | Información/General | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Redirigido a [Frequently asked questions (Español)](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)"). |
 | [File systems (Español)](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)") | Configuración del sistema/Sistema archivos | `2014-11` |
 | [Fonts (Español)](/index.php/Fonts_(Espa%C3%B1ol) "Fonts (Español)") | Tipos de letras | `2008-06` |
 | [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)") | Configuración del sistema/Sistema archivos | `2013-09` |
-| [Frequently asked questions (Español)](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)") | Información/General | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Mantenimiento "User:AlonsoLP") para más detalles. |
-| [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)") | Información/Posinstalación | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Mantenimiento "User:AlonsoLP") para más detalles. |
+| [Frequently asked questions (Español)](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)") | Información/General | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
+| [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)") | Información/Posinstalación | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
 | [Getting involved (Español)](/index.php/Getting_involved_(Espa%C3%B1ol) "Getting involved (Español)") | Ayuda/Colaboración | `2016-09` |
 | [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") | Gestor de arranque | `2015-06` |
 | [GRUB/Tips and tricks (Español)](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol) "GRUB/Tips and tricks (Español)") | Gestor de arranque | `2018-06` | [Phenom](/index.php?title=User:Phenom&action=edit&redlink=1 "User:Phenom (page does not exist)") |
@@ -123,7 +123,7 @@
 | [Simple stateful firewall (Español)](/index.php/Simple_stateful_firewall_(Espa%C3%B1ol) "Simple stateful firewall (Español)") | Seguridad/Shell | `2014-26` |
 | [Sound system (Español)](/index.php/Sound_system_(Espa%C3%B1ol) "Sound system (Español)") | Sonido | `2013-09` |
 | [Start X at login (Español)](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)") | Proceso de arranque | `2013-09` |
-| [su (Español)](/index.php/Su_(Espa%C3%B1ol) "Su (Español)") | Seguridad/Usuarios | `2013-09` |
+| [su (Español)](/index.php/Su_(Espa%C3%B1ol) "Su (Español)") | Seguridad/Usuarios | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
 | [Sudo (Español)](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") | Seguridad/Usuarios | `2013-09` |
 | [Swap (Español)](/index.php/Swap_(Espa%C3%B1ol) "Swap (Español)") | Partición/Archivo de intercambio | `2014-11` |
 | [Syslinux (Español)](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)") | Gestor de arranque | `2015-01` |
@@ -133,7 +133,7 @@
 | [systemd-networkd (Español)](/index.php/Systemd-networkd_(Espa%C3%B1ol) "Systemd-networkd (Español)") | Configuración del sistema/Gestión redes | `2016-10` |
 | [systemd/User (Español)](/index.php/Systemd/User_(Espa%C3%B1ol) "Systemd/User (Español)") | Configuración del sistema/Gestor del sistema | `2013-09` |
 | [Table of contents (Español)](/index.php/Table_of_contents_(Espa%C3%B1ol) "Table of contents (Español)") | Información/Wiki | `2014-04` | Su contenido se actualiza automáticamente (no la traducción de los títulos) |
-| [The Arch Way (Español)](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)") | Información/Arch | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Redirigido a [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)"). |
+| [The Arch Way (Español)](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)") | Información/Arch | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Redirigido a [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)"). |
 | [Time (Español)](/index.php/Time_(Espa%C3%B1ol) "Time (Español)") | Configuración del sistema/Horario | `2013-09` |
 | [Touchpad Synaptics (Español)](/index.php/Touchpad_Synaptics_(Espa%C3%B1ol) "Touchpad Synaptics (Español)") | Periféricos/Panel táctil | `2013-09` |
 | [Udev (Español)](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") | Configuración del sistema/Gestión hardware | `2013-09` |

@@ -254,3 +254,4 @@ nodaemon        = False
 *   [MythTV Wiki:Remotes article](http://www.mythtv.org/wiki/Category:Remote_Controls)
 *   [Official list of supported hardware](http://lirc-remotes.sourceforge.net/remotes-table.html)
 *   [Linux Streamzap config files](https://github.com/graysky2/streamzap)
+*   [LIRC quick start guide](/index.php/LIRC_quick_start_guide "LIRC quick start guide")

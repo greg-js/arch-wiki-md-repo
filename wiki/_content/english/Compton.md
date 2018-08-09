@@ -24,7 +24,8 @@
     *   [4.10 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
     *   [4.11 Tabbed windows](#Tabbed_windows)
     *   [4.12 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
-    *   [4.13 Lag with Nvidia proprietary drivers and FullCompositionPipeline](#Lag_with_Nvidia_proprietary_drivers_and_FullCompositionPipeline)
+    *   [4.13 Screentearing with NVIDIA's proprietary drivers](#Screentearing_with_NVIDIA.27s_proprietary_drivers)
+    *   [4.14 Lag with Nvidia proprietary drivers and FullCompositionPipeline](#Lag_with_Nvidia_proprietary_drivers_and_FullCompositionPipeline)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -108,7 +109,7 @@ $ compton --config *path/to/compton.conf* -b
 
 #### Disable shadows for some windows
 
-The `shadow-exclude` option can disable shadows for windows if required. For currently disabled windows, see [here](https://projects.archlinux.org/svntogit/community.git/tree/trunk/compton.conf?h=packages/compton#n80).
+The `shadow-exclude` option can disable shadows for windows if required. For currently disabled windows, see [[1]](https://projects.archlinux.org/svntogit/community.git/tree/trunk/compton.conf?h=packages/compton#n80).
 
 To disable shadows for menus add the following to wintypes in `compton.conf`:
 
@@ -169,7 +170,7 @@ The override redirect property seems to be false for most windows- having this i
 
 ### Firefox
 
-See [#Disable_shadows_for_some_windows](#Disable_shadows_for_some_windows)
+See [#Disable shadows for some windows](#Disable_shadows_for_some_windows).
 
 To disable shadows for Firefox elements add the following to shadow-exclude in `compton.conf`:
 
@@ -178,7 +179,7 @@ To disable shadows for Firefox elements add the following to shadow-exclude in `
 
 ```
 
-See [[1]](https://github.com/chjj/compton/issues/201#issuecomment-45288510) for more information.
+See [[2]](https://github.com/chjj/compton/issues/201#issuecomment-45288510) for more information.
 
 ### slock
 
@@ -254,7 +255,7 @@ unredir-if-possible = false;
 
 ```
 
-See [[2]](https://github.com/chjj/compton/issues/402) for more information.
+See [[3]](https://github.com/chjj/compton/issues/402) for more information.
 
 ### Fullscreen tearing
 
@@ -271,7 +272,7 @@ If you experience heavy lag when using Xft fonts in applications such as [xterm]
 
 Or the xrender backend.
 
-See [[3]](https://github.com/chjj/compton/issues/152) for more information.
+See [[4]](https://github.com/chjj/compton/issues/152) for more information.
 
 ### Screen artifacts/screenshot issues when using AMD's Catalyst driver
 
@@ -291,7 +292,7 @@ backend = "xrender";
 
 to your `compton.conf` file.
 
-See [[4]](https://github.com/chjj/compton/issues/208) for more information.
+See [[5]](https://github.com/chjj/compton/issues/208) for more information.
 
 ### Tabbed windows
 
@@ -320,7 +321,7 @@ opacity-rule = [
 
 Note that `URxvt` is the Xorg class name of your terminal. Change this if you use a different terminal. You can query a window's class by running the command `xprop WM_CLASS` and clicking the window.
 
-See [[5]](https://www.reddit.com/r/unixporn/comments/330zxl/webmi3_no_more_overlaying_shadows_and_windows_in/) for more information.
+See [[6]](https://www.reddit.com/r/unixporn/comments/330zxl/webmi3_no_more_overlaying_shadows_and_windows_in/) for more information.
 
 ### Unable to change the background color with xsetroot
 
@@ -331,7 +332,16 @@ $ hsetroot -solid '#000000'
 
 ```
 
-See [[6]](https://github.com/chjj/compton/issues/162) for more information.
+See [[7]](https://github.com/chjj/compton/issues/162) for more information.
+
+### Screentearing with NVIDIA's proprietary drivers
+
+Try this setting in `compton.conf`:
+
+```
+vsync = "opengl"
+
+```
 
 ### Lag with Nvidia proprietary drivers and FullCompositionPipeline
 

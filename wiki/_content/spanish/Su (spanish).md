@@ -3,13 +3,17 @@ Artículos relacionados
 *   [Usuarios y grupos](/index.php/Users_and_Groups_(Espa%C3%B1ol) "Users and Groups (Español)")
 *   [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)")
 
-La orden **su** (**s**ubstitute **u**ser) se utiliza para asumir la identidad de otro usuario en el sistema, normalmente root. Esto ahorra tener que cerrar la sesión en curso y volver a iniciarla después como usuario normal. En su lugar, puede iniciar sesión como otro usuario **durante** su sesión, iniciando una especie de «subsesión», y, luego, cerrar esta última sesión, para volver a la anterior, cuando haya terminado.
+**Estado de la traducción:** este artículo es una versión traducida de [su](/index.php/Su "Su"). Fecha de la última traducción/revisión: **2018-08-08**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Su&diff=0&oldid=516603).
+
+El comando **su** (del inglés **s**ubstitute **u**ser, o usuario sustituto) se usa para asumir la identidad de otro usuario en el sistema, root por defecto.
+
+Consulte [PAM](/index.php/PAM "PAM") para ver las formas de configurar el comportamiento de **su**.
 
 ## Contents
 
 *   [1 Instalación](#Instalaci.C3.B3n)
 *   [2 Utilización](#Utilizaci.C3.B3n)
-*   [3 Seguridad](#Seguridad)
+*   [3 Sudo, una alternativa](#Sudo.2C_una_alternativa)
 *   [4 Consejos y trucos](#Consejos_y_trucos)
     *   [4.1 Shell de inicio de sesión](#Shell_de_inicio_de_sesi.C3.B3n)
     *   [4.2 su y wheel](#su_y_wheel)
@@ -23,15 +27,15 @@ su es parte del paquete [util-linux](https://www.archlinux.org/packages/?name=ut
 Para asumir el inicio de sesión de otro usuario, pase el nombre de usuario que desea convertir a su, como sigue:
 
 ```
-# su nombre_usuario
+# su *usuario*
 
 ```
 
-Se le pedirá la contraseña del usuario al que está invocando.
+Se le pedirá la contraseña del usuario que está invocando.
 
 Si no se pasa ningún nombre de usuario, su asume que el usuario es root y la contraseña por la que se le preguntará será la de root.
 
-## Seguridad
+## Sudo, una alternativa
 
 Desde una perspectiva de seguridad, podría decirse que es mejor establecer y utilizar [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") en lugar de su. El sistema sudo le mostrará un prompt que tiene su propia contraseña –o ninguna, si está configurado así– en lugar de la del usuario de destino (la cuenta del usuario que está intentando utilizar). De esta manera no tiene que compartir contraseñas entre los usuarios, y si alguna vez necesita evitar que un usuario tenga acceso como root (o el acceso a cualquier otra cuenta, para el caso), no tendrá que cambiar la contraseña de root, que es una molestia que afecta a los demás usuarios; bastará con revocar el acceso a sudo de ese usuario.
 

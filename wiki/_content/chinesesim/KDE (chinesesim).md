@@ -3,13 +3,15 @@
 *   [Desktop environment (简体中文)](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")
 *   [Display manager (简体中文)](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")
 *   [Window manager (简体中文)](/index.php/Window_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Window manager (简体中文)")
-*   [Dolphin](/index.php/Dolphin "Dolphin")
 *   [Qt (简体中文)](/index.php/Qt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Qt (简体中文)")
+*   [SDDM (简体中文)](/index.php/SDDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "SDDM (简体中文)")
+*   [Dolphin (简体中文)](/index.php?title=Dolphin_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&action=edit&redlink=1 "Dolphin (简体中文) (page does not exist)")
+*   [KDE Wallet (简体中文)](/index.php/KDE_Wallet_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE Wallet (简体中文)")
 *   [KDevelop](/index.php/KDevelop "KDevelop")
 *   [Trinity](/index.php/Trinity "Trinity")
 *   [Uniform Look for Qt and GTK Applications (简体中文)](/index.php/Uniform_Look_for_Qt_and_GTK_Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Uniform Look for Qt and GTK Applications (简体中文)")
 
-**翻译状态：** 本文是英文页面 [KDE](/index.php/KDE "KDE") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-01-08，点击[这里](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=506541)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [KDE](/index.php/KDE "KDE") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-08-08，点击[这里](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=532333)可以查看翻译后英文页面的改动。
 
 KDE 是由 Plasma [桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Desktop environment (简体中文)")、库、框架 (KDE Frameworks)、和应用组成的软件项目。KDE 上游有一份维护良好的 [UserBase Wiki](https://userbase.kde.org/)。大多数 KDE 应用程序的详细信息都可以在那里找到。
 
@@ -114,7 +116,7 @@ KDE 是由 Plasma [桌面环境](/index.php/Desktop_environment_(%E7%AE%80%E4%BD
 
 ## 启动 Plasma
 
-**注意:** 虽然可以使用 [Wayland](/index.php/Wayland_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wayland (简体中文)") 启动 Plasma，但 Plasma 5.11 仍存在一些缺失的功能和已知问题。问题清单详见 [Plasma 5.11 Errata（英文）](https://community.kde.org/Plasma/5.11_Errata#Wayland)，当前开发状况详见 [Plasma on Wayland workboard（英文）](https://phabricator.kde.org/project/board/99/)。使用 [Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)") 以获得最完整和稳定的体验。
+**注意:** 虽然可以使用 [Wayland](/index.php/Wayland_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wayland (简体中文)") 启动 Plasma，但 Plasma 5.13 仍存在一些缺失的功能和已知问题。问题清单详见 [Plasma 5.13 Errata（英文）](https://community.kde.org/Plasma/5.13_Errata#Wayland)，当前开发状况详见 [Plasma on Wayland workboard（英文）](https://phabricator.kde.org/project/board/99/)。使用 [Xorg](/index.php/Xorg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xorg (简体中文)") 以获得最完整和稳定的体验。
 
 Plasma 可以通过[显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")启动,也可以从控制台手动启动。
 
@@ -130,7 +132,7 @@ Plasma 可以通过[显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD
 
 ### 控制台启动
 
-若要使用 "[xinit](/index.php/Xinit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xinit (简体中文)")/startx" 启动 Plasma 桌面，请在 `.xinitrc` 文件中添加 `exec startkde`。若要在登录的时候开启 Xorg 请参阅[在启动时自动启用 X](/index.php/Start_X_at_Login_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Start X at Login (简体中文)")。若要从终端启动 Wayland 会话, 运行 `startplasmacompositor`。
+若要使用 "[xinit/startx](/index.php/Xinit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xinit (简体中文)")" 启动 Plasma 桌面，请在 `.xinitrc` 文件中添加 `exec startkde`。若要在登录的时候开启 Xorg 请参阅[在启动时自动启用 X](/index.php/Start_X_at_Login_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Start X at Login (简体中文)")。若要从终端启动 Wayland 会话, 运行 `export XDG_SESSION_TYPE=wayland && export $(dbus-launch) && startplasmacompositor`。[[1]](https://community.kde.org/KWin/Wayland#Start_a_Plasma_session_on_Wayland%7C在控制台启动Wayland会话)
 
 ## 配置
 
@@ -142,7 +144,7 @@ Plasma 可以通过[显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD
 
 ##### 主题
 
-[Plasma 主题](http://kde-look.org/index.php?xcontentmode=76)定义面板和 plasmoids。官方资料库和 [AUR](https://aur.archlinux.org/packages.php?O=0&K=plasmatheme&do_Search=Go) 提供了很多主题。
+[Plasma 主题](http://kde-look.org/index.php?xcontentmode=76)定义面板和 plasmoids。官方资料库和 [AUR](https://aur.archlinux.org/packages.php?K=plasma+theme) 提供了很多主题。
 
 通过桌面设置控制面板来安装主题是最简单的方法：
 
@@ -167,7 +169,7 @@ Plasma 可以通过[显示管理器](/index.php/Display_manager_(%E7%AE%80%E4%BD
 
 	GTK+
 
-在 GTK 中推荐外形美观的主题是 [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) 或 [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)。安装 [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) 并在 *系统设置 > 应用风格 > GNOME 应用设置* 中选择想要的 GTK 主题。
+在 GTK 中推荐外形美观的主题是 [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) 或 [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)。安装 [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) （该软件是[plasma](https://www.archlinux.org/groups/x86_64/plasma/) 的一部分），在 *系统设置 > 应用风格 > GNOME 应用设置* 中选择想要的 GTK 主题。
 
 在某些主题中，GTK+ 应用程序的工具栏显示为白底白字。若要更改 GTK2 应用程序中的颜色，请找到 `.gtkrc-2.0` 并修改工具栏区。若要更改 GTK3 应用程序中的颜色，`gtk.css` 和 `settings.ini` 文件需要被修改。您也可以尝试在 *系统设置 > 颜色* 中取消对 *将颜色应用于非Qt应用程序* 的勾选。
 
@@ -194,14 +196,14 @@ Plasmoid包含短的脚本（plasmoid scripts）或者编译过的（plasmoid bi
 
 ##### 禁用面板阴影
 
-因为 Plasma 的面板在其他窗口之上，所以它的阴影会渲染在其他窗口之上。[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1228394#p1228394)若要在不影响其他阴影的情况下禁用此行为，[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) 并运行:
+因为 Plasma 的面板在其他窗口之上，所以它的阴影会渲染在其他窗口之上。[[2]](https://bbs.archlinux.org/viewtopic.php?pid=1228394#p1228394)若要在不影响其他阴影的情况下禁用此行为，[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) 并运行:
 
 ```
 $ xprop -remove _KDE_NET_WM_SHADOW
 
 ```
 
-然后用增大光标选择面板。[[2]](https://forum.kde.org/viewtopic.php?f=285&t=121592) 若要自动化，[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [xorg-xwininfo](https://www.archlinux.org/packages/?name=xorg-xwininfo) 并创建以下脚本：
+然后用增大光标选择面板。[[3]](https://forum.kde.org/viewtopic.php?f=285&t=121592) 若要自动化，[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [xorg-xwininfo](https://www.archlinux.org/packages/?name=xorg-xwininfo) 并创建以下脚本：
 
  `/usr/local/bin/kde-no-shadow` 
 ```
@@ -237,6 +239,8 @@ $ kcmshell5 autostart
 图标主题可以在 *系统设置 > 图标* 中安装或改变.
 
 **注意:** 虽然所有现代的Linux发行版都共享统一的图标主题格式，但像 [GNOME](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)")这样的桌面使用更少的图标（特别在工具栏和菜单中）。为这些桌面开发的主题一边都缺少 Plasma 和 KDE 应用需要的图标。建议安装与 Plasma 兼容的主题。
+
+**提示：** 部分图标主题不从默认图标主题中引入图标，这将导致部分图标缺失。要想从默认图标主题中导入缺失图标，把`breeze`添加到 `/usr/share/icon/*theme-name*/index.theme`的`Inherits=` 中，比如`Inherits=breeze,hicolor`。每次更新图标主题时你都需要重新使用这个补丁，尝试使用[Pacman hooks](/index.php/Pacman_hooks "Pacman hooks")来自动完成这项任务。
 
 #### 字体
 
@@ -358,7 +362,7 @@ KDE 中广泛地使用 Phonon 用于声音（例如系统通知或者 KDE 声音
 
 *   可以同时安装多个后端，并在 *系统设置 > 多媒体 > 后端* 中进行优先级设定。
 *   根据 [KDE 这个帖子](https://forum.kde.org/viewtopic.php?f=250&t=126476&p=335080), VLC 后端不支持 [ReplayGain](https://en.wikipedia.org/wiki/ReplayGain "wikipedia:ReplayGain")。
-*   如果你选择 VLC 后端，你可能会在每次kde想要发送一个语音警告时遇到崩溃（以及在很多其他情况下，参见[[3]](https://forum.kde.org/viewtopic.php?f=289&t=135956))
+*   如果你选择 VLC 后端，你可能会在每次kde想要发送一个语音警告时遇到崩溃（以及在很多其他情况下，参见[[4]](https://forum.kde.org/viewtopic.php?f=289&t=135956))
 *   你可以尝试运行以下代码进行修复：
 
  `# /usr/lib/vlc/vlc-cache-gen -f /usr/lib/vlc/plugins` 
@@ -424,7 +428,7 @@ KDE 使用 Baloo 实现文件索引和查找。
 
 在默认情况下，桌面搜索的 KCM 仅显示两个选项：一个将文件夹放入黑名单的面板以及一种一次点击来禁用它的方法。
 
-或者你可以编辑 `~/.config/baloofilerc` 文件[[4]](https://community.kde.org/Baloo/Configuration)。另外你也可以使用 `balooctl` 进程。运行 `balooctl stop` 和 `balooctl disable`。
+或者你可以编辑 `~/.config/baloofilerc` 文件[[5]](https://community.kde.org/Baloo/Configuration)。另外你也可以使用 `balooctl` 进程。运行 `balooctl stop` 和 `balooctl disable`。
 
 将文件夹添加到黑名单或完全禁用了Baloo之后，`baloo_file_cleaner` 进程将会自动删除所有不需要的索引文件。它们被存储在 `~/.local/share/baloo/` 。
 
@@ -559,7 +563,7 @@ Name=/home/*username*/.local/share/akonadi/akonadi.db
 
 ### 使用其他窗口管理器
 
-Plasma 中的组件选择器设置已不再允许更改窗口管理器。[[5]](https://github.com/KDE/plasma-desktop/commit/2f83a4434a888cd17b03af1f9925cbb054256ade)若需要更改窗口管理器，你需要在 KDE 启动之前设置 `KDEWM` [环境变量](/index.php/Environment_variables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Environment variables (简体中文)")。[[6]](https://wiki.haskell.org/Xmonad/Using_xmonad_in_KDE)为此，你可以在 `~/.config/plasma-workspace/env` 中创建一个名为 `set_window_manager.sh` 的脚本，并在这导出 `KDEWM` 变量。例：使用 i3 窗口管理器：
+Plasma 中的组件选择器设置已不再允许更改窗口管理器。[[6]](https://github.com/KDE/plasma-desktop/commit/2f83a4434a888cd17b03af1f9925cbb054256ade)若需要更改窗口管理器，你需要在 KDE 启动之前设置 `KDEWM` [环境变量](/index.php/Environment_variables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Environment variables (简体中文)")。[[7]](https://wiki.haskell.org/Xmonad/Using_xmonad_in_KDE)为此，你可以在 `~/.config/plasma-workspace/env` 中创建一个名为 `set_window_manager.sh` 的脚本，并在这导出 `KDEWM` 变量。例：使用 i3 窗口管理器：
 
  `~/.config/plasma-workspace/env/set_window_manager.sh`  `export KDEWM=/usr/bin/i3` 
 

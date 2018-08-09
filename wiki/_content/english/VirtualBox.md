@@ -74,6 +74,7 @@ In order to integrate functions of the host system to the guests, including shar
     *   [5.24 Windows 8, 8.1 or 10 fails to install, boot or has error "ERR_DISK_FULL"](#Windows_8.2C_8.1_or_10_fails_to_install.2C_boot_or_has_error_.22ERR_DISK_FULL.22)
     *   [5.25 WinXP: Bit-depth cannot be greater than 16](#WinXP:_Bit-depth_cannot_be_greater_than_16)
     *   [5.26 Windows: Screen flicker if 3D acceleration enabled](#Windows:_Screen_flicker_if_3D_acceleration_enabled)
+    *   [5.27 No hardware 3D acceleration in Arch Linux guest](#No_hardware_3D_acceleration_in_Arch_Linux_guest)
 *   [6 See also](#See_also)
 
 ## Installation steps for Arch Linux hosts
@@ -335,7 +336,7 @@ You can mount your directory with [fstab](/index.php/Fstab "Fstab"). However, to
 ```
 
 *   `*sharedFolderName*`: the value from the VirtualMachine's *Settings > SharedFolders > Edit > FolderName* menu. This value can be different from the name of the real folder name on the host machine. To see the VirtualMachine's *Settings* go to the host OS VirtualBox application, select the corresponding virtual machine and click on *Settings*.
-*   `*/path/to/mntPtOnGuestMachine*`: if not existing, this directory should be created manually (for example by using [mkdir](/index.php/Core_utilities#mkdir "Core utilities"))
+*   `*/path/to/mntPtOnGuestMachine*`: if not existing, this directory should be created manually (for example by using [mkdir](/index.php/Core_utilities#mkdir_.28make_directory.29 "Core utilities"))
 *   `dmode`/`fmode` are directory/file permissions for directories/files inside `*/path/to/mntPtOnGuestMachine*`.
 
 As of 2012-08-02, mount.vboxsf does not support the *nofail* option:
@@ -883,6 +884,12 @@ $ CR_RENDER_FORCE_PRESENT_MAIN_THREAD=0 VirtualBox
 ```
 
 Make sure no VirtualBox services are still running. See [VirtualBox bug 13653](https://www.virtualbox.org/ticket/13653).
+
+### No hardware 3D acceleration in Arch Linux guest
+
+[virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) package as of version 5.2.16-2 does not contain the file `VBoxEGL.so`. This causes the Arch Linux guest does not have proper 3D acceleration. See [FS#49752](https://bugs.archlinux.org/task/49752).
+
+To deal with this problem, apply the patch set at [FS#49752#comment152254](https://bugs.archlinux.org/task/49752#comment152254). Some fix to the patch set is required to make it work for version 5.2.16-2.
 
 ## See also
 

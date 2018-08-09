@@ -16,7 +16,7 @@
 | <small>2.2.</small> [Command-line](/index.php/Category:Command-line_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Command-line (简体中文)") <small>(3) (同时还属于 [系统管理](/index.php/Category:System_administration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System administration (简体中文)"))</small> |
 | <small>2.3.</small> [数据压缩和归档](/index.php/Category:Data_compression_and_archiving_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Data compression and archiving (简体中文)") <small>(4)</small> |
 | <small>2.4.</small> [数据库管理](/index.php/Category:Database_management_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Database management systems (简体中文)") <small>(4)</small> |
-| <small>2.5.</small> [字典](/index.php/Category:Dictionaries_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Dictionaries (简体中文)") <small>(1)</small> |
+| <small>2.5.</small> [字典](/index.php/Category:Dictionaries_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Dictionaries (简体中文)") <small>(2)</small> |
 | <small>2.6.</small> [模拟器](/index.php/Category:Emulators_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Emulators (简体中文)") <small>(7)</small> |
 | <small>2.7.</small> [文件管理器](/index.php/Category:File_managers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:File managers (简体中文)") <small>(4)</small> |
 | <small>2.8.</small> [游戏娱乐](/index.php/Category:Gaming_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Gaming (简体中文)") <small>(6)</small> |

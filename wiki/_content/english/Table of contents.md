@@ -9,7 +9,7 @@
 | <small>1.4.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(2)</small> |
 | <small>1.5.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") <small>(29)</small> |
 | <small>1.6.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(4)</small> |
-| <small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(17)</small> |
+| <small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(18)</small> |
 | <small>2.1.</small> [Accessibility](/index.php/Category:Accessibility "Category:Accessibility") <small>(7)</small> |
 | <small>2.2.</small> [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers") <small>(13)</small> |
 | <small>2.3.</small> [Command-line](/index.php/Category:Command-line "Category:Command-line") <small>(7) (also in [System administration](/index.php/Category:System_administration "Category:System administration"))</small> |

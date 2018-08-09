@@ -3,7 +3,7 @@ Related articles
 *   [KMS](/index.php/KMS "KMS")
 *   [Xorg](/index.php/Xorg "Xorg")
 
-[Wayland](http://wayland.freedesktop.org/) is a protocol for a [compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") to talk to its clients, as well as a library implementing the protocol. Many major Linux desktop environments, like [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE"), support Wayland. There is also a compositor reference implementation called Weston. [XWayland](https://wayland.freedesktop.org/xserver.html) implements a compatibility layer to seamlessly run legacy [X11](/index.php/X11 "X11") applications on Wayland.
+[Wayland](http://wayland.freedesktop.org/) is a protocol for a [compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") to talk to its clients, as well as a library implementing the protocol. It is supported on some desktop environments like [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE"). There is also a compositor reference implementation called Weston. [XWayland](https://wayland.freedesktop.org/xserver.html) implements a compatibility layer to seamlessly run legacy [X11](/index.php/X11 "X11") applications on Wayland.
 
 ## Contents
 
@@ -66,7 +66,7 @@ Weston is the reference implementation of a Wayland compositor.
 
 ### Usage
 
-**Tip:** Super (windows key) can be changed, see [weston.ini](/index.php/Wayland#Configuration "Wayland")
+**Tip:** Super (windows key) can be changed, see [weston.ini](#Configuration)
 
 <caption>**Keyboard Shortcuts**</caption>
 | Cmd | Action |

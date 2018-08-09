@@ -48,8 +48,8 @@ Update your sync database:
 The official Arch Linux kernel provides a *generic* package which is built for the x86_64 architecture that will run on *any* compatible x86_64 CPU. Repo-ck also hosts a generic version of [linux-ck](/index.php/Linux-ck "Linux-ck") but also provides optimized packages for specific CPUs.
 
 | CPU Type | Group Alias | Details |
-| **Generic** | *ck-generic* | Generic kernel similar to the official Arch Linux kernel. |
-| **Intel** | *ck-atom* | Intel Atom specific optimizations. |
+| Generic | *ck-generic* | Generic kernel similar to the official Arch Linux kernel. |
+| Intel | *ck-atom* | Intel Atom specific optimizations. |
 | *ck-silvermont* | Intel Silvermont specific optimizations. |
 | *ck-core2* | Intel Core 2-family including Dual and Quads. |
 | *ck-nehalem* | Intel 1st Generation Core i3/i5/i7-family |
@@ -60,7 +60,7 @@ The official Arch Linux kernel provides a *generic* package which is built for t
 | *ck-skylake* | Intel 6th Generation Core i3/i5/i7-family |
 | *ck-p4* | Intel Pentium-4 (P4/P4-based Celeron/Pentium-4 M/Older Xeon). |
 | *ck-pentm* | Intel Pentium-M (Pentium-M notebook chips/not Pentium-4 M). |
-| **AMD** | *ck-kx* | AMD K7/K8-family |
+| AMD | *ck-kx* | AMD K7/K8-family |
 | *ck-k10* | AMD K10-family including 61xx Eight-Core Magny-Cours, Athlon X2 7x50, Phenom X3/X4/II, Athlon II X2/X3/X4, or Turion II-family processor. |
 | *ck-bobcat* | CPUs based on AMD Family 14h cores with x86-64 instruction set support. |
 | *ck-bulldozer* | CPUs based on AMD Family 15h cores with x86-64 instruction set support. |
@@ -83,7 +83,7 @@ The resulting `-march` is what GCC would use natively. Refer to the table below 
 **Note:** This table has been updated to show the new simplified march options that ship with GCC v4.9+. For more information see the [release notes](https://gcc.gnu.org/gcc-4.9/changes.html).
 
 | Brand | Group | March |
-| **Intel** | *ck-atom* | bonnell |
+| Intel | *ck-atom* | bonnell |
 | *ck-silvermont* | silvermont |
 | *ck-core2* | core2 |
 | *ck-nehalem* | nehalem |
@@ -94,7 +94,7 @@ The resulting `-march` is what GCC would use natively. Refer to the table below 
 | *ck-skylake* | skylake |
 | *ck-p4* | pentium4, prescott, nocona |
 | *ck-pentm* | pentm, pentium-m |
-| **AMD** | *ck-kx* | athlon, athlon-4, athlon-tbird, athlon-mp, athlon-xp, k8-sse3 |
+| AMD | *ck-kx* | athlon, athlon-4, athlon-tbird, athlon-mp, athlon-xp, k8-sse3 |
 | *ck-k10* | amdfam10 |
 | *ck-bobcat* | btver1 |
 | *ck-bulldozer* | bdver1 |

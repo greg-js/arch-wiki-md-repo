@@ -1,8 +1,8 @@
 Artículos relacionados
 
-*   [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)")
-*   [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions")
-*   [Pacman/Rosetta (Español)](/index.php/Pacman/Rosetta_(Espa%C3%B1ol) "Pacman/Rosetta (Español)")
+*   [Arch Linux](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)")
+*   [Distribuciones basadas en Arch](/index.php/Arch-based_distributions "Arch-based distributions")
+*   [Pacman/Rosetta](/index.php/Pacman/Rosetta_(Espa%C3%B1ol) "Pacman/Rosetta (Español)")
 
 **Estado de la traducción:** este artículo es una versión traducida de [Arch compared to other distributions](/index.php/Arch_compared_to_other_distributions "Arch compared to other distributions"). Fecha de la última traducción/revisión: **2018-07-30**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&diff=0&oldid=516496).
 

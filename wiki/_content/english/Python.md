@@ -107,6 +107,7 @@ A similar approach in tricking the environment, which also relies on `#!/usr/bin
 
 Old versions of Python are available via the [AUR](/index.php/AUR "AUR") and may be useful for historical curiosity, old applications that do not run on current versions, or for testing Python programs intended to run on a distribution that comes with an older version:
 
+*   Python 3.6: [python36](https://aur.archlinux.org/packages/python36/)
 *   Python 3.5: [python35](https://aur.archlinux.org/packages/python35/)
 *   Python 3.4: [python34](https://aur.archlinux.org/packages/python34/)
 *   Python 2.6: [python26](https://aur.archlinux.org/packages/python26/)

@@ -541,7 +541,7 @@ The logfiles are of the form `Xorg.n.log` with `n` being the display number. For
 
 	You may also attempt to kill the X server with:
 
-	 `# pkill X` 
+	 `# pkill -x X` 
 
 	If this does not work, reboot blindly with:
 

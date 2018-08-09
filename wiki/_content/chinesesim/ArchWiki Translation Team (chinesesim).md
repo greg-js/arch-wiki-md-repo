@@ -147,7 +147,7 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [File recovery (简体中文)](/index.php/File_recovery_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File recovery (简体中文)") | 翻译中 | _spaike97 | 无 |
 | [Font configuration (简体中文)](/index.php/Font_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Font configuration (简体中文)") | 翻译中 | Jaurung | 完善中 |
 | [Fonts (简体中文)](/index.php/Fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fonts (简体中文)") | 翻译中 | qqbzg | 无 |
-| GDM_(简体中文) | 翻译中 | Junjie Yuan | 绝大多数内容未翻译，重新进行翻译 |
+| [GDM (简体中文)](/index.php/GDM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GDM (简体中文)") | 翻译中 | Junjie Yuan | 绝大多数内容未翻译，重新进行翻译 |
 | [GNOME (简体中文)](/index.php/GNOME_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNOME (简体中文)") | 完成 | skywet |
 | [KDE (简体中文)](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)") | 过期 |
 | [LAMP (简体中文)](/index.php/LAMP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "LAMP (简体中文)") | 完成 | Liuzhengyi | 勘误中 |

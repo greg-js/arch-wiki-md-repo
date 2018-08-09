@@ -2,6 +2,7 @@ Related articles
 
 *   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
 *   [Libvirt](/index.php/Libvirt "Libvirt")
+*   [QEMU guest graphics acceleration](/index.php/QEMU_guest_graphics_acceleration "QEMU guest graphics acceleration")
 *   [PCI passthrough via OVMF](/index.php/PCI_passthrough_via_OVMF "PCI passthrough via OVMF")
 
 According to the [QEMU about page](http://wiki.qemu.org/Main_Page), "QEMU is a generic and open source machine emulator and virtualizer."

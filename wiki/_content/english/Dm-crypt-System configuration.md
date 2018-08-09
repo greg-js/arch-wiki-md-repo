@@ -21,6 +21,7 @@
 *   [3 crypttab](#crypttab)
     *   [3.1 Mounting at boot time](#Mounting_at_boot_time)
         *   [3.1.1 Mounting a stacked blockdevice](#Mounting_a_stacked_blockdevice)
+    *   [3.2 Mounting on demand](#Mounting_on_demand)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 System stuck on boot/password prompt does not show](#System_stuck_on_boot.2Fpassword_prompt_does_not_show)
 
@@ -355,6 +356,37 @@ For example, you can create a [RAID](/index.php/RAID "RAID") setup, use cryptset
 will ask for the passphrase and mount automatically at boot.
 
 Given you specify the correct corresponding crypttab (e.g. UUID for the `crypto_LUKS` device) and fstab (`/dev/vgraid/lvraid`) entries, there is no need to add additional mkinitcpio hooks/configuration, because `/etc/crypttab` processing applies to non-root mounts only. One exception is when the `mdadm_udev` hook is used *already* (e.g. for the root device). In this case `/etc/madadm.conf` and the initramfs need updating to achieve the correct root raid is picked first.
+
+### Mounting on demand
+
+You can use
+
+```
+# systemctl start systemd-cryptsetup@externaldrive
+
+```
+
+instead of
+
+```
+# cryptsetup luksOpen UUID=... externaldrive
+
+```
+
+when you have an entry as follows in your /etc/crypttab:
+
+ `/etc/crypttab`  `externaldrive UUID=... none noauto` 
+
+That way you do not need to remember the exact crypttab options. It will prompt you for the passphrase if needed.
+
+The corresponding unit file is generated automatically by [systemd-cryptsetup-generator](https://www.freedesktop.org/software/systemd/man/systemd-cryptsetup-generator.html).
+
+You can list all generated unit files using
+
+```
+$ systemctl list-unit-files | grep systemd-cryptsetup
+
+```
 
 ## Troubleshooting
 

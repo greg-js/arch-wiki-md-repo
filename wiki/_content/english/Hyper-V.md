@@ -13,6 +13,7 @@ Hyper-V is a hypervisor that is included with some versions of Microsoft Windows
 *   [6 Post-installation](#Post-installation)
     *   [6.1 Shared directories](#Shared_directories)
     *   [6.2 Xorg](#Xorg)
+    *   [6.3 Enhanced Session Mode](#Enhanced_Session_Mode)
 
 ## Installation
 
@@ -211,3 +212,33 @@ More ways to mount shared folders, including automatic mounting on startup, are 
 ### Xorg
 
 Graphical programs can easily be run via Xorg via the [xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev) package. Simply install it and the window manager or desktop environment you wish to use, and you should be able to start X without issue.
+
+### Enhanced Session Mode
+
+By default, you may suffer from poor mouse and desktop experience. [Enhanced Session Mode](https://blogs.technet.microsoft.com/virtualization/2018/02/28/sneak-peek-taking-a-spin-with-enhanced-linux-vms/) features better mouse and video experience and integrated clipboard. This mode utilizes [Xrdp](/index.php/Xrdp "Xrdp") and `hv_sock` kernel module. Run the following code to enable this mode in the guest:
+
+```
+git clone https://github.com/Microsoft/linux-vm-tools
+cd linux-vm-tools/arch
+./makepkg.sh
+./install-config.sh
+
+```
+
+Edit `~/.xinitrc` to start your own [desktop environment](/index.php/Desktop_environment "Desktop environment") when log in a Xrdp session. Refer [xinit](/index.php/Xinit "Xinit") to configure `~/.xinitrc`.
+
+Then turn off your Arch VM machine, and then using PowerShell (run as Administrator), you need to enable `hv_sock` on you machine:
+
+```
+Set-VM -VMName __Your_Arch_Machine__ -EnhancedSessionTransportType HvSocket
+
+```
+
+After enabling Enhanced Session Mode, Hyper-V client automatically connects to a Xrdp session after booting.
+
+One of the downsides is that it is hard to connect to a TTY virtual console. You can diable Enhanced Session Mode by running the following command on Powershell (run as Administrator):
+
+```
+Set-VM -VMName __Your_Arch_Machine__ -EnhancedSessionTransportType VMBus
+
+```

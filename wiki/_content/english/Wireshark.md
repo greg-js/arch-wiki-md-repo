@@ -30,7 +30,7 @@ Therefore to use Wireshark as a normal user you just have to add your user to th
 
 ```
 
-Re-login to apply the change. You can use `newgrp wireshark` to open a shell with the new group applied, but it will only work when Wireshark is launched from there until you re-login.
+Re-login to apply the change.
 
 ## A few capturing techniques
 

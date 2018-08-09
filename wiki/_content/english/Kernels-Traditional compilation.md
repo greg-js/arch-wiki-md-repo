@@ -28,7 +28,7 @@ It is not necessary (or recommended) to use the root account or root privileges 
 
 ### Install the core packages
 
-Install the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) package group, which contains necessary packages such as [make](https://www.archlinux.org/packages/?name=make) and [gcc](https://www.archlinux.org/packages/?name=gcc). It is also recommended to install the following packages, as listed in the default Arch kernel [PKGBUILD](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/linux): [xmlto](https://www.archlinux.org/packages/?name=xmlto), [docbook-xsl](https://www.archlinux.org/packages/?name=docbook-xsl), [kmod](https://www.archlinux.org/packages/?name=kmod), [inetutils](https://www.archlinux.org/packages/?name=inetutils), [bc](https://www.archlinux.org/packages/?name=bc)
+Install the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) package group, which contains necessary packages such as [make](https://www.archlinux.org/packages/?name=make) and [gcc](https://www.archlinux.org/packages/?name=gcc). It is also recommended to install the following packages, as listed in the default Arch kernel [PKGBUILD](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/linux): [xmlto](https://www.archlinux.org/packages/?name=xmlto), [kmod](https://www.archlinux.org/packages/?name=kmod), [inetutils](https://www.archlinux.org/packages/?name=inetutils), [bc](https://www.archlinux.org/packages/?name=bc), [libelf](https://www.archlinux.org/packages/?name=libelf), [git](https://www.archlinux.org/packages/?name=git)
 
 ### Create a kernel compilation directory
 

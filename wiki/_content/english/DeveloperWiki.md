@@ -79,6 +79,7 @@
 ### Devops Team
 
 *   [DeveloperWiki:Arch Services](/index.php/DeveloperWiki:Arch_Services "DeveloperWiki:Arch Services")
+*   [DeveloperWiki:Server Upgrades](/index.php/DeveloperWiki:Server_Upgrades "DeveloperWiki:Server Upgrades")
 
 ### Reproducible Builds
 
