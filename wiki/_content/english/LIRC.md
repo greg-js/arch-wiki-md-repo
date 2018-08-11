@@ -1,29 +1,39 @@
-This article covers setup and usage of [LIRC](http://lirc.org/) "Linux Infrared Remote Control" with serial or USB infrared devices.
+Related articles
+
+*   [LIRC/Quick start guide](/index.php/LIRC/Quick_start_guide "LIRC/Quick start guide")
+
+From the [official website](http://lirc.org/):
+
+	**LIRC** (Linux Infrared Remote Control) is a package that allows you to decode and send infra-red signals of many (but not all) commonly used remote controls.
+
+**Note:** Since 4.18 the kernel can decode the signals of some IR remote controls using BPF, making LIRC sometimes redundant.[[1]](https://lwn.net/Articles/759188/)
+
+This article covers setup and usage of LIRC with serial or USB infrared devices.
 
 LIRC is a daemon that can translate key presses on a supported remote into program specific commands. In this context, the term, "program specific" means that a key press can do different things depending on which program is running and taking commands from LIRC.
 
-*   User hits a button on the remote causing it to transmit an IR or RF signal.
-*   The signal is received by the receiver connected to the Linux box.
-*   The kernel (via the correct module) use presents pulse data from the remote on a device like /dev/lirc0, /dev/input/eventX, /dev/ttyUSBX or /dev/ttyS0.
-*   `/usr/bin/lircd` uses the information from `/etc/lirc/lircd.conf.d/foo.conf` to convert the pulse data into button press information.
-*   Programs that use LIRC translate the button press info from `/usr/bin/lircd` into user-defined actions according to `~/.lircrc` or to program-specific mappings.
+1.  A button on the remote is pressed causing it to transmit an IR or RF signal.
+2.  The signal is received by the receiver connected to the Linux computer.
+3.  The kernel (via the correct module) use presents pulse data from the remote on a device like `/dev/lirc0`, `/dev/input/eventX`, `/dev/ttyUSBX` or `/dev/ttyS0`.
+4.  `/usr/bin/lircd` uses the information from `/etc/lirc/lircd.conf.d/foo.conf` to convert the pulse data into button press information.
+5.  Programs that use LIRC translate the button press info from `/usr/bin/lircd` into user-defined actions according to `~/.config/lircrc` or to program-specific mappings.
 
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Upstream provided](#Upstream_provided)
-    *   [2.2 User created](#User_created)
-    *   [2.3 Optional files](#Optional_files)
+    *   [2.1 Scancode mapping](#Scancode_mapping)
+        *   [2.1.1 Remotes database](#Remotes_database)
+        *   [2.1.2 Creating remote configurations](#Creating_remote_configurations)
+    *   [2.2 Application-specific actions](#Application-specific_actions)
 *   [3 Usage](#Usage)
-*   [4 Program Specific Configuration](#Program_Specific_Configuration)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Remote functions as a keyboard](#Remote_functions_as_a_keyboard)
-        *   [5.1.1 When using Xorg](#When_using_Xorg)
-        *   [5.1.2 On an ARM device not using Xorg](#On_an_ARM_device_not_using_Xorg)
-    *   [5.2 Changing default configuration](#Changing_default_configuration)
-        *   [5.2.1 Example](#Example)
-*   [6 See also](#See_also)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Remote functions as a keyboard](#Remote_functions_as_a_keyboard)
+        *   [4.1.1 When using Xorg](#When_using_Xorg)
+        *   [4.1.2 On an ARM device not using Xorg](#On_an_ARM_device_not_using_Xorg)
+    *   [4.2 Changing default configuration](#Changing_default_configuration)
+        *   [4.2.1 Example](#Example)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -33,13 +43,17 @@ LIRC is a daemon that can translate key presses on a supported remote into progr
 
 **Note:** This section is a quick summary. Complete documentation is available [upstream](http://lirc.sourceforge.net/lirc.org/html/index.html).
 
-`/etc/lirc/lircd.conf.d/foo.conf` is the system-wide configuration translating scancodes --> keys. This directory may contain multiple conf files and each one is specific to each remote control/receiver on the system. These files are user-created config files and not directly supplied by [lirc](https://www.archlinux.org/packages/?name=lirc).
+### Scancode mapping
 
-The definition of scancodes to keymaps is required to allow LIRC to manage a remote. Users have several options to obtain one.
+`/etc/lirc/lircd.conf.d/foo.conf` is the system-wide configuration translating scancodes to keycodes. This directory may contain multiple conf files and each one is specific to each remote control/receiver on the system. These files are user-created config files and not directly supplied by [lirc](https://www.archlinux.org/packages/?name=lirc).
 
-### Upstream provided
+The definition of scancodes to keycodes is required to allow LIRC to manage a remote.
 
-Identify which remote/receiver is to be used and see if there is a known config for it. One can use `irdb-get` to search the [remotes database](http://lirc-remotes.sourceforge.net/remotes-table.html) or simply browse to the URL and do the same.
+#### Remotes database
+
+LIRC provides configuration files for many remote controls in the [remotes database](http://lirc-remotes.sourceforge.net/remotes-table.html). You can use [irdb-get(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/irdb-get.1) to search the database or simply browse to the URL and do the same.
+
+If you cannot find a configuration file for your remote control, you need to [create one](#Creating_remote_configurations).
 
 An example using `irdb-get` to find a config file for a Streamzap remote:
 
@@ -64,31 +78,39 @@ Once identified, copy the needed conf to `/etc/lirc/lircd.conf.d/` to allow the 
 
 ```
 
-### User created
+#### Creating remote configurations
 
-Users with unsupported hardware will need to either find a config file someone else has created (i.e. google) or create one. Creating one is fairly straightforward using `/usr/bin/irrecord` which guides users along the needed process. If using a detected remote, invoke it like so:
+Remote control configurations can easily be created using [irrecord(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/irrecord.1), which guides users along the needed process. If using a detected remote, invoke it like so:
 
 ```
 # irrecord --device=/dev/lirc0 MyRemote
 
 ```
 
-The program will instruct users to begin hitting keys on the remote in an attempt to learn it, ultimately mapping out every button and its corresponding scancode. The process should take no more than 10 minutes. When finished, save the resulting file to `/etc/lirc/lircd.conf.d/foo.conf` and proceed.
+The program will instruct users to begin hitting keys on the remote in an attempt to learn it, ultimately mapping out every button and its corresponding scancode. When finished, save the resulting file to `/etc/lirc/lircd.conf.d/foo.conf` and proceed.
 
-**Note:** Consider sending the finished config file to the email address mentioned in the program so it can be made available to others.
+**Tip:** Consider sending the finished config file to the email address mentioned in the program so it can be made available to others.
 
-### Optional files
+### Application-specific actions
 
-Depending on the application using LIRC, the following are optional. For example, [mplayer](https://www.archlinux.org/packages/?name=mplayer) and [mythtv](https://aur.archlinux.org/packages/mythtv/) use the these files to define key maps and actions. Some other programs such as [kodi](https://www.archlinux.org/packages/?name=kodi) for example do not make use of this at all but do have an internal system to achieve these mappings. Users should consult the documentation for the specific application to know if modifications to `~/.lircrc` are needed.
+The `~/.config/lircrc` configuration file lets you bind keycodes to application-specific actions, see [lircrc(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lircrc.5). This only works for LIRC-aware applications, like [MPlayer](/index.php/MPlayer "MPlayer"), [VLC](/index.php/VLC "VLC"), [MythTV](/index.php/MythTV "MythTV") and [totem](https://www.archlinux.org/packages/?name=totem) ([Kodi](/index.php/Kodi "Kodi") also supports LIRC but does so in a non-standard way, see [Kodi#Using a remote control](/index.php/Kodi#Using_a_remote_control "Kodi")).
 
-*   `~/.lircrc` - File containing an **include** statement pointing to each program's lirc map, i.e., `~/.lirc/foo`, `~/.lirc/bar`, etc.
-*   `~/.lirc/foo` - User-level config translating of keys --> actions. Is specific to each remote and to application foo.
+You can put application configuration in separate files and include them in *lircrc*, like:
+
+```
+include "~/.config/lircrc/mplayer"
+include "~/.config/lircrc/mythtv"
+include "~/.config/lircrc/vlc"
+
+```
+
+**Tip:** Many application-specific lircrc files are available on the internet.
 
 ## Usage
 
-[Start](/index.php/Start "Start") `lircd.service` and [enable](/index.php/Enable "Enable") it to run at boot time/shutdown (recommended).
+[Start/enable](/index.php/Start/enable "Start/enable") `lircd.service`.
 
-Test the remote using `/usr/bin/irw`, which simply echos anything received by LIRC when users push buttons on the remote to stdout.
+Test the remote using [irw(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/irw.1), which simply echos anything received by LIRC when users push buttons on the remote to stdout.
 
 Example:
 
@@ -104,55 +126,15 @@ $ irw
 
 If `irw` gives no output, double check the config files in `/etc/lirc/lircd.conf.d/` for errors.
 
-## Program Specific Configuration
-
-LIRC has the ability to allow for different programs to use the same keypress and result in unique commands. In other words, one can setup different programs to respond differently to a given key press.
-
-*   Decide which programs are to use LIRC commands.
-
-**Note:** Common programs include: [mplayer](https://www.archlinux.org/packages/?name=mplayer), [mythtv](https://aur.archlinux.org/packages/mythtv/), [totem](https://www.archlinux.org/packages/?name=totem), [vlc](https://www.archlinux.org/packages/?name=vlc), and [kodi](https://www.archlinux.org/packages/?name=kodi) but not all programs will use this particular method to map keys. [kodi](https://www.archlinux.org/packages/?name=kodi) for example, implements LIRC in a non-standard way. Users must edit `~/.xbmc/userdata/Lircmap.xml` which is a unique xml file, rather than the LIRC standard files the rest of the programs use. Interested users should consult [Kodi#Using a remote control](/index.php/Kodi#Using_a_remote_control "Kodi").
-
-*   Create the expected files showing LIRC where the various program-specific maps reside:
-
-```
-$ mkdir ~/.lirc
-$ touch ~/.lircrc
-
-```
-
-*   Populate `~/.lirc` with the program specific config files named for each program.
-
-Example:
-
-```
-$ ls ~/.lirc
-mplayer
-mythtv
-vlc
-
-```
-
-**Tip:** Many pre-made files unique to each remote/program are available via googling. Providing an exhaustive listing of keymaps for each program is beyond the scope of this article.
-
-*   Edit `~/.lircrc` to contain an **include** statement pointing to `~/.lirc/foo` and repeat for each program that is to be controlled by LIRC.
-
-Example:
-
- `~/.lircrc` 
-```
-include "~/.lirc/mplayer"
-include "~/.lirc/mythtv"
-include "~/.lirc/vlc"
-
-```
-
 ## Troubleshooting
 
 ### Remote functions as a keyboard
 
 #### When using Xorg
 
-Xorg detects some remotes, such as the Streamzap USB PC Remote, as a Human Interface Device (HID) which means some or all of the keys will show up as key strokes as if entered from the physical keyboard. This behavior will present problems if LIRC is to be used to manage the device. To disable, create the following file and restart X:
+[Xorg](/index.php/Xorg "Xorg") detects some remotes, such as the Streamzap USB PC Remote, as a Human Interface Device (HID) which means some or all of the keys will show up as key strokes as if entered from the physical keyboard. This behavior will present problems if LIRC is to be used to manage the device.
+
+To disable, create the following file and restart X:
 
  `/etc/X11/xorg.conf.d/90-streamzap.conf` 
 ```
@@ -214,7 +196,7 @@ If no output is presented, the task becomes locating the correct driver/device c
 
 ```
 
-In this case, lirc automatically detected `/dev/input/event5` as the IR device, which uses the `devinput` driver. Check if this combination is working by running:
+In this case, LIRC automatically detected `/dev/input/event5` as the IR device, which uses the `devinput` driver. Check if this combination is working by running:
 
 ```
 $ mode2 --driver devinput --device /dev/input/event5
@@ -254,4 +236,3 @@ nodaemon        = False
 *   [MythTV Wiki:Remotes article](http://www.mythtv.org/wiki/Category:Remote_Controls)
 *   [Official list of supported hardware](http://lirc-remotes.sourceforge.net/remotes-table.html)
 *   [Linux Streamzap config files](https://github.com/graysky2/streamzap)
-*   [LIRC quick start guide](/index.php/LIRC_quick_start_guide "LIRC quick start guide")

@@ -12,8 +12,7 @@ Improving the boot performance of a system can provide reduced boot wait times a
 
 *   [1 Analyzing the boot process](#Analyzing_the_boot_process)
     *   [1.1 Using systemd-analyze](#Using_systemd-analyze)
-    *   [1.2 Using systemd-bootchart](#Using_systemd-bootchart)
-    *   [1.3 Using bootchart2](#Using_bootchart2)
+    *   [1.2 Using bootchart2](#Using_bootchart2)
 *   [2 Compiling a custom kernel](#Compiling_a_custom_kernel)
 *   [3 Initramfs](#Initramfs)
 *   [4 Early start for services](#Early_start_for_services)
@@ -59,14 +58,6 @@ $ systemd-analyze plot > plot.svg
 ```
 
 See [systemd-analyze(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-analyze.1) for details.
-
-### Using systemd-bootchart
-
-Bootchart is part of *systemd* and can be used at boot time passing the following option to the kernel command line: `initcall_debug printk.time=y init=/usr/lib/systemd/systemd-bootchart`.
-
-After collecting a certain amount of data (configurable) the logging stops and a graph is generated from the logged information. This graph contains vital clues as to which resources are being used (by default I/O, CPU utilization and kernel init threads), in which order, and where possible problems exist in the startup sequence of the system. It is essentially a more detailed version of the systemd-analyze plot function.
-
-Bootchart graphs are by default written time-stamped in `/run/log` and saved to the journal with *MESSAGE_ID=9f26aa562cf440c2b16c773d0479b518*. Journal field *BOOTCHART=* contains the bootchart in SVG format. See the [manpage](http://www.freedesktop.org/software/systemd/man/systemd-bootchart.html) for more information.
 
 ### Using bootchart2
 

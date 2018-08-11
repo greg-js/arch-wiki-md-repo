@@ -6,29 +6,30 @@ You can check out University of Oslo's [Munin install](http://munin.ping.uio.no/
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Munin Master](#Munin_Master)
+    *   [2.1 Munin master](#Munin_master)
         *   [2.1.1 Directories](#Directories)
         *   [2.1.2 Cron](#Cron)
             *   [2.1.2.1 crontab](#crontab)
             *   [2.1.2.2 systemd timer](#systemd_timer)
         *   [2.1.3 Permissions](#Permissions)
         *   [2.1.4 Testing](#Testing)
-    *   [2.2 Munin Node](#Munin_Node)
+    *   [2.2 Munin node](#Munin_node)
         *   [2.2.1 Daemon](#Daemon)
         *   [2.2.2 IPv6](#IPv6)
         *   [2.2.3 Customization](#Customization)
         *   [2.2.4 Plugins](#Plugins)
             *   [2.2.4.1 Adding](#Adding)
-            *   [2.2.4.2 Additional Plugins](#Additional_Plugins)
+            *   [2.2.4.2 Additional plugins](#Additional_plugins)
             *   [2.2.4.3 Removing](#Removing)
             *   [2.2.4.4 Debugging](#Debugging)
         *   [2.2.5 Permissions](#Permissions_2)
-*   [3 Web Server (Optional)](#Web_Server_.28Optional.29)
+*   [3 Web server (optional)](#Web_server_.28optional.29)
     *   [3.1 Apache](#Apache)
         *   [3.1.1 Apache VirtualHost examples](#Apache_VirtualHost_examples)
-        *   [3.1.2 Basic static html](#Basic_static_html)
-        *   [3.1.3 Static html with DynaZoom feature](#Static_html_with_DynaZoom_feature)
-        *   [3.1.4 Full dynamic](#Full_dynamic)
+        *   [3.1.2 Basic static HTML](#Basic_static_HTML)
+        *   [3.1.3 Static HTML with DynaZoom feature](#Static_HTML_with_DynaZoom_feature)
+        *   [3.1.4 DynaZoom Permissions](#DynaZoom_Permissions)
+        *   [3.1.5 Full dynamic](#Full_dynamic)
     *   [3.2 Nginx](#Nginx)
         *   [3.2.1 Munin 2.0.x](#Munin_2.0.x)
         *   [3.2.2 Munin 2.1.x](#Munin_2.1.x)
@@ -47,7 +48,7 @@ Further documentation may be found on the [Munin documentation wiki](http://muni
 
 ## Configuration
 
-### Munin Master
+### Munin master
 
 #### Directories
 
@@ -152,7 +153,7 @@ When `graph_strategy cgi` is enabled in `/etc/munin/munin.conf` ensure the direc
 
 #### Testing
 
-Once `munin-cron` is configured to run Munin will be ready to start generating graphs. Ensure the `munin-node.service` is running on each of the nodes. It may be useful to jump ahead to the Munin Node section and return here once the node are up and running.
+Once `munin-cron` is configured to run Munin will be ready to start generating graphs. Ensure the `munin-node.service` is running on each of the nodes. It may be useful to jump ahead to the [#Munin node](#Munin_node) section and return here once the node are up and running.
 
 Change to the `munin` user with the following `su` command, the `-s`/`--shell` option is for specifiying the shell (in this case bash). This needs to be done from root shell, since the `munin` user does not have a password:
 
@@ -179,7 +180,7 @@ And finally test the interface by pointing your browser to the output directory 
 
 **Note:** It might take a while for the graphs to have data, so be patient. Wait for about 30 minutes to an hour.
 
-### Munin Node
+### Munin node
 
 #### Daemon
 
@@ -254,7 +255,7 @@ Now test your plugin. You do not need to use the full path to the plugin, `munin
 
 And [restart](/index.php/Restart "Restart") `munin-node.service`. Finally, refresh the web page.
 
-##### Additional Plugins
+##### Additional plugins
 
 There are many Munin plugins out there just waiting to be installed. The [MuninExchange](http://muninexchange.projects.linpro.no/) is an excellent place to start looking, and if you cannot find a plugin that does what you want it is easy to write your own. Have a look at [Developing Plugins](http://guide.munin-monitoring.org/en/latest/develop/plugins/) at the Munin documentation wiki to learn how.
 
@@ -294,7 +295,7 @@ Because many plugins read log files, it is useful to [add](/index.php/Users_and_
 
 ```
 
-## Web Server (Optional)
+## Web server (optional)
 
 This guide sets up Munin to generate static HTML and graph images and write them in a directory of your choosing. You can view these generated files locally with any web browser. If you want to view the generated files from a remote machine, then you will need to install and configure one of the following web servers:
 
@@ -317,7 +318,7 @@ In the next major release of Munin, things will be much simpler. Check it out:
 
 *   [http://guide.munin-monitoring.org/en/latest/example/webserver/apache-virtualhost.html](http://guide.munin-monitoring.org/en/latest/example/webserver/apache-virtualhost.html)
 
-#### Basic static html
+#### Basic static HTML
 
 ```
 <VirtualHost *:80>
@@ -332,7 +333,7 @@ In the next major release of Munin, things will be much simpler. Check it out:
 
 ```
 
-#### Static html with DynaZoom feature
+#### Static HTML with DynaZoom feature
 
 Install [perl-cgi-fast](https://www.archlinux.org/packages/?name=perl-cgi-fast).
 
@@ -371,6 +372,16 @@ You must enable one of these:
 </VirtualHost>
 
 ```
+
+#### DynaZoom Permissions
+
+When Munin cannot draw graphs and logs a similar message to `Could not draw graph "/var/lib/munin/cgi-tmp/munin-cgi-graph/"` check to make sure group permissions are set on `/var/lib/munin/cgi-tmp/munin-cgi-graph/` so the `munin-cgi-graph` directory has writeable group permissions such as `drwxrwxr-x 3 munin http 4096 Aug 9 20:11 munin-cgi-graph`.
+
+`ls -l /var/lib/munin/cgi-tmp/`
+
+If group permissions are not set, then
+
+`chmod g+w /var/lib/munin/cgi-tmp/munin-cgi-graph/`
 
 #### Full dynamic
 

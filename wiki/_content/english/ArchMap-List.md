@@ -1082,5 +1082,7 @@ You can use the following website to get your device's coordinates along with a 
 54.763989, 25.404788 "riddle00" # Vilnius, Lithuania
 30.380417, 76.782576 "lll2yu" # Ambala, India
 47.197523, 7.698578  "thatfatnerdfromnextdoor" # Herzogenbuchsee, Switzerland
+-43.590414, 172.380892 "grawlinson" # Christchurch, New Zealand
+36.718911, -4.427087 "AlonsoLP" # Málaga, Spain
 
 ```

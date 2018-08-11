@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions"). Fecha de la última traducción/revisión: **2018-08-05**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=532225).
+**Estado de la traducción:** este artículo es una versión traducida de [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions"). Fecha de la última traducción/revisión: **2018-08-10**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=532704).
 
 Artículos relacionados
 
@@ -64,7 +64,7 @@ Es posible que **no** desee usar Arch, si:
 
 ### ¿Qué arquitecturas soporta Arch?
 
-Arch sólo soporta x86_64 (a veces llamado amd64). El soporte para i686 será descartado y eliminado por completo en noviembre del 2017 [[1]](https://www.archlinux.org/news/phasing-out-i686-support/). Si todavía está ejecutando un sistema de 32-bit puede estar interesado en leer [¿Cómo puedo saber si mi procesador es compatible con x86_64?](#.C2.BFC.C3.B3mo_puedo_saber_si_mi_procesador_es_compatible_con_x86_64.3F)
+Arch sólo soporta la arquitectura x86_64 (a veces llamado amd64). El soporte para i686 fue eliminado en noviembre de 2017 [[1]](https://www.archlinux.org/news/phasing-out-i686-support/). Si su máquina no tiene soporte, considere cambiar a [Arch Linux 32](https://archlinux32.org/).
 
 ### ¿Tiene Arch soporte para CPU ARM?
 

@@ -17,7 +17,7 @@ The Xen hypervisor is a thin layer of software which emulates a computer archite
 *   [2 Configuring dom0](#Configuring_dom0)
     *   [2.1 Installation of the Xen hypervisor](#Installation_of_the_Xen_hypervisor)
     *   [2.2 Modification of the bootloader](#Modification_of_the_bootloader)
-        *   [2.2.1 UEFI](#UEFI)
+        *   [2.2.1 EFISTUB](#EFISTUB)
         *   [2.2.2 GRUB](#GRUB)
         *   [2.2.3 Syslinux](#Syslinux)
     *   [2.3 Creation of a network bridge](#Creation_of_a_network_bridge)
@@ -69,11 +69,11 @@ You also need to install the [seabios](https://www.archlinux.org/packages/?name=
 
 The boot loader must be modified to load a special Xen kernel (`xen.gz` or in the case of UEFI `xen.efi`) which is then used to boot the normal kernel. To do this a new bootloader entry is needed.
 
-#### UEFI
+#### EFISTUB
 
-There are several ways UEFI can be involved in booting Xen but this section will cover the most simple way to get Xen to boot with help of EFI-stub.
+There are several ways UEFI can be involved in booting Xen but this section will cover the most simple way to get Xen to boot with help of [EFISTUB](/index.php/EFISTUB "EFISTUB").
 
-It is possible to boot a kernel from UEFI just by placing it on the EFI partition, but since Xen at least needs to know what kernel should be booted as dom0, a minimum configuration file is required. Create or edit a `/boot/xen.cfg` file according to system requirements, for example:
+It is possible to boot a kernel from UEFI just by placing it on the [EFI system partition](/index.php/EFI_system_partition "EFI system partition"), but since Xen at least needs to know what kernel should be booted as dom0, a minimum configuration file is required. Create or edit a `/boot/xen.cfg` file according to system requirements, for example:
 
  `/boot/xen.cfg` 
 ```

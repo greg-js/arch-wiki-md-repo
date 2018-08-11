@@ -1,6 +1,6 @@
-There is a variety of GPS (Global Positioning System) hardware receivers supported in Arch Linux:
+There is a variety of [Global Positioning System](https://en.wikipedia.org/wiki/Global_Positioning_System "wikipedia:Global Positioning System") (GPS) hardware receivers supported in Arch Linux:
 
-*   Bluetooth GPS adapters
+*   [Bluetooth](/index.php/Bluetooth "Bluetooth") GPS adapters
 *   USB GPS adapters (internal or external)
 *   WWAN-integrated adapters (some HP EliteBook modules for example)
 *   smartphones are able to relay GPS data over USB or Bluetooth with additional software

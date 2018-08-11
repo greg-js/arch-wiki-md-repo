@@ -2,7 +2,7 @@
 | Intel GPU | Working | modesetting |
 | Nvidia GPU | Working | nvidia (not nouveau) |
 | Ethernet | Working | alx |
-| Wireless | Working with patch | iwlwifi |
+| Wireless | Working with 4.17.13 | iwlwifi |
 | Audio | Working | snd_hda_intel |
 | Webcam | Working | uvcvideo |
 | Bluetooth | Working | btusb |
@@ -61,9 +61,9 @@ There is no option to disable the discrete intel GPU.
 
 #### Wireless
 
-Support for the Killer 1550 is not there yet but is coming. [[1]](https://www.spinics.net/lists/linux-wireless/msg172978.html)[[2]](https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/backport-iwlwifi.git/tree/drivers/net/wireless/intel/iwlwifi/pcie/drv.c?id=998ce0330c94eca4b13b8f062b3f0ca9ef9ad6d8#n622)[[3]](https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/backport-iwlwifi.git/commit/?id=a3ef483ec5002b7af5a2ad04cb7a77366cd23b9f)
+Support for the Killer 1550i arrived in 4.17.13 as planned in these discussions: [[1]](https://www.spinics.net/lists/linux-wireless/msg172978.html)[[2]](https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/backport-iwlwifi.git/tree/drivers/net/wireless/intel/iwlwifi/pcie/drv.c?id=998ce0330c94eca4b13b8f062b3f0ca9ef9ad6d8#n622)[[3]](https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/backport-iwlwifi.git/commit/?id=a3ef483ec5002b7af5a2ad04cb7a77366cd23b9f)
 
-It should be possible to add support by patching the kernel [[4]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/intel/iwlwifi/pcie/drv.c#n799) to add `{IWL_PCI_DEVICE(0xA370, 0x1552, iwl9560_2ac_cfg_soc)},`
+Kernels <4.17.13 require patching iwlwifi driver [[4]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/intel/iwlwifi/pcie/drv.c#n799) to add `{IWL_PCI_DEVICE(0xA370, 0x1552, iwl9560_2ac_cfg_soc)},`
 
 Using the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") it is possible to rebuild the kernel using this patch which add the mapping for the wifi on kernel 4.17.11
 

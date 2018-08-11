@@ -11,35 +11,31 @@ Related articles
 *   [Color output in console](/index.php/Color_output_in_console "Color output in console")
 *   [Archiving and compression](/index.php/Archiving_and_compression "Archiving and compression")
 
-Core utilities on Arch Linux are programs that are part of the core functionality of the operating system. Without them you cannot do much of anything. These functions include things like file operations, mounting disks, displaying information and managing processes.
+This article deals with so-called *core* utilities on a GNU/Linux system, such as *less*, *ls*, and *grep*. The scope of this article includes, but is not limited to, those utilities included with the GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) package. What follows are various tips and tricks and other helpful information related to these utilities.
 
-The core utilities are installed on an Arch Linux system through the [base](https://www.archlinux.org/groups/x86_64/base/) package group. This includes GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils), [util-linux](https://www.archlinux.org/packages/?name=util-linux), [findutils](https://www.archlinux.org/packages/?name=findutils), the [vi](https://www.archlinux.org/packages/?name=vi) and [nano](https://www.archlinux.org/packages/?name=nano) text editors, and [man-pages](https://www.archlinux.org/packages/?name=man-pages).
-
-This article is not going to give an in depth tutorial for every core program. Rather the scope of this article will focus on giving an introduction to those tools essential for installing/configuring Arch Linux and troubleshooting the operating system. Users need to have a passing familiarity with these programs in order to successfully use and install Arch.
-
-All of the core utilities have usage manuals, called [man pages](/index.php/Man_page "Man page"). You can read a man page by typing *man* and the name of the program you want to read about. [GNU](/index.php/GNU "GNU") commands tend to be documented in [info(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/info.1) pages, some [shells](/index.php/Shell "Shell") provide a `help` command for [shell](/index.php/Shell "Shell")-builtin commands. Additionally most commands print their usage when run with the `--help` argument.
+Most command-line interfaces are documented in [man pages](/index.php/Man_page "Man page"), [GNU](/index.php/GNU "GNU") commands tend to be documented in [info(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/info.1) pages, some [shells](/index.php/Shell "Shell") provide a `help` command for [shell](/index.php/Shell "Shell")-builtin commands. Additionally most commands print their usage when run with the `--help` argument.
 
 ## Contents
 
 *   [1 File management](#File_management)
-    *   [1.1 ls (list files)](#ls_.28list_files.29)
+    *   [1.1 ls](#ls)
         *   [1.1.1 Long format](#Long_format)
         *   [1.1.2 File names containing spaces enclosed in quotes](#File_names_containing_spaces_enclosed_in_quotes)
-    *   [1.2 cat (concatenate files and print)](#cat_.28concatenate_files_and_print.29)
-    *   [1.3 less (view file)](#less_.28view_file.29)
+    *   [1.2 cat](#cat)
+    *   [1.3 less](#less)
         *   [1.3.1 Vim as alternative pager](#Vim_as_alternative_pager)
-    *   [1.4 mkdir (make directory)](#mkdir_.28make_directory.29)
-    *   [1.5 mv (move file/directory)](#mv_.28move_file.2Fdirectory.29)
-    *   [1.6 rm (remove file/directory)](#rm_.28remove_file.2Fdirectory.29)
-    *   [1.7 chmod (change mode of files)](#chmod_.28change_mode_of_files.29)
-    *   [1.8 chown (change owner of files)](#chown_.28change_owner_of_files.29)
-    *   [1.9 find (find a file or directory)](#find_.28find_a_file_or_directory.29)
-    *   [1.10 locate (find a file by name)](#locate_.28find_a_file_by_name.29)
-    *   [1.11 diff (display differences between files)](#diff_.28display_differences_between_files.29)
+    *   [1.4 mkdir](#mkdir)
+    *   [1.5 mv](#mv)
+    *   [1.6 rm](#rm)
+    *   [1.7 chmod](#chmod)
+    *   [1.8 chown](#chown)
+    *   [1.9 find](#find)
+    *   [1.10 locate](#locate)
+    *   [1.11 diff](#diff)
 *   [2 Text streams](#Text_streams)
-    *   [2.1 grep (search text inside a file)](#grep_.28search_text_inside_a_file.29)
-    *   [2.2 sed (stream editor)](#sed_.28stream_editor.29)
-    *   [2.3 awk (pattern matching and editing)](#awk_.28pattern_matching_and_editing.29)
+    *   [2.1 grep](#grep)
+    *   [2.2 sed](#sed)
+    *   [2.3 awk](#awk)
 *   [3 System administration](#System_administration)
     *   [3.1 sudo](#sudo)
     *   [3.2 which](#which)
@@ -73,7 +69,7 @@ All of the core utilities have usage manuals, called [man pages](/index.php/Man_
 | cat | Show file contents | [cat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cat.1) | cat /etc/hostname |
 | find | Search for a file | [find(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/find.1) | find ~ -name myfile |
 
-### ls (list files)
+### ls
 
 [ls](https://en.wikipedia.org/wiki/ls "wikipedia:ls") lists directory contents.
 
@@ -119,7 +115,7 @@ Below, each file and subdirectory is represented by a line divided into 7 metada
 
 By default, file and directory names that contain spaces are displayed surrounded by single quotes. To change this behavior use the `-N` or `--quoting-style=literal` options. Alternatively, set the `QUOTING_STYLE` [environment variable](/index.php/Environment_variable "Environment variable") to `literal`. [[1]](https://unix.stackexchange.com/questions/258679/why-is-ls-suddenly-surrounding-items-with-spaces-in-single-quotes)
 
-### cat (concatenate files and print)
+### cat
 
 [cat](https://en.wikipedia.org/wiki/cat_(Unix) is a standard Unix utility that concatenates files to standard output.
 
@@ -146,7 +142,7 @@ $ printf '%s
 
 *   If you need to list file lines in reverse order, there is a coreutil command called [tac](https://en.wikipedia.org/wiki/tac_(Unix) (*cat* reversed).
 
-### less (view file)
+### less
 
 [less](https://en.wikipedia.org/wiki/less_(Unix) is a terminal pager program used to view the contents of a text file one screen at a time. Whilst similar to other pagers such as [more](https://en.wikipedia.org/wiki/more_(command) and the [deprecated](https://git.kernel.org/cgit/utils/util-linux/util-linux.git/tree/Documentation/deprecated.txt) [pg](https://en.wikipedia.org/wiki/pg_(Unix) "wikipedia:pg (Unix)"), *less* offers a more advanced interface and complete [feature-set](http://www.greenwoodsoftware.com/less/faq.html).
 
@@ -166,7 +162,7 @@ alias less=$PAGER
 
 Now programs that use the `PAGER` environment variable, like [git](/index.php/Git "Git"), will use *vim* as pager.
 
-### mkdir (make directory)
+### mkdir
 
 [mkdir](https://en.wikipedia.org/wiki/mkdir "wikipedia:mkdir") makes directories.
 
@@ -176,7 +172,7 @@ Changing mode of a just created directory using *chmod* is not necessary as the 
 
 **Tip:** If you just want a temporary directory, a better alternative may be [mktemp](https://en.wikipedia.org/wiki/Temporary_file "wikipedia:Temporary file"): `mktemp -d`
 
-### mv (move file/directory)
+### mv
 
 [mv](https://en.wikipedia.org/wiki/mv "wikipedia:mv") moves and renames files and directories.
 
@@ -191,7 +187,7 @@ alias mv='mv -iv'
 
 This alias asks for confirmation before overwriting any existing files and lists the operations in progress.
 
-### rm (remove file/directory)
+### rm
 
 [rm](https://en.wikipedia.org/wiki/rm_(Unix) removes files or directories.
 
@@ -210,25 +206,25 @@ Zsh users may want to prefix `noglob` to avoid implicit expansions.
 
 To remove directories believed to be empty, use *rmdir* as it fails if there are files inside the target.
 
-### chmod (change mode of files)
+### chmod
 
 See [File permissions and attributes#Changing permissions](/index.php/File_permissions_and_attributes#Changing_permissions "File permissions and attributes").
 
-### chown (change owner of files)
+### chown
 
 See [File permissions and attributes#Changing ownership](/index.php/File_permissions_and_attributes#Changing_ownership "File permissions and attributes").
 
-### find (find a file or directory)
+### find
 
 *find* is part of the [findutils](https://www.archlinux.org/packages/?name=findutils) package, which belongs to the [base](https://www.archlinux.org/groups/x86_64/base/) package group.
 
 **Tip:** [fd](https://www.archlinux.org/packages/?name=fd) is a simple, fast and user-friendly alternative to `find` that provides more sensible defaults (e.g. ignores hidden files, directories and `.gitignore`'d files, `fd PATTERN` instead of `find -iname '*PATTERN*'`). It features colorized output (similar to `ls`), Unicode awareness, regular expressions and more.
 
-One would probably expect a *find* command to take as argument a file name and search the filesystem for files matching that name. For a program that does exactly that see [#locate (find a file by name)](#locate_.28find_a_file_by_name.29) below.
+One would probably expect a *find* command to take as argument a file name and search the filesystem for files matching that name. For a program that does exactly that see [#locate](#locate) below.
 
 Instead, find takes a set of directories and matches each file under them against a set of expressions. This design allows for some very powerful "one-liners" that would not be possible using the "intuitive" design described above. See [GregsWiki:UsingFind](https://mywiki.wooledge.org/UsingFind "gregswiki:UsingFind") for usage details.
 
-### locate (find a file by name)
+### locate
 
 [Install](/index.php/Install "Install") the [mlocate](https://www.archlinux.org/packages/?name=mlocate) package. The package contains an `updatedb.timer` unit, which invokes a database update each day. The timer is enabled right after installation, [start](/index.php/Start "Start") it manually if you want to use it before reboot. You can also manually run *updatedb* as root at any time. By default, paths such as `/media` and `/mnt` are ignored, so *locate* may not discover files on external devices. See [updatedb(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.8) for details.
 
@@ -238,7 +234,7 @@ Before *locate* can be used, the database will need to be created. To do this, e
 
 See also [How locate works and rewrite it in one minute](http://jvns.ca/blog/2015/03/05/how-the-locate-command-works-and-lets-rewrite-it-in-one-minute/).
 
-### diff (display differences between files)
+### diff
 
 *diff* compares files line by line. The default Arch Linux *diff* is from the GNU [diffutils](https://www.archlinux.org/packages/?name=diffutils), which also provides *cmp* to compare files byte by byte.
 
@@ -259,7 +255,7 @@ When comparing text files a word per word diff is often more desirable:
 
 ## Text streams
 
-### grep (search text inside a file)
+### grep
 
 [grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") is a command line text search utility originally written for Unix. The *grep* command searches files or standard input for lines matching a given regular expression, and prints these lines to standard output.
 
@@ -274,15 +270,15 @@ For color support, see [Color output in console#grep](/index.php/Color_output_in
 
 See [grep(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grep.1) for more details.
 
-### sed (stream editor)
+### sed
 
 [sed](https://en.wikipedia.org/wiki/sed "wikipedia:sed") is stream editor for filtering and transforming text.
 
 Here is a handy [list](http://sed.sourceforge.net/sed1line.txt) of *sed* one-liners examples.
 
-**Tip:** More powerful alternatives are [awk](#awk_.28pattern_matching_and_editing.29) and the [Perl](/index.php/Perl "Perl") language.
+**Tip:** More powerful alternatives are [awk](#awk) and the [Perl](/index.php/Perl "Perl") language.
 
-### awk (pattern matching and editing)
+### awk
 
 [AWK](https://en.wikipedia.org/wiki/AWK "wikipedia:AWK") is a pattern scanning and processing language. There are multiple implementations:
 
@@ -440,7 +436,7 @@ See [iconv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) for more deta
 
 **Tip:** You can use [recode](https://www.archlinux.org/packages/?name=recode) instead of iconv if you do not want to touch the mtime.
 
-Unlike [sed](#sed_.28stream_editor.29), *iconv* does not provide an option to convert a file in place. However, `sponge` from the [moreutils](https://www.archlinux.org/packages/?name=moreutils) package can help:
+Unlike [sed](#sed), *iconv* does not provide an option to convert a file in place. However, `sponge` from the [moreutils](https://www.archlinux.org/packages/?name=moreutils) package can help:
 
 ```
 $ iconv -f WINDOWS-1251 -t UTF-8 *foobar*.txt | sponge *foobar*.txt

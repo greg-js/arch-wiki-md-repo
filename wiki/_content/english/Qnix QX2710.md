@@ -1,8 +1,8 @@
 This article is a short tutorial on how to get the QX2710 to work well on Linux.
 
-## Fixing X11 With Nvidia
+## Fixing X11 with Nvidia
 
-By default, on some graphcis drivers, the QX2710 will enter a debug mode and flip through colors when you start up X. The reason for this is that the driver is having issues reading the EDID from the monitor.
+By default, on some graphics drivers, the QX2710 will enter a debug mode and flip through colors when you start up X. The reason for this is that the driver is having issues reading the EDID from the monitor.
 
 This issue with reading the EDID does not occur on Windows, so I pulled the read EDID from Windows, which you can find [here](https://lambda.sx/marcus/qx2710.edid).
 

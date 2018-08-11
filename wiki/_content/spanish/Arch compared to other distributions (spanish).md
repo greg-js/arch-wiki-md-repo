@@ -1,16 +1,16 @@
+**Estado de la traducción:** este artículo es una versión traducida de [Arch compared to other distributions](/index.php/Arch_compared_to_other_distributions "Arch compared to other distributions"). Fecha de la última traducción/revisión: **2018-07-30**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&diff=0&oldid=516496).
+
 Artículos relacionados
 
 *   [Arch Linux](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)")
-*   [Distribuciones basadas en Arch](/index.php/Arch-based_distributions "Arch-based distributions")
+*   [Distribuciones basadas en Arch](/index.php/Arch-based_distributions_(Espa%C3%B1ol) "Arch-based distributions (Español)")
 *   [Pacman/Rosetta](/index.php/Pacman/Rosetta_(Espa%C3%B1ol) "Pacman/Rosetta (Español)")
-
-**Estado de la traducción:** este artículo es una versión traducida de [Arch compared to other distributions](/index.php/Arch_compared_to_other_distributions "Arch compared to other distributions"). Fecha de la última traducción/revisión: **2018-07-30**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&diff=0&oldid=516496).
 
 Esta página pretende mostrar una comparación entre Arch Linux y otras distribuciones de GNU/Linux y sistemas operativos basados en UNIX. Los resúmenes que siguen son breves descripciones que pueden ayudar a un usario a decidir si Arch Linux se adapta a sus necesidades. Aunque las revisiones y descripciones pueden ser útiles, la propia experiencia es siempre la mejor manera de comparar las distribuciones.
 
 Para una comparación más completa, consulte esta [comparación de sistemas operativos](https://en.wikipedia.org/wiki/Comparison_of_operating_systems "w:Comparison of operating systems") y esta [comparación de distribuciones Linux](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions "w:Comparison of Linux distributions").
 
-En adelante, solo se compara Arch Linux con otras distribuciones. Las adaptaciones de la comunidad que admiten arquitecturas que no sean x86_64 se pueden encontrar listados entre las [distribuciones basadas en Arch](/index.php/Arch-based_distributions "Arch-based distributions").
+En adelante, solo se compara Arch Linux con otras distribuciones. Las adaptaciones de la comunidad que admiten arquitecturas que no sean x86_64 se pueden encontrar listados entre las [distribuciones basadas en Arch](/index.php/Arch-based_distributions_(Espa%C3%B1ol) "Arch-based distributions (Español)").
 
 ## Contents
 

@@ -86,16 +86,7 @@ By default this command installs the package under `/usr/lib/node_modules/npm` a
 
 ##### Allow user-wide installations
 
-To allow *global* package installations for the current [user](/index.php/User "User") you want to specify the `--prefix` parameter, e.g.:
-
-```
-$ npm -g install packageName --prefix ~/.node_modules
-
-```
-
-This is however **not** recommended since you need to remember the location and give it as the parameter each time you do an operation.
-
-Using [environment variables](/index.php/Environment_variables#Per_user "Environment variables") may be a more preferred solution:
+To allow *global* package installations for the current [user](/index.php/User "User"), set the `npm_config_prefix` [environment variable](/index.php/Environment_variables#Per_user "Environment variables"). This is used by both npm and yarn.
 
  `~/.profile` 
 ```
@@ -104,6 +95,13 @@ export npm_config_prefix=~/.node_modules
 ```
 
 Re-login or *source* to update changes.
+
+You can also specify the `--prefix` parameter for `npm install`. However, this is **not** recommended, since you'll need to add it every time you install a global package.
+
+```
+$ npm -g install packageName --prefix ~/.node_modules
+
+```
 
 #### Updating packages
 

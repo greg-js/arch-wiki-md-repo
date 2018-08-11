@@ -13,9 +13,10 @@ Related articles
 *   [3 Configuration](#Configuration)
     *   [3.1 Scripts](#Scripts)
         *   [3.1.1 Toggle external monitor](#Toggle_external_monitor)
-        *   [3.1.2 Manage 2-monitors](#Manage_2-monitors)
-        *   [3.1.3 Example 3](#Example_3)
-        *   [3.1.4 Avoid X crash with xrasengan](#Avoid_X_crash_with_xrasengan)
+        *   [3.1.2 Automatically switch configurations with autorandr](#Automatically_switch_configurations_with_autorandr)
+        *   [3.1.3 Manage 2-monitors](#Manage_2-monitors)
+        *   [3.1.4 Example 3](#Example_3)
+        *   [3.1.5 Avoid X crash with xrasengan](#Avoid_X_crash_with_xrasengan)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Adding undetected resolutions](#Adding_undetected_resolutions)
         *   [4.1.1 EDID checksum is invalid](#EDID_checksum_is_invalid)
@@ -124,6 +125,33 @@ fi
 ```
 
 **Note:** To leave the external monitor enabled, replace the *else* clause with `xrandr --output "$intern" --primary --auto --output "$extern" --right-of "$intern" --auto`.
+
+#### Automatically switch configurations with autorandr
+
+[Autorandr](https://github.com/wertarbyte/autorandr) allows you to easily configure xrandr 'profiles' that will activate automatically when you connect/disconnect displays. Install [autorandr](https://www.archlinux.org/packages/?name=autorandr) and set up some configurations like this:
+
+```
+autorandr --save laptop 
+
+```
+
+Now connect an external display. Set it up the correct resolution and screen orientation with xrandr, then save the configuration like this:
+
+```
+autorandr --save samsung
+
+```
+
+Now whenever you connect the monitor autorandr will apply your saved xrandr configuration, and when you disconnect it will reset to your normal configuration.
+
+I found it useful to add
+
+```
+autorandr --change
+
+```
+
+to the autostart of my window manager, since Autorandr doesn't normally do anything unless it detects a display being plugged or unplugged. Now if I boot my laptop or restart X while the monitor is plugged in, autorandr will still apply the correct configuration.
 
 #### Manage 2-monitors
 

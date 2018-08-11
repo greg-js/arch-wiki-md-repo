@@ -18,9 +18,11 @@ InfluxDB is a time series database built from the ground up to handle high write
 
 [Install](/index.php/Install "Install") the [influxdb](https://www.archlinux.org/packages/?name=influxdb) and [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `influxdb` service.
 
+**Warning:** The default configuration listens on `*:8086` so make sure to change the configuration or enable the relevant firewall rules.
+
 ## Configuration
 
-All configuration is done in `/etc/influxdb/influxdb.conf`. By default, it listens at [https://localhost:8086](https://localhost:8086) for data.
+All configuration is done in `/etc/influxdb/influxdb.conf`.
 
 The configuration is well documented, but you can also have a look at their [Documentation](https://docs.influxdata.com/influxdb/latest/)
 

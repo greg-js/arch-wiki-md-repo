@@ -359,29 +359,20 @@ Given you specify the correct corresponding crypttab (e.g. UUID for the `crypto_
 
 ### Mounting on demand
 
-You can use
-
-```
-# systemctl start systemd-cryptsetup@externaldrive
-
-```
-
-instead of
+You can [start](/index.php/Start "Start") `systemd-cryptsetup@externaldrive.service` instead of using
 
 ```
 # cryptsetup luksOpen UUID=... externaldrive
 
 ```
 
-when you have an entry as follows in your /etc/crypttab:
+when you have an entry as follows in your `/etc/crypttab`:
 
  `/etc/crypttab`  `externaldrive UUID=... none noauto` 
 
 That way you do not need to remember the exact crypttab options. It will prompt you for the passphrase if needed.
 
-The corresponding unit file is generated automatically by [systemd-cryptsetup-generator](https://www.freedesktop.org/software/systemd/man/systemd-cryptsetup-generator.html).
-
-You can list all generated unit files using
+The corresponding unit file is generated automatically by [systemd-cryptsetup-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-cryptsetup-generator.8). You can list all generated unit files using:
 
 ```
 $ systemctl list-unit-files | grep systemd-cryptsetup

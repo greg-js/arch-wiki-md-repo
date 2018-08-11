@@ -4,6 +4,7 @@ Related articles
 *   [IRC](/index.php/IRC "IRC")
 *   [irssi](/index.php/Irssi "Irssi")
 *   [HexChat](/index.php/HexChat "HexChat")
+*   [Quassel](/index.php/Quassel "Quassel")
 
 [WeeChat](https://weechat.org/) is a highly extendable and feature rich [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat "wikipedia:Internet Relay Chat") Client currently under heavy development.
 

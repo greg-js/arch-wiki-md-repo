@@ -1,3 +1,5 @@
+**Estado de la traducción:** este artículo es una versión traducida de [pacman](/index.php/Pacman "Pacman"). Fecha de la última traducción/revisión: **2017-10-08**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=490231).
+
 Artículos relacionados
 
 *   [Crear paquetes](/index.php/Creating_packages_(Espa%C3%B1ol) "Creating packages (Español)")
@@ -12,8 +14,6 @@ Artículos relacionados
 *   [Arch Build System (Español)](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)")
 *   [Repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)")
 *   [Arch User Repository (Español)](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)")
-
-**Estado de la traducción:** este artículo es una versión traducida de [pacman](/index.php/Pacman "Pacman"). Fecha de la última traducción/revisión: **2017-10-08**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=490231).
 
 El [gestor de paquetes](https://en.wikipedia.org/wiki/Package_management_system "wikipedia:Package management system") [pacman](https://www.archlinux.org/pacman/) es una de las principales características distintivas de Arch Linux. Combina un simple formato de paquetes binarios con un fácil [sistema de compilación de paquetes](/index.php/Arch_Build_System "Arch Build System"). El objetivo de *pacman* es hacer posible gestionar fácilmente los paquetes, tanto si son los de los [repositorios oficiales de Arch](/index.php/Official_repositories "Official repositories") como las compilaciones realizadas por los propios usuarios.
 

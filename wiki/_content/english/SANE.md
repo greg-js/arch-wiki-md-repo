@@ -3,7 +3,7 @@ Related articles
 *   [SANE/Scanner-specific problems](/index.php/SANE/Scanner-specific_problems "SANE/Scanner-specific problems")
 *   [Scanner Button Daemon](/index.php/Scanner_Button_Daemon "Scanner Button Daemon")
 
-[SANE](http://www.sane-project.org/) ([Scanner Access Now Easy](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy "wikipedia:Scanner Access Now Easy")) provides a library and a command-line tool to use scanners under GNU/Linux. [Here](http://www.sane-project.org/sane-supported-devices.html) you can check if sane supports your scanner.
+[SANE](http://www.sane-project.org/) ([Scanner Access Now Easy](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy "wikipedia:Scanner Access Now Easy")) provides a library and a command-line tool to use scanners under GNU/Linux. You can check [Here](http://www.sane-project.org/sane-supported-devices.html) if sane supports your scanner.
 
 ## Contents
 

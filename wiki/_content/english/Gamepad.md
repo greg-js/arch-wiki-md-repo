@@ -22,27 +22,28 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
     *   [7.1 Dance pads](#Dance_pads)
     *   [7.2 Logitech Thunderpad Digital](#Logitech_Thunderpad_Digital)
     *   [7.3 Nintendo Gamecube Controller](#Nintendo_Gamecube_Controller)
-    *   [7.4 PlayStation 3/4 controller](#PlayStation_3.2F4_controller)
-        *   [7.4.1 Connecting via Bluetooth](#Connecting_via_Bluetooth)
-        *   [7.4.2 Using generic/clone controllers](#Using_generic.2Fclone_controllers)
-    *   [7.5 iPEGA-9017s and other Bluetooth gamepads](#iPEGA-9017s_and_other_Bluetooth_gamepads)
-    *   [7.6 Steam Controller](#Steam_Controller)
-        *   [7.6.1 Wine](#Wine)
-    *   [7.7 Xbox 360 controller](#Xbox_360_controller)
-        *   [7.7.1 SteamOS xpad](#SteamOS_xpad)
-        *   [7.7.2 xboxdrv](#xboxdrv)
-            *   [7.7.2.1 Multiple controllers](#Multiple_controllers)
-            *   [7.7.2.2 Mimic Xbox 360 controller with other controllers](#Mimic_Xbox_360_controller_with_other_controllers)
-    *   [7.8 Xbox Wireless Controller / Xbox One Wireless Controller](#Xbox_Wireless_Controller_.2F_Xbox_One_Wireless_Controller)
-        *   [7.8.1 Connect Xbox Wireless Controller with usb cable](#Connect_Xbox_Wireless_Controller_with_usb_cable)
-        *   [7.8.2 Connect Xbox Wireless Controller with bluetooth](#Connect_Xbox_Wireless_Controller_with_bluetooth)
-            *   [7.8.2.1 xpadneo](#xpadneo)
-        *   [7.8.3 Connect Xbox Wireless Controller with Microsoft Xbox Wireless Adapter](#Connect_Xbox_Wireless_Controller_with_Microsoft_Xbox_Wireless_Adapter)
-    *   [7.9 Logitech Dual Action](#Logitech_Dual_Action)
-    *   [7.10 PlayStation 2 controller via USB adapter](#PlayStation_2_controller_via_USB_adapter)
-    *   [7.11 PlayStation 3 controller via USB](#PlayStation_3_controller_via_USB)
-    *   [7.12 PlayStation 3 controller via Bluetooth](#PlayStation_3_controller_via_Bluetooth)
-    *   [7.13 PlayStation 4 controller](#PlayStation_4_controller)
+    *   [7.4 Nintendo Switch Wired Pro Controller](#Nintendo_Switch_Wired_Pro_Controller)
+    *   [7.5 PlayStation 3/4 controller](#PlayStation_3.2F4_controller)
+        *   [7.5.1 Connecting via Bluetooth](#Connecting_via_Bluetooth)
+        *   [7.5.2 Using generic/clone controllers](#Using_generic.2Fclone_controllers)
+    *   [7.6 iPEGA-9017s and other Bluetooth gamepads](#iPEGA-9017s_and_other_Bluetooth_gamepads)
+    *   [7.7 Steam Controller](#Steam_Controller)
+        *   [7.7.1 Wine](#Wine)
+    *   [7.8 Xbox 360 controller](#Xbox_360_controller)
+        *   [7.8.1 SteamOS xpad](#SteamOS_xpad)
+        *   [7.8.2 xboxdrv](#xboxdrv)
+            *   [7.8.2.1 Multiple controllers](#Multiple_controllers)
+            *   [7.8.2.2 Mimic Xbox 360 controller with other controllers](#Mimic_Xbox_360_controller_with_other_controllers)
+    *   [7.9 Xbox Wireless Controller / Xbox One Wireless Controller](#Xbox_Wireless_Controller_.2F_Xbox_One_Wireless_Controller)
+        *   [7.9.1 Connect Xbox Wireless Controller with usb cable](#Connect_Xbox_Wireless_Controller_with_usb_cable)
+        *   [7.9.2 Connect Xbox Wireless Controller with bluetooth](#Connect_Xbox_Wireless_Controller_with_bluetooth)
+            *   [7.9.2.1 xpadneo](#xpadneo)
+        *   [7.9.3 Connect Xbox Wireless Controller with Microsoft Xbox Wireless Adapter](#Connect_Xbox_Wireless_Controller_with_Microsoft_Xbox_Wireless_Adapter)
+    *   [7.10 Logitech Dual Action](#Logitech_Dual_Action)
+    *   [7.11 PlayStation 2 controller via USB adapter](#PlayStation_2_controller_via_USB_adapter)
+    *   [7.12 PlayStation 3 controller via USB](#PlayStation_3_controller_via_USB)
+    *   [7.13 PlayStation 3 controller via Bluetooth](#PlayStation_3_controller_via_Bluetooth)
+    *   [7.14 PlayStation 4 controller](#PlayStation_4_controller)
 *   [8 Button mapping](#Button_mapping)
 *   [9 Fix Motion control conflict (gamepad won't work on somes apps)](#Fix_Motion_control_conflict_.28gamepad_won.27t_work_on_somes_apps.29)
 *   [10 Troubleshooting](#Troubleshooting)
@@ -305,6 +306,23 @@ By default, the controller will register with [udev](/index.php/Udev "Udev"), bu
  `/etc/udev/rules.d/51-gcadapter.rules`  `SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTRS{idVendor}=="057e", ATTRS{idProduct}=="0337", MODE="0666"` 
 
 This only matches the USB device with the specified vendor and product IDs, which match those of the official USB adapter. It sets the permissions of the device file to 0666 so that programs that aren't running as root can read the device's input.
+
+udev can be reloaded with the new configuration by executing
+
+```
+ # udevadm control --reload-rules
+
+```
+
+### Nintendo Switch Wired Pro Controller
+
+While the controller works for native Linux games, this controller isn't detected by Steam. To fix this, we'll need to add a line to 70-steam-controller.rules.
+
+ `/lib/udev/rules.d/70-steam-controller.rules` 
+```
+# NS PRO Controller USB
+KERNEL=="hidraw*", ATTRS{idVendor}=="20d6", ATTRS{idProduct}=="a711", MODE="0660", TAG+="uaccess"
+```
 
 udev can be reloaded with the new configuration by executing
 

@@ -25,9 +25,9 @@ Hardware-based full-disk encryption (FDE) is now available from many hard disk (
 
 ## Overview
 
-Many modern SED FDE are made by HDD/SSD vendors which adher to the [OPAL 2.0](http://www.trustedcomputinggroup.org/files/resource_files/FF80CE7D-1A4B-B294-D060AD8807BF9453/TCG_Storage-Opal_SSC_v2.01_rev1.00.pdf) and [Enterprise](http://www.trustedcomputinggroup.org/files/resource_files/FFAE13C6-1A4B-B294-D0D8D885F9F4FB67/TCG_Storage-SSC_Enterprise-v1.01_r1.00.pdf) standards developed by the Trusted Computing Group (TCG). Enterprise SAS versions of the TCG standard are called "TCG Enterprise" drives. The hardware manufactured according to the standards is [labelled](http://www.wavesys.com/self-encrypting-drive-compatibility-list) accordingly.
+Many of the self-encrypting SSDs/HDDs available today implement the [OPAL 2.0](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-Opal_SSC_v2.01_rev1.00.pdf) and [Enterprise](https://trustedcomputinggroup.org/wp-content/uploads/TCG_Storage-SSC_Enterprise-v1.01_r1.00.pdf) standards developed by the Trusted Computing Group (TCG). Enterprise SAS versions of the TCG standard are called "TCG Enterprise" drives. The hardware manufactured according to the standards is [labeled](http://www.wavesys.com/self-encrypting-drive-compatibility-list) accordingly.
 
-Unlocking (for runtime decryption) of the drive takes place via either a software, pre-boot authentication environment or with a [#BIOS based ATA-password](#BIOS_based_ATA-password) on power up.
+Unlocking of the drive can be done during operating system runtime using software utilities, in a pre-boot authentication environment, or with a [#BIOS based ATA-password](#BIOS_based_ATA-password) on power up.
 
 **Tip:** "Encryption" in the context of this page refers to hardware-based encryption. See [Disk encryption#Block device encryption](/index.php/Disk_encryption#Block_device_encryption "Disk encryption") and [Disk encryption#Stacked filesystem encryption](/index.php/Disk_encryption#Stacked_filesystem_encryption "Disk encryption") for software-based encryption.
 
@@ -228,7 +228,7 @@ A non-root drive does not require loading a PBA. So, activating the encryption i
 Changing the passphrase does *not* lose existing data on the drive, and does not require re-encryption of data.
 
 ```
-# sedutil-cli --setSIDPwd <password> <newpassword> <device>
+# sedutil-cli --setSIDPassword <password> <newpassword> <device>
 # sedutil-cli --setAdmin1Pwd <password> <newpassword> <device>
 
 ```

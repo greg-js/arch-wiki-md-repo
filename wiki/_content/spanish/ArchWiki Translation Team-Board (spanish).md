@@ -124,7 +124,7 @@
 | [Sound system (Español)](/index.php/Sound_system_(Espa%C3%B1ol) "Sound system (Español)") | Sonido | `2013-09` |
 | [Start X at login (Español)](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)") | Proceso de arranque | `2013-09` |
 | [su (Español)](/index.php/Su_(Espa%C3%B1ol) "Su (Español)") | Seguridad/Usuarios | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
-| [Sudo (Español)](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") | Seguridad/Usuarios | `2013-09` |
+| [Sudo (Español)](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") | Seguridad/Usuarios | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
 | [Swap (Español)](/index.php/Swap_(Espa%C3%B1ol) "Swap (Español)") | Partición/Archivo de intercambio | `2014-11` |
 | [Syslinux (Español)](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)") | Gestor de arranque | `2015-01` |
 | [systemd (Español)](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") | Configuración del sistema/Gestor del sistema | `2013-09` |

@@ -2,7 +2,7 @@ Related articles
 
 *   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
 *   [Libvirt](/index.php/Libvirt "Libvirt")
-*   [QEMU guest graphics acceleration](/index.php/QEMU_guest_graphics_acceleration "QEMU guest graphics acceleration")
+*   [QEMU/Guest graphics acceleration](/index.php/QEMU/Guest_graphics_acceleration "QEMU/Guest graphics acceleration")
 *   [PCI passthrough via OVMF](/index.php/PCI_passthrough_via_OVMF "PCI passthrough via OVMF")
 
 According to the [QEMU about page](http://wiki.qemu.org/Main_Page), "QEMU is a generic and open source machine emulator and virtualizer."
@@ -54,6 +54,7 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [6.5 VDE2 Bridge](#VDE2_Bridge)
         *   [6.5.1 Basics](#Basics_2)
         *   [6.5.2 Startup scripts](#Startup_scripts_2)
+    *   [6.6 Shorthand configuration](#Shorthand_configuration)
 *   [7 Graphics](#Graphics)
     *   [7.1 std](#std)
     *   [7.2 qxl](#qxl)
@@ -1049,6 +1050,31 @@ WantedBy=multi-user.target
 ```
 
 And finally, you can create the [bridge interface with netctl](/index.php/Bridge_with_netctl "Bridge with netctl").
+
+### Shorthand configuration
+
+If you're using QEMU with various networking options a lot, you probably have created a lot of `-netdev` and `-device` argument pairs, which gets quite repetitive. You can instead use the `-nic` argument to combine `-netdev` and `-device` together, so that, for example, these arguments:
+
+```
+-netdev tap,id=network0,ifname=tap0,script=no,downscript=no,vhost=on -device virtio-net,netdev=network0
+
+```
+
+...become:
+
+```
+-nic tap,ifname=tap0,script=no,downscript=no,vhost=on,model=virtio-net
+
+```
+
+Notice the lack of network IDs, and that the device was created with `model=...`. The first half of the `-nic` parameters are `-netdev` parameters, whereas the second half (after `model=...`) are related with the device. The same parameters (for example, `smb=...`) are used. There's also a special parameter for `-nic` which completely disables the default (user-mode) networking:
+
+```
+-nic none
+
+```
+
+See [QEMU networking documentation](https://qemu.weilnetz.de/doc/qemu-doc.html#Network-options) for more information on parameters you can use.
 
 ## Graphics
 

@@ -19,9 +19,8 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [1.7 Referrer header control](#Referrer_header_control)
     *   [1.8 Defragment the profile's SQLite databases](#Defragment_the_profile.27s_SQLite_databases)
     *   [1.9 Cache the entire profile into RAM via tmpfs](#Cache_the_entire_profile_into_RAM_via_tmpfs)
-    *   [1.10 Turn off sponsored content and tiles](#Turn_off_sponsored_content_and_tiles)
-    *   [1.11 Enable Electrolysis](#Enable_Electrolysis)
-    *   [1.12 Disable Pocket](#Disable_Pocket)
+    *   [1.10 Enable Electrolysis](#Enable_Electrolysis)
+    *   [1.11 Disable Pocket](#Disable_Pocket)
 *   [2 Appearance](#Appearance)
     *   [2.1 Fonts](#Fonts)
         *   [2.1.1 Configure the DPI value](#Configure_the_DPI_value)
@@ -175,10 +174,6 @@ Firefox provides a tool to defragment and optimize the places database, which is
 ### Cache the entire profile into RAM via tmpfs
 
 If the system has memory to spare, `tmpfs` can be used to [cache the entire profile directory](/index.php/Firefox/Profile_on_RAM "Firefox/Profile on RAM"), which might result in increased Firefox responsiveness.
-
-### Turn off sponsored content and tiles
-
-In `about:config`, set the string value to a blank for both of these: `browser.newtabpage.directory.source` and `browser.newtabpage.directory.ping`. Consider also disabling the tile feature from the tools on a new tab page. A [Wireshark](/index.php/Wireshark "Wireshark") session demonstrates the level of chatter created by these features.
 
 ### Enable Electrolysis
 

@@ -1,3 +1,11 @@
+Related articles
+
+*   [IRC channels](/index.php/IRC_channels "IRC channels")
+*   [IRC](/index.php/IRC "IRC")
+*   [WeeChat](/index.php/WeeChat "WeeChat")
+*   [irssi](/index.php/Irssi "Irssi")
+*   [HexChat](/index.php/HexChat "HexChat")
+
 [Quassel](http://quassel-irc.org/) (sometimes referred to as Quassel IRC) is a cross-platform IRC client introduced in 2008\. It is dual-licensed under GPLv2 and GPLv3, while most graphical data is licensed under the LGPL and provided by the [Oxygen Team](http://www.oxygen-icons.org/). The client part of Quassel uses the Qt framework for its user interface.
 
 ## Contents

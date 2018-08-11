@@ -571,6 +571,4 @@ See [#Increase character limit](#Increase_character_limit).
 *   [MariaDB Official Website](https://mariadb.com/)
 *   [MariaDB knowledge Base](https://mariadb.com/kb/en/)
 *   [MySQL documentation](http://dev.mysql.com/doc/)
-*   [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") - ArchWiki article on the Apache HTTP Server
-*   [PHP](/index.php/PHP "PHP") - ArchWiki article on PHP.
 *   [MySQL Performance Tuning Scripts and Know-How](https://www.askapache.com/mysql/performance-tuning-mysql/)

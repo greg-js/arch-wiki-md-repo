@@ -19,11 +19,11 @@ Related articles
 
 ## Installation
 
-Just [Install](/index.php/Install "Install") the [nimf-git](https://aur.archlinux.org/packages/nimf-git/) package.
+Just [Install](/index.php/Install "Install") the [nimf](https://aur.archlinux.org/packages/nimf/) package.
 
 ### Input method engines
 
-The following engines are bundled in [nimf-git](https://aur.archlinux.org/packages/nimf-git/):
+The following engines are bundled in [nimf](https://aur.archlinux.org/packages/nimf/):
 
 *   nimf-libhangul, for typing Korean hangul, based on [libhangul](https://www.archlinux.org/packages/?name=libhangul).
 *   nimf-anthy, for typing Japanese, based on [anthy](https://www.archlinux.org/packages/?name=anthy).

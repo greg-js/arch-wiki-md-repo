@@ -63,6 +63,7 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
     *   [12.2 Connection drops out after some time of inactivity](#Connection_drops_out_after_some_time_of_inactivity)
     *   [12.3 PID files not present](#PID_files_not_present)
     *   [12.4 Route configuration fails with systemd-networkd](#Route_configuration_fails_with_systemd-networkd)
+    *   [12.5 tls-crypt unwrap error: packet too short](#tls-crypt_unwrap_error:_packet_too_short)
 *   [13 See also](#See_also)
 
 ## Installation
@@ -155,6 +156,8 @@ group nobody
 
 ```
 
+**Note:** The official OpenVPN Connect app for Android does not support tls-crypt.[[2]](https://bbs.archlinux.org/viewtopic.php?id=235780)[[3]](https://forums.openvpn.net/viewtopic.php?t=24425)[[4]](https://github.com/graysky2/ovpngen/issues/4) If you need to support it as a client, keep `tls-auth ta.key 0`.
+
 #### Hardening the server
 
 If security is a priority, additional configuration is recommended including: limiting the server to use a strong cipher/auth method and (optionally) limiting the set of enabled TLS ciphers to the newer ciphers.
@@ -192,7 +195,7 @@ push "compress lz4-v2"
 
 ```
 
-On the client set `--compress lz4` [[2]](https://community.openvpn.net/openvpn/wiki/DeprecatedOptions), although this may be deprecated in the near future.
+On the client set `--compress lz4` [[5]](https://community.openvpn.net/openvpn/wiki/DeprecatedOptions), although this may be deprecated in the near future.
 
 #### Deviating from the standard port and/or protocol
 
@@ -227,7 +230,7 @@ UDP
 *   Less reliable than TCP as no error correction is in use.
 *   Potentially faster than TCP.
 
-**Note:** It is generally a bad idea to use TCP for VPN unless your connection to the server is very stable. High reliability sounds great in theory but any disruption (packet drop, lag spikes, etc...) to the connection will potentially snowball into a [TCP Meltdown](http://sites.inka.de/bigred/devel/tcp-tcp.html)[[3]](http://adsabs.harvard.edu/abs/2005SPIE.6011..138H).
+**Note:** It is generally a bad idea to use TCP for VPN unless your connection to the server is very stable. High reliability sounds great in theory but any disruption (packet drop, lag spikes, etc...) to the connection will potentially snowball into a [TCP Meltdown](http://sites.inka.de/bigred/devel/tcp-tcp.html)[[6]](http://adsabs.harvard.edu/abs/2005SPIE.6011..138H).
 
 ### The client config profile
 
@@ -255,6 +258,8 @@ tls-crypt ta.key # Replaces *tls-auth ta.key 1*
 
 ```
 
+**Note:** If you have `tls-auth` in your `server.conf`, you also need to have `tls-auth ta.key 1` in your `client.conf`.
+
 #### Run as unprivileged user
 
 Using the options `user nobody` and `group nobody` in the configuration file makes *OpenVPN* drop its `root` privileges after establishing the connection. The downside is that upon VPN disconnect the daemon is unable to delete its set network routes again. If one wants to limit transmitting traffic without the VPN connection, then lingering routes may be considered beneficial. It can also happen, however, that the OpenVPN server pushes updates to routes at runtime of the tunnel. A client with dropped privileges will be unable to perform the update and exit with an error.
@@ -268,8 +273,6 @@ The OpenVPN HowTo's linked below go further by creating a dedicated non-privileg
 
 *   The [OpenVPN HowTo](https://openvpn.net/index.php/open-source/documentation/howto.html#security) explains another way how to create an unprivileged user mode and wrapper script to have the routes restored automatically.
 *   It is possible to let OpenVPN start as a non-privileged user in the first place, without ever running as root, see [this OpenVPN wiki](https://community.openvpn.net/openvpn/wiki/UnprivilegedUser) (howto). The howto assumes the presence of System V init, rather than [Systemd](/index.php/Systemd "Systemd") and does not cover the handling of `--up`/`--down` scripts - those should be handled the same way as the *ip* command, with additional attention to access rights.
-
-**Note:** Due to a [bug](https://community.openvpn.net/openvpn/ticket/812) in OpenVPN 2.4.0, the `persist-tun` option mentioned in the howtos should **not** be used, otherwise new routes/IPs pushed on reconnect will be ignored by the client.
 
 **Tip:** [#openvpn-unroot](#openvpn-unroot) describes a tool to automate above setup.
 
@@ -323,7 +326,7 @@ read UDPv4 [EMSGSIZE Path-MTU=1407]: Message too long (code=90)
 
 ```
 
-In order to get the maximum segment size (MSS), the client needs to discover the smallest MTU along the path to the server. In order to do this ping the server and disable fragmentation, then specify the maximum packet size [[4]](https://www.sonassi.com/help/troubleshooting/setting-correct-mtu-for-openvpn):
+In order to get the maximum segment size (MSS), the client needs to discover the smallest MTU along the path to the server. In order to do this ping the server and disable fragmentation, then specify the maximum packet size [[7]](https://www.sonassi.com/help/troubleshooting/setting-correct-mtu-for-openvpn):
 
 ```
 # ping -M do -s 1500 -c 1 example.com
@@ -332,7 +335,7 @@ In order to get the maximum segment size (MSS), the client needs to discover the
 
 Decrease the 1500 value by 10 each time, until the ping succeeds.
 
-**Note:** Clients that do not support the 'fragment' directive (e.g. OpenELEC, [iOS app](https://forums.openvpn.net/topic13201.html#p31156)) are not able to connect to a server that uses the `fragment` directive. See `mtu-test` as alternative solution.
+**Note:** Clients that do not support the 'fragment' directive (e.g. OpenELEC, [iOS app](https://docs.openvpn.net/connecting/connecting-to-access-server-with-apple-ios/faq-regarding-openvpn-connect-ios/)) are not able to connect to a server that uses the `fragment` directive. See `mtu-test` as alternative solution.
 
 Update the client configuration to use the succeeded MTU value, e.g.:
 
@@ -427,7 +430,7 @@ If you would like to connect a client to an OpenVPN server through Gnome's built
 
 ## Routing client traffic through the server
 
-By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic (including web traffic) pass through the VPN, [append](/index.php/Append "Append") `push "redirect-gateway def1 bypass-dhcp"` to the configuration file (i.e. `/etc/openvpn/server/server.conf`) [[5]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) of the server. Note this is not a requirement and may even give performance issue:
+By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic (including web traffic) pass through the VPN, [append](/index.php/Append "Append") `push "redirect-gateway def1 bypass-dhcp"` to the configuration file (i.e. `/etc/openvpn/server/server.conf`) [[8]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) of the server. Note this is not a requirement and may even give performance issue:
 
 ```
 push "redirect-gateway def1 bypass-dhcp"
@@ -502,14 +505,14 @@ To apply the changes. [reload](/index.php/Reload "Reload")/[restart](/index.php/
 
 #### iptables
 
-In order to allow VPN traffic through your [iptables](/index.php/Iptables "Iptables") firewall of your server, first create an iptables rule for NAT forwarding [[6]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server, assuming the interface you want to forward to is named `eth0`:
+In order to allow VPN traffic through your [iptables](/index.php/Iptables "Iptables") firewall of your server, first create an iptables rule for NAT forwarding [[9]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server, assuming the interface you want to forward to is named `eth0`:
 
 ```
 iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 
 ```
 
-If you have difficulty pinging the server through the VPN, you may need to add explicit rules to open up TUN/TAP interfaces to all traffic. If that is the case, do the following [[7]](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn):
+If you have difficulty pinging the server through the VPN, you may need to add explicit rules to open up TUN/TAP interfaces to all traffic. If that is the case, do the following [[10]](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn):
 
 **Warning:** There are security implications for the following rules if you do not trust all clients which connect to the server. Refer to the [OpenVPN documentation on this topic](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn) for more details.
 
@@ -736,7 +739,7 @@ For now see: [OpenVPN Bridge](/index.php/OpenVPN_Bridge "OpenVPN Bridge")
 
 ### ovpngen
 
-The [ovpngen](https://aur.archlinux.org/packages/ovpngen/) package provides a simple shell script that creates OpenVPN compatible tunnel profiles in the unified file format suitable for the iOS version of OpenVPN Connect as well as for the Android app.
+The [ovpngen](https://aur.archlinux.org/packages/ovpngen/) package provides a simple shell script that creates OpenVPN compatible tunnel profiles in the unified file format suitable for the OpenVPN Connect app for Android and iOS.
 
 Simply invoke the script with 5 tokens:
 
@@ -845,6 +848,12 @@ Unmanaged=true
 7 tun0             none               routable    unmanaged
 
 ```
+
+### tls-crypt unwrap error: packet too short
+
+If you see this error in your server log, you are probably connecting with a client that does not support tls-crypt, such as the official OpenVPN Connect app for Android.
+
+To support these clients, replace `tls-crypt ta.key` with `tls-auth ta.key 0` (the default) in `server.conf`. Also replace `tls-crypt ta.key` with `tls-auth ta.key 1` (the default) in `client.conf`.
 
 ## See also
 

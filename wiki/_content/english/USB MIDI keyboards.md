@@ -114,22 +114,21 @@ Here client 65 is the actual MIDI synthesizer. Assuming the soundcard is [set up
 
 #### Qsynth using JACK
 
-1.  We need to install [qsynth](https://www.archlinux.org/packages/?name=qsynth), [jack](/index.php/Jack "Jack"), [qjackctl](https://www.archlinux.org/packages/?name=qjackctl)
+1.  We need to install [qsynth](https://www.archlinux.org/packages/?name=qsynth), [JACK](/index.php/JACK "JACK"), [qjackctl](https://www.archlinux.org/packages/?name=qjackctl)
 2.  Launch qjackctl and check the settings:
+    ```
+    Server Path: jackd
+    Driver: alsa
+    Realtime=enable; Priority:0
+    Frames/Period:512
+    Soft Mode=enable; Periods/Buffer:2
+    Rest of parameters=disable(by default)
+    Dither: None
+    Audio: Duplex
 
-```
- Server Path: jackd
- Driver: alsa
- Realtime=enable; Priority:0
- Frames/Period:512
- Soft Mode=enable; Periods/Buffer:2
- Rest of parameters=disable(by default)
- Dither: None
- Audio: Duplex
+    ```
 
-```
-
-1.  Start jackd using qjackctl (the **Play** button)
-2.  Connect your USB keyboard
-3.  Start QSynth and go to **Setup**, where you need to load soundfont in SF2 format. You can get free SoundFonts from [http://soundfonts.narod.ru/](http://soundfonts.narod.ru/) (in Russian). When QSynth asks you to restart the engine after loading the SoundFont, do so.
-4.  Go to qjackctl, click **Connect** and choose the ALSA tab. On the left side you will see connected MIDI keyboard, on the left side - QSynth. Choose MIDI keyboard and QSynth, and click **Connect**.
+3.  Start jackd using qjackctl (the *Play* button)
+4.  Connect your USB keyboard
+5.  Start QSynth and go to *Setup*, where you need to load soundfont in SF2 format. You can get free SoundFonts from [http://soundfonts.narod.ru/](http://soundfonts.narod.ru/) (in Russian). When QSynth asks you to restart the engine after loading the SoundFont, do so.
+6.  Go to qjackctl, click *Connect* and choose the ALSA tab. On the left side you will see connected MIDI keyboard, on the left side - QSynth. Choose MIDI keyboard and QSynth, and click *Connect*.

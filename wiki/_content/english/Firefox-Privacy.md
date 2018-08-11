@@ -10,7 +10,7 @@ This article overviews how to configure Firefox to enhance security and privacy.
 
 ## Contents
 
-*   [1 Configuration tweaks](#Configuration_tweaks)
+*   [1 Configuration](#Configuration)
     *   [1.1 Enable Anti-Fingerprinting](#Enable_Anti-Fingerprinting)
     *   [1.2 Enable tracking protection](#Enable_tracking_protection)
     *   [1.3 Change browser time zone](#Change_browser_time_zone)
@@ -18,9 +18,10 @@ This article overviews how to configure Firefox to enhance security and privacy.
     *   [1.5 WebRTC exposes LAN IP address](#WebRTC_exposes_LAN_IP_address)
     *   [1.6 Disable telemetry](#Disable_telemetry)
     *   [1.7 Enable Do Not Track Header (DNT)](#Enable_Do_Not_Track_Header_.28DNT.29)
-    *   [1.8 Disable geolocation](#Disable_geolocation)
-    *   [1.9 Disable Safe Browsing service](#Disable_Safe_Browsing_service)
-    *   [1.10 Disable WebGL](#Disable_WebGL)
+    *   [1.8 Disable/Enforce Trusted Recursive Resolver](#Disable.2FEnforce_Trusted_Recursive_Resolver)
+    *   [1.9 Disable geolocation](#Disable_geolocation)
+    *   [1.10 Disable Safe Browsing service](#Disable_Safe_Browsing_service)
+    *   [1.11 Disable WebGL](#Disable_WebGL)
 *   [2 Extensions](#Extensions)
     *   [2.1 NoScript](#NoScript)
     *   [2.2 RequestPolicy Continued](#RequestPolicy_Continued)
@@ -28,7 +29,7 @@ This article overviews how to configure Firefox to enhance security and privacy.
 *   [3 Remove system-wide hidden extensions](#Remove_system-wide_hidden_extensions)
 *   [4 See also](#See_also)
 
-## Configuration tweaks
+## Configuration
 
 The following are privacy-focused configuration tweaks to prevent [browser fingerprinting](https://panopticlick.eff.org/) and tracking.
 
@@ -105,6 +106,14 @@ Set `toolkit.telemetry.enabled` to `false` and/or disable it under *Preferences 
 **Warning:** The Do Not Track header may be used to fingerprint your browser, since most users leave the option disabled.
 
 Set `privacy.donottrackheader.enabled` to `true` or toggle it in *Preferences > Privacy & Security > Tracking Protection*
+
+### Disable/Enforce Trusted Recursive Resolver
+
+Firefox 60 introduced a feature called [Trusted Recursive Resolver](https://wiki.mozilla.org/Trusted_Recursive_Resolver "mozillawiki:Trusted Recursive Resolver") (TRR). It circumvents DNS servers configured in your system, instead sending all DNS requests over HTTPS to Cloudflare servers. While this is significantly more secure (as "classic" DNS requests are sent in plain text over the network, and everyone along the way can snoop on these), this also makes all your DNS requests readable by Cloudflare, providing TRR servers.
+
+*   If you trust DNS servers you've configured yourself more than Cloudflare's, you can disable TRR in `about:config` by setting `network.trr.mode` (integer, create it it it doesn't exist) to `5`. (A value of 0 means disabled by default, and might be overridden by future updates - a value of 5 is disabled by choice and will not be overridden.)
+*   If you trust Cloudflare DNS servers and would prefer extra privacy (thanks to encrypted DNS requests), you can enforce TRR by setting `network.trr.mode` to `3` (which completely disables classic DNS requests) or `2` (uses TRR by default, falls back to classic DNS requests if that fails). Keep in mind that if you're using any intranet websites or trying to access computers in your local networks by their hostnames, enabling TRR may break name resolving in such cases.
+*   If you want to encrypt your DNS requests but not use Cloudflare servers, you can point to a new DNS over HTTPS server by setting `network.trr.uri` to your resolver URL. A list of currently available resolvers can be found [here](https://gist.github.com/bagder/5e29101079e9ac78920ba2fc718aceec), along with other configuration options for TRR.
 
 ### Disable geolocation
 

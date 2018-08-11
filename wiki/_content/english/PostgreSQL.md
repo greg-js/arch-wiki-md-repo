@@ -6,7 +6,7 @@ Related articles
 
 ## Contents
 
-*   [1 Installing PostgreSQL](#Installing_PostgreSQL)
+*   [1 Installation](#Installation)
 *   [2 Initial configuration](#Initial_configuration)
 *   [3 Create your first database/user](#Create_your_first_database.2Fuser)
 *   [4 Familiarize with PostgreSQL](#Familiarize_with_PostgreSQL)
@@ -26,10 +26,9 @@ Related articles
     *   [8.2 Prevent disk writes when idle](#Prevent_disk_writes_when_idle)
     *   [8.3 Cannot connect to database through pg_connect()](#Cannot_connect_to_database_through_pg_connect.28.29)
 
-## Installing PostgreSQL
+## Installation
 
 [Install](/index.php/Install "Install") the [postgresql](https://www.archlinux.org/packages/?name=postgresql) package. It will also create a system user called *postgres*.
-
 **Warning:** See [#Upgrading PostgreSQL](#Upgrading_PostgreSQL) for necessary steps before installing new versions of the PostgreSQL packages.
 
 **Note:** Commands that should be run as the *postgres* user are prefixed by `[postgres]$` in this article.
@@ -47,16 +46,6 @@ $ su
 # su -l postgres
 
 ```
-
-You can also run oneshot commands:
-
-*   Using sudo:
-
-	 `$ sudo -u postgres *command*` 
-
-*   Using su:
-
-	 `# su -c *command* postgres` 
 
 See [sudo(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sudo.8) or [su(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/su.1) for their usage.
 

@@ -19,14 +19,14 @@ Related articles
 
 ## 설치
 
-[nimf-git](https://aur.archlinux.org/packages/nimf-git/) 패키지 하나만 [설치](/index.php/Install "Install") 하면 됩니다.
+[nimf](https://aur.archlinux.org/packages/nimf/) 패키지 하나만 [설치](/index.php/Install "Install") 하면 됩니다.
 
 ### 입력기 엔진
 
-*   nimf-libhangul, [libhangul](https://www.archlinux.org/packages/?name=libhangul) 기반의 한국어 입력 엔진 ([nimf-git](https://aur.archlinux.org/packages/nimf-git/)에 내장되어 있음).
-*   nimf-anthy, [anthy](https://www.archlinux.org/packages/?name=anthy) 기반의 일본어 입력 엔진 ([nimf-git](https://aur.archlinux.org/packages/nimf-git/)에 내장되어 있음).
-*   nimf-chewing, [libchewing](https://www.archlinux.org/packages/?name=libchewing) 기반의 중국어 주음 입력 엔진 ([nimf-git](https://aur.archlinux.org/packages/nimf-git/)에 내장되어 있음).
-*   nimf-rime, [librime](https://www.archlinux.org/packages/?name=librime) 기반의 중국어 입력 엔진 ([nimf-git](https://aur.archlinux.org/packages/nimf-git/)에 내장되어 있음).
+*   nimf-libhangul, [libhangul](https://www.archlinux.org/packages/?name=libhangul) 기반의 한국어 입력 엔진 ([nimf](https://aur.archlinux.org/packages/nimf/)에 내장되어 있음).
+*   nimf-anthy, [anthy](https://www.archlinux.org/packages/?name=anthy) 기반의 일본어 입력 엔진 ([nimf](https://aur.archlinux.org/packages/nimf/)에 내장되어 있음).
+*   nimf-chewing, [libchewing](https://www.archlinux.org/packages/?name=libchewing) 기반의 중국어 주음 입력 엔진 ([nimf](https://aur.archlinux.org/packages/nimf/)에 내장되어 있음).
+*   nimf-rime, [librime](https://www.archlinux.org/packages/?name=librime) 기반의 중국어 입력 엔진 ([nimf](https://aur.archlinux.org/packages/nimf/)에 내장되어 있음).
 
 ### 초기 설정
 

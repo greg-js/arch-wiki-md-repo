@@ -18,6 +18,7 @@ From the [project page](http://linrunner.de/en/tlp/tlp.html):
     *   [2.3 Bumblebee with NVIDIA driver](#Bumblebee_with_NVIDIA_driver)
     *   [2.4 Radio Device Wizard](#Radio_Device_Wizard)
     *   [2.5 Command line](#Command_line)
+    *   [2.6 Disk problems after suspend](#Disk_problems_after_suspend)
 *   [3 Debugging](#Debugging)
 *   [4 Features intentionally excluded](#Features_intentionally_excluded)
 *   [5 See also](#See_also)
@@ -95,6 +96,18 @@ See [TLP configuration](http://linrunner.de/en/tlp/docs/tlp-configuration.html#r
 ### Command line
 
 TLP provides several command line tools. See [TLP commands](http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-management.html#commands).
+
+### Disk problems after suspend
+
+There may be cases where the default [tlp](https://www.archlinux.org/packages/?name=tlp) configuration can cause SATA-related problems that you can see on `dmesg -a`. Some systems may not support the `SATA_LINKPWR_ON_AC` parameters.
+
+As an example, MacBook Air 2015 11" doesn't support the `max_performance` parameter, and so had to be changed to `min_power`:
+
+```
+# SATA_LINKPWR_ON_AC="med_power_with_dipm max_performance"
+SATA_LINKPWR_ON_AC="med_power_with_dipm min_power"
+
+```
 
 ## Debugging
 

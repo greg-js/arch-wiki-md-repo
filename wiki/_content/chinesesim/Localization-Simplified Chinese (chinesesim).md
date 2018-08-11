@@ -170,9 +170,9 @@ export LC_ALL="zh_CN.UTF-8"
 *   在`locale.conf`中添加**LANG=zh_CN.UTF-8**，以将简体中文设置为默认语言。由于对[Locale (简体中文)](/index.php/Locale_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Locale (简体中文)")定义了框架内地区（即 CJK 优先度），使得默认的优先级被忽略。
 *   手动调整优先级，将中文字形调整到日文字形之前。[[4]](http://tieba.baidu.com/p/4879946717)
 
-修改或创建文件`/etc/fonts/conf.avail/64-language-selector-prefer.conf`，根据安装的不同情况添加如下内容：
+修改或创建文件`/etc/fonts/conf.avail/64-language-selector-prefer.conf`,
 
-*   noto-fonts-cjk用户：
+noto-fonts-cjk用户：
 
 ```
  <?xml version="1.0"?>
@@ -198,7 +198,7 @@ export LC_ALL="zh_CN.UTF-8"
 
 ```
 
-*   adobe-source-han-sans-otc-fonts用户：
+adobe-source-han-sans-otc-fonts用户：
 
 ```
  <?xml version="1.0"?>
@@ -213,7 +213,6 @@ export LC_ALL="zh_CN.UTF-8"
  <family>Source Han Sans K</family>
  </prefer>
  </alias>
-
  <alias>
  <family>monospace</family>
  <prefer>
@@ -227,17 +226,24 @@ export LC_ALL="zh_CN.UTF-8"
 
 ```
 
-若`/etc/fonts`目录下{{|conf.d/}}目录，则在该目录中创建指向`/etc/fonts/conf.avail/64-language-selector-prefer.con`的同名软链接：
+若`/etc/fonts`目录下有`conf.d/`目录，则在该目录中创建指向`/etc/fonts/conf.avail/64-language-selector-prefer.con`的同名软链接：
 
 ```
- $ sudo ln -s /etc/fonts/conf.avail/64-language-selector-prefer.conf /etc/fonts/conf.d/64-language-selector-prefer.conf
+ # ln -s /etc/fonts/conf.avail/64-language-selector-prefer.conf /etc/fonts/conf.d/64-language-selector-prefer.conf
 
 ```
 
 然后更新字体缓存即可生效：
 
 ```
- $ fc-cache -fv
+ # fc-cache -fv
+
+```
+
+执行以下命令检查，如果出现`NotoSansCJK-Regular.ttc: "Noto Sans CJK SC" "Regular"`则表示设置成功：
+
+```
+ # fc-match -s |grep 'Noto Sans CJK'
 
 ```
 

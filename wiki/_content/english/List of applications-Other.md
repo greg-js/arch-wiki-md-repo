@@ -325,6 +325,10 @@ These applications support time, task and contacts management.
 
 	[http://phpldapadmin.sourceforge.net/](http://phpldapadmin.sourceforge.net/) || [phpldapadmin](https://www.archlinux.org/packages/?name=phpldapadmin)
 
+*   **Osmo** — A handy personal organizer
+
+	[http://clayo.org/osmo/](http://clayo.org/osmo/) || [osmo](https://www.archlinux.org/packages/?name=osmo)
+
 #### Financial management
 
 See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/wiki/Comparison_of_accounting_software "wikipedia:Comparison of accounting software").

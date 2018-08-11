@@ -136,7 +136,7 @@ $ weston-view doc1.pdf doc2.pdf...
 
 ### Configuración
 
-He aquí un archivo de configuración de ejemplo para la distribución del teclado, la selección de módulos y modificaciones de la interfaz de usuario. Vea [weston.ini(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/weston.ini.5) para obtener los detalles completos:
+He aquí un archivo de configuración de ejemplo para la distribución del teclado, la selección de módulos y modificaciones de la interfaz de usuario. Vea [weston.ini(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/weston.ini.5) para obtener los detalles completos:
 
  `~/.config/weston.ini` 
 ```

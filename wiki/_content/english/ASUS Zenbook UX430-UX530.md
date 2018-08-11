@@ -10,8 +10,8 @@
 | Card Reader | Working |
 | Bluetooth | Working |
 | Function keys | Working |
+| Fingerprint Sensor | Partially working |
 | Ambient Light Sensor | Not working |
-| Fingerprint Sensor | Not working |
 
 ASUS [announced](https://www.asus.com/News/q0npwWGXCqpxoVf8) UX430 and UX530 models. Since these models share almost the same hardware (the only difference is screen size and discrete NVidia graphics card), this article covers hardware specific configuration for all UX430UA, UX430UQ, UX530UQ and UX530UX models.
 
@@ -22,6 +22,7 @@ ASUS [announced](https://www.asus.com/News/q0npwWGXCqpxoVf8) UX430 and UX530 mod
     *   [1.2 Video](#Video)
     *   [1.3 Audio](#Audio)
     *   [1.4 Touchpad](#Touchpad)
+    *   [1.5 Fingerprint sensor](#Fingerprint_sensor)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Linux kernel 4.13 issues](#Linux_kernel_4.13_issues)
     *   [2.2 Headphones audio is too low](#Headphones_audio_is_too_low)
@@ -53,6 +54,12 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio").
 ## Touchpad
 
 See [Libinput](/index.php/Libinput "Libinput").
+
+## Fingerprint sensor
+
+**Note:** This is likely not going to work at all. See [Talk:ASUS_Zenbook_UX430/UX530#Fingerprint_Reader](/index.php/Talk:ASUS_Zenbook_UX430/UX530#Fingerprint_Reader "Talk:ASUS Zenbook UX430/UX530").
+
+Install fingerprint sensor driver [libfprint-elantech-git](https://aur.archlinux.org/packages/libfprint-elantech-git/), then see [Fprint](/index.php/Fprint "Fprint") and you might be also interested in [Fingerprint_GUI](/index.php/Fingerprint_GUI "Fingerprint GUI").
 
 # Troubleshooting
 

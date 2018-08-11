@@ -43,6 +43,7 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 | [BuyVM](https://buyvm.net/) | 2013.07.01 | KVM | LA, Buffalo NY | Must chose a different OS at sign up. Once accessible, choose to mount the latest Arch ISO and reboot to install manually. |
 | [Coinshost](https://coinshost.com/en/vps) | 2015.04 | Xen | Zurich, Switzerland | Bitcoin and other cryptocurrencies accepted. |
 | [Cherry Host](https://cherry.host) | Latest | KVM | Santee, US-CA | Must submit a support ticket to get Arch installed. |
+| [Contabo](https://contabo.com) | Latest | KVM | German | Only place to get 500 GB for 7€ - Decent speed. Other cheaps plans add snapshots, which is useful if you VPS runs a rolling release distro. |
 | [DirectVPS](https://www.directvps.nl/) | 2014.01.xx | OpenVZ | Amsterdam, NL; Rotterdam, NL | (Dutch language site only) |
 | [Edis](http://www.edis.at/en/) | [2013.03.01](http://www.edis.at/en/support-and-service/faq/server-faq/which-distributions-are-available-with-edis-kvm-vps-plans/) | vServer, KVM, OpenVZ | [Multiple international locations](http://www.edis.at/en/server/kvm-vps/austria/). | Also offer dedicated server options as well as an "off-shore" location at the Isle of Man (IM). Requires mounting an Arch ISO for a full manual install. |
 | [GigaTux](https://www.gigatux.com/virtual.php) | [2013.06.01](https://www.gigatux.com/distro/) | Xen | Chicago, US-IL; Frankfurt, DE; London, GB; San Jose, US-CA | Currently, when changing to the US$ currency, the page breaks and it is not possible to provision a server. |
@@ -64,7 +65,7 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 | [RoseHosting](https://www.rosehosting.com/) | Latest | OpenVZ, KVM | St. Louis, Missouri, USA | SSD powered hosting plans with free fully-managed 24/7 support. No unmanaged VPS offerings. |
 | [SeedVPS](https://www.seedvps.com/) | Latest | OpenVZ, KVM | Amsterdam, Netherlands | Linux VPS and Windows VPS Hosting in The Netherlands (NL). Newer ISO can be requested by opening a support ticket. |
 | [Tilaa](https://www.tilaa.com/) | 2016.03.01 | [KVM](https://www.tilaa.com/pages/vps/technology) | Amsterdam, NL |
-| [TransIP](https://www.transip.eu/) | [2017.01.01](https://www.transip.eu/vps/vps-os/) | [KVM](https://www.transip.eu/vps/vps-technology/) | Amsterdam, NL | Also registrar. |
+| [TransIP](https://www.transip.eu/) | [2017.01.01](https://www.transip.eu/vps/vps-os/) | [KVM](https://www.transip.eu/vps/vps-technology/) | Amsterdam, NL | For latest image, submit ticket. Also registrar. |
 | [upCUBE](https://upcube.io) | Latest | Docker | Germany | Different prepared arch linux templates available |
 | [Virpus](http://virpus.com/) | [2014.11.07](http://virpus.com/linux-vps.php) | Xen | Kansas City, US-KS; Los Angeles, US-CA | Arch is **not** offered as a choice when creating a server (even though the Arch logo is prominently featured on the site). As of 2018, the most recent version of Ubuntu offered is 14.04, and the limited-time promo code for new sign ups is over two years old. None of this generates much trust. |
 | [Virtual Master](https://www.virtualmaster.com/) | 2012-08 |  ?? | Prague, CZ |

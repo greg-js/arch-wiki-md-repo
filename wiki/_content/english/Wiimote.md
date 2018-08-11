@@ -1,4 +1,4 @@
-This article will go through the basic steps required to have a working Wiimote in Linux for general use. It will not go into much detail for some steps as there are many guides already written for some parts already.
+This article will go through the basic steps required to have a working [Wiimote](https://en.wikipedia.org/wiki/Wii_Remote "wikipedia:Wii Remote") in Linux for general use. It will not go into much detail for some steps as there are many guides already written for some parts already.
 
 **Note:** The approach shown on this page is based on software which is no longer developed upstream. There is a new effort on creating a Wii Remote driver based on the new Linux kernel Wii Remote driver. See [XWiimote](/index.php/XWiimote "XWiimote") if you want to test the new Wii Remote software stack.
 
@@ -6,8 +6,8 @@ This article will go through the basic steps required to have a working Wiimote 
 
 *   [1 Prerequisites](#Prerequisites)
 *   [2 Connect the Wiimote](#Connect_the_Wiimote)
-*   [3 Input Device](#Input_Device)
-    *   [3.1 Infrared Sources](#Infrared_Sources)
+*   [3 Input device](#Input_device)
+    *   [3.1 Infrared sources](#Infrared_sources)
     *   [3.2 Configuration](#Configuration)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Unable to open uinput](#Unable_to_open_uinput)
@@ -44,7 +44,7 @@ Scanning ...
 
 Once your Wiimote has been detected you can test if it is working by running the command `wmgui` and testing out various buttons and sensors through that interface.
 
-## Input Device
+## Input device
 
 The Wiimote can act as a regular input device like a mouse using `wminput`. If you have *no infrared source* simply run:
 
@@ -62,7 +62,7 @@ $ wminput -c ir_ptr -w
 
 ```
 
-### Infrared Sources
+### Infrared sources
 
 Possible infrared sources are bulbs
 
@@ -89,36 +89,17 @@ All possible values for Wiimote.Buttons can be found here: [[2]](http://abstrakr
 
 If wminput gives this error, leaving you unable to use the wiimote, try the following:
 
-1\. Create a new file in `/etc/udev/rules.d/` (It does not matter what the name of the file is, so long as the extension is .rules)
-
-2\. Add the following to the file:
-
-```
-KERNEL=="uinput", GROUP="wheel", MODE="0660"
-
-```
-
-3\. Reboot
+1.  Create a new file in `/etc/udev/rules.d/` (It does not matter what the name of the file is, so long as the extension is .rules)
+2.  Add the following to the file: `KERNEL=="uinput", GROUP="wheel", MODE="0660"` 
+3.  Reboot.
 
 This should solve the problem. Solution was found in the forums [here](https://bbs.archlinux.org/viewtopic.php?id=104348).
 
 Solution 2:
 
-1\. edit the `/etc/mkinitcpio.conf` add "uinput" in MODULES:
-
-```
-MODULES="uinput ...."
-
-```
-
-2\. as needed and re-generate the initramfs image with:
-
-```
-# mkinitcpio -p linux
-
-```
-
-3\. Reboot
+1.  Edit the `/etc/mkinitcpio.conf` add "uinput" in MODULES: `MODULES="uinput ...."` as needed.
+2.  Re-generate the initramfs image with: `# mkinitcpio -p linux` 
+3.  Reboot.
 
 ## See also
 

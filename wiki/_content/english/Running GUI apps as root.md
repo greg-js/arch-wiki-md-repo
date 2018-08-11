@@ -133,13 +133,13 @@ A more versatile though more insecure workaround allows any graphical applicatio
 A more versatile —though much less secure— workaround is to use [xhost](/index.php/Xhost "Xhost") to temporarily allow the root user to access the local user's X session[[5]](https://bugzilla.redhat.com/show_bug.cgi?id=1274451#c64). To do so, execute the following command as the current (unprivileged) user:
 
 ```
- $ xhost si:localuser:root
+$ xhost si:localuser:root
 
 ```
 
 To remove this access after the application has been closed:
 
 ```
- $ xhost -si:localuser:root
+$ xhost -si:localuser:root
 
 ```

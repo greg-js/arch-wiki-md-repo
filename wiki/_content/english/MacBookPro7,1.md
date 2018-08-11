@@ -5,22 +5,40 @@ Related articles
 *   [MacBookPro8,1/8,2/8,3 (2011)](/index.php/MacBookPro8,1/8,2/8,3_(2011) "MacBookPro8,1/8,2/8,3 (2011)")
 *   [MacBookPro9,2 (Mid-2012)](/index.php/MacBookPro9,2_(Mid-2012) "MacBookPro9,2 (Mid-2012)")
 
-This page contains tips on installing Arch Linux on a Mid 2010 13" MacBook Pro.
+This page contains tips on installing Arch Linux on a Mid 2010 13" MacBook Pro alongside a pre-existing OSX operating system. For general help on the installation procedure see the [Installation guide](/index.php/Installation_guide "Installation guide").
 
 ## Contents
 
-*   [1 Installation](#Installation)
-    *   [1.1 Dual Boot](#Dual_Boot)
-        *   [1.1.1 EFI-Mode](#EFI-Mode)
-        *   [1.1.2 CSM-Mode](#CSM-Mode)
-    *   [1.2 Bootloader](#Bootloader)
-        *   [1.2.1 EFI-Mode](#EFI-Mode_2)
-        *   [1.2.2 CSM-Mode or BIOS-compatibility](#CSM-Mode_or_BIOS-compatibility)
-            *   [1.2.2.1 Can't find root device](#Can.27t_find_root_device)
-*   [2 Network](#Network)
-*   [3 Video](#Video)
-    *   [3.1 Nouveau](#Nouveau)
-    *   [3.2 Nvidia](#Nvidia)
+*   [1 Preparation](#Preparation)
+    *   [1.1 Install Boot Manager](#Install_Boot_Manager)
+    *   [1.2 Shrinking Macintosh HD](#Shrinking_Macintosh_HD)
+    *   [1.3 EFI vs CSM mode](#EFI_vs_CSM_mode)
+*   [2 Installation](#Installation)
+    *   [2.1 Dual Boot](#Dual_Boot)
+        *   [2.1.1 EFI-Mode](#EFI-Mode)
+        *   [2.1.2 CSM-Mode](#CSM-Mode)
+    *   [2.2 Bootloader](#Bootloader)
+        *   [2.2.1 EFI-Mode](#EFI-Mode_2)
+        *   [2.2.2 CSM-Mode or BIOS-compatibility](#CSM-Mode_or_BIOS-compatibility)
+            *   [2.2.2.1 Can't find root device](#Can.27t_find_root_device)
+*   [3 Network](#Network)
+*   [4 Video](#Video)
+    *   [4.1 Nouveau](#Nouveau)
+    *   [4.2 Nvidia](#Nvidia)
+
+## Preparation
+
+### Install Boot Manager
+
+**Optional.** The easiest way to begin is by [installing rEFInd](http://www.rodsbooks.com/refind/) on Mac OSX before moving on to Arch. This will place a boot menu on startup. The config will be in your OSX partition - if this is not desirable it is possible to install it later in Arch. Keep in mind that since Apple's OS X 10.11 (El Capitan), the feature System Integrity Protection (SIP) doesn't allow for rEFInd installation in the way described on the Installing rEFInd page. See [this site](https://www.rodsbooks.com/refind/sip.html) for more information and installation instructions.
+
+### Shrinking Macintosh HD
+
+Using Mac OSX's disk utility, create a new partition, calculate the amount of free space required for all new partitions and shrink Macintosh HD to accommodate for this amount. Leave the new partition as free space for now.
+
+### EFI vs CSM mode
+
+It's probably good to consider on forehand what the differences are and which will work best for you, especially considering the drawback EFI mode has on the NVIDIA driver.
 
 ## Installation
 
