@@ -185,7 +185,7 @@ Share the content in `/etc/exports`:
 
 ```
 
-**Tip:** This example sets-up read-only exports. See [exports(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/exports.5) for additional options and configurations.
+**Tip:** This example sets-up read-only exports. See [exports(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/exports.5) for additional options and configurations.
 
 Whenever changes are made to `/etc/exports`, always refresh the exports:
 

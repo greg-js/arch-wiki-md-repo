@@ -7,24 +7,25 @@ This article describes how to set up nginx and how to optionally integrate it wi
 *   [1 Installation](#Installation)
 *   [2 Running](#Running)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Configuration example](#Configuration_example)
-    *   [3.2 General configuration](#General_configuration)
-        *   [3.2.1 Processes and connections](#Processes_and_connections)
-        *   [3.2.2 Running under different user](#Running_under_different_user)
-        *   [3.2.3 Server blocks](#Server_blocks)
-            *   [3.2.3.1 Managing server entries](#Managing_server_entries)
-        *   [3.2.4 TLS/SSL](#TLS.2FSSL)
-        *   [3.2.5 Per-User Directories](#Per-User_Directories)
-    *   [3.3 FastCGI](#FastCGI)
-        *   [3.3.1 PHP implementation](#PHP_implementation)
-            *   [3.3.1.1 nginx configuration](#nginx_configuration)
-                *   [3.3.1.1.1 Adding to main configuration](#Adding_to_main_configuration)
-                *   [3.3.1.1.2 PHP configuration file](#PHP_configuration_file)
-            *   [3.3.1.2 Test configuration](#Test_configuration)
-        *   [3.3.2 CGI implementation](#CGI_implementation)
-            *   [3.3.2.1 fcgiwrap](#fcgiwrap)
-                *   [3.3.2.1.1 Multiple worker threads](#Multiple_worker_threads)
-            *   [3.3.2.2 nginx configuration](#nginx_configuration_2)
+    *   [3.1 Configuration structure](#Configuration_structure)
+    *   [3.2 Configuration example](#Configuration_example)
+    *   [3.3 General configuration](#General_configuration)
+        *   [3.3.1 Processes and connections](#Processes_and_connections)
+        *   [3.3.2 Running under different user](#Running_under_different_user)
+        *   [3.3.3 Server blocks](#Server_blocks)
+            *   [3.3.3.1 Managing server entries](#Managing_server_entries)
+        *   [3.3.4 TLS/SSL](#TLS.2FSSL)
+        *   [3.3.5 Per-User Directories](#Per-User_Directories)
+    *   [3.4 FastCGI](#FastCGI)
+        *   [3.4.1 PHP implementation](#PHP_implementation)
+            *   [3.4.1.1 nginx configuration](#nginx_configuration)
+                *   [3.4.1.1.1 Adding to main configuration](#Adding_to_main_configuration)
+                *   [3.4.1.1.2 PHP configuration file](#PHP_configuration_file)
+            *   [3.4.1.2 Test configuration](#Test_configuration)
+        *   [3.4.2 CGI implementation](#CGI_implementation)
+            *   [3.4.2.1 fcgiwrap](#fcgiwrap)
+                *   [3.4.2.1.1 Multiple worker threads](#Multiple_worker_threads)
+            *   [3.4.2.2 nginx configuration](#nginx_configuration_2)
 *   [4 Installation in a chroot](#Installation_in_a_chroot)
     *   [4.1 Create necessary devices](#Create_necessary_devices)
     *   [4.2 Create necessary directories](#Create_necessary_directories)
@@ -65,6 +66,21 @@ First steps with nginx are described in the [Beginner’s Guide](http://nginx.or
 More details and examples can be found in [http://wiki.nginx.org/Configuration](http://wiki.nginx.org/Configuration) and the [official documentation](http://nginx.org/en/docs/).
 
 The examples below cover the most common use cases. It is assumed that you use the default location for documents (`/usr/share/nginx/html`). If that is not the case, substitute your path instead.
+
+### Configuration structure
+
+ `basic configuration structure` 
+```
+# anything following hash is comment
+server {                    # this is the block similar to function
+    listen 80;              # this is simple directives
+    server_name domain.com;
+    root /path/to/www;
+}
+
+```
+
+Context are the block directive containing other inside (ie: events, http, server, and location)
 
 ### Configuration example
 

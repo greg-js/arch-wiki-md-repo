@@ -1,19 +1,15 @@
 Related articles
 
 *   [File systems](/index.php/File_systems "File systems")
+*   [gdisk](/index.php/Gdisk "Gdisk")
 *   [GNU Parted](/index.php/GNU_Parted "GNU Parted")
 *   [Partitioning](/index.php/Partitioning "Partitioning")
 
 [util-linux fdisk](https://git.kernel.org/cgit/utils/util-linux/util-linux.git/) is a dialogue-driven command-line utility that creates and manipulates partition tables and partitions on a hard disk. Hard disks are divided into partitions and this division is described in the partition table.
 
-[gdisk](http://www.rodsbooks.com/gdisk/) ([GPT](/index.php/GPT "GPT") fdisk), works "on Globally Unique Identifier (GUID) Partition Table ([GPT](/index.php/GPT "GPT")) disks, rather than on the more common (through at least early 2013) Master Boot Record ([MBR](/index.php/MBR "MBR")) partition tables."
+This article covers [fdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fdisk.8) and its related [sfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sfdisk.8) utility.
 
-This article covers [fdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fdisk.8) and its related [sfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sfdisk.8) utility, as well as the analogous [gdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gdisk.8) and [sgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sgdisk.8) utilities.
-
-**Tip:**
-
-*   For basic partitioning functionality with a text user interface, [cfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cfdisk.8) and [cgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cgdisk.8) can be used.
-*   GPT fdisk website has detailed walkthroughs for [gdisk](http://www.rodsbooks.com/gdisk/walkthrough.html), [cgdisk](http://www.rodsbooks.com/gdisk/cgdisk-walkthrough.html) and [sgdisk](http://www.rodsbooks.com/gdisk/sgdisk-walkthrough.html).
+**Tip:** For basic partitioning functionality with a text user interface, [cfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cfdisk.8) can be used.
 
 ## Contents
 
@@ -22,25 +18,17 @@ This article covers [fdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fdisk.
 *   [3 Backup and restore partition table](#Backup_and_restore_partition_table)
     *   [3.1 Using dd](#Using_dd)
     *   [3.2 Using sfdisk](#Using_sfdisk)
-    *   [3.3 Using sgdisk](#Using_sgdisk)
 *   [4 Create a partition table and partitions](#Create_a_partition_table_and_partitions)
-    *   [4.1 Start the partition manipulator](#Start_the_partition_manipulator)
-        *   [4.1.1 fdisk](#fdisk)
-        *   [4.1.2 gdisk](#gdisk)
-    *   [4.2 Create new table](#Create_new_table)
-    *   [4.3 Create partitions](#Create_partitions)
-    *   [4.4 Write changes to disk](#Write_changes_to_disk)
+    *   [4.1 Create new table](#Create_new_table)
+    *   [4.2 Create partitions](#Create_partitions)
+    *   [4.3 Write changes to disk](#Write_changes_to_disk)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Convert between MBR and GPT](#Convert_between_MBR_and_GPT)
-    *   [5.2 Sort partitions](#Sort_partitions)
-    *   [5.3 Recover GPT header](#Recover_GPT_header)
+    *   [5.1 Sort partitions](#Sort_partitions)
 *   [6 See also](#See_also)
 
 ## Installation
 
 To use *fdisk* and its associated utilities, the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package, which is part of the [base](https://www.archlinux.org/groups/x86_64/base/) group is required.
-
-To use *gdisk* and its associated utilities, [install](/index.php/Install "Install") the [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) package.
 
 ## List partitions
 
@@ -52,13 +40,6 @@ To list partition tables and partitions on a device, you can run the following, 
 ```
 
 **Note:** If the device is not specified, *fdisk* will list all partitions in `/proc/partitions`.
-
-Or for the *gdisk*:
-
-```
-# gdisk -l /dev/sda
-
-```
 
 ## Backup and restore partition table
 
@@ -147,51 +128,13 @@ To later restore this layout you can run:
 
 ```
 
-### Using sgdisk
-
-Using *sgdisk* you can create a binary backup consisting of the protective MBR, the main GPT header, the backup GPT header, and one copy of the partition table. The example below will save the partition table of `/dev/sda` to a file `sgdisk-sda.bin`:
-
-```
-# sgdisk -b=sgdisk-sda.bin /dev/sda
-
-```
-
-You can later restore the backup by running:
-
-```
-# sgdisk -l=sgdisk-sda.bin /dev/sda
-
-```
-
-If you want to clone your current device's partition layout (`/dev/sda` in this case) to another drive (`/dev/sdc`) run:
-
-```
-# sgdisk -R=/dev/sdc /dev/sda
-
-```
-
-If both drives will be in the same computer, you need to randomize the GUID's:
-
-```
-# sgdisk -G /dev/sdc
-
-```
-
 ## Create a partition table and partitions
 
 The first step to [partitioning](/index.php/Partitioning "Partitioning") a disk is making a partition table. After that, the actual partitions are created according to the desired [partition scheme](/index.php/Partition_scheme "Partition scheme"). See the [partition table](/index.php/Partition_table "Partition table") article to help decide whether to use [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT").
 
 Before beginning, you may wish to [backup](#Backup_and_restore_partition_table) your current partition table and scheme.
 
-The following shows how to use both *gdisk* and *fdisk* to perform both the creation of a partition table and the creation of the actual partitions. Differences are noted when necessary.
-
-### Start the partition manipulator
-
-Start either *fdisk* or *gdisk* as instructed in the following sections. Then continue with [#Create new table](#Create_new_table).
-
-#### fdisk
-
-Using [MBR](/index.php/MBR "MBR"), the utility for editing the partition table is called *fdisk*. Recent versions of *fdisk* have abandoned the deprecated system of using cylinders as the default display unit, as well as MS-DOS compatibility by default. *fdisk* automatically aligns all partitions to 2048 sectors, or 1 MiB, which should work for all EBS sizes that are known to be used by SSD manufacturers. This means that the default settings will give you proper alignment.
+Recent versions of *fdisk* have abandoned the deprecated system of using cylinders as the default display unit, as well as MS-DOS compatibility by default. *fdisk* automatically aligns all partitions to 2048 sectors, or 1 MiB, which should work for all EBS sizes that are known to be used by SSD manufacturers. This means that the default settings will give you proper alignment.
 
 Start *fdisk* against your drive as root. In this example we are using `/dev/sda`:
 
@@ -202,30 +145,17 @@ Start *fdisk* against your drive as root. In this example we are using `/dev/sda
 
 This opens the *fdisk* dialogue where you can type in commands.
 
-#### gdisk
-
-Using [GPT](/index.php/GPT "GPT"), the utility for editing the partition table is called *gdisk*. Alternatively, you may use the curses-based version called *cgdisk*; however, the following instructions do not apply to it. See [cgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cgdisk.8) for its usage.
-
-*gdisk* performs partition alignment automatically on a 2048 sector (1 MiB) block size base which should be compatible with the vast majority of SSDs if not all. [GNU Parted](/index.php/GNU_Parted "GNU Parted") also supports GPT, but is [less user-friendly](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=601813) for aligning partitions.
-
-To use *gdisk*, run the program with the name of the device you want to change/edit. This example uses `/dev/sda`:
-
-```
-# gdisk /dev/sda
-
-```
-
 ### Create new table
 
 **Warning:** If you create a new partition table on a disk with data on it, it will erase all the data on the disk. Make sure this is what you want to do.
 
-To create a new MBR partition table and clear all current partition data, type `o` at the prompt. Skip this step if the table you require has already been created.
+To create a new partition table and clear all current partition data type `o` at the prompt for a MBR partition table or `g` for a GUID Partition Table (GPT). Skip this step if the table you require has already been created.
 
 ### Create partitions
 
-Create a new partition with the `n` command. You enter a partition type (*fdisk* only), partition number, starting sector, and an ending sector.
+Create a new partition with the `n` command. You enter a partition type, partition number, starting sector, and an ending sector.
 
-For *fdisk*, when prompted, specify the partition type, type `p` to create a primary partition or `e` to create an extended one. There may be up to four primary partitions.
+When prompted, specify the partition type, type `p` to create a primary partition or `e` to create an extended one. There may be up to four primary partitions.
 
 Both start and end sectors can be specified in absolute terms as sector numbers or as positions measured in kibibytes (`K`), mebibytes (`M`), gibibytes (`G`), tebibytes (`T`), or pebibytes (`P`); for instance, `40M` specifies a position 40MiB from the start of the disk. You can specify locations relative to the start or end of the specified default range by preceding the number by a `+` or `-` symbol, as in `+2G` to specify a point 2GiB after the default start sector, or `-200M` to specify a point 200MiB before the last available sector. Pressing the `Enter` key with no input specifies the default value, which is the start of the largest available block for the start sector and the end of the same block for the end sector.
 
@@ -234,9 +164,9 @@ Select the partition's type id. The default, `Linux filesystem`, should be fine 
 **Tip:**
 
 *   When partitioning it is always a good idea to follow the default values for first and last partition sectors. Additionally, specify partition sizes with the *+<size>{M,G,...}* notation. Such partitions are always aligned according to the device properties.
-*   [EFI system partition](/index.php/EFI_system_partition "EFI system partition") requires code `ef00` with *gdisk* and `EFI System` with *fdisk*.
-*   [GRUB](/index.php/GRUB "GRUB") requires a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") with code `ef02` with *gdisk* and `BIOS boot` with *fdisk* when installing GRUB to a disk.
-*   It is recommended to use `8200` with *gdisk* and `Linux swap` with *fdisk* for any [swap](/index.php/Swap "Swap") partitions, since systemd will automount it.
+*   [EFI system partition](/index.php/EFI_system_partition "EFI system partition") requires type `EFI System`.
+*   [GRUB](/index.php/GRUB "GRUB") requires a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") with type `BIOS boot` when installing GRUB to a disk.
+*   It is recommended to use `Linux swap` for any [swap](/index.php/Swap "Swap") partitions, since systemd will automount it.
 
 See the respective articles for considerations concerning the size and location of these partitions.
 
@@ -248,47 +178,12 @@ Write the table to disk and exit via the `w` command.
 
 ## Tips and tricks
 
-### Convert between MBR and GPT
-
-*gdisk*, *sgdisk* and *cgdisk* have the ability to convert MBR and [BSD disklabels](https://en.wikipedia.org/wiki/BSD_disklabel "wikipedia:BSD disklabel") to GPT without data loss. Upon conversion, all the MBR primary partitions and the logical partitions become GPT partitions with the correct partition type GUIDs and Unique partition GUIDs created for each partition. See Rod Smith's [Converting to or from GPT](http://www.rodsbooks.com/gdisk/mbr2gpt.html) for more info.
-
-After conversion, the bootloaders will need to be reinstalled to configure them to boot from GPT.
-
-**Note:**
-
-*   GPT stores a secondary table at the end of disk. This data structure consumes 33 512-byte sectors by default. MBR does not have a similar data structure at its end, which means that the last partition on an MBR disk sometimes extends to the very end of the disk and prevents complete conversion. If this happens to you, you must abandon the conversion and resize the final partition.
-*   If your boot loader is GRUB, it needs a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition").
-*   There are known corruption issues with the backup GPT table on laptops that are Intel chipset based, and run in RAID mode. The solution is to use AHCI instead of RAID, if possible.
-
-To convert an MBR partition table to GPT, use *sgdisk*.
-
-```
-# sgdisk -g /dev/sda
-
-```
-
-To convert GPT to MBR use the `m` option. Note that it is not possible to convert more than four partitions from GPT to MBR.
-
-```
-# sgdisk -m /dev/sda
-
-```
-
 ### Sort partitions
 
 This applies for when a new partition is created in the space between two partitions or a partition is deleted. `/dev/sda` is used in this example.
 
-MBR:
-
 ```
 # sfdisk -r /dev/sda
-
-```
-
-GPT:
-
-```
-# sgdisk -s /dev/sda
 
 ```
 
@@ -296,23 +191,6 @@ After sorting the partitions if you are not using [Persistent block device namin
 
 **Note:** The kernel must read the new partition table for the partitions (e.g. `/dev/sda1`) to be usable. Reboot the system or tell the kernel to [reread the partition table](https://serverfault.com/questions/36038/reread-partition-table-without-rebooting).
 
-### Recover GPT header
-
-In case main GPT header or backup GPT header gets damaged, you can recover one from the other with *gdisk*. `/dev/sda` is used in this example.
-
-```
-# gdisk /dev/sda
-
-```
-
-choose `r` for recovery and transformation options (experts only). From there choose either
-
-*   `b`: use backup GPT header (rebuilding main)
-*   `d`: use main GPT header (rebuilding backup)
-
-When done write the table to disk and exit via the `w` command.
-
 ## See also
 
-*   [GPT fdisk Tutorial](http://www.rodsbooks.com/gdisk/index.html) - offical webpage of gdisk with detailed walkthroughs.
 *   [Manually Partitioning Your Hard Drive with fdisk](http://www.novell.com/coolsolutions/feature/19350.html)

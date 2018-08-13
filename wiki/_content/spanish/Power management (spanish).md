@@ -32,7 +32,7 @@ También hay muchas herramientas de administración de energía:
         *   [1.3.3 Hooks en /usr/lib/systemd/system-sleep](#Hooks_en_.2Fusr.2Flib.2Fsystemd.2Fsystem-sleep)
 *   [2 Solución de problemas](#Soluci.C3.B3n_de_problemas)
     *   [2.1 Activar opciones de ahorro de energía RC6](#Activar_opciones_de_ahorro_de_energ.C3.ADa_RC6)
-*   [3 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [3 Consulte también](#Consulte_tambi.C3.A9n)
 
 ## Administración de energía con systemd
 
@@ -228,7 +228,7 @@ Donde *#Nr*:
 *   **5**: activa rc6 y profundiza más rc6
 *   **7**: activa rc6, y profundiza aún más rc6
 
-## Véase también
+## Consulte también
 
 *   [Laptop#Power management](/index.php/Laptop#Power_management "Laptop") describes power management specific for laptops - especially battery monitoring.
-*   [General recommendations#Power management](/index.php/General_recommendations#Power_management "General recommendations")
+*   [Administración de energía en Recomendaciones generales](/index.php/General_recommendations_(Espa%C3%B1ol)#Administraci.C3.B3n_de_energ.C3.ADa "General recommendations (Español)")

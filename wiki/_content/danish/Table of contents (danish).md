@@ -7,4 +7,4 @@
 | <small>4.</small> [Software](/index.php/Category:Software_(Dansk) "Category:Software (Dansk)") <small>(0)</small> |
 | <small>4.1.</small> [Artikler om pakkehåndtering](/index.php/Category:Package_management_(Dansk) "Category:Package management (Dansk)") <small>(4)</small> |
 | <small>5.</small> [Systemadministration](/index.php/Category:System_administration_(Dansk) "Category:System administration (Dansk)") <small>(0)</small> |
-| <small>5.1.</small> [Artikler om lyd og video](/index.php/Category:Audio/Video_(Dansk) "Category:Audio/Video (Dansk)") <small>(2)</small> |
+| <small>5.1.</small> [Multimedia](/index.php/Category:Multimedia_(Dansk) "Category:Multimedia (Dansk)") <small>(2)</small> |

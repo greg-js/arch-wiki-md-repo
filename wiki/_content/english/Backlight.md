@@ -236,7 +236,7 @@ $ xgamma -rgamma 1 -ggamma 1 -bgamma 1
 
 ```
 
-**Tip:** These commands can be bound to keyboard keys as described in [Xorg keybinding](/index.php/Xorg_keybinding "Xorg keybinding").
+**Tip:** These commands can be bound to keyboard keys as described in [Keyboard_configuration_in_Xorg#Keybinding](/index.php/Keyboard_configuration_in_Xorg#Keybinding "Keyboard configuration in Xorg").
 
 If you get the "No outputs have backlight property" error, it is because xrandr/xbacklight does not choose the right directory in `/sys/class/backlight`. You can specify the directory by setting the `Backlight` option of the device section in `/etc/X11/xorg.conf.d/20-*video*.conf`. For instance, if the name of the directory is `intel_backlight` and using the [Intel](/index.php/Intel "Intel") driver, the device section may be configured as follows:
 
@@ -356,13 +356,13 @@ However, the frequency of the switching, so-called PWM (pulse-width modulation) 
 
 If you have an Intel i915 GPU, then it may be possible to adjust PWM frequency to eliminate flicker.
 
-Period of PWM (inverse to frequency) is stored in 4 higher bytes of `0xC8254` register (if you are using the Intel GM45 chipset use address `0x61254` instead). To manipulate registers values install [intel-gpu-tools](https://www.archlinux.org/packages/?name=intel-gpu-tools) from the official repositories.
+Period of PWM (inverse to frequency) is stored in 2 higher bytes of `0xC8254` register (if you are using the Intel GM45 chipset use address `0x61254` instead). To manipulate registers values install [intel-gpu-tools](https://www.archlinux.org/packages/?name=intel-gpu-tools) from the official repositories.
 
 To increase the frequency, period must be reduced. For example:
 
  `# intel_reg read 0xC8254`  `0xC8254 : 0x12281228` 
 
-Then to double PWM frequency divide 4 higher bytes by 2 and write back resulting value, keeping lower bytes unchanged:
+Then to double PWM frequency divide 2 higher bytes (4 higher hex digits) by 2 and write back resulting value, keeping lower bytes unchanged:
 
 ```
 # intel_reg write 0xC8254 0x09141228

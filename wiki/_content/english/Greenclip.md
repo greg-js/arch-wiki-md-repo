@@ -1,4 +1,4 @@
-Greenclip[[1]](https://github.com/erebe/greenclip) is a simple clipboard manager designed to be integrated with [rofi](/index.php/Rofi "Rofi") and written in Haskell.
+[Greenclip](https://github.com/erebe/greenclip) is a simple clipboard manager designed to be integrated with [rofi](/index.php/Rofi "Rofi") and written in Haskell.
 
 ## Installation
 

@@ -32,11 +32,8 @@ KDE is a software project currently comprising of a [desktop environment](/index
             *   [3.1.1.4 Disable panel shadow](#Disable_panel_shadow)
         *   [3.1.2 Window decorations](#Window_decorations)
         *   [3.1.3 Icon themes](#Icon_themes)
-        *   [3.1.4 Fonts](#Fonts)
-            *   [3.1.4.1 Fonts in a Plasma session look poor](#Fonts_in_a_Plasma_session_look_poor)
-            *   [3.1.4.2 Fonts are huge or seem disproportional](#Fonts_are_huge_or_seem_disproportional)
-        *   [3.1.5 Space efficiency](#Space_efficiency)
-        *   [3.1.6 Thumbnail generation](#Thumbnail_generation)
+        *   [3.1.4 Space efficiency](#Space_efficiency)
+        *   [3.1.5 Thumbnail generation](#Thumbnail_generation)
     *   [3.2 Printing](#Printing)
     *   [3.3 Samba/Windows support](#Samba.2FWindows_support)
     *   [3.4 KDE Desktop activities](#KDE_Desktop_activities)
@@ -49,10 +46,6 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [4.1.1 Terminate Xorg server through KDE System Settings](#Terminate_Xorg_server_through_KDE_System_Settings)
         *   [4.1.2 KCM](#KCM)
     *   [4.2 Desktop search](#Desktop_search)
-        *   [4.2.1 Baloo](#Baloo)
-            *   [4.2.1.1 Using and configuring Baloo](#Using_and_configuring_Baloo)
-            *   [4.2.1.2 How do I index a removable device?](#How_do_I_index_a_removable_device.3F)
-            *   [4.2.1.3 How do I remove baloo_file](#How_do_I_remove_baloo_file)
     *   [4.3 Web browsers](#Web_browsers)
     *   [4.4 PIM](#PIM)
         *   [4.4.1 Akonadi](#Akonadi)
@@ -60,6 +53,8 @@ KDE is a software project currently comprising of a [desktop environment](/index
                 *   [4.4.1.1.1 PostgreSQL](#PostgreSQL)
                 *   [4.4.1.1.2 SQLite](#SQLite)
             *   [4.4.1.2 Disabling Akonadi](#Disabling_Akonadi)
+            *   [4.4.1.3 Troubleshooting](#Troubleshooting)
+                *   [4.4.1.3.1 OS error 22 when running on ZFS](#OS_error_22_when_running_on_ZFS)
     *   [4.5 KDE Telepathy](#KDE_Telepathy)
         *   [4.5.1 Use Telegram with KDE Telepathy](#Use_Telegram_with_KDE_Telepathy)
     *   [4.6 KDE Connect](#KDE_Connect)
@@ -69,38 +64,37 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [5.1.2 Re-enabling compositing effects](#Re-enabling_compositing_effects)
     *   [5.2 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_.2F_multiple_monitors)
     *   [5.3 Disable opening application launcher with Super key (Windows key)](#Disable_opening_application_launcher_with_Super_key_.28Windows_key.29)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Configuration related](#Configuration_related)
-        *   [6.1.1 Plasma desktop behaves strangely](#Plasma_desktop_behaves_strangely)
-        *   [6.1.2 Clean cache to resolve upgrade problems](#Clean_cache_to_resolve_upgrade_problems)
-    *   [6.2 Graphical problems](#Graphical_problems)
-        *   [6.2.1 Getting current state of KWin for support and debug purposes](#Getting_current_state_of_KWin_for_support_and_debug_purposes)
-        *   [6.2.2 Disable desktop effects manually or automatically for defined applications](#Disable_desktop_effects_manually_or_automatically_for_defined_applications)
-        *   [6.2.3 Disable compositing](#Disable_compositing)
-        *   [6.2.4 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
-        *   [6.2.5 Screen tearing with NVIDIA](#Screen_tearing_with_NVIDIA)
-        *   [6.2.6 Plasma cursor sometimes shown incorrecty](#Plasma_cursor_sometimes_shown_incorrecty)
-    *   [6.3 Sound problems](#Sound_problems)
-        *   [6.3.1 No sound after suspend](#No_sound_after_suspend)
-        *   [6.3.2 "Falling back to default" messages when trying to listen to any sound](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound)
-        *   [6.3.3 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
-    *   [6.4 Power management](#Power_management)
-        *   [6.4.1 No Suspend/Hibernate options](#No_Suspend.2FHibernate_options)
-    *   [6.5 Baloo](#Baloo_2)
-        *   [6.5.1 Inotify folder watch limit error](#Inotify_folder_watch_limit_error)
-    *   [6.6 Akonadi](#Akonadi_2)
-        *   [6.6.1 OS error 22 when running on ZFS](#OS_error_22_when_running_on_ZFS)
-    *   [6.7 KMail](#KMail)
-        *   [6.7.1 Clean akonadi configuration to fix KMail](#Clean_akonadi_configuration_to_fix_KMail)
-        *   [6.7.2 Empty IMAP inbox in KMail](#Empty_IMAP_inbox_in_KMail)
-    *   [6.8 Networking](#Networking)
-        *   [6.8.1 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
-    *   [6.9 Aggressive QXcbConnection journal logging](#Aggressive_QXcbConnection_journal_logging)
-    *   [6.10 KF5/Qt5 applications do not display icons in i3/fvwm/awesome](#KF5.2FQt5_applications_do_not_display_icons_in_i3.2Ffvwm.2Fawesome)
-    *   [6.11 Problems with saving credentials and persistently occurring KWallet dialogs](#Problems_with_saving_credentials_and_persistently_occurring_KWallet_dialogs)
-    *   [6.12 Weird "q" symbol in konsole](#Weird_.22q.22_symbol_in_konsole)
-    *   [6.13 Discover does not show any applications](#Discover_does_not_show_any_applications)
-    *   [6.14 High CPU usage of kscreenlocker_greet with NVidia drivers](#High_CPU_usage_of_kscreenlocker_greet_with_NVidia_drivers)
+*   [6 Troubleshooting](#Troubleshooting_2)
+    *   [6.1 Fonts](#Fonts)
+        *   [6.1.1 Fonts in a Plasma session look poor](#Fonts_in_a_Plasma_session_look_poor)
+        *   [6.1.2 Fonts are huge or seem disproportional](#Fonts_are_huge_or_seem_disproportional)
+    *   [6.2 Configuration related](#Configuration_related)
+        *   [6.2.1 Plasma desktop behaves strangely](#Plasma_desktop_behaves_strangely)
+        *   [6.2.2 Clean cache to resolve upgrade problems](#Clean_cache_to_resolve_upgrade_problems)
+    *   [6.3 Graphical problems](#Graphical_problems)
+        *   [6.3.1 Getting current state of KWin for support and debug purposes](#Getting_current_state_of_KWin_for_support_and_debug_purposes)
+        *   [6.3.2 Disable desktop effects manually or automatically for defined applications](#Disable_desktop_effects_manually_or_automatically_for_defined_applications)
+        *   [6.3.3 Disable compositing](#Disable_compositing)
+        *   [6.3.4 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
+        *   [6.3.5 Screen tearing with NVIDIA](#Screen_tearing_with_NVIDIA)
+        *   [6.3.6 Plasma cursor sometimes shown incorrecty](#Plasma_cursor_sometimes_shown_incorrecty)
+    *   [6.4 Sound problems](#Sound_problems)
+        *   [6.4.1 No sound after suspend](#No_sound_after_suspend)
+        *   [6.4.2 "Falling back to default" messages when trying to listen to any sound](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound)
+        *   [6.4.3 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
+    *   [6.5 Power management](#Power_management)
+        *   [6.5.1 No Suspend/Hibernate options](#No_Suspend.2FHibernate_options)
+    *   [6.6 KMail](#KMail)
+        *   [6.6.1 Clean akonadi configuration to fix KMail](#Clean_akonadi_configuration_to_fix_KMail)
+        *   [6.6.2 Empty IMAP inbox in KMail](#Empty_IMAP_inbox_in_KMail)
+    *   [6.7 Networking](#Networking)
+        *   [6.7.1 Freezes when using Automount on a NFS volume](#Freezes_when_using_Automount_on_a_NFS_volume)
+    *   [6.8 Aggressive QXcbConnection journal logging](#Aggressive_QXcbConnection_journal_logging)
+    *   [6.9 KF5/Qt5 applications do not display icons in i3/fvwm/awesome](#KF5.2FQt5_applications_do_not_display_icons_in_i3.2Ffvwm.2Fawesome)
+    *   [6.10 Problems with saving credentials and persistently occurring KWallet dialogs](#Problems_with_saving_credentials_and_persistently_occurring_KWallet_dialogs)
+    *   [6.11 Weird "q" symbol in konsole](#Weird_.22q.22_symbol_in_konsole)
+    *   [6.12 Discover does not show any applications](#Discover_does_not_show_any_applications)
+    *   [6.13 High CPU usage of kscreenlocker_greet with NVidia drivers](#High_CPU_usage_of_kscreenlocker_greet_with_NVidia_drivers)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -236,24 +230,6 @@ Icon themes can be installed and changed on *System Settings > Icons*.
 **Note:** Although all modern Linux desktops share the same icon theme format, desktops like [GNOME](/index.php/GNOME "GNOME") use fewer icons (esp. in menus and toolbars). Themes developed for such desktops usually lack icons required by Plasma and KDE apps. It is recommended to install Plasma compatible icon themes instead.
 
 **Tip:** Since some icon themes do not inherit from the default icon theme, some icons may be missing. To inherit from the Breeze, add `breeze` to the `Inherits=` array in `/usr/share/icon/*theme-name*/index.theme`, for example: `Inherits=breeze,hicolor`. You need to reapply this patch after every update to the icon theme, consider using [Pacman hooks](/index.php/Pacman_hooks "Pacman hooks") to automate the process.
-
-#### Fonts
-
-##### Fonts in a Plasma session look poor
-
-Try installing the [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) and [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) packages.
-
-After the installation, be sure to log out and back in. You should not have to modify anything in *System Settings > Fonts*. If you are using [qt5ct](https://www.archlinux.org/packages/?name=qt5ct), the settings in Qt5 Configuration Tool may override the font settings in System Settings.
-
-If you have personally set up how your [Fonts](/index.php/Fonts "Fonts") render, be aware that System Settings may alter their appearance. When you go *System Settings > Fonts* System Settings will likely alter your font configuration file (`fonts.conf`).
-
-There is no way to prevent this, but, if you set the values to match your `fonts.conf` file, the expected font rendering will return (it will require you to restart your application or in a few cases restart your desktop). Note that Gnome's Font Preferences also does this.
-
-##### Fonts are huge or seem disproportional
-
-Try to force font DPI to `**96**` in *System Settings > Fonts*.
-
-If that does not work, try setting the DPI directly in your Xorg configuration as documented in [Xorg#Setting DPI manually](/index.php/Xorg#Setting_DPI_manually "Xorg").
 
 #### Space efficiency
 
@@ -397,34 +373,11 @@ More KCMs can be found at [linux-apps.com](https://www.linux-apps.com/search?pro
 
 ### Desktop search
 
-KDE implements desktop search with a software called Baloo, a file indexing and searching solution.
-
-#### Baloo
-
-##### Using and configuring Baloo
-
-In order to search using Baloo on the Plasma desktop, start krunner (default keyboard shortcut `ALT+F2`) and type in your query. Within Dolphin press `CTRL+F`.
-
-By default the Desktop Search KCM exposes only two options: A panel to blacklist folders and a way to disable it with one click.
-
-Alternatively you can edit your `~/.config/baloofilerc` file ([info](https://community.kde.org/Baloo/Configuration)). Additionally the `balooctl` process can also be used. In order to disable Baloo run `balooctl stop` and `balooctl disable`.
-
-Once you added additional folders to the blacklist or disabled Baloo entirely, a process named `baloo_file_cleaner` removes all unneeded index files automatically. They are stored under `~/.local/share/baloo/`.
-
-##### How do I index a removable device?
-
-By default every removable device is blacklisted. You just have to remove your device from the blacklist in the KCM panel.
-
-##### How do I remove baloo_file
-
-Baloo_file uses a lot of resources and slow down computers. It also increases power consumption on laptops. While it cannot be removed due to dependencies issues, it is however possible to deactivate it until the next update. As root, type
-
-```
-killall baloo_file ; mv /usr/bin/baloo_file /usr/bin/baloo_file.bak ; echo '#!/bin/sh' > /usr/bin/baloo_file
-
-```
+KDE implements desktop search with a software called [Baloo](/index.php/Baloo "Baloo"), a file indexing and searching solution.
 
 ### Web browsers
+
+The following web browsers can integrate with Plasma:
 
 *   **[Konqueror](https://en.wikipedia.org/wiki/Konqueror "wikipedia:Konqueror")** — Part of the KDE project, supports two rendering engines – KHTML and the [Chromium](/index.php/Chromium "Chromium")-based Qt WebEngine.
 
@@ -509,6 +462,20 @@ Name=/home/*username*/.local/share/akonadi/akonadi.db
 
 See this [section in the KDE userbase](https://userbase.kde.org/Akonadi#Disabling_the_Akonadi_subsystem).
 
+##### Troubleshooting
+
+###### OS error 22 when running on ZFS
+
+If your home directory is on a [ZFS](/index.php/ZFS "ZFS") pool, create a `~/.config/akonadi/mysql-local.conf` file with the following contents:
+
+```
+[mysqld]
+innodb_use_native_aio = 0
+
+```
+
+See [MySQL#OS error 22 when running on ZFS](/index.php/MySQL#OS_error_22_when_running_on_ZFS "MySQL").
+
 ### KDE Telepathy
 
 [KDE Telepathy](https://community.kde.org/KTp) is a project with the goal to closely integrate Instant Messaging with the KDE desktop. It utilizes the Telepathy framework as a backend and is intended to replace Kopete.
@@ -581,6 +548,24 @@ $ kwriteconfig5 --file kwinrc --group ModifierOnlyShortcuts --key Meta ""
 ```
 
 ## Troubleshooting
+
+### Fonts
+
+#### Fonts in a Plasma session look poor
+
+Try installing the [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) and [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) packages.
+
+After the installation, be sure to log out and back in. You should not have to modify anything in *System Settings > Fonts*. If you are using [qt5ct](https://www.archlinux.org/packages/?name=qt5ct), the settings in Qt5 Configuration Tool may override the font settings in System Settings.
+
+If you have personally set up how your [Fonts](/index.php/Fonts "Fonts") render, be aware that System Settings may alter their appearance. When you go *System Settings > Fonts* System Settings will likely alter your font configuration file (`fonts.conf`).
+
+There is no way to prevent this, but, if you set the values to match your `fonts.conf` file, the expected font rendering will return (it will require you to restart your application or in a few cases restart your desktop). Note that Gnome's Font Preferences also does this.
+
+#### Fonts are huge or seem disproportional
+
+Try to force font DPI to `**96**` in *System Settings > Fonts*.
+
+If that does not work, try setting the DPI directly in your Xorg configuration as documented in [Xorg#Setting DPI manually](/index.php/Xorg#Setting_DPI_manually "Xorg").
 
 ### Configuration related
 
@@ -705,42 +690,6 @@ This can be solved by installing the GStreamer libav plugin (package [gst-libav]
 #### No Suspend/Hibernate options
 
 If your system is able to suspend or hibernate using [systemd](/index.php/Systemd "Systemd") but do not have these options shown in KDE, make sure [powerdevil](https://www.archlinux.org/packages/?name=powerdevil) is installed.
-
-### Baloo
-
-#### Inotify folder watch limit error
-
-If you get the following error:
-
-```
-KDE Baloo Filewatch service reached the inotify folder watch limit. File changes may be ignored.
-
-```
-
-Then you will need to increase the inotify folder watch limit:
-
-```
-# echo 524288 > /proc/sys/fs/inotify/max_user_watches
-
-```
-
-To make changes permanent, create a `40-max-user-watches.conf` file:
-
- `/etc/sysctl.d/40-max-user-watches.conf`  `fs.inotify.max_user_watches=524288` 
-
-### Akonadi
-
-#### OS error 22 when running on ZFS
-
-If your home directory is on a [ZFS](/index.php/ZFS "ZFS") pool, create a `~/.config/akonadi/mysql-local.conf` file with the following contents:
-
-```
-[mysqld]
-innodb_use_native_aio = 0
-
-```
-
-See [MySQL#OS error 22 when running on ZFS](/index.php/MySQL#OS_error_22_when_running_on_ZFS "MySQL").
 
 ### KMail
 

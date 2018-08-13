@@ -1,14 +1,14 @@
 Artigos relacionados
 
 *   [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)")
-*   [Distribuições baseadas no Arch](/index.php/Arch_based_distributions "Arch based distributions")
+*   [Distribuições baseadas no Arch](/index.php/Distribui%C3%A7%C3%B5es_baseadas_no_Arch "Distribuições baseadas no Arch")
 *   [Pacman/Rosetta](/index.php/Pacman/Rosetta "Pacman/Rosetta")
 
 Esta página tenta estabelecer uma comparação entre o Arch Linux e outras distribuições GNU/Linux populares e sistemas operacionais semelhantes ao UNIX. Os resumos que se seguem são descrições breves que podem ajudar uma pessoa a decidir se o Arch Linux atenderá às suas necessidades. Embora revisões e descrições possam ser úteis, a experiência de primeira mão é invariavelmente a melhor maneira de comparar distribuições.
 
 Para uma comparação mais completa, veja [w:Comparison of operating systems](https://en.wikipedia.org/wiki/Comparison_of_operating_systems "w:Comparison of operating systems") e [w:Comparison of Linux distributions](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions "w:Comparison of Linux distributions").
 
-Em todos os itens a seguir, apenas o Arch Linux é comparado com outras distribuições. Os *ports* comunitários que suportam arquiteturas diferentes de x86_64 podem ser encontradas listadas entre as [Distribuições baseadas no Arch](/index.php/Arch-based_distributions "Arch-based distributions").
+Em todos os itens a seguir, apenas o Arch Linux é comparado com outras distribuições. Os *ports* comunitários que suportam arquiteturas diferentes de x86_64 podem ser encontradas listadas entre as [distribuições baseadas no Arch](/index.php/Distribui%C3%A7%C3%B5es_baseadas_no_Arch "Distribuições baseadas no Arch").
 
 ## Contents
 

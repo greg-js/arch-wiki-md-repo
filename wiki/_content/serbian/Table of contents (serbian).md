@@ -9,13 +9,13 @@
 | <small>2.2.1.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Internet Relay Chat (Српски)") <small>(1)</small> |
 | <small>2.3.</small> [Multimedia players](/index.php/Category:Multimedia_players_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Multimedia players (Српски)") <small>(1)</small> |
 | <small>3.</small> [Arch development](/index.php/Category:Arch_development_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Arch development (Српски)") <small>(1)</small> |
-| <small>4.</small> [Audio/Video](/index.php/Category:Audio/Video_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Audio/Video (Српски)") <small>(2)</small> |
-| <small>5.</small> [Desktop environments](/index.php/Category:Desktop_environments_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Desktop environments (Српски)") <small>(1)</small> |
-| <small>6.</small> [Development](/index.php/Category:Development_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Development (Српски)") <small>(0)</small> |
-| <small>6.1.</small> [Programming languages](/index.php/Category:Programming_languages_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Programming languages (Српски)") <small>(1)</small> |
-| <small>7.</small> [Fonts](/index.php/Category:Fonts_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Fonts (Српски)") <small>(2)</small> |
-| <small>8.</small> [General](/index.php/Category:General_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:General (Српски)") <small>(2)</small> |
-| <small>9.</small> [Guidelines](/index.php/Category:Guidelines_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Guidelines (Српски)") <small>(1)</small> |
+| <small>4.</small> [Desktop environments](/index.php/Category:Desktop_environments_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Desktop environments (Српски)") <small>(1)</small> |
+| <small>5.</small> [Development](/index.php/Category:Development_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Development (Српски)") <small>(0)</small> |
+| <small>5.1.</small> [Programming languages](/index.php/Category:Programming_languages_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Programming languages (Српски)") <small>(1)</small> |
+| <small>6.</small> [Fonts](/index.php/Category:Fonts_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Fonts (Српски)") <small>(2)</small> |
+| <small>7.</small> [General](/index.php/Category:General_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:General (Српски)") <small>(2)</small> |
+| <small>8.</small> [Guidelines](/index.php/Category:Guidelines_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Guidelines (Српски)") <small>(1)</small> |
+| <small>9.</small> [Multimedia](/index.php/Category:Multimedia_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Multimedia (Српски)") <small>(2)</small> |
 | <small>10.</small> [Networking](/index.php/Category:Networking_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Networking (Српски)") <small>(5)</small> |
 | <small>10.1.</small> [Internet applications](/index.php/Category:Internet_applications_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Internet applications (Српски)") <small>(0) (такође у [Applications](/index.php/Category:Applications_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Applications (Српски)"))</small> |
 | <small>10.1.1.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Internet Relay Chat (Српски)") <small>(1)</small> |

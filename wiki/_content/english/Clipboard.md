@@ -29,7 +29,7 @@ Of the three selections, users should only be concerned with PRIMARY and CLIPBOA
 
 See the [Keyboard shortcuts](/index.php/Keyboard_shortcuts "Keyboard shortcuts") page which lists the default shortcuts in many programs.
 
-It is also important to realize that according to the selection protocols, nothing is copied anywhere [until it is pasted](https://unix.stackexchange.com/questions/213840/how-to-toggle-or-turn-off-text-selection-being-sent-to-the-clipboard/213843#213843). For example, if you select some word in a terminal window, close the terminal and then want to paste it somewhere else, it will not work because the terminal is gone and the text has not been copied anywhere. Ubuntu refers to it as the [ClipboardPersistence](https://wiki.ubuntu.com/ClipboardPersistence) problem. If you want the word to preserve after closing terminal window please consider installing a [clipboard manager](#List_of_clipboard_managers).
+It is also important to realize that according to the selection protocols, nothing is copied anywhere [until it is pasted](https://unix.stackexchange.com/questions/213840/how-to-toggle-or-turn-off-text-selection-being-sent-to-the-clipboard/213843#213843). For example, if you select some word in a terminal window, close the terminal and then want to paste it somewhere else, it will not work because the terminal is gone and the text has not been copied anywhere. If you want the word to be preserved after closing terminal window, consider installing a [clipboard manager](#List_of_clipboard_managers).
 
 **Note:** [Clipboard managers](#List_of_clipboard_managers) can significantly change the user experience, for example they might synchronize the PRIMARY and CLIPBOARD selections to emulate a single-clipboard system.
 

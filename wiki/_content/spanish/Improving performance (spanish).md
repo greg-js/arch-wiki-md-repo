@@ -261,7 +261,7 @@ Los PKGBUILDS del kernel que incluyen el parche BFS pueden ser instalados desde 
 
 ## Red
 
-Revise estas [recomendaciones generales](/index.php/General_recommendations#Networking "General recommendations").
+Revise estas [recomendaciones generales](/index.php/General_recommendations_(Espa%C3%B1ol)#Redes "General recommendations (Español)").
 
 ## Graficos
 

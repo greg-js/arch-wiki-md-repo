@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Solid State Drive/NVMe](/index.php/Solid_State_Drive/NVMe "Solid State Drive/NVMe")
+*   [Solid state drive/NVMe](/index.php/Solid_state_drive/NVMe "Solid state drive/NVMe")

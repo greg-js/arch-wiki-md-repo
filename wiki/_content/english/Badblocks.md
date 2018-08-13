@@ -196,7 +196,9 @@ Then (re-)create the file system with the information:
 
 #### Ext4
 
-As noted in man page of mke2fs "Note that the block numbers in the bad block list must be generated using the same block size as used by mke2fs. As a result, the -c option to mke2fs is a much simpler and less error-prone method of checking a disk for bad blocks before formatting it"
+From the [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) manual page:
+
+	Note that the block numbers in the bad block list must be generated using the same block size as used by *mke2fs*. As a result, the `-c` option to *mke2fs* is a much simpler and less error-prone method of checking a disk for bad blocks before formatting it.
 
 So the recommended method is to use:
 
@@ -205,7 +207,7 @@ So the recommended method is to use:
 
 ```
 
-Double the c to get a read-write badblock test.
+Use `-cc` to do a read-write badblock test.
 
 #### Block size
 

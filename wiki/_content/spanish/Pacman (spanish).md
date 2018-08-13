@@ -9,7 +9,7 @@ Artículos relacionados
 *   [pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database")
 *   [pacman/Rosetta (Español)](/index.php/Pacman/Rosetta_(Espa%C3%B1ol) "Pacman/Rosetta (Español)")
 *   [pacman/Consejos y trucos](/index.php/Pacman/Tips_and_tricks_(Espa%C3%B1ol) "Pacman/Tips and tricks (Español)")
-*   [FAQ##Gestión de paquetes](/index.php/FAQ_(Espa%C3%B1ol)#Gesti.C3.B3n_de_paquetes "FAQ (Español)")
+*   [Administración de paquetes](/index.php/Frequently_asked_questions_(Espa%C3%B1ol)#Administraci.C3.B3n_de_paquetes "Frequently asked questions (Español)")
 *   [Mantenimiento del sistema](/index.php/System_maintenance_(Espa%C3%B1ol) "System maintenance (Español)")
 *   [Arch Build System (Español)](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)")
 *   [Repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)")
@@ -39,7 +39,7 @@ El [gestor de paquetes](https://en.wikipedia.org/wiki/Package_management_system 
     *   [1.7 Motivo de la instalación](#Motivo_de_la_instalaci.C3.B3n)
     *   [1.8 Buscar un paquete que contenga un archivo específico](#Buscar_un_paquete_que_contenga_un_archivo_espec.C3.ADfico)
 *   [2 Configuración](#Configuraci.C3.B3n)
-    *   [2.1 Opciones Generales](#Opciones_Generales)
+    *   [2.1 Opciones generales](#Opciones_generales)
         *   [2.1.1 Comparar versiones antes de actualizar](#Comparar_versiones_antes_de_actualizar)
         *   [2.1.2 Evitar la actualización de un paquete](#Evitar_la_actualizaci.C3.B3n_de_un_paquete)
         *   [2.1.3 Evitar la actualización de un grupo de paquetes](#Evitar_la_actualizaci.C3.B3n_de_un_grupo_de_paquetes)
@@ -499,7 +499,7 @@ Para obtener funcionalidades avanzadas instale [pkgfile](/index.php/Pkgfile "Pkg
 
 La configuración de *pacman* se encuentra en el archivo `/etc/pacman.conf`. Este es el archivo donde el usuario configura el programa para que funcione de la manera deseada. Se puede encontrar información en profundidad sobre el archivo de configuración en [pacman.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.conf.5).
 
-### Opciones Generales
+### Opciones generales
 
 Las opciones generales están en la sección `[options]`. Lea la página del manual de [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) o eche un vistazo al archivo predefinido `pacman.conf` para obtener información adicional.
 
@@ -520,7 +520,7 @@ extra/mariadb           10.1.9-4     10.1.10-1      0.26 MiB      13.80 MiB
 
 **Advertencia:** tenga cuidado al omitir paquetes, ya que, como sabe, no son posibles las [actualizaciones parciales](/index.php/Partial_upgrades "Partial upgrades").
 
-Para omitir la actualización de un paquete en particular cuando vaya a [actualizar](#Upgrading_packages) el sistema, debe especificarlo así:
+Para omitir la actualización de un paquete en particular cuando vaya a [actualizar](#Actualizar_paquetes) el sistema, debe especificarlo así:
 
 ```
 IgnorePkg=linux
@@ -574,9 +574,9 @@ Para obtener más información sobre los hooks de alpm, consulte [alpm-hooks(5)]
 
 ### Repositorios y servidores de réplicas
 
-Además de la sección especial [[options](#General_options)], cada valor `[section]` en `pacman.conf` define un repositorio de paquetes para ser utilizado. Un «repositorio» es una colección «lógica» de paquetes, los cuales están «físicamente» almacenados en uno o más servidores: por esta razón cada servidor se llama «espejo» (mirror) del repositorio.
+Además de la sección especial [[options]](#Opciones_generales), cada valor `[section]` en `pacman.conf` define un repositorio de paquetes para ser utilizado. Un «repositorio» es una colección «lógica» de paquetes, los cuales están «físicamente» almacenados en uno o más servidores: por esta razón cada servidor se llama «espejo» (mirror) del repositorio.
 
-Los repositorios se dividen en [oficiales](/index.php/Official_repositories "Official repositories") y [no oficiales](/index.php/Unofficial_user_repositories "Unofficial user repositories"). El orden de los repositorios en el archivo de configuración es importante; los repositorios listados primero en dicho archivo de configuración tendrán prioridad sobre los listados más adelante respecto de los paquetes presentes en dos repositorios cuando estos tengan nombres idénticos, independientemente del número de versión. Para usar un repositorio después de agregarlo, necesitará primero [actualizar](#Upgrading_packages) todo el sistema.
+Los repositorios se dividen en [oficiales](/index.php/Official_repositories "Official repositories") y [no oficiales](/index.php/Unofficial_user_repositories "Unofficial user repositories"). El orden de los repositorios en el archivo de configuración es importante; los repositorios listados primero en dicho archivo de configuración tendrán prioridad sobre los listados más adelante respecto de los paquetes presentes en dos repositorios cuando estos tengan nombres idénticos, independientemente del número de versión. Para usar un repositorio después de agregarlo, necesitará primero [actualizar](#Actualizar_paquetes) todo el sistema.
 
 Cada sección del repositorio permite definir la lista de sus servidores de réplicas, bien directamente, bien en un archivo externo dedicado a través de la directiva `Include`: por ejemplo, los servidores de réplicas de los repositorios oficiales están incluidos en `/etc/pacman.d/mirrorlist`. Vea el artículo [Mirrors](/index.php/Mirrors "Mirrors") para la configuración de los servidores de réplicas.
 
@@ -636,7 +636,7 @@ En primer lugar, asegúrese de que el paquete existe realmente (¡y cuidado con 
 
 También podría ser que el repositorio que contiene el paquete no esté activado en su sistema, por ejemplo, el paquete podría estar en el repositorio *multilib*, pero el mismo no está activado en el archivo *pacman.conf*.
 
-Véase también [FAQ#Why is there only a single version of each shared library in the official repositories?](/index.php/FAQ#Why_is_there_only_a_single_version_of_each_shared_library_in_the_official_repositories.3F "FAQ").
+Consulte también: [¿Por qué hay solo una única versión de cada biblioteca compartida en los repositorios oficiales?](/index.php/Frequently_asked_questions_(Espa%C3%B1ol)#.C2.BFPor_qu.C3.A9_hay_solo_una_.C3.BAnica_versi.C3.B3n_de_cada_biblioteca_compartida_en_los_repositorios_oficiales.3F "Frequently asked questions (Español)")
 
 ### Reinstalar manualmente pacman
 
@@ -743,7 +743,7 @@ Como indica el mensaje de error, la configuración del idioma no está estableci
 
 ### pacman no respeta los ajustes del proxy
 
-Asegúrese de que las variables de entorno relevantes (`$http_proxy`, `$ftp_proxy`, etc.) están configuradas. Si utiliza *pacman* con [sudo](/index.php/Sudo "Sudo"), debe configurar sudo para que [pase estas variables de entorno a pacman](/index.php/Sudo#Environment_variables "Sudo").
+Asegúrese de que las variables de entorno relevantes (`$http_proxy`, `$ftp_proxy`, etc.) están configuradas. Si utiliza *pacman* con [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)"), debe configurar sudo para que [pase estas variables de entorno a pacman](/index.php/Sudo_(Espa%C3%B1ol)#Variables_de_entorno "Sudo (Español)").
 
 ### ¿Cómo reinstalar todos los paquetes, conservando la información sobre si algo se instaló explícitamente o como una dependencia?
 
@@ -757,7 +757,7 @@ Este error se da cuando al ejecutar *pacman*, este hubiera eliminado o dañado l
 
 Para recuperarse de esta situación es necesario descomprimir manualmente en su sistema de archivos las bibliotecas necesarias. En primer lugar, busque qué paquete contiene la biblioteca perdida y, luego, localícela en la caché de *pacman* (`/var/cache/pacman/pkg/`). Desempaquete la biblioteca compartida requerida por el sistema de archivos. Esto permitirá ejecutar *pacman*.
 
-Ahora necesita [reinstalar](#Installing_specific_packages) el paquete roto. Tenga en cuenta que necesita utilizar el parámetro `--force` como si acabara de desempaquetar los archivos del sistema y *pacman* no lo supiera. *pacman* reemplazará correctamente nuestro archivo de biblioteca compartida con uno del paquete (reinstalado).
+Ahora necesita [reinstalar](#Instalar_paquetes_espec.C3.ADficos) el paquete roto. Tenga en cuenta que necesita utilizar el parámetro `--force` como si acabara de desempaquetar los archivos del sistema y *pacman* no lo supiera. *pacman* reemplazará correctamente nuestro archivo de biblioteca compartida con uno del paquete (reinstalado).
 
 Hecho esto, actualice el resto del sistema.
 

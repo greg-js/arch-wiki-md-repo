@@ -421,9 +421,9 @@ See [Secure Boot#Using KeyTool](/index.php/Secure_Boot#Using_KeyTool "Secure Boo
 
 ### GPT fdisk (gdisk)
 
-There is no package for the EFI version of *gdisk*, but you can download a binary from *gdisk'*s author.
+There is no package for the EFI version of [gdisk](/index.php/Gdisk "Gdisk"), but you can download a binary from SourceForge.
 
-Download `gdisk-efi-*.zip` from [SourceForge](https://sourceforge.net/projects/gptfdisk/files/gptfdisk/), extract the archive, and copy `gdisk_x64.efi` to `*esp*/EFI/tools/`.
+Download `gdisk-efi-*.zip` from [https://sourceforge.net/projects/gptfdisk/files/gptfdisk/](https://sourceforge.net/projects/gptfdisk/files/gptfdisk/), extract the archive, and copy `gdisk_x64.efi` to `*esp*/EFI/tools/`.
 
 ### iPXE
 

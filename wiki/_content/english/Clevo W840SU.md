@@ -53,7 +53,7 @@ Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 Only the dimming key works properly by default. This can be resolved by adjusting the keybindings either manually or automatically by a [desktop environment](/index.php/Desktop_environment "Desktop environment") like [KDE](/index.php/KDE "KDE").
 
-To do it manually, [bind](/index.php/Xorg_keybinding "Xorg keybinding") `XF86MonBrightnessUp` to e.g. `xbacklight -inc 10` (from [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight)), and `XF86MonBrightnessDown` to `xbacklight -dec 10`.
+To do it manually, [bind](/index.php/Keyboard_configuration_in_Xorg#Keybinding "Keyboard configuration in Xorg") `XF86MonBrightnessUp` to e.g. `xbacklight -inc 10` (from [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight)), and `XF86MonBrightnessDown` to `xbacklight -dec 10`.
 
 ### Sound
 

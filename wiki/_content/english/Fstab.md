@@ -7,7 +7,7 @@ Related articles
 
 The [fstab(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fstab.5) file can be used to define how disk partitions, various other block devices, or remote filesystems should be mounted into the filesystem.
 
-Each filesystem is described in a separate line. These definitions will be converted into [systemd](/index.php/Systemd "Systemd") mount units dynamically at boot, and when the configuration of the system manager is reloaded. The default setup will automatically [fsck](/index.php/Fsck "Fsck") and mount filesystems before starting services that need them to be mounted. For example, systemd automatically makes sure that remote filesystem mounts like [NFS](/index.php/NFS "NFS") or [Samba](/index.php/Samba "Samba") are only started after the network has been set up. Therefore, local and remote filesystem mounts specified in `/etc/fstab` should work out of the box. See [systemd.mount(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5) for details.
+Each filesystem is described in a separate line. These definitions will be converted into [systemd](/index.php/Systemd "Systemd") mount units dynamically at boot, and when the configuration of the system manager is reloaded. The default setup will automatically [fsck](/index.php/Fsck "Fsck") and mount filesystems before starting services that need them to be mounted. For example, systemd automatically makes sure that remote filesystem mounts like [NFS](/index.php/NFS "NFS") or [Samba](/index.php/Samba "Samba") are only started after the network has been set up. Therefore, local and remote filesystem mounts specified in `/etc/fstab` should work out-of-the-box. See [systemd.mount(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5) for details.
 
 The `mount` command will use fstab, if just one of either directory or device is given, to fill in the value for the other parameter. When doing so, mount options which are listed in fstab will also be used.
 
@@ -38,9 +38,9 @@ A simple `/etc/fstab`, using kernel name descriptors:
  `/etc/fstab` 
 ```
 # <device>             <dir>         <type>    <options>             <dump> <fsck>
-/dev/sda1              /             ext4      defaults,noatime      0      1
+/dev/sda1              /             ext4      noatime               0      1
 /dev/sda2              none          swap      defaults              0      0
-/dev/sda3              /home         ext4      defaults,noatime      0      2
+/dev/sda3              /home         ext4      noatime               0      2
 ```
 
 *   `<device>` describes the block special device or remote filesystem to be mounted; see [#Identifying filesystems](#Identifying_filesystems).
@@ -71,10 +71,10 @@ Run `lsblk -f` to list the partitions and prefix the values in the *NAME* column
  `/etc/fstab` 
 ```
 # <device>      <dir> <type> <options>                                                                                            <dump> <fsck>
-/dev/sda1       /boot vfat   rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro   0      2
-/dev/sda2       /     ext4   rw,relatime,data=ordered                                                                               0      1
-/dev/sda3       /home ext4   rw,relatime,data=ordered                                                                               0      2
-/dev/sda4       none  swap   defaults                                                                                               0      0
+/dev/sda1       /boot vfat   defaults                                                                                             0      2
+/dev/sda2       /     ext4   defaults                                                                                             0      1
+/dev/sda3       /home ext4   defaults                                                                                             0      2
+/dev/sda4       none  swap   defaults                                                                                             0      0
 
 ```
 
@@ -85,9 +85,9 @@ Run `lsblk -f` to list the partitions, and prefix the values in the *LABEL* colu
  `/etc/fstab` 
 ```
 # <device>      <dir> <type> <options>                                                                                            <dump> <fsck>
-LABEL=EFI       /boot vfat   rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0      2
-LABEL=SYSTEM    /     ext4   rw,relatime,data=ordered                                                                     0      1
-LABEL=DATA      /home ext4   rw,relatime,data=ordered                                                                     0      2
+LABEL=EFI       /boot vfat   defaults                                                                                             0      2
+LABEL=SYSTEM    /     ext4   defaults                                                                                             0      1
+LABEL=DATA      /home ext4   defaults                                                                                             0      2
 LABEL=SWAP      none  swap   defaults                                                                                             0      0
 
 ```
@@ -101,9 +101,9 @@ Run `lsblk -f` to list the partitions, and prefix the values in the *UUID* colum
  `/etc/fstab` 
 ```
 # <device>                                <dir> <type> <options>                                                                                            <dump> <fsck>
-UUID=CBB6-24F2                            /boot vfat   rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0      2
-UUID=0a3407de-014b-458b-b5c1-848e92a327a3 /     ext4   rw,relatime,data=ordered                                                                     0      1
-UUID=b411dc99-f0a0-4c87-9e05-184977be8539 /home ext4   rw,relatime,data=ordered                                                                     0      2
+UUID=CBB6-24F2                            /boot vfat   defaults                                                                                             0      2
+UUID=0a3407de-014b-458b-b5c1-848e92a327a3 /     ext4   defaults                                                                                             0      1
+UUID=b411dc99-f0a0-4c87-9e05-184977be8539 /home ext4   defaults                                                                                             0      2
 UUID=f9fe0b69-a280-415d-a03a-a32752370dee none  swap   defaults                                                                                             0      0
 
 ```
@@ -117,9 +117,9 @@ Run `blkid` to list the partitions, and use the *PARTLABEL* values without the q
  `/etc/fstab` 
 ```
 # <device>                           <dir> <type> <options>                                                                                            <dump> <fsck>
-PARTLABEL=EFI\040SYSTEM\040PARTITION /boot vfat   rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0      2
-PARTLABEL=GNU/LINUX                  /     ext4   rw,relatime,data=ordered                                                                     0      1
-PARTLABEL=HOME                       /home ext4   rw,relatime,data=ordered                                                                     0      2
+PARTLABEL=EFI\040SYSTEM\040PARTITION /boot vfat   defaults                                                                                             0      2
+PARTLABEL=GNU/LINUX                  /     ext4   defaults                                                                                             0      1
+PARTLABEL=HOME                       /home ext4   defaults                                                                                             0      2
 PARTLABEL=SWAP                       none  swap   defaults                                                                                             0      0
 
 ```
@@ -132,11 +132,11 @@ Run `blkid` to list the partitions, and use the *PARTUUID* values without the qu
 
  `/etc/fstab` 
 ```
-# <device>                                    <dir> <type> <options>                                                                                            <dump> <fsck>
-PARTUUID=d0d0d110-0a71-4ed6-936a-304969ea36af /boot vfat   rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0      2
-PARTUUID=98a81274-10f7-40db-872a-03df048df366 /     ext4   rw,relatime,data=ordered                                                                     0      1
-PARTUUID=7280201c-fc5d-40f2-a9b2-466611d3d49e /home ext4   rw,relatime,data=ordered                                                                     0      2
-PARTUUID=039b6c1c-7553-4455-9537-1befbc9fbc5b none  swap   defaults                                                                                             0      0
+# <device>                                    <dir> <type> <options>                                                                                          <dump> <fsck>
+PARTUUID=d0d0d110-0a71-4ed6-936a-304969ea36af /boot vfat   defaults                                                                                           0      2
+PARTUUID=98a81274-10f7-40db-872a-03df048df366 /     ext4   defaults                                                                                           0      1
+PARTUUID=7280201c-fc5d-40f2-a9b2-466611d3d49e /home ext4   defaults                                                                                           0      2
+PARTUUID=039b6c1c-7553-4455-9537-1befbc9fbc5b none  swap   defaults                                                                                           0      0
 
 ```
 
@@ -189,13 +189,13 @@ This will make systemd unmount the mount after it has been idle for 1 minute.
 
 External devices that are to be mounted when present but ignored if absent may require the `nofail` option. This prevents errors being reported at boot. For example:
 
- `/etc/fstab`  `/dev/sdg1        /media/backup    jfs    defaults,nofail,x-systemd.device-timeout=1    0  2` 
+ `/etc/fstab`  `/dev/sdg1        /media/backup    jfs    nofail,x-systemd.device-timeout=1    0  2` 
 
 The `nofail` option is best combined with the `x-systemd.device-timeout` option. This is because the default device timeout is 90 seconds, so a disconnected external device with only `nofail` will make your boot take 90 seconds longer, unless you reconfigure the timeout as shown. Make sure not to set the timeout to 0, as this translates to infinite timeout.
 
 If your external device requires another systemd unit to be loaded (for example the network for a network share) you can use `x-systemd.requires=x` combined with `x-systemd.automount` to postpone automounting until after the unit is available. For example:
 
- `/etc/fstab`  `//host/share    /net/share        cifs   defaults,noauto,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10,workgroup=workgroup,credentials=/foo/credentials    0 0` 
+ `/etc/fstab`  `//host/share    /net/share        cifs   noauto,nofail,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=10,workgroup=workgroup,credentials=/foo/credentials    0 0` 
 **Note:** This is an alternative to [NetworkManager-wait-online](/index.php/NetworkManager#Enable_NetworkManager_Wait_Online "NetworkManager") or [systemd-networkd-wait-online](/index.php/Systemd-networkd#Mount_services_at_boot_fail "Systemd-networkd") and does not stall the boot process.
 
 ### Filepath spaces
@@ -204,8 +204,8 @@ Since spaces are used in `fstab` to delimit fields, if any field (*PARTLABEL*, *
 
  `/etc/fstab` 
 ```
-UUID=47FA-4071     /home/username/Camera<font color="grey">\040</font>Pictures   vfat  defaults,noatime       0  0
-/dev/sda7          /media/100<font color="grey">\040</font>GB<font color="grey">\040</font>(Storage)       ext4  defaults,noatime,user  0  2
+UUID=47FA-4071     /home/username/Camera<font color="grey">\040</font>Pictures   vfat  noatime       0  0
+/dev/sda7          /media/100<font color="grey">\040</font>GB<font color="grey">\040</font>(Storage)       ext4  noatime,user  0  2
 ```
 
 ### atime options

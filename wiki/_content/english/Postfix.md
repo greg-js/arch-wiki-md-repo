@@ -39,7 +39,8 @@ The goal of this article is to setup Postfix and explain what the basic configur
     *   [5.3 Postgrey](#Postgrey)
         *   [5.3.1 Installation](#Installation_2)
         *   [5.3.2 Configuration](#Configuration_2)
-        *   [5.3.3 Troubleshooting](#Troubleshooting)
+        *   [5.3.3 Whitelisting](#Whitelisting)
+        *   [5.3.4 Troubleshooting](#Troubleshooting)
     *   [5.4 SpamAssassin](#SpamAssassin)
         *   [5.4.1 Spam Assassin rule update](#Spam_Assassin_rule_update)
         *   [5.4.2 SpamAssassin stand-alone generic setup](#SpamAssassin_stand-alone_generic_setup)
@@ -433,7 +434,9 @@ Configuration is done via editing the `postgrey.service` file. First copy it ove
 
 ```
 
-Now you can edit it. For example, to add automatic whitelisting (successful deliveries are whitelisted and don't have to wait any more), you could add the `--auto-whitelist-clients=N` option and replace `N` by a suitably small number (or leave it at its default of 5).
+#### Whitelisting
+
+To add automatic whitelisting (successful deliveries are whitelisted and don't have to wait any more), you could add the `--auto-whitelist-clients=N` option and replace `N` by a suitably small number (or leave it at its default of 5).
 
 ...actually, the preferred method should be the override:
 
@@ -453,6 +456,8 @@ ExecStart=/usr/bin/postgrey --inet=127.0.0.1:10030 \
        --auto-whitelist-clients
 
 ```
+
+To add your own list of whitelisted clients in addition to the default ones, create the file `/etc/postfix/whitelist_clients.local` and enter one host or domain per line, then restart `postgrey.service` so the changes take effect.
 
 #### Troubleshooting
 

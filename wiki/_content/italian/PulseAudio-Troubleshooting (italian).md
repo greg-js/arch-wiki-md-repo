@@ -406,7 +406,7 @@ $ pulseaudio --start
 
 *   Per visualizzare informazioni su eventuali errori o per conoscere lo stato del demone, utilizzare comandi come `pax11publish -d` e `pulseaudio -v`, dove l'opzione `v` può essere specificata più volte per impostare la verbosità dell'output, similmente all'opzione `--log-level=[LEVEL]` dove *LEVEL* va da 0 a 4\. Si veda la sezione [#Possibili output delle utility per il controllo degli errori di PulseAudio](#Possibili_output_delle_utility_per_il_controllo_degli_errori_di_PulseAudio) per ulteriori informazioni.
 
-Si consultino inoltre le pagine di manuale per [pax11publish(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pax11publish.1) e [pulseaudio(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pulseaudio.1).
+Si consultino inoltre le pagine di manuale per [pax11publish(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pax11publish.1) e [pulseaudio(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pulseaudio.1).
 
 #### Possibili output delle utility per il controllo degli errori di PulseAudio
 
@@ -445,7 +445,7 @@ Per rendere la modifica permanente, si modifichi `/etc/sysctl.d/99-sysctl.conf`
 
 *   [proc_sys_fs_inotify](http://www.linuxinsight.com/proc_sys_fs_inotify.html) e [dnotify, inotify](http://lwn.net/Articles/604686/) - ulteriori dettagli su *inotify/max_user_watches*
 *   [valori ragionevoli per inotify watches su Linux](http://stackoverflow.com/questions/535768/what-is-a-reasonable-amount-of-inotify-watches-with-linux?answertab=votes#tab-top)
-*   [inotify(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/inotify.7) - pagina di manuale
+*   [inotify(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/inotify.7) - pagina di manuale
 
 ### Artefatti sonori, audio intermittente o gracchiante
 

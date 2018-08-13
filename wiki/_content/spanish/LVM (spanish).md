@@ -117,7 +117,7 @@ LVM le da más flexibilidad que la simple partición de un disco duro para:
 
 ## Instalando Arch Linux en LVM
 
-Se deben crear los volúmenes LVM entre el [particionado](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") y el [formateado](/index.php/File_systems#Format_a_device "File systems") durante el procedimiento de instalación. En lugar de dar formato directamente a una partición para que sea su sistema de archivos root, esta operación se hará dentro de un volumen lógico (LV).
+Se deben crear los volúmenes LVM entre el [particionado](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") y el [formateado](/index.php/File_systems_(Espa%C3%B1ol)#Crear_un_sistema_de_archivos "File systems (Español)") durante el procedimiento de instalación. En lugar de dar formato directamente a una partición para que sea su sistema de archivos root, esta operación se hará dentro de un volumen lógico (LV).
 
 Asegúrese de que el paquete [lvm2](https://www.archlinux.org/packages/?name=lvm2) está [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)").
 
@@ -283,7 +283,7 @@ Sus volúmenes lógicos deberian encontrarse en `/dev/mapper/` y `/dev/Nombredel
 
 ```
 
-Ahora puede crear el sistema de archivos en los volúmenes lógicos, y montarlos como particiones normales (si está instalando Arch, remítase a [montar las particiones](/index.php/Beginners%27_guide_(Espa%C3%B1ol)#Montar_las_particiones "Beginners' guide (Español)") para obtener información adicional):
+Ahora puede crear el sistema de archivos en los volúmenes lógicos, y montarlos como particiones normales (si está instalando Arch, remítase a [montar los sistemas de archivo](/index.php/Installation_guide_(Espa%C3%B1ol)#Montar_los_sistemas_de_archivos "Installation guide (Español)") para obtener información adicional):
 
 ```
 # mkfs.<*tipo_sistema_archivos*> /dev/mapper/<*grupo_volúmenes*>-<*volumen_lógico*>

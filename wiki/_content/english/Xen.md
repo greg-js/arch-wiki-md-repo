@@ -22,20 +22,20 @@ The Xen hypervisor is a thin layer of software which emulates a computer archite
         *   [2.2.3 Syslinux](#Syslinux)
     *   [2.3 Creation of a network bridge](#Creation_of_a_network_bridge)
     *   [2.4 Creating bridge with Network Manager](#Creating_bridge_with_Network_Manager)
-*   [3 Installation of Xen systemd services](#Installation_of_Xen_systemd_services)
-*   [4 Confirming successful installation](#Confirming_successful_installation)
-*   [5 Using Xen](#Using_Xen)
-    *   [5.1 Create a domU "hard disk"](#Create_a_domU_.22hard_disk.22)
-    *   [5.2 Create a domU configuration](#Create_a_domU_configuration)
-    *   [5.3 Managing a domU](#Managing_a_domU)
-*   [6 Configuring a hardware virtualized (HVM) Arch domU](#Configuring_a_hardware_virtualized_.28HVM.29_Arch_domU)
-*   [7 Configuring a paravirtualized (PV) Arch domU](#Configuring_a_paravirtualized_.28PV.29_Arch_domU)
-*   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 "xl list" complains about libxl](#.22xl_list.22_complains_about_libxl)
-    *   [8.2 "xl create" fails](#.22xl_create.22_fails)
-    *   [8.3 Arch Linux guest hangs with a ctrl-d message](#Arch_Linux_guest_hangs_with_a_ctrl-d_message)
-    *   [8.4 Error message "failed to execute '/usr/lib/udev/socket:/org/xen/xend/udev_event' 'socket:/org/xen/xend/udev_event': No such file or directory"](#Error_message_.22failed_to_execute_.27.2Fusr.2Flib.2Fudev.2Fsocket:.2Forg.2Fxen.2Fxend.2Fudev_event.27_.27socket:.2Forg.2Fxen.2Fxend.2Fudev_event.27:_No_such_file_or_directory.22)
-*   [9 See also](#See_also)
+    *   [2.5 Installation of Xen systemd services](#Installation_of_Xen_systemd_services)
+*   [3 Confirming successful installation](#Confirming_successful_installation)
+*   [4 Using Xen](#Using_Xen)
+    *   [4.1 Create a domU "hard disk"](#Create_a_domU_.22hard_disk.22)
+    *   [4.2 Create a domU configuration](#Create_a_domU_configuration)
+    *   [4.3 Managing a domU](#Managing_a_domU)
+*   [5 Configuring a hardware virtualized (HVM) Arch domU](#Configuring_a_hardware_virtualized_.28HVM.29_Arch_domU)
+*   [6 Configuring a paravirtualized (PV) Arch domU](#Configuring_a_paravirtualized_.28PV.29_Arch_domU)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 "xl list" complains about libxl](#.22xl_list.22_complains_about_libxl)
+    *   [7.2 "xl create" fails](#.22xl_create.22_fails)
+    *   [7.3 Arch Linux guest hangs with a ctrl-d message](#Arch_Linux_guest_hangs_with_a_ctrl-d_message)
+    *   [7.4 Error message "failed to execute '/usr/lib/udev/socket:/org/xen/xend/udev_event' 'socket:/org/xen/xend/udev_event': No such file or directory"](#Error_message_.22failed_to_execute_.27.2Fusr.2Flib.2Fudev.2Fsocket:.2Forg.2Fxen.2Fxend.2Fudev_event.27_.27socket:.2Forg.2Fxen.2Fxend.2Fudev_event.27:_No_such_file_or_directory.22)
+*   [8 See also](#See_also)
 
 ## System requirements
 
@@ -193,7 +193,7 @@ Reboot. If everything works properly after a reboot (ie. bridge starts automatic
 
 <optional> In your network settings, remove the connection profile on your bridge interface that does NOT connect to the bridge. This just keeps things from being confusing later on.
 
-## Installation of Xen systemd services
+### Installation of Xen systemd services
 
 The Xen *dom0* requires the `xenstored.service`, `xenconsoled.service`, `xendomains.service` and `xen-init-dom0.service` to be [started](/index.php/Started "Started") and possibly [enabled](/index.php/Enabled "Enabled").
 

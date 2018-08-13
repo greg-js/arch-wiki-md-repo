@@ -24,7 +24,7 @@ No final do processo de instalação, um sistema Arch é nada mais do que o Kern
 
 ### Kernel
 
-Enquanto o [Hurd](https://www.gnu.org/s/hurd/hurd.html), o kernel do GNU, está em desenvolvimento ativo, ainda não existe uma versão estável. Por esse motivo, o Arch e a maioria dos outros sistemas baseados em GNU usam o Kernel Linux. O projeto [Arch Hurd Project](/index.php/Arch_Hurd_Project "Arch Hurd Project") visa portar o Arch Linux para o kernel Hurd.
+Enquanto o [Hurd](https://www.gnu.org/s/hurd/hurd.html), o kernel do GNU, está em desenvolvimento ativo, ainda não existe uma versão estável. Por esse motivo, o Arch e a maioria dos outros sistemas baseados em GNU usam o Kernel Linux. O [Projeto Arch Hurd](/index.php/Arch_Hurd_Project "Arch Hurd Project") visa portar o Arch Linux para o kernel Hurd.
 
 ### Coleção de softwares
 

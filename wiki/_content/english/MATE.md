@@ -12,42 +12,51 @@ From [MATE homepage](https://mate-desktop.org/):
 
 ## Contents
 
-*   [1 MATE applications](#MATE_applications)
-*   [2 Installation](#Installation)
-    *   [2.1 Additional MATE packages](#Additional_MATE_packages)
-    *   [2.2 MATE unstable](#MATE_unstable)
-*   [3 Starting MATE](#Starting_MATE)
-*   [4 Configuration](#Configuration)
-    *   [4.1 Accessibility](#Accessibility)
-    *   [4.2 Notifications](#Notifications)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Enabling compositing](#Enabling_compositing)
-    *   [5.2 Enabling new window centering](#Enabling_new_window_centering)
-    *   [5.3 Enabling window snapping](#Enabling_window_snapping)
-    *   [5.4 Show or hide desktop icons](#Show_or_hide_desktop_icons)
-        *   [5.4.1 Hide all desktop icons](#Hide_all_desktop_icons)
-        *   [5.4.2 Hide individual icons](#Hide_individual_icons)
-    *   [5.5 Use a different window manager](#Use_a_different_window_manager)
-    *   [5.6 Prevent Caja from managing the desktop](#Prevent_Caja_from_managing_the_desktop)
-    *   [5.7 Change window decoration button order](#Change_window_decoration_button_order)
-    *   [5.8 Auto open file manager after drive mount](#Auto_open_file_manager_after_drive_mount)
-    *   [5.9 Screensaver](#Screensaver)
-    *   [5.10 Spatial view in Caja](#Spatial_view_in_Caja)
-    *   [5.11 Change font DPI setting](#Change_font_DPI_setting)
-    *   [5.12 Change applications menu icon](#Change_applications_menu_icon)
-    *   [5.13 Panel speed settings](#Panel_speed_settings)
-    *   [5.14 Set the terminal for caja-open-terminal](#Set_the_terminal_for_caja-open-terminal)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Toggling compositing](#Toggling_compositing)
-    *   [6.2 Vertical sync for compositing](#Vertical_sync_for_compositing)
-    *   [6.3 Consistent cursor theme](#Consistent_cursor_theme)
-    *   [6.4 Use of gradient backgrounds with LightDM](#Use_of_gradient_backgrounds_with_LightDM)
-    *   [6.5 Enabling panel shadow](#Enabling_panel_shadow)
-    *   [6.6 Disabling scroll in taskbar](#Disabling_scroll_in_taskbar)
-    *   [6.7 Logout/shutdown delayed by at-spi-registryd](#Logout.2Fshutdown_delayed_by_at-spi-registryd)
-*   [7 See also](#See_also)
+*   [1 Installation](#Installation)
+    *   [1.1 MATE applications](#MATE_applications)
+    *   [1.2 Additional MATE packages](#Additional_MATE_packages)
+    *   [1.3 MATE unstable](#MATE_unstable)
+*   [2 Starting MATE](#Starting_MATE)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Accessibility](#Accessibility)
+    *   [3.2 Notifications](#Notifications)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Enabling compositing](#Enabling_compositing)
+    *   [4.2 Enabling new window centering](#Enabling_new_window_centering)
+    *   [4.3 Enabling window snapping](#Enabling_window_snapping)
+    *   [4.4 Show or hide desktop icons](#Show_or_hide_desktop_icons)
+        *   [4.4.1 Hide all desktop icons](#Hide_all_desktop_icons)
+        *   [4.4.2 Hide individual icons](#Hide_individual_icons)
+    *   [4.5 Use a different window manager](#Use_a_different_window_manager)
+    *   [4.6 Prevent Caja from managing the desktop](#Prevent_Caja_from_managing_the_desktop)
+    *   [4.7 Change window decoration button order](#Change_window_decoration_button_order)
+    *   [4.8 Auto open file manager after drive mount](#Auto_open_file_manager_after_drive_mount)
+    *   [4.9 Screensaver](#Screensaver)
+    *   [4.10 Spatial view in Caja](#Spatial_view_in_Caja)
+    *   [4.11 Change font DPI setting](#Change_font_DPI_setting)
+    *   [4.12 Change applications menu icon](#Change_applications_menu_icon)
+    *   [4.13 Panel speed settings](#Panel_speed_settings)
+    *   [4.14 Set the terminal for caja-open-terminal](#Set_the_terminal_for_caja-open-terminal)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Toggling compositing](#Toggling_compositing)
+    *   [5.2 Vertical sync for compositing](#Vertical_sync_for_compositing)
+    *   [5.3 Consistent cursor theme](#Consistent_cursor_theme)
+    *   [5.4 Use of gradient backgrounds with LightDM](#Use_of_gradient_backgrounds_with_LightDM)
+    *   [5.5 Enabling panel shadow](#Enabling_panel_shadow)
+    *   [5.6 Disabling scroll in taskbar](#Disabling_scroll_in_taskbar)
+    *   [5.7 Logout/shutdown delayed by at-spi-registryd](#Logout.2Fshutdown_delayed_by_at-spi-registryd)
+*   [6 See also](#See_also)
 
-## MATE applications
+## Installation
+
+MATE is available in the [official repositories](/index.php/Official_repositories "Official repositories") and can be [installed](/index.php/Installed "Installed") with one of the following:
+
+*   The [mate](https://www.archlinux.org/groups/x86_64/mate/) group contains the core desktop environment required for the standard MATE experience.
+*   The [mate-extra](https://www.archlinux.org/groups/x86_64/mate-extra/) group contains additional utilities and applications that integrate well with the MATE desktop. Installing just the [mate-extra](https://www.archlinux.org/groups/x86_64/mate-extra/) group will not pull in the whole [mate](https://www.archlinux.org/groups/x86_64/mate/) group via dependencies. If you want to install all MATE packages then you will need to explicitly install both groups.
+
+The base desktop consists of [marco](https://www.archlinux.org/packages/?name=marco), [mate-panel](https://www.archlinux.org/packages/?name=mate-panel) and [mate-session-manager](https://www.archlinux.org/packages/?name=mate-session-manager).
+
+### MATE applications
 
 MATE is largely composed of GNOME 2 applications and utilities, forked and renamed to avoid conflicting with their GNOME 3 counterparts. Below is a list of common GNOME applications which have been renamed in MATE.
 
@@ -61,15 +70,6 @@ MATE is largely composed of GNOME 2 applications and utilities, forked and renam
 | archive manager | File Roller | [engrampa](https://www.archlinux.org/packages/?name=engrampa) |
 
 Other applications and core components prefixed with GNOME (such as GNOME Terminal, GNOME Panel, GNOME Menus, etc.) have had the prefix changed to MATE so they become MATE Panel, MATE Menus etc.
-
-## Installation
-
-MATE is available in the [official repositories](/index.php/Official_repositories "Official repositories") and can be [installed](/index.php/Installed "Installed") with one of the following:
-
-*   The [mate](https://www.archlinux.org/groups/x86_64/mate/) group contains the core desktop environment required for the standard MATE experience.
-*   The [mate-extra](https://www.archlinux.org/groups/x86_64/mate-extra/) group contains additional utilities and applications that integrate well with the MATE desktop. Installing just the [mate-extra](https://www.archlinux.org/groups/x86_64/mate-extra/) group will not pull in the whole [mate](https://www.archlinux.org/groups/x86_64/mate/) group via dependencies. If you want to install all MATE packages then you will need to explicitly install both groups.
-
-The base desktop consists of [marco](https://www.archlinux.org/packages/?name=marco), [mate-panel](https://www.archlinux.org/packages/?name=mate-panel) and [mate-session-manager](https://www.archlinux.org/packages/?name=mate-session-manager).
 
 ### Additional MATE packages
 
@@ -367,7 +367,7 @@ To easily toggle the compositing feature, save the following script somewhere wi
 
 ```
 #!/bin/bash
-if $(gsettings get org.mate.Marco.general compositing-manager) == "true"
+if [ "$(gsettings get org.mate.Marco.general compositing-manager)" = "true" ]
 then
   gsettings set org.mate.Marco.general compositing-manager false
 else

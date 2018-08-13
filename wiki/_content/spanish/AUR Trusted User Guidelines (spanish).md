@@ -1,3 +1,7 @@
+Artículos relacionados
+
+*   [Repositorio de usuario de Arch](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)")
+
 El **Usuario de confianza (UC)** es un miembro de la comunidad encargado de mantener AUR en funcionamiento. El/ella mantiene paquetes populares, los votos y otras cuestiones administrativas. Un UC es elegido por todos los miembros de la comunidad UC en un proceso democrático. La UC son los únicos que tienen la última palabra en la administración de AUR.
 
 Los UC se rigen por el [Estatuto UC](https://aur.archlinux.org/trusted-user/TUbylaws.html)

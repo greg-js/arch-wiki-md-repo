@@ -1,3 +1,7 @@
+Related articles
+
+*   [Dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows")
+
 This is a discussion about how to create a dual boot setup with Windows when whole disk [SafeBoot](http://www.mcafee.com/us/products/data-protection/endpoint-encryption.aspx) (now called [McAfee Endpoint Encryption](http://www.mcafee.com/us/products/data-protection/endpoint-encryption.aspx)) encryption is employed. This may be the case particularly if one is issued a company laptop that comes pre-installed with Windows and is encrypted. While one can wipe the drive and install a) Linux alone or b) Linux and an unencrypted version of Windows, some sacrifices and risks may exist. For example, company patches and updates may no longer work properly, IT policies may be violated, data is no longer protected, and, if Linux alone is installed, the capability to share files, access company specific intranet applets, and other limitations may be experienced.
 
 This article will explain one method for creating a dual boot setup while leaving the company-installed encryption and operating system intact and fully functional.

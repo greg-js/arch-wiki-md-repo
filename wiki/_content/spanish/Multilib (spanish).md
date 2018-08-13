@@ -60,5 +60,5 @@ Luego actualizamos el listado de paquetes con `pacman -Syu`.
 ## Ver también
 
 *   [Makepkg#Build 32-bit packages on a 64-bit system](/index.php/Makepkg#Build_32-bit_packages_on_a_64-bit_system "Makepkg")
-*   [64-bit FAQ](/index.php/64-bit_FAQ "64-bit FAQ")
+*   [64 bits FAQ](/index.php/Frequently_asked_questions_(Espa%C3%B1ol)#64_bits "Frequently asked questions (Español)")
 *   [arch-multilib](//mailman.archlinux.org/mailman/listinfo/arch-multilib) mailing list

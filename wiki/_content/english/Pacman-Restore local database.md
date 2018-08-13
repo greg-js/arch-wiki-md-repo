@@ -43,7 +43,7 @@ done
 Run the script (optionally passing additional directories with packages as parameters):
 
 ```
-$ paclog-pkglist /var/log/pacman.log | ./pacrecover >files.list 2>pkglist.orig
+$ paclog --pkglist /var/log/pacman.log | ./pacrecover >files.list 2>pkglist.orig
 
 ```
 

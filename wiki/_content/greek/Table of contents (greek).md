@@ -4,7 +4,7 @@
 | <small>1.1.1.</small> [Help](/index.php/Category:Help_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Help (Ελληνικά)") <small>(4)</small> |
 | <small>1.2.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Live Arch systems (Ελληνικά)") <small>(1)</small> |
 | <small>2.</small> [Applications](/index.php/Category:Applications_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Applications (Ελληνικά)") <small>(0)</small> |
-| <small>2.1.</small> [Emulators](/index.php/Category:Emulators_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Emulators (Ελληνικά)") <small>(1)</small> |
+| <small>2.1.</small> [Emulation](/index.php/Category:Emulation_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Emulation (Ελληνικά)") <small>(1)</small> |
 | <small>2.2.</small> [Office](/index.php/Category:Office_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Office (Ελληνικά)") <small>(2)</small> |
 | <small>3.</small> [Arch development](/index.php/Category:Arch_development_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Arch development (Ελληνικά)") <small>(1)</small> |
 | <small>4.</small> [Boot process](/index.php/Category:Boot_process_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Boot process (Ελληνικά)") <small>(2)</small> |
@@ -23,11 +23,11 @@
 | <small>13.</small> [Software](/index.php/Category:Software_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Software (Ελληνικά)") <small>(0)</small> |
 | <small>13.1.</small> [X server](/index.php/Category:X_server_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:X server (Ελληνικά)") <small>(3)</small> |
 | <small>14.</small> [System administration](/index.php/Category:System_administration_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:System administration (Ελληνικά)") <small>(0)</small> |
-| <small>14.1.</small> [Audio/Video](/index.php/Category:Audio/Video_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Audio/Video (Ελληνικά)") <small>(2)</small> |
-| <small>14.2.</small> [Desktop environments](/index.php/Category:Desktop_environments_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Desktop environments (Ελληνικά)") <small>(0)</small> |
-| <small>14.2.1.</small> [Window managers](/index.php/Category:Window_managers_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Window managers (Ελληνικά)") <small>(0)</small> |
-| <small>14.2.1.1.</small> [Stacking WMs](/index.php/Category:Stacking_WMs_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Stacking WMs (Ελληνικά)") <small>(1)</small> |
-| <small>14.3.</small> [File systems](/index.php/Category:File_systems_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:File systems (Ελληνικά)") <small>(1)</small> |
+| <small>14.1.</small> [Desktop environments](/index.php/Category:Desktop_environments_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Desktop environments (Ελληνικά)") <small>(0)</small> |
+| <small>14.1.1.</small> [Window managers](/index.php/Category:Window_managers_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Window managers (Ελληνικά)") <small>(0)</small> |
+| <small>14.1.1.1.</small> [Stacking WMs](/index.php/Category:Stacking_WMs_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Stacking WMs (Ελληνικά)") <small>(1)</small> |
+| <small>14.2.</small> [File systems](/index.php/Category:File_systems_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:File systems (Ελληνικά)") <small>(1)</small> |
+| <small>14.3.</small> [Multimedia](/index.php/Category:Multimedia_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Multimedia (Ελληνικά)") <small>(2)</small> |
 | <small>14.4.</small> [Power management](/index.php/Category:Power_management_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Power management (Ελληνικά)") <small>(1)</small> |
 | <small>14.5.</small> [Security](/index.php/Category:Security_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Security (Ελληνικά)") <small>(0)</small> |
 | <small>14.5.1.</small> [Firewalls](/index.php/Category:Firewalls_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Firewalls (Ελληνικά)") <small>(1) (επίσης σε [Networking](/index.php/Category:Networking_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Networking (Ελληνικά)"))</small> |

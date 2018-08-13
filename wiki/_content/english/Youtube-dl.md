@@ -15,6 +15,7 @@ Related articles
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Increasing download speeds](#Increasing_download_speeds)
     *   [4.2 Trim](#Trim)
+    *   [4.3 Alias to download url from xclip](#Alias_to_download_url_from_xclip)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -91,6 +92,15 @@ $ youtube-dl --external-downloader aria2c --external-downloader-args '-c -x 5 -k
 ### Trim
 
 Parts of [DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP "wikipedia:Dynamic Adaptive Streaming over HTTP") videos can be downloaded by using the output of `youtube-dl -g -f *format* *URL*` as *ffmpeg* input with the `-ss`, `-t` and `-c copy` [options](http://ffmpeg.org/ffmpeg.html#Main-options).
+
+### Alias to download url from xclip
+
+You can set an alias in `~/.bashrc` or `~/.zshrc` to download a video/audio file from a url in the clipboard. For example:
+
+```
+    alias yt='youtube-dl "$(xclip -o)"'
+
+```
 
 ## See also
 

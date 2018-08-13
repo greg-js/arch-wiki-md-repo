@@ -8,7 +8,7 @@
 | <small>2.</small> [Aplikace](/index.php/Category:Applications_(%C4%8Cesky) "Category:Applications (Česky)") <small>(4)</small> |
 | <small>2.1.</small> [Command shells](/index.php/Category:Command_shells_(%C4%8Cesky) "Category:Command shells (Česky)") <small>(1)</small> |
 | <small>2.2.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving_(%C4%8Cesky) "Category:Data compression and archiving (Česky)") <small>(1)</small> |
-| <small>2.3.</small> [Emulátory](/index.php/Category:Emulators_(%C4%8Cesky) "Category:Emulators (Česky)") <small>(3)</small> |
+| <small>2.3.</small> [Emulation](/index.php/Category:Emulation_(%C4%8Cesky) "Category:Emulation (Česky)") <small>(3)</small> |
 | <small>2.4.</small> [Správci souborů](/index.php/Category:File_managers_(%C4%8Cesky) "Category:File managers (Česky)") <small>(2)</small> |
 | <small>2.5.</small> [Internetové aplikace](/index.php/Category:Internet_applications_(%C4%8Cesky) "Category:Internet applications (Česky)") <small>(6) (také v [Síťování](/index.php/Category:Networking_(%C4%8Cesky) "Category:Networking (Česky)"))</small> |
 | <small>2.6.</small> [Multimedia](/index.php/Category:Multimedia_(%C4%8Cesky) "Category:Multimedia (Česky)") <small>(1)</small> |
@@ -35,8 +35,8 @@
 | <small>6.3.2.</small> [KDE](/index.php/Category:KDE_(%C4%8Cesky) "Category:KDE (Česky)") <small>(1)</small> |
 | <small>6.4.</small> [Eye candy](/index.php/Category:Eye_candy_(%C4%8Cesky) "Category:Eye candy (Česky)") <small>(2)</small> |
 | <small>6.5.</small> [Souborové systémy](/index.php/Category:File_systems_(%C4%8Cesky) "Category:File systems (Česky)") <small>(2)</small> |
-| <small>6.6.</small> [Zmezinárodnění](/index.php/Category:Internationalization_(%C4%8Cesky) "Category:Internationalization (Česky)") <small>(1)</small> |
-| <small>6.7.</small> [Kernel](/index.php/Category:Kernel_(%C4%8Cesky) "Category:Kernel (Česky)") <small>(2)</small> |
+| <small>6.6.</small> [Kernel](/index.php/Category:Kernel_(%C4%8Cesky) "Category:Kernel (Česky)") <small>(2)</small> |
+| <small>6.7.</small> [Localization](/index.php/Category:Localization_(%C4%8Cesky) "Category:Localization (Česky)") <small>(1)</small> |
 | <small>6.8.</small> [Správa balíčků](/index.php/Category:Package_management_(%C4%8Cesky) "Category:Package management (Česky)") <small>(8)</small> |
 | <small>6.9.</small> [Bezpečnost](/index.php/Category:Security_(%C4%8Cesky) "Category:Security (Česky)") <small>(1)</small> |
 | <small>6.9.1.</small> [Secure Shell](/index.php/Category:Secure_Shell_(%C4%8Cesky) "Category:Secure Shell (Česky)") <small>(2) (také v [Síťování](/index.php/Category:Networking_(%C4%8Cesky) "Category:Networking (Česky)"))</small> |

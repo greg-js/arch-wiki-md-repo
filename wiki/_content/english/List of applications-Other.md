@@ -247,7 +247,7 @@ These applications support time, task and contacts management.
 
 *   **todoman** — Command-line To-do list manager (supports CalDAV)
 
-	[https://github.com/pimutils/todoman](https://github.com/pimutils/todoman) || [todoman](https://aur.archlinux.org/packages/todoman/)
+	[https://github.com/pimutils/todoman](https://github.com/pimutils/todoman) || [todoman](https://www.archlinux.org/packages/?name=todoman)
 
 *   **Todo.txt** — Small command-line To-do manager.
 
@@ -324,10 +324,6 @@ These applications support time, task and contacts management.
 *   **[phpLDAPadmin](/index.php/PhpLDAPadmin "PhpLDAPadmin")** — LDAP client webapp. Its hierarchical tree-viewer and advanced search functionality make it intuitive to browse and administer your LDAP directory.
 
 	[http://phpldapadmin.sourceforge.net/](http://phpldapadmin.sourceforge.net/) || [phpldapadmin](https://www.archlinux.org/packages/?name=phpldapadmin)
-
-*   **Osmo** — A handy personal organizer
-
-	[http://clayo.org/osmo/](http://clayo.org/osmo/) || [osmo](https://www.archlinux.org/packages/?name=osmo)
 
 #### Financial management
 

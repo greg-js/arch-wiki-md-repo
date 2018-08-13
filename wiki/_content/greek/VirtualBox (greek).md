@@ -1,3 +1,11 @@
+Σχετικά άρθρα
+
+*   [VirtualBox](/index.php/VirtualBox "VirtualBox")
+*   [VirtualBox Extras](/index.php/VirtualBox_Extras "VirtualBox Extras")
+*   [VirtualBox Arch Linux Guest On Physical Drive](/index.php/VirtualBox_Arch_Linux_Guest_On_Physical_Drive "VirtualBox Arch Linux Guest On Physical Drive")
+*   [Installing Arch Linux from VirtualBox](/index.php/Installing_Arch_Linux_from_VirtualBox "Installing Arch Linux from VirtualBox")
+*   [Moving an existing install into (or out of) a virtual machine](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine "Moving an existing install into (or out of) a virtual machine")
+
 Το **VirtualBox** είναι ένας [υπερεπόπτης](https://en.wikipedia.org/wiki/Hypervisor "wikipedia:Hypervisor") (hypervisor) που χρησιμοποιείται για να τρέχουμε λειτουργικά συστήματα σε ένα ιδιαίτερο περιβάλλον, που λέγεται εικονική μηχανή (virtual machine) και που τρέχει πάνω από το υπάρχον λειτουργικό σύστημα. Βρίσκεται υπό συνεχή εξέλιξη και διαρκώς του προστίθενται νέα χαρακτηριστικά. Είναι εφοδιασμένο με διεπαφή γραφικού περιβάλλοντος (GUI) που έχει αναπτυχθεί σε [Qt](/index.php/Qt "Qt"), καθώς και με εργαλεία γραμμής εντολών (command line tools) είτε χωρίς κεφαλίδες (headless) είτε σε [SDL](https://en.wikipedia.org/wiki/SDL "wikipedia:SDL"), για τη διαχείριση και τη λειτουργία εικονικών μηχανών.
 
 Για να μπορεί να ενσωματώνει λειτουργίες του συστήματος βάσης (host) στο φιλοξενούμενο σύστημα (guest), στις οποίες συμπεριλαμβάνονται κοινοί φάκελοι και κοινό πρόχειρο (clipboard), επιτάχυνση γραφικών (video acceleration) και αδιάλειπτη λειτουργία ενσωμάτωσης παραθύρων (seamless window integration mode), διατίθεται το πακέτο guest additions για κάποια εικονικά λειτουργικά συστήματα.

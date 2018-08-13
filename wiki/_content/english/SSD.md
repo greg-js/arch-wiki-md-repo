@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Solid State Drive](/index.php/Solid_State_Drive "Solid State Drive")
+*   [Solid state drive](/index.php/Solid_state_drive "Solid state drive")

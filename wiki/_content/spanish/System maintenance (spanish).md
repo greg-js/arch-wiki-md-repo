@@ -110,9 +110,9 @@ Los usuarios también deben ser conscientes de que la actualización de paquetes
 
 ### Evite ciertos comandos de pacman
 
-Evite realizar actualizaciones parciales [partial upgrades](#Partial_upgrades_are_unsupported). En otras palabras, nunca ejecute `pacman -Sy`; en su lugar, siempre use `pacman -Syu`.
+Evite realizar [actualizaciones parciales](#Las_actualizaciones_parciales_no_son_compatibles). En otras palabras, nunca ejecute `pacman -Sy`; en su lugar, siempre use `pacman -Syu`.
 
-Evite usar la opción `--force` con pacman, **especialmente** en comandos como `pacman -Syu --force` implica más de un paquete. La opción `--force` ignora los conflictos de archivos e incluso puede causar la pérdida de archivos cuando los archivos son reubicados entre diferentes paquetes. En un sistema correctamente mantenido, sólo se debe utilizar cuando se recomienda explícitamente por los desarrolladores de Arch (vea [#Read before upgrading the system](#Read_before_upgrading_the_system)).
+Evite usar la opción `--force` con pacman, **especialmente** en comandos como `pacman -Syu --force` implica más de un paquete. La opción `--force` ignora los conflictos de archivos e incluso puede causar la pérdida de archivos cuando los archivos son reubicados entre diferentes paquetes. En un sistema correctamente mantenido, sólo se debe utilizar cuando se recomienda explícitamente por los desarrolladores de Arch (consulte [#Leer antes de actualizar el sistema](#Leer_antes_de_actualizar_el_sistema).
 
 Evite usar la opción `-d` con pacman. `pacman -Rdd *package*` omite las verificaciones de dependencia durante la eliminación del paquete. Como resultado, un paquete que proporciona una dependencia crítica podría ser eliminado, resultando en una falla del sistema.
 

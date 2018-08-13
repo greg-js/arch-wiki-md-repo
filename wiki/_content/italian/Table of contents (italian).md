@@ -9,7 +9,7 @@
 | <small>2.</small> [Applicazioni](/index.php/Category:Applications_(Italiano) "Category:Applications (Italiano)") <small>(8)</small> |
 | <small>2.1.</small> [Compressione dei dati e archiviazione](/index.php/Category:Data_compression_and_archiving_(Italiano) "Category:Data compression and archiving (Italiano)") <small>(1)</small> |
 | <small>2.2.</small> [Sistemi di gestione di database](/index.php/Category:Database_management_systems_(Italiano) "Category:Database management systems (Italiano)") <small>(2)</small> |
-| <small>2.3.</small> [Emulatori](/index.php/Category:Emulators_(Italiano) "Category:Emulators (Italiano)") <small>(1)</small> |
+| <small>2.3.</small> [Emulation](/index.php/Category:Emulation_(Italiano) "Category:Emulation (Italiano)") <small>(1)</small> |
 | <small>2.4.</small> [Gestore dei file](/index.php/Category:File_managers_(Italiano) "Category:File managers (Italiano)") <small>(2)</small> |
 | <small>2.5.</small> [Grafica ed Editoria](/index.php/Category:Graphics_and_desktop_publishing_(Italiano) "Category:Graphics and desktop publishing (Italiano)") <small>(2)</small> |
 | <small>2.6.</small> [Applicazioni Internet](/index.php/Category:Internet_applications_(Italiano) "Category:Internet applications (Italiano)") <small>(5) (anche in [Gestione Reti](/index.php/Category:Networking_(Italiano) "Category:Networking (Italiano)"))</small> |
@@ -40,7 +40,7 @@
 | <small>4.11.</small> [Stampanti](/index.php/Category:Printers_(Italiano) "Category:Printers (Italiano)") <small>(1)</small> |
 | <small>4.12.</small> [Suono](/index.php/Category:Sound_(Italiano) "Category:Sound (Italiano)") <small>(3)</small> |
 | <small>4.13.</small> [Storage](/index.php/Category:Storage_(Italiano) "Category:Storage (Italiano)") <small>(3)</small> |
-| <small>4.13.1.</small> [Dispositivi ottici](/index.php/Category:Optical_(Italiano) "Category:Optical (Italiano)") <small>(1)</small> |
+| <small>4.13.1.</small> [Optical disc](/index.php/Category:Optical_disc_(Italiano) "Category:Optical disc (Italiano)") <small>(1)</small> |
 | <small>5.</small> [Gestione Reti](/index.php/Category:Networking_(Italiano) "Category:Networking (Italiano)") <small>(19)</small> |
 | <small>5.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System_(Italiano) "Category:Domain Name System (Italiano)") <small>(2)</small> |
 | <small>5.2.</small> [Applicazioni Internet](/index.php/Category:Internet_applications_(Italiano) "Category:Internet applications (Italiano)") <small>(5) (anche in [Applicazioni](/index.php/Category:Applications_(Italiano) "Category:Applications (Italiano)"))</small> |
@@ -53,23 +53,23 @@
 | <small>5.7.</small> [Server Web](/index.php/Category:Web_server_(Italiano) "Category:Web server (Italiano)") <small>(5)</small> |
 | <small>5.8.</small> [Reti Wireless](/index.php/Category:Wireless_networking_(Italiano) "Category:Wireless networking (Italiano)") <small>(4)</small> |
 | <small>6.</small> [Amministrazione del Sistema](/index.php/Category:System_administration_(Italiano) "Category:System administration (Italiano)") <small>(3)</small> |
-| <small>6.1.</small> [Audio/Video](/index.php/Category:Audio/Video_(Italiano) "Category:Audio/Video (Italiano)") <small>(15)</small> |
-| <small>6.2.</small> [Processo di Avvio](/index.php/Category:Boot_process_(Italiano) "Category:Boot process (Italiano)") <small>(19)</small> |
-| <small>6.2.1.</small> [Boot loaders](/index.php/Category:Boot_loaders_(Italiano) "Category:Boot loaders (Italiano)") <small>(3)</small> |
-| <small>6.2.2.</small> [Bootsplash](/index.php/Category:Bootsplash_(Italiano) "Category:Bootsplash (Italiano)") <small>(2) (anche in [Eye candy](/index.php/Category:Eye_candy_(Italiano) "Category:Eye candy (Italiano)"))</small> |
-| <small>6.3.</small> [Shell dei comandi](/index.php/Category:Command_shells_(Italiano) "Category:Command shells (Italiano)") <small>(4)</small> |
-| <small>6.4.</small> [Demoni e servizi di sistema](/index.php/Category:Daemons_and_system_services_(Italiano) "Category:Daemons and system services (Italiano)") <small>(12)</small> |
-| <small>6.5.</small> [Ambienti Desktop](/index.php/Category:Desktop_environments_(Italiano) "Category:Desktop environments (Italiano)") <small>(15)</small> |
-| <small>6.5.1.</small> [Gestori delle Sessioni](/index.php/Category:Display_managers_(Italiano) "Category:Display managers (Italiano)") <small>(3)</small> |
-| <small>6.5.2.</small> [Gestori delle finestre Dinamici](/index.php/Category:Dynamic_WMs_(Italiano) "Category:Dynamic WMs (Italiano)") <small>(1)</small> |
-| <small>6.5.3.</small> [KDE](/index.php/Category:KDE_(Italiano) "Category:KDE (Italiano)") <small>(1)</small> |
-| <small>6.5.4.</small> [Gestore delle finestre Statici](/index.php/Category:Stacking_WMs_(Italiano) "Category:Stacking WMs (Italiano)") <small>(14)</small> |
-| <small>6.6.</small> [Eye candy](/index.php/Category:Eye_candy_(Italiano) "Category:Eye candy (Italiano)") <small>(10)</small> |
-| <small>6.6.1.</small> [Bootsplash](/index.php/Category:Bootsplash_(Italiano) "Category:Bootsplash (Italiano)") <small>(2) (anche in [Processo di Avvio](/index.php/Category:Boot_process_(Italiano) "Category:Boot process (Italiano)"))</small> |
-| <small>6.6.2.</small> [Caratteri](/index.php/Category:Fonts_(Italiano) "Category:Fonts (Italiano)") <small>(2)</small> |
-| <small>6.7.</small> [File system](/index.php/Category:File_systems_(Italiano) "Category:File systems (Italiano)") <small>(17)</small> |
-| <small>6.8.</small> [Internazionalizzazione](/index.php/Category:Internationalization_(Italiano) "Category:Internationalization (Italiano)") <small>(1)</small> |
-| <small>6.9.</small> [Kernel](/index.php/Category:Kernel_(Italiano) "Category:Kernel (Italiano)") <small>(9)</small> |
+| <small>6.1.</small> [Processo di Avvio](/index.php/Category:Boot_process_(Italiano) "Category:Boot process (Italiano)") <small>(19)</small> |
+| <small>6.1.1.</small> [Boot loaders](/index.php/Category:Boot_loaders_(Italiano) "Category:Boot loaders (Italiano)") <small>(3)</small> |
+| <small>6.1.2.</small> [Bootsplash](/index.php/Category:Bootsplash_(Italiano) "Category:Bootsplash (Italiano)") <small>(2) (anche in [Eye candy](/index.php/Category:Eye_candy_(Italiano) "Category:Eye candy (Italiano)"))</small> |
+| <small>6.2.</small> [Shell dei comandi](/index.php/Category:Command_shells_(Italiano) "Category:Command shells (Italiano)") <small>(4)</small> |
+| <small>6.3.</small> [Demoni e servizi di sistema](/index.php/Category:Daemons_and_system_services_(Italiano) "Category:Daemons and system services (Italiano)") <small>(12)</small> |
+| <small>6.4.</small> [Ambienti Desktop](/index.php/Category:Desktop_environments_(Italiano) "Category:Desktop environments (Italiano)") <small>(15)</small> |
+| <small>6.4.1.</small> [Gestori delle Sessioni](/index.php/Category:Display_managers_(Italiano) "Category:Display managers (Italiano)") <small>(3)</small> |
+| <small>6.4.2.</small> [Gestori delle finestre Dinamici](/index.php/Category:Dynamic_WMs_(Italiano) "Category:Dynamic WMs (Italiano)") <small>(1)</small> |
+| <small>6.4.3.</small> [KDE](/index.php/Category:KDE_(Italiano) "Category:KDE (Italiano)") <small>(1)</small> |
+| <small>6.4.4.</small> [Gestore delle finestre Statici](/index.php/Category:Stacking_WMs_(Italiano) "Category:Stacking WMs (Italiano)") <small>(14)</small> |
+| <small>6.5.</small> [Eye candy](/index.php/Category:Eye_candy_(Italiano) "Category:Eye candy (Italiano)") <small>(10)</small> |
+| <small>6.5.1.</small> [Bootsplash](/index.php/Category:Bootsplash_(Italiano) "Category:Bootsplash (Italiano)") <small>(2) (anche in [Processo di Avvio](/index.php/Category:Boot_process_(Italiano) "Category:Boot process (Italiano)"))</small> |
+| <small>6.5.2.</small> [Caratteri](/index.php/Category:Fonts_(Italiano) "Category:Fonts (Italiano)") <small>(2)</small> |
+| <small>6.6.</small> [File system](/index.php/Category:File_systems_(Italiano) "Category:File systems (Italiano)") <small>(17)</small> |
+| <small>6.7.</small> [Kernel](/index.php/Category:Kernel_(Italiano) "Category:Kernel (Italiano)") <small>(9)</small> |
+| <small>6.8.</small> [Localization](/index.php/Category:Localization_(Italiano) "Category:Localization (Italiano)") <small>(1)</small> |
+| <small>6.9.</small> [Multimedia](/index.php/Category:Multimedia_(Italiano) "Category:Multimedia (Italiano)") <small>(15)</small> |
 | <small>6.10.</small> [Gestore dei Pacchetti](/index.php/Category:Package_management_(Italiano) "Category:Package management (Italiano)") <small>(15)</small> |
 | <small>6.11.</small> [Risparmio energetico](/index.php/Category:Power_management_(Italiano) "Category:Power management (Italiano)") <small>(8)</small> |
 | <small>6.12.</small> [Sicurezza](/index.php/Category:Security_(Italiano) "Category:Security (Italiano)") <small>(12)</small> |

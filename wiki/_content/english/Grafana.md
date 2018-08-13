@@ -1,3 +1,8 @@
+Related articles
+
+*   [Zabbix](/index.php/Zabbix "Zabbix")
+*   [Munin](/index.php/Munin "Munin")
+
 [Grafana](https://grafana.com/) is an open-source, general purpose dashboard and graph composer, which runs as a web application. It supports graphite, [InfluxDB](/index.php/InfluxDB "InfluxDB") or opentsdb as backends.
 
 ## Contents
@@ -14,6 +19,8 @@
 [Install](/index.php/Install "Install") the [grafana](https://www.archlinux.org/packages/?name=grafana) package.
 
 After that you can [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `grafana` service and access the application on localhost, e.g.: [http://127.0.0.1:3000](http://127.0.0.1:3000) . The default username is `admin` and password `admin` to access the web frontend.
+
+**Warning:** The default configuration listens on `*:3000` so make sure to change the configuration or enable the relevant firewall rules.
 
 ## Example usage
 

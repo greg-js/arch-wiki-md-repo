@@ -1,3 +1,7 @@
+Artículos relacionados
+
+*   [HTTP tunneling](/index.php/HTTP_tunneling "HTTP tunneling")
+
 ## Contents
 
 *   [1 Introducción](#Introducci.C3.B3n)
@@ -121,7 +125,7 @@ Como alternativa, es posible que desee utilizar el siguiente script. Cambie las 
 
 ### Mantener el proxy a través de sudo
 
-Si se establecen las variables de entorno del proxy solo para el usuario (por ejemplo, usando órdenes manuales o .bashrc) estas se pierden cuando se ejecutan órdenes con [sudo](/index.php/Sudo "Sudo") (o cuando programas como [yaourt](/index.php/Yaourt "Yaourt") utilizan sudo internamente).
+Si se establecen las variables de entorno del proxy solo para el usuario (por ejemplo, usando órdenes manuales o .bashrc) estas se pierden cuando se ejecutan órdenes con [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") (o cuando programas como [yaourt](/index.php/Yaourt "Yaourt") utilizan sudo internamente).
 
 Una manera de evitarlo es añadir la siguiente línea al archivo de configuración de sudo (accesible con visudo):
 

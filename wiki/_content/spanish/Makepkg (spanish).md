@@ -28,14 +28,14 @@ El paquete makepkg lo provee el paquete [pacman](https://www.archlinux.org/packa
 
 El archivo principal de configuración de makepkg es `/etc/makepkg.conf` . la mayoría de los usuarios querrán configurar estas opciones de makepkg antes de construir cualquier paquete (por ejemplo modificar las variables `MAKEFLAGS` en sistemas con soporte SMP para [reducir tiempos de compilación](#Recomendaciones) , o personalizar la variable `PACKAGER` para personalizar paquetes. Lea la documentación de `PACKAGER` para más detalles
 
-Para poder instalar paquetes con makepkg sin ser usuario administrador (con `makepkg -s`, información más delante), instale [sudo](/index.php/Sudo "Sudo") y agregue los usuarios con estos privilegios en el archivo to `/etc/sudoers`:
+Para poder instalar paquetes con makepkg sin ser usuario administrador (con `makepkg -s`, información más delante), instale [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") y agregue los usuarios con estos privilegios en el archivo to `/etc/sudoers`:
 
 ```
 USER_NAME    ALL=(ALL)    NOPASSWD: /usr/bin/pacman
 
 ```
 
-La línea de arriba eliminara la necesidad de introducir un password cada vez que utilicemos pacman. Revise la wiki de [sudo](/index.php/Sudo "Sudo") para mas información
+La línea de arriba eliminara la necesidad de introducir un password cada vez que utilicemos pacman. Revise la wiki de [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") para mas información
 
 Enseguida, puede configurar donde serán guardados los paquetes terminados. Este paso es meramente opcional; por definición los paquetes serán creados en el directorio donde makepkg se ejecute Cree el directorio:
 

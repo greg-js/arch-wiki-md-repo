@@ -80,7 +80,7 @@ Si es un principiante y quiere usar Arch, tenga en cuanta únicamente que debe e
 
 Antes de pedir ayuda, haga su propia investigación independiente buscando en Google, indagando en el foro (y leyendo el resto de estas preguntas frecuentes) y buscando en la excelente documentación proporcionada por la wiki de Arch. *Hay una razón por la que estos recursos se ponen a disposición del usuario en primer lugar.* Son muchos los *voluntarios* que dedican miles de horas compilando esta excelente información.
 
-Consulte también [Arch terminology#RTFM](/index.php/Arch_terminology#RTFM "Arch terminology") y la [guía de principiantes](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)").
+Consulte también [Arch terminology#RTFM](/index.php/Arch_terminology#RTFM "Arch terminology") y la [guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)").
 
 ### ¿Arch está diseñado para ser utilizado como un servidor?, ¿un escritorio?, ¿una estación de trabajo
 
@@ -110,7 +110,7 @@ Posiblemente sea así. ¡No dude en ofrecer su tiempo! Visite los [foros](https:
 
 ### ¿Por qué va mi internet tan lento en comparación con otros sistemas operativos?
 
-¿Está su red configurada correctamente? Eche un vistazo a [nombre del equipo](/index.php/Beginners%27_guide_(Espa%C3%B1ol)#Nombre_del_equipo "Beginners' guide (Español)") y [Configurar la red](/index.php/Beginners%27_guide_(Espa%C3%B1ol)#Configurar_la_red "Beginners' guide (Español)") de la Guía para principiantes.
+¿Está su red configurada correctamente? Eche un vistazo a [nombre del equipo](/index.php/Installation_guide_(Espa%C3%B1ol)#Nombre_del_equipo "Installation guide (Español)") y [configurar la red](/index.php/Installation_guide_(Espa%C3%B1ol)#Configuraci.C3.B3n_de_la_conexi.C3.B3n_de_red "Installation guide (Español)") de la guía de instalación.
 
 También tenga en cuenta que Arch Linux no viene con [traffic shaping](https://en.wikipedia.org/wiki/Traffic_shaping "wikipedia:Traffic shaping") habilitado. Por lo tanto, es posible que si un programa, de alguna manera, utiliza su conexión de Internet al máximo –sin importar si se trata de P2P o de conexiones de un clásico client-server– otras conexiones locales se encontrarán obstruidas, traduciéndose en retrasos graves y tiempos de espera. El auxilio puede venir instalando un [firewalls](/index.php/Firewalls "Firewalls") como Shorewall o Vuurmuur; también hay scripts estáticos para [iproute2](https://www.archlinux.org/packages/?name=iproute2) (como por ejemplo [este derivado](http://serendipity.ruwenzori.net/index.php/2008/06/01/modified-wondershaper-for-better-voip-qos) de Wondershaper), que realiza precisamente esta tarea.
 

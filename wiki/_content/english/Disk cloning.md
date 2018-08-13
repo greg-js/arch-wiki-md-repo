@@ -68,7 +68,7 @@ If you are positive that your disk does not contain any errors, you could procee
 
 ### Backing up the partition table
 
-See [fdisk#Backup and restore partition table](/index.php/Fdisk#Backup_and_restore_partition_table "Fdisk").
+See [fdisk#Backup and restore partition table](/index.php/Fdisk#Backup_and_restore_partition_table "Fdisk") or [gdisk#Backup and restore partition table](/index.php/Gdisk#Backup_and_restore_partition_table "Gdisk").
 
 ### Create disk image
 

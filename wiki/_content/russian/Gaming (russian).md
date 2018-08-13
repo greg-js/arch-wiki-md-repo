@@ -43,7 +43,7 @@
 ### Wine
 
 *   [Wine AppDB](http://appdb.winehq.org/) это централизованный источних данных о работающих в Wine играх.
-*   Смотрите также [Category:Wine](/index.php/Category:Wine "Category:Wine").
+*   Смотрите также [Category:Wine](/index.php?title=Category:Wine&action=edit&redlink=1 "Category:Wine (page does not exist)").
 
 ### Flash
 

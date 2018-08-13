@@ -67,7 +67,7 @@ La primera comunidad de Arch creció de manera constante, como lo demuestra [est
 
 ### El nacimiento de ArchWiki
 
-En 2005-07-08 la ArchWiki fue [iniciada](/index.php/ArchWiki:About#History "ArchWiki:About") basada en Mediawiki.
+En 2005-07-08 la ArchWiki [comenzó](/index.php/ArchWiki:About_(Espa%C3%B1ol)#Historia "ArchWiki:About (Español)") basada en Mediawiki.
 
 ### El amanecer de la era de A. Griffin
 

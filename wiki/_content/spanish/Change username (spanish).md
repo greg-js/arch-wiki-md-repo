@@ -1,3 +1,7 @@
+Artículos relacionados
+
+*   [Users and Groups (Español)](/index.php/Users_and_Groups_(Espa%C3%B1ol) "Users and Groups (Español)")
+
 Cambiar el nombre de usuario en Arch (o en cualquier distribución de Linux) es seguro y fácil cuando se hace correctamente. También puede cambiar el nombre del grupo asociado para el usuario si lo desea. Siguiendo el procedimiento siguiente hará precisamente esto conservando su UID/GID para el usuario afectado sin alterar los permisos de los archivos que haya configurado.
 
 ## Contents
@@ -98,7 +102,7 @@ Desglosándolo, esto quiere decir: Jack es el usuario (cuya contraseña está en
 
 ## Puntualizaciones
 
-*   Si está usando [sudo](/index.php/Sudo "Sudo") asegúrese de actualizar el archivo `/etc/sudoers` para reflejar el nuevo nombre de usuario (a través de la orden visudo como root).
+*   Si está usando [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") asegúrese de actualizar el archivo `/etc/sudoers` para reflejar el nuevo nombre de usuario (a través de la orden visudo como root).
 *   Si ha modificado el parámetro PATH en `~/.bashrc`, asegúrese de cambiarlo para reflejar el nuevo nombre de usuario.
 *   Del mismo modo, asegúrese de cambiar cualquier archivo de configuración como `/etc/rc.local` o lo que sea, si está apuntando a un script o un punto de montaje, etc. dentro del directorio home del usuario anterior.
 *   Los [crontabs](/index.php/Cron#Crontab_format "Cron") personales necesitan ser ajustados para adaptar los archivos del usuario del antiguo al nuevo nombre en `/var/spool/cron`, y luego tendrá que abrir `crontab -e` para cambiar las rutas relevantes y ajustar los permisos de los archivos en consecuencia.

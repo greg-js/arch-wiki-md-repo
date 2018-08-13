@@ -80,7 +80,7 @@ Mira [systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-re
 
 ## Ejemplos de Configuración
 
-Todas las configuraciones estan almasenada como {ic|foo.network}} en `/etc/systemd/network`. Para una lista completa de opciones y orden de procesamiento, mira [#Configuration files](#Configuration_files) y la página man de `systemd.network`.
+Todas las configuraciones estan almasenada como {ic|foo.network}} en `/etc/systemd/network`. Para una lista completa de opciones y orden de procesamiento, consulte [archivos de configuración](#Archivos_de_Configuraci.C3.B3n) y la página man de `systemd.network`.
 
 Systemd/udev automaticamente asigna previsibles, nombres de intefaces de res estables para todo el Ethernet local, interfaces de WLAN y WWAN. Usa `networkctl list` para enlistar los dispositivos en el sistema.
 

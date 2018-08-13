@@ -377,7 +377,7 @@ Try to change `kernel.io_delay_type` (x86 only):
 
 ### Long system freezes while swapping to disk
 
-Increase `vm.min_free_kbytes` to improve desktop responsiveness and reduce long pauses due to swapping to disk. One should increase this to `installed_mem / num_of_cores * 0.05`. See [https://askubuntu.com/a/45009](https://askubuntu.com/a/45009) & [https://www.linbit.com/en/kernel-min_free_kbytes/](https://www.linbit.com/en/kernel-min_free_kbytes/) for more details.
+Increase `vm.min_free_kbytes` to improve desktop responsiveness and reduce long pauses due to swapping to disk. One should increase this to `installed_mem / num_of_cores * 0.05`. See [[7]](https://askubuntu.com/a/45009) and [[8]](https://www.linbit.com/en/kernel-min_free_kbytes/) for more details.
 
 ## See also
 

@@ -46,6 +46,11 @@ Related articles
     *   [4.9 Signing commits](#Signing_commits)
     *   [4.10 Working with a non-master branch](#Working_with_a_non-master_branch)
     *   [4.11 Directly sending patches to a mailing list](#Directly_sending_patches_to_a_mailing_list)
+    *   [4.12 When the remote repo is huge](#When_the_remote_repo_is_huge)
+        *   [4.12.1 Simplest way: fetch the entire repo](#Simplest_way:_fetch_the_entire_repo)
+        *   [4.12.2 Partial fetch](#Partial_fetch)
+        *   [4.12.3 Get other branches](#Get_other_branches)
+        *   [4.12.4 Possilbe Future alternative](#Possilbe_Future_alternative)
 *   [5 Git server](#Git_server)
     *   [5.1 SSH](#SSH)
     *   [5.2 Smart HTTP](#Smart_HTTP)
@@ -660,6 +665,90 @@ $ git commit -s
 $ git send-email --to=*openembedded-core@lists.openembedded.org* --confirm=always -M -1
 
 ```
+
+### When the remote repo is huge
+
+When the remote repo is huge, what can you do? See this section. The examples are taken from the linux kernel.
+
+#### Simplest way: fetch the entire repo
+
+You can get the entire repository by
+
+```
+$ git clone [git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git](git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git)
+
+```
+
+This download takes long - "git clone" can not be resumed once it's stopped, as of Aug 2018 - and it'll cost some HDD space.
+
+You can update your repo by
+
+```
+$ git pull
+
+```
+
+#### Partial fetch
+
+Probably you want to limit your local repository smaller, say after v4.14 to bisect a bug. Then do:
+
+```
+$ git clone --shallow-exclude v4.13   [git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git](git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git) # You'll get v4.14 and later, but not v4.13 and older.
+
+```
+
+Or maybe you only want the latest snapshot, ignoring all history. (If a tarball is available and it suffices, choose that. Getting a git repo costs more.) You can do it by:
+
+```
+$ git clone --depth 1 [git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git](git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git)
+
+```
+
+You can later obtain older commits, by e.g.
+
+```
+$ git fetch --tags --shallow-exclude v4.1 # Get the commits after v4.1.
+$ git fetch --tags --shallow-since 2016-01-01
+
+```
+
+Without `--tags`, tags won't be fetched.
+
+#### Get other branches
+
+Your local repo tracks, in the above example, only the mainline kernel, i.e. in which the *latest development is done*. Suppose you want the latest *LTS*, for example the up-to-date 4.14 branch. You can get it by:
+
+```
+$ git remote set-branches --add origin linux-4.17.y
+$ git fetch
+$ git branch --track linux-4.17.y origin/linux-4.17.y
+
+```
+
+The last line is not mandatory, but probably you want it. (To know the name of the branch you want, sorry, there's no general rule. You can guess one by seeing the "ref" link in the gitweb interface.)
+
+If you want the snapshot of linux-4.17.y, do
+
+```
+$ git checkout -b linux-4.17.y
+
+```
+
+Or to extract it in another directory,
+
+```
+$ mkdir /foo/bar/src-4.17; cd /foo/bar/src-4.17
+$ git clone --no-local --depth 1 -b linux-4.17.y  ../linux-stable
+
+```
+
+As usual, do `git pull` to update your snapshot.
+
+#### Possilbe Future alternative
+
+Git Virtual Filesystem (GVFS), developed by Microsoft, allows you to access git repositories without a local one. (See [this Microsoft blog](https://blogs.msdn.microsoft.com/bharry/2017/05/24/the-largest-git-repo-on-the-planet/) or the [Wikipedia artcile](https://en.wikipedia.org/wiki/Git_Virtual_File_System "wikipedia:Git Virtual File System").) It's not available in Linux yet.
+
+Anyway it is not for the above examples of the Linux kernel, though.
 
 ## Git server
 

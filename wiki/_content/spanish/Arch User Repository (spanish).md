@@ -159,7 +159,7 @@ $ makepkg -si
 
 ```
 
-*   `-s`/`--syncdeps` utilizará [sudo](/index.php/Sudo "Sudo") para instalar eventuales dependencias. Si no se desea utilizar sudo, se deberán instalar manualmente las dependencias de antemano y posteriormente ejecutar lar orden anterior, omitiendo la opción `-s`.
+*   `-s`/`--syncdeps` utilizará [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") para instalar eventuales dependencias. Si no se desea utilizar sudo, se deberán instalar manualmente las dependencias de antemano y posteriormente ejecutar lar orden anterior, omitiendo la opción `-s`.
 *   `-i`/`--install` installa el paquete si fue creado exitosamente.
 
 Como una alternativa puede instalar el paquete con [pacman](/index.php/Pacman "Pacman"). Un tarball bien creado debería mostrar un nombre siguiendo este esquema:
@@ -229,7 +229,7 @@ Al enviar un paquete, observe las siguientes reglas:
 *   Asegúrese de que el paquete es útil. ¿Alguien más quiere utilizar este paquete? ¿Es sumamente especializado? Si no hay más que unas cuantas personas que encontrarán este paquete útil, no es apropiado para su presentación.
 *   Los repositorios AUR y oficiales están diseñados para paquetes que instalan generalmente software y contenido relacionado con el software, incluyendo uno o más de los siguientes: archivo(s) ejecutable, archivo(s) de configuración, documentación en línea o fuera de línea para un software, en particular, o para la distribución Arch Linux, en general; archivos multimedia destinados a ser utilizados directamente por el software.
 *   Obtenga un poco de experiencia antes de enviar los paquetes. Compile algunos paquetes para conocer el proceso y luego enviarlos.
-*   Si se presenta un `package.tar.gz` con un archivo llamado «`package`» obtendrá el siguiente error: «Could not change to directory `/home/aur/unsupported/package/package`». Para resolver este problema, cambie el nombre del archivo llamado «`package`» con otro nombre, por ejemplo, «`package.rc`». Cuando se instale en el directorio `pkg` puede cambiar su nombre de nuevo a «`package`». Léase también [Arch packaging standards#Submitting packages to the AUR](/index.php/Arch_packaging_standards#Submitting_packages_to_the_AUR "Arch packaging standards").
+*   Si se presenta un `package.tar.gz` con un archivo llamado «`package`» obtendrá el siguiente error: «Could not change to directory `/home/aur/unsupported/package/package`». Para resolver este problema, cambie el nombre del archivo llamado «`package`» con otro nombre, por ejemplo, «`package.rc`». Cuando se instale en el directorio `pkg` puede cambiar su nombre de nuevo a «`package`». Consulte también [enviar paquetes a AUR](/index.php/Arch_packaging_standards_(Espa%C3%B1ol)#Enviar_paquetes_a_AUR "Arch packaging standards (Español)").
 
 #### Verificación
 
@@ -407,8 +407,8 @@ Si suele compilar del código que utiliza gcc —como por ejemplo, un paquete gi
 
 ### ¿Cómo accedo a paquetes de Unsupported?
 
-Véase [#Installing packages](#Installing_packages)
+Consulte [#Instalar paquetes](#Instalar_paquetes).
 
 ### ¿Puedo subir archivos a AUR sin usar la interfaz web?
 
-Puede usar [burp](https://www.archlinux.org/packages/?name=burp), *aurploader* ([python3-aur](https://aur.archlinux.org/packages/python3-aur/)) o [aurup](https://aur.archlinux.org/packages/aurup/) —se trata de programas de línea de órdenes—.
+Sí, mediante *aurploader* ([python3-aur](https://aur.archlinux.org/packages/python3-aur/)).

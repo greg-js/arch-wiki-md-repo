@@ -304,7 +304,7 @@ No se olvide de [#Generar el archivo de configuración principal](#Generar_el_ar
 *   `--efi-directory` y `--bootloader-id` son específicos de GRUB UEFI. `--efi-directory` especifica el punto de montaje de la ESP. Este sustituye a `--root-directory`, que está obsoleto. `--bootloader-id` especifica el nombre del directorio utilizado para guardar el archivo `grubx64.efi`.
 *   Es posible que note la ausencia de una opción <device_path> (por ejemplo: `/dev/sda`) en la orden `grub-install`. De hecho cualquier <device_path> proporcionado será ignorado por el script de instalación de GRUB, dado que los gestores de arranque de UEFI no utilizan un MBR o sector de arranque de la partición en absoluto.
 
-Véase [solución de problemas de UEFI](#UEFI_.28Espa.C3.B1ol.29) en caso de problemas.
+Consulte [solución de problemas de UEFI](#UEFI) en caso de problemas.
 
 ### Lecturas complementarias
 
@@ -432,7 +432,7 @@ o, para modalidad UEFI-GPT:
 
 para actualizar `grub.cfg`.
 
-Por ejemplo, un típico archivo `/etc/grub.d/40_custom`, podría ser similar a uno como el siguiente, creado para [HP Pavilion 15-e056sl Notebook PC](http://h10025.www1.hp.com/ewfrf/wc/product?cc=us&destPage=product&lc=en&product=5402703&tmp_docname=), originalmente con Microsoft Windows 8 preinstalado. Cada `menuentry` debe mantener una estructura similar a una de las de abajo. Tenga en cuenta que la partición UEFI `/dev/sda2` dentro de GRUB se llama `hd0,gpt2` y `ahci0,gpt2` (véase [esto](#Windows_Installed_in_UEFI-GPT_Mode_menu_entry) para obtener más información).
+Por ejemplo, un típico archivo `/etc/grub.d/40_custom`, podría ser similar a uno como el siguiente, creado para [HP Pavilion 15-e056sl Notebook PC](http://h10025.www1.hp.com/ewfrf/wc/product?cc=us&destPage=product&lc=en&product=5402703&tmp_docname=), originalmente con Microsoft Windows 8 preinstalado. Cada `menuentry` debe mantener una estructura similar a una de las de abajo. Tenga en cuenta que la partición UEFI `/dev/sda2` dentro de GRUB se llama `hd0,gpt2` y `ahci0,gpt2` (consulte [esta sección](#Entrada_de_men.C3.BA_para_Windows_instalado_en_modo_UEFI-GPT) para obtener más información).
 
  `/etc/grub.d/40_custom` 
 ```
@@ -1102,7 +1102,7 @@ GRUB puede tardar mucho tiempo en cargarse cuando el espacio en disco es pequeñ
 
 ### error: unknown filesystem
 
-GRUB puede mostrar la salida `error: unknown filesystem` y negarse a arrancar por varias razones. Si está seguro de que todas las [UUID](/index.php/UUID "UUID") son correctas y todos los sistemas de archivos son válidos y soportados, puede ser debido a que su [BIOS Boot Partition](#GUID_Partition_Table_.28GPT.29_specific_instructions) se encuentra fuera de los primeros 2TB de su unidad [[3]](https://bbs.archlinux.org/viewtopic.php?id=195948). Utilice una herramienta de particionado de su elección para asegurarse de que esta partición se encuentra totalmente dentro de los primeros 2TB, y luego reinstale y reconfigure GRUB.
+GRUB puede mostrar la salida `error: unknown filesystem` y negarse a arrancar por varias razones. Si está seguro de que todas las [UUID](/index.php/UUID "UUID") son correctas y todos los sistemas de archivos son válidos y soportados, puede ser debido a que su [BIOS Boot Partition](#Instrucciones_espec.C3.ADficas_para_GUID_Partition_Table_.28GPT.29) se encuentra fuera de los primeros 2TB de su unidad [[3]](https://bbs.archlinux.org/viewtopic.php?id=195948). Utilice una herramienta de particionado de su elección para asegurarse de que esta partición se encuentra totalmente dentro de los primeros 2TB, y luego reinstale y reconfigure GRUB.
 
 ### grub-reboot no reinicia
 

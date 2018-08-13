@@ -16,7 +16,7 @@
     *   [4.2 USB](#USB)
     *   [4.3 grub4dos](#grub4dos)
     *   [4.4 Instalación](#Instalaci.C3.B3n)
-*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [5 Consulte también](#Consulte_tambi.C3.A9n)
 
 ## Preparar la instalación
 
@@ -224,11 +224,11 @@ Cambia `x86_64` según sea necesario y pon la etiqueta de tu usb **real**.
 
 ### Instalación
 
-Arranque el CD/DVD/USB creado. Si desea instalar la Archiso creada **-tal como está-**, hay varios caminos para hacerlo, pero, en cualquier caso, hemos de tener presentes que estamos siguiendo la [Guía para Principiantes](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)") en su mayor parte.
+Arranque el CD/DVD/USB creado. Si desea instalar la Archiso creada **-tal como está-**, hay varios caminos para hacerlo, pero, en cualquier caso, hemos de tener presentes que estamos siguiendo la [guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") en su mayor parte.
 
-Si no tiene una conexión a Internet en su equipo, o si no quiere descargar todos los paquetes que desea otra vez, siga la Guía, y al llegar a la [Instalación del sistema base](/index.php/Beginners%27_guide_(Espa%C3%B1ol)#Instalar_el_sistema_base "Beginners' guide (Español)"), en lugar de realizar la descarga, utilice esto: [Full system backup with rsync](/index.php/Full_system_backup_with_rsync "Full system backup with rsync"). (Más información aquí: [Talk:Archiso](/index.php/Talk:Archiso "Talk:Archiso"))
+Si no tiene una conexión a Internet en su equipo, o si no quiere descargar todos los paquetes que desea otra vez, siga la Guía, y al llegar a la [Instalar los paquetes del sistema base](/index.php/Installation_guide_(Espa%C3%B1ol)#Instalar_los_paquetes_del_sistema_base "Installation guide (Español)"), en lugar de realizar la descarga, utilice esto: [Full system backup with rsync](/index.php/Full_system_backup_with_rsync "Full system backup with rsync"). (Más información aquí: [Talk:Archiso](/index.php/Talk:Archiso "Talk:Archiso"))
 
-## Véase también
+## Consulte también
 
 *   [Página del proyecto Archiso (en)](https://projects.archlinux.org/?p=archiso.git;a=summary)
 *   [Archiso como servidor pxe (en)](/index.php/Archiso_as_pxe_server "Archiso as pxe server")

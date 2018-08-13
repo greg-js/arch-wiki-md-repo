@@ -223,7 +223,7 @@ There are several online databases of man pages, including:
 *   [The UNIX and Linux forums man page repository](https://www.unix.com/man-page/OpenSolaris/1/man/)
 *   [Ubuntu manpage repository](http://manpages.ubuntu.com/)
 
-**Tip:** You can use the **!archman** DuckDuckGo [!Bang](https://duckduckgo.com/bang.html) to search through the [Arch Linux man pages](https://jlk.fjfi.cvut.cz/arch/manpages/) directly
+**Tip:** You can use the `!archman` DuckDuckGo [!Bang](https://duckduckgo.com/bang.html) to search through the [Arch Linux man pages](https://jlk.fjfi.cvut.cz/arch/manpages/) directly.
 
 **Warning:** Some distributions provide patched or outdated man pages that differ from those provided by Arch. Exercise caution when using online man pages.
 

@@ -2,7 +2,7 @@
 
 Related articles
 
-*   [Arch en comparación con otras distribuciones](/index.php/Arch_compared_to_other_distributions "Arch compared to other distributions")
+*   [Arch en comparación con otras distribuciones](/index.php/Arch_compared_to_other_distributions_(Espa%C3%B1ol) "Arch compared to other distributions (Español)")
 *   [Archiso](/index.php/Archiso "Archiso")
 *   [TalkingArch](/index.php/TalkingArch "TalkingArch")
 *   [DeveloperWiki:TrademarkPolicy](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy")

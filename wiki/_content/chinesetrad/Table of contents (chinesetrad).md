@@ -12,7 +12,7 @@
 | <small>2.</small> [應用程式](/index.php/Category:Applications_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Applications (正體中文)") <small>(7)</small> |
 | <small>2.1.</small> [指令 shell](/index.php/Category:Command_shells_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Command shells (正體中文)") <small>(1)</small> |
 | <small>2.2.</small> [資料壓縮和封存](/index.php/Category:Data_compression_and_archiving_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Data compression and archiving (正體中文)") <small>(2)</small> |
-| <small>2.3.</small> [Emulators](/index.php/Category:Emulators_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Emulators (正體中文)") <small>(1)</small> |
+| <small>2.3.</small> [Emulation](/index.php/Category:Emulation_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Emulation (正體中文)") <small>(1)</small> |
 | <small>2.4.</small> [網路應用程式](/index.php/Category:Internet_applications_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Internet applications (正體中文)") <small>(2) (還在 [網路](/index.php/Category:Networking_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Networking (正體中文)"))</small> |
 | <small>2.4.1.</small> [Email clients](/index.php/Category:Email_clients_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Email clients (正體中文)") <small>(2)</small> |
 | <small>2.5.</small> [數學和科學](/index.php/Category:Mathematics_and_science_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Mathematics and science (正體中文)") <small>(1)</small> |
@@ -35,20 +35,20 @@
 | <small>5.1.1.</small> [Email clients](/index.php/Category:Email_clients_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Email clients (正體中文)") <small>(2)</small> |
 | <small>5.2.</small> [網頁伺服器](/index.php/Category:Web_server_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Web server (正體中文)") <small>(1)</small> |
 | <small>6.</small> [系統管理](/index.php/Category:System_administration_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:System administration (正體中文)") <small>(1)</small> |
-| <small>6.1.</small> [影音](/index.php/Category:Audio/Video_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Audio/Video (正體中文)") <small>(1)</small> |
-| <small>6.2.</small> [開機過程](/index.php/Category:Boot_process_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Boot process (正體中文)") <small>(2)</small> |
-| <small>6.2.1.</small> [開機載入程式](/index.php/Category:Boot_loaders_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Boot loaders (正體中文)") <small>(1)</small> |
-| <small>6.3.</small> [守護程序 (daemon) 和系統服務](/index.php/Category:Daemons_and_system_services_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Daemons and system services (正體中文)") <small>(1)</small> |
-| <small>6.4.</small> [桌面環境](/index.php/Category:Desktop_environments_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Desktop environments (正體中文)") <small>(4)</small> |
-| <small>6.4.1.</small> [顯示管理員](/index.php/Category:Display_managers_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Display managers (正體中文)") <small>(2)</small> |
-| <small>6.4.2.</small> [視窗管理員](/index.php/Category:Window_managers_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Window managers (正體中文)") <small>(0)</small> |
-| <small>6.4.2.1.</small> [堆疊視窗管理員](/index.php/Category:Stacking_WMs_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Stacking WMs (正體中文)") <small>(1)</small> |
-| <small>6.5.</small> [美觀裝飾](/index.php/Category:Eye_candy_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Eye candy (正體中文)") <small>(0)</small> |
-| <small>6.5.1.</small> [字型](/index.php/Category:Fonts_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Fonts (正體中文)") <small>(1)</small> |
-| <small>6.6.</small> [檔案系統](/index.php/Category:File_systems_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:File systems (正體中文)") <small>(5)</small> |
-| <small>6.7.</small> [國際化](/index.php/Category:Internationalization_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Internationalization (正體中文)") <small>(4)</small> |
-| <small>6.7.1.</small> [Localization](/index.php/Category:Localization_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Localization (正體中文)") <small>(1)</small> |
-| <small>6.8.</small> [Kernel](/index.php/Category:Kernel_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Kernel (正體中文)") <small>(1)</small> |
+| <small>6.1.</small> [開機過程](/index.php/Category:Boot_process_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Boot process (正體中文)") <small>(2)</small> |
+| <small>6.1.1.</small> [開機載入程式](/index.php/Category:Boot_loaders_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Boot loaders (正體中文)") <small>(1)</small> |
+| <small>6.2.</small> [守護程序 (daemon) 和系統服務](/index.php/Category:Daemons_and_system_services_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Daemons and system services (正體中文)") <small>(1)</small> |
+| <small>6.3.</small> [桌面環境](/index.php/Category:Desktop_environments_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Desktop environments (正體中文)") <small>(4)</small> |
+| <small>6.3.1.</small> [顯示管理員](/index.php/Category:Display_managers_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Display managers (正體中文)") <small>(2)</small> |
+| <small>6.3.2.</small> [視窗管理員](/index.php/Category:Window_managers_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Window managers (正體中文)") <small>(0)</small> |
+| <small>6.3.2.1.</small> [堆疊視窗管理員](/index.php/Category:Stacking_WMs_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Stacking WMs (正體中文)") <small>(1)</small> |
+| <small>6.4.</small> [美觀裝飾](/index.php/Category:Eye_candy_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Eye candy (正體中文)") <small>(0)</small> |
+| <small>6.4.1.</small> [字型](/index.php/Category:Fonts_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Fonts (正體中文)") <small>(1)</small> |
+| <small>6.5.</small> [檔案系統](/index.php/Category:File_systems_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:File systems (正體中文)") <small>(5)</small> |
+| <small>6.6.</small> [國際化](/index.php/Category:Internationalization_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Internationalization (正體中文)") <small>(4)</small> |
+| <small>6.6.1.</small> [Localization](/index.php/Category:Localization_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Localization (正體中文)") <small>(1)</small> |
+| <small>6.7.</small> [Kernel](/index.php/Category:Kernel_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Kernel (正體中文)") <small>(1)</small> |
+| <small>6.8.</small> [Multimedia](/index.php/Category:Multimedia_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Multimedia (正體中文)") <small>(1)</small> |
 | <small>6.9.</small> [軟體包管理](/index.php/Category:Package_management_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Package management (正體中文)") <small>(6)</small> |
 | <small>6.10.</small> [安全性](/index.php/Category:Security_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Security (正體中文)") <small>(1)</small> |
 | <small>6.10.1.</small> [Encryption](/index.php/Category:Encryption_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Category:Encryption (正體中文)") <small>(2)</small> |

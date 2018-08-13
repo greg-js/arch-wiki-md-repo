@@ -128,30 +128,7 @@ fi
 
 #### Automatically switch configurations with autorandr
 
-[Autorandr](https://github.com/wertarbyte/autorandr) allows you to easily configure xrandr 'profiles' that will activate automatically when you connect/disconnect displays. Install [autorandr](https://www.archlinux.org/packages/?name=autorandr) and set up some configurations like this:
-
-```
-autorandr --save laptop 
-
-```
-
-Now connect an external display. Set it up the correct resolution and screen orientation with xrandr, then save the configuration like this:
-
-```
-autorandr --save samsung
-
-```
-
-Now whenever you connect the monitor autorandr will apply your saved xrandr configuration, and when you disconnect it will reset to your normal configuration.
-
-I found it useful to add
-
-```
-autorandr --change
-
-```
-
-to the autostart of my window manager, since Autorandr doesn't normally do anything unless it detects a display being plugged or unplugged. Now if I boot my laptop or restart X while the monitor is plugged in, autorandr will still apply the correct configuration.
+[autorandr](https://www.archlinux.org/packages/?name=autorandr) allows you to easily configure xrandr "profiles" that will activate automatically when you connect/disconnect displays. See the [homepage](https://github.com/wertarbyte/autorandr) for usage examples.
 
 #### Manage 2-monitors
 

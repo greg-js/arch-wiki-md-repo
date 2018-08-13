@@ -629,7 +629,7 @@ Prepare the devices according to [dm-crypt/Drive preparation](/index.php/Dm-cryp
 
 #### Preparing the USB key
 
-Use [gdisk](/index.php/Fdisk#gdisk "Fdisk") to partition the disk according to the layout [shown here](/index.php/Dm-crypt/Encrypting_an_entire_system#Preparing_the_disk_5 "Dm-crypt/Encrypting an entire system"), with the exception that it should only include the first two partitions. So as follows:
+Use [gdisk](/index.php/Gdisk "Gdisk") to partition the disk according to the layout [shown here](/index.php/Dm-crypt/Encrypting_an_entire_system#Preparing_the_disk_5 "Dm-crypt/Encrypting an entire system"), with the exception that it should only include the first two partitions. So as follows:
 
  `# gdisk /dev/sdb` 
 ```

@@ -17,12 +17,12 @@ Sudo también se puede usar para ejecutar comandos como otros usuarios; además,
 *   [2 Utilización](#Utilizaci.C3.B3n)
 *   [3 Configuración](#Configuraci.C3.B3n)
     *   [3.1 Ver la configuración actual](#Ver_la_configuraci.C3.B3n_actual)
-    *   [3.2 Usando visudo](#Usando_visudo)
+    *   [3.2 Utilizando visudo](#Utilizando_visudo)
     *   [3.3 Ejemplos de entradas](#Ejemplos_de_entradas)
-    *   [3.4 Permisos de archivos predeterminados por sudoers](#Permisos_de_archivos_predeterminados_por_sudoers)
+    *   [3.4 Permisos de archivo predeterminados de sudoers](#Permisos_de_archivo_predeterminados_de_sudoers)
 *   [4 Consejos y trucos](#Consejos_y_trucos)
-    *   [4.1 Desactivar sudo para cada terminal](#Desactivar_sudo_para_cada_terminal)
-    *   [4.2 Variables de entornos](#Variables_de_entornos)
+    *   [4.1 Deshabilitar sudo por terminal](#Deshabilitar_sudo_por_terminal)
+    *   [4.2 Variables de entorno](#Variables_de_entorno)
     *   [4.3 Activar alias](#Activar_alias)
     *   [4.4 Avisos](#Avisos)
     *   [4.5 Contraseña root](#Contrase.C3.B1a_root)
@@ -66,48 +66,43 @@ Consulte [sudoers(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sudoers.5) para
 
 Ejecute `sudo -ll` para visualizar la configuración actual de sudo, o `sudo -lU *usuario*` para un usuario específico.
 
-### Usando visudo
+### Utilizando visudo
 
-El archivo de configuración de sudo es `/etc/sudoers`. Sería conveniente que dicho archivo **siempre** se editase con la orden `visudo`. `visudo` bloquea el archivo `sudoers`, guarda las modificaciones en un archivo temporal y comprueba la gramática de ese archivo antes de copiarlo a `/etc/sudoers`.
+El archivo de configuración de sudo es `/etc/sudoers`. **Siempre** debe editarse con el comando [visudo(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/visudo.8). `visudo` bloquea el archivo `sudoers`, guarda los cambios en un archivo temporal y verifica la gramática de dicho archivo antes de copiarlo en `/etc/sudoers`.
 
 **Advertencia:** ¡Es imperativo que el archivo `sudoers` no tenga errores de sintaxis! Cualquier error hará sudo inutilizable. Modifíquelo **siempre** con `visudo` para evitar errores.
 
-El editor por defecto para visudo es `vi`. Será utilizado si no se especifica otro editor, configurado o bien con VISUAL o bien con EDITOR como variables de entorno (utilizado en ese orden) para el editor que desee, por ejemplo, `nano`. La orden se ejecuta como root:
+El editor predeterminado para visudo es `vi`. sudo del repositorio central *(core)* se compila con `--with-env-editor` de forma predeterminada y respeta el uso de las variables `VISUAL` y `EDITOR`. `EDITOR` no se usa cuando se establece `VISUAL`.
+
+Para establecer nano como el editor de **visudo** durante la sesión actual de shell exporte `EDITOR=nano`; para usar un editor diferente una vez, simplemente configure la variable antes de llamar a **visudo**:
 
 ```
 # EDITOR=nano visudo
 
 ```
 
-Se puede cambiar permanentemente la configuración de todo el sistema para, por ejemplo, `vim`, añadiendo:
+Alternativamente, puede editar una copia del archivo `/etc/sudoers` y verificarlo utilizando `visudo -c -f */copy/of/sudoers*`. Esto podría ser útil en caso de que quiera eludir el bloqueo del archivo con visudo.
+
+Para cambiar el editor permanentemente, consulte la sección sobre [variables de entorno por usuario](/index.php/Environment_variables_(Espa%C3%B1ol)#Por_usuario "Environment variables (Español)"). Para cambiar el editor elegido solo para `visudo` de forma permanente en todo el sistema, añada lo siguiente a `/etc/sudoers` (suponiendo que `nano` es su editor preferido):
 
 ```
-export EDITOR=nano
-
-```
-
-en el archivo `~/.bashrc` . Tenga en cuenta que este no entrará en vigor para las shells ya en ejecución.
-
-Para usar permanentemente el editor elegido cuando se ejecuta la orden `visudo`, agregue la línea siguiente a `/etc/sudoers` (donde `nano` es el editor elegido):
-
-```
-# Restablece el entorno por defecto
+# Restablece el entorno predeterminado
 Defaults      env_reset
-# Establece el editor por defecto para vim, y no permite a visudo utilizar EDITOR/VISUAL.
+# Establece el EDITOR predeterminado a nano, y no permite a visudo usar EDITOR/VISUAL.
 Defaults      editor=/usr/bin/nano, !env_editor
 
 ```
 
 ### Ejemplos de entradas
 
-Para permitir a un usuario normal obtener privilegios de superusuario cuando antepone `sudo` a una orden, agregue la siguiente línea:
+Para permitir a un usuario normal obtener privilegios de superusuario *(root)* cuando antepone `sudo` a una orden, añada la siguiente línea:
 
 ```
 NOMBRE_DE_USUARIO   ALL=(ALL) ALL
 
 ```
 
-Para permitir a un usuario ejecutar todas las órdenes de cualquier usuario, pero únicamente en la máquina con el hostname NOMBRE_DEL_EQUIPO:
+Para permitir a un usuario ejecutar todas los comandos como cualquier usuario, pero únicamente en la máquina con el nombre `NOMBRE_DEL_EQUIPO`:
 
 ```
 NOMBRE_DE_USUARIO   NOMBRE_DE_EQUIPO=(ALL) ALL
@@ -121,34 +116,36 @@ Para permitir que los miembros del grupo `wheel` tengan acceso a sudo:
 
 ```
 
-Para desactivar solicitar una contraseña para el usuario NOMBRE_DE_USUARIO:
+Para dehabilitar la solicitud de contraseña para el usuario `NOMBRE_DE_USUARIO`:
+
+**Advertencia:** Esto permitirá que cualquier proceso que se ejecute con su nombre de usuario use sudo sin solicitar permiso.
 
 ```
 Defaults:NOMBRE_DE_USUARIO      !authenticate
 
 ```
 
-Para activar las órdenes definidas explícitamente solo para el usuario NOMBRE_DE_USUARIO en el equipo NOMBRE_DEL_EQUIPO:
+Para habilitar las órdenes definidas explícitamente solo para el usuario `NOMBRE_DE_USUARIO` en el equipo `NOMBRE_DEL_EQUIPO`:
 
 ```
-USER_NAME NOMBRE_DEL_EQUIPO=/sbin/halt,/sbin/poweroff,/sbin/reboot,/usr/bin/pacman -Syu
-
-```
-
-**Nota:** La opción personalizada añadida debe ir al final del archivo, ya que las líneas posteriores anulan las anteriores. En particular, esta línea debe ser posterior a la línea `%wheel` si el usuario se encuentra en este grupo.
-
-Para activar, sin necesidad de contraseña, las órdenes definidas explícitamente únicamente para el usuario NOMBRE_DE_USUARIO en el equipo NOMBRE_DEL_EQUIPO:
-
-```
-NOMBRE_DE_USUARIO NOMBRE_DEL_EQUIPO= NOPASSWD: /sbin/halt,/sbin/poweroff,/sbin/reboot,/usr/bin/pacman -Syu
+NOMBRE_DE_USUARIO NOMBRE_DEL_EQUIPO=/usr/bin/halt,/usr/bin/poweroff,/usr/bin/reboot,/usr/bin/pacman -Syu
 
 ```
 
-Un ejemplo detallado de archivo sudoers se puede encontrar [aquí](http://www.gratisoft.us/sudo/sample.sudoers). Por otro lado, véase el [manual de sudoers](http://www.gratisoft.us/sudo/man/sudoers.html) para obtener más información.
+**Nota:** La opción más personalizada debe ir al final del archivo, ya que las líneas posteriores anulan las anteriores. En particular, una línea de este tipo debe estar después de la línea `%wheel` si su usuario está en este grupo.
 
-### Permisos de archivos predeterminados por sudoers
+Para activar, sin necesidad de contraseña, los comandos definidos explícitamente solo para el usuario `NOMBRE_DE_USUARIO` en el equipo `NOMBRE_DEL_EQUIPO`:
 
-El propietario y el grupo para el archivo sudoers deben ser ambos 0\. Los permisos de los archivos se deben establecer en 0440\. Estos permisos se establecen de forma predeterminada, pero si accidentalmente los cambia, debe modificarlos de inmediato o sudo fallará.
+```
+NOMBRE_DE_USUARIO NOMBRE_DEL_EQUIPO= NOPASSWD: /usr/bin/halt,/usr/bin/poweroff,/usr/bin/reboot,/usr/bin/pacman -Syu
+
+```
+
+Un ejemplo detallado de `sudoers` está disponible en `/usr/share/doc/sudo/examples/sudoers`. Por otro lado, consulte [sudoers(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sudoers.5) para obtener información detallada.
+
+### Permisos de archivo predeterminados de sudoers
+
+El propietario y el grupo para el archivo `sudoers` deben ser ambos 0\. Los permisos de los archivos deben establecerse en 0440\. Estos permisos se establecen de forma predeterminada, pero si los cambia accidentalmente, deberían ser cambiados de nuevo inmediatamente o sudo fallará.
 
 ```
 # chown -c root:root /etc/sudoers
@@ -158,18 +155,18 @@ El propietario y el grupo para el archivo sudoers deben ser ambos 0\. Los permis
 
 ## Consejos y trucos
 
-### Desactivar sudo para cada terminal
+### Deshabilitar sudo por terminal
 
-**Advertencia:** Esto permitirá usar cualquier proceso desde la sesión de sudo.
+**Advertencia:** Esto permitirá que cualquier proceso use su sesión sudo.
 
-Si le molesta que sudo, de forma predeterminada, le obligue a introducir la contraseña cada vez que se abre una nueva terminal, desactive **tty_tickets**:
+Si le molesta que sudo, de forma predeterminada, requiera introducir la contraseña cada vez que se abra un nuevo terminal, deshabilite **tty_tickets**:
 
 ```
 Defaults !tty_tickets
 
 ```
 
-### Variables de entornos
+### Variables de entorno
 
 Si se tienen muchas variables de entorno, o exporta la configuración del proxy a través de `export http_proxy="..."`, al usar sudo estas variables no se pasan a la cuenta de root, a menos que ejecute sudo con la opción `-E`.
 

@@ -1,27 +1,65 @@
-### Arch Linux Wiki
+**Vitajte na [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About"): vašom webovom zdroji dokumentácie pre Arch Linux.**
 
-Vitajte na [Arch Linux](/index.php/Arch_Linux "Arch Linux") Wiki.
+Navštívte [obsah](/index.php/Table_of_contents_(Slovensk%C3%BD) "Table of contents (Slovenský)") pre zoznam kategórií článkov.
 
-#### Začíname
+## Distribúcia
 
-*   [Arch Linux](/index.php/ArchLinux_(Slovensky) "ArchLinux (Slovensky)")
-*   [Arch vs ostatné](/index.php/Arch_vs_Ostatn%C3%A9_distrib%C3%BAcie "Arch vs Ostatné distribúcie")
-*   [FAQ](/index.php/FAQ_(Slovensk%C3%BD) "FAQ (Slovenský)")
-*   [Ako je to v Archu](/index.php/Ako_je_to_v_Archu "Ako je to v Archu")
-*   [ArchWiki tutoriál](/index.php/ArchWiki_tutori%C3%A1l "ArchWiki tutoriál")
+	[Arch Linux](/index.php/Arch_Linux_(Slovensk%C3%BD) "Arch Linux (Slovenský)")
 
-#### Wiki Novinky
+	Prehľad Arch Linuxu, popisuje čo očakávať od systému Arch Linux.
 
-Z času na čas sa vyskytne nejaká novinka hodná oznámenia, ale len pre wiki. V takýchto prípadoch, skontrolujte stránku [Wiki News](/index.php/Wiki_News "Wiki News") ohľadom najnovších informácií o Wiki.
+	[Často kladené otázky](/index.php/Frequently_asked_questions_(Slovensk%C3%BD) "Frequently asked questions (Slovenský)")
 
-#### Veci ktoré treba vidieť a urobiť
+	Otázky a fakty o distribúcii.
 
-Toto je jednoduchý zoznam miest vo wiki. Väčšina wiki je prehliadateľná cez **navigačnú lištu** na ľavej a pravej strane, a cez upravovacie a funkčné **panely** na vrchu. V spodnej časti nájdete hypertextové odkazy (linky) na ostatné stránky Arch linuxu.
+	[Arch v porovnaní s inými distribúciami](/index.php/Arch_compared_to_other_distributions_(Slovensk%C3%BD) "Arch compared to other distributions (Slovenský)")
 
-#### Vytváranie vašich vlastných stránok
+	Zhrnutie podobností a odlišností medzi Arch a inými distribúciami.
 
-Ak chcete začať upravovať stránky, musíte si vytvoriť vlastné konto. Po jeho vytvorení sa môžete pohrať v [Sandbox](/index.php/Sandbox "Sandbox") aby ste sa oboznámili so značkovacím systémom ArchWiki. Vaša používateľská stránka je ďaľším dobrým miestom na hranie. V [kategórii Wiki Help](/index.php/Category:Help "Category:Help") je zoznam jednoduchej syntaxe. Tento odkaz je tiež na navigačnej lište.
+	[Inštalačný sprievodca](/index.php/Installation_guide_(Slovensk%C3%BD) "Installation guide (Slovenský)")
 
-#### Kontakty
+	Sprievodca procesom inštalácie systému Arch Linux.
 
-Pre akékoľvek otázky a návrhy pozrite [ContactList](/index.php/ContactList "ContactList")
+	[Obecné odporúčania](/index.php/General_recommendations "General recommendations")
+
+	Komentovaný zoznam po-inštalačných príručiek a ostatných populárnych článkov.
+
+	[Zoznam aplikácií](/index.php/List_of_applications "List of applications")
+
+	Zoznam bežne používaných oficiálnych balíčkov a AUR balíčkov usporiadaný do kategórií.
+
+## Naša komunita
+
+	[Pravidlá správania](/index.php/Code_of_conduct "Code of conduct")
+
+	Odporúčania pre Arch komunitu.
+
+	[Zapoj sa](/index.php/Getting_involved "Getting involved")
+
+	Opisuje rôzne spôsoby ako prispievať do Arch komunity.
+
+	[Medzinárodná komunita](/index.php/International_communities "International communities")
+
+	Zbierka odkazov na Arch komunity po celom svete.
+
+	[IRC kanály](/index.php/IRC_channels "IRC channels")
+
+	Spoj sa s ostanými a pokecaj si.
+
+## Wiki interakcia
+
+	[Pomoc:Čítanie](/index.php/Help:Reading "Help:Reading")
+
+	Nájdi upresnenie ak nerozumieš inštrukciám v niektorých článkoch.
+
+	[Pomoc:Vyhľadávanie](/index.php/Help:Searching "Help:Searching")
+
+	Skús použiť vyhľadávacie pole na vrchu stránky; nasleduj link pre viac info.
+
+	[Pomoc:Prispievanie](/index.php/ArchWiki:Contributing "ArchWiki:Contributing")
+
+	Štartovací bod pre tých, ktorí chcú prispivať do wiki.
+
+	[Pomoc:Úpravy](/index.php/Help:Editing_(Slovensk%C3%BD) "Help:Editing (Slovenský)")
+
+	Sprievodca úpravou článkov a úvod do syntaxe wiki.

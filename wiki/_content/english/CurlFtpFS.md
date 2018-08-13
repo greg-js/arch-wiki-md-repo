@@ -2,9 +2,9 @@ Related articles
 
 *   [List of applications/Internet#FTP clients](/index.php/List_of_applications/Internet#FTP_clients "List of applications/Internet")
 
-**Note:** As of February 2015, curlftpfs is reported to be extremely slow, see for example [a Ubuntu bug report](https://bugs.launchpad.net/ubuntu/+source/curlftpfs/+bug/1267749) and a [stackoverflow.com question](http://stackoverflow.com/questions/24360479/ftp-with-curlftpfs-is-extremely-slow-to-the-point-it-is-impossible-to-work-with).
-
 [CurlFtpFS](http://curlftpfs.sourceforge.net/) is a filesystem for accessing FTP hosts based on [FUSE](/index.php/FUSE "FUSE") and libcurl.
+
+**Note:** As of February 2015, curlftpfs is reported to be extremely slow, see for example a [Ubuntu bug report](https://bugs.launchpad.net/ubuntu/+source/curlftpfs/+bug/1267749) and a [stackoverflow.com question](http://stackoverflow.com/questions/24360479/ftp-with-curlftpfs-is-extremely-slow-to-the-point-it-is-impossible-to-work-with).
 
 ## Contents
 
@@ -30,14 +30,14 @@ Create the mount point and then mount the FTP folder.
 
 ```
 # mkdir /mnt/ftp
-# curlftpfs ftp.yourserver.com /mnt/ftp/ -o user=username:password
+# curlftpfs ftp.example.com /mnt/ftp/ -o user=username:password
 
 ```
 
 If you want to give other (regular) users access right, use the `allow_other` option:
 
 ```
-# curlftpfs ftp.yourserver.com /mnt/ftp/ -o user=username:password,allow_other
+# curlftpfs ftp.example.com /mnt/ftp/ -o user=username:password,allow_other
 
 ```
 
@@ -46,14 +46,14 @@ Do not add space after the comma or the `allow_other` argument will not be recog
 To use FTP in active mode add the option 'ftp_port=-':
 
 ```
-# curlftpfs ftp.yourserver.com /mnt/ftp/ -o user=username:password,allow_other,ftp_port=-
+# curlftpfs ftp.example.com /mnt/ftp/ -o user=username:password,allow_other,ftp_port=-
 
 ```
 
 You can add this line to /etc/fstab to mount automatically.
 
 ```
-curlftpfs#USER:PASSWORD@ftp.domain.org /mnt/mydomainorg fuse auto,user,uid=1000,allow_other,_netdev 0 0
+curlftpfs#USER:PASSWORD@ftp.example.com /mnt/exampleorg fuse auto,user,uid=1000,allow_other,_netdev 0 0
 
 ```
 
@@ -62,7 +62,7 @@ curlftpfs#USER:PASSWORD@ftp.domain.org /mnt/mydomainorg fuse auto,user,uid=1000,
 To prevent the password to be shown in the process list, create a `.netrc` file in the home directory of the user running curlftpfs and `chmod 600` with the following content:
 
 ```
-machine ftp.yourserver.com
+machine ftp.example.com
 login username
 password mypassword
 
@@ -73,8 +73,8 @@ password mypassword
 You can also mount as normal user (always use the `.netrc` file for the credentials and ssl encryption!):
 
 ```
-$ mkdir ~/my-server
-$ curlftpfs -o ssl,utf8 ftp://my-server.tld/ ~/my-server
+$ mkdir ~/example
+$ curlftpfs -o ssl,utf8 ftp://example.com/ ~/example
 
 ```
 
@@ -92,31 +92,31 @@ then the server does not support the `utf8` option. Leave it out and all will be
 To unmount:
 
 ```
-$ fusermount -u ~/my-server
+$ fusermount -u ~/example
 
 ```
 
 ## Connect to encrypted server
 
-In it's default settings, CurlFtpFS will authenticate in cleartext when connecting to a non encrypted connection port. If the remote server is configured to refuse non encrypted authentification method / force encrypted authentification, CurlFtpFS will return a
+In it's default settings, CurlFtpFS will authenticate in cleartext when connecting to a non encrypted connection port. If the remote server is configured to refuse non encrypted authentication method / force encrypted authentication, CurlFtpFS will return a
 
 ```
 # Error connecting to ftp: Access denied: 530
 
 ```
 
-To authenticate to the ftp server using explicit encrypted authentification, you must specify the ssl or tsl option.
+To authenticate to the ftp server using explicit encrypted authentication, you must specify the ssl option.
 
 ```
-# curlftpfs ftp.yourserver.com /mnt/ftp/ -o ssl,user=username:password
-
-```
-
-If your server uses a self-generated certificate not thrusted by your computer, you can specify to ignore it
-
-```
-# curlftpfs ftp.yourserver.com /mnt/ftp/ -o ssl,no_verify_peer,no_verify_hostname,user=username:password
+# curlftpfs ftp.example.com /mnt/ftp/ -o ssl,user=username:password
 
 ```
 
-An implicit tsl mode is also available. For more details, check the manual page.
+If your server uses a self-generated certificate not trusted by your computer, you can specify to ignore it
+
+```
+# curlftpfs ftp.example.com /mnt/ftp/ -o ssl,no_verify_peer,no_verify_hostname,user=username:password
+
+```
+
+For more details, see the [curlftpfs(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/curlftpfs.1) man page.

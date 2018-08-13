@@ -106,7 +106,7 @@ Le librerie che gestiscono i font possono essere compilate con patch per miglior
 
 ## Audio/video
 
-*[Category:Audio/Video (Italiano)](/index.php/Category:Audio/Video_(Italiano) "Category:Audio/Video (Italiano)") include ulteriori risorse sulle componenti multimediali.*
+*[Category:Multimedia (Italiano)](/index.php/Category:Multimedia_(Italiano) "Category:Multimedia (Italiano)") include ulteriori risorse sulle componenti multimediali.*
 
 ### Browser plugins
 

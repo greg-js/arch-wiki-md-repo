@@ -443,7 +443,7 @@ To remove an attribute on a file just change `+` to `-`.
 
 ## Extended attributes
 
-From [attr(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/attr.5): "Extended attributes are name:value pairs associated permanently with files and directories". There are four extended attribute classes: security, system, trusted and user.
+From [attr(5)](https://linux.die.net/man/5/attr): "Extended attributes are name:value pairs associated permanently with files and directories". There are four extended attribute classes: security, system, trusted and user.
 
 **Warning:** By default, extended attributes are not preserved by [cp](/index.php/Cp "Cp"), [rsync](/index.php/Rsync "Rsync"), and other similar programs.
 
@@ -452,15 +452,15 @@ From [attr(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/attr.5): "Extended att
 User extended attributes can be used to store arbitrary information about a file. To create one:
 
 ```
-$ setfattr -n user.checksum -v "3baf9ebce4c664ca8d9e5f6314fb47fb" foo.bar
+$ setfattr -n user.checksum -v "3baf9ebce4c664ca8d9e5f6314fb47fb" foo.txt
 
 ```
 
 Use getfattr to display extended attributes:
 
- `$ getfattr -d foo.bar` 
+ `$ getfattr -d foo.txt` 
 ```
-# file: foo.bar
+# file: foo.txt
 user.checksum="3baf9ebce4c664ca8d9e5f6314fb47fb"
 ```
 

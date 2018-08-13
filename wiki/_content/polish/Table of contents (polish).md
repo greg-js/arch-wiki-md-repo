@@ -17,8 +17,8 @@
 | <small>6.2.1.</small> [Pacman development](/index.php/Category:Pacman_development_(Polski) "Category:Pacman development (Polski)") <small>(1)</small> |
 | <small>6.3.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(Polski) "Category:Getting and installing Arch (Polski)") <small>(2) (również w [About Arch](/index.php/Category:About_Arch_(Polski) "Category:About Arch (Polski)"))</small> |
 | <small>6.4.</small> [System administration](/index.php/Category:System_administration_(Polski) "Category:System administration (Polski)") <small>(0)</small> |
-| <small>6.4.1.</small> [Audio/Video](/index.php/Category:Audio/Video_(Polski) "Category:Audio/Video (Polski)") <small>(1)</small> |
-| <small>6.4.2.</small> [Eye candy](/index.php/Category:Eye_candy_(Polski) "Category:Eye candy (Polski)") <small>(1)</small> |
+| <small>6.4.1.</small> [Eye candy](/index.php/Category:Eye_candy_(Polski) "Category:Eye candy (Polski)") <small>(1)</small> |
+| <small>6.4.2.</small> [Multimedia](/index.php/Category:Multimedia_(Polski) "Category:Multimedia (Polski)") <small>(1)</small> |
 | <small>6.4.3.</small> [Security](/index.php/Category:Security_(Polski) "Category:Security (Polski)") <small>(0)</small> |
 | <small>6.4.3.1.</small> [Encryption](/index.php/Category:Encryption_(Polski) "Category:Encryption (Polski)") <small>(1)</small> |
 | <small>6.4.3.1.1.</small> [Disk encryption](/index.php/Category:Disk_encryption_(Polski) "Category:Disk encryption (Polski)") <small>(8) (również w [File systems](/index.php/Category:File_systems_(Polski) "Category:File systems (Polski)"))</small> |

@@ -3,8 +3,6 @@ Related articles
 *   [Improving performance/Boot process](/index.php/Improving_performance/Boot_process "Improving performance/Boot process")
 *   [Pacman/Tips and tricks#Performance](/index.php/Pacman/Tips_and_tricks#Performance "Pacman/Tips and tricks")
 *   [SSH#Speeding up SSH](/index.php/SSH#Speeding_up_SSH "SSH")
-*   [LibreOffice#Speed up LibreOffice](/index.php/LibreOffice#Speed_up_LibreOffice "LibreOffice")
-
 *   [Openoffice#Speed up OpenOffice](/index.php/Openoffice#Speed_up_OpenOffice "Openoffice")
 *   [Laptop](/index.php/Laptop "Laptop")
 *   [Preload](/index.php/Preload "Preload")
@@ -502,10 +500,10 @@ In the unlikely case that you have very little RAM and a surplus of video RAM, y
 
 ## Network
 
-*   Kernel networking: [Sysctl#Improving performance](/index.php/Sysctl#Improving_performance "Sysctl")
-*   NIC: [Network configuration#Set device MTU and queue length](/index.php/Network_configuration#Set_device_MTU_and_queue_length "Network configuration")
-*   DNS: [Domain name resolution#Performance](/index.php/Domain_name_resolution#Performance "Domain name resolution")
-*   Samba: [Samba#Improve performance](/index.php/Samba#Improve_performance "Samba")
+*   Kernel networking: see [Sysctl#Improving performance](/index.php/Sysctl#Improving_performance "Sysctl")
+*   NIC: see [Network configuration#Set device MTU and queue length](/index.php/Network_configuration#Set_device_MTU_and_queue_length "Network configuration")
+*   DNS: consider using a caching DNS resolver, see [Domain name resolution#Resolvers](/index.php/Domain_name_resolution#Resolvers "Domain name resolution")
+*   Samba: see [Samba#Improve throughput](/index.php/Samba#Improve_throughput "Samba")
 
 ## Watchdogs
 

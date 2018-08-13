@@ -121,7 +121,7 @@ If you want to use a partition which is currently used by the system, you have t
 
 Also make sure you remove any line in `/etc/crypttab` pointing to this device.
 
-If you are reusing an existing swap [partition](/index.php/Partition "Partition"), and if the partition is on a GPT partition table, you will need use [gdisk](/index.php/Gdisk "Gdisk") to set the [partition attribute](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries_.28LBA_2-33.29 "wikipedia:GUID Partition Table") `63` "do not automount" on it. This will prevent systemd-gpt-auto-generator from discovering and enabling the partition at boot.
+If you are reusing an existing swap [partition](/index.php/Partition "Partition"), and if the partition is on a GPT partition table, you will need use [gdisk](/index.php/Gdisk "Gdisk") to set the [partition attribute 63 "do not automount"](/index.php/Gdisk#Prevent_GPT_partition_automounting "Gdisk") on it. This will prevent systemd-gpt-auto-generator from discovering and enabling the partition at boot.
 
 The following setup has the disadvantage of having to insert an additional passphrase for the swap partition manually on every boot.
 

@@ -336,7 +336,7 @@ IRB.conf[:HISTORY_FILE] ||= File.join(ENV["XDG_DATA_HOME"], "irb", "history")
 | [irssi](/index.php/Irssi "Irssi") | `~/.irssi` | [[80]](https://github.com/irssi/irssi/pull/511) | `$ irssi --config="$XDG_CONFIG_HOME"/irssi/config --home="$XDG_DATA_HOME"/irssi` |
 | [isync](/index.php/Isync "Isync") | `~/.mbsyncrc` | `$ mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc` |
 | [Java](/index.php/Java "Java") (OpenJDK) | `~/.java/.userPrefs` | `$ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java` |
-| [less](/index.php/Core_utilities#less_.28view_file.29 "Core utilities") | `~/.lesshst` | `$ mkdir -p "$XDG_CACHE_HOME"/less`
+| [less](/index.php/Core_utilities#less "Core utilities") | `~/.lesshst` | `$ mkdir -p "$XDG_CACHE_HOME"/less`
 
 `$ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history`
 

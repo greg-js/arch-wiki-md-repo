@@ -25,7 +25,11 @@
             *   [1.2.4.1 Archive managers](#Archive_managers)
         *   [1.2.5 Comparison, diff, merge](#Comparison.2C_diff.2C_merge)
         *   [1.2.6 Batch renamers](#Batch_renamers)
-        *   [1.2.7 Finders](#Finders)
+        *   [1.2.7 File searching](#File_searching)
+            *   [1.2.7.1 Console](#Console_2)
+            *   [1.2.7.2 Graphical](#Graphical_2)
+            *   [1.2.7.3 File indexers](#File_indexers)
+                *   [1.2.7.3.1 Full-text indexers](#Full-text_indexers)
     *   [1.3 Development](#Development)
         *   [1.3.1 Integrated development environments](#Integrated_development_environments)
         *   [1.3.2 GUI builders](#GUI_builders)
@@ -56,8 +60,8 @@
         *   [1.6.1 System monitoring](#System_monitoring)
         *   [1.6.2 Hardware sensor monitoring](#Hardware_sensor_monitoring)
         *   [1.6.3 System information viewers](#System_information_viewers)
-            *   [1.6.3.1 Console](#Console_2)
-            *   [1.6.3.2 Graphical](#Graphical_2)
+            *   [1.6.3.1 Console](#Console_3)
+            *   [1.6.3.2 Graphical](#Graphical_3)
         *   [1.6.4 System log viewers](#System_log_viewers)
         *   [1.6.5 Font viewers](#Font_viewers)
         *   [1.6.6 Help viewers](#Help_viewers)
@@ -592,55 +596,91 @@ For managing *pacnew*/*pacsave* files, specialised tools exist. See [Pacnew and 
 
 	[https://docs.xfce.org/xfce/thunar/bulk-renamer/start](https://docs.xfce.org/xfce/thunar/bulk-renamer/start) || [thunar](https://www.archlinux.org/packages/?name=thunar)
 
-#### Finders
+#### File searching
 
 See also [Wikipedia:List of search engines#Desktop search engines](https://en.wikipedia.org/wiki/List_of_search_engines#Desktop_search_engines "wikipedia:List of search engines").
 
-*   **Baloo** — KDE's file indexing and search solution.
+##### Console
 
-	[https://community.kde.org/Baloo](https://community.kde.org/Baloo) || [baloo](https://www.archlinux.org/packages/?name=baloo)
+*   **[GNU find](/index.php/GNU_find "GNU find")** — Command-line tool to search for files, can filter on many criteria.
 
-*   **Basenji** — Volume indexing tool designed for easy and fast indexing of CD/DVD and other type of volume collections.
+	[https://www.gnu.org/software/findutils/](https://www.gnu.org/software/findutils/) || [findutils](https://www.archlinux.org/packages/?name=findutils)
 
-	[https://github.com/pulb/basenji](https://github.com/pulb/basenji) || [basenji](https://aur.archlinux.org/packages/basenji/)
+*   **fd** — A simple, fast and user-friendly alternative to find.
 
-*   **Catfish** — Versatile file searching tool.
-
-	[https://launchpad.net/catfish-search](https://launchpad.net/catfish-search) || [catfish](https://www.archlinux.org/packages/?name=catfish)
-
-*   **Docfetcher** — Java desktop search application.
-
-	[http://docfetcher.sourceforge.net](http://docfetcher.sourceforge.net) || [docfetcher](https://aur.archlinux.org/packages/docfetcher/)
+	[https://github.com/sharkdp/fd](https://github.com/sharkdp/fd) || [fd](https://www.archlinux.org/packages/?name=fd)
 
 *   **fuzzy-find** — Fuzzy completion for finding files.
 
 	[https://github.com/silentbicycle/ff](https://github.com/silentbicycle/ff) || [ff-git](https://aur.archlinux.org/packages/ff-git/)
 
-*   **fzf** — General-purpose command-line fuzzy finder.
+*   **fzf** — General-purpose command-line fuzzy finder, powered by find by default.
 
-	[https://github.com/junegunn/fzf](https://github.com/junegunn/fzf) || [fzf](https://www.archlinux.org/packages/?name=fzf) [fzf-git](https://aur.archlinux.org/packages/fzf-git/)
+	[https://github.com/junegunn/fzf](https://github.com/junegunn/fzf) || [fzf](https://www.archlinux.org/packages/?name=fzf), [fzf-git](https://aur.archlinux.org/packages/fzf-git/)
 
-*   **GNOME Search Tool** — GNOME utility to search for files.
+For full-text search see [grep](/index.php/Grep "Grep") and its alternatives.
+
+##### Graphical
+
+*   **Catfish** — Versatile file searching tool by Xfce, can be powered by find, locate and Zeitgeist.
+
+	[https://launchpad.net/catfish-search](https://launchpad.net/catfish-search) || [catfish](https://www.archlinux.org/packages/?name=catfish)
+
+*   **GNOME Search Tool** — GNOME utility to search for files, depends on [GNOME/Files](/index.php/GNOME/Files "GNOME/Files").
 
 	[https://gitlab.gnome.org/GNOME/gnome-search-tool](https://gitlab.gnome.org/GNOME/gnome-search-tool) || [gnome-search-tool](https://www.archlinux.org/packages/?name=gnome-search-tool)
 
-*   **KFind** — Standalone search tool for KDE to find files by name, type or content.
+*   **KFind** — Search tool for KDE to find files by name, type or content. Has internal search and supports locate.
 
 	[https://www.kde.org/applications/utilities/kfind/](https://www.kde.org/applications/utilities/kfind/) || [kfind](https://www.archlinux.org/packages/?name=kfind)
 
-*   **Recoll** — Full text search tool based on Xapian backend.
+*   **MATE Search Tool** — MATE utility to search for files.
 
-	[https://lesbonscomptes.com/recoll/](https://lesbonscomptes.com/recoll/) || [recoll](https://www.archlinux.org/packages/?name=recoll)
+	[https://github.com/mate-desktop/mate-utils](https://github.com/mate-desktop/mate-utils) || [mate-utils](https://www.archlinux.org/packages/?name=mate-utils)
+
+*   **regexxer** — Interactive search and replace tool featuring Perl-style regular expressions.
+
+	[http://regexxer.sourceforge.net/](http://regexxer.sourceforge.net/) || [regexxer](https://www.archlinux.org/packages/?name=regexxer)
 
 *   **Searchmonkey** — Powerful GUI search utility for matching regex patterns.
 
 	[http://searchmonkey.sourceforge.net/](http://searchmonkey.sourceforge.net/) || [searchmonkey](https://aur.archlinux.org/packages/searchmonkey/)
 
-*   **[Tracker](https://en.wikipedia.org/wiki/Tracker_(search_software) "wikipedia:Tracker (search software)")** — All-in-one indexer, search tool and metadata database.
+##### File indexers
+
+These programs index your files to allow for quick searching.
+
+*   **Basenji** — Volume indexing tool designed for easy and fast indexing of CD/DVD and other type of volume collections.
+
+	[https://github.com/pulb/basenji](https://github.com/pulb/basenji) || [basenji](https://aur.archlinux.org/packages/basenji/)
+
+*   **fsearch** — A fast file search utility for Unix-like systems based on GTK+3.
+
+	[https://github.com/cboxdoerfer/fsearch](https://github.com/cboxdoerfer/fsearch) || [fsearch-git](https://aur.archlinux.org/packages/fsearch-git/)
+
+*   **[mlocate](/index.php/Mlocate "Mlocate")** — Merging locate/updatedb implementation (command-line).
+
+	[https://pagure.io/mlocate](https://pagure.io/mlocate) || [mlocate](https://www.archlinux.org/packages/?name=mlocate)
+
+###### Full-text indexers
+
+*   **[Baloo](/index.php/Baloo "Baloo")** — KDE's file indexing and search solution, has a CLI and is used by [KRunner](/index.php/KRunner "KRunner").
+
+	[https://community.kde.org/Baloo](https://community.kde.org/Baloo) || [baloo](https://www.archlinux.org/packages/?name=baloo)
+
+*   **[DocFetcher](https://en.wikipedia.org/wiki/DocFetcher "wikipedia:DocFetcher")** — Graphical Java desktop search application.
+
+	[http://docfetcher.sourceforge.net](http://docfetcher.sourceforge.net) || [docfetcher](https://aur.archlinux.org/packages/docfetcher/)
+
+*   **[Recoll](https://en.wikipedia.org/wiki/Recoll "wikipedia:Recoll")** — Full text search tool based on Xapian, has CLI and GUI.
+
+	[https://lesbonscomptes.com/recoll/](https://lesbonscomptes.com/recoll/) || [recoll](https://www.archlinux.org/packages/?name=recoll)
+
+*   **[Tracker](https://en.wikipedia.org/wiki/Tracker_(search_software) "wikipedia:Tracker (search software)")** — All-in-one indexer, search tool and metadata database, used by [GNOME](/index.php/GNOME "GNOME") Documents, Music, Photos and Videos.
 
 	[https://wiki.gnome.org/Projects/Tracker](https://wiki.gnome.org/Projects/Tracker) || [tracker](https://www.archlinux.org/packages/?name=tracker)
 
-*   **[Zeitgeist](/index.php/Zeitgeist "Zeitgeist")** — Event aggregation framework for the user's activities and notifications (files opened, websites visited, conversations hold with other people, etc.) and makes the relevant information available to other applications.
+*   **[Zeitgeist](/index.php/Zeitgeist "Zeitgeist")** — Event aggregation framework for the user's activities and notifications (files opened, websites visited, conversations had, etc.), has several third-party front-ends.
 
 	[https://launchpad.net/zeitgeist-project](https://launchpad.net/zeitgeist-project) || [zeitgeist](https://www.archlinux.org/packages/?name=zeitgeist)
 

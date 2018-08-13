@@ -34,9 +34,9 @@
 | <small>12.3.</small> [X 서버](/index.php/Category:X_server_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:X server (한국어)") <small>(2)</small> |
 | <small>13.</small> [Stacking WMs](/index.php/Category:Stacking_WMs_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Stacking WMs (한국어)") <small>(3)</small> |
 | <small>14.</small> [시스템 관리](/index.php/Category:System_administration_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:System administration (한국어)") <small>(1)</small> |
-| <small>14.1.</small> [Audio/Video](/index.php/Category:Audio/Video_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Audio/Video (한국어)") <small>(1)</small> |
-| <small>14.2.</small> [Eye candy](/index.php/Category:Eye_candy_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Eye candy (한국어)") <small>(1)</small> |
-| <small>14.3.</small> [File systems](/index.php/Category:File_systems_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:File systems (한국어)") <small>(1)</small> |
-| <small>14.4.</small> [Internationalization](/index.php/Category:Internationalization_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Internationalization (한국어)") <small>(4)</small> |
+| <small>14.1.</small> [Eye candy](/index.php/Category:Eye_candy_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Eye candy (한국어)") <small>(1)</small> |
+| <small>14.2.</small> [File systems](/index.php/Category:File_systems_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:File systems (한국어)") <small>(1)</small> |
+| <small>14.3.</small> [Localization](/index.php/Category:Localization_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Localization (한국어)") <small>(4)</small> |
+| <small>14.4.</small> [Multimedia](/index.php/Category:Multimedia_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Multimedia (한국어)") <small>(1)</small> |
 | <small>14.5.</small> [Security](/index.php/Category:Security_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Security (한국어)") <small>(1)</small> |
 | <small>15.</small> [Web browser](/index.php/Category:Web_browser_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Web browser (한국어)") <small>(1)</small> |

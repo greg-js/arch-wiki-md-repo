@@ -2,6 +2,7 @@ Related articles
 
 *   [File systems](/index.php/File_systems "File systems")
 *   [fdisk](/index.php/Fdisk "Fdisk")
+*   [gdisk](/index.php/Gdisk "Gdisk")
 *   [parted](/index.php/Parted "Parted")
 *   [fstab](/index.php/Fstab "Fstab")
 *   [LVM](/index.php/LVM "LVM")
@@ -43,8 +44,9 @@ Once created, a partition must be formatted with an appropriate [file system](/i
         *   [2.3.2 BIOS/MBR example layout](#BIOS.2FMBR_example_layout)
         *   [2.3.3 BIOS/GPT example layout](#BIOS.2FGPT_example_layout)
 *   [3 Partitioning tools](#Partitioning_tools)
-    *   [3.1 fdisk/gdisk](#fdisk.2Fgdisk)
-    *   [3.2 GNU Parted](#GNU_Parted)
+    *   [3.1 fdisk](#fdisk)
+    *   [3.2 GPT fdisk](#GPT_fdisk)
+    *   [3.3 GNU Parted](#GNU_Parted)
 *   [4 Partition alignment](#Partition_alignment)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Converting MBR to GPT](#Converting_MBR_to_GPT)
@@ -108,7 +110,7 @@ Some advantages of GPT over MBR are:
 *   Provides a filesystem-independent [partition name](/index.php/Persistent_block_device_naming#by-partlabel "Persistent block device naming") (`PARTLABEL`).
 *   Arbitrary number of partitions - depends on space allocated for the partition table - No need for extended and logical partitions. By default the GPT table contains space for defining 128 partitions. However if you want to define more partitions, you can allocate more space to the partition table (currently only *gdisk* is known to support this feature).
 *   Uses 64-bit LBA for storing Sector numbers - maximum addressable disk size is 2 ZiB. MBR is limited to addressing 2 TiB of space per drive.
-*   Stores a backup header and partition table at the end of the disk that aids in [recovery](/index.php/Fdisk#Recover_GPT_header "Fdisk") in case the primary ones are damaged.
+*   Stores a backup header and partition table at the end of the disk that aids in [recovery](/index.php/Gdisk#Recover_GPT_header "Gdisk") in case the primary ones are damaged.
 *   CRC32 checksums to detect errors and corruption of the header and partition table.
 
 The section on [#Partitioning tools](#Partitioning_tools) contains a table indicating which tools are available for creating and modifying GPT and MBR tables.
@@ -123,7 +125,7 @@ Partitionless disk a.k.a. [superfloppy](https://docs.microsoft.com/en-us/windows
 
 ### Backup
 
-See [fdisk#Backup and restore partition table](/index.php/Fdisk#Backup_and_restore_partition_table "Fdisk").
+See [fdisk#Backup and restore partition table](/index.php/Fdisk#Backup_and_restore_partition_table "Fdisk") or [gdisk#Backup and restore partition table](/index.php/Gdisk#Backup_and_restore_partition_table "Gdisk").
 
 ### Recover
 
@@ -172,7 +174,7 @@ A separate `/boot` partition is needed if installing a software RAID0 (stripe) s
 
 **Note:** If booting using UEFI [boot loaders](/index.php/Boot_loaders "Boot loaders") that do not have drivers for other file systems it is recommended to mount [EFI system partition](/index.php/EFI_system_partition "EFI system partition") to `/boot`. See [EFI system partition#Mount the partition](/index.php/EFI_system_partition#Mount_the_partition "EFI system partition") for more information.
 
-A suggested size for `/boot` is 200 MiB unless you are using [EFI system partition](/index.php/EFI_system_partition "EFI system partition") as `/boot`, in which case at least 550 MiB is recommended.
+A suggested size for `/boot` is 200 MiB unless you are using [EFI system partition](/index.php/EFI_system_partition "EFI system partition") as `/boot`, in which case 550 MiB is recommended.
 
 #### /home
 
@@ -256,17 +258,21 @@ partitionmanager |
 
 **Warning:** To partition devices, use a partitioning tool compatible to the chosen type of partition table. Incompatible tools may result in the destruction of that table, along with existing partitions or data.
 
-### fdisk/gdisk
+### fdisk
 
-Both *fdisk* or *gdisk* are described in the [fdisk](/index.php/Fdisk "Fdisk") article.
+*fdisk* and its related utilities are described in the [fdisk](/index.php/Fdisk "Fdisk") article.
 
 *   [fdisk](/index.php/Fdisk "Fdisk") ([util-linux](https://www.archlinux.org/packages/?name=util-linux))
     *   [fdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fdisk.8) – Dialog-driven program for creation and manipulation of partition tables.
     *   [cfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cfdisk.8) – Curses-based variant of fdisk.
     *   [sfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sfdisk.8) – Scriptable variant of fdisk.
 
-*   [gdisk](/index.php/Gdisk "Gdisk") ([gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)) – [GPT](#GUID_Partition_Table) fdisk
-    *   [gdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gdisk.8) – Interactive GUID partition table (GPT) manipulator.
+### GPT fdisk
+
+*gdisk* and its related utilities are described in the [gdisk](/index.php/Gdisk "Gdisk") article.
+
+*   [GPT fdisk](/index.php/GPT_fdisk "GPT fdisk") ([gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk))
+    *   [gdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gdisk.8) – Interactive [GUID partition table (GPT)](#GUID_Partition_Table) manipulator.
     *   [cgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cgdisk.8) – Curses-based variant of gdisk.
     *   [sgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sgdisk.8) – Scriptable variant of gdisk.
 
@@ -292,7 +298,7 @@ These group of tools are described in the [GNU Parted](/index.php/GNU_Parted "GN
 
 ## Partition alignment
 
-[fdisk/gdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted#Alignment "Parted") handle alignment automatically. See [GNU Parted#Check alignment](/index.php/GNU_Parted#Check_alignment "GNU Parted") if you want to verify your alignment after partitioning.
+[fdisk](/index.php/Fdisk "Fdisk"), [gdisk](/index.php/Gdisk "Gdisk") and [parted](/index.php/Parted#Alignment "Parted") handle alignment automatically. See [GNU Parted#Check alignment](/index.php/GNU_Parted#Check_alignment "GNU Parted") if you want to verify your alignment after partitioning.
 
 For certain drives [Advanced Format](/index.php/Advanced_Format "Advanced Format") might be able to provide a better-performing alignment.
 

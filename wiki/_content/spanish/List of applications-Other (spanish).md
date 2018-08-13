@@ -354,7 +354,7 @@ Véase también [Wikipedia:Comparison of desktop application launchers](https://
 
 Un puñado de gestores de apagado están disponibles:
 
-*   **exitx** — Un diálogo de cierre de sesión para Openbox que usa [Sudo](/index.php/Sudo "Sudo").
+*   **exitx** — Un diálogo de cierre de sesión para Openbox que usa [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)").
 
 	[http://www.linuxsir.com/bbs/lastpostinthread350740.html](http://www.linuxsir.com/bbs/lastpostinthread350740.html) || [exitx](https://aur.archlinux.org/packages/exitx/)
 

@@ -462,8 +462,8 @@ Supporting widget toolkits:
 
 #### wlroots input inhibitor protocol
 
-[Input inhibitor](https://github.com/swaywm/wlr-protocols/blob/master/unstable/wlr-input-inhibitor-unstable-v1.xml) is a Wayland protocol which was defined the by developers of Sway and wlroots and is overlapping Wayland's Compositor shortcuts inhibit protocol.
-Sway and wlroots do not support the Compositor shortcuts inhibit and XWayland keyboard grabbing protocols, and least for the latter it seems like they are against adding support for it [[3]](https://github.com/swaywm/wlroots/pull/635#issuecomment-366385856) [[4]](https://github.com/swaywm/wlroots/issues/624#issuecomment-367276476).
+[Input inhibitor](https://github.com/swaywm/wlr-protocols/blob/master/unstable/wlr-input-inhibitor-unstable-v1.xml) is a Wayland protocol which was defined the by developers of Sway and wlroots and is overlapping Wayland's `Compositor shortcuts inhibit` protocol.
+Sway and wlroots do not support the `Compositor shortcuts inhibit` and `XWayland keyboard grabbing` protocols, and it seems they are against adding support for the latter [[3]](https://github.com/swaywm/wlroots/pull/635#issuecomment-366385856) [[4]](https://github.com/swaywm/wlroots/issues/624#issuecomment-367276476).
 No widget toolkit or application is known to support this protocol.
 
 ## See also

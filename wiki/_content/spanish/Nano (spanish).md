@@ -204,7 +204,7 @@ de la pantalla de nano
 
 ### Reemplazar vi con nano
 
-Aveces los usuarios prefieren usar `nano` que `vi` por su simplicidad y uso fácil, y pueden optar por reemplazar a vi por nano como editor de texto por comandos como [visudo](/index.php/Sudo#Using_visudo "Sudo").
+Aveces los usuarios prefieren usar `nano` que `vi` por su simplicidad y uso fácil, y pueden optar por reemplazar a vi por nano como editor de texto por comandos como [visudo](/index.php/Sudo_(Espa%C3%B1ol)#Utilizando_visudo "Sudo (Español)").
 
 Ajustando la [Variable de entorno](/index.php/Environment_variable#Defining_variables "Environment variable") `EDITOR` funcionará para muchas aplicaciones, por ejemplo:
 

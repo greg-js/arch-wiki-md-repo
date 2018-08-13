@@ -191,15 +191,15 @@ It is possible to resize the newly created partition from within the Arch instal
 **Note:** For more information on partitioning, see [Partitioning](/index.php/Partitioning "Partitioning")
 
 ```
-partition  mountpoint  size       type  label
-/dev/sda1  /boot/efi   200MiB     vfat  EFI
-/dev/sda2  -           ?          hfs+  OS X
-/dev/sda3  -           ?          hfs+  Recovery
-/dev/sda4  -           100MiB     hfs+  Boot Arch Linux from the Apple boot loader (optional)
-/dev/sda5  /boot       100MiB     boot  boot
-/dev/sda6  -           ?          swap  swap (optional)
-/dev/sda7  /           10GiB      ext4  root
-/dev/sda8  /home       remaining  ext4  home
+partition  mountpoint  size          type  label
+/dev/sda1  /boot/efi   200MiB        vfat  EFI
+/dev/sda2  -           ?             hfs+  OS X
+/dev/sda3  -           ?             hfs+  Recovery
+/dev/sda4  -           100MiB        hfs+  Boot Arch Linux from the Apple boot loader (optional)
+/dev/sda5  /boot       100MiB        boot  boot
+/dev/sda6  -           ?             swap  swap (optional)
+/dev/sda7  /           15-20GiB      ext4  root
+/dev/sda8  /home       remaining     ext4  home
 
 ```
 

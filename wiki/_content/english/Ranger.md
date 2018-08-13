@@ -316,12 +316,6 @@ To enable this feature, uncomment the appropriate lines in `/usr/share/doc/range
 
 ### Shell tips
 
- `rc.conf` 
-```
-map S shell shellcd %d
-
-```
-
 #### Synchronize path
 
 *ranger* provides a shell [function](/index.php/Bash/Functions "Bash/Functions") `/usr/share/doc/ranger/examples/bash_automatic_cd.sh`. Running `ranger-cd` instead of `ranger` will automatically *cd* to the last browsed folder.

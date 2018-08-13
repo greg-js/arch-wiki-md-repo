@@ -106,7 +106,7 @@ Stupid Mode = on
 
 ## Conectese a internet
 
-Ejecute wvdial como root o con [Sudo](/index.php/Sudo "Sudo")
+Ejecute wvdial como root o con [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)"):
 
 ```
 # wvdial &

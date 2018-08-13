@@ -13,7 +13,8 @@ Spotify also offers free users the ability to create playlist which can be shuff
         *   [2.2.1 MPRIS](#MPRIS)
             *   [2.2.1.1 Playerctl](#Playerctl)
             *   [2.2.1.2 D-Bus](#D-Bus)
-        *   [2.2.2 xdotool](#xdotool)
+        *   [2.2.2 pactl (pulseaudio)](#pactl_.28pulseaudio.29)
+        *   [2.2.3 xdotool](#xdotool)
     *   [2.3 Disable track notifications](#Disable_track_notifications)
     *   [2.4 Show track notifications](#Show_track_notifications)
     *   [2.5 Skip overplayed radio tracks](#Skip_overplayed_radio_tracks)
@@ -152,6 +153,90 @@ If the above commands do not work, try setting the dbus address:
  fi
 
 ```
+
+#### pactl (pulseaudio)
+
+As you might have noticed, MPRIS protocol commands don't include volume control. This is broken within spotify itself, which ignores volume change requests. However, there is a possibility to control volume via pulseaudio's input sink:
+
+```
+$ pactl set-sink-input-volume "$current_sink_num" +1% #volume up by 1%
+$ pactl set-sink-input-volume "$current_sink_num" -1% #volume down by 1%
+$ pactl set-sink-input-mute "$current_sink_num" toggle #mute toggler
+
+```
+
+The sink number for "$current_sink_num" can be found in the output of command
+
+ `$ pactl list sink-inputs` 
+```
+Sink Input #**3** << here
+Driver: protocol-native.c
+[...]
+application.name = "Spotify"
+```
+
+You can create a script for changing volume and bind it for example to keyboard shortcut via [desktop environments](/index.php/Desktop_environments "Desktop environments") configuration or xdotool described in next section. Here are some examples:
+
+Bash:
+
+```
+#!/bin/bash
+LANGUAGE="en_US"
+app_name="Spotify"
+current_sink_num=
+sink_num_check=
+app_name_check=
+pactl list sink-inputs |while read line; do \
+    sink_num_check=$(echo "$line" |sed -rn 's/^Sink Input #(.*)/\1/p')
+    if [ "$sink_num_check" != "" ]; then
+        current_sink_num="$sink_num_check"
+    else
+        app_name_check=$(echo "$line" \
+            |sed -rn 's/application.name = "([^"]*)"/\1/p')
+            if [ "$app_name_check" = "$app_name" ]; then
+                pactl set-sink-input-volume "$current_sink_num" +1%
+            fi
+    fi
+done
+
+```
+
+This script is based on work done by user [Mikołak](https://unix.stackexchange.com/users/52126/miko%c5%82ak) in [this post](https://unix.stackexchange.com/questions/208784/command-line-per-application-volume-maybe-amixer-or-pactl/209047#209047).
+
+Unfortunately this script is not the fastest solution and if you execute it multiple times via keyboard hotkey, it might become laggy.
+
+Faster (like 10 times) Python code (requires at least Python 3.7 to be installed):
+
+```
+#!/usr/bin/env python3
+#Author: Marcin Kocur, attribution license: [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/)
+import subprocess
+import os
+x=0
+y=0
+env = os.environ
+env['LANG'] = 'en_US'
+app = '"Spotify"'
+pactl = subprocess.check_output(['pactl', 'list', 'sink-inputs'], env=env).decode().strip().split()
+if app in pactl:
+    for e in pactl:
+        x += 1
+        if e == app:
+            break
+    for i in pactl[0 : x -1 ]:
+        y += 1
+        if i == 'Sink' and pactl[y] == 'Input' and '#' in pactl[y + 1]:
+            sink_id = pactl[y+1]
+        if i == 'Volume:' and '%' in pactl[y + 3]:
+            volume = pactl[y + 3]
+    sink_id = sink_id[1: ]
+    volume = volume[ : -1 ]
+    if int(volume) < 100:
+        subprocess.run(['pactl', 'set-sink-input-volume', sink_id, '+1%'])
+
+```
+
+You can save it to a .py file. The last line does the actual job, so you can adjust the command to lower the volume or toggle mute.
 
 #### xdotool
 

@@ -1,4 +1,4 @@
-Plank is a lightweight and minimal dock. Plank will not work if you are using Wayland.
+[Plank](https://launchpad.net/plank) is a lightweight and minimal dock. Plank will not work if you are using Wayland.
 
 ## Contents
 

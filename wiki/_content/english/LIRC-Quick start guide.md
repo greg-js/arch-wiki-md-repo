@@ -111,7 +111,7 @@ See if button presses are detected.
 
 See if button presses are detected.
 
-*   Create a modified systemd lircd.service file which loads the correct protocols:
+*   Create a modified systemd `lircd.service` file which loads the correct protocols:
 
 ```
 # cp /usr/lib/systemd/system/lircd.service /etc/systemd/system/
@@ -129,7 +129,7 @@ ExecStartPost=/usr/bin/ir-keytable -p <protocol> -p <protocol>
 
 where each "<protocol>" string is replaced by the protocol(s) you need (or just use `/usr/bin/ir-keytable -p all`).
 
-*   [Start](/index.php/Start "Start") the lirc daemon, `lircd.service`, so you can record keypresses in order to write an lircd configuration file for your remote control:
+*   [Start](/index.php/Start "Start") the lirc daemon, `lircd.service`, so you can record keypresses in order to write an lircd configuration file for your remote control.
 *   Use irrecord to record keypress scancodes.
 
 Run:
@@ -144,19 +144,19 @@ to save/record the keystrokes to be used for your application. Follow `irrecord`
 *   Install the recorded lircd configuration file:
 
 ```
-# mv device_name.lircd.conf /etc/lirc/lircd.conf.d/
-# chown root:root /etc/lirc/lircd.conf.d/device_name.lircd.conf
+# mv *device_name*.lircd.conf /etc/lirc/lircd.conf.d/
+# chown root:root /etc/lirc/lircd.conf.d/*device_name*.lircd.conf
 
 ```
 
-*   Move devinput.lircd.conf to devinput.lircd.dist to disable it, because you're not using an IR keyboard and/or mouse, just the IR receiver:
+*   Move `devinput.lircd.conf` to `devinput.lircd.dist` to disable it, because you're not using an IR keyboard and/or mouse, just the IR receiver:
 
 ```
 # mv /etc/lirc/lircd.conf.d/devinput.lircd.conf /etc/lirc/lircd.conf.d/devinput.lircd.dist
 
 ```
 
-*   [Restart](/index.php/Restart "Restart") `lircd.service` so you use the newly created lircd.conf file.
+*   [Restart](/index.php/Restart "Restart") `lircd.service` so you use the newly created lircd configuration file.
 *   Test to make sure the keys you recorded are correctly detected, that is, the correct key symbol is output for each button you press:
 
 ```
@@ -176,7 +176,7 @@ Repeat sections [#Installation and verification](#Installation_and_verification)
 
 If you're having keypress repeating problems (each button press is echoed multiple times), examine the output of `irw`. The second column value is the repeat count. This will increment when repeated signals are detected. Each decoded button press with its count reset to "00" is reported as a separate button press event by lircd.
 
-To fix this problem, generally the "gap" parameter sampled by `irrecord` in the device_name.lircd.conf file should be adjusted, often to a much larger value (e.g., from 44968 up to 113975).
+To fix this problem, generally the "gap" parameter sampled by `irrecord` in the `*device_name*.lircd.conf` file should be adjusted, often to a much larger value (e.g., from 44968 up to 113975).
 
 After editing/adjusting any lircd configuration file, be sure to restart lircd (as shown above).
 

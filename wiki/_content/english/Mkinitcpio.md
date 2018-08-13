@@ -246,7 +246,7 @@ COMPRESSION_OPTIONS=(-9)
 
 ```
 
-In general these should never be needed as mkinitcpio will make sure that any supported compression method has the necessary flags to produce a working image. Furthermore, misusage of this option can lead to an unbootable system if the kernel is unable to unpack the resultant archive.
+**Note:** In general these should never be needed as mkinitcpio will make sure that any supported compression method has the necessary flags to produce a working image. Furthermore, misusage of this option can lead to an **unbootable system** if the kernel is unable to unpack the resultant archive.
 
 ## Runtime customization
 

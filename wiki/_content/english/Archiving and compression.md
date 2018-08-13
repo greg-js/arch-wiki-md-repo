@@ -47,7 +47,7 @@ These compression programs implement their own file format.
 | [bzip2](https://en.wikipedia.org/wiki/bzip2 "wikipedia:bzip2") | [bzip2](https://www.archlinux.org/packages/?name=bzip2) | [bzip2(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bzip2.1) | .bz2, .bz | .tbz2, .tbz | Uses the [Burrows–Wheeler algorithm](https://en.wikipedia.org/wiki/Burrows%E2%80%93Wheeler_transform "wikipedia:Burrows–Wheeler transform"). | [lbzip2](https://www.archlinux.org/packages/?name=lbzip2), [pbzip2](https://www.archlinux.org/packages/?name=pbzip2) |
 | [gzip](https://en.wikipedia.org/wiki/gzip "wikipedia:gzip") | [gzip](https://www.archlinux.org/packages/?name=gzip) | [gzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gzip.1) | .gz, .z | .tgz, .taz | GNU zip, based on [DEFLATE](https://en.wikipedia.org/wiki/DEFLATE "wikipedia:DEFLATE") algorithm. | [pigz](https://www.archlinux.org/packages/?name=pigz) |
 | [lrzip](/index.php/Lrzip "Lrzip") | [lrzip](https://www.archlinux.org/packages/?name=lrzip) | [lrzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lrzip.1) | .lrz | Improved version of [rzip](https://en.wikipedia.org/wiki/rzip "wikipedia:rzip"), uses multiple algorithms. | is multithreaded |
-| [LZ4](https://en.wikipedia.org/wiki/LZ4 "wikipedia:LZ4") | [lz4](https://www.archlinux.org/packages/?name=lz4) | [lz4(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lz4.1) | .lz4 | Written in C, focused on compression and decompression speed. | is multithreaded |
+| [LZ4](https://en.wikipedia.org/wiki/LZ4_(compression_algorithm) | [lz4](https://www.archlinux.org/packages/?name=lz4) | [lz4(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lz4.1) | .lz4 | Written in C, focused on compression and decompression speed. | is multithreaded |
 | [lzip](https://en.wikipedia.org/wiki/lzip "wikipedia:lzip") | [lzip](https://www.archlinux.org/packages/?name=lzip) | [lzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lzip.1) | .lz | Uses [LZMA](https://en.wikipedia.org/wiki/LZMA "wikipedia:LZMA"). | [plzip](https://aur.archlinux.org/packages/plzip/) |
 | [lzop](https://en.wikipedia.org/wiki/lzop "wikipedia:lzop") | [lzop](https://www.archlinux.org/packages/?name=lzop) | [lzop(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lzop.1) | .lzop | .tzo | Uses the [LZO](https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Oberhumer "wikipedia:Lempel–Ziv–Oberhumer") library ([lzo](https://www.archlinux.org/packages/?name=lzo)). |
 | [xz](https://en.wikipedia.org/wiki/xz "wikipedia:xz") | [xz](https://www.archlinux.org/packages/?name=xz) | [xz(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xz.1) | .xz, .lzma | .txz, .tlz | Uses [LZMA](https://en.wikipedia.org/wiki/LZMA "wikipedia:LZMA"), default for GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) and kernel archive files. | [pixz](https://www.archlinux.org/packages/?name=pixz), [pxz](https://aur.archlinux.org/packages/pxz/) |
@@ -136,6 +136,10 @@ Otherwise you can use the [file](https://www.archlinux.org/packages/?name=file) 
 | [Zoo](https://en.wikipedia.org/wiki/Zoo_(file_format) | [zoo](https://aur.archlinux.org/packages/zoo/) | .zoo | Was mostly popular on the [OpenVMS](https://en.wikipedia.org/wiki/OpenVMS "wikipedia:OpenVMS") operating system before PKZIP became popular. |
 
 ## Compression libraries
+
+*   **[Brotli](https://en.wikipedia.org/wiki/Brotli "wikipedia:Brotli")** — Compression algorithm for data streams using the LZ77 algorithm, Huffman coding and 2nd order context modeling.
+
+	[https://github.com/google/brotli](https://github.com/google/brotli) || [brotli](https://www.archlinux.org/packages/?name=brotli)
 
 *   **[zlib](https://en.wikipedia.org/wiki/zlib "wikipedia:zlib")** — Compression library implementing the deflate compression method found in gzip and PKZIP.
 

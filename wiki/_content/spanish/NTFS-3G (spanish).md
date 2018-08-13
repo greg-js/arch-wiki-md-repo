@@ -13,7 +13,6 @@ Este documento le guía en la configuración del acceso a particiones NTFS con d
     *   [2.3 Daños en sistemas de archivo NTFS](#Da.C3.B1os_en_sistemas_de_archivo_NTFS)
     *   [2.4 Montar la partición](#Montar_la_partici.C3.B3n)
     *   [2.5 Fallo de montaje](#Fallo_de_montaje)
-    *   [2.6 Montando particiones usando HAL](#Montando_particiones_usando_HAL)
 
 ### Instalar ntfs-3g
 
@@ -176,7 +175,3 @@ Ejemplo:
 UUID=El_UUID_Correspondiente  /mnt/windows  ntfs-3g  noauto,gid=users,umask=0022  0 0
 
 ```
-
-### Montando particiones usando HAL
-
-[HAL](/index.php/HAL "HAL") puede montar tus particiones NTFS automáticamente via hotplugging o conectado en caliente. Cree una [política HAL personalizada](/index.php/HAL#NTFS_write_access "HAL") y añádase al grupo `storage` para obtener permisos de escritura.

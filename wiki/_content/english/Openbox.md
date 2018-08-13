@@ -20,14 +20,14 @@ Related articles
     *   [3.2 menu.xml](#menu.xml)
     *   [3.3 Autostart](#Autostart)
     *   [3.4 environment](#environment)
-    *   [3.5 GUI configuration](#GUI_configuration)
+    *   [3.5 Themes](#Themes)
+    *   [3.6 GUI configuration](#GUI_configuration)
 *   [4 Openbox reconfiguration](#Openbox_reconfiguration)
 *   [5 Keybinds](#Keybinds)
-    *   [5.1 Special keys](#Special_keys)
-        *   [5.1.1 Modifiers](#Modifiers)
-        *   [5.1.2 Multimedia keys](#Multimedia_keys)
-            *   [5.1.2.1 Volume control](#Volume_control)
-        *   [5.1.3 Navigation keys](#Navigation_keys)
+    *   [5.1 Modifiers](#Modifiers)
+    *   [5.2 Multimedia keys](#Multimedia_keys)
+        *   [5.2.1 Volume control](#Volume_control)
+    *   [5.3 Navigation keys](#Navigation_keys)
 *   [6 Menus](#Menus)
     *   [6.1 Static](#Static)
         *   [6.1.1 menumaker](#menumaker)
@@ -43,42 +43,36 @@ Related articles
     *   [6.5 Desktop menu as a panel menu](#Desktop_menu_as_a_panel_menu)
     *   [6.6 XDG compliant menu](#XDG_compliant_menu)
         *   [6.6.1 Examples](#Examples_2)
-*   [7 Desktop theming](#Desktop_theming)
-    *   [7.1 Configuration](#Configuration_2)
-    *   [7.2 Installation: official and AUR](#Installation:_official_and_AUR)
-    *   [7.3 Installation: other sources](#Installation:_other_sources)
-    *   [7.4 Troubleshooting](#Troubleshooting)
-        *   [7.4.1 Theme cannot be used](#Theme_cannot_be_used)
-        *   [7.4.2 Theme looks broken](#Theme_looks_broken)
-    *   [7.5 Edit or create new themes](#Edit_or_create_new_themes)
-*   [8 Compositing effects](#Compositing_effects)
-*   [9 Mouse cursor and application icon themes](#Mouse_cursor_and_application_icon_themes)
-*   [10 Desktop icons and wallpapers](#Desktop_icons_and_wallpapers)
-    *   [10.1 Desktop management using file managers](#Desktop_management_using_file_managers)
-    *   [10.2 Wallpaper](#Wallpaper)
-    *   [10.3 Icon programs](#Icon_programs)
-        *   [10.3.1 idesk](#idesk)
-        *   [10.3.2 xfdesktop](#xfdesktop)
-    *   [10.4 conky reconfiguration](#conky_reconfiguration)
-*   [11 oblogout](#oblogout)
-*   [12 Openbox for multihead users](#Openbox_for_multihead_users)
-*   [13 Tips and tricks](#Tips_and_tricks)
-    *   [13.1 Launch a complex command with hotkey](#Launch_a_complex_command_with_hotkey)
-    *   [13.2 Switch desktops using the mouse](#Switch_desktops_using_the_mouse)
-    *   [13.3 Set default applications / file associations](#Set_default_applications_.2F_file_associations)
-    *   [13.4 Stop continous mouse wheel desktop switching](#Stop_continous_mouse_wheel_desktop_switching)
-    *   [13.5 Ad-hoc window transparency](#Ad-hoc_window_transparency)
-    *   [13.6 Using obxprop for faster configuration](#Using_obxprop_for_faster_configuration)
-    *   [13.7 Xprop values for applications](#Xprop_values_for_applications)
-        *   [13.7.1 Firefox](#Firefox)
-    *   [13.8 Switching between keyboard layouts](#Switching_between_keyboard_layouts)
-    *   [13.9 Set grid layout for virtual desktops](#Set_grid_layout_for_virtual_desktops)
-    *   [13.10 Enable Hot Corners](#Enable_Hot_Corners)
-    *   [13.11 Window snapping](#Window_snapping)
-    *   [13.12 Smooth display manager transition](#Smooth_display_manager_transition)
-*   [14 Troubleshooting](#Troubleshooting_2)
-    *   [14.1 Windows load behind the active window](#Windows_load_behind_the_active_window)
-*   [15 See also](#See_also)
+    *   [6.7 Edit or create new themes](#Edit_or_create_new_themes)
+*   [7 Compositing effects](#Compositing_effects)
+*   [8 Mouse cursor and application icon themes](#Mouse_cursor_and_application_icon_themes)
+*   [9 Desktop icons and wallpapers](#Desktop_icons_and_wallpapers)
+    *   [9.1 Desktop management using file managers](#Desktop_management_using_file_managers)
+    *   [9.2 Wallpaper](#Wallpaper)
+    *   [9.3 Icon programs](#Icon_programs)
+        *   [9.3.1 idesk](#idesk)
+        *   [9.3.2 xfdesktop](#xfdesktop)
+    *   [9.4 conky reconfiguration](#conky_reconfiguration)
+*   [10 oblogout](#oblogout)
+*   [11 Openbox for multihead users](#Openbox_for_multihead_users)
+*   [12 Tips and tricks](#Tips_and_tricks)
+    *   [12.1 Launch a complex command with hotkey](#Launch_a_complex_command_with_hotkey)
+    *   [12.2 Switch desktops using the mouse](#Switch_desktops_using_the_mouse)
+    *   [12.3 Set default applications / file associations](#Set_default_applications_.2F_file_associations)
+    *   [12.4 Stop continous mouse wheel desktop switching](#Stop_continous_mouse_wheel_desktop_switching)
+    *   [12.5 Ad-hoc window transparency](#Ad-hoc_window_transparency)
+    *   [12.6 Using obxprop for faster configuration](#Using_obxprop_for_faster_configuration)
+    *   [12.7 Xprop values for applications](#Xprop_values_for_applications)
+    *   [12.8 Switching between keyboard layouts](#Switching_between_keyboard_layouts)
+    *   [12.9 Set grid layout for virtual desktops](#Set_grid_layout_for_virtual_desktops)
+    *   [12.10 Enable Hot Corners](#Enable_Hot_Corners)
+    *   [12.11 Window snapping](#Window_snapping)
+    *   [12.12 Smooth display manager transition](#Smooth_display_manager_transition)
+*   [13 Troubleshooting](#Troubleshooting)
+    *   [13.1 Firefox](#Firefox)
+    *   [13.2 Missing themes](#Missing_themes)
+    *   [13.3 Windows load behind the active window](#Windows_load_behind_the_active_window)
+*   [14 See also](#See_also)
 
 ## Installation
 
@@ -99,7 +93,7 @@ Run `openbox` or `openbox-session` with [xinit](/index.php/Xinit "Xinit"). Note 
 *   When replacing the native window manager of a [desktop environment](/index.php/Desktop_environment "Desktop environment") with Openbox, keep in mind that Openbox does not provide any compositing effects (such as transparency). See [#Compositing effects](#Compositing_effects).
 *   Openbox does work with GNOME applications (but see [GTK+#Client-side decorations](/index.php/GTK%2B#Client-side_decorations "GTK+")). [[1]](http://comments.gmane.org/gmane.comp.window-managers.openbox/6595)
 
-See [Desktop environment#Custom window manager](/index.php/Desktop_environment#Custom_window_manager "Desktop environment").
+See [Desktop environment#Use a different window manager](/index.php/Desktop_environment#Use_a_different_window_manager "Desktop environment").
 
 ## Configuration
 
@@ -160,6 +154,14 @@ xset -b
 *   Define new pathways (e.g. execute commands that would otherwise require the entire pathway to be listed with them)
 *   Change language settings, and
 *   Define other variables to be used (e.g. the fix for GTK theming could be listed here)
+
+### Themes
+
+Install [obconf](https://www.archlinux.org/packages/?name=obconf) and [lxappearance-obconf](https://www.archlinux.org/packages/?name=lxappearance-obconf) for a GUI to configure visual settings and theming.
+
+A good selection of themes are available in the [openbox-themes](https://www.archlinux.org/packages/?name=openbox-themes) package or the [AUR](/index.php/AUR "AUR"). Some [GTK+#Themes](/index.php/GTK%2B#Themes "GTK+") come with an Openbox theme as well. Both Openbox-specific and Openbox-compatible themes will be installed to the `/usr/share/themes` directory and will also be immediately available for selection.
+
+[box-look.org](https://www.box-look.org/browse/ord/latest/) is an excellent and well-established source of themes. [deviantART.com](http://www.deviantart.com/) is another excellent resource. Many more can be found online.
 
 ### GUI configuration
 
@@ -241,13 +243,11 @@ The action name for running an external command is *Execute*. Use the following 
 
 See [the Openbox wiki](http://openbox.org/wiki/Help:Actions) for a list of all available actions.
 
-**Note:** The [obkey](https://aur.archlinux.org/packages/obkey/) utility provides a graphical interface for configuring key bindings. Before using *obkey*, you should use *obconf* to create `~/.config/openbox/rc.xml`.
+**Tip:** The [obkey](https://aur.archlinux.org/packages/obkey/) utility provides a graphical interface for configuring key bindings. Before using *obkey*, you should use *obconf* to create `~/.config/openbox/rc.xml`.
 
-### Special keys
+While the use of standard alpha-numeric keys for keybindings is self-explanatory, special names are assigned to other types of keys, such as `modifiers`, `multimedia` and `navigation`.
 
-While the use of standard alpha-numeric keys for keybindings is self-explanatory, special names are assigned to other types of keys, such as `modifiers`, `multimedia` keys and `navigation` keys.
-
-#### Modifiers
+### Modifiers
 
 `Modifier` keys play an important role in keybindings (e.g. holding down the `shift` or `CTRL / control` key in combination with another key to undertake an action). Using modifiers helps to prevent conflicting keybinds, whereby two or more actions are linked to the same key or combination of keys. The syntax to use a modifier with another key is:
 
@@ -265,7 +265,7 @@ The modifier codes are as follows:
 *   `M`: Meta
 *   `H`: Hyper (If it is bound to something)
 
-#### Multimedia keys
+### Multimedia keys
 
 Where available, it is possible to set the appropriate `multimedia` keys to perform their intended functions, such as to control the volume and/or the screen brightness. These will usually be integrated into the `function` keys, and are identified by their appropriate symbols. See [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") for details.
 
@@ -279,7 +279,7 @@ The volume and brightness multimedia codes are as follows (note that commands wi
 
 For a full list of XF86 multimedia keys, see the [LinuxQuestions wiki](http://wiki.linuxquestions.org/wiki/XF86_keyboard_symbols).
 
-##### Volume control
+#### Volume control
 
 What commands should be used for controlling the volume will depend on whether [ALSA](/index.php/ALSA "ALSA"), [PulseAudio](/index.php/PulseAudio "PulseAudio"), or [OSS](/index.php/OSS "OSS") is used for sound.
 
@@ -287,7 +287,7 @@ What commands should be used for controlling the volume will depend on whether [
 *   PulseAudio: see [PulseAudio#Keyboard volume control](/index.php/PulseAudio#Keyboard_volume_control "PulseAudio")
 *   OSS: see [OSS#Using multimedia keys with OSS](/index.php/OSS#Using_multimedia_keys_with_OSS "OSS").
 
-#### Navigation keys
+### Navigation keys
 
 These are the directional / arrow keys, usually used to move the cursor up, down, left, or right. The (self-explanatory) navigation codes are as follows:
 
@@ -508,48 +508,9 @@ A xdg compliant menu is based on the freedesktop.org standard. The menu is defin
 
 *   [californium](https://github.com/mlde/californium): xdg menu based on the LXQt main menu and easily themable
 
-## Desktop theming
-
-**Tip:** It is **strongly advised** to install the [obconf](https://www.archlinux.org/packages/?name=obconf) and [lxappearance-obconf](https://www.archlinux.org/packages/?name=lxappearance-obconf) GUI applications to configure visual settings and theming. The latter is particularly important as it is responsible for generating the `~/.gtkrc-2.0` file (see [GTK+#Themes](/index.php/GTK%2B#Themes "GTK+")).
-
-It is important to note that a substantial range of both **Openbox-specific** and generalised, **Openbox-compatible** [GTK](/index.php/GTK "GTK") themes are available to change the look of window decorations and the desktop menu. *Generalised* themes are designed to be simultaneously compatible with a range of popular desktop environments and/or window managers, commonly including Openbox. See these [package descriptions](https://aur.archlinux.org/packages/?O=0&C=0&SeB=n&K=gtk-theme-&outdated=&SB=n&SO=a&PP=50&do_Search=Go) for examples.
-
-### Configuration
-
-[obconf](https://www.archlinux.org/packages/?name=obconf) and/or [lxappearance-obconf](https://www.archlinux.org/packages/?name=lxappearance-obconf) should be used to select and configure available GTK themes. See [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") for information about theming Qt based applications like [VirtualBox](/index.php/VirtualBox "VirtualBox").
-
-### Installation: official and AUR
-
-A good selection of themes are available in the [openbox-themes](https://www.archlinux.org/packages/?name=openbox-themes) package.
-
-Both Openbox-specific and Openbox-compatible themes installed will be automatically installed to the `/usr/share/themes` directory. Both will also be immediately available for selection.
-
-### Installation: other sources
-
-[box-look.org](https://www.box-look.org/browse/ord/latest/) is an excellent and well-established source of themes. [deviantART.com](http://www.deviantart.com/) is another excellent resource. Many more can be found through the utilisation of a search engine.
-
-### Troubleshooting
-
-There are two particular problems that may be encountered on rare occasions, especially where downloading themes from unsupported websites. These have been addressed below.
-
-#### Theme cannot be used
-
-If for any reason the newly extracted theme cannot be selected, open the theme directory to first ensure that it is indeed compatible with Openbox by determining that an `openbox-3` directory is present, and that within this directory a `themerc` file is also present. An `.obt` (**O**pen**B**ox **T**heme) file may also be present in some instances, which can then be manually loaded in [obconf](https://www.archlinux.org/packages/?name=obconf).
-
-Where expected files and directories are present and correct, then on occasion it is possible that the theme author has not correctly set permission to access the file (e.g. permission may still be for the account of the author, rather than for **root**). To eliminate this possibility, ensure the folder and file permissions are for **root**:
-
-```
-# chown -R root /user/share/themes
-
-```
-
-#### Theme looks broken
-
-Of course, the first line of enquiry would be to check that it is not just a badly made, broken theme! Otherwise, ensure that the [Openbox GTK fix](#GTK.2B_2) has been implemented, and then re-start the session. Unfortunately some older themes can simply break if not maintained sufficiently to keep pace with the changes incurred by [GTK](/index.php/GTK "GTK") updates. To avoid such occurrences, it is best to check that desired themes have recently been created or at least updated / patched.
-
 ### Edit or create new themes
 
-**Tip:** Where deciding to modify an existing theme (e.g. the colour scheme), it would be best to work on a copy of it, rather than the original. This will retain the original should anything go wrong, and ensure that your changes are not over-written through an update.
+**Tip:** It's better to copy a theme to your home directory than to edit those found in `/usr/share/themes/`. This will retain the original should anything go wrong and ensure that your changes are not overwritten through an update.
 
 The process of creating new or modifying existing themes is covered extensively at the official [openbox.org](http://openbox.org/wiki/Help:Themes) website. [obtheme](https://aur.archlinux.org/packages/obtheme/) is a user-friendly GUI for doing so.
 
@@ -751,10 +712,6 @@ WM_CLASS(STRING) = "NAME", "CLASS"
 
 ```
 
-#### Firefox
-
-For whatever reason, Firefox and like-minded equivalents ignore application rules (e.g. *<desktop>*) unless `class="Firefox*"` is used. This applies irrespective of whatever values **xprop** may report for the program's `WM_CLASS`.
-
 ### Switching between keyboard layouts
 
 See the article section [switching between keyboard layouts](/index.php/Keyboard_configuration_in_Xorg#Switching_between_keyboard_layouts "Keyboard configuration in Xorg") for instructions.
@@ -845,6 +802,16 @@ Setting the root window's background color can be disabled by editing the Openbo
 **Note:** Users who don't specifically set their wallpaper will "inherit" the display manager's background automatically if they disable the root window color adjustment.
 
 ## Troubleshooting
+
+### Firefox
+
+Mozilla based browsers may ignore application rules (e.g. `<desktop>`) unless `class="Firefox"` is used. See [#Xprop values for applications](#Xprop_values_for_applications).
+
+### Missing themes
+
+If for any reason the newly extracted theme cannot be selected, open the theme directory to first ensure that it is compatible with Openbox - there should be an `openbox-3` directory and a `themerc` file within it. An `.obt` (**O**pen**B**ox **T**heme) file may also be present in some instances, which can then be manually loaded in [obconf](https://www.archlinux.org/packages/?name=obconf).
+
+A theme may also be not accessible due to wrong permissions. See [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes") for more.
 
 ### Windows load behind the active window
 

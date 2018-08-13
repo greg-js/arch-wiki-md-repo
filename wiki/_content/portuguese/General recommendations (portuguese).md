@@ -109,17 +109,17 @@ Veja [pacman/Dicas e truques](/index.php/Pacman/Dicas_e_truques "Pacman/Dicas e 
 
 ### Repositórios
 
-Veja [Repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") para detalhes sobre o propósito de cada repositório oficialmente mantido.
+Veja o artigo [Repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") para detalhes sobre o propósito de cada repositório oficialmente mantido.
 
 Se você planeja usar aplicativos 32 bits, você vai querer habilitar o repositório [multilib](/index.php/Multilib_(Portugu%C3%AAs) "Multilib (Português)").
 
-[Repositórios extraoficiais de usuário](/index.php/Unofficial_user_repositories "Unofficial user repositories") lista diversos outros repositórios sem suporte.
+O artigo [Repositórios extraoficiais de usuário](/index.php/Unofficial_user_repositories "Unofficial user repositories") lista diversos outros repositórios sem suporte.
 
 Considere instalar o serviço [pkgstats](/index.php/Pkgstats_(Portugu%C3%AAs) "Pkgstats (Português)").
 
 ### Espelhos
 
-Por vezes chamados de "espelhos" *(mirrors)*. Visite [Espelhos](/index.php/Espelhos "Espelhos") para etapas para se beneficiar do uso de espelhos mais rápidos e mais atualizados dos repositórios oficiais. Como explicado no artigo, um conselho particularmente bom é verificar periodicamente a página [Mirror Status](https://www.archlinux.org/mirrors/status/) por uma lista de espelhos que foram sincronizados recentemente.
+Por vezes chamados de "espelhos" *(mirrors)*. Visite o artigo [Espelhos](/index.php/Espelhos "Espelhos") para etapas para se beneficiar do uso de espelhos mais rápidos e mais atualizados dos repositórios oficiais. Como explicado no artigo, um conselho particularmente bom é verificar periodicamente a página [Mirror Status](https://www.archlinux.org/mirrors/status/) por uma lista de espelhos que foram sincronizados recentemente.
 
 ### Arch Build System
 
@@ -343,7 +343,7 @@ Essa seção é coberta por [Saída colorida no console](/index.php/Color_output
 
 ### Arquivos compactados
 
-Arquivos compactados, ou pacotes, são frequentemente encontrados em um sistema GNU/Linux. [Tar](/index.php/Tar_(Portugu%C3%AAs) "Tar (Português)") é uma das ferramentas de arquivamento mais comumente usadas, e usuários devem estar familiarizados com sua sintaxe (pacotes do Arch Linux, por exemplo, são nada mais do que tarballs compactadas em xz). Veja [Archiving and compression tools](/index.php/Archiving_and_compression_tools "Archiving and compression tools").
+Arquivos compactados, ou pacotes, são frequentemente encontrados em um sistema GNU/Linux. [Tar](/index.php/Tar_(Portugu%C3%AAs) "Tar (Português)") é uma das ferramentas de arquivamento mais comumente usadas, e usuários devem estar familiarizados com sua sintaxe (pacotes do Arch Linux, por exemplo, são nada mais do que tarballs compactadas em xz). Veja [Arquivamento e compactação](/index.php/Arquivamento_e_compacta%C3%A7%C3%A3o "Arquivamento e compactação").
 
 ### Prompt de console
 

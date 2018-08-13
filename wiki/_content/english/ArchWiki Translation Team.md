@@ -14,9 +14,8 @@
 12.  Change the "Category" links to their localized versions. For example, change `[[Category:ArchWiki]]` to `[[Category:ArchWiki (Language)]]`. See [Help:Category](/index.php/Help:Category "Help:Category") for more information.
 13.  Change the interlanguage link that you created earlier to point to the article *from* which you are translating.
 14.  Translate the copied page text and save everything, also adding a proper [edit summary](/index.php/Help:Style#Edit_summary "Help:Style") such as `translate [[ArchWiki Translation Team]]`.
-15.  Update the interlanguage link lists of all the other translations of the article (if any) to include the interlanguage link of the newly-created translation.
-16.  At the bottom of the translated page, there is a list of categories the page is included in. Check that all these categories exist, i.e. the links should not be red. Otherwise create all missing categories following the red links - categories are created the same way as regular pages.
-17.  (optional) Create another page, e.g. [Translated title of ArchWiki Translation Team](/index.php?title=Translated_title_of_ArchWiki_Translation_Team&action=edit&redlink=1 "Translated title of ArchWiki Translation Team (page does not exist)"), whose title will be a localized version of [ArchWiki Translation Team (Language)](/index.php?title=ArchWiki_Translation_Team_(Language)&action=edit&redlink=1 "ArchWiki Translation Team (Language) (page does not exist)"). Enter `#REDIRECT [[ArchWiki_Translation_Team_(Language)]]` as its only content and save it.
+15.  At the bottom of the translated page, there is a list of categories the page is included in. Check that all these categories exist, i.e. the links should not be red. Otherwise create all missing categories following the red links - categories are created the same way as regular pages.
+16.  (optional) Create another page, e.g. [Translated title of ArchWiki Translation Team](/index.php?title=Translated_title_of_ArchWiki_Translation_Team&action=edit&redlink=1 "Translated title of ArchWiki Translation Team (page does not exist)"), whose title will be a localized version of [ArchWiki Translation Team (Language)](/index.php?title=ArchWiki_Translation_Team_(Language)&action=edit&redlink=1 "ArchWiki Translation Team (Language) (page does not exist)"). Enter `#REDIRECT [[ArchWiki_Translation_Team_(Language)]]` as its only content and save it.
 
 ## Page list
 
@@ -26,7 +25,6 @@ List here articles that only exist in non-English languages, or that exist in En
 | [1C Enterprise (Русский)](/index.php/1C_Enterprise_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "1C Enterprise (Русский)") | Russian |
 | [Asus M50Vm (Русский)](/index.php/Asus_M50Vm_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Asus M50Vm (Русский)") | Russian | in Russian only |
 | [CloudCross (Русский)](/index.php/CloudCross_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "CloudCross (Русский)") | Russian |
-| [Collect system information (Español)](/index.php/Collect_system_information_(Espa%C3%B1ol) "Collect system information (Español)") | Spanish |
 | [Dlua (Русский)](/index.php/Dlua_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dlua (Русский)") | Russian | in Russian only |
 | [Fujitsu LIFEBOOK UH572 Ultrabook (Русский)](/index.php/Fujitsu_LIFEBOOK_UH572_Ultrabook_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fujitsu LIFEBOOK UH572 Ultrabook (Русский)") | Russian | only in Russian |
 | [GtkD (Русский)](/index.php/GtkD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GtkD (Русский)") | Russian |

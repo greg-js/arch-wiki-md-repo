@@ -136,6 +136,10 @@ Some FUSE-based file systems:
 
 	[https://github.com/libfuse/sshfs](https://github.com/libfuse/sshfs) || [sshfs](https://www.archlinux.org/packages/?name=sshfs)
 
+*   **TMSU** — A command-line tool for tagging your files and accessing them through a virtual filesystem.
+
+	[http://tmsu.org/](http://tmsu.org/) || [tmsu](https://aur.archlinux.org/packages/tmsu/)
+
 *   **vdfuse** — Mounting VirtualBox disk images (VDI/VMDK/VHD).
 
 	[https://github.com/muflone/virtualbox-includes](https://github.com/muflone/virtualbox-includes) || [vdfuse](https://aur.archlinux.org/packages/vdfuse/)

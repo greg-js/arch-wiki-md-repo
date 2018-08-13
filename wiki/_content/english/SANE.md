@@ -3,7 +3,7 @@ Related articles
 *   [SANE/Scanner-specific problems](/index.php/SANE/Scanner-specific_problems "SANE/Scanner-specific problems")
 *   [Scanner Button Daemon](/index.php/Scanner_Button_Daemon "Scanner Button Daemon")
 
-[SANE](http://www.sane-project.org/) ([Scanner Access Now Easy](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy "wikipedia:Scanner Access Now Easy")) provides a library and a command-line tool to use scanners under GNU/Linux. You can check [Here](http://www.sane-project.org/sane-supported-devices.html) if sane supports your scanner.
+[SANE](http://www.sane-project.org/) ([Scanner Access Now Easy](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy "wikipedia:Scanner Access Now Easy")) provides a library and a command-line tool to use scanners under GNU/Linux. See [[1]](http://www.sane-project.org/sane-supported-devices.html) to check if sane supports your scanner.
 
 ## Contents
 
@@ -215,7 +215,7 @@ It may also be possible that the independent [iscan](https://www.archlinux.org/p
 
 #### Communication via xHCI not working (older scanner models)
 
-Some older scanner models do not work when connected via an USB3 port. If you experience this issue, try setting the `SANE_USB_WORKAROUND=1` [environment variable](/index.php/Environment_variable "Environment variable") before starting your frontend.[[1]](https://lists.alioth.debian.org/pipermail/sane-announce/2017/000036.html)[[2]](https://anonscm.debian.org/cgit/sane/sane-backends.git/commit/?id=1207ce5a40664c04b934bd0a6babbc1575361356)
+Some older scanner models do not work when connected via an USB3 port. If you experience this issue, try setting the `SANE_USB_WORKAROUND=1` [environment variable](/index.php/Environment_variable "Environment variable") before starting your frontend.[[2]](https://lists.alioth.debian.org/pipermail/sane-announce/2017/000036.html)[[3]](https://anonscm.debian.org/cgit/sane/sane-backends.git/commit/?id=1207ce5a40664c04b934bd0a6babbc1575361356)
 
 If that does not work, try one of the following workarounds:
 
@@ -236,7 +236,7 @@ Your [webcam](/index.php/Webcam "Webcam") might also be listed as scanning devic
 
 ### Device busy
 
-If your USB device is listed with `scanimage -L` but launching the test `scanimage pixma:04A9173E_11DAD1 --format=tiff > test.tiff` always return the 'Device busy' error, you might try to add your username to the scanner group `usermod -a -G scanner yourusername` then blacklist the `usblp` kernel module by writing `blacklist usblp` in `/etc/modprobe.d/no-usblp.conf` (it prevents `usblp` from loading to support scanning, not needed by either CUPS or xsane and related tools). Reboot to finish. [[3]](http://cromwell-intl.com/linux/canon-pixma-printer-scanner.html)
+If your USB device is listed with `scanimage -L` but launching the test `scanimage pixma:04A9173E_11DAD1 --format=tiff > test.tiff` always return the 'Device busy' error, you might try to add your username to the scanner group `usermod -a -G scanner yourusername` then blacklist the `usblp` kernel module by writing `blacklist usblp` in `/etc/modprobe.d/no-usblp.conf` (it prevents `usblp` from loading to support scanning, not needed by either CUPS or xsane and related tools). Reboot to finish. [[4]](http://cromwell-intl.com/linux/canon-pixma-printer-scanner.html)
 
 ### Permission problem
 

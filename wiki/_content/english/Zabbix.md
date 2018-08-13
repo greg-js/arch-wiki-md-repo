@@ -27,7 +27,7 @@
 
 #### Zabbix-server installation
 
-**Note:** Zabbix uses [fping](https://www.archlinux.org/packages/?name=fping) to do ICMP/Ping discovery, wich is broken. [fping-git](https://aur.archlinux.org/packages/fping-git/) is the latest development version, wich does work, albeit fping needs extra capabilities to run as non-root user. See [#ICMP/ping discovery](#ICMP.2Fping_discovery) for further details.
+**Note:** Zabbix uses [fping](https://www.archlinux.org/packages/?name=fping) to do ICMP/Ping discovery, which is broken. [fping-git](https://aur.archlinux.org/packages/fping-git/) is the latest development version, which does work, albeit fping needs extra capabilities to run as non-root user. See [#ICMP/ping discovery](#ICMP.2Fping_discovery) for further details.
 
 Install the [zabbix-frontend-php](https://www.archlinux.org/packages/?name=zabbix-frontend-php) package.
 

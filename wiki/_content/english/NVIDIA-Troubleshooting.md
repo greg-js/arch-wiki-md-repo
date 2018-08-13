@@ -452,7 +452,7 @@ This can be set per-output. See NVidia driver readme (Appendix B. X Config Optio
 
 ## Override EDID
 
-See [Kernel mode setting#Forcing modes and EDID](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting"), [Xrandr#Troubleshooting](/index.php/Xrandr#Troubleshooting "Xrandr") and [Qnix QX2710#Fixing X11 With Nvidia](/index.php/Qnix_QX2710#Fixing_X11_With_Nvidia "Qnix QX2710").
+See [Kernel mode setting#Forcing modes and EDID](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting"), [Xrandr#Troubleshooting](/index.php/Xrandr#Troubleshooting "Xrandr") and [Qnix QX2710#Fixing X11 with Nvidia](/index.php/Qnix_QX2710#Fixing_X11_with_Nvidia "Qnix QX2710").
 
 ## Overclocking with nvidia-settings GUI not working
 

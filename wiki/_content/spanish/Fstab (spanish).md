@@ -57,7 +57,7 @@ El archivo `/etc/fstab` contiene los siguientes campos separados por un espacio 
 *   **<file system>** - Define la partición o dispositivo de almacenamiento para ser montado.
 *   **<dir>** - Indica a la orden mount el punto de montaje donde la partición (*<file system>*) será montada.
 *   **<type>** - Indica el tipo de sistema de archivos de la partición o dispositivo de almacenamiento para ser montado. Hay muchos sistemas de archivos diferentes que son compatibles como, por ejemplo: `ext2`, `ext3`, `ext4`, `reiserfs`, `xfs`, `jfs`, `smbfs`, `iso9660`, `vfat`, `ntfs`, `swap` y `auto`. El *type* `auto` permite a la orden *mount* determinar qué tipo de sistema de archivos se utiliza. Esta opción es útil para proporcionar soporte a unidades ópticas (CD/DVD).
-*   **<options>** - Indica las opciones de montaje que la orden mount utilizará para montar el sistema de archivos. Tenga en cuenta que algunas opciones de montaje son para ​​sistema de archivos específicos [mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8). Algunas de las opciones más comunes son:
+*   **<options>** - Indica las opciones de montaje que la orden mount utilizará para montar el sistema de archivos. Tenga en cuenta que algunas opciones de montaje son para ​​sistema de archivos específicos [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8). Algunas de las opciones más comunes son:
 
 *   `auto` - El sistema de archivos será montado automáticamente durante el arranque, o cuando la orden `mount -a` se invoque.
 *   `noauto` - El sistema de archivos no será montado automáticamente, solo cuando se le ordene manualmente.
@@ -298,4 +298,4 @@ Si por alguna razón la partición raíz se ha montado incorrectamente con acces
 *   [Full device listing including block device](http://www.kernel.org/pub/linux/docs/lanana/device-list/devices-2.6.txt)
 *   [Filesystem Hierarchy Standard](http://www.pathname.com/fhs/2.2/index.html)
 *   [30x Faster Web-Site Speed](http://www.askapache.com/web-hosting/super-speed-secrets.html) (Detailed tmpfs)
-*   [Adding Samba shares to /etc/fstab](/index.php/Samba#Add_Share_to_.2Fetc.2Ffstab "Samba")
+*   [Agregando una comparticion a fstab](/index.php/Samba_(Espa%C3%B1ol)#Agregando_una_comparticion_a_fstab "Samba (Español)")

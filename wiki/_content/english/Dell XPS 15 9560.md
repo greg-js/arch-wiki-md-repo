@@ -231,7 +231,7 @@ With the recent deprecation of synaptics, it is possible to use existing GUI (fo
 
 ### TB16
 
-TB16 works fine if either Thunderbolt security is disabled in the BIOS or using [bolt](https://aur.archlinux.org/packages/bolt/) to temporarily authorize or permanently enroll Thunderbolt devices with Thunderbolt security activated.
+TB16 works fine if either Thunderbolt security is disabled in the BIOS or using [bolt](https://www.archlinux.org/packages/?name=bolt) to temporarily authorize or permanently enroll Thunderbolt devices with Thunderbolt security activated.
 
 ### Dell Docks
 

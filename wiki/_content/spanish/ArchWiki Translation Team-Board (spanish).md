@@ -37,7 +37,7 @@
 | [ArchWiki:About (Español)](/index.php/ArchWiki:About_(Espa%C3%B1ol) "ArchWiki:About (Español)") | Información/Arch | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
 | [ArchWiki:Contributing (Español)](/index.php/ArchWiki:Contributing_(Espa%C3%B1ol) "ArchWiki:Contributing (Español)") | Ayuda/Colaboración | `2014-04` |
 | [ATI (Español)](/index.php/ATI_(Espa%C3%B1ol) "ATI (Español)") | Tarjeta gráfica | `2013-09` |
-| [Beginners' guide (Español)](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)") | Información/Guía/Instalación | `2016-08` | Redirigida a Installation guide (Español) |
+| [Beginners' guide (Español)](/index.php/Beginners%27_guide_(Espa%C3%B1ol) "Beginners' guide (Español)") | Redirigido a [Installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") |
 | [Boot loaders (Español)](/index.php/Boot_loaders_(Espa%C3%B1ol) "Boot loaders (Español)") | Gestores de arranque | `2015-07` | La página es un artículo marco que se remite para su desarrollo a otras subpáginas |
 | [Bumblebee (Español)](/index.php/Bumblebee_(Espa%C3%B1ol) "Bumblebee (Español)") | Tarjeta gráfica | `2013-09` |
 | [Change root (Español)](/index.php/Change_root_(Espa%C3%B1ol) "Change root (Español)") | Recuperación del sistema | `2013-09` |
@@ -56,7 +56,7 @@
 | [DNSCrypt (Español)](/index.php/DNSCrypt_(Espa%C3%B1ol) "DNSCrypt (Español)") | Encriptación tráfico DNS | `2014-09` |
 | [dnsmasq (Español)](/index.php/Dnsmasq_(Espa%C3%B1ol) "Dnsmasq (Español)") | Información | `2014-09` |
 | [EFISTUB (Español)](/index.php/EFISTUB_(Espa%C3%B1ol) "EFISTUB (Español)") | Gestor de arranque | `2014-12` |
-| [FAQ (Español)](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)") | Información/General | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Redirigido a [Frequently asked questions (Español)](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)"). |
+| [FAQ (Español)](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)") | Información/General | Redirigido a [Frequently asked questions (Español)](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)"). |
 | [File systems (Español)](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)") | Configuración del sistema/Sistema archivos | `2014-11` |
 | [Fonts (Español)](/index.php/Fonts_(Espa%C3%B1ol) "Fonts (Español)") | Tipos de letras | `2008-06` |
 | [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)") | Configuración del sistema/Sistema archivos | `2013-09` |
@@ -133,7 +133,7 @@
 | [systemd-networkd (Español)](/index.php/Systemd-networkd_(Espa%C3%B1ol) "Systemd-networkd (Español)") | Configuración del sistema/Gestión redes | `2016-10` |
 | [systemd/User (Español)](/index.php/Systemd/User_(Espa%C3%B1ol) "Systemd/User (Español)") | Configuración del sistema/Gestor del sistema | `2013-09` |
 | [Table of contents (Español)](/index.php/Table_of_contents_(Espa%C3%B1ol) "Table of contents (Español)") | Información/Wiki | `2014-04` | Su contenido se actualiza automáticamente (no la traducción de los títulos) |
-| [The Arch Way (Español)](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)") | Información/Arch | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Redirigido a [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)"). |
+| [The Arch Way (Español)](/index.php/The_Arch_Way_(Espa%C3%B1ol) "The Arch Way (Español)") | Información/Arch | Redirigido a [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)"). |
 | [Time (Español)](/index.php/Time_(Espa%C3%B1ol) "Time (Español)") | Configuración del sistema/Horario | `2013-09` |
 | [Touchpad Synaptics (Español)](/index.php/Touchpad_Synaptics_(Espa%C3%B1ol) "Touchpad Synaptics (Español)") | Periféricos/Panel táctil | `2013-09` |
 | [Udev (Español)](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") | Configuración del sistema/Gestión hardware | `2013-09` |
@@ -157,7 +157,7 @@
 | Nombre del artículo | Área de conocimiento | Última revisión | Mantenedor | Observaciones |
 | [Abiword (Español)](/index.php/Abiword_(Espa%C3%B1ol) "Abiword (Español)") | Ofimática | `2011-07` | Esbozo |
 | [Acpid (Español)](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)") | Gestión de energía | `2013-03` |
-| [Activating Numlock on Bootup (Español)](/index.php/Activating_Numlock_on_Bootup_(Espa%C3%B1ol) "Activating Numlock on Bootup (Español)") | Teclado | `2008-05` |
+| [Activating Numlock on Bootup (Español)](/index.php/Activating_Numlock_on_Bootup_(Espa%C3%B1ol) "Activating Numlock on Bootup (Español)") | Teclado | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
 | [Ada Compiler (Español)](/index.php/Ada_Compiler_(Espa%C3%B1ol) "Ada Compiler (Español)") | Desarrollo | `2008-05` | Obsoleta. «ada compiler» es proporcionado por gcc-ada.
 No tiene versión inglesa correlativa. |
 | [Allow users to shutdown (Español)](/index.php/Allow_users_to_shutdown_(Espa%C3%B1ol) "Allow users to shutdown (Español)") | Seguridad | `2012-10` |
@@ -189,14 +189,13 @@ creado en un intento de recopilar información sobre Arch Linux en prensa hispan
 | [Change username (Español)](/index.php/Change_username_(Espa%C3%B1ol) "Change username (Español)") | Seguridad/Usuario | `2013-09` |
 | [Chromium (Español)](/index.php/Chromium_(Espa%C3%B1ol) "Chromium (Español)") | Aplicaciones/navegador web | `2011-07` | Esbozo |
 | [Claws Mail (Español)](/index.php/Claws_Mail_(Espa%C3%B1ol) "Claws Mail (Español)") | Aplicaciones/gestor e-mail | `2011-03` | Página solo en español (sin versión inglesa) |
-| [Collect system information (Español)](/index.php/Collect_system_information_(Espa%C3%B1ol) "Collect system information (Español)") | Información/Hardware | `2011-10` | Página solo en español (sin versión inglesa) |
 | [Color Bash Prompt (Español)](/index.php/Color_Bash_Prompt_(Espa%C3%B1ol) "Color Bash Prompt (Español)") | Shell/Funcionalidades | `2008-07` |
 | [Compiz (Español)](/index.php/Compiz_(Espa%C3%B1ol) "Compiz (Español)") | Gestor de ventanas | `2009-12` |
 | [Conky (Español)](/index.php/Conky_(Espa%C3%B1ol) "Conky (Español)") | Monitorización del sistema | `2011-03` |
 | [Console mouse support (Español)](/index.php/Console_mouse_support_(Espa%C3%B1ol) "Console mouse support (Español)") | Soporte para ratón | `2009-04` |
 | [Convert a single drive system to RAID (Español)](/index.php/Convert_a_single_drive_system_to_RAID_(Espa%C3%B1ol) "Convert a single drive system to RAID (Español)") | Configuración sistema | `2011-03` |
 | [Convert AVI to DVD (Español)](/index.php/Convert_AVI_to_DVD_(Espa%C3%B1ol) "Convert AVI to DVD (Español)") | Multimedia | `2011-03` |
-| [Convert ext2 to ext3 (Español)](/index.php/Convert_ext2_to_ext3_(Espa%C3%B1ol) "Convert ext2 to ext3 (Español)") | Sistema archivos | `2011-03` | Esbozo |
+| [Convert ext2 to ext3 (Español)](/index.php/Convert_ext2_to_ext3_(Espa%C3%B1ol) "Convert ext2 to ext3 (Español)") | Redirigido a [Ext4 (Español)](/index.php/Ext4_(Espa%C3%B1ol) "Ext4 (Español)") |
 | [CPU frequency scaling (Español)](/index.php/CPU_frequency_scaling_(Espa%C3%B1ol) "CPU frequency scaling (Español)") | Gestión energía | `2008-05` |
 | [Creating packages (Español)](/index.php/Creating_packages_(Espa%C3%B1ol) "Creating packages (Español)") | Gestión paquetes | `2010-10` |
 | [Cursor themes (Español)](/index.php/Cursor_themes_(Espa%C3%B1ol) "Cursor themes (Español)") | Información | `2008-05` |
@@ -211,7 +210,7 @@ creado en un intento de recopilar información sobre Arch Linux en prensa hispan
 | [dmenu (Español)](/index.php/Dmenu_(Espa%C3%B1ol) "Dmenu (Español)") | Lanzador de menú | `2008-05` |
 | [DokuWiki (Español)](/index.php/DokuWiki_(Espa%C3%B1ol) "DokuWiki (Español)") | Wiki | `2013-09` |
 | [DOSBox (Español)](/index.php/DOSBox_(Espa%C3%B1ol) "DOSBox (Español)") | Emulador de PC | `2011-03` |
-| [Dotpac (Español)](/index.php/Dotpac_(Espa%C3%B1ol) "Dotpac (Español)") | Gestión de paquetes | `2008-07` | Versión inglesa propuesta para su eliminación |
+| [Dotpac (Español)](/index.php/Dotpac_(Espa%C3%B1ol) "Dotpac (Español)") | Redirigido a [Pacman/Pacnew and Pacsave (Español)](/index.php/Pacman/Pacnew_and_Pacsave_(Espa%C3%B1ol) "Pacman/Pacnew and Pacsave (Español)") |
 | [Downgrading packages (Español)](/index.php/Downgrading_packages_(Espa%C3%B1ol) "Downgrading packages (Español)") | Gestión de paquetes | `2011-03` | Sin contenido alguno (tan solo el título).
 Versión inglesa propuesta para su eliminación. |
 | [dwm (Español)](/index.php/Dwm_(Espa%C3%B1ol) "Dwm (Español)") | Gestor de ventanas | `2010-05` |
@@ -254,19 +253,18 @@ Versión inglesa propuesta para su eliminación. |
 | [KDE (Español)](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)") | Entorno de escritorio | `2009-03` | Con actualizaciones paciales posteriores, pero actualmente desactualizado |
 | [Kernels (Español)](/index.php/Kernels_(Espa%C3%B1ol) "Kernels (Español)") | Kernel | `2011-08` |
 | [Kernel Panics (Español)](/index.php/Kernel_Panics_(Espa%C3%B1ol) "Kernel Panics (Español)") | Kernel | `2008-02` | Versión inglesa desactualizada |
-| [LAMP (Español)](/index.php/LAMP_(Espa%C3%B1ol) "LAMP (Español)") | Servidor HTTP | `2005-07` | Desactualizado con respecto a systemd.
-Versión inglesa redirigida a [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server"). |
+| [LAMP (Español)](/index.php/LAMP_(Espa%C3%B1ol) "LAMP (Español)") | Redirigido a [Apache HTTP Server (Español)](/index.php/Apache_HTTP_Server_(Espa%C3%B1ol) "Apache HTTP Server (Español)") |
 | [Laptop (Español)](/index.php/Laptop_(Espa%C3%B1ol) "Laptop (Español)") | Portátiles | `2012-03` |
 | [LibreOffice (Español)](/index.php/LibreOffice_(Espa%C3%B1ol) "LibreOffice (Español)") | Ofimática | `2011-05` |
 | [LightDM (Español)](/index.php/LightDM_(Espa%C3%B1ol) "LightDM (Español)") | Gestor de pantallas | `2011-05` |
 | [Lighttpd (Español)](/index.php/Lighttpd_(Espa%C3%B1ol) "Lighttpd (Español)") | Serviddor HTTP | `2008-05` |
 | [LILO (Español)](/index.php/LILO_(Espa%C3%B1ol) "LILO (Español)") | Gestor de arranque | `2008-05` | Esbozo |
 | [Lm sensors (Español)](/index.php/Lm_sensors_(Espa%C3%B1ol) "Lm sensors (Español)") | Monitorización del sistema | `2010-01` |
-| [Local repository (Español)](/index.php/Local_repository_(Espa%C3%B1ol) "Local repository (Español)") | Gestión de paquetes | `2011-03` | Versión inglesa propuesta para su fusión con [pacman tips#Custom local repository](/index.php/Pacman_tips#Custom_local_repository "Pacman tips") |
+| [Local repository (Español)](/index.php/Local_repository_(Espa%C3%B1ol) "Local repository (Español)") | Redirigido a [pacman/Tips and tricks (Español)](/index.php/Pacman/Tips_and_tricks_(Espa%C3%B1ol) "Pacman/Tips and tricks (Español)") |
 | [LXDE (Español)](/index.php/LXDE_(Espa%C3%B1ol) "LXDE (Español)") | Entorno de escritorio | `2008-07` |
 | [MAC address spoofing (Español)](/index.php/MAC_address_spoofing_(Espa%C3%B1ol) "MAC address spoofing (Español)") | Seguridad | `2010-11` |
 | [Makepkg (Español)](/index.php/Makepkg_(Espa%C3%B1ol) "Makepkg (Español)") | Gestión de paquetes | `2010-07` |
-| [Making a Custom Package CD (Español)](/index.php/Making_a_Custom_Package_CD_(Espa%C3%B1ol) "Making a Custom Package CD (Español)") | Gestión de paquetes | `2008-05` | Versión inglesa redirigida a [pacman tips](/index.php/Pacman_tips "Pacman tips") |
+| [Making a Custom Package CD (Español)](/index.php/Making_a_Custom_Package_CD_(Espa%C3%B1ol) "Making a Custom Package CD (Español)") | Redirigido a [Pacman/Tips and tricks (Español)](/index.php/Pacman/Tips_and_tricks_(Espa%C3%B1ol) "Pacman/Tips and tricks (Español)") |
 | [man page (Español)](/index.php/Man_page_(Espa%C3%B1ol) "Man page (Español)") | Administración sistema | `2015-4` |
 | [MATE (Español)](/index.php/MATE_(Espa%C3%B1ol) "MATE (Español)") | Entorno de escritorio | `2012-12` |
 | [Maximizing performance (Español)](/index.php/Maximizing_performance_(Espa%C3%B1ol) "Maximizing performance (Español)") | Administración del sistema | `2011-08` |
@@ -294,7 +292,7 @@ Versión inglesa redirigida a [Apache HTTP Server](/index.php/Apache_HTTP_Server
 | [Openbox Themes and Apps (Español)](/index.php/Openbox_Themes_and_Apps_(Espa%C3%B1ol) "Openbox Themes and Apps (Español)") | Gestor de ventanas | `2012-11` | Versión inglesa redirigida a [Openbox](/index.php/Openbox "Openbox") |
 | [Pacman Tips (Español)](/index.php/Pacman_Tips_(Espa%C3%B1ol) "Pacman Tips (Español)") | Gestión de paquetes | `2018-04` | [Phenom](/index.php?title=User:Phenom&action=edit&redlink=1 "User:Phenom (page does not exist)") |
 | [Pacman-key (Español)](/index.php/Pacman-key_(Espa%C3%B1ol) "Pacman-key (Español)") | Gestión de paquetes | `2013-03` |
-| [Pacnew and Pacsave Files (Español)](/index.php/Pacnew_and_Pacsave_Files_(Espa%C3%B1ol) "Pacnew and Pacsave Files (Español)") | Gestión de paquetes | `2009-04` | Propuesto para su eliminación |
+| [Pacnew and Pacsave Files (Español)](/index.php/Pacnew_and_Pacsave_Files_(Espa%C3%B1ol) "Pacnew and Pacsave Files (Español)") | Redirigido a [Pacman/Pacnew and Pacsave (Español)](/index.php/Pacman/Pacnew_and_Pacsave_(Espa%C3%B1ol) "Pacman/Pacnew and Pacsave (Español)") |
 | [Parallels (Español)](/index.php?title=Parallels_(Espa%C3%B1ol)&action=edit&redlink=1 "Parallels (Español) (page does not exist)")
 <small>**Remitido desde Beginners' guide (Español)**</small> | Virtualización | `--` | Sin traducir |
 | [Pdnsd (Español)](/index.php/Pdnsd_(Espa%C3%B1ol) "Pdnsd (Español)") | Servidor DNS | `2010-01` |
@@ -336,7 +334,7 @@ Versión inglesa redirigida a [Apache HTTP Server](/index.php/Apache_HTTP_Server
 | [Tint (Español)](/index.php/Tint_(Espa%C3%B1ol) "Tint (Español)") | Barra de tareas | `2011-01` | Versión inglesa redirigida a [Tint2](/index.php/Tint2 "Tint2") |
 | [Tmux (Español)](/index.php/Tmux_(Espa%C3%B1ol) "Tmux (Español)") | Multiplexor de terminales | `2010-08` | Traducción muy pobre |
 | [Tor (Español)](/index.php/Tor_(Espa%C3%B1ol) "Tor (Español)") | Proxy anonimato red | `2011-08` | Traducción muy pobre |
-| [TU (Trusted User) (Español)](/index.php/TU_(Trusted_User)_(Espa%C3%B1ol) "TU (Trusted User) (Español)") | Información/usuarios de confianza | `2008-11` | Propuesto para fusionarla con [AUR Trusted User Guidelines (Español)](/index.php/AUR_Trusted_User_Guidelines_(Espa%C3%B1ol) "AUR Trusted User Guidelines (Español)") |
+| [TU (Trusted User) (Español)](/index.php/TU_(Trusted_User)_(Espa%C3%B1ol) "TU (Trusted User) (Español)") | Redirigido a [AUR Trusted User Guidelines (Español)](/index.php/AUR_Trusted_User_Guidelines_(Espa%C3%B1ol) "AUR Trusted User Guidelines (Español)") |
 | [Umask (Español)](/index.php/Umask_(Espa%C3%B1ol) "Umask (Español)") | Sistema de archivos | `2013-09` |
 | [Uniform look for Qt and GTK applications (Español)](/index.php/Uniform_look_for_Qt_and_GTK_applications_(Espa%C3%B1ol) "Uniform look for Qt and GTK applications (Español)") | Herramienta Widget | `2008-05` |
 | [USB storage devices (Español)](/index.php/USB_storage_devices_(Espa%C3%B1ol) "USB storage devices (Español)") | Memoria USB | `2008-05` | Propuesto para su eliminación |

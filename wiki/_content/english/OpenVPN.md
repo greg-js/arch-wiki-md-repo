@@ -22,7 +22,6 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
         *   [5.2.1 Hardening the server](#Hardening_the_server)
         *   [5.2.2 Enabling compression](#Enabling_compression)
         *   [5.2.3 Deviating from the standard port and/or protocol](#Deviating_from_the_standard_port_and.2For_protocol)
-            *   [5.2.3.1 TCP vs UDP](#TCP_vs_UDP)
     *   [5.3 The client config profile](#The_client_config_profile)
         *   [5.3.1 Run as unprivileged user](#Run_as_unprivileged_user)
     *   [5.4 Converting certificates to encrypted .p12 format](#Converting_certificates_to_encrypted_.p12_format)
@@ -156,7 +155,7 @@ group nobody
 
 ```
 
-**Note:** The official OpenVPN Connect app for Android does not support tls-crypt.[[2]](https://bbs.archlinux.org/viewtopic.php?id=235780)[[3]](https://forums.openvpn.net/viewtopic.php?t=24425)[[4]](https://github.com/graysky2/ovpngen/issues/4) If you need to support it as a client, keep `tls-auth ta.key 0`.
+**Note:** The official OpenVPN Connect app for Android does not support tls-crypt.[[2]](https://bbs.archlinux.org/viewtopic.php?id=235780)[[3]](https://forums.openvpn.net/viewtopic.php?t=24425)[[4]](https://github.com/graysky2/ovpngen/issues/4) To support it as a client, keep `tls-auth ta.key 0`.
 
 #### Hardening the server
 
@@ -199,7 +198,9 @@ On the client set `--compress lz4` [[5]](https://community.openvpn.net/openvpn/w
 
 #### Deviating from the standard port and/or protocol
 
-Some public/private network admins may not allow OpenVPN connections on its default port and/or protocol. One strategy to circumvent this is to mimic https/SSL traffic which is very likely unobstructed.
+It is generally recommended to use OpenVPN over UDP, because [TCP over TCP is a bad idea](http://sites.inka.de/bigred/devel/tcp-tcp.html)[[6]](http://adsabs.harvard.edu/abs/2005SPIE.6011..138H).
+
+Some networks may disallow OpenVPN connections on the default port and/or protocol. One strategy to circumvent this is to mimic HTTPS traffic which is very likely unobstructed.
 
 To do so, configure `/etc/openvpn/server/server.conf` as such:
 
@@ -213,24 +214,6 @@ proto tcp
 ```
 
 **Note:** The .ovpn client profile **must** contain a matching port and proto line to work properly!
-
-##### TCP vs UDP
-
-There are subtle differences between TCP and UDP.
-
-TCP
-
-*   So-called "stateful protocol."
-*   High reliability due to error correction (i.e. waits for packet acknowledgment).
-*   Potentially slower than UDP.
-
-UDP
-
-*   So-called "stateless protocol."
-*   Less reliable than TCP as no error correction is in use.
-*   Potentially faster than TCP.
-
-**Note:** It is generally a bad idea to use TCP for VPN unless your connection to the server is very stable. High reliability sounds great in theory but any disruption (packet drop, lag spikes, etc...) to the connection will potentially snowball into a [TCP Meltdown](http://sites.inka.de/bigred/devel/tcp-tcp.html)[[6]](http://adsabs.harvard.edu/abs/2005SPIE.6011..138H).
 
 ### The client config profile
 
@@ -258,7 +241,7 @@ tls-crypt ta.key # Replaces *tls-auth ta.key 1*
 
 ```
 
-**Note:** If you have `tls-auth` in your `server.conf`, you also need to have `tls-auth ta.key 1` in your `client.conf`.
+**Note:** Having `tls-auth` in `server.conf`, requires `tls-auth ta.key 1` in the corresponding `client.conf`.
 
 #### Run as unprivileged user
 
@@ -348,7 +331,7 @@ mssfix 1360
 
 ```
 
-OpenVPN may be instructed to test the MTU every time on client connect. Be patient, since your client may not inform about the test being run and the connection may appear as nonfunctional until finished. The following will add about 3 minutes to OpenVPN start time. It is advisable to configure the fragment size unless a client will be connecting over many different networks and the bottle neck is not on the server side:
+OpenVPN may be instructed to test the MTU every time on client connect. Be patient, since the client may not inform about the test being run and the connection may appear as nonfunctional until finished. The following will add about 3 minutes to OpenVPN start time. It is advisable to configure the fragment size unless a client will be connecting over many different networks and the bottle neck is not on the server side:
 
  `/etc/openvpn/client/client.conf` 
 ```
@@ -363,16 +346,16 @@ mtu-test
 
 #### Connect to the server via IPv6
 
-In order to enable Dual Stack for OpenVPN, you have to change `proto udp` to `proto udp6` in both server.conf and client.conf. Afterwards both IPv4 and IPv6 are enabled.
+In order to enable Dual Stack for OpenVPN, change `proto udp` to `proto udp6` in both server.conf and client.conf. Afterwards both IPv4 and IPv6 are enabled.
 
 #### Provide IPv6 inside the tunnel
 
-In order to provide IPv6 inside the tunnel, you need to have a IPv6 prefix routed to your OpenVPN server. Either set up a static route on your gateway (if you have a static block assigned), or use a DHCPv6 client to get a prefix with DHCPv6 Prefix delegation (see [IPv6 Prefix delegation](/index.php/IPv6#Prefix_delegation_.28DHCPv6-PD.29 "IPv6") for details). You can also use a unique local address from the address block fc00::/7\. Both methods have advantages and disadvantages:
+In order to provide IPv6 inside the tunnel, have an IPv6 prefix routed to the OpenVPN server. Either set up a static route on the gateway (if a static block is assigned), or use a DHCPv6 client to get a prefix with DHCPv6 Prefix delegation (see [IPv6 Prefix delegation](/index.php/IPv6#Prefix_delegation_.28DHCPv6-PD.29 "IPv6") for details). Also consider using a unique local address from the address block fc00::/7\. Both methods have advantages and disadvantages:
 
-*   Many ISPs only provide dynamically changing IPv6 prefixes. OpenVPN does not support prefix changes, so you need to change your server.conf every time the prefix is changed (Maybe can be automated with a script).
-*   ULA addresses are not routed to the Internet, and setting up NAT is not as straightforward as with IPv4\. So you cannot route the entire traffic over the tunnel. If you only want to connect two sites via IPv6, without the need to connect to the Internet over the tunnel, the ULA addresses may be easier to use.
+*   Many ISPs only provide dynamically changing IPv6 prefixes. OpenVPN does not support prefix changes, so change the server.conf every time the prefix is changed (Maybe can be automated with a script).
+*   ULA addresses are not routed to the Internet, and setting up NAT is not as straightforward as with IPv4\. This means one cannot route the entire traffic over the tunnel. Those wanting to connect two sites via IPv6, without the need to connect to the Internet over the tunnel, may want to use the ULA addresses for ease.
 
-After you have received a prefix (a /64 is recommended), append the following to the server.conf:
+After having received a prefix (a /64 is recommended), append the following to the server.conf:
 
 ```
 server-ipv6 2001:db8:0:123::/64
@@ -381,7 +364,7 @@ server-ipv6 2001:db8:0:123::/64
 
 This is the IPv6 equivalent to the default 10.8.0.0/24 network of OpenVPN and needs to be taken from the DHCPv6 client. Or use for example fd00:1234::/64.
 
-If you want to push a route to your home network (192.168.1.0/24 equivalent), also append:
+Those wanting to push a route to a home network (192.168.1.0/24 equivalent), need to also append:
 
 ```
 push "route-ipv6 2001:db8:0:abc::/64"
@@ -404,7 +387,7 @@ For example, if the client configuration file is `/etc/openvpn/client/*client*.c
 
 ### Letting NetworkManager start a connection
 
-On a client you might not always need to run a VPN tunnel and/or only want to establish it for a specific NetworkManager connection. This can be done by adding a script to `/etc/NetworkManager/dispatcher.d/`. In the following example "Provider" is the name of the NetworkManager connection:
+One might not always need to run a VPN tunnel and/or only want to establish it for a specific NetworkManager connection. This can be done by adding a script to `/etc/NetworkManager/dispatcher.d/`. In the following example "Provider" is the name of the NetworkManager connection:
 
  `/etc/NetworkManager/dispatcher.d/10-openvpn` 
 ```
@@ -426,7 +409,7 @@ See [NetworkManager#Network services with NetworkManager dispatcher](/index.php/
 
 ### Gnome configuration
 
-If you would like to connect a client to an OpenVPN server through Gnome's built-in network configuration do the following. First, install [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn). Then go to the Settings menu and choose Network. Click the plus sign to add a new connection and choose VPN. From there you can choose OpenVPN and manually enter the settings. You can also choose to import [#The client config profile](#The_client_config_profile), if you have already created one. Yet, be aware NetworkManager does not show error messages for options it does not import. To connect to the VPN simply turn the connection on and check the options are applied as you configured (e.g. via `journalctl -b -u NetworkManager`).
+To connect to an OpenVPN server through Gnome's built-in network configuration do the following. First, install [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn). Then go to the Settings menu and choose Network. Click the plus sign to add a new connection and choose VPN. From there, choose OpenVPN and manually enter the settings. One can optionally import [#The client config profile](#The_client_config_profile). Yet, be aware NetworkManager does not show error messages for options it does not import. To connect to the VPN simply turn the connection on and check the options are applied (e.g. via `journalctl -b -u NetworkManager`).
 
 ## Routing client traffic through the server
 
@@ -445,9 +428,9 @@ push "route 192.168.2.0 255.255.255.0"
 
 ```
 
-You may want to push local [DNS](/index.php/DNS "DNS") settings to clients (e.g. the DNS-server of the router and domain prefix *.internal*):
+Optionally, push local [DNS](/index.php/DNS "DNS") settings to clients (e.g. the DNS-server of the router and domain prefix *.internal*):
 
-**Note:** You may need to use a simple [DNS](/index.php/DNS "DNS") forwarder like [BIND](/index.php/BIND "BIND") and push the IP address of the OpenVPN server as DNS to clients.
+**Note:** One may need to use a simple [DNS](/index.php/DNS "DNS") forwarder like [BIND](/index.php/BIND "BIND") and push the IP address of the OpenVPN server as DNS to clients.
 
 ```
 push "dhcp-option DNS 192.168.1.1"
@@ -505,16 +488,16 @@ To apply the changes. [reload](/index.php/Reload "Reload")/[restart](/index.php/
 
 #### iptables
 
-In order to allow VPN traffic through your [iptables](/index.php/Iptables "Iptables") firewall of your server, first create an iptables rule for NAT forwarding [[9]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server, assuming the interface you want to forward to is named `eth0`:
+In order to allow VPN traffic through an [iptables](/index.php/Iptables "Iptables") firewall, first create an iptables rule for NAT forwarding [[9]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server. An example (assuming the interface to forward to is named `eth0`):
 
 ```
 iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 
 ```
 
-If you have difficulty pinging the server through the VPN, you may need to add explicit rules to open up TUN/TAP interfaces to all traffic. If that is the case, do the following [[10]](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn):
+If the server cannot be pinged through the VPN, one may need to add explicit rules to open up TUN/TAP interfaces to all traffic. If that is the case, do the following [[10]](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn):
 
-**Warning:** There are security implications for the following rules if you do not trust all clients which connect to the server. Refer to the [OpenVPN documentation on this topic](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn) for more details.
+**Warning:** There are security implications for the following rules if one does not trust all clients which connect to the server. Refer to the [OpenVPN documentation on this topic](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn) for more details.
 
 ```
 iptables -A INPUT -i tun+ -j ACCEPT
@@ -526,15 +509,15 @@ iptables -A FORWARD -i tap+ -j ACCEPT
 
 Additionally be sure to accept connections from the OpenVPN port (default 1194) and through the physical interface.
 
-When you are satisfied make the changes permanent as shown in [iptables#Configuration and usage](/index.php/Iptables#Configuration_and_usage "Iptables").
+When satisfied, make the changes permanent as shown in [iptables#Configuration and usage](/index.php/Iptables#Configuration_and_usage "Iptables").
 
-If you have multiple `tun` or `tap` interfaces, or more than one VPN configuration, you can "pin" the name of your interface by specifying it in the OpenVPN config file, e.g. `tun22` instead of `tun`. This is advantageous if you have different firewall rules for different interfaces or OpenVPN configurations.
+Those with multiple `tun` or `tap` interfaces, or more than one VPN configuration can "pin" the name of the interface by specifying it in the OpenVPN config file, e.g. `tun22` instead of `tun`. This is advantageous if different firewall rules for different interfaces or OpenVPN configurations are wanted.
 
 ### Prevent leaks if VPN goes down
 
-This prevents all traffic through your default interface (enp3s0 for example) and only allows traffic through tun0. If the OpenVPN connection drops, your computer will lose its internet access and therefore, avoid your programs to continue connecting through an insecure network adapter.
+This prevents all traffic through the default interface (enp3s0 for example) and only allows traffic through tun0. If the OpenVPN connection drops, the system will lose its internet access thereby preventing connections through the default network interface.
 
-Be sure to set up a script to restart OpenVPN if it goes down if you do not want to manually restart it.
+One may want to set up a script to restart OpenVPN if it goes down.
 
 #### ufw
 
@@ -557,9 +540,9 @@ Be sure to set up a script to restart OpenVPN if it goes down if you do not want
 
 ```
 
-**Warning:** DNS **will not** work **unless** you run your own DNS server like [BIND](/index.php/BIND "BIND")
+**Warning:** DNS **will not** work **unless** running a dedicated DNS server like [BIND](/index.php/BIND "BIND").
 
-Otherwise, you will need to allow dns leak. **Be sure to trust your DNS server!**
+Alternatively, one can allow DNS leaks. **Be sure to trust your DNS server!**
 
 ```
  # DNS
@@ -650,7 +633,7 @@ client-to-client
 
 ```
 
-In order for another client or client LAN to see a specific client LAN, you will need to add a push directive for each client subnet to the server configuration file (this will make the server announce the available subnet(s) to other clients):
+In order for another client or client LAN to see a specific client LAN, add a push directive for each client subnet to the server configuration file (this will make the server announce the available subnet(s) to other clients):
 
  `/etc/openvpn/server/server.conf` 
 ```
@@ -661,13 +644,13 @@ push "route 192.168.5.0 255.255.255.0"
 
 ```
 
-**Note:** You may need to adjust the [firewall](#Firewall_configuration) to allowing client traffic passing through the VPN server.
+**Note:** One may need to adjust the [firewall](#Firewall_configuration) to allow client traffic passing through the VPN server.
 
 ## DNS
 
-The DNS servers used by the system are defined in `/etc/resolv.conf`. Traditionally, this file is the responsibility of whichever program deals with connecting the system to the network (e.g. Wicd, NetworkManager, etc.). However, OpenVPN will need to modify this file if you want to be able to resolve names on the remote side. To achieve this in a sensible way, install [openresolv](/index.php/Openresolv "Openresolv"), which makes it possible for more than one program to modify `resolv.conf` without stepping on each-other's toes.
+The DNS servers used by the system are defined in `/etc/resolv.conf`. Traditionally, this file is the responsibility of whichever program deals with connecting the system to the network (e.g. Wicd, NetworkManager, etc.). However, OpenVPN will need to modify this file to be able to resolve names on the remote side. To achieve this in a sensible way, install [openresolv](/index.php/Openresolv "Openresolv"), which makes it possible for more than one program to modify `resolv.conf` without stepping on each-other's toes.
 
-Before continuing, test openresolv by restarting your network connection and ensuring that `resolv.conf` states that it was generated by *resolvconf*, and that your DNS resolution still works as before. You should not need to configure openresolv; it should be automatically detected and used by your network system.
+Before continuing, test openresolv by restarting the network connection and ensuring that `resolv.conf` states that it was generated by *resolvconf*, and that DNS resolution still works as before. No reconfiguration of openresolv should be required; it should be automatically detected and used by the network system.
 
 For Linux, OpenVPN can send DNS host information, but expects an external process to act on it. This can be done with the `client.up` and `client.down` scripts packaged in `/usr/share/openvpn/contrib/pull-resolv-conf/`. See their comments on how to install them to `/etc/openvpn/client/`. The following is an excerpt of a resulting client configuration using the scripts in conjunction with *resolvconf* and options to [#Run as unprivileged user](#Run_as_unprivileged_user):
 
@@ -675,7 +658,7 @@ For Linux, OpenVPN can send DNS host information, but expects an external proces
 ```
 user nobody
 group nobody
-# Optional, choose a suitable path to chroot into for your system
+# Optional, choose a suitable path to chroot into
 chroot /srv
 script-security 2
 up /etc/openvpn/client/client.up 
@@ -687,7 +670,7 @@ plugin /usr/lib/openvpn/plugins/openvpn-plugin-down-root.so "/etc/openvpn/client
 
 The [openvpn-update-resolv-conf](https://github.com/masterkorp/openvpn-update-resolv-conf) script is available as an alternative to packaged scripts. It needs to be saved for example at `/etc/openvpn/update-resolv-conf` and made [executable](/index.php/Executable "Executable").
 
-Once the script is installed add lines like the following into your OpenVPN client configuration file:
+Once the script is installed add lines like the following into the OpenVPN client configuration file:
 
 ```
 script-security 2
@@ -698,13 +681,13 @@ down /etc/openvpn/update-resolv-conf
 
 **Note:** If manually placing the script on the filesystem, be sure to have [openresolv](https://www.archlinux.org/packages/?name=openresolv) installed.
 
-Now, when you launch your OpenVPN connection, you should find that your `resolv.conf` file is updated accordingly, and also returns to normal when you close the connection.
+Now, when launching the OpenVPN connection, `resolv.conf` should be updated accordingly, and also should get returned to normal when the connection is closed.
 
 **Note:** When using `openresolv` with the *-p* or *-x* options in a script (as both the included `client.up` and `update-resolv-conf` scripts currently do), a DNS resolver like [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) or [unbound](https://www.archlinux.org/packages/?name=unbound) is required for `openresolv` to correctly update `/etc/resolv.conf`. In contrast, when using the default DNS resolution from `libc` the *-p* and *-x* options must be removed in order for `/etc/resolv.conf` to be correctly updated by `openresolv`. For example, if the script contains a command like `resolvconf -p -a` and the default DNS resolver from `libc` is being used, change the command in the script to be `resolvconf -a` .
 
 ### Update systemd-resolved script
 
-Since [systemd](/index.php/Systemd "Systemd") 229, [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") has exposed an API through DBus allowing management of DNS configuration on a per-link basis. Tools such as [openresolv](https://www.archlinux.org/packages/?name=openresolv) may not work reliably when `/etc/resolv.conf` is managed by `systemd-resolved`, and will not work at all if you are using `resolve` instead of `dns` in your `/etc/nsswitch.conf` file. The [update-systemd-resolved](https://github.com/jonathanio/update-systemd-resolved) script is another alternative and links OpenVPN with `systemd-resolved` via DBus to update the DNS records.
+Since [systemd](/index.php/Systemd "Systemd") 229, [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") has exposed an API through DBus allowing management of DNS configuration on a per-link basis. Tools such as [openresolv](https://www.archlinux.org/packages/?name=openresolv) may not work reliably when `/etc/resolv.conf` is managed by `systemd-resolved`, and will not work at all if using `resolve` instead of `dns` in `/etc/nsswitch.conf`. The [update-systemd-resolved](https://github.com/jonathanio/update-systemd-resolved) script is another alternative and links OpenVPN with `systemd-resolved` via DBus to update the DNS records.
 
 Copy the script into `/etc/openvpn` and mark as [executable](/index.php/Executable "Executable"), or [install](/index.php/Install "Install") [openvpn-update-systemd-resolved](https://aur.archlinux.org/packages/openvpn-update-systemd-resolved/), and [append](/index.php/Append "Append") the following lines into the OpenVPN client configuration file:
 
@@ -776,7 +759,7 @@ It automates the actions required for the [OpenVPN howto](https://community.open
 
 [openvpn-reconnect](https://aur.archlinux.org/packages/openvpn-reconnect/), available on the AUR, solves this problem by sending a SIGHUP to openvpn after waking up from suspend.
 
-Alternatively, you can kill and restart OpenVPN after suspend by creating the folowing systemd service:
+Alternatively, restart OpenVPN after suspend by creating the following systemd service:
 
  `/etc/systemd/system/openvpn-reconnect.service` 
 ```
@@ -808,7 +791,7 @@ keepalive 10 120
 
 In this case the server will send ping-like messages to all of its clients every 10 seconds, thus keeping the tunnel up. If the server does not receive a response within 120 seconds from a specific client, it will assume this client is down.
 
-A small ping-interval can increase the stability of the tunnel, but will also cause slightly higher traffic. Depending on your connection, also try lower intervals than 10 seconds.
+A small ping-interval can increase the stability of the tunnel, but will also cause slightly higher traffic. Depending on the connection, also try lower intervals than 10 seconds.
 
 ### PID files not present
 
@@ -851,7 +834,7 @@ Unmanaged=true
 
 ### tls-crypt unwrap error: packet too short
 
-If you see this error in your server log, you are probably connecting with a client that does not support tls-crypt, such as the official OpenVPN Connect app for Android.
+This error shows up in the server log when a client, that does not support tls-crypt (such as the official OpenVPN Connect Android app), attempts to connect.
 
 To support these clients, replace `tls-crypt ta.key` with `tls-auth ta.key 0` (the default) in `server.conf`. Also replace `tls-crypt ta.key` with `tls-auth ta.key 1` (the default) in `client.conf`.
 

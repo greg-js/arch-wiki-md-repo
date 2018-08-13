@@ -128,7 +128,7 @@ allow-recursion { 127.0.0.1; };
 
 ```
 
-Por lo tanto, para permitir búsquedas DNS para nuestro equipo, el fichero [resolv.conf](/index.php/Resolv.conf "Resolv.conf") debe incluir 127.0.0.1 como servidor de nombres. Véase [Resolv.conf#Preserve DNS settings](/index.php/Resolv.conf#Preserve_DNS_settings "Resolv.conf") para prevenir que este fichero sea reescrito.
+Por lo tanto, para permitir búsquedas DNS para nuestro equipo, el fichero [resolv.conf](/index.php/Resolv.conf "Resolv.conf") debe incluir 127.0.0.1 como servidor de nombres. Consulte [Conservar las configuraciones de DNS](/index.php/Resolv.conf_(Espa%C3%B1ol)#Conservar_las_configuraciones_de_DNS "Resolv.conf (Español)") para prevenir que este fichero sea reescrito.
 
 Para proveer un servicio de nombres a nuestra red local, por ejemplo 192.168.0, debemos añadir el rango apropiado de direcciones IP a `/etc/named.conf`:
 
@@ -139,7 +139,12 @@ allow-recursion { 192.168.0.0/24; 127.0.0.1; };
 
 ## Configurar BIND para servir zonas firmadas con DNSSEC
 
-Véase [DNSSEC#BIND (serving signed DNS zones)](/index.php/DNSSEC#BIND_.28serving_signed_DNS_zones.29 "DNSSEC")
+*   [http://www.dnssec.net/practical-documents](http://www.dnssec.net/practical-documents)
+    *   [http://www.cymru.com/Documents/secure-bind-template.html](http://www.cymru.com/Documents/secure-bind-template.html) **(plantilla de configuración)**
+    *   [http://www.bind9.net/manuals](http://www.bind9.net/manuals)
+    *   [http://www.bind9.net/BIND-FAQ](http://www.bind9.net/BIND-FAQ)
+*   [http://blog.techscrawl.com/2009/01/13/enabling-dnssec-on-bind/](http://blog.techscrawl.com/2009/01/13/enabling-dnssec-on-bind/)
+*   O use un mecanismo externo tal como OpenDNSSEC (cambio de clave completamente automático)
 
 ## Escuchar automáticamente nuevas interfaces
 

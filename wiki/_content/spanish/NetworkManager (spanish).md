@@ -224,7 +224,7 @@ Con una sesión de trabajo, tiene varias opciones para la concesión de los priv
 
 *Opción 1.* Ejecute un agente de autenticación [PolicyKit](/index.php/PolicyKit "PolicyKit") cuando se conecte, como `/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1` (es parte del paquete [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome)). Se le pedirá la contraseña cada vez que agregue o quite una conexión de red.
 
-*Opción 2.* Añada su usuario al grupo `wheel`. No tendrá que introducir su contraseña, pero necesitará garantizar los permisos particulares a los usuarios tales como la capacidad de usar [sudo](/index.php/Sudo "Sudo") sin introducir la contraseña de root.
+*Opción 2.* Añada su usuario al grupo `wheel`. No tendrá que introducir su contraseña, pero necesitará garantizar los permisos particulares a los usuarios tales como la capacidad de usar [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") sin introducir la contraseña de root.
 
 *Opción 3.* Añádase al grupo `network` y cree el siguiente archivo
 

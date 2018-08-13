@@ -6,11 +6,11 @@ Artículos relacionados
 *   [Guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)")
 *   [Lista de aplicaciones](/index.php/List_of_applications_(Espa%C3%B1ol) "List of applications (Español)")
 
-Este documento es un índice con anotaciones a otros artículos populares e información importante para mejorar y añadir funcionalidades al sistema Arch instalado. Se supone que los lectores han leído y seguido la [guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") para instalar un sistema básico de Arch Linux. Es necesario haber leído y comprendido los conceptos explicados en [#Administración el sistema](#Administraci.C3.B3n_el_sistema) y [#Administración de paquetes](#Administraci.C3.B3n_de_paquetes) antes de continuar con las otras secciones de esta página y de otros artículos de la wiki.
+Este documento es un índice con anotaciones a otros artículos populares e información importante para mejorar y añadir funcionalidades al sistema Arch instalado. Se supone que los lectores han leído y seguido la [guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") para instalar un sistema básico de Arch Linux. Es necesario haber leído y comprendido los conceptos explicados en [administración del sistema](#Administraci.C3.B3n_del_sistema) y [administración de paquetes](#Administraci.C3.B3n_de_paquetes) antes de continuar con las otras secciones de esta página y de otros artículos de la wiki.
 
 ## Contents
 
-*   [1 Administración el sistema](#Administraci.C3.B3n_el_sistema)
+*   [1 Administración del sistema](#Administraci.C3.B3n_del_sistema)
     *   [1.1 Usuarios y grupos](#Usuarios_y_grupos)
     *   [1.2 Escalado de privilegios](#Escalado_de_privilegios)
     *   [1.3 Administración de servicios](#Administraci.C3.B3n_de_servicios)
@@ -75,7 +75,7 @@ Este documento es un índice con anotaciones a otros artículos populares e info
     *   [12.10 Búfer de desplazamiento hacia atrás](#B.C3.BAfer_de_desplazamiento_hacia_atr.C3.A1s)
     *   [12.11 Administración de las sesiones](#Administraci.C3.B3n_de_las_sesiones)
 
-## Administración el sistema
+## Administración del sistema
 
 Esta sección se ocupa de las tareas administrativas y de gestión del sistema. Para más información, consulte [Core utilities (Español)](/index.php/Core_utilities_(Espa%C3%B1ol) "Core utilities (Español)") y [Category:System administration (Español)](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)").
 
@@ -345,7 +345,7 @@ Esta sección se desarrolla en [Color output in console](/index.php/Color_output
 
 ### Archivos comprimidos
 
-Los archivos comprimidos se encuentran con frecuencia en un sistema GNU/Linux. [Tar](/index.php/Core_Utilities_(Espa%C3%B1ol)#tar "Core Utilities (Español)") es una de las herramientas de archivo más comúnmente utilizadas, y los usuarios deberían estar familiarizados con su sintaxis (los paquetes de Arch Linux, por ejemplo, son simplemente archivos tar comprimidos con xzip). Consulte el artículo sobre [archivado y compresión](/index.php/Archiving_and_compression "Archiving and compression").
+Los archivos comprimidos se encuentran con frecuencia en un sistema GNU/Linux. [Tar](/index.php/Core_utilities_(Espa%C3%B1ol)#tar "Core utilities (Español)") es una de las herramientas de archivo más comúnmente utilizadas, y los usuarios deberían estar familiarizados con su sintaxis (los paquetes de Arch Linux, por ejemplo, son simplemente archivos tar comprimidos con xzip). Consulte el artículo sobre [archivado y compresión](/index.php/Archiving_and_compression "Archiving and compression").
 
 ### Indicador de la línea de comandos
 

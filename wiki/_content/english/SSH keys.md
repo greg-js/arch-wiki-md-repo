@@ -54,7 +54,7 @@ This challenge-response phase happens behind the scenes and is invisible to the 
 
 A private key is a guarded secret and as such it is advisable to store it on disk in an encrypted form. When the encrypted private key is required, a passphrase must first be entered in order to decrypt it. While this might superficially appear as though you are providing a login password to the SSH server, the passphrase is only used to decrypt the private key on the local system. The passphrase is not transmitted over the network.
 
-If you do use a private key passphrase, and you do not pass the -o option to *ssh-keygen*, your password will be encrypted with the MD5 hash function, which is not a secure password encryption method. If you use a password to encrypt your key, use the -o option. This will make your key incompatible with versions of ssh before 2014, when OpenSSH 6.5 was released. Use *ssh -V* to check what version of SSH you have installed.
+If you do use a private key passphrase, and you do not pass the `-o` option to *ssh-keygen*, your password will be encrypted with the MD5 hash function, which is not a secure password encryption method. If you use a password to encrypt your key, use the `-o` option. This will make your key incompatible with OpenSSH versions older than 6.5.
 
 ## Generating an SSH key pair
 
@@ -90,7 +90,7 @@ The key's randomart image is:
 
 The [randomart image](http://www.cs.berkeley.edu/~dawnsong/papers/randomart.pdf) was [introduced in OpenSSH 5.1](http://www.openssh.com/txt/release-5.1) as an easier means of visually identifying the key fingerprint.
 
-**NOTE:** If you set a passphrase for your key, it is *strongly encouraged* to use the `-o` option to ssh-keygen. This will save your private key in the new OpenSSH format, which has greatly increased resistance to brute-force password cracking, but is not supported by versions of OpenSSH prior to 6.5 ([released 2014-01-29](https://lwn.net/Articles/583485/)). According to [ssh-keygen(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh-keygen.1), Ed25519 keys always use the new private key format. Also use the `-a` switch to specify the number of KDF rounds on the password encryption.
+**Note:** If you set a passphrase for your key, it is *strongly encouraged* to use the `-o` option to *ssh-keygen*. This will save your private key in the new OpenSSH format, which has greatly increased resistance to brute-force password cracking, but is not supported by versions of OpenSSH prior to 6.5\. According to [ssh-keygen(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh-keygen.1), Ed25519 keys always use the new private key format. Also use the `-a` switch to specify the number of KDF rounds on the password encryption.
 
 You can also add an optional comment field to the public key with the `-C` switch, to more easily identify it in places such as `~/.ssh/known_hosts`, `~/.ssh/authorized_keys` and `ssh-add -L` output. For example:
 
@@ -192,7 +192,7 @@ When prompted for a passphrase, choose something that will be hard to guess if y
 
 It is also possible to create your private key without a passphrase. While this can be convenient, you need to be aware of the associated risks. Without a passphrase, your private key will be stored on disk in an unencrypted form. Anyone who gains access to your private key file will then be able to assume your identity on any SSH server to which you connect using key-based authentication. Furthermore, without a passphrase, you must also trust the root user, as he can bypass file permissions and will be able to access your unencrypted private key file at any time.
 
-**NOTE:** The old, default password encoding for `ssh` private keys keys **is insecure**; it is only a single round of an MD5 hash. For any version of ssh since version 6.5 (released in 2014), use the `-o` option to `ssh-keygen`. This will encode your private key in a new format that is incompatible with clients pre-2014, but not using it makes password-encrypting your key completely worthless.
+**Note:** The old, default password encoding for *ssh* private keys keys **is insecure**; it is only a single round of an MD5 hash. Since OpenSSH version 6.5, use the `-o` option to `ssh-keygen` to encode your private key in a new, more secure format.
 
 #### Changing the private key's passphrase without changing the key
 

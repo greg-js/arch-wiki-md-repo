@@ -57,9 +57,9 @@ See [Libinput](/index.php/Libinput "Libinput").
 
 ## Fingerprint sensor
 
-**Note:** This is likely not going to work at all. See [Talk:ASUS_Zenbook_UX430/UX530#Fingerprint_Reader](/index.php/Talk:ASUS_Zenbook_UX430/UX530#Fingerprint_Reader "Talk:ASUS Zenbook UX430/UX530").
+**Note:** This is likely not going to work at all. See [Talk:ASUS Zenbook UX430/UX530#Fingerprint Reader](/index.php/Talk:ASUS_Zenbook_UX430/UX530#Fingerprint_Reader "Talk:ASUS Zenbook UX430/UX530").
 
-Install fingerprint sensor driver [libfprint-elantech-git](https://aur.archlinux.org/packages/libfprint-elantech-git/), then see [Fprint](/index.php/Fprint "Fprint") and you might be also interested in [Fingerprint_GUI](/index.php/Fingerprint_GUI "Fingerprint GUI").
+Install fingerprint sensor driver [libfprint-elantech-git](https://aur.archlinux.org/packages/libfprint-elantech-git/), then see [Fprint](/index.php/Fprint "Fprint") and you might be also interested in [Fingerprint GUI](/index.php/Fingerprint_GUI "Fingerprint GUI").
 
 # Troubleshooting
 

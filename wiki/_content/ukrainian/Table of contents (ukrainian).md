@@ -1,3 +1,1 @@
 | [Українська](/index.php/Category:%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0 "Category:Українська") <small>(2)</small> |
-| <small>1.</small> [Про Arch](/index.php/Category:About_Arch_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:About Arch (Українська)") <small>(0)</small> |
-| <small>1.1.</small> [ArchWiki](/index.php/Category:ArchWiki_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0) "Category:ArchWiki (Українська)") <small>(0)</small> |

@@ -255,20 +255,21 @@ When comparing text files a word per word diff is often more desirable:
 
 ## Text streams
 
+Shell [pipelines](https://en.wikipedia.org/wiki/Pipeline_(Unix) operate on stdout by default. To operate on [stderr(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/stderr.3) you can redirect *stderr* to *stdout* with `*command* 2>&1 | *othercommand*` or, for Bash 4, `*command* |& *othercommand*`. See also [I/O Redirection](http://www.tldp.org/LDP/abs/html/io-redirection.html).
+
 ### grep
 
 [grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") is a command line text search utility originally written for Unix. The *grep* command searches files or standard input for lines matching a given regular expression, and prints these lines to standard output.
 
-*   Remember that *grep* handles files, so a construct like `cat *file* | grep *pattern*` is replaceable with `grep *pattern* *file*`
-*   There are *grep* alternatives optimized for VCS source code, such as [ripgrep](https://www.archlinux.org/packages/?name=ripgrep), [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher), and [ack](https://www.archlinux.org/packages/?name=ack).
+*   Remember that *grep* handles files, so a construct like `grep *pattern* < *file*` is replaceable with `grep *pattern* *file*`.
 *   To include file line numbers in the output, use the `-n` option.
 *   *grep* can also be used for hexadecimal search in a binary file, to look for let say the `A1 F2` sequence in a file, the command line is: `$ LANG=C grep --text --perl-regexp "\xA1\xF2" */path/to/file*` 
-
-**Note:** Some commands send their output to [stderr(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/stderr.3), and grep has no apparent effect. In this case, redirect *stderr* to *stdout* with `*command* 2>&1 | grep *args*` or (for Bash 4) `*command* |& grep *args*`. See also [I/O Redirection](http://www.tldp.org/LDP/abs/html/io-redirection.html).
 
 For color support, see [Color output in console#grep](/index.php/Color_output_in_console#grep "Color output in console").
 
 See [grep(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grep.1) for more details.
+
+**Tip:** There are *grep* alternatives optimized for VCS source code, such as [ripgrep](https://www.archlinux.org/packages/?name=ripgrep), [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher), and [ack](https://www.archlinux.org/packages/?name=ack).
 
 ### sed
 
@@ -480,6 +481,8 @@ Forcing a given format:
 The construction of some of these *tar* arguments may be considered legacy, but they are still useful when performing specific operations. See [tar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1) for details.
 
 **Note:** Although GNU's *tar* is installed as the default *tar* program, official Arch Linux projects like [pacman](/index.php/Pacman "Pacman") and [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") use *bsdtar* from the [libarchive](https://www.archlinux.org/packages/?name=libarchive) package.
+
+See also [Archiving and compression](/index.php/Archiving_and_compression "Archiving and compression").
 
 ### wipefs
 

@@ -1,4 +1,4 @@
-**Note:** RetroArch no está afiliado con [Arch Linux](/index.php/Arch_Linux "Arch Linux").
+**Nota:** RetroArch no está afiliado con [Arch Linux](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)").
 
 [RetroArch](http://www.retroarch.com/) es un emulador multisistema, modular, impulsado por línea de comandos, diseñado para ser rápido, ligero y portátil. Algunas de sus características se pueden encontrar en algunos otros emuladores, como el rebobinado en tiempo real y el ocultamiento de juego basado en la API libretro.
 
