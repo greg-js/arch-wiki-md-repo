@@ -57,6 +57,7 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.40 trinity](#trinity)
     *   [2.41 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
     *   [2.42 xyne-x86_64](#xyne-x86_64)
+    *   [2.43 y3xz](#y3xz)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -630,6 +631,18 @@ Server = https://download.opensuse.org/repositories/home:/mrmariusz/ArchLinux/$a
 ```
 [xyne-x86_64]
 Server = https://xyne.archlinux.ca/repos/xyne
+
+```
+
+### y3xz
+
+*   **Maintainer:** [User:Yuvadm](/index.php/User:Yuvadm "User:Yuvadm")
+*   **Description:** Some preciously compiled packages, mostly armv7 and aarch64 stuff.
+*   **Key-ID:** `7B40CAB49DA99130954A47CF271386AA2EB7672F`
+
+```
+[y3xz]
+Server = http://arch.y3xz.com/repo/$arch
 
 ```
 

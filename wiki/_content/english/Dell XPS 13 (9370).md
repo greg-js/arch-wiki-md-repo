@@ -30,6 +30,7 @@ The installation process for Arch on the XPS 13 does not differ from any other P
 *   [10 Touchpad](#Touchpad)
 *   [11 Audio](#Audio)
 *   [12 USB Type-C ports](#USB_Type-C_ports)
+*   [13 Fingerprint reader](#Fingerprint_reader)
 
 ## Booting
 
@@ -121,3 +122,7 @@ Also all three Type-C ports support DisplayPort alternate mode. It is taken care
 *   [Club3D Type-C to DisplayPort 1.2 adapter](https://www.club-3d.com/en/detail/2350/usb_3.1_type_c_to_displayport_1.2/) (tested with 1080p and 4K, both work at 60 Hz)
 *   [Dell Type-C to VGA adapter](https://www.dell.com/en-us/shop/dell-adapter-usb-c-to-vga/apd/470-abnc/pc-accessories) (tested with 1080p at 60 Hz)
 *   [Dell Type-C to HDMI adapter](https://www.dell.com/en-us/work/shop/dell-adapter-usb-c-to-hdmi/apd/470-abmz/pc-accessories) (tested with 1080p and 4K, both work at 60 Hz)
+
+## Fingerprint reader
+
+The fingerprint reader is not supported. There is a [libfprint feature request](https://gitlab.freedesktop.org/libfprint/libfprint/issues/43).

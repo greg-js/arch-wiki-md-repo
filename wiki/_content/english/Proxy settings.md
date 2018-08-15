@@ -147,7 +147,7 @@ You may also add any other environment variable, like rsync_proxy, or no_proxy.
 
 [libproxy](http://code.google.com/p/libproxy/) (which is available in the extra repository) is an abstraction library which should be used by all applications that want to access a network resource. It still is in development but could lead to a unified and automated handling of proxies in GNU/Linux if widely adopted.
 
-The role of libproxy is to read the proxy settings form different sources and make them available to applications which use the library. The interesting part with libproxy is that it offers an implementation of the [Web Proxy Autodiscovery Protocol](https://en.wikipedia.org/wiki/Web_Proxy_Autodiscovery_Protocol "wikipedia:Web Proxy Autodiscovery Protocol") and an implementation of [Proxy Auto-Config](https://en.wikipedia.org/wiki/Proxy_auto-config "wikipedia:Proxy auto-config") that goes with it.
+The role of libproxy is to read the proxy settings from different sources and make them available to applications which use the library. The interesting part with libproxy is that it offers an implementation of the [Web Proxy Autodiscovery Protocol](https://en.wikipedia.org/wiki/Web_Proxy_Autodiscovery_Protocol "wikipedia:Web Proxy Autodiscovery Protocol") and an implementation of [Proxy Auto-Config](https://en.wikipedia.org/wiki/Proxy_auto-config "wikipedia:Proxy auto-config") that goes with it.
 
 The `/usr/bin/proxy` binary takes URL(s) as argument(s) and returns the proxy/proxies that could be used to fetch this/these network resource(s).
 
@@ -197,7 +197,7 @@ proxychains <program>
 
 Where <program> can be any program already installed on your system (e.g. xterm, gnome-terminal, etc).
 
-If using *tsocks*, the configuration takes place in `/etc/tsocks.conf`. See [tsocks.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/tsocks.conf.5) for the options. An example minimum configuration looks like this:
+If using *tsocks*, the configuration takes place in `/etc/tsocks.conf`. See [tsocks.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tsocks.conf.5) for the options. An example minimum configuration looks like this:
 
  `/etc/tsocks.conf` 
 ```

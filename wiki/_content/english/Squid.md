@@ -20,9 +20,16 @@
     *   [9.2 Shorewall](#Shorewall)
 *   [10 HTTP Authentication](#HTTP_Authentication)
     *   [10.1 NTLM](#NTLM)
-*   [11 Troubleshooting](#Troubleshooting)
-    *   [11.1 Squid needs to be restarted after boot](#Squid_needs_to_be_restarted_after_boot)
-*   [12 Additional Resources](#Additional_Resources)
+*   [11 Hide Browser’s Real IP Address](#Hide_Browser.E2.80.99s_Real_IP_Address)
+*   [12 SSL Bumping](#SSL_Bumping)
+    *   [12.1 Create Self-Signed Root CA Certificate](#Create_Self-Signed_Root_CA_Certificate)
+    *   [12.2 Create a DER-encoded certificate to import into users' browsers](#Create_a_DER-encoded_certificate_to_import_into_users.27_browsers)
+    *   [12.3 Modify Squid Configuration File](#Modify_Squid_Configuration_File)
+    *   [12.4 Create and initialize TLS certificates cache directory](#Create_and_initialize_TLS_certificates_cache_directory)
+    *   [12.5 Finally, Restart Squid then SSL Bump will work](#Finally.2C_Restart_Squid_then_SSL_Bump_will_work)
+*   [13 Troubleshooting](#Troubleshooting)
+    *   [13.1 Squid needs to be restarted after boot](#Squid_needs_to_be_restarted_after_boot)
+*   [14 Additional Resources](#Additional_Resources)
 
 ## Installation
 
@@ -341,6 +348,90 @@ Then add something like this to squid.conf:
  http_access deny all
 
 ```
+
+## Hide Browser’s Real IP Address
+
+Reference: [Squid Proxy Hide System’s Real IP Address](https://www.cyberciti.biz/faq/squid-proxy-is-not-hiding-client-ip-address/)
+
+ `/etc/squid/squid.conf` 
+```
+# Hide client ip
+forwarded_for delete
+
+# Turn off via header
+via off
+
+# Deny request for original source of a request
+follow_x_forwarded_for deny all
+request_header_access X-Forwarded-For deny all
+```
+
+## SSL Bumping
+
+Reference: [Intercept HTTPS CONNECT messages with SSL-Bump](https://wiki.squid-cache.org/ConfigExamples/Intercept/SslBumpExplicit)
+
+### Create Self-Signed Root CA Certificate
+
+`cd /etc/squid`
+
+ `openssl req -new -newkey rsa:2048 -sha256 -days 3650 -nodes -x509 -extensions v3_ca -keyout myCA.pem -out myCA.pem` 
+```
+Generating a 2048 bit RSA private key                                                                                                                                                               
+.....+++                                                                                                                                                                                            
+.............................................................................................................................................+++                                                    
+writing new private key to 'myCA.pem'                                                                                                                                                               
+
+* * *
+
+You are about to be asked to enter information that will be incorporated                              
+into your certificate request.                                                                                                                                                                       
+What you are about to enter is what is called a Distinguished Name or a DN.                                                                                                                          
+There are quite a few fields but you can leave some blank                                                                                                                                            
+For some fields there will be a default value,                                                                                                                                                       
+If you enter '.', the field will be left blank.                                                                                                                                                      
+
+* * *
+
+Country Name (2 letter code) [AU]:US
+State or Province Name (full name) [Some-State]:Illinois
+Locality Name (eg, city) []:Chicago
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:Example Company LTD.
+Organizational Unit Name (eg, section) []:Information Technology
+Common Name (e.g. server FQDN or YOUR name) []:Example Company LTD.
+
+Email Address []:
+```
+
+### Create a DER-encoded certificate to import into users' browsers
+
+`openssl x509 -in myCA.pem -outform DER -out myCA.der`
+
+The result file (myCA.der) should be imported into the 'Authorities' section of users' browsers. For example, in FireFox:
+
+```
+   Open 'Preferences'
+   Go to the 'Privacy and Security' section
+   Press the 'View Certificates' button and go to the 'Authorities' tab
+   Press the 'Import' button, select the .der file that was created previously and pres 'OK'
+
+```
+
+### Modify Squid Configuration File
+
+ `/etc/squid/squid.conf` 
+```
+http_port 3128 ssl-bump tls-cert=/etc/squid/myCA.pem generate-host-certificates=on dynamic_cert_mem_cache_size=4MB options=NO_SSLv3,NO_TLSv1,NO_TLSv1_1,SINGLE_DH_USE,SINGLE_ECDH_USE
+ssl_bump stare all
+ssl_bump bump all
+```
+
+### Create and initialize TLS certificates cache directory
+
+`/usr/lib/squid/security_file_certgen -c -s /var/cache/squid/ssl_db -M 4MB`
+
+### Finally, Restart Squid then SSL Bump will work
+
+`systemctl restart squid`
 
 ## Troubleshooting
 

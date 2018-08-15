@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma versão localizada de [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture"). Data da última tradução: 2017-12-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture&diff=0&oldid=13292) na versão em inglês.
+
 Artigos relacionados
 
 *   [Advanced Linux Sound Architecture/Example Configurations](/index.php/Advanced_Linux_Sound_Architecture/Example_Configurations "Advanced Linux Sound Architecture/Example Configurations")

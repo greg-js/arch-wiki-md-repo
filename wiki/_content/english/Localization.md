@@ -66,7 +66,7 @@ The available IM frameworks are:
 
 *   **[Nimf](/index.php/Nimf "Nimf")** — A multilingual input method framework which inherits [Dasom](/index.php/Dasom "Dasom").
 
-	[https://gitlab.com/hodong/nimf](https://gitlab.com/hodong/nimf) || [nimf-git](https://aur.archlinux.org/packages/nimf-git/)
+	[https://gitlab.com/nimf-i18n/nimf](https://gitlab.com/nimf-i18n/nimf) || [nimf](https://aur.archlinux.org/packages/nimf/)
 
 *   **[SCIM](/index.php/SCIM "SCIM")** — The Smart Common Input Method platform.
 
@@ -112,7 +112,7 @@ First some background information on how GTK loads and selects IM modules:
 2.  RC files
 3.  `/etc/gtk-2.0/gtk.immodules`
 
-If no IM module is specified (either via GTK_IM_MODULE or in XSETTINGS), then GTK will automatically choose a suitable immodule from an internal listing (GTK_IM_MODULE_FILE... etc). This chosen IM module will depend on the software installed, and will be picked in a completely arbirtrary order.
+If no IM module is specified (either via GTK_IM_MODULE or in XSETTINGS), then GTK will automatically choose a suitable immodule from an internal listing (GTK_IM_MODULE_FILE... etc). This chosen IM module will depend on the software installed, and will be picked in a completely arbitrary order.
 
 For a listing of installed GTK+ immodules, see
 
@@ -156,4 +156,4 @@ To disable input method module loading in QT, [export](/index.php/Export "Export
 *   [Fedora wiki](https://fedoraproject.org/wiki/I18N/InputMethods "fedora:I18N/InputMethods")
 *   [Free Standards Group OpenI18N](http://www.openi18n.org/)
 *   [XSETTINGS 0.5 Specification](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html)
-*   [Running and Debugging GTK+ Applications](http://library.gnome.org/devel/gtk/unstable/gtk-running.html)
+*   [Running and Debugging GTK+ Applications](https://developer.gnome.org/gtk3/unstable/gtk-running.html)

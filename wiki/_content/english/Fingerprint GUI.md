@@ -31,7 +31,7 @@ polkit-kde-authentication-agent-1.desktop
 
 ```
 
-If you are using a [window manager](/index.php/Window_manager "Window manager"), you may need an [authentication agent](/index.php/Polkit#Authentication_agents "Polkit"). The package includes an authentication agent `/lib/fingerprint-gui/fingerprint-polkit-agent`. If your window manager is fully XDG compliant, this agent will [autostart](/index.php/Desktop_entries#Autostart "Desktop entries"). An agent is only needed when enrolling fingers, not when identifying.
+If you are using a [window manager](/index.php/Window_manager "Window manager"), you may need an [authentication agent](/index.php/Polkit#Authentication_agents "Polkit"). The package includes an authentication agent `/lib/fingerprint-gui/fingerprint-polkit-agent`. If your window manager is fully XDG compliant, this agent will [autostart](/index.php/XDG_Autostart "XDG Autostart"). An agent is only needed when enrolling fingers, not when identifying.
 
 ## Registering Fingerprints
 

@@ -130,15 +130,7 @@ Quartus Prime can be integrated with the system in several ways, but those are o
 
 Let us now add the Quartus `bin` folder to the `PATH` variable so it can be executed without specifying its absolute path. Create a `quartus.sh` file in the `/etc/profile.d` directory
 
-```
-/etc/profile.d/quartus.sh
-
-```
-
-```
-export PATH=$PATH:/opt/altera/15.1/quartus/bin
-
-```
+ `/etc/profile.d/quartus.sh`  `export PATH=$PATH:/opt/altera/15.1/quartus/bin` 
 
 Also, make sure it can be executed:
 
@@ -162,11 +154,7 @@ Even if `quartus` is now a command known by Bash, you still need to add the `--6
 
 A freedesktop.org application menu entry (which a lot of desktop environments and window managers follow) can be added to the system by creating a `quartus.desktop` file in your `~/.local/share/applications` directory:
 
-```
-~/.local/share/applications/quartus.desktop
-
-```
-
+ `~/.local/share/applications/quartus.desktop` 
 ```
 [Desktop Entry]
 Version=1.0
@@ -177,7 +165,6 @@ Icon=/opt/altera/15.1/quartus/adm/quartusii.png
 Terminal=false
 Type=Application
 Categories=Development
-
 ```
 
 #### USB-Blaster Download Cable Driver
@@ -186,18 +173,13 @@ The USB-Blaster (I and II) Download Cable is a cable that allows you to download
 
 Create a new udev rule:
 
-```
-/etc/udev/rules.d/51-altera-usb-blaster.rules
-
-```
-
+ `/etc/udev/rules.d/51-altera-usb-blaster.rules` 
 ```
 SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6001", MODE="0666"
 SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6002", MODE="0666"
 SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6003", MODE="0666"
 SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6010", MODE="0666"
 SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6810", MODE="0666"
-
 ```
 
 Then, *reload* that file using `udevadm` (disconnect any Altera device from port USB port before this command):
@@ -257,15 +239,7 @@ Configuring the path to your Quartus Prime Standard Edition license file from th
 
 Create a new udev rule:
 
-```
-/etc/udev/rules.d/10-network.rules
-
-```
-
-```
-SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="xx:xx:xx:xx:xx:xx", NAME="eth0"
-
-```
+ `/etc/udev/rules.d/10-network.rules`  `SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="xx:xx:xx:xx:xx:xx", NAME="eth0"` 
 
 where `xx:xx:xx:xx:xx:xx` is your networking device's MAC address. Then, *reload* that file using `udevadm`:
 
@@ -276,11 +250,7 @@ where `xx:xx:xx:xx:xx:xx` is your networking device's MAC address. Then, *reload
 
 Alternatively a dummy `eth0` network interface can be created by `systemd-networkd` daemon dynamically at boot. Create the file `25-dummy.netdev` in the `/etc/systemd/network/` directory
 
-```
-/etc/systemd/network/25-dummy.netdev
-
-```
-
+ `/etc/systemd/network/25-dummy.netdev` 
 ```
 [Match]
 Host=hostname
@@ -289,7 +259,6 @@ Host=hostname
 Name=eth0
 Kind=dummy
 MACAddress=xx:xx:xx:xx:xx:xx
-
 ```
 
 where `xx:xx:xx:xx:xx:xx` is the licensed networking device's MAC address and `hostname` is your machine's hostname. Finally ensure `systemd-networkd` service is [enabled](/index.php/Enable "Enable") and [started](/index.php/Start "Start").
@@ -369,27 +338,11 @@ Modelsim has a problem with version 4 of the linux kernel. You need to edit the 
 
 change
 
-```
-/opt/altera/15.1/modelsim_ae/vco line 206
-
-```
-
-```
- *)                vco="linux_rh60" ;;
-
-```
+ `/opt/altera/15.1/modelsim_ae/vco line 206`  `*)                vco="linux_rh60" ;;` 
 
 to
 
-```
-/opt/altera/15.1/modelsim_ae/vco line 206
-
-```
-
-```
- *)                vco="linux" ;;
-
-```
+ `/opt/altera/15.1/modelsim_ae/vco line 206`  `*)                vco="linux" ;;` 
 
 #### With freetype2 2.5.0.1-1
 
@@ -493,11 +446,7 @@ export LD_LIBRARY_PATH=${HOME}/altera/xx.x/lib32;${HOME}/altera/xx.x/lib32/glibc
 
 You can add Modelsim to your system application menu by creating a `modelsim.desktop` file in your `~/.local/share/applications` directory
 
-```
-~/.local/share/applications/modelsim.desktop
-
-```
-
+ `~/.local/share/applications/modelsim.desktop` 
 ```
 [Desktop Entry]
 Version=1.0
@@ -508,7 +457,6 @@ Icon=/opt/altera/15.1/modelsim_ae/modesim.gif
 Terminal=true
 Type=Application
 Categories=Development
-
 ```
 
 ### Troubleshooting
@@ -543,7 +491,7 @@ Trouble making server.
 
 then you may need to add an entry for `localhost` in your `/etc/hosts` file:
 
- ` /etc/hosts` 
+ `/etc/hosts` 
 ```
   #<ip-address>  <hostname.domain.org>  <hostname>
   ...

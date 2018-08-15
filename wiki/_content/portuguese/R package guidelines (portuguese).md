@@ -20,33 +20,33 @@ Este documento abrange padrões e diretrizes para escrever [PKGBUILDs](/index.ph
 
 ## Nomenclatura de pacote
 
-Packages should be named `r-pkgname`, where pkgname is taken from the `Package` field from the `DESCRIPTION` file. The package name should be lowercase.
+Pacotes devem ser nomeados `r-pkgname`, sendo *pkgname* retirado do campo `Package` do arquivo `DESCRIPTION`. O nome do pacote deve estar em letras minúsculas.
 
 ## Versão de pacote
 
-Take it from the `Version` field. R allows packages to have colons and hyphens in their version, this is disallowed in PKGBUILDs. Convert these to a period or underscore.
+Pegue no campo `Version`. R permite que os pacotes tenham dois pontos e hífenes em sua versão, isso não é permitido em PKGBUILDs. Converta estes para um período ou sublinhado.
 
 ## Arch
 
-See [PKGBUILD#arch](/index.php/PKGBUILD#arch "PKGBUILD"). If the package's CRAN webpage has `NeedsCompilation: yes` it is likely architecture-specific. Otherwise, it is likely not.
+Veja [PKGBUILD (Português)#arch](/index.php/PKGBUILD_(Portugu%C3%AAs)#arch "PKGBUILD (Português)"). Se a página web do CRAN do pacote tiver `NeedsCompilation: yes`, é provável que seja específico da arquitetura. Caso contrário, é provável que não.
 
 ## Dependências
 
-R packages listed in `Depends`, `Imports`, or the `LinkingTo` fields in a package's `DESCRIPTION` file should be listed under depends.
+Os pacotes R listados nos campos `Depends`, `Imports` ou `LinkingTo` no arquivo `DESCRIPTION` de um pacote devem ser listados em [depends](/index.php/PKGBUILD_(Portugu%C3%AAs)#depends "PKGBUILD (Português)").
 
-R packages listed in `Suggests` should be listed as optdepends.
+Os pacotes R listados em `Suggests` devem ser listados como [optdepends](/index.php/PKGBUILD_(Portugu%C3%AAs)#optdepends "PKGBUILD (Português)").
 
-Some packages require external tools, these are listed under `SystemRequirements`.
+Alguns pacotes requerem ferramentas externas, estas estão listadas em `SystemRequirements`.
 
-[gcc-fortran](https://www.archlinux.org/packages/?name=gcc-fortran) is needed as a makedepends for some packages but is not always listed in the `DESCRIPTION` file.
+O [gcc-fortran](https://www.archlinux.org/packages/?name=gcc-fortran) é necessário como [makedepends](/index.php/PKGBUILD_(Portugu%C3%AAs)#makedepends "PKGBUILD (Português)") para alguns pacotes, mas nem sempre é listado no arquivo `DESCRIPTION`.
 
 ## Fonte
 
-All R packages available on CRAN are available at the website `[https://cran.r-project.org/src/contrib/cranname_cranversion.tar.gz](https://cran.r-project.org/src/contrib/cranname_cranversion.tar.gz)` where cranname is the name of the package on CRAN and cranversion the cran version.
+Todos os pacotes R disponíveis no CRAN estão disponíveis no site `https://cran.r-project.org/src/contrib/*cranname*_*cranversion*.tar.gz`, sendo *cranname* o nome do pacote no CRAN e *cranversion* a versão cran.
 
 ## Compilação e empacotamento
 
-R has built-in support for building packages, we just need to install and copy over the built package afterwards:
+R tem suporte embutido para compilar pacotes, nós só precisamos instalar e copiar o pacote compilado depois:
 
 ```
  build(){
@@ -88,7 +88,7 @@ R has built-in support for building packages, we just need to install and copy o
 
 ### XML
 
-An example where the R package has characters not allowed in pkgver:
+Um exemplo em que o pacote R possui caracteres não permitidos no pkgver:
 
 ```
  _cranver=3.98-1.11

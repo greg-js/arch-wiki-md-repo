@@ -351,7 +351,7 @@ sudo -u admin -- netctl start home
 
 ```
 
-When "joe" needs to use journalctl or kill run away process he can switch to that user
+When "joe" needs to use journalctl or kill run away process he can switch to that user.
 
 ```
 sudo -i -u devel

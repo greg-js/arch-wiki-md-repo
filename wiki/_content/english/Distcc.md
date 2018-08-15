@@ -3,7 +3,7 @@ Related articles
 *   [TORQUE](/index.php/TORQUE "TORQUE")
 *   [Slurm](/index.php/Slurm "Slurm")
 
-Distcc is a program to distribute builds of C, C++, Objective C or Objective C++ code across several machines on a network to speed up building. It should always generate the same results as a local build, is simple to install and use, and is usually much faster than a local compile. Further, one can use it together with native Arch build tools such as makepkg.
+[distcc](https://en.wikipedia.org/wiki/distcc "wikipedia:distcc") is a program to distribute builds of C, C++, Objective C or Objective C++ code across several machines on a network to speed up building. It should always generate the same results as a local build, is simple to install and use, and is usually much faster than a local compile. Further, one can use it together with native Arch build tools such as makepkg.
 
 ## Contents
 
@@ -32,6 +32,7 @@ Distcc is a program to distribute builds of C, C++, Objective C or Objective C++
     *   [7.2 code 110](#code_110)
     *   [7.3 Adjust log level](#Adjust_log_level)
     *   [7.4 Limit HDD/SSD usage by relocating $HOME/.distcc](#Limit_HDD.2FSSD_usage_by_relocating_.24HOME.2F.distcc)
+*   [8 See also](#See_also)
 
 ## Terms
 
@@ -294,3 +295,7 @@ By default, distcc creates `$HOME/.distcc` which stores transient relevant info 
 $ export DISTCC_DIR=/tmp/distcc
 
 ```
+
+## See also
+
+*   [https://github.com/distcc/distcc](https://github.com/distcc/distcc)

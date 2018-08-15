@@ -3,9 +3,8 @@ Related articles
 *   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
 *   [Display manager](/index.php/Display_manager "Display manager")
 *   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
-*   [Window manager](/index.php/Window_manager "Window manager")
-*   [Oblogout](/index.php/Oblogout "Oblogout")
 *   [Xdg-menu](/index.php/Xdg-menu "Xdg-menu")
+*   [Oblogout](/index.php/Oblogout "Oblogout")
 
 [Openbox](http://openbox.org/wiki/Main_Page) is a lightweight, powerful, and highly configurable *stacking* [window manager](/index.php/Window_manager "Window manager") with extensive standards support. It may be built upon and run independently as the basis of a unique [desktop environment](/index.php/Desktop_environment "Desktop environment"), or within other integrated desktop environments such as [KDE](/index.php/KDE "KDE") and [Xfce](/index.php/Xfce "Xfce"), as an alternative to the window managers they provide. The [LXDE](/index.php/LXDE "LXDE") desktop environment is itself built around Openbox.
 
@@ -21,6 +20,7 @@ Related articles
     *   [3.3 Autostart](#Autostart)
     *   [3.4 environment](#environment)
     *   [3.5 Themes](#Themes)
+        *   [3.5.1 Edit or create](#Edit_or_create)
     *   [3.6 GUI configuration](#GUI_configuration)
 *   [4 Openbox reconfiguration](#Openbox_reconfiguration)
 *   [5 Keybinds](#Keybinds)
@@ -43,36 +43,35 @@ Related articles
     *   [6.5 Desktop menu as a panel menu](#Desktop_menu_as_a_panel_menu)
     *   [6.6 XDG compliant menu](#XDG_compliant_menu)
         *   [6.6.1 Examples](#Examples_2)
-    *   [6.7 Edit or create new themes](#Edit_or_create_new_themes)
 *   [7 Compositing effects](#Compositing_effects)
-*   [8 Mouse cursor and application icon themes](#Mouse_cursor_and_application_icon_themes)
-*   [9 Desktop icons and wallpapers](#Desktop_icons_and_wallpapers)
-    *   [9.1 Desktop management using file managers](#Desktop_management_using_file_managers)
-    *   [9.2 Wallpaper](#Wallpaper)
-    *   [9.3 Icon programs](#Icon_programs)
-        *   [9.3.1 idesk](#idesk)
-        *   [9.3.2 xfdesktop](#xfdesktop)
-    *   [9.4 conky reconfiguration](#conky_reconfiguration)
-*   [10 oblogout](#oblogout)
-*   [11 Openbox for multihead users](#Openbox_for_multihead_users)
-*   [12 Tips and tricks](#Tips_and_tricks)
-    *   [12.1 Launch a complex command with hotkey](#Launch_a_complex_command_with_hotkey)
-    *   [12.2 Switch desktops using the mouse](#Switch_desktops_using_the_mouse)
-    *   [12.3 Set default applications / file associations](#Set_default_applications_.2F_file_associations)
-    *   [12.4 Stop continous mouse wheel desktop switching](#Stop_continous_mouse_wheel_desktop_switching)
-    *   [12.5 Ad-hoc window transparency](#Ad-hoc_window_transparency)
-    *   [12.6 Using obxprop for faster configuration](#Using_obxprop_for_faster_configuration)
-    *   [12.7 Xprop values for applications](#Xprop_values_for_applications)
-    *   [12.8 Switching between keyboard layouts](#Switching_between_keyboard_layouts)
-    *   [12.9 Set grid layout for virtual desktops](#Set_grid_layout_for_virtual_desktops)
-    *   [12.10 Enable Hot Corners](#Enable_Hot_Corners)
-    *   [12.11 Window snapping](#Window_snapping)
-    *   [12.12 Smooth display manager transition](#Smooth_display_manager_transition)
-*   [13 Troubleshooting](#Troubleshooting)
-    *   [13.1 Firefox](#Firefox)
-    *   [13.2 Missing themes](#Missing_themes)
-    *   [13.3 Windows load behind the active window](#Windows_load_behind_the_active_window)
-*   [14 See also](#See_also)
+*   [8 Desktop icons and wallpapers](#Desktop_icons_and_wallpapers)
+    *   [8.1 Desktop management using file managers](#Desktop_management_using_file_managers)
+    *   [8.2 Wallpaper](#Wallpaper)
+    *   [8.3 Icon programs](#Icon_programs)
+        *   [8.3.1 idesk](#idesk)
+        *   [8.3.2 xfdesktop](#xfdesktop)
+    *   [8.4 conky reconfiguration](#conky_reconfiguration)
+*   [9 oblogout](#oblogout)
+*   [10 Openbox for multihead users](#Openbox_for_multihead_users)
+*   [11 Tips and tricks](#Tips_and_tricks)
+    *   [11.1 Cursor and icon themes](#Cursor_and_icon_themes)
+    *   [11.2 Launch a complex command with hotkey](#Launch_a_complex_command_with_hotkey)
+    *   [11.3 Switch desktops using the mouse](#Switch_desktops_using_the_mouse)
+    *   [11.4 Set default applications / file associations](#Set_default_applications_.2F_file_associations)
+    *   [11.5 Ad-hoc window transparency](#Ad-hoc_window_transparency)
+    *   [11.6 Using obxprop for faster configuration](#Using_obxprop_for_faster_configuration)
+    *   [11.7 Xprop values for applications](#Xprop_values_for_applications)
+    *   [11.8 Switching between keyboard layouts](#Switching_between_keyboard_layouts)
+    *   [11.9 Set grid layout for virtual desktops](#Set_grid_layout_for_virtual_desktops)
+    *   [11.10 Enable Hot Corners](#Enable_Hot_Corners)
+    *   [11.11 Window snapping](#Window_snapping)
+    *   [11.12 Smooth display manager transition](#Smooth_display_manager_transition)
+*   [12 Troubleshooting](#Troubleshooting)
+    *   [12.1 Firefox](#Firefox)
+    *   [12.2 Missing themes](#Missing_themes)
+    *   [12.3 Stop continuous desktop switching](#Stop_continuous_desktop_switching)
+    *   [12.4 Windows load behind the active window](#Windows_load_behind_the_active_window)
+*   [13 See also](#See_also)
 
 ## Installation
 
@@ -162,6 +161,12 @@ Install [obconf](https://www.archlinux.org/packages/?name=obconf) and [lxappeara
 A good selection of themes are available in the [openbox-themes](https://www.archlinux.org/packages/?name=openbox-themes) package or the [AUR](/index.php/AUR "AUR"). Some [GTK+#Themes](/index.php/GTK%2B#Themes "GTK+") come with an Openbox theme as well. Both Openbox-specific and Openbox-compatible themes will be installed to the `/usr/share/themes` directory and will also be immediately available for selection.
 
 [box-look.org](https://www.box-look.org/browse/ord/latest/) is an excellent and well-established source of themes. [deviantART.com](http://www.deviantart.com/) is another excellent resource. Many more can be found online.
+
+#### Edit or create
+
+**Tip:** It's better to copy a theme to your home directory than to edit those found in `/usr/share/themes/`. This will retain the original should anything go wrong and ensure that your changes are not overwritten on update.
+
+The process of creating new or modifying existing themes is covered extensively at the official [openbox.org](http://openbox.org/wiki/Help:Themes) website. [obtheme](https://aur.archlinux.org/packages/obtheme/) is a user-friendly GUI for doing so.
 
 ### GUI configuration
 
@@ -508,21 +513,11 @@ A xdg compliant menu is based on the freedesktop.org standard. The menu is defin
 
 *   [californium](https://github.com/mlde/californium): xdg menu based on the LXQt main menu and easily themable
 
-### Edit or create new themes
-
-**Tip:** It's better to copy a theme to your home directory than to edit those found in `/usr/share/themes/`. This will retain the original should anything go wrong and ensure that your changes are not overwritten through an update.
-
-The process of creating new or modifying existing themes is covered extensively at the official [openbox.org](http://openbox.org/wiki/Help:Themes) website. [obtheme](https://aur.archlinux.org/packages/obtheme/) is a user-friendly GUI for doing so.
-
 ## Compositing effects
 
 Openbox does not provide native support for [compositing](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager"), and thus requires an external compositor for this purpose.
 
 Although compositing is not a necessary component, it may specifically avoid issues such as screen distortion with [oblogout](#oblogout), and visual glitches with terminal window transparency. See [Xorg#Composite](/index.php/Xorg#Composite "Xorg") for common choices.
-
-## Mouse cursor and application icon themes
-
-See [Cursor themes](/index.php/Cursor_themes "Cursor themes") and [Icons](/index.php/Icons "Icons") for details.
 
 ## Desktop icons and wallpapers
 
@@ -555,7 +550,7 @@ idesk &
 
 [xfdesktop](https://www.archlinux.org/packages/?name=xfdesktop) is the desktop manager for [Xfce](/index.php/Xfce "Xfce"). The [Thunar](/index.php/Thunar "Thunar") file manager will also be downloaded as a dependency. Where this is used, the Openbox desktop menu will no longer be accessible by right-clicking the background.
 
-As such, it will consequently be necessary to access it by other means, such as by [creating a keybind](#Desktop_menu), and/or by - where permitted - re-configuring an installed panel to use the [desktop menu as a panel menu](#Desktop_menu_as_a_panel_menu). To use xfdesktop to provide icons, add the following command to the `~/.config/openbox/autostart` file:
+As such, it will consequently be necessary to access it by other means, such as by [creating a keybind](#Desktop_menu_as_a_panel_menu), and/or by - where permitted - re-configuring an installed panel to use the [desktop menu as a panel menu](#Desktop_menu_as_a_panel_menu). To use xfdesktop to provide icons, add the following command to the `~/.config/openbox/autostart` file:
 
 ```
 xfdesktop &
@@ -584,6 +579,10 @@ Openbox Multihead will function like normal Openbox when only a single head is a
 A downside to using Openbox Multihead is that it breaks the EWMH assumption that one and only one desktop is visible at any time. Thus, existing pagers will not work well with it. To remedy this, you can install [pager-multihead-git](https://aur.archlinux.org/packages/pager-multihead-git/) alongside Openbox Multihead. It will work without Openbox Multihead if only one monitor is active.
 
 ## Tips and tricks
+
+### Cursor and icon themes
+
+See [Cursor themes](/index.php/Cursor_themes "Cursor themes") and [Icons](/index.php/Icons "Icons") for details.
 
 ### Launch a complex command with hotkey
 
@@ -641,28 +640,6 @@ xdotool behave_screen_edge --delay 500 right set_desktop --relative -- +1 &
 ### Set default applications / file associations
 
 See the [Default applications](/index.php/Default_applications "Default applications") article.
-
-### Stop continous mouse wheel desktop switching
-
-By default Openbox switches from the last desktop back to the first desktop on mouse wheel scroll. Use `<wrap>no</wrap>` in the `mousebind` section to disable this behaviour.
-
-```
-   <context name="Desktop">
-     <mousebind button="Up" action="Click">
-       <action name="GoToDesktop">
-         <to>previous</to>
-         <wrap>no</wrap>
-       </action>
-     </mousebind>
-     <mousebind button="Down" action="Click">
-       <action name="GoToDesktop">
-         <to>next</to>
-         <wrap>no</wrap>
-       </action>
-     </mousebind>
-   </context>
-
-```
 
 ### Ad-hoc window transparency
 
@@ -812,6 +789,28 @@ Mozilla based browsers may ignore application rules (e.g. `<desktop>`) unless `c
 If for any reason the newly extracted theme cannot be selected, open the theme directory to first ensure that it is compatible with Openbox - there should be an `openbox-3` directory and a `themerc` file within it. An `.obt` (**O**pen**B**ox **T**heme) file may also be present in some instances, which can then be manually loaded in [obconf](https://www.archlinux.org/packages/?name=obconf).
 
 A theme may also be not accessible due to wrong permissions. See [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes") for more.
+
+### Stop continuous desktop switching
+
+By default Openbox switches from the last desktop back to the first desktop on mouse wheel scroll. Use `<wrap>no</wrap>` in the `mousebind` section to disable this behaviour.
+
+```
+   <context name="Desktop">
+     <mousebind button="Up" action="Click">
+       <action name="GoToDesktop">
+         <to>previous</to>
+         <wrap>no</wrap>
+       </action>
+     </mousebind>
+     <mousebind button="Down" action="Click">
+       <action name="GoToDesktop">
+         <to>next</to>
+         <wrap>no</wrap>
+       </action>
+     </mousebind>
+   </context>
+
+```
 
 ### Windows load behind the active window
 

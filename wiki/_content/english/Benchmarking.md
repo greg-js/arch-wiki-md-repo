@@ -245,8 +245,6 @@ See also BBS Article: [iozone to evaluate I/O schedulers... results NOT what you
 
 [hardinfo](https://www.archlinux.org/packages/?name=hardinfo) can gather information about your system's hardware and operating system, perform benchmarks, and generate printable reports either in HTML or in plain text formats. HardInfo performs CPU and FPU benchmarks and has a very clean GTK-based interface.
 
-See also [Author's site](http://wiki.hardinfo.org/HomePage).
-
 ### Phoronix Test Suite
 
 *The [Phoronix Test Suite](http://www.phoronix-test-suite.com/) is the most comprehensive testing and benchmarking platform available that provides an extensible framework for which new tests can be easily added. The software is designed to effectively carry out both qualitative and quantitative benchmarks in a clean, reproducible, and easy-to-use manner.*

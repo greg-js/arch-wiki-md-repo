@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma versão localizada de [Creating packages](/index.php/Creating_packages "Creating packages"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Creating_packages&diff=0&oldid=532272) na versão em inglês.
+
 Artigos relacionados
 
 *   [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
@@ -62,7 +64,7 @@ A vantagem de um pacote meta, comparado com um grupo, é que quaisquer novos pac
 
 ### Pré-requisito de software
 
-Primeiro, certifique-se de que as ferramentas necessárias estejam [instaladas](/index.php/Instala "Instala"): o grupo de pacotes [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) deve ser o suficiente; ele inclui **make** e ferramentas adicionais necessárias para compilar a partir do código-fonte.
+Primeiro, certifique-se de que as ferramentas necessárias estejam [instaladas](/index.php/Instala "Instala"): o grupo de pacotes [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) deve ser o suficiente; ele inclui `make` e ferramentas adicionais necessárias para compilar a partir do código-fonte.
 
 A ferramenta chave para compilar pacotes é o [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") (fornecido pelo [pacman](https://www.archlinux.org/packages/?name=pacman)), que faz o seguinte:
 

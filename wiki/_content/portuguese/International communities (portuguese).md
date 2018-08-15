@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma versão localizada de [International communities](/index.php/International_communities "International communities"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=International_communities&diff=0&oldid=532618) na versão em inglês.
+
 Artigos relacionados
 
 *   [Help:i18n](/index.php/Help:I18n_(Portugu%C3%AAs) "Help:I18n (Português)")
@@ -67,7 +69,7 @@ Esta lista não está completa. Se você conhece uma comunidade que não está l
 *   Fórum: [http://foros.archlinux-es.org/](http://foros.archlinux-es.org/)
 *   Wiki: [Main page (Español)](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)")
 *   Planet: [http://planeta.archlinux-es.org](http://planeta.archlinux-es.org)
-*   ArchlinuxLatinoamerica: [https://ArchlinuxLatinoamerica.wordpress.com](https://ArchlinuxLatinoamerica.wordpress.com)
+*   ArchlinuxLatinoamerica: [https://ArchlinuxLatinoamerica.wordpress.com/](https://ArchlinuxLatinoamerica.wordpress.com/)
 
 ## França
 

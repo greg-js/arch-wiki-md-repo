@@ -73,7 +73,7 @@ Es posible que tenga que especificar un controlador para que funcione. Para obte
 
 ```
 
-Todo lo que queda es simplemente conectarse usando una dirección [IP estática](/index.php/Network_configuration#Static_IP_address "Network configuration") o [DHCP](/index.php/Network_configuration#Dynamic_IP_address "Network configuration"). Por ejemplo:
+Todo lo que queda es simplemente conectarse usando una dirección IP [estática](/index.php/Network_configuration_(Espa%C3%B1ol)#Direcci.C3.B3n_IP_est.C3.A1tica "Network configuration (Español)") o [dinámica](/index.php/Network_configuration_(Espa%C3%B1ol)#Direcci.C3.B3n_IP_din.C3.A1mica "Network configuration (Español)"). Por ejemplo:
 
 ```
 # dhcpcd *interfaz*

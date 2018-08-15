@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma versão localizada de [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&diff=0&oldid=532436) na versão em inglês.
+
 Artigos relacionados
 
 *   [CD Burning](/index.php/CD_Burning "CD Burning")
@@ -58,7 +60,7 @@ Execute o seguinte comando, substituindo `/dev/**sdx**` pela sua unidade, por ex
 
 ```
 
-Veja [Utilitários principais#dd](/index.php/Utilit%C3%A1rios_principais#dd "Utilitários principais") para mais informações sobre `dd`. Veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1#DESCRIPTION) para mais informações sobre `oflag=sync`.
+Veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) para mais informações sobre `dd`. Veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1#DESCRIPTION) para mais informações sobre `oflag=sync`.
 
 #### No Windows
 
@@ -321,44 +323,44 @@ Em `/dev/sd**x1**` você deve substituir **x** pela primeira letra livre após a
 
 #### A forma Flashnul
 
-[flashnul](https://translate.google.com/translate?hl=&sl=ru&tl=en&u=http%3A%2F%2Fshounen.ru%2Fsoft%2Fflashnul%2Freadme.rus.html&sandbox=1) is an utility to verify the functionality and maintenance of Flash-Memory (USB-Flash, IDE-Flash, SecureDigital, MMC, MemoryStick, SmartMedia, XD, CompactFlash etc).
+[flashnul](https://translate.google.com/translate?hl=&sl=ru&tl=en&u=http%3A%2F%2Fshounen.ru%2Fsoft%2Fflashnul%2Freadme.rus.html&sandbox=1) é um utilitário para verificar a funcionalidade e manutenção da memória Flash (Flash USB, IDE-Flash, SecureDigital, MMC, MemoryStick, SmartMedia, XD, CompactFlash etc).
 
-From a command prompt, invoke flashnul with `-p`, and determine which device index is your USB drive, e.g.:
+Em um prompt de comando, chame flashnul com `-p` e determine qual índice de dispositivo é seu drive USB, por exemplo:
 
  `C:\>flashnul -p` 
 ```
-Avaible physical drives:
-Avaible logical disks:
+Available physical drives:
+Available logical disks:
 C:\
 D:\
 E:\
 
 ```
 
-When you have determined which device is the correct one, you can write the image to your drive, by invoking flashnul with the device index, `-L`, and the path to your image, e.g:
+Depois de determinar qual é o dispositivo correto, você pode gravar a imagem em sua unidade, chamando flashnul com o índice do dispositivo, `-L` e o caminho para sua imagem, por exemplo:
 
 ```
-C:\>flashnul **E:** -L *path\to\arch.iso*
+C:\>flashnul **E:** -L *caminho\para\arch.iso*
 
 ```
 
-As long as you are really sure you want to write the data, type yes, then wait a bit for it to write. If you get an access denied error, close any Explorer windows you have open.
+Contanto que você tenha certeza de que deseja gravar os dados, digite yes e espere um pouco para que eles sejam gravados. Se você receber um erro de acesso negado, feche todas as janelas do Explorer abertas.
 
-If under Vista or Win7, you should open the console as administrator, or else flashnul will fail to open the stick as a block device and will only be able to write via the drive handle windows provides
+Se sob o Vista ou o Win7, você deve abrir o console como administrador, senão o flashnul não conseguirá abrir o pendrive como um dispositivo de bloco e só poderá gravar através dos meios fornecidos pelo Windows.
 
-**Note:** Confirmed that you need to use drive letter as opposed to number. flashnul 1rc1, Windows 7 x64.
+**Nota:** Confirmado que você precisa usar letra de unidade em oposição ao número. flashnul 1rc1, Windows 7 x64.
 
 #### Carregar a mídia de instalação da RAM
 
-This method uses [Syslinux](/index.php/Syslinux "Syslinux") and a [Ramdisk](/index.php/Ramdisk "Ramdisk") ([MEMDISK](http://www.syslinux.org/wiki/index.php/MEMDISK)) to load the entire Arch Linux ISO image into RAM. Since this will be running entirely from system memory, you will need to make sure the system you will be installing this on has an adequate amount. A minimum amount of RAM between 500 MB and 1 GB should suffice for a MEMDISK based, Arch Linux install.
+Este método usa [Syslinux](/index.php/Syslinux "Syslinux") e um [Ramdisk](/index.php/Ramdisk "Ramdisk") ([MEMDISK](http://www.syslinux.org/wiki/index.php/MEMDISK)) para carregar toda a imagem ISO do Arch Linux na RAM. Como isso será executado inteiramente a partir da memória do sistema, você precisará certificar-se de que o sistema em que você estará instalando tenha uma quantidade adequada. Uma quantidade mínima de RAM entre 500 MB e 1 GB deve ser suficiente para uma instalação do Arch Linux baseada em MEMDISK.
 
-For more information on Arch Linux system requirements as well as those for MEMDISK see the [Installation guide](/index.php/Installation_guide "Installation guide") and [here](http://www.etherboot.org/wiki/bootingmemdisk#preliminaries). For reference, here is the [preceding forum thread](https://bbs.archlinux.org/viewtopic.php?id=135266).
+Para obter mais informações sobre os requisitos do sistema Arch Linux, bem como sobre os do MEMDISK, consulte o [Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação") e [aqui](http://www.etherboot.org/wiki/bootingmemdisk#preliminaries). Para referência, aqui está o [tópico do fórum anterior](https://bbs.archlinux.org/viewtopic.php?id=135266).
 
-**Tip:** Once the installer has completed loading you can simply remove the USB stick and even use it on a different machine to start the process all over again. Utilizing MEMDISK also allows booting and installing Arch Linux to and from the same USB flash drive.
+**Dica:** Uma vez que o instalador tenha concluído o carregamento, você pode simplesmente remover o pendrive e até mesmo usá-lo em uma máquina diferente para iniciar o processo novamente. A utilização do MEMDISK também permite inicializar e instalar o Arch Linux de e para a mesma unidade flash USB.
 
 ##### Preparar a unidade flash USB
 
-Begin by formatting the USB flash drive as **FAT32**. Then create the following folders on the newly formatted drive.
+Comece formatando a unidade flash USB como **FAT32**. Em seguida, crie as seguintes pastas na unidade recém-formatada.
 
 *   `Boot`
     *   `Boot/ISOs`
@@ -366,16 +368,16 @@ Begin by formatting the USB flash drive as **FAT32**. Then create the following 
 
 ##### Copiar os arquivos necessários à unidade flash USB
 
-Next copy the ISO that you would like to boot to the `Boot/ISOs` folder. After that, extract from the following files from the latest release of [syslinux](https://www.archlinux.org/packages/?name=syslinux) from [here](http://www.kernel.org/pub/linux/utils/boot/syslinux/) and copy them into the following folders.
+Em seguida copie o ISO que você gostaria de inicializar na pasta `Boot/ISOs`. Depois disso, extraia os seguintes arquivos da última versão do [syslinux](https://www.archlinux.org/packages/?name=syslinux) do site [aqui](http://www.kernel.org/pub/linux/utils/boot/syslinux/) e copie-os para o seguinte pastas.
 
-*   `./win32/syslinux.exe` to the Desktop or Downloads folder on your system.
-*   `./memdisk/memdisk` to the `Settings` folder on your USB flash drive.
+*   `./win32/syslinux.exe` para a pasta `Área de trabalho` ou `Downloads` em seu sistema.
+*   `./memdisk/memdisk` para a pasta `Settings` em seu dispositivo flash USB.
 
 ##### Criar o arquivo de configuração
 
-After copying the needed files, navigate to the USB flash drive, /boot/Settings and create a `syslinux.cfg` file.
+Depois de copiar os arquivos necessários, navegue até a unidade flash USB, /boot/Settings e crie um arquivo `syslinux.cfg`.
 
-**Warning:** On the `INITRD` line, be sure to use the name of the ISO file that you copied to your `ISOs` folder!
+**Atenção:** Na linha `INITRD`, certifique-se de usar o nome do arquivo ISO que você copiou para a sua pasta `ISOs`!
  `/Boot/Settings/syslinux.cfg` 
 ```
 DEFAULT arch_iso
@@ -387,13 +389,13 @@ LABEL arch_iso
         APPEND iso
 ```
 
-For more information on Syslinux see the [Arch Wiki article](/index.php/Syslinux "Syslinux").
+Para mais informações sobre o Syslinux veja o [artigo do Arch Wiki](/index.php/Syslinux "Syslinux").
 
 ##### Etapas finais
 
-Finally, create a `*.bat` file where `syslinux.exe` is located and run it ("Run as administrator" if you are on Vista or Windows 7):
+Finalmente, crie um arquivo `*.bat` onde `syslinux.exe` está localizado e execute-o ("Executar como administrador" se você estiver no Vista ou no Windows 7):
 
- `C:\Documents and Settings\username\Desktop\install.bat` 
+ `C:\Documents and Settings\usuário\Área de trabalho\install.bat` 
 ```
 @echo off
 syslinux.exe -m -a -d /Boot/Settings X:
@@ -401,9 +403,9 @@ syslinux.exe -m -a -d /Boot/Settings X:
 
 ## Solução de problemas
 
-*   If you get the "device did not show up after 30 seconds" error due to the `/dev/disk/by-label/ARCH_XXXXYY` not mounting, try renaming your USB media to `ARCH_XXXXYY` (e.g. `ARCH_201501`).
+*   Se você receber o erro "device did not show up after 30 seconds" devido à não montagem do `/dev/disk/by-label/ARCH_XXXXYY`, tente renomear sua mídia USB para `ARCH_XXXXYY` (por exemplo, `ARCH_201501`).
 
-*   If you get errors, try using another USB device. There are case scenarios in which it solved all issues.
+*   Se você receber erros, tente usar outro dispositivo USB. Existem casos em que resolveu todos os problemas.
 
 ## Veja também
 

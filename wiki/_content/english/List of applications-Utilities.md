@@ -19,6 +19,7 @@
         *   [1.2.1 File managers](#File_managers)
             *   [1.2.1.1 Console](#Console)
             *   [1.2.1.2 Graphical](#Graphical)
+                *   [1.2.1.2.1 Twin-panel](#Twin-panel)
         *   [1.2.2 Trash management](#Trash_management)
         *   [1.2.3 File synchronization](#File_synchronization)
         *   [1.2.4 Archiving and compression tools](#Archiving_and_compression_tools)
@@ -31,16 +32,20 @@
             *   [1.2.7.3 File indexers](#File_indexers)
                 *   [1.2.7.3.1 Full-text indexers](#Full-text_indexers)
     *   [1.3 Development](#Development)
-        *   [1.3.1 Integrated development environments](#Integrated_development_environments)
-        *   [1.3.2 GUI builders](#GUI_builders)
-        *   [1.3.3 Hex editors](#Hex_editors)
-        *   [1.3.4 JSON tools](#JSON_tools)
-        *   [1.3.5 Debuggers](#Debuggers)
-        *   [1.3.6 UML modelers](#UML_modelers)
-        *   [1.3.7 API documentation browsers](#API_documentation_browsers)
-        *   [1.3.8 Build automation](#Build_automation)
-        *   [1.3.9 Version control systems](#Version_control_systems)
-        *   [1.3.10 Game development](#Game_development)
+        *   [1.3.1 Version control systems](#Version_control_systems)
+        *   [1.3.2 Build automation](#Build_automation)
+        *   [1.3.3 Integrated development environments](#Integrated_development_environments)
+            *   [1.3.3.1 Java IDEs](#Java_IDEs)
+            *   [1.3.3.2 Python IDEs](#Python_IDEs)
+            *   [1.3.3.3 Educational IDEs](#Educational_IDEs)
+        *   [1.3.4 Debuggers](#Debuggers)
+        *   [1.3.5 GUI builders](#GUI_builders)
+        *   [1.3.6 Hex editors](#Hex_editors)
+        *   [1.3.7 JSON tools](#JSON_tools)
+        *   [1.3.8 UML modelers](#UML_modelers)
+        *   [1.3.9 API documentation browsers](#API_documentation_browsers)
+        *   [1.3.10 Issue tracking systems](#Issue_tracking_systems)
+        *   [1.3.11 Game development](#Game_development)
     *   [1.4 Text input](#Text_input)
         *   [1.4.1 Character selectors](#Character_selectors)
         *   [1.4.2 Virtual keyboards](#Virtual_keyboards)
@@ -366,21 +371,9 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 	[https://userbase.kde.org/Dolphin](https://userbase.kde.org/Dolphin) || [dolphin](https://www.archlinux.org/packages/?name=dolphin)
 
-*   **Double Commander** — File manager with two panels side by side. It is inspired by Total Commander and features some new ideas.
-
-	[http://doublecmd.sourceforge.net//](http://doublecmd.sourceforge.net//) || GTK+: [doublecmd-gtk2](https://www.archlinux.org/packages/?name=doublecmd-gtk2), Qt5: [doublecmd-qt5](https://www.archlinux.org/packages/?name=doublecmd-qt5)
-
-*   **[emelFM2](https://en.wikipedia.org/wiki/emelFM2 "wikipedia:emelFM2")** — File manager that implements the popular two-panel design.
-
-	[http://emelfm2.net/](http://emelfm2.net/) || [emelfm2](https://www.archlinux.org/packages/?name=emelfm2)
-
 *   **Gentoo** — A lightweight file manager for GTK.
 
 	[http://www.obsession.se/gentoo/](http://www.obsession.se/gentoo/) || [gentoo](https://aur.archlinux.org/packages/gentoo/)
-
-*   **[GNOME Commander](https://en.wikipedia.org/wiki/GNOME_Commander "wikipedia:GNOME Commander")** — A dual-paned file manager for the GNOME Desktop.
-
-	[http://gcmd.github.io/](http://gcmd.github.io/) || [gnome-commander](https://aur.archlinux.org/packages/gnome-commander/)
 
 *   **[GNOME Files](/index.php/GNOME_Files "GNOME Files")** — Extensible, heavyweight file manager used by default in GNOME with support for custom scripts.
 
@@ -390,17 +383,9 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 	[http://www.konqueror.org/](http://www.konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
 
-*   **[Krusader](https://en.wikipedia.org/wiki/Krusader "wikipedia:Krusader")** — Advanced twin panel (Midnight Commander style) file manager for the KDE desktop.
-
-	[http://www.krusader.org/](http://www.krusader.org/) || [krusader](https://www.archlinux.org/packages/?name=krusader)
-
 *   **Liri Files** — The file manager for Liri.
 
 	[https://github.com/lirios/files](https://github.com/lirios/files) || [liri-files](https://www.archlinux.org/packages/?name=liri-files)
-
-*   **muCommander** — A lightweight, cross-platform file manager with a dual-pane interface written in Java.
-
-	[http://www.mucommander.com/](http://www.mucommander.com/) || [mucommander](https://aur.archlinux.org/packages/mucommander/)
 
 *   **[Nemo](/index.php/Nemo "Nemo")** — Nemo is the file manager of the Cinnamon desktop. A fork of Nautilus.
 
@@ -414,10 +399,6 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 	[http://fox-toolkit.org/](http://fox-toolkit.org/) || [fox](https://www.archlinux.org/packages/?name=fox)
 
-*   **[PCManFM](/index.php/PCManFM "PCManFM")** — Lightweight file manager which features tabbed and dual pane browsing; also it can optionally manage the desktop icons and background.
-
-	[http://wiki.lxde.org/en/PCManFM](http://wiki.lxde.org/en/PCManFM) || [pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm)
-
 *   **qtFM** — Small, lightweight filemanager for Linux desktops based on pure Qt.
 
 	[http://www.qtfm.org/](http://www.qtfm.org/) || [qtfm](https://aur.archlinux.org/packages/qtfm/)
@@ -430,21 +411,9 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 	[http://ignorantguru.github.com/spacefm/](http://ignorantguru.github.com/spacefm/) || [spacefm](https://aur.archlinux.org/packages/spacefm/)
 
-*   **Sunflower** — Small and highly customizable twin-panel file manager for Linux with support for plugins.
-
-	[http://sunflower-fm.org/](http://sunflower-fm.org/) || [sunflower](https://aur.archlinux.org/packages/sunflower/)
-
 *   **[Thunar](/index.php/Thunar "Thunar")** — File manager that can be run as a daemon with excellent start up and directory load times.
 
 	[http://docs.xfce.org/xfce/thunar/start](http://docs.xfce.org/xfce/thunar/start) || [thunar](https://www.archlinux.org/packages/?name=thunar)
-
-*   **trolCommander** — Lightweight, cross-platform file manager written in Java (Successor of muCommander)
-
-	[https://github.com/trol73/mucommander](https://github.com/trol73/mucommander) || [trolcommander](https://aur.archlinux.org/packages/trolcommander/)
-
-*   **Tux Commander** — Windowed file manager with two panels side by side similar to popular Total Commander or Midnight Commander file managers.
-
-	[http://tuxcmd.sourceforge.net/description.php](http://tuxcmd.sourceforge.net/description.php) || [tuxcmd](https://www.archlinux.org/packages/?name=tuxcmd)
 
 *   **Worker** — Fast, lightweight and feature-rich file manager for the X Window System.
 
@@ -453,6 +422,44 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 *   **[Xfe](https://en.wikipedia.org/wiki/Xfe "wikipedia:Xfe")** — Microsoft Explorer-like file manager for X (X File Explorer).
 
 	[http://roland65.free.fr/xfe/](http://roland65.free.fr/xfe/) || [xfe](https://aur.archlinux.org/packages/xfe/)
+
+###### Twin-panel
+
+*   **Double Commander** — File manager with two panels side by side. It is inspired by Total Commander and features some new ideas.
+
+	[http://doublecmd.sourceforge.net//](http://doublecmd.sourceforge.net//) || GTK+: [doublecmd-gtk2](https://www.archlinux.org/packages/?name=doublecmd-gtk2), Qt5: [doublecmd-qt5](https://www.archlinux.org/packages/?name=doublecmd-qt5)
+
+*   **[emelFM2](https://en.wikipedia.org/wiki/emelFM2 "wikipedia:emelFM2")** — File manager that implements the popular two-panel design.
+
+	[http://emelfm2.net/](http://emelfm2.net/) || [emelfm2](https://www.archlinux.org/packages/?name=emelfm2)
+
+*   **[GNOME Commander](https://en.wikipedia.org/wiki/GNOME_Commander "wikipedia:GNOME Commander")** — A dual-paned file manager for the GNOME Desktop.
+
+	[http://gcmd.github.io/](http://gcmd.github.io/) || [gnome-commander](https://aur.archlinux.org/packages/gnome-commander/)
+
+*   **[Krusader](https://en.wikipedia.org/wiki/Krusader "wikipedia:Krusader")** — Advanced twin panel (Midnight Commander style) file manager for the KDE desktop.
+
+	[http://www.krusader.org/](http://www.krusader.org/) || [krusader](https://www.archlinux.org/packages/?name=krusader)
+
+*   **muCommander** — A lightweight, cross-platform file manager with a dual-pane interface written in Java.
+
+	[http://www.mucommander.com/](http://www.mucommander.com/) || [mucommander](https://aur.archlinux.org/packages/mucommander/)
+
+*   **[PCManFM](/index.php/PCManFM "PCManFM")** — Lightweight file manager which features tabbed and dual pane browsing; also it can optionally manage the desktop icons and background.
+
+	[http://wiki.lxde.org/en/PCManFM](http://wiki.lxde.org/en/PCManFM) || [pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm)
+
+*   **Sunflower** — Small and highly customizable twin-panel file manager for Linux with support for plugins.
+
+	[http://sunflower-fm.org/](http://sunflower-fm.org/) || [sunflower](https://aur.archlinux.org/packages/sunflower/)
+
+*   **trolCommander** — Lightweight, dual-pane file manager written in Java. Fork of muCommander.
+
+	[https://github.com/trol73/mucommander](https://github.com/trol73/mucommander) || [trolcommander](https://aur.archlinux.org/packages/trolcommander/)
+
+*   **Tux Commander** — Windowed file manager with two panels side by side similar to popular Total Commander or Midnight Commander file managers.
+
+	[http://tuxcmd.sourceforge.net/description.php](http://tuxcmd.sourceforge.net/description.php) || [tuxcmd](https://www.archlinux.org/packages/?name=tuxcmd)
 
 #### Trash management
 
@@ -686,6 +693,66 @@ These programs index your files to allow for quick searching.
 
 ### Development
 
+#### Version control systems
+
+See also [Wikipedia:Comparison of revision control software](https://en.wikipedia.org/wiki/Comparison_of_revision_control_software "wikipedia:Comparison of revision control software").
+
+*   **[Bazaar](/index.php/Bazaar "Bazaar")** — Distributed version control system that helps you track project history over time and to collaborate easily with others.
+
+	[https://bazaar.canonical.com/](https://bazaar.canonical.com/) || [bzr](https://www.archlinux.org/packages/?name=bzr)
+
+*   **[CVS](/index.php/Concurrent_Versions_System "Concurrent Versions System")** — Concurrent Versions System, a client-server revision control system.
+
+	[http://cvs.nongnu.org/](http://cvs.nongnu.org/) || [cvs](https://www.archlinux.org/packages/?name=cvs)
+
+*   **[Darcs](https://en.wikipedia.org/wiki/Darcs "wikipedia:Darcs")** — Distributed revision control system that was designed to replace traditional, centralized source control systems such as CVS and Subversion.
+
+	[http://darcs.net/](http://darcs.net/) || [darcs](https://www.archlinux.org/packages/?name=darcs)
+
+*   **[Fossil](https://en.wikipedia.org/wiki/Fossil_(software) "wikipedia:Fossil (software)")** — Distributed VCS with bug tracking, wiki, forum, and technotes.
+
+	[https://www.fossil-scm.org/](https://www.fossil-scm.org/) || [fossil](https://www.archlinux.org/packages/?name=fossil)
+
+*   **[Git](/index.php/Git "Git")** — Distributed revision control and source code management system with an emphasis on speed.
+
+	[https://git-scm.com/](https://git-scm.com/) || [git](https://www.archlinux.org/packages/?name=git)
+
+*   **[Mercurial](/index.php/Mercurial "Mercurial")** — Distributed version control system written in Python and similar in many ways to Git.
+
+	[https://www.mercurial-scm.org/](https://www.mercurial-scm.org/) || [mercurial](https://www.archlinux.org/packages/?name=mercurial)
+
+*   **[Subversion](/index.php/Subversion "Subversion")** — Full-featured centralized version control system originally designed to be a better CVS.
+
+	[https://subversion.apache.org/](https://subversion.apache.org/) || [subversion](https://www.archlinux.org/packages/?name=subversion)
+
+#### Build automation
+
+See also [Wikipedia:List of build automation software](https://en.wikipedia.org/wiki/List_of_build_automation_software "wikipedia:List of build automation software").
+
+*   **[Apache Ant](https://en.wikipedia.org/wiki/Apache_Ant "wikipedia:Apache Ant")** — Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent upon each other.
+
+	[http://ant.apache.org/](http://ant.apache.org/) || [apache-ant](https://www.archlinux.org/packages/?name=apache-ant)
+
+*   **[Apache Maven](https://en.wikipedia.org/wiki/Apache_Maven "wikipedia:Apache Maven")** — Build automation tool used primarily for Java.
+
+	[http://maven.apache.org/](http://maven.apache.org/) || [maven](https://www.archlinux.org/packages/?name=maven)
+
+*   **[CMake](https://en.wikipedia.org/wiki/CMake "wikipedia:CMake")** — Family of tools designed to build, test and package software.
+
+	[https://cmake.org/](https://cmake.org/) || [cmake](https://www.archlinux.org/packages/?name=cmake)
+
+*   **[GNU make](https://en.wikipedia.org/wiki/Make_(software) "wikipedia:Make (software)")** — GNU make utility to maintain groups of programs.
+
+	[http://www.gnu.org/software/make](http://www.gnu.org/software/make) || [make](https://www.archlinux.org/packages/?name=make) (part of [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/))
+
+*   **[Gradle](https://en.wikipedia.org/wiki/Gradle "wikipedia:Gradle")** — Powerful build system for the JVM.
+
+	[https://gradle.org/](https://gradle.org/) || [gradle](https://www.archlinux.org/packages/?name=gradle)
+
+*   **Phing** — PHP program designed to automate tasks of all kinds.
+
+	[https://www.phing.info/](https://www.phing.info/) || [phing](https://aur.archlinux.org/packages/phing/)
+
 #### Integrated development environments
 
 See also [Wikipedia:Comparison of integrated development environments](https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments "wikipedia:Comparison of integrated development environments").
@@ -701,10 +768,6 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 *   **[Bluefish](https://en.wikipedia.org/wiki/Bluefish_(software) "wikipedia:Bluefish (software)")** — Powerful editor targeted towards programmers and webdevelopers, with many options to write websites, scripts and programming code. It supports many programming and markup languages.
 
 	[http://bluefish.openoffice.nl/](http://bluefish.openoffice.nl/) || [bluefish](https://www.archlinux.org/packages/?name=bluefish)
-
-*   **[Bluej](https://en.wikipedia.org/wiki/Bluej "wikipedia:Bluej")** — Fully featured Java IDE used mainly for educational and beginner purposes.
-
-	[https://bluej.org/](https://bluej.org/) || [bluej](https://aur.archlinux.org/packages/bluej/)
 
 *   **[Code::Blocks](https://en.wikipedia.org/wiki/Code::Blocks "wikipedia:Code::Blocks")** — C, C++ and Fortran IDE built to meet the most demanding needs of its users. It is designed to be very extensible and fully configurable.
 
@@ -742,10 +805,6 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[https://wiki.gnome.org/Apps/Builder](https://wiki.gnome.org/Apps/Builder) || [gnome-builder](https://www.archlinux.org/packages/?name=gnome-builder)
 
-*   **[IntelliJ IDEA](https://en.wikipedia.org/wiki/IntelliJ_IDEA "wikipedia:IntelliJ IDEA")** — IDE for Java, Groovy and other programming languages with advanced refactoring features.
-
-	[http://www.jetbrains.com/idea/](http://www.jetbrains.com/idea/) || [intellij-idea-community-edition](https://www.archlinux.org/packages/?name=intellij-idea-community-edition)
-
 *   **[KDevelop](https://en.wikipedia.org/wiki/KDevelop "wikipedia:KDevelop")** — Feature-full, plugin extensible IDE for C/C++ and other programming languages.
 
 	[https://www.kdevelop.org/](https://www.kdevelop.org/) || [kdevelop](https://www.archlinux.org/packages/?name=kdevelop)
@@ -753,10 +812,6 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 *   **[Komodo Edit](https://en.wikipedia.org/wiki/Komodo_Edit "wikipedia:Komodo Edit")** — A free, multi-language editor.
 
 	[http://www.activestate.com/komodo-edit](http://www.activestate.com/komodo-edit) || [komodo-edit](https://aur.archlinux.org/packages/komodo-edit/)
-
-*   **[KTurtle](https://en.wikipedia.org/wiki/KTurtle "wikipedia:KTurtle")** — Educational programming environment that aims to make learning how to program as easily as possible. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
-
-	[https://www.kde.org/applications/education/kturtle/](https://www.kde.org/applications/education/kturtle/) || [kturtle](https://www.archlinux.org/packages/?name=kturtle)
 
 *   **[Lazarus](https://en.wikipedia.org/wiki/Lazarus_(IDE) "wikipedia:Lazarus (IDE)")** — Delphi (Object Pascal) compatible IDE for Rapid Application Development. It has variety of components ready for use and a graphical form designer to easily create complex graphical user interfaces.
 
@@ -770,7 +825,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[http://monodevelop.com/](http://monodevelop.com/) || [monodevelop-git](https://aur.archlinux.org/packages/monodevelop-git/)
 
-*   **[MPLAB](https://en.wikipedia.org/wiki/MPLAB "wikipedia:MPLAB")** — IDE for Microchip PIC and dsPIC development
+*   **[MPLAB](https://en.wikipedia.org/wiki/MPLAB "wikipedia:MPLAB")** — IDE for Microchip PIC and dsPIC development.
 
 	[http://www.microchip.com/mplabx](http://www.microchip.com/mplabx) || [microchip-mplabx-bin](https://aur.archlinux.org/packages/microchip-mplabx-bin/)
 
@@ -778,25 +833,33 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[https://netbeans.org/](https://netbeans.org/) || [netbeans](https://www.archlinux.org/packages/?name=netbeans)
 
-*   **[Ninja-IDE](https://en.wikipedia.org/wiki/Ninja-IDE "wikipedia:Ninja-IDE")** — IDE for Python development.
-
-	[http://ninja-ide.org/](http://ninja-ide.org/) || [ninja-ide](https://www.archlinux.org/packages/?name=ninja-ide)
-
 *   **[PHPStorm](/index.php/PHPStorm "PHPStorm")** — JetBrains PhpStorm is a commercial, cross-platform IDE for PHP built on JetBrains' IntelliJ IDEA platform, providing an editor for PHP, HTML and JavaScript with on-the-fly code analysis, error prevention and automated refactorings for PHP and JavaScript code.
 
 	[https://www.jetbrains.com/phpstorm/](https://www.jetbrains.com/phpstorm/) || [phpstorm](https://aur.archlinux.org/packages/phpstorm/) [phpstorm-eap](https://aur.archlinux.org/packages/phpstorm-eap/)
-
-*   **[PyCharm](https://en.wikipedia.org/wiki/PyCharm "wikipedia:PyCharm")** — Python IDE with support for code analysis, debugging, unit testing, version control and web development with Django.
-
-	[http://www.jetbrains.com/pycharm/](http://www.jetbrains.com/pycharm/) || [pycharm-community-edition](https://www.archlinux.org/packages/?name=pycharm-community-edition)
 
 *   **[Qt Creator](https://en.wikipedia.org/wiki/Qt_Creator "wikipedia:Qt Creator")** — Lightweight, cross-platform C++ integrated development environment with a focus on Qt.
 
 	[https://www.qt.io/ide/](https://www.qt.io/ide/) || [qtcreator](https://www.archlinux.org/packages/?name=qtcreator)
 
-*   **[Scratch](https://en.wikipedia.org/wiki/Scratch_(programming_language) "wikipedia:Scratch (programming language)")** — Programming system and content development tool for educational and entertainment purposes, such as creating interactive projects and simple sprite-based games. It is used primarly by unskilled users (such as children) as an entry to [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming "wikipedia:Event-driven programming").
+##### Java IDEs
 
-	[https://scratch.mit.edu/](https://scratch.mit.edu/) || [scratch](https://www.archlinux.org/packages/?name=scratch)
+*   **[Bluej](https://en.wikipedia.org/wiki/Bluej "wikipedia:Bluej")** — Fully featured Java IDE used mainly for educational and beginner purposes.
+
+	[https://bluej.org/](https://bluej.org/) || [bluej](https://aur.archlinux.org/packages/bluej/)
+
+*   **[IntelliJ IDEA](https://en.wikipedia.org/wiki/IntelliJ_IDEA "wikipedia:IntelliJ IDEA")** — IDE for Java, Groovy and other programming languages with advanced refactoring features.
+
+	[http://www.jetbrains.com/idea/](http://www.jetbrains.com/idea/) || [intellij-idea-community-edition](https://www.archlinux.org/packages/?name=intellij-idea-community-edition)
+
+##### Python IDEs
+
+*   **[Ninja-IDE](https://en.wikipedia.org/wiki/Ninja-IDE "wikipedia:Ninja-IDE")** — IDE for Python development.
+
+	[http://ninja-ide.org/](http://ninja-ide.org/) || [ninja-ide](https://www.archlinux.org/packages/?name=ninja-ide)
+
+*   **[PyCharm](https://en.wikipedia.org/wiki/PyCharm "wikipedia:PyCharm")** — Python IDE with support for code analysis, debugging, unit testing, version control and web development with Django.
+
+	[http://www.jetbrains.com/pycharm/](http://www.jetbrains.com/pycharm/) || [pycharm-community-edition](https://www.archlinux.org/packages/?name=pycharm-community-edition)
 
 *   **[Spyder](https://en.wikipedia.org/wiki/Spyder_(software) "wikipedia:Spyder (software)")** — Scientific Python Development Environment providing MATLAB-like features.
 
@@ -806,9 +869,73 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[http://thonny.org/](http://thonny.org/) || [thonny](https://aur.archlinux.org/packages/thonny/)
 
-*   **[WingIDE](https://en.wikipedia.org/wiki/Wing_IDE "wikipedia:Wing IDE")** — Proprietary python development environment. It is fully featured and meant for professional use.
+*   **[WingIDE](https://en.wikipedia.org/wiki/Wing_IDE "wikipedia:Wing IDE")** — Proprietary Python development environment. It is fully featured and meant for professional use.
 
 	[http://www.wingware.com](http://www.wingware.com) || [wingide](https://aur.archlinux.org/packages/wingide/)
+
+##### Educational IDEs
+
+*   **[KTurtle](https://en.wikipedia.org/wiki/KTurtle "wikipedia:KTurtle")** — Educational programming environment that aims to make learning how to program as easily as possible. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
+
+	[https://www.kde.org/applications/education/kturtle/](https://www.kde.org/applications/education/kturtle/) || [kturtle](https://www.archlinux.org/packages/?name=kturtle)
+
+*   **[Scratch](https://en.wikipedia.org/wiki/Scratch_(programming_language) "wikipedia:Scratch (programming language)")** — Programming system and content development tool for educational and entertainment purposes, such as creating interactive projects and simple sprite-based games. It is used primarly by unskilled users (such as children) as an entry to [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming "wikipedia:Event-driven programming").
+
+	[https://scratch.mit.edu/](https://scratch.mit.edu/) || [scratch](https://www.archlinux.org/packages/?name=scratch)
+
+#### Debuggers
+
+*   **Accerciser** — Interactive Python accessibility explorer. It uses the AT-SPI library to inspect, examine, and interact with widgets, allowing you to check if an application is providing correct information to assistive technologies and automated testing frameworks.
+
+	[https://wiki.gnome.org/Apps/Accerciser](https://wiki.gnome.org/Apps/Accerciser) || [accerciser](https://www.archlinux.org/packages/?name=accerciser)
+
+*   **Alleyoop** — Find memory-management problems in your programs using the valgrind tool.
+
+	[http://alleyoop.sourceforge.net/](http://alleyoop.sourceforge.net/) || [alleyoop](https://www.archlinux.org/packages/?name=alleyoop)
+
+*   **Bustle** — Draws sequence diagrams of D-Bus activity. It shows signal emissions, method calls and their corresponding returns, with time stamps for each individual event and the duration of each method call.
+
+	[https://www.freedesktop.org/wiki/Software/Bustle/](https://www.freedesktop.org/wiki/Software/Bustle/) || [bustle-git](https://aur.archlinux.org/packages/bustle-git/)
+
+*   **[Data Display Debugger](https://en.wikipedia.org/wiki/Data_Display_Debugger "wikipedia:Data Display Debugger")** — Graphical front-end for command-line debuggers such as GDB.
+
+	[https://www.gnu.org/software/ddd/](https://www.gnu.org/software/ddd/) || [ddd](https://aur.archlinux.org/packages/ddd/)
+
+*   **GammaRay** — Qt-application inspection and manipulation tool.
+
+	[https://www.kdab.com/development-resources/qt-tools/gammaray/](https://www.kdab.com/development-resources/qt-tools/gammaray/) || [gammaray](https://www.archlinux.org/packages/?name=gammaray)
+
+*   **D-Feet** — Easy to use D-Bus debugger to inspect D-Bus interfaces of running programs and invoke methods on those interfaces.
+
+	[https://wiki.gnome.org/Apps/DFeet](https://wiki.gnome.org/Apps/DFeet) || [d-feet](https://www.archlinux.org/packages/?name=d-feet)
+
+*   **KCachegrind** — Profile data visualization tool, used to determine the most time consuming execution parts of program.
+
+	[https://www.kde.org/applications/development/kcachegrind/](https://www.kde.org/applications/development/kcachegrind/) || KDE: [kcachegrind](https://www.archlinux.org/packages/?name=kcachegrind), Qt: [qcachegrind](https://www.archlinux.org/packages/?name=qcachegrind)
+
+*   **[KDbg](https://en.wikipedia.org/wiki/KDbg "wikipedia:KDbg")** — Graphical user interface to GDB, the GNU debugger. It provides an intuitive interface for setting breakpoints, inspecting variables, and stepping through code.
+
+	[http://kdbg.org/](http://kdbg.org/) || [kdbg](https://www.archlinux.org/packages/?name=kdbg)
+
+*   **Massif-Visualizer** — Visualizer for Valgrind Massif data files.
+
+	[https://phabricator.kde.org/source/massif-visualizer/](https://phabricator.kde.org/source/massif-visualizer/) || [massif-visualizer](https://www.archlinux.org/packages/?name=massif-visualizer)
+
+*   **[Nemiver](https://en.wikipedia.org/wiki/Nemiver "wikipedia:Nemiver")** — Easy to use standalone C/C++ debugger (GDB front-end) that integrates well in the GNOME environment.
+
+	[https://wiki.gnome.org/Apps/Nemiver](https://wiki.gnome.org/Apps/Nemiver) || [nemiver](https://www.archlinux.org/packages/?name=nemiver)
+
+*   **Qt QDbusViewer** — Tool to introspect D-Bus objects and messages.
+
+	[http://doc.qt.io/qt-5/qdbusviewer.html](http://doc.qt.io/qt-5/qdbusviewer.html) || [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools)
+
+*   **scanmem** — Debugging utility designed to isolate the address of an arbitrary variable in an executing process.
+
+	[https://github.com/scanmem/scanmem](https://github.com/scanmem/scanmem) || CLI: [scanmem](https://www.archlinux.org/packages/?name=scanmem), GUI: [gameconqueror](https://www.archlinux.org/packages/?name=gameconqueror)
+
+*   **Sysprof** — Profiling tool that helps in finding the functions in which a program uses most of its time.
+
+	[https://wiki.gnome.org/Apps/Sysprof](https://wiki.gnome.org/Apps/Sysprof) || [sysprof](https://www.archlinux.org/packages/?name=sysprof)
 
 #### GUI builders
 
@@ -875,60 +1002,6 @@ See also [Wikipedia:Comparison of hex editors](https://en.wikipedia.org/wiki/Com
 	[http://kmkeen.com/jshon/](http://kmkeen.com/jshon/) || [jshon](https://www.archlinux.org/packages/?name=jshon)
 
 *   the Elvish [shell](/index.php/Shell "Shell") ([elvish](https://aur.archlinux.org/packages/elvish/)) has built-in support for JSON
-
-#### Debuggers
-
-*   **Accerciser** — Interactive Python accessibility explorer. It uses the AT-SPI library to inspect, examine, and interact with widgets, allowing you to check if an application is providing correct information to assistive technologies and automated testing frameworks.
-
-	[https://wiki.gnome.org/Apps/Accerciser](https://wiki.gnome.org/Apps/Accerciser) || [accerciser](https://www.archlinux.org/packages/?name=accerciser)
-
-*   **Alleyoop** — Find memory-management problems in your programs using the valgrind tool.
-
-	[http://alleyoop.sourceforge.net/](http://alleyoop.sourceforge.net/) || [alleyoop](https://www.archlinux.org/packages/?name=alleyoop)
-
-*   **Bustle** — Draws sequence diagrams of D-Bus activity. It shows signal emissions, method calls and their corresponding returns, with time stamps for each individual event and the duration of each method call.
-
-	[https://www.freedesktop.org/wiki/Software/Bustle/](https://www.freedesktop.org/wiki/Software/Bustle/) || [bustle-git](https://aur.archlinux.org/packages/bustle-git/)
-
-*   **[Data Display Debugger](https://en.wikipedia.org/wiki/Data_Display_Debugger "wikipedia:Data Display Debugger")** — Graphical front-end for command-line debuggers such as GDB.
-
-	[https://www.gnu.org/software/ddd/](https://www.gnu.org/software/ddd/) || [ddd](https://aur.archlinux.org/packages/ddd/)
-
-*   **GammaRay** — Qt-application inspection and manipulation tool.
-
-	[https://www.kdab.com/development-resources/qt-tools/gammaray/](https://www.kdab.com/development-resources/qt-tools/gammaray/) || [gammaray](https://www.archlinux.org/packages/?name=gammaray)
-
-*   **D-Feet** — Easy to use D-Bus debugger to inspect D-Bus interfaces of running programs and invoke methods on those interfaces.
-
-	[https://wiki.gnome.org/Apps/DFeet](https://wiki.gnome.org/Apps/DFeet) || [d-feet](https://www.archlinux.org/packages/?name=d-feet)
-
-*   **KCachegrind** — Profile data visualization tool, used to determine the most time consuming execution parts of program.
-
-	[https://www.kde.org/applications/development/kcachegrind/](https://www.kde.org/applications/development/kcachegrind/) || KDE: [kcachegrind](https://www.archlinux.org/packages/?name=kcachegrind), Qt: [qcachegrind](https://www.archlinux.org/packages/?name=qcachegrind)
-
-*   **[KDbg](https://en.wikipedia.org/wiki/KDbg "wikipedia:KDbg")** — Graphical user interface to GDB, the GNU debugger. It provides an intuitive interface for setting breakpoints, inspecting variables, and stepping through code.
-
-	[http://kdbg.org/](http://kdbg.org/) || [kdbg](https://www.archlinux.org/packages/?name=kdbg)
-
-*   **Massif-Visualizer** — Visualizer for Valgrind Massif data files.
-
-	[https://phabricator.kde.org/source/massif-visualizer/](https://phabricator.kde.org/source/massif-visualizer/) || [massif-visualizer](https://www.archlinux.org/packages/?name=massif-visualizer)
-
-*   **[Nemiver](https://en.wikipedia.org/wiki/Nemiver "wikipedia:Nemiver")** — Easy to use standalone C/C++ debugger (GDB front-end) that integrates well in the GNOME environment.
-
-	[https://wiki.gnome.org/Apps/Nemiver](https://wiki.gnome.org/Apps/Nemiver) || [nemiver](https://www.archlinux.org/packages/?name=nemiver)
-
-*   **Qt QDbusViewer** — Tool to introspect D-Bus objects and messages.
-
-	[http://doc.qt.io/qt-5/qdbusviewer.html](http://doc.qt.io/qt-5/qdbusviewer.html) || [qt5-tools](https://www.archlinux.org/packages/?name=qt5-tools)
-
-*   **scanmem** — Debugging utility designed to isolate the address of an arbitrary variable in an executing process.
-
-	[https://github.com/scanmem/scanmem](https://github.com/scanmem/scanmem) || CLI: [scanmem](https://www.archlinux.org/packages/?name=scanmem), GUI: [gameconqueror](https://www.archlinux.org/packages/?name=gameconqueror)
-
-*   **Sysprof** — Profiling tool that helps in finding the functions in which a program uses most of its time.
-
-	[https://wiki.gnome.org/Apps/Sysprof](https://wiki.gnome.org/Apps/Sysprof) || [sysprof](https://www.archlinux.org/packages/?name=sysprof)
 
 #### UML modelers
 
@@ -1000,53 +1073,9 @@ See also [Wikipedia:List of Unified Modeling Language tools](https://en.wikipedi
 
 	[https://zealdocs.org/](https://zealdocs.org/) || [zeal](https://www.archlinux.org/packages/?name=zeal)
 
-#### Build automation
+#### Issue tracking systems
 
-See also [Wikipedia:List of build automation software](https://en.wikipedia.org/wiki/List_of_build_automation_software "wikipedia:List of build automation software").
-
-*   **[Apache Ant](https://en.wikipedia.org/wiki/Apache_Ant "wikipedia:Apache Ant")** — Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent upon each other.
-
-	[http://ant.apache.org/](http://ant.apache.org/) || [apache-ant](https://www.archlinux.org/packages/?name=apache-ant)
-
-*   **[Apache Maven](https://en.wikipedia.org/wiki/Apache_Maven "wikipedia:Apache Maven")** — Build automation tool used primarily for Java.
-
-	[http://maven.apache.org/](http://maven.apache.org/) || [maven](https://www.archlinux.org/packages/?name=maven)
-
-*   **[CMake](https://en.wikipedia.org/wiki/CMake "wikipedia:CMake")** — Family of tools designed to build, test and package software.
-
-	[https://cmake.org/](https://cmake.org/) || [cmake](https://www.archlinux.org/packages/?name=cmake)
-
-*   **[Gradle](https://en.wikipedia.org/wiki/Gradle "wikipedia:Gradle")** — Powerful build system for the JVM.
-
-	[https://gradle.org/](https://gradle.org/) || [gradle](https://www.archlinux.org/packages/?name=gradle)
-
-*   **Phing** — PHP program designed to automate tasks of all kinds.
-
-	[https://www.phing.info/](https://www.phing.info/) || [phing](https://aur.archlinux.org/packages/phing/)
-
-#### Version control systems
-
-See also [Wikipedia:Comparison of revision control software](https://en.wikipedia.org/wiki/Comparison_of_revision_control_software "wikipedia:Comparison of revision control software").
-
-*   **[Bazaar](/index.php/Bazaar "Bazaar")** — Distributed version control system that helps you track project history over time and to collaborate easily with others.
-
-	[https://bazaar.canonical.com/](https://bazaar.canonical.com/) || [bzr](https://www.archlinux.org/packages/?name=bzr)
-
-*   **[Darcs](https://en.wikipedia.org/wiki/Darcs "wikipedia:Darcs")** — Distributed revision control system that was designed to replace traditional, centralized source control systems such as CVS and Subversion.
-
-	[http://darcs.net/](http://darcs.net/) || [darcs](https://www.archlinux.org/packages/?name=darcs)
-
-*   **[Git](/index.php/Git "Git")** — Distributed revision control and source code management system with an emphasis on speed.
-
-	[https://git-scm.com/](https://git-scm.com/) || [git](https://www.archlinux.org/packages/?name=git)
-
-*   **[Mercurial](/index.php/Mercurial "Mercurial")** — Distributed version control system written in Python and similar in many ways to Git.
-
-	[https://www.mercurial-scm.org/](https://www.mercurial-scm.org/) || [mercurial](https://www.archlinux.org/packages/?name=mercurial)
-
-*   **[Subversion](/index.php/Subversion "Subversion")** — Full-featured centralized version control system originally designed to be a better CVS.
-
-	[https://subversion.apache.org/](https://subversion.apache.org/) || [subversion](https://www.archlinux.org/packages/?name=subversion)
+See [Category:Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems").
 
 #### Game development
 

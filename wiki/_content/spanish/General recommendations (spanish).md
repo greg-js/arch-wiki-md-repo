@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [General recommendations](/index.php/General_recommendations "General recommendations"). Fecha de la última traducción/revisión: **2018-08-08**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=532688).
+**Estado de la traducción:** este artículo es una versión traducida de [General recommendations](/index.php/General_recommendations "General recommendations"). Fecha de la última traducción/revisión: **2018-08-13**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=532688).
 
 Artículos relacionados
 
@@ -357,7 +357,7 @@ Emacs es conocido por ofrecer opciones más allá de los usuales en la edición 
 
 ### Soporte del ratón
 
-Se puede preferir utilizar un ratón con la línea de comandos para operaciones de copiar y pegar en lugar del modo de copia tradicional de [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Consulte el artículo sobre el [soporte del ratón en la línea de comandos](/index.php/Console_mouse_support_(Espa%C3%B1ol) "Console mouse support (Español)") para obtener instrucciones detalladas. Tenga en cuenta que ya puede hacer esto en [emuladores de terminal](/index.php/Terminal_emulators "Terminal emulators") con el [portapapeles](/index.php/Clipboard "Clipboard").
+Se puede preferir utilizar un ratón con la línea de comandos para operaciones de copiar y pegar en lugar del modo de copia tradicional de [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Consulte el artículo sobre el [soporte del ratón](/index.php/General_purpose_mouse_(Espa%C3%B1ol) "General purpose mouse (Español)") para obtener instrucciones detalladas. Tenga en cuenta que ya puede hacer esto en [emuladores de terminal](/index.php/Terminal_emulators "Terminal emulators") con el [portapapeles](/index.php/Clipboard "Clipboard").
 
 ### Búfer de desplazamiento hacia atrás
 

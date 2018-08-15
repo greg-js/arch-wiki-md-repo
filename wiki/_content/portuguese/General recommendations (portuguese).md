@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma versão localizada de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=532688) na versão em inglês.
+
 Artigos relacionados
 
 *   [FAQ](/index.php/FAQ_(Portugu%C3%AAs) "FAQ (Português)")
@@ -177,7 +179,7 @@ Um ambiente gráfico completo fornece uma interface gráfica de usuário complet
 
 ### Gerenciadores de exibição
 
-A maioria dos ambientes gráficos incluem um [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição") para iniciar automaticamente o ambiente gráfico e gerenciar autenticação de usuário. Usuários sem um ambiente gráfico podem instalar um separadamente. Alternativamente, você pode [iniciar X no login](/index.php/Start_X_at_login "Start X at login") como uma alternativa simples a um gerenciador de exibição.
+A maioria dos ambientes gráficos incluem um [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição") para iniciar automaticamente o ambiente gráfico e gerenciar autenticação de usuário. Usuários sem um ambiente gráfico podem instalar um separadamente. Alternativamente, você pode [iniciar X no login](/index.php/Iniciar_X_no_login "Iniciar X no login") como uma alternativa simples a um gerenciador de exibição.
 
 ## Gerenciamento de energia
 

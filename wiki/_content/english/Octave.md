@@ -20,6 +20,7 @@ From the [official website](http://www.gnu.org/software/octave/):
     *   [4.1 Converting to CSV format](#Converting_to_CSV_format)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Zsh Undecodable Token](#Zsh_Undecodable_Token)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -153,3 +154,7 @@ undecodable token: b(hex)[23m
 ```
 
 when printing, install [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config) and relogin.
+
+## See also
+
+*   [Wikipedia:GNU Octave](https://en.wikipedia.org/wiki/GNU_Octave "wikipedia:GNU Octave")

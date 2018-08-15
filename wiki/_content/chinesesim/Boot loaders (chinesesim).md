@@ -18,7 +18,6 @@
 *   [3 BIOS-only Boot Loaders](#BIOS-only_Boot_Loaders)
     *   [3.1 GRUB Legacy](#GRUB_Legacy)
     *   [3.2 LILO](#LILO)
-    *   [3.3 NeoGRUB](#NeoGRUB)
 *   [4 功能比较](#.E5.8A.9F.E8.83.BD.E6.AF.94.E8.BE.83)
 *   [5 See also](#See_also)
 
@@ -69,12 +68,6 @@ GRUB Legacy (也称之为 grub-0.97), is the legacy, BIOS-only branch of [GRUB](
 
 See [LILO](/index.php/LILO "LILO").
 
-### NeoGRUB
-
-NeoGRUB provides a means to boot Arch from the Windows boot loader without installing an additional boot loader. See [NeoGRUB](/index.php/NeoGRUB "NeoGRUB").
-
-Booting Arch from NeoGRUB has not been tested yet from Windows 8 and/or UEFI systems.
-
 ## 功能比较
 
 | Name | Firmware | Multi-boot | [File systems](/index.php/File_systems "File systems") | Notes |
@@ -87,7 +80,6 @@ Booting Arch from NeoGRUB has not been tested yet from Windows 8 and/or UEFI sys
 | [Clover](/index.php/Clover "Clover") | emulates UEFI | Yes | Yes | No | Unknown | No | Yes | No | Main target audience is [Hackintosh](https://en.wikipedia.org/wiki/Hackintosh "wikipedia:Hackintosh") users. |
 | [LILO](/index.php/LILO "LILO") | Yes | No | Unknown | Unknown | Unknown | Unknown | Unknown | MBR only [[3]](http://xfs.org/index.php/XFS_FAQ#Q:_Does_LILO_work_with_XFS.3F) | [Deprecated](https://lists.alioth.debian.org/pipermail/lilo-devel/2015-December/000083.html). Does not support [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table"). |
 | [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") | Yes | No | Yes | No | No | Yes | Yes | v4 only | [Deprecated](https://www.gnu.org/software/grub/grub-legacy.html). Does not support [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table"). |
-| [NeoGRUB](/index.php/NeoGRUB "NeoGRUB") | Yes | No | Yes | Unknown | Unknown | Unknown | Unknown | Unknown |
 
 ## See also
 

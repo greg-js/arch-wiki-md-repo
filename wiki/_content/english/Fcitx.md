@@ -95,7 +95,7 @@ Others packages (including git version) are also available in the [AUR](/index.p
 
 If you are using any XDG compatible desktop environment such as [KDE](/index.php/KDE "KDE"), [GNOME](/index.php/GNOME "GNOME"), [Xfce](/index.php/Xfce "Xfce"), [LXDE](/index.php/LXDE "LXDE"), after you re-login, the autostart should work out of box. If not run the *fcitx* executable. To see if fcitx is working correctly, open an application and press `Ctrl+Space` (the default shortcut for switching the input method) to invoke fcitx and input some words.
 
-If fcitx failed to start with your desktop automatically or if you want to change the parameters to start fcitx, configure [autostart](/index.php/Autostarting#Graphical "Autostarting") or edit the `fcitx-autostart.desktop` file in your `~/.config/autostart/` directory (copy it from `/etc/xdg/autostart/` if it doesn't exist yet).
+If fcitx failed to start with your desktop automatically or if you want to change the parameters to start fcitx, configure [autostart](/index.php/Autostarting#On_Xorg_startup "Autostarting") or edit the `fcitx-autostart.desktop` file in your `~/.config/autostart/` directory (copy it from `/etc/xdg/autostart/` if it doesn't exist yet).
 
 When other input methods with xim support are also running, fcitx may fail to start due to an xim error. Ensure that no other input methods are running before you start fcitx.
 

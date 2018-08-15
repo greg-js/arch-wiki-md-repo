@@ -44,7 +44,7 @@ O SLiM pode ser carregado na inicialização adicionando sua entrada no daemons 
 
 ### Único ambiente gráfico
 
-Para configurar o SLiM para carregar um ambiente em particular, edite seu [~/.xinitrc](/index.php/Xinitrc "Xinitrc") para carregar seu ambiente de desktop:
+Para configurar o SLiM para carregar um ambiente em particular, edite seu [~/.xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)") para carregar seu ambiente de desktop:
 
 ```
 #!/bin/sh

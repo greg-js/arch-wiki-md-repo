@@ -43,7 +43,7 @@ Many plugins are easily installed using **pacman** (see [Eclipse plugin package 
 
 ### Add the default update site
 
-Make sure that you check that the default update site for your version of Eclipse is configured so that plugin dependencies can automatically be installed. The most current version of Eclipse is Oxygen and the default update site for it is: [http://download.eclipse.org/releases/oxygen](http://download.eclipse.org/releases/oxygen). Go to Help > Install new Software > Add, fill the name to easily identify the update site later - for instance, Mars Software Repository - and fill the location with the url.
+Make sure that you check that the default update site for your version of Eclipse is configured so that plugin dependencies can automatically be installed. The most current version of Eclipse is Photon and the default update site for it is: [http://download.eclipse.org/releases/photon](http://download.eclipse.org/releases/photon). Go to Help > Install new Software > Add, fill the name to easily identify the update site later - for instance, Photon Software Repository - and fill the location with the url.
 
 ### Eclipse Marketplace
 

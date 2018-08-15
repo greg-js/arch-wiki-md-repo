@@ -1,125 +1,116 @@
+Do [site do USB/IP](http://usbip.sourceforge.net/):
+
+	*O projeto USB/IP visa desenvolver um sistema geral de compartilhamento de dispositivos USB através da rede IP. Para compartilhar dispositivos USB entre computadores com todas as suas funcionalidades, o USB/IP encapsula "mensagens de E/S USB" em cargas TCP/IP e as transmite entre computadores.*
+
 ## Contents
 
-*   [1 USB over IP tunnel - USBIP](#USB_over_IP_tunnel_-_USBIP)
-    *   [1.1 Para o instalar, basta usar o comando:](#Para_o_instalar.2C_basta_usar_o_comando:)
-*   [2 Para evitar problemas, é bom ativar os módulos:](#Para_evitar_problemas.2C_.C3.A9_bom_ativar_os_m.C3.B3dulos:)
-    *   [2.1 -> Achou os módulos? Agora ative, exemplo:](#-.3E_Achou_os_m.C3.B3dulos.3F_Agora_ative.2C_exemplo:)
-    *   [2.2 Agora você deve listar os dispositivos, permitidos para compartilhar/exportar:](#Agora_voc.C3.AA_deve_listar_os_dispositivos.2C_permitidos_para_compartilhar.2Fexportar:)
-    *   [2.3 Para compartilhar o dispositivo, você tem que ativar o serviço USBip, em segundo plano:](#Para_compartilhar_o_dispositivo.2C_voc.C3.AA_tem_que_ativar_o_servi.C3.A7o_USBip.2C_em_segundo_plano:)
-    *   [2.4 Compartilhando um dispositivo, exemplo:](#Compartilhando_um_dispositivo.2C_exemplo:)
-    *   [2.5 No computador cliente, execute:](#No_computador_cliente.2C_execute:)
-    *   [2.6 Ainda no computador cliente, após ter visto o dispositivo USB em rede, o conecte:](#Ainda_no_computador_cliente.2C_ap.C3.B3s_ter_visto_o_dispositivo_USB_em_rede.2C_o_conecte:)
-*   [3 Fontes:](#Fontes:)
+*   [1 Instalação](#Instala.C3.A7.C3.A3o)
+*   [2 Página man](#P.C3.A1gina_man)
+*   [3 Porta e firewall](#Porta_e_firewall)
+*   [4 Uso](#Uso)
+    *   [4.1 Listando e ativando módulos de kernel](#Listando_e_ativando_m.C3.B3dulos_de_kernel)
+    *   [4.2 Listando e compartilhando dispositivos](#Listando_e_compartilhando_dispositivos)
+    *   [4.3 Computador cliente](#Computador_cliente)
+*   [5 Veja também](#Veja_tamb.C3.A9m)
 
-## USB over IP tunnel - USBIP
+## Instalação
 
-O projeto USB / IP visa desenvolver um sistema geral de compartilhamento de dispositivos USB através da rede IP. Para compartilhar dispositivos USB entre computadores com todas as suas funcionalidades, o USB / IP encapsula "mensagens de E/S USB" em cargas TCP / IP e as transmite entre computadores.
+[Instale](/index.php/Instale "Instale") [usbip](https://www.archlinux.org/packages/?name=usbip).
 
-```
-                                 Para fins de esclarecimento e uso, será explicado como utilizar o USBIP.
+## Página man
 
-```
+Veja [usbip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/usbip.8).
 
-##### Para o instalar, basta usar o comando:
+## Porta e firewall
 
-```
- sudo pacman -S usbip
+USBip usa a porta 3240.
+
+Caso haja um firewall, deve-se gerar permissões para esta porta no firewall. Por exemplo, no [ufw](/index.php/Ufw "Ufw") deve-se executar:
 
 ```
-
--> USBip usa a porta 3240
-
--> Você deve gerar permissões no seu firewall, exemplo:
-
-```
- sudo ufw allow 3240
+# ufw allow 3240
 
 ```
 
-## Para evitar problemas, é bom ativar os módulos:
+Para instruções específicas e detalhadas de seu firewall, acesse [Category:Firewalls](/index.php/Category:Firewalls "Category:Firewalls").
 
--> listar se há módulos vhci
+## Uso
 
-```
- lsmod | grep vhci_hcd
+### Listando e ativando módulos de kernel
 
-```
+USB/IP utiliza os módulos de kernel `vhci_hcd` e `usbip`.
 
--> listar se há módulos usbip
-
-```
- lsmod | grep usbip
+Para listar os módulos, pode-se usar `lsmod` com `grep` da seguinte forma:
 
 ```
-
-##### -> Achou os módulos? Agora ative, exemplo:
-
-```
- sudo modprobe vhci-hcd usbip_host usbip_core usbcore usb_common
+$ lsmod | grep vhci_hcd
 
 ```
 
-##### Agora você deve listar os dispositivos, permitidos para compartilhar/exportar:
+Tendo encontrado ambos, basta ativá-los:
 
 ```
- usbip list -l
-
-```
-
-##### Para compartilhar o dispositivo, você tem que ativar o serviço USBip, em segundo plano:
-
-```
- sudo usbipd -D
+# modprobe vhci-hcd usbip_host usbip_core usbcore usb_common
 
 ```
 
-##### Compartilhando um dispositivo, exemplo:
+Para informações detalhadas, leia [Kernel module](/index.php/Kernel_module "Kernel module").
 
--> Se você achou o dispositivo
+### Listando e compartilhando dispositivos
 
--> busid 1-1 (13d3:5188)
-
--> Desconsidera o que está contido nos parenteses: "(13d3:5188)"
-
--> E utilize só o que está após o "busid", assim: "1-1"
+Liste os dispositivos que têm permissão para compartilhar/exportar:
 
 ```
- sudo usbip bind -b 1-1
+$ usbip list -l
 
 ```
 
-* * *
-
-##### No computador cliente, execute:
-
--> usbip list --remote=ip_server. -> Veja o ip, do server com: ifconfig, exemplo:
+Antes de compartilhar o dispositivo desejado, você deve que ativar o serviço USBip, em segundo plano:
 
 ```
- usbip list --remote=192.168.15.15
+# usbipd -D
 
 ```
 
-##### Ainda no computador cliente, após ter visto o dispositivo USB em rede, o conecte:
-
--> Lembrando que, "server" é o ip e "1-1"(busid) poderá variar.
-
--> Não esqueça de substituir: "server", pelo ip.
+Para compartilhar um dispositivo, basta usar a opção `-b` com o resultado da listagem de dispositivo filtrado com apenas o conteúdo que está após *busid* e antes dos parênteses:
 
 ```
- sudo usbip attach --remote=server --busid=1-1
+# usbip bind -b *id_barramento*
 
 ```
 
-## Fontes:
+Então, por exemplo, se usando o comando *list* você achou o dispositivo `busid 1-1 (13d3:5188)`, desconsidere "(13d3:5188)" e "busid", e use apenas "1-1", executando:
 
-Estas fontes serviram de base somente, os comandos foram adaptados, pois o USBip atualizou, e os artigos são antigos de 2009/2010:
+```
+# usbip bind -b 1-1
 
-1.  <ref>[https://www.mankier.com/8/usbip](https://www.mankier.com/8/usbip)</ref>
+```
 
-1.  <ref>[https://www.kernel.org/doc/readme/tools-usb-usbip-README](https://www.kernel.org/doc/readme/tools-usb-usbip-README)</ref>
+### Computador cliente
 
-1.  <ref>[https://www.howtoforge.com/how-to-set-up-a-usb-over-ip-server-and-client-with-ubuntu-10.04](https://www.howtoforge.com/how-to-set-up-a-usb-over-ip-server-and-client-with-ubuntu-10.04)</ref>
+Liste dispositivos USB exportáveis no servidor usando:
 
-1.  <ref>[https://www.howtoforge.com/how-to-set-up-a-usb-over-ip-server-and-client-with-ubuntu-10.04-p2](https://www.howtoforge.com/how-to-set-up-a-usb-over-ip-server-and-client-with-ubuntu-10.04-p2)</ref>
+```
+$ usbip list --remote=*ip_servidor*
 
-1.  <ref>[http://usbip.sourceforge.net/](http://usbip.sourceforge.net/)</ref>
+```
+
+Tendo encontrado o dispositivo USB remoto na rede, conecte-o usando o IP do servidor e a identificação do barramento com:
+
+```
+# usbip attach --remote=*ip_servidor* --busid=*id_barramento*
+
+```
+
+Então, por exemplo, se o endereço IP do servidor é "192.168.15.15" e a identificação do barramento é "1-1", execute:
+
+```
+# usbip attach --remote=192.168.15.15 --busid=1-1
+
+```
+
+## Veja também
+
+*   [Site oficial do Projeto USB/IP](http://usbip.sourceforge.net/)
+*   ["README for usbip-utils" do kernel Linux](https://www.kernel.org/doc/readme/tools-usb-usbip-README)
+*   "How To Set Up A USB-Over-IP Server And Client With Ubuntu 10.04" ([página 1](https://www.howtoforge.com/how-to-set-up-a-usb-over-ip-server-and-client-with-ubuntu-10.04) e [página 2](https://www.howtoforge.com/how-to-set-up-a-usb-over-ip-server-and-client-with-ubuntu-10.04-p2))

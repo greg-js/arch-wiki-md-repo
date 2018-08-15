@@ -202,7 +202,7 @@ With all of these steps completed, reboot into an Arch Install CD. See the [Inst
 
 ```
 
-See [System Encryption with LUKS#Configure System](/index.php/System_Encryption_with_LUKS#Configure_System "System Encryption with LUKS") for more details.
+See [Dm-crypt#System configuration](/index.php/Dm-crypt#System_configuration "Dm-crypt") for more details.
 
 *   Finally, if /boot/grub/menu.lst does not exist, copy and edit it:
 
@@ -213,7 +213,7 @@ See [System Encryption with LUKS#Configure System](/index.php/System_Encryption_
 
 ```
 
-Edit the entry according to [GRUB#Dual booting with GNU.2FLinux](/index.php/GRUB#Dual_booting_with_GNU.2FLinux "GRUB") (don't forget to add the required extra options if using an encrypted system. See [System Encryption with LUKS#Install Bootloader](/index.php/System_Encryption_with_LUKS#Install_Bootloader "System Encryption with LUKS") for more details).
+Edit the entry according to [GRUB#Dual-booting](/index.php/GRUB#Dual-booting "GRUB") (don't forget to add the required extra options if using an encrypted system. See [System Encryption with LUKS#Install Bootloader](/index.php/System_Encryption_with_LUKS#Install_Bootloader "System Encryption with LUKS") for more details).
 
 ### Test Configuration
 

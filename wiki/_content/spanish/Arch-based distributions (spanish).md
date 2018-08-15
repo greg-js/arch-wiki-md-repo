@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"). Fecha de la última traducción/revisión: **2018-08-10**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=533187).
+**Estado de la traducción:** este artículo es una versión traducida de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"). Fecha de la última traducción/revisión: **2018-08-13**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=533498).
 
 Related articles
 
@@ -7,7 +7,7 @@ Related articles
 *   [TalkingArch](/index.php/TalkingArch "TalkingArch")
 *   [DeveloperWiki:TrademarkPolicy](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy")
 
-**Warning:** Las distribuciones basadas en Arch **no** tienen soporte de la comunidad o los desarrolladores de Arch. Consulte [Soporte *solo* para la distribución Arch Linux](/index.php/Code_of_conduct_(Espa%C3%B1ol)#Soporte_.2Asolo.2A_para_la_distribuci.C3.B3n_Arch_Linux "Code of conduct (Español)")
+**Advertencia:** Las distribuciones basadas en Arch **no** tienen soporte de la comunidad o los desarrolladores de Arch. Consulte [Soporte *solo* para la distribución Arch Linux](/index.php/Code_of_conduct_(Espa%C3%B1ol)#Soporte_.2Asolo.2A_para_la_distribuci.C3.B3n_Arch_Linux "Code of conduct (Español)")
 
 Esta página enumera las distribuciones que se derivan de Arch Linux **en su totalidad o en parte**, para ayudar a hacer cumplir la [política de marca registrada de Arch Linux](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy"). Aunque pretende ser lo más completo posible, no es una lista exhaustiva. Se prefieren los enlaces al proyecto SourceForge para simplificar el mantenimiento.
 

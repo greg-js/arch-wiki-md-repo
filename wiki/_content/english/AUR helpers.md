@@ -96,7 +96,7 @@ This table describes projects which either are discontinued by their authors, or
 | [wrapaur](https://aur.archlinux.org/packages/wrapaur/) | Bash | Yes | Yes | Yes | No | No | No | Yes | No | – | – | Mirror updates, print news and AUR comments |
 | [spinach](https://aur.archlinux.org/packages/spinach/) [[6]](https://github.com/floft/spinach) | Bash | – | [Yes](https://github.com/floft/spinach/commit/545574700812eb369b9537370f085ec9e5c3f01a) | Yes | No | No | No | No | No | – | – | – |
 | [burgaur](https://aur.archlinux.org/packages/burgaur/) [[7]](https://github.com/m45t3r/burgaur/issues/7#issuecomment-365599675) | Python/C | – | Optional | Yes | No | No | No | No | No | – | – | Wrapper for *cower* |
-| [packer](https://aur.archlinux.org/packages/packer/) | Bash | Yes | No | Yes | No | No | No | No | No | – | – | – |
+| [packer-aur-git](https://aur.archlinux.org/packages/packer-aur-git/) | Bash | Yes | No | Yes | No | No | No | No | No | – | – | – |
 | [yaourt](https://aur.archlinux.org/packages/yaourt/) | Bash/C | splits `-Syu` | No [[8]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) [[9]](https://github.com/archlinuxfr/yaourt/blob/d9790e29cd7194535c793f51d185b7130a396916/src/lib/pkgbuild.sh.in#L415-L438) | [No](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | No | [No](https://github.com/archlinuxfr/yaourt/issues/186) | [No](https://github.com/archlinuxfr/yaourt/issues/85) | Optional | Optional | 2 | bash, zsh, fish | Backup ([modifies pacman database!](https://github.com/archlinuxfr/yaourt/blob/5a82dfe/src/lib/alpm_backup.sh#L38)), ABS support, print AUR comments, multilingual |
 
 ## Graphical

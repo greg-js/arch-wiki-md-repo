@@ -17,7 +17,7 @@ La instalación de Arch Linux de 64-btis con *multilib* activada sigue una estru
 
 ## Activación
 
-Para utilizar el [multilib](/index.php/Official_repositories_(Espa%C3%B1ol)#.5Bmultilib.5D "Official repositories (Español)"), eliminamos el *#* del archivo `/etc/pacman.conf` (Por favor asegúrate de eliminar el # de ambas líneas):
+Para utilizar el [multilib](/index.php/Official_repositories_(Espa%C3%B1ol)#multilib "Official repositories (Español)"), eliminamos el *#* del archivo `/etc/pacman.conf` (Por favor asegúrate de eliminar el # de ambas líneas):
 
 ```
 [multilib]

@@ -99,7 +99,7 @@ The fonts and the license will be located in the `fonts` directory.
 *   [Trebuchet](https://en.wikipedia.org/wiki/Trebuchet_MS "wikipedia:Trebuchet MS")
 *   [Verdana](https://en.wikipedia.org/wiki/Verdana "wikipedia:Verdana")
 *   [Webdings](https://en.wikipedia.org/wiki/Webdings "wikipedia:Webdings")
-*   [Wingdings](https://en.wikipedia.org/wiki/Wingdings "wikipedia:Wingdings")
+*   ~~[Wingdings](https://en.wikipedia.org/wiki/Wingdings "wikipedia:Wingdings")~~
 
 **Warning:** According to [original Microsoft's End User License Agreement](http://web.archive.org/web/20020227054122/www.microsoft.com/typography/fontpack/eula.htm), there are *some* legal limitations when using the above fonts.
 

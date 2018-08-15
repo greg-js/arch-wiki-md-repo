@@ -152,7 +152,7 @@ php-set = extension=mysqli
 
 ```
 
-If your (modified) versions of these files are in place, you should restart your [nginx](/index.php/Nginx "Nginx") and [start/enable a uwsgi socket](/index.php/UWSGI#Starting_service "UWSGI") for *mantisbt* [using systemd](/index.php/Systemd#Using_units "Systemd").
+If your (modified) versions of these files are in place, you should restart your [nginx](/index.php/Nginx "Nginx") and start/enable a uwsgi socket for *mantisbt* [using systemd](/index.php/Systemd#Using_units "Systemd").
 
 ### Database
 

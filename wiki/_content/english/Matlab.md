@@ -445,6 +445,8 @@ Since MATLAB R2017a, Image Acqusition Toolbox is using GStreamer library version
 
 In general, USB Webcam Support Package does a better job working with UVC and built-in cameras than OS Generic Video Interface Support Package.
 
+**Warning:** As of 2018-08-15 updating gst from 1.14.0 to 1.14.2 breaks video device operation (MATLAB doesn't see the video device anymore). Downgrading fixes this.
+
 ### MATLAB hangs for several minutes when closing Help Browser
 
 Since upgrade of glibc from 2.24 to 2.25, MATLAB (at least R2017a) hangs when closing Help Browser. The issue is related to the particular version of jxbrowser-chromium shipped with MATLAB. This issue is still present with glibc 2.26 and MATLAB R2017b and R2018a.
@@ -509,7 +511,9 @@ In some interfaces - such as Simulation Data Inspector or Simulink Test Manager 
 
 ### Not starting - licensing error
 
-In case MATLAB will not start from a [desktop environment](/index.php/Desktop_environment "Desktop environment") by the call of its [desktop file](/index.php/Desktop_file "Desktop file") one should see the output as you start it from the terminal. For a *Licensing error* such as:
+In case MATLAB will not start from a [desktop environment](/index.php/Desktop_environment "Desktop environment") by the call of its [desktop file](/index.php/Desktop_file "Desktop file") one should see the output as you start it from the terminal.
+
+For a *Licensing error* such as:
 
  `# matlab` 
 ```
@@ -533,7 +537,7 @@ Licensing error: -9,57.
 
 ```
 
-a re-[activation](#Activation) might solve the problem.
+A re-activation might solve the problem.
 
 ### MATLAB crashes with "Failure loading desktop class" on startup
 

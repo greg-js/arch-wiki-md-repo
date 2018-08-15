@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Git](/index.php/Git "Git") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-05-04，点击[这里](https://wiki.archlinux.org/index.php?title=Git&diff=0&oldid=520101)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Git](/index.php/Git "Git") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-08-14，点击[这里](https://wiki.archlinux.org/index.php?title=Git&diff=0&oldid=534795)可以查看翻译后英文页面的改动。
 
 相关文章
 
@@ -16,6 +16,7 @@
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
+    *   [1.1 图形化前端](#.E5.9B.BE.E5.BD.A2.E5.8C.96.E5.89.8D.E7.AB.AF)
 *   [2 配置](#.E9.85.8D.E7.BD.AE)
 *   [3 基本用法](#.E5.9F.BA.E6.9C.AC.E7.94.A8.E6.B3.95)
     *   [3.1 获取一个 Git 仓库](#.E8.8E.B7.E5.8F.96.E4.B8.80.E4.B8.AA_Git_.E4.BB.93.E5.BA.93)
@@ -47,6 +48,11 @@
     *   [4.9 对提交 (commit) 签名](#.E5.AF.B9.E6.8F.90.E4.BA.A4_.28commit.29_.E7.AD.BE.E5.90.8D)
     *   [4.10 在非主分支上工作](#.E5.9C.A8.E9.9D.9E.E4.B8.BB.E5.88.86.E6.94.AF.E4.B8.8A.E5.B7.A5.E4.BD.9C)
     *   [4.11 直接将补丁发送至邮件列表](#.E7.9B.B4.E6.8E.A5.E5.B0.86.E8.A1.A5.E4.B8.81.E5.8F.91.E9.80.81.E8.87.B3.E9.82.AE.E4.BB.B6.E5.88.97.E8.A1.A8)
+    *   [4.12 远程库很大时的注意事项](#.E8.BF.9C.E7.A8.8B.E5.BA.93.E5.BE.88.E5.A4.A7.E6.97.B6.E7.9A.84.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9)
+        *   [4.12.1 最简单的方式：接收整个仓库](#.E6.9C.80.E7.AE.80.E5.8D.95.E7.9A.84.E6.96.B9.E5.BC.8F.EF.BC.9A.E6.8E.A5.E6.94.B6.E6.95.B4.E4.B8.AA.E4.BB.93.E5.BA.93)
+        *   [4.12.2 部分接收](#.E9.83.A8.E5.88.86.E6.8E.A5.E6.94.B6)
+        *   [4.12.3 获取其他分支](#.E8.8E.B7.E5.8F.96.E5.85.B6.E4.BB.96.E5.88.86.E6.94.AF)
+        *   [4.12.4 未来可能出现的其他方案](#.E6.9C.AA.E6.9D.A5.E5.8F.AF.E8.83.BD.E5.87.BA.E7.8E.B0.E7.9A.84.E5.85.B6.E4.BB.96.E6.96.B9.E6.A1.88)
 *   [5 Git 服务器](#Git_.E6.9C.8D.E5.8A.A1.E5.99.A8)
     *   [5.1 SSH 协议](#SSH_.E5.8D.8F.E8.AE.AE)
     *   [5.2 Smart HTTP 协议](#Smart_HTTP_.E5.8D.8F.E8.AE.AE)
@@ -58,7 +64,51 @@
 
 [安装](/index.php/Install "Install") [git](https://www.archlinux.org/packages/?name=git) 软件包。要使用开发版本，请安装 [git-git](https://aur.archlinux.org/packages/git-git/) 软件包。当使用 *git svn*、*git gui* 和 *gitk* 等工具时请检查可选依赖项是否安装。
 
+### 图形化前端
+
+参考 [git GUI Clients](https://git-scm.com/download/gui/linux)。
+
+*   **Giggle** — 用于 git 的 GTK+ 前端。
+
+	[https://wiki.gnome.org/Apps/giggle/](https://wiki.gnome.org/Apps/giggle/) || [giggle](https://www.archlinux.org/packages/?name=giggle)
+
+*   **Git Cola** — 用 Python 编写的丝滑而强大的 git 图形前端。
+
+	[https://git-cola.github.io/](https://git-cola.github.io/) || [git-cola](https://aur.archlinux.org/packages/git-cola/)
+
+*   **Git Extensions** — 允许用户不使用命令行就可以完成 git 各项操作的图形前端。
+
+	[https://gitextensions.github.io/](https://gitextensions.github.io/) || [gitextensions](https://aur.archlinux.org/packages/gitextensions/)
+
+*   **gitg** — 用于查看 git 仓库的 GNOME GUI 客户端。
+
+	[https://wiki.gnome.org/Apps/Gitg](https://wiki.gnome.org/Apps/Gitg) || [gitg](https://www.archlinux.org/packages/?name=gitg)
+
+*   **git-gui** — Tcl/Tk 库编写的可移植 git 图形前端。
+
+	[https://git-scm.com/docs/git-gui](https://git-scm.com/docs/git-gui) || [git](https://www.archlinux.org/packages/?name=git) + [tk](https://www.archlinux.org/packages/?name=tk)
+
 **注意:** 要打开 *git-gui* 的拼写检查功能，请安装 [aspell](https://www.archlinux.org/packages/?name=aspell)，同时还需要与 `LC_MESSAGES` [环境变量](/index.php/Environment_variables_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Environment variables (简体中文)") 相对应的字典文件。参阅 [FS#28181](https://bugs.archlinux.org/task/28181) 和 [aspell (简体中文)](/index.php/Aspell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Aspell (简体中文)")。
+
+*   **gitk** — Tcl/Tk 库编写的 Git 仓库查看器。
+
+	[https://git-scm.com/docs/gitk](https://git-scm.com/docs/gitk) || [git](https://www.archlinux.org/packages/?name=git) + [tk](https://www.archlinux.org/packages/?name=tk)
+
+*   **QGit** — 可图形化地按照不同开发分支显示修订历史记录、查阅补丁内容、查看被修改文件的 Git GUI 查看器。
+
+	[https://github.com/tibirna/qgit](https://github.com/tibirna/qgit) || [qgit](https://www.archlinux.org/packages/?name=qgit)
+
+*   **[RabbitVCS](https://en.wikipedia.org/wiki/RabbitVCS "wikipedia:RabbitVCS")** — 一组图形化工具，用于轻松、直接地访问您使用的版本控制系统。
+
+	[http://rabbitvcs.org/](http://rabbitvcs.org/) || [rabbitvcs](https://aur.archlinux.org/packages/rabbitvcs/)
+
+*   **Tig** — 基于 ncurses 的 git 字符模式前端。
+
+	[https://jonas.github.io/tig/](https://jonas.github.io/tig/) || [tig](https://www.archlinux.org/packages/?name=tig)
+
+*   **ungit** — 在不牺牲 git 各种功能的情况下使其变得更加友好。
+
+	[https://github.com/FredrikNoren/ungit](https://github.com/FredrikNoren/ungit) || [nodejs-ungit](https://aur.archlinux.org/packages/nodejs-ungit/)
 
 ## 配置
 
@@ -408,10 +458,10 @@ pick 8a4d479 Rename documentation.
 
 ### 使用 git-config
 
-Git 从三个 ini 类型的配置文件里读取配置：
+Git 从 4 个 ini 类型的配置文件里读取配置：
 
 *   `/etc/gitconfig` 是应用于整个系统的默认配置文件
-*   `~/.gitconfig` 是应用于特定用户的配置文件
+*   `~/.gitconfig` 和 `~/.config/git/config` （自 1.7.12 起）是应用于特定用户的配置文件
 *   `.git/config` 是应用于特定仓库的配置文件
 
 这些文件可以直接编辑，但是更常用的方法是使用 *git config*，下面是一些示范。
@@ -617,6 +667,90 @@ $ git commit -s
 $ git send-email --to=*openembedded-core@lists.openembedded.org* --confirm=always -M -1
 
 ```
+
+### 远程库很大时的注意事项
+
+当远程库很大时该怎么办？请参考这一节。其中的示例来自于 linux kernel。
+
+#### 最简单的方式：接收整个仓库
+
+你可以这样接收整个仓库：
+
+```
+$ git clone [git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git](git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git)
+
+```
+
+下载时间会很长，而且 "git clone" 无法断点续传（截止至 2018 年 8 月），还会占用很多硬盘空间。
+
+可以用这个命令更新仓库
+
+```
+$ git pull
+
+```
+
+#### 部分接收
+
+也许你想把本地仓库的大小限制得小一点，比如只保留 v4.14 以后的代码来分离出一个 bug，那么可以这么做：
+
+```
+$ git clone --shallow-exclude v4.13   [git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git](git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git) # 这样就只会下载 v4.14 及以后的文件，v4.13 以前的不会下载。
+
+```
+
+也许你只需要最新的仓库快照，忽略所有的历史记录。（如果有压缩包提供且足够使用，那就下载压缩包，获取 git 仓库快照开销要大一点。）可以这样做：
+
+```
+$ git clone --depth 1 [git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git](git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git)
+
+```
+
+之后也可以这样获取历史提交记录：
+
+```
+$ git fetch --tags --shallow-exclude v4.1 # 获取 v4.1 之后的提交记录
+$ git fetch --tags --shallow-since 2016-01-01
+
+```
+
+如果没有 `--tags`，那么就接收不到 tags。
+
+#### 获取其他分支
+
+在上面的示例中，你本地的仓库仅跟踪主线内核，即“最近开发完成”的内核。假设你想获取最近的 “LTS” 版内核，比如最新的 4.14 分支，可以这么做：
+
+```
+$ git remote set-branches --add origin linux-4.17.y
+$ git fetch
+$ git branch --track linux-4.17.y origin/linux-4.17.y
+
+```
+
+最后一行不是必须的，但你应该需要执行它。 （要获取你需要的那个分支的具体名称，没有什么通用的方法，或许可以靠 web 页面的 "ref" 链接来猜测）
+
+如果需要 linux-4.17.y 的快照，这样做：
+
+```
+$ git checkout -b linux-4.17.y
+
+```
+
+或者这样做，将它解压到其他目录里：
+
+```
+$ mkdir /foo/bar/src-4.17; cd /foo/bar/src-4.17
+$ git clone --no-local --depth 1 -b linux-4.17.y  ../linux-stable
+
+```
+
+然后像平常一样，执行 `git pull` 来更新你的快照。
+
+#### 未来可能出现的其他方案
+
+Git 虚拟文件系统 (Git Virtual Filesystem, GVFS) 由微软开发，允许在不克隆仓库至本地的情况下使用 git 仓库。（参阅 [this Microsoft blog](https://blogs.msdn.microsoft.com/bharry/2017/05/24/the-largest-git-repo-on-the-planet/) 或 [Wikipedia artcile](https://en.wikipedia.org/wiki/Git_Virtual_File_System "wikipedia:Git Virtual File System")。）这个功能在 Linux 暂不可用。
+
+无论如何这个功能暂不适用于上述示例中的 Linux 内核仓库。
 
 ## Git 服务器
 

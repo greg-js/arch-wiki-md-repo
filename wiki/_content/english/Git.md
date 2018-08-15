@@ -456,10 +456,10 @@ The commits can be re-ordered or erased from the history (but be very careful wi
 
 ### Using git-config
 
-Git reads its configuration from three INI-type configuration files:
+Git reads its configuration from four INI-type configuration files:
 
 *   `/etc/gitconfig` for system-wide defaults
-*   `~/.gitconfig` for user-specific configuration
+*   `~/.gitconfig` and `~/.config/git/config` (since 1.7.12) for user-specific configuration
 *   `.git/config` for repository-specific configuration
 
 These files can be edited directly, but the usual method is to use *git config*, as shown in the examples below.

@@ -120,7 +120,7 @@ Users who prefer to work rather with the keyboard than the mouse may benefit fro
 2.  Hit `Ctrl+k` to enter the "search engine" field.
 3.  Hit `F12` to paste the buffer, instead of moving the mouse pointer to the field and center-click to paste.
 
-**Note:** `Shift+Insert` has a similar yet different functionality, see [#X11](#X11): `Shift+Insert` inserts the clipboard buffer, not the x-selection-paste buffer. In some applications, these two buffers are mirrored.
+**Note:** `Shift+Insert` has a similar yet different functionality, see [#Xorg](#Xorg): `Shift+Insert` inserts the clipboard buffer, not the x-selection-paste buffer. In some applications, these two buffers are mirrored.
 
 The method suggested here uses three packages available in the [official repositories](/index.php/Official_repositories "Official repositories"):
 

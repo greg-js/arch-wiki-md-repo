@@ -29,9 +29,9 @@ There are various alternative kernels available for Arch Linux in addition to th
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [linux](https://www.archlinux.org/packages/?name=linux)
 
-*   **[Hardened](https://kernsec.org/wiki/index.php/Kernel_Self_Protection_Project)** — A security-focused Linux kernel applying a set of hardening patches to mitigate kernel and userspace exploits. It also enables more upstream kernel hardening features than [linux](https://www.archlinux.org/packages/?name=linux) along with user namespaces (with unprivileged usage disabled by default via a patch), audit and [SELinux](/index.php/SELinux "SELinux").
+*   **[Hardened](https://kernsec.org/wiki/index.php/Kernel_Self_Protection_Project)** — A security-focused Linux kernel applying a set of hardening patches to mitigate kernel and userspace exploits. It also enables more upstream kernel hardening features than [linux](https://www.archlinux.org/packages/?name=linux) along [AppArmor](/index.php/AppArmor "AppArmor"), [Audit_framework](/index.php/Audit_framework "Audit framework") and [SELinux](/index.php/SELinux "SELinux").
 
-	[https://github.com/copperhead/linux-hardened](https://github.com/copperhead/linux-hardened) || [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened)
+	[https://github.com/anthraxx/linux-hardened](https://github.com/anthraxx/linux-hardened) || [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened)
 
 *   **[Longterm](https://www.kernel.org/category/releases.html)** — Long-term support (LTS) Linux kernel and modules.
 
@@ -92,7 +92,7 @@ Some of the listed packages may also be available as binary packages via [Unoffi
 
 *   **AppArmor** — The [Mandatory Access Control](https://en.wikipedia.org/wiki/Mandatory_access_control "wikipedia:Mandatory access control") (MAC) system, implemented upon the [Linux Security Modules](https://en.wikipedia.org/wiki/Linux_Security_Modules "wikipedia:Linux Security Modules") (LSM).
 
-	[AppArmor](/index.php/AppArmor "AppArmor") || [linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/), [linux-hardened-apparmor](https://aur.archlinux.org/packages/linux-hardened-apparmor/)
+	[AppArmor](/index.php/AppArmor "AppArmor") || [linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/)
 
 *   **Aufs** — The aufs-compatible linux kernel and modules, useful when using [docker](/index.php/Docker "Docker").
 

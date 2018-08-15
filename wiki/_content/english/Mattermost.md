@@ -98,7 +98,7 @@ GRANT ALL ON mattermostdb.* TO mmuser;
 
 ### PostgreSQL
 
-1\. [Install](/index.php/PostgreSQL#Installing_PostgreSQL "PostgreSQL") and [configure](/index.php/PostgreSQL#Initial_configuration "PostgreSQL") [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
+1\. [Install](/index.php/PostgreSQL#Installation "PostgreSQL") and [configure](/index.php/PostgreSQL#Initial_configuration "PostgreSQL") [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
 
 2\. Connect to the server as user `postgres`:
 

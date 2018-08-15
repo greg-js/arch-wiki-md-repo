@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma versão localizada de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2018-08-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=531655) na versão em inglês.
+
 Artigos relacionados
 
 *   [DeveloperWiki:UID / GID Database](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database")
@@ -26,6 +28,8 @@ Usuários e grupos são usados no GNU/Linux para [controle de acesso](https://en
     *   [7.4 Grupos sem uso](#Grupos_sem_uso)
 
 ## Visão geral
+
+	*"root" redireciona aqui. Para o diretório raiz (root), veja [Partitioning#/](/index.php/Partitioning#.2F "Partitioning").*
 
 Um *usuário* é qualquer pessoa que use um computador. Nesse caso, estamos descrevendo os nomes que representam esses usuários. Pode ser Maria ou Guilherme, e eles podem usar os nomes SraDragao ou Pirata no lugar de seu nome real. Tudo o que importa é que o computador possui um nome para cada conta que ele cria, e é esse o nome pelo qual uma pessoa ganha acesso para usar o computador. Alguns serviços do sistema também são executados usando contas de usuários restritas ou privilegiadas.
 

@@ -128,7 +128,7 @@ thinkpad_acpi.fan_control=1
 
 ```
 
-Simplemente añada esto a la línea de órdenes del núcleo de su gestor de arranque como se describe en los [parámetros del núcleo](/index.php/Kernel_parameters#When_starting_the_kernel "Kernel parameters").
+Simplemente añada esto a la línea de órdenes del núcleo de su gestor de arranque como se describe en [parámetros del núcleo](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)").
 
 ### Alias
 
@@ -178,7 +178,7 @@ Esto hace efectivo la inclusión en la «lista negra» de ese módulo y de cualq
 
 También puede evitar la carga de módulos a través del gestor de arranque.
 
-Agregue `modprobe.blacklist=modname1,modname2,modname3` en la línea de órdenes del núcleo de su gestor de arranque como se describe en los [parámetros del núcleo](/index.php/Kernel_parameters#When_starting_the_kernel "Kernel parameters").
+Agregue `modprobe.blacklist=modname1,modname2,modname3` en la línea de órdenes del núcleo de su gestor de arranque como se describe en [parámetros del núcleo](/index.php/Kernel_parameters "Kernel parameters").
 
 **Nota:** Cuando están en lista negra más de un módulo, tenga en cuenta que los mismos deben estar separados por comas solamente. Los espacios o cualquier otra cosa presumiblemente podría romper la sintaxis.
 

@@ -97,7 +97,7 @@ However the mode can be forced, for example to force nested mode and run inside 
 
 ### Run with systemd user session
 
-First you need to setup D-Bus with systemd user session as examplained on [Systemd/User#D-Bus](/index.php/Systemd/User#D-Bus "Systemd/User"). Then enable the liri.service unit with:
+First you need to setup D-Bus with systemd user session as examplained on [Systemd/User](/index.php/Systemd/User "Systemd/User"). Then enable the liri.service unit with:
 
  `$ systemctl --user enable liri.service` 
 

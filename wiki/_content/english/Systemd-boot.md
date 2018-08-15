@@ -20,9 +20,10 @@ It is simple to configure but it can only start EFI executables such as the Linu
     *   [2.1 Loader configuration](#Loader_configuration)
     *   [2.2 Adding loaders](#Adding_loaders)
         *   [2.2.1 EFI Shells or other EFI apps](#EFI_Shells_or_other_EFI_apps)
-    *   [2.3 Preparing kernels for /EFI/Linux](#Preparing_kernels_for_.2FEFI.2FLinux)
-    *   [2.4 Support hibernation](#Support_hibernation)
-    *   [2.5 Kernel parameters editor with password protection](#Kernel_parameters_editor_with_password_protection)
+    *   [2.3 Booting into EFI Firmware Setup](#Booting_into_EFI_Firmware_Setup)
+    *   [2.4 Preparing kernels for /EFI/Linux](#Preparing_kernels_for_.2FEFI.2FLinux)
+    *   [2.5 Support hibernation](#Support_hibernation)
+    *   [2.6 Kernel parameters editor with password protection](#Kernel_parameters_editor_with_password_protection)
 *   [3 Keys inside the boot menu](#Keys_inside_the_boot_menu)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Installing after booting in BIOS mode](#Installing_after_booting_in_BIOS_mode)
@@ -161,18 +162,26 @@ options root=LABEL=*arch_os* rw
 
 #### EFI Shells or other EFI apps
 
-In case you installed EFI shells and other EFI application into the ESP, you can use the following snippets:
+In case you installed EFI shells and other EFI application into the ESP, you can use the following snippets.
+
+**Note:** The file path parameter for the `efi` line is relative to your *esp* mount point. If you are mounted on `/boot` and your EFI binaries reside at `/boot/EFI/xx.efi` and `/boot/yy.efi`, then you would specify the parameters as `efi /EFI/xx.efi` and `efi /yy.efi` respectfully.
+
+Examples of loading custom UEFI Shell loaders:
 
  `*esp*/loader/entries/uefi-shell-v1-x86_64.conf` 
 ```
-title  UEFI Shell x86_64 v1
-efi    /EFI/shellx64_v1.efi
+title   UEFI Shell x86_64 v1
+efi     /EFI/shellx64_v1.efi
 ```
  `*esp*/loader/entries/uefi-shell-v2-x86_64.conf` 
 ```
-title  UEFI Shell x86_64 v2
-efi    /EFI/shellx64_v2.efi
+title   UEFI Shell x86_64 v2
+efi     /EFI/shellx64_v2.efi
 ```
+
+### Booting into EFI Firmware Setup
+
+Most system firmware configured for EFI booting will add its own [efibootmgr](/index.php/Unified_Extensible_Firmware_Interface#efibootmgr "Unified Extensible Firmware Interface") entries to boot into UEFI Firmware Setup.
 
 ### Preparing kernels for /EFI/Linux
 

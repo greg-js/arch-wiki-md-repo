@@ -6,6 +6,13 @@
 
 This document covers standards and guidelines on writing [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for [Node.js](/index.php/Node.js "Node.js") packages.
 
+## Contents
+
+*   [1 Package naming](#Package_naming)
+*   [2 Using npm](#Using_npm)
+    *   [2.1 Setting temporary cache](#Setting_temporary_cache)
+    *   [2.2 Package contains reference to $srcdir/$pkgdir](#Package_contains_reference_to_.24srcdir.2F.24pkgdir)
+
 ## Package naming
 
 Package names should start with a `nodejs-` prefix.
@@ -49,3 +56,27 @@ Continue with packaging as usual
 npm run packager
 
 ```
+
+### Package contains reference to $srcdir/$pkgdir
+
+npm unfortunately creates references to the source dir and the pkg dir. This is [a known issue in NPM](https://github.com/npm/npm/issues/12110), and actually considered a feature. However, you may remove those reference manually, since they are not used in any way.
+
+All dependendcies will contain a reference to `$pkgdir`, in the `_where` attribute. You can usually remove those attributes with some sed magic as follows:
+
+```
+ find "$pkgdir" -name package.json -print0 | xargs -0 sed -i '/_where/d'
+
+```
+
+Your main package will have some other references too. The easiest way to remove those is to remove all underscored properties, but that is not as easy with sed. Instead, you can use [jq](https://www.archlinux.org/packages/?name=jq) for similar results as follows:
+
+```
+local tmppackage="$(mktemp)"
+local pkgjson="$pkgdir/usr/lib/node_modules/$pkgname/package.json"
+jq '.|=with_entries(select(.key|test("_.+")|not))' "$pkgjson" > "$tmppackage"
+mv "$tmppackage" "$pkgjson"
+chmod 644 "$pkgjson"
+
+```
+
+An example of both techniques can be seen in [bower-away](https://aur.archlinux.org/packages/bower-away/).

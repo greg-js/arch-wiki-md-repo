@@ -1,3 +1,11 @@
+Artículos relacionados
+
+*   [Software RAID and LVM](/index.php/Software_RAID_and_LVM "Software RAID and LVM")
+*   [Installing with Fake RAID](/index.php/Installing_with_Fake_RAID "Installing with Fake RAID")
+*   [Convert a single drive system to RAID](/index.php/Convert_a_single_drive_system_to_RAID "Convert a single drive system to RAID")
+*   [ZFS](/index.php/ZFS "ZFS")
+*   [Experimenting with ZFS](/index.php/Experimenting_with_ZFS "Experimenting with ZFS")
+
 En este artículo se explica qué es RAID y cómo crear/administrar una matriz RAID por software utilizando mdadm.
 
 ## Contents
@@ -8,7 +16,7 @@ En este artículo se explica qué es RAID y cómo crear/administrar una matriz R
     *   [1.3 Comparación de niveles RAID](#Comparaci.C3.B3n_de_niveles_RAID)
 *   [2 Implementación](#Implementaci.C3.B3n)
     *   [2.1 ¿Qué tipo de RAID tengo?](#.C2.BFQu.C3.A9_tipo_de_RAID_tengo.3F)
-*   [3 Configuración](#Configuraci.C3.B3n)
+*   [3 Instalación](#Instalaci.C3.B3n)
     *   [3.1 Preparar los dispositivos](#Preparar_los_dispositivos)
     *   [3.2 Crear la tabla de particiones](#Crear_la_tabla_de_particiones)
     *   [3.3 Compilar la matriz](#Compilar_la_matriz)
@@ -118,7 +126,7 @@ Los dispositivos RAID pueden gestionarse de diferentes maneras:
 
 	Esta es la implementación más fácil, ya que no se basa en firmware y software propietarios para ser utilizado. La matriz es administrada por el sistema operativo, ya sea:
 
-*   por una capa de abstracción (por ejemplo, [mdadm](#Instalaci.C3.B3n));
+*   por una capa de abstracción (por ejemplo, [mdadm](#Instalar_Arch_Linux_en_RAID));
     **Nota:** Este es el método que utilizaremos más adelante en esta guía.
 
 *   por un gestor de volúmenes lógicos (por ejemplo, [LVM](/index.php/LVM "LVM"));
@@ -138,7 +146,7 @@ Dado que el RAID por software se implementa por el usuario, este tipo de RAID es
 
 Sin embargo, discernir entre fakeRAID y RAID de hardware verdadero puede ser más difícil. Como se dijo, los fabricantes no suelen distinguir correctamente estos dos tipos de RAID y siempre es posible falsear la publicidad. La mejor solución, en estos casos, es ejecutar la orden `lspci` y mirar la salida para encontrar la conntroladora RAID. A continuación, realice una búsqueda para ver qué información puede definir la controladora RAID.
 
-## Configuración
+## Instalación
 
 Instale [mdadm](https://www.archlinux.org/packages/?name=mdadm) disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). *mdadm* se utiliza para la administración de RAID por software puro usando dispositivos de bloque plano: el hardware subyacente no ofrece ninguna lógica RAID, solo un suministro de discos. *mdadm* funcionará con cualquier colección de dispositivos de bloques. Incluso si son inusuales. Por ejemplo, se puede, pues, hacer un matriz RAID de una colección de memorias USB.
 
@@ -293,7 +301,7 @@ Los usuarios que quieran montar la partición RAID desde un CD live, escriban:
 
 **Nota:** La siguiente sección se aplica solo si el sistema de archivos raíz reside en la matriz. Los usuarios pueden saltarse esta sección si la matriz contiene una partición(s) de datos.
 
-Se debe crear la matriz RAID entre los pasos de [particionar](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") y [formatear](/index.php/File_systems_(Espa%C3%B1ol)#Crear_un_sistema_de_archivos "File systems (Español)") del proceso de instalación. En lugar de formatear directamente una partición para que sea su sistema de archivos raíz, ello se hará sobre la matriz RAID. Siga la sección [#Configuración](#Configuraci.C3.B3n) para crear la matriz RAID. Luego, continúe con el procedimiento de instalación hasta que se complete el paso pacstrap. Al usar [arranque UEFI](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), lea también [ESP en RAID](/index.php/Unified_Extensible_Firmware_Interface#ESP_on_RAID "Unified Extensible Firmware Interface").
+Se debe crear la matriz RAID entre los pasos de [particionar](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") y [formatear](/index.php/File_systems_(Espa%C3%B1ol)#Crear_un_sistema_de_archivos "File systems (Español)") del proceso de instalación. En lugar de formatear directamente una partición para que sea su sistema de archivos raíz, ello se hará sobre la matriz RAID. Siga la sección [#Configuración](#Configuraci.C3.B3n) para crear la matriz RAID. Luego, continúe con el procedimiento de instalación hasta que se complete el paso pacstrap. Al usar [arranque UEFI](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), consulte también [ESP en RAID](/index.php/EFI_system_partition#ESP_on_RAID "EFI system partition").
 
 ### Actualizar archivo de configuración
 
@@ -603,7 +611,7 @@ Ahora debería ser capaz de montarla de nuevo con algo como esto (si es que lo t
 
 ```
 
-Ahora el raid debería estar funcionando de nuevo y disponible para su uso, sin embargo, con un disco corto. Después, debe particionar el disco de la manera como se ha descrito anteriormente en [Prepare the device](#Prepare_the_device). Una vez hecho esto puede agregar el nuevo disco a la matriz escribiendo:
+Ahora el raid debería estar funcionando de nuevo y disponible para su uso, sin embargo, con un disco corto. Después, debe particionar el disco de la manera como se ha descrito anteriormente en la sección para [preparar los dispositivos](#Preparar_los_dispositivos). Una vez hecho esto puede agregar el nuevo disco a la matriz escribiendo:
 
 ```
 # mdadm --manage --add /dev/md0 /dev/sdd1

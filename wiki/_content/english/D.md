@@ -8,7 +8,7 @@ From [Wikipedia:D (programming language)](https://en.wikipedia.org/wiki/D_(progr
 *   [2 Testing the installation](#Testing_the_installation)
 *   [3 Considerations](#Considerations)
 *   [4 Useful libraries and bindings](#Useful_libraries_and_bindings)
-*   [5 See Also](#See_Also)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -66,8 +66,8 @@ As of April 2017 [dmd's backend is now FOSS](https://github.com/dlang/dmd/pull/6
 *   [Derelict](https://github.com/aldacron/Derelict3) - Bindings for multimedia libraries, focused toward game development
 *   [Deimos](https://github.com/D-Programming-Deimos) - A project that houses a lot of bindings to different C libraries
 
-## See Also
+## See also
 
-*   [Phobos source on github](https://github.com/D-Programming-Language/phobos/) - The official Phobos repo
+*   [Phobos GitHub repository](https://github.com/D-Programming-Language/phobos/)
 *   [The D Programming Language](http://dlang.org/) - The official home of D
 *   [Planet D](http://planet.dsource.org/) - A collection of blogs about D

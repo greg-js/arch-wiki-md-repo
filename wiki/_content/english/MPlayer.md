@@ -107,7 +107,7 @@ vc=ffh264vdpau,ffmpeg12vdpau,ffodivxvdpau,ffwmv3vdpau,ffvc1vdpau,ffhevcvdpau
 *   The trailing commas are important! They tell MPlayer to fall back on other drivers and codecs should the specified ones not be found.
 *   `-vo` option selects VDPAU video output driver, `-vc` option selects VDPAU video codecs.
 
-**Warning:** The `ffodivxvdpau` codec is only supported by the most recent series of NVIDIA hardware. Consider omitting it based on your specific hardware. See [the NVIDIA page](/index.php/NVIDIA#Pure_Video_HD "NVIDIA") for more information.
+**Warning:** The `ffodivxvdpau` codec is only supported by the most recent series of NVIDIA hardware. Consider omitting it based on your specific hardware. See [NVIDIA#VDPAU](/index.php/NVIDIA#VDPAU "NVIDIA") for more information.
 
 #### Enabling VA-API
 

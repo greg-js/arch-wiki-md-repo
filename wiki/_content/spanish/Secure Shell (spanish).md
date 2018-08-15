@@ -488,7 +488,7 @@ En el sistema cliente, active la opción `ForwardX11`, bien especificando el par
 
 #### Utilización
 
-[Inicie sesión en el equipo remoto](#Conect.C3.A1ndose_al_servidor) como de costumbre, especificando el parámetro `-X` si *ForwardX11* no se ha activado en el archivo de configuración del cliente:
+Inicie sesión en el equipo remoto como de costumbre, especificando el parámetro `-X` si *ForwardX11* no se ha activado en el archivo de configuración del cliente:
 
 ```
 $ ssh -X *user@host*

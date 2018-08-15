@@ -1,10 +1,19 @@
-[Mullvad](https://mullvad.net/en/) is a VPN service based in Sweden which operates on [OpenVPN](/index.php/OpenVPN "OpenVPN") servers.
+[Mullvad](https://mullvad.net/en/) is a VPN service based in Sweden which uses [OpenVPN](/index.php/OpenVPN "OpenVPN") and [WireGuard](/index.php/WireGuard "WireGuard").
+
+## Contents
+
+*   [1 Installation](#Installation)
+*   [2 Manual configuration](#Manual_configuration)
+*   [3 DNS leaks](#DNS_leaks)
+*   [4 See also](#See_also)
 
 ## Installation
 
-The [official GUI client](https://mullvad.net/download/) is available as [mullvad](https://aur.archlinux.org/packages/mullvad/).
+The new [official GUI client](https://mullvad.net/download/) is available as [mullvad-vpn](https://aur.archlinux.org/packages/mullvad-vpn/) which replaces the older client [mullvad-old](https://aur.archlinux.org/packages/mullvad-old/).
 
-Alternatively you can use [OpenVPN](/index.php/OpenVPN "OpenVPN") with a configuration file for Mullvad as explained in [#Manual configuration](#Manual_configuration).
+After installation you will need to enable and start the [systemd](/index.php/Systemd "Systemd") service mullvad-daemon.
+
+Alternatively you can use the old client or [OpenVPN](/index.php/OpenVPN "OpenVPN") with a configuration file for Mullvad as explained in [#Manual configuration](#Manual_configuration).
 
 ## Manual configuration
 
@@ -30,6 +39,11 @@ After configuration the VPN connection can be [managed](/index.php/Enabled "Enab
 
 ## DNS leaks
 
-By default, Mullvad configurations allow DNS leaks and for usual VPN use cases this is an unfavourable privacy defect. Mullvad's GUI client settings have an option called "Stop DNS leaks" to prevent this from happening by removing every DNS server IP from the system configuration and replacing them with an IP pointing out to Mullvad's own *allegedly* non-logging DNS server, valid during the VPN connection. This fix can also be applied with the plain OpenVPN method by configuring [resolv.conf](/index.php/Resolv.conf "Resolv.conf") to use **only** the Mullvad DNS server IP specified on their [website](https://www.mullvad.net/guides/dns-leaks/).
+By default, the Mullvad openvpn configurations allow DNS leaks and for usual VPN use cases this is an unfavorable privacy defect. Mullvad's new GUI client automatically stops DNS leaks by removing every DNS server IP from the system configuration and replacing them with an IP pointing out to Mullvad's own non-logging DNS server, valid during the VPN connection. This fix can also be applied with the plain OpenVPN method by configuring [resolv.conf](/index.php/Resolv.conf "Resolv.conf") to use **only** the Mullvad DNS server IP specified on their [website](https://www.mullvad.net/guides/dns-leaks/).
 
 The resolv.conf update script version in [openvpn-update-resolv-conf](https://github.com/masterkorp/openvpn-update-resolv-conf) implements a different fix for the leaks by using the exclusive interface switch `-x` when running the `resolvconf` command, but this might cause another form of DNS leakage by making even every local network address resolve via the DNS server provided by Mullvad, as noted in the [script's GitHub issue page](https://github.com/masterkorp/openvpn-update-resolv-conf/issues/18).
+
+## See also
+
+*   [Mullvad client source code](https://github.com/mullvad/mullvadvpn-app)
+*   [Mullvad FAQ](https://mullvad.net/en/faq/)

@@ -122,11 +122,7 @@ Then set the group and adjust the permissions on `wvdial`:
 
 The files should have the following permissions:
 
-```
-$ ls -l /usr/bin/wvdial
-
-```
-
+ `$ ls -l /usr/bin/wvdial` 
 ```
 -rwsr-x---  1 root dialout 114368 2005-12-07 19:21 /usr/bin/wvdial
 

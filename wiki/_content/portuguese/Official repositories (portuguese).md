@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma versão localizada de [Official repositories](/index.php/Official_repositories "Official repositories"). Data da última tradução: 2018-08-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Official_repositories&diff=0&oldid=534728) na versão em inglês.
+
 Artigos relacionados
 
 *   [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
@@ -10,27 +12,30 @@ Artigos relacionados
 
 Um [repositório de software](https://en.wikipedia.org/wiki/pt:Reposit%C3%B3rio "wikipedia:pt:Repositório") é um local de armazenamento a partir do qual pacotes de software são obtidos para instalação.
 
-**Repositórios oficiais** do Arch Linux contêm softwares essenciais e populares, prontamente acessíveis via [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"). Eles são mantidos por [mantenedores de pacote](/index.php/Arch_terminology_(Portugu%C3%AAs)#Package_maintainer "Arch terminology (Português)").
+**Repositórios oficiais** do Arch Linux contêm softwares essenciais e populares, prontamente acessíveis via [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"). Eles são mantidos por [mantenedores de pacote](/index.php/Terminologia_do_Arch#Package_maintainer "Terminologia do Arch").
 
 Pacotes nos repositórios oficiais são atualizados constantemente: quando um pacote é atualizado, sua versão antiga é removida do repositórios. Não há grandes lançamentos do Arch: cada pacote é atualizado na medida em que novas versões se tornam disponíveis a partir de fontes do *upstream*. Cada repositório está sempre coerente, isto é, os pacotes que ele hospeda sempre são versões reciprocamente compatíveis.
 
 ## Contents
 
-*   [1 Repositórios](#Reposit.C3.B3rios)
+*   [1 Repositórios estáveis](#Reposit.C3.B3rios_est.C3.A1veis)
     *   [1.1 core](#core)
     *   [1.2 extra](#extra)
     *   [1.3 community](#community)
     *   [1.4 multilib](#multilib)
-    *   [1.5 testing](#testing)
-        *   [1.5.1 community-testing](#community-testing)
-        *   [1.5.2 multilib-testing](#multilib-testing)
-        *   [1.5.3 gnome-unstable](#gnome-unstable)
-        *   [1.5.4 kde-unstable](#kde-unstable)
-        *   [1.5.5 Desabilitando repositórios de teste](#Desabilitando_reposit.C3.B3rios_de_teste)
-    *   [1.6 staging](#staging)
-*   [2 Revisão histórica](#Revis.C3.A3o_hist.C3.B3rica)
+        *   [1.4.1 Habilitando multilib](#Habilitando_multilib)
+        *   [1.4.2 Desabilitando multilib](#Desabilitando_multilib)
+*   [2 Repositórios de teste](#Reposit.C3.B3rios_de_teste)
+    *   [2.1 testing](#testing)
+    *   [2.2 community-testing](#community-testing)
+    *   [2.3 multilib-testing](#multilib-testing)
+    *   [2.4 gnome-unstable](#gnome-unstable)
+    *   [2.5 kde-unstable](#kde-unstable)
+    *   [2.6 Desabilitando repositórios de teste](#Desabilitando_reposit.C3.B3rios_de_teste)
+*   [3 Repositórios de staging](#Reposit.C3.B3rios_de_staging)
+*   [4 Revisão histórica](#Revis.C3.A3o_hist.C3.B3rica)
 
-## Repositórios
+## Repositórios estáveis
 
 ### core
 
@@ -39,8 +44,8 @@ Esse repositório pode ser localizado em `.../core/os/` de seu [espelho](/index.
 *core* contém pacotes para:
 
 *   inicialização do Arch Linux
-*   [conectar à Internet](/index.php/Network_configuration_(Portugu%C3%AAs) "Network configuration (Português)")
-*   [compilação de pacotes](/index.php/Creating_packages_(Portugu%C3%AAs) "Creating packages (Português)")
+*   [conectar à Internet](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede")
+*   [compilação de pacotes](/index.php/Criando_pacotes "Criando pacotes")
 *   gerenciamento e correção de [sistemas de arquivos](/index.php/File_systems "File systems") suportados
 *   o processo de configuração do sistema (ex.: [openssh](https://www.archlinux.org/packages/?name=openssh))
 
@@ -48,7 +53,7 @@ assim como as dependências deles (não necessariamente [makedepends](/index.php
 
 *core* possui uma qualidade consideravelmente estrita de requisitos. Desenvolvedores/usuários precisam assinar (como uma confirmação) as atualizações de pacotes antes delas serem aceitas; Para pacotes com baixo uso, um motivo razoável é suficiente: informar pessoas sobre a atualização, requisitar assinaturas, manter no [#testing](#testing) por uma semana dependendo da severidade da alteração, falta de relatórios de erros relevantes, junto com o assinatura implícito do mantenedor do pacote.
 
-**Nota:** Para criar um repositório local com pacotes do *core* (ou outros repositórios) sem uma conexão internet, veja [pacman/Dicas e truques#Instalando pacotes a partir de um CD/DVD ou pendrive](/index.php/Pacman/Dicas_e_truques#Instalando_pacotes_a_partir_de_um_CD.2FDVD_ou_pendrive "Pacman/Dicas e truques")
+**Dica:** Para criar um repositório local com pacotes do *core* (ou outros repositórios) sem uma conexão internet, veja [pacman/Dicas e truques#Instalando pacotes a partir de um CD/DVD ou pendrive](/index.php/Pacman/Dicas_e_truques#Instalando_pacotes_a_partir_de_um_CD.2FDVD_ou_pendrive "Pacman/Dicas e truques")
 
 ### extra
 
@@ -68,11 +73,51 @@ Esse repositório pode ser localizado em `.../multilib/os/` de seu espelho favor
 
 *multilib* contém softwares e bibliotecas 32 bits que podem ser usados para executar e compilar aplicativos 32 bits em instalações 64 bits (ex.: [wine](https://www.archlinux.org/packages/?name=wine), [steam](https://www.archlinux.org/packages/?name=steam), etc).
 
-Para mais informações, veja [Multilib](/index.php/Multilib_(Portugu%C3%AAs) "Multilib (Português)").
+Com o repositório multilib habilitado, as bibliotecas compatíveis com 32 bits são colocadas sob `/usr/lib32`.
+
+#### Habilitando multilib
+
+Para usar o repositório multilib, descomente a seção `[multilib]` em `/etc/pacman.conf`:
+
+ `/etc/pacman.conf` 
+```
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+```
+
+Então, [atualize](/index.php/Atualize "Atualize") o sistema e instale os pacotes multilib desejados.
+
+**Dica:** Execute `pacman -Sl multilib` para listar todos os pacotes no repositório *multilib*. Nomes de pacotes de biblioteca 32 bits começam com `lib32-`.
+
+#### Desabilitando multilib
+
+Execute o seguinte comando para remover todos os pacotes que foram instalados do *multilib*:
+
+```
+# pacman -R $(comm -12 <(pacman -Qq | sort) <(pacman -Slq multilib | sort)) 
+
+```
+
+Se você tiver conflitos com gcc-libs, reinstale o pacote [gcc-libs](https://www.archlinux.org/packages/?name=gcc-libs) e o grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/).
+
+Comente a seção `[multilib]` no `/etc/pacman.conf`:
+
+ `/etc/pacman.conf` 
+```
+#[multilib]
+#Include = /etc/pacman.d/mirrorlist
+```
+
+Então, [atualize](/index.php/Atualize "Atualize") o sistema.
+
+## Repositórios de teste
+
+**Atenção:**
+
+*   Tenha cuidado ao ativar os repositórios de teste. Seu sistema pode não funcionar adequadamente ao realizar uma atualização. Apenas usuários experientes que sabem como lidar com falhas de sistema em potencial devem usá-lo.
+*   Se você habilitar o *testing*, também deve habilitar *community-testing*. Se você habilitar qualquer outro repositório de teste listado nas subseções a seguir, você também deve habilitar ambos *testing* e *community-testing*.
 
 ### testing
-
-**Atenção:** Cuidado ao ativar o repositório *testing*. Seu sistema pode não funcionar adequadamente ao realizar uma atualização. Apenas usuários experientes que sabem como lidar com falhas de sistema em potencial devem usá-lo.
 
 Esse repositório pode ser localizado em `.../multilib/os/` de seu espelho favorito.
 
@@ -88,17 +133,15 @@ Novos pacotes vão para o *testing* se:
 
 **Nota:** *testing* não é para as versões de pacotes "mais novo do novo". Parte de seu propósito é segurar atualizações de pacotes que têm o potencial de quebrar o sistema, seja como parte da coleção de pacotes do *core*, seja como crítico de outras formas. Como tal, usuários do *testing* são incentivados a se inscreverem na [lista de discussão arch-dev-public](https://mailman.archlinux.org/mailman/listinfo/arch-dev-public), acompanhar o [fórum do repositório testing](https://bbs.archlinux.org/viewforum.php?id=49) e a [relatar todos os erros](/index.php/Diretrizes_de_relat%C3%B3rios_de_erro "Diretrizes de relatórios de erro").
 
-**Atenção:** Se você habilitar *testing*, também deve habilitar *community-testing*. Se você habilitar qualquer outro repositório de teste listado nas subseções a seguir, você também deve habilitar ambos *testing* e *community-testing*.
-
-#### community-testing
+### community-testing
 
 Esse repositório é similar ao repositório *testing*, mas para pacotes que são candidatos para o repositório *community*.
 
-#### multilib-testing
+### multilib-testing
 
 Esse repositório é similar ao repositório *testing*, mas para pacotes que são candidatos ao repositório *multilib*.
 
-#### gnome-unstable
+### gnome-unstable
 
 Esse repositório contém a versão mais recente do ambiente gráfico do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"), antes de ser movido para o repositório principal de teste *testing*.
 
@@ -112,9 +155,9 @@ Include = /etc/pacman.d/mirrorlist
 
 A entrada *gnome-unstable* deve estar primeiro na lista de repositórios (*i.e.*, acima da entrada *testing*).
 
-Por favor, relate erros relacionados a empacotamento em nosso [rastreador de erro](https://bugs.archlinux.org/), enquanto o resto deve ser relatado para o *upstream* no [Bugzilla do GNOME](https://bugzilla.gnome.org/).
+Por favor, relate erros relacionados a empacotamento em nosso [rastreador de erro](https://bugs.archlinux.org/), enquanto o resto deve ser relatado para o *upstream* no [Bugzilla do GNOME](https://bugzilla.gnome.org/) ou [Gitlab issues do GNOME](https://gitlab.gnome.org), conforme apropriado.
 
-#### kde-unstable
+### kde-unstable
 
 Esse repositório contém o *beta* mais recente ou *Release Candidate* dos aplicativos e Plasma do [KDE](/index.php/KDE "KDE").
 
@@ -130,7 +173,7 @@ A entrada *kde-unstable* deve estar primeiro na lista de repositórios (*i.e.*, 
 
 Certifique-se de [fazer relatórios de erros](/index.php/Diretrizes_de_relat%C3%B3rios_de_erro "Diretrizes de relatórios de erro") se você descobrir algum problema.
 
-#### Desabilitando repositórios de teste
+### Desabilitando repositórios de teste
 
 Se você habilitou repositórios de teste, mas posteriormente decidir desabilitá-los, você deve:
 
@@ -139,7 +182,7 @@ Se você habilitou repositórios de teste, mas posteriormente decidir desabilit�
 
 O segundo item é opcional, mas tenha-o em mente que cas você tenha algum problema.
 
-### staging
+## Repositórios de staging
 
 **Atenção:** Não ative os repositórios *staging* por qualquer motivo. Seu sistema quebrará inquestionavelmente depois de executar uma atualização. Este repositório destina-se apenas ao uso de desenvolvedores de backend.
 

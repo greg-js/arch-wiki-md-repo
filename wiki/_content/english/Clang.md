@@ -1,11 +1,11 @@
-[Clang](http://clang.llvm.org/) is a C/C++/Objective C compiler based on LLVM. It is distributed under the BSD Licence.
+[Clang](http://clang.llvm.org/) is a [C](/index.php/C "C")/C++/Objective C compiler based on LLVM. It is distributed under the BSD Licence.
 
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Build packages with Clang](#Build_packages_with_Clang)
 *   [3 Using the Static Analyzer](#Using_the_Static_Analyzer)
-*   [4 References](#References)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -35,6 +35,7 @@ $ scan-build gcc -c t1.c t2.c
 
 ```
 
-## References
+## See also
 
+*   [Wikipedia:Clang](https://en.wikipedia.org/wiki/Clang "wikipedia:Clang")
 *   [scan-build: running the analyzer from the command line](http://clang-analyzer.llvm.org/scan-build.html)

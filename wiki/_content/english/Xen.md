@@ -17,25 +17,30 @@ The Xen hypervisor is a thin layer of software which emulates a computer archite
 *   [2 Configuring dom0](#Configuring_dom0)
     *   [2.1 Installation of the Xen hypervisor](#Installation_of_the_Xen_hypervisor)
     *   [2.2 Modification of the bootloader](#Modification_of_the_bootloader)
-        *   [2.2.1 EFISTUB](#EFISTUB)
-        *   [2.2.2 GRUB](#GRUB)
+        *   [2.2.1 UEFI](#UEFI)
+            *   [2.2.1.1 Systemd-boot](#Systemd-boot)
+            *   [2.2.1.2 EFISTUB](#EFISTUB)
+        *   [2.2.2 BIOS](#BIOS)
+            *   [2.2.2.1 GRUB](#GRUB)
         *   [2.2.3 Syslinux](#Syslinux)
     *   [2.3 Creation of a network bridge](#Creation_of_a_network_bridge)
-    *   [2.4 Creating bridge with Network Manager](#Creating_bridge_with_Network_Manager)
-    *   [2.5 Installation of Xen systemd services](#Installation_of_Xen_systemd_services)
-*   [3 Confirming successful installation](#Confirming_successful_installation)
-*   [4 Using Xen](#Using_Xen)
-    *   [4.1 Create a domU "hard disk"](#Create_a_domU_.22hard_disk.22)
-    *   [4.2 Create a domU configuration](#Create_a_domU_configuration)
-    *   [4.3 Managing a domU](#Managing_a_domU)
-*   [5 Configuring a hardware virtualized (HVM) Arch domU](#Configuring_a_hardware_virtualized_.28HVM.29_Arch_domU)
-*   [6 Configuring a paravirtualized (PV) Arch domU](#Configuring_a_paravirtualized_.28PV.29_Arch_domU)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 "xl list" complains about libxl](#.22xl_list.22_complains_about_libxl)
-    *   [7.2 "xl create" fails](#.22xl_create.22_fails)
-    *   [7.3 Arch Linux guest hangs with a ctrl-d message](#Arch_Linux_guest_hangs_with_a_ctrl-d_message)
-    *   [7.4 Error message "failed to execute '/usr/lib/udev/socket:/org/xen/xend/udev_event' 'socket:/org/xen/xend/udev_event': No such file or directory"](#Error_message_.22failed_to_execute_.27.2Fusr.2Flib.2Fudev.2Fsocket:.2Forg.2Fxen.2Fxend.2Fudev_event.27_.27socket:.2Forg.2Fxen.2Fxend.2Fudev_event.27:_No_such_file_or_directory.22)
-*   [8 See also](#See_also)
+        *   [2.3.1 Systemd-networkd](#Systemd-networkd)
+        *   [2.3.2 Network Manager](#Network_Manager)
+    *   [2.4 Installation of Xen systemd services](#Installation_of_Xen_systemd_services)
+    *   [2.5 Confirming successful installation](#Confirming_successful_installation)
+    *   [2.6 Configure Best Practices](#Configure_Best_Practices)
+*   [3 Using Xen](#Using_Xen)
+    *   [3.1 Create a domU "hard disk"](#Create_a_domU_.22hard_disk.22)
+    *   [3.2 Create a domU configuration](#Create_a_domU_configuration)
+    *   [3.3 Managing a domU](#Managing_a_domU)
+*   [4 Configuring a hardware virtualized (HVM) Arch domU](#Configuring_a_hardware_virtualized_.28HVM.29_Arch_domU)
+*   [5 Configuring a paravirtualized (PV) Arch domU](#Configuring_a_paravirtualized_.28PV.29_Arch_domU)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 "xl list" complains about libxl](#.22xl_list.22_complains_about_libxl)
+    *   [6.2 "xl create" fails](#.22xl_create.22_fails)
+    *   [6.3 Arch Linux guest hangs with a ctrl-d message](#Arch_Linux_guest_hangs_with_a_ctrl-d_message)
+    *   [6.4 Error message "failed to execute '/usr/lib/udev/socket:/org/xen/xend/udev_event' 'socket:/org/xen/xend/udev_event': No such file or directory"](#Error_message_.22failed_to_execute_.27.2Fusr.2Flib.2Fudev.2Fsocket:.2Forg.2Fxen.2Fxend.2Fudev_event.27_.27socket:.2Forg.2Fxen.2Fxend.2Fudev_event.27:_No_such_file_or_directory.22)
+*   [7 See also](#See_also)
 
 ## System requirements
 
@@ -69,33 +74,72 @@ You also need to install the [seabios](https://www.archlinux.org/packages/?name=
 
 The boot loader must be modified to load a special Xen kernel (`xen.gz` or in the case of UEFI `xen.efi`) which is then used to boot the normal kernel. To do this a new bootloader entry is needed.
 
-#### EFISTUB
+#### UEFI
 
-There are several ways UEFI can be involved in booting Xen but this section will cover the most simple way to get Xen to boot with help of [EFISTUB](/index.php/EFISTUB "EFISTUB").
+Xen supports booting from UEFI as specified in [Xen EFI systems](https://xenbits.xen.org/docs/unstable/misc/efi.html). It also might be necessary to use [efibootmgr](/index.php/UEFI#efibootmgr "UEFI") to set boot order and other parameters.
 
-It is possible to boot a kernel from UEFI just by placing it on the [EFI system partition](/index.php/EFI_system_partition "EFI system partition"), but since Xen at least needs to know what kernel should be booted as dom0, a minimum configuration file is required. Create or edit a `/boot/xen.cfg` file according to system requirements, for example:
+First, ensure the `xen-X.Y.Z.efi` file is in the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") along with your kernel and ramdisk files.
 
- `/boot/xen.cfg` 
+Second, Xen requires an ASCII (no UTF-8, UTC-16, etc) configuration file that specifies what kernel should be booted as [dom0](https://wiki.xen.org/wiki/Dom0). This file must be placed in the same [EFI system partition](/index.php/EFI_system_partition "EFI system partition") as the binary. Xen looks for several configuration files and uses the first one it finds. The order of search starts with the `.efi` extension of the binary's name replaced by `.cfg`, then drops trailing name components at `.`, `-` and `_` until a match is found. Typically, a single file named `xen.cfg` is used with the system requirements, such as:
+
+ `xen.cfg` 
 ```
 [global]
 default=xen
 
 [xen]
-options=console=vga loglvl=all noreboot
-kernel=vmlinuz-linux root=/dev/sda2 rw ignore_loglevel #earlyprintk=xen
+options=console=vga iommu=force:true,qinval:true,debug:true loglvl=all noreboot=true reboot=no vga=ask ucode=scan
+kernel=vmlinuz-linux root=/dev/sdaX rw add_efi_memmap #earlyprintk=xen
 ramdisk=initramfs-linux.img
 
 ```
 
-It might be necessary to use [efibootmgr](/index.php/UEFI#efibootmgr "UEFI") to set boot order and other parameters. If booting fails, drop to the build-in [UEFI shell](/index.php/UEFI#Launching_UEFI_Shell "UEFI") and try to launch manually. For example:
+**Tip:** See [Xen efi.cfg](https://xenbits.xen.org/docs/unstable/misc/efi.html) for additional parameters in this file. For the options line, see [Xen Command Line options](https://xenbits.xen.org/docs/unstable/misc/xen-command-line.html) for a full list of options available such as serial console, limiting dom0 vCPU and memory, scheduling, Intel and AMD microcode and more. For example, [Xen Project Best Practices](https://wiki.xen.org/wiki/Xen_Project_Best_Practices) dictates to disabling memory ballooning for dom0\. To do that, edit the `xen.cfg` line for `options` to specify the additional parameters.
+
+##### Systemd-boot
+
+**Tip:** You can continue to boot the [dom0](https://wiki.xen.org/wiki/Dom0) kernel directly even after Xen is installed and configured. This can be useful in the event that an Xen installation becomes unbootable or misconfigured. Therefore, it is recommended to keep the original systemd-boot loader entries configured on the system as rescue boot options and just add additional entries for Xen.
+
+**Note:** At the time of the system's [Systemd-boot](/index.php/Systemd-boot "Systemd-boot") installation, the ESP partition should have been mounted to `/boot` as this is where the [Xen](https://aur.archlinux.org/packages/Xen/) package and EFI binaries were configured and built for, not `/boot/efi`.
+
+Add a new EFI-type loader entry. See [Systemd-boot#EFI_Shells_or_other_EFI_apps](/index.php/Systemd-boot#EFI_Shells_or_other_EFI_apps "Systemd-boot") for more details. For example:
+
+ `/boot/loader/entries/10-xen.conf` 
+```
+title   Xen Hypervisor
+efi     /xen-X.Y.Z.efi
+
+```
+
+**Note:** The current [systemd-boot](/index.php/Systemd-boot "Systemd-boot") and Xen efi binary combination does not allow parameters passed on the `efi` line of the loader's entry. However, the Xen documentation states that `-cfg=file.cfg` can be used as an UEFI Shell parameter which is not true for the efi line option. For now, you can only have one Xen EFI entry which limits you to only one config file.
+
+##### EFISTUB
+
+It is possible to boot an EFI kernel directly from UEFI by using [EFISTUB](/index.php/EFISTUB "EFISTUB").
+
+Drop to the build-in [UEFI shell](/index.php/UEFI#Launching_UEFI_Shell "UEFI") and call the EFI file directly. For example:
 
 ```
 Shell> fs0:
-FS0:\> xen-4.4.0.efi
+FS0:\> xen-X.Y.Z.efi
 
 ```
 
-#### GRUB
+Note that a `xen.cfg` configuration file in the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") is still required as outlined above. In addition, a different configuration file may be specified with the `-cfg=file.cfg` parameter. For example:
+
+```
+Shell> fs0:
+FS0:\> xen-X.Y.Z.efi -cfg=xen-rescue.cfg
+
+```
+
+These additional configuration files must reside in the same directory as the Xen EFI binary and linux stub files.
+
+#### BIOS
+
+Xen supports booting from system firmware configured as BIOS.
+
+##### GRUB
 
 For [GRUB](/index.php/GRUB "GRUB") users, the Xen package provides the `/etc/grub.d/09_xen` generator file. The file `/etc/xen/grub.conf` can be edited to customize the Xen boot commands. For example, to allocate 512 MiB of RAM to *dom0* at boot, modify `/etc/xen/grub.conf` by replacing the line:
 
@@ -147,7 +191,11 @@ Xen requires that network communications between *domU* and the *dom0* (and beyo
 
 See [Network bridge#Creating a bridge](/index.php/Network_bridge#Creating_a_bridge "Network bridge") for details.
 
-### Creating bridge with Network Manager
+#### Systemd-networkd
+
+See [Systemd-networkd#Bridge_interface](/index.php/Systemd-networkd#Bridge_interface "Systemd-networkd") for details.
+
+#### Network Manager
 
 Gnome's Network Manager can sometime be troublesome. If following the bridge creation section outlined in the [bridges](/index.php/Network_bridge "Network bridge") section of the wiki are unclear or do not work, then the following steps may work.
 
@@ -197,7 +245,7 @@ Reboot. If everything works properly after a reboot (ie. bridge starts automatic
 
 The Xen *dom0* requires the `xenstored.service`, `xenconsoled.service`, `xendomains.service` and `xen-init-dom0.service` to be [started](/index.php/Started "Started") and possibly [enabled](/index.php/Enabled "Enabled").
 
-## Confirming successful installation
+### Confirming successful installation
 
 Reboot your *dom0* host and ensure that the Xen kernel boots correctly and that all settings survive a reboot. A properly set up *dom0* should report the following when you run `xl list` as root:
 
@@ -216,6 +264,10 @@ In addition to the required steps above, see [best practices for running Xen](ht
 none /proc/xen xenfs defaults 0 0
 
 ```
+
+### Configure Best Practices
+
+Review [Xen Project Best Practices](https://wiki.xen.org/wiki/Xen_Project_Best_Practices) before using Xen.
 
 ## Using Xen
 

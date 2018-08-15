@@ -66,11 +66,11 @@ De todas maneras, si se instala Arch en modo BIOS-GPT en un disco y se instala W
 
 ### Arranque seguro UEFI
 
-Todos los sistemas preinstalados con Windows 8/8.1 arrancan en modo UEFI-GPT y tienen habilitado el modo UEFI seguro por defecto (que puede ser deshabilitado por el usuario de manera manual). Tienen el modo heredado de BIOS (CSM) deshabilitado por definición (puede ser habilitado por el usuario, si el firmware lo soporta). Esto es mandatorio para todos los sistemas OEM preinstalados con Windows.
+Todos los sistemas preinstalados de Windows 8/8.1 arrancan de forma predeterminada en el modo UEFI/GPT y tienen activado por defecto el arranque en modo seguro UEFI *(UEFI Secure Boot)*. Esto es obligatorio por Microsoft para todos los sistemas preinstalados OEM.
 
-Actualmente los medios de instalación de Arch soportan el arranque en modo Seguro, pero requieren de algunos pasos de configuración manual del usuario para [configurar el HashTool en el arranque](/index.php/UEFI#Secure_Boot "UEFI"). Es recomendable deshabilitar el modo seguro de UEFI en la configuración del firmware antes de intentar el arranque con Arch Linux. Windows 8/8.1 debiera arrancar sin problemas con el modo seguro deshabilitado.
+Actualmente los medios de instalación de Arch Linux soportan este modo seguro. Consulte [iniciando archiso](/index.php/Secure_Boot#Booting_archiso "Secure Boot").
 
-El único punto relevante en relación a deshabilitar el modo seguro del UEFI es que requiere de un acceso físico al sistema para deshabilitar la opción desde la configuración del firmware, dado que Microsoft ha prohibido explícitamente la prescencia de cualquier método de acceso remoto o de software (desde el SO) para deshabilitar el modo seguro en los sistemas preinstalados con Windows 8/8.1.
+Se recomienda desactivar el arranque seguro UEFI manualmente en la configuración del firmware antes de intentar iniciar Arch Linux. Windows 8/8.1 DEBERÍA continuar arrancando correctamente incluso si el modo seguro está deshabilitado. El único problema para deshabilitar la compatibilidad con el arranque seguro UEFI es que requiere acceso físico al sistema para deshabilitar la opción de arranque seguro en la configuración del firmware, ya que Microsoft ha prohibido explícitamente la presencia de cualquier método de forma remota o programática (desde el SO). arranque en todos los sistemas preinstalados de Windows 8/8.1.
 
 ### Arranque rápido
 
@@ -117,7 +117,7 @@ La siguiente sección contiene extractos de [http://www.iceflatline.com/2009/09/
 Para posibilitar que el cargador de arranque de Windows pueda detectar las particiones de Linux, al menos una de las particiones debe tener el formato FAT32 (en el caso del artículo, `/dev/sda3`). l resto de la configuración es similar a una instalación típica. Algunos documentos refieren que la partición que es cargada por el cargador de arranque de Windows debe ser primaria, pero se ha reportado que se puede utilizar una partición extendida sin mayor problema.
 
 *   Al instalar el cargador de arranque GRUB, debe instalarlo en la partición `/boot` en vez de en el MBR.
-    **Note:** por ejemplo, la partición `/boot` es `/dev/sda5`. Por lo que se instalo GRUB en `/dev/sda5` y no en `/dev/sda`. Para obtener ayuda, vea [GRUB#Install to partition or partitionless disk](/index.php/GRUB#Install_to_partition_or_partitionless_disk "GRUB")
+    **Nota:** por ejemplo, la partición `/boot` es `/dev/sda5`. Por lo que se instalo GRUB en `/dev/sda5` y no en `/dev/sda`. Para obtener ayuda, consulte [Instalar en un disco con o sin particiones](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol)#Instalar_en_un_disco_con_o_sin_particiones "GRUB/Tips and tricks (Español)")
 
 *   Bajo Linux, realice una copia de la información de arranque tecleando lo siguiente en la línea de órdenes:
 
@@ -161,7 +161,7 @@ Para utilizar [GRUB](/index.php/GRUB "GRUB") siga la guía en [GRUB#Windows inst
 
 Tanto Syslinux (version 6.02 y 6.03-pre9) como ELILO no soportan el arranque en cadena de otras aplicaciones EFI, por lo que no pueden ser utilizadas para el arranque en cadena de `\EFI\Microsoft\Boot\bootmgfw.efi`.
 
-Algunos ordenadores con versiones mas nuevas de Windows, usualmente traen la opción de [arranque seguro](/index.php/UEFI#Secure_Boot_.28Espa.C3.B1ol.29 "UEFI") habilitada. Deberá realizar algunos pasos extra para deshabilitar el arranque seguro o hacer que su medio de instalación sea compatible con el arranque seguro.
+Algunos ordenadores con versiones mas nuevas de Windows, usualmente traen la opción de [arranque seguro](/index.php/Secure_Boot "Secure Boot") habilitada. Deberá realizar algunos pasos extra para deshabilitar el arranque seguro o hacer que su medio de instalación sea compatible con el arranque seguro.
 
 ### Solución de Problemas
 

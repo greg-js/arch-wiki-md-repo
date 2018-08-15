@@ -377,13 +377,6 @@ You may also have to unmute the 'Line' ALSA channel for this to work. Any value 
 
 Source: [https://www.kernel.org/doc/Documentation/sound/alsa/powersave.txt](https://www.kernel.org/doc/Documentation/sound/alsa/powersave.txt)
 
-If you use a laptop, pm-utils will change `power_save` back to 1 when you go onto battery power even if you disable power saving in `/etc/modprobe.d`. Disable this for pm-utils by disabling the script that makes the change (see [Disabling a hook](/index.php/Pm-utils#Disabling_a_hook "Pm-utils") for more information):
-
-```
-# touch /etc/pm/power.d/intel-audio-powersave
-
-```
-
 ### Sound skipping while using dynamic CPU frequency scaling
 
 Some combinations of ALSA drivers and chipsets may cause audio from all sources to skip when used in combination with a dynamic frequency scaling governor such as `ondemand` or `conservative`. Currently, the solution is to switch back to the `performance` governor.

@@ -2,15 +2,14 @@ Related articles
 
 *   [Unreal Tournament 4](/index.php/Unreal_Tournament_4 "Unreal Tournament 4")
 
-Unreal Engine 4 is the latest version of the videogame Engine Created By Epic Games
+[Unreal Engine 4](https://www.unrealengine.com/) is the latest version of the videogame Engine Created By Epic Games
 
 The content of this article was originally written on [Unreal Engine wiki](https://wiki.unrealengine.com/Building_On_Linux#Setting_up_on_Arch_Linux) and adapted specifically for Arch Linux.
 
 ## Contents
 
 *   [1 Prerequisites](#Prerequisites)
-    *   [1.1 Minimum hardware requirements](#Minimum_hardware_requirements)
-    *   [1.2 Gain access to the source code](#Gain_access_to_the_source_code)
+    *   [1.1 Gain access to the source code](#Gain_access_to_the_source_code)
 *   [2 Compilation](#Compilation)
     *   [2.1 Compile manually from source code](#Compile_manually_from_source_code)
     *   [2.2 Installing from the AUR](#Installing_from_the_AUR)
@@ -29,11 +28,7 @@ The content of this article was originally written on [Unreal Engine wiki](https
 
 ## Prerequisites
 
-### Minimum hardware requirements
-
-*   Intel or Amd CPU@2.5GHz Quad Core **64 Bits**
-*   GPU: NVIDIA GeForce GTX 470 or AMD Radeon 6870 HD series
-*   RAM: 8 GB
+See [Recommended Hardware](https://wiki.unrealengine.com/Recommended_Hardware).
 
 ### Gain access to the source code
 

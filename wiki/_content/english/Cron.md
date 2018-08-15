@@ -538,11 +538,7 @@ You can also set `MAILTO=””` variable in your crontab file to disable email 
 
 The cron daemon parses a configuration file known as `crontab`. Each user on the system can maintain a separate crontab file to schedule commands individually. The root user's crontab is used to schedule system-wide tasks (though users may opt to use `/etc/crontab` or the `/etc/cron.d` directory, depending on which cron implementation they choose).
 
-```
-/var/spool/cron/root
-
-```
-
+ `/var/spool/cron/root` 
 ```
 # Run command at a scheduled time
 # Edit this 'crontab -e' for error checking, man 1 crontab for acceptable format

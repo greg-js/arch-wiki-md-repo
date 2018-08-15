@@ -124,7 +124,7 @@ Xcursor.theme: foobar
 
 ```
 
-Para fazer com que o tema seja carregado corretamente, ele precisa ser chamado pelo seu gerenciador de janela. Se não for o seu caso, você pode forçar seu gerenciador de janela para carregar o tema, colocando o seguinte comando em [xprofile](/index.php/Xprofile "Xprofile"):
+Para fazer com que o tema seja carregado corretamente, ele precisa ser chamado pelo seu gerenciador de janela. Se não for o seu caso, você pode forçar seu gerenciador de janela para carregar o tema, colocando o seguinte comando em [xprofile](/index.php/Xprofile_(Portugu%C3%AAs) "Xprofile (Português)"):
 
 ```
 xrdb ~/.Xdefaults

@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma versão localizada de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2018-08-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=533651) na versão em inglês.
+
 Artigos relacionados
 
 *   [systemd/User](/index.php/Systemd/User "Systemd/User")
@@ -75,7 +77,7 @@ O principal comando usado para introspecção e controle *systemd* é *systemctl
 
 ### Analisando o estado do sistema
 
-Mostre **status do sustema** usando:
+Mostre **status do sistema** usando:
 
 ```
 $ systemctl status
@@ -470,7 +472,11 @@ Os arquivos de configuração são geralmente fornecidos junto com arquivos de s
 
 Os arquivos de configuração também podem ser usados para escrever valores em determinados arquivos na inicialização. Por exemplo, se você usa `/etc/rc.local` para desativar ativação de dispositivos USB com `echo USBE > /proc/acpi/wakeup`, você pode usar o seguinte *tmpfile*:
 
- `/etc/tmpfiles.d/disable-usb-wake.conf`  `w /proc/acpi/wakeup - - - - USBE` 
+ `/etc/tmpfiles.d/disable-usb-wake.conf` 
+```
+#    Path                  Mode UID  GID  Age Argument
+w    /proc/acpi/wakeup     -    -    -    -   USBE
+```
 
 Veja as páginas man [systemd-tmpfiles(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles.8) e [tmpfiles.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5) para detalhes.
 

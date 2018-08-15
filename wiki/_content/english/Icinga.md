@@ -123,7 +123,7 @@ Configure CGI:
 
 ## Icinga-web
 
-Follow [Install Web Application Package](/index.php/Web_application_package_guidelines#Install_web_application_package "Web application package guidelines")
+Follow [Install Web Application Package](/index.php/Special:PermanentLink/372762#Install_web_application_package "Special:PermanentLink/372762").
 
 Install [icinga-web](https://aur.archlinux.org/packages/icinga-web/) from the [AUR](/index.php/AUR "AUR").
 

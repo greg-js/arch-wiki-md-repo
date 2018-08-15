@@ -22,7 +22,6 @@ Esta página contiene una breve introducción sobre los gestores de arranque dis
 *   [3 Gestores de arranque solo para BIOS](#Gestores_de_arranque_solo_para_BIOS)
     *   [3.1 GRUB Legacy](#GRUB_Legacy)
     *   [3.2 LILO](#LILO)
-    *   [3.3 NeoGRUB](#NeoGRUB)
 *   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
 ## Gestores de arranque tanto para BIOS como para UEFI
@@ -80,12 +79,6 @@ GRUB Legacy (también conocido como grub-0.97), es el antecedente de [GRUB](/ind
 ### LILO
 
 Véase [LILO](/index.php/LILO "LILO").
-
-### NeoGRUB
-
-NeoGRUB proporciona un medio para arrancar Arch desde el gestor de arranque de Windows sin necesidad de instalar un gestor de arranque adicional. Véase [NeoGRUB](/index.php/NeoGRUB "NeoGRUB").
-
-Arrancar Arch desde NeoGRUB no ha sido probado aún en Windows 8 y/o sistemas UEFI.
 
 ## Véase también
 

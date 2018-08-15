@@ -212,7 +212,7 @@ $ gpg --recv-keys *key-id*
 
 **Tip:**
 
-*   Adding `keyserver-options auto-key-retrieve` to `gpg.conf` will automatically fetch keys from the key server as needed, but this can be considered a **privacy violation**; see `web bug' in gpg(1).
+*   Adding `keyserver-options auto-key-retrieve` to `gpg.conf` will automatically fetch keys from the key server as needed, but this can be considered a **privacy violation**; see "web bug" in [gpg(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpg.1).
 *   An alternative key server is `pool.sks-keyservers.net` and can be specified with `keyserver` in `dirmngr.conf`; see also [wikipedia:Key server (cryptographic)#Keyserver examples](https://en.wikipedia.org/wiki/Key_server_(cryptographic)#Keyserver_examples "wikipedia:Key server (cryptographic)").
 *   If your network blocks ports used for hkp/hkps, you may need to specify port 80, i.e. `pool.sks-keyservers.net:80`
 *   You can connect to the keyserver over [Tor](/index.php/Tor "Tor") using `--use-tor`. See this [GnuPG blog post](https://gnupg.org/blog/20151224-gnupg-in-november-and-december.html) for more information.
@@ -543,7 +543,11 @@ Starting with GnuPG 2.1.0 the use of gpg-agent and pinentry is required, which m
 
 First, edit the gpg-agent configuration to allow *loopback* pinentry mode:
 
- `~/.gnupg/gpg-agent.conf`  `allow-loopback-pinentry` 
+ `~/.gnupg/gpg-agent.conf` 
+```
+allow-loopback-pinentry
+
+```
 
 Restart the gpg-agent process if it is running to let the change take effect.
 
@@ -556,7 +560,12 @@ $ gpg --pinentry-mode loopback ...
 
 ...or if this is not possible, add the option to the configuration:
 
- `~/.gnupg/gpg.conf`  `pinentry-mode loopback` 
+ `~/.gnupg/gpg.conf` 
+```
+pinentry-mode loopback
+
+```
+
 **Note:** The upstream author indicates setting `pinentry-mode loopback` in `gpg.conf` may break other usage, using the commandline option should be preferred if at all possible. [[4]](https://bugs.g10code.com/gnupg/issue1772)
 
 ### SSH agent
@@ -607,18 +616,14 @@ Once your key is approved, you will get a *pinentry* dialog every time your pass
 
 You can also use your PGP key as an SSH key. This requires a key with the `Authentication` capability (see [#Custom capabilities](#Custom_capabilities)). There are various benefits gained by using a PGP key for SSH authentication, including:
 
-*   Reduced key maintenance, as you will no longer need to maintain an SSH key
+*   Reduced key maintenance, as you will no longer need to maintain an SSH key.
 *   The ability to store the authentication key on a smartcard. GnuPG will automatically detect the key when the card is available, and add it to the agent (check with `ssh-add -l` or `ssh-add -L`). The comment for the key should be something like: `openpgp:*key-id*` or `cardno:*card-id*`.
 
 To retrieve the public key part of your GPG/SSH key, run `gpg --export-ssh-key *gpg-key*`.
 
 Unless you have your GPG key on a keycard, you need to add your key to `$GNUPGHOME/sshcontrol` to be recognized as a SSH key. If your key is on a keycard, its keygrip is added to `sshcontrol` implicitly. If not, get the keygrip of your key this way:
 
-```
-$ gpg --list-keys --with-keygrip
-
-```
-
+ `$ gpg --list-keys --with-keygrip` 
 ```
 sub   rsa4096 2018-07-25 [A]
       Keygrip = *1531C8084D16DC4C36911F1585AF0ACE7AAFD7E7*
@@ -626,11 +631,7 @@ sub   rsa4096 2018-07-25 [A]
 
 Then edit `sshcontrol` like this. Adding the keygrip is a one-time action; you will not need to edit the file again, unless you are adding additional keys.
 
-```
-$GNUPGHOME/sshcontrol
-
-```
-
+ `$GNUPGHOME/sshcontrol` 
 ```
 *1531C8084D16DC4C36911F1585AF0ACE7AAFD7E7*
 

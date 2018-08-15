@@ -1,19 +1,10 @@
-## Contents
-
-*   [1 Introduction](#Introduction)
-*   [2 Installation](#Installation)
-*   [3 Configuration](#Configuration)
-*   [4 More Resources](#More_Resources)
-
-## Introduction
-
-Honeyd is an open source computer program that allows a user to set up and run multiple virtual hosts on a computer network. These virtual hosts can be configured to mimic several different types of servers, allowing the user to simulate an infinite number of computer network configurations. Honeyd is primarily used in the field of computer security by professionals and hobbyists alike.
+[Honeyd](http://www.honeyd.org/) is an open source computer program that allows a user to set up and run multiple virtual hosts on a computer network. These virtual hosts can be configured to mimic several different types of servers, allowing the user to simulate an infinite number of computer network configurations. Honeyd is primarily used in the field of computer security by professionals and hobbyists alike.
 
 This page goes over how to get a simple setup up and running. My server uses IP address 192.168.1.10\. My honeyd daemon will listen at 10.0.0.1.
 
 ## Installation
 
-Install the [honeyd](https://aur.archlinux.org/packages/honeyd/) package from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [honeyd](https://aur.archlinux.org/packages/honeyd/) package.
 
 ## Configuration
 
@@ -49,11 +40,7 @@ Destination IP 	Netmask 	Gateway
 
 Open up 2 shells on your server. In the first shell, start the honeyd program. In the second shell, use nc to connect to honeyd. The output should be as follows:
 
-```
-$ honeyd -d -p /usr/share/honeyd/nmap.prints -f default.conf 10.0.0.0/8
-
-```
-
+ `$ honeyd -d -p /usr/share/honeyd/nmap.prints -f default.conf 10.0.0.0/8` 
 ```
 Honeyd V1.5c Copyright (c) 2002-2007 Niels Provos
 honeyd[3985]: started with -d -p /usr/share/honeyd/nmap.prints -f default.conf 10.0.0.0/8
@@ -66,12 +53,7 @@ honeyd[3985]: Connection established: tcp (192.168.1.10:60109 - 10.0.0.1:23) <->
 honeyd[3985]: Connection dropped by reset: tcp (192.168.1.10:60109 - 10.0.0.1:23)
 ^Choneyd[3985]: exiting on signal 2
 ```
-
-```
-$ nc 10.0.0.1 23
-
-```
-
+ `$ nc 10.0.0.1 23` 
 ```
 Led Zeppelin, great band or greatest band?
 greatest

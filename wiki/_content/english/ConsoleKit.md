@@ -1,3 +1,7 @@
+Related articles
+
+*   [PolicyKit](/index.php/PolicyKit "PolicyKit")
+
 **Warning:** Arch Linux only has official support for *logind* [[1]](https://www.archlinux.org/news/consolekit-replaced-by-logind/) and [systemd](/index.php/Systemd "Systemd"). When using *ConsoleKit*, please mention so in support requests.
 
 **Note:** While Consolekit is no longer maintained upstream, the fork ConsoleKit2 is under development. [[2]](https://github.com/ConsoleKit2/ConsoleKit2)
@@ -50,7 +54,7 @@ This starts [Openbox](/index.php/Openbox "Openbox") with proper environment vari
 
 If you are not using a display manager, but starting your window manager via the `startx` command, or from [inittab](/index.php/Inittab "Inittab").
 
-If ConsoleKit is not working (`ck-list-sessions` command showing active = FALSE), you should start your window manager using the bash_profile method: [Start X at login#bash profile](/index.php/Start_X_at_login#bash_profile "Start X at login").
+If ConsoleKit is not working (`ck-list-sessions` command showing active = FALSE), you should start your window manager using the bash_profile method: [Xinit#Autostart X at login](/index.php/Xinit#Autostart_X_at_login "Xinit").
 
 ### Desktop environments
 

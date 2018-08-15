@@ -220,11 +220,7 @@ For more info and other ways to create/manage MySQL databases, see the [MariaDB 
 
 #### PostgreSQL
 
-Login to PostgreSQL and create the `gitlabhq_production` database with along with its user.
-
-**Note:** Make sure that the table `template1` has the correct encoding. It can be changed by following these steps [here](https://ptpb.pw/Hp3W)
-
-Remember to change `your_username_here` and `your_password_here` to the real values:
+Login to PostgreSQL and create the `gitlabhq_production` database with along with its user. Remember to change `your_username_here` and `your_password_here` to the real values:
 
 ```
 # psql -d template1
@@ -414,7 +410,7 @@ You also need to change the corresponding options (e.g. ssh_user, ssh_host, admi
 
 Modify `/etc/webapps/gitlab/shell.yml` so the url to your GitLab site starts with `https://`. Modify `/etc/webapps/gitlab/gitlab.yml` so that `https:` setting is set to `true`.
 
-See also [Apache HTTP Server#TLS/SSL](/index.php/Apache_HTTP_Server#TLS.2FSSL "Apache HTTP Server") and [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt").
+See also [Apache HTTP Server#TLS](/index.php/Apache_HTTP_Server#TLS "Apache HTTP Server") and [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt").
 
 #### Let's Encrypt
 
@@ -494,7 +490,7 @@ server {
 
 Install and configure the [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server"). You can use these [upstream recipes](https://gitlab.com/gitlab-org/gitlab-recipes/tree/master/web-server/apache) to get started with the configuration file for GitLab's virtual host.
 
-For the SSL configuration see [Apache HTTP Server#TLS/SSL](/index.php/Apache_HTTP_Server#TLS.2FSSL "Apache HTTP Server"). If you do not need it, remove it. Notice that the SSL virtual host needs a specific IP instead of generic. Also if you set a custom port for Unicorn, do not forget to set it at the `BalanceMember` line.
+For the SSL configuration see [Apache HTTP Server#TLS](/index.php/Apache_HTTP_Server#TLS "Apache HTTP Server"). If you do not need it, remove it. Notice that the SSL virtual host needs a specific IP instead of generic. Also if you set a custom port for Unicorn, do not forget to set it at the `BalanceMember` line.
 
 ### Gitlab-workhorse
 

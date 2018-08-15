@@ -60,7 +60,7 @@ To change the fonts that are used, use the `--font-names` option to select favor
 
 ### Input method support
 
-Fbterm supports diverse [input methods](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method") by acting as a client for an independent input method framework server. Several such programs are available for Arch, see [Internationalization#Input methods in Xorg](/index.php/Internationalization#Input_methods_in_Xorg "Internationalization").
+Fbterm supports diverse [input methods](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method") by acting as a client for an independent input method framework server. Several such programs are available for Arch, see [Internationalization#Input methods](/index.php/Internationalization#Input_methods "Internationalization").
 
 ## Tips and tricks
 

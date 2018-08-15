@@ -33,7 +33,7 @@ In Arch Linux, power management consists of two main parts:
     *   [2.3 Sleep hooks](#Sleep_hooks)
         *   [2.3.1 Suspend/resume service files](#Suspend.2Fresume_service_files)
         *   [2.3.2 Combined Suspend/resume service file](#Combined_Suspend.2Fresume_service_file)
-        *   [2.3.3 Delayed hibernation service file](#Delayed_hibernation_service_file)
+        *   [2.3.3 Delayed Hibernation](#Delayed_Hibernation)
         *   [2.3.4 Hooks in /usr/lib/systemd/system-sleep](#Hooks_in_.2Fusr.2Flib.2Fsystemd.2Fsystem-sleep)
     *   [2.4 Troubleshooting](#Troubleshooting)
         *   [2.4.1 Delayed lid switch action](#Delayed_lid_switch_action)
@@ -160,9 +160,11 @@ xss-lock -- i3lock -n -i *background_image.png* &
 
 ### Suspend and hibernate
 
-*systemd* provides commands to suspend to RAM, hibernate or hybrid suspend using the kernel's native suspend/resume functionality. There are also mechanisms to add hooks to customize pre- and post- suspend actions.
+*systemd* provides commands to suspend to RAM, hibernate or hybrid suspend using the kernel's native suspend/resume functionality. There are also mechanisms to add hooks to customize pre- and post-suspend actions.
 
-`systemctl suspend` should work out of the box, for `systemctl hibernate` to work on your system you need to follow the instructions at [Suspend and hibernate#Hibernation](/index.php/Suspend_and_hibernate#Hibernation "Suspend and hibernate").
+`systemctl suspend` should work out of the box, for `systemctl hibernate` to work on your system you need to follow the instructions at [Suspend and hibernate#Hibernation](/index.php/Suspend_and_hibernate#Hibernation "Suspend and hibernate"). As of systemd 239 (`systemctl --version` to check), a new service, `systemctl suspend-then-hibernate`, that handles suspending then hibernating after a given amount of time has been added.
+
+First, you have to define the delay time before the system wakes up and go into hibernation and that should be defined in /etc/systemd/sleep.conf
 
 **Note:** *systemd* can also use other suspend backends (such as [Uswsusp](/index.php/Uswsusp "Uswsusp")), in addition to the default *kernel* backend, in order to put the computer to sleep or hibernate. See [Uswsusp#With systemd](/index.php/Uswsusp#With_systemd "Uswsusp") for an example.
 
@@ -291,11 +293,17 @@ WantedBy=sleep.target
 *   `StopWhenUnneeded=yes`: When active, the service will be stopped if no other active service requires it. In this specific example, it will be stopped after *sleep.target* is stopped.
 *   Because *sleep.target* is pulled in by *suspend.target*, *hibernate.target* and *hybrid-sleep.target* and because *sleep.target* itself is a *StopWhenUnneeded* service, the hook is guaranteed to start/stop properly for different tasks.
 
-#### Delayed hibernation service file
+#### Delayed Hibernation
 
-**Note:** *systemd* version 239 includes support for the "suspend-then-hibernate" approach, which renders this sleep hook unnecessary. See [systemd-sleep.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.conf.5) (updated man page at: [[1]](https://www.freedesktop.org/software/systemd/man/systemd-sleep.conf.html)).
+As of systemd version 239 (`systemctl --version` to check), it is easier to use suspend-then-hibernate to have a delayed hibernation. The advantage is that minimal files have to be modified and no sleep hook is necessary (see updated man page at: [[1]](https://www.freedesktop.org/software/systemd/man/systemd-sleep.conf.html)). Running `systemctl suspend-then-hibernate` will start the process. There are two conditions that is mandatory for this to work. The first one is that time to enter hibernation has to be specified (2hours is used in the given example). The second one is that a swap file has to be present. It is good practice to have a swap size which is 1.5x the RAM size.
 
-An alternative approach is delayed hibernation. This makes use of sleep hooks to suspend as usual but sets a timer to wake up later to perform hibernation. Here, entering sleep is faster than `systemctl hybrid-sleep` since no hibernation is performed initially. However, unlike "hybrid-sleep", at this point there is no protection against power loss via hibernation while in suspension. This caveat makes this approach more suitable for laptops than desktops. Since hibernation is delayed, the laptop battery is only used during suspension and to trigger the eventual hibernation. This uses less power over the long-term than a "hybrid-sleep" which will remain suspended until the battery is drained. Note that if your laptop has a spinning hard disk, when it wakes up from suspend in order to hibernate, you may not want to be moving or carrying the laptop for these few seconds. Delayed hibernation may be desirable both to reduce power use as well as for security reasons (e.g. when using full disk encryption). An example script is located [here](http://superuser.com/questions/298672/linuxhow-to-hibernate-after-a-period-of-sleep). See also [this post](https://bbs.archlinux.org/viewtopic.php?pid=1420279#p1420279) for an updated systemd sleep hook.
+ `/etc/systemd/sleep.conf` 
+```
+[Sleep]
+HibernateDelaySec=120min
+```
+
+If the systemd version is lower that 239, then using sleep hooks can be used to achieve the same purpose. After suspending, a timer is set to wake up later to perform hibernation. Here, entering sleep is faster than `systemctl hybrid-sleep` since no hibernation is performed initially. However, unlike "hybrid-sleep", at this point there is no protection against power loss via hibernation while in suspension. This caveat makes this approach more suitable for laptops than desktops. Since hibernation is delayed, the laptop battery is only used during suspension and to trigger the eventual hibernation. This uses less power over the long-term than a "hybrid-sleep" which will remain suspended until the battery is drained. Note that if your laptop has a spinning hard disk, when it wakes up from suspend in order to hibernate, you may not want to be moving or carrying the laptop for these few seconds. Delayed hibernation may be desirable both to reduce power use as well as for security reasons (e.g. when using full disk encryption). An example script is located [here](http://superuser.com/questions/298672/linuxhow-to-hibernate-after-a-period-of-sleep). See also [this post](https://bbs.archlinux.org/viewtopic.php?pid=1420279#p1420279) for an updated systemd sleep hook.
 
 A slightly updated version of the service is:
 

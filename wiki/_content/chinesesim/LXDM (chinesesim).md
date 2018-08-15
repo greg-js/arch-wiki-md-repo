@@ -189,7 +189,7 @@ $ lxdm -c USER_SWITCH
 
 ```
 
-**注意:** 当新用户登陆是，使用的是下一个tty。例如 tty7 上的用户甲登陆并使用 USER_SWITCH 命令后，新登陆的用户乙将会位于 tty8。
+**注意:** 当新用户登陆时，使用的是下一个tty。例如 tty7 上的用户甲登陆并使用 USER_SWITCH 命令后，新登陆的用户乙将会位于 tty8。
 
 [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") 也支持此功能，参见 [XScreenSaver#LXDM](/index.php/XScreenSaver#LXDM "XScreenSaver").
 

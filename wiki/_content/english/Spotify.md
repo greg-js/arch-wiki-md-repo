@@ -165,7 +165,7 @@ $ pactl set-sink-input-mute "$current_sink_num" toggle #mute toggler
 
 ```
 
-The sink number for "$current_sink_num" can be found in the output of command
+The sink number for "$current_sink_num" can be found in the output of command:
 
  `$ pactl list sink-inputs` 
 ```

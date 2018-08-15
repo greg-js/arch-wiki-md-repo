@@ -302,7 +302,7 @@ $ gsettings set org.gnome.settings-daemon.plugins.cursor active false
 
 ## No restart button in session menu when screen is locked
 
-If [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") is installed, ensure that it is not running at startup, see [GNOME#Startup applications](/index.php/GNOME#Startup_applications "GNOME").
+If [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") is installed, ensure that it is not running at startup, see [GNOME#Autostart](/index.php/GNOME#Autostart "GNOME").
 
 ## PulseAudio system-wide causes delay in GNOME and GDM
 
@@ -327,7 +327,7 @@ GNOME defaults to this behaviour about suspension:
 *   No external monitor attached, computer goes in suspension when LID closes.
 *   External monitor attached, computer does not go in suspension when LID closes.
 
-Currently [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool) is not able to modify the behaviour on the second case, when a monitor is connected to the computer. While it can inhibit suspension with no monitor attached.
+Currently [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks) is not able to modify the behaviour on the second case, when a monitor is connected to the computer. While it can inhibit suspension with no monitor attached.
 
 **Note:** Behaviour on LID closure is controlled also by systemd. See [Power management#Power management with systemd](/index.php/Power_management#Power_management_with_systemd "Power management").
 

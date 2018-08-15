@@ -1,6 +1,8 @@
+**Status de tradução:** Esse artigo é uma versão localizada de [Display manager](/index.php/Display_manager "Display manager"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Display_manager&diff=0&oldid=532694) na versão em inglês.
+
 Artigos relacionados
 
-*   [Start X at login](/index.php/Start_X_at_login "Start X at login")
+*   [Iniciar X no login](/index.php/Iniciar_X_no_login "Iniciar X no login")
 
 Um [gerenciador de exibição](https://en.wikipedia.org/wiki/X_display_manager_(program_type) "wikipedia:X display manager (program type)"), ou gerenciador de login, é tipicamente uma interface gráfica de usuário que é exibida no final do processo de inicialização no lugar do shell padrão. Há várias implementações de gerenciadores de exibição, assim como existem vários tipos de [gerenciadores de janela](/index.php/Gerenciadores_de_janela "Gerenciadores de janela") e [ambientes de desktop](/index.php/Ambientes_de_desktop "Ambientes de desktop"). Geralmente, há uma certa quantidade de personalização e mudança de tema disponível com cada um.
 
@@ -38,7 +40,7 @@ Um [gerenciador de exibição](https://en.wikipedia.org/wiki/X_display_manager_(
 
 	[https://github.com/cylgom/ly](https://github.com/cylgom/ly) || [ly-git](https://aur.archlinux.org/packages/ly-git/)
 
-*   **tbsm** — Uma sessão bash ou lançador de aplicativos
+*   **tbsm** — Uma sessão bash ou lançador de aplicativos.
 
 	[https://loh-tar.github.io/tbsm/](https://loh-tar.github.io/tbsm/) || [tbsm](https://aur.archlinux.org/packages/tbsm/)
 
@@ -106,7 +108,7 @@ Type=Application
 
 ### Executar ~/.xinitrc como uma sessão
 
-Instalar [xinit-xsession](https://aur.archlinux.org/packages/xinit-xsession/) vai fornecer uma opção para executar seu [xinitrc](/index.php/Xinitrc "Xinitrc") como uma sessão. Basta definir `xinitrc` como a sessão nas configurações do gerenciador de exibição e se certificar de que o arquivo `~/.xinitrc` é um executável.
+Instalar [xinit-xsession](https://aur.archlinux.org/packages/xinit-xsession/) vai fornecer uma opção para executar seu [xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)") como uma sessão. Basta definir `xinitrc` como a sessão nas configurações do gerenciador de exibição e se certificar de que o arquivo `~/.xinitrc` é um executável.
 
 ### Iniciando aplicativos sem um gerenciador de janela
 
@@ -127,13 +129,13 @@ Nesse caso, quando você fizer o login, o aplicativo configurado com `Exec` ser�
 
 É importante lembrar que a maioria dos aplicativos gráficos não é destinada a ser iniciada dessa forma e você pode ter ajustes manuais para fazer ou limitações para viver com (não há gerenciador de janela, portanto, não espere conseguir mover ou redimensionar *qualquer* janela, incluindo diálogos; no entanto, você pode ser capaz de definir a geometria da janela nos arquivos de configuração do aplicativo).
 
-Veja também [xinitrc#Starting applications without a window manager](/index.php/Xinitrc#Starting_applications_without_a_window_manager "Xinitrc").
+Veja também [#Inicializando aplicativos sem um gerenciador de janela](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)").
 
 ## Dicas e truques
 
 ### Iniciando automaticamente
 
-A maioria dos gerenciadores de exibição carregam `/etc/xprofile`, `~/.xprofile` e `/etc/X11/xinit/xinitrc.d/`. Para mais detalhes, veja [xprofile](/index.php/Xprofile "Xprofile").
+A maioria dos gerenciadores de exibição carregam `/etc/xprofile`, `~/.xprofile` e `/etc/X11/xinit/xinitrc.d/`. Para mais detalhes, veja [xprofile](/index.php/Xprofile_(Portugu%C3%AAs) "Xprofile (Português)").
 
 ### Definir o idioma para sessão de usuário
 

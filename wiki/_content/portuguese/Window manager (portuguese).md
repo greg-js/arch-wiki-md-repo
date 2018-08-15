@@ -2,8 +2,8 @@ Related articles
 
 *   [Xdg-menu](/index.php/Xdg-menu "Xdg-menu")
 *   [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)")
-*   [xinitrc](/index.php/Xinitrc "Xinitrc")
-*   [Start X at Login](/index.php/Start_X_at_Login "Start X at Login")
+*   [xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)")
+*   [Iniciar X no login](/index.php/Iniciar_X_no_login "Iniciar X no login")
 
 Um [gerenciador de janela](https://en.wikipedia.org/wiki/pt:Gerenciador_de_janela "wikipedia:pt:Gerenciador de janela"), ou *window manager* (WM), é um software de sistema que controla o posicionamento e aparência de janelas dentro de um sistema de janelas em uma interface gráfica de usuário (GUI). Ele pode ser parte de um [ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop") (DE) ou ser usado de forma independente.
 

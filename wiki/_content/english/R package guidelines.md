@@ -32,17 +32,17 @@ See [PKGBUILD#arch](/index.php/PKGBUILD#arch "PKGBUILD"). If the package's CRAN 
 
 ## Dependencies
 
-R packages listed in `Depends`, `Imports`, or the `LinkingTo` fields in a package's `DESCRIPTION` file should be listed under depends.
+R packages listed in `Depends`, `Imports`, or the `LinkingTo` fields in a package's `DESCRIPTION` file should be listed under [depends](/index.php/PKGBUILD#depends "PKGBUILD").
 
-R packages listed in `Suggests` should be listed as optdepends.
+R packages listed in `Suggests` should be listed as [optdepends](/index.php/PKGBUILD#optdepends "PKGBUILD").
 
 Some packages require external tools, these are listed under `SystemRequirements`.
 
-[gcc-fortran](https://www.archlinux.org/packages/?name=gcc-fortran) is needed as a makedepends for some packages but is not always listed in the `DESCRIPTION` file.
+[gcc-fortran](https://www.archlinux.org/packages/?name=gcc-fortran) is needed as a [makedepends](/index.php/PKGBUILD#makedepends "PKGBUILD") for some packages but is not always listed in the `DESCRIPTION` file.
 
 ## Source
 
-All R packages available on CRAN are available at the website `[https://cran.r-project.org/src/contrib/cranname_cranversion.tar.gz](https://cran.r-project.org/src/contrib/cranname_cranversion.tar.gz)` where cranname is the name of the package on CRAN and cranversion the cran version.
+All R packages available on CRAN are available at the website `https://cran.r-project.org/src/contrib/*cranname*_*cranversion*.tar.gz` where *cranname* is the name of the package on CRAN and *cranversion* the cran version.
 
 ## Build and Package
 

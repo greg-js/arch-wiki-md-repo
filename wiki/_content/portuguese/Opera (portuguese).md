@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma versão localizada de [Opera](/index.php/Opera "Opera"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Opera&diff=0&oldid=248778) na versão em inglês.
+
 Artigos relacionados
 
 *   [Browser Plugins](/index.php/Browser_Plugins "Browser Plugins")
@@ -105,7 +107,7 @@ $ opera -noargb -nolirc -nomaillinks
 
 ### Melhorar o desempenho do Flash
 
-Para melhorar o desempenho do Flash você pode definir as seguintes variáveis de ambiente antes de iniciar o Opera, ou exportar as entradas do [xinitrc](/index.php/Xinitrc "Xinitrc"), ou [~/.bash_profile](/index.php?title=Startup_Files&action=edit&redlink=1 "Startup Files (page does not exist)"), ou completamente no sistema, em `/etc/profile`:
+Para melhorar o desempenho do Flash você pode definir as seguintes variáveis de ambiente antes de iniciar o Opera, ou exportar as entradas do [xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)"), ou [~/.bash_profile](/index.php?title=Startup_Files&action=edit&redlink=1 "Startup Files (page does not exist)"), ou completamente no sistema, em `/etc/profile`:
 
 ```
  OPERAPLUGINWRAPPER_PRIORITY=0

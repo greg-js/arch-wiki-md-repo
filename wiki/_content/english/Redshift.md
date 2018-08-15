@@ -79,9 +79,7 @@ There are several options to have redshift automatically started:
 
 ### Automatic location based on GeoClue2
 
-[Install](/index.php/Install "Install") [geoclue2](https://www.archlinux.org/packages/?name=geoclue2).
-
-In order to allow access Redshift to use GeoClue, add the following lines to `/etc/geoclue/geoclue.conf`:
+In order to allow access Redshift to use GeoClue2, add the following lines to `/etc/geoclue/geoclue.conf`:
 
  `/etc/geoclue/geoclue.conf` 
 ```

@@ -190,8 +190,6 @@ However, if you have two monitors and want to use both of them, you can run the 
 
 **Note:** See [#Double Screen (Dual Head / Dual Screen / Xinerama)](#Double_Screen_.28Dual_Head_.2F_Dual_Screen_.2F_Xinerama.29) for more information on setting up dual monitors.
 
-You can compare the generated file to one of the [Sample Xorg.conf](/index.php/Xorg#Sample_configurations "Xorg") examples listed on the Xorg page.
-
 Although the current Xorg versions auto-detect most options when started, you may want to specify some in case the defaults change between versions.
 
 Here is an example (with notes) **for reference**. Entries with `#` should be required, add entries with `##` as needed:

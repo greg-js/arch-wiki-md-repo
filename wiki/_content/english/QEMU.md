@@ -1392,7 +1392,7 @@ For this you will need to go to *Device Manager*, locate *PCI standard RAM Contr
 Install the `emulators/virtio-kmod` port if you are using FreeBSD 8.3 or later up until 10.0-CURRENT where they are included into the kernel. After installation, add the following to your `/boot/loader.conf` file:
 
 ```
-virtio_loader="YES"
+virtio_load="YES"
 virtio_pci_load="YES"
 virtio_blk_load="YES"
 if_vtnet_load="YES"

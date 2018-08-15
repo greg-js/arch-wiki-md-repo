@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma versão localizada de [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=532704) na versão em inglês.
+
 Artigos relacionados
 
 *   [Terminologia do Arch](/index.php/Terminologia_do_Arch "Terminologia do Arch")
@@ -9,7 +11,7 @@ Artigos relacionados
 *   [1 Geral](#Geral)
     *   [1.1 O que é o Arch Linux?](#O_que_.C3.A9_o_Arch_Linux.3F)
     *   [1.2 Por que eu não gostaria de usar o Arch?](#Por_que_eu_n.C3.A3o_gostaria_de_usar_o_Arch.3F)
-    *   [1.3 A quais arquiteturas o Arch oferece suporte?](#A_quais_arquiteturas_o_Arch_oferece_suporte.3F)
+    *   [1.3 A quais arquiteturas o Arch dá suporte?](#A_quais_arquiteturas_o_Arch_d.C3.A1_suporte.3F)
     *   [1.4 O Arch oferece suporte a CPUs ARM?](#O_Arch_oferece_suporte_a_CPUs_ARM.3F)
     *   [1.5 O Arch segue o Filesystem Hierarchy Standard (FHS) da Linux Foundation?](#O_Arch_segue_o_Filesystem_Hierarchy_Standard_.28FHS.29_da_Linux_Foundation.3F)
     *   [1.6 Eu sou um completo iniciante no GNU/Linux. Eu deveria usar o Arch?](#Eu_sou_um_completo_iniciante_no_GNU.2FLinux._Eu_deveria_usar_o_Arch.3F)
@@ -42,7 +44,6 @@ Artigos relacionados
 *   [4 64 bit](#64_bit)
     *   [4.1 Como eu determino se meu processador é compatível com x86_64?](#Como_eu_determino_se_meu_processador_.C3.A9_compat.C3.ADvel_com_x86_64.3F)
     *   [4.2 Por que 64 bit?](#Por_que_64_bit.3F)
-    *   [4.3 Como eu troco de i686 para x86_64 sem reinstalar?](#Como_eu_troco_de_i686_para_x86_64_sem_reinstalar.3F)
 
 ## Geral
 
@@ -61,9 +62,9 @@ Você pode **não** querer usar o Arch, se:
 *   você não deseja uma distribuição GNU/Linux de lançamento contínuo (*rolling release*).
 *   você está satisfeito com seu SO atual.
 
-### A quais arquiteturas o Arch oferece suporte?
+### A quais arquiteturas o Arch dá suporte?
 
-O Arch só oferece suporte à arquitetura x86_64 (algumas vezes chamada de amd64). Suporte à i686 foi desativado em Novembro de 2017[[1]](http://www.archlinux-br.org/noticias/260/). Se sua máquina ainda usa a versão i686 do Arch, mas uma CPU x86_64, veja [#Como eu troco de i686 para x86_64 sem reinstalar?](#Como_eu_troco_de_i686_para_x86_64_sem_reinstalar.3F). Se sua máquina não possuir suporte, considere trocar para [Arch Linux 32](https://archlinux32.org/).
+O Arch só oferece suporte à arquitetura x86_64 (algumas vezes chamada de amd64). Suporte à i686 foi desativado em Novembro de 2017[[1]](http://www.archlinux-br.org/noticias/260/). Se sua máquina não possuir suporte, considere trocar para [Arch Linux 32](https://archlinux32.org/).
 
 ### O Arch oferece suporte a CPUs ARM?
 
@@ -238,11 +239,3 @@ No Windows, usar o freeware [CPU-Z](http://www.cpuid.com/cpuz.php) ajuda a deter
 Os programadores também têm se preocupado cada vez menos em relação a 32 bits ("legado"), pois as "novas" CPUs x86 geralmente oferecem suporte às extensões de 64 bits.
 
 Há muitas outras razões que podemos listar aqui para dizer-lhe para evitar 32 bits, mas entre o kernel, o espaço de usuários e os programas individuais, simplesmente não é viável listar todas as últimas coisas que o 64 bits faz muito melhor nos dias de hoje.
-
-### Como eu troco de i686 para x86_64 sem reinstalar?
-
-Não. Todos os pacotes precisam ser reinstalados para uma nova arquitetura e alterações de configuração podem ser necessários. Porém, você não precisa reparticionar seus discos rígidos durante a instalação, de forma que é possível migrar todos os seus dados antigos. Um tópico de fórum foi criado [aqui](https://bbs.archlinux.org/viewtopic.php?id=64485) que delineia os passos feitos para migrar uma instalação de 32 para 64 bits sem perder quaisquer configurações/definições/dados usando um disco rígido grande e externo.
-
-Porém, você também pode iniciar o sistema com a ISO de instalação de 64 bits, montagem do disco, cópia de segurança de qualquer coisa que você deseje manter que não seja um binário de 32 bits (p.ex.: `/home` & `/etc`) e instalar.
-
-Você também pode querer ler sobre [migração entre arquiteturas](/index.php/Migrating_between_architectures "Migrating between architectures").

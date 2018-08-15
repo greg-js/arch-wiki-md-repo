@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma versão localizada de [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=534975) na versão em inglês.
+
 Artigos relacionados
 
 *   [Ponto de acesso por software](/index.php/Software_access_point "Software access point")
@@ -347,7 +349,7 @@ Para uma comparação de protocolos, veja a seguinte [tabela](http://deployingra
 
 #### wpa_supplicant
 
-[Suplicante de WPA](/index.php/WPA_supplicant#Advanced_usage "WPA supplicant") pode ser configurado diretamente por meio de seu arquivo de configuração ou pelo uso de seus frontends CLI/GUI e usado em combinação com um cliente DHCP ou com systemd. Veja os exemplos em `/usr/share/doc/wpa_supplicant/wpa_supplicant.conf` para configurar os detalhes de conexão.
+[Suplicante de WPA](/index.php/WPA_supplicant#Advanced_usage "WPA supplicant") pode ser configurado diretamente por meio de seu arquivo de configuração ou usando seus frontends CLI/GUI e usado em combinação com um cliente DHCP. Veja os exemplos em `/usr/share/doc/wpa_supplicant/wpa_supplicant.conf` para configurar os detalhes de conexão.
 
 #### NetworkManager
 
@@ -500,64 +502,64 @@ Veja [Power saving#Network interfaces](/index.php/Power_saving#Network_interface
 
 ### Falha ao obter endereço IP
 
-*   If getting an IP address repeatedly fails using the default [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) client, try installing and using [dhclient](https://www.archlinux.org/packages/?name=dhclient) instead. Do not forget to select *dhclient* as the primary DHCP client in the [connection manager](#Automatic_setup).
+*   Se a obtenção de um endereço IP falhar repetidamente usando o cliente padrão [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), tente instalar e usar [dhclient](https://www.archlinux.org/packages/?name=dhclient). Não se esqueça de selecionar *dhclient* como o cliente DHCP principal no [gerenciador de conexões](#Configura.C3.A7.C3.A3o_manual.2Fautom.C3.A1tica).
 
-*   If you can get an IP address for a wired interface and not for a wireless interface, try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
+*   Se você puder obter um endereço IP para uma interface com fio e não para uma interface sem fio, tente desabilitar o recurso [economia de energia](#Economia_de_energia) da placa de rede sem fio (especifique {{ic|off} } em vez de `on`).
 
-*   If you get a timeout error due to a *waiting for carrier* problem, then you might have to set the channel mode to `auto` for the specific device:
+*   Se você receber um erro de tempo limite devido a um problema de *waiting for carrier*, talvez seja necessário definir o modo de canal como `auto` para o dispositivo específico:
 
 ```
 # iwconfig wlan0 channel auto
 
 ```
 
-Before changing the channel to auto, make sure your wireless interface is down. After it has successfully changed it, you can bring the interface up again and continue from there.
+Antes de mudar o canal para automático, verifique se sua interface sem fio está desativada. Depois de ter mudado com sucesso, você pode trazer a interface novamente e continuar a partir daí.
 
 ### Endereço IP válido, mas não consegue resolver host
 
-If you are on a public wireless network that may have a [captive portal](https://en.wikipedia.org/wiki/Captive_portal "wikipedia:Captive portal"), make sure to query an HTTP page (not an HTTPS page) from your web browser, as some captive portals only redirect HTTP.
+Se você estiver em uma rede sem fio pública que possa ter um [portal cativo](https://en.wikipedia.org/wiki/pt:Captive_portal "wikipedia:pt:Captive portal"), certifique-se de consultar uma página HTTP (não uma página HTTPS) do seu navegador, pois alguns portais cativos só redirecionam HTTP.
 
-If this is not the issue, [check if you can resolve domain names](/index.php/Check_if_you_can_resolve_domain_names "Check if you can resolve domain names"), it may be necessary to use the DNS server advertised via DHCP.
+Se esse não for o problema, [verifique se você consegue resolver nomes de domínio](/index.php/Verifique_se_voc%C3%AA_consegue_resolver_nomes_de_dom%C3%ADnio "Verifique se você consegue resolver nomes de domínio"), pode ser necessário usar o servidor DNS anunciado via DHCP.
 
 ### Definindo limites de RTS e de fragmentação
 
-Wireless hardware disables RTS and fragmentation by default. These are two different methods of increasing throughput at the expense of bandwidth (i.e. reliability at the expense of speed). These are useful in environments with wireless noise or many adjacent access points, which may create interference leading to timeouts or failing connections.
+O hardware sem fio desativa o RTS e a fragmentação por padrão. Estes são dois métodos diferentes de aumentar o rendimento à custa da largura de banda (ou seja, confiabilidade à custa da velocidade). Eles são úteis em ambientes com ruído sem fio ou com muitos pontos de acesso adjacentes, o que pode criar interferência, levando a tempos limites ou a falhas de conexão.
 
-Packet fragmentation improves throughput by splitting up packets with size exceeding the fragmentation threshold. The maximum value (2346) effectively disables fragmentation since no packet can exceed it. The minimum value (256) maximizes throughput, but may carry a significant bandwidth cost.
+A fragmentação de pacotes melhora o rendimento dividindo pacotes com tamanho excedendo o limite de fragmentação. O valor máximo (2346) efetivamente desativa a fragmentação, pois nenhum pacote pode excedê-lo. O valor mínimo (256) maximiza o rendimento, mas pode acarretar um custo significativo de largura de banda.
 
 ```
 # iw phy0 set frag 512
 
 ```
 
-[RTS](https://en.wikipedia.org/wiki/IEEE_802.11_RTS/CTS "wikipedia:IEEE 802.11 RTS/CTS") improves throughput by performing a handshake with the access point before transmitting packets with size exceeding the RTS threshold. The maximum threshold (2347) effectively disables RTS since no packet can exceed it. The minimum threshold (0) enables RTS for all packets, which is probably excessive for most situations.
+[RTS](https://en.wikipedia.org/wiki/IEEE_802.11_RTS/CTS "wikipedia:IEEE 802.11 RTS/CTS") melhora o rendimento executando um *handshake* com o ponto de acesso antes de transmitir pacotes com tamanho excedendo o limite de RTS. O limite máximo (2347) efetivamente desativa o RTS, já que nenhum pacote pode excedê-lo. O limite mínimo (0) habilita o RTS para todos os pacotes, o que provavelmente é excessivo para a maioria das situações.
 
 ```
 # iw phy0 set rts 500
 
 ```
 
-**Note:** `phy0` is the name of the wireless device as listed by `$ iw phy`.
+**Nota:** `phy0` é o nome do dispositivo sem fio conforme listado por `$ iw phy`.
 
 ### Desconexões aleatórias
 
 #### Causa nº.1
 
-If dmesg says `wlan0: deauthenticating from MAC by local choice (reason=3)` and you lose your Wi-Fi connection, it is likely that you have a bit too aggressive power-saving on your Wi-Fi card[[3]](http://us.generation-nt.com/answer/gentoo-user-wireless-deauthenticating-by-local-choice-help-204640041.html). Try disabling the wireless card's [power saving](#Power_saving) features (specify `off` instead of `on`).
+Se o dmesg disser `wlan0: deauthenticating from MAC by local choice (reason=3)` e você perder sua conexão Wi-Fi, é provável que você tenha uma economia de energia um pouco agressiva demais na sua placa Wi-Fi[[3]](http://us.generation-nt.com/answer/gentoo-user-wireless-deauthenticating-by-local-choice-help-204640041.html). Tente desabilitar os recursos [economia de energia](#Economia_de_energia) do placa sem fio (especifique `off` em vez de `on`).
 
-If your card does not support enabling/disabling power save mode, check the BIOS for power management options. Disabling PCI-Express power management in the BIOS of a Lenovo W520 resolved this issue.
+Se a sua placa não oferece suporte a ativar/desativar o modo de economia de energia, verifique o BIOS para obter opções de gerenciamento de energia. Desativar o gerenciamento de energia PCI-Express no BIOS de um Lenovo W520 resolveu esse problema.
 
 #### Causa nº.2
 
-If you are experiencing frequent disconnections and dmesg shows messages such as
+Se você está experimentando desconexões frequentes e o dmesg mostra mensagens como
 
 `ieee80211 phy0: wlan0: No probe response from AP xx:xx:xx:xx:xx:xx after 500ms, disconnecting`
 
-try changing the channel bandwidth to `20MHz` through your router's settings page.
+Tente mudar a largura de banda do canal para `20MHz` através da página de configurações do seu roteador.
 
 #### Causa nº.3
 
-On some laptop models with hardware rfkill switches (e.g., Thinkpad X200 series), due to wear or bad design, the switch (or its connection to the mainboard) might become loose over time resulting in seemingly random hardblocks/disconnects when you accidentally touch the switch or move the laptop. There is no software solution to this, unless your switch is electrical and the BIOS offers the option to disable the switch. If your switch is mechanical (most are), there are lots of possible solutions, most of which aim to disable the switch: Soldering the contact point on the mainboard/wifi-card, glueing or blocking the switch, using a screw nut to tighten the switch or removing it altogether.
+Em alguns modelos de notebooks com switches de hardware (por exemplo, Thinkpad X200 series), devido ao desgaste ou design ruim, o switch (ou sua conexão com a placa-mãe) pode se soltar com o tempo, resultando em *hardblocks*/desconexões aparentemente aleatórias quando você acidentalmente toca o mudar ou mover o laptop. Não há solução de software para isso, a menos que seu switch seja elétrico e o BIOS ofereça a opção de desabilitar o interruptor. Se o seu interruptor for mecânico (a maioria é), existem muitas soluções possíveis, a maioria das quais visa desabilitar o interruptor: Soldando o ponto de contato na placa-mãe/placa wifi, colando ou bloqueando a chave, usando uma porca para apertar o interruptor ou removê-lo completamente.
 
 #### Causa nº.4
 

@@ -364,7 +364,7 @@ Linux 下的图形界面基本都使用 [GTK+](/index.php/GTK%2B "GTK+") 或者 
 
 ## 控制台优化
 
-本部分保护控制台的优化和微调方法。参阅 [Category:Command shells](/index.php/Category:Command_shells "Category:Command shells").
+本部分包括控制台的优化和微调方法。参阅 [Category:Command shells](/index.php/Category:Command_shells "Category:Command shells").
 
 ### 别名
 

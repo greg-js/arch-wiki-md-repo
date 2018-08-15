@@ -19,7 +19,7 @@ DAViCal is a web application, and therefore you need a web server set up as well
 
 ### Preparing PostgreSQL
 
-First of all, you should set up PostgreSQL so it can start up by following [this guide](/index.php/PostgreSQL#Installing_PostgreSQL "PostgreSQL").
+First of all, you should set up PostgreSQL so it can start up by following [PostgreSQL#Installation](/index.php/PostgreSQL#Installation "PostgreSQL").
 
 DAViCal requires two independent accounts to be set up, one for accessing the database from the web application, which will be limited in power, and another that will be used for administrating the DAViCal related tables.
 

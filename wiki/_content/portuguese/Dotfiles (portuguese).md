@@ -21,7 +21,7 @@ A gerência de *dotfiles* com software de controle de versão, como o [Git](/ind
 
 ### Usando gitignore
 
-Manter um [diretório git](https://git-scm.com/blog/2010/04/11/environment.html) dentro da pasta *home* permite acompanhar diretamente as alterações. Recomenda-se adicionar seletivamente o conteúdo do arquivo ao índice com [git-add(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-add.1).
+Manter um [diretório git](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) dentro da pasta *home* permite acompanhar diretamente as alterações. Recomenda-se adicionar seletivamente o conteúdo do arquivo ao índice com [git-add(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-add.1).
 
 Para evitar arquivos não rastreados (aparecerem em commits e removidos por [git-clean(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-clean.1)), primeiro exclua todos os arquivos com [gitignore(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gitignore.5):
 

@@ -15,6 +15,8 @@ O Arch User Repository (AUR) ou, em português, Repositório de Usuário do Arch
 
 Um bom número de novos pacotes que entram para os repositórios oficiais iniciam no AUR. No AUR, usuários são capazes de contribuir com seus próprios pacotes (PKGBUILD e arquivos relacionados). A comunidade do AUR tem a capacidade de votar a favor os pacotes no AUR. Se um pacote se torna popular o bastante -- desde que tenha uma licença compatível e uma boa técnica de empacotamento -- ele pode ser colocado no repositório *community* (diretamente acessível pelo [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") ou [abs](/index.php/Abs_(Portugu%C3%AAs) "Abs (Português)")).
 
+**Atenção:** Os pacotes do AUR são conteúdo produzido por usuário. Qualquer uso dos arquivos fornecidos está por sua própria conta e risco.
+
 ## Contents
 
 *   [1 Começando](#Come.C3.A7ando)
@@ -43,14 +45,15 @@ Um bom número de novos pacotes que entram para os repositórios oficiais inicia
     *   [9.5 Qual é a diferença entre o Arch User Repository e repositório [community]?](#Qual_.C3.A9_a_diferen.C3.A7a_entre_o_Arch_User_Repository_e_reposit.C3.B3rio_.5Bcommunity.5D.3F)
     *   [9.6 Foo no AUR está desatualizado; o que devo fazer?](#Foo_no_AUR_est.C3.A1_desatualizado.3B_o_que_devo_fazer.3F)
     *   [9.7 Foo no AUR não compila quando eu executo makepkg; o que devo fazer?](#Foo_no_AUR_n.C3.A3o_compila_quando_eu_executo_makepkg.3B_o_que_devo_fazer.3F)
-    *   [9.8 Como eu crio um PKGBUILD?](#Como_eu_crio_um_PKGBUILD.3F)
-    *   [9.9 Eu tenho um PKGBUILD que queria enviar; alguém pode verificá-lo para ver se ele tem algum erro?](#Eu_tenho_um_PKGBUILD_que_queria_enviar.3B_algu.C3.A9m_pode_verific.C3.A1-lo_para_ver_se_ele_tem_algum_erro.3F)
-    *   [9.10 Como que faz para um PKGBUILD ir para o repositório *community*?](#Como_que_faz_para_um_PKGBUILD_ir_para_o_reposit.C3.B3rio_community.3F)
-    *   [9.11 Como o posso agilizar processo de repetidas compilações?](#Como_o_posso_agilizar_processo_de_repetidas_compila.C3.A7.C3.B5es.3F)
-    *   [9.12 Qual é a diferença entre pacotes foo e foo-git](#Qual_.C3.A9_a_diferen.C3.A7a_entre_pacotes_foo_e_foo-git)
-    *   [9.13 Por que foo desapareceu do AUR?](#Por_que_foo_desapareceu_do_AUR.3F)
-    *   [9.14 Como eu descubro se algum dos meus pacotes instalados desapareceu do AUR?](#Como_eu_descubro_se_algum_dos_meus_pacotes_instalados_desapareceu_do_AUR.3F)
-    *   [9.15 Como eu posso obter uma lista de todos os pacotes do AUR?](#Como_eu_posso_obter_uma_lista_de_todos_os_pacotes_do_AUR.3F)
+    *   [9.8 ERRO: Uma ou mais assinaturas PGP não puderam ser verificadas!; o que eu devo fazer?](#ERRO:_Uma_ou_mais_assinaturas_PGP_n.C3.A3o_puderam_ser_verificadas.21.3B_o_que_eu_devo_fazer.3F)
+    *   [9.9 Como eu crio um PKGBUILD?](#Como_eu_crio_um_PKGBUILD.3F)
+    *   [9.10 Eu tenho um PKGBUILD que queria enviar; alguém pode verificá-lo para ver se ele tem algum erro?](#Eu_tenho_um_PKGBUILD_que_queria_enviar.3B_algu.C3.A9m_pode_verific.C3.A1-lo_para_ver_se_ele_tem_algum_erro.3F)
+    *   [9.11 Como que faz para um PKGBUILD ir para o repositório *community*?](#Como_que_faz_para_um_PKGBUILD_ir_para_o_reposit.C3.B3rio_community.3F)
+    *   [9.12 Como o posso agilizar processo de repetidas compilações?](#Como_o_posso_agilizar_processo_de_repetidas_compila.C3.A7.C3.B5es.3F)
+    *   [9.13 Qual é a diferença entre pacotes foo e foo-git](#Qual_.C3.A9_a_diferen.C3.A7a_entre_pacotes_foo_e_foo-git)
+    *   [9.14 Por que foo desapareceu do AUR?](#Por_que_foo_desapareceu_do_AUR.3F)
+    *   [9.15 Como eu descubro se algum dos meus pacotes instalados desapareceu do AUR?](#Como_eu_descubro_se_algum_dos_meus_pacotes_instalados_desapareceu_do_AUR.3F)
+    *   [9.16 Como eu posso obter uma lista de todos os pacotes do AUR?](#Como_eu_posso_obter_uma_lista_de_todos_os_pacotes_do_AUR.3F)
 *   [10 Veja também](#Veja_tamb.C3.A9m)
 
 ## Começando
@@ -73,7 +76,7 @@ Entre 2015-06-08 e 2015-08-08, o AUR mudou da versão 3.5.1 para 4.0.0, introduz
 
 ## Repositórios Git para pacotes AUR3
 
-O [Arquivo do AUR](https://github.com/aur-archive) no GitHub possui um repositório para cada repositório que estava no AUR 3 durante a migração para o AUR 4 em Agosto de 2015\. Alternativamente, há o repositório [aur3-mirror](https://github.com/felixonmars/aur3-mirror/) que fornece o mesmo conteúdo.
+O [Arquivo do AUR](https://github.com/aur-archive) no GitHub possui um repositório para cada repositório que estava no AUR 3 durante a migração para o AUR 4 em Agosto de 2015. Alternativamente, há o repositório [aur3-mirror](https://github.com/felixonmars/aur3-mirror/) que fornece o mesmo conteúdo.
 
 ## Instalando pacotes
 
@@ -95,11 +98,11 @@ Em seguida, escolha o diretório de compilação adequado. Um diretório de comp
 
 ### Obtendo arquivos de compilação
 
-Localize o pacote no AUR. Isso pode ser feito usando o recurso de pesquisa (o campo de texto no topo da [página inicial do AUR](https://aur.archlinux.org/)). Ao clicar no nome do aplicativo na lista de resultados de pesquisa, será mostrada uma página de informações sobre o pacote. Leia atentamente a descrição para confirmar que esse é o pacote desejado, veja quando o pacote foi atualizado pela última vez e leia quaisquer comentários.
+Localize o pacote no AUR. Isso pode ser feito usando o campo de pesquisa no topo da [página inicial do AUR](https://aur.archlinux.org/). Ao clicar no nome do aplicativo na lista de resultados de pesquisa, será mostrada uma página de informações sobre o pacote. Leia atentamente a descrição para confirmar que esse é o pacote desejado, veja quando o pacote foi atualizado pela última vez e leia quaisquer comentários.
 
 Há vários métodos para adquirir os arquivos de compilação:
 
-*   Clonar o repositório [git](/index.php/Git "Git") que está rotulado como o "Git Clone URL" em "Detalhes do pacote":
+*   Clonar o repositório [git](/index.php/Git "Git") que está rotulado como o "Git Clone URL" em "Detalhes do pacote". Esse é o método preferível.
 
 ```
 $ git clone https://aur.archlinux.org/*nome_pacote*.git
@@ -126,16 +129,26 @@ $ curl -L -O https://aur.archlinux.org/cgit/aur.git/snapshot/*nome_pacote*.tar.g
 
 Mude diretórios para o diretório contendo o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") do pacote.
 
-**Atenção:** **Verifique com atenção todos os arquivos.** Verifique no `PKGBUILD` e em qualquer arquivo *.install* por comandos maliciosos. `PKGBUILD`s são scripts em [bash](/index.php/Bash "Bash") contendo funções para serem executadas pelo *makepkg*: essas funções podem conter *qualquer* comando válido ou sintaxe Bash válida. Então, é totalmente possível que um `PKGBUILD` contenha comandos perigosos por malícia ou ignorância por parte do autor. Já que o *makepkg* usa *fakeroot* (e nunca deveria ser executado como root), há ainda um certo nível de proteção, mas você nunca deveria contar somente nisso. Em caso de dúvida, não compile o pacote e procure ajuda nos fóruns ou na lista de discussão.
-
 ```
 $ cd *nome_pacote*
-$ nano PKGBUILD
-$ nano *nome_pacote*.install
 
 ```
 
-Crie o pacote. Depois de confirmar, manualmente, a integridade dos arquivos, execute [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") como usuário normal no diretório de compilação.
+**Atenção:** Verifique cuidadosamente o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"), qualquer arquivo *.install* e quaisquer outros arquivos no repositório git do pacote para comandos maliciosos ou perigosos. Em caso de dúvida, não crie o pacote e nem [peça conselho](/index.php/General_troubleshooting#Additional_support "General troubleshooting") no fórum ou na lista de discussão. Código malicioso foi encontrado em pacotes antes. [[1]](https://lists.archlinux.org/pipermail/aur-general/2018-July/034151.html)
+
+Veja o conteúdo de todos os arquivos fornecidos. Por exemplo, para usar o paginador *less* para ver `PKGBUILD`:
+
+```
+$ less PKGBUILD
+
+```
+
+**Dica:** Se você está atualizando um pacote, você pode querer olhar as mudanças desde o último commit.
+
+*   Para ver as mudanças desde o último commit, você pode usar `git show`.
+*   Para ver mudanças desde o último commit usando *vimdiff*, execute `git difftool @~..@ vimdiff`. A vantagem do *vimdiff* é que você vê todo o conteúdo de cada arquivo junto com os indicadores do que foi alterado.
+
+Crie o pacote. Depois de confirmar, manualmente, o conteúdo dos arquivos, execute [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") como usuário normal no diretório de compilação.
 
 ```
 $ makepkg -si
@@ -181,6 +194,8 @@ Ao enviar um pacote para o AUR, observe as seguintes regras:
 *   Certifique-se de que o pacote que você deseja é **útil**. Alguém mais vai querer usá-lo? Ele é extremamente especializado? Se mais de algumas poucas pessoas achariam esse pacote útil, ele é apropriado para envio.
 
 	Os repositórios do AUR e oficiais servem par pacotes que, em geral, instalam softwares e conteúdo relacionados com software, incluindo um ou mais dos seguintes: executável(is); arquivo(s) de configuração; documentação online ou offline para softwares específicos ou a distribuição Arch Linux como um todo; mídia para ser usada diretamente por software.
+
+*   Não use `replaces` em um PKGBUILD do AUR a menos que o pacote seja renomeado, por exemplo, quando *Ethereal* se tornou *Wireshark*. Se o pacote for uma versão alternativa **de um pacote já existente**, use `conflicts` (e `provides` se esse pacote for requerido por outras pessoas). A principal diferença é: após a sincronização (-Sy), o pacman imediatamente deseja substituir um pacote (alvo de substituição) instalado ao encontrar um pacote com os `replaces` correspondentes em qualquer lugar de seus repositórios; O `conflicts`, por outro lado, só é avaliado na instalação do pacote, que geralmente é o comportamento desejado, porque é menos invasivo.
 
 *   Envio de **binários** deve ser **evitado** se os fontes estão disponíveis. O AUR não deve conter o tarball binário criado por makepkg, nem deve conter a lista de arquivos.
 
@@ -282,7 +297,8 @@ $ git push
 
 ### Outras requisições
 
-*   Requisições para excluir, mesclar e tornar órfão podem ser criadas clicando no link "Enviar requisição" sob "Ações do pacote" no lado direito da janela. Isso automaticamente uma notificação de e-mail para o atual mantenedor de pacote e para a [lista de discussão aur-requests](https://mailman.archlinux.org/mailman/listinfo/aur-requests) para debate.
+Requisições para excluir, mesclar e tornar órfão podem ser criadas clicando no link "Enviar requisição" sob "Ações do pacote" no lado direito da janela. Isso automaticamente uma notificação de e-mail para o atual mantenedor de pacote e para a [lista de discussão aur-requests](https://mailman.archlinux.org/mailman/listinfo/aur-requests) para debate. [Trusted Users](/index.php/Trusted_Users_(Portugu%C3%AAs) "Trusted Users (Português)") vão então aceitar ou rejeitar a requisição.
+
 *   Requisições para tornar órfão (*Orphan requests*, em inglês) serão concedidas somente após duas semanas se o atual mantenedor não apresentar resposta.
 *   Requisições para mesclar (*Merge requests*, em inglês) são para excluir o pacote base e transferir os votos e comentários para outro pacote base. O nome do pacote base para onde será mesclado deve ser informado. Note que isso tem nada haver com "git merge" ou com as "Merge Requests" do GitLab.
 *   Requisições para excluir (*Deletion requests*, em inglês) precisam das seguintes informações:
@@ -296,9 +312,7 @@ Veja [i18n.txt](https://projects.archlinux.org/aurweb.git/tree/doc/i18n.txt) na 
 
 ## Sintaxe de comentário
 
-Há suporte à sintaxe do [Python-Markdown](https://python-markdown.github.io/) nos comentários.
-
-Ela fornece uma sintaxe [Markdown](https://en.wikipedia.org/wiki/Markdown "wikipedia:Markdown") básica para formatar comentários. Note que essa implementação possui algumas [diferenças](https://python-markdown.github.io/#differences) em relação às [regras de sitaxe](https://daringfireball.net/projects/markdown/syntax) oficiais. Hashes de commit para o repositório Git do pacote e referências a chamados do Flyspray são convertidos automaticamente em links. Comentários longos são encolhidos e podem ser expandidos sob demanda.
+Há suporte à sintaxe do [Python-Markdown](https://python-markdown.github.io/) nos comentários. Ela fornece uma sintaxe [Markdown](https://en.wikipedia.org/wiki/Markdown "wikipedia:Markdown") básica para formatar comentários. Note que essa implementação possui algumas [diferenças](https://python-markdown.github.io/#differences) em relação às [regras de sitaxe](https://daringfireball.net/projects/markdown/syntax) oficiais. Hashes de commit para o repositório Git do pacote e referências a chamados do Flyspray são convertidos automaticamente em links. Comentários longos são encolhidos e podem ser expandidos sob demanda.
 
 ## FAQ
 
@@ -331,9 +345,7 @@ O Arch User Repository é onde todos os PKGBUILDs que os usuários submetem são
 
 ### Foo no AUR está desatualizado; o que devo fazer?
 
-Primeiro, você deve sinalizar o pacote como desatualizado (*out-of-date*), indicando detalhes sobre por que o pacote está desatualizado, de preferência incluindo links para o anúncio de lançamento ou o novo lançamento de tarball.
-
-Você também deve tentar contactar o mantenedor diretamente por e-mail. Se não houver resposta do mantenedor após *duas semanas*, você pode apresentar uma solicitação para tornar o pacote *órfão*. Isso significa que você pede a um [Trusted User](/index.php/Trusted_User "Trusted User") para destituir o mantenedor de um pacote base. Isso deve ser feito somente se o pacote exigir a ação do mantenedor, que ele/ela não está respondendo e você já tentou contatá-lo anteriormente.
+Primeiro, você deve sinalizar o pacote como desatualizado (*out-of-date*), indicando detalhes sobre por que o pacote está desatualizado, de preferência incluindo links para o anúncio de lançamento ou o novo lançamento de tarball. Você também deve tentar contactar o mantenedor diretamente por e-mail. Se não houver resposta do mantenedor após *duas semanas*, você pode apresentar uma solicitação para tornar o pacote *órfão*. Isso significa que você pede a um [Trusted User](/index.php/Trusted_User "Trusted User") para destituir o mantenedor de um pacote base. Isso deve ser feito somente se o pacote exigir a ação do mantenedor, que ele/ela não está respondendo e você já tentou contatá-lo anteriormente.
 
 Neste meio tempo, você pode tentar atualizar o pacote você mesmo editando o PKGBUILD localmente. Ás vezes, atualizações não exigem qualquer alteração para o processo de compilação ou empacotamento, caso em que apenas atualizar o vetor `pkgver` ou `source` é suficiente.
 
@@ -348,6 +360,14 @@ Provavelmente está deixando escapar alguma coisa trivial.
 3.  Tente usar a opção `-s` com `makepkg` para verificar e instalar todas as dependências necessárias antes de começar o processo de compilação.
 
 Certifique-se de primeiro ler o PKGBUILD e os comentários na página do AUR do pacote em questão. O motivo pode não ser trivial. CFLAGS, LDFLAGS e MAKEFLAGS personalizadas podem causar falhas. Também é possível que o PKGBUILD esteja realmente incorreto para todos. Se não consegue descobrir por si mesmo, relate o problema ao mantenedor. Por exemplo, publique nos comentários da página do AUR os erros que você está recebendo.
+
+Para verificar se o PKGBUILD está quebrado, ou seu sistema está configurado incorretamente, considere compilar em um chroot limpo. Ele compilará seu pacote em um ambiente limpo do Arch Linux, com apenas dependências (de compilação) instaladas e sem personalização do usuário. Para fazer isso [instale](/index.php/Instale "Instale") [devtools](https://www.archlinux.org/packages/?name=devtools) e execute `extra-x86_64-build` ao invés de `makepkg`. Para pacotes [multilib](/index.php/Multilib_(Portugu%C3%AAs) "Multilib (Português)"), execute `multilib-build`. Veja [DeveloperWiki:Building in a Clean Chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot") para mais informações. Se o processo de compilação ainda falhar em um chroot limpo, o problema provavelmente está no PKGBUILD.
+
+### ERRO: Uma ou mais assinaturas PGP não puderam ser verificadas!; o que eu devo fazer?
+
+É muito provável que você não tenha as chaves públicas necessárias no seu chaveiro pessoal para verificar os arquivos baixados. Se um ou mais arquivos .sig forem baixados durante a criação do pacote, o [makepkg verificará automaticamente o(s) arquivo(s) correspondente(s) com a chave pública de seu signatário](/index.php/Makepkg_(Portugu%C3%AAs)#Verifica.C3.A7.C3.A3o_de_assinatura "Makepkg (Português)"). Se você não tiver a chave necessária no seu chaveiro pessoal, o *makepkg* não fará a verificação.
+
+A maneira recomendada para lidar com este problema é importar a chave pública requerida, ou [manualmente](/index.php/GnuPG#Import_a_public_key "GnuPG") ou [de um servidor de chaves](/index.php/GnuPG#Use_a_keyserver "GnuPG"). Geralmente, você pode simplesmente encontrar a impressão digital das chaves públicas necessárias na seção [validpgpkeys](/index.php/PKGBUILD_(Portugu%C3%AAs)#validpgpkeys "PKGBUILD (Português)") do [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)").
 
 ### Como eu crio um PKGBUILD?
 

@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma versão localizada de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=529523) na versão em inglês.
+
 Artigos relacionados
 
 *   [Gerenciadores de boot](/index.php/Gerenciadores_de_boot "Gerenciadores de boot")
@@ -56,7 +58,7 @@ O UEFI não inicia nenhum código de inicialização no MBR, independentemente d
 2.  Após o POST, a BIOS inicializa o hardware de sistema necessário para inicializar (disco, controladores de teclado etc.).
 3.  A BIOS inicia os primeiros 440 bytes ([Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")) do primeiro disco na ordem de disco da BIOS.
 4.  O código de inicialização da MBR, então, toma controle da BIOS e inicia o código de seu próximo estágio (se houver) (em sua maioria, código do [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot")).
-5.  O [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot"), como o [GRUB](/index.php/GRUB "GRUB") e [Syslinux](/index.php/Syslinux "Syslinux"), é iniciado
+5.  O [gerenciador de boot](/index.php/Gerenciador_de_boot "Gerenciador de boot"), como o [GRUB](/index.php/GRUB_(Portugu%C3%AAs) "GRUB (Português)") e [Syslinux](/index.php/Syslinux "Syslinux"), é iniciado.
 
 ### No UEFI
 
@@ -65,7 +67,7 @@ O UEFI não inicia nenhum código de inicialização no MBR, independentemente d
 3.  O firmware lê as entradas de inicialização no gerenciador de boot para determinar qual aplicativo UEFI deve ser iniciado e de onde (por exemplo, de qual disco e partição). Uma entrada de inicialização pode ser simplesmente um disco. Nesse caso, o firmware procura uma [Partição de Sistema EFI](/index.php/EFI_system_partition "EFI system partition") nesse disco e tenta localizar o aplicativo UEFI de reserva `\EFI\BOOT\BOOTX64.EFI` (`BOOTIA32.EFI` em [sistemas EFI de 32 bits](/index.php/Unified_Extensible_Firmware_Interface#UEFI_firmware_bitness "Unified Extensible Firmware Interface")). É assim que os pendrives USB inicializáveis por UEFI funcionam.
 4.  O firmware inicia o aplicativo UEFI.
     *   Isso poderia ser um gerenciador de boot, como o kernel do Arch (já que [EFISTUB](/index.php/EFISTUB "EFISTUB") está habilitado por padrão).
-    *   Isso poderia ser algum aplicativo como um shell ou um gerenciador de boot, como [systemd-boot](/index.php/Systemd-boot "Systemd-boot"), [rEFInd](/index.php/REFInd "REFInd")..
+    *   Isso poderia ser algum aplicativo como um shell ou um gerenciador de boot, como [systemd-boot](/index.php/Systemd-boot "Systemd-boot"), [rEFInd](/index.php/REFInd "REFInd").
 
 Se [Secure Boot](/index.php/Secure_Boot "Secure Boot") estiver habilitado, o processo de inicialização vai verificar a autenticidade do binário EFI pela assinatura.
 
@@ -111,11 +113,11 @@ O programa *login* exibe o conteúdo de [/etc/motd](https://en.wikipedia.org/wik
 
 ## Shell
 
-Uma vez iniciado o [shell](/index.php/Shell_(Portugu%C3%AAs) "Shell (Português)") do usuário, ele normalmente executará um arquivo de configuração de tempo de execução, como o [bashrc](/index.php/Bashrc "Bashrc"), antes de apresentar um prompt ao usuário. Se a conta estiver configurada para [Iniciar X no login](/index.php/Start_X_at_login "Start X at login"), o arquivo de configuração de tempo de execução chamará [startx](/index.php/Startx "Startx") ou [xinit](/index.php/Xinit "Xinit").
+Uma vez iniciado o [shell](/index.php/Shell_(Portugu%C3%AAs) "Shell (Português)") do usuário, ele normalmente executará um arquivo de configuração de tempo de execução, como o [bashrc](/index.php/Bashrc "Bashrc"), antes de apresentar um prompt ao usuário. Se a conta estiver configurada para [iniciar X no login](/index.php/Iniciar_X_no_login "Iniciar X no login"), o arquivo de configuração de tempo de execução chamará [startx](/index.php/Startx_(Portugu%C3%AAs) "Startx (Português)") ou [xinit](/index.php/Xinit_(Portugu%C3%AAs) "Xinit (Português)").
 
 ## GUI, xinit ou wayland
 
-[xinit](/index.php/Xinit "Xinit") executa o arquivo de configuração de tempo de execução [xinitrc](/index.php/Xinitrc "Xinitrc") do usuário, que normalmente inicia um [gerenciador de janelas](/index.php/Gerenciador_de_janela "Gerenciador de janela"). Quando o usuário terminar e sair do gerenciador de janelas, xinit, startx, o shell e o login serão encerrados nessa ordem, retornando ao getty.
+[xinit](/index.php/Xinit_(Portugu%C3%AAs) "Xinit (Português)") executa o arquivo de configuração de tempo de execução [xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)") do usuário, que normalmente inicia um [gerenciador de janelas](/index.php/Gerenciador_de_janela "Gerenciador de janela"). Quando o usuário terminar e sair do gerenciador de janelas, xinit, startx, o shell e o login serão encerrados nessa ordem, retornando ao getty.
 
 ## Veja também
 

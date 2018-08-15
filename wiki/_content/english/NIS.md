@@ -24,7 +24,7 @@
         *   [2.2.4 Early testing](#Early_testing)
         *   [2.2.5 /etc/nsswitch.conf](#.2Fetc.2Fnsswitch.conf)
         *   [2.2.6 /etc/pam.d/passwd](#.2Fetc.2Fpam.d.2Fpasswd)
-        *   [2.2.7 Attention on Systemd V235 since 10/2017](#Attention_on_Systemd_V235_since_10.2F2017)
+        *   [2.2.7 Attention on Systemd V235 since 10/2017 (and V239 since 06/2018)](#Attention_on_Systemd_V235_since_10.2F2017_.28and_V239_since_06.2F2018.29)
 *   [3 More resources](#More_resources)
 
 ## NIS Server
@@ -255,9 +255,9 @@ password     required     pam_unix.so sha512 shadow nullok nis
 
 See [section 7 of The Linux NIS HOWTO](http://www.tldp.org/HOWTO/NIS-HOWTO/settingup_client.html) for further information on configuring NIS clients.
 
-#### Attention on Systemd V235 since 10/2017
+#### Attention on Systemd V235 since 10/2017 (and V239 since 06/2018)
 
-Due a problem with sandboxing on `systemd-logind`, any IP connections from and to the `systemd-logind` service are now denied. This will cause failures to log in, even though `yptest` works as expected, and can also cause `accounts-daemon` to crash outright. The basic problem is that the default `/usr/lib/systemd/system/systemd-logind.service` file that ships with `systemd` specifies `IPAddressDeny=any`, and this prevents it from communicating with the NIS server at login.
+Due a problem with sandboxing on `systemd-logind`, any IP connections from and to the `systemd-logind` service are now denied. This will cause failures to log in, even though `yptest` works as expected, and can also cause `accounts-daemon` to crash outright. The basic problem is that the default `/usr/lib/systemd/system/systemd-logind.service` file that ships with `systemd` specifies `IPAddressDeny=any`, and this prevents it from communicating with the NIS server at login. Moreover, since V239, that file also specifies `RestrictAddressFamilies=AF_UNIX AF_NETLINK`, dropping `AF_INET AF_INET6` from the list.
 
 There are a few possible solutions:
 
@@ -265,7 +265,8 @@ There are a few possible solutions:
 
 This can be done by creating a new `.conf` file within the `/etc/systemd/system/systemd-logind.service.d/`, with these lines (the following allows connections `from 10.0.*.*`, edit as appropriate): `/etc/systemd/system/systemd-logind.service.d/open_network_interface.conf` 
 ```
-echo -e [Service]
+[Service]
+RestrictAddressFamilies=AF_UNIX AF_NETLINK AF_INET AF_INET6
 IPAddressAllow=10.0.0.0/16
 ```
 This survives a reboot and updates of the systemd toolchain. It also avoid having to open your system to any IP address.
@@ -279,7 +280,7 @@ This survives a reboot and updates of the systemd toolchain. It also avoid havin
 
 ```
 
-and comment out the line `IPAddressDeny=any` to read `# IPAddressDeny=any`
+and comment out the line `IPAddressDeny=any` to read `# IPAddressDeny=any`. As of V239, you will also need to add `AF_INET AF_INET6` to the `RestrictAddressFamilies=AF_UNIX AF_NETLINK` line.
 
 This solution survives an update of the systemd toolchain and keeps working after a reboot. It does however override *all* settings in the unit file supplied with `systemd`, which may cause issues down the track if other unrelated settings are changed upstream. It also opens up access to *any* IP address, which is not recommended.
 
@@ -292,7 +293,7 @@ Works, but not a recommended solution since it will not survive an update of the
 
 ```
 
-and comment out the line `IPAddressDeny=any` to read `# IPAddressDeny=any`
+and comment out the line `IPAddressDeny=any` to read `# IPAddressDeny=any`. As of V239, you will also need to add `AF_INET AF_INET6` to the `RestrictAddressFamilies=AF_UNIX AF_NETLINK` line.
 
 Note that this also opens up access to *any* IP address, which is not recommended.
 

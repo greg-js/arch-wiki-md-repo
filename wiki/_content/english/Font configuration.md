@@ -1,10 +1,10 @@
 Related articles
 
-*   [Fonts](/index.php/Fonts "Fonts")
 *   [Font configuration/Examples](/index.php/Font_configuration/Examples "Font configuration/Examples")
-*   [Java Runtime Environment Fonts](/index.php/Java_Runtime_Environment_Fonts "Java Runtime Environment Fonts")
+*   [Fonts](/index.php/Fonts "Fonts")
 *   [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts")
 *   [MS Fonts](/index.php/MS_Fonts "MS Fonts")
+*   [Java Runtime Environment Fonts](/index.php/Java_Runtime_Environment_Fonts "Java Runtime Environment Fonts")
 *   [X Logical Font Description](/index.php/X_Logical_Font_Description "X Logical Font Description")
 
 [Fontconfig](http://www.freedesktop.org/wiki/Software/fontconfig/) is a library designed to provide a list of available [fonts](/index.php/Fonts "Fonts") to applications, and also for configuration for how fonts get rendered: see [Wikipedia:Fontconfig](https://en.wikipedia.org/wiki/Fontconfig "wikipedia:Fontconfig"). The FreeType library [freetype2](https://www.archlinux.org/packages/?name=freetype2) renders the fonts, based on this configuration.

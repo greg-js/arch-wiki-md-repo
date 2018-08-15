@@ -2070,7 +2070,7 @@ normal
 
 ### Загрузка из старых версий GRUB
 
-Код конфига для [GRUB Legacy](/index.php/GRUB_Legacy_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GRUB Legacy (Русский)"), [NeoGRUB](/index.php/NeoGRUB "NeoGRUB") *(и возможно, **grub4dos**)*, с загрузкой GRUB2:
+Код конфига для [GRUB Legacy](/index.php/GRUB_Legacy_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GRUB Legacy (Русский)"), с загрузкой GRUB2:
 
 ```
 menu.lst

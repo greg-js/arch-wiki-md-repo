@@ -19,7 +19,7 @@ O *pacman* mantém o sistema atualizado, listas de pacotes de sincronização co
 
 O *pacman* é escrito na linguagem de programação C e usa o formato [tar](https://en.wikipedia.org/wiki/pt:TAR "w:pt:TAR") para empacotamento.
 
-**Dica:** O pacote [pacman](https://www.archlinux.org/packages/?name=pacman) contém ferramentas tal como [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e *vercmp*. Outras ferramentas úteis como o *pactree* e [checkupdates](/index.php/Checkupdates_(Portugu%C3%AAs) "Checkupdates (Português)") podem ser localizados em [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) ([anteriormente](https://git.archlinux.org/pacman.git/commit/?id=0c99eabd50752310f42ec808c8734a338122ec86) parte do pacman). Execute `pacman -Ql pacman pacman-contrib | grep -E 'bin/.+'` para ver a lista completa.
+**Dica:** O pacote [pacman](https://www.archlinux.org/packages/?name=pacman) contém ferramentas tal como [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e *vercmp*. Outras ferramentas úteis como o *pactree* e [checkupdates](/index.php/Checkupdates_(Portugu%C3%AAs) "Checkupdates (Português)") estão localizados em [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) ([anteriormente](https://git.archlinux.org/pacman.git/commit/?id=0c99eabd50752310f42ec808c8734a338122ec86) parte do pacman). Execute `pacman -Ql pacman pacman-contrib | grep -E 'bin/.+'` para ver a lista completa.
 
 ## Contents
 
@@ -77,15 +77,16 @@ O que se segue é apenas uma pequena amostra das operações que o *pacman* pode
 
 ### Instalando pacotes
 
-**Nota:** Alguns pacotes muitas vezes têm uma série de [dependências opcionais](/index.php/PKGBUILD_(Portugu%C3%AAs)#optdepends "PKGBUILD (Português)") de pacotes que fornecem funcionalidades adicionais para a aplicação, embora não seja estritamente necessário para executá-lo. Ao instalar um pacote, o *pacman* irá listar suas dependências opcionais entre as mensagens de saída, porém elas não serão encontrados no arquivo `pacman.log`: utilize o comando [pacman -Si](#Consultando_base_de_dados_de_pacotes) para visualizar as dependências opcionais de um pacote, juntamente com uma breve descrição das funcionalidades de cada um.
+**Nota:**
 
-**Nota:** Ao instalar um pacote que requer apenas uma dependência (opcional) de algum outro pacote (isto é, necessário por você), é recomendado usar a opção `--asdeps`. Para detalhes, veja [Motivo de instalação](#Motivo_de_instala.C3.A7.C3.A3o).
+*   Alguns pacotes muitas vezes têm [dependências opcionais](/index.php/PKGBUILD_(Portugu%C3%AAs)#optdepends "PKGBUILD (Português)") de pacotes que fornecem funcionalidades adicionais para o aplicativo, apesar de não serem estritamente necessárias para executá-lo. Ao instalar um pacote, o *pacman* irá listar as dependências opcionais do pacote, porém elas não serão encontradas no arquivo `pacman.log`. Utilize o comando [#Consultando base de dados de pacotes](#Consultando_base_de_dados_de_pacotes) para visualizar as dependências opcionais de um pacote.
+*   Ao instalar um pacote que requer apenas uma dependência (opcional) de algum outro pacote (isto é, necessário por você), é recomendado usar a opção `--asdeps`. Para detalhes, veja a seção [#Motivo de instalação](#Motivo_de_instala.C3.A7.C3.A3o).
 
 **Atenção:** Ao instalar pacotes no Arch, evite atualizar a lista de pacotes sem [atualizar o sistema](#Atualizando_pacotes) (por exemplo, quando um [pacote não é encontrado](#Pacotes_n.C3.A3o_podem_ser_obtidos_na_instala.C3.A7.C3.A3o) nos repositórios oficiais). Na prática, **não** execute o comando `pacman -Sy *nome_pacote*`, pois isso poderia levar para problemas de dependências. Veja [Manutenção do sistema#Sem suporte a atualizações parciais](/index.php/Manuten%C3%A7%C3%A3o_do_sistema#Sem_suporte_a_atualiza.C3.A7.C3.B5es_parciais "Manutenção do sistema") e [BBS#89328](https://bbs.archlinux.org/viewtopic.php?id=89328).
 
 #### Instalando pacotes específicos
 
-Para instalar um único pacote ou lista de pacotes (incluindo dependências), execute o seguinte comando:
+Para instalar um único pacote ou lista de pacotes, incluindo dependências, execute o seguinte comando:
 
 ```
 # pacman -S *nome_pacote1* *nome_pacote2* ...
@@ -99,21 +100,21 @@ Para instalar uma lista de pacotes com expressão regular (veja [esse tópico do
 
 ```
 
-Às vezes, há várias versões de um pacote nos diferentes repositórios, por exemplo *extra* e *testing*. Para instalar a versão anterior, o repositório deve ser definido na frente:
+Às vezes, há várias versões de um pacote nos diferentes repositórios, por exemplo *extra* e *testing*. Para instalar a versão do repositório *extra* neste exemplo, o repositório deve ser definido na frente do nome do pacote:
 
 ```
 # pacman -S extra/*nome_pacote*
 
 ```
 
-Para instalar um número de pacotes que compartilham padrões em sua nomenclatura -- não todo um grupo nem todos pacotes correspondentes; por exemplo [plasma](https://www.archlinux.org/groups/x86_64/plasma/):
+Para instalar um número de pacotes que compartilham padrões em sua nomenclatura pode-se usar expansão com chaves:
 
 ```
 # pacman -S plasma-{desktop,mediacenter,nm}
 
 ```
 
-É claro, que não é limitado e pode ser expandido para quaisquer níveis sejam necessários:
+Isso pode ser expandido para quaisquer níveis sejam necessários:
 
 ```
 # pacman -S plasma-{workspace{,-wallpapers},pa}
@@ -184,6 +185,8 @@ Para remover um pacote, suas dependências e todos os pacotes que dependem deste
 ```
 
 Para remover um pacote, o qual é exigido por outro pacote, sem remover o pacote dependente:
+
+**Atenção:** A operação a seguir pode quebrar um sistema e deve ser evitada. Veja [Manutenção do sistema#Evite certos comandos do pacman](/index.php/Manuten%C3%A7%C3%A3o_do_sistema#Evite_certos_comandos_do_pacman "Manutenção do sistema").
 
 ```
 # pacman -Rdd *nome_pacote*
@@ -608,9 +611,9 @@ O problema geralmente é trivial de resolver. Uma maneira segura é primeiro ver
 
 Se você instalou um programa manualmente sem usar o *pacman*, (p.ex.: por meio de `make install`), você tem que remover/instalar esse programa com seus arquivos. Veja também [Pacman/Dicas e truques#Identificar arquivos que pertençam a nenhum pacote](/index.php/Pacman/Dicas_e_truques#Identificar_arquivos_que_perten.C3.A7am_a_nenhum_pacote "Pacman/Dicas e truques").
 
-Todo pacote instalado fornece um arquivo `/var/lib/pacman/local/*$pacote-$versão*/files` que contém metadados sobre esse pacote. Se o arquivo ficar corrompido, vazio ou desaparecer, ele resulta em erros de `existe no sistema de arquivos` ao tentar atualizar o pacote. Tal erro geralmente está relacionado a um pacote. Em vez de renomear manualmente e posteriormente remover todos os arquivos que pertencem ao pacote em questão, você pode tentar excepcionalmente executar `pacman -S --overwrite *pacote*` para forçar o *pacman* a sobrescrever esses arquivos.
+Todo pacote instalado fornece um arquivo `/var/lib/pacman/local/*$pacote-$versão*/files` que contém metadados sobre esse pacote. Se o arquivo ficar corrompido, vazio ou desaparecer, ele resulta em erros de `existe no sistema de arquivos` ao tentar atualizar o pacote. Tal erro geralmente está relacionado a um pacote. Em vez de renomear manualmente e posteriormente remover todos os arquivos que pertencem ao pacote em questão, você pode tentar executar explicitamente `pacman -S --overwrite *glob* *pacote*` para forçar o *pacman* a sobrescrever arquivos que correspondem a `*glob*`.
 
-**Atenção:** Tenha cuidado ao usar a opção `--overwrite` (por exemplo, `pacman -S --overwrite *pacote*`), pois ela pode causar grandes problemas se usada inadequadamente. É altamente recomendado usar essa opção apenas quando as notícias do Arch instruem o usuário a fazê-lo e/ou se o usuário está ciente de quais arquivos podem ser sobrescritos.
+**Atenção:** Via de regra, evite usar a opção `--overwrite`. Veja [Manutenção do sistema#Evite certos comandos do pacman](/index.php/Manuten%C3%A7%C3%A3o_do_sistema#Evite_certos_comandos_do_pacman "Manutenção do sistema").
 
 ### Erro "falha em submeter a transação (pacote inválido ou corrompido)"
 

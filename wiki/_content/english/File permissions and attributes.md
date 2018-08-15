@@ -26,7 +26,7 @@ Related articles
     *   [6.1 chattr and lsattr](#chattr_and_lsattr)
 *   [7 Extended attributes](#Extended_attributes)
     *   [7.1 User extended attributes](#User_extended_attributes)
-    *   [7.2 Capabilities](#Capabilities)
+    *   [7.2 Preserving extended attributes](#Preserving_extended_attributes)
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Preserve root](#Preserve_root)
 *   [9 See also](#See_also)
@@ -445,7 +445,9 @@ To remove an attribute on a file just change `+` to `-`.
 
 From [attr(5)](https://linux.die.net/man/5/attr): "Extended attributes are name:value pairs associated permanently with files and directories". There are four extended attribute classes: security, system, trusted and user.
 
-**Warning:** By default, extended attributes are not preserved by [cp](/index.php/Cp "Cp"), [rsync](/index.php/Rsync "Rsync"), and other similar programs.
+**Warning:** By default, extended attributes are not preserved by [cp](/index.php/Cp "Cp"), [rsync](/index.php/Rsync "Rsync"), and other similar programs, see [#Preserving extended attributes](#Preserving_extended_attributes).
+
+Extended attributes are also used to set [Capabilities](/index.php/Capabilities "Capabilities").
 
 ### User extended attributes
 
@@ -464,15 +466,24 @@ Use getfattr to display extended attributes:
 user.checksum="3baf9ebce4c664ca8d9e5f6314fb47fb"
 ```
 
-### Capabilities
+### Preserving extended attributes
 
-Extended attributes are also used to set [Capabilities](/index.php/Capabilities "Capabilities").
+| Command | Required flag |
+| `cp` | `--preserve=mode,ownership,timestamps,xattr` |
+| `mv` | preserves by default |
+| `tar` | `--xattrs` for creation and extraction |
+| `bsdtar` | `-p` for extraction |
+| [rsync](/index.php/Rsync "Rsync") | `--xattrs` |
+
+1.  mv silently discards extended attributes when the target file system does not support them.
+
+To preserve extended attributes with [text editors](/index.php/Text_editor "Text editor") you need to configure them to truncate files on saving instead of using [rename(2)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rename.2).[[1]](https://unix.stackexchange.com/questions/45407)
 
 ## Tips and tricks
 
 ### Preserve root
 
-Use the `--preserve-root` flag to prevent `chmod` from acting recursively on `/`. This can, for example, prevent one from removing the executable bit systemwide and thus breaking the system. To use this flag every time, set it within an [alias](/index.php/Alias "Alias"). See also [[1]](https://www.reddit.com/r/linux/comments/4ni3xe/tifu_sudo_chmod_644/).
+Use the `--preserve-root` flag to prevent `chmod` from acting recursively on `/`. This can, for example, prevent one from removing the executable bit systemwide and thus breaking the system. To use this flag every time, set it within an [alias](/index.php/Alias "Alias"). See also [[2]](https://www.reddit.com/r/linux/comments/4ni3xe/tifu_sudo_chmod_644/).
 
 ## See also
 

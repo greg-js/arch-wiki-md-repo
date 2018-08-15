@@ -133,7 +133,7 @@ See also [Users and groups#Pre-systemd groups](/index.php/Users_and_groups#Pre-s
 
 	Rootless X (1.16)
 
-As `Xorg.wrap` does not check if logind is active [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=86975#c5), [root rights for Xorg](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg") need be enabled manually:
+As `Xorg.wrap` does not check if logind is active [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=86975#c5), [root rights for Xorg](/index.php/Xorg#Rootless_Xorg "Xorg") need be enabled manually:
 
  `/etc/X11/Xwrapper.config`  `needs_root_rights = yes` 
 
@@ -147,7 +147,7 @@ Arch uses [timer](/index.php/Systemd#Timers "Systemd") files instead of [cron](/
 
 ### Dbus
 
-User instances of *dbus-daemon* are launched by [systemd/User](/index.php/Systemd/User#D-Bus "Systemd/User"). [[7]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) When requring IPC between desktop applications, restore `30-dbus.sh`:
+User instances of *dbus-daemon* are launched by [systemd/User](/index.php/Systemd/User "Systemd/User") [[7]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/). When requring IPC between desktop applications, restore `30-dbus.sh`:
 
  `/etc/X11/xinit/xinitrc.d/30-dbus.sh` 
 ```

@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma versão localizada de [Environment variables](/index.php/Environment_variables "Environment variables"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=518529) na versão em inglês.
+
 Artigos relacionados
 
 *   [Aplicativos padrão](/index.php/Default_applications "Default applications")
@@ -86,7 +88,7 @@ Para atualizar a variável, autentique-se novamente ou use *source* para recarre
 
 #### Aplicativos gráficos
 
-Variáveis de ambiente para aplicativos de interface gráfica de usuário (GUI) podem ser definidos em [xinitrc](/index.php/Xinitrc "Xinitrc"), ou em [xprofile](/index.php/Xprofile "Xprofile") ao usar um [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição"), por exemplo:
+Variáveis de ambiente para aplicativos de interface gráfica de usuário (GUI) podem ser definidos em [xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)"), ou em [xprofile](/index.php/Xprofile_(Portugu%C3%AAs) "Xprofile (Português)") ao usar um [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição"), por exemplo:
 
  `~/.xinitrc` 
 ```

@@ -339,7 +339,7 @@ $ X -config *<your config file>*
 
 If a problem occurs, then view the log at <tt>/var/log/Xorg.0.log</tt>. Be on the lookout for any lines beginning with *(EE)* which represent errors, and also *(WW)* which are warnings that could indicate other issues.
 
-**Note:** Using startx requires a *~/.xinitrc* file, so that X knows what to run when it starts. See [Xinitrc](/index.php/Xinitrc "Xinitrc") for detail.
+**Note:** Using startx requires a *~/.xinitrc* file, so that X knows what to run when it starts. See [Xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)") for detail.
 
 If you are using GNOME it is best to start GNOME through gdm to avoid HAL permission problems.
 
@@ -707,7 +707,7 @@ The client connections are rejected by the X server's security mechanism, you ca
 See also:
 
 *   [Gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição")
-*   [Start X at login](/index.php/Start_X_at_login "Start X at login")
+*   [Iniciar X no login](/index.php/Iniciar_X_no_login "Iniciar X no login")
 *   [Xorg Font Configuration](/index.php/Xorg_Font_Configuration "Xorg Font Configuration")
 *   Proprietary Video Drivers
     *   [ATI](/index.php/ATI "ATI")

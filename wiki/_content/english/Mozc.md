@@ -132,11 +132,7 @@ Emacs*UseXIM: false
 
 Type "ばーじょん" ("version") and convert it while activating Mozc. The version number of Mozc will be shown in the candidate list like follows:
 
-```
-<u>ばーじょん</u>
-
-```
-
+ `<u>ばーじょん</u>` 
 ```
 バージョン
 ヴァージョン

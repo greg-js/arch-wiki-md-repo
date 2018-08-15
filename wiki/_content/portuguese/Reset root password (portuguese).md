@@ -1,4 +1,6 @@
-Este guia irá mostrar-lhe como redefinir uma senha de root esquecida. Vários métodos estão listados para ajudá-lo a realizar isso.
+**Status de tradução:** Esse artigo é uma versão localizada de [Reset root password](/index.php/Reset_root_password "Reset root password"). Data da última tradução: 2018-08-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Reset_root_password&diff=0&oldid=531654) na versão em inglês.
+
+Este guia irá mostrar-lhe como redefinir uma senha de [root](/index.php/Root_(Portugu%C3%AAs) "Root (Português)") esquecida. Vários métodos estão listados para ajudá-lo a realizar isso.
 
 **Atenção:** Um invasor pode usar os métodos mencionados abaixo para entrar em seu sistema. Não importa o quão seguro o sistema operacional seja ou como as senhas são boas, ter acesso físico equivale a carregar um sistema operacional alternativo e expor seus dados, a menos que você use [criptografia de disco](/index.php/Disk_encryption "Disk encryption").
 

@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma versão localizada de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2018-08-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=531724) na versão em inglês.
+
 Artigos relacionados
 
 *   [GTK+](/index.php/GTK%2B "GTK+")
@@ -13,7 +15,7 @@ Artigos relacionados
 *   [GNOME/Document viewer](/index.php/GNOME/Document_viewer "GNOME/Document viewer")
 *   [Repositórios oficiais#gnome-unstable](/index.php/Reposit%C3%B3rios_oficiais#gnome-unstable "Repositórios oficiais")
 
-[GNOME](https://www.gnome.org/) (pronunciado *gah-nohm* ou *nohm*) é um [ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop"), ou *desktop environment*, que visa ser simples e fácil de usar. Ele é projetado por [O Projeto GNOME](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project") e é composto interiramente de software livre e código aberto. O GNOME é uma parte do [Projeto GNU](/index.php/Projeto_GNU "Projeto GNU"). O *display* padrão é o [Wayland](/index.php/Wayland "Wayland") em vez do [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)").
+[GNOME](https://en.wikipedia.org/wiki/pt:GNOME "wikipedia:pt:GNOME") (/(ɡ)noʊm/) é um [ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop"), ou *desktop environment*, que visa ser simples e fácil de usar. Ele é projetado por [O Projeto GNOME](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project") e é composto interiramente de software livre e código aberto. O GNOME é uma parte do [Projeto GNU](/index.php/Projeto_GNU "Projeto GNU"). O *display* padrão é o [Wayland](/index.php/Wayland "Wayland") em vez do [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)").
 
 ## Contents
 
@@ -103,7 +105,7 @@ Selecione a sessão: *GNOME*, *GNOME Clássico* ou *GNOME sobre Xorg* a partir d
     exec gnome-session --session=gnome-classic
     ```
 
-Após editar o arquivo `~/.xinitrc`, GNOME pode ser iniciado com o comando `startx` (veja [xinitrc](/index.php/Xinitrc "Xinitrc") para detalhes adicionais, tal como preservar a sessão de logind). Após configurar o arquivo `~/.xinitrc`, também é possível ser arranjado para [Iniciar o X na autenticação](/index.php/Start_X_at_login "Start X at login").
+Após editar o arquivo `~/.xinitrc`, GNOME pode ser iniciado com o comando `startx` (veja [xinitrc](/index.php/Xinitrc_(Portugu%C3%AAs) "Xinitrc (Português)") para detalhes adicionais, tal como preservar a sessão de logind). Após configurar o arquivo `~/.xinitrc`, também é possível ser arranjado para [Iniciar X no login](/index.php/Iniciar_X_no_login "Iniciar X no login").
 
 #### Sessões Wayland
 
@@ -417,7 +419,7 @@ $ gsettings get org.gnome.shell enabled-extensions
 
 #### Métodos de entrada
 
-O GNOME possui suporte integrado para [métodos de entrada](/index.php/Input_method "Input method") por meio do [IBus](/index.php/IBus "IBus"), só sendo necessário instalar [ibus](https://www.archlinux.org/packages/?name=ibus) e o motor do método de entrada (ex.: [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin) para Intelligent Pinyin); após a instalação, o motor de método de entrada podem ser adicionados como disposição de teclado nas configurações de "Idioma & região" do GNOME.
+O GNOME possui suporte integrado para [métodos de entrada](/index.php/M%C3%A9todos_de_entrada "Métodos de entrada") por meio do [IBus](/index.php/IBus "IBus"), só sendo necessário instalar [ibus](https://www.archlinux.org/packages/?name=ibus) e o motor do método de entrada (ex.: [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin) para Intelligent Pinyin); após a instalação, o motor de método de entrada podem ser adicionados como disposição de teclado nas configurações de "Idioma & região" do GNOME.
 
 #### Fontes
 

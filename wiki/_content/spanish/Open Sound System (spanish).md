@@ -410,7 +410,9 @@ Consulte también: [Wine#Sound](/index.php/Wine#Sound "Wine").
 
 ### Usar las teclas multimedia con OSS
 
-Una manera fácil de activar/desactivar el sonido y subir/bajar el volumen es usar el script [ossvol](https://aur.archlinux.org/packages/ossvol/) disponible en [AUR](/index.php/AUR "AUR"). Para más información sobre el script consulte [este artículo](http://www.opensound.com/wiki/index.php/Tips_And_Tricks#ossvol) de la wiki de OSS.
+Una forma fácil de activar/desactivar el sonido y de subir/bajar el volumen es utilizar la secuencia de comandos *(script)* [ossvol](http://www.opensound.com/wiki/index.php/Tips_And_Tricks#ossvol).
+
+Descárguelo y colóquelo en `/usr/bin/ossvol`.
 
 Una vez instalado, escriba:
 
@@ -426,7 +428,7 @@ $ ossvol -h
 
 ```
 
-para ver las órdenes disponibles.
+para ver los comandos disponibles.
 
 **Nota:** Si `ossvol` da un error como **Bad mixer control name(987) 'vol'**, tiene que editar el script `/usr/bin/ossvol` y cambiar la variable `CHANNEL` al canal por defecto (normalmente `vmix0-outvol`).
 

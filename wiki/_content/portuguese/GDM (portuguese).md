@@ -33,7 +33,7 @@ Para instalar o [GDM](http://www.gnome.org/projects/gdm/) (parte do Gnome-Extra)
 
 Para criar o login gráfico o metódo tradicional de logar no sistema, edite seu arquivo `/etc/inittab` (recomendado). Pode adicionar como alternativa o gdm na sua lista de daemons em `/etc/rc.conf`. Estes procedimentos estão detalhados na página do [Gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição").
 
-Se está acostumado a usar o arquivo `~/.xinitrc` para passar o argumento do servidor X quando é iniciado, por exemplo **xmodmap** ou **xsetroot**, você pode observar que pode adicionar o comando para [xprofile](/index.php/Xprofile "Xprofile"). Exemplo:
+Se está acostumado a usar o arquivo `~/.xinitrc` para passar o argumento do servidor X quando é iniciado, por exemplo **xmodmap** ou **xsetroot**, você pode observar que pode adicionar o comando para [xprofile](/index.php/Xprofile_(Portugu%C3%AAs) "Xprofile (Português)"). Exemplo:
 
  `~/.xprofile` 
 ```

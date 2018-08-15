@@ -155,8 +155,6 @@ group nobody
 
 ```
 
-**Note:** The official OpenVPN Connect app for Android does not support tls-crypt.[[2]](https://bbs.archlinux.org/viewtopic.php?id=235780)[[3]](https://forums.openvpn.net/viewtopic.php?t=24425)[[4]](https://github.com/graysky2/ovpngen/issues/4) To support it as a client, keep `tls-auth ta.key 0`.
-
 #### Hardening the server
 
 If security is a priority, additional configuration is recommended including: limiting the server to use a strong cipher/auth method and (optionally) limiting the set of enabled TLS ciphers to the newer ciphers.
@@ -194,11 +192,11 @@ push "compress lz4-v2"
 
 ```
 
-On the client set `--compress lz4` [[5]](https://community.openvpn.net/openvpn/wiki/DeprecatedOptions), although this may be deprecated in the near future.
+On the client set `--compress lz4` [[2]](https://community.openvpn.net/openvpn/wiki/DeprecatedOptions), although this may be deprecated in the near future.
 
 #### Deviating from the standard port and/or protocol
 
-It is generally recommended to use OpenVPN over UDP, because [TCP over TCP is a bad idea](http://sites.inka.de/bigred/devel/tcp-tcp.html)[[6]](http://adsabs.harvard.edu/abs/2005SPIE.6011..138H).
+It is generally recommended to use OpenVPN over UDP, because [TCP over TCP is a bad idea](http://sites.inka.de/bigred/devel/tcp-tcp.html)[[3]](http://adsabs.harvard.edu/abs/2005SPIE.6011..138H).
 
 Some networks may disallow OpenVPN connections on the default port and/or protocol. One strategy to circumvent this is to mimic HTTPS traffic which is very likely unobstructed.
 
@@ -240,8 +238,6 @@ key client.key
 tls-crypt ta.key # Replaces *tls-auth ta.key 1*
 
 ```
-
-**Note:** Having `tls-auth` in `server.conf`, requires `tls-auth ta.key 1` in the corresponding `client.conf`.
 
 #### Run as unprivileged user
 
@@ -309,7 +305,7 @@ read UDPv4 [EMSGSIZE Path-MTU=1407]: Message too long (code=90)
 
 ```
 
-In order to get the maximum segment size (MSS), the client needs to discover the smallest MTU along the path to the server. In order to do this ping the server and disable fragmentation, then specify the maximum packet size [[7]](https://www.sonassi.com/help/troubleshooting/setting-correct-mtu-for-openvpn):
+In order to get the maximum segment size (MSS), the client needs to discover the smallest MTU along the path to the server. In order to do this ping the server and disable fragmentation, then specify the maximum packet size [[4]](https://www.sonassi.com/help/troubleshooting/setting-correct-mtu-for-openvpn):
 
 ```
 # ping -M do -s 1500 -c 1 example.com
@@ -413,7 +409,7 @@ To connect to an OpenVPN server through Gnome's built-in network configuration d
 
 ## Routing client traffic through the server
 
-By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic (including web traffic) pass through the VPN, [append](/index.php/Append "Append") `push "redirect-gateway def1 bypass-dhcp"` to the configuration file (i.e. `/etc/openvpn/server/server.conf`) [[8]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) of the server. Note this is not a requirement and may even give performance issue:
+By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic (including web traffic) pass through the VPN, [append](/index.php/Append "Append") `push "redirect-gateway def1 bypass-dhcp"` to the configuration file (i.e. `/etc/openvpn/server/server.conf`) [[5]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) of the server. Note this is not a requirement and may even give performance issue:
 
 ```
 push "redirect-gateway def1 bypass-dhcp"
@@ -488,14 +484,14 @@ To apply the changes. [reload](/index.php/Reload "Reload")/[restart](/index.php/
 
 #### iptables
 
-In order to allow VPN traffic through an [iptables](/index.php/Iptables "Iptables") firewall, first create an iptables rule for NAT forwarding [[9]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server. An example (assuming the interface to forward to is named `eth0`):
+In order to allow VPN traffic through an [iptables](/index.php/Iptables "Iptables") firewall, first create an iptables rule for NAT forwarding [[6]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server. An example (assuming the interface to forward to is named `eth0`):
 
 ```
 iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 
 ```
 
-If the server cannot be pinged through the VPN, one may need to add explicit rules to open up TUN/TAP interfaces to all traffic. If that is the case, do the following [[10]](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn):
+If the server cannot be pinged through the VPN, one may need to add explicit rules to open up TUN/TAP interfaces to all traffic. If that is the case, do the following [[7]](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn):
 
 **Warning:** There are security implications for the following rules if one does not trust all clients which connect to the server. Refer to the [OpenVPN documentation on this topic](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn) for more details.
 
@@ -737,13 +733,15 @@ Simply invoke the script with 5 tokens:
 Example:
 
 ```
-# ovpngen example.org /etc/openvpn/server/ca.crt /etc/easy-rsa/pki/signed/client1.crt /etc/easy-rsa/pki/private/client1.key /etc/openvpn/server/ta.key > iphone.ovpn
+# ovpngen example.org /etc/openvpn/server/ca.crt /etc/easy-rsa/pki/signed/client1.crt /etc/easy-rsa/pki/private/client1.key /etc/openvpn/server/ta.key > foo.ovpn
 
 ```
 
-The resulting `iphone.ovpn` can be edited if desired as the script does insert some commented lines.
+If the server is configured to use tls-crypt, as is suggested in [#The server configuration file](#The_server_configuration_file), [manually edit](https://github.com/graysky2/ovpngen/issues/4) the resulting `foo.ovpn` replacing `<tls-auth>` and `</tls-auth>` with `<tls-crypt>` and `</tls-crypt>`.
 
-The client expects this file to be located in `/etc/openvpn/client/iphone.conf`. Note the change in file extension from 'ovpn' to 'conf' in this case.
+The resulting `foo.ovpn` can be edited if desired as the script does insert some commented lines.
+
+The client expects this file to be located in `/etc/openvpn/client/foo.conf`. Note the change in file extension from 'ovpn' to 'conf' in this case.
 
 **Tip:** If the server.conf contains a specified cipher and/or auth line, it is highly recommended that users manually edit the generated .ovpn file adding matching lines for cipher and auth. Failure to do so may results in connection errors!
 
@@ -834,9 +832,9 @@ Unmanaged=true
 
 ### tls-crypt unwrap error: packet too short
 
-This error shows up in the server log when a client, that does not support tls-crypt (such as the official OpenVPN Connect Android app), attempts to connect.
+This error shows up in the server log when a client that does not support tls-crypt, or a client that is misconfigured to use tls-auth while the server is configured to use tls-crypt, attempts to connect.
 
-To support these clients, replace `tls-crypt ta.key` with `tls-auth ta.key 0` (the default) in `server.conf`. Also replace `tls-crypt ta.key` with `tls-auth ta.key 1` (the default) in `client.conf`.
+To support clients that do not support tls-crypt, replace `tls-crypt ta.key` with `tls-auth ta.key 0` (the default) in `server.conf`. Also replace `tls-crypt ta.key` with `tls-auth ta.key 1` (the default) in `client.conf`.
 
 ## See also
 

@@ -1,6 +1,6 @@
-**Estado de la traducción:** este artículo es una versión traducida de [sudo](/index.php/Sudo "Sudo"). Fecha de la última traducción/revisión: **2018-08-10**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Sudo&diff=0&oldid=529530).
+**Estado de la traducción:** este artículo es una versión traducida de [sudo](/index.php/Sudo "Sudo"). Fecha de la última traducción/revisión: **2018-08-13**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Sudo&diff=0&oldid=534686).
 
-Artículos relacionados
+Related articles
 
 *   [Usuarios y grupos](/index.php/Users_and_Groups_(Espa%C3%B1ol) "Users and Groups (Español)")
 *   [su](/index.php/Su_(Espa%C3%B1ol) "Su (Español)")
@@ -21,16 +21,17 @@ Sudo también se puede usar para ejecutar comandos como otros usuarios; además,
     *   [3.3 Ejemplos de entradas](#Ejemplos_de_entradas)
     *   [3.4 Permisos de archivo predeterminados de sudoers](#Permisos_de_archivo_predeterminados_de_sudoers)
 *   [4 Consejos y trucos](#Consejos_y_trucos)
-    *   [4.1 Deshabilitar sudo por terminal](#Deshabilitar_sudo_por_terminal)
+    *   [4.1 Deshabilitar sudo por cada terminal](#Deshabilitar_sudo_por_cada_terminal)
     *   [4.2 Variables de entorno](#Variables_de_entorno)
-    *   [4.3 Activar alias](#Activar_alias)
-    *   [4.4 Avisos](#Avisos)
-    *   [4.5 Contraseña root](#Contrase.C3.B1a_root)
-    *   [4.6 Desactivar el acceso de root](#Desactivar_el_acceso_de_root)
-        *   [4.6.1 kdesu](#kdesu)
-    *   [4.7 Ejemplo para proteger con sudo](#Ejemplo_para_proteger_con_sudo)
+    *   [4.3 Transferir alias](#Transferir_alias)
+    *   [4.4 Contraseña de superusuario](#Contrase.C3.B1a_de_superusuario)
+    *   [4.5 Desactivar el acceso de superusuario](#Desactivar_el_acceso_de_superusuario)
+        *   [4.5.1 kdesu](#kdesu)
+    *   [4.6 Ejemplo de protección con sudo](#Ejemplo_de_protecci.C3.B3n_con_sudo)
+    *   [4.7 Configurar sudo mediante archivos complementarios en /etc/sudoers.d](#Configurar_sudo_mediante_archivos_complementarios_en_.2Fetc.2Fsudoers.d)
+    *   [4.8 Edición de archivos](#Edici.C3.B3n_de_archivos)
 *   [5 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [5.1 Problemas de SSH con TTY](#Problemas_de_SSH_con_TTY)
+    *   [5.1 Problemas de TTY con SSH](#Problemas_de_TTY_con_SSH)
     *   [5.2 Umask permisiva](#Umask_permisiva)
     *   [5.3 Estructura por defecto](#Estructura_por_defecto)
 
@@ -155,11 +156,11 @@ El propietario y el grupo para el archivo `sudoers` deben ser ambos 0\. Los perm
 
 ## Consejos y trucos
 
-### Deshabilitar sudo por terminal
+### Deshabilitar sudo por cada terminal
 
 **Advertencia:** Esto permitirá que cualquier proceso use su sesión sudo.
 
-Si le molesta que sudo, de forma predeterminada, requiera introducir la contraseña cada vez que se abra un nuevo terminal, deshabilite **tty_tickets**:
+Si le molesta que sudo, de forma predeterminada, requiera introducir la contraseña cada vez que abra un nuevo terminal, deshabilite **tty_tickets**:
 
 ```
 Defaults !tty_tickets
@@ -183,43 +184,41 @@ Defaults env_keep += "ftp_proxy http_proxy https_proxy no_proxy"
 
 ```
 
-### Activar alias
+### Transferir alias
 
-Si utiliza muchos alias, habrá advertido que no se transfieren a la cuenta de root cuando usa sudo. No obstante, hay una manera fácil de hacer que funcionen. Solo tiene que añadir lo siguiente a `~/.bashrc` o a `/etc/bash.bashrc`:
+Si utiliza muchos alias, es posible que haya notado que no se transfieren a la cuenta de superusuario al usar sudo. Sin embargo, hay una manera fácil de hacer que funcionen. Simplemente añada lo siguiente a su `~/.bashrc` o `/etc/bash.bashrc`:
 
 ```
 alias sudo='sudo '
 
 ```
 
-### Avisos
+### Contraseña de superusuario
 
-Los usuarios pueden configurar sudo para mostrar *«avisos ingeniosos»»* cuando se introduce una contraseña incorrecta, en lugar de mostrar el mensaje predeterminado «contraseña incorrecta» (*wrong password*) . Busque la línea Defaults en `/etc/sudoers` y añada el parámetro «insults», separándolo con una coma de las opciones existentes. El resultado final podría verse así:
-
-```
-#Defaults specification
-Defaults insults
+Los usuarios pueden configurar sudo para solicitar la contraseña del superusuario en lugar de la contraseña de usuario añadiendo `targetpw` (usuario de destino, predeterminado a superusuario) o `rootpw` a la línea Defaults en `/etc/sudoers`:
 
 ```
-
-Para probar, escriba `sudo -K` para finalizar la sesión actual y dejar que sudo pida la contraseña de nuevo.
-
-### Contraseña root
-
-Los usuarios pueden configurar sudo para pedir la contraseña de root, en lugar de la contraseña de usuario, añadiendo "rootpw" a la línea Defaults en `/etc/sudoers`:
-
-```
-Defaults timestamp_timeout=0,rootpw
+Defaults targetpw
 
 ```
 
-### Desactivar el acceso de root
+Para evitar exponer su contraseña de superusuario a los usuarios, puede restringirla a un grupo específico:
 
-**Advertencia:** Arch Linux no viene ajustado para funcionar con una cuenta de root desactivada. Los usuarios pueden encontrar problemas con este método.
+```
+Defaults:%wheel targetpw
+%wheel ALL=(ALL) ALL
 
-Con sudo instalado y configurado, el usuario puede deshabilitar el inicio de sesión de root. Sin root, los *«attackers»*, primero, deben adivinar un nombre de usuario configurado como un sudoer y, luego, la contraseña de usuario.
+```
 
-**Advertencia:** Asegúrese de que un usuario está correctamente configurado como un sudoer *antes* de desactivar la cuenta de root.
+### Desactivar el acceso de superusuario
+
+Los usuarios pueden querer deshabilitar el inicio de sesión del superusuario. Sin este, los atacantes deben primero adivinar un nombre de usuario configurado como sudoer, así como su contraseña. Consulte por ejemplo [Denegar](/index.php/Secure_Shell_(Espa%C3%B1ol)#Denegar "Secure Shell (Español)").
+
+**Advertencia:**
+
+*   Tenga cuidado, puede bloquearse al deshabilitar el inicio de sesión del superusuario. Sudo no se instala automáticamente y su configuración predeterminada no permite el acceso al superusuario sin contraseña ni con su propia contraseña. Asegúrese de que el usuario esté configurado correctamente como un sudoer *antes* de deshabilitar la cuenta de superusuario.
+*   Si ha cambiado su archivo sudoers para usar rootpw como predeterminado, entonces no desactive el inicio de sesión del superusuario con ninguno de los siguientes comandos.
+*   Si ya está bloqueado, consulte como [reiniciar la contraseña del superusuario](/index.php/Reset_root_password "Reset root password") para obtener ayuda.
 
 La cuenta puede ser bloqueada mediante `passwd`:
 
@@ -228,30 +227,32 @@ La cuenta puede ser bloqueada mediante `passwd`:
 
 ```
 
-Una orden similar desbloquea root.
+Una orden similar desbloquea al superusuario.
 
 ```
 $ sudo passwd -u root
 
 ```
 
-De forma alternativa, edite `/etc/shadow` y vuelva a colocar la contraseña cifrada de root con «!»:
+Alternativamente, edite `/etc/shadow` y reemplace la contraseña cifrada del superusuario *(root)* con «!»:
 
 ```
 root:!:12345::::::
 
 ```
 
-Para activar el acceso de root de nuevo:
+Para activar de nuevo el acceso del superusuario:
 
 ```
 $ sudo passwd root
 
 ```
 
+**Sugerencia:** Para acceder a un shell de superusuario, incluso después de deshabilitar la cuenta *root*, utilice `sudo -i`.
+
 #### kdesu
 
-kdesu puede ser utilizado bajo KDE para lanzar aplicaciones gráficas con privilegios de root. Es posible que, por defecto, kdesu trate de usar *«su»*, incluso si la cuenta de root está desactivada. Afortunadamente se puede invocar kdesu para usar «sudo» en lugar de «su». Cree/modifique el archivo `~/.kde4/share/config/kdesurc`:
+kdesu puede ser utilizado bajo KDE para lanzar aplicaciones gráficas con privilegios de superusuario. Es posible que, por defecto, kdesu trate de usar su incluso si la cuenta de superusuario está desactivada. Afortunadamente se puede invocar kdesu para usar sudo en lugar de su. Cree/modifique el archivo `~/.config/kdesurc`:
 
 ```
 [super-user-command]
@@ -259,26 +260,27 @@ super-user-command=sudo
 
 ```
 
-### Ejemplo para proteger con sudo
+o use el siguiente comando:
 
-Pongamos por caso que se crean 3 usuarios: admin, devel y Joe.
+```
+$ kwriteconfig5 --file kdesurc --group super-user-command --key super-user-command sudo
 
-*   admin es utilizado para journalctl, systemctl, mount, kill, e iptables.
+```
 
-*   devel es utilizado para instalar paquetes y editar archivos de configuración.
+Alternativamente, instale [kdesudo](https://aur.archlinux.org/packages/kdesudo/), que tiene la ventaja adicional de autocompletar con tabulador el comando siguiente.
 
-*   Joe es el usuario con el que se inicia sesión. Podrá reiniciar, apagar y usar netctl.
+### Ejemplo de protección con sudo
 
-Edite `/etc/pam.d/su and /etc/pam.d/su-1`
+Digamos que crea 3 usuarios: admin, devel y joe. El usuario «admin» se usa para journalctl, systemctl, mount, kill e iptables; «devel» se usa para instalar paquetes y editar archivos de configuración; y «joe» es el usuario con el que inicia sesión. Para permitir a «joe» reiniciar, apagar y usar netctl, haríamos lo siguiente:
 
-Demande que el usuario esté en el grupo `wheel`, pero no ponga a nadie en él.
+Edite `/etc/pam.d/su` y `/etc/pam.d/su-1` Requiere que el usuario esté en el grupo wheel, pero no ponga a nadie en él.
 
 ```
 #%PAM-1.0
 auth            sufficient      pam_rootok.so
-# Uncomment the following line to implicitly trust users in the "wheel" group.
+# Descomente la siguiente línea para confiar implícitamente en los usuarios del grupo "wheel".
 #auth           sufficient      pam_wheel.so trust use_uid
-# Uncomment the following line to require a user to be in the "wheel" group.
+# Descomente la siguiente línea para requerir que un usuario esté en el grupo "wheel".
 auth            required        pam_wheel.so use_uid
 auth            required        pam_unix.so
 account         required        pam_unix.so
@@ -286,25 +288,26 @@ session         required        pam_unix.so
 
 ```
 
-Limite el inicio de sesión de SSH al grupo `ssh`, y ponga únicamente a Joe en él.
+Limite el inicio de sesión de SSH al grupo 'ssh'. Solo «joe» será parte de este grupo.
 
 ```
 groupadd -r ssh
-gpasswd -a Joe ssh
+gpasswd -a joe ssh
 echo 'AllowGroups ssh' >> /etc/ssh/sshd_config
-systemctl restart sshd.service
 
 ```
 
-Permita agregar usuarios a otros grupos.
+[Reinicie](/index.php/Restart "Restart") `sshd.service`.
+
+Añada usuarios a otros grupos.
 
 ```
-for g in power network ;do ;gpasswd -a Joe $g ;done
+for g in power network ;do ;gpasswd -a joe $g ;done
 for g in network power storage ;do ;gpasswd -a admin $g ;done
 
 ```
 
-Ajuste los permisos sobre las configuraciones para que pueda editarlas.
+Ajuste los permisos en las configuraciones para que «devel» pueda editarlos.
 
 ```
 chown -R devel:root /etc/{http,openvpn,cups,zsh,vim,screenrc}
@@ -313,7 +316,7 @@ chown -R devel:root /etc/{http,openvpn,cups,zsh,vim,screenrc}
 
 ```
 Cmnd_Alias  POWER       =   /usr/bin/shutdown -h now, /usr/bin/halt, /usr/bin/poweroff, /usr/bin/reboot
-Cmnd_Alias  STORAGE     =   /usr/bin/mount, /usr/bin/umount
+Cmnd_Alias  STORAGE     =   /usr/bin/mount -o nosuid\,nodev\,noexec, /usr/bin/umount
 Cmnd_Alias  SYSTEMD     =   /usr/bin/journalctl, /usr/bin/systemctl
 Cmnd_Alias  KILL        =   /usr/bin/kill, /usr/bin/killall
 Cmnd_Alias  PKGMAN      =   /usr/bin/pacman
@@ -325,14 +328,14 @@ Cmnd_Alias  SHELL       =   /usr/bin/zsh, /usr/bin/bash
 %storage    ALL         =   (root)  STORAGE
 root        ALL         =   (ALL)   ALL
 admin       ALL         =   (root)  SYSTEMD, KILL, FIREWALL
-devel	    ALL         =   (root)  PKGMAN
-Joe	    ALL         =   (devel) SHELL, (admin) SHELL 
+devel       ALL         =   (root)  PKGMAN
+joe         ALL         =   (devel) SHELL, (admin) SHELL 
 
 ```
 
-Con esta configuración casi nunca se tendrá que iniciar sesión como usuario Root.
+Con esta configuración, casi nunca necesitará iniciar sesión como superusuario.
 
-Joe se puede conectar a una red WiFi doméstica:
+«joe» se puede conectar a una red inalámbrica doméstica:
 
 ```
 sudo netctl start home
@@ -340,14 +343,14 @@ sudo poweroff
 
 ```
 
-Joe no puede utilizar netctl como cualquier otro usuario como administrador...
+«joe» no puede utilizar netctl como cualquier otro usuario.
 
 ```
 sudo -u admin -- netctl start home
 
 ```
 
-Cuando Joe tiene que utilizar journalctl o terminar la ejecución de un proceso puede cambiar al usuario habilitado:
+Cuando «joe» necesite utilizar journalctl o terminar la ejecución de un proceso puede cambiar a dicho usuario:
 
 ```
 sudo -i -u devel
@@ -355,14 +358,14 @@ sudo -i -u admin
 
 ```
 
-Pero no es Root:
+Pero «joe» no puede cambiar a superusuario:
 
 ```
 sudo -i -u root
 
 ```
 
-Si Joe quiere iniciar una sesión GNU Screen como administrador puede hacerlo de esta manera:
+Si «joe» quiere iniciar una sesión gnu-screen como «admin» puede hacerlo así:
 
 ```
 sudo -i -u admin
@@ -371,13 +374,41 @@ admin% screen
 
 ```
 
+### Configurar sudo mediante archivos complementarios en /etc/sudoers.d
+
+*sudo* analiza los archivos contenidos en el directorio `/etc/sudoers.d/`. Esto significa que en lugar de editar `/etc/sudoers`, puede cambiar la configuración mediante archivos independientes y soltarlos en ese directorio. Esto tiene dos ventajas:
+
+*   No hay necesidad de editar un archivo `sudoers.pacnew`;
+*   Si hay un problema con una nueva entrada, puede eliminar el archivo afectado en lugar de editar `/etc/sudoers` (pero consulte la advertencia a continuación).
+
+El formato para las entradas en estos archivos complementarios es el mismo que para `/etc/sudoers`. Para editarlos directamente, utilice `visudo -f /etc/sudoers.d/*nombre_archivo*`. Consulte la sección "Incluir otros archivos desde sudoers" de [sudoers(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sudoers.5) para obtener más información.
+
+Los archivos en el directorio `/etc/sudoers.d/` se analizan en orden lexicográfico, los nombres de archivo que contienen `.` o `~` se omiten. Para evitar problemas de clasificación, los nombres de los archivos deben comenzar con dos dígitos, por ejemplo `01_foo`.
+
+**Nota:** El orden de las entradas en los archivos complementarios es importante: asegúrese de que las declaraciones no se anulan a sí mismas.
+
+**Advertencia:** Los archivos en `/etc/sudoers.d/` son tan frágiles como el mismo `/etc/sudoers`: cualquier archivo incorrectamente formateado evitará el funcionamiento de `sudo`. Por lo tanto, por esta misma razón, se recomienda encarecidamente usar `visudo`
+
+### Edición de archivos
+
+`sudo -e` o `sudoedit` le permite editar un archivo como otro usuario mientras ejecuta el editor de texto como su usuario.
+
+Esto es especialmente útil para editar archivos como superusuario sin elevar el privilegio de su editor de texto. Consulte [sudo(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sudo.8#e) para más detalles.
+
+Tenga en cuenta que puede configurar el editor para cualquier programa, por lo que, por ejemplo, uno puede usar [meld](https://www.archlinux.org/packages/?name=meld) para administrar archivos [pacnew](/index.php/Pacman/Pacnew_and_Pacsave_(Espa%C3%B1ol) "Pacman/Pacnew and Pacsave (Español)"):
+
+```
+$ SUDO_EDITOR=meld sudo -e /etc/*file*{,.pacnew*}*
+
+```
+
 ## Solución de problemas
 
-### Problemas de SSH con TTY
+### Problemas de TTY con SSH
 
-SSH no asigna una tty de forma predeterminada cuando se ejecuta un comando remoto. Sin una tty, sudo no puede desactivar *«echo»* cuando pida la contraseña. Puede utilizar la opción `-tt` para obligar a SSH a asignar una tty (utilice `-tt` dos veces).
+SSH no asigna una tty de forma predeterminada cuando ejecuta un comando remoto. Sin una tty, sudo no puede desactivar *«echo»* cuando se solicita una contraseña. Puede utilizar la opción de ssh `-t` para forzar la asignación de una tty.
 
-La opción `requiretty` de `Defaults` solo permite al usuario ejecutar sudo si tiene una tty.
+La opción `requiretty` de `Defaults` permite al usuario ejecutar sudo solo si tiene una tty.
 
 ```
 # Desactive "ssh hostname sudo <cmd>", ya que mostrará la contraseña en texto claro. Se tiene que ejecutar "ssh -t hostname sudo <cmd>".
@@ -388,7 +419,7 @@ La opción `requiretty` de `Defaults` solo permite al usuario ejecutar sudo si t
 
 ### Umask permisiva
 
-Sudo reunifica el valor [umask](/index.php/Umask_(Espa%C3%B1ol) "Umask (Español)") del usuario con el del propio umask (que por defecto es 0022). Esto evita que sudo cree archivos con permisos más abiertos que el umask del usuario permite. Si bien esto es un valor predefinido aceptable si el umask personalizado no está en uso, esto puede llevar a situaciones en las que un programa dirigido por sudo puede crear archivos con permisos diferentes que si los ejecutara root directamente. Si se incurre en este tipo de errores, sudo proporciona un medio para fijar la umask del usuario, incluso en el caso de que la umask sea más permisiva respecto de la umask especificada por el usuario. La adición de las líneas de abajo (usando `visudo`) modificará tal comportamiento por defecto de sudo:
+Sudo unirá el valor [umask](/index.php/Umask_(Espa%C3%B1ol) "Umask (Español)") del usuario con su propia umask (que por defecto es 0022). Esto evita que sudo cree archivos con permisos más abiertos que los que permite el umask del usuario. Si bien este es un valor predeterminado cuando no se usa umask personalizada, esto puede llevar a situaciones en las que una utilidad ejecutada por sudo puede crear archivos con permisos diferentes que si se ejecutara directamente desde el superusuario *(root)*. Si surgen errores a partir de esto, sudo proporciona un medio para reparar la umask, incluso si la umask deseada es más permisiva que la umask que el usuario ha especificado. Añadir esto (usando `visudo`) anulará el comportamiento predeterminado de sudo:
 
 ```
 Defaults umask = 0022
@@ -396,7 +427,7 @@ Defaults umask_override
 
 ```
 
-Esto establece la umask de sudo para la umask por defecto de root (0022) y sobrescribe el comportamiento predefinido, utilizando siempre la umask indicada, independientemente de cómo la umask del usuario esté configurada.
+Esto establece el umask de sudo en umask predeterminado del superusuario (0022) y anula el comportamiento predefinido, utilizando siempre la umask indicada, independientemente de la umask definida del usuario.
 
 ### Estructura por defecto
 

@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma versão localizada de [Archiving and compression](/index.php/Archiving_and_compression "Archiving and compression"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Archiving_and_compression&diff=0&oldid=534461) na versão em inglês.
+
 As ferramentas tradicionais de arquivamento e compactação (ou compressão) Unix são separadas de acordo com a [filosofia Unix](https://en.wikipedia.org/wiki/pt:Filosofia_Unix "wikipedia:pt:Filosofia Unix"):
 
 *   Um [arquivador ou empacotador de arquivo](https://en.wikipedia.org/wiki/File_archiver "wikipedia:File archiver") combina vários arquivos em um arquivo de pacote (p.ex., *tar*).
@@ -93,26 +95,26 @@ Esses programas de compactação implementam seu próprio formato de arquivo.
 
 ### Arquivamento e compressão
 
-| Name | Compress | Decompress | Decompress to stdout | List content |
-| [7z(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/7z.1) | `7z a archive.7z file1 file2` | `7z x archive.7z` | `7z e -so archive.7z file1` | `7z l archive.7z` |
-| rar(1) & unrar | `rar a archive.rar file1 file2` | `rar x archive.rar` | `rar p -inul archive.rar file1` | `rar l archive.rar` |
-| [zip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zip.1), [unzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/unzip.1) | `zip archive.zip file1 file2` | `unzip archive.zip` | `unzip -p archive.zip file1` | `unzip -l archive.zip` |
+| Nome | Compressão | Descompressão | Descompressão para stdout | Listagem de conteúdo |
+| [7z(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/7z.1) | `7z a pacote.7z arquivo1 arquivo2` | `7z x pacote.7z` | `7z e -so pacote.7z arquivo1` | `7z l pacote.7z` |
+| rar(1) & unrar | `rar a pacote.rar arquivo1 arquivo2` | `rar x pacote.rar` | `rar p -inul pacote.rar arquivo1` | `rar l pacote.rar` |
+| [zip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zip.1), [unzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/unzip.1) | `zip pacote.zip arquivo1 arquivo2` | `unzip pacote.zip` | `unzip -p pacote.zip arquivo1` | `unzip -l pacote.zip` |
 
 ## Ferramentas de conveniência
 
-*   **atool** — Script for managing file archives of various types.
+*   **atool** — Script para gerenciar pacotes de vários tipos.
 
 	[https://www.nongnu.org/atool/](https://www.nongnu.org/atool/) || [atool](https://www.archlinux.org/packages/?name=atool)
 
-*   **dtrx** — An intelligent archive extraction tool.
+*   **dtrx** — Uma ferramenta inteligente de extração de pacotes.
 
 	[https://brettcsmith.org/2007/dtrx/](https://brettcsmith.org/2007/dtrx/) || [dtrx](https://aur.archlinux.org/packages/dtrx/)
 
-*   **unp** — Command line tool that can unpack archives easily.
+*   **unp** — Ferramenta de linha de comando que pode extrair pacotes facilmente.
 
 	[https://github.com/mitsuhiko/unp](https://github.com/mitsuhiko/unp) || [python-unp](https://aur.archlinux.org/packages/python-unp/)
 
-*   **unpack** — Wrapper script for handling multiple archive formats.
+*   **unpack** — Script wrapper para lidar com diversos formatos de pacotes.
 
 	[https://github.com/githaff/unpack](https://github.com/githaff/unpack) || [unpack-git](https://aur.archlinux.org/packages/unpack-git/)
 
@@ -120,28 +122,32 @@ Esses programas de compactação implementam seu próprio formato de arquivo.
 
 ## Determinando o formato do pacote
 
-To extract an archive, its file format needs to be determined. If the file is properly named you can deduce its format from the file extension.
+Para extrair um pacote, seu formato de arquivo precisa ser determinado. Se o arquivo tiver o nome correto, você poderá deduzir seu formato a partir da extensão do arquivo.
 
-Otherwise you can use the [file](https://www.archlinux.org/packages/?name=file) tool, see [file(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/file.1).
+Do contrário, você pode usar a ferramenta [file](https://www.archlinux.org/packages/?name=file), veja [file(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/file.1).
 
 ## Ferramentas esotéricas, raras e obsoletas
 
-| Name | Packages | Ext | Description |
-| [ARC](https://en.wikipedia.org/wiki/ARC_(file_format) | [arc](https://aur.archlinux.org/packages/arc/) | .arc, .ark | Was very popular during the early days of the dial-up BBS. Superseded by ZIP. |
-| [ARJ](https://en.wikipedia.org/wiki/ARJ "wikipedia:ARJ") | [arj](https://www.archlinux.org/packages/?name=arj) | .arj | An archiver used on DOS/Windows in mid-1990s. This is an open source clone. |
-| [compress](https://en.wikipedia.org/wiki/compress "wikipedia:compress") | [ncompress](https://aur.archlinux.org/packages/ncompress/) | .Z | The classic unix compression utility which can handle the ancient .Z archive. |
-| [LHA](https://en.wikipedia.org/wiki/LHA_(file_format) | [lha](https://aur.archlinux.org/packages/lha/) | .lzh, .lha | Format popular in Japan, archiver to create LH-7 format archives. 32-bit only (requires [multilib](/index.php/Multilib "Multilib")). |
-| [PAR2](https://en.wikipedia.org/wiki/Parchive "wikipedia:Parchive") | [par2cmdline](https://www.archlinux.org/packages/?name=par2cmdline) | .par2 | Parity archiver for increased data integrity. See also [Parchive](/index.php/Parchive "Parchive"). |
-| [shar](https://en.wikipedia.org/wiki/shar "wikipedia:shar") | [sharutils](https://www.archlinux.org/packages/?name=sharutils) | .shar | Creates self-extracting archives that are valid shell scripts. |
-| [Zoo](https://en.wikipedia.org/wiki/Zoo_(file_format) | [zoo](https://aur.archlinux.org/packages/zoo/) | .zoo | Was mostly popular on the [OpenVMS](https://en.wikipedia.org/wiki/OpenVMS "wikipedia:OpenVMS") operating system before PKZIP became popular. |
+| Nome | Pacotes | Ext | Descrição |
+| [ARC](https://en.wikipedia.org/wiki/ARC_(file_format) | [arc](https://aur.archlinux.org/packages/arc/) | .arc, .ark | Foi muito popular durante os primeiros dias do BBS em conexão discada. Substituído pelo ZIP. |
+| [ARJ](https://en.wikipedia.org/wiki/pt:ARJ "wikipedia:pt:ARJ") | [arj](https://www.archlinux.org/packages/?name=arj) | .arj | Um arquivador usado no DOS/Windows em meados dos anos 90\. Este é um clone de código aberto. |
+| [compress](https://en.wikipedia.org/wiki/compress "wikipedia:compress") | [ncompress](https://aur.archlinux.org/packages/ncompress/) | .Z | O utilitário clássico de compressão unix que pode lidar com o antigo arquivo .Z. |
+| [LHA](https://en.wikipedia.org/wiki/LHA_(file_format) | [lha](https://aur.archlinux.org/packages/lha/) | .lzh, .lha | Formato popular no Japão, archiver para criar arquivos no formato LH-7\. Apenas 32 bits (requer [multilib](/index.php/Multilib_(Portugu%C3%AAs) "Multilib (Português)")). |
+| [PAR2](https://en.wikipedia.org/wiki/Parchive "wikipedia:Parchive") | [par2cmdline](https://www.archlinux.org/packages/?name=par2cmdline) | .par2 | Arquivador de paridade para maior integridade de dados. Veja também [Parchive](/index.php/Parchive "Parchive"). |
+| [shar](https://en.wikipedia.org/wiki/shar "wikipedia:shar") | [sharutils](https://www.archlinux.org/packages/?name=sharutils) | .shar | Cria arquivos de extração automática que são scripts de shell válidos. |
+| [Zoo](https://en.wikipedia.org/wiki/Zoo_(file_format) | [zoo](https://aur.archlinux.org/packages/zoo/) | .zoo | Era mais popular no sistema operacional [OpenVMS](https://en.wikipedia.org/wiki/pt:OpenVMS "wikipedia:pt:OpenVMS") antes de o PKZIP se tornar popular. |
 
 ## Bibliotecas de compressão
 
-*   **[zlib](https://en.wikipedia.org/wiki/zlib "wikipedia:zlib")** — Compression library implementing the deflate compression method found in gzip and PKZIP.
+*   **[Brotli](https://en.wikipedia.org/wiki/Brotli "wikipedia:Brotli")** — Algoritmo de compressão para fluxos de dados usando o algoritmo LZ77, codificação de Huffman e modelagem de contexto de segunda ordem.
+
+	[https://github.com/google/brotli](https://github.com/google/brotli) || [brotli](https://www.archlinux.org/packages/?name=brotli)
+
+*   **[zlib](https://en.wikipedia.org/wiki/pt:zlib "wikipedia:pt:zlib")** — Biblioteca de compressão implementando o método de compactação deflate encontrado no gzip e no PKZIP.
 
 	[https://www.zlib.net/](https://www.zlib.net/) || [zlib](https://www.archlinux.org/packages/?name=zlib)
 
-*   **[Zopfli](https://en.wikipedia.org/wiki/Zopfli "wikipedia:Zopfli")** — High compress ratio file compressor from Google, using a deflate-compatible algorithm called zopfli.
+*   **[Zopfli](https://en.wikipedia.org/wiki/Zopfli "wikipedia:Zopfli")** — Compressor de arquivos de alta taxa de compressão do Google, usando um algoritmo compatível com deflação chamado zopfli.
 
 	[https://github.com/google/zopfli](https://github.com/google/zopfli) || [zopfli-git](https://aur.archlinux.org/packages/zopfli-git/)
 

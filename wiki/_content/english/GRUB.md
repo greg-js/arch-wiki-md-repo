@@ -869,6 +869,7 @@ See also [VirtualBox#Installation in EFI mode](/index.php/VirtualBox#Installatio
 
 ## See also
 
+*   [Wikipedia:GNU GRUB](https://en.wikipedia.org/wiki/GNU_GRUB "wikipedia:GNU GRUB")
 *   [Official GRUB Manual](https://www.gnu.org/software/grub/manual/grub.html)
 *   [Ubuntu wiki page for GRUB](https://help.ubuntu.com/community/Grub2)
 *   [GRUB wiki page describing steps to compile for UEFI systems](https://help.ubuntu.com/community/UEFIBooting)

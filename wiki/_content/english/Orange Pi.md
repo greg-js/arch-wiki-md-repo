@@ -10,7 +10,8 @@ This article is strongly based on [Banana Pi](/index.php/Banana_Pi "Banana Pi").
     *   [1.1 Using original ArchLinuxARM tarball](#Using_original_ArchLinuxARM_tarball)
         *   [1.1.1 Install basesystem to a SD card](#Install_basesystem_to_a_SD_card)
         *   [1.1.2 Compile and copy U-Boot bootloader](#Compile_and_copy_U-Boot_bootloader)
-        *   [1.1.3 Login / SSH](#Login_.2F_SSH)
+        *   [1.1.3 Using U-Boot precompiled binaries](#Using_U-Boot_precompiled_binaries)
+        *   [1.1.4 Login / SSH](#Login_.2F_SSH)
 *   [2 Orange Pi PC2](#Orange_Pi_PC2)
     *   [2.1 UBoot](#UBoot)
     *   [2.2 Kernel](#Kernel)
@@ -96,6 +97,17 @@ $ make -j4 ARCH=arm CROSS_COMPILE=arm-none-eabi-
 ```
 
 If everything went fine you should have an U-Boot image: u-boot-sunxi-with-spl.bin. Now dd the image to your sdcard, where /dev/sdX is your sdcard.
+
+```
+# dd if=u-boot-sunxi-with-spl.bin of=/dev/sdX bs=1024 seek=8
+
+```
+
+#### Using U-Boot precompiled binaries
+
+If you couldn't compile them on your AMD64 machine, just grab them at: [https://gitlab.com/vinibali/orangepi_uboot](https://gitlab.com/vinibali/orangepi_uboot)
+
+Use the same command for placing it to the sdcard:
 
 ```
 # dd if=u-boot-sunxi-with-spl.bin of=/dev/sdX bs=1024 seek=8

@@ -104,11 +104,7 @@ The following notes assume MediaTomb is running as a system-wide daemon. For a p
 
 For PlayStation 3 support, users must set `<protocolInfo extend="yes"/>`. An "avi" mimetype mapping should also be uncommented for DivX support.
 
-```
-/var/lib/mediatomb/.mediatomb/config.xml
-
-```
-
+ `/var/lib/mediatomb/.mediatomb/config.xml` 
 ```
 ...
 
@@ -119,23 +115,17 @@ For PlayStation 3 support, users must set `<protocolInfo extend="yes"/>`. An "av
 <map from="avi" to="video/divx"/>
 
 ...
-
 ```
 
 When importing media to the database, MediaTomb will create a virtual container layout as defined by the `<virtual-layout type="...">` option. That is, media will be organized according to metadata (album, artist, etc.) through creation of virtual database objects. If your media is already organized on the file system, you may disable this feature to significantly improve import performance:
 
-```
-/var/lib/mediatomb/.mediatomb/config.xml
-
-```
-
+ `/var/lib/mediatomb/.mediatomb/config.xml` 
 ```
 ...
 
 <virtual-layout type="disabled"/>
 
 ...
-
 ```
 
 Users may customize the import script to fine-tune the virtual layout. The [Scripting](http://mediatomb.cc/dokuwiki/scripting:scripting) section of the MediaTomb wiki provides several examples. Starting with the built-in script available at `/usr/share/mediatomb/js/import.js`:
@@ -147,11 +137,7 @@ $ cp /usr/share/mediatomb/js/import.js /var/lib/mediatomb/.mediatomb/
 
 ... and edit `/var/lib/mediatomb/.mediatomb/import.js` as desired. To utilize the customized script, users must set `<virtual-layout type="js">` and specify the script's location.
 
-```
-/var/lib/mediatomb/.mediatomb/config.xml
-
-```
-
+ `/var/lib/mediatomb/.mediatomb/config.xml` 
 ```
 ...
 
@@ -160,16 +146,11 @@ $ cp /usr/share/mediatomb/js/import.js /var/lib/mediatomb/.mediatomb/
 </virtual-layout>
 
 ...
-
 ```
 
 You may have to specify an interface before MediaTomb will be recognized:
 
-```
-/var/lib/mediatomb/.mediatomb/config.xml
-
-```
-
+ `/var/lib/mediatomb/.mediatomb/config.xml` 
 ```
 <server>
 ...
@@ -191,11 +172,7 @@ The following note assume MediaTomb is running as a system-wide daemon. For a pe
 
 Some models require changes in config.xml. Users should edit the `<custom-http-headers>` section and add two entries in the `<mappings>` section for better compatibility.
 
-```
-/var/lib/mediatomb/.mediatomb/config.xml
-
-```
-
+ `/var/lib/mediatomb/.mediatomb/config.xml` 
 ```
 ...
 
@@ -210,7 +187,6 @@ Some models require changes in config.xml. Users should edit the `<custom-http-h
 <map from="mkv" to="video/mpeg"/>
 
 ...
-
 ```
 
 ## Troubleshooting

@@ -146,6 +146,8 @@ Users wishing to downgrade to a previous version of Linux-ck, have several optio
 
 Always feel free to open a thread in the forums for support purpose. Be sure to give the thread a descriptive title to draw attention to the fact that the post relates to the Linux-ck package.
 
+There is also an [official thread](https://bbs.archlinux.org/viewtopic.php?id=111715) for Linux-ck.
+
 ## See also
 
 *   [Kernel patch repository of Con Kolivas](http://ck.kolivas.org/patches/)

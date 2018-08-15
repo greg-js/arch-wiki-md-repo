@@ -95,6 +95,8 @@ Forget a known network:
 
 ```
 
+**Tip:** You can use all commands from the interactive session as command line arguments. For example: `iwctl device wlp3s0 show`.
+
 ## WPA Enterprise
 
 ### EAP-PWD

@@ -200,9 +200,7 @@ Reboot and check with:
 
 ## TrackPoint and Touchpad issues
 
-On the 20KG model, the Touchpad(Synaptics) and TrackPoint(Elantech) do not work together, one has to disable the TrackPoint in BIOS to get the Touchpad to work reliably out of the box. The root of the issue seems to be that the default loading of the TrackPoint via ancient PS/2 drivers conflicts with Touchpad loading. Synaptics has introduced a new way of doing things named RMI(4) that fixes some those issues. Further explanation is collected [in this thread](https://bbs.archlinux.org/viewtopic.php?id=236367).
-
-As a workaround, add `synaptics_intertouch=1` to the `psmouse` [kernel module](/index.php/Kernel_module "Kernel module") options, for example in the cmdline of the [boot loader](/index.php/Boot_loader "Boot loader"):
+To get the TrackPoint and Touchpad to work at the same time, add `synaptics_intertouch=1` to the `psmouse` [kernel module](/index.php/Kernel_module "Kernel module") options, for example in the cmdline of the [boot loader](/index.php/Boot_loader "Boot loader"):
 
 ```
  [...] root=/dev/sda1 rw psmouse.synaptics_intertouch=1 [...]
@@ -216,9 +214,9 @@ or by editing `/etc/modprobe.d/psmouse.conf`:
 
 ```
 
-**Note:** When using [TLP](/index.php/TLP "TLP") with default powersaving settings, there might be occasional hiccups such as dropouts of tap-to-click functionality for the Touchpad, as well as the TrackPoint not surviving suspends and needing to be re-initialized
+**Note:** When using [TLP](/index.php/TLP "TLP") with default powersaving settings, there might be occasional hiccups such as dropouts of tap-to-click functionality for the Touchpad, as well as the TrackPoint not surviving suspends and needing to be re-initialized.
 
-Reconnecting dead trackpad
+Reconnecting a dead trackpad can be done via
 
 ```
 echo -n "none" | sudo tee /sys/bus/serio/devices/serio1/drvctl

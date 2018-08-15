@@ -18,26 +18,27 @@ Desktop notifications are small, passive popup dialogs that notify the user of p
     *   [3.4 C++](#C.2B.2B)
     *   [3.5 C#](#C.23)
     *   [3.6 Cobra](#Cobra)
-    *   [3.7 F#](#F.23)
-    *   [3.8 Genie](#Genie)
-    *   [3.9 Go](#Go)
-    *   [3.10 Groovy](#Groovy)
-    *   [3.11 Haskell](#Haskell)
-    *   [3.12 IronPython](#IronPython)
-    *   [3.13 Java](#Java)
-    *   [3.14 JavaScript](#JavaScript)
-    *   [3.15 JRuby](#JRuby)
-    *   [3.16 Jython](#Jython)
-    *   [3.17 Lua](#Lua)
-    *   [3.18 Nemerle](#Nemerle)
-    *   [3.19 Pascal](#Pascal)
-    *   [3.20 Perl](#Perl)
-    *   [3.21 Python](#Python)
-    *   [3.22 Ruby](#Ruby)
-    *   [3.23 Rust](#Rust)
-    *   [3.24 Scala](#Scala)
-    *   [3.25 Vala](#Vala)
-    *   [3.26 Visual Basic .NET](#Visual_Basic_.NET)
+    *   [3.7 Crystal](#Crystal)
+    *   [3.8 F#](#F.23)
+    *   [3.9 Genie](#Genie)
+    *   [3.10 Go](#Go)
+    *   [3.11 Groovy](#Groovy)
+    *   [3.12 Haskell](#Haskell)
+    *   [3.13 IronPython](#IronPython)
+    *   [3.14 Java](#Java)
+    *   [3.15 JavaScript](#JavaScript)
+    *   [3.16 JRuby](#JRuby)
+    *   [3.17 Jython](#Jython)
+    *   [3.18 Lua](#Lua)
+    *   [3.19 Nemerle](#Nemerle)
+    *   [3.20 Pascal](#Pascal)
+    *   [3.21 Perl](#Perl)
+    *   [3.22 Python](#Python)
+    *   [3.23 Ruby](#Ruby)
+    *   [3.24 Rust](#Rust)
+    *   [3.25 Scala](#Scala)
+    *   [3.26 Vala](#Vala)
+    *   [3.27 Visual Basic .NET](#Visual_Basic_.NET)
 *   [4 See also](#See_also)
 
 ## Libnotify
@@ -260,6 +261,18 @@ class HelloWorld
         hello.body     = "This is an example notification."
         hello.iconName = "dialog-information"
         hello.show
+```
+
+### Crystal
+
+*   Dependency: woodruffw/notify.cr (from shards)
+*   Build with: shards build
+
+ `hello_world.fs` 
+```
+require "notify"
+notifier = Notify.new
+notifier.notify "Hello", body: "**World!**"
 ```
 
 ### F#

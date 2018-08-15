@@ -850,11 +850,7 @@ If you want to run tor as a non-root user, and use a port lower than 1024 you ca
 
 If you use the systemd service, it is also possible to use systemd to give the tor process the appropriate permissions. This has the benefit that permissions do not need to be reapplied after every tor upgrade:
 
-```
-/etc/systemd/system/tor.service.d/netcap.conf
-
-```
-
+ `/etc/systemd/system/tor.service.d/netcap.conf` 
 ```
 [Service]
 CapabilityBoundingSet=

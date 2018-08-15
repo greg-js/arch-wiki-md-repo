@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma versão localizada de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2018-08-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=532981) na versão em inglês.
+
 Artigos relacionados
 
 *   [Espelhos](/index.php/Espelhos "Espelhos")
@@ -99,6 +101,13 @@ Para listar pacotes instalados explicitamente que não estejam em [base](https:/
 
 ```
 $ expac -H M "%011m\t%-20n\t%10d" $(comm -23 <(pacman -Qqen | sort) <(pacman -Qqg base base-devel | sort)) | sort -n
+
+```
+
+Para listar os pacotes marcados para atualização com seu tamanho de download
+
+```
+$ pacman -Quq|xargs expac -S -H M '%k\t%n' | sort -sh
 
 ```
 
@@ -680,11 +689,7 @@ Existem outros aplicativos de download que você pode usar com *pacman*. Aqui es
 
 ### Front-ends gráficos
 
-**Atenção:** Alguns front-ends, como o [octopi](https://aur.archlinux.org/packages/octopi/) [[1]](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266), realizam [atualizações parciais](/index.php/Atualiza%C3%A7%C3%A3o_parcial "Atualização parcial") periodicamente.
-
-*   **Aarchup** — Um fork do archup. Tem as mesmas opções que o archup mais alguns outros recursos. Para diferenças entre ambos, por favor acesse o [changelog](https://bbs.archlinux.org/viewtopic.php?id=119129).
-
-	[https://github.com/aericson/aarchup/](https://github.com/aericson/aarchup/) || [aarchup](https://aur.archlinux.org/packages/aarchup/)
+Veja também [Auxiliares do AUR#Gráficos](/index.php/Auxiliares_do_AUR#Gr.C3.A1ficos "Auxiliares do AUR").
 
 *   **Apper** — Gerenciador de aplicativo e pacotes para o KDE usando PackageKit.
 
@@ -710,17 +715,9 @@ Existem outros aplicativos de download que você pode usar com *pacman*. Aqui es
 
 	[https://wiki.gnome.org/Apps/Software](https://wiki.gnome.org/Apps/Software) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
 
-*   **kalu** — Um pequeno aplicativo que vai adicionar um ícone à sua área de notificação e ficar lá verificando regularmente se há alguma coisa nova para você atualizar.
-
-	[https://jjacky.com/kalu/](https://jjacky.com/kalu/) || [kalu](https://aur.archlinux.org/packages/kalu/)
-
 *   **pcurses** — Gerenciamento de pacotes em um front-end curses.
 
 	[https://github.com/schuay/pcurses](https://github.com/schuay/pcurses) || [pcurses](https://www.archlinux.org/packages/?name=pcurses)
-
-*   **PkgBrowser** — Aplicativo para pesquisar e navegar por pacotes do Arch, mostrando detalhes de pacotes selecionados.
-
-	[https://bitbucket.org/kachelaqa/pkgbrowser/wiki/Home](https://bitbucket.org/kachelaqa/pkgbrowser/wiki/Home) || [pkgbrowser](https://aur.archlinux.org/packages/pkgbrowser/)
 
 *   **tkPacman** — Depende apenas de Tcl/Tk e X11 e interage com base de dados de pacotes via a CLI do *pacman*.
 

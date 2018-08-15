@@ -24,14 +24,14 @@ Hay que señalar también que la opción de apagar un determinado sonido, mientr
 
 ## En general
 
-El altavoz del PC puede ser desactivado [removiendo](/index.php/Kernel_modules_(Espa%C3%B1ol)#Eliminaci.C3.B3n "Kernel modules (Español)") el módulo `pcspkr`:
+El altavoz del PC se desactiva [deshabilitando](/index.php/Kernel_modules_(Espa%C3%B1ol)#Manejar_m.C3.B3dulos_manualmente "Kernel modules (Español)") el [módulo del núcleo](/index.php/Kernel_module_(Espa%C3%B1ol) "Kernel module (Español)") `pcspkr`:
 
 ```
 # rmmod pcspkr
 
 ```
 
-Coloque en [blacklisting](/index.php/Kernel_modules#Blacklisting "Kernel modules") el módulo `pcspkr` para evitar que [udev](/index.php/Udev "Udev") lo cargue en el arranque.
+Coloque en la [lista negra](/index.php/Kernel_modules_(Espa%C3%B1ol)#Lista_negra "Kernel modules (Español)") el módulo `pcspkr` para evitar que [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") lo cargue en el arranque.
 
 ```
 # echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf

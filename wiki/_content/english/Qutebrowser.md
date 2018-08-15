@@ -136,7 +136,7 @@ Then set the following in qutebrowser:
 
 Websites may be able to identify you based on combining information on screen size, user-agent, HTTP_ACCEPT headers, and more. See [[1]](https://panopticlick.eff.org/) for more information and to test the uniqueness of your browser. Below are a few steps that can be taken to make your qutebrowser installation more "generic".
 
-Additionally see [Firefox/Privacy#Configuration tweaks](/index.php/Firefox/Privacy#Configuration_tweaks "Firefox/Privacy") for more ideas.
+Additionally see [Firefox/Privacy#Configuration](/index.php/Firefox/Privacy#Configuration "Firefox/Privacy") for more ideas.
 
 #### Set a common user-agent
 

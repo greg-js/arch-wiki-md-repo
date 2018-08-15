@@ -283,12 +283,7 @@ The [Dropbox](https://en.wikipedia.org/wiki/Dropbox_(service) LAN sync feature [
 # iptables -A INPUT -p tcp --dport 17500 -j REJECT --reject-with icmp-port-unreachable
 
 ```
-
-```
-# iptables -nvL --line-numbers
-
-```
-
+ `# iptables -nvL --line-numbers` 
 ```
 Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination
@@ -310,12 +305,7 @@ Now, say we change our mind about Dropbox and decide to install it on our comput
 # iptables -R INPUT 1 -p tcp --dport 17500 ! -s 10.0.0.85 -j REJECT --reject-with icmp-port-unreachable
 
 ```
-
-```
-# iptables -nvL --line-numbers
-
-```
-
+ `# iptables -nvL --line-numbers` 
 ```
 Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination
@@ -337,12 +327,7 @@ So we write a new rule to allow our trusted user immediately. Using `-I` to inse
 # iptables -I INPUT -p tcp --dport 17500 -s 10.0.0.85 -j ACCEPT -m comment --comment "Friendly Dropbox"
 
 ```
-
-```
-# iptables -nvL --line-numbers
-
-```
-
+ `# iptables -nvL --line-numbers` 
 ```
 Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination
@@ -366,11 +351,7 @@ And replace our second rule with one that rejects everything on port `17500`:
 
 Our final rule list now looks like this:
 
-```
-# iptables -nvL --line-numbers
-
-```
-
+ `# iptables -nvL --line-numbers` 
 ```
 Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination

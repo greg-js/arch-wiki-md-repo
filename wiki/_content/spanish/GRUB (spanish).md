@@ -49,8 +49,7 @@ Artículos relacionados
             *   [5.2.1.5 Entrada de menú para «Apagar»](#Entrada_de_men.C3.BA_para_.C2.ABApagar.C2.BB)
             *   [5.2.1.6 Entrada de menú para «Reiniciar»](#Entrada_de_men.C3.BA_para_.C2.ABReiniciar.C2.BB)
             *   [5.2.1.7 Entrada de menú para Windows instalado en modo BIOS-MBR](#Entrada_de_men.C3.BA_para_Windows_instalado_en_modo_BIOS-MBR)
-        *   [5.2.2 Con Windows usando EasyBCD y NeoGRUB](#Con_Windows_usando_EasyBCD_y_NeoGRUB)
-        *   [5.2.3 parttool para mostrar/ocultar particiones](#parttool_para_mostrar.2Focultar_particiones)
+        *   [5.2.2 parttool para mostrar/ocultar particiones](#parttool_para_mostrar.2Focultar_particiones)
     *   [5.3 LVM](#LVM)
     *   [5.4 RAID](#RAID)
     *   [5.5 Múltiples entradas](#M.C3.BAltiples_entradas)
@@ -666,25 +665,6 @@ x:\> "bootrec.exe /RebuildBcd".
 El archivo `/etc/grub.d/40_custom` se puede utilizar como una plantilla para crear `/etc/grub.d/nn_custom`. Donde `nn` define la prelación, que indica el orden en que los scritps se ejecutan. El orden de los scripts al ejecutarse determina su lugar en el menú de arranque de grub.
 
 **Nota:** `nn` debe ser mayor que 06 para asegurarse de que los scripts necesarios se ejecutan primero.
-
-#### Con Windows usando EasyBCD y NeoGRUB
-
-Puede que NeoGRUB de EasyBCD no entienda el nuevo formato del menú de GRUB, por lo que será necesario efectuar la carga de GRUB, reemplazando el contenido de su `C:\NST\menu.lst` con:
-
-```
-default 0
-timeout 1
-
-```
-
-```
-title       Cargar en cadena con GRUB v2
-root        (hd0,7)
-kernel      /boot/grub/i386-pc/core.img
-
-```
-
-Por último, [regenere el archivo principal de GRUB](#Generar_el_archivo_de_configuraci.C3.B3n_principal).
 
 #### parttool para mostrar/ocultar particiones
 

@@ -61,7 +61,7 @@ Rebuild your initcpio via mkinitcpio. See [mkinitcpio#Image creation and activat
 
 **Tip:** For a quick resume, it is recommended to put **uswsusp** *before* **fbsplash** or even drop `fadein`, if using a Fbcondecor kernel.
 
-If you have trouble getting fbsplash to work and your machine uses KMS (Kernel Mode Setting), try [adding the appropriate driver to mkinitcpio.conf](/index.php/Intel#KMS_.28Kernel_Mode_Setting.29 "Intel").
+If you have trouble getting fbsplash to work and your machine uses KMS (Kernel Mode Setting), try [adding the appropriate driver to mkinitcpio.conf](/index.php/Intel_graphics#Enable_early_KMS "Intel graphics").
 
 ## Console backgrounds
 

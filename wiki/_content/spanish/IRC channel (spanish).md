@@ -1,208 +1,125 @@
+**Estado de la traducción:** este artículo es una versión traducida de [IRC channel](/index.php/IRC_channel "IRC channel"). Fecha de la última traducción/revisión: **2018-08-13**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=IRC_channel&diff=0&oldid=534201).
+
+Related articles
+
+*   [ArchWiki:IRC](/index.php/ArchWiki:IRC "ArchWiki:IRC")
+*   [Comunidades internacionales](/index.php/International_communities_(Espa%C3%B1ol) "International communities (Español)")
+*   [phrik](/index.php/Phrik "Phrik")
+
+**Nota:** No modifique esta página a menos que sea un operador de canal en #archlinux. Le invitamos a que use la página de discusión.
+
+Para unirse a los canales [IRC](https://en.wikipedia.org/wiki/es:Internet_Relay_Chat se incluye en el artículo oficial de [instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)").
+
+Debe familiarizarse con nuestro [código de conducta](/index.php/Code_of_conduct_(Espa%C3%B1ol) "Code of conduct (Español)") y en particular con el de [IRC](/index.php/Code_of_conduct_(Espa%C3%B1ol)#IRC "Code of conduct (Español)") antes de unirse a cualquiera de los canales oficiales. Para obtener una lista de las abreviaturas comúnmente utilizadas, consulte la [terminología de Arch](/index.php/Arch_terminology_(Espa%C3%B1ol) "Arch terminology (Español)") y la [jerga de IRC](http://www.ircbeginner.com/ircinfo/abbreviations.html).
+
 ## Contents
 
-*   [1 Introducción](#Introducci.C3.B3n)
-    *   [1.1 Uso](#Uso)
-*   [2 #archlinux - El canal oficial de soporte](#.23archlinux_-_El_canal_oficial_de_soporte)
-    *   [2.1 Reglas de #archlinux](#Reglas_de_.23archlinux)
-    *   [2.2 Directrices de #archlinux](#Directrices_de_.23archlinux)
-    *   [2.3 Operadores de #archlinux](#Operadores_de_.23archlinux)
-*   [3 #archlinux-offtopic](#.23archlinux-offtopic)
-    *   [3.1 Reglas de #archlinux-offtopic](#Reglas_de_.23archlinux-offtopic)
-    *   [3.2 Operadores de #archlinux-offtopic](#Operadores_de_.23archlinux-offtopic)
-*   [4 Información General](#Informaci.C3.B3n_General)
-    *   [4.1 Abreviaciones y jerga](#Abreviaciones_y_jerga)
+*   [1 Canales principales](#Canales_principales)
+    *   [1.1 Registro](#Registro)
+    *   [1.2 Operadores del canal](#Operadores_del_canal)
+*   [2 Otros canales](#Otros_canales)
+    *   [2.1 Canales IRC internacionales](#Canales_IRC_internacionales)
 
-## Introducción
+## Canales principales
 
-El canal [IRC](https://en.wikipedia.org/wiki/es:Internet_Relay_Chat "wikipedia:es:Internet Relay Chat") oficial de Arch Linux es **#archlinux** en la red [Freenode](http://www.freenode.net/).
+**Nota:**
 
-Para el canal oficial de soporte en español entrar a **#archlinux-es** en la misma red de Freenode.
+*   Debido al abuso, varias puertas de enlace y clientes web pueden ser prohibidos algunas veces. Si tiene problemas, use un cliente IRC "*apropiado*" o solicite a uno de los operadores una exención de prohibición (`+e`).
+*   Las estadísticas del canal se registran para [#archlinux-offtopic](https://alyp.tk/stats/aotstats.html). Hable con *jp/alyptik* si desea optar por no participar permanentemente.
 
-También hay una serie de canales dedicados a Arch Linux mantenidos por miembros de la comunidad. Mira [IRC channels (Español)](/index.php/IRC_channels_(Espa%C3%B1ol) "IRC channels (Español)") para ver una lista.
+Esta sección trata sobre [#archlinux](ircs://chat.freenode.net/archlinux), el canal de soporte principal de Arch Linux en [IRC](https://en.wikipedia.org/wiki/es:Internet_Relay_Chat "wikipedia:es:Internet Relay Chat"), y [#archlinux-offtopic](ircs://chat.freenode.net/archlinux-offtopic), el canal social principal de Arch Linux, ambos disponibles en la red [Freenode](https://freenode.net/).
 
-### Uso
+El tema central de **#archlinux** es el soporte y la discusión general sobre Arch Linux.
 
-Para unirte a los canales, necesitas un cliente IRC. Wikipedia tiene una [lista de clientes IRC](https://en.wikipedia.org/wiki/Comparison_of_IRC_clients "wikipedia:Comparison of IRC clients"). Puedes usar los siguientes comandos en tu cliente IRC para conectarte a un servidor y unirte a un canal:
+### Registro
 
-```
-/connect irc.freenode.net
-/join #archlinux, #archlinux-es
+Para reducir los mensajes no deseado *(spam)*, **#archlinux** y **# archlinux-offtopic** tienen el modo de canal configurado en `+r` y `+q $~a`. Esto significa que debe identificarse a través de `NickServ` para poder unirse a estos canales y enviar mensajes, respectivamente. Si no está registrado e identificado, será reenviado a **# archlinux-unregistered**.
+
+Para registrarse en NickServ, siga el [FAQ de freenode](https://freenode.net/kb/answer/registration), así como también `NickServ help` cuando se conecte a *chat.freenode.net*:
 
 ```
-
-## #archlinux - El canal oficial de soporte
-
-Este es el canal principal. El tema principal del canal es soporte y discusiones generales sobre Arch Linux.
-
-El canal actualmente está +q $~a. Esto significa que tienes que registrarte e identificarte con el servicio NickServ antes de poder hablar en el canal. Tras conectarte a irc.freenode.net (o chat.freenode.net), usa los siguientes comandos para ayudarte a registrarte con NickServ:
-
-```
-/query nickserv help register
-/query nickserv help identify
+/query NickServ HELP REGISTER
+/query NickServ HELP IDENTIFY
 
 ```
 
-### Reglas de #archlinux
+**Nota:**
 
-*   **Sigue las directrices**
+*   Si sucede que `/query` no funciona en su cliente, puede probar con `/quote NickServ <comando>` o `/msg NickServ <comando>`.
+*   Algunos clientes de IRC tienen un comportamiento por el cual intentan unirse automáticamente a los canales antes de que se haya identificado con NickServ, y para resolverlo debe habilitar SASL. Busque la documentación de su cliente IRC o consulte la página de freenode [SASL](https://freenode.net/kb/answer/sasl) para encontrar instrucciones sobre como habilitarlo.
+*   Puede obtener una lista de personas que pueden ayudarle escribiendo `/msg ChanServ ACCESS #archlinux LIST`, o unirse a **#freenode** y preguntar allí.
 
-	[Freenode network policy](http://freenode.net/policy.shtml)
+### Operadores del canal
 
-	[Freenode channel guidelines](http://freenode.net/channel_guidelines.shtml)
+Los operadores de arco son operaciones tanto en **#archlinux** como en **#archlinux-offtopic**. Consulte la lista a continuación o ejecute `/msg phrik listops` en freenode.
 
-	[Directrices del canal #archlinux](#Directrices_de_.23archlinux)
+Si por algún motivo necesita la ayuda de un operador, no dude en `/query` o `/msg` a nosotros. Aquí está la lista de operadores a 8 de febrero de 2016:
 
-*   **Configuración del cliente y bots**
-    *   Si quieres meter un bot en el canal, pregunta a un operador *antes* de hacerlo.
-    *   La autorespuesta en el canal o en mensajes privados no está permitida (la única excepción en la que se permite es un nick que lo destaque en mp).
-*   **Uso del canal bot**
-    *   Solo hay un canal bot oficial. 'phrik n=archbot@archlinux/bot/phrik'
-    *   Intenta limitar el uso de bots en el canal. Recuerda, puedes hacer: '/query phrik' cuando la salida no es necesaria en el canal.
-    *   No hagas spam con bots
-*   **Publicidad**
-    *   La publicidad no se permite a no ser que un op te haya dado permiso para hacerlo.
-*   **Contenido/enlaces**
-    *   El tema principal del canal es soporte y discusión de Arch Linux.
-    *   Hablar sobre software y hardware en general está permitido si no interfiere con el tema principal del canal.
-    *   Cualquier cosa que no esté cubierta por estas directrices será manejado caso a caso por un op.
-
-### Directrices de #archlinux
-
-1.  El idioma del canal es inglés. Si necesitas ayuda en otro idioma busca [canales internacionales de arch](#Canales_internacionales_de_IRC).
-2.  Lee el `/tema` con regularidad. Normalmente contiene información importante.
-3.  No participes en [*flamewars*](https://en.wikipedia.org/wiki/es:Flame#Flame_wars "wikipedia:es:Flame"), reporta instantaneamente a los que violen esta norma y a los trolls a los [operadores de canales](#Operadores_de_.23archlinux).
-4.  No hagas spam en el canal, usa pastebin para compartir algo mayor de tres líneas. `comando &> salida del comando.txt` en combinación con [clientes pastebin](/index.php/List_of_applications_(Espa%C3%B1ol)#Clientes_pastebin "List of applications (Español)") pueden hacer más sencillo este proceso.
-5.  No abuses de phrik (el canal bot). Si quieres probar comandos o buscar en la función help, hazlo con `/query` o `/msg`. Ejemplo: `/query phrik help <comando>`.
-6.  No pregunte si hay alguien o si alguien usa el programa, solo haz tu pregunta.
-7.  [Haz preguntas inteligentes](http://www.catb.org/~esr/faqs/smart-questions.html). Es más fácil para nosotros ayudar cuando haces preguntas buenas/inteligentes.
-8.  No exijas ayuda, pídela. Espera unos minutos antes de repetir las preguntas. Muchas preguntas son resueltas simplemente por 'otro usuario' como tu.
-9.  No tengas vergüenza, siéntete libre de ayudar a otros; cada usuario puede contribuir con algo. El canal es un proyecto de la comunidad para dar soporte, y depende de sus voluntarios.
-10.  Ayúdate a ti mismo antes de preguntar. Usa la [búsqueda del wiki](/index.php/Special:Search "Special:Search"), usa la [búsqueda en el foro](https://bbs.archlinux.org/search.php), lee [páginas de manual (man pages)](/index.php/Man_page "Man page") y prueba con [Google](http://www.google.es). Este método te dará una respuesta más rápida y te enseñará más.
-11.  Cuando pidas ayuda, responde siempre a la gente que te pida más información; si no conoces la respuesta, dilo.
-12.  Da buen ejemplo. La actitud de cada usuario afecta a todos los usuarios en el canal. Se amistoso y educado para mantener un clima placentero y profesional.
-
-### Operadores de #archlinux
-
-Si por alguna razón necesitas ayuda de un op, no tengas vergüenza de `/query` o `/msg`. Aquí hay una lista de operadores del 4 de septiembre de 2013:
-
-*   Caleb
-*   phrakture
-*   MrElendig / Mion
-*   tigrmesh / tigr
-*   wonder / ioni
+*   alad
 *   brain0
-*   td123
 *   falconindy
-*   vodik
-*   gtmanfred
-*   phrik
+*   gehidore
 *   grawity
-*   jelly1
-
-## #archlinux-offtopic
-
-### Reglas de #archlinux-offtopic
-
-*   **Sigue las directrices**
-
-	[Política de red de Freenode](http://freenode.net/policy.shtml)
-
-	[Directrices de Freenode](http://freenode.net/channel_guidelines.shtml)
-
-*   Los operadores pueden echar gente a su libre albedrío (libre decisión), no seas tonto. Si crees que un operador actuó de forma injusta, dilo.
-
-### Operadores de #archlinux-offtopic
-
-Si por alguna razón necesitas ayuda de un operador, no tengas vergüenza de `/query` o `/msg`. Aquí hay una lista de operadores del 4 de septiembre de 2013:
-
-*   phrakture
-*   Caleb
+*   heftig
+*   jelle
 *   MrElendig / Mion
+*   Namarrgon
+*   pid1
 *   tigrmesh / tigr
-*   brain0
-*   td123
-*   falconindy
-*   wonder / ioni
 *   vodik
-*   gtmanfred
-*   phrik
-*   grawity
-*   jelly1
+*   wonder / ioni
 
-## Información General
+## Otros canales
 
-### Abreviaciones y jerga
+El tamaño de nuestra comunidad condujo a la creación de múltiples canales de IRC. Para obtener una lista de todos los canales en **[chat.freenode.net](ircs://chat.freenode.net)** que contienen `archlinux` en su nombre, utilice el comando `/query alis list *archlinux*`.
 
-Recuerdo que en los canales el idioma oficial es el inglés:
+| Canal | Descripción |
+| [#archlinux64](ircs://chat.freenode.net/archlinux64) | Debate específico para x86_64, principalmente en inglés. |
+| [#archlinux-aur](ircs://chat.freenode.net/archlinux-aur) | Debate general sobre [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)"). |
+| [#archlinux-aurweb](ircs://chat.freenode.net/archlinux-aurweb) | Debate sobre el desarrollo de [aurweb](https://projects.archlinux.org/aurweb.git/). |
+| [#archlinux-bugs](ircs://chat.freenode.net/archlinux-bugs) | Debate centrado en errores. |
+| [#archlinux-classroom](ircs://chat.freenode.net/archlinux-classroom) | Un proyecto que desarrolla y aloja clases para la comunidad Arch Linux. |
+| [#archlinux-devops](ircs://chat.freenode.net/archlinux-devops) | Debate sobre la infraestructura interna de Arch Linux y devops. |
+| [#archlinux-multilib](ircs://chat.freenode.net/archlinux-multilib) | Debate sobre el proyecto Arch Linux Multilib y empaquetado. |
+| [#archlinux-newbie](ircs://chat.freenode.net/archlinux-newbie) | Un espacio para aprender, probar cosas nuevas y pedir ayuda sin temor al ridículo. |
+| [#archlinux-pacman](ircs://chat.freenode.net/archlinux-pacman) | Debate y desarrollo de [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)"). |
+| [#archlinux-projects](ircs://chat.freenode.net/archlinux-projects) | Debate y desarrollo de proyectos (mkinitcpio, abs, dbscripts, devtools, ...) |
+| [#archlinux-reproducible](ircs://chat.freenode.net/archlinux-reproducible) | Debate para lograr compilaciones reproducibles. |
+| [#archlinux-security](ircs://chat.freenode.net/archlinux-security) | Debate de problemas de seguridad dentro de los paquetes de Arch. |
+| [#archlinux-testing](ircs://chat.freenode.net/archlinux-testing) | Debate sobre los repositorios de prueba. |
+| [#archlinux-wiki](ircs://chat.freenode.net/archlinux-wiki) | Debate sobre [ArchWiki](/index.php/ArchWiki:About_(Espa%C3%B1ol) "ArchWiki:About (Español)"), sus artículos y [foros](https://bbs.archlinux.org/). |
+| [#archlinux-women](ircs://chat.freenode.net/archlinux-women) | Debate sobre género e igualdad, principalmente en inglés. |
+| [#archlinux-proaudio](ircs://chat.freenode.net/archlinux-proaudio) | Debate sobre [audio profesional](/index.php/Professional_audio "Professional audio") en Arch. También en el canal no oficial #archaudio. |
 
-	RTFM 
+### Canales IRC internacionales
 
-	Read The Fine Manual
+Los debates internacionales están disponibles en los siguientes canales, también ubicados en la red IRC **[chat.freenode.net](ircs://chat.freenode.net)**, a menos que se indique lo contrario.
 
-	RTFW 
-
-	Read The Fine Wiki
-
-	RTFB 
-
-	Read The Fine BBS
-
-	RTFN 
-
-	Read The Fine News
-
-	[{core,extra,testing, ...}] 
-
-	normalmente denota un [repositorio](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Ejemplo: "los drivers nvidia están en [extra]"
-
-	AUR 
-
-	Arch User Community Repository
-
-	ABS 
-
-	Arch Build System
-
-	ltt 
-
-	less than three -> '<3' -> 'love'
-
-	TU 
-
-	Trusted User
-
-	BBS 
-
-	Bulletin Board System -> 'forum'
-
-	AFAIK 
-
-	As Far As I Know
-
-	IIRC 
-
-	If I Recall Correctly
-
-	IMO 
-
-	In My Opinion
-
-	FTW 
-
-	For The Win
-
-	FTL 
-
-	For The Loss
-
-	nvm 
-
-	never mind / forget it
-
-	ymmv 
-
-	your milage may vary
-
-	+b / B& 
-
-	Ban / Banned
+| Canal | Descripción |
+| [#archlinux-za](ircs://chat.freenode.net/archlinux-za) | Debate (Afrikaans, English) |
+| [#archlinux-br](ircs://chat.freenode.net/archlinux-br) | Debate (Brasileño) |
+| [#archlinux-cn](ircs://chat.freenode.net/archlinux-cn) | Debate (Chino); también en **[irc.oftc.net#arch-cn](ircs://irc.oftc.net/arch-cn)** |
+| [#archlinux-cr](ircs://chat.freenode.net/archlinux-cr) | Debate (Costa Rica) |
+| [#archlinux.cz](ircs://chat.freenode.net/archlinux.cz) | Debate (Checo) |
+| [#archlinux.dk](ircs://chat.freenode.net/archlinux.dk) | Debate (Danés) |
+| [#archlinux.fi](ircs://chat.freenode.net/archlinux.fi) | Debate (Finlandés) |
+| [#archlinux-fr](ircs://chat.freenode.net/archlinux-fr) | Debate (Francés) |
+| [#archlinux-gaelic](ircs://chat.freenode.net/archlinux-gaelic) | Debate (Gaélico) |
+| [#archlinux.de](ircs://chat.freenode.net/archlinux.de) | Debate (Alemán) |
+| [#archlinux-greece](ircs://chat.freenode.net/archlinux-greece) | Debate (Griego) |
+| [#archlinux-il](ircs://chat.freenode.net/archlinux-il) | Debate (Hebreo) |
+| [#archlinux.hu](ircs://chat.freenode.net/archlinux.hu) | Debate (Húngaro) |
+| [#archlinux-it](ircs://chat.freenode.net/archlinux-it) | Debate (Italiano); también en **[irc.azzurra.org#archlinux](irc://irc.azzurra.org/archlinux)** |
+| [#archlinux-nordics](ircs://chat.freenode.net/archlinux-nordics) | Debate (los nórdicos: danés, finlandés, noruego y sueco) |
+| [#archlinux-kr](ircs://chat.freenode.net/archlinux-kr) | Debate (Koreano) |
+| [#archlinux-ir](ircs://chat.freenode.net/archlinux-ir) | Debate (Persa) |
+| [#archlinux.org.pl](ircs://chat.freenode.net/archlinux.org.pl) | Debate (Polaco) |
+| [#archlinux-pt](ircs://chat.freenode.net/archlinux-pt) | Debate (Portugués) |
+| [#archlinux.ro](ircs://chat.freenode.net/archlinux.ro) | Debate (Rumano) |
+| [#archlinux-ru](ircs://chat.freenode.net/archlinux-ru) | Debate (Ruso); también en **[irc.mibbit.net#archlinux-ru](irc://irc.mibbit.net/archlinux-ru)** |
+| [#archlinux-rs](ircs://chat.freenode.net/archlinux-rs) | Debate (Serbio) |
+| [#archlinux-es](ircs://chat.freenode.net/archlinux-es) | Debate (Español) |
+| [#archlinux.se](ircs://chat.freenode.net/archlinux.se) | Debate (Sueco) |
+| [#archlinux-tr](ircs://chat.freenode.net/archlinux-tr) | Debate (Turko) |
+| [#archlinux-ve](ircs://chat.freenode.net/archlinux-ve) | Debate (Venezolano) |
+| [#archlinuxvn](ircs://chat.freenode.net/archlinuxvn) | Debate (Vietnamita, Tiếng Việt) |

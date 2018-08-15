@@ -53,7 +53,7 @@ Related articles
     *   [8.2 Play sound from a non-interactive shell (systemd service, cron)](#Play_sound_from_a_non-interactive_shell_.28systemd_service.2C_cron.29)
     *   [8.3 X11 Bell Events](#X11_Bell_Events)
     *   [8.4 Switch on connect](#Switch_on_connect)
-    *   [8.5 Script for switching analogic outputs](#Script_for_switching_analogic_outputs)
+    *   [8.5 Script for switching analog outputs](#Script_for_switching_analog_outputs)
 *   [9 Troubleshooting](#Troubleshooting)
 *   [10 See also](#See_also)
 
@@ -694,7 +694,7 @@ load-module module-switch-on-connect
 
 On KDE/Plasma5 you should furthermore disable module-device-manager. As soon as Plasma5 is started it loads (via start-pulseaudio-x11) the module module-device-manager for pulseaudio to manage the devices. But that module apparently conflicts with module-switch-on-connect. Therefore you should disable that module by editing /bin/start-pulseaudio-x11 and commenting the lines for KDE. Simply logout and login again and in order to renew your pulseaudio session. On connect switching should now work properly.
 
-### Script for switching analogic outputs
+### Script for switching analog outputs
 
 Some sound cards present the option of multiple analog outputs, being switchable through using Pulseaudio profiles. But switching manually can become a chore, so you can use the following commands to switch it:
 

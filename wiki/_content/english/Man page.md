@@ -70,7 +70,7 @@ The research feature is provided by a dedicated cache. By default you may not ha
 
 ```
 
-You should run it everytime a new manpage is installed.
+You should run it every time a new manpage is installed.
 
 Now you can begin your search. For example, to search for man pages related to "password":
 

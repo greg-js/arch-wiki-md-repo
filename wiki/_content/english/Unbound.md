@@ -63,6 +63,8 @@ server:
 
 ```
 
+**Note:** Make sure to have `do-daemonize: no` set in your configuration file, otherwise `unbound.service` will fail to start.
+
 ### Local DNS server
 
 If you want to use *unbound* as your local DNS server, set your nameserver to the loopback addresses `::1` and `127.0.0.1` in your [resolv.conf](/index.php/Resolv.conf "Resolv.conf"). You will want to have your nameserver be [preserved](/index.php/Domain_name_resolution#Overwriting_of_resolv.conf "Domain name resolution").

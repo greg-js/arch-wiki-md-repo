@@ -14,9 +14,10 @@ En un sistema operativo, el reloj (*«clock»*) está determinado por cuatro par
     *   [2.1 UTC en Windows](#UTC_en_Windows)
 *   [3 Huso horario](#Huso_horario)
 *   [4 Desviación del horario](#Desviaci.C3.B3n_del_horario)
-*   [5 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [5.1 El reloj muestra un valor que no es ni UTC ni hora local](#El_reloj_muestra_un_valor_que_no_es_ni_UTC_ni_hora_local)
-*   [6 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [5 Sincronización del reloj](#Sincronizaci.C3.B3n_del_reloj)
+*   [6 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+    *   [6.1 El reloj muestra un valor que no es ni UTC ni hora local](#El_reloj_muestra_un_valor_que_no_es_ni_UTC_ni_hora_local)
+*   [7 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
 ## Reloj del hardware y reloj del sistema
 
@@ -160,7 +161,7 @@ He aquí un ejemplo:
 
 Esto creará un enlace simbólico `/etc/localtime` que apunta a un archivo de información de zonas en `/usr/share/zoneinfo/`. En caso de que decida crear el enlace manualmente, tenga en cuenta que debe ser un enlace relativo, no absoluto, como se especifica en archlinux(7).
 
-Véase [timedatectl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1), [localtime(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/localtime.5), y [archlinux(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7) para más detalles.
+Véase [timedatectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1), [localtime(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/localtime.5), y [archlinux(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7) para más detalles.
 
 **Nota:** Si el archivo de configuración `/etc/timezone` anterior a la instalación de systemd todavía está presente en su sistema, puede eliminarlo de forma segura, puesto que ya no se utilizará.
 
@@ -180,6 +181,34 @@ El reloj del software es muy preciso, pero, como la mayoría de los relojes, no 
 
 *   [NTP](/index.php/Network_Time_Protocol_daemon_(Espa%C3%B1ol) "Network Time Protocol daemon (Español)") puede sincronizar el reloj del software de un sistema GNU/Linux con servidores de hora de internet utilizando el protocolo de tiempo de red ([*«Network Time Protocol»*](https://en.wikipedia.org/wiki/es:Network_Time_Protocol "wikipedia:es:Network Time Protocol")). NTP también puede ajustar la frecuencia de interrupción y el número de pasos por segundo para reducir la deriva del reloj del sistema. La ejecución de NTP también hará que el reloj del hardware está resincronizado cada 11 minutos.
 *   [adjtimex](https://aur.archlinux.org/packages/adjtimex/) en [AUR](/index.php/Arch_User_Repository "Arch User Repository") puede interpretar las variaciones de tiempo del kernel como frecuencias de interrupción, para ayudar a mejorar la deriva del horario del reloj del sistema.
+
+## Sincronización del reloj
+
+El [Protocolo de tiempo de red](https://en.wikipedia.org/wiki/es:Network_Time_Protocol "wikipedia:es:Network Time Protocol") (NTP) es un protocolo para sincronizar los relojes de los sistemas informáticos a través de redes de intercambio de paquetes con latencia variable. Son implementaciones de dicho protocolo:
+
+*   **[Network Time Protocol daemon (Español)](/index.php/Network_Time_Protocol_daemon_(Espa%C3%B1ol) "Network Time Protocol daemon (Español)")** — La [implementación de referencia](https://en.wikipedia.org/wiki/reference_implementation "wikipedia:reference implementation") del protocolo, especialmente recomendado para ser utilizado en servidores de tiempo. También puede ajustar la frecuencia de interrupción y el número de tics por segundo para disminuir la deriva del reloj del sistema, y ​​hará que el reloj hardware se vuelva a sincronizar cada 11 minutos.
+
+	[http://www.ntp.org/](http://www.ntp.org/) || [ntp](https://www.archlinux.org/packages/?name=ntp)
+
+*   **sntp** — Un cliente [SNTP](https://en.wikipedia.org/wiki/Network_Time_Protocol#SNTP "wikipedia:Network Time Protocol") que viene con NTPd. Reemplaza a *ntpdate* y se recomienda en entornos que no sean servidores.
+
+	[http://www.ntp.org/](http://www.ntp.org/) || [ntp](https://www.archlinux.org/packages/?name=ntp)
+
+*   **[systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd")** — Un demonio [SNTP](https://en.wikipedia.org/wiki/Network_Time_Protocol#SNTP "wikipedia:Network Time Protocol") simple que solo implementa un lado del cliente, centrándose solo en el tiempo de consulta de un servidor remoto. Debería ser más que apropiado para la mayoría de las instalaciones.
+
+	[https://www.freedesktop.org/wiki/Software/systemd/](https://www.freedesktop.org/wiki/Software/systemd/) || [systemd](https://www.archlinux.org/packages/?name=systemd)
+
+*   **[OpenNTPD](/index.php/OpenNTPD "OpenNTPD")** — Parte del proyecto OpenBSD e implementa tanto el cliente como el servidor.
+
+	[http://www.openntpd.org/](http://www.openntpd.org/) || [openntpd](https://www.archlinux.org/packages/?name=openntpd)
+
+*   **[Chrony](/index.php/Chrony "Chrony")** — Un cliente y servidor que es amigable con el roaming y diseñado específicamente para sistemas que no están en línea todo el tiempo.
+
+	[https://chrony.tuxfamily.org/](https://chrony.tuxfamily.org/) || [chrony](https://www.archlinux.org/packages/?name=chrony)
+
+*   **ntpclient** — Un cliente NTP simple de línea de comandos.
+
+	[http://doolittle.icarus.com/ntpclient/](http://doolittle.icarus.com/ntpclient/) || [ntpclient](https://aur.archlinux.org/packages/ntpclient/)
 
 ## Solución de problemas
 

@@ -1,6 +1,6 @@
 [Wine](http://www.winehq.org/) es una capa de adaptación (un cargador) capaz de ejecutar aplicaciones de Windows en Linux y otros sistemas operativos compatibles con POSIX. Aplicaciones Windows ejecutadas en Wine se comportan como los programas nativos, ejecutandose sin las restricciones de memoria o comportamiento de un emulador, y con una apariencia similar a la de otras aplicaciones en tu escritorio.
 
-**Advertencia:** SI su usuario puede acceder algun archivo o recurso, programas que sean ejecutados con Wine también tienen acceso. Vea [#Running Wine under a separate user account](#Running_Wine_under_a_separate_user_account) y [Security#Sandboxing applications](/index.php/Security#Sandboxing_applications "Security") para precauciones posibles.
+**Advertencia:** SI su usuario puede acceder algun archivo o recurso, programas que sean ejecutados con Wine también tienen acceso. Consulte [Wine#Running Wine under a separate user account](/index.php/Wine#Running_Wine_under_a_separate_user_account "Wine") y [Security#Sandboxing applications](/index.php/Security#Sandboxing_applications "Security") para precauciones posibles.
 
 ## Contents
 

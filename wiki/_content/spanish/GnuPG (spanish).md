@@ -34,7 +34,8 @@ Related articles
     *   [7.3 pinentry](#pinentry)
     *   [7.4 Iniciar gpg-agent con el usuario systemd](#Iniciar_gpg-agent_con_el_usuario_systemd)
     *   [7.5 Frase de acceso desatendida](#Frase_de_acceso_desatendida)
-*   [8 Fiestas de firmado de claves](#Fiestas_de_firmado_de_claves)
+    *   [7.6 Agente SSH](#Agente_SSH)
+*   [8 Reuniones de firmado de claves](#Reuniones_de_firmado_de_claves)
     *   [8.1 caff](#caff)
 *   [9 Smartcards](#Smartcards)
     *   [9.1 Instalaciones solo con GnuPG](#Instalaciones_solo_con_GnuPG)
@@ -416,7 +417,7 @@ Si un archivo ha sido cifrado ademas de ser firmado, simplemente [descifre](#Cif
 
 *   El socket pricipal `gpg-agent.socket` es usado por *gpg* para conectar al demonio de *gpg-agent*.
 *   EL uso recomendado de `gpg-agent-extra.socket` en un sistema local es habilitar un socket de dominio Unix que reenvía desde un sistema remoto. Esto habilita el uso de *gpg* en el sistema remoto sin exponer las llaves privadas al sistema remoto. Vea [gpg-agent(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpg-agent.1) para más detalles.
-*   El socket `gpg-agent-ssh.socket` puede ser usado por [SSH](/index.php/Secure_Shell_(Espa%C3%B1ol) "Secure Shell (Español)") para guardar las [Llaves SSH](/index.php/SSH_keys_(Espa%C3%B1ol) "SSH keys (Español)") que han sido agregadas con *ssh-add* en cache. Vea [#Agente SSH](#Agente_SSH) para la configuración necesaria.
+*   El socket `gpg-agent-ssh.socket` puede ser usado por [SSH](/index.php/Secure_Shell_(Espa%C3%B1ol) "Secure Shell (Español)") para guardar las [Llaves SSH](/index.php/SSH_keys_(Espa%C3%B1ol) "SSH keys (Español)") que han sido agregadas con *ssh-add* en cache. Consulte [#Agente SSH](#Agente_SSH) para la configuración necesaria.
 *   El socket `dirmngr.socket` inicia un demonio de GnuGP que maneja conexiones con servidores de llaves.
 
 **Nota:** Si se usa una configuración diferente a la usada por defecto [#Variables de Entorno](#Variables_de_Entorno), necesitara [editar](/index.php/Edit "Edit") los archivos de los sockets para usar los valores de `gpgconf --list-dirs`.
@@ -518,15 +519,19 @@ $ gpg --pinentry-mode loopback ...
  `~/.gnupg/gpg.conf`  `pinentry-mode loopback` 
 **Nota:** Es posible que establecer la configuración **pinentry-mode loopback** en *gpg.conf* pueda afectar a otras funcionalidades. Por ello se recomienda usar la opción de la línea de comandos siempre que sea posible. [[1]](https://bugs.g10code.com/gnupg/issue1772)
 
-## Fiestas de firmado de claves
+### Agente SSH
 
-Para permitir a los usuarios validar claves en los servidores y en sus anillos de claves (es decir, asegurarse de que sus propietarios son quienes dicen ser), PGP/GPG usa la conocida como "Red de Confianza". Se celebran eventos de hackers que pretenden mantener esta Red de Confianza, incluyendo fiestas de firmado de claves.
+*gpg-agent* tiene una emulación de agente OpenSSH. Si ya usa el paquete GnuPG, podría considerar usar su agente para almacenar también sus [claves SSH](/index.php/SSH_keys_(Espa%C3%B1ol) "SSH keys (Español)"). Además, algunos usuarios pueden preferir la ventana para introducir el PIN que el agente GnuPG proporciona como parte de su administración de contraseña.
+
+## Reuniones de firmado de claves
+
+Para permitir a los usuarios validar claves en los servidores y en sus anillos de claves (es decir, asegurarse de que sus propietarios son quienes dicen ser), PGP/GPG usa la conocida como "Red de Confianza". Se celebran eventos de hackers que pretenden mantener esta Red de Confianza, incluyendo reuniones de firmado de claves.
 
 El protocolo de firmado de claves [Zimmermann-Sassaman](https://en.wikipedia.org/wiki/Zimmermann%E2%80%93Sassaman_key-signing_protocol "wikipedia:Zimmermann–Sassaman key-signing protocol") es una forma muy efectiva de hacer esto. [Aquí](http://www.cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html) encontrarás un artículo que explica cómo hacerlo.
 
 ### caff
 
-Para un proceso más fácil de firmado de claves y envío de firmas a los propietarios después de una fiesta de firmado de claves, puedes usar la herramienta *caff*. Se puede instalar desde el AUR mediante el paquete [caff-svn](https://aur.archlinux.org/packages/caff-svn/) o puede estar incluída con otras herramientas útiles en el paquete [signing-party-svn](https://aur.archlinux.org/packages/signing-party-svn/). En cualquier caso, habrá un montón de dependencias al instalarla desde el AUR. En su lugar, puedes instalarla desde CPAN con
+Para un proceso más fácil de firmado de claves y envío de firmas a los propietarios después de una reunión de firmado de claves, puedes usar la herramienta *caff*. Se puede instalar desde el AUR mediante el paquete [caff-svn](https://aur.archlinux.org/packages/caff-svn/), pero habrá muchas dependencias al instalarla desde el AUR. En su lugar, puedes instalarla desde CPAN con
 
 ```
 cpanm Any::Moose
@@ -584,9 +589,9 @@ y después cámbialo de nuevo tras usar gpg la primera vez. Es probable que haya
 
 ### El agente se queja del final del archivo
 
-El programa pinentry por defecto es pinentry-gtk-2, que necesita una sesión de DBus para funcionar correctamente. Ver [permisos de sesión](/index.php/General_troubleshooting_(Espa%C3%B1ol)#Compruebe_los_permisos_de_sesi.C3.B3n "General troubleshooting (Español)") para más detalles.
+El programa pinentry por defecto es pinentry-gtk-2, que necesita una sesión de DBus para funcionar correctamente. Ver [permisos de sesión](/index.php/General_troubleshooting_(Espa%C3%B1ol)#Permisos_de_sesi.C3.B3n "General troubleshooting (Español)") para más detalles.
 
-En su lugar, puedes usar `pinentry-qt`. Ver [#pinentry](#pinentry).
+En su lugar, puedes usar `pinentry-qt`. Consulte [#pinentry](#pinentry).
 
 ### Permisos de configuración de KGpg
 

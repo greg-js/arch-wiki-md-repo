@@ -370,8 +370,6 @@ ${execpi 300 ~/.conky/imap.pl}
 
 o donde se haya guardado el archivo.
 
-Alternativamente, se puede usar stunnel como se muestra en: [Conky#How to display the number of new emails (Gmail) in Conky](/index.php/Conky#How_to_display_the_number_of_new_emails_.28Gmail.29_in_Conky "Conky").
-
 ## Contribución de usuarios con ejemplos de configuración
 
 ### Graysky

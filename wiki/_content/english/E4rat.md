@@ -1,3 +1,10 @@
+Related articles
+
+*   [Improve boot performance](/index.php/Improve_boot_performance "Improve boot performance")
+*   [Preload](/index.php/Preload "Preload")
+*   [Ureadahead](/index.php/Ureadahead "Ureadahead")
+*   [Ext4](/index.php/Ext4 "Ext4")
+
 [e4rat](http://e4rat.sourceforge.net/) stands for e4 'reduced access time' (ext4 file system only) and is a project by Andreas Rid and Gundolf Kiefer. The [e4rat range of tools](http://e4rat.sourceforge.net/) are comprised of e4rat-collect, e4rat-realloc and e4rat-preload.
 
 ## Contents
@@ -79,7 +86,7 @@ pkill e4rat-collect
 
 Upon successful boot and after having waited the allotted time you should see the file `/var/lib/e4rat/startup.log`.
 
-Do not forget to remove the e4rat-collect command from your [boot loader configuration file](/index.php/Boot_Loader#Configuration_files "Boot Loader") (not necessary if you inserted it on the grub command line).
+Do not forget to remove the e4rat-collect command from your [Boot Loader](/index.php/Boot_Loader "Boot Loader") configuration file (not necessary if you inserted it on the grub command line).
 
 ### e4rat-realloc
 
@@ -90,7 +97,7 @@ e4rat-realloc /var/lib/e4rat/startup.log
 
 ```
 
-This can take a while depending on how many files you have in your startup.log file. Switching to rescue mode with `systemctl isolate rescue` ([Systemd#Targets table](/index.php/Systemd#Targets_table "Systemd")) may allow for more inodes/blocks to be reallocated as some may not be free while in *multiuser.target*
+This can take a while depending on how many files you have in your startup.log file. Switching to rescue mode with `systemctl isolate rescue` ([Systemd#Mapping_between_SysV_runlevels_and_systemd_targets](/index.php/Systemd#Mapping_between_SysV_runlevels_and_systemd_targets "Systemd")) may allow for more inodes/blocks to be reallocated as some may not be free while in *multiuser.target*
 
 **Note:** It may be worthwhile to repeat the reallocation step multiple times before exiting or rebooting in order to further reduce the fragmentation count. Simply re-run the command a few times to see if this is possible on the your setup. If so you'll see the count number reduced after a few runs. This is perfectly safe and shouldn't cause any issues with booting.
 

@@ -20,7 +20,7 @@ Trojan can be [installed](/index.php/Install "Install") with the [trojan](https:
 
 Trojan cannot run without proper configuration. It uses [JSON](https://en.wikipedia.org/wiki/JSON "wikipedia:JSON") as its config format. All configuration work is done in `/etc/trojan/`. Detailed explanations of each field of the config file can be found [here](https://trojan-gfw.github.io/trojan/config). A convenient config generator is right [here](https://trojan-gfw.github.io/trojan-config-gen/).
 
-Examples of client and server configuration are at `/etc/trojan/client.json-example` and `/etc/trojan/server.json-example`.
+Examples of client and server configuration are at `/usr/share/doc/trojan/examples/client.json-example` and `/usr/share/doc/trojan/examples/server.json-example`.
 
 ### TLS Certificate
 

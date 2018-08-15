@@ -88,7 +88,7 @@ Related articles
 
 ## Installation
 
-NetworkManager can be [installed](/index.php/Install "Install") with the package [networkmanager](https://www.archlinux.org/packages/?name=networkmanager), which contains a daemon, a command line interface (`nmcli`) and a curses‐based interface (`nmtui`). It has functionality for basic DHCP support. For full featured DHCP and if you require IPv6 support, [dhclient](https://www.archlinux.org/packages/?name=dhclient) integrates it. After installed, you should [enable the daemon](#Enable_NetworkManager).
+NetworkManager can be [installed](/index.php/Install "Install") with the package [networkmanager](https://www.archlinux.org/packages/?name=networkmanager), which contains a daemon, a command line interface (`nmcli`) and a curses‐based interface (`nmtui`). It has functionality for basic DHCP support. For full featured DHCP and if you require IPv6 support, [dhclient](https://www.archlinux.org/packages/?name=dhclient) integrates it. After installation, you should [enable the daemon](#Enable_NetworkManager).
 
 Additional interfaces:
 

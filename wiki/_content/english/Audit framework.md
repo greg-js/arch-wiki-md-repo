@@ -6,8 +6,7 @@ The audit framework works by listening to the event reported by the kernel and l
 
 **Note:**
 
-*   As of linux 3.12, the audit framework is not yet compatible with the namespace implementation. If you use namespaces, do not use the audit framework.
-*   Depending on your configuration, it may affect the performance of the system.
+*   Audit framework compatibility with containers was fixed in Linux 3.15, see `[[1]](https://bugzilla.redhat.com/show_bug.cgi?id=893751)`, however interpreting audit records may be difficult as support for namespace ID is still work in progress, see [[2]](https://github.com/linux-audit/audit-kernel/issues/32).
 
 ## Contents
 

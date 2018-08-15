@@ -12,7 +12,7 @@
 
 ## Installation
 
-The standard Go compiler is `go`, which can be installed from the [go](https://www.archlinux.org/packages/?name=go) package. The `go` command also include various tooling such as `go get`, `go doc`, etc. An alternative is [gcc-go](https://www.archlinux.org/packages/?name=gcc-go), which is a Go frontend for the GNU Compiler Collection (GCC). In some cases `gccgo` may do better optimisations. When in doubt: use `go`.
+The standard Go compiler is `go`, which can be installed from the [go](https://www.archlinux.org/packages/?name=go) package. The `go` command also include various tooling such as `go get`, `go doc`, etc. An alternative is [gcc-go](https://www.archlinux.org/packages/?name=gcc-go), which is a Go frontend for the [GNU Compiler Collection](/index.php/GNU_Compiler_Collection "GNU Compiler Collection") (GCC). In some cases `gccgo` may do better optimisations. When in doubt: use `go`.
 
 An additional package that most Go developers will want to install is `go-tools`. This will provide various commonly used tools which will make working with Go easier, such as `goimports`, `guru`, `gorename`, etc.
 

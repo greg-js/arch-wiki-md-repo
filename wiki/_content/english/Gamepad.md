@@ -414,6 +414,8 @@ Your games will now work with bluetooth gamepad as long as xboxdrv is running.
 
 ### Steam Controller
 
+**Note:** Kernel 4.18 [provides a kernel driver](https://lkml.org/lkml/2018/4/16/380) for wired/wireless use of the steam controller as a controller input device without [Steam](/index.php/Steam "Steam").
+
 The [Steam](/index.php/Steam "Steam") client will recognize the controller and provide keyboard/mouse/gamepad emulation while Steam is running. The in-game Steam overlay needs to be enabled and working in order for gamepad emulation to work. You may need to run `udevadm trigger` with root privileges or plug the dongle out and in again, if the controller doesn't work immediately after installing and running Steam. If all else fails, try restarting the computer while the dongle is plugged in.
 
 If you can't get the Steam Controller to work, see [#Steam Controller not pairing](#Steam_Controller_not_pairing).

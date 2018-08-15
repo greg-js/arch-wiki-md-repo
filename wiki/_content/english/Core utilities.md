@@ -269,7 +269,7 @@ For color support, see [Color output in console#grep](/index.php/Color_output_in
 
 See [grep(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grep.1) for more details.
 
-**Tip:** There are *grep* alternatives optimized for VCS source code, such as [ripgrep](https://www.archlinux.org/packages/?name=ripgrep), [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher), and [ack](https://www.archlinux.org/packages/?name=ack).
+**Tip:** There are *grep* alternatives optimized for VCS source code, such as [ripgrep](https://www.archlinux.org/packages/?name=ripgrep), [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher), and [ack](https://www.archlinux.org/packages/?name=ack). There also is [mgrep](https://aur.archlinux.org/packages/mgrep/), a multiline grep.
 
 ### sed
 

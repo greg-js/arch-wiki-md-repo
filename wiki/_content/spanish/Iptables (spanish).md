@@ -6,7 +6,7 @@ Artículos relacionados
 *   [Sshguard](/index.php/Sshguard "Sshguard")
 *   [Fail2ban](/index.php/Fail2ban "Fail2ban")
 
-Iptables es un poderoso [firewall](/index.php/Firewalls_(Espa%C3%B1ol) "Firewalls (Español)") integrado en el kernel de Linux y que forma parte del proyecto [netfilter](https://en.wikipedia.org/wiki/es:Netfilter o una [GUI](/index.php/Firewalls_(Espa%C3%B1ol)#GUI_para_iptables "Firewalls (Español)"). iptables es usado por [IPv4](https://en.wikipedia.org/wiki/es:IPv4 "wikipedia:es:IPv4"), en tanto que ip6tables es usado para [IPv6](https://en.wikipedia.org/wiki/es:IPv6 "wikipedia:es:IPv6").
+Iptables es un poderoso [firewall](/index.php/Firewalls_(Espa%C3%B1ol) "Firewalls (Español)") integrado en el kernel de Linux y que forma parte del proyecto [netfilter](https://en.wikipedia.org/wiki/es:Netfilter o una [GUI](/index.php/Firewalls_(Espa%C3%B1ol)#Frontends_gr.C3.A1ficos "Firewalls (Español)"). iptables es usado por [IPv4](https://en.wikipedia.org/wiki/es:IPv4 "wikipedia:es:IPv4"), en tanto que ip6tables es usado para [IPv6](https://en.wikipedia.org/wiki/es:IPv6 "wikipedia:es:IPv6").
 
 [nftables](http://netfilter.org/projects/nftables/) está programada para [ser liberada con el kernel de Linux 3.13](http://www.phoronix.com/scan.php?page=news_item&px=MTQ5MDU), y vendrá a sustituir definitivamente iptables como la principal utilidad de cortafuegos de Linux. Por ahora, un howto está disponible [aquí](https://home.regit.org/netfilter-en/nftables-quick-howto/).
 

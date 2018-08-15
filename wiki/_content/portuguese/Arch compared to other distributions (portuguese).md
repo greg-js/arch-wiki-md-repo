@@ -80,7 +80,7 @@ Essas distribuições oferecem uma ampla gama de vantagens e pontos fortes e pod
 
 *   O Fedora se recusa a incluir software não livre em repositórios oficiais devido à sua dedicação ao software livre, embora repositórios de terceiros estejam disponíveis para esses pacotes. Arch é mais indulgente em sua disposição para software não livre, deixando o discernimento para o usuário.
 
-*   O Fedora oferece muitas opções de instalação, incluindo um instalador gráfico, bem como uma opção mínima. Os "spins" do Fedora também oferecem sortimentos alternativos de ambientes de desktop para escolher, cada um com uma variedade variada de pacotes padrão. O Arch, por outro lado, fornece apenas alguns scripts destinados a facilitar o processo de uma instalação mínima do sistema base.
+*   O Fedora oferece muitas opções de instalação, incluindo um instalador gráfico, bem como uma opção mínima. Os "spins" do Fedora também oferecem sortimentos alternativos de ambientes de desktop para escolher, cada um com uma modesta variedade de pacotes padrão. O Arch, por outro lado, fornece apenas alguns scripts destinados a facilitar o processo de uma instalação mínima do sistema base.
 
 *   O Fedora possui um ciclo de lançamento programado, mas oferece suporte oficial a atualizações de versões discretas com a ferramenta FedUp. O Arch é um sistema de lançamento contínuo (*rolling release*).
 
@@ -110,7 +110,7 @@ Essas distribuições oferecem uma ampla gama de vantagens e pontos fortes e pod
 
 ### Ubuntu
 
-*   O [Ubuntu](https://www.ubuntu.com/) é uma distribuição popular baseada no Debian e patrocinada comercialmente pela Canonical Ltd., enquanto a Arch é um sistema desenvolvido de forma independente criado a partir do zero.
+*   O [Ubuntu](https://www.ubuntu.com/) é uma distribuição popular baseada no Debian e patrocinada comercialmente pela Canonical Ltd., enquanto o Arch é um sistema desenvolvido de forma independente criado a partir do zero.
 
 *   Os dois projetos têm objetivos muito diferentes e são direcionados para uma base de usuários diferente. O Arch é projetado para usuários que desejam uma abordagem "faça você mesmo", enquanto o Ubuntu fornece um sistema pré-configurado. O Arch apresenta um design mais simples a partir da instalação base em diante, confiando no usuário para personalizá-lo para suas próprias necessidades específicas. Muitos usuários do Arch começaram no Ubuntu e, eventualmente, migraram para o Arch.
 
