@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [List of applications/Internet#List of applications/Internet](/index.php/List_of_applications/Internet#List_of_applications.2FInternet "List of applications/Internet")
+*   [List of applications/Internet#Microblogging clients](/index.php/List_of_applications/Internet#Microblogging_clients "List of applications/Internet")

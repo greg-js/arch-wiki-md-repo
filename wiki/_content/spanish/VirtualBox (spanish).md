@@ -91,7 +91,7 @@ Con el fin de integrar las funciones del sistema anfitrión en los sistemas hué
     *   [6.14 El huésped se congela después de iniciar Xorg](#El_hu.C3.A9sped_se_congela_despu.C3.A9s_de_iniciar_Xorg)
     *   [6.15 «NS_ERROR_FAILURE» y ausencia de elementos del menú](#.C2.ABNS_ERROR_FAILURE.C2.BB_y_ausencia_de_elementos_del_men.C3.BA)
     *   [6.16 Error en Windows huésped «The specified path does not exist. Check the path and then try again.»](#Error_en_Windows_hu.C3.A9sped_.C2.ABThe_specified_path_does_not_exist._Check_the_path_and_then_try_again..C2.BB)
-*   [7 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [7 Consulte también](#Consulte_tambi.C3.A9n)
 
 ## Pasos para preparar Arch Linux como sistema anfitrión
 
@@ -234,7 +234,7 @@ Después de completar la instalación del sistema huésped, instale los [Guest A
 En los sistemas huéspedes que no son Arch, estos pueden ser instalados de dos formas:
 
 *   Ya sea a través del proceso de instalación normal descrito en el manual de VirtualBox (en el sistema anfitrión, haga clic en «Install Guest Additions» en el menú VirtualBox, luego en el sistema huésped, monte el cdrom manualmente en `/mnt` y, después, ejecute `/mnt/VBoxLinuxAdditions.run`);
-    **Nota:** Si ha probado este primer método, el segundo fallará con un [file conflict](/index.php/Pacman#I_get_an_error_when_updating:_.22file_exists_in_filesystem.22.21 "Pacman"): `/usr/bin/VBox*` y `/usr/lib/VBox* exists in filesystem`. Quite los archivos afectados (que son enlaces simbólicos a `/opt`), y repita la operación.
+    **Nota:** Si ha probado este primer método, el segundo fallará con un [file conflict](/index.php/Pacman_(Espa%C3%B1ol)#Error_.C2.ABFailed_to_commit_transaction_.28conflicting_files.29.C2.BB "Pacman (Español)"): `/usr/bin/VBox*` y `/usr/lib/VBox* exists in filesystem`. Quite los archivos afectados (que son enlaces simbólicos a `/opt`), y repita la operación.
 
 *   O bien, mediante un paquete que se puede instalar desde los repositorios oficiales de la distribución.
 
@@ -1059,11 +1059,11 @@ Ahora, debe tener una configuración de máquina virtual funcional cuyos discos 
 
 *   Esta razones hacen recomendable crear, primero, las particiones en una instalación nativa, de lo contrario las particiones no serán tomadas en consideración en su tabla de particiones MBR/GPT.
 
-Después de completar la instalación, arranque el ordenador con un soporte de instalación de GNU/Linux (ya se trate de Arch Linux o no), entre en entorno [chroot](/index.php/Beginners%27_guide_(Espa%C3%B1ol)#Efectuar_chroot_y_configurar_el_sistema_base "Beginners' guide (Español)") en su recién instalado Arch Linux e [#instale y configure un gestor de arranque](/index.php/Beginners%27_guide_(Espa%C3%B1ol)#Instalar_un_gestor_de_arranque "Beginners' guide (Español)").
+Después de completar la instalación, arranque el ordenador con un soporte de instalación de GNU/Linux (ya se trate de Arch Linux o no), entre en entorno [chroot](/index.php/Installation_guide_(Espa%C3%B1ol)#Chroot "Installation guide (Español)") en su recién instalado Arch Linux e [#instale y configure un gestor de arranque](/index.php/Beginners%27_guide_(Espa%C3%B1ol)#Instalar_un_gestor_de_arranque "Beginners' guide (Español)").
 
 ### Mover una instalación nativa de Windows a una máquina virtual
 
-Si desea migrar una instalación de Windows nativa existente a una máquina virtual que se utilizará con VirtualBox en GNU/Linux, siga leyendo. Esta sección solo trata la instalación nativa de Windows utilizando el esquema de particiones MS-DOS/Intel. Su instalación de Windows debe residir en la primera partición del MBR para que esta operación tenga éxito. La operación también es posible en otras particiones, pero no ha sido probada (vea [#Known limitations](#Known_limitations) para conocer detalles).
+Si desea migrar una instalación de Windows nativa existente a una máquina virtual que se utilizará con VirtualBox en GNU/Linux, siga leyendo. Esta sección solo trata la instalación nativa de Windows utilizando el esquema de particiones MS-DOS/Intel. Su instalación de Windows debe residir en la primera partición del MBR para que esta operación tenga éxito. La operación también es posible en otras particiones, pero no ha sido probada (Consulte [#Limitaciones conocidas](#Limitaciones_conocidas) para conocer detalles).
 
 **Advertencia:** Si está utilizando una versión OEM de Windows, este proceso no está autorizado por la licencia de usuario final. De hecho, la licencia OEM normalmente establece las instalación de Windows ligada al hardware específico del equipo donde se instala. Al transferir una instalación de Windows a una máquina virtual se elimina esa vinculación. Asegúrese de que tiene una instalación completa de Windows o un modelo de licencia por volumen antes de continuar. Si tiene una licencia completa de Windows, pero este último no viene en volumen, ni como una licencia especial para varios PC, esto significa que tendrá que quitar la instalación nativa después de que se haya logrado la operación de transferencia.
 
@@ -1298,7 +1298,7 @@ Hay varias soluciones:
 3.  Control Panel -> Network and Internet -> Internet Options -> Security -> Trusted Sites -> Sites -> Añada «VBOXSVR» como un sitio web
 4.  Menú/Inicio -> escriba «gpedit.msc» y pulse Intro -> Computer Configuration -> Administrative Templates -> Windows Components -> Internet Explorer -> Internet Control Panel -> Security Page -> Size to Zone Assignment List -> Ajuste «VBOXSVR» a «2» y reinicie.
 
-## Véase también
+## Consulte también
 
 *   [VirtualBox User Manual](https://www.virtualbox.org/manual/UserManual.html)
 *   [Wikipedia:VirtualBox](https://en.wikipedia.org/wiki/VirtualBox "wikipedia:VirtualBox")

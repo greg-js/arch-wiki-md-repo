@@ -1,10 +1,12 @@
+**Status de tradução:** Esse artigo é uma tradução de [Man page](/index.php/Man_page "Man page"). Data da última tradução: 2018-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Man_page&diff=0&oldid=535241) na versão em inglês.
+
 Artigos relacionados
 
 *   [Color output in console#man](/index.php/Color_output_in_console#man "Color output in console")
 
 [man pages](https://en.wikipedia.org/wiki/Man_page "wikipedia:Man page") — abreviação para "páginas de manual" — são a forma de documentação que está disponível na maioria dos sistemas operacionais tipo UNIX, incluindo o Arch Linux. O comando usado para exibi-los é `man`.
 
-Apesar de seu escopo, páginas man são projetadas para serem documentos autocontidos, consequentemente limitando-as a fazer referência a outras páginas man ao discutir assuntos relatados. Esse é um contraste nítido com os arquivos info compatíveis com hiperlinks, a tentativa do GNU de substituir o formato tradicional de página man.
+Apesar de seu escopo, páginas man são projetadas para serem documentos autocontidos, consequentemente limitando-as a fazer referência a outras páginas man ao discutir assuntos relatados. Esse é um contraste nítido com os [documentos info](/index.php/Manual_info "Manual info") compatíveis com hiperlinks, a tentativa do GNU de substituir o formato tradicional de página man.
 
 [man-db](https://www.archlinux.org/packages/?name=man-db) implementa *man* no Arch Linux, e o [less](/index.php/Core_utilities_(Portugu%C3%AAs)#less "Core utilities (Português)") é o paginador padrão usado com *man*.
 
@@ -223,7 +225,7 @@ Há vários bancos de dado online de páginas man, incluindo:
 *   [Repositório de páginas man do UNIX and Linux Forums](https://www.unix.com/man-page/OpenSolaris/1/man/)
 *   [Repositório de páginas man do Ubuntu](http://manpages.ubuntu.com/)
 
-**Dica:** Você pode usar o [!Bang](https://duckduckgo.com/bang.html) **!archman** do DuckDuckGo para pesquisar pelas [páginas man do Arch Linux](https://jlk.fjfi.cvut.cz/arch/manpages/) diretamente
+**Dica:** Você pode usar o [!Bang](https://duckduckgo.com/bang.html) `!archman` do DuckDuckGo para pesquisar pelas [páginas man do Arch Linux](https://jlk.fjfi.cvut.cz/arch/manpages/) diretamente
 
 **Atenção:** Algumas distribuições fornecem páginas man alteradas ou desatualizadas que se diferem daquelas fornecidas pelo Arch. Exercite o cuidado ao usar páginas man online.
 

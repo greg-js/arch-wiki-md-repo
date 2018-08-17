@@ -1,9 +1,9 @@
-Related articles
+Artículos relacionados
 
 *   [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)")
 *   [Zsh](/index.php/Zsh_(Espa%C3%B1ol) "Zsh (Español)")
 *   [Recomendaciones generales](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)")
-*   [Proyecto GNU](/index.php/GNU_Project_(Espa%C3%B1ol) "GNU Project (Español)")
+*   [Proyecto GNU](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)")
 *   [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)")
 *   [cron](/index.php/Cron "Cron")
 *   [File system search](/index.php/File_system_search "File system search")
@@ -105,7 +105,7 @@ $ echo "\
 
 ### Comprobar el progreso de dd en ejecución
 
-**Tip:** Esta tarea ha sido facilitada en versiones recientes (desde la version 8.24 del paquete [coreutils](https://www.archlinux.org/packages/?name=coreutils)) de *dd*. Para monitorear el progreso de *dd* simplemente adjunte el parámetro `status=progress` al comando.
+**Sugerencia:** Esta tarea ha sido facilitada en versiones recientes (desde la version 8.24 del paquete [coreutils](https://www.archlinux.org/packages/?name=coreutils)) de *dd*. Para monitorear el progreso de *dd* simplemente adjunte el parámetro `status=progress` al comando.
 
 Por defecto, no hay salida para *dd* hasta que la tarea ha terminado. Con *kill* y la señal `USR1` puede forzar a imprimir el estatus sin matar al programa. Habra una segunda terminal como root e introduzca el siguiente comando:
 
@@ -237,7 +237,7 @@ Vea [iconv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) para más det
 
 ### Convertir el fichero reemplazándolo
 
-**Tip:** puede usar [recode](https://www.archlinux.org/packages/?name=recode) en lugar de iconv si no quiere tocar el mtime.
+**Sugerencia:** puede usar [recode](https://www.archlinux.org/packages/?name=recode) en lugar de iconv si no quiere tocar el mtime.
 
 Al contrario que [sed](#sed), *iconv* no provee una opción para convertir remplazando el propio fichero. Sin embargo, `sponge` puede usarse para tal fin, esta incluido en [moreutils](https://www.archlinux.org/packages/?name=moreutils).
 

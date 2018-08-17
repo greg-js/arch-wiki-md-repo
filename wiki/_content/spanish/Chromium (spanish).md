@@ -1,4 +1,4 @@
-Related articles
+Artículos relacionados
 
 *   [Chromium/Tips and tricks](/index.php/Chromium/Tips_and_tricks "Chromium/Tips and tricks")
 *   [Browser plugins](/index.php/Browser_plugins "Browser plugins")

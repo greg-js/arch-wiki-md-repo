@@ -178,9 +178,9 @@ These applications have been designed to centralize the backup of several machin
 
 ## Version control systems
 
-These are traditionally used for keeping track of software development; but if you want to have a simple way to manage your config files in one directory, it might be a good solution.
+While [version control systems](https://en.wikipedia.org/wiki/version_control_system "wikipedia:version control system") are mostly used for source code, they can track any files in a directory.
 
-See [List of applications/Utilities#Version control systems](/index.php/List_of_applications/Utilities#Version_control_systems "List of applications/Utilities") and [Dotfiles#Version control](/index.php/Dotfiles#Version_control "Dotfiles").
+See [List of applications/Utilities#Version control systems](/index.php/List_of_applications/Utilities#Version_control_systems "List of applications/Utilities") and [dotfiles](/index.php/Dotfiles "Dotfiles").
 
 ## See also
 

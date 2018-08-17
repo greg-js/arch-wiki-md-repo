@@ -5,6 +5,8 @@ Related articles
 
 [Dropbox](https://www.dropbox.com) is a file sharing system with a GNU/Linux client. Use it to transparently sync files across computers and architectures. Simply drop files into your `~/Dropbox` folder, and they will automatically sync to your centralized repository.
 
+**Note:** On August 10, 2018, Dropbox announced that they will be ending support for all filesystems except for unencrypted [Ext4](/index.php/Ext4 "Ext4") on November 7, 2018.[[1]](https://www.dropboxforum.com/t5/Syncing-and-uploads/Dropbox-client-warns-me-that-it-ll-stop-syncing-in-Nov-why/m-p/290065/highlight/true#M42255)
+
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -185,7 +187,7 @@ Pay attention to use different `.../.dropbox-dist/dropboxd` binaries. Even when 
 
 ## Dropbox on laptops
 
-Dropbox itself is pretty good at dealing with connectivity problems. If you have a laptop and roam between different network environments, Dropbox will have problems reconnecting if you do not restart it. **Try one of the methods described below first,** if for some reason the problem remains, you may try one of these hackish solutions: [[1]](https://bbs.archlinux.org/viewtopic.php?pid=790905), [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1012343#p1012343).
+Dropbox itself is pretty good at dealing with connectivity problems. If you have a laptop and roam between different network environments, Dropbox will have problems reconnecting if you do not restart it. **Try one of the methods described below first,** if for some reason the problem remains, you may try one of these hackish solutions: [[2]](https://bbs.archlinux.org/viewtopic.php?pid=790905), [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1012343#p1012343).
 
 **Note:** When using any of these methods, you need to prevent Dropbox from doing a standard autostart by unchecking *Dropbox - Preferences - General - Start Dropbox on system startup*. This prevents Dropbox from creating the `~/.config/autostart/dropbox.desktop` file and thus from starting twice.
 

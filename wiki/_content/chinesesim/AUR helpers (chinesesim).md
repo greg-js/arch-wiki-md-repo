@@ -91,7 +91,7 @@
 | [wrapaur](https://aur.archlinux.org/packages/wrapaur/) | Bash | 是 | 是 | 是 | 否 | 否 | 否 | 是 | 否 | – | – | 更新镜像列表显示新闻和AUR评论 |
 | [spinach](https://aur.archlinux.org/packages/spinach/) [[6]](https://github.com/floft/spinach) | Bash | – | [是](https://github.com/floft/spinach/commit/545574700812eb369b9537370f085ec9e5c3f01a) | 是 | 否 | 否 | 否 | 否 | 否 | – | – | – |
 | [burgaur](https://aur.archlinux.org/packages/burgaur/) [[7]](https://github.com/m45t3r/burgaur/issues/7#issuecomment-365599675) | Python/C | – | 可选 | 是 | 否 | 否 | 否 | 否 | 否 | – | – | cower的包装 |
-| [packer](https://aur.archlinux.org/packages/packer/) | Bash | 是 | 否 | 是 | 否 | 否 | 否 | 否 | 否 | – | – | – |
+| [packer-aur-git](https://aur.archlinux.org/packages/packer-aur-git/) | Bash | 是 | 否 | 是 | 否 | 否 | 否 | 否 | 否 | – | – | – |
 | [yaourt](https://aur.archlinux.org/packages/yaourt/) | Bash/C | 拆分 `-Syu` | 否 [[8]](https://github.com/archlinuxfr/yaourt/blob/f373121d23d87031a24135fee593115832d803ec/src/lib/aur.sh#L47) [[9]](https://github.com/archlinuxfr/yaourt/blob/d9790e29cd7194535c793f51d185b7130a396916/src/lib/pkgbuild.sh.in#L415-L438) | [否](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | 否 | [否](https://github.com/archlinuxfr/yaourt/issues/186) | [否](https://github.com/archlinuxfr/yaourt/issues/85) | 可选 | 可选 | 2 | bash,zsh,fish | 备份 ([更改pacman数据库！](https://github.com/archlinuxfr/yaourt/blob/5a82dfe/src/lib/alpm_backup.sh#L38)),ABS支持,显示AUR评论,多语言 |
 
 ## 图形化工具
@@ -125,7 +125,7 @@
 
 ## 维护
 
-*   **aur-out-of-date** — 使用hoster的API检查AUR包的上游改动，
+*   **aur-out-of-date** — 使用hoster的API检查AUR包的上游改动。
 
 	[https://github.com/simon04/aur-out-of-date](https://github.com/simon04/aur-out-of-date) || [aur-out-of-date](https://aur.archlinux.org/packages/aur-out-of-date/)
 

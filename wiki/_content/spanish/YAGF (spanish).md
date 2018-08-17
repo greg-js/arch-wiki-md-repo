@@ -1,4 +1,4 @@
-Related articles
+Artículos relacionados
 
 *   [Listado de aplicaciones#Software OCR](/index.php/List_of_applications_(Espa%C3%B1ol)#Software_de_reconocimiento_.C3.B3ptico_de_caracteres_.28siglas_en_ingl.C3.A9s_OCR.29 "List of applications (Español)")
 

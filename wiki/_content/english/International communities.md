@@ -142,6 +142,7 @@ This list is by no means complete. If you know of a community that is not listed
 ## Taiwan
 
 *   Homepage: [https://archlinux.tw/](https://archlinux.tw/)
+*   Telegram chat: [https://t.me/ArchLinuxTaiwan](https://t.me/ArchLinuxTaiwan)
 *   Forum: [https://groups.google.com/forum/#!forum/archlinux-tw-general](https://groups.google.com/forum/#!forum/archlinux-tw-general)
 *   Wiki: [Main page (正體中文)](/index.php/Main_page_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Main page (正體中文)")
 

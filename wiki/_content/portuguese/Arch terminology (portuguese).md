@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Arch terminology](/index.php/Arch_terminology "Arch terminology"). Data da última tradução: 2018-08-12\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_terminology&diff=0&oldid=534146) na versão em inglês.
+
 A intenção desta página é desmistificar os termos comumente usados pela comunidade do Arch Linux. Sinta-se à vontade para adicionar ou modificar quaisquer termos, mas por favor use a opção de editar da opção específica. Se você decidir adicionar algum termo, por favor adicione-o em ordem alfabética.
 
 **Nota:** Ao traduzir este artigo, foram mantidos em inglês (original) os termos apresentados nos títulos das seções, para facilitar quem encontrou esses termos em algum tipo de conversa ou tópico de fórum em inglês e busca saber do que se trata. Porém, a tradução de cada termo é apresentada dentro da respectiva seção.

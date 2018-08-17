@@ -22,10 +22,9 @@ Redmine is written using the [Ruby on Rails](/index.php/Ruby_on_Rails "Ruby on R
         *   [1.2.5 SQLite 3](#SQLite_3)
     *   [1.3 Web Server](#Web_Server)
         *   [1.3.1 Apache](#Apache)
-        *   [1.3.2 Mongrel](#Mongrel)
-        *   [1.3.3 Unicorn](#Unicorn)
-        *   [1.3.4 Nginx](#Nginx)
-        *   [1.3.5 Apache Tomcat](#Apache_Tomcat)
+        *   [1.3.2 Unicorn](#Unicorn)
+        *   [1.3.3 Nginx](#Nginx)
+        *   [1.3.4 Apache Tomcat](#Apache_Tomcat)
 *   [2 Optional Prerequisites](#Optional_Prerequisites)
     *   [2.1 SCM (Source Code Management)](#SCM_.28Source_Code_Management.29)
     *   [2.2 ImageMagick (recommended)](#ImageMagick_.28recommended.29)
@@ -122,10 +121,6 @@ Not supported for multi-user production use. So, it will not be detailed how to 
 
 To install [apache](https://www.archlinux.org/packages/?name=apache) simply refer to [Apache](/index.php/Apache "Apache").
 
-#### Mongrel
-
-To install Mongrel server (ruby gem) simply refer to [Ruby on Rails#Mongrel](/index.php/Ruby_on_Rails#Mongrel "Ruby on Rails").
-
 #### Unicorn
 
 To install Unicorn server (ruby gem) simply refer to [Ruby on Rails#Unicorn](/index.php/Ruby_on_Rails#Unicorn "Ruby on Rails").
@@ -136,7 +131,7 @@ To install [nginx](https://www.archlinux.org/packages/?name=nginx) simply refer 
 
 #### Apache Tomcat
 
-To install [tomcat6](https://www.archlinux.org/packages/?name=tomcat6) or [tomcat7](https://www.archlinux.org/packages/?name=tomcat7) simply refer to [Tomcat](/index.php/Tomcat "Tomcat").
+To install [tomcat8](https://www.archlinux.org/packages/?name=tomcat8) or [tomcat7](https://www.archlinux.org/packages/?name=tomcat7) simply refer to [Tomcat](/index.php/Tomcat "Tomcat").
 
 ## Optional Prerequisites
 
@@ -178,7 +173,7 @@ To enable [OpenID](http://janrain.com/openid-enabled) support, is required a ver
 
 Download, build and install the [redmine](https://aur.archlinux.org/packages/redmine/) package from the [AUR](/index.php/AUR "AUR").
 
-**Note:** Detailed build instructions are in [Build the package](/index.php/Arch_User_Repository#Build_the_package "Arch User Repository"). It is **HIGHLY** recommended to read the [AUR](/index.php/AUR "AUR") page to understand what are you doing.
+**Note:** Detailed build instructions are in [Arch User Repository#Build and install the package](/index.php/Arch_User_Repository#Build_and_install_the_package "Arch User Repository"). It is **HIGHLY** recommended to read the [AUR](/index.php/AUR "AUR") page to understand what are you doing.
 
 ### Database Configuration
 

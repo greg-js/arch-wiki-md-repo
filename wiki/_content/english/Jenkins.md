@@ -6,7 +6,7 @@
 
 ## Setup
 
-Project configuration can be done using the built-in web interface. To access it [start/enable](/index.php/Start/enable "Start/enable") `jenkins.service`. You can now open `[http://localhost:8080](http://localhost:8080)` with your browser and start setting up Jenkins.
+Project configuration can be done using the built-in web interface. To access it [start/enable](/index.php/Start/enable "Start/enable") `jenkins.service`. You can now open `[http://localhost:8090](http://localhost:8090)` for [jenkins](https://www.archlinux.org/packages/?name=jenkins) or `[http://localhost:8080](http://localhost:8080)` for [jenkins-lts](https://aur.archlinux.org/packages/jenkins-lts/) with your browser and start setting up Jenkins.
 
 The configuration file of the daemon running Jenkins is located at `/etc/conf.d/jenkins`. It is sourced by the according `.service` file and takes effect immediately after a restart.
 

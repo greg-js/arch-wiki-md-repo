@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma versão localizada de [Dnsmasq](/index.php/Dnsmasq "Dnsmasq"). Data da última tradução: 2014-10-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dnsmasq&diff=0&oldid=338131) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dnsmasq](/index.php/Dnsmasq "Dnsmasq"). Data da última tradução: 2014-10-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dnsmasq&diff=0&oldid=338131) na versão em inglês.
 
 **dnsmasq** proporciona serviços como cache DNS e servidor DHCP. Como um Sistema de Nomes de Domínio (DNS), pode armazenar em cache as consultas DNS para melhorar a velocidade de conexão para sites previamente visitados. E como um servidor DHCP, *dnsmasq* pode ser usado para prover endereços IP internos e roteamento para computadores em uma LAN. Ambos serviços podem ser implementados. *dnsmasq* é considerado leve e de fácil configuração; é próprio para o uso pessoal como também para uma rede com até 50 computadores. Ainda oferece suporte a servidor [PXE](/index.php/PXE "PXE").
 

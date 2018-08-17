@@ -669,7 +669,7 @@ This configuration stub shows how to cache queries to your normal DNS recursor l
 
 ###### Uncensored DNS
 
-If your local DNS recursor is in some way censored or interferes with DNS queries, see [Resolv.conf#Alternative DNS servers](/index.php/Resolv.conf#Alternative_DNS_servers "Resolv.conf") for alternatives and add them in a seperate server-section in `/etc/pdnsd.conf` as per [Pdnsd#DNS servers](/index.php/Pdnsd#DNS_servers "Pdnsd").
+If your local DNS recursor is in some way censored or interferes with DNS queries, see [Alternative DNS services](/index.php/Alternative_DNS_services "Alternative DNS services") for alternatives and add them in a seperate server-section in `/etc/pdnsd.conf` as per [Pdnsd#DNS servers](/index.php/Pdnsd#DNS_servers "Pdnsd").
 
 ## TorDNS
 

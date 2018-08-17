@@ -17,3 +17,7 @@
 15.  Als er andere vertalingen voor het artikel bestaan, voeg de juiste interwiki links toe.
 16.  Onderaan zie je alle categorieën waarin de pagina zich bevindt. Kijk na dat er geen onbestaande, of "rode" categorieën bestaan. Anders maak deze aan zoals je een normaal artikel aanmaakt.
 17.  (optioneel) Maak een andere pagina aan, b.v [ArchWiki Vertaalteam](/index.php?title=ArchWiki_Vertaalteam&action=edit&redlink=1 "ArchWiki Vertaalteam (page does not exist)"), and voeg als enige inhoud `#REDIRECT [[ArchWiki_Translation_Team_(''Taal'')]]` toe.
+
+## Templates
+
+There are no Dutch templates.

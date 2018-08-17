@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma versão localizada de [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=532704) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=532704) na versão em inglês.
 
 Artigos relacionados
 

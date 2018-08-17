@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma versão localizada de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=532688) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=532688) na versão em inglês.
 
 Artigos relacionados
 

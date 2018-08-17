@@ -1,3 +1,8 @@
+Related articles
+
+*   [File recovery](/index.php/File_recovery "File recovery")
+*   [Sort images by resolution](/index.php/Sort_images_by_resolution "Sort images by resolution")
+
 **Note:** To speed up access to the recovered or restored files you can use [shake](https://www.archlinux.org/packages/?name=shake) utility to defragment them.
 
 ## Contents
@@ -73,7 +78,7 @@ File names with special symbols especially if file names begins with them are ha
 
 ### Creation of a file with data for arrays
 
-In this example the [xdg-mime](/index.php/Xdg-open#get_mime_type "Xdg-open") is used to gather information about the mime types but the `file --mime-type -b` and `file -i -b` commands does the same output as the `xdg-mime query filetype` command, with more or less details. This script will collect a lot of more additional information about the files into the **info-mime-size-db.txt**. Put the script in the destination directory that you used in *photorec*, make it executable and use path to files from the list with unique checksums described from above. e.g. `awk -F" | " '{system("start-collect-file-info.sh "$3" "$1" "$2)}' *file_list-unique_checksums*`.
+In this example the [xdg-mime](/index.php/Xdg-utils#xdg-mime "Xdg-utils") is used to gather information about the mime types but the `file --mime-type -b` and `file -i -b` commands does the same output as the `xdg-mime query filetype` command, with more or less details. This script will collect a lot of more additional information about the files into the **info-mime-size-db.txt**. Put the script in the destination directory that you used in *photorec*, make it executable and use path to files from the list with unique checksums described from above. e.g. `awk -F" | " '{system("start-collect-file-info.sh "$3" "$1" "$2)}' *file_list-unique_checksums*`.
 
  `start-collect-file-info.sh` 
 ```

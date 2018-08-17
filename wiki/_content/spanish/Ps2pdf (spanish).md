@@ -23,7 +23,7 @@ ps2pdf -sPAPERSIZE=a4 -dOptimize=true -dEmbedAllFonts=true archivops.ps
 *   ps2pdf es la envoltura a ghostscript (ps2pdf es parte del paquete ghostscript)
 *   con -sPAPERSIZE=algo definís el tamaño del papel
 
-**Tip:** ¿Preguntándose acerca de tamaños de papel validos? Mire [aquí](http://www.cs.wisc.edu/~ghost/doc/cvs/Use.htm#Known_paper_sizes)
+**Sugerencia:** ¿Preguntándose acerca de tamaños de papel validos? Mire [aquí](http://www.cs.wisc.edu/~ghost/doc/cvs/Use.htm#Known_paper_sizes)
 
 *   -dOptimize=true permite al PDF creado ser optimizado para cargar
 *   -dEmbedAllFonts=true hace que las fuentes se vean siempre bien

@@ -1,4 +1,4 @@
-Related articles
+Artículos relacionados
 
 *   [Xorg](/index.php/Xorg "Xorg")
 *   [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics")

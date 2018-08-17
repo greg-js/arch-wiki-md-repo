@@ -1,3 +1,8 @@
+Artículos relacionados
+
+*   [dmenu](/index.php/Dmenu "Dmenu")
+*   [wmii](/index.php/Wmii "Wmii")
+
 [dwm](http://dwm.suckless.org/) es un gestor de ventanas dinámico para [X](/index.php/X "X"). Permite posicionar las mismas en forma de mosaico (tiling), en forma de pila (stack), y en pantalla completa (monocle), así como en diversas modalidades adicionales mediante la ayuda de parches opcionales. La disposición de las ventanas puede ser aplicada en forma dinámica optimizando así el entorno en función de la aplicación en uso y la tarea a realizar. dwm es extremadamente liviano y rápido, está escrito en C con la premisa de que su código fuente no supere las 2000 líneas. Provee soporte de multi-monitor para xrandr y Xinerama.
 
 ## Contents
@@ -75,7 +80,7 @@ $ makepkg -i
 
 Ésto compilará dwm, creará un paquete de Arch Linux conteniendo los archivos resultantes e instalará los paquetes, todo en un sólo paso. De ocurrir un problema durante éste proceso, verifique el mensaje mostrado por pantalla en busca de información relacionada.
 
-**Tip:** Si el directorio (`~/dwm`) es conservado, puede ser utilizado posteriormente para realizar cambios en la configuración por defecto.
+**Sugerencia:** Si el directorio (`~/dwm`) es conservado, puede ser utilizado posteriormente para realizar cambios en la configuración por defecto.
 
 ## Configuración
 

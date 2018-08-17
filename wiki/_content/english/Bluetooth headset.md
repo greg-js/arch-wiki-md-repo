@@ -45,7 +45,7 @@ Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio pl
 *   [5 Switch between HSV and A2DP setting](#Switch_between_HSV_and_A2DP_setting)
     *   [5.1 A2DP not working with PulseAudio](#A2DP_not_working_with_PulseAudio)
         *   [5.1.1 Socket interface problem](#Socket_interface_problem)
-        *   [5.1.2 A2DP profile is unavailable](#A2DP_profile_is_unavailable)
+        *   [5.1.2 A2DP sink profile is unavailable](#A2DP_sink_profile_is_unavailable)
         *   [5.1.3 Gnome with GDM](#Gnome_with_GDM)
 *   [6 Headset via Bluez5/bluez-alsa](#Headset_via_Bluez5.2Fbluez-alsa)
 *   [7 See also](#See_also)
@@ -156,7 +156,7 @@ AutoEnable=true
 
 **Note:** The A2DP profile will not activate using this method with pulseaudio 9/10 due to an ongoing bug, leading to possible low quality mono sound. See [#A2DP not working with PulseAudio](#A2DP_not_working_with_PulseAudio) for a possible solution.
 
-You can use [GNOME Bluetooth](/index.php/Bluetooth#GNOME_Bluetooth "Bluetooth") graphical front-end to easily configure your bluetooth headset.
+You can use [GNOME Bluetooth](/index.php/Bluetooth#Graphical "Bluetooth") graphical front-end to easily configure your bluetooth headset.
 
 First, you need to be sure that `bluetooth.service` systemd unit is running.
 
@@ -743,22 +743,60 @@ $ pacmd set-card-profile *card_number* a2dp_sink
 
 ```
 
+For more information about PulseAudio profiles, see [PulseAudio Documentation](https://freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Bluetooth/#index1h2).
+
 ### A2DP not working with PulseAudio
 
 #### Socket interface problem
 
 If PulseAudio fails when changing the profile to A2DP with bluez 4.1+ and PulseAudio 3.0+, you can try disabling the Socket interface from `/etc/bluetooth/audio.conf` by removing the line `Enable=Socket` and adding line `Disable=Socket`.
 
-#### A2DP profile is unavailable
+#### A2DP sink profile is unavailable
 
-As of Pulseaudio 10.0, when connecting to headset via Bluedevil or similar, A2DP profile is unavailable. As mentioned in [bug 92102](https://bugs.freedesktop.org/show_bug.cgi?id=92102) discussion, a workaround is connecting to a headset via `bluetoothctl`:
+When the A2DP sink profile is unavailable it won't be possible to switch to the A2DP sink (output) with a PulseAudio front-end and the A2DP sink won't even be listed. This can be confirmed with `pactl`.
+
+```
+ $ pactl list | grep -C2 A2DP
+      Profiles:
+              headset_head_unit: Headset Head Unit (HSP/HFP) (sinks: 1, sources: 1, priority: 30, available: yes)
+              a2dp_sink: High Fidelity Playback (A2DP Sink) (sinks: 1, sources: 0, priority: 40, available: no)
+              off: Off (sinks: 0, sources: 0, priority: 0, available: yes)
+         Active Profile: headset_head_unit
+
+```
+
+Trying to manually set the card profile with `pacmd` will fail.
+
+```
+ $ pacmd set-card-profile bluez_card.C4_45_67_09_12_00 a2dp_sink
+ Failed to set card profile to 'a2dp_sink'.
+
+```
+
+This is known to happen from version 10.0 of Pulseaudio when connecting to Bluetooth headphones via Bluedevil or another BlueZ front-end. See [related bug report.](https://gitlab.freedesktop.org/pulseaudio/pulseaudio/issues/525)
+
+This issue also appears after initial pairing of Headphones with some Bluetooth controllers (e.g. `0a12:0001, Cambridge Silicon Radio`) which might default to the `Handsfree` or `Headset - HS` service and won't allow switching to the A2DP PulseAudio sink that requires the `AudioSink` service.
+
+Possible solutions:
+
+*   For some headsets, using the headset's volume or play/pause controls while connected can trigger the A2DP profile to become available.
+
+*   It is possible that connecting to a headset via [bluetoothctl](https://www.archlinux.org/packages/?name=bluetoothctl) will make the A2DP sink profile available.
 
 ```
 [bluetooth]# connect *[headset MAC here]*
 
 ```
 
-For some headsets, using the headset's volume or play/pause controls while connected can trigger the A2DP profile to become available.
+*   Manually switching to Bluetooth's `AudioSink` service which would make the A2DP profile and its A2DP PulseAudio sink available. This can be done with blueman-manager which included in [blueman](https://www.archlinux.org/packages/?name=blueman) or by registering the UUID of the AudioSink service with [bluetoothctl](https://www.archlinux.org/packages/?name=bluetoothctl).
+
+```
+ $ bluetoothctl
+ [bluetooth]# menu gatt
+ [bluetooth]# register-service 0000110b-0000-1000-8000-00805f9b34fb
+ [bluetooth]# quit
+
+```
 
 #### Gnome with GDM
 

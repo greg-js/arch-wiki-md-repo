@@ -1,4 +1,4 @@
-Related articles
+Artículos relacionados
 
 *   [Python Package Guidelines](/index.php/Python_Package_Guidelines "Python Package Guidelines")
 *   [Python VirtualEnv](/index.php/Python_VirtualEnv "Python VirtualEnv")

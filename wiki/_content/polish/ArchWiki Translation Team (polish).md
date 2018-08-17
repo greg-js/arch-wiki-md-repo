@@ -22,7 +22,7 @@ Poniżej znajduje się lista artykułów, które istnieją tylko w nieanglojęzy
 
 | Strona | Język | Notatki |
 | [Bootsplash (Русский)](/index.php/Bootsplash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bootsplash (Русский)") | rosyjski |
-| [Collect system information (Español)](/index.php/Collect_system_information_(Espa%C3%B1ol) "Collect system information (Español)") | hiszpański |
+| [Collect system information (Español)](/index.php?title=Collect_system_information_(Espa%C3%B1ol)&action=edit&redlink=1 "Collect system information (Español) (page does not exist)") | hiszpański |
 | [Internet key Momo Design (Italiano)](/index.php/Internet_key_Momo_Design_(Italiano) "Internet key Momo Design (Italiano)") | włoski |
 | [Media Center (Italiano)](/index.php/Media_Center_(Italiano) "Media Center (Italiano)") | włoski |
 | [MYTHTV UNDERTHESTAIRS (Dansk)](/index.php/MYTHTV_UNDERTHESTAIRS_(Dansk) "MYTHTV UNDERTHESTAIRS (Dansk)") | duński |

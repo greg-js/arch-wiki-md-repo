@@ -14,13 +14,13 @@ Splunk's online documentation is open to the public and reasonably comprehensive
 
 *   [1 Installation](#Installation)
     *   [1.1 Manual](#Manual)
-*   [2 Running Splunk](#Running_Splunk)
+*   [2 Starting](#Starting)
 *   [3 Performance](#Performance)
-    *   [3.1 Search Semantics](#Search_Semantics)
-    *   [3.2 Distributed Environment](#Distributed_Environment)
+    *   [3.1 Search semantics](#Search_semantics)
+    *   [3.2 Distributed environment](#Distributed_environment)
     *   [3.3 Indexing](#Indexing)
-*   [4 Debugging and Administration](#Debugging_and_Administration)
-*   [5 Custom Commands](#Custom_Commands)
+*   [4 Debugging and administration](#Debugging_and_administration)
+*   [5 Custom commands](#Custom_commands)
     *   [5.1 Configuration](#Configuration)
     *   [5.2 Library API](#Library_API)
 
@@ -58,7 +58,7 @@ export PATH=$PATH:$SPLUNK_HOME/bin
 
 It has a reasonably robust CLI interface, and all the configuration is stored in `.ini` style configuration files.
 
-## Running Splunk
+## Starting
 
 Splunk has two main components: the `splunkd` daemon and the `splunkweb` service, a `cherrypy` web application.
 
@@ -87,13 +87,13 @@ A sign that you have a bottleneck caused by Splunk's implementation details - ra
 
 If you are having trouble getting Splunk to utilise your hardware, consider the following factors:
 
-### Search Semantics
+### Search semantics
 
 Much of Splunk's search functionality is powered a [MapReduce](https://en.wikipedia.org/wiki/Mapreduce "wikipedia:Mapreduce") implementation. It is powerful and very useful in a distributed environment, but the high-level search language abstractions can mask a number of mistakes that essentially force a `reduce` operation early in the pipeline, which removes Splunk's ability to parallelise its operations, whether in a distributed environment or on a single instance.
 
 A simple rule of thumb is that any operation which (in a naive implementation) would need to see every 'event' to do its work will not be parallelised. This applies particularly to the [transaction](http://docs.splunk.com/Documentation/Splunk/latest/SearchReference/transaction) command, which is one of Splunk's most useful features.
 
-### Distributed Environment
+### Distributed environment
 
 Splunk is designed to be run in a distributed environment; the assumption is generally that each instance is on a separate machine, but on a machine with four or more logical cores and a fast disk (such as a solid-state drive), it is possible to improve performance significantly by setting up several Splunk instances.
 
@@ -118,7 +118,7 @@ Multiple indexers means splitting the data between them. Either set up their `in
 
 Do not try to make two indexers read from the same index via a static path in `indexes.conf` or a symlink - this will push responsibility for deduplicating results onto the search head and mitigate the advantage of distributing the work in the first place.
 
-## Debugging and Administration
+## Debugging and administration
 
 Splunk's [CLI](http://docs.splunk.com/Documentation/Splunk/latest/Admin/Aboutthecli) is under-utilised.
 
@@ -138,7 +138,7 @@ Or for adding one-off files for testing, rather than having to configure `inputs
 
 Take care to use a special test index when testing - it is generally not possible to remove data from an indexing once it has been added without wiping it entirely.
 
-## Custom Commands
+## Custom commands
 
 Per [this](http://docs.splunk.com/Documentation/Splunk/latest/Developer/SearchScripts), Splunk allows the user to call out to arbitary Python or Perl scripts during the search pipeline. This is useful for overcoming the limitations of Splunk's framework, looking up external data sources, and so on. It is also a shortcut to building macros that will automatically push data to other locations or perform arbitrary jobs outside of what Splunk is capable of.
 

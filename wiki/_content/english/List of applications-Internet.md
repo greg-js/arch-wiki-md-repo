@@ -60,12 +60,12 @@
             *   [1.6.4.5 Matrix clients](#Matrix_clients)
             *   [1.6.4.6 Tox clients](#Tox_clients)
             *   [1.6.4.7 Serverless (decentralized) clients](#Serverless_.28decentralized.29_clients)
-            *   [1.6.4.8 Other](#Other_2)
+            *   [1.6.4.8 Other IM clients](#Other_IM_clients)
         *   [1.6.5 Instant messaging servers](#Instant_messaging_servers)
             *   [1.6.5.1 IRC servers](#IRC_servers)
             *   [1.6.5.2 XMPP servers](#XMPP_servers)
             *   [1.6.5.3 SIP servers](#SIP_servers)
-            *   [1.6.5.4 Other](#Other_3)
+            *   [1.6.5.4 Other IM servers](#Other_IM_servers)
         *   [1.6.6 Collaborative software](#Collaborative_software)
     *   [1.7 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
         *   [1.7.1 News aggregators](#News_aggregators)
@@ -1544,7 +1544,7 @@ See also [Bonjour](/index.php/Avahi#Link-Local_.28Bonjour.2FZeroconf.29_chat "Av
 
 	[https://ricochet.im/](https://ricochet.im/) || [ricochet](https://aur.archlinux.org/packages/ricochet/)
 
-##### Other
+##### Other IM clients
 
 *   **Caprine** — Unofficial Facebook Messenger app. Based on the [Electron](https://electronjs.org/) platform.
 
@@ -1710,7 +1710,7 @@ See also [Wikipedia:List of SIP software#Servers](https://en.wikipedia.org/wiki/
 
 	[http://yate.ro/](http://yate.ro/) || [yate](https://www.archlinux.org/packages/?name=yate)
 
-##### Other
+##### Other IM servers
 
 *   **[Mattermost](/index.php/Mattermost "Mattermost")** — Open source private cloud server, Slack-alternative.
 

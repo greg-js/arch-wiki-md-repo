@@ -114,7 +114,7 @@ Put `winpe.iso` in the [TFTP server](/index.php/Tftpd_server "Tftpd server") roo
 
 ```
 
-Create a [configuration file](/index.php/Syslinux#Configuring_syslinux "Syslinux") for PXELINUX similar to the following:
+Create a [configuration file](/index.php/Syslinux#Configuration "Syslinux") for PXELINUX similar to the following:
 
  `/var/tftpboot/pxelinux.cfg/default` 
 ```

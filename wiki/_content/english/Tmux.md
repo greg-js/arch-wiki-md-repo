@@ -526,7 +526,7 @@ set -g default-command "${SHELL}"
 
 ### Use tmux windows like tabs
 
-The following settings added to `~/.tmux.conf` allow to use tmux windows like tabs, such as those provided by the reference of these hotkeys — [urxvt's tabbing extensions](/index.php/Rxvt-unicode#urxvtq_with_tabbing "Rxvt-unicode"). An advantage thereof is that these virtual “tabs” are independent of the terminal emulator.
+The following settings added to `~/.tmux.conf` allow to use tmux windows like tabs, such as those provided by the reference of these hotkeys — [urxvt's tabbing extensions](/index.php/Rxvt-unicode/Tips_and_tricks#urxvtq_with_tabbing "Rxvt-unicode/Tips and tricks"). An advantage thereof is that these virtual “tabs” are independent of the terminal emulator.
 
 ```
 #urxvt tab like window switching (-n: no prior escape seq)

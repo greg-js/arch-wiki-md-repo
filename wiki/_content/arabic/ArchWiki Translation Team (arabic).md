@@ -33,7 +33,7 @@ List here articles that only exist in non-English languages, or that exist in En
 
 | Page | Language | Notes |
 | [Bootsplash (Русский)](/index.php/Bootsplash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bootsplash (Русский)") | Russian |
-| [Collect system information (Español)](/index.php/Collect_system_information_(Espa%C3%B1ol) "Collect system information (Español)") | Spanish |
+| [Collect system information (Español)](/index.php?title=Collect_system_information_(Espa%C3%B1ol)&action=edit&redlink=1 "Collect system information (Español) (page does not exist)") | Spanish |
 | [DeaDBeeF (正體中文)](/index.php/DeaDBeeF_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "DeaDBeeF (正體中文)") | Chinese (Traditional) |
 | [GtkD (Русский)](/index.php/GtkD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GtkD (Русский)") | Russian |
 | [IBM T43 (Česky)](/index.php/IBM_T43_(%C4%8Cesky) "IBM T43 (Česky)") | Czech |

@@ -43,35 +43,29 @@ Related articles
     *   [6.5 Desktop menu as a panel menu](#Desktop_menu_as_a_panel_menu)
     *   [6.6 XDG compliant menu](#XDG_compliant_menu)
         *   [6.6.1 Examples](#Examples_2)
-*   [7 Compositing effects](#Compositing_effects)
-*   [8 Desktop icons and wallpapers](#Desktop_icons_and_wallpapers)
-    *   [8.1 Desktop management using file managers](#Desktop_management_using_file_managers)
-    *   [8.2 Wallpaper](#Wallpaper)
-    *   [8.3 Icon programs](#Icon_programs)
-        *   [8.3.1 idesk](#idesk)
-        *   [8.3.2 xfdesktop](#xfdesktop)
-    *   [8.4 conky reconfiguration](#conky_reconfiguration)
-*   [9 oblogout](#oblogout)
-*   [10 Openbox for multihead users](#Openbox_for_multihead_users)
-*   [11 Tips and tricks](#Tips_and_tricks)
-    *   [11.1 Cursor and icon themes](#Cursor_and_icon_themes)
-    *   [11.2 Launch a complex command with hotkey](#Launch_a_complex_command_with_hotkey)
-    *   [11.3 Switch desktops using the mouse](#Switch_desktops_using_the_mouse)
-    *   [11.4 Set default applications / file associations](#Set_default_applications_.2F_file_associations)
-    *   [11.5 Ad-hoc window transparency](#Ad-hoc_window_transparency)
-    *   [11.6 Using obxprop for faster configuration](#Using_obxprop_for_faster_configuration)
-    *   [11.7 Xprop values for applications](#Xprop_values_for_applications)
-    *   [11.8 Switching between keyboard layouts](#Switching_between_keyboard_layouts)
-    *   [11.9 Set grid layout for virtual desktops](#Set_grid_layout_for_virtual_desktops)
-    *   [11.10 Enable Hot Corners](#Enable_Hot_Corners)
-    *   [11.11 Window snapping](#Window_snapping)
-    *   [11.12 Smooth display manager transition](#Smooth_display_manager_transition)
-*   [12 Troubleshooting](#Troubleshooting)
-    *   [12.1 Firefox](#Firefox)
-    *   [12.2 Missing themes](#Missing_themes)
-    *   [12.3 Stop continuous desktop switching](#Stop_continuous_desktop_switching)
-    *   [12.4 Windows load behind the active window](#Windows_load_behind_the_active_window)
-*   [13 See also](#See_also)
+*   [7 Tips and tricks](#Tips_and_tricks)
+    *   [7.1 Cursor and icon themes](#Cursor_and_icon_themes)
+    *   [7.2 Desktop icons and wallpapers](#Desktop_icons_and_wallpapers)
+    *   [7.3 Compositing effects](#Compositing_effects)
+    *   [7.4 oblogout](#oblogout)
+    *   [7.5 Openbox for multihead users](#Openbox_for_multihead_users)
+    *   [7.6 Launch a complex command with hotkey](#Launch_a_complex_command_with_hotkey)
+    *   [7.7 Switch desktops using the mouse](#Switch_desktops_using_the_mouse)
+    *   [7.8 Set default applications / file associations](#Set_default_applications_.2F_file_associations)
+    *   [7.9 Ad-hoc window transparency](#Ad-hoc_window_transparency)
+    *   [7.10 Using obxprop for faster configuration](#Using_obxprop_for_faster_configuration)
+    *   [7.11 Xprop values for applications](#Xprop_values_for_applications)
+    *   [7.12 Switching between keyboard layouts](#Switching_between_keyboard_layouts)
+    *   [7.13 Set grid layout for virtual desktops](#Set_grid_layout_for_virtual_desktops)
+    *   [7.14 Enable Hot Corners](#Enable_Hot_Corners)
+    *   [7.15 Window snapping](#Window_snapping)
+    *   [7.16 Smooth display manager transition](#Smooth_display_manager_transition)
+*   [8 Troubleshooting](#Troubleshooting)
+    *   [8.1 Firefox](#Firefox)
+    *   [8.2 Missing themes](#Missing_themes)
+    *   [8.3 Stop continuous desktop switching](#Stop_continuous_desktop_switching)
+    *   [8.4 Windows load behind the active window](#Windows_load_behind_the_active_window)
+*   [9 See also](#See_also)
 
 ## Installation
 
@@ -513,76 +507,39 @@ A xdg compliant menu is based on the freedesktop.org standard. The menu is defin
 
 *   [californium](https://github.com/mlde/californium): xdg menu based on the LXQt main menu and easily themable
 
-## Compositing effects
+## Tips and tricks
+
+### Cursor and icon themes
+
+See [Cursor themes](/index.php/Cursor_themes "Cursor themes") and [Icons](/index.php/Icons "Icons") for details.
+
+### Desktop icons and wallpapers
+
+Openbox does not natively support the use of desktop icons or wallpapers.
+
+See [PCManFM](/index.php/PCManFM#Desktop_management "PCManFM"), [SpaceFM](/index.php/SpaceFM#Desktop_management "SpaceFM") and [Idesk](/index.php/Idesk "Idesk").
+
+**Note:** You may have to edit `~/.conkyrc` and set `own_window_type` to `normal`.
+
+See [List of applications#Wallpaper_setters](/index.php/List_of_applications#Wallpaper_setters "List of applications").
+
+### Compositing effects
 
 Openbox does not provide native support for [compositing](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager"), and thus requires an external compositor for this purpose.
 
 Although compositing is not a necessary component, it may specifically avoid issues such as screen distortion with [oblogout](#oblogout), and visual glitches with terminal window transparency. See [Xorg#Composite](/index.php/Xorg#Composite "Xorg") for common choices.
 
-## Desktop icons and wallpapers
-
-Openbox does not natively support the use of desktop icons or wallpapers. As a consequence, it will be necessary to install additional applications for this purpose, where desired.
-
-### Desktop management using file managers
-
-Some file managers have the capacity to fully **manage the desktop**, meaning that they may be used to provide wallpapers and enable the use of icons on the desktop. The [LXDE](/index.php/LXDE "LXDE") desktop environment itself uses PCManFM for this purpose.
-
-See [PCManFM#Desktop management](/index.php/PCManFM#Desktop_management "PCManFM") and [SpaceFM#Desktop management](/index.php/SpaceFM#Desktop_management "SpaceFM").
-
-### Wallpaper
-
-See [List of applications#Wallpaper_setters](/index.php/List_of_applications#Wallpaper_setters "List of applications")
-
-### Icon programs
-
-While there are programs dedicated to enabling desktop icons alone, it would seem that they have greater drawbacks than the utilisation of file managers for the task. These programs are discussed briefly, below.
-
-#### idesk
-
-[idesk](/index.php/Idesk "Idesk") is a simple program that can enable icons in addition to managing wallpaper. It will be necessary to create an `~/.idesktop` directory, and desktop icons must also be manually created. To use idesk to provide icons, add the following command to the `~/.config/openbox/autostart` file:
-
-```
-idesk &
-
-```
-
-#### xfdesktop
-
-[xfdesktop](https://www.archlinux.org/packages/?name=xfdesktop) is the desktop manager for [Xfce](/index.php/Xfce "Xfce"). The [Thunar](/index.php/Thunar "Thunar") file manager will also be downloaded as a dependency. Where this is used, the Openbox desktop menu will no longer be accessible by right-clicking the background.
-
-As such, it will consequently be necessary to access it by other means, such as by [creating a keybind](#Desktop_menu_as_a_panel_menu), and/or by - where permitted - re-configuring an installed panel to use the [desktop menu as a panel menu](#Desktop_menu_as_a_panel_menu). To use xfdesktop to provide icons, add the following command to the `~/.config/openbox/autostart` file:
-
-```
-xfdesktop &
-
-```
-
-### conky reconfiguration
-
-Particularly where using a file manager to manage the desktop, it will be necessary to edit `~/.conkyrc` to change the `own_window_type` command in order for [conky](/index.php/Conky "Conky") to continue to be displayed (where used). The revised command that should be used is:
-
-```
-own_window_type normal
-
-```
-
-## oblogout
+### oblogout
 
 See the [Oblogout](/index.php/Oblogout "Oblogout") article for an overview on how to use this useful, graphical logout script.
 
-## Openbox for multihead users
+### Openbox for multihead users
 
 While Openbox provides better than average multihead support on its own, [openbox-multihead-git](https://aur.archlinux.org/packages/openbox-multihead-git/) provides a development branch called **Openbox Multihead** that gives multihead users per-monitor desktops. This model is not commonly found in floating window managers, but exists mainly in tiling window managers. It is explained well on the [Xmonad web site](http://xmonad.org/tour.html#workspace). Also, please see [README.MULTIHEAD](https://github.com/BurntSushi/openbox-multihead/blob/multihead/README.MULTIHEAD) for a more comprehensive description of the new features and configuration options found in Openbox Multihead.
 
 Openbox Multihead will function like normal Openbox when only a single head is available.
 
 A downside to using Openbox Multihead is that it breaks the EWMH assumption that one and only one desktop is visible at any time. Thus, existing pagers will not work well with it. To remedy this, you can install [pager-multihead-git](https://aur.archlinux.org/packages/pager-multihead-git/) alongside Openbox Multihead. It will work without Openbox Multihead if only one monitor is active.
-
-## Tips and tricks
-
-### Cursor and icon themes
-
-See [Cursor themes](/index.php/Cursor_themes "Cursor themes") and [Icons](/index.php/Icons "Icons") for details.
 
 ### Launch a complex command with hotkey
 

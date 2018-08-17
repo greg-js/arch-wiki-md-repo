@@ -29,6 +29,7 @@ GTK+, The GIMP Toolkit, was initially made by the [GNU Project](/index.php/GNU_P
     *   [4.8 Disable overlay scrollbars](#Disable_overlay_scrollbars)
         *   [4.8.1 Remove overlay scroll indicators](#Remove_overlay_scroll_indicators)
     *   [4.9 Hide CSD buttons](#Hide_CSD_buttons)
+    *   [4.10 Disable mouse paste](#Disable_mouse_paste)
 *   [5 GDK backends](#GDK_backends)
     *   [5.1 Broadway backend](#Broadway_backend)
     *   [5.2 Wayland backend](#Wayland_backend)
@@ -385,6 +386,10 @@ undershoot.top, undershoot.right, undershoot.bottom, undershoot.left { backgroun
 ### Hide CSD buttons
 
 Add `gtk-decoration-layout=menu:close` to `~/.config/gtk-3.0/settings.ini` to remove minimize and maximize buttons. [[3]](https://developer.gnome.org/gtk3/3.22/GtkSettings.html#GtkSettings--gtk-decoration-layout)
+
+### Disable mouse paste
+
+Add `gtk-enable-primary-paste=false` to `~/.config/gtk-3.0/settings.ini` to turn off pasting on middle mouse button click (aka PRIMARY).
 
 ## GDK backends
 

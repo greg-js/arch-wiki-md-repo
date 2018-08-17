@@ -1,8 +1,8 @@
-Related articles
+**Estado de la traducción:** este artículo es una versión traducida de [System maintenance](/index.php/System_maintenance "System maintenance"). Fecha de la última traducción/revisión: **2017-09-10**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=).
+
+Artículos relacionados
 
 *   [General recommendations](/index.php/General_recommendations "General recommendations")
-
-**Estado de la traducción:** este artículo es una versión traducida de [System maintenance](/index.php/System_maintenance "System maintenance"). Fecha de la última traducción/revisión: **2017-9-10**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=).
 
 El mantenimiento regular del sistema es necesario para el correcto funcionamiento de Arch durante un período de tiempo. El mantenimiento oportuno es una práctica a la que muchos usuarios se acostumbran.
 

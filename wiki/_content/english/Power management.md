@@ -28,13 +28,11 @@ In Arch Linux, power management consists of two main parts:
         *   [2.1.1 Power managers](#Power_managers)
         *   [2.1.2 xss-lock](#xss-lock)
     *   [2.2 Suspend and hibernate](#Suspend_and_hibernate)
-        *   [2.2.1 Hybrid sleep](#Hybrid_sleep)
-        *   [2.2.2 Hybrid-sleep on suspend or hibernation request](#Hybrid-sleep_on_suspend_or_hibernation_request)
+        *   [2.2.1 Hybrid-sleep on suspend or hibernation request](#Hybrid-sleep_on_suspend_or_hibernation_request)
     *   [2.3 Sleep hooks](#Sleep_hooks)
         *   [2.3.1 Suspend/resume service files](#Suspend.2Fresume_service_files)
         *   [2.3.2 Combined Suspend/resume service file](#Combined_Suspend.2Fresume_service_file)
-        *   [2.3.3 Delayed Hibernation](#Delayed_Hibernation)
-        *   [2.3.4 Hooks in /usr/lib/systemd/system-sleep](#Hooks_in_.2Fusr.2Flib.2Fsystemd.2Fsystem-sleep)
+        *   [2.3.3 Hooks in /usr/lib/systemd/system-sleep](#Hooks_in_.2Fusr.2Flib.2Fsystemd.2Fsystem-sleep)
     *   [2.4 Troubleshooting](#Troubleshooting)
         *   [2.4.1 Delayed lid switch action](#Delayed_lid_switch_action)
         *   [2.4.2 Suspend from corresponding laptop Fn key not working](#Suspend_from_corresponding_laptop_Fn_key_not_working)
@@ -160,17 +158,16 @@ xss-lock -- i3lock -n -i *background_image.png* &
 
 ### Suspend and hibernate
 
-*systemd* provides commands to suspend to RAM, hibernate or hybrid suspend using the kernel's native suspend/resume functionality. There are also mechanisms to add hooks to customize pre- and post-suspend actions.
+*systemd* provides commands to suspend to RAM or hibernate using the kernel's native suspend/resume functionality. There are also mechanisms to add hooks to customize pre- and post-suspend actions.
 
-`systemctl suspend` should work out of the box, for `systemctl hibernate` to work on your system you need to follow the instructions at [Suspend and hibernate#Hibernation](/index.php/Suspend_and_hibernate#Hibernation "Suspend and hibernate"). As of systemd 239 (`systemctl --version` to check), a new service, `systemctl suspend-then-hibernate`, that handles suspending then hibernating after a given amount of time has been added.
+`systemctl suspend` should work out of the box, for `systemctl hibernate` to work on your system you need to follow the instructions at [Suspend and hibernate#Hibernation](/index.php/Suspend_and_hibernate#Hibernation "Suspend and hibernate").
 
-First, you have to define the delay time before the system wakes up and go into hibernation and that should be defined in /etc/systemd/sleep.conf
+There are also two modes combining suspend and hibernate:
+
+*   `systemctl hybrid-sleep` suspends the system both to RAM and disk, so a complete power loss does not result in lost data. This mode is also called [suspend to both](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate").
+*   `systemctl suspend-then-hibernate` initially suspends the system to RAM and if it is not interrupted within the delay specified by `HibernateDelaySec` in [systemd-sleep.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sleep.conf.5), then the system will be woken using an RTC alarm and hibernated.
 
 **Note:** *systemd* can also use other suspend backends (such as [Uswsusp](/index.php/Uswsusp "Uswsusp")), in addition to the default *kernel* backend, in order to put the computer to sleep or hibernate. See [Uswsusp#With systemd](/index.php/Uswsusp#With_systemd "Uswsusp") for an example.
-
-#### Hybrid sleep
-
-`systemctl hybrid-sleep` both hibernates and suspends at the same time. This combines some of the benefits and drawbacks of suspension and hibernation. This is useful in case a computer were to suddenly lose power (AC disconnection or battery depletion) since upon powerup it will resume from hibernation. If there is no power loss, then it will resume from suspension, which is much faster than resuming from hibernation. However, since "hybrid-sleep" has to dump memory to swap in order for hibernation to work, it is slower to enter sleep than a plain `systemctl suspend`. An alternative is a [delayed hibernation service file](#Delayed_hibernation_service_file).
 
 #### Hybrid-sleep on suspend or hibernation request
 
@@ -293,55 +290,6 @@ WantedBy=sleep.target
 *   `StopWhenUnneeded=yes`: When active, the service will be stopped if no other active service requires it. In this specific example, it will be stopped after *sleep.target* is stopped.
 *   Because *sleep.target* is pulled in by *suspend.target*, *hibernate.target* and *hybrid-sleep.target* and because *sleep.target* itself is a *StopWhenUnneeded* service, the hook is guaranteed to start/stop properly for different tasks.
 
-#### Delayed Hibernation
-
-As of systemd version 239 (`systemctl --version` to check), it is easier to use suspend-then-hibernate to have a delayed hibernation. The advantage is that minimal files have to be modified and no sleep hook is necessary (see updated man page at: [[1]](https://www.freedesktop.org/software/systemd/man/systemd-sleep.conf.html)). Running `systemctl suspend-then-hibernate` will start the process. There are two conditions that is mandatory for this to work. The first one is that time to enter hibernation has to be specified (2hours is used in the given example). The second one is that a swap file has to be present. It is good practice to have a swap size which is 1.5x the RAM size.
-
- `/etc/systemd/sleep.conf` 
-```
-[Sleep]
-HibernateDelaySec=120min
-```
-
-If the systemd version is lower that 239, then using sleep hooks can be used to achieve the same purpose. After suspending, a timer is set to wake up later to perform hibernation. Here, entering sleep is faster than `systemctl hybrid-sleep` since no hibernation is performed initially. However, unlike "hybrid-sleep", at this point there is no protection against power loss via hibernation while in suspension. This caveat makes this approach more suitable for laptops than desktops. Since hibernation is delayed, the laptop battery is only used during suspension and to trigger the eventual hibernation. This uses less power over the long-term than a "hybrid-sleep" which will remain suspended until the battery is drained. Note that if your laptop has a spinning hard disk, when it wakes up from suspend in order to hibernate, you may not want to be moving or carrying the laptop for these few seconds. Delayed hibernation may be desirable both to reduce power use as well as for security reasons (e.g. when using full disk encryption). An example script is located [here](http://superuser.com/questions/298672/linuxhow-to-hibernate-after-a-period-of-sleep). See also [this post](https://bbs.archlinux.org/viewtopic.php?pid=1420279#p1420279) for an updated systemd sleep hook.
-
-A slightly updated version of the service is:
-
- `/etc/systemd/system/suspend-to-hibernate.service` 
-```
-[Unit]
-Description=Delayed hibernation trigger
-Documentation=https://bbs.archlinux.org/viewtopic.php?pid=1420279#p1420279
-Documentation=https://wiki.archlinux.org/index.php/Power_management
-Conflicts=hibernate.target hybrid-sleep.target
-Before=sleep.target
-StopWhenUnneeded=true
-
-[Service]
-Type=oneshot
-RemainAfterExit=yes
-Environment="WAKEALARM=/sys/class/rtc/rtc0/wakealarm"
-Environment="SLEEPLENGTH=+2hour"
-ExecStart=-/usr/bin/sh -c 'echo -n "alarm set for "; date +%%s -d$SLEEPLENGTH | tee $WAKEALARM'
-ExecStop=-/usr/bin/sh -c '\
-  alarm=$(cat $WAKEALARM); \
-  now=$(date +%%s); \
-  if [ -z "$alarm" ] || [ "$now" -ge "$alarm" ]; then \
-     echo "hibernate triggered"; \
-     systemctl hibernate; \
-  else \
-     echo "normal wakeup"; \
-  fi; \
-  echo 0 > $WAKEALARM; \
-'
-
-[Install]
-WantedBy=sleep.target
-
-```
-
-The `Before` and `Conflicts` options ensure it only is run for suspension and not hibernation--otherwise the service will run twice if delayed hibernation is triggered. The `WantedBy` and `StopWhenUnneeded` options are so it is started before sleep and stops upon resume. (Note that the `suspend.target` and `hibernate.target` targets do not stop when unneeded, but `sleep.target` does). [Enable](/index.php/Enable "Enable") the service.
-
 #### Hooks in /usr/lib/systemd/system-sleep
 
 *systemd* runs all executables in `/usr/lib/systemd/system-sleep/`, passing two arguments to each of them:
@@ -388,7 +336,7 @@ See [systemd.special(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.spec
 
 #### Delayed lid switch action
 
-When performing lid switches in short succession, *logind* will delay the suspend action for up to 90s to detect possible docks. [[2]](http://lists.freedesktop.org/archives/systemd-devel/2015-January/027131.html) This delay was made configurable with systemd v220:[[3]](https://github.com/systemd/systemd/commit/9d10cbee89ca7f82d29b9cb27bef11e23e3803ba)
+When performing lid switches in short succession, *logind* will delay the suspend action for up to 90s to detect possible docks. [[1]](http://lists.freedesktop.org/archives/systemd-devel/2015-January/027131.html) This delay was made configurable with systemd v220:[[2]](https://github.com/systemd/systemd/commit/9d10cbee89ca7f82d29b9cb27bef11e23e3803ba)
 
  `/etc/systemd/logind.conf` 
 ```
@@ -400,7 +348,7 @@ HoldoffTimeoutSec=30s
 
 #### Suspend from corresponding laptop Fn key not working
 
-If, regardless of the setting in logind.conf, the sleep button does not work (pressing it does not even produce a message in syslog), then logind is probably not watching the keyboard device. [[4]](http://lists.freedesktop.org/archives/systemd-devel/2015-February/028325.html) Do:
+If, regardless of the setting in logind.conf, the sleep button does not work (pressing it does not even produce a message in syslog), then logind is probably not watching the keyboard device. [[3]](http://lists.freedesktop.org/archives/systemd-devel/2015-February/028325.html) Do:
 
 ```
 # journalctl | grep "Watching system buttons"
@@ -416,7 +364,7 @@ May 25 21:28:19 vmarch.lan systemd-logind[210]: Watching system buttons on /dev/
 
 ```
 
-Notice no keyboard device. Now obtain ATTRS{name} for the parent keyboard device [[5]](http://systemd-devel.freedesktop.narkive.com/Rbi3rjNN/patch-1-2-logind-add-support-for-tps65217-power-button) :
+Notice no keyboard device. Now obtain ATTRS{name} for the parent keyboard device [[4]](http://systemd-devel.freedesktop.narkive.com/Rbi3rjNN/patch-1-2-logind-add-support-for-tps65217-power-button) :
 
 ```
 # udevadm info -a /dev/input/by-path/*-kbd
@@ -680,7 +628,7 @@ See the [Linux kernel documentation](https://www.kernel.org/doc/Documentation/us
 
 **Warning:** SATA Active Link Power Management can lead to data loss on some devices. Do not enable this setting unless you have frequent backups.
 
-Since Linux 4.15 there is a [new setting](https://hansdegoede.livejournal.com/18412.html) called `med_power_with_dipm` that matches the behaviour of Windows IRST driver settings and should not cause data loss with recent SSD/HDD drives. The power saving can be significant, ranging [from 1.0 to 1.5 Watts (when idle)](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ebb82e3c79d2a956366d0848304a53648bd6350b). It will become a default setting for Intel based laptops in Linux 4.16 [[6]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ebb82e3c79d2a956366d0848304a53648bd6350b).
+Since Linux 4.15 there is a [new setting](https://hansdegoede.livejournal.com/18412.html) called `med_power_with_dipm` that matches the behaviour of Windows IRST driver settings and should not cause data loss with recent SSD/HDD drives. The power saving can be significant, ranging [from 1.0 to 1.5 Watts (when idle)](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ebb82e3c79d2a956366d0848304a53648bd6350b). It will become a default setting for Intel based laptops in Linux 4.16 [[5]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=ebb82e3c79d2a956366d0848304a53648bd6350b).
 
 The current setting can be read from `/sys/class/scsi_host/host*/link_power_management_policy` as follows:
 

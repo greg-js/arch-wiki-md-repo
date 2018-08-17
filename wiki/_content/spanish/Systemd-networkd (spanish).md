@@ -1,4 +1,4 @@
-Related articles
+Artículos relacionados
 
 *   [systemd](/index.php/Systemd "Systemd")
 *   [systemd-nspawn (Español)](/index.php/Systemd-nspawn_(Espa%C3%B1ol) "Systemd-nspawn (Español)")
@@ -204,7 +204,7 @@ Todos ellos singuen las siguientes reglas:
 *   Todos los archivos de configuración son colectivamente almacenados y procesados en orden léxico, independientemente del directorio donde esté almacenado.
 *   Los archivos con nombres identicos se reemplazan con el otro
 
-**Tip:**
+**Sugerencia:**
 
 *   Para sobreescribir un archivo proporcionado por el sistema en `/usr/lib/systemd/network` de forma permanente (ejemplo incluso despues de actualizar), coloca el archivo con el mismo nombre en `/etc/systemd/network` y un enlace simbolico a `/dev/null`.
 *   El comodin `*` se puede usar en `VALOR` (ejemplo `en*`) hará coincidir en cualquier dispositivo Ethernet.
@@ -264,7 +264,7 @@ Las claves más comunes en la sección `[Route]` son:
 
 Para una exhaustiva lista de claves, por favor refiérase a`systemd.network(5)`
 
-**Tip:** Se puede poner las claves `Address=` y `Gateway=` en la sección `[Network]` como un atajo si `Address=` contiene sólo una regla de dirección y la sección `Gateway=` contiene sólo una clave Gateway
+**Sugerencia:** Se puede poner las claves `Address=` y `Gateway=` en la sección `[Network]` como un atajo si `Address=` contiene sólo una regla de dirección y la sección `Gateway=` contiene sólo una clave Gateway
 
 ### Archivos netdev
 
@@ -339,7 +339,7 @@ Si se está usando *systemd-nspawn*, se debe modificar el servicio `systemd-nspa
 
 Note que si se desea tomar ventaja de la configuración automatica DNS desde DHCP, se necesita habilitar `systemd-resolved` y hacer un enlace simbólico `/run/systemd/resolve/resolv.conf` a `/etc/resolv.conf`. Ver `systemd-resolved.service(8)` para más detalles.
 
-**Tip:** Antes de empezar a configurar el contenedor de red, es util:
+**Sugerencia:** Antes de empezar a configurar el contenedor de red, es util:
 
 *   Deshabilitar todos los servicios [netctl](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)"). Esto evitará cualquier conflicto potencial con **systemd-networkd** y hace las configuraciones faciles de probar. Además, hay muchas posibilidades de terminar con pocos o incluso ningun perfil [netctl](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)") activado. el comando `netctl list` imprime una lista de todos los perfiles, con los activados siendo vigilados.
 *   Deshabilita el servicio `systemd-nspawn@.service` y use el comando `systemd-nspawn -bnD /path_to/your_container/` como super usuario para iniciar el contenedor. Para desconectar y apagar dentro del contenedor se usa `systemctl poweroff` como super usuario. Una vez que los ajustes de red encajan con los requerimientos, [habilita e inicia](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)") `systemd-nspawn@.service`.

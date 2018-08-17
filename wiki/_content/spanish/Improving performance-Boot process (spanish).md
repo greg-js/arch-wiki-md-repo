@@ -36,7 +36,7 @@ $ systemd-analyze
 
 ```
 
-**Tip:** Si se inicia vía [Unified Extensible Firmware Interface (Español)](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)") (UEFI) y utiliza un gestor de arranque que implementa systemd [Boot Loader Interface](http://www.freedesktop.org/wiki/Software/systemd/BootLoaderInterface) (que actualmente [Systemd-boot (Español)](/index.php/Systemd-boot_(Espa%C3%B1ol) "Systemd-boot (Español)") y [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") do), *systemd-analyze* puede mostrar cuán rápido inició el firmware EFI y el porpio gestor de arranque.
+**Sugerencia:** Si se inicia vía [Unified Extensible Firmware Interface (Español)](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)") (UEFI) y utiliza un gestor de arranque que implementa systemd [Boot Loader Interface](http://www.freedesktop.org/wiki/Software/systemd/BootLoaderInterface) (que actualmente [Systemd-boot (Español)](/index.php/Systemd-boot_(Espa%C3%B1ol) "Systemd-boot (Español)") y [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") do), *systemd-analyze* puede mostrar cuán rápido inició el firmware EFI y el porpio gestor de arranque.
 
 Para listar los archivos en las unidades iniciadas, ordenadas por el tiempo que les tomó iniciar a cada uno:
 

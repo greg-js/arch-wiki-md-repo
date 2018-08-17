@@ -11,7 +11,6 @@ Documentation is available in the Linux kernel tree under [Documentation/network
     *   [1.2 Runtime configuration](#Runtime_configuration)
 *   [2 Receiver configuration](#Receiver_configuration)
 *   [3 Usage](#Usage)
-*   [4 See also](#See_also)
 
 ## Sender configuration
 
@@ -129,7 +128,3 @@ One may need to switch off PC and router firewall, and setup proper router port 
 2.  View the logs using your `/var/log/everything.log` file
 3.  On the computer you are debugging, add a kernel paramter like `netconsole=514@10.0.0.2/12:34:56:78:9a:bc` (along with whatever debugging parameters you want)
 4.  Restart the computer and view the logs
-
-## See also
-
-*   [Boot debugging#netconsole](/index.php/Boot_debugging#netconsole "Boot debugging")

@@ -1,4 +1,4 @@
-Related articles
+Artículos relacionados
 
 *   [Estándares de empaquetado en Arch](/index.php/Arch_packaging_standards_(Espa%C3%B1ol) "Arch packaging standards (Español)")
 *   [Arch Build System (Español)](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)")
@@ -131,7 +131,7 @@ Las siguientes son variables que pueden ser encontradas en el archivo `PKGBUILD`
 *   ***pre_remove*** - El script es ejecutado antes de que los archivos sean removidos. Un argumento es pasado: vieja versión del paquete.
 *   ***post_remove*** – El script es ejecutado después de remover paquetes. Un argumento es pasado: vieja versión del paquete.
 
-**Tip:** un prototipo del archivo `.install` esta guardado en `/usr/share/pacman/proto.install`.
+**Sugerencia:** Un prototipo del archivo `.install` esta guardado en `/usr/share/pacman/proto.install`.
 
 	`source` 
 

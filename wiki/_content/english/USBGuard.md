@@ -44,7 +44,7 @@ A QT applet can be started with `usbguard-applet-qt` and provides an interactive
 
 To configure usbguard to your needs, you can edit `/etc/usbguard/rules.conf`. However manual editing of the rules is normally not necessary. You can generate a ruleset based on your currently attached USB devices by executing `usbguard generate-policy > /etc/usbguard/rules.conf` as root.
 
-The rules syntax is formally explained [here](https://github.com/dkopecek/usbguard#rule-language). An example for a hp printer connected via USB can look like this:
+The rules syntax is formally explained [here](https://github.com/USBGuard/usbguard/blob/master/doc/man/usbguard-rules.conf.5.adoc). An example for a hp printer connected via USB can look like this:
 
 ```
 allow id 03f0:0c17 serial "00CNFD234631" name "hp LaserJet 2020" hash "a0ef07fceb6fb77698f79a44a450121m" parent-hash "69d19c1a5733a31e7e6d9530e6k434a6" with-interface { 07:01:03 07:01:02 07:01:01 }

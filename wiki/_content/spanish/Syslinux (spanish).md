@@ -1,9 +1,9 @@
+**Estado de la traducción:** este artículo es una versión traducida de [Syslinux](/index.php/Syslinux "Syslinux"). Fecha de la última traducción/revisión: **2015-01-06**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Syslinux&diff=0&oldid=354890).
+
 Artículos relacionados
 
 *   [Arch Boot Process (Español)](/index.php/Arch_Boot_Process_(Espa%C3%B1ol) "Arch Boot Process (Español)")
 *   [Boot loaders (Español)](/index.php/Boot_loaders_(Espa%C3%B1ol) "Boot loaders (Español)")
-
-**Estado de la traducción:** este artículo es una versión traducida de [Syslinux](/index.php/Syslinux "Syslinux"). Fecha de la última traducción/revisión: **2015-01-06**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Syslinux&diff=0&oldid=354890).
 
 [Syslinux](https://en.wikipedia.org/wiki/es:Syslinux "wikipedia:es:Syslinux") es una colección de cargadores de arranque capaz de iniciar desde discos duros, CDs, y vía network utilizando PXE. Soporta sistema de archivos [FAT](https://en.wikipedia.org/wiki/es:Tabla_de_asignaci%C3%B3n_de_archivos "wikipedia:es:Tabla de asignación de archivos"), [ext2](https://en.wikipedia.org/wiki/es:Ext2 "wikipedia:es:Ext2"), [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4") y [Btrfs](/index.php/Btrfs "Btrfs").
 

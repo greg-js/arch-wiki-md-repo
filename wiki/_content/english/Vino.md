@@ -45,7 +45,7 @@ If you use a standalone [window manager](/index.php/Window_manager "Window manag
 
 ## Running on a headless server
 
-Vino can be used to manage a headless server with a graphical desktop via VNC. For this, a graphics driver like [xf86-video-dummy](https://www.archlinux.org/packages/?name=xf86-video-dummy) must be installed and [configured](/index.php/Xorg#Configuration "Xorg"). [xpra’s sample xorg.conf](http://xpra.org/xorg.conf) for the Xdummy driver can be used as a base. Then, the server can be configured to [start X at boot](/index.php/Start_X_at_boot "Start X at boot") for the user account that should be usable remotely. Vino must be made to [autostart with the desktop environment](/index.php/Desktop_entries#Autostart "Desktop entries") by creating a desktop entry in the user’s home directory such as this one:
+Vino can be used to manage a headless server with a graphical desktop via VNC. For this, a graphics driver like [xf86-video-dummy](https://www.archlinux.org/packages/?name=xf86-video-dummy) must be installed and [configured](/index.php/Xorg#Configuration "Xorg"). [xpra’s sample xorg.conf](http://xpra.org/xorg.conf) for the Xdummy driver can be used as a base. Then, the server can be configured to [start X at boot](/index.php/Start_X_at_boot "Start X at boot") for the user account that should be usable remotely. Vino must be made to [autostart with the desktop environment](/index.php/Autostarting#On_desktop_environment_startup "Autostarting") by creating a desktop entry in the user’s home directory such as this one:
 
  `~/.config/autostart/vino-server.desktop` 
 ```

@@ -1,3 +1,8 @@
+Related articles
+
+*   [SSH](/index.php/SSH "SSH")
+*   [SSHFS](/index.php/SSHFS "SSHFS")
+
 You can use sftpman (an [SSHFS](/index.php/SSHFS "SSHFS") helper) to mount a remote system - accessible via [SSH](/index.php/SSH "SSH") - to a local folder.
 
 sftpman offers both a command-line tool (*sftpman*) and a GTK frontend (*sftpman-gtk*, see [screenshot](https://github.com/spantaleev/sftpman-gtk/raw/master/sftpman-gui.png)), each packaged separately.
@@ -77,7 +82,7 @@ To unmount:
 
 ```
 
-**Note:** In order for the GUI application to be able to ask you for a password when mounting, you'll need to install some form of an ssh askpass tool. See: [SSH keys#Using ssh-agent and x11-ssh-askpass](/index.php/SSH_keys#Using_ssh-agent_and_x11-ssh-askpass "SSH keys")
+**Note:** In order for the GUI application to be able to ask you for a password when mounting, you'll need to install some form of an ssh askpass tool. See [SSH keys#x11-ssh-askpass](/index.php/SSH_keys#x11-ssh-askpass "SSH keys").
 
 ### Removing defined filesystems
 

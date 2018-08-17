@@ -1,4 +1,4 @@
-Related articles
+Artículos relacionados
 
 *   [Midnight Commander](/index.php/Midnight_Commander "Midnight Commander")
 *   [vifm](/index.php/Vifm "Vifm")

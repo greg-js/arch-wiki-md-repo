@@ -48,7 +48,7 @@ La administración de energía es muy importante para cualquiera que desee hacer
 
 El estado de la batería puede ser leído utilizando las utilidades ACPI en la terminal. Las utilidades de la línea de comandos que contienen las funcionalidades de ACPI son proporcionadas por el paquete [acpi](https://www.archlinux.org/packages/?name=acpi). Un simple monitor de batería que se aloja en la bandeja de sistema es [batterymon-clone](https://aur.archlinux.org/packages/batterymon-clone/) que puede ser encontrado en [Usuario de Arco Repository](/index.php/AUR "AUR").
 
-**Tip:** Más información puede ser encontrada en el artículo [ACPI modules](/index.php/ACPI_modules "ACPI modules")
+**Sugerencia:** Puede encontrar más información en el artículo [ACPI modules](/index.php/ACPI_modules "ACPI modules")
 
 ### Suspensión e hibernación
 

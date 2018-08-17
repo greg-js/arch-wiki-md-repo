@@ -1,11 +1,13 @@
-[Clang](http://clang.llvm.org/) é um compilador C/C++/Objective C baseado em LLVM. É distribuído sob a licença BSD.
+**Status de tradução:** Esse artigo é uma tradução de [Clang](/index.php/Clang "Clang"). Data da última tradução: 2018-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Clang&diff=0&oldid=534570) na versão em inglês.
+
+[Clang](http://clang.llvm.org/) é um compilador [C](/index.php/C "C")/C++/Objective C baseado em LLVM. É distribuído sob a licença BSD.
 
 ## Contents
 
 *   [1 Instalação](#Instala.C3.A7.C3.A3o)
 *   [2 Compilar pacotes com Clang](#Compilar_pacotes_com_Clang)
 *   [3 Usar o analisador estático](#Usar_o_analisador_est.C3.A1tico)
-*   [4 Referências](#Refer.C3.AAncias)
+*   [4 Veja também](#Veja_tamb.C3.A9m)
 
 ## Instalação
 
@@ -35,6 +37,7 @@ $ scan-build gcc -c t1.c t2.c
 
 ```
 
-## Referências
+## Veja também
 
+*   [Wikipedia:pt:Clang](https://en.wikipedia.org/wiki/pt:Clang "wikipedia:pt:Clang")
 *   [scan-build: executando um analisador a partir da linha de comando](http://clang-analyzer.llvm.org/scan-build.html)

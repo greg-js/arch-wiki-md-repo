@@ -11,11 +11,18 @@ Because the GNU kernel, [Hurd](https://www.gnu.org/s/hurd/hurd.html), is not pro
 
 ## Contents
 
-*   [1 Base system](#Base_system)
-*   [2 Toolchain](#Toolchain)
-    *   [2.1 Build system](#Build_system)
-*   [3 Other software](#Other_software)
-*   [4 See also](#See_also)
+*   [1 Texinfo](#Texinfo)
+*   [2 Base system](#Base_system)
+*   [3 Toolchain](#Toolchain)
+    *   [3.1 Build system](#Build_system)
+*   [4 Other software](#Other_software)
+*   [5 See also](#See_also)
+
+## Texinfo
+
+GNU software is documented using the [Texinfo](https://en.wikipedia.org/wiki/Texinfo "wikipedia:Texinfo") typesetting syntax. You can view Info documents using the `info` program, provided by the [texinfo](https://www.archlinux.org/packages/?name=texinfo) package, which is part of [base](https://www.archlinux.org/groups/x86_64/base/).
+
+While most GNU software also provides [man pages](/index.php/Man_page "Man page"), the Info documents tend to be more comprehensive.
 
 ## Base system
 
@@ -94,11 +101,12 @@ From [Wikipedia](https://en.wikipedia.org/wiki/GNU_build_system "wikipedia:GNU b
 Many other optional GNU tools are available in the [official repositories](/index.php/Official_repositories "Official repositories"):
 
 *   [GNOME](/index.php/GNOME "GNOME"), a desktop environment
-*   [GNU Screen](/index.php/GNU_Screen "GNU Screen"), a terminal multiplexer
-*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"), a partition manager
 *   [GIMP](/index.php/GIMP "GIMP"), an image editor
-*   [Gnumeric](/index.php/Gnumeric "Gnumeric"), a spreadsheet software
 *   [GTK+](/index.php/GTK%2B "GTK+"), a widget toolkit
+*   [Gnumeric](/index.php/Gnumeric "Gnumeric"), a spreadsheet software
+*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"), a partition manager
+*   [GNU Screen](/index.php/GNU_Screen "GNU Screen"), a terminal multiplexer
+*   [GNU nano](/index.php/GNU_nano "GNU nano"), a command-line text editor
 *   [GNU Emacs](/index.php/GNU_Emacs "GNU Emacs"), an extensible, customizable, self-documenting text editor
 *   [GnuPG](/index.php/GnuPG "GnuPG"), an OpenPGP implementation
 *   [GNU Octave](/index.php/GNU_Octave "GNU Octave"), a scientific programming language

@@ -1,4 +1,4 @@
-Related articles
+Artículos relacionados
 
 *   [pacman/Package signing (Español)](/index.php/Pacman/Package_signing_(Espa%C3%B1ol) "Pacman/Package signing (Español)")
 *   [Disk encryption (Español)](/index.php/Disk_encryption_(Espa%C3%B1ol) "Disk encryption (Español)")
@@ -291,7 +291,7 @@ $ gpg --output *doc* --decrypt *doc*.gpg
 
 *gpg* le preguntará por su contraseña y después descifrara y escribirá la información de *doc*.gpg a *doc*. Si el parámetro `-o` (`--output`) se omite, *gpg* escribirá la información a stdout.
 
-**Tip:**
+**Sugerencia:**
 
 *   Agregue `--armor` para cifrar un archivo usando ASCII armor (apropiado para copiar y pegar el mensaje en formato de texto)
 *   Use `-R *user-id*` o `--hidden-recipient *user-id*` en lugar de `-r` para no poner la clave del recipiente en el mensaje cifrado. Esto ayuda a ocultar el recipiente del mensaje y es una medida limitada de protección contra el análisis de trafico.

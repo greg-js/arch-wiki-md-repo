@@ -1,8 +1,8 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Installation guide](/index.php/Installation_guide "Installation guide"). Fecha de la última traducción/revisión: **2018-08-14**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=529413).
+**Estado de la traducción:** este artículo es una versión traducida de [Installation guide](/index.php/Installation_guide "Installation guide"). Fecha de la última traducción/revisión: **2018-08-16**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=529413).
 
-Este documento es una guía para la instalación de [Arch Linux](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") desde un sistema live arrancado con la imagen de instalación oficial. Antes de proceder a la instalación, es recomendable que eche un vistazo a las [preguntas frecuentes](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)"). Para conocer las convenciones utilizadas en este documento, consulte [Ayuda:Lectura](/index.php/Help:Reading_(Espa%C3%B1ol) "Help:Reading (Español)").
+Este documento es una guía para la instalación de [Arch Linux](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") desde un sistema live arrancado con la imagen de instalación oficial. Antes de proceder a la instalación, es recomendable que eche un vistazo a las [preguntas frecuentes](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)"). Para conocer las convenciones utilizadas en este documento, consulte [Ayuda:Lectura](/index.php/Help:Reading_(Espa%C3%B1ol) "Help:Reading (Español)"). En particular, los ejemplos de código pueden contener marcadores de posición (resaltados en cursiva) que deberán reemplazarse manualmente.
 
-Para obtener instrucciones más detalladas, consulte los artículos relacionados de [ArchWiki](/index.php/ArchWiki:About_(Espa%C3%B1ol) "ArchWiki:About (Español)"), o las [páginas del manual](/index.php/Man_page_(Espa%C3%B1ol) "Man page (Español)") de los distintos programas; vea [archlinux(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/archlinux.7) para una descripción general de la configuración. Para obtener ayuda interactiva, el [canal IRC](/index.php/IRC_channel_(Espa%C3%B1ol) "IRC channel (Español)") y los [foros](https://bbs.archlinux.org/) están disponibles.
+Para obtener instrucciones más detalladas, consulte los artículos relacionados de [ArchWiki](/index.php/ArchWiki:About_(Espa%C3%B1ol) "ArchWiki:About (Español)"), o las [páginas del manual](/index.php/Man_page_(Espa%C3%B1ol) "Man page (Español)") de los distintos programas, con enlaces para ambos a lo largo de esta guía. Para obtener ayuda interactiva, el [canal IRC](/index.php/IRC_channel_(Espa%C3%B1ol) "IRC channel (Español)") y los [foros](https://bbs.archlinux.org/) están disponibles.
 
 Arch Linux puede ejecutarse en cualquier máquina compatible [x86_64](https://en.wikipedia.org/wiki/es:X86-64 "wikipedia:es:X86-64") con al menos 512 MB de RAM. Una instalación básica con todos los paquetes del grupo [base](https://www.archlinux.org/groups/x86_64/base/) debería ocupar menos de 800 MB de espacio en disco. Como el proceso de instalación necesita recuperar paquetes de un repositorio remoto, esta guía asume que hay disponible una conexión a Internet.
 
@@ -39,7 +39,7 @@ Para cambiar a una consola diferente —por ejemplo, para ver esta guía con [EL
 
 ### Definición de la distribución de teclado
 
-La [distribución de teclado de la consola](/index.php/Console_keymap "Console keymap") predeterminada es la **US**. Las distribuciones de teclado disponibles se pueden listar con:
+La [distribución de teclado de la consola](/index.php/Console_keymap "Console keymap") predeterminada es la [US](https://en.wikipedia.org/wiki/es:File:KB_United_States-NoAltGr.svg "wikipedia:es:File:KB United States-NoAltGr.svg"). Las distribuciones de teclado disponibles se pueden listar con:
 
 ```
 # ls /usr/share/kbd/keymaps/**/*.map.gz
@@ -53,11 +53,11 @@ Para modificar la distribución de teclado, añada un nombre de archivo correspo
 
 ```
 
-Los [tipos de letras para consola](/index.php?title=Console_fonts_(Espa%C3%B1ol)&action=edit&redlink=1 "Console fonts (Español) (page does not exist)") se encuentran en `/usr/share/kbd/consolefonts/` y se pueden configurar igualmente con [setfont(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
+Los [tipos de letras para consola](/index.php/Fonts#Console_fonts "Fonts") se encuentran en `/usr/share/kbd/consolefonts/` y se pueden configurar igualmente con [setfont(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
 
 ### Comprobación del modo de arranque
 
-Si el modo UEFI está activado en una placa base [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)"), [archiso](/index.php/Archiso_(Espa%C3%B1ol) "Archiso (Español)") [arrancará](/index.php/Arch_boot_process_(Espa%C3%B1ol) "Arch boot process (Español)") a través de [systemd-boot](/index.php/Systemd-boot_(Espa%C3%B1ol) "Systemd-boot (Español)"). Para comprobarlo, liste el contenido del directorio [efivars](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#Variables_de_UEFI "Unified Extensible Firmware Interface (Español)"):
+Si el modo UEFI está activado en una placa base [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)"), [Archiso](/index.php/Archiso_(Espa%C3%B1ol) "Archiso (Español)") [arrancará](/index.php/Arch_boot_process_(Espa%C3%B1ol) "Arch boot process (Español)") a través de [systemd-boot](/index.php/Systemd-boot_(Espa%C3%B1ol) "Systemd-boot (Español)"). Para comprobarlo, liste el contenido del directorio [efivars](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#Variables_de_UEFI "Unified Extensible Firmware Interface (Español)"):
 
 ```
 # ls /sys/firmware/efi/efivars
@@ -209,7 +209,7 @@ Establezca la [zona horaria](/index.php/Time_(Espa%C3%B1ol)#Huso_horario "Time (
 
 ```
 
-**Nota:** *(del traductor)* Para la península ibérica sería:
+**Nota:** *(del traductor)* para España —excepto en las islas Canarias— sería:
 ```
 # ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime
 

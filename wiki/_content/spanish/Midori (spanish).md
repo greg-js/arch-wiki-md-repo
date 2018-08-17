@@ -1,4 +1,4 @@
-Related articles
+Artículos relacionados
 
 *   [Browser Plugins (Español)](/index.php/Browser_Plugins_(Espa%C3%B1ol) "Browser Plugins (Español)")
 *   [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon")
@@ -76,7 +76,9 @@ Para una instalación manual, tiene que crear la carpeta `~/.local/share/midori/
 
 ### Plugin flash
 
-Para conseguir que funcione el plugin de flash en midori puede instalar el paquete [midori-flash](https://aur.archlinux.org/packages/midori-flash/) desde [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)") o seguir las instrucciones en [Epiphany#Flash](/index.php/Epiphany#Flash "Epiphany").
+Para que el complemento Flash funcione en Midori, instale el paquete [midori-flash](https://aur.archlinux.org/packages/midori-flash/).
+
+Alternativamente, instale [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) desde el repositorio principal y añada `export MOZ_PLUGIN_PATH="/usr/lib/mozilla/plugins"` a su `.bashrc`, `.xprofile`, o el archivo de configuración del intérprete de comandos correspondiente.
 
 ## Trucos y consejos
 

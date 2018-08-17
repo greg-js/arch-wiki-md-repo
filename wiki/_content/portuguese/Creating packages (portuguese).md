@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma versão localizada de [Creating packages](/index.php/Creating_packages "Creating packages"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Creating_packages&diff=0&oldid=532272) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Creating packages](/index.php/Creating_packages "Creating packages"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Creating_packages&diff=0&oldid=532272) na versão em inglês.
 
 Artigos relacionados
 

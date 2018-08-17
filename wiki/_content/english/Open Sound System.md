@@ -227,7 +227,7 @@ Other mixers that have support for OSS:
 
 	[http://www.kde.org/applications/multimedia/kmix/](http://www.kde.org/applications/multimedia/kmix/) || [kmix](https://www.archlinux.org/packages/?name=kmix)
 
-*   **VolWheel** — After the installation, set it to [autostart](/index.php/Autostarting#Graphical "Autostarting") as needed, then enable OSS support by right-clicking on the system tray icon, choosing *Preferences* and then changing:
+*   **VolWheel** — After the installation, set it to [autostart](/index.php/Autostarting#On_Xorg_startup "Autostarting") as needed, then enable OSS support by right-clicking on the system tray icon, choosing *Preferences* and then changing:
 
 *   *Driver*: `OSS`.
 *   *Default Channel*: `vmix0-outvol` (find out what channel to use with `ossmix`).
@@ -326,7 +326,7 @@ audio_output {
 
 ```
 
-See also: [Music Player Daemon#Global configuration](/index.php/Music_Player_Daemon#Global_configuration "Music Player Daemon").
+See also: [Music Player Daemon#System-wide_configuration](/index.php/Music_Player_Daemon#System-wide_configuration "Music Player Daemon").
 
 ### MPlayer
 

@@ -427,9 +427,7 @@ Restart lighttpd, and it should now require you to enter your username and passw
 
 ##### SSL
 
-The following resources can help you add ssl to lighttpd:
-
-[Lighttpd#SSL](/index.php/Lighttpd#SSL "Lighttpd") [http://redmine.lighttpd.net/projects/1/wiki/Docs_SSL](http://redmine.lighttpd.net/projects/1/wiki/Docs_SSL) [http://redmine.lighttpd.net/projects/1/wiki/HowToSimpleSSL](http://redmine.lighttpd.net/projects/1/wiki/HowToSimpleSSL)
+See [Lighttpd#Enabling_https_via_SSL](/index.php/Lighttpd#Enabling_https_via_SSL "Lighttpd"). The following resources can help you add ssl to lighttpd [[1]](http://redmine.lighttpd.net/projects/1/wiki/Docs_SSL)[[2]](http://redmine.lighttpd.net/projects/1/wiki/HowToSimpleSSL).
 
 If you just want to get it working, the following commands should work.
 

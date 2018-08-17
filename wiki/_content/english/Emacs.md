@@ -7,7 +7,7 @@
     *   [2.1 No Colors](#No_Colors)
     *   [2.2 As a daemon](#As_a_daemon)
     *   [2.3 As a systemd unit](#As_a_systemd_unit)
-*   [3 Getting Help](#Getting_Help)
+*   [3 Getting help](#Getting_help)
     *   [3.1 The manuals](#The_manuals)
 *   [4 Customization](#Customization)
     *   [4.1 Configuration file](#Configuration_file)
@@ -159,7 +159,7 @@ If you start emacs as a daemon, you may want to set the `VISUAL` and `EDITOR` en
 
 It is also recommended to change any GUI start menu entries (or equivalent) for Emacs to point to emacsclient instead of emacs, so that the emacs daemon is used instead of starting a new emacs process.
 
-## Getting Help
+## Getting help
 
 Emacs has a built-in tutorial which can be accessed by clicking the first link on the splash screen and selecting *Help->Emacs Tutorial* from the menu or by pressing `C-h t`.
 

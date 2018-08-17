@@ -1,7 +1,7 @@
 | [English](/index.php/Category:English "Category:English") <small>(2)</small> |
 | <small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(23)</small> |
 | <small>1.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(18) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
-| <small>1.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(47)</small> |
+| <small>1.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(48)</small> |
 | <small>1.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
 | <small>1.2.</small> [Arch projects](/index.php/Category:Arch_projects "Category:Arch projects") <small>(7)</small> |
 | <small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki") <small>(12)</small> |
@@ -9,11 +9,11 @@
 | <small>1.4.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(2)</small> |
 | <small>1.5.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") <small>(29)</small> |
 | <small>1.6.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(4)</small> |
-| <small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(18)</small> |
+| <small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(16)</small> |
 | <small>2.1.</small> [Accessibility](/index.php/Category:Accessibility "Category:Accessibility") <small>(7)</small> |
 | <small>2.2.</small> [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers") <small>(13)</small> |
 | <small>2.3.</small> [Command-line](/index.php/Category:Command-line "Category:Command-line") <small>(7) (also in [System administration](/index.php/Category:System_administration "Category:System administration"))</small> |
-| <small>2.3.1.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(11)</small> |
+| <small>2.3.1.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(11) (also in [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages"))</small> |
 | <small>2.3.2.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(16)</small> |
 | <small>2.3.3.</small> [Terminal multiplexers](/index.php/Category:Terminal_multiplexers "Category:Terminal multiplexers") <small>(3)</small> |
 | <small>2.4.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving") <small>(14)</small> |
@@ -39,7 +39,7 @@
 | <small>2.10.11.</small> [Synchronization](/index.php/Category:Synchronization "Category:Synchronization") <small>(3)</small> |
 | <small>2.10.12.</small> [Usenet clients](/index.php/Category:Usenet_clients "Category:Usenet clients") <small>(4)</small> |
 | <small>2.10.13.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(25) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
-| <small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(25)</small> |
+| <small>2.11.</small> [Mathematics and science](/index.php/Category:Mathematics_and_science "Category:Mathematics and science") <small>(24)</small> |
 | <small>2.12.</small> [Multimedia](/index.php/Category:Multimedia "Category:Multimedia") <small>(21)</small> |
 | <small>2.12.1.</small> [Audio](/index.php/Category:Audio "Category:Audio") <small>(5)</small> |
 | <small>2.12.2.</small> [Media servers](/index.php/Category:Media_servers "Category:Media servers") <small>(11) (also in [Servers](/index.php/Category:Servers "Category:Servers"), [Streaming](/index.php/Category:Streaming "Category:Streaming"))</small> |
@@ -48,7 +48,7 @@
 | <small>2.12.4.</small> [Music](/index.php/Category:Music "Category:Music") <small>(26)</small> |
 | <small>2.12.5.</small> [Raster graphics](/index.php/Category:Raster_graphics "Category:Raster graphics") <small>(9)</small> |
 | <small>2.12.6.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(17) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
-| <small>2.12.7.</small> [Television](/index.php/Category:Television "Category:Television") <small>(3)</small> |
+| <small>2.12.7.</small> [Television](/index.php/Category:Television "Category:Television") <small>(4)</small> |
 | <small>2.12.7.1.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
 | <small>2.13.</small> [Office](/index.php/Category:Office "Category:Office") <small>(21)</small> |
 | <small>2.13.1.</small> [TeX](/index.php/Category:TeX "Category:TeX") <small>(3)</small> |
@@ -63,13 +63,14 @@
 | <small>2.17.5.</small> [Wiki software](/index.php/Category:Wiki_software "Category:Wiki software") <small>(6)</small> |
 | <small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(37)</small> |
 | <small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(18) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
-| <small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(47)</small> |
+| <small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(48)</small> |
 | <small>3.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
 | <small>3.2.</small> [Frameworks](/index.php/Category:Frameworks "Category:Frameworks") <small>(4)</small> |
 | <small>3.2.1.</small> [Web frameworks](/index.php/Category:Web_frameworks "Category:Web frameworks") <small>(2) (also in [Web applications](/index.php/Category:Web_applications "Category:Web applications"))</small> |
 | <small>3.3.</small> [Integrated development environments](/index.php/Category:Integrated_development_environments "Category:Integrated development environments") <small>(4)</small> |
 | <small>3.4.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems") <small>(6) (also in [Web applications](/index.php/Category:Web_applications "Category:Web applications"))</small> |
-| <small>3.5.</small> [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages") <small>(24)</small> |
+| <small>3.5.</small> [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages") <small>(25)</small> |
+| <small>3.5.1.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(11) (also in [Command-line](/index.php/Category:Command-line "Category:Command-line"))</small> |
 | <small>3.6.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(14) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>3.7.</small> [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System") <small>(16)</small> |
 | <small>3.8.</small> [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits") <small>(4) (also in [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces "Category:Graphical user interfaces"))</small> |
@@ -163,11 +164,11 @@
 | <small>5.22.1.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(5) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
 | <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(24)</small> |
 | <small>6.1.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(29)</small> |
-| <small>6.1.1.</small> [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") <small>(11)</small> |
+| <small>6.1.1.</small> [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") <small>(10)</small> |
 | <small>6.1.2.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(3) (also in [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy"))</small> |
 | <small>6.1.3.</small> [Init](/index.php/Category:Init "Category:Init") <small>(8)</small> |
 | <small>6.2.</small> [Command-line](/index.php/Category:Command-line "Category:Command-line") <small>(7) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
-| <small>6.2.1.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(11)</small> |
+| <small>6.2.1.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(11) (also in [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages"))</small> |
 | <small>6.2.2.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(16)</small> |
 | <small>6.2.3.</small> [Terminal multiplexers](/index.php/Category:Terminal_multiplexers "Category:Terminal multiplexers") <small>(3)</small> |
 | <small>6.3.</small> [Configuration files](/index.php/Category:Configuration_files "Category:Configuration files") <small>(7)</small> |

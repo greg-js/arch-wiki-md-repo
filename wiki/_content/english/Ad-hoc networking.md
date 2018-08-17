@@ -35,7 +35,7 @@ Since IBSS network is a peer-to-peer network, the steps necessary to set up the 
 
 **Warning:** This method creates **unencrypted** ad-hoc network. See [#WPA supplicant](#WPA_supplicant) for method using WPA encryption.
 
-See [Wireless network configuration#Manual setup](/index.php/Wireless_network_configuration#Manual_setup "Wireless network configuration") for a better explanation of the following commands. Make sure that [iw](https://www.archlinux.org/packages/?name=iw) is [installed](/index.php/Pacman "Pacman").
+See [Wireless network configuration#iw](/index.php/Wireless_network_configuration#iw "Wireless network configuration") for a better explanation of the following commands. Make sure that [iw](https://www.archlinux.org/packages/?name=iw) is [installed](/index.php/Pacman "Pacman").
 
 Set the operation mode to ibss:
 

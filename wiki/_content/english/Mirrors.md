@@ -137,7 +137,7 @@ To prepare `mirrorlist.backup` for ranking with *rankmirrors*, the following act
 
 *   Edit `mirrorlist.backup` and uncomment the servers to be tested
 
-*   If the servers in the file are grouped by country, one can extract all the servers of a specific country by using: `$ grep -A1 --no-group-separator "*Country Name*" /etc/pacman.d/mirrorlist.backup` 
+*   If the servers in the file are grouped by country, one can extract all the servers of a specific country by using: `$ awk '/^## *Country Name*$/{f=1}f==0{next}/^$/{exit}{print substr($0, 2)}' /etc/pacman.d/mirrorlist.backup` 
 
 *   To uncomment every mirror, run the following `sed` line: `# sed -i 's/^#Server/Server/' /etc/pacman.d/mirrorlist.backup` 
 

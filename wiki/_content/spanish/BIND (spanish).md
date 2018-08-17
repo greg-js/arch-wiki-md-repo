@@ -1,3 +1,5 @@
+**Estado de la traducción:** este artículo es una versión traducida de [Domain Name System (Español)](/index.php?title=Domain_Name_System_(Espa%C3%B1ol)&action=edit&redlink=1 "Domain Name System (Español) (page does not exist)"). Fecha de la última traducción/revisión: **2017-01-24**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Domain_Name_System_(Espa%C3%B1ol)&diff=0&oldid={{{3}}}).
+
 Artículos relacionados
 
 *   [DNSCrypt](/index.php/DNSCrypt "DNSCrypt")
@@ -5,8 +7,6 @@ Artículos relacionados
 *   [Pdnsd](/index.php/Pdnsd "Pdnsd")
 *   [Unbound](/index.php/Unbound "Unbound")
 *   [PowerDNS](/index.php/PowerDNS "PowerDNS")
-
-**Estado de la traducción:** este artículo es una versión traducida de [Domain Name System (Español)](/index.php?title=Domain_Name_System_(Espa%C3%B1ol)&action=edit&redlink=1 "Domain Name System (Español) (page does not exist)"). Fecha de la última traducción/revisión: **2017-01-24**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Domain_Name_System_(Espa%C3%B1ol)&diff=0&oldid={{{3}}}).
 
 BIND (*Berkeley Internet Name Daemon*) es la implementación de referencia del protocolo DNS (*Domain Name System*).
 

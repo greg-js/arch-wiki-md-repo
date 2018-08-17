@@ -1,4 +1,4 @@
-Related articles
+Artículos relacionados
 
 *   [Kernel modules (Español)](/index.php/Kernel_modules_(Espa%C3%B1ol) "Kernel modules (Español)")
 *   [Kernel parameters (Español)](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)")

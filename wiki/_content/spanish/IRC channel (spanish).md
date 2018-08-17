@@ -1,6 +1,6 @@
 **Estado de la traducción:** este artículo es una versión traducida de [IRC channel](/index.php/IRC_channel "IRC channel"). Fecha de la última traducción/revisión: **2018-08-13**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=IRC_channel&diff=0&oldid=534201).
 
-Related articles
+Artículos relacionados
 
 *   [ArchWiki:IRC](/index.php/ArchWiki:IRC "ArchWiki:IRC")
 *   [Comunidades internacionales](/index.php/International_communities_(Espa%C3%B1ol) "International communities (Español)")

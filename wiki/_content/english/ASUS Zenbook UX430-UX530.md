@@ -12,6 +12,7 @@
 | Function keys | Working |
 | Fingerprint Sensor | Partially working |
 | Ambient Light Sensor | Not working |
+| [Battery charge control](https://techinstyle.asus.com/asus-battery-health-charging-helps-you-get-the-most-out-of-your-zenbook/) | Not working |
 
 ASUS [announced](https://www.asus.com/News/q0npwWGXCqpxoVf8) UX430 and UX530 models. Since these models share almost the same hardware (the only difference is screen size and discrete NVidia graphics card), this article covers hardware specific configuration for all UX430UA, UX430UQ, UX530UQ and UX530UX models.
 
@@ -23,6 +24,7 @@ ASUS [announced](https://www.asus.com/News/q0npwWGXCqpxoVf8) UX430 and UX530 mod
     *   [1.3 Audio](#Audio)
     *   [1.4 Touchpad](#Touchpad)
     *   [1.5 Fingerprint sensor](#Fingerprint_sensor)
+    *   [1.6 Suspend](#Suspend)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Linux kernel 4.13 issues](#Linux_kernel_4.13_issues)
     *   [2.2 Headphones audio is too low](#Headphones_audio_is_too_low)
@@ -60,6 +62,10 @@ See [Libinput](/index.php/Libinput "Libinput").
 **Note:** This is likely not going to work at all. See [Talk:ASUS Zenbook UX430/UX530#Fingerprint Reader](/index.php/Talk:ASUS_Zenbook_UX430/UX530#Fingerprint_Reader "Talk:ASUS Zenbook UX430/UX530").
 
 Install fingerprint sensor driver [libfprint-elantech-git](https://aur.archlinux.org/packages/libfprint-elantech-git/), then see [Fprint](/index.php/Fprint "Fprint") and you might be also interested in [Fingerprint GUI](/index.php/Fingerprint_GUI "Fingerprint GUI").
+
+## Suspend
+
+Linux (4.17 at least) default to [suspend-to-idle](https://www.kernel.org/doc/html/v4.18/admin-guide/pm/sleep-states.html#suspend-to-idle) which isn't very power effective. This is probably due to this change in [4.14-rc1](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=e870c6c87cf9484090d28f2a68aa29e008960c93). For better power effective you can use [suspend-to-ram](https://www.kernel.org/doc/html/v4.18/admin-guide/pm/sleep-states.html#suspend-to-ram) by adding `mem_sleep_default=deep` to the kernel cmdline.
 
 # Troubleshooting
 

@@ -1,4 +1,4 @@
-Related articles
+Artículos relacionados
 
 *   [Full system backup with rsync (Español)](/index.php/Full_system_backup_with_rsync_(Espa%C3%B1ol) "Full system backup with rsync (Español)")
 *   [Backup programs](/index.php/Backup_programs "Backup programs")

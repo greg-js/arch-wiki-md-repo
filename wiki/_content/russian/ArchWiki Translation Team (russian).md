@@ -12,10 +12,11 @@
     *   [2.2 Что нужно будет делать?](#.D0.A7.D1.82.D0.BE_.D0.BD.D1.83.D0.B6.D0.BD.D0.BE_.D0.B1.D1.83.D0.B4.D0.B5.D1.82_.D0.B4.D0.B5.D0.BB.D0.B0.D1.82.D1.8C.3F)
     *   [2.3 Какие страницы требуют поддержки?](#.D0.9A.D0.B0.D0.BA.D0.B8.D0.B5_.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B8.D1.86.D1.8B_.D1.82.D1.80.D0.B5.D0.B1.D1.83.D1.8E.D1.82_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B8.3F)
     *   [2.4 Как отказаться от сопровождения страницы?](#.D0.9A.D0.B0.D0.BA_.D0.BE.D1.82.D0.BA.D0.B0.D0.B7.D0.B0.D1.82.D1.8C.D1.81.D1.8F_.D0.BE.D1.82_.D1.81.D0.BE.D0.BF.D1.80.D0.BE.D0.B2.D0.BE.D0.B6.D0.B4.D0.B5.D0.BD.D0.B8.D1.8F_.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B8.D1.86.D1.8B.3F)
-*   [3 Термины](#.D0.A2.D0.B5.D1.80.D0.BC.D0.B8.D0.BD.D1.8B)
-*   [4 Список проверки](#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D0.BF.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B8)
-*   [5 Рейтинг требующихся статей](#.D0.A0.D0.B5.D0.B9.D1.82.D0.B8.D0.BD.D0.B3_.D1.82.D1.80.D0.B5.D0.B1.D1.83.D1.8E.D1.89.D0.B8.D1.85.D1.81.D1.8F_.D1.81.D1.82.D0.B0.D1.82.D0.B5.D0.B9)
-*   [6 Список страниц с сопроводителем](#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B8.D1.86_.D1.81_.D1.81.D0.BE.D0.BF.D1.80.D0.BE.D0.B2.D0.BE.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D0.B5.D0.BC)
+*   [3 Templates](#Templates)
+*   [4 Термины](#.D0.A2.D0.B5.D1.80.D0.BC.D0.B8.D0.BD.D1.8B)
+*   [5 Список проверки](#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D0.BF.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B8)
+*   [6 Рейтинг требующихся статей](#.D0.A0.D0.B5.D0.B9.D1.82.D0.B8.D0.BD.D0.B3_.D1.82.D1.80.D0.B5.D0.B1.D1.83.D1.8E.D1.89.D0.B8.D1.85.D1.81.D1.8F_.D1.81.D1.82.D0.B0.D1.82.D0.B5.D0.B9)
+*   [7 Список страниц с сопроводителем](#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B8.D1.86_.D1.81_.D1.81.D0.BE.D0.BF.D1.80.D0.BE.D0.B2.D0.BE.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D0.B5.D0.BC)
 
 ## О проекте
 
@@ -79,6 +80,28 @@
 ### Как отказаться от сопровождения страницы?
 
 Если по какой-либо причине вы больше не хотите сопровождать страницу, добавьте в неё шаблон [Template:Unmaintained (Русский)](/index.php/Template:Unmaintained_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:Unmaintained (Русский)") и удалите страницу из [списка страниц с сопроводителем](#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B8.D1.86_.D1.81_.D1.81.D0.BE.D0.BF.D1.80.D0.BE.D0.B2.D0.BE.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D0.B5.D0.BC) ниже, чтобы другие участники были уведомлены об этом и, возможно, взяли на себя её поддержку.
+
+## Templates
+
+The following table lists the [templates](/index.php/Help:Template_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Help:Template (Русский)") that should be translated and their Russian equivalent.
+
+| English template | Russian version |
+| Article templates |
+| [Template:Related articles start](/index.php/Template:Related_articles_start "Template:Related articles start") | [Template:Related articles start (Русский)](/index.php/Template:Related_articles_start_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:Related articles start (Русский)") |
+| [Template:Yes](/index.php/Template:Yes "Template:Yes") | [Template:Да](/index.php/Template:%D0%94%D0%B0 "Template:Да") |
+| [Template:No](/index.php/Template:No "Template:No") | [Template:Нет](/index.php/Template:%D0%9D%D0%B5%D1%82 "Template:Нет") |
+| [Template:Tip](/index.php/Template:Tip "Template:Tip") | [Template:Совет](/index.php/Template:%D0%A1%D0%BE%D0%B2%D0%B5%D1%82 "Template:Совет") |
+| [Template:Note](/index.php/Template:Note "Template:Note") | [Template:Note (Русский)](/index.php/Template:Note_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:Note (Русский)") |
+| [Template:Warning](/index.php/Template:Warning "Template:Warning") | [Template:Warning (Русский)](/index.php/Template:Warning_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:Warning (Русский)") |
+| [Template:Dead link](/index.php/Template:Dead_link "Template:Dead link") | [Template:Dead link (Русский)](/index.php/Template:Dead_link_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:Dead link (Русский)") |
+| [Template:Broken package link](/index.php/Template:Broken_package_link "Template:Broken package link") | [Template:Broken package link (Русский)](/index.php/Template:Broken_package_link_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:Broken package link (Русский)") |
+| Translation status templates |
+| [Template:Bad translation](/index.php/Template:Bad_translation "Template:Bad translation") | [Template:Bad translation (Русский)](/index.php/Template:Bad_translation_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:Bad translation (Русский)") |
+| [Template:Translateme](/index.php/Template:Translateme "Template:Translateme") | [Template:Translateme (Русский)](/index.php/Template:Translateme_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:Translateme (Русский)") |
+| [Template:TranslationStatus](/index.php/Template:TranslationStatus "Template:TranslationStatus") | [Template:TranslationStatus (Русский)](/index.php/Template:TranslationStatus_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:TranslationStatus (Русский)") |
+| Special templates |
+| [Template:Cat main](/index.php/Template:Cat_main "Template:Cat main") | [Template:Cat main (Русский)](/index.php/Template:Cat_main_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:Cat main (Русский)") |
+| [Template:Template](/index.php/Template:Template "Template:Template") | [Template:Template (Русский)](/index.php/Template:Template_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:Template (Русский)") |
 
 ## Термины
 

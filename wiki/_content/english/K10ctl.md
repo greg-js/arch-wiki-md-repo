@@ -135,7 +135,7 @@ Restart k10ctl and check "k10ctl 0-3" again.
 
 ```
 
-For the module 'msr' take a look at [Kernel modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules").
+For the module 'msr' take a look at [Kernel modules#Automatic_module_handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
 
 ## Tips and tricks
 

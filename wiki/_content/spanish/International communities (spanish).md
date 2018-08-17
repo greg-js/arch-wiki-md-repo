@@ -1,6 +1,6 @@
 **Estado de la traducción:** este artículo es una versión traducida de [International communities](/index.php/International_communities "International communities"). Fecha de la última traducción/revisión: **2018-08-13**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=International_communities&diff=0&oldid=532618).
 
-Related articles
+Artículos relacionados
 
 *   [Ayuda:i18n](/index.php/Help:I18n_(Espa%C3%B1ol) "Help:I18n (Español)")
 *   [Canales IRC](/index.php/IRC_channel_(Espa%C3%B1ol) "IRC channel (Español)")

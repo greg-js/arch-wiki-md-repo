@@ -1467,7 +1467,7 @@ See [lm_sensors#Graphical front-ends](/index.php/Lm_sensors#Graphical_front-ends
 
 *   **neofetch** — A fast, highly customizable system info script that supports displaying images with w3m.
 
-	[https://github.com/dylanaraps/neofetch](https://github.com/dylanaraps/neofetch) || [neofetch-git](https://aur.archlinux.org/packages/neofetch-git/)
+	[https://github.com/dylanaraps/neofetch](https://github.com/dylanaraps/neofetch) || [neofetch](https://www.archlinux.org/packages/?name=neofetch)
 
 *   **screenfetch** — Similar to archey but has an option to take a screenshot. Written in bash.
 

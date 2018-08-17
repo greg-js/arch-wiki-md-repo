@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma versão localizada de [International communities](/index.php/International_communities "International communities"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=International_communities&diff=0&oldid=532618) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [International communities](/index.php/International_communities "International communities"). Data da última tradução: 2018-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=International_communities&diff=0&oldid=535233) na versão em inglês.
 
 Artigos relacionados
 
@@ -144,6 +144,7 @@ Esta lista não está completa. Se você conhece uma comunidade que não está l
 ## Taiwan
 
 *   Site: [https://archlinux.tw/](https://archlinux.tw/)
+*   Bate-papo do Telegram: [https://t.me/ArchLinuxTaiwan](https://t.me/ArchLinuxTaiwan)
 *   Fórum: [https://groups.google.com/forum/#!forum/archlinux-tw-general](https://groups.google.com/forum/#!forum/archlinux-tw-general)
 *   Wiki: [Main page (正體中文)](/index.php/Main_page_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Main page (正體中文)")
 
@@ -164,4 +165,4 @@ Esta lista não está completa. Se você conhece uma comunidade que não está l
 *   Site: [http://archlinuxvn.tuxfamily.org/](http://archlinuxvn.tuxfamily.org/) (vietnamita apenas)
 *   Wiki: [http://archlinuxvn.tuxfamily.org/](http://archlinuxvn.tuxfamily.org/)
 *   Projects: [http://github.com/archlinuxvn/](http://github.com/archlinuxvn/)
-*   Lisa de discussão: [http://groups.google.com/group/archlinuxvn/](http://groups.google.com/group/archlinuxvn/)
+*   Lista de discussão: [http://groups.google.com/group/archlinuxvn/](http://groups.google.com/group/archlinuxvn/)

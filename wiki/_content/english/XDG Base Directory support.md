@@ -69,19 +69,16 @@ When contributing make sure to use the correct section.
 
 Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and `VIMINIT`), patches or compile-time options to gain support and anything which does must be deemed hardcoded. Additionally if the process is too error prone or difficult, such as [Haskell's cabal](https://www.haskell.org/cabal/) or Eclipse, they should also be considered as hardcoded.
 
-*   The first column should be the project name, ideally the command name if it is not ambiguous, linked to their website or an appropriate internal wiki article.
-
+*   The first column should be either a link to an internal article, a [Template:Pkg](/index.php/Template:Pkg "Template:Pkg") or a [Template:AUR](/index.php/Template:AUR "Template:AUR").
 *   The second column is for any legacy files and directories the project had (one per line), this is done so people can find them even if they are no longer read.
-
 *   In the third, try to find the commit or version a project switched to XDG Base Directory or any open discussions and include them in the next two columns (two per line).
-
 *   The last column should include any appropriate workarounds or solutions. Please verify that your solution is correct and functional.
 
 ## Supported
 
 | Application | Legacy Path | Supported Since | Discussion | Notes |
-| [aerc](https://github.com/SirCmpwn/aerc) |
-| [antimicro](https://github.com/Antimicro/antimicro/) | `~/.antimicro` | [edba864](https://github.com/Antimicro/antimicro/commit/edba864) | [[1]](https://github.com/Antimicro/antimicro/issues/5) |
+| [aerc-git](https://aur.archlinux.org/packages/aerc-git/) |
+| [antimicro](https://aur.archlinux.org/packages/antimicro/) | `~/.antimicro` | [edba864](https://github.com/Antimicro/antimicro/commit/edba864) | [[1]](https://github.com/Antimicro/antimicro/issues/5) |
 | [aria2](/index.php/Aria2 "Aria2") | `~/.aria2` | [8bc1d37](https://github.com/tatsuhiro-t/aria2/commit/8bc1d37) | [[2]](https://github.com/tatsuhiro-t/aria2/issues/27) |
 | [asunder](https://www.archlinux.org/packages/?name=asunder) | 
 
@@ -91,17 +88,17 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 ~/.asunder_album_title`
 
  | [2.9.0](https://littlesvr.ca/bugs/show_bug.cgi?id=31) | [[3]](https://littlesvr.ca/bugs/show_bug.cgi?id=52) | Uses `XDG_CONFIG_HOME/asunder/asunder` for `~/.asunder` and `XDG_CACHE_HOME/asunder/asunder_album_...` for the other 3 files. Legacy paths are not removed after migration, they have to be deleted manually. |
-| [blender](/index.php/Blender "Blender") | `~/.blender` | [4293f473](http://git.blender.org/gitweb/gitweb.cgi/blender.git/commit/4293f473) | [[4]](https://developer.blender.org/T28943) |
+| [Blender](/index.php/Blender "Blender") | `~/.blender` | [4293f473](http://git.blender.org/gitweb/gitweb.cgi/blender.git/commit/4293f473) | [[4]](https://developer.blender.org/T28943) |
 | [burp](https://github.com/falconindy/burp) | [f2388e9](https://github.com/falconindy/burp/commit/f2388e9) |
-| [Calibre](https://www.archlinux.org/packages/?name=Calibre) |
-| [chromium](/index.php/Chromium "Chromium") | `~/.chromium` | [23057](https://src.chromium.org/viewvc/chrome?revision=23057&view=revision) | [[5]](https://groups.google.com/forum/#!topic/chromium-dev/QekVQxF3nho) [[6]](https://code.google.com/p/chromium/issues/detail?id=16976) |
-| [citra](http://citra-emu.org/) | `~/.citra-emu` | [f7c3193fec](https://github.com/citra-emu/citra/commit/f7c3193fec) | [[7]](https://github.com/citra-emu/citra/pull/575) |
-| [composer](/index.php/PHP#Composer "PHP") | `~/.composer` | [1.0.0-beta1](https://github.com/composer/composer/releases/tag/1.0.0-beta1) | [[8]](https://github.com/composer/composer/pull/1407) |
-| [cower](https://github.com/falconindy/cower) | [8b70805](https://github.com/falconindy/cower/commit/8b70805) |
+| [calibre](https://www.archlinux.org/packages/?name=calibre) |
+| [Chromium](/index.php/Chromium "Chromium") | `~/.chromium` | [23057](https://src.chromium.org/viewvc/chrome?revision=23057&view=revision) | [[5]](https://groups.google.com/forum/#!topic/chromium-dev/QekVQxF3nho) [[6]](https://code.google.com/p/chromium/issues/detail?id=16976) |
+| [citra-git](https://aur.archlinux.org/packages/citra-git/) | `~/.citra-emu` | [f7c3193fec](https://github.com/citra-emu/citra/commit/f7c3193fec) | [[7]](https://github.com/citra-emu/citra/pull/575) |
+| [Composer](/index.php/PHP#Composer "PHP") | `~/.composer` | [1.0.0-beta1](https://github.com/composer/composer/releases/tag/1.0.0-beta1) | [[8]](https://github.com/composer/composer/pull/1407) |
+| [cower](https://aur.archlinux.org/packages/cower/) | [8b70805](https://github.com/falconindy/cower/commit/8b70805) |
 | [d-feet](https://www.archlinux.org/packages/?name=d-feet) | `~/.d-feet` | [7f6104b](https://git.gnome.org/browse/d-feet/commit/?id==7f6104b) |
 | [dconf](https://www.archlinux.org/packages/?name=dconf) |
-| [dolphin-emu](/index.php/Dolphin_emulator "Dolphin emulator") | `~/.dolphin-emu` | [a498c68](https://github.com/dolphin-emu/dolphin/commit/a498c68) | [[9]](https://github.com/dolphin-emu/dolphin/pull/2304) |
-| [dr14-meter](http://dr14tmeter.sourceforge.net) | [7e777ca64](https://github.com/simon-r/dr14_t.meter/commit/7e777ca645298ec898b3c76e3ec472ed6ed43e8a) | [[10]](https://github.com/simon-r/dr14_t.meter/pull/30) | `XDG_CONFIG_HOME/dr14tmeter/` |
+| [Dolphin emulator](/index.php/Dolphin_emulator "Dolphin emulator") | `~/.dolphin-emu` | [a498c68](https://github.com/dolphin-emu/dolphin/commit/a498c68) | [[9]](https://github.com/dolphin-emu/dolphin/pull/2304) |
+| [dr14_tmeter](https://aur.archlinux.org/packages/dr14_tmeter/) | [7e777ca64](https://github.com/simon-r/dr14_t.meter/commit/7e777ca645298ec898b3c76e3ec472ed6ed43e8a) | [[10]](https://github.com/simon-r/dr14_t.meter/pull/30) | `XDG_CONFIG_HOME/dr14tmeter/` |
 | [dunst](https://www.archlinux.org/packages/?name=dunst) | [78b6e2b1](https://github.com/knopwob/dunst/commit/78b6e2b1) | [[11]](https://github.com/knopwob/dunst/issues/22) |
 | [dwb](/index.php/Dwb "Dwb") |
 | [fish](/index.php/Fish "Fish") |
@@ -126,19 +123,19 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 ~/.thumbnails`
 
  | [60e0cfe](https://git.gnome.org/browse/gimp/commit/?id=60e0cfe) [483505f](https://git.gnome.org/browse/gimp/commit/?id=483505f) | [[16]](https://bugzilla.gnome.org/show_bug.cgi?id=166643) [[17]](https://bugzilla.gnome.org/show_bug.cgi?id=646644) |
-| [git](/index.php/Git "Git") | `~/.gitconfig` | [0d94427e](https://github.com/git/git/commit/0d94427e) |
-| [gstreamer](https://www.archlinux.org/packages/?name=gstreamer) | `~/.gstreamer-0.10` | [4e36f93924cf](http://cgit.freedesktop.org/gstreamer/gstreamer/commit/?id=4e36f93924cf) | [[18]](https://bugzilla.gnome.org/show_bug.cgi?id=518597) |
+| [Git](/index.php/Git "Git") | `~/.gitconfig` | [0d94427e](https://github.com/git/git/commit/0d94427e) |
+| [GStreamer](/index.php/GStreamer "GStreamer") | `~/.gstreamer-0.10` | [4e36f93924cf](http://cgit.freedesktop.org/gstreamer/gstreamer/commit/?id=4e36f93924cf) | [[18]](https://bugzilla.gnome.org/show_bug.cgi?id=518597) |
 | [gtk3](/index.php/Gtk "Gtk") |
 | [htop](https://www.archlinux.org/packages/?name=htop) | `~/.htoprc` | [93233a67](https://github.com/hishamhm/htop/commit/93233a67) |
 | [i3](/index.php/I3 "I3") | `~/.i3` | [7c130fb54](http://code.stapelberg.de/git/i3/commit/?id=7c130fb54) |
 | [i3status](https://www.archlinux.org/packages/?name=i3status) | `~/.i3status.conf` | [c3f7fc4994](http://code.stapelberg.de/git/i3status/commit/?id=c3f7fc4994) |
 | [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) |
-| [inkscape](/index.php/Inkscape "Inkscape") | `~/.inkscape` | [0.47](http://wiki.inkscape.org/wiki/index.php/Release_notes/0.47#Preferences) | [[19]](https://bugs.launchpad.net/inkscape/+bug/199720) |
+| [Inkscape](/index.php/Inkscape "Inkscape") | `~/.inkscape` | [0.47](http://wiki.inkscape.org/wiki/index.php/Release_notes/0.47#Preferences) | [[19]](https://bugs.launchpad.net/inkscape/+bug/199720) |
 | [latexmk](https://www.ctan.org/pkg/latexmk?lang=en) | `~/.latexmkrc` |
 | [lftp](https://www.archlinux.org/packages/?name=lftp) | `~/.lftp` | [21dc400](https://github.com/lavv17/lftp/commit/21dc400) | [[20]](https://www.mail-archive.com/lftp@uniyar.ac.ru/msg04301.html) |
-| [lgogdownloader](https://github.com/Sude-/lgogdownloader/) | `~/.gogdownloader` | [d430af63d000](https://github.com/Sude-/lgogdownloader/commit/d430af63d000) | [[21]](https://github.com/Sude-/lgogdownloader/issues/4) |
+| [lgogdownloader](https://aur.archlinux.org/packages/lgogdownloader/) | `~/.gogdownloader` | [d430af63d000](https://github.com/Sude-/lgogdownloader/commit/d430af63d000) | [[21]](https://github.com/Sude-/lgogdownloader/issues/4) |
 | [LibreOffice](/index.php/LibreOffice "LibreOffice") | [a6f56f70](https://cgit.freedesktop.org/libreoffice/ure/commit/?id=a6f56f70a4930d3f71bd9c9b90fdd0ba20e4da5f) [25bd2eec](https://cgit.freedesktop.org/libreoffice/bootstrap/commit/?id=25bd2eec77ed774a37d1cddd0d72312e23d5e9fd) | [[22]](https://bugs.documentfoundation.org/show_bug.cgi?id=32263) |
-| [livestreamer](/index.php/Livestreamer "Livestreamer") | `~/.livestreamerrc` | [ea805917](https://github.com/chrippa/livestreamer/commit/ea805917) | [[23]](https://github.com/chrippa/livestreamer/pull/106) |
+| [Livestreamer](/index.php/Livestreamer "Livestreamer") | `~/.livestreamerrc` | [ea805917](https://github.com/chrippa/livestreamer/commit/ea805917) | [[23]](https://github.com/chrippa/livestreamer/pull/106) |
 | [llpp](/index.php/Llpp "Llpp") | [3ab86f0cb](http://repo.or.cz/w/llpp.git/commit/3ab86f0cb) | Currently llpp places the configuration directly under `XDG_CONFIG_HOME` instead of creating a directory. |
 | [mc](/index.php/Mc "Mc") | `~/.mc` | [1b9957058](https://www.midnight-commander.org/changeset/1b9957058) [0b7115647](https://www.midnight-commander.org/changeset/0b7115647)
 
@@ -155,13 +152,13 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 | [mypaint](https://www.archlinux.org/packages/?name=mypaint) | `~/.mypaint` | [cf723b74cd](https://github.com/mypaint/mypaint/commit/cf723b74cd) |
 | [nano](/index.php/Nano "Nano") | `~/.nano/` `~/.nanorc` | [036fc403](http://git.savannah.gnu.org/cgit/nano.git/commit/?id=c16e79b612eb8e061a4bd0b5f187c37a036fc403) | [[29]](https://savannah.gnu.org/patch/?8523) |
 | [ncmpcpp](/index.php/Ncmpcpp "Ncmpcpp") | `~/.ncmpcpp` | [38d9f811](https://github.com/arybczak/ncmpcpp/commit/38d9f811de888e512b0115f551a9679eab4607f9) [27cd86e0](https://github.com/arybczak/ncmpcpp/commit/27cd86e0638bba3a7a78e44ac40dc98a58d1d90d) | [[30]](https://github.com/arybczak/ncmpcpp/issues/79) [[31]](https://github.com/arybczak/ncmpcpp/issues/110) | `ncmpcpp_directory` should be set to avoid an `error.log` file in `~/.ncmpcpp`. |
-| [NP2kai](http://domisan.sakura.ne.jp/article/np2kai/np2kai.html) | 
+| [np2kai-git](https://aur.archlinux.org/packages/np2kai-git/) | 
 
 `~/.config/np2kai
 ~/.config/xnp2kai`
 
  | [56a1cc2](https://github.com/AZO234/NP2kai/commit/56a1cc2f41e26e41c4dc341f33a0aff590cba0fa) | [Pull Request #50](https://github.com/AZO234/NP2kai/pull/50) |
-| [neovim](/index.php/Neovim "Neovim") | `~/.nvim`
+| [Neovim](/index.php/Neovim "Neovim") | `~/.nvim`
 
 `~/.nvimlog`
 
@@ -175,7 +172,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
  |
 | [NVIDIA](/index.php/NVIDIA "NVIDIA") | `~/.nv` |
 | [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP") | `~/.offlineimaprc` | [5150de5](https://github.com/OfflineIMAP/offlineimap/commit/5150de5) | [[36]](https://github.com/OfflineIMAP/offlineimap/issues/32) |
-| [opentyrian](https://bitbucket.org/opentyrian/opentyrian/wiki/Home) | `~/.opentyrian` | [8d45ff2](https://bitbucket.org/opentyrian/opentyrian/commits/8d45ff2) | [[37]](https://web.archive.org/web/20140815181350/http://code.google.com/p/opentyrian/issues/detail?id=125) |
+| [opentyrian](https://aur.archlinux.org/packages/opentyrian/) | `~/.opentyrian` | [8d45ff2](https://bitbucket.org/opentyrian/opentyrian/commits/8d45ff2) | [[37]](https://web.archive.org/web/20140815181350/http://code.google.com/p/opentyrian/issues/detail?id=125) |
 | [pcsx2](https://www.archlinux.org/packages/?name=pcsx2) | `~/.pcsx2` | [87f1e8f77](https://github.com/PCSX2/pcsx2/commit/87f1e8f77) [a9020c606](https://github.com/PCSX2/pcsx2/commit/a9020c606)
 
 [3b22f0fb0](https://github.com/PCSX2/pcsx2/commit/3b22f0fb0) [0a012aec2](https://github.com/PCSX2/pcsx2/commit/0a012aec2)
@@ -207,7 +204,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
  | [[46]](https://github.com/qtile/qtile/pull/835) | Some optional bar widgets can create files and directories in non-compliant paths, but most often these are still configurable. |
 | [rclone](https://www.archlinux.org/packages/?name=rclone) | `~/.rclone.conf` | [9d362589](https://github.com/ncw/rclone/commit/9d362589) | [[47]](https://github.com/ncw/rclone/issues/868) |
 | [retroarch](https://www.archlinux.org/packages/?name=retroarch) |
-| [rr](http://rr-project.org/) | `~/.rr` | [02e7d41e](https://github.com/mozilla/rr/commit/02e7d41e) | [[48]](https://github.com/mozilla/rr/issues/1455) |
+| [rr](https://aur.archlinux.org/packages/rr/) | `~/.rr` | [02e7d41e](https://github.com/mozilla/rr/commit/02e7d41e) | [[48]](https://github.com/mozilla/rr/issues/1455) |
 | [rTorrent](/index.php/RTorrent "RTorrent") | `~/.rtorrent.rc` | [6a8d332b](https://github.com/rakshasa/rtorrent/commit/6a8d332b) |
 | [Skype](https://www.skype.com/) | `~/.Skype` | 8.0 |
 | [snes9x](https://www.archlinux.org/packages/?name=snes9x) | `~/.snes9x` | [19864677](https://github.com/snes9xgit/snes9x/commit/93b5f11641fa22d4518f251d6e3db99219864677) | [[49]](https://github.com/snes9xgit/snes9x/issues/194) | By default configuration is blank, is intended that the user fill it at they will (throw the gui or manually) before launch a rom |
@@ -225,21 +222,21 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 | [sway](/index.php/Sway "Sway") | `~/.sway/config` | [614393c09](https://github.com/SirCmpwn/sway/commit/614393c09) | [[50]](https://github.com/SirCmpwn/sway/issues/5) |
 | [systemd](/index.php/Systemd "Systemd") |
 | [termite](/index.php/Termite "Termite") |
-| [tmuxinator](https://github.com/tmuxinator/tmuxinator) | `~/.tmuxinator` | [2636923](https://github.com/tmuxinator/tmuxinator/pull/511/commits/263692349f1142c0edcacfbefae541cbc0e7b44e) | [[51]](https://github.com/tmuxinator/tmuxinator/pull/511) |
-| [transmission](/index.php/Transmission "Transmission") | `~/.transmission` | [5517](https://trac.transmissionbt.com/changeset/5517) | [[52]](https://trac.transmissionbt.com/ticket/684) |
+| [tmuxinator](https://aur.archlinux.org/packages/tmuxinator/) | `~/.tmuxinator` | [2636923](https://github.com/tmuxinator/tmuxinator/pull/511/commits/263692349f1142c0edcacfbefae541cbc0e7b44e) | [[51]](https://github.com/tmuxinator/tmuxinator/pull/511) |
+| [Transmission](/index.php/Transmission "Transmission") | `~/.transmission` | [5517](https://trac.transmissionbt.com/changeset/5517) | [[52]](https://trac.transmissionbt.com/ticket/684) |
 | [util-linux](https://www.archlinux.org/packages/?name=util-linux) | [570b32100](http://git.kernel.org/cgit/utils/util-linux/util-linux.git/commit/?id=570b32100) |
-| [uzbl](/index.php/Uzbl "Uzbl") | [c6fd63a](https://github.com/uzbl/uzbl/commit/c6fd63a) | [[53]](https://github.com/uzbl/uzbl/pull/150) |
-| [vimb](http://fanglingsu.github.io/vimb/) |
+| [Uzbl](/index.php/Uzbl "Uzbl") | [c6fd63a](https://github.com/uzbl/uzbl/commit/c6fd63a) | [[53]](https://github.com/uzbl/uzbl/pull/150) |
+| [vimb](https://aur.archlinux.org/packages/vimb/) |
 | [VirtualBox](/index.php/VirtualBox "VirtualBox") | `~/.VirtualBox` | [4.3](https://www.virtualbox.org/ticket/5099?action=diff&version=7) | [[54]](https://www.virtualbox.org/ticket/5099) |
 | [vis](https://www.archlinux.org/packages/?name=vis) | `~/.vis` | [[55]](https://github.com/martanne/vis/pull/303) | [68a25c75](https://github.com/martanne/vis/commit/68a25c751c0219ef5df589a19513e46a08965d5a)
 
 [d138908c](https://github.com/martanne/vis/commit/d138908cf8149eb10120957271cd6979272b4730)
 
  |
-| [VLC media player](/index.php/VLC_media_player "VLC media player") | `~/.vlcrc` | [16f32e15](http://git.videolan.org/?p=vlc.git;a=commit;h=16f32e1500887c0dcd33cb06ad71759a81a52878) | [[56]](https://trac.videolan.org/vlc/ticket/1267) |
+| [VLC](/index.php/VLC_media_player "VLC media player") | `~/.vlcrc` | [16f32e15](http://git.videolan.org/?p=vlc.git;a=commit;h=16f32e1500887c0dcd33cb06ad71759a81a52878) | [[56]](https://trac.videolan.org/vlc/ticket/1267) |
 | [warsow](https://www.archlinux.org/packages/?name=warsow) | `~/.warsow-2.x` | [98ece3f](https://github.com/Qfusion/qfusion/commit/98ece3f) | [[57]](https://github.com/Qfusion/qfusion/issues/298) |
-| [wireshark](/index.php/Wireshark "Wireshark") | `~/.wireshark` | [b0b53fa5](https://code.wireshark.org/review/gitweb?p=wireshark.git;a=commit;h=b0b53fa5937aa7ba258427ca0f3581dba725230d) |
-| [xsettingsd](https://github.com/derat/xsettingsd) | `~/.xsettingsd` | [4ecd7be](https://github.com/derat/xsettingsd/commit/b4999f5e9e99224caf97d09f25ee731774ecd7be) |
+| [Wireshark](/index.php/Wireshark "Wireshark") | `~/.wireshark` | [b0b53fa5](https://code.wireshark.org/review/gitweb?p=wireshark.git;a=commit;h=b0b53fa5937aa7ba258427ca0f3581dba725230d) |
+| [xsettingsd](https://aur.archlinux.org/packages/xsettingsd/) | `~/.xsettingsd` | [4ecd7be](https://github.com/derat/xsettingsd/commit/b4999f5e9e99224caf97d09f25ee731774ecd7be) |
 | [xmonad](/index.php/Xmonad "Xmonad") | `~/.xmonad` | [40fc10b6](https://github.com/xmonad/xmonad/commit/40fc10b6a5682ce1d6ba7f0679962926ef6cfade) | [[58]](https://github.com/xmonad/xmonad/issues/61) [[59]](https://code.google.com/p/xmonad/issues/detail?id=484) | Alternatively the environments `XMONAD_CONFIG_HOME`, `XMONAD_DATA_HOME`, and `XMONAD_CACHE_HOME` are also available. |
 | [xsel](https://www.archlinux.org/packages/?name=xsel) | `~/.xsel.log` | [ee7b4811](https://github.com/kfish/xsel/commit/ee7b48111be2e2117b201962e9d1c0e1f9804ed4) | [[60]](https://github.com/kfish/xsel/issues/10) |
 | [yarn](https://www.archlinux.org/packages/?name=yarn) | 
@@ -776,6 +773,7 @@ Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive sh
 | [Flatpak](/index.php/Flatpak "Flatpak") | `~/.var/` | [[150]](https://github.com/flatpak/flatpak/issues/46) [[151]](https://github.com/flatpak/flatpak.github.io/issues/191) [[152]](https://github.com/flatpak/flatpak/issues/1651) |
 | [Minetest](/index.php/Minetest "Minetest") | `~/.minetest/` | [[153]](https://github.com/minetest/minetest/issues/864) |
 | [OpenSSH](https://www.openssh.com/) | `~/.ssh` | [[154]](https://bugzilla.mindrot.org/show_bug.cgi?id=2050) | Assumed to be present by many ssh daemons and clients such as DropBear and OpenSSH. |
+| [Nestopia UE](http://0ldsk00l.ca/nestopia/) | `~/.nestopia/` | [[155]](https://github.com/0ldsk00l/nestopia/pull/292) |
 
 ## Library and language support
 

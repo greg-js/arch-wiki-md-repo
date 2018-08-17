@@ -114,7 +114,7 @@ Other components usually provided by desktop environments are:
 
 *   Application launcher: [List of applications#Application launchers](/index.php/List_of_applications#Application_launchers "List of applications")
 *   Audio volume control: [List of applications#Volume control](/index.php/List_of_applications#Volume_control "List of applications")
-*   Clipboard manager: [Clipboard#List of clipboard managers](/index.php/Clipboard#List_of_clipboard_managers "Clipboard")
+*   [Clipboard manager](/index.php/Clipboard_manager "Clipboard manager")
 *   Desktop compositor: [Xorg#Composite](/index.php/Xorg#Composite "Xorg")
 *   Desktop wallpaper setter and desktop icon: [List of applications#Wallpaper setters](/index.php/List_of_applications#Wallpaper_setters "List of applications") and [Openbox#Icon programs](/index.php/Openbox#Icon_programs "Openbox")
 *   Display manager: [Display manager#List of display managers](/index.php/Display_manager#List_of_display_managers "Display manager")

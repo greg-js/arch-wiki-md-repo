@@ -1,4 +1,4 @@
-Related articles
+Artículos relacionados
 
 *   [Mount](/index.php/Mount "Mount")
 

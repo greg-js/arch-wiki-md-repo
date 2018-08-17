@@ -24,7 +24,7 @@
 
 ### Usando un servicio separado
 
-**Tip:** Estos pasos pueden ser automatizados al [instalar](/index.php/Install "Install") el paquete [systemd-numlockontty](https://aur.archlinux.org/packages/systemd-numlockontty/) y [habilitando](/index.php/Enabling "Enabling") el servicio `numLockOnTty`.
+**Sugerencia:** Estos pasos pueden ser automatizados al [instalar](/index.php/Install "Install") el paquete [systemd-numlockontty](https://aur.archlinux.org/packages/systemd-numlockontty/) y [habilitando](/index.php/Enabling "Enabling") el servicio `numLockOnTty`.
 
 Primero cree una secuencia de comandos *(script)* para establecer el bloqueo numérico en los TTYs relevantes:
 

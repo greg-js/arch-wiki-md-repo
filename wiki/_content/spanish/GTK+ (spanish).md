@@ -1,4 +1,4 @@
-GTK+ (GIMP Toolkit) fue originalmente creado por el [Proyecto GNU](/index.php/GNU_Project_(Espa%C3%B1ol) "GNU Project (Español)") para [GIMP](/index.php/GIMP "GIMP"), pero ahora es un kit de herramientas popular con bastantes enlaces a diferentes lenguajes de programación.
+GTK+ (GIMP Toolkit) fue originalmente creado por el [Proyecto GNU](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)") para [GIMP](/index.php/GIMP "GIMP"), pero ahora es un kit de herramientas popular con bastantes enlaces a diferentes lenguajes de programación.
 
 ## Instalación
 

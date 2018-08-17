@@ -57,7 +57,7 @@ FUSE mounts can generally be unmounted using `fusermount -u *mountpoint*`.
 
 ### mtpfs
 
-**Note:** The following is likely to not work and you might have to resort to [gphoto2](/index.php/Digital_Cameras#libgphoto2 "Digital Cameras") or a file manager with gvfs support like [PCManFM](/index.php/PCManFM "PCManFM").
+**Note:** The following is likely to not work and you might have to resort to [libgphoto2](/index.php/Libgphoto2 "Libgphoto2") or a file manager with gvfs support like [PCManFM](/index.php/PCManFM "PCManFM").
 
 First edit your `/etc/fuse.conf` and uncomment the following line:
 

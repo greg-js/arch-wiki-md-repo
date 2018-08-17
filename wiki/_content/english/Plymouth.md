@@ -28,8 +28,6 @@ Plymouth is available from the [AUR](/index.php/AUR "AUR"): the stable package i
 
 If you also use [GDM](/index.php/GDM "GDM"), you should install the [gdm-plymouth](https://aur.archlinux.org/packages/gdm-plymouth/), which compiles gdm with plymouth support.
 
-If you don't see Plymouth Splash Screen or it does not work after setting everything up, uninstall [plymouth](https://aur.archlinux.org/packages/plymouth/) and install [plymouth-legacy](https://aur.archlinux.org/packages/plymouth-legacy/) to get Plymouth to work.
-
 ### The plymouth hook
 
 Add `plymouth` to the `HOOKS` array in [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"). It **must** be added **after** `base` and `udev` for it to work:

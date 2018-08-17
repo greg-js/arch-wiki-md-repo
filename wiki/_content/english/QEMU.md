@@ -292,7 +292,7 @@ $ qemu-system-x86_64 **-enable-kvm -machine q35,accel=kvm -device intel-iommu** 
 
 ```
 
-**Note:** On Intel CPU based systems creating an IOMMU device in a QEMU guest with `-device intel-iommu` will disable PCI passthrough with an error like: `Device at bus pcie.0 addr 09.0 requires iommu notifier which is currently not supported by intel-iommu emulation` While adding the kernel parameter `intel_iommu=on` is still needed for remapping IO (e.g. [PCI passthrough with vfio-pci](/index.php/PCI_passthrough_via_OVMF#Using_vfio-pci "PCI passthrough via OVMF")), `-device intel-iommu` should not be set if PCI PCI passthrough is required.
+**Note:** On Intel CPU based systems creating an IOMMU device in a QEMU guest with `-device intel-iommu` will disable PCI passthrough with an error like: `Device at bus pcie.0 addr 09.0 requires iommu notifier which is currently not supported by intel-iommu emulation` While adding the kernel parameter `intel_iommu=on` is still needed for remapping IO (e.g. [PCI passthrough with vfio-pci](/index.php/PCI_passthrough_via_OVMF#Isolating_the_GPU "PCI passthrough via OVMF")), `-device intel-iommu` should not be set if PCI PCI passthrough is required.
 
 ## Moving data between host and guest OS
 

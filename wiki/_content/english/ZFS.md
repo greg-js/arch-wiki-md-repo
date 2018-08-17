@@ -550,6 +550,7 @@ Description=Load storage encryption keys
 DefaultDependencies=no
 Before=systemd-user-sessions.service
 Before=zfs-mount.service
+After=zfs-import.target
 
 [Service]
 Type=oneshot

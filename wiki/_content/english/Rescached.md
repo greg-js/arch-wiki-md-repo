@@ -53,7 +53,7 @@ nameserver 127.0.0.1
 
 ```
 
-Other programs may overwrite this setting; see [resolv.conf#Preserve DNS settings](/index.php/Resolv.conf#Preserve_DNS_settings "Resolv.conf") for details.
+Other programs may overwrite this setting; see [Domain_name_resolution#Overwriting_of_resolv.conf](/index.php/Domain_name_resolution#Overwriting_of_resolv.conf "Domain name resolution") for details.
 
 Finally, [start](/index.php/Start "Start") and possibly [enable](/index.php/Enable "Enable") `rescached.service`.
 

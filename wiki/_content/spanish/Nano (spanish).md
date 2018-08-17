@@ -41,7 +41,7 @@ $ cp /etc/nanorc ~/.nanorc
 
 Procede a establecer el entono en consola ajustando y/o comentando los comandos dentro del archivo `~/.nanorc`
 
-**Tip:** [NANORC](http://www.nano-editor.org/dist/v2.2/nanorc.5.html) detalla la lista completa de comandos de configuración disponibles para nano.
+**Sugerencia:** [NANORC](http://www.nano-editor.org/dist/v2.2/nanorc.5.html) detalla la lista completa de comandos de configuración disponibles para nano.
 
 **Note:** La linea de comandos ignoras la configuración por defecto y da prioridad a los comandos de configuración establecidos en `~/.nanorc`
 
@@ -187,7 +187,7 @@ de la pantalla de nano
 | ^C | F11 | Posición del cursor | Muestra la informacion de linea, columna y caracter de la posisión actual de cursor. |
 | ^T | F12 | Ortografía | Revisa la ortografía del contenido con el complemento `spell`, si está disponible. |
 
-**Tip:** Ve los archivos de ayuda en linea vía `Ctrl+g` dentro de nano y el [Manual de comandos de nano](http://www.nano-editor.org/dist/v2.1/nano.html) para una descripción completa y soporte adicional.
+**Sugerencia:** Consulte los archivos de ayuda en linea mediante `Ctrl+G` dentro de nano y el [Manual de comandos de nano](http://www.nano-editor.org/dist/v2.1/nano.html) para una descripción completa y soporte adicional.
 
 #### Selecciona las funciones secundarias
 
@@ -198,7 +198,7 @@ de la pantalla de nano
 | Meta+m | Esc+m | Cambia de soporte de mouse para posicionar el cursor, marcación y atajo. |
 | Meta+x | Esc+x | Muestra u oculta la lista de atajos de la parte superior de la pantalla, añadiendo más espacio de pantalla. |
 
-**Tip:** [Caracteristicas Secundarias](http://www.nano-editor.org/dist/v2.1/nano.html#Feature-Toggles) enlista las funciones secundarias globales disponibles para nano.
+**Sugerencia:** [Caracteristicas Secundarias](http://www.nano-editor.org/dist/v2.1/nano.html#Feature-Toggles) enlista las funciones secundarias globales disponibles para nano.
 
 ## Consejos y trucos
 

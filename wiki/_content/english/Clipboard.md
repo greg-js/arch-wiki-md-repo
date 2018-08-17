@@ -6,13 +6,13 @@ From [Wikipedia:Clipboard (computing)](https://en.wikipedia.org/wiki/Clipboard_(
 
 *   [1 History](#History)
 *   [2 Background](#Background)
-*   [3 Application specific notes](#Application_specific_notes)
-    *   [3.1 Vim](#Vim)
-    *   [3.2 Disable paste on middle mouse click](#Disable_paste_on_middle_mouse_click)
-        *   [3.2.1 Firefox](#Firefox)
-        *   [3.2.2 GTK](#GTK)
-*   [4 List of clipboard managers](#List_of_clipboard_managers)
-*   [5 See also](#See_also)
+*   [3 Application specifics](#Application_specifics)
+    *   [3.1 Firefox](#Firefox)
+    *   [3.2 GTK](#GTK)
+    *   [3.3 Vim](#Vim)
+*   [4 Tools](#Tools)
+*   [5 Managers](#Managers)
+*   [6 See also](#See_also)
 
 ## History
 
@@ -31,35 +31,41 @@ See the [Keyboard shortcuts](/index.php/Keyboard_shortcuts "Keyboard shortcuts")
 
 It is also important to realize that according to the selection protocols, nothing is copied anywhere [until it is pasted](https://unix.stackexchange.com/questions/213840/how-to-toggle-or-turn-off-text-selection-being-sent-to-the-clipboard/213843#213843). For example, if you select some word in a terminal window, close the terminal and then want to paste it somewhere else, it will not work because the terminal is gone and the text has not been copied anywhere. If you want the word to be preserved after closing terminal window, consider installing a [clipboard manager](#List_of_clipboard_managers).
 
-**Note:** [Clipboard managers](#List_of_clipboard_managers) can significantly change the user experience, for example they might synchronize the PRIMARY and CLIPBOARD selections to emulate a single-clipboard system.
+**Note:** [Clipboard managers](#Managers) can significantly change the user experience, for example they might synchronize the PRIMARY and CLIPBOARD selections to emulate a single-clipboard system.
 
-## Application specific notes
+## Application specifics
+
+### Firefox
+
+See [Firefox#Middle-click_errors](/index.php/Firefox#Middle-click_errors "Firefox").
+
+### GTK
+
+See [GTK+#Disable_mouse_paste](/index.php/GTK%2B#Disable_mouse_paste "GTK+").
 
 ### Vim
 
 See [Vim#Clipboard](/index.php/Vim#Clipboard "Vim").
 
-### Disable paste on middle mouse click
+## Tools
 
-Currently the only simple way to completely disable pasting with the middle mouse button across all applications is to disable the middle mouse button, which then also loses its other functions such as closing tabs. The applications listed below have specific settings to disable it.
+This section lists command-line tools to manipulate the clipboards.
 
-#### Firefox
+*   **sselp** — Simple X selection printer. Prints the X selection to stdout.
 
-To stop [Firefox](/index.php/Firefox "Firefox") from acting on middle mouse clicks, set the following options in `about:config`.
+	[http://tools.suckless.org/x/sselp](http://tools.suckless.org/x/sselp) || [sselp](https://aur.archlinux.org/packages/sselp/)
 
-```
-middlemouse.contentLoadURL false
-middlemouse.paste false
+*   **xclip** — A lightweight, command-line based interface to the clipboard.
 
-```
+	[https://github.com/astrand/xclip](https://github.com/astrand/xclip) || [xclip](https://www.archlinux.org/packages/?name=xclip)
 
-#### GTK
+*   **xsel** — Command-line program for getting and setting the contents of the X selection.
 
- `~/.config/gtk-3.0`  `gtk-enable-primary-paste=false` 
+	[http://www.vergenet.net/~conrad/software/xsel/](http://www.vergenet.net/~conrad/software/xsel/) || [xsel](https://www.archlinux.org/packages/?name=xsel)
 
-## List of clipboard managers
+## Managers
 
-Clipboard managers are applications that enable users to manipulate the clipboard. Note that many of these programs can also synchronize the previously mentioned clipboards.
+This section lists daemons that track your clipboard, to provide a clipboard history and/or synchronization.
 
 *   **Anamnesis** — Clipboard manager that stores all the clipboard history and offers an interface to do a full-text search. It has both a command line and GUI mode available.
 
@@ -125,17 +131,13 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 	[https://github.com/pvanek/qlipper/](https://github.com/pvanek/qlipper/) || [qlipper](https://aur.archlinux.org/packages/qlipper/)
 
-*   **Xclip** — A lightweight, command-line based interface to the clipboard.
+*   **xclipboard** — Official X clipboard command-line client.
 
-	[https://github.com/astrand/xclip](https://github.com/astrand/xclip) || [xclip](https://www.archlinux.org/packages/?name=xclip)
+	[https://www.x.org/releases/X11R7.5/doc/man/man1/xclipboard.1.html](https://www.x.org/releases/X11R7.5/doc/man/man1/xclipboard.1.html) || [xorg-xclipboard](https://www.archlinux.org/packages/?name=xorg-xclipboard)
 
 *   **xcmenu** — Clipboard synchronizer developed for window manager users.
 
 	[https://github.com/dindon-sournois/xcmenu](https://github.com/dindon-sournois/xcmenu) || [xcmenu-git](https://aur.archlinux.org/packages/xcmenu-git/)
-
-*   **xsel** — Command-line program for getting and setting the contents of the X selection.
-
-	[http://www.vergenet.net/~conrad/software/xsel/](http://www.vergenet.net/~conrad/software/xsel/) || [xsel](https://www.archlinux.org/packages/?name=xsel)
 
 ## See also
 

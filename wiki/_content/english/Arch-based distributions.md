@@ -13,20 +13,19 @@ This page lists OS distributions which are derived from Arch Linux **either in w
 
 *   [1 Active](#Active)
 *   [2 Inactive](#Inactive)
-    *   [2.1 2018](#2018)
-    *   [2.2 2017](#2017)
-    *   [2.3 2016](#2016)
-    *   [2.4 2015](#2015)
-    *   [2.5 2014](#2014)
-    *   [2.6 2013](#2013)
-    *   [2.7 2012](#2012)
-    *   [2.8 2011](#2011)
-    *   [2.9 2010](#2010)
-    *   [2.10 2009](#2009)
-    *   [2.11 2008](#2008)
-    *   [2.12 2007](#2007)
-    *   [2.13 2006](#2006)
-    *   [2.14 2004](#2004)
+    *   [2.1 2017](#2017)
+    *   [2.2 2016](#2016)
+    *   [2.3 2015](#2015)
+    *   [2.4 2014](#2014)
+    *   [2.5 2013](#2013)
+    *   [2.6 2012](#2012)
+    *   [2.7 2011](#2011)
+    *   [2.8 2010](#2010)
+    *   [2.9 2009](#2009)
+    *   [2.10 2008](#2008)
+    *   [2.11 2007](#2007)
+    *   [2.12 2006](#2006)
+    *   [2.13 2004](#2004)
 *   [3 See also](#See_also)
 
 ## Active
@@ -75,10 +74,6 @@ Asterisk indicates the year of first public release based on Arch Linux.
 ## Inactive
 
 These distributions are no longer developed, but show some of the history surrounding Arch Linux and the greater FOSS community. Sections show the year of the latest release.
-
-### 2018
-
-*   [Sekhmet](https://webcache.googleusercontent.com/search?q=cache:kNELdjVNaywJ:https://sekhmet.sourceforge.io/)
 
 ### 2017
 

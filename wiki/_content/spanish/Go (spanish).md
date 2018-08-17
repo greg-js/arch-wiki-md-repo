@@ -69,7 +69,7 @@ export GOPATH=~/go
 
 ```
 
-**Tip:** Se pueden ver todas las variable de Go ejecutando `go env`
+**Sugerencia:** Se pueden ver todas las variable de Go ejecutando `go env`
 
 Crear el espacio de trabajo:
 

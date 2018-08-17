@@ -518,7 +518,7 @@ Véase [Router](/index.php/Router "Router").
 
 La mayoría de los ISPs domésticos estan configurados para reconocer solo una PC cliente por la dirección MAC de su interfaz de red. Una vez que el cable modem aprendió la dirección MAC de la primera PC que se comunica con el, no responderá a otra dirección MAC de ninguna manera. Entonces si cambias la PC por otra (o por un router), la nueva PC (o router) no funcionará con el cable modem, porque la nueva PC (o router) tiene una dirección MAC distinta a la anterior. Para resetear el cable modem y que este pueda reconocer la nueva PC (o router), debes apagarlo y volverlo a encender. Una vez que el modem se ha reiniciado y se ha conectado completamente (las luces de indicación encendidas), reinicia el nuevo PC (o router) para que haga una petición DHCP, o haz que lo haga manualmente.
 
-Si este método no funciona, tendrá que clonar la dirección MAC de la máquina original. Véase también [Cambiar direcciones MAC/hardware](/index.php/Configuring_Network#Change_MAC.2Fhardware_address "Configuring Network").
+Si este método no funciona, tendrá que clonar la dirección MAC de la máquina original. Véase también [Cambiar direcciones MAC/hardware](/index.php/Network_configuration_(Espa%C3%B1ol)#Cambio_de_direcciones_MAC.2Fhardware "Network configuration (Español)").
 
 ### El problema con el TCP Window Scaling
 
@@ -657,7 +657,7 @@ DHCPCD_ARGS="-R -t 30 -h $HOSTNAME"
 
 ```
 
-**Nota:** Si está usando [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) >= 4.0.2, el flag `-R` ha quedado en desuso. Por favor, consulte el apartado [Configurar la dirección IP](#Configuring_Network_.28Espa.C3.B1ol.29.23Configurar_la_direcci.C3.B3n_IP) para obtener información sobre cómo utilizar un archivo `/etc/resolv.conf` personalizado.
+**Nota:** Si está usando [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) >= 4.0.2, el flag `-R` ha quedado en desuso. Por favor, consulte el apartado [Configurar la dirección IP](/index.php/Network_configuration_(Espa%C3%B1ol)#Configurar_la_direcci.C3.B3n_IP "Network configuration (Español)") para obtener información sobre cómo utilizar un archivo `/etc/resolv.conf` personalizado.
 
 Guarde y cierre el archivo; ahora abra `/etc/resolv.conf`. Debería ver un nombre de servidor único (*nameserver*) (lo más probable 10.1.1.1). Esta es la puerta de entrada (*gateway*) al router, a la cual es necesario conectarse con el fin de obtener los servidores DNS del ISP. Pegue la dirección IP en el navegador y acceda al propio router. Vaya a la sección DNS, donde debería ver una dirección IP en el campo *Primary DNS Server* («Servidor DNS primario»); cópielo y péguelo como un nombre de servidor (*nameserver*) **ARRIBA** de la puerta de entrada (*gateway*) actual.
 

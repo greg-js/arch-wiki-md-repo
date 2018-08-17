@@ -7,22 +7,14 @@ Mnemosyne is written in Python 2 and uses the [Qt](/index.php/Qt "Qt") toolkit.
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Installing from AUR](#Installing_from_AUR)
-    *   [1.2 Manual Installation](#Manual_Installation)
-    *   [1.3 Configuring](#Configuring)
-        *   [1.3.1 Size of mathematical formulae](#Size_of_mathematical_formulae)
+    *   [1.1 Configuring](#Configuring)
+        *   [1.1.1 Size of mathematical formulae](#Size_of_mathematical_formulae)
 *   [2 Other Resources](#Other_Resources)
 *   [3 See Also](#See_Also)
 
 ## Installation
 
-### Installing from AUR
-
-A [mnemosyne](https://aur.archlinux.org/packages/mnemosyne/) package is available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
-
-### Manual Installation
-
-For manual compilation and installation, you can get a tarball from the [official download page](http://www.mnemosyne-proj.org/download-mnemosyne.php) and follow the instructions in the accompanying README file.
+[Install](/index.php/Install "Install") the [mnemosyne](https://aur.archlinux.org/packages/mnemosyne/) package.
 
 ### Configuring
 

@@ -1,6 +1,6 @@
 **Estado de la traducción:** este artículo es una versión traducida de [sudo](/index.php/Sudo "Sudo"). Fecha de la última traducción/revisión: **2018-08-13**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Sudo&diff=0&oldid=534686).
 
-Related articles
+Artículos relacionados
 
 *   [Usuarios y grupos](/index.php/Users_and_Groups_(Espa%C3%B1ol) "Users and Groups (Español)")
 *   [su](/index.php/Su_(Espa%C3%B1ol) "Su (Español)")

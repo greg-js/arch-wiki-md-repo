@@ -1,4 +1,4 @@
-Related articles
+Artículos relacionados
 
 *   [Backup programs](/index.php/Backup_programs "Backup programs")
 *   [rsync (Español)](/index.php/Rsync_(Espa%C3%B1ol) "Rsync (Español)")
@@ -37,7 +37,7 @@ La opción `--exclude` hará que aquellos ficheros que coincidan con los patrone
 *   Si usa un [archivo swap](/index.php/Swap_(Espa%C3%B1ol)#Archivo_swap "Swap (Español)"), asegúrese de excluirlo también.
 *   Considere si desea también respaldar la carpeta `/home/`. Si contiene sus datos, serán considerablemente más cuantiosos que los del sistema. De otro modo considere excluir subdirectorios no importantes como `/home/*/.thumbnails/*`, `/home/*/.cache/mozilla/*`, `/home/*/.cache/chromium/*`, `/home/*/.local/share/Trash/*`, dependiendo del software que tenga instalado en su sistema. Si [GVFS](/index.php/GVFS "GVFS") está instalado, `/home/*/.gvfs` debe ser excluido para evitar errores de rsync.
 
-Puede que quiera incluir algunas opciones más de [rsync](/index.php/Rsync_(Espa%C3%B1ol) "Rsync (Español)"), como las listadas a continuación (vea [rsync(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/rsync.1) para una lista completa):
+Puede que quiera incluir algunas opciones más de [rsync](/index.php/Rsync_(Espa%C3%B1ol) "Rsync (Español)"), como las listadas a continuación (vea [rsync(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rsync.1) para una lista completa):
 
 *   Si usted usa con frecuencia enlaces duros, puede que quiera añadir la opción `-H`, que viene por desactivada por defecto pues consume mucha memoria, aunque en máquinas modernas no debería suponer un problema. Hay muchos enlaces duros en la carpeta `/usr/`, lo cual ahorra espacio en disco.
 *   Puede que quiera añadir a rsync la opción `--delete` si lo ejecuta reiteradamente sobre la misma carpeta de respaldo.

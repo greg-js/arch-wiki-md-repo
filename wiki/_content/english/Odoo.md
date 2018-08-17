@@ -40,7 +40,7 @@ $ su
 
 ```
 
-If the PostgreSQL instance has not been initialized yet, please follow first the [PostgreSQL install process](/index.php/PostgreSQL#Installing_PostgreSQL "PostgreSQL").
+If the PostgreSQL instance has not been initialized yet, please follow first the [PostgreSQL install process](/index.php/PostgreSQL#Installation "PostgreSQL").
 
 Once logged as the 'postgres' user, create the database user (called *role* in the PostgreSQL ) *odoo* with the command that follows.
 

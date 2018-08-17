@@ -1,4 +1,4 @@
-Related articles
+Artículos relacionados
 
 *   [pacman](/index.php/Pacman "Pacman")
 *   [Improve pacman performance](/index.php/Improve_pacman_performance "Improve pacman performance")
@@ -182,7 +182,7 @@ Si su sistema tiene archivos huérfanos que no pertenecen a ningún paquete (un 
 
 En la práctica, este proceso es complicado porque muchos archivos importantes no forman parte de ningún paquete (por ejemplo, archivos generados en tiempo de ejecución, configuraciones personalizadas), por lo que se incluirán en el resultado final, lo que dificulta seleccionar los archivos que pueden eliminarse de manera segura.
 
-**Tip:** El [lostfiles](https://www.archlinux.org/packages/?name=lostfiles) script realiza pasos similares, pero también incluye una extensa lista negra para eliminar falsos positivos comunes de la salida. [aconfmgr](https://github.com/CyberShadow/aconfmgr) ([aconfmgr-git](https://aur.archlinux.org/packages/aconfmgr-git/)) también permite rastrear archivos huérfanos usando una secuencia de comandos de configuración.
+**Sugerencia:** El [lostfiles](https://www.archlinux.org/packages/?name=lostfiles) script realiza pasos similares, pero también incluye una extensa lista negra para eliminar falsos positivos comunes de la salida. [aconfmgr](https://github.com/CyberShadow/aconfmgr) ([aconfmgr-git](https://aur.archlinux.org/packages/aconfmgr-git/)) también permite rastrear archivos huérfanos usando una secuencia de comandos de configuración.
 
 ### Eliminación de paquetes no utilizados (huérfanos)
 

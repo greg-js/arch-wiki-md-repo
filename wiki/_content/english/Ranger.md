@@ -400,7 +400,7 @@ You can start a shell in the current directory with `S`, when you exit the shell
 
 When you however forget that you already are in a ranger shell and start ranger again you end up with ranger running a shell running ranger.
 
-To prevent this you can create the following function in your [shell's startup file](/index.php/Autostarting#Shells "Autostarting"):
+To prevent this you can create the following function in your [shell's startup file](/index.php/Autostarting#On_shell_login_.2F_logout "Autostarting"):
 
 ```
 ranger() {

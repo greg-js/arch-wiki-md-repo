@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"). Data da última tradução: 2018-08-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=535346) na versão em inglês.
+
 Artigos relacionados
 
 *   [Arch em comparação com outras distribuições](/index.php/Arch_em_compara%C3%A7%C3%A3o_com_outras_distribui%C3%A7%C3%B5es "Arch em comparação com outras distribuições")
@@ -5,7 +7,7 @@ Artigos relacionados
 *   [TalkingArch](/index.php/TalkingArch "TalkingArch")
 *   [DeveloperWiki:TrademarkPolicy](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy")
 
-**Atenção:** **Não** há suporte a distribuições baseadas no Arc pela comunidade ou desenvolvedores do Arch. Veja [Código de conduta#Suporte *apenas* à distribuição Arch Linux](/index.php/C%C3%B3digo_de_conduta#Suporte_.2Aapenas.2A_.C3.A0_distribui.C3.A7.C3.A3o_Arch_Linux "Código de conduta")
+**Atenção:** **Não** há suporte a distribuições baseadas no Arch pela comunidade ou desenvolvedores do Arch. Veja [Código de conduta#Suporte *apenas* à distribuição Arch Linux](/index.php/C%C3%B3digo_de_conduta#Suporte_.2Aapenas.2A_.C3.A0_distribui.C3.A7.C3.A3o_Arch_Linux "Código de conduta")
 
 Esta página lista as distribuições do sistema operacional que são derivadas do Arch Linux **no todo ou em parte**, para ajudar a aplicar a [Política de marca registrada do Arch Linux](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy"). Embora pretenda ser o mais abrangente possível, não é uma lista exaustiva. Os links do projeto SourceForge são preferidos para simplificar a manutenção.
 
@@ -13,20 +15,19 @@ Esta página lista as distribuições do sistema operacional que são derivadas 
 
 *   [1 Ativas](#Ativas)
 *   [2 Inativas](#Inativas)
-    *   [2.1 2018](#2018)
-    *   [2.2 2017](#2017)
-    *   [2.3 2016](#2016)
-    *   [2.4 2015](#2015)
-    *   [2.5 2014](#2014)
-    *   [2.6 2013](#2013)
-    *   [2.7 2012](#2012)
-    *   [2.8 2011](#2011)
-    *   [2.9 2010](#2010)
-    *   [2.10 2009](#2009)
-    *   [2.11 2008](#2008)
-    *   [2.12 2007](#2007)
-    *   [2.13 2006](#2006)
-    *   [2.14 2004](#2004)
+    *   [2.1 2017](#2017)
+    *   [2.2 2016](#2016)
+    *   [2.3 2015](#2015)
+    *   [2.4 2014](#2014)
+    *   [2.5 2013](#2013)
+    *   [2.6 2012](#2012)
+    *   [2.7 2011](#2011)
+    *   [2.8 2010](#2010)
+    *   [2.9 2009](#2009)
+    *   [2.10 2008](#2008)
+    *   [2.11 2007](#2007)
+    *   [2.12 2006](#2006)
+    *   [2.13 2004](#2004)
 *   [3 Veja também](#Veja_tamb.C3.A9m)
 
 ## Ativas
@@ -75,10 +76,6 @@ Asterisco indica o ano do primeiro lançamento público baseado no Arch Linux.
 ## Inativas
 
 Essas distribuições não são mais desenvolvidas, mas mostram um pouco do histórico em torno do Arch Linux e da maior comunidade FOSS. As seções mostram o ano do último lançamento.
-
-### 2018
-
-*   [Sekhmet](https://webcache.googleusercontent.com/search?q=cache:kNELdjVNaywJ:https://sekhmet.sourceforge.io/)
 
 ### 2017
 

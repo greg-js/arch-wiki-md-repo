@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [GNU Project (Português)](/index.php/GNU_Project_(Portugu%C3%AAs) "GNU Project (Português)")
+*   [GNU (Português)](/index.php/GNU_(Portugu%C3%AAs) "GNU (Português)")

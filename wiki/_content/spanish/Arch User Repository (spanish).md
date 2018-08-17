@@ -249,7 +249,7 @@ $ ssh-keygen -f ~/.ssh/aur
 
 ```
 
-**Tip:** Se pueden agregar múltiples llaves en su perfil separandolas con una nueva linea.
+**Sugerencia:** Se pueden agregar múltiples llaves en su perfil separandolas con una nueva linea.
 
 #### Crear un paquete nuevo
 
@@ -296,7 +296,7 @@ $ git push
 
 ```
 
-**Tip:**
+**Sugerencia:**
 
 *   Si inicialmente se ha olvidado el archivo `.SRCINFO` y lo ha agregado en un *commit* después, AUR va a rechazar sus subidas porque el archivo `.SRCINFO` debe existir en *cada* subida (*push*). Para solucionar este problema puede usar el comando [git rebase](https://git-scm.com/docs/git-rebase) con la opción `--root` o el comando [git filter-branch](https://git-scm.com/docs/git-filter-branch) con la opción `--tree-filter`.
 *   Para prevenir archivos sin rastrear en las subidas, y para mantener el directorio de trabajo tan limpio como sea posible, excluya todos los archivos no deseados con `.gitignore` y fuerce agregar manualmente cada archivo. Vea [dotfiles#Using gitignore](/index.php/Dotfiles#Using_gitignore "Dotfiles").

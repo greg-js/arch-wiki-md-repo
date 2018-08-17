@@ -25,129 +25,129 @@
 
 ### Tabla A: artículos de traducción preferente
 
-| Artículo | Área de conocimiento | Revisión | Mantenedor | Observaciones |
-| [Advanced Linux Sound Architecture (Español)](/index.php/Advanced_Linux_Sound_Architecture_(Espa%C3%B1ol) "Advanced Linux Sound Architecture (Español)") | Sonido | `2013-09` |
-| [AMD Catalyst (Español)](/index.php/AMD_Catalyst_(Espa%C3%B1ol) "AMD Catalyst (Español)") | Tarjeta gráfica | `2013-09` |
-| [Archboot (Español)](/index.php/Archboot_(Espa%C3%B1ol) "Archboot (Español)") | Instalación | `2016-04` |
-| [Arch Build System (Español)](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)") | Gestión de paquetes | `2018-01` |
-| [Arch compared to other distributions (Español)](/index.php/Arch_compared_to_other_distributions_(Espa%C3%B1ol) "Arch compared to other distributions (Español)") | Información/Arch | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
-| [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") | Información/Arch | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
-| [Arch User Repository (Español)](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") | Repositorios | `2018-01` |
-| [Arch boot process (Español)](/index.php/Arch_boot_process_(Espa%C3%B1ol) "Arch boot process (Español)") | Proceso de arranque | `2013-09` |
-| [Archiso (Español)](/index.php/Archiso_(Espa%C3%B1ol) "Archiso (Español)") | Instalación | `2013-09` |
-| [ArchWiki:About (Español)](/index.php/ArchWiki:About_(Espa%C3%B1ol) "ArchWiki:About (Español)") | Información/Arch | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
-| [ArchWiki:Contributing (Español)](/index.php/ArchWiki:Contributing_(Espa%C3%B1ol) "ArchWiki:Contributing (Español)") | Ayuda/Colaboración | `2014-04` |
-| [ATI (Español)](/index.php/ATI_(Espa%C3%B1ol) "ATI (Español)") | Tarjeta gráfica | `2013-09` |
-| [Boot loaders (Español)](/index.php/Boot_loaders_(Espa%C3%B1ol) "Boot loaders (Español)") | Gestores de arranque | `2015-07` | La página es un artículo marco que se remite para su desarrollo a otras subpáginas |
-| [Bumblebee (Español)](/index.php/Bumblebee_(Espa%C3%B1ol) "Bumblebee (Español)") | Tarjeta gráfica | `2013-09` |
-| [Change root (Español)](/index.php/Change_root_(Espa%C3%B1ol) "Change root (Español)") | Recuperación del sistema | `2013-09` |
-| [ClamAV (Español)](/index.php/ClamAV_(Espa%C3%B1ol) "ClamAV (Español)") | Seguridad/Antivirus | `2013-09` |
-| [Codecs (Español)](/index.php/Codecs_(Espa%C3%B1ol) "Codecs (Español)") | Audio/vídeo | `2013-09` |
-| [Code of conduct (Español)](/index.php/Code_of_conduct_(Espa%C3%B1ol) "Code of conduct (Español)") | Información/Foro | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
-| [CUPS (Español)](/index.php/CUPS_(Espa%C3%B1ol) "CUPS (Español)") | Periféricos/Impresoras | `2013-09` |
-| [Desktop environment (Español)](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") | GUI | `2015-07` | [Cabrokimer](/index.php?title=User:Cabrokimer&action=edit&redlink=1 "User:Cabrokimer (page does not exist)") |
-| [Direct modem connection (Español)](/index.php/Direct_modem_connection_(Espa%C3%B1ol) "Direct modem connection (Español)") | Periféricos/Modem | `2014-12` |
-| [Disk encryption (Español)](/index.php/Disk_encryption_(Espa%C3%B1ol) "Disk encryption (Español)") | Seguridad/encriptación discos | `2015-06` |
-| [Display manager (Español)](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") | GUI | `2013-09` |
-| [dm-crypt (Español)](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)") | Seguridad/encriptación sistema archivos | `2015-06` |
-| [dm-crypt/Drive preparation (Español)](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol) "Dm-crypt/Drive preparation (Español)") | Seguridad/encriptación sistema archivos | `2017-09` |
-| [dm-crypt/Encrypting an entire system (Español)](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting an entire system (Español)") | Seguridad/encriptación sistema archivos | `2015-06` |
-| [DNSCrypt (Español)](/index.php/DNSCrypt_(Espa%C3%B1ol) "DNSCrypt (Español)") | Encriptación tráfico DNS | `2014-09` |
-| [dnsmasq (Español)](/index.php/Dnsmasq_(Espa%C3%B1ol) "Dnsmasq (Español)") | Información | `2014-09` |
-| [EFISTUB (Español)](/index.php/EFISTUB_(Espa%C3%B1ol) "EFISTUB (Español)") | Gestor de arranque | `2014-12` |
-| [File systems (Español)](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)") | Configuración del sistema/Sistema archivos | `2014-11` |
-| [Fonts (Español)](/index.php/Fonts_(Espa%C3%B1ol) "Fonts (Español)") | Tipos de letras | `2008-06` |
-| [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)") | Configuración del sistema/Sistema archivos | `2013-09` |
-| [Frequently asked questions (Español)](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)") | Información/General | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
-| [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)") | Información/Posinstalación | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
-| [Getting involved (Español)](/index.php/Getting_involved_(Espa%C3%B1ol) "Getting involved (Español)") | Ayuda/Colaboración | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
-| [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") | Gestor de arranque | `2015-06` |
-| [GRUB/Tips and tricks (Español)](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol) "GRUB/Tips and tricks (Español)") | Gestor de arranque | `2018-06` | [Phenom](/index.php?title=User:Phenom&action=edit&redlink=1 "User:Phenom (page does not exist)") |
-| [GUID Partition Table (Español)](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)") | Tabla de particionado | `2013-09` |
-| [Help:Category (Español)](/index.php/Help:Category_(Espa%C3%B1ol) "Help:Category (Español)") | Ayuda/Edición wiki | `2014-04` |
-| [Help:Article naming guidelines (Español)](/index.php/Help:Article_naming_guidelines_(Espa%C3%B1ol) "Help:Article naming guidelines (Español)") | Ayuda/Edición wiki | `2014-04` |
-| [Cheatsheet (Español)](/index.php/Help:Cheatsheet_(Espa%C3%B1ol) "Help:Cheatsheet (Español)") | Ayuda/Edición wiki | `2014-04` |
-| [Help:Editing (Español)](/index.php/Help:Editing_(Espa%C3%B1ol) "Help:Editing (Español)") | Ayuda/Edición wiki | `2014-04` |
-| [Help:I18n (Español)](/index.php/Help:I18n_(Espa%C3%B1ol) "Help:I18n (Español)") | Ayuda/Edición wiki | `2014-04` |
-| [Help:Reading (Español)](/index.php/Help:Reading_(Espa%C3%B1ol) "Help:Reading (Español)") | Ayuda/Edición wiki | `2018-01` |
-| [Help:Style (Español)](/index.php/Help:Style_(Espa%C3%B1ol) "Help:Style (Español)") | Ayuda/Edición wiki | `2014-04` |
-| [Help:Template (Español)](/index.php/Help:Template_(Espa%C3%B1ol) "Help:Template (Español)") | Ayuda/Edición wiki | `2014-04` |
-| [Improve pacman performance (Español)](/index.php/Improve_pacman_performance_(Espa%C3%B1ol) "Improve pacman performance (Español)") | Gestión de paquetes | `2013-09` |
-| [Install from existing Linux (Español)](/index.php/Install_from_existing_Linux_(Espa%C3%B1ol) "Install from existing Linux (Español)") | Instalación | `2013-11` |
-| [Install from SSH (Español)](/index.php/Install_from_SSH_(Espa%C3%B1ol) "Install from SSH (Español)") | Instalación | `2014-12` |
-| [Installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") | Información/Guía/Instalación | `2018-08` | [Pedro](/index.php/User:Pedro "User:Pedro"),[AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Necesitaba un repaso general. Ahora está completamente al día. |
-| [Installing Arch Linux on a USB key (Español)](/index.php/Installing_Arch_Linux_on_a_USB_key_(Espa%C3%B1ol) "Installing Arch Linux on a USB key (Español)") | Instalación | `2013-11` |
-| [Intel graphics (Español)](/index.php/Intel_graphics_(Espa%C3%B1ol) "Intel graphics (Español)") | Tarjeta gráfica | `2013-09` |
-| [Iptables (Español)](/index.php/Iptables_(Espa%C3%B1ol) "Iptables (Español)") | Seguridad/Cortaguegos | `2013-09` |
-| [Kernel mode setting (Español)](/index.php/Kernel_mode_setting_(Espa%C3%B1ol) "Kernel mode setting (Español)") | Configuración del sistema | `2013-09` |
-| [Kernel modules (Español)](/index.php/Kernel_modules_(Espa%C3%B1ol) "Kernel modules (Español)") | Configuración del sistema | `2013-09` |
-| [Kernel parameters (Español)](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") | Configuración del sistema | `2013-09` |
-| [Keyboard configuration in console (Español)](/index.php/Keyboard_configuration_in_console_(Espa%C3%B1ol) "Keyboard configuration in console (Español)") | Configuración del sistema/Teclado consola | `2013-09` |
-| [Keyboard configuration in Xorg (Español)](/index.php/Keyboard_configuration_in_Xorg_(Espa%C3%B1ol) "Keyboard configuration in Xorg (Español)") | Configuración del sistema/Teclado X11 | `2013-11` |
-| [List of applications (Español)](/index.php/List_of_applications_(Espa%C3%B1ol) "List of applications (Español)") | Aplicaciones/general | `2013-10` |
-| [List of applications/Documents (Español)](/index.php/List_of_applications/Documents_(Espa%C3%B1ol) "List of applications/Documents (Español)") | Aplicaciones/general | `2013-10` |
-| [List of applications/Internet (Español)](/index.php/List_of_applications/Internet_(Espa%C3%B1ol) "List of applications/Internet (Español)") | Aplicaciones/general | `2013-10` |
-| [List of applications/Multimedia (Español)](/index.php/List_of_applications/Multimedia_(Espa%C3%B1ol) "List of applications/Multimedia (Español)") | Aplicaciones/general | `2013-10` |
-| [List of applications/Other (Español)](/index.php/List_of_applications/Other_(Espa%C3%B1ol) "List of applications/Other (Español)") | Aplicaciones/general | `2015-05` |
-| [List of applications/Science (Español)](/index.php/List_of_applications/Science_(Espa%C3%B1ol) "List of applications/Science (Español)") | Aplicaciones/general | `2013-10` |
-| [List of applications/Security (Español)](/index.php/List_of_applications/Security_(Espa%C3%B1ol) "List of applications/Security (Español)") | Aplicaciones/general | `2013-10` |
-| [List of applications/Utilities (Español)](/index.php/List_of_applications/Utilities_(Espa%C3%B1ol) "List of applications/Utilities (Español)") | Aplicaciones/general | `2013-10` |
-| [List of games (Español)](/index.php/List_of_games_(Espa%C3%B1ol) "List of games (Español)") | Aplicaciones/juegos | `2013-10` | Página desgajada de [List of applications](/index.php/List_of_applications "List of applications") |
-| [Locale (Español)](/index.php/Locale_(Espa%C3%B1ol) "Locale (Español)") | Configuración del sistema/Idioma sistema | `2013-09` |
-| [LVM (Español)](/index.php/LVM_(Espa%C3%B1ol) "LVM (Español)") | Sistema archivos/Particionado | `2015-06` |
-| [Main page (Español)](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") | Portada wiki | `2018-04` | [Pedro](/index.php/User:Pedro "User:Pedro") | Hay una pequeña adición con respecto a la versión original, al incluir un enlace a la página del equipo de traducción |
-| [Master Boot Record (Español)](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)") | Tabla de particionado | `2013-09` |
-| [Mirrors (Español)](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)") | Servidores de réplica | `2013-09` |
-| [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") | Configuración del sistema | `2013-09` |
-| [netctl (Español)](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)") | Gestión de redes | `2013-09` |
-| [Network configuration (Español)](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)") | Gestión de redes | `2013-09` |
-| [NetworkManager (Español)](/index.php/NetworkManager_(Espa%C3%B1ol) "NetworkManager (Español)") | Gestión de redes | `2013-09` |
-| [Network Time Protocol daemon (Español)](/index.php/Network_Time_Protocol_daemon_(Espa%C3%B1ol) "Network Time Protocol daemon (Español)") | Configuración del sistema/Sincronización hora | `2013-09` |
-| [NFS (Español)](/index.php/NFS_(Espa%C3%B1ol) "NFS (Español)") | Sistema archivos remotos | `2013-09` |
-| [Nouveau (Español)](/index.php/Nouveau_(Espa%C3%B1ol) "Nouveau (Español)") | Tarjeta gráfica | `2013-09` |
-| [NVIDIA (Español)](/index.php/NVIDIA_(Espa%C3%B1ol) "NVIDIA (Español)") | Tarjeta gráfica | `2013-09` |
-| [Official repositories (Español)](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") | Repositorios | `2013-09` |
-| [Optical disc drive (Español)](/index.php/Optical_disc_drive_(Espa%C3%B1ol) "Optical disc drive (Español)") | Grabación | `2013-12` |
-| [Pacman (Español)](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") | Gestión de paquetes | `2017-10` | [Arlesy](/index.php/User:Arlesy "User:Arlesy") |
-| [Pacman Rosetta (Español)](/index.php/Pacman_Rosetta_(Espa%C3%B1ol) "Pacman Rosetta (Español)") | Gestión de paquetes | `2013-09` |
-| [Partitioning (Español)](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") | Particionado | `2014-11` |
-| [Persistent block device naming (Español)](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol) "Persistent block device naming (Español)") | Sistema de archivos | `2014-12` |
-| [Proxy settings (Español)](/index.php/Proxy_settings_(Espa%C3%B1ol) "Proxy settings (Español)") | Configuración del sistema | `2014-12` |
-| [PXE (Español)](/index.php/PXE_(Espa%C3%B1ol) "PXE (Español)") | Instalación/Acceso remoto | `2013-11` |
-| [RAID (Español)](/index.php/RAID_(Espa%C3%B1ol) "RAID (Español)") | Configuración del sistema/Sistema de archivos | `2014-12` |
-| [Reflector (Español)](/index.php/Reflector_(Espa%C3%B1ol) "Reflector (Español)") | Servidores de réplica | `2013-10` |
-| [SANE (Español)](/index.php/SANE_(Espa%C3%B1ol) "SANE (Español)") | Periféricos/escáneres | `2013-10` |
-| [Secure Shell (Español)](/index.php/Secure_Shell_(Espa%C3%B1ol) "Secure Shell (Español)") | Seguridad/Shell | `2014-26` |
-| [Simple stateful firewall (Español)](/index.php/Simple_stateful_firewall_(Espa%C3%B1ol) "Simple stateful firewall (Español)") | Seguridad/Shell | `2014-26` |
-| [Sound system (Español)](/index.php/Sound_system_(Espa%C3%B1ol) "Sound system (Español)") | Sonido | `2013-09` |
-| [Start X at login (Español)](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)") | Proceso de arranque | `2013-09` |
-| [su (Español)](/index.php/Su_(Espa%C3%B1ol) "Su (Español)") | Seguridad/Usuarios | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
-| [Sudo (Español)](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") | Seguridad/Usuarios | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
-| [Swap (Español)](/index.php/Swap_(Espa%C3%B1ol) "Swap (Español)") | Partición/Archivo de intercambio | `2014-11` |
-| [Syslinux (Español)](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)") | Gestor de arranque | `2015-01` |
-| [systemd (Español)](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") | Configuración del sistema/Gestor del sistema | `2013-09` |
-| [systemd FAQ (Español)](/index.php/Systemd_FAQ_(Espa%C3%B1ol) "Systemd FAQ (Español)") | Configuración del sistema/Gestor del sistema | `2013-09` |
-| [systemd-boot (Español)](/index.php/Systemd-boot_(Espa%C3%B1ol) "Systemd-boot (Español)") | Gestor de arranque | `2016-09` |
-| [systemd-networkd (Español)](/index.php/Systemd-networkd_(Espa%C3%B1ol) "Systemd-networkd (Español)") | Configuración del sistema/Gestión redes | `2016-10` |
-| [systemd/User (Español)](/index.php/Systemd/User_(Espa%C3%B1ol) "Systemd/User (Español)") | Configuración del sistema/Gestor del sistema | `2013-09` |
-| [Table of contents (Español)](/index.php/Table_of_contents_(Espa%C3%B1ol) "Table of contents (Español)") | Información/Wiki | `2014-04` | Su contenido se actualiza automáticamente (no la traducción de los títulos) |
-| [Time (Español)](/index.php/Time_(Espa%C3%B1ol) "Time (Español)") | Configuración del sistema/Horario | `2013-09` |
-| [Touchpad Synaptics (Español)](/index.php/Touchpad_Synaptics_(Espa%C3%B1ol) "Touchpad Synaptics (Español)") | Periféricos/Panel táctil | `2013-09` |
-| [Udev (Español)](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") | Configuración del sistema/Gestión hardware | `2013-09` |
-| [Unified Extensible Firmware Interface (Español)](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)") | Instalación/UEFI | `2014-11` |
-| [USB flash installation media (Español)](/index.php/USB_flash_installation_media_(Espa%C3%B1ol) "USB flash installation media (Español)") | Instalación | `2013-11` |
-| [Users and groups (Español)](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") | Gestión de usuarios | `2013-09` |
-| [VirtualBox (Español)](/index.php/VirtualBox_(Espa%C3%B1ol) "VirtualBox (Español)") | Virtualización | `2014-12` |
-| [Vncserver (Español)](/index.php/Vncserver_(Espa%C3%B1ol) "Vncserver (Español)") | Seguridad/escritorio remoto | `2014-12` |
-| [Wayland (Español)](/index.php/Wayland_(Espa%C3%B1ol) "Wayland (Español)") | Servidor X | `2014-04` |
-| [Wicd (Español)](/index.php/Wicd_(Espa%C3%B1ol) "Wicd (Español)") | Gestión de redes | `2013-09` |
-| [Window manager (Español)](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") | GUI | `2013-09` |
-| [Windows and Arch Dual Boot (Español)](/index.php/Windows_and_Arch_Dual_Boot_(Espa%C3%B1ol) "Windows and Arch Dual Boot (Español)") | Instalación/Proceso de arranque | `2015-07` |
-| [Wireless Setup (Español)](/index.php/Wireless_Setup_(Espa%C3%B1ol) "Wireless Setup (Español)") | Gestión de redes | `2013-09` |
-| [WPA supplicant (Español)](/index.php/WPA_supplicant_(Espa%C3%B1ol) "WPA supplicant (Español)") | Gestión de redes | `2013-09` |
-| [Xorg (Español)](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") | Servidor X (X11) | `2013-09` |
-| [xf86-video-sis (Español)](/index.php/Xf86-video-sis_(Espa%C3%B1ol) "Xf86-video-sis (Español)") | Tarjeta gráfica | `2013-09` |
-| [Yaourt (Español)](/index.php/Yaourt_(Espa%C3%B1ol) "Yaourt (Español)") | Gestión de paquetes | `2013-09` |
+| Artículo | Revisión | Mantenedor | Observaciones |
+| [Advanced Linux Sound Architecture (Español)](/index.php/Advanced_Linux_Sound_Architecture_(Espa%C3%B1ol) "Advanced Linux Sound Architecture (Español)") | `2013-09` |
+| [AMD Catalyst (Español)](/index.php/AMD_Catalyst_(Espa%C3%B1ol) "AMD Catalyst (Español)") | `2013-09` |
+| [Archboot (Español)](/index.php/Archboot_(Espa%C3%B1ol) "Archboot (Español)") | `2016-04` |
+| [Arch Build System (Español)](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)") | `2018-01` |
+| [Arch compared to other distributions (Español)](/index.php/Arch_compared_to_other_distributions_(Espa%C3%B1ol) "Arch compared to other distributions (Español)") | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
+| [Arch Linux (Español)](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
+| [Arch User Repository (Español)](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") | `2018-01` |
+| [Arch boot process (Español)](/index.php/Arch_boot_process_(Espa%C3%B1ol) "Arch boot process (Español)") | `2013-09` |
+| [Archiso (Español)](/index.php/Archiso_(Espa%C3%B1ol) "Archiso (Español)") | `2013-09` |
+| [ArchWiki:About (Español)](/index.php/ArchWiki:About_(Espa%C3%B1ol) "ArchWiki:About (Español)") | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
+| [ArchWiki:Contributing (Español)](/index.php/ArchWiki:Contributing_(Espa%C3%B1ol) "ArchWiki:Contributing (Español)") | `2014-04` |
+| [ATI (Español)](/index.php/ATI_(Espa%C3%B1ol) "ATI (Español)") | `2013-09` |
+| [Boot loaders (Español)](/index.php/Boot_loaders_(Espa%C3%B1ol) "Boot loaders (Español)") | `2015-07` | La página es un artículo marco que se remite para su desarrollo a otras subpáginas |
+| [Bumblebee (Español)](/index.php/Bumblebee_(Espa%C3%B1ol) "Bumblebee (Español)") | `2013-09` |
+| [Change root (Español)](/index.php/Change_root_(Espa%C3%B1ol) "Change root (Español)") | `2013-09` |
+| [ClamAV (Español)](/index.php/ClamAV_(Espa%C3%B1ol) "ClamAV (Español)") | `2013-09` |
+| [Codecs (Español)](/index.php/Codecs_(Espa%C3%B1ol) "Codecs (Español)") | `2013-09` |
+| [Code of conduct (Español)](/index.php/Code_of_conduct_(Espa%C3%B1ol) "Code of conduct (Español)") | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
+| [CUPS (Español)](/index.php/CUPS_(Espa%C3%B1ol) "CUPS (Español)") | `2013-09` |
+| [Desktop environment (Español)](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") | `2015-07` | [Cabrokimer](/index.php?title=User:Cabrokimer&action=edit&redlink=1 "User:Cabrokimer (page does not exist)") |
+| [Direct modem connection (Español)](/index.php/Direct_modem_connection_(Espa%C3%B1ol) "Direct modem connection (Español)") | `2014-12` |
+| [Disk encryption (Español)](/index.php/Disk_encryption_(Espa%C3%B1ol) "Disk encryption (Español)") | `2015-06` |
+| [Display manager (Español)](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") | `2013-09` |
+| [dm-crypt (Español)](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)") | `2015-06` |
+| [dm-crypt/Drive preparation (Español)](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol) "Dm-crypt/Drive preparation (Español)") | `2017-09` |
+| [dm-crypt/Encrypting an entire system (Español)](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting an entire system (Español)") | `2015-06` |
+| [DNSCrypt (Español)](/index.php/DNSCrypt_(Espa%C3%B1ol) "DNSCrypt (Español)") | `2014-09` |
+| [dnsmasq (Español)](/index.php/Dnsmasq_(Espa%C3%B1ol) "Dnsmasq (Español)") | `2014-09` |
+| [EFISTUB (Español)](/index.php/EFISTUB_(Espa%C3%B1ol) "EFISTUB (Español)") | `2014-12` |
+| [File systems (Español)](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)") | `2014-11` |
+| [Fonts (Español)](/index.php/Fonts_(Espa%C3%B1ol) "Fonts (Español)") | `2008-06` |
+| [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)") | `2013-09` |
+| [Frequently asked questions (Español)](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)") | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
+| [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)") | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
+| [Getting involved (Español)](/index.php/Getting_involved_(Espa%C3%B1ol) "Getting involved (Español)") | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
+| [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") | `2015-06` |
+| [GRUB/Tips and tricks (Español)](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol) "GRUB/Tips and tricks (Español)") | `2018-06` | [Phenom](/index.php?title=User:Phenom&action=edit&redlink=1 "User:Phenom (page does not exist)") |
+| [GUID Partition Table (Español)](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)") | `2013-09` |
+| [Help:Category (Español)](/index.php/Help:Category_(Espa%C3%B1ol) "Help:Category (Español)") | `2014-04` |
+| [Help:Article naming guidelines (Español)](/index.php/Help:Article_naming_guidelines_(Espa%C3%B1ol) "Help:Article naming guidelines (Español)") | `2014-04` |
+| [Cheatsheet (Español)](/index.php/Help:Cheatsheet_(Espa%C3%B1ol) "Help:Cheatsheet (Español)") | `2014-04` |
+| [Help:Editing (Español)](/index.php/Help:Editing_(Espa%C3%B1ol) "Help:Editing (Español)") | `2014-04` |
+| [Help:I18n (Español)](/index.php/Help:I18n_(Espa%C3%B1ol) "Help:I18n (Español)") | `2014-04` |
+| [Help:Reading (Español)](/index.php/Help:Reading_(Espa%C3%B1ol) "Help:Reading (Español)") | `2018-01` |
+| [Help:Style (Español)](/index.php/Help:Style_(Espa%C3%B1ol) "Help:Style (Español)") | `2014-04` |
+| [Help:Template (Español)](/index.php/Help:Template_(Espa%C3%B1ol) "Help:Template (Español)") | `2014-04` |
+| [Improve pacman performance (Español)](/index.php/Improve_pacman_performance_(Espa%C3%B1ol) "Improve pacman performance (Español)") | `2013-09` |
+| [Install from existing Linux (Español)](/index.php/Install_from_existing_Linux_(Espa%C3%B1ol) "Install from existing Linux (Español)") | `2013-11` |
+| [Install from SSH (Español)](/index.php/Install_from_SSH_(Espa%C3%B1ol) "Install from SSH (Español)") | `2014-12` |
+| [Installation guide (Español)](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") | `2018-08` | [Pedro](/index.php/User:Pedro "User:Pedro") |
+| [Installing Arch Linux on a USB key (Español)](/index.php/Installing_Arch_Linux_on_a_USB_key_(Espa%C3%B1ol) "Installing Arch Linux on a USB key (Español)") | `2013-11` |
+| [Intel graphics (Español)](/index.php/Intel_graphics_(Espa%C3%B1ol) "Intel graphics (Español)") | `2013-09` |
+| [Iptables (Español)](/index.php/Iptables_(Espa%C3%B1ol) "Iptables (Español)") | `2013-09` |
+| [Kernel mode setting (Español)](/index.php/Kernel_mode_setting_(Espa%C3%B1ol) "Kernel mode setting (Español)") | `2013-09` |
+| [Kernel modules (Español)](/index.php/Kernel_modules_(Espa%C3%B1ol) "Kernel modules (Español)") | `2013-09` |
+| [Kernel parameters (Español)](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") | `2013-09` |
+| [Keyboard configuration in console (Español)](/index.php/Keyboard_configuration_in_console_(Espa%C3%B1ol) "Keyboard configuration in console (Español)") | `2013-09` |
+| [Keyboard configuration in Xorg (Español)](/index.php/Keyboard_configuration_in_Xorg_(Espa%C3%B1ol) "Keyboard configuration in Xorg (Español)") | `2013-11` |
+| [List of applications (Español)](/index.php/List_of_applications_(Espa%C3%B1ol) "List of applications (Español)") | `2013-10` |
+| [List of applications/Documents (Español)](/index.php/List_of_applications/Documents_(Espa%C3%B1ol) "List of applications/Documents (Español)") | `2013-10` |
+| [List of applications/Internet (Español)](/index.php/List_of_applications/Internet_(Espa%C3%B1ol) "List of applications/Internet (Español)") | `2013-10` |
+| [List of applications/Multimedia (Español)](/index.php/List_of_applications/Multimedia_(Espa%C3%B1ol) "List of applications/Multimedia (Español)") | `2013-10` |
+| [List of applications/Other (Español)](/index.php/List_of_applications/Other_(Espa%C3%B1ol) "List of applications/Other (Español)") | `2015-05` |
+| [List of applications/Science (Español)](/index.php/List_of_applications/Science_(Espa%C3%B1ol) "List of applications/Science (Español)") | `2013-10` |
+| [List of applications/Security (Español)](/index.php/List_of_applications/Security_(Espa%C3%B1ol) "List of applications/Security (Español)") | `2013-10` |
+| [List of applications/Utilities (Español)](/index.php/List_of_applications/Utilities_(Espa%C3%B1ol) "List of applications/Utilities (Español)") | `2013-10` |
+| [List of games (Español)](/index.php/List_of_games_(Espa%C3%B1ol) "List of games (Español)") | `2013-10` | Página desgajada de [List of applications](/index.php/List_of_applications "List of applications") |
+| [Locale (Español)](/index.php/Locale_(Espa%C3%B1ol) "Locale (Español)") | `2013-09` |
+| [LVM (Español)](/index.php/LVM_(Espa%C3%B1ol) "LVM (Español)") | `2015-06` |
+| [Main page (Español)](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") | `2018-04` | [Pedro](/index.php/User:Pedro "User:Pedro") | Hay una pequeña adición con respecto a la versión original, al incluir un enlace a la página del equipo de traducción |
+| [Master Boot Record (Español)](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)") | `2013-09` |
+| [Mirrors (Español)](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)") | `2013-09` |
+| [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") | `2013-09` |
+| [netctl (Español)](/index.php/Netctl_(Espa%C3%B1ol) "Netctl (Español)") | `2013-09` |
+| [Network configuration (Español)](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)") | `2013-09` |
+| [NetworkManager (Español)](/index.php/NetworkManager_(Espa%C3%B1ol) "NetworkManager (Español)") | `2013-09` |
+| [Network Time Protocol daemon (Español)](/index.php/Network_Time_Protocol_daemon_(Espa%C3%B1ol) "Network Time Protocol daemon (Español)") | `2013-09` |
+| [NFS (Español)](/index.php/NFS_(Espa%C3%B1ol) "NFS (Español)") | `2013-09` |
+| [Nouveau (Español)](/index.php/Nouveau_(Espa%C3%B1ol) "Nouveau (Español)") | `2013-09` |
+| [NVIDIA (Español)](/index.php/NVIDIA_(Espa%C3%B1ol) "NVIDIA (Español)") | `2013-09` |
+| [Official repositories (Español)](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") | `2013-09` |
+| [Optical disc drive (Español)](/index.php/Optical_disc_drive_(Espa%C3%B1ol) "Optical disc drive (Español)") | `2013-12` |
+| [Pacman (Español)](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") | `2017-10` | [Arlesy](/index.php/User:Arlesy "User:Arlesy") |
+| [Pacman Rosetta (Español)](/index.php/Pacman_Rosetta_(Espa%C3%B1ol) "Pacman Rosetta (Español)") | `2013-09` |
+| [Partitioning (Español)](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") | `2014-11` |
+| [Persistent block device naming (Español)](/index.php/Persistent_block_device_naming_(Espa%C3%B1ol) "Persistent block device naming (Español)") | `2014-12` |
+| [Proxy settings (Español)](/index.php/Proxy_settings_(Espa%C3%B1ol) "Proxy settings (Español)") | `2014-12` |
+| [PXE (Español)](/index.php/PXE_(Espa%C3%B1ol) "PXE (Español)") | `2013-11` |
+| [RAID (Español)](/index.php/RAID_(Espa%C3%B1ol) "RAID (Español)") | `2014-12` |
+| [Reflector (Español)](/index.php/Reflector_(Espa%C3%B1ol) "Reflector (Español)") | `2013-10` |
+| [SANE (Español)](/index.php/SANE_(Espa%C3%B1ol) "SANE (Español)") | `2013-10` |
+| [Secure Shell (Español)](/index.php/Secure_Shell_(Espa%C3%B1ol) "Secure Shell (Español)") | `2014-26` |
+| [Simple stateful firewall (Español)](/index.php/Simple_stateful_firewall_(Espa%C3%B1ol) "Simple stateful firewall (Español)") | `2014-26` |
+| [Sound system (Español)](/index.php/Sound_system_(Espa%C3%B1ol) "Sound system (Español)") | `2013-09` |
+| [Start X at login (Español)](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)") | `2013-09` |
+| [su (Español)](/index.php/Su_(Espa%C3%B1ol) "Su (Español)") | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
+| [Sudo (Español)](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
+| [Swap (Español)](/index.php/Swap_(Espa%C3%B1ol) "Swap (Español)") | `2014-11` |
+| [Syslinux (Español)](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)") | `2015-01` |
+| [systemd (Español)](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") | `2013-09` |
+| [systemd FAQ (Español)](/index.php/Systemd_FAQ_(Espa%C3%B1ol) "Systemd FAQ (Español)") | `2013-09` |
+| [systemd-boot (Español)](/index.php/Systemd-boot_(Espa%C3%B1ol) "Systemd-boot (Español)") | `2016-09` |
+| [systemd-networkd (Español)](/index.php/Systemd-networkd_(Espa%C3%B1ol) "Systemd-networkd (Español)") | `2016-10` |
+| [systemd/User (Español)](/index.php/Systemd/User_(Espa%C3%B1ol) "Systemd/User (Español)") | `2013-09` |
+| [Table of contents (Español)](/index.php/Table_of_contents_(Espa%C3%B1ol) "Table of contents (Español)") | `2014-04` | Su contenido se actualiza automáticamente (no la traducción de los títulos) |
+| [Time (Español)](/index.php/Time_(Espa%C3%B1ol) "Time (Español)") | `2013-09` |
+| [Touchpad Synaptics (Español)](/index.php/Touchpad_Synaptics_(Espa%C3%B1ol) "Touchpad Synaptics (Español)") | `2013-09` |
+| [Udev (Español)](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") | `2013-09` |
+| [Unified Extensible Firmware Interface (Español)](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)") | `2014-11` |
+| [USB flash installation media (Español)](/index.php/USB_flash_installation_media_(Espa%C3%B1ol) "USB flash installation media (Español)") | `2013-11` |
+| [Users and groups (Español)](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") | `2013-09` |
+| [VirtualBox (Español)](/index.php/VirtualBox_(Espa%C3%B1ol) "VirtualBox (Español)") | `2014-12` |
+| [Vncserver (Español)](/index.php/Vncserver_(Espa%C3%B1ol) "Vncserver (Español)") | `2014-12` |
+| [Wayland (Español)](/index.php/Wayland_(Espa%C3%B1ol) "Wayland (Español)") | `2014-04` |
+| [Wicd (Español)](/index.php/Wicd_(Espa%C3%B1ol) "Wicd (Español)") | `2013-09` |
+| [Window manager (Español)](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") | `2013-09` |
+| [Windows and Arch Dual Boot (Español)](/index.php/Windows_and_Arch_Dual_Boot_(Espa%C3%B1ol) "Windows and Arch Dual Boot (Español)") | `2015-07` |
+| [Wireless Setup (Español)](/index.php/Wireless_Setup_(Espa%C3%B1ol) "Wireless Setup (Español)") | `2013-09` |
+| [WPA supplicant (Español)](/index.php/WPA_supplicant_(Espa%C3%B1ol) "WPA supplicant (Español)") | `2013-09` |
+| [Xorg (Español)](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") | `2013-09` |
+| [xf86-video-sis (Español)](/index.php/Xf86-video-sis_(Espa%C3%B1ol) "Xf86-video-sis (Español)") | `2013-09` |
+| [Yaourt (Español)](/index.php/Yaourt_(Espa%C3%B1ol) "Yaourt (Español)") | `2013-09` |
 
 ### Tabla B: artículos de traducción secundaria
 
@@ -225,13 +225,12 @@ Versión inglesa propuesta para su eliminación. |
 | [Fluxbox Style Guide (Español)](/index.php/Fluxbox_Style_Guide_(Espa%C3%B1ol) "Fluxbox Style Guide (Español)") | Complementos de fluxbox | `2011-09` | Parcialmente sin traducir |
 | [Gamin (Español)](/index.php/Gamin_(Espa%C3%B1ol) "Gamin (Español)") | Monitorización del sistema | `2008-01` | Versión inglesa propuesta para su fusión con [File manager functionality](/index.php/File_manager_functionality "File manager functionality") |
 | [GDM (Español)](/index.php/GDM_(Espa%C3%B1ol) "GDM (Español)") | Gestor de pantallas | `2013-09` |
-| [General troubleshooting (Español)](/index.php/General_troubleshooting_(Espa%C3%B1ol) "General troubleshooting (Español)") | Información/General | `2016-04` |
+| [General troubleshooting (Español)](/index.php/General_troubleshooting_(Espa%C3%B1ol) "General troubleshooting (Español)") | Información/General | `2016-04` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
 | [GNOME (Español)](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)") | Entorno escritorio | `2013-09` |
-| [GNU Project (Español)](/index.php/GNU_Project_(Espa%C3%B1ol) "GNU Project (Español)") | Información | `2012-03` | Versión inglesa propuesta para su eliminación |
+| [GNU (Español)](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)") | Información | `2012-03` |
 | [GStreamer (Español)](/index.php/GStreamer_(Espa%C3%B1ol) "GStreamer (Español)") | Códecs audio/vídeo | `2013-11` |
 | [GTK+ (Español)](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") | Conjunto de herramientas de GIMP | `2008-05` |
-| [Help:Searching (Español)](/index.php/Help:Searching_(Espa%C3%B1ol) "Help:Searching (Español)")
-<small>**Remitido desde Main Page (Español)**</small> | Ayuda/Edición wiki | `2018-09` |
+| [Help:Searching (Español)](/index.php/Help:Searching_(Espa%C3%B1ol) "Help:Searching (Español)") | Ayuda/Edición wiki | `2018-09` |
 | [High Performance Firewall (Español)](/index.php/High_Performance_Firewall_(Espa%C3%B1ol) "High Performance Firewall (Español)") | Seguridad/Cortaguegos | `2013-09` | Versión inglesa propuesta para su eliminación o fusión con [router](/index.php/Router "Router") |
 | [Howto update with a home network (Español)](/index.php/Howto_update_with_a_home_network_(Espa%C3%B1ol) "Howto update with a home network (Español)") | Gestión de paquetes | `2011-03` | Página solo en español (sin versión inglesa) |
 | [Hp mini 110 - 1020 (Español)](/index.php/Hp_mini_110_-_1020_(Espa%C3%B1ol) "Hp mini 110 - 1020 (Español)") | Hardware/HP | `2010-03` | Página solo en español (sin versión inglesa) |
@@ -268,8 +267,7 @@ Versión inglesa propuesta para su eliminación. |
 | [Modalias (Español)](/index.php/Modalias_(Espa%C3%B1ol) "Modalias (Español)") | Kernel | `2008-05` |
 | [Modem Huawei SmartAX MT 810 (Español)](/index.php/Modem_Huawei_SmartAX_MT_810_(Espa%C3%B1ol) "Modem Huawei SmartAX MT 810 (Español)") | Hardware/Modems | `2010-02` | Página solo en español (sin versión inglesa) |
 | [Moonlight (Español)](/index.php/Moonlight_(Espa%C3%B1ol) "Moonlight (Español)") | Audio/Vídeo | `2009-07` | Sin traducir |
-| [Moving an existing install into (or out of) a virtual machine (Español)](/index.php?title=Moving_an_existing_install_into_(or_out_of)_a_virtual_machine_(Espa%C3%B1ol)&action=edit&redlink=1 "Moving an existing install into (or out of) a virtual machine (Español) (page does not exist)")
-<small>**Remitido desde Beginners' guide (Español)**</small> | Instalación | `--` | Sin traducir |
+| [Moving an existing install into (or out of) a virtual machine (Español)](/index.php?title=Moving_an_existing_install_into_(or_out_of)_a_virtual_machine_(Espa%C3%B1ol)&action=edit&redlink=1 "Moving an existing install into (or out of) a virtual machine (Español) (page does not exist)") | Instalación | `--` | Sin traducir |
 | [MPlayer (Español)](/index.php/MPlayer_(Espa%C3%B1ol) "MPlayer (Español)") | Reproductor multimedia | `2015-08` | Incompleta |
 | [Music Player Daemon (Español)](/index.php/Music_Player_Daemon_(Espa%C3%B1ol) "Music Player Daemon (Español)") | Reproductor música | `2009-12` | Parcialmente sin traducir |
 | [Mutt (Español)](/index.php/Mutt_(Espa%C3%B1ol) "Mutt (Español)") | Cliente e-mail | `2010-08` |
@@ -284,8 +282,7 @@ Versión inglesa propuesta para su eliminación. |
 | [Openbox Themes and Apps (Español)](/index.php/Openbox_Themes_and_Apps_(Espa%C3%B1ol) "Openbox Themes and Apps (Español)") | Gestor de ventanas | `2012-11` | Versión inglesa redirigida a [Openbox](/index.php/Openbox "Openbox") |
 | [Pacman Tips (Español)](/index.php/Pacman_Tips_(Espa%C3%B1ol) "Pacman Tips (Español)") | Gestión de paquetes | `2018-04` | [Phenom](/index.php?title=User:Phenom&action=edit&redlink=1 "User:Phenom (page does not exist)") |
 | [Pacman-key (Español)](/index.php/Pacman-key_(Espa%C3%B1ol) "Pacman-key (Español)") | Gestión de paquetes | `2013-03` |
-| [Parallels (Español)](/index.php?title=Parallels_(Espa%C3%B1ol)&action=edit&redlink=1 "Parallels (Español) (page does not exist)")
-<small>**Remitido desde Beginners' guide (Español)**</small> | Virtualización | `--` | Sin traducir |
+| [Parallels (Español)](/index.php?title=Parallels_(Espa%C3%B1ol)&action=edit&redlink=1 "Parallels (Español) (page does not exist)") | Virtualización | `--` | Sin traducir |
 | [Pdnsd (Español)](/index.php/Pdnsd_(Espa%C3%B1ol) "Pdnsd (Español)") | Servidor DNS | `2010-01` |
 | [PekWM (Español)](/index.php/PekWM_(Espa%C3%B1ol) "PekWM (Español)") | Gestor de ventanas | `2009-08` |
 | [PHP (Español)](/index.php/PHP_(Espa%C3%B1ol) "PHP (Español)") | Lenguaje de programación | `2008-05` |
@@ -305,7 +302,7 @@ Versión inglesa propuesta para su eliminación. |
 | [Rxvt-unicode (Español)](/index.php/Rxvt-unicode_(Espa%C3%B1ol) "Rxvt-unicode (Español)") | Emulador de terminal | `2010-12` |
 | [Samba (Español)](/index.php/Samba_(Espa%C3%B1ol) "Samba (Español)") | Protocolo de red | `2011-04` |
 | [Samsung N150 (Español)](/index.php/Samsung_N150_(Espa%C3%B1ol) "Samsung N150 (Español)") | Hardware | `2010-06` |
-| [Security (Español)](/index.php?title=Security_(Espa%C3%B1ol)&action=edit&redlink=1 "Security (Español) (page does not exist)") | Seguridad | `0000-00` | No existe artículo en Español. Original [Security](/index.php/Security "Security"). |
+| [Security (Español)](/index.php?title=Security_(Espa%C3%B1ol)&action=edit&redlink=1 "Security (Español) (page does not exist)") | Seguridad | `--` | No existe artículo en Español. Original [Security](/index.php/Security "Security"). |
 | [Silent boot (Español)](/index.php/Silent_boot_(Espa%C3%B1ol) "Silent boot (Español)") | Proceso arranque | `2013-12` |
 | [SLiM (Español)](/index.php/SLiM_(Espa%C3%B1ol) "SLiM (Español)") | Gestor de pantallas | `2011-01` |
 | [Smbclient (Español)](/index.php/Smbclient_(Espa%C3%B1ol) "Smbclient (Español)") | Protocolo de red | `2012-01` | Esbozo |
@@ -335,8 +332,7 @@ Versión inglesa propuesta para su eliminación. |
 | [WMFS (Español)](/index.php/WMFS_(Espa%C3%B1ol) "WMFS (Español)") | Gestor de ventanas | `2011-05` |
 | [WMFS2 (Español)](/index.php/WMFS2_(Espa%C3%B1ol) "WMFS2 (Español)") | Gestor de ventanas | `2012-04` |
 | [Writing rc.d scripts (Español)](/index.php/Writing_rc.d_scripts_(Espa%C3%B1ol) "Writing rc.d scripts (Español)") | Proceso de arranque | `2011-08` | Versión inglesa fundida en [SysVinit#Writing rc.d scripts](/index.php/SysVinit#Writing_rc.d_scripts "SysVinit"). |
-| [VMware (Español)](/index.php?title=VMware_(Espa%C3%B1ol)&action=edit&redlink=1 "VMware (Español) (page does not exist)")
-<small>**Remitido desde Beginners' guide (Español)**</small> | Virtualización | `--` | Sin traducir |
+| [VMware (Español)](/index.php?title=VMware_(Espa%C3%B1ol)&action=edit&redlink=1 "VMware (Español) (page does not exist)") | Virtualización | `--` | Sin traducir |
 | [Xampp (Español)](/index.php/Xampp_(Espa%C3%B1ol) "Xampp (Español)") | Servidor web | `2009-04` |
 | [Xcompmgr (Español)](/index.php/Xcompmgr_(Espa%C3%B1ol) "Xcompmgr (Español)") | Gestor de composición de ventanas | `2011-03` |
 | [Xen (Español)](/index.php/Xen_(Espa%C3%B1ol) "Xen (Español)") | Virtualización | `2010-12` |
@@ -346,8 +342,7 @@ Versión inglesa propuesta para su eliminación. |
 | [xprofile (Español)](/index.php/Xprofile_(Espa%C3%B1ol) "Xprofile (Español)") | Servidor X | `2013-09` |
 | [XScreenSaver (Español)](/index.php/XScreenSaver_(Espa%C3%B1ol) "XScreenSaver (Español)") | Servidor X | `2008-07` |
 | [ZTE MF626 / MF636 (Español)](/index.php/ZTE_MF626_/_MF636_(Espa%C3%B1ol) "ZTE MF626 / MF636 (Español)") | Hardware/Modems | `2010-01` |
-| [Zsh (Español)](/index.php/Zsh_(Espa%C3%B1ol) "Zsh (Español)")
-<small>**Remitido desde Beginners' guide (Español)**</small> | Shell de órdenes | `--` | Sin traducir |
+| [Zsh (Español)](/index.php/Zsh_(Espa%C3%B1ol) "Zsh (Español)") | Shell de órdenes | `--` | Sin traducir |
 
 ### Tabla de artículos con redirección
 
@@ -364,6 +359,7 @@ Versión inglesa propuesta para su eliminación. |
 | [Making a Custom Package CD (Español)](/index.php/Making_a_Custom_Package_CD_(Espa%C3%B1ol) "Making a Custom Package CD (Español)") | [Pacman/Tips and tricks (Español)](/index.php/Pacman/Tips_and_tricks_(Espa%C3%B1ol) "Pacman/Tips and tricks (Español)") |
 | [Pacnew and Pacsave Files (Español)](/index.php/Pacnew_and_Pacsave_Files_(Espa%C3%B1ol) "Pacnew and Pacsave Files (Español)") | [Pacman/Pacnew and Pacsave (Español)](/index.php/Pacman/Pacnew_and_Pacsave_(Espa%C3%B1ol) "Pacman/Pacnew and Pacsave (Español)") |
 | [TU (Trusted User) (Español)](/index.php/TU_(Trusted_User)_(Espa%C3%B1ol) "TU (Trusted User) (Español)") | [AUR Trusted User Guidelines (Español)](/index.php/AUR_Trusted_User_Guidelines_(Espa%C3%B1ol) "AUR Trusted User Guidelines (Español)") |
+| [GNU Project (Español)](/index.php/GNU_Project_(Espa%C3%B1ol) "GNU Project (Español)") | [GNU (Español)](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)") |
 
 ### Tabla de páginas especiales
 

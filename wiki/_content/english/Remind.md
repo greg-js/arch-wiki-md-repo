@@ -1,11 +1,4 @@
-Remind is a sophisticated calendar and alarm program. It includes the following features:
-
-*   A sophisticated scripting language and intelligent handling of exceptions and holidays.
-*   Plain-text, PostScript and HTML output.
-*   Timed reminders and pop-up alarms.
-*   A friendly graphical front-end for people who don't want to learn the scripting language.
-*   Facilities for both the Gregorian and Hebrew calendars.
-*   Support for 12 different languages.
+[Remind](https://roaringpenguin.com/products/remind) is a sophisticated calendar and alarm program.
 
 ## Contents
 
@@ -18,7 +11,7 @@ Remind is a sophisticated calendar and alarm program. It includes the following 
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [remind](https://www.archlinux.org/packages/?name=remind) package, available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [remind](https://www.archlinux.org/packages/?name=remind) package.
 
 ## Configuration
 
@@ -38,7 +31,7 @@ REM December 25 +30 MSG Christmas
 
 The last particular day of a month is given by subtracting 7 days from the first day of the next month. The `+` symbol tells remind to start reminding that number of days ahead.
 
-See also [remind(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/remind.1) [man page](/index.php/Man_page "Man page") for detailed information about configuring *remind*.
+See also [remind(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/remind.1) [man page](/index.php/Man_page "Man page") for detailed information about configuring *remind*.
 
 ### Include
 
@@ -85,4 +78,4 @@ The `-p` option makes *remind* print output suitable for *rem2ps*. *rem2ps* by d
 
 ## See also
 
-*   [remind(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/remind.1) man page
+*   [remind(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/remind.1) man page

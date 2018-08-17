@@ -298,7 +298,7 @@ $ ktsuss wicd-client -n
 
 ### Eduroam
 
-See [WPA2 Enterprise#Wicd](/index.php/WPA2_Enterprise#Wicd "WPA2 Enterprise").
+See [Wireless_network_configuration#eduroam](/index.php/Wireless_network_configuration#eduroam "Wireless network configuration").
 
 ### Two instances of wicd-client (and possibly two icons in tray)
 

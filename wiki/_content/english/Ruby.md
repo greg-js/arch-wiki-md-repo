@@ -5,6 +5,7 @@ Ruby is a dynamic, interpreted, open source programming language with a focus on
 *   [1 Installing Ruby](#Installing_Ruby)
     *   [1.1 Multiple versions](#Multiple_versions)
     *   [1.2 Documentation](#Documentation)
+    *   [1.3 JRuby](#JRuby)
 *   [2 RubyGems](#RubyGems)
     *   [2.1 Setup](#Setup)
     *   [2.2 Usage](#Usage)
@@ -25,6 +26,10 @@ If you want to run multiple versions on the same system (e.g. 2.0.0-p0 and 1.9.3
 ### Documentation
 
 To make documentation available through the `ri` command-line tool, install [ruby-rdoc](https://www.archlinux.org/packages/?name=ruby-rdoc) and [ruby-docs](https://www.archlinux.org/packages/?name=ruby-docs) for the documentation itself. You can then query the docs with: `ri Array`, `ri Array.pop` etc. (much like man-pages)
+
+### JRuby
+
+The [Java](/index.php/Java "Java") implementation of Ruby, [JRuby](https://en.wikipedia.org/wiki/JRuby "wikipedia:JRuby") can be installed with the [jruby](https://www.archlinux.org/packages/?name=jruby) package.
 
 ## RubyGems
 

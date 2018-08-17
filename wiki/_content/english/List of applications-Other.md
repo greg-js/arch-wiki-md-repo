@@ -1035,4 +1035,4 @@ See: [Notification servers](/index.php/Desktop_notifications#Notification_server
 
 #### Clipboard managers
 
-See: [List of clipboard managers](/index.php/Clipboard#List_of_clipboard_managers "Clipboard").
+See [Clipboard#Managers](/index.php/Clipboard#Managers "Clipboard").

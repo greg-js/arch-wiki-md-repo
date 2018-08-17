@@ -728,8 +728,6 @@ PulseAudio, if not set up to connect to any specific server (this can be done in
 
 PulseAudio selects the path to the socket via XDG_RUNTIME_DIR, so be sure to drag it along when you chroot as a normal user using [sudo](/index.php/Sudo "Sudo") (see [Sudo#Environment variables](/index.php/Sudo#Environment_variables "Sudo")).
 
-For specific direction on accomplishing the appropriate mounts, please refer to the wiki on installing a bundled 32-bit system, especially the [additional section](/index.php/Install_bundled_32-bit_system_in_Arch64#Allow_32-bit_applications_access_to_64-bit_PulseAudio "Install bundled 32-bit system in Arch64") specific to PulseAudio.
-
 ## Disabling automatic spawning of PulseAudio server
 
 Some users may prefer to manually start the PulseAudio server before running certain programs and then stop the PulseAudio server when they are finished. A simple way to accomplish this is to edit `~/.config/pulse/client.conf` or `/etc/pulse/client.conf` and change `autospawn = yes` to `autospawn=no`. Make sure the line is uncommented as well.

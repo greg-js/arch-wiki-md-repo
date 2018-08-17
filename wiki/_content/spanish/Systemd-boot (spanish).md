@@ -1,11 +1,11 @@
+**Estado de la traducción:** este artículo es una versión traducida de [Systemd-boot](/index.php/Systemd-boot "Systemd-boot"). Fecha de la última traducción/revisión: **2016-09-19**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Systemd-boot&diff=0&oldid=448431).
+
 Artículos relacionados
 
 *   [Arch boot process (Español)](/index.php/Arch_boot_process_(Espa%C3%B1ol) "Arch boot process (Español)")
 *   [Boot loaders (Español)](/index.php/Boot_loaders_(Espa%C3%B1ol) "Boot loaders (Español)")
 *   [Secure Boot](/index.php/Secure_Boot "Secure Boot")
 *   [Unified Extensible Firmware Interface (Español)](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)")
-
-**Estado de la traducción:** este artículo es una versión traducida de [Systemd-boot](/index.php/Systemd-boot "Systemd-boot"). Fecha de la última traducción/revisión: **2016-09-19**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Systemd-boot&diff=0&oldid=448431).
 
 **systemd-boot**, anteriormente llamado **gummiboot**, es un sencillo gestor de arranque UEFI que ejecuta imágenes EFI configuradas. La entrada predeterminada es seleccionada por un patrón configurado (glob) o un menú en pantalla. Se incluye en el paquete [systemd](https://www.archlinux.org/packages/?name=systemd), que se instala en un sistema Arch de forma predeterminada.
 

@@ -54,7 +54,7 @@ Finalmente, [reload](/index.php/Reload "Reload") el servicio `sshd`.
 
 ## Generar un fichero de clave secreta
 
-**Tip:** Instalar [qrencode](https://www.archlinux.org/packages/?name=qrencode) para generar un código QR escaneable. Escanea el código QR con la app Google Authenticator (u otra a su elección, p.e. FreeOTP) para configurar automáticamente la clave.
+**Sugerencia:** Instalar [qrencode](https://www.archlinux.org/packages/?name=qrencode) para generar un código QR escaneable. Escanea el código QR con la app Google Authenticator (u otra a su elección, p.e. FreeOTP) para configurar automáticamente la clave.
 
 Todos los usuarios que quieran usar autenticación en dos pasos necesitarán generar un fichero de clave secreta en su directorio personal. Ésto se puede hacer muy fácilmente usando *google-authenticator*:
 

@@ -267,11 +267,9 @@ The URL is not valid and cannot be loaded.
 
 ```
 
-Another symptom is that middle-clicking results in unexpected behavior, like accessing a random web page.
+Another symptom is that middle-clicking results in unexpected behavior, like accessing a random web page. The reason stems from the use of the middle mouse buttons in UNIX-like operating systems. The middle mouse button is used to paste whatever text has been highlighted/added to the clipboard. Then there is the possibly conflicting feature in Firefox, which defaults to loading the URL of the corresponding text when the button is depressed. This can be disabled by setting `middlemouse.contentLoadURL` and `middlemouse.paste` to `false` in `about:config`.
 
-The reason stems from the use of the middle mouse buttons in UNIX-like operating systems. The middle mouse button is used to paste whatever text has been highlighted/added to the clipboard. Then there is the possibly conflicting feature in Firefox, which defaults to loading the URL of the corresponding text when the button is depressed. This can be easily disabled by going to `about:config` and setting the `middlemouse.contentLoadURL` option to `false`.
-
-Alternatively, having the traditional scroll cursor on middle-click (default behavior on Windows browsers) can be achieved by searching for `general.autoScroll` and setting it to `true`.
+To scroll on middle-click (default for Windows browsers) set `general.autoScroll` to `true`.
 
 ### Backspace does not work as the 'Back' button
 

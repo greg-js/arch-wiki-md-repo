@@ -77,7 +77,9 @@ $ rsync host:source destination
 
 Network file transfers use the [SSH](/index.php/SSH "SSH") protocol by default and `host` can be a real hostname or a predefined profile/alias from `.ssh/config`.
 
-Whether transferring files locally or remotely, rsync first creates an index of block checksums of each source file. This index is used to find any identical blocks of data which might exist in the destination. Such blocks are used in-place, rather than being copied from the source. This can greatly accelerate the synchronization of large files with small changes. For more information, see [official documentation](https://rsync.samba.org/documentation.html), [how rsync works](https://rsync.samba.org/how-rsync-works.html).
+Whether transferring files locally or remotely, rsync first creates a file-list containing information (by default, it is the file size and last modification timestamp) which will then be used to determine if a file needs to be constructed. For each file to be constructed, a weak and strong checksum is found for all blocks such that each block is of length **S** bytes, non-overlapping, and has an offset which is divisible by **S**. Using this information a large file can be constructed using rsync without having to transfer the entire file. For a more detailed practical explanation and detailed mathematical explanation refer to [how rsync works](https://rsync.samba.org/how-rsync-works.html) and [the rsync algorithm](https://rsync.samba.org/tech_report/tech_report.html), respectively.
+
+**Note:** The use of the term *checksum* is **not** interchangeable with the behavior of the `--checksum` option. The `--checksum` option affects the file skip heuristic used prior to any file being transferred. Independent of `--checksum`, a *checksum* is always used for the block-based file construction which is how rynsc transfers a file.
 
 ### Trailing slash caveat
 

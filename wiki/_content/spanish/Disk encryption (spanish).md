@@ -1,3 +1,5 @@
+**Estado de la traducción:** este artículo es una versión traducida de [Disk encryption](/index.php/Disk_encryption "Disk encryption"). Fecha de la última traducción/revisión: **2015-06-21**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Disk_encryption&diff=0&oldid=378165).
+
 Artículos relacionados
 
 *   [dm-crypt (Español)](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)")
@@ -9,8 +11,6 @@ Artículos relacionados
 *   [Tomb](/index.php/Tomb "Tomb")
 *   [tcplay](/index.php/Tcplay "Tcplay")
 *   [Self-Encrypting Drives](/index.php/Self-Encrypting_Drives "Self-Encrypting Drives")
-
-**Estado de la traducción:** este artículo es una versión traducida de [Disk encryption](/index.php/Disk_encryption "Disk encryption"). Fecha de la última traducción/revisión: **2015-06-21**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Disk_encryption&diff=0&oldid=378165).
 
 En este artículo se analizan las técnicas comunes disponibles en Arch Linux para proteger criptográficamente una parte lógica de un disco de almacenamiento (carpeta, partición, disco completo, ...), de modo que todos los datos que se escriban en él se cifren automáticamente y descifren sobre la marcha cuando se lee de nuevo.
 
@@ -46,7 +46,7 @@ Si ya sabe *qué* desea proteger y *cómo* desea cifrarlo, se le anima a dirigir
     *   [5.3 Metadatos criptográficos](#Metadatos_criptogr.C3.A1ficos)
     *   [5.4 Algoritmos de cifrado y modalidades de operación](#Algoritmos_de_cifrado_y_modalidades_de_operaci.C3.B3n)
     *   [5.5 Negabilidad plausible](#Negabilidad_plausible)
-*   [6 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [6 Consulte también](#Consulte_tambi.C3.A9n)
 
 ## ¿Por qué utilizar la criptografía?
 
@@ -527,7 +527,7 @@ Los siguientes son ejemplos de cómo almacenar y asegurar criptográficamente un
 
 *   ***Almacenada en forma de frase de acceso protegida en un archivo de claves o en el propio disco***
 
-    La llave maestra (y, por lo tanto, los datos cifrados con ella) se puede proteger con una contraseña secreta, que tendrá que recordar e introducir cada vez que desea montar el dispositivo de bloque o carpeta. Véase [#Cryptographic metadata](#Cryptographic_metadata) a continuación para obtener más detalles.
+    La llave maestra (y, por lo tanto, los datos cifrados con ella) se puede proteger con una contraseña secreta, que tendrá que recordar e introducir cada vez que desea montar el dispositivo de bloque o carpeta. Véase [#Metadatos criptográficos](#Metadatos_criptogr.C3.A1ficos) a continuación para obtener más detalles.
 
 *   ***Generada de forma aleatoria sobre la marcha para cada sesión***
 
@@ -656,26 +656,25 @@ Véase también:
 
 Véase [Wikipedia:Plausible deniability](https://en.wikipedia.org/wiki/Plausible_deniability "wikipedia:Plausible deniability")
 
-## Véase también
+## Consulte también
 
 <small></small>
 
 <small>
 
-1.  [^](#sinopsis) véase [http://www.truecrypt.org/legal/license](http://www.truecrypt.org/legal/license)
+1.  [http://www.truecrypt.org/legal/license](http://www.truecrypt.org/legal/license)
 2.  [^](#implicaciones_pr.C3.A1cticas) well, a single file in those filesystems could be used as a container (virtual loop-back device!) but then one wouldn't actually be using the filesystem (and the features it provides) anymore
-3.  [^](#compatibilidad_y_prevalencia) [CrossCrypt](http://www.scherrer.cc/crypt) - Open Source AES and TwoFish Linux compatible on the fly encryption for Windows XP and Windows 2000
-4.  [^](#compatibilidad_y_prevalencia) (1) [FreeOTFE (on sf.net)](http://sourceforge.net/projects/freeotfe.mirror/) (2) [FreeOTFE (archived)](http://web.archive.org/web/20130531062457/http://freeotfe.org/) - supports Windows 2000 and later (for PC), and Windows Mobile 2003 and later (for PDA)
-5.  [^](#compatibilidad_y_prevalencia) véase [EncFs build instructions for Mac](http://www.arg0.net/encfs-mac-build)
-6.  [^](#compatibilidad_y_prevalencia) véase [http://www.freshports.org/sysutils/fusefs-encfs/](http://www.freshports.org/sysutils/fusefs-encfs/)
-7.  [^](#compatibilidad_y_prevalencia) véase [http://www.chromium.org/chromium-os/chromiumos-design-docs/protecting-cached-user-data](http://www.chromium.org/chromium-os/chromiumos-design-docs/protecting-cached-user-data)
-8.  [^](#compatibilidad_y_prevalencia) [http://kernelnewbies.org/Linux_2_6_38#head-49f5f735853f8cc7c4d89e5c266fe07316b49f4c](http://kernelnewbies.org/Linux_2_6_38#head-49f5f735853f8cc7c4d89e5c266fe07316b49f4c)
-9.  [^](#compatibilidad_y_prevalencia) [http://members.ferrara.linux.it/freddy77/encfs.html](http://members.ferrara.linux.it/freddy77/encfs.html)
-10.  [^](#compatibilidad_y_prevalencia) [http://csrc.nist.gov/archive/aes/round2/r2report.pdf](http://csrc.nist.gov/archive/aes/round2/r2report.pdf)
-11.  [^](#compatibilidad_y_prevalencia) [https://www.cl.cam.ac.uk/~rja14/Papers/serpentcase.pdf](https://www.cl.cam.ac.uk/~rja14/Papers/serpentcase.pdf)
-12.  [^](#compatibilidad_y_prevalencia) [https://www.cl.cam.ac.uk/~rja14/Papers/serpent.pdf](https://www.cl.cam.ac.uk/~rja14/Papers/serpent.pdf)
-13.  [^](#encfs_acceleration) [https://code.google.com/p/encfs/issues/detail?id=131](https://code.google.com/p/encfs/issues/detail?id=131)
-14.  [^](#compatibility_.26_prevalence) [DOXBOX](https://github.com/t-d-k/doxbox) - support to open dm-crypt / LUKS in newer Windows releases (includes fork from OTFE)
+3.  [http://sourceforge.net/projects/freeotfe.mirror/](http://sourceforge.net/projects/freeotfe.mirror/) FreeOTFE (on sf.net)
+4.  [http://www.arg0.net/encfs-mac-build](http://www.arg0.net/encfs-mac-build) EncFs build instructions for Mac
+5.  [http://www.freshports.org/sysutils/fusefs-encfs/](http://www.freshports.org/sysutils/fusefs-encfs/)
+6.  [http://www.chromium.org/chromium-os/chromiumos-design-docs/protecting-cached-user-data](http://www.chromium.org/chromium-os/chromiumos-design-docs/protecting-cached-user-data)
+7.  [http://kernelnewbies.org/Linux_2_6_38#head-49f5f735853f8cc7c4d89e5c266fe07316b49f4c](http://kernelnewbies.org/Linux_2_6_38#head-49f5f735853f8cc7c4d89e5c266fe07316b49f4c)
+8.  [http://members.ferrara.linux.it/freddy77/encfs.html](http://members.ferrara.linux.it/freddy77/encfs.html)
+9.  [http://csrc.nist.gov/archive/aes/round2/r2report.pdf](http://csrc.nist.gov/archive/aes/round2/r2report.pdf)
+10.  [https://www.cl.cam.ac.uk/~rja14/Papers/serpentcase.pdf](https://www.cl.cam.ac.uk/~rja14/Papers/serpentcase.pdf)
+11.  [https://www.cl.cam.ac.uk/~rja14/Papers/serpent.pdf](https://www.cl.cam.ac.uk/~rja14/Papers/serpent.pdf)
+12.  [https://code.google.com/p/encfs/issues/detail?id=131](https://code.google.com/p/encfs/issues/detail?id=131)
+13.  [https://github.com/t-d-k/doxbox](https://github.com/t-d-k/doxbox) DOXBOX - support to open dm-crypt / LUKS in newer Windows releases (includes fork from OTFE)
 
 </small>
 

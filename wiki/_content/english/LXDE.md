@@ -38,7 +38,7 @@ From project [home page](http://lxde.org/):
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 NTFS with Chinese characters](#NTFS_with_Chinese_characters)
     *   [4.2 LXPanel crashes with some themes or browsing particular web pages](#LXPanel_crashes_with_some_themes_or_browsing_particular_web_pages)
-    *   [4.3 LXPanel uses a smaller icon size for the Task Bar](#LXPanel_uses_a_smaller_icon_size_for_the_Task_Bar)
+    *   [4.3 LXPanel smaller Task Bar icon size](#LXPanel_smaller_Task_Bar_icon_size)
     *   [4.4 Fake transparency in LXTerminal](#Fake_transparency_in_LXTerminal)
 *   [5 See also](#See_also)
 
@@ -253,9 +253,9 @@ Try install [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) in
 
 If lxpanel crashes when browsing particular unicode web pages, try install [ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid).
 
-### LXPanel uses a smaller icon size for the Task Bar
+### LXPanel smaller Task Bar icon size
 
-The icons of running applications do not match the set Icon size in Panel Settings > Geometry - they are 4px smaller which is making some of them blurry. To have clear looking 32px icons in the Task Bar the set Icon size has to be 36px which would blur the icons of the rest of your active Panel Applets. To get around this create additional panel(s) and have them collectively constitute a single continuous looking panel by adjusting the Alignment and Margin in Panel Settings > Geometry.
+The icons of running applications do not match the set *Icon size* in *Panel Settings* > *Geometry* but are 4px smaller which makes some of them blurry. To have clear looking 32px icons in the Task Bar the set *Icon size* has to be 36px which would blur the icons of the rest of your active Panel Applets. To get around this create additional panel(s) and have them collectively make a single continuous looking panel by adjusting the Alignment and Margin in *Panel Settings* > *Geometry*.
 
 ### Fake transparency in LXTerminal
 

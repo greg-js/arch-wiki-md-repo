@@ -1264,7 +1264,7 @@ N: [pulseaudio] main.c: User-configured server at "user", refusing to start/auto
 
 ```
 
-then run `pax11publish -r` command then could be also good to logout and login again. This manual cleanup is always required when using LXDM because it does not restart the X server on logout; see [LXDM#PulseAudio](/index.php/LXDM#PulseAudio "LXDM").
+then run `pax11publish -r` command then could be also good to logout and login again.
 
 If the `pulseaudio -vvvv` command shows error like:
 

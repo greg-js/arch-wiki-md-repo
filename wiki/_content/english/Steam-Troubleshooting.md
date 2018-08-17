@@ -277,7 +277,7 @@ Make sure you are mounting the filesystem with the correct flags in your `/etc/f
 
 This error might also occur if your library folder does not contain a `steamapps` directory. Previous versions used `SteamApps` instead, so ensure the name is fully lowercase.
 
-This error can also occur because of Steam runtime issues and may be fixed following the [#Dynamic linker](#Dynamic_linker) section.
+This error can also occur because of Steam runtime issues and may be fixed following the [#Finding_missing_runtime_libraries](#Finding_missing_runtime_libraries) section.
 
 ### Unusually slow download speed
 

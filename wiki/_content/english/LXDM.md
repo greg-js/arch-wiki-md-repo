@@ -195,4 +195,4 @@ LXDM also makes use of .[Xresources](/index.php/Xresources "Xresources"), .[Xkbm
 
 ### White flash
 
-When using the default LXDM `theme=Industrial` and a custom dark or even black background image (e.g. `bg=/usr/share/backgrounds/img.png`) there may be a short bright flash before LXDM starts. This is caused by the `bg_color:` property of the selected [GTK](/index.php/GTK "GTK") theme. To avoid this change `gtk_theme=Adwaita` to `Adwaita-dark` or to another dark theme for a no flash smooth dark transition to and from LXDM.
+When using the default LXDM `theme=Industrial` and a dark background image (e.g. `bg=/usr/share/backgrounds/img.png`) there may be a short bright flash before LXDM starts. This is caused by the `bg_color:` property of the selected [GTK+](/index.php/GTK%2B "GTK+") theme. To avoid this change `gtk_theme=Adwaita` to `gtk_theme=Adwaita-dark` or to another dark theme.

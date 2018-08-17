@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database"). Data da última tradução: 2018-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Restore_local_database&diff=0&oldid=533518) na versão em inglês.
+
 Sinais de que o pacman precisa de uma restauração da base de dados local:
 
 *   `pacman -Q` fornece absolutamente nenhuma saída e `pacman -Syu` relata erroneamente que o sistema está atualizado.
@@ -43,7 +45,7 @@ done
 Execute o script (opcionalmente, passando diretórios adicionais com pacotes como parâmetros):
 
 ```
-$ paclog-pkglist /var/log/pacman.log | ./pacrecover >files.list 2>pkglist.orig
+ $ paclog --pkglist /var/log/pacman.log | ./pacrecover >files.list 2>pkglist.orig
 
 ```
 

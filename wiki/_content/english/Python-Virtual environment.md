@@ -108,7 +108,7 @@ lrwxrwxrwx 1 foo foo 7 Jun  3 19:58 virtualenv/bin/python3.6 -> python3
 
 ## virtualenvwrapper
 
-*virtualenvwrapper* allows more natural command line interaction with your virtual environemnts by exposing several useful commands to create, activate and remove virtual environments. This package is a wrapper for both [python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv) and [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv).
+*virtualenvwrapper* allows more natural command line interaction with your virtual environments by exposing several useful commands to create, activate and remove virtual environments. This package is a wrapper for both [python-virtualenv](https://www.archlinux.org/packages/?name=python-virtualenv) and [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv).
 
 ### Installation
 

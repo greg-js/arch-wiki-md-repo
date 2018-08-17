@@ -403,7 +403,7 @@ Depending on the [desktop environment](/index.php/Desktop_environment "Desktop e
 
 **Note:**
 
-*   [smbclient](https://www.archlinux.org/packages/?name=smbclient) requires a `/etc/samba/smb.conf` file (see [smb.conf](#smb.conf)), which you can create as an empty file using the `touch` utility.
+*   [smbclient](https://www.archlinux.org/packages/?name=smbclient) requires a `/etc/samba/smb.conf` file (see [#Installation](#Installation)), which you can create as an empty file using the `touch` utility.
 *   After installing [cifs-utils](https://www.archlinux.org/packages/?name=cifs-utils) or [smbclient](https://www.archlinux.org/packages/?name=smbclient), load the `cifs` [kernel module](/index.php/Kernel_module "Kernel module") or reboot to prevent mount fails.
 
 ### List public shares
@@ -463,7 +463,7 @@ The options `uid` and `gid` corresponds to the local (e.g. client) [user](/index
 
 **Note:**
 
-*   If the `uid` and `gid` being used does not match the user of the server, the `forceuid` and `forcegid` options may be helpful. However note permissions assigned to a file when `forceuid` or `forcegid` are in effect may not reflect the the real (server) permissions. See the *File And Directory Ownership And Permissions* section in [cifs.mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cifs.mount.8) for more information.
+*   If the `uid` and `gid` being used does not match the user of the server, the `forceuid` and `forcegid` options may be helpful. However note permissions assigned to a file when `forceuid` or `forcegid` are in effect may not reflect the the real (server) permissions. See the *File And Directory Ownership And Permissions* section in [mount.cifs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.cifs.8#FILE_AND_DIRECTORY_OWNERSHIP_AND_PERMISSIONS) for more information.
 *   To allow users to mount it as long as the mount point resides in a directory controllable by the user; i.e. the user's home, append the `users` mount option. The option is user**s** (plural). For other filesystem types handled by mount, this option is usually *user*; sans the "**s**".
 *   To mount a Windows share without authentification, use `"username=*"`.
 

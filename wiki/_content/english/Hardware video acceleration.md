@@ -44,19 +44,19 @@ There are several ways to achieve this on Linux:
 
  |
 | Decoding |
-| MPEG2 | GMA 4500 and newer | Radeon HD 4000 and newer? | Radeon HD 4000 and newer | See VDPAU. |
-| MPEG4 | ✗ |  ? | Radeon HD 6000 and newer |
-| H.264 | GMA 4500, Ironlake Graphics and newer | Radeon HD 4000 and newer? | Radeon HD 4000 and newer |
-| HEVC (H.265) | Cherryview/Braswell and newer | Radeon HD 6000 and newer? | ✗ |
-| VC1 | Sandy Bridge Graphics and newer | Radeon HD 4000 and newer? | Radeon HD 4000 and newer |
-| VP8 | Broadwell and newer |  ? | ✗ | ✗ |
-| VP9 | Broxton and newer |  ? | ✗ |
+| MPEG2 | GMA 4500 and newer | Radeon HD 6900 and newer | Radeon HD 4000 and newer | See VDPAU |
+| MPEG4 | ✗ | Radeon HD 6900 and newer | Radeon HD 6000 and newer |
+| H.264 | GMA 4500, Ironlake Graphics and newer | Radeon HD 2000 and newer | Radeon HD 4000 and newer |
+| HEVC (H.265) | Cherryview/Braswell and newer | Radeon R9 285 and newer | ✗ |
+| VC1 | Sandy Bridge Graphics and newer | Radeon HD 2000 and newer | Radeon HD 4000 and newer |
+| VP8 | Broadwell and newer | ✗ | ✗ | ✗ |
+| VP9 | Broxton and newer | Raven Ridge and newer | ✗ |
 | Encoding |
-| MPEG2 | Ivy Bridge Graphics and newer |  ? | ✗ | ✗ |
-| H.264 | Sandy Bridge Graphics and newer | Radeon HD 4000 and newer? |
-| HEVC (H.265) | Skylake and newer |  ? |
-| VP8 | Cherryview/Braswell and newer |  ? |
-| VP9 | Kaby Lake and newer |  ? |
+| MPEG2 | Ivy Bridge Graphics and newer | ✗ | ✗ | ✗ |
+| H.264 | Sandy Bridge Graphics and newer | Radeon HD 7000 and newer |
+| HEVC (H.265) | Skylake and newer | Raven Ridge and newer |
+| VP8 | Cherryview/Braswell and newer | ✗ |
+| VP9 | Kaby Lake and newer | Raven Ridge and newer |
 
 <caption>VDPAU</caption>
  [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) | [amdgpu-pro-vdpau](https://aur.archlinux.org/packages/amdgpu-pro-vdpau/)
@@ -65,8 +65,8 @@ There are several ways to achieve this on Linux:
 | Decoding |
 | MPEG2 | Radeon 9500 and newer, GeForce 8 and newer | GeForce 8 and newer |  ? | ✗ |
 | MPEG4 | Radeon HD 6000 and newer, GeForce 200 and newer | GeForce 200 and newer |
-| H.264 | Radeon HD 4000 and newer, GeForce 8 and newer | GeForce 8 and newer | See VA-API. |
-| HEVC (H.265) | [yes](https://cgit.freedesktop.org/mesa/mesa/commit/src/gallium/state_trackers/vdpau/decode.c?id=5609a6986f3eb3c452d66d373b6081df5c6fb34c) | GeForce 900 and newer | ✗ |
+| H.264 | Radeon HD 4000 and newer, GeForce 8 and newer | GeForce 8 and newer | See VA-API |
+| HEVC (H.265) | Radeon R9 285 and newer | GeForce 900 and newer | ✗ |
 | VC1 | Radeon HD 4000 and newer, GeForce 8 and newer | GeForce 8 and newer |
 
 *   Supported by [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) instead.

@@ -1,4 +1,4 @@
-Project jaNET provides a framework that allows various components to communicate, controlled interactively by the user. This procedure aim to act like a digital life assistant (DLA) and it's inspired by Iron Man's JARVIS.
+[Project jaNET](https://sites.google.com/site/projectjanet/) provides a framework that allows various components to communicate, controlled interactively by the user. This procedure aim to act like a digital life assistant (DLA) and it's inspired by Iron Man's JARVIS.
 
 The virtual she-butler comes to life through project jaNET, a platform ready to host multiple creative and innovative pieces of code concerning domestic everyday tasks.
 

@@ -2,7 +2,7 @@ Related articles
 
 *   [Command-line shell](/index.php/Command-line_shell "Command-line shell")
 *   [General recommendations](/index.php/General_recommendations "General recommendations")
-*   [GNU Project](/index.php/GNU_Project "GNU Project")
+*   [GNU](/index.php/GNU "GNU")
 *   [sudo](/index.php/Sudo "Sudo")
 *   [cron](/index.php/Cron "Cron")
 *   [man page](/index.php/Man_page "Man page")
@@ -13,7 +13,7 @@ Related articles
 
 This article deals with so-called *core* utilities on a GNU/Linux system, such as *less*, *ls*, and *grep*. The scope of this article includes, but is not limited to, those utilities included with the GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) package. What follows are various tips and tricks and other helpful information related to these utilities.
 
-Most command-line interfaces are documented in [man pages](/index.php/Man_page "Man page"), [GNU](/index.php/GNU "GNU") commands tend to be documented in [info(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/info.1) pages, some [shells](/index.php/Shell "Shell") provide a `help` command for [shell](/index.php/Shell "Shell")-builtin commands. Additionally most commands print their usage when run with the `--help` argument.
+Most command-line interfaces are documented in [man pages](/index.php/Man_page "Man page"), utilities by the [GNU Project](/index.php/GNU_Project "GNU Project") are documented in [Info manuals](/index.php/Info_manual "Info manual"), some [shells](/index.php/Shell "Shell") provide a `help` command for [shell](/index.php/Shell "Shell") builtin commands. Additionally most commands print their usage when run with the `--help` flag.
 
 ## Contents
 
@@ -73,7 +73,7 @@ Most command-line interfaces are documented in [man pages](/index.php/Man_page "
 
 [ls](https://en.wikipedia.org/wiki/ls "wikipedia:ls") lists directory contents.
 
-See `info ls` or [the online manual](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html#ls-invocation) for more information.
+See the `ls` [Info manual](/index.php/Info_manual "Info manual") ([online version](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html#ls-invocation)) for more information.
 
 [exa](https://the.exa.website) is a modern, and more user friendly alternative to `ls` and `tree`, that has more features, such as displaying [Git](/index.php/Git "Git") modifications along with filenames, colouring differently each columnn in `--long` mode, or displaying `--long` mode metadata along with a `tree` view. [exa](https://www.archlinux.org/packages/?name=exa)
 
@@ -236,7 +236,7 @@ See also [How locate works and rewrite it in one minute](http://jvns.ca/blog/201
 
 ### diff
 
-*diff* compares files line by line. The default Arch Linux *diff* is from the GNU [diffutils](https://www.archlinux.org/packages/?name=diffutils), which also provides *cmp* to compare files byte by byte.
+*diff* compares files line by line. Its output can be saved to a so-called patch file, which can be applied using the [patch(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/patch.1) utility. The default Arch Linux *diff* is from the GNU [diffutils](https://www.archlinux.org/packages/?name=diffutils), which also provides *cmp* to compare files byte by byte.
 
 When comparing text files a word per word diff is often more desirable:
 

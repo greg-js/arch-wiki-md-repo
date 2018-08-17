@@ -549,7 +549,7 @@ If that works, enable WPA/WPA2 again but choose fixed and/or limited router sett
 *   If the router is considerably older than the wireless device you use for the client, test if it works with setting the router to one wireless mode
 *   Disable mixed-mode authentication (e.g. only WPA2 with AES, or TKIP if the router is old)
 *   Try a fixed/free channel rather than "auto" channel (maybe the router next door is old and interfering)
-*   Disable WPS
+*   Disable [WPS](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Setup "wikipedia:Wi-Fi Protected Setup")
 *   Disable `40Mhz` channel bandwidth (lower throughput but less likely collisions)
 *   If the router has quality of service settings, check completeness of settings (e.g. Wi-Fi Multimedia (WMM) is part of optional QoS flow control. An erroneous router firmware may advertise its existence although the setting is not enabled)
 
@@ -569,7 +569,7 @@ See [Kernel modules](/index.php/Kernel_modules "Kernel modules") for general inf
 
 Unified driver for Ralink chipsets (it replaces `rt2500`, `rt61`, `rt73`, etc). This driver has been in the Linux kernel since 2.6.24, you only need to load the right module for the chip: `rt2400pci`, `rt2500pci`, `rt2500usb`, `rt61pci` or `rt73usb` which will autoload the respective `rt2x00` modules too.
 
-A list of devices supported by the modules is available at the project's [homepage](http://rt2x00.serialmonkey.com/wiki/index.php/Hardware).
+A list of devices supported by the modules is available at the project's [homepage](https://web.archive.org/web/20150507023412/http://rt2x00.serialmonkey.com/wiki/index.php/Hardware).
 
 	Additional notes
 

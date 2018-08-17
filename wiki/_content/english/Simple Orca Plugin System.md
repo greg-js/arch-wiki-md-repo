@@ -1,4 +1,4 @@
-With the Simple Orca Plugin System (SOPS) you can extend the functionality of the Orca screen reader. It offers the possibility to add plug-ins in nearly any programming language in an easy way. The settings for the plug-ins are controlled via the filename.
+With the [Simple Orca Plugin System](https://github.com/chrys87/simple-orca-plugin-system) (SOPS) you can extend the functionality of the Orca screen reader ([orca](https://www.archlinux.org/packages/?name=orca)). It offers the possibility to add plug-ins in nearly any programming language in an easy way. The settings for the plug-ins are controlled via the filename.
 
 ## Contents
 
@@ -87,7 +87,7 @@ There are two different ways to run a plug-in:
 *   shortcut (See [#Modifiers/ Shortcuts](#Modifiers.2F_Shortcuts))
 *   exec run once when the plug-in loads. (See [#Commands/ Preferences](#Commands.2F_Preferences))
 
-If none of those are present. the plug-in does not load. There are some more [#Commands](#Commands) to control the behaviour of a plug-in.
+If none of those are present. the plug-in does not load. There are some more [#Commands/ Preferences](#Commands.2F_Preferences) to control the behaviour of a plug-in.
 
 #### Modifiers/ Shortcuts
 

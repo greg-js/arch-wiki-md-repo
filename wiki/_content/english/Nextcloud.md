@@ -157,7 +157,7 @@ $ sudo -u postgres createdb -O nextcloud nextcloud
 
 ### Web server setup
 
-**Warning:** It is recommended to use TLS/SSL (HTTPS) over plain HTTP, see [Apache#TLS/SSL](/index.php/Apache#TLS.2FSSL "Apache") or [Nginx#TLS/SSL](/index.php/Nginx#TLS.2FSSL "Nginx") for examples and implement this in the examples given below.
+**Warning:** It is recommended to use TLS/SSL (HTTPS) over plain HTTP, see [Apache#TLS](/index.php/Apache#TLS "Apache") or [Nginx#TLS/SSL](/index.php/Nginx#TLS.2FSSL "Nginx") for examples and implement this in the examples given below.
 
 Depending on which [web server](/index.php/Web_server "Web server") you are using, further setup is required, indicated below.
 
@@ -271,7 +271,7 @@ See the [Nextcloud documentation](https://docs.nextcloud.com/server/13/admin_man
 
 You can run Nextcloud in its own process and service by using the [uWSGI](/index.php/UWSGI "UWSGI") application server with [uwsgi-plugin-php](https://www.archlinux.org/packages/?name=uwsgi-plugin-php). This allows you to define a [PHP configuration](/index.php/PHP#Configuration "PHP") only for this instance of PHP, without the need to edit the global `php.ini` and thus keeping your web application configurations compartmentalized. *uWSGI* itself has a wealth of features to limit the resource use and to harden the security of the application, and by being a separate process it can run under its own user.
 
-The only part that differs from [#php-fpm configuration](#php-fpm_configuration) is the `location ~ \.php(?:$|/) {}` block:
+The only part that differs from [#Nginx](#Nginx) is the `location ~ \.php(?:$|/) {}` block:
 
 ```
   location ~ \.php(?:$|/) {
@@ -410,7 +410,7 @@ To enable the uwsgi service by default at start-up, run:
 
 **Note:** Here we make use of [systemd socket activation](http://0pointer.de/blog/projects/socket-activation.html) to prevent unnecessary resources consumption when no connections are made to the instance. If you would rather have it constantly active, simply remove the `.socket` part to start and enable the service instead.
 
-See also [UWSGI#Starting service](/index.php/UWSGI#Starting_service "UWSGI").
+See also [UWSGI#Running_uWSGI](/index.php/UWSGI#Running_uWSGI "UWSGI").
 
 ### Setting strong permissions for the filesystem
 
@@ -581,7 +581,7 @@ Restart the httpd service to activate your certificate.
 
 ### Self-signed certificate for Android devices
 
-Once you have followed the setup for SSL, as on [LAMP](/index.php/LAMP#TLS.2FSSL "LAMP") for example, early versions of DAVdroid will reject the connection because the certificate is not trusted. A certificate can be made as follows on your server:
+Once you have followed the setup for SSL, as on [Apache_HTTP_Server#TLS](/index.php/Apache_HTTP_Server#TLS "Apache HTTP Server") for example, early versions of DAVdroid will reject the connection because the certificate is not trusted. A certificate can be made as follows on your server:
 
 ```
  # openssl x509 -req -days 365 -in /etc/httpd/conf/server.csr -signkey /etc/httpd/conf/server.key -extfile android.txt -out CA.crt

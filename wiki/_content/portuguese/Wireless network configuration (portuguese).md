@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma versão localizada de [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=534975) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration"). Data da última tradução: 2018-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=535182) na versão em inglês.
 
 Artigos relacionados
 
@@ -563,66 +563,66 @@ Em alguns modelos de notebooks com switches de hardware (por exemplo, Thinkpad X
 
 #### Causa nº.4
 
-Another cause for frequent disconnects or a complete failure to connect may also be a sub-standard router, incomplete settings of the router, or interference by other wireless devices.
+Outro motivo para desconexões frequentes ou falha total na conexão também pode ser um roteador abaixo do padrão, configurações incompletas do roteador ou interferência de outros dispositivos sem fio.
 
-To troubleshoot, first best try to connect to the router with no authentication.
+Para solucionar problemas, primeiro tente conectar-se ao roteador sem autenticação.
 
-If that works, enable WPA/WPA2 again but choose fixed and/or limited router settings. For example:
+Se isso funcionar, ative o WPA/WPA2 novamente, mas escolha configurações de roteador fixas e/ou limitadas. Por exemplo:
 
-*   If the router is considerably older than the wireless device you use for the client, test if it works with setting the router to one wireless mode
-*   Disable mixed-mode authentication (e.g. only WPA2 with AES, or TKIP if the router is old)
-*   Try a fixed/free channel rather than "auto" channel (maybe the router next door is old and interfering)
-*   Disable WPS
-*   Disable `40Mhz` channel bandwidth (lower throughput but less likely collisions)
-*   If the router has quality of service settings, check completeness of settings (e.g. Wi-Fi Multimedia (WMM) is part of optional QoS flow control. An erroneous router firmware may advertise its existence although the setting is not enabled)
+*   Se o roteador for consideravelmente antigo que o dispositivo sem fio que você usa para o cliente, teste se ele funciona com a configuração do roteador para um modo sem fio
+*   Desative autenticação de modo misto (por exemplo, somente WPA2 com AES ou TKIP se o roteador for antigo)
+*   Tente um canal fixo/livre em vez de um canal "auto" (talvez o roteador do vizinho seja antigo e interfira)
+*   Desabilite [WPS](https://en.wikipedia.org/wiki/pt:Wi-Fi_Protected_Setup "wikipedia:pt:Wi-Fi Protected Setup")
+*   Desabilite largura de banda do canal `40Mhz` (menor rendimento, mas colisões menos prováveis)
+*   Se o roteador tiver configurações de qualidade de serviço (QoS), verifique a integridade das configurações (por exemplo, o Wi-Fi Multimedia (WMM) faz parte do controle de fluxo QoS opcional. Um firmware incorreto do roteador pode anunciar sua existência, embora a configuração não esteja ativada)
 
 ### Redes Wi-Fi invisíveis por causa do domínio regulatório incorreto
 
-If the computer's Wi-Fi channels do not match those of the user's country, that may result in some in-range Wi-Fi networks becoming invisible, because they use wireless channels that aren't allowed by default. The solution is to configure the regulatory domain correctly, see [#Respecting the regulatory domain](#Respecting_the_regulatory_domain).
+Se os canais Wi-Fi do computador não corresponderem aos do país do usuário, isso poderá resultar na invisibilidade de algumas redes Wi-Fi no intervalo, porque eles usam canais sem fio que não são permitidos por padrão. A solução é configurar o domínio regulatório corretamente, consulte [#Respeitar o domínio regulatório](#Respeitar_o_dom.C3.ADnio_regulat.C3.B3rio).
 
 ## Solução de problemas de drivers e firmware
 
-This section covers methods and procedures for installing kernel modules and *firmware* for specific chipsets, that differ from generic method.
+Esta seção cobre métodos e procedimentos para instalar módulos do kernel e *firmware* para chipsets específicos, que diferem do método genérico.
 
-See [Kernel modules](/index.php/Kernel_modules "Kernel modules") for general information on operations with modules.
+Veja [Módulos de kernel](/index.php/Kernel_modules "Kernel modules") para informações gerais sobre operações com módulos.
 
 ### Ralink/Mediatek
 
 #### rt2x00
 
-Unified driver for Ralink chipsets (it replaces `rt2500`, `rt61`, `rt73`, etc). This driver has been in the Linux kernel since 2.6.24, you only need to load the right module for the chip: `rt2400pci`, `rt2500pci`, `rt2500usb`, `rt61pci` or `rt73usb` which will autoload the respective `rt2x00` modules too.
+Driver unificado para chipsets Ralink (ele substitui `rt2500`, `rt61`, `rt73`, etc). Este driver está no kernel Linux desde o 2.6.24, você só precisa carregar o módulo correto para o chip: `rt2400pci`, `rt2500pci`, `rt2500usb`, `rt61pci` ou `rt73usb` que carregará automaticamente os respectivos módulos `rt2x00` também.
 
-A list of devices supported by the modules is available at the project's [homepage](http://rt2x00.serialmonkey.com/wiki/index.php/Hardware).
+Uma lista de dispositivos suportados pelos módulos está disponível no [site](https://web.archive.org/web/20150507023412/http://rt2x00.serialmonkey.com/wiki/index.php/Hardware) do projeto.
 
-	Additional notes
+	Notas adicionais
 
-*   Since kernel 3.0, rt2x00 includes also these drivers: `rt2800pci`, `rt2800usb`.
-*   Since kernel 3.0, the staging drivers `rt2860sta` and `rt2870sta` are replaced by the mainline drivers `rt2800pci` and `rt2800usb`.
-*   Some devices have a wide range of options that can be configured with `iwpriv`. These are documented in the [source tarballs](http://web.ralinktech.com/ralink/Home/Support/Linux.html) available from Ralink.
+*   Desde o kernel 3.0, rt2x00 também inclui esses drivers: `rt2800pci`, `rt2800usb`.
+*   Desde o kernel 3.0, os drivers *staging* `rt2860sta` e `rt2870sta` foram substituídos pelos drivers *mainline* `rt2800pci` e `rt2800usb`.
+*   Alguns dispositivos tem uma ampla gama de opções que pode ser configurada com `iwpriv`. Esses estão documentados nos [tarballs fonte](http://web.ralinktech.com/ralink/Home/Support/Linux.html) disponíveis na Ralink.
 
 #### rt3090
 
-For devices which are using the rt3090 chipset it should be possible to use `rt2800pci` driver, however, is not working with this chipset very well (e.g. sometimes it is not possible to use higher rate than 2Mb/s).
+Para dispositivos que estão usando o chipset rt3090, deve ser possível usar o driver `rt2800pci`, no entanto, ele não está funcionando com este chipset muito bem (por exemplo, às vezes não é possível usar uma taxa maior que 2Mb/s).
 
 #### rt3290
 
-The rt3290 chipset is recognised by the kernel `rt2800pci` module. However, some users experience problems and reverting to a patched Ralink driver seems to be beneficial in these [cases](https://bbs.archlinux.org/viewtopic.php?id=161952).
+O chipset rt3290 é reconhecido pelo módulo do kernel `rt2800pci`. No entanto, alguns usuários enfrentam problemas e reverter para um driver Ralink corrigido parece ser benéfico nesses [casos](https://bbs.archlinux.org/viewtopic.php?id=161952).
 
 #### rt3573
 
-New chipset as of 2012\. It may require proprietary drivers from Ralink. Different manufacturers use it, see the [Belkin N750 DB wireless usb adapter](https://bbs.archlinux.org/viewtopic.php?pid=1164228#p1164228) forums thread.
+Novo chipset a partir de 2012\. Pode exigir drivers proprietários da Ralink. Diferentes fabricantes o utilizam, consulte o tópico de fóruns [Adaptador USB sem fio Belkin N750 DB](https://bbs.archlinux.org/viewtopic.php?pid=1164228#p1164228).
 
 #### rt5572
 
-New chipset as of 2012 with support for 5 Ghz bands. It may require proprietary drivers from Ralink and some effort to compile them. At the time of writing a how-to on compilation is available for a DLINK DWA-160 rev. B2 [here](http://bernaerts.dyndns.org/linux/229-ubuntu-precise-dlink-dwa160-revb2).
+Novo chipset a partir de 2012 com suporte para bandas de 5 Ghz. Pode exigir drivers proprietários da Ralink e algum esforço para compilá-los. No momento da escrita, um tutorial sobre a compilação está disponível para uma versão DLINK DWA-160\. B2 [aqui](http://bernaerts.dyndns.org/linux/229-ubuntu-precise-dlink-dwa160-revb2).
 
 #### mt7612u
 
-New chipset as of 2014, released under their new commercial name Mediatek. It is an AC1200 or AC1300 chipset. Manufacturer provides drivers for Linux on their [support page](https://www.mediatek.com/products/broadbandWifi/mt7612u)
+Novo chipset a partir de 2014, lançado sob o novo nome comercial Mediatek. É um chipset AC1200 ou AC1300\. O fabricante fornece drivers para o Linux em sua [página de suporte](https://www.mediatek.com/products/broadbandWifi/mt7612u).
 
 ### Realtek
 
-See [[5]](https://wikidevi.com/wiki/Realtek) for a list of Realtek chipsets and specifications.
+Veja [[5]](https://wikidevi.com/wiki/Realtek) para uma lista de chipsets Realtek e especificações.
 
 #### rtl8192cu
 

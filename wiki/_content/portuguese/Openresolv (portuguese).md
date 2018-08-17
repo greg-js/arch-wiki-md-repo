@@ -1,3 +1,9 @@
+**Status de tradução:** Esse artigo é uma tradução de [Openresolv](/index.php/Openresolv "Openresolv"). Data da última tradução: 2018-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Openresolv&diff=0&oldid=534763) na versão em inglês.
+
+Artigos relacionados
+
+*   [systemd-resolvconf](/index.php/Systemd-resolvconf "Systemd-resolvconf")
+
 [Openresolv](https://roy.marples.name/projects/openresolv) é uma implementação de [resolvconf](https://en.wikipedia.org/wiki/resolvconf "wikipedia:resolvconf"), isto é, framework de gerenciamento de [resolv.conf](/index.php/Resolv.conf_(Portugu%C3%AAs) "Resolv.conf (Português)").
 
 ## Contents

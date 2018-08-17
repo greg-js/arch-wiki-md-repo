@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Wireshark](/index.php/Wireshark "Wireshark"). Data da última tradução: 2018-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wireshark&diff=0&oldid=532698) na versão em inglês.
+
 O [Wireshark](https://www.wireshark.org/) é um analisador de pacotes livre e de código aberto. Ele é usado para solucionar de problemas de rede, análise, desenvolvimento de software e protocolo de comunicação e educação.
 
 ## Contents
@@ -30,7 +32,7 @@ Então, para usar Wireshark como um usuário normal, você só precisa adicionar
 
 ```
 
-Faça login novamente para aplicar a alteração. Você pode usar `newgrp wireshark` para abrir um shell com o novo grupo aplicado, mas ele só vai funcionar quando o Wireshark é lançado lá de dentro, até que você faça login novamente.
+Faça login novamente para aplicar a alteração.
 
 ## Algumas técnicas de captura
 

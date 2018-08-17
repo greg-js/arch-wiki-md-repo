@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Advanced Linux Sound Architecture/Configuration examples](/index.php/Advanced_Linux_Sound_Architecture/Configuration_examples "Advanced Linux Sound Architecture/Configuration examples"). Data da última tradução: 2018-08-12\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Advanced_Linux_Sound_Architecture/Configuration_examples&diff=0&oldid=534139) na versão em inglês.
+
 Este artigo deve servir como um guia para configurações mais avançadas do [ALSA](/index.php/ALSA_(Portugu%C3%AAs) "ALSA (Português)"). A configuração fica armazenada em `/etc/asound.conf` como mencionado no artigo principal. Nenhuma das configurações abaixo tem a garantia de funcionar.
 
 **Nota:** A maioria das coisas discutidas aqui são muito mais fácil de se fazer usando plugins do alsa como upmix, que são explicadas no artigo principal.

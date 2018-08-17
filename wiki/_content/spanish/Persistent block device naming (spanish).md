@@ -1,3 +1,9 @@
+Artículos relacionados
+
+*   [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)")
+*   [udev (Español)](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)")
+*   [LVM (Español)](/index.php/LVM_(Espa%C3%B1ol) "LVM (Español)")
+
 En este artículo se describe cómo utilizar nombres permanentes para sus dispositivos de bloques. Esto ha sido posible gracias a la introducción de udev y tiene algunas ventajas sobre los nombres basados en el bus de conexión. Si el equipo tiene más de una controladora de disco SATA, SCSI o IDE, el orden en que se añaden sus correspondientes nodos de dispositivos es arbitraria. Esto puede dar lugar a nombres de dispositivos como `/dev/**sda**` y `/dev/**sdb**` conmutando aleatoriamente en cada arranque, que puede terminar en una nominación de los dispositivos que impida el arranque del sistema, en pánico del kernel o en una desaparición del dispositivo de bloque. La nomenclatura permanente resuelve estos problemas.
 
 **Nota:** Si está usando [LVM2](/index.php/LVM_(Espa%C3%B1ol) "LVM (Español)"), este artículo no es relevante, dado que LVM se encarga de esto automáticamente.

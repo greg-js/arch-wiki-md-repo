@@ -488,7 +488,7 @@ La modalidad *plain* de dm-crypt no requiere una cabecera en el disco cifrado: e
 
 Los discos cifrados con dm-crypt *plain* pueden ser más resistentes a los daños que los discos cifrados con LUKS, ya que no se basan en una clave maestra de cifrado la cual constituye un punto único de fallo si se daña. Sin embargo, utilizando el modo *plain* también se requiere una configuración más manual de las opciones de cifrado para lograr la misma fuerza criptográfica. Véase también [Disk encryption#Cryptographic metadata](/index.php/Disk_encryption#Cryptographic_metadata "Disk encryption").
 
-**Tip:** Si el cifrado sin cabeceras es su objetivo, pero no está seguro acerca de la falta de derivación de clave con el modo *plain*, entonces dispone de dos alternativas:
+**Sugerencia:** Si el cifrado sin cabeceras es su objetivo, pero no está seguro acerca de la falta de derivación de clave con el modo *plain*, entonces dispone de dos alternativas:
 
 *   [tcplay](/index.php/Tcplay "Tcplay") que ofrece cifrado sin cabeceras, pero con la función PBKDF2, o
 *   la modalidad LUKS de dm-crypt utilizando la opción `--header` de *cryptsetup*. No se podrá utilizar el hook estándar *encrypt*, pero dicho hook [puede ser modificado](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties").
@@ -596,7 +596,7 @@ cryptdevice=/dev/sd*X*:enc cryptkey=/dev/sd*Z*:0:512 crypto=sha512:twofish-xts-p
 
 Véase [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration") para conocer más detalles y otros parámetros que puede necesitar
 
-**Tip:** Si se utiliza GRUB, puede instalarlo en el mismo USB como partición `/boot` con:
+**Sugerencia:** Si se utiliza GRUB, puede instalarlo en el mismo USB como partición `/boot` con:
 ```
 # grub-install --recheck /dev/sd*Y*
 
@@ -641,7 +641,7 @@ La distribución del disco en este ejemplo es:
 
 ```
 
-**Tip:** Todos los escenarios tienen el propósito de ejemplos. Es, por supuesto, posible combinar los dos pasos anteriores de las distintas instalaciones con otros escenarios posibles. Ver también las variantes asociadas a [#LVM sobre LUKS](#LVM_sobre_LUKS).
+**Sugerencia:** Todos los escenarios tienen el propósito de ejemplos. Es, por supuesto, posible combinar los dos pasos anteriores de las distintas instalaciones con otros escenarios posibles. Ver también las variantes asociadas a [#LVM sobre LUKS](#LVM_sobre_LUKS).
 
 ### Preparar el disco
 

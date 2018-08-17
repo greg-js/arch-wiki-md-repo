@@ -484,7 +484,7 @@ See [Firefox#Backspace does not work as the 'Back' button](/index.php/Firefox#Ba
 
 ### Disable middle mouse button clipboard paste
 
-See [Clipboard#Firefox](/index.php/Clipboard#Firefox "Clipboard").
+See [Firefox#Middle-click errors](/index.php/Firefox#Middle-click_errors "Firefox").
 
 ## Miscellaneous
 

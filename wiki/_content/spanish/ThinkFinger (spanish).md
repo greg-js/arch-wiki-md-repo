@@ -1,6 +1,6 @@
 ThinkFinger es un controlador para el lector de huellas digitales SGS de la empresa Thomson Microelectronics que se monta en la mayoría de portátiles IBM/Lenovo ThinkPad.
 
-**Warning:** Las revisiones de ThinkFinger-svn por encima de la 72 requieren que cargue el nódulo *uinput*!
+**Advertencia:** Las revisiones de ThinkFinger-svn por encima de la 72 requieren que cargue el nódulo *uinput*!
 
 ## Contents
 
@@ -59,7 +59,7 @@ session        required        pam_unix.so
 
 ```
 
-**Tip:** No se olvide de Don't forget to do a *tf-tool --add-user root* para usar esta característica!
+**Sugerencia:** No se olvide de hacer *tf-tool --add-user root* para usar esta característica!
 
 ### /etc/pam.d/sudo
 

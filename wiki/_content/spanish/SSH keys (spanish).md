@@ -390,7 +390,7 @@ eval `keychain --eval --agents ssh id_dsa`
 
 a su `.bashrc` o `.bash_profile`.
 
-**Tip:** Si quiere mayor seguridad reemplace -Q con --clear pero es menos conveniente.
+**Sugerencia:** Si quiere mayor seguridad reemplace -Q con --clear pero es menos conveniente.
 
 Si es necesario, reemplace `~/.ssh/id_dsa` con `~/.ssh/id_rsa`. Para aquellos que usan una shell que no es Bash, vean`keychain --help` o [keychain(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/keychain.1) para detalles en otras Shells.
 

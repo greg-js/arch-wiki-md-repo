@@ -1,4 +1,4 @@
-Related articles
+Artículos relacionados
 
 *   [Gitweb](/index.php/Gitweb "Gitweb")
 *   [Cgit](/index.php/Cgit "Cgit")

@@ -1,4 +1,4 @@
-Related articles
+Artículos relacionados
 
 *   [GNUnet](/index.php/GNUnet "GNUnet")
 *   [I2P](/index.php/I2P "I2P")

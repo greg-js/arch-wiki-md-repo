@@ -1,3 +1,9 @@
+Related articles
+
+*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
+*   [PCManFM](/index.php/PCManFM "PCManFM")
+*   [Window manager](/index.php/Window_manager "Window manager")
+
 [SpaceFM](https://ignorantguru.github.io/spacefm/) (a fork of [PCManFM](/index.php/PCManFM "PCManFM")) is a lightweight, highly configurable, desktop-independent multi-panel tabbed file and desktop manager. It features a built-in virtual file system, a [udev](/index.php/Udev "Udev")-based device manager, a customisable menu system, and [Bash](/index.php/Bash "Bash") integration.
 
 ## Contents
@@ -57,7 +63,7 @@ How SpaceFM may be autostarted as a daemon process or to manage the desktop for 
 
 ### Mounting remote hosts
 
-SpaceFM supports mounting remote hosts via [udevil](/index.php/Udisks#devmon "Udisks"). To add a remote host, add the access URL into the URL bar. A terminal window should pop up showing the mounting process which is useful for error tracing.
+SpaceFM supports mounting remote hosts via [udevil](/index.php/Udisks#Mount_helpers "Udisks"). To add a remote host, add the access URL into the URL bar. A terminal window should pop up showing the mounting process which is useful for error tracing.
 
 An overview of the supported remote hosts is available in the [udevil help](https://ignorantguru.github.io/udevil/udevil--help.html). For example to mount a remote FTP server:
 

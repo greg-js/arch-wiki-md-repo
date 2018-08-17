@@ -4,7 +4,7 @@ Related articles
 *   [gdisk](/index.php/Gdisk "Gdisk")
 *   [Partitioning](/index.php/Partitioning "Partitioning")
 
-GNU Parted is a program for creating and manipulating partition tables. GParted is a GUI frontend.
+[GNU Parted](https://www.gnu.org/software/parted/parted.html) is a program for creating and manipulating partition tables. GParted is a GUI frontend.
 
 ## Contents
 

@@ -92,7 +92,7 @@ See [LightDM#Changing background images/colors](/index.php/LightDM#Changing_back
 
 ### Autostart programs on login
 
-See [GNOME#Startup applications](/index.php/GNOME#Startup_applications "GNOME").
+See [GNOME#Autostart](/index.php/GNOME#Autostart "GNOME").
 
 ## Troubleshooting
 

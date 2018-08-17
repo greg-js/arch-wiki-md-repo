@@ -22,6 +22,10 @@ You can use the [GNU toolchain](/index.php/GNU_toolchain "GNU toolchain") or the
 
 	[https://github.com/distcc/distcc](https://github.com/distcc/distcc) || [distcc](https://www.archlinux.org/packages/?name=distcc)
 
+*   **rr** — Lightweight recording and deterministic debugging tool for C/C++, uses GDB.
+
+	[https://rr-project.org/](https://rr-project.org/) || [rr](https://aur.archlinux.org/packages/rr/)
+
 ### Static code analyzers
 
 *   **[Cppcheck](https://en.wikipedia.org/wiki/Cppcheck "wikipedia:Cppcheck")** — A tool for static C/C++ code analysis.
@@ -62,7 +66,8 @@ See also [Wikipedia:List of compilers#C compilers](https://en.wikipedia.org/wiki
 
 ## See also
 
-*   [GCC and Make – Compiling, Linking and Building C/C++ Applications](https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html)
 *   [man pages](/index.php/Man_page "Man page") in section 2 for system calls
 *   [man pages](/index.php/Man_page "Man page") in section 3 for library functions
+*   [GCC and Make – Compiling, Linking and Building C/C++ Applications](https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html)
+*   [SEI CERT C Coding Standard](https://wiki.sei.cmu.edu/confluence/display/c/SEI+CERT+C+Coding+Standard)
 *   [##C IRC channel on Freenode](http://iso-9899.info/)

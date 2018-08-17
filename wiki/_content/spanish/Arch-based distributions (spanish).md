@@ -1,6 +1,6 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"). Fecha de la última traducción/revisión: **2018-08-13**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=533498).
+**Estado de la traducción:** este artículo es una versión traducida de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"). Fecha de la última traducción/revisión: **2018-08-15**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=535346).
 
-Related articles
+Artículos relacionados
 
 *   [Arch en comparación con otras distribuciones](/index.php/Arch_compared_to_other_distributions_(Espa%C3%B1ol) "Arch compared to other distributions (Español)")
 *   [Archiso](/index.php/Archiso "Archiso")
@@ -15,20 +15,19 @@ Esta página enumera las distribuciones que se derivan de Arch Linux **en su tot
 
 *   [1 Activas](#Activas)
 *   [2 Inactivas](#Inactivas)
-    *   [2.1 2018](#2018)
-    *   [2.2 2017](#2017)
-    *   [2.3 2016](#2016)
-    *   [2.4 2015](#2015)
-    *   [2.5 2014](#2014)
-    *   [2.6 2013](#2013)
-    *   [2.7 2012](#2012)
-    *   [2.8 2011](#2011)
-    *   [2.9 2010](#2010)
-    *   [2.10 2009](#2009)
-    *   [2.11 2008](#2008)
-    *   [2.12 2007](#2007)
-    *   [2.13 2006](#2006)
-    *   [2.14 2004](#2004)
+    *   [2.1 2017](#2017)
+    *   [2.2 2016](#2016)
+    *   [2.3 2015](#2015)
+    *   [2.4 2014](#2014)
+    *   [2.5 2013](#2013)
+    *   [2.6 2012](#2012)
+    *   [2.7 2011](#2011)
+    *   [2.8 2010](#2010)
+    *   [2.9 2009](#2009)
+    *   [2.10 2008](#2008)
+    *   [2.11 2007](#2007)
+    *   [2.12 2006](#2006)
+    *   [2.13 2004](#2004)
 *   [3 Consulte también](#Consulte_tambi.C3.A9n)
 
 ## Activas
@@ -77,10 +76,6 @@ El asterisco indica el año de la primera versión pública basada en Arch Linux
 ## Inactivas
 
 Estas distribuciones ya no se desarrollan, pero muestran algo de la historia que rodea a Arch Linux y la gran comunidad de FOSS. Las secciones muestran el año de la última versión.
-
-### 2018
-
-*   [Sekhmet](https://webcache.googleusercontent.com/search?q=cache:kNELdjVNaywJ:https://sekhmet.sourceforge.io/)
 
 ### 2017
 

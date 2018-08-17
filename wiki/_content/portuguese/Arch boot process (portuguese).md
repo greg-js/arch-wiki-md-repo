@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma versão localizada de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=529523) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=529523) na versão em inglês.
 
 Artigos relacionados
 

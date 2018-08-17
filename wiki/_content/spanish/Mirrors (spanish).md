@@ -59,7 +59,7 @@ Ejemplo:
 
 Véanse los apartados [#Estado de los mirrors](#Estado_de_los_mirrors) y [#Listado por velocidad](#Listado_por_velocidad) para obtener ayuda sobre cómo escoger los mejores mirrors.
 
-**Tip:** Descomente sus 5 mirrors preferidos y ubíquelos al inicio de la lista de mirrors. De esa forma tendrán prioridad dentro de la lista de mirrors. También hace mas fácil la inclusión de actualizaciones de la lista del mirrorlist.
+**Sugerencia:** Descomente sus 5 mirrors preferidos y ubíquelos al inicio de la lista de mirrors. De esa forma tendrán prioridad dentro de la lista de mirrors. También hace mas fácil la inclusión de actualizaciones de la lista del mirrorlist.
 
 También es posible especificar mirrors directamente en el archivo `/etc/pacman.conf`. Para el repositorio *[core]* la configuración predifinida es:
 

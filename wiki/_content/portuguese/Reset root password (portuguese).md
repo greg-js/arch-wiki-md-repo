@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma versão localizada de [Reset root password](/index.php/Reset_root_password "Reset root password"). Data da última tradução: 2018-08-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Reset_root_password&diff=0&oldid=531654) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Reset root password](/index.php/Reset_root_password "Reset root password"). Data da última tradução: 2018-08-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Reset_root_password&diff=0&oldid=531654) na versão em inglês.
 
 Este guia irá mostrar-lhe como redefinir uma senha de [root](/index.php/Root_(Portugu%C3%AAs) "Root (Português)") esquecida. Vários métodos estão listados para ajudá-lo a realizar isso.
 

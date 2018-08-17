@@ -319,7 +319,7 @@ En el pasado, otros backends también se desarrollaron, pero ya no se mantienen 
 
 *   Se pueden instalar múltiples backends a la vez y se priorizan en *Configuración del sistema> Multimedia> Backend*.
 *   Según los [foros de KDE](https://forum.kde.org/viewtopic.php?f=250&t=126476&p=335080), el backend de VLC carece de soporte para [ReplayGain](https://en.wikipedia.org/wiki/ReplayGain "wikipedia:ReplayGain")
-*   Si elige el backend de vlc, es posible que experimente fallos cada vez que kde quiera enviarle una advertencia audible (y en bastantes casos también, consulte [[4]](https://forum.kde.org/viewtopic.php?f=289&t=135956)).
+*   Si elige el backend de vlc, es posible que experimente fallos cada vez que kde quiera enviarle una advertencia audible (y en bastantes casos también, consulte [[3]](https://forum.kde.org/viewtopic.php?f=289&t=135956)).
 *   Una posible solución es ejecutar
 
  `# /usr/lib/vlc/vlc-cache-gen -f /usr/lib/vlc/plugins` 

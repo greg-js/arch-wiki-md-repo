@@ -61,7 +61,7 @@ For dkms setups, edit `/etc/fstab` as below:
 
 ```
 
-To load the ufsd driver at startup, create a `*.conf` file (e.g. `ufsd.conf`) in `/etc/[modules-load.d](/index.php/Kernel_modules#Loading "Kernel modules")` that contains all modules that should be loaded:
+To load the ufsd driver at startup, create a `*.conf` file (e.g. `ufsd.conf`) in `/etc/modules-load.d/` that contains all modules that should be loaded:
 
  `/etc/modules-load.d/ufsd.conf`  `ufsd` 
 **Note:** You may need to update the kernel modules db in order to avoid 'no such file or directory' error when loading ufsd. Run: `depmod -a`.

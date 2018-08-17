@@ -137,7 +137,7 @@ De manera opcional, para suministrar una configuración propia a Bash (`~/.bashr
 
 ```
 
-**Tip:** Opcionalmente también, cree un prompt único capaz de diferenciar el entorno chroot: `# export PS1="(chroot) $PS1"` 
+**Sugerencia:** Opcionalmente también puede crear un prompt único capaz de diferenciar el entorno chroot: `# export PS1="(chroot) $PS1"` 
 
 ### Usando systemd-nspawn
 

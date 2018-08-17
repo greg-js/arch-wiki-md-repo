@@ -1,4 +1,9 @@
-**TORQUE** is an open source resource manager providing control over batch jobs and distributed compute nodes. Basically, one can setup a home or small office Linux cluster and queue jobs with this software. A cluster consists of one head node and many compute nodes. The head node runs the **torque-server** daemon and the compute nodes run the **torque-client** daemon. The head node also runs a scheduler daemon.
+Related articles
+
+*   [distcc](/index.php/Distcc "Distcc")
+*   [Slurm](/index.php/Slurm "Slurm")
+
+[TORQUE](http://www.adaptivecomputing.com/products/torque/) is an open source resource manager providing control over batch jobs and distributed compute nodes. Basically, one can setup a home or small office Linux cluster and queue jobs with this software. A cluster consists of one head node and many compute nodes. The head node runs the **torque-server** daemon and the compute nodes run the **torque-client** daemon. The head node also runs a scheduler daemon.
 
 ## Contents
 

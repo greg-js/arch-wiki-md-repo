@@ -1,4 +1,4 @@
-Related articles
+Artículos relacionados
 
 *   [systemd (Español)](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)")
 *   [Linux Containers](/index.php/Linux_Containers "Linux Containers")
@@ -45,7 +45,7 @@ Use *pacstrap* para instalar un sistema básico de arch dentro del contenedor. C
 
 ```
 
-**Tip:** El parametro `-i` **omitira** auto confirmación en la selección de paquetes. Ya que no es necesario instalar el kernel en el contenedor, lo puede remover de la lista de selección para ahorrar espacio. Vea [pacman#Utilización](/index.php/Pacman_(Espa%C3%B1ol)#Utilizaci.C3.B3n "Pacman (Español)").
+**Sugerencia:** El parametro `-i` **omitira** auto confirmación en la selección de paquetes. Ya que no es necesario instalar el kernel en el contenedor, lo puede remover de la lista de selección para ahorrar espacio. Vea [pacman#Utilización](/index.php/Pacman_(Espa%C3%B1ol)#Utilizaci.C3.B3n "Pacman (Español)").
 
 **Nota:** El paquete [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) requerido por [linux](https://www.archlinux.org/packages/?name=linux), que esta incluido en el grupo de paquetes [base](https://www.archlinux.org/groups/x86_64/base/) no es necesario para ejecutar el contenedor. Este causa algunos problemas con `systemd-tmpfiles-setup.service` durante el arranque del contenedor con `systemd-nspawn`. Es posible instalar el grupo [base](https://www.archlinux.org/groups/x86_64/base/) excluyendo el paquete [linux](https://www.archlinux.org/packages/?name=linux) y sus dependecias al construir el contenedor con `# pacstrap -i -c -d ~/MyContainer base --ignore linux [additional pkgs/groups]`. El parámetro `--ignore` es pasado a [pacman](https://www.archlinux.org/packages/?name=pacman). Vea [FS#46591](https://bugs.archlinux.org/task/46591) para más información.
 
@@ -127,7 +127,7 @@ Al usar un contenedor frecuentemente, seria deseable iniciarlo al arrancar el si
 
 [Active](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") el target `machines.target`, después ejecute `systemd-nspawn@*myContainer*.service`, donde `myContainer` es un contenedor de nspawn ubicado en `/var/lib/machines`.
 
-**Tip:** Para personalizar el arranque de los contenedores, edite `/etc/systemd/nspawn/*myContainer*.nspawn`. Vea [systemd.nspawn(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.nspawn.5) para todas las opciones.
+**Sugerencia:** Para personalizar el arranque de los contenedores, edite `/etc/systemd/nspawn/*myContainer*.nspawn`. Vea [systemd.nspawn(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.nspawn.5) para todas las opciones.
 
 ## Manejo de contenedores
 
@@ -167,7 +167,7 @@ $ machinectl poweroff *MyContainer*
 
 ```
 
-**Tip:** Apagar y reiniciar se pueden ejecutar desde dentro de una sesión del contenedor, ejecutando los comandos de *systemctl* `poweroff` o `reboot`.
+**Sugerencia:** Apagar y reiniciar se pueden ejecutar desde dentro de una sesión del contenedor, ejecutando los comandos de *systemctl* `poweroff` o `reboot`.
 
 Descargar una imagen:
 

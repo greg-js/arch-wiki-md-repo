@@ -1,4 +1,4 @@
-Related articles
+Artículos relacionados
 
 *   [pacman (Español)](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)")
 

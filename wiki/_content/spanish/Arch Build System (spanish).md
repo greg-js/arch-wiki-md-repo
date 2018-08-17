@@ -127,7 +127,7 @@ Si se especifica un paquete que no existe, svn no le mostrara una advertencia, s
 *   Confirme que el paquete no se ha movido a otro repositorio (v.g. de *community* a *extra*)
 *   Revise [https://www.archlinux.org/packages](https://www.archlinux.org/packages) para verificar si el paquete es construido con fuente de otro paquete (por ejemplo, [python-tensorflow](https://www.archlinux.org/packages/?name=python-tensorflow) es construido con el PKGBUILD de [tensorflow](https://www.archlinux.org/packages/?name=tensorflow))
 
-**Tip:** Para revisar versiones antiguas de un paquete, vea [#Revisión de un paquete antiguo](#Revisi.C3.B3n_de_un_paquete_antiguo).
+**Sugerencia:** Para revisar versiones antiguas de un paquete, vea [#Revisión de un paquete antiguo](#Revisi.C3.B3n_de_un_paquete_antiguo).
 
 Es aconsejable actualizar todas las ramas que ha descargado si desea re-construir paquetes en versiones mas recientes de los repositorios. Para actualizar ejecute:
 

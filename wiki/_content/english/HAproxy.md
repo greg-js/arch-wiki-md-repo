@@ -1,4 +1,4 @@
-[HAProxy](http://www.haproxy.org/) is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications. It is particularly suited for very high traffic web sites and powers quite a number of the world's most visited ones. Over the years it has become the de-facto standard opensource load balancer, is now shipped with most mainstream Linux distributions, and is often deployed by default in cloud platforms.
+[HAProxy](https://www.haproxy.org/) is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications. It is particularly suited for very high traffic web sites and powers quite a number of the world's most visited ones. Over the years it has become the de-facto standard opensource load balancer, is now shipped with most mainstream Linux distributions, and is often deployed by default in cloud platforms.
 
 ## Contents
 
@@ -44,7 +44,7 @@ In this case, the ACL is matched if the user's request path begins with `/photos
 
 #### Backends
 
-In HAProxy terminology, **backends** are a server or set of servers that will receive forwarded requests. Backends can balance load based on several [load balancing algorithms](http://cbonte.github.io/haproxy-dconv/configuration-1.4.html#4.2-balance), including:
+In HAProxy terminology, **backends** are a server or set of servers that will receive forwarded requests. Backends can balance load based on several [load balancing algorithms](https://cbonte.github.io/haproxy-dconv/1.8/configuration.html#4.2-balance), including:
 
 *   Round-robin
 *   Static round-robin (also known as weighted round-robin)
@@ -121,5 +121,5 @@ use_backend bar-backend if { hdr(host) -i bar.example.com || hdr(host) -i www.ba
 
 ## See also
 
-*   [The official HAProxy website](http://www.haproxy.org/)
-*   [Configuration guide](http://cbonte.github.io/haproxy-dconv/)
+*   [The official HAProxy website](https://www.haproxy.org/)
+*   [Configuration guide](https://cbonte.github.io/haproxy-dconv/)

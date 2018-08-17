@@ -1,4 +1,4 @@
-Related articles
+Artículos relacionados
 
 *   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
 *   [Libvirt](/index.php/Libvirt "Libvirt")
@@ -118,7 +118,7 @@ front-ends con soporte para QEMU están disponibles por [libvirt](/index.php/Lib
 
 ### Creando una imagen de disco duro
 
-**Tip:** mira la wiki, [Wiki de QEMU](https://en.wikibooks.org/wiki/QEMU/Images) para más información sobre imagenes de QEMU.
+**Sugerencia:** Consulte la [Wiki de QEMU](https://en.wikibooks.org/wiki/QEMU/Images) para más información sobre imágenes de QEMU.
 
 Para ejecutar QMEU necesitarás una imagen de disco duro, a menos que estés cargando un sistema en vivo desde el CD-ROM ó la red (y no para instalar un sistema operativo en una imagen de disco duro). Una imagen de disco es un archivo que almacena los contenidos del disco duro emulado.
 
@@ -569,7 +569,7 @@ $ qemu-system-i386 -net nic -net bridge,br=*bridge0* -net nic,vlan=1 -net bridge
 
 #### Creación manual del puente
 
-**Sugerencia:** Desde QEMU 1.1, el [puente de red ayudante](http://wiki.qemu.org/Features/HelperNetworking) puede establecer tun / tap up para usted sin necesidad de secuencias de comandos adicionales. Consulte [#Blocales de red utilizando qemu-bridge-helper](#Blocales_de_red_utilizando_qemu-bridge-helper).
+**Sugerencia:** Desde QEMU 1.1, el [puente de red ayudante](http://wiki.qemu.org/Features/HelperNetworking) puede establecer tun / tap up para usted sin necesidad de secuencias de comandos adicionales. Consulte [#Redes puenteadas usando qemu-bridge-helper](#Redes_puenteadas_usando_qemu-bridge-helper).
 
 A continuación se describe cómo conectar una máquina virtual con una interfaz de host como `eth0`, que es probablemente la configuración más común. Esta configuración hace que parezca que la máquina virtual está ubicada directamente en la red externa, en el mismo segmento Ethernet que la máquina host física.
 
@@ -1043,7 +1043,7 @@ Esto es como un PC que no tiene tarjeta VGA en absoluto. Ni siquiera podrías ac
 
 ### vnc
 
-Dado que usó la opción `-nographic`, puede agregar la opción `-vnc display` para que QEMU escuche en `display` y redirigir la pantalla VGA a la sesión VNC . Hay un ejemplo de esto en las configuraciones de ejemplo de la sección [#Starting QEMU virtual machines on boot](#Starting_QEMU_virtual_machines_on_boot).
+Dado que usó la opción `-nographic`, puede agregar la opción `-vnc display` para que QEMU escuche en `display` y redirigir la pantalla VGA a la sesión VNC . Hay un ejemplo de esto en las configuraciones de ejemplo de la sección [#Inicio de las máquinas virtuales QEMU en el arranque](#Inicio_de_las_m.C3.A1quinas_virtuales_QEMU_en_el_arranque).
 
 ```
 $ qemu-system-i386 -vga std -nographic -vnc :0
@@ -1328,7 +1328,7 @@ Una solución menos invasiva es emular un controlador EHCI (USB 2) o XHCI (USB 3
 
 También puede agregar la configuración `..., port =*<n>*` a la opción anterior para especificar en qué puerto físico del controlador virtual que desea conectar su dispositivo, útil en El caso que desea agregar varios dispositivos usb a la VM.
 
-{{Nota|Si encuentra errores de permisos al ejecutar QEMU, consulte [Udev#Writing udev rules](/index.php/Udev#Writing_udev_rules "Udev") para obtener información sobre cómo establecer permisos del dispositivo.
+{{Nota|Si encuentra errores de permisos al ejecutar QEMU, consulte [Udev (Español)#Escribir reglas udev](/index.php/Udev_(Espa%C3%B1ol)#Escribir_reglas_udev "Udev (Español)") para obtener información sobre cómo establecer permisos del dispositivo.
 
 ### Habilitar KSM
 

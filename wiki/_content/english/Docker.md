@@ -38,7 +38,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [docker](https://www.archlinux.org/packages/?name=docker) package or, for the development version, the [docker-git](https://aur.archlinux.org/packages/docker-git/) package. Next [start](/index.php/Start "Start") and enable first `docker.socket` and then `docker.service` and verify operation:
+[Install](/index.php/Install "Install") the [docker](https://www.archlinux.org/packages/?name=docker) package or, for the development version, the [docker-git](https://aur.archlinux.org/packages/docker-git/) package. Next [start](/index.php/Start "Start") and enable `docker.service` and verify operation:
 
 ```
 # docker info

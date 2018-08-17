@@ -1,3 +1,5 @@
+**Estado de la traducción:** este artículo es una versión traducida de [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting"). Fecha de la última traducción/revisión: **2016-04-10**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=General_troubleshooting&diff=0&oldid=430728).
+
 Artículos relacionados
 
 *   [Reporting bug guidelines](/index.php/Reporting_bug_guidelines "Reporting bug guidelines")
@@ -5,8 +7,6 @@ Artículos relacionados
 *   [Debug - Getting Traces](/index.php/Debug_-_Getting_Traces "Debug - Getting Traces")
 *   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
 *   [IRC Collaborative Debugging](/index.php/IRC_Collaborative_Debugging "IRC Collaborative Debugging")
-
-**Estado de la traducción:** este artículo es una versión traducida de [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting"). Fecha de la última traducción/revisión: **2016-04-10**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=General_troubleshooting&diff=0&oldid=430728).
 
 Este artículo explica algunos métodos para solucionar problemas de forma general. Para cuestiones específicas relativas a una aplicación, remítase a la página de la wiki para ese programa en particular.
 

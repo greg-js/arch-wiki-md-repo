@@ -5,14 +5,15 @@ Arch Wiki 上有许多中文页面，这其中大部分是从外文翻译过来�
 ## Contents
 
 *   [1 创建翻译](#.E5.88.9B.E5.BB.BA.E7.BF.BB.E8.AF.91)
-*   [2 完善翻译](#.E5.AE.8C.E5.96.84.E7.BF.BB.E8.AF.91)
-*   [3 更新过期页面](#.E6.9B.B4.E6.96.B0.E8.BF.87.E6.9C.9F.E9.A1.B5.E9.9D.A2)
-*   [4 翻译任务](#.E7.BF.BB.E8.AF.91.E4.BB.BB.E5.8A.A1)
-    *   [4.1 模板 Article summary 变更为 Related](#.E6.A8.A1.E6.9D.BF_Article_summary_.E5.8F.98.E6.9B.B4.E4.B8.BA_Related)
-*   [5 维护翻译](#.E7.BB.B4.E6.8A.A4.E7.BF.BB.E8.AF.91)
-    *   [5.1 页面认领](#.E9.A1.B5.E9.9D.A2.E8.AE.A4.E9.A2.86)
-    *   [5.2 翻译状态模板](#.E7.BF.BB.E8.AF.91.E7.8A.B6.E6.80.81.E6.A8.A1.E6.9D.BF)
-    *   [5.3 页面维护列表](#.E9.A1.B5.E9.9D.A2.E7.BB.B4.E6.8A.A4.E5.88.97.E8.A1.A8)
+*   [2 Templates](#Templates)
+*   [3 完善翻译](#.E5.AE.8C.E5.96.84.E7.BF.BB.E8.AF.91)
+*   [4 更新过期页面](#.E6.9B.B4.E6.96.B0.E8.BF.87.E6.9C.9F.E9.A1.B5.E9.9D.A2)
+*   [5 翻译任务](#.E7.BF.BB.E8.AF.91.E4.BB.BB.E5.8A.A1)
+    *   [5.1 模板 Article summary 变更为 Related](#.E6.A8.A1.E6.9D.BF_Article_summary_.E5.8F.98.E6.9B.B4.E4.B8.BA_Related)
+*   [6 维护翻译](#.E7.BB.B4.E6.8A.A4.E7.BF.BB.E8.AF.91)
+    *   [6.1 页面认领](#.E9.A1.B5.E9.9D.A2.E8.AE.A4.E9.A2.86)
+    *   [6.2 翻译状态模板](#.E7.BF.BB.E8.AF.91.E7.8A.B6.E6.80.81.E6.A8.A1.E6.9D.BF)
+    *   [6.3 页面维护列表](#.E9.A1.B5.E9.9D.A2.E7.BB.B4.E6.8A.A4.E5.88.97.E8.A1.A8)
 
 ## 创建翻译
 
@@ -36,6 +37,28 @@ Arch Wiki 上有许多中文页面，这其中大部分是从外文翻译过来�
 16.  更新所有其它语言页面，加入刚翻译文章的语言间链接。
 17.  (可选)创建一个简体中文名称的页面，指向新创建的页面：访问 `https://wiki.archlinux.org/index.php/*页面的中文名称*`.
 18.  (可选)建立新页面，并加入： `#REDIRECT [[Some Page (简体中文)]]` 
+
+## Templates
+
+The following table lists the [templates](/index.php/Help:Template_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:Template (简体中文)") that should be translated and their Simplified Chinese equivalent.
+
+| English template | Simplified Chinese version |
+| Article templates |
+| [Template:Related articles start](/index.php/Template:Related_articles_start "Template:Related articles start") | [Template:Related articles start (简体中文)](/index.php/Template:Related_articles_start_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Related articles start (简体中文)") |
+| [Template:Yes](/index.php/Template:Yes "Template:Yes") | [Template:是](/index.php/Template:%E6%98%AF "Template:是") |
+| [Template:No](/index.php/Template:No "Template:No") | [Template:否](/index.php/Template:%E5%90%A6 "Template:否") |
+| [Template:Tip](/index.php/Template:Tip "Template:Tip") | [Template:提示](/index.php/Template:%E6%8F%90%E7%A4%BA "Template:提示") |
+| [Template:Note](/index.php/Template:Note "Template:Note") | [Template:注意](/index.php/Template:%E6%B3%A8%E6%84%8F "Template:注意") |
+| [Template:Warning](/index.php/Template:Warning "Template:Warning") | [Template:警告](/index.php/Template:%E8%AD%A6%E5%91%8A "Template:警告") |
+| [Template:Dead link](/index.php/Template:Dead_link "Template:Dead link") | [Template:失效链接](/index.php/Template:%E5%A4%B1%E6%95%88%E9%93%BE%E6%8E%A5 "Template:失效链接") |
+| [Template:Broken package link](/index.php/Template:Broken_package_link "Template:Broken package link") | – |
+| Translation status templates |
+| [Template:Bad translation](/index.php/Template:Bad_translation "Template:Bad translation") | – |
+| [Template:Translateme](/index.php/Template:Translateme "Template:Translateme") | [Template:Translateme (简体中文)](/index.php/Template:Translateme_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:Translateme (简体中文)") |
+| [Template:TranslationStatus](/index.php/Template:TranslationStatus "Template:TranslationStatus") | [Template:TranslationStatus (简体中文)](/index.php/Template:TranslationStatus_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Template:TranslationStatus (简体中文)") |
+| Special templates |
+| [Template:Cat main](/index.php/Template:Cat_main "Template:Cat main") | – |
+| [Template:Template](/index.php/Template:Template "Template:Template") | – |
 
 ## 完善翻译
 

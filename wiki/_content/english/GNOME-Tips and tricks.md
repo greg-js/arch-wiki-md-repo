@@ -31,6 +31,8 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [17 Removing film holes/film strip from video thumbnails in Nautilus](#Removing_film_holes.2Ffilm_strip_from_video_thumbnails_in_Nautilus)
 *   [18 Prevent GNOME software from downloading updates](#Prevent_GNOME_software_from_downloading_updates)
 *   [19 Increase volume above and beyond 100%](#Increase_volume_above_and_beyond_100.25)
+*   [20 Adjust volume in smaller steps](#Adjust_volume_in_smaller_steps)
+*   [21 Hybrid Sleep on laptop lid closing action](#Hybrid_Sleep_on_laptop_lid_closing_action)
 
 ## Keyboard
 
@@ -427,3 +429,19 @@ $ gsettings set org.gnome.software download-updates false
 ## Increase volume above and beyond 100%
 
 Install the extension [volume mixer](https://extensions.gnome.org/extension/858/volume-mixer/). Then use the mouse to scroll above the volume icon in the top panel to increase the volume above and beyond 100%.
+
+## Adjust volume in smaller steps
+
+By default, pressing the keyboard's volume keys adjusts the volume by 6%. If smaller steps are desired, the shortcut *Shift + Volume Key Up/Down* adjusts volume in 2% steps.
+
+## Hybrid Sleep on laptop lid closing action
+
+Follow below commands to trigger [Hybrid Sleep](https://wiki.archlinux.org/index.php/Power_management/Suspend_and_hibernate) when closing the lid of the laptop. Read [here](https://www.reddit.com/r/gnome/comments/97688y/can_gnome_trigger_hybrid_sleep_on_laptop_lid/) for further information.
+
+```
+   mkdir --parents /etc/systemd/logind.conf.d
+   printf '%s
+' '[Login]' 'HandleLidSwitch=hybrid-sleep' >/etc/systemd/logind.conf.d/50-local.conf
+   systemctl restart systemd-logind.conf
+
+```

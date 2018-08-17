@@ -628,7 +628,7 @@ See also the [official website](https://daringfireball.net/projects/markdown/) a
 
 #### Typesetting systems
 
-*   **[groff](https://en.wikipedia.org/wiki/groff_(software) "wikipedia:groff (software)")** — GNU implementation of troff, a heirloom Unix document processing system and the default formatter for man pages.
+*   **[groff](https://en.wikipedia.org/wiki/groff_(software) "wikipedia:groff (software)")** — [GNU](/index.php/GNU "GNU") implementation of troff, a heirloom Unix document processing system and the default formatter for [man pages](/index.php/Man_page "Man page").
 
 	[https://www.gnu.org/software/groff/groff.html](https://www.gnu.org/software/groff/groff.html) || [groff](https://www.archlinux.org/packages/?name=groff)
 
@@ -643,6 +643,10 @@ See also the [official website](https://daringfireball.net/projects/markdown/) a
 *   **[TeX](/index.php/TeX_Live "TeX Live")** — A high-quality typesetting system popular in academia.
 
 	[https://tug.org/](https://tug.org/) || [texlive-core](https://www.archlinux.org/packages/?name=texlive-core)
+
+*   **[Texinfo](/index.php/Texinfo "Texinfo")** — Typesetting syntax for software manuals used by the [GNU Project](/index.php/GNU_Project "GNU Project").
+
+	[https://www.gnu.org/software/texinfo/](https://www.gnu.org/software/texinfo/) || [texinfo](https://www.archlinux.org/packages/?name=texinfo)
 
 #### TeX editors
 

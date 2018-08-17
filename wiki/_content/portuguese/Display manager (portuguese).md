@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma versão localizada de [Display manager](/index.php/Display_manager "Display manager"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Display_manager&diff=0&oldid=532694) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Display manager](/index.php/Display_manager "Display manager"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Display_manager&diff=0&oldid=532694) na versão em inglês.
 
 Artigos relacionados
 

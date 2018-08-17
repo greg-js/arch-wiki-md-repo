@@ -1,4 +1,4 @@
-Related articles
+Artículos relacionados
 
 *   [bspwm/Example configurations](/index.php/Bspwm/Example_configurations "Bspwm/Example configurations")
 *   [Window manager](/index.php/Window_manager "Window manager")

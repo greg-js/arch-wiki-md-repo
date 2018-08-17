@@ -1,4 +1,4 @@
-[Greenclip](https://github.com/erebe/greenclip) is a simple clipboard manager designed to be integrated with [rofi](/index.php/Rofi "Rofi") and written in Haskell.
+[Greenclip](https://github.com/erebe/greenclip) is a simple [clipboard manager](/index.php/Clipboard_manager "Clipboard manager") designed to be integrated with [rofi](/index.php/Rofi "Rofi") and written in Haskell.
 
 ## Installation
 
@@ -37,6 +37,13 @@ Enable the service to start at boot:
 
  `~/.config/greenclip.cfg` 
 ```
-Config {maxHistoryLength = 250, historyPath = "~/.cache/greenclip.history", staticHistoryPath = "~/.cache/greenclip.staticHistory", usePrimarySelectionAsInput = False}
+Config {
+ maxHistoryLength = 250,
+ historyPath = "~/.cache/greenclip.history",
+ staticHistoryPath = "~/.cache/greenclip.staticHistory",
+ imageCachePath = "/tmp/",
+ usePrimarySelectionAsInput = False,
+ blacklistedApps = []
+}
 
 ```

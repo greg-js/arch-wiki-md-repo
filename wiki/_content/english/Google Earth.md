@@ -36,7 +36,11 @@ Google Earth can crash on startup for numerous reasons. Here are some of the mos
 
 #### Startup tips are enabled
 
-While startup tips can be useful, they are also known to cause crashes. To disable them, add to `~/.config/Google/GoogleEarthPlus.conf`:
+While startup tips can be useful, they are also known to cause crashes. To disable them, change or add the line below to the appropriate configuration file for your version.
+
+Google Earth `~/.config/Google/GoogleEarthPlus.conf`
+
+Google Earth Pro `~/.config/Google/GoogleEarthPro.conf`
 
 ```
 [General]

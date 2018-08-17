@@ -24,6 +24,24 @@ Antes de empezar, obtenga una cuenta de usuario de ArchWiki a través de [este](
 
 	Se recoge la traducción de algunos términos de informática poco conocidos, de difícil interpretación, o comúnmente utilizados. ¡Anímese a ampliarlo!
 
-	[Foros de la comunidad Hispana de Arch Linux](http://foros.archlinux-es.org/viewforum.php?f=19&sid=cccffff3be97db799dbda448e6f08a7f804)
+## Templates
 
-	Actualmente en modo solo-lectura debido a su inactividad.
+The following table lists the [templates](/index.php/Help:Template_(Espa%C3%B1ol) "Help:Template (Español)") that should be translated and their Spanish equivalent.
+
+| English template | Spanish version |
+| Article templates |
+| [Template:Related articles start](/index.php/Template:Related_articles_start "Template:Related articles start") | [Template:Related articles start (Español)](/index.php/Template:Related_articles_start_(Espa%C3%B1ol) "Template:Related articles start (Español)") |
+| [Template:Yes](/index.php/Template:Yes "Template:Yes") | [Template:Sí](/index.php/Template:S%C3%AD "Template:Sí") |
+| [Template:No](/index.php/Template:No "Template:No") | [Template:No](/index.php/Template:No "Template:No") |
+| [Template:Tip](/index.php/Template:Tip "Template:Tip") | [Template:Sugerencia](/index.php/Template:Sugerencia "Template:Sugerencia") |
+| [Template:Note](/index.php/Template:Note "Template:Note") | [Template:Nota](/index.php/Template:Nota "Template:Nota") |
+| [Template:Warning](/index.php/Template:Warning "Template:Warning") | [Template:Advertencia](/index.php/Template:Advertencia "Template:Advertencia") |
+| [Template:Dead link](/index.php/Template:Dead_link "Template:Dead link") | [Template:Enlace roto](/index.php/Template:Enlace_roto "Template:Enlace roto") |
+| [Template:Broken package link](/index.php/Template:Broken_package_link "Template:Broken package link") | [Template:Enlace de paquete roto](/index.php/Template:Enlace_de_paquete_roto "Template:Enlace de paquete roto") |
+| Translation status templates |
+| [Template:Bad translation](/index.php/Template:Bad_translation "Template:Bad translation") | [Template:Bad translation (Español)](/index.php/Template:Bad_translation_(Espa%C3%B1ol) "Template:Bad translation (Español)") |
+| [Template:Translateme](/index.php/Template:Translateme "Template:Translateme") | [Template:Translateme (Español)](/index.php/Template:Translateme_(Espa%C3%B1ol) "Template:Translateme (Español)") |
+| [Template:TranslationStatus](/index.php/Template:TranslationStatus "Template:TranslationStatus") | [Template:TranslationStatus (Español)](/index.php/Template:TranslationStatus_(Espa%C3%B1ol) "Template:TranslationStatus (Español)") |
+| Special templates |
+| [Template:Cat main](/index.php/Template:Cat_main "Template:Cat main") | [Template:Cat main (Español)](/index.php/Template:Cat_main_(Espa%C3%B1ol) "Template:Cat main (Español)") |
+| [Template:Template](/index.php/Template:Template "Template:Template") | [Template:Template (Español)](/index.php/Template:Template_(Espa%C3%B1ol) "Template:Template (Español)") |

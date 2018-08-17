@@ -1,8 +1,8 @@
-Related articles
+**Estado de la traducción:** este artículo es una versión traducida de [Environment variables](/index.php/Environment_variables "Environment variables"). Fecha de la última traducción/revisión: **2017-12-22**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [del historial ver cambios](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=ID).
+
+Artículos relacionados
 
 *   [Default applications](/index.php/Default_applications "Default applications")
-
-**Estado de la traducción:** este artículo es una versión traducida de [Environment variables](/index.php/Environment_variables "Environment variables"). Fecha de la última traducción/revisión: **22/12/17**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [del historial ver cambios](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=ID).
 
 Una variable de entorno es un objeto con nombre que contiene información usada por uno o más programas. En términos simples, es una variable con un nombre y un valor. El valor de una variable de entorno puede ser, por ejemplo, la ubicación de todos los archivos ejecutables, el editor por defecto, o las configuraciones regionales del sistema. Puede que esta forma de administrar configuraciones parezca difícil de manejar; sin embargo, las variables de entorno representan un mecanismo simple para compartir configuraciones entre múltiples aplicaciones y procesos en Linux.
 

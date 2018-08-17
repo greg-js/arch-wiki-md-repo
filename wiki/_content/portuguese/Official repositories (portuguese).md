@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma versão localizada de [Official repositories](/index.php/Official_repositories "Official repositories"). Data da última tradução: 2018-08-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Official_repositories&diff=0&oldid=534728) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Official repositories](/index.php/Official_repositories "Official repositories"). Data da última tradução: 2018-08-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Official_repositories&diff=0&oldid=534728) na versão em inglês.
 
 Artigos relacionados
 
