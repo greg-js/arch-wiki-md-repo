@@ -69,7 +69,7 @@ Estos archivos son la base de tu configuración en openbox. Cada archivo apunta 
 
 	`menu.xml` 
 
-	Controla el menú de aplicaciones de Openbox que aparece al hacer click secundario en el escritorio. [ver la sección menú.](#Gesti.C3.B3n_del_men.C3.BA)
+	Controla el menú de aplicaciones de Openbox que aparece al hacer click secundario en el escritorio. [ver la sección menú](#Men.C3.BAs).
 
 	`autostart` 
 

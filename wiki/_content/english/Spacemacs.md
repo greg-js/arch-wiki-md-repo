@@ -39,6 +39,7 @@
 *   [4 Configuration](#Configuration)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Slow startup time](#Slow_startup_time)
+    *   [5.2 Incorrect minor mode icon fonts](#Incorrect_minor_mode_icon_fonts)
 
 ## Installation
 
@@ -386,3 +387,9 @@ If startup time exceeds 10 seconds, there may be a problem with `exec-path-from-
 2.  Find `dotspacemacs-excluded-packages` section
 3.  Add `exec-path-from-shell` module here, so the final entry would be like `dotspacemacs-excluded-packages '(exec-path-from-shell)`
 4.  Save changes with `SPC f s` and restart Spacemacs
+
+### Incorrect minor mode icon fonts
+
+If you see 24ba 24c0 symbols instead of ⒺⓀ or they are too ugly, then you have to install a good unicode fallback font for these symbols, or disable them by setting `dotspacemacs-mode-line-unicode-symbols` to `nil`.
+
+**Tip:** A nice fallback unicode font for Spacemacs is [ttf-symbola](https://aur.archlinux.org/packages/ttf-symbola/)

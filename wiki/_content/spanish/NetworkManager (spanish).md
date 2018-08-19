@@ -237,7 +237,7 @@ polkit.addRule(function(action, subject) {
 });
 ```
 
-Todos los usuarios del grupo `network` podrán añadir y eliminar redes sin contraseña. Esto no funcionará bajo systemd si no se tiene una sesión activa con [systemd-logind](/index.php/Systemd#Using_systemd-logind "Systemd").
+Todos los usuarios del grupo `network` podrán añadir y eliminar redes sin contraseña. Esto no funcionará bajo systemd si no se tiene una sesión activa con [systemd-logind](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)").
 
 ### Servicios de red con NetworkManager dispatcher
 
@@ -533,7 +533,7 @@ A continuación, tendrá que asegurarse que la conexión por defecto no se conec
 
 ### No se pueden editar las conexiones como usuario normal
 
-Véase [#Set_up_PolicyKit_permissions](#Set_up_PolicyKit_permissions).
+Consulte [#Configurar permisos PolicyKit](#Configurar_permisos_PolicyKit).
 
 ### Eliminar una red oculta
 
@@ -651,7 +651,7 @@ Un script similar debe funcionar también con Openbox, LXDE, etc.
 
 #### SLiM login manager
 
-Véase [SLiM#SLiM and Gnome Keyring](/index.php/SLiM#SLiM_and_Gnome_Keyring "SLiM").
+Consulte [SLiM#Gnome Keyring](/index.php/SLiM#Gnome_Keyring "SLiM").
 
 ### Ignorar dispositivos específicos
 

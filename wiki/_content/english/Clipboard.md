@@ -37,11 +37,11 @@ It is also important to realize that according to the selection protocols, nothi
 
 ### Firefox
 
-See [Firefox#Middle-click_errors](/index.php/Firefox#Middle-click_errors "Firefox").
+See [Firefox#Middle-click errors](/index.php/Firefox#Middle-click_errors "Firefox").
 
 ### GTK
 
-See [GTK+#Disable_mouse_paste](/index.php/GTK%2B#Disable_mouse_paste "GTK+").
+See [GTK+#Disable mouse paste](/index.php/GTK%2B#Disable_mouse_paste "GTK+").
 
 ### Vim
 

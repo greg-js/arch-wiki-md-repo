@@ -16,8 +16,6 @@ There are various alternative kernels available for Arch Linux in addition to th
 
 *   [1 Officially supported](#Officially_supported)
 *   [2 Compilation](#Compilation)
-    *   [2.1 Using Arch Build System](#Using_Arch_Build_System)
-    *   [2.2 Traditional](#Traditional)
 *   [3 Patches and patchsets](#Patches_and_patchsets)
     *   [3.1 Major patchsets](#Major_patchsets)
     *   [3.2 Other patchsets](#Other_patchsets)
@@ -29,7 +27,7 @@ There are various alternative kernels available for Arch Linux in addition to th
 
 	[https://www.kernel.org/](https://www.kernel.org/) || [linux](https://www.archlinux.org/packages/?name=linux)
 
-*   **[Hardened](https://kernsec.org/wiki/index.php/Kernel_Self_Protection_Project)** — A security-focused Linux kernel applying a set of hardening patches to mitigate kernel and userspace exploits. It also enables more upstream kernel hardening features than [linux](https://www.archlinux.org/packages/?name=linux) along [AppArmor](/index.php/AppArmor "AppArmor"), [Audit_framework](/index.php/Audit_framework "Audit framework") and [SELinux](/index.php/SELinux "SELinux").
+*   **[Hardened](https://kernsec.org/wiki/index.php/Kernel_Self_Protection_Project)** — A security-focused Linux kernel applying a set of hardening patches to mitigate kernel and userspace exploits. It also enables more upstream kernel hardening features than [linux](https://www.archlinux.org/packages/?name=linux) along [AppArmor](/index.php/AppArmor "AppArmor") and [SELinux](/index.php/SELinux "SELinux").
 
 	[https://github.com/anthraxx/linux-hardened](https://github.com/anthraxx/linux-hardened) || [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened)
 
@@ -45,17 +43,13 @@ There are various alternative kernels available for Arch Linux in addition to th
 
 Arch Linux provides two methods of kernel compilation.
 
-### Using Arch Build System
+	[/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System")
 
-Takes advantage of the high quality of existing [linux](https://www.archlinux.org/packages/?name=linux) [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and the benefits of [package management](https://en.wikipedia.org/wiki/Package_management_system "wikipedia:Package management system").
+	Takes advantage of the high quality of existing [linux](https://www.archlinux.org/packages/?name=linux) [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and the benefits of [package management](https://en.wikipedia.org/wiki/Package_management_system "wikipedia:Package management system").
 
-See [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System").
+	[/Traditional compilation](/index.php/Kernels/Traditional_compilation "Kernels/Traditional compilation")
 
-### Traditional
-
-This involves manually downloading a source tarball, and compiling in your home directory as a normal user.
-
-See [Kernels/Traditional compilation](/index.php/Kernels/Traditional_compilation "Kernels/Traditional compilation").
+	Involves manually downloading a source tarball, and compiling in your home directory as a normal user.
 
 ## Patches and patchsets
 

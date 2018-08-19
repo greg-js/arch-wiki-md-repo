@@ -123,13 +123,13 @@ i3 使用 [dmenu](/index.php/Dmenu "Dmenu") 作为首席程序启动器，键绑
 
 ### 颜色主题
 
-The configuration file allows for customization of window decoration colors, but the syntax makes it impractical to create or share themes. There are several projects which make this easier and include a variety of user-contributed themes.
+配置文件允许用户自定义窗口装饰颜色, 但配置文件的语法使创建或共享主题不切实际。有几个方案使这更容易, 包括各种用户贡献的主题。
 
-*   **i3-style** — Modifies your config in place from a theme stored in a JSON object, designed for frequently tweaking or changing a colorscheme
+*   **i3-style** — 从储存json对象中的主题修改配置, 用于频繁调整或更改主题颜色
 
 	[https://github.com/acrisci/i3-style](https://github.com/acrisci/i3-style) || [nodejs-i3-style](https://aur.archlinux.org/packages/nodejs-i3-style/)
 
-*   **j4-make-config** — Merge your config with a collection of themes or personal config parts, for example host-specific configuration, allowing quick changing of the theme and flexible, dynamic customization of the configuration
+*   **j4-make-config** — 合并配置与主题或个人配置部件, 例如本机特定的配置, 这允许快速更改主题和灵活、动态地自定义配置
 
 	[https://github.com/okraits/j4-make-config](https://github.com/okraits/j4-make-config) || [j4-make-config-git](https://aur.archlinux.org/packages/j4-make-config-git/)
 

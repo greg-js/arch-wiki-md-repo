@@ -27,6 +27,7 @@ There are several ways to achieve this on Linux:
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Failed to open VDPAU backend](#Failed_to_open_VDPAU_backend)
     *   [5.2 VAAPI init failed](#VAAPI_init_failed)
+*   [6 See also](#See_also)
 
 ## Support
 
@@ -44,8 +45,8 @@ There are several ways to achieve this on Linux:
 
  |
 | Decoding |
-| MPEG2 | GMA 4500 and newer | Radeon HD 6900 and newer | Radeon HD 4000 and newer | See VDPAU |
-| MPEG4 | ✗ | Radeon HD 6900 and newer | Radeon HD 6000 and newer |
+| MPEG2 | GMA 4500 and newer | Radeon HD 6000 and newer | Radeon HD 4000 and newer | See VDPAU |
+| MPEG4 | ✗ | Radeon HD 6000 and newer | Radeon HD 6000 and newer |
 | H.264 | GMA 4500, Ironlake Graphics and newer | Radeon HD 2000 and newer | Radeon HD 4000 and newer |
 | HEVC (H.265) | Cherryview/Braswell and newer | Radeon R9 285 and newer | ✗ |
 | VC1 | Sandy Bridge Graphics and newer | Radeon HD 2000 and newer | Radeon HD 4000 and newer |
@@ -56,7 +57,7 @@ There are several ways to achieve this on Linux:
 | H.264 | Sandy Bridge Graphics and newer | Radeon HD 7000 and newer |
 | HEVC (H.265) | Skylake and newer | Raven Ridge and newer |
 | VP8 | Cherryview/Braswell and newer | ✗ |
-| VP9 | Kaby Lake and newer | Raven Ridge and newer |
+| VP9 | Kaby Lake and newer | ✗ |
 
 <caption>VDPAU</caption>
  [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) | [amdgpu-pro-vdpau](https://aur.archlinux.org/packages/amdgpu-pro-vdpau/)
@@ -65,9 +66,9 @@ There are several ways to achieve this on Linux:
 | Decoding |
 | MPEG2 | Radeon 9500 and newer, GeForce 8 and newer | GeForce 8 and newer |  ? | ✗ |
 | MPEG4 | Radeon HD 6000 and newer, GeForce 200 and newer | GeForce 200 and newer |
-| H.264 | Radeon HD 4000 and newer, GeForce 8 and newer | GeForce 8 and newer | See VA-API |
+| H.264 | Radeon HD 2000 and newer, GeForce 8 and newer | GeForce 8 and newer | See VA-API |
 | HEVC (H.265) | Radeon R9 285 and newer | GeForce 900 and newer | ✗ |
-| VC1 | Radeon HD 4000 and newer, GeForce 8 and newer | GeForce 8 and newer |
+| VC1 | Radeon HD 2000 and newer, GeForce 8 and newer | GeForce 8 and newer |
 
 *   Supported by [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) instead.
 *   As of version 0.3, the VA GL driver does not support any other hardware decoder than H.264.
@@ -316,3 +317,9 @@ However you may want to configure your media player to use VA-API instead, getti
 ### VAAPI init failed
 
 An error along the lines of `libva: /usr/lib/dri/i965_drv_video.so init failed` is encountered. This can happen because of improper detection of Wayland. One solution is to unset `$DISPLAY` so that mpv, mplayer, VLC, etc. do not assume it is X11\. Another mpv-specific solution is to add the parameter `--opengl-backend=wayland`.
+
+## See also
+
+*   [https://dri.freedesktop.org/wiki/Status/](https://dri.freedesktop.org/wiki/Status/)
+*   [https://developer.nvidia.com/video-encode-decode-gpu-support-matrix](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix)
+*   [https://github.com/intel/media-driver/#supported-platforms](https://github.com/intel/media-driver/#supported-platforms)

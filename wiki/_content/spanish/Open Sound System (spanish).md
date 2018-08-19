@@ -20,10 +20,9 @@ El [Open Sound System](https://es.wikipedia.org/wiki/Open_Sound_System) (**OSS**
     *   [5.5 MOC](#MOC)
     *   [5.6 MPD](#MPD)
     *   [5.7 Mplayer](#Mplayer)
-    *   [5.8 Skype](#Skype)
-    *   [5.9 VLC media player](#VLC_media_player)
-    *   [5.10 Wine](#Wine)
-    *   [5.11 Otras aplicaciones](#Otras_aplicaciones)
+    *   [5.8 VLC media player](#VLC_media_player)
+    *   [5.9 Wine](#Wine)
+    *   [5.10 Otras aplicaciones](#Otras_aplicaciones)
 *   [6 Consejos y trucos](#Consejos_y_trucos)
     *   [6.1 Usar las teclas multimedia con OSS](#Usar_las_teclas_multimedia_con_OSS)
     *   [6.2 Modificar la frecuencia de muestreo](#Modificar_la_frecuencia_de_muestreo)
@@ -257,7 +256,7 @@ Otras mixer soportados por OSS:
 
 Si tiene problemas con las aplicaciones que usan Gstreamer para audio, pruebe eliminando [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio), e instalando el paquete [gstreamer0.10-good-plugins](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins/) que es requerido por `oss4sink` y `oss4src`.
 
-Puede cambiar la configuración de GStreamer a fin de enviar el sonido a OSS, en lugar de a ALSA por defecto, con `gstreamer-properties` (parte del paquete [gnome-media](https://www.archlinux.org/packages/?name=gnome-media) ). Después de iniciar `gstreamer-properties`, se tienen que modificar las opciones de la siguiente manera:
+Puede cambiar la configuración de GStreamer a fin de enviar el sonido a OSS, en lugar de a ALSA por defecto, con `gstreamer-properties`. Después de iniciar `gstreamer-properties`, se tienen que modificar las opciones de la siguiente manera:
 
 *   en la sección *Default Output*: si OSS no está disponible como un plugin, cambie *Plugin* por **Custom** y *Pipeline* por **oss4sink**.
 *   en la sección *Default Input*: si OSS no está disponible, cambie *Plugin* por **Custom** y *Pipeline* por **oss4src**.
@@ -361,7 +360,7 @@ audio_output {
 
 ```
 
-Consulte también: [Music Player Daemon#Global configuration](/index.php/Music_Player_Daemon#Global_configuration "Music Player Daemon").
+Consulte también: [Music Player Daemon (Español)#Configuracion General](/index.php/Music_Player_Daemon_(Espa%C3%B1ol)#Configuracion_General "Music Player Daemon (Español)").
 
 ### Mplayer
 
@@ -375,14 +374,6 @@ $ mplayer -ao oss /some/file/to/play.mkv
 Si no quiere molestarse en escribirla una y otra vez, agregue `ao=oss` al propio archivo de configuración (`~/.mplayer/config`).
 
 Consulte también: [MPlayer#Configuration](/index.php/MPlayer#Configuration "MPlayer").
-
-### Skype
-
-El paquete [skype](https://aur.archlinux.org/packages/skype/) solo incluye soporte para ALSA, ya que el soporte para OSS fue eliminado en las versiones recientes. Para tener una versión OSS compatible con [Skype](/index.php/Skype "Skype"), instale el paquete [skype-oss](https://aur.archlinux.org/packages/skype-oss/) desde el repositorio Community.
-
-O utilice [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) con module-oss: Modifique `/etc/pulse/default.pa`, comentando la línea que comienza con `load-module module-udev-detect` y añada `load-module module-oss device="/dev/dsp" sink_name=output source_name=input mmap==0`.
-
-Véase también: [Skype#Skype-OSS Sound (Pre-2.0)](/index.php/Skype#Skype-OSS_Sound_.28Pre-2.0.29 "Skype").
 
 ### VLC media player
 

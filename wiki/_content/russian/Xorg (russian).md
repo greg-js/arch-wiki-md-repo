@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Xorg](/index.php/Xorg "Xorg"). Дата последней синхронизации: 6 марта 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Xorg&diff=0&oldid=512894).
+**Состояние перевода:** На этой странице представлен перевод статьи [Xorg](/index.php/Xorg "Xorg"). Дата последней синхронизации: 7 августа 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Xorg&diff=0&oldid=532677).
 
 Ссылки по теме
 
@@ -32,8 +32,8 @@ C [http://www.x.org/wiki/](http://www.x.org/wiki/):
 *   [4 Устройства ввода](#.D0.A3.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B2.D0.B2.D0.BE.D0.B4.D0.B0)
     *   [4.1 Ускорение мыши](#.D0.A3.D1.81.D0.BA.D0.BE.D1.80.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BC.D1.8B.D1.88.D0.B8)
     *   [4.2 Дополнительные кнопки мыши](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BA.D0.B8_.D0.BC.D1.8B.D1.88.D0.B8)
-    *   [4.3 Touchpad](#Touchpad)
-    *   [4.4 Touchscreen](#Touchscreen)
+    *   [4.3 Тачпад](#.D0.A2.D0.B0.D1.87.D0.BF.D0.B0.D0.B4)
+    *   [4.4 Тачскрин](#.D0.A2.D0.B0.D1.87.D1.81.D0.BA.D1.80.D0.B8.D0.BD)
     *   [4.5 Настройка клавиатуры](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
 *   [5 Настройка монитора](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.B0)
     *   [5.1 Начало работы](#.D0.9D.D0.B0.D1.87.D0.B0.D0.BB.D0.BE_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D1.8B)
@@ -47,28 +47,25 @@ C [http://www.x.org/wiki/](http://www.x.org/wiki/):
 *   [6 Композит](#.D0.9A.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82)
     *   [6.1 Список композитных менеджеров](#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D0.BA.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BD.D1.8B.D1.85_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.BE.D0.B2)
 *   [7 Советы и рекомендации](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.80.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D0.B0.D1.86.D0.B8.D0.B8)
-    *   [7.1 Настройка X при запуске (startx)](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_X_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B5_.28startx.29)
-    *   [7.2 Вложенная X-сессия](#.D0.92.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_X-.D1.81.D0.B5.D1.81.D1.81.D0.B8.D1.8F)
-    *   [7.3 Запуск программ с GUI удаленно](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC_.D1.81_GUI_.D1.83.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.BD.D0.BE)
-    *   [7.4 Отключение и включение при необходимости устройств ввода](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B8_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8_.D0.BD.D0.B5.D0.BE.D0.B1.D1.85.D0.BE.D0.B4.D0.B8.D0.BC.D0.BE.D1.81.D1.82.D0.B8_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2_.D0.B2.D0.B2.D0.BE.D0.B4.D0.B0)
-    *   [7.5 Закрытие приложения с помощью горячей клавиши](#.D0.97.D0.B0.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_.D0.B3.D0.BE.D1.80.D1.8F.D1.87.D0.B5.D0.B9_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8)
-    *   [7.6 Блокирование доступа к TTY](#.D0.91.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.B0_.D0.BA_TTY)
-    *   [7.7 Запрет пользователю закрывать, перезапускать X](#.D0.97.D0.B0.D0.BF.D1.80.D0.B5.D1.82_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8E_.D0.B7.D0.B0.D0.BA.D1.80.D1.8B.D0.B2.D0.B0.D1.82.D1.8C.2C_.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D1.82.D1.8C_X)
+    *   [7.1 Вложенная X-сессия](#.D0.92.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_X-.D1.81.D0.B5.D1.81.D1.81.D0.B8.D1.8F)
+    *   [7.2 Запуск программ с GUI удаленно](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC_.D1.81_GUI_.D1.83.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.BD.D0.BE)
+    *   [7.3 Отключение и включение при необходимости устройств ввода](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B8_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8_.D0.BD.D0.B5.D0.BE.D0.B1.D1.85.D0.BE.D0.B4.D0.B8.D0.BC.D0.BE.D1.81.D1.82.D0.B8_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2_.D0.B2.D0.B2.D0.BE.D0.B4.D0.B0)
+    *   [7.4 Закрытие приложения с помощью горячей клавиши](#.D0.97.D0.B0.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_.D0.B3.D0.BE.D1.80.D1.8F.D1.87.D0.B5.D0.B9_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8)
+    *   [7.5 Блокирование доступа к TTY](#.D0.91.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.B0_.D0.BA_TTY)
+    *   [7.6 Запрет пользователю закрывать, перезапускать X](#.D0.97.D0.B0.D0.BF.D1.80.D0.B5.D1.82_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8E_.D0.B7.D0.B0.D0.BA.D1.80.D1.8B.D0.B2.D0.B0.D1.82.D1.8C.2C_.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D1.82.D1.8C_X)
 *   [8 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
     *   [8.1 Общее](#.D0.9E.D0.B1.D1.89.D0.B5.D0.B5)
     *   [8.2 Черный экран, протокол не указан.., Ресурс временно недоступен для всех или некоторых пользователей](#.D0.A7.D0.B5.D1.80.D0.BD.D1.8B.D0.B9_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.2C_.D0.BF.D1.80.D0.BE.D1.82.D0.BE.D0.BA.D0.BE.D0.BB_.D0.BD.D0.B5_.D1.83.D0.BA.D0.B0.D0.B7.D0.B0.D0.BD...2C_.D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81_.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D0.BE_.D0.BD.D0.B5.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.B5.D0.BD_.D0.B4.D0.BB.D1.8F_.D0.B2.D1.81.D0.B5.D1.85_.D0.B8.D0.BB.D0.B8_.D0.BD.D0.B5.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D1.8B.D1.85_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D0.B5.D0.B9)
-    *   [8.3 Правый CTRL не работает на раскладке oss](#.D0.9F.D1.80.D0.B0.D0.B2.D1.8B.D0.B9_CTRL_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82_.D0.BD.D0.B0_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D0.B5_oss)
-    *   [8.4 DRI с картами Matrox перестает работать](#DRI_.D1.81_.D0.BA.D0.B0.D1.80.D1.82.D0.B0.D0.BC.D0.B8_Matrox_.D0.BF.D0.B5.D1.80.D0.B5.D1.81.D1.82.D0.B0.D0.B5.D1.82_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.82.D1.8C)
-    *   [8.5 Проблемы с режимом Фреймбуфер](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.BE.D0.BC_.D0.A4.D1.80.D0.B5.D0.B9.D0.BC.D0.B1.D1.83.D1.84.D0.B5.D1.80)
-    *   [8.6 Запуск разных сеансов X с проприентарным драйвером NVIDIA на Xorg 1.16](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D1.80.D0.B0.D0.B7.D0.BD.D1.8B.D1.85_.D1.81.D0.B5.D0.B0.D0.BD.D1.81.D0.BE.D0.B2_X_.D1.81_.D0.BF.D1.80.D0.BE.D0.BF.D1.80.D0.B8.D0.B5.D0.BD.D1.82.D0.B0.D1.80.D0.BD.D1.8B.D0.BC_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.BE.D0.BC_NVIDIA_.D0.BD.D0.B0_Xorg_1.16)
-    *   [8.7 Программа требует "шрифт '(null)'"](#.D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.B0_.D1.82.D1.80.D0.B5.D0.B1.D1.83.D0.B5.D1.82_.22.D1.88.D1.80.D0.B8.D1.84.D1.82_.27.28null.29.27.22)
-    *   [8.8 Восстановление: отключение Xorg перед входом в GUI](#.D0.92.D0.BE.D1.81.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5:_.D0.BE.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_Xorg_.D0.BF.D0.B5.D1.80.D0.B5.D0.B4_.D0.B2.D1.85.D0.BE.D0.B4.D0.BE.D0.BC_.D0.B2_GUI)
-    *   [8.9 Клиент X запускается с ошибкой "su"](#.D0.9A.D0.BB.D0.B8.D0.B5.D0.BD.D1.82_X_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D1.81_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D0.BE.D0.B9_.22su.22)
-    *   [8.10 Не удалось запустить X: Ошибка инициализация клавиатуры](#.D0.9D.D0.B5_.D1.83.D0.B4.D0.B0.D0.BB.D0.BE.D1.81.D1.8C_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D1.82.D0.B8.D1.82.D1.8C_X:_.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_.D0.B8.D0.BD.D0.B8.D1.86.D0.B8.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
-    *   [8.11 Использование Xorg без прав суперпользователя](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_Xorg_.D0.B1.D0.B5.D0.B7_.D0.BF.D1.80.D0.B0.D0.B2_.D1.81.D1.83.D0.BF.D0.B5.D1.80.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F)
-        *   [8.11.1 Неработающее перенаправление](#.D0.9D.D0.B5.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.89.D0.B5.D0.B5_.D0.BF.D0.B5.D1.80.D0.B5.D0.BD.D0.B0.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5)
-    *   [8.12 Зеленый экран при попытке просмотра видео](#.D0.97.D0.B5.D0.BB.D0.B5.D0.BD.D1.8B.D0.B9_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD_.D0.BF.D1.80.D0.B8_.D0.BF.D0.BE.D0.BF.D1.8B.D1.82.D0.BA.D0.B5_.D0.BF.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80.D0.B0_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE)
-    *   [8.13 Ошибка SocketCreateListener](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_SocketCreateListener)
+    *   [8.3 DRI с картами Matrox перестает работать](#DRI_.D1.81_.D0.BA.D0.B0.D1.80.D1.82.D0.B0.D0.BC.D0.B8_Matrox_.D0.BF.D0.B5.D1.80.D0.B5.D1.81.D1.82.D0.B0.D0.B5.D1.82_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.82.D1.8C)
+    *   [8.4 Проблемы с режимом Фреймбуфер](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.BE.D0.BC_.D0.A4.D1.80.D0.B5.D0.B9.D0.BC.D0.B1.D1.83.D1.84.D0.B5.D1.80)
+    *   [8.5 Программа требует "шрифт '(null)'"](#.D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.B0_.D1.82.D1.80.D0.B5.D0.B1.D1.83.D0.B5.D1.82_.22.D1.88.D1.80.D0.B8.D1.84.D1.82_.27.28null.29.27.22)
+    *   [8.6 Восстановление: отключение Xorg перед входом в GUI](#.D0.92.D0.BE.D1.81.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5:_.D0.BE.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_Xorg_.D0.BF.D0.B5.D1.80.D0.B5.D0.B4_.D0.B2.D1.85.D0.BE.D0.B4.D0.BE.D0.BC_.D0.B2_GUI)
+    *   [8.7 Клиент X запускается с ошибкой "su"](#.D0.9A.D0.BB.D0.B8.D0.B5.D0.BD.D1.82_X_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D1.81_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D0.BE.D0.B9_.22su.22)
+    *   [8.8 Не удалось запустить X: Ошибка инициализация клавиатуры](#.D0.9D.D0.B5_.D1.83.D0.B4.D0.B0.D0.BB.D0.BE.D1.81.D1.8C_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D1.82.D0.B8.D1.82.D1.8C_X:_.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_.D0.B8.D0.BD.D0.B8.D1.86.D0.B8.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
+    *   [8.9 Использование Xorg без прав суперпользователя](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_Xorg_.D0.B1.D0.B5.D0.B7_.D0.BF.D1.80.D0.B0.D0.B2_.D1.81.D1.83.D0.BF.D0.B5.D1.80.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F)
+        *   [8.9.1 Неработающее перенаправление](#.D0.9D.D0.B5.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.89.D0.B5.D0.B5_.D0.BF.D0.B5.D1.80.D0.B5.D0.BD.D0.B0.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5)
+    *   [8.10 Зеленый экран при попытке просмотра видео](#.D0.97.D0.B5.D0.BB.D0.B5.D0.BD.D1.8B.D0.B9_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD_.D0.BF.D1.80.D0.B8_.D0.BF.D0.BE.D0.BF.D1.8B.D1.82.D0.BA.D0.B5_.D0.BF.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80.D0.B0_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE)
+    *   [8.11 Ошибка SocketCreateListener](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B0_SocketCreateListener)
 *   [9 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Установка
@@ -107,21 +104,24 @@ Xorg автоматически ищет установленные драйве
 
 Для того, чтобы ускорение видео работало, и часто для того, чтобы разблокировать все режимы, в которых может работать GPU, требуется правильный видеодрайвер:
 
-| Бренд | Тип | Драйвер | OpenGL | OpenGL ([Multilib](/index.php/Multilib_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Multilib (Русский)")) | Документация |
-| **AMD/
-ATI** | Свободный | [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [AMDGPU (Русский)](/index.php/AMDGPU_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AMDGPU (Русский)") |
+| Бренд | Тип | Драйвер | OpenGL | OpenGL ([multilib](/index.php/Multilib_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Multilib (Русский)")) | Документация |
+| AMD/ATI | Свободный | [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [AMDGPU (Русский)](/index.php/AMDGPU_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AMDGPU (Русский)") |
 | [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) | [ATI (Русский)](/index.php/ATI_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ATI (Русский)") |
 | Проприетарный | [catalyst](https://aur.archlinux.org/packages/catalyst/) | [catalyst-libgl](https://aur.archlinux.org/packages/catalyst-libgl/) | [lib32-catalyst-libgl](https://aur.archlinux.org/packages/lib32-catalyst-libgl/) | [AMD Catalyst (Русский)](/index.php/AMD_Catalyst_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AMD Catalyst (Русский)") |
-| **Intel** | Свободный | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Intel graphics (Русский)](/index.php/Intel_graphics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Intel graphics (Русский)") |
-| **Nvidia** | Свободный | [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Nouveau (Русский)](/index.php/Nouveau_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nouveau (Русский)") |
+| Intel | Свободный | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Intel graphics (Русский)](/index.php/Intel_graphics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Intel graphics (Русский)") |
+| Nvidia | Свободный | [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | [mesa](https://www.archlinux.org/packages/?name=mesa) | [lib32-mesa](https://www.archlinux.org/packages/?name=lib32-mesa) | [Nouveau (Русский)](/index.php/Nouveau_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nouveau (Русский)") |
 | Проприетарный | [nvidia](https://www.archlinux.org/packages/?name=nvidia) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) | [lib32-nvidia-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-utils) | [NVIDIA (Русский)](/index.php/NVIDIA_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA (Русский)") |
+| [nvidia-390xx](https://www.archlinux.org/packages/?name=nvidia-390xx) | [nvidia-390xx-utils](https://www.archlinux.org/packages/?name=nvidia-390xx-utils) | [lib32-nvidia-390xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-390xx-utils) |
 | [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) | [nvidia-340xx-utils](https://www.archlinux.org/packages/?name=nvidia-340xx-utils) | [lib32-nvidia-340xx-utils](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-utils) |
 
-**Примечание:** Если Вы пользуетесь ноутбуком с поддержкой NVIDIA Optimus, который использует интегрированную видеокарту вместе с дискретной видеокартой, обратитесь к статье [NVIDIA Optimus (Русский)](/index.php/NVIDIA_Optimus_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA Optimus (Русский)") или [Bumblebee (Русский)](/index.php/Bumblebee_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bumblebee (Русский)").
+**Примечание:**
+
+*   Если Вы пользуетесь ноутбуком с поддержкой NVIDIA Optimus, который использует интегрированную видеокарту вместе с дискретной видеокартой, обратитесь к статье [NVIDIA Optimus (Русский)](/index.php/NVIDIA_Optimus_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NVIDIA Optimus (Русский)") или [Bumblebee (Русский)](/index.php/Bumblebee_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Bumblebee (Русский)").
+*   Чтобы узнать доступные драйверы для графики Intel 4-го поколения и выше, смотрите статью [Intel graphics (Русский)#Установка](/index.php/Intel_graphics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0 "Intel graphics (Русский)").
 
 Другие видео драйверы можно найти в группе [xorg-drivers](https://www.archlinux.org/groups/x86_64/xorg-drivers/).
 
-Во избежание проблем X следует запускать без драйверов с закрытым исходным кодом, которые обычно требуются только для расширенных возможностей, таких, как быстрый 3D рендеринг в играх.
+Во избежание проблем X следует запускать без драйверов с закрытым исходным кодом, которые обычно требуются только для расширенных возможностей, таких, как быстрый 3D рендеринг в играх. Исключением из этого правила являются недавние графические процессоры (особенно видеокарты NVIDIA), которые не поддерживаются драйверами с открытым исходным кодом.
 
 ### AMD
 
@@ -204,11 +204,11 @@ $ grep -e "Using input driver " Xorg.0.log
 
 Смотрите [кнопки мыши](/index.php/%D0%9A%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8_%D0%BC%D1%8B%D1%88%D0%B8 "Кнопки мыши").
 
-### Touchpad
+### Тачпад
 
 Смотрите [libinput](/index.php/Libinput "Libinput") или [Touchpad Synaptics (Русский)](/index.php/Touchpad_Synaptics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Touchpad Synaptics (Русский)").
 
-### Touchscreen
+### Тачскрин
 
 Смотрите [Touchscreen](/index.php/Touchscreen "Touchscreen").
 
@@ -419,26 +419,6 @@ $ xrdb -query | grep dpi
 
 ## Советы и рекомендации
 
-### Настройка X при запуске (startx)
-
-Чтобы получить справку о опциях X, выполните:
-
-```
-$ man Xserver
-
-```
-
-Следующие параметры нужно добавлять к переменной `"defaultserverargs"` в файле `/usr/bin/startx`:
-
-*   Включить отложенную загрузку глифов для 16-битных шрифтов:
-
-```
--deferglyphs 16
-
-```
-
-**Примечание:** Если вы запускаете X через kdm, скрипт startx может оказаться не исполняемым. Параметры X нужно добавлять к переменной `ServerArgsLocal` в файле `/usr/share/config/kdm/kdmrc`.
-
 ### Вложенная X-сессия
 
 Для запуска вложенного сеанса другой среды рабочего стола:
@@ -563,7 +543,7 @@ EndSection
 
 	Вы можете попытаться завершить X сервер через:
 
-	 `# pkill X` 
+	 `# pkill -x X` 
 
 	Если это не сработало, просто перезагрузитесь:
 
@@ -575,29 +555,6 @@ EndSection
 ### Черный экран, протокол не указан.., Ресурс временно недоступен для всех или некоторых пользователей
 
 X создает конфигурационные и временные файлы в текущем домашнем каталоге пользователя. Убедитесь в наличии свободного места на разделе, в котором находится домашний каталог. К сожаления, X сервер в этом случае не представляет очевидную информацию о недостатке места.
-
-### Правый CTRL не работает на раскладке oss
-
-Отредактируйте с правами суперпользователя файл `/usr/share/X11/xkb/symbols/fr`, изменив строку:
-
-```
-include "level5(rctrl_switch)"
-
-```
-
-на
-
-```
-// include "level5(rctrl_switch)"
-
-```
-
-Затем перезапустите X, перезапустите или включите
-
-```
-setxkbmap fr oss
-
-```
 
 ### DRI с картами Matrox перестает работать
 
@@ -630,22 +587,6 @@ Cannot run in framebuffer mode. Please specify busIDs for all framebuffer device
 ```
 
 [Удалите](/index.php/%D0%A3%D0%B4%D0%B0%D0%BB%D0%B8%D1%82%D0%B5 "Удалите") пакет [xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev).
-
-### Запуск разных сеансов X с проприентарным драйвером NVIDIA на Xorg 1.16
-
-Когда пытаетесь запустить сеансы X в разных tty на Xorg 1.16, вы можете столкнуться с сообщением в журнале, что никакие драйвера не были найдены. Временное решение для этого заключается в принудительном указание X, что мы хочем использовать драйвер 'nvidia'.
-
-`/etc/X11/xorg.conf.d/20-nvidia.conf`
-
-```
-Section "Device"
-    Identifier "Device0"
-    Driver     "nvidia"
-    VendorName "NVIDIA Corporation"
-    Option     "NoLogo" "True"
-EndSection
-
-```
 
 ### Программа требует "шрифт '(null)'"
 
@@ -709,7 +650,7 @@ Please also check the log file at "/var/log/Xorg.0.log" for additional informati
 
 ### Использование Xorg без прав суперпользователя
 
-Xorg может запускаться со стандартными привилегиями пользователя через `logind`. Для этого необходимо:
+Xorg может запускаться со стандартными привилегиями пользователя через [systemd-logind(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-logind.8), для получения дополнительной информации смотрите [[3]](https://fedoraproject.org/wiki/Changes/XorgWithoutRootRights) и [FS#41257](https://bugs.archlinux.org/task/41257). Для этого необходимо:
 
 *   Запустить X через [xinit](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)"); экранный менеджер не поддерживается
 *   [KMS](/index.php/Kernel_mode_setting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel mode setting (Русский)"); реализации в проприетарных драйверах монитора не допускает [автообнаружение](http://cgit.freedesktop.org/xorg/xserver/tree/hw/xfree86/xorg-wrapper.c#n222), поэтому необходимо вручную настроить `needs_root_rights = no` в `/etc/X11/Xwrapper.config`.
@@ -731,7 +672,7 @@ exec startx -- -keeptty > ~/.xorg.log 2>&1
 
 ```
 
-Или скопируйте `/etc/X11/xinit/xserverrc` в `~/.xserverrc` и добавьте `-keeptty`. Для получения дополнительной информации смотрите [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1446402#p1446402).
+Или скопируйте `/etc/X11/xinit/xserverrc` в `~/.xserverrc` и добавьте `-keeptty`. Для получения дополнительной информации смотрите [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1446402#p1446402).
 
 ### Зеленый экран при попытке просмотра видео
 

@@ -114,6 +114,15 @@ lat=48.853
 lon=2.349
 ```
 
+*   If using [i3wm](/index.php/I3wm "I3wm") or similar, you'll also need to enable the geoclue agent on startup. As well as `systemctl --user enable redshift-gtk` or `redshift` user service.
+
+ `~/.i3/config` 
+```
+...
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
+...
+```
+
 ### Automatic location based on GPS
 
 You can also use [gpsd](https://www.archlinux.org/packages/?name=gpsd) to automatically determine your [GPS](/index.php/GPS "GPS") location and use it as an input for Redshift. Create the following script and pass `$lat` and `$lon` to `redshift -l $lat;$lon`:

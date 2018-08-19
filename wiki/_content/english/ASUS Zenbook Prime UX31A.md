@@ -68,7 +68,7 @@ This table shows the function keys, their intended function, what keycode (if an
 
 ### Screen backlight
 
-Screen backlight should work with any recent kernel (after 3.7). The brightness is managed via hardware, so it should work across all DE's.
+Screen backlight should work with any recent kernel (after 3.7). The brightness is managed via hardware, so it should work across all DE's. In case it's not working directly, you need to set the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `acpi_osi= ` (the space is required).
 
 ### Keyboard backlight
 

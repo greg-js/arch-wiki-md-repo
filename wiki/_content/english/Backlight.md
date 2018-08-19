@@ -236,7 +236,7 @@ $ xgamma -rgamma 1 -ggamma 1 -bgamma 1
 
 ```
 
-**Tip:** These commands can be bound to keyboard keys as described in [Keyboard_configuration_in_Xorg#Keybinding](/index.php/Keyboard_configuration_in_Xorg#Keybinding "Keyboard configuration in Xorg").
+**Tip:** These commands can be bound to keyboard keys as described in [Keyboard configuration in Xorg#Keybinding](/index.php/Keyboard_configuration_in_Xorg#Keybinding "Keyboard configuration in Xorg").
 
 If you get the "No outputs have backlight property" error, it is because xrandr/xbacklight does not choose the right directory in `/sys/class/backlight`. You can specify the directory by setting the `Backlight` option of the device section in `/etc/X11/xorg.conf.d/20-*video*.conf`. For instance, if the name of the directory is `intel_backlight` and using the [Intel](/index.php/Intel "Intel") driver, the device section may be configured as follows:
 

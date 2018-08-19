@@ -11,7 +11,6 @@
     *   [2.5 Desktop entry](#Desktop_entry)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Keyboard](#Keyboard)
-        *   [3.1.1 DEL-Key not working properly in some Application](#DEL-Key_not_working_properly_in_some_Application)
     *   [3.2 Vim](#Vim)
         *   [3.2.1 The background colour of text in *vim* will not fill in anything that is not a character](#The_background_colour_of_text_in_vim_will_not_fill_in_anything_that_is_not_a_character)
         *   [3.2.2 256color and truecolor support not working in tmux or otherwise](#256color_and_truecolor_support_not_working_in_tmux_or_otherwise)
@@ -147,9 +146,7 @@ The menu entry will appear as **Simple Terminal** in the *System Tools* applicat
 
 ### Keyboard
 
-#### DEL-Key not working properly in some Application
-
-add following to *~/.inputrc* or */etc/inputrc*:
+Add the following to `~/.inputrc` or `/etc/inputrc` if `Delete` is not working properly in some applications:
 
 ```
  set enable-keypad on

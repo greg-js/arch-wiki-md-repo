@@ -31,7 +31,7 @@ This page is mainly about how to gather more information in connection with bug 
 If an application suddenly crashes, try running it from a [terminal emulator](/index.php/Terminal_emulator "Terminal emulator"). Type in the name of the application in lowercase letters. If you do not know the name of the executable, only the name of the package, the following command can find the name of the executable. Replace *packagename* with the name of the package:
 
 ```
-for f in `pacman -Ql *packagename* | grep "/bin/" | cut -d" " -f2`; do file $f 2>/dev/null | grep -q executable && basename $f; done
+for f in $(pacman -Ql *packagename* | grep /bin/ | cut -d' ' -f2); do file $f 2>/dev/null | grep -q executable && basename $f; done
 
 ```
 

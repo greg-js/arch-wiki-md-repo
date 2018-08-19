@@ -1,4 +1,4 @@
-[Clang](http://clang.llvm.org/) is a [C](/index.php/C "C")/C++/Objective C compiler based on LLVM. It is distributed under the BSD Licence.
+[Clang](http://clang.llvm.org/) is a [C](/index.php/C "C")/C++/Objective C/[CUDA](/index.php/CUDA "CUDA") compiler based on [LLVM](/index.php/LLVM "LLVM"). It is distributed under the BSD Licence.
 
 ## Contents
 
@@ -9,7 +9,7 @@
 
 ## Installation
 
-Install [clang](https://www.archlinux.org/packages/?name=clang) from the [Official repositories](/index.php/Official_repositories "Official repositories").
+Install the [clang](https://www.archlinux.org/packages/?name=clang) package.
 
 ## Build packages with Clang
 
@@ -39,3 +39,4 @@ $ scan-build gcc -c t1.c t2.c
 
 *   [Wikipedia:Clang](https://en.wikipedia.org/wiki/Clang "wikipedia:Clang")
 *   [scan-build: running the analyzer from the command line](http://clang-analyzer.llvm.org/scan-build.html)
+*   [Compiling CUDA with clang](http://llvm.org/docs/CompileCudaWithLLVM.html)

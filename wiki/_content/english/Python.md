@@ -130,9 +130,11 @@ Although a great number of Python packages are readily available in the [officia
 
 For a brief history and feature comparison between the two, see [pip vs easy_install](https://packaging.python.org/pip_easy_install/#pip-vs-easy-install). Authoritative best practices in Python package management are detailed [here](https://packaging.python.org/).
 
-If you must use *pip*, use a [virtual environment](#Virtual_environment) or with `pip install --user` to avoid conflicting with packages in `/usr`. It is always preferred to [use pacman to install software](/index.php/System_maintenance#Use_the_package_manager_to_install_software "System maintenance").
+If you must use *pip*, use a [virtual environment](#Virtual_environment), or `pip install --user` to avoid conflicts with packages in `/usr`. It is always preferred to [use pacman to install software](/index.php/System_maintenance#Use_the_package_manager_to_install_software "System maintenance").
 
 **Note:** There are also tools integrating *pip* with *pacman* by automatically generating PKGBUILDs for specified pip-packages: see [Creating packages#PKGBUILD generators](/index.php/Creating_packages#PKGBUILD_generators "Creating packages").
+
+**Tip:** [pipenv](https://docs.pipenv.org/) provides a single CLI for [Pipfile](https://github.com/pypa/pipfile), *pip* and [virtualenv](/index.php/Virtualenv "Virtualenv"). It is available as [python-pipenv](https://www.archlinux.org/packages/?name=python-pipenv) and [python2-pipenv](https://www.archlinux.org/packages/?name=python2-pipenv).
 
 ## Widget bindings
 

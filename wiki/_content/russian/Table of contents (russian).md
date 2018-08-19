@@ -51,7 +51,7 @@
  <small>2.12.4.</small> [Music](/index.php/Category:Music "Category:Music") <small>(26)</small> |
  <small>2.12.5.</small> [Raster graphics](/index.php/Category:Raster_graphics "Category:Raster graphics") <small>(9)</small> |
  <small>2.12.6.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(17) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
- <small>2.12.7.</small> [Television](/index.php/Category:Television "Category:Television") <small>(4)</small> |
+ <small>2.12.7.</small> [Television](/index.php/Category:Television "Category:Television") <small>(3)</small> |
  <small>2.12.7.1.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
 | <small>2.14.</small> [Проигрыватель](/index.php/Category:Multimedia_players_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Multimedia players (Русский)") <small>(4)</small> |
  <small>2.13.</small> [Office](/index.php/Category:Office "Category:Office") <small>(21)</small> |
@@ -67,7 +67,7 @@
  <small>2.17.4.</small> [Web frameworks](/index.php/Category:Web_frameworks "Category:Web frameworks") <small>(2) (also in [Frameworks](/index.php/Category:Frameworks "Category:Frameworks"))</small> |
  <small>2.17.5.</small> [Wiki software](/index.php/Category:Wiki_software "Category:Wiki software") <small>(6)</small> |
 | <small>2.18.</small> [Wine](/index.php/Category:Wine_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Wine (Русский)") <small>(2)</small> |
-| <small>3.</small> [Разработка](/index.php/Category:Development_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Development (Русский)") <small>(6)</small> | <small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(37)</small> |
+| <small>3.</small> [Разработка](/index.php/Category:Development_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Development (Русский)") <small>(6)</small> | <small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(38)</small> |
 | <small>3.1.</small> [Разработка Arch](/index.php/Category:Arch_development_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Arch development (Русский)") <small>(2) (Также в [Об Arch](/index.php/Category:About_Arch_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:About Arch (Русский)"))</small> | <small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(18) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
 | <small>3.1.1.</small> [Разработка пакетов](/index.php/Category:Package_development_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Package development (Русский)") <small>(10)</small> | <small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(48)</small> |
  <small>3.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
@@ -85,7 +85,7 @@
 | <small>4.2.</small> [Bluetooth](/index.php/Category:Bluetooth_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Bluetooth (Русский)") <small>(4)</small> | <small>4.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(5) (also in [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking"))</small> |
 | <small>4.3.</small> [Процессор](/index.php/Category:CPU_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:CPU (Русский)") <small>(4)</small> | <small>4.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(10)</small> |
  <small>4.4.</small> [Displays](/index.php/Category:Displays "Category:Displays") <small>(3)</small> |
-| <small>4.4.</small> [Видеокарты](/index.php/Category:Graphics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Graphics (Русский)") <small>(16)</small> | <small>4.5.</small> [Graphics](/index.php/Category:Graphics "Category:Graphics") <small>(32)</small> |
+| <small>4.4.</small> [Видеокарты](/index.php/Category:Graphics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Graphics (Русский)") <small>(15)</small> | <small>4.5.</small> [Graphics](/index.php/Category:Graphics "Category:Graphics") <small>(32)</small> |
 | <small>4.5.</small> [Обнаружение устройств и решение проблем](/index.php/Category:Hardware_detection_and_troubleshooting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Hardware detection and troubleshooting (Русский)") <small>(4)</small> | <small>4.6.</small> [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting "Category:Hardware detection and troubleshooting") <small>(8)</small> |
 | <small>4.6.</small> [Изображения](/index.php/Category:Imaging_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Imaging (Русский)") <small>(2)</small> | <small>4.7.</small> [Imaging](/index.php/Category:Imaging "Category:Imaging") <small>(7)</small> |
 | <small>4.7.</small> [Устройства ввода](/index.php/Category:Input_devices_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Input devices (Русский)") <small>(4)</small> | <small>4.8.</small> [Input devices](/index.php/Category:Input_devices "Category:Input devices") <small>(16)</small> |

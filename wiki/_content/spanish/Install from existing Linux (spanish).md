@@ -12,8 +12,6 @@ El objetivo del procedimiento de bootstrapping es configurar un entorno desde el
 
 Si el sistema anfitrión ejecuta Arch Linux, la instalación de los [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) es sencilla.
 
-Desde otras distribuciones, el proceso es más complicado (el cual se describe en [#Alternativa: Instalación de los arch-install-scripts nativos en una distribución que no sea Arch](#Alternativa:_Instalaci.C3.B3n_de_los_arch-install-scripts_nativos_en_una_distribuci.C3.B3n_que_no_sea_Arch)). Para estas distribuciones, se recomienda la creación de un entorno chroot en su lugar.
-
 **Nota:** Esta guía requiere que el sistema anfitrión existente sea capaz de ejecutar los nuevos programas de Arch Linux para la arquitectura de destino. En el caso de un anfitrión x86_64, es posible utilizar i686-Pacman para construir un entorno chroot de 32 bits. Véase [Arch64 Install bundled 32bit system](/index.php/Arch64_Install_bundled_32bit_system "Arch64 Install bundled 32bit system"). Sin embargo, no es tan fácil construir un entorno de 64 bits cuando el anfitrión solo permite ejecutar programas de 32 bits.
 
 ## Contents
@@ -212,7 +210,7 @@ Antes de iniciar la instalación, las claves de pacman deben ser configuradas. A
 
 #### Instalación
 
-Siga la [guía para principiantes](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") sobre [Montar las particiones](/index.php/Installation_guide_(Espa%C3%B1ol)#Montar_las_particiones "Installation guide (Español)") e [Instalar el sistema base](/index.php/Installation_guide_(Espa%C3%B1ol)#Instalaci.C3.B3n_del_sistema_base "Installation guide (Español)").
+Siga la [guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") sobre el [montaje de los sistemas de archivos](/index.php/Installation_guide_(Espa%C3%B1ol)#Montaje_de_los_sistemas_de_archivos "Installation guide (Español)") y la [instalación de los paquetes del sistema base](/index.php/Installation_guide_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_los_paquetes_del_sistema_base "Installation guide (Español)").
 
 ##### Anfitrión basado en Debian
 
@@ -235,8 +233,8 @@ En Debian, los puntos de /dev/shm a /run/shm. Sin embargo, en el chroot basado e
 
 #### Configurar el sistema
 
-A partír de aquí, basta con seguir la [guía para principiantes](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") desde [Montar las particiones](/index.php/Installation_guide_(Espa%C3%B1ol)#Montar_las_particiones "Installation guide (Español)").
+A partír de aquí, basta con seguir la [guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") desde [Montaje de los sistemas de archivos](/index.php/Installation_guide_(Espa%C3%B1ol)#Montaje_de_los_sistemas_de_archivos "Installation guide (Español)").
 
 ## Sustituir el sistema existente sin un LiveCD
 
-Encuentre ~500MB de espacio libre en el disco, por ejemplo, redimensionando una partición swap. Instale el nuevo sistema Arch Linux, reinicie desde el sistema recién creado, y realice un [rsync del sistema completo](/index.php/Full_system_backup_with_rsync#With_a_single_command "Full system backup with rsync") para la partición primaria. Fije la configuración del gestor de arranque antes de reiniciar.
+Encuentre ~500MB de espacio libre en el disco, por ejemplo, redimensionando una partición swap. Instale el nuevo sistema Arch Linux, reinicie desde el sistema recién creado, y realice un [rsync](/index.php/Rsync_(Espa%C3%B1ol) "Rsync (Español)") del sistema completo para la partición primaria. Fije la configuración del gestor de arranque antes de reiniciar.

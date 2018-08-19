@@ -875,6 +875,10 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 ##### Educational IDEs
 
+*   **[Etoys](https://en.wikipedia.org/wiki/Etoys_(programming_language) "wikipedia:Etoys (programming language)")** — Educational tool and media-rich authoring environment for teaching children.
+
+	[http://squeakland.org/](http://squeakland.org/) || [etoys](https://aur.archlinux.org/packages/etoys/)
+
 *   **[KTurtle](https://en.wikipedia.org/wiki/KTurtle "wikipedia:KTurtle")** — Educational programming environment that aims to make learning how to program as easily as possible. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
 
 	[https://www.kde.org/applications/education/kturtle/](https://www.kde.org/applications/education/kturtle/) || [kturtle](https://www.archlinux.org/packages/?name=kturtle)

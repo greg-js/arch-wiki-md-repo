@@ -19,7 +19,7 @@
     *   [3.1 PAM with virtual users](#PAM_with_virtual_users)
         *   [3.1.1 Adding private folders for the virtual users](#Adding_private_folders_for_the_virtual_users)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 vsftpd: no connection (Error 500) with recent kernels (3.5 and newer) and .service](#vsftpd:_no_connection_.28Error_500.29_with_recent_kernels_.283.5_and_newer.29_and_.service)
+    *   [4.1 vsftpd: Error 500 with kernel 4.18+](#vsftpd:_Error_500_with_kernel_4.18.2B)
     *   [4.2 vsftpd: refusing to run with writable root inside chroot()](#vsftpd:_refusing_to_run_with_writable_root_inside_chroot.28.29)
     *   [4.3 FileZilla Client: GnuTLS error -8 -15 -110 when connecting via SSL](#FileZilla_Client:_GnuTLS_error_-8_-15_-110_when_connecting_via_SSL)
     *   [4.4 vsftpd.service fails to run on boot](#vsftpd.service_fails_to_run_on_boot)
@@ -408,9 +408,9 @@ user_sub_token=$USER
 
 ## Troubleshooting
 
-### vsftpd: no connection (Error 500) with recent kernels (3.5 and newer) and .service
+### vsftpd: Error 500 with kernel 4.18+
 
-If you encounter failures when listing directories with more than a few files add this to your /etc/vsftpd.conf
+[seccomp](https://en.wikipedia.org/wiki/seccomp "wikipedia:seccomp") is activated by default in vsftpd and this has caused compatibility issues with some kernel versions. If you encounter failures when listing directories with more than a few files add this to `/etc/vsftpd.conf`:
 
 ```
 seccomp_sandbox=NO

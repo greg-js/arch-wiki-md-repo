@@ -139,7 +139,7 @@ Failed to modify password entry for user "<user>"
 
 ```
 
-Puedes añadir un nuevo usuario con [adduser](/index.php/User_Management#adduser "User Management")
+Puedes añadir un nuevo usuario con [adduser](/index.php/Users_and_groups_(Espa%C3%B1ol)#Administraci.C3.B3n_de_usuarios "Users and groups (Español)").
 
 ## Accediendo a los intercambios Samba
 

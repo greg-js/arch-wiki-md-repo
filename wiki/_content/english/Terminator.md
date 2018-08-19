@@ -36,16 +36,14 @@ Example config:
 ```
 notebook tab {
   min-height: 0;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding: 2px;
 }
 
 notebook tab button {
   min-height: 0;
   min-width: 0;
   padding: 1px;
-  margin-top: 1px;
-  margin-bottom: 1px;
+  margin: 1px;
 }
 
 ```

@@ -10,7 +10,7 @@ Many of the settings you'll want to set are very dependent on how you will use y
 
 From there you'll want to follow the [UnrealIRCd Configuration Docs](https://www.unrealircd.org/files/docs/unreal32docs.html#configuringyourunrealircdconf) making sure to configure all of the required fields such as `me`, `admin`, `class`, etc.
 
-Place your SSL key/cert at `/etc/unrealircd/ssl/server.key.pem` and `/etc/unrealircd/ssl/server.cert.pem`. If you do not have a proper certificate, you can generate a self-signed one, as explained at [Apache HTTP Server#TLS/SSL](/index.php/Apache_HTTP_Server#TLS.2FSSL "Apache HTTP Server"). (note that the files have to be named slightly different for UnrealIRCd)
+Place your SSL key/cert at `/etc/unrealircd/ssl/server.key.pem` and `/etc/unrealircd/ssl/server.cert.pem`. If you do not have a proper certificate, you can generate a self-signed one, as explained at [Apache HTTP Server#TLS](/index.php/Apache_HTTP_Server#TLS "Apache HTTP Server"). (note that the files have to be named slightly different for UnrealIRCd)
 
 ## Starting/Stopping the daemon
 

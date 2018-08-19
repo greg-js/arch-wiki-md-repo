@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting"). Fecha de la última traducción/revisión: **2016-04-10**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=General_troubleshooting&diff=0&oldid=430728).
+**Estado de la traducción:** este artículo es una versión traducida de [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting"). Fecha de la última traducción/revisión: **2018-08-18**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=General_troubleshooting&diff=0&oldid=516784).
 
 Artículos relacionados
 
@@ -8,17 +8,18 @@ Artículos relacionados
 *   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
 *   [IRC Collaborative Debugging](/index.php/IRC_Collaborative_Debugging "IRC Collaborative Debugging")
 
-Este artículo explica algunos métodos para solucionar problemas de forma general. Para cuestiones específicas relativas a una aplicación, remítase a la página de la wiki para ese programa en particular.
+Este artículo explica algunos métodos para solucionar problemas generales. Para cuestiones específicas relativas a una aplicación, remítase a la página wiki para ese programa en particular.
 
 ## Contents
 
 *   [1 Procedimientos generales](#Procedimientos_generales)
-    *   [1.1 Preste atención al detalle](#Preste_atenci.C3.B3n_al_detalle)
-    *   [1.2 Interróguese a sí mismo](#Interr.C3.B3guese_a_s.C3.AD_mismo)
-    *   [1.3 Sea más específico](#Sea_m.C3.A1s_espec.C3.ADfico)
-    *   [1.4 Obtenga apoyo adicional](#Obtenga_apoyo_adicional)
+    *   [1.1 Atención al detalle](#Atenci.C3.B3n_al_detalle)
+    *   [1.2 Preguntas/lista de control](#Preguntas.2Flista_de_control)
+    *   [1.3 Enfoque](#Enfoque)
+    *   [1.4 Soporte adicional](#Soporte_adicional)
 *   [2 Problemas de arranque](#Problemas_de_arranque)
     *   [2.1 Mensajes de la consola](#Mensajes_de_la_consola)
+        *   [2.1.1 Control de flujo](#Control_de_flujo)
     *   [2.2 Pantalla en blanco con el vídeo Intel](#Pantalla_en_blanco_con_el_v.C3.ADdeo_Intel)
     *   [2.3 Atascado mientras se carga el kernel](#Atascado_mientras_se_carga_el_kernel)
     *   [2.4 Sistema no arrancable](#Sistema_no_arrancable)
@@ -34,57 +35,91 @@ Este artículo explica algunos métodos para solucionar problemas de forma gener
 
 ## Procedimientos generales
 
-### Preste atención al detalle
+### Atención al detalle
 
-Con el fin de resolver un problema que le ha surgido, es *absolutamente crucial* comprender bien cómo funciona el sistema específico. Cómo funciona y qué necesita para funcionar sin errores. Si no puede contestar cómodamente estas preguntas, entonces se aconseja encarecidamente que revise el artículo de [Archwiki](/index.php/Table_of_contents "Table of contents") para conocer la función respecto de la que está teniendo problemas. Una vez que considere que ha entendido el sistema específico, será más fácil que pueda precisar la problema.
+Para resolver un problema que esté teniendo, es *absolutamente crucial* comprender básicamente cómo funciona ese subsistema específico. ¿Cómo funciona y qué necesita para ejecutarse sin error? Si no puede contestar cómodamente a estas preguntas, entonces es mejor que revise el artículo [Archwiki](/index.php/Table_of_contents_(Espa%C3%B1ol) "Table of contents (Español)") del subsistema con el que tiene problemas. Una vez que sienta que lo ha entendido, le será más fácil identificar la causa del problema.
 
-### Interróguese a sí mismo
+### Preguntas/lista de control
 
-A continuación se presentan una serie de preguntas que deberá hacerse a sí mismo cada vez que surjan problemas en el funcionamiento del sistema. Bajo cada pregunta hay notas que explican el método para dar respuesta a cada pregunta, seguido de algunos ejemplos claros sobre cómo recopilar fácilmente la salida de datos y qué herramientas se pueden utilizar para revisar los registros y el diario (*journal*).
+A continuación se presentan una serie de preguntas que deberá hacerse a sí mismo cuando se trata de un sistema que no funciona bien. Debajo de cada pregunta, hay notas que explican el método para dar respuesta a cada pregunta, seguido de algunos ejemplos claros sobre cómo recopilar fácilmente los datos y qué herramientas se pueden usar para revisar los registros y el diario *(journal)*.
 
 1.  ¿Cuál es el problema?
 
-    	Sea *lo más preciso posible* . Esto le ayudará a que no se confunda y/o que no siga un camino equivocado cuando se esté buscando información específica.
+    	Sea *lo más preciso posible*. Esto le ayudará a no confundirse y/o no seguir un camino incorrecto cuando al buscar información específica.
 
 2.  ¿Hay mensajes de error? (si los hay)
 
-    	Copie las *salidas completas* que contienen los **mensajes de error** relacionadas con su problema , y péguelas en un archivo separado como `$HOME/issue.log`. Por ejemplo, para enviar la salida de la siguiente orden de [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") a `$HOME/issue.log`:
+    	Copie y pegue las *salidas completas* que contienen los **mensajes de error** relacionadas con su problema en un archivo separado como `$HOME/issue.log`. Por ejemplo, para enviar la salida de la siguiente orden de [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") a `$HOME/issue.log`:
 
     	 `$ mkinitcpio -p linux >> $HOME/issue.log` 
 
-3.  ¿Se puede reproducir el problema?
+3.  ¿Puede reproducir el problema?
 
-    	Si es así, indique *exactamente* **paso a paso** las instrucciones/órdenes necesarias para reproducirlo.
+    	Si es así, indique *exactamente* **paso a paso** las/os instrucciones/comandos necesarias/os para reproducirlo.
 
-4.  ¿Cuándo se encontró por primera vez el problema, y qué ha cambiando entre ese momento y antes de que el sistema comenzase a funcionar erróneamente?
+4.  ¿Cuándo se encontró por primera vez con este problema, y qué cambió entre ese momento y antes de que el sistema comenzase a funcionar erróneamente?
 
-    	Si se produjo justo después de una actualización, entonces, liste **todos los paquetes que se han actualizado**. Incluya, también, los *números de versión*, copiando toda la actualización de [pacman](/index.php/Pacman "Pacman").log (`/var/log/pacman.log`). También tome nota de los estados de *cualquier* servicio(s) que se necesita para dar soporte a la aplicación(s) que está funcionando mal, usando las herramientas systemctl de [systemd](/index.php/Systemd "Systemd"). Por ejemplo, para enviar la salida de la siguiente orden de [systemd](/index.php/Systemd#Basic_systemctl_usage "Systemd") a `$HOME/issue.log`:
+    	Si ocurrió justo después de una actualización, enumere **todos los paquetes que se han actualizado**. Incluya los *números de versión*, copiando toda la actualización de [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)").log (`/var/log/pacman.log`). También tome nota de los estados de *cualquier* servicio necesario para dar soporte a la(s) aplicación(es) que está funcionando mal, usando las herramientas systemctl de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"). Por ejemplo, para reenviar la salida del siguiente comando de [systemd](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)") a `$HOME/issue.log`:
 
     	 `$ systemctl status dhcpcd@eth0.service >> $HOME/issue.log` 
 
-    **Nota:** Utilice el signo `**>>**` para asegurarse de que cualquier texto presente en `$HOME/issue.log` no se sobrescribirá.
+    **Nota:** Utilizar `**>>**` asegurará que cualquier texto presente en `$HOME/issue.log` no se sobrescribirá.
 
-### Sea más específico
+### Enfoque
 
-Cuando se trate de resolver un problema, **nunca** se aproxime al mismo con expresiones como:
+En lugar de abordar un problema diciendo,
 
-*Aplicación X no funciona.*
+*La aplicación X no funciona.*
 
-En su lugar, mírelo en su totalidad:
+le resultará más útil formular su problema en el contexto del sistema como un todo, como:
 
-*La aplicación X produce el error Y al realizar las tareas Z en condiciones A y B.*
+*La aplicación X produce el/los error(es) Y al realizar las tareas Z bajo las condiciones A y B.*
 
-### Obtenga apoyo adicional
+### Soporte adicional
 
-Ahora tiene toda la información disponible. Con ello debe tener una buena idea de lo que está pasando en su sistema. Y se puede empezar a trabajar en una solución adecuada.
+Con toda la información delante suya, debe tener una buena idea de lo que está sucediendo con el sistema y ahora puede comenzar a trabajar en una solución adecuada.
 
-Si necesita ayuda adicional, puede encontrarla en los [foros](https://bbs.archlinux.org) o en IRC en irc.freenode.net #archlinux
+Si necesita soporte adicional, puede encontrarlo en [los foros](https://bbs.archlinux.org) o el IRC en irc.freenode.net #archlinux. Consulte [Canales de IRC](/index.php/IRC_channel_(Espa%C3%B1ol) "IRC channel (Español)") para otras opciones.
+
+**Nota:** [Soporte *solo* para la distribución Arch Linux](/index.php/Code_of_conduct_(Espa%C3%B1ol)#Soporte_.2Asolo.2A_para_la_distribuci.C3.B3n_Arch_Linux "Code of conduct (Español)") y no [Distribuciones basadas en Arch](/index.php/Arch-based_distributions_(Espa%C3%B1ol) "Arch-based distributions (Español)").
+
+Cuando solicite ayuda, publique las salidas/registros completas/os, no solo las secciones que considere importantes. Las fuentes de información incluyen:
+
+*   Salida completa de cualquier comando involucrado - no seleccione únicamente lo que considere relevante.
+*   Salida de `journalctl` de systemd. Para una salida más extensa, utilice el parámetro de arranque `systemd.log_level=debug`.
+*   Archivos de registro (eche un vistazo a `/var/log`)
+*   Archivos de configuración relevantes
+*   Controladores involucrados
+*   Versiones de paquetes involucrados
+*   Núcleo: `dmesg`. Para un problema de arranque, al menos las últimas 10 líneas mostradas, preferiblemente más
+*   Redes: Salida exacta de los comandos involucrados, y cualquier archivo de configuración
+*   Xorg: `/var/log/Xorg.0.log`, y registros *(logs)* anteriores si ha sobrescrito el problemático
+*   Pacman: si una actualización reciente rompió algo, busque en `/var/log/pacman.log`
+
+Una de las mejores formas de publicar esta información es usar un *pastebin* en línea. Puede [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [pbpst](https://www.archlinux.org/packages/?name=pbpst) o [gist](https://www.archlinux.org/packages/?name=gist) para enviar información automáticamente. Por ejemplo, para enviar el contenido de su diario systemd desde este arranque, debe hacer lo siguiente:
+
+```
+# journalctl -xb | pbpst -S
+
+```
+
+Luego se mostrará un enlace que puede pegar en el foro o IRC.
+
+Además, antes de publicar su pregunta, puede revisar [cómo hacer preguntas inteligentes](http://www.catb.org/esr/faqs/smart-questions.html). Consulte también [Código de conducta](/index.php/Code_of_conduct_(Espa%C3%B1ol) "Code of conduct (Español)").
 
 ## Problemas de arranque
 
-Véase [Boot debugging](/index.php/Boot_debugging "Boot debugging") para recuperar información adicional.
+El diagnóstico de errores durante el [proceso de arranque](/index.php/Arch_boot_process_(Espa%C3%B1ol) "Arch boot process (Español)") implica cambiar los [parámetros del núcleo](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") y reiniciar el sistema.
+
+Si no es posible arrancar el sistema, inicie desde una [imagen en vivo](https://www.archlinux.org/download/) y [cambie la raíz](/index.php/Change_root_(Espa%C3%B1ol) "Change root (Español)") al sistema existente.
 
 ### Mensajes de la consola
+
+Después del proceso de inicio, la pantalla se borra y aparece el mensaje de inicio de sesión, lo que deja a los usuarios incapaces de leer los mensajes del arranque y los de error. Este comportamiento predeterminado puede cambiarse utilizando los métodos descritos en las secciones siguientes.
+
+Tenga en cuenta que, independientemente de la opción elegida, los mensajes del núcleo pueden mostrarse para su inspección después del arranque utilizando `dmesg` o todos los registros del arranque actual con `journalctl -b`.
+
+#### Control de flujo
 
 ### Pantalla en blanco con el vídeo Intel
 

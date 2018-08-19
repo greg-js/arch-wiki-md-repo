@@ -2,7 +2,7 @@
 
 ## Installation
 
-CDemu can be [installed](/index.php/Pacman "Pacman") with the package [cdemu-client](https://www.archlinux.org/packages/?name=cdemu-client), which contains also a handy [systemd](/index.php/Systemd "Systemd") service called **cdemu-daemon.service**.
+CDemu can be [installed](/index.php/Pacman "Pacman") with the package [cdemu-client](https://www.archlinux.org/packages/?name=cdemu-client), which contains also a handy [systemd](/index.php/Systemd "Systemd") service called **cdemu-daemon.service**. If you are using a custom kernel, instead of the normal `vbha` kernel module package, [vhba-module](https://www.archlinux.org/packages/?name=vhba-module), you must use the [DKMS](/index.php/DKMS "DKMS") variant of the package, [vhba-module-dkms](https://www.archlinux.org/packages/?name=vhba-module-dkms).
 
 Since systemd does not automatically load fdrivers for CD/DVD drives, you need to do this manually.
 

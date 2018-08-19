@@ -54,7 +54,7 @@ Proceed by installing a fresh OS X version on the HDD. You can play around in OS
 
 ## Proceed installing Arch Linux
 
-Installing Arch Linux requires no special tricks; follow the [Installation guide](/index.php/Installation_guide "Installation guide"); mount /dev/sda1 (the first partition of the HDD is the [UEFI](/index.php/UEFI "UEFI") partition) on /boot/efi; install grub-efi-x86_64 and you should be good to go! Since you will be installing on the [Solid State Drive](/index.php/Solid_State_Drive "Solid State Drive"), use parted and created aligned partitions. I use this scheme:
+Installing Arch Linux requires no special tricks; follow the [Installation guide](/index.php/Installation_guide "Installation guide"); mount /dev/sda1 (the first partition of the HDD is the [UEFI](/index.php/UEFI "UEFI") partition) on /boot/efi; install grub-efi-x86_64 and you should be good to go! Since you will be installing on the [solid state drive](/index.php/Solid_state_drive "Solid state drive"), use parted and created aligned partitions. I use this scheme:
 
 ```
 Model: ATA APPLE SSD SM128E (scsi)

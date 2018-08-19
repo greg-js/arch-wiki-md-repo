@@ -25,21 +25,11 @@ The audit framework works by listening to the event reported by the kernel and l
 
 ## Installation
 
-Install a (custom) [kernel](/index.php/Kernel "Kernel") with `CONFIG_AUDIT` enabled, as in [Linux-hardened](/index.php/Linux-hardened "Linux-hardened").
+In-kernel audit support is available in [linux](https://www.archlinux.org/packages/?name=linux) (since 4.18), [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) (since 4.18) and [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened). For custom kernels `CONFIG_AUDIT` should be enabled. Audit can be enabled at boot-time by setting `audit=1` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
 
-Install [audit](https://www.archlinux.org/packages/?name=audit) and [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `auditd.service`.
+For userspace support install [audit](https://www.archlinux.org/packages/?name=audit) and [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `auditd.service`.
 
-**Note:**
-
-*   [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) audit support can be enabled by setting `audit=1` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
-*   [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) by default uses `audit=0` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") which conflicts with `ConditionKernelCommandLine=!audit=0` used in `/usr/lib/systemd/system/auditd.service`. To overcome this you may want to create a [drop-in snippet](/index.php/Drop-in_snippet "Drop-in snippet") for `auditd.service`:
-
- `/etc/systemd/system/auditd.service.d/kernelcommandline.conf` 
-```
-[Unit]
-ConditionKernelCommandLine=
-ConditionKernelCommandLine=audit=1
-```
+**Note:** In order to disable audit completely and suppress audit messages from appearing in journal you may set `audit=0` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") and/or disable journal socket with `systemctl mask systemd-journald-audit.socket`.
 
 Audit framework is composed of the auditd daemon, responsible for writing the audit messages that were generated through the audit kernel interface and triggered by application and system activity.
 

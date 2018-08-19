@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-07-07，点击[这里](https://wiki.archlinux.org/index.php?title=Very+Secure+FTP+Daemon&diff=0&oldid=528991)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-08-19，点击[这里](https://wiki.archlinux.org/index.php?title=Very+Secure+FTP+Daemon&diff=0&oldid=536049)可以查看翻译后英文页面的改动。
 
 [vsftpd](https://security.appspot.com/vsftpd.html) (“Very Secure FTP Daemon“) 是一个为 UNIX 类系统开发的轻量，稳定和安全的 FTP 服务器端。
 
@@ -21,7 +21,7 @@
     *   [3.1 虚拟用户的 PAM 认证](#.E8.99.9A.E6.8B.9F.E7.94.A8.E6.88.B7.E7.9A.84_PAM_.E8.AE.A4.E8.AF.81)
         *   [3.1.1 为虚拟用户创建私有目录](#.E4.B8.BA.E8.99.9A.E6.8B.9F.E7.94.A8.E6.88.B7.E5.88.9B.E5.BB.BA.E7.A7.81.E6.9C.89.E7.9B.AE.E5.BD.95)
 *   [4 问题解决](#.E9.97.AE.E9.A2.98.E8.A7.A3.E5.86.B3)
-    *   [4.1 vsftpd: no connection (Error 500) with recent kernels (3.5 and newer) and .service](#vsftpd:_no_connection_.28Error_500.29_with_recent_kernels_.283.5_and_newer.29_and_.service)
+    *   [4.1 vsftpd: Error 500 with kernel 4.18+](#vsftpd:_Error_500_with_kernel_4.18.2B)
     *   [4.2 vsftpd: refusing to run with writable root inside chroot()](#vsftpd:_refusing_to_run_with_writable_root_inside_chroot.28.29)
     *   [4.3 FileZilla Client: GnuTLS error -8 -15 -110 when connecting via SSL](#FileZilla_Client:_GnuTLS_error_-8_-15_-110_when_connecting_via_SSL)
     *   [4.4 vsftpd.service fails to run on boot](#vsftpd.service_fails_to_run_on_boot)
@@ -407,9 +407,9 @@ user_sub_token=$USER
 
 ## 问题解决
 
-### vsftpd: no connection (Error 500) with recent kernels (3.5 and newer) and .service
+### vsftpd: Error 500 with kernel 4.18+
 
-如果在列出具有多个文件的目录时遇到故障，将其添加到您的 `/etc/vsftpd.conf`：
+[seccomp](https://en.wikipedia.org/wiki/seccomp "wikipedia:seccomp") 在 vsftpd 中默认激活，这导致某些内核版本出现兼容性问题。 如果在列出具有多个文件的目录时遇到故障，将其添加到 `/etc/vsftpd.conf`：
 
 ```
 seccomp_sandbox=NO

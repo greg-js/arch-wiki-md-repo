@@ -186,7 +186,7 @@ HibernateMode=suspend
 HibernateState=disk
 ```
 
-See the [sleep.conf.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sleep.conf.d.5) manual page for details.
+See the [sleep.conf.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sleep.conf.d.5) manual page for details and the [linux kernel documentation on power states](https://www.kernel.org/doc/html/latest/admin-guide/pm/sleep-states.html#basic-sysfs-interfaces-for-system-suspend-and-hibernation).
 
 ### Sleep hooks
 

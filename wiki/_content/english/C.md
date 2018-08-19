@@ -2,7 +2,7 @@ The [Linux](/index.php/Linux "Linux") kernel and the [GNU](/index.php/GNU "GNU")
 
 Arch Linux uses the [GNU C Library](https://en.wikipedia.org/wiki/GNU_C_Library "wikipedia:GNU C Library") ([glibc](https://www.archlinux.org/packages/?name=glibc)) as the C standard library; it is part of [base](https://www.archlinux.org/groups/x86_64/base/).
 
-You can use the [GNU toolchain](/index.php/GNU_toolchain "GNU toolchain") or the [LLVM toolchain](/index.php/LLVM_toolchain "LLVM toolchain") to develop software in C/C++.
+You can use the [GNU toolchain](/index.php/GNU_toolchain "GNU toolchain") or the [LLVM toolchain](/index.php/LLVM_toolchain "LLVM toolchain") to develop software in C/C++/Objective-C.
 
 ## Contents
 
@@ -22,7 +22,7 @@ You can use the [GNU toolchain](/index.php/GNU_toolchain "GNU toolchain") or the
 
 	[https://github.com/distcc/distcc](https://github.com/distcc/distcc) || [distcc](https://www.archlinux.org/packages/?name=distcc)
 
-*   **rr** — Lightweight recording and deterministic debugging tool for C/C++, uses GDB.
+*   **rr** — Lightweight recording and deterministic debugging tool for C/C++, uses [GDB](/index.php/GDB "GDB").
 
 	[https://rr-project.org/](https://rr-project.org/) || [rr](https://aur.archlinux.org/packages/rr/)
 

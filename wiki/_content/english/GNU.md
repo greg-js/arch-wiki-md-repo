@@ -54,7 +54,7 @@ Most tools of the [GNU toolchain](https://en.wikipedia.org/wiki/GNU_toolchain "w
 
 	[http://www.gnu.org/software/make](http://www.gnu.org/software/make) || [make](https://www.archlinux.org/packages/?name=make)
 
-*   **[GCC](https://en.wikipedia.org/wiki/GNU_Compiler_Collection "wikipedia:GNU Compiler Collection")** — The GNU Compiler Collection - C and C++ frontends.
+*   **[GCC](/index.php/GCC "GCC")** — The GNU Compiler Collection - C and C++ frontends.
 
 	[https://gcc.gnu.org/](https://gcc.gnu.org/) || [gcc](https://www.archlinux.org/packages/?name=gcc)
 

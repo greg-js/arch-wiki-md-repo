@@ -419,7 +419,7 @@ Install [akonadi](https://www.archlinux.org/packages/?name=akonadi). For additio
 
 ###### PostgreSQL
 
-Install and setup [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"). Make sure `postgresql.service` is [started](/index.php/Started "Started").
+[Install](/index.php/Install "Install") [postgresql](https://www.archlinux.org/packages/?name=postgresql).
 
 Edit Akonadi configuration file so that it has the following contents:
 
@@ -429,19 +429,15 @@ Edit Akonadi configuration file so that it has the following contents:
 Driver=QPSQL
 
 [QPSQL]
-Host=/run/postgresql/
+Host=
 InitDbPath=/usr/bin/initdb
 Name=akonadi
-Options=
-Password=
-Port=5432
 ServerPath=/usr/bin/pg_ctl
 StartServer=true
-User=postgres
 
 ```
 
-**Note:** If your PostgreSQL database username, password, and port differ from `postgres`, (nothing), and `5432`, then make sure you respectively change the configuration options, `User=`, `Password=`, and `Port=`.
+**Note:** The value for `Host=` will get set by Akonadi when it starts for the first time.
 
 Start Akonadi with `akonadictl start`, and check its status: `akonadictl status`.
 

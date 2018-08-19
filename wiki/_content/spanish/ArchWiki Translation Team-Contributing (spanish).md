@@ -20,8 +20,7 @@ El peor enemigo de la calidad en la traducción es que todo el proceso de la tra
         *   [1.5.2 Modificar una página ya existente](#Modificar_una_p.C3.A1gina_ya_existente)
         *   [1.5.3 Consideraciones sobre los enlaces a categorías, enlaces interlenguas y plantillas](#Consideraciones_sobre_los_enlaces_a_categor.C3.ADas.2C_enlaces_interlenguas_y_plantillas)
 *   [2 Mantenimiento](#Mantenimiento)
-    *   [2.1 Criterios de prioridad para traducir los artículos](#Criterios_de_prioridad_para_traducir_los_art.C3.ADculos)
-    *   [2.2 Criterios de actuación](#Criterios_de_actuaci.C3.B3n)
+    *   [2.1 Plantillas](#Plantillas)
 
 ## Colaboración
 
@@ -182,37 +181,10 @@ En todo artículo que traduzca o actualice deberá prestar atención a los sigui
 
 *   En «Indicar el motivo» de la plantilla, podemos poner alguna breve anotación explicativa, como por ejemplo: `{{Translateme|en proceso de actualización}}`.
 
-	**Otras plantillas**
-
-	Para conocer todas las plantillas vea [Help:Template (Español)](/index.php/Help:Template_(Espa%C3%B1ol) "Help:Template (Español)").
-
 ## Mantenimiento
 
 *   El mantenimiento de Archwiki al español consiste en aquel conjunto de actividades destinadas a mantener actualizada una traducción en español respecto de las variaciones que sufra su versión inglesa, y de paso, también, ampliar el número de artículos traducidos.
 *   Cuando un usuario asume el compromiso de decicar parte de su tiempo, de forma más o menos estable, a la traducción de artículos de la wiki de Arch al español, podría considerar la posibilidad de [unirse al equipo](/index.php/ArchWiki_Translation_Team/About_(Espa%C3%B1ol)#Unirse_al_equipo "ArchWiki Translation Team/About (Español)") y adoptar o hacer el seguimiento de una o varias páginas para mantenerlas al día.
-
-### Criterios de prioridad para traducir los artículos
-
-*   A los efecto de organización interna, hemos propuesto unos criterios de preferencia a la hora de elegir traducir unos artículos con relación a otros.
-
-*   Lo ideal sería que todos los artículos de ArchWiki estuvieran traducidos al español, hasta tanto esto sea así, habrá que convenir algunos criterios de prioridad.
-
-*   El criterio fundamental será determinar qué artículos responden a las necesidades de conocimiento sobre Arch Linux más comunmente demandadas y que afectan a la mayoría de los usuarios. En consecuencia, distinguiremos dos categorías: artículos de traducción preferente y artículos de traducción secundaria, como criterio residual, donde se incluirán el resto de artículos no incluidos en la primera categoría.
-
-	PRIORIDAD ALTA [Tabla A]
-
-1.  **«Artículos de Referencia»** para construir el núcleo básico de traducciones:
-    1.  Página Principal de ArchWiki (Español).
-    2.  Guía de Instalación.
-    3.  Guía para Principiantes.
-2.  **«Artículos Vinculados»**: artículos que se encuentras mencionados en los tres anteriores a los que se remiten para ampliar información y que son «enlaces primarios» o «directos» a dichas páginas.
-3.  **«Artículos Importantes»** o «de interés» que no están enlazados directamente con los tres **«Artículos de Referencia»**, pero que se consideren que tratan un tema de interés o importancia para gran parte de los usuarios.
-
-	PRIORIDAD BAJA [Tabla B]
-
-*   Resto de artículos no incluidos en ninguna de las subcategorías anteriores.
-
-### Criterios de actuación
 
 	**Respecto al mantenimiento (ocasional) de Archwiki al español**
 
@@ -223,3 +195,25 @@ En todo artículo que traduzca o actualice deberá prestar atención a los sigui
 	**Respecto al seguimiento o adopción de una o varias traducciones**
 
 *   Si tiene la intención de hacerle el seguimiento a una o varias páginas, introduzca su nombre de usuario en la columna «Mantenedor», al lado de la entrada del título de la página. Podría ser una buena idea poner en seguimiento la versión inglesa, dentro de las opciones de su cuenta de usuario (vaya a la pestaña Preferencias→Seguimiento), para que le mantenga al tanto de las posibles modificaciones que sufra el artículo en ingés.
+
+### Plantillas
+
+La siguiente tabla muestra las [plantillas](/index.php/Help:Template_(Espa%C3%B1ol) "Help:Template (Español)") en versión inglesa y su equivalente en español.
+
+| Plantilla original en inglés | Versión en español |
+| Plantillas relativa a los artículos |
+| [Template:Related articles start](/index.php/Template:Related_articles_start "Template:Related articles start") | [Template:Related articles start (Español)](/index.php/Template:Related_articles_start_(Espa%C3%B1ol) "Template:Related articles start (Español)") |
+| [Template:Yes](/index.php/Template:Yes "Template:Yes") | [Template:Sí](/index.php/Template:S%C3%AD "Template:Sí") |
+| [Template:No](/index.php/Template:No "Template:No") | [Template:No](/index.php/Template:No "Template:No") |
+| [Template:Tip](/index.php/Template:Tip "Template:Tip") | [Template:Sugerencia](/index.php/Template:Sugerencia "Template:Sugerencia") |
+| [Template:Note](/index.php/Template:Note "Template:Note") | [Template:Nota](/index.php/Template:Nota "Template:Nota") |
+| [Template:Warning](/index.php/Template:Warning "Template:Warning") | [Template:Advertencia](/index.php/Template:Advertencia "Template:Advertencia") |
+| [Template:Dead link](/index.php/Template:Dead_link "Template:Dead link") | [Template:Enlace roto](/index.php/Template:Enlace_roto "Template:Enlace roto") |
+| [Template:Broken package link](/index.php/Template:Broken_package_link "Template:Broken package link") | [Template:Enlace de paquete roto](/index.php/Template:Enlace_de_paquete_roto "Template:Enlace de paquete roto") |
+| Plantillas sobre el estado de una traducción |
+| [Template:Bad translation](/index.php/Template:Bad_translation "Template:Bad translation") | [Template:Bad translation (Español)](/index.php/Template:Bad_translation_(Espa%C3%B1ol) "Template:Bad translation (Español)") |
+| [Template:Translateme](/index.php/Template:Translateme "Template:Translateme") | [Template:Translateme (Español)](/index.php/Template:Translateme_(Espa%C3%B1ol) "Template:Translateme (Español)") |
+| [Template:TranslationStatus](/index.php/Template:TranslationStatus "Template:TranslationStatus") | [Template:TranslationStatus (Español)](/index.php/Template:TranslationStatus_(Espa%C3%B1ol) "Template:TranslationStatus (Español)") |
+| Plantillas especiales |
+| [Template:Cat main](/index.php/Template:Cat_main "Template:Cat main") | [Template:Cat main (Español)](/index.php/Template:Cat_main_(Espa%C3%B1ol) "Template:Cat main (Español)") |
+| [Template:Template](/index.php/Template:Template "Template:Template") | [Template:Template (Español)](/index.php/Template:Template_(Espa%C3%B1ol) "Template:Template (Español)") |

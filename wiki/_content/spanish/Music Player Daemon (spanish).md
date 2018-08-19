@@ -274,7 +274,7 @@ This feature has recently been added to mpd git by Martin Kellerman, see commits
 
 This is the best method currently available, but is only currently (as of April 2011) enabled in the git version. Install [mpd-git](https://aur.archlinux.org/packages/mpd-git/) from the [AUR](/index.php/AUR "AUR") and add `restore_paused "yes"` to your `mpd.conf` file.
 
-If you have issues with connecting your client to [mpd-git](https://aur.archlinux.org/packages/mpd-git/), see [Music Player Daemon#Other issues when attempting to connect to mpd with a client](/index.php/Music_Player_Daemon#Other_issues_when_attempting_to_connect_to_mpd_with_a_client "Music Player Daemon").
+If you have issues with connecting your client to [mpd-git](https://aur.archlinux.org/packages/mpd-git/), see [#Other issues when attempting to connect to mpd with a client](#Other_issues_when_attempting_to_connect_to_mpd_with_a_client).
 
 #### Method 1
 

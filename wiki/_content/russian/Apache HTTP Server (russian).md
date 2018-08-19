@@ -11,7 +11,7 @@
 
 Apache часто используется вместе с языком сценариев PHP и СУБД MySQL. Такую комбинацию обычно называют [LAMP](https://en.wikipedia.org/wiki/ru:LAMP "wikipedia:ru:LAMP") (**L**inux, **A**pache, **M**ySQL, **P**HP). Эта статья объясняет, как настроить Apache и как интегрировать с ним [PHP](/index.php/PHP "PHP") и [MySQL](/index.php/MySQL "MySQL").
 
-Если вам нужно быстро создать окружение для разработки и тестирования, то можете просто установить [Xampp](/index.php/Xampp_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xampp (Русский)").
+Если вам нужно быстро создать окружение для разработки и тестирования, то можете просто установить [Xampp](/index.php/XAMPP_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "XAMPP (Русский)").
 
 ## Contents
 

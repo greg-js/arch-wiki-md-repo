@@ -17,7 +17,7 @@ The components required are:
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [emacs](https://www.archlinux.org/packages/?name=emacs), [sbcl](https://www.archlinux.org/packages/?name=sbcl), and [slime-git](https://aur.archlinux.org/packages/slime-git/) packages. Alternatively, slime can be installed with [quicklisp](https://www.quicklisp.org/beta/).
+[Install](/index.php/Install "Install") [Emacs](/index.php/Emacs "Emacs"), and the [sbcl](https://www.archlinux.org/packages/?name=sbcl), and [slime-git](https://aur.archlinux.org/packages/slime-git/) packages. Alternatively, slime can be installed with [quicklisp](https://www.quicklisp.org/beta/).
 
 ## Configuration
 

@@ -70,13 +70,13 @@ Advanced users may wish to install the latest development version of mkinitcpio 
 
 ## Image creation and activation
 
-By default, the mkinitcpio script generates two images after kernel installation or upgrades: a *default* image, and a *fallback* image that skips the *autodetect* hook thus including a full range of mostly-unneeded modules. This is accomplished via the *preset* files which most kernel packages install in `/etc/mkinitcpio.d/` (e.g. `/etc/mkinitcpio.d/linux.preset` for `linux`). A preset is a predefined definition of how to create an initramfs image instead of specifying the configuration file and output file every time. The `-p`/`--preset` switch specifies a *preset* to utilize. For example, `mkinitcpio -p linux` selects the preset provided by the [linux](https://www.archlinux.org/packages/?name=linux) package.
+By default, the mkinitcpio script generates two images after kernel installation or upgrades: a *default* image, and a *fallback* image that skips the *autodetect* hook thus including a full range of mostly-unneeded modules. This is accomplished via the PRESETS directive of the *.preset* files which most kernel packages install in `/etc/mkinitcpio.d/` (e.g. `/etc/mkinitcpio.d/linux.preset` for [linux](https://www.archlinux.org/packages/?name=linux) contain `PRESETS=('default' 'fallback')`). A preset is a predefined definition of how to create an initramfs image instead of specifying the configuration file and output file every time. The `-p`/`--preset` switch specifies a *preset* to utilize. For example, `mkinitcpio -p linux` selects the preset provided by the [linux](https://www.archlinux.org/packages/?name=linux) package.
 
 An additional configuration file is located at `/etc/mkinitcpio.conf` and is used to specify options global to all presets. The `-P`/`--allpresets` switch specifies that all presets should be utilized when regenerating the initramfs after a `mkinitcpio.conf` change.
 
 Users may create any number of initramfs images with a variety of different configurations. The desired image must be specified in the respective [boot loader](/index.php/Boot_loader "Boot loader") configuration file.
 
-**Warning:** *preset* files are used to automatically regenerate the initramfs after a kernel update; be careful when editing them.
+**Warning:** *.preset* files are used to automatically regenerate the initramfs after a kernel update; be careful when editing them.
 
 ### Generate customized manual initcpio
 

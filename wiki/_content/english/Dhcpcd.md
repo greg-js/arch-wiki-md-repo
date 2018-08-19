@@ -350,7 +350,7 @@ See also [FS#49685](https://bugs.archlinux.org/task/49685).
 
 ### dhcpcd does not remove IP address from interface on release
 
-The issue is described in [https://roy.marples.name/archives/dhcpcd-discuss/0002131.html](https://roy.marples.name/archives/dhcpcd-discuss/0002131.html). It will be fixed in dhcpcd version 7.0.6.
+The issue is described in [https://roy.marples.name/archives/dhcpcd-discuss/0002131.html](https://roy.marples.name/archives/dhcpcd-discuss/0002131.html). It is fixed in dhcpcd version 7.0.7, which is the current package version.
 
 ## See also
 

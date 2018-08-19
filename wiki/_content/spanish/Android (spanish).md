@@ -16,10 +16,6 @@ Cuando un dispositivo moderno de Android se conecta a un computador con el cable
 
 Archivos pueden ser transferidos con varios protocolos ([SSH](/index.php/Secure_Shell_(Espa%C3%B1ol) "Secure Shell (Español)"), [FTP](/index.php/Category:File_Transfer_Protocol_(Espa%C3%B1ol) "Category:File Transfer Protocol (Español)"), [Samba](/index.php/Samba_(Espa%C3%B1ol) "Samba (Español)"), HTTP). Solo es necesario establecer un servidor y un cliente, mediante aplicaciones Android puede convertirse en uno de estos.
 
-Para restaurar un sistema o sobrescribir sus sistema actual vea [#Restaurar Android](#Restaurar_Android).
-
-Para conectarse con Android vea [#Software de conexión](#Software_de_conexi.C3.B3n) por las diferentes opciones existentes en Arch Linux.
-
 ## Desarrollo en Android
 
 Para desarrollar aplicaciones en Android necesita tres requisitos:
@@ -34,7 +30,7 @@ La interfaz oficial es [#Android Studio](#Android_Studio), la cual contiene su p
 
 [Android Studio](https://developer.android.com/studio/index.html) es el entorno oficial de desarrollo de Android basado en [IntelliJ Idea](https://www.jetbrains.com/idea/). Contiene herramientas de desarrollo y depuración de Android integradas.
 
-Se puede [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") con el paquete [android-studio](https://aur.archlinux.org/packages/android-studio/). Si obtiene errores sobre SDK faltantes refiérase a [#Android SDK platform API](#Android_SDK_platform_API).
+Se puede [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") con el paquete [android-studio](https://aur.archlinux.org/packages/android-studio/).
 
 **Nota:**
 

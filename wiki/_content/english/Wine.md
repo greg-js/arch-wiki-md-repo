@@ -326,6 +326,8 @@ $ winetricks
 
 CSMT is a technology used by Wine to use a separate thread for the OpenGL calls to improve performance noticeably. Since Wine 3.3, CSMT is enabled by default. However, CSMT support needs to be enabled manually for Wine versions lower than 3.3\. For vanilla Wine run `wine regedit` and set the DWORD value for *HKEY_CURRENT_USER -> Software > Wine > Direct3D > csmt* to 0x01 (enabled). For wine-staging run `winecfg` and enable it in the staging tab.
 
+Note that CSMT may actually hurt performance for some applications - if this is the case, disable it by creating/setting the registry value to 0x00 (disabled).
+
 Further information:
 
 *   [Phoronix Forum discussion](http://www.phoronix.com/forums/showthread.php?93967-Wine-s-Big-Command-Stream-D3D-Patch-Set-Updated/page3&s=7775d7c3d4fa698089d5492bb7b1a435) with the CSMT developer Stefan Dösinger

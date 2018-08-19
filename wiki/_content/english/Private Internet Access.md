@@ -12,6 +12,8 @@
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Internet "kill switch"](#Internet_.22kill_switch.22)
     *   [3.2 Setting PIA DNS](#Setting_PIA_DNS)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 I can't connect to OpenVPN using PIA manager, or OpenVPN doesn't work](#I_can.27t_connect_to_OpenVPN_using_PIA_manager.2C_or_OpenVPN_doesn.27t_work)
 
 ## Manual
 
@@ -114,5 +116,18 @@ Finally make the file immutable so no other application can modify it
 
 ```
 chattr +i /etc/resolv.conf
+
+```
+
+## Troubleshooting
+
+### I can't connect to OpenVPN using PIA manager, or OpenVPN doesn't work
+
+PIA manager still uses OpenVPN under the hood, so even if you don't directly use one of the OpenVPN methods, you still need it. Firstly, check that it's installed. If you used one of the installation scripts, this should be done for you.
+
+If you're getting errors like `#<Errno::ECONNREFUSED: Connection refused - connect(2) for "127.0.0.1" port 31749>`, that probably means TAP/TUN is not currently running. Either your kernel does not have it, in which case install a kernel which does (or compile a fresh one), or it isn't currently running, in which case it needs to be started:
+
+```
+# modprobe tun
 
 ```

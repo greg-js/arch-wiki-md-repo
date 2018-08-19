@@ -8,7 +8,7 @@ Related articles
 
 [Steam](http://store.steampowered.com/about/) is a popular game distribution platform by Valve.
 
-Steam for Linux only supports Ubuntu 12.04 LTS and newer [[1]](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366). Valve does not offer any support when running into issues with Steam on Arch Linux.
+**Note:** Steam for Linux only supports Ubuntu 12.04 LTS and newer.[[1]](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366) Thus do not turn to Valve for support when running into issues with Steam on Arch Linux.
 
 ## Contents
 

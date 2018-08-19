@@ -1090,7 +1090,7 @@ When composing an email message within mutt, `Tab` will now search your Google c
 
 ### Manage multiple sender accounts
 
-If you use multiple sender accounts, you can automatically associate a specific sender account with a recipient. [mutt-vid](https://aur.archlinux.org/packages/mutt-vid/) scans sent emails for the most recent "From" details associated with specific recipients, saving these in a file for mutt to source. The next time you email this recipient, mutt will automatically invoke a send-hook with the same email address and real name that you used previously. See mutt-vid's [homepage](https://github.com/protist/mutt-vid) for more details.
+If you use multiple sender accounts, you can automatically associate a specific sender account with a recipient. [mutt-vid](https://aur.archlinux.org/packages/mutt-vid/) scans sent emails for the most recent "From" details associated with specific recipients, saving these in a file for mutt to source. The next time you email this recipient, mutt will automatically invoke a send-hook with the same email address and real name that you used previously. See mutt-vid's [homepage](https://gitlab.com/protist/mutt-vid) for more details.
 
 ### Request IMAP mail retrieval manually
 

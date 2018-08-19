@@ -1,6 +1,6 @@
 | **Device** | **Status** | **Modules** |
 | Integrated Video | Working | i915 |
-| Video | Not working | amdgpu |
+| Video | Working | amdgpu |
 | Wireless | Working | iwlwifi |
 | Bluetooth | Working | bluetooth |
 | Audio | Mostly Working | snd_hda_intel |
@@ -9,8 +9,8 @@
 | Card Reader | Working | rtsx_pci |
 | Wireless switch | Working | intel-hid |
 | Function/Multimedia Keys | Working | intel-vbtn |
-| Tablet-Mode | Not working | intel-vbtn |
-| Accelerometer | Not working |  ? |
+| Tablet-Mode | Working | intel-vbtn |
+| Accelerometer | Manual binding | intel-ish-ipc |
 
 ## Contents
 
@@ -20,10 +20,8 @@
     *   [1.3 lsusb](#lsusb)
 *   [2 Installation](#Installation)
 *   [3 Issues](#Issues)
-    *   [3.1 Tablet Mode](#Tablet_Mode)
-    *   [3.2 Speaker](#Speaker)
-    *   [3.3 Accelerometer](#Accelerometer)
-    *   [3.4 Discrete Video](#Discrete_Video)
+    *   [3.1 Speaker](#Speaker)
+    *   [3.2 Accelerometer](#Accelerometer)
 
 ## Hardware info
 
@@ -87,62 +85,6 @@ Installing Arch was mostly without hiccup; you do need to disable secure boot (F
 
 ## Issues
 
-### Tablet Mode
-
-The kernel does not receive any ACPI events when trying to switch to tablet mode. Adding the acpi_osi="!Windows*" acpi_osi="Windows 2015" does not make a difference. The following is the relevant section of the DSDT table:
-
-```
-        Device (VBPA)
-        {
-            Name (_HID, "INT33D6" /* Intel Virtual Buttons Device */) // _HID: Hardware ID
-            Method (_STA, 0, NotSerialized)  // _STA: Status
-            {
-                If ((OSYS >= 0x07DD))
-                {
-                    Return (0x0F)
-                }
-                Else
-                {
-                    Return (Zero)
-                }
-            }
-
-            Name (VBST, Zero)
-            Method (VBDL, 0, NotSerialized)
-            {
-                If ((^^PCI0.LPCB.EC0.ECOK == One))
-                {
-                    If ((^^PCI0.LPCB.EC0.CVTS == Zero))
-                    {
-                        VBST = 0x40
-                    }
-                    Else
-                    {
-                        VBST = Zero
-                    }
-                }
-            }
-
-            Method (VGBS, 0, NotSerialized)
-            {
-                If ((^^PCI0.LPCB.EC0.ECOK == One))
-                {
-                    If ((^^PCI0.LPCB.EC0.CVTS == Zero))
-                    {
-                        VBST = 0x40
-                    }
-                    Else
-                    {
-                        VBST = Zero
-                    }
-                }
-
-                Return (VBST) /* \_SB_.VBPA.VBST */
-            }
-        }
-
-```
-
 ### Speaker
 
 Only the front speakers work out of the box right now.
@@ -151,6 +93,26 @@ Only the front speakers work out of the box right now.
 
 The accelerometer is not found by any userspace programs, Running `G_MESSAGES_DEBUG=all /usr/sbin/iio-sensor-proxy ` from [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) gives ` ** (process:12472): DEBUG: 11:45:31.305: Could not find any supported sensors ` 
 
-### Discrete Video
+The accelerometer is connected to a new Intel Integrated Sensor Hub which is not supported by the kernel yet, but can be manually bound to the `intel-ish-ipc` driver.
 
-Support for this will be available with Mesa 18.1, and linux 4.18.
+ `$ lspci -nn` 
+```
+...
+00:13.0 Non-VGA unclassified device [0000]: Intel Corporation Sunrise Point-H Integrated Sensor Hub [8086:a135] (rev 31)
+...
+```
+
+```
+# modprobe intel-ish-ipc
+# echo "8086 a135" > /sys/bus/pci/drivers/intel_ish_ipc/new_id
+
+```
+ `$ monitor-sensor` 
+```
+    Waiting for iio-sensor-proxy to appear
++++ iio-sensor-proxy appeared
+=== Has accelerometer (orientation: undefined)
+=== No ambient light sensor
+    Accelerometer orientation changed: normal
+
+```

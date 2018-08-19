@@ -5,12 +5,11 @@
 *   [1 Installation](#Installation)
 *   [2 D-Bus remote control](#D-Bus_remote_control)
 *   [3 Show/hide roster](#Show.2Fhide_roster)
-*   [4 Auto logout on suspend](#Auto_logout_on_suspend)
-*   [5 Off-the-Record Messaging](#Off-the-Record_Messaging)
-    *   [5.1 Installation / Configuration](#Installation_.2F_Configuration)
-    *   [5.2 gajim-otr version confusions](#gajim-otr_version_confusions)
-*   [6 OMEMO Support](#OMEMO_Support)
-    *   [6.1 Configuration](#Configuration)
+*   [4 Off-the-Record Messaging](#Off-the-Record_Messaging)
+    *   [4.1 Installation / Configuration](#Installation_.2F_Configuration)
+    *   [4.2 gajim-otr version confusions](#gajim-otr_version_confusions)
+*   [5 OMEMO Support](#OMEMO_Support)
+    *   [5.1 Configuration](#Configuration)
 
 ## Installation
 
@@ -30,40 +29,6 @@ $ gajim-remote toggle_roster_appearance
 ```
 
 It may be necessary to restart Gajim if this doesn't work.
-
-## Auto logout on suspend
-
-If you suspend your computer gajim stays connected for about 15 minutes. To prevent message loss, it is needed to set your status offline before suspending or hibernating. The status message won't be changed.
-
-This can be achieved by creating a new systemd unit `gajim-suspend@.service` that uses Gajim's [D-Bus](/index.php/D-Bus "D-Bus") interface:
-
- `/etc/systemd/system/gajim-suspend@.service` 
-```
-[Unit]
-Description=Suspend Gajim
-Before=sleep.target
-StopWhenUnneeded=yes
-
-[Service]
-Type=oneshot
-User=%I
-RemainAfterExit=yes
-Environment=DISPLAY=:0
-ExecStart=-/usr/bin/bash -c ". /home/%I/.dbus/session-bus/$(</var/lib/dbus/machine-id)-0 && /usr/bin/gajim-remote change_status offline"
-ExecStop=/usr/bin/bash -c ". /home/%I/.dbus/session-bus/$(</var/lib/dbus/machine-id)-0 && /usr/bin/gajim-remote change_status online"
-
-[Install]
-WantedBy=sleep.target
-```
-
-The D-Bus remote control feature must be enabled for the systemd unit to work. It can be tested using
-
-```
-$ gajim-remote check_gajim_running
-
-```
-
-In case it returns "False" while Gajim is running, enable DBus Support, restart Gajim, then [enable](/index.php/Enable "Enable") the service.
 
 ## Off-the-Record Messaging
 

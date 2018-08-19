@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [GNU#Toolchain](/index.php/GNU#Toolchain "GNU")
+*   [GNU Compiler Collection](/index.php/GNU_Compiler_Collection "GNU Compiler Collection")

@@ -33,7 +33,7 @@ The [Java](/index.php/Java "Java") implementation of Ruby, [JRuby](https://en.wi
 
 ## RubyGems
 
-RubyGems is a package manager for Ruby modules (called *gems*), somewhat comparable to what [pacman](/index.php/Pacman "Pacman") is to Arch Linux. It can be installed with the [rubygems](https://www.archlinux.org/packages/?name=rubygems) package, which is automatically installed when installing [ruby](https://www.archlinux.org/packages/?name=ruby).
+RubyGems is a package manager for Ruby modules (called *gems*), somewhat comparable to what [pacman](/index.php/Pacman "Pacman") is to Arch Linux. It can be installed with the [rubygems](https://www.archlinux.org/packages/?name=rubygems) package, which is a dependency of [ruby](https://www.archlinux.org/packages/?name=ruby).
 
 ### Setup
 

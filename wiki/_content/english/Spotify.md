@@ -1,12 +1,9 @@
-[Spotify](https://www.spotify.com/) is a digital music service that gives you access to millions of songs. This Internet music service allows you to select any song in its database and stream for free.
-
-Spotify also offers free users the ability to create playlist which can be shuffled, and set to repeat tracks. Content provided by Spotify comes in explicit versions as well as censored.
+[Spotify](https://en.wikipedia.org/wiki/Spotify "wikipedia:Spotify") is a digital music streaming service with a freemium business model. This article is mainly about the semi-official, proprietary **Spotify for Linux** client, which is developed by Spotify's engineers in their spare time and not actively supported by Spotify.[[1]](https://www.spotify.com/us/download/linux/) Alternatively, there is an [online player](https://open.spotify.com/) and a couple of open source [third-party clients](#Third-party_clients).
 
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Official Linux client](#Official_Linux_client)
-    *   [1.2 Third-party clients](#Third-party_clients)
+    *   [1.1 Third-party clients](#Third-party_clients)
 *   [2 Tips & tricks](#Tips_.26_tricks)
     *   [2.1 Limit storage size](#Limit_storage_size)
     *   [2.2 Global media hotkeys](#Global_media_hotkeys)
@@ -44,11 +41,7 @@ Spotify also offers free users the ability to create playlist which can be shuff
 
 ## Installation
 
-Initially, Spotify was unavailable for Linux and the workaround was to run it under [Wine](/index.php/Wine "Wine"). However, [as of 2010](https://news.spotify.com/uk/2010/07/12/linux/), a native Linux client is available. Although it's officially unsupported, the Linux client is actively maintained and the developers have indicated that they will "try to make sure it keeps pace with its Mac and Windows siblings". [[1]](https://www.spotify.com/int/download/linux/) Alternatively, there is also also an [online player](https://open.spotify.com/).
-
-### Official Linux client
-
-[Install](/index.php/Install "Install") it with the [spotify](https://aur.archlinux.org/packages/spotify/) or [spotify-stable](https://aur.archlinux.org/packages/spotify-stable/) package. If you wish to play local files you will need to install [zenity](https://www.archlinux.org/packages/?name=zenity) and [ffmpeg-compat-54](https://aur.archlinux.org/packages/ffmpeg-compat-54/) as well.
+[Spotify for Linux](https://www.spotify.com/us/download/linux/) can be [installed](/index.php/Install "Install") with the [spotify](https://aur.archlinux.org/packages/spotify/) or [spotify-stable](https://aur.archlinux.org/packages/spotify-stable/) package. If you wish to play local files you will need to additionally install [zenity](https://www.archlinux.org/packages/?name=zenity) and [ffmpeg-compat-54](https://aur.archlinux.org/packages/ffmpeg-compat-54/).
 
 ### Third-party clients
 
@@ -334,7 +327,7 @@ GLib.MainLoop().run()
 
 ### Mute commercials
 
-**Warning:** Muting commercials is of course not supported by Spotfiy and may result in a temporary ban [[2]](https://www.theverge.com/2018/3/5/17080920/spotify-cracking-down-pirating-premium-free-account)
+**Warning:** Muting commercials is not supported by Spotfiy and may result in a temporary ban [[2]](https://www.theverge.com/2018/3/5/17080920/spotify-cracking-down-pirating-premium-free-account)
 
 #### blockify
 
@@ -657,4 +650,4 @@ When using Wayland, clicking on the 'Settings' button does nothing. Using the ke
 
 *   [playerctl](https://github.com/acrisci/playerctl) — A command-line utility and library for controlling media players
 *   [SpotCommander](/index.php/SpotCommander "SpotCommander") — A web based remote control for Spotify
-*   [Spotify for Linux](http://www.spotify.com/int/download/previews/) — Spotify's homepage for the Linux client
+*   [Spotify for Linux](https://www.spotify.com/int/download/linux/) — Spotify's homepage for the Linux client

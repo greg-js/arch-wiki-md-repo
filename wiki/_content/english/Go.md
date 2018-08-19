@@ -111,7 +111,7 @@ If you are using a Jetbrains IDE and the Go plugin cannot find your Go SDK path,
 
 ## See also
 
-*   [Official web-site of Go Programming Language](http://golang.org/)
+*   [Official website](http://golang.org/)
 *   [Wikipedia article](https://en.wikipedia.org/wiki/Go_(programming_language) "wikipedia:Go (programming language)")
 *   [Examples with small descriptions](https://gobyexample.com/)
 *   [Interactive Go training tour](http://tour.golang.org)

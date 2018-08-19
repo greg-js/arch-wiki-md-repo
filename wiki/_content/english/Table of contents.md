@@ -48,7 +48,7 @@
 | <small>2.12.4.</small> [Music](/index.php/Category:Music "Category:Music") <small>(26)</small> |
 | <small>2.12.5.</small> [Raster graphics](/index.php/Category:Raster_graphics "Category:Raster graphics") <small>(9)</small> |
 | <small>2.12.6.</small> [Sound](/index.php/Category:Sound "Category:Sound") <small>(17) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
-| <small>2.12.7.</small> [Television](/index.php/Category:Television "Category:Television") <small>(4)</small> |
+| <small>2.12.7.</small> [Television](/index.php/Category:Television "Category:Television") <small>(3)</small> |
 | <small>2.12.7.1.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
 | <small>2.13.</small> [Office](/index.php/Category:Office "Category:Office") <small>(21)</small> |
 | <small>2.13.1.</small> [TeX](/index.php/Category:TeX "Category:TeX") <small>(3)</small> |
@@ -61,7 +61,7 @@
 | <small>2.17.3.</small> [Web admin interfaces](/index.php/Category:Web_admin_interfaces "Category:Web admin interfaces") <small>(5)</small> |
 | <small>2.17.4.</small> [Web frameworks](/index.php/Category:Web_frameworks "Category:Web frameworks") <small>(2) (also in [Frameworks](/index.php/Category:Frameworks "Category:Frameworks"))</small> |
 | <small>2.17.5.</small> [Wiki software](/index.php/Category:Wiki_software "Category:Wiki software") <small>(6)</small> |
-| <small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(37)</small> |
+| <small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(38)</small> |
 | <small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(18) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
 | <small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(48)</small> |
 | <small>3.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |

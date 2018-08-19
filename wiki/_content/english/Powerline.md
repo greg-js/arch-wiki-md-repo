@@ -63,7 +63,7 @@ After installing the package, you may need to add `let g:powerline_pycmd="py3"` 
 
 **Tip:** By default, the statusline (and therefore Powerline) only appears when there are multiple windows open. To show it all the time, use `:set laststatus=2`
 
-**Tip:** This package installs Powerline to `/usr/share/vim/vimfiles/plugin`, which vim is configured to check by default, meaning this will install Powerline in vim for all users and may require additional configuration. If this is not intended, consider either using a vim plugin manager, or installing the [powerline](https://www.archlinux.org/packages/?name=powerline) package and adding `set rtp+=/usr/lib/python3.6/site-packages/powerline/bindings/vim` to your vimrc.
+**Tip:** This package installs Powerline to `/usr/share/vim/vimfiles/plugin`, which vim is configured to check by default, meaning this will install Powerline in vim for all users and may require additional configuration. If this is not intended, consider either using a vim plugin manager, or installing the [powerline](https://www.archlinux.org/packages/?name=powerline) package and adding `set rtp+=/usr/lib/python3.7/site-packages/powerline/bindings/vim` to your vimrc.
 
 ## Usage
 
@@ -87,7 +87,7 @@ After installing [powerline](https://www.archlinux.org/packages/?name=powerline)
 
 ```
 powerline-daemon -q
-. /usr/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 ```
 

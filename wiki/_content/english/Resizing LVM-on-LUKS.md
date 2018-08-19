@@ -4,19 +4,20 @@ This article follows the process of resizing and shrinking an LVM-on-LUKS-on-GPT
 
 *   [1 Method](#Method)
 *   [2 Process](#Process)
-    *   [2.1 Boot and setup](#Boot_and_setup)
-    *   [2.2 Resize filesystem](#Resize_filesystem)
-    *   [2.3 Resize LVM logical volume](#Resize_LVM_logical_volume)
-    *   [2.4 Resize LVM physical Volume](#Resize_LVM_physical_Volume)
-    *   [2.5 Resize LUKS volume](#Resize_LUKS_volume)
-    *   [2.6 Resize the partition](#Resize_the_partition)
-    *   [2.7 Create a new partition](#Create_a_new_partition)
-    *   [2.8 Recover the logical volume buffer](#Recover_the_logical_volume_buffer)
-*   [3 Enlarge LVM on LUKS](#Enlarge_LVM_on_LUKS)
-    *   [3.1 Preparation](#Preparation)
-    *   [3.2 Extending the physical segments of the cryptdevice](#Extending_the_physical_segments_of_the_cryptdevice)
-    *   [3.3 Resizing the logical volume](#Resizing_the_logical_volume)
-    *   [3.4 Resizing the encrypted volume](#Resizing_the_encrypted_volume)
+*   [3 Shrink LVM-on-LUKS](#Shrink_LVM-on-LUKS)
+    *   [3.1 Boot and setup](#Boot_and_setup)
+    *   [3.2 Resize filesystem](#Resize_filesystem)
+    *   [3.3 Resize LVM logical volume](#Resize_LVM_logical_volume)
+    *   [3.4 Resize LVM physical Volume](#Resize_LVM_physical_Volume)
+    *   [3.5 Resize LUKS volume](#Resize_LUKS_volume)
+    *   [3.6 Resize the partition](#Resize_the_partition)
+    *   [3.7 Create a new partition](#Create_a_new_partition)
+    *   [3.8 Recover the logical volume buffer](#Recover_the_logical_volume_buffer)
+*   [4 Enlarge LVM on LUKS](#Enlarge_LVM_on_LUKS)
+    *   [4.1 Preparation](#Preparation)
+    *   [4.2 Extending the physical segments of the cryptdevice](#Extending_the_physical_segments_of_the_cryptdevice)
+    *   [4.3 Resizing the logical volume](#Resizing_the_logical_volume)
+    *   [4.4 Resizing the encrypted volume](#Resizing_the_encrypted_volume)
 
 ## Method
 
@@ -45,6 +46,8 @@ The entire process should run from a live USB Arch system to avoid any filesyste
 **Warning:** **Do not** run any of this code by copy-pasting, you need to adapt all these commands to your specific setup.
 
 **Note:** It is highly recommended to write out the exact transition plan so that at each step you know exactly which partition size you're going to need.
+
+## Shrink LVM-on-LUKS
 
 ### Boot and setup
 

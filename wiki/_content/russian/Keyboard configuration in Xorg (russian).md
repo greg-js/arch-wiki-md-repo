@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg"). Дата последней синхронизации: 3 июля 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_Xorg&diff=0&oldid=528667).
+**Состояние перевода:** На этой странице представлен перевод статьи [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg"). Дата последней синхронизации: 13 августа 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_Xorg&diff=0&oldid=534644).
 
 Ссылки по теме
 
@@ -30,13 +30,18 @@
     *   [3.5 Настройка клавиши Compose](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8_Compose)
         *   [3.5.1 Сочетания клавиш](#.D0.A1.D0.BE.D1.87.D0.B5.D1.82.D0.B0.D0.BD.D0.B8.D1.8F_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88)
     *   [3.6 Значки валют на других кнопках](#.D0.97.D0.BD.D0.B0.D1.87.D0.BA.D0.B8_.D0.B2.D0.B0.D0.BB.D1.8E.D1.82_.D0.BD.D0.B0_.D0.B4.D1.80.D1.83.D0.B3.D0.B8.D1.85_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BA.D0.B0.D1.85)
-    *   [3.7 Переключение состояния сразу после нажатия клавиши Caps Lock](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.BE.D1.81.D1.82.D0.BE.D1.8F.D0.BD.D0.B8.D1.8F_.D1.81.D1.80.D0.B0.D0.B7.D1.83_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.BD.D0.B0.D0.B6.D0.B0.D1.82.D0.B8.D1.8F_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8_Caps_Lock)
+    *   [3.7 Переключение состояния клавиши Caps Lock сразу после нажатия](#.D0.9F.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.81.D0.BE.D1.81.D1.82.D0.BE.D1.8F.D0.BD.D0.B8.D1.8F_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8_Caps_Lock_.D1.81.D1.80.D0.B0.D0.B7.D1.83_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.BD.D0.B0.D0.B6.D0.B0.D1.82.D0.B8.D1.8F)
         *   [3.7.1 Временное решение](#.D0.92.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D0.BE.D0.B5_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5)
-*   [4 Adjusting typematic delay and rate](#Adjusting_typematic_delay_and_rate)
-    *   [4.1 Using xset](#Using_xset)
-    *   [4.2 Using XServer startup options](#Using_XServer_startup_options)
-    *   [4.3 Using XServer options](#Using_XServer_options)
-*   [5 See also](#See_also)
+*   [4 Регулировка задержки и скорости автоповтора](#.D0.A0.D0.B5.D0.B3.D1.83.D0.BB.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B7.D0.B0.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B8_.D0.B8_.D1.81.D0.BA.D0.BE.D1.80.D0.BE.D1.81.D1.82.D0.B8_.D0.B0.D0.B2.D1.82.D0.BE.D0.BF.D0.BE.D0.B2.D1.82.D0.BE.D1.80.D0.B0)
+    *   [4.1 Через xset](#.D0.A7.D0.B5.D1.80.D0.B5.D0.B7_xset)
+    *   [4.2 Через параметры запуска XServer](#.D0.A7.D0.B5.D1.80.D0.B5.D0.B7_.D0.BF.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0_XServer)
+    *   [4.3 Через параметры XServer](#.D0.A7.D0.B5.D1.80.D0.B5.D0.B7_.D0.BF.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B_XServer)
+*   [5 Горячие клавиши (Keybinding)](#.D0.93.D0.BE.D1.80.D1.8F.D1.87.D0.B8.D0.B5_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8_.28Keybinding.29)
+    *   [5.1 Сторонние инструменты](#.D0.A1.D1.82.D0.BE.D1.80.D0.BE.D0.BD.D0.BD.D0.B8.D0.B5_.D0.B8.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B)
+        *   [5.1.1 sxhkd](#sxhkd)
+        *   [5.1.2 actkbd](#actkbd)
+        *   [5.1.3 xbindkeys](#xbindkeys)
+*   [6 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Просмотр настроек клавиатуры
 
@@ -219,7 +224,7 @@ $ grep "compose:" /usr/share/X11/xkb/rules/base.lst
 
 Однако GTK не использует [XIM](https://en.wikipedia.org/wiki/X_Input_Method "wikipedia:X Input Method") по умолчанию и поэтому не следует за клавишами `~/.XCompose`. Это можно устранить, заставив GTK использовать XIM, добавлением `export GTK_IM_MODULE=xim` и/или `export XMODIFIERS="@im=none"` в `~/.xprofile`.
 
-**Совет:** XIM очень старый, вам может повезти с другими методами ввода: [SCIM](/index.php/SCIM "SCIM"), [UIM](/index.php/UIM "UIM"), [IBus](/index.php/IBus "IBus") и т.д. Для получения дополнительной информации смотрите [Internationalization#Input methods in Xorg](/index.php/Internationalization#Input_methods_in_Xorg "Internationalization").
+**Совет:** XIM очень старый, вам может повезти с другими методами ввода: [SCIM](/index.php/SCIM "SCIM"), [UIM](/index.php/UIM "UIM"), [IBus](/index.php/IBus "IBus") и т.д. Для получения дополнительной информации смотрите [Localization#Input methods](/index.php/Localization#Input_methods "Localization").
 
 **Примечание:** XIM предотвратит вставку символов Unicode с комбинацией `Ctrl+Shift+u`.
 
@@ -229,29 +234,29 @@ $ grep "compose:" /usr/share/X11/xkb/rules/base.lst
 
 Знак рупии (₹) можно использовать также с `rupeesign:4`.
 
-### Переключение состояния сразу после нажатия клавиши Caps Lock
+### Переключение состояния клавиши Caps Lock сразу после нажатия
 
-Those who prefer typing capital letters with the Caps Lock key may experience a short delay when Caps Lock state is switched, resulting in two or more capital letters (e.g. *THe*, *ARch LInux*). This behaviour [stems from typewriters](https://en.wikipedia.org/wiki/Caps_lock#History "wikipedia:Caps lock").
+Те, кто предпочитает вводить заглавные буквы с помощью клавиши Caps Lock, могут испытывать небольшую задержку при переключении состояния Caps Lock, что приводит к двум или более заглавными буквами (например, *THe*, *ARch LInux*). Это поведение [происходит от печатных машин](https://en.wikipedia.org/wiki/ru:Caps_Lock#.D0.98.D1.81.D1.82.D0.BE.D1.80.D0.B8.D1.8F "wikipedia:ru:Caps Lock").
 
-Some more popular operating systems have removed this behaviour, either voluntarily (as it can be confusing to some) or by mistake, however this is a question of preference. Bug reports have been filed on the Xserver bug tracker, as there is currently no easy way to switch to the behaviour reflected by those other operating systems. For anyone who would like to follow up the issue, bug reports and latest working progress can be found at [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=27903) and [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=56491).
+Некоторые более популярные операционные системы удалили это поведение, либо добровольно (это может сбить с толку некоторых), либо по ошибке, однако это вопрос предпочтения. Отчеты об ошибках были отправлены на баг-трекер X-сервера, поскольку в настоящее время нет простого способа переключиться на поведение, представленное другими операционными системами. Для тех, кто хотел бы следить за этой проблемой, отчеты об ошибках и последний рабочий прогресс можно найти по адресу [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=27903) и [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=56491).
 
 #### Временное решение
 
-First, export your keyboard configurations to a file:
+Сначала, экспортируйте настройки клавиатуры в файл:
 
 ```
 $ xkbcomp -xkb $DISPLAY xkbmap
 
 ```
 
-In the file *xkbmap*, locate the Caps Lock section which begins with *key <CAPS>*:
+В файле *xkbmap* найдите раздел Caps Lock, который начинается с *key <CAPS>*:
 
 ```
  key <CAPS> {         [       Caps_Lock ] };
 
 ```
 
-and replace whole section with the following code:
+и замените весь раздел следующим кодом:
 
 ```
 key <CAPS> {
@@ -263,62 +268,90 @@ key <CAPS> {
 
 ```
 
-Save and reload keyboard configurations:
+Сохраните и перезагрузите настройки клавиатуры:
 
 ```
 $ xkbcomp -w 0 xkbmap $DISPLAY
 
 ```
 
-Consider making it a service launching after X starts, since reloaded configurations do not survive a system reboot.
+Подумайте о том, чтобы запустить службу после запуска X, поскольку эти настройки не выдерживают перезагрузки системы.
 
-## Adjusting typematic delay and rate
+## Регулировка задержки и скорости автоповтора
 
-The *typematic delay* indicates the amount of time (typically in miliseconds) a key needs to be pressed and held in order for the repeating process to begin. After the repeating process has been triggered, the character will be repeated with a certain frequency (usually given in Hz) specified by the *typematic rate*. Note that these settings are configured seperately for Xorg and [for the virtual console](/index.php/Keyboard_configuration_in_console#Adjusting_typematic_delay_and_rate "Keyboard configuration in console").
+*Задержка автоповтора* означает количество времени (обычно в милисекундах), за которое необходимо нажать и удерживать клавишу для начала повторного процесса. После запуска повторяющегося процесса символ будет повторяться с определенной частотой (обычно заданной в Гц), указанной *скоростью автоповтора*. Обратите внимание, что эти настройки настраиваются отдельно для Xorg и [для виртуальной консоли](/index.php/%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D0%B0%D1%82%D1%83%D1%80%D1%8B_%D0%B2_%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8#.D0.A0.D0.B5.D0.B3.D1.83.D0.BB.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B7.D0.B0.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B8_.D0.B8_.D1.81.D0.BA.D0.BE.D1.80.D0.BE.D1.81.D1.82.D0.B8_.D0.B0.D0.B2.D1.82.D0.BE.D0.BF.D0.BE.D0.B2.D1.82.D0.BE.D1.80.D0.B0 "Конфигурация клавиатуры в консоли").
 
-### Using xset
+### Через xset
 
-The tool *xset* can be used to set the typematic delay and rate for an active X server, certain actions during runtime tho may cause the XServer to reset these changes and revert instead to its *seat defaults*.
+Инструмент *xset* может быть использован для настройки скорости и задержки автоповтора для активного X-сервера, но определенные действия во время его работы могут привести к тому, что он сбросит эти изменения и вернется к настройкам *по умолчанию*.
 
-Usage:
-
-```
-$ xset r rate *delay* [*rate*]
+Использование:
 
 ```
+$ xset r rate *задержка* [*скорость*]
 
-For example to set a typematic delay to 200ms and a typematic rate to 30Hz, use the following command (use [xinitrc](/index.php/Xinitrc "Xinitrc") to make it permanent):
+```
+
+Например, чтобы установить задержку автоповтора в 200 мс и скорость автоповтора в 30 Гц, используйте следующую команду (используйте [xinitrc](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)"), чтобы сделать эти настройки постоянными):
 
 ```
 $ xset r rate 200 30
 
 ```
 
-Issuing the command without specifying the delay and rate will reset the typematic values to their respective defaults; a delay of 660ms and a rate of 25Hz:
+Ввод команды без указания задержки и скорости автоповтора приведет к сбросу значений до их соответствующих значений по умолчанию; задержка 660 мс и скорость 25 Гц:
 
 ```
 $ xset r rate
 
 ```
 
-### Using XServer startup options
+### Через параметры запуска XServer
 
-A more resistant way to set the typematic delay and rate is to make them the *seat defaults* by passing the desired settings to the X server on its startup using the following options:
+Более проверенный способ установить задержку и скорость автоповтора - сделать их настройками *по умолчанию*, передав нужные настройки X-серверу при его запуске, используя следующие параметры:
 
-*   `-ardelay *miliseconds*` - sets the autorepeat delay (length of time in milliseconds that a key must be depressed before autorepeat starts).
-*   `-arinterval *miliseconds*` - sets the autorepeat interval (length of time in milliseconds that should elapse between autorepeat-generated keystrokes).
+*   `-ardelay *милисекунды*` - устанавливает задержку автоповтора (длительность в миллисекундах удержания клавиши нажатой до начала автоповтора).
+*   `-arinterval *милисекунды*` - устанавливает интервал автоповтора (длительность в миллисекундах, которая должна пройти между нажатиями, генерируемыми автоповтором).
 
-See [Xserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xserver.1) for a full list of X server options and refer to your [display manager](/index.php/Display_manager "Display manager") for information about how to pass these options.
+Для получения полного списка параметров X-сервера смотрите [Xserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xserver.1) и обратитесь к своему [экранному менеджеру](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер") для получения информации о том, как передать эти параметры.
 
-### Using XServer options
+### Через параметры XServer
 
-Add this line to `/etc/X11/xorg.conf.d/00-keyboard.conf`:
-
-```
-Option "AutoRepeat" "*delay* *rate*"
+Добавьте эту сроку в `/etc/X11/xorg.conf.d/00-keyboard.conf`:
 
 ```
+Option "AutoRepeat" "*задержка* *скорость*"
 
-## See also
+```
 
-*   [Madduck guide](http://madduck.net/docs/extending-xkb/) on extending XKB
+## Горячие клавиши (Keybinding)
+
+Когда мы находимся в графическом окружение, мы можем захотеть выполнить команду при нажатии определенной комбинации клавиш (то есть привязать команду к *keysym*). Существует несколько способов сделать это:
+
+*   Самый портативный способ. Использование инструментов низкого уровня, таких как [acpid](/index.php/Acpid_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Acpid (Русский)"). Не все клавиши поддерживаются, но конфигурация в унифицированном виде возможна для клавиш клавиатуры, подключения адаптера питания и даже для подключения наушников (un). Также трудно запускать программы внутри X сеанса правильно. Not all keys are supported, but configuration in uniform way is possible for keyboard keys, power adapter connection and even headphone jack (un)plugging events. It is also difficult to run programs inside X session correctly.
+*   Универсальный способ. Использование утилит [Xorg](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)") (например, [xbindkeys](/index.php/Xbindkeys_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xbindkeys (Русский)")) и, в конечном итоге, инструментов вашего окружения рабочего стола или оконного менеджера.
+*   Более быстрый способ. Использование сторонних программ, где все можно сделать в GUI, таких как Gnome Control Center.
+
+### Сторонние инструменты
+
+#### sxhkd
+
+Простой демон X hotkey с мощным и компактным синтаксисом конфигурации. Для получения дополнительной информации смотрите [sxhkd](/index.php/Sxhkd "Sxhkd").
+
+#### actkbd
+
+С [домашней страницы actkbd](http://users.softlab.ece.ntua.gr/~thkala/projects/actkbd/):
+
+	[actkbd](https://aur.archlinux.org/packages/actkbd/) (доступно в [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)")) - простой демон, который связывает действия с событиями клавиатуры. It recognises key combinations and can handle press, repeat and release events. В настоящее время он поддерживает только интерфейс linux-2.6 evdev. Он использует текстовый файл конфигурации, который содержит все привязки.
+
+Образец конфигурации и руководство по настройке можно найти [здесь](http://users.softlab.ece.ntua.gr/~thkala/projects/actkbd/latest/README).
+
+#### xbindkeys
+
+[xbindkeys](/index.php/Xbindkeys_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xbindkeys (Русский)") позволяет расширенное сопоставление клавиш с действиями независимо от окружения рабочего стола.
+
+**Совет:** Если вы находите `xbindkeys` сложным в использование, попробуйте графический менеджер [xbindkeys_config-gtk2](https://aur.archlinux.org/packages/xbindkeys_config-gtk2/) из [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)").
+
+## Смотрите также
+
+*   [Руководство Madduck по расширению XKB](http://madduck.net/docs/extending-xkb/)
