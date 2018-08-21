@@ -245,7 +245,7 @@ Read the [#Key management technical implementation](#Key_management_technical_im
 
 Previous to the industry's TCG OPAL 2.0 standard initiative, the relevant [ATA](https://en.wikipedia.org/wiki/Parallel_ATA#ATA_standards_versions.2C_transfer_rates.2C_and_features "w:Parallel ATA") standard defined an "ATA Security feature Set" for SED FDE. This relies on the PC (not SSD/HDD) BIOS to feature an unlocking mechanism utilizing the BIOS to setup the user's encryption password/passphrase. This legacy BIOS-based (ATA) method was considered more unreliable to setup and prone to error with regard to interoperability between PC vendors.[[4]](http://www.t13.org/documents/UploadedDocuments/docs2006/e05179r4-ACS-SecurityClarifications.pdf) Typical errors include, for example, inabilities to unlock a device once it is plugged into a system from a different hardware vendor. Hence, the availability of BIOS support for the legacy password mechanism decreases in availability, particularly for consumer hardware.
 
-See [Solid State Drive#Security](/index.php/Solid_State_Drive#Security "Solid State Drive") for more information.
+See [Solid state drive#Security](/index.php/Solid_state_drive#Security "Solid state drive") for more information.
 
 ## See also
 

@@ -1904,6 +1904,20 @@ Arch es la raja
 
 ```
 
+	Spanish (Guatemala)
+
+```
+¡Arch está bien chilero!
+
+```
+
+	Spanish (Guatemala, alternative)
+
+```
+¡Arch es la mera tos!
+
+```
+
 	Spanish (Uruguay)
 
 ```

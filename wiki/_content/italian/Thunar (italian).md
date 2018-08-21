@@ -1,3 +1,8 @@
+Articoli correlati
+
+*   [Xfce](/index.php/Xfce "Xfce")
+*   [GNOME Files](/index.php/GNOME_Files "GNOME Files")
+
 [Thunar](http://thunar.xfce.org/index.html) è un file manager che ha l'obiettivo di essere veloce, leggero e facile da usare. È parte integrante del desktop [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/), ma è possibile usarlo anche in maniera indipendente. Ciò lo rende molto attraente per utenti di vari window manager autonomi, come [Openbox](/index.php/Openbox_(Italiano) "Openbox (Italiano)"), [Awesome](/index.php/Awesome3_(Italiano) "Awesome3 (Italiano)") e anche [Compiz](/index.php/Compiz_(Italiano) "Compiz (Italiano)") se usato in maniera *standalone*.
 
 ## Contents

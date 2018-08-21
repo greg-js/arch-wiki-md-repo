@@ -15,6 +15,7 @@ Related articles
     *   [3.2 Systemd service](#Systemd_service)
     *   [3.3 Systemd timer](#Systemd_timer)
     *   [3.4 Reflector-timer package](#Reflector-timer_package)
+    *   [3.5 Cron task](#Cron_task)
 
 ## Installation
 
@@ -144,3 +145,19 @@ PROTOCOL4='-p rsync'
 ```
 
 Be sure to [enable](/index.php/Enable "Enable") `reflector.timer`.
+
+### Cron task
+
+To update the mirrorlist daily, consider the following:
+
+ `/etc/cron.daily/mirrorlist` 
+```
+#!/bin/bash
+
+# Get the country thing
+/usr/bin/reflector -c "India" -p http --sort rate > /etc/pacman.d/mirrorlist
+
+# Work through the alternatives
+/usr/bin/reflector -p http  --latest 20 -p https -p ftp --sort rate >> /etc/pac
+man.d/mirrorlist
+```

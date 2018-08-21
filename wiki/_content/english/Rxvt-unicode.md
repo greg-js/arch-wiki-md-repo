@@ -176,7 +176,7 @@ It is possible to access the `CLIPBOARD` selection with the bindings `ALT-CTRL-c
 
 **Note:** Selected text is automatically copied to `PRIMARY` selection. The `selection-to-clipboard` [perl extension](#Perl_extensions), available since [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode) 9.20, copies to `CLIPBOARD` selection as well.
 
-See also [Clipboard#List of clipboard managers](/index.php/Clipboard#List_of_clipboard_managers "Clipboard").
+See also [Clipboard#Managers](/index.php/Clipboard#Managers "Clipboard").
 
 ## Perl extensions
 

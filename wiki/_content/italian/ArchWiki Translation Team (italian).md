@@ -360,7 +360,7 @@ Le colonne contengono un link *rapido* di consultazione che effettua un ordiname
 | [Window manager (Italiano)](/index.php/Window_manager_(Italiano) "Window manager (Italiano)") | 2012-02-02 | n/a | n/a | n/a |
 | [Wine (Italiano)](/index.php/Wine_(Italiano) "Wine (Italiano)") | n/a | Cyberpunk | n/a | out of date --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:51, 24 September 2012 (UTC) |
 | [X11 Cursors (Italiano)](/index.php/X11_Cursors_(Italiano) "X11 Cursors (Italiano)") | 2011-10-11 | n/a | n/a | n/a |
-| [Xampp (Italiano)](/index.php/Xampp_(Italiano) "Xampp (Italiano)") | n/a | n/a | n/a | out of date --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:51, 24 September 2012 (UTC) |
+| [XAMPP (Italiano)](/index.php/XAMPP_(Italiano) "XAMPP (Italiano)") | n/a | n/a | n/a | out of date --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:51, 24 September 2012 (UTC) |
 | [xf86-video-sis (Italiano)](/index.php/Xf86-video-sis_(Italiano) "Xf86-video-sis (Italiano)") | 2012-10-06 | n/a | n/a | n/a |
 | [XFS (Italiano)](/index.php/XFS_(Italiano) "XFS (Italiano)") | n/a | n/a | n/a | out of date; versione inglese segnata come "stub" --[Umby213](/index.php/User:Umby213 "User:Umby213") ([talk](/index.php/User_talk:Umby213 "User talk:Umby213")) 17:51, 24 September 2012 (UTC) |
 | [XScreenSaver (Italiano)](/index.php/XScreenSaver_(Italiano) "XScreenSaver (Italiano)") | 2012-12-16 | umby213 | n/a | n/a |

@@ -456,7 +456,7 @@ Where using a static menu, it will then be necessary to edit the `~/.config/open
 
 *   Replace an existing panel menu
 *   Implement a panel menu where otherwise not provided or possible (e.g. for [Tint2](/index.php/Tint2 "Tint2"))
-*   Compensate where losing access to the desktop menu due to the use of an application like [xfdesktop](#xfdesktop) to [manage the desktop](#Desktop_icons_and_wallpapers).
+*   Compensate where losing access to the desktop menu due to the use of an application like [xfdesktop](https://www.archlinux.org/packages/?name=xfdesktop) to manage the [desktop](#Desktop_icons_and_wallpapers).
 
 Once XDoTool has been installed - if not already present - it will be necessary to create a keybind to access the root menu in `~/.config/openbox/rc.xml`, and again below the `<!-- Keybindings for running aplications -->` heading. For example, the following code will bring up the menu by pressing `CTRL` + `m`:
 
@@ -469,7 +469,7 @@ Once XDoTool has been installed - if not already present - it will be necessary 
 
 ```
 
-Openbox must then be [re-configured](#Openbox_reconfiguration). In this instance, XDoTool will be used to simulate the `CTRL` + `m` keypress to access the desktop menu with the following command (note the use of `+` in place of `-`):
+Openbox must then be [reconfigured](#Openbox_reconfiguration). In this instance, XDoTool will be used to simulate the `CTRL` + `m` keypress to access the desktop menu with the following command (note the use of `+` in place of `-`):
 
 ```
 xdotool key control+m

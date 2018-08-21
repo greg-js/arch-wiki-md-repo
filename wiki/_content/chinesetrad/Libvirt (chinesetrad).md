@@ -1,3 +1,9 @@
+Related articles
+
+*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
+*   [QEMU](/index.php/QEMU "QEMU")
+*   [KVM](/index.php/KVM "KVM")
+
 **翻譯狀態：** 本文章是 [Libvirt](/index.php/Libvirt "Libvirt") 的翻譯版本。最近一次的翻譯時間：2016-03-10。點擊[本連結](https://wiki.archlinux.org/index.php?title=Libvirt&diff=0&oldid=413990)查看英文頁面之後的變更。
 
 Libvirt 是一組軟體的匯集，提供了管理虛擬機器和其它虛擬化功能（如：儲存和虛擬網路等）的便利途徑。這些軟體主要包括：一個長期稳定的 API、一個守護程序（libvirtd）、一些命令列工具（如virsh、virt-install等）和一些GUI工具（如virt-manager等）。Libvirt 的主要目標是提供一個單一途徑以管理多種不同虛擬化方案以及虛擬化主機，包括：[KVM/QEMU](/index.php/QEMU "QEMU")，[Xen](/index.php/Xen "Xen")，[LXC](/index.php/LXC "LXC")，[OpenVZ](http://openvz.org) 或 [VirtualBox](/index.php/VirtualBox "VirtualBox") [hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") （[詳見這裡](http://libvirt.org/drivers.html)）。

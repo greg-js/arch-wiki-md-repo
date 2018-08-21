@@ -61,11 +61,11 @@
 | [Frequently asked questions (Español)](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)") | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
 | [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)") | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
 | [Getting involved (Español)](/index.php/Getting_involved_(Espa%C3%B1ol) "Getting involved (Español)") | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
-| [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") | `2015-06` | Actualización en curso... por [Pedro](/index.php/User:Pedro "User:Pedro") —> 2018-08-17
+| [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") | `2015-06` | Actualización terminada... por [Pedro](/index.php/User:Pedro "User:Pedro") —> 2018-08-21<small>
 
-40%
+Revisando antes de subir 100%
 
-<small>Nota: subiré la actualización cuando la termine (no por partes)</small> |
+</small> |
 | [GRUB/Tips and tricks (Español)](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol) "GRUB/Tips and tricks (Español)") | `2018-06` | [Phenom](/index.php?title=User:Phenom&action=edit&redlink=1 "User:Phenom (page does not exist)") |
 | [GUID Partition Table (Español)](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)") | `2013-09` |
 | [Help:Category (Español)](/index.php/Help:Category_(Espa%C3%B1ol) "Help:Category (Español)") | `2014-04` |
@@ -169,7 +169,7 @@ No tiene versión inglesa correlativa. |
 No obstante, hay un artículo en español, [Arch Linux press coverage (Español)](/index.php/Arch_Linux_press_coverage_(Espa%C3%B1ol) "Arch Linux press coverage (Español)"),
 creado en un intento de recopilar información sobre Arch Linux en prensa hispana. |
 | [Arch packaging standards (Español)](/index.php/Arch_packaging_standards_(Espa%C3%B1ol) "Arch packaging standards (Español)") | Gestión de paquetes | `2013-03` |
-| [Arch Terminology (Español)](/index.php/Arch_Terminology_(Espa%C3%B1ol) "Arch Terminology (Español)") | Información/Arch | `2011-03` | Solo parcialmente traducido |
+| [Arch terminology (Español)](/index.php/Arch_terminology_(Espa%C3%B1ol) "Arch terminology (Español)") | Información/Arch | `2011-03` | Solo parcialmente traducido |
 | [Arch64 FAQ (Español)](/index.php/Arch64_FAQ_(Espa%C3%B1ol) "Arch64 FAQ (Español)") | Información/Arch | `2010-08` |
 | [ASUS Eee PC 1005HA (Español)](/index.php/ASUS_Eee_PC_1005HA_(Espa%C3%B1ol) "ASUS Eee PC 1005HA (Español)") | Hardware | `2010-08` |
 | [Audacious (Español)](/index.php/Audacious_(Espa%C3%B1ol) "Audacious (Español)") | Reproductor multimedia | `2011-07` |
@@ -266,7 +266,7 @@ Versión inglesa propuesta para su eliminación. |
 | [MEncoder (Español)](/index.php/MEncoder_(Espa%C3%B1ol) "MEncoder (Español)") | Codificador Audio/vídeo | `2009-11` |
 | [Microcode (Español)](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)") | Actualización procesador | `2014-12` |
 | [MiniDLNA (Español)](/index.php/MiniDLNA_(Espa%C3%B1ol) "MiniDLNA (Español)") | Audio/vídeo | `2012-02` | Versión inglesa desactualizada |
-| [Moc (Español)](/index.php/Moc_(Espa%C3%B1ol) "Moc (Español)") | Reproductor de música | `2010-05` |
+| [MOC (Español)](/index.php/MOC_(Espa%C3%B1ol) "MOC (Español)") | Reproductor de música | `2010-05` |
 | [Mod python (Español)](/index.php/Mod_python_(Espa%C3%B1ol) "Mod python (Español)") | Servidor web | `2010-11` |
 | [Modalias (Español)](/index.php/Modalias_(Espa%C3%B1ol) "Modalias (Español)") | Kernel | `2008-05` |
 | [Modem Huawei SmartAX MT 810 (Español)](/index.php/Modem_Huawei_SmartAX_MT_810_(Espa%C3%B1ol) "Modem Huawei SmartAX MT 810 (Español)") | Hardware/Modems | `2010-02` | Página solo en español (sin versión inglesa) |
@@ -294,7 +294,7 @@ Versión inglesa propuesta para su eliminación. |
 | [Pidgin (Español)](/index.php/Pidgin_(Espa%C3%B1ol) "Pidgin (Español)") | Cliente de mensajería instantánea | `2009-04` |
 | [PKGBUILD (Español)](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)") | Archivo de compilación | `2010-11` |
 | [Plymouth (Español)](/index.php/Plymouth_(Espa%C3%B1ol) "Plymouth (Español)") | proceso de arranque gráfico | `2013-09` |
-| [Port Knocking (Español)](/index.php/Port_Knocking_(Espa%C3%B1ol) "Port Knocking (Español)") | Seguridad | `2012-02` |
+| [Port knocking (Español)](/index.php/Port_knocking_(Espa%C3%B1ol) "Port knocking (Español)") | Seguridad | `2012-02` |
 | [Power management (Español)](/index.php/Power_management_(Espa%C3%B1ol) "Power management (Español)") | Gestión de energía | `2013-09` |
 | [Ps2pdf (Español)](/index.php/Ps2pdf_(Espa%C3%B1ol) "Ps2pdf (Español)") | Crear pdf | `2009-12` |
 | [PulseAudio (Español)](/index.php/PulseAudio_(Espa%C3%B1ol) "PulseAudio (Español)") | Servidor de sonido | `2011-05` | Parcialmente Sin traducir |
@@ -311,7 +311,6 @@ Versión inglesa propuesta para su eliminación. |
 | [SLiM (Español)](/index.php/SLiM_(Espa%C3%B1ol) "SLiM (Español)") | Gestor de pantallas | `2011-01` |
 | [Smbclient (Español)](/index.php/Smbclient_(Espa%C3%B1ol) "Smbclient (Español)") | Protocolo de red | `2012-01` | Esbozo |
 | [Open Sound System (Español)](/index.php/Open_Sound_System_(Espa%C3%B1ol) "Open Sound System (Español)") | Sonido | `2013-09` |
-| [Splashy (Español)](/index.php/Splashy_(Espa%C3%B1ol) "Splashy (Español)") | Proceso arranque gráfico | `2009-09` |
 | [SSH keys (Español)](/index.php/SSH_keys_(Espa%C3%B1ol) "SSH keys (Español)") | Seguridad SSH | `2011-01` |
 | [Sshguard (Español)](/index.php/Sshguard_(Espa%C3%B1ol) "Sshguard (Español)") | Seguridad SSH | `2011-08` |
 | [Start X at login (Español)](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)") | Proceso de arranque | `2013-09` |
@@ -320,7 +319,7 @@ Versión inglesa propuesta para su eliminación. |
 | [SysVinit (Español)](/index.php/SysVinit_(Espa%C3%B1ol) "SysVinit (Español)") | Proceso de arranque | `2013-09` |
 | [Taking a screenshot (Español)](/index.php/Taking_a_screenshot_(Espa%C3%B1ol) "Taking a screenshot (Español)") | Captura de pantalla | `2011-10` |
 | [Telnet (Español)](/index.php/Telnet_(Espa%C3%B1ol) "Telnet (Español)") | Protocolo de red | `2018-04` |
-| [Terminal as a Transparent Wallpaper (Español)](/index.php/Terminal_as_a_Transparent_Wallpaper_(Espa%C3%B1ol) "Terminal as a Transparent Wallpaper (Español)") | Personalización escritorio | `2008-07` |
+| [Terminal as a transparent wallpaper (Español)](/index.php/Terminal_as_a_transparent_wallpaper_(Espa%C3%B1ol) "Terminal as a transparent wallpaper (Español)") | Personalización escritorio | `2008-07` |
 | [ThinkFinger (Español)](/index.php/ThinkFinger_(Espa%C3%B1ol) "ThinkFinger (Español)") | Controlador para lector de huellas digitales | `2007-08` |
 | [Thunar (Español)](/index.php/Thunar_(Espa%C3%B1ol) "Thunar (Español)") | Gestor de archivos | `2013-09` |
 | [Tint (Español)](/index.php/Tint_(Espa%C3%B1ol) "Tint (Español)") | Barra de tareas | `2011-01` | Versión inglesa redirigida a [Tint2](/index.php/Tint2 "Tint2") |
@@ -337,7 +336,7 @@ Versión inglesa propuesta para su eliminación. |
 | [WMFS2 (Español)](/index.php/WMFS2_(Espa%C3%B1ol) "WMFS2 (Español)") | Gestor de ventanas | `2012-04` |
 | [Writing rc.d scripts (Español)](/index.php/Writing_rc.d_scripts_(Espa%C3%B1ol) "Writing rc.d scripts (Español)") | Proceso de arranque | `2011-08` | Versión inglesa fundida en [SysVinit#Writing rc.d scripts](/index.php/SysVinit#Writing_rc.d_scripts "SysVinit"). |
 | [VMware (Español)](/index.php?title=VMware_(Espa%C3%B1ol)&action=edit&redlink=1 "VMware (Español) (page does not exist)") | Virtualización | `--` | Sin traducir |
-| [Xampp (Español)](/index.php/Xampp_(Espa%C3%B1ol) "Xampp (Español)") | Servidor web | `2009-04` |
+| [XAMPP (Español)](/index.php/XAMPP_(Espa%C3%B1ol) "XAMPP (Español)") | Servidor web | `2009-04` |
 | [Xcompmgr (Español)](/index.php/Xcompmgr_(Espa%C3%B1ol) "Xcompmgr (Español)") | Gestor de composición de ventanas | `2011-03` |
 | [Xen (Español)](/index.php/Xen_(Espa%C3%B1ol) "Xen (Español)") | Virtualización | `2010-12` |
 | [Xfce (Español)](/index.php/Xfce_(Espa%C3%B1ol) "Xfce (Español)") | Entorno de escritorio | `2013-01` |

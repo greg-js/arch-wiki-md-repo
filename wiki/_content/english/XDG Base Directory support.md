@@ -233,7 +233,7 @@ Nothing should require code evaluation (such as [vim](/index.php/Vim "Vim") and 
 [d138908c](https://github.com/martanne/vis/commit/d138908cf8149eb10120957271cd6979272b4730)
 
  |
-| [VLC](/index.php/VLC_media_player "VLC media player") | `~/.vlcrc` | [16f32e15](http://git.videolan.org/?p=vlc.git;a=commit;h=16f32e1500887c0dcd33cb06ad71759a81a52878) | [[56]](https://trac.videolan.org/vlc/ticket/1267) |
+| [VLC](/index.php/VLC "VLC") | `~/.vlcrc` | [16f32e15](http://git.videolan.org/?p=vlc.git;a=commit;h=16f32e1500887c0dcd33cb06ad71759a81a52878) | [[56]](https://trac.videolan.org/vlc/ticket/1267) |
 | [warsow](https://www.archlinux.org/packages/?name=warsow) | `~/.warsow-2.x` | [98ece3f](https://github.com/Qfusion/qfusion/commit/98ece3f) | [[57]](https://github.com/Qfusion/qfusion/issues/298) |
 | [Wireshark](/index.php/Wireshark "Wireshark") | `~/.wireshark` | [b0b53fa5](https://code.wireshark.org/review/gitweb?p=wireshark.git;a=commit;h=b0b53fa5937aa7ba258427ca0f3581dba725230d) |
 | [xsettingsd](https://aur.archlinux.org/packages/xsettingsd/) | `~/.xsettingsd` | [4ecd7be](https://github.com/derat/xsettingsd/commit/b4999f5e9e99224caf97d09f25ee731774ecd7be) |

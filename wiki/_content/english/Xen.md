@@ -102,7 +102,7 @@ ramdisk=initramfs-linux.img
 
 **Note:** At the time of the system's [Systemd-boot](/index.php/Systemd-boot "Systemd-boot") installation, the ESP partition should have been mounted to `/boot` as this is where the [Xen](https://aur.archlinux.org/packages/Xen/) package and EFI binaries were configured and built for, not `/boot/efi`.
 
-Add a new EFI-type loader entry. See [Systemd-boot#EFI_Shells_or_other_EFI_apps](/index.php/Systemd-boot#EFI_Shells_or_other_EFI_apps "Systemd-boot") for more details. For example:
+Add a new EFI-type loader entry. See [Systemd-boot#EFI Shells or other EFI apps](/index.php/Systemd-boot#EFI_Shells_or_other_EFI_apps "Systemd-boot") for more details. For example:
 
  `/boot/loader/entries/10-xen.conf` 
 ```
@@ -193,7 +193,7 @@ See [Network bridge#Creating a bridge](/index.php/Network_bridge#Creating_a_brid
 
 #### Systemd-networkd
 
-See [Systemd-networkd#Bridge_interface](/index.php/Systemd-networkd#Bridge_interface "Systemd-networkd") for details.
+See [Systemd-networkd#Bridge interface](/index.php/Systemd-networkd#Bridge_interface "Systemd-networkd") for details.
 
 #### Network Manager
 

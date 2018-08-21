@@ -448,7 +448,7 @@ Below are some example configurations from fellow xmonad users. Feel free to add
 
 ### GNOME 3 and xmonad
 
-With the release of GNOME 3 [custom GNOME sessions](/index.php/GNOME#Custom_GNOME_sessions "GNOME") require additional steps to make GNOME play nicely with xmonad.
+With the release of GNOME 3 [custom GNOME sessions](/index.php/GNOME/Tips_and_tricks#Custom_GNOME_sessions "GNOME/Tips and tricks") require additional steps to make GNOME play nicely with xmonad.
 
 Either install [xmonad-gnome3](https://aur.archlinux.org/packages/xmonad-gnome3/) from the AUR, or, manually:
 

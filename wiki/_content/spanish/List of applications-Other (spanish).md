@@ -50,10 +50,6 @@ Vea también [Wikipedia:es:Bootsplash](https://en.wikipedia.org/wiki/es:Bootspla
 
 	[http://www.freedesktop.org/wiki/Software/Plymouth/](http://www.freedesktop.org/wiki/Software/Plymouth/) || [plymouth](https://aur.archlinux.org/packages/plymouth/)
 
-*   **[Splashy](/index.php/Splashy "Splashy")** — Proceso de arranque gráfico diseñado para remplazar al ya envejecido Bootsplash
-
-	[https://alioth.debian.org/projects/splashy/](https://alioth.debian.org/projects/splashy/) || [splashy-full](https://aur.archlinux.org/packages/splashy-full/)
-
 *   **xplash** — Nuevo programa splash usado por Ubuntu desde la versión 9.10
 
 	[https://launchpad.net/xsplash](https://launchpad.net/xsplash) || [xsplash-bzr](https://aur.archlinux.org/packages/xsplash-bzr/)

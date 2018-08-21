@@ -26,12 +26,10 @@ Every breach of policy triggers a message in the system log, and AppArmor can be
     *   [3.1 Auditing and generating profiles](#Auditing_and_generating_profiles)
     *   [3.2 Understanding profiles](#Understanding_profiles)
     *   [3.3 Parsing profiles](#Parsing_profiles)
-*   [4 Security considerations](#Security_considerations)
-    *   [4.1 Preventing circumvention of path-based MAC via links](#Preventing_circumvention_of_path-based_MAC_via_links)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Get desktop notification on DENIED actions](#Get_desktop_notification_on_DENIED_actions)
-    *   [5.2 Cache profiles](#Cache_profiles)
-*   [6 See also](#See_also)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Get desktop notification on DENIED actions](#Get_desktop_notification_on_DENIED_actions)
+    *   [4.2 Cache profiles](#Cache_profiles)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -166,21 +164,6 @@ This is merely a short overview, for a more detailed guide be sure to have a loo
 ### Parsing profiles
 
 To load (enforce or complain), unload, reload, cache and stat profiles use `apparmor_parser`. The default action (`-a`) is to load a new profile in enforce mode, loading it in complain mode is possible using the `-C` switch, in order to overwrite an existing profile use the `-r` option and to remove a profile use `-R`. Each action may also apply to multiple profiles. Refer to [apparmor_parser(8)](https://man.cx/apparmor_parser(8)) man page for more information.
-
-## Security considerations
-
-### Preventing circumvention of path-based MAC via links
-
-Previously AppArmor can be circumvented via hardlinks in the standard POSIX security model. However, the kernel [included](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=800179c9b8a1e796e441674776d11cd4c05d61d7) the ability to prevent this vulnerability via the following settings:
-
- `/usr/lib/sysctl.d/50-default.conf` 
-```
-...
-fs.protected_hardlinks = 1
-fs.protected_symlinks = 1
-```
-
-Kernel patches distributed by Ubuntu as workarounds are not needed.
 
 ## Tips and tricks
 

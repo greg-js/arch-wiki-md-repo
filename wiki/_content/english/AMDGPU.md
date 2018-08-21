@@ -31,6 +31,7 @@ Owners of unsupported AMD/ATI video cards may use the [Radeon open source](/inde
     *   [7.2 Screen artifacts and frequency problem](#Screen_artifacts_and_frequency_problem)
     *   [7.3 Screen flickering](#Screen_flickering)
     *   [7.4 R9 390 series Poor Performance and/or Instability](#R9_390_series_Poor_Performance_and.2For_Instability)
+    *   [7.5 Freezes with "[drm] IP block:gmc_v8_0 is hung!" kernel error](#Freezes_with_.22.5Bdrm.5D_IP_block:gmc_v8_0_is_hung.21.22_kernel_error)
 
 ## Selecting the right driver
 
@@ -228,3 +229,7 @@ If you experience flickering [[4]](https://bugzilla.kernel.org/show_bug.cgi?id=1
 ### R9 390 series Poor Performance and/or Instability
 
 If you experience issues [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=91880) with a AMD R9 390 series graphics card, set `radeon.cik_support=0 amdgpu.cik_support=1 amdgpu.dpm=1 amdgpu.dc=1` as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to force DPM support.
+
+### Freezes with "[drm] IP block:gmc_v8_0 is hung!" kernel error
+
+If you experience freezes and kernel crashes during a GPU intensive task with the kernel error " [drm] IP block:gmc_v8_0 is hung!" [[6]](https://bugs.freedesktop.org/show_bug.cgi?id=102322), a workaround is to set `amggpu.vm_update_mode=3` as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to force the GPUVM page tables update to be done using the CPU. Downsides are listed here [[7]](https://bugs.freedesktop.org/show_bug.cgi?id=102322#c15).

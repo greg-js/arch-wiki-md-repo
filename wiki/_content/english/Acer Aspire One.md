@@ -72,8 +72,7 @@ Also see the pages on the [Acer Aspire One model AOD250-1613 (Android + XP versi
             *   [7.5.1.1 AOD150](#AOD150)
         *   [7.5.2 Using Flashrom](#Using_Flashrom)
         *   [7.5.3 Instructions by Acer for AOA110 and AOA150](#Instructions_by_Acer_for_AOA110_and_AOA150)
-    *   [7.6 Polishing the boot process](#Polishing_the_boot_process)
-    *   [7.7 Compiling for the Atom processor](#Compiling_for_the_Atom_processor)
+    *   [7.6 Compiling for the Atom processor](#Compiling_for_the_Atom_processor)
 *   [8 See also](#See_also)
 
 ## Before you begin
@@ -904,14 +903,6 @@ If the unit fails to reboot, or the BIOS was not updated sucessfully, try the st
 Note: These instructions are only for the Acer Aspire One AOA110 and the AOA150 netbook series and should not be performed on any other model Acer Aspire One.
 
 ```
-
-### Polishing the boot process
-
-If you use Splashy for the boot graphics and LXDM for the X display manager, you will have a nice, polished and Arch-like boot.
-
-*   [Splashy](/index.php/Splashy "Splashy") shows nice graphics instead of the text that scrolls by when you boot
-*   [LXDM](/index.php/LXDM "LXDM") is a lightweight and nice version of xdm/gdm/kdm (logon manager / display manager)
-*   [SLiM](/index.php/SLiM "SLiM") is also a possibility
 
 ### Compiling for the Atom processor
 

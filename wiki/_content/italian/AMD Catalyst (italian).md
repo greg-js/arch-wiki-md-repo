@@ -421,14 +421,15 @@ Ecco il sommario delle operazioni da svolgere:
 
 catalyst-generator non è in grado di rimuovere tutti i pacchetti catalyst-{kernver} automaticamente mentre lo si rimuove perché non ci può essere ad esempio più di una istanza di pacman in esecuzione. Se si dimentica di dare il comando `catalyst_build_module remove_all` prima di digitare `pacman -R catalyst-generator` - catalyst-generator vi chiederà quale pacchetto catalyst-{kernver} si dovrà rimuovere dopo la rimozione di catalyst-generator.
 
-**Nota:** Se si visualizza un errore del tipo:
+{{Nota| Se si visualizza un errore del tipo:
+
 ```
 **WARNING:** Package contains reference to $srcdir
 **WARNING:** '.pkg' is not a valid archive extension.
 
 ```
 
-mentre si compila il pacchetto catalyst-{kernver} - non c'è da preoccuparsi, è un normale avvertimento.
+mentre si compila il pacchetto catalyst-{kernver} - non c'è da preoccuparsi, è un normale avvertimento. }}
 
 ## Caratteristiche
 

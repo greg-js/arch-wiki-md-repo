@@ -10,7 +10,7 @@ In general, a [domain name](https://en.wikipedia.org/wiki/Domain_name "wikipedia
 *   [1 Name Service Switch](#Name_Service_Switch)
     *   [1.1 Check if you can resolve domain names](#Check_if_you_can_resolve_domain_names)
 *   [2 Glibc resolver](#Glibc_resolver)
-    *   [2.1 Overwriting of resolv.conf](#Overwriting_of_resolv.conf)
+    *   [2.1 Overwriting of /etc/resolv.conf](#Overwriting_of_.2Fetc.2Fresolv.conf)
     *   [2.2 Limit lookup time](#Limit_lookup_time)
     *   [2.3 Hostname lookup delayed with IPv6](#Hostname_lookup_delayed_with_IPv6)
     *   [2.4 Local domain names](#Local_domain_names)
@@ -53,7 +53,7 @@ The glibc resolver reads `/etc/resolv.conf` for every resolution to determine th
 
 **Note:** The glibc resolver does not cache queries. To improve query lookup time you can set up a caching resolver. See [#Resolvers](#Resolvers) for more information.
 
-### Overwriting of resolv.conf
+### Overwriting of /etc/resolv.conf
 
 [Network managers](/index.php/Network_manager "Network manager") tend to overwrite `/etc/resolv.conf`, for specifics see the corresponding section:
 
@@ -96,12 +96,12 @@ That way you can refer to local hosts such as `mainmachine1.example.com` as simp
 
 ## Resolvers
 
-The Glibc resolver provides only the most basic necessities, it does not cache queries or provide any security or privacy features. If you desire more functionality use another resolver.
+The Glibc resolver provides only the most basic necessities, it does not cache queries or provide any security features. If you desire more functionality use another resolver.
 
 **Tip:**
 
 *   The *drill* or *dig* [lookup utilities](#Lookup_utilities) report the query time.
-*   A router usually sets its own caching resolver as the network's DNS server thus proving DNS cache for the whole network.
+*   A router usually sets its own caching resolver as the network's DNS server thus providing DNS cache for the whole network.
 *   If it takes too long to switch to the next DNS server you can try [decreasing the timeout](#Limit_lookup_time).
 
 The columns have the following meaning:
@@ -122,9 +122,9 @@ The columns have the following meaning:
 | [pdnsd](/index.php/Pdnsd "Pdnsd") | Yes | Yes | [openresolv](/index.php/Openresolv "Openresolv") subscriber | No | No | No |
 | [Stubby](/index.php/Stubby "Stubby") | No | No | No | Yes | Yes |  ? |
 | [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") | Yes | No | [systemd-resolvconf](/index.php/Systemd-resolvconf "Systemd-resolvconf") | Yes | Insecure | No [[2]](https://github.com/systemd/systemd/issues/8639) |
-| [Unbound](/index.php/Unbound "Unbound") | Yes | Yes | [openresolv](/index.php/Openresolv "Openresolv") subscriber | Yes | Yes |  ? |
+| [Unbound](/index.php/Unbound "Unbound") | Yes | Yes | [openresolv](/index.php/Openresolv "Openresolv") subscriber | Yes | Yes | No [[3]](https://nlnetlabs.nl/bugs-script/show_bug.cgi?id=1200) |
 
-1.  From [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5): *Note as the resolver is not capable of authenticating the server, it is vulnerable for "man-in-the-middle" attacks.*[[3]](https://github.com/systemd/systemd/issues/9397) Also, the only supported mode is "opportunistic", which *makes DNS-over-TLS vulnerable to "downgrade" attacks*.
+1.  From [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5): *Note as the resolver is not capable of authenticating the server, it is vulnerable for "man-in-the-middle" attacks.*[[4]](https://github.com/systemd/systemd/issues/9397) Also, the only supported mode is "opportunistic", which *makes DNS-over-TLS vulnerable to "downgrade" attacks*.
 
 ## Privacy
 
@@ -132,7 +132,7 @@ Most DNS servers keep a log of IP addresses and sites visited on a more or less 
 
 ## Lookup utilities
 
-To query specific DNS servers and DNS/[DNSSEC](/index.php/DNSSEC "DNSSEC") records you can use dedicated DNS lookup utilities. These tools implement DNS themselves and do not use [NSS](#Name_Service_Switch).
+To query specific DNS servers and DNS/[DNSSEC](/index.php/DNSSEC "DNSSEC") records you can use dedicated DNS lookup utilities. These tools implement DNS themselves and do not use [NSS](/index.php/NSS "NSS").
 
 *   [ldns](https://www.archlinux.org/packages/?name=ldns) provides [drill(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/drill.1), which is a tool designed to retrieve information out of the DNS.
 

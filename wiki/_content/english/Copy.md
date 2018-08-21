@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Core utilities#Basic commands](/index.php/Core_utilities#Basic_commands "Core utilities")
+*   [Core utilities#File management](/index.php/Core_utilities#File_management "Core utilities")

@@ -1,3 +1,10 @@
+Related articles
+
+*   [Copying text from a terminal](/index.php/Copying_text_from_a_terminal "Copying text from a terminal")
+*   [Firefox#Middle-click errors](/index.php/Firefox#Middle-click_errors "Firefox")
+*   [GTK+#Disable mouse paste](/index.php/GTK%2B#Disable_mouse_paste "GTK+")
+*   [Vim#Clipboard](/index.php/Vim#Clipboard "Vim")
+
 From [Wikipedia:Clipboard (computing)](https://en.wikipedia.org/wiki/Clipboard_(computing) "wikipedia:Clipboard (computing)"):
 
 	The clipboard is a facility used for short-term data storage and/or data transfer between documents or applications, via [copy and paste](https://en.wikipedia.org/wiki/copy_and_paste "wikipedia:copy and paste") operations.
@@ -6,13 +13,9 @@ From [Wikipedia:Clipboard (computing)](https://en.wikipedia.org/wiki/Clipboard_(
 
 *   [1 History](#History)
 *   [2 Background](#Background)
-*   [3 Application specifics](#Application_specifics)
-    *   [3.1 Firefox](#Firefox)
-    *   [3.2 GTK](#GTK)
-    *   [3.3 Vim](#Vim)
-*   [4 Tools](#Tools)
-*   [5 Managers](#Managers)
-*   [6 See also](#See_also)
+*   [3 Tools](#Tools)
+*   [4 Managers](#Managers)
+*   [5 See also](#See_also)
 
 ## History
 
@@ -29,23 +32,9 @@ Of the three selections, users should only be concerned with PRIMARY and CLIPBOA
 
 See the [Keyboard shortcuts](/index.php/Keyboard_shortcuts "Keyboard shortcuts") page which lists the default shortcuts in many programs.
 
-It is also important to realize that according to the selection protocols, nothing is copied anywhere [until it is pasted](https://unix.stackexchange.com/questions/213840/how-to-toggle-or-turn-off-text-selection-being-sent-to-the-clipboard/213843#213843). For example, if you select some word in a terminal window, close the terminal and then want to paste it somewhere else, it will not work because the terminal is gone and the text has not been copied anywhere. If you want the word to be preserved after closing terminal window, consider installing a [clipboard manager](#List_of_clipboard_managers).
+It is also important to realize that according to the selection protocols, nothing is copied anywhere [until it is pasted](https://unix.stackexchange.com/questions/213840/how-to-toggle-or-turn-off-text-selection-being-sent-to-the-clipboard/213843#213843). For example, if you select some word in a terminal window, close the terminal and then want to paste it somewhere else, it will not work because the terminal is gone and the text has not been copied anywhere. If you want the word to be preserved after closing terminal window, consider installing a [clipboard manager](/index.php/Clipboard_manager "Clipboard manager").
 
 **Note:** [Clipboard managers](#Managers) can significantly change the user experience, for example they might synchronize the PRIMARY and CLIPBOARD selections to emulate a single-clipboard system.
-
-## Application specifics
-
-### Firefox
-
-See [Firefox#Middle-click errors](/index.php/Firefox#Middle-click_errors "Firefox").
-
-### GTK
-
-See [GTK+#Disable mouse paste](/index.php/GTK%2B#Disable_mouse_paste "GTK+").
-
-### Vim
-
-See [Vim#Clipboard](/index.php/Vim#Clipboard "Vim").
 
 ## Tools
 

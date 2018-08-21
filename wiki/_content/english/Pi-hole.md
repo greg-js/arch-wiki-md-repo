@@ -150,7 +150,7 @@ FTL is a database-like wrapper/API that provides long-term storage of requests w
 1.  Daily data are stored in RAM and are captured in real-time within `/run/log/pihole/pihole.log`
 2.  Historical data (i.e. over multiple days/weeks/months) are stored on the file system `/etc/pihole/pihole-FTL.db` written out at a user-specified interval.
 
-**Tip:** If Pi-hole is running on a [Solid State Drive](/index.php/Solid_State_Drive "Solid State Drive") (single-board computers SD, SSD, M.2/NVMe device, etc...) it is recommended to set the `DBINTERVAL` value to at least 60.0 to minimize writes to the database.
+**Tip:** If Pi-hole is running on a [solid state drive](/index.php/Solid_state_drive "Solid state drive") (single-board computers SD, SSD, M.2/NVMe device, etc...) it is recommended to set the `DBINTERVAL` value to at least 60.0 to minimize writes to the database.
 
 See [the GitHub Readme](https://github.com/pi-hole/FTL#ftls-config-file) for how to configure FTL.
 

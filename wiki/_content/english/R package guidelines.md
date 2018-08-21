@@ -34,7 +34,7 @@ See [PKGBUILD#arch](/index.php/PKGBUILD#arch "PKGBUILD"). If the package's CRAN 
 
 R packages listed in `Depends`, `Imports`, or the `LinkingTo` fields in a package's `DESCRIPTION` file should be listed under [depends](/index.php/PKGBUILD#depends "PKGBUILD").
 
-R packages listed in `Suggests` should be listed as [optdepends](/index.php/PKGBUILD#optdepends "PKGBUILD").
+R packages listed in `Suggests` should be listed as [optdepends](/index.php/Optdepends "Optdepends").
 
 Some packages require external tools, these are listed under `SystemRequirements`.
 

@@ -258,7 +258,7 @@ zh_TW.UTF-8 UTF-8
 
 **Tip:** 将系统 locale 设置为`en_US.UTF-8`，系统的 Log 就会用英文显示，这样更容易问题的判断和处理。用户可以设置自己的 locale，详情参阅[Locale](/index.php/Locale#Overriding_system_locale_per_user_session "Locale")或[Locale_(简体中文)#设置 locale](/index.php/Locale_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E8.AE.BE.E7.BD.AE_locale "Locale (简体中文)")
  `/etc/locale.conf`  `LANG=*en_US.UTF-8*` 
-**警告:** 不推荐在此设置任何中文locale，或导致tty乱码。
+**警告:** 不推荐在此设置任何中文locale，会导致tty乱码。
 
 另外，如果你需要修改[键盘布局](#Set_the_keyboard_layout), 并想让这个设置持续生效，编辑 [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5)，例如:
 

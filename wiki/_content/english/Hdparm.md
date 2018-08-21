@@ -89,7 +89,7 @@ To make the setting persistent across reboot, one can use a [udev](/index.php/Ud
 
 Because a disk device can be assigned randomly to a changing `/dev/sd*X*`, the disk can also be identified by its serial as explained in [Udev#Identifying a disk by its serial](/index.php/Udev#Identifying_a_disk_by_its_serial "Udev").
 
-Systems with multiple hard drives can apply the rule in a flexible way according to some criteria. For example, to apply power-saving settings to all rotational drives (hard disk with rotational head, excluding in particular [Solid State Drives](/index.php/Solid_State_Drive "Solid State Drive")), use the following rule:
+Systems with multiple hard drives can apply the rule in a flexible way according to some criteria. For example, to apply power-saving settings to all rotational drives (hard disk with rotational head, excluding in particular [solid state drives](/index.php/Solid_state_drive "Solid state drive")), use the following rule:
 
  `/etc/udev/rules.d/69-hdparm.rules`  `ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="1", RUN+="/usr/bin/hdparm -B 127 -S 12 /dev/%k"` 
 

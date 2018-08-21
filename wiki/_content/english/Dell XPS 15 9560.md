@@ -53,8 +53,7 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 956
     *   [9.1 xorg freezes at startup](#xorg_freezes_at_startup)
     *   [9.2 PCIe Bus Error in system logs](#PCIe_Bus_Error_in_system_logs)
     *   [9.3 lspci causes CPU lockups](#lspci_causes_CPU_lockups)
-*   [10 Notes](#Notes)
-*   [11 External links](#External_links)
+*   [10 External links](#External_links)
 
 ## UEFI
 
@@ -71,6 +70,8 @@ Installation of Arch Linux can proceed normally. Refer to the [Installation guid
 ### Suspend and Hibernate
 
 Suspend and Hibernate work out of the box, although some users have reported [occasional system hangs on resuming from suspend](https://bbs.archlinux.org/viewtopic.php?id=223056), more commonly on kernels since 4.10.
+
+The suspend function key is not printed on the keyboard, but it's actually mapped to `Fn`+`Insert`.
 
 ### Fan and temperature monitoring and control
 
@@ -279,10 +280,6 @@ This can be corrected with the kernel boot option `pcie_aspm=off` which appears 
 ### `lspci` causes CPU lockups
 
 The NVidia/nouveau driver may cause any runs of `lspci`, starting an X server, or otherwise poking the graphics card to cause at least one CPU core to lock up, as well as seeming to completely lock up PCIe access, for instance to the NVMe SSD. The kernel parameter `nouveau.modeset=0` may fix this. This is also related to the X freezes on startup (some machines may require lspci/startx to be run twice so they freeze after nouveau is taken care of); the solution in that case is to also set `acpi_rev_override=1`. [[3]](https://cnly.github.io/2017/08/25/fix-system-hangs-xps-15-9560.html)
-
-## Notes
-
-The suspend function key is not printed on the keyboard, but it's actually mapped to `Fn`+`Insert`.
 
 ## External links
 

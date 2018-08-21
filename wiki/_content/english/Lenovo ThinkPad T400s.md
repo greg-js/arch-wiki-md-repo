@@ -1,3 +1,7 @@
+Related articles
+
+*   [Lenovo ThinkPad T400](/index.php/Lenovo_ThinkPad_T400 "Lenovo ThinkPad T400")
+
 Before reading, a good starting point for Arch Linux installation on notebooks is the main [laptop](/index.php/Laptop "Laptop") article.
 
 The article describes the installation of Arch Linux on a ThinkPad T400s.
@@ -375,7 +379,6 @@ See:
 *   [Hard Drive Active Protection System Installation Guide](/index.php/HDAPS "HDAPS")
 *   General Arch Linux related [installation information on latops](/index.php/Laptop "Laptop")
 *   [Thinkpad Fan Control Guide](/index.php/ThinkPad_Fan_Control "ThinkPad Fan Control")
-*   [Thinkpad OSD Guide](/index.php/ThinkPad_OSD "ThinkPad OSD")
 *   [Thinkpad Fingerprintreader Guide](/index.php/ThinkFinger "ThinkFinger")
 *   [Thinkpad Smart API Guide](/index.php/Tp_smapi "Tp smapi")
 

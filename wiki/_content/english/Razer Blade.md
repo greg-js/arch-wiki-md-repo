@@ -4,7 +4,7 @@ Razer Blade is Razer's line of gaming laptops. There is currently a 12" model (R
 
 *   [1 2018 version](#2018_version)
     *   [1.1 Touchpad](#Touchpad)
-    *   [1.2 Openrazer](#Openrazer)
+    *   [1.2 Suspending](#Suspending)
 *   [2 Late-2017 version Razer Blade Stealth](#Late-2017_version_Razer_Blade_Stealth)
     *   [2.1 Infinite suspend loop](#Infinite_suspend_loop)
     *   [2.2 Screen flickering / distorted / noise](#Screen_flickering_.2F_distorted_.2F_noise)
@@ -41,9 +41,18 @@ The touchpad works with the vanilla kernel with [BIOS version 1.05](https://insi
 
 If you are for some reason unable to boot into windows to perform the update, there is still a [patch](https://github.com/jbdrthapa/razerblade15/blob/master/razerfiles/touchpad/translation_fix/pinctrl-intel-translation-fix.patch) that you an apply to your kernel build to get things working. However, this will unlikely be maintained due to the availability of the BIOS patch.
 
-## Openrazer
+## Suspending
 
-Openrazer doesn't currently support the 2018 model's peripherals. There is however a fork with added support, and can be installed via [openrazer-daemon-2018](https://aur.archlinux.org/packages/openrazer-daemon-2018/).
+Some users are reporting the laptop immediately waking up after suspending. It appears to be XHC (USB 3.0 chip) that's causing the wakeups.
+
+You can fix this by running
+
+```
+   echo XHC | sudo tee /proc/acpi/wakeup
+
+```
+
+This will not persist on a restart though. To run this command on every startup, see [Systemd#Writing_unit_files](/index.php/Systemd#Writing_unit_files "Systemd").
 
 # Late-2017 version Razer Blade Stealth
 

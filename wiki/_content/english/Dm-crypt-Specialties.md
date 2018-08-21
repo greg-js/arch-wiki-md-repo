@@ -329,7 +329,7 @@ Remember to setup [wifi](/index.php/Wifi "Wifi"), so you are able to login once 
 
 ## Discard/TRIM support for solid state drives (SSD)
 
-[Solid State Drive](/index.php/Solid_State_Drive "Solid State Drive") users should be aware that, by default, TRIM commands are not enabled by the device-mapper, i.e. block-devices are mounted without the `discard` option unless you override the default.
+[Solid state drive](/index.php/Solid_state_drive "Solid state drive") users should be aware that, by default, TRIM commands are not enabled by the device-mapper, i.e. block-devices are mounted without the `discard` option unless you override the default.
 
 The device-mapper maintainers have made it clear that TRIM support will never be enabled by default on dm-crypt devices because of the potential security implications.[[3]](http://www.saout.de/pipermail/dm-crypt/2011-September/002019.html)[[4]](http://www.saout.de/pipermail/dm-crypt/2012-April/002420.html) Minimal data leakage in the form of freed block information, perhaps sufficient to determine the filesystem in use, may occur on devices with TRIM enabled. An illustration and discussion of the issues arising from activating TRIM is available in the [blog](http://asalor.blogspot.de/2011/08/trim-dm-crypt-problems.html) of a *cryptsetup* developer. If you are worried about such factors, keep also in mind that threats may add up: for example, if your device is still encrypted with the previous (cryptsetup <1.6.0) default cipher `--cipher aes-cbc-essiv`, more information leakage may occur from trimmed sector observation than with the current [default](/index.php/Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode "Dm-crypt/Device encryption").
 

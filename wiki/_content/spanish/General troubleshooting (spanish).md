@@ -20,11 +20,14 @@ Este artículo explica algunos métodos para solucionar problemas generales. Par
 *   [2 Problemas de arranque](#Problemas_de_arranque)
     *   [2.1 Mensajes de la consola](#Mensajes_de_la_consola)
         *   [2.1.1 Control de flujo](#Control_de_flujo)
-    *   [2.2 Pantalla en blanco con el vídeo Intel](#Pantalla_en_blanco_con_el_v.C3.ADdeo_Intel)
-    *   [2.3 Atascado mientras se carga el kernel](#Atascado_mientras_se_carga_el_kernel)
-    *   [2.4 Sistema no arrancable](#Sistema_no_arrancable)
-    *   [2.5 Depurar errores de módulos del kernel](#Depurar_errores_de_m.C3.B3dulos_del_kernel)
-    *   [2.6 Depurar errores de hardware](#Depurar_errores_de_hardware)
+        *   [2.1.2 Desplazamiento hacia atrás](#Desplazamiento_hacia_atr.C3.A1s)
+        *   [2.1.3 Salida de depuración](#Salida_de_depuraci.C3.B3n)
+    *   [2.2 Shell de recuperación](#Shell_de_recuperaci.C3.B3n)
+    *   [2.3 Pantalla en blanco con una tarjeta gráfica Intel](#Pantalla_en_blanco_con_una_tarjeta_gr.C3.A1fica_Intel)
+    *   [2.4 Atascado mientras se carga el núcleo](#Atascado_mientras_se_carga_el_n.C3.BAcleo)
+    *   [2.5 Sistema no arrancable](#Sistema_no_arrancable)
+    *   [2.6 Depurar los errores de los módulos del núcleo](#Depurar_los_errores_de_los_m.C3.B3dulos_del_n.C3.BAcleo)
+    *   [2.7 Depurar errores de hardware](#Depurar_errores_de_hardware)
 *   [3 Administrar paquetes](#Administrar_paquetes)
 *   [4 fuser](#fuser)
 *   [5 Permisos de sesión](#Permisos_de_sesi.C3.B3n)
@@ -121,25 +124,70 @@ Tenga en cuenta que, independientemente de la opción elegida, los mensajes del 
 
 #### Control de flujo
 
-### Pantalla en blanco con el vídeo Intel
+Esta es una administración básica que se aplica a la mayoría de los emuladores de terminal, incluidas las consolas virtuales (vc):
 
-Esto es muy probablemente debido a un problema con la [configuración de la modalidad del kernel](/index.php/Kernel_mode_setting "Kernel mode setting"). Pruebe [desactivar modesetting](/index.php/Kernel_mode_setting#Disabling_modesetting "Kernel mode setting") o cambiar el [puerto del vídeo](/index.php/Intel#KMS_Issue:_console_is_limited_to_small_area "Intel").
+*   Pulse `Ctrl+S` para pausar la salida
+*   Y `Ctrl+Q` para reanudarla
 
-### Atascado mientras se carga el kernel
+Esto pausa no solo la salida, sino también los programas que intentan imprimir en el terminal, ya que bloquearán sobre las llamadas `write()` mientras la salida esté en pausa. Si su *init* parece congelado, asegúrese de que la consola del sistema no esté en pausa.
 
-Pruebe a desactivar ACPI mediante la adición de `acpi=off` a los parámetros del kernel.
+Para ver los mensajes de error que ya han mostrado, consulte [Haga que los mensajes de inicio permanezcan en tty1](/index.php/Getty#Have_boot_messages_stay_on_tty1 "Getty").
+
+#### Desplazamiento hacia atrás
+
+El desplazamiento hacia atrás *(scrollback)* permite al usuario retroceder y ver el texto que se desplazó de la pantalla de una consola de texto. Esto es posible gracias a un búfer creado entre el adaptador de vídeo y el dispositivo de visualización llamado búfer de desplazamiento. Por defecto, las combinaciones de teclas `Shift+PageUp` y `Shift+PageDown` desplazan el búfer hacia arriba y hacia abajo respectivamente.
+
+Si al desplazarse hacia arriba hasta el final no le muestra la información suficiente, necesita expandir su búfer de desplazamiento para tener más salida. Esto se hace ajustando la consola de framebuffer del núcleo (fbcon) con el [parámetro del núcleo](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") `fbcon=scrollback:Nk` donde `N` es el tamaño de búfer deseado es kilobytes. El tamaño predeterminado es 32k.
+
+Si esto no le funciona, es posible que su consola de framebuffer no esté habilitada correctamente. Consulte la [documentación sobre la consola de framebuffer](https://www.kernel.org/doc/Documentation/fb/fbcon.txt) para conocer otros parámetros, por ejemplo para cambiar el controlador de framebuffer.
+
+#### Salida de depuración
+
+La mayoría de los mensajes del núcleo están ocultos durante el arranque. Puede ver más de estos mensajes añadiendo diferentes parámetros de núcleo. Los más simples son:
+
+*   `debug` habilita los mensajes de depuración tanto para el núcleo como para [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)")
+*   `ignore_loglevel` fuerza a que se impriman todos los mensajes del núcleo
+
+Otros parámetros que puede añadir y que podrían ser útiles en ciertas situaciones son:
+
+*   `earlyprintk=vga,keep` imprime los primeros mensajes en el proceso de arranque del núcleo, en caso de que el núcleo falle antes de que se muestre el resultado. Debe cambiar `vga` a `efi` para los sistemas [EFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)")
+*   `log_buf_len=16M` asigna un búfer de mensajes del núcleo más grande (16MB), para garantizar que la salida de depuración no se sobrescriba
+
+También hay una serie de parámetros de depuración separados para permitir la depuración en subsistemas específicos, poe ejemplo `bootmem_debug`, `sched_debug`. Consulte la [documentación de los parámetros del núcleo](https://www.kernel.org/doc/Documentation/admin-guide/kernel-parameters.txt) para obtener información específica.
+
+**Nota:** Si no puede desplazarse hacia atrás lo suficiente para ver la salida del arranque deseada, debe aumentar el tamaño del [búfer del desplazamiento hacia atrás](#Desplazamiento_hacia_atr.C3.A1s).
+
+### Shell de recuperación
+
+Obtener un shell interactivo en algún momento del proceso de arranque puede ayudarle a identificar exactamente dónde y por qué está fallando algo. Hay varios parámetros del núcleo para hacerlo, pero todos ellos lanzan un shell normal que le permite ejecutar `exit`, lo que posibilita al núcleo reanudar lo que estaba haciendo:
+
+*   `rescue` inicia un shell poco después de que el sistema de archivos raíz se vuelva a leer/escribir
+*   `emergency` inicia un shell incluso más temprano, antes de que se instalen la mayoría de los sistemas de archivos
+*   `init=/bin/sh` (como último recurso) cambia el programa init a un shell de superusuario *(root)*. `rescue` y `emergency` dependen de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), pero esto debería funcionar incluso si *systemd* falla
+
+Otra opción es el shell de depuración de systemd que añade un shell de superusuario en `tty9` (accesible con Ctrl+Alt+F9). Se puede habilitar añadiendo `systemd.debug-shell` a los [parámetros del núcleo](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)"), o [habilitando](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") `debug-shell.service`. Asegúrese de desactivar el servicio cuando lo haya hecho para evitar el riesgo de seguridad por dejar abierto un shell de superusuario en cada arranque.
+
+### Pantalla en blanco con una tarjeta gráfica Intel
+
+Esto es debido muy probablemente a un problema con la [configuración del modo del núcleo](/index.php/Kernel_mode_setting_(Espa%C3%B1ol) "Kernel mode setting (Español)"). Pruebe a [desactivar modesetting](/index.php/Kernel_mode_setting_(Espa%C3%B1ol)#Desactivar_modesetting "Kernel mode setting (Español)") o cambiar el [puerto de la tarjeta gráfica](/index.php/Intel_graphics_(Espa%C3%B1ol)#Problema_KMS:_la_consola_est.C3.A1_limitada_a_una_peque.C3.B1a_porci.C3.B3n_de_la_pantalla "Intel graphics (Español)").
+
+### Atascado mientras se carga el núcleo
+
+Pruebe a desactivar ACPI añadiendo `acpi=off` a los parámetros del núcleo.
 
 ### Sistema no arrancable
 
 Si el sistema no arranca en absoluto, simplemente arranque desde una [imagen live](https://www.archlinux.org/download/) y [realice chroot](/index.php/Change_root "Change root") para iniciar sesión en el sistema y solucionar el problema.
 
-### Depurar errores de módulos del kernel
+### Depurar los errores de los módulos del núcleo
 
-Véase [Kernel modules#Obtaining information](/index.php/Kernel_modules#Obtaining_information "Kernel modules").
+Consulte esta sección sobre [como obtener información](/index.php/Kernel_modules_(Espa%C3%B1ol)#Obtener_informaci.C3.B3n "Kernel modules (Español)") de los módulos del núcleo.
 
 ### Depurar errores de hardware
 
-Véase [udev#Debug output](/index.php/Udev#Debug_output "Udev").
+*   Puede visualizar información adicional de depuración sobre su hardware siguiendo [udev#Debug output](/index.php/Udev#Debug_output "Udev").
+*   Asegúrese de que las actualizaciones de [microcódigo](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)") se aplican en su sistema.
+*   Pruebe la memoria RAM de su dispositivo con [Memtest86+](http://www.memtest.org/). La RAM inestable puede ocasionar algunos problemas extremadamente extraños, que van desde fallos aleatorias hasta la corrupción de datos.
 
 ## Administrar paquetes
 

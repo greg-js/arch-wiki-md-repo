@@ -220,7 +220,7 @@ Keyboard Request -- edit /etc/inittab to customize
 
 ## Link Esterni
 
-*   [Wikipedia: Init](https://en.wikipedia.org/wiki/Init "wikipedia:Init")
+*   [Wikipedia:Init](https://en.wikipedia.org/wiki/Init "wikipedia:Init")
 *   [Conoscenze di base di Linux e turorial. Runlevel.](http://www.linux-tutorial.info/modules.php?name=MContent&pageid=65)
 *   [Linux.com. Introduzione ai runlevel ed inittab(inglese)](http://www.linux.com/articles/114107)
 *   [Linux.com. Una introduzione ai servizi, runlevel, ed agli script rc.d.](http://www.linux.com/news/enterprise/systems-management/8116-an-introduction-to-services-runlevels-and-rcd-scripts)

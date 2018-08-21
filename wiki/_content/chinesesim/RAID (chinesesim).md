@@ -410,7 +410,7 @@ stripe width = number of data disks * stride
 
 **注意:** 本节仅适用于根文件系统在磁盘阵列上的情况。如果你的磁盘阵列上只是一个数据分区，那么可以跳过本节。
 
-你应该在安装过程中的 [分区](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)") 和 [格式化](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.9B.E5.BB.BA.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F "File systems (简体中文)") 步骤之间创建 RAID 阵列。这将会把一个位于 RAID 阵列上的分区格式化成根文件系统，而不是直接格式化一个分区。 按照 [#安装](#.E5.AE.89.E8.A3.85) 一节的步骤创建 RAID 阵列。，然后继续安装过程，直到 pacstrap 步骤完成。 当使用 [UEFI 启动](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unified Extensible Firmware Interface (简体中文)") 时，还需要阅读 [EFI System Partition (简体中文)#RAID 上的 ESP](/index.php/EFI_System_Partition_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#RAID_.E4.B8.8A.E7.9A.84_ESP "EFI System Partition (简体中文)")。
+你应该在安装过程中的 [分区](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)") 和 [格式化](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.88.9B.E5.BB.BA.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F "File systems (简体中文)") 步骤之间创建 RAID 阵列。这将会把一个位于 RAID 阵列上的分区格式化成根文件系统，而不是直接格式化一个分区。 按照 [#安装](#.E5.AE.89.E8.A3.85) 一节的步骤创建 RAID 阵列。，然后继续安装过程，直到 pacstrap 步骤完成。 当使用 [UEFI 启动](/index.php/Unified_Extensible_Firmware_Interface_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Unified Extensible Firmware Interface (简体中文)") 时，还需要阅读 [EFI system partition (简体中文)#RAID 上的 ESP](/index.php/EFI_system_partition_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#RAID_.E4.B8.8A.E7.9A.84_ESP "EFI system partition (简体中文)")。
 
 ### 更新配置文件
 

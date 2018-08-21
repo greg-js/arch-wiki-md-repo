@@ -49,12 +49,9 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [4.3 Web browsers](#Web_browsers)
     *   [4.4 PIM](#PIM)
         *   [4.4.1 Akonadi](#Akonadi)
-            *   [4.4.1.1 Installation](#Installation_2)
-                *   [4.4.1.1.1 PostgreSQL](#PostgreSQL)
-                *   [4.4.1.1.2 SQLite](#SQLite)
-            *   [4.4.1.2 Disabling Akonadi](#Disabling_Akonadi)
-            *   [4.4.1.3 Troubleshooting](#Troubleshooting)
-                *   [4.4.1.3.1 OS error 22 when running on ZFS](#OS_error_22_when_running_on_ZFS)
+            *   [4.4.1.1 PostgreSQL](#PostgreSQL)
+            *   [4.4.1.2 SQLite](#SQLite)
+            *   [4.4.1.3 Disabling Akonadi](#Disabling_Akonadi)
     *   [4.5 KDE Telepathy](#KDE_Telepathy)
         *   [4.5.1 Use Telegram with KDE Telepathy](#Use_Telegram_with_KDE_Telepathy)
     *   [4.6 KDE Connect](#KDE_Connect)
@@ -64,7 +61,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [5.1.2 Re-enabling compositing effects](#Re-enabling_compositing_effects)
     *   [5.2 Configuring monitor resolution / multiple monitors](#Configuring_monitor_resolution_.2F_multiple_monitors)
     *   [5.3 Disable opening application launcher with Super key (Windows key)](#Disable_opening_application_launcher_with_Super_key_.28Windows_key.29)
-*   [6 Troubleshooting](#Troubleshooting_2)
+*   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Fonts](#Fonts)
         *   [6.1.1 Fonts in a Plasma session look poor](#Fonts_in_a_Plasma_session_look_poor)
         *   [6.1.2 Fonts are huge or seem disproportional](#Fonts_are_huge_or_seem_disproportional)
@@ -92,9 +89,9 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [6.8 Aggressive QXcbConnection journal logging](#Aggressive_QXcbConnection_journal_logging)
     *   [6.9 KF5/Qt5 applications do not display icons in i3/fvwm/awesome](#KF5.2FQt5_applications_do_not_display_icons_in_i3.2Ffvwm.2Fawesome)
     *   [6.10 Problems with saving credentials and persistently occurring KWallet dialogs](#Problems_with_saving_credentials_and_persistently_occurring_KWallet_dialogs)
-    *   [6.11 Weird "q" symbol in konsole](#Weird_.22q.22_symbol_in_konsole)
-    *   [6.12 Discover does not show any applications](#Discover_does_not_show_any_applications)
-    *   [6.13 High CPU usage of kscreenlocker_greet with NVidia drivers](#High_CPU_usage_of_kscreenlocker_greet_with_NVidia_drivers)
+    *   [6.11 Discover does not show any applications](#Discover_does_not_show_any_applications)
+    *   [6.12 High CPU usage of kscreenlocker_greet with NVidia drivers](#High_CPU_usage_of_kscreenlocker_greet_with_NVidia_drivers)
+    *   [6.13 OS error 22 when running Akonadi on ZFS](#OS_error_22_when_running_Akonadi_on_ZFS)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -403,25 +400,23 @@ KDE offers its own stack for personal information management. This includes emai
 
 #### Akonadi
 
-Akonadi is a system meant to act as a local cache for PIM data, regardless of its origin, which can be then used by other applications. This includes the user's emails, contacts, calendars, events, journals, alarms, notes, and so on.
-
-Akonadi does not store any data by itself: the storage format depends on the nature of the data (for example, contacts may be stored in vCard format).
-
-##### Installation
+Akonadi is a system meant to act as a local cache for PIM data, regardless of its origin, which can be then used by other applications. This includes the user's emails, contacts, calendars, events, journals, alarms, notes, and so on. Akonadi does not store any data by itself: the storage format depends on the nature of the data (for example, contacts may be stored in vCard format).
 
 Install [akonadi](https://www.archlinux.org/packages/?name=akonadi). For additional addons, install [kdepim-addons](https://www.archlinux.org/packages/?name=kdepim-addons).
 
-**Note:** If you wish to use a database engine other than [MariaDB](/index.php/MariaDB "MariaDB") or [MySQL](/index.php/MySQL "MySQL"), then when installing the [akonadi](https://www.archlinux.org/packages/?name=akonadi) package, use the following command to skip installing the [mariadb](https://www.archlinux.org/packages/?name=mariadb) dependencies:
+**Note:** If you wish to use a database engine other than [MySQL](/index.php/MySQL "MySQL"), then when installing the [akonadi](https://www.archlinux.org/packages/?name=akonadi) package, use the following command to skip installing the [mariadb](https://www.archlinux.org/packages/?name=mariadb) dependencies:
 ```
 # pacman -S akonadi --assume-installed mariadb
 
 ```
 
-###### PostgreSQL
+See also [FS#32878](https://bugs.archlinux.org/task/32878).
+
+##### PostgreSQL
 
 [Install](/index.php/Install "Install") [postgresql](https://www.archlinux.org/packages/?name=postgresql).
 
-Edit Akonadi configuration file so that it has the following contents:
+To use [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") edit Akonadi configuration file so that it has the following contents:
 
  `~/.config/akonadi/akonadiserverrc` 
 ```
@@ -441,9 +436,9 @@ StartServer=true
 
 Start Akonadi with `akonadictl start`, and check its status: `akonadictl status`.
 
-###### SQLite
+##### SQLite
 
-Edit Akonadi configuration file to match the configuration below:
+To use [SQLite](/index.php/SQLite "SQLite") edit Akonadi configuration file to match the configuration below:
 
  `~/.config/akonadi/akonadiserverrc` 
 ```
@@ -457,20 +452,6 @@ Name=/home/*username*/.local/share/akonadi/akonadi.db
 ##### Disabling Akonadi
 
 See this [section in the KDE userbase](https://userbase.kde.org/Akonadi#Disabling_the_Akonadi_subsystem).
-
-##### Troubleshooting
-
-###### OS error 22 when running on ZFS
-
-If your home directory is on a [ZFS](/index.php/ZFS "ZFS") pool, create a `~/.config/akonadi/mysql-local.conf` file with the following contents:
-
-```
-[mysqld]
-innodb_use_native_aio = 0
-
-```
-
-See [MySQL#OS error 22 when running on ZFS](/index.php/MySQL#OS_error_22_when_running_on_ZFS "MySQL").
 
 ### KDE Telepathy
 
@@ -725,12 +706,6 @@ See [Qt#Configuration of Qt5 apps under environments other than KDE Plasma](/ind
 
 It is not recommended to turn off the [KWallet](/index.php/KWallet "KWallet") password saving system in the user settings as it is required to save encrypted credentials like WiFi passphrases for each user. Persistently occuring KWallet dialogs can be the consequence of turning it off. In case you find the dialogs to unlock the wallet annoying when applications want to access it, you can let the login managers `SDDM` and `LightDM` unlock the wallet at login automatically, see [KDE Wallet](/index.php/KDE_Wallet#Unlock_KDE_Wallet_automatically_on_login "KDE Wallet"). The first wallet needs to be generated by KWallet (and not user-generated) in order to be usable for system program credentials. In case you want the wallet credentials not to be opened in memory for every application, you can restrict applications from accessing it with [kwalletmanager](https://www.archlinux.org/packages/?name=kwalletmanager) in the KWallet settings. If you do not care for credential encryption at all, you can simply leave the password forms blank when KWallet asks for the password while creating a wallet. In this case, applications can access passwords without having to unlock the wallet first.
 
-### Weird "q" symbol in konsole
-
-If you get a weird "q" symbols in programs such as vim[[8]](https://github.com/vim/vim/issues/2008) or neovim[[9]](https://github.com/neovim/neovim/issues/7002), it is because they use cursor shape changing escape sequences (DECSCUSR) which konsole does not support. See [KDE Bug 347323](https://bugs.kde.org/show_bug.cgi?id=347323).
-
-You will need to disable these escape sequences in the programs that use them. See [neovim FAQ](https://github.com/neovim/neovim/wiki/FAQ#nvim-shows-weird-symbols-2-q-when-changing-modes) for a workaround for neovim.
-
 ### Discover does not show any applications
 
 This can be solved by installing [packagekit-qt5](https://www.archlinux.org/packages/?name=packagekit-qt5).
@@ -740,6 +715,18 @@ This can be solved by installing [packagekit-qt5](https://www.archlinux.org/pack
 As described in [KDE Bug 347772](https://bugs.kde.org/show_bug.cgi?id=347772) NVidia OpenGL drivers and QML may not play well together with Qt5\. This may lead `kscreenlocker_greet` to high CPU usage after unlocking the session. To work around this issue, set the `$QSG_RENDERER_LOOP` [environment variable](/index.php/Environment_variable "Environment variable") to `basic`.
 
 Then kill previous instances of the greeter with `killall kscreenlocker_greet`.
+
+### OS error 22 when running Akonadi on ZFS
+
+If your home directory is on a [ZFS](/index.php/ZFS "ZFS") pool, create a `~/.config/akonadi/mysql-local.conf` file with the following contents:
+
+```
+[mysqld]
+innodb_use_native_aio = 0
+
+```
+
+See [MySQL#OS error 22 when running on ZFS](/index.php/MySQL#OS_error_22_when_running_on_ZFS "MySQL").
 
 ## See also
 

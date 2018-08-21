@@ -195,7 +195,7 @@ The below information was added by user [User:The.ridikulus.rat](/index.php/User
 ### Observations
 
 1.  UEFI Secure Boot support is present in firmware, but I have currently disabled it. System came pre-installed with Windows 7 Pro x64 in BIOS-MBR mode, with BIOS version 1.14 (which did not include UEFI Secure Boot).
-2.  Using a 1 GiB FAT32 UEFISYS partition (/dev/sda1) mounted at /boot/efi (i.e. separate from /boot). Kernel and initramfs files synced during update using [UEFI Bootloaders#Sync EFISTUB Kernel in UEFISYS partition using Systemd](/index.php/UEFI_Bootloaders#Sync_EFISTUB_Kernel_in_UEFISYS_partition_using_Systemd "UEFI Bootloaders").
+2.  Using a 1 GiB FAT32 UEFISYS partition (/dev/sda1) mounted at /boot/efi (i.e. separate from /boot). Kernel and initramfs files synced during update using [EFISTUB](/index.php/EFISTUB "EFISTUB").
 3.  No issues with efibootmgr
 4.  Currently using gummiboot (textonly mode) as main boot manager. No need for `/EFI/Microsoft/Boot/bootmgfw.efi` hack. Dual-booting Windows 8.1 Pro x64 UEFI-GPT. Windows boot files are stored in same EFISYS partition.
 5.  Both UEFI Shell v2 and v1 work. No option in the firmware setup/menu to directly launch the shell.

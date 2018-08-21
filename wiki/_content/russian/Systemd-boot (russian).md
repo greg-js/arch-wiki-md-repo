@@ -41,7 +41,7 @@
 
 1.  Убедитесь, что вы загружены в режиме UEFI.
 2.  Проверьте [доступны ли EFI переменные](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_variable_support "Unified Extensible Firmware Interface").
-3.  Корректно примонтируйте [Системный Раздел EFI](/index.php/EFI_System_Partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "EFI System Partition (Русский)") (ESP). В этой статье `*esp*` используется для обозначения точки монтирования.
+3.  Корректно примонтируйте [Системный Раздел EFI](/index.php/EFI_system_partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "EFI system partition (Русский)") (ESP). В этой статье `*esp*` используется для обозначения точки монтирования.
     **Примечание:** *systemd-boot* EFI не может загружать бинарные файлы из других разделов. По этой причине, рекомендуется монтировать ваш ESP в `/boot`. В случае, если вы хотите разделить `/boot` с ESP, обратитесь к [#Обновлениe](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8e) для большей информации.
 
 4.  Если ESP **не** примонтирован к `/boot`, копируйте ваше ядро и initramfs в ESP.

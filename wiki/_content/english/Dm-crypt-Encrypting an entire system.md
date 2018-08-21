@@ -187,7 +187,7 @@ Another area to consider is whether to set up an encrypted swap partition and wh
 
 If you anticipate to protect the system's data not only against physical theft, but also have a requirement of precautions against logical tampering, see [dm-crypt/Specialties#Securing the unencrypted boot partition](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties") for further possibilities after following one of the scenarios.
 
-For [Solid State Drives](/index.php/Solid_State_Drive "Solid State Drive") you might want to consider enabling TRIM support, but be warned, there are potential security implications. See [dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") for more information.
+For [solid state drives](/index.php/Solid_state_drive "Solid state drive") you might want to consider enabling TRIM support, but be warned, there are potential security implications. See [dm-crypt/Specialties#Discard/TRIM support for solid state drives (SSD)](/index.php/Dm-crypt/Specialties#Discard.2FTRIM_support_for_solid_state_drives_.28SSD.29 "Dm-crypt/Specialties") for more information.
 
 **Warning:** In any scenario, never use file system repair software such as [fsck](/index.php/Fsck "Fsck") directly on an encrypted volume, or it will destroy any means to recover the key used to decrypt your files. Such tools must be used on the decrypted (opened) device instead.
 
@@ -726,7 +726,7 @@ The next steps save you from entering your passphrase twice when you boot the sy
 
 ### Configuring the system
 
-Edit [/etc/fstab](/index.php/Fstab "Fstab") to mount the cryptroot and cryptdata block devices:
+Edit [fstab](/index.php/Fstab "Fstab") to mount the cryptroot and cryptdata block devices:
 
 ```
 /dev/mapper/cryptroot  /           ext4    rw,noatime  0   1 

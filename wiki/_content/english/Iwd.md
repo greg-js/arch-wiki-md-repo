@@ -73,6 +73,7 @@ Connect to a WPA2 protected network (will prompt you for the passphrase):
 
 *   `iwd` automatically stores network passphrases (as encrypted `PreSharedKey`) in the `/var/lib/iwd` directory and uses them to auto-connect in the future.
 *   To connect to a network with spaces in the SSID, the network name should be double quoted when connecting.
+*   IWD only supports PSK pass-phrases from 8 to 63 ASCII-encoded characters. The following error message will be ouputted if the requirements are not met: "PMK generation failed. Ensure Crypto Engine is properly configured"
 
 Displaying details of a WiFi device (like MAC address, state and connected network):
 

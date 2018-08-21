@@ -122,22 +122,7 @@ source /usr/bin/virtualenvwrapper.sh
 
 ```
 
-Since python3 is a system-wide default in Arch, in order to be able to create python2 environments, you need to set `VIRTUALENVWRAPPER_PYTHON` and `VIRTUALENVWRAPPER_VIRTUALENV` prior to sourcing `virtualenvwrapper.sh` in your `~/.bashrc`:
-
-```
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv2
-
-```
-
 The line `source /usr/bin/virtualenvwrapper.sh` can cause some slowdown when starting a new shell. To fix this try using `source /usr/bin/virtualenvwrapper_lazy.sh`, which will load virtualenvwrapper the first time a virtualenvwrapper function is called.
-
-If you are not using python3 by default (check the output of `python --version`) you need to add the following line to your `~/.bashrc` prior sourcing the `virtualenvwrapper.sh` script.
-
-```
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-
-```
 
 Re-open your console and create the `WORKON_HOME` folder:
 

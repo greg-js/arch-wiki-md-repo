@@ -394,7 +394,7 @@ For letting badblocks (from the [e2fsprogs](https://www.archlinux.org/packages/?
 
 Some drives support **Enhanced Secure Erase**, which uses distinct patterns defined by the manufacturer. If the output of `hdparm -I` for the device indicates a manifold time advantage for the **Enhanced** erasure, the device probably has a hardware encryption feature and the wipe will be performed to the encryption keys only.
 
-For detailed instructions on using ATA Secure Erase, see [Solid State Drive/Memory cell clearing](/index.php/Solid_State_Drive/Memory_cell_clearing "Solid State Drive/Memory cell clearing") and the [Linux ATA wiki](https://ata.wiki.kernel.org/index.php/ATA_Secure_Erase).
+For detailed instructions on using ATA Secure Erase, see [Solid state drive/Memory cell clearing](/index.php/Solid_state_drive/Memory_cell_clearing "Solid state drive/Memory cell clearing") and the [Linux ATA wiki](https://ata.wiki.kernel.org/index.php/ATA_Secure_Erase).
 
 ## See also
 

@@ -24,15 +24,16 @@
 | <small>4.</small> [Hardware](/index.php/Category:Hardware_(Portugu%C3%AAs) "Category:Hardware (Português)") <small>(0)</small> |
 | <small>4.1.</small> [CPU](/index.php/Category:CPU_(Portugu%C3%AAs) "Category:CPU (Português)") <small>(1)</small> |
 | <small>4.2.</small> [Graphics](/index.php/Category:Graphics_(Portugu%C3%AAs) "Category:Graphics (Português)") <small>(1)</small> |
-| <small>4.3.</small> [Input devices](/index.php/Category:Input_devices_(Portugu%C3%AAs) "Category:Input devices (Português)") <small>(0)</small> |
-| <small>4.3.1.</small> [Keyboards](/index.php/Category:Keyboards_(Portugu%C3%AAs) "Category:Keyboards (Português)") <small>(0)</small> |
-| <small>4.3.1.1.</small> [Keyboard configuration](/index.php/Category:Keyboard_configuration_(Portugu%C3%AAs) "Category:Keyboard configuration (Português)") <small>(1) (também em [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)"))</small> |
-| <small>4.4.</small> [Laptops](/index.php/Category:Laptops_(Portugu%C3%AAs) "Category:Laptops (Português)") <small>(0)</small> |
-| <small>4.4.1.</small> [HP](/index.php/Category:HP_(Portugu%C3%AAs) "Category:HP (Português)") <small>(1)</small> |
-| <small>4.5.</small> [Mobile devices](/index.php/Category:Mobile_devices_(Portugu%C3%AAs) "Category:Mobile devices (Português)") <small>(0)</small> |
-| <small>4.5.1.</small> [Android](/index.php/Category:Android_(Portugu%C3%AAs) "Category:Android (Português)") <small>(1)</small> |
-| <small>4.6.</small> [Sound](/index.php/Category:Sound_(Portugu%C3%AAs) "Category:Sound (Português)") <small>(3) (também em [Multimedia](/index.php/Category:Multimedia_(Portugu%C3%AAs) "Category:Multimedia (Português)"))</small> |
-| <small>4.7.</small> [Storage](/index.php/Category:Storage_(Portugu%C3%AAs) "Category:Storage (Português)") <small>(1)</small> |
+| <small>4.3.</small> [Hardware detection and troubleshooting](/index.php/Category:Hardware_detection_and_troubleshooting_(Portugu%C3%AAs) "Category:Hardware detection and troubleshooting (Português)") <small>(1)</small> |
+| <small>4.4.</small> [Input devices](/index.php/Category:Input_devices_(Portugu%C3%AAs) "Category:Input devices (Português)") <small>(0)</small> |
+| <small>4.4.1.</small> [Keyboards](/index.php/Category:Keyboards_(Portugu%C3%AAs) "Category:Keyboards (Português)") <small>(0)</small> |
+| <small>4.4.1.1.</small> [Keyboard configuration](/index.php/Category:Keyboard_configuration_(Portugu%C3%AAs) "Category:Keyboard configuration (Português)") <small>(1) (também em [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)"))</small> |
+| <small>4.5.</small> [Laptops](/index.php/Category:Laptops_(Portugu%C3%AAs) "Category:Laptops (Português)") <small>(0)</small> |
+| <small>4.5.1.</small> [HP](/index.php/Category:HP_(Portugu%C3%AAs) "Category:HP (Português)") <small>(1)</small> |
+| <small>4.6.</small> [Mobile devices](/index.php/Category:Mobile_devices_(Portugu%C3%AAs) "Category:Mobile devices (Português)") <small>(0)</small> |
+| <small>4.6.1.</small> [Android](/index.php/Category:Android_(Portugu%C3%AAs) "Category:Android (Português)") <small>(1)</small> |
+| <small>4.7.</small> [Sound](/index.php/Category:Sound_(Portugu%C3%AAs) "Category:Sound (Português)") <small>(3) (também em [Multimedia](/index.php/Category:Multimedia_(Portugu%C3%AAs) "Category:Multimedia (Português)"))</small> |
+| <small>4.8.</small> [Storage](/index.php/Category:Storage_(Portugu%C3%AAs) "Category:Storage (Português)") <small>(1)</small> |
 | <small>5.</small> [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)") <small>(2)</small> |
 | <small>5.1.</small> [DHCP](/index.php/Category:DHCP_(Portugu%C3%AAs) "Category:DHCP (Português)") <small>(2)</small> |
 | <small>5.2.</small> [Domain Name System](/index.php/Category:Domain_Name_System_(Portugu%C3%AAs) "Category:Domain Name System (Português)") <small>(3)</small> |

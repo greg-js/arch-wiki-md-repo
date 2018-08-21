@@ -345,7 +345,7 @@ You should of course refer to your application's documentation and Wine's [AppDB
 
 #### DXVK
 
-[DXVK](https://github.com/doitsujin/dxvk) is a promising new implementation for DirectX 11 over Vulkan. This should allow for greater performance, and in some cases, even better compatibility. Battlefield 1 for example, only runs under DXVK. On the other hand, DXVK does not support all Wine games (yet).
+[DXVK](https://github.com/doitsujin/dxvk) is a promising new implementation for DirectX 10 and DirectX 11 over Vulkan. This should allow for greater performance, and in some cases, even better compatibility. Battlefield 1 for example, only runs under DXVK. On the other hand, DXVK does not support all Wine games (yet).
 
 To use it, install [dxvk-bin](https://aur.archlinux.org/packages/dxvk-bin/) for official binaries, or [dxvk-git](https://aur.archlinux.org/packages/dxvk-git/) for the development version. Then run the following command to activate it in your Wineprefix (by default `~/.wine`):
 
@@ -358,7 +358,7 @@ Use `setup_dxvk32` for 32-bit applications.
 
 **Note:** For Wine versions below 3.5 you need to configure Vulkan support manually, following the instructions at [GitHub](https://github.com/roderickc/wine-vulkan). [wine](https://www.archlinux.org/packages/?name=wine), [wine-staging](https://www.archlinux.org/packages/?name=wine-staging) and [wine-staging-nine](https://www.archlinux.org/packages/?name=wine-staging-nine) work out of the box.
 
-**Warning:** DXVK overrides the DirectX 11 DLLS, which may be considered cheating in online multiplayer games, and may get your account **banned**. Use at your own risk!
+**Warning:** DXVK overrides the DirectX 10 and 11 DLLs, which may be considered cheating in online multiplayer games, and may get your account **banned**. Use at your own risk!
 
 ### Unregister existing Wine file associations
 

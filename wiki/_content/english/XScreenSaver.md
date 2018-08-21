@@ -123,12 +123,17 @@ stop-screensaver = "yes"
 
 ```
 
-This is not supported on all video outputs or platforms. If you face some issues you might use the `heartbeat-cmd` which runs a command every 30 seconds (by default). The following can be added in the config file:
+This is not supported on all video outputs or platforms. If you face some issues you might use a Lua script to manually disable the screensaver. Create a file at `~/.config/mpv/scripts/xscreensaver.lua` with the follwing contents:
 
 ```
-heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
+local utils = require 'mp.utils'
+mp.add_periodic_timer(30, function()
+    utils.subprocess({args={"xscreensaver-command", "-deactivate"}})
+end)
 
 ```
+
+The above script will call `xscreensaver-command -deactivate` every 30 seconds. (Formerly you could use the `heartbeat-cmd` config option, but that is no longer present in newer versions of mpv).
 
 #### mplayer
 

@@ -97,7 +97,7 @@ e4rat-realloc /var/lib/e4rat/startup.log
 
 ```
 
-This can take a while depending on how many files you have in your startup.log file. Switching to rescue mode with `systemctl isolate rescue` ([Systemd#Mapping_between_SysV_runlevels_and_systemd_targets](/index.php/Systemd#Mapping_between_SysV_runlevels_and_systemd_targets "Systemd")) may allow for more inodes/blocks to be reallocated as some may not be free while in *multiuser.target*
+This can take a while depending on how many files you have in your startup.log file. Switching to rescue mode with `systemctl isolate rescue` ([Systemd#Mapping between SysV runlevels and systemd targets](/index.php/Systemd#Mapping_between_SysV_runlevels_and_systemd_targets "Systemd")) may allow for more inodes/blocks to be reallocated as some may not be free while in *multiuser.target*
 
 **Note:** It may be worthwhile to repeat the reallocation step multiple times before exiting or rebooting in order to further reduce the fragmentation count. Simply re-run the command a few times to see if this is possible on the your setup. If so you'll see the count number reduced after a few runs. This is perfectly safe and shouldn't cause any issues with booting.
 

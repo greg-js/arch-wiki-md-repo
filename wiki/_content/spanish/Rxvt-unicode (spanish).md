@@ -4,7 +4,7 @@
 
 *   [1 Installación](#Installaci.C3.B3n)
 *   [2 Configuración](#Configuraci.C3.B3n)
-    *   [2.1 Creaando ~/.Xresources](#Creaando_.7E.2F.Xresources)
+    *   [2.1 Creando ~/.Xresources](#Creando_.7E.2F.Xresources)
         *   [2.1.1 Ejemplo ~/.Xresources #1](#Ejemplo_.7E.2F.Xresources_.231)
         *   [2.1.2 Ejemplo ~/.Xresources #2](#Ejemplo_.7E.2F.Xresources_.232)
 *   [3 Consejos & Trucos](#Consejos_.26_Trucos)
@@ -44,7 +44,7 @@ Install the latest version of rxvt-unicode:
 
 ## Configuración
 
-### Creaando ~/.Xresources
+### Creando ~/.Xresources
 
 El aspecto y las funciones de rxvt-unicode son especificados en el archivo `.[Xresources](/index.php/Xresources "Xresources")`.
 

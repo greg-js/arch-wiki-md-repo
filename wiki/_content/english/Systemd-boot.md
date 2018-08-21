@@ -181,7 +181,7 @@ efi     /EFI/shellx64_v2.efi
 
 ### Booting into EFI Firmware Setup
 
-Most system firmware configured for EFI booting will add its own [efibootmgr](/index.php/Unified_Extensible_Firmware_Interface#efibootmgr "Unified Extensible Firmware Interface") entries to boot into UEFI Firmware Setup.
+Most system firmware configured for EFI booting will add its own [efibootmgr](/index.php/Efibootmgr "Efibootmgr") entries to boot into UEFI Firmware Setup.
 
 ### Preparing kernels for /EFI/Linux
 

@@ -269,7 +269,7 @@ Se si avvia SLiM come demone da `/etc/rc.conf` e si ha un errore all'avvio potre
 
 ### Errore allo spegnimento con Splashy
 
-Se si usa [Splashy](/index.php/Splashy "Splashy") in accoppiata con SLiM, qualche volta risulterà impossibile spegnere o riavviare il proprio computer. Controllare che `/etc/slim.conf` e `/etc/splash.conf` siano correttamente settati su tty7 così: `DEFAULT_TTY=7` e `xserver_arguments vt07`.
+Se si usa Splashy in accoppiata con SLiM, qualche volta risulterà impossibile spegnere o riavviare il proprio computer. Controllare che `/etc/slim.conf` e `/etc/splash.conf` siano correttamente settati su tty7 così: `DEFAULT_TTY=7` e `xserver_arguments vt07`.
 
 ### L'icona per lo spegnimento non funziona
 

@@ -11,8 +11,8 @@ This article overviews how to configure Firefox to enhance security and privacy.
 ## Contents
 
 *   [1 Configuration](#Configuration)
-    *   [1.1 Enable Anti-Fingerprinting](#Enable_Anti-Fingerprinting)
-    *   [1.2 Enable tracking protection](#Enable_tracking_protection)
+    *   [1.1 Anti-fingerprinting](#Anti-fingerprinting)
+    *   [1.2 Tracking protection](#Tracking_protection)
     *   [1.3 Change browser time zone](#Change_browser_time_zone)
     *   [1.4 Change user agent and platform](#Change_user_agent_and_platform)
     *   [1.5 WebRTC exposes LAN IP address](#WebRTC_exposes_LAN_IP_address)
@@ -33,7 +33,7 @@ This article overviews how to configure Firefox to enhance security and privacy.
 
 The following are privacy-focused configuration tweaks to prevent [browser fingerprinting](https://panopticlick.eff.org/) and tracking.
 
-### Enable Anti-Fingerprinting
+### Anti-fingerprinting
 
 Mozilla has started an [anti-fingerprinting project in Firefox](https://wiki.mozilla.org/Security/Fingerprinting "mozillawiki:Security/Fingerprinting"), as part of a project to upstream features from [Tor Browser](/index.php/Tor_Browser "Tor Browser"). Many of these anti-fingerprinting features are enabled by setting `about:config`:
 
@@ -41,7 +41,7 @@ Mozilla has started an [anti-fingerprinting project in Firefox](https://wiki.moz
 
 There is no user-facing documentation about this flag, and Mozilla does not recommend users enable it, since it will break a few websites (it exists mostly to make life easier for the Tor Browser developers). But it does automatically enable many of the features listed below (such as changing your reported timezone and user agent), as well as protection against other, lesser-known fingerprinting techniques. See the [tracking bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1333933) that lists many of these features.
 
-### Enable tracking protection
+### Tracking protection
 
 Firefox gained an option for [tracking protection](https://support.mozilla.org/en-US/kb/tracking-protection-firefox). It can be enabled by setting `about:config`:
 

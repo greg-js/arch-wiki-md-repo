@@ -1,6 +1,6 @@
 A **mail server** or [mail transfer agent](https://en.wikipedia.org/wiki/Message_transfer_agent "wikipedia:Message transfer agent") (MTA) receives and sends emails via [SMTP](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol "wikipedia:Simple Mail Transfer Protocol"). Received and accepted emails are then passed to a [mail delivery agent](https://en.wikipedia.org/wiki/Mail_delivery_agent "wikipedia:Mail delivery agent") (MDA), which stores the mail in a mailbox (usually in [mbox](https://en.wikipedia.org/wiki/mbox "wikipedia:mbox") or [Maildir](https://en.wikipedia.org/wiki/Maildir "wikipedia:Maildir") format). If you want users to be able to remotely access their mail using [email clients](/index.php/Email_client "Email client") or [mail retrieval agents](/index.php/Category:Mail_retrieval_agents "Category:Mail retrieval agents"), you need to run a [POP3](https://en.wikipedia.org/wiki/Post_Office_Protocol "wikipedia:Post Office Protocol") and/or [IMAP](https://en.wikipedia.org/wiki/IMAP "wikipedia:IMAP") server.
 
-| Software | Package | [MTA](https://en.wikipedia.org/wiki/Message_transfer_agent "wikipedia:Message transfer agent") | [MDA](https://en.wikipedia.org/wiki/Mail_delivery_agent "wikipedia:Mail delivery agent") | [POP3](https://en.wikipedia.org/wiki/Post_Office_Protocol "wikipedia:Post Office Protocol") | [IMAP](https://en.wikipedia.org/wiki/IMAP "wikipedia:IMAP") | [SPF](#Sender_Policy_Framework) |
+| Software | Package | [MTA](https://en.wikipedia.org/wiki/Message_transfer_agent "wikipedia:Message transfer agent") | [MDA](https://en.wikipedia.org/wiki/Mail_delivery_agent "wikipedia:Mail delivery agent") | [POP3](https://en.wikipedia.org/wiki/Post_Office_Protocol "wikipedia:Post Office Protocol") | [IMAP](https://en.wikipedia.org/wiki/IMAP "wikipedia:IMAP") | [SPF](/index.php/SPF "SPF") |
 | [Sendmail](/index.php/Sendmail "Sendmail") | [sendmail](https://aur.archlinux.org/packages/sendmail/) | Yes | No | No | No | through [Milter](https://en.wikipedia.org/wiki/Milter "wikipedia:Milter") |
 | [Exim](/index.php/Exim "Exim") | [exim](https://www.archlinux.org/packages/?name=exim) | Yes | Yes | No | No | experimental[[1]](https://github.com/Exim/exim/wiki/SPF) |
 | [OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD") | [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd) | Yes | Yes | No | No | No |
@@ -66,7 +66,7 @@ The following websites let you validate your SPF record:
 
 ### Sender Rewriting Scheme
 
-The [Sender Rewriting Scheme](https://en.wikipedia.org/wiki/Sender_Rewriting_Scheme "wikipedia:Sender Rewriting Scheme") (SRS) is a secure scheme to allow forwardable bounces for server-side forwarded emails without breaking the [Sender Policy Framework](#Sender_Policy_Framework).
+The [Sender Rewriting Scheme](https://en.wikipedia.org/wiki/Sender_Rewriting_Scheme "wikipedia:Sender Rewriting Scheme") (SRS) is a secure scheme to allow forwardable bounces for server-side forwarded emails without breaking the [Sender Policy Framework](/index.php/Sender_Policy_Framework "Sender Policy Framework").
 
 For [Postfix](/index.php/Postfix "Postfix"), see [Postfix#Sender Rewriting Scheme](/index.php/Postfix#Sender_Rewriting_Scheme "Postfix").
 

@@ -467,7 +467,7 @@ lxc.net.0.link = `bridge`
 
 ```
 
-And then assign your IP through your preferred method **inside** the container, see also [Network configuration#Network_management](/index.php/Network_configuration#Network_management "Network configuration").
+And then assign your IP through your preferred method **inside** the container, see also [Network configuration#Network management](/index.php/Network_configuration#Network_management "Network configuration").
 
 ### Error: unknown command
 

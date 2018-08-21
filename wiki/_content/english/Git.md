@@ -1,5 +1,6 @@
 Related articles
 
+*   [Bisecting bugs with Git](/index.php/Bisecting_bugs_with_Git "Bisecting bugs with Git")
 *   [Gitweb](/index.php/Gitweb "Gitweb")
 *   [Cgit](/index.php/Cgit "Cgit")
 *   [HTTP tunneling#Tunneling Git](/index.php/HTTP_tunneling#Tunneling_Git "HTTP tunneling")

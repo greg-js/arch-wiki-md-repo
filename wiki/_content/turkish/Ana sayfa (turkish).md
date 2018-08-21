@@ -1,65 +1,65 @@
 **[ArchWiki](/index.php/ArchWiki:About "ArchWiki:About")'ye hoş geldiniz: Web'deki Arch Linux belgeleri için kaynağınız.**
 
-Makale katagorilerini listelemek için [İçindekiler](/index.php/Table_of_contents "Table of contents") bölümünü ziyaret edin.
+Makale kategorilerini listelemek için [İçindekiler](/index.php/Table_of_contents "Table of contents") bölümünü ziyaret edin.
 
 ## Dağıtım
 
 	[Arch Linux](/index.php/Arch_Linux "Arch Linux")
 
-	Overview of Arch Linux describing what to expect from an Arch Linux system.
+	Bir Arch Linux sisteminden beklenecekleri açıklayan Arch Linux incelemesi
 
-	[Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions")
+	[Sık sorulan sorular](/index.php/Frequently_asked_questions "Frequently asked questions")
 
-	Notable questions and facts about the distribution.
+	Dağıtım hakkında dikkate değer sorular ve bilgiler.
 
-	[Arch compared to other distributions](/index.php/Arch_compared_to_other_distributions "Arch compared to other distributions")
+	[Diğer dağıtımlarla karşılaştırıldığında Arch](/index.php/Arch_compared_to_other_distributions "Arch compared to other distributions")
 
-	Summarizes the similarities and differences between Arch and other distributions.
+	Arch ve diğer dağıtımlar arasındaki benzerlik ve farklılıkları derler.
 
 	[Yükleme rehberi](/index.php/Installation_guide_(T%C3%BCrk%C3%A7e) "Installation guide (Türkçe)")
 
-	Guide through the process of installing Arch Linux.
+	Arch Linux kurulum süreci için yönergeler.
 
-	[General recommendations](/index.php/General_recommendations "General recommendations")
+	[Genel öneriler](/index.php/General_recommendations_(T%C3%BCrk%C3%A7e) "General recommendations (Türkçe)")
 
-	Annotated index of post-installation tutorials and other popular articles.
+	Yükleme sonrası öğreticiler ve diğer popüler makalelerin toplandığı alan.
 
-	[List of applications](/index.php/List_of_applications "List of applications")
+	[Uygulamaların Listesi](/index.php/List_of_applications "List of applications")
 
-	Categorized presentation of common official and AUR packages.
+	Sık kullanılan resmi ve AUR paketlerinin kategorize edilmiş sunumu.
 
-## Our community
+## Topluluğumuz
 
-	[Code of conduct](/index.php/Code_of_conduct "Code of conduct")
+	[Davranış kuralları](/index.php/Code_of_conduct "Code of conduct")
 
-	Guidelines for the Arch community.
+	Arch topluluğunun ilkeleri.
 
-	[Getting involved](/index.php/Getting_involved "Getting involved")
+	[İlgili olmak](/index.php/Getting_involved "Getting involved")
 
-	Describes various ways Archers can contribute to the Arch community.
+	Archer'ların Arch topluluğuna katkıda bulunabildiği sık yöntemleri açıklar.
 
-	[International communities](/index.php/International_communities "International communities")
+	[Uluslararası topluluklar](/index.php/International_communities "International communities")
 
-	Collection of links to the Arch Linux communities around the world.
+	Dünya çapındaki Arch Linux topluluklarının bağlantılarının koleksiyonu.
 
-	[IRC channels](/index.php/IRC_channels "IRC channels")
+	[IRC kanalları](/index.php/IRC_channels "IRC channels")
 
-	Get together with your fellow Archers for a good chat.
+	İyi bir sohbet için Archer dostlarımızla birlikte olun.
 
-## Wiki interaction
+## Wiki etkileşimleri
 
-	[Help:Reading](/index.php/Help:Reading "Help:Reading")
+	[Yardım:Okuma](/index.php/Help:Reading "Help:Reading")
 
-	Find clarifications if you struggle to understand instructions in some articles.
+	Makalelerdeki tarifleri anlamakta güçlük çekenler için açıklamaları bulun.
 
-	[Help:Searching](/index.php/Help:Searching "Help:Searching")
+	[Yardım:Arama](/index.php/Help:Searching "Help:Searching")
 
-	Try using the search box at the top of the page; follow the link for more tricks.
+	Sayfanın üst kısmındaki arama kutusunu kullanmayı deneyin.
 
-	[ArchWiki:Contributing](/index.php/ArchWiki:Contributing "ArchWiki:Contributing")
+	[ArchWiki:Katkı](/index.php/ArchWiki:Contributing "ArchWiki:Contributing")
 
-	The starting point for those willing to contribute to the wiki.
+	Wiki'ye katkıta bulunacaklar için başlangıç noktası.
 
-	[Help:Editing](/index.php/Help:Editing "Help:Editing")
+	[Yardım:Düzenleme](/index.php/Help:Editing "Help:Editing")
 
-	Tutorial on editing articles and introduction to wiki text syntax.
+	Makaleleri düzenlemek ve wiki yazı sözdizimi üzerine yönergeler.

@@ -21,11 +21,12 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [5.1 CPU pinning](#CPU_pinning)
         *   [5.1.1 The case of Hyper-threading](#The_case_of_Hyper-threading)
     *   [5.2 Static huge pages](#Static_huge_pages)
-    *   [5.3 CPU frequency governor](#CPU_frequency_governor)
-    *   [5.4 High DPC Latency](#High_DPC_Latency)
-        *   [5.4.1 CPU pinning with isolcpus](#CPU_pinning_with_isolcpus)
-    *   [5.5 Improving performance on AMD CPUs](#Improving_performance_on_AMD_CPUs)
-    *   [5.6 Further Tuning](#Further_Tuning)
+    *   [5.3 Dynamic huge pages](#Dynamic_huge_pages)
+    *   [5.4 CPU frequency governor](#CPU_frequency_governor)
+    *   [5.5 High DPC Latency](#High_DPC_Latency)
+        *   [5.5.1 CPU pinning with isolcpus](#CPU_pinning_with_isolcpus)
+    *   [5.6 Improving performance on AMD CPUs](#Improving_performance_on_AMD_CPUs)
+    *   [5.7 Further Tuning](#Further_Tuning)
 *   [6 Special procedures](#Special_procedures)
     *   [6.1 Using identical guest and host GPUs](#Using_identical_guest_and_host_GPUs)
         *   [6.1.1 Script variants](#Script_variants)
@@ -413,6 +414,41 @@ Also, since static huge pages can only be used by applications that specifically
 ...
 
 ```
+
+### Dynamic huge pages
+
+Hugepages could be allocated dynamically via vm.nr_overcommit_hugepages parameter.
+
+ `sysctl.d/10-kvm.conf` 
+```
+vm.nr_hugepages = 0
+vm.nr_overcommit_hugepages = <num>
+
+```
+
+Where num - is the number of huge pages, which default size if 2Mb. Pages will be automatically allocated, and freed after VM stops.
+
+More manual way
+
+ `manual dynamic huge pages` 
+```
+echo <num> | sudo tee /sys/kernel/mm/hugepages/hugepages-2048kB/nr_hugepages
+echo <num> | sudo tee /sys/kernel/mm/hugepages/hugepages-1048576kB/nr_hugepages
+
+```
+
+For 2Mb and 1Gb page size respectively. And they should be manually freed in the same way.
+
+It is hardly recommended to drop caches, compact memory and wait couple of seconds before starting VM, as there could be not enough free contiguous memory for required huge pages blocks. Especially after some uptime of the host system.
+
+ `organize ram` 
+```
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+echo 1 | sudo tee /proc/sys/vm/compact_memory
+
+```
+
+Theoretically, 1Gb pages works as 2Mb. But practically - no guaranteed way was found to get contiguous 1Gb memory blocks. Each consequent request of 1Gb blocks lead to lesser and lesser dynamically allocated count.
 
 ### CPU frequency governor
 

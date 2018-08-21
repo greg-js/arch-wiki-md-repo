@@ -25,7 +25,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
     *   [3.2 Gnome scaling](#Gnome_scaling)
     *   [3.3 ICC screen calibration (enhanced brightness)](#ICC_screen_calibration_.28enhanced_brightness.29)
     *   [3.4 Video driver](#Video_driver)
-*   [4 Issues](#Issues)
+*   [4 Issue: Airplane mode after login](#Issue:_Airplane_mode_after_login)
 
 ## Hardware info
 
@@ -146,12 +146,12 @@ The profile is currently based on 406 patches only. Improved profiles will be ma
 
 As mentioned in [Intel graphics](/index.php/Intel_graphics "Intel graphics") some people recommend to stay with the modesetting driver included in Xorg. As of Xorg 1.18.2, Mesa before 12.0 the performance of this driver is inacceptable when it comes to simple tasks like web browsing, scrolling documents or anything alike. On this machine installing [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) improves performance a lot.
 
-## Issues
-
-Issues for which no resolution could be found:
+## Issue: Airplane mode after login
 
 *   Wifi is working. The hotkey for the airplane mode works. Although something strange is going on with the hotkey:
     *   Booting to console leads to some spam of ^@ for like 10 seconds. After this it suddenly stops and you can log in.
     *   Booting to GDM makes the hotkey for airplane mode work. Nothing special. You can login immediately.
     *   Right after login to Gnome the hotkey is spammed and thus airplane mode turned off and on for like 7 seconds. `dmesg` shows some hard faults caused by wifi module being unexpectedly unavailable but nothing else suspicious.
     *   If you wait in GDM for a while, the spam hotkey spam won't happen after login. I.e. the timer is running already while you are in GDM.
+
+*   The solution described at [[1]](https://askubuntu.com/questions/965595/why-does-airplane-mode-keep-toggling-on-my-hp-laptop-in-ubuntu-18-04) seems to work.

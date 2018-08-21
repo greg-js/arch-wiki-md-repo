@@ -44,7 +44,6 @@ See [Bootsplash](/index.php/Bootsplash "Bootsplash").
 *   **Bootsplash** – the first and original implementation of a Linux kernel bootsplash, superseded by Splashy
 *   [Fbsplash](/index.php/Fbsplash "Fbsplash") - Gentoo implementation as bootsplash program
 *   [Plymouth](/index.php/Plymouth "Plymouth") – the new graphical boot process for Fedora, replacing the aging Red Hat Graphical Boot
-*   [Splashy](/index.php/Splashy "Splashy") – a graphical boot process designed to replace the aging Bootsplash program
 *   usplash – former bootsplash program used by Ubuntu
 *   [xsplash-bzr](https://aur.archlinux.org/packages/xsplash-bzr/) – new splash program used by Ubuntu starting from 9.10
 

@@ -62,7 +62,7 @@ restrict default nomodify nopeer noquery
 
 ```
 
-This restricts everyone from modifying anything and prevents everyone from querying the status of your time server: `nomodify` prevents reconfiguring *ntpd* (with *ntpq* or *ntpdc*), and `noquery` is [important to prevent](https://mailman.archlinux.org/pipermail/arch-dev-public/2014-February/025872.html) dumping status data from *ntpd* (also with *ntpq* or *ntpdc*).
+This restricts everyone from modifying anything and prevents everyone from querying the status of your time server: `nomodify` prevents reconfiguring *ntpd* (with *ntpq* or *ntpdc*), and `noquery` is important to [prevent](https://mailman.archlinux.org/pipermail/arch-dev-public/2014-February/025872.html) dumping status data from *ntpd* (also with *ntpq* or *ntpdc*).
 
 You can also add other options:
 
@@ -73,7 +73,7 @@ restrict default kod nomodify notrap nopeer noquery
 
 **Note:** This still allows other people to query your time server. You need to add `noserve` to stop serving time. It will also block time synchronization since it blocks all packets except *ntpq* and *ntpdc* queries.
 
-If you want to change any of these, see the full docs for the "restrict" option in [ntp.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ntp.conf.5), the detailed [ntp instructions](https://support.ntp.org/bin/view/Support/AccessRestrictions) and [#As a daemon](#As_a_daemon).
+If you want to change any of these, see the full docs for the "restrict" option in [ntp.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ntp.conf.5), the detailed ntp [instructions](https://support.ntp.org/bin/view/Support/AccessRestrictions) and [#Usage](#Usage).
 
 Following this line, you need to tell *ntpd* what to allow through into your server; the following line is enough if you are not configuring an NTP server:
 

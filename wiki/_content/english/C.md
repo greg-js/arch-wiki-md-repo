@@ -14,6 +14,8 @@ You can use the [GNU toolchain](/index.php/GNU_toolchain "GNU toolchain") or the
 
 ## Useful tools
 
+**Note:** As of August 4, 2018 [valgrind](https://www.archlinux.org/packages/?name=valgrind) no longer works because of [FS#59551](https://bugs.archlinux.org/task/59551), you can fall back to [valgrind-git](https://aur.archlinux.org/packages/valgrind-git/).
+
 *   **[Valgrind](https://en.wikipedia.org/wiki/Valgrind "wikipedia:Valgrind")** — Tool to help find memory-management problems in programs.
 
 	[http://valgrind.org/](http://valgrind.org/) || [valgrind](https://www.archlinux.org/packages/?name=valgrind)

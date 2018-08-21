@@ -168,6 +168,10 @@ If "0", does not restore the backlight settings on boot. However, settings will 
 
 	[http://www.pberndt.com/Programme/Linux/brightd/](http://www.pberndt.com/Programme/Linux/brightd/) || [brightd](https://aur.archlinux.org/packages/brightd/)
 
+*   **brillo** — Minimal, self contained program to control brightness and keyboard controllers. Allows unprivileged access using udev rules or PolicyKit.
+
+	[https://gitlab.com/cameronnemo/brillo](https://gitlab.com/cameronnemo/brillo) || [brillo](https://aur.archlinux.org/packages/brillo/)
+
 *   **brightnessctl** — Lightweight brightness control tool (Wayland compatible). Note that brightnessctl is a setuid binary, which might be considered a security risk by some.
 
 	[https://github.com/Hummer12007/brightnessctl](https://github.com/Hummer12007/brightnessctl) || [brightnessctl](https://aur.archlinux.org/packages/brightnessctl/)

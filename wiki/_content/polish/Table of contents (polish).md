@@ -27,6 +27,7 @@
 | <small>7.1.1.</small> [Stacking WMs](/index.php/Category:Stacking_WMs_(Polski) "Category:Stacking WMs (Polski)") <small>(2)</small> |
 | <small>7.2.</small> [File systems](/index.php/Category:File_systems_(Polski) "Category:File systems (Polski)") <small>(8)</small> |
 | <small>7.2.1.</small> [Disk encryption](/index.php/Category:Disk_encryption_(Polski) "Category:Disk encryption (Polski)") <small>(8) (również w [Encryption](/index.php/Category:Encryption_(Polski) "Category:Encryption (Polski)"))</small> |
+| <small>7.2.2.</small> [Storage virtualization](/index.php/Category:Storage_virtualization_(Polski) "Category:Storage virtualization (Polski)") <small>(1)</small> |
 | <small>7.3.</small> [General](/index.php/Category:General_(Polski) "Category:General (Polski)") <small>(1)</small> |
 | <small>7.4.</small> [Package management](/index.php/Category:Package_management_(Polski) "Category:Package management (Polski)") <small>(5)</small> |
 | <small>7.5.</small> [Utilities](/index.php/Category:Utilities_(Polski) "Category:Utilities (Polski)") <small>(3)</small> |

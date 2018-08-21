@@ -283,7 +283,7 @@ Sus volúmenes lógicos deberian encontrarse en `/dev/mapper/` y `/dev/Nombredel
 
 ```
 
-Ahora puede crear el sistema de archivos en los volúmenes lógicos, y montarlos como particiones normales (si está instalando Arch, remítase a [montar los sistemas de archivo](/index.php/Installation_guide_(Espa%C3%B1ol)#Montar_los_sistemas_de_archivos "Installation guide (Español)") para obtener información adicional):
+Ahora puede crear el sistema de archivos en los volúmenes lógicos, y montarlos como particiones normales (si está instalando Arch, remítase a [montar los sistemas de archivo](/index.php/Installation_guide_(Espa%C3%B1ol)#Montaje_de_los_sistemas_de_archivos "Installation guide (Español)") para obtener información adicional):
 
 ```
 # mkfs.<*tipo_sistema_archivos*> /dev/mapper/<*grupo_volúmenes*>-<*volumen_lógico*>
@@ -454,7 +454,7 @@ Ampliar 2GB el volumen lógico *nv1* dentro del grupo de volúmenes *vg1* *sin* 
 
 ```
 
-Reducir 500MB el volumen lógico `vg1/nv1` *sin* cambiar el tamaño de su sistema de archivos (asegúrese de que este último [está ya reducido](/index.php/LVM#Resizing_the_file_system_separately "LVM") en este caso):
+Reducir 500MB el volumen lógico `vg1/nv1` *sin* cambiar el tamaño de su sistema de archivos (asegúrese de que este último [está ya reducido](/index.php/LVM_(Espa%C3%B1ol)#Redimensionar_por_separado_el_sistema_de_archivos "LVM (Español)") en este caso):
 
 ```
 # lvresize -L -500M vg1/lv1
@@ -468,7 +468,7 @@ Ajustar `vg1/lv1` a 15GB y redimensionar su sistema de archivos *todo a la vez*:
 
 ```
 
-**Nota:** Solo están soportados los [sistemas de archivos](/index.php/File_systems "File systems") *ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* y [XFS](/index.php/XFS "XFS"). Para otros casos mire la [utilidad apropiada](/index.php/File_systems#Arch_Linux_support "File systems").
+**Nota:** Solo están soportados los [sistemas de archivos](/index.php/File_systems "File systems") *ext2*, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), *ReiserFS* y [XFS](/index.php/XFS "XFS"). Para otros casos consulte la [utilidad apropiada](/index.php/LVM_(Espa%C3%B1ol)#Redimensionar_por_separado_el_sistema_de_archivos "LVM (Español)").
 
 Si desea ocupar todo el espacio libre de un grupo de volúmenes, utilice la siguiente orden:
 

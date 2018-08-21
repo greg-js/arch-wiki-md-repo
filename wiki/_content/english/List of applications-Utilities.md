@@ -701,7 +701,7 @@ See also [Wikipedia:Comparison of revision control software](https://en.wikipedi
 
 	[https://bazaar.canonical.com/](https://bazaar.canonical.com/) || [bzr](https://www.archlinux.org/packages/?name=bzr)
 
-*   **[CVS](/index.php/Concurrent_Versions_System "Concurrent Versions System")** — Concurrent Versions System, a client-server revision control system.
+*   **[CVS](/index.php/CVS "CVS")** — Concurrent Versions System, a client-server revision control system.
 
 	[http://cvs.nongnu.org/](http://cvs.nongnu.org/) || [cvs](https://www.archlinux.org/packages/?name=cvs)
 

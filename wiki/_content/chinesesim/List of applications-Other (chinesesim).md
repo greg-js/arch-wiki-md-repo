@@ -56,10 +56,6 @@
 
 	[http://www.freedesktop.org/wiki/Software/Plymouth/](http://www.freedesktop.org/wiki/Software/Plymouth/) || [plymouth](https://aur.archlinux.org/packages/plymouth/)
 
-*   **[Splashy](/index.php/Splashy "Splashy")** — 另一个取代Bootsplash的开机动画程序
-
-	[https://alioth.debian.org/projects/splashy/](https://alioth.debian.org/projects/splashy/) || [splashy-full](https://aur.archlinux.org/packages/splashy-full/)
-
 #### 命令行
 
 详见[Command-line shell](/index.php/Command-line_shell "Command-line shell").

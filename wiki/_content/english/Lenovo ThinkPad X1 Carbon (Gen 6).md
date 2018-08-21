@@ -15,11 +15,11 @@ Related articles
 *   [2 BIOS](#BIOS)
     *   [2.1 Updates](#Updates)
 *   [3 Suspend issues](#Suspend_issues)
-    *   [3.1 Suspend-to-RAM (S3) not supported by default](#Suspend-to-RAM_.28S3.29_not_supported_by_default)
-    *   [3.2 S2idle support](#S2idle_support)
+    *   [3.1 Enabling S3](#Enabling_S3)
+    *   [3.2 Enabling S2idle](#Enabling_S2idle)
     *   [3.3 BIOS configurations](#BIOS_configurations)
 *   [4 Power management/Throttling issues](#Power_management.2FThrottling_issues)
-    *   [4.1 Temporary fix](#Temporary_fix)
+    *   [4.1 Throttling fix](#Throttling_fix)
 *   [5 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
 *   [6 Full-disk encryption](#Full-disk_encryption)
     *   [6.1 Ramdisk module](#Ramdisk_module)
@@ -71,21 +71,28 @@ In case your `efivars` are not properly set it is most likely due to you not bei
 
 ### Updates
 
-[BIOS update 1.25](https://pcsupport.lenovo.com/de/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-carbon-6th-gen-type-20kh-20kg/downloads) was released on 2018-06-28\. Obtain [geteltorito](https://aur.archlinux.org/packages/geteltorito/) and run `./geteltorito.pl -o bios-update.img n23ur08w.iso` on the downloaded ISO file to create a valid [El Torito](https://en.wikipedia.org/wiki/El_Torito_(CD-ROM_standard) image file, then flash this file on a USB drive via `dd` like you would flash [Arch installation media](/index.php/USB_flash_installation_media "USB flash installation media"). For further information see [flashing BIOS from Linux](/index.php/Flashing_BIOS_from_Linux#Bootable_optical_disk_emulation "Flashing BIOS from Linux").
+[BIOS update 1.27](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-carbon-6th-gen-type-20kh-20kg/downloads) was released on 2018-07-28\. Obtain [geteltorito](https://aur.archlinux.org/packages/geteltorito/) and run `./geteltorito.pl -o bios-update.img n23ur09w.iso` on the downloaded ISO file to create a valid [El Torito](https://en.wikipedia.org/wiki/El_Torito_(CD-ROM_standard) image file, then flash this file on a USB drive via `dd` like you would flash [Arch installation media](/index.php/USB_flash_installation_media "USB flash installation media"). For further information see [flashing BIOS from Linux](/index.php/Flashing_BIOS_from_Linux#Bootable_optical_disk_emulation "Flashing BIOS from Linux").
 
 The ThinkPad X1 Carbon supports setting a custom splash image at the earliest boot stage(instead of the red "Lenovo" logo), more information can be found in the `README.TXT` located in the `FLASH` folder of the update image.
 
 ## Suspend issues
 
-### Suspend-to-RAM (S3) not supported by default
+The 6th Generation X1 Carbon supports S0i3 (also known as Windows Modern Standby), but not S3 out of the box. Missing S3 also causes hybrid-suspend to go directly to hibernate. Thankfully, S3 can be enabled through an ACPI override.
 
-The 6th Generation X1 Carbon supports S0i3 (also known as Windows Modern Standby) and does not support the S3 sleep state. A guide exists with [instructions for patching ACPI DSDT tables](https://delta-xi.net/#056) to add S3 support.
+### Enabling S3
 
-A [forum thread](https://bbs.archlinux.org/viewtopic.php?id=234913) has further discussion related to this issue.
+First, verify S3 is not currently available by running the following command and making sure S3 is not listed in the supported modes.
 
-Missing S3 also causes hybrid-suspend to go directly to hibernate; the mentioned patch fixes this issue.
+```
+dmesg | grep -i "acpi: (supports"
 
-### S2idle support
+```
+
+To enable S3 support, there is an automatic patching script [x1carbon2018s3](https://github.com/fiji-flo/x1carbon2018s3), that was written with full instructions on both enabling S3 and verifying the patch worked. Follow the instructions in the repository and verify with the above command afterwards.
+
+The automatic script was based off of a guide written with [instructions for patching ACPI DSDT tables](https://delta-xi.net/#056) to manually add S3 support. A [forum thread](https://bbs.archlinux.org/viewtopic.php?id=234913) has further discussion related to this issue.
+
+### Enabling S2idle
 
 From [the Lenovo forums](https://forums.lenovo.com/t5/Linux-Discussion/X1-Carbon-Gen-6-cannot-enter-deep-sleep-S3-state-aka-Suspend-to/m-p/4016317/highlight/true#M10682): Add the following [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to enable S2idle support:
 
@@ -133,72 +140,24 @@ Due to wrong configured power management registers the CPU may consume a lot les
 
 There is a [post in the official Lenovo forum](https://forums.lenovo.com/t5/Linux-Discussion/T480s-low-cTDP-and-trip-temperature-in-Linux/td-p/4028489) to inform Lenovo about this issue.
 
-### Temporary fix
+### Throttling fix
 
-Until Lenovo fixes this issue, you can manually set the limit.
+An easy package has been written to address the problem until (or if) Lenovo ever solves it.
 
-To begin, install [msr-tools](https://www.archlinux.org/packages/?name=msr-tools).
-
-Create the file `/usr/local/bin/cpu-throttling.sh` (making it executable) containing the following:
+Install [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/), then run:
 
 ```
-#!/bin/bash
-
-/bin/modprobe msr
-wrmsr -a 0x1a2 0x3000000 # which sets the offset to 3 C, so the new trip point is 97 C 
+sudo systemctl enable --now lenovo_fix.service
 
 ```
 
-Then create the associated service file `/etc/systemd/system/cpu-throttling.service`:
+The script also supports more advance thermal/performance features including CPU undervolting. See the [lenovo-throttling-fix repository](https://github.com/erpalma/lenovo-throttling-fix) `README.md` for details.
 
-```
-[Unit]
-Description=set cpu heating limit to 97°c
-
-[Service]
-ExecStart=/usr/local/bin/cpu-throttling.sh
-RemainAfterExit=no
-
-[Install]
-WantedBy=timers.target
-
-```
-
-And also the timer in `/etc/systemd/system/cpu-throttling.timer`:
-
-```
-[Unit]
-Description=set cpu heating limit to 97°c every minute
-
-[Timer]
-OnActiveSec=60
-OnUnitActiveSec=60
-Unit=cpu-throttling.service
-
-[Install]
-WantedBy=timers.target
-
-```
-
-Then, enable it:
-
-```
-# systemctl enable cpu-throttling.timer
-
-```
-
-Reboot and check with:
-
-```
-# rdmsr -f 29:24 -d 0x1a2
-
-3
-
-```
-
-**Note:** If the rdmsr command outputs: 'rdmsr: open: No such file or directory', you may have to configure the msr module to load automatically. See [Kernel module#Automatic module handling](/index.php/Kernel_module#Automatic_module_handling "Kernel module") for more details.
+**Note:** If you installed [thermald](https://www.archlinux.org/packages/?name=thermald), it may conflict with the throttling fix in this package. Consider disabling thermald or otherwise work around this.
 
 ## TrackPoint and Touchpad issues
+
+Some models of the 6th generation X1 Carbon seem to have issues with the TrackPoint and Touchpad working at the same time.
 
 To get the TrackPoint and Touchpad to work at the same time, add `synaptics_intertouch=1` to the `psmouse` [kernel module](/index.php/Kernel_module "Kernel module") options, for example in the cmdline of the [boot loader](/index.php/Boot_loader "Boot loader"):
 
@@ -246,6 +205,6 @@ With LUKS for root, i915 needs to be loaded in ramdisk in order to access the pa
 
 *   [ThinkWiki X1 Carbon 6th Gen page](https://www.thinkwiki.org/wiki/Category:X1_Carbon_(6th_Gen))
 *   Benjamin Tissoires, kernel maintainer of peripherals, has explained how input bugs get fixed in his talk [Tools to debug a broken input device](https://www.youtube.com/watch?v=Bl_0xYxcYd8) ([Slides](https://www.x.org/wiki/Events/XDC2015/Program/tissoires_input_debug_tools.html)), especially interesting are slides 16 onward.
-*   [Dell XPS 13 9370 quirks](https://gist.github.com/greigdp/bb70fbc331a0aaf447c2d38eacb85b8f): Some pointers on getting Watt usage down to ~2W, Intel video powersaving features might be interesting, see also [Intel Graphics Powersaving](/index.php/Intel_graphics#Module-based_Powersaving_Options "Intel graphics")
+*   [Dell XPS 13 9370 quirks](https://gist.github.com/greigdp/bb70fbc331a0aaf447c2d38eacb85b8f): Some pointers on getting Watt usage down to ~2W, Intel video powersaving features might be interesting, see also the [Intel Graphics](/index.php/Intel_graphics "Intel graphics") page for interesting power-saving options.
 *   [Dell XPS 13 (9360)](/index.php/Dell_XPS_13_(9360) "Dell XPS 13 (9360)"): Shares some hardware with the X1C6
 *   [Intel Blog: Best practice to debug Linux* suspend/hibernate issues](https://01.org/blogs/rzhang/2015/best-practice-debug-linux-suspend/hibernate-issues), including the [pm-graph](https://github.com/01org/pm-graph) tool to analyze power usage during suspend

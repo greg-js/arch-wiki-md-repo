@@ -410,7 +410,7 @@ To enable the uwsgi service by default at start-up, run:
 
 **Note:** Here we make use of [systemd socket activation](http://0pointer.de/blog/projects/socket-activation.html) to prevent unnecessary resources consumption when no connections are made to the instance. If you would rather have it constantly active, simply remove the `.socket` part to start and enable the service instead.
 
-See also [UWSGI#Running_uWSGI](/index.php/UWSGI#Running_uWSGI "UWSGI").
+See also [UWSGI#Running uWSGI](/index.php/UWSGI#Running_uWSGI "UWSGI").
 
 ### Setting strong permissions for the filesystem
 
@@ -581,7 +581,7 @@ Restart the httpd service to activate your certificate.
 
 ### Self-signed certificate for Android devices
 
-Once you have followed the setup for SSL, as on [Apache_HTTP_Server#TLS](/index.php/Apache_HTTP_Server#TLS "Apache HTTP Server") for example, early versions of DAVdroid will reject the connection because the certificate is not trusted. A certificate can be made as follows on your server:
+Once you have followed the setup for SSL, as on [Apache HTTP Server#TLS](/index.php/Apache_HTTP_Server#TLS "Apache HTTP Server") for example, early versions of DAVdroid will reject the connection because the certificate is not trusted. A certificate can be made as follows on your server:
 
 ```
  # openssl x509 -req -days 365 -in /etc/httpd/conf/server.csr -signkey /etc/httpd/conf/server.key -extfile android.txt -out CA.crt

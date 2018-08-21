@@ -7,7 +7,7 @@ Related articles
 *   [Chromium](/index.php/Chromium "Chromium")
 *   [Opera](/index.php/Opera "Opera")
 
-[Firefox](https://www.mozilla.org/firefox) is a popular open-source graphical web browser from [Mozilla](https://www.mozilla.org).
+[Firefox](https://www.mozilla.org/firefox) is a popular open source graphical web browser from [Mozilla](https://www.mozilla.org).
 
 ## Contents
 
@@ -210,9 +210,13 @@ For general enhancements see [Firefox/Tweaks](/index.php/Firefox/Tweaks "Firefox
 
 ### Screenshot of webpage
 
-You can *Take a Screenshot* by either clicking the *Page actions* button (the three horizontal dots) in the address bar or by right clicking on the webpage. See [[2]](https://support.mozilla.org/en-US/kb/firefox-screenshots) for more information.
+You can *Take a Screenshot* by either clicking the *Page actions* button (the three horizontal dots) in the address bar or by right-clicking on the webpage. See [[2]](https://support.mozilla.org/en-US/kb/firefox-screenshots) for more information.
 
 **Note:** The *Save* button misleadingly uploads your screenshot to a firefox.com subdomain. Set `extensions.screenshots.upload-disabled` to `true` to disable this behaviour. [[3]](https://github.com/mozilla-services/screenshots/issues/3503)
+
+Enabling `privacy.resistFingerprinting` apparently still breaks Firefox Screenshots in Firefox 61, even though the bug is marked as fixed.[[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=1412961)
+
+As an alternative you can use the full-page screenshot button in the *Developer Tools*, which you can open with `F12`; you might need to enable the button first.
 
 ## Troubleshooting
 
@@ -258,7 +262,7 @@ The possible values are:
 
 ### Middle-click errors
 
-**Note:** This has been fixed in Firefox 57.[[4]](https://www.phoronix.com/scan.php?page=news_item&px=Firefox-Middle-Click-Bug)
+**Note:** This has been fixed in Firefox 57.[[5]](https://www.phoronix.com/scan.php?page=news_item&px=Firefox-Middle-Click-Bug)
 
 A common error message you can get while using the middle mouse button in Firefox is:
 
@@ -312,7 +316,7 @@ When you close Firefox, the latter saves the current timestamp and version of yo
 
 If you upgraded your plugin when Firefox was still running, you will thus have the wrong information inside that file. The next time you will restart Firefox you will get that message `Firefox has prevented the outdated plugin "XXXX" from running on ...` when you will be trying to open content dedicated to that plugin on the web. This problem often appears with the official [Adobe Flash Player plugin](/index.php/Browser_plugins#Adobe_Flash_Player "Browser plugins") which has been upgraded while Firefox was still running.
 
-The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[5]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
+The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[6]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
 
 ### Javascript context menu does not appear on some sites
 
@@ -328,13 +332,13 @@ The default spell checking language can be set as follows:
 
 When you only have system wide dictionaries installed with [hunspell](https://www.archlinux.org/packages/?name=hunspell), Firefox might not remember your default dictionary language settings. This can be fixed by having at least one [dictionary](https://addons.mozilla.org/firefox/language-tools/) installed as a Firefox plugin. Notice that now you will also have a tab **Dictionaries** in **add-ons**.
 
-Related questions on the **StackExchange** platform: [[6]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[7]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[8]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
+Related questions on the **StackExchange** platform: [[7]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[8]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[9]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
 
 Related bug reports: [Bugzilla 776028](https://bugzilla.mozilla.org/show_bug.cgi?id=776028), [Ubuntu bug 1026869](https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/1026869)
 
 ### Some MathML symbols are missing
 
-You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[9]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
+You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[10]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
 
 In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) **and** [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra), but they are not available to fontconfig by default. See [TeX Live#Fonts](/index.php/TeX_Live#Fonts "TeX Live") for details. You can also try other [Math fonts](/index.php/Fonts#Math "Fonts").
 

@@ -217,7 +217,7 @@ This will effectively blacklist that module and any other that depends on it.
 
 You can also blacklist modules from the bootloader.
 
-Simply add `modprobe.blacklist=modname1,modname2,modname3` to your bootloader's kernel line, as described in [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+Simply add `module_blacklist=modname1,modname2,modname3` to your bootloader's kernel line, as described in [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
 **Note:** When you are blacklisting more than one module, note that they are separated by commas only. Spaces or anything else might presumably break the syntax.
 

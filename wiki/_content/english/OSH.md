@@ -95,7 +95,7 @@ Aborted (core dumped)
 
 ```
 
-This error occurs when the OSH binary is stripped. The PKGBUILD file in the AUR explicitly disallows binary stripping, however custom `makepkg` configuration files may override this option. In the event of this error, attempt to reinstall OSH without any custom configurations.
+This error occurs when the OSH binary is stripped. The PKGBUILD file in the AUR explicitly disables binary stripping; however, custom `makepkg` configuration files may override this option. In the event of this error, attempt to reinstall OSH without any custom configurations.
 
 ## See also
 

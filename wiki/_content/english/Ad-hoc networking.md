@@ -104,7 +104,7 @@ If you want to share an internet connection to the ad-hoc network, see [Internet
 
 ### Using NetworkManager
 
-If you use [NetworkManager](/index.php/NetworkManager "NetworkManager"), you can use *nm-applet* for ad-hoc network configuration instead of the manual method described above. See [NetworkManager#Ad-hoc](/index.php/NetworkManager#Ad-hoc "NetworkManager") for details.
+If you use [NetworkManager](/index.php/NetworkManager "NetworkManager"), you can use *nm-applet* for ad-hoc network configuration instead of the manual method described above. See [NetworkManager#Sharing internet connection over Wi-Fi](/index.php/NetworkManager#Sharing_internet_connection_over_Wi-Fi "NetworkManager") for details.
 
 **Note:** NetworkManager does not support WPA encryption in ad-hoc mode.
 

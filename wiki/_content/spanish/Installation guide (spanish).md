@@ -237,7 +237,7 @@ Establezca la [variable](/index.php/Environment_variables_(Espa%C3%B1ol) "Enviro
 
  `/etc/locale.conf`  `LANG=*es_ES.UTF-8*` 
 
-Si ha establecido la [distribución de teclado](#Definir_la_distribuci.C3.B3n_del_teclado) anteriormente, haga que los cambios sean persistentes en [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5):
+Si ha establecido la [distribución de teclado](#Definici.C3.B3n_de_la_distribuci.C3.B3n_de_teclado) anteriormente, haga que los cambios sean persistentes en [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5):
 
  `/etc/vconsole.conf`  `KEYMAP=*es*` 
 

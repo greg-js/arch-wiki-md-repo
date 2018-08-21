@@ -110,7 +110,7 @@ Posiblemente sea así. ¡No dude en ofrecer su tiempo! Visite los [foros](https:
 
 ### ¿Por qué va mi internet tan lento en comparación con otros sistemas operativos?
 
-¿Está su red configurada correctamente? Eche un vistazo a [nombre del equipo](/index.php/Installation_guide_(Espa%C3%B1ol)#Nombre_del_equipo "Installation guide (Español)") y [configurar la red](/index.php/Installation_guide_(Espa%C3%B1ol)#Configuraci.C3.B3n_de_la_conexi.C3.B3n_de_red "Installation guide (Español)") de la guía de instalación.
+¿Está su red configurada correctamente? Consulte el artículo sobre la [configuración de red](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)").
 
 También tenga en cuenta que Arch Linux no viene con [traffic shaping](https://en.wikipedia.org/wiki/Traffic_shaping "wikipedia:Traffic shaping") habilitado. Por lo tanto, es posible que si un programa, de alguna manera, utiliza su conexión de Internet al máximo –sin importar si se trata de P2P o de conexiones de un clásico client-server– otras conexiones locales se encontrarán obstruidas, traduciéndose en retrasos graves y tiempos de espera. El auxilio puede venir instalando un [firewalls](/index.php/Firewalls "Firewalls") como Shorewall o Vuurmuur; también hay scripts estáticos para [iproute2](https://www.archlinux.org/packages/?name=iproute2) (como por ejemplo [este derivado](http://serendipity.ruwenzori.net/index.php/2008/06/01/modified-wondershaper-for-better-voip-qos) de Wondershaper), que realiza precisamente esta tarea.
 

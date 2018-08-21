@@ -238,14 +238,16 @@ See also [How locate works and rewrite it in one minute](http://jvns.ca/blog/201
 
 *diff* compares files line by line. Its output can be saved to a so-called patch file, which can be applied using the [patch(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/patch.1) utility. The default Arch Linux *diff* is from the GNU [diffutils](https://www.archlinux.org/packages/?name=diffutils), which also provides *cmp* to compare files byte by byte.
 
+A similar command, which lets you compare two sorted files line by line is *comm*, see [comm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/comm.1).
+
 When comparing text files a word per word diff is often more desirable:
 
-*   [git](/index.php/Git "Git")'s `git diff` can do a word diff with `--color-words`, using `--no-index` it can be used for files outside of Git working trees.
-*   **dwdiff** — A word diff front-end for the diff program, supports colors.
+*   [git](/index.php/Git "Git")'s `git diff` can do a word diff with `--color-words`, using `--no-index` it can also be used for files outside of Git working trees.
+*   **dwdiff** — A word diff front-end for the diff program; supports colors.
 
 	[https://os.ghalkes.nl/dwdiff.html](https://os.ghalkes.nl/dwdiff.html) || [dwdiff](https://www.archlinux.org/packages/?name=dwdiff)
 
-*   **GNU wdiff** — A wordwise implementation of GNU diff, does not support colors.
+*   **GNU wdiff** — A wordwise implementation of GNU diff; does not support colors.
 
 	[https://www.gnu.org/software/wdiff/](https://www.gnu.org/software/wdiff/) || [wdiff](https://aur.archlinux.org/packages/wdiff/)
 
@@ -437,7 +439,7 @@ See [iconv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) for more deta
 
 **Tip:** You can use [recode](https://www.archlinux.org/packages/?name=recode) instead of iconv if you do not want to touch the mtime.
 
-Unlike [sed](#sed), *iconv* does not provide an option to convert a file in place. However, `sponge` from the [moreutils](https://www.archlinux.org/packages/?name=moreutils) package can help:
+Unlike [sed](/index.php/Sed "Sed"), *iconv* does not provide an option to convert a file in place. However, `sponge` from the [moreutils](https://www.archlinux.org/packages/?name=moreutils) package can help:
 
 ```
 $ iconv -f WINDOWS-1251 -t UTF-8 *foobar*.txt | sponge *foobar*.txt

@@ -281,7 +281,7 @@ esac
 
 ## Runlevels
 
-**Note:** [systemd](/index.php/Systemd "Systemd") is used by default, which uses targets (see [systemd.target(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.target.5)) rather than runlevels.
+**Note:** [systemd](/index.php/Systemd "Systemd") is used by default, which uses targets (see [systemd.target(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.target.5)) rather than runlevels.
 
 From the [init](http://unixhelp.ed.ac.uk/CGI/man-cgi?init+8) man page:
 
@@ -521,7 +521,7 @@ Runlevels exist in all Linux distributions and while runlevel 1 is usually singl
 
 ## See also
 
-*   [Wikipedia: Init](https://en.wikipedia.org/wiki/Init "wikipedia:Init")
+*   [Wikipedia:Init](https://en.wikipedia.org/wiki/Init "wikipedia:Init")
 *   [Linux Knowledge Base and Tutorial. Run Levels.](http://www.linux-tutorial.info/modules.php?name=MContent&pageid=65)
 *   [Linux.com. Introduction to runlevels and inittab](http://www.linux.com/articles/114107)
 *   [Linux.com. An introduction to services, runlevels, and rc.d scripts.](http://www.linux.com/news/enterprise/systems-management/8116-an-introduction-to-services-runlevels-and-rcd-scripts)

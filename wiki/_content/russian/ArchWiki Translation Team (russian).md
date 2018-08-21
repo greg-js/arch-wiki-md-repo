@@ -7,6 +7,7 @@
 *   [1 О проекте](#.D0.9E_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82.D0.B5)
     *   [1.1 Цели и задачи](#.D0.A6.D0.B5.D0.BB.D0.B8_.D0.B8_.D0.B7.D0.B0.D0.B4.D0.B0.D1.87.D0.B8)
     *   [1.2 Команда](#.D0.9A.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D0.B0)
+        *   [1.2.1 Вступление в команду](#.D0.92.D1.81.D1.82.D1.83.D0.BF.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D1.83)
 *   [2 Вклад в общее дело](#.D0.92.D0.BA.D0.BB.D0.B0.D0.B4_.D0.B2_.D0.BE.D0.B1.D1.89.D0.B5.D0.B5_.D0.B4.D0.B5.D0.BB.D0.BE)
     *   [2.1 С чего начать?](#.D0.A1_.D1.87.D0.B5.D0.B3.D0.BE_.D0.BD.D0.B0.D1.87.D0.B0.D1.82.D1.8C.3F)
     *   [2.2 Что нужно будет делать?](#.D0.A7.D1.82.D0.BE_.D0.BD.D1.83.D0.B6.D0.BD.D0.BE_.D0.B1.D1.83.D0.B4.D0.B5.D1.82_.D0.B4.D0.B5.D0.BB.D0.B0.D1.82.D1.8C.3F)
@@ -35,6 +36,7 @@
 *   [Kycok](/index.php/User:Kycok "User:Kycok") ([обсуждение](/index.php/User_talk:Kycok "User talk:Kycok")|[вклад](/index.php/Special:Contributions/Kycok "Special:Contributions/Kycok")) ([ArchWiki Maintainer](/index.php/ArchWiki:Maintainers "ArchWiki:Maintainers"))
 *   [ArchLinuxUser](/index.php/User:ArchLinuxUser "User:ArchLinuxUser") ([обсуждение](/index.php/User_talk:ArchLinuxUser "User talk:ArchLinuxUser")|[вклад](/index.php/Special:Contributions/ArchLinuxUser "Special:Contributions/ArchLinuxUser"))
 *   [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") ([обсуждение](/index.php/User_talk:MrReDoX "User talk:MrReDoX")|[вклад](/index.php/Special:Contributions/MrReDoX "Special:Contributions/MrReDoX"))
+*   [SlavMetal](/index.php/User:SlavMetal "User:SlavMetal") ([обсуждение](/index.php?title=User_talk:SlavMetal&action=edit&redlink=1 "User talk:SlavMetal (page does not exist)")|[вклад](/index.php/Special:Contributions/SlavMetal "Special:Contributions/SlavMetal"))
 
 Неактивны (менее 5 правок за последние 30 дней):
 
@@ -42,6 +44,10 @@
 *   [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") ([обсуждение](/index.php/User_talk:Vladimir_Shatalin "User talk:Vladimir Shatalin")|[вклад](/index.php/Special:Contributions/Vladimir_Shatalin "Special:Contributions/Vladimir Shatalin"))
 
 Раз в неделю список участников автоматически сортируется по убыванию, исходя из количества правок, сделанных за последние 30 дней.
+
+#### Вступление в команду
+
+Оставьте заявку на [странице обсуждения](/index.php/Talk:ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.92.D1.81.D1.82.D1.83.D0.BF.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D1.83 "Talk:ArchWiki Translation Team (Русский)"), чтобы присоединиться к нашей команде. Любой из участников команды рассмотрит вашу заявку и примет решение по поводу вашего вступления в команду.
 
 ## Вклад в общее дело
 

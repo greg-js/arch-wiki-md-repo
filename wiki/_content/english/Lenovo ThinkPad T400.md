@@ -259,7 +259,7 @@ It basically says that **keycode 146** is not bound (**NoSymbol**). Here are all
 *   To get your new `.Xmodmap` loaded when you start X, just add `xmodmap ~/.Xmodmap` to your .xinitrc.
 *   To get your new `.Xmodmap` loaded immediately, type `xmodmap ~/.Xmodmap` in a terminal.
 
-To assign functions to your newly bound keys, see [Keyboard_configuration_in_Xorg#Keybinding](/index.php/Keyboard_configuration_in_Xorg#Keybinding "Keyboard configuration in Xorg").
+To assign functions to your newly bound keys, see [Keyboard configuration in Xorg#Keybinding](/index.php/Keyboard_configuration_in_Xorg#Keybinding "Keyboard configuration in Xorg").
 
 To use `xbindkeys`,
 

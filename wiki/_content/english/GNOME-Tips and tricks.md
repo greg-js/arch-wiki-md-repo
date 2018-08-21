@@ -436,7 +436,7 @@ By default, pressing the keyboard's volume keys adjusts the volume by 6%. If sma
 
 ## Hybrid Sleep on laptop lid closing action
 
-Follow below commands to trigger [Hybrid Sleep](https://wiki.archlinux.org/index.php/Power_management/Suspend_and_hibernate) when closing the lid of the laptop. Read [here](https://www.reddit.com/r/gnome/comments/97688y/can_gnome_trigger_hybrid_sleep_on_laptop_lid/) for further information.
+Follow below commands to trigger [Hybrid Sleep](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate") when closing the lid of the laptop. Read [here](https://www.reddit.com/r/gnome/comments/97688y/can_gnome_trigger_hybrid_sleep_on_laptop_lid/) for further information.
 
 ```
    mkdir --parents /etc/systemd/logind.conf.d

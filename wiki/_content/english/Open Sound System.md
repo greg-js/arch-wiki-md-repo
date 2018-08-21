@@ -326,7 +326,7 @@ audio_output {
 
 ```
 
-See also: [Music Player Daemon#System-wide_configuration](/index.php/Music_Player_Daemon#System-wide_configuration "Music Player Daemon").
+See also: [Music Player Daemon#System-wide configuration](/index.php/Music_Player_Daemon#System-wide_configuration "Music Player Daemon").
 
 ### MPlayer
 

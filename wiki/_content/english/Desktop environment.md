@@ -116,7 +116,7 @@ Other components usually provided by desktop environments are:
 *   Audio volume control: [List of applications#Volume control](/index.php/List_of_applications#Volume_control "List of applications")
 *   [Clipboard manager](/index.php/Clipboard_manager "Clipboard manager")
 *   Desktop compositor: [Xorg#Composite](/index.php/Xorg#Composite "Xorg")
-*   Desktop wallpaper setter and desktop icon: [List of applications#Wallpaper setters](/index.php/List_of_applications#Wallpaper_setters "List of applications") and [Openbox#Icon programs](/index.php/Openbox#Icon_programs "Openbox")
+*   Desktop wallpaper setter and desktop icon: [List of applications#Wallpaper setters](/index.php/List_of_applications#Wallpaper_setters "List of applications") and [Openbox#Desktop_icons_and_wallpapers](/index.php/Openbox#Desktop_icons_and_wallpapers "Openbox")
 *   Display manager: [Display manager#List of display managers](/index.php/Display_manager#List_of_display_managers "Display manager")
 *   Display power saving settings: [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling")
 *   Logout dialogue: [Oblogout](/index.php/Oblogout "Oblogout")

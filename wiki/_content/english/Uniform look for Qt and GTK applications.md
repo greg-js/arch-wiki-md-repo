@@ -200,7 +200,7 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 *   You can add multiple paths by separating them with colons.
 *   Make sure to use `$HOME` instead of `~` as it will not properly expand to the user's home directory.
 
-Then specify the theme you want in the `~/.gtkrc-2.0` file using a [dedicated application](#GTK2_styles) or manually, by adding:
+Then specify the theme you want in the `~/.gtkrc-2.0` file using a [dedicated application](/index.php/GTK%2B#Configuration_tools "GTK+") or manually, by adding:
 
  `.gtkrc-2.0` 
 ```

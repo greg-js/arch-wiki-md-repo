@@ -1059,7 +1059,7 @@ Ahora, debe tener una configuración de máquina virtual funcional cuyos discos 
 
 *   Esta razones hacen recomendable crear, primero, las particiones en una instalación nativa, de lo contrario las particiones no serán tomadas en consideración en su tabla de particiones MBR/GPT.
 
-Después de completar la instalación, arranque el ordenador con un soporte de instalación de GNU/Linux (ya se trate de Arch Linux o no), entre en entorno [chroot](/index.php/Installation_guide_(Espa%C3%B1ol)#Chroot "Installation guide (Español)") en su recién instalado Arch Linux e [#instale y configure un gestor de arranque](/index.php/Beginners%27_guide_(Espa%C3%B1ol)#Instalar_un_gestor_de_arranque "Beginners' guide (Español)").
+Después de completar la instalación, arranque el ordenador con un soporte de instalación de GNU/Linux (ya se trate de Arch Linux o no), entre en entorno [chroot](/index.php/Installation_guide_(Espa%C3%B1ol)#Chroot "Installation guide (Español)") en su recién instalado Arch Linux y [configure un gestor de arranque](/index.php/Installation_guide_(Espa%C3%B1ol)#Gestor_de_arranque "Installation guide (Español)").
 
 ### Mover una instalación nativa de Windows a una máquina virtual
 

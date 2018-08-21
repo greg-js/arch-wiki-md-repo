@@ -156,7 +156,7 @@ Other parameters you can add that might be useful in certain situations are:
 
 There are also a number of separate debug parameters for enabling debugging in specific subsystems e.g. `bootmem_debug`, `sched_debug`. Check the [kernel parameter documentation](https://www.kernel.org/doc/Documentation/admin-guide/kernel-parameters.txt) for specific information.
 
-**Note:** If you cannot scroll back far enough to view the desired boot output, you should increase the size of the [scrollback buffer](#Scrollback).
+**Note:** If you cannot scroll back far enough to view the desired boot output, you should increase the size of the [scrollback buffer](/index.php/Scrollback_buffer "Scrollback buffer").
 
 ### Recovery shells
 

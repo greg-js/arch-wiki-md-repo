@@ -548,7 +548,7 @@ See also [#TeX formula editors](#TeX_formula_editors) and [Wikipedia:Formula edi
 
 See also [Wikipedia:Comparison of document markup languages](https://en.wikipedia.org/wiki/Comparison_of_document_markup_languages "wikipedia:Comparison of document markup languages").
 
-*   **[asciidoc](https://en.wikipedia.org/wiki/AsciiDoc "wikipedia:AsciiDoc")** — Human-readable text document format. Used by Arch for generating *pacman* 's man pages[[1]](https://www.archlinux.org/pacman/pacman.8.html).
+*   **[asciidoc](https://en.wikipedia.org/wiki/AsciiDoc "wikipedia:AsciiDoc")** — Human-readable text document format. Used by Arch for generating *pacman*'s man pages[[1]](https://www.archlinux.org/pacman/pacman.8.html).
 
 	[http://asciidoc.org/](http://asciidoc.org/) || [asciidoc](https://www.archlinux.org/packages/?name=asciidoc)
 
@@ -786,7 +786,7 @@ See also [Wikipedia:Comparison of reference management software](https://en.wiki
 
 *   **[Referencer](https://en.wikipedia.org/wiki/Referencer "wikipedia:Referencer")** — GNOME application to organize documents or references, and ultimately generate a BibTeX bibliography file.
 
-	[https://pybliographer.org/](https://pybliographer.org/) || [referencer](https://aur.archlinux.org/packages/referencer/)
+	[https://launchpad.net/referencer/](https://launchpad.net/referencer/) || [referencer](https://aur.archlinux.org/packages/referencer/)
 
 *   **[Zotero](https://en.wikipedia.org/wiki/Zotero "wikipedia:Zotero")** — An easy-to-use tool to help you collect, organize, cite, and share your research sources. Can import and export BibTeX and has browser extensions.
 

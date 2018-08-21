@@ -170,7 +170,7 @@ fi
 
 #### Change MAC using macchanger
 
-See [MAC address spoofing#systemd + macchanger + dhcpcd (no NetworkManager)](/index.php/MAC_address_spoofing#systemd_.2B_macchanger_.2B_dhcpcd_.28no_NetworkManager.29 "MAC address spoofing").
+See [MAC address spoofing#macchanger_2](/index.php/MAC_address_spoofing#macchanger_2 "MAC address spoofing").
 
 The script below can be used to change the MAC address of your network interfaces.
 
@@ -298,7 +298,7 @@ $ ktsuss wicd-client -n
 
 ### Eduroam
 
-See [Wireless_network_configuration#eduroam](/index.php/Wireless_network_configuration#eduroam "Wireless network configuration").
+See [Wireless network configuration#eduroam](/index.php/Wireless_network_configuration#eduroam "Wireless network configuration").
 
 ### Two instances of wicd-client (and possibly two icons in tray)
 

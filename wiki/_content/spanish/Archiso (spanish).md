@@ -226,7 +226,7 @@ Cambia `x86_64` según sea necesario y pon la etiqueta de tu usb **real**.
 
 Arranque el CD/DVD/USB creado. Si desea instalar la Archiso creada **-tal como está-**, hay varios caminos para hacerlo, pero, en cualquier caso, hemos de tener presentes que estamos siguiendo la [guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") en su mayor parte.
 
-Si no tiene una conexión a Internet en su equipo, o si no quiere descargar todos los paquetes que desea otra vez, siga la Guía, y al llegar a la [Instalar los paquetes del sistema base](/index.php/Installation_guide_(Espa%C3%B1ol)#Instalar_los_paquetes_del_sistema_base "Installation guide (Español)"), en lugar de realizar la descarga, utilice esto: [Full system backup with rsync](/index.php/Full_system_backup_with_rsync "Full system backup with rsync"). (Más información aquí: [Talk:Archiso](/index.php/Talk:Archiso "Talk:Archiso"))
+Si no tiene una conexión a Internet en su equipo, o si no quiere descargar todos los paquetes que desea otra vez, siga la Guía, y al llegar a la [Instalar los paquetes del sistema base](/index.php/Installation_guide_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_los_paquetes_del_sistema_base "Installation guide (Español)"), en lugar de realizar la descarga, utilice esto: [Full system backup with rsync](/index.php/Full_system_backup_with_rsync "Full system backup with rsync"). (Más información aquí: [Talk:Archiso](/index.php/Talk:Archiso "Talk:Archiso"))
 
 ## Consulte también
 

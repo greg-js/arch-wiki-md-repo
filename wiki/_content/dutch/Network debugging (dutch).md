@@ -1,3 +1,7 @@
+Related articles
+
+*   [VLAN](/index.php/VLAN "VLAN")
+
 Dit artikel behandelt de basis stappen voor het troubleshooten van netwerk connectiviteit.
 
 **Note:** Voor het bekijken van de netwerk configuratie zijn geen root-rechten vereist. Voor het maken van wijzigingen wel.

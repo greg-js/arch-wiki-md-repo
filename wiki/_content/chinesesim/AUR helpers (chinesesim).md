@@ -96,7 +96,7 @@
 
 ## 图形化工具
 
-**Warning:**
+**警告:**
 
 *   图形化的AUR工具通常针对于[基于Arch的发行版](/index.php/Arch-based_distributions "Arch-based distributions"). 在[Arch Linux](/index.php/Arch_Linux "Arch Linux") 中使用它们可能会导致系统故障，例如进行自动的[部分升级](/index.php/Partial_upgrades "Partial upgrades")。
 *   如果某项工具有**已知的**有问题的行为，它将被标记为红色。

@@ -18,6 +18,7 @@ Maple is proprietary software produced by Maplesoft and requires a license to ob
     *   [2.1 Failed to determine Host ID of license server](#Failed_to_determine_Host_ID_of_license_server)
     *   [2.2 Blank main window with tiling window managers](#Blank_main_window_with_tiling_window_managers)
     *   [2.3 3D plots failing](#3D_plots_failing)
+    *   [2.4 Offline activation](#Offline_activation)
 
 ## Installation
 
@@ -55,3 +56,22 @@ and link libstdc++.so.6.0.20 and libstdc++.so.6 to your system's version:
    libstdc++.so.6.0.20 -> /usr/lib64/libstdc++.so.6.0.22
 
 ```
+
+### Offline activation
+
+If activation by license key doesn't work, you may try [Offline Activation](https://www.maplesoft.com/contact/webforms/offlineactivation/index.aspx).
+
+Enter your license key in the Purchase Code field, and select either Host ID or Disk Serial Number as the hardware activation method.
+
+To obtain your Host ID, run the following command:
+
+```
+   ip address show | grep link/ether | awk '{ print $2; }' | sed 's/://g'
+
+```
+
+and use one of the resulting IDs.
+
+Enter your e-mail address (or use a disposable one), then copy the contents into `*maplehome*/license/license.dat`.
+
+This should activate Maple on next startup.

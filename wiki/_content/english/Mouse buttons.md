@@ -268,6 +268,17 @@ xbindkeys
 
 ```
 
+Since xvkbd isn't available from the official repositories here’s another example using [xte](https://www.hoopajoo.net/projects/xautomation.html) from the [xautomation](https://www.archlinux.org/packages/?name=xautomation) package
+
+```
+# Mouse Buttons
+"xte "key XF86Back""
+m:0x0 + b:8
+"xte "key XF86Forward""
+m:0x0 + b:9
+
+```
+
 The above info and more help may be found in the [MX1000 Buttons](/index.php/MX1000_Buttons "MX1000 Buttons") wiki.
 
 ### xmodmap tweaking

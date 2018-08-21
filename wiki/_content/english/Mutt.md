@@ -517,7 +517,7 @@ Guides to get you started with using & customizing Mutt :
 *   [Everything You Need To Know To Start Using GnuPG with Mutt](http://codesorcery.net/old/mutt/mutt-gnupg-howto) (by Justin R. Miller)
 *   [A List of useful programs that often are used in combination with neomutt](https://neomutt.org/contrib/useful-programs)
 
-If you have any Mutt specific questions, feel free to ask in [the irc channel](/index.php/ArchChannel "ArchChannel").
+If you have any Mutt specific questions, feel free to ask in the [IRC channel](/index.php/IRC_channel "IRC channel").
 
 ### Key bindings
 
@@ -652,7 +652,7 @@ Note the pipe at the end. It tells Mutt that the specified string is not a file,
 
 #### Compose and send from command line
 
-Man pages will show all available commands and how to use them, but here are a couple of examples. You could use Mutt to send alerts, logs or some other system information, triggered by login through .bash_profile, or as a regular [cron](/index.php/Cron "Cron") job.
+Man pages will show all available commands and how to use them, but here are a couple of examples. You could use Mutt to send alerts, logs or some other system information, triggered by login through `.bash_profile`, or as a regular [cron](/index.php/Cron "Cron") job.
 
 Send a message:
 
@@ -1270,7 +1270,9 @@ macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/personal<ent
 
 ```
 
-This macro tells Mutt to sync (which is a write operation) before switching. Either use the [sidebar](#Sidebar) or set another macro:
+This macro tells Mutt to sync (which is a write operation) before switching.
+
+Either use the [sidebar](#Sidebar) or set another macro:
 
 ```
 macro index,pager <f3> '<enter-command>source ~/.mutt/personal<enter><change-folder>!<enter>'

@@ -97,7 +97,7 @@ resume=*device*
 
 ### Using encrypt hook
 
-**Note:** Compared to the [sd-encrypt](#Using_sd-encrypt_hook) hook, the `encrypt` hook has some limitations. It does not support:
+**Note:** Compared to the [sd-encrypt](/index.php/Sd-encrypt "Sd-encrypt") hook, the `encrypt` hook has some limitations. It does not support:
 
 *   Unlocking [multiple encrypted disks](/index.php/Dm-crypt/Specialties#The_encrypt_hook_and_multiple_disks "Dm-crypt/Specialties") ([FS#23182](https://bugs.archlinux.org/task/23182)). Only **one** device can be unlocked in the initramfs.
 *   Using a [detached LUKS header](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties") ([FS#42851](https://bugs.archlinux.org/task/42851)).
