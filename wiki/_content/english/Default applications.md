@@ -1,22 +1,28 @@
-Programs sometimes need to open a file or a [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier "wikipedia:Uniform Resource Identifier") in the user's preferred application. To open a file in the user's preferred application the filetype needs to be detected (usually using filename extensions or [magic numbers](https://en.wikipedia.org/wiki/List_of_file_signatures "wikipedia:List of file signatures") mapped to [MIME types](https://en.wikipedia.org/wiki/Media_type "wikipedia:Media type")) and there needs to be an application associated with the filetype.
+Programs implement default application associations in different ways, while command-line programs traditionally [use environment variables](/index.php/Environment_variables#Default_programs "Environment variables"), graphical applications tend to use [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications") through either the [GIO](https://en.wikipedia.org/wiki/GIO_(software) API, the [Qt](/index.php/Qt "Qt") API or by executing `/usr/bin/xdg-open`, which is part of [xdg-utils](/index.php/Xdg-utils "Xdg-utils"). Because [xdg-open](/index.php/Xdg-open "Xdg-open") and [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications") are quite complex various alternative [resource openers](#Resource_openers) were developed. These alternative replace `/usr/bin/xdg-open`, which obviously only affects applications that actually use the executable. The following table attempts to provide an overview of what applications use what method.
 
-*   Some programs (particularly command-line programs) detect default programs using [environment variables](/index.php/Environment_variables "Environment variables"), see [Environment variables#Default programs](/index.php/Environment_variables#Default_programs "Environment variables").
-*   Some programs (particularly heirloom UNIX programs) use [mime.types](https://en.wikipedia.org/wiki/Media_type#mime.types "wikipedia:Media type") for MIME type detection and [mailcap](https://en.wikipedia.org/wiki/Media_type#Mailcap "wikipedia:Media type") for application association.
-*   Many programs outsource the task completely to a [resource opener](/index.php/Resource_opener "Resource opener").
+| Method | Uses XDG | Applications |
+| [GIO's GAppInfo](https://developer.gnome.org/gio/stable/GAppInfo.html) | Yes | [Firefox](/index.php/Firefox "Firefox"), [GNOME Files](/index.php/GNOME_Files "GNOME Files"), [PCManFM](/index.php/PCManFM "PCManFM") |
+| `/usr/bin/xdg-open` | By default | [Chromium](/index.php/Chromium "Chromium") |
+| custom | Usually not | [ranger](/index.php/Ranger "Ranger") |
 
-Freedesktop.org has standardized filetype detection with the [Shared MIME database](/index.php/Shared_MIME_database "Shared MIME database") specification and application association with the [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications") specification.
-
-Some desktop environments also provide a GUI or a file-manager which can interactively configure default applications. If you do not use a desktop environment, you may need to install additional software in order to conveniently manage default applications.
+Many [desktop environments](/index.php/Desktop_environment "Desktop environment") and graphical [file managers](/index.php/File_manager "File manager") provide a GUI for configuring default applications.
 
 ## Contents
 
-*   [1 Resource openers](#Resource_openers)
-    *   [1.1 xdg-open](#xdg-open)
-    *   [1.2 perl-file-mimeinfo](#perl-file-mimeinfo)
-    *   [1.3 mimeo](#mimeo)
-    *   [1.4 whippet](#whippet)
-    *   [1.5 Minimalist replacements](#Minimalist_replacements)
-        *   [1.5.1 run-mailcap](#run-mailcap)
+*   [1 Background information](#Background_information)
+*   [2 Resource openers](#Resource_openers)
+    *   [2.1 xdg-open](#xdg-open)
+    *   [2.2 perl-file-mimeinfo](#perl-file-mimeinfo)
+    *   [2.3 mimeo](#mimeo)
+    *   [2.4 whippet](#whippet)
+    *   [2.5 Minimalist replacements](#Minimalist_replacements)
+        *   [2.5.1 run-mailcap](#run-mailcap)
+
+## Background information
+
+Programs sometimes need to open a file or a [URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier "wikipedia:Uniform Resource Identifier") in the user's preferred application. To open a file in the user's preferred application the filetype needs to be detected (usually using filename extensions or [magic numbers](https://en.wikipedia.org/wiki/List_of_file_signatures "wikipedia:List of file signatures") mapped to [MIME types](https://en.wikipedia.org/wiki/Media_type "wikipedia:Media type")) and there needs to be an application associated with the filetype.
+
+Heirloom UNIX programs used [mime.types](https://en.wikipedia.org/wiki/Media_type#mime.types "wikipedia:Media type") for MIME type detection and [mailcap](https://en.wikipedia.org/wiki/Media_type#Mailcap "wikipedia:Media type") for application association.
 
 ## Resource openers
 

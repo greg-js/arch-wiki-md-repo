@@ -299,7 +299,7 @@ El controlador de bucle de Linux realmente admite particiones en dispositivos de
 *   Deshacerse de todos los dispositivos de bucle invertido (desmontar todas las imágenes montadas, etc.).
 *   [Unload](/index.php/Kernel_modules#_Manual_module_handling "Kernel modules") el módulo de kernel `loop` y cargarlo con el conjunto de parámetros `max_part = 15`. Además, el número máximo de dispositivos de bucle puede controlarse con el parámetro `max_loop`.
 
-{{Sugerencia: puede poner una entrada en `/etc/modprobe.d` para cargar el módulo de bucle con `max_part=15` cada vez, o puede poner `loop.max_part = 15` en la línea de comandos del kernel, dependiendo de si tiene o no el módulo `loop.ko` integrado en su kernel.}}
+**Sugerencia:** Puede poner una entrada en `/etc/modprobe.d` para cargar el módulo de bucle con `max_part=15` cada vez, o puede poner `loop.max_part = 15` en la línea de comandos del kernel, dependiendo de si tiene o no el módulo `loop.ko` integrado en su kernel.
 
 Configure su imagen como un dispositivo de bucle invertido:
 

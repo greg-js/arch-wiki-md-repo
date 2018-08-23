@@ -34,9 +34,9 @@ From [Wikipedia:JACK Audio Connection Kit](https://en.wikipedia.org/wiki/JACK_Au
 
 ## Installation
 
-In order for JACK to work properly, your user needs to be [added](/index.php/Users_and_groups#Group_management "Users and groups") to the `audio` group for access to higher ulimits defined in `/etc/security/limits.d/99-audio.conf`, which is needed for realtime audio processing.
+In order for JACK to work properly, your user needs to be [added](/index.php/Users_and_groups#Group_management "Users and groups") to the `realtime` group for access to higher ulimits defined in `/etc/security/limits.d/99-realtime-privileges.conf` (provided by the [realtime-privileges](https://www.archlinux.org/packages/?name=realtime-privileges) package), which is needed for realtime audio processing.
 
-**Note:** You need to manually add your user to the `audio` group even if you're using logind, since logind just handles access to direct hardware.
+**Note:** You need to manually add your user to the `realtime` group even if you're using logind, since logind just handles access to direct hardware.
 
 There are two JACK implementations, see [this comparison](https://github.com/jackaudio/jackaudio.github.com/wiki/Q_difference_jack1_jack2) for the difference between the two. In short, Jack 1 and Jack 2 are equivalent implementations of the same protocol. Programs compiled against Jack 1 will work with Jack 2 without recompile (and vice versa).
 
@@ -317,7 +317,7 @@ To install some M-Audio MIDI keyboards, you will need the firmware package [midi
 
 ### "Cannot lock down memory area (Cannot allocate memory)" message on startup
 
-See [Realtime process management#Configuring PAM](/index.php/Realtime_process_management#Configuring_PAM "Realtime process management") and ensure that the user is in the `audio` [group](/index.php/Group "Group").
+See [Realtime process management#Configuring PAM](/index.php/Realtime_process_management#Configuring_PAM "Realtime process management") and ensure that the user is in the `realtime` [group](/index.php/Group "Group").
 
 ### jack2-dbus and qjackctl errors
 

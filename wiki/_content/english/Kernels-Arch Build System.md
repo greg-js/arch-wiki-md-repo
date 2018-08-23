@@ -73,6 +73,8 @@ Or you can use GUI tool to tweak the options. Uncomment one of the possibilities
 
 ### Generate new checksums
 
+[Install](/index.php/Install "Install") the [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) package.
+
 As we modified config, we need to generate new checksums by running:
 
 ```

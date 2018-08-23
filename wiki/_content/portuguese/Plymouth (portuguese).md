@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Plymouth](/index.php/Plymouth "Plymouth"). Data da última tradução: 2018-08-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Plymouth&diff=0&oldid=535634) na versão em inglês.
+
 [Plymouth](http://www.freedesktop.org/wiki/Software/Plymouth) é um projeto da Fedora que consiste em proporcionar um processo de inicialização gráfico sem cintilação. Baseia-se no [modo de configuração do kernel](/index.php/Kernel_mode_setting "Kernel mode setting") (KMS) para definir uma resolução nativa da tela assim que possível, fornecendo então uma tela de boas vindas atrativa, até chegar no gerenciador de login.
 
 ## Contents
@@ -27,8 +29,6 @@ Caso não tenha KMS nem framebuffer, *plymouth* entrará recorrerá ao modo de t
 Plymouth está disponível através do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"): o pacote estável é [plymouth](https://aur.archlinux.org/packages/plymouth/) e a versão de desenvolvimento é [plymouth-git](https://aur.archlinux.org/packages/plymouth-git/).
 
 Se também usa o [GDM](/index.php/GDM_(Portugu%C3%AAs) "GDM (Português)"), você deve também instalar o [gdm-plymouth](https://aur.archlinux.org/packages/gdm-plymouth/), que compila gdm juntamente com o suporte a *plymouth*.
-
-Se você não vir a tela de apresentação *(Splash Screen)* do *Plymouth* ou não funcionar após configurar tudo, desinstale [plymouth](https://aur.archlinux.org/packages/plymouth/) e instale [plymouth-legacy](https://aur.archlinux.org/packages/plymouth-legacy/) para fazer o *plymouth* funcionar.
 
 ### O hook do plymouth
 

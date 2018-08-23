@@ -1,11 +1,10 @@
-**Estado de la traducción:** este artículo es una versión traducida de [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting"). Fecha de la última traducción/revisión: **2018-08-18**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=General_troubleshooting&diff=0&oldid=516784).
+**Estado de la traducción:** este artículo es una versión traducida de [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting"). Fecha de la última traducción/revisión: **2018-08-21**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=General_troubleshooting&diff=0&oldid=516784).
 
 Artículos relacionados
 
 *   [Reporting bug guidelines](/index.php/Reporting_bug_guidelines "Reporting bug guidelines")
 *   [Step-by-step debugging guide](/index.php/Step-by-step_debugging_guide "Step-by-step debugging guide")
 *   [Debug - Getting Traces](/index.php/Debug_-_Getting_Traces "Debug - Getting Traces")
-*   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
 *   [IRC Collaborative Debugging](/index.php/IRC_Collaborative_Debugging "IRC Collaborative Debugging")
 
 Este artículo explica algunos métodos para solucionar problemas generales. Para cuestiones específicas relativas a una aplicación, remítase a la página wiki para ese programa en particular.
@@ -28,13 +27,18 @@ Este artículo explica algunos métodos para solucionar problemas generales. Par
     *   [2.5 Sistema no arrancable](#Sistema_no_arrancable)
     *   [2.6 Depurar los errores de los módulos del núcleo](#Depurar_los_errores_de_los_m.C3.B3dulos_del_n.C3.BAcleo)
     *   [2.7 Depurar errores de hardware](#Depurar_errores_de_hardware)
-*   [3 Administrar paquetes](#Administrar_paquetes)
-*   [4 fuser](#fuser)
-*   [5 Permisos de sesión](#Permisos_de_sesi.C3.B3n)
-*   [6 error while loading shared libraries](#error_while_loading_shared_libraries)
-*   [7 file: could not find any magic files!](#file:_could_not_find_any_magic_files.21)
-*   [8 La revisión ortográfica marca todo el texto como incorrecto](#La_revisi.C3.B3n_ortogr.C3.A1fica_marca_todo_el_texto_como_incorrecto)
-*   [9 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [3 Kernel panics](#Kernel_panics)
+    *   [3.1 Examinar los mensajes de pánico](#Examinar_los_mensajes_de_p.C3.A1nico)
+        *   [3.1.1 Escenario de ejemplo: módulo defectuoso](#Escenario_de_ejemplo:_m.C3.B3dulo_defectuoso)
+    *   [3.2 Reiniciar en una shell de superusuario y solucionar el problema](#Reiniciar_en_una_shell_de_superusuario_y_solucionar_el_problema)
+*   [4 Administrar paquetes](#Administrar_paquetes)
+*   [5 fuser](#fuser)
+*   [6 Permisos de sesión](#Permisos_de_sesi.C3.B3n)
+*   [7 Mensaje: "error while loading shared libraries"](#Mensaje:_.22error_while_loading_shared_libraries.22)
+*   [8 Mensaje: "file: could not find any magic files!"](#Mensaje:_.22file:_could_not_find_any_magic_files.21.22)
+    *   [8.1 Problema](#Problema)
+    *   [8.2 Solución](#Soluci.C3.B3n)
+*   [9 Consulte también](#Consulte_tambi.C3.A9n)
 
 ## Procedimientos generales
 
@@ -189,15 +193,111 @@ Consulte esta sección sobre [como obtener información](/index.php/Kernel_modul
 *   Asegúrese de que las actualizaciones de [microcódigo](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)") se aplican en su sistema.
 *   Pruebe la memoria RAM de su dispositivo con [Memtest86+](http://www.memtest.org/). La RAM inestable puede ocasionar algunos problemas extremadamente extraños, que van desde fallos aleatorias hasta la corrupción de datos.
 
+## Kernel panics
+
+Un pánico del núcleo (o *Kernel panic*) ocurre cuando el núcleo de Linux entra en un estado de fallo irrecuperable. El estado generalmente se origina en controladores de hardware defectuosos que provocan que la máquina quede estancada, no responda y requiera un reinicio. Justo antes del interbloqueo, se genera un mensaje de diagnóstico que consiste en: el "estado de la máquina" cuando ocurrió el fallo, un "seguimiento de la llamada" *(call trace)* que conduce a la función del núcleo que reconoció el fallo y una lista de módulos cargados en ese momento. Afortunadamente, estos *pánicos* no ocurren muy a menudo usando versiones *mainline* del núcleo, como los suministrados por los repositorios oficiales, pero cuando suceden, debe saber como manejarlos.
+
+**Nota:** Los *Kernel panic* a veces se conocen como *oops* o *kernel oops*. Si bien estos y los errores ocurren como resultado de un estado de error, un *oops* es más general ya que no conducen *necesariamente* a una máquina bloqueada: a veces el núcleo puede recuperarse de un *oops* eliminando la tarea afectada para poder continuar.
+
+**Sugerencia:** Pase el parámetro del núcleo `oops=panic` al arrancar o escriba `1` en `/proc/sys/kernel/panic_on_oops` para forzar a un *oops* recuperable a emitir un *panic* en su lugar. Esto es aconsejable si le preocupa la pequeña posibilidad de sufrir una inestabilidad en el sistema como resultado de un *oops* recuperable que pueda hacer que los futuros errores sean difíciles de diagnosticar.
+
+### Examinar los mensajes de pánico
+
+Si se produce un *kernel panic* al inicio del proceso de arranque, es posible que aparezca un mensaje en la consola que contenga "Kernel panic - not syncing:" pero una vez que [Systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") se está ejecutando, los mensajes del núcleo serán capturados y escritos en el registro del sistema. Sin embargo, cuando se produce un *kernel panic*, el mensaje de diagnóstico generado por el núcleo "casi nunca" se escribe en el archivo de registro en el disco porque los interbloqueos de la máquina antes de `system-journald` tienen la ocasión. Por lo tanto, la única forma de examinar el mensaje de pánico es verlo en la consola como sucede (sin recurrir a la configuración de un *kdump crashkernel*). Puede hacerlo arrancando con los siguientes parámetros del núcleo e intentando reproducir el mensaje de pánico en tty1:
+
+ `systemd.journald.forward_to_console=1 console=tty1` 
+**Sugerencia:** En caso de que el mensaje de pánico se desplace demasiado rápido como para examinarlo, intente pasar el parámetro del núcleo `pause_on_oops=*segundos*` al arrancar.
+
+#### Escenario de ejemplo: módulo defectuoso
+
+Es posible adivinar qué subsistema o módulo está causando el pánico usando la información en el mensaje de diagnóstico. En este escenario, tenemos un *pánico* en una máquina (imaginaria) durante el arranque. Preste atención a las líneas resaltadas en **negrita**:
+
+```
+**kernel: BUG: unable to handle kernel NULL pointer dereference at (null)** [1]
+**kernel: IP: fw_core_init+0x18/0x1000 [firewire_core]** [2]
+kernel: PGD 718d00067 
+kernel: P4D 718d00067 
+kernel: PUD 7b3611067 
+kernel: PMD 0 
+kernel: 
+kernel: Oops: 0002 [#1] PREEMPT SMP
+**kernel: Modules linked in: firewire_core(+) crc_itu_t cfg80211 rfkill ipt_REJECT nf_reject_ipv4 nf_log_ipv4 nf_log_common xt_LOG nf_conntrack_ipv4 ...** [3] 
+kernel: CPU: 6 PID: 1438 Comm: modprobe Tainted: P           O    4.13.3-1-ARCH #1
+kernel: Hardware name: Gigabyte Technology Co., Ltd. H97-D3H/H97-D3H-CF, BIOS F5 06/26/2014
+kernel: task: ffff9c667abd9e00 task.stack: ffffb53b8db34000
+kernel: RIP: 0010:fw_core_init+0x18/0x1000 [firewire_core]
+kernel: RSP: 0018:ffffb53b8db37c68 EFLAGS: 00010246
+kernel: RAX: 0000000000000000 RBX: 0000000000000000 RCX: 0000000000000000
+kernel: RDX: 0000000000000000 RSI: 0000000000000008 RDI: ffffffffc16d3af4
+kernel: RBP: ffffb53b8db37c70 R08: 0000000000000000 R09: ffffffffae113e95
+kernel: R10: ffffe93edfdb9680 R11: 0000000000000000 R12: ffffffffc16d9000
+kernel: R13: ffff9c6729bf8f60 R14: ffffffffc16d5710 R15: ffff9c6736e55840
+kernel: FS:  00007f301fc80b80(0000) GS:ffff9c675dd80000(0000) knlGS:0000000000000000
+kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+kernel: CR2: 0000000000000000 CR3: 00000007c6456000 CR4: 00000000001406e0
+kernel: Call Trace:
+**kernel:  do_one_initcall+0x50/0x190** [4]
+kernel:  ? do_init_module+0x27/0x1f2
+kernel:  do_init_module+0x5f/0x1f2
+kernel:  load_module+0x23f3/0x2be0
+kernel:  SYSC_init_module+0x16b/0x1a0
+kernel:  ? SYSC_init_module+0x16b/0x1a0
+kernel:  SyS_init_module+0xe/0x10
+kernel:  entry_SYSCALL_64_fastpath+0x1a/0xa5
+kernel: RIP: 0033:0x7f301f3a2a0a
+kernel: RSP: 002b:00007ffcabbd1998 EFLAGS: 00000246 ORIG_RAX: 00000000000000af
+kernel: RAX: ffffffffffffffda RBX: 0000000000c85a48 RCX: 00007f301f3a2a0a
+kernel: RDX: 000000000041aada RSI: 000000000001a738 RDI: 00007f301e7eb010
+kernel: RBP: 0000000000c8a520 R08: 0000000000000001 R09: 0000000000000085
+kernel: R10: 0000000000000000 R11: 0000000000000246 R12: 0000000000c79208
+kernel: R13: 0000000000c8b4d8 R14: 00007f301e7fffff R15: 0000000000000030
+kernel: Code: <c7> 04 25 00 00 00 00 01 00 00 00 bb f4 ff ff ff e8 73 43 9c ec 48 
+kernel: RIP: fw_core_init+0x18/0x1000 [firewire_core] RSP: ffffb53b8db37c68
+kernel: CR2: 0000000000000000
+kernel: ---[ end trace 71f4306ea1238f17 ]---
+**kernel: Kernel panic - not syncing: Fatal exception** [5]
+kernel: Kernel Offset: 0x80000000 from 0xffffffff810000000 (relocation range: 0xffffffff800000000-0xfffffffffbffffffff
+kernel: ---[ end Kernel panic - not syncing: Fatal exception
+```
+
+*   [1] Indica el tipo de error que causó el pánico. En este caso, era un error del programador.
+*   [2] Indica que el pánico ocurrió en una función llamada *fw_core_init* en el módulo *firewire_core*.
+*   [3] Indica que *firewire_core* fue el último módulo que se inició.
+*   [4] Indica que la función que llamó a la función *fw_core_init* fue *do_one_initcall*.
+*   [5] Indica que este mensaje de *oops* es, de hecho, un *kernel panic* y el sistema está ahora bloqueado.
+
+Podemos suponer entonces que el pánico ocurrió durante la rutina de inicialización del módulo *firewire_core* al iniciarse. (Podríamos suponer, entonces, que el hardware firewire de la máquina es incompatible con esta versión del módulo del controlador firewire debido a un error del programador, y tendrá que esperar una nueva versión.) Mientras tanto, la forma más fácil de hacer funcionar la máquina nuevamente es evitar que el módulo se inicie. Podemos hacer esto de una de estas dos maneras:
+
+*   Si el módulo se está iniciando durante la ejecución de *initramfs*, reinicie con el parámetro del núcleo `rd.blacklist=firewire_core`.
+*   De lo contrario, reinicie con el parámetro del núcleo `module_blacklist=firewire_core`.
+
+### Reiniciar en una shell de superusuario y solucionar el problema
+
+Necesitará un shell de superusuario para realizar cambios en el sistema para que no se produzca el pánico. Si se produce un pánico durante el arranque, existen varias estrategias para obtener un shell de superusuario antes de que la máquina se bloquee:
+
+*   Reinicie con el parámetro del núcleo `emergency`, `rd.emergency`, o `-b` para obtener una manera de iniciar sesión justo después de que se monte el sistema de archivos raíz y `systemd` se ha iniciado.
+
+**Nota:** En este punto, el sistema de archivos raíz se montará como **solo lectura**. Ejecute `# mount -o remount,rw /` para poder realizar cambios.
+
+*   Reinicie con el parámetro del núcleo `rescue`, `rd.rescue`, `single`, `s`, `S`, o { {ic|1}} para poder iniciar sesión justo después de montar los sistemas de archivos locales.
+*   Reinicie con el parámetro del núcleo `systemd.debug-shell=1` para obtener un shell de superusuario al iniciar en tty9\. Cambie a este presionando `Ctrl-Alt-F9`.
+*   Experimente reiniciando con diferentes conjuntos de parámetros del núcleo para posibilitar la deshabilitación de la función del núcleo que está causando el pánico. Pruebe los "viejos recursos" `acpi=off` y `nolapic`.
+
+**Sugerencia:** Consulte `Documentation/admin-guide/kernel-parameters.txt` en el código fuente del núcleo de Linux para ver todos los parámetros.
+
+*   Como último recurso, arranque con el **CD de instalación de Arch Linux** y monte el sistema de archivos raíz en `/mnt` y luego ejecute `# arch-chroot /mnt`.
+
+Deshabilite el servicio o programa que causa el pánico, invierta una actualización defectuosa o solucione un problema de configuración.
+
 ## Administrar paquetes
 
-Véase [Pacman#Troubleshooting](/index.php/Pacman#Troubleshooting "Pacman") para temas generales, y [pacman/Package signing#Troubleshooting](/index.php/Pacman/Package_signing#Troubleshooting "Pacman/Package signing") para los problemas con las claves PGP.
+Consulte [solución de problemas con pacman](/index.php/Pacman_(Espa%C3%B1ol)#Soluci.C3.B3n_de_problemas "Pacman (Español)") para los temas más generales, y [solución de problemas de cifrado de paquetes con pacman](/index.php/Pacman/Package_signing_(Espa%C3%B1ol)#Soluci.C3.B3n_de_problemas "Pacman/Package signing (Español)") para los problemas con las claves PGP.
 
 ## fuser
 
 *fuser* es una utilidad de línea de órdenes para la identificación de los procesos que utilizan recursos como archivos, sistemas de archivos y puertos TCP/UDP.
 
-*fuser* es proporcionado por el paquete [psmisc](https://www.archlinux.org/packages/?name=psmisc), que debe estar ya instalado como parte del grupo [base](https://www.archlinux.org/groups/x86_64/base/).
+*fuser* está incluido en el paquete [psmisc](https://www.archlinux.org/packages/?name=psmisc), que debe estar ya instalado como parte del grupo [base](https://www.archlinux.org/groups/x86_64/base/). Consulte [fuser(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1) para más detalles.
 
 ## Permisos de sesión
 
@@ -212,11 +312,11 @@ $ loginctl show-session $XDG_SESSION_ID
 
 Esta debe contener `Remote=no` y `Active=yes` en la salida. Si no es así, asegúrese de que X se ejecuta en la misma tty donde se produjo el inicio de sesión. Esto es necesario a fin de preservar la sesión iniciada. Esto es manejado de forma predeterminada por `/etc/X11/xinit/xserverrc`.
 
-También debe iniciarse una sesión de D-Bus junto con X. Véase [D-Bus (Español)#Iniciar la sesión de usuario](/index.php/D-Bus_(Espa%C3%B1ol)#Iniciar_la_sesi.C3.B3n_de_usuario "D-Bus (Español)") para más información sobre esto.
+También debe iniciarse una sesión de D-Bus junto con X. Consulte como [iniciar la sesión de usuario](/index.php/D-Bus_(Espa%C3%B1ol)#Iniciar_la_sesi.C3.B3n_de_usuario "D-Bus (Español)") para más información.
 
-Las acciones [polkit](/index.php/Polkit "Polkit") no requieren una configuración posterior. Algunas acciones polkit requieren una autenticación adicional, incluso con una sesión local. Un agente de autenticación polkit debe estar en ejecución para que esto funcione. Ver [Agentes de autenticación](/index.php/Polkit#Authentication_agents "Polkit") para más información sobre esto.
+Las acciones [polkit](/index.php/Polkit "Polkit") no requieren una configuración posterior. Algunas acciones polkit requieren una autenticación adicional, incluso con una sesión local. Un agente de autenticación polkit debe estar en ejecución para que esto funcione. Consulte [Agentes de autenticación](/index.php/Polkit#Authentication_agents "Polkit") para más información.
 
-## error while loading shared libraries
+## Mensaje: "error while loading shared libraries"
 
 Si, durante el uso de un programa, se produce un error similar al siguiente:
 
@@ -225,7 +325,7 @@ error while loading shared libraries: libusb-0.1.so.4: cannot open shared object
 
 ```
 
-Utilice [pacman](/index.php/Pacman "Pacman") o [pkgfile](/index.php/Pkgfile "Pkgfile") para buscar el paquete al cual pertenece la biblioteca que falta:
+Utilice [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") o [pkgfile](/index.php/Pkgfile_(Espa%C3%B1ol) "Pkgfile (Español)") para buscar el paquete al cual pertenece la biblioteca que falta:
 
  `$ pacman -Fs libusb-0.1.so.4` 
 ```
@@ -234,67 +334,34 @@ extra/libusb-compat 0.1.5-1
 
 ```
 
-En este caso, el paquete [libusb-compat](https://www.archlinux.org/packages/?name=libusb-compat) necesita ser [instalado](/index.php/Installed "Installed").
+En este caso, el paquete [libusb-compat](https://www.archlinux.org/packages/?name=libusb-compat) necesita ser [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)").
 
-El error también puede significar que el paquete que ha utilizado para instalar el programa no enumera la biblioteca como una dependencia en su [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"): si se trata de un paquete oficial, [informe del error](/index.php/Report_a_bug "Report a bug"); si se trata de un paquete de [AUR](/index.php/AUR "AUR"), informe a su mantenedor en su página del sitio web de AUR.
+El error también puede significar que el paquete que ha utilizado para instalar el programa no enumera la biblioteca como una dependencia en su [PKGBUILD](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)"): si se trata de un paquete oficial, [informe del error](/index.php/Report_a_bug "Report a bug"); si se trata de un paquete de [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)"), informe a su mantenedor en su página del sitio web de AUR.
 
-## file: could not find any magic files!
+## Mensaje: "file: could not find any magic files!"
 
-*Ejemplo:* después de una actualización o de la instalación de un paquete le da el siguiente error:
+Si ve este mensaje, es probable que indique que la actualización de un paquete ha dañado el archivo de enlaces de tiempo de ejecución del vinculador dinámico y su sistema ahora está esencialmente *lisiado*. No podrá volver a compilar o reinstalar el paquete responsable ni reconstruir el [initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") hasta que lo solucione.
 
-```
-# file: could not find any magic files!
+### Problema
 
-```
+Es probable que una actualización del paquete haya agregado un `*archivo*.conf` no válido al directorio `/etc/ld.so.conf.d` o editado `/etc/ld.so.conf` incorrectamente. El resultado es que el archivo de enlaces de tiempo de ejecución del vinculador dinámico `/etc/ld.so.cache` se vuelve a generar con datos no válidos. Esto puede causar que fallen todos los programas del sistema que dependan de bibliotecas compartidas (es decir, casi todos).
 
-Lo más probable es que el sistema haya quedado inoperativo. Y, cualquier intento de recompilar/reinstalar el paquete(s) responsable de la rotura se traducirá en un error. Además, cualquier intento para tratar de reconstruir [initramfs](/index.php/Mkinitcpio "Mkinitcpio") resultará en lo siguiente:
+### Solución
 
-```
-# mkinitcpio -p linux
-==> Building image from preset: 'default'
- -> -k /boot/vmlinuz-linux -c /etc/mkinitcpio.conf -g /boot/initramfs-linux.img
-file: could not find any magic files!
-==> ERROR: invalid kernel specifier: `/boot/vmlinuz-linux'
-==> Building image from preset: 'fallback'
- -> -k /boot/vmlinuz-linux -c /etc/mkinitcpio.conf -g /boot/initramfs-linux-fallback.img -S autodetect
-file: could not find any magic files!
-@==> ERROR: invalid kernel specifier: `/boot/vmlinuz-linux'
+1.  Arranque con el ***CD de instalación de Arch Linux***.
+2.  Monte su sistema de archivos raíz `/` en `/mnt` y su sistema de archivos `/boot` en `/mnt/boot` y entre en el sistema dañado ejecutando `# arch-chroot /mnt`.
+3.  Examine el archivo `/etc/ld.so.conf` y elimine las líneas no válidas encontradas.
+4.  Examine los archivos ubicados en el directorio `/etc/ld.so.conf.d/` y elimine los archivos no válidos.
+5.  Reconstruya el archivo de enlaces de tiempo de ejecución del vinculador dinámico `/etc/ld.so.cache` ejecutando `# ldconfig`.
+6.  Reconstruya el [initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") ejecutando `# mkinitcpio -p linux`.
+7.  Salga del chroot, desmonte los sistemas de archivos y reinicie de nuevo el sistema.
 
-```
-
-Por lo general, una aplicación previamente instalada habrá colocado un archivo de configuración dentro de `/etc/ld.so.conf.d/` o habrá hecho cambios en `/etc/ld.so.conf` que no son ahora válidos.
-
-1.  Arranque con el CD live/soporte de instalación de Arch Linux.
-2.  Monte su partición root (`**/**`) en `/mnt` y, usando [arch-chroot](/index.php/Change_root#Change_root "Change root"), efectúe [chroot](/index.php/Change_root "Change root") en su sistema.
-    **Nota:** [arch-chroot](/index.php/Change_root#Change_root "Change root") deja montar la partición `/boot` por el usuario.
-
-3.  Examine `/etc/ld.so.conf` y elimine cualquier línea no válida que se encuentre.
-4.  Examine Los archivos que se encuentran dentro del directorio `/etc/ld.so.conf.d/` y elimine todos los archivos no válidos.
-5.  Reconstruya [initramfs](/index.php/Initramfs "Initramfs"): ` # mkinitcpio -p linux` 
-6.  Reinicie y entre de nuevo en el sistema instalado.
-7.  Una vez reiniciado, vuelva a instalar el paquete que era responsable de dejar el sistema inoperativo con: ` # pacman -S <paquete>` 
-
-## La revisión ortográfica marca todo el texto como incorrecto
-
-¿Ha instalado un diccionario [aspell](https://www.archlinux.org/packages/?name=aspell)? Utilice `pacman -Ss aspell` para ver los diccionarios disponibles para su descarga.
-
-Si la instalación de los archivos de diccionario no ha podido solucionar el problema, lo más probable es que sea un problema con `enchant`. Compruebe si hay archivos de diccionario conocidos:
-
- `$ aspell dicts` 
-```
-en
-en_GB
-...etc
-```
-
-Si el diccionario de la lengua en cuestión aparece, añádalo a `/usr/share/enchant/enchant.ordering`. En el ejemplo anterior, sería:
-
-```
-en_GB:aspell
-
-```
-
-## Véase también
+## Consulte también
 
 *   [Fix the Most Common Problems](http://www.tuxradar.com/content/how-fix-most-common-linux-problems)
 *   [A how-to in troubleshooting for newcomers](https://www.reddit.com/r/archlinux/comments/tjjwr/archlinux_a_howto_in_troubleshooting_for_newcomers/)
+*   [List of Tools for UBCD](http://wiki.ultimatebootcd.com/index.php?title=Tools) - Memtest-like tools to add to grub.cfg on UltimateBootCD.com
+*   [Wikipedia:BIOS Boot partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
+*   [REISUB](/index.php/REISUB "REISUB")
+*   [Debug Logging to a Serial Console](http://freedesktop.org/wiki/Software/systemd/Debugging#Debug_Logging_to_a_Serial_Console) en Freedesktop.org
+*   [How to Isolate Linux ACPI Issues](https://web.archive.org/web/20120217124742/http://www.lesswatts.org/projects/acpi/debug.php) en Archive.org

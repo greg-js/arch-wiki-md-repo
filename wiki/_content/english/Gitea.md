@@ -11,14 +11,16 @@ Related articles
 *   [2 Configuration](#Configuration)
     *   [2.1 MariaDB/MySQL](#MariaDB.2FMySQL)
 *   [3 Usage](#Usage)
-*   [4 Advanced configuration](#Advanced_configuration)
+*   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Enable SSH Support](#Enable_SSH_Support)
         *   [4.1.1 Setup git user](#Setup_git_user)
         *   [4.1.2 Configure SSH](#Configure_SSH)
         *   [4.1.3 Add SSH-keys for an user](#Add_SSH-keys_for_an_user)
     *   [4.2 Disable HTTP protocol](#Disable_HTTP_protocol)
     *   [4.3 Configure nginx as reverse proxy](#Configure_nginx_as_reverse_proxy)
-*   [5 See also](#See_also)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Database error on startup after upgrade to 1.5.0](#Database_error_on_startup_after_upgrade_to_1.5.0)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -35,7 +37,7 @@ Gitea requires the use of a database backend, the following are supported:
 
 The user configuration file should be located at `/etc/gitea/app.ini`. Do **not** edit the main configuration file (`/var/lib/gitea/conf/app.ini`), since this file is included in the binary and will be overwritten on each update. Instead copy (if not exists already) `/var/lib/gitea/custom/conf/app.ini.sample` to `/etc/gitea/app.ini`.
 
-Gitea repository data will be saved into */var/lib/gitea/repos*, or if using [gitea-git](https://aur.archlinux.org/packages/gitea-git/) into `/home/gitea/gitea-repositories`. It is possible to set overrule this location in `/etc/gitea/app.ini`.
+Gitea repository data will be saved into `/var/lib/gitea/repos/`, or if using [gitea-git](https://aur.archlinux.org/packages/gitea-git/) into `/home/gitea/gitea-repositories`. It is possible to set overrule this location in `/etc/gitea/app.ini`.
 
 See the [Gitea docs](https://docs.gitea.io/en-us/customizing-gitea/) for more configuration examples.
 
@@ -79,7 +81,7 @@ When running Gitea for the first time it should redirect to `[http://localhost:3
 
 **Note:** If you want Gitea to listen on all interfaces, set `HTTP_ADDR = 0.0.0.0` in `/etc/gitea/app.ini`.
 
-## Advanced configuration
+## Tips and tricks
 
 ### Enable SSH Support
 
@@ -146,7 +148,7 @@ You should now be able to use SSH-authentication to manage the repositories, wit
 
 ### Disable HTTP protocol
 
-By default, the ability to interact with repositories by HTTP protocol is enabled. You may want to disable HTTP-support if using [SSH](/index.php/SSH "SSH"), by setting `DISABLE_HTTP_GIT` to **true**.
+By default, the ability to interact with repositories by HTTP protocol is enabled. You may want to disable HTTP-support if using [SSH](/index.php/SSH "SSH"), by setting `DISABLE_HTTP_GIT` to `true`.
 
 ### Configure nginx as reverse proxy
 
@@ -196,9 +198,23 @@ PROTOCOL               = http
 DOMAIN                 = git.domain.tld
 ```
 
-**Note:** You don't need to activate any SSL certificate options in `/etc/gitea/app.ini`.
+**Note:** You do not need to activate any SSL certificate options in `/etc/gitea/app.ini`.
 
-Finally update the *cookie* section - set COOKIE_SECURE to **true**.
+Finally update the *cookie* section - set `COOKIE_SECURE` to `true`.
+
+## Troubleshooting
+
+### Database error on startup after upgrade to 1.5.0
+
+A problem can appear after the upgrade to 1.5.0\. The service will not start, and the following error is present in the logs:
+
+ `/var/log/gitea/gitea.log`  `2018/08/21 16:11:12 [...itea/routers/init.go:60 GlobalInit()] [E] Failed to initialize ORM engine: migrate: do migrate: Sync2: Error 1071: Specified key was too long; max key length is 767 bytes` 
+
+To fix this problem, run the following command as the `root` user on your MySQL/MariaDB server
+
+ `$ mysql -u root -p`  `MariaDB> set global innodb_large_prefix = `ON`;` 
+
+gitea should stop complaining about key size and startup properly.
 
 ## See also
 

@@ -12,11 +12,12 @@ La columna *Paquete* contiene un enlace a la página de ArchWiki relativa a cada
 
 | Paquete | initscripts | systemd | Descripción |
 | [acpid](/index.php/Acpid "Acpid") | acpid | acpid.service | Un demonio transmisor de los eventos de la gestión de energía por ACPI con soporte para netlink. |
-| [alsa](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") | alsa | *siempre que esté on* – alsa-store.service, alsa-restore.service | Guarda el estado de una tarjeta de sonido (por ejemplo, el volumen) al cierre y lo restaura en el arranque. |
+| [alsa](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") | alsa | *siempre activo* – alsa-store.service, alsa-restore.service | Guarda el estado de una tarjeta de sonido (por ejemplo, el volumen) al cierre y lo restaura en el arranque. |
 | [at](https://www.archlinux.org/packages/?name=at) | atd | atd.service | Guarda trabajos en cola para su posterior ejecución. |
 | [Autofs](/index.php/Autofs "Autofs") | autofs | autofs.service | Monta automáticamente medios extraibles o recursos compartidos de red cuando se insertan o se accede a ellos. |
 | [Avahi](/index.php/Avahi "Avahi") | avahi-daemon | avahi-daemon.service | Permite a los programas encontrar automáticamente servicios de redes locales. |
 | avahi-dnsconfd | avahi-dnsconfd.service | Marco multidifusión/unidifusión DNS-SD. |
+| [Audit framework](/index.php/Audit_framework "Audit framework") | auditd | auditd.service | Marco de auditoría de Linux |
 | [Bitlbee](/index.php/Bitlbee "Bitlbee") | bitlbee | bitlbee.service | Aporta mensajería instantánea (XMPP, MSN, Yahoo!, AIM, ICQ, Twitter) para IRC. |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | bluetooth | bluetooth.service | Protocolo de Bluetooth, marco y subsistema. |
 | [Chrony](/index.php/Chrony "Chrony") | chrony | chrony.service | Ligero cliente y servidor NTP. |
@@ -39,8 +40,8 @@ freshclamd.service | Conjunto de herramientas de antivirus para Unix. |
 | [Fan speed control](/index.php/Fan_speed_control "Fan speed control") | fancontrol | fancontrol.service | Demonio de control del ventilador (parte de lm_sensors) |
 | [Fbsplash](/index.php/Fbsplash "Fbsplash") | fbsplash | *aún no implementado* | Pantalla de arranque gráfica para el usuario. |
 | [FluidSynth](/index.php/FluidSynth "FluidSynth") | fluidsynth | fluidsynth.service | Sintetizador de software. |
- ftpd | ftpd.service | Demonio de ftp Inetutils. |
-| [GDM](/index.php/GDM "GDM") | gdm | gdm.service | Gestor de pantalla de Gnome. |
+| [inetutils](https://www.archlinux.org/packages/?name=inetutils) | ftpd | ftpd.service | Demonio de ftp Inetutils. |
+| [GDM](/index.php/GDM "GDM") | gdm | gdm.service | Administrador de pantalla de Gnome. |
 | [Git](/index.php/Git "Git") | git-daemon | git-daemon.socket | Demonio de GIT. |
 | [gpm](/index.php/Console_mouse_support "Console mouse support") | gpm | gpm.service | Soporte para el ratón de consola. |
 | [hddtemp](/index.php/Hddtemp "Hddtemp") | hddtemp | hddtemp.service | Demonio para monitorizar la temperatura del disco duro. |
@@ -50,15 +51,21 @@ freshclamd.service | Conjunto de herramientas de antivirus para Unix. |
  ifplugd | ifplugd@.service | Inicio/parada de la conexión de red cuando el cable de red esté conectado o no. |
 | [iptables](/index.php/Iptables "Iptables") | iptables | iptables.service | Carga las reglas del cortafuegos para ipv4. |
 | ip6tables | ip6tables.service | Carga las reglas del cortafuegos para ipv6. |
+| [IPFS](/index.php/IPFS "IPFS") | demonio ipfs |  ? | Un nodo de protocolo hipermedia punto-a-punto |
  irqbalance | irqbalance.service | Irqbalance es la utilidad Linux encargada de asegurarse de que las interrupciones de los dispositivos de hardware se manejan de una manera lo más eficiente posible. |
-| [KDE](/index.php/KDE "KDE") | kdm | kdm.service | Gestor de pantallad de KDE. |
+| [KDE](/index.php/KDE "KDE") | kdm | kdm.service | Administrador de pantalla KDE. |
 | [krb5](https://www.archlinux.org/packages/?name=krb5) | krb5-kadmind | krb5-kadmind.service | Servidor para la administración de Kerberos 5. |
 | krb5-kdc | krb5-kdc.service | Kerberos 5 KDC. |
 | krb5-kpropd | krb5-kpropd.service | Servidor de programación de Kerberos 5. |
 | [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") | laptop-mode | laptop-mode.service | Herramientas para la gestión de energía del portatil. |
 | [lighttpd](/index.php/Lighttpd "Lighttpd") | lighttpd | lighttpd.service | Server HTTP Lighttpd (Servidor Web). |
 | [libvirt](/index.php/Libvirt "Libvirt") | libvirt | libvirtd.service | libvirt es una API de virtualización y un demonio para la gestión de máquinas virtuales (VMs). |
-| [lxdm](/index.php/LXDE "LXDE") | lxdm | lxdm.service | Gestor de pantallas de LXDE. |
+| [lxdm](/index.php/LXDE "LXDE") | lxdm | lxdm.service | Administrador de pantallas LXDE. |
+| [man-db](https://www.archlinux.org/packages/?name=man-db) |  ? | man-db.timer
+
+man-db.service
+
+ | Actualización diaria del caché man-db. |
  mdadm | mdadm.service | Administración MD (Linux Software RAID). |
 | [miniDLNA](/index.php/MiniDLNA "MiniDLNA") | minidlna | minidlna.service | Sencillo servidor multimedia DLNA/UPnP. |
   ? | ModemManager.service | Gestión de banda ancha por módem (3G) disponible para [NetworkManager](/index.php/NetworkManager "NetworkManager"). |
@@ -73,7 +80,7 @@ freshclamd.service | Conjunto de herramientas de antivirus para Unix. |
 | [NetworkManager](/index.php/NetworkManager "NetworkManager") | networkmanager | NetworkManager.service
 NetworkManager-wait-online.service | Demonio de NetworkManager, proporciona la detección y configuración automática de conexiones de red. |
 | [Nginx](/index.php/Nginx "Nginx") | nginx | nginx.service | Nginx HTTP Server and IMAP/Servidor proxy POP3 (Servidor Web ). |
- nscd | nscd.service | Demonio para la memoria caché del servicio de nombres. |
+| [glibc](https://www.archlinux.org/packages/?name=glibc) | nscd | nscd.service | Demonio para la memoria caché del servicio de nombres. |
 | [ntpd](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon") | ntpd | ntpd.service | Demonio de Network Time Protocol (cliente y servidor). |
 | [Ntop](/index.php/Ntop "Ntop") | ntop | ntop.service | Ntop es una sonda de tráfico de red basada en libcap. |
 | [OpenNTPD](/index.php/OpenNTPD "OpenNTPD") | openntpd | openntpd.service | Demonio alternativo a Network Time Protocol (cliente y servidor). |
@@ -84,25 +91,33 @@ NetworkManager-wait-online.service | Demonio de NetworkManager, proporciona la d
 | [php-fpm](https://www.archlinux.org/packages/?name=php-fpm) | php-fpm | php-fpm.service | Administrador de procesos FastCGI para PHP. |
 | [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") | postgresql | postgresql.service | Servidor de base de datos PostgreSQL. |
 | [Postfix](/index.php/Postfix "Postfix") | postfix | postfix.service |
-| [powernowd](/index.php/Powernowd "Powernowd") | powernowd | *aún no implementado* | Para ajustar la velocidad de la CPU dependiendo de la carga del sistema. |
+| [Postgrey](/index.php/Postgrey "Postgrey") | postgrey | postgrey.service | Servicio de lista gris, utilizado con Postfix |
 | [PPTP server](/index.php/PPTP_server "PPTP server") | pptpd | pptpd.service | Una red privada virtual (VPN) que usa el protocolo de túnel punto a punto (PPTP). |
 | [pppd](/index.php/Pppd "Pppd") | pppd | ppp@.service | Un demonio que implementa el protocolo punto-a-punto al acceso telefónico a redes. |
 | [preload](/index.php/Preload "Preload") | preload | preload.service | Demonio que hace que las aplicaciones se ejecuten más rápido por la obtención previa de los archivos binarios y objetos compartidos. |
 | [Prosody](/index.php/Prosody "Prosody") | prosody | prosody.service | Servidor XMPP. |
 | [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon") | psd | psd.service | Gestiona el perfil del navegador en tmpfs y lo sincroniza periódicamente de nuevo con el disco físico. |
  pure-ftpd | pure-ftpd.service | Servidor FTP ajustado a los estándares, rápido y de calidad. |
-| rfkill | rfkill | rfkill-block@.service
-rfkill-unblock@.service | (Un)blocks radio devices. |
 | [Rsync](/index.php/Rsync "Rsync") | rsyncd | rsyncd.service | Demonio de Rsync. |
 | [Rsyslog](/index.php/Rsyslog "Rsyslog") | rsyslogd | rsyslog.service | Registro alternativo del sistema. |
+| [Redis](/index.php/Redis "Redis") | redis-server | redis.service | Almacén clave-valor |
 | [samba](/index.php/Samba "Samba") | samba | smbd.service
 nmbd.service
 winbindd.service | Servicios de archivos e impresión para los clientes de Microsoft Windows. |
+| [LVM](/index.php/LVM "LVM") |  ? | blk-availability.service
+lvm2-lvmetad.service
+lvm2-monitor.service
+lvm2-pvscan.service | LVM es un administrador de volumen lógico para el núcleo de Linux; administra unidades de disco y dispositivos similares de almacenamiento masivo. |
 | [SANE](/index.php/SANE "SANE") | saned | saned@.service | Demonio de red de SANE. |
  saslauthd | saslauthd.service | Demonio de autenticación SASL. |
 | [lm_sensors](/index.php/Lm_sensors "Lm sensors") | sensord | sensord.service | Demonio para el registro de la información de los sensores. |
 | sensors | lm_sensors.service | Inicialización de los sensores que monitorizan el hardware (cargados necesariamente por lo módulos del kernel). |
-| [SLiM](/index.php/SLiM "SLiM") | slim | slim.service | Sencillo gestor de inicio de sesión. |
+| [shadow](https://www.archlinux.org/packages/?name=shadow) |  ? | shadow.timer
+
+shadow.service
+
+ | Comprobación diaria de los archivos de contraseña y grupo. |
+| [SLiM](/index.php/SLiM "SLiM") | slim | slim.service | Administrador sencillo de inicio de sesión. |
 | [SMART](/index.php/SMART "SMART") | smartd | smartd.service | Autoanálisis, análisis e información técnica (S.M.A.R.T) tras monitorizar el disco duro. |
 | [smbnetfs](/index.php/Samba#smbnetfs "Samba") | smbnetfs | smbnetfs.service | Montaje automático de recursos compartidos Samba/Microsoft. |
 | [snmpd](/index.php/Snmpd "Snmpd") | snmpd | snmpd.service | Una suite de aplicaciones que se utilizan para implementar SNMP |
@@ -113,9 +128,11 @@ winbindd.service | Servicios de archivos e impresión para los clientes de Micro
  svnserve | svnserve.service | Servidor de Subversion. |
 | [syslog-ng](/index.php/Syslog-ng "Syslog-ng") | syslog-ng | syslog-ng.service | Nueva generación del registro del sistema. |
 | [Timidity](/index.php/Timidity "Timidity") | timidity++ | timidity.service | Sintetizador de software para MIDI. |
+| [Tinc](/index.php/Tinc "Tinc") |  ? | tincd@.service | Uno para cada directorio de configuración como /etc/tinc/*<nombrevpn>*/ |
 | [Tor](/index.php/Tor "Tor") | tor | tor.service | Enrutamiento para comunicaciones anónimas. |
 | [Transmission](/index.php/Transmission "Transmission") | transmissiond | transmission.service | Demonio de Bit Torrent. |
 | [Ufw](/index.php/Ufw "Ufw") | ufw | ufw.service | Uncomplicated FireWall. |
+| [Urxvtd](/index.php/Urxvt "Urxvt") |  ? | urxvtd.service | Demonio urxvt. |
 | [VirtualBox](/index.php/VirtualBox "VirtualBox") | vboxservice | vboxservice.service | Servicio VirtualBox Guest. |
 | [vnStat](/index.php/VnStat "VnStat") | vnstat | vnstat.service | Monitor de tráfico de red ligero. |
 | [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") | vsftpd | vsftpd.service (permanente)
@@ -127,7 +144,7 @@ vsftpd-ssl.service (permanente)
 vsftpd-ssl.socket (bajo demanda)
 
  | FTP server. |
-| [wicd](/index.php/Wicd "Wicd") | wicd | wicd.service | Un gestor de conexiones de red ligero y alternativo a NetworkManager. |
+| [wicd](/index.php/Wicd "Wicd") | wicd | wicd.service | Un administrador de conexiones de red ligero y alternativo a NetworkManager. |
 | [x11vnc](/index.php/X11vnc "X11vnc") | x11vnc | x11vnc.service | Demonio de escritorio remoto de VNC. |
-| [XDM](/index.php/XDM "XDM") | xdm | xdm.service | Gestor de pantallas de X. |
-| [xdm-archlinux](/index.php/XDM "XDM") | xdm-archlinux | xdm-archlinux.service | Gestor de pantalla X con tema de Arch Linux. |
+| [XDM](/index.php/XDM "XDM") | xdm | xdm.service | Administrador de pantalla X. |
+| [xdm-archlinux](/index.php/XDM "XDM") | xdm-archlinux | xdm-archlinux.service | Administrador de pantalla X con el tema de Arch Linux. |

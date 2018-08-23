@@ -2,18 +2,19 @@ The [XDG Desktop Entry specification](https://specifications.freedesktop.org/des
 
 Each desktop entry must have a `Type` and a `Name` and can optionally define its appearance in the application menu.
 
-There are three types of desktop entries:
+The three available types are:
 
-*   **Application** (*.desktop* file extension)
-    Defines how to launch an application and what MIME types it supports.
-*   **Link** (*.desktop* file extension)
-    Defines a shortcut to a `URL`.
-*   **Directory** (*.directory* file extension)
-    Defines the appearance of a submenu in the application menu.
+	Application
 
-The `MimeType` keys of Application desktop entries are used by [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications").
+	Defines how to launch an application and what MIME types it supports (used by [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications")). With [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart") Application entries can be [started automatically](/index.php/Autostarting "Autostarting") by placing them in specific directories. Application entries use the `.desktop` file extension. See [#Application entry](#Application_entry).
 
-With [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart") Application desktop entries can be [started automatically](/index.php/Autostarting "Autostarting") by placing them in specific directories.
+	Link
+
+	Defines a shortcut to a `URL`. Link entries use the `.desktop` file extension.
+
+	Directory
+
+	Defines the appearance of a submenu in the application menu. Link entries use the `.directory` file extension.
 
 The following sections will roughly explain how these are created and validated.
 
@@ -188,7 +189,7 @@ If the developers of an application do not include icons in their source package
 The [freedesktop.org standard](http://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html) specifies in which order and directories programs should look for icons:
 
 1.  `$HOME/.icons` (for backwards compatibility)
-2.  `$XDG_DATA_DIRS/icons`
+2.  `[$XDG_DATA_DIRS](/index.php/XDG_Base_Directory#System_directories "XDG Base Directory")/icons`
 3.  `/usr/share/pixmaps`
 
 ## Tools
@@ -275,6 +276,5 @@ Edit the `Exec` command by prepending `env`, for example:
 
 ## See also
 
-*   [DeveloperWiki:Removal of desktop files](/index.php/DeveloperWiki:Removal_of_desktop_files "DeveloperWiki:Removal of desktop files")
-*   [desktop wikipedia article](https://en.wikipedia.org/wiki/.desktop "wikipedia:.desktop")
-*   [information for developers](http://freedesktop.org/wiki/Howto_desktop_files)
+*   [Wikipedia:.desktop](https://en.wikipedia.org/wiki/.desktop "wikipedia:.desktop")
+*   [Information for developers](http://freedesktop.org/wiki/Howto_desktop_files)

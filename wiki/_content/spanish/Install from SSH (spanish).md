@@ -21,7 +21,7 @@ Configuración de Arch sobre...
 
 ## Arrancar desde el soporte de instalación
 
-Arranque en un entorno live de Arch a través de un [CD live/imagen USB](/index.php/Beginners%27_guide_(Espa%C3%B1ol)#Preparar_el_soporte_de_instalaci.C3.B3n_m.C3.A1s_reciente "Beginners' guide (Español)").
+Arranque en un entorno live de Arch a través de un [CD live/imagen USB](/index.php/Category:Getting_and_installing_Arch_(Espa%C3%B1ol) "Category:Getting and installing Arch (Español)").
 
 ## Configurar el entorno live para usar SSH
 

@@ -1,8 +1,8 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Telegram](/index.php/Telegram "Telegram"). Дата последней синхронизации: 19 августа 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Telegram&diff=0&oldid=531574).
+**Состояние перевода:** На этой странице представлен перевод статьи [Telegram](/index.php/Telegram "Telegram"). Дата последней синхронизации: 21 августа 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Telegram&diff=0&oldid=536552).
 
-[Telegram](https://en.wikipedia.org/wiki/Telegram_(software) — облачный кроссплатформенный мессенджер с опциональным end-to-end шифрованием. Для создания аккаунта требуется номер телефона.
+[Telegram](https://en.wikipedia.org/wiki/ru:Telegram "wikipedia:ru:Telegram") — облачный кроссплатформенный мессенджер с опциональным end-to-end шифрованием. Для создания аккаунта требуется номер телефона.
 
-Хотя официальные приложения и имеют открытый исходный код, он обновляется не сразу же после выхода новых версий приложений. Серверная часть Telegram является проприетарной.
+Хотя официальные приложения и имеют открытый исходный код, они обновляются не сразу же после выхода новых версий приложений. Серверная часть Telegram является проприетарной.
 
 ## Contents
 
@@ -11,7 +11,7 @@
     *   [1.2 Графические приложения](#.D0.93.D1.80.D0.B0.D1.84.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
     *   [1.3 Приложения для терминала](#.D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B4.D0.BB.D1.8F_.D1.82.D0.B5.D1.80.D0.BC.D0.B8.D0.BD.D0.B0.D0.BB.D0.B0)
     *   [1.4 Web-приложения](#Web-.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
-*   [2 Советы и хитрости](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.85.D0.B8.D1.82.D1.80.D0.BE.D1.81.D1.82.D0.B8)
+*   [2 Советы и рекомендации](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.80.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D0.B0.D1.86.D0.B8.D0.B8)
     *   [2.1 Каналы в Telegram про Arch Linux](#.D0.9A.D0.B0.D0.BD.D0.B0.D0.BB.D1.8B_.D0.B2_Telegram_.D0.BF.D1.80.D0.BE_Arch_Linux)
     *   [2.2 Счётчик непрочитанных сообщений для Telegram Desktop](#.D0.A1.D1.87.D1.91.D1.82.D1.87.D0.B8.D0.BA_.D0.BD.D0.B5.D0.BF.D1.80.D0.BE.D1.87.D0.B8.D1.82.D0.B0.D0.BD.D0.BD.D1.8B.D1.85_.D1.81.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D0.B9_.D0.B4.D0.BB.D1.8F_Telegram_Desktop)
 
@@ -22,7 +22,7 @@
 ### Плагины для других приложений
 
 *   При использовании пакетов [telegram-purple](https://aur.archlinux.org/packages/telegram-purple/) или [telegram-purple-git](https://aur.archlinux.org/packages/telegram-purple-git/) подключиться к Telegram можно из приложений, основанных на [libpurple](https://www.archlinux.org/packages/?name=libpurple), к примеру, [Pidgin](/index.php/Pidgin_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pidgin (Русский)").
-*   В приложениях на основе [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) (к примеру, [empathy](https://www.archlinux.org/packages/?name=empathy), мессенджер по умолчанию в [GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)")) можно использовать пакет [telepathy-haze](https://www.archlinux.org/packages/?name=telepathy-haze) с совместимостью с [libpurple](https://www.archlinux.org/packages/?name=libpurple), а затем [telegram-purple](https://aur.archlinux.org/packages/telegram-purple/) для подключения к Telegram.
+*   В приложениях на основе [Telepathy](https://en.wikipedia.org/wiki/ru:Telepathy "wikipedia:ru:Telepathy") (к примеру, [empathy](https://www.archlinux.org/packages/?name=empathy), мессенджер по умолчанию в [GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)")) можно использовать пакет [telepathy-haze](https://www.archlinux.org/packages/?name=telepathy-haze) с совместимостью с [libpurple](https://www.archlinux.org/packages/?name=libpurple), а затем [telegram-purple](https://aur.archlinux.org/packages/telegram-purple/) для подключения к Telegram.
 *   В [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)") можно использовать [telepathy-morse](https://www.archlinux.org/packages/?name=telepathy-morse) для добавления поддержки Telegram в мессенджер по умолчанию.
 
 ### Графические приложения
@@ -39,19 +39,19 @@
 
 ### Приложения для терминала
 
-*   [telegram-cli-git](https://aur.archlinux.org/packages/telegram-cli-git/) — позволяет использовать Telegram при помощи командной строки. Для дополнительной информации о программе обратитесь к официальной странице на [Github](https://github.com/vysheng/tg).
+*   [telegram-cli-git](https://aur.archlinux.org/packages/telegram-cli-git/) — позволяет использовать Telegram при помощи командной строки. Для получения дополнительной информации о программе обратитесь к официальной странице на [Github](https://github.com/vysheng/tg).
 
-*   [nctelegram-git](https://aur.archlinux.org/packages/nctelegram-git/) — основанный на [Ncurses](https://en.wikipedia.org/wiki/Ncurses "wikipedia:Ncurses") клиент для командной строки, требует [telegram-cli-git](https://aur.archlinux.org/packages/telegram-cli-git/). Для дополнительной информации о программе обратитесь к официальной странице на [Github](https://github.com/Nanoseb/ncTelegram).
+*   [nctelegram-git](https://aur.archlinux.org/packages/nctelegram-git/) — основанный на [Ncurses](https://en.wikipedia.org/wiki/ru:ncurses "wikipedia:ru:ncurses") клиент для командной строки, требует [telegram-cli-git](https://aur.archlinux.org/packages/telegram-cli-git/). Для получения дополнительной информации о программе обратитесь к официальной странице на [Github](https://github.com/Nanoseb/ncTelegram).
 
 ### Web-приложения
 
 *   Официальный [Telegram Web](https://web.telegram.org).
-*   [franz](https://aur.archlinux.org/packages/franz/) — веб-приложение с открытым исходным кодом, предоставляющее доступ к различным мессенджерам, таким как [Telegram](https://en.wikipedia.org/wiki/Telegram "wikipedia:Telegram"), [WhatsApp](https://en.wikipedia.org/wiki/WhatsApp "wikipedia:WhatsApp"), [Facebook](https://en.wikipedia.org/wiki/Facebook "wikipedia:Facebook") и другим.
+*   [franz](https://aur.archlinux.org/packages/franz/) — веб-приложение с открытым исходным кодом, предоставляющее доступ к различным мессенджерам, таким как [Telegram](https://en.wikipedia.org/wiki/ru:Telegram "wikipedia:ru:Telegram"), [WhatsApp](https://en.wikipedia.org/wiki/ru:WhatsApp "wikipedia:ru:WhatsApp"), [Facebook](https://en.wikipedia.org/wiki/ru:Facebook "wikipedia:ru:Facebook") и другим.
 *   [rambox-bin](https://aur.archlinux.org/packages/rambox-bin/) — альтернатива Franz с открытым исходным кодом, предоставляет все его возможности.
 *   Дополнение [Telegram Desktop](https://addons.mozilla.org/ru/firefox/addon/telegram-desktop/) для [Firefox](/index.php/Firefox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Firefox (Русский)") — позволяет общаться в Telegram из браузера.
 *   Приложение [Telegram Chrome app](https://telegram.org/dl/webogram/chromeapp) для [Chromium](/index.php/Chromium_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Chromium (Русский)") — позволяет общаться в Telegram из браузера.
 
-## Советы и хитрости
+## Советы и рекомендации
 
 ### Каналы в Telegram про Arch Linux
 

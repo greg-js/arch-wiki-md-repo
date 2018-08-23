@@ -39,7 +39,7 @@ Aunque un sistema Arch basado en SysVinit no utiliza init, la mayor parte del tr
 **Nota:**
 
 *   [systemd](https://www.archlinux.org/packages/?name=systemd) y [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) son utilizados de forma predeterminada en los nuevos soportes de instalación desde el [2012-10-13](https://www.archlinux.org/news/systemd-is-now-the-default-on-new-installations/). Esta sección está dedicada a las instalaciones de Arch Linux que todavía dependen de sysvinit e initscripts.
-*   Si se está utilizando Arch Linux en un [VPS](https://en.wikipedia.org/wiki/es:Servidor_virtual_privado "wikipedia:es:Servidor virtual privado"), véase [la página apropiada](/index.php/Virtual_Private_Server#Moving_your_VPS_from_initscripts_to_systemd "Virtual Private Server").
+*   Si se está utilizando Arch Linux en un [VPS](https://en.wikipedia.org/wiki/es:Servidor_virtual_privado "wikipedia:es:Servidor virtual privado"), consulte [la página apropiada](/index.php/Virtual_Private_Server "Virtual Private Server").
 
 ### Consideraciones previas antes de pasarse a systemd
 

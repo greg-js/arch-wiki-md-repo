@@ -69,7 +69,7 @@ Arch users with the same laptop as you are: a minority of a minority of a minori
 
 Your best resources in this endeavor are going to be [ACPI Spec homepage](http://www.acpi.info), and [Linux ACPI Project](https://01.org/linux-acpi) which supercedes the activity that occurred at *acpi.sourceforge.net*. In a nutshell, you can use Intel's ASL compiler to turn your systems DSDT table into source code, locate/fix the errors, and recompile.
 
-You'll need to install [iasl](https://www.archlinux.org/packages/?name=iasl) to modify code.
+You'll need to install [acpica](https://www.archlinux.org/packages/?name=acpica) to modify code.
 
 **What compiled the original code?** Check if your system's DSDT was compiled using Intel or Microsoft compiler:
 

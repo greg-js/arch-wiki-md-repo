@@ -21,23 +21,23 @@ Related articles
     *   [1.12 Neden internetim diğer işletim sistemlerine göre daha yavaş ?](#Neden_internetim_di.C4.9Fer_i.C5.9Fletim_sistemlerine_g.C3.B6re_daha_yava.C5.9F_.3F)
     *   [1.13 Niçin Arch benim tüm RAM kapasitemi kullanıyor ?](#Ni.C3.A7in_Arch_benim_t.C3.BCm_RAM_kapasitemi_kullan.C4.B1yor_.3F)
     *   [1.14 Bütün boş alan nereye gitti ?](#B.C3.BCt.C3.BCn_bo.C5.9F_alan_nereye_gitti_.3F)
-*   [2 Package management](#Package_management)
-    *   [2.1 I've found an error with Package X. What should I do?](#I.27ve_found_an_error_with_Package_X._What_should_I_do.3F)
-    *   [2.2 Arch packages need to use a unique naming convention. ".pkg.tar.gz" and ".pkg.tar.xz" are too long and/or confusing](#Arch_packages_need_to_use_a_unique_naming_convention._.22.pkg.tar.gz.22_and_.22.pkg.tar.xz.22_are_too_long_and.2For_confusing)
-    *   [2.3 Pacman needs a library so other applications can easily access package information](#Pacman_needs_a_library_so_other_applications_can_easily_access_package_information)
-    *   [2.4 Pacman needs feature X!](#Pacman_needs_feature_X.21)
-    *   [2.5 I just installed Package X. How do I start it?](#I_just_installed_Package_X._How_do_I_start_it.3F)
-    *   [2.6 Why is there only a single version of each shared library in the official repositories?](#Why_is_there_only_a_single_version_of_each_shared_library_in_the_official_repositories.3F)
+*   [2 Paket yönetimi](#Paket_y.C3.B6netimi)
+    *   [2.1 X pakette hata buldum. Ne yapmalıyım?](#X_pakette_hata_buldum._Ne_yapmal.C4.B1y.C4.B1m.3F)
+    *   [2.2 Arch paketlerinin karmaşık isimlendirme kuralı var. ".pkg.tar.gz" ve ".pkg.tar.xz" çok uzun ve/veya kafa karıştırıcı](#Arch_paketlerinin_karma.C5.9F.C4.B1k_isimlendirme_kural.C4.B1_var._.22.pkg.tar.gz.22_ve_.22.pkg.tar.xz.22_.C3.A7ok_uzun_ve.2Fveya_kafa_kar.C4.B1.C5.9Ft.C4.B1r.C4.B1c.C4.B1)
+    *   [2.3 Pacman'in diğer uygulamalar tarafından kolayca paket bilgilerine erişilmesini sağlayan bir kütüphaneye ihtiyacı var](#Pacman.27in_di.C4.9Fer_uygulamalar_taraf.C4.B1ndan_kolayca_paket_bilgilerine_eri.C5.9Filmesini_sa.C4.9Flayan_bir_k.C3.BCt.C3.BCphaneye_ihtiyac.C4.B1_var)
+    *   [2.4 Pacman'in X özelliğe ihtiyacı var!](#Pacman.27in_X_.C3.B6zelli.C4.9Fe_ihtiyac.C4.B1_var.21)
+    *   [2.5 X paketini yükledim. Nasıl başlatacağım?](#X_paketini_y.C3.BCkledim._Nas.C4.B1l_ba.C5.9Flataca.C4.9F.C4.B1m.3F)
+    *   [2.6 Neden her paylaşımlı kütüphanenin resmi depolarda tek bir sürümü var?](#Neden_her_payla.C5.9F.C4.B1ml.C4.B1_k.C3.BCt.C3.BCphanenin_resmi_depolarda_tek_bir_s.C3.BCr.C3.BCm.C3.BC_var.3F)
     *   [2.7 What if I run a full system upgrade and there will be an update for a shared library, but not for the apps that depend on it?](#What_if_I_run_a_full_system_upgrade_and_there_will_be_an_update_for_a_shared_library.2C_but_not_for_the_apps_that_depend_on_it.3F)
     *   [2.8 Is it possible that there's a major kernel update in the repository, and that some of the driver packages haven't been updated?](#Is_it_possible_that_there.27s_a_major_kernel_update_in_the_repository.2C_and_that_some_of_the_driver_packages_haven.27t_been_updated.3F)
-    *   [2.9 What to do before upgrading?](#What_to_do_before_upgrading.3F)
-    *   [2.10 A package update was released, but pacman says the system is up to date](#A_package_update_was_released.2C_but_pacman_says_the_system_is_up_to_date)
+    *   [2.9 Yükseltmeden önce ne yapmalı?](#Y.C3.BCkseltmeden_.C3.B6nce_ne_yapmal.C4.B1.3F)
+    *   [2.10 Bir sistem güncellemesi yayınlandı, ancak pacman sistemin güncel olduğunu söylüyor](#Bir_sistem_g.C3.BCncellemesi_yay.C4.B1nland.C4.B1.2C_ancak_pacman_sistemin_g.C3.BCncel_oldu.C4.9Funu_s.C3.B6yl.C3.BCyor)
     *   [2.11 Upstream project *X* has released a new version. How long will it take for the Arch package to update to that new version?](#Upstream_project_X_has_released_a_new_version._How_long_will_it_take_for_the_Arch_package_to_update_to_that_new_version.3F)
-*   [3 Installation](#Installation)
-    *   [3.1 Arch needs an installer. Maybe a GUI installer?](#Arch_needs_an_installer._Maybe_a_GUI_installer.3F)
-    *   [3.2 I installed Arch, and now I am at a shell! What now?](#I_installed_Arch.2C_and_now_I_am_at_a_shell.21_What_now.3F)
-    *   [3.3 Which desktop environment or window manager should I use?](#Which_desktop_environment_or_window_manager_should_I_use.3F)
-    *   [3.4 What makes Arch unique amongst other "minimal" distributions?](#What_makes_Arch_unique_amongst_other_.22minimal.22_distributions.3F)
+*   [3 Kurulum](#Kurulum)
+    *   [3.1 Arch'ın bir kurulum sihirbazına ihtiyacı var. Belki grafiksel kullanıcı arayüzlü bir sihirbaz?](#Arch.27.C4.B1n_bir_kurulum_sihirbaz.C4.B1na_ihtiyac.C4.B1_var._Belki_grafiksel_kullan.C4.B1c.C4.B1_aray.C3.BCzl.C3.BC_bir_sihirbaz.3F)
+    *   [3.2 Arch'ı kurdum, ve şu anda kabuk ekranındayım. Ne yapmam gerekiyor?](#Arch.27.C4.B1_kurdum.2C_ve_.C5.9Fu_anda_kabuk_ekran.C4.B1nday.C4.B1m._Ne_yapmam_gerekiyor.3F)
+    *   [3.3 Hangi masaüstü ortamı veya pencere yöneticisini kullanmalıyım?](#Hangi_masa.C3.BCst.C3.BC_ortam.C4.B1_veya_pencere_y.C3.B6neticisini_kullanmal.C4.B1y.C4.B1m.3F)
+    *   [3.4 Arch'ı diğer "minimal" dağıtımlardan ayıran nedir?](#Arch.27.C4.B1_di.C4.9Fer_.22minimal.22_da.C4.9F.C4.B1t.C4.B1mlardan_ay.C4.B1ran_nedir.3F)
 *   [4 64-bit](#64-bit)
     *   [4.1 İşlemcimin x86_64 mimarisine sahip olup olmadığını nasıl öğrenebilirim ?](#.C4.B0.C5.9Flemcimin_x86_64_mimarisine_sahip_olup_olmad.C4.B1.C4.9F.C4.B1n.C4.B1_nas.C4.B1l_.C3.B6.C4.9Frenebilirim_.3F)
 
@@ -49,9 +49,9 @@ Detaylı bilgi için [Arch Linux](/index.php/Arch_Linux "Arch Linux") sayfasın�
 
 ### Arch Linux'u neden kullanmak istemeyeyim ?
 
-Arch Linux'u kullanmak **istemiyeceğiniz** durumlar olabilir, bunlardan bazıları:
+Arch Linux'u kullanmak **istemeyeceğiniz** durumlar olabilir, bunlardan bazıları:
 
-*   'kendi işini kendin hallet' ileksinde bir GNU/Linux dağıtımı için zamanınız, yetkinliğiniz ve isteğiniz yoksa.
+*   'kendin yap' ilkesinde bir GNU/Linux dağıtımı için zamanınız, yetkinliğiniz ve isteğiniz yoksa.
 *   x86_64 işlemci mimarisi dışında bir işlemci mimarisine sahipseniz.
 *   bir işletim sisteminin kendi işini görmesi, kendi kendine ayarlarını yapması veya bazı varsayılan yazılımları ve masaüstü ortamınıda beraberinde getirmesi gerektirdiğini inanıyorsanız.
 *   yuvarlanan sürüm yapısına sahip olan bir GNU/Linux dağıtımı istemiyorsanız.
@@ -127,52 +127,52 @@ Swap:          3.0G        881M        2.1G
 
 "free" ve "available" arasındaki bellek farkının ne kadar önemli olduğunu bilmemiz gerekiyor. Yukarıda verilen örnekte, 2.8G RAM kapasitesine sahip olan bir dizüstü görünüşe göre hemen hemen tüm belleği kullanıyor gibi ve sadece 283M boş kapasitesi var. Dikkat etmek gerekir ki 1.4G olan "buff/cache". Yani hala 1.2G ulaşılabilir yeni uygulamaları açabilecek, swap yapmadan kullanbileceğimiz bir bellek var. Detaylı bilgi için `man free(1)`. Sonuç olarak tüm fındık fıstığı sistem kullandığı için performansımızı daha elverişli hale getirmiş oluyoruz :)
 
-Şuradaki [tadından yenmicek](http://www.linuxjournal.com/article/2770) olan yazıyı eğer merakınız tavan yaptıysa okuyabilirsiniz!
+Şuradaki [tadından yenmeyecek](http://www.linuxjournal.com/article/2770) olan yazıyı eğer merakınız tavan yaptıysa okuyabilirsiniz!
 
 ### Bütün boş alan nereye gitti ?
 
 Bu sorunun cevabı kurmuş olduğunuz sisteminize bağlıdır. Burada bazı sorunun cevabı için [yardımcı olabilecek](/index.php/List_of_applications#Disk_usage_display "List of applications") uygulamaları bulabilirsiniz.
 
-## Package management
+## Paket yönetimi
 
-See the [pacman](/index.php/Pacman "Pacman"), [pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks") and [Official repositories](/index.php/Official_repositories "Official repositories") pages for more answers.
+Daha fazla cevap için [pacman](/index.php/Pacman "Pacman"), [pacman/İpuçları ve püf noktaları](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks") ve [Resmi depolar](/index.php/Official_repositories "Official repositories") sayfalarına göz atın.
 
-### I've found an error with Package X. What should I do?
+### X pakette hata buldum. Ne yapmalıyım?
 
-First, you need to figure out if this error is something the Arch team can fix. Sometimes it's not (e.g. Firefox crashes may be the fault of the Mozilla team); this is called an *upstream error*. If it is an Arch problem, there is a series of steps you can take:
+İlk olarak, bu hatanın Arch ekibi tarafından düzeltilebilecek bir hata olduğuna emin olmalısın. Öyle olmadığı durumda (örn. Firefox'un Mozilla ekibinin hatasından dolayı çökmesi); bu hatalara *giriş hatası* denir. Eğer bu bir Arch problemi ise, yapabileceğiniz bir kaç adım söz konusu:
 
-1.  Search the forums for information. See if anyone else has noticed it.
-2.  Post a [bug report](/index.php/Bug_report "Bug report") with detailed information at [https://bugs.archlinux.org](https://bugs.archlinux.org).
-3.  If you'd like, write a forum post detailing the problem and the fact that you have reported it already. This will help prevent a lot of people from reporting the same error.
+1.  Bilgi için forumlarda arama yapın. Birinin bu konuda bildirim yapıp yapmadığını kontrol edin.
+2.  [https://bugs.archlinux.org](https://bugs.archlinux.org) adresine detaylı bilgi ile birlikte bir [hata bildirimi](/index.php/Bug_report "Bug report") yapın.
+3.  Eğer istersen, sorunu detaylandırıp halihazırda raporladığına dair bilgi vereceğin bir forum gönderisi oluşturabilirsin. Bu, aynı hatayı bir çok kişi tarafından verilmesinin önüne geçecektir.
 
-### Arch packages need to use a unique naming convention. ".pkg.tar.gz" and ".pkg.tar.xz" are too long and/or confusing
+### Arch paketlerinin karmaşık isimlendirme kuralı var. ".pkg.tar.gz" ve ".pkg.tar.xz" çok uzun ve/veya kafa karıştırıcı
 
-This has been discussed on the Arch mailing list. Some proposed a `.pac` file extension. As far as is currently known, there is no plan to change the package extension. As Tobias Kieslich, one of the Arch devs, put it, "*A package **is** a gzipped* [xz] *tarball! And it can be opened, investigated and manipulated by any tar-capable application. Moreover, the mime-type is automatically detected correctly by most applications.*"
+Bu Arch mailing listesinde tartışılmıştı. `.pac` uzantısı desteklendi. Ancak yakın bir zamanda paket uzantısını değiştirmek gibi bir planımız yok. Arch geliştiricilerinden Tobias Kieslich'e göre, "*Bir paket, gziplenmiş [xz] bir tar arşividir! Ve bu herhangi bir tar uyumlu uygulama tarafından açılabilir, incelenebilir ve manipüle edilebilir. Dahası, mime-type'ları çoğu uygulama tararfından otomatik algılanabilir.*"
 
-### Pacman needs a library so other applications can easily access package information
+### Pacman'in diğer uygulamalar tarafından kolayca paket bilgilerine erişilmesini sağlayan bir kütüphaneye ihtiyacı var
 
-Pacman is a front-end to [libalpm](https://www.archlinux.org/pacman/libalpm.3.html)—the "Arch Linux Package Management" library—which allows alternative front-ends, like a GUI front-end, to be written.
+Pacman [libalpm](https://www.archlinux.org/pacman/libalpm.3.html) - "Arch Linux Paket Yönerimi" kütüphanesinin bir ön yüzüdür. Bu kütüphane alternatif ön yüzler geliştirilmesine de müsade etmektedir. Mesela bir grafiksel kullanıcı arayüz önyüzü, yazılabilir.
 
-### Pacman needs feature X!
+### Pacman'in X özelliğe ihtiyacı var!
 
-If you think an idea has merit, you may choose to discuss it on [pacman-dev](https://lists.archlinux.org//listinfo/pacman-dev/). Also check [https://bugs.archlinux.org](https://bugs.archlinux.org) for existing feature requests.
+Eğer fikrinin kayda değer olduğunu düşünüyorsan, bunu [pacman-dev](https://lists.archlinux.org//listinfo/pacman-dev/)'de tartışabilirsin. Ayrıca halihazırda bulunan özellik istekleri için de [https://bugs.archlinux.org](https://bugs.archlinux.org) sayfasını ziyaret edebilirsin.
 
-However, the best way to get a feature added to pacman or Arch Linux is to implement it yourself. The patch or code may or may not be officially accepted, but perhaps others will appreciate, test and contribute to your effort.
+Aslında, pacman'e veya Arch Linux'a özellik eklemenin en iyi yolu kendiniz yazmanızdır. Bu yama veya kod belki kabul edilebilir veya reddedilebilir, ama diğerleri bundan memnun olabilir, test edebilir ve harcadığınız emeğe katkıda bulunabilirler.
 
-### I just installed Package X. How do I start it?
+### X paketini yükledim. Nasıl başlatacağım?
 
-If you're using a desktop environment like [KDE](/index.php/KDE "KDE") or [GNOME](/index.php/GNOME "GNOME"), the program should automatically show up in your menu. If you're trying to run the program from a terminal and do not know the binary name, use:
+Eğer [KDE](/index.php/KDE "KDE") veya [GNOME](/index.php/GNOME "GNOME") gibi bir masaüstü ortamı kullanıyorsanız, program menüde otomatik olarak gösterilecektir. Eğer programı uçbirimden çalıştırmak istiyorsanız ve ikili dosyanın adını bilmiyorsanız, şu komutu uygulayın:
 
 ```
 $ pacman -Qlq *package_name* | grep /usr/bin/
 
 ```
 
-### Why is there only a single version of each shared library in the official repositories?
+### Neden her paylaşımlı kütüphanenin resmi depolarda tek bir sürümü var?
 
-Several distributions, such as Debian, have different versions of shared libraries packaged as different packages: `libfoo1`, `libfoo2`, `libfoo3` and so on. In this way it is possible to have applications compiled against different versions of `libfoo` installed on the same system.
+Debian gibi bir kaç dağıtımda, paylaşımlı kütüphanelerin farklı sürümleri bulunur. `libfoo1`, `libfoo2`, `libfoo3` ve daha fazlası. Bu durumda uygulamaların aynı sistemde `libfoo`nun farklı sürümleri ile derlenmesi söz konusu.
 
-In case of a distribution like Arch, only the latest stable versions of packages are officially supported. By dropping support for outdated software, package maintainers are able to spend more time ensuring that the newest versions work as expected. As soon as a new version of a shared library becomes available from upstream, it is added to the repositories and affected packages are rebuilt to use the new version.
+Arch gibi dağıtımlarda ise, sadece en son kararlı sürüm resmi olarak desteklenir. By dropping support for outdated software, package maintainers are able to spend more time ensuring that the newest versions work as expected. As soon as a new version of a shared library becomes available from upstream, it is added to the repositories and affected packages are rebuilt to use the new version.
 
 ### What if I run a full system upgrade and there will be an update for a shared library, but not for the apps that depend on it?
 
@@ -184,35 +184,35 @@ If `foobaz` is a package that you built yourself and installed from AUR, you sho
 
 No, it is not possible. Major kernel updates (e.g. *linux 3.5.0-1* to *linux 3.6.0-1*) are always accompanied by rebuilds of all supported kernel driver packages. On the other hand, if you have an unsupported driver package installed on your system, such as [catalyst](https://aur.archlinux.org/packages/catalyst/), then a kernel update might break things for you if you do not rebuild it for the new kernel. Users are responsible for updating any unsupported driver packages that they have installed.
 
-### What to do before upgrading?
+### Yükseltmeden önce ne yapmalı?
 
-Follow the [System maintenance#Upgrading the system](/index.php/System_maintenance#Upgrading_the_system "System maintenance") section.
+[Sistem bakımı#Sistemi yükseltmek](/index.php/System_maintenance#Upgrading_the_system "System maintenance") kısmını takip edin.
 
-### A package update was released, but pacman says the system is up to date
+### Bir sistem güncellemesi yayınlandı, ancak pacman sistemin güncel olduğunu söylüyor
 
-*pacman* mirrors are not synced immediately. It may take over 24 hours before an update is available to you. The only options are be patient or use another mirror. [MirrorStatus](https://www.archlinux.org/mirrors/status/) can help you identify an up-to-date mirror.
+*pacman* yansımaları anında senkronize olmaz. Güncellemenin sizin için hazır olması 24 saate kadar sürebilir. Sabırlı olun veya başka yansımaları deneyin. [Bu sayfadan](https://www.archlinux.org/mirrors/status/) güncel yansımalara erişebilirsiniz.
 
 ### Upstream project *X* has released a new version. How long will it take for the Arch package to update to that new version?
 
 Package updates will be released when they are ready. The specific amount of time can be as short as a few hours after upstream releases a minor bugfix update to as long as several weeks after a large package group's major update. The amount of time from an upstream's new version to Arch releasing a new package depends on the specific packages and the availability of the package maintainers. Additionally, some packages spend some time in the [testing](/index.php/Testing "Testing") repository, so this can prolong the time before a package is updated. [Package maintainers](/index.php/Package_maintainer "Package maintainer") attempt to work quickly to bring stable updates to the repositories. If you find a package in the official repositories that is out of date, go to that package's page at the [package website](https://www.archlinux.org/packages/) and flag it.
 
-## Installation
+## Kurulum
 
-### Arch needs an installer. Maybe a GUI installer?
+### Arch'ın bir kurulum sihirbazına ihtiyacı var. Belki grafiksel kullanıcı arayüzlü bir sihirbaz?
 
-Since installation doesn't occur often (read the rest of this article to know more about what *rolling release* means), it is not a high priority for developers or users. The [Installation guide](/index.php/Installation_guide "Installation guide") has been fully updated to use the command-line method.
+Kurulum işleminin sık yapılması gerekmediği için (makalenin devamını okuyun ve *yuvarlanan sürüm*ün ne anlama geldiğini öğrenin), bu kullanıcıların veya geliştiricilerin yüksek bir önceliği değildir. [Kurulum rehberi](/index.php/Installation_guide_(T%C3%BCrk%C3%A7e) "Installation guide (Türkçe)") komut satırı metodunu kullanmak üzere sürekli olarak güncelleniyor.
 
-### I installed Arch, and now I am at a shell! What now?
+### Arch'ı kurdum, ve şu anda kabuk ekranındayım. Ne yapmam gerekiyor?
 
-See [General recommendations](/index.php/General_recommendations "General recommendations").
+[Genel öneriler](/index.php/General_recommendations_(T%C3%BCrk%C3%A7e) "General recommendations (Türkçe)")'e göz atın.
 
-### Which desktop environment or window manager should I use?
+### Hangi masaüstü ortamı veya pencere yöneticisini kullanmalıyım?
 
-Since many are available to you, use the one you like the most to fit your needs. Have a look at the [Desktop environment](/index.php/Desktop_environment "Desktop environment") and [Window manager](/index.php/Window_manager "Window manager") articles.
+Size en uygun olanı seçin. [Masaüstü ortamı](/index.php/Desktop_environment "Desktop environment") ve [Pencere yöneticisi](/index.php/Window_manager "Window manager") makalelerine göz atın.
 
-### What makes Arch unique amongst other "minimal" distributions?
+### Arch'ı diğer "minimal" dağıtımlardan ayıran nedir?
 
-See [Arch compared to other distributions](/index.php/Arch_compared_to_other_distributions "Arch compared to other distributions").
+[Diğer dağıtımlarla karşılaştırıldığında Arch](/index.php/Arch_compared_to_other_distributions "Arch compared to other distributions")'a göz atın.
 
 ## 64-bit
 

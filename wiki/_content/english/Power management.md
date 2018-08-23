@@ -210,6 +210,7 @@ ExecStartPost=/usr/bin/sleep 1
 
 [Install]
 WantedBy=sleep.target
+
 ```
  `/etc/systemd/system/resume@.service` 
 ```
@@ -224,6 +225,7 @@ ExecStart=/usr/local/bin/ssh-connect.sh
 
 [Install]
 WantedBy=suspend.target
+
 ```
 
 **Note:** As screen lockers may return before the screen is "locked", the screen may flash on resuming from suspend. Adding a small delay via `ExecStartPost=/usr/bin/sleep 1` helps prevent this.
@@ -242,6 +244,7 @@ ExecStart=/usr/bin/systemctl restart mnt-media.automount
 
 [Install]
 WantedBy=suspend.target
+
 ```
  `/etc/systemd/system/root-suspend.service` 
 ```
@@ -255,6 +258,7 @@ ExecStart=-/usr/bin/pkill sshfs
 
 [Install]
 WantedBy=sleep.target
+
 ```
 
 A couple of handy hints about these service files (more in [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)):
@@ -284,6 +288,7 @@ ExecStop=-/usr/share/wicd/daemon/autoconnect.py
 
 [Install]
 WantedBy=sleep.target
+
 ```
 
 *   `RemainAfterExit=yes`: After started, the service is considered active until it is explicitly stopped.
@@ -321,6 +326,7 @@ case $1/$2 in
     echo "Waking up from $2..."
     ;;
 esac
+
 ```
 
 Do not forget to make your script executable:
@@ -388,9 +394,9 @@ LABEL="power_switch_my_end"
 Restart services and reload rules:
 
 ```
-# systemctl restart systemd-udevd
+# systemctl restart systemd-udevd.service
 # udevadm trigger
-# systemctl restart systemd-logind
+# systemctl restart systemd-logind.service
 
 ```
 
@@ -412,7 +418,11 @@ This can be validated by `$ cat /sys/devices/system/cpu/cpufreq/policy?/energy_p
 
 To conserve more energy, you can config by creating the following file:
 
- `/etc/tmpfiles.d/energy_performance_preference.conf`  `w /sys/devices/system/cpu/cpufreq/policy?/energy_performance_preference - - - - balance_power` 
+ `/etc/tmpfiles.d/energy_performance_preference.conf` 
+```
+w /sys/devices/system/cpu/cpufreq/policy?/energy_performance_preference - - - - balance_power
+
+```
 
 See the [systemd-tmpfiles(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles.8) and [tmpfiles.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tmpfiles.d.5) man pages for details.
 
@@ -524,7 +534,7 @@ Keep in mind that these power saving options are experimental and can cause an u
 If the computer is believed not to support [ASPM](https://en.wikipedia.org/wiki/Active_State_Power_Management "wikipedia:Active State Power Management") it will be disabled on boot:
 
 ```
-# lspci -vv | grep ASPM.*abled\;
+# lspci -vv | grep 'ASPM.*abled;'
 
 ```
 
@@ -546,7 +556,7 @@ If believing the computer has support for ASPM it can be forced on for the kerne
 To adjust to `powersave` do (the following command will not work unless enabled):
 
 ```
-echo powersave | tee /sys/module/pcie_aspm/parameters/policy
+# echo powersave | tee /sys/module/pcie_aspm/parameters/policy
 
 ```
 

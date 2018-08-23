@@ -61,11 +61,7 @@
 | [Frequently asked questions (Español)](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)") | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
 | [General recommendations (Español)](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)") | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
 | [Getting involved (Español)](/index.php/Getting_involved_(Espa%C3%B1ol) "Getting involved (Español)") | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
-| [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") | `2015-06` | Actualización terminada... por [Pedro](/index.php/User:Pedro "User:Pedro") —> 2018-08-21<small>
-
-Revisando antes de subir 100%
-
-</small> |
+| [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") | `2018-08` |
 | [GRUB/Tips and tricks (Español)](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol) "GRUB/Tips and tricks (Español)") | `2018-06` | [Phenom](/index.php?title=User:Phenom&action=edit&redlink=1 "User:Phenom (page does not exist)") |
 | [GUID Partition Table (Español)](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)") | `2013-09` |
 | [Help:Category (Español)](/index.php/Help:Category_(Espa%C3%B1ol) "Help:Category (Español)") | `2014-04` |
@@ -140,7 +136,7 @@ Revisando antes de subir 100%
 | [Udev (Español)](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") | `2013-09` |
 | [Unified Extensible Firmware Interface (Español)](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)") | `2014-11` |
 | [USB flash installation media (Español)](/index.php/USB_flash_installation_media_(Espa%C3%B1ol) "USB flash installation media (Español)") | `2013-11` |
-| [Users and groups (Español)](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") | `2013-09` |
+| [Users and groups (Español)](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") | `2013-09` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
 | [VirtualBox (Español)](/index.php/VirtualBox_(Espa%C3%B1ol) "VirtualBox (Español)") | `2014-12` |
 | [Vncserver (Español)](/index.php/Vncserver_(Espa%C3%B1ol) "Vncserver (Español)") | `2014-12` |
 | [Wayland (Español)](/index.php/Wayland_(Espa%C3%B1ol) "Wayland (Español)") | `2014-04` |

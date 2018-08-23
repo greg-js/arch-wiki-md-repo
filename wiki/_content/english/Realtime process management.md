@@ -41,30 +41,11 @@ The `/etc/security/limits.conf` file provides configuration for the `pam_limits`
 
 **Note:** Processes initiated by Systemd service ignore limits.conf. You need to set in the .service files, for more info, man systemd.exec.
 
-There are two types of resource limits that `pam_limits` provides: **hard limits** and **soft limits**. Hard limits are set by `root` and enforced by the kernel, while soft limits may be configured by the user within the range allowed by the hard limits. By default, Arch uses the `-` limit, which refers to both hard and soft limits.
+There are two types of resource limits that `pam_limits` provides: **hard limits** and **soft limits**. Hard limits are set by `root` and enforced by the kernel, while soft limits may be configured by the user within the range allowed by the hard limits.
 
-The default Arch Linux settings set the maximum real-time priority allowed for non-priveleged processes to 0, the maximum nice priority allowed to raise to 0, and some custom settings for the `audio` group. Finally, the `memlock` item sets the maximum locked-in memory address space to 40,000 KiB. These defaults are shown below:
+Installing the package [realtime-privileges](https://www.archlinux.org/packages/?name=realtime-privileges) and adding the user to the 'realtime' group, provides reasonable default values, see [professional audio#System configuration](/index.php/Professional_audio#System_configuration "Professional audio") for more information.
 
-```
-*               -       rtprio          0
-*               -       nice            0
-@audio          -       rtprio          65
-@audio          -       nice           -10
-@audio          -       memlock         40000
-
-```
-
-An example for why one might want to alter these settings is to get high-performance audio working. The defaults are permissive enough to get `jack-server` running with `hydrogen` or `ardour`. However, for higher performance audio applications it might be necessary to redefine the values for `rt_prio` from 65 to 80 or even higher! The following settings work well with `ardour`:
-
-```
-@audio          -       rtprio          70
-@audio          -       memlock         250000
-
-```
-
-See [professional audio](/index.php/Professional_audio "Professional audio") for more information.
-
-There are an infinite variety of possible PAM limits configurations. While an overview is provided here, it is highly advisable to read the [limits.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/limits.conf.5) page in order to better understand these functions.
+There are an infinite variety of possible PAM limits configurations, it is highly advisable to read the [limits.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/limits.conf.5) page in order to better understand these functions.
 
 ## Hard and soft realtime
 

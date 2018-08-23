@@ -182,7 +182,7 @@ Tan solo instale el paquete de AUR [stk11xx](https://aur.archlinux.org/packages/
 
 ## Asegúrese de que el modulo para su webcam está cargado
 
-Añada el [módulo](/index.php/Kernel_modules_(Espa%C3%B1ol)#Loading "Kernel modules (Español)") de su webcam a `/etc/modules-load.d/webcam.conf` para que sea cargado por el kernel durante la fase de arranque.
+Añada el [módulo](/index.php/Kernel_modules_(Espa%C3%B1ol)#Cargar_m.C3.B3dulos "Kernel modules (Español)") de su webcam a `/etc/modules-load.d/webcam.conf` para que sea cargado por el kernel durante la fase de arranque.
 
 Si su webcam es USB, el kernel *debería* cargar de forma automática el controlador adecuado. Si este es el caso, compruebe el dmesg tras conectar la webcam. Debería ver algo como esto:
 
@@ -385,7 +385,7 @@ Puede tanto establecer un alias para skype, o renombrar el binario de skype orig
 
 [motion](https://aur.archlinux.org/packages/motion/) solo maneja dispositivos v4l2, por lo que si su cámara solo está soportada por controladores para v4l1 necesita precargar v4l1compat.so como se mencionó anteriormente. De otra manera le aparecerán muchos errores de motion acerca de no poder encontrar una paleta adecuada.
 
-**Sugerencia:** Si necesita cargar webcams en un orden determinado (p. ej. cargar los dispositivos /dev/video0..n en orden) o establecer el propietario o los permisos, eche un vistazo a como [escribir reglas para udev](/index.php/Udev#Writing_udev_rules "Udev").
+**Sugerencia:** Si necesita cargar webcams en un orden determinado (p. ej. cargar los dispositivos /dev/video0..n en orden) o establecer el propietario o los permisos, eche un vistazo a como [escribir reglas para udev](/index.php/Udev_(Espa%C3%B1ol)#Escribir_reglas_udev "Udev (Español)").
 
 ## Solución de problemas
 

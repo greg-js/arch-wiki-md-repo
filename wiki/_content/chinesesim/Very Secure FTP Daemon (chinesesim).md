@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-08-19，点击[这里](https://wiki.archlinux.org/index.php?title=Very+Secure+FTP+Daemon&diff=0&oldid=536049)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-08-19，点击[这里](https://wiki.archlinux.org/index.php?title=Very+Secure+FTP+Daemon&diff=0&oldid=536323)可以查看翻译后英文页面的改动。
 
 [vsftpd](https://security.appspot.com/vsftpd.html) (“Very Secure FTP Daemon“) 是一个为 UNIX 类系统开发的轻量，稳定和安全的 FTP 服务器端。
 
@@ -409,7 +409,9 @@ user_sub_token=$USER
 
 ### vsftpd: Error 500 with kernel 4.18+
 
-[seccomp](https://en.wikipedia.org/wiki/seccomp "wikipedia:seccomp") 在 vsftpd 中默认激活，这导致某些内核版本出现兼容性问题。 如果在列出具有多个文件的目录时遇到故障，将其添加到 `/etc/vsftpd.conf`：
+[seccomp](https://en.wikipedia.org/wiki/seccomp "wikipedia:seccomp") 在 vsftpd 中默认激活，这导致某些内核版本出现兼容性问题。这已经修复了，你可以在 [RedHat Bugzilla＃845980](https://bugzilla.redhat.com/show_bug.cgi?id=845980) 中看到，但在较新的内核中仍然可能导致问题。
+
+如果在列出目录时遇到故障，将其添加到 `/etc/vsftpd.conf`：
 
 ```
 seccomp_sandbox=NO

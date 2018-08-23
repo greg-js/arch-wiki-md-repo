@@ -24,7 +24,7 @@
 
 ## Choosing a provider
 
-Starting with version 1.1.0 *'CloudCross'* supports multiple cloud services. To select the provider used --provider option *name* . As a *name* is used name of the provider. The default provider Google Drive.
+Starting with version 1.1.0 **CloudCross** supports multiple cloud services. To select the provider used --provider option *name*. As a *name* is used name of the provider. The default provider Google Drive.
 
 ## Usage
 
@@ -56,14 +56,14 @@ When using CloudCross may have some problems.
 
 ### Delete files instead of downloading
 
-When you start the sync to an empty folder, instead of downloading files from remote storage in the cloud files are deleted. This is because the program is prioritizing local files by default. To avoid this, use the startup option --prefer = remote
+When you start the sync to an empty folder, instead of downloading files from remote storage in the cloud files are deleted. This is because the program is prioritizing local files by default. To avoid this, use the startup option `--prefer remote`.
 
 ```
-$ Ccross --prefer = remote
+$ ccross --prefer remote
 
 ```
 
-But, in any case, you have to remember that no local or remote files are not deleted permanently. You can always recover them from the Recycle Bin in the cloud (if supported by the service) or .trash folders synchronized folder.
+But, in any case, you have to remember that no local or remote files are not deleted permanently. You can always recover them from the Recycle Bin in the `cloud` (if supported by the service) or `.trash` folders synchronized folder.
 
 ### Constant upload / download office files
 
@@ -71,5 +71,5 @@ When you synchronize with Google Drive, if the option is used --convert-doc, whi
 
 ## See also
 
-*   [Project site](Http://cloudcross.mastersoft24.ru/ru)
-*   [Group Facebook](Https://www.facebook.com/groups/cloudcross)
+*   [Project site](Http://cloudcross.mastersoft24.ru)
+*   [Facebook Group](Https://www.facebook.com/groups/cloudcross)

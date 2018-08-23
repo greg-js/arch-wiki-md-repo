@@ -150,7 +150,7 @@ http_proxy="http://192.168.0.1:80"
 
 *   `INFODIR` contains a colon-separated list of directories in which the *info* command searches for the info pages, e.g., `/usr/share/info:/usr/local/share/info`
 
-*   `TZ` can be used to to set a time zone different to the system zone for a user. The zones listed in `/usr/share/zoneinfo/` can be used as reference, for example `TZ="/usr/share/zoneinfo/Pacific/Fiji"`
+*   `TZ` can be used to to set a time zone different to the system zone for a user. The zones listed in `/usr/share/zoneinfo/` can be used as reference, for example `TZ=":/usr/share/zoneinfo/Pacific/Fiji"`. When pointing the `TZ` variable to a zoneinfo file, it should start with a colon per [the GNU manual](https://www.gnu.org/software/libc/manual/html_node/TZ-Variable.html).
 
 ### Default programs
 

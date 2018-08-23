@@ -42,7 +42,7 @@ Visite la [tabla de contenidos](/index.php/Table_of_contents_(Espa%C3%B1ol) "Tab
 
 	Recoge enlaces a las comunidades de Arch Linux del resto del mundo.
 
-	[Canales IRC](/index.php/IRC_channels_(Espa%C3%B1ol) "IRC channels (Español)")
+	[Canal IRC](/index.php/IRC_channel_(Espa%C3%B1ol) "IRC channel (Español)")
 
 	Visite estos canales si quiere reunirse con sus compañeros *«Archers»* y mantener una buena charla con ellos.
 

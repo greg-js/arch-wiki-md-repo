@@ -6,6 +6,12 @@ Related articles
 
 The [XDG MIME Applications specification](https://specifications.freedesktop.org/mime-apps-spec/mime-apps-spec-latest.html) builds upon the [#Shared MIME database](#Shared_MIME_database) and [#Desktop entries](#Desktop_entries) to provide [default applications](/index.php/Default_applications "Default applications").
 
+1.  Applications describe what MIME types they can handle using [desktop entries](/index.php/Desktop_entries "Desktop entries").
+2.  [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils) registers a [pacman hook](/index.php/Pacman_hook "Pacman hook") to build a cache database of MIME types handled by desktop entries, see [update-desktop-database(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/update-desktop-database.1).
+3.  Applications can install new MIME types by placing XML files in `/usr/share/mime/packages/`.
+4.  [shared-mime-info](https://www.archlinux.org/packages/?name=shared-mime-info) registers a [pacman hook](/index.php/Pacman_hook "Pacman hook") to build the Shared MIME-Info database cache, see [update-mime-database(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/update-mime-database.1).
+5.  [Desktop environments](/index.php/Desktop_environment "Desktop environment") and users can change default applications and add or remove MIME type to application associations using [mimeapps.list](#mimeapps.list) files.
+
 ## Contents
 
 *   [1 Shared MIME database](#Shared_MIME_database)

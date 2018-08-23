@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Badblocks](/index.php/Badblocks "Badblocks"). Data da última tradução: 2018-08-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Badblocks&diff=0&oldid=536453) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Badblocks](/index.php/Badblocks "Badblocks"). Data da última tradução: 2018-08-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Badblocks&diff=0&oldid=536568) na versão em inglês.
 
 *badblocks* é um programa para testar dispositivos de armazenamento para blocos defeituosos (em inglês, *bad blocks*).
 
@@ -73,7 +73,7 @@ Opções adicionais que você pode considerar:
 
 	`-p *número*`: executa *número* testes extensos de passagens de iterações sequenciais
 
-	`-o */caminho/do/arquivo-de-saída*`: emite setores defeituosos para <arquivo-de-saída> em vez da *stdout*
+	`-o */caminho/do/arquivo-de-saída*`: emite setores defeituosos para *arquivo-de-saída* em vez da stdout
 
 	`-t *padrão_de_teste*`: especifica um padrão. Veja abaixo.
 
@@ -98,53 +98,53 @@ Pass completed, 0 bad blocks found. (0/0/0 errors)
 
 ### Teste de leitura-gravação (não-destrutivo)
 
-This test is designed for devices with data already on them. A non-destructive read-write test makes a backup of the original content of a sector before testing with a single random pattern and then restoring the content from the backup. This is a single pass test and is useful as a general maintenance test.
+Este teste foi projetado para dispositivos com dados já existentes. Um teste de leitura-gravação não destrutivo faz um backup do conteúdo original de um setor antes de testar com um único padrão aleatório e, em seguida, restaura o conteúdo do backup. Este é um teste de passagem única e é útil como um teste de manutenção geral.
 
- `# badblocks -nsv /dev/<device>` 
+ `# badblocks -nsv /dev/*dispositivo*` 
 ```
 Checking for bad blocks in non-destructive read-write mode
 From block 0 to 488386583
 Checking for bad blocks (non-destructive read-write test)
-Testing with **random pattern**: done                                                 
+Testing with **random pattern**: done
 Pass completed, 0 bad blocks found. (0/0/0 errors)
 ```
 
-The `-n` option signifies a non-destructive read-write test.
+A opção `-n` significa um teste de leitura-gravação não destrutivo.
 
 ## Faça o sistema de arquivos incorporar setores ruins
 
-To not use bad sectors they have to be known by the filesystem.
+Para não usar setores defeituosos, eles devem ser conhecidos pelo sistema de arquivos.
 
 ### Durante a verificação de sistema de arquivos
 
-Incorporating bad sectors can be done using the filesystem check utility (`fsck`). `fsck` can be told to use *badblocks* during a check. To do a **read-write** (non-destructive) test and have the bad sectors made known to the filesystem run:
+A incorporação de setores defeituosos pode ser feita usando o utilitário de verificação do sistema de arquivos (`fsck`). Pode-se dizer ao `fsck` para usar *badblocks* durante um teste. Para fazer um teste **leitura-gravação** (não destrutivo) e ter os setores defeituosos tornados conhecidos para o sistema de arquivos:
 
 ```
-# fsck -vcck /dev/<device-PARTITION>
+# fsck -vcck /dev/*dispositivo-PARTIÇÃO*
 
 ```
 
-The `-cc` option tells run `fsck` in **non-destructive** test mode, the `-v` tells `fsck` to show its output, and the `-k` option preserves old bad sectors that were detected.
+A opção `-cc` fala para executar `fsck` no modo de teste **não-destrutivo**, o `-v` diz ao `fsck` para mostre sua saída, e a opção `-k` preserva setores defeituosos antigos que foram detectados.
 
-To do a **read-only** test (not recommended):
+Para fazer um teste **somente leitura** (não recomendado):
 
 ```
-# fsck -vck /dev/<device-PARTITION>
+# fsck -vck /dev/*dispositivo-PARTIÇÃO*
 
 ```
 
 ### Antes da criação do sistema de arquivos
 
-Alternately, this can be done before filesystem creation.
+Como alternativa, isso pode ser feito antes da criação do sistema de arquivos.
 
-If badblocks is run without the `-o` option bad sectors will only be printed to stdout.
+Se *badblocks* for executado sem a opção `-o`, os setores defeituosos serão impressos apenas no stdout.
 
-Example output for read errors in the beginning of the disk:
+Exemplo de saída para erros de leitura no começo do disco:
 
- `# badblocks -wsv /dev/<drive>` 
+ `# badblocks -wsv /dev/*dispositivo*` 
 ```
 [...]
-Testing with pattern **0xff**: done                                                 
+Testing with pattern **0xff**: done
 Reading and comparing:
 [...]
 37584
@@ -162,9 +162,9 @@ done
 Pass completed, 527405 bad blocks found. (0/0/527405 errors)
 ```
 
-For comfortably passing badblocks error output to the filesystem it has to be written to a file.
+Para passar confortavelmente a saída de erro de *badblocks* para o sistema de arquivos, deve-se gravar em um arquivo.
 
- `# badblocks -wsv **-o** /root/<badblocks.txt> /dev/<device>` 
+ `# badblocks -wsv **-o** /root/*badblocks.txt* /dev/*dispositivo*` 
 ```
 Checking for bad blocks in read-write mode
 From block 0 to 488386583
@@ -176,46 +176,46 @@ Reading and comparing: done
 Pass completed, 527405 bad blocks found. (0/0/527405 errors)
 ```
 
-Then (re-)create the file system with the information:
+Então, (re)crie o sistema de arquivos com a informação:
 
 ```
-# mkfs.<filesystem-type> **-l** /root/<badblocks.txt> /dev/<device>
+# mkfs.*tipo-sistema-de-arquivos* **-l** /root/*badblocks.txt* /dev/*dispositivo*
 
 ```
 
-**Note:** The meaning of `0/0/527405` errors is <number of read errors>/<number of write errors>/<number of corruption errors>.
+**Nota:** O sentido de erros `0/0/527405` é *número_de_erros_de_leitura* / *número_de_erros_de_escrita* / *número_de_erros_de_corrupção*.
 
 #### Ext4
 
-From the [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) manual page:
+Da página de manual [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8):
 
-	Note that the block numbers in the bad block list must be generated using the same block size as used by *mke2fs*. As a result, the `-c` option to *mke2fs* is a much simpler and less error-prone method of checking a disk for bad blocks before formatting it.
+	Note que os números de bloco na lista de blocos defeituosos devem ser gerados usando o mesmo tamanho de bloco usado por *mke2fs*. Como resultado, a opção `-c` para *mke2fs* é um método muito mais simples e menos propenso a erros de verificar um disco em busca de blocos defeituosos antes de formatá-lo.
 
-So the recommended method is to use:
-
-```
-# mkfs.ext4 -c /dev/<device>
+Então, o método recomendado é usar:
 
 ```
+# mkfs.ext4 -c /dev/*dispositivo*
 
-Use `-cc` to do a read-write badblock test.
+```
+
+Use `-cc` para fazer um teste de leitura-gravação de blocos defeituosos.
 
 #### Tamanho do bloco
 
-First find the file systems **block size**. For example for ext# filesystems:
+Primeiramente, encontre o **tamanho de bloco** do sistema de arquivos. Por exemplo, para sistemas de arquivos ext#:
 
 ```
-# dumpe2fs /dev/<device-PARTITION> | grep 'Block size'
+# dumpe2fs /dev/*dispositivo-PARTIÇÃO* | grep 'Block size'
 
 ```
 
-Feed this to *badblocks*:
+Alimente isso ao *badblocks*:
 
 ```
-# badblocks -b <block size>
+# badblocks -b *tamanho de bloco*
 
 ```
 
 ## Veja também
 
-*   [My hard disk has bad sectors or is developing bad sectors over time](http://www.pcguide.com/ts/x/comp/hdd/errorsBadSectors-c.html)
+*   [Meu disco rígido tem setores defeituosos ou está desenvolvendo setores defeituosos ao longo do tempo](http://www.pcguide.com/ts/x/comp/hdd/errorsBadSectors-c.html) (em inglês)

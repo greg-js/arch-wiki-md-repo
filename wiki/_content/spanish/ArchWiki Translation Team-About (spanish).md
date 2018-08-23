@@ -92,8 +92,8 @@ Esta metodología se puede concretar, entre otras, a través de las siguientes a
 *   [D1nam0](/index.php/User:D1nam0 "User:D1nam0") –*Traducción y edición los sábados*– [enviar email](/index.php/Special:EmailUser/D1nam0 "Special:EmailUser/D1nam0")
 *   [icemodding](/index.php/User:Icemodding "User:Icemodding") - [enviar email](/index.php/Special:EmailUser/icemodding "Special:EmailUser/icemodding")
 *   [Pedro](/index.php/User:Pedro "User:Pedro") –*omnia vinces perseverando*– [enviar email](/index.php/Special:EmailUser/Pedro "Special:EmailUser/Pedro")
-*   [RQF7](/index.php?title=User:RQF7&action=edit&redlink=1 "User:RQF7 (page does not exist)") - [enviar email](/index.php/Special:EmailUser/RQF7 "Special:EmailUser/RQF7")
 *   [phenom](/index.php?title=User:Phenom&action=edit&redlink=1 "User:Phenom (page does not exist)") - [enviar email](/index.php/Special:EmailUser/phenom "Special:EmailUser/phenom")
+*   [RQF7](/index.php?title=User:RQF7&action=edit&redlink=1 "User:RQF7 (page does not exist)") - [enviar email](/index.php/Special:EmailUser/RQF7 "Special:EmailUser/RQF7")
 
 ### Inactivos
 

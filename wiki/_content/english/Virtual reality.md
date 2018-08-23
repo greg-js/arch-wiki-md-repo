@@ -15,6 +15,8 @@ A number of peripherals have been released or are about to be released recently 
         *   [2.3.1 Setting up](#Setting_up_2)
     *   [2.4 Leap Motion](#Leap_Motion)
         *   [2.4.1 Setting up](#Setting_up_3)
+    *   [2.5 OpenHMD](#OpenHMD)
+        *   [2.5.1 Installation](#Installation)
 *   [3 Supported software](#Supported_software)
     *   [3.1 Dolphin (original VR fork)](#Dolphin_.28original_VR_fork.29)
     *   [3.2 Dolphin (official OSVR support)](#Dolphin_.28official_OSVR_support.29)
@@ -104,6 +106,18 @@ The Leap Motion is an incredibly affordable hand tracker which can easily be mou
 Install [leap-motion-driver](https://aur.archlinux.org/packages/leap-motion-driver/), [osvr-leap-motion-git](https://aur.archlinux.org/packages/osvr-leap-motion-git/) and optionally [leap-motion-sdk](https://aur.archlinux.org/packages/leap-motion-sdk/).
 
 To configure, enable and start `leapd.service` and run `LeapControlPanel`. To test that tracking works, run the `Playground` demo included with the installation.
+
+### OpenHMD
+
+[OpenHMD](http://www.openhmd.net/) aims to provide a Free and Open Source API and drivers for immersive technology, such as head mounted displays with built in head tracking. The aim is to implement support for as many devices as possible in a portable, cross-platform package.
+
+OpenHMD supports a wide range of devices such as Oculus Rift, HTC Vive, Sony PSVR, Deepoon E2 and others.
+
+Bindings for .NET, Java, Perl, Python and Rust are available from third-parties.
+
+#### Installation
+
+Install [openhmd-git](https://aur.archlinux.org/packages/openhmd-git/).
 
 ## Supported software
 

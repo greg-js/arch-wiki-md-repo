@@ -1,4 +1,4 @@
-[xdg-utils](https://www.freedesktop.org/wiki/Software/xdg-utils/) ([xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils)) provides the official utilities for managing [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications").
+[xdg-utils](https://www.freedesktop.org/wiki/Software/xdg-utils/) provides the official utilities for managing [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications").
 
 *   [xdg-desktop-menu(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-desktop-menu.1) - Install desktop menu items
 *   [xdg-desktop-icon(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-desktop-icon.1) - copies [desktop entries](/index.php/Desktop_entries "Desktop entries") to the user's desktop
@@ -9,7 +9,21 @@
 *   [xdg-screensaver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-screensaver.1) - Enable, disable, or suspend the screensaver
 *   [xdg-settings(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-settings.1) - Get or set the default web browser and URL handlers
 
-## xdg-mime
+## Contents
+
+*   [1 Installation](#Installation)
+*   [2 Usage](#Usage)
+    *   [2.1 xdg-mime](#xdg-mime)
+    *   [2.2 xdg-open](#xdg-open)
+    *   [2.3 xdg-settings](#xdg-settings)
+
+## Installation
+
+[Install](/index.php/Install "Install") the [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) package.
+
+## Usage
+
+### xdg-mime
 
 See [xdg-mime(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-mime.1).
 
@@ -36,7 +50,7 @@ $ xdg-mime default feh.desktop image/jpeg
 
 ```
 
-## xdg-open
+### xdg-open
 
 xdg-open is a [resource opener](/index.php/Resource_opener "Resource opener") that implements [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications") and is used by many programs, see [xdg-open(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-open.1) for the usage.
 
@@ -44,7 +58,7 @@ xdg-open is desktop-environment-independent in the sense that it attempts to use
 
 If no desktop environment is detected, MIME type detection falls back to using [file](https://www.archlinux.org/packages/?name=file) which—ironically—does not implement the XDG standard. If you want xdg-open to use [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications") without a desktop environment, you will need to [install](/index.php/Install "Install") [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) or switch to one of the [resource openers](/index.php/Resource_opener "Resource opener") that support [XDG MIME Applications](/index.php/XDG_MIME_Applications "XDG MIME Applications").
 
-## xdg-settings
+### xdg-settings
 
 See [xdg-settings(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-settings.1).
 

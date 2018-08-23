@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Creating packages](/index.php/Creating_packages "Creating packages"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Creating_packages&diff=0&oldid=532272) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Creating packages](/index.php/Creating_packages "Creating packages"). Data da última tradução: 2018-08-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Creating_packages&diff=0&oldid=535803) na versão em inglês.
 
 Artigos relacionados
 
@@ -43,7 +43,7 @@ Esse artigo objetiva auxiliar usuários na criação de seus próprios pacotes u
 
 Pacotes no Arch Linux são compilados usando o utilitário [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e as informações armazenadas em um arquivo [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"). Quando `makepkg` é executado, ele pesquisa por um `PKGBUILD` no diretório atual e segue as instruções nele para obter os arquivos necessários e/ou compilá-los para serem empacotados dentro do arquivo de pacote (`pkgname.pkg.tar.xz`). O pacote resultante contém arquivos binários e instruções de instalação prontos para serem instalados pelo [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)").
 
-Um pacote do Arch é nada mais que um pacote tar, ou "tarball", comprimido usando xz, que contém os seguintes arquivos gerados pelo makepkg:
+Um pacote do Arch é nada mais que um pacote tar, ou "tarball", comprimido usando [xz(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xz.1), que contém os seguintes arquivos gerados pelo makepkg:
 
 *   Os arquivos binários para serem instalados.
 *   `.PKGINFO`: contém todos os metadados necessários pelo pacman para lidar com pacotes, dependências, etc.

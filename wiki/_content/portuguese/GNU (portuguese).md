@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GNU](/index.php/GNU "GNU"). Data da última tradução: 2018-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNU&diff=0&oldid=535161) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GNU](/index.php/GNU "GNU"). Data da última tradução: 2018-08-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNU&diff=0&oldid=535858) na versão em inglês.
 
 Artigos relacionados
 
@@ -56,7 +56,7 @@ A maioria das ferramentas do [conjunto de ferrtamentas do GNU](https://en.wikipe
 
 	[http://www.gnu.org/software/make](http://www.gnu.org/software/make) || [make](https://www.archlinux.org/packages/?name=make)
 
-*   **[GCC](https://en.wikipedia.org/wiki/pt:GNU_Compiler_Collection "wikipedia:pt:GNU Compiler Collection")** — O GNU Compiler Collection - frontends para C e C++.
+*   **[GCC](/index.php/GCC "GCC")** — O GNU Compiler Collection - frontends para C e C++.
 
 	[https://gcc.gnu.org/](https://gcc.gnu.org/) || [gcc](https://www.archlinux.org/packages/?name=gcc)
 
@@ -103,11 +103,12 @@ Do [Wikipédia](https://en.wikipedia.org/wiki/GNU_build_system "wikipedia:GNU bu
 Muitas outras ferramentas opcionais do GNU está disponíveis nos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais"):
 
 *   [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"), um ambiente de desktop
-*   [GNU Screen](/index.php/GNU_Screen "GNU Screen"), um multiplexador de terminal
-*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"), um gerenciador de partição
 *   [GIMP](/index.php/GIMP "GIMP"), um editor de imagens
-*   [Gnumeric](/index.php/Gnumeric "Gnumeric"), um software de planilhas
 *   [GTK+](/index.php/GTK%2B "GTK+"), um kit de ferramentas de widget
+*   [Gnumeric](/index.php/Gnumeric "Gnumeric"), um software de planilhas
+*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"), um gerenciador de partição
+*   [GNU Screen](/index.php/GNU_Screen "GNU Screen"), um multiplexador de terminal
+*   [GNU nano](/index.php/GNU_nano "GNU nano"), um editor de texto de linha de comando
 *   [GNU Emacs](/index.php/GNU_Emacs "GNU Emacs"), um editor de texto extensível, personalizável e autodocumentado
 *   [GnuPG](/index.php/GnuPG "GnuPG"), uma implementação do OpenPGP
 *   [GNU Octave](/index.php/GNU_Octave "GNU Octave"), uma linguagem de programação científica

@@ -10,7 +10,8 @@ You can use the [GNU toolchain](/index.php/GNU_toolchain "GNU toolchain") or the
     *   [1.1 Static code analyzers](#Static_code_analyzers)
 *   [2 Alternative compilers](#Alternative_compilers)
 *   [3 Alternative libc implementations](#Alternative_libc_implementations)
-*   [4 See also](#See_also)
+*   [4 Libraries](#Libraries)
+*   [5 See also](#See_also)
 
 ## Useful tools
 
@@ -65,6 +66,22 @@ See also [Wikipedia:List of compilers#C compilers](https://en.wikipedia.org/wiki
 *   **[musl](https://en.wikipedia.org/wiki/musl "wikipedia:musl")** — Lightweight implementation of C standard library.
 
 	[http://www.musl-libc.org/](http://www.musl-libc.org/) || [musl](https://www.archlinux.org/packages/?name=musl)
+
+## Libraries
+
+*   **[GLib](https://en.wikipedia.org/wiki/GLib "wikipedia:GLib")** — Low-level system library by [GNOME](/index.php/GNOME "GNOME"), includes [GObject](https://en.wikipedia.org/wiki/GObject "wikipedia:GObject") and [GIO](https://en.wikipedia.org/wiki/GIO "wikipedia:GIO").
+
+	[https://wiki.gnome.org/Projects/GLib](https://wiki.gnome.org/Projects/GLib) || [glib](https://www.archlinux.org/packages/?name=glib)
+
+*   [GStreamer](/index.php/GStreamer "GStreamer") – pipeline-based multimedia framework
+
+See also:
+
+*   [GTK+/Development#C](/index.php/GTK%2B/Development#C "GTK+/Development")
+*   [Desktop notifications#C](/index.php/Desktop_notifications#C "Desktop notifications")
+*   [Libcanberra#C](/index.php/Libcanberra#C "Libcanberra")
+*   [Archiving and compression#Compression libraries](/index.php/Archiving_and_compression#Compression_libraries "Archiving and compression")
+*   [Wikipedia:Category:C libraries](https://en.wikipedia.org/wiki/Category:C_libraries "wikipedia:Category:C libraries")
 
 ## See also
 

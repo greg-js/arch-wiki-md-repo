@@ -13,7 +13,7 @@
     *   [2.2 Что нужно будет делать?](#.D0.A7.D1.82.D0.BE_.D0.BD.D1.83.D0.B6.D0.BD.D0.BE_.D0.B1.D1.83.D0.B4.D0.B5.D1.82_.D0.B4.D0.B5.D0.BB.D0.B0.D1.82.D1.8C.3F)
     *   [2.3 Какие страницы требуют поддержки?](#.D0.9A.D0.B0.D0.BA.D0.B8.D0.B5_.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B8.D1.86.D1.8B_.D1.82.D1.80.D0.B5.D0.B1.D1.83.D1.8E.D1.82_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B8.3F)
     *   [2.4 Как отказаться от сопровождения страницы?](#.D0.9A.D0.B0.D0.BA_.D0.BE.D1.82.D0.BA.D0.B0.D0.B7.D0.B0.D1.82.D1.8C.D1.81.D1.8F_.D0.BE.D1.82_.D1.81.D0.BE.D0.BF.D1.80.D0.BE.D0.B2.D0.BE.D0.B6.D0.B4.D0.B5.D0.BD.D0.B8.D1.8F_.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B8.D1.86.D1.8B.3F)
-*   [3 Templates](#Templates)
+*   [3 Шаблоны](#.D0.A8.D0.B0.D0.B1.D0.BB.D0.BE.D0.BD.D1.8B)
 *   [4 Термины](#.D0.A2.D0.B5.D1.80.D0.BC.D0.B8.D0.BD.D1.8B)
 *   [5 Список проверки](#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D0.BF.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.BA.D0.B8)
 *   [6 Рейтинг требующихся статей](#.D0.A0.D0.B5.D0.B9.D1.82.D0.B8.D0.BD.D0.B3_.D1.82.D1.80.D0.B5.D0.B1.D1.83.D1.8E.D1.89.D0.B8.D1.85.D1.81.D1.8F_.D1.81.D1.82.D0.B0.D1.82.D0.B5.D0.B9)
@@ -36,7 +36,7 @@
 *   [Kycok](/index.php/User:Kycok "User:Kycok") ([обсуждение](/index.php/User_talk:Kycok "User talk:Kycok")|[вклад](/index.php/Special:Contributions/Kycok "Special:Contributions/Kycok")) ([ArchWiki Maintainer](/index.php/ArchWiki:Maintainers "ArchWiki:Maintainers"))
 *   [ArchLinuxUser](/index.php/User:ArchLinuxUser "User:ArchLinuxUser") ([обсуждение](/index.php/User_talk:ArchLinuxUser "User talk:ArchLinuxUser")|[вклад](/index.php/Special:Contributions/ArchLinuxUser "Special:Contributions/ArchLinuxUser"))
 *   [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") ([обсуждение](/index.php/User_talk:MrReDoX "User talk:MrReDoX")|[вклад](/index.php/Special:Contributions/MrReDoX "Special:Contributions/MrReDoX"))
-*   [SlavMetal](/index.php/User:SlavMetal "User:SlavMetal") ([обсуждение](/index.php?title=User_talk:SlavMetal&action=edit&redlink=1 "User talk:SlavMetal (page does not exist)")|[вклад](/index.php/Special:Contributions/SlavMetal "Special:Contributions/SlavMetal"))
+*   [SlavMetal](/index.php/User:SlavMetal "User:SlavMetal") ([обсуждение](/index.php/User_talk:SlavMetal "User talk:SlavMetal")|[вклад](/index.php/Special:Contributions/SlavMetal "Special:Contributions/SlavMetal"))
 
 Неактивны (менее 5 правок за последние 30 дней):
 
@@ -87,25 +87,25 @@
 
 Если по какой-либо причине вы больше не хотите сопровождать страницу, добавьте в неё шаблон [Template:Unmaintained (Русский)](/index.php/Template:Unmaintained_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:Unmaintained (Русский)") и удалите страницу из [списка страниц с сопроводителем](#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B8.D1.86_.D1.81_.D1.81.D0.BE.D0.BF.D1.80.D0.BE.D0.B2.D0.BE.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D0.B5.D0.BC) ниже, чтобы другие участники были уведомлены об этом и, возможно, взяли на себя её поддержку.
 
-## Templates
+## Шаблоны
 
-The following table lists the [templates](/index.php/Help:Template_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Help:Template (Русский)") that should be translated and their Russian equivalent.
+В следующей таблице перечислены [шаблоны](/index.php/Help:Template_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Help:Template (Русский)"), которые необходимо перевести, и их русский эквивалент.
 
-| English template | Russian version |
-| Article templates |
+| Английские шаблоны | Русские эквиваленты |
+| Шаблоны статьи |
 | [Template:Related articles start](/index.php/Template:Related_articles_start "Template:Related articles start") | [Template:Related articles start (Русский)](/index.php/Template:Related_articles_start_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:Related articles start (Русский)") |
-| [Template:Yes](/index.php/Template:Yes "Template:Yes") | [Template:Да](/index.php/Template:%D0%94%D0%B0 "Template:Да") |
-| [Template:No](/index.php/Template:No "Template:No") | [Template:Нет](/index.php/Template:%D0%9D%D0%B5%D1%82 "Template:Нет") |
-| [Template:Tip](/index.php/Template:Tip "Template:Tip") | [Template:Совет](/index.php/Template:%D0%A1%D0%BE%D0%B2%D0%B5%D1%82 "Template:Совет") |
+| [Template:Yes](/index.php/Template:Yes "Template:Yes") | [Template:Yes (Русский)](/index.php/Template:Yes_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:Yes (Русский)") |
+| [Template:No](/index.php/Template:No "Template:No") | [Template:No (Русский)](/index.php/Template:No_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:No (Русский)") |
+| [Template:Tip](/index.php/Template:Tip "Template:Tip") | [Template:Tip (Русский)](/index.php/Template:Tip_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:Tip (Русский)") |
 | [Template:Note](/index.php/Template:Note "Template:Note") | [Template:Note (Русский)](/index.php/Template:Note_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:Note (Русский)") |
 | [Template:Warning](/index.php/Template:Warning "Template:Warning") | [Template:Warning (Русский)](/index.php/Template:Warning_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:Warning (Русский)") |
 | [Template:Dead link](/index.php/Template:Dead_link "Template:Dead link") | [Template:Dead link (Русский)](/index.php/Template:Dead_link_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:Dead link (Русский)") |
 | [Template:Broken package link](/index.php/Template:Broken_package_link "Template:Broken package link") | [Template:Broken package link (Русский)](/index.php/Template:Broken_package_link_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:Broken package link (Русский)") |
-| Translation status templates |
+| Шаблоны состояния перевода |
 | [Template:Bad translation](/index.php/Template:Bad_translation "Template:Bad translation") | [Template:Bad translation (Русский)](/index.php/Template:Bad_translation_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:Bad translation (Русский)") |
 | [Template:Translateme](/index.php/Template:Translateme "Template:Translateme") | [Template:Translateme (Русский)](/index.php/Template:Translateme_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:Translateme (Русский)") |
 | [Template:TranslationStatus](/index.php/Template:TranslationStatus "Template:TranslationStatus") | [Template:TranslationStatus (Русский)](/index.php/Template:TranslationStatus_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:TranslationStatus (Русский)") |
-| Special templates |
+| Специальные шаблоны |
 | [Template:Cat main](/index.php/Template:Cat_main "Template:Cat main") | [Template:Cat main (Русский)](/index.php/Template:Cat_main_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:Cat main (Русский)") |
 | [Template:Template](/index.php/Template:Template "Template:Template") | [Template:Template (Русский)](/index.php/Template:Template_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Template:Template (Русский)") |
 
@@ -213,6 +213,8 @@ The following table lists the [templates](/index.php/Help:Template_(%D0%A0%D1%83
 | [Intel graphics (Русский)](/index.php/Intel_graphics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Intel graphics (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [Java Runtime Environment fonts (Русский)](/index.php/Java_Runtime_Environment_fonts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Java Runtime Environment fonts (Русский)") | [Шрифты окружения Java Runtime](/index.php/%D0%A8%D1%80%D0%B8%D1%84%D1%82%D1%8B_%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_Java_Runtime "Шрифты окружения Java Runtime") | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [Kernels (Русский)](/index.php/Kernels_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernels (Русский)") | [Ядра](/index.php/%D0%AF%D0%B4%D1%80%D0%B0 "Ядра") | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
+| [Keyboard configuration in console (Русский)](/index.php/Keyboard_configuration_in_console_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Keyboard configuration in console (Русский)") | [Конфигурация клавиатуры в консоли](/index.php/%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D0%B0%D1%82%D1%83%D1%80%D1%8B_%D0%B2_%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8 "Конфигурация клавиатуры в консоли") | [ArchLinuxUser](/index.php/User:ArchLinuxUser "User:ArchLinuxUser") | - |
+| [Keyboard configuration in Xorg (Русский)](/index.php/Keyboard_configuration_in_Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Keyboard configuration in Xorg (Русский)") | [Конфигурация клавиатуры в Xorg](/index.php/%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D1%8F_%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D0%B0%D1%82%D1%83%D1%80%D1%8B_%D0%B2_Xorg "Конфигурация клавиатуры в Xorg") | [ArchLinuxUser](/index.php/User:ArchLinuxUser "User:ArchLinuxUser") | - |
 | [Main page (Русский)](/index.php/Main_page_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Main page (Русский)") | [Заглавная страница](/index.php/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0 "Заглавная страница") | [Kycok](/index.php/User:Kycok "User:Kycok") | - |
 | [Microsoft fonts (Русский)](/index.php/Microsoft_fonts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Microsoft fonts (Русский)") | [Шрифты Microsoft](/index.php/%D0%A8%D1%80%D0%B8%D1%84%D1%82%D1%8B_Microsoft "Шрифты Microsoft") | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [Nano (Русский)](/index.php/Nano_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Nano (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
@@ -228,6 +230,7 @@ The following table lists the [templates](/index.php/Help:Template_(%D0%A0%D1%83
 | [SSHFS (Русский)](/index.php/SSHFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "SSHFS (Русский)") | Не требуется | [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") | - |
 | [systemd-networkd (Русский)](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [systemd/Timers (Русский)](/index.php/Systemd/Timers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd/Timers (Русский)") | [Systemd/Tаймеры](/index.php/Systemd/T%D0%B0%D0%B9%D0%BC%D0%B5%D1%80%D1%8B "Systemd/Tаймеры") | [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") | - |
+| [Telegram (Русский)](/index.php/Telegram_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Telegram (Русский)") | Не требуется | [SlavMetal](/index.php/User:SlavMetal "User:SlavMetal") | - |
 | [Udisks (Русский)](/index.php/Udisks_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udisks (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [Unity3D (Русский)](/index.php/Unity3D_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Unity3D (Русский)") | Не требуется | [ArchLinuxUser](/index.php/User:ArchLinuxUser "User:ArchLinuxUser") | - |
 | [Vim (Русский)](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") | Не требуется | [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") | - |

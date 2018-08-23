@@ -72,7 +72,7 @@ ABS is made up of a directory tree that can be checked out using SVN. This tree 
 
 #### SVN tree
 
-The *core*, *extra*, and *testing* [repositories](/index.php/Repositories "Repositories") are in the *packages* SVN respository for [checkout](#Non-recursive_checkout). The *community* and *multilib* repositories are in the *community* SVN repository.
+The *core*, *extra*, and *testing* [repositories](/index.php/Repositories "Repositories") are in the *packages* SVN repository for [checkout](#Non-recursive_checkout). The *community* and *multilib* repositories are in the *community* SVN repository.
 
 Each package has its own subdirectory. Within it there are `repos` and `trunk` directories. `repos` is further broken down by repository name (e.g., *core*) and architecture. PKGBUILD's and files found in `repos` are used in official builds. Files found in `trunk` are used by developers in preparation before being copied to `repos`.
 

@@ -195,7 +195,7 @@ So the recommended method is to use:
 
 ```
 
-Use `-cc` to do a read-write badblock test.
+Use `-cc` to do a read-write bad block test.
 
 #### Block size
 

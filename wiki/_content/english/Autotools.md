@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [GNU Build System](/index.php/GNU_Build_System "GNU Build System")
+*   [GNU#Build system](/index.php/GNU#Build_system "GNU")

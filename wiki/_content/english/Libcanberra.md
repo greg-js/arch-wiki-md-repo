@@ -11,6 +11,15 @@ Related articles
 *   [2 Configuration](#Configuration)
 *   [3 Systemd](#Systemd)
 *   [4 Usage in programming](#Usage_in_programming)
+    *   [4.1 Bash](#Bash)
+    *   [4.2 C](#C)
+    *   [4.3 Genie](#Genie)
+    *   [4.4 JavaScript](#JavaScript)
+    *   [4.5 Lua](#Lua)
+    *   [4.6 Perl](#Perl)
+    *   [4.7 Python](#Python)
+    *   [4.8 Ruby](#Ruby)
+    *   [4.9 Vala](#Vala)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -49,7 +58,7 @@ To enable bootup, shutdown and reboot sounds using canberra, [enable](/index.php
 
 You can write your own libcanberra sound events easily in many programming languages using [GSound](https://wiki.gnome.org/Projects/GSound) through GObject-Introspection, or you can simply use bash.
 
-**Bash**
+### Bash
 
 *   Dependency: [libcanberra](https://www.archlinux.org/packages/?name=libcanberra)
 
@@ -59,7 +68,7 @@ You can write your own libcanberra sound events easily in many programming langu
 canberra-gtk-play -i phone-incoming-call -d "hello world"
 ```
 
-**C**
+### C
 
 *   Dependency: [libcanberra](https://www.archlinux.org/packages/?name=libcanberra)
 *   Build with: `gcc -o hello_world `pkg-config --cflags --libs glib-2.0 libcanberra` hello_world.c`
@@ -98,7 +107,7 @@ int main () {
 }
 ```
 
-**Genie**
+### Genie
 
 *   Dependency: [libcanberra](https://www.archlinux.org/packages/?name=libcanberra)
 *   Makedependency: [vala](https://www.archlinux.org/packages/?name=vala)
@@ -134,7 +143,7 @@ init
 	Thread.usleep (2000000)
 ```
 
-**JavaScript**
+### JavaScript
 
 *   Dependencies: [gsound](https://www.archlinux.org/packages/?name=gsound), [gjs](https://www.archlinux.org/packages/?name=gjs)
 
@@ -151,7 +160,7 @@ hello.play_simple({ "event.id" : "phone-incoming-call",
 GLib.usleep (2000000);
 ```
 
-**Lua**
+### Lua
 
 *   Dependencies: [gsound](https://www.archlinux.org/packages/?name=gsound), [lua-lgi](https://www.archlinux.org/packages/?name=lua-lgi)
 
@@ -168,7 +177,7 @@ hello:play_simple({ [GSound.ATTR_EVENT_ID] = "phone-incoming-call",
 GLib.usleep (2000000)
 ```
 
-**Perl**
+### Perl
 
 *   Dependencies: [gsound](https://www.archlinux.org/packages/?name=gsound), [perl-glib-object-introspection](https://www.archlinux.org/packages/?name=perl-glib-object-introspection)
 
@@ -186,7 +195,7 @@ $hello->play_simple({ "event.id" => "phone-incoming-call",
 sleep (2);
 ```
 
-**Python**
+### Python
 
 *   Dependencies: [gsound](https://www.archlinux.org/packages/?name=gsound), [python-gobject](https://www.archlinux.org/packages/?name=python-gobject)
 
@@ -204,7 +213,7 @@ hello.play_simple({GSound.ATTR_EVENT_ID: "phone-incoming-call",
 GLib.usleep(2000000)
 ```
 
-**Ruby**
+### Ruby
 
 *   Dependencies: [gsound](https://www.archlinux.org/packages/?name=gsound), [ruby-gir_ffi](https://aur.archlinux.org/packages/ruby-gir_ffi/)
 
@@ -219,7 +228,7 @@ Hello.play_simple("event.id" => "phone-incoming-call",
 sleep (2)
 ```
 
-**Vala**
+### Vala
 
 *   Dependency: [libcanberra](https://www.archlinux.org/packages/?name=libcanberra)
 *   Makedependency: [vala](https://www.archlinux.org/packages/?name=vala)

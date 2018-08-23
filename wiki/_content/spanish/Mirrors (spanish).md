@@ -97,7 +97,7 @@ Después de crear/editar el archivo `/etc/pacman.d/mirrorlist`, (manualmente o u
 
 Puede verificar el estado de los Mirrors y su nivel de actualización visitando [http://www.archlinux.de/?page=MirrorStatus](http://www.archlinux.de/?page=MirrorStatus) o [https://www.archlinux.org/mirrors/status/](https://www.archlinux.org/mirrors/status/).
 
-Puede generar una lista de mirrors nueva y actualizada desde [aquí](https://www.archlinux.org/mirrorlist/), y automatizar el proceso con un [script](#Script_to_automate_use_of_Pacman_Mirrorlist_Generator), o puede instalar [Reflector](/index.php/Reflector_(Espa%C3%B1ol) "Reflector (Español)"), una herramienta que puede generar mirrors utilizando la lista de Mirrorcheck; también se puede verificar el nivel de actualización de los mirrors de la siguiente forma:
+Puede generar una lista de mirrors nueva y actualizada desde [aquí](https://www.archlinux.org/mirrorlist/), y automatizar el proceso con un [script](#Script_de_shell_para_automatizar_el_uso_de_Pacman_Mirrorlist_Generator), o puede instalar [Reflector](/index.php/Reflector_(Espa%C3%B1ol) "Reflector (Español)"), una herramienta que puede generar mirrors utilizando la lista de Mirrorcheck; también se puede verificar el nivel de actualización de los mirrors de la siguiente forma:
 
 1.  elija un server y navegue por «extra/os/»;
 2.  acceda a [https://www.archlinux.org/](https://www.archlinux.org/) en otro navegador o pestaña del navegador; y,
@@ -107,7 +107,7 @@ Puede generar una lista de mirrors nueva y actualizada desde [aquí](https://www
 
 Si no utiliza Reflector, que tiene la habilidad de clasificar los mirrors por ambos criterios: por velocidad de descarga y por última fecha de actualización, siga esta demostración de cómo clasificar los mirrors manualmente.
 
-**Nota:** Esto no se aplica a [powerpill-light](/index.php/Improve_pacman_performance#Using_powerpill-light "Improve pacman performance"), que se conecta a varios servidores simultáneamente para aumentar la velocidad de descarga. La velocidad de las conexiones individuales se vuelve menos relevante, y powerpill-light puede ser configurado para requerir velocidades mínimas por conexión.
+**Nota:** Esto no se aplica a [powerpill](/index.php/Pacman/Tips_and_tricks_(Espa%C3%B1ol)#Powerpill "Pacman/Tips and tricks (Español)"), que se conecta a varios servidores simultáneamente para aumentar la velocidad de descarga. La velocidad de las conexiones individuales se vuelve menos relevante, y powerpill-light puede ser configurado para requerir velocidades mínimas por conexión.
 
 ### Listado por velocidad
 
@@ -150,9 +150,9 @@ Finalmente, clasifique los mirrors. El parámetro `-n 6` significa que dejará h
 
 ### Listado combinado por velocidad y estatus
 
-No es una buena idea utilizar solo los mirrrors solo por el más rápido, dado a que posiblemente el mirror mas rápido para su zona puede estar desactualizado. La forma predilecta es [#Listado por velocidad](#Listado_por_velocidad), luego ordenar esos mirrors por [#Mirror status](#Mirror_status).
+No es una buena idea utilizar solo los mirrrors solo por el más rápido, dado a que posiblemente el mirror mas rápido para su zona puede estar desactualizado. La forma predilecta es [#Listado por velocidad](#Listado_por_velocidad), luego ordenar esos mirrors por [su estado](#Estado_de_los_mirrors).
 
-Simplemente visite uno o los dos links de [#Mirror status](#Mirror_status) y ordénelos primero por los que están más actualizados. Luego, mueva los más actualizados al principio del archivo de configuración `/etc/pacman.d/mirrorlist` y los mirrors que estén muy desactualizados simplemente no los utilize; repita el proceso hasta que elimine los mirrors mas desactualizados. Continue este proceso hasta que queden solo 6 mirrors que estén ordenados por velocidad de descarga y por nivel de actualización, dejando fuera los mirrors desactualizados o lentos.
+Simplemente visite uno o los dos links de [#Estado de los mirrors](#Estado_de_los_mirrors) y ordénelos primero por los que están más actualizados. Luego, mueva los más actualizados al principio del archivo de configuración `/etc/pacman.d/mirrorlist` y los mirrors que estén muy desactualizados simplemente no los utilize; repita el proceso hasta que elimine los mirrors mas desactualizados. Continue este proceso hasta que queden solo 6 mirrors que estén ordenados por velocidad de descarga y por nivel de actualización, dejando fuera los mirrors desactualizados o lentos.
 
 Si se presentan problemas con los mirrors, se deben repetir los pasos de más arriba. O repetirlos, incluso, cada tanto, aunque no se estén experimentando problemas con los mirrors, para mantener un archivo `/etc/pacman.d/mirrorlist` actualizado.
 

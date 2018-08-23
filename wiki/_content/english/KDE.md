@@ -170,7 +170,7 @@ Some GTK2 programs like [vuescan-bin](https://aur.archlinux.org/packages/vuescan
 
 Plasmoids are little scripted (plasmoid scripts) or coded (plasmoid binaries) KDE applications designed to enhance the functionality of your desktop.
 
-The easiest way to install plasmoid scripts is by right-clicking onto a panel or the desktop and choosing *Add Widgets > Get new Widgets > Download Widgets*. This will present a nice frontend for [https://store.kde.org/](https://store.kde.org/) that allows you to install, uninstall, or update third-party plasmoid scripts with literally just one click.
+The easiest way to install plasmoid scripts is by right-clicking onto a panel or the desktop and choosing *Add Widgets > Get new widgets > Download New Plasma Widgets*. This will present a nice frontend for [https://store.kde.org/](https://store.kde.org/) that allows you to install, uninstall, or update third-party plasmoid scripts with literally just one click.
 
 Many Plasmoid binaries are available from the [AUR](https://aur.archlinux.org/packages.php?K=plasmoid).
 

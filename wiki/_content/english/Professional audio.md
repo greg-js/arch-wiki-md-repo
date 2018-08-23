@@ -46,13 +46,13 @@ Start by installing [JACK](/index.php/JACK "JACK"). See [List of applications#Au
 
 You may want to consider the following often seen system optimizations:
 
-*   Add yourself to the *audio* [group](/index.php/Group "Group").
+*   Add yourself to the *realtime* [group](/index.php/Group "Group").
 *   Add the `threadirqs` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
 *   Install [linux-rt](https://aur.archlinux.org/packages/linux-rt/) kernel.
 *   Set the [cpufreq](/index.php/Cpufreq "Cpufreq") governor to *performance*.
 *   Add *noatime* to [fstab](/index.php/Fstab "Fstab") (see [Improving performance#Mount options](/index.php/Improving_performance#Mount_options "Improving performance")).
 
-Realtime configuration has mostly been automated. There is no longer any need to edit files like `/etc/security/limits.conf` for realtime access. However, if you must change the settings, see `/etc/security/limits.d/99-audio.conf` and `/usr/lib/udev/rules.d/40-hpet-permissions.rules` (these files are provided by [jack](https://www.archlinux.org/packages/?name=jack) or [jack2](https://www.archlinux.org/packages/?name=jack2)). Additionaly, you may want to increase the highest requested RTC interrupt frequency (default is 64 Hz) by [running the following at boot](/index.php/Systemd_FAQ#How_can_I_make_a_script_start_during_the_boot_process.3F "Systemd FAQ"):
+Realtime configuration has mostly been automated. There is no longer any need to edit files like `/etc/security/limits.conf` for realtime access. However, if you must change the settings, see `/etc/security/limits.d/99-realtime-privileges.conf` and `/usr/lib/udev/rules.d/40-realtime-privileges.rules` (these files are provided by [realtime-privileges](https://www.archlinux.org/packages/?name=realtime-privileges)). Additionaly, you may want to increase the highest requested RTC interrupt frequency (default is 64 Hz) by [running the following at boot](/index.php/Systemd_FAQ#How_can_I_make_a_script_start_during_the_boot_process.3F "Systemd FAQ"):
 
 ```
 echo 2048 > /sys/class/rtc/rtc0/max_user_freq
@@ -95,10 +95,10 @@ $ speaker-test
 
 ```
 
-*   Am I in the audio group? See [ALSA](/index.php/ALSA "ALSA") or [OSS](/index.php/OSS "OSS").
+*   Am I in the realtime group? See [ALSA](/index.php/ALSA "ALSA") or [OSS](/index.php/OSS "OSS").
 
 ```
-$ groups | grep audio
+$ groups | grep realtime
 
 ```
 
@@ -135,7 +135,7 @@ $ cat /proc/asound/card0/codec#0
 
 Replace *card0* and *codec#0* depending on what you have. You will be looking for **rates** or *VRA* in **Extended ID**. A common sample rate across many of today's devices is **48000 Hz**. Others common rates include 44100 Hz and 96000 Hz.
 
-Almost always, when recording or sequencing with external gear is concerned, **realtime** is a must. Also, you may like to set maximum priority (at least 10 lower than system limits defined in `/etc/security/limits.d/99-audio.conf`); the highest is for the device itself).
+Almost always, when recording or sequencing with external gear is concerned, **realtime** is a must. Also, you may like to set maximum priority (at least 10 lower than system limits defined in `/etc/security/limits.d/99-realtime-privileges.conf`); the highest is for the device itself).
 
 Start jack with the options you just found out:
 

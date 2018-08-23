@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Remastering the Install ISO](/index.php/Remastering_the_Install_ISO "Remastering the Install ISO"). Дата последней синхронизации: 8 ноября 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Remastering_the_Install_ISO&diff=0&oldid=495722).
+**Состояние перевода:** На этой странице представлен перевод статьи [Remastering the Install ISO](/index.php/Remastering_the_Install_ISO "Remastering the Install ISO"). Дата последней синхронизации: 19 августа 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Remastering_the_Install_ISO&diff=0&oldid=536226).
 
 Ссылки по теме
 
@@ -84,6 +84,13 @@ Unsquash `airootfs.sfs` (для `squashfs-root`):
 
 **Примечание:** Для этого вам нужен пакет [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools).
 
+Если вам необходимо запустить `mkinitcpio` без `arch-chroot`, тогда нужно временно скопировать ядро:
+
+```
+$ cp ../boot/x86_64/vmlinuz squashfs-root/boot/vmlinuz-linux
+
+```
+
 Теперь вы можете изменить содержимое системы в `squashfs-root`. Вы также можете сделать chroot в эту систему для установки пакетов и т.д.:
 
 ```
@@ -136,11 +143,12 @@ Unsquash `airootfs.sfs` (для `squashfs-root`):
 
 ```
 
-Если вы обновили ядро или initramfs, скопируйте их в систему:
+Если вы обновили ядро или initramfs, переместите их в систему и удалите резервные initramfs (установочный ISO не использует это):
 
 ```
- $ cp squashfs-root/boot/vmlinuz-linux ~/customiso/arch/boot/x86_64/vmlinuz
- $ cp squashfs-root/boot/initramfs-linux.img ~/customiso/arch/boot/x86_64/archiso.img
+ $ mv squashfs-root/boot/vmlinuz-linux ~/customiso/arch/boot/x86_64/vmlinuz
+ $ mv squashfs-root/boot/initramfs-linux.img ~/customiso/arch/boot/x86_64/archiso.img
+ $ rm squashfs-root/boot/initramfs-linux-fallback.img
 
 ```
 
@@ -158,6 +166,8 @@ Unsquash `airootfs.sfs` (для `squashfs-root`):
  $ mksquashfs squashfs-root airootfs.sfs
 
 ```
+
+**Примечание:** В ежемесячном установочном ISO используется параметр `-comp xz` для `mksquashfs`, чтобы значительно уменьшить размер, но это также занимает больше времени
 
 Очистка:
 

@@ -10,8 +10,8 @@
     *   [1.1 Codecs](#Codecs)
     *   [1.2 Image](#Image)
         *   [1.2.1 Image viewers](#Image_viewers)
-            *   [1.2.1.1 Console](#Console)
-            *   [1.2.1.2 Graphical](#Graphical)
+            *   [1.2.1.1 Framebuffer image viewers](#Framebuffer_image_viewers)
+            *   [1.2.1.2 Graphical image viewers](#Graphical_image_viewers)
         *   [1.2.2 Image organizers](#Image_organizers)
         *   [1.2.3 Image processing](#Image_processing)
             *   [1.2.3.1 Image compression](#Image_compression)
@@ -27,15 +27,15 @@
     *   [1.3 Audio](#Audio)
         *   [1.3.1 Audio systems](#Audio_systems)
         *   [1.3.2 Audio players](#Audio_players)
-            *   [1.3.2.1 Console](#Console_2)
-            *   [1.3.2.2 Graphical](#Graphical_2)
+            *   [1.3.2.1 Console](#Console)
+            *   [1.3.2.2 Graphical](#Graphical)
                 *   [1.3.2.2.1 GStreamer-based](#GStreamer-based)
                 *   [1.3.2.2.2 Phonon-based](#Phonon-based)
                 *   [1.3.2.2.3 Qt Multimedia-based](#Qt_Multimedia-based)
                 *   [1.3.2.2.4 Other](#Other)
         *   [1.3.3 Audio tag editors](#Audio_tag_editors)
-            *   [1.3.3.1 Console](#Console_3)
-            *   [1.3.3.2 Graphical](#Graphical_3)
+            *   [1.3.3.1 Console](#Console_2)
+            *   [1.3.3.2 Graphical](#Graphical_2)
         *   [1.3.4 Lyrics](#Lyrics)
         *   [1.3.5 Audio converters](#Audio_converters)
         *   [1.3.6 Audio editors](#Audio_editors)
@@ -52,15 +52,15 @@
         *   [1.3.17 CD ripping](#CD_ripping)
     *   [1.4 Video](#Video)
         *   [1.4.1 Video players](#Video_players)
-            *   [1.4.1.1 Console](#Console_4)
-            *   [1.4.1.2 Graphical](#Graphical_4)
+            *   [1.4.1.1 Console](#Console_3)
+            *   [1.4.1.2 Graphical](#Graphical_3)
                 *   [1.4.1.2.1 GStreamer-based](#GStreamer-based_2)
                 *   [1.4.1.2.2 mpv-based](#mpv-based)
                 *   [1.4.1.2.3 MPlayer-based](#MPlayer-based)
                 *   [1.4.1.2.4 Other](#Other_2)
         *   [1.4.2 Video converters](#Video_converters)
-            *   [1.4.2.1 Console](#Console_5)
-            *   [1.4.2.2 Graphical](#Graphical_5)
+            *   [1.4.2.1 Console](#Console_4)
+            *   [1.4.2.2 Graphical](#Graphical_4)
         *   [1.4.3 Video editors](#Video_editors)
         *   [1.4.4 Subtitles](#Subtitles)
         *   [1.4.5 Screencast](#Screencast)
@@ -85,7 +85,7 @@ See the main article: [Codecs](/index.php/Codecs "Codecs").
 
 See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/Comparison_of_image_viewers "wikipedia:Comparison of image viewers").
 
-##### Console
+##### Framebuffer image viewers
 
 *   **fbi** — Image viewer for the linux framebuffer console.
 
@@ -103,7 +103,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 	[http://seasonofcode.com/pages/jfbview.html](http://seasonofcode.com/pages/jfbview.html) || [jfbview](https://aur.archlinux.org/packages/jfbview/)
 
-##### Graphical
+##### Graphical image viewers
 
 *   **Ephoto** — A light image viewer based on EFL.
 

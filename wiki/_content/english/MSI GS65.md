@@ -2,7 +2,7 @@
 | Intel GPU | Working | modesetting |
 | Nvidia GPU | Working | nvidia (not nouveau) |
 | Ethernet | Working | alx |
-| Wireless | Working with 4.17.13 | iwlwifi |
+| Wireless | Working | iwlwifi |
 | Audio | Working | snd_hda_intel |
 | Webcam | Working | uvcvideo |
 | Bluetooth | Working | btusb |
@@ -18,19 +18,17 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 *   [1 Configuration](#Configuration)
     *   [1.1 BIOS](#BIOS)
         *   [1.1.1 2.20.1271](#2.20.1271)
-    *   [1.2 Networking](#Networking)
-        *   [1.2.1 Wireless](#Wireless)
-    *   [1.3 Video](#Video)
-        *   [1.3.1 Backlight](#Backlight)
-        *   [1.3.2 Drivers](#Drivers)
-        *   [1.3.3 Multihead](#Multihead)
-    *   [1.4 Webcam](#Webcam)
-    *   [1.5 Power Management](#Power_Management)
-    *   [1.6 Keyboard](#Keyboard)
-        *   [1.6.1 Lights](#Lights)
-        *   [1.6.2 Button Mapping](#Button_Mapping)
-            *   [1.6.2.1 Unmapped Buttons](#Unmapped_Buttons)
-    *   [1.7 Touchpad](#Touchpad)
+    *   [1.2 Video](#Video)
+        *   [1.2.1 Backlight](#Backlight)
+        *   [1.2.2 Drivers](#Drivers)
+        *   [1.2.3 Multihead](#Multihead)
+    *   [1.3 Webcam](#Webcam)
+    *   [1.4 Power Management](#Power_Management)
+    *   [1.5 Keyboard](#Keyboard)
+        *   [1.5.1 Lights](#Lights)
+        *   [1.5.2 Button Mapping](#Button_Mapping)
+            *   [1.5.2.1 Unmapped Buttons](#Unmapped_Buttons)
+    *   [1.6 Touchpad](#Touchpad)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Webcam is not detected](#Webcam_is_not_detected)
 *   [3 Tips and Tricks](#Tips_and_Tricks)
@@ -56,119 +54,6 @@ At bootup, the BIOS settings page is entered via the delete key, the quick boot 
 In the BIOS setings,he model name can be seen in the Main tab, [Secure Boot](/index.php/Secure_Boot "Secure Boot") can be disabled from the Security tab and boot mode can optionally be switched from [UEFI](/index.php/UEFI "UEFI") to legacy.
 
 There is no option to disable the discrete intel GPU.
-
-### Networking
-
-#### Wireless
-
-Support for the Killer 1550i arrived in 4.17.13 as planned in these discussions: [[1]](https://www.spinics.net/lists/linux-wireless/msg172978.html)[[2]](https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/backport-iwlwifi.git/tree/drivers/net/wireless/intel/iwlwifi/pcie/drv.c?id=998ce0330c94eca4b13b8f062b3f0ca9ef9ad6d8#n622)[[3]](https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/backport-iwlwifi.git/commit/?id=a3ef483ec5002b7af5a2ad04cb7a77366cd23b9f)
-
-Kernels <4.17.13 require patching iwlwifi driver [[4]](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/net/wireless/intel/iwlwifi/pcie/drv.c#n799) to add `{IWL_PCI_DEVICE(0xA370, 0x1552, iwl9560_2ac_cfg_soc)},`
-
-Using the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") it is possible to rebuild the kernel using this patch which add the mapping for the wifi on kernel 4.17.11
-
- `0001-Add-patch-for-MSI-GS65-wifi.patch` 
-```
-From 740ff066915a8ef636fc7f14fe9c7023bc61e488 Mon Sep 17 00:00:00 2001
-From: Sandy Carter <bwrsandman@gmail.com>
-Date: Tue, 19 Jun 2018 09:38:08 -0700
-Subject: [PATCH] Add patch for MSI GS65 wifi
-
----
- repos/core-x86_64/0005-Add-wifi-support.patch | 10 ++++++
- repos/core-x86_64/PKGBUILD                    | 34 ++++++++++++++++++-
- 2 files changed, 43 insertions(+), 1 deletion(-)
- create mode 100644 repos/core-x86_64/0005-Add-wifi-support.patch
-
-diff --git a/repos/core-x86_64/0005-Add-wifi-support.patch b/repos/core-x86_64/0005-Add-wifi-support.patch
-new file mode 100644
-index 0000000..b7e62ef
---- /dev/null
-+++ b/repos/core-x86_64/0005-Add-wifi-support.patch
-@@ -0,0 +1,10 @@
-+--- a/drivers/net/wireless/intel/iwlwifi/pcie/drv.c
-++++ b/drivers/net/wireless/intel/iwlwifi/pcie/drv.c
-+@@ -797,6 +797,7 @@
-+ 	{IWL_PCI_DEVICE(0xA370, 0x1010, iwl9260_2ac_cfg)},
-+ 	{IWL_PCI_DEVICE(0xA370, 0x1030, iwl9560_2ac_cfg_soc)},
-+ 	{IWL_PCI_DEVICE(0xA370, 0x1210, iwl9260_2ac_cfg)},
-++	{IWL_PCI_DEVICE(0xA370, 0x1552, iwl9560_2ac_cfg_soc)},
-+ 	{IWL_PCI_DEVICE(0xA370, 0x2030, iwl9560_2ac_cfg_soc)},
-+ 	{IWL_PCI_DEVICE(0xA370, 0x2034, iwl9560_2ac_cfg_soc)},
-+ 	{IWL_PCI_DEVICE(0xA370, 0x4030, iwl9560_2ac_cfg_soc)},
-diff --git a/repos/core-x86_64/PKGBUILD b/repos/core-x86_64/PKGBUILD
-index c571d68..8f03362 100644
---- a/repos/core-x86_64/PKGBUILD
-+++ b/repos/core-x86_64/PKGBUILD
-@@ -19,6 +19,7 @@ source=(
-   60-linux.hook  # pacman hook for depmod
-   90-linux.hook  # pacman hook for initramfs regeneration
-   linux.preset   # standard config files for mkinitcpio ramdisk
-+  0005-Add-wifi-support.patch
- )
- validpgpkeys=(
-   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
-@@ -29,7 +30,8 @@ sha256sums=('SKIP'
-             'aa7b6756f193f3b3a3fc4947e7a77b09e249df2e345e6495292055d757ba8be6'
-             'ae2e95db94ef7176207c690224169594d49445e04249d2499e9d2fbc117a0b21'
-             '75f99f5239e03238f88d1a834c50043ec32b1dc568f2cc291b07d04718483919'
--            'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65')
-+            'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65'
-+            '54b32090a6ac96e95da8cfd54634310adbff6fbebb8dbbef176d1d3facf4d1a5')
-
- _kernelname=${pkgbase#linux}
- : ${_kernelname:=-arch}
-@@ -39,6 +41,36 @@ prepare() {
-   scripts/setlocalversion --save-scmversion
-   cp ../config .config
-   make olddefconfig
-+
-+  # GS65 Wifi support
-+  patch -Np1 -i ../0005-Add-wifi-support.patch
-+
-+  cat ../config - >.config <<END
-+CONFIG_LOCALVERSION="${_kernelname}"
-+CONFIG_LOCALVERSION_AUTO=n
-+END
-+
-+  # set extraversion to pkgrel and empty localversion
-+  sed -e "/^EXTRAVERSION =/s/=.*/= -${pkgrel}/" \
-+      -e "/^EXTRAVERSION =/aLOCALVERSION =" \
-+      -i Makefile
-+
-+  # don't run depmod on 'make install'. We'll do this ourselves in packaging
-+  sed -i '2iexit 0' scripts/depmod.sh
-+
-+  # get kernel version
-+  make prepare
-+
-+  # load configuration
-+  # Configure the kernel. Replace the line below with one of your choice.
-+  #make menuconfig # CLI menu for configuration
-+  #make nconfig # new CLI menu for configuration
-+  #make xconfig # X-based configuration
-+  #make oldconfig # using old config from previous kernel version
-+  # ... or manually edit .config
-+
-+  # rewrite configuration
-+  yes "" | make config >/dev/null
- }
-
- build() {
--- 
-2.18.0
-
-```
-
-Checkout the package and apply the above patch
-
-```
-$ asp checkout linux
-$ cd linux/repos/core-x86_64
-$ git am 0001-Add-patch-for-MSI-GS65-wifi.patch
-$ makepkg -i
-
-```
 
 ### Video
 
@@ -251,7 +136,7 @@ Device Descriptor:
 
 ```
 
-The Steel Series lights on the keyboard cannot be configured with [msi-keyboard-git](https://aur.archlinux.org/packages/msi-keyboard-git/) probably due to the udev rules not matching the usb vendor_id and product_id.
+The Steel Series lights on the keyboard cannot be configured with [msi-keyboard-git](https://aur.archlinux.org/packages/msi-keyboard-git/) or [msiklm-git](https://aur.archlinux.org/packages/msiklm-git/) probably due to the udev rules not matching the usb vendor_id and product_id [[1]](https://github.com/Gibtnix/MSIKLM/issues/19)[[2]](https://github.com/bparker06/msi-keyboard/issues/9).
 
 #### Button Mapping
 
@@ -275,7 +160,7 @@ And reloading the keymapping database:
 
 ```
 
-The commit [[5]](https://github.com/systemd/systemd/commit/e05c8b44622afe4256f3bb361cfb2c7db32fff8e) to fix this in systemd has been merged and should be available in the next release of systemd (240).
+The commit [[3]](https://github.com/systemd/systemd/commit/e05c8b44622afe4256f3bb361cfb2c7db32fff8e) to fix this in systemd has been merged and should be available in the next release of systemd (240).
 
 ##### Unmapped Buttons
 
@@ -326,7 +211,7 @@ Following this, cheese should work correctly.
 
 ### Wifi is hardblocked (airplane mode) after waking up from suspend
 
-Waking from suspend will have wifi in airplane mode. [[6]](https://askubuntu.com/questions/1043547/wifi-hard-blocked-after-suspend-in-ubuntu-on-gs65)
+Waking from suspend will have wifi in airplane mode. [[4]](https://askubuntu.com/questions/1043547/wifi-hard-blocked-after-suspend-in-ubuntu-on-gs65)
 
  `# rfkill list` 
 ```

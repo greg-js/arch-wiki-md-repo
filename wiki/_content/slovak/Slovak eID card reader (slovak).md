@@ -43,28 +43,33 @@ sudo debtap -u
 
 ```
 
-4\. eID klient aplikáciu stiahnuť zo stránky [Min. vnútra SR](https://eidas.minv.sk/TCTokenService/download/) - [balíček Debian 7.0 32-bit](https://eidas.minv.sk/TCTokenService/download/linux/debian/eidklient_i386_debian.tar.gz) alebo [balíček Debian 7.0 64-bit](https://eidas.minv.sk/TCTokenService/download/linux/debian/eidklient_amd64_debian.tar.gz)
+4\. eID klient aplikáciu stiahnuť zo stránky [Min. vnútra SR](https://eidas.minv.sk/TCTokenService/download/) - [balíček Debian 8/9 32-bit](https://eidas.minv.sk/TCTokenService/download/linux/debian/Aplikacia_pre_eID_i386_debian.tar.gz) alebo [balíček Debian 8/9 64-bit](https://eidas.minv.sk/TCTokenService/download/linux/debian/Aplikacia_pre_eID_amd64_debian.tar.gz)
 
 5\. Prekonfigurovanie stiahnutého DEB balíčka na Arch linux kompatibilný formát a jeho inštalácia:
 
 ```
-tar -zxf eidklient_*_debian.tar.gz
-cd eID_klient/
-debtap eidklient_*_debian.deb     `**# akékoľvek otázky pri spustení tohto príkazu stačí iba odklepnúť enterom**`
-sudo pacman -U eidklient-*.pkg.tar.xz
+tar -zxf Aplikacia_pre_eID_*_debian.tar.gz
+sudo debtap -u
+debtap Aplikacia_pre_eID_*_debian.deb
+                 `**# Prve dve otázky pri spustení tohto príkazu stačí iba odklepnúť enterom.**`
+                 `**# Následne je potreba upraviť ".PKGINFO":**`
+                                   `**# V default vygenerovanom ".PKGINFO" sa objaví min. 6x "Carriage return" (^M), ktorý je potrebné odstrániť zo všetkých riadkov.**`
+                                   `**# Taktiež doporučujem opraviť "pkgname = eac-mw-klient" na "pkgname = eidklient".**`
+                                   `**# Následne ".PKGINFO" uložiť a preskociť dalšie zmeny v zostávajucich súboroch.**`
+sudo pacman -U *.pkg.tar.xz
 
 ```
 
 6\. Oprava symbolických liniek na knižnice:
 
 ```
-sudo ln -sf /usr/lib/qt/plugins/imageformats/libqtga.so /usr/lib/eidklient/
-sudo ln -sf /usr/lib/qt4/plugins/imageformats/libqgif.so /usr/lib/eidklient/
-sudo ln -sf /usr/lib/qt4/plugins/imageformats/libqico.so /usr/lib/eidklient/
-sudo ln -sf /usr/lib/qt4/plugins/imageformats/libqjpeg.so /usr/lib/eidklient/
-sudo ln -sf /usr/lib/qt4/plugins/imageformats/libqmng.so /usr/lib/eidklient/
-sudo ln -sf /usr/lib/qt4/plugins/imageformats/libqsvg.so /usr/lib/eidklient/
-sudo ln -sf /usr/lib/qt4/plugins/imageformats/libqtiff.so /usr/lib/eidklient/
+sudo ln -sf /usr/lib/qt/plugins/imageformats/libqtga.so /usr/lib/eac_mw_klient/
+sudo ln -sf /usr/lib/qt4/plugins/imageformats/libqgif.so /usr/lib/eac_mw_klient/
+sudo ln -sf /usr/lib/qt4/plugins/imageformats/libqico.so /usr/lib/eac_mw_klient/
+sudo ln -sf /usr/lib/qt4/plugins/imageformats/libqjpeg.so /usr/lib/eac_mw_klient/
+sudo ln -sf /usr/lib/qt4/plugins/imageformats/libqmng.so /usr/lib/eac_mw_klient/
+sudo ln -sf /usr/lib/qt4/plugins/imageformats/libqsvg.so /usr/lib/eac_mw_klient/
+sudo ln -sf /usr/lib/qt4/plugins/imageformats/libqtiff.so /usr/lib/eac_mw_klient/
 
 ```
 
@@ -85,7 +90,7 @@ sudo systemctl enable pcscd.service
 8\. Umiestnenie aplikačných odkazov na plochu:
 
 ```
-cp /usr/lib/eidklient/*.desktop ~/Desktop
+cp /usr/lib/eac_mw_klient/*.desktop ~/Desktop
 
 ```
 
@@ -98,14 +103,14 @@ Na stánkach [Min. vnútra SR](https://eidas.minv.sk/TCTokenService/download/) a
 ### Prvé spustenie
 
 ```
-eIdKlient
+EAC_MW_klient
 
 ```
 
 ### Povolenie automatického spúšťania eID klienta
 
 *   V prostredí aplikácie: dá sa povoliť pri prvom spustení aplikácie, alebo následne vo "Všeobecných nastaveniach".
-*   Manuálne cez príkazový riadok: `cp /usr/lib/eidklient/startup/aplikacia-pre-autentifikaciu-el-dokladmi.desktop ~/.config/autostart/`
+*   Manuálne cez príkazový riadok: `cp /usr/lib/eac_mw_klient/startup/aplikacia-pre-eid.desktop ~/.config/autostart/`
 
 ### Kontrola čítačky
 

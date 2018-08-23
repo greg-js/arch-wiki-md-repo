@@ -419,7 +419,7 @@ If the video card bios doesn't provide a maximum value above the default setting
 
 ### Clock frequency and timings
 
-RAM can run at different clock frequencies and timings, which can be configured in the BIOS. Memory performance depends on both values. Selecting the highest preset presented by the BIOS usually improves the performance over the default setting. Note that increasing the frequency to values not supported by both motherboard and RAM vendor is overclocking, and similar risks and disdvantages apply, see [#Overclocking](#Overclocking).
+RAM can run at different clock frequencies and timings, which can be configured in the BIOS. Memory performance depends on both values. Selecting the highest preset presented by the BIOS usually improves the performance over the default setting. Note that increasing the frequency to values not supported by both motherboard and RAM vendor is overclocking, and similar risks and disadvantages apply, see [#Overclocking](#Overclocking).
 
 ### Root on RAM overlay
 
@@ -454,7 +454,7 @@ A detailed explanation of all steps, options and potential problems is provided 
 
 The [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) package provides a `systemd-swap.service` unit to automatically initialize zram devices. Configuration is possible in `/etc/systemd/swap.conf`.
 
-The package [zramswap](https://aur.archlinux.org/packages/zramswap/) provides an automated script for setting up such swap devices with optimal settings for your system (such as RAM size and CPU core number). The script creates one zram device per CPU core with a total space equivalent to the RAM available, so you will have a compressed swap with higher priority than regular swap, which will utilize multiple CPU cores for compessing data. To do this automatically on every boot, [enable](/index.php/Enable "Enable") `zramswap.service`.
+The package [zramswap](https://aur.archlinux.org/packages/zramswap/) provides an automated script for setting up such swap devices with optimal settings for your system (such as RAM size and CPU core number). The script creates one zram device per CPU core with a total space equivalent to the RAM available, so you will have a compressed swap with higher priority than regular swap, which will utilize multiple CPU cores for compressing data. To do this automatically on every boot, [enable](/index.php/Enable "Enable") `zramswap.service`.
 
 #### Swap on zRAM using a udev rule
 

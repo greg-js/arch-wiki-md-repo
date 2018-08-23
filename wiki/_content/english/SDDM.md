@@ -68,9 +68,8 @@ An option to autologin into KDE Plasma while simultaneously locking the session 
 You can add a script that activates the screensaver of KDE to the autostart as a workaround:
 
 ```
-#!/bin/bash
-/usr/bin/qdbus-qt4 org.kde.screensaver /ScreenSaver SetActive true &
-exit 0
+#!/bin/sh
+/usr/bin/dbus-send --session --type=method_call --dest=org.freedesktop.ScreenSaver /ScreenSaver org.freedesktop.ScreenSaver.Lock &
 
 ```
 

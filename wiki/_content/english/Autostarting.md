@@ -54,7 +54,9 @@ See [Command-line shell#Configuration files](/index.php/Command-line_shell#Confi
 
 ## On desktop environment startup
 
-If the [desktop environment](/index.php/Desktop_environment "Desktop environment") has an ArchWiki article, see its *Autostart* section.
+Most [desktop environment](/index.php/Desktop_environment "Desktop environment") implement [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart").
+
+If the desktop environments has an article, see its *Autostart* section.
 
 *   [GNOME#Autostart](/index.php/GNOME#Autostart "GNOME")
 *   [KDE#Autostart](/index.php/KDE#Autostart "KDE")
@@ -62,11 +64,9 @@ If the [desktop environment](/index.php/Desktop_environment "Desktop environment
 *   [LXDE#Autostart](/index.php/LXDE#Autostart "LXDE")
 *   [LXQt#Autostart](/index.php/LXQt#Autostart "LXQt")
 
-Most desktop environments implement [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart").
-
 ## On window manager startup
 
-If the [window manager](/index.php/Window_manager "Window manager") has an ArchWiki article, see its *Autostart* section.
+If the [window manager](/index.php/Window_manager "Window manager") has an article, see its *Autostart* section.
 
 *   [Fluxbox#Autostart](/index.php/Fluxbox#Autostart "Fluxbox")
 *   [Openbox#Autostart](/index.php/Openbox#Autostart "Openbox")

@@ -659,7 +659,7 @@ Vea [Create root filesystem snapshots with LVM](/index.php/Create_root_filesyste
 
 [Dm-crypt/Encrypting an entire system#LVM on LUKS](/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS "Dm-crypt/Encrypting an entire system") y [Dm-crypt/Encrypting an entire system#LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system").
 
-Si tiene volúmenes LVM no activados a través de [initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)"), [active](#Using_units) el servicio **lvm-monitoring**, proporcionado por el paquete [lvm2](https://www.archlinux.org/packages/?name=lvm2).
+Si tiene volúmenes LVM no activados a través de [initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)"), [active](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") el servicio **lvm-monitoring**, proporcionado por el paquete [lvm2](https://www.archlinux.org/packages/?name=lvm2).
 
 ## Solucionando problemas
 

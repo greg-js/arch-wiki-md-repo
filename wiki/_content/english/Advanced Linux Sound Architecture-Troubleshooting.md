@@ -1,5 +1,3 @@
-See [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") for the main article.
-
 ## Contents
 
 *   [1 Volume](#Volume)

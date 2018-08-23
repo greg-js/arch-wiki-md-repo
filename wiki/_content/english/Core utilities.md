@@ -75,7 +75,7 @@ Most command-line interfaces are documented in [man pages](/index.php/Man_page "
 
 See the `ls` [Info manual](/index.php/Info_manual "Info manual") ([online version](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html#ls-invocation)) for more information.
 
-[exa](https://the.exa.website) is a modern, and more user friendly alternative to `ls` and `tree`, that has more features, such as displaying [Git](/index.php/Git "Git") modifications along with filenames, colouring differently each columnn in `--long` mode, or displaying `--long` mode metadata along with a `tree` view. [exa](https://www.archlinux.org/packages/?name=exa)
+[exa](https://the.exa.website) is a modern, and more user friendly alternative to `ls` and `tree`, that has more features, such as displaying [Git](/index.php/Git "Git") modifications along with filenames, colouring differently each columnn in `--long` mode, or displaying `--long` mode metadata along with a `tree` view. *exa* is available as the [exa](https://www.archlinux.org/packages/?name=exa) package.
 
 #### Long format
 
