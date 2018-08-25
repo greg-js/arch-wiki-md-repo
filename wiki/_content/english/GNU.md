@@ -48,7 +48,7 @@ While most GNU software also provides [man pages](/index.php/Man_page "Man page"
 
 ## Toolchain
 
-Most tools of the [GNU toolchain](https://en.wikipedia.org/wiki/GNU_toolchain "wikipedia:GNU toolchain") are in the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group, except *glibc* which is in [base](https://www.archlinux.org/groups/x86_64/base/) and *gdb* which is in neither group.
+Most tools of the [GNU toolchain](https://en.wikipedia.org/wiki/GNU_toolchain "wikipedia:GNU toolchain") are in the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group, except *glibc* which is in [base](https://www.archlinux.org/groups/x86_64/base/) and GDB which is in neither group.
 
 *   **[GNU make](https://en.wikipedia.org/wiki/Make_(software) "wikipedia:Make (software)")** — GNU make utility to maintain groups of programs.
 
@@ -58,7 +58,7 @@ Most tools of the [GNU toolchain](https://en.wikipedia.org/wiki/GNU_toolchain "w
 
 	[https://gcc.gnu.org/](https://gcc.gnu.org/) || [gcc](https://www.archlinux.org/packages/?name=gcc)
 
-*   **[GNU C Library](https://en.wikipedia.org/wiki/GNU_C_Library "wikipedia:GNU C Library")** — GNU's implementation of the C library.
+*   **[glibc](https://en.wikipedia.org/wiki/GNU_C_Library "wikipedia:GNU C Library")** — GNU's implementation of the C library.
 
 	[https://www.gnu.org/software/libc/](https://www.gnu.org/software/libc/) || [glibc](https://www.archlinux.org/packages/?name=glibc) (part of [base](https://www.archlinux.org/groups/x86_64/base/))
 

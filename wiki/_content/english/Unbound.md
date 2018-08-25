@@ -134,8 +134,6 @@ The first command should give an `rcode` of `SERVFAIL`. The second should give a
 
 ### Forwarding queries
 
-**Tip:** Unbound can be used with [DNSCrypt](/index.php/DNSCrypt "DNSCrypt") by setting up forwarding. See [DNSCrypt#Unbound](/index.php/DNSCrypt#Unbound "DNSCrypt").
-
 If you only want to forward queries to an external DNS server, skip ahead to [#Forward all remaining requests](#Forward_all_remaining_requests).
 
 #### Allow local network to use DNS

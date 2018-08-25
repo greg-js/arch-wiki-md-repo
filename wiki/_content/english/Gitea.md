@@ -18,6 +18,7 @@ Related articles
         *   [4.1.3 Add SSH-keys for an user](#Add_SSH-keys_for_an_user)
     *   [4.2 Disable HTTP protocol](#Disable_HTTP_protocol)
     *   [4.3 Configure nginx as reverse proxy](#Configure_nginx_as_reverse_proxy)
+    *   [4.4 Enable Dark Theme](#Enable_Dark_Theme)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Database error on startup after upgrade to 1.5.0](#Database_error_on_startup_after_upgrade_to_1.5.0)
 *   [6 See also](#See_also)
@@ -201,6 +202,10 @@ DOMAIN                 = git.domain.tld
 **Note:** You do not need to activate any SSL certificate options in `/etc/gitea/app.ini`.
 
 Finally update the *cookie* section - set `COOKIE_SECURE` to `true`.
+
+### Enable Dark Theme
+
+In the *ui* section, you can set the `DEFAULT_THEME` to `arc-green` for making the web interface use a dark background.
 
 ## Troubleshooting
 

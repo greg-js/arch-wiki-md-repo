@@ -101,7 +101,7 @@
 
 *   **[Tribler](https://en.wikipedia.org/wiki/Tribler "wikipedia:Tribler")** — Cuarta generación del sistema de archivos compatidos del cliente bittorrent.
 
-	[http://www.tribler.org](http://www.tribler.org) || [tribler](https://aur.archlinux.org/packages/tribler/)
+	[http://www.tribler.org](http://www.tribler.org) || [tribler](https://www.archlinux.org/packages/?name=tribler)
 
 *   **[Vuze](https://en.wikipedia.org/wiki/Vuze "wikipedia:Vuze")** — Cliente BitTorrent con muchas características escrito en Java (anteriormente Azureus).
 

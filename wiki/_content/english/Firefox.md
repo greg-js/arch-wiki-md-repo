@@ -263,8 +263,6 @@ The possible values are:
 
 ### Middle-click errors
 
-**Note:** This has been fixed in Firefox 57.[[4]](https://www.phoronix.com/scan.php?page=news_item&px=Firefox-Middle-Click-Bug)
-
 A common error message you can get while using the middle mouse button in Firefox is:
 
 ```

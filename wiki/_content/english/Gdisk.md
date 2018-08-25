@@ -127,7 +127,7 @@ It is advised to choose the default number suggested by *gdisk*.
 
 #### First and last sector
 
-The first and last sectors of the partition can be specified in sector numbers or as positions measured in mebibytes (`M`), gibibytes (`G`), tebibytes (`T`), or pebibytes (`P`);
+The first and last sectors of the partition can be specified in sector numbers or as positions measured in kibibytes (`K`), mebibytes (`M`), gibibytes (`G`), tebibytes (`T`), or pebibytes (`P`);
 
 The position can be specified in:
 

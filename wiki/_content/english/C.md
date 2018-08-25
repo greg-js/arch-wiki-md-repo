@@ -15,8 +15,6 @@ You can use the [GNU toolchain](/index.php/GNU_toolchain "GNU toolchain") or the
 
 ## Useful tools
 
-**Note:** As of August 4, 2018 [valgrind](https://www.archlinux.org/packages/?name=valgrind) no longer works because of [FS#59551](https://bugs.archlinux.org/task/59551), you can fall back to [valgrind-git](https://aur.archlinux.org/packages/valgrind-git/).
-
 *   **[Valgrind](https://en.wikipedia.org/wiki/Valgrind "wikipedia:Valgrind")** — Tool to help find memory-management problems in programs.
 
 	[http://valgrind.org/](http://valgrind.org/) || [valgrind](https://www.archlinux.org/packages/?name=valgrind)
@@ -33,7 +31,7 @@ You can use the [GNU toolchain](/index.php/GNU_toolchain "GNU toolchain") or the
 
 *   **[Cppcheck](https://en.wikipedia.org/wiki/Cppcheck "wikipedia:Cppcheck")** — A tool for static C/C++ code analysis.
 
-	[http://cppcheck.sourceforge.net/](http://cppcheck.sourceforge.net/) || [ccpcheck](https://www.archlinux.org/packages/?name=ccpcheck)
+	[http://cppcheck.sourceforge.net/](http://cppcheck.sourceforge.net/) || [cppcheck](https://www.archlinux.org/packages/?name=cppcheck)
 
 *   **[Splint](https://en.wikipedia.org/wiki/Splint_(programming_tool) "wikipedia:Splint (programming tool)")** — A tool for statically checking C programs for security vulnerabilities and coding mistakes.
 
@@ -71,7 +69,7 @@ See also [Wikipedia:List of compilers#C compilers](https://en.wikipedia.org/wiki
 
 *   **[GLib](https://en.wikipedia.org/wiki/GLib "wikipedia:GLib")** — Low-level system library by [GNOME](/index.php/GNOME "GNOME"), includes [GObject](https://en.wikipedia.org/wiki/GObject "wikipedia:GObject") and [GIO](https://en.wikipedia.org/wiki/GIO "wikipedia:GIO").
 
-	[https://wiki.gnome.org/Projects/GLib](https://wiki.gnome.org/Projects/GLib) || [glib](https://www.archlinux.org/packages/?name=glib)
+	[https://wiki.gnome.org/Projects/GLib](https://wiki.gnome.org/Projects/GLib) || [glib](https://aur.archlinux.org/packages/glib/)
 
 *   [GStreamer](/index.php/GStreamer "GStreamer") – pipeline-based multimedia framework
 

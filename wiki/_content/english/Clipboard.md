@@ -82,7 +82,7 @@ This section lists daemons that track your clipboard, to provide a clipboard his
 
 *   **Clipmenu** — Dmenu based clipboard manager
 
-	[https://github.com/cdown/clipmenu/](https://github.com/cdown/clipmenu/) || [clipmenu](https://aur.archlinux.org/packages/clipmenu/)
+	[https://github.com/cdown/clipmenu/](https://github.com/cdown/clipmenu/) || [clipmenu](https://www.archlinux.org/packages/?name=clipmenu)
 
 *   **Clipster** — A lightweight, command-line-driven clipboard manager, written in Python.
 

@@ -135,3 +135,7 @@ You can also check where the attached iSCSI devices are located in the /dev tree
 At the server (target) you might need to include the client iqn from `/etc/iscsi/initiatorname.iscsi` in the acl configuration.
 
 Many of the `iscsiadm` operations require that the iSCSI daemon `iscsid` is running. To verify that this is the case, [check the status](/index.php/Systemd#Using_units "Systemd") of the `open-iscsi.service`.
+
+To run the iSCSI daemon in debug mode (make sure you stopped `open-iscsi.service` before)
+
+ `# iscsid -d 8 -c /etc/iscsi/iscsid.conf -i /etc/iscsi/initiatorname.iscsi -f`

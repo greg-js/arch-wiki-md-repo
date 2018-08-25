@@ -177,7 +177,7 @@ Los siguientes *[widget toolkit](https://en.wikipedia.org/wiki/widget_toolkit "w
 
 *   **pySide** — Bindings [Qt](/index.php/Qt "Qt")
 
-	[http://www.pyside.org/](http://www.pyside.org/) || [python2-pyside](https://www.archlinux.org/packages/?name=python2-pyside) [python-pyside](https://www.archlinux.org/packages/?name=python-pyside)
+	[http://www.pyside.org/](http://www.pyside.org/) || [python2-pyside](https://aur.archlinux.org/packages/python2-pyside/) [python-pyside](https://aur.archlinux.org/packages/python-pyside/)
 
 *   **pyGTK** — Bindings [GTK+ 2](/index.php/GTK%2B "GTK+")
 

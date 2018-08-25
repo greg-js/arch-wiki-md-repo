@@ -1,6 +1,6 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Arch Linux](/index.php/Arch_Linux "Arch Linux"). Fecha de la última traducción/revisión: **2018-07-27**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=507441).
+**Estado de la traducción:** este artículo es una versión traducida de [Arch Linux](/index.php/Arch_Linux "Arch Linux"). Fecha de la última traducción/revisión: **2018-08-23**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=536968).
 
-Arch Linux es una distribución GNU/Linux de propósito general, desarrollada independientemente para x86-64, que se esfuerza por proporcionar las últimas versiones estables de la mayoría del software, siguiendo un modelo de lanzamiento continuo (rolling-release). La instalación por defecto deja un sistema de base mínima, que el usuario configurará posteriormente agregando lo que necesite.
+Arch Linux es una distribución [GNU](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)")/Linux de propósito general, desarrollada independientemente para x86-64, que se esfuerza por proporcionar las últimas versiones estables de la mayoría del software, siguiendo un modelo de lanzamiento continuo (rolling-release). La instalación por defecto deja un sistema de base mínima, que el usuario configurará posteriormente agregando lo que necesite.
 
 ## Contents
 
@@ -63,7 +63,7 @@ Judd Vinet, un guitarrista ocasional y programador canadiense, comenzó a desarr
 
 ### Los años intermedios
 
-La primera comunidad de Arch creció de manera constante, como lo demuestra [este gráfico de publicaciones, usuarios e informes de errores en el foro](/images/8/8d/Archstats2002-2011.png "Archstats2002-2011.png"). Por otra parte, fue desde sus primeros días conocida como [una comunidad abierta, amigable y colaboradora](http://www.osnews.com/story/4827).
+La primera comunidad de Arch creció de manera constante, como lo demuestra [este gráfico de publicaciones, usuarios e informes de errores en el foro](/index.php/File:Archstats2002-2011.png "File:Archstats2002-2011.png"). Por otra parte, fue desde sus primeros días conocida como [una comunidad abierta, amigable y colaboradora](http://www.osnews.com/story/4827).
 
 ### El nacimiento de ArchWiki
 

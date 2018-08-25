@@ -60,6 +60,6 @@
 
 	نقطة البداية للذين يرغبون في المساهمة في موسوعة آرتش.
 
-	[دليل تعديل المقالات](/index.php?title=Help:Editing_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9)&action=edit&redlink=1 "Help:Editing (العربية) (page does not exist)")
+	[دليل تعديل المقالات](/index.php/Help:Editing_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Help:Editing (العربية)")
 
 	دليل شامل لتعديل المقالات متضمناً مقدمة إلى الصيغة الكتابيّة للنصوص في الموسوعة.

@@ -389,7 +389,7 @@ See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/
 
 *   **[Tribler](https://en.wikipedia.org/wiki/Tribler "wikipedia:Tribler")** — 第四代文件共享系统 BT 客户端。
 
-	[http://www.tribler.org](http://www.tribler.org) || [tribler](https://aur.archlinux.org/packages/tribler/)
+	[http://www.tribler.org](http://www.tribler.org) || [tribler](https://www.archlinux.org/packages/?name=tribler)
 
 ###### libktorrent 后端
 

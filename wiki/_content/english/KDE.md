@@ -311,18 +311,18 @@ You can choose between backends based on [GStreamer](/index.php/GStreamer "GStre
 
 [Upstream prefers VLC](https://www.phoronix.com/scan.php?page=news_item&px=MTUwNDM) but prominent Linux distributions (Kubuntu and Fedora-KDE for example) prefer GStreamer because that allows them to easily leave out patented MPEG codecs from the default installation. Both backends have a slightly different [features set](https://community.kde.org/Phonon/FeatureMatrix). The Gstreamer backend has some optional codec dependency, install them as needed:
 
-*   [gst-libav](https://www.archlinux.org/packages/?name=gst-libav) - libav codec
-*   [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good) - PulseAudio support and good codecs
-*   [gst-plugins-ugly](https://www.archlinux.org/packages/?name=gst-plugins-ugly) - additional codecs
-*   [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) - additional codecs
+*   [gst-libav](https://www.archlinux.org/packages/?name=gst-libav) — Libav codecs.
+*   [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good) — PulseAudio support and additional codecs.
+*   [gst-plugins-ugly](https://www.archlinux.org/packages/?name=gst-plugins-ugly) — additional codecs.
+*   [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) — additional codecs.
 
 In the past other backends were developed as well but are no longer maintained and their AUR packages have been deleted.
 
 **Note:**
 
-*   Multiple backends can be installed at once and prioritized at *System Settings > Multimedia > Backend*.
+*   Multiple backends can be installed at once and prioritized at *System Settings > Multimedia > Audio and Video > Backend*.
 *   According to the [KDE forums](https://forum.kde.org/viewtopic.php?f=250&t=126476&p=335080), the VLC backend lacks support for [ReplayGain](https://en.wikipedia.org/wiki/ReplayGain "wikipedia:ReplayGain").
-*   If using the VLC backend, you may experience crashes every time KDE wants to send you an audible warning and in quite a number of other cases as well [[5]](https://forum.kde.org/viewtopic.php?f=289&t=135956). A possible fix is to rebuild the VLC plugins cache:
+*   If using the VLC backend, you may experience crashes every time Plasma wants to send you an audible warning and in quite a number of other cases as well [[5]](https://forum.kde.org/viewtopic.php?f=289&t=135956). A possible fix is to rebuild the VLC plugins cache:
 
  `# /usr/lib/vlc/vlc-cache-gen /usr/lib/vlc/plugins` 
 
@@ -345,14 +345,6 @@ KCM stands for **KC**onfig **M**odule. KCMs can help you configure your system b
 *   **kde-gtk-config** — GTK2 and GTK3 Configurator for KDE.
 
 	[https://cgit.kde.org/kde-gtk-config.git](https://cgit.kde.org/kde-gtk-config.git) || [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config)
-
-*   **KCM Qt Graphics System** — This KCM allows you to easily configure the standard Qt graphics system.
-
-	[https://www.linux-apps.com/p/1127857/](https://www.linux-apps.com/p/1127857/) || [kcm-qt-graphicssystem](https://aur.archlinux.org/packages/kcm-qt-graphicssystem/)
-
-*   **UFW KControl Module** — KDE4 control module for UFW ([Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall")).
-
-	[https://www.linux-apps.com/p/1127851/](https://www.linux-apps.com/p/1127851/) || [kcm-ufw](https://aur.archlinux.org/packages/kcm-ufw/)
 
 *   **System policies** — Set of configuration modules which allows administrator to change [PolicyKit](/index.php/PolicyKit "PolicyKit") settings.
 

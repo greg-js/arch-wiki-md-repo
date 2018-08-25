@@ -12,7 +12,7 @@
 | <small>2.2.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving_(Portugu%C3%AAs) "Category:Data compression and archiving (Português)") <small>(2)</small> |
 | <small>2.3.</small> [Emulation](/index.php/Category:Emulation_(Portugu%C3%AAs) "Category:Emulation (Português)") <small>(1)</small> |
 | <small>2.4.</small> [Multimedia](/index.php/Category:Multimedia_(Portugu%C3%AAs) "Category:Multimedia (Português)") <small>(0)</small> |
-| <small>2.4.1.</small> [Sound](/index.php/Category:Sound_(Portugu%C3%AAs) "Category:Sound (Português)") <small>(3) (também em [Hardware](/index.php/Category:Hardware_(Portugu%C3%AAs) "Category:Hardware (Português)"))</small> |
+| <small>2.4.1.</small> [Sound](/index.php/Category:Sound_(Portugu%C3%AAs) "Category:Sound (Português)") <small>(4) (também em [Hardware](/index.php/Category:Hardware_(Portugu%C3%AAs) "Category:Hardware (Português)"))</small> |
 | <small>2.5.</small> [Escritório](/index.php/Category:Office_(Portugu%C3%AAs) "Category:Office (Português)") <small>(1)</small> |
 | <small>2.6.</small> [Web applications](/index.php/Category:Web_applications_(Portugu%C3%AAs) "Category:Web applications (Português)") <small>(0) (também em [Web](/index.php/Category:Web_(Portugu%C3%AAs) "Category:Web (Português)"))</small> |
 | <small>2.6.1.</small> [Web admin interfaces](/index.php/Category:Web_admin_interfaces_(Portugu%C3%AAs) "Category:Web admin interfaces (Português)") <small>(1)</small> |
@@ -32,11 +32,11 @@
 | <small>4.5.1.</small> [HP](/index.php/Category:HP_(Portugu%C3%AAs) "Category:HP (Português)") <small>(1)</small> |
 | <small>4.6.</small> [Mobile devices](/index.php/Category:Mobile_devices_(Portugu%C3%AAs) "Category:Mobile devices (Português)") <small>(0)</small> |
 | <small>4.6.1.</small> [Android](/index.php/Category:Android_(Portugu%C3%AAs) "Category:Android (Português)") <small>(1)</small> |
-| <small>4.7.</small> [Sound](/index.php/Category:Sound_(Portugu%C3%AAs) "Category:Sound (Português)") <small>(3) (também em [Multimedia](/index.php/Category:Multimedia_(Portugu%C3%AAs) "Category:Multimedia (Português)"))</small> |
+| <small>4.7.</small> [Sound](/index.php/Category:Sound_(Portugu%C3%AAs) "Category:Sound (Português)") <small>(4) (também em [Multimedia](/index.php/Category:Multimedia_(Portugu%C3%AAs) "Category:Multimedia (Português)"))</small> |
 | <small>4.8.</small> [Storage](/index.php/Category:Storage_(Portugu%C3%AAs) "Category:Storage (Português)") <small>(1)</small> |
 | <small>5.</small> [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)") <small>(2)</small> |
 | <small>5.1.</small> [DHCP](/index.php/Category:DHCP_(Portugu%C3%AAs) "Category:DHCP (Português)") <small>(2)</small> |
-| <small>5.2.</small> [Domain Name System](/index.php/Category:Domain_Name_System_(Portugu%C3%AAs) "Category:Domain Name System (Português)") <small>(3)</small> |
+| <small>5.2.</small> [Domain Name System](/index.php/Category:Domain_Name_System_(Portugu%C3%AAs) "Category:Domain Name System (Português)") <small>(4)</small> |
 | <small>5.3.</small> [Email](/index.php/Category:Email_(Portugu%C3%AAs) "Category:Email (Português)") <small>(0)</small> |
 | <small>5.3.1.</small> [Mail server](/index.php/Category:Mail_server_(Portugu%C3%AAs) "Category:Mail server (Português)") <small>(2) (também em [Servers](/index.php/Category:Servers_(Portugu%C3%AAs) "Category:Servers (Português)"))</small> |
 | <small>5.4.</small> [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol_(Portugu%C3%AAs) "Category:File Transfer Protocol (Português)") <small>(1)</small> |
@@ -84,7 +84,9 @@
 | <small>7.13.</small> [Gerenciamento de pacotes](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)") <small>(19)</small> |
 | <small>7.14.</small> [Power management](/index.php/Category:Power_management_(Portugu%C3%AAs) "Category:Power management (Português)") <small>(1)</small> |
 | <small>7.15.</small> [Security](/index.php/Category:Security_(Portugu%C3%AAs) "Category:Security (Português)") <small>(9)</small> |
-| <small>7.15.1.</small> [Secure Shell](/index.php/Category:Secure_Shell_(Portugu%C3%AAs) "Category:Secure Shell (Português)") <small>(1) (também em [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)"))</small> |
+| <small>7.15.1.</small> [Cryptography](/index.php/Category:Cryptography_(Portugu%C3%AAs) "Category:Cryptography (Português)") <small>(0)</small> |
+| <small>7.15.1.1.</small> [Encryption](/index.php/Category:Encryption_(Portugu%C3%AAs) "Category:Encryption (Português)") <small>(1)</small> |
+| <small>7.15.2.</small> [Secure Shell](/index.php/Category:Secure_Shell_(Portugu%C3%AAs) "Category:Secure Shell (Português)") <small>(1) (também em [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)"))</small> |
 | <small>7.16.</small> [System recovery](/index.php/Category:System_recovery_(Portugu%C3%AAs) "Category:System recovery (Português)") <small>(3)</small> |
 | <small>7.17.</small> [Virtualization](/index.php/Category:Virtualization_(Portugu%C3%AAs) "Category:Virtualization (Português)") <small>(1)</small> |
 | <small>7.17.1.</small> [Hypervisors](/index.php/Category:Hypervisors_(Portugu%C3%AAs) "Category:Hypervisors (Português)") <small>(1)</small> |

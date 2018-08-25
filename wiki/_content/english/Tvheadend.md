@@ -84,7 +84,7 @@ The following settings may be used when using DVB-API as Conditional Access Clie
 | Connect port | 9000 |
 | CW Mode | Standard / auto |
 
-In OSCam create an user named *vdr* with *vdr* as password and set the *DVB Api* configuration to use at least the following parameters:
+In OSCam create a user named *vdr* with *vdr* as password and set the *DVB Api* configuration to use at least the following parameters:
 
 | Parameter | Value |
 | Boxtype | pc |

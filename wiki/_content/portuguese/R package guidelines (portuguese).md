@@ -34,7 +34,7 @@ Veja [PKGBUILD (Português)#arch](/index.php/PKGBUILD_(Portugu%C3%AAs)#arch "PKG
 
 Os pacotes R listados nos campos `Depends`, `Imports` ou `LinkingTo` no arquivo `DESCRIPTION` de um pacote devem ser listados em [depends](/index.php/PKGBUILD_(Portugu%C3%AAs)#depends "PKGBUILD (Português)").
 
-Os pacotes R listados em `Suggests` devem ser listados como [optdepends](/index.php/PKGBUILD_(Portugu%C3%AAs)#optdepends "PKGBUILD (Português)").
+Os pacotes R listados em `Suggests` devem ser listados como [optdepends](/index.php/Optdepends_(Portugu%C3%AAs) "Optdepends (Português)").
 
 Alguns pacotes requerem ferramentas externas, estas estão listadas em `SystemRequirements`.
 

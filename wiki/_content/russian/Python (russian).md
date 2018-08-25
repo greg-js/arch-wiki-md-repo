@@ -148,7 +148,7 @@ $ which python
 
 *   **pySide** — привязки к [Qt](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)")
 
-	[https://wiki.qt.io/PySide](https://wiki.qt.io/PySide) || [python2-pyside](https://www.archlinux.org/packages/?name=python2-pyside) [python-pyside](https://www.archlinux.org/packages/?name=python-pyside)
+	[https://wiki.qt.io/PySide](https://wiki.qt.io/PySide) || [python2-pyside](https://aur.archlinux.org/packages/python2-pyside/) [python-pyside](https://aur.archlinux.org/packages/python-pyside/)
 
 *   **pyGTK** — привязки к [GTK+ 2](/index.php/GTK%2B_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GTK+ (Русский)")
 

@@ -9,7 +9,7 @@
 
 ## Installation
 
-Install the [clang](https://www.archlinux.org/packages/?name=clang) package.
+[Install](/index.php/Install "Install") the [clang](https://www.archlinux.org/packages/?name=clang) package.
 
 ## Build packages with Clang
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Environment variables](/index.php/Environment_variables "Environment variables"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=518529) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Environment variables](/index.php/Environment_variables "Environment variables"). Data da última tradução: 2018-08-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=536709) na versão em inglês.
 
 Artigos relacionados
 
@@ -153,7 +153,7 @@ http_proxy="http://192.168.0.1:80"
 
 *   `INFODIR` contém uma lista, separada por caracteres de dois pontos, de diretórios nos quais o comando *info* pesquisa por páginas info, p.ex.: `/usr/share/info:/usr/local/share/info`
 
-*   `TZ` pode ser usado para definir um fuso horário diferente como o do usuário. Os fusos listados em `/usr/share/zoneinfo/` podem ser usados como referências, por exemplo `TZ="/usr/share/zoneinfo/Pacific/Fiji"`
+*   `TZ` pode ser usado para definir um fuso horário diferente como o do usuário. Os fusos listados em `/usr/share/zoneinfo/` podem ser usados como referências, por exemplo `TZ=":/usr/share/zoneinfo/Pacific/Fiji"`. Ao apontar a variável `TZ` para um arquivo de *zoneinfo*, deve-se iniciar com um caractere de dois pontos, conforme [o manual do GNU](https://www.gnu.org/software/libc/manual/html_node/TZ-Variable.html).
 
 ### Programas padrão
 

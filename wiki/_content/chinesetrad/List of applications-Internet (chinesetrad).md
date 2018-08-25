@@ -297,7 +297,7 @@ Can be used as-is via command line, but all have a choice of front-end options a
 
 *   **[Tribler](https://en.wikipedia.org/wiki/Tribler "wikipedia:Tribler")** — 4th generation file sharing system bittorrent client.
 
-	[http://www.tribler.org](http://www.tribler.org) || [tribler](https://aur.archlinux.org/packages/tribler/)
+	[http://www.tribler.org](http://www.tribler.org) || [tribler](https://www.archlinux.org/packages/?name=tribler)
 
 ###### [libktorrent](https://www.archlinux.org/packages/?name=libktorrent) 後端
 

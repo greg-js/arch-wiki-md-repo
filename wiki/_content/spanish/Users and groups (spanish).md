@@ -1,11 +1,13 @@
+**Estado de la traducción:** este artículo es una versión traducida de [Users and groups](/index.php/Users_and_groups "Users and groups"). Fecha de la última traducción/revisión: **2018-08-23**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=533656).
+
 Artículos relacionados
 
 *   [DeveloperWiki:UID / GID Database](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database")
+*   [Sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)")
 *   [polkit](/index.php/Polkit "Polkit")
-*   [chmod](/index.php/Chmod "Chmod")
-*   [Change username (Español)](/index.php/Change_username_(Espa%C3%B1ol) "Change username (Español)")
+*   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
 
-Los usuarios y los grupos son usados ​​en los sistemas GNU/Linux para el [control de los accesos](https://en.wikipedia.org/wiki/access_control#Computer_security "wikipedia:access control") —es decir, determina qué usuarios y servicios están autorizados para acceder a los archivos, directorios y dispositivos periféricos presentes en el sistema—. Linux ofrece de forma predefinida mecanismos de control de acceso relativamente simples/básicos. Para obtener opciones más avanzadas, consulte [ACL](/index.php/Lista_de_Control_de_Acceso "Lista de Control de Acceso") y [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication").
+Los usuarios y grupos se utilizan en GNU/Linux para el [control de acceso](https://en.wikipedia.org/wiki/access_control#Computer_security y [PAM#Configuration How-Tos](/index.php/PAM#Configuration_How-Tos "PAM").
 
 ## Contents
 
@@ -23,19 +25,21 @@ Los usuarios y los grupos son usados ​​en los sistemas GNU/Linux para el [co
 
 ## Descripción
 
-Un *usuario* es cualquier persona que usa un ordenador. En este caso, estamos describiendo los nombres que representan a dichos usuarios. Esos nombres pueden ser María o Bill, y pueden ser tambien Dragonlady o Pirata en lugar de sus nombres reales. Lo único que importa es que el equipo tenga un nombre para cada cuenta, y es con este nombre a través del cual una persona adquiere los permisos para usar el sistema. No obstante, algunos servicios del sistema se ejecutan utilizando cuentas de usuario restringidas o privilegiadas.
+	*El superusuario (root) redirige aquí. Para el directorio raíz, consulte [Partición raíz](/index.php/Partitioning_(Espa%C3%B1ol)#Partici.C3.B3n_root "Partitioning (Español)").*
 
-La gestión de usuarios se realiza con el propósito de dar seguridad al sistema, limitando el acceso de ciertas maneras específicas.
+Un *usuario* es cualquiera que use una computadora. En este caso, estamos describiendo los nombres que representan a esos usuarios. Puede ser Mary o Bill, y pueden usar los nombres Dragonlady o Pirate en lugar de su nombre real. Lo único que importa es que la computadora tenga un nombre para cada cuenta que cree, y es este nombre por el que una persona obtiene acceso para usar la computadora. Algunos servicios del sistema también se ejecutan utilizando cuentas de usuario restringidas o privilegiadas.
 
-Cualquier persona puede tener más de una cuenta, siempre y cuando se utilice un nombre diferente para cada cuenta que cree. Además, hay algunos nombres reservados, que no pueden ser utilizados, como «root».
+La administración de los usuarios se realiza con fines de seguridad al limitar el acceso de ciertas maneras específicas. El [superusuario](https://en.wikipedia.org/wiki/Superuser y [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") para la escalada de privilegios controlada.
 
-Los usuarios pueden ser congregados en un «grupo», y, del mismo modo, pueden optar por unirse a un grupo ya existente para utilizar los privilegios de acceso que dicho grupo concede.
+Cualquier persona puede tener más de una cuenta, siempre que utilicen un nombre diferente para cada una de ellas. Además, hay algunos nombres reservados que no se pueden usar, como «root».
+
+Los usuarios pueden agruparse en un «grupo» y, del mismo modo, pueden añadirse a un grupo existente para utilizar el acceso privilegiado que dicho grupo concede.
 
 **Nota:** El usuario inexperto debe utilizar estas herramientas con cuidado y evitar modificar cualquier otra cuenta de *usuario* existente, que no sea la suya propia.
 
 ## Permisos y propiedad
 
-De la página [In UNIX Everything is a File (*«En Unix Todo es un Archivo»*)](http://ph7spot.com/musings/in-unix-everything-is-a-file):
+De la página [En Unix todo es un archivo](http://ph7spot.com/musings/in-unix-everything-is-a-file):
 
 	*El sistema operativo UNIX es el resultado de algunas ideas y conceptos unificadores que dieron forma a su diseño, la interfaz de usuario, la cultura y la evolución. Uno de los más importantes es probablemente el lema: «everything is a file» (*todo es un archivo)*, considerado como uno de los puntos definitorios de UNIX.*
 

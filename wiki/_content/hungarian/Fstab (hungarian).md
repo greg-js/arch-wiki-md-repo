@@ -8,7 +8,7 @@ Related articles
 
 Az [/etc/fstab](https://en.wikipedia.org/wiki/Fstab "wikipedia:Fstab") fájl határozza meg, hogy a lemezek partícióit, más blokkeszközöket, vagy távoli fájlrendszereket hogyan csatolunk a fájlrendszerünkbe.
 
-Minden csatolandó fájlrendszert különálló sor ír le. Ezek a leírások rendszer indításakor dinamikusan [systemd](/index.php/Systemd "Systemd") csatolási egységgé (mount unit) konvertálódnak, valamint akkor, amikor a rendszerkezelőt újratöltjük. Az alapértelmezett beállítások automatikusan ellenőrzik (fsck) és csatolják a fájlrendszereket, mielőtt az azok felcsatolását igénylő szolgáltatások elindulnának. Például a systemd magától megbizonyosodik róla, hogy a távoli fájlrendszerek, mint az [NFS](/index.php/NFS "NFS") vagy a [Samba](/index.php/Samba "Samba") csak azután induljanak, hogy a hálózatunk már működőképes. Ezért a helyi és távoli fájlrendszer-csatolások, melyek az `/etc/fstab`-ban szerepelnek, külső beavatkozás nélkül is működőképesek. Lásd a [systemd.mount(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5) leírást részletekért.
+Minden csatolandó fájlrendszert különálló sor ír le. Ezek a leírások rendszer indításakor dinamikusan [systemd](/index.php/Systemd "Systemd") csatolási egységgé (mount unit) konvertálódnak, valamint akkor, amikor a rendszerkezelőt újratöltjük. Az alapértelmezett beállítások automatikusan ellenőrzik (fsck) és csatolják a fájlrendszereket, mielőtt az azok felcsatolását igénylő szolgáltatások elindulnának. Például a systemd magától megbizonyosodik róla, hogy a távoli fájlrendszerek, mint az [NFS](/index.php/NFS "NFS") vagy a [Samba](/index.php/Samba "Samba") csak azután induljanak, hogy a hálózatunk már működőképes. Ezért a helyi és távoli fájlrendszer-csatolások, melyek az `/etc/fstab`-ban szerepelnek, külső beavatkozás nélkül is működőképesek. Lásd a [systemd.mount(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5) leírást részletekért.
 
 A `mount` parancs az fstab-ot hasznája, ha parancsként csak a könyvtárt vagy az eszköz nevét (pl. mount /dev/sdb2 vagy mount /my/mount) adjuk meg, s a parancs ilyenkor az fstab-ból keresi vissza a másik paramétert. Ha így teszünk, az fstab-ban foglalt csatolási opciók lesznek használatosak.
 
@@ -58,7 +58,7 @@ Az `/etc/fstab` állomány a következő szóközzel vagy tabulátorral elválas
 *   **<file system>** - (fájlrendszer) a csatolandó partíció vagy tárolóeszköz.
 *   **<dir>** - (könyvtár) a csatolási pont, ahova a <file system> csatolásra kerül.
 *   **<type>** - (típus) a csatolandó partíció vagy tárolóeszköz fájlrendszerének típusa. Sok különböző fájlrendszer támogatott: `ext2`, `ext3`, `ext4`, `btrfs`, `reiserfs`, `xfs`, `jfs`, `smbfs`, `iso9660`, `vfat`, `ntfs`, `swap` és `auto`. Az `auto` típus a mount parancsra bízza a használandó fájlrendszer típusának meghatározását. Ez hasznos lehet az optikai adathordozók esetén (CD/DVD).
-*   **<options>** - (opciók) az adott fájlrendszer csatolási opciói. Jegyezzük meg, hogy egyes csatolási opciók csak egy-egy fájlrendszerre jellemzők ([mount(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8)). A leggyakoribbak a következők:
+*   **<options>** - (opciók) az adott fájlrendszer csatolási opciói. Jegyezzük meg, hogy egyes csatolási opciók csak egy-egy fájlrendszerre jellemzők ([mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8)). A leggyakoribbak a következők:
 
 *   `auto` - Csatoljuk automatikusan a rendszer indításakor, vagy ha a `mount -a` parancs kerül használatra.
 *   `noauto` - Csak akkor csatoljuk, ha ezt külön paranccsal kérjük.

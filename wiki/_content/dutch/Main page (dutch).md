@@ -1,6 +1,6 @@
 ### Arch Linux Wiki
 
-Welkom op de **Arch Linux** Wiki.
+Welkom op de <a class="mw-selflink selflink">Arch Linux</a> Wiki.
 
 #### Wiki-nieuws
 

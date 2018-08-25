@@ -127,7 +127,7 @@ Packer is a wrapper for pacman and the AUR. It was designed to be a simple and v
 
 *   Сайт: [http://github.com/bruenig/packer](http://github.com/bruenig/packer) (not available)
 *   Форум: [https://bbs.archlinux.org/viewtopic.php?id=88115](https://bbs.archlinux.org/viewtopic.php?id=88115)
-*   Пакет: [packer](https://aur.archlinux.org/packages/packer/)
+*   Пакет: [packer](https://www.archlinux.org/packages/?name=packer)
 *   Wiki: [https://github.com/bruenig/packer/wiki](https://github.com/bruenig/packer/wiki)
 
 ### pacmoon

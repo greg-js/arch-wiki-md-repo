@@ -71,7 +71,7 @@ The result should end with the following lines, indicating the signature is trus
 
 To use DNSSEC system-wide, you can use a validating recursive resolver that is DNSSEC-aware, so that all DNS lookups go through the recursive resolver. See [Domain name resolution#Resolvers](/index.php/Domain_name_resolution#Resolvers "Domain name resolution") for available options. Note that each requires specific options to enable their DNSSEC validation feature.
 
-If you attempt to visit a site with a bogus (spoofed) IP address, the validing resolver will prevent you from receiving the invalid DNS data and your browser (or other application) will be told there is no such host. Since all DNS lookups go through the validating resolver, you do not need software that has DNSSEC support built-in when using this option.
+If you attempt to visit a site with a bogus (spoofed) IP address, the validating resolver will prevent you from receiving the invalid DNS data and your browser (or other application) will be told there is no such host. Since all DNS lookups go through the validating resolver, you do not need software that has DNSSEC support built-in when using this option.
 
 ## Enable DNSSEC in specific software
 
@@ -79,7 +79,7 @@ If you choose not to [#Install a DNSSEC-aware validating recursive server](#Inst
 
 ## DNSSEC Hardware
 
-You can check if your router, modem, AP, etc. supports DNSSEC (many different features) using [dnssec-tester](http://www.dnssec-tester.cz/) (Python and GTK+ based app) to know if it is DNSSEC-compatible, and using this tool you can also upload gathered data to a server, so other users and manufacturers can be informed about compatibility of their devices and eventualy fix the firmware (they will be probably urged to do so). (Before running dnssec-tester please make sure, that you do not have any other nameservers in `/etc/resolv.conf`). You can also find the results of performed tests on the [dnssec-tester](http://www.dnssec-tester.cz/) website.
+You can check if your router, modem, AP, etc. supports DNSSEC (many different features) using [dnssec-tester](http://www.dnssec-tester.cz/) (Python and GTK+ based app) to know if it is DNSSEC-compatible, and using this tool you can also upload gathered data to a server, so other users and manufacturers can be informed about compatibility of their devices and eventually fix the firmware (they will be probably urged to do so). (Before running dnssec-tester please make sure, that you do not have any other nameservers in `/etc/resolv.conf`). You can also find the results of performed tests on the [dnssec-tester](http://www.dnssec-tester.cz/) website.
 
 ## See also
 

@@ -1,13 +1,15 @@
-This article is about basic sound management. For advanced topics see [professional audio](/index.php/Professional_audio "Professional audio").
+**Status de tradução:** Esse artigo é uma tradução de [Sound system](/index.php/Sound_system "Sound system"). Data da última tradução: 2018-08-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Sound_system&diff=0&oldid=526747) na versão em inglês.
+
+Esse artigo é sobre gerenciamento básico de som. Para tópicos avançados, veja [áudio profissional](/index.php/Professional_audio "Professional audio").
 
 ## Contents
 
-*   [1 General information](#General_information)
-*   [2 Drivers and interface](#Drivers_and_interface)
-*   [3 Sound servers](#Sound_servers)
-*   [4 See also](#See_also)
+*   [1 Informações gerais](#Informa.C3.A7.C3.B5es_gerais)
+*   [2 Drivers e interface](#Drivers_e_interface)
+*   [3 Servidores de som](#Servidores_de_som)
+*   [4 Veja também](#Veja_tamb.C3.A9m)
 
-## General information
+## Informações gerais
 
 The Arch sound system consists of several levels:
 
@@ -18,7 +20,7 @@ The Arch sound system consists of several levels:
 
 A default Arch installation already includes the kernel sound system ([ALSA](/index.php/ALSA "ALSA")), and lots of utilities for it can be installed from the [official repositories](/index.php/Official_repositories "Official repositories"). If you want additional features you can switch to [OSS](/index.php/OSS "OSS") or install one of several [sound servers](https://en.wikipedia.org/wiki/sound_server "wikipedia:sound server").
 
-## Drivers and interface
+## Drivers e interface
 
 *   **[ALSA](/index.php/ALSA "ALSA")** — A Linux kernel component providing device drivers and lowest-level support for audio hardware.
 
@@ -28,7 +30,7 @@ A default Arch installation already includes the kernel sound system ([ALSA](/in
 
 	[http://www.opensound.com/](http://www.opensound.com/) || [oss](https://aur.archlinux.org/packages/oss/)
 
-## Sound servers
+## Servidores de som
 
 *   **[PulseAudio](/index.php/PulseAudio "PulseAudio")** — A very popular sound server, usable by most common desktop Linux applications today. Very good at handling multiple simultaneous inputs, and can do network audio as well. Very easy to get working, in fact very often all one has to do is install the package and it will automatically run. Not intended for pro audio low-latency applications.
 
@@ -50,7 +52,7 @@ A default Arch installation already includes the kernel sound system ([ALSA](/in
 
 	[https://www.radscan.com/nas/nas-links.html](https://www.radscan.com/nas/nas-links.html) || [nas](https://aur.archlinux.org/packages/nas/)
 
-## See also
+## Veja também
 
 *   [MIDI](/index.php/MIDI "MIDI")
 *   [Codecs](/index.php/Codecs "Codecs")

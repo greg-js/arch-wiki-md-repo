@@ -140,7 +140,7 @@ AUR 中还有老版本使用的模块和库，可以通过带版本的 python �
 
 *   **pySide** — [Qt](/index.php/Qt "Qt") bindings
 
-	[https://wiki.qt.io/PySide](https://wiki.qt.io/PySide) || [python2-pyside](https://www.archlinux.org/packages/?name=python2-pyside)
+	[https://wiki.qt.io/PySide](https://wiki.qt.io/PySide) || [python2-pyside](https://aur.archlinux.org/packages/python2-pyside/)
 
 *   **pyGTK** — [GTK+](/index.php/GTK%2B "GTK+") 绑定
 

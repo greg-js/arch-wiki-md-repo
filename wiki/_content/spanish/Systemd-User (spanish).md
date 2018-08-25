@@ -312,7 +312,7 @@ WantedBy=default.target
 
 ```
 
-Como se detalla en [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5), la variable `%h` es reemplazada por la carpeta home del usuario que ejecuta el servicio. Hay otras variables en las manpages de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") que puede tenerlas en cuenta.
+Como se detalla en [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5), la variable `%h` es reemplazada por la carpeta home del usuario que ejecuta el servicio. Hay otras variables en las manpages de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") que puede tenerlas en cuenta.
 
 ### Nota acerca de las aplicaciones X
 

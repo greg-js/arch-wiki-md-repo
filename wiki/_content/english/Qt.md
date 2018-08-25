@@ -359,8 +359,8 @@ sys.exit(app.exec_())
 #### Python (PySide)
 
 *   Package:
-    *   [python-pyside](https://www.archlinux.org/packages/?name=python-pyside) - Python 3.x bindings
-    *   [python2-pyside](https://www.archlinux.org/packages/?name=python2-pyside) - Python 2.x bindings
+    *   [python-pyside](https://aur.archlinux.org/packages/python-pyside/) - Python 3.x bindings
+    *   [python2-pyside](https://aur.archlinux.org/packages/python2-pyside/) - Python 2.x bindings
 *   Website: [http://www.pyside.org/](http://www.pyside.org/)
 *   Run with: `python hello-pyside.py` or `python2 hello-pyside.py`
 

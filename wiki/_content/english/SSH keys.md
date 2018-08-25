@@ -638,6 +638,6 @@ $ chmod 600 ~/.ssh/authorized_keys
 *   [OpenSSH key management, Part 1](https://www.ibm.com/developerworks/linux/library/l-keyc/)
 *   [OpenSSH key management, Part 2](https://www.ibm.com/developerworks/linux/library/l-keyc2/)
 *   [OpenSSH key management, Part 3](https://www.ibm.com/developerworks/library/l-keyc3/)
-*   [Getting started with SSH](http://kimmo.suominen.com/docs/ssh/)
+*   [Getting started with SSH](https://web.archive.org/web/20170708074341/https://kimmo.suominen.com/docs/ssh/)
 *   [OpenSSH 5.7 Release Notes](https://www.openssh.com/txt/release-5.7)
 *   [Secure Secure Shell](https://stribika.github.io/2015/01/04/secure-secure-shell.html)

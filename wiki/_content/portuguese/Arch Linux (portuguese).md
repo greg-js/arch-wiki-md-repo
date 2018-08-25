@@ -1,6 +1,6 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch Linux](/index.php/Arch_Linux "Arch Linux"). Data da última tradução: 2018-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=534849) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch Linux](/index.php/Arch_Linux "Arch Linux"). Data da última tradução: 2018-08-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Linux&diff=0&oldid=536968) na versão em inglês.
 
-O Arch Linux é uma distribuição GNU/Linux x86_64 de uso geral desenvolvida independentemente que se empenha em fornecer as últimas versões estáveis da maioria dos softwares seguindo um modelo de lançamento contínuo (*rolling-release*). A instalação padrão é um sistema base mínimo, configurado pelo usuário para adicionar apenas o que é propositalmente necessário.
+O Arch Linux é uma distribuição [GNU](/index.php/GNU_(Portugu%C3%AAs) "GNU (Português)")/Linux x86_64 de uso geral desenvolvida independentemente que se empenha em fornecer as últimas versões estáveis da maioria dos softwares seguindo um modelo de lançamento contínuo (*rolling-release*). A instalação padrão é um sistema base mínimo, configurado pelo usuário para adicionar apenas o que é propositalmente necessário.
 
 ## Contents
 
@@ -63,7 +63,7 @@ Judd Vinet, um programador canadense e guitarrista ocasional, começou a desenvo
 
 ### Os anos médios
 
-A comunidade inicial do Arch cresceu firmemente, como evidencia [esse gráfico do número de publicações de fóruns, usuários e relatórios de bugs](/images/8/8d/Archstats2002-2011.png "Archstats2002-2011.png"). Além disso, foi desde o começo conhecida como [uma comunidade aberta, amigável e prestativa](http://www.osnews.com/story/4827).
+A comunidade inicial do Arch cresceu firmemente, como evidencia [esse gráfico do número de publicações de fóruns, usuários e relatórios de bugs](/index.php/File:Archstats2002-2011.png "File:Archstats2002-2011.png"). Além disso, foi desde o começo conhecida como [uma comunidade aberta, amigável e prestativa](http://www.osnews.com/story/4827).
 
 ### Nascimento do ArchWiki
 

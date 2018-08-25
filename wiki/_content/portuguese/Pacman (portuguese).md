@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2018-08-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=537167) na versão em inglês.
+
 Artigos relacionados
 
 *   [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes")

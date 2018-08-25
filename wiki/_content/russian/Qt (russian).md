@@ -295,8 +295,8 @@ sys.exit(app.exec_())
 #### Python (PySide)
 
 *   Пакеты:
-    *   [python-pyside](https://www.archlinux.org/packages/?name=python-pyside) — привязки Python 3.x
-    *   [python2-pyside](https://www.archlinux.org/packages/?name=python2-pyside) — привязки Python 2.x
+    *   [python-pyside](https://aur.archlinux.org/packages/python-pyside/) — привязки Python 3.x
+    *   [python2-pyside](https://aur.archlinux.org/packages/python2-pyside/) — привязки Python 2.x
 *   Сайт: [http://www.pyside.org/](http://www.pyside.org/)
 *   Команда запуска: `python hello-pyside.py` или `python2 hello-pyside.py`
 

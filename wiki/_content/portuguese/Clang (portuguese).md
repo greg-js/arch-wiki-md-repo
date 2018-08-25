@@ -1,6 +1,6 @@
-**Status de tradução:** Esse artigo é uma tradução de [Clang](/index.php/Clang "Clang"). Data da última tradução: 2018-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Clang&diff=0&oldid=534570) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Clang](/index.php/Clang "Clang"). Data da última tradução: 2018-08-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Clang&diff=0&oldid=537466) na versão em inglês.
 
-[Clang](http://clang.llvm.org/) é um compilador [C](/index.php/C "C")/C++/Objective C baseado em LLVM. É distribuído sob a licença BSD.
+[Clang](http://clang.llvm.org/) é um compilador [C](/index.php/C "C")/C++/Objective C//[CUDA](/index.php/CUDA "CUDA") baseado em [LLVM](/index.php/LLVM "LLVM"). É distribuído sob a licença BSD.
 
 ## Contents
 
@@ -11,7 +11,7 @@
 
 ## Instalação
 
-Instale [clang](https://www.archlinux.org/packages/?name=clang) dos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais").
+[Instale](/index.php/Instale "Instale") o pacote [clang](https://www.archlinux.org/packages/?name=clang).
 
 ## Compilar pacotes com Clang
 
@@ -41,3 +41,4 @@ $ scan-build gcc -c t1.c t2.c
 
 *   [Wikipedia:pt:Clang](https://en.wikipedia.org/wiki/pt:Clang "wikipedia:pt:Clang")
 *   [scan-build: executando um analisador a partir da linha de comando](http://clang-analyzer.llvm.org/scan-build.html)
+*   [Compilando CUDA com clang](http://llvm.org/docs/CompileCudaWithLLVM.html)

@@ -129,8 +129,6 @@ Xfconf es donde Xfce guarda las opciones de configuración y muchas de las confi
 
 El applet para panel (GNOME) "Ubuntu System Panel" tiene características similares a las encontradas en su equivalente KDE v4.2\. Puede ser agregado a un panel xfce4-panel usando el applet 'XfApplet', que permite usar applets GNOME en Xfce-panel.
 
-Está disponible en [AUR](/index.php/Arch_User_Repository "Arch User Repository") como el paquete [usp2](https://aur.archlinux.org/packages/usp2/).
-
 #### Cómo remover elementos del Menú del Sistema
 
 ##### Método 1

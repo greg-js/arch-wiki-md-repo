@@ -150,7 +150,7 @@ The following [widget toolkit](https://en.wikipedia.org/wiki/Widget_toolkit "wik
 
 *   **pySide** — [Qt](/index.php/Qt "Qt") bindings
 
-	[https://wiki.qt.io/PySide](https://wiki.qt.io/PySide) || [python2-pyside](https://www.archlinux.org/packages/?name=python2-pyside) [python-pyside](https://www.archlinux.org/packages/?name=python-pyside)
+	[https://wiki.qt.io/PySide](https://wiki.qt.io/PySide) || [python2-pyside](https://aur.archlinux.org/packages/python2-pyside/) [python-pyside](https://aur.archlinux.org/packages/python-pyside/)
 
 *   **pyGTK** — [GTK+ 2](/index.php/GTK%2B "GTK+") bindings
 

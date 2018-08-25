@@ -128,7 +128,7 @@ More information is available in [systemd.time(7)](https://jlk.fjfi.cvut.cz/arch
 **Tip:**
 
 *   `OnCalendar` time specifications can be tested in order to verify their validity and to calculate the next time the condition would elapse when used on a timer unit file with the `calendar` option of the *systemd-analyze* utility. For example, one can use `systemd-analyze calendar weekly` or `systemd-analyze calendar "Mon,Tue *-*-01..04 12:00:00"`.
-*   `faketime` command is especially usefull to test various scenarios with the above command. It comes with [libfaketime](https://www.archlinux.org/packages/?name=libfaketime) package
+*   The `faketime` command is especially useful to test various scenarios with the above command; it comes with the [libfaketime](https://www.archlinux.org/packages/?name=libfaketime) package.
 *   Special event expressions like `daily` and `weekly` refer to *specific start times* and thus any timers sharing such calendar events will start simultaneously. Timers sharing start events can cause poor system performance if the timers' services compete for system resources. The `RandomizedDelaySec` option in the `[Timer]` section avoids this problem by randomly staggering the start time of each timer. See [systemd.timer(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.timer.5).
 
 ## Transient .timer units

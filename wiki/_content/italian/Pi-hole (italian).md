@@ -13,11 +13,10 @@ Articoli correlati
 *   [1 Pi-hole Server](#Pi-hole_Server)
     *   [1.1 Installazione](#Installazione)
     *   [1.2 Configurazione iniziale](#Configurazione_iniziale)
-        *   [1.2.1 Dnsmasq](#Dnsmasq)
+        *   [1.2.1 FTL](#FTL)
         *   [1.2.2 Web Server](#Web_Server)
             *   [1.2.2.1 Lighttpd](#Lighttpd)
             *   [1.2.2.2 Nginx](#Nginx)
-        *   [1.2.3 FTL](#FTL)
     *   [1.3 Far usare Pi-hole ai propri apparati](#Far_usare_Pi-hole_ai_propri_apparati)
         *   [1.3.1 Risoluzione dei problemi](#Risoluzione_dei_problemi)
     *   [1.4 Usare Pi-hole attraverso OpenVPN](#Usare_Pi-hole_attraverso_OpenVPN)
@@ -25,7 +24,7 @@ Articoli correlati
 *   [2 Pi-hole Standalone](#Pi-hole_Standalone)
     *   [2.1 Installazione](#Installazione_2)
     *   [2.2 Configurazione iniziale](#Configurazione_iniziale_2)
-        *   [2.2.1 Dnsmasq](#Dnsmasq_2)
+        *   [2.2.1 Dnsmasq](#Dnsmasq)
         *   [2.2.2 Configurare la risoluzione dei nomi](#Configurare_la_risoluzione_dei_nomi)
             *   [2.2.2.1 Manualmente](#Manualmente)
             *   [2.2.2.2 Openresolve](#Openresolve)
@@ -43,7 +42,22 @@ Installa il pacchetto [pi-hole-server](https://aur.archlinux.org/packages/pi-hol
 
 ### Configurazione iniziale
 
-#### Dnsmasq
+#### FTL
+
+[motore Pi-hole FTL](https://github.com/pi-hole/Il) ([pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/)) è una dipendenza del progetto Pi-hole.
+
+FTL è un DNS server/forwarder e una interfaccia simil-database/fornitore di API che si occupa del salvataggio a lungo termine delle richieste che gli utenti possono richiedere "long-term data" section of the WebGUI. To be clear, data are collected and stored in two places:
+
+1.  I dati giornalieri vengono conservati in RAM e sono catturati in tempo reale dal file `/run/log/pihole/pihole.log`
+2.  I dati storici (i.e. di diversi giorni/settimane/mesi) sono conservati sul filesystem `/etc/pihole/pihole-FTL.db` aggiornati ad un intervallo deciso dall'utente.
+
+**Tip:** Se Pi-hole è installato su una unità a stato solito (SD dei mini PC, SSD, unità M.2/NVMe, etc...) si raccomanda di settare il valore di DBINTERVAL almeno a 60.0 per minimizzare le scritture sul database.
+
+Consultare il [Readme su GitHub](https://github.com/pi-hole/FTL#) per come configurare FTL.
+
+`pi-hole-ftl.service` è abilitato staticamente; ri/avvialo.
+
+Dalla versione 4.0, Pi-hole-FTL integra un fork privato di dnsmasq. E' ancora possibile usare i precedenti file di configurazione di dnsmasq. Dnsmasq ora va in conflitto con FTL e verrà disinstallato.
 
 Assicurati che la seguente riga in `/etc/dnsmasq.conf` sia non commentata:
 
@@ -51,8 +65,6 @@ Assicurati che la seguente riga in `/etc/dnsmasq.conf` sia non commentata:
 conf-dir=/etc/dnsmasq.d/,*.conf
 
 ```
-
-**Note:** Se già usi dnsmasq, dalla versione 3.0 di Pi-hole FTL è richiesto il parametro `log-queries=extra`.
 
 Abilita `dnsmasq.service` e ri/avvia il servizio.
 
@@ -140,21 +152,6 @@ Copia il file di configurazione fornito dal pacchetto:
 ```
 
 Abilita `nginx.service` `php-fpm.service` e ri/avvia i servizi.
-
-#### FTL
-
-[motore Pi-hole FTL](https://github.com/pi-hole/Il) ([pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/)) is a dependency of the web interface.
-
-FTL è un interfaccia simil-database/fornitore di API che si occupa del salvataggio a lungo termine delle richieste che gli utenti possono richiedere "long-term data" section of the WebGUI. To be clear, data are collected and stored in two places:
-
-1.  I dati giornalieri vengono conservati in RAM e sono catturati in tempo reale dal file `/run/log/pihole/pihole.log`
-2.  I dati storici (i.e. di diversi giorni/settimane/mesi) sono conservati sul filesystem `/etc/pihole/pihole-FTL.db` aggiornati ad un intervallo deciso dall'utente.
-
-**Tip:** Se Pi-hole è installato su una unità a stato solito (SD dei mini PC, SSD, unità M.2/NVMe, etc...) si raccomanda di settare il valore di DBINTERVAL almeno a 60.0 per minimizzare le scritture sul database.
-
-Consultare il [Readme su GitHub](https://github.com/pi-hole/FTL#) per come configurare FTL.
-
-`pi-hole-ftl.service` è abilitato staticamente; ri/avvialo.
 
 ### Far usare Pi-hole ai propri apparati
 

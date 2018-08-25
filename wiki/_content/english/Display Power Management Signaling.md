@@ -3,13 +3,14 @@
 ## Contents
 
 *   [1 Setting up DPMS in X](#Setting_up_DPMS_in_X)
-*   [2 Modifying DPMS and screensaver settings using xset](#Modifying_DPMS_and_screensaver_settings_using_xset)
-*   [3 DPMS interaction in a Linux console with setterm](#DPMS_interaction_in_a_Linux_console_with_setterm)
-    *   [3.1 Prevent screen from turning off](#Prevent_screen_from_turning_off)
-    *   [3.2 Pipe the output to a cat to see the escapes](#Pipe_the_output_to_a_cat_to_see_the_escapes)
-    *   [3.3 Pipe the escapes to any tty (with write/append perms) to modify that terminal](#Pipe_the_escapes_to_any_tty_.28with_write.2Fappend_perms.29_to_modify_that_terminal)
-        *   [3.3.1 Bash loop to set ttys 0-256](#Bash_loop_to_set_ttys_0-256)
-*   [4 See also](#See_also)
+*   [2 Disabling DPMS](#Disabling_DPMS)
+*   [3 Modifying DPMS and screensaver settings using xset](#Modifying_DPMS_and_screensaver_settings_using_xset)
+*   [4 DPMS interaction in a Linux console with setterm](#DPMS_interaction_in_a_Linux_console_with_setterm)
+    *   [4.1 Prevent screen from turning off](#Prevent_screen_from_turning_off)
+    *   [4.2 Pipe the output to a cat to see the escapes](#Pipe_the_output_to_a_cat_to_see_the_escapes)
+    *   [4.3 Pipe the escapes to any tty (with write/append perms) to modify that terminal](#Pipe_the_escapes_to_any_tty_.28with_write.2Fappend_perms.29_to_modify_that_terminal)
+        *   [4.3.1 Bash loop to set ttys 0-256](#Bash_loop_to_set_ttys_0-256)
+*   [5 See also](#See_also)
 
 ## Setting up DPMS in X
 
@@ -51,6 +52,17 @@ Section "ServerLayout"
     Option "SuspendTime" "0"
     Option "OffTime"     "0"
     Option "BlankTime"   "0"
+EndSection
+
+```
+
+## Disabling DPMS
+
+Since DPMS is enable by default in many scenarios, explicit action must be taken to disable it. To complete disable DPMS, add the following to a file in `/etc/X11/xorg.conf.d/10-monitor.conf`:
+
+```
+Section "Extensions"
+    Option      "DPMS" "Disable"
 EndSection
 
 ```

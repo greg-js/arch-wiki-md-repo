@@ -51,7 +51,7 @@ De la página web del [proyecto](http://freedesktop.org/wiki/Software/systemd):
 
 ## Uso básico de systemctl
 
-La principal orden para controlar *systemd* es `systemctl`. Algunos de los posibles usos son el examen del estado del sistema, y la gestión del sistema y de los servicios. Consulte [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) para conocer más detalles.
+La principal orden para controlar *systemd* es `systemctl`. Algunos de los posibles usos son el examen del estado del sistema, y la gestión del sistema y de los servicios. Consulte [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) para conocer más detalles.
 
 **Sugerencia:** Puede utilizar las siguientes órdenes `systemctl` con el parámetro `-H *usario*@*host*` para controlar una instancia de systemd en una máquina remota. Esto utilizará [SSH](/index.php/SSH "SSH") para conectarse a la instancia systemd remota.
 
@@ -85,9 +85,9 @@ Cuando se usa `systemctl`, por lo general, tiene que especificar el nombre compl
 *   Los puntos de montaje se traducirán automáticamente en la correspondiente unidad `.mount`. Por ejemplo, si especifica `/home` será equivalente a `home.mount`.
 *   Similar a los puntos de montaje, los dispositivos se traducen automáticamente en la correspondiente unidad `.device`, por lo tanto, la especificación `/dev/sda2` es equivalente a `dev-sda2.device`.
 
-Consulte [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) para más detalles.
+Consulte [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) para más detalles.
 
-**Sugerencia:** La mayoría de las siguientes órdenes también funcionan si se especifican varias unidades, vea [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) para más información.
+**Sugerencia:** La mayoría de las siguientes órdenes también funcionan si se especifican varias unidades, vea [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) para más información.
 
 Activa una unidad de inmediato:
 
@@ -172,7 +172,7 @@ Las dependencias se colocan normalmente en los archivos .service y no en los .ta
 
 ### Type
 
-Existen diferentes tipos de arranque a tener en cuenta cuando se escribe un archivo de servicio personalizado. Esto se configura mediante el parámetro `Type=` en la sección `[Service]`. Consulte [systemd.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) para una explicación más detallada.
+Existen diferentes tipos de arranque a tener en cuenta cuando se escribe un archivo de servicio personalizado. Esto se configura mediante el parámetro `Type=` en la sección `[Service]`. Consulte [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) para una explicación más detallada.
 
 *   `Type=simple`: *systemd* considera que el servicio debe iniciarse inmediatamente. El proceso no debe romperse. No utilice este tipo si otros servicios tienen que ser llamados por ese servicio, a menos que no sea activado por el socket.
 *   `Type=forking`: *systemd* considera que el servicio debe ser iniciado antes que el proceso se rompa y el antecesor se haya terminado. Para los demonios clásicos use este tipo a menos que sepa que no es necesario, ya que la mayoría de los demonios usan doble bifurcación para indicar que están listos. Debe especificar también `PIDFile=` para que *systemd* puede realizar un seguimiento del proceso principal.
@@ -340,7 +340,7 @@ Mostrar todos los mensajes del arranque:
 
 ```
 
-Sin embargo, a veces a uno le interesan no los mensajes actuales, sino los mensajes desde el arranque anterior (por ejemplo, si ocurrió un fallo del sistema irrecuperable). Esto es posible pasando el parámetro `-b`: `journalctl -b -0` muestra los mensajes del arranque actual, `journalctl -b -1` muestra los mensajes del arranque anterior, `journalctl -b -2` muestra los mensajes desde los dos últimos arranques y así sucesivamente. Véase [journalctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) para una descripción completa, dado que los argumentos que se pueden pasar a la orden hacen que el filtrado pueda ser mucho más potente.
+Sin embargo, a veces a uno le interesan no los mensajes actuales, sino los mensajes desde el arranque anterior (por ejemplo, si ocurrió un fallo del sistema irrecuperable). Esto es posible pasando el parámetro `-b`: `journalctl -b -0` muestra los mensajes del arranque actual, `journalctl -b -1` muestra los mensajes del arranque anterior, `journalctl -b -2` muestra los mensajes desde los dos últimos arranques y así sucesivamente. Véase [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) para una descripción completa, dado que los argumentos que se pueden pasar a la orden hacen que el filtrado pueda ser mucho más potente.
 
 Seguir los mensajes nuevos:
 
@@ -377,7 +377,7 @@ Mostrar búfer circular del kernel:
 
 ```
 
-Véase [journalctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1), [systemd.journal-fields(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.journal-fields.7) o esta [entrada del blog](http://0pointer.de/blog/projects/journalctl.html) de Lennert para obtener más detalles.
+Véase [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1), [systemd.journal-fields(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.journal-fields.7) o esta [entrada del blog](http://0pointer.de/blog/projects/journalctl.html) de Lennert para obtener más detalles.
 
 ### Límite del tamaño de journal
 
@@ -385,7 +385,7 @@ Si journal se ha creado como permanente (no volátil), el límite de su tamaño 
 
  `SystemMaxUse=50M` 
 
-Consulte [journald.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journald.conf.5) para más información.
+Consulte [journald.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journald.conf.5) para más información.
 
 ### Journald coexistiendo con syslog
 

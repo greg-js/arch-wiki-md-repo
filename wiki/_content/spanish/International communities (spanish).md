@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [International communities](/index.php/International_communities "International communities"). Fecha de la última traducción/revisión: **2018-08-13**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=International_communities&diff=0&oldid=532618).
+**Estado de la traducción:** este artículo es una versión traducida de [International communities](/index.php/International_communities "International communities"). Fecha de la última traducción/revisión: **2018-08-23**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=International_communities&diff=0&oldid=535233).
 
 Artículos relacionados
 
@@ -144,6 +144,7 @@ Esta lista no esta de ninguna manera completa. Si conoce una comunidad que no fi
 ## Taiwán
 
 *   Página principal: [https://archlinux.tw/](https://archlinux.tw/)
+*   Telegram: [https://t.me/ArchLinuxTaiwan](https://t.me/ArchLinuxTaiwan)
 *   Foro: [https://groups.google.com/forum/#!forum/archlinux-tw-general](https://groups.google.com/forum/#!forum/archlinux-tw-general)
 *   Wiki: [Main page (正體中文)](/index.php/Main_page_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Main page (正體中文)")
 

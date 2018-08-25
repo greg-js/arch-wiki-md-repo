@@ -5,7 +5,7 @@ Users of CPUs belonging to the Intel Haswell and Broadwell processor families in
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Enabling Intel microcode updates](#Enabling_Intel_microcode_updates)
+*   [2 Enabling microcode updates](#Enabling_microcode_updates)
     *   [2.1 GRUB](#GRUB)
         *   [2.1.1 Automatic method](#Automatic_method)
         *   [2.1.2 Manual method](#Manual_method)
@@ -17,7 +17,7 @@ Users of CPUs belonging to the Intel Haswell and Broadwell processor families in
 *   [3 Verifying that microcode got updated on boot](#Verifying_that_microcode_got_updated_on_boot)
 *   [4 Which CPUs accept microcode updates](#Which_CPUs_accept_microcode_updates)
     *   [4.1 Detecting available microcode update](#Detecting_available_microcode_update)
-*   [5 Enabling Intel early microcode loading in custom kernels](#Enabling_Intel_early_microcode_loading_in_custom_kernels)
+*   [5 Enabling early microcode loading in custom kernels](#Enabling_early_microcode_loading_in_custom_kernels)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -26,7 +26,7 @@ For AMD processors the microcode updates are available in [linux-firmware](https
 
 For Intel processors, [install](/index.php/Install "Install") the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package, and continue reading.
 
-## Enabling Intel microcode updates
+## Enabling microcode updates
 
 Microcode must be loaded by the bootloader. Because of the wide variability in users' early-boot configuration, Intel microcode updates may not be triggered automatically by Arch's default configuration. Many AUR kernels have followed the path of the official Arch kernels in this regard.
 
@@ -93,13 +93,6 @@ Edit boot options in `/boot/refind_linux.conf` as per EFI boot stub above, examp
 
 ```
 "Boot with standard options" "rw root=UUID=(...) quiet initrd=/boot/intel-ucode.img initrd=/boot/initramfs-linux.img"
-
-```
-
-Alternatively, if you want to use the Linux initramfs file autodetected by rEFInd, you may use [refind-efi-git-patched](https://aur.archlinux.org/packages/refind-efi-git-patched/). Your `/boot/refind_linux.conf` may then look like the example below: (the `%s` variable is automatically replaced with the autodetected Linux initrd file basename)
-
-```
-"Boot with standard options" "rw root=UUID=(...) quiet initrd=/boot/intel-ucode.img initrd=%s.img"
 
 ```
 
@@ -232,14 +225,15 @@ It is possible to find out if the `intel-ucode.img` contains a microcode image f
 5.  If an update is available, it should show up below *selected microcodes*
 6.  The microcode might already be in your vendor bios and not show up loading in dmesg. Compare to the current microcode running `grep microcode /proc/cpuinfo`
 
-## Enabling Intel early microcode loading in custom kernels
+## Enabling early microcode loading in custom kernels
 
-In order for early loading to work in custom kernels, "CPU microcode loading support" needs to be compiled into the kernel, **not** compiled as a module. This will enable the "Early load microcode" prompt which should be set to "Y".
+In order for early loading to work in custom kernels, "CPU microcode loading support" needs to be compiled into the kernel, **not** compiled as a module. This will enable the "Early load microcode" prompt which should be set to `Y`.
 
 ```
 CONFIG_BLK_DEV_INITRD=Y
 CONFIG_MICROCODE=y
 CONFIG_MICROCODE_INTEL=Y
+CONFIG_MICROCODE_AMD=y
 
 ```
 

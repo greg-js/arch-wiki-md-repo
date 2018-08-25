@@ -13,11 +13,10 @@ Related articles
 *   [1 Pi-hole server](#Pi-hole_server)
     *   [1.1 Installation](#Installation)
     *   [1.2 Initial configuration](#Initial_configuration)
-        *   [1.2.1 Dnsmasq](#Dnsmasq)
+        *   [1.2.1 FTL](#FTL)
         *   [1.2.2 Web server](#Web_server)
             *   [1.2.2.1 Lighttpd](#Lighttpd)
             *   [1.2.2.2 Nginx](#Nginx)
-        *   [1.2.3 FTL](#FTL)
     *   [1.3 Making devices use Pi-hole](#Making_devices_use_Pi-hole)
         *   [1.3.1 Troubleshooting](#Troubleshooting)
     *   [1.4 Using Pi-hole together with OpenVPN](#Using_Pi-hole_together_with_OpenVPN)
@@ -25,7 +24,7 @@ Related articles
 *   [2 Pi-hole Standalone](#Pi-hole_Standalone)
     *   [2.1 Installation](#Installation_2)
     *   [2.2 Initial configuration](#Initial_configuration_2)
-        *   [2.2.1 Dnsmasq](#Dnsmasq_2)
+        *   [2.2.1 Dnsmasq](#Dnsmasq)
         *   [2.2.2 Configuring host name resolution](#Configuring_host_name_resolution)
             *   [2.2.2.1 Manually](#Manually)
             *   [2.2.2.2 Openresolve](#Openresolve)
@@ -43,18 +42,29 @@ Related articles
 
 ### Initial configuration
 
-#### Dnsmasq
+#### FTL
 
-Ensure that the following line in `/etc/dnsmasq.conf` is not commented out:
+The [Pi-hole FTL engine](https://github.com/pi-hole/FTL) ([pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/)) is a dependency of the Pi-hole main project.
+
+FTL is a DNS resolver/forwarder and a database-like wrapper/API that provides long-term storage of requests which users can query through the "long-term data" section of the WebGUI. To be clear, data are collected and stored in two places:
+
+1.  Daily data are stored in RAM and are captured in real-time within `/run/log/pihole/pihole.log`
+2.  Historical data (i.e. over multiple days/weeks/months) are stored on the file system `/etc/pihole/pihole-FTL.db` written out at a user-specified interval.
+
+**Tip:** If Pi-hole is running on a [solid state drive](/index.php/Solid_state_drive "Solid state drive") (single-board computers SD, SSD, M.2/NVMe device, etc...) it is recommended to set the `DBINTERVAL` value to at least 60.0 to minimize writes to the database.
+
+See [the GitHub Readme](https://github.com/pi-hole/FTL#ftls-config-file) for how to configure FTL.
+
+`pi-hole-ftl.service` is statically enabled; re/start it.
+
+Since Pi-hole-FTL version 4.0 a private fork of dnsmasq is integrated in FTL sub-project. Is possible to still use previous dnsmasq config files. Original Dnsmasq is now conflicting with this package and will be uninstalled.
+
+Ensure that the following line in original `/etc/dnsmasq.conf` is not commented out:
 
 ```
 conf-dir=/etc/dnsmasq.d/,*.conf
 
 ```
-
-**Note:** If you already use dnsmasq, since Pi-hole FTL version 3.0 the dnsmasq parameter `log-queries=extra` is required.
-
-[Enable](/index.php/Enable "Enable") `dnsmasq.service` and re/start it.
 
 #### Web server
 
@@ -140,21 +150,6 @@ Copy the package provided default config for Pi-hole:
 ```
 
 [Enable](/index.php/Enable "Enable") `nginx.service` `php-fpm.service` and re/start them.
-
-#### FTL
-
-The [Pi-hole FTL engine](https://github.com/pi-hole/FTL) ([pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/)) is a dependency of the web interface.
-
-FTL is a database-like wrapper/API that provides long-term storage of requests which users can query through the "long-term data" section of the WebGUI. To be clear, data are collected and stored in two places:
-
-1.  Daily data are stored in RAM and are captured in real-time within `/run/log/pihole/pihole.log`
-2.  Historical data (i.e. over multiple days/weeks/months) are stored on the file system `/etc/pihole/pihole-FTL.db` written out at a user-specified interval.
-
-**Tip:** If Pi-hole is running on a [solid state drive](/index.php/Solid_state_drive "Solid state drive") (single-board computers SD, SSD, M.2/NVMe device, etc...) it is recommended to set the `DBINTERVAL` value to at least 60.0 to minimize writes to the database.
-
-See [the GitHub Readme](https://github.com/pi-hole/FTL#ftls-config-file) for how to configure FTL.
-
-`pi-hole-ftl.service` is statically enabled; re/start it.
 
 ### Making devices use Pi-hole
 

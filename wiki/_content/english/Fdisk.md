@@ -164,6 +164,7 @@ Select the partition's type id. The default, `Linux filesystem`, should be fine 
 **Tip:**
 
 *   When partitioning it is always a good idea to follow the default values for first and last partition sectors. Additionally, specify partition sizes with the *+<size>{M,G,...}* notation. Such partitions are always aligned according to the device properties.
+*   On a MBR partitioned disk leave at least 16.5 KiB free space at the end of the disk to simplify [converting between MBR and GPT](/index.php/Gdisk#Convert_between_MBR_and_GPT "Gdisk") if the need ever arises.
 *   [EFI system partition](/index.php/EFI_system_partition "EFI system partition") requires type `EFI System`.
 *   [GRUB](/index.php/GRUB "GRUB") requires a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") with type `BIOS boot` when installing GRUB to a disk.
 *   It is recommended to use `Linux swap` for any [swap](/index.php/Swap "Swap") partitions, since systemd will automount it.

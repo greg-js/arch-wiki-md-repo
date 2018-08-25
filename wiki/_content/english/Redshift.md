@@ -19,7 +19,7 @@ From the [Redshift project web page](http://jonls.dk/redshift/):
     *   [2.5 Use real screen brightness](#Use_real_screen_brightness)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Screen 1 could not be found](#Screen_1_could_not_be_found)
-    *   [3.2 Left/right clicking the tray icon doesn't work](#Left.2Fright_clicking_the_tray_icon_doesn.27t_work)
+    *   [3.2 Left/right clicking the tray icon does not work](#Left.2Fright_clicking_the_tray_icon_does_not_work)
     *   [3.3 Redshift makes the screen quickly flicker between the set color value of the screen and the default color value](#Redshift_makes_the_screen_quickly_flicker_between_the_set_color_value_of_the_screen_and_the_default_color_value)
     *   [3.4 Redshift works fine when invoked as a command but fails when run as a systemd service](#Redshift_works_fine_when_invoked_as_a_command_but_fails_when_run_as_a_systemd_service)
     *   [3.5 Redshift temporarily resets using some wine apps that reset gamma values](#Redshift_temporarily_resets_using_some_wine_apps_that_reset_gamma_values)
@@ -49,22 +49,22 @@ Redshift reads the configuration file `~/.config/redshift/redshift.conf`, if it 
 To just get it up and running with a basic setup, issue:
 
 ```
-$ redshift -l LAT:LON
+$ redshift -l *LATITUDE*:*LONGITUDE*
 
 ```
 
-where *LAT* is the latitude and *LON* is the longitude of your location.
+where *LATITUDE* is the latitude and *LONGITUDE* is the longitude of your location.
 
 **Tip:** You can get the coordinates of a place with [GeoNames.org](http://www.geonames.org/).
 
 To instantly adjusts the color temperature of your screen use:
 
 ```
-$ redshift -O TEMP
+$ redshift -O *TEMPERATURE*
 
 ```
 
-where *TEMP* is the desired color temperature (between 1000 and 25000).
+where *TEMPERATURE* is the desired color temperature (between `1000` and `25000`).
 
 ### Autostart
 
@@ -94,7 +94,7 @@ users=
 
 **Note:**
 
-*   If using [GNOME](/index.php/GNOME "GNOME"), also toggle Location Services to "On" in "Settings -> Privacy"
+*   If using [GNOME](/index.php/GNOME "GNOME"), also toggle Location Services to "On" in *Settings > Privacy*.
 *   Due possible bugs with geoclue2 and Redshift [[2]](https://github.com/jonls/redshift/issues/318), it may be required to use the `manual` location-provider instead, e.g. for Paris:
 
  `~/.config/redshift/redshift.conf` 
@@ -115,7 +115,7 @@ lat=48.853
 lon=2.349
 ```
 
-*   If using [i3wm](/index.php/I3wm "I3wm") or similar, you'll also need to enable the geoclue agent on startup. As well as `systemctl --user enable redshift-gtk` or `redshift` user service.
+*   If using [i3wm](/index.php/I3wm "I3wm") or similar, you will also need to enable the geoclue agent on startup. As well as `systemctl --user enable redshift-gtk` or `redshift` user service.
 
  `~/.i3/config` 
 ```
@@ -190,7 +190,7 @@ case $1 in
 esac
 ```
 
-Make it executable:
+Make it [executable](/index.php/Executable "Executable"):
 
 ```
 $ chmod +x ~/.config/redshift/hooks/brightness.sh
@@ -210,15 +210,15 @@ redshift[..]: No outputs have backlight property
 
 ### Screen 1 could not be found
 
-Locate configuration-file "redshift.conf" in your distribution and change "screen 1" to "screen 0"
+Locate configuration-file "redshift.conf" in your distribution and change "screen 1" to "screen 0".
 
-### Left/right clicking the tray icon doesn't work
+### Left/right clicking the tray icon does not work
 
-Install [libappindicator-gtk3](https://www.archlinux.org/packages/?name=libappindicator-gtk3). See [[4]](https://github.com/jonls/redshift/issues/363) and [[5]](https://bugs.archlinux.org/task/49971)
+Install [libappindicator-gtk3](https://www.archlinux.org/packages/?name=libappindicator-gtk3). See [redshift issue 363](https://github.com/jonls/redshift/issues/363) and [FS#49971](https://bugs.archlinux.org/task/49971).
 
 ### Redshift makes the screen quickly flicker between the set color value of the screen and the default color value
 
-Make sure there aren't multiple instances of redshift running.
+Make sure there are not multiple instances of redshift running.
 
 ### Redshift works fine when invoked as a command but fails when run as a systemd service
 
@@ -226,16 +226,18 @@ The [systemd](/index.php/Systemd "Systemd") unit has a line in the `redshift.ser
 
 ### Redshift temporarily resets using some wine apps that reset gamma values
 
-If you notice that using some wine apps, redshift seems to reset temporarily upon launch, or adjusting settings, or etc, then there is a useful registry key that seems to alleviate this. See [[6]](https://www.winehq.org/pipermail/wine-bugs/2015-January/403770.html) and [[7]](https://wiki.winehq.org/UsefulRegistryKeys). Set or create the string value
+If you notice that using some wine apps, redshift seems to reset temporarily upon launch, or adjusting settings, or etc, then there is a useful registry key that seems to alleviate this. See [[4]](https://www.winehq.org/pipermail/wine-bugs/2015-January/403770.html) and [[5]](https://wiki.winehq.org/UsefulRegistryKeys). Set or create the string value
 
- `HKEY_CURRENT_USER\Software\Wine\X11 Driver`  `UseXVidMode="N"` using the registry editor, or import/set it otherwise.
+ `HKEY_CURRENT_USER\Software\Wine\X11 Driver`  `UseXVidMode="N"` 
+
+using the registry editor, or import/set it otherwise.
 
 ### Redshift GDBus.Error:org.freedesktop.DBus.Error.AccessDenied on start
 
-If running `$ redshift` and you're getting:
+If running `$ redshift` and you are getting:
 
+ `$ redshift` 
 ```
-$ redshift
 Trying location provider `geoclue2'...
 Using provider `geoclue2'.
 Unable to start GeoClue client: GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: 'redshift' disallowed, no agent for UID 1000.
@@ -246,8 +248,8 @@ Unable to get location from provider.or `$redshift-gtk` and are getting the foll
 
 or running `$ redshift-gtk` and getting the similar error:
 
+ `$ redshift-gtk` 
 ```
-$ redshift-gtk
 Failed to run Redshift
 Trying location provider `geoclue2'...
 Unable to start GeoClue client:
@@ -272,7 +274,7 @@ ExecStart=/usr/lib/geoclue-2.0/demos/agent
 WantedBy=default.target
 ```
 
-Start and enable the service with systemctrl: `$ systemctrl enable --now geoclue-agent.service` and try running redshift again.
+Start and enable the service with systemctl: `$ systemctl --user enable --now geoclue-agent.service` and try running redshift again.
 
 ## See also
 

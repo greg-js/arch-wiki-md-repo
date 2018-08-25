@@ -45,7 +45,7 @@
 | [Codecs (Español)](/index.php/Codecs_(Espa%C3%B1ol) "Codecs (Español)") | `2013-09` |
 | [Code of conduct (Español)](/index.php/Code_of_conduct_(Espa%C3%B1ol) "Code of conduct (Español)") | `2018-07` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
 | [CUPS (Español)](/index.php/CUPS_(Espa%C3%B1ol) "CUPS (Español)") | `2013-09` |
-| [Desktop environment (Español)](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") | `2015-07` | [Cabrokimer](/index.php?title=User:Cabrokimer&action=edit&redlink=1 "User:Cabrokimer (page does not exist)") |
+| [Desktop environment (Español)](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") | `2015-07` | [Cabrokimer](/index.php?title=User:Cabrokimer&action=edit&redlink=1 "User:Cabrokimer (page does not exist)")[Inactivo](/index.php/ArchWiki_Translation_Team/About_(Espa%C3%B1ol)#Inactivos "ArchWiki Translation Team/About (Español)") |
 | [Direct modem connection (Español)](/index.php/Direct_modem_connection_(Espa%C3%B1ol) "Direct modem connection (Español)") | `2014-12` |
 | [Disk encryption (Español)](/index.php/Disk_encryption_(Espa%C3%B1ol) "Disk encryption (Español)") | `2015-06` |
 | [Display manager (Español)](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") | `2013-09` |
@@ -54,6 +54,7 @@
 | [dm-crypt/Encrypting an entire system (Español)](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting an entire system (Español)") | `2015-06` |
 | [DNSCrypt (Español)](/index.php/DNSCrypt_(Espa%C3%B1ol) "DNSCrypt (Español)") | `2014-09` |
 | [dnsmasq (Español)](/index.php/Dnsmasq_(Espa%C3%B1ol) "Dnsmasq (Español)") | `2014-09` |
+| [EFI system partition (Español)](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)") | `2018-08` |
 | [EFISTUB (Español)](/index.php/EFISTUB_(Espa%C3%B1ol) "EFISTUB (Español)") | `2014-12` |
 | [File systems (Español)](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)") | `2014-11` |
 | [Fonts (Español)](/index.php/Fonts_(Espa%C3%B1ol) "Fonts (Español)") | `2008-06` |
@@ -95,7 +96,7 @@
 | [List of games (Español)](/index.php/List_of_games_(Espa%C3%B1ol) "List of games (Español)") | `2013-10` | Página desgajada de [List of applications](/index.php/List_of_applications "List of applications") |
 | [Locale (Español)](/index.php/Locale_(Espa%C3%B1ol) "Locale (Español)") | `2013-09` |
 | [LVM (Español)](/index.php/LVM_(Espa%C3%B1ol) "LVM (Español)") | `2015-06` |
-| [Main page (Español)](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") | `2018-04` | [Pedro](/index.php/User:Pedro "User:Pedro") | Hay una pequeña adición con respecto a la versión original, al incluir un enlace a la página del equipo de traducción |
+| [Main page (Español)](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") | `2018-08` | [Pedro](/index.php/User:Pedro "User:Pedro") | Hay una pequeña adición con respecto a la versión original, al incluir un enlace a la página del equipo de traducción |
 | [Master Boot Record (Español)](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)") | `2013-09` |
 | [Mirrors (Español)](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)") | `2013-09` |
 | [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") | `2013-09` |
@@ -151,197 +152,197 @@
 
 ### Tabla B: artículos de traducción secundaria
 
-| Artículo | Área de conocimiento | Revisión | Mantenedor | Observaciones |
-| [Abiword (Español)](/index.php/Abiword_(Espa%C3%B1ol) "Abiword (Español)") | Ofimática | `2011-07` | Esbozo |
-| [Acpid (Español)](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)") | Gestión de energía | `2013-03` |
-| [Activating Numlock on Bootup (Español)](/index.php/Activating_Numlock_on_Bootup_(Espa%C3%B1ol) "Activating Numlock on Bootup (Español)") | Teclado | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
-| [Ada Compiler (Español)](/index.php/Ada_Compiler_(Espa%C3%B1ol) "Ada Compiler (Español)") | Desarrollo | `2008-05` | Obsoleta. «ada compiler» es proporcionado por gcc-ada.
+| Artículo | Revisión | Mantenedor | Observaciones |
+| [Abiword (Español)](/index.php/Abiword_(Espa%C3%B1ol) "Abiword (Español)") | `2011-07` | Esbozo |
+| [Acpid (Español)](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)") | `2013-03` |
+| [Activating Numlock on Bootup (Español)](/index.php/Activating_Numlock_on_Bootup_(Espa%C3%B1ol) "Activating Numlock on Bootup (Español)") | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
+| [Ada Compiler (Español)](/index.php/Ada_Compiler_(Espa%C3%B1ol) "Ada Compiler (Español)") | `2008-05` | Obsoleta. «ada compiler» es proporcionado por gcc-ada.
 No tiene versión inglesa correlativa. |
-| [Allow users to shutdown (Español)](/index.php/Allow_users_to_shutdown_(Espa%C3%B1ol) "Allow users to shutdown (Español)") | Seguridad | `2012-10` |
-| [Apache and FastCGI (Español)](/index.php/Apache_and_FastCGI_(Espa%C3%B1ol) "Apache and FastCGI (Español)") | Servidor web | `2008-05` |
-| [Apache, suEXEC and Virtual Hosts (Español)](/index.php/Apache,_suEXEC_and_Virtual_Hosts_(Espa%C3%B1ol) "Apache, suEXEC and Virtual Hosts (Español)") | Servidor web | `2008-05` |
-| [Arch Hurd Project (Español)](/index.php/Arch_Hurd_Project_(Espa%C3%B1ol) "Arch Hurd Project (Español)") | Kernel | `2010-04` |
-| [Arch Linux press coverage](/index.php/Arch_Linux_press_coverage "Arch Linux press coverage") | Información/general | `--` | *No necesita traducción*.
+| [Allow users to shutdown (Español)](/index.php/Allow_users_to_shutdown_(Espa%C3%B1ol) "Allow users to shutdown (Español)") | `2012-10` |
+| [Apache and FastCGI (Español)](/index.php/Apache_and_FastCGI_(Espa%C3%B1ol) "Apache and FastCGI (Español)") | `2008-05` |
+| [Apache, suEXEC and Virtual Hosts (Español)](/index.php/Apache,_suEXEC_and_Virtual_Hosts_(Espa%C3%B1ol) "Apache, suEXEC and Virtual Hosts (Español)") | `2008-05` |
+| [Arch Hurd Project (Español)](/index.php/Arch_Hurd_Project_(Espa%C3%B1ol) "Arch Hurd Project (Español)") | `2010-04` |
+| [Arch Linux press coverage](/index.php/Arch_Linux_press_coverage "Arch Linux press coverage") | `--` | *No necesita traducción*.
 No obstante, hay un artículo en español, [Arch Linux press coverage (Español)](/index.php/Arch_Linux_press_coverage_(Espa%C3%B1ol) "Arch Linux press coverage (Español)"),
 creado en un intento de recopilar información sobre Arch Linux en prensa hispana. |
-| [Arch packaging standards (Español)](/index.php/Arch_packaging_standards_(Espa%C3%B1ol) "Arch packaging standards (Español)") | Gestión de paquetes | `2013-03` |
-| [Arch terminology (Español)](/index.php/Arch_terminology_(Espa%C3%B1ol) "Arch terminology (Español)") | Información/Arch | `2011-03` | Solo parcialmente traducido |
-| [Arch64 FAQ (Español)](/index.php/Arch64_FAQ_(Espa%C3%B1ol) "Arch64 FAQ (Español)") | Información/Arch | `2010-08` |
-| [ASUS Eee PC 1005HA (Español)](/index.php/ASUS_Eee_PC_1005HA_(Espa%C3%B1ol) "ASUS Eee PC 1005HA (Español)") | Hardware | `2010-08` |
-| [Audacious (Español)](/index.php/Audacious_(Espa%C3%B1ol) "Audacious (Español)") | Reproductor multimedia | `2011-07` |
-| [AUR helpers (Español)](/index.php/AUR_helpers_(Espa%C3%B1ol) "AUR helpers (Español)") | Gestión de paquetes | `2018-07` | [Phenom](/index.php?title=User:Phenom&action=edit&redlink=1 "User:Phenom (page does not exist)") |
-| [AUR Trusted User Guidelines (Español)](/index.php/AUR_Trusted_User_Guidelines_(Espa%C3%B1ol) "AUR Trusted User Guidelines (Español)") | Repositorios no oficiales | `2009-12` |
-| [Autofs (Español)](/index.php/Autofs_(Espa%C3%B1ol) "Autofs (Español)") | Sistema de archivos | `2008-05` |
-| [Automatic login to virtual console (Español)](/index.php/Automatic_login_to_virtual_console_(Espa%C3%B1ol) "Automatic login to virtual console (Español)") | Proceso de arranque | `2013-09` |
-| [Autostarting (Español)](/index.php/Autostarting_(Espa%C3%B1ol) "Autostarting (Español)") | Proceso de arranque | `2013-09` |
-| [Awesome (Español)](/index.php/Awesome_(Espa%C3%B1ol) "Awesome (Español)") | Gestor de ventanas | `2012-12` |
-| [Bash (Español)](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") | Shell de órdenes | `2008-05` | Esbozo |
-| [Bitlbee (Español)](/index.php/Bitlbee_(Espa%C3%B1ol) "Bitlbee (Español)") | Cliente IRC | `2012-04` |
-| [Bluetooth (Español)](/index.php/Bluetooth_(Espa%C3%B1ol) "Bluetooth (Español)") | Periféricos/Conectividad | `2018-04` | En proceso |
-| [Browser plugins (Español)](/index.php/Browser_plugins_(Espa%C3%B1ol) "Browser plugins (Español)") | Complementos navegador | `2008-09` |
-| [Bug Day (Español)](/index.php/Bug_Day_(Espa%C3%B1ol) "Bug Day (Español)") | Eventos | `2013-03` |
-| [BURG (Español)](/index.php/BURG_(Espa%C3%B1ol) "BURG (Español)") | Gestor de arranque | `2012-02` |
-| [Capi4hylafax (Español)](/index.php/Capi4hylafax_(Espa%C3%B1ol) "Capi4hylafax (Español)") | Periféricos/Módem | `2008-05` |
-| [Cedega (Español)](/index.php/Cedega_(Espa%C3%B1ol) "Cedega (Español)") | Wine | `2011-03` |
-| [Change username (Español)](/index.php/Change_username_(Espa%C3%B1ol) "Change username (Español)") | Seguridad/Usuario | `2013-09` |
-| [Chromium (Español)](/index.php/Chromium_(Espa%C3%B1ol) "Chromium (Español)") | Aplicaciones/navegador web | `2011-07` | Esbozo |
-| [Claws Mail (Español)](/index.php/Claws_Mail_(Espa%C3%B1ol) "Claws Mail (Español)") | Aplicaciones/gestor e-mail | `2011-03` | Página solo en español (sin versión inglesa) |
-| [Color Bash Prompt (Español)](/index.php/Color_Bash_Prompt_(Espa%C3%B1ol) "Color Bash Prompt (Español)") | Shell/Funcionalidades | `2008-07` |
-| [Compiz (Español)](/index.php/Compiz_(Espa%C3%B1ol) "Compiz (Español)") | Gestor de ventanas | `2009-12` |
-| [Conky (Español)](/index.php/Conky_(Espa%C3%B1ol) "Conky (Español)") | Monitorización del sistema | `2011-03` |
-| [General purpose mouse (Español)](/index.php/General_purpose_mouse_(Espa%C3%B1ol) "General purpose mouse (Español)") | Soporte para ratón | `2009-04` |
-| [Convert a single drive system to RAID (Español)](/index.php/Convert_a_single_drive_system_to_RAID_(Espa%C3%B1ol) "Convert a single drive system to RAID (Español)") | Configuración sistema | `2011-03` |
-| [Convert AVI to DVD (Español)](/index.php/Convert_AVI_to_DVD_(Espa%C3%B1ol) "Convert AVI to DVD (Español)") | Multimedia | `2011-03` |
-| [CPU frequency scaling (Español)](/index.php/CPU_frequency_scaling_(Espa%C3%B1ol) "CPU frequency scaling (Español)") | Gestión energía | `2008-05` |
-| [Creating packages (Español)](/index.php/Creating_packages_(Espa%C3%B1ol) "Creating packages (Español)") | Gestión paquetes | `2010-10` |
-| [Cursor themes (Español)](/index.php/Cursor_themes_(Espa%C3%B1ol) "Cursor themes (Español)") | Información | `2008-05` |
-| [Daemons (Español)](/index.php/Daemons_(Espa%C3%B1ol) "Daemons (Español)") | Configuración del sistema/Demonios | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
-| [D-Bus (Español)](/index.php/D-Bus_(Espa%C3%B1ol) "D-Bus (Español)") | Configuración del sistema | `2013-09` |
-| [Dell Mini 10v (Español)](/index.php/Dell_Mini_10v_(Espa%C3%B1ol) "Dell Mini 10v (Español)") | Información/Hardware | `2011-04` |
-| [Deluge (Español)](/index.php/Deluge_(Espa%C3%B1ol) "Deluge (Español)") | Cliente bittorrent | `2011-01` |
-| [Desktop notifications (Español)](/index.php/Desktop_notifications_(Espa%C3%B1ol) "Desktop notifications (Español)") | Desarrollo | `2010-07` |
-| [Digital Cameras (Español)](/index.php/Digital_Cameras_(Espa%C3%B1ol) "Digital Cameras (Español)") | Hardware | `2011-03` |
-| [Disable clearing of boot messages (Español)](/index.php/Disable_clearing_of_boot_messages_(Espa%C3%B1ol) "Disable clearing of boot messages (Español)") | Configuración del sistema | `2011-03` |
-| [Disable PC speaker beep (Español)](/index.php/Disable_PC_speaker_beep_(Espa%C3%B1ol) "Disable PC speaker beep (Español)") | Sonido | `2013-09` |
-| [dmenu (Español)](/index.php/Dmenu_(Espa%C3%B1ol) "Dmenu (Español)") | Lanzador de menú | `2008-05` |
-| [DokuWiki (Español)](/index.php/DokuWiki_(Espa%C3%B1ol) "DokuWiki (Español)") | Wiki | `2013-09` |
-| [DOSBox (Español)](/index.php/DOSBox_(Espa%C3%B1ol) "DOSBox (Español)") | Emulador de PC | `2011-03` |
-| [Downgrading packages (Español)](/index.php/Downgrading_packages_(Espa%C3%B1ol) "Downgrading packages (Español)") | Gestión de paquetes | `2011-03` | Sin contenido alguno (tan solo el título).
+| [Arch packaging standards (Español)](/index.php/Arch_packaging_standards_(Espa%C3%B1ol) "Arch packaging standards (Español)") | `2013-03` |
+| [Arch terminology (Español)](/index.php/Arch_terminology_(Espa%C3%B1ol) "Arch terminology (Español)") | `2011-03` | Solo parcialmente traducido |
+| [Arch64 FAQ (Español)](/index.php/Arch64_FAQ_(Espa%C3%B1ol) "Arch64 FAQ (Español)") | `2010-08` |
+| [ASUS Eee PC 1005HA (Español)](/index.php/ASUS_Eee_PC_1005HA_(Espa%C3%B1ol) "ASUS Eee PC 1005HA (Español)") | `2010-08` |
+| [Audacious (Español)](/index.php/Audacious_(Espa%C3%B1ol) "Audacious (Español)") | `2011-07` |
+| [AUR helpers (Español)](/index.php/AUR_helpers_(Espa%C3%B1ol) "AUR helpers (Español)") | `2018-07` | [Phenom](/index.php?title=User:Phenom&action=edit&redlink=1 "User:Phenom (page does not exist)") |
+| [AUR Trusted User Guidelines (Español)](/index.php/AUR_Trusted_User_Guidelines_(Espa%C3%B1ol) "AUR Trusted User Guidelines (Español)") | `2009-12` |
+| [Autofs (Español)](/index.php/Autofs_(Espa%C3%B1ol) "Autofs (Español)") | `2008-05` |
+| [Automatic login to virtual console (Español)](/index.php/Automatic_login_to_virtual_console_(Espa%C3%B1ol) "Automatic login to virtual console (Español)") | `2013-09` |
+| [Autostarting (Español)](/index.php/Autostarting_(Espa%C3%B1ol) "Autostarting (Español)") | `2013-09` |
+| [Awesome (Español)](/index.php/Awesome_(Espa%C3%B1ol) "Awesome (Español)") | `2012-12` |
+| [Bash (Español)](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") | `2008-05` | Esbozo |
+| [Bitlbee (Español)](/index.php/Bitlbee_(Espa%C3%B1ol) "Bitlbee (Español)") | `2012-04` |
+| [Bluetooth (Español)](/index.php/Bluetooth_(Espa%C3%B1ol) "Bluetooth (Español)") | `2018-04` | En proceso |
+| [Browser plugins (Español)](/index.php/Browser_plugins_(Espa%C3%B1ol) "Browser plugins (Español)") | `2008-09` |
+| [Bug Day (Español)](/index.php/Bug_Day_(Espa%C3%B1ol) "Bug Day (Español)") | `2013-03` |
+| [BURG (Español)](/index.php/BURG_(Espa%C3%B1ol) "BURG (Español)") | `2012-02` |
+| [Capi4hylafax (Español)](/index.php/Capi4hylafax_(Espa%C3%B1ol) "Capi4hylafax (Español)") | `2008-05` |
+| [Cedega (Español)](/index.php/Cedega_(Espa%C3%B1ol) "Cedega (Español)") | `2011-03` |
+| [Change username (Español)](/index.php/Change_username_(Espa%C3%B1ol) "Change username (Español)") | `2013-09` |
+| [Chromium (Español)](/index.php/Chromium_(Espa%C3%B1ol) "Chromium (Español)") | `2011-07` | Esbozo |
+| [Claws Mail (Español)](/index.php/Claws_Mail_(Espa%C3%B1ol) "Claws Mail (Español)") | `2011-03` | Página solo en español (sin versión inglesa) |
+| [Color Bash Prompt (Español)](/index.php/Color_Bash_Prompt_(Espa%C3%B1ol) "Color Bash Prompt (Español)") | `2008-07` |
+| [Compiz (Español)](/index.php/Compiz_(Espa%C3%B1ol) "Compiz (Español)") | `2009-12` |
+| [Conky (Español)](/index.php/Conky_(Espa%C3%B1ol) "Conky (Español)") | `2011-03` |
+| [General purpose mouse (Español)](/index.php/General_purpose_mouse_(Espa%C3%B1ol) "General purpose mouse (Español)") | `2009-04` |
+| [Convert a single drive system to RAID (Español)](/index.php/Convert_a_single_drive_system_to_RAID_(Espa%C3%B1ol) "Convert a single drive system to RAID (Español)") | `2011-03` |
+| [Convert AVI to DVD (Español)](/index.php/Convert_AVI_to_DVD_(Espa%C3%B1ol) "Convert AVI to DVD (Español)") | `2011-03` |
+| [CPU frequency scaling (Español)](/index.php/CPU_frequency_scaling_(Espa%C3%B1ol) "CPU frequency scaling (Español)") | `2008-05` |
+| [Creating packages (Español)](/index.php/Creating_packages_(Espa%C3%B1ol) "Creating packages (Español)") | `2010-10` |
+| [Cursor themes (Español)](/index.php/Cursor_themes_(Espa%C3%B1ol) "Cursor themes (Español)") | `2008-05` |
+| [Daemons (Español)](/index.php/Daemons_(Espa%C3%B1ol) "Daemons (Español)") | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
+| [D-Bus (Español)](/index.php/D-Bus_(Espa%C3%B1ol) "D-Bus (Español)") | `2013-09` |
+| [Dell Mini 10v (Español)](/index.php/Dell_Mini_10v_(Espa%C3%B1ol) "Dell Mini 10v (Español)") | `2011-04` |
+| [Deluge (Español)](/index.php/Deluge_(Espa%C3%B1ol) "Deluge (Español)") | `2011-01` |
+| [Desktop notifications (Español)](/index.php/Desktop_notifications_(Espa%C3%B1ol) "Desktop notifications (Español)") | `2010-07` |
+| [Digital Cameras (Español)](/index.php/Digital_Cameras_(Espa%C3%B1ol) "Digital Cameras (Español)") | `2011-03` |
+| [Disable clearing of boot messages (Español)](/index.php/Disable_clearing_of_boot_messages_(Espa%C3%B1ol) "Disable clearing of boot messages (Español)") | `2011-03` |
+| [Disable PC speaker beep (Español)](/index.php/Disable_PC_speaker_beep_(Espa%C3%B1ol) "Disable PC speaker beep (Español)") | `2013-09` |
+| [dmenu (Español)](/index.php/Dmenu_(Espa%C3%B1ol) "Dmenu (Español)") | `2008-05` |
+| [DokuWiki (Español)](/index.php/DokuWiki_(Espa%C3%B1ol) "DokuWiki (Español)") | `2013-09` |
+| [DOSBox (Español)](/index.php/DOSBox_(Espa%C3%B1ol) "DOSBox (Español)") | `2011-03` |
+| [Downgrading packages (Español)](/index.php/Downgrading_packages_(Espa%C3%B1ol) "Downgrading packages (Español)") | `2011-03` | Sin contenido alguno (tan solo el título).
 Versión inglesa propuesta para su eliminación. |
-| [dwm (Español)](/index.php/Dwm_(Espa%C3%B1ol) "Dwm (Español)") | Gestor de ventanas | `2010-05` |
-| [E4rat (Español)](/index.php/E4rat_(Espa%C3%B1ol) "E4rat (Español)") | Proceso de arranque | `2011-10` |
-| [Emacs (Español)](/index.php/Emacs_(Espa%C3%B1ol) "Emacs (Español)") | Editor de texto | `--` | Incompleto |
-| [Enlightenment (Español)](/index.php/Enlightenment_(Espa%C3%B1ol) "Enlightenment (Español)") | Entorno de escritorio | `2008-05` |
-| [Environment variables (Español)](/index.php/Environment_variables_(Espa%C3%B1ol) "Environment variables (Español)") | Configuración del sistema | `2017-12` | [RQF7](/index.php?title=User:RQF7&action=edit&redlink=1 "User:RQF7 (page does not exist)") | En proceso. Falta sección de ejemplos |
-| [Epson TX125 (Español)](/index.php/Epson_TX125_(Espa%C3%B1ol) "Epson TX125 (Español)") | Hardware/impresoras | `2012-03` | El artículo inglés es tan solo un esbozo |
-| [Exaile (Español)](/index.php/Exaile_(Espa%C3%B1ol) "Exaile (Español)") | Reproductor de música | `2011-08` |
-| [Ext4 (Español)](/index.php/Ext4_(Espa%C3%B1ol) "Ext4 (Español)") | Sistema de archivos | `2010-01` |
-| [FAM (Español)](/index.php/FAM_(Espa%C3%B1ol) "FAM (Español)") | Monitorización del sistema | `2009-05` | Artículo muy pequeño pero desactualizado con respecto a [systemd](/index.php/Systemd "Systemd") |
-| [Fbsplash (Español)](/index.php/Fbsplash_(Espa%C3%B1ol) "Fbsplash (Español)") | Arranque gráfico | `2010-08` |
-| [Feh (Español)](/index.php/Feh_(Espa%C3%B1ol) "Feh (Español)") | Visor de imágenes | `2008-05` |
-| [Firefox (Español)](/index.php/Firefox_(Espa%C3%B1ol) "Firefox (Español)") | Navegador web | `2011-10` |
-| [Firewalls (Español)](/index.php/Firewalls_(Espa%C3%B1ol) "Firewalls (Español)") | Seguridad/Cortafuegos | `2013-09` |
-| [Fluxbox (Español)](/index.php/Fluxbox_(Espa%C3%B1ol) "Fluxbox (Español)") | Gestor de ventanas | `2011-09` |
-| [Fluxbox Style Guide (Español)](/index.php/Fluxbox_Style_Guide_(Espa%C3%B1ol) "Fluxbox Style Guide (Español)") | Complementos de fluxbox | `2011-09` | Parcialmente sin traducir |
-| [Gamin (Español)](/index.php/Gamin_(Espa%C3%B1ol) "Gamin (Español)") | Monitorización del sistema | `2008-01` | Versión inglesa propuesta para su fusión con [File manager functionality](/index.php/File_manager_functionality "File manager functionality") |
-| [GDM (Español)](/index.php/GDM_(Espa%C3%B1ol) "GDM (Español)") | Gestor de pantallas | `2013-09` |
-| [General troubleshooting (Español)](/index.php/General_troubleshooting_(Espa%C3%B1ol) "General troubleshooting (Español)") | Información/General | `2016-04` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
-| [GNOME (Español)](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)") | Entorno escritorio | `2013-09` |
-| [GNU (Español)](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)") | Información | `2012-03` |
-| [GStreamer (Español)](/index.php/GStreamer_(Espa%C3%B1ol) "GStreamer (Español)") | Códecs audio/vídeo | `2013-11` |
-| [GTK+ (Español)](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") | Conjunto de herramientas de GIMP | `2008-05` |
-| [Help:Searching (Español)](/index.php/Help:Searching_(Espa%C3%B1ol) "Help:Searching (Español)") | Ayuda/Edición wiki | `2018-09` |
-| [High Performance Firewall (Español)](/index.php/High_Performance_Firewall_(Espa%C3%B1ol) "High Performance Firewall (Español)") | Seguridad/Cortaguegos | `2013-09` | Versión inglesa propuesta para su eliminación o fusión con [router](/index.php/Router "Router") |
-| [Howto update with a home network (Español)](/index.php/Howto_update_with_a_home_network_(Espa%C3%B1ol) "Howto update with a home network (Español)") | Gestión de paquetes | `2011-03` | Página solo en español (sin versión inglesa) |
-| [Hp mini 110 - 1020 (Español)](/index.php/Hp_mini_110_-_1020_(Espa%C3%B1ol) "Hp mini 110 - 1020 (Español)") | Hardware/HP | `2010-03` | Página solo en español (sin versión inglesa) |
-| [HP Pavilion DV1000 Series (Español)](/index.php/HP_Pavilion_DV1000_Series_(Espa%C3%B1ol) "HP Pavilion DV1000 Series (Español)") | Hardware/HP | `2008-05` | La versión inglesa está poco desarrollada |
-| [IceWM (Español)](/index.php/IceWM_(Espa%C3%B1ol) "IceWM (Español)") | Gestor de ventanas | `2012-12` |
-| [Improve boot performance (Español)](/index.php/Improve_boot_performance_(Espa%C3%B1ol) "Improve boot performance (Español)") | Proceso de arranque | `2011-07` | Artículo muy obsoleto |
-| [Intel 537EP Modem (Español)](/index.php/Intel_537EP_Modem_(Espa%C3%B1ol) "Intel 537EP Modem (Español)") | Hardware/Modem | `2011-03` | Página solo en español (sin versión inglesa) |
-| [Installing Arch Linux in VMware (Español)](/index.php/Installing_Arch_Linux_in_VMware_(Espa%C3%B1ol) "Installing Arch Linux in VMware (Español)") | Instalación | `2014-12` |
+| [dwm (Español)](/index.php/Dwm_(Espa%C3%B1ol) "Dwm (Español)") | `2010-05` |
+| [E4rat (Español)](/index.php/E4rat_(Espa%C3%B1ol) "E4rat (Español)") | `2011-10` |
+| [Emacs (Español)](/index.php/Emacs_(Espa%C3%B1ol) "Emacs (Español)") | `--` | Incompleto |
+| [Enlightenment (Español)](/index.php/Enlightenment_(Espa%C3%B1ol) "Enlightenment (Español)") | `2008-05` |
+| [Environment variables (Español)](/index.php/Environment_variables_(Espa%C3%B1ol) "Environment variables (Español)") | `2017-12` | [RQF7](/index.php?title=User:RQF7&action=edit&redlink=1 "User:RQF7 (page does not exist)") | En proceso. Falta sección de ejemplos |
+| [Epson TX125 (Español)](/index.php/Epson_TX125_(Espa%C3%B1ol) "Epson TX125 (Español)") | `2012-03` | El artículo inglés es tan solo un esbozo |
+| [Exaile (Español)](/index.php/Exaile_(Espa%C3%B1ol) "Exaile (Español)") | `2011-08` |
+| [Ext4 (Español)](/index.php/Ext4_(Espa%C3%B1ol) "Ext4 (Español)") | `2010-01` |
+| [FAM (Español)](/index.php/FAM_(Espa%C3%B1ol) "FAM (Español)") | `2009-05` | Artículo muy pequeño pero desactualizado con respecto a [systemd](/index.php/Systemd "Systemd") |
+| [Fbsplash (Español)](/index.php/Fbsplash_(Espa%C3%B1ol) "Fbsplash (Español)") | `2010-08` |
+| [Feh (Español)](/index.php/Feh_(Espa%C3%B1ol) "Feh (Español)") | `2008-05` |
+| [Firefox (Español)](/index.php/Firefox_(Espa%C3%B1ol) "Firefox (Español)") | `2011-10` |
+| [Firewalls (Español)](/index.php/Firewalls_(Espa%C3%B1ol) "Firewalls (Español)") | `2013-09` |
+| [Fluxbox (Español)](/index.php/Fluxbox_(Espa%C3%B1ol) "Fluxbox (Español)") | `2011-09` |
+| [Fluxbox Style Guide (Español)](/index.php/Fluxbox_Style_Guide_(Espa%C3%B1ol) "Fluxbox Style Guide (Español)") | `2011-09` | Parcialmente sin traducir |
+| [Gamin (Español)](/index.php/Gamin_(Espa%C3%B1ol) "Gamin (Español)") | `2008-01` | Versión inglesa propuesta para su fusión con [File manager functionality](/index.php/File_manager_functionality "File manager functionality") |
+| [GDM (Español)](/index.php/GDM_(Espa%C3%B1ol) "GDM (Español)") | `2013-09` |
+| [General troubleshooting (Español)](/index.php/General_troubleshooting_(Espa%C3%B1ol) "General troubleshooting (Español)") | `2016-04` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
+| [GNOME (Español)](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)") | `2013-09` |
+| [GNU (Español)](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)") | `2012-03` |
+| [GStreamer (Español)](/index.php/GStreamer_(Espa%C3%B1ol) "GStreamer (Español)") | `2013-11` |
+| [GTK+ (Español)](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") | `2008-05` |
+| [Help:Searching (Español)](/index.php/Help:Searching_(Espa%C3%B1ol) "Help:Searching (Español)") | `2018-09` |
+| [High Performance Firewall (Español)](/index.php/High_Performance_Firewall_(Espa%C3%B1ol) "High Performance Firewall (Español)") | `2013-09` | Versión inglesa propuesta para su eliminación o fusión con [router](/index.php/Router "Router") |
+| [Howto update with a home network (Español)](/index.php/Howto_update_with_a_home_network_(Espa%C3%B1ol) "Howto update with a home network (Español)") | `2011-03` | Página solo en español (sin versión inglesa) |
+| [Hp mini 110 - 1020 (Español)](/index.php/Hp_mini_110_-_1020_(Espa%C3%B1ol) "Hp mini 110 - 1020 (Español)") | `2010-03` | Página solo en español (sin versión inglesa) |
+| [HP Pavilion DV1000 Series (Español)](/index.php/HP_Pavilion_DV1000_Series_(Espa%C3%B1ol) "HP Pavilion DV1000 Series (Español)") | `2008-05` | La versión inglesa está poco desarrollada |
+| [IceWM (Español)](/index.php/IceWM_(Espa%C3%B1ol) "IceWM (Español)") | `2012-12` |
+| [Improve boot performance (Español)](/index.php/Improve_boot_performance_(Espa%C3%B1ol) "Improve boot performance (Español)") | `2011-07` | Artículo muy obsoleto |
+| [Intel 537EP Modem (Español)](/index.php/Intel_537EP_Modem_(Espa%C3%B1ol) "Intel 537EP Modem (Español)") | `2011-03` | Página solo en español (sin versión inglesa) |
+| [Installing Arch Linux in VMware (Español)](/index.php/Installing_Arch_Linux_in_VMware_(Espa%C3%B1ol) "Installing Arch Linux in VMware (Español)") | `2014-12` |
 | [International communities (Español)](/index.php/International_communities_(Espa%C3%B1ol) "International communities (Español)") | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
-| [IPv6 (Español)](/index.php/IPv6_(Espa%C3%B1ol) "IPv6 (Español)") | Gestión de redes | `2009-11` |
-| [IRC channel (Español)](/index.php/IRC_channel_(Espa%C3%B1ol) "IRC channel (Español)") | Ayuda interactiva | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
-| [Irssi (Español)](/index.php/Irssi_(Espa%C3%B1ol) "Irssi (Español)") | Cliente IRC | `2010-01` |
-| [Java (Español)](/index.php/Java_(Espa%C3%B1ol) "Java (Español)") | Lenguaje de programación | `2010-11` |
-| [KDE (Español)](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)") | Entorno de escritorio | `2009-03` | Con actualizaciones paciales posteriores, pero actualmente desactualizado |
-| [Kernels (Español)](/index.php/Kernels_(Espa%C3%B1ol) "Kernels (Español)") | Kernel | `2011-08` |
-| [Kernel Panics (Español)](/index.php/Kernel_Panics_(Espa%C3%B1ol) "Kernel Panics (Español)") | Kernel | `2008-02` | Versión inglesa desactualizada |
-| [Laptop (Español)](/index.php/Laptop_(Espa%C3%B1ol) "Laptop (Español)") | Portátiles | `2012-03` |
-| [LibreOffice (Español)](/index.php/LibreOffice_(Espa%C3%B1ol) "LibreOffice (Español)") | Ofimática | `2011-05` |
-| [LightDM (Español)](/index.php/LightDM_(Espa%C3%B1ol) "LightDM (Español)") | Gestor de pantallas | `2011-05` |
-| [Lighttpd (Español)](/index.php/Lighttpd_(Espa%C3%B1ol) "Lighttpd (Español)") | Serviddor HTTP | `2008-05` |
-| [LILO (Español)](/index.php/LILO_(Espa%C3%B1ol) "LILO (Español)") | Gestor de arranque | `2008-05` | Esbozo |
-| [Lm sensors (Español)](/index.php/Lm_sensors_(Espa%C3%B1ol) "Lm sensors (Español)") | Monitorización del sistema | `2010-01` |
-| [LXDE (Español)](/index.php/LXDE_(Espa%C3%B1ol) "LXDE (Español)") | Entorno de escritorio | `2008-07` |
-| [MAC address spoofing (Español)](/index.php/MAC_address_spoofing_(Espa%C3%B1ol) "MAC address spoofing (Español)") | Seguridad | `2010-11` |
-| [Makepkg (Español)](/index.php/Makepkg_(Espa%C3%B1ol) "Makepkg (Español)") | Gestión de paquetes | `2010-07` |
-| [man page (Español)](/index.php/Man_page_(Espa%C3%B1ol) "Man page (Español)") | Administración sistema | `2015-4` |
-| [MATE (Español)](/index.php/MATE_(Espa%C3%B1ol) "MATE (Español)") | Entorno de escritorio | `2012-12` |
-| [Maximizing performance (Español)](/index.php/Maximizing_performance_(Espa%C3%B1ol) "Maximizing performance (Español)") | Administración del sistema | `2011-08` |
-| [MEncoder (Español)](/index.php/MEncoder_(Espa%C3%B1ol) "MEncoder (Español)") | Codificador Audio/vídeo | `2009-11` |
-| [Microcode (Español)](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)") | Actualización procesador | `2014-12` |
-| [MiniDLNA (Español)](/index.php/MiniDLNA_(Espa%C3%B1ol) "MiniDLNA (Español)") | Audio/vídeo | `2012-02` | Versión inglesa desactualizada |
-| [MOC (Español)](/index.php/MOC_(Espa%C3%B1ol) "MOC (Español)") | Reproductor de música | `2010-05` |
-| [Mod python (Español)](/index.php/Mod_python_(Espa%C3%B1ol) "Mod python (Español)") | Servidor web | `2010-11` |
-| [Modalias (Español)](/index.php/Modalias_(Espa%C3%B1ol) "Modalias (Español)") | Kernel | `2008-05` |
-| [Modem Huawei SmartAX MT 810 (Español)](/index.php/Modem_Huawei_SmartAX_MT_810_(Espa%C3%B1ol) "Modem Huawei SmartAX MT 810 (Español)") | Hardware/Modems | `2010-02` | Página solo en español (sin versión inglesa) |
-| [Moonlight (Español)](/index.php/Moonlight_(Espa%C3%B1ol) "Moonlight (Español)") | Audio/Vídeo | `2009-07` | Sin traducir |
-| [Moving an existing install into (or out of) a virtual machine (Español)](/index.php?title=Moving_an_existing_install_into_(or_out_of)_a_virtual_machine_(Espa%C3%B1ol)&action=edit&redlink=1 "Moving an existing install into (or out of) a virtual machine (Español) (page does not exist)") | Instalación | `--` | Sin traducir |
-| [MPlayer (Español)](/index.php/MPlayer_(Espa%C3%B1ol) "MPlayer (Español)") | Reproductor multimedia | `2015-08` | Incompleta |
-| [Music Player Daemon (Español)](/index.php/Music_Player_Daemon_(Espa%C3%B1ol) "Music Player Daemon (Español)") | Reproductor música | `2009-12` | Parcialmente sin traducir |
-| [Mutt (Español)](/index.php/Mutt_(Espa%C3%B1ol) "Mutt (Español)") | Cliente e-mail | `2010-08` |
-| [MySQL (Español)](/index.php/MySQL_(Espa%C3%B1ol) "MySQL (Español)") | Base de datos | `2008-08` |
-| [nano (Español)](/index.php/Nano_(Espa%C3%B1ol) "Nano (Español)") | Editor de texto | `2015-08` |
-| [Nautilus (Español)](/index.php/Nautilus_(Espa%C3%B1ol) "Nautilus (Español)") | Gestor de archivos | `2013-09` |
-| [Netbeans (Español)](/index.php/Netbeans_(Espa%C3%B1ol) "Netbeans (Español)") | Desarrollo | `2013-02` |
-| [Nitrogen (Español)](/index.php/Nitrogen_(Espa%C3%B1ol) "Nitrogen (Español)") | Gestor fondos de escritorio | `2011-08` |
-| [NTFS-3G (Español)](/index.php/NTFS-3G_(Espa%C3%B1ol) "NTFS-3G (Español)") | Soporte sistema archivos | `2011-03` |
-| [Offline installation of packages (Español)](/index.php/Offline_installation_of_packages_(Espa%C3%B1ol) "Offline installation of packages (Español)") | Gestión de paquetes | `2010-08` | Versión inglesa desactualizada |
-| [Openbox (Español)](/index.php/Openbox_(Espa%C3%B1ol) "Openbox (Español)") | Gestor de ventanas | `2012-11` |
-| [Openbox Themes and Apps (Español)](/index.php/Openbox_Themes_and_Apps_(Espa%C3%B1ol) "Openbox Themes and Apps (Español)") | Gestor de ventanas | `2012-11` | Versión inglesa redirigida a [Openbox](/index.php/Openbox "Openbox") |
-| [Pacman Tips (Español)](/index.php/Pacman_Tips_(Espa%C3%B1ol) "Pacman Tips (Español)") | Gestión de paquetes | `2018-04` | [Phenom](/index.php?title=User:Phenom&action=edit&redlink=1 "User:Phenom (page does not exist)") |
-| [Pacman-key (Español)](/index.php/Pacman-key_(Espa%C3%B1ol) "Pacman-key (Español)") | Gestión de paquetes | `2013-03` |
-| [Parallels (Español)](/index.php?title=Parallels_(Espa%C3%B1ol)&action=edit&redlink=1 "Parallels (Español) (page does not exist)") | Virtualización | `--` | Sin traducir |
-| [Pdnsd (Español)](/index.php/Pdnsd_(Espa%C3%B1ol) "Pdnsd (Español)") | Servidor DNS | `2010-01` |
-| [PekWM (Español)](/index.php/PekWM_(Espa%C3%B1ol) "PekWM (Español)") | Gestor de ventanas | `2009-08` |
-| [PHP (Español)](/index.php/PHP_(Espa%C3%B1ol) "PHP (Español)") | Lenguaje de programación | `2008-05` |
-| [PhpMyAdmin (Español)](/index.php/PhpMyAdmin_(Espa%C3%B1ol) "PhpMyAdmin (Español)") | Servidor web | `2010-11` |
-| [Pidgin (Español)](/index.php/Pidgin_(Espa%C3%B1ol) "Pidgin (Español)") | Cliente de mensajería instantánea | `2009-04` |
-| [PKGBUILD (Español)](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)") | Archivo de compilación | `2010-11` |
-| [Plymouth (Español)](/index.php/Plymouth_(Espa%C3%B1ol) "Plymouth (Español)") | proceso de arranque gráfico | `2013-09` |
-| [Port knocking (Español)](/index.php/Port_knocking_(Espa%C3%B1ol) "Port knocking (Español)") | Seguridad | `2012-02` |
-| [Power management (Español)](/index.php/Power_management_(Espa%C3%B1ol) "Power management (Español)") | Gestión de energía | `2013-09` |
-| [Ps2pdf (Español)](/index.php/Ps2pdf_(Espa%C3%B1ol) "Ps2pdf (Español)") | Crear pdf | `2009-12` |
-| [PulseAudio (Español)](/index.php/PulseAudio_(Espa%C3%B1ol) "PulseAudio (Español)") | Servidor de sonido | `2011-05` | Parcialmente Sin traducir |
-| [QEMU (Español)](/index.php/QEMU_(Espa%C3%B1ol) "QEMU (Español)") | Virtualización | `2012-11` | Traducción muy pobre |
-| [Ramdisk (Español)](/index.php/Ramdisk_(Espa%C3%B1ol) "Ramdisk (Español)") | Sistema de archivos | `2012-04` | Actualmente, en la versión inglesa es una sección del artículo [tmpfs](/index.php/Tmpfs "Tmpfs") |
-| [Recuperación del cargador de arranque (Español)](/index.php/Recuperaci%C3%B3n_del_cargador_de_arranque_(Espa%C3%B1ol) "Recuperación del cargador de arranque (Español)") | Gestor arranque | `2008-07` | Página solo en español (sin versión inglesa). ¿Redirigir a [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)")? |
-| [Resolv.conf (Español)](/index.php/Resolv.conf_(Espa%C3%B1ol) "Resolv.conf (Español)") | Gestión DNS | `2014-09` |
-| [RTorrent (Español)](/index.php/RTorrent_(Espa%C3%B1ol) "RTorrent (Español)") | Gestor descargas torrent | `2008-05` |
-| [Rxvt-unicode (Español)](/index.php/Rxvt-unicode_(Espa%C3%B1ol) "Rxvt-unicode (Español)") | Emulador de terminal | `2010-12` |
-| [Samba (Español)](/index.php/Samba_(Espa%C3%B1ol) "Samba (Español)") | Protocolo de red | `2011-04` |
-| [Samsung N150 (Español)](/index.php/Samsung_N150_(Espa%C3%B1ol) "Samsung N150 (Español)") | Hardware | `2010-06` |
-| [Security (Español)](/index.php?title=Security_(Espa%C3%B1ol)&action=edit&redlink=1 "Security (Español) (page does not exist)") | Seguridad | `--` | No existe artículo en Español. Original [Security](/index.php/Security "Security"). |
-| [Silent boot (Español)](/index.php/Silent_boot_(Espa%C3%B1ol) "Silent boot (Español)") | Proceso arranque | `2013-12` |
-| [SLiM (Español)](/index.php/SLiM_(Espa%C3%B1ol) "SLiM (Español)") | Gestor de pantallas | `2011-01` |
-| [Smbclient (Español)](/index.php/Smbclient_(Espa%C3%B1ol) "Smbclient (Español)") | Protocolo de red | `2012-01` | Esbozo |
-| [Open Sound System (Español)](/index.php/Open_Sound_System_(Espa%C3%B1ol) "Open Sound System (Español)") | Sonido | `2013-09` |
-| [SSH keys (Español)](/index.php/SSH_keys_(Espa%C3%B1ol) "SSH keys (Español)") | Seguridad SSH | `2011-01` |
-| [Sshguard (Español)](/index.php/Sshguard_(Espa%C3%B1ol) "Sshguard (Español)") | Seguridad SSH | `2011-08` |
-| [Start X at login (Español)](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)") | Proceso de arranque | `2013-09` |
-| [systemd FAQ (Español)](/index.php/Systemd_FAQ_(Espa%C3%B1ol) "Systemd FAQ (Español)") | Configuración del sistema | `2013-09` |
-| [systemd/User (Español)](/index.php/Systemd/User_(Espa%C3%B1ol) "Systemd/User (Español)") | Configuración del sistema | `2013-09` |
-| [SysVinit (Español)](/index.php/SysVinit_(Espa%C3%B1ol) "SysVinit (Español)") | Proceso de arranque | `2013-09` |
-| [Taking a screenshot (Español)](/index.php/Taking_a_screenshot_(Espa%C3%B1ol) "Taking a screenshot (Español)") | Captura de pantalla | `2011-10` |
-| [Telnet (Español)](/index.php/Telnet_(Espa%C3%B1ol) "Telnet (Español)") | Protocolo de red | `2018-04` |
-| [Terminal as a transparent wallpaper (Español)](/index.php/Terminal_as_a_transparent_wallpaper_(Espa%C3%B1ol) "Terminal as a transparent wallpaper (Español)") | Personalización escritorio | `2008-07` |
-| [ThinkFinger (Español)](/index.php/ThinkFinger_(Espa%C3%B1ol) "ThinkFinger (Español)") | Controlador para lector de huellas digitales | `2007-08` |
-| [Thunar (Español)](/index.php/Thunar_(Espa%C3%B1ol) "Thunar (Español)") | Gestor de archivos | `2013-09` |
-| [Tint (Español)](/index.php/Tint_(Espa%C3%B1ol) "Tint (Español)") | Barra de tareas | `2011-01` | Versión inglesa redirigida a [Tint2](/index.php/Tint2 "Tint2") |
-| [Tmux (Español)](/index.php/Tmux_(Espa%C3%B1ol) "Tmux (Español)") | Multiplexor de terminales | `2010-08` | Traducción muy pobre |
-| [Tor (Español)](/index.php/Tor_(Espa%C3%B1ol) "Tor (Español)") | Proxy anonimato red | `2011-08` | Traducción muy pobre |
-| [Umask (Español)](/index.php/Umask_(Espa%C3%B1ol) "Umask (Español)") | Sistema de archivos | `2013-09` |
-| [Uniform look for Qt and GTK applications (Español)](/index.php/Uniform_look_for_Qt_and_GTK_applications_(Espa%C3%B1ol) "Uniform look for Qt and GTK applications (Español)") | Herramienta Widget | `2008-05` |
-| [USB storage devices (Español)](/index.php/USB_storage_devices_(Espa%C3%B1ol) "USB storage devices (Español)") | Memoria USB | `2008-05` | Propuesto para su eliminación |
-| [Very Secure FTP Daemon (Español)](/index.php/Very_Secure_FTP_Daemon_(Espa%C3%B1ol) "Very Secure FTP Daemon (Español)") | Servidor FTP | `2010-07` |
-| [Vim (Español)](/index.php/Vim_(Espa%C3%B1ol) "Vim (Español)") | Editor de texto | `2008-05` |
-| [Wget (Español)](/index.php/Wget_(Espa%C3%B1ol) "Wget (Español)") | Gestor de descargas | `2008-05` |
-| [Wine (Español)](/index.php/Wine_(Espa%C3%B1ol) "Wine (Español)") | Emulador | `2009-05` |
-| [WMFS (Español)](/index.php/WMFS_(Espa%C3%B1ol) "WMFS (Español)") | Gestor de ventanas | `2011-05` |
-| [WMFS2 (Español)](/index.php/WMFS2_(Espa%C3%B1ol) "WMFS2 (Español)") | Gestor de ventanas | `2012-04` |
-| [Writing rc.d scripts (Español)](/index.php/Writing_rc.d_scripts_(Espa%C3%B1ol) "Writing rc.d scripts (Español)") | Proceso de arranque | `2011-08` | Versión inglesa fundida en [SysVinit#Writing rc.d scripts](/index.php/SysVinit#Writing_rc.d_scripts "SysVinit"). |
-| [VMware (Español)](/index.php?title=VMware_(Espa%C3%B1ol)&action=edit&redlink=1 "VMware (Español) (page does not exist)") | Virtualización | `--` | Sin traducir |
-| [XAMPP (Español)](/index.php/XAMPP_(Espa%C3%B1ol) "XAMPP (Español)") | Servidor web | `2009-04` |
-| [Xcompmgr (Español)](/index.php/Xcompmgr_(Espa%C3%B1ol) "Xcompmgr (Español)") | Gestor de composición de ventanas | `2011-03` |
-| [Xen (Español)](/index.php/Xen_(Espa%C3%B1ol) "Xen (Español)") | Virtualización | `2010-12` |
-| [Xfce (Español)](/index.php/Xfce_(Espa%C3%B1ol) "Xfce (Español)") | Entorno de escritorio | `2013-01` |
-| [xinitrc (Español)](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") | Servidor X | `2013-09` |
-| [Xmame (Español)](/index.php/Xmame_(Espa%C3%B1ol) "Xmame (Español)") | Emulador arcade | `2008-05` |
-| [xprofile (Español)](/index.php/Xprofile_(Espa%C3%B1ol) "Xprofile (Español)") | Servidor X | `2013-09` |
-| [XScreenSaver (Español)](/index.php/XScreenSaver_(Espa%C3%B1ol) "XScreenSaver (Español)") | Servidor X | `2008-07` |
-| [ZTE MF626 / MF636 (Español)](/index.php/ZTE_MF626_/_MF636_(Espa%C3%B1ol) "ZTE MF626 / MF636 (Español)") | Hardware/Modems | `2010-01` |
-| [Zsh (Español)](/index.php/Zsh_(Espa%C3%B1ol) "Zsh (Español)") | Shell de órdenes | `--` | Sin traducir |
+| [IPv6 (Español)](/index.php/IPv6_(Espa%C3%B1ol) "IPv6 (Español)") | `2009-11` |
+| [IRC channel (Español)](/index.php/IRC_channel_(Espa%C3%B1ol) "IRC channel (Español)") | `2018-08` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
+| [Irssi (Español)](/index.php/Irssi_(Espa%C3%B1ol) "Irssi (Español)") | `2010-01` |
+| [Java (Español)](/index.php/Java_(Espa%C3%B1ol) "Java (Español)") | `2010-11` |
+| [KDE (Español)](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)") | `2009-03` | Con actualizaciones paciales posteriores, pero actualmente desactualizado |
+| [Kernels (Español)](/index.php/Kernels_(Espa%C3%B1ol) "Kernels (Español)") | `2011-08` |
+| [Kernel Panics (Español)](/index.php/Kernel_Panics_(Espa%C3%B1ol) "Kernel Panics (Español)") | `2008-02` | Versión inglesa desactualizada |
+| [Laptop (Español)](/index.php/Laptop_(Espa%C3%B1ol) "Laptop (Español)") | `2012-03` |
+| [LibreOffice (Español)](/index.php/LibreOffice_(Espa%C3%B1ol) "LibreOffice (Español)") | `2011-05` |
+| [LightDM (Español)](/index.php/LightDM_(Espa%C3%B1ol) "LightDM (Español)") | `2011-05` |
+| [Lighttpd (Español)](/index.php/Lighttpd_(Espa%C3%B1ol) "Lighttpd (Español)") | `2008-05` |
+| [LILO (Español)](/index.php/LILO_(Espa%C3%B1ol) "LILO (Español)") | `2008-05` | Esbozo |
+| [Lm sensors (Español)](/index.php/Lm_sensors_(Espa%C3%B1ol) "Lm sensors (Español)") | `2010-01` |
+| [LXDE (Español)](/index.php/LXDE_(Espa%C3%B1ol) "LXDE (Español)") | `2008-07` |
+| [MAC address spoofing (Español)](/index.php/MAC_address_spoofing_(Espa%C3%B1ol) "MAC address spoofing (Español)") | `2010-11` |
+| [Makepkg (Español)](/index.php/Makepkg_(Espa%C3%B1ol) "Makepkg (Español)") | `2010-07` |
+| [man page (Español)](/index.php/Man_page_(Espa%C3%B1ol) "Man page (Español)") | `2015-4` |
+| [MATE (Español)](/index.php/MATE_(Espa%C3%B1ol) "MATE (Español)") | `2012-12` |
+| [Maximizing performance (Español)](/index.php/Maximizing_performance_(Espa%C3%B1ol) "Maximizing performance (Español)") | `2011-08` |
+| [MEncoder (Español)](/index.php/MEncoder_(Espa%C3%B1ol) "MEncoder (Español)") | `2009-11` |
+| [Microcode (Español)](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)") | `2014-12` |
+| [MiniDLNA (Español)](/index.php/MiniDLNA_(Espa%C3%B1ol) "MiniDLNA (Español)") | `2012-02` | Versión inglesa desactualizada |
+| [MOC (Español)](/index.php/MOC_(Espa%C3%B1ol) "MOC (Español)") | `2010-05` |
+| [Mod python (Español)](/index.php/Mod_python_(Espa%C3%B1ol) "Mod python (Español)") | `2010-11` |
+| [Modalias (Español)](/index.php/Modalias_(Espa%C3%B1ol) "Modalias (Español)") | `2008-05` |
+| [Modem Huawei SmartAX MT 810 (Español)](/index.php/Modem_Huawei_SmartAX_MT_810_(Espa%C3%B1ol) "Modem Huawei SmartAX MT 810 (Español)") | `2010-02` | Página solo en español (sin versión inglesa) |
+| [Moonlight (Español)](/index.php/Moonlight_(Espa%C3%B1ol) "Moonlight (Español)") | `2009-07` | Sin traducir |
+| [Moving an existing install into (or out of) a virtual machine (Español)](/index.php?title=Moving_an_existing_install_into_(or_out_of)_a_virtual_machine_(Espa%C3%B1ol)&action=edit&redlink=1 "Moving an existing install into (or out of) a virtual machine (Español) (page does not exist)") | `--` | Sin traducir |
+| [MPlayer (Español)](/index.php/MPlayer_(Espa%C3%B1ol) "MPlayer (Español)") | `2015-08` | Incompleta |
+| [Music Player Daemon (Español)](/index.php/Music_Player_Daemon_(Espa%C3%B1ol) "Music Player Daemon (Español)") | `2009-12` | Parcialmente sin traducir |
+| [Mutt (Español)](/index.php/Mutt_(Espa%C3%B1ol) "Mutt (Español)") | `2010-08` |
+| [MySQL (Español)](/index.php/MySQL_(Espa%C3%B1ol) "MySQL (Español)") | `2008-08` |
+| [nano (Español)](/index.php/Nano_(Espa%C3%B1ol) "Nano (Español)") | `2015-08` |
+| [Nautilus (Español)](/index.php/Nautilus_(Espa%C3%B1ol) "Nautilus (Español)") | `2013-09` |
+| [Netbeans (Español)](/index.php/Netbeans_(Espa%C3%B1ol) "Netbeans (Español)") | `2013-02` |
+| [Nitrogen (Español)](/index.php/Nitrogen_(Espa%C3%B1ol) "Nitrogen (Español)") | `2011-08` |
+| [NTFS-3G (Español)](/index.php/NTFS-3G_(Espa%C3%B1ol) "NTFS-3G (Español)") | `2011-03` |
+| [Offline installation of packages (Español)](/index.php/Offline_installation_of_packages_(Espa%C3%B1ol) "Offline installation of packages (Español)") | `2010-08` | Versión inglesa desactualizada |
+| [Openbox (Español)](/index.php/Openbox_(Espa%C3%B1ol) "Openbox (Español)") | `2012-11` |
+| [Openbox Themes and Apps (Español)](/index.php/Openbox_Themes_and_Apps_(Espa%C3%B1ol) "Openbox Themes and Apps (Español)") | `2012-11` | Versión inglesa redirigida a [Openbox](/index.php/Openbox "Openbox") |
+| [Pacman Tips (Español)](/index.php/Pacman_Tips_(Espa%C3%B1ol) "Pacman Tips (Español)") | `2018-04` | [Phenom](/index.php?title=User:Phenom&action=edit&redlink=1 "User:Phenom (page does not exist)") |
+| [Pacman-key (Español)](/index.php/Pacman-key_(Espa%C3%B1ol) "Pacman-key (Español)") | `2013-03` |
+| [Parallels (Español)](/index.php?title=Parallels_(Espa%C3%B1ol)&action=edit&redlink=1 "Parallels (Español) (page does not exist)") | `--` | Sin traducir |
+| [Pdnsd (Español)](/index.php/Pdnsd_(Espa%C3%B1ol) "Pdnsd (Español)") | `2010-01` |
+| [PekWM (Español)](/index.php/PekWM_(Espa%C3%B1ol) "PekWM (Español)") | `2009-08` |
+| [PHP (Español)](/index.php/PHP_(Espa%C3%B1ol) "PHP (Español)") | `2008-05` |
+| [PhpMyAdmin (Español)](/index.php/PhpMyAdmin_(Espa%C3%B1ol) "PhpMyAdmin (Español)") | `2010-11` |
+| [Pidgin (Español)](/index.php/Pidgin_(Espa%C3%B1ol) "Pidgin (Español)") | `2009-04` |
+| [PKGBUILD (Español)](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)") | `2010-11` |
+| [Plymouth (Español)](/index.php/Plymouth_(Espa%C3%B1ol) "Plymouth (Español)") | `2013-09` |
+| [Port knocking (Español)](/index.php/Port_knocking_(Espa%C3%B1ol) "Port knocking (Español)") | `2012-02` |
+| [Power management (Español)](/index.php/Power_management_(Espa%C3%B1ol) "Power management (Español)") | `2013-09` |
+| [Ps2pdf (Español)](/index.php/Ps2pdf_(Espa%C3%B1ol) "Ps2pdf (Español)") | `2009-12` |
+| [PulseAudio (Español)](/index.php/PulseAudio_(Espa%C3%B1ol) "PulseAudio (Español)") | `2011-05` | Parcialmente Sin traducir |
+| [QEMU (Español)](/index.php/QEMU_(Espa%C3%B1ol) "QEMU (Español)") | `2012-11` | Traducción muy pobre |
+| [Ramdisk (Español)](/index.php/Ramdisk_(Espa%C3%B1ol) "Ramdisk (Español)") | `2012-04` | Actualmente, en la versión inglesa es una sección del artículo [tmpfs](/index.php/Tmpfs "Tmpfs") |
+| [Recuperación del cargador de arranque (Español)](/index.php/Recuperaci%C3%B3n_del_cargador_de_arranque_(Espa%C3%B1ol) "Recuperación del cargador de arranque (Español)") | `2008-07` | Página solo en español (sin versión inglesa). ¿Redirigir a [GRUB (Español)](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)")? |
+| [Resolv.conf (Español)](/index.php/Resolv.conf_(Espa%C3%B1ol) "Resolv.conf (Español)") | `2014-09` |
+| [RTorrent (Español)](/index.php/RTorrent_(Espa%C3%B1ol) "RTorrent (Español)") | `2008-05` |
+| [Rxvt-unicode (Español)](/index.php/Rxvt-unicode_(Espa%C3%B1ol) "Rxvt-unicode (Español)") | `2010-12` |
+| [Samba (Español)](/index.php/Samba_(Espa%C3%B1ol) "Samba (Español)") | `2011-04` |
+| [Samsung N150 (Español)](/index.php/Samsung_N150_(Espa%C3%B1ol) "Samsung N150 (Español)") | `2010-06` |
+| [Security (Español)](/index.php?title=Security_(Espa%C3%B1ol)&action=edit&redlink=1 "Security (Español) (page does not exist)") | `--` | No existe artículo en Español. Original [Security](/index.php/Security "Security"). |
+| [Silent boot (Español)](/index.php/Silent_boot_(Espa%C3%B1ol) "Silent boot (Español)") | `2013-12` |
+| [SLiM (Español)](/index.php/SLiM_(Espa%C3%B1ol) "SLiM (Español)") | `2011-01` |
+| [Smbclient (Español)](/index.php/Smbclient_(Espa%C3%B1ol) "Smbclient (Español)") | `2012-01` | Esbozo |
+| [Open Sound System (Español)](/index.php/Open_Sound_System_(Espa%C3%B1ol) "Open Sound System (Español)") | `2013-09` |
+| [SSH keys (Español)](/index.php/SSH_keys_(Espa%C3%B1ol) "SSH keys (Español)") | `2011-01` |
+| [Sshguard (Español)](/index.php/Sshguard_(Espa%C3%B1ol) "Sshguard (Español)") | `2011-08` |
+| [Start X at login (Español)](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)") | `2013-09` |
+| [systemd FAQ (Español)](/index.php/Systemd_FAQ_(Espa%C3%B1ol) "Systemd FAQ (Español)") | `2013-09` |
+| [systemd/User (Español)](/index.php/Systemd/User_(Espa%C3%B1ol) "Systemd/User (Español)") | `2013-09` |
+| [SysVinit (Español)](/index.php/SysVinit_(Espa%C3%B1ol) "SysVinit (Español)") | `2013-09` |
+| [Taking a screenshot (Español)](/index.php/Taking_a_screenshot_(Espa%C3%B1ol) "Taking a screenshot (Español)") | `2011-10` |
+| [Telnet (Español)](/index.php/Telnet_(Espa%C3%B1ol) "Telnet (Español)") | `2018-04` |
+| [Terminal as a transparent wallpaper (Español)](/index.php/Terminal_as_a_transparent_wallpaper_(Espa%C3%B1ol) "Terminal as a transparent wallpaper (Español)") | `2008-07` |
+| [ThinkFinger (Español)](/index.php/ThinkFinger_(Espa%C3%B1ol) "ThinkFinger (Español)") | `2007-08` |
+| [Thunar (Español)](/index.php/Thunar_(Espa%C3%B1ol) "Thunar (Español)") | `2013-09` |
+| [Tint (Español)](/index.php/Tint_(Espa%C3%B1ol) "Tint (Español)") | `2011-01` | Versión inglesa redirigida a [Tint2](/index.php/Tint2 "Tint2") |
+| [Tmux (Español)](/index.php/Tmux_(Espa%C3%B1ol) "Tmux (Español)") | `2010-08` | Traducción muy pobre |
+| [Tor (Español)](/index.php/Tor_(Espa%C3%B1ol) "Tor (Español)") | `2011-08` | Traducción muy pobre |
+| [Umask (Español)](/index.php/Umask_(Espa%C3%B1ol) "Umask (Español)") | `2013-09` |
+| [Uniform look for Qt and GTK applications (Español)](/index.php/Uniform_look_for_Qt_and_GTK_applications_(Espa%C3%B1ol) "Uniform look for Qt and GTK applications (Español)") | `2008-05` |
+| [USB storage devices (Español)](/index.php/USB_storage_devices_(Espa%C3%B1ol) "USB storage devices (Español)") | `2008-05` | Propuesto para su eliminación |
+| [Very Secure FTP Daemon (Español)](/index.php/Very_Secure_FTP_Daemon_(Espa%C3%B1ol) "Very Secure FTP Daemon (Español)") | `2010-07` |
+| [Vim (Español)](/index.php/Vim_(Espa%C3%B1ol) "Vim (Español)") | `2008-05` |
+| [Wget (Español)](/index.php/Wget_(Espa%C3%B1ol) "Wget (Español)") | `2008-05` |
+| [Wine (Español)](/index.php/Wine_(Espa%C3%B1ol) "Wine (Español)") | `2009-05` |
+| [WMFS (Español)](/index.php/WMFS_(Espa%C3%B1ol) "WMFS (Español)") | `2011-05` |
+| [WMFS2 (Español)](/index.php/WMFS2_(Espa%C3%B1ol) "WMFS2 (Español)") | `2012-04` |
+| [Writing rc.d scripts (Español)](/index.php/Writing_rc.d_scripts_(Espa%C3%B1ol) "Writing rc.d scripts (Español)") | `2011-08` | Versión inglesa fundida en [SysVinit#Writing rc.d scripts](/index.php/SysVinit#Writing_rc.d_scripts "SysVinit"). |
+| [VMware (Español)](/index.php?title=VMware_(Espa%C3%B1ol)&action=edit&redlink=1 "VMware (Español) (page does not exist)") | `--` | Sin traducir |
+| [XAMPP (Español)](/index.php/XAMPP_(Espa%C3%B1ol) "XAMPP (Español)") | `2009-04` |
+| [Xcompmgr (Español)](/index.php/Xcompmgr_(Espa%C3%B1ol) "Xcompmgr (Español)") | `2011-03` |
+| [Xen (Español)](/index.php/Xen_(Espa%C3%B1ol) "Xen (Español)") | `2010-12` |
+| [Xfce (Español)](/index.php/Xfce_(Espa%C3%B1ol) "Xfce (Español)") | `2013-01` |
+| [xinitrc (Español)](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") | `2013-09` |
+| [Xmame (Español)](/index.php/Xmame_(Espa%C3%B1ol) "Xmame (Español)") | `2008-05` |
+| [xprofile (Español)](/index.php/Xprofile_(Espa%C3%B1ol) "Xprofile (Español)") | `2013-09` |
+| [XScreenSaver (Español)](/index.php/XScreenSaver_(Espa%C3%B1ol) "XScreenSaver (Español)") | `2008-07` |
+| [ZTE MF626 / MF636 (Español)](/index.php/ZTE_MF626_/_MF636_(Espa%C3%B1ol) "ZTE MF626 / MF636 (Español)") | `2010-01` |
+| [Zsh (Español)](/index.php/Zsh_(Espa%C3%B1ol) "Zsh (Español)") | `--` | Sin traducir |
 
 ### Tabla de artículos con redirección
 

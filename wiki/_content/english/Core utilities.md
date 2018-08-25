@@ -249,7 +249,7 @@ When comparing text files a word per word diff is often more desirable:
 
 *   **GNU wdiff** — A wordwise implementation of GNU diff; does not support colors.
 
-	[https://www.gnu.org/software/wdiff/](https://www.gnu.org/software/wdiff/) || [wdiff](https://aur.archlinux.org/packages/wdiff/)
+	[https://www.gnu.org/software/wdiff/](https://www.gnu.org/software/wdiff/) || [wdiff](https://www.archlinux.org/packages/?name=wdiff)
 
 *   **cwdiff** — A GNU wdiff wrapper that colorizes the output.
 

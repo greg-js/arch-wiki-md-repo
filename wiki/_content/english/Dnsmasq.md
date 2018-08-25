@@ -6,7 +6,7 @@ Related articles
 *   [Pdnsd](/index.php/Pdnsd "Pdnsd")
 *   [unbound](/index.php/Unbound "Unbound")
 
-[dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) provides a local [DNS server](https://en.wikipedia.org/wiki/Name_server "wikipedia:Name server"), a [DHCP server](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol") with support for [DHCPv6](https://en.wikipedia.org/wiki/DHCPv6 "wikipedia:DHCPv6") and [PXE](https://en.wikipedia.org/wiki/Preboot_Execution_Environment "wikipedia:Preboot Execution Environment"), and a [TFTP server](https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol "wikipedia:Trivial File Transfer Protocol"). It is designed to be lightweight and have a small footprint, suitable for resource constrained routers and firewalls. dnsmasq can also be configured to cache DNS queries for improved DNS lookup speeds to previously visited sites.
+[dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) provides a [DNS server](https://en.wikipedia.org/wiki/Name_server "wikipedia:Name server"), a [DHCP server](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol") with support for [DHCPv6](https://en.wikipedia.org/wiki/DHCPv6 "wikipedia:DHCPv6") and [PXE](https://en.wikipedia.org/wiki/Preboot_Execution_Environment "wikipedia:Preboot Execution Environment"), and a [TFTP server](https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol "wikipedia:Trivial File Transfer Protocol"). It is designed to be lightweight and have a small footprint, suitable for resource constrained routers and firewalls. dnsmasq can also be configured to cache DNS queries for improved DNS lookup speeds to previously visited sites.
 
 ## Contents
 
@@ -239,7 +239,7 @@ domain=example.com
 dhcp-option=3,192.168.1.1
 
 # Set DNS servers to announce
-dhcp-option=6,8.8.8.8,8.8.4.4
+dhcp-option=6,192.168.1.1
 
 # Dynamic range of IPs to make available to LAN PC and the lease time. 
 # Ideally set the lease time to 5m only at first to test everything works okay before you set long-lasting records.

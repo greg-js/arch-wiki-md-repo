@@ -19,7 +19,7 @@ The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wik
 
 *Pacman* is written in the C programming language and uses the [tar](https://en.wikipedia.org/wiki/tar_(computing) "w:tar (computing)") format for packaging.
 
-**Tip:** The [pacman](https://www.archlinux.org/packages/?name=pacman) package contains tools such as [makepkg](/index.php/Makepkg "Makepkg") and *vercmp*. Other useful tools such as *pactree* and [checkupdates](/index.php/Checkupdates "Checkupdates") are found in [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) ([formerly](https://git.archlinux.org/pacman.git/commit/?id=0c99eabd50752310f42ec808c8734a338122ec86) part of pacman). Run `pacman -Ql pacman pacman-contrib | grep -E 'bin/.+'` to see the full list.
+**Tip:** The [pacman](https://www.archlinux.org/packages/?name=pacman) package contains tools such as [makepkg](/index.php/Makepkg "Makepkg") and *vercmp*. Other useful tools such as *pactree* and [checkupdates](/index.php/Checkupdates "Checkupdates") are found in [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) ([formerly](https://git.archlinux.org/pacman.git/commit/?id=0c99eabd50752310f42ec808c8734a338122ec86) part of pacman). Run `pacman -Fl pacman pacman-contrib | grep -E 'bin/.+'` to see the full list.
 
 ## Contents
 

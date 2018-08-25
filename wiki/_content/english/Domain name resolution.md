@@ -114,7 +114,7 @@ The columns have the following meaning:
 *   *DNS over HTTPS*: supports the [DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") protocol for encrypted communicating with the DNS server.
 
 | Resolver | Cache | Recursor | *resolvconf* compatibility | Validates DNSSEC | DNS over TLS | DNS over HTTPS | Notes |
-| [glibc](#Glibc_resolver) | No | No | No | No | No | No |
+| [glibc](#Glibc_resolver) | No | No | [openresolv](/index.php/Openresolv "Openresolv") | No | No | No |
 | [BIND](/index.php/BIND "BIND") | Yes | Yes | [openresolv](/index.php/Openresolv "Openresolv") subscriber | Yes |  ? |  ? |
 | [dnscrypt-proxy](/index.php/Dnscrypt-proxy "Dnscrypt-proxy") | Yes | No | No | No | No | Yes | Implements the [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt") protocol. |
 | [dnsmasq](/index.php/Dnsmasq "Dnsmasq") | Yes | No | [openresolv](/index.php/Openresolv "Openresolv") subscriber | Yes | No | No |

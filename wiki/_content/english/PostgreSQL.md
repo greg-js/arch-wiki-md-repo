@@ -123,12 +123,14 @@ Become the postgres user. Add a new database user using the [createuser](https:/
 
 ```
 
-Create a new database over which the above user has read/write privileges using the [createdb](https://www.postgresql.org/docs/current/static/app-createdb.html) command (execute this command from your login shell if the database user has the same name as your Linux user, otherwise add `-U *database-username*` to the following command):
+Create a new database over which the above user has read/write privileges using the [createdb](https://www.postgresql.org/docs/current/static/app-createdb.html) command (execute this command from your login shell if the database user has the same name as your Linux user, otherwise add `-O *database-username*` to the following command):
 
 ```
 $ createdb myDatabaseName
 
 ```
+
+**Tip:** If you did not grant your new user database creation privileges, add `-U postgres` to the previous command.
 
 ## Familiarize with PostgreSQL
 

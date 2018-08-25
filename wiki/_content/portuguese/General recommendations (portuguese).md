@@ -209,13 +209,13 @@ Veja o artigo principal: [Suspensão e hibernação](/index.php/Suspend_and_hibe
 
 ### Som
 
-[Som](/index.php/Sound "Sound") é fornecido pelos drivers de som do kernel:
+[Som](/index.php/Som "Som") é fornecido pelos drivers de som do kernel:
 
 *   [ALSA](/index.php/ALSA_(Portugu%C3%AAs) "ALSA (Português)") é incluído com o kernel e é recomendado porque geralmente ele funciona sem precisar de configuração (só precisa [retirar do mudo](/index.php/Advanced_Linux_Sound_Architecture#Unmuting_the_channels "Advanced Linux Sound Architecture")).
 
 *   [OSS](/index.php/OSS "OSS") é uma alternativa viável no caso de ALSA não funcionar.
 
-Usuários também podem querer instalar e configurar um [servidor de som](/index.php/Sound#Sound_servers "Sound") tal como [PulseAudio](/index.php/PulseAudio_(Portugu%C3%AAs) "PulseAudio (Português)"). Para requisitos de áudio avançados, veja [áudio profissional](/index.php/Professional_audio "Professional audio").
+Usuários também podem querer instalar e configurar um [servidor de som](/index.php/Som#Servidores_de_som "Som") tal como [PulseAudio](/index.php/PulseAudio_(Portugu%C3%AAs) "PulseAudio (Português)"). Para requisitos de áudio avançados, veja [áudio profissional](/index.php/Professional_audio "Professional audio").
 
 ### Plugins de navegadores
 
@@ -235,7 +235,7 @@ O [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "w
 
 ### Segurança de DNS
 
-Para melhor segurança ao navegar na web, jogar na internet, conectar a serviços [SSH](/index.php/SSH "SSH") e tarefas similares, considere usar software cliente habilitado para [DNSSEC](/index.php/DNSSEC "DNSSEC") que pode validar registros [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") assinados e [DNSCrypt](/index.php/DNSCrypt "DNSCrypt") para criptografar tráfego DNS.
+Para melhor segurança ao navegar na web, jogar na internet, conectar a serviços [SSH](/index.php/SSH "SSH") e tarefas similares, considere usar software cliente habilitado para [DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)") que pode validar registros [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") assinados e [DNSCrypt](/index.php/DNSCrypt "DNSCrypt") para criptografar tráfego DNS.
 
 ### Configuração de um firewall
 

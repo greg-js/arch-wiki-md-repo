@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Desktop environment](/index.php/Desktop_environment "Desktop environment"). Data da última tradução: 2018-08-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Desktop_environment&diff=0&oldid=537393) na versão em inglês.
+
 Artigos relacionados
 
 *   [Comparação entre ambientes de desktop](/index.php/Compara%C3%A7%C3%A3o_entre_ambientes_de_desktop "Comparação entre ambientes de desktop")
@@ -114,9 +116,9 @@ Outros componentes geralmente fornecidos por ambientes de área de trabalho são
 
 *   Iniciador de aplicativo: [List of applications#Application launchers](/index.php/List_of_applications#Application_launchers "List of applications")
 *   Controle de volume de áudio: [List of applications#Volume control](/index.php/List_of_applications#Volume_control "List of applications")
-*   Gerenciador de área de trabalho: [Clipboard#List of clipboard managers](/index.php/Clipboard#List_of_clipboard_managers "Clipboard")
+*   [Gerenciador de área de transferência](/index.php/Clipboard_manager "Clipboard manager")
 *   Compositor de desktop: [Xorg#Composite](/index.php/Xorg#Composite "Xorg")
-*   Definidor de papel de parede e ícone da área de trabalho: [List of applications#Wallpaper setters](/index.php/List_of_applications#Wallpaper_setters "List of applications") e [Openbox#Icon programs](/index.php/Openbox#Icon_programs "Openbox")
+*   Definidor de papel de parede e ícone da área de trabalho: [List of applications#Wallpaper setters](/index.php/List_of_applications#Wallpaper_setters "List of applications") e [Openbox#Desktop icons and wallpapers](/index.php/Openbox#Desktop_icons_and_wallpapers "Openbox")
 *   Gerenciador de exibição: [Gerenciadores de exibição#Lista de gerenciadores de exibição](/index.php/Gerenciadores_de_exibi%C3%A7%C3%A3o#Lista_de_gerenciadores_de_exibi.C3.A7.C3.A3o "Gerenciadores de exibição")
 *   Configurações de tela de economia de energia: [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling")
 *   Diálogo de *logout*: [Oblogout](/index.php/Oblogout "Oblogout")

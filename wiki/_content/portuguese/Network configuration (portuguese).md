@@ -168,7 +168,7 @@ O `UP` em `<BROADCAST,MULTICAST,UP,LOWER_UP>` é o que indica a interface está 
 
 Um endereço IP estático pode ser configurado com a maioria dos [gerenciadores de rede](#Gerenciadores_de_rede) padrão e também [dhcpcd](/index.php/Dhcpcd "Dhcpcd").
 
-Para configurar manualmente um endereço IP estático, adicione um endereço IP como descrito em [#Endereços IP](#Endere.C3.A7os_IP), configure sua [tabela de roteamento](#Tabela_de_roteamento) e [configure seus servidores DNS](/index.php/Domain_name_resolution "Domain name resolution").
+Para configurar manualmente um endereço IP estático, adicione um endereço IP como descrito em [#Endereços IP](#Endere.C3.A7os_IP), configure sua [tabela de roteamento](#Tabela_de_roteamento) e [configure seus servidores DNS](/index.php/Resolu%C3%A7%C3%A3o_de_nome_de_dom%C3%ADnio "Resolução de nome de domínio").
 
 ### Endereços IP
 
@@ -304,7 +304,7 @@ Para configurar um hostname "bonito" e outros metadados de máquina, veja [machi
 
 ### Resolução de hostname local
 
-O módulo [Name Service Switch](/index.php/Name_Service_Switch "Name Service Switch") (NSS) `myhostname` do [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") fornece resolução de hostname local sem ter que editar `/etc/hosts` ([hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5)). Ele está habilitado por padrão.
+O módulo [Name Service Switch](/index.php/NSS_(Portugu%C3%AAs) "NSS (Português)") (NSS) `myhostname` do [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") fornece resolução de hostname local sem ter que editar `/etc/hosts` ([hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5)). Ele está habilitado por padrão.
 
 Alguns clientes, porém, podem depender de `/etc/hosts`, veja [[3]](https://lists.debian.org/debian-devel/2013/07/msg00809.html) [[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=87717#c55) por exemplos.
 
