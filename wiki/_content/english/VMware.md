@@ -4,12 +4,9 @@ Related articles
 *   [VMware/Installing Arch as a guest](/index.php/VMware/Installing_Arch_as_a_guest "VMware/Installing Arch as a guest")
 *   [Moving an existing install into (or out of) a virtual machine](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine "Moving an existing install into (or out of) a virtual machine")
 
-This article is about installing VMware in Arch Linux; you may also be interested in [VMware/Installing Arch as a guest](/index.php/VMware/Installing_Arch_as_a_guest "VMware/Installing Arch as a guest").
+This article is about the latest major [VMware](https://en.wikipedia.org/wiki/VMware "wikipedia:VMware") versions, meaning [VMware Workstation](https://en.wikipedia.org/wiki/VMware_Workstation "wikipedia:VMware Workstation") Pro and Player 12.5 and 14\.
 
-**Note:**
-
-*   This article is about the latest major VMware versions, meaning VMware Workstation Pro and Player 12.5 and 14\.
-*   For older versions, use the [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) package.
+You may also be interested in [VMware/Installing Arch as a guest](/index.php/VMware/Installing_Arch_as_a_guest "VMware/Installing Arch as a guest"). For older versions, use the [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) package.
 
 ## Contents
 
@@ -43,9 +40,10 @@ This article is about installing VMware in Arch Linux; you may also be intereste
     *   [5.8 VMware Fails to Start](#VMware_Fails_to_Start)
         *   [5.8.1 Module CPUIDEarly power on failed](#Module_CPUIDEarly_power_on_failed)
         *   [5.8.2 Segmentation fault at startup due to old Intel microcode](#Segmentation_fault_at_startup_due_to_old_Intel_microcode)
-        *   [5.8.3 vmplayer/vmware fails to start from version 12.5.4](#vmplayer.2Fvmware_fails_to_start_from_version_12.5.4)
-        *   [5.8.4 vmplayer/vmware fails to start from version 12.5.3 to version 12.5.5](#vmplayer.2Fvmware_fails_to_start_from_version_12.5.3_to_version_12.5.5)
-        *   [5.8.5 vmware 12 process terminates immediately after start, no GUI is launched](#vmware_12_process_terminates_immediately_after_start.2C_no_GUI_is_launched)
+        *   [5.8.3 vmplayer/vmware version 14 fails to start](#vmplayer.2Fvmware_version_14_fails_to_start)
+        *   [5.8.4 vmplayer/vmware fails to start from version 12.5.4](#vmplayer.2Fvmware_fails_to_start_from_version_12.5.4)
+        *   [5.8.5 vmplayer/vmware fails to start from version 12.5.3 to version 12.5.5](#vmplayer.2Fvmware_fails_to_start_from_version_12.5.3_to_version_12.5.5)
+        *   [5.8.6 vmware 12 process terminates immediately after start, no GUI is launched](#vmware_12_process_terminates_immediately_after_start.2C_no_GUI_is_launched)
     *   [5.9 Guest Issues](#Guest_Issues)
         *   [5.9.1 Unable to download VMware Tools for Guests](#Unable_to_download_VMware_Tools_for_Guests)
         *   [5.9.2 Guests have incorrect system clocks or are unable to boot: "[...]timeTracker_user.c:234 bugNr=148722"](#Guests_have_incorrect_system_clocks_or_are_unable_to_boot:_.22.5B....5DtimeTracker_user.c:234_bugNr.3D148722.22)
@@ -443,6 +441,29 @@ Old Intel microcode may result in the following kind of segmentation fault at st
 ```
 
 See [Microcode](/index.php/Microcode "Microcode") for how to update the microcode.
+
+#### vmplayer/vmware version 14 fails to start
+
+On systems with `librsvg` version 2:2.44.0 and above, the log files (located in `/tmp/vmware-<id>`) show several instances of the following error:
+
+```
+appLoader| I125+ undefined symbol
+
+```
+
+A workaround is to downgrade `librsvg` to earlier version, or more preferably, force VMware to use its own shipped version of `librsvg`:
+
+```
+# export LD_LIBRARY_PATH=/lib/vmware/lib/librsvg-2.so.2:$LD_LIBRARY_PATH
+
+```
+
+VMware also has a `VMWARE_USE_SHIPPED_LIBS` variable:
+
+```
+$ env VMWARE_USE_SHIPPED_LIBS=1 vmware
+
+```
 
 #### vmplayer/vmware fails to start from version 12.5.4
 

@@ -1,4 +1,4 @@
-[DNSCrypt](http://dnscrypt.info/) encrypts and authenticates DNS traffic between user and DNS resolver. While IP traffic itself is unchanged, it prevents local spoofing of DNS queries, ensuring DNS responses are sent by the server of choice. [[1]](https://www.reddit.com/r/sysadmin/comments/2hn435/dnssec_vs_dnscrypt/ckuhcbu)
+[dnscrypt-proxy](https://github.com/jedisct1/dnscrypt-proxy) is a DNS proxy with support for the encrypted DNS protocols [DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") and [DNSCrypt](https://dnscrypt.info/), which can be used to prevent man-in-the-middle attacks and eavesdropping. *dnscrypt-proxy* is also compatible with [DNSSEC](/index.php/DNSSEC "DNSSEC").
 
 ## Contents
 
@@ -24,7 +24,6 @@
             *   [3.4.1.1 Create systemd file](#Create_systemd_file)
             *   [3.4.1.2 Add dnscrypt-sockets](#Add_dnscrypt-sockets)
             *   [3.4.1.3 Apply new systemd configuration](#Apply_new_systemd_configuration)
-*   [4 See also](#See_also)
 
 ## Installation
 
@@ -46,7 +45,7 @@ The service can be started in two mutually exclusive ways (i.e. only one of the 
 
 ### Select resolver
 
-By leaving `server_names` commented out in the configuration file `/etc/dnscrypt-proxy/dnscrypt-proxy.toml`, *dnscrypt-proxy* will choose the fastest server from the sources already configured under `[sources]` [[2]](https://github.com/jedisct1/dnscrypt-proxy/wiki/Configuration#an-example-static-server-entry). The lists will be downloaded, verified, and automatically updated. [[3]](https://github.com/jedisct1/dnscrypt-proxy/wiki/Configuration-Sources#what-is-the-point-of-these-lists). Thus, configuring a specific set of servers is optional.
+By leaving `server_names` commented out in the configuration file `/etc/dnscrypt-proxy/dnscrypt-proxy.toml`, *dnscrypt-proxy* will choose the fastest server from the sources already configured under `[sources]` [[1]](https://github.com/jedisct1/dnscrypt-proxy/wiki/Configuration#an-example-static-server-entry). The lists will be downloaded, verified, and automatically updated. [[2]](https://github.com/jedisct1/dnscrypt-proxy/wiki/Configuration-Sources#what-is-the-point-of-these-lists). Thus, configuring a specific set of servers is optional.
 
 To manually set which server is used, edit `/etc/dnscrypt-proxy/dnscrypt-proxy.toml` and uncomment the `server_names` variable, selecting one or more of the servers. For example, to use Cloudflare's servers:
 
@@ -77,7 +76,7 @@ If the output contains more than the first line of column names, you need to dis
 
 ### Modify resolv.conf
 
-Modify the [resolv.conf](/index.php/Resolv.conf "Resolv.conf") file and replace the current set of resolver addresses with the address for *localhost* and options [[4]](https://github.com/jedisct1/dnscrypt-proxy/wiki/Installation-linux#step-4-change-the-system-dns-settings):
+Modify the [resolv.conf](/index.php/Resolv.conf "Resolv.conf") file and replace the current set of resolver addresses with the address for *localhost* and options [[3]](https://github.com/jedisct1/dnscrypt-proxy/wiki/Installation-linux#step-4-change-the-system-dns-settings):
 
 ```
 nameserver 127.0.0.1
@@ -95,9 +94,9 @@ Finally, [start/enable](/index.php/Start/enable "Start/enable") the `dnscrypt-pr
 
 ### Local DNS cache configuration
 
-**Tip:** *dnscrypt* can cache entries without relying on another program. This feature is enabled by default with the line `cache = true` in your dnscrypt configuration file
+**Tip:** *dnscrypt-proxy* can cache entries without relying on another program. This feature is enabled by default with the line `cache = true` in your *dnscrypt-proxy* configuration file
 
-It is recommended to run DNSCrypt as a forwarder for a local DNS cache if not using *dnscrypt's* cache feature; otherwise, every single query will make a round-trip to the upstream resolver. Any local DNS caching program should work. In addition to setting up *dnscrypt-proxy*, you must setup your local DNS cache program.
+It is recommended to run *dnscrypt-proxy* as a forwarder for a local DNS cache if not using *dnscrypt-proxy's* cache feature; otherwise, every single query will make a round-trip to the upstream resolver. Any local DNS caching program should work. In addition to setting up *dnscrypt-proxy*, you must setup your local DNS cache program.
 
 #### Change port
 
@@ -141,6 +140,7 @@ Configure [Unbound](/index.php/Unbound "Unbound") to your liking (in particular,
   do-not-query-localhost: no
 forward-zone:
   name: "."
+  forward-addr: ::1@53000
   forward-addr: 127.0.0.1@53000
 
 ```
@@ -151,24 +151,30 @@ forward-zone:
 
 ##### dnsmasq
 
-Configure dnsmasq as a [local DNS cache](/index.php/Dnsmasq#Caching_DNS_server "Dnsmasq"). The basic configuration to work with DNSCrypt:
+Configure dnsmasq as a [local DNS cache](/index.php/Dnsmasq#DNS_server "Dnsmasq"). The basic configuration to work with *dnscrypt-proxy*:
 
  `/etc/dnsmasq.conf` 
 ```
 no-resolv
+server=::1#53000
 server=127.0.0.1#53000
-listen-address=127.0.0.1
+listen-address=::1,127.0.0.1
 ```
 
-If you configured DNSCrypt to use a resolver with enabled DNSSEC validation, make sure to enable it also in dnsmasq:
+If you configured *dnscrypt-proxy* to use a resolver with enabled [DNSSEC](/index.php/DNSSEC "DNSSEC") validation, make sure to enable it also in dnsmasq:
 
- `/etc/dnsmasq.conf`  `proxy-dnssec` 
+ `/etc/dnsmasq.conf` 
+```
+conf-file=/usr/share/dnsmasq/trust-anchors.conf
+dnssec
+dnssec-check-unsigned
+```
 
 Restart `dnsmasq.service` to apply the changes.
 
 ##### pdnsd
 
-Install [pdnsd](/index.php/Pdnsd "Pdnsd"). A basic configuration to work with DNSCrypt is:
+Install [pdnsd](/index.php/Pdnsd "Pdnsd"). A basic configuration to work with *dnscrypt-proxy* is:
 
  `/etc/pdnsd.conf` 
 ```
@@ -269,7 +275,7 @@ rst.x4055.x4049.x3827.rs.dns-oarc.net.
 
 ### Redundant DNSCrypt providers
 
-To use several different dnscrypt providers, you may simply copy the original `dnscrypt-proxy.service` and `dnscrypt-proxy.socket`. Then in your new copy of the service change the command line parameters, either pointing to a new configuration file or naming a different resolver directly. From there change the port in the new copy of the socket. Lastly, update your local DNS cache program to point to new service's port. For example, with [unbound](/index.php/Unbound "Unbound") the configuration file would look like if using ports `53000` for the original socket and `53001` for the new socket.
+To use several different DNSCrypt providers, you may simply copy the original `dnscrypt-proxy.service` and `dnscrypt-proxy.socket`. Then in your new copy of the service change the command line parameters, either pointing to a new configuration file or naming a different resolver directly. From there change the port in the new copy of the socket. Lastly, update your local DNS cache program to point to new service's port. For example, with [unbound](/index.php/Unbound "Unbound") the configuration file would look like if using ports `53000` for the original socket and `53001` for the new socket.
 
  `/etc/unbound/unbound.conf` 
 ```
@@ -324,7 +330,3 @@ Since we are replacing the default service with a different name, we need to exp
 Now [start/enable](/index.php/Start/enable "Start/enable") the new service(s), e.g., `dnscrypt-proxy@dnscrypt.eu-nl`, etc.
 
 Finally [restart](/index.php/Restart "Restart") `unbound.service`.
-
-## See also
-
-*   [Wikipedia:DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS")

@@ -168,7 +168,7 @@ The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") 
 | File metadata (number of files, dir structure, file sizes, permissions, mtimes, etc.) is encrypted | ✔ | ✔ | ✔ | ✔ | ✖
 (file and dir names can be encrypted though) | ✖
 (file and dir names can be encrypted though) |
-| Can be used to custom<encrypt whole hard drives (including partition tables) | ✔ | ✔ | ✔ | ✔ | ✖ | ✖ |
+| Can be used to custom-encrypt whole hard drives (including partition tables) | ✔ | ✔ | ✔ | ✔ | ✖ | ✖ |
 | Can be used to encrypt swap space | ✔ | ✔ | ✔ | ✔ | ✖ | ✖ |
 | Can be used without pre-allocating a fixed amount of space for the encrypted data container | ✖ | ✖ | ✖ | ✖ | ✔ | ✔ |
 | Can be used to protect existing filesystems without block device access, e.g. NFS or Samba shares, cloud storage, etc. | ✖

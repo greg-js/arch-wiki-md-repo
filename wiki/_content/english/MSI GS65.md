@@ -235,6 +235,15 @@ Wifi can be reactivated in a few ways:
 
 Or by hibernating and rebooting.
 
+A way to mitigate this is by setting systemd to hibernate instead of suspending.
+
+ `/etc/systemd/logind.conf` 
+```
+HandleSuspendKey=hibernate
+HandleLidSwitch=hibernate
+
+```
+
 ### System freeze
 
 From time to time the graphical interface will freeze and the keyboard will be unresponsive, though audio keeps running. It tends to happen when CPU temperature is high and CPUs are throttling.

@@ -47,67 +47,66 @@ KDE имеет активно поддерживаемый вики-ресурс
     *   [4.1 Системное администрирование](#.D0.A1.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.BD.D0.BE.D0.B5_.D0.B0.D0.B4.D0.BC.D0.B8.D0.BD.D0.B8.D1.81.D1.82.D1.80.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
         *   [4.1.1 Сочетание клавиш для остановки X-сервера](#.D0.A1.D0.BE.D1.87.D0.B5.D1.82.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88_.D0.B4.D0.BB.D1.8F_.D0.BE.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8_X-.D1.81.D0.B5.D1.80.D0.B2.D0.B5.D1.80.D0.B0)
         *   [4.1.2 KCM](#KCM)
-*   [5 Быстрый поиск и семантический рабочий стол](#.D0.91.D1.8B.D1.81.D1.82.D1.80.D1.8B.D0.B9_.D0.BF.D0.BE.D0.B8.D1.81.D0.BA_.D0.B8_.D1.81.D0.B5.D0.BC.D0.B0.D0.BD.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B9_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B8.D0.B9_.D1.81.D1.82.D0.BE.D0.BB)
-    *   [5.1 Baloo](#Baloo)
-        *   [5.1.1 Настройка и использование Baloo](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B8_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_Baloo)
-        *   [5.1.2 Как проиндексировать съемное устройство?](#.D0.9A.D0.B0.D0.BA_.D0.BF.D1.80.D0.BE.D0.B8.D0.BD.D0.B4.D0.B5.D0.BA.D1.81.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D1.82.D1.8C_.D1.81.D1.8A.D0.B5.D0.BC.D0.BD.D0.BE.D0.B5_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.BE.3F)
-    *   [5.2 Akonadi](#Akonadi)
-        *   [5.2.1 Выключение Akonadi](#.D0.92.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_Akonadi)
-        *   [5.2.2 Настройка базы данных](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B1.D0.B0.D0.B7.D1.8B_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85)
-        *   [5.2.3 Использование KDE без Akonadi](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_KDE_.D0.B1.D0.B5.D0.B7_Akonadi)
-*   [6 Полезные приложения](#.D0.9F.D0.BE.D0.BB.D0.B5.D0.B7.D0.BD.D1.8B.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
-    *   [6.1 Yakuake](#Yakuake)
-    *   [6.2 KDE Telepathy](#KDE_Telepathy)
-*   [7 Советы и рекомендации](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.80.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D0.B0.D1.86.D0.B8.D0.B8)
-    *   [7.1 Использование альтернативного оконного менеджера с KDE](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BE.D0.BA.D0.BE.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.B0_.D1.81_KDE)
-        *   [7.1.1 Сеанс KDE/Openbox](#.D0.A1.D0.B5.D0.B0.D0.BD.D1.81_KDE.2FOpenbox)
-        *   [7.1.2 Compiz custom](#Compiz_custom)
-        *   [7.1.3 Включение композитных эффектов](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BD.D1.8B.D1.85_.D1.8D.D1.84.D1.84.D0.B5.D0.BA.D1.82.D0.BE.D0.B2)
-    *   [7.2 Интеграция Android в рабочий стол KDE](#.D0.98.D0.BD.D1.82.D0.B5.D0.B3.D1.80.D0.B0.D1.86.D0.B8.D1.8F_Android_.D0.B2_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B8.D0.B9_.D1.81.D1.82.D0.BE.D0.BB_KDE)
-    *   [7.3 Получение уведомлений о выходе обновлений ПО](#.D0.9F.D0.BE.D0.BB.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.83.D0.B2.D0.B5.D0.B4.D0.BE.D0.BC.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9_.D0.BE_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.B5_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9_.D0.9F.D0.9E)
-    *   [7.4 Настройка KWin для использования OpenGL ES](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_KWin_.D0.B4.D0.BB.D1.8F_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_OpenGL_ES)
-    *   [7.5 Отображение миниатюр для аудио- и видеофайлов в Konqueror/Dolphin](#.D0.9E.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B8.D0.BD.D0.B8.D0.B0.D1.82.D1.8E.D1.80_.D0.B4.D0.BB.D1.8F_.D0.B0.D1.83.D0.B4.D0.B8.D0.BE-_.D0.B8_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D0.B2_Konqueror.2FDolphin)
-    *   [7.6 Ускорение запуска приложений](#.D0.A3.D1.81.D0.BA.D0.BE.D1.80.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9)
-    *   [7.7 Скрытие разделов](#.D0.A1.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2)
-    *   [7.8 Konqueror](#Konqueror)
-        *   [7.8.1 Отключение Access Keys](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_Access_Keys)
-        *   [7.8.2 Использование WebKit](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_WebKit)
-    *   [7.9 Интеграция Firefox в KDE](#.D0.98.D0.BD.D1.82.D0.B5.D0.B3.D1.80.D0.B0.D1.86.D0.B8.D1.8F_Firefox_.D0.B2_KDE)
-    *   [7.10 Установка фона для экрана блокировки](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D1.84.D0.BE.D0.BD.D0.B0_.D0.B4.D0.BB.D1.8F_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0_.D0.B1.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B8)
-    *   [7.11 Еще один способ установки фона для экрана блокировки](#.D0.95.D1.89.D0.B5_.D0.BE.D0.B4.D0.B8.D0.BD_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8_.D1.84.D0.BE.D0.BD.D0.B0_.D0.B4.D0.BB.D1.8F_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0_.D0.B1.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B8)
-    *   [7.12 Изменение фона экрана приветствия при запуске (Plasma 5)](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.84.D0.BE.D0.BD.D0.B0_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0_.D0.BF.D1.80.D0.B8.D0.B2.D0.B5.D1.82.D1.81.D1.82.D0.B2.D0.B8.D1.8F_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B5_.28Plasma_5.29)
-*   [8 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [8.1 Шрифты](#.D0.A8.D1.80.D0.B8.D1.84.D1.82.D1.8B)
-        *   [8.1.1 Шрифты в KDE выглядят плохо](#.D0.A8.D1.80.D0.B8.D1.84.D1.82.D1.8B_.D0.B2_KDE_.D0.B2.D1.8B.D0.B3.D0.BB.D1.8F.D0.B4.D1.8F.D1.82_.D0.BF.D0.BB.D0.BE.D1.85.D0.BE)
-        *   [8.1.2 Огромные или непропорциональные буквы](#.D0.9E.D0.B3.D1.80.D0.BE.D0.BC.D0.BD.D1.8B.D0.B5_.D0.B8.D0.BB.D0.B8_.D0.BD.D0.B5.D0.BF.D1.80.D0.BE.D0.BF.D0.BE.D1.80.D1.86.D0.B8.D0.BE.D0.BD.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.B1.D1.83.D0.BA.D0.B2.D1.8B)
-    *   [8.2 Отсутствие иконок в трее (KDE5)](#.D0.9E.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D0.B8.D0.B5_.D0.B8.D0.BA.D0.BE.D0.BD.D0.BE.D0.BA_.D0.B2_.D1.82.D1.80.D0.B5.D0.B5_.28KDE5.29)
-    *   [8.3 Проблемы с настройками](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0.D0.BC.D0.B8)
-        *   [8.3.1 Полный сброс настроек KDE](#.D0.9F.D0.BE.D0.BB.D0.BD.D1.8B.D0.B9_.D1.81.D0.B1.D1.80.D0.BE.D1.81_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA_KDE)
-        *   [8.3.2 Странное поведение рабочего стола Plasma](#.D0.A1.D1.82.D1.80.D0.B0.D0.BD.D0.BD.D0.BE.D0.B5_.D0.BF.D0.BE.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B5.D0.B3.D0.BE_.D1.81.D1.82.D0.BE.D0.BB.D0.B0_Plasma)
-        *   [8.3.3 Очистка кэша для решения проблем с обновлением](#.D0.9E.D1.87.D0.B8.D1.81.D1.82.D0.BA.D0.B0_.D0.BA.D1.8D.D1.88.D0.B0_.D0.B4.D0.BB.D1.8F_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC_.D1.81_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5.D0.BC)
-    *   [8.4 Сброс настроек Akonadi для решения проблем с KMail](#.D0.A1.D0.B1.D1.80.D0.BE.D1.81_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA_Akonadi_.D0.B4.D0.BB.D1.8F_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC_.D1.81_KMail)
-    *   [8.5 Текущее состояние KWin для поддержки и отладки](#.D0.A2.D0.B5.D0.BA.D1.83.D1.89.D0.B5.D0.B5_.D1.81.D0.BE.D1.81.D1.82.D0.BE.D1.8F.D0.BD.D0.B8.D0.B5_KWin_.D0.B4.D0.BB.D1.8F_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B8_.D0.B8_.D0.BE.D1.82.D0.BB.D0.B0.D0.B4.D0.BA.D0.B8)
-    *   [8.6 KDE4 зависает на этапе загрузки](#KDE4_.D0.B7.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.B5.D1.82_.D0.BD.D0.B0_.D1.8D.D1.82.D0.B0.D0.BF.D0.B5_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8)
-    *   [8.7 Программы KDE выглядят плохо в другом оконном менеджере](#.D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D1.8B_KDE_.D0.B2.D1.8B.D0.B3.D0.BB.D1.8F.D0.B4.D1.8F.D1.82_.D0.BF.D0.BB.D0.BE.D1.85.D0.BE_.D0.B2_.D0.B4.D1.80.D1.83.D0.B3.D0.BE.D0.BC_.D0.BE.D0.BA.D0.BE.D0.BD.D0.BD.D0.BE.D0.BC_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.B5)
-    *   [8.8 Проблемы с графикой](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D0.B3.D1.80.D0.B0.D1.84.D0.B8.D0.BA.D0.BE.D0.B9)
-        *   [8.8.1 Низкая производительность или артефакты изображения в режиме 2D](#.D0.9D.D0.B8.D0.B7.D0.BA.D0.B0.D1.8F_.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B8.D0.BB.D0.B8_.D0.B0.D1.80.D1.82.D0.B5.D1.84.D0.B0.D0.BA.D1.82.D1.8B_.D0.B8.D0.B7.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B2_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5_2D)
-            *   [8.8.1.1 Проблема с драйвером видеокарты](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D0.B0_.D1.81_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.BE.D0.BC_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE.D0.BA.D0.B0.D1.80.D1.82.D1.8B)
-            *   [8.8.1.2 Использование альтернативного рендера](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D0.B3.D0.BE_.D1.80.D0.B5.D0.BD.D0.B4.D0.B5.D1.80.D0.B0)
-        *   [8.8.2 Низкая производительность в режиме 3D](#.D0.9D.D0.B8.D0.B7.D0.BA.D0.B0.D1.8F_.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B2_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5_3D)
-        *   [8.8.3 Композитные эффекты не работают с современной видеокартой Nvidia](#.D0.9A.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BD.D1.8B.D0.B5_.D1.8D.D1.84.D1.84.D0.B5.D0.BA.D1.82.D1.8B_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.82_.D1.81_.D1.81.D0.BE.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D0.BE.D0.B9_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE.D0.BA.D0.B0.D1.80.D1.82.D0.BE.D0.B9_Nvidia)
-        *   [8.8.4 Мерцание окон в полноэкранном режиме при включенном композитном режиме](#.D0.9C.D0.B5.D1.80.D1.86.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BE.D0.BA.D0.BE.D0.BD_.D0.B2_.D0.BF.D0.BE.D0.BB.D0.BD.D0.BE.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.BD.D0.BE.D0.BC_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5_.D0.BF.D1.80.D0.B8_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.BD.D0.BE.D0.BC_.D0.BA.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BD.D0.BE.D0.BC_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5)
-        *   [8.8.5 Screen tearing при включенном композитном режиме](#Screen_tearing_.D0.BF.D1.80.D0.B8_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.BD.D0.BE.D0.BC_.D0.BA.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BD.D0.BE.D0.BC_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5)
-        *   [8.8.6 Параметры экрана сбрасываются при перезагрузке (несколько мониторов)](#.D0.9F.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0_.D1.81.D0.B1.D1.80.D0.B0.D1.81.D1.8B.D0.B2.D0.B0.D1.8E.D1.82.D1.81.D1.8F_.D0.BF.D1.80.D0.B8_.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5_.28.D0.BD.D0.B5.D1.81.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2.29)
-    *   [8.9 Проблемы со звуком в KDE](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81.D0.BE_.D0.B7.D0.B2.D1.83.D0.BA.D0.BE.D0.BC_.D0.B2_KDE)
-        *   [8.9.1 ALSA related problems](#ALSA_related_problems)
-            *   [8.9.1.1 Сообщения "Falling back to default" при попытке воcпроизвести любой звук](#.D0.A1.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D1.8F_.22Falling_back_to_default.22_.D0.BF.D1.80.D0.B8_.D0.BF.D0.BE.D0.BF.D1.8B.D1.82.D0.BA.D0.B5_.D0.B2.D0.BEc.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.B5.D1.81.D1.82.D0.B8_.D0.BB.D1.8E.D0.B1.D0.BE.D0.B9_.D0.B7.D0.B2.D1.83.D0.BA)
-            *   [8.9.1.2 MP3-файлы не воспроизводятся с бэкендом GStreamer](#MP3-.D1.84.D0.B0.D0.B9.D0.BB.D1.8B_.D0.BD.D0.B5_.D0.B2.D0.BE.D1.81.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D1.8F.D1.82.D1.81.D1.8F_.D1.81_.D0.B1.D1.8D.D0.BA.D0.B5.D0.BD.D0.B4.D0.BE.D0.BC_GStreamer)
-    *   [8.10 Konsole не сохраняет историю команд](#Konsole_.D0.BD.D0.B5_.D1.81.D0.BE.D1.85.D1.80.D0.B0.D0.BD.D1.8F.D0.B5.D1.82_.D0.B8.D1.81.D1.82.D0.BE.D1.80.D0.B8.D1.8E_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4)
-    *   [8.11 В поле ввода пароля отображается по три точки на символ](#.D0.92_.D0.BF.D0.BE.D0.BB.D0.B5_.D0.B2.D0.B2.D0.BE.D0.B4.D0.B0_.D0.BF.D0.B0.D1.80.D0.BE.D0.BB.D1.8F_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BF.D0.BE_.D1.82.D1.80.D0.B8_.D1.82.D0.BE.D1.87.D0.BA.D0.B8_.D0.BD.D0.B0_.D1.81.D0.B8.D0.BC.D0.B2.D0.BE.D0.BB)
-    *   [8.12 Dolphin и File Dialogs очень долго запускаются](#Dolphin_.D0.B8_File_Dialogs_.D0.BE.D1.87.D0.B5.D0.BD.D1.8C_.D0.B4.D0.BE.D0.BB.D0.B3.D0.BE_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D1.8E.D1.82.D1.81.D1.8F)
-    *   [8.13 Средство просмотра PDF по умолчанию для приложений GTK в KDE](#.D0.A1.D1.80.D0.B5.D0.B4.D1.81.D1.82.D0.B2.D0.BE_.D0.BF.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80.D0.B0_PDF_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E_.D0.B4.D0.BB.D1.8F_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_GTK_.D0.B2_KDE)
-*   [9 Ошибки в программах](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B8_.D0.B2_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.B0.D1.85)
-*   [10 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+    *   [4.2 Локальный поисковик](#.D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B9_.D0.BF.D0.BE.D0.B8.D1.81.D0.BA.D0.BE.D0.B2.D0.B8.D0.BA)
+    *   [4.3 Веб-браузеры](#.D0.92.D0.B5.D0.B1-.D0.B1.D1.80.D0.B0.D1.83.D0.B7.D0.B5.D1.80.D1.8B)
+    *   [4.4 PIM](#PIM)
+        *   [4.4.1 Akonadi](#Akonadi)
+            *   [4.4.1.1 Выключение Akonadi](#.D0.92.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_Akonadi)
+            *   [4.4.1.2 Настройка базы данных](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.B1.D0.B0.D0.B7.D1.8B_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85)
+            *   [4.4.1.3 Использование KDE без Akonadi](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_KDE_.D0.B1.D0.B5.D0.B7_Akonadi)
+*   [5 Полезные приложения](#.D0.9F.D0.BE.D0.BB.D0.B5.D0.B7.D0.BD.D1.8B.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
+    *   [5.1 Yakuake](#Yakuake)
+    *   [5.2 KDE Telepathy](#KDE_Telepathy)
+*   [6 Советы и рекомендации](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.80.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D0.B0.D1.86.D0.B8.D0.B8)
+    *   [6.1 Использование альтернативного оконного менеджера с KDE](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BE.D0.BA.D0.BE.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.B0_.D1.81_KDE)
+        *   [6.1.1 Сеанс KDE/Openbox](#.D0.A1.D0.B5.D0.B0.D0.BD.D1.81_KDE.2FOpenbox)
+        *   [6.1.2 Compiz custom](#Compiz_custom)
+        *   [6.1.3 Включение композитных эффектов](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BD.D1.8B.D1.85_.D1.8D.D1.84.D1.84.D0.B5.D0.BA.D1.82.D0.BE.D0.B2)
+    *   [6.2 Интеграция Android в рабочий стол KDE](#.D0.98.D0.BD.D1.82.D0.B5.D0.B3.D1.80.D0.B0.D1.86.D0.B8.D1.8F_Android_.D0.B2_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B8.D0.B9_.D1.81.D1.82.D0.BE.D0.BB_KDE)
+    *   [6.3 Получение уведомлений о выходе обновлений ПО](#.D0.9F.D0.BE.D0.BB.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.83.D0.B2.D0.B5.D0.B4.D0.BE.D0.BC.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9_.D0.BE_.D0.B2.D1.8B.D1.85.D0.BE.D0.B4.D0.B5_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B9_.D0.9F.D0.9E)
+    *   [6.4 Настройка KWin для использования OpenGL ES](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_KWin_.D0.B4.D0.BB.D1.8F_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_OpenGL_ES)
+    *   [6.5 Отображение миниатюр для аудио- и видеофайлов в Konqueror/Dolphin](#.D0.9E.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B8.D0.BD.D0.B8.D0.B0.D1.82.D1.8E.D1.80_.D0.B4.D0.BB.D1.8F_.D0.B0.D1.83.D0.B4.D0.B8.D0.BE-_.D0.B8_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2_.D0.B2_Konqueror.2FDolphin)
+    *   [6.6 Ускорение запуска приложений](#.D0.A3.D1.81.D0.BA.D0.BE.D1.80.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9)
+    *   [6.7 Скрытие разделов](#.D0.A1.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2)
+    *   [6.8 Konqueror](#Konqueror)
+        *   [6.8.1 Отключение Access Keys](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_Access_Keys)
+        *   [6.8.2 Использование WebKit](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_WebKit)
+    *   [6.9 Интеграция Firefox в KDE](#.D0.98.D0.BD.D1.82.D0.B5.D0.B3.D1.80.D0.B0.D1.86.D0.B8.D1.8F_Firefox_.D0.B2_KDE)
+    *   [6.10 Установка фона для экрана блокировки](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D1.84.D0.BE.D0.BD.D0.B0_.D0.B4.D0.BB.D1.8F_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0_.D0.B1.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B8)
+    *   [6.11 Еще один способ установки фона для экрана блокировки](#.D0.95.D1.89.D0.B5_.D0.BE.D0.B4.D0.B8.D0.BD_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8_.D1.84.D0.BE.D0.BD.D0.B0_.D0.B4.D0.BB.D1.8F_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0_.D0.B1.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B8)
+    *   [6.12 Изменение фона экрана приветствия при запуске (Plasma 5)](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.84.D0.BE.D0.BD.D0.B0_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0_.D0.BF.D1.80.D0.B8.D0.B2.D0.B5.D1.82.D1.81.D1.82.D0.B2.D0.B8.D1.8F_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B5_.28Plasma_5.29)
+*   [7 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
+    *   [7.1 Шрифты](#.D0.A8.D1.80.D0.B8.D1.84.D1.82.D1.8B)
+        *   [7.1.1 Шрифты в KDE выглядят плохо](#.D0.A8.D1.80.D0.B8.D1.84.D1.82.D1.8B_.D0.B2_KDE_.D0.B2.D1.8B.D0.B3.D0.BB.D1.8F.D0.B4.D1.8F.D1.82_.D0.BF.D0.BB.D0.BE.D1.85.D0.BE)
+        *   [7.1.2 Огромные или непропорциональные буквы](#.D0.9E.D0.B3.D1.80.D0.BE.D0.BC.D0.BD.D1.8B.D0.B5_.D0.B8.D0.BB.D0.B8_.D0.BD.D0.B5.D0.BF.D1.80.D0.BE.D0.BF.D0.BE.D1.80.D1.86.D0.B8.D0.BE.D0.BD.D0.B0.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.B1.D1.83.D0.BA.D0.B2.D1.8B)
+    *   [7.2 Отсутствие иконок в трее (KDE5)](#.D0.9E.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D0.B8.D0.B5_.D0.B8.D0.BA.D0.BE.D0.BD.D0.BE.D0.BA_.D0.B2_.D1.82.D1.80.D0.B5.D0.B5_.28KDE5.29)
+    *   [7.3 Проблемы с настройками](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0.D0.BC.D0.B8)
+        *   [7.3.1 Полный сброс настроек KDE](#.D0.9F.D0.BE.D0.BB.D0.BD.D1.8B.D0.B9_.D1.81.D0.B1.D1.80.D0.BE.D1.81_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA_KDE)
+        *   [7.3.2 Странное поведение рабочего стола Plasma](#.D0.A1.D1.82.D1.80.D0.B0.D0.BD.D0.BD.D0.BE.D0.B5_.D0.BF.D0.BE.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B5.D0.B3.D0.BE_.D1.81.D1.82.D0.BE.D0.BB.D0.B0_Plasma)
+        *   [7.3.3 Очистка кэша для решения проблем с обновлением](#.D0.9E.D1.87.D0.B8.D1.81.D1.82.D0.BA.D0.B0_.D0.BA.D1.8D.D1.88.D0.B0_.D0.B4.D0.BB.D1.8F_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC_.D1.81_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5.D0.BC)
+    *   [7.4 Сброс настроек Akonadi для решения проблем с KMail](#.D0.A1.D0.B1.D1.80.D0.BE.D1.81_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA_Akonadi_.D0.B4.D0.BB.D1.8F_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC_.D1.81_KMail)
+    *   [7.5 Текущее состояние KWin для поддержки и отладки](#.D0.A2.D0.B5.D0.BA.D1.83.D1.89.D0.B5.D0.B5_.D1.81.D0.BE.D1.81.D1.82.D0.BE.D1.8F.D0.BD.D0.B8.D0.B5_KWin_.D0.B4.D0.BB.D1.8F_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B8_.D0.B8_.D0.BE.D1.82.D0.BB.D0.B0.D0.B4.D0.BA.D0.B8)
+    *   [7.6 KDE4 зависает на этапе загрузки](#KDE4_.D0.B7.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.B5.D1.82_.D0.BD.D0.B0_.D1.8D.D1.82.D0.B0.D0.BF.D0.B5_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8)
+    *   [7.7 Программы KDE выглядят плохо в другом оконном менеджере](#.D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D1.8B_KDE_.D0.B2.D1.8B.D0.B3.D0.BB.D1.8F.D0.B4.D1.8F.D1.82_.D0.BF.D0.BB.D0.BE.D1.85.D0.BE_.D0.B2_.D0.B4.D1.80.D1.83.D0.B3.D0.BE.D0.BC_.D0.BE.D0.BA.D0.BE.D0.BD.D0.BD.D0.BE.D0.BC_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.B5)
+    *   [7.8 Проблемы с графикой](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D0.B3.D1.80.D0.B0.D1.84.D0.B8.D0.BA.D0.BE.D0.B9)
+        *   [7.8.1 Низкая производительность или артефакты изображения в режиме 2D](#.D0.9D.D0.B8.D0.B7.D0.BA.D0.B0.D1.8F_.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B8.D0.BB.D0.B8_.D0.B0.D1.80.D1.82.D0.B5.D1.84.D0.B0.D0.BA.D1.82.D1.8B_.D0.B8.D0.B7.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B2_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5_2D)
+            *   [7.8.1.1 Проблема с драйвером видеокарты](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D0.B0_.D1.81_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.BE.D0.BC_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE.D0.BA.D0.B0.D1.80.D1.82.D1.8B)
+            *   [7.8.1.2 Использование альтернативного рендера](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D0.B3.D0.BE_.D1.80.D0.B5.D0.BD.D0.B4.D0.B5.D1.80.D0.B0)
+        *   [7.8.2 Низкая производительность в режиме 3D](#.D0.9D.D0.B8.D0.B7.D0.BA.D0.B0.D1.8F_.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B2_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5_3D)
+        *   [7.8.3 Композитные эффекты не работают с современной видеокартой Nvidia](#.D0.9A.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BD.D1.8B.D0.B5_.D1.8D.D1.84.D1.84.D0.B5.D0.BA.D1.82.D1.8B_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.82_.D1.81_.D1.81.D0.BE.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D0.BE.D0.B9_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE.D0.BA.D0.B0.D1.80.D1.82.D0.BE.D0.B9_Nvidia)
+        *   [7.8.4 Мерцание окон в полноэкранном режиме при включенном композитном режиме](#.D0.9C.D0.B5.D1.80.D1.86.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BE.D0.BA.D0.BE.D0.BD_.D0.B2_.D0.BF.D0.BE.D0.BB.D0.BD.D0.BE.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.BD.D0.BE.D0.BC_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5_.D0.BF.D1.80.D0.B8_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.BD.D0.BE.D0.BC_.D0.BA.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BD.D0.BE.D0.BC_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5)
+        *   [7.8.5 Screen tearing при включенном композитном режиме](#Screen_tearing_.D0.BF.D1.80.D0.B8_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.BD.D0.BE.D0.BC_.D0.BA.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BD.D0.BE.D0.BC_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5)
+        *   [7.8.6 Параметры экрана сбрасываются при перезагрузке (несколько мониторов)](#.D0.9F.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0_.D1.81.D0.B1.D1.80.D0.B0.D1.81.D1.8B.D0.B2.D0.B0.D1.8E.D1.82.D1.81.D1.8F_.D0.BF.D1.80.D0.B8_.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5_.28.D0.BD.D0.B5.D1.81.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2.29)
+    *   [7.9 Проблемы со звуком в KDE](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81.D0.BE_.D0.B7.D0.B2.D1.83.D0.BA.D0.BE.D0.BC_.D0.B2_KDE)
+        *   [7.9.1 ALSA related problems](#ALSA_related_problems)
+            *   [7.9.1.1 Сообщения "Falling back to default" при попытке воcпроизвести любой звук](#.D0.A1.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D1.8F_.22Falling_back_to_default.22_.D0.BF.D1.80.D0.B8_.D0.BF.D0.BE.D0.BF.D1.8B.D1.82.D0.BA.D0.B5_.D0.B2.D0.BEc.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.B5.D1.81.D1.82.D0.B8_.D0.BB.D1.8E.D0.B1.D0.BE.D0.B9_.D0.B7.D0.B2.D1.83.D0.BA)
+            *   [7.9.1.2 MP3-файлы не воспроизводятся с бэкендом GStreamer](#MP3-.D1.84.D0.B0.D0.B9.D0.BB.D1.8B_.D0.BD.D0.B5_.D0.B2.D0.BE.D1.81.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D1.8F.D1.82.D1.81.D1.8F_.D1.81_.D0.B1.D1.8D.D0.BA.D0.B5.D0.BD.D0.B4.D0.BE.D0.BC_GStreamer)
+    *   [7.10 Konsole не сохраняет историю команд](#Konsole_.D0.BD.D0.B5_.D1.81.D0.BE.D1.85.D1.80.D0.B0.D0.BD.D1.8F.D0.B5.D1.82_.D0.B8.D1.81.D1.82.D0.BE.D1.80.D0.B8.D1.8E_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4)
+    *   [7.11 В поле ввода пароля отображается по три точки на символ](#.D0.92_.D0.BF.D0.BE.D0.BB.D0.B5_.D0.B2.D0.B2.D0.BE.D0.B4.D0.B0_.D0.BF.D0.B0.D1.80.D0.BE.D0.BB.D1.8F_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BF.D0.BE_.D1.82.D1.80.D0.B8_.D1.82.D0.BE.D1.87.D0.BA.D0.B8_.D0.BD.D0.B0_.D1.81.D0.B8.D0.BC.D0.B2.D0.BE.D0.BB)
+    *   [7.12 Dolphin и File Dialogs очень долго запускаются](#Dolphin_.D0.B8_File_Dialogs_.D0.BE.D1.87.D0.B5.D0.BD.D1.8C_.D0.B4.D0.BE.D0.BB.D0.B3.D0.BE_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D1.8E.D1.82.D1.81.D1.8F)
+    *   [7.13 Средство просмотра PDF по умолчанию для приложений GTK в KDE](#.D0.A1.D1.80.D0.B5.D0.B4.D1.81.D1.82.D0.B2.D0.BE_.D0.BF.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80.D0.B0_PDF_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E_.D0.B4.D0.BB.D1.8F_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_GTK_.D0.B2_KDE)
+*   [8 Ошибки в программах](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B8_.D0.B2_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.B0.D1.85)
+*   [9 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Установка
 
@@ -383,45 +382,45 @@ Phonon широко используется в среде KDE, как для а
 
 Больше модулей KCM можно найти на сайте [linux-apps.com](https://www.linux-apps.com/search?projectSearchText=KCM).
 
-## Быстрый поиск и семантический рабочий стол
+### Локальный поисковик
 
-Из [Википедии](https://en.wikipedia.org/wiki/ru:%D0%A1%D0%B5%D0%BC%D0%B0%D0%BD%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9_%D1%81%D1%82%D0%BE%D0%BB "wikipedia:ru:Семантический рабочий стол"):
+В KDE Plasma есть [локальный поисковик](https://en.wikipedia.org/wiki/ru:%D0%9B%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA%D0%BE%D0%B2%D0%B8%D0%BA "wikipedia:ru:Локальный поисковик") — [Baloo](/index.php/Baloo "Baloo"), который позволяет индексировать и искать файлы.
 
-	*"Семантический рабочий стол (в информатике) — обобщенный термин, обозначающий идеи, связанные с изменением компьютерных пользовательских интерфейсов и возможностей управления данными так, что обмен ими между различными приложениями или задачами упрощается, и невозможная ранее автоматическая обработка данных одним компьютером становится возможной. Сюда также включаются некоторые идеи о возможности автоматического обмена информацией между людьми. Эта концепция связана с семантической паутиной, но отличается тем, что основной интерес представляет персональное использование информации."*
+### Веб-браузеры
 
-Реализация этой концепции в KDE (начиная с KDE Applications 4.13) связана с двумя основными проектами: Akonadi и Baloo. Эти программы анализируют ваши данные и индексируют их, позволяя легко и быстро производить по ним поиск. Суть в том, что другие программы могут использовать этот индекс и связанные с ним метаданные о ваших файлах для более эффективной работы. Baloo использует Xapian для хранения данных.
+Следующие веб-браузеры могут быть интегрированы в Plasma:
 
-### Baloo
+*   **[Konqueror](https://en.wikipedia.org/wiki/ru:Konqueror "wikipedia:ru:Konqueror")** — Часть проекта KDE. Поддерживает два движка — KHTML и Qt WebEngine, основанный на [Chromium (Русский)](/index.php/Chromium_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Chromium (Русский)").
 
-#### Настройка и использование Baloo
+	[https://konqueror.org/](https://konqueror.org/) || [konqueror](https://www.archlinux.org/packages/?name=konqueror)
 
-Нажмите `ALT+F2` для поиска на рабочем столе при помощи Baloo. В Dophin используйте комбинацию `CTRL+F`.
+*   **[Falkon](https://en.wikipedia.org/wiki/ru:Falkon "wikipedia:ru:Falkon")** — Веб-браузер основанный на Qt и включающий в себя возможности интеграции с Plasma. Falkon (ранее известный как Qupzilla) использует движок Qt WebEngine.
 
-По умолчанию, модуль настройки *Desktop Search* предоставляет вам только возможность добавлять каталоги в список исключенных для индексирования, и возможность глобально включать и отключать индексирование. Более полный модуль настройки доступен с пакетом [kcm_baloo_advanced](https://aur.archlinux.org/packages/kcm_baloo_advanced/).
+	[https://userbase.kde.org/Falkon/](https://userbase.kde.org/Falkon/) || [falkon](https://www.archlinux.org/packages/?name=falkon)
 
-Также вы можете вручную отредактировать настройки в файле `~/.kde4/share/config/baloofilerc`. Например, для отключения Baloo добавьте:
+*   **[Chromium](/index.php/Chromium "Chromium")** — Chromium и его проприетарный вариант Google Chrome довольно ограничены в интеграции с Plasma. Они [могут использовать](/index.php/KDE_Wallet#KDE_Wallet_for_Chrome_and_Chromium "KDE Wallet") KWallet и диалоги Plasma для открытия и сохранения файлов.
 
-```
-[Basic Settings]
-Indexing-Enabled=false
+	[https://www.chromium.org/](https://www.chromium.org/) || [chromium](https://www.archlinux.org/packages/?name=chromium)
 
-```
+*   **[Firefox](/index.php/Firefox "Firefox")** — Firefox можно настроить для большей интеграции с Plasma. Смотрите [Firefox#KDE/GNOME integration](/index.php/Firefox#KDE.2FGNOME_integration "Firefox") для более подробной информации.
 
-После добавления каталогов в список исключения/выключения Baloo, будет запущен специальный процесс `baloo_file_cleaner`, который удалит ненужные более файлы индекса из `~/.local/share/baloo/`.
+	[https://mozilla.org/firefox](https://mozilla.org/firefox) || [firefox](https://www.archlinux.org/packages/?name=firefox)
 
-#### Как проиндексировать съемное устройство?
+**Совет:** Начиная с Plasma 5.13 можно интегрировать [Firefox (Русский)](/index.php/Firefox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Firefox (Русский)") или [Chrome](/index.php/Chrome "Chrome") с Plasma для получения следующих возможностей: управление воспроизведением медиаконтентом из трея Plasma, уведомление о загрузках и нахождение открытых вкладок через KRunner. [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [plasma-browser-integration](https://www.archlinux.org/packages/?name=plasma-browser-integration) и соответствующее дополнение для браузера. Поддержка Chrome/Chromium уже должна быть включена, для Firefox смотрите [Firefox#KDE/GNOME integration](/index.php/Firefox#KDE.2FGNOME_integration "Firefox").
 
-По умолчанию, каталоги съемных устройств автоматически исключаются из индекса. Вам необходимо лишь удалить устройство из списка исключения в панели *Desktop Search*.
+### PIM
 
-### Akonadi
+KDE поставляет свой собственный набор [PIM-приложений](https://en.wikipedia.org/wiki/ru:%D0%9F%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "wikipedia:ru:Персональный информационный менеджер"), который включает электронные письма, контакты, календарь и так далее. Для их установки можно использовать мета-пакет [kdepim-meta](https://www.archlinux.org/packages/?name=kdepim-meta).
+
+#### Akonadi
 
 Akonadi представляет собой хранилище данных для всех [PIM-приложений](https://en.wikipedia.org/wiki/ru:Kdepim "wikipedia:ru:Kdepim"). Сюда входят электронная почта, контакты, календари, события, журналы, личное расписание, будильник, новости и т. п.
 
-#### Выключение Akonadi
+##### Выключение Akonadi
 
 Смотрите раздел [Disabling the Akonadi subsystem](http://userbase.kde.org/Akonadi#Disabling_the_Akonadi_subsystem) в базе знаний KDE.
 
-#### Настройка базы данных
+##### Настройка базы данных
 
 Запустите *akonaditray* (предоставляемый пакетом [kdepim-runtime](https://www.archlinux.org/packages/?name=kdepim-runtime)). В системном трее появится значок Akonadi. В контекстном меню выберите *Configure*. Во вкладке *Akonadi server configure* вы можете:
 
@@ -452,7 +451,7 @@ Name=/home/*username*/.local/akonadi/akonadi.db
 
 ```
 
-#### Использование KDE без Akonadi
+##### Использование KDE без Akonadi
 
 Вы можете установить пакет-заглушку [akonadi-fake](https://aur.archlinux.org/packages/akonadi-fake/), который заменит собой [akonadi](https://www.archlinux.org/packages/?name=akonadi).
 

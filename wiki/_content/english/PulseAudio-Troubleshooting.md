@@ -35,6 +35,9 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
     *   [2.8 Microphone crackling with Realtek ALC892](#Microphone_crackling_with_Realtek_ALC892)
 *   [3 Audio quality](#Audio_quality)
     *   [3.1 Enable Echo/Noise-Cancellation](#Enable_Echo.2FNoise-Cancellation)
+        *   [3.1.1 Possible 'aec_args' for 'aec_method=webrtc'](#Possible_.27aec_args.27_for_.27aec_method.3Dwebrtc.27)
+        *   [3.1.2 Disable audio post processing in certain applications](#Disable_audio_post_processing_in_certain_applications)
+        *   [3.1.3 Make module-echo-cancel comfortably loadable from the DE](#Make_module-echo-cancel_comfortably_loadable_from_the_DE)
     *   [3.2 Glitches, skips or crackling](#Glitches.2C_skips_or_crackling)
     *   [3.3 Static noise when using headphones](#Static_noise_when_using_headphones)
     *   [3.4 Setting the default fragment number and buffer size in PulseAudio](#Setting_the_default_fragment_number_and_buffer_size_in_PulseAudio)
@@ -581,7 +584,13 @@ pulseaudio --start
 
 ```
 
-and check if the module is activated by starting `pavucontrol`. Under `Recoding` the input device should show `Echo-Cancel Source Stream from"`
+and check if the module is activated by starting `pavucontrol`. Under `Recoding` the input device should show `Echo-Cancel Source Stream from"`.
+If you want that existing streams are automatically moved to the new sink and source, you have to load the [module-switch-on-connect](#Automatically_switch_to_Bluetooth_or_USB_headset) with `load-module module-switch-on-connect ignore_virtual=no` bevor.
+
+BEWARE:
+If you plug in a USB Soundcard/Headset, or you have for example a 5.1 Speaker configuration and plug in a Headset on your front audio connectors after you have loaded the 'module-echo-cancel', you have to manually unload and load the 'module-echo-cancel' again, because unfortunately there is no way to tell the 'module-echo-cancel' that it should automatically switch to the new default 'source_master' and 'source_sink'. See [https://bugs.freedesktop.org/show_bug.cgi?id=100403](https://bugs.freedesktop.org/show_bug.cgi?id=100403)
+
+#### Possible 'aec_args' for 'aec_method=webrtc'
 
 Here is a list of possible 'aec_args' for 'aec_method=webrtc' with their default values [[3]](https://github.com/pulseaudio/pulseaudio/blob/master/src/modules/echo-cancel/webrtc.cc)[[4]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index45h3):
 
@@ -601,6 +610,8 @@ Here is a list of possible 'aec_args' for 'aec_method=webrtc' with their default
 *   `mobile=0` - ?
     *   `routing_mode=speakerphone` - Possible Values "quiet-earpiece-or-headset,earpiece,loud-earpiece,speakerphone,loud-speakerphone" - only valid with "mobile=1".
     *   `comfort_noise=1` - ? - only valid with "mobile=1".
+
+#### Disable audio post processing in certain applications
 
 If you are using the [module-echo-cancel](#Enable_Echo.2FNoise-Cancellation), you probably don't want other applications to do additional audio post processing.
 Here is a list for disabling audio post processing in following applications:
@@ -625,8 +636,78 @@ Here is a list for disabling audio post processing in following applications:
 
 1.  Is described [here](/index.php/Firefox_tweaks#Disable_WebRTC_audio_post_processing "Firefox tweaks")
 
-BEWARE:
-If you plug in a USB Soundcard/Headset, or you have for example a 5.1 Speaker configuration and plug in a Headset on your front audio connectors after you have loaded the 'module-echo-cancel', you have to manually unload and load the 'module-echo-cancel' again, because unfortunately there is no way to tell the 'module-echo-cancel' that it should automatically switch to the new default 'source_master' and 'source_sink'. See [https://bugs.freedesktop.org/show_bug.cgi?id=100403](https://bugs.freedesktop.org/show_bug.cgi?id=100403)
+*   Steam:
+
+1.  In window "Friends List" -> Manage friends list settings (gear symbol) -> VOICE -> Show Advanced Settings
+
+2.  Set the following sliders to "OFF": "Echo cancellation", "Noise cancellation", "Automatic volume/gain control"
+
+*   Skype:
+
+1.  Tools -> Settings... -> Audio & Video -> Microphone -> Automatically adjust microphone settings -> off
+
+#### Make module-echo-cancel comfortably loadable from the DE
+
+Since the module-echo-cancel is not always needed, or must be reloaded if the source_master or sink_master has changed, it is nice to have a easy way to load or reload the module-echo-cancel with one click from the DE.
+Here is a HowTo, after this the module-echo-cancel can be loaded or reloaded from the launcher of the DE:
+
+*   Generate the file *echoCancelEnable.sh* with the following content:
+
+ `echoCancelEnable.sh` 
+```
+#!/bin/bash
+aecArgs="$*"
+# If no "aec_args" are passed on to the script, use this "aec_args" as default:
+[ -z "$aecArgs" ] && aecArgs="analog_gain_control=0 digital_gain_control=1"
+newSourceName="echoCancelSource"
+newSinkName="echoCancelSink"
+
+# "module-switch-on-connect" with "ignore_virtual=no" (needs PulseAudio 12 or higher) is needed to automatically move existing streams to a new (virtual) default source and sink.
+if ! pactl list modules short | grep "module-switch-on-connect.*ignore_virtual=no" >/dev/null 2>&1; then
+	echo Load module \"module-switch-on-connect\" with \"ignore_virtual=no\"
+	pactl unload-module module-switch-on-connect 2>/dev/null
+	pactl load-module module-switch-on-connect ignore_virtual=no
+fi
+
+# Reload "module-echo-cancel"
+echo Reload \"module-echo-cancel\" with \"aec_args=$aecArgs\"
+pactl unload-module module-echo-cancel 2>/dev/null
+if pactl load-module module-echo-cancel use_master_format=1 aec_method=webrtc aec_args=\"$aecArgs\" source_name=$newSourceName sink_name=$newSinkName; then
+	# Set a new default source and sink, if module-echo-cancel has loaded successfully.
+	pacmd set-default-source $newSourceName
+	pacmd set-default-sink $newSinkName
+fi
+
+```
+
+Install this file with the command:
+
+```
+$ shFileName=echoCancelEnable.sh ; shFilePath="/usr/local/bin/$shFileName" ; sudo cp ./$shFileName $shFilePath && (sudo chmod 744 $shFilePath ; sudo chmod +x $shFilePath)
+
+```
+
+*   Generate the file *echoCancelEnable.desktop* with the following content:
+
+ `echoCancelEnable.desktop` 
+```
+[Desktop Entry]
+Type=Application
+Name=Enable echo cancellation
+Comment=Load PulseAudio module-echo-cancel
+Icon=microphone-sensitivity-muted
+Exec=echoCancelEnable.sh analog_gain_control=0 digital_gain_control=1
+Categories=System;AudioVideo
+Keywords=echo,webrtc,cancellation
+
+```
+
+Install this file with the command:
+
+```
+$ sudo desktop-file-install echoCancelEnable.desktop
+
+```
 
 ### Glitches, skips or crackling
 
@@ -1117,10 +1198,13 @@ Add the following:
 ```
 # automatically switch to newly-connected devices
 load-module module-switch-on-connect
-
+# or switch also to newly-connected virtual devices
+load-module module-switch-on-connect ignore_virtual=no
 ```
 
 Since [PulseAudio 11](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/11.0/) USB and bluetooth devices are preferred over internal sound cards by default, but as in the above link described, you still need module-switch-on-connect to also moves existing streams to the new sink.
+
+Since [PulseAudio 12](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/12.0/) virtual devices are ignored by default. If you don't want this behavior because you want to move existing streams to freshly loaded [module-echo-cancel](#Enable_Echo.2FNoise-Cancellation) for example, you have to add `ignore_virtual=no`.
 
 ### My Bluetooth device is paired but does not play any sound
 

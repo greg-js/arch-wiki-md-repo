@@ -230,18 +230,17 @@ This is equivalent to these shell commands:
 
 ### Matlab
 
-Matlab does not have any protection against taking all your machine's memory or CPU. Launching a large calculation can thus crash your system. You could put the following in `/etc/cgconfig.conf` to protect from this (where `$USER` is your username):
+Doing large calculations in [Matlab](/index.php/Matlab "Matlab") can crash your system, because Matlab does not have any protection against taking all your machine's memory or CPU. The following example shows a *cgroup* that constrains Matlab to 6 CPU cores and 5 GB of memory.
 
- `/etc/cgconfig.conf ` 
+ `/etc/cgconfig.conf` 
 ```
-# Prevent Matlab from taking all memory
 group matlab {
     perm {
         admin {
-            uid = *$USER*;
+            uid = *username*;
         }
         task {
-            uid = *$USER*;
+            uid = *username*;
         }
     }
 
@@ -250,24 +249,21 @@ group matlab {
         cpuset.cpus="0-5";
     }
     memory {
-# 5 GiB limit
-        memory.limit_in_bytes = 5368709120;
+        memory.limit_in_bytes = 5000000000;
     }
 }
 ```
 
-**Note:** Do not forget to change $USER to the actual username Matlab will be run by.
+Change `*username*` to the user Matlab is run as.
 
-This cgroup will bind Matlab to cores 0 to 5 (e.g., if you have have 8, Matlab will only see 6) and cap its memory usage to 5 GiB. The "cpu" resource constraint can also be defined to prevent CPU usage, but you may find the "cpuset" constrain to be sufficient.
+You can also restrict the CPU share with the `cpu` constraint.
 
-Launch matlab like this:
+Launch Matlab like this (be sure to use the right path):
 
 ```
 $ cgexec -g memory,cpuset:matlab /opt/MATLAB/2012b/bin/matlab -desktop
 
 ```
-
-Make sure to use the right path to the executable.
 
 ## Documentation
 

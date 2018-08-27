@@ -299,7 +299,7 @@ AEAD加密:
 *   开启fast open降低延迟
 
 ```
- # echo 'net.ipv4.tcp_fastopen = 3' >> /etc/sysctl.conf
+ # echo 'net.ipv4.tcp_fastopen = 3' >> /etc/sysctl.d/tcp-fastopen.conf
 
 ```
 
@@ -311,9 +311,11 @@ AEAD加密:
 
 ```
  modprobe tcp_bbr
- echo "tcp_bbr" >> /etc/modules-load.d/modules.conf
- echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
- echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
+ echo "tcp_bbr" > /etc/modules-load.d/bbr.conf
+ echo '
+   net.core.default_qdisc=fq
+   net.ipv4.tcp_congestion_control=bbr
+ ' > /etc/sysctl.d/bbr.conf
  sysctl -p
 
 ```

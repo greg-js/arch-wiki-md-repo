@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2018-08-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=537167) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2018-08-26\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=537633) na versão em inglês.
 
 Artigos relacionados
 
@@ -21,7 +21,7 @@ O *pacman* mantém o sistema atualizado, listas de pacotes de sincronização co
 
 O *pacman* é escrito na linguagem de programação C e usa o formato [tar](https://en.wikipedia.org/wiki/pt:TAR "w:pt:TAR") para empacotamento.
 
-**Dica:** O pacote [pacman](https://www.archlinux.org/packages/?name=pacman) contém ferramentas tal como [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e *vercmp*. Outras ferramentas úteis como o *pactree* e [checkupdates](/index.php/Checkupdates_(Portugu%C3%AAs) "Checkupdates (Português)") estão localizados em [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) ([anteriormente](https://git.archlinux.org/pacman.git/commit/?id=0c99eabd50752310f42ec808c8734a338122ec86) parte do pacman). Execute `pacman -Ql pacman pacman-contrib | grep -E 'bin/.+'` para ver a lista completa.
+**Dica:** O pacote [pacman](https://www.archlinux.org/packages/?name=pacman) contém ferramentas tal como [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e *vercmp*. Outras ferramentas úteis como o *pactree* e [checkupdates](/index.php/Checkupdates_(Portugu%C3%AAs) "Checkupdates (Português)") estão localizados em [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) ([anteriormente](https://git.archlinux.org/pacman.git/commit/?id=0c99eabd50752310f42ec808c8734a338122ec86) parte do pacman). Execute `pacman -Fl pacman pacman-contrib | grep -E 'bin/.+'` para ver a lista completa.
 
 ## Contents
 

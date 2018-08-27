@@ -199,7 +199,7 @@
 | <small>6.12.</small> [Localization](/index.php/Category:Localization "Category:Localization") <small>(17)</small> |
 | <small>6.13.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(29)</small> |
 | <small>6.14.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(19)</small> |
-| <small>6.15.</small> [Security](/index.php/Category:Security "Category:Security") <small>(70)</small> |
+| <small>6.15.</small> [Security](/index.php/Category:Security "Category:Security") <small>(71)</small> |
 | <small>6.15.1.</small> [Cryptography](/index.php/Category:Cryptography "Category:Cryptography") <small>(5)</small> |
 | <small>6.15.1.1.</small> [Cryptocurrencies](/index.php/Category:Cryptocurrencies "Category:Cryptocurrencies") <small>(4) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
 | <small>6.15.1.2.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(9)</small> |

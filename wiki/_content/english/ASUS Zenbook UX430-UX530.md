@@ -12,7 +12,6 @@
 | Function keys | Working |
 | Fingerprint Sensor | Partially working |
 | Ambient Light Sensor | Not working |
-| [Battery charge control](https://techinstyle.asus.com/asus-battery-health-charging-helps-you-get-the-most-out-of-your-zenbook/) | Not working |
 
 ASUS [announced](https://www.asus.com/News/q0npwWGXCqpxoVf8) UX430 and UX530 models. Since these models share almost the same hardware (the only difference is screen size and discrete NVidia graphics card), this article covers hardware specific configuration for all UX430UA, UX430UQ, UX530UQ and UX530UX models.
 

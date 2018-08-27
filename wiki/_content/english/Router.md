@@ -54,26 +54,20 @@ You may change the assigned names of your devices via a configuration file using
 Now you will need to configure the network interfaces. The best way to do so is using [netctl](/index.php/Netctl "Netctl") profiles. You will need to create two profiles.
 
 **Note:** If you will be connecting to the Internet only via PPPoE (you have one WAN port) you **do not need** to setup or enable the extern0-profile. See below for more information on configuring PPPoE.
-
-*   `/etc/netctl/extern0-profile`
-
+ `/etc/netctl/extern0-profile` 
 ```
 Description='Public Interface.'
 Interface=extern0
 Connection=ethernet
 IP='dhcp'
-
 ```
-
-*   `/etc/netctl/intern0-profile`
-
+ `/etc/netctl/intern0-profile` 
 ```
 Description='Private Interface'
 Interface=intern0
 Connection=ethernet
 IP='static'
 Address=('10.0.0.1/24')
-
 ```
 
 **Note:** The example configuration above assumes a full subnet. If you are building the gateway for a small amount of people, you will want to change the [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") suffix to accommodate a smaller range. For example `/27` will give you `10.0.0.1` to `10.0.0.30`. You can find many CIDR calculators online.
@@ -211,7 +205,7 @@ You can use this in addition to the ULA address described above.
 
 #### Acquiring IPv6 prefix via DHCPv6-PD
 
-If your ISP handles IPv6 via prefix delegation then you can follow the instructions in the [main IPv6 article](/index.php/IPv6#Prefix_delegation_.28DHCPv6-PD.29 "IPv6") on how to properly configure your router. Following the conventions of this article the WAN interface is `extern0` (or `ppp0` if you are connecting through PPPoE) and the LAN interface is `intern0`.
+If your ISP handles IPv6 via prefix delegation then you can follow the instructions in the [IPv6#Prefix delegation (DHCPv6-PD)](/index.php/IPv6#Prefix_delegation_.28DHCPv6-PD.29 "IPv6") on how to properly configure your router. Following the conventions of this article the WAN interface is `extern0` (or `ppp0` if you are connecting through PPPoE) and the LAN interface is `intern0`.
 
 ### Router Advertisement and Stateless Autoconfiguration (SLAAC)
 

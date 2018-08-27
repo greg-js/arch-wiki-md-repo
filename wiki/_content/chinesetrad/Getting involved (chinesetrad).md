@@ -3,7 +3,7 @@
 *   [Arch 使用者倉庫](/index.php/Arch_User_Repository "Arch User Repository")
 *   [非官方使用者倉庫](/index.php/Unofficial_User_Repositories "Unofficial User Repositories")
 
-生物學裡，[互利共生(Mutualism)](https://en.wikipedia.org/wiki/Mutualism "wikipedia:Mutualism")：是指在生物界中某兩物種間的一種互相依賴、雙方獲利的專性共生關係。這一觀念同樣適用於 Arch 社群裡主動積極想參與並貢獻一己之力於其所喜愛的 GNU / Linux 發行版的成員。這種參與不僅有利於社群的成員和他們的Archers同胞們，也能造福所有[自由和開放源碼軟體_(en)](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software")愛好者.
+生物學裡，[互利共生(Mutualism)](https://en.wikipedia.org/wiki/Mutualism "wikipedia:Mutualism")：是指在生物界中某兩物種間的一種互相依賴、雙方獲利的專性共生關係。這一觀念同樣適用於 Arch 社群裡主動積極想參與並貢獻一己之力於其所喜愛的 GNU/Linux 發行版的成員。這種參與不僅有利於社群的成員和他們的Archers同胞們，也能造福所有[自由和開放源碼軟體_(en)](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software")愛好者.
 
 ## Contents
 
@@ -11,7 +11,7 @@
 *   [2 維基](#.E7.B6.AD.E5.9F.BA)
 *   [3 Bug](#Bug)
 *   [4 AUR](#AUR)
-*   [5 《Rolling Release》雜志](#.E3.80.8ARolling_Release.E3.80.8B.E9.9B.9C.E5.BF.97)
+*   [5 《Rolling Release》雜誌](#.E3.80.8ARolling_Release.E3.80.8B.E9.9B.9C.E8.AA.8C)
 *   [6 Arch 項目](#Arch_.E9.A0.85.E7.9B.AE)
 *   [7 社群項目](#.E7.A4.BE.E7.BE.A4.E9.A0.85.E7.9B.AE)
     *   [7.1 基於Arch的發行版](#.E5.9F.BA.E6.96.BCArch.E7.9A.84.E7.99.BC.E8.A1.8C.E7.89.88)
@@ -43,17 +43,17 @@
 另一些需要整理的頁面:
 
 *   [請求頁](/index.php/Requests "Requests")
-*   [鏈接失效](/index.php/Special:BrokenRedirects "Special:BrokenRedirects")
+*   [鏈結失效](/index.php/Special:BrokenRedirects "Special:BrokenRedirects")
 *   [多重重定向](/index.php/Special:DoubleRedirects "Special:DoubleRedirects")
 *   [內容過短](/index.php/Special:ShortPages "Special:ShortPages")
 
 長遠來看，我們的目標是建設專業並易於查詢的wiki系統，因此需要檔案員維護頁面。儘管有社區成員的努力，但維護是枯燥且吃力的工作。所以，當你編輯頁面時，請盡量遵守以下規則：
 
 1.  無錯別字，語法規範，語句通順。
-    *   刪除多餘內容和鏈接，文章簡明易懂。
+    *   刪除多餘內容和鏈結，文章簡明易懂。
     *   不添加個人信息（「我喜歡……」，「我的電腦……」），保持內容專業性。
     *   保持所有頁面統一風格、布局。
-2.  別亂貼你沒有測試過的腳本代碼。
+2.  別亂貼未經測試的腳本代碼。
 3.  內容文明健康。
 
 如果你對這項事業懷有真正的熱情，你也許可以成為正式的wiki管理員。
@@ -66,9 +66,9 @@
 
 [Arch用戶軟體倉庫](/index.php/Arch_User_Repository "Arch User Repository")是一個大眾主導的軟體倉庫，包含了大量用戶提交的PKGBUILD。不同於官方軟體庫二進制包的形式，AUR中的軟體包以PKGBUILD的形式供用戶使用，由用戶自行編譯。用戶通過AUR分享軟體，其中一些熱門軟體會選入`[community]`軟體倉庫。
 
-## 《Rolling Release》雜志
+## 《Rolling Release》雜誌
 
-[Rolling Release](http://rollingrelease.com)是Arch Linux官方電子雜志。雜志由社區支持，網上發布，歡迎投稿。
+[Rolling Release](http://rollingrelease.com)是Arch Linux官方電子雜誌。雜誌由社區支持，網上發布，歡迎投稿。
 
 ## Arch 項目
 
@@ -76,7 +76,7 @@
 
 ## 社群項目
 
-**Note:** 這一部分以英文頁面為准，***請在英文頁面提交你的項目***。
+**Note:** 這一部分以英文頁面為凖，***請在英文頁面提交你的項目***。
 
 Arch擁有一個充滿活力的用戶社區。如果你的項目想參與到社區中，請在下面連接的頁面報告以下信息：項目地址、項目開始時間、一兩句項目簡介。
 

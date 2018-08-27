@@ -298,7 +298,7 @@ extra_kernel_version_strings linux-hardened,linux-zen,linux-lts,linux
 
 ```
 
-**Note:** rEFInd only supports detecting one initramfs image per kernel, meaning it will not detect fallback initramfs nor Intel [microcode](/index.php/Microcode "Microcode") images.
+**Note:** rEFInd only supports detecting one initramfs image per kernel, meaning it will not detect fallback initramfs nor [microcode](/index.php/Microcode "Microcode") images.
 
 ##### refind_linux.conf
 
@@ -320,7 +320,12 @@ Alternatively, try running:
 
 Which will attempt to find your kernel in `/boot` and automatically generate `refind_linux.conf`. The script will only set up the most basic kernel parameters, so be sure to check the file it created for correctness.
 
-If you do not specify an `initrd=` parameter, rEFInd will automatically add it by searching for common RAM disk filenames in the same directory as the kernel. If you need multiple `initrd=` parameters, you must specify them manually in `refind_linux.conf`. For example, a [Microcode](/index.php/Microcode "Microcode") passed before the initramfs: `... initrd=/boot/intel-ucode.img initrd=/boot/initramfs-linux.img`.
+If you do not specify an `initrd=` parameter, rEFInd will automatically add it by searching for common RAM disk filenames in the same directory as the kernel. If you need multiple `initrd=` parameters, you must specify them manually in `refind_linux.conf`. For example, a [microcode](/index.php/Microcode "Microcode") passed before the initramfs:
+
+```
+"Boot using default options"     "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw add_efi_memmap initrd=/boot/intel-ucode.img initrd=/boot/amd-ucode.img initrd=/boot/initramfs-linux.img"
+
+```
 
 **Note:** Specifying `initrd=` in `/boot/refind_linux.conf` will prevent you from using the same kernel options for multiple kernels.
 

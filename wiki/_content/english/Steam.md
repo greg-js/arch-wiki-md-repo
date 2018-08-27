@@ -8,7 +8,7 @@ Related articles
 
 [Steam](http://store.steampowered.com/about/) is a popular game distribution platform by Valve.
 
-**Note:** Steam for Linux only supports Ubuntu 12.04 LTS and newer.[[1]](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366) Thus do not turn to Valve for support when running into issues with Steam on Arch Linux.
+**Note:** Steam for Linux only supports Ubuntu LTS.[[1]](https://support.steampowered.com/kb_article.php?ref=1504-QHXN-8366) Thus do not turn to Valve for support for issues with Steam on Arch Linux.
 
 ## Contents
 
@@ -200,3 +200,4 @@ See [Steam/Troubleshooting](/index.php/Steam/Troubleshooting "Steam/Troubleshoot
 *   [The Big List of DRM-Free Games on Steam](https://pcgamingwiki.com/wiki/The_Big_List_of_DRM-Free_Games_on_Steam) at PCGamingWiki
 *   [List of DRM-free games](http://steam.wikia.com/wiki/List_of_DRM-free_games) at Wikia
 *   [Steam Linux store](http://store.steampowered.com/browse/linux)
+*   [Proton](https://github.com/ValveSoftware/Proton/) Compatibility tool for Steam Play based on Wine and additional components.

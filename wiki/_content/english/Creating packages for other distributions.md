@@ -161,7 +161,7 @@ The [Open Build Service (OBS)](http://openbuildservice.org/) is a generic system
 
 ### Creating Arch Packages in OBS with OSC
 
-**Note:** For building, you must upload you PKGBUILD file as well as the source files (by uploading or letting OBS download the files). OBS uses virtual machines without networking support and cannot download any file.
+**Note:** For building, you must upload your PKGBUILD file as well as the source files (by uploading or letting OBS download the files). OBS uses virtual machines without networking support and cannot download any file.
 
 #### Creating a Package
 

@@ -1,11 +1,11 @@
 Processor manufacturers release stability and security updates to the processor [microcode](https://en.wikipedia.org/wiki/Microcode "wikipedia:Microcode"). While microcode can be updated through the BIOS, the Linux kernel is also able to apply these updates during boot. These updates provide bug fixes that can be critical to the stability of your system. Without these updates, you may experience spurious crashes or unexpected system halts that can be difficult to track down.
 
-Users of CPUs belonging to the Intel Haswell and Broadwell processor families in particular must install these microcode updates to ensure system stability. But all Intel users should install the updates as a matter of course.
+Users of CPUs belonging to the Intel Haswell and Broadwell processor families in particular must install these microcode updates to ensure system stability. But all users should install the updates as a matter of course.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Enabling microcode updates](#Enabling_microcode_updates)
+*   [2 Enabling early microcode updates](#Enabling_early_microcode_updates)
     *   [2.1 GRUB](#GRUB)
         *   [2.1.1 Automatic method](#Automatic_method)
         *   [2.1.2 Manual method](#Manual_method)
@@ -22,21 +22,23 @@ Users of CPUs belonging to the Intel Haswell and Broadwell processor families in
 
 ## Installation
 
-For AMD processors the microcode updates are available in [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware), which is installed as part of the base system. No further action is needed.
+For AMD processors, [install](/index.php/Install "Install") the [amd-ucode](https://www.archlinux.org/packages/?name=amd-ucode) package.
 
-For Intel processors, [install](/index.php/Install "Install") the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package, and continue reading.
+For Intel processors, [install](/index.php/Install "Install") the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package.
 
-## Enabling microcode updates
+## Enabling early microcode updates
 
-Microcode must be loaded by the bootloader. Because of the wide variability in users' early-boot configuration, Intel microcode updates may not be triggered automatically by Arch's default configuration. Many AUR kernels have followed the path of the official Arch kernels in this regard.
+Microcode must be loaded by the [boot loader](/index.php/Boot_loader "Boot loader"). Because of the wide variability in users' early-boot configuration, microcode updates may not be triggered automatically by Arch's default configuration. Many AUR kernels have followed the path of the official Arch [kernels](/index.php/Kernels "Kernels") in this regard.
 
-These updates must be enabled by adding `/boot/intel-ucode.img` as the **first initrd in the bootloader config file**. This is in addition to the normal initrd file. See below for instructions for common bootloaders.
+These updates must be enabled by adding `/boot/amd-ucode.img` or `/boot/intel-ucode.img` as the **first initrd in the bootloader config file**. This is in addition to the normal initrd file. See below for instructions for common bootloaders.
+
+**Note:** In the following sections replace `*cpu_manufacturer*` with your CPU manufacturer, .i.e `amd` or `intel`.
 
 ### GRUB
 
 #### Automatic method
 
-*grub-mkconfig* will automatically detect the microcode update and configure [GRUB](/index.php/GRUB "GRUB") appropriately. After installing the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package, regenerate the GRUB config to activate loading the microcode update by running:
+*grub-mkconfig* will automatically detect the microcode update and configure [GRUB](/index.php/GRUB "GRUB") appropriately. After installing the microcode package, regenerate the GRUB config to activate loading the microcode update by running:
 
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
@@ -45,19 +47,18 @@ These updates must be enabled by adding `/boot/intel-ucode.img` as the **first i
 
 #### Manual method
 
-Alternatively, users that manage their GRUB config file manually can add `/intel-ucode.img` or `/boot/intel-ucode.img` as follows:
+Alternatively, users that manage their GRUB config file manually can add `/*cpu_manufacturer*-ucode.img` or `/boot/*cpu_manufacturer*-ucode.img` as follows:
 
  `/boot/grub/grub.cfg` 
 ```
 ...
 echo 'Loading initial ramdisk'
-initrd	/intel-ucode.img /initramfs-linux.img
+initrd	**/boot/*cpu_manufacturer*-ucode.img** /boot/initramfs-linux.img
 ...
+
 ```
 
 Repeat it for each menu entry.
-
-**Note:** This file will be overwritten by *grub-mkconfig* during certain updates negating the changes. It is strongly recommended to use the configuration directory in `/etc/grub.d/` to manage your GRUB configuration needs.
 
 ### systemd-boot
 
@@ -67,23 +68,27 @@ Use the `initrd` option to load the microcode, before the initial ramdisk, as fo
 ```
 title   Arch Linux
 linux   /vmlinuz-linux
-**initrd  /intel-ucode.img**
+**initrd  /*cpu_manufacturer*-ucode.img**
 initrd  /initramfs-linux.img
 ...
+
 ```
 
-The latest microcode `intel-ucode.img` must be available at boot time in your [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP). The ESP must be mounted as `/boot` in order to have the microcode updated every time [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) is updated. Otherwise, copy `/boot/intel-ucode.img` to your ESP at every update of *intel-ucode*.
+The latest microcode `*cpu_manufacturer*-ucode.img` must be available at boot time in your [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP). The ESP must be mounted as `/boot` in order to have the microcode updated every time [amd-ucode](https://www.archlinux.org/packages/?name=amd-ucode) or [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) is updated. Otherwise, copy `/boot/*cpu_manufacturer*-ucode.img` to your ESP at every update of the microcode package.
 
 ### EFI boot stub / EFI handover
 
 Append two `initrd=` options:
 
- `initrd=/intel-ucode.img initrd=/initramfs-linux.img` 
+```
+**initrd=/*cpu_manufacturer*-ucode.img** initrd=/initramfs-linux.img
+
+```
 
 For kernels that have been generated as a single file containing all initrd, cmdline and kernel, first generate the initrd to integrate by creating a new one as follows:
 
 ```
-cat /boot/intel-ucode.img /boot/initramfs-linux.img > my_new_initrd
+cat /boot/*cpu_manufacturer*-ucode.img /boot/initramfs-linux.img > my_new_initrd
 objcopy ... --add-section .initrd=my_new_initrd
 ```
 
@@ -92,15 +97,20 @@ objcopy ... --add-section .initrd=my_new_initrd
 Edit boot options in `/boot/refind_linux.conf` as per EFI boot stub above, example:
 
 ```
-"Boot with standard options" "rw root=UUID=(...) quiet initrd=/boot/intel-ucode.img initrd=/boot/initramfs-linux.img"
+"Boot with standard options" "rw root=UUID=(...) **initrd=/boot/*cpu_manufacturer*-ucode.img** initrd=/boot/initramfs-linux.img"
 
 ```
 
-Users employing [manual stanzas](/index.php/REFInd#Manual_boot_stanzas "REFInd") in `*esp*/EFI/refind/refind.conf` to define the kernels should simply add `initrd=/intel-ucode.img` or `/boot/intel-ucode.img` as required to the options line, and not in the main part of the stanza.
+Users employing [manual stanzas](/index.php/REFInd#Manual_boot_stanzas "REFInd") in `*esp*/EFI/refind/refind.conf` to define the kernels should simply add `initrd=/*cpu_manufacturer*-ucode.img` or `/boot/*cpu_manufacturer*-ucode.img` as required to the options line, and not in the main part of the stanza. E.g.:
+
+```
+options  "root=root=UUID=(...) rw add_efi_memmap **initrd=/boot/*cpu_manufacturer*-ucode.img**"
+
+```
 
 ### Syslinux
 
-**Note:** There must be no spaces between the `intel-ucode` and `initramfs-linux` initrd files. The period signs also do not signify any shorthand or missing code; the `INITRD` line must be exactly as illustrated below.
+**Note:** There must be no spaces between the `*cpu_manufacturer*.img` and `initramfs-linux.img` initrd files. The period signs also do not signify any shorthand or missing code; the `INITRD` line must be exactly as illustrated below.
 
 Multiple initrd's can be separated by commas in `/boot/syslinux/syslinux.cfg`:
 
@@ -108,33 +118,33 @@ Multiple initrd's can be separated by commas in `/boot/syslinux/syslinux.cfg`:
 LABEL arch
     MENU LABEL Arch Linux
     LINUX ../vmlinuz-linux
-    INITRD ../intel-ucode.img,../initramfs-linux.img
+    INITRD **../*cpu_manufacturer*-ucode.img**,../initramfs-linux.img
     APPEND *<your kernel parameters>*
 
 ```
 
 ### LILO
 
-LILO and potentially other old bootloaders do not support multiple initrd images. In that case, `intel-ucode` and `initramfs-linux` will have to be merged into one image.
+LILO and potentially other old bootloaders do not support multiple initrd images. In that case, `*cpu_manufacturer*-ucode.img` and `initramfs-linux.img` will have to be merged into one image.
 
 **Warning:** The merged image must be recreated after each kernel update!
 
-**Note:** The additional image, in this case `intel-ucode` must not be compressed. Otherwise, the kernel might complain that it can only find garbage in the uncompressed image and fail to boot.
+**Note:** The additional image, in this case `*cpu_manufacturer*-ucode.img` must not be compressed. Otherwise, the kernel might complain that it can only find garbage in the uncompressed image and fail to boot.
 
-`intel-ucode.img` should be a cpio archive, as in this case. It is advised to check whether the archive is compressed after each microcode update, as there is no guarantee that the image will stay non-compressed in the future. In order to check whether `intel-ucode` is compressed, you can use the `file` command:
+`*cpu_manufacturer*-ucode.img` should be a cpio archive, as in this case. It is advised to check whether the archive is compressed after each microcode update, as there is no guarantee that the image will stay non-compressed in the future. In order to check whether `*cpu_manufacturer*-ucode.img` is compressed, you can use the `file` command:
+
+ `$ file /boot/*cpu_manufacturer*-ucode.img` 
+```
+/boot/*cpu_manufacturer*-ucode.img: ASCII cpio archive (SVR4 with no CRC)
 
 ```
-$ file /boot/intel-ucode.img 
-/boot/intel-ucode.img: ASCII cpio archive (SVR4 with no CRC)
 
-```
-
-**Note:** The order is important. The original image `initramfs-linux` must be concatenated **on top** of the `intel-ucode` image.
+**Note:** The order is important. The original image `initramfs-linux.img` must be concatenated **on top** of the `*cpu_manufacturer*-ucode.img` image.
 
 To merge both images into one image named `initramfs-merged.img`, the following command can be used:
 
 ```
-# cat /boot/intel-ucode.img /boot/initramfs-linux.img > /boot/initramfs-merged.img
+# cat /boot/*cpu_manufacturer*-ucode.img /boot/initramfs-linux.img > /boot/initramfs-merged.img
 
 ```
 

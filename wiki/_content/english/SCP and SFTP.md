@@ -25,7 +25,7 @@ Access files with the *sftp* program or [SSHFS](/index.php/SSHFS "SSHFS"). Many 
 
 ## Secure file transfer protocol (SFTP) with a chroot jail
 
-Sysadmins can jail a subset of users to a chroot jail using [openssh](https://www.archlinux.org/packages/?name=openssh) thus restricting their access to a particular directory tree. This can be useful to simply share some files without granting full system access or shell access. Users with this type of setup may use SFTP programs such as [filezilla](https://www.archlinux.org/packages/?name=filezilla) to put/get files in the chroot jail.
+Sysadmins can jail a subset of users to a chroot jail using [openssh](https://www.archlinux.org/packages/?name=openssh) thus restricting their access to a particular directory tree. This can be useful to simply share some files without granting full system access or shell access. Users with this type of setup may use SFTP clients such as [filezilla](https://www.archlinux.org/packages/?name=filezilla) to put/get files in the chroot jail.
 
 ### Setup the filesystem
 
@@ -36,9 +36,7 @@ Create a jail directory:
 
 ```
 
-**Note:** Readers may select a file access scheme on their own. For example, optionally create a subdirectory for an incoming (writable) space and/or a read-only space. This need not be done directly under /var/lib/jail ... it can be accomplished on the live partition which will be mounted via a bind mount as well.
-
-Bind mount the live filesystem to be shared to this directory. In this example, /mnt/data/share is to be used. It is owned by root and has octal permissions of 755.
+Optionally, bind mount the filesystem to be shared to this directory. In this example, `/mnt/data/share` is to be used. It is owned by root and has octal permissions of 755.
 
 ```
 # mount -o bind /mnt/data/share /var/lib/jail
@@ -64,19 +62,17 @@ Add the following to the end of `/etc/ssh/sshd_config` to enable the share and t
  `/etc/ssh/sshd_config` 
 ```
 ...
-
  Match group sshusers
-  ChrootDirectory %h
+  ChrootDirectory %h
   X11Forwarding no
   AllowTcpForwarding no
   PasswordAuthentication yes
   ForceCommand internal-sftp
-
 ```
 
 [Restart](/index.php/Restart "Restart") `sshd.service` to re-read the config file.
 
-Test that in fact, the restrictions are enforced by attempting an ssh connection via the shell. The ssh sever should return a polite notice of the setup:
+Test that in fact, the restrictions are enforced by attempting an ssh connection via the shell. The ssh server should return a polite notice of the setup:
 
 ```
 $ ssh foo@someserver.com

@@ -32,32 +32,33 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.15 coderkun-aur-audio](#coderkun-aur-audio)
     *   [2.16 eatabrick](#eatabrick)
     *   [2.17 eschwartz](#eschwartz)
-    *   [2.18 herecura](#herecura)
-    *   [2.19 holo](#holo)
-    *   [2.20 ivasilev](#ivasilev)
-    *   [2.21 jlk](#jlk)
-    *   [2.22 linux-macbook](#linux-macbook)
-    *   [2.23 llvm-svn](#llvm-svn)
-    *   [2.24 markzz](#markzz)
-    *   [2.25 miffe](#miffe)
-    *   [2.26 mikelpint](#mikelpint)
-    *   [2.27 mobile](#mobile)
-    *   [2.28 nah](#nah)
-    *   [2.29 pkgbuilder](#pkgbuilder)
-    *   [2.30 qt-debug](#qt-debug)
-    *   [2.31 quarry](#quarry)
-    *   [2.32 repo-ck](#repo-ck)
-    *   [2.33 seblu](#seblu)
-    *   [2.34 seiichiro](#seiichiro)
-    *   [2.35 sergej-repo](#sergej-repo)
-    *   [2.36 siosm-aur](#siosm-aur)
-    *   [2.37 sublime-text](#sublime-text)
-    *   [2.38 subtitlecomposer](#subtitlecomposer)
-    *   [2.39 tredaelli-systemd](#tredaelli-systemd)
-    *   [2.40 trinity](#trinity)
-    *   [2.41 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-    *   [2.42 xyne-x86_64](#xyne-x86_64)
-    *   [2.43 y3xz](#y3xz)
+    *   [2.18 FFY00](#FFY00)
+    *   [2.19 herecura](#herecura)
+    *   [2.20 holo](#holo)
+    *   [2.21 ivasilev](#ivasilev)
+    *   [2.22 jlk](#jlk)
+    *   [2.23 linux-macbook](#linux-macbook)
+    *   [2.24 llvm-svn](#llvm-svn)
+    *   [2.25 markzz](#markzz)
+    *   [2.26 miffe](#miffe)
+    *   [2.27 mikelpint](#mikelpint)
+    *   [2.28 mobile](#mobile)
+    *   [2.29 nah](#nah)
+    *   [2.30 pkgbuilder](#pkgbuilder)
+    *   [2.31 qt-debug](#qt-debug)
+    *   [2.32 quarry](#quarry)
+    *   [2.33 repo-ck](#repo-ck)
+    *   [2.34 seblu](#seblu)
+    *   [2.35 seiichiro](#seiichiro)
+    *   [2.36 sergej-repo](#sergej-repo)
+    *   [2.37 siosm-aur](#siosm-aur)
+    *   [2.38 sublime-text](#sublime-text)
+    *   [2.39 subtitlecomposer](#subtitlecomposer)
+    *   [2.40 tredaelli-systemd](#tredaelli-systemd)
+    *   [2.41 trinity](#trinity)
+    *   [2.42 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+    *   [2.43 xyne-x86_64](#xyne-x86_64)
+    *   [2.44 y3xz](#y3xz)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -317,6 +318,18 @@ Server = http://repo.eatabrick.org/$arch
 ```
 [eschwartz]
 Server = https://pkgbuild.com/~eschwartz/repo/$arch
+
+```
+
+### FFY00
+
+*   **Maintainer:** [Filipe Laíns](https://www.archlinux.org/people/trusted-users/#FFY00)
+*   **Description:** Personal repo. Contains some packages related to the D language. x86_64 only.
+*   **Key-ID:** Not needed, as maintainer is a TU
+
+```
+[ffy00]
+Server = https://pkgbuild.com/~ffy00/repo
 
 ```
 

@@ -2,7 +2,7 @@ Related articles
 
 *   [rsyslog](/index.php/Rsyslog "Rsyslog")
 
-**Note:** With systemd's journal, syslog-ng is not needed by most users.
+**Note:** With [systemd's journal](/index.php/Systemd_journal "Systemd journal"), syslog-ng is not needed by most users.
 
 ## Contents
 

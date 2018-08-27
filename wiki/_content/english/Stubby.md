@@ -90,14 +90,15 @@ listen_addresses:
 
 ##### dnsmasq
 
-Configure dnsmasq as a [local DNS cache](/index.php/Dnsmasq#Caching_DNS_server "Dnsmasq"). The basic configuration to work with Stubby is the following:
+Configure dnsmasq as a [local DNS cache](/index.php/Dnsmasq#DNS_server "Dnsmasq"). The basic configuration to work with Stubby is the following:
 
  `/etc/dnsmasq.conf` 
 ```
 no-resolv
 proxy-dnssec
+server=::1#53000
 server=127.0.0.1#53000
-listen-address=127.0.0.1
+listen-address=::1,127.0.0.1
 ```
 
 [Restart](/index.php/Restart "Restart") `dnsmasq.service` to apply the changes.

@@ -248,7 +248,7 @@ nicklist will use the more efficient *fifo* with:
 
 This fifo can be used in a [tmux](/index.php/Tmux "Tmux") window split vertically with *irssi* in its left pane and the *cat* from above in a small one in its right. Since the pane is dependent on its creating tmux session's geometry, a subsequent session with a different one needs to recreate it (which also implies a switch in *irssi* windows to refill the fifo).
 
-E. g., the following script first checks for a running *irssi*, presumed to have been run by a previous execution of itself. Unless found it creates a new tmux session, a window named after and running *irssi* and then the pane with *cat*. If however *irssi* was found it merely attaches to the session and recreates the *cat* pane.
+E.g., the following script first checks for a running *irssi*, presumed to have been run by a previous execution of itself. Unless found it creates a new tmux session, a window named after and running *irssi* and then the pane with *cat*. If however *irssi* was found it merely attaches to the session and recreates the *cat* pane.
 
 ```
 #!/bin/bash
@@ -284,7 +284,7 @@ exit 0
 
 ### Virtual hostname (vhost)
 
-A vhost can be used to change your hostname when connected to an IRC-server, commonly viewed when joining/parting or doing a whois. This is most commonly done on a server which have a static IP address. Without a vhost it would commonly look like so when doing a 'whois':
+A vhost can be used to change your hostname when connected to an IRC-server, commonly viewed when joining/parting or doing a whois. This is most commonly done on a server that has a static IP address. Without a vhost it would commonly look like so when doing a 'whois':
 
 ```
 nick@123.456.78.90.isp.com

@@ -169,7 +169,7 @@ In every instance, a special bootable [EFI system partition](/index.php/EFI_syst
 If creating a new EFI System Partition, use the following commands (the recommended size is 550 MiB):
 
 ```
-(parted) mkpart ESP fat32 1MiB 551MiB
+(parted) mkpart primary fat32 1MiB 551MiB
 (parted) set 1 esp on
 
 ```

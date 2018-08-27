@@ -61,7 +61,12 @@ The glibc resolver reads `/etc/resolv.conf` for every resolution to determine th
 *   [netctl#resolv.conf](/index.php/Netctl#resolv.conf "Netctl")
 *   [NetworkManager#resolv.conf](/index.php/NetworkManager#resolv.conf "NetworkManager")
 
-To prevent programs from overwriting `/etc/resolv.conf` you can also write-protect it by setting the immutable [file attribute](/index.php/File_attribute "File attribute").
+To prevent programs from overwriting `/etc/resolv.conf` you can also write-protect it by setting the immutable [file attribute](/index.php/File_attribute "File attribute"):
+
+```
+# chattr +i /etc/resolv.conf
+
+```
 
 **Tip:** If you want multiple processes to write to `/etc/resolv.conf`, you can use [openresolv](/index.php/Openresolv "Openresolv").
 

@@ -1167,7 +1167,7 @@ The procedure to enable it is quite complex, instructions and an overview of the
 
 Other hints can be found on the [lime-technology's wiki](https://lime-technology.com/wiki/index.php/UnRAID_6/VM_Guest_Support#Enable_MSI_for_Interrupts_to_Fix_HDMI_Audio_Support), or on this article on [VFIO tips and tricks](https://vfio.blogspot.it/2014/09/vfio-interrupts-and-how-to-coax-windows.html).
 
-Some tools named `MSI_util` or similar are available on the Internet, but they do not work on Windows 10 64bit.
+A UI tool called [MSI Utility (FOSS Version 2)](https://github.com/CHEF-KOCH/MSI-utility) works with Windows 10 64-bit and simplifies the process.
 
 In order to fix the issues enabling MSI on the 0 function of a nVidia card (`01:00.0 VGA compatible controller: NVIDIA Corporation GM206 [GeForce GTX 960] (rev a1) (prog-if 00 [VGA controller])`) was not enough; it will also be required to enable it on the other function (`01:00.1 Audio device: NVIDIA Corporation Device 0fba (rev a1)`) to fix the issue.
 

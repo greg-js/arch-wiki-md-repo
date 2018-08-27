@@ -1,14 +1,16 @@
+**Status de tradução:** Esse artigo é uma tradução de [Arch Build System](/index.php/Arch_Build_System "Arch Build System"). Data da última tradução: 2018-08-26\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Build_System&diff=0&oldid=536956) na versão em inglês.
+
 Artigos relacionados
 
-*   [Arch packaging standards (Português)](/index.php/Arch_packaging_standards_(Portugu%C3%AAs) "Arch packaging standards (Português)")
-*   [Arch User Repository (Português)](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
-*   [Creating packages (Português)](/index.php/Creating_packages_(Portugu%C3%AAs) "Creating packages (Português)")
-*   [Kernel Compilation with ABS](/index.php/Kernel_Compilation_with_ABS "Kernel Compilation with ABS")
-*   [makepkg (Português)](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
-*   [Official repositories (Português)](/index.php/Official_repositories_(Portugu%C3%AAs) "Official repositories (Português)")
-*   [pacman (Português)](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
-*   [PKGBUILD (Português)](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")
-*   [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS")
+*   [Padrões de empacotamento do Arch](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")
+*   [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
+*   [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes")
+*   [Compilação de kernel com ABS](/index.php/Kernel_Compilation_with_ABS "Kernel Compilation with ABS")
+*   [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
+*   [Repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais")
+*   [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
+*   [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")
+*   [Aplicando patches no ABS](/index.php/Patching_in_ABS "Patching in ABS")
 
 Esse artigo fornece uma visão geral do Arch Build System (ABS) junto com um tutorial para iniciantes. Ele não tem a intenção de ser um guia de referência completo.
 

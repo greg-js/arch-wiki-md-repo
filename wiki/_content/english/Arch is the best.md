@@ -469,6 +469,15 @@ einfo "Arch is the best!"
 
 ```
 
+	Elixir
+
+	A dynamic, functional language designed for building scalable and maintainable applications
+
+```
+IO.puts "Arch is the best!"
+
+```
+
 	Erlang
 
 	A concurrent, garbage-collected programming language and runtime system.

@@ -147,7 +147,7 @@ This is a script wrapper around xdg_menu that relies on `/etc/update-menus.conf`
 
 You need to install package [archlinux-xdg-menu](https://www.archlinux.org/packages/?name=archlinux-xdg-menu) (xdg_menu)
 
-/`etc/update-menus.conf` selects from a list of window managers for which the menu should be generated. Comments with # are allowed.
+`/etc/update-menus.conf` selects from a list of window managers for which the menu should be generated. Comments with # are allowed.
 
 All generated menus placed in `/var/cache/xdg-menu/`. See wm-specific Examples section of this page to get more information.
 

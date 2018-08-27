@@ -13,13 +13,10 @@ Related articles
 *   [1 Installation](#Installation)
 *   [2 Start the daemon](#Start_the_daemon)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Caching DNS server](#Caching_DNS_server)
-        *   [3.1.1 DNS addresses file](#DNS_addresses_file)
+    *   [3.1 DNS server](#DNS_server)
+        *   [3.1.1 DNS addresses file and forwarding](#DNS_addresses_file_and_forwarding)
             *   [3.1.1.1 openresolv](#openresolv)
-            *   [3.1.1.2 resolv.conf](#resolv.conf)
-                *   [3.1.1.2.1 More than three nameservers](#More_than_three_nameservers)
-            *   [3.1.1.3 dhcpcd](#dhcpcd)
-            *   [3.1.1.4 dhclient](#dhclient)
+            *   [3.1.1.2 Manual forwarding](#Manual_forwarding)
         *   [3.1.2 Test](#Test)
     *   [3.2 DHCP server](#DHCP_server)
         *   [3.2.1 Test](#Test_2)
@@ -63,7 +60,7 @@ $ dnsmasq --test
 
 ```
 
-### Caching DNS server
+### DNS server
 
 To set up dnsmasq as a DNS caching daemon on a single computer specify a `listen-address` directive, adding in the localhost IP address:
 
@@ -97,9 +94,11 @@ dnssec-check-unsigned
 
 See [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) for more options you might want to use.
 
-#### DNS addresses file
+#### DNS addresses file and forwarding
 
-After configuring dnsmasq, the DHCP client will need to prepend the localhost address to the known DNS addresses in `/etc/resolv.conf`. This causes all queries to be sent to dnsmasq before trying to resolve them with an external DNS. After the DHCP client is configured, the network will need to be restarted for changes to take effect.
+After configuring dnsmasq, you need to add the localhost addresses as the only nameservers in `/etc/resolv.conf`. This causes all queries to be sent to dnsmasq.
+
+Since dnsmasq is not a recursive DNS server you must set up forwarding to an external DNS server. This can be done automatically by using [openresolv](/index.php/Openresolv "Openresolv") or by manually specifying the DNS server address in dnsmasq's configuration.
 
 ##### openresolv
 
@@ -128,70 +127,30 @@ resolv-file=/etc/dnsmasq-resolv.conf
 
 ```
 
-##### resolv.conf
+##### Manual forwarding
 
-One option is a pure `resolv.conf` configuration. To do this, just make the first nameserver in `/etc/resolv.conf` point to localhost:
+First you must set localhost addresses as the only nameservers in `/etc/resolv.conf`:
 
  `/etc/resolv.conf` 
 ```
+nameserver ::1
 nameserver 127.0.0.1
-# External nameservers
-...
 
 ```
 
-Now DNS queries will be resolved first with dnsmasq, only checking external servers if dnsmasq cannot resolve the query. [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd), unfortunately, tends to overwrite `/etc/resolv.conf` by default, so if you use DHCP it is a good idea to protect `/etc/resolv.conf`. To do this, append `nohook resolv.conf` to the dhcpcd config file:
+See [Domain name resolution#Overwriting of /etc/resolv.conf](/index.php/Domain_name_resolution#Overwriting_of_.2Fetc.2Fresolv.conf "Domain name resolution") on how to protect `/etc/resolv.conf` from modification.
 
- `/etc/dhcpcd.conf` 
-```
-...
-nohook resolv.conf
+The upstream DNS server addresses must then be specified in dnsmasq's configuration file as `server=*server_address*`. Also add `no-resolv` so dnsmasq does not needlessly read `/etc/resolv.conf` which only contains the localhost addresses of itself.
 
 ```
+no-resolv
 
-It is also possible to write protect your resolv.conf:
-
-```
-# chattr +i /etc/resolv.conf
-
-```
-
-###### More than three nameservers
-
-A limitation in the way Linux handles DNS queries is that there can only be a maximum of three nameservers used in `resolv.conf`. As a workaround, you can make localhost the only nameserver in `resolv.conf`, and then create a separate `resolv-file` for your external nameservers. First, create a new resolv file for dnsmasq:
-
- `/etc/resolv.dnsmasq.conf` 
-```
 # Google's nameservers, for example
-nameserver 8.8.8.8
-nameserver 8.8.4.4
-
+server=8.8.8.8
+server=8.8.4.4
 ```
 
-And then edit dnsmasq's configuration to use your new resolv file:
-
-```
-resolv-file=/etc/resolv.dnsmasq.conf
-
-```
-
-##### dhcpcd
-
-[dhcpcd](/index.php/Dhcpcd "Dhcpcd") has the ability to prepend or append nameservers to `/etc/resolv.conf` by creating (or editing) the `/etc/resolv.conf.head` and `/etc/resolv.conf.tail` files respectively:
-
-```
-echo "nameserver 127.0.0.1" > /etc/resolv.conf.head
-
-```
-
-##### dhclient
-
-For [dhclient](https://www.archlinux.org/packages/?name=dhclient), uncomment in `/etc/dhclient.conf`:
-
-```
-prepend domain-name-servers 127.0.0.1;
-
-```
+Now DNS queries will be resolved with dnsmasq, only checking external servers if it cannot answer the query from its cache.
 
 #### Test
 

@@ -131,3 +131,4 @@ Some of the listed packages may also be available as binary packages via [Unoffi
 ## See also
 
 *   [O'Reilly - Linux Kernel in a Nutshell](http://www.kroah.com/lkn/) (free ebook)
+*   [What stable kernel should I use?](http://kroah.com/log/blog/2018/08/24/what-stable-kernel-should-i-use/) by Greg Kroah-Hartman

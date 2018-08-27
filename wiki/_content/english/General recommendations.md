@@ -143,7 +143,7 @@ Hardware should be auto-detected by [udev](/index.php/Udev "Udev") during the bo
 
 ### Microcode
 
-Processors may have [faulty behaviour](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), which the kernel can correct by updating the *microcode* on startup. Intel processors require a separate package to this effect. See [Microcode](/index.php/Microcode "Microcode") for details.
+Processors may have [faulty behaviour](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), which the kernel can correct by updating the *microcode* on startup. See [Microcode](/index.php/Microcode "Microcode") for details.
 
 ### Retaining boot messages
 
