@@ -316,9 +316,9 @@ For those behind a captive portal, the desktop manager can automatically open a 
 
 ### DNS caching and split DNS
 
-#### dnsmasq
+NetworkManager has a plugin to enable DNS caching and split DNS using [dnsmasq](/index.php/Dnsmasq "Dnsmasq") or [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), or [Unbound](/index.php/Unbound "Unbound") (via dnssec-trigger). The advantages of this setup is that DNS lookups will be cached, shortening resolve times, and DNS lookups of VPN hosts will be routed to the relevant VPN's DNS servers. This is especially useful if you are connected to more than one VPN.
 
-NetworkManager has a plugin to enable DNS using [dnsmasq](/index.php/Dnsmasq "Dnsmasq"). The advantages of this setup is that DNS lookups will be cached, shortening resolve times, and DNS lookups of VPN hosts will be routed to the relevant VPN's DNS servers (especially useful if you are connected to more than one VPN).
+#### dnsmasq
 
 Make sure [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) has been installed. Then, create `/etc/NetworkManager/conf.d/dns.conf` and add the following to it:
 
@@ -329,6 +329,8 @@ dns=dnsmasq
 ```
 
 Now [restart](/index.php/Restart "Restart") `NetworkManager.service`. NetworkManager will automatically start dnsmasq and add `127.0.0.1` to `/etc/resolv.conf`. The actual DNS servers can be found in `/run/NetworkManager/resolv.conf`. You can verify dnsmasq is being used by doing the same DNS lookup twice with `$ drill example.com` and verifying the server and query times.
+
+**Note:** You do not need to start `dnsmasq.service` or edit `/etc/dnsmasq.conf`. NetworkManager will start dnsmasq by itself without using the systemd service and without reading the dnsmasq's default configuration file(s).
 
 ##### Custom configuration
 
@@ -366,7 +368,7 @@ NetworkManager can use [systemd-resolved](/index.php/Systemd-resolved "Systemd-r
 
 systemd-resolved will be used automatically if `/etc/resolv.conf` is a symlink to `/run/systemd/resolve/stub-resolv.conf`, `/run/systemd/resolve/resolv.conf` or `/usr/lib/systemd/resolv.conf`.
 
-If `/etc/resolv.conf` is not a symlink to any of those files, enable it explicitly by setting the `dns=` option in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5):
+You can enable it explicitly by setting the `dns=` option in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5):
 
  `/etc/NetworkManager/conf.d/dns.conf` 
 ```

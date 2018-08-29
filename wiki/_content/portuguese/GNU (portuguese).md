@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GNU](/index.php/GNU "GNU"). Data da última tradução: 2018-08-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNU&diff=0&oldid=535858) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GNU](/index.php/GNU "GNU"). Data da última tradução: 2018-08-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNU&diff=0&oldid=537504) na versão em inglês.
 
 Artigos relacionados
 
@@ -50,7 +50,7 @@ Embora a maioria dos softwares GNU também forneça [páginas man](/index.php/P%
 
 ## Conjunto de ferramentas
 
-A maioria das ferramentas do [conjunto de ferrtamentas do GNU](https://en.wikipedia.org/wiki/GNU_toolchain "wikipedia:GNU toolchain") *(toolchain)* estão no grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), exceto *glibc* que está no [base](https://www.archlinux.org/groups/x86_64/base/) e *gdb* que está em nenhum grupo.
+A maioria das ferramentas do [conjunto de ferrtamentas do GNU](https://en.wikipedia.org/wiki/GNU_toolchain "wikipedia:GNU toolchain") *(toolchain)* estão no grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), exceto *glibc* que está no [base](https://www.archlinux.org/groups/x86_64/base/) e GDB que está em nenhum grupo.
 
 *   **[GNU make](https://en.wikipedia.org/wiki/pt:Make "wikipedia:pt:Make")** — Utilitário GNU make para manter grupos de programas.
 
@@ -60,9 +60,9 @@ A maioria das ferramentas do [conjunto de ferrtamentas do GNU](https://en.wikipe
 
 	[https://gcc.gnu.org/](https://gcc.gnu.org/) || [gcc](https://www.archlinux.org/packages/?name=gcc)
 
-*   **[GNU C Library](https://en.wikipedia.org/wiki/pt:GNU_C_Library "wikipedia:pt:GNU C Library")** — a implementação do GNU da biblioteca C.
+*   **[glibc](https://en.wikipedia.org/wiki/pt:GNU_C_Library "wikipedia:pt:GNU C Library")** — a implementação do GNU da biblioteca C.
 
-	[https://www.gnu.org/software/libc/](https://www.gnu.org/software/libc/) || [glibc](https://www.archlinux.org/packages/?name=glibc) (part of [base](https://www.archlinux.org/groups/x86_64/base/))
+	[https://www.gnu.org/software/libc/](https://www.gnu.org/software/libc/) || [glibc](https://www.archlinux.org/packages/?name=glibc) (parte do [base](https://www.archlinux.org/groups/x86_64/base/))
 
 *   **[GNU Binutils](https://en.wikipedia.org/wiki/GNU_Binutils "wikipedia:GNU Binutils")** — Um conjunto de programas para montar e manipular arquivos binários e arquivos objeto. Inclui [ld](https://en.wikipedia.org/wiki/GNU_linker "wikipedia:GNU linker").
 

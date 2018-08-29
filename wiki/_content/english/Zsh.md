@@ -65,6 +65,8 @@ $ zsh /usr/share/zsh/functions/Newuser/zsh-newuser-install -f
 
 ```
 
+**Note:** Make sure your terminal's size is at least 72×15 otherwise *zsh-newuser-install* will not run.
+
 ### Making Zsh your default shell
 
 See [Command-line shell#Changing your default shell](/index.php/Command-line_shell#Changing_your_default_shell "Command-line shell").

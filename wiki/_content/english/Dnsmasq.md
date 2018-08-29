@@ -17,7 +17,8 @@ Related articles
         *   [3.1.1 DNS addresses file and forwarding](#DNS_addresses_file_and_forwarding)
             *   [3.1.1.1 openresolv](#openresolv)
             *   [3.1.1.2 Manual forwarding](#Manual_forwarding)
-        *   [3.1.2 Test](#Test)
+        *   [3.1.2 Adding a custom domain](#Adding_a_custom_domain)
+        *   [3.1.3 Test](#Test)
     *   [3.2 DHCP server](#DHCP_server)
         *   [3.2.1 Test](#Test_2)
     *   [3.3 TFTP server](#TFTP_server)
@@ -28,7 +29,6 @@ Related articles
     *   [4.3 More than one instance](#More_than_one_instance)
         *   [4.3.1 Static](#Static)
         *   [4.3.2 Dynamic](#Dynamic)
-    *   [4.4 Adding a custom domain](#Adding_a_custom_domain)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -72,7 +72,7 @@ listen-address=::1,127.0.0.1
 To use this computer to listen on its LAN IP address for other computers on the network. It is recommended that you use a static LAN IP in this case. E.g.:
 
 ```
-listen-address=192.168.1.1
+listen-address=::1,127.0.0.1,192.168.1.1
 
 ```
 
@@ -151,6 +151,27 @@ server=8.8.4.4
 ```
 
 Now DNS queries will be resolved with dnsmasq, only checking external servers if it cannot answer the query from its cache.
+
+#### Adding a custom domain
+
+It is possible to add a custom domain to hosts in your (local) network:
+
+```
+local=/lan/
+domain=lan
+
+```
+
+In this example it is possible to ping a host/device (e.g. defined in your `/etc/hosts` file) as `*hostname*.lan`.
+
+Uncomment `expand-hosts` to add the custom domain to hosts entries:
+
+```
+expand-hosts
+
+```
+
+Without this setting, you will have to add the domain to entries of `/etc/hosts`.
 
 #### Test
 
@@ -333,27 +354,6 @@ bind-dynamic
 ```
 
 **Note:** This is default in [libvirt](/index.php/Libvirt "Libvirt").
-
-### Adding a custom domain
-
-It is possible to add a custom domain to hosts in your (local) network:
-
-```
-local=/home.lan/
-domain=home.lan
-
-```
-
-In this example it is possible to ping a host/device (e.g. defined in your `/etc/hosts` file) as `*hostname*.home.lan`.
-
-Uncomment `expand-hosts` to add the custom domain to hosts entries:
-
-```
-expand-hosts
-
-```
-
-Without this setting, you will have to add the domain to entries of `/etc/hosts`.
 
 ## See also
 

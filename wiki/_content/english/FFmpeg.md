@@ -275,6 +275,7 @@ Stream #0:1(und): Audio: aac, 44100 Hz, stereo, fltp (default)
  LANGUAGE        : und
  HANDLER_NAME    : GPAC ISO Audio Handler
 **Stream #0:2: Subtitle: ssa (default)**
+
 ```
 
 *   `foo.mkv` has an embedded SSA subtitle which can be extracted into an independent file:

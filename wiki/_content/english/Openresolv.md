@@ -55,10 +55,10 @@ See the [official documentation](https://roy.marples.name/projects/openresolv/co
 
 ### Defining multiple values for options
 
-The man page does not mention it, but to define multiple values, for options that support it (e.g. `name-servers`, `resolv_conf_options` etc.) in `/etc/resolvconf.conf`, you need to write them space separated inside quotes. E.g.:
+The man page does not mention it, but to define multiple values, for options that support it (e.g. `name_servers`, `resolv_conf_options` etc.) in `/etc/resolvconf.conf`, you need to write them space separated inside quotes. E.g.:
 
  `/etc/resolvconf.conf` 
 ```
 resolv_conf_options="edns0 single-request"
-name_servers="dns1.example.com dns2.example.com dns3.example.com"
+name_servers="192.168.35.1 fd7b:d0bd:7a6e::1"
 ```

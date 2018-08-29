@@ -33,7 +33,6 @@ The Xorg server uses the [X keyboard extension](/index.php/X_keyboard_extension 
 *   [4 Adjusting typematic delay and rate](#Adjusting_typematic_delay_and_rate)
     *   [4.1 Using xset](#Using_xset)
     *   [4.2 Using XServer startup options](#Using_XServer_startup_options)
-    *   [4.3 Using XServer options](#Using_XServer_options)
 *   [5 Keybinding](#Keybinding)
     *   [5.1 Third-party tools](#Third-party_tools)
         *   [5.1.1 sxhkd](#sxhkd)
@@ -312,15 +311,6 @@ A more resistant way to set the typematic delay and rate is to make them the *se
 *   `-arinterval *miliseconds*` - sets the autorepeat interval (length of time in milliseconds that should elapse between autorepeat-generated keystrokes).
 
 See [Xserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xserver.1) for a full list of X server options and refer to your [display manager](/index.php/Display_manager "Display manager") for information about how to pass these options.
-
-### Using XServer options
-
-Add this line to `/etc/X11/xorg.conf.d/00-keyboard.conf`:
-
-```
-Option "AutoRepeat" "*delay* *rate*"
-
-```
 
 ## Keybinding
 

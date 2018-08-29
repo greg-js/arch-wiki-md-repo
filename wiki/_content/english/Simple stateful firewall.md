@@ -267,7 +267,7 @@ To allow remote SSH connections (on port 22):
 
 ```
 
-To accept incoming TCP/UDP requests for a DNS server (port 53):
+To accept incoming TCP/UDP requests for a [DNS](/index.php/DNS "DNS") server (port 53):
 
 ```
 # iptables -A TCP -p tcp --dport 53 -j ACCEPT
@@ -570,7 +570,7 @@ Let's assume we have another subnet, **10.3.0.0/16** (which means all addresses 
 
 The last step is to [enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") (if it is not already enabled).
 
-Machines from these subnets can now use your new NAT machine as their gateway. Note that you may want to set up a DNS and DHCP server like **dnsmasq** or a combination of **bind** and **dhcpd** to simplify network settings DNS resolution on the client machines. This is not the topic of this guide.
+Machines from these subnets can now use your new NAT machine as their gateway. Note that you may want to set up a DNS and [DHCP](/index.php/DHCP "DHCP") server like [dnsmasq](/index.php/Dnsmasq "Dnsmasq") or a combination of [bind](/index.php/Bind "Bind") and [dhcpd](/index.php/Dhcpd "Dhcpd") to simplify network settings DNS resolution on the client machines. This is not the topic of this guide.
 
 #### Setting up the PREROUTING chain
 

@@ -57,6 +57,25 @@ $ wget [https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.8.6.tar.xz](https:/
 
 ```
 
+You should also verify the correctness of the download before trusting it. First grab the signature, then use that to grab the fingerprint of the signing key, then use the fingerprint to obtain the actual signing key:
+
+```
+$ wget [https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.8.6.tar.sign](https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.8.6.tar.sign)
+$ gpg --list-packets linux-4.8.6.tar.sign
+$ gpg --recv-keys <fingerprint-from-previous-step>
+
+```
+
+Note the signature was generated for the tar archive (i.e. extension `.tar`), not the compressed `.tar.xz` file that you have downloaded. You need to decompress the latter without untarring it. Verify that you have [core/xz](https://www.archlinux.org/packages/?name=core%2Fxz) installed, then you can proceed like so:
+
+```
+$ unxz linux-4.8.6.tar.xz
+$ gpg --verify linux-4.8.6.tar.sign linux-4.8.6.tar
+
+```
+
+Do not proceed if this does not result in output that includes the string "Good signature".
+
 If `wget` was not used inside the build directory, it will be necessary to move the tarball into it, e.g.
 
 ```

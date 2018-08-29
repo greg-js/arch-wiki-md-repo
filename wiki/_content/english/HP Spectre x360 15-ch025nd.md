@@ -70,8 +70,6 @@ This model was released in February 2016.
 *   6e:00.0 Network controller: Intel Corporation Wireless 8265 / 8275 (rev 78)
 *   6f:00.0 Non-Volatile memory controller: Toshiba America Info Systems Device 0116
 
-}}
-
 ### lsusb
 
 *   Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub

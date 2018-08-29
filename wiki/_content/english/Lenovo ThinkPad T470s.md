@@ -7,7 +7,7 @@
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |
 | Smartcard Reader | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes |
-| Fingerprint Reader | No |
+| Fingerprint Reader | Yes |
 
 This article covers the installation and configuration of Arch Linux on a Lenovo T470s laptop.
 
@@ -23,7 +23,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
     *   [4.2 lsusb](#lsusb)
 *   [5 Configuration](#Configuration)
     *   [5.1 Smartcard Reader](#Smartcard_Reader)
-    *   [5.2 Fingerprint Reader](#Fingerprint_Reader)
+    *   [5.2 Fingerprint reader](#Fingerprint_reader)
 *   [6 See also](#See_also)
 
 ## firmware (e.g. bios and peripherals)
@@ -94,11 +94,31 @@ Bus 001 Device 002: ID 058f:9540 Alcor Micro Corp. AU9540 Smartcard Reader
 
 ```
 
-### Fingerprint Reader
+### Fingerprint reader
 
-The fingerprint reader included with this model `138a:0097 Validity Sensors, Inc` currently lacks a linux driver. [libfprint bugreport](https://bugs.freedesktop.org/show_bug.cgi?id=94536). Synaptics (which has acquired 'Validity Sensors') has unofficially said that they cannot disclose the protocol, but may possibly release a binary driver.
+As of writing this, the fingerprint reader is still under [prototype development](https://github.com/nmikhailov/Validity90), but looks like working fine on the T470s.
 
-Open source Linux driver is being developed by reverse engineering the Windows driver. [[2]](https://github.com/nmikhailov/Validity90)
+To get the sensor working, it first must be initialized with data. This currently only works with Windows. So if you had used the reader before installing Arch, this should work fine. Otherwise install a Windows version in a virtualbox, connect the Validity Sensor over USB(USB 2.0), install the drivers and use it a few times.
+
+As soon as this step is completed, the sensor can be used under Linux. Check out [Validity90 prototype](https://github.com/nmikhailov/Validity90/tree/master/prototype), build it and check if the sensor is working. Install [fprintd](https://www.archlinux.org/packages/?name=fprintd), [libfprint-vfs0097-git](https://aur.archlinux.org/packages/libfprint-vfs0097-git/) and for testing [fprint_demo](https://aur.archlinux.org/packages/fprint_demo/). You can now enroll your fingers. fprintd and fprint_demo might have be started with superuser privileges.
+
+After setting up the fingerprint sensor is complete, one can use it to login or authenticate for `sudo` or `su`(To use this, launch fprintd_enroll prior as root).
+
+For login edit `/etc/pam.d/login`
+
+Add the following and comment out the other entrys
+
+```
+ auth required pam_env.so
+ auth sufficient pam_fprintd.so
+ auth sufficient pam_unix.so try_first_pass likeauth nullok
+ auth required pam_deny.so
+
+```
+
+Do the same for sudo with `/etc/pam.d/sudo` or su with `/etc/pam.d/su`
+
+For more information visit [libfprint](https://github.com/3v1n0/libfprint) and adapt for the vfs0097 package.
 
 ## See also
 

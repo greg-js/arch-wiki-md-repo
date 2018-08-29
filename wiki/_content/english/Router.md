@@ -35,7 +35,7 @@ This article does not attempt to show how to set up a shared connection between 
 ## Hardware Requirements
 
 *   At least 1 GB of hard drive space. The base install will take up around 500MB of space and if you want to use a caching web proxy, you will need to reserve space for the cache as well.
-*   At least two physical network interfaces: a gateway connects two networks with each other (actually router can be made using single physical interface that underlay two VLAN interfaces and connected to VLAN-aware switch, so-called router-on-a-stick configuration, but it is not covered in this article). You will need to be able to connect those networks to the same physical computer. One interface must connect to the external network, while the other connects to the internal network.
+*   At least two physical network interfaces: a gateway connects two networks with each other (actually router can be made using single physical interface that underlay two [VLAN](/index.php/VLAN "VLAN") interfaces and connected to VLAN-aware switch, so-called router-on-a-stick configuration, but it is not covered in this article). You will need to be able to connect those networks to the same physical computer. One interface must connect to the external network, while the other connects to the internal network.
 *   A hub, switch or UTP cable: You need a way to connect the other computers to the gateway
 
 ## Network interface configuration
@@ -70,7 +70,7 @@ IP='static'
 Address=('10.0.0.1/24')
 ```
 
-**Note:** The example configuration above assumes a full subnet. If you are building the gateway for a small amount of people, you will want to change the [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") suffix to accommodate a smaller range. For example `/27` will give you `10.0.0.1` to `10.0.0.30`. You can find many CIDR calculators online.
+{{Note|The example configuration above assumes a full subnet. If you are building the gateway for a small amount of people, you will want to change the [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") suffix to accommodate a smaller range. For example `/27` will give you `10.0.0.1` to `10.0.0.30`. There are many CIDR calculators, for example [sipcalc](https://www.archlinux.org/packages/?name=sipcalc), as well as online.
 
 Next up is to set up the interfaces with netctl.
 
@@ -95,7 +95,7 @@ You can use netctl to setup the pppoe connection. To get started
 
 ```
 
-and start editing. For the interface configuration choose the interface that connects to the modem. If you only connect to the internet through PPPoE this will probably be `extern0`. Fill in the rest of the fields with your ISP information. See the pppoe section in netctl.profile man page for more information on the fields.
+and start editing. For the interface configuration choose the interface that connects to the modem. If you only connect to the internet through PPPoE this will probably be `extern0`. Fill in the rest of the fields with your ISP information. See the pppoe section in [netctl.profile(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.profile.5) man page for more information on the fields.
 
 ## DNS and DHCP
 

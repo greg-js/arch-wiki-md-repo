@@ -1,12 +1,12 @@
 Related articles
 
-*   [Bluez4](/index.php/Bluez4 "Bluez4")
 *   [Bluetooth mouse](/index.php/Bluetooth_mouse "Bluetooth mouse")
 *   [Bluetooth keyboard](/index.php/Bluetooth_keyboard "Bluetooth keyboard")
 *   [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset")
 *   [Blueman](/index.php/Blueman "Blueman")
+*   [ObexFTP](/index.php/ObexFTP "ObexFTP")
 
-[Bluetooth](http://www.bluetooth.org/) is a standard for the short-range wireless interconnection of cellular phones, computers, and other electronic devices. In Linux, the canonical implementation of the Bluetooth protocol stack is [BlueZ](http://www.bluez.org/).
+[Bluetooth](https://en.wikipedia.org/wiki/Bluetooth "wikipedia:Bluetooth") is a standard for the short-range wireless interconnection of cellular phones, computers, and other electronic devices. In Linux, the canonical implementation of the Bluetooth protocol stack is [BlueZ](http://www.bluez.org/).
 
 ## Contents
 
@@ -17,35 +17,30 @@ Related articles
 *   [2 Pairing](#Pairing)
 *   [3 Configuration](#Configuration)
     *   [3.1 Auto power-on after boot](#Auto_power-on_after_boot)
-*   [4 Using Obex for sending and receiving files](#Using_Obex_for_sending_and_receiving_files)
-    *   [4.1 ObexFS](#ObexFS)
-    *   [4.2 ObexFTP transfers](#ObexFTP_transfers)
-    *   [4.3 Obex Object Push](#Obex_Object_Push)
-*   [5 Audio](#Audio)
-    *   [5.1 Using your computer's speakers as a bluetooth headset](#Using_your_computer.27s_speakers_as_a_bluetooth_headset)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Shell command _____ is missing from bluez-utils](#Shell_command_is_missing_from_bluez-utils)
-    *   [6.2 gnome-bluetooth](#gnome-bluetooth)
-    *   [6.3 Bluetooth USB Dongle](#Bluetooth_USB_Dongle)
-        *   [6.3.1 Audio devices start to skip at short distance from dongle](#Audio_devices_start_to_skip_at_short_distance_from_dongle)
-    *   [6.4 Logitech Bluetooth USB Dongle](#Logitech_Bluetooth_USB_Dongle)
-    *   [6.5 hcitool scan: Device not found](#hcitool_scan:_Device_not_found)
-    *   [6.6 rfkill unblock: Do not unblock](#rfkill_unblock:_Do_not_unblock)
-    *   [6.7 My computer is not visible](#My_computer_is_not_visible)
-    *   [6.8 Logitech keyboard does not pair](#Logitech_keyboard_does_not_pair)
-    *   [6.9 HSP/HFP profiles](#HSP.2FHFP_profiles)
-    *   [6.10 Foxconn / Hon Hai / Lite-On Broadcom device](#Foxconn_.2F_Hon_Hai_.2F_Lite-On_Broadcom_device)
-    *   [6.11 Device connects, then disconnects after a few moments](#Device_connects.2C_then_disconnects_after_a_few_moments)
-    *   [6.12 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
-    *   [6.13 Device does not show up in scan](#Device_does_not_show_up_in_scan)
+*   [4 Audio](#Audio)
+    *   [4.1 Using your computer's speakers as a bluetooth headset](#Using_your_computer.27s_speakers_as_a_bluetooth_headset)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Deprecated BlueZ tools](#Deprecated_BlueZ_tools)
+    *   [5.2 gnome-bluetooth](#gnome-bluetooth)
+    *   [5.3 Bluetooth USB Dongle](#Bluetooth_USB_Dongle)
+        *   [5.3.1 Audio devices start to skip at short distance from dongle](#Audio_devices_start_to_skip_at_short_distance_from_dongle)
+    *   [5.4 Logitech Bluetooth USB Dongle](#Logitech_Bluetooth_USB_Dongle)
+    *   [5.5 hcitool scan: Device not found](#hcitool_scan:_Device_not_found)
+    *   [5.6 rfkill unblock: Do not unblock](#rfkill_unblock:_Do_not_unblock)
+    *   [5.7 My computer is not visible](#My_computer_is_not_visible)
+    *   [5.8 Logitech keyboard does not pair](#Logitech_keyboard_does_not_pair)
+    *   [5.9 HSP/HFP profiles](#HSP.2FHFP_profiles)
+    *   [5.10 Foxconn / Hon Hai / Lite-On Broadcom device](#Foxconn_.2F_Hon_Hai_.2F_Lite-On_Broadcom_device)
+    *   [5.11 Device connects, then disconnects after a few moments](#Device_connects.2C_then_disconnects_after_a_few_moments)
+    *   [5.12 Device does not connect with an error in journal](#Device_does_not_connect_with_an_error_in_journal)
+    *   [5.13 Device does not show up in scan](#Device_does_not_show_up_in_scan)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [bluez](https://www.archlinux.org/packages/?name=bluez) and [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) packages. The [bluez](https://www.archlinux.org/packages/?name=bluez) package provides the Bluetooth protocol stack, and the [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) package provides the `bluetoothctl` utility.
-
-The generic Bluetooth driver is the `btusb` Kernel module. [Check](/index.php/Kernel_module#Obtaining_information "Kernel module") whether that module is loaded. If it's not, then [load the module](/index.php/Kernel_module#Manual_module_handling "Kernel module").
-
-Then [start](/index.php/Start "Start") the `bluetooth.service` systemd unit. You can [enable](/index.php/Enable "Enable") it to start automatically at boot time.
+1.  [Install](/index.php/Install "Install") the [bluez](https://www.archlinux.org/packages/?name=bluez) package, providing the Bluetooth protocol stack.
+2.  [Install](/index.php/Install "Install") the [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) package, providing the `bluetoothctl` utility. Alternatively install [bluez-utils-compat](https://aur.archlinux.org/packages/bluez-utils-compat/) to additionally have the [deprecated BlueZ tools](#Deprecated_BlueZ_tools).
+3.  The generic Bluetooth driver is the `btusb` Kernel module. [Check](/index.php/Kernel_module#Obtaining_information "Kernel module") whether that module is loaded. If it's not, then [load the module](/index.php/Kernel_module#Manual_module_handling "Kernel module").
+4.  [Start/enable](/index.php/Start/enable "Start/enable") `bluetooth.service`.
 
 **Note:**
 
@@ -88,23 +83,27 @@ The following packages allow for a graphical interface to customize Bluetooth.
 
 	[https://github.com/blueman-project/blueman](https://github.com/blueman-project/blueman) || [blueman](https://www.archlinux.org/packages/?name=blueman)
 
+*   **[ObexFTP](/index.php/ObexFTP "ObexFTP")** — A tool for transferring files to/from any OBEX enabled device.
+
+	[http://dev.zuckschwerdt.org/openobex/wiki/ObexFtp](http://dev.zuckschwerdt.org/openobex/wiki/ObexFtp) || [obexftp](https://aur.archlinux.org/packages/obexftp/)
+
 ## Pairing
 
 **Note:** Before using the bluetooth device, make sure that it is not blocked by [rfkill](/index.php/Rfkill "Rfkill").
 
 This section describes directly configuring *bluez5* via the *bluetoothctl* CLI, which might not be necessary if you are using an alternative front-end tool (such as GNOME Bluetooth).
 
-The exact procedure depends on the devices involved and their input functionality. What follows is a general outline of pairing a device using `/usr/bin/bluetoothctl`:
+The exact procedure depends on the devices involved and their input functionality. What follows is a general outline of pairing a device using `bluetoothctl`.
 
 Start the `bluetoothctl` interactive command. Input `help` to get a list of available commands.
 
-1.  Possibly select a default controller by inputting `select *MAC Address*`
+1.  Possibly select a default controller by inputting `select *MAC_address*`
 2.  Turn the power to the controller on by entering `power on`. It is off by default and will turn off again each reboot, see [#Auto power-on after boot](#Auto_power-on_after_boot).
 3.  Enter `devices` to get the MAC Address of the device with which to pair.
 4.  Enter device discovery mode with `scan on` command if device is not yet on the list.
 5.  Turn the agent on with `agent on` or choose a specific agent: if you press tab twice after `agent` you should see a list of available agents, e.g. DisplayOnly KeyboardDisplay NoInputNoOutput DisplayYesNo KeyboardOnly off on.
-6.  Enter `pair *MAC Address*` to do the pairing (tab completion works).
-7.  If using a device without a PIN, one may need to manually trust the device before it can reconnect successfully. Enter `trust *MAC Address*` to do so.
+6.  Enter `pair *MAC_address*` to do the pairing (tab completion works).
+7.  If using a device without a PIN, one may need to manually trust the device before it can reconnect successfully. Enter `trust *MAC_address*` to do so.
 8.  Finally, use `connect *MAC_address*` to establish a connection.
 
 An example session may look this way:
@@ -153,68 +152,6 @@ By default, your Bluetooth adapter will not power on after a reboot. The former 
 AutoEnable=true
 ```
 
-## Using Obex for sending and receiving files
-
-### ObexFS
-
-Another option, rather than using KDE or Gnome Bluetooth packages, is ObexFS which allows for the mounting of phones which are treated like any other filesystem.
-
-**Note:** To use ObexFS, one needs a device that provides an ObexFTP service.
-
-Install [obexftp](https://aur.archlinux.org/packages/obexftp/) and mount supported phones by running:
-
-```
-$ obexfs -b *MAC_address_of_device* /mountpoint
-
-```
-
-Once you have finished, to unmount the device use the command:
-
-```
-$ fusermount -u /mountpoint
-
-```
-
-For more mounting options see [http://dev.zuckschwerdt.org/openobex/wiki/ObexFs](http://dev.zuckschwerdt.org/openobex/wiki/ObexFs)
-
-**Note:** Ensure that the bluetooth device you are mounting is **not** set to mount *read-only*. You should be able to do this from the device's settings. If the device is mounted *read-only* you may encounter a permissions error when trying to transfer files to the device.
-
-### ObexFTP transfers
-
-If your device supports the Obex FTP service but you do not wish to mount the device you can transfer files to and from the device using the obexftp command.
-
-To send a file to a device run the command:
-
-```
-$ obexftp -b *MAC_address_of_device* -p /path/to/file
-
-```
-
-To retrieve a file from a device run the command:
-
-```
-$ obexftp -b *MAC_address_of_device* -g filename
-
-```
-
-**Note:** Ensure that the file you are retrieving is in the device's *exchange folder*. If the file is in a subfolder of the exchange folder then provide the correct path in the command.
-
-### Obex Object Push
-
-For devices that do not support Obex FTP service, check if Obex Object Push is supported.
-
-```
-# sdptool browse *XX:XX:XX:XX:XX:XX*
-
-```
-
-Read the output, look for Obex Object Push, remember the channel for this service. If supported, one can use [ussp-push](https://aur.archlinux.org/packages/ussp-push/) to send files to this device:
-
-```
-# ussp-push *XX:XX:XX:XX:XX:XX*@*CHANNEL* *file* *wanted_file_name_on_phone*
-
-```
-
 ## Audio
 
 In order to be able to use audio equipment like bluetooth headphones or speakers, you need to install the additional [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) package.
@@ -238,19 +175,19 @@ More info in:
 
 ## Troubleshooting
 
-### Shell command _____ is missing from bluez-utils
+### Deprecated BlueZ tools
 
-Some tools have been marked as deprecated and removed from the package. At this time they are still available in the AUR package [bluez-utils-compat](https://aur.archlinux.org/packages/bluez-utils-compat/). Their functionality is partially covered by new tools, while some things have yet to be implemented with the new [D-Bus API](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/):
+Eight BlueZ tools [were deprecated](https://git.kernel.org/pub/scm/bluetooth/bluez.git/commit/?id=b1eb2c4cd057624312e0412f6c4be000f7fc3617) and removed from [bluz-utils](https://www.archlinux.org/packages/?name=bluz-utils), although not all of them were superseded by newer tools. The [bluez-utils-compat](https://aur.archlinux.org/packages/bluez-utils-compat/) package provides an alternative version of [bluz-utils](https://www.archlinux.org/packages/?name=bluz-utils) with the deprecated tools.
 
 | Deprecated tool | Most likely replacement |
-| gatttool | btgatt-client, [D-Bus Gatt API](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/gatt-api.txt) |
-| hciattach | btattach |
-| hciconfig | btmgmt (and bluetoothctl?) |
-| hcidump | btmon (and btsnoop) |
-| hcitool | missing, [D-Bus Device API](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/device-api.txt) available |
-| rfcomm | missing, implement with [D-Bus Profile1 API](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/profile-api.txt)? |
-| ciptool |
-| sdptool | missing, functionality seems to be scattered over different D-Bus objects: [Profile](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/profile-api.txt), [Advertising](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/advertising-api.txt), and the UUIDs arrays in [device](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/device-api.txt) and [adapter](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/adapter-api.txt). |
+| [gatttool](https://manpages.debian.org/stretch/bluez/gatttool.1.en.html) | btgatt-client, [D-Bus Gatt API](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/gatt-api.txt) |
+| [hciattach](https://manpages.debian.org/stretch/bluez/hciattach.1.en.html) | btattach |
+| [hciconfig](https://manpages.debian.org/stretch/bluez/hciconfig.1.en.html) | btmgmt (and bluetoothctl?) |
+| [hcidump](https://manpages.debian.org/stretch/bluez-hcidump/hcidump.1.en.html) | btmon (and btsnoop) |
+| [hcitool](https://manpages.debian.org/stretch/bluez/hcitool.1.en.html) | missing, [D-Bus Device API](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/device-api.txt) available |
+| [rfcomm](https://manpages.debian.org/stretch/bluez/rfcomm.1.en.html) | missing, implement with [D-Bus Profile1 API](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/profile-api.txt)? |
+| [ciptool](https://manpages.debian.org/stretch/bluez/ciptool.1.en.html) |
+| [sdptool](https://manpages.debian.org/stretch/bluez/sdptool.1.en.html) | missing, functionality seems to be scattered over different D-Bus objects: [Profile](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/profile-api.txt), [Advertising](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/advertising-api.txt), and the UUIDs arrays in [device](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/device-api.txt) and [adapter](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/adapter-api.txt). |
 
 ### gnome-bluetooth
 
@@ -527,7 +464,7 @@ a2dp-source profile connect failed for 9C:64:40:22:E1:3F: Protocol not available
 
 ```
 
-try installing [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) and restarting pulseaudio. This error can manifest even while using only file transfer.
+try installing [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) and restarting [PulseAudio](/index.php/PulseAudio "PulseAudio"). This error can manifest even while using only file transfer.
 
 ### Device does not show up in scan
 

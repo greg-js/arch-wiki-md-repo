@@ -1,4 +1,4 @@
-Tethering is a way to have internet access on your PC through your smartphone using its network connection. USB tethering and Wi-Fi access point tethering are natively supported since Android 2.2 "Froyo".
+[Tethering](https://en.wikipedia.org/wiki/Tethering "wikipedia:Tethering") is a way to have internet access on your PC through your smartphone using its network connection. USB tethering and Wi-Fi access point tethering are natively supported since Android 2.2 "Froyo".
 
 ## Contents
 

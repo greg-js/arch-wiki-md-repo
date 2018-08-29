@@ -1,8 +1,8 @@
 **翻译状态：** 本文是英文页面 [Router](/index.php/Router "Router") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-07-23，点击[这里](https://wiki.archlinux.org/index.php?title=Router&diff=0&oldid=442356)可以查看翻译后英文页面的改动。
 
-This article is a tutorial for turning a computer into an internet gateway/router. It focuses on *security*, since the gateway is connected directly to the Internet. It should not run **any** services available to the outside world. Towards the LAN, it should only run gateway specific services. It should not run httpd, ftpd, samba, nfsd, etc. as those belong on a server in the LAN as they introduce security flaws.
+此文章是一个将一台电脑配置为一台网关/路由器的指南。 为加强安全性，不应在此机器上运行对外服务。 对于局域网（LAN），只运行特定的网关服务而不运行httpd、ftpd、samba、nfsd等属于局域网服务器的服务，因为这些会带来风险。
 
-This article does not attempt to show how to set up a shared connection between 2 PCs using cross-over cables. For a simple internet sharing solution, see [Internet sharing](/index.php/Internet_sharing "Internet sharing").
+此文章不涉及如何设置两台PC用交叉网线进行连接共享。 简单网络连接共享，参见[Internet sharing](/index.php/Internet_sharing "Internet sharing")。
 
 ## Contents
 

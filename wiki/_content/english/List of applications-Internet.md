@@ -1076,6 +1076,10 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 	[https://www.claws-mail.org/](https://www.claws-mail.org/) || [claws-mail](https://www.archlinux.org/packages/?name=claws-mail)
 
+*   **email-securely-app** — Unofficial desktop app for several end-to-end encrypted email providers (like ProtonMail, Tutanota). Based on the [Electron](https://electronjs.org/) platform.
+
+	[https://github.com/vladimiry/email-securely-app](https://github.com/vladimiry/email-securely-app) || [email-securely-app-bin](https://aur.archlinux.org/packages/email-securely-app-bin/)
+
 *   **[Evolution](/index.php/Evolution "Evolution")** — Mature and feature-rich e-mail client that is part of the GNOME project. Part of [gnome-extra](https://www.archlinux.org/groups/x86_64/gnome-extra/).
 
 	[https://wiki.gnome.org/Apps/Evolution](https://wiki.gnome.org/Apps/Evolution) || [evolution](https://www.archlinux.org/packages/?name=evolution)

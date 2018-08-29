@@ -79,7 +79,7 @@ Personal configuration file should be located at `~/.irssi/config`; there is a t
 In order to add network with sasl mechanism here's an example:
 
 ```
-/SERVER ADD -auto -ssl -ssl_verify -ssl_capath /etc/ssl/certs -network freenode -port 6697 irc.freenode.net
+/SERVER ADD -auto -ssl -ssl_verify -ssl_capath /etc/ssl/certs -network freenode -port 6697 chat.freenode.net
 /NETWORK ADD -sasl_mechanism plain -sasl_username <username> -sasl_password <password> freenode
 
 ```

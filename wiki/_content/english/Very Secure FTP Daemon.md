@@ -475,7 +475,7 @@ If vsftpd returns a local address to a remote connection, like:
 
 ```
 
-It may be that the FTP server is behind a NAT router and while some devices monitor FTP connections and dynamically replace the IP address specification for packets containing the PASV response, some do not.
+It may be that the FTP server is behind a NAT router and while some devices monitor FTP connections and dynamically replace the local IP address specification by the external IP address for packets containing the PASV response, some do not.
 
 Indicate the external IP address in the vsftpd configuration using:
 
@@ -494,7 +494,7 @@ pasv_address=*my.domain.name*
 
 In case internal connection is not possible after this change, one may need to run 2 vsftpd, one for internal and one for external connections.
 
-**Tip:** To find out whether the NAT router intercept the PASV response and replaces the internal IP with an external IP, one can check the server response from the client side in TLS mode. The enciphered packets cannot be identified by the router and are not modified.
+**Tip:** To find out whether the NAT router intercepts the PASV response and replaces the internal IP with an external IP, one can check the server response from the client side in TLS mode. The enciphered packets cannot be identified by the router and are not modified.
 
 ### ipv6 only fails with: 500 OOPS: run two copies of vsftpd for IPv4 and IPv6
 

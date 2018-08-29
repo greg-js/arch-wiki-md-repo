@@ -106,7 +106,7 @@ When running on the Nvidia dGPU, if you see compression artifacts when playing v
 
 ### Fingeprint Validity Sensor not working
 
-And there is nothing you can do. [bug report at freedesktop](https://bugs.freedesktop.org/show_bug.cgi?id=94536). [discussion on official lenovo forum](https://forums.lenovo.com/t5/Linux-Discussion/Validity-Fingerprint-Reader-Linux/td-p/3352145/page/4)
+Thanks to [nmikhailov's reverse engineering work](https://github.com/nmikhailov/Validity90) and [3v1n0's libfprint implementation](https://github.com/3v1n0/libfprint) we can now use the fingerprint sensor in Linux. The fingerprint device on the P50 is listed as 138a:0090, make sure this is the one you have using lsusb. Installation requires fprintd from official repos and [libfprint-vfs0090-git](https://aur.archlinux.org/packages/libfprint-vfs0090-git/) from AUR. Then follow the instructions in [fprint](/index.php/Fprint "Fprint"). An official driver hasn't been released yet, discussion about this can be followed [on the official Lenovo forum](https://forums.lenovo.com/t5/Linux-Discussion/Validity-Fingerprint-Reader-Linux/td-p/3352145).
 
 ### Headsets not working with pulseaudio
 

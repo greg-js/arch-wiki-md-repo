@@ -6,6 +6,7 @@
 
 Artículos relacionados
 
+*   [Utilidades centrales](/index.php/Core_utilities_(Espa%C3%B1ol) "Core utilities (Español)")
 *   [Lista de juegos](/index.php/List_of_games_(Espa%C3%B1ol) "List of games (Español)")
 
 Este artículo contiene un listado general de aplicaciones, ordenadas por categorías, a modo de referencia para aquellos que buscan determinados paquetes. Muchas de las secciones se dividen en aplicaciones de consola y aplicaciones gráficas.
@@ -224,7 +225,7 @@ Este artículo contiene un listado general de aplicaciones, ordenadas por catego
 
 *   **[Tribler](https://en.wikipedia.org/wiki/Tribler "wikipedia:Tribler")** — Cuarta generación del sistema de archivos compatidos del cliente bittorrent.
 
-	[http://www.tribler.org](http://www.tribler.org) || [tribler](https://aur.archlinux.org/packages/tribler/)
+	[http://www.tribler.org](http://www.tribler.org) || [tribler](https://www.archlinux.org/packages/?name=tribler)
 
 *   **[Vuze](https://en.wikipedia.org/wiki/Vuze "wikipedia:Vuze")** — Cliente BitTorrent con muchas características escrito en Java (anteriormente Azureus).
 
@@ -2955,10 +2956,6 @@ Vea también [Wikipedia:es:Bootsplash](https://en.wikipedia.org/wiki/es:Bootspla
 
 	[http://www.freedesktop.org/wiki/Software/Plymouth/](http://www.freedesktop.org/wiki/Software/Plymouth/) || [plymouth](https://aur.archlinux.org/packages/plymouth/)
 
-*   **[Splashy](/index.php/Splashy "Splashy")** — Proceso de arranque gráfico diseñado para remplazar al ya envejecido Bootsplash
-
-	[https://alioth.debian.org/projects/splashy/](https://alioth.debian.org/projects/splashy/) || [splashy-full](https://aur.archlinux.org/packages/splashy-full/)
-
 *   **xplash** — Nuevo programa splash usado por Ubuntu desde la versión 9.10
 
 	[https://launchpad.net/xsplash](https://launchpad.net/xsplash) || [xsplash-bzr](https://aur.archlinux.org/packages/xsplash-bzr/)
@@ -3259,7 +3256,7 @@ Véase también [Wikipedia:Comparison of desktop application launchers](https://
 
 Un puñado de gestores de apagado están disponibles:
 
-*   **exitx** — Un diálogo de cierre de sesión para Openbox que usa [Sudo](/index.php/Sudo "Sudo").
+*   **exitx** — Un diálogo de cierre de sesión para Openbox que usa [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)").
 
 	[http://www.linuxsir.com/bbs/lastpostinthread350740.html](http://www.linuxsir.com/bbs/lastpostinthread350740.html) || [exitx](https://aur.archlinux.org/packages/exitx/)
 

@@ -137,8 +137,7 @@ $ XCURSOR_THEME=SomeThemeName xclock
  `/etc/dconf/db/gdm.d/10-cursor-settings` 
 ```
 [org/gnome/desktop/interface]
-cursor-theme='*theme-name'*
-
+cursor-theme=*theme-name*
 ```
 
 然后执行命令：

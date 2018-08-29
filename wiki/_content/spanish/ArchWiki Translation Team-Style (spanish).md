@@ -33,12 +33,7 @@ Se anima, por tanto, a todos los usuarios a participar en mejorar y ampliar la p
 
 	**Documentación útil**
 
-	Con el fin de que nuestro trabajo esté de acuerdo con las normas que definen [nuestra lengua](https://en.wikipedia.org/wiki/es:Idioma_espa%C3%B1ol "wikipedia:es:Idioma español"), se hace muy recomendable tener a mano las siguientes herramientas de la [RAE](http://www.rae.es/):
-
-*   [Diccionario de la lengua española (2014)](http://dle.rae.es/?w=diccionario).
-*   [Diccionario panhispánico de dudas (2005)](http://www.rae.es/recursos/diccionarios/dpd).
-*   [Ortografía de la lengua española (2010)](http://aplica.rae.es/orweb/cgi-bin/buscar.cgi). También tiene disponible una versión resumida [en formato PDF](http://www.google.es/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&sqi=2&ved=0CCEQFjAA&url=http%3A%2F%2Fwww.juanmanuelinfante.es%2Fattachments%2F108_NUEVA%2520ORTOGRAF%25C3%258DA%2520DE%2520LA%2520LENGUA%2520ESPA%25C3%2591OLA.pdf&ei=zl-IUNTUCc2DhQexyoHQBQ&usg=AFQjCNFt496dgbIJjg6eVHEwpljU9ib4MQ).
-*   [Gramática de la lengua española (2009)](http://aplica.rae.es/grweb/cgi-bin/buscar.cgi).
+	Con el fin de que nuestro trabajo esté de acuerdo con las normas que definen [nuestra lengua](https://en.wikipedia.org/wiki/es:Idioma_espa%C3%B1ol "wikipedia:es:Idioma español"), se hace muy recomendable tener a mano los [recursos que ofrece la RAE](http://www.rae.es/recursos).
 
 ## Reglas ortográficas
 

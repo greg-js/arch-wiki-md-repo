@@ -18,7 +18,8 @@ Related articles
     *   [3.3 Disable the cache via environment](#Disable_the_cache_via_environment)
     *   [3.4 CLI](#CLI)
     *   [3.5 makechrootpkg](#makechrootpkg)
-*   [4 See also](#See_also)
+*   [4 Caveat](#Caveat)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -138,6 +139,12 @@ $ makechrootpkg -d /path/to/cache/:/ccache -r /path/of/chroot -- CCACHE_DIR=/cca
 ```
 
 Then ccache can be configured for the chroot in the same way as explained above for the regular system.
+
+## Caveat
+
+Ccache is effective *only when* compiling *exactly identical* sources. (More exactly, preprocessed sources.)
+
+In the Gentoo Linux community, a source based distro, ccache has been notorious for its placebo effect, compilation failure (due to undesirable leftover objects), etc. Gentoo requires to turn off ccache before reporting compilation failure. See the [ccache section](https://wiki.gentoo.org/wiki/Handbook:Parts/Working/Features#Caching_compilation_objects) in Gentoo Linux Handbook, and [the blog post](https://flameeyes.blog/2008/06/21/debunking-ccache-myths/) titled "Debunking ccache myths" by Diego Pettenò, an ex-Gentoo developer.
 
 ## See also
 

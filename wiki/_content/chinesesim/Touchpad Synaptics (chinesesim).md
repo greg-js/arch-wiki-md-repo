@@ -21,25 +21,24 @@
     *   [2.5 MATE](#MATE)
 *   [3 高级配置](#.E9.AB.98.E7.BA.A7.E9.85.8D.E7.BD.AE)
     *   [3.1 使用xinput来检测您的触摸板有什么功能](#.E4.BD.BF.E7.94.A8xinput.E6.9D.A5.E6.A3.80.E6.B5.8B.E6.82.A8.E7.9A.84.E8.A7.A6.E6.91.B8.E6.9D.BF.E6.9C.89.E4.BB.80.E4.B9.88.E5.8A.9F.E8.83.BD)
-    *   [3.2 Synclient](#Synclient)
-    *   [3.3 Evtest](#Evtest)
-    *   [3.4 xev](#xev)
-    *   [3.5 环状滚动](#.E7.8E.AF.E7.8A.B6.E6.BB.9A.E5.8A.A8)
-    *   [3.6 自然滚动(触摸屏式滚动)](#.E8.87.AA.E7.84.B6.E6.BB.9A.E5.8A.A8.28.E8.A7.A6.E6.91.B8.E5.B1.8F.E5.BC.8F.E6.BB.9A.E5.8A.A8.29)
-    *   [3.7 软开关](#.E8.BD.AF.E5.BC.80.E5.85.B3)
-    *   [3.8 在打字时禁用触摸板](#.E5.9C.A8.E6.89.93.E5.AD.97.E6.97.B6.E7.A6.81.E7.94.A8.E8.A7.A6.E6.91.B8.E6.9D.BF)
-        *   [3.8.1 使用驱动的掌压感应](#.E4.BD.BF.E7.94.A8.E9.A9.B1.E5.8A.A8.E7.9A.84.E6.8E.8C.E5.8E.8B.E6.84.9F.E5.BA.94)
-        *   [3.8.2 使用 syndaemon](#.E4.BD.BF.E7.94.A8_syndaemon)
-    *   [3.9 检测到鼠标后禁用触摸板](#.E6.A3.80.E6.B5.8B.E5.88.B0.E9.BC.A0.E6.A0.87.E5.90.8E.E7.A6.81.E7.94.A8.E8.A7.A6.E6.91.B8.E6.9D.BF)
-        *   [3.9.1 基本桌面](#.E5.9F.BA.E6.9C.AC.E6.A1.8C.E9.9D.A2)
-        *   [3.9.2 GDM](#GDM)
-            *   [3.9.2.1 With syndaemon running](#With_syndaemon_running)
-            *   [3.9.2.2 touchpad-state](#touchpad-state)
-        *   [3.9.3 GNOME](#GNOME)
-        *   [3.9.4 KDE](#KDE)
-        *   [3.9.5 System with multiple X sessions](#System_with_multiple_X_sessions)
-    *   [3.10 一体化触摸板 (也被称为 ClickPads)](#.E4.B8.80.E4.BD.93.E5.8C.96.E8.A7.A6.E6.91.B8.E6.9D.BF_.28.E4.B9.9F.E8.A2.AB.E7.A7.B0.E4.B8.BA_ClickPads.29)
-        *   [3.10.1 Bottom edge correction](#Bottom_edge_correction)
+    *   [3.2 Evtest](#Evtest)
+    *   [3.3 xev](#xev)
+    *   [3.4 环状滚动](#.E7.8E.AF.E7.8A.B6.E6.BB.9A.E5.8A.A8)
+    *   [3.5 自然滚动(触摸屏式滚动)](#.E8.87.AA.E7.84.B6.E6.BB.9A.E5.8A.A8.28.E8.A7.A6.E6.91.B8.E5.B1.8F.E5.BC.8F.E6.BB.9A.E5.8A.A8.29)
+    *   [3.6 软开关](#.E8.BD.AF.E5.BC.80.E5.85.B3)
+    *   [3.7 在打字时禁用触摸板](#.E5.9C.A8.E6.89.93.E5.AD.97.E6.97.B6.E7.A6.81.E7.94.A8.E8.A7.A6.E6.91.B8.E6.9D.BF)
+        *   [3.7.1 使用驱动的掌压感应](#.E4.BD.BF.E7.94.A8.E9.A9.B1.E5.8A.A8.E7.9A.84.E6.8E.8C.E5.8E.8B.E6.84.9F.E5.BA.94)
+        *   [3.7.2 使用 syndaemon](#.E4.BD.BF.E7.94.A8_syndaemon)
+    *   [3.8 检测到鼠标后禁用触摸板](#.E6.A3.80.E6.B5.8B.E5.88.B0.E9.BC.A0.E6.A0.87.E5.90.8E.E7.A6.81.E7.94.A8.E8.A7.A6.E6.91.B8.E6.9D.BF)
+        *   [3.8.1 基本桌面](#.E5.9F.BA.E6.9C.AC.E6.A1.8C.E9.9D.A2)
+        *   [3.8.2 GDM](#GDM)
+            *   [3.8.2.1 With syndaemon running](#With_syndaemon_running)
+            *   [3.8.2.2 touchpad-state](#touchpad-state)
+        *   [3.8.3 GNOME](#GNOME)
+        *   [3.8.4 KDE](#KDE)
+        *   [3.8.5 System with multiple X sessions](#System_with_multiple_X_sessions)
+    *   [3.9 一体化触摸板 (也被称为 ClickPads)](#.E4.B8.80.E4.BD.93.E5.8C.96.E8.A7.A6.E6.91.B8.E6.9D.BF_.28.E4.B9.9F.E8.A2.AB.E7.A7.B0.E4.B8.BA_ClickPads.29)
+        *   [3.9.1 Bottom edge correction](#Bottom_edge_correction)
 *   [4 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
     *   [4.1 Touchpad does not work after resuming from hibernate/suspend](#Touchpad_does_not_work_after_resuming_from_hibernate.2Fsuspend)
     *   [4.2 xorg.conf.d/70-synaptics.conf在 MATE 上失效](#xorg.conf.d.2F70-synaptics.conf.E5.9C.A8_MATE_.E4.B8.8A.E5.A4.B1.E6.95.88)
@@ -229,9 +228,10 @@ To change these settings in **Cinnamon**:
 
 可以通过下面的方法来阻止Mate配置守护程序改写当前配置：
 
-1.  运行 {{ic|dconf-editor}
-2.  编辑 `org.mate.SettingsDaemon.plugins.mouse`
-3.  取消**active**勾选 .
+1.  运行 `dconf-editor}`
+
+3.  `编辑 <code>org.mate.SettingsDaemon.plugins.mouse`
+4.  取消**active**勾选 .
 
 ## 高级配置
 
@@ -253,42 +253,9 @@ To change these settings in **Cinnamon**:
 然后，您可以使用`xipunt`来查看您的触摸板有什么特性
 
 ```
-$ xinput list-props "SynPS/2 Synaptics TouchPad" | grep Capabilities
-
-      Synaptics Capabillities (309):  1, 0, 1, 0, 0, 1, 1
+$ xinput list-props "SynPS/2 Synaptics TouchPad" </code>
 
 ```
-
-从左到右，分别代表：
-
-*   (1) 设备有物理左键
-*   (0) 设备有物理中键
-*   (1) 设备有物理右键
-*   (0) 设备支持两指检测
-*   (0) 设备支持三指检测
-*   (1) 设备可以配置垂直分辨率
-*   (1) 设备可以配置水平分辨率
-
-使用`xinput list-props "SynPS/2 Synaptics TouchPad"` 来列出设备的所有属性
-
-详情请阅读xinput和synaptics的帮助文档
-
-### Synclient
-
-在synaptics manpage里面列出的所有参数都可以通过synclient进行配置.下面命令列出了一个完整的用户设置的清单：
-
- `$ synclient -l` 
-
-所有列出的参数都可以用synclient进行配置, 比如:
-
-```
-$ synclient PalmDetect=1 (to enable palm detection)
-$ synclient TapButton1=1 (configure button events)
-$ synclient TouchpadOff=1 (disable the touchpad)
-
-```
-
-使用synclient进行成功的设定和测试后,你可以将这些设定添加到`/etc/X11/xorg.conf.d/10-synaptics.conf`中
 
 ### Evtest
 

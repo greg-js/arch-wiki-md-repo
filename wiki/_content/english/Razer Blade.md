@@ -35,9 +35,7 @@ Razer Blade is Razer's line of gaming laptops. There is currently a 12" model (R
 
 ## Touchpad
 
-The touchpad works with the vanilla kernel with [BIOS version 1.05](https://insider.razer.com/index.php?threads/razer-blade-15-bios-update-v1-05.39978/).
-
-**Update:** Apparently as of August 18, 2018, the official forum post and file have been taken down. Not sure why.
+The touchpad works with the vanilla kernel with [BIOS version 1.05](https://dl.razer.com/drivers/BladeC1/Razer%20Blade%2015%20%282018%29%20BIOS%20update%20v1.05.pdf).
 
 If you are for some reason unable to boot into windows to perform the update, there is still a [patch](https://github.com/jbdrthapa/razerblade15/blob/master/razerfiles/touchpad/translation_fix/pinctrl-intel-translation-fix.patch) that you an apply to your kernel build to get things working. However, this will unlikely be maintained due to the availability of the BIOS patch.
 

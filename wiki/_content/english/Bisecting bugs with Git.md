@@ -7,6 +7,8 @@ Often when reporting bugs encountered with projects such as Mesa or Linux kernel
 *   [3 Setting up the Bisect](#Setting_up_the_Bisect)
 *   [4 Bisecting](#Bisecting)
 *   [5 Speeding up builds](#Speeding_up_builds)
+    *   [5.1 Building smaller kernel](#Building_smaller_kernel)
+    *   [5.2 Ccache](#Ccache)
 *   [6 Restoring package](#Restoring_package)
 *   [7 See also](#See_also)
 
@@ -100,9 +102,15 @@ Then do as described at the beginning of this section again and repeat until git
 
 ## Speeding up builds
 
-If you're bisecting the Linux kernel or another large project built using `gcc`, you can reduce build times by enabling [ccache](/index.php/Ccache "Ccache"). It may take several build iterations before you start to see benefits from the cache, however. The likelihood of cache hits generally increases as the distance between bisection points decreases.
+### Building smaller kernel
 
-You can also shorten kernel build times by building only the modules required by the local system using [modprobed-db](/index.php/Modprobed-db "Modprobed-db").
+You can shorten kernel build times by building only the modules required by the local system using [modprobed-db](/index.php/Modprobed-db "Modprobed-db"), or by `make localmodconfig`. Of course you can completely drop irrelevant drivers, for example sound drivers to debug a network problem.
+
+### Ccache
+
+If you are bisecting a large project built using `gcc`, it might be possible to reduce build times by enabling [ccache](/index.php/Ccache "Ccache"). It may take several build iterations before you start to see benefits from the cache, however. The likelihood of cache hits generally increases as the distance between bisection points decreases.
+
+**Note:** Ccache is effective *only when* compiling *exactly identical* sourecs. And to bisect the kernel, it is *not* necessary to do `make clean`, meaning ccache is a complete waste.
 
 ## Restoring package
 

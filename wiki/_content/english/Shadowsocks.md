@@ -1,3 +1,7 @@
+Related articles
+
+*   [Trojan](/index.php/Trojan "Trojan")
+
 [Shadowsocks](https://shadowsocks.org/en/) is a lightweight socks5 proxy, originally written in Python.
 
 ## Contents

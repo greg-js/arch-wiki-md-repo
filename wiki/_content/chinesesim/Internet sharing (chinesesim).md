@@ -29,11 +29,11 @@ Related articles
 
 ## 依赖
 
-作为服务器的机器应该有一个额外的网络设备。这个网络设备需要一个[数据链路层](https://en.wikipedia.org/wiki/data_link_layer "w:data link layer")来连接到将要获得网络访问的机器:
+作为服务器的机器应该有一个额外的网络设备。这个网络设备需要一个[数据链路层](https://en.wikipedia.org/wiki/data_link_layer "w:data link layer")来连接到将要获得网络访问的机器：
 
 *   如果想给若干台机器分享网络连接，[switch](https://en.wikipedia.org/wiki/Network_switch "wikipedia:Network switch")可以提供数据连接。
-*   一个无线设备同样可以给若干台机器分享网络访问，参见[Software access point](/index.php/Software_access_point "Software access point") first for this case.
-*   If you are sharing to only one machine, a [crossover cable](https://en.wikipedia.org/wiki/Ethernet_crossover_cable "wikipedia:Ethernet crossover cable") is sufficient. In case one of the two computers' ethernet cards has [MDI-X](https://en.wikipedia.org/wiki/Medium_Dependent_Interface#Auto_MDI-X "w:Medium Dependent Interface") capability, a crossover cable is not necessary and a regular ethernet cable can be used. Executing `ethtool *interface* | grep MDI` as root helps to figure it.
+*   一个无线设备同样可以给若干台机器分享网络访问，参见[Software access point](/index.php/Software_access_point "Software access point")。
+*   如果只需分享网络给一台机器，一根[交叉网线](https://en.wikipedia.org/wiki/Ethernet_crossover_cable "wikipedia:Ethernet crossover cable")就可以了。 如果两台电脑的网卡支持[MDI-X](https://en.wikipedia.org/wiki/Medium_Dependent_Interface#Auto_MDI-X "w:Medium Dependent Interface")，交叉网线也不是必须的，一根普通直连网线也可以。 运行 `ethtool *interface* | grep MDI` 确认网卡是否支持MDI-X。
 
 ## 配置
 

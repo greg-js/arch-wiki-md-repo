@@ -136,7 +136,7 @@ Device Descriptor:
 
 ```
 
-The Steel Series lights on the keyboard cannot be configured with [msi-keyboard-git](https://aur.archlinux.org/packages/msi-keyboard-git/) or [msiklm-git](https://aur.archlinux.org/packages/msiklm-git/) probably due to the udev rules not matching the usb vendor_id and product_id [[1]](https://github.com/Gibtnix/MSIKLM/issues/19)[[2]](https://github.com/bparker06/msi-keyboard/issues/9).
+The Steel Series lights on the keyboard cannot be configured with [msi-keyboard-git](https://aur.archlinux.org/packages/msi-keyboard-git/) or [msiklm-git](https://aur.archlinux.org/packages/msiklm-git/), because those tools only work with region-based RGB lighting. For this laptop model, the tool [msi-perkeyrgb](https://github.com/Askannz/msi-perkeyrgb) provides partial control.
 
 #### Button Mapping
 
@@ -160,7 +160,7 @@ And reloading the keymapping database:
 
 ```
 
-The commit [[3]](https://github.com/systemd/systemd/commit/e05c8b44622afe4256f3bb361cfb2c7db32fff8e) to fix this in systemd has been merged and should be available in the next release of systemd (240).
+The commit [[1]](https://github.com/systemd/systemd/commit/e05c8b44622afe4256f3bb361cfb2c7db32fff8e) to fix this in systemd has been merged and should be available in the next release of systemd (240).
 
 ##### Unmapped Buttons
 
@@ -211,7 +211,7 @@ Following this, cheese should work correctly.
 
 ### Wifi is hardblocked (airplane mode) after waking up from suspend
 
-Waking from suspend will have wifi in airplane mode. [[4]](https://askubuntu.com/questions/1043547/wifi-hard-blocked-after-suspend-in-ubuntu-on-gs65)
+Waking from suspend will have wifi in airplane mode. [[2]](https://askubuntu.com/questions/1043547/wifi-hard-blocked-after-suspend-in-ubuntu-on-gs65)
 
  `# rfkill list` 
 ```

@@ -45,16 +45,17 @@ This article explains how to configure a network connection.
             *   [6.2.2.2 Good](#Good)
             *   [6.2.2.3 Best](#Best)
         *   [6.2.3 More about it](#More_about_it)
-    *   [6.3 Realtek no link / WOL problem](#Realtek_no_link_.2F_WOL_problem)
-        *   [6.3.1 Enable the NIC directly in Linux](#Enable_the_NIC_directly_in_Linux)
-        *   [6.3.2 Rollback/change Windows driver](#Rollback.2Fchange_Windows_driver)
-        *   [6.3.3 Enable WOL in Windows driver](#Enable_WOL_in_Windows_driver)
-        *   [6.3.4 Newer Realtek Linux driver](#Newer_Realtek_Linux_driver)
-        *   [6.3.5 Enable LAN Boot ROM in BIOS/CMOS](#Enable_LAN_Boot_ROM_in_BIOS.2FCMOS)
-    *   [6.4 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
-    *   [6.5 Broadcom BCM57780](#Broadcom_BCM57780)
-    *   [6.6 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
-    *   [6.7 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111.2F8168.2F8411)
+    *   [6.3 Explicit Congestion Notification](#Explicit_Congestion_Notification)
+    *   [6.4 Realtek no link / WOL problem](#Realtek_no_link_.2F_WOL_problem)
+        *   [6.4.1 Enable the NIC directly in Linux](#Enable_the_NIC_directly_in_Linux)
+        *   [6.4.2 Rollback/change Windows driver](#Rollback.2Fchange_Windows_driver)
+        *   [6.4.3 Enable WOL in Windows driver](#Enable_WOL_in_Windows_driver)
+        *   [6.4.4 Newer Realtek Linux driver](#Newer_Realtek_Linux_driver)
+        *   [6.4.5 Enable LAN Boot ROM in BIOS/CMOS](#Enable_LAN_Boot_ROM_in_BIOS.2FCMOS)
+    *   [6.5 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
+    *   [6.6 Broadcom BCM57780](#Broadcom_BCM57780)
+    *   [6.7 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
+    *   [6.8 Gigabyte Motherboard with Realtek 8111/8168/8411](#Gigabyte_Motherboard_with_Realtek_8111.2F8168.2F8411)
 *   [7 See also](#See_also)
 
 ## Check the connection
@@ -63,7 +64,7 @@ To troubleshoot a network connection, go through the following conditions and en
 
 1.  Your [network interface](#Network_interfaces) is listed and enabled.
 2.  You are connected to the network. The cable is plugged in or you are [connected to the wireless LAN](/index.php/Wireless_network_configuration "Wireless network configuration").
-3.  Your network interface has an [IP address](#IP_addresses)
+3.  Your network interface has an [IP address](#IP_addresses).
 4.  Your [routing table](#Routing_table) is correctly set up.
 5.  You can [ping](#Ping) a local IP address (e.g. your default gateway).
 6.  You can [ping](#Ping) a public IP address (e.g. `8.8.8.8`), if you can't it may be related to your default gateway or your internet service provider.
@@ -514,6 +515,26 @@ This problem is caused by broken routers/firewalls, so let us change them. Some 
 This section is based on the LWN article [TCP window scaling and broken routers](http://lwn.net/Articles/92727/) and a Kernel Trap article: [Window Scaling on the Internet](http://kerneltrap.org/node/6723).
 
 There are also several relevant threads on the LKML.
+
+### Explicit Congestion Notification
+
+[Explicit Congestion Notification](https://en.wikipedia.org/wiki/Explicit_Congestion_Notification "wikipedia:Explicit Congestion Notification") (ECN) may cause traffic problems with old/bad routers [[5]](https://bbs.archlinux.org/viewtopic.php?id=239892). As of [systemd 239](https://github.com/systemd/systemd/issues/9748), it is enabled for both ingoing and outgoing traffic.
+
+To enable ECN only when requested by incoming connections (kernel default):
+
+```
+# sysctl net.ipv4.tcp_ecn=2
+
+```
+
+To disable ECN completely:
+
+```
+# sysctl net.ipv4.tcp_ecn=0
+
+```
+
+See also the [kernel documentation](https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt).
 
 ### Realtek no link / WOL problem
 

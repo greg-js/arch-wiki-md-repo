@@ -154,7 +154,7 @@ The [KDE-Store](https://store.kde.org/) offers more Plasma customization's, like
 
 	Qt4
 
-Breeze is not directly available for Qt4 since it can't be built without KDE 4 packages, which have been dropped from the extra repository in August 2018 [[2]](https://bugs.archlinux.org/task/59784). However you can install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and pick GTK+ as GUI Style by running `qtconfig-qt4`.
+Breeze is not directly available for Qt4 since it cannot be built without KDE 4 packages, which have been dropped from the extra repository in August 2018 ([FS#59784](https://bugs.archlinux.org/task/59784)). However you can install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and pick GTK+ as GUI Style by running `qtconfig-qt4`.
 
 	GTK+
 
@@ -180,14 +180,14 @@ Many Plasmoid binaries are available from the [AUR](https://aur.archlinux.org/pa
 
 ##### Disable panel shadow
 
-As the Plasma panel is on top of other windows, its shadow is drawn over them. [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1228394#p1228394) To disable this behaviour without impacting other shadows, [install](/index.php/Install "Install") [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) and run:
+As the Plasma panel is on top of other windows, its shadow is drawn over them. [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1228394#p1228394) To disable this behaviour without impacting other shadows, [install](/index.php/Install "Install") [xorg-xprop](https://www.archlinux.org/packages/?name=xorg-xprop) and run:
 
 ```
 $ xprop -remove _KDE_NET_WM_SHADOW
 
 ```
 
-then select the panel with the plus-sized cursor. [[4]](https://forum.kde.org/viewtopic.php?f=285&t=121592) For automation, install [xorg-xwininfo](https://www.archlinux.org/packages/?name=xorg-xwininfo) and create the following script:
+then select the panel with the plus-sized cursor. [[3]](https://forum.kde.org/viewtopic.php?f=285&t=121592) For automation, install [xorg-xwininfo](https://www.archlinux.org/packages/?name=xorg-xwininfo) and create the following script:
 
  `/usr/local/bin/kde-no-shadow` 
 ```
@@ -320,7 +320,7 @@ In the past other backends were developed as well but are no longer maintained a
 
 *   Multiple backends can be installed at once and prioritized at *System Settings > Multimedia > Audio and Video > Backend*.
 *   According to the [KDE forums](https://forum.kde.org/viewtopic.php?f=250&t=126476&p=335080), the VLC backend lacks support for [ReplayGain](https://en.wikipedia.org/wiki/ReplayGain "wikipedia:ReplayGain").
-*   If using the VLC backend, you may experience crashes every time Plasma wants to send you an audible warning and in quite a number of other cases as well [[6]](https://forum.kde.org/viewtopic.php?f=289&t=135956). A possible fix is to rebuild the VLC plugins cache:
+*   If using the VLC backend, you may experience crashes every time Plasma wants to send you an audible warning and in quite a number of other cases as well [[5]](https://forum.kde.org/viewtopic.php?f=289&t=135956). A possible fix is to rebuild the VLC plugins cache:
 
  `# /usr/lib/vlc/vlc-cache-gen /usr/lib/vlc/plugins` 
 
@@ -469,7 +469,7 @@ The configuration through the GUI may be tricky: if the phone number is not acce
 *   WiFi connection: no usb wire or bluetooth needed.
 *   RSA Encryption: your information is safe.
 
-You will need to install KDE Connect both on your computer and on your Android. For PC side, [install](/index.php/Install "Install") [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) package. For Android side, install KDE Connect from [Google Play](https://play.google.com/store/apps/details?id=org.kde.kdeconnect_tp) or from [F-Droid](https://f-droid.org/repository/browse/?fdid=org.kde.kdeconnect_tp).
+You will need to install KDE Connect both on your computer and on your Android. For PC side, [install](/index.php/Install "Install") [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) package. For Android side, install KDE Connect from [Google Play](https://play.google.com/store/apps/details?id=org.kde.kdeconnect_tp) or from [F-Droid](https://f-droid.org/packages/org.kde.kdeconnect_tp/).
 
 It is possible to use KDE Connect even if you do not use the Plasma desktop. For desktop environments that use AppIndicators, such as Unity, install [indicator-kdeconnect](https://aur.archlinux.org/packages/indicator-kdeconnect/) package as well. For GNOME users, better integration can be achieved by installing [gnome-shell-extension-gsconnect](https://aur.archlinux.org/packages/gnome-shell-extension-gsconnect/) instead of [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect).
 
@@ -477,7 +477,7 @@ It is possible to use KDE Connect even if you do not use the Plasma desktop. For
 
 ### Use a different window manager
 
-The component chooser settings in Plasma does not allow changing the window manager anymore. [[7]](https://github.com/KDE/plasma-desktop/commit/2f83a4434a888cd17b03af1f9925cbb054256ade) In order to change the window manager used you need to set the `KDEWM` [environment variable](/index.php/Environment_variable "Environment variable") before KDE startup. [[8]](https://wiki.haskell.org/Xmonad/Using_xmonad_in_KDE) To do that you can create a script called `set_window_manager.sh` in `~/.config/plasma-workspace/env` and export the `KDEWM` variable there. For example to use the i3 window manager :
+The component chooser settings in Plasma does not allow changing the window manager anymore. [[6]](https://github.com/KDE/plasma-desktop/commit/2f83a4434a888cd17b03af1f9925cbb054256ade) In order to change the window manager used you need to set the `KDEWM` [environment variable](/index.php/Environment_variable "Environment variable") before KDE startup. [[7]](https://wiki.haskell.org/Xmonad/Using_xmonad_in_KDE) To do that you can create a script called `set_window_manager.sh` in `~/.config/plasma-workspace/env` and export the `KDEWM` variable there. For example to use the i3 window manager :
 
  `~/.config/plasma-workspace/env/set_window_manager.sh`  `export KDEWM=/usr/bin/i3` 
 

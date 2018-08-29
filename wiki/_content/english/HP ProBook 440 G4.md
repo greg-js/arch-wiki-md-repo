@@ -22,7 +22,6 @@ Basic information for the new [HP ProBook 440 G4](http://www.notebookcheck.net/H
 
  `lspci -v` 
 ```
-{{
 00:00.0 Host bridge: Intel Corporation Device 5904 (rev 02)
 	Subsystem: Hewlett-Packard Company Device 822e
 	Flags: bus master, fast devsel, latency 0
@@ -155,8 +154,6 @@ Basic information for the new [HP ProBook 440 G4](http://www.notebookcheck.net/H
 	Capabilities: <access denied>
 	Kernel driver in use: rtsx_pci
 	Kernel modules: rtsx_pci
-}}
-
 ```
 
 ## BIOS Update

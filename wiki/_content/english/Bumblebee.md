@@ -45,16 +45,17 @@ From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
     *   [6.8 Video tearing](#Video_tearing)
     *   [6.9 Bumblebee cannot connect to socket](#Bumblebee_cannot_connect_to_socket)
     *   [6.10 Running X.org from console after login (rootless X.org)](#Running_X.org_from_console_after_login_.28rootless_X.org.29)
-    *   [6.11 Primusrun mouse delay (disable VSYNC)](#Primusrun_mouse_delay_.28disable_VSYNC.29)
-    *   [6.12 Primus issues under compositing window managers](#Primus_issues_under_compositing_window_managers)
-    *   [6.13 Problems with bumblebee after resuming from standby](#Problems_with_bumblebee_after_resuming_from_standby)
-    *   [6.14 Optirun does not work, no debug output](#Optirun_does_not_work.2C_no_debug_output)
-    *   [6.15 Broken power management with kernel 4.8](#Broken_power_management_with_kernel_4.8)
-    *   [6.16 Lockup issue (lspci hangs)](#Lockup_issue_.28lspci_hangs.29)
-    *   [6.17 Discrete card always on and acpi warnings](#Discrete_card_always_on_and_acpi_warnings)
-    *   [6.18 Screen 0 deleted because of no matching config section](#Screen_0_deleted_because_of_no_matching_config_section)
-    *   [6.19 Erratic, unpredictable behaviour](#Erratic.2C_unpredictable_behaviour)
-    *   [6.20 Discrete card always on and nvidia driver cannot be unloaded](#Discrete_card_always_on_and_nvidia_driver_cannot_be_unloaded)
+    *   [6.11 Using Primus causes a segmentation fault](#Using_Primus_causes_a_segmentation_fault)
+    *   [6.12 Primusrun mouse delay (disable VSYNC)](#Primusrun_mouse_delay_.28disable_VSYNC.29)
+    *   [6.13 Primus issues under compositing window managers](#Primus_issues_under_compositing_window_managers)
+    *   [6.14 Problems with bumblebee after resuming from standby](#Problems_with_bumblebee_after_resuming_from_standby)
+    *   [6.15 Optirun does not work, no debug output](#Optirun_does_not_work.2C_no_debug_output)
+    *   [6.16 Broken power management with kernel 4.8](#Broken_power_management_with_kernel_4.8)
+    *   [6.17 Lockup issue (lspci hangs)](#Lockup_issue_.28lspci_hangs.29)
+    *   [6.18 Discrete card always on and acpi warnings](#Discrete_card_always_on_and_acpi_warnings)
+    *   [6.19 Screen 0 deleted because of no matching config section](#Screen_0_deleted_because_of_no_matching_config_section)
+    *   [6.20 Erratic, unpredictable behaviour](#Erratic.2C_unpredictable_behaviour)
+    *   [6.21 Discrete card always on and nvidia driver cannot be unloaded](#Discrete_card_always_on_and_nvidia_driver_cannot_be_unloaded)
 *   [7 See also](#See_also)
 
 ## Bumblebee: Optimus for Linux
@@ -680,6 +681,17 @@ If you mistakenly had the display connected to the discrete graphics card and in
 ### Running X.org from console after login (rootless X.org)
 
 See [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg").
+
+### Using Primus causes a segmentation fault
+
+In some instances, using primusrun instead of optirun will result in a segfault. This is caused by an issue in code auto-detecting faster upload method, see [FS#58933](https://bugs.archlinux.org/task/58933).
+
+The workaround is skipping auto-detection by manually setting `PRIMUS_UPLOAD` [environment variable](/index.php/Environment_variable "Environment variable") to either 1 or 2, depending on which one is faster on your setup.
+
+```
+$ PRIMUS_UPLOAD=1 primusrun ...
+
+```
 
 ### Primusrun mouse delay (disable VSYNC)
 

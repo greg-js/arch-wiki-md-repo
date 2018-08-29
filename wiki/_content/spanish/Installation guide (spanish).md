@@ -102,9 +102,9 @@ Los resultados que terminan en `rom`, `loop` o `airoot` pueden ignorarse.
 Las siguientes *particiones* son **necesarias** para el dispositivo elegido:
 
 *   Una partición para el directorio raíz `/`.
-*   Si [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)") está habilitado, una [partición del sistema EFI](/index.php/EFI_system_partition "EFI system partition").
+*   Si [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)") está habilitado, una [partición del sistema EFI](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)").
 
-**Nota:** El [espacio de intercambio *(swap)*](/index.php/Swap "Swap") se puede establecer en una partición separada o en un [archivo](/index.php/Swap_(Espa%C3%B1ol)#Archivo_swap "Swap (Español)").
+**Nota:** El [espacio de intercambio *(swap)*](/index.php/Swap_(Espa%C3%B1ol) "Swap (Español)") se puede establecer en una partición separada o en un [archivo](/index.php/Swap_(Espa%C3%B1ol)#Archivo_swap "Swap (Español)").
 
 Para modificar la *tablas de particiones*, utilice [fdisk](/index.php/Fdisk "Fdisk") o [parted](/index.php/GNU_Parted "GNU Parted").
 

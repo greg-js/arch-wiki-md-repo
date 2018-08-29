@@ -82,7 +82,7 @@
 | <small>3.4.</small> [Виджет инструментарий](/index.php/Category:Widget_toolkits_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Widget toolkits (Русский)") <small>(3)</small> | <small>3.8.</small> [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits") <small>(4) (also in [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces "Category:Graphical user interfaces"))</small> |
 | <small>4.</small> [Аппаратная часть](/index.php/Category:Hardware_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Hardware (Русский)") <small>(3)</small> | <small>4.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(3)</small> |
 | <small>4.1.</small> [Архитектура ARM](/index.php/Category:ARM_architecture_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:ARM architecture (Русский)") <small>(1)</small> | <small>4.1.</small> [ARM architecture](/index.php/Category:ARM_architecture "Category:ARM architecture") <small>(6)</small> |
-| <small>4.2.</small> [Bluetooth](/index.php/Category:Bluetooth_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Bluetooth (Русский)") <small>(4)</small> | <small>4.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(5) (also in [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking"))</small> |
+| <small>4.2.</small> [Bluetooth](/index.php/Category:Bluetooth_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Bluetooth (Русский)") <small>(4)</small> | <small>4.2.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(6) (also in [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking"))</small> |
 | <small>4.3.</small> [Процессор](/index.php/Category:CPU_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:CPU (Русский)") <small>(4)</small> | <small>4.3.</small> [CPU](/index.php/Category:CPU "Category:CPU") <small>(10)</small> |
  <small>4.4.</small> [Displays](/index.php/Category:Displays "Category:Displays") <small>(3)</small> |
 | <small>4.4.</small> [Видеокарты](/index.php/Category:Graphics_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Graphics (Русский)") <small>(15)</small> | <small>4.5.</small> [Graphics](/index.php/Category:Graphics "Category:Graphics") <small>(32)</small> |
@@ -104,7 +104,7 @@
  <small>4.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
 | <small>4.8.2.</small> [HP](/index.php/Category:HP_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:HP (Русский)") <small>(1)</small> | <small>4.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(56)</small> |
  <small>4.9.11.</small> [IBM](/index.php/Category:IBM "Category:IBM") <small>(2)</small> |
- <small>4.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(86)</small> |
+ <small>4.9.12.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(87)</small> |
  <small>4.9.13.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(6)</small> |
 | <small>4.8.3.</small> [Samsung](/index.php/Category:Samsung_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Samsung (Русский)") <small>(1)</small> | <small>4.9.14.</small> [Samsung](/index.php/Category:Samsung "Category:Samsung") <small>(6)</small> |
  <small>4.9.15.</small> [Sony](/index.php/Category:Sony "Category:Sony") <small>(10)</small> |
@@ -173,7 +173,7 @@
 | <small>5.13.</small> [Web server](/index.php/Category:Web_server_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Web server (Русский)") <small>(2)</small> |
  <small>5.21.</small> [WebDAV](/index.php/Category:WebDAV "Category:WebDAV") <small>(7)</small> |
 | <small>5.14.</small> [Беспроводные сети](/index.php/Category:Wireless_networking_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Wireless networking (Русский)") <small>(3)</small> | <small>5.22.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(8)</small> |
- <small>5.22.1.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(5) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
+ <small>5.22.1.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(6) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
 | <small>6.</small> [Администрирование](/index.php/Category:System_administration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:System administration (Русский)") <small>(8)</small> | <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(24)</small> |
 | <small>6.1.</small> [Процесс загрузки](/index.php/Category:Boot_process_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Boot process (Русский)") <small>(26)</small> | <small>6.1.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(28)</small> |
 | <small>6.1.1.</small> [Загрузчики](/index.php/Category:Boot_loaders_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Boot loaders (Русский)") <small>(7)</small> | <small>6.1.1.</small> [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") <small>(10)</small> |

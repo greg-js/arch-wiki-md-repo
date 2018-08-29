@@ -13,7 +13,8 @@ Hyper-V is a hypervisor that is included with some versions of Microsoft Windows
 *   [6 Post-installation](#Post-installation)
     *   [6.1 Shared directories](#Shared_directories)
     *   [6.2 Xorg](#Xorg)
-    *   [6.3 Enhanced Session Mode](#Enhanced_Session_Mode)
+    *   [6.3 Setting Resolution](#Setting_Resolution)
+    *   [6.4 Enhanced Session Mode](#Enhanced_Session_Mode)
 
 ## Installation
 
@@ -212,6 +213,22 @@ More ways to mount shared folders, including automatic mounting on startup, are 
 ### Xorg
 
 Graphical programs can easily be run via Xorg via the [xf86-video-fbdev](https://www.archlinux.org/packages/?name=xf86-video-fbdev) package. Simply install it and the window manager or desktop environment you wish to use, and you should be able to start X without issue.
+
+### Setting Resolution
+
+Screen resolution is fixed after start-up. It can be adjusted by changing the boot parameters, up to a maximum size of 1920x1080 (the actual limitation is 8MB of frame buffer memory). When booting with GRUB, this can be done by editing `/etc/default/grub` and adding `video=hyperv_fb:[*desired resolution*]` to the end of the line `GRUB_CMDLINE_LINUX_DEFAULT`. Afterwards, run `update-grub` to write the changes. An example line may look like:
+
+ `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash video=hyperv_fb:1920x1080"` 
+
+If you are using systemd-boot to directly boot the kernel, simply add `video=hyperv_fb:1920x1080` to the options in the entry configuration instead. For example:
+
+ `/boot/loader/entries/arch.conf` 
+```
+title Arch Linux
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+options video=hyperv_fb:1920x1080 root=PARTUUID=xxxx-xxxx rw
+```
 
 ### Enhanced Session Mode
 

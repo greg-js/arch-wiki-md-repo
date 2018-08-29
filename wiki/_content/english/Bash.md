@@ -342,7 +342,7 @@ export IGNOREEOF=100
 
 ### Community
 
-*   [An active and friendly IRC channel for Bash](irc://irc.freenode.net#bash)
+*   [An active and friendly IRC channel for Bash](ircs://chat.freenode.net#bash)
 *   [Bashscripts.org](http://bashscripts.org)
 
 ### Examples

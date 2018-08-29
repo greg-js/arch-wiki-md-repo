@@ -39,18 +39,19 @@ Related articles
 
 ## Transferring files
 
-To transfer files between your computer and an Android device via USB you can use:
+There are various ways to transfer files between a computer and an Android device:
 
-*   [Media Transfer Protocol](/index.php/Media_Transfer_Protocol "Media Transfer Protocol") for modern Android devices
-*   [USB Mass Storage mode](https://www.howtogeek.com/192732/android-usb-connections-explained-mtp-ptp-and-usb-mass-storage/) for older devices
-*   the [Android Debug Bridge](/index.php/Android_Debug_Bridge "Android Debug Bridge")
-
-Otherwise files can be transferred with various protocols ([SSH](/index.php/SSH "SSH"), [FTP](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol"), [Samba](/index.php/Samba "Samba"), HTTP). You just need to setup a client and a server (via apps Android can act as either one).
-
-File sharing apps which have a Linux counterpart are:
-
-*   [KDE Connect](/index.php/KDE_Connect "KDE Connect") ([kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect)) – integrates your Android device with the KDE desktop (featuring synced notifications & clipboard, multimedia control, and file/URL sharing).
-*   [sendanywhere](https://aur.archlinux.org/packages/sendanywhere/) – cross-platform file sharing
+*   USB cable
+    *   [Media Transfer Protocol](/index.php/Media_Transfer_Protocol "Media Transfer Protocol") for modern Android devices
+    *   [USB mass storage](https://en.wikipedia.org/wiki/USB_Mass_Storage "wikipedia:USB Mass Storage") for older devices
+    *   [Android Debug Bridge](/index.php/Android_Debug_Bridge "Android Debug Bridge")
+*   special USB sticks / regular USB stick with adapter
+*   [Bluetooth](/index.php/Bluetooth "Bluetooth")
+*   Arch Linux software with Android counterparts
+    *   client or server for protocols that can be used to transfer files (eg. [SSH](/index.php/SSH "SSH"), [FTP](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol"), [Samba](/index.php/Samba "Samba") or HTTP)
+    *   [KDE Connect](/index.php/KDE_Connect "KDE Connect") ([kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect)) – integrates your Android device with the KDE desktop (featuring synced notifications & clipboard, multimedia control, and file/URL sharing).
+    *   [sendanywhere](https://aur.archlinux.org/packages/sendanywhere/) – cross-platform file sharing
+    *   [cloud synchronization clients](/index.php/Cloud_synchronization_clients "Cloud synchronization clients")
 
 ## App development
 

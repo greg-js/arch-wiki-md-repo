@@ -53,7 +53,7 @@ FTL is a DNS resolver/forwarder and a database-like wrapper/API that provides lo
 
 **Tip:** If Pi-hole is running on a [solid state drive](/index.php/Solid_state_drive "Solid state drive") (single-board computers SD, SSD, M.2/NVMe device, etc...) it is recommended to set the `DBINTERVAL` value to at least 60.0 to minimize writes to the database.
 
-See [the GitHub Readme](https://github.com/pi-hole/FTL#ftls-config-file) for how to configure FTL.
+See [official documentation](https://docs.pi-hole.net/ftldns/configfile/) for how to configure FTL.
 
 `pi-hole-ftl.service` is statically enabled; re/start it.
 

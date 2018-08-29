@@ -25,6 +25,9 @@
     *   [4.7 Wineconsole](#Wineconsole)
     *   [4.8 Wine-doors](#Wine-doors)
     *   [4.9 WineTools assistant](#WineTools_assistant)
+    *   [4.10 Winetricks](#Winetricks)
+*   [5 Alternatives to Win16 / Win32 binaries](#Alternatives_to_Win16_.2F_Win32_binaries)
+*   [6 External Resources](#External_Resources)
 
 ## 安裝
 
@@ -467,3 +470,32 @@ Wine-doors is a WineTools replacement. It features a GNOME GUI and works like a 
 **Note:** Microsoft policy is that you must have a license for IE6 in order to install DCOM98 or Internet Explorer 6\. If you've ever owned a copy of Windows, you should be fine.
 
 You can download the [PKGBUILD](https://aur.archlinux.org/packages.php?ID=8913) script and see [AUR](/index.php/AUR "AUR") for instructions to build and install.
+
+### Winetricks
+
+[Winetricks](http://wiki.winehq.org/winetricks) is a quick script that allows one to install base requirements needed to run some Windows programs. Installable components includes DirectX 9.x, msxml (required by Microsoft Office 2007 and Internet Explorer), visual runtime libraries and many more.
+
+You can install winetricks via pacman.
+
+```
+# pacman -S winetricks
+
+```
+
+Then run winetricks **as a normal user**:
+
+```
+$ winetricks
+
+```
+
+## Alternatives to Win16 / Win32 binaries
+
+*   [Codeweavers](/index.php/Codeweavers "Codeweavers") - Codeweavers' Crossover Office; Aimed at Office Users
+
+## External Resources
+
+*   [Official Wine Website](http://www.winehq.com/)
+*   [Wine Application Database](http://appdb.winehq.org/)
+*   [Advanced configuring your gfx card and OpenGL settings on wine; Speed up wine](http://linuxgamingtoday.wordpress.com/2008/02/16/quick-tips-to-speed-up-your-gaming-in-wine/)
+*   [FileInfo](http://wiki.gotux.net/code:perl:fileinfo) - Find Win32 PE/COFF headers in EXE/DLL/OCX files under linux/unix environment.

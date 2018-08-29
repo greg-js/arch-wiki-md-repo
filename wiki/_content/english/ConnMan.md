@@ -393,7 +393,7 @@ Once `connman.service` has been [restarted](/index.php/Systemd#Using_units "Syst
 
 ### Error /net/connman/technology/wifi: Not supported
 
-You need to install [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) and then [restart](/index.php/Restart "Restart") `connman.service`.
+Currently, connman doesn't support scanning for WiFi networks with [iwd](https://www.archlinux.org/packages/?name=iwd), at the moment this functionality is available with `wpa_supplicant` only (see [[5]](https://lists.01.org/pipermail/connman/2018-August/022915.html)). In order to have Wifi Scanning support from within connman, install [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) and then [restart](/index.php/Restart "Restart") `connman.service` after you stop `iwd.service`.
 
 ### Error /net/connman/technology/wifi: No carrier
 
@@ -404,7 +404,7 @@ $ connmanctl enable wifi
 
 ```
 
-If wireless scanning leads to above error, this may be due to an unresolved bug.[[5]](https://01.org/jira/browse/CM-670) If it does not resolve even though wireless [preconditions](https://lists.01.org/pipermail/connman/2014-December/019203.html) are met, try again after disabling competing network managers and rebooting.
+If wireless scanning leads to above error, this may be due to an unresolved bug.[[6]](https://01.org/jira/browse/CM-670) If it does not resolve even though wireless [preconditions](https://lists.01.org/pipermail/connman/2014-December/019203.html) are met, try again after disabling competing network managers and rebooting.
 
 This may also simply be caused by the wireless interface being blocked by [rfkill](/index.php/Rfkill "Rfkill"), which can occur after restarting wpa_supplicant. Use `rfkill list` to check.
 
@@ -450,7 +450,7 @@ connmand[473]: wlp2s0 {del} route 82.165.8.211 gw 10.20.30.4 scope 0 <UNIVERSE>
 
 ```
 
-It likely is Connman performing a connectivity check to the ipv4.connman.net host (which resolves to the IP address `82.165.8.211` at current).[[6]](https://01.org/jira/browse/CM-657) See the [Connman README](http://git.kernel.org/cgit/network/connman/connman.git/tree/README#n358) for more information on why and what - apart from the connecting IP - it transmits.
+It likely is Connman performing a connectivity check to the ipv4.connman.net host (which resolves to the IP address `82.165.8.211` at current).[[7]](https://01.org/jira/browse/CM-657) See the [Connman README](http://git.kernel.org/cgit/network/connman/connman.git/tree/README#n358) for more information on why and what - apart from the connecting IP - it transmits.
 
 While there is no option to configure the destination host of the check, the connection itself is functional (unless behind a captive portal) if the check is blocked by a firewall rule:
 
@@ -462,7 +462,7 @@ While there is no option to configure the destination host of the check, the con
 
 ### File /proc/net/pnp doesn't exist
 
-If you see this in your error log it is caused by bug in connman [[7]](https://bbs.archlinux.org/viewtopic.php?id=227689#p1766928) and can be ignored. [Bug Report](https://01.org/jira/browse/CM-690)
+If you see this in your error log it is caused by bug in connman [[8]](https://bbs.archlinux.org/viewtopic.php?id=227689#p1766928) and can be ignored. [Bug Report](https://01.org/jira/browse/CM-690)
 
 ## See also
 

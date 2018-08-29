@@ -39,7 +39,9 @@ Related articles
     *   [3.3 Hangi masaüstü ortamı veya pencere yöneticisini kullanmalıyım?](#Hangi_masa.C3.BCst.C3.BC_ortam.C4.B1_veya_pencere_y.C3.B6neticisini_kullanmal.C4.B1y.C4.B1m.3F)
     *   [3.4 Arch'ı diğer "minimal" dağıtımlardan ayıran nedir?](#Arch.27.C4.B1_di.C4.9Fer_.22minimal.22_da.C4.9F.C4.B1t.C4.B1mlardan_ay.C4.B1ran_nedir.3F)
 *   [4 64-bit](#64-bit)
-    *   [4.1 İşlemcimin x86_64 mimarisine sahip olup olmadığını nasıl öğrenebilirim ?](#.C4.B0.C5.9Flemcimin_x86_64_mimarisine_sahip_olup_olmad.C4.B1.C4.9F.C4.B1n.C4.B1_nas.C4.B1l_.C3.B6.C4.9Frenebilirim_.3F)
+    *   [4.1 İşlemcimin x86_64 mimarisine sahip olduğunu nasıl anlarım?](#.C4.B0.C5.9Flemcimin_x86_64_mimarisine_sahip_oldu.C4.9Funu_nas.C4.B1l_anlar.C4.B1m.3F)
+    *   [4.2 Neden 64-bit?](#Neden_64-bit.3F)
+    *   [4.3 İşletim sistemini yeniden kurmadan i636 kurulumundan x86_64 kurulumuna geçebilir miyim?](#.C4.B0.C5.9Fletim_sistemini_yeniden_kurmadan_i636_kurulumundan_x86_64_kurulumuna_ge.C3.A7ebilir_miyim.3F)
 
 ## Genel
 
@@ -216,13 +218,27 @@ Size en uygun olanı seçin. [Masaüstü ortamı](/index.php/Desktop_environment
 
 ## 64-bit
 
-### İşlemcimin x86_64 mimarisine sahip olup olmadığını nasıl öğrenebilirim ?
+### İşlemcimin x86_64 mimarisine sahip olduğunu nasıl anlarım?
 
-Eğer işlemciniz [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64") mimarisiyle uyumluysa, `/proc/cpuinfo` dosyasında `lm` bayrağını barındıracaktır . Örneğin,
+Eğer işlemciniz [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64") mimarisine sahipse,`/proc/cpuinfo` içinde `lm` flag'i olacaktır. Aşağıdaki komutun çıktısı ile bunu öğrenebilirsiniz,
 
 ```
 $ grep -w lm /proc/cpuinfo
 
 ```
 
-Windows altında çalışan makinelerde [CPU-Z](http://www.cpuid.com/cpuz.php) uygulamasını kullanarak işlemcinin 64-bit olup olmadığını kolaylıkla bulunabilir.
+Windows üzerinde ise ücretsiz bir yazılım olan [CPU-Z](http://www.cpuid.com/cpuz.php) ile işlemcinizin x86_64 mimarisine sahip olup olmadığını öğrenebilirsiniz. "AMD64" ve Intel'in 64 bit çözümü olan "EM64T" mimarisine sahip olan bir işlemci x86_64 komut setini ve kütüphanelerini çalıştırabilir.
+
+### Neden 64-bit?
+
+Çoğu durumda daha hızlıdır ve [Address space layout randomization (ASLR)](https://en.wikipedia.org/wiki/Address_space_layout_randomization "wikipedia:Address space layout randomization") özelliği ve [Position-independent code (PIC)](https://en.wikipedia.org/wiki/Position-independent_code "wikipedia:Position-independent code") , [NX Bit](https://en.wikipedia.org/wiki/NX_Bit "wikipedia:NX Bit") özellikleri ile daha güvenlidir. Ayrıca bilgisayarınız 4 GB'tan daha fazla RAM'e sahipse x86_64 komut setini çalıştıramayan bir işlemci bunu algılayamaz.
+
+Ek olarak yazılımcılar da yavaş yavaş 32 bit desteğini gevşetip, çekmeye başladılar. 32 bit yazılımın yakın bir gelecekte var olmayacağını söyleyebiliriz.
+
+### İşletim sistemini yeniden kurmadan i636 kurulumundan x86_64 kurulumuna geçebilir miyim?
+
+Hayır. Tüm paketleriniz yeni mimari için tekrardan kurulması gerekiyor ve buna dahil olarak konfigürasyon değişiklerine ihtiyaç duymanız da muhtemel. Ama, bu işlem sırasında hard diskinizi formatlamanız ya da yeniden biçimlendirmeniz gerekmiyor. Yani hali hazırda bulunan verilerinizi yeni kuruluma aktarabilirsiniz. Bunun için verilerinizi kaybetmeden yeni kuruluma geçmenize yardımcı olacak bir [forum konusu](https://bbs.archlinux.org/viewtopic.php?id=64485) mevcut.
+
+Veya sisteminizi 64-bit kurulum ISO'su ile açıp, diskinizden 32-bit kütüphanelerini içermeyen her şeyi kopyalayabilirsiniz. (örneğin: `/home` & `/etc`), and install.
+
+Şu başlığı da okumak isteyebilirsiniz: [migrating between architectures](/index.php/Migrating_between_architectures "Migrating between architectures").

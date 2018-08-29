@@ -19,11 +19,6 @@
     *   [3.2 Sandboxing](#Sandboxing)
     *   [3.3 Enable EDNS0](#Enable_EDNS0)
         *   [3.3.1 Test EDNS0](#Test_EDNS0)
-    *   [3.4 Redundant DNSCrypt providers](#Redundant_DNSCrypt_providers)
-        *   [3.4.1 Create instanced systemd service](#Create_instanced_systemd_service)
-            *   [3.4.1.1 Create systemd file](#Create_systemd_file)
-            *   [3.4.1.2 Add dnscrypt-sockets](#Add_dnscrypt-sockets)
-            *   [3.4.1.3 Apply new systemd configuration](#Apply_new_systemd_configuration)
 
 ## Installation
 
@@ -113,7 +108,9 @@ There are two methods for changing the default port:
 ListenStream=
 ListenDatagram=
 ListenStream=127.0.0.1:53000
+ListenStream=[::1]:53000
 ListenDatagram=127.0.0.1:53000
+ListenDatagram=[::1]:53000
 
 ```
 
@@ -272,61 +269,3 @@ rst.x4055.x4049.x3827.rs.dns-oarc.net.
 "2a00:d880:3:1::a6c1:2e89 sent EDNS buffer size 4096"
 
 ```
-
-### Redundant DNSCrypt providers
-
-To use several different DNSCrypt providers, you may simply copy the original `dnscrypt-proxy.service` and `dnscrypt-proxy.socket`. Then in your new copy of the service change the command line parameters, either pointing to a new configuration file or naming a different resolver directly. From there change the port in the new copy of the socket. Lastly, update your local DNS cache program to point to new service's port. For example, with [unbound](/index.php/Unbound "Unbound") the configuration file would look like if using ports `53000` for the original socket and `53001` for the new socket.
-
- `/etc/unbound/unbound.conf` 
-```
- do-not-query-localhost: no
- forward-zone:
-   name: "."
-   forward-addr: 127.0.0.1@53000
-   forward-addr: 127.0.0.1@53001
-
-```
-
-#### Create instanced systemd service
-
-An alternative option to copying the systemd service is to used an instanced service.
-
-##### Create systemd file
-
-First, create `/etc/systemd/system/dnscrypt-proxy@.service` containing:
-
-```
-[Unit]
-Description=DNSCrypt client proxy
-Documentation=man:dnscrypt-proxy(8)
-Requires=dnscrypt-proxy@%i.socket
-
-[Service]
-Type=notify
-NonBlocking=true
-ExecStart=/usr/bin/dnscrypt-proxy \
-    --resolver-name=%i
-Restart=always
-
-```
-
-This specifies an instanced systemd service that starts a dnscrypt-proxy using the service name specified after the @ symbol of a corresponding .socket file.
-
-##### Add dnscrypt-sockets
-
-To create multiple dnscrypt-proxy sockets, copy `/usr/lib/systemd/system/dnscrypt-proxy.socket` to a new file, `/etc/systemd/system/dnscrypt-proxy@*short-name.here*.socket`, replacing the socket instance name with one of the short names listed in [`dnscrypt-resolvers.csv`](#Select_resolver) and [change the port](#Change_port). Use a different port for each instance (53000, 53001, and so forth).
-
-##### Apply new systemd configuration
-
-Now we need to reload the systemd configuration.
-
-```
-# systemctl daemon-reload
-
-```
-
-Since we are replacing the default service with a different name, we need to explicitly [stop](/index.php/Stop "Stop") and [disable](/index.php/Disable "Disable") `dnscrypt-proxy.service` and `dnscrypt-proxy.socket`.
-
-Now [start/enable](/index.php/Start/enable "Start/enable") the new service(s), e.g., `dnscrypt-proxy@dnscrypt.eu-nl`, etc.
-
-Finally [restart](/index.php/Restart "Restart") `unbound.service`.

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). Data da última tradução: 2018-08-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Domain_name_resolution&diff=0&oldid=536599) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). Data da última tradução: 2018-08-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Domain_name_resolution&diff=0&oldid=537681) na versão em inglês.
 
 Artigos relacionados
 
@@ -59,13 +59,18 @@ Servidores de nome *(nameservers)* listados primeiros são tentados primeiro, at
 
 ### Sobrescrita do /etc/resolv.conf
 
-[Gerenciadores de rede](/index.php/Gerenciador_de_rede "Gerenciador de rede") tendem a sobrescrever `/etc/resolv.conf`, para particularidades veja a seção correspondente:
+[Gerenciadores de rede](/index.php/Gerenciadores_de_rede "Gerenciadores de rede") tendem a sobrescrever `/etc/resolv.conf`, para particularidades veja a seção correspondente:
 
 *   [dhcpcd#resolv.conf](/index.php/Dhcpcd#resolv.conf "Dhcpcd")
 *   [netctl#resolv.conf](/index.php/Netctl#resolv.conf "Netctl")
 *   [NetworkManager#resolv.conf](/index.php/NetworkManager#resolv.conf "NetworkManager")
 
-Para evitar que programas sobrescrevam `/etc/resolv.conf`, você também pode protegê-lo contra gravação definindo o [atributo de arquivo](/index.php/File_attribute "File attribute") imutável.
+Para evitar que programas sobrescrevam `/etc/resolv.conf`, você também pode protegê-lo contra gravação definindo o [atributo de arquivo](/index.php/File_attribute "File attribute") imutável:
+
+```
+# chattr +i /etc/resolv.conf
+
+```
 
 **Dica:** Se você quiser que vários processos escrevam no `/etc/resolv.conf`, você pode usar [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)").
 
@@ -118,7 +123,7 @@ As colunas têm o seguinte sentido:
 *   *DNS por HTTPS*: tem suporte ao protocolo [DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") para comunicação criptografada com o servidor DNS.
 
 | Resolvedor | Cache | Recursor | Compatibilidade *resolvconf* | Valida DNSSEC | DNS por TLS | DNS por HTTPS | Notas |
-| [glibc](#Resolvedor_do_glibc) | Não | Não | Não | Não | Não | Não |
+| [glibc](#Resolvedor_do_glibc) | Não | Não | [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Não | Não | Não |
 | [BIND](/index.php/BIND "BIND") | Sim | Sim | se inscreve no [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Sim |  ? |  ? |
 | [dnscrypt-proxy](/index.php/Dnscrypt-proxy "Dnscrypt-proxy") | Sim | Não | Não | Não | Não | Sim | Implementa o protocolo [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt"). |
 | [dnsmasq](/index.php/Dnsmasq "Dnsmasq") | Sim | Não | se inscreve no [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Sim | Não | Não |

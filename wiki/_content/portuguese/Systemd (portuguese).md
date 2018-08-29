@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2018-08-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=533651) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2018-08-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=537599) na versão em inglês.
 
 Artigos relacionados
 
@@ -847,19 +847,20 @@ Você pode desabilitar o modo de emergência em uma máquina remota, por exemplo
 ## Veja também
 
 *   [Artigo do Wikipédia](https://en.wikipedia.org/wiki/pt:systemd "wikipedia:pt:systemd")
-*   [Site oficial do systemd](http://www.freedesktop.org/wiki/Software/systemd)
-*   [Otimizações do systemd](http://www.freedesktop.org/wiki/Software/systemd/Optimizations)
-*   [FAQ do systemd](http://www.freedesktop.org/wiki/Software/systemd/FrequentlyAskedQuestions)
-*   [Dicas e truques do systemd](http://www.freedesktop.org/wiki/Software/systemd/TipsAndTricks)
-*   [Página sobre systemd do Gentoo Wiki](http://wiki.gentoo.org/wiki/Systemd)
-*   [Projeto Fedora - Sobre o systemd](http://fedoraproject.org/wiki/Systemd)
-*   [Projeto Fedora - Como depurar problemas no systemd](http://fedoraproject.org/wiki/How_to_debug_Systemd_problems)
-*   [Projeto Fedora - Folha de dicas de SysVinit para systemd](http://fedoraproject.org/wiki/SysVinit_to_Systemd_Cheatsheet)
-*   [Página sobre systemd do Debian Wiki](https://wiki.debian.org/systemd "debian:systemd")
-*   [Páginas de manual](http://0pointer.de/public/systemd-man/)
+*   [Site oficial do systemd](https://www.freedesktop.org/wiki/Software/systemd)
+    *   [Otimizações do systemd](https://www.freedesktop.org/wiki/Software/systemd/Optimizations)
+    *   [FAQ do systemd](https://www.freedesktop.org/wiki/Software/systemd/FrequentlyAskedQuestions)
+    *   [Dicas e truques do systemd](https://www.freedesktop.org/wiki/Software/systemd/TipsAndTricks)
+*   [Páginas de manual](https://www.freedesktop.org/software/systemd/man/)
+*   Outras distribuições:
+    *   [Página sobre systemd do Gentoo Wiki](https://wiki.gentoo.org/wiki/Systemd)
+    *   [Projeto Fedora - Sobre o systemd](https://fedoraproject.org/wiki/Systemd)
+    *   [Projeto Fedora - Como depurar problemas no systemd](https://fedoraproject.org/wiki/How_to_debug_Systemd_problems)
+    *   [Projeto Fedora - Folha de dicas de SysVinit para systemd](https://fedoraproject.org/wiki/SysVinit_to_Systemd_Cheatsheet)
+    *   [Página sobre systemd do Debian Wiki](https://wiki.debian.org/systemd "debian:systemd")
 *   [História do blogue do Lennart](http://0pointer.de/blog/projects/systemd.html), [atualização 1](http://0pointer.de/blog/projects/systemd-update.html), [atualização 2](http://0pointer.de/blog/projects/systemd-update-2.html), [atualização 3](http://0pointer.de/blog/projects/systemd-update-3.html), [resumo](http://0pointer.de/blog/projects/why.html)
 *   [systemd para administradores (PDF)](http://0pointer.de/public/systemd-ebook-psankar.pdf)
 *   [Como usar o systemctl para gerenciar serviços e units do systemd](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units)
-*   [gerenciamento de sessão com systemd-logind](https://dvdhrm.wordpress.com/2013/08/24/session-management-on-linux/)
+*   [Gerenciamento de sessão com systemd-logind](https://dvdhrm.wordpress.com/2013/08/24/session-management-on-linux/)
 *   [Realce de sintaxe do Emacs para arquivos do systemd](/index.php/Emacs#Syntax_highlighting_for_systemd_Files "Emacs")
 *   Artigo introdutório em [duas](http://www.h-online.com/open/features/Control-Centre-The-systemd-Linux-init-system-1565543.html) [partes](http://www.h-online.com/open/features/Booting-up-Tools-and-tips-for-systemd-1570630.html) na revista *The H Open*.

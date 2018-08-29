@@ -422,7 +422,7 @@ Throughout this section, it is assumed your Windows partition is `/dev/sda1`. A 
 
 **Note:** These menu entries will work only in BIOS boot mode. It will not work in UEFI installed GRUB. See [Dual boot with Windows#Windows UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations "Dual boot with Windows") and [Dual boot with Windows#Bootloader UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations "Dual boot with Windows") .
 
-In both examples `*XXXXXXXXXXXXXXXX*` is the filesystem UUID which can be found with command `lsblk --fs`.
+In both examples `*XXXXXXXXXXXXXXXX*` is the filesystem UUID which can be found with command `blkid`.
 
 For Windows Vista/7/8/8.1/10:
 

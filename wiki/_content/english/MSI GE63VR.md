@@ -8,6 +8,7 @@ Not to be confused with [MSI GS63VR](/index.php/MSI_GS63VR "MSI GS63VR")
 *   [4 Workarounds and fixes](#Workarounds_and_fixes)
     *   [4.1 Audio](#Audio)
     *   [4.2 GPU Switching](#GPU_Switching)
+    *   [4.3 RGB keyboard backlighting](#RGB_keyboard_backlighting)
 *   [5 Miscellaneous](#Miscellaneous)
 
 ## Introduction
@@ -27,9 +28,9 @@ The laptop was last tested with official kernel 4.17.6.
 ## Compatibility
 
 | Feature | Works ? | Comments |
-| Touchpad | Yes | Two-fingers scrolling works, both horizontal and vertical. |
+| Touchpad | Yes | Two and three fingers gestures work. |
 | Camera and integrated microphone | Yes | Default volume settings for the microphone result in horribly distorted input, you may need to adjust them in the **alsamixer** console. |
-| Function keys | Yes | Some function keys are specific to MSI and do not work since they require a special driver. Standard function keys (such as volume, brightness, toggle external monitor, etc) work. |
+| Function keys | Yes | Some function keys are specific to MSI and provide a shortcut for switching power modes on Windows. Of course they are inactive on Linux. They are recognized by the system though, and could probably be remapped by the user if wanted. Other standard function keys (such as volume, brightness, toggle external monitor, etc) work with no issues. |
 | Audio | Yes with workaround | Plugging in headphones mutes audio, see below for fix.
 
 Not tested : plugging an external microphone, audio through HDMI.
@@ -41,13 +42,9 @@ Not tested : plugging an external microphone, audio through HDMI.
 | DisplayPort | Not tested |
 | USB-C | Not tested |
 | Dedicated GPU | Yes |
-| GPU switching | Yes with workaround | Starting X on integrated graphics with the dedicated GPU turned off causes the system to hang. See below for fix. **bumblebee** has not been tested. |
+| GPU switching | Yes with workaround | Starting X on integrated graphics with the dedicated GPU turned off causes the system to hang. See below for fix. Once the fix has been applied, **bumblebee** works. |
 | Screen backlighting control | Yes |
-| Keyboard backlighting control | Partially | Function keys can control the brightness but not the color or the pattern of the backlighting.
-
-Open-source tools such as [MSIKLM](https://github.com/Gibtnix/MSIKLM) do not work for this particular laptop model. However, the configuration is stored into the keyboard itself, so you can set it up in Windows and it will persist after rebooting into Linux.
-
- |
+| Keyboard RGB backlighting control | Partially | Only partial control is available, see below. |
 | SD card reader | Not tested | A "wrong version" warning is thrown at boot about the SD controller. |
 | Sleep/Resume | Yes |
 | Hibernation to disk | Yes |
@@ -89,6 +86,12 @@ The system will hang if you try to start the X server while the NVidia GPU is tu
 To run the whole X session on the NVidia card, follow the guide in [NVIDIA Optimus#Using nvidia](/index.php/NVIDIA_Optimus#Using_nvidia "NVIDIA Optimus").
 
 To enable PRIME synchronisation for the built-in monitor, [enable DRM kernel mode setting for the NVidia driver](/index.php/NVIDIA#DRM_kernel_mode_setting "NVIDIA").
+
+### RGB keyboard backlighting
+
+On Windows, RGB keyboard backlighting can be configured with the SteelSeries Engine software, which is not available on Linux. As an alternative, the tool [msi-perkeyrgb](https://github.com/Askannz/msi-perkeyrgb) provides partial control, specifically for MSI laptops with per-key RGB. Tools designed for models with region-based RGB, such as [MSIKLM](https://github.com/Gibtnix/MSIKLM), will not work.
+
+Since the RGB settings are stored into the keyboard itself, another option for dual-boot owners is to configure the keyboard once in Windows, and then reboot into Linux.
 
 ## Miscellaneous
 

@@ -87,7 +87,7 @@ In 2007, VMware released large partitions of the [VMware Tools](http://kb.vmware
 
 Originally, VMware Tools provided the best drivers for network and storage, combined with the functionality for other features such as time synchronization. However, for quite a while now the drivers for the network/SCSI adapter are part of the Linux kernel.
 
-The official VMware Tools used to have the advantage of being able to use the Unity mode feature, but as of VMWare Workstation 12, Unity mode for Linux guests has been removed due to lack of use and developer difficulties in maintaining the feature. See the answer in this [thread](https://communities.vmware.com/thread/518735%7Cthis).
+The official VMware Tools used to have the advantage of being able to use the Unity mode feature, but as of VMWare Workstation 12, Unity mode for Linux guests has been removed due to lack of use and developer difficulties in maintaining the feature. See the answer in [this thread](https://communities.vmware.com/thread/518735).
 
 ## Open-VM-Tools
 

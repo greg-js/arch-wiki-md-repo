@@ -153,7 +153,7 @@ Banner /etc/issue
 
 ```
 
-Public and private host keys are automatically generated at installation in `/etc/ssh` by the *sshd* [service files](#Daemon_management). Four key pairs are provided based on the algorithms [dsa, rsa, ecdsa and ed25519](/index.php/SSH_keys#Choosing_the_authentication_key_type "SSH keys"). To have sshd use a particular key, specify the following option:
+Public and private host keys are automatically generated in `/etc/ssh` by the *sshd* [service files](#Daemon_management) on the first run after installation. Four key pairs are provided based on the algorithms [dsa, rsa, ecdsa and ed25519](/index.php/SSH_keys#Choosing_the_authentication_key_type "SSH keys"). To have sshd use a particular key, specify the following option:
 
 ```
 HostKey /etc/ssh/ssh_host_rsa_key

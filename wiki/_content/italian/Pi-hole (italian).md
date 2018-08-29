@@ -53,7 +53,7 @@ FTL è un DNS server/forwarder e una interfaccia simil-database/fornitore di API
 
 **Tip:** Se Pi-hole è installato su una unità a stato solito (SD dei mini PC, SSD, unità M.2/NVMe, etc...) si raccomanda di settare il valore di DBINTERVAL almeno a 60.0 per minimizzare le scritture sul database.
 
-Consultare il [Readme su GitHub](https://github.com/pi-hole/FTL#) per come configurare FTL.
+Consultare la [documentazione ufficiale](https://docs.pi-hole.net/ftldns/configfile/) per come configurare FTL.
 
 `pi-hole-ftl.service` è abilitato staticamente; ri/avvialo.
 

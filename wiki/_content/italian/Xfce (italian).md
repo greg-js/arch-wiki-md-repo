@@ -297,15 +297,11 @@ xkill -id "`xprop -root -notype | sed -n '/^_NET_ACTIVE_WINDOW/ s/^.*# *\|\,.*$/
 
 ```
 
-Ora non resta che associare un tasto allo script utilizzando `Impostazioni -> Tastiera}.`
-
-`
+Ora non resta che associare un tasto allo script utilizzando `Impostazioni -> Tastiera`.
 
 #### Gestire i tasti di scelta rapida
 
-`
-
-`Le scorciatoie da tastiera possono essere gestiti con l'applicazione Gestione impostazioni di Xfce, che è disponibile tramite il [pacchetto](/index.php/Pacman_(Italiano)#Installare_pacchetti_specifici "Pacman (Italiano)") [xfce4-settings](https://www.archlinux.org/packages/?name=xfce4-settings) e il [gruppo](/index.php/Pacman_(Italiano)#Installare_gruppi_di_pacchetti "Pacman (Italiano)") [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/). Il Settings Manager può essere avviato dal menu applicazioni ( fare clic su Impostazioni -> Tastiera ) o da riga di comando (<code>xfce4-keyboard-settings`). La documentazione di Xfce comprende [istruzioni dettagliate](http://docs.xfce.org/xfce/xfce4-settings/keyboard#application_shortcuts) per utilizzare il gestore delle impostazioni.
+Le scorciatoie da tastiera possono essere gestiti con l'applicazione Gestione impostazioni di Xfce, che è disponibile tramite il [pacchetto](/index.php/Pacman_(Italiano)#Installare_pacchetti_specifici "Pacman (Italiano)") [xfce4-settings](https://www.archlinux.org/packages/?name=xfce4-settings) e il [gruppo](/index.php/Pacman_(Italiano)#Installare_gruppi_di_pacchetti "Pacman (Italiano)") [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/). Il Settings Manager può essere avviato dal menu applicazioni ( fare clic su Impostazioni -> Tastiera ) o da riga di comando (`xfce4-keyboard-settings`). La documentazione di Xfce comprende [istruzioni dettagliate](http://docs.xfce.org/xfce/xfce4-settings/keyboard#application_shortcuts) per utilizzare il gestore delle impostazioni.
 
 ### Gestore delle finestre
 
@@ -443,7 +439,7 @@ Le applicazioni non hanno sempre un aspetto coerente . Ci sono due possibili rag
 
 2 . Il tema non è aggiornato .
 
-Per ottenere un aspetto uniforme per tutte le applicazioni, è consigliabile utilizzare un tema aggiornato GTK+3 come Advaita, che come tema GTK+3 ha il supporto integrato per le applicazioni GKT+2 . Advaita può essere installato dal pacchetto [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard). Le applicazioni basate sul toolkit Qt sono in grado di simulare l'attuale tema GTK+ usando { {ic</code> .
+Per ottenere un aspetto uniforme per tutte le applicazioni, è consigliabile utilizzare un tema aggiornato GTK+3 come Advaita, che come tema GTK+3 ha il supporto integrato per le applicazioni GKT+2 . Advaita può essere installato dal pacchetto [gnome-themes-standard](https://www.archlinux.org/packages/?name=gnome-themes-standard). Le applicazioni basate sul toolkit Qt sono in grado di simulare l'attuale tema GTK+ usando { {ic|qtconfig-qt4}} .
 
 per maggiori informazioni consultare [GTK+#GTK+ 3.x](/index.php/GTK%2B#GTK.2B_3.x "GTK+") per GTK3 e [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications") per Qt.
 

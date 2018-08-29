@@ -37,7 +37,7 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
     *   [3.1 Enable Echo/Noise-Cancellation](#Enable_Echo.2FNoise-Cancellation)
         *   [3.1.1 Possible 'aec_args' for 'aec_method=webrtc'](#Possible_.27aec_args.27_for_.27aec_method.3Dwebrtc.27)
         *   [3.1.2 Disable audio post processing in certain applications](#Disable_audio_post_processing_in_certain_applications)
-        *   [3.1.3 Make module-echo-cancel comfortably loadable from the DE](#Make_module-echo-cancel_comfortably_loadable_from_the_DE)
+        *   [3.1.3 Script for reloading module-echo-cancel](#Script_for_reloading_module-echo-cancel)
     *   [3.2 Glitches, skips or crackling](#Glitches.2C_skips_or_crackling)
     *   [3.3 Static noise when using headphones](#Static_noise_when_using_headphones)
     *   [3.4 Setting the default fragment number and buffer size in PulseAudio](#Setting_the_default_fragment_number_and_buffer_size_in_PulseAudio)
@@ -585,26 +585,26 @@ pulseaudio --start
 ```
 
 and check if the module is activated by starting `pavucontrol`. Under `Recoding` the input device should show `Echo-Cancel Source Stream from"`.
-If you want that existing streams are automatically moved to the new sink and source, you have to load the [module-switch-on-connect](#Automatically_switch_to_Bluetooth_or_USB_headset) with `load-module module-switch-on-connect ignore_virtual=no` bevor.
 
-BEWARE:
-If you plug in a USB Soundcard/Headset, or you have for example a 5.1 Speaker configuration and plug in a Headset on your front audio connectors after you have loaded the 'module-echo-cancel', you have to manually unload and load the 'module-echo-cancel' again, because unfortunately there is no way to tell the 'module-echo-cancel' that it should automatically switch to the new default 'source_master' and 'source_sink'. See [https://bugs.freedesktop.org/show_bug.cgi?id=100403](https://bugs.freedesktop.org/show_bug.cgi?id=100403)
+If you want existing streams to be automatically moved to the new sink and source, you have to load the [module-switch-on-connect](#Automatically_switch_to_Bluetooth_or_USB_headset).
+
+**Note:** If you plug in a USB sound card or headset, or you have for example a 5.1 Speaker configuration and plug in a headset on your front audio connectors after you have loaded the `module-echo-cancel`, you have to manually unload and load the `module-echo-cancel` again, because unfortunately there is no way to tell the module that it should automatically switch to the new default 'source_master' and 'source_sink'. See [[3]](https://bugs.freedesktop.org/show_bug.cgi?id=100403).
 
 #### Possible 'aec_args' for 'aec_method=webrtc'
 
-Here is a list of possible 'aec_args' for 'aec_method=webrtc' with their default values [[3]](https://github.com/pulseaudio/pulseaudio/blob/master/src/modules/echo-cancel/webrtc.cc)[[4]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index45h3):
+Here is a list of possible 'aec_args' for 'aec_method=webrtc' with their default values [[4]](https://github.com/pulseaudio/pulseaudio/blob/master/src/modules/echo-cancel/webrtc.cc)[[5]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index45h3):
 
 *   `analog_gain_control=1` - Analog AGC - 'Automatic Gain Control' done over changing the volume directly - Will most likely lead to [distortions](#Microphone_distorted_due_to_automatic_adjustment).
 *   `digital_gain_control=0` - Digital AGC - 'Automatic Gain Control' done in post processing (higher CPU load).
 *   `experimental_agc=0` - Allow enabling of the webrtc experimental AGC mechanism.
-*   `agc_start_volume=85` - Initial volume when using AGC - Possible values 0-255 - A too low initial volume may prevent the AGC algorithm from ever raising the volume high enough [[5]](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/9.0/).
+*   `agc_start_volume=85` - Initial volume when using AGC - Possible values 0-255 - A too low initial volume may prevent the AGC algorithm from ever raising the volume high enough [[6]](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/9.0/).
 *   `high_pass_filter=1` - ?
 *   `noise_suppression=1` - Noise suppression.
 *   `voice_detection=1` - VAD - Voice activity detection.
-*   `extended_filter=0` - The extended filter is more complex and less sensitive to incorrect delay reporting from the hardware than the regular filter. The extended filter mode is disabled by default, because it seemed produce worse results during double-talk [[6]](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/9.0/).
+*   `extended_filter=0` - The extended filter is more complex and less sensitive to incorrect delay reporting from the hardware than the regular filter. The extended filter mode is disabled by default, because it seemed produce worse results during double-talk [[7]](https://www.freedesktop.org/wiki/Software/PulseAudio/Notes/9.0/).
 *   `intelligibility_enhancer=0` - Some bits for webrtc intelligibility enhancer.
 *   `drift_compensation=0` - Drift compensation to allow echo cancellation between different devices (such as speakers on your laptop and the microphone on your USB webcam). - only possible with "mobile=0".
-*   `beamforming=0` - See [[7]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index45h3)[[8]](https://arunraghavan.net/2016/06/beamforming-in-pulseaudio/)
+*   `beamforming=0` - See [[8]](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index45h3)[[9]](https://arunraghavan.net/2016/06/beamforming-in-pulseaudio/)
     *   `mic_geometry=x1,y1,z1,x2,y2,z2` - Only with "beamforming=1".
     *   `target_direction=a,e,r` - Only with "beamforming=1".
 *   `mobile=0` - ?
@@ -613,45 +613,28 @@ Here is a list of possible 'aec_args' for 'aec_method=webrtc' with their default
 
 #### Disable audio post processing in certain applications
 
-If you are using the [module-echo-cancel](#Enable_Echo.2FNoise-Cancellation), you probably don't want other applications to do additional audio post processing.
-Here is a list for disabling audio post processing in following applications:
+If you are using the [module-echo-cancel](#Enable_Echo.2FNoise-Cancellation), you probably don't want other applications to do additional audio post processing. Here is a list for disabling audio post processing in following applications:
 
 *   Mumble:
-
-1.  Configure -> Settings -> Check 'Advanced' check box -> Audio Input
-
-2.  Echo: Select 'Disabled'
-
-3.  Noise Suppression: Set slider to 'Off'
-
-4.  Max. Aplification: Set slider to '1.0'
-
+    1.  Configure -> Settings -> Check 'Advanced' check box -> Audio Input
+    2.  Echo: Select 'Disabled'
+    3.  Noise Suppression: Set slider to 'Off'
+    4.  Max. Aplification: Set slider to '1.0'
 *   TeamSpeak:
-
-1.  Tools -> Options -> Check 'Advanced Options' check box
-
-2.  Uncheck: 'Echo reduction', 'Echo cancellation', 'Remove background noise' and 'Automatic voice gain control'
-
-*   Firefox:
-
-1.  Is described [here](/index.php/Firefox_tweaks#Disable_WebRTC_audio_post_processing "Firefox tweaks")
-
+    1.  Tools -> Options -> Check 'Advanced Options' check box
+    2.  Uncheck: 'Echo reduction', 'Echo cancellation', 'Remove background noise' and 'Automatic voice gain control'
+*   Firefox: see [Firefox_tweaks#Disable_WebRTC_audio_post_processing](/index.php/Firefox_tweaks#Disable_WebRTC_audio_post_processing "Firefox tweaks")
 *   Steam:
-
-1.  In window "Friends List" -> Manage friends list settings (gear symbol) -> VOICE -> Show Advanced Settings
-
-2.  Set the following sliders to "OFF": "Echo cancellation", "Noise cancellation", "Automatic volume/gain control"
-
+    1.  In window "Friends List" -> Manage friends list settings (gear symbol) -> VOICE -> Show Advanced Settings
+    2.  Set the following sliders to "OFF": "Echo cancellation", "Noise cancellation", "Automatic volume/gain control"
 *   Skype:
+    1.  Tools -> Settings... -> Audio & Video -> Microphone -> Automatically adjust microphone settings -> off
 
-1.  Tools -> Settings... -> Audio & Video -> Microphone -> Automatically adjust microphone settings -> off
+#### Script for reloading module-echo-cancel
 
-#### Make module-echo-cancel comfortably loadable from the DE
+Since the module-echo-cancel is not always needed, or must be reloaded if the source_master or sink_master has changed, it is nice to have a easy way to load or reload the module-echo-cancel.
 
-Since the module-echo-cancel is not always needed, or must be reloaded if the source_master or sink_master has changed, it is nice to have a easy way to load or reload the module-echo-cancel with one click from the DE.
-Here is a HowTo, after this the module-echo-cancel can be loaded or reloaded from the launcher of the DE:
-
-*   Generate the file *echoCancelEnable.sh* with the following content:
+[Create](/index.php/Create "Create") the following script and make it [executable](/index.php/Executable "Executable"):
 
  `echoCancelEnable.sh` 
 ```
@@ -680,34 +663,7 @@ fi
 
 ```
 
-Install this file with the command:
-
-```
-$ shFileName=echoCancelEnable.sh ; shFilePath="/usr/local/bin/$shFileName" ; sudo cp ./$shFileName $shFilePath && (sudo chmod 744 $shFilePath ; sudo chmod +x $shFilePath)
-
-```
-
-*   Generate the file *echoCancelEnable.desktop* with the following content:
-
- `echoCancelEnable.desktop` 
-```
-[Desktop Entry]
-Type=Application
-Name=Enable echo cancellation
-Comment=Load PulseAudio module-echo-cancel
-Icon=microphone-sensitivity-muted
-Exec=echoCancelEnable.sh analog_gain_control=0 digital_gain_control=1
-Categories=System;AudioVideo
-Keywords=echo,webrtc,cancellation
-
-```
-
-Install this file with the command:
-
-```
-$ sudo desktop-file-install echoCancelEnable.desktop
-
-```
+To run the script easily from the graphical environment, you can create a [desktop launcher](/index.php/Desktop_launcher "Desktop launcher") for it.
 
 ### Glitches, skips or crackling
 
@@ -941,7 +897,7 @@ hdmi-output-0: HDMI / DisplayPort (priority: 5900, not available)
 
 This leads to no sound coming from HDMI output. A workaround for this is to switch to another VT and back again. If that does not work, try: turn off your monitor, switch to another VT, turn on your monitor, and switch back. This problem has been reported by ATI/Nvidia/Intel users.
 
-Another workaround could be to disable the switch-on-port-available module by commenting it in /etc/pulse/default.pa [[9]](https://bugs.freedesktop.org/show_bug.cgi?id=93946#c36):
+Another workaround could be to disable the switch-on-port-available module by commenting it in /etc/pulse/default.pa [[10]](https://bugs.freedesktop.org/show_bug.cgi?id=93946#c36):
 
  `/etc/pulse/default.pa` 
 ```
@@ -1246,7 +1202,7 @@ As a workaround, include [kdesu](https://www.archlinux.org/packages/?name=kdesu)
 
 The other workaround is to uncomment and set `daemonize = yes` in the `/etc/pulse/daemon.conf`.
 
-See also [[10]](https://bbs.archlinux.org/viewtopic.php?id=135955).
+See also [[11]](https://bbs.archlinux.org/viewtopic.php?id=135955).
 
 ### Audacity
 
@@ -1448,4 +1404,4 @@ load-module module-stream-restore restore_device=false
 
 ### RTP/UDP packet flood
 
-In some cases the default configuration might flood the network with UDP packets.[[11]](https://bugs.freedesktop.org/show_bug.cgi?id=44777) To fix this problem, launch `paprefs` and disable "Multicast/RTP Sender".[[12]](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/411688/comments/36)
+In some cases the default configuration might flood the network with UDP packets.[[12]](https://bugs.freedesktop.org/show_bug.cgi?id=44777) To fix this problem, launch `paprefs` and disable "Multicast/RTP Sender".[[13]](https://bugs.launchpad.net/ubuntu/+source/pulseaudio/+bug/411688/comments/36)

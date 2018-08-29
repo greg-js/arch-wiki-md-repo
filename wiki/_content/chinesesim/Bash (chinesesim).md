@@ -276,15 +276,26 @@ set show-all-if-unmodified on
 
 包[pkgfile](/index.php/Pkgfile "Pkgfile")包括一个"command not found"的钩子拓展，这个钩子拓展将在你键入未识别命令时自动搜索[官方软件仓库](/index.php/%E5%AE%98%E6%96%B9%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93 "官方软件仓库")。然后显示下面的信息:
 
-chiri ~/docs $ abiword abiword may be found in the following packages: extra/abiword 2.8.6-7 usr/bin/abiword chiri ~/docs $ _
+ `$ abiword` 
+```
+abiword may be found in the following packages:
+  extra/abiword 2.8.6-7	usr/bin/abiword
+
+```
 
 AUR包提供了另外一个"command not found"钩子拓展。[command-not-found](https://aur.archlinux.org/packages/command-not-found/), 它会产生像这样的输出:
 
-chiri ~/docs $ abiword
+ `$ abiword` 
+```
+The command 'abiword' is been provided by the following packages:
+abiword (2.8.6-7) from extra
+	[ abiword ]
+abiword (2.8.6-7) from staging
+	[ abiword ]
+abiword (2.8.6-7) from testing
+	[ abiword ]
 
-The command 'abiword' is been provided by the following packages: abiword (2.8.6-7) from extra [ abiword ] abiword (2.8.6-7) from staging [ abiword ] abiword (2.8.6-7) from testing [ abiword ]
-
-chiri ~/docs $ _
+```
 
 ### 终端中禁用 Ctrl+z
 
@@ -331,9 +342,8 @@ cat /path/to/text/file
 
 Bash也可以随机显示一些伤感的，激动人心的，可笑的，讽刺的短句。你可以`extra`库中下载安装[fortune-mod](https://www.archlinux.org/packages/?name=fortune-mod)包来显示一个例子。
 
+ `$ fortune` 
 ```
-**<font color="red">(</font><font color="green">user@host</font><font color="red">)-(</font><font color="green">10:10 AM Wed Dec 22</font><font color="red">)</font>** <font color="red">--(</font><font color="green">~</font><font color="red">)---> </font> fortune
-
 It is Texas law that when two trains meet each other at a railroad crossing,
 each shall come to a full stop, and neither shall proceed until the other
 
@@ -418,7 +428,6 @@ fortune -a | fmt -80 -s | cowsay -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1
             `-. `.`.``-----``--,@@.'
               |/`.\`'        ,',');
                   `         (/  (/
-**<font color="red">(</font><font color="green">user@host</font><font color="red">)-(</font><font color="green">10:10 AM Wed Dec 22</font><font color="red">)</font>**<font color="red">--(</font><font color="green">~</font>)<font color="red">)---></font>
 
 ```
 

@@ -171,6 +171,7 @@ Architecture = auto
 
 *   [http://mirror.bit.edu.cn/archlinux/](http://mirror.bit.edu.cn/archlinux/) - *北京理工大学*
 *   [http://mirrors.aliyun.com/archlinux/](http://mirrors.aliyun.com/archlinux/) - *阿里巴巴*
+*   [http://mirrors.163.com/archlinux/](http://mirrors.163.com/archlinux/) - *网易*
 
 **联通**
 

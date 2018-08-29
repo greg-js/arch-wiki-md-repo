@@ -47,7 +47,7 @@ These updates must be enabled by adding `/boot/amd-ucode.img` or `/boot/intel-uc
 
 #### Manual method
 
-Alternatively, users that manage their GRUB config file manually can add `/*cpu_manufacturer*-ucode.img` or `/boot/*cpu_manufacturer*-ucode.img` as follows:
+Alternatively, users that manage their GRUB config file manually can add `/boot/*cpu_manufacturer*-ucode.img` (or `/*cpu_manufacturer*-ucode.img` if `/boot` is a separate partition) as follows:
 
  `/boot/grub/grub.cfg` 
 ```
@@ -101,7 +101,7 @@ Edit boot options in `/boot/refind_linux.conf` as per EFI boot stub above, examp
 
 ```
 
-Users employing [manual stanzas](/index.php/REFInd#Manual_boot_stanzas "REFInd") in `*esp*/EFI/refind/refind.conf` to define the kernels should simply add `initrd=/*cpu_manufacturer*-ucode.img` or `/boot/*cpu_manufacturer*-ucode.img` as required to the options line, and not in the main part of the stanza. E.g.:
+Users employing [manual stanzas](/index.php/REFInd#Manual_boot_stanzas "REFInd") in `*esp*/EFI/refind/refind.conf` to define the kernels should simply add `initrd=/boot/*cpu_manufacturer*-ucode.img` (or `/*cpu_manufacturer*-ucode.img` if `/boot` is a separate partition) as required to the options line, and not in the main part of the stanza. E.g.:
 
 ```
 options  "root=root=UUID=(...) rw add_efi_memmap **initrd=/boot/*cpu_manufacturer*-ucode.img**"
@@ -110,7 +110,7 @@ options  "root=root=UUID=(...) rw add_efi_memmap **initrd=/boot/*cpu_manufacture
 
 ### Syslinux
 
-**Note:** There must be no spaces between the `*cpu_manufacturer*.img` and `initramfs-linux.img` initrd files. The period signs also do not signify any shorthand or missing code; the `INITRD` line must be exactly as illustrated below.
+**Note:** There must be no spaces between the `*cpu_manufacturer*-ucode.img` and `initramfs-linux.img` initrd files. The period signs also do not signify any shorthand or missing code; the `INITRD` line must be exactly as illustrated below.
 
 Multiple initrd's can be separated by commas in `/boot/syslinux/syslinux.cfg`:
 
@@ -188,7 +188,7 @@ On Intel systems one should see something similar to the following on every boot
 [    0.507292] microcode: CPU5 sig=0x306a9, pf=0x2, revision=0x1b
 [    0.507296] microcode: CPU6 sig=0x306a9, pf=0x2, revision=0x1b
 [    0.507300] microcode: CPU7 sig=0x306a9, pf=0x2, revision=0x1b
-[    0.507335] microcode: Microcode Update Driver: v2.00 <tigran@aivazian.fsnet.co.uk>, Peter Oruba
+[    0.507335] microcode: Microcode Update Driver: v2.2.
 
 ```
 
@@ -199,18 +199,19 @@ It is entirely possible, particularly with newer hardware, that there is no micr
 [    0.292899] microcode: CPU1 sig=0x306c3, pf=0x2, revision=0x1c
 [    0.292906] microcode: CPU2 sig=0x306c3, pf=0x2, revision=0x1c
 [    0.292912] microcode: CPU3 sig=0x306c3, pf=0x2, revision=0x1c
-[    0.292956] microcode: Microcode Update Driver: v2.00 <tigran@aivazian.fsnet.co.uk>, Peter Oruba
+[    0.292956] microcode: Microcode Update Driver: v2.2.
 
 ```
 
-On AMD systems microcode is updated a bit later in the boot process, so the output would look something like this:
+On AMD systems using [amd-ucode](https://www.archlinux.org/packages/?name=amd-ucode) the output would look something like this:
 
 ```
-[    0.807879] microcode: CPU0: patch_level=0x01000098
-[    0.807888] microcode: CPU1: patch_level=0x01000098
-[    0.807983] microcode: Microcode Update Driver: v2.00 <tigran@aivazian.fsnet.co.uk>, Peter Oruba
-[   16.150642] microcode: CPU0: new patch_level=0x010000c7
-[   16.150682] microcode: CPU1: new patch_level=0x010000c7
+[    2.119089] microcode: microcode updated early to new patch_level=0x0700010f
+[    2.119157] microcode: CPU0: patch_level=0x0700010f
+[    2.119171] microcode: CPU1: patch_level=0x0700010f
+[    2.119183] microcode: CPU2: patch_level=0x0700010f
+[    2.119189] microcode: CPU3: patch_level=0x0700010f
+[    2.119269] microcode: Microcode Update Driver: v2.2.
 
 ```
 

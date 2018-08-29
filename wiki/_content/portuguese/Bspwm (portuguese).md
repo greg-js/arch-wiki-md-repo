@@ -48,7 +48,7 @@ Exemplos de configuração podem ser encontrados em `/usr/share/doc/bspwm/exampl
 
 Crie os diretórios `~ / .config / bspwm /` e `~ / .config / sxhkd /` e copie `/ usr / share / doc / bspwm / examples / bspwmrc` para `~ / .config / bspwm /` e `/ usr / share / doc / bspwm / examples / sxhkdrc` para `~ / .config / sxhkd /`. Nestes dois arquivos, as configurações e combinações de teclas serão definidas, respectivamente. Finalmente, torne o arquivo bspwmrc executável, com `chmod + x ~ / .config / bspwm / bspwmrc`.
 
-As opções de configuração para cada arquivo são listadas e descritas em [1 bspwm( 1 )](https://jlk.fjfi.cvut.cz/arch/manpages/man/bspwm.) e [1 sxhkd( 1 )](https://jlk.fjfi.cvut.cz/arch/manpages/man/sxhkd.).
+As opções de configuração para cada arquivo são listadas e descritas em [bspwm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bspwm.1) e [sxhkd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sxhkd.1).
 
 #### Para múltiplos monitores
 

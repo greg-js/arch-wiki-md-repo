@@ -11,6 +11,14 @@
 
 There are multiple implementations available:
 
+*   **[ABCL](https://en.wikipedia.org/wiki/Common_Lisp#List_of_implementations "wikipedia:Common Lisp")** — Armed Bear Common Lisp
+
+	[https://common-lisp.net/project/armedbear/](https://common-lisp.net/project/armedbear/) || [abcl](https://aur.archlinux.org/packages/abcl/)
+
+*   **[CCL](https://en.wikipedia.org/wiki/Clozure_CL "wikipedia:Clozure CL")** — Clozure Common Lisp
+
+	[https://ccl.clozure.com/](https://ccl.clozure.com/) || [ccl](https://aur.archlinux.org/packages/ccl/)
+
 *   **[CLISP](https://en.wikipedia.org/wiki/CLISP "wikipedia:CLISP")** — ANSI Common Lisp interpreter, compiler and debugger
 
 	[https://clisp.sourceforge.io/](https://clisp.sourceforge.io/) || [clisp](https://www.archlinux.org/packages/?name=clisp)
@@ -27,7 +35,7 @@ There are multiple implementations available:
 
 	[http://www.sbcl.org/](http://www.sbcl.org/) || [sbcl](https://www.archlinux.org/packages/?name=sbcl)
 
-SBCL features a highly optimized native code generating compiler with origins that date back to the early 90's. Known for its precise type derivation and its strict conformance to the ANSI standard, it is particularly suited for general purpose and scientific programming. On the other hand, both ECL and CLISP offer good C integration and embeddability.
+SBCL features a highly optimized native code generating compiler with origins that date back to the early 90's. Known for its precise type derivation and its strict conformance to the ANSI standard, it is particularly suited for general purpose and scientific programming. SBCL is a fork of CMUCL. CMUCL is a posix only implementation that was originally developed at Carnegie Mellon. On the other hand, both ECL and CLISP offer good C integration and embeddability. Clozure is an implementation based on Open Macintosh Common Lisp. It is known for its fast compiling times. ABCL runs the java virtual machine.
 
 ## Quicklisp
 

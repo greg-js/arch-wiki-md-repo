@@ -306,4 +306,4 @@ Shadows, Transparent effects *et all* can be found in MMB or RMB /Settings, unde
 *   [DR16 download resource](http://sourceforge.net/projects/enlightenment/)
 *   [Enlightenment users mail list](https://lists.sourceforge.net/lists/listinfo/enlightenment-users)
 *   [Enlightenment developer mail list](https://lists.sourceforge.net/lists/listinfo/enlightenment-devel)
-*   [irc://irc.freenode.net#e](irc://irc.freenode.net#e)
+*   [ircs://chat.freenode.net#e](ircs://chat.freenode.net#e)

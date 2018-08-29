@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [System maintenance](/index.php/System_maintenance "System maintenance"). Data da última tradução: 2018-08-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=533488) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [System maintenance](/index.php/System_maintenance "System maintenance"). Data da última tradução: 2018-08-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=537971) na versão em inglês.
 
 Artigos relacionados
 
@@ -248,4 +248,4 @@ Para disponibilizá-lo como uma opção de boot, você precisará atualizar as c
 ## Veja também
 
 *   [Arch News Bash Script](https://bbs.archlinux.org/viewtopic.php?id=146850)
-*   [Arch Linux Automatic System Maintenance](https://bbs.archlinux.org/viewtopic.php?id=237898)
+*   [maint](https://aur.archlinux.org/packages/maint/)

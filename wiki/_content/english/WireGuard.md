@@ -27,14 +27,14 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
 
 ## Usage
 
-To create a public and private key
+To create a public and private key on a peer:
 
 ```
 $ wg genkey | tee privatekey | wg pubkey > publickey
 
 ```
 
-Below commands will demonstrate how to setup a basic tunel between two peers with the following settings:
+Below commands will demonstrate how to setup a basic tunnel between two peers with the following settings:
 
  Peer A | Peer B |
 | External IP address | 10.10.10.1/24 | 10.10.10.2/24 |
@@ -116,21 +116,21 @@ PrivateKey = [CLIENT PRIVATE KEY]
 
 [Peer]
 PublicKey = [SERVER PUBLICKEY]
-AllowedIPs = 10.200.100.0/24, 10.123.45.0/24, 1234:4567:89ab::/48
+AllowedIPs = 10.0.0.0/24, 10.123.45.0/24, 1234:4567:89ab::/48
 Endpoint = [SERVER ENDPOINT]:51820
 PersistentKeepalive = 25
 ```
 
 ## Setup a VPN server
 
-Wireguard comes with a tool to quickly create and tear down VPN servers and clients, `wg-quick`. Note that the config file used here is not a valid config file that can be used with `wg setconf`.
+Wireguard comes with a tool to quickly create and tear down VPN servers and clients, `wg-quick`. Note that the config file used here is not a valid config file that can be used with `wg setconf`, and that you'll possibly have to change at least the interface from `eth0` to the one you use.
 
 #### Server
 
  `/etc/wireguard/wg0server.conf` 
 ```
 [Interface]
-Address = 10.200.100.1/24  # This is the virtual IP address, with the subnet mask we will use for the VPN
+Address = 10.0.0.1/24  # This is the virtual IP address, with the subnet mask we will use for the VPN
 PostUp   = iptables -A FORWARD -i %i -j ACCEPT; iptables -A FORWARD -o %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -D FORWARD -o %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 ListenPort = 51820
@@ -138,7 +138,7 @@ PrivateKey = [SERVER PRIVATE KEY]
 
 [Peer]
 PublicKey = [CLIENT PUBLIC KEY]
-AllowedIPs = 10.200.100.2/32  # This denotes the clients IP with a /32: the client only has ONE IP.
+AllowedIPs = 10.0.0.2/32  # This denotes the clients IP with a /32: the client only has ONE IP.
 ```
 
 In order for the iptables rules to work, IPv4 forwarding should be enabled:
@@ -157,9 +157,9 @@ Bring the interface up by using `wg-quick up wg0server`, and use `wg-quick down 
  `/etc/wireguard/wg0.conf` 
 ```
 [Interface]
-Address = 10.200.100.2/24  # The client IP from wg0server.conf with the same subnet mask
+Address = 10.0.0.2/24  # The client IP from wg0server.conf with the same subnet mask
 PrivateKey = [CLIENT PRIVATE KEY]
-DNS = 10.200.100.1
+DNS = 10.0.0.1
 
 [Peer]
 PublicKey = [SERVER PUBLICKEY]

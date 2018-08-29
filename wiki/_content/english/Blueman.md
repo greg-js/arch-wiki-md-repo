@@ -1,8 +1,4 @@
-Related articles
-
-*   [Bluetooth](/index.php/Bluetooth "Bluetooth")
-
-[Blueman](https://github.com/blueman-project/blueman) is a full featured Bluetooth manager written in [GTK+](/index.php/GTK%2B "GTK+").
+[Blueman](https://github.com/blueman-project/blueman) is a full featured [Bluetooth](/index.php/Bluetooth "Bluetooth") manager written in [GTK+](/index.php/GTK%2B "GTK+").
 
 ## Contents
 
@@ -22,7 +18,7 @@ Related articles
 
 ## Installation
 
-Install either [blueman](https://www.archlinux.org/packages/?name=blueman) or [blueman-git](https://aur.archlinux.org/packages/blueman-git/) (the development version).
+[Install](/index.php/Install "Install") either [blueman](https://www.archlinux.org/packages/?name=blueman) or [blueman-git](https://aur.archlinux.org/packages/blueman-git/) for the development version.
 
 Be sure to enable the [Bluetooth](/index.php/Bluetooth "Bluetooth") daemon and start Blueman with `blueman-applet`. A graphical settings panel can be launched with `blueman-manager`.
 
@@ -36,7 +32,26 @@ The following autostart file should have been created: `/etc/xdg/autostart/bluem
 
 To receive files remember to right click on the *Blueman tray icon > Local Services > Transfer > File Receiving (Object Push)* and tick the *Accept files from trusted devices* box.
 
-To be able to manage devices, you might need to add your user to the `lp` group, else you might receive the following error when connecting to a device: `DBusFailedError: No such file or directory`. This is because the user needs to be authorized to communicate with the bluetooth daemon via [D-Bus](/index.php/D-Bus "D-Bus") - the `lp` group is specified in `/etc/dbus-1/system.d/bluetooth.conf`. For information on adding a user to a group, see [Users and groups#Other examples of user management](/index.php/Users_and_groups#Other_examples_of_user_management "Users and groups").
+To be able to manage devices, you might need to add your user to the `lp` group, else you might receive the following error when connecting to a device: `DBusFailedError: No such file or directory`. This is because the user needs to be authorized to communicate with the Bluetooth daemon via [D-Bus](/index.php/D-Bus "D-Bus") - the `lp` group is specified in `/etc/dbus-1/system.d/bluetooth.conf`. For information on adding a user to a group, see [Users and groups#Other examples of user management](/index.php/Users_and_groups#Other_examples_of_user_management "Users and groups").
+
+From version 2.0.6 the official [documentation](https://github.com/blueman-project/blueman/wiki/PolicyKit) recommends creating polkit rules in order to avoid polkit agents asking for password on every boot, as root user add the polkit rules in `/etc/polkit-1/rules.d/51-blueman.rules` with the following content
+
+ `51-blueman.rules` 
+```
+/* Allow users in wheel group to use blueman feature requiring root without authentication */
+polkit.addRule(function(action, subject) {
+    if ((action.id == "org.blueman.network.setup" ||
+         action.id == "org.blueman.dhcp.client" ||
+         action.id == "org.blueman.rfkill.setstate" ||
+         action.id == "org.blueman.pppd.pppconnect") &&
+        subject.isInGroup("wheel")) {
+        return polkit.Result.YES;
+    }
+});
+
+```
+
+Note that user must belong to the `wheel` group.
 
 ### Mounting Bluetooth devices
 

@@ -126,7 +126,7 @@ There is currently no user-space application that enables mouse-emulation with t
 
 ### The input mapping is very weird
 
-The default mapping maps the Wii Remote keys to the the key-constants which resemble the Wii Remote's buttons best. This mapping is quite useless by default. To get better mappings, use the [xwiimote userspace tools](#Device_Handling).
+The default mapping maps the Wii Remote keys to the the key-constants which resemble the Wii Remote's buttons best. This mapping is quite useless by default. To get better mappings, use the [xwiimote userspace tools](#Device_Handling). Installing [xwiimote-git](https://aur.archlinux.org/packages/xwiimote-git/) will add an [Xorg configuration file](https://github.com/dvdhrm/xwiimote/blob/master/res/50-xorg-fix-xwiimote.conf) that disables the default mapping.
 
 ### BlueZ does not include the wiimote plugin
 

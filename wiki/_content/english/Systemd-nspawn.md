@@ -94,7 +94,7 @@ From there it's rather easy to setup Debian or Ubuntu environments:
 
 ```
 # cd /var/lib/machines
-# debootstrap <codename> myContainer <repository-url>
+# debootstrap --include=systemd-container <codename> myContainer <repository-url>
 
 ```
 

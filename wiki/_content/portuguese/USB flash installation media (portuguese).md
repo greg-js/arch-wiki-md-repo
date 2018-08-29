@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&diff=0&oldid=532436) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"). Data da última tradução: 2018-08-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&diff=0&oldid=537200) na versão em inglês.
 
 Artigos relacionados
 
@@ -171,7 +171,7 @@ $ diskutil unmountDisk /dev/disk*X*
 Agora, copie o arquivo de imagem ISO para o dispositivo. O comando `dd` é similar à sua contraparte Linux, mas note o 'r' antes do modo 'disk' para modo *raw*, que torna a transferência muito mais rápida:
 
 ```
-# dd if=caminho/para/arch.iso of=/dev/**r**disk*X* bs=1m
+# dd if=caminho/para/arch.iso of=/dev/**r**disk*X* bs=1M
 
 ```
 
