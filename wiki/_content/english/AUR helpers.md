@@ -78,6 +78,8 @@ The columns have the following meaning:
 
 ## Pacman wrappers
 
+See also [pacman/Tips and tricks#Pacman wrappers](/index.php/Pacman/Tips_and_tricks#Pacman_wrappers "Pacman/Tips and tricks").
+
 **Warning:** [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) wrappers abstract the work of the package manager. They may (optionally or by default) introduce [unsafe flags](/index.php/System_maintenance#Avoid_certain_pacman_commands "System maintenance"), or other unexpected behavior leading to a defective system.
 
 | Name | Written in | File review | Diff view | Git clone | Reliable parser | Reliable solver | Split packages | Clean build | Unsafe flags | Batch interaction | Shell completion | Specificity |
@@ -101,6 +103,8 @@ The columns have the following meaning:
 <small>(low activity)</small> | Bash/C | [No](https://github.com/archlinuxfr/yaourt/blob/34b5c0b/src/lib/aur.sh#L54-L72) | Optional | Optional | No | [No](https://github.com/archlinuxfr/yaourt/issues/186) | [No](https://github.com/archlinuxfr/yaourt/issues/85) | [No](https://lists.archlinux.org/pipermail/aur-general/2015-August/031314.html) | [`-Sy`](https://github.com/archlinuxfr/yaourt/blob/d30823e/yaourt/yaourt#L1773) | 2 | bash, fish, zsh | ABS support, print AUR comments, multilingual |
 
 ## Graphical
+
+See also [pacman/Tips and tricks#Graphical front-ends](/index.php/Pacman/Tips_and_tricks#Graphical_front-ends "Pacman/Tips and tricks").
 
 **Warning:**
 

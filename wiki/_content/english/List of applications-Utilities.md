@@ -1,7 +1,3 @@
-**[List of applications](/index.php/List_of_applications "List of applications")**
-
-* * *
-
 [Internet](/index.php/List_of_applications/Internet "List of applications/Internet") – [Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") – <a class="mw-selflink selflink">Utilities</a> – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – [Security](/index.php/List_of_applications/Security "List of applications/Security") – [Science](/index.php/List_of_applications/Science "List of applications/Science") – [Other](/index.php/List_of_applications/Other "List of applications/Other")
 
 ## Contents
@@ -273,9 +269,7 @@ See also [Wikipedia:Terminal pager](https://en.wikipedia.org/wiki/Terminal_pager
 
 	[http://midnight-commander.org/](http://midnight-commander.org/) || [mc](https://www.archlinux.org/packages/?name=mc)
 
-*   **vimpager** — A script that turns vim into a pager. As a result, you get various vim features such as colour schemes, mouse support, split screens, etc.
-
-	[https://github.com/rkitover/vimpager](https://github.com/rkitover/vimpager) || [vimpager](https://www.archlinux.org/packages/?name=vimpager)
+*   [Vim](/index.php/Vim "Vim") can [also be used as a pager](/index.php/Vim#Vim_as_a_pager "Vim").
 
 #### Terminal multiplexers
 
@@ -907,13 +901,13 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[https://www.gnu.org/software/ddd/](https://www.gnu.org/software/ddd/) || [ddd](https://aur.archlinux.org/packages/ddd/)
 
-*   **GammaRay** — Qt-application inspection and manipulation tool.
-
-	[https://www.kdab.com/development-resources/qt-tools/gammaray/](https://www.kdab.com/development-resources/qt-tools/gammaray/) || [gammaray](https://www.archlinux.org/packages/?name=gammaray)
-
 *   **D-Feet** — Easy to use D-Bus debugger to inspect D-Bus interfaces of running programs and invoke methods on those interfaces.
 
 	[https://wiki.gnome.org/Apps/DFeet](https://wiki.gnome.org/Apps/DFeet) || [d-feet](https://www.archlinux.org/packages/?name=d-feet)
+
+*   **GammaRay** — Qt-application inspection and manipulation tool.
+
+	[https://www.kdab.com/development-resources/qt-tools/gammaray/](https://www.kdab.com/development-resources/qt-tools/gammaray/) || [gammaray](https://www.archlinux.org/packages/?name=gammaray)
 
 *   **KCachegrind** — Profile data visualization tool, used to determine the most time consuming execution parts of program.
 

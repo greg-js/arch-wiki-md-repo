@@ -5,7 +5,6 @@
 *   [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
 *   [Secure Boot](/index.php/Secure_Boot "Secure Boot")
-*   [UEFI/Hardware](/index.php/UEFI/Hardware "UEFI/Hardware")
 
 **翻译状态：** 本文是英文页面 [Unified_Extensible_Firmware_Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-08-04，点击[这里](https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&diff=0&oldid=481694)可以查看翻译后英文页面的改动。
 
@@ -32,21 +31,20 @@
         *   [5.3.1 bcfg](#bcfg)
         *   [5.3.2 map](#map)
         *   [5.3.3 edit](#edit)
-*   [6 UEFI Linux 硬件兼容性](#UEFI_Linux_.E7.A1.AC.E4.BB.B6.E5.85.BC.E5.AE.B9.E6.80.A7)
-*   [7 UEFI 可启动介质](#UEFI_.E5.8F.AF.E5.90.AF.E5.8A.A8.E4.BB.8B.E8.B4.A8)
-    *   [7.1 从 ISO 创建 UEFI 可启动 USB](#.E4.BB.8E_ISO_.E5.88.9B.E5.BB.BA_UEFI_.E5.8F.AF.E5.90.AF.E5.8A.A8_USB)
-    *   [7.2 从光学介质里移除 UEFI 启动支持](#.E4.BB.8E.E5.85.89.E5.AD.A6.E4.BB.8B.E8.B4.A8.E9.87.8C.E7.A7.BB.E9.99.A4_UEFI_.E5.90.AF.E5.8A.A8.E6.94.AF.E6.8C.81)
-*   [8 原生无支持情况下测试 UEFI](#.E5.8E.9F.E7.94.9F.E6.97.A0.E6.94.AF.E6.8C.81.E6.83.85.E5.86.B5.E4.B8.8B.E6.B5.8B.E8.AF.95_UEFI)
-    *   [8.1 虚拟机使用 OVMF](#.E8.99.9A.E6.8B.9F.E6.9C.BA.E4.BD.BF.E7.94.A8_OVMF)
-    *   [8.2 使用虚拟机](#.E4.BD.BF.E7.94.A8.E8.99.9A.E6.8B.9F.E6.9C.BA)
-    *   [8.3 仅 BIOS 的系统使用 DUET](#.E4.BB.85_BIOS_.E7.9A.84.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8_DUET)
-*   [9 疑难问题](#.E7.96.91.E9.9A.BE.E9.97.AE.E9.A2.98)
-    *   [9.1 Windows 7 无法以 UEFI 模式启动](#Windows_7_.E6.97.A0.E6.B3.95.E4.BB.A5_UEFI_.E6.A8.A1.E5.BC.8F.E5.90.AF.E5.8A.A8)
-    *   [9.2 Windows 改变了启动次序](#Windows_.E6.94.B9.E5.8F.98.E4.BA.86.E5.90.AF.E5.8A.A8.E6.AC.A1.E5.BA.8F)
-    *   [9.3 USB 介质卡在黑屏界面](#USB_.E4.BB.8B.E8.B4.A8.E5.8D.A1.E5.9C.A8.E9.BB.91.E5.B1.8F.E7.95.8C.E9.9D.A2)
-    *   [9.4 在 32 位 UEFI 上启动 64 位内核](#.E5.9C.A8_32_.E4.BD.8D_UEFI_.E4.B8.8A.E5.90.AF.E5.8A.A8_64_.E4.BD.8D.E5.86.85.E6.A0.B8)
-        *   [9.4.1 使用 GRUB](#.E4.BD.BF.E7.94.A8_GRUB)
-*   [10 参阅](#.E5.8F.82.E9.98.85)
+*   [6 UEFI 可启动介质](#UEFI_.E5.8F.AF.E5.90.AF.E5.8A.A8.E4.BB.8B.E8.B4.A8)
+    *   [6.1 从 ISO 创建 UEFI 可启动 USB](#.E4.BB.8E_ISO_.E5.88.9B.E5.BB.BA_UEFI_.E5.8F.AF.E5.90.AF.E5.8A.A8_USB)
+    *   [6.2 从光学介质里移除 UEFI 启动支持](#.E4.BB.8E.E5.85.89.E5.AD.A6.E4.BB.8B.E8.B4.A8.E9.87.8C.E7.A7.BB.E9.99.A4_UEFI_.E5.90.AF.E5.8A.A8.E6.94.AF.E6.8C.81)
+*   [7 原生无支持情况下测试 UEFI](#.E5.8E.9F.E7.94.9F.E6.97.A0.E6.94.AF.E6.8C.81.E6.83.85.E5.86.B5.E4.B8.8B.E6.B5.8B.E8.AF.95_UEFI)
+    *   [7.1 虚拟机使用 OVMF](#.E8.99.9A.E6.8B.9F.E6.9C.BA.E4.BD.BF.E7.94.A8_OVMF)
+    *   [7.2 使用虚拟机](#.E4.BD.BF.E7.94.A8.E8.99.9A.E6.8B.9F.E6.9C.BA)
+    *   [7.3 仅 BIOS 的系统使用 DUET](#.E4.BB.85_BIOS_.E7.9A.84.E7.B3.BB.E7.BB.9F.E4.BD.BF.E7.94.A8_DUET)
+*   [8 疑难问题](#.E7.96.91.E9.9A.BE.E9.97.AE.E9.A2.98)
+    *   [8.1 Windows 7 无法以 UEFI 模式启动](#Windows_7_.E6.97.A0.E6.B3.95.E4.BB.A5_UEFI_.E6.A8.A1.E5.BC.8F.E5.90.AF.E5.8A.A8)
+    *   [8.2 Windows 改变了启动次序](#Windows_.E6.94.B9.E5.8F.98.E4.BA.86.E5.90.AF.E5.8A.A8.E6.AC.A1.E5.BA.8F)
+    *   [8.3 USB 介质卡在黑屏界面](#USB_.E4.BB.8B.E8.B4.A8.E5.8D.A1.E5.9C.A8.E9.BB.91.E5.B1.8F.E7.95.8C.E9.9D.A2)
+    *   [8.4 在 32 位 UEFI 上启动 64 位内核](#.E5.9C.A8_32_.E4.BD.8D_UEFI_.E4.B8.8A.E5.90.AF.E5.8A.A8_64_.E4.BD.8D.E5.86.85.E6.A0.B8)
+        *   [8.4.1 使用 GRUB](#.E4.BD.BF.E7.94.A8_GRUB)
+*   [9 参阅](#.E5.8F.82.E9.98.85)
 
 ## UEFI 发展历史
 
@@ -381,10 +379,6 @@ EDIT 命令提供了类似于 nano 界面的基本编辑器，但是功能略少
 ```
 
 输入 `Ctrl-E` 以获得帮助。
-
-## UEFI Linux 硬件兼容性
-
-主要文章见 [Unified Extensible Firmware Interface/Hardware](/index.php/Unified_Extensible_Firmware_Interface/Hardware "Unified Extensible Firmware Interface/Hardware").
 
 ## UEFI 可启动介质
 

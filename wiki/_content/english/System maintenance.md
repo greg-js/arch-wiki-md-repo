@@ -71,7 +71,7 @@ Backups may be automated with [systemd/Timers](/index.php/Systemd/Timers "System
 
 ### Configuration files
 
-Before editing any configuration files, create a backup so that you can revert to a working version in case of problems. Editors like [vim](/index.php/Vim "Vim") and [emacs](/index.php/Emacs "Emacs") can do this automatically, as well as tools like [etckeeper](/index.php/Etckeeper "Etckeeper") which keep `/etc` in a version control system (VCS); see [dotfiles#Version control](/index.php/Dotfiles#Version_control "Dotfiles") for more.
+Before editing any configuration files, create a backup so that you can revert to a working version in case of problems. Editors like [vim](/index.php/Vim "Vim") and [emacs](/index.php/Emacs "Emacs") can do this automatically, as well as tools like [etckeeper](/index.php/Etckeeper "Etckeeper") which keep `/etc` in a [version control system](/index.php/Version_control_system "Version control system") (VCS); see [dotfiles#Version control](/index.php/Dotfiles#Version_control "Dotfiles") for more.
 
 ### List of installed packages
 

@@ -27,11 +27,10 @@ L'**Unified Extensible Firmware Interface** (UEFI in breve) è un nuovo firmware
     *   [9.3 Comandi importanti della Shell UEFI](#Comandi_importanti_della_Shell_UEFI)
         *   [9.3.1 bcfg](#bcfg)
         *   [9.3.2 edit](#edit)
-*   [10 Compatibilità hardware](#Compatibilit.C3.A0_hardware)
-*   [11 Creare un dispositivo USB avviabile con UEFI dalla ISO](#Creare_un_dispositivo_USB_avviabile_con_UEFI_dalla_ISO)
-    *   [11.1 Risoluzione degli errori](#Risoluzione_degli_errori)
-*   [12 Rimuovere il supporto per il boot UEFI dalla ISO](#Rimuovere_il_supporto_per_il_boot_UEFI_dalla_ISO)
-*   [13 Altre risorse](#Altre_risorse)
+*   [10 Creare un dispositivo USB avviabile con UEFI dalla ISO](#Creare_un_dispositivo_USB_avviabile_con_UEFI_dalla_ISO)
+    *   [10.1 Risoluzione degli errori](#Risoluzione_degli_errori)
+*   [11 Rimuovere il supporto per il boot UEFI dalla ISO](#Rimuovere_il_supporto_per_il_boot_UEFI_dalla_ISO)
+*   [12 Altre risorse](#Altre_risorse)
 
 ## Avviare un SO usando il BIOS
 
@@ -354,10 +353,6 @@ FS0:\EFI\arch\refind\> edit refind.conf
 ```
 
 Digitare `Ctrl-E` per aiuto.
-
-## Compatibilità hardware
-
-Pagina principale [Unified Extensible Firmware Interface/Hardware](/index.php/Unified_Extensible_Firmware_Interface/Hardware "Unified Extensible Firmware Interface/Hardware")
 
 ## Creare un dispositivo USB avviabile con UEFI dalla ISO
 

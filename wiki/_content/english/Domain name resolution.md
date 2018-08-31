@@ -49,7 +49,7 @@ $ getent hosts *domain_name*
 
 The glibc resolver reads `/etc/resolv.conf` for every resolution to determine the nameservers and options to use.
 
-[resolv.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolv.conf.5) lists nameservers together with some configuration options. Nameservers listed first are tried first, up to three nameservers may be listed. Lines starting with a number sign are ignored.
+[resolv.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolv.conf.5) lists nameservers together with some configuration options. Nameservers listed first are tried first, up to three nameservers may be listed. Lines starting with a number sign (`#`) are ignored.
 
 **Note:** The glibc resolver does not cache queries. To improve query lookup time you can set up a caching resolver. See [#Resolvers](#Resolvers) for more information.
 
@@ -109,7 +109,7 @@ The Glibc resolver provides only the most basic necessities, it does not cache q
 *   A router usually sets its own caching resolver as the network's DNS server thus providing DNS cache for the whole network.
 *   If it takes too long to switch to the next DNS server you can try [decreasing the timeout](#Limit_lookup_time).
 
-The columns have the following meaning:
+In the table below, the columns have the following meaning:
 
 *   *Cache*: [caches](https://en.wikipedia.org/wiki/Name_server#Caching_name_server "wikipedia:Name server") the DNS queries to improve lookup times of subsequent identical requests.
 *   *Recursor*: can [recursively query](https://en.wikipedia.org/wiki/Name_server#Recursive_query "wikipedia:Name server") the domain name starting from the [DNS root zone](https://en.wikipedia.org/wiki/DNS_root_zone "wikipedia:DNS root zone").

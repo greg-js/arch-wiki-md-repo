@@ -3,7 +3,6 @@ The following is regarding the Lenovo Thinkpad Edge E430 with 3rd Generation Ivy
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 UEFI](#UEFI)
 *   [2 Hardware](#Hardware)
     *   [2.1 Realtek Ethernet Compatibility](#Realtek_Ethernet_Compatibility)
     *   [2.2 Wireless](#Wireless)
@@ -16,10 +15,6 @@ The following is regarding the Lenovo Thinkpad Edge E430 with 3rd Generation Ivy
 ## Installation
 
 With the release of 2012.07.15 and chroot installation process, the documented installation procedure is recommended.
-
-### UEFI
-
-For UEFI info to E430 go to [UEFI/Hardware#Lenovo Thinkpad Edge E430 3254-DAQ](/index.php/UEFI/Hardware#Lenovo_Thinkpad_Edge_E430_3254-DAQ "UEFI/Hardware").
 
 ## Hardware
 

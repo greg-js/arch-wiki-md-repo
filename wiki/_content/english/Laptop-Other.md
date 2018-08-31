@@ -1,5 +1,4 @@
-| [Laptop main page](/index.php/Laptop "Laptop") |
-| [Acer](/index.php/Laptop/Acer "Laptop/Acer") - [Apple](/index.php/Laptop/Apple "Laptop/Apple") - [Asus](/index.php/Laptop/Asus "Laptop/Asus") - [Compaq](/index.php/Laptop/Compaq "Laptop/Compaq") (discontinued) - [Dell](/index.php/Laptop/Dell "Laptop/Dell") - [Fujitsu](/index.php/Laptop/Fujitsu "Laptop/Fujitsu") - [HP](/index.php/Laptop/HP "Laptop/HP") - [IBM/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo") - [Samsung](/index.php/Laptop/Samsung "Laptop/Samsung") - [Sony](/index.php/Laptop/Sony "Laptop/Sony") - [Toshiba](/index.php/Laptop/Toshiba "Laptop/Toshiba") - <a class="mw-selflink selflink">Other</a> |
+[Acer](/index.php/Laptop/Acer "Laptop/Acer") – [Apple](/index.php/Laptop/Apple "Laptop/Apple") – [ASUS](/index.php/Laptop/ASUS "Laptop/ASUS") – [Dell](/index.php/Laptop/Dell "Laptop/Dell") – [Fujitsu](/index.php/Laptop/Fujitsu "Laptop/Fujitsu") – [HP](/index.php/Laptop/HP "Laptop/HP") – [IBM/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo") – [MSI](/index.php/Laptop/MSI "Laptop/MSI") – [Samsung](/index.php/Laptop/Samsung "Laptop/Samsung") – [Sony](/index.php/Laptop/Sony "Laptop/Sony") – [Toshiba](/index.php/Laptop/Toshiba "Laptop/Toshiba") – <a class="mw-selflink selflink">Other</a>
 
 ## Model List
 
@@ -57,8 +56,8 @@ switching with optimus [bumblebee](https://www.archlinux.org/packages/?name=bumb
 SD Card: ok Thunderbolt: not tested Macro keys: not yet tested
 
  | One needs to reset the BIOS to Windows 7 settings in order to be able to boot the ArchISO |
-| MX6961 | 2007.05 | intel_agp, intelfb, i915, [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). Use 915resolution to get 1280x800 | Intel HD Audio with [ALSA](/index.php/ALSA "ALSA") | Yes, using the *sky2* module | Yes, ipw3945 | Yes | Suspend-to-RAM works fine; hibernate untested | Untested | SD card: module *tifm_core*. | Fn keys for brightness and volume unsupported |
-| CF-Y2 Toughbook (CF-Y2EWAZZBM) | 2008.06 | Intel 855GM (rev 02) - works perfectly at 1400x1050 with xf86-video-intel package and 'intel' xorg driver | Intel ICH4 AC'97 (rev 03) - works perfectly with default ALSA | Realtek RTL-8139 (rev 10) - works perfectly with default Linux 2.6 kernel | Intel 2915ABG (rev 05) - works perfectly with default Linux wireless drivers | NA | Suspend to
+| Gateway MX6961 | 2007.05 | intel_agp, intelfb, i915, [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). Use 915resolution to get 1280x800 | Intel HD Audio with [ALSA](/index.php/ALSA "ALSA") | Yes, using the *sky2* module | Yes, ipw3945 | Yes | Suspend-to-RAM works fine; hibernate untested | Untested | SD card: module *tifm_core*. | Fn keys for brightness and volume unsupported |
+| Panasonic Toughbook (CF-Y2EWAZZBM) | 2008.06 | Intel 855GM (rev 02) - works perfectly at 1400x1050 with xf86-video-intel package and 'intel' xorg driver | Intel ICH4 AC'97 (rev 03) - works perfectly with default ALSA | Realtek RTL-8139 (rev 10) - works perfectly with default Linux 2.6 kernel | Intel 2915ABG (rev 05) - works perfectly with default Linux wireless drivers | NA | Suspend to
 RAM: Yes, via /sys/power/state
 
 * * *
@@ -80,7 +79,7 @@ Frequency scaling of CPU: Yes | Not recognized by Linux | CardBus slot: not trie
 * * *
 
 SD card slot: not tried | Use "vbetool post" after resume from Suspend to RAM to fix dark screen problem. |
-| CF-27 Toughbook (CF-27EB6GCAM) | 2010.05 | Neomagic NM2200 [MagicGraph 256AV] (Rev 20) - max resolution of 800x600 with xf86-video-neomagic package and 'neomagic' xorg driver | Yamaha YMF-744B [DS-1S] (Rev 03) - works with default ALSA. Bootup messages say BUSY and then FAIL when loading modules. However, sound files play just fine using aplay. | None provided. Cardbus used...
+| Panasonic Toughbook (CF-27EB6GCAM) | 2010.05 | Neomagic NM2200 [MagicGraph 256AV] (Rev 20) - max resolution of 800x600 with xf86-video-neomagic package and 'neomagic' xorg driver | Yamaha YMF-744B [DS-1S] (Rev 03) - works with default ALSA. Bootup messages say BUSY and then FAIL when loading modules. However, sound files play just fine using aplay. | None provided. Cardbus used...
 Dynex DX-E201, Realtek RTL-8139 (8139too). | None provided. Cardbuses used...
 AirLink 101 AWLC5025 MIMO XR - worked with rt2x00 drivers (rt61pci)
 
@@ -95,5 +94,3 @@ BIOS says touchscreen is enabled but unsure of what drivers would work.
 * * *
 
 OSD and some Fn buttons work - brightness, volume control, battery check. | Pentium II, 300MHz, 320MB RAM, 30GB drive, DVD-ROM, USB 1.0 (untested) |
-| Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
-| Hardware support |

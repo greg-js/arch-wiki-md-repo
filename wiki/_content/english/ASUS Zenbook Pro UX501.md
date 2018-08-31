@@ -1,6 +1,6 @@
 This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on the ASUS Zenbook Pro UX501\.
 
-For general instructions see [Laptop](/index.php/Laptop "Laptop") and comparable models from the summary page [Laptop/Asus](/index.php/Laptop/Asus "Laptop/Asus") and [Category:ASUS](/index.php/Category:ASUS "Category:ASUS").
+For general instructions see [Laptop](/index.php/Laptop "Laptop") and comparable models from the summary page [Laptop/ASUS](/index.php/Laptop/ASUS "Laptop/ASUS") and [Category:ASUS](/index.php/Category:ASUS "Category:ASUS").
 
 ## Contents
 

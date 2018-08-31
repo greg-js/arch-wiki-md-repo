@@ -222,7 +222,7 @@ On AMD systems using [amd-ucode](https://www.archlinux.org/packages/?name=amd-uc
 Users may consult either Intel or AMD at the following links to see if a particular model is supported:
 
 *   [AMD's Operating System Research Center](http://www.amd64.org/microcode.html).
-*   [Intel's download center](https://downloadcenter.intel.com/download/27431/Linux-Processor-Microcode-Data-File).
+*   [Intel's download center](https://downloadcenter.intel.com/SearchResult.aspx?lang=eng&keyword=processor%20microcode%20data%20file).
 
 ### Detecting available microcode update
 

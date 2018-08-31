@@ -34,7 +34,7 @@ From [Qtile web site](http://qtile.org/):
 
 Run `qtile` with [xinit](/index.php/Xinit "Xinit").
 
-The [default configuration](http://docs.qtile.org/en/latest/manual/config/default.html#key-bindings) includes the shortcut `Super+Enter` to open a new *xterm* terminal, and `Super+Ctrl+q` to quit Qtile.
+The [default configuration](http://docs.qtile.org/en/latest/manual/config/#default-configuration) includes the shortcut `Super+Enter` to open a new *xterm* terminal, and `Super+Ctrl+q` to quit Qtile.
 
 ## Configuration
 

@@ -208,8 +208,6 @@ UUID=47FA-4071     /home/username/Camera<font color="grey">\040</font>Pictures  
 /dev/sda7          /media/100<font color="grey">\040</font>GB<font color="grey">\040</font>(Storage)       ext4  defaults,noatime,user  0  0
 ```
 
-.....</nowiki>}}
-
 ### 外部设备
 
 外部设备在插入时挂载，在未插入时忽略。这需要 `nofail` 选项，可以在启动时若设备不存在直接忽略它而不报错.

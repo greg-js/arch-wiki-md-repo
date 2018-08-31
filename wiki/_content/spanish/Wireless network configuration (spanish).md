@@ -185,7 +185,7 @@ Al igual que otras interfaces de red, las redes inalámbricas se controlan con `
 **Nota:**
 
 *   Los ejemplos de esta sección parten del supuesto de que el dispositivo inalámbrico es `wlan0` y que está conectado al punto de acceso inalámbrico `*your_essid*`. Sustituya dichos valores según su caso.
-*   Tenga en cuenta que la mayoría de las órdenes tienen que ser ejecutadas con [permisos de root](/index.php/Users_and_groups "Users and groups"). Si se ejecutan como usuario normal, algunas de dichas órdenes (por ejemplo *iwlist*) salen sin error, pero no producen la salida correcta o bien pueden ser confusas.
+*   Tenga en cuenta que la mayoría de las órdenes tienen que ser ejecutadas con [permisos de root](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)"). Si se ejecutan como usuario normal, algunas de dichas órdenes (por ejemplo *iwlist*) salen sin error, pero no producen la salida correcta o bien pueden ser confusas.
 
 | orden *iw* | orden *wireless_tools* | Descripción |
 | iw dev wlan0 link | iwconfig wlan0 | Obtener el estado del enlace. |

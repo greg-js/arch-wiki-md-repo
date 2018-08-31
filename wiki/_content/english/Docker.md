@@ -322,11 +322,16 @@ To grab the IP address of a running container:
 
  `$ docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <container-name OR id> `  `172.17.0.37` 
 
-To list IP addresses and names of all running containers (useful for use in /etc/hosts):
+For each running container, the name and corresponding IP address can be listed for use in `/etc/hosts`:
 
 ```
-for i in `docker ps -q | awk '{print $1}'`; do echo $(docker inspect --format="{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" $i) $(docker ps | grep $i | awk '{print $NF}') ; done
-
+#!/usr/bin/env sh
+for ID in $(docker ps -q | awk '{print $1}'); do
+    IP=$(docker inspect --format="{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" "$ID")
+    NAME=$(docker ps | grep "$ID" | awk '{print $NF}')
+    printf "%s %s
+" "$IP" "$NAME"
+done
 ```
 
 ## Troubleshooting

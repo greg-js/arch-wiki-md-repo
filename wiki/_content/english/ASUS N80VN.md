@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Laptop/Asus](/index.php/Laptop/Asus "Laptop/Asus")
+*   [Laptop/ASUS](/index.php/Laptop/ASUS "Laptop/ASUS")

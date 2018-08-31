@@ -22,6 +22,7 @@ Related articles
     *   [4.8 Maildir support](#Maildir_support)
     *   [4.9 Spell checking](#Spell_checking)
     *   [4.10 Native notifications](#Native_notifications)
+    *   [4.11 Theming tweaks](#Theming_tweaks)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 LDAP Segfault](#LDAP_Segfault)
     *   [5.2 Error: Incoming server already exists](#Error:_Incoming_server_already_exists)
@@ -209,6 +210,23 @@ See the Firefox article for [how to set the default spell checking language](/in
 ### Native notifications
 
 Enable `mail.biff.use_system_alert` in the [#Config Editor](#Config_Editor). This option means that extensions （such as Gnome Integration） are not needed for these newer versions of Thunderbird.
+
+### Theming tweaks
+
+Thunderbird will generally follow GTK theming in use on your system. However, two tweaks are desirable for full consistency. These are most beneficial for dark themes.
+
+1.  To view the body of emails with colors following your theme
+    1.  Go to Preferences
+    2.  Select the Display tab
+    3.  Click the Colors button
+    4.  Check `Use system colors`
+    5.  Set the option for `Override the colors specified by the content with my selection above` to `Always` or `Only with High Contrast themes`
+2.  To view Lightning calendar with colors following your theme
+    1.  Go to preferences
+    2.  Select the Calendar tab
+    3.  Check `Optimize colors for accessibility`
+
+Further customization can be attained by creating and editing a `userchrome.css` file in a process similar to Firefox. See [Firefox/Tweaks#General_user_interface_CSS_settings](/index.php/Firefox/Tweaks#General_user_interface_CSS_settings "Firefox/Tweaks") and [Mozillazine's userchrome page](http://kb.mozillazine.org/UserChrome.css).
 
 ## Troubleshooting
 

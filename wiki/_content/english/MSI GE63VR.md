@@ -23,7 +23,7 @@ Only the variant GE63VR-7RE (or GE63VR Raider-215) was tested. Its specification
 *   Storage : Samsung NVMe SSD 512 GB
 *   Built-in screen : Full HD 3 ms 120 Hz
 
-The laptop was last tested with official kernel 4.17.6.
+The laptop was last tested with official kernel 4.18.5.
 
 ## Compatibility
 
@@ -45,7 +45,7 @@ Not tested : plugging an external microphone, audio through HDMI.
 | GPU switching | Yes with workaround | Starting X on integrated graphics with the dedicated GPU turned off causes the system to hang. See below for fix. Once the fix has been applied, **bumblebee** works. |
 | Screen backlighting control | Yes |
 | Keyboard RGB backlighting control | Partially | Only partial control is available, see below. |
-| SD card reader | Not tested | A "wrong version" warning is thrown at boot about the SD controller. |
+| SD card reader | Yes | A "wrong version" warning is thrown at boot about the SD controller, but it works. |
 | Sleep/Resume | Yes |
 | Hibernation to disk | Yes |
 

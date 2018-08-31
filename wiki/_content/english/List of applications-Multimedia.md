@@ -1,7 +1,3 @@
-**[List of applications](/index.php/List_of_applications "List of applications")**
-
-* * *
-
 [Internet](/index.php/List_of_applications/Internet "List of applications/Internet") – <a class="mw-selflink selflink">Multimedia</a> – [Utilities](/index.php/List_of_applications/Utilities "List of applications/Utilities") – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – [Security](/index.php/List_of_applications/Security "List of applications/Security") – [Science](/index.php/List_of_applications/Science "List of applications/Science") – [Other](/index.php/List_of_applications/Other "List of applications/Other")
 
 ## Contents

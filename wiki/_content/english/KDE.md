@@ -92,6 +92,7 @@ KDE is a software project currently comprising of a [desktop environment](/index
     *   [6.11 Discover does not show any applications](#Discover_does_not_show_any_applications)
     *   [6.12 High CPU usage of kscreenlocker_greet with NVidia drivers](#High_CPU_usage_of_kscreenlocker_greet_with_NVidia_drivers)
     *   [6.13 OS error 22 when running Akonadi on ZFS](#OS_error_22_when_running_Akonadi_on_ZFS)
+    *   [6.14 Some programs are unable to scroll when their windows are inactive](#Some_programs_are_unable_to_scroll_when_their_windows_are_inactive)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -717,6 +718,10 @@ innodb_use_native_aio = 0
 ```
 
 See [MySQL#OS error 22 when running on ZFS](/index.php/MySQL#OS_error_22_when_running_on_ZFS "MySQL").
+
+### Some programs are unable to scroll when their windows are inactive
+
+This is caused by the problematic way of GTK3 handling mouse scroll events. A workaround for this is to set [environment variable](/index.php/Environment_variable "Environment variable") `GDK_CORE_DEVICE_EVENTS=1`. However, this work around also breaks touchpad smooth scrolling and touchscreen scrolling.
 
 ## See also
 

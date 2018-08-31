@@ -18,13 +18,16 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [4.4 Gotchas](#Gotchas_2)
         *   [4.4.1 Using a non-EFI image on an OVMF-based VM](#Using_a_non-EFI_image_on_an_OVMF-based_VM)
 *   [5 Performance tuning](#Performance_tuning)
-    *   [5.1 CPU pinning](#CPU_pinning)
-        *   [5.1.1 The case of Hyper-threading](#The_case_of_Hyper-threading)
+    *   [5.1 CPU Pinning](#CPU_Pinning)
+        *   [5.1.1 CPU Topology](#CPU_Topology)
+        *   [5.1.2 XML Examples](#XML_Examples)
+            *   [5.1.2.1 4c/1t CPU w/o Hyperthreading Example](#4c.2F1t_CPU_w.2Fo_Hyperthreading_Example)
+            *   [5.1.2.2 4c/2t Intel CPU Pinning Example](#4c.2F2t_Intel_CPU_Pinning_Example)
+            *   [5.1.2.3 4c/2t AMD CPU Example](#4c.2F2t_AMD_CPU_Example)
     *   [5.2 Static huge pages](#Static_huge_pages)
     *   [5.3 Dynamic huge pages](#Dynamic_huge_pages)
     *   [5.4 CPU frequency governor](#CPU_frequency_governor)
-    *   [5.5 High DPC Latency](#High_DPC_Latency)
-        *   [5.5.1 CPU pinning with isolcpus](#CPU_pinning_with_isolcpus)
+    *   [5.5 CPU pinning with isolcpus](#CPU_pinning_with_isolcpus)
     *   [5.6 Improving performance on AMD CPUs](#Improving_performance_on_AMD_CPUs)
     *   [5.7 Further Tuning](#Further_Tuning)
 *   [6 Special procedures](#Special_procedures)
@@ -44,6 +47,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
 *   [8 Passing though other devices](#Passing_though_other_devices)
     *   [8.1 USB controller](#USB_controller)
     *   [8.2 Passing VM audio to host via PulseAudio](#Passing_VM_audio_to_host_via_PulseAudio)
+        *   [8.2.1 Qemu 3.0 Audio Changes](#Qemu_3.0_Audio_Changes)
     *   [8.3 Physical Disk/Partition](#Physical_Disk.2FPartition)
     *   [8.4 Gotchas](#Gotchas_3)
         *   [8.4.1 Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
@@ -290,106 +294,135 @@ The OVMF firmware does not support booting off non-EFI mediums. If the installat
 
 Most use cases for PCI passthroughs relate to performance-intensive domains such as video games and GPU-accelerated tasks. While a PCI passthrough on its own is a step towards reaching native performance, there are still a few ajustments on the host and guest to get the most out of your VM.
 
-### CPU pinning
+### CPU Pinning
 
-The default behavior for KVM guests is to run operations coming from the guest as a number of threads representing virtual processors. Those threads are managed by the Linux scheduler like any other thread and are dispatched to any available CPU cores based on niceness and priority queues. Since switching between threads adds a bit of overhead (because context switching forces the core to change its cache between operations), this can noticeably harm performance on the guest. CPU pinning aims to resolve this as it overrides process scheduling and ensures that the VM threads will always run and only run on those specific cores. Here, for instance, the guest cores 0, 1, 2 and 3 are mapped to the host cores 4, 5, 6 and 7 respectively.
+The default behavior for KVM guests is to run operations coming from the guest as a number of threads representing virtual processors. Those threads are managed by the Linux scheduler like any other thread and are dispatched to any available CPU cores based on niceness and priority queues. Since switching between threads adds a bit of overhead (because context switching forces the core to change its cache between operations), this can noticeably harm performance on the guest. CPU pinning aims to resolve this as it overrides process scheduling and ensures that the VM threads will always run and only run on those specific cores.
 
 **Note:** For certain users enabling CPU pinning may introduce stuttering and short hangs, especially with the MuQSS scheduler (present in linux-ck and linux-zen kernels). You might want to try disabling pinning first if you experience similar issues, which effectively trades maximum performance for responsiveness at all times.
+
+#### CPU Topology
+
+Most modern CPU's support hardware multitasking, also known as hyper-threading on Intel CPU's or SMT on AMD CPU's. Hyper-threading/SMT is simply a very efficient way of running two threads on one CPU core at any given time. You will want to take into consideration that the CPU pinning you choose will greatly depend on what you do with your host while your VM is running.
+
+To find the topology for your CPU run `lscpu -e`:
+
+**Note:** Pay special attention to the 4th column **"CORE"** as this shows the association of the Physical/Logical CPU cores
+
+`lscpu -e` on a 6c/12t Ryzen 5 1600:
+
+```
+CPU NODE SOCKET CORE L1d:L1i:L2:L3 ONLINE MAXMHZ    MINMHZ
+0   0    0      0    0:0:0:0       yes    3800.0000 1550.0000
+1   0    0      0    0:0:0:0       yes    3800.0000 1550.0000
+2   0    0      1    1:1:1:0       yes    3800.0000 1550.0000
+3   0    0      1    1:1:1:0       yes    3800.0000 1550.0000
+4   0    0      2    2:2:2:0       yes    3800.0000 1550.0000
+5   0    0      2    2:2:2:0       yes    3800.0000 1550.0000
+6   0    0      3    3:3:3:1       yes    3800.0000 1550.0000
+7   0    0      3    3:3:3:1       yes    3800.0000 1550.0000
+8   0    0      4    4:4:4:1       yes    3800.0000 1550.0000
+9   0    0      4    4:4:4:1       yes    3800.0000 1550.0000
+10  0    0      5    5:5:5:1       yes    3800.0000 1550.0000
+11  0    0      5    5:5:5:1       yes    3800.0000 1550.0000
+
+```
+
+`lscpu -e` on a 6c/12t Intel 8700k:
+
+```
+CPU NODE SOCKET CORE L1d:L1i:L2:L3 ONLINE MAXMHZ    MINMHZ
+0   0    0      0    0:0:0:0       yes    4600.0000 800.0000
+1   0    0      1    1:1:1:0       yes    4600.0000 800.0000
+2   0    0      2    2:2:2:0       yes    4600.0000 800.0000
+3   0    0      3    3:3:3:0       yes    4600.0000 800.0000
+4   0    0      4    4:4:4:0       yes    4600.0000 800.0000
+5   0    0      5    5:5:5:0       yes    4600.0000 800.0000
+6   0    0      0    0:0:0:0       yes    4600.0000 800.0000
+7   0    0      1    1:1:1:0       yes    4600.0000 800.0000
+8   0    0      2    2:2:2:0       yes    4600.0000 800.0000
+9   0    0      3    3:3:3:0       yes    4600.0000 800.0000
+10  0    0      4    4:4:4:0       yes    4600.0000 800.0000
+11  0    0      5    5:5:5:0       yes    4600.0000 800.0000
+
+```
+
+As we see above, with AMD **Core 0** is sequential with **CPU 0 & 1**, whereas Intel places **Core 0** on **CPU 0 & 6**.
+
+If you prefer to have the host and guest running intensive tasks at the same time, it would then be preferable to leave at the very least, **Core 0** to the host. Next you will pin the amount of physical CPU's and their associated logical CPU's to the guest XML as shown below. It is also recommended to pin the emulator and iothread to **Core 0** as this helps eliminate latency within the VM.
+
+#### XML Examples
+
+**Note:** If you are not using Virtio storage drivers for your VM, *do not* use the **iothread** lines from the XML examples that are shown below.
+
+##### 4c/1t CPU w/o Hyperthreading Example
+
  `$ virsh edit [vmname]` 
 ```
 ...
 <vcpu placement='static'>4</vcpu>
 <cputune>
-    <vcpupin vcpu='0' cpuset='4'/>
-    <vcpupin vcpu='1' cpuset='5'/>
-    <vcpupin vcpu='2' cpuset='6'/>
-    <vcpupin vcpu='3' cpuset='7'/>
+    <vcpupin vcpu='0' cpuset='0'/>
+    <vcpupin vcpu='1' cpuset='1'/>
+    <vcpupin vcpu='2' cpuset='2'/>
+    <vcpupin vcpu='3' cpuset='3'/>
 </cputune>
 ...
 
 ```
 
-#### The case of Hyper-threading
-
-If your CPU supports hardware multitasking, also known as Hyper-threading on Intel chips, there are two ways you can go with your CPU pinning. That is, Hyper-threading is simply a very efficient way of running two threads on one CPU at any given time, so while it may give you 8 logical cores on what would otherwise be a quad-core CPU, if the physical core is overloaded, the logical core will not be of any use. One could pin their VM threads on 2 physical cores and their 2 respective threads, but any task overloading those two cores will not be helped by the extra two logical cores, since in the end you are only passing through two cores out of four, not four out of eight. What you should do knowing this depends on what you intend to do with your host while your VM is running.
-
-This is the abridged content of `/proc/cpuinfo` on a quad-core machine with hyper-threading.
-
- `$ grep -e "processor" -e "core id" -e "^$" /proc/cpuinfo` 
-```
-processor	: 0
-core id		: 0
-
-processor	: 1
-core id		: 1
-
-processor	: 2
-core id		: 2
-
-processor	: 3
-core id		: 3
-
-processor	: 4
-core id		: 0
-
-processor	: 5
-core id		: 1
-
-processor	: 6
-core id		: 2
-
-processor	: 7
-core id		: 3
-
-```
-
-If you do not intend to be doing any computation-heavy work on the host (or even anything at all) at the same time as you would on the VM, it would probably be better to pin your VM threads across all of your logical cores, so that the VM can fully take advantage of the spare CPU time on all your cores.
-
-On the quad-core machine mentioned above, it would look like this :
+##### 4c/2t Intel CPU Pinning Example
 
  `$ virsh edit [vmname]` 
 ```
 ...
-<vcpu placement='static'>4</vcpu>
-<cputune>
-    <vcpupin vcpu='0' cpuset='4'/>
-    <vcpupin vcpu='1' cpuset='5'/>
-    <vcpupin vcpu='2' cpuset='6'/>
-    <vcpupin vcpu='3' cpuset='7'/>
-</cputune>
-...
-<cpu mode='custom' match='exact'>
-    ...
-    <topology sockets='1' cores='4' threads='1'/>
-    ...
-</cpu>
-...
-
-```
-
-If you would instead prefer to have the host and guest running intensive tasks at the same time, it would then be preferable to pin a limited amount of physical cores and their respective threads on the guest and leave the rest to the host to avoid the two competing for CPU time.
-
-On the quad-core machine mentioned above, it would look like this :
-
- `$ virsh edit [vmname]` 
-```
-...
-<vcpu placement='static'>4</vcpu>
+<vcpu placement='static'>8</vcpu>
+<iothreads>1</iothreads>
 <cputune>
     <vcpupin vcpu='0' cpuset='2'/>
-    <vcpupin vcpu='1' cpuset='6'/>
+    <vcpupin vcpu='1' cpuset='8'/>
     <vcpupin vcpu='2' cpuset='3'/>
-    <vcpupin vcpu='3' cpuset='7'/>
+    <vcpupin vcpu='3' cpuset='9'/>
+    <vcpupin vcpu='4' cpuset='4'/>
+    <vcpupin vcpu='5' cpuset='10'/>
+    <vcpupin vcpu='6' cpuset='5'/>
+    <vcpupin vcpu='7' cpuset='11'/>
+    <emulatorpin cpuset='0,6'/>
+    <iothreadpin iothread='1' cpuset='0,6'/>
 </cputune>
-...
-<cpu mode='custom' match='exact'>
     ...
-    <topology sockets='1' cores='2' threads='2'/>
+    <topology sockets='1' cores='4' threads='2'/>
     ...
-</cpu>
-...
 
 ```
+
+##### 4c/2t AMD CPU Example
+
+ `$ virsh edit [vmname]` 
+```
+...
+<vcpu placement='static'>8</vcpu>
+<iothreads>1</iothreads>
+<cputune>
+  <vcpupin vcpu='0' cpuset='2'/>
+  <vcpupin vcpu='1' cpuset='3'/>
+  <vcpupin vcpu='2' cpuset='4'/>
+  <vcpupin vcpu='3' cpuset='5'/>
+  <vcpupin vcpu='4' cpuset='6'/>
+  <vcpupin vcpu='5' cpuset='7'/>
+  <vcpupin vcpu='6' cpuset='8'/>
+  <vcpupin vcpu='7' cpuset='9'/>
+  <emulatorpin cpuset='0-1'/>
+  <iothreadpin iothread='1' cpuset='0-1'/>
+</cputune>
+    ...
+    <topology sockets='1' cores='4' threads='2'/>
+    ...
+
+```
+
+**Note:** If further CPU isolation is needed, consider using the **isolcpus** kernel command-line parameter on the unused physical/logical cores.
+
+If you do not intend to be doing any computation-heavy work on the host (or even anything at all) at the same time as you would on the VM, you may want to pin your VM threads across all of your cores, so that the VM can fully take advantage of the spare CPU time the host has available. Be aware that pinning all physical and logical cores of your CPU could induce latency in the guest VM.
 
 ### Static huge pages
 
@@ -454,13 +487,7 @@ Theoretically, 1Gb pages works as 2Mb. But practically - no guaranteed way was f
 
 Depending on the way your [CPU governor](/index.php/CPU_frequency_scaling "CPU frequency scaling") is configured, the VM threads may not hit the CPU load thresholds for the frequency to ramp up. Indeed, KVM cannot actually change the CPU frequency on its own, which can be a problem if it does not scale up with vCPU usage as it would result in underwhelming performance. An easy way to see if it behaves correctly is to check if the frequency reported by `watch lscpu` goes up when running a CPU-intensive task on the guest. If you are indeed experiencing stutter and the frequency does not go up to reach its reported maximum, it may be due to [cpu scaling being controlled by the host OS](https://lime-technology.com/forum/index.php?topic=46664.msg447678#msg447678). In this case, try setting all cores to maximum frequency to see if this improves performance. Note that if you are using a modern intel chip with the default pstate driver, cpupower commands will be [ineffective](/index.php/CPU_frequency_scaling#CPU_frequency_driver "CPU frequency scaling"), so monitor `/proc/cpuinfo` to make sure your cpu is actually at max frequency.
 
-### High DPC Latency
-
-If you are experiencing high DPC and/or interrupt latency in your Guest VM, ensure you have [loaded the needed virtio kernel modules](/index.php/Kernel_modules#Manual_module_handling "Kernel modules") on the host kernel. Loadable virtio kernel modules include: `virtio-pci`, `virtio-net`, `virtio-blk`, `virtio-balloon`, `virtio-ring` and `virtio`.
-
-After loading one or more of these modules, `lsmod | grep virtio` executed on the host should not return empty.
-
-#### CPU pinning with isolcpus
+### CPU pinning with isolcpus
 
 Alternatively, make sure that you have isolated CPUs properly. In this example, let us assume you are using CPUs 4-7. Use the kernel parameters `isolcpus nohz_full rcu_nocbs` to completely isolate the CPUs from the kernel.
 
@@ -490,6 +517,18 @@ Previously, Nested Page Tables (NPT) had to be disabled on AMD systems running K
 There is a [kernel patch](https://patchwork.kernel.org/patch/10027525/) that resolves this issue, which was accepted into kernel 4.14-stable and 4.9-stable. If you are running the official [linux](https://www.archlinux.org/packages/?name=linux) or [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernel the patch has already been applied (make sure you are on the latest). If you are running another kernel you might need to manually patch yourself.
 
 **Note:** Several Ryzen users (see [this Reddit thread](https://www.reddit.com/r/VFIO/comments/78i3jx/possible_fix_for_the_npt_issue_discussed_on_iommu/)) have tested the patch, and can confirm that it works, bringing GPU passthrough performance up to near native quality.
+
+Starting with QEMU 3.1 the TOPOEXT cpuid flag is disabled by default. In order to use hyperthreading(SMT) on AMD CPU's you need to manually enable it:
+
+```
+ <cpu mode='host-passthrough' check='none'>
+ <topology sockets='1' cores='4' threads='2'/>
+ <feature policy='require' name='topoext'/>
+ </cpu>
+
+```
+
+commit: [https://git.qemu.org/?p=qemu.git;a=commit;h=7210a02c58572b2686a3a8d610c6628f87864aed](https://git.qemu.org/?p=qemu.git;a=commit;h=7210a02c58572b2686a3a8d610c6628f87864aed)
 
 ### Further Tuning
 
@@ -876,9 +915,40 @@ Change 1000 under the user directory to your user uid (which can be found by run
 
 Virtual Machine audio will now be routed through the host as an application. The application [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) can be used to control the output device. Be aware that on Windows guests, this can cause audio crackling without [using Message-Signaled Interrupts.](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
 
+#### Qemu 3.0 Audio Changes
+
+As of QEMU 3.0 part of the audio patches have been merged ([reddit link](https://www.reddit.com/r/VFIO/comments/97iuov/qemu_30_released/e49wmyd/)). The [qemu-patched](https://aur.archlinux.org/packages/qemu-patched/) package currently includes some additional audio patches, as some of the patches have not been officially up-streamed yet.
+
+You will need to change the chipset accordingly to how your VM is set up, i.e. `pc-q35-3.0` or `pc-i440fx-3.0` (after installing qemu 3.0) to use the new code paths:
+
+ `$ virsh edit [vmname]` 
+```
+<domain type='kvm'>
+  ...
+  <os>
+    <type arch='x86_64' machine='pc-q35-3.0'>hvm</type>
+    ...
+  </os>
+
+```
+ `$ virsh edit [vmname]` 
+```
+<domain type='kvm'>
+  ...
+  <os>
+    <type arch='x86_64' machine='pc-i440fx-3.0'>hvm</type>
+    ...
+  </os>
+
+```
+
+**Note:** To speed up compilation time with [qemu-patched](https://aur.archlinux.org/packages/qemu-patched/) use `--target-list=x86_64-softmmu` to compile qemu with only x86_64 guest support
+
 ### Physical Disk/Partition
 
-A whole disk or a partition may be used as a whole for improved I/O performance by adding an entry to XML
+A whole disk or a partition may be used as a whole for improved I/O performance by adding an entry to the XML
+
+Virtio-BLK Example:
 
  `$ virsh edit [vmname]` 
 ```
@@ -887,16 +957,43 @@ A whole disk or a partition may be used as a whole for improved I/O performance 
 ...
   <disk type='block' device='disk'>
     <driver name='qemu' type='raw' cache='none' io='native'/>
-    <source dev='/dev/sdXX'/>
+    <source dev='/dev/disk/by-id/xxxxxxxx'/>
     <target dev='vda' bus='virtio'/>
-    <address type='pci' domain='0x0000' bus='0x02' slot='0x0a' function='0x0'/>
   </disk>
 ...
 </devices>
 
 ```
 
-This would require a driver on Windows guests, refer to [#Setting up the guest OS](#Setting_up_the_guest_OS).
+Virtio-SCSI Example:
+
+ `$ virsh edit [vmname]` 
+```
+
+<devices>
+...
+  <disk type='block' device='disk'>
+    <driver name='qemu' type='raw' cache='none' io='native'/>
+    <source dev='/dev/disk/by-id/xxxxxxxx'/>
+    <target dev='sda' bus='scsi'/>
+  </disk>
+...
+</devices>
+
+```
+
+To find out which disk/partition is associated with the one you would like to pass:
+
+ `$ ls -l /dev/disk/by-id` 
+```
+ ata-ST1000LM002-9VQ14L_Z0501SZ9 -> ../../sdd
+ ata-ST1000LM002-9VQ14L_Z0501SZ9-part1 -> ../../sdd1
+
+```
+
+You can also add the disk with Virt-Manager's **Add Hardware** menu and then type the disk you want in the **Select or create custom storage** box, e.g. **/dev/disk/by-id/ata-ST1000LM002-9VQ14L_Z0501SZ9**
+
+Depending on which bus you use, the above step will require either the VIOSTOR(bus=virtio) or VIOSCSI(bus=scsi) driver on Windows guests, refer to [#Setting up the guest OS](#Setting_up_the_guest_OS) for the driver ISO.
 
 ### Gotchas
 

@@ -37,10 +37,6 @@ The open-source project, **Chromium**, can be [installed](/index.php/Install "In
 
 Other alternatives include:
 
-*   **Chromium Beta Channel** — the beta version
-
-	[https://chromereleases.googleblog.com/](https://chromereleases.googleblog.com/) || [chromium-beta](https://aur.archlinux.org/packages/chromium-beta/)
-
 *   **Chromium Dev Channel** — the development version
 
 	[https://chromereleases.googleblog.com/](https://chromereleases.googleblog.com/) || [chromium-dev](https://aur.archlinux.org/packages/chromium-dev/)
@@ -52,6 +48,10 @@ Other alternatives include:
 *   **Chromium with [VA-API](/index.php/VA-API "VA-API") support** — with a patch to enable VA-API
 
 	[https://chromium-review.googlesource.com/c/chromium/src/+/532294](https://chromium-review.googlesource.com/c/chromium/src/+/532294) || [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/)
+
+*   **Ungoogled Chromium** — removes Google integration and enhances privacy
+
+	[https://github.com/Eloston/ungoogled-chromium](https://github.com/Eloston/ungoogled-chromium) || [ungoogled-chromium](https://aur.archlinux.org/packages/ungoogled-chromium/)
 
 The derived browser, **Google Chrome**, which automatically installs Flash Player and Widevine [EME](https://en.wikipedia.org/wiki/Encrypted_Media_Extensions "wikipedia:Encrypted Media Extensions") (for e.g. Netflix), can be [installed](/index.php/Install "Install") with the [google-chrome](https://aur.archlinux.org/packages/google-chrome/) package.
 

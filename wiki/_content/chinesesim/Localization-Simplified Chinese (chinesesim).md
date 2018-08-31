@@ -32,18 +32,17 @@
     *   [2.2 终端中文支持](#.E7.BB.88.E7.AB.AF.E4.B8.AD.E6.96.87.E6.94.AF.E6.8C.81_2)
     *   [2.3 终端中文输入支持](#.E7.BB.88.E7.AB.AF.E4.B8.AD.E6.96.87.E8.BE.93.E5.85.A5.E6.94.AF.E6.8C.81)
 *   [3 软件中文化配置](#.E8.BD.AF.E4.BB.B6.E4.B8.AD.E6.96.87.E5.8C.96.E9.85.8D.E7.BD.AE)
-    *   [3.1 桌面环境](#.E6.A1.8C.E9.9D.A2.E7.8E.AF.E5.A2.83)
-    *   [3.2 Firefox](#Firefox)
-    *   [3.3 Libreoffice](#Libreoffice)
-    *   [3.4 Calligra (原 Koffice)](#Calligra_.28.E5.8E.9F_Koffice.29)
-    *   [3.5 PDF阅读器](#PDF.E9.98.85.E8.AF.BB.E5.99.A8)
-    *   [3.6 Java](#Java)
-    *   [3.7 vim](#vim)
-    *   [3.8 中文视频字幕](#.E4.B8.AD.E6.96.87.E8.A7.86.E9.A2.91.E5.AD.97.E5.B9.95)
-        *   [3.8.1 Mplayer](#Mplayer)
-        *   [3.8.2 xine](#xine)
-        *   [3.8.3 gstreamer](#gstreamer)
-    *   [3.9 LaTeX](#LaTeX)
+    *   [3.1 Firefox](#Firefox)
+    *   [3.2 Libreoffice](#Libreoffice)
+    *   [3.3 Calligra (原 Koffice)](#Calligra_.28.E5.8E.9F_Koffice.29)
+    *   [3.4 PDF阅读器](#PDF.E9.98.85.E8.AF.BB.E5.99.A8)
+    *   [3.5 Java](#Java)
+    *   [3.6 vim](#vim)
+    *   [3.7 中文视频字幕](#.E4.B8.AD.E6.96.87.E8.A7.86.E9.A2.91.E5.AD.97.E5.B9.95)
+        *   [3.7.1 Mplayer](#Mplayer)
+        *   [3.7.2 xine](#xine)
+        *   [3.7.3 gstreamer](#gstreamer)
+    *   [3.8 LaTeX](#LaTeX)
 *   [4 乱码问题](#.E4.B9.B1.E7.A0.81.E9.97.AE.E9.A2.98)
     *   [4.1 文件名乱码](#.E6.96.87.E4.BB.B6.E5.90.8D.E4.B9.B1.E7.A0.81)
     *   [4.2 文件内容乱码](#.E6.96.87.E4.BB.B6.E5.86.85.E5.AE.B9.E4.B9.B1.E7.A0.81)
@@ -282,10 +281,6 @@ fontconfig的设置文件是`~/.fonts.conf`（用户）或者`/etc/fonts/conf.d`
 请参见 [fbterm](/index.php/Fbterm_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fbterm (简体中文)")
 
 ## 软件中文化配置
-
-### 桌面环境
-
-除[KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)")外，各大桌面环境已经包含了中文语言文件。[KDE](/index.php/KDE_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KDE (简体中文)")的中文包需要额外安装：[kde-l10n-zh_cn](https://www.archlinux.org/packages/?name=kde-l10n-zh_cn)
 
 ### Firefox
 

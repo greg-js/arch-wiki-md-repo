@@ -36,6 +36,7 @@ This article explains how to configure a network connection.
     *   [5.6 IP address aliasing](#IP_address_aliasing)
         *   [5.6.1 Example](#Example)
     *   [5.7 Promiscuous mode](#Promiscuous_mode)
+    *   [5.8 Investigate sockets](#Investigate_sockets)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Swapping computers on the cable modem](#Swapping_computers_on_the_cable_modem)
     *   [6.2 The TCP window scaling problem](#The_TCP_window_scaling_problem)
@@ -125,8 +126,6 @@ If udev is not detecting and loading the proper module automatically during boot
 
 ## Network management
 
-**Note:** The installation image enables [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (`dhcpcd@*interface*.service`) for [wired network devices](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) on boot.
-
 To set up a network connection, go through the following steps:
 
 1.  Ensure your [network interface](#Network_interfaces) is listed and enabled.
@@ -135,9 +134,9 @@ To set up a network connection, go through the following steps:
     *   [static IP address](#Static_IP_address)
     *   dynamic IP address: use [DHCP](#DHCP)
 
-**Tip:** [#Network managers](#Network_managers) provide automatic network connection and configuration based on network profiles.
+Arch Linux has deprecated [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig") in favor of [iproute2](https://en.wikipedia.org/wiki/iproute2 "wikipedia:iproute2") (part of [base](https://www.archlinux.org/groups/x86_64/base/)). *iproute2* provides the [ip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8) command-line interface, used to manage [network interfaces](#Network_interfaces), [IP addresses](#IP_addresses) and the [routing table](#Routing_table). Be aware that configuration made using `ip` will be lost after a reboot. For persistent configuration, you can use a [network manager](/index.php/Network_manager "Network manager") or automate *ip* commands using scripts and [systemd units](/index.php/Systemd#Writing_unit_files "Systemd"). Also note that `ip` commands can generally be abbreviated, for clarity they are however spelled out in this article.
 
-The [iproute2](https://www.archlinux.org/packages/?name=iproute2) package provides the [ip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8) command-line utility, used to manage [network interfaces](#Network_interfaces), [IP addresses](#IP_addresses) and the [routing table](#Routing_table). Be aware that configuration made using `ip` will be lost after a reboot. You can automate *ip* commands using scripts and [systemd units](/index.php/Systemd#Writing_unit_files "Systemd"). Also note that `ip` commands can generally be abbreviated, for clarity they are however spelled out in this article.
+**Note:** The installation image enables [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (`dhcpcd@*interface*.service`) for [wired network devices](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) on boot.
 
 ### Network interfaces
 
@@ -457,6 +456,35 @@ WantedBy=multi-user.target
 ```
 
 If you want to enable promiscuous mode on interface `eth0` run [enable](/index.php/Enable "Enable") `promiscuous@eth0.service`.
+
+### Investigate sockets
+
+*ss* is a utility to investigate network ports and is part of the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package. It has a similar functionality to the [deprecated](https://www.archlinux.org/news/deprecation-of-net-tools/) netstat utility.
+
+Common usage includes:
+
+Display all TCP Sockets with service names:
+
+```
+$ ss -at
+
+```
+
+Display all TCP Sockets with port numbers:
+
+```
+$ ss -atn
+
+```
+
+Display all UDP Sockets:
+
+```
+$ ss -au
+
+```
+
+For more information see [ss(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ss.8).
 
 ## Troubleshooting
 

@@ -16,7 +16,7 @@ Los usuarios y grupos se utilizan en GNU/Linux para el [control de acceso](https
 *   [3 Lista de archivos](#Lista_de_archivos)
 *   [4 Administración de usuarios](#Administraci.C3.B3n_de_usuarios)
     *   [4.1 Base de datos del usuario](#Base_de_datos_del_usuario)
-*   [5 Gestión de grupos](#Gesti.C3.B3n_de_grupos)
+*   [5 Administración de grupos](#Administraci.C3.B3n_de_grupos)
 *   [6 Lista de grupos](#Lista_de_grupos)
     *   [6.1 Grupos para los usuarios](#Grupos_para_los_usuarios)
     *   [6.2 Grupos del sistema](#Grupos_del_sistema)
@@ -39,17 +39,17 @@ Los usuarios pueden agruparse en un «grupo» y, del mismo modo, pueden añadirs
 
 ## Permisos y propiedad
 
-De la página [En Unix todo es un archivo](http://ph7spot.com/musings/in-unix-everything-is-a-file):
+De [En Unix todo es un archivo](http://ph7spot.com/musings/in-unix-everything-is-a-file):
 
-	*El sistema operativo UNIX es el resultado de algunas ideas y conceptos unificadores que dieron forma a su diseño, la interfaz de usuario, la cultura y la evolución. Uno de los más importantes es probablemente el lema: «everything is a file» (*todo es un archivo)*, considerado como uno de los puntos definitorios de UNIX.*
+	El sistema operativo UNIX cristaliza un par de ideas y conceptos unificadores que dieron forma a su diseño, interfaz de usuario, cultura y evolución. Uno de los más importantes probablemente sea el mantra: "todo es un archivo", considerado ampliamente como uno de los puntos definitorios de UNIX.
 
-	*Este principio fundamental de diseño consiste en proporcionar un paradigma unificado para acceder a una amplia gama de recursos de entrada/salida: documentos, directorios, discos duros, CD-ROM, módems, teclados, impresoras, monitores, terminales e, incluso, algunas comunicaciones de procesos internos y de red. El truco consiste en proporcionar una abstracción común para todos estos recursos, para cada uno de los cuales, los padres de UNIX, llamaron «archivo». Debido a que cada «archivo» se expone a través de la misma API, se puede utilizar el mismo conjunto de órdernes básicas para leer/escribir en un disco, un teclado, un documento o un dispositivo de red.*
+	Este principio de diseño fundamental consiste en proporcionar un paradigma unificado para acceder a una amplia gama de recursos de entrada/salida: documentos, directorios, discos duros, CD-ROM, módems, teclados, impresoras, monitores, terminales e incluso algunas comunicaciones entre procesos y redes. El truco es proporcionar una abstracción común para todos estos recursos, cada uno de los cuales los padres de UNIX llamaron «archivo». Como cada «archivo» está expuesto a través de la misma API, se puede utilizar el mismo conjunto de comandos básicos para leer/escribir en un disco, teclado, documento o dispositivo de red.
 
-Del archivo [Extending UNIX File Abstraction for General-Purpose Networking (*«Extender la abstracción de archivo de UNIX para fines generales de gestión de la red»*)](http://www.intel-research.net/Publications/Pittsburgh/101220041324_277.pdf):
+De [Extendiendo la abstracción de archivo de UNIX para fines generales de administración de redes](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.597.4699&rep=rep1&type=pdf):
 
-	*Una abstracción fundamental, potente y consistente, proporcionada en UNIX y sistemas operativos compatibles, es la abstracción de archivo. Muchos servicios del sistema operativo e interfaces de dispositivos se implementan para proporcionar una metáfora del archivo o del sistema de archivos para las aplicaciones. Esto permite usos nuevos, y aumenta, en gran medida, el poder de las aplicaciones existentes —herramientas sencillas diseñadas para usos específicos pueden, con las abstracciones de archivos de UNIX, utilizarse de otras formas novedosas—. Una herramienta simple, como cat, diseñada para leer uno o más archivos y mostrar los contenidos en la salida estándar, se puede utilizar para leer la salida/entrada de dispositivos mediante los archivos de dispositivos especiales, que, por lo general, se encuentran en el directorio `/dev`. En muchos sistemas, la grabación de audio y la reproducción, se pueden hacer simplemente con las órdenes, «`cat /dev/audio > miarchivo`» y «`cat miarchivo > /dev/audio`», respectivamente.*
+	Una abstracción fundamental, muy potente y consistente, proporcionada en UNIX y los sistemas operativos compatibles es la abstracción de archivos. Muchos servicios del sistema operativo e interfaces de dispositivos se implementan para proporcionar una metáfora de archivo o sistema de archivos a las aplicaciones. Esto permite nuevos usos y aumenta en gran medida el poder de las aplicaciones existentes — herramientas simples diseñadas para usos específicos pueden, con las abstracciones de archivos de UNIX, utilizarse de maneras novedosas. Una herramienta simple, como cat, diseñada para leer uno o más archivos y enviar los contenidos a la salida estándar, se puede utilizar para leer desde dispositivos E/S *(entrada/salida)* a través de archivos de dispositivos especiales, que generalmente se encuentran en el directorio `/dev`. En muchos sistemas, la grabación y reproducción de audio se puede hacer simplemente con los comandos, «{`cat /dev/audio > miarchivo`» y «{`cat miarchivo > /dev/audio`», respectivamente.
 
-Cada archivo en un sistema GNU/Linux es propiedad de un usuario y de un grupo. Además, hay tres tipos de permisos de acceso: lectura, escritura y ejecución. Los permisos de acceso pueden aplicarse de forma diferente al usuario propietario de un archivo, al grupo propietario, y o otros (los que no tienen propiedad). Se pueden visualizar los propietarios y los permisos de un archivo utilizando el formato «long listing» (*listado largo*) de la orden `ls`:
+Cada archivo en un sistema GNU/Linux es propiedad de un usuario y un grupo. Además, hay tres tipos de permisos de acceso: lectura, escritura y ejecución. Los permisos de acceso pueden aplicarse de forma diferente al usuario propietario del archivo, al grupo propietario y a otros (aquellos que no tienen la propiedad). Uno puede determinar los propietarios y permisos de un archivo al ver el formato de listado extenso del comando [ls](/index.php/Core_utilities_(Espa%C3%B1ol)#ls "Core utilities (Español)"):
 
  `$ ls -l /boot/` 
 ```
@@ -59,6 +59,7 @@ drwxr-xr-x 2 root root    4096 Jan 12 00:33 grub
 -rw-r--r-- 1 root root 1821573 Jan 12 00:31 initramfs-linux.img
 -rw-r--r-- 1 root root 1457315 Jan  8 08:19 System.map26
 -rw-r--r-- 1 root root 2209920 Jan  8 08:19 vmlinuz-linux
+
 ```
 
 La primera columna muestra los permisos del archivo (por ejemplo, el archivo `initramfs-linux.img` tiene los permisos `-rw-r--r--`). La tercera y cuarta columnas muestran al usuario y al grupo propietarios del archivo, respectivamente. En el presente ejemplo, todos los archivos son propiedad del usuario *root* y del grupo *root*.
@@ -103,7 +104,7 @@ Véase [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)
 
 ## Lista de archivos
 
-**Advertencia:** No modifique estos archivos manualmente. Existen utilidades que bloquean el manejo de las propiedades y evitan invalidar el formato de la base de datos. Consulte [administración de usuarios](#Administraci.C3.B3n_de_usuarios) y [#Gestión de grupos](#Gesti.C3.B3n_de_grupos) para más detalles.
+**Advertencia:** No modifique estos archivos manualmente. Existen utilidades que bloquean el manejo de las propiedades y evitan invalidar el formato de la base de datos. Consulte [administración de usuarios](#Administraci.C3.B3n_de_usuarios) y [#Administración de grupos](#Administraci.C3.B3n_de_grupos) para más detalles.
 
 | Archivo | Contenido |
 | `/etc/shadow` | Información reservada de las cuentas de usuario |
@@ -214,7 +215,7 @@ donde:
 
 **Nota:** Arch Linux utiliza contraseñas *shadowed*. El archivo `passwd` es legible por todos los usuarios, de modo que guardar las contraseñas (sean cifradas o no) en este archivo es inseguro. Por ello, el campo `password` contendrá un carácter de posición (`x`) que indica que la contraseña cifrada se guarde en el archivo de acceso restringido `/etc/shadow`.
 
-## Gestión de grupos
+## Administración de grupos
 
 En el archivo `/etc/group` se definen los grupos presentes en el sistema (ejecute la orden [group(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) para conocer más detalle).
 
@@ -308,7 +309,7 @@ Los grupos siguientes se utilizan para los fines del sistema y no son apropiados
 | http |
 | kmem | `/dev/port`, `/dev/mem`, `/dev/kmem` |
 | log | `/var/log/*` | Permite el acceso a los archivos de registro en `/var/log`. |
-| lp | `/etc/cups`, `/var/log/cups`, `/var/cache/cups`, `/var/spool/cups`, `/dev/parport[0-9]` | Permite el acceso al hardware de la impresora; le permite al usuario gestionar los trabajos de impresión. |
+| lp | `/etc/cups`, `/var/log/cups`, `/var/cache/cups`, `/var/spool/cups`, `/dev/parport[0-9]` | Permite el acceso al hardware de la impresora; le permite al usuario administrar los trabajos de impresión. |
 | mail | `/usr/bin/mail` |
 | mem |
 | mpd | `/var/lib/mpd/*`, `/var/log/mpd/*`, `/var/run/mpd/*`, opcionalmente directorios de música | Grupo [MPD](/index.php/MPD "MPD"). |

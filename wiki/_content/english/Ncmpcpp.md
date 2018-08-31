@@ -2,7 +2,7 @@ Related articles
 
 *   [mpd](/index.php/Mpd "Mpd")
 
-[Ncmpcpp](http://rybczak.net/ncmpcpp) or ncmpcpp is an [mpd](/index.php/Mpd "Mpd") client (compatible with [mopidy](https://www.mopidy.com/)) with a UI very similar to *ncmpc*, but it provides new useful features such as support for regular expressions for library searches, extended song format, items filtering, the ability to sort playlists, and a local filesystem browser.
+[*ncmpcpp*](http://rybczak.net/ncmpcpp) is an [mpd](/index.php/Mpd "Mpd") client (compatible with [mopidy](https://www.mopidy.com/)) with a UI very similar to *ncmpc*, but it provides new useful features such as support for regular expressions for library searches, extended song format, items filtering, the ability to sort playlists, and a local filesystem browser.
 
 To use it, a functional *mpd* must be present on the system since *ncmpcpp*/*mpd* work together in a client/server relationship.
 

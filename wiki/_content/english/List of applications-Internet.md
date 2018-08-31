@@ -1,7 +1,3 @@
-**[List of applications](/index.php/List_of_applications "List of applications")**
-
-* * *
-
 <a class="mw-selflink selflink">Internet</a> – [Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") – [Utilities](/index.php/List_of_applications/Utilities "List of applications/Utilities") – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – [Security](/index.php/List_of_applications/Security "List of applications/Security") – [Science](/index.php/List_of_applications/Science "List of applications/Science") – [Other](/index.php/List_of_applications/Other "List of applications/Other")
 
 ## Contents
@@ -1026,6 +1022,10 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 ##### Console
 
+*   **aerc** — Work in progress asynchronous email client.
+
+	[https://github.com/SirCmpwn/aerc](https://github.com/SirCmpwn/aerc) || [aerc-git](https://aur.archlinux.org/packages/aerc-git/)
+
 *   **alot** — An experimental terminal MUA based on [notmuch mail](http://notmuchmail.org/). It is written in python using the [urwid](http://urwid.org/) toolkit.
 
 	[https://github.com/pazz/alot](https://github.com/pazz/alot) || [alot](https://aur.archlinux.org/packages/alot/)
@@ -1863,6 +1863,10 @@ See also [Wikipedia:List of podcatchers](https://en.wikipedia.org/wiki/List_of_p
 *   **Marrie** — A simple podcast client that runs on the Command Line Interface.
 
 	[https://github.com/rafaelmartins/marrie/](https://github.com/rafaelmartins/marrie/) || [marrie-git](https://aur.archlinux.org/packages/marrie-git/)
+
+*   **pcd** — A minimal podcast client written in go
+
+	[https://github.com/kvannotten/pcd](https://github.com/kvannotten/pcd) || [pcd](https://aur.archlinux.org/packages/pcd/)
 
 ##### Graphical
 

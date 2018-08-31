@@ -182,7 +182,7 @@ You can use your router in IPv6 mode even if you do not have an IPv6 address fro
 For internal networking the block `fc00::/7` has been reserved. These addresses are guaranteed to be unique and non-routable from the open internet. Addresses that belong to the `fc00::/7` block are called [Unique Local Addresses](https://en.wikipedia.org/wiki/Unique_local_address "wikipedia:Unique local address"). To get started [generate a ULA /64 block](http://www.simpledns.com/private-ipv6.aspx) to use in your network. For this example we will use `fd00:aaaa:bbbb:cccc::/64`. Firstly we must assign a static IPv6 on the internal interface. Modify the `intern0-profile` we created above to include the following line
 
 ```
- IPCustom=('-6 addr add fd00:aaaa:bbbb:cccc::1/64 dev intern0')
+ Address6=('fd00:aaaa:bbbb:cccc::1/64')
 
 ```
 
@@ -190,14 +190,14 @@ This will add the ULA to the internal interface. As far as the router goes, this
 
 ### Global Unicast Addresses
 
-If your ISP or WAN network can access the IPv6 Internet you can additionally assign global link addresses to your router and propagate them through SLAAC to your internal network. The global unicast prefix is usually either *static* or provided through *prefix delegation*.
+If your ISP or WAN network can access the IPv6 Internet you can additionally assign global link addresses to your router and propagate them through [SLAAC](#Router_Advertisement_and_Stateless_Autoconfiguration_.28SLAAC.29) to your internal network. The global unicast prefix is usually either *static* or provided through *prefix delegation*.
 
 #### Static IPv6 prefix
 
 If your ISP has provided you with a static prefix then edit `/etc/netctl/extern0-profile` and simply add the IPv6 and the IPv6 prefix (usually /64) you have been provided
 
 ```
-IPCustom=('-6 addr add 2002:1:2:3:4:5:6:7/64 dev extern0')
+ Address6=('2002:1:2:3:4:5:6:7/64')
 
 ```
 
@@ -217,7 +217,7 @@ To properly hand out IPv6s to the network clients we will need to use an adverti
 
 The above configuration of shorewall does not include [UPnP](https://en.wikipedia.org/wiki/UPnP "wikipedia:UPnP") support. Use of UPnP is discouraged as it may make the gateway vulnerable to attacks from within the LAN. However, some applications require this to function correctly.
 
-To enable UPnP on your router, you need to install an UPnP Internet gateway daemon (IGD). To get it, [install](/index.php/Install "Install") the [miniupnpd](https://www.archlinux.org/packages/?name=miniupnpd) package.
+To enable UPnP on your router, you need to install an UPnP [Internet Gateway Device (IGD) protocol](https://en.wikipedia.org/wiki/Internet_Gateway_Device_Protocol "wikipedia:Internet Gateway Device Protocol"). To get it, [install](/index.php/Install "Install") the [miniupnpd](https://www.archlinux.org/packages/?name=miniupnpd) package.
 
 Read the [Shorewall guide on UPnP](http://www.shorewall.net/UPnP.html) for more information
 
@@ -231,7 +231,7 @@ See [Squid](/index.php/Squid "Squid") or [Polipo](/index.php/Polipo "Polipo") fo
 
 ### Time server
 
-To use the router as a time server, see [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon").
+To use the router as a time server, see [Time#Time synchronization](/index.php/Time#Time_synchronization "Time") for available Network Time Protocol (NTP) server implementations.
 
 Then, configure shorewall or iptables to allow NTP traffic in and out.
 

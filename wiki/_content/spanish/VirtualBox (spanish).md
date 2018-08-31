@@ -179,7 +179,7 @@ Por último, si se utiliza la característica «Host-only networking», asegúre
 
 ### Añadir nombres de usuario al grupo vboxusers
 
-Para utilizar los puertos USB de la máquina anfitriona en sus máquinas virtuales, cree el [grupo](/index.php/Users_and_groups "Users and groups") `vboxusers`, cuyos usuarios estarán autorizados a utilizar esta función. El nuevo grupo no se aplica automáticamente a las sesiones existentes; el usuario tiene que salir y entrar de nuevo, o iniciar un nuevo entorno con la orden `newgrp` o con `sudo -u $USER -s`. Para agregar el usuario vigente al grupo `vboxusers`, escriba:
+Para utilizar los puertos USB de la máquina anfitriona en sus máquinas virtuales, cree el [grupo](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") `vboxusers`, cuyos usuarios estarán autorizados a utilizar esta función. El nuevo grupo no se aplica automáticamente a las sesiones existentes; el usuario tiene que salir y entrar de nuevo, o iniciar un nuevo entorno con la orden `newgrp` o con `sudo -u $USER -s`. Para agregar el usuario vigente al grupo `vboxusers`, escriba:
 
 ```
 # gpasswd -a $USER vboxusers

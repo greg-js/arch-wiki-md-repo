@@ -39,19 +39,18 @@ Artículos relacionados
     *   [6.3 Órdenes importantes de la shell de UEFI](#.C3.93rdenes_importantes_de_la_shell_de_UEFI)
         *   [6.3.1 bcfg](#bcfg)
         *   [6.3.2 edit](#edit)
-*   [7 Compatibilidad de hardware](#Compatibilidad_de_hardware)
-*   [8 Soporte para arrancar UEFI](#Soporte_para_arrancar_UEFI)
-    *   [8.1 Crear un USB arrancable con UEFI desde la ISO](#Crear_un_USB_arrancable_con_UEFI_desde_la_ISO)
-    *   [8.2 Eliminar el apoyo de arranque de UEFI desde la ISO](#Eliminar_el_apoyo_de_arranque_de_UEFI_desde_la_ISO)
-*   [9 Probar UEFI en sistemas sin soporte nativo](#Probar_UEFI_en_sistemas_sin_soporte_nativo)
-    *   [9.1 OVMF para máquinas virtuales](#OVMF_para_m.C3.A1quinas_virtuales)
-    *   [9.2 DUET para sistemas BIOS únicamente](#DUET_para_sistemas_BIOS_.C3.BAnicamente)
-*   [10 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [10.1 Windows 7 no se inicia en la modalidad UEFI](#Windows_7_no_se_inicia_en_la_modalidad_UEFI)
-    *   [10.2 Windows cambia el orden de arranque](#Windows_cambia_el_orden_de_arranque)
-    *   [10.3 El soporte USB arranca mostrando una pantalla en negro](#El_soporte_USB_arranca_mostrando_una_pantalla_en_negro)
-        *   [10.3.1 Utilizar GRUB](#Utilizar_GRUB)
-*   [11 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [7 Soporte para arrancar UEFI](#Soporte_para_arrancar_UEFI)
+    *   [7.1 Crear un USB arrancable con UEFI desde la ISO](#Crear_un_USB_arrancable_con_UEFI_desde_la_ISO)
+    *   [7.2 Eliminar el apoyo de arranque de UEFI desde la ISO](#Eliminar_el_apoyo_de_arranque_de_UEFI_desde_la_ISO)
+*   [8 Probar UEFI en sistemas sin soporte nativo](#Probar_UEFI_en_sistemas_sin_soporte_nativo)
+    *   [8.1 OVMF para máquinas virtuales](#OVMF_para_m.C3.A1quinas_virtuales)
+    *   [8.2 DUET para sistemas BIOS únicamente](#DUET_para_sistemas_BIOS_.C3.BAnicamente)
+*   [9 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+    *   [9.1 Windows 7 no se inicia en la modalidad UEFI](#Windows_7_no_se_inicia_en_la_modalidad_UEFI)
+    *   [9.2 Windows cambia el orden de arranque](#Windows_cambia_el_orden_de_arranque)
+    *   [9.3 El soporte USB arranca mostrando una pantalla en negro](#El_soporte_USB_arranca_mostrando_una_pantalla_en_negro)
+        *   [9.3.1 Utilizar GRUB](#Utilizar_GRUB)
+*   [10 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
 ## Diferencias entre BIOS y UEFI
 
@@ -85,7 +84,7 @@ Las versiones de Windows de 32-bit únicamente soportan el arranque en sistemas 
 
 Compruebe si el directorio `/sys/firmware/efi` existe; si existe, significa que el kernel ha arrancado en modalidad EFI. En ese caso, significa que la arquitectura de UEFI coincide con la del kernel (es decir, i686 o x86_64)
 
-**Nota:** El chip del sistema Atom de Intel es entregado con UEFI de 32 bit (desde el 2 de noviembre de 2013). Véase [esta página](/index.php/Unified_Extensible_Firmware_Interface/Hardware#Intel_Atom_System-on-Chip "Unified Extensible Firmware Interface/Hardware") para obtener más información.
+**Nota:** El chip del sistema Atom de Intel es entregado con UEFI de 32 bit (desde el 2 de noviembre de 2013). Véase esta página para obtener más información.
 
 #### Mac de Apple
 
@@ -412,10 +411,6 @@ FS0:\EFI\arch\refind\> edit refind.conf
 ```
 
 Escriba `Ctrl-E` para obtener ayuda.
-
-## Compatibilidad de hardware
-
-Véase el artículo [Unified Extensible Firmware Interface/Hardware](/index.php/Unified_Extensible_Firmware_Interface/Hardware "Unified Extensible Firmware Interface/Hardware")
 
 ## Soporte para arrancar UEFI
 

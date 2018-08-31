@@ -388,8 +388,8 @@ Reaching the required minimum of votes is not the only requirement, there has to
 Usually when a very popular package stays in the AUR it is because:
 
 *   Arch Linux already has another version of a package in the repositories
-*   The package is AUR-centric (e.g. an [AUR helper](/index.php/AUR_helper "AUR helper"))
 *   Its license prohibits redistribution
+*   It helps retrieve user-submitted PKGBUILDs. [AUR helpers](/index.php/AUR_helpers "AUR helpers") are [unsupported](https://bbs.archlinux.org/viewtopic.php?pid=828310#p828310) by definition.
 
 See also [DeveloperWiki:Community repo candidates](/index.php/DeveloperWiki:Community_repo_candidates "DeveloperWiki:Community repo candidates") and [Rules for Packages Entering the community Repo](/index.php/AUR_Trusted_User_Guidelines#Rules_for_Packages_Entering_the_.5Bcommunity.5D_Repo "AUR Trusted User Guidelines").
 

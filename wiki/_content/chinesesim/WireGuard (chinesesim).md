@@ -34,7 +34,7 @@ $ wg genkey | tee privatekey | wg pubkey > publickey
 
 ```
 
-Below commands will demonstrate how to setup a basic tunnel between two peers with the following settings:
+下面的指令会演示如何以表中的配置建立一条两个 peer 之间的隧道
 
  Peer A | Peer B |
 | External IP address | 10.10.10.1/24 | 10.10.10.2/24 |
@@ -176,7 +176,7 @@ PersistentKeepalive = 25
 
 或者你使用的是 systemd-networkd, 启用 systemd-networkd-wait-online.service `systemctl enable systemd-networkd-wait-online.service`
 
-等待所以设备就绪再尝试 wireguard 连接
+等待所有设备就绪再尝试 wireguard 连接
 
 ## Troubleshooting
 

@@ -9,12 +9,13 @@ This document covers standards and guidelines on writing [PKGBUILDs](/index.php/
 ## Contents
 
 *   [1 Package naming](#Package_naming)
-*   [2 Source](#Source)
-*   [3 Installation methods](#Installation_methods)
-    *   [3.1 distutils](#distutils)
-    *   [3.2 setuptools](#setuptools)
-    *   [3.3 pip](#pip)
-*   [4 Notes](#Notes)
+*   [2 Architecture](#Architecture)
+*   [3 Source](#Source)
+*   [4 Installation methods](#Installation_methods)
+    *   [4.1 distutils](#distutils)
+    *   [4.2 setuptools](#setuptools)
+    *   [4.3 pip](#pip)
+*   [5 Notes](#Notes)
 
 ## Package naming
 
@@ -23,6 +24,12 @@ For [Python 3](/index.php/Python#Python_3 "Python") library modules, use `python
 The same applies to Python 2 except that the prefix (if needed) is `python2-`.
 
 **Note:** The package name should be entirely lowercase.
+
+## Architecture
+
+See [PKGBUILD#arch](/index.php/PKGBUILD#arch "PKGBUILD").
+
+A Python package that contains C extensions using the `ext_modules` keyword in `setup.py`, is architecture-dependent. Otherwise it is most likely architecture-independent.
 
 ## Source
 
@@ -107,7 +114,5 @@ python -O -m compileall "${pkgdir}/path/to/module"
 **Warning:** Use of *pip* and/or wheel packages is discouraged in favor of setuptools source packages, and should only be used when the latter is not a viable option (for example, packages which **only** come with wheel sources, and therefore cannot be installed using setuptools).
 
 ## Notes
-
-In most cases, you should put `any` in the `arch` array since most Python packages are architecture independent.
 
 Please do not install a directory named just `tests`, as it easily conflicts with other Python packages (for example, `/usr/lib/python2.7/site-packages/tests/`).

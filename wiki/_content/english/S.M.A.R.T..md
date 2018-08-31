@@ -181,6 +181,29 @@ sudo -u *X_user* DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/*X_user
 
 This requires [libnotify](https://www.archlinux.org/packages/?name=libnotify) and a compatible desktop environment. See [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications") for more details.
 
+You can also put your custom scripts into `/usr/share/smartmontools/smartd_warning.d/`:
+
+This scripts notifies every logged in users on the system via libnotify.
+
+ `/usr/share/smartmontools/smartd_warning.d/smartdnotify` 
+```
+#!/bin/sh
+
+IFS=$'
+'
+for LINE in `w -hs`
+do
+    USER=`echo $LINE | awk '{print $1}'`
+    USER_ID=`id -u $USER`
+    DISP_ID=`echo $LINE | awk '{print $8}'`
+    sudo -u $USER DISPLAY=$DISP_ID DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$USER_ID/bus notify-send "S.M.A.R.T Error ($SMARTD_FAILTYPE)" "$SMARTD_MESSAGE" --icon=dialog-warning
+done
+```
+
+This script requires [libnotify](https://www.archlinux.org/packages/?name=libnotify) and [procps-ng](https://www.archlinux.org/packages/?name=procps-ng) and a compatible desktop environment.
+
+You can execute your custom scripts with `/etc/smartd.conf`  `DEVICESCAN -m @smartdnotify` 
+
 #### Power management
 
 If you use a computer under control of power management, you should instruct smartd how to handle disks in low power mode. Usually, in response to SMART commands issued by smartd, the disk platters are spun up. So if this option is not used, then a disk which is in a low-power mode may be spun up and put into a higher-power mode when it is periodically polled by smartd.

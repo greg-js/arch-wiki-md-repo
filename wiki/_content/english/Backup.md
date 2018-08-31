@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [System backup](/index.php/System_backup "System backup")
+*   [System maintenance#Backup](/index.php/System_maintenance#Backup "System maintenance")

@@ -1,6 +1,7 @@
 Related articles
 
 *   [dotfiles](/index.php/Dotfiles "Dotfiles")
+*   [Core utilities](/index.php/Core_utilities "Core utilities")
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Unix_shell "wikipedia:Unix shell"):
 
@@ -14,7 +15,8 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Unix_shell "wikipedia:Unix shell"
 *   [2 Changing your default shell](#Changing_your_default_shell)
 *   [3 Configuration files](#Configuration_files)
     *   [3.1 /etc/profile](#.2Fetc.2Fprofile)
-*   [4 See also](#See_also)
+*   [4 Input and output](#Input_and_output)
+*   [5 See also](#See_also)
 
 ## List of shells
 
@@ -107,6 +109,26 @@ See also [Wikipedia:Unix shell#Configuration files](https://en.wikipedia.org/wik
 ### /etc/profile
 
 Upon login, all Bourne-compatible shells source `/etc/profile`, which in turn sources any readable `*.sh` files in `/etc/profile.d/`: these scripts do not require an interpreter directive, nor do they need to be executable. They are used to set up an environment and define application-specific settings.
+
+## Input and output
+
+See also [GregsWiki](https://mywiki.wooledge.org/BashGuide/InputAndOutput "gregswiki:BashGuide/InputAndOutput") and [I/O Redirection](http://www.tldp.org/LDP/abs/html/io-redirection.html).
+
+*   Redirections truncate files before commands are executed: `*command* *file* > *file*` will therefore not work as expected. While some commands ([sed](/index.php/Sed "Sed") for example) provide an option to edit files in-place, many do not. In such cases you can use the [sponge(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sponge.1) command from the [moreutils](https://www.archlinux.org/packages/?name=moreutils) package.
+*   Because *cat* is not built into the shell, on many occasions you may find it more convenient to use a [redirection](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)"), for example in scripts, or if you care a lot about performance. In fact `< *file*` does the same as `cat *file*`.
+*   POSIX-compliant shells support [Here Documents](http://tldp.org/LDP/abs/html/here-docs.html):
+
+```
+$ cat << EOF
+one
+two
+three
+EOF
+
+```
+
+*   Shell [pipelines](https://en.wikipedia.org/wiki/Pipeline_(Unix) operate on stdout by default. To operate on [stderr(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/stderr.3) you can redirect *stderr* to *stdout* with `*command* 2>&1 | *othercommand*` or, for Bash 4, `*command* |& *othercommand*`.
+*   Remember that many GNU [core utilities](/index.php/Core_utilities "Core utilities") accept files as arguments, so for example `grep *pattern* < *file*` is replaceable with `grep *pattern* *file*`.
 
 ## See also
 

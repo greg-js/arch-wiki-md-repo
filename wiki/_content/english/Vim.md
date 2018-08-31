@@ -23,6 +23,7 @@ Related articles
     *   [5.4 Replace vi command with Vim](#Replace_vi_command_with_Vim)
     *   [5.5 DOS/Windows carriage returns](#DOS.2FWindows_carriage_returns)
     *   [5.6 Empty space at the bottom of gVim windows](#Empty_space_at_the_bottom_of_gVim_windows)
+    *   [5.7 Vim as a pager](#Vim_as_a_pager)
 *   [6 Plugins](#Plugins)
     *   [6.1 Installation](#Installation_2)
         *   [6.1.1 Using the built-in package manager](#Using_the_built-in_package_manager)
@@ -224,6 +225,14 @@ set guiheadroom=0
 ```
 
 **Note:** If you set it to zero, you will not be able to see the bottom horizontal scrollbar.
+
+### Vim as a pager
+
+Using scripts Vim can be used as a [terminal pager](/index.php/Terminal_pager "Terminal pager"), so that you get various vim features such as color schemes.
+
+Vim comes with the `/usr/share/vim/vim81/macros/less.sh` script, for which you can create an [alias](/index.php/Alias "Alias").
+
+Alternatively there is also the [vimpager](https://www.archlinux.org/packages/?name=vimpager) Vim script. To change the default pager, [export](/index.php/Export "Export") the `PAGER` environment variable.
 
 ## Plugins
 

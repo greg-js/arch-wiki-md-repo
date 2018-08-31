@@ -192,13 +192,13 @@ background_images = /usr/share/backgrounds
 
 ```
 [User]
-Icon=/var/lib/AccountsService/icons/*username*
+Icon=/var/lib/AccountsService/icons/*username.png*
 
 ```
 
 I
 
-*   使用 96x96 PNG 图表文件来创建 `/var/lib/AccountsService/icons/*username*`.
+*   使用 96x96 PNG 图表文件来创建 `/var/lib/AccountsService/icons/*username.png*`.
 
 **注意:** 确保创建的文件都是 644 权限，使用 [chmod](/index.php/Chmod "Chmod") 来更正。
 

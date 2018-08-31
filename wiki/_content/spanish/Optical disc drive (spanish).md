@@ -631,7 +631,7 @@ Si desea reproducir DVD encriptados, debe instalar los paquetes libdvd*:
 
 Además, debe instalar el software reproductor. Los reproductores más populares de DVD son [MPlayer](/index.php/MPlayer "MPlayer"), [xine](https://en.wikipedia.org/wiki/Xine "wikipedia:Xine") y [VLC](/index.php/VLC "VLC"). Véase el listado de [reproductores de vídeo](/index.php/List_of_applications/Multimedia#Video_players "List of applications/Multimedia") y las instrucciones específicas para [MPlayer](/index.php/MPlayer#DVD_playing "MPlayer").
 
-**Sugerencia:** Los usuarios pueden necesitar pertener al [grupo](/index.php/Users_and_groups "Users and groups") `optical` para poder acceder a la unidad de DVD. Para añadir `NOMBREDEUSUARIO` al grupo `optical`, ejecute:
+**Sugerencia:** Los usuarios pueden necesitar pertener al [grupo](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") `optical` para poder acceder a la unidad de DVD. Para añadir `NOMBREDEUSUARIO` al grupo `optical`, ejecute:
 ```
 # gpasswd -a NOMBREDEUSUARIO optical
 

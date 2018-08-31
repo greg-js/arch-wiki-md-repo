@@ -145,6 +145,8 @@ $ flatpak uninstall *name*
 
 ```
 
+**Tip:** You can uninstall unused refs (aka orphans applications/runtimes) with `flatpak uninstall --unused`
+
 ### Adding Flatpak .desktop files to your menu
 
 Flatpak expects window managers to respect the XDG_DATA_DIRS environment variable to discover applications. This may require restarting the session or the launcher may not support this. In such a case where you can edit the list of directories scanned, add these to it:

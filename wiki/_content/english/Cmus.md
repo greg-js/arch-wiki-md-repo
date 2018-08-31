@@ -5,29 +5,21 @@
 *   [1 Installation](#Installation)
     *   [1.1 Using cmus with ALSA](#Using_cmus_with_ALSA)
 *   [2 Usage](#Usage)
-    *   [2.1 Starting Cmus](#Starting_Cmus)
-    *   [2.2 Adding Music](#Adding_Music)
-    *   [2.3 Playing Tracks](#Playing_Tracks)
-    *   [2.4 Keybindings](#Keybindings)
-*   [3 Views](#Views)
-    *   [3.1 Library view (1)](#Library_view_.281.29)
-    *   [3.2 Sorted library view (2)](#Sorted_library_view_.282.29)
-    *   [3.3 Playlist view (3)](#Playlist_view_.283.29)
-    *   [3.4 Play Queue view (4)](#Play_Queue_view_.284.29)
-    *   [3.5 Browser view (5)](#Browser_view_.285.29)
-    *   [3.6 Filters view (6)](#Filters_view_.286.29)
-    *   [3.7 Settings view (7)](#Settings_view_.287.29)
-*   [4 Configuration](#Configuration)
-    *   [4.1 Remote Control](#Remote_Control)
-*   [5 See also](#See_also)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Remote Control](#Remote_Control)
+*   [4 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [cmus](https://www.archlinux.org/packages/?name=cmus) package, or [cmus-git](https://aur.archlinux.org/packages/cmus-git/) for the development version.
 
+See the optional dependencies for available [codecs](/index.php/Codecs "Codecs") and output plugins (installed can be listed with `cmus --plugins`).
+
 ### Using cmus with ALSA
 
-When using cmus with [Advanced Linux Sound Architecture](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") the default configuration does not allow playing music. What you might encounter when trying to start cmus is a blank terminal line with no output whatsoever. To fix it, create a new config file and set the following variables
+[Install](/index.php/Install "Install") the [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib) package.
+
+When using cmus with [ALSA](/index.php/ALSA "ALSA") the default configuration does not allow playing music. What you might encounter when trying to start cmus is a blank terminal line with no output whatsoever. To fix it, create a new config file and set the following variables
 
  `~/.config/cmus/rc` 
 ```
@@ -39,81 +31,7 @@ set mixer.alsa.channel=Master
 
 ## Usage
 
-Cmus comes with a great reference manual.
-
-```
-$ man cmus 
-$ man cmus-tutorial
-$ man cmus-remote
-
-```
-
-### Starting Cmus
-
-To start cmus, type:
-
-```
-$ cmus
-
-```
-
-When you first launch cmus it will open to the album/artist view.
-
-### Adding Music
-
-Press `5` to switch to the file-browser view so we can add some music. Now, use the arrow keys (`up`, `down`), `Enter` and `Backspace` to navigate to where you have audio files stored. Alternatively, you may use the vim bindings (`k`, `j`) to navigate up and down through your music.
-
-To add music to your cmus library, use the arrow keys to highlight a file or folder, and press `a`. When you press `a` cmus will move you to the next line down (so that it is easy to add a bunch of files/folders in a row) and start adding the file/folder you pressed `a` in to your library. This may take a bit if you added a folder with a lot of music in it. As files are added, you will see the second time in the bottom right go up. This is the total duration of all the music in the cmus library.
-
-**Note:** cmus does not move, duplicate or change your files. It just remembers where they are and caches the metadata (duration, artist, etc.)
-
-**Note:** Cmus automatically saves your settings, library and everything when you quit.
-
-### Playing Tracks
-
-Press `1` to go to the simple library view. Use the `up` and `down` arrow keys (or `k`, `j`) to select an artist and album you would like to hear. Pressing `space` on the artist name will collapse or expand the albums it contains. Switch between list of tracks and artist/album view by pressing `Tab` and press `Enter` to play the selected track. Here is some keys to control the playback:
-
-	Press `c` to pause/unpause
-
-	Press `right`/`left` (or `h`, `l`) arrow keys to seek by 10 seconds
-
-	Press `<`/`>` seek by one minute
-
-### Keybindings
-
-See the configuration section on how to change keybindings.
-
-## Views
-
-cmus has 7 views, which are accessible via the number keys.
-
-### Library view (1)
-
-Display all tracks in so-called **library**. Tracks are sorted artist/album tree. Artist sorting is done alphabetically. Albums are sorted by year.
-
-### Sorted library view (2)
-
-Displays same content as view, but as a simple list which is automatically sorted by user criteria.
-
-### Playlist view (3)
-
-Displays editable playlist with optional sorting.
-
-### Play Queue view (4)
-
-Displays queue of tracks which are played next. These tracks are played before anything else (i.e. the playlist or library).
-
-### Browser view (5)
-
-Directory browser. In this view, music can be added to either the library, playlist or queue from the filesystem.
-
-### Filters view (6)
-
-Lists user defined filters.
-
-### Settings view (7)
-
-Change settings. See configuration for further information.
+See [cmus(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cmus.1), [cmus-tutorial(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cmus-tutorial.1) and [cmus-remote(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cmus-remote.1).
 
 ## Configuration
 
@@ -135,7 +53,9 @@ else
 fi
 ```
 
-To use the previous script in [Openbox](/index.php/Openbox "Openbox"), copy the code above into a file `~/bin/cplay`. Make the file executable using `chmod +x ~/bin/cplay`. Next edit `~/.config/openbox/rc.xml` and change the following key-bindings to look like this:
+Copy the code above into a file `~/bin/cplay` and make it [executable](/index.php/Executable "Executable").
+
+To use cmus-remote in [Openbox](/index.php/Openbox "Openbox"), edit `~/.config/openbox/rc.xml` and change the following key-bindings to look like this:
 
 **Note:** Make sure there are no conflicting keybindings in `rc.xml`
  `~/.config/openbox/rc.xml` 

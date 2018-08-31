@@ -27,7 +27,7 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
 *   [5 Optional configuration and tweaks](#Optional_configuration_and_tweaks)
     *   [5.1 Changing background images/colors](#Changing_background_images.2Fcolors)
         *   [5.1.1 GTK+ greeter](#GTK.2B_greeter)
-            *   [5.1.1.1 GTK3 Dark Theme](#GTK3_Dark_Theme)
+            *   [5.1.1.1 GTK3 Theme](#GTK3_Theme)
         *   [5.1.2 Webkit2 greeter](#Webkit2_greeter)
         *   [5.1.3 Unity greeter](#Unity_greeter)
         *   [5.1.4 KDE greeter](#KDE_greeter)
@@ -164,19 +164,9 @@ background=/usr/share/pixmaps/black_and_white_photography-wallpaper-1920x1080.jp
 
 **Note:** It is recommended to place the PNG or JPG file in `/usr/share/pixmaps` since the LightDM user needs read access to the wallpaper file.
 
-##### GTK3 Dark Theme
+##### GTK3 Theme
 
-GTK3 introduced "dark" alternate color palettes for themes, but lightdm-gtk-greeter does not yet support specifing one natively. A workaround is to override the theme with an evironment variable in `/usr/share/xgreeters/lightdm-gtk-greeter.desktop` For example:
-
- `/usr/share/xgreeters/lightdm-gtk-greeter.desktop` 
-```
-[Desktop Entry]
-Name=LightDM GTK+ Greeter
-Comment=This runs the GTK+ greeter, it should only be run from LightDM
-Exec=env GTK_THEME=Adwaita:dark lightdm-gtk-greeter
-Type=Application
-X-Ubuntu-Gettext-Domain=lightdm
-```
+GTK3 themes can be specified with the `theme-name` variable in the `[greeter]` section of `/etc/lightdm/lightdm-gtk-greeter.conf` For example, `theme-name=Adwaita-dark`.
 
 #### Webkit2 greeter
 

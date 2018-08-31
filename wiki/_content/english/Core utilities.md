@@ -10,6 +10,8 @@ Related articles
 *   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
 *   [Color output in console](/index.php/Color_output_in_console "Color output in console")
 *   [Archiving and compression](/index.php/Archiving_and_compression "Archiving and compression")
+*   [chmod](/index.php/Chmod "Chmod")
+*   [chown](/index.php/Chown "Chown")
 
 This article deals with so-called *core* utilities on a GNU/Linux system, such as *less*, *ls*, and *grep*. The scope of this article includes, but is not limited to, those utilities included with the GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) package. What follows are various tips and tricks and other helpful information related to these utilities.
 
@@ -19,19 +21,14 @@ Most command-line interfaces are documented in [man pages](/index.php/Man_page "
 
 *   [1 File management](#File_management)
     *   [1.1 ls](#ls)
-        *   [1.1.1 Long format](#Long_format)
-        *   [1.1.2 File names containing spaces enclosed in quotes](#File_names_containing_spaces_enclosed_in_quotes)
     *   [1.2 cat](#cat)
     *   [1.3 less](#less)
-        *   [1.3.1 Vim as alternative pager](#Vim_as_alternative_pager)
     *   [1.4 mkdir](#mkdir)
     *   [1.5 mv](#mv)
     *   [1.6 rm](#rm)
-    *   [1.7 chmod](#chmod)
-    *   [1.8 chown](#chown)
-    *   [1.9 find](#find)
-    *   [1.10 locate](#locate)
-    *   [1.11 diff](#diff)
+    *   [1.7 find](#find)
+    *   [1.8 locate](#locate)
+    *   [1.9 diff](#diff)
 *   [2 Text streams](#Text_streams)
     *   [2.1 grep](#grep)
     *   [2.2 sed](#sed)
@@ -45,7 +42,6 @@ Most command-line interfaces are documented in [man pages](/index.php/Man_page "
 *   [4 Miscellaneous](#Miscellaneous)
     *   [4.1 dd](#dd)
     *   [4.2 iconv](#iconv)
-        *   [4.2.1 Convert a file in place](#Convert_a_file_in_place)
     *   [4.3 od](#od)
     *   [4.4 seq](#seq)
     *   [4.5 tar](#tar)
@@ -77,41 +73,7 @@ See the `ls` [Info manual](/index.php/Info_manual "Info manual") ([online versio
 
 [exa](https://the.exa.website) is a modern, and more user friendly alternative to `ls` and `tree`, that has more features, such as displaying [Git](/index.php/Git "Git") modifications along with filenames, colouring differently each columnn in `--long` mode, or displaying `--long` mode metadata along with a `tree` view. *exa* is available as the [exa](https://www.archlinux.org/packages/?name=exa) package.
 
-#### Long format
-
-The `-l` option displays some metadata, for example:
-
- `$ ls -l */path/to/directory*` 
-```
-total 128
-drwxr-xr-x 2 archie users  4096 Jul  5 21:03 Desktop
-drwxr-xr-x 6 archie users  4096 Jul  5 17:37 Documents
-drwxr-xr-x 2 archie users  4096 Jul  5 13:45 Downloads
--rw-rw-r-- 1 archie users  5120 Jun 27 08:28 customers.ods
--rw-r--r-- 1 archie users  3339 Jun 27 08:28 todo
--rwxr-xr-x 1 archie users  2048 Jul  6 12:56 myscript.sh
-
-```
-
-The `total` value represents the total disk allocation for the files in the directory, by default in number of blocks.
-
-Below, each file and subdirectory is represented by a line divided into 7 metadata fields, in the following order:
-
-*   type and permissions:
-    *   the first character is the entry type, see `info ls -n "What information is listed"` for an explanation of all the possible types; for example:
-        *   `-` denotes a normal file;
-        *   `d` denotes a directory, i.e. a folder containing other files or folders;
-        *   `p` denotes a named pipe (aka FIFO);
-        *   `l` denotes a symbolic link;
-    *   the remaining characters are the entry's [permissions](/index.php/Permissions "Permissions");
-*   number of [hard links](https://en.wikipedia.org/wiki/Hard_link "wikipedia:Hard link") for the entity; files will have at least 1, i.e. the showed reference itself; folders will have at least 2: the showed reference, the self-referencing `.` entry, and then a `..` entry in each of its subfolders;
-*   owner [user](/index.php/User "User") name;
-*   [group](/index.php/Group "Group") name;
-*   size;
-*   last modification timestamp;
-*   entity name.
-
-#### File names containing spaces enclosed in quotes
+The `-l` option (long format) can be used to display file type, [permissions](/index.php/Permissions "Permissions"), owner [user](/index.php/User "User") & [group](/index.php/Group "Group"), size, modification timestamp and more, see the [info document](https://www.gnu.org/software/coreutils/manual/html_node/What-information-is-listed.html#index-long-ls-format).
 
 By default, file and directory names that contain spaces are displayed surrounded by single quotes. To change this behavior use the `-N` or `--quoting-style=literal` options. Alternatively, set the `QUOTING_STYLE` [environment variable](/index.php/Environment_variable "Environment variable") to `literal`. [[1]](https://unix.stackexchange.com/questions/258679/why-is-ls-suddenly-surrounding-items-with-spaces-in-single-quotes)
 
@@ -119,48 +81,13 @@ By default, file and directory names that contain spaces are displayed surrounde
 
 [cat](https://en.wikipedia.org/wiki/cat_(Unix) is a standard Unix utility that concatenates files to standard output.
 
-*   Because *cat* is not built into the shell, on many occasions you may find it more convenient to use a [redirection](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)"), for example in scripts, or if you care a lot about performance. In fact `< *file*` does the same as `cat *file*`.
-
-*   *cat* can work with multiple lines:
-
-```
-$ cat << EOF >> *path/file*
-*first line*
-...
-*last line*
-EOF
-
-```
-
-Alternatively, using `printf`:
-
-```
-$ printf '%s
-' 'first line' ... 'last line'
-
-```
-
-*   If you need to list file lines in reverse order, there is a coreutil command called [tac](https://en.wikipedia.org/wiki/tac_(Unix) (*cat* reversed).
+If you need to list file lines in reverse order, there is a coreutil command called [tac](https://en.wikipedia.org/wiki/tac_(Unix) (*cat* reversed).
 
 ### less
 
 [less](https://en.wikipedia.org/wiki/less_(Unix) is a terminal pager program used to view the contents of a text file one screen at a time. Whilst similar to other pagers such as [more](https://en.wikipedia.org/wiki/more_(command) and the [deprecated](https://git.kernel.org/cgit/utils/util-linux/util-linux.git/tree/Documentation/deprecated.txt) [pg](https://en.wikipedia.org/wiki/pg_(Unix) "wikipedia:pg (Unix)"), *less* offers a more advanced interface and complete [feature-set](http://www.greenwoodsoftware.com/less/faq.html).
 
 See [List of applications#Terminal pagers](/index.php/List_of_applications#Terminal_pagers "List of applications") for alternatives.
-
-#### Vim as alternative pager
-
-[Vim](/index.php/Vim "Vim") includes a script to view the content of text files, compressed files, binaries and directories. Add the following line to your shell configuration file to use it as a pager: `~/.bashrc`  `alias less='/usr/share/vim/vim80/macros/less.sh'` 
-
-There is also an alternative to the *less.sh* macro, which may work as the `PAGER` environment variable. Install [vimpager](https://www.archlinux.org/packages/?name=vimpager) and add the following to your shell configuration file:
-
- `~/.bashrc` 
-```
-export PAGER='vimpager'
-alias less=$PAGER
-```
-
-Now programs that use the `PAGER` environment variable, like [git](/index.php/Git "Git"), will use *vim* as pager.
 
 ### mkdir
 
@@ -206,14 +133,6 @@ Zsh users may want to prefix `noglob` to avoid implicit expansions.
 
 To remove directories believed to be empty, use *rmdir* as it fails if there are files inside the target.
 
-### chmod
-
-See [File permissions and attributes#Changing permissions](/index.php/File_permissions_and_attributes#Changing_permissions "File permissions and attributes").
-
-### chown
-
-See [File permissions and attributes#Changing ownership](/index.php/File_permissions_and_attributes#Changing_ownership "File permissions and attributes").
-
 ### find
 
 *find* is part of the [findutils](https://www.archlinux.org/packages/?name=findutils) package, which belongs to the [base](https://www.archlinux.org/groups/x86_64/base/) package group.
@@ -257,13 +176,10 @@ When comparing text files a word per word diff is often more desirable:
 
 ## Text streams
 
-Shell [pipelines](https://en.wikipedia.org/wiki/Pipeline_(Unix) operate on stdout by default. To operate on [stderr(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/stderr.3) you can redirect *stderr* to *stdout* with `*command* 2>&1 | *othercommand*` or, for Bash 4, `*command* |& *othercommand*`. See also [I/O Redirection](http://www.tldp.org/LDP/abs/html/io-redirection.html).
-
 ### grep
 
 [grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") is a command line text search utility originally written for Unix. The *grep* command searches files or standard input for lines matching a given regular expression, and prints these lines to standard output.
 
-*   Remember that *grep* handles files, so a construct like `grep *pattern* < *file*` is replaceable with `grep *pattern* *file*`.
 *   To include file line numbers in the output, use the `-n` option.
 *   *grep* can also be used for hexadecimal search in a binary file, to look for let say the `A1 F2` sequence in a file, the command line is: `$ LANG=C grep --text --perl-regexp "\xA1\xF2" */path/to/file*` 
 
@@ -342,7 +258,6 @@ Other common block device types include for example `mmcblk` for memory cards an
 ### ip
 
 [ip](https://en.wikipedia.org/wiki/Iproute2 "wikipedia:Iproute2") allows you to show information about network devices, IP addresses, routing tables, and other objects in the Linux [IP](https://en.wikipedia.org/wiki/Internet_Protocol "wikipedia:Internet Protocol") software stack. By appending various commands, you can also manipulate or configure most of these objects.
-
 **Note:** The *ip* utility is provided by the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package, which is included in the [base](https://www.archlinux.org/groups/x86_64/base/) group.
 
 | Object | Purpose | Manual page |
@@ -372,32 +287,7 @@ The [Network configuration](/index.php/Network_configuration "Network configurat
 
 ### ss
 
-*ss* is a utility to investigate network ports and is part of the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package in the [base](https://www.archlinux.org/groups/x86_64/base/) group. It has a similar functionality to the [deprecated](https://www.archlinux.org/news/deprecation-of-net-tools/) netstat utility.
-
-Common usage includes:
-
-Display all TCP Sockets with service names:
-
-```
-$ ss -at
-
-```
-
-Display all TCP Sockets with port numbers:
-
-```
-$ ss -atn
-
-```
-
-Display all UDP Sockets:
-
-```
-$ ss -au
-
-```
-
-For more information see [ss(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ss.8) or `ss.html` from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package.
+See [Network configuration#Investigate sockets](/index.php/Network_configuration#Investigate_sockets "Network configuration").
 
 ## Miscellaneous
 
@@ -435,18 +325,7 @@ $ iconv -f ISO-8859-15 -t UTF-8 *foo* > *foo*.utf
 
 See [iconv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) for more details.
 
-#### Convert a file in place
-
 **Tip:** You can use [recode](https://www.archlinux.org/packages/?name=recode) instead of iconv if you do not want to touch the mtime.
-
-Unlike [sed](/index.php/Sed "Sed"), *iconv* does not provide an option to convert a file in place. However, `sponge` from the [moreutils](https://www.archlinux.org/packages/?name=moreutils) package can help:
-
-```
-$ iconv -f WINDOWS-1251 -t UTF-8 *foobar*.txt | sponge *foobar*.txt
-
-```
-
-See [sponge(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sponge.1) for details.
 
 ### od
 

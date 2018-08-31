@@ -29,10 +29,9 @@
     *   [8.3 Важные команды UEFI консоли](#.D0.92.D0.B0.D0.B6.D0.BD.D1.8B.D0.B5_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D1.8B_UEFI_.D0.BA.D0.BE.D0.BD.D1.81.D0.BE.D0.BB.D0.B8)
         *   [8.3.1 bcfg](#bcfg)
         *   [8.3.2 edit](#edit)
-*   [9 Совместимое оборудование](#.D0.A1.D0.BE.D0.B2.D0.BC.D0.B5.D1.81.D1.82.D0.B8.D0.BC.D0.BE.D0.B5_.D0.BE.D0.B1.D0.BE.D1.80.D1.83.D0.B4.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
-*   [10 Исправление проблем](#.D0.98.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-    *   [10.1 Windows изменяет порядок загрузки](#Windows_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D1.8F.D0.B5.D1.82_.D0.BF.D0.BE.D1.80.D1.8F.D0.B4.D0.BE.D0.BA_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8)
-*   [11 См. также](#.D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [9 Исправление проблем](#.D0.98.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
+    *   [9.1 Windows изменяет порядок загрузки](#Windows_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D1.8F.D0.B5.D1.82_.D0.BF.D0.BE.D1.80.D1.8F.D0.B4.D0.BE.D0.BA_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8)
+*   [10 См. также](#.D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Загрузка ОС с помощью BIOS
 
@@ -82,7 +81,7 @@ This limitation does not exist in Linux Kernel but rather depends on the bootloa
 
 Если каталог `/sys/firmware/efi` существует, то ядро загружено в режиме EFI. В этом случае UEFI имеет такую же разрядность, как у ядра. (т.е. i686 или x86_64)
 
-**Примечание:** Системы с SoC (System-on-a-Chip) Intel Atom поставляются с 32-битным UEFI (по состоянию на 2 ноября 2013). Дополнительную информацию можно получить на [этой странице](/index.php/Unified_Extensible_Firmware_Interface/Hardware#Intel_Atom_System-on-Chip "Unified Extensible Firmware Interface/Hardware").
+**Примечание:** Системы с SoC (System-on-a-Chip) Intel Atom поставляются с 32-битным UEFI (по состоянию на 2 ноября 2013). Дополнительную информацию можно получить на этой странице.
 
 #### Apple Mac
 
@@ -344,10 +343,6 @@ FS0:\> cd \efi\grub
 FS0:\efi\grub\> edit grub.cfg
 
 ```
-
-## Совместимое оборудование
-
-Main page [Unified Extensible Firmware Interface/Hardware](/index.php/Unified_Extensible_Firmware_Interface/Hardware "Unified Extensible Firmware Interface/Hardware")
 
 ## Исправление проблем
 

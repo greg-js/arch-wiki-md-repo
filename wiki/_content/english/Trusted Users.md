@@ -37,7 +37,6 @@ For more information, see the [Trusted User Bylaws](https://aur.archlinux.org/tr
 | Nick | Name | E-Mail |
 | [alad](https://aur.archlinux.org/packages/?K=Alad&SeB=m) | [Alad Wenter](/index.php/User:Alad "User:Alad") | alad@archlinux.org |
 | [alucryd](https://aur.archlinux.org/packages.php?K=alucryd&SeB=m) | Maxime Gauduin | alucryd@archlinux.org |
-| [Ambrevar](https://aur.archlinux.org/packages.php?K=Ambrevar&SeB=m) | [Pierre Neidhardt](/index.php/User:Ambrevar "User:Ambrevar") | ambrevar@gmail.com |
 | [anatolik](https://aur.archlinux.org/packages.php?K=anatolik&SeB=m) | Anatol Pomozov | anatol dot pomozov + arch at gmail |
 | [andrewSC](https://aur.archlinux.org/packages.php?K=andrewSC&SeB=m) | Andrew Crerar | andrew (at) crerar (dot) io |
 | [anthraxx](https://aur.archlinux.org/packages.php?K=anthraxx&SeB=m) | [Levente Polyak](/index.php/User:Anthraxx "User:Anthraxx") | anthraxx [at] archlinux [dot] org |
@@ -85,6 +84,7 @@ For more information, see the [Trusted User Bylaws](https://aur.archlinux.org/tr
 | [wild](https://aur.archlinux.org/packages.php?K=wild&SeB=m) | [Dan Printzell](/index.php/User:Vild "User:Vild") | [arch@vild.io](mailto:arch@vild.io) |
 | [Xyne](https://aur.archlinux.org/packages.php?K=Xyne&SeB=m) | Xyne | ca . archlinux @ xyne, in reverse order |
 | [xyproto](https://aur.archlinux.org/packages.php?K=xyproto&SeB=m) | Alexander Rødseth | rodseth@gmail.com |
+| [yan12125](https://aur.archlinux.org/packages.php?K=yan12125&SeB=m) | Chih-Hsuan Yen | yan12125@gmail.com |
 | [zorun](https://aur.archlinux.org/packages.php?K=zorun&SeB=m) | Baptiste Jonglez | archlinux bitsofnetworks org |
 
 ## Inactive Trusted Users
@@ -96,6 +96,7 @@ For more information, see the [Trusted User Bylaws](https://aur.archlinux.org/tr
 | Nick | Name |
 | [abhidg](https://aur.archlinux.org/packages.php?K=abhidg&SeB=m) | Abhishek Dasgupta |
 | [Allan](https://aur.archlinux.org/packages.php?K=Allan&SeB=m) | Allan McRae |
+| [Ambrevar](https://aur.archlinux.org/packages.php?K=Ambrevar&SeB=m) | [Pierre Neidhardt](/index.php/User:Ambrevar "User:Ambrevar") |
 | [anders](https://aur.archlinux.org/packages.php?K=anders&SeB=m) | Anders Bergh |
 | [angvp](https://aur.archlinux.org/packages.php?K=angvp&SeB=m) | [Angel Velásquez](/index.php/User:Angvp "User:Angvp") |
 | [Atsutane](https://aur.archlinux.org/packages.php?K=Atsutane&SeB=m) | Thorsten Töpper |

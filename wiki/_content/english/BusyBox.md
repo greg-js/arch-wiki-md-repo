@@ -3,9 +3,9 @@ Related articles
 *   [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")
 *   [init](/index.php/Init "Init")
 
-**Warning:** Do not expect full drop-in replacement and compatibility. Certain utilities may not exist and for those that do, there may be missing options.
+[BusyBox](https://en.wikipedia.org/wiki/BusyBox "wikipedia:BusyBox") provides many common UNIX utilities in a single small executable for embedded systems.
 
-[w:BusyBox](https://en.wikipedia.org/wiki/BusyBox "w:BusyBox")
+**Note:** Do not expect full drop-in replacement and compatibility. Certain utilities may not exist and for those that do, there may be missing options.
 
 ## Contents
 

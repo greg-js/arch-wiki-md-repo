@@ -150,7 +150,7 @@ Mozilla/5.0 (Windows NT 6.1; rv:52.0) Gecko/20100101 Firefox/52.0
 **Note:**
 
 *   Changing `Linux x86_64` to a non-Linux platform may make your browser more unique, since websites can also gather your platform type via Javascript, and this setting cannot be changed in qutebrowser.
-*   Changing your user-agent away from the default will prevent some websites from working properly.
+*   Changing your user-agent away from the default will prevent some websites from working properly. For example, CAPTCHA will mention your browser is not supported if the user agent is listed as an out-of-date browser.
 
 #### Set a common HTTP_ACCEPT header
 

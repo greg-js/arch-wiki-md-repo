@@ -1,4 +1,4 @@
-[Pantheon](https://bbs.archlinux.org/viewtopic.php?id=152930) is the default desktop environment originally created for the [elementary OS](http://elementary.io/) distribution. It is written from scratch using [Vala](https://en.wikipedia.org/wiki/Vala_(programming_language) and the GTK3 toolkit. With regards to usability and appearance, the desktop has some similarities with [GNOME](/index.php/GNOME "GNOME") Shell and macOS.
+[Pantheon](https://bbs.archlinux.org/viewtopic.php?id=152930) is the desktop environment originally created for the [elementary OS](http://elementary.io/) distribution. It is written from scratch in [Vala](https://en.wikipedia.org/wiki/Vala_(programming_language) "wikipedia:Vala (programming language)"), using [GTK3](/index.php/GTK%2B "GTK+") and [Granite](https://github.com/elementary/granite). With regards to usability and appearance, the desktop has some similarities with [GNOME Shell](/index.php/GNOME_Shell "GNOME Shell") and [macOS](https://en.wikipedia.org/wiki/MacOS "wikipedia:MacOS").
 
 ## Contents
 
@@ -41,7 +41,7 @@ Although the [elementary OS](https://elementary.io/) release schedule and toolch
 
 #### Unofficial repository
 
-**Warning:** The pantheon repository is no more, from now on pantheon packages will be available in the extra-alucryd repository, and they will be signed.
+**Note:** The pantheon repository is no more, from now on pantheon packages will be available in the extra-alucryd repository, and they will be signed.
 
 [Alucryd's unofficial repo](https://github.com/alucryd/aur-alucryd/tree/master/pantheon) contains more and more up-to-date packages than the few available in [community](/index.php/Community "Community"). To use it add the following lines at the top of your sources in `/etc/pacman.conf`:
 
@@ -67,7 +67,7 @@ For the minimal Pantheon shell, install [pantheon-session-git](https://aur.archl
 
 ### Services and Configuration
 
-These packages provide background services and default settings for Pantheon and elementary OS applications:
+These optional packages provide background services and default settings for Pantheon and elementary OS applications:
 
 *   [pantheon-default-settings-git](https://aur.archlinux.org/packages/pantheon-default-settings-git/): Default appearance, behavior, and configuration; pulls in theme packages [elementary-icon-theme](https://www.archlinux.org/packages/?name=elementary-icon-theme), [gtk-theme-elementary-git](https://aur.archlinux.org/packages/gtk-theme-elementary-git/), and [elementary-wallpapers-git](https://aur.archlinux.org/packages/elementary-wallpapers-git/)
 *   [gnome-settings-daemon-elementary](https://aur.archlinux.org/packages/gnome-settings-daemon-elementary/): A patched [gnome-settings-daemon-ubuntu](https://aur.archlinux.org/packages/gnome-settings-daemon-ubuntu/) required by [pantheon-dpms-helper-git](https://aur.archlinux.org/packages/pantheon-dpms-helper-git/) and [wingpanel-indicator-power-git](https://aur.archlinux.org/packages/wingpanel-indicator-power-git/)
@@ -76,7 +76,7 @@ These packages provide background services and default settings for Pantheon and
 
 ### Theme
 
-These packages contribute to the look and feel of the desktop:
+These optional packages contribute to the look and feel of the desktop:
 
 *   [elementary-icon-theme](https://www.archlinux.org/packages/?name=elementary-icon-theme) or [elementary-icon-theme-git](https://aur.archlinux.org/packages/elementary-icon-theme-git/): Icon theme designed to be smooth, sexy, clear, and efficient (development version)
 *   [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/) or [lightdm-pantheon-greeter-git](https://aur.archlinux.org/packages/lightdm-pantheon-greeter-git/): LightDM greeter
@@ -92,7 +92,7 @@ It is also recommended to install the following fonts:
 
 ### Applications
 
-These are some of the original, patched, and selected packages that comprise the elementary OS software suite:
+These are some of the original, patched, and selected packages that comprise the optional elementary OS software suite:
 
 *   [pantheon-files](https://www.archlinux.org/packages/?name=pantheon-files) or [pantheon-files-git](https://aur.archlinux.org/packages/pantheon-files-git/): File explorer developed from Marlin
 *   [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal) or [pantheon-terminal-git](https://aur.archlinux.org/packages/pantheon-terminal-git/): Terminal emulator
@@ -200,18 +200,30 @@ To make [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-te
 
 #### Pantheon-terminal transparency
 
-Transparency in pantheon-terminal is not yet fully functional with GTK themes other than the elmentary OS theme. Either use [gtk-theme-elementary](https://aur.archlinux.org/packages/gtk-theme-elementary/), [gtk-theme-elementary-git](https://aur.archlinux.org/packages/gtk-theme-elementary-git/) or add [this](http://bazaar.launchpad.net/~elementary-design/egtk/4.x/revision/210) code to your theme or the override file in `~/.config/gtk-3.0/gtk.css`.
+Transparency in pantheon-terminal is not yet fully functional with GTK themes other than the elmentary OS theme. Either use [gtk-theme-elementary](https://aur.archlinux.org/packages/gtk-theme-elementary/), [gtk-theme-elementary-git](https://aur.archlinux.org/packages/gtk-theme-elementary-git/) or add the following code to your theme's css or the override file in `~/.config/gtk-3.0/gtk.css`:
+
+```
+/************
+ * Terminal *
+ ***********/
+
+PantheonTerminalPantheonTerminalWindow.background {
+   background-color: transparent;
+}
+
+```
 
 #### Wingpanel transparency
 
 Wingpanel is transparent by design when using [gtk-theme-elementary](https://aur.archlinux.org/packages/gtk-theme-elementary/) or [gtk-theme-elementary-git](https://aur.archlinux.org/packages/gtk-theme-elementary-git/), and becomes opaque when a maximized window occupies your screen. However, using other GTK themes will produce a solid panel most of the time.
 
-To achieve the former behavior within other themes, add the following lines to the end of its css or the override file in `~/.config/gtk-3.0/gtk.css`:
+To achieve the former behavior within another theme, add the following code to its css or the override file in `~/.config/gtk-3.0/gtk.css`:
 
 ```
 /*********************
  * wingpanel support *
  ********************/
+
 .panel {
     background-color: transparent;
     transition: all 1s ease-in-out;

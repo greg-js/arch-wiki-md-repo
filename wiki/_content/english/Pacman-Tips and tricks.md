@@ -49,7 +49,8 @@ For general methods to improve the flexibility of the provided tips or *pacman* 
         *   [3.1.3 aria2](#aria2)
         *   [3.1.4 Other applications](#Other_applications)
 *   [4 Utilities](#Utilities)
-    *   [4.1 Graphical front-ends](#Graphical_front-ends)
+    *   [4.1 Pacman wrappers](#Pacman_wrappers)
+    *   [4.2 Graphical front-ends](#Graphical_front-ends)
 
 ## Maintenance
 
@@ -393,7 +394,7 @@ First, install any network-supporting filesystem packages: [shfs-utils](https://
 
 Then, to share the actual packages, mount `/var/cache/pacman/pkg` from the server to `/var/cache/pacman/pkg` on every client machine.
 
-**Note:** Do not make `/var/cache/pacman/pkg` or any of its ancestors (e.g., `/var`) a symlink. *Pacman* expects these to be directories. When *pacman* re-installs or upgrades itself, it will remove the symlinks and create empty directories instead. However during the transaction *pacman* relies on some files residing there, hence breaking the update process. Refer to [FS#50298](https://bugs.archlinux.org/task/50298) for further details.
+**Warning:** Do not make `/var/cache/pacman/pkg` or any of its ancestors (e.g., `/var`) a symlink. *Pacman* expects these to be directories. When *pacman* re-installs or upgrades itself, it will remove the symlinks and create empty directories instead. However during the transaction *pacman* relies on some files residing there, hence breaking the update process. Refer to [FS#50298](https://bugs.archlinux.org/task/50298) for further details.
 
 #### two-way with rsync
 
@@ -654,10 +655,6 @@ There are other downloading applications that you can use with *pacman*. Here th
 
 	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://www.archlinux.org/packages/?name=lostfiles)
 
-*   **Pacmatic** — *Pacman* wrapper to check Arch News before upgrading, avoid partial upgrades, and warn about configuration file changes.
-
-	[http://kmkeen.com/pacmatic](http://kmkeen.com/pacmatic) || [pacmatic](https://www.archlinux.org/packages/?name=pacmatic)
-
 *   **pacutils** — Helper library for libalpm based programs.
 
 	[https://github.com/andrewgregory/pacutils](https://github.com/andrewgregory/pacutils) || [pacutils](https://www.archlinux.org/packages/?name=pacutils)
@@ -681,6 +678,18 @@ There are other downloading applications that you can use with *pacman*. Here th
 *   **[snap-pac](/index.php/Snapper#Wrapping_pacman_transactions_in_snapshots "Snapper")** — Make *pacman* automatically use snapper to create pre/post snapshots like openSUSE's YaST.
 
 	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://www.archlinux.org/packages/?name=snap-pac)
+
+### Pacman wrappers
+
+See also [AUR helpers#Pacman wrappers](/index.php/AUR_helpers#Pacman_wrappers "AUR helpers").
+
+*   **Pacmatic** — *Pacman* wrapper to check Arch News before upgrading, avoid partial upgrades, and warn about configuration file changes.
+
+	[http://kmkeen.com/pacmatic](http://kmkeen.com/pacmatic) || [pacmatic](https://www.archlinux.org/packages/?name=pacmatic)
+
+*   **[Powerpill](/index.php/Powerpill "Powerpill")** — Uses parallel and segmented downloading through [aria2](/index.php/Aria2 "Aria2") and [Reflector](/index.php/Reflector "Reflector") to try to speed up downloads for *pacman*.
+
+	[https://xyne.archlinux.ca/projects/powerpill/](https://xyne.archlinux.ca/projects/powerpill/) || [powerpill](https://aur.archlinux.org/packages/powerpill/)
 
 ### Graphical front-ends
 

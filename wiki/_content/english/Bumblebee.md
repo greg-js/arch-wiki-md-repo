@@ -292,13 +292,20 @@ The bumblebee daemon may fail to activate the graphics card after suspending. A 
 [driver-nvidia]
 PMMethod=bbswitch
 
-# ...
-
 [driver-nouveau]
 PMMethod=bbswitch
 ```
 
 **Note:** This fix seems to work only after rebooting the system. Restarting the bumblebee service is not enough.
+
+If the above fix fails, try the following command:
+
+```
+# echo 1 > /sys/bus/pci/rescan
+
+```
+
+To rescan the PCI bus automatically after a suspend, create a script as described in [Power management#Hooks in /usr/lib/systemd/system-sleep](/index.php/Power_management#Hooks_in_.2Fusr.2Flib.2Fsystemd.2Fsystem-sleep "Power management").
 
 ### Multiple monitors
 
@@ -727,7 +734,7 @@ This makes primus display the previously rendered frame.
 
 ### Problems with bumblebee after resuming from standby
 
-In some systems, it can happens that the nvidia module is loaded after resuming from standby. The solution for this, is to install the [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) and [acpi](https://www.archlinux.org/packages/?name=acpi) package.
+In some systems, it can happens that the nvidia module is loaded after resuming from standby. One possible solution for this is to install the [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) and [acpi](https://www.archlinux.org/packages/?name=acpi) package.
 
 ### Optirun does not work, no debug output
 

@@ -1,5 +1,4 @@
-| [Laptop main page](/index.php/Laptop "Laptop") |
-| [Acer](/index.php/Laptop/Acer "Laptop/Acer") - [Apple](/index.php/Laptop/Apple "Laptop/Apple") - [Asus](/index.php/Laptop/Asus "Laptop/Asus") - [Compaq](/index.php/Laptop/Compaq "Laptop/Compaq") (discontinued) - [Dell](/index.php/Laptop/Dell "Laptop/Dell") - [Fujitsu](/index.php/Laptop/Fujitsu "Laptop/Fujitsu") - <a class="mw-selflink selflink">HP</a> - [IBM/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo") - [MSI](/index.php/Laptop/MSI "Laptop/MSI") - [Samsung](/index.php/Laptop/Samsung "Laptop/Samsung") - [Sony](/index.php/Laptop/Sony "Laptop/Sony") - [Toshiba](/index.php/Laptop/Toshiba "Laptop/Toshiba") - [Other](/index.php/Laptop/Other "Laptop/Other") |
+[Acer](/index.php/Laptop/Acer "Laptop/Acer") – [Apple](/index.php/Laptop/Apple "Laptop/Apple") – [ASUS](/index.php/Laptop/ASUS "Laptop/ASUS") – [Dell](/index.php/Laptop/Dell "Laptop/Dell") – [Fujitsu](/index.php/Laptop/Fujitsu "Laptop/Fujitsu") – <a class="mw-selflink selflink">HP</a> – [IBM/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo") – [MSI](/index.php/Laptop/MSI "Laptop/MSI") – [Samsung](/index.php/Laptop/Samsung "Laptop/Samsung") – [Sony](/index.php/Laptop/Sony "Laptop/Sony") – [Toshiba](/index.php/Laptop/Toshiba "Laptop/Toshiba") – [Other](/index.php/Laptop/Other "Laptop/Other")
 
 ## Model List
 
@@ -7,6 +6,12 @@
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
+| Compaq Presario F700 | 2009.02 | Nvidia 7000M driver: *nvidia* | Nvidia HD audio with ALSA | Nvidia: OK | Atheros: OK
+driver: *ath5k* | none | ACPI
+Suspend to RAM/disk: OK
+Used pm-utils + uswsusp
+CPU frequency scaling: OK | N/A | Hangs for 20-30s when loading ACPI modules when on battery power. Some hotkeys do not work. Need to turn `AutoAddDevices` to `false` in [Xorg](/index.php/Xorg "Xorg") configuration to fix keyboard layout problems. |
+| Compaq Presario CQ60-420ED | 2009.08 | Nvidia GeForce 8200M driver: *nvidia* | nVidia MCP72XE/MCP72P/MCP78U/MCP78S HD Audio using ALSA | nVidia MCP77 Ethernet | Atheros AR5001 driver: *ath5k* | none | Using [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/) and [cpupower](https://www.archlinux.org/packages/?name=cpupower) (replaces *cpufrequtils*), haven't properly tested yet | Untested | The console framebuffer is a bit slow (using `vga=773` in [GRUB](/index.php/GRUB "GRUB")) and the wireless LED indicator flickers red and blue. Touchpad (scrolling) works with GNOME |
 | HP EliteBook 2570p | 2011.12 | Intel HD 4000 driver: *i915* | Intel HDA driver: *snd_hda_intel* | Intel 82579LM driver: *e1000e* | Intel 6250 driver: *iwlwifi* | Yes | Suspend to RAM: Yes
 Disk: Yes
 Battery: Yes

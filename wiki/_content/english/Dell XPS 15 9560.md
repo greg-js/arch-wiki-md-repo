@@ -22,6 +22,7 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 956
 ## Contents
 
 *   [1 UEFI](#UEFI)
+    *   [1.1 Firmware Update](#Firmware_Update)
 *   [2 Power Management](#Power_Management)
     *   [2.1 Suspend and Hibernate](#Suspend_and_Hibernate)
     *   [2.2 Fan and temperature monitoring and control](#Fan_and_temperature_monitoring_and_control)
@@ -64,6 +65,18 @@ Before installing it is necessary to modify some UEFI Settings. They can be acce
 *   Disable secure boot to allow Linux to boot.
 
 Installation of Arch Linux can proceed normally. Refer to the [Installation guide](/index.php/Installation_guide "Installation guide") for more information.
+
+### Firmware Update
+
+Firmware images can be found at [Dell support page](https://www.dell.com/support/home/us/en/04/product-support/product/xps-15-9560-laptop/drivers) as `XPS_15_9560_X.Y.Z.exe` files. In order to install:
+
+*   Download the desired firmware from section "Dell XPS 15 9560 System BIOS"
+*   Save it in `/boot/EFI/Dell/Bios/` (this path may vary, depending on your installation)
+*   Reboot the system, and enter the boot menu by pressing repeatedly `F12` on Dell logo
+*   Choose "Bios Flash Update"
+*   Select the file previously saved, and start the process
+
+The process will take about five minutes, during which the system will have some reboots and push fans at maximum speed. Finally the system will reboot normally.
 
 ## Power Management
 

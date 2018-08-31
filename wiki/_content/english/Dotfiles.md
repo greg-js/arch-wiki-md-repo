@@ -17,7 +17,7 @@ This article collects user repositories with custom configuration files, commonl
 
 ## Version control
 
-Managing dotfiles with version control software such as [Git](/index.php/Git "Git") helps to keep track of changes, share with others, and synchronize dotfiles across various hosts.
+Managing dotfiles with [version control systems](/index.php/Version_control_system "Version control system") such as [Git](/index.php/Git "Git") helps to keep track of changes, share with others, and synchronize dotfiles across various hosts.
 
 ### Using gitignore
 
@@ -149,6 +149,7 @@ clean = "sed -e 's/^password=.*/#password=TODO/'"
 | [sistematico](https://github.com/sistematico/majestic) | zsh/fish/bash | [i3 Gaps](https://github.com/Airblader/i3) | vim/nano | termite | tmux | ncmpcpp | polybar | mutt | weechat |
 | [sitilge](https://git.sitilge.id.lv/sitilge/dotfiles) | zsh | awesome | neovim | termite | thunderbird |
 | [swalladge](https://github.com/swalladge/dotfiles) | zsh/bash | i3 | neovim/vim | termite | tmux | cmus | i3pystatus | mutt |
+| [SyfiMalik](https://github.com/SyfiMalik/cfg) | zsh | i3 | vim | rxvt-unicode | tmux | ncmpcpp/mpd | polybar | mutt | weechat |
 | [thiagowfx](https://github.com/thiagowfx/dotfiles) | bash/zsh | i3 | vim/emacs | rxvt-unicode | ncmpcpp | i3blocks |
 | [unexist](http://hg.subtle.de/dotfiles/file) | zsh | subtle | vim | rxvt-unicode | ncmpcpp | mutt | irssi |
 | [vodik](https://github.com/vodik/dotfiles) | zsh | xmonad | vim | termite-git | tmux | ncmpcpp | custom | mutt | weechat |

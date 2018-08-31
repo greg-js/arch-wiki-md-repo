@@ -256,7 +256,7 @@ This process can be automated by cron. See AWStats cron template: `/usr/share/do
 
 ## GeoIP (optional)
 
-To add geo ip support, install [Geo::IP](Geo::IP) module using cpan. (See [Perl#CPAN.pm](/index.php/Perl#CPAN.pm "Perl") for more details.) Alternatively, install [perl-geoip](https://aur.archlinux.org/packages/perl-geoip/) from [AUR](/index.php/AUR "AUR"). Add the following line to each of the awstats site configuration files located in /etc/awstats/:
+To add geo ip support, install Geo::IP module using cpan. (See [Perl#CPAN.pm](/index.php/Perl#CPAN.pm "Perl") for more details.) Alternatively, install [perl-geoip](https://aur.archlinux.org/packages/perl-geoip/) from [AUR](/index.php/AUR "AUR"). Add the following line to each of the awstats site configuration files located in /etc/awstats/:
 
 ```
 LoadPlugin="geoip GEOIP_STANDARD /usr/share/GeoIP/GeoIP.dat"

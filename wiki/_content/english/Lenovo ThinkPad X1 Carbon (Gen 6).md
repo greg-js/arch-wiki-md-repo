@@ -23,8 +23,10 @@ Related articles
 *   [5 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
 *   [6 Full-disk encryption](#Full-disk_encryption)
     *   [6.1 Ramdisk module](#Ramdisk_module)
-*   [7 References](#References)
-*   [8 Additional resources](#Additional_resources)
+*   [7 Tools](#Tools)
+    *   [7.1 Diagnostics](#Diagnostics)
+*   [8 References](#References)
+*   [9 Additional resources](#Additional_resources)
 
 ## Model description
 
@@ -94,6 +96,8 @@ The automatic script was based off of a guide written with [instructions for pat
 
 ### Enabling S2idle
 
+**Note:** Since [kernel version 4.18-rc2](https://lkml.org/lkml/2018/6/24/113) acpi.ec_no_wakeup=1 is set by default
+
 From [the Lenovo forums](https://forums.lenovo.com/t5/Linux-Discussion/X1-Carbon-Gen-6-cannot-enter-deep-sleep-S3-state-aka-Suspend-to/m-p/4016317/highlight/true#M10682): Add the following [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to enable S2idle support:
 
 ```
@@ -117,9 +121,7 @@ sudo update-grub
 
 and restart the system.
 
-**Note:** This disables wakeup/resume via lid open.
-
-**Note:** This supports S2idle state, not S0i3 state as some seem to have been led to believe!
+**Note:** This supports only S2idle state, not S0i3 state as some seem to have been led to believe!
 
 You might also need to disable the Realtek memory card reader (which appears to use a constant 2-3 W) either via the BIOS or via
 
@@ -157,7 +159,7 @@ The script also supports more advance thermal/performance features including CPU
 
 ## TrackPoint and Touchpad issues
 
-Some models of the 6th generation X1 Carbon seem to have issues with the TrackPoint and Touchpad working at the same time.
+**Note:** Some models of the 6th generation X1 Carbon seem to have issues with the TrackPoint and Touchpad working at the same time.
 
 To get the TrackPoint and Touchpad to work at the same time, add `synaptics_intertouch=1` to the `psmouse` [kernel module](/index.php/Kernel_module "Kernel module") options, for example in the cmdline of the [boot loader](/index.php/Boot_loader "Boot loader"):
 
@@ -188,6 +190,18 @@ echo -n "reconnect" | sudo tee /sys/bus/serio/devices/serio1/drvctl
 
 With LUKS for root, i915 needs to be loaded in ramdisk in order to access the password prompt. Add i915 to MODULES list in `/etc/mkinitcpio.conf` and regenerate the ramdisk.
 
+## Tools
+
+### Diagnostics
+
+`s-tui` ([s-tui](https://aur.archlinux.org/packages/s-tui/)): an aesthetically pleasing and useful curses-style interface that shows graphs of CPU frequency, utilization, temperature, and power consumption. It also has a built in stress tester.
+
+`intel_gpu_top` ([intel-gpu-tools](https://www.archlinux.org/packages/?name=intel-gpu-tools)): gives you some top-like info for the integrated GPU. This can be quite useful in diagnosing GPU acceleration issues.
+
+`powertop` ([powertop](https://www.archlinux.org/packages/?name=powertop)): provides detailed information about CPU power consumption and recommendations on how to improve it.
+
+`tlp-stat` ([tlp](https://www.archlinux.org/packages/?name=tlp)): a much simpler alternative to remembering which `cat /sys/devices/system/*` to run in many cases. It can give very detailed, structured information about components like the battery, processor, graphics card, etc.
+
 ## References
 
 *   [A good night's sleep for the Lenovo X1 Carbon Gen6](https://delta-xi.net/#056): Patching ACPI DSDT tables to add S3 support
@@ -199,7 +213,7 @@ With LUKS for root, i915 needs to be loaded in ramdisk in order to access the pa
 *   [StackExchange: Success with enabling RMI4 config flags for Touchpad and TrackPoint](https://unix.stackexchange.com/a/431820)
 *   [Kernel patch - Input: elantech - add support for SMBus devices](https://patchwork.kernel.org/patch/10324633/)
 *   [Kernel patch - Input: synaptics - add Lenovo 80 series ids to SMBus](https://patchwork.kernel.org/patch/10330857/)
-*   [Early KMS start](/index.php/Intel_graphics "Intel graphics"): Adding i915 to ramdisk
+*   [Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting"): Adding i915 to ramdisk
 
 ## Additional resources
 
