@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Archiso](/index.php/Archiso "Archiso"). Дата последней синхронизации: 27 февраля 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=512164).
+**Состояние перевода:** На этой странице представлен перевод статьи [Archiso](/index.php/Archiso "Archiso"). Дата последней синхронизации: 30 июня 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Archiso&diff=0&oldid=528289).
 
 Ссылки по теме
 
@@ -37,13 +37,11 @@
 *   [6 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
     *   [6.1 Документация и учебные пособия](#.D0.94.D0.BE.D0.BA.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D0.B0.D1.86.D0.B8.D1.8F_.D0.B8_.D1.83.D1.87.D0.B5.D0.B1.D0.BD.D1.8B.D0.B5_.D0.BF.D0.BE.D1.81.D0.BE.D0.B1.D0.B8.D1.8F)
     *   [6.2 Примеры шаблонов настройки](#.D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B_.D1.88.D0.B0.D0.B1.D0.BB.D0.BE.D0.BD.D0.BE.D0.B2_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8)
+    *   [6.3 Создание автономного установочного ISO](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.B2.D1.82.D0.BE.D0.BD.D0.BE.D0.BC.D0.BD.D0.BE.D0.B3.D0.BE_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BE.D1.87.D0.BD.D0.BE.D0.B3.D0.BE_ISO)
 
 ## Установка
 
-**Примечание:**
-
-*   Чтобы использовать Archiso, вы должны работать на платформе x86_64.[[1]](https://projects.archlinux.org/archiso.git/tree/docs/README.build#n67)
-*   Рекомендуется действовать с правами суперпользователем во всех последующих шагах. В противном случае возможны проблемы с ложными разрешениями позже.
+**Примечание:** Рекомендуется действовать с правами суперпользователем во всех последующих шагах. В противном случае возможны проблемы позже с ложными разрешениями.
 
 Прежде чем начать, [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [archiso](https://www.archlinux.org/packages/?name=archiso) или [archiso-git](https://aur.archlinux.org/packages/archiso-git/).
 
@@ -55,7 +53,7 @@ Archiso поставляется с двумя "профилями": *releng* и
 Теперь скопируйте профиль на Ваш выбор, в каталог (`~/archlive` используется в примере ниже), в котором вы можете вносить корректировки. Выполните следующую команду, заменив `**profile**` либо на `releng`, либо на `baseline`.
 
 ```
-# cp -r /usr/share/archiso/configs/**profile**/* *archlive*
+# cp -r /usr/share/archiso/configs/**profile**/ *archlive*
 
 ```
 
@@ -68,14 +66,14 @@ Archiso поставляется с двумя "профилями": *releng* и
 
 Внутри каталога `*archlive*`, созданного в [#Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0), имеется ряд файлов и каталогов; мы рассмотрим лишь несколько из них, в основном:
 
-*   `packages.*` - это где вы перечисляете построчно пакеты, которые вы хотите установить, и
+*   `packages.x86_64` - это где вы перечисляете построчно пакеты, которые вы хотите установить, и
 *   каталог `airootfs` - это каталог, действующий как наложение, и именно там вы делаете все настройки.
 
 Как правило, любые административные задачи, которые вы обычно делаете после новой установки, могут быть выполнены в скрипте `*archlive*/airootfs/root/customize_airootfs.sh`, за исключением установки пакетов. Скрипт должен быть написан с точки зрения новой среды, поэтому `/` в скрипте означает корень ISO-образа, который создается.
 
 ### Установка пакетов
 
-[Отредактируйте](/index.php/%D0%9E%D1%82%D1%80%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%B8%D1%80%D1%83%D0%B9%D1%82%D0%B5 "Отредактируйте") списки пакетов в `packages.i686`, `packages.x86_64` или `packages.both` чтобы указать, какие пакеты должны быть установлены на live носителе. Суффикс здесь указывает, для какой архитектуре доступны пакеты.
+[Отредактируйте](/index.php/%D0%9E%D1%82%D1%80%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%B8%D1%80%D1%83%D0%B9%D1%82%D0%B5 "Отредактируйте") списки пакетов в `packages.x86_64` чтобы указать, какие пакеты должны быть установлены на live носителе.
 
 **Примечание:** Если вы хотите использовать [оконный менеджер](/index.php/%D0%9E%D0%BA%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Оконный менеджер") в Live CD, то вы должны добавить необходимые и правильные [видео драйвера](/index.php/%D0%92%D0%B8%D0%B4%D0%B5%D0%BE_%D0%B4%D1%80%D0%B0%D0%B9%D0%B2%D0%B5%D1%80%D0%B0 "Видео драйвера"), или WM может зависнуть при загрузке.
 
@@ -132,71 +130,18 @@ Archiso поставляется с двумя "профилями": *releng* и
 
 #### Установка пакетов из multilib
 
-Чтобы установить пакеты из репозитория [multilib](/index.php/Multilib_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Multilib (Русский)"), вам необходимо создать два файла конфигурации pacman: один для x86_64 и другой для i686\. Скопируйте файл `pacman.conf` в `pacmanx86_64.conf` и `pacmani686.conf`. Раскомментируйте следующие строки, чтобы включить *multilib* в `pacmanx86_64.conf`:
+Чтобы установить пакеты из репозитория [multilib](/index.php/Multilib_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Multilib (Русский)"), вам нужно просто раскомментировать его в `~/archlive/pacman.conf`:
 
- `pacmanx86_64.conf` 
+ `pacman.conf` 
 ```
 [multilib]
 SigLevel = PackageRequired
 Include = /etc/pacman.d/mirrorlist
 ```
 
-Затем отредактируйте файл `build.sh` с помощью редактора. Замените следующие строки:
-
- `build.sh` 
-```
-run_once make_pacman_conf
-
-# Do all stuff for each airootfs
-for arch in i686 x86_64; do
-    run_once make_basefs
-    run_once make_packages
-done
-
-run_once make_packages_efi
-
-for arch in i686 x86_64; do
-    run_once make_setup_mkinitcpio
-    run_once make_customize_airootfs
-done
-
-```
-
-на:
-
- `build.sh` 
-```
-cp -v releng/pacmanx86_64.conf releng/pacman.conf
-run_once make_pacman_conf
-
-# Do all stuff for each airootfs
-for arch in x86_64; do
-    run_once make_basefs
-    run_once make_packages
-    run_once make_packages_efi
-    run_once make_setup_mkinitcpio
-    run_once make_customize_airootfs
-done
-
-echo make_pacman_conf i686
-cp -v releng/pacmani686.conf releng/pacman.conf
-cp -v releng/pacmani686.conf ${work_dir}/pacman.conf
-
-for arch in i686; do
-    run_once make_basefs
-    run_once make_packages
-    run_once make_packages_efi
-    run_once make_setup_mkinitcpio
-    run_once make_customize_airootfs
-done
-
-```
-
-Таким образом, пакеты для x86_64 и i686 будут установлены со своим собственным конфигурационным файлом pacman.
-
 ### Добавление файлов в образ
 
-**Примечание:** Для этого вы должны быть суперпользователем, не изменяйте владельца для какого-либо скопированного вами файла, **все** в каталоге airootfs должно принадлежать суперпользователю. Правильные владельцы будут выяснены в ближайшее время.
+**Примечание:** Для этого вы должны быть суперпользователем, не изменяйте владельца для какого-либо скопированного вами файла, **все** в каталоге airootfs должно принадлежать суперпользователю. Правильные владельцы будут установлены в ближайшее время.
 
 Каталог airootfs действует как наложение, считайте его корневым каталогом '/' в вашей текущей системе, поэтому любые файлы, которые вы размещаете в этом каталоге, будут скопированы при загрузке.
 
@@ -235,21 +180,21 @@ done
 
 ### Вход в систему
 
-Запуск X при загрузке выполняется путем включения службы [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)") менеджера входа в систему. Если вы знаете, какой файл .service нуждается в программной ссылке: Отлично. Если нет, то вы можете легко узнать в случае, если вы используете одну и ту же программу в системе, в которой вы строите свой iso. Просто используйте:
+Запуск X при загрузке выполняется путем включения службы [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)") менеджера входа в систему. Если вы знаете, какой файл .service нуждается в символической ссылке: Отлично. Если нет, то вы можете легко узнать в случае, если вы используете одну и ту же программу в системе, в которой вы собираете свой iso. Просто используйте:
 
 ```
 $ ls -l /etc/systemd/system/display-manager.service
 
 ```
 
-Теперь создайте ту же самую программную ссылку в `~/archlive/airootfs/etc/systemd/system`. Для LXDM:
+Теперь создайте ту же самую символическую ссылку в `~/archlive/airootfs/etc/systemd/system`. Для LXDM:
 
 ```
 # ln -s /usr/lib/systemd/system/lxdm.service ~/archlive/airootfs/etc/systemd/system/display-manager.service
 
 ```
 
-Это позволяeт запустить LXDM при загрузке системы в вашей live системе.
+Это позволяeт запустить LXDM при загрузке системы из вашего live образа.
 
 В качестве альтернативы вы можете просто включить службу в `airootfs/root/customize_airootfs.sh` вместе с другими включенными там службами.
 
@@ -311,7 +256,7 @@ ExecStart=-/sbin/agetty --autologin **isouser** --noclear %I 38400 linux
 
 ```
 
-Кроме того, требуется отредактировать скрипт `airootfs/root/customize_airootfs.sh`, и добавить команду `id` в начале строки `useradd`, как показано здесь. В противном случае пересборка останавливается на этом моменте, потому что пользователь, который должен быть добавлен, уже существует [[2]](https://bugs.archlinux.org/task/41865).
+Кроме того, требуется отредактировать скрипт `airootfs/root/customize_airootfs.sh`, и добавить команду `id` в начале строки `useradd`, как показано здесь. В противном случае пересборка останавливается на этом моменте, потому что пользователь, который должен быть добавлен, уже существует [FS#41865](https://bugs.archlinux.org/task/41865).
 
 ```
 ! id arch && useradd -m -p "" -g users -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel" -s /usr/bin/zsh arch
@@ -401,14 +346,12 @@ if ! pacman -r "$newroot" -Sy --needed "${pacman_args[@]}"; then
 
 ##### Отключение и удаление служб, созданных archiso
 
-Некоторые служебные файлы создаются для Live среды, отключите службы и удалите файл, поскольку они не нужны для новой системы:
+Некоторые служебные файлы создаются для Live среды, отключите службы и удалите файл, поскольку они не нужны в новой системе:
 
 ```
 # systemctl disable pacman-init.service choose-mirror.service
 # rm -r /etc/systemd/system/{choose-mirror.service,pacman-init.service,etc-pacman.d-gnupg.mount,getty@tty1.service.d}
 # rm /etc/systemd/scripts/choose-mirror
-# rm /etc/systemd/system/archiso-start.service
-# rm /etc/systemd/system/multi-user.target.wants/archiso-start.service
 
 ```
 
@@ -460,3 +403,7 @@ if ! pacman -r "$newroot" -Sy --needed "${pacman_args[@]}"; then
 ### Примеры шаблонов настройки
 
 *   [Live DJ дистрибутив, основанный на ArchLinux и созданный с помощью Archiso](http://easy.open.and.free.fr/didjix/)
+
+### Создание автономного установочного ISO
+
+*   [Archiso offline](/index.php/Archiso_offline "Archiso offline")

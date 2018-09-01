@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Transmission](/index.php/Transmission "Transmission") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-04-09，点击[这里](https://wiki.archlinux.org/index.php?title=Transmission&diff=0&oldid=507716)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Transmission](/index.php/Transmission "Transmission") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-08-31，点击[这里](https://wiki.archlinux.org/index.php?title=Transmission&diff=0&oldid=532639)可以查看翻译后英文页面的改动。
 
 [Transmission](http://www.transmissionbt.com/) 是一个轻量级、跨平台的 BitTorrent 客户端。
 
@@ -33,7 +33,7 @@
 *   [transmission-cli](https://www.archlinux.org/packages/?name=transmission-cli) - 包括命令行工具、守护程序和 [#Web 界面](#Web_.E7.95.8C.E9.9D.A2)。
 *   [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) - GTK+ 3 图形界面.
 *   [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt) - Qt5 图形界面.
-*   [tremc-git](https://aur.archlinux.org/packages/tremc-git/) - 用于守护程序的 Curses 界面。
+*   [tremc](https://aur.archlinux.org/packages/tremc/) 或 [tremc-git](https://aur.archlinux.org/packages/tremc-git/) - 用于守护程序的 Curses 界面。
 
 **注意:** GTK+ 客户端无法连接至守护程序，想用守护程序的用户可以考虑带图形界面的 Qt 包，或是带 Curses 界面的 tremc 包。
 

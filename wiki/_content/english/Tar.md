@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Core utilities#tar](/index.php?title=Core_utilities&redirect=no#tar "Core utilities")
+*   [Archiving and compression](/index.php/Archiving_and_compression "Archiving and compression")

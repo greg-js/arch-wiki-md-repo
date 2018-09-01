@@ -18,27 +18,31 @@
 
 ### Shells
 
-Optional fzf keybindings and completion are available for various shells.
+Optional [fzf keybindings](https://github.com/junegunn/fzf/wiki/Configuring-shell-key-bindings) and completion are available for various shells:
 
-#### bash
+*   `<CTRL+T>` list files+folders in current directory (e.g., `git commit <CTRL+T>`, select a few files using `<TAB>`, finally `<Return>`)
+*   `<CTRL+R>` search history of shell commands
+*   `<ALT+C>` fuzzy change directory
+
+#### [bash](/index.php/Bash "Bash")
 
 [Source](/index.php/Source "Source") the desired files from your `.bashrc`:
 
 *   `/usr/share/fzf/key-bindings.bash`
 *   `/usr/share/fzf/completion.bash`
 
-#### zsh
+#### [zsh](/index.php/Zsh "Zsh")
 
 Source the desired files from your `.zshrc`:
 
 *   `/usr/share/fzf/key-bindings.zsh`
 *   `/usr/share/fzf/completion.zsh`
 
-#### fish
+#### [fish](/index.php/Fish "Fish")
 
 For fish, keybindings are in:
 
-*   `/usr/share/fish/functions/fzf.fish`
+*   `/usr/share/fish/functions/fzf_key_bindings.fish`
 
 fish will source this by default but the bindings have to be enabled manually:
 
@@ -54,4 +58,4 @@ fzf completion in fish can be enabled with custom functions: [https://github.com
 
 ### Vim
 
-The basic Vim plugin is already included within the package and installed to Vim's global plugin directory. Thus, you don't need to add anything to your `.vimrc` to be able to use it. It only provides the FZF command, though. There is an additional Vim plugin made by the author of fzf that defines some convenience functions, see [https://github.com/junegunn/fzf.vim](https://github.com/junegunn/fzf.vim).
+The basic [Vim](/index.php/Vim "Vim") plugin is already included within the package and installed to Vim's global plugin directory. Thus, you don't need to add anything to your `.vimrc` to be able to use it. It only provides the FZF command, though. There is an additional Vim plugin made by the author of fzf that defines some convenience functions, see [https://github.com/junegunn/fzf.vim](https://github.com/junegunn/fzf.vim).

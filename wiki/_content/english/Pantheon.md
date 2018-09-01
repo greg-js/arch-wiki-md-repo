@@ -78,7 +78,7 @@ These optional packages provide background services and default settings for Pan
 
 These optional packages contribute to the look and feel of the desktop:
 
-*   [elementary-icon-theme](https://www.archlinux.org/packages/?name=elementary-icon-theme) or [elementary-icon-theme-git](https://aur.archlinux.org/packages/elementary-icon-theme-git/): Icon theme designed to be smooth, sexy, clear, and efficient (development version)
+*   [elementary-icon-theme](https://www.archlinux.org/packages/?name=elementary-icon-theme) or [elementary-icon-theme-git](https://aur.archlinux.org/packages/elementary-icon-theme-git/): Icon theme designed to be smooth, sexy, clear, and efficient
 *   [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/) or [lightdm-pantheon-greeter-git](https://aur.archlinux.org/packages/lightdm-pantheon-greeter-git/): LightDM greeter
 
 It is also recommended to install the following fonts:
@@ -118,7 +118,7 @@ These are some of the original, patched, and selected packages that comprise the
 
 #### Autostart applications with a display manager
 
-Pantheon is a gnome-session, and as such implements [XDG Autostart](/index.php/GNOME#Autostart "GNOME").
+As a gnome-session, Pantheon implements [XDG Autostart](/index.php/GNOME#Autostart "GNOME").
 
 ### Via [xinit](/index.php/Xinit "Xinit")
 

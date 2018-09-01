@@ -25,8 +25,9 @@
         *   [1.2.7 File searching](#File_searching)
             *   [1.2.7.1 Console](#Console_2)
             *   [1.2.7.2 Graphical](#Graphical_2)
-            *   [1.2.7.3 File indexers](#File_indexers)
-                *   [1.2.7.3.1 Full-text indexers](#Full-text_indexers)
+                *   [1.2.7.2.1 Graphical file indexers](#Graphical_file_indexers)
+        *   [1.2.8 Full-text searching](#Full-text_searching)
+            *   [1.2.8.1 Full-text indexers](#Full-text_indexers)
     *   [1.3 Development](#Development)
         *   [1.3.1 Version control systems](#Version_control_systems)
         *   [1.3.2 Build automation](#Build_automation)
@@ -58,24 +59,25 @@
         *   [1.5.8 Disk cleaning](#Disk_cleaning)
         *   [1.5.9 Disk image writing](#Disk_image_writing)
     *   [1.6 System](#System)
-        *   [1.6.1 System monitoring](#System_monitoring)
-        *   [1.6.2 Hardware sensor monitoring](#Hardware_sensor_monitoring)
-        *   [1.6.3 System information viewers](#System_information_viewers)
-            *   [1.6.3.1 Console](#Console_3)
-            *   [1.6.3.2 Graphical](#Graphical_3)
-        *   [1.6.4 System log viewers](#System_log_viewers)
-        *   [1.6.5 Font viewers](#Font_viewers)
-        *   [1.6.6 Help viewers](#Help_viewers)
-        *   [1.6.7 Command schedulers](#Command_schedulers)
-        *   [1.6.8 Shutdown timers](#Shutdown_timers)
-        *   [1.6.9 Clock synchronization](#Clock_synchronization)
-        *   [1.6.10 Screen management](#Screen_management)
-        *   [1.6.11 Backlight management](#Backlight_management)
-        *   [1.6.12 Color management](#Color_management)
-        *   [1.6.13 Printer management](#Printer_management)
-        *   [1.6.14 Bluetooth management](#Bluetooth_management)
-        *   [1.6.15 Power management](#Power_management)
-        *   [1.6.16 Package management](#Package_management)
+        *   [1.6.1 Task managers](#Task_managers)
+        *   [1.6.2 System monitors](#System_monitors)
+        *   [1.6.3 Hardware sensor monitoring](#Hardware_sensor_monitoring)
+        *   [1.6.4 System information viewers](#System_information_viewers)
+            *   [1.6.4.1 Console](#Console_3)
+            *   [1.6.4.2 Graphical](#Graphical_3)
+        *   [1.6.5 System log viewers](#System_log_viewers)
+        *   [1.6.6 Font viewers](#Font_viewers)
+        *   [1.6.7 Help viewers](#Help_viewers)
+        *   [1.6.8 Command schedulers](#Command_schedulers)
+        *   [1.6.9 Shutdown timers](#Shutdown_timers)
+        *   [1.6.10 Clock synchronization](#Clock_synchronization)
+        *   [1.6.11 Screen management](#Screen_management)
+        *   [1.6.12 Backlight management](#Backlight_management)
+        *   [1.6.13 Color management](#Color_management)
+        *   [1.6.14 Printer management](#Printer_management)
+        *   [1.6.15 Bluetooth management](#Bluetooth_management)
+        *   [1.6.16 Power management](#Power_management)
+        *   [1.6.17 Package management](#Package_management)
 
 ## Utilities
 
@@ -345,7 +347,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **[Ranger](/index.php/Ranger "Ranger")** — Console-based file manager with vi bindings, customizability, and lots of features.
 
-	[http://nongnu.org/ranger](http://nongnu.org/ranger) || [ranger](https://www.archlinux.org/packages/?name=ranger)
+	[https://ranger.github.io/](https://ranger.github.io/) || [ranger](https://www.archlinux.org/packages/?name=ranger)
 
 *   **[Vifm](/index.php/Vifm "Vifm")** — Ncurses-based two-panel file manager with vi-like keybindings.
 
@@ -601,27 +603,13 @@ For managing *pacnew*/*pacsave* files, specialised tools exist. See [Pacnew and 
 
 #### File searching
 
+This section lists utilities for file searching based on filename, file path or metadata. For full-text searching, see the next section.
+
 See also [Wikipedia:List of search engines#Desktop search engines](https://en.wikipedia.org/wiki/List_of_search_engines#Desktop_search_engines "wikipedia:List of search engines").
 
 ##### Console
 
-*   **[GNU find](/index.php/GNU_find "GNU find")** — Command-line tool to search for files, can filter on many criteria.
-
-	[https://www.gnu.org/software/findutils/](https://www.gnu.org/software/findutils/) || [findutils](https://www.archlinux.org/packages/?name=findutils)
-
-*   **fd** — A simple, fast and user-friendly alternative to find.
-
-	[https://github.com/sharkdp/fd](https://github.com/sharkdp/fd) || [fd](https://www.archlinux.org/packages/?name=fd)
-
-*   **fuzzy-find** — Fuzzy completion for finding files.
-
-	[https://github.com/silentbicycle/ff](https://github.com/silentbicycle/ff) || [ff-git](https://aur.archlinux.org/packages/ff-git/)
-
-*   **fzf** — General-purpose command-line fuzzy finder, powered by find by default.
-
-	[https://github.com/junegunn/fzf](https://github.com/junegunn/fzf) || [fzf](https://www.archlinux.org/packages/?name=fzf), [fzf-git](https://aur.archlinux.org/packages/fzf-git/)
-
-For full-text search see [grep](/index.php/Grep "Grep") and its alternatives.
+See [find](/index.php/Find "Find") and its alternatives.
 
 ##### Graphical
 
@@ -649,7 +637,7 @@ For full-text search see [grep](/index.php/Grep "Grep") and its alternatives.
 
 	[http://searchmonkey.sourceforge.net/](http://searchmonkey.sourceforge.net/) || [searchmonkey](https://aur.archlinux.org/packages/searchmonkey/)
 
-##### File indexers
+###### Graphical file indexers
 
 These programs index your files to allow for quick searching.
 
@@ -661,11 +649,11 @@ These programs index your files to allow for quick searching.
 
 	[https://github.com/cboxdoerfer/fsearch](https://github.com/cboxdoerfer/fsearch) || [fsearch-git](https://aur.archlinux.org/packages/fsearch-git/)
 
-*   **[mlocate](/index.php/Mlocate "Mlocate")** — Merging locate/updatedb implementation (command-line).
+#### Full-text searching
 
-	[https://pagure.io/mlocate](https://pagure.io/mlocate) || [mlocate](https://www.archlinux.org/packages/?name=mlocate)
+[Grep](/index.php/Grep "Grep") and its alternatives provide non-indexed [full-text search](https://en.wikipedia.org/wiki/Full-text_search "wikipedia:Full-text search").
 
-###### Full-text indexers
+##### Full-text indexers
 
 *   **[Baloo](/index.php/Baloo "Baloo")** — KDE's file indexing and search solution, has a CLI and is used by [KRunner](/index.php/KRunner "KRunner").
 
@@ -1341,7 +1329,45 @@ See also [Wikipedia:List of tools to create Live USB systems](https://en.wikiped
 
 ### System
 
-#### System monitoring
+#### Task managers
+
+*   **Deepin System Monitor** — Monitor system process status for Deepin desktop.
+
+	[https://www.deepin.org/en/original/deepin-system-monitor/](https://www.deepin.org/en/original/deepin-system-monitor/) || [deepin-system-monitor](https://www.archlinux.org/packages/?name=deepin-system-monitor)
+
+*   **GNOME System Monitor** — System monitor for [GNOME](/index.php/GNOME "GNOME") to view and manage system resources.
+
+	[https://wiki.gnome.org/Apps/SystemMonitor](https://wiki.gnome.org/Apps/SystemMonitor) || [gnome-system-monitor](https://www.archlinux.org/packages/?name=gnome-system-monitor)
+
+*   **GNOME Usage** — View information about use of system resources, like memory and disk space.
+
+	[https://wiki.gnome.org/Apps/Usage](https://wiki.gnome.org/Apps/Usage) || [gnome-usage](https://www.archlinux.org/packages/?name=gnome-usage)
+
+*   **[htop](https://en.wikipedia.org/wiki/Htop "wikipedia:Htop")** — Simple, ncurses interactive process viewer.
+
+	[http://htop.sourceforge.net/](http://htop.sourceforge.net/) || [htop](https://www.archlinux.org/packages/?name=htop)
+
+*   **[KSysGuard](https://en.wikipedia.org/wiki/KDE_System_Guard "wikipedia:KDE System Guard")** — System monitor for [KDE](/index.php/KDE "KDE") to monitor running processes and system performance.
+
+	[https://userbase.kde.org/KSysGuard](https://userbase.kde.org/KSysGuard) || [ksysguard](https://www.archlinux.org/packages/?name=ksysguard)
+
+*   **Linux Process Explorer** — Graphical process explorer for Linux.
+
+	[https://sourceforge.net/projects/procexp/](https://sourceforge.net/projects/procexp/) || [procexp](https://aur.archlinux.org/packages/procexp/)
+
+*   **LXTask** — Lightweight task manager for [LXDE](/index.php/LXDE "LXDE").
+
+	[http://wiki.lxde.org/en/LXTask](http://wiki.lxde.org/en/LXTask) || [lxtask](https://www.archlinux.org/packages/?name=lxtask)
+
+*   **MATE System Monitor** — System monitor for [MATE](/index.php/MATE "MATE").
+
+	[https://github.com/mate-desktop/mate-system-monitor](https://github.com/mate-desktop/mate-system-monitor) || [mate-system-monitor](https://www.archlinux.org/packages/?name=mate-system-monitor)
+
+*   **Task Manager** — GTK2 process management application for [Xfce](/index.php/Xfce "Xfce").
+
+	[http://goodies.xfce.org/projects/applications/xfce4-taskmanager](http://goodies.xfce.org/projects/applications/xfce4-taskmanager) || [xfce4-taskmanager](https://www.archlinux.org/packages/?name=xfce4-taskmanager)
+
+#### System monitors
 
 See also [Category:Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification")
 
@@ -1356,10 +1382,6 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 *   **collectl** — Collectl is a light-weight performance monitoring tool capable of reporting interactively as well as logging to disk. It reports statistics on cpu, disk, infiniband, lustre, memory, network, nfs, process, quadrics, slabs and more in easy to read format.
 
 	[http://collectl.sourceforge.net/](http://collectl.sourceforge.net/) || [collectl](https://aur.archlinux.org/packages/collectl/)
-
-*   **Deepin System Monitor** — Monitor system process status for Deepin desktop.
-
-	[https://www.deepin.org/en/original/deepin-system-monitor/](https://www.deepin.org/en/original/deepin-system-monitor/) || [deepin-system-monitor](https://www.archlinux.org/packages/?name=deepin-system-monitor)
 
 *   **dstat** — Versatile resource statistics tool.
 
@@ -1377,41 +1399,9 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[http://nicolargo.github.io/glances](http://nicolargo.github.io/glances) || [glances](https://www.archlinux.org/packages/?name=glances)
 
-*   **GNOME System Monitor** — System monitor for [GNOME](/index.php/GNOME "GNOME") to view and manage system resources.
-
-	[https://wiki.gnome.org/Apps/SystemMonitor](https://wiki.gnome.org/Apps/SystemMonitor) || [gnome-system-monitor](https://www.archlinux.org/packages/?name=gnome-system-monitor)
-
-*   **GNOME Usage** — View information about use of system resources, like memory and disk space.
-
-	[https://wiki.gnome.org/Apps/Usage](https://wiki.gnome.org/Apps/Usage) || [gnome-usage](https://www.archlinux.org/packages/?name=gnome-usage)
-
-*   **[htop](https://en.wikipedia.org/wiki/Htop "wikipedia:Htop")** — Simple, ncurses interactive process viewer.
-
-	[http://htop.sourceforge.net/](http://htop.sourceforge.net/) || [htop](https://www.archlinux.org/packages/?name=htop)
-
-*   **[KSysGuard](https://en.wikipedia.org/wiki/KDE_System_Guard "wikipedia:KDE System Guard")** — System monito for [KDE](/index.php/KDE "KDE") to monitor running processes and system performance.
-
-	[https://userbase.kde.org/KSysGuard](https://userbase.kde.org/KSysGuard) || [ksysguard](https://www.archlinux.org/packages/?name=ksysguard)
-
-*   **Linux Process Explorer** — Graphical process explorer for Linux.
-
-	[https://sourceforge.net/projects/procexp/](https://sourceforge.net/projects/procexp/) || [procexp](https://aur.archlinux.org/packages/procexp/)
-
-*   **LXTask** — Lightweight task manager for [LXDE](/index.php/LXDE "LXDE").
-
-	[http://wiki.lxde.org/en/LXTask](http://wiki.lxde.org/en/LXTask) || [lxtask](https://www.archlinux.org/packages/?name=lxtask)
-
-*   **MATE System Monitor** — System monitor for [MATE](/index.php/MATE "MATE").
-
-	[https://github.com/mate-desktop/mate-system-monitor](https://github.com/mate-desktop/mate-system-monitor) || [mate-system-monitor](https://www.archlinux.org/packages/?name=mate-system-monitor)
-
-*   **netdata** — Web-based real-time performance monitor
+*   **netdata** — Web-based real-time performance monitor.
 
 	[https://github.com/firehol/netdata/wiki](https://github.com/firehol/netdata/wiki) || [netdata](https://www.archlinux.org/packages/?name=netdata)
-
-*   **Task Manager** — GTK2 process management application for [Xfce](/index.php/Xfce "Xfce").
-
-	[http://goodies.xfce.org/projects/applications/xfce4-taskmanager](http://goodies.xfce.org/projects/applications/xfce4-taskmanager) || [xfce4-taskmanager](https://www.archlinux.org/packages/?name=xfce4-taskmanager)
 
 *   **[Telegraf](/index.php/Telegraf "Telegraf")** — Agent written in Go for collecting, processing, aggregating, and writing metrics.
 
@@ -1425,7 +1415,7 @@ See also [Category:Status monitoring and notification](/index.php/Category:Statu
 
 	[http://pagesperso-orange.fr/sebastien.godard/](http://pagesperso-orange.fr/sebastien.godard/) || [sysstat](https://www.archlinux.org/packages/?name=sysstat)
 
-*   **xosview** — System monitor that resembles gr_osview from SGI IRIX
+*   **xosview** — System monitor that resembles gr_osview from SGI IRIX.
 
 	[http://www.pogo.org.uk/~mark/xosview/](http://www.pogo.org.uk/~mark/xosview/) || [xosview](https://aur.archlinux.org/packages/xosview/)
 
@@ -1513,9 +1503,7 @@ See [lm_sensors#Graphical front-ends](/index.php/Lm_sensors#Graphical_front-ends
 
 	[https://github.com/mate-desktop/mate-utils](https://github.com/mate-desktop/mate-utils) || [mate-utils](https://www.archlinux.org/packages/?name=mate-utils)
 
-*   **Pacman Log Viewer** — Tool used to inspect pacman log file, in particular it lists installed, removed and upgraded packages letting you to filter
-
-by package's name and/or date.
+*   **Pacman Log Viewer** — Tool used to inspect pacman log file, in particular it lists installed, removed and upgraded packages letting you to filter by package's name and/or date.
 
 	[https://www.opendesktop.org/content/show.php?content=150484](https://www.opendesktop.org/content/show.php?content=150484) || [pacmanlogviewer](https://www.archlinux.org/packages/?name=pacmanlogviewer)
 

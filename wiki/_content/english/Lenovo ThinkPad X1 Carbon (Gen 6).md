@@ -184,6 +184,8 @@ echo -n "none" | sudo tee /sys/bus/serio/devices/serio1/drvctl
 echo -n "reconnect" | sudo tee /sys/bus/serio/devices/serio1/drvctl
 ```
 
+A [bug](https://gitlab.freedesktop.org/libinput/libinput/issues/46) in the libinput library that caused dropouts of the tap-to-click functionality of the touchpad on the X1 Carbon 6th Gen has been fixed in libinput 1.11.2, which was released on [3 July 2018](https://lists.freedesktop.org/archives/wayland-devel/2018-July/038782.html).
+
 ## Full-disk encryption
 
 ### Ramdisk module

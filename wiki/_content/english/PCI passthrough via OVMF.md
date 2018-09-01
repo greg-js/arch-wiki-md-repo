@@ -18,18 +18,18 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [4.4 Gotchas](#Gotchas_2)
         *   [4.4.1 Using a non-EFI image on an OVMF-based VM](#Using_a_non-EFI_image_on_an_OVMF-based_VM)
 *   [5 Performance tuning](#Performance_tuning)
-    *   [5.1 CPU Pinning](#CPU_Pinning)
-        *   [5.1.1 CPU Topology](#CPU_Topology)
-        *   [5.1.2 XML Examples](#XML_Examples)
+    *   [5.1 CPU pinning](#CPU_pinning)
+        *   [5.1.1 CPU topology](#CPU_topology)
+        *   [5.1.2 XML examples](#XML_examples)
             *   [5.1.2.1 4c/1t CPU w/o Hyperthreading Example](#4c.2F1t_CPU_w.2Fo_Hyperthreading_Example)
-            *   [5.1.2.2 4c/2t Intel CPU Pinning Example](#4c.2F2t_Intel_CPU_Pinning_Example)
-            *   [5.1.2.3 4c/2t AMD CPU Example](#4c.2F2t_AMD_CPU_Example)
+            *   [5.1.2.2 4c/2t Intel CPU pinning example](#4c.2F2t_Intel_CPU_pinning_example)
+            *   [5.1.2.3 4c/2t AMD CPU example](#4c.2F2t_AMD_CPU_example)
     *   [5.2 Static huge pages](#Static_huge_pages)
     *   [5.3 Dynamic huge pages](#Dynamic_huge_pages)
     *   [5.4 CPU frequency governor](#CPU_frequency_governor)
     *   [5.5 CPU pinning with isolcpus](#CPU_pinning_with_isolcpus)
     *   [5.6 Improving performance on AMD CPUs](#Improving_performance_on_AMD_CPUs)
-    *   [5.7 Further Tuning](#Further_Tuning)
+    *   [5.7 Further tuning](#Further_tuning)
 *   [6 Special procedures](#Special_procedures)
     *   [6.1 Using identical guest and host GPUs](#Using_identical_guest_and_host_GPUs)
         *   [6.1.1 Script variants](#Script_variants)
@@ -47,15 +47,15 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
 *   [8 Passing though other devices](#Passing_though_other_devices)
     *   [8.1 USB controller](#USB_controller)
     *   [8.2 Passing VM audio to host via PulseAudio](#Passing_VM_audio_to_host_via_PulseAudio)
-        *   [8.2.1 Qemu 3.0 Audio Changes](#Qemu_3.0_Audio_Changes)
-    *   [8.3 Physical Disk/Partition](#Physical_Disk.2FPartition)
+        *   [8.2.1 QEMU 3.0 audio changes](#QEMU_3.0_audio_changes)
+    *   [8.3 Physical disk/partition](#Physical_disk.2Fpartition)
     *   [8.4 Gotchas](#Gotchas_3)
         *   [8.4.1 Passing through a device that does not support resetting](#Passing_through_a_device_that_does_not_support_resetting)
 *   [9 Complete setups and examples](#Complete_setups_and_examples)
 *   [10 Troubleshooting](#Troubleshooting)
     *   [10.1 "Error 43: Driver failed to load" on Nvidia GPUs passed to Windows VMs](#.22Error_43:_Driver_failed_to_load.22_on_Nvidia_GPUs_passed_to_Windows_VMs)
     *   [10.2 "BAR 3: cannot reserve [mem]" error in dmesg after starting VM](#.22BAR_3:_cannot_reserve_.5Bmem.5D.22_error_in_dmesg_after_starting_VM)
-    *   [10.3 UEFI (OVMF) Compatibility in VBIOS](#UEFI_.28OVMF.29_Compatibility_in_VBIOS)
+    *   [10.3 UEFI (OVMF) compatibility in VBIOS](#UEFI_.28OVMF.29_compatibility_in_VBIOS)
     *   [10.4 Slowed down audio pumped through HDMI on the video card](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
     *   [10.5 No HDMI audio output on host when intel_iommu is enabled](#No_HDMI_audio_output_on_host_when_intel_iommu_is_enabled)
     *   [10.6 X does not start after enabling vfio_pci](#X_does_not_start_after_enabling_vfio_pci)
@@ -63,7 +63,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [10.8 VM only uses one core](#VM_only_uses_one_core)
     *   [10.9 Passthrough seems to work but no output is displayed](#Passthrough_seems_to_work_but_no_output_is_displayed)
     *   [10.10 virt-manager has permission issues](#virt-manager_has_permission_issues)
-    *   [10.11 Host Lockup After VM Shutdown](#Host_Lockup_After_VM_Shutdown)
+    *   [10.11 Host lockup after VM shutdown](#Host_lockup_after_VM_shutdown)
     *   [10.12 Host lockup if guest is left running during sleep](#Host_lockup_if_guest_is_left_running_during_sleep)
 *   [11 See also](#See_also)
 
@@ -294,13 +294,13 @@ The OVMF firmware does not support booting off non-EFI mediums. If the installat
 
 Most use cases for PCI passthroughs relate to performance-intensive domains such as video games and GPU-accelerated tasks. While a PCI passthrough on its own is a step towards reaching native performance, there are still a few ajustments on the host and guest to get the most out of your VM.
 
-### CPU Pinning
+### CPU pinning
 
 The default behavior for KVM guests is to run operations coming from the guest as a number of threads representing virtual processors. Those threads are managed by the Linux scheduler like any other thread and are dispatched to any available CPU cores based on niceness and priority queues. Since switching between threads adds a bit of overhead (because context switching forces the core to change its cache between operations), this can noticeably harm performance on the guest. CPU pinning aims to resolve this as it overrides process scheduling and ensures that the VM threads will always run and only run on those specific cores.
 
 **Note:** For certain users enabling CPU pinning may introduce stuttering and short hangs, especially with the MuQSS scheduler (present in linux-ck and linux-zen kernels). You might want to try disabling pinning first if you experience similar issues, which effectively trades maximum performance for responsiveness at all times.
 
-#### CPU Topology
+#### CPU topology
 
 Most modern CPU's support hardware multitasking, also known as hyper-threading on Intel CPU's or SMT on AMD CPU's. Hyper-threading/SMT is simply a very efficient way of running two threads on one CPU core at any given time. You will want to take into consideration that the CPU pinning you choose will greatly depend on what you do with your host while your VM is running.
 
@@ -350,7 +350,7 @@ As we see above, with AMD **Core 0** is sequential with **CPU 0 & 1**, whereas I
 
 If you prefer to have the host and guest running intensive tasks at the same time, it would then be preferable to leave at the very least, **Core 0** to the host. Next you will pin the amount of physical CPU's and their associated logical CPU's to the guest XML as shown below. It is also recommended to pin the emulator and iothread to **Core 0** as this helps eliminate latency within the VM.
 
-#### XML Examples
+#### XML examples
 
 **Note:** If you are not using Virtio storage drivers for your VM, *do not* use the **iothread** lines from the XML examples that are shown below.
 
@@ -370,7 +370,7 @@ If you prefer to have the host and guest running intensive tasks at the same tim
 
 ```
 
-##### 4c/2t Intel CPU Pinning Example
+##### 4c/2t Intel CPU pinning example
 
  `$ virsh edit [vmname]` 
 ```
@@ -395,7 +395,7 @@ If you prefer to have the host and guest running intensive tasks at the same tim
 
 ```
 
-##### 4c/2t AMD CPU Example
+##### 4c/2t AMD CPU example
 
  `$ virsh edit [vmname]` 
 ```
@@ -530,7 +530,7 @@ Starting with QEMU 3.1 the TOPOEXT cpuid flag is disabled by default. In order t
 
 commit: [https://git.qemu.org/?p=qemu.git;a=commit;h=7210a02c58572b2686a3a8d610c6628f87864aed](https://git.qemu.org/?p=qemu.git;a=commit;h=7210a02c58572b2686a3a8d610c6628f87864aed)
 
-### Further Tuning
+### Further tuning
 
 More specialized VM tuning tips are available at [Red Hat's Virtualization Tuning and Optimization Guide](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html-single/Virtualization_Tuning_and_Optimization_Guide/index.html). This guide may be especially helpful if you are experiencing:
 
@@ -750,7 +750,7 @@ For instance my mouse is `Bus 005 Device 002: ID 1532:0037 Razer USA, Ltd` so I 
 
 Repeat this process for any additional USB devices you want to pass-through. If your mouse / keyboard has multiple entries in `lsusb`, perhaps if it is wireless, then create additional xml files for each.
 
-**Note:** Don't forget to change the path & name of the script(s) above and below to match your user and specific system.
+**Note:** Do not forget to change the path & name of the script(s) above and below to match your user and specific system.
 
 Next a bash script file is needed to tell libvirt what to attach/detach the USB devices to the guest.
 
@@ -915,7 +915,7 @@ Change 1000 under the user directory to your user uid (which can be found by run
 
 Virtual Machine audio will now be routed through the host as an application. The application [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) can be used to control the output device. Be aware that on Windows guests, this can cause audio crackling without [using Message-Signaled Interrupts.](#Slowed_down_audio_pumped_through_HDMI_on_the_video_card)
 
-#### Qemu 3.0 Audio Changes
+#### QEMU 3.0 audio changes
 
 As of QEMU 3.0 part of the audio patches have been merged ([reddit link](https://www.reddit.com/r/VFIO/comments/97iuov/qemu_30_released/e49wmyd/)). The [qemu-patched](https://aur.archlinux.org/packages/qemu-patched/) package currently includes some additional audio patches, as some of the patches have not been officially up-streamed yet.
 
@@ -944,7 +944,9 @@ You will need to change the chipset accordingly to how your VM is set up, i.e. `
 
 **Note:** To speed up compilation time with [qemu-patched](https://aur.archlinux.org/packages/qemu-patched/) use `--target-list=x86_64-softmmu` to compile qemu with only x86_64 guest support
 
-### Physical Disk/Partition
+**Note:** You might need to remove the qemu:env lines that are mentioned in [#Passing VM audio to host via PulseAudio](#Passing_VM_audio_to_host_via_PulseAudio)
+
+### Physical disk/partition
 
 A whole disk or a partition may be used as a whole for improved I/O performance by adding an entry to the XML
 
@@ -1133,7 +1135,7 @@ Before starting VM run following lines replacing IDs with actual from previous o
 
 **Note:** Probably setting [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `video=efifb:off` is required as well. [Source](https://pve.proxmox.com/wiki/Pci_passthrough#BAR_3:_can.27t_reserve_.5Bmem.5D_error)
 
-### UEFI (OVMF) Compatibility in VBIOS
+### UEFI (OVMF) compatibility in VBIOS
 
 With respect to [this article](https://pve.proxmox.com/wiki/Pci_passthrough#How_to_known_if_card_is_UEFI_.28ovmf.29_compatible):
 
@@ -1312,7 +1314,7 @@ user="*user*"
 
 If that does not work make sure your user account is added to the kvm and libvirt [groups](/index.php/Groups "Groups").
 
-### Host Lockup After VM Shutdown
+### Host lockup after VM shutdown
 
 This issue seems to primarily affect users running a Windows 10 guest and usually after the VM has been run for a prolonged period of time: the host will experience multiple CPU core lockups (see [[2]](https://bbs.archlinux.org/viewtopic.php?id=206050&p=2)). To fix this try enabling Message Signal Interrupts on the GPU passed through to the guest. A good guide for how to do this can be found in [[3]](https://forums.guru3d.com/threads/windows-line-based-vs-message-signaled-based-interrupts.378044/).
 

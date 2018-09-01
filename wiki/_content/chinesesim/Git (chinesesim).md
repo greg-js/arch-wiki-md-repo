@@ -1,7 +1,8 @@
-**翻译状态：** 本文是英文页面 [Git](/index.php/Git "Git") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-08-14，点击[这里](https://wiki.archlinux.org/index.php?title=Git&diff=0&oldid=534795)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Git](/index.php/Git "Git") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-08-31，点击[这里](https://wiki.archlinux.org/index.php?title=Git&diff=0&oldid=536424)可以查看翻译后英文页面的改动。
 
 相关文章
 
+*   [Bisecting bugs with Git](/index.php/Bisecting_bugs_with_Git "Bisecting bugs with Git")
 *   [Gitweb](/index.php/Gitweb "Gitweb")
 *   [Cgit](/index.php/Cgit "Cgit")
 *   [HTTP tunneling#Tunneling Git](/index.php/HTTP_tunneling#Tunneling_Git "HTTP tunneling")

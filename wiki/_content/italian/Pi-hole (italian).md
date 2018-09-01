@@ -51,22 +51,11 @@ FTL è un DNS server/forwarder e una interfaccia simil-database/fornitore di API
 1.  I dati giornalieri vengono conservati in RAM e sono catturati in tempo reale dal file `/run/log/pihole/pihole.log`
 2.  I dati storici (i.e. di diversi giorni/settimane/mesi) sono conservati sul filesystem `/etc/pihole/pihole-FTL.db` aggiornati ad un intervallo deciso dall'utente.
 
+`pi-hole-ftl.service` è abilitato staticamente; ri/avvialo. Consultare la [documentazione ufficiale](https://docs.pi-hole.net/ftldns/configfile/) per come configurare FTL.
+
 **Tip:** Se Pi-hole è installato su una unità a stato solito (SD dei mini PC, SSD, unità M.2/NVMe, etc...) si raccomanda di settare il valore di DBINTERVAL almeno a 60.0 per minimizzare le scritture sul database.
 
-Consultare la [documentazione ufficiale](https://docs.pi-hole.net/ftldns/configfile/) per come configurare FTL.
-
-`pi-hole-ftl.service` è abilitato staticamente; ri/avvialo.
-
-Dalla versione 4.0, Pi-hole-FTL integra un fork privato di dnsmasq. E' ancora possibile usare i precedenti file di configurazione di dnsmasq. Dnsmasq ora va in conflitto con FTL e verrà disinstallato.
-
-Assicurati che la seguente riga in `/etc/dnsmasq.conf` sia non commentata:
-
-```
-conf-dir=/etc/dnsmasq.d/,*.conf
-
-```
-
-Abilita `dnsmasq.service` e ri/avvia il servizio.
+**Note:** Dalla versione 4.0, Pi-hole-FTL integra un fork private di dnsmasq. L'originale pacchetto [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) ora confligge con [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/) e sarà disinstallato su aggiornamento da una precedente versione. E' ancora possibile usare i precedenti file di configurazione di dnsmasq, assicurati solamente che la riga `conf-dir=/etc/dnsmasq.d/,*.conf` nel file originale `/etc/dnsmasq.conf` non sia commentata.
 
 #### Web Server
 

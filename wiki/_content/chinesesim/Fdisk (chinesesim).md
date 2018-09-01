@@ -4,107 +4,145 @@ Related articles
 *   [GParted](/index.php/GParted "GParted")
 *   [Partitioning (简体中文)](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)")
 
-**翻译状态：** 本文是英文页面 [Fdisk](/index.php/Fdisk "Fdisk") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-08-18，点击[这里](https://wiki.archlinux.org/index.php?title=Fdisk&diff=0&oldid=391664)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Fdisk](/index.php/Fdisk "Fdisk") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-08-31，点击[这里](https://wiki.archlinux.org/index.php?title=Fdisk&diff=0&oldid=538937)可以查看翻译后英文页面的改动。
 
-来自 util-linux 的 fdisk (用于 MBR 硬盘)等价。。
+[util-linux fdisk](https://git.kernel.org/cgit/utils/util-linux/util-linux.git/) 是基于命令行界面的分区表创建和编辑工具。一个硬盘需要分为一个或多个分区，这个信息在分区表里面记录。
 
-来自 util-linux (基于 util-linux 内建的 libfdisk) 的 fdisk 工具部分支持 GPT, 但仍在测试阶段 (自从2013年10月7日). 相关的 cfdisk 和 sfdisk 仍不支持 GPT, 并在 GPT 硬盘上使用的话有可能损坏 GPT 头和分区表。
+本文介绍 [fdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fdisk.8) 和 [sfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sfdisk.8) 工具的使用。
+
+**Tip:** [cfdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cfdisk.8) 工具提供了基本的功能和文本界面。
 
 ## Contents
 
-*   [1 使用 MBR - 传统方式](#.E4.BD.BF.E7.94.A8_MBR_-_.E4.BC.A0.E7.BB.9F.E6.96.B9.E5.BC.8F)
-    *   [1.1 Fdisk 用法](#Fdisk_.E7.94.A8.E6.B3.95)
-        *   [1.1.1 用 fdisk 建立 MBR 分区](#.E7.94.A8_fdisk_.E5.BB.BA.E7.AB.8B_MBR_.E5.88.86.E5.8C.BA)
-*   [2 See also](#See_also)
+*   [1 安装](#.E5.AE.89.E8.A3.85)
+*   [2 显示分区](#.E6.98.BE.E7.A4.BA.E5.88.86.E5.8C.BA)
+*   [3 备份和恢复分区](#.E5.A4.87.E4.BB.BD.E5.92.8C.E6.81.A2.E5.A4.8D.E5.88.86.E5.8C.BA)
+    *   [3.1 Using dd](#Using_dd)
+    *   [3.2 Using sfdisk](#Using_sfdisk)
+*   [4 创建分区表和分区](#.E5.88.9B.E5.BB.BA.E5.88.86.E5.8C.BA.E8.A1.A8.E5.92.8C.E5.88.86.E5.8C.BA)
+    *   [4.1 Create new table](#Create_new_table)
+    *   [4.2 Create partitions](#Create_partitions)
+    *   [4.3 Write changes to disk](#Write_changes_to_disk)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Sort partitions](#Sort_partitions)
+*   [6 See also](#See_also)
 
-## 使用 MBR - 传统方式
+## 安装
 
-**警告:** 如果打算以 BIOS 模式双启动 Windows （这是32位版 Windows 和64位版 Windows XP 的唯一选择），**不要** 使用 GPT，因为 Windows **不支持**在使用 BIOS 的机器上从 GPT 分区的磁盘上启动。你需要像下面所说的那样，使用 MBR 分区，并且从 BIOS 模式启动。对于现代在 UEFI 模式下的64位 Windows 版本不存在这个限制。
+要使用 *fdisk* 及相关工具，请使用 [util-linux](https://www.archlinux.org/packages/?name=util-linux) 软件包，这个软件包已经位于 [base](https://www.archlinux.org/groups/x86_64/base/) 软件包组。
 
-使用 MBR 的话，可以使用*fdisk* 工具编辑分区表。新版本的 *fdisk* 已经废弃使用柱面作为默认显示单位的方式，同时默认也放弃了对MS-DOS的兼容性。最新版本的 *fdisk* 会自动将所有分区对齐到2048扇区，或1024 KiB，以兼容所有已知的 SSD 制造商的 EBS 大小。即使用默认设置即可获得合适的分区对齐。
+## 显示分区
 
-注意，在以前 *fdisk* 使用柱面作为默认显示单位，并且保留了 MS-DOS 兼容性，这使其默认无法进行 SSD 对齐。因此人们需要从网上查找各种资料以保证分区对齐。使用最新版本的 *fdisk* 简单得多，正如本文档所述那样。
-
-### Fdisk 用法
-
-*   以 root 身份启动 *fdisk* （*disk-device* 形如 `/dev/sda`）:
+To list partition tables and partitions on a device, you can run the following, where device is a name like `/dev/sda`:
 
 ```
-# fdisk *disk-device*
+# fdisk -l /dev/sda
 
 ```
 
-*   如果是全新的磁盘或你想重新分区，使用 `o` 命令建立一个新的空 DOS 分区表。
-*   使用`n` 命令创建一个新的分区（主分区/第一分区）。
-*   使用 `+*x*G` 的格式指定分区大小为 *x* GB。例如，如果你需要创建一个 15 GiB 的分区，你需要输入 `+15G`。
-*   使用`t` 命令将分区的 ID 从默认值修改为 Linux（`type 83`）。这是一个可选步骤。如果用户想创建其他类型的分区，如swap，NTFS，LVM 等也可以。注意，完整的可用分区类型列表可以通过 `l` 命令获取。
-*   其他分区的处理方式类似。
-*   使用 `w` 命令将分区表写入磁盘并退出。
-*   将新分区格式化为[文件系统](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File systems (简体中文)")。
+**Note:** If the device is not specified, *fdisk* will list all partitions in `/proc/partitions`.
 
-##### 用 fdisk 建立 MBR 分区
+## 备份和恢复分区
 
-**注意:** 安装媒介中亦有一个叫 `cfdisk` 的工具，它的 UI 与 `cgdisk` 相似；但目前仍不能正确地自动对齐好第一个分区。所以我们在这里改用经典的 fdisk 工具。
+Before making changes to a hard disk, you may want to backup the partition table and partition scheme of the drive. You can also use a backup to copy the same partition layout to numerous drives.
 
-启动 *fdisk* :
+### Using dd
+
+See [Dd#Backup and restore MBR partition table](/index.php/Dd#Backup_and_restore_MBR_partition_table "Dd").
+
+### Using sfdisk
+
+For both GPT and MBR you can use *sfdisk* to save the partition layout of your device to a file with the `-d`/`--dump` option. Run the following command for device `/dev/sda`:
+
+```
+# sfdisk -d /dev/sda > sda.dump
+
+```
+
+The file should look something like this for a single ext4 partition that is 1 GiB in size:
+
+ `sda.dump` 
+```
+label: gpt
+label-id: AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE
+device: /dev/sda
+unit: sectors
+first-lba: 34
+last-lba: 1048576
+
+/dev/sda1 : start=2048, size=1048576, type=0FC63DAF-8483-4772-8E79-3D69D8477DE4, uuid=BBF1CD36-9262-463E-A4FB-81E32C12BDE7
+```
+
+To later restore this layout you can run:
+
+```
+# sfdisk /dev/sda < sda.dump
+
+```
+
+## 创建分区表和分区
+
+The first step to [partitioning](/index.php/Partitioning "Partitioning") a disk is making a partition table. After that, the actual partitions are created according to the desired [partition scheme](/index.php/Partition_scheme "Partition scheme"). See the [partition table](/index.php/Partition_table "Partition table") article to help decide whether to use [MBR](/index.php/MBR "MBR") or [GPT](/index.php/GPT "GPT").
+
+Before beginning, you may wish to [backup](#Backup_and_restore_partition_table) your current partition table and scheme.
+
+Recent versions of *fdisk* have abandoned the deprecated system of using cylinders as the default display unit, as well as MS-DOS compatibility by default. *fdisk* automatically aligns all partitions to 2048 sectors, or 1 MiB, which should work for all EBS sizes that are known to be used by SSD manufacturers. This means that the default settings will give you proper alignment.
+
+Start *fdisk* against your drive as root. In this example we are using `/dev/sda`:
 
 ```
 # fdisk /dev/sda
 
 ```
 
-创建分区表：
+This opens the *fdisk* dialogue where you can type in commands.
 
-*   `Command (m for help):` 输入 `o` 并按下 `Enter`
+### Create new table
 
-然后建立第一个分区：
+**Warning:** If you create a new partition table on a disk with data on it, it will erase all the data on the disk. Make sure this is what you want to do.
 
-1.  `Command (m for help):` 输入 `n` 并按下 `Enter`
-2.  Partition type: `Select (default p):` 按下 `Enter`
-3.  `Partition number (1-4, default 1):` 按下 `Enter`
-4.  `First sector (2048-209715199, default 2048):` 按下 `Enter`
-5.  `Last sector, +sectors or +size{K,M,G} (2048-209715199....., default 209715199):` 输入 `+15G` 并按下 `Enter`
+To create a new partition table and clear all current partition data type `o` at the prompt for a MBR partition table or `g` for a GUID Partition Table (GPT). Skip this step if the table you require has already been created.
 
-然后建立第二个分区：
+### Create partitions
 
-1.  `Command (m for help):` 输入 `n` 并按下 `Enter`
-2.  Partition type: `Select (default p):` 按下 `Enter`
-3.  `Partition number (1-4, default 2):` 按下 `Enter`
-4.  `First sector (31459328-209715199, default 31459328):` 按下 `Enter`
-5.  `Last sector, +sectors or +size{K,M,G} (31459328-209715199....., default 209715199):` 按下 `Enter`
+Create a new partition with the `n` command. You enter a partition type, partition number, starting sector, and an ending sector.
 
-现在预览下新的分区表:
+When prompted, specify the partition type, type `p` to create a primary partition or `e` to create an extended one. There may be up to four primary partitions.
 
-*   `Command (m for help):` 输入 `p` 并按下 `Enter`
+The first sector must be specified in absolute terms using sector numbers. The last sector can be specified using the absolute position in sectors or using the `+` symbol to specify a position relative to the start sector measured in sectors, kibibytes (`K`), mebibytes (`M`), gibibytes (`G`), tebibytes (`T`), or pebibytes (`P`); for instance, setting `+2G` as the last sector will specify a point 2GiB after the start sector. Pressing the `Enter` key with no input specifies the default value, which is the start of the largest available block for the start sector and the end of the same block for the end sector.
 
-```
-Disk /dev/sda: 107.4 GB, 107374182400 bytes, 209715200 sectors
-Units = sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disk identifier: 0x5698d902
+Select the partition's type id. The default, `Linux filesystem`, should be fine for most use. Press `l` to show the codes list. You can make the partition bootable by typing `a`.
 
-   Device Boot     Start         End     Blocks   Id  System
-/dev/sda1           2048    31459327   15728640   83   Linux
-/dev/sda2       31459328   209715199   89127936   83   Linux
+**Tip:**
 
-```
+*   When partitioning it is always a good idea to follow the default values for first and last partition sectors. Additionally, specify partition sizes with the *+<size>{M,G,...}* notation. Such partitions are always aligned according to the device properties.
+*   On a MBR partitioned disk leave at least 16.5 KiB free space at the end of the disk to simplify [converting between MBR and GPT](/index.php/Gdisk#Convert_between_MBR_and_GPT "Gdisk") if the need ever arises.
+*   [EFI system partition](/index.php/EFI_system_partition "EFI system partition") requires type `EFI System`.
+*   [GRUB](/index.php/GRUB "GRUB") requires a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") with type `BIOS boot` when installing GRUB to a disk.
+*   It is recommended to use `Linux swap` for any [swap](/index.php/Swap "Swap") partitions, since systemd will automount it.
 
-然后向磁盘写入这些改动：
+See the respective articles for considerations concerning the size and location of these partitions.
 
-*   `Command (m for help):` 输入 `w` 并按下 `Enter`
+Repeat this procedure until you have the partitions you desire.
 
-如果一切顺利无错误的话，fdisk 程序将显示如下信息：
+### Write changes to disk
+
+Write the table to disk and exit via the `w` command.
+
+## Tips and tricks
+
+### Sort partitions
+
+This applies for when a new partition is created in the space between two partitions or a partition is deleted. `/dev/sda` is used in this example.
 
 ```
-The partition table has been altered!
-
-Calling ioctl() to re-read partition table.
-Syncing disks. 
+# sfdisk -r /dev/sda
 
 ```
 
-若因 *fdisk* 遇到错误导致以上操作无法完成，可以用 `q` 命令来退出。
+After sorting the partitions if you are not using [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming"), it might be required to adjust the `/etc/fstab` and/or the `/etc/crypttab` configuration files.
+
+**Note:** The kernel must read the new partition table for the partitions (e.g. `/dev/sda1`) to be usable. Reboot the system or tell the kernel to [reread the partition table](https://serverfault.com/questions/36038/reread-partition-table-without-rebooting).
 
 ## See also
 

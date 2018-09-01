@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Installation guide](/index.php/Installation_guide "Installation guide"). Дата последней синхронизации: 19 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=482303).
+**Состояние перевода:** На этой странице представлен перевод статьи [Installation guide](/index.php/Installation_guide "Installation guide"). Дата последней синхронизации: 23 августа 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=537115).
 
 Этот документ является руководством по установке [Arch Linux](/index.php/Arch_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Linux (Русский)") из-под системы, запущенной с официального установочного образа. Перед установкой рекомендуется посмотреть [часто задаваемые вопросы](/index.php/%D0%A7%D0%B0%D1%81%D1%82%D0%BE_%D0%B7%D0%B0%D0%B4%D0%B0%D0%B2%D0%B0%D0%B5%D0%BC%D1%8B%D0%B5_%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B "Часто задаваемые вопросы"). Чтобы получить разъяснения по понятиям, используемым на этой странице, смотрите статью [Help:Чтение](/index.php/Help:%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5 "Help:Чтение"). В частности, примеры кода могут содержать заполнители (отформатированные в `*курсиве*`), которые необходимо заменить вручную.
 
@@ -23,12 +23,11 @@ Arch Linux способен работать на любой [x86_64](https://en
     *   [3.1 Fstab](#Fstab)
     *   [3.2 Chroot](#Chroot)
     *   [3.3 Часовой пояс](#.D0.A7.D0.B0.D1.81.D0.BE.D0.B2.D0.BE.D0.B9_.D0.BF.D0.BE.D1.8F.D1.81)
-    *   [3.4 Локаль](#.D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D1.8C)
-    *   [3.5 Имя хоста](#.D0.98.D0.BC.D1.8F_.D1.85.D0.BE.D1.81.D1.82.D0.B0)
-    *   [3.6 Настройка сети](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81.D0.B5.D1.82.D0.B8)
-    *   [3.7 Initramfs](#Initramfs)
-    *   [3.8 Пароль суперпользователя](#.D0.9F.D0.B0.D1.80.D0.BE.D0.BB.D1.8C_.D1.81.D1.83.D0.BF.D0.B5.D1.80.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F)
-    *   [3.9 Загрузчик](#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D1.87.D0.B8.D0.BA)
+    *   [3.4 Локализация](#.D0.9B.D0.BE.D0.BA.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F)
+    *   [3.5 Настройка сети](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81.D0.B5.D1.82.D0.B8)
+    *   [3.6 Initramfs](#Initramfs)
+    *   [3.7 Пароль суперпользователя](#.D0.9F.D0.B0.D1.80.D0.BE.D0.BB.D1.8C_.D1.81.D1.83.D0.BF.D0.B5.D1.80.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8F)
+    *   [3.8 Загрузчик](#.D0.97.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D1.87.D0.B8.D0.BA)
 *   [4 Перезагрузка](#.D0.9F.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B0)
 *   [5 После установки](#.D0.9F.D0.BE.D1.81.D0.BB.D0.B5_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B8)
 
@@ -40,7 +39,19 @@ Arch Linux способен работать на любой [x86_64](https://en
 
 ### Установка раскладки клавиатуры
 
-По умолчанию используется [раскладка](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). Чтобы посмотреть список доступных раскладок, запустите `ls /usr/share/kbd/keymaps/**/*.map.gz`. Чтобы изменить раскладку, добавьте имя соответствующего файла к команде [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), не указывая полного пути и расширения. Например, чтобы выбрать [русскую](https://en.wikipedia.org/wiki/File:KB_Russian.svg "w:File:KB Russian.svg") раскладку, запустите `loadkeys ru`.
+По умолчанию используется [раскладка консоли](/index.php/%D0%A0%D0%B0%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8 "Раскладка консоли") [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "w:File:KB United States-NoAltGr.svg"). Чтобы посмотреть список доступных раскладок, запустите:
+
+```
+# ls /usr/share/kbd/keymaps/**/*.map.gz
+
+```
+
+Чтобы изменить раскладку, добавьте имя соответствующего файла к команде [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1), не указывая полного пути и расширения. Например, чтобы выбрать [русскую](https://en.wikipedia.org/wiki/File:KB_Russian.svg "w:File:KB Russian.svg") раскладку, запустите:
+
+```
+# loadkeys ru
+
+```
 
 [Консольные шрифты](/index.php/Fonts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A8.D1.80.D0.B8.D1.84.D1.82_.D0.B2_.D0.BA.D0.BE.D0.BD.D1.81.D0.BE.D0.BB.D0.B8 "Fonts (Русский)") расположены в каталоге `/usr/share/kbd/consolefonts/` и могут быть выбраны при помощи [setfont(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
 
@@ -57,16 +68,14 @@ Arch Linux способен работать на любой [x86_64](https://en
 
 ### Соединение с Интернетом
 
-Для [проводных](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) сетевых устройств установочный образ во время загрузки автоматически [включает](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.8E.D0.BD.D0.B8.D1.82.D0.BE.D0.B2 "Systemd (Русский)") службу [dhcpcd](/index.php/Dhcpcd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dhcpcd (Русский)"). Соединение можно проверить:
+Для [проводных](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) сетевых устройств установочный образ во время загрузки автоматически включает службу [dhcpcd](/index.php/Dhcpcd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Dhcpcd (Русский)"). Соединение можно проверить с помощью утилиты [ping](https://en.wikipedia.org/wiki/ru:ping "wikipedia:ru:ping"):
 
 ```
 # ping archlinux.org
 
 ```
 
-Если узел недоступен, [остановите](/index.php/%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Остановите") службу *dhcpcd* при помощи `systemctl stop dhcpcd@`, `Tab` и обратитесь к разделу [Настройка сети#Драйвер устройства](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8#.D0.94.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0 "Настройка сети").
-
-Для **беспроводных** соединений доступны [iw(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iw.8), [wpa_supplicant(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wpa_supplicant.8) и [netctl](/index.php/Netctl_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Netctl (Русский)"). Также смотрите статью [Настройка беспроводной сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D0%B1%D0%B5%D1%81%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9_%D1%81%D0%B5%D1%82%D0%B8 "Настройка беспроводной сети").
+Если узел недоступен, [остановите](/index.php/%D0%9E%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Остановите") службу *dhcpcd* при помощи команды `systemctl stop dhcpcd@*интерфейс*`, где `*интерфейс*` может быть [завершен по табу](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion"). Потом перейдите к настройке сети, как описано в [Настройка сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8 "Настройка сети").
 
 ### Синхронизация системных часов
 
@@ -81,30 +90,47 @@ Arch Linux способен работать на любой [x86_64](https://en
 
 ### Разбиение дисков на разделы
 
-Когда запущенная система распознает накопители, они становятся доступны как *блочные устройства*, например, `/dev/sda`. Чтобы посмотреть их список, используйте [lsblk](/index.php/Lsblk "Lsblk") или *fdisk*, при этом результаты, оканчивающиеся на `rom`, `loop` и `airoot`, можно игнорировать:
+Когда запущенная система распознает накопители, они становятся доступны как [блочные устройства](https://en.wikipedia.org/wiki/Device_file#Naming_conventions "wikipedia:Device file"), например, `/dev/sda` или `/dev/nvme0n1`. Чтобы посмотреть их список, используйте [lsblk](/index.php/Lsblk "Lsblk") или *fdisk*.
 
 ```
 # fdisk -l
 
 ```
 
-На выбранном накопителе должны присутствовать следующие *разделы* (показываются с цифрой на конце):
+Результаты, оканчивающиеся на `rom`, `loop` и `airoot`, можно игнорировать:
+
+На выбранном накопителе **должны присутствовать** следующие *разделы*:
 
 *   Раздел для корневого каталога `/`
-*   Если включен режим [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Unified Extensible Firmware Interface (Русский)"), необходим [EFI system partition](/index.php/EFI_system_partition "EFI system partition")
+*   Если включен режим [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Unified Extensible Firmware Interface (Русский)"), необходим [системный раздел EFI](/index.php/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%BD%D1%8B%D0%B9_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB_EFI "Системный раздел EFI")
 
-[Пространство подкачки](/index.php/Swap "Swap") можно расположить на отдельном разделе или в [файле](/index.php/Swap#Swap_file "Swap").
+**Примечание:** [Пространство подкачки](/index.php/%D0%9F%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%BE_%D0%BF%D0%BE%D0%B4%D0%BA%D0%B0%D1%87%D0%BA%D0%B8 "Пространство подкачки") можно расположить на отдельном разделе или в [файле](/index.php/Swap_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A4.D0.B0.D0.B9.D0.BB_.D0.BF.D0.BE.D0.B4.D0.BA.D0.B0.D1.87.D0.BA.D0.B8 "Swap (Русский)").
 
-Для редактирования *разметки дисков* используйте [fdisk](/index.php/Fdisk "Fdisk") или [parted](/index.php/Parted "Parted"). Для получения дополнительной информации смотрите статью [Разметка дисков](/index.php/%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%82%D0%BA%D0%B0_%D0%B4%D0%B8%D1%81%D0%BA%D0%BE%D0%B2 "Разметка дисков").
+Для редактирования *таблицы разделов* используйте [fdisk](/index.php/Fdisk_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fdisk (Русский)") или [parted](/index.php/GNU_Parted_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNU Parted (Русский)").
 
-Если вы хотите создать составное блочное устройство для [LVM](/index.php/LVM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LVM (Русский)"), [шифрования диска](/index.php/Disk_encryption "Disk encryption") или [RAID](/index.php/RAID "RAID"), сделайте это сейчас.
+```
+# fdisk /dev/*sda*
+
+```
+
+Для получения дополнительной информации смотрите статью [Разметка дисков](/index.php/%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%82%D0%BA%D0%B0_%D0%B4%D0%B8%D1%81%D0%BA%D0%BE%D0%B2 "Разметка дисков").
+
+**Примечание:** Если вы хотите создать составное блочное устройство для [LVM](/index.php/LVM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LVM (Русский)"), [шифрования диска](/index.php/Disk_encryption "Disk encryption") или [RAID](/index.php/RAID_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "RAID (Русский)"), сделайте это сейчас.
 
 ### Форматирование разделов
 
-Когда разделы созданы, каждый из них необходимо отформатировать в подходящую [файловую систему](/index.php/File_systems "File systems"). Например, чтобы отформатировать корневой раздел `/dev/*sda1*` в `*ext4*`, выполните:
+Когда разделы созданы, каждый из них необходимо отформатировать в подходящую [файловую систему](/index.php/%D0%A4%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D0%B5_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B "Файловые системы"). Например, чтобы отформатировать корневой раздел `/dev/*sda1*` в `*ext4*`, выполните:
 
 ```
 # mkfs.*ext4* /dev/*sda1*
+
+```
+
+Если вы создали раздел для подкачки (например, `/dev/*sda3*`), инициализируйте его через утилиту *mkswap*:
+
+```
+# mkswap /dev/*sda3*
+# swapon /dev/*sda3*
 
 ```
 
@@ -148,7 +174,7 @@ Arch Linux способен работать на любой [x86_64](https://en
 
 ```
 
-В этой группе содержатся не все инструменты, имеющиеся на установочном носителе, например, в ней нет [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) и специфичных прошивок беспроводных сетевых устройств; список можно посмотреть на странице [packages.both](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.both).
+В этой группе содержатся не все инструменты, имеющиеся на установочном носителе, например, в ней нет [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) и специфичных прошивок беспроводных сетевых устройств; список можно посмотреть на странице [packages.x86_64](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64).
 
 Чтобы [установить](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C "Установить") другие необходимые пакеты или группы, например, [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), добавьте их имена к команде *pacstrap* (разделяя их пробелом) или используйте команды [pacman](/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Pacman (Русский)") после шага [#Chroot](#Chroot).
 
@@ -176,7 +202,7 @@ Arch Linux способен работать на любой [x86_64](https://en
 
 ### Часовой пояс
 
-Задайте [часовой пояс](/index.php/Time_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A7.D0.B0.D1.81.D0.BE.D0.B2.D0.BE.D0.B9_.D0.BF.D0.BE.D1.8F.D1.81 "Time (Русский)"):
+Задайте [часовой пояс](/index.php/%D0%92%D1%80%D0%B5%D0%BC%D1%8F#.D0.A7.D0.B0.D1.81.D0.BE.D0.B2.D0.BE.D0.B9_.D0.BF.D0.BE.D1.8F.D1.81 "Время"):
 
 ```
 # ln -sf /usr/share/zoneinfo/*Регион*/*Город* /etc/localtime
@@ -192,9 +218,9 @@ Arch Linux способен работать на любой [x86_64](https://en
 
 Эта команда предполагает, что аппаратные часы настроены в формате [UTC](https://en.wikipedia.org/wiki/ru:%D0%92%D1%81%D0%B5%D0%BC%D0%B8%D1%80%D0%BD%D0%BE%D0%B5_%D0%BA%D0%BE%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5_%D0%B2%D1%80%D0%B5%D0%BC%D1%8F "w:ru:Всемирное координированное время"). Для получения дополнительной информации смотрите раздел [Время#Стандарты времени](/index.php/%D0%92%D1%80%D0%B5%D0%BC%D1%8F#.D0.A1.D1.82.D0.B0.D0.BD.D0.B4.D0.B0.D1.80.D1.82.D1.8B_.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.B8 "Время").
 
-### Локаль
+### Локализация
 
-Включите `en_US.UTF-8 UTF-8` и другие необходимые [локализации](/index.php/Locale_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Locale (Русский)") (например, `ru_RU.UTF-8 UTF-8`), раскомментировав их в файле `/etc/locale.gen`, после чего сгенерируйте их:
+Включите `en_US.UTF-8 UTF-8` и другие необходимые [локали](/index.php/%D0%9B%D0%BE%D0%BA%D0%B0%D0%BB%D0%B8 "Локали") (например, `ru_RU.UTF-8 UTF-8`), раскомментировав их в файле `/etc/locale.gen`, после чего сгенерируйте их:
 
 ```
 # locale-gen
@@ -205,13 +231,17 @@ Arch Linux способен работать на любой [x86_64](https://en
 
  `/etc/locale.conf`  `LANG=*ru_RU.UTF-8*` 
 
-Если вы [меняли раскладку клавиатуры](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D0.B8_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B), сделайте это изменение постоянным в файле [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5):
+Если вы [меняли раскладку клавиатуры](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D0.B8_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B), сделайте это изменение постоянным в файле [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5). Также добавьте шрифт для консоли с поддержкой кириллицы:
 
- `/etc/vconsole.conf`  `KEYMAP=*ru*` 
+ `/etc/vconsole.conf` 
+```
+KEYMAP=*ru*
+FONT=cyr-sun16
+```
 
-### Имя хоста
+### Настройка сети
 
-Создайте файл [hostname(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.5):
+Создайте файл [hostname](/index.php/Hostname "Hostname"):
 
  `/etc/hostname` 
 ```
@@ -219,23 +249,19 @@ Arch Linux способен работать на любой [x86_64](https://en
 
 ```
 
-Рекомендуется также добавить соответствующую запись в файл [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5):
+Добавьте соответствующую запись в файл [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5):
 
  `/etc/hosts` 
 ```
-127.0.0.1	localhost.localdomain	localhost
-::1		localhost.localdomain	localhost
-**127.0.1.1	*моёимяхоста*.localdomain	*моёимяхоста***
+127.0.0.1	localhost
+::1		localhost
+127.0.1.1	*моёимяхоста*.localdomain	*моёимяхоста*
 
 ```
 
-Смотрите также раздел [Настройка сети#Установка имени узла](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B8.D0.BC.D0.B5.D0.BD.D0.B8_.D1.83.D0.B7.D0.BB.D0.B0 "Настройка сети").
+Если система имеет постоянный IP-адрес, его следует использовать вместо `127.0.1.1`.
 
-### Настройка сети
-
-В свежеустановленном окружении нет сетевых соединений, активированных по умолчанию. Чтобы их настроить, обратитесь к разделу [Network configuration#Network management](/index.php/Network_configuration#Network_management "Network configuration").
-
-Для [настройки беспроводной сети](/index.php/Wireless_network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Wireless network configuration (Русский)") [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакеты [iw](https://www.archlinux.org/packages/?name=iw) и [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant), а также требуемые [пакеты прошивок](/index.php/Wireless_network_configuration_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0.2F.D0.BF.D1.80.D0.BE.D1.88.D0.B8.D0.B2.D0.BA.D0.B8 "Wireless network configuration (Русский)"). Если вы хотите использовать*wifi-menu*, установите пакет [dialog](https://www.archlinux.org/packages/?name=dialog).
+Завершите [настройку сети](/index.php/%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D1%81%D0%B5%D1%82%D0%B8 "Настройка сети") для вновь установленной среды.
 
 ### Initramfs
 
@@ -259,7 +285,7 @@ Arch Linux способен работать на любой [x86_64](https://en
 
 ### Загрузчик
 
-Чтобы узнать о всех доступных вариантах конфигурации, обратитесь к категории [Загрузчики](/index.php/Category:Boot_loaders_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Boot loaders (Русский)").
+Для запуска Arch Linux необходимо установить загрузчик с поддержкой Linux. Чтобы узнать о всех доступных вариантах, обратитесь к категории [Загрузчики](/index.php/Category:Boot_loaders_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Boot loaders (Русский)").
 
 Если вы используете процессор Intel, дополнительно установите пакет [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) и [включите обновления микрокода](/index.php/Microcode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B8.D0.BA.D1.80.D0.BE.D0.BA.D0.BE.D0.B4.D0.B0 "Microcode (Русский)").
 

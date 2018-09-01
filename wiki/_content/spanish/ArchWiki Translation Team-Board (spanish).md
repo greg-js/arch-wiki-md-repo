@@ -134,7 +134,7 @@
 | [Time (Español)](/index.php/Time_(Espa%C3%B1ol) "Time (Español)") | `2013-09` |
 | [Touchpad Synaptics (Español)](/index.php/Touchpad_Synaptics_(Espa%C3%B1ol) "Touchpad Synaptics (Español)") | `2013-09` |
 | [Udev (Español)](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") | `2013-09` |
-| [Unified Extensible Firmware Interface (Español)](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)") | `2014-11` |
+| [Unified Extensible Firmware Interface (Español)](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)") | `2018-08` |
 | [USB flash installation media (Español)](/index.php/USB_flash_installation_media_(Espa%C3%B1ol) "USB flash installation media (Español)") | `2013-11` |
 | [Users and groups (Español)](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") | `2013-09` | [AlonsoLP](/index.php/User:AlonsoLP "User:AlonsoLP") | Consulte esta [tabla](/index.php/User:AlonsoLP#Contribuciones "User:AlonsoLP") para más detalles. |
 | [VirtualBox (Español)](/index.php/VirtualBox_(Espa%C3%B1ol) "VirtualBox (Español)") | `2014-12` |

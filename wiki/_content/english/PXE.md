@@ -205,11 +205,11 @@ If you have an existing PXE server with a [PXELINUX](/index.php/PXELINUX "PXELIN
 LABEL 2
         MENU LABEL Arch Linux x86_64
         LINUX */path/to/extracted/Arch/ISO*/arch/boot/x86_64/vmlinuz
-        INITRD */path/to/extracted/Arch/ISO*/arch/boot/intel_ucode.img,*/path/to/extracted/Arch/ISO*/arch/boot/x86_64/archiso.img
+        INITRD */path/to/extracted/Arch/ISO*/arch/boot/intel_ucode.img,*/path/to/extracted/Arch/ISO*/arch/boot/amd_ucode.img,*/path/to/extracted/Arch/ISO*/arch/boot/x86_64/archiso.img
         APPEND archisobasedir=arch archiso_http_srv=*http://httpserver/path/to/extracted/Arch/ISO*/ ip=::
         SYSAPPEND 2
         TEXT HELP
-        Arch Linux 2017.12.01 x86_64
+        Arch Linux 2018.09.01 x86_64
         ENDTEXT
 ```
 

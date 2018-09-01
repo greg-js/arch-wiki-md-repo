@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting"). Дата последней синхронизации: 8 мая 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Troubleshooting&diff=0&oldid=520606).
+**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting"). Дата последней синхронизации: 13 августа 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Troubleshooting&diff=0&oldid=534590).
 
 Ссылки по теме
 
@@ -214,20 +214,37 @@ usb 3-2: configuration #1 chosen from 1 choice
 
 ### Плохие разрешения
 
-Измените разрешения USB-порта принтера. Получите номер шины(BUSID) и устройства(DEVID) от `lsusb`, затем установите разрешение, используя:
+Проверьте разрешения USB-порта принтера. Получите номер шины (BUSID) и устройства (DEVID) от `lsusb`:
 
  ` lsusb `  ` Bus <BUSID> Device <DEVID>: ID <PRINTERID>:<VENDOR> Hewlett-Packard DeskJet D1360` 
 
-Затем замените предоставленную информацию об устройстве в
+Проверьте владельца, просмотрев devfs:
 
 ```
-# chmod 0666 /dev/bus/usb/<BUSID>/<DEVID>
+ # ls -l /dev/bus/usb/<BUSID>/<DEVID>
 
 ```
+
+Демон cups запускается от пользователя "cups" и относится к группе "lp", поэтому либо этому пользователю, либо группе требуется доступ на чтение и запись в USB-устройство. Если вы считаете, что разрешения выглядят неправильно, вы можете временно изменить группу и разрешение:
+
+```
+# chgrp lp /dev/bus/usb/<BUSID>/<DEVID>
+# chmod 664 /dev/bus/usb/<BUSID>/<DEVID>
+
+```
+
+Затем проверьте, может ли cups теперь видеть устройство USB правильно.
 
 Чтобы сделать постоянное изменение разрешения, которое будет запускаться автоматически при каждом запуске компьютера, добавьте следующую строку.
 
- `/etc/udev/rules.d/10-local.rules`  `SUBSYSTEM=="usb", ATTRS{idVendor}=="<VENDOR>", ATTRS{idProduct}=="<PRINTERID>", GROUP="lp", MODE:="666"` 
+ `/etc/udev/rules.d/10-local.rules`  `SUBSYSTEM=="usb", ATTRS{idVendor}=="<VENDOR>", ATTRS{idProduct}=="<PRINTERID>", GROUP:="lp", MODE:="0664"` 
+
+После редактирования перезагрузите правила udev этой командой:
+
+```
+# udevadm control --reload-rules
+
+```
 
 Каждая система может отличаться, поэтому обратитесь к вики-странице [udev (Русский)#Список атрибутов устройства](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D0.B0.D1.82.D1.80.D0.B8.D0.B1.D1.83.D1.82.D0.BE.D0.B2_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0 "Udev (Русский)").
 
@@ -419,7 +436,7 @@ application/octet-stream
 
 (Также применимо к ошибке "-1 не поддерживается!")
 
-Попробуйте удалить драйверы Foomatic или обратитесь к [CUPS/Принтероспецифичные проблемы#Драйвер HPLIP](/index.php/CUPS/%D0%9F%D1%80%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D1%84%D0%B8%D1%87%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D1%8B#.D0.94.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80_HPLIP "CUPS/Принтероспецифичные проблемы") для обходного пути.
+Попробуйте удалить драйверы Foomatic или обратитесь к [CUPS/Принтероспецифичные проблемы#HPLIP](/index.php/CUPS/%D0%9F%D1%80%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D1%84%D0%B8%D1%87%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D1%8B#HPLIP "CUPS/Принтероспецифичные проблемы") для обходного пути.
 
 ### lp: Error - Scheduler Not Responding
 

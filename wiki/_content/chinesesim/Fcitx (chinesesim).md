@@ -4,9 +4,9 @@ Related articles
 *   [SCIM](/index.php/SCIM "SCIM")
 *   [UIM](/index.php/UIM "UIM")
 
-**翻译状态：** 本文是英文页面 [Fcitx](/index.php/Fcitx "Fcitx") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-16，点击[这里](https://wiki.archlinux.org/index.php?title=Fcitx&diff=0&oldid=493369)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Fcitx](/index.php/Fcitx "Fcitx") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-08-31，点击[这里](https://wiki.archlinux.org/index.php?title=Fcitx&diff=0&oldid=535074)可以查看翻译后英文页面的改动。
 
-[Fcitx](https://fcitx-im.org/wiki/Fcitx) (Flexible Input Method Framework) ──即小企鹅输入法，它是一个以 GPL 方式发布的[输入法](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method")平台,可以通过安装引擎支持多种输入法，支持简入繁出，是在 Linux 操作系统中常用的中文输入法。它的优点是，短小精悍、跟程序的兼容性比较好。
+[Fcitx](https://en.wikipedia.org/wiki/Fcitx "wikipedia:Fcitx") (Flexible Input Method Framework) ──即小企鹅输入法，它是一个以 GPL 方式发布的[输入法](https://en.wikipedia.org/wiki/Input_method "wikipedia:Input method")平台,可以通过安装引擎支持多种输入法，支持简入繁出，是在 Linux 操作系统中常用的中文输入法。它的优点是，短小精悍、跟程序的兼容性比较好。
 
 ## Contents
 
@@ -35,15 +35,16 @@ Related articles
     *   [4.4 特殊符号](#.E7.89.B9.E6.AE.8A.E7.AC.A6.E5.8F.B7)
     *   [4.5 快速输入](#.E5.BF.AB.E9.80.9F.E8.BE.93.E5.85.A5)
 *   [5 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [5.1 首先诊断问题所在](#.E9.A6.96.E5.85.88.E8.AF.8A.E6.96.AD.E9.97.AE.E9.A2.98.E6.89.80.E5.9C.A8)
-    *   [5.2 Emacs 无法使用输入法](#Emacs_.E6.97.A0.E6.B3.95.E4.BD.BF.E7.94.A8.E8.BE.93.E5.85.A5.E6.B3.95)
-    *   [5.3 Firefox 右键菜单不弹出](#Firefox_.E5.8F.B3.E9.94.AE.E8.8F.9C.E5.8D.95.E4.B8.8D.E5.BC.B9.E5.87.BA)
-    *   [5.4 在 GTK2 程序中用 Ctrl + Space 不能调出输入法](#.E5.9C.A8_GTK2_.E7.A8.8B.E5.BA.8F.E4.B8.AD.E7.94.A8_Ctrl_.2B_Space_.E4.B8.8D.E8.83.BD.E8.B0.83.E5.87.BA.E8.BE.93.E5.85.A5.E6.B3.95)
-    *   [5.5 在 gnome-terminal中 Ctrl + Space 不能调出输入法](#.E5.9C.A8_gnome-terminal.E4.B8.AD_Ctrl_.2B_Space_.E4.B8.8D.E8.83.BD.E8.B0.83.E5.87.BA.E8.BE.93.E5.85.A5.E6.B3.95)
-    *   [5.6 Ctrl + ; 会调出 Fcitx 的剪贴板](#Ctrl_.2B_.3B_.E4.BC.9A.E8.B0.83.E5.87.BA_Fcitx_.E7.9A.84.E5.89.AA.E8.B4.B4.E6.9D.BF)
-    *   [5.7 fcitx-sogoupinyin 卡死、联想失败](#fcitx-sogoupinyin_.E5.8D.A1.E6.AD.BB.E3.80.81.E8.81.94.E6.83.B3.E5.A4.B1.E8.B4.A5)
-    *   [5.8 在某些程序下输入法总是被切换到美语键盘](#.E5.9C.A8.E6.9F.90.E4.BA.9B.E7.A8.8B.E5.BA.8F.E4.B8.8B.E8.BE.93.E5.85.A5.E6.B3.95.E6.80.BB.E6.98.AF.E8.A2.AB.E5.88.87.E6.8D.A2.E5.88.B0.E7.BE.8E.E8.AF.AD.E9.94.AE.E7.9B.98)
-    *   [5.9 Gnome On Wayland 用户无法使用 fcitx](#Gnome_On_Wayland_.E7.94.A8.E6.88.B7.E6.97.A0.E6.B3.95.E4.BD.BF.E7.94.A8_fcitx)
+    *   [5.1 停用或修改 *Extra key for trigger input method*](#.E5.81.9C.E7.94.A8.E6.88.96.E4.BF.AE.E6.94.B9_Extra_key_for_trigger_input_method)
+    *   [5.2 首先诊断问题所在](#.E9.A6.96.E5.85.88.E8.AF.8A.E6.96.AD.E9.97.AE.E9.A2.98.E6.89.80.E5.9C.A8)
+    *   [5.3 Emacs 无法使用输入法](#Emacs_.E6.97.A0.E6.B3.95.E4.BD.BF.E7.94.A8.E8.BE.93.E5.85.A5.E6.B3.95)
+    *   [5.4 Firefox 右键菜单不弹出](#Firefox_.E5.8F.B3.E9.94.AE.E8.8F.9C.E5.8D.95.E4.B8.8D.E5.BC.B9.E5.87.BA)
+    *   [5.5 在 GTK2 程序中用 Ctrl + Space 不能调出输入法](#.E5.9C.A8_GTK2_.E7.A8.8B.E5.BA.8F.E4.B8.AD.E7.94.A8_Ctrl_.2B_Space_.E4.B8.8D.E8.83.BD.E8.B0.83.E5.87.BA.E8.BE.93.E5.85.A5.E6.B3.95)
+    *   [5.6 在 gnome-terminal中 Ctrl + Space 不能调出输入法](#.E5.9C.A8_gnome-terminal.E4.B8.AD_Ctrl_.2B_Space_.E4.B8.8D.E8.83.BD.E8.B0.83.E5.87.BA.E8.BE.93.E5.85.A5.E6.B3.95)
+    *   [5.7 Ctrl + ; 会调出 Fcitx 的剪贴板](#Ctrl_.2B_.3B_.E4.BC.9A.E8.B0.83.E5.87.BA_Fcitx_.E7.9A.84.E5.89.AA.E8.B4.B4.E6.9D.BF)
+    *   [5.8 fcitx-sogoupinyin 卡死、联想失败](#fcitx-sogoupinyin_.E5.8D.A1.E6.AD.BB.E3.80.81.E8.81.94.E6.83.B3.E5.A4.B1.E8.B4.A5)
+    *   [5.9 在某些程序下输入法总是被切换到美语键盘](#.E5.9C.A8.E6.9F.90.E4.BA.9B.E7.A8.8B.E5.BA.8F.E4.B8.8B.E8.BE.93.E5.85.A5.E6.B3.95.E6.80.BB.E6.98.AF.E8.A2.AB.E5.88.87.E6.8D.A2.E5.88.B0.E7.BE.8E.E8.AF.AD.E9.94.AE.E7.9B.98)
+    *   [5.10 Gnome On Wayland 用户无法使用 fcitx](#Gnome_On_Wayland_.E7.94.A8.E6.88.B7.E6.97.A0.E6.B3.95.E4.BD.BF.E7.94.A8_fcitx)
 *   [6 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
@@ -52,7 +53,7 @@ Related articles
 
 ### 输入法引擎
 
-Fcitx 内置的输入法支持中文 [拼音](https://en.wikipedia.org/wiki/Pinyin "wikipedia:Pinyin") 和基于字符表的输入(例如[五笔](https://en.wikipedia.org/wiki/Wubi "wikipedia:Wubi")). 根据语言的不同，有不同的输入法引擎可以选择。
+Fcitx 内置的输入法支持中文 [拼音](https://en.wikipedia.org/wiki/Pinyin "wikipedia:Pinyin") 和基于字符表的输入(例如[五笔](https://en.wikipedia.org/wiki/Wubi_method "wikipedia:Wubi method")). 根据语言的不同，有不同的输入法引擎可以选择。
 
 #### 中文
 
@@ -69,9 +70,9 @@ Fcitx 内置的输入法支持中文 [拼音](https://en.wikipedia.org/wiki/Piny
 
 #### Japanese
 
-*   [fcitx-anthy](https://www.archlinux.org/packages/?name=fcitx-anthy), 为 Fcitx 添加 anthy (日语) 输入引擎支持。
 *   [fcitx-mozc](https://www.archlinux.org/packages/?name=fcitx-mozc), 为 Fcitx 添加 mozc (日语) 输入引擎支持，mozc 是 Google 日语输入法的开源版本。
 *   [fcitx-kkc](https://www.archlinux.org/packages/?name=fcitx-kkc), a new Japanese Kana Kanji input engine, based on [libkkc](https://www.archlinux.org/packages/?name=libkkc).
+*   [fcitx-anthy](https://www.archlinux.org/packages/?name=fcitx-anthy), 为 Fcitx 添加 anthy (日语) 输入引擎支持。
 
 #### 其它语言
 
@@ -92,10 +93,8 @@ Fcitx 提供对 Gtk+/Qt 提供了输入法模块，请根据需要安装 [fcitx-
 ### 其它
 
 *   [fcitx-ui-light](https://www.archlinux.org/packages/?name=fcitx-ui-light), Fcitx 的轻量 UI.
-*   [fcitx-fbterm](https://www.archlinux.org/packages/?name=fcitx-fbterm), Fbterm 对 Fcitx 的支持。
 *   [fcitx-table-extra](https://www.archlinux.org/packages/?name=fcitx-table-extra) Fcitx 的一些额外码表支持，包括仓颉 3, 仓颉 5, 粤拼, 速成, 五笔, 郑码等等
 *   [fcitx-table-other](https://www.archlinux.org/packages/?name=fcitx-table-other), Fcitx 的一些更奇怪的码表支持，包括 Latex, Emoji, 以及一大堆不明字符等等。
-*   [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx), KDE 的 Fcitx 输入法模块。
 
 您还可以在 [Arch User Repository (简体中文)](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 找到更多以上软件包的 Git 版以及其它。
 
@@ -120,37 +119,28 @@ cp /etc/xdg/autostart/fcitx-autostart.desktop ~/.config/autostart/
 
 将下面内容加入桌面的启动脚本，以注册输入法模块并支持 xim 程序。
 
-*   KDM, GDM, LightDM 等显示管理器，请使用 `~/.xprofile`
-
-**警告:** 上述用户不要在`~/.xinitrc`中加入下述脚本，否则会造成无法登陆。
-
-*   如果您用 `startx` 或者 Slim 启动，请使用`~/.xinitrc` 中加入
-*   如果你使用的是较新版本的GNOME，使用 Wayland 显示管理器，则请在`/etc/environment`中加入：
-
+ `~/.pam_environment` 
 ```
- export GTK_IM_MODULE=fcitx
- export QT_IM_MODULE=fcitx
- export XMODIFIERS=@im=fcitx
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
 
 ```
 
 重新登录后让环境变量生效。
 
-**警告:** 这一步非常重要请不要忽略，即便你原来默认没有.xprofile文件也要新建一个然后写入这几行，不然中文输入法是启动不了的。还有.xprofile文件名一定要全部小写，不要看到.Xauthority这种文件名以为首字母要大写就大写成.Xprofile了，不然也是没法用中文输入法的。
+如果 *fcitx* 没有自动启动，请将 `fcitx &` 加入 `~/.xinitrc`。
 
-**警告:** 使用Gtk2应用时请安装[fcitx-gtk2](https://www.archlinux.org/packages/?name=fcitx-gtk2)，使用Gtk3应用时请安装[fcitx-gtk3](https://www.archlinux.org/packages/?name=fcitx-gtk3)，使用Qt4应用时请安装[fcitx-qt4](https://www.archlinux.org/packages/?name=fcitx-qt4)，使用Qt5应用时请安装[fcitx-qt5](https://www.archlinux.org/packages/?name=fcitx-qt5)。
-
-**警告:** 请不要在 `.bashrc` 设置这些环境变量。`bashrc`只应用于交互性 bash 会话的初始化，并不应用于非交互性脚本或 X 会话的初始化。
-
-如果 Qt 使用 fcitx 有问题，请执行 qtconfig (qtconfig-qt4)，在输入法配置中将 fcitx 设置为 "Default Input Method"。
+*   请不要在 `.bashrc` 设置这些环境变量。`bashrc`只应用于交互性 bash 会话的初始化，并不应用于非交互性脚本或 X 会话的初始化。
+*   如果 Qt 使用 fcitx 有问题，请执行 qtconfig (qtconfig-qt4)，在输入法配置中将 fcitx 设置为 "Default Input Method"。
 
 ### Xim
 
-您还可以在 Gtk+/Qt 程序中用 xim, 为此您要将 [#非桌面环境](#.E9.9D.9E.E6.A1.8C.E9.9D.A2.E7.8E.AF.E5.A2.83) 里的环境变量改成如下的值：
+您还可以在 Gtk+/Qt 程序中用 xim, 为此您要将上面设置的变量改成如下的值：
 
 ```
- export GTK_IM_MODULE=xim
- export QT_IM_MODULE=xim
+GTK_IM_MODULE=xim
+QT_IM_MODULE=xim
 
 ```
 
@@ -164,7 +154,7 @@ cp /etc/xdg/autostart/fcitx-autostart.desktop ~/.config/autostart/
 
 ### 配置工具
 
-Fcitx 提供了若干图形界面的配置程序：基于 KDE 之 kcm 的 [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx), 基于 GTK+3 的 [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool)。
+Fcitx 提供了若干图形界面的配置程序：KDE 中的 [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx), 基于 GTK+3 的 [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool)。
 
 安装完配置工具[fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool)之后打开配置工具的方法是用终端运行fcitx-config-gtk3，打开这个配置工具之后还要添加中文输入法。对于新安装的英文系统，要取消只显示当前语言的输入法（Only Show Current Language），才能看到和添加中文输入法(Pinyin, Libpinyin等)。
 
@@ -320,6 +310,10 @@ autocmd InsertEnter * call Fcitx2zh()
 
 ## 故障排除
 
+### 停用或修改 *Extra key for trigger input method*
+
+设置位于 *全局配置* 标签，默认是 *SHIFT*, 也就是说两边的 shift 键都会修改输入法。这个设置可能在输入大写字母的时候引起误触，而且可能会在安装后恢复成默认值。要确保进行的修改没有被覆盖，请设置配置文件为只读：`# chattr +i ~/.config/fcitx/config`.
+
 ### 首先诊断问题所在
 
 当你遇到任何 fcitx 有关的问题，比如 ctrl+space 在有的程序中不能工作，首先应该用 `fcitx-diagnose` 命令诊断问题的原因。 `fcitx-diagnose` 会列出所有 fcitx 正常运行所需的前提条件，从输出结果中通常可以找到问题的原因。 在网上（比如在 irc 或者论坛里）询问别人关于 fcitx 配置的问题时，也请首先提供你的 `fcitx-diagnose` 输出结果（比如贴到 pastebin 服务），这将加速别人帮你找到问题所在。
@@ -332,7 +326,7 @@ Emacs 默认 fontset 会使用 "-*-*-*-r-normal--14-*-*-*-*-*-*-*" 字体 (termi
 
 ### Firefox 右键菜单不弹出
 
-[Firefox](/index.php/Firefox "Firefox") 升级到 13 后可能与 xim 发生冲突，害得菜单没法弹出，解决办法是确定安装了 [fcitx-gtk2](https://www.archlinux.org/packages/?name=fcitx-gtk2) 并且把环境配置文件中的
+[Firefox](/index.php/Firefox "Firefox") 升级到 13 后可能与 xim 发生冲突，解决办法是确定安装了 [fcitx-gtk3](https://www.archlinux.org/packages/?name=fcitx-gtk3) 并且把环境配置文件中的
 
 ```
  export GTK_IM_MODULE=xim

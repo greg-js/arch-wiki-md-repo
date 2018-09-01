@@ -27,7 +27,7 @@ nohook resolv.conf
 
 ### Usare /etc/resolv.conf.head
 
-Alternativamente, è possibile creare un file chiamato `/etc/resolv.conf.head` contenente i propri server DNS. dhcpcd inserirà il contenuto del file all'inizio del file `/etc/resolv.conf`. Ecco un esempio del file `/etc/resolv.conf.head` per chi usa [OpenDNS](/index.php/OpenDNS "OpenDNS"):
+Alternativamente, è possibile creare un file chiamato `/etc/resolv.conf.head` contenente i propri server DNS. dhcpcd inserirà il contenuto del file all'inizio del file `/etc/resolv.conf`. Ecco un esempio del file `/etc/resolv.conf.head` per chi usa OpenDNS:
 
 ```
 # OpenDNS servers

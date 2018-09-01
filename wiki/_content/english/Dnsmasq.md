@@ -102,7 +102,7 @@ Since dnsmasq is not a recursive DNS server you must set up forwarding to an ext
 
 ##### openresolv
 
-If your network manager supports [openresolv](/index.php/Openresolv "Openresolv"), instead of directly altering `/etc/resolv.conf`, you can use *openresolv* to generate configuration files for dnsmasq. [[1]](https://roy.marples.name/projects/openresolv/config)
+If your network manager supports *resolvconf*, instead of directly altering `/etc/resolv.conf`, you can use [openresolv](/index.php/Openresolv "Openresolv") to generate configuration files for dnsmasq. [[1]](https://roy.marples.name/projects/openresolv/config)
 
 Edit `/etc/resolvconf.conf` and add the loopback addresses as name servers, and configure openresolv to write out dnsmasq configuration:
 

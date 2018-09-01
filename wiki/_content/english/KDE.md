@@ -537,37 +537,36 @@ If that does not work, try setting the DPI directly in your Xorg configuration a
 
 ### Configuration related
 
-Many problems in KDE are related to configuration.
+Many problems in KDE are related to its configuration.
 
 #### Plasma desktop behaves strangely
 
-Plasma problems are usually caused by unstable **Plasma widgets** (colloquially called *plasmoids*) or **Plasma themes**. First, find which was the last widget or theme you had installed and disable it or uninstall it.
+Plasma problems are usually caused by unstable *Plasma widgets* (colloquially called *plasmoids*) or *Plasma themes*. First, find which was the last widget or theme you had installed and disable or uninstall it.
 
-So, if your desktop suddenly exhibits "locking up", this is likely caused by a faulty installed widget. If you cannot remember which widget you installed before the problem began (sometimes it can be an irregular problem), try to track it down by removing each widget until the problem ceases. Then you can uninstall the widget, and file a bug report ([https://bugs.kde.org/](https://bugs.kde.org/)) **only if it is an official widget**. If it is not, it is recommended you find the entry on [https://store.kde.org/](https://store.kde.org/) and inform the developer of that widget about the problem (detailing steps to reproduce, etc).
+So, if your desktop suddenly exhibits "locking up", this is likely caused by a faulty installed widget. If you cannot remember which widget you installed before the problem began (sometimes it can be an irregular problem), try to track it down by removing each widget until the problem ceases. Then you can uninstall the widget, and file a bug report on the [KDE bug tracker](https://bugs.kde.org/) **only if it is an official widget**. If it is not, it is recommended to find the entry on the [KDE Store](https://store.kde.org/) and inform the developer of that widget about the problem (detailing steps to reproduce, etc.).
 
-If you cannot find the problem, but you do not want *all* the settings to be lost, navigate to `~/.config`:
+If you cannot find the problem, but you do not want *all* the settings to be lost, navigate to `~/.config/` and run the following command:
 
 ```
 $ for j in plasma*; do mv -- "$j" "${j%}.bak"; done
 
 ```
 
-This command will **rename all Plasma related configs** to *.bak (e.g. `plasmarc.bak`) of your user and when you will relogin into Plasma, you will have the **default** settings back. To undo that action, remove the .bak file extension. If you already have *.bak files, rename, move, or delete them first. It is highly recommended that you create regular backups anyway. See [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") for a list of possible solutions.
+This command will rename **all** Plasma related configuration files to **.bak* (e.g. `plasmarc.bak`) of your user and when you will relogin into Plasma, you will have the default settings back. To undo that action, remove the *.bak* file extension. If you already have **.bak* files, rename, move, or delete them first. It is highly recommended that you create regular backups anyway. See [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs") for a list of possible solutions.
 
 #### Clean cache to resolve upgrade problems
 
-The [problem](https://bbs.archlinux.org/viewtopic.php?id=135301) may be caused by old cache. Sometimes after an upgrade, the old cache might introduce strange, hard to debug behaviour such as unkillable shells, hangs when changing various settings and several other problems such as ark being unable to unrar or unzip or amarok not recognizing any of your music. This solution can also resolve problems with KDE and Qt programmes looking bad following upgrade.
+The [problem](https://bbs.archlinux.org/viewtopic.php?id=135301) may be caused by old cache. Sometimes, after an upgrade, the old cache might introduce strange, hard to debug behaviour such as unkillable shells, hangs when changing various settings, Ark being unable to extract archives or Amarok not recognizing any of your music. This solution can also resolve problems with KDE and Qt applications looking bad after an update.
 
-Rebuild the cache use the following commands:
+Rebuild the cache using the following commands:
 
 ```
 $ rm ~/.config/Trolltech.conf
 $ kbuildsycoca5 --noincremental
-$ kbuildsycoca4 --noincremental
 
 ```
 
-Optional empty the `~/.cache` folder contents, **note** this also clears cache of other applications:
+Optionally, empty the `~/.cache/` folder contents, however, this will also clear the cache of other applications:
 
 ```
 $ rm -rf ~/.cache/*

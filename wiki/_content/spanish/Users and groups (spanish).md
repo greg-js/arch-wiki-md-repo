@@ -62,7 +62,7 @@ drwxr-xr-x 2 root root    4096 Jan 12 00:33 grub
 
 ```
 
-La primera columna muestra los permisos del archivo (por ejemplo, el archivo `initramfs-linux.img` tiene los permisos `-rw-r--r--`). La tercera y cuarta columnas muestran al usuario y al grupo propietarios del archivo, respectivamente. En el presente ejemplo, todos los archivos son propiedad del usuario *root* y del grupo *root*.
+La primera columna muestra los permisos del archivo (por ejemplo, el archivo `initramfs-linux.img` tiene los permisos `-rw-r--r--`). La tercera y cuarta columnas muestran los propietarios de usuario y grupo del archivo, respectivamente. En el presente ejemplo, todos los archivos son propiedad del usuario *root* y del grupo *root*.
 
  `$ ls -l /media/` 
 ```
@@ -70,49 +70,61 @@ total 16
 drwxrwx--- 1 root vboxsf 16384 Jan 29 11:02 sf_Shared
 ```
 
-En este ejemplo, la carpeta `sf_Shared` es propiedad del usuario *root* y del grupo *vboxsf* . También es posible determinar los propietarios y los permisos de un archivo con la orden `stat`:
+En este ejemplo, la carpeta `sf_Shared` es propiedad del usuario *root* y del grupo *vboxsf*. También es posible determinar los propietarios y los permisos de un archivo con el comando stat:
 
 El usuario propietario:
 
- `$ stat -c %U /media/sf_Shared/`  `root` 
+ `$ stat -c %U /media/sf_Shared/` 
+```
+root
+
+```
 
 El grupo propietario:
 
- `$ stat -c %G /media/sf_Shared/`  `vboxsf` 
+ `$ stat -c %G /media/sf_Shared/` 
+```
+vboxsf
+
+```
 
 Los permisos de acceso:
 
- `$ stat -c %A /media/sf_Shared/`  `drwxrwx---` 
+ `$ stat -c %A /media/sf_Shared/` 
+```
+drwxrwx---
+
+```
 
 Los permisos de acceso se muestran en tres grupos de caracteres, representando los permisos del usuario propietario, del grupo propietario, y de los otros, respectivamente. Por ejemplo, los caracteres `-rw-r--r--` indican que el usuario propietario del archivo tiene permisos de lectura y escritura, pero no de ejecución (`rw-`), mientras que los usuarios que pertenecen al grupo propietario y los demás usuarios solo tienen permiso de lectura (`r--` y `r--`). Mientras tanto, los caracteres `drwxrwx---` indican que el usuario propietario del archivo y todos los usuarios que pertenecen al grupo propietario tienen permisos de lectura, escritura y ejecución (`rwx` y `rwx`), mientras que los demás usuarios no pueden acceder (`---`). El primer carácter representa el tipo de archivo.
 
 Puede listar los archivos que pertenecen a un usuario o a un grupo con la orden `find`:
 
 ```
-# find / -group [grupo]
+# find / -group *grupo*
 
 ```
 
 ```
-# find / -user [usuario]
+# find / -user *usuario*
 
 ```
 
-El usuario y el grupo propietarios de un archivo pueden ser cambiados con la orden `chown` (*«change owner»*). Los permisos de acceso a un archivo se pueden cambiar con la orden `chmod` (*«change mode»*).
+El usuario y el grupo propietarios de un archivo pueden ser cambiados con el comando [chown](/index.php/Chown "Chown") (***ch**ange **own**er*). Los permisos de acceso a un archivo se pueden cambiar con el comando [chmod](/index.php/Chmod "Chmod") (***ch**ange **mod**e*).
 
-Véase [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), y [Linux file permissions](http://www.tuxfiles.org/linuxhelp/filepermissions.html) para obtener información adicional.
+Consulte [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), y [Linux file permissions](http://www.linux.com/learn/tutorials/309527-understanding-linux-file-permissions) para obtener información adicional.
 
 ## Lista de archivos
 
-**Advertencia:** No modifique estos archivos manualmente. Existen utilidades que bloquean el manejo de las propiedades y evitan invalidar el formato de la base de datos. Consulte [administración de usuarios](#Administraci.C3.B3n_de_usuarios) y [#Administración de grupos](#Administraci.C3.B3n_de_grupos) para más detalles.
+**Advertencia:** No modifique estos archivos manualmente. Existen utilidades que bloquean el manejo de las propiedades y evitan invalidar el formato de la base de datos. Consulte [administración de usuarios](#Administraci.C3.B3n_de_usuarios) y [administración de grupos](#Administraci.C3.B3n_de_grupos) para más detalles.
 
-| Archivo | Contenido |
+| Archivo | Propósito |
 | `/etc/shadow` | Información reservada de las cuentas de usuario |
 | `/etc/passwd` | Información de las cuentas de usuario |
 | `/etc/gshadow` | Contiene información reservada de los grupos de usuarios |
-| `/etc/group` | Define a que grupos pertenecen los usuarios |
-| `/etc/sudoers` | Lista lo que se puede ejecutar con sudo |
-| `/home/*` | Carpeta personal del usuario |
+| `/etc/group` | Define los grupos a los que pertenecen los usuarios |
+| `/etc/sudoers` | Lista de quién puede ejecutar qué por sudo |
+| `/home/*` | Carpetas personales de los usuarios |
 
 ## Administración de usuarios
 

@@ -369,7 +369,7 @@ Include conf/extra/php-fpm.conf
 
 You can configure PHP-FPM in `/etc/php/php-fpm.d/www.conf`, but the default setup should work fine.
 
-[Restart](/index.php/Restart "Restart") `httpd.service` and `php-fpm.service`.
+Start and enable `php-fpm.service`. [Restart](/index.php/Restart "Restart") `httpd.service`.
 
 #### Using apache2-mpm-worker and mod_fcgid
 

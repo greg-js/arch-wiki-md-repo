@@ -4,7 +4,7 @@
 *   [Sage-mathematics](/index.php/Sage-mathematics "Sage-mathematics")
 *   [Matlab (简体中文)](/index.php/Matlab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Matlab (简体中文)")
 
-**翻译状态：** 本文是英文页面 [Mathematica](/index.php/Mathematica "Mathematica") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-04-07，点击[这里](https://wiki.archlinux.org/index.php?title=Mathematica&diff=0&oldid=516199)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Mathematica](/index.php/Mathematica "Mathematica") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-09-01，点击[这里](https://wiki.archlinux.org/index.php?title=Mathematica&diff=0&oldid=525644)可以查看翻译后英文页面的改动。
 
 [Mathematica](http://www.wolfram.com/mathematica/) 是用于科学，工程和数学领域的商业软件。在这里我们说明如何安装它。
 
@@ -22,6 +22,9 @@
 *   [2 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
     *   [2.1 "Missing symbols" 错误](#.22Missing_symbols.22_.E9.94.99.E8.AF.AF)
     *   [2.2 HiDPI / Retina 屏幕](#HiDPI_.2F_Retina_.E5.B1.8F.E5.B9.95)
+    *   [2.3 与系统库冲突导致的问题](#.E4.B8.8E.E7.B3.BB.E7.BB.9F.E5.BA.93.E5.86.B2.E7.AA.81.E5.AF.BC.E8.87.B4.E7.9A.84.E9.97.AE.E9.A2.98)
+        *   [2.3.1 Symbol lookup error: /usr/lib/libfontconfig.so.1: undefined symbol: FT_Done_MM_Var](#Symbol_lookup_error:_.2Fusr.2Flib.2Flibfontconfig.so.1:_undefined_symbol:_FT_Done_MM_Var)
+        *   [2.3.2 Mathematica/11.3/SystemFiles/Libraries/Linux-x86-64/libz.so.1: version `ZLIB_1.2.9' not found (required by /usr/lib/libpng16.so.16)](#Mathematica.2F11.3.2FSystemFiles.2FLibraries.2FLinux-x86-64.2Flibz.so.1:_version_.60ZLIB_1.2.9.27_not_found_.28required_by_.2Fusr.2Flib.2Flibpng16.so.16.29)
 *   [3 参阅](#.E5.8F.82.E9.98.85)
 
 ## 安装
@@ -120,6 +123,30 @@ Mathematica 11 在 [$UserDocumentsDirectory](https://reference.wolfram.com/langu
 *   在 *Advanced* 选项卡里单击 *Open Option Inspector*
 *   在右侧的树状列表中找到 *Formatting Options → Font Options → Font Properties*
 *   改变 *"ScreenResolution"* 的值到它原来的两倍大小，比如 72 → 144。你也可以用 `xdpyinfo | grep resolution` 来获得一个更精确的数字（也要变成原来的两倍大小）。
+
+### 与系统库冲突导致的问题
+
+Mathematica 软件包包含了一系列其自有的库，存放在 <INSTALL_DIR>/SystemFiles/Libraries/Linux-x86-64 里面。它们可能会导致一些兼容性问题，并且可能需要将某些库回退到系统现有版本。
+
+#### Symbol lookup error: /usr/lib/libfontconfig.so.1: undefined symbol: FT_Done_MM_Var
+
+强制 Mathematica 使用系统自有的 freetype 库。
+
+```
+# cd <INSTALL_DIR>/SystemFiles/Libraries/Linux-x86-64
+# mv libfreetype.so.6 libfreetype.so.6.old
+
+```
+
+#### Mathematica/11.3/SystemFiles/Libraries/Linux-x86-64/libz.so.1: version `ZLIB_1.2.9' not found (required by /usr/lib/libpng16.so.16)
+
+强制 Mathematica 使用系统自有的 zlib 库。
+
+```
+# cd <INSTALL_DIR>/SystemFiles/Libraries/Linux-x86-64
+# mv libz.so.1 libz.so.1.old
+
+```
 
 ## 参阅
 

@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Unity3D](/index.php/Unity3D "Unity3D"). Дата последней синхронизации: 20 января 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Unity3D&diff=0&oldid=507947).
+**Состояние перевода:** На этой странице представлен перевод статьи [Unity3D](/index.php/Unity3D "Unity3D"). Дата последней синхронизации: 9 мая 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Unity3D&diff=0&oldid=520745).
 
 Из [Unity - игровой движок, инструменты и многоплатформенность](https://unity3d.com/unity):
 
@@ -25,9 +25,13 @@
 
 ## Установка
 
+Просто установите [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)") пакет [unity-editor](https://aur.archlinux.org/packages/unity-editor/) или [unity-editor-beta](https://aur.archlinux.org/packages/unity-editor-beta/) для бета-версии.
+
 **Важно:** Пакет Unity - **огромный**. Для успешной установки вам понадобится около 17 ГБ свободного места для сборки пакета и еще 8 ГБ для его установки.
 
-Просто установите [AUR](/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch User Repository (Русский)") пакет [unity-editor](https://aur.archlinux.org/packages/unity-editor/) или [unity-editor-beta](https://aur.archlinux.org/packages/unity-editor-beta/) для бета-версии.
+**Примечание:** Когда вы устанавливаете через [инструменты для работы с AUR](/index.php/%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B_%D0%B4%D0%BB%D1%8F_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B_%D1%81_AUR "Инструменты для работы с AUR") , таких как [yaourt](https://aur.archlinux.org/packages/yaourt/), может быть полезно указать альтернативное расположение временных файлов с большей емкостью, чем `/tmp`, например, `yaourt -S unity-editor --tmp ~/tmp`. Вам также может потребоваться увеличить размер вашего `/tmp`, поскольку установщик загружает еще другие пакеты, необходимые для установки.
+
+**Примечание:** По умолчанию PKGBUILD перенаправляет весь вывод установщика, который загружает и обрабатывает около 2 ГБ данных. Поскольку этот процесс может быть очень долгим, его может быть полезно контролировать, используя `tail -f /tmp/Unity.log`
 
 ## Android Remote
 

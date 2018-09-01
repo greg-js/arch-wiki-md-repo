@@ -759,7 +759,11 @@ Create a file named `/etc/mdadm_warning.sh`:
 
  `/etc/mdadm_warning.sh` 
 ```
- /usr/bin/mailx -s "$event on $device" **destination@email.com**
+#!/bin/bash
+event=$1
+device=$2
+
+echo " " | /usr/bin/mailx -s "$event on $device" '''destination@email.com'''
 
 ```
 

@@ -2,166 +2,112 @@ Related articles
 
 *   [Command-line shell](/index.php/Command-line_shell "Command-line shell")
 *   [General recommendations](/index.php/General_recommendations "General recommendations")
-*   [GNU](/index.php/GNU "GNU")
-*   [sudo](/index.php/Sudo "Sudo")
-*   [cron](/index.php/Cron "Cron")
-*   [man page](/index.php/Man_page "Man page")
-*   [Securely wipe disk#shred](/index.php/Securely_wipe_disk#shred "Securely wipe disk")
-*   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
-*   [Color output in console](/index.php/Color_output_in_console "Color output in console")
-*   [Archiving and compression](/index.php/Archiving_and_compression "Archiving and compression")
-*   [chmod](/index.php/Chmod "Chmod")
-*   [chown](/index.php/Chown "Chown")
 
-This article deals with so-called *core* utilities on a GNU/Linux system, such as *less*, *ls*, and *grep*. The scope of this article includes, but is not limited to, those utilities included with the GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) package. What follows are various tips and tricks and other helpful information related to these utilities.
+*Core utilities* are the basic, fundamental tools of a [GNU](/index.php/GNU "GNU")/[Linux](/index.php/Linux "Linux") system. On Arch Linux they are found in the [base](https://www.archlinux.org/groups/x86_64/base/) group. This article provides an incomplete overview of them, links their documentation and describes useful alternatives. Most core utilities are traditional [Unix](https://en.wikipedia.org/wiki/Unix "wikipedia:Unix") tools (see [Heirloom](/index.php/Heirloom "Heirloom")) and many were standardized by [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") but have been developed further to provide more features.
 
 Most command-line interfaces are documented in [man pages](/index.php/Man_page "Man page"), utilities by the [GNU Project](/index.php/GNU_Project "GNU Project") are documented in [Info manuals](/index.php/Info_manual "Info manual"), some [shells](/index.php/Shell "Shell") provide a `help` command for [shell](/index.php/Shell "Shell") builtin commands. Additionally most commands print their usage when run with the `--help` flag.
 
 ## Contents
 
-*   [1 File management](#File_management)
-    *   [1.1 ls](#ls)
-    *   [1.2 cat](#cat)
-    *   [1.3 less](#less)
-    *   [1.4 mkdir](#mkdir)
-    *   [1.5 mv](#mv)
-    *   [1.6 rm](#rm)
-    *   [1.7 find](#find)
-    *   [1.8 locate](#locate)
-    *   [1.9 diff](#diff)
-*   [2 Text streams](#Text_streams)
-    *   [2.1 grep](#grep)
-    *   [2.2 sed](#sed)
-    *   [2.3 awk](#awk)
-*   [3 System administration](#System_administration)
-    *   [3.1 sudo](#sudo)
-    *   [3.2 which](#which)
-    *   [3.3 lsblk](#lsblk)
-    *   [3.4 ip](#ip)
-    *   [3.5 ss](#ss)
-*   [4 Miscellaneous](#Miscellaneous)
-    *   [4.1 dd](#dd)
-    *   [4.2 iconv](#iconv)
-    *   [4.3 od](#od)
-    *   [4.4 seq](#seq)
-    *   [4.5 tar](#tar)
-    *   [4.6 wipefs](#wipefs)
-*   [5 See also](#See_also)
+*   [1 Essentials](#Essentials)
+    *   [1.1 Preventing data loss](#Preventing_data_loss)
+*   [2 Nonessentials](#Nonessentials)
+*   [3 Alternatives](#Alternatives)
+    *   [3.1 find alternatives](#find_alternatives)
+    *   [3.2 diff alternatives](#diff_alternatives)
+    *   [3.3 grep alternatives](#grep_alternatives)
+*   [4 See also](#See_also)
 
-## File management
+## Essentials
 
-| Command | Description | Manual page | Example |
-| cd | Change directory (shell built-in command) | [cd(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cd.1p) | cd /etc/pacman.d |
-| mkdir | Create a directory | [mkdir(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkdir.1) | mkdir ~/newfolder |
-| rmdir | Remove empty directory | [rmdir(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rmdir.1) | rmdir ~/emptyfolder |
-| rm | Remove a file | [rm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rm.1) | rm ~/file.txt |
-| rm -r | Remove directory and contents | rm -r ~/.cache |
-| ls | List files | [ls(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ls.1) | ls *.mkv |
-| ls -a | List hidden files | ls -a /home/archie |
-| ls -al | List hidden files and file properties |
-| mv | Move a file | [mv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mv.1) | mv ~/compressed.zip ~/archive/compressed2.zip |
-| cp | Copy a file | [cp(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cp.1) | cp ~/.bashrc ~/.bashrc.bak |
-| chmod +x | Make a file [executable](/index.php/Executable "Executable") | [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1) | chmod +x ~/.local/bin/myscript.sh |
-| cat | Show file contents | [cat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cat.1) | cat /etc/hostname |
-| find | Search for a file | [find(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/find.1) | find ~ -name myfile |
+The following table lists important commands, Arch Linux users should be familiar with. See also [intro(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/intro.1).
 
-### ls
+| Package | Command | Description | Documentation | Alternatives |
+| shell built-ins | cd | change directory | [cd(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cd.1p) |
+| GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) | ls | list directory | [ls(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ls.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html) | [exa](https://www.archlinux.org/packages/?name=exa), [tree](https://www.archlinux.org/packages/?name=tree) |
+| cat | concatenate files to stdout | [cat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cat.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/cat-invocation.html) | [tac(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tac.1) |
+| mkdir | make directory | [mkdir(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkdir.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/mkdir-invocation.html) |
+| rmdir | remove empty directory | [rmdir(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rmdir.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/rmdir-invocation.html) |
+| rm | remove files or directories | [rm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rm.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/rm-invocation.html) | [shred](/index.php/Shred "Shred") |
+| cp | copy files or directories | [cp(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cp.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/cp-invocation.html) |
+| mv | move files or directories | [mv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mv.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/mv-invocation.html) |
+| ln | make hard or symbolic links | [ln(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ln.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/ln-invocation.html) |
+| [chown](/index.php/Chown "Chown") | change file owner and group | [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/chown-invocation.html) |
+| [chmod](/index.php/Chmod "Chmod") | change file permissions | [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/chmod-invocation.html) |
+| [dd](/index.php/Dd "Dd") | convert and copy a file | [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/dd-invocation.html) |
+| df | report file system disk space usage | [df(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/df.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/df-invocation.html) |
+| GNU [tar](https://www.archlinux.org/packages/?name=tar) | [tar](/index.php/Tar "Tar") | tar archiver | [tar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1), [info](https://www.gnu.org/software/tar/manual/html_chapter/index.html) | [archivers](/index.php/Archive "Archive") |
+| GNU [less](https://www.archlinux.org/packages/?name=less) | less | terminal pager | [less(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/less.1) | [terminal pagers](/index.php/Terminal_pager "Terminal pager") |
+| GNU [findutils](https://www.archlinux.org/packages/?name=findutils) | find | search files or directories | [find(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/find.1), [info](https://www.gnu.org/software/findutils/manual/html_node/find_html/index.html), [GregsWiki](https://mywiki.wooledge.org/UsingFind "gregswiki:UsingFind") | [#find alternatives](#find_alternatives) |
+| GNU [diffutils](https://www.archlinux.org/packages/?name=diffutils) | diff | compare files line by line | [diff(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/diff.1), [info](https://www.gnu.org/software/diffutils/manual/html_node/Invoking-diff.html) | [#diff alternatives](#diff_alternatives) |
+| GNU [grep](https://www.archlinux.org/packages/?name=grep) | grep | print lines matching a pattern | [grep(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grep.1), [info](https://www.gnu.org/software/grep/manual/html_node/index.html) | [#grep alternatives](#grep_alternatives) |
+| GNU [sed](https://www.archlinux.org/packages/?name=sed) | sed | stream editor | [sed(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sed.1), [info](https://www.gnu.org/software/sed/manual/html_node/index.html), [one-liners](http://sed.sourceforge.net/sed1line.txt) |
+| GNU [gawk](https://www.archlinux.org/packages/?name=gawk) | awk | pattern scanning and processing language | [gawk(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gawk.1), [info](https://www.gnu.org/software/gawk/manual/html_node/index.html) | [nawk](https://www.archlinux.org/packages/?name=nawk), [mawk](https://aur.archlinux.org/packages/mawk/) |
+| [util-linux](https://www.archlinux.org/packages/?name=util-linux) | [lsblk](/index.php/Lsblk "Lsblk") | list block devices | [lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) |
+| [mount](/index.php/Mount "Mount") | mount a filesystem | [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) |
+| [umount](/index.php/Umount "Umount") | unmount a filesystem | [umount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/umount.8) |
+| [su](/index.php/Su "Su") | substitute user | [su(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/su.1) | [sudo](/index.php/Sudo "Sudo") |
+| kill | terminate a process | [kill(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/kill.1) | [pkill(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pkill.1), [killall(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/killall.1) |
+| [procps-ng](https://www.archlinux.org/packages/?name=procps-ng) | pgrep | look up processes by name or attributes | [pgrep(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pgrep.1) | [pidof(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pidof.1) |
+| ps | show information about processes | [ps(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ps.1) | [top(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/top.1), [htop](https://www.archlinux.org/packages/?name=htop) |
+| free | display amount of free and used memory | [free(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/free.1) |
 
-[ls](https://en.wikipedia.org/wiki/ls "wikipedia:ls") lists directory contents.
+### Preventing data loss
 
-See the `ls` [Info manual](/index.php/Info_manual "Info manual") ([online version](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html#ls-invocation)) for more information.
+rm, mv, cp and shell redirections happily delete or overwrite files without asking. rm, mv and cp all support the `-i` flag to prompt the user before every removal / overwrite. Some users like to enable the `-i` flag by default using [aliases](/index.php/Alias "Alias"). Such shell settings are however dangerous because you get used to them, resulting in potential data loss when you use another system or user that does not have them. The best way to prevent data loss is to do [backups](/index.php/Backup "Backup").
 
-[exa](https://the.exa.website) is a modern, and more user friendly alternative to `ls` and `tree`, that has more features, such as displaying [Git](/index.php/Git "Git") modifications along with filenames, colouring differently each columnn in `--long` mode, or displaying `--long` mode metadata along with a `tree` view. *exa* is available as the [exa](https://www.archlinux.org/packages/?name=exa) package.
+## Nonessentials
 
-The `-l` option (long format) can be used to display file type, [permissions](/index.php/Permissions "Permissions"), owner [user](/index.php/User "User") & [group](/index.php/Group "Group"), size, modification timestamp and more, see the [info document](https://www.gnu.org/software/coreutils/manual/html_node/What-information-is-listed.html#index-long-ls-format).
+This table lists core utilities that often come in handy.
 
-By default, file and directory names that contain spaces are displayed surrounded by single quotes. To change this behavior use the `-N` or `--quoting-style=literal` options. Alternatively, set the `QUOTING_STYLE` [environment variable](/index.php/Environment_variable "Environment variable") to `literal`. [[1]](https://unix.stackexchange.com/questions/258679/why-is-ls-suddenly-surrounding-items-with-spaces-in-single-quotes)
+| Package | Command | Description | Documentation | Alternatives |
+| shell built-ins | alias | define or display aliases | [alias(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alias.1) |
+| type | print the type of a command | [type(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/type.1) | [which(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/which.1) |
+| time | time a command | [time(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/time.1) |
+| GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) | tee | read stdin and write to stdout and files | [tee(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tee.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/tee-invocation.html) |
+| mktemp | make a temporary file or directory | [mktemp(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mktemp.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html) |
+| od | dump files in octal and other formats | [od(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/od.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/od-invocation.html) | [hexdump(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hexdump.1), [vim](/index.php/Vim "Vim")'s [xxd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xxd.1) |
+| sort | sort lines | [sort(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sort.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/sort-invocation.html) |
+| uniq | report or omit repeated lines | [uniq(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/uniq.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/uniq-invocation.html) |
+| comm | compare two sorted files line by line | [comm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/comm.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/comm-invocation.html) |
+| head | output the first part of files | [head(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/head.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/head-invocation.html) |
+| tail | output the last part of files, or follow files | [tail(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tail.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/tail-invocation.html) |
+| wc | print newline, word and byte count | [wc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wc.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/wc-invocation.html) |
+| GNU [binutils](https://www.archlinux.org/packages/?name=binutils) | strings | print printable characters in binary files | [strings(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/strings.1), [info](https://sourceware.org/binutils/docs/binutils/strings.html) |
+| GNU [glibc](https://www.archlinux.org/packages/?name=glibc) | iconv | convert character encodings | [iconv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) | [recode](https://www.archlinux.org/packages/?name=recode) |
+| [file](https://www.archlinux.org/packages/?name=file) | file | guess file type | [file(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/file.1) |
 
-### cat
+The [moreutils](https://www.archlinux.org/packages/?name=moreutils) package provides useful tools like [sponge(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sponge.1) that are missing from the GNU coreutils.
 
-[cat](https://en.wikipedia.org/wiki/cat_(Unix) is a standard Unix utility that concatenates files to standard output.
+## Alternatives
 
-If you need to list file lines in reverse order, there is a coreutil command called [tac](https://en.wikipedia.org/wiki/tac_(Unix) (*cat* reversed).
+Alternatives to the core utilities in the [base](https://www.archlinux.org/groups/x86_64/base/) group are [BusyBox](/index.php/BusyBox "BusyBox"), the [Heirloom Toolchest](/index.php/Heirloom "Heirloom"), [9base](https://www.archlinux.org/packages/?name=9base), [sbase-git](https://aur.archlinux.org/packages/sbase-git/) and [ubase-git](https://aur.archlinux.org/packages/ubase-git/).
 
-### less
+### find alternatives
 
-[less](https://en.wikipedia.org/wiki/less_(Unix) is a terminal pager program used to view the contents of a text file one screen at a time. Whilst similar to other pagers such as [more](https://en.wikipedia.org/wiki/more_(command) and the [deprecated](https://git.kernel.org/cgit/utils/util-linux/util-linux.git/tree/Documentation/deprecated.txt) [pg](https://en.wikipedia.org/wiki/pg_(Unix) "wikipedia:pg (Unix)"), *less* offers a more advanced interface and complete [feature-set](http://www.greenwoodsoftware.com/less/faq.html).
+*   **fd** — Simple, fast and user-friendly alternative to find. Ignores hidden and `.gitignore`'d files by default.
 
-See [List of applications#Terminal pagers](/index.php/List_of_applications#Terminal_pagers "List of applications") for alternatives.
+	[https://github.com/sharkdp/fd](https://github.com/sharkdp/fd) || [fd](https://www.archlinux.org/packages/?name=fd)
 
-### mkdir
+*   **fuzzy-find** — Fuzzy completion for finding files.
 
-[mkdir](https://en.wikipedia.org/wiki/mkdir "wikipedia:mkdir") makes directories.
+	[https://github.com/silentbicycle/ff](https://github.com/silentbicycle/ff) || [ff-git](https://aur.archlinux.org/packages/ff-git/)
 
-To create a directory and its whole hierarchy, the `-p` switch is used, otherwise an error is printed.
+*   **fzf** — General-purpose command-line fuzzy finder, powered by find by default.
 
-Changing mode of a just created directory using *chmod* is not necessary as the `-m` option lets you define the access permissions.
+	[https://github.com/junegunn/fzf](https://github.com/junegunn/fzf) || [fzf](https://www.archlinux.org/packages/?name=fzf), [fzf-git](https://aur.archlinux.org/packages/fzf-git/)
 
-**Tip:** If you just want a temporary directory, a better alternative may be [mktemp](https://en.wikipedia.org/wiki/Temporary_file "wikipedia:Temporary file"): `mktemp -d`
+*   **[mlocate](/index.php/Mlocate "Mlocate")** — Merging locate/updatedb implementation (command-line).
 
-### mv
+	[https://pagure.io/mlocate](https://pagure.io/mlocate) || [mlocate](https://www.archlinux.org/packages/?name=mlocate)
 
-[mv](https://en.wikipedia.org/wiki/mv "wikipedia:mv") moves and renames files and directories.
+For graphical file searchers, see [List of applications/Utilities#File searching](/index.php/List_of_applications/Utilities#File_searching "List of applications/Utilities").
 
-**Note:** "Security aliases" are dangerous because you get used to them, resulting in potential data loss when you use another system / user that does not have these aliases.
+### diff alternatives
 
-To limit potential damage caused by the command, use an alias:
+While [diffutils](https://www.archlinux.org/packages/?name=diffutils) does not provide a word-wise diff, several other programs do:
 
-```
-alias mv='mv -iv'
-
-```
-
-This alias asks for confirmation before overwriting any existing files and lists the operations in progress.
-
-### rm
-
-[rm](https://en.wikipedia.org/wiki/rm_(Unix) removes files or directories.
-
-**Note:** "Security aliases" are dangerous because you get used to them, resulting in potential data loss when you use another system / user that does not have these aliases.
-
-To limit potential damage caused by the command, use an alias:
-
-```
-alias rm='rm -Iv --one-file-system'
-
-```
-
-This alias asks confirmation to delete three or more files, lists the operations in progress, does not involve more than one file systems. Substitute `-I` with `-i` if you prefer to confirm even for one file.
-
-Zsh users may want to prefix `noglob` to avoid implicit expansions.
-
-To remove directories believed to be empty, use *rmdir* as it fails if there are files inside the target.
-
-### find
-
-*find* is part of the [findutils](https://www.archlinux.org/packages/?name=findutils) package, which belongs to the [base](https://www.archlinux.org/groups/x86_64/base/) package group.
-
-**Tip:** [fd](https://www.archlinux.org/packages/?name=fd) is a simple, fast and user-friendly alternative to `find` that provides more sensible defaults (e.g. ignores hidden files, directories and `.gitignore`'d files, `fd PATTERN` instead of `find -iname '*PATTERN*'`). It features colorized output (similar to `ls`), Unicode awareness, regular expressions and more.
-
-One would probably expect a *find* command to take as argument a file name and search the filesystem for files matching that name. For a program that does exactly that see [#locate](#locate) below.
-
-Instead, find takes a set of directories and matches each file under them against a set of expressions. This design allows for some very powerful "one-liners" that would not be possible using the "intuitive" design described above. See [GregsWiki:UsingFind](https://mywiki.wooledge.org/UsingFind "gregswiki:UsingFind") for usage details.
-
-### locate
-
-[Install](/index.php/Install "Install") the [mlocate](https://www.archlinux.org/packages/?name=mlocate) package. The package contains an `updatedb.timer` unit, which invokes a database update each day. The timer is enabled right after installation, [start](/index.php/Start "Start") it manually if you want to use it before reboot. You can also manually run *updatedb* as root at any time. By default, paths such as `/media` and `/mnt` are ignored, so *locate* may not discover files on external devices. See [updatedb(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.8) for details.
-
-The *locate* command is a common Unix tool for quickly finding files by name. It offers speed improvements over the [find](https://en.wikipedia.org/wiki/Find_(Unix) tool by searching a pre-constructed database file, rather than the filesystem directly. The downside of this approach is that changes made since the construction of the database file cannot be detected by *locate*.
-
-Before *locate* can be used, the database will need to be created. To do this, execute `updatedb` as root.
-
-See also [How locate works and rewrite it in one minute](http://jvns.ca/blog/2015/03/05/how-the-locate-command-works-and-lets-rewrite-it-in-one-minute/).
-
-### diff
-
-*diff* compares files line by line. Its output can be saved to a so-called patch file, which can be applied using the [patch(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/patch.1) utility. The default Arch Linux *diff* is from the GNU [diffutils](https://www.archlinux.org/packages/?name=diffutils), which also provides *cmp* to compare files byte by byte.
-
-A similar command, which lets you compare two sorted files line by line is *comm*, see [comm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/comm.1).
-
-When comparing text files a word per word diff is often more desirable:
-
-*   [git](/index.php/Git "Git")'s `git diff` can do a word diff with `--color-words`, using `--no-index` it can also be used for files outside of Git working trees.
+*   [git](/index.php/Git "Git") diff can do a word diff with `--color-words`, using `--no-index` it can also be used for files outside of Git working trees.
 *   **dwdiff** — A word diff front-end for the diff program; supports colors.
 
 	[https://os.ghalkes.nl/dwdiff.html](https://os.ghalkes.nl/dwdiff.html) || [dwdiff](https://www.archlinux.org/packages/?name=dwdiff)
@@ -174,213 +120,25 @@ When comparing text files a word per word diff is often more desirable:
 
 	[https://github.com/junghans/cwdiff](https://github.com/junghans/cwdiff) || [cwdiff](https://aur.archlinux.org/packages/cwdiff/), [cwdiff-git](https://aur.archlinux.org/packages/cwdiff-git/)
 
-## Text streams
+### grep alternatives
 
-### grep
+The following three tools aim to replace grep for code search. They do recursive search by default, skip binary files and respect `.gitignore`.
 
-[grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") is a command line text search utility originally written for Unix. The *grep* command searches files or standard input for lines matching a given regular expression, and prints these lines to standard output.
+*   **ack** — A Perl-based grep replacement, aimed at programmers with large trees of heterogeneous source code.
 
-*   To include file line numbers in the output, use the `-n` option.
-*   *grep* can also be used for hexadecimal search in a binary file, to look for let say the `A1 F2` sequence in a file, the command line is: `$ LANG=C grep --text --perl-regexp "\xA1\xF2" */path/to/file*` 
+	[https://beyondgrep.com/](https://beyondgrep.com/) || [ack](https://www.archlinux.org/packages/?name=ack)
 
-For color support, see [Color output in console#grep](/index.php/Color_output_in_console#grep "Color output in console").
+*   **ripgrep (rg)** — A search tool that combines the usability of ag with the raw speed of grep.
 
-See [grep(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grep.1) for more details.
+	[https://github.com/BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep) || [ripgrep](https://www.archlinux.org/packages/?name=ripgrep)
 
-**Tip:** There are *grep* alternatives optimized for VCS source code, such as [ripgrep](https://www.archlinux.org/packages/?name=ripgrep), [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher), and [ack](https://www.archlinux.org/packages/?name=ack). There also is [mgrep](https://aur.archlinux.org/packages/mgrep/), a multiline grep.
+*   **The Silver Searcher (ag)** — Code searching tool similar to Ack, but faster.
 
-### sed
+	[https://github.com/ggreer/the_silver_searcher](https://github.com/ggreer/the_silver_searcher) || [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher)
 
-[sed](https://en.wikipedia.org/wiki/sed "wikipedia:sed") is stream editor for filtering and transforming text.
-
-Here is a handy [list](http://sed.sourceforge.net/sed1line.txt) of *sed* one-liners examples.
-
-**Tip:** More powerful alternatives are [awk](#awk) and the [Perl](/index.php/Perl "Perl") language.
-
-### awk
-
-[AWK](https://en.wikipedia.org/wiki/AWK "wikipedia:AWK") is a pattern scanning and processing language. There are multiple implementations:
-
-*   **gawk** — GNU version of awk, see [gawk(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gawk.1).
-
-	[https://www.gnu.org/software/gawk/](https://www.gnu.org/software/gawk/) || [gawk](https://www.archlinux.org/packages/?name=gawk) (part of [base](https://www.archlinux.org/groups/x86_64/base/))
-
-*   **nawk** — The one, true implementation of AWK, see [nawk(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nawk.1).
-
-	[https://www.cs.princeton.edu/~bwk/btl.mirror/](https://www.cs.princeton.edu/~bwk/btl.mirror/) || [nawk](https://www.archlinux.org/packages/?name=nawk)
-
-*   **mawk** — A very fast AWK implementation.
-
-	[http://invisible-island.net/mawk/](http://invisible-island.net/mawk/) || [mawk](https://aur.archlinux.org/packages/mawk/)
-
-*   [BusyBox](/index.php/BusyBox "BusyBox") also includes an AWK implementation.
-
-## System administration
-
-| Command | Description | Manual page | Example |
-| mount | Mount a partition | [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) | mount /dev/sdc1 /media/usb |
-| df -h | Show remaining space on all partitions | [df(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/df.1) |
-| ps -A | Show all running processes | [ps(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ps.1) |
-| killall | Kill all running instances of a process | [killall(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/killall.1) |
-| ss -at | Display a list of open TCP sockets | [ss(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ss.8) |
-
-### sudo
-
-See [Sudo](/index.php/Sudo "Sudo").
-
-### which
-
-[which](https://en.wikipedia.org/wiki/Which_(Unix) shows the full path of shell commands. In the following example the full path of `ssh` is used as an argument for `journalctl`:
-
-```
-# journalctl $(which sshd)
-
-```
-
-### lsblk
-
-[lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) will show all available [block devices](https://en.wikipedia.org/wiki/Device_file#Block_devices "wikipedia:Device file") along with their partitioning schemes, for example:
-
- `$ lsblk -f` 
-```
-NAME   FSTYPE   LABEL       UUID                                 MOUNTPOINT
-sda
-├─sda1 vfat                 C4DA-2C4D                            /boot
-├─sda2 swap                 5b1564b2-2e2c-452c-bcfa-d1f572ae99f2 [SWAP]
-└─sda3 ext4                 56adc99b-a61e-46af-aab7-a6d07e504652 /
-
-```
-
-The beginning of the device name specifies the type of block device. Most modern storage devices (e.g. hard disks, [SSDs](/index.php/SSD "SSD") and USB flash drives) are recognised as SCSI disks (`sd`). The type is followed by a lower-case letter starting from `a` for the first device (`sda`), `b` for the second device (`sdb`), and so on. *Existing* partitions on each device will be listed with a number starting from `1` for the first partition (`sda1`), `2` for the second (`sda2`), and so on. In the example above, only one device is available (`sda`), and that device has three partitions (`sda1` to `sda3`), each with a different [file system](/index.php/File_system "File system").
-
-Other common block device types include for example `mmcblk` for memory cards and `nvme` for [NVMe](/index.php/NVMe "NVMe") devices. Unknown types can be searched in the [kernel documentation](https://www.kernel.org/doc/html/latest/admin-guide/devices.html).
-
-### ip
-
-[ip](https://en.wikipedia.org/wiki/Iproute2 "wikipedia:Iproute2") allows you to show information about network devices, IP addresses, routing tables, and other objects in the Linux [IP](https://en.wikipedia.org/wiki/Internet_Protocol "wikipedia:Internet Protocol") software stack. By appending various commands, you can also manipulate or configure most of these objects.
-**Note:** The *ip* utility is provided by the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package, which is included in the [base](https://www.archlinux.org/groups/x86_64/base/) group.
-
-| Object | Purpose | Manual page |
-| ip addr | protocol address management | [ip-address(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-address.8) |
-| ip addrlabel | protocol address label management | [ip-addrlabel(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-addrlabel.8) |
-| ip l2tp | tunnel Ethernet over IP (L2TPv3) | [ip-l2tp(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-l2tp.8) |
-| ip link | network device configuration | [ip-link(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-link.8) |
-| ip maddr | multicast addresses management | [ip-maddress(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-maddress.8) |
-| ip monitor | watch for netlink messages | [ip-monitor(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-monitor.8) |
-| ip mroute | multicast routing cache management | [ip-mroute(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-mroute.8) |
-| ip mrule | rule in multicast routing policy db |
-| ip neigh | neighbour/ARP tables management | [ip-neighbour(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-neighbour.8) |
-| ip netns | process network namespace management | [ip-netns(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-netns.8) |
-| ip ntable | neighbour table configuration | [ip-ntable(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-ntable.8) |
-| ip route | routing table management | [ip-route(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-route.8) |
-| ip rule | routing policy database management | [ip-rule(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-rule.8) |
-| ip tcp_metrics | management for TCP Metrics | [ip-tcp_metrics(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-tcp_metrics.8) |
-| ip tunnel | tunnel configuration | [ip-tunnel(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-tunnel.8) |
-| ip tuntap | manage TUN/TAP devices |
-| ip xfrm | manage IPsec policies | [ip-xfrm(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip-xfrm.8) |
-
-The `help` command is available for all objects. For example, typing `ip addr help` will show you the command syntax available for the address object. For advanced usage see the [iproute2 documentation](http://www.policyrouting.org/iproute2.doc.html).
-
-The [Network configuration](/index.php/Network_configuration "Network configuration") article shows how the *ip* command is used in practice for various common tasks.
-
-**Note:** You might be familiar with the [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig") command, which was used in older Linux systems. It is deprecated in Arch Linux; use *ip* instead.
-
-### ss
-
-See [Network configuration#Investigate sockets](/index.php/Network_configuration#Investigate_sockets "Network configuration").
-
-## Miscellaneous
-
-| Command | Description | Manual page | Example |
-| strings | Show printable characters in binary files | [strings(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/strings.1) | strings /usr/bin/free |
-
-### dd
-
-[dd](https://en.wikipedia.org/wiki/dd_(Unix) is a utility for Unix and Unix-like operating systems whose primary purpose is to convert and copy a file.
-
-Similarly to *cp*, by default *dd* makes a bit-to-bit copy of the file, but with lower-level I/O flow control features.
-
-Some notable applications of *dd* are:
-
-*   [Disk cloning#Using dd](/index.php/Disk_cloning#Using_dd "Disk cloning"),
-
-*   Binary file patching: let say one wants to replace offset `0x123AB` of a file with the `FF C0 14` hexadecimal sequence, this can be done with the command line: `# printf '\xff\xc0\x14' | dd seek=$((0x123AB)) conv=notrunc bs=1 of=*/path/to/file*` 
-
-For more information see [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) or the [full documentation](https://www.gnu.org/software/coreutils/dd).
-
-**Tip:** By default, *dd* outputs nothing until the task has finished. To monitor the progress of the operation, add the `status=progress` option to the command.
-
-**Warning:** One should be extremely cautious using *dd*, as with any command of this kind it can destroy data irreversibly.
-
-### iconv
-
-*iconv* converts the encoding of characters from one codeset to another.
-
-The following command will convert the file `*foo*` from ISO-8859-15 to UTF-8, saving it to `*foo*.utf`:
-
-```
-$ iconv -f ISO-8859-15 -t UTF-8 *foo* > *foo*.utf
-
-```
-
-See [iconv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) for more details.
-
-**Tip:** You can use [recode](https://www.archlinux.org/packages/?name=recode) instead of iconv if you do not want to touch the mtime.
-
-### od
-
-The [od](https://en.wikipedia.org/wiki/od_(Unix) (*o*ctal *d*ump) command is useful for visualizing data that is not in a human-readable format, like the executable code of a program, or the contents of an unformatted device. See the [manual](https://www.gnu.org/software/coreutils/manual/html_node/od-invocation.html#od-invocation) for more information.
-
-### seq
-
-*seq* prints a sequence of numbers. Shell built-in alternatives are available, so it is good practice to use them as explained on [Wikipedia](https://en.wikipedia.org/wiki/Seq_(Unix) "wikipedia:Seq (Unix)").
-
-### tar
-
-As an early Unix archiving format, .tar files—known as "tarballs"—are widely used for packaging in Unix-like operating systems. Both [pacman](/index.php/Pacman "Pacman") and [AUR](/index.php/AUR "AUR") packages are compressed tarballs, and Arch uses [GNU's](/index.php/GNU_Project "GNU Project") *tar* program by default.
-
-For *.tar* archives, *tar* by default will extract the file according to its extension:
-
-```
-$ tar xvf *file.EXTENSION*
-
-```
-
-Forcing a given format:
-
-| File Type | Extraction Command |
-| `*file*.tar` | `tar xvf *file*.tar` |
-| `*file*.tgz` | `tar xvzf *file*.tgz` |
-| `*file*.tar.gz` | `tar xvzf *file*.tar.gz` |
-| `*file*.tar.bz` | `bzip -cd *file*.bz | tar xvf -` |
-| `*file*.tar.bz2` | `tar xvjf *file*.tar.bz2`
-`bzip2 -cd *file*.bz2 | tar xvf -` |
-| `*file*.tar.xz` | `tar xvJf *file*.tar.xz`
-`xz -cd *file*.xz | tar xvf -` |
-| `*file*.tar.zst` | `tar -I zstd xvf *file*.tar.zst` |
-
-The construction of some of these *tar* arguments may be considered legacy, but they are still useful when performing specific operations. See [tar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1) for details.
-
-**Note:** Although GNU's *tar* is installed as the default *tar* program, official Arch Linux projects like [pacman](/index.php/Pacman "Pacman") and [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") use *bsdtar* from the [libarchive](https://www.archlinux.org/packages/?name=libarchive) package.
-
-See also [Archiving and compression](/index.php/Archiving_and_compression "Archiving and compression").
-
-### wipefs
-
-*wipefs* can list or erase [file system](/index.php/File_system "File system"), [RAID](/index.php/RAID "RAID") or [partition-table](/index.php/Partition "Partition") signatures (magic strings) from the specified device. It does not erase the file systems themselves nor any other data from the device.
-
-See [wipefs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wipefs.8) for more information.
-
-For example, to erase all signatures from the device `/dev/sdb` and create a signature backup `~/wipefs-sdb-*offset*.bak` file for each signature:
-
-```
-# wipefs --all --backup /dev/sdb
-
-```
+And then there is also [mgrep](https://aur.archlinux.org/packages/mgrep/), a multiline grep.
 
 ## See also
 
-*   [POSIX Utilities](http://pubs.opengroup.org/onlinepubs/9699919799/idx/utilities.html)
-*   [GNU Coreutils online documentation](https://www.gnu.org/software/coreutils/manual/coreutils.html)
-*   [A sampling of coreutils on Reddit](http://www.reddit.com/r/commandline/comments/19garq/a_sampling_of_coreutils_120/) [, part 2](http://www.reddit.com/r/commandline/comments/19ge6v/a_sampling_of_coreutils_2040/) [, part 3](http://www.reddit.com/r/commandline/comments/19j1w3/a_sampling_of_coreutils_4060/) - Overview of commands in coreutils
-*   [Learn the DD command](https://www.linuxquestions.org/questions/linux-newbie-8/learn-the-dd-command-362506/)
+*   [GNU Coreutils documentation](https://www.gnu.org/software/coreutils/manual/coreutils.html)
+*   [POSIX utilities](http://pubs.opengroup.org/onlinepubs/9699919799/idx/utilities.html)

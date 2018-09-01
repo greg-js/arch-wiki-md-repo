@@ -32,7 +32,8 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [18 Prevent GNOME software from downloading updates](#Prevent_GNOME_software_from_downloading_updates)
 *   [19 Increase volume above and beyond 100%](#Increase_volume_above_and_beyond_100.25)
 *   [20 Adjust volume in smaller steps](#Adjust_volume_in_smaller_steps)
-*   [21 Hybrid Sleep on laptop lid closing action](#Hybrid_Sleep_on_laptop_lid_closing_action)
+*   [21 Show volume sound percentage next to top panel icon](#Show_volume_sound_percentage_next_to_top_panel_icon)
+*   [22 Hybrid Sleep on laptop lid closing action](#Hybrid_Sleep_on_laptop_lid_closing_action)
 
 ## Keyboard
 
@@ -433,6 +434,10 @@ Install the extension [volume mixer](https://extensions.gnome.org/extension/858/
 ## Adjust volume in smaller steps
 
 By default, pressing the keyboard's volume keys adjusts the volume by 6%. If smaller steps are desired, the shortcut *Shift + Volume Key Up/Down* adjusts volume in 2% steps.
+
+## Show volume sound percentage next to top panel icon
+
+Install the extension [sound percentage](https://github.com/maoschanz/sound-percentage-gs-extension) to display the current output volume level next to the sound icon in the top panel.
 
 ## Hybrid Sleep on laptop lid closing action
 

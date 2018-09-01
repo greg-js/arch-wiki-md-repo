@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg"). Дата последней синхронизации: 13 августа 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_Xorg&diff=0&oldid=534644).
+**Состояние перевода:** На этой странице представлен перевод статьи [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg"). Дата последней синхронизации: 28 августа 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_Xorg&diff=0&oldid=538161).
 
 Ссылки по теме
 
@@ -35,7 +35,6 @@
 *   [4 Регулировка задержки и скорости автоповтора](#.D0.A0.D0.B5.D0.B3.D1.83.D0.BB.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B7.D0.B0.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B8_.D0.B8_.D1.81.D0.BA.D0.BE.D1.80.D0.BE.D1.81.D1.82.D0.B8_.D0.B0.D0.B2.D1.82.D0.BE.D0.BF.D0.BE.D0.B2.D1.82.D0.BE.D1.80.D0.B0)
     *   [4.1 Через xset](#.D0.A7.D0.B5.D1.80.D0.B5.D0.B7_xset)
     *   [4.2 Через параметры запуска XServer](#.D0.A7.D0.B5.D1.80.D0.B5.D0.B7_.D0.BF.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0_XServer)
-    *   [4.3 Через параметры XServer](#.D0.A7.D0.B5.D1.80.D0.B5.D0.B7_.D0.BF.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B_XServer)
 *   [5 Горячие клавиши (Keybinding)](#.D0.93.D0.BE.D1.80.D1.8F.D1.87.D0.B8.D0.B5_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8_.28Keybinding.29)
     *   [5.1 Сторонние инструменты](#.D0.A1.D1.82.D0.BE.D1.80.D0.BE.D0.BD.D0.BD.D0.B8.D0.B5_.D0.B8.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B)
         *   [5.1.1 sxhkd](#sxhkd)
@@ -314,15 +313,6 @@ $ xset r rate
 *   `-arinterval *милисекунды*` - устанавливает интервал автоповтора (длительность в миллисекундах, которая должна пройти между нажатиями, генерируемыми автоповтором).
 
 Для получения полного списка параметров X-сервера смотрите [Xserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xserver.1) и обратитесь к своему [экранному менеджеру](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер") для получения информации о том, как передать эти параметры.
-
-### Через параметры XServer
-
-Добавьте эту сроку в `/etc/X11/xorg.conf.d/00-keyboard.conf`:
-
-```
-Option "AutoRepeat" "*задержка* *скорость*"
-
-```
 
 ## Горячие клавиши (Keybinding)
 

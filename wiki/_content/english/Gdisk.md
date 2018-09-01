@@ -3,10 +3,11 @@ Related articles
 *   [Partitioning](/index.php/Partitioning "Partitioning")
 *   [fdisk](/index.php/Fdisk "Fdisk")
 *   [GNU Parted](/index.php/GNU_Parted "GNU Parted")
+*   [dd](/index.php/Dd "Dd")
 
 [GPT fdisk](https://www.rodsbooks.com/gdisk/) (consisting of the *gdisk*, *cgdisk*, *sgdisk*, and *fixparts* programs) is a set of text-mode partitioning tools made by Rod Smith. They work on Globally Unique Identifier (GUID) Partition Table (GPT) disks, rather than on the older (and once more common) Master Boot Record (MBR) partition tables.
 
-This article covers [gdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gdisk.8) and [sgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sgdisk.8) utilities.
+*gdisk*, *cgdisk* and *sgdisk* all have the same functionality but are optimized for different UIs. *gdisk* is text-mode interactive, *sgdisk* is command-line and *cgdisk* has terminal user interface. This article covers [gdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gdisk.8) and [sgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sgdisk.8) utilities.
 
 **Tip:**
 
@@ -144,10 +145,7 @@ Select the partition's type by entering gdisk's internal type code or specifying
 
 <caption>Common partition types</caption>
 | Partition type | Mountpoint | gdisk's
-
-code
-
- | [Partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") |
+code | [Partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") |
 | Linux filesystem | Any | `8300` | `0FC63DAF-8483-4772-8E79-3D69D8477DE4` |
 | [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | Any | `ef00` | `C12A7328-F81F-11D2-BA4B-00A0C93EC93B` |
 | [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") | None | `ef02` | `21686148-6449-6E6F-744E-656564454649` |
@@ -166,7 +164,7 @@ Repeat this procedure until you have the partitions you desire.
 
 ### Write changes to disk
 
-**Tip:** Use the command `c` to change a partition's name ([PARTLABEL](/index.php/Persistent_block_device_naming#by-partlabel "Persistent block device naming")) for easy identification.
+**Tip:** Use the command `c` to change a partition's name ([PARTLABEL](/index.php/Persistent_block_device_naming#by-partlabel "Persistent block device naming")) for easy distinguishing.
 
 Write the table to disk and exit via the `w` command.
 

@@ -16,9 +16,9 @@ Of course there are also [tools that do both](#Archiving_and_compression), which
     *   [2.3 Feature charts](#Feature_charts)
         *   [2.3.1 Decompress](#Decompress)
 *   [3 Usage comparison](#Usage_comparison)
-    *   [3.1 Archiving only](#Archiving_only_2)
-    *   [3.2 Compression only](#Compression_only_2)
-    *   [3.3 Archiving and compression](#Archiving_and_compression_2)
+    *   [3.1 Archiving only usage](#Archiving_only_usage)
+    *   [3.2 Compression only usage](#Compression_only_usage)
+    *   [3.3 Archiving and compression usage](#Archiving_and_compression_usage)
 *   [4 Convenience tools](#Convenience_tools)
 *   [5 Determining archive format](#Determining_archive_format)
 *   [6 Esoteric, rare or deprecated tools](#Esoteric.2C_rare_or_deprecated_tools)
@@ -28,14 +28,16 @@ Of course there are also [tools that do both](#Archiving_and_compression), which
 ## Archiving only
 
 | Name | Package | Manuals | Description |
+| GNU [tar](https://en.wikipedia.org/wiki/tar_(computing) | [tar](https://www.archlinux.org/packages/?name=tar) | [tar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1), [info](https://www.gnu.org/software/tar/manual/html_chapter/index.html) | GNU utility for manipulating the ubiquitous tar archives (tarballs), which are used by [pacman](/index.php/Pacman "Pacman") and the [AUR](/index.php/AUR "AUR"). Part of [base](https://www.archlinux.org/groups/x86_64/base/). |
+| [libarchive](http://libarchive.org/) | [libarchive](https://www.archlinux.org/packages/?name=libarchive) | [bsdtar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bsdtar.1)
+[bsdcpio(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bsdcpio.1) | Implementation of *tar* and *cpio* that also offers a library. Used by [pacman](/index.php/Pacman "Pacman") and [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). |
 | [ar](https://en.wikipedia.org/wiki/ar_(Unix) | [binutils](https://www.archlinux.org/packages/?name=binutils) | [ar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ar.1) | Legacy Unix archiver before *tar*. Today only used for creating [static library](https://en.wikipedia.org/wiki/Static_library "wikipedia:Static library") files. |
 | [cpio](https://en.wikipedia.org/wiki/cpio "wikipedia:cpio") | [cpio](https://www.archlinux.org/packages/?name=cpio) | [cpio(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cpio.1) | File archiver via stdin/stdout, supports cpio and tar formats. |
 | [DAR](http://dar.linux.free.fr/) | [dar](https://aur.archlinux.org/packages/dar/) | [dar(1)](http://dar.linux.free.fr/doc/man/dar.html) | Archiver to backup large live filesystems, takes care of hard links, [extended attributes](/index.php/Extended_attributes "Extended attributes"), sparse files and inode types. |
-| GNU [tar](https://en.wikipedia.org/wiki/tar_(computing) | [tar](https://www.archlinux.org/packages/?name=tar) | [tar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1) | GNU utility for manipulating the ubiquitous tar archives (tarballs), which are used by [pacman](/index.php/Pacman "Pacman") and the [AUR](/index.php/AUR "AUR"). Part of [base](https://www.archlinux.org/groups/x86_64/base/). |
-| [libarchive](http://libarchive.org/) | [libarchive](https://www.archlinux.org/packages/?name=libarchive) | [bsdtar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bsdtar.1)
-[bsdcpio(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bsdcpio.1) | Implementation of *tar* and *cpio* that also offers a library. Used by [pacman](/index.php/Pacman "Pacman") and [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). |
 
 **Tip:** Both GNU and BSD tar automatically do decompression delegation for bzip2, compress, gzip, lzip, lzma and xz compressed archives. When creating archives both support the `-a` switch to automatically filter the created archive through the right compression program based on the file extension. While BSD tar recognizes compression formats based on the format, GNU tar only guesses based on the file extension.
+
+See also [#Archiving only usage](#Archiving_only_usage).
 
 ## Compression tools
 
@@ -54,6 +56,7 @@ These compression programs implement their own file format.
 
 *   Parallel implementations offer improved speeds by using multiple CPU cores.
 *   Tar extensions refers to compressed archives where `tar` and the compression tool is used, e.g. `.tzo` is `.tar.lzo`.
+*   See also [#Compression only usage](#Compression_only_usage).
 
 ### Archiving and compression
 
@@ -63,6 +66,8 @@ These compression programs implement their own file format.
 | [ZIP](https://en.wikipedia.org/wiki/Zip_(file_format) | [zip](https://www.archlinux.org/packages/?name=zip), [unzip](https://www.archlinux.org/packages/?name=unzip) | [zip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zip.1), [unzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/unzip.1) | .zip | Widely used outside of the Linux world. |
 | [Unarchiver](https://theunarchiver.com/) | [unarchiver](https://www.archlinux.org/packages/?name=unarchiver) | [unar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/unar.1), [lsar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsar.1) | *many* | Command-line tool of a Mac application, supports over 40 archive formats. |
 | [ZPAQ](https://en.wikipedia.org/wiki/ZPAQ "wikipedia:ZPAQ") | [zpaq](https://aur.archlinux.org/packages/zpaq/) | [zpaq(1)](http://mattmahoney.net/dc/zpaqdoc.html) | .zpaq | A high compression ratio archiver written in C++, uses several algorithms. |
+
+See also [#Archiving and compression usage](#Archiving_and_compression_usage).
 
 ### Feature charts
 
@@ -75,13 +80,13 @@ These compression programs implement their own file format.
 
 ## Usage comparison
 
-### Archiving only
+### Archiving only usage
 
 | Name | Create archive | Extract archive | List content |
 | [tar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1) | `tar cfv archive.tar file1 file2` | `tar xfv archive.tar` | `tar -tvf archive.tar` |
 | [cpio(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cpio.1) | `ls file1 file2 | cpio -o > archive.cpio` | `cpio -i -vd < archive.cpio` | `cpio -t < archive.cpio` |
 
-### Compression only
+### Compression only usage
 
 | Name | Compress | Decompress | Decompress to stdout |
 | [bzip2(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bzip2.1) | `bzip2 file` | `bzip2 -d file.bz2` | `bzcat file.bz2` |
@@ -91,7 +96,7 @@ These compression programs implement their own file format.
 `lrztar -d folder.tar.lrz` | `lrzcat file.lrz` |
 | [xz(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xz.1) | `xz file` | `xz -d file.xz` | `xzcat file.xz` |
 
-### Archiving and compression
+### Archiving and compression usage
 
 | Name | Compress | Decompress | Decompress to stdout | List content |
 | [7z(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/7z.1) | `7z a archive.7z file1 file2` | `7z x archive.7z` | `7z e -so archive.7z file1` | `7z l archive.7z` |

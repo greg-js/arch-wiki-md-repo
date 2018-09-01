@@ -23,10 +23,11 @@ In the end, the provided solution will allow you to use the best currently avail
         *   [2.4.1 Setting up Postfix](#Setting_up_Postfix)
         *   [2.4.2 Create the file structure](#Create_the_file_structure)
     *   [2.5 Dovecot](#Dovecot)
-    *   [2.6 PostfixAdmin](#PostfixAdmin_2)
-    *   [2.7 Roundcube](#Roundcube)
-        *   [2.7.1 Apache configuration](#Apache_configuration)
-        *   [2.7.2 Roundcube: Change Password Plugin](#Roundcube:_Change_Password_Plugin)
+    *   [2.6 Dovecot DH parameters](#Dovecot_DH_parameters)
+    *   [2.7 PostfixAdmin](#PostfixAdmin_2)
+    *   [2.8 Roundcube](#Roundcube)
+        *   [2.8.1 Apache configuration](#Apache_configuration)
+        *   [2.8.2 Roundcube: Change Password Plugin](#Roundcube:_Change_Password_Plugin)
 *   [3 Fire it up](#Fire_it_up)
 *   [4 Testing](#Testing)
     *   [4.1 Error response](#Error_response)
@@ -332,6 +333,24 @@ user_query = SELECT '/home/vmail/%d/%n' as home, 'maildir:/home/vmail/%d/%n' as 
 password_query = SELECT email as user, password, '/home/vmail/%d/%n' as userdb_home, 'maildir:/home/vmail/%d/%n' as userdb_mail, 5000 as  userdb_uid, 5000 as userdb_gid FROM users WHERE email = '%u'
 # If using client certificates for authentication, comment the above and uncomment the following
 #password_query = SELECT null AS password, ‘%u’ AS user
+
+```
+
+### Dovecot DH parameters
+
+With v2.3 you are required to provide ssl_dh=</path/to/dh.pem yourself.
+
+To generate a new DH parameters file (this will take very long):
+
+```
+# openssl dhparam -out /etc/dovecot/dh.pem 4096
+
+```
+
+then add the file to `/etc/dovecot/dovecot.conf`
+
+```
+ssl_dh = </etc/dovecot/dh.pem
 
 ```
 

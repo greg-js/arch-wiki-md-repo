@@ -51,20 +51,11 @@ FTL is a DNS resolver/forwarder and a database-like wrapper/API that provides lo
 1.  Daily data are stored in RAM and are captured in real-time within `/run/log/pihole/pihole.log`
 2.  Historical data (i.e. over multiple days/weeks/months) are stored on the file system `/etc/pihole/pihole-FTL.db` written out at a user-specified interval.
 
-**Tip:** If Pi-hole is running on a [solid state drive](/index.php/Solid_state_drive "Solid state drive") (single-board computers SD, SSD, M.2/NVMe device, etc...) it is recommended to set the `DBINTERVAL` value to at least 60.0 to minimize writes to the database.
+`pi-hole-ftl.service` is statically enabled; re/start it. See the [official documentation](https://docs.pi-hole.net/ftldns/configfile/) to configure FTL.
 
-See [official documentation](https://docs.pi-hole.net/ftldns/configfile/) for how to configure FTL.
+**Tip:** If Pi-hole is running on a [solid state drive](/index.php/Solid_state_drive "Solid state drive") (single-board computers SD, SSD, M.2/NVMe device, etc...) it is recommended to set the `DBINTERVAL` value to at least `60.0` to minimize writes to the database.
 
-`pi-hole-ftl.service` is statically enabled; re/start it.
-
-Since Pi-hole-FTL version 4.0 a private fork of dnsmasq is integrated in FTL sub-project. Is possible to still use previous dnsmasq config files. Original Dnsmasq is now conflicting with this package and will be uninstalled.
-
-Ensure that the following line in original `/etc/dnsmasq.conf` is not commented out:
-
-```
-conf-dir=/etc/dnsmasq.d/,*.conf
-
-```
+**Note:** Since Pi-hole-FTL 4.0, a private fork of dnsmasq is integrated in the FTL sub-project. The original [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package is now conflicting with [pi-hole-ftl](https://aur.archlinux.org/packages/pi-hole-ftl/) and will be uninstalled when upgrading from a previous version. It's still possible to use the previous dnsmasq config files, just ensure that `conf-dir=/etc/dnsmasq.d/,*.conf` in the original `/etc/dnsmasq.conf` is not commented out.
 
 #### Web server
 

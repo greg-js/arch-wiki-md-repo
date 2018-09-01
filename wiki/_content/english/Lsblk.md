@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Core utilities#lsblk](/index.php/Core_utilities#lsblk "Core utilities")
+*   [Device file#lsblk](/index.php/Device_file#lsblk "Device file")

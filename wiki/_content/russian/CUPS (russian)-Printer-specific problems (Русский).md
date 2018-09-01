@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems"). Дата последней синхронизации: 14 мая 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Printer-specific_problems&diff=0&oldid=521143).
+**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems"). Дата последней синхронизации: 1 сентября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Printer-specific_problems&diff=0&oldid=539124).
 
 Ссылки по теме
 
@@ -29,7 +29,8 @@
     *   [4.2 Специализированные драйверы](#.D0.A1.D0.BF.D0.B5.D1.86.D0.B8.D0.B0.D0.BB.D0.B8.D0.B7.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D1.8B_2)
         *   [4.2.1 Avasys](#Avasys)
 *   [5 HP](#HP)
-    *   [5.1 Драйвер HPLIP](#.D0.94.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80_HPLIP)
+    *   [5.1 HPLIP](#HPLIP)
+    *   [5.2 foo2zjs](#foo2zjs)
 *   [6 Konica](#Konica)
 *   [7 Lexmark](#Lexmark)
     *   [7.1 Утилиты](#.D0.A3.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B_2)
@@ -79,10 +80,13 @@
 | MFC-420CN | [brother-mfc-420cn](https://aur.archlinux.org/packages/brother-mfc-420cn/) |
 | MFC-440CN | [brother-mfc-440cn](https://aur.archlinux.org/packages/brother-mfc-440cn/) |
 | MFC-7360N | [brother-mfc7360n](https://aur.archlinux.org/packages/brother-mfc7360n/) |
+| MFC-7840W | [brother-mfc-7840w](https://aur.archlinux.org/packages/brother-mfc-7840w/) |
 | MFC-9320CW | Установите драйвер Brother. |
 | MFC-9332CDW | [brother-mfc-9332cdw](https://aur.archlinux.org/packages/brother-mfc-9332cdw/) |
 | MFC-9840CDW | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") | Или драйвер Brother. Этот принтер также работает с универсальным драйвером PCL-6 из пакета [gutenprint](https://www.archlinux.org/packages/?name=gutenprint). Используйте **pcl_p1**, как адрес принтера при использовании драйвера PCL-6. |
 | MFC-J470DW | [brother-mfc-j470dw](https://aur.archlinux.org/packages/brother-mfc-j470dw/) |
+| MFC-J4710DW | [brother-mfc-j4710dw](https://aur.archlinux.org/packages/brother-mfc-j4710dw/) |
+| MFC-J480DW | [brother-mfc-j480dw](https://aur.archlinux.org/packages/brother-mfc-j480dw/) | Используйте `ipp://`, описанный ниже. |
 | MFC-J5520DW | [brother-mfc-j5520dw](https://aur.archlinux.org/packages/brother-mfc-j5520dw/) |
 | MFC-J5910DW | [brother-mfc-j5910dw](https://aur.archlinux.org/packages/brother-mfc-j5910dw/) |
 | MFC-J650DW | Установите драйвер Brother. |
@@ -125,6 +129,8 @@ Brother предоставляет специализированные драй
 [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [rpmextract](https://www.archlinux.org/packages/?name=rpmextract) и извлеките оба пакета rpm с помощью `rpmextract.sh`. Извлечение обоих файлов создаст каталог var и usr - переместите содержимое обоих каталогов в соответствующие корневые каталоги.
 
 Запустите файл оболочки CUPS в `/usr/local/Brother/cupswrapper`. Это должно автоматически установить и настроить ваш принтер brother.
+
+Для некоторых драйверов может потребоваться установить 32-битные библиотеки из [multilib](/index.php/Multilib_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Multilib (Русский)").
 
 ### Обновление прошивки
 
@@ -384,7 +390,7 @@ $ make
 
 Смотрите также [CUPS/Решение проблем#Проблемы с HP](/index.php/CUPS/%D0%A0%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_HP "CUPS/Решение проблем").
 
-Большинство принтеров HP будут работать с [hplip](https://www.archlinux.org/packages/?name=hplip), но некоторые - при использование [hpoj](https://aur.archlinux.org/packages/hpoj/).
+Большинство принтеров HP будут работать с [hplip](https://www.archlinux.org/packages/?name=hplip), но некоторые - при использование [hpoj](https://aur.archlinux.org/packages/hpoj/). Также некоторые лазерные принтеры поддерживаются [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/).
 
 | Принтер | Драйвер/фильтр | Примечание |
 | DeskJet 710C | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/) |
@@ -400,7 +406,7 @@ $ make
 | Photosmart 2575 | [hplip](https://www.archlinux.org/packages/?name=hplip) | Или используйте драйвер hpijs с [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)"). |
 | Принтер | Драйвер/фильтр | Примечание |
 
-###### Драйвер HPLIP
+### HPLIP
 
 **Примечание:** Начиная с hplip v3.17.11 hpijs больше не доступен. Если у вас есть принтеры, использующие hpijs, они не смогут работать. Вы должны перенастроить их и выбрать новый драйвер hpcups вместо hpijs.
 
@@ -451,6 +457,10 @@ $ hp-systray
 
 *   **Либо:** Установите первым [hplip](https://www.archlinux.org/packages/?name=hplip), затем извлеките файл PPD, соответствующий вашему принтеру, из `/usr/share/ppd/HP/`. Далее удалите [hplip](https://www.archlinux.org/packages/?name=hplip) полностью, а также любые ненужные зависимости. Наконец, установите принтер вручную через веб-интерфейс CUPS, выбрав файл PPD, который вы извлекли, а затем переустановите [hplip](https://www.archlinux.org/packages/?name=hplip). После перезагрузки у вас должен быть полностью работающий принтер.
 *   **Или:** Удалите [hplip](https://www.archlinux.org/packages/?name=hplip), [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) и [foomatic-db-engine](https://www.archlinux.org/packages/?name=foomatic-db-engine) вместе с любыми ненужными зависимостями. Переустановите [hplip](https://www.archlinux.org/packages/?name=hplip) и перезапустите CUPS. Установите ваш принтер с помощью веб-интерфейса CUPS, который теперь сможет автоматически найти драйверы. Перезагрузка не требуется.
+
+### foo2zjs
+
+[foo2zjs](http://foo2zjs.rkkda.com/) поддерживает некоторые принтеры HP LaserJet. По состоянию на июнь 2018 года пакет hplip конфликтует с пакетом [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/), как описано на [форуме в этом посте](https://bbs.archlinux.org/viewtopic.php?pid=1662809) и [FS#58815](https://bugs.archlinux.org/task/58815).
 
 ## Konica
 
@@ -532,7 +542,11 @@ package() {
 *   [Список поддерживаемых черно-белых моделей](https://www.openprinting.org/driver/pxlmono-Ricoh)
 *   [Список поддерживаемых цветных моделей](https://www.openprinting.org/driver/pxlcolor-Ricoh)
 
+Для принтеров виндоус (серии Ricoh SP100 и SP200) попробуйте [ricoh-sp100-git](https://aur.archlinux.org/packages/ricoh-sp100-git/).
+
 | Принтер | Драйвер/фильтр | Примечание |
+| SP 112 | [ricoh-sp100-git](https://aur.archlinux.org/packages/ricoh-sp100-git/) |
+| SP 201n | [ricoh-sp100-git](https://aur.archlinux.org/packages/ricoh-sp100-git/) |
 | 213W | *Generic PCL Laser* | Получите код WPS, удерживая кнопку Wi-Fi в течение 2 секунд, а затем нажмите кнопку выключения/включения. |
 | Принтер | Драйвер/фильтр | Примечание |
 

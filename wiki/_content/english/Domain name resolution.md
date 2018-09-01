@@ -113,15 +113,15 @@ In the table below, the columns have the following meaning:
 
 *   *Cache*: [caches](https://en.wikipedia.org/wiki/Name_server#Caching_name_server "wikipedia:Name server") the DNS queries to improve lookup times of subsequent identical requests.
 *   *Recursor*: can [recursively query](https://en.wikipedia.org/wiki/Name_server#Recursive_query "wikipedia:Name server") the domain name starting from the [DNS root zone](https://en.wikipedia.org/wiki/DNS_root_zone "wikipedia:DNS root zone").
-*   *resolvconf compatibility*: can acquire name servers and search domains, to use for forwarding requests, from software that sets them using [resolvconf](https://en.wikipedia.org/wiki/resolvconf "wikipedia:resolvconf").
+*   *resolvconf compatibility*: can acquire name servers and search domains, to use for forwarding requests, from software that sets them using [resolvconf](/index.php/Resolvconf "Resolvconf").
 *   *Validates DNSSEC*: [validates](https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions#The_lookup_procedure "wikipedia:Domain Name System Security Extensions") DNS query responses using [DNSSEC](/index.php/DNSSEC "DNSSEC").
-*   *DNS over TLS*: supports the [DNS over TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS") protocol for encrypted communicating with the DNS server.
-*   *DNS over HTTPS*: supports the [DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") protocol for encrypted communicating with the DNS server.
+*   *DNS over TLS*: supports encrypted communication with upstream DNS server(s) using the [DNS over TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS") protocol.
+*   *DNS over HTTPS*: supports encrypted communication with upstream DNS server(s) using the [DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") protocol.
 
 | Resolver | Cache | Recursor | *resolvconf* compatibility | Validates DNSSEC | DNS over TLS | DNS over HTTPS | Notes |
 | [glibc](#Glibc_resolver) | No | No | [openresolv](/index.php/Openresolv "Openresolv") | No | No | No |
 | [BIND](/index.php/BIND "BIND") | Yes | Yes | [openresolv](/index.php/Openresolv "Openresolv") subscriber | Yes |  ? |  ? |
-| [dnscrypt-proxy](/index.php/Dnscrypt-proxy "Dnscrypt-proxy") | Yes | No | No | No | No | Yes | Implements the [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt") protocol. |
+| [dnscrypt-proxy](/index.php/Dnscrypt-proxy "Dnscrypt-proxy") | Yes | No | No | No | No | Yes | Implements a [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt") protocol client. |
 | [dnsmasq](/index.php/Dnsmasq "Dnsmasq") | Yes | No | [openresolv](/index.php/Openresolv "Openresolv") subscriber | Yes | No [[2]](http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2018q2/012131.html) | No |
 | [Knot Resolver](/index.php/Knot_Resolver "Knot Resolver") | Yes | Yes | No | Yes | Yes | No [[3]](https://gitlab.labs.nic.cz/knot/knot-resolver/issues/243) |
 | [pdnsd](/index.php/Pdnsd "Pdnsd") | Yes | Yes | [openresolv](/index.php/Openresolv "Openresolv") subscriber | No | No | No |

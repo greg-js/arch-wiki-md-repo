@@ -11,33 +11,34 @@
         *   [1.1.5 Data analysis and plotting](#Data_analysis_and_plotting)
         *   [1.1.6 Proof assistants](#Proof_assistants)
     *   [1.2 Physics](#Physics)
-        *   [1.2.1 Electronics](#Electronics)
-            *   [1.2.1.1 Digital logic](#Digital_logic)
-            *   [1.2.1.2 HDL](#HDL)
-            *   [1.2.1.3 MCU IDE](#MCU_IDE)
-            *   [1.2.1.4 Schematic capture editor](#Schematic_capture_editor)
-        *   [1.2.2 Physics simulation](#Physics_simulation)
-        *   [1.2.3 Unit conversion](#Unit_conversion)
-    *   [1.3 Chemistry and biology](#Chemistry_and_biology)
-        *   [1.3.1 Computational biology and bioinformatics](#Computational_biology_and_bioinformatics)
-        *   [1.3.2 Molecules](#Molecules)
-            *   [1.3.2.1 Viewers](#Viewers)
-            *   [1.3.2.2 Drawing](#Drawing)
-            *   [1.3.2.3 Modeling](#Modeling)
-        *   [1.3.3 Periodic table](#Periodic_table)
-        *   [1.3.4 Biochemistry](#Biochemistry)
-        *   [1.3.5 Image manipulation](#Image_manipulation)
+        *   [1.2.1 Physics simulation](#Physics_simulation)
+        *   [1.2.2 Unit conversion](#Unit_conversion)
+    *   [1.3 Chemistry](#Chemistry)
+        *   [1.3.1 Molecules](#Molecules)
+            *   [1.3.1.1 Viewers](#Viewers)
+            *   [1.3.1.2 Drawing](#Drawing)
+            *   [1.3.1.3 Modeling](#Modeling)
+        *   [1.3.2 Periodic table](#Periodic_table)
     *   [1.4 Earth science](#Earth_science)
         *   [1.4.1 Geography](#Geography)
         *   [1.4.2 Meteorology](#Meteorology)
     *   [1.5 Astronomy](#Astronomy)
-    *   [1.6 Engineering](#Engineering)
-        *   [1.6.1 Computer-aided design](#Computer-aided_design)
-    *   [1.7 Telecommunication](#Telecommunication)
-        *   [1.7.1 Amateur radio](#Amateur_radio)
-    *   [1.8 Simulation modeling](#Simulation_modeling)
-    *   [1.9 Computer science](#Computer_science)
-        *   [1.9.1 Artificial intelligence](#Artificial_intelligence)
+    *   [1.6 Biology](#Biology)
+        *   [1.6.1 Computational biology and bioinformatics](#Computational_biology_and_bioinformatics)
+        *   [1.6.2 Biochemistry](#Biochemistry)
+        *   [1.6.3 Image manipulation](#Image_manipulation)
+    *   [1.7 Engineering](#Engineering)
+        *   [1.7.1 Computer-aided design](#Computer-aided_design)
+        *   [1.7.2 Electronics](#Electronics)
+            *   [1.7.2.1 Digital logic](#Digital_logic)
+            *   [1.7.2.2 HDL](#HDL)
+            *   [1.7.2.3 MCU IDE](#MCU_IDE)
+            *   [1.7.2.4 Schematic capture editor](#Schematic_capture_editor)
+    *   [1.8 Telecommunication](#Telecommunication)
+        *   [1.8.1 Amateur radio](#Amateur_radio)
+    *   [1.9 Simulation modeling](#Simulation_modeling)
+    *   [1.10 Computer science](#Computer_science)
+        *   [1.10.1 Artificial intelligence](#Artificial_intelligence)
 
 ## Science
 
@@ -297,86 +298,6 @@ See also [Wikipedia:Proof assistant](https://en.wikipedia.org/wiki/Proof_assista
 
 ### Physics
 
-#### Electronics
-
-See also [Wikipedia:Comparison of EDA software](https://en.wikipedia.org/wiki/Comparison_of_EDA_software "wikipedia:Comparison of EDA software").
-
-##### Digital logic
-
-Digital logic software are mainly simple educational tools that intended for only designing and simulating logic circuits.
-
-*   **glogic** — An educational graphical logic circuit simulator.
-
-	[https://launchpad.net/glogic](https://launchpad.net/glogic) || [glogic](https://aur.archlinux.org/packages/glogic/)
-
-*   **GTKWave** — Fully featured GTK+ based wave viewer which reads LXT, LXT2, VZT, FST, and GHW files as well as standard Verilog VCD/EVCD files and allows their viewing.
-
-	[http://gtkwave.sourceforge.net/](http://gtkwave.sourceforge.net/) || [gtkwave](https://www.archlinux.org/packages/?name=gtkwave)
-
-*   **Logisim** — Educational digital logic design and simulation software, written in Java, officially its development has stopped.
-
-	[https://sourceforge.net/projects/circuit/](https://sourceforge.net/projects/circuit/) || [logisim](https://aur.archlinux.org/packages/logisim/)
-
-*   **Logisim Evolution** — Project which continue the development of the original Logisim with new features, written in Java.
-
-	[https://github.com/reds-heig/logisim-evolution](https://github.com/reds-heig/logisim-evolution) || [logisim-evolution-git](https://aur.archlinux.org/packages/logisim-evolution-git/)
-
-*   **PulseView** — Logic analyzer, oscilloscope and MSO GUI.
-
-	[http://sigrok.org/wiki/PulseView](http://sigrok.org/wiki/PulseView) || [pulseview](https://www.archlinux.org/packages/?name=pulseview)
-
-*   **SmartSim** — Simple and beautiful digital logic circuit design and simulation software, mainly target teachers and students, very lightweight and cross platform, GPL licensed, written in Vala.
-
-	[http://smartsim.org.uk](http://smartsim.org.uk) || [smartsim-git](https://aur.archlinux.org/packages/smartsim-git/)
-
-##### HDL
-
-Also see [Wikipedia:Hardware description language](https://en.wikipedia.org/wiki/Hardware_description_language "wikipedia:Hardware description language").
-
-*   **[Altera Design Software](/index.php/Altera_Design_Software "Altera Design Software")** — A set of design tools for Altera's FPGA chips that includes Quartus II and ModelSim-Altera.
-
-	[https://www.altera.com/products/design-software/overview.html](https://www.altera.com/products/design-software/overview.html) || see [Altera Design Software](/index.php/Altera_Design_Software "Altera Design Software")
-
-*   **[Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK")** — FPGA programmable logic design suit.
-
-	[http://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html](http://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html) || see [Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK")
-
-##### MCU IDE
-
-*   **[Arduino](/index.php/Arduino "Arduino")** — Arduino prototyping platform SDK.
-
-	[https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software) || [arduino](https://www.archlinux.org/packages/?name=arduino)
-
-##### Schematic capture editor
-
-*   **[gEDA](/index.php/GEDA "GEDA")** — Full suite and toolkit of Electronic Design Automation tools that are used for electrical circuit design, schematic capture, simulation, prototyping, and production.
-
-	[http://www.geda-project.org/](http://www.geda-project.org/) || [geda-gaf](https://www.archlinux.org/packages/?name=geda-gaf)
-
-*   **[gEDA](/index.php/GEDA "GEDA") PCB** — Interactive printed circuit board editor.
-
-	[http://pcb.geda-project.org/](http://pcb.geda-project.org/) || [pcb](https://www.archlinux.org/packages/?name=pcb)
-
-*   **[KiCad](https://en.wikipedia.org/wiki/KiCad "wikipedia:KiCad")** — Software suite for electronic design automation (EDA) that facilitates the design of schematics for electronic circuits and their conversion to PCB (printed circuit board).
-
-	[http://kicad-pcb.org/](http://kicad-pcb.org/) || [kicad](https://www.archlinux.org/packages/?name=kicad)
-
-*   **[Oregano](https://en.wikipedia.org/wiki/Oregano_(software) "wikipedia:Oregano (software)")** — Graphical software application for schematic capture and simulation of electrical circuits. The actual simulation is done by the [ngspice](https://en.wikipedia.org/wiki/Ngspice "wikipedia:Ngspice") or [Gnucap](https://en.wikipedia.org/wiki/GNU_Circuit_Analysis_Package "wikipedia:GNU Circuit Analysis Package") engines.
-
-	[https://github.com/drahnr/oregano](https://github.com/drahnr/oregano) || [oregano](https://aur.archlinux.org/packages/oregano/)
-
-*   **QElectroTech** — Application used to draw advanced electrical circuits.
-
-	[https://qelectrotech.org/](https://qelectrotech.org/) || [qelectrotech](https://aur.archlinux.org/packages/qelectrotech/)
-
-*   **[Qucs](https://en.wikipedia.org/wiki/Quite_Universal_Circuit_Simulator "wikipedia:Quite Universal Circuit Simulator")** — Electronics circuit simulator application that gives you the ability to set up a circuit with a graphical user interface and simulate its large-signal, small-signal and noise behaviour.
-
-	[http://qucs.sourceforge.net/](http://qucs.sourceforge.net/) || [qucs](https://aur.archlinux.org/packages/qucs/)
-
-*   **[ngspice](https://en.wikipedia.org/wiki/ngspice "wikipedia:ngspice")** — Application used to simulate circuits. Open source successor of [spice3f5](https://en.wikipedia.org/wiki/SPICE "wikipedia:SPICE")
-
-	[http://ngspice.sourceforge.net/](http://ngspice.sourceforge.net/) || [ngspice](https://www.archlinux.org/packages/?name=ngspice)
-
 #### Physics simulation
 
 *   **[Code_Aster](https://en.wikipedia.org/wiki/Code_Aster "wikipedia:Code Aster")** — Software package for Civil and Structural Engineering finite element analysis and numeric simulation in structural mechanics.
@@ -409,39 +330,7 @@ Also see [Wikipedia:Hardware description language](https://en.wikipedia.org/wiki
 
 	[https://www.gnu.org/software/units/](https://www.gnu.org/software/units/) || [units](https://www.archlinux.org/packages/?name=units)
 
-### Chemistry and biology
-
-#### Computational biology and bioinformatics
-
-See also [Wikipedia:List of open source bioinformatics software](https://en.wikipedia.org/wiki/List_of_open_source_bioinformatics_software "wikipedia:List of open source bioinformatics software").
-
-*   **[BALL](https://en.wikipedia.org/wiki/BALL "wikipedia:BALL") (Biochemical Algorithms Library)** — Application framework in C++ that provides an extensive set of data structures as well as classes for molecular mechanics, advanced solvation methods, comparison and analysis of protein structures, file import/export, and visualization.
-
-	[http://www.ball-project.org/](http://www.ball-project.org/) || [ball](https://aur.archlinux.org/packages/ball/)
-
-*   **[BioJava](https://en.wikipedia.org/wiki/BioJava "wikipedia:BioJava")** — Set of Java tools for computational biology, as well as bioinformatics.
-
-	[http://biojava.org](http://biojava.org) || [biojava](https://aur.archlinux.org/packages/biojava/)
-
-*   **[Biopython](https://en.wikipedia.org/wiki/Biopython "wikipedia:Biopython")** — Python package with tools for computational biology, as well as bioinformatics.
-
-	[http://biopython.org/wiki/Biopython](http://biopython.org/wiki/Biopython) || [python-biopython](https://www.archlinux.org/packages/?name=python-biopython) [python2-biopython](https://www.archlinux.org/packages/?name=python2-biopython)
-
-*   **[EMBOSS](https://en.wikipedia.org/wiki/EMBOSS "wikipedia:EMBOSS") (European Molecular Biology Open Software Suite)** — Open source software analysis package specially developed for the needs of the molecular biology and bioinformatics user community.
-
-	[http://emboss.sourceforge.net/](http://emboss.sourceforge.net/) || [emboss](https://aur.archlinux.org/packages/emboss/)
-
-*   **[MEGA](https://en.wikipedia.org/wiki/MEGA,_Molecular_Evolutionary_Genetics_Analysis "wikipedia:MEGA, Molecular Evolutionary Genetics Analysis") (Molecular Evolutionary Genetics Analysis)** — Integrated tool for conducting automatic and manual sequence alignment, inferring phylogenetic trees, mining web-based databases, estimating rates of molecular evolution, inferring ancestral sequences, and testing evolutionary hypotheses.
-
-	[http://www.megasoftware.net/](http://www.megasoftware.net/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
-*   **[MUMmer](https://en.wikipedia.org/wiki/MUMmer "wikipedia:MUMmer")** — Bioinformatics software system for sequence alignment based on suffix trees.
-
-	[http://mummer.sourceforge.net/](http://mummer.sourceforge.net/) || [mummer](https://aur.archlinux.org/packages/mummer/)
-
-*   **[UGENE](https://en.wikipedia.org/wiki/UGENE "wikipedia:UGENE")** — Application that integrates dozens of well-known biological tools and algorithms, providing both graphical user and command-line interfaces.
-
-	[http://ugene.net/](http://ugene.net/) || [ugene-bin](https://aur.archlinux.org/packages/ugene-bin/)
+### Chemistry
 
 #### Molecules
 
@@ -506,22 +395,6 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 *   **Kalzium** — Periodic table of the elements with molecule editor and equation solver. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
 
 	[https://www.kde.org/applications/education/kalzium/](https://www.kde.org/applications/education/kalzium/) || [kalzium](https://www.archlinux.org/packages/?name=kalzium)
-
-#### Biochemistry
-
-*   **[Bioclipse](https://en.wikipedia.org/wiki/Bioclipse "wikipedia:Bioclipse")** — Java-based visual platform for biochemistry that uses the Eclipse Rich Client Platform (RCP).
-
-	[http://www.bioclipse.net/](http://www.bioclipse.net/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
-#### Image manipulation
-
-*   **[ImageJ](https://en.wikipedia.org/wiki/ImageJ "wikipedia:ImageJ")** — Java-based image processing and analysing program that provides extensibility via plugins and macros. It is widely used in microscopy (e.g. for cell counting).
-
-	[https://imagej.nih.gov/ij/](https://imagej.nih.gov/ij/) || [imagej](https://aur.archlinux.org/packages/imagej/)
-
-*   **[Fiji](https://en.wikipedia.org/wiki/FIJI_(software) "wikipedia:FIJI (software)")** — ImageJ distribution (and soon ImageJ2) with a lot of plugins organized into a coherent menu structure.
-
-	[http://fiji.sc](http://fiji.sc) || [fiji-binary](https://aur.archlinux.org/packages/fiji-binary/)
 
 ### Earth science
 
@@ -679,6 +552,56 @@ See also [Wikipedia:List of molecular graphics systems](https://en.wikipedia.org
 
 	[http://www.clearskyinstitute.com/xephem/xephem.html](http://www.clearskyinstitute.com/xephem/xephem.html) || [xephem](https://aur.archlinux.org/packages/xephem/)
 
+### Biology
+
+#### Computational biology and bioinformatics
+
+See also [Wikipedia:List of open source bioinformatics software](https://en.wikipedia.org/wiki/List_of_open_source_bioinformatics_software "wikipedia:List of open source bioinformatics software").
+
+*   **[BALL](https://en.wikipedia.org/wiki/BALL "wikipedia:BALL") (Biochemical Algorithms Library)** — Application framework in C++ that provides an extensive set of data structures as well as classes for molecular mechanics, advanced solvation methods, comparison and analysis of protein structures, file import/export, and visualization.
+
+	[http://www.ball-project.org/](http://www.ball-project.org/) || [ball](https://aur.archlinux.org/packages/ball/)
+
+*   **[BioJava](https://en.wikipedia.org/wiki/BioJava "wikipedia:BioJava")** — Set of Java tools for computational biology, as well as bioinformatics.
+
+	[http://biojava.org](http://biojava.org) || [biojava](https://aur.archlinux.org/packages/biojava/)
+
+*   **[Biopython](https://en.wikipedia.org/wiki/Biopython "wikipedia:Biopython")** — Python package with tools for computational biology, as well as bioinformatics.
+
+	[http://biopython.org/wiki/Biopython](http://biopython.org/wiki/Biopython) || [python-biopython](https://www.archlinux.org/packages/?name=python-biopython) [python2-biopython](https://www.archlinux.org/packages/?name=python2-biopython)
+
+*   **[EMBOSS](https://en.wikipedia.org/wiki/EMBOSS "wikipedia:EMBOSS") (European Molecular Biology Open Software Suite)** — Open source software analysis package specially developed for the needs of the molecular biology and bioinformatics user community.
+
+	[http://emboss.sourceforge.net/](http://emboss.sourceforge.net/) || [emboss](https://aur.archlinux.org/packages/emboss/)
+
+*   **[MEGA](https://en.wikipedia.org/wiki/MEGA,_Molecular_Evolutionary_Genetics_Analysis "wikipedia:MEGA, Molecular Evolutionary Genetics Analysis") (Molecular Evolutionary Genetics Analysis)** — Integrated tool for conducting automatic and manual sequence alignment, inferring phylogenetic trees, mining web-based databases, estimating rates of molecular evolution, inferring ancestral sequences, and testing evolutionary hypotheses.
+
+	[http://www.megasoftware.net/](http://www.megasoftware.net/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **[MUMmer](https://en.wikipedia.org/wiki/MUMmer "wikipedia:MUMmer")** — Bioinformatics software system for sequence alignment based on suffix trees.
+
+	[http://mummer.sourceforge.net/](http://mummer.sourceforge.net/) || [mummer](https://aur.archlinux.org/packages/mummer/)
+
+*   **[UGENE](https://en.wikipedia.org/wiki/UGENE "wikipedia:UGENE")** — Application that integrates dozens of well-known biological tools and algorithms, providing both graphical user and command-line interfaces.
+
+	[http://ugene.net/](http://ugene.net/) || [ugene-bin](https://aur.archlinux.org/packages/ugene-bin/)
+
+#### Biochemistry
+
+*   **[Bioclipse](https://en.wikipedia.org/wiki/Bioclipse "wikipedia:Bioclipse")** — Java-based visual platform for biochemistry that uses the Eclipse Rich Client Platform (RCP).
+
+	[http://www.bioclipse.net/](http://www.bioclipse.net/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+#### Image manipulation
+
+*   **[ImageJ](https://en.wikipedia.org/wiki/ImageJ "wikipedia:ImageJ")** — Java-based image processing and analysing program that provides extensibility via plugins and macros. It is widely used in microscopy (e.g. for cell counting).
+
+	[https://imagej.nih.gov/ij/](https://imagej.nih.gov/ij/) || [imagej](https://aur.archlinux.org/packages/imagej/)
+
+*   **[Fiji](https://en.wikipedia.org/wiki/FIJI_(software) "wikipedia:FIJI (software)")** — ImageJ distribution (and soon ImageJ2) with a lot of plugins organized into a coherent menu structure.
+
+	[http://fiji.sc](http://fiji.sc) || [fiji-binary](https://aur.archlinux.org/packages/fiji-binary/)
+
 ### Engineering
 
 #### Computer-aided design
@@ -712,6 +635,86 @@ See also [Wikipedia:List of computer-aided design editors](https://en.wikipedia.
 *   **[QCAD](https://en.wikipedia.org/wiki/QCad "wikipedia:QCad")** — Powerful 2D CAD application that began in 1999\. QCaD includes DFX standard file format and supports HPGL format.
 
 	[http://www.qcad.org/](http://www.qcad.org/) || [qcad](https://www.archlinux.org/packages/?name=qcad)
+
+#### Electronics
+
+See also [Wikipedia:Comparison of EDA software](https://en.wikipedia.org/wiki/Comparison_of_EDA_software "wikipedia:Comparison of EDA software").
+
+##### Digital logic
+
+Digital logic software are mainly simple educational tools that intended for only designing and simulating logic circuits.
+
+*   **glogic** — An educational graphical logic circuit simulator.
+
+	[https://launchpad.net/glogic](https://launchpad.net/glogic) || [glogic](https://aur.archlinux.org/packages/glogic/)
+
+*   **GTKWave** — Fully featured GTK+ based wave viewer which reads LXT, LXT2, VZT, FST, and GHW files as well as standard Verilog VCD/EVCD files and allows their viewing.
+
+	[http://gtkwave.sourceforge.net/](http://gtkwave.sourceforge.net/) || [gtkwave](https://www.archlinux.org/packages/?name=gtkwave)
+
+*   **Logisim** — Educational digital logic design and simulation software, written in Java, officially its development has stopped.
+
+	[https://sourceforge.net/projects/circuit/](https://sourceforge.net/projects/circuit/) || [logisim](https://aur.archlinux.org/packages/logisim/)
+
+*   **Logisim Evolution** — Project which continue the development of the original Logisim with new features, written in Java.
+
+	[https://github.com/reds-heig/logisim-evolution](https://github.com/reds-heig/logisim-evolution) || [logisim-evolution-git](https://aur.archlinux.org/packages/logisim-evolution-git/)
+
+*   **PulseView** — Logic analyzer, oscilloscope and MSO GUI.
+
+	[http://sigrok.org/wiki/PulseView](http://sigrok.org/wiki/PulseView) || [pulseview](https://www.archlinux.org/packages/?name=pulseview)
+
+*   **SmartSim** — Simple and beautiful digital logic circuit design and simulation software, mainly target teachers and students, very lightweight and cross platform, GPL licensed, written in Vala.
+
+	[http://smartsim.org.uk](http://smartsim.org.uk) || [smartsim-git](https://aur.archlinux.org/packages/smartsim-git/)
+
+##### HDL
+
+Also see [Wikipedia:Hardware description language](https://en.wikipedia.org/wiki/Hardware_description_language "wikipedia:Hardware description language").
+
+*   **[Altera Design Software](/index.php/Altera_Design_Software "Altera Design Software")** — A set of design tools for Altera's FPGA chips that includes Quartus II and ModelSim-Altera.
+
+	[https://www.altera.com/products/design-software/overview.html](https://www.altera.com/products/design-software/overview.html) || see [Altera Design Software](/index.php/Altera_Design_Software "Altera Design Software")
+
+*   **[Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK")** — FPGA programmable logic design suit.
+
+	[http://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html](http://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html) || see [Xilinx ISE WebPACK](/index.php/Xilinx_ISE_WebPACK "Xilinx ISE WebPACK")
+
+##### MCU IDE
+
+*   **[Arduino](/index.php/Arduino "Arduino")** — Arduino prototyping platform SDK.
+
+	[https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software) || [arduino](https://www.archlinux.org/packages/?name=arduino)
+
+##### Schematic capture editor
+
+*   **[gEDA](/index.php/GEDA "GEDA")** — Full suite and toolkit of Electronic Design Automation tools that are used for electrical circuit design, schematic capture, simulation, prototyping, and production.
+
+	[http://www.geda-project.org/](http://www.geda-project.org/) || [geda-gaf](https://www.archlinux.org/packages/?name=geda-gaf)
+
+*   **[gEDA](/index.php/GEDA "GEDA") PCB** — Interactive printed circuit board editor.
+
+	[http://pcb.geda-project.org/](http://pcb.geda-project.org/) || [pcb](https://www.archlinux.org/packages/?name=pcb)
+
+*   **[KiCad](https://en.wikipedia.org/wiki/KiCad "wikipedia:KiCad")** — Software suite for electronic design automation (EDA) that facilitates the design of schematics for electronic circuits and their conversion to PCB (printed circuit board).
+
+	[http://kicad-pcb.org/](http://kicad-pcb.org/) || [kicad](https://www.archlinux.org/packages/?name=kicad)
+
+*   **[Oregano](https://en.wikipedia.org/wiki/Oregano_(software) "wikipedia:Oregano (software)")** — Graphical software application for schematic capture and simulation of electrical circuits. The actual simulation is done by the [ngspice](https://en.wikipedia.org/wiki/Ngspice "wikipedia:Ngspice") or [Gnucap](https://en.wikipedia.org/wiki/GNU_Circuit_Analysis_Package "wikipedia:GNU Circuit Analysis Package") engines.
+
+	[https://github.com/drahnr/oregano](https://github.com/drahnr/oregano) || [oregano](https://aur.archlinux.org/packages/oregano/)
+
+*   **QElectroTech** — Application used to draw advanced electrical circuits.
+
+	[https://qelectrotech.org/](https://qelectrotech.org/) || [qelectrotech](https://aur.archlinux.org/packages/qelectrotech/)
+
+*   **[Qucs](https://en.wikipedia.org/wiki/Quite_Universal_Circuit_Simulator "wikipedia:Quite Universal Circuit Simulator")** — Electronics circuit simulator application that gives you the ability to set up a circuit with a graphical user interface and simulate its large-signal, small-signal and noise behaviour.
+
+	[http://qucs.sourceforge.net/](http://qucs.sourceforge.net/) || [qucs](https://aur.archlinux.org/packages/qucs/)
+
+*   **[ngspice](https://en.wikipedia.org/wiki/ngspice "wikipedia:ngspice")** — Application used to simulate circuits. Open source successor of [spice3f5](https://en.wikipedia.org/wiki/SPICE "wikipedia:SPICE")
+
+	[http://ngspice.sourceforge.net/](http://ngspice.sourceforge.net/) || [ngspice](https://www.archlinux.org/packages/?name=ngspice)
 
 ### Telecommunication
 

@@ -9,11 +9,6 @@ Disk cloning is the process of making an image of a partition or of an entire ha
 ## Contents
 
 *   [1 Using dd](#Using_dd)
-    *   [1.1 Cloning a partition](#Cloning_a_partition)
-    *   [1.2 Cloning an entire hard disk](#Cloning_an_entire_hard_disk)
-    *   [1.3 Backing up the partition table](#Backing_up_the_partition_table)
-    *   [1.4 Create disk image](#Create_disk_image)
-    *   [1.5 Restore system](#Restore_system)
 *   [2 Using ddrescue](#Using_ddrescue)
 *   [3 Using e2image](#Using_e2image)
 *   [4 Disk cloning software](#Disk_cloning_software)
@@ -22,103 +17,7 @@ Disk cloning is the process of making an image of a partition or of an entire ha
 
 ## Using dd
 
-The *dd* command is a simple, yet versatile and powerful tool. It can be used to copy from source to destination, block-by-block, regardless of their filesystem types or operating systems. A convenient method is to use *dd* from a live environment, as in a Live CD.
-
-**Warning:** As with any command of this type, you should be very cautious when using it; it can destroy data. Remember the order of input file (`if=`) and output file (`of=`) and do not reverse them! Always ensure that the destination drive or partition (`of=`) is of equal or greater size than the source (`if=`).
-
-### Cloning a partition
-
-From physical disk `/dev/sda`, partition 1, to physical disk `/dev/sdb`, partition 1.
-
-```
-# dd if=/dev/sda1 of=/dev/sdb1 bs=64K conv=noerror,sync status=progress
-
-```
-
-**Warning:** If output file `of=` (`sdb1` in the example) does not exist, *dd* will create a file with this name and will start filling up your root file system!
-
-### Cloning an entire hard disk
-
-From physical disk `/dev/sd*X*` to physical disk `/dev/sd*Y*`
-
-```
-# dd if=/dev/sd*X* of=/dev/sd*Y* bs=64K conv=noerror,sync status=progress
-
-```
-
-This will clone the entire drive, including the MBR (and therefore bootloader), all partitions, UUIDs, and data.
-
-*   `bs=` sets the block size. Defaults to 512 bytes, which is the "classic" block size for hard drives since the early 1980s, but is not the most convenient. Use a bigger value, 64K or 128K. Also, please read the warning below, because there is more to this than just "block sizes" -it also influences how read errors propagate. See [[1]](http://www.mail-archive.com/eug-lug@efn.org/msg12073.html) and [[2]](http://blog.tdg5.com/tuning-dd-block-size/) for details and to figure out the best bs value for your use case.
-*   `noerror` instructs *dd* to continue operation, ignoring all read errors. Default behavior for *dd* is to halt at any error.
-*   `sync` fills input blocks with zeroes if there were any read errors, so data offsets stay in sync.
-*   `status=progress` shows periodic transfer statistics which can be used to estimate when the operation may be complete.
-
-**Warning:** The block size you specify influences how read errors are handled. Read below. For data recovery, use [ddrescue](#Using_ddrescue).
-
-The *dd* utility technically has an "input block size" (IBS) and an "output block size" (OBS). When you set `bs`, you effectively set both IBS and OBS. Normally, if your block size is, say, 1 MiB, *dd* will read 1024*1024 bytes and write as many bytes. But if a read error occurs, things will go wrong. Many people seem to think that *dd* will "fill up read errors with zeroes" if you use the `noerror,sync` options, but this is not what happens. *dd* will, according to documentation, fill up the OBS to IBS size *after completing its read*, which means adding zeroes at the *end* of the block. This means, for a disk, that effectively the whole 1 MiB would become messed up because of a single 512 byte read error in the beginning of the read: 12ERROR89 would become 128900000 instead of 120000089.
-
-If you are positive that your disk does not contain any errors, you could proceed using a larger block size, which will increase the speed of your copying several fold. For example, changing bs from 512 to 64K changed copying speed from 35 MB/s to 120 MB/s on a simple Celeron 2.7 GHz system. But keep in mind that read errors on the source disk will end up as *block errors* on the destination disk, i.e. a single 512-byte read error will mess up the whole 64 KiB output block.
-
-**Tip:** If you would like to view *dd* progressing, use the `status=progress` option. See [dd](/index.php/Dd "Dd") for details.
-
-**Note:**
-
-*   To regain unique UUIDs of an *ext2/3/4* filesystem, use `tune2fs /dev/sd*XY* -U random` on every partition. For swap partitions, use `mkswap /dev/sd*XY*` instead.
-*   Partition table changes from *dd* are not registered by the kernel. To notify of changes without rebooting, use a utility like *partprobe* (part of [GNU Parted](/index.php/GNU_Parted "GNU Parted")).
-
-### Backing up the partition table
-
-See [fdisk#Backup and restore partition table](/index.php/Fdisk#Backup_and_restore_partition_table "Fdisk") or [gdisk#Backup and restore partition table](/index.php/Gdisk#Backup_and_restore_partition_table "Gdisk").
-
-### Create disk image
-
-Boot from a live media and make sure no partitions are mounted from the source hard drive.
-
-Then mount the external hard drive and backup the drive:
-
-```
-# dd if=/dev/sd*X* conv=sync,noerror bs=64K | gzip -c  > */path/to/backup.img.gz*
-
-```
-
-If necessary (e.g. when the format of the external HD is FAT32) split the disk image in volumes (see also the *split* man pages).
-
-```
-# dd if=/dev/sd*X* conv=sync,noerror bs=64K | gzip -c | split -a3 -b2G - */path/to/backup.img.gz*
-
-```
-
-If there is not enough disk space locally, you may send the image through ssh:
-
-```
-# dd if=/dev/sd*X* conv=sync,noerror bs=64K | gzip -c | ssh user@local dd of=backup.img.gz
-
-```
-
-Finally, save extra information about the drive geometry necessary in order to interpret the partition table stored within the image. The most important of which is the cylinder size.
-
-```
-# fdisk -l /dev/sd*X* > */path/to/list_fdisk.info*
-
-```
-
-**Note:** You may wish to use a block size (`bs=`) that is equal to the amount of cache on the HD you are backing up. For example, `bs=8192K` works for an 8 MiB cache. The 64 KiB mentioned in this article is better than the default `bs=512` bytes, but it will run faster with a larger `bs=`.
-
-### Restore system
-
-To restore your system:
-
-```
-# gunzip -c */path/to/backup.img.gz* | dd of=/dev/sd*X*
-
-```
-
-When the image has been split, use the following instead:
-
-```
-# cat */path/to/backup.img.gz** | gunzip -c | dd of=/dev/sd*X*
-
-```
+See [dd#Disk cloning and restore](/index.php/Dd#Disk_cloning_and_restore "Dd").
 
 ## Using ddrescue
 

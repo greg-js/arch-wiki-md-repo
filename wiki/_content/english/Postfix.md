@@ -340,8 +340,8 @@ Create the Apache configuration file:
 
  `/etc/httpd/conf/extra/httpd-postfixadmin.conf` 
 ```
-Alias /postfixadmin "/usr/share/webapps/postfixAdmin"
-<Directory "/usr/share/webapps/postfixAdmin">
+Alias /postfixadmin "/usr/share/webapps/postfixAdmin/public"
+<Directory "/usr/share/webapps/postfixAdmin/public">
     DirectoryIndex index.html index.php
     AllowOverride All
     Options FollowSymlinks

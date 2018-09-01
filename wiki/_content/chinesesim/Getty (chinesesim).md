@@ -2,7 +2,7 @@
 
 *   [Display manager (简体中文)](/index.php/Display_manager_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Display manager (简体中文)")
 
-**翻译状态：** 本文是英文页面 [Getty](/index.php/Getty "Getty") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-04-30，点击[这里](https://wiki.archlinux.org/index.php?title=Getty&diff=0&oldid=512521)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Getty](/index.php/Getty "Getty") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-08-31，点击[这里](https://wiki.archlinux.org/index.php?title=Getty&diff=0&oldid=532676)可以查看翻译后英文页面的改动。
 
 [getty](https://en.wikipedia.org/wiki/getty_(Unix) "w:getty (Unix)") 是管理终端线路及其所连终端的程序的通用名称。其目的是保护系统，防止未经授权的访问。通常，每个 getty 进程由 [systemd](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Systemd (简体中文)") 启动，一个进程管理一条终端线路。
 
@@ -53,6 +53,8 @@ $ systemctl start getty@ttyN.service
 虚拟控制台和串口控制台的配置是不同的。大多数情况下，你应该是想在虚拟控制台下设置自动登录（这种控制台的设备名称为 `tty*N*`，其中 `*N*` 是一个数字）。串口控制台的自动登录配置稍有不同，它们的设备名称类似于 `ttyS*N*`，其中 `*N*` 是一个数字。
 
 ### 虚拟控制台
+
+**注意:** [根据用户报告](https://bbs.archlinux.org/viewtopic.php?id=238576)这种方法可能会影响系统休眠。
 
 要 [修改现存单元文件](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BF.AE.E6.94.B9.E7.8E.B0.E5.AD.98.E5.8D.95.E5.85.83.E6.96.87.E4.BB.B6 "Systemd (简体中文)")，可以手动创建下列附加文件，或执行 `systemctl edit getty@tty1` 并输入附加代码片段 (drop-in snippet) 的内容：
 

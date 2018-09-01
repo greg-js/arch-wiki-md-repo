@@ -9,7 +9,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Blender_(software) "wikipedia:Ble
 *   [1 Installation](#Installation)
 *   [2 GPU Rendering](#GPU_Rendering)
 *   [3 Professional Rendering Plugins](#Professional_Rendering_Plugins)
-    *   [3.1 LuxRender](#LuxRender)
+    *   [3.1 LuxCoreRender](#LuxCoreRender)
     *   [3.2 RenderMan](#RenderMan)
     *   [3.3 Pro-Render](#Pro-Render)
     *   [3.4 Blend4Web](#Blend4Web)
@@ -32,9 +32,9 @@ Blender only officially supports only the proprietary drivers from both AMD (for
 
 Blender is becoming increasingly well known in the professional industry. As such, there are now alternative rendering methods to the Blender Render and Cycles, in the form of plugins. This should serve as a list of the major professional rendering plugins that are released or upcoming for Linux.
 
-### LuxRender
+### LuxCoreRender
 
-[LuxRender](https://luxcorerender.org/) is an open source rendering method that can also make use of OpenCL to render. To make use of it, simple install the package [luxblend25](https://www.archlinux.org/packages/?name=luxblend25) from the offical arch community repo, Then enable the LuxRender addon in the User Preferences box in Blender.
+[LuxCoreRender](https://luxcorerender.org/) is an open source rendering method that can also make use of OpenCL to render. To make use of it, simple install the package ([blender-plugin-luxcorerender](https://aur.archlinux.org/packages/blender-plugin-luxcorerender/)) from the AUR, Then enable the LuxCoreRender addon in the User Preferences box in Blender.
 
 ### RenderMan
 

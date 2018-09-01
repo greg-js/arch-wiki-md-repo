@@ -2,7 +2,7 @@
 
 *   [File systems (简体中文)](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File systems (简体中文)")
 
-**翻译状态：** 本文是英文页面 [XFS](/index.php/XFS "XFS") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-05-19，点击[这里](https://wiki.archlinux.org/index.php?title=XFS&diff=0&oldid=521924)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [XFS](/index.php/XFS "XFS") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-09-01，点击[这里](https://wiki.archlinux.org/index.php?title=XFS&diff=0&oldid=523873)可以查看翻译后英文页面的改动。
 
 XFS 是由硅谷图形公司 (Silicon Graphics, Inc.) 开发的高性能日志式文件系统。XFS 因其基于分配组 (allocation group) 的设计而特别擅长并行 IO。当该文件系统跨越多个存储设备时，这种设计使得 IO 线程数、文件系统带宽、文件和文件系统大小都具有极大的可伸缩性。
 
@@ -11,6 +11,7 @@ XFS 是由硅谷图形公司 (Silicon Graphics, Inc.) 开发的高性能日志�
 *   [1 安装](#.E5.AE.89.E8.A3.85)
 *   [2 数据损坏](#.E6.95.B0.E6.8D.AE.E6.8D.9F.E5.9D.8F)
     *   [2.1 修复 XFS 文件系统](#.E4.BF.AE.E5.A4.8D_XFS_.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
+    *   [2.2 在线元数据检查 (scrub)](#.E5.9C.A8.E7.BA.BF.E5.85.83.E6.95.B0.E6.8D.AE.E6.A3.80.E6.9F.A5_.28scrub.29)
 *   [3 数据完整性](#.E6.95.B0.E6.8D.AE.E5.AE.8C.E6.95.B4.E6.80.A7)
 *   [4 性能](#.E6.80.A7.E8.83.BD)
     *   [4.1 带区大小和宽度](#.E5.B8.A6.E5.8C.BA.E5.A4.A7.E5.B0.8F.E5.92.8C.E5.AE.BD.E5.BA.A6)
@@ -47,6 +48,14 @@ XFS 是由硅谷图形公司 (Silicon Graphics, Inc.) 开发的高性能日志�
 # xfs_repair -v /dev/sda3
 
 ```
+
+### 在线元数据检查 (scrub)
+
+**警告:** 该程序目前是**实验性**的，这意味着它的行为和接口可能随时发生变化。参见 [xfs_scrub(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xfs_scrub.8)。
+
+`xfs_scrub` 请求内核检查 [文件系统](/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "File systems (简体中文)") 中的所有元数据对象。内核会扫描元数据记录以查找明显错误的值，然后与其他元数据进行交叉引用。其目的是通过检查单个元数据记录与文件系统中其他元数据的一致性，建立对整个文件系统一致性的合理置信度。如果存在完整的冗余数据结构，则可以根据其他元数据重建损坏的元数据。
+
+[Enable](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)") `xfs_scrub_all.timer` 以定期在线检查所有文件系统元数据。有时可能需要[编辑](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BF.AE.E6.94.B9.E7.8E.B0.E5.AD.98.E5.8D.95.E5.85.83.E6.96.87.E4.BB.B6 "Systemd (简体中文)") `xfs_scrub_all.timer`，因为它仅在每周日上午 3:10 运行。
 
 ## 数据完整性
 
