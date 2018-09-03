@@ -1,25 +1,30 @@
-[readline](http://www.gnu.org/s/readline/) is a library by the [GNU Project](/index.php/GNU_Project "GNU Project"), used by [Bash](/index.php/Bash "Bash") and other CLI-interface programs to edit and interact with the command line. See [readline(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/readline.3) for more information.
+[Readline](https://www.gnu.org/software/readline/) is a library by the [GNU Project](/index.php/GNU_Project "GNU Project"), used by [Bash](/index.php/Bash "Bash") and other CLI-interface programs to edit and interact with the command line. See [readline(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/readline.3) for more information.
 
 ## Contents
 
-*   [1 Editing mode](#Editing_mode)
-    *   [1.1 Mode indicator in prompt](#Mode_indicator_in_prompt)
-    *   [1.2 Different cursor shapes for each mode](#Different_cursor_shapes_for_each_mode)
-*   [2 Fast word movement](#Fast_word_movement)
-*   [3 History](#History)
-*   [4 Faster completion](#Faster_completion)
-*   [5 Colorized completion](#Colorized_completion)
-*   [6 Macros](#Macros)
-*   [7 Disabling control echo](#Disabling_control_echo)
-*   [8 See also](#See_also)
+*   [1 Installation](#Installation)
+*   [2 Editing mode](#Editing_mode)
+    *   [2.1 Mode indicator in prompt](#Mode_indicator_in_prompt)
+    *   [2.2 Different cursor shapes for each mode](#Different_cursor_shapes_for_each_mode)
+*   [3 Fast word movement](#Fast_word_movement)
+*   [4 History](#History)
+*   [5 Faster completion](#Faster_completion)
+*   [6 Colorized completion](#Colorized_completion)
+*   [7 Macros](#Macros)
+*   [8 Disabling control echo](#Disabling_control_echo)
+*   [9 See also](#See_also)
+
+## Installation
+
+The [readline](https://www.archlinux.org/packages/?name=readline) package is most likely already installed as a dependency of [Bash](/index.php/Bash "Bash").
 
 ## Editing mode
 
-By default *readline* uses Emacs style shortcuts for interacting with command line. However, [vi](/index.php/Vi "Vi") style editing interface is also supported by adding the following to `~/.inputrc`:
+By default Readline uses Emacs style shortcuts for interacting with command line. However, [vi](/index.php/Vi "Vi") style editing interface is also supported by adding the following to `~/.inputrc`:
 
  `~/.inputrc`  ` set editing-mode vi` 
 
-Alternatively, to set it only for [bash](/index.php/Bash "Bash") by adding the following line to `~/.bashrc`:
+Alternatively, to set it only for [Bash](/index.php/Bash "Bash") by adding the following line to `~/.bashrc`:
 
  `~/.bashrc`  ` set -o vi` 
 
@@ -142,7 +147,7 @@ or use a different key in `inputrc`. For example, to use `Alt+S` which is not bo
 
 When performing tab completion, a single tab attempts to partially complete the current word. If no partial completions are possible, a double tab shows all possible completions.
 
-The double tab can be changed to a single tab by setting
+The double tab can be changed to a single tab by setting:
 
  `~/.inputrc` 
 ```
@@ -232,7 +237,7 @@ As a last example, quickly send a command in the background with `Ctrl+Alt+B`, d
 
 ## Disabling control echo
 
-*readline* causes the terminal to echo `^C` after `Ctrl+C` is pressed. For users who wish to disable this, simply add the following to `~/.inputrc`:
+Readline causes the terminal to echo `^C` after `Ctrl+C` is pressed. For users who wish to disable this, simply add the following to `~/.inputrc`:
 
 ```
 set echo-control-characters off

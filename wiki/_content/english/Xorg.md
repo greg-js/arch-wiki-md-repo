@@ -148,7 +148,7 @@ To start the X server without a display manager, see [xinit](/index.php/Xinit "X
 
 ## Configuration
 
-**Note:** Arch supplies default configuration files in `/usr/share/X11/xorg.conf.d`, and no extra configuration is necessary for most setups.
+**Note:** Arch supplies default configuration files in `/usr/share/X11/xorg.conf.d/`, and no extra configuration is necessary for most setups.
 
 Xorg uses a configuration file called `xorg.conf` and files ending in the suffix `.conf` for its initial setup: the complete list of the folders where these files are searched can be found in [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5), together with a detailed explanation of all the available options.
 

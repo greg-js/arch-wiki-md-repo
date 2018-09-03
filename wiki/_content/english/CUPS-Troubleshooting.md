@@ -41,6 +41,7 @@ This article covers all non-specific (ie, not related to any one printer) troubl
     *   [5.8 hp-setup asks to specify the PPD file for the discovered printer](#hp-setup_asks_to_specify_the_PPD_file_for_the_discovered_printer)
     *   [5.9 hp-setup: "Qt/PyQt 4 initialization failed"](#hp-setup:_.22Qt.2FPyQt_4_initialization_failed.22)
     *   [5.10 hp-setup: finds the printer automatically but reports "Unable to communicate with device" when printing test page immediately afterwards](#hp-setup:_finds_the_printer_automatically_but_reports_.22Unable_to_communicate_with_device.22_when_printing_test_page_immediately_afterwards)
+    *   [5.11 hp-setup: "KeyError: 'family-class'"](#hp-setup:_.22KeyError:_.27family-class.27.22)
 *   [6 Other](#Other)
     *   [6.1 Printer "Paused" or "Stopped" with Status "Rendering completed"](#Printer_.22Paused.22_or_.22Stopped.22_with_Status_.22Rendering_completed.22)
         *   [6.1.1 Low ink](#Low_ink)
@@ -391,6 +392,17 @@ The solution is to install and start [cups](https://www.archlinux.org/packages/?
 ### hp-setup: finds the printer automatically but reports "Unable to communicate with device" when printing test page immediately afterwards
 
 This at least happens to hplip 3.13.5-2 for HP Officejet 6500A through local network connection. To solve the problem, specify the IP address of the HP printer for hp-setup to locate the printer.
+
+### hp-setup: "KeyError: 'family-class'"
+
+If adding a printer fails silently in the UI or you receive a `KeyError: 'family-class'` traceback from `hp-setup`, the `/usr/share/hplip/data/models/models.dat` may need to be manually updated. Check if `family-class=Undefined` is defined the section for your printer, if not add it:
+
+ `/usr/share/hplip/data/models/models.dat` 
+```
+[hp_laserjet_pro_mfp_m225dw]
+...
+family-class=Undefined
+```
 
 ## Other
 

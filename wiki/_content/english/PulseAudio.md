@@ -293,7 +293,7 @@ priority = 1
 direction = output
 ```
 
-Restart Alsa and/or Pulseaudio.
+Restart Alsa and/or Pulseaudio. More details on installing this you will find on [dcaenc's Github](https://github.com/darealshinji/dcaenc) page.
 
 #### Expose PulseAudio sources, sinks and mixers to ALSA
 

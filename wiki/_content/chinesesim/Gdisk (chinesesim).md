@@ -4,88 +4,88 @@
 *   [fdisk (简体中文)](/index.php/Fdisk_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fdisk (简体中文)")
 *   [GNU Parted (简体中文)](/index.php/GNU_Parted_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GNU Parted (简体中文)")
 
-[GPT fdisk](https://www.rodsbooks.com/gdisk/) 是编辑 GPT 硬盘的文本模式工具集。由 gdisk, sgdisk 和 cgdisk 组成. 用于 Globally Unique Identifier Partition Table(GPT) 而不是老的 Master Boot Record (MBR) 分区表.
+[GPT fdisk](https://www.rodsbooks.com/gdisk/) 是编辑 GPT（Globally Unique Identifier Partition Table）硬盘的文本模式工具集。由 gdisk, sgdisk 和 cgdisk 组成. 用于 GPT 而不是老的 MBR(Master Boot Record) 分区表。
 
-This article covers [gdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gdisk.8) and [sgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sgdisk.8) utilities.
+本文介绍 [gdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gdisk.8) 和 [sgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sgdisk.8) 工具。
 
 **Tip:**
 
-*   For basic partitioning functionality with a text user interface, [cgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cgdisk.8) can be used.
-*   GPT fdisk website has detailed walkthroughs for [gdisk](https://www.rodsbooks.com/gdisk/walkthrough.html), [cgdisk](https://www.rodsbooks.com/gdisk/cgdisk-walkthrough.html), [sgdisk](https://www.rodsbooks.com/gdisk/sgdisk-walkthrough.html) and [FixParts](https://www.rodsbooks.com/fixparts/).
+*   [cgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cgdisk.8) 提供了基本的功能和命令行用户界面。
+*   GPT fdisk 网站包含了一个 [gdisk](https://www.rodsbooks.com/gdisk/walkthrough.html), [cgdisk](https://www.rodsbooks.com/gdisk/cgdisk-walkthrough.html), [sgdisk](https://www.rodsbooks.com/gdisk/sgdisk-walkthrough.html) 和[FixParts](https://www.rodsbooks.com/fixparts/) 的详细使用步骤。
 
 ## Contents
 
-*   [1 Installation](#Installation)
-*   [2 List partitions](#List_partitions)
-*   [3 Backup and restore partition table](#Backup_and_restore_partition_table)
-*   [4 Create a partition table and partitions](#Create_a_partition_table_and_partitions)
-    *   [4.1 Create new table](#Create_new_table)
-    *   [4.2 Create partitions](#Create_partitions)
-        *   [4.2.1 Partition number](#Partition_number)
+*   [1 安装](#.E5.AE.89.E8.A3.85)
+*   [2 显示分区](#.E6.98.BE.E7.A4.BA.E5.88.86.E5.8C.BA)
+*   [3 备份和恢复分区表](#.E5.A4.87.E4.BB.BD.E5.92.8C.E6.81.A2.E5.A4.8D.E5.88.86.E5.8C.BA.E8.A1.A8)
+*   [4 创建分区表和分区](#.E5.88.9B.E5.BB.BA.E5.88.86.E5.8C.BA.E8.A1.A8.E5.92.8C.E5.88.86.E5.8C.BA)
+    *   [4.1 创建新分区表](#.E5.88.9B.E5.BB.BA.E6.96.B0.E5.88.86.E5.8C.BA.E8.A1.A8)
+    *   [4.2 创建分区](#.E5.88.9B.E5.BB.BA.E5.88.86.E5.8C.BA)
+        *   [4.2.1 分区编号](#.E5.88.86.E5.8C.BA.E7.BC.96.E5.8F.B7)
         *   [4.2.2 First and last sector](#First_and_last_sector)
         *   [4.2.3 Partition type](#Partition_type)
     *   [4.3 Write changes to disk](#Write_changes_to_disk)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Convert between MBR and GPT](#Convert_between_MBR_and_GPT)
+*   [5 提示和技巧](#.E6.8F.90.E7.A4.BA.E5.92.8C.E6.8A.80.E5.B7.A7)
+    *   [5.1 在 MBR 和 GPT 之间转换](#.E5.9C.A8_MBR_.E5.92.8C_GPT_.E4.B9.8B.E9.97.B4.E8.BD.AC.E6.8D.A2)
     *   [5.2 Sort partitions](#Sort_partitions)
     *   [5.3 Recover GPT header](#Recover_GPT_header)
     *   [5.4 Expand a GPT disk](#Expand_a_GPT_disk)
     *   [5.5 Prevent GPT partition automounting](#Prevent_GPT_partition_automounting)
-*   [6 See also](#See_also)
+*   [6 参阅](#.E5.8F.82.E9.98.85)
 
-## Installation
+## 安装
 
 [安装](/index.php/Install "Install") 软件包 [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)。
 
-## List partitions
+## 显示分区
 
-To list partition tables and partitions on a device, you can run the following, where device is a name like `/dev/sda`:
+要显示分区表和分区信息，以 `/dev/sda` 磁盘为例:
 
 ```
 # gdisk -l /dev/sda
 
 ```
 
-or alternatively the same action using *sgdisk*:
+或者使用 *sgdisk* 命令:
 
 ```
 # sgdisk -p /dev/sda
 
 ```
 
-## Backup and restore partition table
+## 备份和恢复分区表
 
-Before making changes to a disk, you may want to backup the partition table and partition scheme of the drive. You can also use a backup to copy the same partition layout to numerous drives.
+习惯磁盘前，请先备份磁盘的分区表，也可以将磁盘信息备份到相同的设备上。
 
-Using *sgdisk* you can create a binary backup consisting of the protective MBR, the main GPT header, the backup GPT header, and one copy of the partition table. The example below will save the partition table of `/dev/sda` to a file `sgdisk-sda.bin`:
+*sgdisk* 可以创建一个二进制备份，包含 MBR, GPT 主表头，GPT 备份表头和分区表。下面示例将 `/dev/sda` 的分区表信息备份到 `sgdisk-sda.bin`:
 
 ```
 # sgdisk -b=sgdisk-sda.bin /dev/sda
 
 ```
 
-You can later restore the backup by running:
+通过下面命令恢复备份:
 
 ```
 # sgdisk -l=sgdisk-sda.bin /dev/sda
 
 ```
 
-If you want to clone your current device's partition layout (`/dev/sda` in this case) to another drive (`/dev/sdc`) run:
+如果要复制分区到其它磁盘，例如从 `/dev/sda` 复制到 `/dev/sdc`:
 
 ```
 # sgdisk -R=/dev/sdc /dev/sda
 
 ```
 
-If both drives will be in the same computer, you need to randomize the disk and partition GUIDs:
+如果两个磁盘位于同一个计算机，使用下面命令设置随机的分区 GUIDs:
 
 ```
 # sgdisk -G /dev/sdc
 
 ```
 
-## Create a partition table and partitions
+## 创建分区表和分区
 
 The first step to [partitioning](/index.php/Partitioning "Partitioning") a disk is making a partition table. After that, the actual partitions are created according to the desired [partition scheme](/index.php/Partition_scheme "Partition scheme").
 
@@ -104,13 +104,13 @@ performs partition alignment automatically on a 2048 512-byte sector (1 MiB) blo
 
 ```
 
-### Create new table
+### 创建新分区表
 
 **Warning:** If you create a new partition table on a disk with data on it, it will erase all the data on the disk. Make sure this is what you want to do.
 
 如果是全新的磁盘，或要清空所有当前分区表数据，使用 `o` 命令建立一个新的空 GUID 分区表，如果分区已经创建分区，请跳过此步骤。
 
-### Create partitions
+### 创建分区
 
 使用 `n` 命令创建一个新的分区. You must enter the partition number, first sector, last sector and the partition type.
 
@@ -123,7 +123,7 @@ performs partition alignment automatically on a 2048 512-byte sector (1 MiB) blo
 
 *   如果可能需要建立一个 [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition")，在磁盘前 2TiB 内预留一个 1MiB 的空间，例如用 `+1M` 在磁盘最前面空出一段。
 
-#### Partition number
+#### 分区编号
 
 A partition number is the number assigned to a partition, e.g. a partition with number `1` on a disk `/dev/sda` would be `/dev/sda1`. Partition numbers may not always match the order of partitions on disk, in which case they can be [sorted](#Sort_partitions).
 
@@ -176,9 +176,9 @@ Repeat this procedure until you have the partitions you desire.
 
 使用 `w` 命令将分区表写入磁盘并退出。
 
-## Tips and tricks
+## 提示和技巧
 
-### Convert between MBR and GPT
+### 在 MBR 和 GPT 之间转换
 
 **Tip:** 更多信息请阅读 Rod Smith 的 [MBR 到 GPT 转换说明](https://www.rodsbooks.com/gdisk/mbr2gpt.html)。
 
@@ -277,7 +277,7 @@ Alternatively using *sgdisk*, the attribute can be set using the `-A`/`--attribu
 
 ```
 
-## See also
+## 参阅
 
 *   [GPT fdisk Tutorial](https://www.rodsbooks.com/gdisk/index.html) - offical webpage of GPT fdisk with detailed walkthroughs.
 *   [GPT fdisk's SourceForge page](https://sourceforge.net/projects/gptfdisk/)

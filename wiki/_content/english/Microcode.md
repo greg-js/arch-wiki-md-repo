@@ -14,11 +14,14 @@ Users of CPUs belonging to the Intel Haswell and Broadwell processor families in
     *   [2.4 rEFInd](#rEFInd)
     *   [2.5 Syslinux](#Syslinux)
     *   [2.6 LILO](#LILO)
-*   [3 Verifying that microcode got updated on boot](#Verifying_that_microcode_got_updated_on_boot)
-*   [4 Which CPUs accept microcode updates](#Which_CPUs_accept_microcode_updates)
-    *   [4.1 Detecting available microcode update](#Detecting_available_microcode_update)
-*   [5 Enabling early microcode loading in custom kernels](#Enabling_early_microcode_loading_in_custom_kernels)
-*   [6 See also](#See_also)
+*   [3 Late microcode updates](#Late_microcode_updates)
+    *   [3.1 Enabling late microcode updates](#Enabling_late_microcode_updates)
+    *   [3.2 Disabling late microcode updates](#Disabling_late_microcode_updates)
+*   [4 Verifying that microcode got updated on boot](#Verifying_that_microcode_got_updated_on_boot)
+*   [5 Which CPUs accept microcode updates](#Which_CPUs_accept_microcode_updates)
+    *   [5.1 Detecting available microcode update](#Detecting_available_microcode_update)
+*   [6 Enabling early microcode loading in custom kernels](#Enabling_early_microcode_loading_in_custom_kernels)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -119,7 +122,7 @@ LABEL arch
     MENU LABEL Arch Linux
     LINUX ../vmlinuz-linux
     INITRD **../*cpu_manufacturer*-ucode.img**,../initramfs-linux.img
-    APPEND *<your kernel parameters>*
+...
 
 ```
 
@@ -128,16 +131,6 @@ LABEL arch
 LILO and potentially other old bootloaders do not support multiple initrd images. In that case, `*cpu_manufacturer*-ucode.img` and `initramfs-linux.img` will have to be merged into one image.
 
 **Warning:** The merged image must be recreated after each kernel update!
-
-**Note:** The additional image, in this case `*cpu_manufacturer*-ucode.img` must not be compressed. Otherwise, the kernel might complain that it can only find garbage in the uncompressed image and fail to boot.
-
-`*cpu_manufacturer*-ucode.img` should be a cpio archive, as in this case. It is advised to check whether the archive is compressed after each microcode update, as there is no guarantee that the image will stay non-compressed in the future. In order to check whether `*cpu_manufacturer*-ucode.img` is compressed, you can use the `file` command:
-
- `$ file /boot/*cpu_manufacturer*-ucode.img` 
-```
-/boot/*cpu_manufacturer*-ucode.img: ASCII cpio archive (SVR4 with no CRC)
-
-```
 
 **Note:** The order is important. The original image `initramfs-linux.img` must be concatenated **on top** of the `*cpu_manufacturer*-ucode.img` image.
 
@@ -161,6 +154,52 @@ And run `lilo` as root:
 
 ```
 # lilo
+
+```
+
+## Late microcode updates
+
+Late loading of microcode updates happens after the system has booted. It uses files in `/usr/lib/firmware/amd-ucode/` and `/usr/lib/firmware/intel-ucode/`.
+
+For AMD processors the microcode update files are provided by [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware).
+
+For Intel processors no package provides the microcode update files ([FS#59841](https://bugs.archlinux.org/task/59841)). To use late loading you need to manually extract `intel-ucode/` from Intel's provided archive.
+
+### Enabling late microcode updates
+
+Unlike early loading, late loading of microcode updates on Arch Linux are enabled by default using `/usr/lib/tmpfiles.d/linux-firmware.conf`. After boot the file gets parsed by [systemd-tmpfiles-setup.service(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles-setup.service.8) and CPU microcode gets updated.
+
+To manually update the microcode on a running system run:
+
+```
+# echo 1 > /sys/devices/system/cpu/microcode/reload
+
+```
+
+This allows to apply microcode updates after [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) has updated without rebooting the system. You can even automate it with a [pacman hook](/index.php/Pacman_hook "Pacman hook"), e.g.:
+
+ `/etc/pacman.d/hooks/microcode_reload.hook` 
+```
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = File
+Target = usr/lib/firmware/amd-ucode/*
+
+[Action]
+Description = Applying CPU microcode updates...
+When = PostTransaction
+Depends = sh
+Exec = /bin/sh -c 'echo 1 > /sys/devices/system/cpu/microcode/reload'
+```
+
+### Disabling late microcode updates
+
+For AMD systems the CPU microcode will get updated even if [amd-ucode](https://www.archlinux.org/packages/?name=amd-ucode) in not installed since the files are provided by [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) ([FS#59840](https://bugs.archlinux.org/task/59840)). To disable late loading you must override the [tmpfile](/index.php/Tmpfile "Tmpfile") `/usr/lib/tmpfiles.d/linux-firmware.conf`. It can be done by creating a file with the same filename in `/etc/tmpfiles.d/`:
+
+```
+# ln -s /dev/null /etc/tmpfiles.d/linux-firmware.conf
 
 ```
 
@@ -192,6 +231,8 @@ On Intel systems one should see something similar to the following on every boot
 
 ```
 
+**Note:** The date displayed does not correspond to the version of the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package installed. It does show the last time Intel updated the microcode that corresponds to the specific hardware being updated.
+
 It is entirely possible, particularly with newer hardware, that there is no microcode update for the CPU. In that case, the output may look like this:
 
 ```
@@ -203,7 +244,7 @@ It is entirely possible, particularly with newer hardware, that there is no micr
 
 ```
 
-On AMD systems using [amd-ucode](https://www.archlinux.org/packages/?name=amd-ucode) the output would look something like this:
+On AMD systems using early loading the output would look something like this:
 
 ```
 [    2.119089] microcode: microcode updated early to new patch_level=0x0700010f
@@ -215,7 +256,21 @@ On AMD systems using [amd-ucode](https://www.archlinux.org/packages/?name=amd-uc
 
 ```
 
-**Note:** The date displayed does not correspond to the version of the [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) package installed. It does show the last time Intel updated the microcode that corresponds to the specific hardware being updated.
+On AMD systems using late loading the output will show the version of the old microcode before reloading the microcode and the new one once it is reloaded. It would look something like this:
+
+```
+[    2.112919] microcode: CPU0: patch_level=0x0700010b
+[    2.112931] microcode: CPU1: patch_level=0x0700010b
+[    2.112940] microcode: CPU2: patch_level=0x0700010b
+[    2.112951] microcode: CPU3: patch_level=0x0700010b
+[    2.113043] microcode: Microcode Update Driver: v2.2.
+[    6.429109] microcode: CPU2: new patch_level=0x0700010f
+[    6.430416] microcode: CPU0: new patch_level=0x0700010f
+[    6.431722] microcode: CPU1: new patch_level=0x0700010f
+[    6.433029] microcode: CPU3: new patch_level=0x0700010f
+[    6.433073] x86/CPU: CPU features have changed after loading microcode, but might not take effect.
+
+```
 
 ## Which CPUs accept microcode updates
 
@@ -250,8 +305,8 @@ CONFIG_MICROCODE_AMD=y
 
 ## See also
 
-*   [Updating microcodes](https://flossexperiences.wordpress.com/2013/11/17/updating-microcodes/)
-*   [Notes on Intel Microcode updates](http://inertiawar.com/microcode/)
-*   [Kernel microcode loader](https://www.kernel.org/doc/Documentation/x86/microcode.txt)
-*   [Erratum found in Haswell/Broadwell](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly)
-*   [Technical details](https://gitlab.com/iucode-tool/iucode-tool)
+*   [Updating microcodes – Experiences in the community](https://flossexperiences.wordpress.com/2013/11/17/updating-microcodes/)
+*   [Notes on Intel Microcode updates – Ben Hawkes](http://inertiawar.com/microcode/)
+*   [Kernel microcode loader – kernel documentation](https://www.kernel.org/doc/Documentation/x86/microcode.txt)
+*   [Erratum found in Haswell/Broadwell – AnandTech](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly)
+*   [iucode-tool GitLab project](https://gitlab.com/iucode-tool/iucode-tool)

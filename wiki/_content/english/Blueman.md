@@ -45,6 +45,7 @@ polkit.addRule(function(action, subject) {
          action.id == "org.blueman.rfkill.setstate" ||
          action.id == "org.blueman.pppd.pppconnect") &&
         subject.isInGroup("wheel")) {
+
         return polkit.Result.YES;
     }
 });

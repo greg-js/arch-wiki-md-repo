@@ -148,7 +148,7 @@ If your network manager supports [openresolv](/index.php/Openresolv "Openresolv"
 private_interfaces="*"
 
 # Write out unbound configuration file
-unbound_conf=/etc/unbound-resolvconf.conf
+unbound_conf=/etc/unbound/resolvconf.conf
 ```
 
 Run `resolvconf -u` to generate the file.
@@ -157,7 +157,7 @@ Configure Unbound to read the openresolv's generated file and allow replies with
 
  `/etc/unbound/unbound.conf` 
 ```
-include: "/etc/unbound-resolvconf.conf"
+include: "/etc/unbound/resolvconf.conf"
 ...
 server:
 ...
@@ -260,7 +260,7 @@ If your network manager supports [openresolv](/index.php/Openresolv "Openresolv"
 ```
 ...
 # Write out unbound configuration file
-unbound_conf=/etc/unbound-resolvconf.conf
+unbound_conf=/etc/unbound/resolvconf.conf
 ```
 
 Run `resolvconf -u` to generate the file.
@@ -268,7 +268,7 @@ Run `resolvconf -u` to generate the file.
 Finally configure Unbound to read the openresolv's generated file:
 
 ```
-include: "/etc/unbound-resolvconf.conf"
+include: "/etc/unbound/resolvconf.conf"
 
 ```
 

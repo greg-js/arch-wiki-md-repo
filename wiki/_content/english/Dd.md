@@ -1,10 +1,16 @@
 Related articles
 
-*   [Core utilities](/index.php/Core_utilities "Core utilities")
+*   [Disk cloning](/index.php/Disk_cloning "Disk cloning")
 
-[dd](https://en.wikipedia.org/wiki/dd_(Unix) is a utility for Unix and Unix-like operating systems whose primary purpose is to convert and copy a file.
+[dd](https://en.wikipedia.org/wiki/dd_(Unix) is a [core utility](/index.php/Core_utility "Core utility") whose primary purpose is to convert and copy a file.
 
 Similarly to *cp*, by default *dd* makes a bit-to-bit copy of the file, but with lower-level I/O flow control features.
+
+For more information see [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) or the [full documentation](https://www.gnu.org/software/coreutils/dd).
+
+**Tip:** By default, *dd* outputs nothing until the task has finished. To monitor the progress of the operation, add the `status=progress` option to the command.
+
+**Warning:** One should be extremely cautious using *dd*, as with any command of this kind it can destroy data irreversibly.
 
 ## Contents
 
@@ -20,13 +26,7 @@ Similarly to *cp*, by default *dd* makes a bit-to-bit copy of the file, but with
 
 ## Installation
 
-dd is included in the GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) package. For other utilities in the package, please refer to [Core utilities](/index.php/Core_utilities "Core utilities").
-
-For more information see [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) or the [full documentation](https://www.gnu.org/software/coreutils/dd).
-
-**Tip:** By default, *dd* outputs nothing until the task has finished. To monitor the progress of the operation, add the `status=progress` option to the command.
-
-**Warning:** One should be extremely cautious using *dd*, as with any command of this kind it can destroy data irreversibly.
+dd is part of the GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils). For other utilities in the package, please refer to [Core utilities](/index.php/Core_utilities "Core utilities").
 
 ## Disk cloning and restore
 

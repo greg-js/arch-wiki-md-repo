@@ -28,63 +28,63 @@ Related articles
     *   [4.4 Proxy settings](#Proxy_settings)
     *   [4.5 Disable NetworkManager when using dbus](#Disable_NetworkManager_when_using_dbus)
     *   [4.6 Checking connectivity](#Checking_connectivity)
-    *   [4.7 DNS caching and split DNS](#DNS_caching_and_split_DNS)
-        *   [4.7.1 dnsmasq](#dnsmasq)
-            *   [4.7.1.1 Custom configuration](#Custom_configuration)
-            *   [4.7.1.2 IPv6](#IPv6)
-            *   [4.7.1.3 DNSSEC](#DNSSEC)
-        *   [4.7.2 systemd-resolved](#systemd-resolved)
-        *   [4.7.3 Other methods](#Other_methods)
-    *   [4.8 Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher)
-        *   [4.8.1 Avoiding the dispatcher timeout](#Avoiding_the_dispatcher_timeout)
-        *   [4.8.2 Dispatcher examples](#Dispatcher_examples)
-            *   [4.8.2.1 Mount remote folder with sshfs](#Mount_remote_folder_with_sshfs)
-            *   [4.8.2.2 Mounting of SMB shares](#Mounting_of_SMB_shares)
-            *   [4.8.2.3 Mounting of NFS shares](#Mounting_of_NFS_shares)
-            *   [4.8.2.4 Use dispatcher to automatically toggle wireless depending on LAN cable being plugged in](#Use_dispatcher_to_automatically_toggle_wireless_depending_on_LAN_cable_being_plugged_in)
-            *   [4.8.2.5 Use dispatcher to connect to a VPN after a network connection is established](#Use_dispatcher_to_connect_to_a_VPN_after_a_network_connection_is_established)
-            *   [4.8.2.6 OpenNTPD](#OpenNTPD)
-*   [5 Testing](#Testing)
-*   [6 Tips and tricks](#Tips_and_tricks)
-    *   [6.1 Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords)
-        *   [6.1.1 Using Gnome-Keyring](#Using_Gnome-Keyring)
-        *   [6.1.2 Using KDE Wallet](#Using_KDE_Wallet)
-    *   [6.2 Sharing internet connection over Wi-Fi](#Sharing_internet_connection_over_Wi-Fi)
-    *   [6.3 Sharing internet connection over Ethernet](#Sharing_internet_connection_over_Ethernet)
-    *   [6.4 Checking if networking is up inside a cron job or script](#Checking_if_networking_is_up_inside_a_cron_job_or_script)
-    *   [6.5 Connect to network with secret on boot](#Connect_to_network_with_secret_on_boot)
-    *   [6.6 Automatically unlock keyring after login](#Automatically_unlock_keyring_after_login)
-        *   [6.6.1 GNOME](#GNOME_2)
-        *   [6.6.2 SLiM login manager](#SLiM_login_manager)
-        *   [6.6.3 Troubleshooting](#Troubleshooting)
-    *   [6.7 Ignore specific devices](#Ignore_specific_devices)
-    *   [6.8 Configuring MAC address randomization](#Configuring_MAC_address_randomization)
-    *   [6.9 Enable IPv6 Privacy Extensions](#Enable_IPv6_Privacy_Extensions)
-    *   [6.10 Working with wired connections](#Working_with_wired_connections)
-    *   [6.11 resolv.conf](#resolv.conf)
-        *   [6.11.1 Use openresolv](#Use_openresolv)
-    *   [6.12 Using iwd as the Wi-Fi backend](#Using_iwd_as_the_Wi-Fi_backend)
-*   [7 Troubleshooting](#Troubleshooting_2)
-    *   [7.1 No prompt for password of secured Wi-Fi networks](#No_prompt_for_password_of_secured_Wi-Fi_networks)
-    *   [7.2 No traffic via PPTP tunnel](#No_traffic_via_PPTP_tunnel)
-    *   [7.3 Network management disabled](#Network_management_disabled)
-    *   [7.4 Problems with internal DHCP client](#Problems_with_internal_DHCP_client)
-    *   [7.5 DHCP problems with dhclient](#DHCP_problems_with_dhclient)
-    *   [7.6 Missing default route](#Missing_default_route)
-    *   [7.7 3G modem not detected](#3G_modem_not_detected)
-    *   [7.8 Switching off WLAN on laptops](#Switching_off_WLAN_on_laptops)
-    *   [7.9 Static IP address settings revert to DHCP](#Static_IP_address_settings_revert_to_DHCP)
-    *   [7.10 Cannot edit connections as normal user](#Cannot_edit_connections_as_normal_user)
-    *   [7.11 Forget hidden wireless network](#Forget_hidden_wireless_network)
-    *   [7.12 VPN not working in GNOME](#VPN_not_working_in_GNOME)
-    *   [7.13 Unable to connect to visible European wireless networks](#Unable_to_connect_to_visible_European_wireless_networks)
-    *   [7.14 Automatic connect to VPN on boot is not working](#Automatic_connect_to_VPN_on_boot_is_not_working)
-    *   [7.15 Systemd Bottleneck](#Systemd_Bottleneck)
-    *   [7.16 Regular network disconnects, latency and lost packets (WiFi)](#Regular_network_disconnects.2C_latency_and_lost_packets_.28WiFi.29)
-    *   [7.17 Unable to turn on wi-fi with Lenovo laptop (IdeaPad, Legion, etc.)](#Unable_to_turn_on_wi-fi_with_Lenovo_laptop_.28IdeaPad.2C_Legion.2C_etc..29)
-    *   [7.18 Turn off hostname sending](#Turn_off_hostname_sending)
-    *   [7.19 nm-applet disappears in i3wm](#nm-applet_disappears_in_i3wm)
-*   [8 See also](#See_also)
+    *   [4.7 DHCP client](#DHCP_client)
+    *   [4.8 DNS caching and split DNS](#DNS_caching_and_split_DNS)
+        *   [4.8.1 dnsmasq](#dnsmasq)
+            *   [4.8.1.1 Custom configuration](#Custom_configuration)
+            *   [4.8.1.2 IPv6](#IPv6)
+            *   [4.8.1.3 DNSSEC](#DNSSEC)
+        *   [4.8.2 systemd-resolved](#systemd-resolved)
+        *   [4.8.3 Other methods](#Other_methods)
+*   [5 Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher)
+    *   [5.1 Avoiding the dispatcher timeout](#Avoiding_the_dispatcher_timeout)
+    *   [5.2 Dispatcher examples](#Dispatcher_examples)
+        *   [5.2.1 Mount remote folder with sshfs](#Mount_remote_folder_with_sshfs)
+        *   [5.2.2 Mounting of SMB shares](#Mounting_of_SMB_shares)
+        *   [5.2.3 Mounting of NFS shares](#Mounting_of_NFS_shares)
+        *   [5.2.4 Use dispatcher to automatically toggle wireless depending on LAN cable being plugged in](#Use_dispatcher_to_automatically_toggle_wireless_depending_on_LAN_cable_being_plugged_in)
+        *   [5.2.5 Use dispatcher to connect to a VPN after a network connection is established](#Use_dispatcher_to_connect_to_a_VPN_after_a_network_connection_is_established)
+        *   [5.2.6 OpenNTPD](#OpenNTPD)
+*   [6 Testing](#Testing)
+*   [7 Tips and tricks](#Tips_and_tricks)
+    *   [7.1 Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords)
+        *   [7.1.1 Using Gnome-Keyring](#Using_Gnome-Keyring)
+        *   [7.1.2 Using KDE Wallet](#Using_KDE_Wallet)
+    *   [7.2 Sharing internet connection over Wi-Fi](#Sharing_internet_connection_over_Wi-Fi)
+    *   [7.3 Sharing internet connection over Ethernet](#Sharing_internet_connection_over_Ethernet)
+    *   [7.4 Checking if networking is up inside a cron job or script](#Checking_if_networking_is_up_inside_a_cron_job_or_script)
+    *   [7.5 Connect to network with secret on boot](#Connect_to_network_with_secret_on_boot)
+    *   [7.6 Automatically unlock keyring after login](#Automatically_unlock_keyring_after_login)
+        *   [7.6.1 GNOME](#GNOME_2)
+        *   [7.6.2 SLiM login manager](#SLiM_login_manager)
+    *   [7.7 OpenConnect with password in KWallet](#OpenConnect_with_password_in_KWallet)
+    *   [7.8 Ignore specific devices](#Ignore_specific_devices)
+    *   [7.9 Configuring MAC address randomization](#Configuring_MAC_address_randomization)
+    *   [7.10 Enable IPv6 Privacy Extensions](#Enable_IPv6_Privacy_Extensions)
+    *   [7.11 Working with wired connections](#Working_with_wired_connections)
+    *   [7.12 resolv.conf](#resolv.conf)
+        *   [7.12.1 Use openresolv](#Use_openresolv)
+    *   [7.13 Using iwd as the Wi-Fi backend](#Using_iwd_as_the_Wi-Fi_backend)
+*   [8 Troubleshooting](#Troubleshooting)
+    *   [8.1 No prompt for password of secured Wi-Fi networks](#No_prompt_for_password_of_secured_Wi-Fi_networks)
+    *   [8.2 No traffic via PPTP tunnel](#No_traffic_via_PPTP_tunnel)
+    *   [8.3 Network management disabled](#Network_management_disabled)
+    *   [8.4 Problems with internal DHCP client](#Problems_with_internal_DHCP_client)
+    *   [8.5 DHCP problems with dhclient](#DHCP_problems_with_dhclient)
+    *   [8.6 3G modem not detected](#3G_modem_not_detected)
+    *   [8.7 Switching off WLAN on laptops](#Switching_off_WLAN_on_laptops)
+    *   [8.8 Static IP address settings revert to DHCP](#Static_IP_address_settings_revert_to_DHCP)
+    *   [8.9 Cannot edit connections as normal user](#Cannot_edit_connections_as_normal_user)
+    *   [8.10 Forget hidden wireless network](#Forget_hidden_wireless_network)
+    *   [8.11 VPN not working in GNOME](#VPN_not_working_in_GNOME)
+    *   [8.12 Unable to connect to visible European wireless networks](#Unable_to_connect_to_visible_European_wireless_networks)
+    *   [8.13 Automatic connect to VPN on boot is not working](#Automatic_connect_to_VPN_on_boot_is_not_working)
+    *   [8.14 Systemd Bottleneck](#Systemd_Bottleneck)
+    *   [8.15 Regular network disconnects, latency and lost packets (WiFi)](#Regular_network_disconnects.2C_latency_and_lost_packets_.28WiFi.29)
+    *   [8.16 Unable to turn on wi-fi with Lenovo laptop (IdeaPad, Legion, etc.)](#Unable_to_turn_on_wi-fi_with_Lenovo_laptop_.28IdeaPad.2C_Legion.2C_etc..29)
+    *   [8.17 Turn off hostname sending](#Turn_off_hostname_sending)
+    *   [8.18 nm-applet disappears in i3wm](#nm-applet_disappears_in_i3wm)
+*   [9 See also](#See_also)
 
 ## Installation
 
@@ -120,6 +120,7 @@ NetworkManager VPN support is based on a plug-in system. If you need VPN support
 *   [networkmanager-l2tp](https://aur.archlinux.org/packages/networkmanager-l2tp/)
 *   [networkmanager-ssh-git](https://aur.archlinux.org/packages/networkmanager-ssh-git/)
 *   [networkmanager-sstp](https://aur.archlinux.org/packages/networkmanager-sstp/)
+*   [networkmanager-wireguard-git](https://aur.archlinux.org/packages/networkmanager-wireguard-git/) for [WireGuard](/index.php/WireGuard "WireGuard")
 
 **Warning:** VPN support is [unstable](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), check the daemon processes options set via the GUI correctly and double-check with each package release.[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
 
@@ -314,6 +315,23 @@ NetworkManager can try to reach a page on Internet when connecting to a network.
 
 For those behind a captive portal, the desktop manager can automatically open a window asking for credentials.
 
+### DHCP client
+
+By default NetworkManager will use its internal DHCP client, based on systemd-networkd. To use a different DHCP client [install](/index.php/Install "Install") one of the alternatives:
+
+*   [dhclient](https://www.archlinux.org/packages/?name=dhclient) - ISC’s DHCP client.
+*   [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) - [dhcpcd](/index.php/Dhcpcd "Dhcpcd").
+
+**Warning:** NetworkManger does not support using dhcpcd for IPv6\. See [NetworkManager issue #5](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/5).
+
+To change the DHCP client backend, set the option `dhcp=*dhcp_client_name*` in the `[main]` section of NetworkManager's configuration file. E.g.:
+
+ `/etc/NetworkManager/conf.d/dhcp-client.conf` 
+```
+[main]
+dhcp=dhclient
+```
+
 ### DNS caching and split DNS
 
 NetworkManager has a plugin to enable DNS caching and split DNS using [dnsmasq](/index.php/Dnsmasq "Dnsmasq") or [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), or [Unbound](/index.php/Unbound "Unbound") (via dnssec-trigger). The advantages of this setup is that DNS lookups will be cached, shortening resolve times, and DNS lookups of VPN hosts will be routed to the relevant VPN's DNS servers. This is especially useful if you are connected to more than one VPN.
@@ -328,7 +346,7 @@ Make sure [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) has been i
 dns=dnsmasq
 ```
 
-Now [restart](/index.php/Restart "Restart") `NetworkManager.service`. NetworkManager will automatically start dnsmasq and add `127.0.0.1` to `/etc/resolv.conf`. The actual DNS servers can be found in `/run/NetworkManager/resolv.conf`. You can verify dnsmasq is being used by doing the same DNS lookup twice with `$ drill example.com` and verifying the server and query times.
+Now [restart](/index.php/Restart "Restart") `NetworkManager.service`. NetworkManager will automatically start dnsmasq and add `127.0.0.1` to `/etc/resolv.conf`. The actual DNS servers can be found in `/run/NetworkManager/resolv.conf`. You can verify dnsmasq is being used by doing the same DNS lookup twice with `drill example.com` and verifying the server and query times.
 
 **Note:** You do not need to start `dnsmasq.service` or edit `/etc/dnsmasq.conf`. NetworkManager will start dnsmasq by itself without using the systemd service and without reading the dnsmasq's default configuration file(s).
 
@@ -382,7 +400,7 @@ dns=systemd-resolved
 
 With an already working caching DNS server, the DNS server address can be specified it in NetworkManagers' settings (usually by right-clicking the applet). Setup will depend on the type of front-end used; the process usually involves right-clicking on the applet, editing (or creating) a profile, and then choosing DHCP type as 'Automatic (specify addresses).' The DNS addresses will need to be entered and are usually in this form: `127.0.0.1, *DNS-server-one*, ...`.
 
-### Network services with NetworkManager dispatcher
+## Network services with NetworkManager dispatcher
 
 There are quite a few network services that you will not want running until NetworkManager brings up an interface. NetworkManager has the ability to start services when you connect to a network and stop them when you disconnect (e.g. when using [NFS](/index.php/NFS "NFS"), [SMB](/index.php/SMB "SMB") and [NTPd](/index.php/NTPd "NTPd")).
 
@@ -414,7 +432,7 @@ Scripts will receive the following arguments:
 
 **Warning:** If you connect to foreign or public networks, be aware of what services you are starting and what servers you expect to be available for them to connect to. You could make a security hole by starting the wrong services while connected to a public network.
 
-#### Avoiding the dispatcher timeout
+### Avoiding the dispatcher timeout
 
 If the above is working, then this section is not relevant. However, there is a general problem related to running dispatcher scripts which take longer to be executed. Initially an internal timeout of three seconds only was used. If the called script did not complete in time, it was killed. Later the timeout was extended to about 20 seconds (see the [Bugtracker](https://bugzilla.redhat.com/show_bug.cgi?id=982734) for more information). If the timeout still creates the problem, a work around may be to modify the dispatcher service file `/usr/lib/systemd/system/NetworkManager-dispatcher.service` to remain active after exit:
 
@@ -429,9 +447,9 @@ Now start and enable the modified `NetworkManager-dispatcher` service.
 
 **Warning:** Adding the `RemainAfterExit` line to it will prevent the dispatcher from closing. Unfortunately, the dispatcher **has** to close before it can run your scripts again. With it the dispatcher will not time out but it also will not close, which means that the scripts will only run once per boot. Therefore, do not add the line unless the timeout is definitely causing a problem.
 
-#### Dispatcher examples
+### Dispatcher examples
 
-##### Mount remote folder with sshfs
+#### Mount remote folder with sshfs
 
 As the script is run in a very restrictive environment, you have to export `SSH_AUTH_SOCK` in order to connect to your SSH agent. There are different ways to accomplish this, see [this message](https://bbs.archlinux.org/viewtopic.php?pid=1042030#p1042030) for more information. The example below works with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"), and will ask you for the password if not unlocked already. In case NetworkManager connects automatically on login, it is likely *gnome-keyring* has not yet started and the export will fail (hence the sleep). The `UUID` to match can be found with the command `nmcli con status` or `nmcli con list`.
 
@@ -457,7 +475,7 @@ fi
 
 ```
 
-##### Mounting of SMB shares
+#### Mounting of SMB shares
 
 Some [SMB](/index.php/SMB "SMB") shares are only available on certain networks or locations (e.g. at home). You can use the dispatcher to only mount SMB shares that are present at your current location.
 
@@ -492,11 +510,11 @@ umount -a -l -t cifs
 *   Make sure this script is located in the `pre-down.d` sub-directory as shown above, otherwise it will unmount all shares on any connection state change.
 *   Since NetworkManager 0.9.8, the *pre-down* and *down* events are not executed on shutdown or restart, see [this bug report](https://bugzilla.gnome.org/show_bug.cgi?id=701242) for more info.
 
-##### Mounting of NFS shares
+#### Mounting of NFS shares
 
 See [NFS#Using a NetworkManager dispatcher](/index.php/NFS#Using_a_NetworkManager_dispatcher "NFS").
 
-##### Use dispatcher to automatically toggle wireless depending on LAN cable being plugged in
+#### Use dispatcher to automatically toggle wireless depending on LAN cable being plugged in
 
 The idea is to only turn Wi-Fi on when the LAN cable is unplugged (for example when detaching from a laptop dock), and for Wi-Fi to be automatically disabled, once a LAN cable is plugged in again.
 
@@ -521,7 +539,7 @@ fi
 
 **Note:** You can get a list of interfaces using [nmcli](#nmcli_examples). The ethernet (LAN) interfaces start with `en`, e.g. `enp0s5`
 
-##### Use dispatcher to connect to a VPN after a network connection is established
+#### Use dispatcher to connect to a VPN after a network connection is established
 
 In this example we want to connect automatically to a previously defined VPN connection after connecting to a specific Wi-Fi network. First thing to do is to create the dispatcher script that defines what to do after we are connected to the network.
 
@@ -604,7 +622,7 @@ esac
 
 **Note:** It may now be necessary to re-open the NetworkManager connection editor and save the VPN passwords/secrets again.
 
-##### OpenNTPD
+#### OpenNTPD
 
 See [OpenNTPD#Using NetworkManager dispatcher](/index.php/OpenNTPD#Using_NetworkManager_dispatcher "OpenNTPD").
 
@@ -718,8 +736,6 @@ NetworkManager requires access to the login keyring to connect to networks requi
 
 #### GNOME
 
-**Note:** The following method is dated and known not to work on at least one machine!
-
 *   In `/etc/pam.d/gdm` (or your corresponding daemon in `/etc/pam.d`), add these lines at the end of the "auth" and "session" blocks if they do not exist already:
 
 ```
@@ -741,9 +757,9 @@ NetworkManager requires access to the login keyring to connect to networks requi
 
 See [SLiM#Gnome Keyring](/index.php/SLiM#Gnome_Keyring "SLiM").
 
-#### Troubleshooting
+### OpenConnect with password in KWallet
 
-While you may type both values at connection time, [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) 0.9.3.2-1 and above are capable of retrieving OpenConnect username and password directly from KWallet.
+While you may type both values at connection time, [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) 0.9.3.2-1 and above are capable of retrieving OpenConnect username and password directly from [KWallet](/index.php/KWallet "KWallet").
 
 Open "KDE Wallet Manager" and look up your OpenConnect VPN connection under "Network Management|Maps". Click "Show values" and enter your credentials in key "VpnSecrets" in this form (replace *username* and *password* accordingly):
 
@@ -868,17 +884,7 @@ When NetworkManager shuts down but the pid (state) file is not removed, you will
 
 ### Problems with internal DHCP client
 
-If you have problems with getting an IP address using the internal DHCP client, consider [dhclient](https://www.archlinux.org/packages/?name=dhclient) as DHCP client.
-
-After installation, update the NetworkManager config file:
-
- `/etc/NetworkManager/conf.d/dhcp-client.conf` 
-```
-[main]
-dhcp=dhclient
-```
-
-This workaround might solve problems in big wireless networks like eduroam.
+If you have problems with getting an IP address using the internal DHCP client, consider using another DHCP client, see [#DHCP client](#DHCP_client) for instructions. This workaround might solve problems in big wireless networks like eduroam.
 
 ### DHCP problems with dhclient
 
@@ -892,10 +898,6 @@ If you have problems with getting an IP address via DHCP, try to add the followi
 ```
 
 Where `aa:bb:cc:dd:ee:ff` is the MAC address of this NIC. The MAC address can be found using the `ip link show *interface*` command from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package.
-
-### Missing default route
-
-On at least one KDE4 system, no default route was created when establishing wireless connections with NetworkManager. Changing the route settings of the wireless connection to remove the default selection "Use only for resources on this connection" solved the issue.
 
 ### 3G modem not detected
 

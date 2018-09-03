@@ -30,11 +30,11 @@ While most GNU software also provides [man pages](/index.php/Man_page "Man page"
 
 	[https://www.gnu.org/software/grub/](https://www.gnu.org/software/grub/) || [grub](https://www.archlinux.org/packages/?name=grub)
 
-*   **[bash](/index.php/Bash "Bash")** — It is an sh-compatible shell that incorporates useful features from the Korn shell (ksh) and C shell (csh).
+*   **[Bash](/index.php/Bash "Bash")** — It is an sh-compatible shell that incorporates useful features from the Korn shell (ksh) and C shell (csh).
 
 	[https://www.gnu.org/software/bash/](https://www.gnu.org/software/bash/) || [bash](https://www.archlinux.org/packages/?name=bash)
 
-*   **[coreutils](/index.php/Coreutils "Coreutils")** — coreutils provides the basic file, shell and text manipulation utilities of the GNU operating system.
+*   **[Coreutils](/index.php/Coreutils "Coreutils")** — Coreutils provides the basic file, shell and text manipulation utilities of the GNU operating system.
 
 	[https://www.gnu.org/software/coreutils/](https://www.gnu.org/software/coreutils/) || [coreutils](https://www.archlinux.org/packages/?name=coreutils)
 
@@ -110,6 +110,7 @@ Many other optional GNU tools are available in the [official repositories](/inde
 *   [GNU Emacs](/index.php/GNU_Emacs "GNU Emacs"), an extensible, customizable, self-documenting text editor
 *   [GnuPG](/index.php/GnuPG "GnuPG"), an OpenPGP implementation
 *   [GNU Octave](/index.php/GNU_Octave "GNU Octave"), a scientific programming language
+*   [GNU Readline](/index.php/Readline "Readline"), a line-editing library for command-line interfaces
 
 ## See also
 

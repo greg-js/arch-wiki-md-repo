@@ -75,6 +75,7 @@ An SSH server, by default, listens on the standard TCP port 22\. An SSH client p
     *   [4.7 No matching key exchange method found by OpenSSH 7.0](#No_matching_key_exchange_method_found_by_OpenSSH_7.0)
     *   [4.8 tmux/screen session killed when disconnecting from SSH](#tmux.2Fscreen_session_killed_when_disconnecting_from_SSH)
     *   [4.9 SSH session stops responding](#SSH_session_stops_responding)
+    *   [4.10 Broken pipe](#Broken_pipe)
 *   [5 See also](#See_also)
 
 ## OpenSSH
@@ -975,6 +976,25 @@ The `KillMode=process` setting may also be useful with the classic `ssh.service`
 ### SSH session stops responding
 
 SSH responds to [flow control commands](https://en.wikipedia.org/wiki/Software_flow_control "wikipedia:Software flow control") `XON` and `XOFF`. It will freeze/hang/stop responding when you hit `Ctrl+s`. Use `Ctrl+q` to resume your session.
+
+### Broken pipe
+
+If you attempt to create a connection which results in a `Broken pipe` response for `packet_write_wait`, you should reattempt the connection in debug mode and see if the output ends in error:
+
+```
+debug3: send packet: type 1
+packet_write_wait: Connection to A.B.C.D port 22: Broken pipe
+```
+
+The `send packet` line above indicates that the reply packet was never received. So, it follows that this is a *QoS* issue. To decrease the likely-hood of a packet being dropped, set `IPQoS`:
+
+ `/etc/ssh/ssh_config` 
+```
+Host *
+    IPQoS reliability
+```
+
+The `reliability` (`0x04`) type-of-service should resolve the issue, as well as `0x00` and `throughput` (`0x08`).
 
 ## See also
 

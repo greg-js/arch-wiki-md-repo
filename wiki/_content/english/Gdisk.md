@@ -7,7 +7,7 @@ Related articles
 
 [GPT fdisk](https://www.rodsbooks.com/gdisk/) (consisting of the *gdisk*, *cgdisk*, *sgdisk*, and *fixparts* programs) is a set of text-mode partitioning tools made by Rod Smith. They work on Globally Unique Identifier (GUID) Partition Table (GPT) disks, rather than on the older (and once more common) Master Boot Record (MBR) partition tables.
 
-*gdisk*, *cgdisk* and *sgdisk* all have the same functionality but are optimized for different UIs. *gdisk* is text-mode interactive, *sgdisk* is command-line and *cgdisk* has terminal user interface. This article covers [gdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gdisk.8) and [sgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sgdisk.8) utilities.
+*gdisk*, *cgdisk* and *sgdisk* all have the same functionality but provide different user interfaces. *gdisk* is text-mode interactive, *sgdisk* is command-line and *cgdisk* has terminal user interface. This article covers [gdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gdisk.8) and [sgdisk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sgdisk.8) utilities.
 
 **Tip:**
 

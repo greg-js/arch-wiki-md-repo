@@ -1,6 +1,6 @@
 The Arch Testing Team is a group within the Arch community in charge of making sure that packages submitted to the [testing](/index.php/Testing "Testing") repositories are functional. This includes, making sure that the package installs correctly, that it does not cause breakage with packages of which it depends on, among others.
 
-Arch Testers sign off packages after vouching for their correctness so that they can be moved from the testing repositories into the core, extra or community repositories.
+Arch Testers [sign off](/index.php/DeveloperWiki:CoreSignoffs "DeveloperWiki:CoreSignoffs") packages after vouching for their correctness so that they can be moved from the testing repositories into the core, extra or community repositories.
 
 ## Contributing
 

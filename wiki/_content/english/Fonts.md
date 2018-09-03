@@ -257,6 +257,13 @@ $ setfont lat2-16 -m 8859-2
 
 ```
 
+So to have a **small 8x8** font, with that font installed like seen below, use e.g.:
+
+```
+$ setfont -h8 /usr/share/kbd/consolefonts/drdos8x8.psfu.gz
+
+```
+
 Font names are case-sensitive. With no parameter, `setfont` returns the console to the default font.
 
 **Tip:** All font changing commands can be typed in "blind".

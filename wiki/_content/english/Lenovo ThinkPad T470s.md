@@ -28,7 +28,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 ## firmware (e.g. bios and peripherals)
 
-As of writing, the current bios version is 1.0.7\. By visiting the downloads section (for the type HG/HF T470s) an iso can be downloaded and burned to disk which will perform the update [[1]](http://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-t-series-laptops/thinkpad-t470s/downloads)
+As of writing, the current bios version is 1.28\. By visiting the downloads section (for the type HG/HF T470s) an iso can be downloaded and burned to disk which will perform the update [[1]](http://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-t-series-laptops/thinkpad-t470s/downloads)
 
 This laptop is unique in that it retains the thinkpad dock connection as well as provides docking ability over USB-C. We have tested with the [Thinkpad Ultra Dock](http://www.thinkwiki.org/wiki/ThinkPad_Ultra_Dock) and are able to utilize multiple HiDPI monitors via individual connections (e.g. no display port chaining). There are published [firmware updates](https://support.lenovo.com/us/en/solutions/pd014572) for the dock that require windows to install. DisplayPort chaining works via USB-C to DisplayPort adapter.
 

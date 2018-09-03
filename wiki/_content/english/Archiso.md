@@ -16,6 +16,7 @@ Related articles
         *   [2.1.3 Installing packages from multilib](#Installing_packages_from_multilib)
     *   [2.2 Adding files to image](#Adding_files_to_image)
     *   [2.3 Boot Loader](#Boot_Loader)
+        *   [2.3.1 UEFI Secure Boot](#UEFI_Secure_Boot)
     *   [2.4 Login manager](#Login_manager)
     *   [2.5 Changing Automatic Login](#Changing_Automatic_Login)
 *   [3 Build the ISO](#Build_the_ISO)
@@ -173,6 +174,10 @@ Similarly, some care is required for special configuration files that reside som
 The default file should work fine, so you should not need to touch it.
 
 Due to the modular nature of isolinux, you are able to use lots of addons since all *.c32 files are copied and available to you. Take a look at the [official syslinux site](http://syslinux.zytor.com/wiki/index.php/SYSLINUX) and the [archiso git repo](https://projects.archlinux.org/archiso.git/tree/configs/syslinux-iso/boot-files). Using said addons, it is possible to make visually attractive and complex menus. See [here](http://syslinux.zytor.com/wiki/index.php/Comboot/menu.c32).
+
+#### UEFI Secure Boot
+
+If you want to make your Archiso bootable on a UEFI Secure Boot enabled environment, you must use a signed bootloader. You can follow the instructions on [Secure Boot#Using a signed boot loader](/index.php/Secure_Boot#Using_a_signed_boot_loader "Secure Boot").
 
 ### Login manager
 

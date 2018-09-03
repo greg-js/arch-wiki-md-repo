@@ -57,21 +57,31 @@ Replace *hash_of_a_commit* with the Git commit hash desired.
 
 Please notice that since the source is downloaded with *git*, then [git](https://www.archlinux.org/packages/?name=git) must be in makedepends and checksums must be set to 'SKIP', just like it would happen with any other VCS package. Using `pkgver()` function is highly recommended, so it sets `pkgver` accordingly for the commit hash provided.
 
-**Note:** GNOME previously used [https://git.gnome.org](https://git.gnome.org) instead of [https://gitlab.gnome.org](https://gitlab.gnome.org) . Old links should automatically redirect to the new gitlab.gnome.org domain, but it might be wise to manually update your source URL.
+**Note:** GNOME previously used [https://git.gnome.org](https://git.gnome.org), but then migrated to [https://gitlab.gnome.org](https://gitlab.gnome.org)[[4]](https://www.gnome.org/news/2018/05/gnome-moves-to-gitlab-2/). Old links should automatically redirect to the new gitlab.gnome.org domain, but it might be wise to manually update your source URL.
 
 ## Building with meson
 
-Many GNOME software migrated the build system to [meson](https://www.archlinux.org/packages/?name=meson), consequently dropping [GNU Autotools](/index.php/GNU_Build_System "GNU Build System") support.
+Many GNOME software migrated the build system to [Meson](https://mesonbuild.com/), consequently dropping [GNU Autotools](/index.php/GNU_Build_System "GNU Build System") support. That means you will not be using *./configure* and *make* in this case.
 
-In order to build using *meson* (for software that supports *meson*, obviously), add [meson](https://www.archlinux.org/packages/?name=meson) to [makedepends](/index.php/PKGBUILD#makedepends "PKGBUILD") and call its script *arch-meson* with any optional parameter. [ninja](https://www.archlinux.org/packages/?name=ninja) will also be used, but [meson](https://www.archlinux.org/packages/?name=meson) depends on it, so there is no need to include it in the *makedepends* array.
+In order to build using Meson, add the [meson](https://www.archlinux.org/packages/?name=meson) package to [makedepends](/index.php/PKGBUILD#makedepends "PKGBUILD") and call its command *meson*, optionally including any desired options supported by the target software. The [ninja](https://www.archlinux.org/packages/?name=ninja) package will also be used in this build system but it is a dependency of [meson](https://www.archlinux.org/packages/?name=meson), so you do not need to include it in the *makedepends* array.)
 
-The [build](/index.php/PKGBUILD#build "PKGBUILD") function would look like:
+The [build()](/index.php/Creating_packages#build.28.29 "Creating packages"), [check()](/index.php/Creating_packages#check.28.29 "Creating packages"), and [package()](/index.php/Creating_packages#package.28.29 "Creating packages") functions should look something like:
 
  `PKGBUILD` 
 ```
+makedepends=(meson)
+
 build() {
-  arch-meson *source* *build*
+  meson --prefix /usr --buildtype=plain *source* *build*
   ninja -C *build*
+}
+
+check() {
+  ninja -C *build* check
+}
+
+package() {
+  DESTDIR="$pkgdir" ninja -C *build* install
 }
 ```
 
@@ -80,18 +90,12 @@ where
 *   *source* is the directory containing the extracted source code, e.g. *$pkgname* or *$pkgname-$pkgver*; and
 *   *build* is the directory that will hold the binary files to be installed. Normally the dirname "build" is used so you may want to keep it for standardization, but you may rename it to whatever pleases you.
 
-**Tip:** Use the `-D *option*` flag to toggle an option supported by the software. E.g., if the software has a *gtk_doc* option and you want to enable it, append `-D gtk_doc=true` to the *arch-meson* command-line. Read `meson_options.txt` in the source code root directory to find the available options.
+**Note:**
 
-In [package](/index.php/PKGBUILD#package "PKGBUILD") function, call *ninja* to install files:
+*   Some software do not support invoking *meson* from outside the source code's root directory. If that is your case, adapt the above code block by simply adding `cd *source*` to the start of the three functions above, and also changing the above *meson* command-line to `meson . *build*`.
+*   If the software have no testing rules set (case which the above code block would fail to build the package), remove/comment the whole *check()* function.
 
- `PKGBUILD` 
-```
-package() {
-  DESTDIR="$pkgdir" ninja -C *build* install
-}
-```
-
-where *build* is the same directory used in build function.
+**Tip:** In order to toggle a build option in *meson*, append `-D *option=value*` flags to the *meson* command-line, where *option* is a supported option for the target software you are building, and *value* is a valid value for the *option* given. So, for instance, if the software has a *gtk_doc* option as *false* by default and you want to enable it, append `-D gtk_doc=true` to the *meson* command-line. Read `meson.build` and `meson_options.txt` files in the source code's root directory to find the available options.
 
 ## GConf schemas
 
@@ -123,15 +127,15 @@ It can be disabled using `--disable-scrollkeeper` switch from **./configure**.
 
 ## GTK icon cache
 
-Quite some packages install icons in the hicolor icon theme. These packages should depend on [gtk-update-icon-cache](https://www.archlinux.org/packages/?name=gtk-update-icon-cache).
+Quite some packages install icons in the hicolor icon theme.
 
-Do not call `gtk-update-icon-cache` in the .install file, as the icon cache is updated via [pacman hooks](/index.php/Pacman_hooks "Pacman hooks") since [gtk-update-icon-cache](https://www.archlinux.org/packages/?name=gtk-update-icon-cache)=3.20.3-2.
+Do not call `gtk-update-icon-cache` in the .install file, as the icon cache is updated via [pacman hooks](/index.php/Pacman_hooks "Pacman hooks") since [gtk-update-icon-cache](https://www.archlinux.org/packages/?name=gtk-update-icon-cache)=3.20.3-2\. These packages should *not* depend on [gtk-update-icon-cache](https://www.archlinux.org/packages/?name=gtk-update-icon-cache), as any application which makes use of gtk icon caches will install the package with the hook and do a full, retroactive cache update.
 
 ## .desktop files
 
-Many packages install Freedesktop.org compatible `.desktop` files and register MimeType entries in them. They should depend on [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils)
+Many packages install Freedesktop.org compatible `.desktop` files and register MimeType entries in them.
 
-Do not call `update-desktop-database` in the .install file, as the database is automatically updated via [pacman hooks](/index.php/Pacman_hooks "Pacman hooks") since [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils)=0.22-2.
+Do not call `update-desktop-database` in the .install file, as the database is automatically updated via [pacman hooks](/index.php/Pacman_hooks "Pacman hooks") since [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils)=0.22-2\. They should *not* depend on [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils), as any desktop which makes use of desktop files will install the package with the hook and do a full, retroactive database update.
 
 ## .install files
 

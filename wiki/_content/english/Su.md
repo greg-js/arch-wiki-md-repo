@@ -3,9 +3,9 @@ Related articles
 *   [Users and groups](/index.php/Users_and_groups "Users and groups")
 *   [sudo](/index.php/Sudo "Sudo")
 
-The **su** command (**s**ubstitute **u**ser) is used to assume the identity of another user on the system, root by default.
+The [su](https://en.wikipedia.org/wiki/Su_(Unix) [core utility](/index.php/Core_utility "Core utility") (substitute user) is used to assume the identity of another user on the system, root by default.
 
-See [PAM](/index.php/PAM "PAM") for ways to configure **su'**s behavior.
+See [PAM](/index.php/PAM "PAM") for ways to configure *su'*s behavior.
 
 ## Contents
 
@@ -18,7 +18,7 @@ See [PAM](/index.php/PAM "PAM") for ways to configure **su'**s behavior.
 
 ## Installation
 
-su is part of [util-linux](https://www.archlinux.org/packages/?name=util-linux) package, which is installed by default in Arch as member of [base](https://www.archlinux.org/groups/x86_64/base/) group.
+*su* is part of the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package.
 
 ## Usage
 
@@ -32,6 +32,8 @@ To assume the login of another user, pass the username that you want to become t
 You will be prompted for the password of the user you are attempting to become.
 
 If no username is passed, su assumes the root user, and the password for which you are prompted will be that of root.
+
+For more information, see [su(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/su.1).
 
 ## Sudo, an alternative
 

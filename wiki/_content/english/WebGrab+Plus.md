@@ -8,7 +8,10 @@
     *   [3.1 Finding and adding channels](#Finding_and_adding_channels)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Different channel names](#Different_channel_names)
-*   [5 See also](#See_also)
+    *   [4.2 Same channels under different names](#Same_channels_under_different_names)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Alternative configuration directory](#Alternative_configuration_directory)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -74,14 +77,46 @@ Your IPTV provider might use different channel names from what WebGrabber+Plus o
 To resolve this, take the actual WebGrabber+Plus channel element:
 
 ```
-<channel update="i" site="tvprograma.lt" site_id="tv3/42" xmltv_id="**TV3**">**TV3**</channel>
+<channel update="i" site="tvprograma.lt" site_id="tv3/42" xmltv_id="TV3">**TV3**</channel>
 
 ```
 
-and change attribute `xmltv_id` and value accordingly:
+and change value accordingly:
 
 ```
-<channel update="i" site="tvprograma.lt" site_id="tv3/42" xmltv_id="**TV3 4K**">**TV3 4K**</channel>
+<channel update="i" site="tvprograma.lt" site_id="tv3/42" xmltv_id="TV3">**TV3 4K**</channel>
+
+```
+
+### Same channels under different names
+
+Your IPTV provider might provide backup channels or channels with different quality, therefore ending up with duplicating channels under different names. In order to generate EPG guide efficiently, modify configuration file as per below example:
+
+```
+<channel update="i" site="sporttv.pt" site_id="727" xmltv_id="**SPORT.TV1**">SPORT TV 1</channel>
+<channel offset="0" same_as="**SPORT.TV1**" xmltv_id="SPORT TV 1 HD">SPORT TV 1 HD</channel>
+<channel offset="0" same_as="**SPORT.TV1**" xmltv_id="SPORT TV 1 FHD">SPORT TV 1 FHD</channel>
+<channel offset="0" same_as="**SPORT.TV1**" xmltv_id="SPORT TV 1 XXX">SPORT TV 1 XXX</channel>
+
+```
+
+**Note:** Attribute `xmltv_id` must be unique in your configuration file. You might consider changing it to new channel's name as well.
+
+## Tips and tricks
+
+### Alternative configuration directory
+
+You can specify and use alternative configuration directory. Copy default configuration directory to your desired destination:
+
+```
+$ cp -R /usr/share/wg++ /path/to/*<configuration_directory>*
+
+```
+
+To generate EPG guide, run:
+
+```
+$ wg++ /path/to/*<configuration_directory>*
 
 ```
 

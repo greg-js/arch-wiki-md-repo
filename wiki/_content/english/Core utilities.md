@@ -1,9 +1,12 @@
 Related articles
 
 *   [Command-line shell](/index.php/Command-line_shell "Command-line shell")
+*   [Users and groups](/index.php/Users_and_groups "Users and groups")
+*   [systemd](/index.php/Systemd "Systemd")
+*   [pacman](/index.php/Pacman "Pacman")
 *   [General recommendations](/index.php/General_recommendations "General recommendations")
 
-*Core utilities* are the basic, fundamental tools of a [GNU](/index.php/GNU "GNU")/[Linux](/index.php/Linux "Linux") system. On Arch Linux they are found in the [base](https://www.archlinux.org/groups/x86_64/base/) group. This article provides an incomplete overview of them, links their documentation and describes useful alternatives. Most core utilities are traditional [Unix](https://en.wikipedia.org/wiki/Unix "wikipedia:Unix") tools (see [Heirloom](/index.php/Heirloom "Heirloom")) and many were standardized by [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") but have been developed further to provide more features.
+*Core utilities* are the basic, fundamental tools of a [GNU](/index.php/GNU "GNU")/[Linux](/index.php/Linux "Linux") system. On Arch Linux they are found in the [base](https://www.archlinux.org/groups/x86_64/base/) group. This article provides an incomplete overview of them, links their documentation and describes useful alternatives. The scope of this article includes, but is not limited to, the [GNU coreutils](https://www.gnu.org/software/coreutils/coreutils.html). Most core utilities are traditional [Unix](https://en.wikipedia.org/wiki/Unix "wikipedia:Unix") tools (see [Heirloom](/index.php/Heirloom "Heirloom")) and many were standardized by [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") but have been developed further to provide more features.
 
 Most command-line interfaces are documented in [man pages](/index.php/Man_page "Man page"), utilities by the [GNU Project](/index.php/GNU_Project "GNU Project") are documented in [Info manuals](/index.php/Info_manual "Info manual"), some [shells](/index.php/Shell "Shell") provide a `help` command for [shell](/index.php/Shell "Shell") builtin commands. Additionally most commands print their usage when run with the `--help` flag.
 
@@ -20,7 +23,7 @@ Most command-line interfaces are documented in [man pages](/index.php/Man_page "
 
 ## Essentials
 
-The following table lists important commands, Arch Linux users should be familiar with. See also [intro(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/intro.1).
+The following table lists some important commands, Arch Linux users should be familiar with. See also [intro(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/intro.1).
 
 | Package | Command | Description | Documentation | Alternatives |
 | shell built-ins | cd | change directory | [cd(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cd.1p) |
@@ -32,7 +35,7 @@ The following table lists important commands, Arch Linux users should be familia
 | cp | copy files or directories | [cp(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cp.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/cp-invocation.html) |
 | mv | move files or directories | [mv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mv.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/mv-invocation.html) |
 | ln | make hard or symbolic links | [ln(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ln.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/ln-invocation.html) |
-| [chown](/index.php/Chown "Chown") | change file owner and group | [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/chown-invocation.html) |
+| [chown](/index.php/Chown "Chown") | change file owner and group | [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/chown-invocation.html) | [chgrp(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chgrp.1) |
 | [chmod](/index.php/Chmod "Chmod") | change file permissions | [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/chmod-invocation.html) |
 | [dd](/index.php/Dd "Dd") | convert and copy a file | [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/dd-invocation.html) |
 | df | report file system disk space usage | [df(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/df.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/df-invocation.html) |
@@ -97,7 +100,7 @@ Alternatives to the core utilities in the [base](https://www.archlinux.org/group
 
 	[https://github.com/junegunn/fzf](https://github.com/junegunn/fzf) || [fzf](https://www.archlinux.org/packages/?name=fzf), [fzf-git](https://aur.archlinux.org/packages/fzf-git/)
 
-*   **[mlocate](/index.php/Mlocate "Mlocate")** — Merging locate/updatedb implementation (command-line).
+*   **[mlocate](/index.php/Mlocate "Mlocate")** — Merging locate/updatedb implementation.
 
 	[https://pagure.io/mlocate](https://pagure.io/mlocate) || [mlocate](https://www.archlinux.org/packages/?name=mlocate)
 
@@ -119,6 +122,8 @@ While [diffutils](https://www.archlinux.org/packages/?name=diffutils) does not p
 *   **cwdiff** — A GNU wdiff wrapper that colorizes the output.
 
 	[https://github.com/junghans/cwdiff](https://github.com/junghans/cwdiff) || [cwdiff](https://aur.archlinux.org/packages/cwdiff/), [cwdiff-git](https://aur.archlinux.org/packages/cwdiff-git/)
+
+See also [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison.2C_diff.2C_merge "List of applications/Utilities").
 
 ### grep alternatives
 

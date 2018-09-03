@@ -52,7 +52,7 @@
 | <small>2.12.7.1.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
 | <small>2.13.</small> [Office](/index.php/Category:Office "Category:Office") <small>(21)</small> |
 | <small>2.13.1.</small> [TeX](/index.php/Category:TeX "Category:TeX") <small>(3)</small> |
-| <small>2.14.</small> [Search](/index.php/Category:Search "Category:Search") <small>(4)</small> |
+| <small>2.14.</small> [Search](/index.php/Category:Search "Category:Search") <small>(5)</small> |
 | <small>2.15.</small> [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification") <small>(13)</small> |
 | <small>2.16.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(14) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
 | <small>2.17.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(34) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
@@ -93,7 +93,7 @@
 | <small>4.9.4.</small> [ASUS](/index.php/Category:ASUS "Category:ASUS") <small>(59)</small> |
 | <small>4.9.5.</small> [Casper](/index.php/Category:Casper "Category:Casper") <small>(1)</small> |
 | <small>4.9.6.</small> [Clevo](/index.php/Category:Clevo "Category:Clevo") <small>(2)</small> |
-| <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(64)</small> |
+| <small>4.9.7.</small> [Dell](/index.php/Category:Dell "Category:Dell") <small>(65)</small> |
 | <small>4.9.8.</small> [Fujitsu](/index.php/Category:Fujitsu "Category:Fujitsu") <small>(3)</small> |
 | <small>4.9.9.</small> [HASEE](/index.php/Category:HASEE "Category:HASEE") <small>(1)</small> |
 | <small>4.9.10.</small> [HP](/index.php/Category:HP "Category:HP") <small>(56)</small> |
@@ -162,7 +162,7 @@
 | <small>5.21.</small> [WebDAV](/index.php/Category:WebDAV "Category:WebDAV") <small>(7)</small> |
 | <small>5.22.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(8)</small> |
 | <small>5.22.1.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(6) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
-| <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(25)</small> |
+| <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(24)</small> |
 | <small>6.1.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(27)</small> |
 | <small>6.1.1.</small> [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") <small>(10)</small> |
 | <small>6.1.2.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(2) (also in [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy"))</small> |

@@ -137,15 +137,19 @@ AUR：[libqq-svn](https://aur.archlinux.org/packages/libqq-svn/)、[libqq-pidgin
 
 目前较为成熟的 Wine 模拟方案为[deepin-qq-im](https://aur.archlinux.org/packages/deepin-qq-im/)，也可以从 [ArchLinux CN 源](https://www.archlinuxcn.org/archlinux-cn-repo-and-mirror/) 安装 deepin-qq-im。
 
+**警告:** 受 wine 上游的一个[Bug](https://bugs.winehq.org/show_bug.cgi?id=45199) 影响，官方仓库中提供的[wine](https://www.archlinux.org/packages/?name=wine)自3.8开始无法运行许多程序，包括 QQ 和 TIM。截止3.15-1版本此问题仍未修复。您可以将[wine](https://www.archlinux.org/packages/?name=wine)[降级](/index.php/Downgrading_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Downgrading packages (简体中文)")到3.7来绕过这个问题。也可以按照[FS#58833](https://bugs.archlinux.org/task/58833)二楼的方法，使用[ABS](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")修改编译参数之后重新编译安装[wine](https://www.archlinux.org/packages/?name=wine)。
+
 之前比较好的解决方案有 [清风老师](http://phpcj.org/wineqq/) 提供的 Wine QQ 方案等。
 
-**注意:** 如果系统默认不是中文环境可能无法输入中文,解决方法是修改启动文件的`Exec`: `$HOME/.local/share/applications/wine-QQ.desktop`  `Exec=env LC_ALL=zh_CN.UTF-8 wine ".wine/drive_c/Program Files/QQ/Bin/QQ.exe"` 
+**注意:**
 
-**注意:** 此方案只需要安装[wine](https://www.archlinux.org/packages/?name=wine)即可，安装其它的 Wine 库可能造成干扰。第一次启动的时候会自动下载安装`Mono`库。如果安装失败，可以首先删除`$HOME/.wine`并卸载所有 Wine 相关的包后重启系统，得到一个相对干净的环境再尝试按上面博客的步骤进行安装。
+*   如果系统默认不是中文环境可能无法输入中文,解决方法是修改启动文件的`Exec`:
 
-**注意:** 安装成功之后要取消勾选 QQ 的自动更新，以免自动更新导致不可用。
+ `$HOME/.local/share/applications/wine-QQ.desktop`  `Exec=env LC_ALL=zh_CN.UTF-8 wine ".wine/drive_c/Program Files/QQ/Bin/QQ.exe"` 
 
-**注意:** Archlinux打包的wine-3.8与wine-3.9.1版本均在安装QQ后无法打开，出现无法加载gdi32.dll的错误，可以使用命令“sudo pacman -U /var/cache/pacman/pkg/wine-3.7-1-x86_64.pkg.tar.xz”将wine降级到之前的3.7版本解决。为了避免被升级到新3.9版本而无法使用QQ，可以编辑"/etc/pacman.conf"文档，去掉"IgnorePkg"一行前面的"#"号，并在该行"="号后面添加"wine"；在后续更新中该问题得到解决后，记得去掉wine，以便更新之。
+*   此方案只需要安装[wine](https://www.archlinux.org/packages/?name=wine)即可，安装其它的 Wine 库可能造成干扰。第一次启动的时候会自动下载安装`Mono`库。如果安装失败，可以首先删除`$HOME/.wine`并卸载所有 Wine 相关的包后重启系统，得到一个相对干净的环境再尝试按上面博客的步骤进行安装。
+
+*   安装成功之后要取消勾选 QQ 的自动更新，以免自动更新导致不可用。
 
 ### Wine QQ 轻聊版
 
@@ -213,6 +217,8 @@ $ wineconsole .wine/drive_c/run-qqlight.bat
 ### Wine TIM
 
 [TIM](http://im.qq.com/download/)是腾讯推出的主打办公协同的QQ版本。
+
+**警告:** 受 wine 上游的一个[Bug](https://bugs.winehq.org/show_bug.cgi?id=45199) 影响，官方仓库中提供的[wine](https://www.archlinux.org/packages/?name=wine)自3.8开始无法运行许多程序，包括 QQ 和 TIM。截止3.15-1版本此问题仍未修复。您可以将[wine](https://www.archlinux.org/packages/?name=wine)[降级](/index.php/Downgrading_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Downgrading packages (简体中文)")到3.7来绕过这个问题。也可以按照[FS#58833](https://bugs.archlinux.org/task/58833)二楼的方法，使用[ABS](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")修改编译参数之后重新编译安装[wine](https://www.archlinux.org/packages/?name=wine)。
 
 同时，在 AUR 中，仍有已经稳定成熟的模拟方案：[deepin-wine-tim](https://aur.archlinux.org/packages/deepin-wine-tim/)。当然，你也可以选择按下文的方法手动安装配置。
 

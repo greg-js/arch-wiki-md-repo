@@ -525,17 +525,21 @@ See also [Wikipedia:Comparison of 3D computer graphics software](https://en.wiki
 
 	[https://github.com/RonnyDo/ColorPicker](https://github.com/RonnyDo/ColorPicker) || [color-picker-git](https://aur.archlinux.org/packages/color-picker-git/)
 
-*   **delicolour** — Lightweight GTK+ 3 color finder.
-
-	[https://github.com/eepp/delicolour](https://github.com/eepp/delicolour) || [delicolour](https://aur.archlinux.org/packages/delicolour/)
-
 *   **Deepin Picker** — Color picker tool for Deepin desktop.
 
 	[https://www.deepin.org/en/original/deepin-picker/](https://www.deepin.org/en/original/deepin-picker/) || [deepin-picker](https://www.archlinux.org/packages/?name=deepin-picker)
 
+*   **delicolour** — Lightweight GTK+ 3 color finder.
+
+	[https://github.com/eepp/delicolour](https://github.com/eepp/delicolour) || [delicolour](https://aur.archlinux.org/packages/delicolour/)
+
 *   **gcolor2** — Simple GTK+ 2 color selector.
 
 	[http://gcolor2.sourceforge.net/](http://gcolor2.sourceforge.net/) || [gcolor2](https://www.archlinux.org/packages/?name=gcolor2)
+
+*   **Gcolor3** — Simple GTK+ 3 color selector.
+
+	[https://www.hjdskes.nl/projects/gcolor3/](https://www.hjdskes.nl/projects/gcolor3/) || [gcolor3](https://aur.archlinux.org/packages/gcolor3/)
 
 *   **GPick** — Advanced color picker tool.
 

@@ -1,3 +1,11 @@
+Related articles
+
+*   [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs")
+*   [System maintenance#Backup](/index.php/System_maintenance#Backup "System maintenance")
+*   [Disk cloning](/index.php/Disk_cloning "Disk cloning")
+*   [Migrate installation to new hardware](/index.php/Migrate_installation_to_new_hardware "Migrate installation to new hardware")
+*   [File recovery](/index.php/File_recovery "File recovery")
+
 It is important to regularly backup system and user data stored for example in `/etc`, `/home`, `/var` and for server installations, also `/srv`.
 
 ## Contents
@@ -52,10 +60,10 @@ For [Syslinux](/index.php/Syslinux "Syslinux"), all you need to do is duplicate 
 
 For [GRUB](/index.php/GRUB "GRUB"), it is recommended that you automatically [re-generate the main configuration file](/index.php/GRUB#Generate_the_main_configuration_file "GRUB"). If you want to freshly install all grub files to somewhere other than `/boot`, such as `/mnt/newroot/boot`, use the `--boot-directory` flag.
 
-Also verify the new menu entry in `/boot/grub/grub.cfg`. Make sure the UUID is matching the new partition, otherwise it could still boot the old system. Find the UUID of a partition as follows:
+Also verify the new menu entry in `/boot/grub/grub.cfg`. Make sure the UUID is matching the new partition, otherwise it could still boot the old system. Find the UUID of a partition with [lsblk](/index.php/Lsblk "Lsblk"):
 
 ```
-# lsblk -no NAME,UUID /dev/sdb3
+$ lsblk -no NAME,UUID /dev/sdb3
 
 ```
 

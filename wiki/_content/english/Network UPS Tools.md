@@ -85,7 +85,9 @@ Where `idVendor` and `idProduct` are the device manufacturer and product ID. You
 
 **Note:** The *nut* group is added by the NUT AUR package. If you used different installation method (or the package perhaps changed) you may need to correct the group. Alternatively you could also set the device accessible by anyone with `MODE="0666"`.
 
-You need to re-plug the usb device (and perhaps even restart udevd) or reboot to see the change.
+After this is done, reload and retrigger udev rules by issuing this command:
+
+ `# udevadm control --reload-rules && udevadm trigger` 
 
 ### upsd configuration
 

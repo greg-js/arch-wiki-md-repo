@@ -942,9 +942,10 @@ You will need to change the chipset accordingly to how your VM is set up, i.e. `
 
 ```
 
-**Note:** To speed up compilation time with [qemu-patched](https://aur.archlinux.org/packages/qemu-patched/) use `--target-list=x86_64-softmmu` to compile qemu with only x86_64 guest support
+**Note:**
 
-**Note:** You might need to remove the qemu:env lines that are mentioned in [#Passing VM audio to host via PulseAudio](#Passing_VM_audio_to_host_via_PulseAudio)
+*   To speed up compilation time with [qemu-patched](https://aur.archlinux.org/packages/qemu-patched/) use `--target-list=x86_64-softmmu` to compile qemu with only x86_64 guest support.
+*   Since Qemu 3.0 the XML arguments `qemu:env` above are *not* needed if you run PulseAudio as your user and you have `nographics_allow_host_audio = 1` enabled in `/etc/libvirt/qemu.conf`. If you use a different user with QEMU/Libvirt, you will need to keep the `QEMU_PA_SERVER` variable otherwise permission errors will occur.
 
 ### Physical disk/partition
 

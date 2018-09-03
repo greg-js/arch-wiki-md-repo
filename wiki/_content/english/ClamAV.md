@@ -16,7 +16,9 @@
     *   [9.1 Error: Clamd was NOT notified](#Error:_Clamd_was_NOT_notified)
     *   [9.2 Error: No supported database files found](#Error:_No_supported_database_files_found)
     *   [9.3 Error: Can't create temporary directory](#Error:_Can.27t_create_temporary_directory)
-*   [10 See also](#See_also)
+*   [10 Tips and tricks](#Tips_and_tricks)
+    *   [10.1 Run in multiple threads](#Run_in_multiple_threads)
+*   [11 See also](#See_also)
 
 ## Installation
 
@@ -301,6 +303,39 @@ Correct permissions:
 # chown UID:GID /var/lib/clamav & chmod 755 /var/lib/clamav
 
 ```
+
+## Tips and tricks
+
+### Run in multiple threads
+
+When scanning a file or directory from command line using either `clamscan` or `clamdscan`, only single CPU thread is used to scan the files one-by-one. This may be ok in cases when you don't want your computer to become sluggish while the scan is going on, but if you want to scan a large folder or a USB drive quickly, you may want to use all available CPUs to speed up the process.
+
+`clamscan` is designed to be single-threaded, so you'd need to use something like `xargs` to run the scan in parallel:
+
+```
+$ find /home/archie -type f -print | xargs -P 2 clamscan
+
+```
+
+In this example the `-P` parameter for `xargs` runs `clamscan` in up-to 2 processes at the same time. If you have more CPUs available adjust this parameter accordingly. `--max-lines` and `--max-args` options will allow even finer control of batching the workload across the threads.
+
+Use the following version if filenames may contain spaces or other special characters (as USB and ex-Windows drives frequently do):
+
+```
+$ find /home/archie -type f -print0 | xargs -0 -P 2 clamscan
+
+```
+
+`clamdscan` uses `clamd` daemon to perform scanning. You need to start the `clamd` daemon first (see [#Starting the daemon](#Starting_the_daemon)) and then run the following command:
+
+```
+$ clamdscan --multiscan --fdpass /home/archie
+
+```
+
+Here the `--multiscan` parameter enables `clamd` to scan the contents of the directory in parallel using available threads. `--fdpass` parameter is required to pass the file descriptor permissions to `clamd` as the daemon is running under `clamav` user and group.
+
+The number of available threads for `clamdscan` is determined in `/etc/clamav/clamd.conf` via `MaxThreads` parameter [clamd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/clamd.conf.5). Even though you may see that the number of `MaxThreads` specified is more than one (current default is 10), when you start the scan using `clamdscan` from command line and do not specify `--multiscan` option, only one effective CPU thread will be used for scanning.
 
 ## See also
 

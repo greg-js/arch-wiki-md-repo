@@ -66,10 +66,8 @@ This article contains recommendations and best practices for [hardening](https:/
         *   [12.2.1 Syslinux](#Syslinux)
         *   [12.2.2 GRUB](#GRUB)
     *   [12.3 Boot partition on removable flash drive](#Boot_partition_on_removable_flash_drive)
-    *   [12.4 Denying console login as root](#Denying_console_login_as_root)
-    *   [12.5 Automatic logout](#Automatic_logout)
-    *   [12.6 Block TTY access from X](#Block_TTY_access_from_X)
-    *   [12.7 Protect against rogue USB devices](#Protect_against_rogue_USB_devices)
+    *   [12.4 Automatic logout](#Automatic_logout)
+    *   [12.5 Protect against rogue USB devices](#Protect_against_rogue_USB_devices)
 *   [13 Rebuilding packages](#Rebuilding_packages)
 *   [14 See also](#See_also)
 
@@ -176,19 +174,19 @@ Relevant mount options are:
 *   `nodev`: Do not interpret character or block special devices on the file system.
 *   `nosuid`: Do not allow set-user-identifier or set-group-identifier bits to take effect.
 *   `noexec`: Do not allow direct execution of any binaries on the mounted filesystem.
+    *   Setting `noexec` on `/home` disallows executable scripts and breaks [Wine](/index.php/Wine "Wine") and [Steam](/index.php/Steam "Steam").
+    *   Applications using QML may crash or not work properly starting with Qt 5.8 if `noexec` is set on `/var` or `/home`. A workaround is available at [Qt#Applications using QML crash or don't work with Qt 5.8 - 5.10](/index.php/Qt#Applications_using_QML_crash_or_don.27t_work_with_Qt_5.8_-_5.10 "Qt").
+    *   Some packages (building [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) for example) may require `exec` on `/var`.
 
-Partitions used for data should always be mounted with `nodev`, `nosuid`, `noexec`. Potential usage is presented in the table below.
+Partitions used for data should always be mounted with `nodev`, `nosuid` and `noexec`.
 
-| Partition | `nodev` | `nosuid` | `noexec` |
-| `/var` | yes | yes | yes  |
-| `/home` | yes | yes | yes, if you do not code, use wine or steam  |
-| `/dev/shm` | yes | yes | yes |
-| `/tmp` | yes | yes | maybe, breaks compiling packages and various other things |
-| `/boot` | yes | yes | yes |
+Potential partitions:
 
- Note that some packages (building [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) for example) may require `exec` on `/var`.
-
- Applications that use QML may crash or not work properly starting with Qt 5.8 if `noexec` is set on these partitions. A workaround is available at [Qt#Applications using QML crash or don't work with Qt 5.8 - 5.10](/index.php/Qt#Applications_using_QML_crash_or_don.27t_work_with_Qt_5.8_-_5.10 "Qt").
+*   `/var`
+*   `/home`
+*   `/dev/shm`
+*   `/tmp`
+*   `/boot`
 
 ### File access permissions
 
@@ -620,20 +618,6 @@ Syslinux supports [password-protecting your bootloader](/index.php/Syslinux#Secu
 
 One popular idea is to place the boot partition on a flash drive in order to render the system unbootable without it. Proponents of this idea often use [full disk encryption](#Disk_encryption) alongside, and some also use [detached encryption headers](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_detached_LUKS_header "Dm-crypt/Specialties") placed on the boot partition.
 
-### Denying console login as root
-
-Changing the configuration to disallow root to login from the TTYs makes it harder for an intruder to gain access to the system. The intruder would have to guess both a username that exists on the system and that user's password. When root is allowed to log in via the console, an intruder only needs to guess a password. Blocking root login at the console is done by commenting out the tty lines in `/etc/securetty`.
-
- `/etc/securetty` 
-```
-#tty1
-
-```
-
-Repeat for any tty you wish to block. To check the effect of this change, start by commenting out only one line and go to that particular console and try to login as root. You will be greeted by the message `Login incorrect`. Now that we are sure it works, go back and comment out the rest of the tty lines.
-
-**Note:** If you see `ttyS0` this is for a serial console. Similarly, on Xen virtualized systems `hvc0` is for the administrator.
-
 ### Automatic logout
 
 If you are using [Bash](/index.php/Bash "Bash") or [Zsh](/index.php/Zsh "Zsh"), you can set `TMOUT` for an automatic logout from shells after a timeout.
@@ -658,10 +642,6 @@ $ export TMOUT="$(( 60*10 ))";
 ```
 
 Note that this will not work if there is some command running in the shell (eg.: an SSH session or other shell without `TMOUT` support). But if you are using VC mostly for restarting frozen GDM/Xorg as root, then this is very useful.
-
-### Block TTY access from X
-
-See [Xorg#Block TTY access](/index.php/Xorg#Block_TTY_access "Xorg").
 
 ### Protect against rogue USB devices
 

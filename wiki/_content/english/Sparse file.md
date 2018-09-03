@@ -44,7 +44,7 @@ $ truncate -s 512M file.img
 
 ```
 
-The *dd* utility can also be used, for example:
+The [dd](/index.php/Dd "Dd") utility can also be used, for example:
 
 ```
 $ dd if=/dev/zero of=file.img bs=1 count=0 seek=512M

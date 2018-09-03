@@ -103,7 +103,7 @@ Windows also puts [certain characters off limits](http://msdn.microsoft.com/en-u
 
 These are limitations of Windows and not NTFS: any other OS using the NTFS partition will be fine. Windows will fail to detect these files and running `chkdsk` will most likely cause them to be deleted. This can lead to potential data-loss.
 
-[NTFS-3G](/index.php/NTFS-3G "NTFS-3G") applies Windows restrictions to new file names through the [windows_filenames](http://www.tuxera.com/community/ntfs-3g-manual/#4) option (see [fstab](/index.php/Fstab "Fstab")).
+[NTFS-3G](/index.php/NTFS-3G "NTFS-3G") applies Windows restrictions to new file names through the [windows_names](http://www.tuxera.com/community/ntfs-3g-manual/#4) option (see [fstab](/index.php/Fstab "Fstab")).
 
 ## Installation
 

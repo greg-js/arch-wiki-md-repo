@@ -52,6 +52,8 @@ Alternately, [jekyll](https://aur.archlinux.org/packages/jekyll/) can be install
 
 ### Rubygems binary repository
 
+[Install](/index.php/Install "Install") *jekyll* from the unofficial [archlinuxcn](/index.php/Unofficial_user_repositories#archlinuxcn "Unofficial user repositories") repository.
+
 [Install](/index.php/Install "Install") *ruby-jekyll* from the unofficial [quarry](/index.php/Unofficial_user_repositories#quarry "Unofficial user repositories") repository.
 
 ## Select a markup language

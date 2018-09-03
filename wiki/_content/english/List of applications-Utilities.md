@@ -25,7 +25,7 @@
         *   [1.2.7 File searching](#File_searching)
             *   [1.2.7.1 Console](#Console_2)
             *   [1.2.7.2 Graphical](#Graphical_2)
-                *   [1.2.7.2.1 Graphical file indexers](#Graphical_file_indexers)
+                *   [1.2.7.2.1 File indexers](#File_indexers)
         *   [1.2.8 Full-text searching](#Full-text_searching)
             *   [1.2.8.1 Full-text indexers](#Full-text_indexers)
     *   [1.3 Development](#Development)
@@ -637,7 +637,7 @@ See [find](/index.php/Find "Find") and its alternatives.
 
 	[http://searchmonkey.sourceforge.net/](http://searchmonkey.sourceforge.net/) || [searchmonkey](https://aur.archlinux.org/packages/searchmonkey/)
 
-###### Graphical file indexers
+###### File indexers
 
 These programs index your files to allow for quick searching.
 

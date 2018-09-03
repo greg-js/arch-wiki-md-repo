@@ -48,7 +48,7 @@
 | <small>4.1.</small> [ARM 架构](/index.php/Category:ARM_architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:ARM architecture (简体中文)") <small>(1)</small> |
 | <small>4.2.</small> [蓝牙](/index.php/Category:Bluetooth_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Bluetooth (简体中文)") <small>(2)</small> |
 | <small>4.3.</small> [CPU](/index.php/Category:CPU_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:CPU (简体中文)") <small>(4)</small> |
-| <small>4.4.</small> [图形](/index.php/Category:Graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphics (简体中文)") <small>(15)</small> |
+| <small>4.4.</small> [图形](/index.php/Category:Graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphics (简体中文)") <small>(16)</small> |
 | <small>4.5.</small> [硬件检测和疑难排解](/index.php/Category:Hardware_detection_and_troubleshooting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Hardware detection and troubleshooting (简体中文)") <small>(4)</small> |
 | <small>4.6.</small> [影像设备](/index.php/Category:Imaging_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Imaging (简体中文)") <small>(2)</small> |
 | <small>4.7.</small> [输入设备](/index.php/Category:Input_devices_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Input devices (简体中文)") <small>(3)</small> |

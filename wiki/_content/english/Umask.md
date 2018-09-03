@@ -2,7 +2,7 @@ Related articles
 
 *   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
 
-The *umask* utility is used to control the file-creation mode mask, which determines the initial value of file permission bits for newly created files. The behaviour of this utility is standardized by [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") and described in the [POSIX Programmer's Manual](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/umask.html). Because *umask* affects the current shell execution environment, it is usually implemented as built-in command of a shell.
+The [umask](https://en.wikipedia.org/wiki/umask "wikipedia:umask") utility is used to control the file-creation mode mask, which determines the initial value of file permission bits for newly created files. The behaviour of this utility is standardized by [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") and described in the [POSIX Programmer's Manual](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/umask.html). Because *umask* affects the current shell execution environment, it is usually implemented as built-in command of a shell.
 
 ## Contents
 
@@ -77,5 +77,4 @@ If you need to set a different value, you can either directly edit such file, th
 *   POSIX Programmer's Manual:
     *   [umask](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/umask.html) (also available as [umask(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/umask.1p))
     *   [chmod (extended description)](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/chmod.html#tag_20_17_13) (also available as [chmod(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1p))
-*   [wikipedia:umask](https://en.wikipedia.org/wiki/umask "wikipedia:umask")
 *   [027 umask: a compromise](https://blogs.gentoo.org/mgorny/2011/10/18/027-umask-a-compromise-between-security-and-simplicity/)

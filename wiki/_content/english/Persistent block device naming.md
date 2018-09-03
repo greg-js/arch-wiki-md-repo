@@ -4,7 +4,7 @@ Related articles
 *   [udev](/index.php/Udev "Udev")
 *   [LVM](/index.php/LVM "LVM")
 
-This article describes how to use persistent names for your block devices. This has been made possible by the introduction of udev and has some advantages over bus-based naming. If your machine has more than one SATA, SCSI or IDE disk controller, the order in which their corresponding device nodes are added is arbitrary. This may result in device names like `/dev/**sda**` and `/dev/**sdb**` switching around on each boot, culminating in an unbootable system, kernel panic, or a block device disappearing. Persistent naming solves these issues.
+This article describes how to use persistent names for your [block devices](/index.php/Block_device "Block device"). This has been made possible by the introduction of [udev](/index.php/Udev "Udev") and has some advantages over bus-based naming. If your machine has more than one SATA, SCSI or IDE disk controller, the order in which their corresponding device nodes are added is arbitrary. This may result in device names like `/dev/**sda**` and `/dev/**sdb**` switching around on each boot, culminating in an unbootable system, kernel panic, or a block device disappearing. Persistent naming solves these issues.
 
 **Note:**
 
@@ -32,7 +32,7 @@ There are four different schemes for persistent naming: [by-label](#by-label), [
 
 The following sections describes what the different persistent naming methods are and how they are used.
 
-The `lsblk -f` command can be used for viewing graphically the first persistent schemes:
+The [lsblk](/index.php/Lsblk "Lsblk") command can be used for viewing graphically the first persistent schemes:
 
  `$ lsblk -f` 
 ```

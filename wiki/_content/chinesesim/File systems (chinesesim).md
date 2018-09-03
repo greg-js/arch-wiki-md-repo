@@ -14,24 +14,51 @@
 
 	*文件系统是数据组织方式，定义数据在磁盘上的保存、读取和更新方法。不同的文件系统可以根据存储设备的不同进行优化，提高效率*。
 
-Arch Linux支持许多文件系统类型，我们可以为每个磁盘分区设置不同的文件系统。每种文件系统有自己的优缺点和独有特性。以下内容是关于Arch Linux支持的文件系统类型的概述，左侧的链接地址指向Wikipedia以提供更丰富的信息。
-
-磁盘需要首先[分区](/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Partitioning (简体中文)")，然后再在格式化成指定文件系统。
+可以为每个磁盘分区设置一个或多个不同的文件系统。每种文件系统有自己的优缺点和独有特性。以下内容是目前所支持文件系统类型的概述。
 
 ## Contents
 
 *   [1 文件系统类型](#.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E7.B1.BB.E5.9E.8B)
     *   [1.1 文件系统日志](#.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E6.97.A5.E5.BF.97)
 *   [2 基于 FUSE 的文件系统支持](#.E5.9F.BA.E4.BA.8E_FUSE_.E7.9A.84.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F.E6.94.AF.E6.8C.81)
-    *   [2.1 Special purpose file systems](#Special_purpose_file_systems)
-*   [3 创建文件系统](#.E5.88.9B.E5.BB.BA.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
-    *   [3.1 格式化](#.E6.A0.BC.E5.BC.8F.E5.8C.96)
+    *   [2.1 可叠加文件系统](#.E5.8F.AF.E5.8F.A0.E5.8A.A0.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
+    *   [2.2 Read-only file systems](#Read-only_file_systems)
+    *   [2.3 Clustered file systems](#Clustered_file_systems)
+*   [3 查看现有文件系统](#.E6.9F.A5.E7.9C.8B.E7.8E.B0.E6.9C.89.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
+*   [4 创建文件系统](#.E5.88.9B.E5.BB.BA.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
+*   [5 Mount a file system](#Mount_a_file_system)
+    *   [5.1 List mounted file systems](#List_mounted_file_systems)
+    *   [5.2 卸载文件系统](#.E5.8D.B8.E8.BD.BD.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
+*   [6 参阅](#.E5.8F.82.E9.98.85)
 
 ## 文件系统类型
 
-参考 [w:Comparison_of_file_systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems "w:Comparison of file systems").
+[filesystems(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/filesystems.5) 包含一个简单介绍，详细比较参考 [w:Comparison_of_file_systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems "w:Comparison of file systems"). 内核支持的文件系统可以通过 `/proc/filesystems` 查看。
 
-*   **[Btrfs](/index.php/Btrfs "Btrfs")** — 基于 B-tree 的文件系统，是"写入时进行复制(CoW)的 Linux 文件系统，支持的高级数据校验，增量备份，以及能同时提升性能并节省空间的透明压缩功能。Btrfs 已经是稳定的文件系统，被认为是 GNU/Linux 文件系统的未来，被所有主流发行版的安装程序设置为 root 分区文件系统选项。[[1]](https://btrfs.wiki.kernel.org/index.php/Main_Page#Stability_status)
+| 文件系统 | 创建命令 | 工具 | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) | 内核文档 [[2]](https://www.kernel.org/doc/Documentation/filesystems/) | 说明 |
+| [Btrfs](/index.php/Btrfs "Btrfs") | [mkfs.btrfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.btrfs.8) | [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) | Yes | [btrfs.txt](https://www.kernel.org/doc/Documentation/filesystems/btrfs.txt) | [稳定状态](https://btrfs.wiki.kernel.org/index.php/Status) |
+| [VFAT](/index.php/VFAT "VFAT") | [mkfs.fat(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.fat.8) | [dosfstools](https://www.archlinux.org/packages/?name=dosfstools) | Yes | [vfat.txt](https://www.kernel.org/doc/Documentation/filesystems/vfat.txt) |
+| [exFAT](https://en.wikipedia.org/wiki/exFAT "w:exFAT") | [mkexfatfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkexfatfs.8) | [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils) | Yes | N/A (FUSE-based) |
+| [F2FS](/index.php/F2FS "F2FS") | [mkfs.f2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.f2fs.8) | [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools) | Yes | [f2fs.txt](https://www.kernel.org/doc/Documentation/filesystems/f2fs.txt) | 基于闪存的设备 |
+| [ext3](/index.php/Ext3 "Ext3") | [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | [ext3.txt](https://www.kernel.org/doc/Documentation/filesystems/ext3.txt) |
+| [ext4](/index.php/Ext4 "Ext4") | [mke2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mke2fs.8) | [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | [ext4.txt](https://www.kernel.org/doc/Documentation/filesystems/ext4.txt) |
+| [HFS](https://en.wikipedia.org/wiki/Hierarchical_File_System "w:Hierarchical File System") | mkfs.hfsplus(8) | [hfsprogs](https://aur.archlinux.org/packages/hfsprogs/) | No | [hfs.txt](https://www.kernel.org/doc/Documentation/filesystems/hfs.txt) | [macOS](https://en.wikipedia.org/wiki/macOS "w:macOS") 文件系统 |
+| [JFS](/index.php/JFS "JFS") | [mkfs.jfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.jfs.8) | [jfsutils](https://www.archlinux.org/packages/?name=jfsutils) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | [jfs.txt](https://www.kernel.org/doc/Documentation/filesystems/jfs.txt) |
+| [NILFS2](https://en.wikipedia.org/wiki/NILFS "wikipedia:NILFS") | [mkfs.nilfs2(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.nilfs2.8) | [nilfs-utils](https://www.archlinux.org/packages/?name=nilfs-utils) | Yes | [nilfs2.txt](https://www.kernel.org/doc/Documentation/filesystems/nilfs2.txt) |
+| [NTFS](/index.php/NTFS "NTFS") | [mkfs.ntfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.ntfs.8) | [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) | Yes | N/A (FUSE-based) | [Windows](https://en.wikipedia.org/wiki/Microsoft_Windows "w:Microsoft Windows") 文件系统 |
+| [Reiser4](/index.php/Reiser4 "Reiser4") | mkfs.reiser4(8) | [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/) | No |
+| [ReiserFS](https://en.wikipedia.org/wiki/ReiserFS "w:ReiserFS") | [mkfs.reiserfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.reiserfs.8) | [reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) |
+| [UDF](https://en.wikipedia.org/wiki/Universal_Disk_Format "w:Universal Disk Format") | [mkfs.udf(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.udf.8) | [udftools](https://www.archlinux.org/packages/?name=udftools) | Optional | [udf.txt](https://www.kernel.org/doc/Documentation/filesystems/udf.txt) |
+| [XFS](/index.php/XFS "XFS") | [mkfs.xfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.xfs.8) | [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | 
+
+[xfs.txt](https://www.kernel.org/doc/Documentation/filesystems/xfs.txt)
+[xfs-delayed-logging-design.txt](https://www.kernel.org/doc/Documentation/filesystems/xfs-delayed-logging-design.txt)
+[xfs-self-describing-metadata.txt](https://www.kernel.org/doc/Documentation/filesystems/xfs-self-describing-metadata.txt)
+
+ |
+| [ZFS](/index.php/ZFS "ZFS") | [zfs-linux](https://aur.archlinux.org/packages/zfs-linux/) | No | N/A ([OpenZFS](https://en.wikipedia.org/wiki/OpenZFS "w:OpenZFS")移植) |
+
+*   **[Btrfs](/index.php/Btrfs "Btrfs")** — 基于 B-tree 的文件系统，是"写入时进行复制(CoW)的 Linux 文件系统，支持的高级数据校验，增量备份，以及能同时提升性能并节省空间的透明压缩功能。Btrfs 已经是稳定的文件系统，被认为是 GNU/Linux 文件系统的未来，被所有主流发行版的安装程序设置为 root 分区文件系统选项。[[3]](https://btrfs.wiki.kernel.org/index.php/Main_Page#Stability_status)
 
 	[http://btrfs.wiki.kernel.org/](http://btrfs.wiki.kernel.org/) || [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs)
 
@@ -83,11 +110,15 @@ Arch Linux支持许多文件系统类型，我们可以为每个磁盘分区设�
 
 	[http://zfsonlinux.org/](http://zfsonlinux.org/) || [zfs-linux](https://aur.archlinux.org/packages/zfs-linux/), [zfs-linux-git](https://aur.archlinux.org/packages/zfs-linux-git/)
 
+**Note:** 内核中有 NTFS 驱动(参考[ntfs.txt](https://www.kernel.org/doc/Documentation/filesystems/ntfs.txt))，但是文件写入支持很有限。
+
 ### 文件系统日志
 
 以上除了 ext2 和 FAT16/32（即VFAT）以外的文件系统都支持[文件系统日志](https://en.wikipedia.org/wiki/zh:%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F "wikipedia:zh:日志文件系统")。文件系统日志通过在数据实际变更前写入日志记录变更来提供故障恢复能力。当出现系统崩溃或掉电故障的时候，这些文件系统能够更快的恢复到可用状态，并且在恢复过程中更不容易出现错误。文件系统日志将会占用文件系统中的一部分空间。
 
 并非所有的文件系统日志技术都相同。ext3 和 ext4 提供 data-mode journaling，同时记录数据本身和元数据。由于对性能影响很大，这个功能默认是禁用的。其它文件系统仅提供记录元数据日志的ordered-mode journaling。尽管都能在系统崩溃后将系统返回正常状态，data-mode journaling 提供了最大程度的数据安全防护，但性能有所降低，因为数据会被写两次(第一次到日志，第二次到磁盘)。可以根据数据的重要性选择文件系统。
+
+基于 copy-on-write 的文件系统比如 Btrfs 和 ZFS 不需要用传统的日志保护元数据，因为这些信息不会被原地更新。虽然 Btrfs 还在使用日志树，这个树仅仅是为了加快 fdatasync/fsync 的速度。
 
 ## 基于 FUSE 的文件系统支持
 
@@ -141,30 +172,107 @@ Arch Linux支持许多文件系统类型，我们可以为每个磁盘分区设�
 
 请参考 [Wikipedia:Filesystem in Userspace#Example uses](https://en.wikipedia.org/wiki/Filesystem_in_Userspace#Example_uses "wikipedia:Filesystem in Userspace") 以获得更多信息。
 
-### Special purpose file systems
+### 可叠加文件系统
 
-*   **[CramFS](https://en.wikipedia.org/wiki/cramfs "wikipedia:cramfs")** — **Compressed ROM filesystem** is a read only filesystem designed with simplicity and efficiency in mind. Its maximum file size is less 16MB and the maximum file system size is around 272MB.
+*   **aufs** — Advanced Multi-layered Unification Filesystem, a FUSE based union filesystem, a complete rewrite of Unionfs, was rejected from Linux mainline and instead OverlayFS was merged into the Linux Kernel.
 
-	[http://sourceforge.net/projects/cramfs/](http://sourceforge.net/projects/cramfs/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
+	[http://aufs.sourceforge.net](http://aufs.sourceforge.net) || [aufs](https://aur.archlinux.org/packages/aufs/)
 
-*   **[eCryptfs](/index.php/ECryptfs "ECryptfs")** — **Enterprise Cryptographic Filesystem** is a package of disk encryption software for Linux. It is implemented as a POSIX-compliant filesystem-level encryption layer, aiming to offer functionality similar to that of GnuPG at the operating system level.
+*   **[eCryptfs](/index.php/ECryptfs "ECryptfs")** — The Enterprise Cryptographic Filesystem is a package of disk encryption software for Linux. It is implemented as a POSIX-compliant filesystem-level encryption layer, aiming to offer functionality similar to that of GnuPG at the operating system level.
 
 	[http://ecryptfs.org](http://ecryptfs.org) || [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils)
 
-*   **[SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS")** — **SquashFS** is a compressed read only filesystem. SquashFS compresses files, inodes and directories, and supports block sizes up to 1 MB for greater compression.
+*   **mergerfs** — a FUSE based union filesystem.
+
+	[https://github.com/trapexit/mergerfs](https://github.com/trapexit/mergerfs) || [mergerfs](https://aur.archlinux.org/packages/mergerfs/)
+
+*   **mhddfs** — Multi-HDD FUSE filesystem, a FUSE based union filesystem.
+
+	[http://mhddfs.uvw.ru](http://mhddfs.uvw.ru) || [mhddfs](https://aur.archlinux.org/packages/mhddfs/)
+
+*   **[overlayfs](/index.php/Overlayfs "Overlayfs")** — OverlayFS is a filesystem service for Linux which implements a union mount for other file systems.
+
+	[https://www.kernel.org/doc/Documentation/filesystems/overlayfs.txt](https://www.kernel.org/doc/Documentation/filesystems/overlayfs.txt) || [linux](https://www.archlinux.org/packages/?name=linux)
+
+*   **Unionfs** — Unionfs is a filesystem service for Linux, FreeBSD and NetBSD which implements a union mount for other file systems.
+
+	[http://unionfs.filesystems.org/](http://unionfs.filesystems.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **unionfs-fuse** — A user space Unionfs implementation.
+
+	[https://github.com/rpodgorny/unionfs-fuse](https://github.com/rpodgorny/unionfs-fuse) || [unionfs-fuse](https://www.archlinux.org/packages/?name=unionfs-fuse)
+
+### Read-only file systems
+
+*   **[SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS")** — SquashFS is a compressed read only filesystem. SquashFS compresses files, inodes and directories, and supports block sizes up to 1 MB for greater compression.
 
 	[http://squashfs.sourceforge.net/](http://squashfs.sourceforge.net/) || [squashfs-tools](https://www.archlinux.org/packages/?name=squashfs-tools)
 
+### Clustered file systems
+
+*   **[Ceph](/index.php/Ceph "Ceph")** — Unified, distributed storage system designed for excellent performance, reliability and scalability.
+
+	[https://ceph.com/](https://ceph.com/) || [ceph](https://www.archlinux.org/packages/?name=ceph)
+
+*   **[Glusterfs](/index.php/Glusterfs "Glusterfs")** — Cluster file system capable of scaling to several peta-bytes.
+
+	[https://www.gluster.org/](https://www.gluster.org/) || [glusterfs](https://www.archlinux.org/packages/?name=glusterfs)
+
+*   **[IPFS](/index.php/IPFS "IPFS")** — A peer-to-peer hypermedia protocol to make the web faster, safer, and more open. IPFS aims replace HTTP and build a better web for all of us. Uses blocks to store parts of a file, each network node stores only content it is interested, provides deduplication, distribution, scalable system limited only by users. (currently in aplha)
+
+	[https://ipfs.io/](https://ipfs.io/) || [go-ipfs](https://www.archlinux.org/packages/?name=go-ipfs)
+
+*   **[MooseFS](https://en.wikipedia.org/wiki/MooseFS "wikipedia:MooseFS")** — MooseFS is a fault tolerant, highly available and high performance scale-out network distributed file system.
+
+	[https://moosefs.com](https://moosefs.com) || [moosefs](https://www.archlinux.org/packages/?name=moosefs)
+
+*   **[OpenAFS](/index.php/OpenAFS "OpenAFS")** — Open source implementation of the AFS distributed file system
+
+	[http://www.openafs.org](http://www.openafs.org) || [openafs](https://aur.archlinux.org/packages/openafs/)
+
+*   **[OrangeFS](https://en.wikipedia.org/wiki/OrangeFS "wikipedia:OrangeFS")** — OrangeFS is a scale-out network file system designed for transparently accessing multi-server-based disk storage, in parallel. Has optimized MPI-IO support for parallel and distributed applications. Simplifies the use of parallel storage not only for Linux clients, but also for Windows, Hadoop, and WebDAV. POSIX-compatible. Part of Linux kernel since version 4.6\.
+
+	[http://www.orangefs.org/](http://www.orangefs.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **Sheepdog** — Distributed object storage system for volume and container services and manages the disks and nodes intelligently.
+
+	[https://sheepdog.github.io/sheepdog/](https://sheepdog.github.io/sheepdog/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
+
+*   **[Tahoe-LAFS](https://en.wikipedia.org/wiki/Tahoe-LAFS "wikipedia:Tahoe-LAFS")** — Tahoe Least-Authority Filesystem is a free and open, secure, decentralized, fault-tolerant, peer-to-peer distributed data store and distributed file system.
+
+	[https://tahoe-lafs.org/](https://tahoe-lafs.org/) || [tahoe-lafs](https://aur.archlinux.org/packages/tahoe-lafs/)
+
+## 查看现有文件系统
+
+To identify existing file systems, you can use [lsblk](/index.php/Lsblk "Lsblk"):
+
+ `$ lsblk -f` 
+```
+NAME   FSTYPE LABEL     UUID                                 MOUNTPOINT
+sdb                                                          
+└─sdb1 vfat   Transcend 4A3C-A9E9
+```
+
+An existing file system, if present, will be shown in the `FSTYPE` column. If [mounted](/index.php/Mount "Mount"), it will appear in the `MOUNTPOINT` column.
+
 ## 创建文件系统
 
-首先，确认系统的安装位置，通常是在一个分区上创建的，不过也可以在逻辑容器如[LVM](/index.php/LVM "LVM")，[RAID](/index.php/RAID "RAID")，或者 [dm-crypt](/index.php/Dm-crypt "Dm-crypt") 上创建文件系统。
+首先，确认系统的安装位置，可以创建在一个分区上、逻辑容器如[LVM](/index.php/LVM "LVM")，[RAID](/index.php/RAID "RAID")，或者 [dm-crypt](/index.php/Dm-crypt "Dm-crypt") 上或普通文件上(参考 [Wikipedia:Loop device](https://en.wikipedia.org/wiki/Loop_device "wikipedia:Loop device"))。这里描述创建在分区上的情况。
 
-### 格式化
+**Warning:**
 
-创建文件系统之前，目标分区必须处于未挂载状态。如果你要格式化的分区包含了一个已挂载的文件系统，在 lsblk 命令的 *MOUNTPOINT* 列中可以看到它。
+*   创建新文件系统之后，之前存放在该分区的数据会丢失且通常无法找回。**请备份所有要保留的数据**.
+*   The purpose of a given partition may restrict the choice of file system. For example, an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") must contain a [FAT32](/index.php/FAT32 "FAT32") (`mkfs.vfat`) file system, and the file system containing the `/boot` directory must be supported by the [boot loader](/index.php/Boot_loader "Boot loader").
 
+创建文件系统之前，目标分区必须处于未挂载状态。如果你要格式化的分区包含了一个已挂载的文件系统，在 [lsblk](/index.php/Lsblk "Lsblk") 命令的 *MOUNTPOINT* 列中可以看到它。
+
+ `$ lsblk -f` 
 ```
-$ lsblk
+NAME   FSTYPE   LABEL       UUID                                 MOUNTPOINT
+sda
+├─sda1                      C4DA-2C4D                            
+├─sda2 ext4                 5b1564b2-2e2c-452c-bcfa-d1f572ae99f2 /mnt
+└─sda3                      56adc99b-a61e-46af-aab7-a6d07e504652 
 
 ```
 
@@ -177,8 +285,6 @@ $ lsblk
 
 使用一下命令来创建一个 *fstype* 文件系统：
 
-**警告:** 创建新文件系统之后，之前存放在该分区的数据会丢失且通常无法找回。请对你想要保留的数据做好备份。
-
 ```
 # mkfs.*fstype* /dev/*partition*
 
@@ -190,3 +296,88 @@ $ lsblk
 # mkfs -t ext4 /dev/*partition*
 
 ```
+
+**Tip:**
+
+*   Use the `-L` flag of *mkfs.ext4* to specify a [file system label](/index.php/Persistent_block_device_naming#by-label "Persistent block device naming"). *e2label* can be used to change the label on an existing file system.
+*   File systems may be *resized* after creation, with certain limitations. For example, an [XFS](/index.php/XFS "XFS") filesystem's size can be increased, but it cannot reduced. See [Resize capabilities](https://en.wikipedia.org/wiki/Comparison_of_file_systems#Resize_capabilities "w:Comparison of file systems") and the respective file system documentation for details.
+
+The new file system can now be mounted to a directory of choice.
+
+## Mount a file system
+
+To manually mount filesystem located on a device (e.g., a partition) to a directory, use [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8). This example mounts `/dev/sda1` to `/mnt`.
+
+```
+# mount /dev/sda1 /mnt
+
+```
+
+This attaches the filesystem on `/dev/sda1` at the directory `/mnt`, making the contents of the filesystem visible. Any data that existed at `/mnt` before this action is made invisible until the device is unmounted.
+
+[fstab](/index.php/Fstab "Fstab") contains information on how devices should be automatically mounted if present. See the [fstab](/index.php/Fstab "Fstab") article for more information on how to modify this behavior.
+
+If a device is specified in `/etc/fstab` and only the device or mount point is given on the command line, that information will be used in mounting. For example, if `/etc/fstab` contains a line indicating that `/dev/sda1` should be mounted to `/mnt`, then the following will automatically mount the device to that location:
+
+```
+# mount /dev/sda1
+
+```
+
+Or
+
+```
+# mount /mnt
+
+```
+
+*mount* contains several options, many of which depend on the file system specified. The options can be changed, either by:
+
+*   using flags on the command line with *mount*
+*   editing [fstab](/index.php/Fstab "Fstab")
+*   creating [udev](/index.php/Udev "Udev") rules
+*   [compiling the kernel yourself](/index.php/Arch_Build_System "Arch Build System")
+*   or using filesystem-specific mount scripts (located at `/usr/bin/mount.*`).
+
+See these related articles and the article of the filesystem of interest for more information.
+
+### List mounted file systems
+
+To list all mounted file systems, use [findmnt(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/findmnt.8):
+
+```
+$ findmnt
+
+```
+
+*findmnt* takes a variety of arguments which can filter the output and show additional information. For example, it can take a device or mount point as an argument to show only information on what is specified:
+
+```
+$ findmnt /dev/sda1
+
+```
+
+*findmnt* gathers information from `/etc/fstab`, `/etc/mtab`, and `/proc/self/mounts`.
+
+### 卸载文件系统
+
+To unmount a file system use [umount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/umount.8). Either the device containing the file system (e.g., `/dev/sda1`) or the mount point (e.g., `/mnt`) can be specified:
+
+```
+# umount /dev/sda1
+
+```
+
+Or
+
+```
+# umount /mnt
+
+```
+
+## 参阅
+
+*   [filesystems(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/filesystems.5)
+*   [Documentation of file systems supported by linux](https://www.kernel.org/doc/Documentation/filesystems/)
+*   [Wikipedia:File systems](https://en.wikipedia.org/wiki/File_systems "wikipedia:File systems")
+*   [Wikipedia:Mount (Unix)](https://en.wikipedia.org/wiki/Mount_(Unix) "wikipedia:Mount (Unix)")
