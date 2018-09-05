@@ -29,7 +29,7 @@ Related articles
 
 There are two versions of *udisks* called [udisks](https://aur.archlinux.org/packages/udisks/) and [udisks2](https://www.archlinux.org/packages/?name=udisks2). Development of **udisks** has ceased in favor of **udisks2**. [[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
 
-[udisksd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisksd.8) (for **udisks2**) and `udisks-daemon` (for **udisks**) are started on-demand by [D-Bus](/index.php/D-Bus "D-Bus"), and should not be enabled explicitly. They can be controlled through the command-line with [udisksctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisksctl.1) and [udisks(1)](https://udisks.freedesktop.org/docs/1.0.5/udisks.1.html), respectively.
+[udisksd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisksd.8) (for **udisks2**) and `udisks-daemon` (for **udisks**) are started on-demand by [D-Bus](/index.php/D-Bus "D-Bus"), and should not be enabled explicitly. They can be controlled through the command-line with [udisksctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisksctl.1) and udisks(1), respectively.
 
 ## Configuration
 
@@ -99,7 +99,11 @@ ENV{ID_FS_USAGE}=="filesystem|other|crypto", ENV{UDISKS_FILESYSTEM_SHARED}="1"
 
 Since `/media`, unlike `/run`, is not mounted by default as a [tmpfs](/index.php/Tmpfs "Tmpfs"), you may also wish to create a [tmpfiles.d](/index.php/Systemd#Temporary_files "Systemd") snippet to clean stale mountpoints at every boot:
 
- `/etc/tmpfiles.d/media.conf`  `D /media 0755 root root 0 -` 
+ `/etc/tmpfiles.d/media.conf` 
+```
+D /media 0755 root root 0 -
+
+```
 
 ### Mount loop devices
 
@@ -136,16 +140,12 @@ Because block device names can change between reboots, it is also possible to us
 
 #### Example
 
-```
-# blkid /dev/sdX
-/dev/sdX: LABEL="Filesystem Label" UUID="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXX" UUID_SUB="YYYYYYYY-YYYY-YYYY-YYYY-YYYYYYYYYYYY" TYPE="btrfs"
-
-```
+ `# blkid /dev/sdX`  `/dev/sdX: LABEL="Filesystem Label" UUID="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXX" UUID_SUB="YYYYYYYY-YYYY-YYYY-YYYY-YYYYYYYYYYYY" TYPE="btrfs"` 
 
 Then the following line can be used:
 
 ```
-ENV{ID_FS_UUID}=="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXX", ENV{UDISKS_IGNORE}="1"
+SUBSYSTEM=="block", ENV{ID_FS_UUID}=="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXX", ENV{UDISKS_IGNORE}="1"
 
 ```
 
@@ -212,5 +212,5 @@ Other possible workarounds could be setting the timeout below the polling interv
 
 ## See also
 
-*   [gentoo wiki: udisks](http://wiki.gentoo.org/wiki/Udisks)
+*   [Gentoo:udisks](https://wiki.gentoo.org/wiki/udisks "gentoo:udisks")
 *   [Introduction to udisks](http://blog.fpmurphy.com/2011/08/introduction-to-udisks.html?output=pdf)

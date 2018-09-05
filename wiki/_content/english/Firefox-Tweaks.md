@@ -19,8 +19,7 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [1.7 Referrer header control](#Referrer_header_control)
     *   [1.8 Defragment the profile's SQLite databases](#Defragment_the_profile.27s_SQLite_databases)
     *   [1.9 Cache the entire profile into RAM via tmpfs](#Cache_the_entire_profile_into_RAM_via_tmpfs)
-    *   [1.10 Enable Electrolysis](#Enable_Electrolysis)
-    *   [1.11 Disable Pocket](#Disable_Pocket)
+    *   [1.10 Disable Pocket](#Disable_Pocket)
 *   [2 Appearance](#Appearance)
     *   [2.1 Fonts](#Fonts)
         *   [2.1.1 Configure the DPI value](#Configure_the_DPI_value)
@@ -60,9 +59,8 @@ This page contains advanced Firefox configuration options and performance tweaks
     *   [4.8 Plugins do not work with latest version](#Plugins_do_not_work_with_latest_version)
     *   [4.9 Jerky or choppy scrolling](#Jerky_or_choppy_scrolling)
     *   [4.10 Run Firefox inside an nspawn container](#Run_Firefox_inside_an_nspawn_container)
-    *   [4.11 Show search matches position in scroll bar](#Show_search_matches_position_in_scroll_bar)
-    *   [4.12 Disable WebRTC audio post processing](#Disable_WebRTC_audio_post_processing)
-    *   [4.13 Fido U2F authentication](#Fido_U2F_authentication)
+    *   [4.11 Disable WebRTC audio post processing](#Disable_WebRTC_audio_post_processing)
+    *   [4.12 Fido U2F authentication](#Fido_U2F_authentication)
 *   [5 See also](#See_also)
 
 ## Performance
@@ -75,7 +73,7 @@ This section contains advanced Firefox options for performance tweaking. For add
 
 ### Change Performance settings
 
-Firefox 56 automatically uses settings based on the computer's hardware specifications [[1]](https://support.mozilla.org/en-US/kb/performance-settings).
+Firefox automatically uses settings based on the computer's hardware specifications [[1]](https://support.mozilla.org/en-US/kb/performance-settings).
 
 Adjusting these settings can be done in Preferences or by changing the `dom.ipc.processCount` value to `1-7` and `browser.preferences.defaultPerformanceSettings.enabled` to `false` manually in `about:config`.
 
@@ -174,14 +172,6 @@ Firefox provides a tool to defragment and optimize the places database, which is
 ### Cache the entire profile into RAM via tmpfs
 
 If the system has memory to spare, `tmpfs` can be used to [cache the entire profile directory](/index.php/Firefox/Profile_on_RAM "Firefox/Profile on RAM"), which might result in increased Firefox responsiveness.
-
-### Enable Electrolysis
-
-**Note:** Electrolysis should always be enabled in Firefox 57 and later
-
-Electrolysis (multi-process) may be enabled to improve performance and security by setting `browser.tabs.remote.autostart` to *true* in `about:config`. It may be needed to [force-enable Electrolysis](https://wiki.mozilla.org/Electrolysis#Force_Enable "mozillawiki:Electrolysis"), although this is generally not recommended and may cause issues.
-
-To check if Electrolysis is enabled, go to `about:support` and under the "Application Basics" section look for "Multiprocess Windows". If it reports "0/1 (Disabled)", Electrolysis is disabled; if it reports "1/1 (Enabled by user)" it is enabled. Note that the given numbers **/** indicate the number of open Firefox windows, e.g. 0/2 meaning non of the two Firefox-windows are using Electrolysis, and 2/2 means it is enabled for both windows.
 
 ### Disable Pocket
 
@@ -354,7 +344,7 @@ The extension [Classic Theme Restorer](https://addons.mozilla.org/firefox/addon/
 
 #### Unreadable input fields with KDE Breeze Dark theme
 
-If you are using [KDE](/index.php/KDE "KDE") desktop in conjunction with Breeze Dark theme, you might find that some input fields have dark background, which makes text unreadable. A solution to this issue is to use a non-dark GTK theme along with a dark Firefox theme. Similarly, by using a dark Firefox theme your browser will look the way you want (requires Firefox 56 or later).
+If you are using [KDE](/index.php/KDE "KDE") desktop in conjunction with Breeze Dark theme, you might find that some input fields have dark background, which makes text unreadable. A solution to this issue is to use a non-dark GTK theme along with a dark Firefox theme. Similarly, by using a dark Firefox theme your browser will look the way you want.
 
 #### Unreadable input fields with dark GTK+ themes
 
@@ -613,12 +603,6 @@ Once your container is booted, run the Xorg binary like so:
 
 ```
 
-### Show search matches position in scroll bar
-
-**Warning:** Not compatible with Firefox Quantum (version 57 and above).
-
-This Chrome-like feature can be added to Firefox via the [FindBar Tweak](https://addons.mozilla.org/firefox/addon/findbar-tweak/) extension.
-
 ### Disable WebRTC audio post processing
 
 If you are using the PulseAudio [module-echo-cancel](/index.php/PulseAudio/Troubleshooting#Enable_Echo.2FNoise-Cancellation "PulseAudio/Troubleshooting"), you probably don't want Firefox to do additional audio post processing.
@@ -633,14 +617,9 @@ To disable audio post processing, change the value of the following preferences 
 
 Install [libu2f-host](https://www.archlinux.org/packages/?name=libu2f-host) for the required udev rules to allow Firefox to communicate with the U2F key.
 
-Since version 57, Firefox supports Fido U2F authentication protocol. However, it's disabled by default. To enable it set the following settings to `true` in `about:config`.
+Firefox supports the Fido U2F authentication protocol. However, it's disabled by default. To enable it set `security.webauth.u2f` to `true` in `about:config`.
 
-*   `security.webauth.u2f`
-*   `security.webauth.webauthn_enable_usbtoken`
-
-**Note:** Firefox does not inplement the entire U2F protocol [[3]](https://www.yubico.com/2017/11/how-to-navigate-fido-u2f-in-firefox-quantum/). Some site might not work correctly
-
-If you're using a Firefox version lower than 57 (e.g. Firefox 52 ESR), U2F isn't supported natively, but there is an [extension](https://addons.mozilla.org/en-US/firefox/addon/u2f-support-add-on/) to add this functionality.
+**Note:** Firefox does not inplement the entire U2F protocol [[3]](https://www.yubico.com/2017/11/how-to-navigate-fido-u2f-in-firefox-quantum/). Some sites might not work correctly.
 
 ## See also
 

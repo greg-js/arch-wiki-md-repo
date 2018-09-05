@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [X keyboard extension#Basic information on XKB](/index.php/X_keyboard_extension#Basic_information_on_XKB "X keyboard extension")
+*   [Extra keyboard keys#In Xorg](/index.php/Extra_keyboard_keys#In_Xorg "Extra keyboard keys")

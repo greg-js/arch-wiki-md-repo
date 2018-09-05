@@ -204,10 +204,10 @@ These mirrors are *not* listed in `/etc/pacman.d/mirrorlist`.
 
 *   [http://mirror.bit.edu.cn/archlinux/](http://mirror.bit.edu.cn/archlinux/) - *Beijing Institute of Technology*
 *   [http://mirrors.aliyun.com/archlinux/](http://mirrors.aliyun.com/archlinux/) - *Alibaba*
+*   [https://mirrors.163.com/archlinux/](https://mirrors.163.com/archlinux/) - *NetEase*
 
 **Unicom**
 
-*   [http://mirrors.sohu.com/archlinux/](http://mirrors.sohu.com/archlinux/)
 *   [http://mirrors.yun-idc.com/archlinux/](http://mirrors.yun-idc.com/archlinux/)
 
 **Cernet**

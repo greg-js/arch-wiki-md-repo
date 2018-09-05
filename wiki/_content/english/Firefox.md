@@ -30,7 +30,7 @@ Related articles
     *   [6.4 File association](#File_association)
     *   [6.5 Firefox keeps creating ~/Desktop even when this is not desired](#Firefox_keeps_creating_.7E.2FDesktop_even_when_this_is_not_desired)
     *   [6.6 Make plugins respect blocked pop-ups](#Make_plugins_respect_blocked_pop-ups)
-    *   [6.7 Middle-click errors](#Middle-click_errors)
+    *   [6.7 Middle-click behavior](#Middle-click_behavior)
     *   [6.8 Backspace does not work as the 'Back' button](#Backspace_does_not_work_as_the_.27Back.27_button)
     *   [6.9 Firefox does not remember login information](#Firefox_does_not_remember_login_information)
     *   [6.10 "Do you want Firefox to save your tabs for the next time it starts?" dialog does not appear](#.22Do_you_want_Firefox_to_save_your_tabs_for_the_next_time_it_starts.3F.22_dialog_does_not_appear)
@@ -40,8 +40,7 @@ Related articles
     *   [6.14 Firefox does not remember default spell check language](#Firefox_does_not_remember_default_spell_check_language)
     *   [6.15 Some MathML symbols are missing](#Some_MathML_symbols_are_missing)
     *   [6.16 Tearing video in fullscreen mode](#Tearing_video_in_fullscreen_mode)
-    *   [6.17 Firefox ESR 52 looks bad](#Firefox_ESR_52_looks_bad)
-    *   [6.18 Firefox WebRTC module cannot detect a microphone](#Firefox_WebRTC_module_cannot_detect_a_microphone)
+    *   [6.17 Firefox WebRTC module cannot detect a microphone](#Firefox_WebRTC_module_cannot_detect_a_microphone)
 *   [7 See also](#See_also)
 
 ## Installing
@@ -144,7 +143,7 @@ HTML5 DRM playback is supported by the Google Widevine CDM, it is however not en
 
 See [Firefox/Tweaks#Enable additional media codecs](/index.php/Firefox/Tweaks#Enable_additional_media_codecs "Firefox/Tweaks") for advanced configuration and enabling support for Widevine (Netflix, Amazon Video, etc.).
 
-Starting with version 54, Firefox uses [PulseAudio](/index.php/PulseAudio "PulseAudio") for audio playback and capture. For sound to work, you need to install the [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) package.
+Firefox uses [PulseAudio](/index.php/PulseAudio "PulseAudio") for audio playback and capture. For sound to work, you need to install the [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) package.
 
 In case, for whatever reason, [PulseAudio](/index.php/PulseAudio "PulseAudio") is not an option for you, you can use [apulse](/index.php/Advanced_Linux_Sound_Architecture#PulseAudio_compatibility "Advanced Linux Sound Architecture") instead. To make this work, it is necessary to exclude `/dev/snd/` from Firefox' sandboxing by adding it to the comma-separated list in `about:config`:
 
@@ -155,7 +154,7 @@ security.sandbox.content.write_path_whitelist
 
 **Note:** The trailing slash on `/dev/snd/` is important, otherwise *apulse* will report "Permission denied" errors.
 
-If you are using Firefox 58 or above and have no audio even when using *apulse*, try adding `16` to `security.sandbox.content.syscall_whitelist` in `about:config`.
+If you have no audio even when using *apulse*, try adding `16` to `security.sandbox.content.syscall_whitelist` in `about:config`.
 
 #### Open-with extension
 
@@ -191,7 +190,7 @@ When your default language choice does not stick, see [#Firefox does not remembe
 
 ## Plugins
 
-**Note:** Firefox [has removed support](https://support.mozilla.org/en-US/kb/npapi-plugins) for [NPAPI](https://en.wikipedia.org/wiki/NPAPI "w:NPAPI") plugins, except for Flash. Firefox ESR 52 ([firefox-esr52](https://aur.archlinux.org/packages/firefox-esr52/)) will support plugins until August 2018.
+**Note:** Firefox [has removed support](https://support.mozilla.org/en-US/kb/npapi-plugins) for [NPAPI](https://en.wikipedia.org/wiki/NPAPI "w:NPAPI") plugins, except for Flash.
 
 See the main article: [Browser plugins](/index.php/Browser_plugins "Browser plugins")
 
@@ -261,16 +260,9 @@ The possible values are:
 *   `**2**`: Block popups from plugins.
 *   `**3**`: Block popups from plugins, even on whitelisted sites.
 
-### Middle-click errors
+### Middle-click behavior
 
-A common error message you can get while using the middle mouse button in Firefox is:
-
-```
-The URL is not valid and cannot be loaded.
-
-```
-
-Another symptom is that middle-clicking results in unexpected behavior, like accessing a random web page. The reason stems from the use of the middle mouse buttons in UNIX-like operating systems. The middle mouse button is used to paste whatever text has been highlighted/added to the clipboard. Then there is the possibly conflicting feature in Firefox, which defaults to loading the URL of the corresponding text when the button is depressed. This can be disabled by setting `middlemouse.contentLoadURL` and `middlemouse.paste` to `false` in `about:config`.
+To use the middle mouse button to paste whatever text has been highlighted/added to the clipboard, as is common in UNIX-like operating systems, set either `middlemouse.contentLoadURL` or `middlemouse.paste` to `true` in `about:config`. Having `middlemouse.contentLoadURL` enabled was the default behaviour prior to Firefox 57.
 
 To scroll on middle-click (default for Windows browsers) set `general.autoScroll` to `true`.
 
@@ -315,7 +307,7 @@ When you close Firefox, the latter saves the current timestamp and version of yo
 
 If you upgraded your plugin when Firefox was still running, you will thus have the wrong information inside that file. The next time you will restart Firefox you will get that message `Firefox has prevented the outdated plugin "XXXX" from running on ...` when you will be trying to open content dedicated to that plugin on the web. This problem often appears with the official [Adobe Flash Player plugin](/index.php/Browser_plugins#Adobe_Flash_Player "Browser plugins") which has been upgraded while Firefox was still running.
 
-The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[5]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
+The solution is to remove the file `pluginreg.dat` from your profile and that is it. Firefox will not complain about the missing file as it will be recreated the next time Firefox will be closed. [[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=1109795#c16)
 
 ### Javascript context menu does not appear on some sites
 
@@ -331,23 +323,19 @@ The default spell checking language can be set as follows:
 
 When you only have system wide dictionaries installed with [hunspell](https://www.archlinux.org/packages/?name=hunspell), Firefox might not remember your default dictionary language settings. This can be fixed by having at least one [dictionary](https://addons.mozilla.org/firefox/language-tools/) installed as a Firefox plugin. Notice that now you will also have a tab **Dictionaries** in **add-ons**.
 
-Related questions on the **StackExchange** platform: [[6]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[7]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[8]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
+Related questions on the **StackExchange** platform: [[5]](https://stackoverflow.com/questions/26936792/change-firefox-spell-check-default-language/29446115), [[6]](https://stackoverflow.com/questions/21542515/change-default-language-on-firefox/29446353), [[7]](https://askubuntu.com/questions/184300/how-can-i-change-firefoxs-default-dictionary/576877)
 
 Related bug reports: [Bugzilla 776028](https://bugzilla.mozilla.org/show_bug.cgi?id=776028), [Ubuntu bug 1026869](https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/1026869)
 
 ### Some MathML symbols are missing
 
-You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[9]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
+You need some Math fonts, namely Latin Modern Math and STIX (see this MDN page: [[8]](https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/Fonts#Linux)), to display MathML correctly.
 
 In Arch Linux, these fonts are provided by [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) **and** [texlive-fontsextra](https://www.archlinux.org/packages/?name=texlive-fontsextra), but they are not available to fontconfig by default. See [TeX Live#Fonts](/index.php/TeX_Live#Fonts "TeX Live") for details. You can also try other [Math fonts](/index.php/Fonts#Math "Fonts").
 
 ### Tearing video in fullscreen mode
 
 If you are using the Xorg Intel or Nouveau drivers and experience tearing video in fullscreen mode, try [Firefox tweaks#Enable OpenGL Off-Main-Thread Compositing (OMTC)](/index.php/Firefox_tweaks#Enable_OpenGL_Off-Main-Thread_Compositing_.28OMTC.29 "Firefox tweaks").
-
-### Firefox ESR 52 looks bad
-
-Firefox 52 [does not support](https://bugzilla.mozilla.org/show_bug.cgi?id=1264079) GTK+ >=3.20 and may look unsightly as a result. A possible resolution is compiling Firefox against GTK2 instead, see [firefox-esr-gtk2](https://aur.archlinux.org/packages/firefox-esr-gtk2/).
 
 ### Firefox WebRTC module cannot detect a microphone
 

@@ -31,11 +31,13 @@ This page is intended to be a page to demystify common terms used among the Arch
 
 ## ABS
 
-The [Arch Build System](/index.php/Arch_Build_System "Arch Build System") (ABS) is useful to:
+ABS stands for [Arch build system](/index.php/Arch_build_system "Arch build system") and can be used for:
 
-*   Make new packages of software for which no packages are yet available
-*   Customize/modify existing packages to fit your needs (enabling or disabling options)
-*   Re-build your entire system using your compiler flags, "a la Gentoo"
+*   Making new packages for software that has no packages available yet
+*   Customizing/modifying existing packages to fit your needs:
+    *   Enabling/disabling build-time options
+    *   Applying source changes via patches
+*   Re-building your entire system using your compiler flags, "a la Gentoo"
 *   Getting kernel modules working with your custom kernel
 
 ABS is not necessary to use Arch Linux, but it is useful.

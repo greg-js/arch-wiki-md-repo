@@ -2,6 +2,7 @@ Related articles
 
 *   [Firefox](/index.php/Firefox "Firefox")
 *   [Tor](/index.php/Tor "Tor")
+*   [Browser extensions](/index.php/Browser_extensions "Browser extensions")
 *   [Browser Plugins](/index.php/Browser_Plugins "Browser Plugins")
 *   [Firefox/Tweaks](/index.php/Firefox/Tweaks "Firefox/Tweaks")
 *   [Firefox/Profile on RAM](/index.php/Firefox/Profile_on_RAM "Firefox/Profile on RAM")
@@ -49,7 +50,7 @@ Firefox gained an option for [tracking protection](https://support.mozilla.org/e
 
 Apart from privacy benefits, enabling [tracking protection](http://venturebeat.com/2015/05/24/firefoxs-optional-tracking-protection-reduces-load-time-for-top-news-sites-by-44/) may also reduce load time by 44%.
 
-Note that this is not a replacement for ad blocking extensions such as [Browser extensions#uBlock Origin](/index.php/Browser_extensions#uBlock_Origin "Browser extensions") and it may or may not work with [Firefox forks](/index.php/List_of_applications/Internet#Firefox_spin-offs "List of applications/Internet"). If you are already running such an ad blocker with the correct lists, tracking protection might be redundant.
+Note that this is not a replacement for ad blocking extensions such as [uBlock Origin](/index.php/Browser_extensions#uBlock_Origin "Browser extensions") and it may or may not work with [Firefox forks](/index.php/List_of_applications/Internet#Firefox_spin-offs "List of applications/Internet"). If you are already running such an ad blocker with the correct lists, tracking protection might be redundant.
 
 ### Change browser time zone
 
@@ -158,7 +159,7 @@ For more detailed configuration see the [NoScript FAQ](http://noscript.net/faq).
 
 [CanvasBlocker](https://addons.mozilla.org/firefox/addon/canvasblocker/) Blocks or fakes the JS-API for modifying <canvas> to prevent Canvas-Fingerprinting.</canvas>
 
-**Note:** Mozilla is adding a built-in permission system to allow blocking of HTML5 canvas image track requests, [targeted for release with verion 59](https://wiki.mozilla.org/Security/Fingerprinting "mozillawiki:Security/Fingerprinting").
+**Tip:** Firefox has a built-in anti-fingerprinting feature that can be enabled by setting `privacy.resistFingerprinting` to `true` in `about:config`.
 
 ## Remove system-wide hidden extensions
 

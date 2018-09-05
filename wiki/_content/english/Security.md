@@ -157,7 +157,7 @@ You can refer to the [pam_cracklib(8)](https://jlk.fjfi.cvut.cz/arch/manpages/ma
 
 Once the computer is powered on and the drive is mounted, however, its data becomes just as vulnerable as an unencrypted drive. It is therefore best practice to unmount data partitions as soon as they are no longer needed.
 
-Certain programs, like [Dm-crypt](/index.php/Dm-crypt "Dm-crypt"), allow the user to encrypt a loop file as a virtual volume. This is a reasonable alternative to full disk encryption when only certain parts of the system need be secure.
+Certain programs, like [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), allow the user to encrypt a loop file as a virtual volume. This is a reasonable alternative to full disk encryption when only certain parts of the system need be secure.
 
 ### File systems
 
@@ -175,7 +175,6 @@ Relevant mount options are:
 *   `nosuid`: Do not allow set-user-identifier or set-group-identifier bits to take effect.
 *   `noexec`: Do not allow direct execution of any binaries on the mounted filesystem.
     *   Setting `noexec` on `/home` disallows executable scripts and breaks [Wine](/index.php/Wine "Wine") and [Steam](/index.php/Steam "Steam").
-    *   Applications using QML may crash or not work properly starting with Qt 5.8 if `noexec` is set on `/var` or `/home`. A workaround is available at [Qt#Applications using QML crash or don't work with Qt 5.8 - 5.10](/index.php/Qt#Applications_using_QML_crash_or_don.27t_work_with_Qt_5.8_-_5.10 "Qt").
     *   Some packages (building [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) for example) may require `exec` on `/var`.
 
 Partitions used for data should always be mounted with `nodev`, `nosuid` and `noexec`.
@@ -278,7 +277,11 @@ Using [sudo](/index.php/Sudo "Sudo") for privileged access is preferable to [su]
 # visudo
 
 ```
- `/etc/sudoers`  `alice ALL = NOPASSWD: /path/to/program` 
+ `/etc/sudoers` 
+```
+alice ALL = NOPASSWD: /path/to/program
+
+```
 
 Or, individual commands can be allowed for all users. To mount Samba shares from a server as a regular user:
 
@@ -302,7 +305,7 @@ Exporting `# EDITOR=nano visudo` is regarded as a severe security risk since eve
 Running a text editor as root can be a security vulnerability as many editors can run arbitrary shell commands or affect files other than the one you intend to edit. To avoid this, use `sudoedit filename` (equivalently, `sudo -e filename`) to edit files. This edits a copy of the file using your normal user privileges and then overwrites the original using sudo only after the editor is closed. You can change the editor this uses by setting the `SUDO_EDITOR` environment variable:
 
 ```
-export SUDO_EDITOR=vim
+$ export SUDO_EDITOR=vim
 
 ```
 
@@ -380,6 +383,7 @@ Offset to library randomisation (ET_EXEC): 32 quality bits (guessed)
 Offset to library randomisation (ET_DYN) : 34 quality bits (guessed)
 Randomization under memory exhaustion @~0: 32 bits (guessed)
 Randomization under memory exhaustion @0 : 32 bits (guessed)
+
 ```
  `linux` 
 ```
@@ -398,6 +402,7 @@ Offset to library randomisation (ET_EXEC): 28 quality bits (guessed)
 Offset to library randomisation (ET_DYN) : 28 quality bits (guessed)
 Randomization under memory exhaustion @~0: 28 bits (guessed)
 Randomization under memory exhaustion @0 : 28 bits (guessed)
+
 ```
 
 ##### 32-bit processes (on an x86_64 kernel)
@@ -453,7 +458,7 @@ The kernel logs contain useful information for an attacker trying to exploit ker
 
 **Note:** [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) sets `kptr_restrict=2` by default rather than `0`.
 
-Setting `kernel.kptr_restrict` to 1 will hide kernel symbol addresses in `/proc/kallsyms` from regular users without `CAP_SYSLOG`, making it more difficult for kernel exploits to resolve addresses/symbols dynamically. This will not help that much on a pre-compiled Arch Linux kernel, since a determined attacker could just download the kernel package and get the symbols manually from there, but if you're compiling your own kernel, this can help mitigating local root exploits. This will break some [perf](https://www.archlinux.org/packages/?name=perf) commands when used by non-root users (but many [perf](https://www.archlinux.org/packages/?name=perf) features require root access anyway). See [FS#34323](https://bugs.archlinux.org/task/34323) for more information.
+Setting `kernel.kptr_restrict` to 1 will hide kernel symbol addresses in `/proc/kallsyms` from regular users without `CAP_SYSLOG`, making it more difficult for kernel exploits to resolve addresses/symbols dynamically. This will not help that much on a pre-compiled Arch Linux kernel, since a determined attacker could just download the kernel package and get the symbols manually from there, but if you are compiling your own kernel, this can help mitigating local root exploits. This will break some [perf](https://www.archlinux.org/packages/?name=perf) commands when used by non-root users (but many [perf](https://www.archlinux.org/packages/?name=perf) features require root access anyway). See [FS#34323](https://bugs.archlinux.org/task/34323) for more information.
 
 Setting `kernel.kptr_restrict` to 2 will hide kernel symbol addresses in `/proc/kallsyms` regardless of privileges.
 
@@ -487,7 +492,7 @@ Arch enables the Yama LSM by default, providing a `kernel.yama.ptrace_scope` fla
 
 The kernel has the ability to hide other users' processes, normally accessible via `/proc`, from unprivileged users by mounting the `proc` filesystem with the `hidepid=` and `gid=` options documented [here](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/filesystems/proc.txt#n1919).
 
-This greatly complicates an intruder's task of gathering information about running processes, whether some daemon runs with elevated privileges, whether other user runs some sensitive program, whether other users run any program at all, makes it impossible to learn whether any user runs a specific program (given the program doesn't reveal itself by its behaviour), and, as an additional bonus, poorly written programs passing sensitive information via program arguments are now protected against local eavesdroppers.
+This greatly complicates an intruder's task of gathering information about running processes, whether some daemon runs with elevated privileges, whether other user runs some sensitive program, whether other users run any program at all, makes it impossible to learn whether any user runs a specific program (given the program does not reveal itself by its behaviour), and, as an additional bonus, poorly written programs passing sensitive information via program arguments are now protected against local eavesdroppers.
 
 The `proc` [group](/index.php/Users_and_groups#System_groups "Users and groups"), provided by the [filesystem](https://www.archlinux.org/packages/?name=filesystem) package, acts as a whitelist of users authorized to learn other users' process information. If users or services need access to `/proc/<pid>` directories beyond their own, [add them to the group](/index.php/Users_and_groups#Group_management "Users and groups").
 
@@ -562,7 +567,7 @@ If you have a domain name, set a [Sender Policy Framework](/index.php/Sender_Pol
 
 Proxies are commonly used as an extra layer between applications and the network, sanitizing data from untrusted sources. The attack surface of a small proxy running with lower privileges is significantly smaller than a complex application running with the end user privileges.
 
-For example the DNS resolver is implemented in [glibc](https://www.archlinux.org/packages/?name=glibc), that is linked with the application (that may be running as root), so a bug in the DNS resolver might lead to a remote code execution. This can be prevented by installing a DNS caching server, such as [Dnsmasq](/index.php/Dnsmasq "Dnsmasq"), which acts as a proxy. [[2]](https://googleonlinesecurity.blogspot.it/2016/02/cve-2015-7547-glibc-getaddrinfo-stack.html)
+For example the DNS resolver is implemented in [glibc](https://www.archlinux.org/packages/?name=glibc), that is linked with the application (that may be running as root), so a bug in the DNS resolver might lead to a remote code execution. This can be prevented by installing a DNS caching server, such as [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), which acts as a proxy. [[2]](https://googleonlinesecurity.blogspot.it/2016/02/cve-2015-7547-glibc-getaddrinfo-stack.html)
 
 ### Managing SSL certificates
 

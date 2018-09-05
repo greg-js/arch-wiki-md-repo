@@ -26,7 +26,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Blender_(software) "wikipedia:Ble
 
 ## GPU Rendering
 
-Blender only officially supports only the proprietary drivers from both AMD (for GCN cards: [AMDGPU](/index.php/AMDGPU "AMDGPU"); For pre-GCN cards: [ATI](/index.php/ATI "ATI")) and [NVIDIA](/index.php/NVIDIA "NVIDIA"). After installing the proprietary drivers, one can select the graphics card as a compute device under **File -> User Preferences -> System**.
+Blender only officially supports only the proprietary drivers from both AMD (for GCN cards: [AMDGPU](/index.php/AMDGPU "AMDGPU"); For pre-GCN cards: [ATI](/index.php/ATI "ATI")) and [NVIDIA](/index.php/NVIDIA "NVIDIA"). After installing the proprietary drivers, one can select the graphics card as a compute device under *File > User Preferences > System*.
 
 ## Professional Rendering Plugins
 
@@ -34,11 +34,11 @@ Blender is becoming increasingly well known in the professional industry. As suc
 
 ### LuxCoreRender
 
-[LuxCoreRender](https://luxcorerender.org/) is an open source rendering method that can also make use of OpenCL to render. To make use of it, simple install the package ([blender-plugin-luxcorerender](https://aur.archlinux.org/packages/blender-plugin-luxcorerender/)) from the AUR, Then enable the LuxCoreRender addon in the User Preferences box in Blender.
+[LuxCoreRender](https://luxcorerender.org/) is an open source rendering method that can also make use of OpenCL to render. To make use of it, simple install the ([blender-plugin-luxcorerender](https://aur.archlinux.org/packages/blender-plugin-luxcorerender/)) package, Then enable the LuxCoreRender addon in the User Preferences box in Blender.
 
 ### RenderMan
 
-RenderMan is a linux compatible proprietary rendering plugin that is free for use with blender under a non-commercial licence. See the [Renderman page](http://renderman.pixar.com/view/renderman4blender) for setting it up with blender.
+RenderMan is a Linux compatible proprietary rendering plugin that is free for use with blender under a non-commercial license. See the [Renderman page](http://renderman.pixar.com/view/renderman4blender) for setting it up with blender.
 
 ### Pro-Render
 
@@ -56,13 +56,13 @@ RenderMan is a linux compatible proprietary rendering plugin that is free for us
 
 ### Blender is slow to select objects
 
-When using onboard Intel graphics it may take 5-10 seconds to select an object. Change **Selection** in **File -> User Preferences -> System** to **OpenGL Occlusion Queries**.
+When using onboard Intel graphics it may take 5-10 seconds to select an object. Change *Selection* in *File > User Preferences > System* to *OpenGL Occlusion Queries*.
 
 ### Blender UI graphical corruption on AMDGPU driver
 
-You may experience graphical corruption on the Blender user interface. Until this is fixed, the workaround is to use Triple Buffering for blender, that however may increase VRAM usage. This can be enabled by going to **File -> User Preferences -> System**, changing the **Window Draw Method** to **Triple Buffering**.
+You may experience graphical corruption on the Blender user interface. Until this is fixed, the workaround is to use Triple Buffering for blender, that however may increase VRAM usage. This can be enabled by going to *File > User Preferences > System*, changing the *Window Draw Method* to *Triple Buffering*.
 
-Another workaround for this bug is by installing from the AUR. ([blender-git](https://aur.archlinux.org/packages/blender-git/)) This fixes the graphical corruption on AMDGPU drivers without needing to enable **Triple Buffering**.
+Another workaround for this bug is to use the development version of Blender ([blender-git](https://aur.archlinux.org/packages/blender-git/)). This fixes the graphical corruption on AMDGPU drivers without needing to enable **Triple Buffering**.
 
 ### Blender does not show the AMD card as an OpenCL rendering device
 
@@ -71,9 +71,9 @@ Blender only supports the official AMD proprietary drivers for rendering with Op
 *   Install [AMDGPU#AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU")
 *   Install [opencl-amd](https://aur.archlinux.org/packages/opencl-amd/) driver alongside the open source AMDGPU driver
 
-After installation, the AMD GPU should now appear as a selectable device under **File -> User Preferences -> System -> Compute Device**.
+After installation, the AMD GPU should now appear as a selectable device under *File > User Preferences > System > Compute Device*.
 
 ## See also
 
-*   [/r/blender wiki](https://www.reddit.com/r/blender/wiki/index) on reddit.com
 *   [Blender manual](https://docs.blender.org/manual/en/dev/)
+*   [/r/blender wiki](https://www.reddit.com/r/blender/wiki/index) on reddit.com

@@ -45,7 +45,7 @@
         *   [1.3.11 Game development](#Game_development)
     *   [1.4 Text input](#Text_input)
         *   [1.4.1 Character selectors](#Character_selectors)
-        *   [1.4.2 Virtual keyboards](#Virtual_keyboards)
+        *   [1.4.2 On-screen keyboards](#On-screen_keyboards)
         *   [1.4.3 Keyboard layout switchers](#Keyboard_layout_switchers)
         *   [1.4.4 Input methods](#Input_methods)
     *   [1.5 Disks](#Disks)
@@ -1101,7 +1101,7 @@ See also [Wikipedia:List of game engines](https://en.wikipedia.org/wiki/List_of_
 
 	[https://utils.kde.org/projects/kcharselect/](https://utils.kde.org/projects/kcharselect/) || [kcharselect](https://www.archlinux.org/packages/?name=kcharselect)
 
-#### Virtual keyboards
+#### On-screen keyboards
 
 *   **CellWriter** — Grid-entry handwriting recognition input panel.
 

@@ -661,7 +661,7 @@ See also [Music Player Daemon#Clients](/index.php/Music_Player_Daemon#Clients "M
 
 	[https://wiki.gnome.org/Apps/Lollypop](https://wiki.gnome.org/Apps/Lollypop) || [lollypop](https://www.archlinux.org/packages/?name=lollypop)
 
-*   **Muine** — A music player written in C Sharp.
+*   **[Muine](https://en.wikipedia.org/wiki/Muine "wikipedia:Muine")** — A music player written in C Sharp.
 
 	[https://muine.gooeylinux.org/](https://muine.gooeylinux.org/) || [muine](https://www.archlinux.org/packages/?name=muine)
 

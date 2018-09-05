@@ -68,7 +68,7 @@
 | <small>5.</small> [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)") <small>(5)</small> |
 | <small>5.1.</small> [Sistema de Nombres de Dominio (DNS)](/index.php/Category:Domain_Name_System_(Espa%C3%B1ol) "Category:Domain Name System (Español)") <small>(5)</small> |
 | <small>5.2.</small> [Protocolo de Transferencia de Archivos (FTP)](/index.php/Category:File_Transfer_Protocol_(Espa%C3%B1ol) "Category:File Transfer Protocol (Español)") <small>(1)</small> |
-| <small>5.3.</small> [Cortafuegos](/index.php/Category:Firewalls_(Espa%C3%B1ol) "Category:Firewalls (Español)") <small>(4) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small> |
+| <small>5.3.</small> [Cortafuegos](/index.php/Category:Firewalls_(Espa%C3%B1ol) "Category:Firewalls (Español)") <small>(6) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small> |
 | <small>5.4.</small> [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)") <small>(7) (también en [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)"))</small> |
 | <small>5.4.1.</small> [Clientes de correo electrónico](/index.php/Category:Email_clients_(Espa%C3%B1ol) "Category:Email clients (Español)") <small>(1)</small> |
 | <small>5.4.2.</small> [Internet Relay Chat (IRC)](/index.php/Category:Internet_Relay_Chat_(Espa%C3%B1ol) "Category:Internet Relay Chat (Español)") <small>(3)</small> |
@@ -118,7 +118,7 @@
 | <small>6.13.</small> [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)") <small>(11)</small> |
 | <small>6.13.1.</small> [Encriptación](/index.php/Category:Encryption_(Espa%C3%B1ol) "Category:Encryption (Español)") <small>(5)</small> |
 | <small>6.13.1.1.</small> [Disk encryption](/index.php/Category:Disk_encryption_(Espa%C3%B1ol) "Category:Disk encryption (Español)") <small>(1) (también en [Sistemas de archivos](/index.php/Category:File_systems_(Espa%C3%B1ol) "Category:File systems (Español)"))</small> |
-| <small>6.13.2.</small> [Cortafuegos](/index.php/Category:Firewalls_(Espa%C3%B1ol) "Category:Firewalls (Español)") <small>(4) (también en [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
+| <small>6.13.2.</small> [Cortafuegos](/index.php/Category:Firewalls_(Espa%C3%B1ol) "Category:Firewalls (Español)") <small>(6) (también en [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
 | <small>6.13.3.</small> [Servidores proxy](/index.php/Category:Proxy_servers_(Espa%C3%B1ol) "Category:Proxy servers (Español)") <small>(2) (también en [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
 | <small>6.13.4.</small> [Intérprete de órdenes seguras](/index.php/Category:Secure_Shell_(Espa%C3%B1ol) "Category:Secure Shell (Español)") <small>(5) (también en [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
 | <small>6.14.</small> [Recuperación del sistema](/index.php/Category:System_recovery_(Espa%C3%B1ol) "Category:System recovery (Español)") <small>(8)</small> |

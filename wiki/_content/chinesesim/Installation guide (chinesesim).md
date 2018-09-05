@@ -316,7 +316,7 @@ zh_TW.UTF-8 UTF-8
 
 你需要安装 Linux 引导程序以在安装后启动系统，你可以使用的的引导程序在 [启动加载器](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)") 中，请选择一个并且安装并配置它，比如 [GRUB](/index.php/GRUB "GRUB")。
 
-如果你使用 Intel CPU，那么需要安装 [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) 并 [启用英特尔微码更新](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode")。
+如果你使用 Intel 或者 AMD 的 CPU，那么需要[启用微码更新](/index.php/Microcode "Microcode")。
 
 ## 重启
 

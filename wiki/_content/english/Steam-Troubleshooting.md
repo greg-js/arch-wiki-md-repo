@@ -453,7 +453,7 @@ Installing breakpad exception handler for appid(steam)/version(0_client)
 
 ```
 
-Then nothing else happens. Ensure you have the correct drivers installed as well as their 32-bit versions: see [NVIDIA#Installation](/index.php/NVIDIA#Installation "NVIDIA").
+Then nothing else happens. Ensure you have the correct drivers installed as well as their 32-bit versions (the 64-bit and 32-bit variants have to have the same versions): see [NVIDIA#Installation](/index.php/NVIDIA#Installation "NVIDIA").
 
 ### Killing standalone compositors when launching games
 

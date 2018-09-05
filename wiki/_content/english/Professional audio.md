@@ -1,6 +1,7 @@
 Related articles
 
 *   [Sound system](/index.php/Sound_system "Sound system")
+*   [JACK](/index.php/JACK "JACK")
 *   [envy24control](/index.php/Envy24control "Envy24control")
 
 Modern Linux systems are more than capable of supporting your (semi-)professional audio needs. Latencies of 5ms down to even as low as 1ms can be achieved with good hardware and proper configuration.
@@ -560,3 +561,4 @@ For all your Arch- and ArchAudio-related audio issues hop on to **IRC**: #archau
 *   #archlinux-proaudio on freenode.net: Arch Linux pro-audio channel
 *   #lau on freenode.net: General Linux Audio channel for users
 *   #lad on freenode.net: General Linux AUdio channel for developers
+*   #opensourcemusicians on freenode.net: Large general OSS musician discussion channel

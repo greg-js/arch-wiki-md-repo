@@ -109,7 +109,12 @@ O [udev](/index.php/Udev "Udev") deve detectar sua [interface de rede](https://e
 
 Após, veja se o driver foi carregado usando `dmesg | grep *nome_módulo*`. Exemplo:
 
- `$ dmesg `  ` grep | atl1` 
+ `$ dmesg | grep atl1` 
+```
+...
+atl1 0000:02:00.0: eth0 link is up 100 Mbps full duplex
+
+```
 
 Pule para a próxima sessão caso o driver tenha sido carregado com sucesso. Caso contrário, você precisará descobrir qual é o módulo necessário para o seu modelo de interface de rede em específico.
 

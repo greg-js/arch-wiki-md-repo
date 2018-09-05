@@ -64,7 +64,7 @@ Related articles
 
 **Tip:** `-i` Опция автовыбора пакетов. AТак как вам не нужно установить ядро Linux в контейнере, вы можете удалить его из списка выбора пакета для экономии места. Подробнее [Pacman#Usage](/index.php/Pacman#Usage "Pacman").
 
-**Note:** The package [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) required by [linux](https://www.archlinux.org/packages/?name=linux), which is included in the [base](https://www.archlinux.org/groups/x86_64/base/) group and isn't necessary to run the container, causes some issues to `systemd-tmpfiles-setup.service` during the booting process with `systemd-nspawn`. It's possible to install the [base](https://www.archlinux.org/groups/x86_64/base/) group but excluding the [linux](https://www.archlinux.org/packages/?name=linux) package and its dependencies when building the container with `# pacstrap -i -c -d ~/MyContainer base --ignore linux [additional pkgs/groups]`. The `--ignore` flag will be simply passed to [pacman](https://www.archlinux.org/packages/?name=pacman). See [FS#46591](https://bugs.archlinux.org/task/46591) for more information.
+**Note:** Пакет [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) требуемый [linux](https://www.archlinux.org/packages/?name=linux), который входит в [base](https://www.archlinux.org/groups/x86_64/base/) группу и не требуется для запуска контейнера, вызывает некоторые проблемы с `systemd-tmpfiles-setup.service` во время процесса загрузки с `systemd-nspawn`. Можно установить [base](https://www.archlinux.org/groups/x86_64/base/) группу, но исключая пакет [linux](https://www.archlinux.org/packages/?name=linux) и его зависимости при сборке контейнера с помощью `# pacstrap -i -c -d ~/MyContainer base --ignore linux [additional pkgs/groups]`. Флаг `--ignore` будет просто передан [pacman](https://www.archlinux.org/packages/?name=pacman). См. [FS#46591](https://bugs.archlinux.org/task/46591) для получения дополнительной информации.
 
 После того, как ваша установка будет завершена, загружается в контейнер:
 
@@ -76,11 +76,11 @@ Related articles
 
 Контейнер может быть выключен, запустив `poweroff` внутри контейнера. От root, контейнеры можно управлять с помощью метода [machinectl](#machinectl)инструмент.
 
-**Note:** To terminate the *session* from within the container, hold `Ctrl` and rapidly press `]` three times. Non-US keyboard users should use `%` instead of `]`.
+**Note:** Чтобы завершить сеанс из контейнера, удерживайте клавишу `Ctrl` и быстро нажмите `]` три раза. Non-US keyboard users should use `%` instead of `]`.
 
 #### Bootstrap Arch Linux i686 inside x86_64 host
 
-It is possible to install a minimal i686 Arch Linux inside a subdirectory and use it as systemd-nspawn container instead of [chroot](/index.php/Chroot "Chroot") or [virtualization](/index.php/Virtualization "Virtualization"). This is useful for testing `PKGBUILD` compilation for i686 and other tasks. Make sure you use a `pacman.conf` **without** `multilib` repository.
+Можно установить минимальный I686 Arch Linux внутри подкаталога и использовать его в качестве контейнера systemd-nspawn вместо [chroot](/index.php/Chroot "Chroot") или [virtualization](/index.php/Virtualization "Virtualization"). Это полезно для тестирования компиляции `PKGBUILD` для i686 и других задач. Убедитесь, что используете `pacman.сonf` **без** `multilib` репозитория.
 
 ```
  # pacman_conf=/tmp/pacman.conf # this is pacman.conf without multilib
@@ -89,9 +89,9 @@ It is possible to install a minimal i686 Arch Linux inside a subdirectory and us
 
 ```
 
-You may deselect `linux` from `base` group, since the resulting bootstrap directory is not meant to be booted on real or virtualized hardware.
+Вы можете исключить `linux` из `base` группы, поскольку результирующий загрузочный каталог не предназначен для загрузки на реальном или виртуальном оборудовании.
 
-To start the resulting i686 Arch Linux systemd-nspawn instance, just issue the following command.
+Чтобы запустить полученный экземпляр i686 Arch Linux systemd-nspawn, выполните следующую команду.
 
 ```
  # linux32 systemd-nspawn -D /mnt/i686-archlinux

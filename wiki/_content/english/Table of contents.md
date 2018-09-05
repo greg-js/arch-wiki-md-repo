@@ -197,7 +197,7 @@
 | <small>6.10.</small> [Keyboard configuration](/index.php/Category:Keyboard_configuration "Category:Keyboard configuration") <small>(9) (also in [Keyboards](/index.php/Category:Keyboards "Category:Keyboards"))</small> |
 | <small>6.11.</small> [Linux console](/index.php/Category:Linux_console "Category:Linux console") <small>(4)</small> |
 | <small>6.12.</small> [Localization](/index.php/Category:Localization "Category:Localization") <small>(17)</small> |
-| <small>6.13.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(29)</small> |
+| <small>6.13.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(30)</small> |
 | <small>6.14.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(19)</small> |
 | <small>6.15.</small> [Security](/index.php/Category:Security "Category:Security") <small>(71)</small> |
 | <small>6.15.1.</small> [Cryptography](/index.php/Category:Cryptography "Category:Cryptography") <small>(5)</small> |

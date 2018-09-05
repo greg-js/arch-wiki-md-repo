@@ -29,34 +29,34 @@ HiDPI (High Dots Per Inch) 显示器，指的是在较小尺寸下却拥有较�
         *   [5.1.1 降低帧缓冲分辨率](#.E9.99.8D.E4.BD.8E.E5.B8.A7.E7.BC.93.E5.86.B2.E5.88.86.E8.BE.A8.E7.8E.87)
         *   [5.1.2 改变GRUB字体大小](#.E6.94.B9.E5.8F.98GRUB.E5.AD.97.E4.BD.93.E5.A4.A7.E5.B0.8F)
 *   [6 应用程序](#.E5.BA.94.E7.94.A8.E7.A8.8B.E5.BA.8F)
-    *   [6.1 Browsers](#Browsers)
+    *   [6.1 浏览器](#.E6.B5.8F.E8.A7.88.E5.99.A8)
         *   [6.1.1 Firefox](#Firefox)
         *   [6.1.2 Chromium / Google Chrome](#Chromium_.2F_Google_Chrome)
         *   [6.1.3 Opera](#Opera)
     *   [6.2 Thunderbird](#Thunderbird)
-    *   [6.3 Wine applications](#Wine_applications)
+    *   [6.3 Wine程序](#Wine.E7.A8.8B.E5.BA.8F)
     *   [6.4 Skype](#Skype)
     *   [6.5 Spotify](#Spotify)
-    *   [6.6 Zathura document viewer](#Zathura_document_viewer)
+    *   [6.6 Zathura 文档查看器](#Zathura_.E6.96.87.E6.A1.A3.E6.9F.A5.E7.9C.8B.E5.99.A8)
     *   [6.7 Sublime Text 3](#Sublime_Text_3)
     *   [6.8 IntelliJ IDEA](#IntelliJ_IDEA)
     *   [6.9 NetBeans](#NetBeans)
     *   [6.10 Gimp 2.8](#Gimp_2.8)
     *   [6.11 Steam](#Steam)
-        *   [6.11.1 Official HiDPI support](#Official_HiDPI_support)
-        *   [6.11.2 Unofficial](#Unofficial)
-    *   [6.12 Java applications](#Java_applications)
-    *   [6.13 Mono applications](#Mono_applications)
+        *   [6.11.1 官方 HiDPI支持](#.E5.AE.98.E6.96.B9_HiDPI.E6.94.AF.E6.8C.81)
+        *   [6.11.2 非官方](#.E9.9D.9E.E5.AE.98.E6.96.B9)
+    *   [6.12 Java 程序](#Java_.E7.A8.8B.E5.BA.8F)
+    *   [6.13 Mono 程序](#Mono_.E7.A8.8B.E5.BA.8F)
     *   [6.14 MATLAB](#MATLAB)
     *   [6.15 VirtualBox](#VirtualBox)
     *   [6.16 Zoom](#Zoom)
-    *   [6.17 Unsupported applications](#Unsupported_applications)
-*   [7 Multiple displays](#Multiple_displays)
+    *   [6.17 不支持的程序](#.E4.B8.8D.E6.94.AF.E6.8C.81.E7.9A.84.E7.A8.8B.E5.BA.8F)
+*   [7 多显示器](#.E5.A4.9A.E6.98.BE.E7.A4.BA.E5.99.A8)
     *   [7.1 Side display](#Side_display)
-    *   [7.2 Multiple external monitors](#Multiple_external_monitors)
-    *   [7.3 Mirroring](#Mirroring)
-*   [8 Linux console](#Linux_console)
-*   [9 See also](#See_also)
+    *   [7.2 多外部监视器](#.E5.A4.9A.E5.A4.96.E9.83.A8.E7.9B.91.E8.A7.86.E5.99.A8)
+    *   [7.3 镜像](#.E9.95.9C.E5.83.8F)
+*   [8 Linux 控制台](#Linux_.E6.8E.A7.E5.88.B6.E5.8F.B0)
+*   [9 另请参阅](#.E5.8F.A6.E8.AF.B7.E5.8F.82.E9.98.85)
 
 ## 桌面环境
 
@@ -293,13 +293,13 @@ GRUB_FONT="/boot/grubfont.pf2"
 
 ## 应用程序
 
-### Browsers
+### 浏览器
 
 #### Firefox
 
-Firefox should use the [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29) settings. However, the suggested `GDK_SCALE` suggestion doesn't consistently scale the entirety of Firefox, and doesn't work for fractional values (e.g., a factor of 158DPI/96DPI = 1.65 for a 1080p 14" laptop). You may want to use `GDK_DPI_SCALE` instead.
+Firefox 应到使用 [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29) 的设置。但是，建议的 `GDK_SCALE` 可能会使 Firefox 界面的缩放并不一致，并且不能使用小数.你可以使用`GDK_DPI_SCALE`来代替。
 
-To override those, open Firefox advanced preferences page (`about:config`) and set parameter `layout.css.devPixelsPerPx` to `2` (or find the one that suits you better; `2` is a good choice for Retina screens), but it also doesn't consistently scale the entirety of Firefox. If Firefox is not scaling fonts, you may want to create `userChrome.css` and add appropriate styles to it. More information about `userChrome.css` at [mozillaZine](http://kb.mozillazine.org/index.php?title=UserChrome.css).
+要覆盖这些设置，请打开 Firefox 的高级选项页面（`about:config`）并将 `layout.css.devPixelsPerPx` 设置为 `2`（或是其它需要的数值），但这个选项也可能导致 Firefox 界面的缩放不一致。如果 Firefox 没有缩放字体，您可能需要创建 `userChrome.css` 并添加适当的样式。有关 `userChrome.css`，请访问[mozillaZine](http://kb.mozillazine.org/index.php?title=UserChrome.css)。
 
  `~/.mozilla/firefox/*<profile>*/chrome/userChrome.css` 
 ```
@@ -317,52 +317,52 @@ To override those, open Firefox advanced preferences page (`about:config`) and s
 
 ```
 
-**Warning:** The following extension is not compatible with Firefox Quantum (version 57 and above).
+**警告:** 下面的扩展不支持 Firefox Quantum （57版本及以上）。
 
-If you use a HiDPI monitor such as Retina display together with another monitor, you can use [AutoHiDPI](https://addons.mozilla.org/en-US/firefox/addon/autohidpi/) add-on in order to automatically adjust `layout.css.devPixelsPerPx` setting for the active screen. Also, since Firefox version 49, it auto-scales based on your screen resolution, making it easier to deal with 2 or more screens.
+如果你将 HiDPI 显示器与另一台显示器一起使用，你可以使用 [AutoHiDPI](https://addons.mozilla.org/en-US/firefox/addon/autohidpi/) 来自动调整。另外，从 Firefox 49 以来，它会自动根据您的屏幕分辨率调整缩放，从而更容易处理多个屏幕的情况。
 
 #### Chromium / Google Chrome
 
-Chromium should use the [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29) settings.
+Chromium 应当使用[#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29)设置。
 
-To override those, use the `--force-device-scale-factor` flag with a scaling value. This will scale all content and ui, including tab and font size. For example `chromium --force-device-scale-factor=2`.
+要覆盖这一选项，请使用`--force-device-scale-factor` flags。这将缩放所有内容。例如：`chromium --force-device-scale-factor=2`。
 
-Using this option, a scaling factor of 1 would be normal scaling. Floating point values can be used. To make the change permanent, for Chromium, you can add it to `~/.config/chromium-flags.conf`:
+当此选项设为1时将会采用正常缩放，此选项也可以使用小数。要永久应用此更改，对于Chromium，可以将其添加到`~/.config/chromium-flags.conf`：
 
  `~/.config/chromium-flags.conf`  `--force-device-scale-factor=2` 
 
-To make this work for Chrome, add the same option to `~/.config/chrome-flags.conf` instead.
+对于Chrome，使用 `~/.config/chrome-flags.conf`。
 
-If you use a HiDPI monitor such as Retina display together with another monitor, you can use the [reszoom](https://chrome.google.com/webstore/detail/resolution-zoom/enjjhajnmggdgofagbokhmifgnaophmh) extension in order to automatically adjust the zoom level for the active screen.
+如果你将 HiDPI 显示器与另一台显示器一起使用，你可以使用 [reszoom](https://chrome.google.com/webstore/detail/resolution-zoom/enjjhajnmggdgofagbokhmifgnaophmh) 扩展。这个扩展将会根据所在屏幕自动调整缩放。
 
 #### Opera
 
-Opera should use the [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29) settings.
+Opera 应当使用 [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29) 设置。
 
-To override those, use the `--alt-high-dpi-setting=X` command line option, where X is the desired DPI. For example, with `--alt-high-dpi-setting=144` Opera will assume that DPI is 144\. Newer versions of opera will auto detect the DPI using the font DPI setting (in KDE: the force font DPI setting.)
+要覆盖这一选项，请使用 `--alt-high-dpi-setting=X` 命令行选项。其中 X 是所需的 DPI。例如，使用 `--alt-high-dpi-setting=144` Opera 将认为 DPI 是 144。在较新版本中，Opera 将使用字体DPI（在 KDE 中可以强制设置字体 DPI）。
 
 ### Thunderbird
 
-See [#Firefox](#Firefox). To access `about:config`, go to Edit → Preferences → Advanced → Config editor.
+参见[#Firefox](#Firefox)。要访问 `about:config`，打开 **首选项**→**高级**→**配置编辑器**。
 
-### Wine applications
+### Wine程序
 
-Run
+运行
 
 ```
 $ winecfg
 
 ```
 
-and change the "dpi" setting found in the "Graphics" tab. This only affects the font size.
+并且更改**显示**选项卡中的 DPI。这仅影响字体大小。
 
 ### Skype
 
-Skype for Linux ([skypeforlinux-stable-bin](https://aur.archlinux.org/packages/skypeforlinux-stable-bin/) package) uses [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29).
+Skype for Linux ([skypeforlinux-stable-bin](https://aur.archlinux.org/packages/skypeforlinux-stable-bin/)) 使用 [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29)。
 
 ### Spotify
 
-You can change scale factor by simple `Ctrl++` for zoom in, `Ctrl+-` for zoom out and `Ctrl+0` for default scale. Scaling setting will be saved in `~/.config/spotify/Users/YOUR-SPOTIFY-USER-NAME/prefs`:
+您可以简单的使用 `Ctrl++` 和 `Ctrl+-` 来调整缩放。使用 `Ctrl+0` 来恢复默认缩放。缩放设置保存在`~/.config/spotify/Users/YOUR-SPOTIFY-USER-NAME/prefs`：
 
  `~/.config/spotify/Users/YOUR-SPOTIFY-USER-NAME/prefs` 
 ```
@@ -370,18 +370,18 @@ app.browser.zoom-level=100
 
 ```
 
-Also Spotify can be launched with a custom scaling factor which will be multiplied with setting specified in `~/.config/spotify/Users/YOUR-SPOTIFY-USER-NAME/prefs`, for example
+Spotify 也可以使用自定义的缩放启动。这个系数和`~/.config/spotify/Users/YOUR-SPOTIFY-USER-NAME/prefs`中的系数相乘的积是实际的缩放倍数。
 
 ```
 $ spotify --force-device-scale-factor=1.5
 
 ```
 
-### Zathura document viewer
+### Zathura 文档查看器
 
-No modifications required for document viewing.
+文档缩放应当开箱即用。
 
-UI text scaling is specified via [configuration file](https://pwmt.org/projects/zathura/documentation/) (note that "font" is a [girara option](https://pwmt.org/projects/girara/options/)):
+UI缩放可以在[配置文件](https://pwmt.org/projects/zathura/documentation/)中设置 （注意 "font" 是一个[girara option](https://pwmt.org/projects/girara/options/))：
 
 ```
 set font "monospace normal 20"
@@ -390,64 +390,64 @@ set font "monospace normal 20"
 
 ### Sublime Text 3
 
-Sublime Text 3 has full support for display scaling. Go to Preferences > Settings > User Settings and add `"dpi_scale": 2.0` to your settings [(source)](http://blog.wxm.be/2014/08/30/sublime-text-3-and-high-dpi-on-linux.html).
+Sublime Text 3 完整支持显示缩放。在 **设置** → **用户设置** 中添加 `"dpi_scale": 2.0` [（来源）](http://blog.wxm.be/2014/08/30/sublime-text-3-and-high-dpi-on-linux.html)。
 
 ### IntelliJ IDEA
 
-IntelliJ IDEA 15 and above should include HiDPI support.[[1]](http://blog.jetbrains.com/idea/2015/07/intellij-idea-15-eap-comes-with-true-hidpi-support-for-windows-and-linux/) If it does not work, the most convenient way to fix the problem in this case seems to be changing the Override Default Fonts setting:
+IntelliJ IDEA 15 及以上应有对 HiDPI 的支持，[[1]](http://blog.jetbrains.com/idea/2015/07/intellij-idea-15-eap-comes-with-true-hidpi-support-for-windows-and-linux/) 如果这不能工作最简便的解决办法可能是覆盖默认的字体设置：
 
 	*File -> Settings -> Behaviour & Appearance -> Appearance*
 
-The addition of `-Dhidpi=true` to the vmoptions file in either `$HOME/.IdeaC14/` or `/usr/share/intelligj-idea-ultimate-edition/bin/` of [release 14](https://youtrack.jetbrains.com/issue/IDEA-114944) should not be required anymore.
+[14版本](https://youtrack.jetbrains.com/issue/IDEA-114944)中将 `-Dhidpi=true` 添加到 `$HOME/.IdeaC14/` 或 `/usr/share/intelligj-idea-ultimate-edition/bin/` 的方法应该不再需要了。
 
 ### NetBeans
 
-NetBeans allows the font size of its interface to be controlled using the `--fontsize` parameter during startup. To make this change permanent edit the `/usr/share/netbeans/etc/netbeans.conf` file and append the `--fontsize` parameter to the `netbeans_default_options` property.[[2]](http://wiki.netbeans.org/FaqFontSize)
+NetBeans 可以在启动时用`--fontsize`选项设置字体大小。要要使此设置永久生效，编辑`/usr/share/netbeans/etc/netbeans.conf`，添加`--fontsize`到`netbeans_default_options`。[[2]](http://wiki.netbeans.org/FaqFontSize)
 
-The editor fontsize can be controlled from Tools → Option → Fonts & Colors.
+编辑器字体大小可以在 Tools → Option → Fonts & Color 中设置。
 
-The output window fontsize can be controlled from Tools → Options → Miscelaneous → Output
+输出窗口的字体大小可以在Tools → Options → Miscelaneous → Output中控制。
 
 ### Gimp 2.8
 
-Use a high DPI theme, or adjust `gtkrc` of an existing theme. (Change all occurrences of the size `button` to `dialog`, for example `GimpToolPalette::tool-icon-size`.)
+使用 HiDPI主题，或是更改现有主题的 `gtkrc`。(Change all occurrences of the size `button` to `dialog`，例如`GimpToolPalette::tool-icon-size`。）
 
-There is also the [gimp-hidpi](https://github.com/jedireza/gimp-hidpi).
+另外也有 [gimp-hidpi](https://github.com/jedireza/gimp-hidpi)。
 
 ### Steam
 
-#### Official HiDPI support
+#### 官方 HiDPI支持
 
-*   Starting on 25 of January 2018 in the beta program there is actual support for HiDPI and it should be automatically detected.
-*   Steam -> Settings -> Interface -> check "Enlarge text and icons based on monitor size" (restart required)
-*   If it not automatically detected use `GDK_SCALE=2` to set the desired scale factor.
+*   从2018年1月25日开始，测试版本已经支持HiDPI并能自动启用。
+*   **Steam** → **设置** → **界面** → **勾选** **"按照显示器大小放大图标和文本（需要重启）"**
+*   如果自动检测并不能正确工作，使用`GDK_SCALE=2`来指定缩放级别。
 
-#### Unofficial
+#### 非官方
 
-The [HiDPI-Steam-Skin](https://github.com/MoriTanosuke/HiDPI-Steam-Skin) can be installed to increase the font size of the interface. While not perfect, it does improve usability.
+使用 [HiDPI-Steam-Skin](https://github.com/MoriTanosuke/HiDPI-Steam-Skin) 可以增大字体大小，虽然并不完美，但至少能用。
 
-**Note:** The README for the HiDPI skin lists several possible locations for where to place the skin. The correct folder out of these can be identified by the presence of a file named `skins_readme.txt`.
+**注意:** 皮肤的 README 列出了皮肤应当放置的位置。正确的位置下面应该有一个叫 `skins_readme.txt`的文件。
 
-[MetroSkin Unofficial Patch](http://steamcommunity.com/groups/metroskin/discussions/0/517142253861033946/) also helps with HiDPI on Steam with Linux.
+[MetroSkin Unofficial Patch](http://steamcommunity.com/groups/metroskin/discussions/0/517142253861033946/) 也可以使用。
 
-### Java applications
+### Java 程序
 
-Java applications using the AWT/Swing framework can be scaled by defining the sun.java2d.uiScale variable when invoking java. For example,
+可以通过设置 `sun.java2d.uiScale` 来缩放使用 AWT/Swing 框架的 Java 程序。例如：
 
 ```
 java -Dsun.java2d.uiScale=2 -jar some_application.jar
 
 ```
 
-Since Java 9 the GDK_SCALE environment variable is used to scale Swing applications accordingly.
+从 Java 9 开始，`GDK_SCALE` 也可以缩放 Swing 程序。
 
-### Mono applications
+### Mono 程序
 
-According to [[3]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870), Mono applications should be scalable like [GTK3](#GDK_3_.28GTK.2B_3.29) applications.
+根据 [[3]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870)，Mono 程序应像 [GTK3](#GDK_3_.28GTK.2B_3.29) 程序一样缩放。
 
 ### MATLAB
 
-Recent versions (R2017b) of [Matlab](/index.php/Matlab "Matlab") allow to set the scale factor:
+[Matlab](/index.php/Matlab "Matlab") 的近期版本(R2017b)可以设置缩放：
 
 ```
 >> s = settings;s.matlab.desktop.DisplayScaleFactor
@@ -455,15 +455,15 @@ Recent versions (R2017b) of [Matlab](/index.php/Matlab "Matlab") allow to set th
 
 ```
 
-The settings take effect after MATLAB is restarted.
+此设置将在重启 Matlab 后生效。
 
 ### VirtualBox
 
-**Note:** This ony applies to KDE with scaling enabled.
+**注意:** 这仅对 KDE 生效。
 
-VirtualBox also applies the system-wide scaling to the virtual monitor, which reduces the maximum resolution inside VMs by your scaling factor (see [[4]](https://www.virtualbox.org/ticket/16604)).
+VirtualBox 按照系统的缩放级别缩放虚拟监视器，从而降低虚拟机的最大分辨率（参见[[4]](https://www.virtualbox.org/ticket/16604)）。
 
-This can be worked around by calculating the inverse of your scaling factor and manually setting this new scaling factor for the VirtualBox execution, e.g.
+可以单独缩小 VirtualBox 来绕过这个问题：
 
 ```
 $ QT_SCALE_FACTOR=0.5 VirtualBox --startvm vm-name
@@ -472,24 +472,24 @@ $ QT_SCALE_FACTOR=0.5 VirtualBox --startvm vm-name
 
 ### Zoom
 
-Zoom can be started with a proper scaling by overriding the `QT_SCALE_FACTOR` environment variable.
+可以指定`QT_SCALE_FACTOR`来启动 Zoom：
 
 ```
 $ QT_SCALE_FACTOR=2 zoom
 
 ```
 
-### Unsupported applications
+### 不支持的程序
 
-[run_scaled-git](https://aur.archlinux.org/packages/run_scaled-git/) can be used to scale applications (which uses [xpra](https://www.archlinux.org/packages/?name=xpra) internally).
+[run_scaled-git](https://aur.archlinux.org/packages/run_scaled-git/) 可以缩放应用程序（内部使用[xpra](https://www.archlinux.org/packages/?name=xpra)）。
 
-Another approach is to run the application full screen and without decoration in its own VNC desktop. Then scale the viewer. With Vncdesk ([vncdesk-git](https://aur.archlinux.org/packages/vncdesk-git/) from the [AUR](/index.php/AUR "AUR")) you can set up a desktop per application, then start server and client with a simple command such as `vncdesk 2`.
+另一个办法是使每个程序在各自的 VNC 桌面上运行。要缩放 VNC 查看器，使用[vncdesk-git](https://aur.archlinux.org/packages/vncdesk-git/)。你可以为每个程序设置单独的桌面，使用简单的命令启动客户端和服务端，例如`vncdesk 2`。
 
-[x11vnc](/index.php/X11vnc "X11vnc") has an experimental option `-appshare`, which opens one viewer per application window. Perhaps something could be hacked up with that.
+[x11vnc](/index.php/X11vnc "X11vnc") 有一个实验性的选项 `-appshare`，可以为每个窗口单独打开一个 VNC 查看器。也许我们可以在上面做些文章。
 
-## Multiple displays
+## 多显示器
 
-The HiDPI setting applies to the whole desktop, so non-HiDPI external displays show everything too large. However, note that setting different scaling factors for different monitors is already supported in [Wayland](/index.php/Wayland "Wayland").
+HIDPI 将会对整个桌面生效，所以如果你同时使用普通显示器，那么在普通显示器上元素会变得过于巨大。但是[Wayland](/index.php/Wayland "Wayland") 已经支持为每个显示器设置单独的缩放。
 
 ### Side display
 
@@ -542,51 +542,51 @@ You may adjust the "sharpness" parameter on your monitor settings to adjust the 
 
 **Note:** Above solution with `--scale 2x2` does not work on some Nvidia cards. No solution is currently available. [[5]](https://bbs.archlinux.org/viewtopic.php?pid=1670840) A potential workaround exists with configuring `ForceFullCompositionPipeline=On` on the `CurrentMetaMode` via `nvidia-settings`. For more info see [[6]](https://askubuntu.com/a/979551/763549).
 
-### Multiple external monitors
+### 多外部监视器
 
-There might be some problems in scaling more than one external monitors which have lower dpi than the built-in HiDPI display. In that case, you may want to try downscaling the HiDPI display instead, with e.g.
+如果你有多于个低于内置的 HiDPI 显示器 DPI 的显示器，那么可能会碰到一些问题。这种情况下您可以想要缩小 HiDPI 显示器的内容，例如：
 
 ```
 xrandr --output eDP1 --scale 0.5x0.5 --output DP2 --right-of eDP1 --output HDMI1 --right-of DP2
 
 ```
 
-In addition, when you downscale the HiDPI display, the font on the HiDPI display will be slightly blurry, but it's a different kind of bluriness compared with the one introduced by upscaling the external displays. You may compare and see which kind of bluriness is less problematic for you.
+另外，当您缩小内置 HIDPI 显示器中的内容时，内置显示器的字体可能会变得有些模糊。但这与扩大外置显示器内容时带来的模糊并不相同。您可以对比之后选择自己想要的方案。
 
-### Mirroring
+### 镜像
 
-If all you want is to mirror ("unify") displays, this is easy as well:
+如果你只想使用镜像的话，可以按照如下操作：
 
-With AxB your native HiDPI resolution (for ex 3200x1800) and CxD your external screen resolution (for ex 1920x1200)
+A×B是你 HiDPI 显示器的原生分辨率，CxD 是你的另一个显示器的原生分辨率。
 
 ```
 xrandr --output HDMI --scale [A/C]x[B/D]
 
 ```
 
-In this example which is QHD (3200/1920 = 1.66 and 1800/1200 = 1.5)
+一个 QHD 的例子(3200/1920 = 1.66 and 1800/1200 = 1.5)：
 
 ```
 xrandr --output HDMI --scale 1.66x1.5
 
 ```
 
-For UHD to 1080p (3840/1920=2 2160/1080=2)
+UHD和1080p的例子 (3840/1920=2 2160/1080=2)：
 
 ```
 xrandr --output HDMI --scale 2x2
 
 ```
 
-You may adjust the "sharpness" parameter on your monitor settings to adjust the blur level introduced with scaling.
+您可以调整显示器上的清晰度选项以减少模糊感。
 
-## Linux console
+## Linux 控制台
 
-The default [Linux console](https://en.wikipedia.org/wiki/Linux_console "w:Linux console") font will be very small on hidpi displays, the largest font present in the [kbd](https://www.archlinux.org/packages/?name=kbd) package is `latarcyrheb-sun32` and other packages like [terminus-font](https://www.archlinux.org/packages/?name=terminus-font) contain further alternatives, such as `ter-132n`(normal) and `ter-132b`(bold). See [Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts") for configuration details.
+默认的 [Linux 控制台](https://en.wikipedia.org/wiki/Linux_console "w:Linux console")在 HiDPI 显示器上太小了。[kbd](https://www.archlinux.org/packages/?name=kbd)中最大的字体是`latarcyrheb-sun32`，其他软件包中包含一些更大的字体，例如[terminus-font](https://www.archlinux.org/packages/?name=terminus-font)中的`ter-132n`和`ter-132b`（粗体）。参阅[Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts")获取配置详情。
 
-After changing the font, it is often garbled and unreadable when changing to other virtual consoles (`tty2-6`). To fix this you can [force specific mode](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting") for KMS, such as `video=2560x1600@60` (substitute in the native resolution of your HiDPI display), and reboot.
+在改变字体之后，当您切换到其他控制台时，屏幕上的内容可能无法读取。要修复这一问题，你可以设置[force specific mode](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting")，例如`video=2560x1600@60`（设为您显示器的原生分辨率）并重新启动。
 
-## See also
+## 另请参阅
 
 *   [Ultra HD 4K Linux Graphics Card Testing](http://www.phoronix.com/scan.php?page=article&item=linux_uhd4k_gpus) (Nov 2013)
 *   [Understanding pixel density](http://www.eizo.com/library/basics/pixel_density_4k/)

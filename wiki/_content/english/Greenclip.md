@@ -43,7 +43,8 @@ Config {
  staticHistoryPath = "~/.cache/greenclip.staticHistory",
  imageCachePath = "/tmp/",
  usePrimarySelectionAsInput = False,
- blacklistedApps = []
+ blacklistedApps = [],
+ trimSpaceFromSelection = True
 }
 
 ```

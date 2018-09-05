@@ -1,5 +1,6 @@
 Related articles
 
+*   [Sound system](/index.php/Sound_system "Sound system")
 *   [Professional audio](/index.php/Professional_audio "Professional audio")
 
 From [Wikipedia:JACK Audio Connection Kit](https://en.wikipedia.org/wiki/JACK_Audio_Connection_Kit "wikipedia:JACK Audio Connection Kit"):

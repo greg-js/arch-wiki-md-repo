@@ -17,7 +17,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [amarok](https://www.archlinux.org/packages/?name=amarok) package.
+[Install](/index.php/Install "Install") the [amarok](https://aur.archlinux.org/packages/amarok/) package.
 
 Amarok now depends on Phonon, so you will have to have a working back-end selected for it. See [KDE#Phonon](/index.php/KDE#Phonon "KDE"). You may also need to install a few [codecs](/index.php/Codecs "Codecs") for use by the chosen back-end.
 

@@ -818,11 +818,11 @@ mplayer [mms://mms.online.ru/c17_2_128](mms://mms.online.ru/c17_2_128)
 
 Как и положено в оконно-мышечной концепции, подключаемся к различным сетевым ресурсам без консоли. То есть методом тыка.
 
-[Устанавливаем](/index.php/Network_Manager "Network Manager") Network Manager. После установки, там где часы, появится иконка - кликаем по ней и выбираем сеть.
+[Устанавливаем](/index.php/NetworkManager "NetworkManager") NetworkManager. После установки, там где часы, появится иконка - кликаем по ней и выбираем сеть.
 
 ##### Настройка VPN
 
-Устанавливаем [плагин](https://aur.archlinux.org/packages.php?ID=23279) для Network Manager из AUR.
+Устанавливаем [плагин](https://aur.archlinux.org/packages.php?ID=23279) для NetworkManager из AUR.
 
 ```
 yaourt -S networkmanager-pptp-0.7

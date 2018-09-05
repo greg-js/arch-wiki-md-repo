@@ -171,6 +171,18 @@ setopt COMPLETE_ALIASES
 
 ```
 
+For enabling autocompletion of privileged environments in privileged commands (e.g. if you complete a command starting with [sudo](/index.php/Sudo "Sudo"), completion scripts will also try to determine your completions with sudo), include:
+
+ `~/.zshrc` 
+```
+zstyle ':completion::complete:*' gain-privileges 1
+
+```
+
+**Warning:** This will let zsh completion scripts run commands with sudo privileges. You should not enable this if you use untrusted autocompletion scripts.
+
+**Note:** This special kind of context-aware completion is only available for a small number of commands.
+
 ### Key bindings
 
 Zsh does not use [readline](/index.php/Readline "Readline"), instead it uses its own and more powerful Zsh Line Editor, ZLE. It does not read `/etc/inputrc` or `~/.inputrc`.

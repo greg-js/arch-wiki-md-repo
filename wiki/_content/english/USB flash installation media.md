@@ -45,7 +45,7 @@ If you would like to run a full install of Arch Linux from a USB drive (i.e. wit
 
 **Note:** This method is recommended due to its simplicity. If it does not work, switch to the alternative method [#Using manual formatting](#Using_manual_formatting) below.
 
-**Warning:** This will irrevocably destroy all data on `/dev/**sdx**`. To restore the USB drive as an empty, usable storage device after using the Arch ISO image, the iso9660 filesystem signature needs to be removed by running `wipefs --all /dev/**sdx**` as root, before [repartitioning](/index.php/Repartition "Repartition") and [reformating](/index.php/Reformat "Reformat") the USB drive.
+**Warning:** This will irrevocably destroy all data on `/dev/**sdx**`. To restore the USB drive as an empty, usable storage device after using the Arch ISO image, the ISO 9660 filesystem signature needs to be removed by running `wipefs --all /dev/**sdx**` as root, before [repartitioning](/index.php/Repartition "Repartition") and [reformating](/index.php/Reformat "Reformat") the USB drive.
 
 #### In GNU/Linux
 
@@ -58,21 +58,24 @@ Run the following command, replacing `/dev/**sdx**` with your drive, e.g. `/dev/
 
 ```
 
-See [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) for more information about `dd`. See [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1#DESCRIPTION) for more information about `oflag=sync`.
+See [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) for more information about [dd](/index.php/Dd "Dd"). See [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1#DESCRIPTION) for more information about `oflag=sync`.
 
 #### In Windows
 
 ##### Using Rufus
 
-[Rufus](https://rufus.akeo.ie/) is a multi-purpose USB iso writer. Simply select the Arch Linux ISO, the USB drive you want to create the bootable Arch Linux onto and click start.
+[Rufus](https://rufus.akeo.ie/) is a multi-purpose USB ISO writer. Simply select the Arch Linux ISO, the USB drive you want to create the bootable Arch Linux onto and click *START*.
 
 Since Rufus does not care if the drive is properly formatted or not and provides a GUI it may be the easiest and most robust tool to use.
 
-**Note:** Be sure to select **DD image** mode from the dropdown menu or the image will be transferred incorrectly.
+**Note:** The image has to be transferred in **DD Image mode**.
+
+*   For Rufus version ≥ 3.0 select *GPT* from the *Partition scheme* drop-down menu. After clicking *START* you will get the mode selection dialog, select *DD Image mode*.
+*   For Rufus version < 3.0 select *DD Image* mode from the drop-down menu on the bottom.
 
 ##### Using USBwriter
 
-This method does not require any workaround and is as straightforward as `dd` under Linux. Just download the Arch Linux ISO, and with local administrator rights use the [USBwriter](http://sourceforge.net/p/usbwriter/wiki/Documentation/) utility to write to your USB flash memory.
+This method does not require any workaround and is as straightforward as `dd` under Linux. Just download the Arch Linux ISO, and with local administrator rights use the [USBwriter](https://sourceforge.net/p/usbwriter/wiki/Documentation/) utility to write to your USB flash memory.
 
 ##### Using win32diskimager
 
@@ -80,7 +83,7 @@ This method does not require any workaround and is as straightforward as `dd` un
 
 ##### Using Cygwin
 
-Make sure your [Cygwin](http://www.cygwin.com/) installation contains the `dd` package.
+Make sure your [Cygwin](https://www.cygwin.com/) installation contains the `dd` package.
 
 **Tip:** If you do not want to install Cygwin, you can download `dd` for Windows from [here](http://www.chrysocome.net/dd). See the next section for more information.
 
@@ -184,9 +187,7 @@ This method is more complicated than writing the image directly with `dd`, but i
 **Note:** Here, we will denote the targeted partition as `/dev/sd**Xn**`. In any of the following commands, adjust **X** and **n** according to your system.
 
 *   Make sure that the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package is installed on the system.
-
 *   If not done yet, create the partition table and/or partition on the device before continuing. The partition `/dev/sd**Xn**` must be formatted to [FAT32](/index.php/FAT32 "FAT32").
-
 *   Mount the ISO image, mount the FAT32 filesystem located in the USB flash device, and copy the contents of the ISO image to it. Then unmount the ISO image, but keep the FAT32 partition mounted (this will be used in subsequent steps). Eg:
 
 ```
@@ -203,12 +204,12 @@ To boot either a label or an [UUID](/index.php/UUID "UUID") to select the partit
 
 **Warning:** Mismatching labels or wrong UUID prevents booting from the created medium.
 
-Syslinux is already preinstalled in */mnt/usb/arch/boot/syslinux*. Install it completely to that folder by following [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux"). Instructions are reproduced here for convenience.
+Syslinux is already preinstalled in `/mnt/usb/arch/boot/syslinux`. Install it completely to that folder by following [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux"). Instructions are reproduced here for convenience.
 
-*   Overwrite the existing Syslinux modules (`*.c32` files) present in the USB (from the ISO) with the ones from the syslinux package (found in */usr/lib/syslinux/bios*). This is necessary to avoid boot failure because of a possible version mismatch.
+*   Overwrite the existing Syslinux modules (*.c32* files) present in the USB (from the ISO) with the ones from the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package (found in `/usr/lib/syslinux/bios/`). This is necessary to avoid boot failure because of a possible version mismatch.
 
 ```
-# cp /usr/lib/syslinux/bios/*.c32 /mnt/usb/arch/boot/syslinux
+# cp /usr/lib/syslinux/bios/*.c32 /mnt/usb/arch/boot/syslinux/
 
 ```
 
@@ -220,7 +221,6 @@ Syslinux is already preinstalled in */mnt/usb/arch/boot/syslinux*. Install it co
 ```
 
 *   Unmount the partition (`umount /mnt/usb`).
-
 *   Mark the partition as active (or “bootable”).
 
 #### In Windows
@@ -228,21 +228,14 @@ Syslinux is already preinstalled in */mnt/usb/arch/boot/syslinux*. Install it co
 **Note:**
 
 *   For manual formatting, do not use any **Bootable USB Creator utility** for creating the UEFI bootable USB. For manual formatting, do not use *dd for Windows* to dd the ISO to the USB drive either.
-
 *   In the below commands, **X:** is assumed to be the USB flash drive in Windows.
-
 *   Windows uses backward slash `\` as path-separator, so the same is used in the below commands.
-
 *   All commands should be run in Windows command prompt **as administrator**.
-
 *   `>` denotes the Windows command prompt.
 
-*   Partition and format the USB drive using [Rufus USB partitioner](http://rufus.akeo.ie/). Select partition scheme option as **MBR for BIOS and UEFI** and File system as **FAT32**. Uncheck "Create a bootable disk using ISO image" and "Create extended label and icon files" options.
-
+*   Partition and format the USB drive using [Rufus USB partitioner](https://rufus.akeo.ie/). Select partition scheme option as **MBR for BIOS and UEFI** and File system as **FAT32**. Uncheck "Create a bootable disk using ISO image" and "Create extended label and icon files" options.
 *   Change the **Volume Label** of the USB flash drive `X:` to match the LABEL mentioned in the `archisolabel=` part in `<ISO>\loader\entries\archiso-x86_64.conf`. This step is required for Official ISO ([Archiso](/index.php/Archiso "Archiso")). This step can be also performed using Rufus, during the prior "partition and format" step.
-
-*   Extract the ISO (similar to extracting ZIP archive) to the USB flash drive (using [7-Zip](http://7-zip.org/).
-
+*   Extract the ISO (similar to extracting ZIP archive) to the USB flash drive (using [7-Zip](https://www.7-zip.org/).
 *   Download official Syslinux 6.xx binaries (zip file) from [https://www.kernel.org/pub/linux/utils/boot/syslinux/](https://www.kernel.org/pub/linux/utils/boot/syslinux/) and extract it. The version of Syslinux should be the same version used in the ISO image.
 
 *   Run the following command (in Windows cmd prompt, as admin):
@@ -265,7 +258,6 @@ Syslinux is already preinstalled in */mnt/usb/arch/boot/syslinux*. Install it co
 **Note:**
 
 *   The above step installs Syslinux's `ldlinux.sys` to the VBR of the USB partition, sets the partition as "active/boot" in the MBR partition table and writes the MBR boot code to the 1st 440-byte boot code region of the USB.
-
 *   The `-d` switch expects a path with forward slash path-separator like in *unix systems.
 
 ## Other methods for BIOS systems
@@ -278,7 +270,7 @@ This allows booting multiple ISOs from a single USB device, including the archis
 
 #### Using GNOME Disk Utility
 
-Linux distributions running GNOME can easily make a live CD through [nautilus](https://www.archlinux.org/packages/?name=nautilus) and [gnome-disk-utility](https://www.archlinux.org/packages/?name=gnome-disk-utility). Simply right-click on the .iso file, and select "Open With Disk Image Writer." When GNOME Disk Utility opens, specify the flash drive from the "Destination" drop-down menu and click "Start Restoring."
+Linux distributions running GNOME can easily make a live CD through [nautilus](https://www.archlinux.org/packages/?name=nautilus) and [gnome-disk-utility](https://www.archlinux.org/packages/?name=gnome-disk-utility). Simply right-click on the *.iso* file, and select *Open With Disk Image Writer*. When GNOME Disk Utility opens, specify the flash drive from the *Destination* drop-down menu and click *Start Restoring*.
 
 #### Making a USB-ZIP drive
 
@@ -296,7 +288,7 @@ From here continue with the manual formatting method. The partition will be `/de
 
 #### Using UNetbootin
 
-UNetbootin can be used on any Linux distribution or Windows to copy your iso to a USB device. However, Unetbootin overwrites syslinux.cfg, so it creates a USB device that does not boot properly. For this reason, **Unetbootin is not recommended** -- please use `dd` or one of the other methods discussed in this topic.
+UNetbootin can be used on any Linux distribution or Windows to copy your iso to a USB device. However, Unetbootin overwrites `syslinux.cfg`, so it creates a USB device that does not boot properly. For this reason, **Unetbootin is not recommended** -- please use `dd` or one of the other methods discussed in this topic.
 
 **Warning:** UNetbootin writes over the default `syslinux.cfg`; this must be restored before the USB device will boot properly.
 
@@ -350,7 +342,7 @@ If under Vista or Win7, you should open the console as administrator, or else fl
 
 #### Loading the installation media from RAM
 
-This method uses [Syslinux](/index.php/Syslinux "Syslinux") and a [Ramdisk](/index.php/Ramdisk "Ramdisk") ([MEMDISK](http://www.syslinux.org/wiki/index.php/MEMDISK)) to load the entire Arch Linux ISO image into RAM. Since this will be running entirely from system memory, you will need to make sure the system you will be installing this on has an adequate amount. A minimum amount of RAM between 500 MB and 1 GB should suffice for a MEMDISK based, Arch Linux install.
+This method uses [Syslinux](/index.php/Syslinux "Syslinux") and a [Ramdisk](/index.php/Ramdisk "Ramdisk") ([MEMDISK](https://www.syslinux.org/wiki/index.php/MEMDISK)) to load the entire Arch Linux ISO image into RAM. Since this will be running entirely from system memory, you will need to make sure the system you will be installing this on has an adequate amount. A minimum amount of RAM between 500 MB and 1 GB should suffice for a MEMDISK based, Arch Linux install.
 
 For more information on Arch Linux system requirements as well as those for MEMDISK see the [Installation guide](/index.php/Installation_guide "Installation guide") and [here](http://www.etherboot.org/wiki/bootingmemdisk#preliminaries). For reference, here is the [preceding forum thread](https://bbs.archlinux.org/viewtopic.php?id=135266).
 
@@ -366,7 +358,7 @@ Begin by formatting the USB flash drive as **FAT32**. Then create the following 
 
 ##### Copy the needed files to the USB flash drive
 
-Next copy the ISO that you would like to boot to the `Boot/ISOs` folder. After that, extract from the following files from the latest release of [syslinux](https://www.archlinux.org/packages/?name=syslinux) from [here](http://www.kernel.org/pub/linux/utils/boot/syslinux/) and copy them into the following folders.
+Next copy the ISO that you would like to boot to the `Boot/ISOs` folder. After that, extract from the following files from the latest release of [syslinux](https://www.archlinux.org/packages/?name=syslinux) from [here](https://www.kernel.org/pub/linux/utils/boot/syslinux/) and copy them into the following folders.
 
 *   `./win32/syslinux.exe` to the Desktop or Downloads folder on your system.
 *   `./memdisk/memdisk` to the `Settings` folder on your USB flash drive.
@@ -375,7 +367,7 @@ Next copy the ISO that you would like to boot to the `Boot/ISOs` folder. After t
 
 After copying the needed files, navigate to the USB flash drive, /boot/Settings and create a `syslinux.cfg` file.
 
-**Warning:** On the `INITRD` line, be sure to use the name of the ISO file that you copied to your `ISOs` folder!
+**Warning:** On the `INITRD` line, be sure to use the name of the ISO file that you copied to your `ISOs` folder.
  `/Boot/Settings/syslinux.cfg` 
 ```
 DEFAULT arch_iso
@@ -397,16 +389,16 @@ Finally, create a `*.bat` file where `syslinux.exe` is located and run it ("Run 
 ```
 @echo off
 syslinux.exe -m -a -d /Boot/Settings X:
+
 ```
 
 ## Troubleshooting
 
 *   If you get the "device did not show up after 30 seconds" error due to the `/dev/disk/by-label/ARCH_XXXXYY` not mounting, try renaming your USB media to `ARCH_XXXXYY` (e.g. `ARCH_201501`).
-
 *   If you get errors, try using another USB device. There are case scenarios in which it solved all issues.
 
 ## See also
 
 *   [Gentoo wiki - LiveUSB/HOWTO](https://wiki.gentoo.org/wiki/LiveUSB/HOWTO)
 *   [Fedora wiki - How to create and use Live USB](https://fedoraproject.org/wiki/How_to_create_and_use_Live_USB)
-*   [openSUSE wiki - SDB:Live USB stick](http://en.opensuse.org/SDB:Live_USB_stick)
+*   [openSUSE wiki - SDB:Live USB stick](https://en.opensuse.org/SDB:Live_USB_stick)

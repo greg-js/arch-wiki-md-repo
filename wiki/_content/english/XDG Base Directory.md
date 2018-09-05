@@ -658,6 +658,7 @@ Note that these variables are respected by *xinit*, but not by *startx*. Instead
 | [Avidemux](http://fixounet.free.fr/avidemux/) | `~/.avidemux6` |
 | [cabal](https://www.haskell.org/cabal/) | `~/.cabal/` | [[107]](https://github.com/haskell/cabal/issues/680) | See discussion for potential workarounds. It is not very easy or straightforward but may be possible to emulate Base Directory compliance. |
 | [chatty](https://aur.archlinux.org/packages/chatty/) | `~/.chatty/` | [[108]](https://github.com/chatty/chatty/issues/273) |
+| [cmake](https://www.archlinux.org/packages/?name=cmake) | `~/.cmake/` | Used for the user package registry `~/.cmake/packages/<package>`, detailed in [cmake-packages(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cmake-packages.7#User_Package_Registry) and [the Package registry wiki page](https://gitlab.kitware.com/cmake/community/wikis/doc/tutorials/Package-Registry). Looks like it's hardcoded, for example in [cmFindPackageCommand.cxx](https://gitlab.kitware.com/cmake/cmake/blob/v3.12.1/Source/cmFindPackageCommand.cxx#L1221). |
 | [cryptomator](https://aur.archlinux.org/packages/cryptomator/) | `~/.Cryptomator` | [[109]](https://github.com/cryptomator/cryptomator/issues/710) |
 | [darcs](/index.php/Darcs "Darcs") | `~/.darcs/` | [[110]](http://bugs.darcs.net/issue2453) |
 | [dbus](/index.php/Dbus "Dbus") | `~/.dbus/` | [[111]](https://bugs.freedesktop.org/show_bug.cgi?id=35887) | This should be avoidable with kdbus [citation needed]. |

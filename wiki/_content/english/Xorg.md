@@ -28,11 +28,12 @@ From [http://www.x.org/wiki/](http://www.x.org/wiki/):
     *   [3.1 Using .conf files](#Using_.conf_files)
     *   [3.2 Using xorg.conf](#Using_xorg.conf)
 *   [4 Input devices](#Input_devices)
-    *   [4.1 Mouse acceleration](#Mouse_acceleration)
-    *   [4.2 Extra mouse buttons](#Extra_mouse_buttons)
-    *   [4.3 Touchpad](#Touchpad)
-    *   [4.4 Touchscreen](#Touchscreen)
-    *   [4.5 Keyboard settings](#Keyboard_settings)
+    *   [4.1 Input identification](#Input_identification)
+    *   [4.2 Mouse acceleration](#Mouse_acceleration)
+    *   [4.3 Extra mouse buttons](#Extra_mouse_buttons)
+    *   [4.4 Touchpad](#Touchpad)
+    *   [4.5 Touchscreen](#Touchscreen)
+    *   [4.6 Keyboard settings](#Keyboard_settings)
 *   [5 Monitor settings](#Monitor_settings)
     *   [5.1 Getting started](#Getting_started)
     *   [5.2 Multiple monitors](#Multiple_monitors)
@@ -45,12 +46,13 @@ From [http://www.x.org/wiki/](http://www.x.org/wiki/):
 *   [6 Composite](#Composite)
     *   [6.1 List of composite managers](#List_of_composite_managers)
 *   [7 Tips and tricks](#Tips_and_tricks)
-    *   [7.1 Nested X session](#Nested_X_session)
-    *   [7.2 Starting GUI programs remotely](#Starting_GUI_programs_remotely)
-    *   [7.3 On-demand disabling and enabling of input sources](#On-demand_disabling_and_enabling_of_input_sources)
-    *   [7.4 Killing application with hotkey](#Killing_application_with_hotkey)
-    *   [7.5 Block TTY access](#Block_TTY_access)
-    *   [7.6 Prevent a user from killing X](#Prevent_a_user_from_killing_X)
+    *   [7.1 Automation](#Automation)
+    *   [7.2 Nested X session](#Nested_X_session)
+    *   [7.3 Starting GUI programs remotely](#Starting_GUI_programs_remotely)
+    *   [7.4 On-demand disabling and enabling of input sources](#On-demand_disabling_and_enabling_of_input_sources)
+    *   [7.5 Killing application with hotkey](#Killing_application_with_hotkey)
+    *   [7.6 Block TTY access](#Block_TTY_access)
+    *   [7.7 Prevent a user from killing X](#Prevent_a_user_from_killing_X)
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 General](#General)
     *   [8.2 Black screen, No protocol specified.., Resource temporarily unavailable for all or some users](#Black_screen.2C_No_protocol_specified...2C_Resource_temporarily_unavailable_for_all_or_some_users)
@@ -193,6 +195,10 @@ If both do not support a particular device, install the needed driver from the [
 To influence hotplugging, see [#Configuration](#Configuration).
 
 For specific instructions, see also the [libinput](/index.php/Libinput "Libinput") article, the following pages below, or the [Fedora wiki](https://fedoraproject.org/wiki/Input_device_configuration) entry for more examples.
+
+### Input identification
+
+See [Extra keyboard keys#In Xorg](/index.php/Extra_keyboard_keys#In_Xorg "Extra keyboard keys").
 
 ### Mouse acceleration
 
@@ -417,6 +423,26 @@ Some window managers (e.g. [Compiz](/index.php/Compiz "Compiz"), [Enlightenment]
 
 ## Tips and tricks
 
+### Automation
+
+This section lists utilities for automating keyboard / mouse input and window operations (like moving, resizing or raising).
+
+*   **xautomation** — Controls X from the command line and does visual scraping, see [xte(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xte.1).
+
+	[https://www.hoopajoo.net/projects/xautomation.html](https://www.hoopajoo.net/projects/xautomation.html) || [xautomation](https://www.archlinux.org/packages/?name=xautomation)
+
+*   **xdo** — Small X utility to perform elementary actions on windows.
+
+	[https://github.com/baskerville/xdo](https://github.com/baskerville/xdo) || [xdo-git](https://aur.archlinux.org/packages/xdo-git/)
+
+*   **xvkbd** — Virtual keyboard for Xorg, also includes a utility for sending characters.
+
+	[http://t-sato.in.coocan.jp/xvkbd/](http://t-sato.in.coocan.jp/xvkbd/) || [xvkbd](https://aur.archlinux.org/packages/xvkbd/)
+
+**Note:** [xdotool](https://www.archlinux.org/packages/?name=xdotool), another command-line X11 automation tool, is [very buggy](https://github.com/jordansissel/xdotool/issues) and not in active development. For instance, it cannot parse command-line arguments properly: [[2]](https://github.com/jordansissel/xdotool/issues/14#issuecomment-327968132), [[3]](https://github.com/jordansissel/xdotool/issues/71). Hence, the alternatives listed above should be preferred instead.
+
+See also [Clipboard#Tools](/index.php/Clipboard#Tools "Clipboard") and [xbindkeys](/index.php/Xbindkeys "Xbindkeys").
+
 ### Nested X session
 
 To run a nested session of another desktop environment:
@@ -524,7 +550,7 @@ EndSection
 
 ### General
 
-If a problem occurs, view the log stored in either `/var/log/` or, for the rootless X default since v1.16, in `~/.local/share/xorg/`. [GDM](/index.php/GDM "GDM") users should check the [systemd](/index.php/Systemd "Systemd") journal. [[2]](https://bbs.archlinux.org/viewtopic.php?id=184639)
+If a problem occurs, view the log stored in either `/var/log/` or, for the rootless X default since v1.16, in `~/.local/share/xorg/`. [GDM](/index.php/GDM "GDM") users should check the [systemd](/index.php/Systemd "Systemd") journal. [[4]](https://bbs.archlinux.org/viewtopic.php?id=184639)
 
 The logfiles are of the form `Xorg.n.log` with `n` being the display number. For a single user machine with default configuration the applicable log is frequently `Xorg.0.log`, but otherwise it may vary. To make sure to pick the right file it may help to look at the timestamp of the X server session start and from which console it was started. For example:
 
@@ -648,7 +674,7 @@ Make some free space on the relevant filesystem and X will start.
 
 ### Rootless Xorg
 
-Xorg may run with standard user privileges with the help of [systemd-logind(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-logind.8), see [[3]](https://fedoraproject.org/wiki/Changes/XorgWithoutRootRights) and [FS#41257](https://bugs.archlinux.org/task/41257). The requirements for this are:
+Xorg may run with standard user privileges with the help of [systemd-logind(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-logind.8), see [[5]](https://fedoraproject.org/wiki/Changes/XorgWithoutRootRights) and [FS#41257](https://bugs.archlinux.org/task/41257). The requirements for this are:
 
 *   Starting X via [xinit](/index.php/Xinit "Xinit"); display managers are not supported
 *   [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"); implementations in proprietary display drivers fail [auto-detection](http://cgit.freedesktop.org/xorg/xserver/tree/hw/xfree86/xorg-wrapper.c#n222) and require manually setting `needs_root_rights = no` in `/etc/X11/Xwrapper.config`.
@@ -670,7 +696,7 @@ exec startx -- -keeptty > ~/.xorg.log 2>&1
 
 ```
 
-Or copy `/etc/X11/xinit/xserverrc` to `~/.xserverrc`, and append `-keeptty`. See [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1446402#p1446402).
+Or copy `/etc/X11/xinit/xserverrc` to `~/.xserverrc`, and append `-keeptty`. See [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1446402#p1446402).
 
 ### A green screen whenever trying to watch a video
 

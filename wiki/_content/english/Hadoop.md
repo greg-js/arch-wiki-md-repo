@@ -48,7 +48,7 @@ hadoop version
 
 ```
 
-If you get warning message "WARNING: HADOOP_SLAVES has been replaced by HADOOP_WORKERS. Using value of HADOOP_SLAVES." Then replace export HADOOP_SLAVES=/etc/hadoop/slaves in /etc/profile.d/hadoop.sh with:
+If you get warning message "WARNING: HADOOP_SLAVES has been replaced by HADOOP_WORKERS. Using value of HADOOP_SLAVES." Then replace `export HADOOP_SLAVES=/etc/hadoop/slaves` in `/etc/profile.d/hadoop.sh` with:
 
 ```
 export HADOOP_WORKERS=/etc/hadoop/workers

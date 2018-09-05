@@ -246,4 +246,4 @@ To make it available as a boot option, you will need to update your [bootloader]
 ## See Also
 
 *   [Arch News Bash Script](https://bbs.archlinux.org/viewtopic.php?id=146850)
-*   [maint](https://aur.archlinux.org/packages/maint/)
+*   [Automatic Arch System Maintenance](https://bbs.archlinux.org/viewtopic.php?pid=1791008)

@@ -482,7 +482,7 @@ alias hosts='sudo wget [https://raw.githubusercontent.com/googlehosts/hosts/mast
 
 ### 电子商务
 
-很可惜并没有现成的维基页面，不过 [Acgtyrant](/index.php/User:Acgtyrant "User:Acgtyrant") 用户在其博客上提供了 [電子商務在 Arch Linux 下的簡易解決方案](http://arch.acgtyrant.com/2014/02/20/e-commerce/)。
+很可惜并没有现成的维基页面，不过 [Acgtyrant](/index.php/User:Acgtyrant "User:Acgtyrant") 用户在其博客上提供了 [電子商務在 Arch Linux 下的簡易解決方案](http://arch.acgtyrant.com/2014/02/20/e-commerce/)([archive.org的存档](https://web.archive.org/web/20150706100009/http://arch.acgtyrant.com/2014/02/20/e-commerce/))。
 
 ### 校园网
 

@@ -1,3 +1,5 @@
+**Состояние перевода:** На этой странице представлен перевод статьи [Swap](/index.php/Swap "Swap"). Дата последней синхронизации: 15 июня 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Swap&diff=0&oldid=526278).
+
 Related articles
 
 *   [fstab (Русский)](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)")

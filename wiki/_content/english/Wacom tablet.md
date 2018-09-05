@@ -5,17 +5,17 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Permanent configuration](#Permanent_configuration)
-    *   [2.2 Adjusting aspect ratios](#Adjusting_aspect_ratios)
-        *   [2.2.1 Reducing the drawing area height](#Reducing_the_drawing_area_height)
-        *   [2.2.2 Reducing the screen area width](#Reducing_the_screen_area_width)
-    *   [2.3 Remapping buttons](#Remapping_buttons)
-        *   [2.3.1 The syntax](#The_syntax)
-        *   [2.3.2 Some examples](#Some_examples)
-        *   [2.3.3 Execute custom commands](#Execute_custom_commands)
+    *   [2.2 Remapping buttons](#Remapping_buttons)
+        *   [2.2.1 The syntax](#The_syntax)
+        *   [2.2.2 Some examples](#Some_examples)
+        *   [2.2.3 Execute custom commands](#Execute_custom_commands)
+    *   [2.3 Adjusting aspect ratios](#Adjusting_aspect_ratios)
+        *   [2.3.1 Reducing the drawing area height](#Reducing_the_drawing_area_height)
+        *   [2.3.2 Reducing the screen area width](#Reducing_the_screen_area_width)
     *   [2.4 LEDs](#LEDs)
-    *   [2.5 TwinView Setup](#TwinView_Setup)
-        *   [2.5.1 Temporary TwinView Setup](#Temporary_TwinView_Setup)
-    *   [2.6 Xrandr Setup](#Xrandr_Setup)
+    *   [2.5 TwinView setup](#TwinView_setup)
+        *   [2.5.1 Temporary TwinView setup](#Temporary_TwinView_setup)
+    *   [2.6 xrandr setup](#xrandr_setup)
     *   [2.7 Pressure curve](#Pressure_curve)
 *   [3 Application-specific configuration](#Application-specific_configuration)
     *   [3.1 Blender](#Blender)
@@ -61,30 +61,63 @@ Wacom Bamboo 16FG 4x5 Pen eraser	id: 18	type: ERASER
 
 ```
 
-For the the `get` and `set` commands devices can be specified by name or id. Scripts should use names because ids can change after X server restarts or replugging.
+For the `get` and `set` commands, devices can be specified by name or id. Scripts should use names because ids can change after X server restarts or replugging.
 
 ### Permanent configuration
 
-Configuration can be made persistent in [xorg.conf](/index.php/Xorg.conf "Xorg.conf"), see [wacom(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wacom.4). Example:
+**Note:** Because *xorg.conf* lacks options *xsetwacom* has and only lets you map buttons to mouse buttons, you may want to [autostart](/index.php/Autostart "Autostart") a script with *xsetwacom* commands instead of using *xorg.conf*.
 
- `/etc/X11/xorg.conf.d/52-wacom-options.conf` 
+Configuration can be made persistent in [xorg.conf](/index.php/Xorg.conf "Xorg.conf") and [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5).
+
+You firstly need to find out your product names:
+
+ `$ grep "Using input driver 'wacom'" /var/log/Xorg.0.log` 
+```
+[ 25059.351] (II) Using input driver 'wacom' for 'Wacom Intuos BT M Pen'
+[ 25059.409] (II) Using input driver 'wacom' for 'Wacom Intuos BT M Pad'
+[ 25059.428] (II) Using input driver 'wacom' for 'Wacom Intuos BT M Pen eraser'
+[ 25059.429] (II) Using input driver 'wacom' for 'Wacom Intuos BT M Pen cursor'
+
+```
+
+For these product names the sections would be:
+
+ `/etc/X11/xorg.conf.d/72-wacom-options.conf` 
 ```
 Section "InputClass"
-	Identifier "Wacom Bamboo stylus options"
+	Identifier "WACOM OPTIONS pen"
 	MatchDriver "wacom"
-	MatchProduct "pen"
+	MatchProduct "Pen"
+	NoMatchProduct "eraser"
+	NoMatchProduct "cursor"
+EndSection
 
-	# Apply custom Options to this device below.
-	Option "Button2" "3"
-	Option "Button3" "2"
-	Option "PressCurve" "0,10,90,100"
+Section "InputClass"
+	Identifier "WACOM OPTIONS pad"
+	MatchDriver "wacom"
+	MatchProduct "Pad"
+EndSection
+
+Section "InputClass"
+	Identifier "WACOM OPTIONS eraser"
+	MatchDriver "wacom"
+	MatchProduct "eraser"
+EndSection
+
+Section "InputClass"
+	Identifier "WACOM OPTIONS cursor"
+	MatchDriver "wacom"
+	MatchProduct "cursor"
 EndSection
 
 ```
 
-Identifiers are for human-readable purposes only and printed into the Xorg log, allowing you to determine if your match lines worked.
+*   The options described in [wacom(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wacom.4) can be added to sections.
+*   The product name needs to contain the `MatchProduct` value in order for a section to match. Matching of parent devices requires negative matching.
+*   The `Identifier` can be arbitrary and is printed into the Xorg log when the section matches. Giving your identifiers a common prefix lets you easily [grep](/index.php/Grep "Grep") for what sections were matched: `grep "WACOM OPT" /var/log/Xorg.0.log` 
+*   Configuration changes require a X server restart to take effect.
 
-**Note:** *xorg.conf* options can be differ from *xsetwacom* options. Also the button ids seem to be different than the ones for *xsetwacom*.
+**Note:** *xorg.conf* options can differ from *xsetwacom* options.
 
 *xsetwacom* can try to print all current settings of a device in *xorg.conf* format with:
 
@@ -93,67 +126,31 @@ $ xsetwacom get *device* all
 
 ```
 
-### Adjusting aspect ratios
-
-Drawing areas of tablets are generally more square than the usual widescreen display with a 16:9 aspect ratio, leading to a slight vertical compression of your input. To resolve such an aspect ratio mismatch you need to compromise by either reducing the drawing area height (called *Force Proportions* on Windows) or reducing the screen area width. The former wastes drawing area and the latter prevents you from reaching the right edge of your screen with your Stylus. It is probably still a compromise worth to be made because it prevents your strokes from being skewed.
-
-Find out your tablet's resolution by running:
-
-```
-$ xsetwacom get *stylus* Area
-
-```
-
-#### Reducing the drawing area height
-
-Run:
-
-```
-$ xsetwacom set *stylus* Area 0 0 *tablet_width* *height*
-
-```
-
-where *height* is *tablet_width * screen_height / screen_width*.
-
-The tablet resolution can be reset back to the default using:
-
-```
-$ xsetwacom set *stylus* ResetArea
-
-```
-
-#### Reducing the screen area width
-
-Run:
-
-```
-$ xsetwacom set *stylus* MapToOutput *WIDTH*x*SCREEN_HEIGHT*+0+0
-
-```
-
-where *WIDTH* is *screen_height * tablet_width / tablet_height*.
-
 ### Remapping buttons
 
-Firstly you need to find out the button ids. The button maps are specified in `.tablet` files in `/usr/share/libwacom/`. You can find the file for you tablet with a recursive [grep](/index.php/Grep "Grep") search for the tablet name reported by `xsetwacom list devices`:
+The X driver lets you remap the buttons on tablets and pens. Buttons are identified by numbers. Tablet buttons start at 1, pen buttons start at 2 (1 is the tip contact event). By default the X driver maps button *M* to mouse button *M*. Because X uses buttons 4-7 as the four scrolling directions, physical buttons 4 and higher are mapped to mouse buttons 8 and higher by default. While *xorg.conf* uses the actual button numbers and only lets you map to mouse buttons, *xsetwacom* uses the translated mouse button numbers and allows mapping to multiple keycodes (but not keysyms).
 
- `$ grep -r 'Wacom Bamboo 16FG 4x5' /usr/share/libwacom/*.tablet`  `/usr/share/libwacom/bamboo-16fg-s-t.tablet:Name=Wacom Bamboo 16FG 4x5` 
+If you have not yet remapped your buttons you can easily identify their ids with [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev), by running the following command, placing the mouse cursor on the created window and pressing a button:
 
-Now look at the `[Buttons]` section of the matched file, e.g:
+ `$ xev -event button` 
+```
+Outer window is 0x1a00001, inner window is 0x1a00002
+
+ButtonPress event, serial 25, synthetic NO, window 0x1a00001,
+    root 0x2a0, subw 0x0, time 3390669, (404,422), root:(1047,444),
+    state 0x0, button 8, same_screen YES
 
 ```
-[Buttons]
-Left=A;B;C;D
 
-```
+In this case the button number for *xsetwacom* is 8 and the actual button number for *xorg.conf* is 4.
 
-Your button ids now are A=1, B=2, C=3, ...
+Alternatively, if you want an overview of your tablet's button layout you can look at your tablet's layout SVG. Firstly, find out the filename with a recursive [grep](/index.php/Grep "Grep") search for the tablet name reported by `xsetwacom list devices`:
 
-**Note:** The driver maps physical buttons 4 and higher to 8 and higher by default. This affects *xsetwacom*.
+ `$ grep -rl 'Wacom Bamboo 16FG 4x5' /usr/share/libwacom/*.tablet`  `/usr/share/libwacom/bamboo-16fg-s-t.tablet` 
 
-To find out which letter corresponds to what button for a more complicated layout you can look at the respective SVG file in the `layouts` directory.
+In this case the respective layout SVG is `/usr/share/libwacom/layouts/bamboo-16fg-s-t.svg`. The letters in the SVG correspond to the button numbers: A=1, B=2, C=3, ...
 
-While *xsetwacom* lets you remap buttons to key combinations, you might want to have different key bindings in different applications, without having to run a script each time you switch applications. In this case you might want to map the tablet buttons to F13 and upwards.
+**Tip:** If you want to bind your tablet buttons to different shortcuts in different applications, you may want to map your tablet buttons to F13 and higher because most applications do not let you bind keyboard shortcuts to mouse buttons. See [Mouse buttons#Binding keyboard to mouse buttons](/index.php/Mouse_buttons#Binding_keyboard_to_mouse_buttons "Mouse buttons").
 
 #### The syntax
 
@@ -199,11 +196,11 @@ Even little macros are possible:
 
 ```
 
-**Note:** If you try to run a script with `xsetwacom` commands from a udev rule, you might find that it will not work, as the wacom input devices will not be ready at the time. A workaround is to add `sleep 1` at the beginning of your script.
+**Note:** If you try to run a script with `xsetwacom` commands from a udev rule, you might find that it will not work, as the Wacom input devices will not be ready at the time. A workaround is to add `sleep 1` at the beginning of your script.
 
 #### Execute custom commands
 
-Mapping custom commands to the buttons is a little bit tricky but actually very simple. First, install [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys).
+Mapping custom commands to the buttons is a little bit tricky but actually very simple. First, install [xbindkeys](/index.php/Xbindkeys "Xbindkeys").
 
 To get well defined button codes add the following to your permanent configuration file, e.g. `/etc/X11/xorg.conf.d/52-wacom-options.conf` in the InputClass section of your **pad** device. Map the tablet's buttons to some unused button ids.
 
@@ -239,6 +236,46 @@ Then add your custom key mapping to `~/.xbindkeysrc`, for example
 
 ```
 
+### Adjusting aspect ratios
+
+Drawing areas of tablets are generally more square than the usual widescreen display with a 16:9 aspect ratio, leading to a slight vertical compression of your input. To resolve such an aspect ratio mismatch you need to compromise by either reducing the drawing area height (called *Force Proportions* on Windows) or reducing the screen area width. The former wastes drawing area and the latter prevents you from reaching the right edge of your screen with your Stylus. It is probably still a compromise worth to be made because it prevents your strokes from being skewed.
+
+Find out your tablet's resolution by running:
+
+```
+$ xsetwacom get *stylus* Area
+
+```
+
+#### Reducing the drawing area height
+
+Run:
+
+```
+$ xsetwacom set *stylus* Area 0 0 *tablet_width* *height*
+
+```
+
+where *height* is *tablet_width * screen_height / screen_width*.
+
+The tablet resolution can be reset back to the default using:
+
+```
+$ xsetwacom set *stylus* ResetArea
+
+```
+
+#### Reducing the screen area width
+
+Run:
+
+```
+$ xsetwacom set *stylus* MapToOutput *WIDTH*x*SCREEN_HEIGHT*+0+0
+
+```
+
+where *WIDTH* is *screen_height * tablet_width / tablet_height*.
+
 ### LEDs
 
 See the [sysfs-driver-wacom](https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-driver-wacom) documentation. To make changes without requiring root permissions you will likely want to create a [udev](/index.php/Udev "Udev") rule like so:
@@ -252,7 +289,7 @@ ACTION=="add", SUBSYSTEM=="hid", DRIVERS=="wacom", RUN+="/usr/bin/sh -c 'chown :
 
 Setting the Intuos OLEDs can be done using [i4oled](https://aur.archlinux.org/packages/i4oled/) from the AUR.
 
-### TwinView Setup
+### TwinView setup
 
 If you are going to use two Monitors the aspect ratio while using the Tablet might feel unnatural. In order to fix this you need to add
 
@@ -263,25 +300,25 @@ Option "TwinView" "horizontal"
 
 To all of your Wacom-InputDevice entries in the `xorg.conf` file. You may read more about that [HERE](http://ubuntuforums.org/showthread.php?t=640898)
 
-#### Temporary TwinView Setup
+#### Temporary TwinView setup
 
-For temporary mapping of a Wacom device to a single display **while preserving the aspect ratio**, [this script](https://gist.github.com/Quackmatic/6c19fe907945d735c045) may be used. This will letter-box the surface area of the device as required to ensure the input is not stretched on the display. This script may be executed in your `.xinitrc` file for it to automatically run.
+For temporary mapping of a Wacom device to a single display *while preserving the aspect ratio*, [this script](https://gist.github.com/Quackmatic/6c19fe907945d735c045) may be used. This will letter-box the surface area of the device as required to ensure the input is not stretched on the display. This script may be executed in your `.xinitrc` file for it to automatically run.
 
-### Xrandr Setup
+### xrandr setup
 
-xrandr sets two monitors as one big screen, mapping the tablet to the whole virtual screen and deforming aspect ratio. For a solution see this thread: [archlinux forum](https://bbs.archlinux.org/viewtopic.php?pid=797617).
+[xrandr](/index.php/Xrandr "Xrandr") sets two monitors as one big screen, mapping the tablet to the whole virtual screen and deforming aspect ratio. For a solution see this thread: [Arch Linux forum](https://bbs.archlinux.org/viewtopic.php?pid=797617).
 
 If you just want to map the tablet to one of your screens, first find out what the screens are called:
 
 ```
 $ xrandr
 Screen 0: minimum 320 x 200, current 3840 x 1080, maximum 16384 x 16384
-**HDMI-0** disconnected (normal left inverted right x axis y axis)
-**DVI-0** connected 1920x1080+0+0 (normal left inverted right x axis y axis) 477mm x 268mm
+HDMI-0 disconnected (normal left inverted right x axis y axis)
+DVI-0 connected 1920x1080+0+0 (normal left inverted right x axis y axis) 477mm x 268mm
   1920x1080      60.0*+
   1680x1050      60.0  
   ...
-**VGA-0** connected 1920x1080+1920+0 (normal left inverted right x axis y axis) 477mm x 268mm
+VGA-0 connected 1920x1080+1920+0 (normal left inverted right x axis y axis) 477mm x 268mm
   1920x1080      60.0*+
   1680x1050      60.0  
   ...
@@ -292,25 +329,25 @@ Then you need to know what is the ID of your tablet.
 
 ```
 $ xsetwacom list devices
-WALTOP International Corp. Slim Tablet stylus   id: **12**  type: STYLUS
+WALTOP International Corp. Slim Tablet stylus   id: 12  type: STYLUS
 
 ```
 
-In my case I want to map the tablet (ID: **12**) to the screen on the right, which is **VGA-0**. I can do that with this command
+In my case I want to map the tablet (ID: 12) to the screen on the right, which is *VGA-0*. I can do that with this command
 
 ```
-$ xsetwacom set **12** MapToOutput **"VGA-0"**
+$ xsetwacom set 12 MapToOutput VGA-0
 
 ```
 
-This should immediately work, no root necessary.
+This should work immediately, no root necessary.
 
-Should this fail when using the nvidia binary driver, using **HEAD-0**, **HEAD-1** and so on to refer to the monitors may work.
+Should this fail when using the NVIDIA binary driver, using *HEAD-0*, *HEAD-1* and so on to refer to the monitors may work.
 
-If xsetwacom replies with "Unable to find an output ..." an X11 geometry string of the form **WIDTHxHEIGHT+X+Y** can be specified instead of the screen identifier. In this example
+If xsetwacom replies with "Unable to find an output ..." an X11 geometry string of the form `WIDTHxHEIGHT+X+Y` can be specified instead of the screen identifier. In this example
 
 ```
-$ xsetwacom set **12** MapToOutput **"1920x1080+1920+0"**
+$ xsetwacom set 12 MapToOutput 1920x1080+1920+0
 
 ```
 
@@ -318,7 +355,7 @@ should also map the tablet to the screen on the right.
 
 Alternatively, you can use [this bash script](https://bitbucket.org/denilsonsa/small_scripts/src/3380435f92646190f860b87f566a39d0e215034c/xsetwacom_my_preferences.sh?at=default) to quickly map the tablet to one of your screens (or the entire desktop) and fix the aspect ratio.
 
-In case **xsetwacom** doesn't work, you can try **xinput**.
+In case *xsetwacom* does not work, you can try *xinput*.
 
 First, you need to find your tablet's ID.
 
@@ -352,7 +389,7 @@ In my case, the output is:
 
 ```
 
-This mean, my tablet's ID is **20**. Now we map it with **VGA-0** screen:
+This mean, my tablet's ID is *20*. Now we map it with *VGA-0* screen:
 
 ```
 $ xinput map-to-output 20 VGA-0
@@ -376,19 +413,19 @@ $ xsetwacom set *stylus* PressureCurve *x1 y1 x2 y2*
 
 To enable pad buttons and extra pen buttons in [Blender](/index.php/Blender "Blender"), you can create a xsetwacom wrapper to temporarily remap buttons for your blender session.
 
-Provided example (for Bamboo fun) adapted to **Sculpt** mode: [blender_sculpt.sh](http://pastebin.archlinux.fr/1887946)
+Provided example (for Bamboo fun) adapted to *Sculpt* mode: [blender_sculpt.sh](http://pastebin.archlinux.fr/1887946)
 
 It remaps:
 
-*   Left tablet buttons to **Shift** and **Control** *(pan/tilt/zoom/smooth/invert)*
-*   Right tablet buttons to **F** *(brush size/strenght)* and **Control-z** *(undo)*
-*   Top pen button ton **m** *(mask control)*
+*   Left tablet buttons to `Shift` and `Ctrl` *(pan/tilt/zoom/smooth/invert)*
+*   Right tablet buttons to `F` *(brush size/strenght)* and `Ctrl-z` *(undo)*
+*   Top pen button ton `m` *(mask control)*
 
 ### GIMP
 
-To enable proper usage, and pressure sensitive painting in [GIMP](/index.php/GIMP "GIMP"), just go to *Edit > Input Devices*. Now for each of your *eraser*, *stylus*, and *cursor* **devices**, set the **mode** to *Screen*, and remember to save.
+To enable proper usage, and pressure sensitive painting in [GIMP](/index.php/GIMP "GIMP"), just go to *Edit > Input Devices*. Now for each of your *eraser*, *stylus*, and *cursor* *devices*, set the *mode* to *Screen*, and remember to save.
 
-*   Please take note that if present, the *pad* **device** should be kept disabled as I do not think GIMP supports such things. Alternatively, to use such features of your tablet you should map them to keyboard commands with a program such as [Wacom ExpressKeys](http://hem.bredband.net/devel/wacom/).
+*   Please take note that if present, the *pad* *device* should be kept disabled as I do not think GIMP supports such things. Alternatively, to use such features of your tablet you should map them to keyboard commands with a program such as [Wacom ExpressKeys](http://hem.bredband.net/devel/wacom/).
 
 *   You should also take note that the tool selected for the *stylus* is independent to that of the *eraser*. This can actually be quite handy, as you can have the *eraser* set to be used as any tool you like.
 
@@ -398,7 +435,7 @@ If the above was not enough, you may want to try setting up the tablet's stylus 
 
 ### Inkscape
 
-Pressure sensitivity in [Inkscape](/index.php/Inkscape "Inkscape") is enabled the same way as in GIMP. Go to *Edit > Input Devices...*. Now for each of your *eraser*, *stylus*, and *cursor* **devices**, set the **mode** to *Screen*, and remember to save.
+Pressure sensitivity in [Inkscape](/index.php/Inkscape "Inkscape") is enabled the same way as in GIMP. Go to *Edit > Input Devices...*. Now for each of your *eraser*, *stylus*, and *cursor* *devices*, set the *mode* to *Screen*, and remember to save.
 
 ### Krita
 
@@ -408,7 +445,7 @@ Krita only requires that Qt is able to use your tablet to function properly. If 
 
 ### VirtualBox
 
-First, make sure that your tablet works well under Arch. Then, download and install the last driver from [Wacom website](http://www.wacom.com/downloads/drivers.php) on the guest OS. Shutdown the virtual machine, go to **Settings > USB**. Select **Add Filter From Device** and select your tablet (e.g. WACOM CTE-440-U V4.0-3 [0403]). Select **Edit Filter**, and change the last item **Remote** to **Any**.
+First, make sure that your tablet works well under Arch. Then, download and install the last driver from [Wacom website](http://www.wacom.com/downloads/drivers.php) on the guest OS. Shutdown the virtual machine, go to *Settings > USB*. Select *Add Filter From Device* and select your tablet (e.g. WACOM CTE-440-U V4.0-3 [0403]). Select *Edit Filter*, and change the last item *Remote* to *Any*.
 
 ## Troubleshooting
 
@@ -570,7 +607,7 @@ InputDevice    "Mouse1" "CorePointer"
 ## See also
 
 *   [input-wacom Wiki](https://github.com/linuxwacom/input-wacom/wiki)
-*   [xf86-input-wacom Wiki](https://github.com/linuxwacom/xf86-input-wacom/wiki)
+*   [xf86-input-wacom Wiki](https://github.com/linuxwacom/xf86-input-wacom/wiki) (out of date)
 *   [GIMP Talk - Community - Install Guide: Getting Wacom Drawing Tablets To Work In Gimp](http://www.gimptalk.com/forum/topic.php?t=17992&start=1)
 *   [Ubuntu Help: Wacom](https://help.ubuntu.com/community/Wacom)
 *   [Ubuntu Forums - Install a LinuxWacom Kernel Driver for Tablet PC's](http://ubuntuforums.org/showthread.php?t=1038949)

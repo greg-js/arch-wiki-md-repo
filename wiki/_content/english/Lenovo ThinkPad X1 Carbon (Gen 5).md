@@ -64,7 +64,7 @@ Version: ThinkPad X1 Carbon 5th
 
 ### Fingerprint Reader
 
-The fingerprint reader included with this model is `138a:0097 Validity Sensors, Inc`. There's a patched libfprint which adds support for 138a:0097\. [libfprint-vfs0097-git](https://aur.archlinux.org/packages/libfprint-vfs0097-git/)
+The fingerprint reader included with this model is `138a:0097 Validity Sensors, Inc`. There's a patched libfprint which adds partial support for 138a:0097\. [libfprint-vfs0097-git](https://aur.archlinux.org/packages/libfprint-vfs0097-git/) It allows fingerprint authentication, but only if fingers are previously enrolled on the device from Windows. [libfrprint issue](https://bugs.freedesktop.org/show_bug.cgi?id=94536#c46)
 
 ### Bug: Fans blowing at max speed after resuming
 

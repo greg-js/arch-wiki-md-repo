@@ -69,8 +69,8 @@ According to the [official website](https://www.gnupg.org/):
     *   [9.7 "Lost" keys, upgrading to gnupg version 2.1](#.22Lost.22_keys.2C_upgrading_to_gnupg_version_2.1)
     *   [9.8 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_.28when_trying_to_receive_keys.29)
     *   [9.9 Smartcard not detected](#Smartcard_not_detected)
-    *   [9.10 gpg: WARNING: server 'gpg-agent' is older than us (x < y)](#gpg:_WARNING:_server_.27gpg-agent.27_is_older_than_us_.28x_.3C_y.29)
-    *   [9.11 gpg: ..., IPC connect call failed](#gpg:_....2C_IPC_connect_call_failed)
+    *   [9.10 server 'gpg-agent' is older than us (x < y)](#server_.27gpg-agent.27_is_older_than_us_.28x_.3C_y.29)
+    *   [9.11 IPC connect call failed](#IPC_connect_call_failed)
 *   [10 See also](#See_also)
 
 ## Installation
@@ -477,11 +477,11 @@ default-cache-ttl 3600
 
 **Tip:** To cache your passphrase for the whole session, please run the following command:
 ```
-$ /usr/lib/gnupg/gpg-preset-passphrase --preset XXXXXX
+$ /usr/lib/gnupg/gpg-preset-passphrase --preset XXXXX
 
 ```
 
-where XXXX is the keygrip. You can get its value when running `gpg --with-keygrip -K`. Passphrase will be stored until `gpg-agent` is restarted. If you set up `default-cache-ttl` value, it will take precedence.
+where XXXXX is the keygrip. You can get its value when running `gpg --with-keygrip -K`. The passphrase will be stored until `gpg-agent` is restarted. If you set up `default-cache-ttl` value, it will take precedence.
 
 ### Reload the agent
 
@@ -498,24 +498,19 @@ However in some cases only the restart may not be sufficient, like when `keep-sc
 
 ### pinentry
 
-Finally, the agent needs to know how to ask the user for the password. This can be set in the gpg-agent configuration file.
-
-The default uses `/usr/bin/pinentry-gtk-2`, falling back to `/usr/bin/pinentry-curses` if gtk2 is unavailable. However there are other options - see `pacman -Ql pinentry | grep /usr/bin/`. To change the dialog implementation set `pinentry-program` configuration option:
+`gpg-agent` can be configured via the `pinentry-program` stanza to use a particular [pinentry](https://www.archlinux.org/packages/?name=pinentry) user interface when prompting the user for a passphrase. For example:
 
  `~/.gnupg/gpg-agent.conf` 
 ```
-# pinentry-program /usr/bin/pinentry-gnome3
-# pinentry-program /usr/bin/pinentry-qt
-# pinentry-program /usr/bin/pinentry-curses
-# pinentry-program /usr/bin/pinentry-kwallet
-
-pinentry-program /usr/bin/pinentry-gtk-2
+pinentry-program /usr/bin/pinentry-curses
 
 ```
 
-**Tip:** For using `/usr/bin/pinentry-kwallet` you have to install the [kwalletcli](https://aur.archlinux.org/packages/kwalletcli/) package.
+There are other pinentry programs that you can choose from - see `pacman -Ql pinentry | grep /usr/bin/`.
 
-After making this change, [#Reload the agent](#Reload_the_agent).
+**Tip:** In order to use `/usr/bin/pinentry-kwallet` you have to install the [kwalletcli](https://aur.archlinux.org/packages/kwalletcli/) package.
+
+Remember to [reload the agent](#Reload_the_agent) after making changes to the configuration.
 
 ### Cache passwords
 
@@ -728,12 +723,7 @@ $ gpg --import *<fingerprint>*.rev
 
 ```
 
-Now update the keyserver:
-
-```
-$ gpg --keyserver subkeys.pgp.net --send-keys *<userid>*
-
-```
+Then send the key that was revoked back to your keyserver(s) of choice.
 
 ### Change trust model
 
@@ -881,11 +871,11 @@ ACTION=="add", SUBSYSTEM=="usb", ENV{ID_VENDOR_ID}=="1050", ENV{ID_MODEL_ID}=="0
 
 One needs to adapt VENDOR and MODEL according to the `lsusb` output, the above example is for a YubikeyNEO.
 
-### gpg: WARNING: server 'gpg-agent' is older than us (x < y)
+### server 'gpg-agent' is older than us (x < y)
 
 This warning appears if `gnupg` is upgraded and the old gpg-agent is still running. [Restart](/index.php/Restart "Restart") the *user'*s `gpg-agent.socket` (i.e., use the `--user` flag when restarting).
 
-### gpg: ..., IPC connect call failed
+### IPC connect call failed
 
 Make sure `gpg-agent` and `dirmngr` are not running with `killall gpg-agent dirmngr` and the `$GNUPGHOME/crls.d/` folder has permission set to `700`.
 
@@ -914,10 +904,9 @@ Test that gpg-agent starts successfully with `gpg-agent --daemon`.
 
 *   [GNU Privacy Guard Homepage](https://gnupg.org/)
 *   [RFC4880 "OpenPGP Message Format"](https://tools.ietf.org/html/rfc4880)
+*   [gpg.conf recommendations and best practices](https://help.riseup.net/en/security/message-security/openpgp/gpg-best-practices)
 *   [Creating GPG Keys (Fedora)](https://fedoraproject.org/wiki/Creating_GPG_Keys)
 *   [OpenPGP subkeys in Debian](https://wiki.debian.org/Subkeys)
-*   [A more comprehensive gpg Tutorial](https://sanctum.geek.nz/arabesque/series/gnu-linux-crypto/)
-*   [gpg.conf recommendations and best practices](https://help.riseup.net/en/security/message-security/openpgp/gpg-best-practices)
-*   [Torbirdy gpg.conf](https://github.com/ioerror/torbirdy/blob/master/gpg.conf)
-*   [/r/GPGpractice - a subreddit to practice using GnuPG.](https://www.reddit.com/r/GPGpractice/)
 *   [Protecting code integrity with PGP](https://github.com/lfit/itpol/blob/master/protecting-code-integrity.md)
+*   [A more comprehensive gpg Tutorial](https://sanctum.geek.nz/arabesque/series/gnu-linux-crypto/)
+*   [/r/GPGpractice - a subreddit to practice using GnuPG.](https://www.reddit.com/r/GPGpractice/)

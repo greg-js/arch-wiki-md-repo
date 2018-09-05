@@ -1,8 +1,16 @@
-<center>**Navegación**</center>
-
-<center>[Portada](/index.php/ArchWiki_Translation_Team_(Espa%C3%B1ol) "ArchWiki Translation Team (Español)") — [Equipo y traductores](/index.php/ArchWiki_Translation_Team/About_(Espa%C3%B1ol) "ArchWiki Translation Team/About (Español)") — <a class="mw-selflink selflink">Colaboración y mantenimiento</a> — [Guía de estilo](/index.php/ArchWiki_Translation_Team/Style_(Espa%C3%B1ol) "ArchWiki Translation Team/Style (Español)") — [Tablas de traducciones](/index.php/ArchWiki_Translation_Team/Board_(Espa%C3%B1ol) "ArchWiki Translation Team/Board (Español)") — [Glosario](/index.php/ArchWiki_Translation_Team/Glossary_(Espa%C3%B1ol) "ArchWiki Translation Team/Glossary (Español)")</center>
+**[Principal](/index.php/ArchWiki_Translation_Team_(Espa%C3%B1ol) "ArchWiki Translation Team (Español)")**
 
 * * *
+
+[Equipo](/index.php/ArchWiki_Translation_Team/About_(Espa%C3%B1ol) "ArchWiki Translation Team/About (Español)") – <a class="mw-selflink selflink">Colaboración</a> – [Coordinación](/index.php/ArchWiki_Translation_Team/Board_(Espa%C3%B1ol) "ArchWiki Translation Team/Board (Español)")
+
+Artículos relacionados
+
+*   [Glosario](/index.php/ArchWiki_Translation_Team/Glossary_(Espa%C3%B1ol) "ArchWiki Translation Team/Glossary (Español)")
+*   [Guía de estilo](/index.php/ArchWiki_Translation_Team/Style_(Espa%C3%B1ol) "ArchWiki Translation Team/Style (Español)")
+*   [Sección de ayuda](/index.php/Category:Help_(Espa%C3%B1ol) "Category:Help (Español)")
+
+**Advertencia:** Esta página está aún en gestación. Para ver su desarrollo y hacer propuestas vaya [aquí](/index.php/User:AlonsoLP/Colaboraci%C3%B3n "User:AlonsoLP/Colaboración")
 
 La traducción es un proceso laborioso y complejo que conlleva una considerable carga subjetiva. Es fácil cometer errores, malinterpretar conceptos o utilizar formas estilísticas inapropiadas, por lo que se hace necesaria la participación de varias personas.
 

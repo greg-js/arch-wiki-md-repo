@@ -242,7 +242,7 @@ Trying location provider `geoclue2'...
 Using provider `geoclue2'.
 Unable to start GeoClue client: GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: 'redshift' disallowed, no agent for UID 1000.
 Unable to connect to GeoClue.
-Unable to get location from provider.or `$redshift-gtk` and are getting the following error:
+Unable to get location from provider.
 
 ```
 

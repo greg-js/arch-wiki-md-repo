@@ -3,19 +3,17 @@ Related articles
 *   [Xbindkeys](/index.php/Xbindkeys "Xbindkeys")
 *   [Xmodmap](/index.php/Xmodmap "Xmodmap")
 
-From [sxhkd's Github page](https://github.com/baskerville/sxhkd):
-
-	*sxhkd is a simple X hotkey daemon with a powerful and compact configuration syntax.*
+[sxhkd](https://github.com/baskerville/sxhkd) is a simple [X](/index.php/X "X") hotkey daemon, by the developer of [bspwm](/index.php/Bspwm "Bspwm"), that reacts to input events by executing commands.
 
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 Sxhkd Config File](#Sxhkd_Config_File)
-    *   [2.2 Systemd Service File](#Systemd_Service_File)
+    *   [2.1 Configuration file](#Configuration_file)
+    *   [2.2 Systemd service file](#Systemd_service_file)
 *   [3 Usage](#Usage)
 *   [4 Example](#Example)
-*   [5 See Also](#See_Also)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -23,9 +21,9 @@ From [sxhkd's Github page](https://github.com/baskerville/sxhkd):
 
 ## Configuration
 
-### Sxhkd Config File
+### Configuration file
 
-sxhkd defaults to `$XDG_CONFIG_HOME/sxhkd/sxhkdrc` for its configuration file. An alternate configuration file can be specified with the `-c` option.
+sxhkd defaults to `[$XDG_CONFIG_HOME](/index.php/$XDG_CONFIG_HOME "$XDG CONFIG HOME")/sxhkd/sxhkdrc` for its configuration file. An alternate configuration file can be specified with the `-c` option.
 
 Each line of the configuration file is interpreted as so:
 
@@ -47,7 +45,7 @@ Mouse hotkeys can be defined by using one of the following special keysym names:
 
 What is actually executed is `SHELL -c COMMAND`, which means you can use environment variables in `COMMAND`. `SHELL` will be the content of the first defined environment variable in the following list: `SXHKD_SHELL`, `SHELL`. If sxhkd receives a `SIGUSR1` signal, it will reload its configuration file.
 
-### Systemd Service File
+### Systemd service file
 
 Create systemd service file for the user in question
 
@@ -102,7 +100,7 @@ Restart user's sxhkd service
 
 ```
 
-## See Also
+## See also
 
 *   [Official website](https://github.com/baskerville/sxhkd) - includes configuration options, example bindings, and source code.
 *   [ArchLinux forum thread](https://bbs.archlinux.org/viewtopic.php?id=155613)

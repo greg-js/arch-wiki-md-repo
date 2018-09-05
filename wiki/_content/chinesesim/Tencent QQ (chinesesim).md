@@ -354,7 +354,7 @@ Wine QQ/TM 在平铺式窗口管理器下可能不太听话。以下是一些 [A
 
 *   将所有 TM 的窗口设置为浮动
 *   清除不需要的窗口边框、避免菜单弹出时焦点移动到菜单上
-*   在使用标签式会话窗口时，增加[使用 Alt+数字来切换标签页](https://blog.lilydjwg.me/2013/11/15/switch-tabs-with-alt-num-in-wined-tm-exe-in-awesome.41729.html)的快捷键（需要安装 [xdotool](/index.php?title=Xdotool&action=edit&redlink=1 "Xdotool (page does not exist)")）
+*   在使用标签式会话窗口时，增加[使用 Alt+数字来切换标签页](https://blog.lilydjwg.me/2013/11/15/switch-tabs-with-alt-num-in-wined-tm-exe-in-awesome.41729.html)的快捷键（需要安装 [xdotool](/index.php/Xdotool "Xdotool")）
 *   自动关闭弹出的新闻窗口
 
 ```
