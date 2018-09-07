@@ -12,7 +12,7 @@ Related articles
     *   [2.1 Key bindings](#Key_bindings)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Automatic resuming from where you left off](#Automatic_resuming_from_where_you_left_off)
-    *   [3.2 Hardware acceleration](#Hardware_acceleration)
+    *   [3.2 Hardware video acceleration](#Hardware_video_acceleration)
         *   [3.2.1 Enabling VDPAU](#Enabling_VDPAU)
         *   [3.2.2 Enabling VA-API](#Enabling_VA-API)
     *   [3.3 Translucent video with Radeon cards and Composite enabled](#Translucent_video_with_Radeon_cards_and_Composite_enabled)
@@ -88,7 +88,7 @@ If this script is restarted within a short amount of time after closing MPayer (
 
 If the video file to be played is on a read-only filesystem, or otherwise lives in a location that cannot be written to, resume will fail. This is because the current implementation uses a file parallel to the video file to store the timecode.
 
-### Hardware acceleration
+### Hardware video acceleration
 
 See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 

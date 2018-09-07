@@ -25,7 +25,7 @@ From the project [home page](http://www.ffmpeg.org/):
     *   [2.12 Extracting audio](#Extracting_audio)
     *   [2.13 Stripping audio](#Stripping_audio)
     *   [2.14 Splitting files](#Splitting_files)
-    *   [2.15 Hardware acceleration](#Hardware_acceleration)
+    *   [2.15 Hardware video acceleration](#Hardware_video_acceleration)
         *   [2.15.1 VA-API](#VA-API)
         *   [2.15.2 Nvidia NVENC](#Nvidia_NVENC)
         *   [2.15.3 Nvidia NVDEC](#Nvidia_NVDEC)
@@ -405,7 +405,7 @@ $ ffmpeg -i file.ext -t 00:05:30 -c copy part1.ext -ss 00:05:30 -c copy part2.ex
 
 ```
 
-### Hardware acceleration
+### Hardware video acceleration
 
 **Warning:** Encoding may fail when using hardware acceleration, use software encoding as a fallback.
 

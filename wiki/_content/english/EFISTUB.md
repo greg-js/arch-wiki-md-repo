@@ -19,6 +19,7 @@ With EFISTUB a kernel can be booted directly by a UEFI motherboard or indirectly
         *   [2.3.2 efibootmgr with .efi file](#efibootmgr_with_.efi_file)
         *   [2.3.3 UEFI Shell](#UEFI_Shell)
         *   [2.3.4 Using a startup.nsh script](#Using_a_startup.nsh_script)
+*   [3 See also](#See_also)
 
 ## Preparing for EFISTUB
 
@@ -191,3 +192,9 @@ vmlinuz-linux rw root=/dev/sdX [rootfs=myfs] [rootflags=myrootflags] \
 ```
 
 This method will work with almost all UEFI firmware versions you may encounter in real hardware, you can use it as last resort. **The script must be a single long line.** Sections in brackets are optional and given only as a guide. Shell style linebreaks are for visual clarification only. FAT filesystems use the backslash as path separator and in this case, the backslash declares the initramfs is located in the root of the ESP partition. Only Intel microcode is loaded in the booting parameters line; AMD microcode is read from disk later during the boot process; this is done automatically by the kernel.
+
+## See also
+
+*   [Linux Kernel Documentation on EFISTUB](https://www.kernel.org/doc/Documentation/efi-stub.txt)
+*   [Linux Kernel EFISTUB Git Commit](http://git.kernel.org/?p=linux/kernel/git/torvalds/linux.git;a=commitdiff;h=291f36325f9f252bd76ef5f603995f37e453fc60;hp=55839d515495e766605d7aaabd9c2758370a8d27)
+*   [Rod Smith's page on EFISTUB](http://www.rodsbooks.com/efi-bootloaders/efistub.html)

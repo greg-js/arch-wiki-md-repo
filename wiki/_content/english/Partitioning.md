@@ -209,7 +209,7 @@ To use hibernation (a.k.a suspend to disk) it is advised to create the swap part
 
 ### Example layouts
 
-**Note:** UEFI/GPT does not have a "boot" flag, booting relies on boot entries in NVRAM and files in the [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). [Parted](/index.php/Parted "Parted") and its front-ends use a `boot` flag on GPT to indicate an EFI system partition.
+**Note:** UEFI/GPT does not have a "boot" flag, booting relies on boot entries in NVRAM. [Parted](/index.php/Parted "Parted") and its front-ends use a `boot` flag on GPT to indicate an EFI system partition.
 
 #### UEFI/GPT example layout
 

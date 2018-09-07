@@ -61,7 +61,7 @@ This will clone the entire drive, including the MBR (and therefore bootloader), 
 *   `sync` fills input blocks with zeroes if there were any read errors, so data offsets stay in sync.
 *   `status=progress` shows periodic transfer statistics which can be used to estimate when the operation may be complete.
 
-**Warning:** The block size you specify influences how read errors are handled. Read below. For data recovery, use [ddrescue](#Using_ddrescue).
+**Warning:** The block size you specify influences how read errors are handled. Read below. For data recovery, use [ddrescue](/index.php/Disk_cloning#Using_ddrescue "Disk cloning").
 
 The *dd* utility technically has an "input block size" (IBS) and an "output block size" (OBS). When you set `bs`, you effectively set both IBS and OBS. Normally, if your block size is, say, 1 MiB, *dd* will read 1024*1024 bytes and write as many bytes. But if a read error occurs, things will go wrong. Many people seem to think that *dd* will "fill up read errors with zeroes" if you use the `noerror,sync` options, but this is not what happens. *dd* will, according to documentation, fill up the OBS to IBS size *after completing its read*, which means adding zeroes at the *end* of the block. This means, for a disk, that effectively the whole 1 MiB would become messed up because of a single 512 byte read error in the beginning of the read: 12ERROR89 would become 128900000 instead of 120000089.
 

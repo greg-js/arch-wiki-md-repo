@@ -370,7 +370,7 @@ Arch User Repository是储存所有用户提交的PKGBUILD的地方，软件包�
 *   那个软件包的功能只和AUR相关（(e.g. 是个 [AUR helper](/index.php/AUR_helper "AUR helper"))）
 *   没有再发布的授权许可
 
-另见 [DeveloperWiki:Community repo candidates](/index.php/DeveloperWiki:Community_repo_candidates "DeveloperWiki:Community repo candidates") 和 [Rules for Packages Entering the community Repo](/index.php/AUR_Trusted_User_Guidelines#Rules_for_Packages_Entering_the_.5Bcommunity.5D_Repo "AUR Trusted User Guidelines").
+另见 [Rules for Packages Entering the community Repo](/index.php/AUR_Trusted_User_Guidelines#Rules_for_Packages_Entering_the_.5Bcommunity.5D_Repo "AUR Trusted User Guidelines").
 
 ### 如何加速编译？
 

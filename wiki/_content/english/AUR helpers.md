@@ -1,5 +1,7 @@
 **Warning:** AUR helpers are **not** [supported](https://bbs.archlinux.org/viewtopic.php?pid=828310#p828310) by Arch Linux. You should become familiar with the [manual build process](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") in order to be prepared to troubleshoot problems.
 
+**Note:** Do not edit this article prior to discussion in [Talk:AUR helpers](/index.php/Talk:AUR_helpers "Talk:AUR helpers").
+
 AUR helpers automate certain tasks for using the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Most helpers automate the process of retrieving a package's [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") from the AUR and building the package. In most cases packages installed from the AUR are not checked for updates by [pacman](/index.php/Pacman "Pacman"); thus some helpers check the AUR for updates and automate the re-build process. However, keep in mind that a rebuild of an AUR package, or any other packages built and installed locally, may be required when shared libraries are updated, not just when the package is updated.
 
 Since AUR helpers are unsupported, they are not present in the [official repositories](/index.php/Official_repositories "Official repositories").
@@ -16,8 +18,6 @@ Since AUR helpers are unsupported, they are not present in the [official reposit
 *   [8 Uploading](#Uploading)
 
 ## Legend
-
-**Note:** Do not edit this section prior to discussion in [Talk:AUR helpers](/index.php/Talk:AUR_helpers "Talk:AUR helpers").
 
 The columns have the following meaning:
 

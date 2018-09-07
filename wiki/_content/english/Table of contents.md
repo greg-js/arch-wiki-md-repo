@@ -1,6 +1,6 @@
 | [English](/index.php/Category:English "Category:English") <small>(2)</small> |
 | <small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(23)</small> |
-| <small>1.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(18) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
+| <small>1.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(17) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
 | <small>1.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(48)</small> |
 | <small>1.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
 | <small>1.2.</small> [Arch projects](/index.php/Category:Arch_projects "Category:Arch projects") <small>(7)</small> |
@@ -62,7 +62,7 @@
 | <small>2.17.4.</small> [Web frameworks](/index.php/Category:Web_frameworks "Category:Web frameworks") <small>(2) (also in [Frameworks](/index.php/Category:Frameworks "Category:Frameworks"))</small> |
 | <small>2.17.5.</small> [Wiki software](/index.php/Category:Wiki_software "Category:Wiki software") <small>(6)</small> |
 | <small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(38)</small> |
-| <small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(18) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
+| <small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(17) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
 | <small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(48)</small> |
 | <small>3.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
 | <small>3.2.</small> [Frameworks](/index.php/Category:Frameworks "Category:Frameworks") <small>(4)</small> |

@@ -188,14 +188,14 @@ In this case, a single byte of value 5 (hexadecimal) is appended to the contents
 
 ##### GUID partition table
 
-For a [GPT](/index.php/GPT "GPT"), ensure bit 2 of the attributes is set for the `/boot` partition using [gdisk](/index.php/Gdisk "Gdisk"). In other words, the "legacy_boot" flag must be set. Using *sgdisk* the command is:
+For a [GPT](/index.php/GPT "GPT"), ensure that attribute bit 2 "Legacy BIOS bootable" is set for the `/boot` partition. For Parted it can be set using the "legacy_boot" flag. Using [sgdisk](/index.php/Sgdisk "Sgdisk") the command to set the attribute is:
 
 ```
 # sgdisk /dev/sda --attributes=1:set:2
 
 ```
 
-This would toggle the attribute *legacy BIOS bootable* on partition 1 of `/dev/sda`. To check:
+This will set the attribute "legacy BIOS bootable" on partition 1 of `/dev/sda`. To check:
 
  `# sgdisk /dev/sda --attributes=1:show`  `1:2:1 (legacy BIOS bootable)` 
 
@@ -217,10 +217,10 @@ Install the MBR:
 
 ### Limitations of UEFI Syslinux
 
-*   UEFI Syslinux application `syslinux.efi` cannot be signed by `sbsign` (from sbsigntool) for UEFI Secure Boot. Bug report: [[3]](https://bugzilla.syslinux.org/show_bug.cgi?id=8)
+*   UEFI Syslinux application `syslinux.efi` cannot be signed by `sbsign` (from [sbsigntools](https://www.archlinux.org/packages/?name=sbsigntools)) for UEFI Secure Boot. Bug report: [[3]](https://bugzilla.syslinux.org/show_bug.cgi?id=8)
 *   Using TAB to edit kernel parameters in UEFI Syslinux menu might lead to garbaged display (text on top of one another). Bug report: [[4]](https://bugzilla.syslinux.org/show_bug.cgi?id=9)
 *   UEFI Syslinux does not support chainloading other EFI applications like `UEFI Shell` or `Windows Boot Manager`. Enhancement request: [[5]](https://bugzilla.syslinux.org/show_bug.cgi?id=17)
-*   In some cases, UEFI Syslinux might not boot in some Virtual Machines like QEMU/OVMF or VirtualBox or some VMware products/versions and in some UEFI emulation environments like DUET. A Syslinux contributor has confirmed no such issues present on VMware Workstation 10.0.2 and Syslinux-6.02 or later. Bug reports: [[6]](https://bugzilla.syslinux.org/show_bug.cgi?id=21), [[7]](https://bugzilla.syslinux.org/show_bug.cgi?id=23) and [[8]](https://bugzilla.syslinux.org/show_bug.cgi?id=72)
+*   In some cases, UEFI Syslinux might not boot in some Virtual Machines like [QEMU](/index.php/QEMU "QEMU")/OVMF or [VirtualBox](/index.php/VirtualBox "VirtualBox") or some [VMware](/index.php/VMware "VMware") products/versions and in some UEFI emulation environments like DUET. A Syslinux contributor has confirmed no such issues present on VMware Workstation 10.0.2 and Syslinux-6.02 or later. Bug reports: [[6]](https://bugzilla.syslinux.org/show_bug.cgi?id=21), [[7]](https://bugzilla.syslinux.org/show_bug.cgi?id=23) and [[8]](https://bugzilla.syslinux.org/show_bug.cgi?id=72)
 *   Memdisk is not available for UEFI. Enhancement request: [[9]](https://bugzilla.syslinux.org/show_bug.cgi?id=30)
 
 ### Installation on UEFI
@@ -239,7 +239,7 @@ Install the MBR:
 *   Setup boot entry for Syslinux using [efibootmgr](/index.php/Efibootmgr "Efibootmgr"):
 
 ```
-# efibootmgr -c -d /dev/sdX -p Y -l /EFI/syslinux/syslinux.efi -L "Syslinux"
+# efibootmgr --create --disk /dev/sdX --part Y --loader /EFI/syslinux/syslinux.efi --label "Syslinux" --verbose
 
 ```
 

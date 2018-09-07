@@ -46,28 +46,28 @@ There are several ways to achieve this on Linux:
  |
 | Decoding |
 | MPEG2 | GMA 4500 and newer | Radeon HD 6000 and newer | Radeon HD 4000 and newer | See VDPAU |
-| MPEG4 | ✗ | Radeon HD 6000 and newer | Radeon HD 6000 and newer |
+| MPEG4 | No | Radeon HD 6000 and newer | Radeon HD 6000 and newer |
 | H.264 | GMA 4500, Ironlake Graphics and newer | Radeon HD 2000 and newer | Radeon HD 4000 and newer |
-| HEVC (H.265) | Cherryview/Braswell and newer | Radeon R9 285 and newer | ✗ |
+| HEVC (H.265) | Cherryview/Braswell and newer | Radeon R9 285 and newer | No |
 | VC1 | Sandy Bridge Graphics and newer | Radeon HD 2000 and newer | Radeon HD 4000 and newer |
-| VP8 | Broadwell and newer | ✗ | ✗ | ✗ |
-| VP9 | Broxton and newer | Raven Ridge and newer | ✗ |
+| VP8 | Broadwell and newer | No | No | No |
+| VP9 | Broxton and newer | Raven Ridge and newer | No |
 | Encoding |
-| MPEG2 | Ivy Bridge Graphics and newer | ✗ | ✗ | ✗ |
+| MPEG2 | Ivy Bridge Graphics and newer | No | No | No |
 | H.264 | Sandy Bridge Graphics and newer | Radeon HD 7000 and newer |
 | HEVC (H.265) | Skylake and newer | Raven Ridge and newer |
-| VP8 | Cherryview/Braswell and newer | ✗ |
-| VP9 | Kaby Lake and newer | ✗ |
+| VP8 | Cherryview/Braswell and newer | No |
+| VP9 | Kaby Lake and newer | No |
 
 <caption>VDPAU</caption>
  [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) | [amdgpu-pro-vdpau](https://aur.archlinux.org/packages/amdgpu-pro-vdpau/)
 ([AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") only) | [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl)
 (VA-API adapter) |
 | Decoding |
-| MPEG2 | Radeon 9500 and newer, GeForce 8 and newer | GeForce 8 and newer |  ? | ✗ |
+| MPEG2 | Radeon 9500 and newer, GeForce 8 and newer | GeForce 8 and newer |  ? | No |
 | MPEG4 | Radeon HD 6000 and newer, GeForce 200 and newer | GeForce 200 and newer |
 | H.264 | Radeon HD 2000 and newer, GeForce 8 and newer | GeForce 8 and newer | See VA-API |
-| HEVC (H.265) | Radeon R9 285 and newer | GeForce 900 and newer | ✗ |
+| HEVC (H.265) | Radeon R9 285 and newer | GeForce 900 and newer | No |
 | VC1 | Radeon HD 2000 and newer, GeForce 8 and newer | GeForce 8 and newer |
 
 *   Supported by [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) instead.
@@ -77,25 +77,25 @@ There are several ways to achieve this on Linux:
 
 <caption>Nvidia NVDEC/NVENC ([NVIDIA](/index.php/NVIDIA "NVIDIA") only)</caption>
  Decoding (NVDEC) | Encoding (NVENC) |
-| MPEG-2 | ✓ | ✗ |
-| VC-1 | ✓ | ✗ |
-| H.264 | ✓ | ✓ |
+| MPEG-2 | Yes | No |
+| VC-1 | Yes | No |
+| H.264 | Yes | Yes |
 | HEVC (H.265) | Pascal and newer | Pascal and newer |
-| VP8 | Maxwell2 and newer | ✗ |
-| VP9 | Pascal and newer | ✗ |
+| VP8 | Maxwell2 and newer | No |
+| VP9 | Pascal and newer | No |
 
 ### Software
 
- VA-API | VDPAU | NVDEC/NVENC |
-| [GStreamer](/index.php/GStreamer "GStreamer") | ✓ (with [gstreamer-vaapi](https://www.archlinux.org/packages/?name=gstreamer-vaapi), see [GStreamer#Hardware acceleration](/index.php/GStreamer#Hardware_acceleration "GStreamer")) | ✓ (with [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad), see [GStreamer#Hardware acceleration](/index.php/GStreamer#Hardware_acceleration "GStreamer")) | ✓ (with [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad), see [GStreamer#Hardware acceleration](/index.php/GStreamer#Hardware_acceleration "GStreamer")) |
-| [VLC media player](/index.php/VLC_media_player "VLC media player") | ✓ (see [VLC media player#Hardware acceleration support](/index.php/VLC_media_player#Hardware_acceleration_support "VLC media player")) | ✓ (see [VLC media player#Hardware acceleration support](/index.php/VLC_media_player#Hardware_acceleration_support "VLC media player")) | ✗ |
-| [mpv](/index.php/Mpv "Mpv") | ✓ (see [mpv#Hardware decoding](/index.php/Mpv#Hardware_decoding "Mpv")) | ✓ (see [mpv#Hardware decoding](/index.php/Mpv#Hardware_decoding "Mpv")) | ✓ |
-| [MPlayer](/index.php/MPlayer "MPlayer") | ✓ (with [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/), see [MPlayer#Enabling VA-API](/index.php/MPlayer#Enabling_VA-API "MPlayer")) | ✓ (see [MPlayer#Enabling VDPAU](/index.php/MPlayer#Enabling_VDPAU "MPlayer")) | ✗ |
-| [Flash](/index.php/Flash "Flash") | ✓ (with [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl), see [Flash#Configuration](/index.php/Flash#Configuration "Flash")) | ✓ (see [Flash#Configuration](/index.php/Flash#Configuration "Flash")) | ✗ |
-| [Kodi](/index.php/Kodi "Kodi") | ✓ | ✓ | ✓ |
-| [Firefox](/index.php/Firefox "Firefox") | ✗ [[2]](https://bugzilla.mozilla.org/show_bug.cgi?id=1210726) [[3]](https://bugzilla.mozilla.org/show_bug.cgi?id=1210727) [[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=563206) | ✗ |
-| [Chromium](/index.php/Chromium "Chromium") | [WIP](https://chromium-review.googlesource.com/c/chromium/src/+/532294) ([chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/)) | ✗ | ✗ |
-| [FFmpeg](/index.php/FFmpeg "FFmpeg") | ✓ | ✓ | ✓ |
+ VA-API | VDPAU | NVDEC/NVENC | Documentation |
+| [GStreamer](/index.php/GStreamer "GStreamer") | Yes, via [gstreamer-vaapi](https://www.archlinux.org/packages/?name=gstreamer-vaapi) | Yes, via [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) | Yes, via [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) | [GStreamer#Hardware video acceleration](/index.php/GStreamer#Hardware_video_acceleration "GStreamer") |
+| [VLC media player](/index.php/VLC_media_player "VLC media player") | Yes | Yes | No | [VLC media player#Hardware video acceleration](/index.php/VLC_media_player#Hardware_video_acceleration "VLC media player") |
+| [mpv](/index.php/Mpv "Mpv") | Yes | Yes | Yes | [mpv#Hardware decoding](/index.php/Mpv#Hardware_decoding "Mpv") |
+| [MPlayer](/index.php/MPlayer "MPlayer") | Yes, via [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/) | Yes | No | [MPlayer#Hardware video acceleration](/index.php/MPlayer#Hardware_video_acceleration "MPlayer") |
+| [Flash](/index.php/Flash "Flash") | No | Yes | No | [Flash#Configuration](/index.php/Flash#Configuration "Flash") |
+| [Kodi](/index.php/Kodi "Kodi") | Yes | Yes | Yes | [Kodi#Hardware video acceleration](/index.php/Kodi#Hardware_video_acceleration "Kodi") |
+| [Firefox](/index.php/Firefox "Firefox") | No | No | No | [Hardware decoding on Linux tracker bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1210726) |
+| [Chromium](/index.php/Chromium "Chromium") | Yes, via [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/) | No | No | [Chromium#Hardware video acceleration](/index.php/Chromium#Hardware_video_acceleration "Chromium") |
+| [FFmpeg](/index.php/FFmpeg "FFmpeg") | Yes | Yes | Yes | [FFmpeg#Hardware video acceleration](/index.php/FFmpeg#Hardware_video_acceleration "FFmpeg") |
 
 ## Installation
 
@@ -103,7 +103,7 @@ The choice varies depending on your video card vendor:
 
 *   For Intel Graphics use VA-API.
 *   For NVIDIA cards use VDPAU.
-*   For AMD cards you can use both (with [mesa](https://www.archlinux.org/packages/?name=mesa)). The difference is really only in the application implementation [[5]](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/open-source-amd-linux/887994-vaapi-or-vdpau).
+*   For AMD cards you can use both (with [mesa](https://www.archlinux.org/packages/?name=mesa)). The difference is really only in the application implementation [[2]](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/open-source-amd-linux/887994-vaapi-or-vdpau).
 
 There are also two specific types of drivers for VA-API and VDPAU:
 
@@ -118,7 +118,7 @@ For pre-2007 cards see [XvMC](/index.php/XvMC "XvMC").
 
 **Open source drivers:**
 
-*   [ATI](/index.php/ATI "ATI")/[AMDGPU](/index.php/AMDGPU "AMDGPU") Radeon 9500 and newer GPUs are supported by either [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) with [mesa](https://www.archlinux.org/packages/?name=mesa) or [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) (see [#Installing VDPAU](#Installing_VDPAU)).
+*   [ATI](/index.php/ATI "ATI")/[AMDGPU](/index.php/AMDGPU "AMDGPU") Radeon 9500 and newer GPUs are supported by [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) with [mesa](https://www.archlinux.org/packages/?name=mesa).
 *   [Intel](/index.php/Intel "Intel") GMA 4500 series and newer GPUs are supported by [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) with [mesa](https://www.archlinux.org/packages/?name=mesa).
     *   To get better support on GMA 4500 consider using [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) instead, see [Intel#Hardware accelerated H.264 decoding on GMA 4500](/index.php/Intel#Hardware_accelerated_H.264_decoding_on_GMA_4500 "Intel") for instructions and caveats.
     *   A new usermode driver being developed by Intel is available for Broadwell, Skylake, Kabylake, Apollolake and Canonlake: [intel-media-driver](https://aur.archlinux.org/packages/intel-media-driver/)

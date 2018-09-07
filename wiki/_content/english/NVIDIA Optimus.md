@@ -243,4 +243,4 @@ If you wish to use Bumblebee, which will implement powersaving and some other us
 
 ## Using nvidia-xrun
 
-Install from ([nvidia-xrun-git](https://aur.archlinux.org/packages/nvidia-xrun-git/)),follow [https://github.com/Witko/nvidia-xrun](https://github.com/Witko/nvidia-xrun)
+See [nvidia-xrun](/index.php/Nvidia-xrun "Nvidia-xrun").

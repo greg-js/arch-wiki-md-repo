@@ -192,9 +192,9 @@ If "0", does not restore the backlight settings on boot. However, settings will 
 
 	[https://github.com/jmesmon/illum](https://github.com/jmesmon/illum) || [illum-git](https://aur.archlinux.org/packages/illum-git/)
 
-*   **Light** — Program to control backlight controllers. It is the successor of *LightScript*.
+*   **Light** — Program to control lights, leds and backlights. Works without X. Successor of *LightScript*.
 
-	[https://haikarainen.github.io/light/](https://haikarainen.github.io/light/) || [light](https://aur.archlinux.org/packages/light/)
+	[https://haikarainen.github.io/light/](https://haikarainen.github.io/light/) || [light](https://aur.archlinux.org/packages/light/), [light-git](https://aur.archlinux.org/packages/light-git/)
 
 *   **Lux** — Shell script to easily control brightness on backlight-controllers.
 

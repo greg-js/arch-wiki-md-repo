@@ -107,7 +107,7 @@ winbindd.service | Servicios de archivos e impresión para los clientes de Micro
 | [LVM](/index.php/LVM "LVM") |  ? | blk-availability.service
 lvm2-lvmetad.service
 lvm2-monitor.service
-lvm2-pvscan.service | LVM es un administrador de volumen lógico para el núcleo de Linux; administra unidades de disco y dispositivos similares de almacenamiento masivo. |
+lvm2-pvscan.service | LVM es un administrador de volumen lógico para el kernel de Linux; administra unidades de disco y dispositivos similares de almacenamiento masivo. |
 | [SANE](/index.php/SANE "SANE") | saned | saned@.service | Demonio de red de SANE. |
  saslauthd | saslauthd.service | Demonio de autenticación SASL. |
 | [lm_sensors](/index.php/Lm_sensors "Lm sensors") | sensord | sensord.service | Demonio para el registro de la información de los sensores. |

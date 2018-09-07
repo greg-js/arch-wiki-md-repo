@@ -34,6 +34,8 @@ In the end, the provided solution will allow you to use the best currently avail
     *   [4.2 See that you have received a email](#See_that_you_have_received_a_email)
 *   [5 Optional Items](#Optional_Items)
     *   [5.1 Quota](#Quota)
+    *   [5.2 Autocreate and autosubscribe folders in Dovecot](#Autocreate_and_autosubscribe_folders_in_Dovecot)
+    *   [5.3 Dovecot Public Folder and Global ACL's](#Dovecot_Public_Folder_and_Global_ACL.27s)
 *   [6 Sidenotes](#Sidenotes)
     *   [6.1 Alternative vmail folder structure](#Alternative_vmail_folder_structure)
 *   [7 Troubleshooting](#Troubleshooting)
@@ -634,6 +636,106 @@ doveadm quota get -A
 ```
 
 You should be able to see the quota in roundcube too.
+
+### Autocreate and autosubscribe folders in Dovecot
+
+To automatically create the "usual" mail hierarchy, do the following:
+
+*   Modify your /etc/dovecot/dovecot.conf as follows, editing to your specific needs.
+
+```
+namespace inbox {
+  type = private
+  separator = /
+  prefix =
+  inbox = yes
+}
+namespace inbox {
+  mailbox Drafts {
+    auto = subscribe
+    special_use = \Drafts
+  }
+  mailbox Junk {
+   auto = subscribe
+   special_use = \Junk
+ }
+ mailbox Trash {
+   auto = subscribe
+   special_use = \Trash
+ }
+ mailbox Sent {
+   auto = subscribe
+   special_use = \Sent
+ }
+}
+
+```
+
+### Dovecot Public Folder and Global ACL's
+
+To enable IMAP namespace public folders combined with global and per-folder ACL's, do the following:
+
+*   First, add the following lines to /etc/dovecot/dovecot.conf
+
+```
+### ACL's
+mail_plugins = acl
+protocol imap {
+  mail_plugins = $mail_plugins imap_acl
+}
+plugin {
+ acl = vfile
+ # With global ACL files in /etc/dovecot/dovecot-acls file (v2.2.11+):
+ acl = vfile:/etc/dovecot/dovecot-acl
+}
+
+### Public Mailboxes
+namespace {
+ type = public
+ separator = /
+ prefix = public/
+ location = maildir:/home/vmail/public:INDEXPVT=~/public
+ subscriptions = no
+ list = children
+}
+
+```
+
+*   Create the folder:
+
+```
+mkdir /home/vmail/public
+
+```
+
+*   Create the folders you want to publicly share, for example (the period is required!):
+
+```
+mkdir /home/vmail/public/.example-1
+mkdir /home/vmail/public/.example-2
+
+```
+
+*   Change folder ownership:
+
+```
+chown -R vmail:vmail /home/vmail/public
+
+```
+
+*   Create and modify your global acl file to allow users access to these folders:
+
+```
+nano /etc/dovecot/dovecot-acl
+-----------------------------
+public/* user=admin@example.com lrwstipekxa
+
+```
+
+In the above example, user admin@example.com has access to, and can do anything to, all the public folders. Edit to fit your specific needs.
+
+*   lrwstipekxa are the permissions being granted. Visit the Dovecot wiki for further details.
+*   Make sure the user subscribes to the folders in the client they are using.
 
 ## Sidenotes
 

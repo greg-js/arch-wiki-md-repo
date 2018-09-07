@@ -64,6 +64,6 @@ Visite la [tabla de contenidos](/index.php/Table_of_contents_(Espa%C3%B1ol) "Tab
 
 	Tutorial sobre la edición de artículos y la introducción a la sintaxis del texto de la wiki.
 
-	[Traducir la wiki al español](/index.php/ArchWiki_Translation_Team_(Espa%C3%B1ol) "ArchWiki Translation Team (Español)")
+	[Traducir la wiki al español](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)")
 
 	Si quiere colaborar en la traducción de la wiki de Arch Linux al español, así como conocer algunas guías básicas respecto a las traducciones, visite nuestra página.

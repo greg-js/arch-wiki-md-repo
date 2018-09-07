@@ -56,7 +56,9 @@ The goal of this article is to setup Postfix and explain what the basic configur
         *   [5.9.2 Configuration](#Configuration_3)
     *   [5.10 Sender Policy Framework](#Sender_Policy_Framework)
     *   [5.11 Sender Rewriting Scheme](#Sender_Rewriting_Scheme)
-*   [6 See also](#See_also)
+*   [6 Troubleshooting](#Troubleshooting_2)
+    *   [6.1 Warning: "database /etc/postfix/*.db is older than source file .."](#Warning:_.22database_.2Fetc.2Fpostfix.2F.2A.db_is_older_than_source_file_...22)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -894,6 +896,28 @@ recipient_canonical_classes= envelope_recipient,header_recipient
 ```
 
 Restart postfix and start forwarding mail.
+
+## Troubleshooting
+
+### Warning: "database /etc/postfix/*.db is older than source file .."
+
+If you get one or both warnings with `journalctl`
+
+```
+warning: database /etc/postfix/virtual.db is older than source file /etc/postfix/virtual
+warning: database /etc/postfix/transport.db is older than source file /etc/postfix/transport
+
+```
+
+then you can fix it by using these commands depending on the messages you get
+
+```
+postmap /etc/postfix/transport
+postmap /etc/postfix/virtual
+
+```
+
+and restart `postfix.service`
 
 ## See also
 

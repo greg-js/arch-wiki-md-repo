@@ -29,13 +29,11 @@
 
 **Note:** Zabbix uses [fping](https://www.archlinux.org/packages/?name=fping) to do ICMP/Ping discovery, which is broken. [fping-git](https://aur.archlinux.org/packages/fping-git/) is the latest development version, which does work, albeit fping needs extra capabilities to run as non-root user. See [#ICMP/ping discovery](#ICMP.2Fping_discovery) for further details.
 
-Install the [zabbix-frontend-php](https://www.archlinux.org/packages/?name=zabbix-frontend-php) package.
-
-Install [zabbix-server](https://www.archlinux.org/packages/?name=zabbix-server). This will include the necessary scripts in order to use MariaDB or postgresql. This wiki assumes you will be using MariaDB
+Install the [zabbix-server](https://www.archlinux.org/packages/?name=zabbix-server) package. This includes the necessary scripts for use with MariaDB or PostgreSQL. The rest of this guide will assume that you will be using MariaDB.
 
 #### Zabbix-frontend installation
 
-You also have to choose a web server with PHP support if you want to use *zabbix-frontend*, e.g.:
+Install the [zabbix-frontend-php](https://www.archlinux.org/packages/?name=zabbix-frontend-php) package. You also have to choose a web server with PHP support, e.g.:
 
 *   [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server")
 *   [Lighttpd](/index.php/Lighttpd "Lighttpd")

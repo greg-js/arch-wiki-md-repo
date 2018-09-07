@@ -292,7 +292,7 @@ AUR — это место, где хранятся все файлы `PKGBUILD`,
 *   Пакет предназначен для AUR (например, это [Инструмент для работы с AUR](/index.php/AUR_helpers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR helpers (Русский)"))
 *   Прямое распространение запрещено лицензией
 
-Смотрите также статью [DeveloperWiki:Community repo candidates](/index.php/DeveloperWiki:Community_repo_candidates "DeveloperWiki:Community repo candidates") и раздел [[AUR Trusted User Guidelines#Rules for Packages Entering the [community] Repo]].
+Смотрите также [правила добавления пакетов в репозиторий community](/index.php/AUR_Trusted_User_Guidelines#Rules_for_Packages_Entering_the_.5Bcommunity.5D_Repo "AUR Trusted User Guidelines").
 
 ### Как создать PKGBUILD?
 

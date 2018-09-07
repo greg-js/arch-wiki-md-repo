@@ -449,10 +449,7 @@ Powerpill 是 Pacman 的完整包裹程序，增加了平行下载和分段下�
 
 要使用 `wget`，首先使用`pacman -S wget`安装它，然后修改`/etc/pacman.conf`并在其中的`[options]`区段将下面内容去掉注释：
 
-```
-XferCommand = /usr/bin/wget -c --passive-ftp -c %u
-
-```
+ `XferCommand = /usr/bin/wget --passive-ftp -c -O %o %u` 
 
 除了将`wget`参数放在`/etc/pacman.conf`里，你也可以直接修改`wget`配置文件（全局文件是`/etc/wgetrc`，各个用户的文件是`$HOME/.wgetrc`）。
 

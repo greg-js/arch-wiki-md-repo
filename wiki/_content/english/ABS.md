@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Arch build system](/index.php/Arch_build_system "Arch build system")
+*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")

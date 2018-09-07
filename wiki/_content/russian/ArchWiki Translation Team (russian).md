@@ -23,7 +23,7 @@
 
 ### Цели и задачи
 
-Цель проекта - предоставление русскоязычным пользователям Archlinux как можно более полной документации по дистрибутиву и всему, что с ним связано. Для осуществления этой цели мы выполняем следующие задачи:
+Цель проекта - предоставление русскоязычным пользователям Arch Linux как можно более полной документации по дистрибутиву и всему, что с ним связано. Для осуществления этой цели мы выполняем следующие задачи:
 
 *   Перевод на русский язык документации по дистрибутиву Arch Linux
 *   Поддержание статей в актуальном состоянии
@@ -33,7 +33,6 @@
 
 Список наших переводчиков:
 
-*   [Kycok](/index.php/User:Kycok "User:Kycok") ([обсуждение](/index.php/User_talk:Kycok "User talk:Kycok")|[вклад](/index.php/Special:Contributions/Kycok "Special:Contributions/Kycok")) ([ArchWiki Maintainer](/index.php/ArchWiki:Maintainers "ArchWiki:Maintainers"))
 *   [ArchLinuxUser](/index.php/User:ArchLinuxUser "User:ArchLinuxUser") ([обсуждение](/index.php/User_talk:ArchLinuxUser "User talk:ArchLinuxUser")|[вклад](/index.php/Special:Contributions/ArchLinuxUser "Special:Contributions/ArchLinuxUser"))
 *   [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") ([обсуждение](/index.php/User_talk:MrReDoX "User talk:MrReDoX")|[вклад](/index.php/Special:Contributions/MrReDoX "Special:Contributions/MrReDoX"))
 *   [SlavMetal](/index.php/User:SlavMetal "User:SlavMetal") ([обсуждение](/index.php/User_talk:SlavMetal "User talk:SlavMetal")|[вклад](/index.php/Special:Contributions/SlavMetal "Special:Contributions/SlavMetal"))
@@ -42,6 +41,7 @@
 
 *   [Natrio](/index.php/User:Natrio "User:Natrio") ([обсуждение](/index.php?title=User_talk:Natrio&action=edit&redlink=1 "User talk:Natrio (page does not exist)")|[вклад](/index.php/Special:Contributions/Natrio "Special:Contributions/Natrio"))
 *   [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") ([обсуждение](/index.php/User_talk:Vladimir_Shatalin "User talk:Vladimir Shatalin")|[вклад](/index.php/Special:Contributions/Vladimir_Shatalin "Special:Contributions/Vladimir Shatalin"))
+*   [Kycok](/index.php/User:Kycok "User:Kycok") ([обсуждение](/index.php/User_talk:Kycok "User talk:Kycok")|[вклад](/index.php/Special:Contributions/Kycok "Special:Contributions/Kycok"))
 
 Раз в неделю список участников автоматически сортируется по убыванию, исходя из количества правок, сделанных за последние 30 дней.
 

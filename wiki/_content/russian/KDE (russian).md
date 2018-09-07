@@ -70,27 +70,18 @@ KDE имеет активно поддерживаемый вики-ресурс
     *   [6.2 Настройки](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8)
         *   [6.2.1 Странное поведение рабочего стола Plasma](#.D0.A1.D1.82.D1.80.D0.B0.D0.BD.D0.BD.D0.BE.D0.B5_.D0.BF.D0.BE.D0.B2.D0.B5.D0.B4.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B5.D0.B3.D0.BE_.D1.81.D1.82.D0.BE.D0.BB.D0.B0_Plasma)
         *   [6.2.2 Очистка кэша для решения проблем с обновлением](#.D0.9E.D1.87.D0.B8.D1.81.D1.82.D0.BA.D0.B0_.D0.BA.D1.8D.D1.88.D0.B0_.D0.B4.D0.BB.D1.8F_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC_.D1.81_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5.D0.BC)
-    *   [6.3 Сброс настроек Akonadi для решения проблем с KMail](#.D0.A1.D0.B1.D1.80.D0.BE.D1.81_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA_Akonadi_.D0.B4.D0.BB.D1.8F_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC_.D1.81_KMail)
-    *   [6.4 Текущее состояние KWin для поддержки и отладки](#.D0.A2.D0.B5.D0.BA.D1.83.D1.89.D0.B5.D0.B5_.D1.81.D0.BE.D1.81.D1.82.D0.BE.D1.8F.D0.BD.D0.B8.D0.B5_KWin_.D0.B4.D0.BB.D1.8F_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B8_.D0.B8_.D0.BE.D1.82.D0.BB.D0.B0.D0.B4.D0.BA.D0.B8)
-    *   [6.5 KDE4 зависает на этапе загрузки](#KDE4_.D0.B7.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.B5.D1.82_.D0.BD.D0.B0_.D1.8D.D1.82.D0.B0.D0.BF.D0.B5_.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8)
-    *   [6.6 Программы KDE выглядят плохо в другом оконном менеджере](#.D0.9F.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D1.8B_KDE_.D0.B2.D1.8B.D0.B3.D0.BB.D1.8F.D0.B4.D1.8F.D1.82_.D0.BF.D0.BB.D0.BE.D1.85.D0.BE_.D0.B2_.D0.B4.D1.80.D1.83.D0.B3.D0.BE.D0.BC_.D0.BE.D0.BA.D0.BE.D0.BD.D0.BD.D0.BE.D0.BC_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.B5)
-    *   [6.7 Проблемы с графикой](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D0.B3.D1.80.D0.B0.D1.84.D0.B8.D0.BA.D0.BE.D0.B9)
-        *   [6.7.1 Низкая производительность или артефакты изображения в режиме 2D](#.D0.9D.D0.B8.D0.B7.D0.BA.D0.B0.D1.8F_.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B8.D0.BB.D0.B8_.D0.B0.D1.80.D1.82.D0.B5.D1.84.D0.B0.D0.BA.D1.82.D1.8B_.D0.B8.D0.B7.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B2_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5_2D)
-            *   [6.7.1.1 Проблема с драйвером видеокарты](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D0.B0_.D1.81_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.BE.D0.BC_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE.D0.BA.D0.B0.D1.80.D1.82.D1.8B)
-            *   [6.7.1.2 Использование альтернативного рендера](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B0.D0.BB.D1.8C.D1.82.D0.B5.D1.80.D0.BD.D0.B0.D1.82.D0.B8.D0.B2.D0.BD.D0.BE.D0.B3.D0.BE_.D1.80.D0.B5.D0.BD.D0.B4.D0.B5.D1.80.D0.B0)
-        *   [6.7.2 Низкая производительность в режиме 3D](#.D0.9D.D0.B8.D0.B7.D0.BA.D0.B0.D1.8F_.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B2_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5_3D)
-        *   [6.7.3 Композитные эффекты не работают с современной видеокартой Nvidia](#.D0.9A.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BD.D1.8B.D0.B5_.D1.8D.D1.84.D1.84.D0.B5.D0.BA.D1.82.D1.8B_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.82_.D1.81_.D1.81.D0.BE.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D0.BE.D0.B9_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE.D0.BA.D0.B0.D1.80.D1.82.D0.BE.D0.B9_Nvidia)
-        *   [6.7.4 Мерцание окон в полноэкранном режиме при включенном композитном режиме](#.D0.9C.D0.B5.D1.80.D1.86.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BE.D0.BA.D0.BE.D0.BD_.D0.B2_.D0.BF.D0.BE.D0.BB.D0.BD.D0.BE.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.BD.D0.BE.D0.BC_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5_.D0.BF.D1.80.D0.B8_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.BD.D0.BE.D0.BC_.D0.BA.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BD.D0.BE.D0.BC_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5)
-        *   [6.7.5 Screen tearing при включенном композитном режиме](#Screen_tearing_.D0.BF.D1.80.D0.B8_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.BD.D0.BE.D0.BC_.D0.BA.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BD.D0.BE.D0.BC_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5)
-        *   [6.7.6 Параметры экрана сбрасываются при перезагрузке (несколько мониторов)](#.D0.9F.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0_.D1.81.D0.B1.D1.80.D0.B0.D1.81.D1.8B.D0.B2.D0.B0.D1.8E.D1.82.D1.81.D1.8F_.D0.BF.D1.80.D0.B8_.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5_.28.D0.BD.D0.B5.D1.81.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2.29)
-    *   [6.8 Проблемы со звуком в KDE](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81.D0.BE_.D0.B7.D0.B2.D1.83.D0.BA.D0.BE.D0.BC_.D0.B2_KDE)
-        *   [6.8.1 ALSA related problems](#ALSA_related_problems)
-            *   [6.8.1.1 Сообщения "Falling back to default" при попытке воcпроизвести любой звук](#.D0.A1.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D1.8F_.22Falling_back_to_default.22_.D0.BF.D1.80.D0.B8_.D0.BF.D0.BE.D0.BF.D1.8B.D1.82.D0.BA.D0.B5_.D0.B2.D0.BEc.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.B5.D1.81.D1.82.D0.B8_.D0.BB.D1.8E.D0.B1.D0.BE.D0.B9_.D0.B7.D0.B2.D1.83.D0.BA)
-            *   [6.8.1.2 MP3-файлы не воспроизводятся с бэкендом GStreamer](#MP3-.D1.84.D0.B0.D0.B9.D0.BB.D1.8B_.D0.BD.D0.B5_.D0.B2.D0.BE.D1.81.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D1.8F.D1.82.D1.81.D1.8F_.D1.81_.D0.B1.D1.8D.D0.BA.D0.B5.D0.BD.D0.B4.D0.BE.D0.BC_GStreamer)
-    *   [6.9 Konsole не сохраняет историю команд](#Konsole_.D0.BD.D0.B5_.D1.81.D0.BE.D1.85.D1.80.D0.B0.D0.BD.D1.8F.D0.B5.D1.82_.D0.B8.D1.81.D1.82.D0.BE.D1.80.D0.B8.D1.8E_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4)
-    *   [6.10 В поле ввода пароля отображается по три точки на символ](#.D0.92_.D0.BF.D0.BE.D0.BB.D0.B5_.D0.B2.D0.B2.D0.BE.D0.B4.D0.B0_.D0.BF.D0.B0.D1.80.D0.BE.D0.BB.D1.8F_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BF.D0.BE_.D1.82.D1.80.D0.B8_.D1.82.D0.BE.D1.87.D0.BA.D0.B8_.D0.BD.D0.B0_.D1.81.D0.B8.D0.BC.D0.B2.D0.BE.D0.BB)
-    *   [6.11 Dolphin и File Dialogs очень долго запускаются](#Dolphin_.D0.B8_File_Dialogs_.D0.BE.D1.87.D0.B5.D0.BD.D1.8C_.D0.B4.D0.BE.D0.BB.D0.B3.D0.BE_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D1.8E.D1.82.D1.81.D1.8F)
-    *   [6.12 Средство просмотра PDF по умолчанию для приложений GTK в KDE](#.D0.A1.D1.80.D0.B5.D0.B4.D1.81.D1.82.D0.B2.D0.BE_.D0.BF.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80.D0.B0_PDF_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E_.D0.B4.D0.BB.D1.8F_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B9_GTK_.D0.B2_KDE)
+    *   [6.3 Проблемы с графикой](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81_.D0.B3.D1.80.D0.B0.D1.84.D0.B8.D0.BA.D0.BE.D0.B9)
+        *   [6.3.1 Получение текущего состояния KWin для поддержки и отладки](#.D0.9F.D0.BE.D0.BB.D1.83.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.82.D0.B5.D0.BA.D1.83.D1.89.D0.B5.D0.B3.D0.BE_.D1.81.D0.BE.D1.81.D1.82.D0.BE.D1.8F.D0.BD.D0.B8.D1.8F_KWin_.D0.B4.D0.BB.D1.8F_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B8_.D0.B8_.D0.BE.D1.82.D0.BB.D0.B0.D0.B4.D0.BA.D0.B8)
+        *   [6.3.2 Низкая производительность в режиме 3D](#.D0.9D.D0.B8.D0.B7.D0.BA.D0.B0.D1.8F_.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D0.BE.D1.81.D1.82.D1.8C_.D0.B2_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5_3D)
+        *   [6.3.3 Композитные эффекты не работают с современной видеокартой Nvidia](#.D0.9A.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BD.D1.8B.D0.B5_.D1.8D.D1.84.D1.84.D0.B5.D0.BA.D1.82.D1.8B_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.82_.D1.81_.D1.81.D0.BE.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D0.BE.D0.B9_.D0.B2.D0.B8.D0.B4.D0.B5.D0.BE.D0.BA.D0.B0.D1.80.D1.82.D0.BE.D0.B9_Nvidia)
+        *   [6.3.4 Мерцание окон в полноэкранном режиме при включенном композитном режиме](#.D0.9C.D0.B5.D1.80.D1.86.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BE.D0.BA.D0.BE.D0.BD_.D0.B2_.D0.BF.D0.BE.D0.BB.D0.BD.D0.BE.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.BD.D0.BE.D0.BC_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5_.D0.BF.D1.80.D0.B8_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.BD.D0.BE.D0.BC_.D0.BA.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BD.D0.BE.D0.BC_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5)
+        *   [6.3.5 Screen tearing при включенном композитном режиме](#Screen_tearing_.D0.BF.D1.80.D0.B8_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.BD.D0.BE.D0.BC_.D0.BA.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BD.D0.BE.D0.BC_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B5)
+        *   [6.3.6 Параметры экрана сбрасываются при перезагрузке (несколько мониторов)](#.D0.9F.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B0_.D1.81.D0.B1.D1.80.D0.B0.D1.81.D1.8B.D0.B2.D0.B0.D1.8E.D1.82.D1.81.D1.8F_.D0.BF.D1.80.D0.B8_.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B5_.28.D0.BD.D0.B5.D1.81.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2.29)
+    *   [6.4 Проблемы со звуком](#.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC.D1.8B_.D1.81.D0.BE_.D0.B7.D0.B2.D1.83.D0.BA.D0.BE.D0.BC)
+        *   [6.4.1 Сообщения "Falling back to default" при попытке воcпроизвести любой звук](#.D0.A1.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D1.8F_.22Falling_back_to_default.22_.D0.BF.D1.80.D0.B8_.D0.BF.D0.BE.D0.BF.D1.8B.D1.82.D0.BA.D0.B5_.D0.B2.D0.BEc.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.B5.D1.81.D1.82.D0.B8_.D0.BB.D1.8E.D0.B1.D0.BE.D0.B9_.D0.B7.D0.B2.D1.83.D0.BA)
+        *   [6.4.2 MP3-файлы не воспроизводятся с бэкендом GStreamer](#MP3-.D1.84.D0.B0.D0.B9.D0.BB.D1.8B_.D0.BD.D0.B5_.D0.B2.D0.BE.D1.81.D0.BF.D1.80.D0.BE.D0.B8.D0.B7.D0.B2.D0.BE.D0.B4.D1.8F.D1.82.D1.81.D1.8F_.D1.81_.D0.B1.D1.8D.D0.BA.D0.B5.D0.BD.D0.B4.D0.BE.D0.BC_GStreamer)
+    *   [6.5 KMail](#KMail)
+        *   [6.5.1 Сброс настроек Akonadi для решения проблем с KMail](#.D0.A1.D0.B1.D1.80.D0.BE.D1.81_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA_Akonadi_.D0.B4.D0.BB.D1.8F_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC_.D1.81_KMail)
 *   [7 Ошибки в программах](#.D0.9E.D1.88.D0.B8.D0.B1.D0.BA.D0.B8_.D0.B2_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D0.B0.D1.85)
 *   [8 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
@@ -577,95 +568,18 @@ $ rm -rf ~/.cache/*
 
 ```
 
-### Сброс настроек Akonadi для решения проблем с KMail
-
-Первым делом убедитесь, что KMail не запущен. Сохраните настройки Akonadi:
-
-```
-$ cp ~/.local/share/akonadi ~/.local/share/akonadi-old
-$ cp ~/.config/akonadi ~/.config/akonadi-old
-
-```
-
-Откройте *SystemSettings > Personal* и удалите все ресурсы. Вернитесь в терминал и удалите исходные файлы настроек:
-
-```
-$ rm ~/.local/share/akonadi ~/.config/akonadi
-
-```
-
-Снова вернитесь к *SystemSettings* и внимательно добавьте все необходимые ресурсы. Сохраните настройки и запустите Kontact/KMail чтобы убедиться, что теперь все работает корректно.
-
-### Текущее состояние KWin для поддержки и отладки
-
-Эта команда выведет полную сводку о текущем состоянии KWin включая ваши настройки, данные о композитном бэкенде и драйвере OpenGL:
-
-```
-$ qdbus org.kde.kwin /KWin supportInformation
-
-```
-
-Подробнее смотрите на странице [http://blog.martin-graesslin.com/blog/2012/03/on-getting-help-for-kwin-and-helping-kwin](http://blog.martin-graesslin.com/blog/2012/03/on-getting-help-for-kwin-and-helping-kwin).
-
-### KDE4 зависает на этапе загрузки
-
-Возможна ситуация, при которой драйвер видеокарты [NVIDIA](/index.php/NVIDIA "NVIDIA") вызывает конфликт во время запуска KDE4\. После входа в систему вы видете только экран загрузки и ничего больше не происходит.
-
-Решение заключается в отключении композитного режима:
-
- `~/.kde4/share/config/kwinrc` 
-```
-[Compositing]
-Enabled=false
-```
-
-Подробнее смотрите на странице [https://bbs.archlinux.org/viewtopic.php?pid=932598](https://bbs.archlinux.org/viewtopic.php?pid=932598).
-
-### Программы KDE выглядят плохо в другом оконном менеджере
-
-Если вы используете программы Qt вне сеанса KDE (то есть, вы не запускаете `startkde`), вам необходимо явно указать Qt, где находятся стили KDE (Oxygen, QtCurve и т. д.).
-
-Для этого установите переменную окружения `QT_PLUGIN_PATH`, добавив в ваш файл инициализации командной оболочки (`~/.profile`) строку:
-
-```
-export QT_PLUGIN_PATH=$HOME/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/
-
-```
-
-Перезайдите в систему. Теперь все должно быть впорядке.
-
-Также вы можете создать символическую ссылку на стили KDE в каталоге Qt:
-
-```
-# ln -s /usr/lib/kde4/plugins/styles/ /usr/lib/qt4/pluginlib32-libdbusmenu-glibs/styles
-
-```
-
-В GNOME вы также можете попробовать установить пакет [libgnomeui](https://aur.archlinux.org/packages/libgnomeui/).
-
 ### Проблемы с графикой
 
-#### Низкая производительность или артефакты изображения в режиме 2D
+Убедитесь, что в системе установлен подходящий драйвер для вашей видеокарты. Смотрите статью [Xorg (Русский)#Установка драйвера](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D0.B0 "Xorg (Русский)") для получения более подробной информации. В случае с более старой видеокартой может помочь [KDE#Disable desktop effects manually or automatically for defined applications](/index.php/KDE#Disable_desktop_effects_manually_or_automatically_for_defined_applications "KDE") или [KDE#Disable compositing](/index.php/KDE#Disable_compositing "KDE").
 
-##### Проблема с драйвером видеокарты
+#### Получение текущего состояния KWin для поддержки и отладки
 
-Убедитесь, что установлен подходящий драйвер для вашей видеокарты, для того, чтобы как минимум режим 2D использовал ее ресурсы для ускорения. Подробнее смотрите на страницах [ATI](/index.php/ATI "ATI"), [NVIDIA](/index.php/NVIDIA "NVIDIA"), [Intel](/index.php/Intel "Intel").
+Следующая команда выведет полную сводку о текущем состоянии KWin включая использующиеся настройки, данные о композитном бекенде и возможностях драйвера OpenGL. Более подробная информация доступна в [данном блоге](https://blog.martin-graesslin.com/blog/2012/03/on-getting-help-for-kwin-and-helping-kwin/).
 
-Открытые драйверы ATI и Intel и проприетарный драйвер Nvidia должны (теоретически) обеспечить вам наилучшее ускорение как в режиме 2D, так и в 3D.
+```
+$ qdbus org.kde.KWin /KWin supportInformation
 
-##### Использование альтернативного рендера
-
-Если установка правильного драйвера не решила вашу проблему, вероятно, ваш драйвер не предоставляет ускорения **XRender**, который используется как рендер в Qt.
-
-Вы можете выбрать другой рендер — например, Raster, запустив приложение Qt с опцией `-graphicssystem raster`. Вы можете установить другой рендер по умолчанию, пересобрав ваш Qt с той же опцией (`-graphicssystem raster`) *configure*.
-
-Рендер Raster использует процессор компьютера для выполнения большей части отрисовки. В зависимости от вашей системы, это может улучшить производительность. Поэтому используйте Raster, только если у вас возникают проблемы или ваша графическая подсистема значительно менее производительна, чем центральный процессор; в ином случае, рекомендуется использовать XRender.
-
-Начиная с Qt 4.7, пересборка Qt не обязательна. Установите переменную окружения `QT_GRAPHICSSYSTEM=raster`; также возможны значения `opengl` и `native`. Raster использует процессор CPU, OpenGL полагается на драйвер видеокарты, а Native использует отрисовку средствами X11 (смешанный подход).
-
-Вы также можете просто установить [kcm-qt-graphicssystem](https://aur.archlinux.org/packages/kcm-qt-graphicssystem/) из AUR и выбрать рендер на панели *System Settings > Qt Graphics System*.
-
-Подробности смотрите на страницах [http://apachelog.wordpress.com/2010/09/05/qt-graphics-system-kcm](http://apachelog.wordpress.com/2010/09/05/qt-graphics-system-kcm) и [http://labs.trolltech.com/blogs/2009/12/18/qt-graphics-and-performance-the-raster-engine](http://labs.trolltech.com/blogs/2009/12/18/qt-graphics-and-performance-the-raster-engine).
+```
 
 #### Низкая производительность в режиме 3D
 
@@ -695,13 +609,11 @@ export QT_PLUGIN_PATH=$HOME/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/
 
 Установка [kscreen](https://www.archlinux.org/packages/?name=kscreen) может решить проблему, но если только ваши мониторы не имеют одинаковый EDID. Kscreen представляет собой улучшенный менеджер дисплеев для KDE; подробнее смотрите на странице [https://fedoraproject.org/wiki/Changes/KScreen?rd=Features/KScreen](https://fedoraproject.org/wiki/Changes/KScreen?rd=Features/KScreen).
 
-### Проблемы со звуком в KDE
+### Проблемы со звуком
 
-#### ALSA related problems
+**Примечание:** Первым делом убедитесь, что у вас установлены пакет [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils).
 
-**Примечание:** Первым делом убедитесь, что у вас установлены пакеты [alsa-lib](https://www.archlinux.org/packages/?name=alsa-lib) [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils).
-
-##### Сообщения "Falling back to default" при попытке воcпроизвести любой звук
+#### Сообщения "Falling back to default" при попытке воcпроизвести любой звук
 
 Если появляются сообщения наподобие:
 
@@ -713,53 +625,32 @@ Falling back to default
 
 Перейдите в *System Settings > Multimedia > Phonon* и переместите устройство `default` наверх списка.
 
-##### MP3-файлы не воспроизводятся с бэкендом GStreamer
+#### MP3-файлы не воспроизводятся с бэкендом GStreamer
 
 Эту проблему можно решить, установив плагин libav (пакет [gst-libav](https://www.archlinux.org/packages/?name=gst-libav)) для GStreamer. Если вы все еще испытываете проблемы, вы можете попробовать другой бэкенд Phonon, например [phonon-vlc](https://www.archlinux.org/packages/?name=phonon-vlc).
 
 После установки перейдите в *System Settings > Multimedia > Phonon > Backend* и выберите новый бэкенд.
 
-### Konsole не сохраняет историю команд
+### KMail
 
-По умолчанию, история команд сохраняется только если вы выходите, набрав `exit` в консоли. Если вы просто закрываете окно Konsole, история сохранена не будет. Чтобы включить сохранение истории после ввода каждой команды, добавьте следующие строки в файл инициализации вашей командной оболочки:
+#### Сброс настроек Akonadi для решения проблем с KMail
 
- `~/.bashrc` 
-```
-shopt -s histappend
-[[ "${PROMPT_COMMAND}" ]] && PROMPT_COMMAND="$PROMPT_COMMAND;history -a" || PROMPT_COMMAND="history -a"
+Первым делом убедитесь, что KMail не запущен. Сохраните настройки Akonadi:
 
 ```
-
-### В поле ввода пароля отображается по три точки на символ
-
-Это настраивается в *System Settings > Account Details > Password & User Account*. Вы можете выбрать из следующих вариантов:
-
-*   Показывать одну точку на каждый символ
-*   Показывать три точки на каждый символ
-*   Ничего не показывать
-
-### Dolphin и File Dialogs очень долго запускаются
-
-Это может быть вызвано службой `upower`. Если эта служба не нужна в вашей системе, отключите ее:
-
-```
-# systemctl disable upower
-# systemctl mask upower
+$ cp ~/.local/share/akonadi ~/.local/share/akonadi-old
+$ cp ~/.config/akonadi ~/.config/akonadi-old
 
 ```
 
-### Средство просмотра PDF по умолчанию для приложений GTK в KDE
-
-В некоторых случаях, если установлен графический редактор ([Inkscape](/index.php/Inkscape "Inkscape"), [GIMP](/index.php/GIMP "GIMP") и т. д.), приложения GTK ([Firefox](/index.php/Firefox "Firefox"), например) могут перестать использовать Okular в качестве средства просмотра PDF по умолчанию (или, в общем случае, вообще перестают следовать выбору программ по умолчанию в KDE). Вы можете использовать следующую команду для того, чтобы снова заставить приложения GTK использовать Okular:
+Откройте *SystemSettings > Personal* и удалите все ресурсы. Вернитесь в терминал и удалите исходные файлы настроек:
 
 ```
-$ xdg-mime default kde4-okularApplication_pdf.desktop application/pdf
+$ rm ~/.local/share/akonadi ~/.config/akonadi
 
 ```
 
-Измените команду соответствующим образом, если вы используете другое средство просмотра PDF или у вас проблемы с другим [MIME-типом](https://en.wikipedia.org/wiki/ru:MIME "wikipedia:ru:MIME").
-
-Подробнее смотрите на странице [Default applications](/index.php/Default_applications "Default applications").
+Снова вернитесь к *SystemSettings* и внимательно добавьте все необходимые ресурсы. Сохраните настройки и запустите Kontact/KMail чтобы убедиться, что теперь все работает корректно.
 
 ## Ошибки в программах
 

@@ -12,9 +12,8 @@ Related articles
 *   [2 Build an optimized package](#Build_an_optimized_package)
 *   [3 Build an optimized package in a clean chroot](#Build_an_optimized_package_in_a_clean_chroot)
     *   [3.1 Chroot Setup (First time only)](#Chroot_Setup_.28First_time_only.29)
-        *   [3.1.1 Proceeding *without* an AUR helper](#Proceeding_without_an_AUR_helper)
-        *   [3.1.2 Proceeding *with* an AUR helper](#Proceeding_with_an_AUR_helper)
-    *   [3.2 Using the chroot (Ever after)](#Using_the_chroot_.28Ever_after.29)
+        *   [3.1.1 Proceeding](#Proceeding)
+    *   [3.2 Using the chroot](#Using_the_chroot)
         *   [3.2.1 Keep your chroot up-to-date](#Keep_your_chroot_up-to-date)
         *   [3.2.2 Build a package](#Build_a_package)
             *   [3.2.2.1 When building with Profile-guided optimization](#When_building_with_Profile-guided_optimization)
@@ -78,9 +77,7 @@ Install some of the backends for [makepkg-optimize](/index.php/AUR "AUR")'s macr
 
 ```
 
-#### Proceeding *without* an [AUR helper](/index.php/AUR_helper "AUR helper")
-
-**Tip:** [AUR](/index.php/AUR "AUR") packages can be installed within the chroot without the aid of an AUR helper by [downloading their PKGBUILDs](/index.php/Arch_User_Repository#Acquire_build_files "Arch User Repository"), then [building and installing them](/index.php/Arch_User_Repository#Build_and_install_the_package "Arch User Repository").
+#### Proceeding
 
 Install git in the chroot:
 
@@ -98,41 +95,14 @@ Log in to the chroot as an unprivileged user:
 
 Change to a permissive directory, such as `/home/$USER` or `/tmp` inside the chroot, then [clone](/index.php/Arch_User_Repository#Acquire_build_files "Arch User Repository"), [build and install](/index.php/Arch_User_Repository#Build_and_install_the_package "Arch User Repository") [pacman-buildenv_ext-git](https://aur.archlinux.org/packages/pacman-buildenv_ext-git/), [makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/), and [nodejs-svgo](https://aur.archlinux.org/packages/nodejs-svgo/).
 
-#### Proceeding *with* an [AUR helper](/index.php/AUR_helper "AUR helper")
-
-**Tip:** Installing an AUR helper inside the chroot saves several steps per [AUR](/index.php/AUR "AUR") package built and is especially useful for building packages with AUR dependencies, but generally goes against Arch policy.
-
-Install [pikaur](https://github.com/actionless/pikaur/blob/master/README.md#installation) by [the above method](/index.php/Makepkg-optimize#Proceeding_without_an_AUR_helper "Makepkg-optimize").
-
-Set up [sudo](/index.php/Sudo "Sudo") for the unprivileged user in the chroot:
-
-```
-# echo "$USER ALL=(root) NOPASSWD: /usr/bin/pacman" >> "$CHROOT"/root/etc/sudoers
-
-```
-
-Install AUR packages with pikaur:
-
-```
-$ arch-nspawn -M /etc/makepkg.conf "$CHROOT"/root -u "$USER" pikaur -S pacman-buildenv_ext-git makepkg-optimize nodejs-svgo
-
-```
-
-### Using the chroot (Ever after)
+### Using the chroot
 
 #### Keep your chroot up-to-date
 
-Without an [AUR helper](/index.php/AUR_helper "AUR helper") ([update AUR packages individually](/index.php/Makepkg-optimize#Proceeding_without_an_AUR_helper "Makepkg-optimize")):
+[update AUR packages individually](/index.php/Makepkg-optimize#Proceeding_without_an_AUR_helper "Makepkg-optimize"):
 
 ```
 $ arch-nspawn -M /etc/makepkg.conf "$CHROOT"/root -u "$USER" pacman -Syu
-
-```
-
-Alternatively, with pikaur:
-
-```
-$ arch-nspawn -M /etc/makepkg.conf "$CHROOT"/root -u "$USER" pikaur -Syua
 
 ```
 

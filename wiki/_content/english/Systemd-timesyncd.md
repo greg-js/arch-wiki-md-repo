@@ -7,48 +7,16 @@ From the [systemd mailing list](http://lists.freedesktop.org/archives/systemd-de
 
 	*systemd-timesyncd* is a daemon that has been added for synchronizing the system clock across the network. It implements an SNTP client. In contrast to NTP implementations such as [chrony](/index.php/Chrony "Chrony") or the NTP reference server this only implements a client side, and does not bother with the full NTP complexity, focusing only on querying time from one remote server and synchronizing the local clock to it. Unless you intend to serve NTP to networked clients or want to connect to local hardware clocks this simple NTP client should be more than appropriate for most installations. The daemon runs with minimal privileges, and has been hooked up with networkd to only operate when network connectivity is available. The daemon saves the current clock to disk every time a new NTP sync has been acquired, and uses this to possibly correct the system clock early at bootup, in order to accommodate for systems that lack an RTC such as the Raspberry Pi and embedded devices, and make sure that time monotonically progresses on these systems, even if it is not always correct. To make use of this daemon a new system user and group "systemd-timesync" needs to be created on installation of systemd.
 
+## Contents
+
+*   [1 Installation](#Installation)
+*   [2 Configuration](#Configuration)
+*   [3 Usage](#Usage)
+*   [4 See also](#See_also)
+
 ## Installation
 
-The *systemd-timesyncd* service is available with [systemd](https://www.archlinux.org/packages/?name=systemd). To start and enable it, simply run:
-
-```
-# timedatectl set-ntp true 
-
-```
-
-To check the service status, use `timedatectl status`:
-
- `$ timedatectl status` 
-```
-Local time: Thu 2015-07-09 18:21:33 CEST
-Universal time: Thu 2015-07-09 16:21:33 UTC
-RTC time: Thu 2015-07-09 16:21:33
-Time zone: Europe/Amsterdam (CEST, +0200)
-Network time on: yes
-NTP synchronized: yes
-RTC in local TZ: no
-
-```
-
-To see verbose service information, use `timedatectl timesync-status`:
-
- `$ timedatectl timesync-status` 
-```
-       Server: 103.47.76.177 (0.arch.pool.ntp.org)
-Poll interval: 2min 8s (min: 32s; max 34min 8s)
-         Leap: normal
-      Version: 4
-      Stratum: 2
-    Reference: C342F10A
-    Precision: 1us (-21)
-Root distance: 231.856ms (max: 5s)
-       Offset: -19.428ms
-        Delay: 36.717ms
-       Jitter: 7.343ms
- Packet count: 2
-    Frequency: +267.747ppm
-
-```
+The *systemd-timesyncd* service is available with [systemd](https://www.archlinux.org/packages/?name=systemd).
 
 ## Configuration
 
@@ -99,6 +67,49 @@ The NTP server to be used will be determined using the following rules:
 *   If no NTP server information is acquired after completing those steps, the NTP server host names or IP addresses defined in `FallbackNTP=` will be used.
 
 **Note:** The service writes to a local file `/var/lib/systemd/timesync/clock` with every synchronization. This location is hard-coded and cannot be changed. This may be problematic for running off read-only root partition or trying to minimize writes to an SD card.
+
+## Usage
+
+To enable and start it, simply run:
+
+```
+# timedatectl set-ntp true 
+
+```
+
+The synchronization process might be noticeably slow. This is expected, one should wait a while before determining there is a problem. To check the service status, use `timedatectl status`:
+
+ `$ timedatectl status` 
+```
+               Local time: Thu 2015-07-09 18:21:33 CEST
+           Universal time: Thu 2015-07-09 16:21:33 UTC
+                 RTC time: Thu 2015-07-09 16:21:33
+                Time zone: Europe/Amsterdam (CEST, +0200)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+
+```
+
+To see verbose service information, use `timedatectl timesync-status`:
+
+ `$ timedatectl timesync-status` 
+```
+       Server: 103.47.76.177 (0.arch.pool.ntp.org)
+Poll interval: 2min 8s (min: 32s; max 34min 8s)
+         Leap: normal
+      Version: 4
+      Stratum: 2
+    Reference: C342F10A
+    Precision: 1us (-21)
+Root distance: 231.856ms (max: 5s)
+       Offset: -19.428ms
+        Delay: 36.717ms
+       Jitter: 7.343ms
+ Packet count: 2
+    Frequency: +267.747ppm
+
+```
 
 ## See also
 

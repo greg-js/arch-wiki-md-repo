@@ -89,7 +89,7 @@ You will probably want to have a spare monitor or one with multiple input ports 
 *   IOMMU is a generic name for Intel VT-d and AMD-Vi.
 *   VT-d stands for *Intel Virtualization Technology for Directed I/O* and should not be confused with VT-x *Intel Virtualization Technology*. VT-x allows one hardware platform to function as multiple “virtual” platforms while VT-d improves security and reliability of the systems and also improves performance of I/O devices in virtualized environments.
 
-Using IOMMU opens to features like PCI passthrough and memory protection from faulty or malicious devices, see [wikipedia:Input-output memory management unit#Advantages](https://en.wikipedia.org/wiki/Input-output_memory_management_unit#Advantages "wikipedia:Input-output memory management unit") and [Memory Management (computer programming): Could you explain IOMMU in plain English?](https://www.quora.com/Memory-Management-computer-programming/Could-you-explain-IOMMU-in-plain-English).
+Using IOMMU opens to features like PCI passthrough and memory protection from faulty or malicious devices, see [Wikipedia:Input-output memory management unit#Advantages](https://en.wikipedia.org/wiki/Input-output_memory_management_unit#Advantages "wikipedia:Input-output memory management unit") and [Memory Management (computer programming): Could you explain IOMMU in plain English?](https://www.quora.com/Memory-Management-computer-programming/Could-you-explain-IOMMU-in-plain-English).
 
 ### Enabling IOMMU
 
@@ -247,7 +247,7 @@ It is not necessary for all devices (or even expected device) from `vfio.conf` t
 
 ## Setting up an OVMF-based guest VM
 
-OVMF is an open-source UEFI firmware for QEMU virtual machines. While it's possible to use SeaBIOS to get similar results to an actual PCI passthough, the setup process is different and it is generally preferable to use the EFI method if your hardware supports it.
+OVMF is an open-source UEFI firmware for QEMU virtual machines. While it is possible to use SeaBIOS to get similar results to an actual PCI passthough, the setup process is different and it is generally preferable to use the EFI method if your hardware supports it.
 
 ### Configuring libvirt
 
@@ -282,7 +282,7 @@ The rest of the installation process will take place as normal using a standard 
 
 ### Attaching the PCI devices
 
-With the installation done, it's now possible to edit the hardware details in libvirt and remove virtual integration devices, such as the spice channel and virtual display, the QXL video adapter, the emulated mouse and keyboard and the USB tablet device. Since that leaves you with no input devices, you may want to bind a few USB host devices to your VM as well, but remember to **leave at least one mouse and/or keyboard assigned to your host** in case something goes wrong with the guest. At this point, it also becomes possible to attach the PCI device that was isolated earlier; simply click on "Add Hardware" and select the PCI Host Devices you want to passthrough. If everything went well, the screen plugged into your GPU should show the OVMF splash screen and your VM should start up normally. From there, you can setup the drivers for the rest of your VM.
+With the installation done, it is now possible to edit the hardware details in libvirt and remove virtual integration devices, such as the spice channel and virtual display, the QXL video adapter, the emulated mouse and keyboard and the USB tablet device. Since that leaves you with no input devices, you may want to bind a few USB host devices to your VM as well, but remember to **leave at least one mouse and/or keyboard assigned to your host** in case something goes wrong with the guest. At this point, it also becomes possible to attach the PCI device that was isolated earlier; simply click on "Add Hardware" and select the PCI Host Devices you want to passthrough. If everything went well, the screen plugged into your GPU should show the OVMF splash screen and your VM should start up normally. From there, you can setup the drivers for the rest of your VM.
 
 ### Gotchas
 
@@ -426,15 +426,15 @@ If you do not intend to be doing any computation-heavy work on the host (or even
 
 ### Static huge pages
 
-When dealing with applications that require large amounts of memory, memory latency can become a problem since the more memory pages are being used, the more likely it is that this application will attempt to access information across multiple memory "pages", which is the base unit for memory allocation. Resolving the actual address of the memory page takes multiple steps, and so CPUs normally cache information on recently used memory pages to make subsequent uses on the same pages faster. Applications using large amounts of memory run into a problem where, for instance, a virtual machine uses 4GB of memory divided into 4kB pages (which is the default size for normal pages), meaning that such cache misses can become extremely frequent and greatly increase memory latency. Huge pages exist to mitigate this issue by giving larger individual pages to those applications, increasing the odds that multiple operations will target the same page in succession. This is normally handeled with transparent huge pages, which dynamically manages hugepages to keep up with the demand.
+When dealing with applications that require large amounts of memory, memory latency can become a problem since the more memory pages are being used, the more likely it is that this application will attempt to access information across multiple memory "pages", which is the base unit for memory allocation. Resolving the actual address of the memory page takes multiple steps, and so CPUs normally cache information on recently used memory pages to make subsequent uses on the same pages faster. Applications using large amounts of memory run into a problem where, for instance, a virtual machine uses 4 GiB of memory divided into 4 KiB pages (which is the default size for normal pages), meaning that such cache misses can become extremely frequent and greatly increase memory latency. Huge pages exist to mitigate this issue by giving larger individual pages to those applications, increasing the odds that multiple operations will target the same page in succession. This is normally handeled with transparent huge pages, which dynamically manages hugepages to keep up with the demand.
 
 On a VM with a PCI passthrough, however, it is **not possible** to benefit from transparent huge pages, as IOMMU requires that the guest's memory be allocated and pinned as soon as the VM starts. It is therefore required to allocate huge pages statically in order to benefit from them.
 
-**Warning:** Static huge pages lock down the allocated amount of memory, making it unavailable for applications that are not configured to use them. Allocating 4GBs worth of huge pages on a machine with 8GBs of memory will only leave you with 4GBs of available memory on the host **even when the VM is not running**.
+**Warning:** Static huge pages lock down the allocated amount of memory, making it unavailable for applications that are not configured to use them. Allocating 4 GiBs worth of huge pages on a machine with 8 GiB of memory will only leave you with 4 GiB of available memory on the host **even when the VM is not running**.
 
-To allocate huge pages at boot, one must simply specify the desired amount on their kernel command line with `hugepages=*x*`. For instance, reserving 1024 pages with `hugepages=1024` and the default size of 2048kB per huge page creates 2GBs worth of memory for the virtual machine to use.
+To allocate huge pages at boot, one must simply specify the desired amount on their kernel command line with `hugepages=*x*`. For instance, reserving 1024 pages with `hugepages=1024` and the default size of 2048 KiB per huge page creates 2 GiB worth of memory for the virtual machine to use.
 
-If supported by CPU page size could be set manually. 1 GB huge page support could be verified by `grep pdpe1gb /proc/cpuinfo`. Setting 1 GB huge page size via kernel parameters : `default_hugepagesz=1G hugepagesz=1G hugepages=X transparent_hugepage=never`.
+If supported by CPU page size could be set manually. 1 GiB huge page support could be verified by `grep pdpe1gb /proc/cpuinfo`. Setting 1 GiB huge page size via kernel parameters : `default_hugepagesz=1G hugepagesz=1G hugepages=X transparent_hugepage=never`.
 
 Also, since static huge pages can only be used by applications that specifically request it, you must add this section in your libvirt domain configuration to allow kvm to benefit from them :
 
@@ -450,38 +450,35 @@ Also, since static huge pages can only be used by applications that specifically
 
 ### Dynamic huge pages
 
-Hugepages could be allocated dynamically via vm.nr_overcommit_hugepages parameter.
+Hugepages could be allocated dynamically via `vm.nr_overcommit_hugepages` [sysctl](/index.php/Sysctl "Sysctl") parameter.
 
- `sysctl.d/10-kvm.conf` 
+ `/etc/sysctl.d/10-kvm.conf` 
 ```
 vm.nr_hugepages = 0
-vm.nr_overcommit_hugepages = <num>
+vm.nr_overcommit_hugepages = *num*
+```
+
+Where `*num*` - is the number of huge pages, which default size if 2 MiB. Pages will be automatically allocated, and freed after VM stops.
+
+More manual way:
+
+```
+# echo *num* > /sys/kernel/mm/hugepages/hugepages-2048kB/nr_hugepages
+# echo *num* > /sys/kernel/mm/hugepages/hugepages-1048576kB/nr_hugepages
 
 ```
 
-Where num - is the number of huge pages, which default size if 2Mb. Pages will be automatically allocated, and freed after VM stops.
-
-More manual way
-
- `manual dynamic huge pages` 
-```
-echo <num> | sudo tee /sys/kernel/mm/hugepages/hugepages-2048kB/nr_hugepages
-echo <num> | sudo tee /sys/kernel/mm/hugepages/hugepages-1048576kB/nr_hugepages
-
-```
-
-For 2Mb and 1Gb page size respectively. And they should be manually freed in the same way.
+For 2 MiB and 1 GiB page size respectively. And they should be manually freed in the same way.
 
 It is hardly recommended to drop caches, compact memory and wait couple of seconds before starting VM, as there could be not enough free contiguous memory for required huge pages blocks. Especially after some uptime of the host system.
 
- `organize ram` 
 ```
-echo 3 | sudo tee /proc/sys/vm/drop_caches
-echo 1 | sudo tee /proc/sys/vm/compact_memory
+# echo 3 > /proc/sys/vm/drop_caches
+# echo 1 > /proc/sys/vm/compact_memory
 
 ```
 
-Theoretically, 1Gb pages works as 2Mb. But practically - no guaranteed way was found to get contiguous 1Gb memory blocks. Each consequent request of 1Gb blocks lead to lesser and lesser dynamically allocated count.
+Theoretically, 1 GiB pages works as 2 MiB. But practically - no guaranteed way was found to get contiguous 1 GiB memory blocks. Each consequent request of 1 GiB blocks lead to lesser and lesser dynamically allocated count.
 
 ### CPU frequency governor
 
@@ -491,12 +488,12 @@ Depending on the way your [CPU governor](/index.php/CPU_frequency_scaling "CPU f
 
 Alternatively, make sure that you have isolated CPUs properly. In this example, let us assume you are using CPUs 4-7. Use the kernel parameters `isolcpus nohz_full rcu_nocbs` to completely isolate the CPUs from the kernel.
 
- `sudo vim /etc/defaults/grub` 
+ `/etc/defaults/grub` 
 ```
 ...
 GRUB_CMDLINE_LINUX="..your other params.. isolcpus=4-7 nohz_full=4-7 rcu_nocbs=4-7"
 ...
-
+</nowiki>
 ```
 
 Then, run `qemu-system-x86_64` with taskset and chrt:
@@ -619,7 +616,7 @@ FILES=(/etc/modprobe.d/vfio.conf /usr/bin/vfio-pci-override.sh)
 
 ### Passing the boot GPU to the guest
 
-The GPU marked as `boot_vga` is a special case when it comes to doing PCI passthroughs, since the BIOS needs to use it in order to display things like boot messages or the BIOS configuration menu. To do that, it makes [a copy of the VGA boot ROM which can then be freely modified](https://www.redhat.com/archives/vfio-users/2016-May/msg00224.html). This modified copy is the version the system gets to see, which the passthrough driver may reject as invalid. As such, it is generally recommended to change the boot GPU in the BIOS configuration so the host GPU is used instead or, if that's not possible, to swap the host and guest cards in the machine itself.
+The GPU marked as `boot_vga` is a special case when it comes to doing PCI passthroughs, since the BIOS needs to use it in order to display things like boot messages or the BIOS configuration menu. To do that, it makes [a copy of the VGA boot ROM which can then be freely modified](https://www.redhat.com/archives/vfio-users/2016-May/msg00224.html). This modified copy is the version the system gets to see, which the passthrough driver may reject as invalid. As such, it is generally recommended to change the boot GPU in the BIOS configuration so the host GPU is used instead or, if that is not possible, to swap the host and guest cards in the machine itself.
 
 ### Using Looking Glass to stream guest screen to the host
 
@@ -649,7 +646,7 @@ You should replace 32 with your own calculated value based on what resolution yo
 
 ```
 width x height x 4 x 2 = total bytes
-total bytes / 1024 / 1024 = total megabytes + 2
+total bytes / 1024 / 1024 = total mebibytes + 2
 
 ```
 
@@ -657,7 +654,7 @@ For example, in case of 1920x1080
 
 ```
 1920 x 1080 x 4 x 2 = 16,588,800 bytes
-16,588,800 / 1024 / 1024 = 15.82 MB + 2 = 17.82
+16,588,800 / 1024 / 1024 = 15.82 MiB + 2 = 17.82
 
 ```
 
@@ -819,9 +816,9 @@ For utilizing the OVMF firmware, make sure the [ovmf](https://www.archlinux.org/
 *   `-drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/x64/OVMF_CODE.fd` for the actual OVMF firmware binary, note the readonly option
 *   `-drive if=pflash,format=raw,file=/tmp/MY_VARS.fd` for the variables
 
-**Note:** QEMU's default SeaBIOS can be used instead of OVMF, but it's not recommended as it can cause issues with passthrough setups.
+**Note:** QEMU's default SeaBIOS can be used instead of OVMF, but it is not recommended as it can cause issues with passthrough setups.
 
-It's recommended to study the QEMU article for ways to enhance the performance by using the [virtio drivers](/index.php/QEMU#Installing_virtio_drivers "QEMU") and other further configurations for the setup.
+It is recommended to study the QEMU article for ways to enhance the performance by using the [virtio drivers](/index.php/QEMU#Installing_virtio_drivers "QEMU") and other further configurations for the setup.
 
 You also might have to use the `-cpu host,kvm=off` parameter to forward the host's CPU model info to the VM and fool the virtualization detection used by Nvidia's and possibly other manufacturers' device drivers trying to block the full hardware usage inside a virtualized system.
 
@@ -1172,7 +1169,7 @@ Valid ROM signature found @fa00h, PCIR offset 1ch
 
 ```
 
-To be UEFI compatible, you need a "type 3 (EFI)" in the result. If it's not there, try updating your GPU VBIOS. GPU manufacturers often share VBIOS upgrades on their support pages. A large database of known compatible and working VBIOSes (along with their UEFI compatibility status!) is available on [TechPowerUp](https://www.techpowerup.com/vgabios/).
+To be UEFI compatible, you need a "type 3 (EFI)" in the result. If it is not there, try updating your GPU VBIOS. GPU manufacturers often share VBIOS upgrades on their support pages. A large database of known compatible and working VBIOSes (along with their UEFI compatibility status!) is available on [TechPowerUp](https://www.techpowerup.com/vgabios/).
 
 Updated VBIOS can be used in the VM without flashing. To load it in QEMU:
 
@@ -1239,11 +1236,11 @@ Flashing the VBIOS can be done with:
 
 ```
 
-**Warning:** **DO NOT** interrupt the flashing process, even if it looks like it's stuck. Flashing should take about a minute on most GPUs, but may take longer.
+**Warning:** **DO NOT** interrupt the flashing process, even if it looks like it is stuck. Flashing should take about a minute on most GPUs, but may take longer.
 
 ### Slowed down audio pumped through HDMI on the video card
 
-For some users VM's audio slows down/starts stuttering/becomes demonic after a while when it's pumped through HDMI on the video card. This usually also slows down graphics. A possible solution consists of enabling MSI (Message Signaled-Based Interrupts) instead of the default (Line-Based Interrupts).
+For some users VM's audio slows down/starts stuttering/becomes demonic after a while when it is pumped through HDMI on the video card. This usually also slows down graphics. A possible solution consists of enabling MSI (Message Signaled-Based Interrupts) instead of the default (Line-Based Interrupts).
 
 In order to check whether MSI is supported or enabled, run the following command as root:
 
@@ -1357,8 +1354,9 @@ ExecStart=/usr/bin/systemd-inhibit --what=sleep --why="Libvirt domain \"%i\" is 
 
 *   [Discussion on Arch Linux forums](https://bbs.archlinux.org/viewtopic.php?id=162768) | [Archived link](https://archive.is/kZYMt)
 *   [User contributed hardware compatibility list](https://docs.google.com/spreadsheet/ccc?key=0Aryg5nO-kBebdFozaW9tUWdVd2VHM0lvck95TUlpMlE)
-*   [Example script from https://www.youtube.com/watch?v=37D2bRsthfI](https://pastebin.com/rcnUZCv7)
+*   [Example script](https://pastebin.com/rcnUZCv7) from [https://www.youtube.com/watch?v=37D2bRsthfI](https://www.youtube.com/watch?v=37D2bRsthfI)
 *   [Complete tutorial for PCI passthrough](https://vfio.blogspot.com/)
 *   [VFIO users mailing list](https://www.redhat.com/archives/vfio-users/)
-*   [#vfio-users on freenode](https://webchat.freenode.net/?channels=vfio-users)
+*   [#vfio-users on freenode](ircs://chat.freenode.net/vfio-users)
 *   [YouTube: Level1Linux - GPU Passthrough for Virtualization with Ryzen](https://www.youtube.com/watch?v=aLeWg11ZBn0)
+*   [/r/VFIO: A subreddit focused on vfio](https://www.reddit.com/r/VFIO)

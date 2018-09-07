@@ -23,7 +23,7 @@
 *   [6 Tips and Tricks](#Tips_and_Tricks)
     *   [6.1 Keep a log of what is watched](#Keep_a_log_of_what_is_watched)
     *   [6.2 CLI tool for kodi](#CLI_tool_for_kodi)
-    *   [6.3 Enable Hardware video acceleration](#Enable_Hardware_video_acceleration)
+    *   [6.3 Hardware video acceleration](#Hardware_video_acceleration)
     *   [6.4 Adjusting CD/DVD drive speed](#Adjusting_CD.2FDVD_drive_speed)
     *   [6.5 Use port 80 for webserver](#Use_port_80_for_webserver)
     *   [6.6 Using ALSA](#Using_ALSA)
@@ -345,7 +345,7 @@ Keep track of every video watched on kodi with [kodi-logger](https://aur.archlin
 
 A powerful CLI tool for use with kodi is [texturecache](https://aur.archlinux.org/packages/texturecache/). Users can accomplish many tasks from library management to querying what is currently playing.
 
-### Enable Hardware video acceleration
+### Hardware video acceleration
 
 Enable and configure [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") to speed up playback performance.
 

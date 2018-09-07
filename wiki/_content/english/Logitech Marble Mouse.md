@@ -13,6 +13,9 @@ The **Logitech Marble Mouse** is a pointing device with four buttons and a track
     *   [3.3 System-wide or per-user](#System-wide_or_per-user)
     *   [3.4 Xorg input hotplugging](#Xorg_input_hotplugging)
     *   [3.5 Without Xorg hotplugging](#Without_Xorg_hotplugging)
+    *   [3.6 Gnome 3 and Wayland](#Gnome_3_and_Wayland)
+        *   [3.6.1 Mouse wheel emulation](#Mouse_wheel_emulation)
+        *   [3.6.2 Acceleration profile](#Acceleration_profile)
 *   [4 Sample configuration](#Sample_configuration)
     *   [4.1 Configuration file](#Configuration_file)
     *   [4.2 Restarting X](#Restarting_X)
@@ -254,7 +257,33 @@ EndSection
 
 ```
 
-The `"Auto"` option for `"Protocol"` works fine, too. Of course you can use the name you prefer as the `Identifier`, as long as it is the same you use as `InputDevice` in the `Section "ServerLayout"` .
+The `"Auto"` option for `"Protocol"` works fine, too. Of course you can use the name you prefer as the `Identifier`, as long as it is the same you use as `InputDevice` in the `Section "ServerLayout"`.
+
+### Gnome 3 and Wayland
+
+When running Wayland, the aforementioned configuration files have no effect. Gnome 3 does, however, provide a limited set of configuration options for enabling mouse wheel emulation and adjusting the acceleration behaviour of the mouse cursor.
+
+#### Mouse wheel emulation
+
+Gnome provides the option to assign a scroll modifier button. To do this, enter
+
+```
+gsettings set org.gnome.desktop.peripherals.trackball scroll-wheel-emulation-button <button_id>
+
+```
+
+, where *<button_id>* is the id of the mouse button that should act as the modifier (see [basic function](#Basic_function)). To deactivate mouse wheel emulation, set this to 0.
+
+#### Acceleration profile
+
+The trackball can be configured to either use a "flat" or "adaptive" acceleration profile or to just use its "default" one. To do that, set
+
+```
+gsettings set org.gnome.desktop.peripherals.trackball accel-profile <profile>
+
+```
+
+to the desired value.
 
 ## Sample configuration
 

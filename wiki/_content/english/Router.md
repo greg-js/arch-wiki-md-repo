@@ -70,7 +70,7 @@ IP='static'
 Address=('10.0.0.1/24')
 ```
 
-{{Note|The example configuration above assumes a full subnet. If you are building the gateway for a small amount of people, you will want to change the [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") suffix to accommodate a smaller range. For example `/27` will give you `10.0.0.1` to `10.0.0.30`. There are many CIDR calculators, for example [sipcalc](https://www.archlinux.org/packages/?name=sipcalc), as well as online.
+**Note:** The example configuration above assumes a full subnet. If you are building the gateway for a small amount of people, you will want to change the [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") suffix to accommodate a smaller range. For example `/27` will give you `10.0.0.1` to `10.0.0.30`. There are many CIDR calculators, for example [sipcalc](https://www.archlinux.org/packages/?name=sipcalc), as well as online.
 
 Next up is to set up the interfaces with netctl.
 

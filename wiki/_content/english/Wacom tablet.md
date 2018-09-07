@@ -6,9 +6,10 @@
 *   [2 Configuration](#Configuration)
     *   [2.1 Permanent configuration](#Permanent_configuration)
     *   [2.2 Remapping buttons](#Remapping_buttons)
-        *   [2.2.1 The syntax](#The_syntax)
-        *   [2.2.2 Some examples](#Some_examples)
-        *   [2.2.3 Execute custom commands](#Execute_custom_commands)
+        *   [2.2.1 Mapping pad buttons to function keys](#Mapping_pad_buttons_to_function_keys)
+        *   [2.2.2 The syntax](#The_syntax)
+        *   [2.2.3 Some examples](#Some_examples)
+        *   [2.2.4 Execute custom commands](#Execute_custom_commands)
     *   [2.3 Adjusting aspect ratios](#Adjusting_aspect_ratios)
         *   [2.3.1 Reducing the drawing area height](#Reducing_the_drawing_area_height)
         *   [2.3.2 Reducing the screen area width](#Reducing_the_screen_area_width)
@@ -150,7 +151,30 @@ Alternatively, if you want an overview of your tablet's button layout you can lo
 
 In this case the respective layout SVG is `/usr/share/libwacom/layouts/bamboo-16fg-s-t.svg`. The letters in the SVG correspond to the button numbers: A=1, B=2, C=3, ...
 
-**Tip:** If you want to bind your tablet buttons to different shortcuts in different applications, you may want to map your tablet buttons to F13 and higher because most applications do not let you bind keyboard shortcuts to mouse buttons. See [Mouse buttons#Binding keyboard to mouse buttons](/index.php/Mouse_buttons#Binding_keyboard_to_mouse_buttons "Mouse buttons").
+#### Mapping pad buttons to function keys
+
+If you want to bind your tablet buttons to different shortcuts in different applications, you may want to map your tablet buttons to function keys because applications generally do not let you bind keyboard shortcuts to mouse buttons.
+
+Firstly, map the pad buttons to mouse buttons 11 and higher so that you can distinguish them from regular mouse buttons. For example:
+
+```
+xsetwacom set *pad* Button 1 11
+xsetwacom set *pad* Button 2 12
+...
+
+```
+
+Then map the mouse buttons to the function keys. This can be done with [xbindkeys](/index.php/Xbindkeys "Xbindkeys") and [xdotool](/index.php/Xdotool "Xdotool") by adding an entry like the following for every pad to your `~/.xbindkeysrc`:
+
+```
+"xdotool key F21"
+  b:11
+
+"xdotool key F22"
+  b:12
+...
+
+```
 
 #### The syntax
 
@@ -291,14 +315,14 @@ Setting the Intuos OLEDs can be done using [i4oled](https://aur.archlinux.org/pa
 
 ### TwinView setup
 
-If you are going to use two Monitors the aspect ratio while using the Tablet might feel unnatural. In order to fix this you need to add
+If you are going to use two monitors the aspect ratio while using the tablet might feel unnatural. In order to fix this you need to add:
 
 ```
 Option "TwinView" "horizontal"
 
 ```
 
-To all of your Wacom-InputDevice entries in the `xorg.conf` file. You may read more about that [HERE](http://ubuntuforums.org/showthread.php?t=640898)
+to all of your Wacom-InputDevice entries in the *xorg.conf* file. You may read more about that [here](http://ubuntuforums.org/showthread.php?t=640898).
 
 #### Temporary TwinView setup
 

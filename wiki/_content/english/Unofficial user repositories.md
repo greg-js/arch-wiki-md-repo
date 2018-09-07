@@ -784,7 +784,7 @@ Server = https://pkgbuild.com/~heftig/repo/$arch
 
 *   **Maintainer**: [Thaodan](https://aur.archlinux.org/account/Thaodan)
 *   **Upstream page**: [https://gitlab.com/Thaodan/linux-pf](https://gitlab.com/Thaodan/linux-pf)
-*   **Description**: [pf-kernel](/index.php/Kernels#Major_patchsets "Kernels") and other packages by pf-kernel fork developer, Thaodan
+*   **Description**: [pf-kernel](/index.php/Kernel#Major_patchsets "Kernel") and other packages by pf-kernel fork developer, Thaodan
 
 ```
 [home-thaodan]
@@ -902,7 +902,7 @@ Server = https://downloads.sourceforge.net/project/pnsft-aur/pur/x86_64
 
 *   **Maintainer**: [Oleksandr Natalenko aka post-factum](https://aur.archlinux.org/account/post-factum)
 *   **Upstream page**: [https://pfactum.github.io/pf-kernel/](https://pfactum.github.io/pf-kernel/)
-*   **Description**: [pf-kernel](/index.php/Kernels#Major_patchsets "Kernels") and other packages by its developer, post-factum
+*   **Description**: [pf-kernel](/index.php/Kernel#Major_patchsets "Kernel") and other packages by its developer, post-factum
 
 ```
 [home_post-factum_kernels_Arch]

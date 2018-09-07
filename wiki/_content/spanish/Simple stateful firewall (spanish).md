@@ -1,14 +1,20 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall"). Fecha de la última traducción/revisión: **2014-12-26**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Simple_stateful_firewall&diff=0&oldid=352615).
+Artículos relacionados
+
+*   [Firewalls](/index.php/Firewalls "Firewalls")
+*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
+*   [Nftables#Simple stateful firewall](/index.php/Nftables#Simple_stateful_firewall "Nftables")
+*   [Router](/index.php/Router "Router")
+*   [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall")
+
+**Estado de la traducción:** este artículo es una versión traducida de [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall"). Fecha de la última traducción/revisión: **2018-09-05**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Simple_stateful_firewall&diff=0&oldid=538197).
 
 	Según [Wikipedia (en inglés)](https://en.wikipedia.org/wiki/Stateful_firewall "wikipedia:Stateful firewall")
 
 	*Firewall Stateful es «en informática, un cortafuegos de estado (cualquier cortafuegos que realiza la inspección del estado de los paquetes (SPI) o la inspección de estado) es un cortafuegos que realiza un seguimiento del estado de las conexiones de red (por ejemplo, flujos TCP, comunicación UDP) que viajan a través de ella. El cortafuegos está programado para distinguir paquetes legítimos para diferentes tipos de conexiones. Solo los paquetes que coincidan con una conexión activa conocida serán permitidos por el cortafuegos; el resto serán rechazados».*
 
-Esta página explica cómo configurar un cortafuegos *stateful* usando [iptables](/index.php/Iptables_(Espa%C3%B1ol) "Iptables (Español)"). También explica lo que significan las reglas y por qué son necesarias. Para simplificar, se divide en dos secciones principales. La primera sección trata sobre la configuración de un cortafuegos para una sola máquina, la segunda establece la configuración de una puerta de enlace NAT además de la del cortafuegos de la primera sección.
+Esta página explica cómo configurar un cortafuegos [stateful](https://en.wikipedia.org/wiki/Stateful_firewall "wikipedia:Stateful firewall") usando [iptables](/index.php/Iptables_(Espa%C3%B1ol) "Iptables (Español)"). También explica lo que significan las reglas y por qué son necesarias. Para simplificar, se divide en dos secciones principales. La primera sección trata sobre la configuración de un cortafuegos para una sola máquina, la segunda establece la configuración de una puerta de enlace NAT además de la del cortafuegos de la primera sección.
 
-**Advertencia:** Las reglas se dan en el orden en que se ejecutan. Si está conectado a una máquina remota, es posible que se cierre el acceso a la máquina, mientras crea las reglas. Solo debe seguir los siguientes pasos mientras se está conectado en el sistema local.
-
-El [ejemplo de archivo de configuración](#Ejemplo_de_archivo_iptables.rules) se puede utilizar para solucionar este problema.
+**Advertencia:** Las reglas se dan en el orden en que se ejecutan. Si está conectado a una máquina remota, es posible que se cierre el acceso a la máquina, mientras crea las reglas. Solo debe seguir los siguientes pasos mientras se está conectado en el sistema local. El [ejemplo de archivo de configuración](#Archivo_resultante_de_iptables.rules) se puede utilizar para solucionar este problema.
 
 ## Contents
 
@@ -18,7 +24,7 @@ El [ejemplo de archivo de configuración](#Ejemplo_de_archivo_iptables.rules) se
     *   [2.2 La cadena FORWARD](#La_cadena_FORWARD)
     *   [2.3 La cadena OUTPUT](#La_cadena_OUTPUT)
     *   [2.4 La cadena INPUT](#La_cadena_INPUT)
-    *   [2.5 Ejemplo de archivo iptables.rules](#Ejemplo_de_archivo_iptables.rules)
+    *   [2.5 Archivo resultante de iptables.rules](#Archivo_resultante_de_iptables.rules)
     *   [2.6 Las cadenas TCP y UDP](#Las_cadenas_TCP_y_UDP)
         *   [2.6.1 Apertura de puertos para conexiones entrantes](#Apertura_de_puertos_para_conexiones_entrantes)
         *   [2.6.2 Golpear puertos](#Golpear_puertos)
@@ -31,8 +37,8 @@ El [ejemplo de archivo de configuración](#Ejemplo_de_archivo_iptables.rules) se
             *   [2.8.2.3 Restaurar la regla final](#Restaurar_la_regla_final)
     *   [2.9 Protección contra otros ataques](#Protecci.C3.B3n_contra_otros_ataques)
         *   [2.9.1 Ataques de fuerza bruta](#Ataques_de_fuerza_bruta)
-    *   [2.10 Guardar las reglas](#Guardar_las_reglas)
-    *   [2.11 IPv6](#IPv6)
+    *   [2.10 IPv6](#IPv6)
+    *   [2.11 Guardar las reglas](#Guardar_las_reglas)
 *   [3 Configurar una puerta de enlace NAT](#Configurar_una_puerta_de_enlace_NAT)
     *   [3.1 Configurar la tabla filter](#Configurar_la_tabla_filter)
         *   [3.1.1 Crear las cadenas necesarias](#Crear_las_cadenas_necesarias_2)
@@ -46,7 +52,7 @@ El [ejemplo de archivo de configuración](#Ejemplo_de_archivo_iptables.rules) se
 
 ## Requisitos previos
 
-**Nota:** Su kernel debe ser compilado con soporte para iptables. Todos los kernels de stock de Arch Linux tienen soporte para iptables.
+**Nota:** El kernel debe ser compilado con soporte para iptables. Todos los kernels de stock de Arch Linux tienen soporte para iptables.
 
 En primer lugar, instale las herramientas [iptables](https://www.archlinux.org/packages/?name=iptables) en el espacio de usuario o verifique que ya están instaladas.
 
@@ -86,11 +92,11 @@ Si hay reglas, podrá ser capaz de restablecerlas, cargando el conjunto de regla
 
 ```
 
-De lo contrario, ver [Iptables (Español)#Restablecer las reglas](/index.php/Iptables_(Espa%C3%B1ol)#Restablecer_las_reglas "Iptables (Español)").
+De lo contrario, vea [Iptables (Español)#Restablecer las reglas](/index.php/Iptables_(Espa%C3%B1ol)#Restablecer_las_reglas "Iptables (Español)").
 
 ## Cortafuegos para una sola máquina
 
-**Nota:** Puesto que las reglas de iptables siguen procesos en orden lineal, de arriba a abajo dentro de una cadena, se aconseja poner las reglas más frecuentemente afectadas al principio de la cadena. Por supuesto que hay un límite, en función de la lógica que se está implementando. Además, las reglas tienen un costo de tiempo de ejecución asociado, por lo que las reglas no deben ser reordenadas basandose únicamente en observaciones empíricas de los recuentos de bytes/paquetes.
+**Nota:** Puesto que las reglas de iptables siguen procesos en orden lineal, de arriba a abajo dentro de una cadena, se aconseja poner las reglas más frecuentemente afectadas al principio de la cadena. Por supuesto que hay un límite, en función de la lógica que se está implementando. Además, las reglas tienen un costo de tiempo de ejecución asociado, por lo que las reglas no deben ser reordenadas basandose únicamente en observaciones empíricas de los recuentos de bytes/paquetes de red.
 
 ### Crear las cadenas necesarias
 
@@ -135,9 +141,9 @@ De manera similar a las cadenas anteriores, fijamos la política predeterminada 
 
 Cada paquete que se recibe por cualquier interfaz de red pasará primero por la cadena **INPUT**, si está destinado a nuestra máquina. Con esta cadena, nos aseguraremos de que solo los paquetes que queremos sean aceptados.
 
-La primera regla añadida a la cadena INPUT permitirá el tráfico perteneciente a las conexiones ya establecidas, o para el nuevo tráfico válido relacionado con estas conexiones, como los errores ICMP, o las respuestas de Echo (los paquetes que retornan al equipo cuando se hace ping —«*(...) es un servicio de red que repite aquel comando que se le envía (como el eco). Es útil para hacer comprobaciones sobre el estado de la conectividad de una red»* [fuente: [Wikipedia](https://en.wikipedia.org/wiki/esEcho_(inform%C3%A1tica) "wikipedia:esEcho (informática)")]—). **ICMP** (siglas en inglés de *Internet Control Message Protocol*) significa **Protocolo de Mensajes de Control de Internet**. Algunos mensajes [ICMP](https://en.wikipedia.org/wiki/es:Internet_Control_Message_Protocol "wikipedia:es:Internet Control Message Protocol") son muy importantes y ayudan a gestionar la congestión y [MTU](https://en.wikipedia.org/wiki/es:Unidad_m%C3%A1xima_de_transferencia "wikipedia:es:Unidad máxima de transferencia"), y son aceptados por esta regla.
+La primera regla añadida a la cadena INPUT permitirá el tráfico perteneciente a las conexiones ya establecidas, o para el nuevo tráfico válido relacionado con estas conexiones, como los errores ICMP, o las respuestas de Echo (los paquetes que retornan al equipo cuando se hace ping —«*(...) es un servicio de red que repite aquel comando que se le envía (como el eco). Es útil para hacer comprobaciones sobre el estado de la conectividad de una red»* ([fuente](https://en.wikipedia.org/wiki/esEcho_(inform%C3%A1tica) "wikipedia:esEcho (informática)"))—). **ICMP** (siglas en inglés de *Internet Control Message Protocol*) significa **Protocolo de Mensajes de Control de Internet**. Algunos mensajes [ICMP](https://en.wikipedia.org/wiki/es:Internet_Control_Message_Protocol "wikipedia:es:Internet Control Message Protocol") son muy importantes y ayudan a gestionar la congestión y [MTU](https://en.wikipedia.org/wiki/es:Unidad_m%C3%A1xima_de_transferencia "wikipedia:es:Unidad máxima de transferencia"), y son aceptados por esta regla.
 
-El estado de conexión `ESTABLISHED` implica que, o bien otra regla anteriormente permitió la conexión inicial (`--ctstate NEW`) intentada o bien la conexión ya estaba activa (por ejemplo, una conexión SSH remota activa) al tiempo de establecer esta regla:
+El estado de conexión `ESTABLISHED` implica que, o bien otra regla anteriormente permitió la conexión inicial intentada (`--ctstate NEW`), o bien la conexión ya estaba activa (por ejemplo, una conexión SSH remota activa) al tiempo de establecer esta regla:
 
 ```
 # iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
@@ -182,11 +188,11 @@ Ahora asociamos las cadenas TCP y UDP a la cadena INPUT para manejar todas las n
 
 ```
 
-Rechazamos las conexiones TCP con paquetes RST de TCP y flujos de UDP con mensaje de puerto ICMP inalcanzable, si no se abren los puertos. Esto imita el comportamiento predeterminado de Linux (RFC), y que permite al remitente cerrar rápidamente la conexión y limpiarla.
+Rechazamos las conexiones TCP con paquetes RESET de TCP y flujos de UDP con mensaje de puerto ICMP inalcanzable, si no se abren los puertos. Esto imita el comportamiento predeterminado de Linux (RFC), y que permite al remitente cerrar rápidamente la conexión y limpiarla.
 
 ```
 # iptables -A INPUT -p udp -j REJECT --reject-with icmp-port-unreachable
-# iptables -A INPUT -p tcp -j REJECT --reject-with tcp-rst
+# iptables -A INPUT -p tcp -j REJECT --reject-with tcp-reset
 
 ```
 
@@ -197,7 +203,7 @@ Para otros protocolos, añadimos una regla final para la cadena INPUT para recha
 
 ```
 
-### Ejemplo de archivo iptables.rules
+### Archivo resultante de iptables.rules
 
 He aquí un ejemplo de archivo `iptables.rules` que se obtendría después de ejecutar todas las órdenes anteriores:
 
@@ -267,22 +273,23 @@ Para permitir conexiones remotas a través de SSH (en el puerto 22):
 
 ```
 
-Para aceptar transmisiones UDP entrantes en el puerto 53 para un servidor DNS:
+Para aceptar transmisiones TCP/UDP entrantes en el puerto 53 para un servidor [DNS](/index.php/DNS "DNS"):
 
 ```
+# iptables -A TCP -p tcp --dport 53 -j ACCEPT
 # iptables -A UDP -p udp --dport 53 -j ACCEPT
 
 ```
 
-Vea [iptables(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/iptables.8) para conocer reglas más avanzadas, como equipar múltiples puertos.
+Vea [iptables(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iptables.8) para conocer reglas más avanzadas, como equipar múltiples puertos.
 
 #### Golpear puertos
 
-El [golpeo de puertos](https://en.wikipedia.org/wiki/es:Golpeo_de_puertos "wikipedia:es:Golpeo de puertos") es un método para abrir puertos externamente que, por defecto, el cortafuegos mantiene cerrado. Funciona al demandar intentos de conexión a una serie de puertos cerrados de forma predefinida. Cuando la secuencia correcta del puerto al que se «golpea» (intentos de conexión) es recibida, el cortafuegos abre determinado puerto(s) para permitir una conexión. Ver [Port knocking](/index.php/Port_knocking "Port knocking") para más información.
+El [golpeo de puertos](https://en.wikipedia.org/wiki/es:Golpeo_de_puertos "wikipedia:es:Golpeo de puertos") es un método para abrir puertos externamente que, por defecto, el cortafuegos mantiene cerrado. Funciona al demandar intentos de conexión a una serie de puertos cerrados de forma predefinida. Cuando la secuencia correcta del puerto al que se «golpea» (intentos de conexión) es recibida, el cortafuegos abre determinado puerto(s) para permitir una conexión. Vea [Port knocking](/index.php/Port_knocking "Port knocking") para más información.
 
 ### Protección contra ataques de suplantación
 
-**Nota:** `rp_filter` es ajustado actualmente a `1` por defecto en `/usr/lib/sysctl.d/50-default.conf`, por lo que el siguiente paso no es necesario..
+**Nota:** `rp_filter` está ajustado actualmente en `1` por defecto en `/usr/lib/sysctl.d/50-default.conf`, por lo que el siguiente paso no es necesario.
 
 El bloqueo de las direcciones locales reservadas entrantes desde Internet o red local se realiza normalmente a través de la configuración de `rp_filter` (Reverse Path Filter) en sysctl ajustándola a 1\. Para ello, añada la siguiente línea al archivo `/etc/sysctl.d/90-firewall.conf` (ver [sysctl](/index.php/Sysctl "Sysctl") para más detalles) para permitir la verificación de la dirección IP de origen que está integrado en el mismo kernel de Linux. La verificación por parte del kernel se encargará de la [suplantación de identidad o *spoofing*](https://en.wikipedia.org/wiki/es:Spoofing "wikipedia:es:Spoofing") mejor que las reglas de iptables individuales para cada caso.
 
@@ -291,12 +298,16 @@ net.ipv4.conf.all.rp_filter=1
 
 ```
 
-Solo cuando el enrutamiento es asíncrono o se utiliza `rp_filter=0`, son necesarios chequeos adicionales:
+Esto se puede hacer con netfilter en su lugar, si se desean estadíaticas (y mejorar el registro):
 
 ```
-# iptables -I INPUT ! -i lo -s 127.0.0.0/8 -j DROP
+# iptables -t raw -I PREROUTING -m rpfilter --invert -j DROP
 
 ```
+
+**Nota:** No hay ninguna razón para activar esto en ambos lugares. El método netfilter es la opción más moderna y también funciona con IPv6.
+
+Solo cuando el enrutamiento es asíncrono, se debe utilizar la opción de sysctl `rp_filter=0`. Pasando el modificador `--loose` al módulo `rpfilter` se logrará lo mismo con netfilter.
 
 ### «Ocultar» el ordenador
 
@@ -315,37 +326,14 @@ net.ipv4.icmp_echo_ignore_all = 1
 
 ```
 
-Limitar la ratio es una mejor manera de controlar los posibles abusos. Este primer método implementa un límite global (es decir, solo se admiten X paquetes por minuto para todas las direcciones IP de origen):
-
-```
-# iptables -A INPUT -p icmp --icmp-type echo-request -m limit --limit 30/min --limit-burst 8 -j ACCEPT
-# iptables -A INPUT -p icmp --icmp-type echo-request -j DROP
-
-```
-
-O, se puede utilizar el módulo 'recent', puede imponer un límite por dirección IP de origen:
-
-```
-# iptables -A INPUT -p icmp --icmp-type echo-request -m recent --name ping_limiter --set
-# iptables -A INPUT -p icmp --icmp-type echo-request -m recent --name ping_limiter --update --hitcount 6 --seconds 4 -j DROP
-# iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
-
-```
-
-Si decide utilizar la regla para la limitación de la ratio o para la limitación de la IP de origen, la regla PING que ya existe en la cadena INPUT debe ser borrada. Esto se puede hacer como se muestra a continuación, o, alternativamente, no la utilice en la primera posición.
-
-```
-# iptables -D INPUT -p icmp --icmp-type 8 -m conntrack --ctstate NEW -j ACCEPT
-
-```
-
-A continuación, tiene que decidir dónde desea colocar la regla de la limitación de ratio o de la limitación de la IP de origen. Si coloca las reglas por debajo de la regla RELATED,ESTABLISHED entonces se hará el recuento y la limitación de las nuevas conexiones de ping, no de cada uno de los ping enviados a su máquina. Si se colocan antes de la regla RELATED,ESTABLISHED, entonces se contarán y limitarán cada ping enviado a su máquina, no cada conexión de ping hecha.
-
 Puede encontrar más información en la página del manual de iptables, o leyendo la documentación y ejemplos en la página web [http://snowman.net/projects/ipt_recent/](http://snowman.net/projects/ipt_recent/)
 
 #### Engañar a los analizadores de puertos
 
-**Nota:** Esto le abre a una forma de [DoS](https://en.wikipedia.org/wiki/es:Ataque_de_denegaci%C3%B3n_de_servicio "wikipedia:es:Ataque de denegación de servicio") (siglas en inglés de *Denial of Service* —ataque de denegación de servicios—). Un ataque puede enviar paquetes con direcciones IP falsas, y hacer que los recursos o servicios sean bloqueados para conectarse a los mismos por los usuarios legítimos.
+**Nota:**
+
+*   Esto le abre a una forma de [DoS](https://en.wikipedia.org/wiki/es:Ataque_de_denegaci%C3%B3n_de_servicio "wikipedia:es:Ataque de denegación de servicio") (siglas en inglés de *Denial of Service* —ataque de denegación de servicios—). Un ataque puede enviar paquetes con direcciones IP falsas, y hacer que los recursos o servicios sean bloqueados para conectarse a los mismos por los usuarios legítimos.
+*   Este truco puede bloquear una dirección IP legítima si algunos paquetes de red provenientes de esta dirección al puerto de destino se consideran NO VÁLIDOS por el módulo «*conntrack*». Para evitar su inclusión en listas negras, un cambio de tendencia es permitir que todos los paquetes se dirijan a ese puerto de destino particular.
 
 Los escaneadores de puertos son utilizados por los atacantes para identificar los puertos abiertos en su equipo. Esto les permite identificar y analizar las huellas de sus servicios en ejecución y, posiblemente, lanzar [exploits](https://en.wikipedia.org/wiki/es:Exploit "wikipedia:es:Exploit") contra ellos.
 
@@ -364,15 +352,15 @@ El módulo recent se puede utilizar para realizar un seguimiento de los equipos 
 En primer lugar, insertar una regla en la parte superior de la cadena TCP. Esta regla responde con un RST TCP a cualquier equipo añadido a la lista TCP PortScan en los últimos sesenta segundos. El parámetro `--update` hace que la lista recent se actualice, lo que hace que el contador de 60 segundo se restablezca.
 
 ```
-# iptables -I TCP -p tcp -m recent --update --seconds 60 --name TCP-PORTSCAN -j REJECT --reject-with tcp-rst
+# iptables -I TCP -p tcp -m recent --update --rsource --seconds 60 --name TCP-PORTSCAN -j REJECT --reject-with tcp-reset
 
 ```
 
 A continuación, la regla para rechazar los paquetes TCP necesita ser modificada para incluir los equipos con paquetes rechazados en la lista TCP-PORTSCAN.
 
 ```
-# iptables -D INPUT -p tcp -j REJECT --reject-with tcp-rst
-# iptables -A INPUT -p tcp -m recent --set --name TCP-PORTSCAN -j REJECT --reject-with tcp-rst
+# iptables -D INPUT -p tcp -j REJECT --reject-with tcp-reset
+# iptables -A INPUT -p tcp -m recent --set --rsource --name TCP-PORTSCAN -j REJECT --reject-with tcp-reset
 
 ```
 
@@ -385,7 +373,7 @@ El kernel de Linux envía mensajes ICMP de puerto inaccesible muy lentamente, po
 En primer lugar, añada una regla para rechazar los paquetes de los equipos incluidos en la lista UDP-PortScan al inicio de la cadena de UDP.
 
 ```
-# iptables -I UDP -p udp -m recent --update --seconds 60 --name UDP-PORTSCAN -j REJECT --reject-with icmp-port-unreachable
+# iptables -I UDP -p udp -m recent --update --rsource --seconds 60 --name UDP-PORTSCAN -j REJECT --reject-with icmp-port-unreachable
 
 ```
 
@@ -393,7 +381,7 @@ A continuación, modifique la regla de rechazo de paquetes para UDP:
 
 ```
 # iptables -D INPUT -p udp -j REJECT --reject-with icmp-port-unreachable
-# iptables -A INPUT -p udp -m recent --set --name UDP-PORTSCAN -j REJECT --reject-with icmp-port-unreachable
+# iptables -A INPUT -p udp -m recent --set --rsource --name UDP-PORTSCAN -j REJECT --reject-with icmp-port-unreachable
 
 ```
 
@@ -415,9 +403,9 @@ Consulte [sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP.2FIP_stack_harden
 
 Desafortunadamente, los ataques de fuerza bruta sobre los servicios accesibles a través de una dirección IP expuesta públicamente son comunes. Una razón para esto es que los ataques son fáciles de hacer con las muchas herramientas disponibles. Afortunadamente, hay varias formas de proteger los servicios contra ellos. Una de ellas es el uso de reglas apropiadas `iptables` que activen e incluyan en una lista negra las direcciones IP después de que estas hayan intentado iniciar una conexión de forma infructuosa con un número determinado de paquetes. Otro es el uso de demonios especializados que controlen los archivos del registro de intentos fallidos y la lista negra en consecuencia.
 
-**Advertencia:** El uso de una lista negra de IP detendrá ataques triviales pero la misma se apoya en un demonio adicional y un registro de éxito (la partición que contiene /var puede llegar a saturarse, especialmente si un atacante late con fuerza en el servidor). Además, si el atacante conoce su dirección IP, puede enviar paquetes con un encabezado de origen falso y conseguir bloquearle el servidor. [SSH keys](/index.php/SSH_keys "SSH keys") proporciona una solución elegante al problema de la fuerza bruta sin estos problemas.
+**Advertencia:** El uso de una lista negra de IP detendrá ataques triviales pero la misma se apoya en un demonio adicional y un registro de éxito (la partición que contiene /var puede llegar a saturarse, especialmente si un atacante golpea con fuerza en el servidor). Además, si el atacante conoce su dirección IP, puede enviar paquetes con un encabezado de origen falso y conseguir bloquearle el servidor. [SSH keys](/index.php/SSH_keys "SSH keys") proporciona una solución elegante al problema de la fuerza bruta sin estos problemas.
 
-Dos aplicaciones que prohíben direcciones IP después de demasiados fracasos con la contraseña son [Fail2ban](/index.php/Fail2ban "Fail2ban") o, para `sshd`, en particular, [Sshguard](/index.php/Sshguard "Sshguard"). Estas dos aplicaciones actualizan las reglas de iptables para rechazar futuras conexiones desde direcciones IP incluidas en la lista negra.
+Dos aplicaciones que prohíben direcciones IP después de demasiados fracasos con la contraseña son [Fail2ban](/index.php/Fail2ban "Fail2ban") o, para `sshd` en particular, [Sshguard (Español)](/index.php/Sshguard_(Espa%C3%B1ol) "Sshguard (Español)"). Estas dos aplicaciones actualizan las reglas de iptables para rechazar futuras conexiones desde direcciones IP incluidas en la lista negra.
 
 Las siguientes reglas se dan como un ejemplo de configuración para mitigar los ataques de fuerza bruta contra SSH utilizando `iptables`.
 
@@ -432,72 +420,37 @@ Las siguientes reglas se dan como un ejemplo de configuración para mitigar los 
 
 La mayoría de las opciones pueden explicarse por sí mismas, así las reglas precedentes permiten tres paquetes de conexión cada diez segundos. El resto de intentos en ese lapso de tiempo incluyen la IP en la lista negra. La siguiente regla añade una peculiaridad, al permitir un total de cuatro intentos en 30 minutos. Esto se hace porque algunos ataques de fuerza bruta que se realizan son realmente lentos y no en un estallido de intentos. Las reglas emplean una serie de opciones adicionales. Para leer más acerca de ellas, revise la referencia original para este ejemplo: [compilefailure.blogspot.com](http://compilefailure.blogspot.com/2011/04/better-ssh-brute-force-prevention-with.html)
 
-Una vez fijadas las reglas anteriores, ahora debe asegurarse que:
+Las reglas anteriores se pueden usar para proteger cualquier servicio, aunque el demonio SSH es probablemente uno de los más solicitado.
+
+En términos de orden, uno debe asegurarse de que `-A INPUT -p tcp --dport ssh -m conntrack --ctstate NEW -j IN_SSH` esté en la posición correcta en la secuencia de iptables: debe aparecer antes que el de La cadena TCP que está conectada a INPUT para detectar nuevas conexiones SSH primero. Si se han completado todos los pasos anteriores de esta wiki, funcionaría con el siguiente posicionamiento:
 
 ```
-# iptables -A INPUT -p tcp --dport ssh -m conntrack --ctstate NEW -j IN_SSH
-
-```
-
-están en una posición adecuada en el archivo iptables.rules.
-
-Esta organización funciona para la regla IN_SSH si ha seguido todas las indicaciones de esta página hasta el momento:
-
-```
-*
+...
+-A INPUT -m conntrack --ctstate INVALID -j DROP
 -A INPUT -p icmp -m icmp --icmp-type 8 -m conntrack --ctstate NEW -j ACCEPT
--A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW -j IN_SSH
+**-A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW -j IN_SSH**
 -A INPUT -p udp -m conntrack --ctstate NEW -j UDP
-*
+-A INPUT -p tcp --tcp-flags FIN,SYN,RST,ACK SYN -m conntrack --ctstate NEW -j TCP
+...
 
 ```
 
-Las reglas anteriores pueden, por supuesto, ser utilizadas para proteger cualquier servicio, a pesar de que la protección del demonio SSH es, probablemente, el que más lo necesita.
-
-**Sugerencia:** Para autodiagnosticar las reglas después de su configuración, la gestión de la lista negra vigente puede ralentizar la prueba, lo que dificultará afinar los parámetros. Se pueden ver los intentos de entrada a través de `cat /proc/net/xt_recent/sshbf`. Para desbloquear la propia IP durante las pruebas, se necesita root `# echo / > /proc/net/xt_recent/sshbf`
-
-### Guardar las reglas
-
-El conjunto de reglas ya está terminado y se debe guardar en el disco duro para que pueda ser cargado en cada arranque.
-
-Indique los puntos de localización de los archivos de unidad de systemd donde se guardarán la configuraciones de las reglas:
-
-```
-iptables=/etc/iptables/iptables.rules
-ip6tables=/etc/iptables/ip6tables.rules
-
-```
-
-Guarde las reglas con esta orden:
-
-```
-# iptables-save > /etc/iptables/iptables.rules
-
-```
-
-y asegúrese de que sus reglas se cargan en el arranque, activando el [demonio](/index.php/Daemons_(Espa%C3%B1ol) "Daemons (Español)") **iptables**.
-
-Compruebe que la carga de las reglas se ha realizado correctamente, utilizando:
-
-```
-# systemctl start iptables.service && systemctl status iptables.service
-
-```
+**Sugerencia:** Para autodiagnosticar las reglas después de su configuración, la gestión de la lista negra vigente puede ralentizar la prueba, lo que dificultará afinar los parámetros. Se pueden ver los intentos de entrada a través de `cat /proc/net/xt_recent/sshbf`. Para desbloquear la propia IP durante las pruebas, se necesitan privilegios de root `# echo / > /proc/net/xt_recent/sshbf`
 
 ### IPv6
 
-Si no utiliza IPv6 (la mayoría de los ISP no lo soportan), debe [desactivarlo](/index.php/Disabling_IPv6 "Disabling IPv6").
+Si no utiliza IPv6, considere [desactivarlo](/index.php/Disabling_IPv6 "Disabling IPv6"), de lo contrario, siga estos pasos para activar las reglas de IPv6 para el cortafuegos.
 
-De lo contrario, debe activar las reglas del cortafuegos para IPv6\. Después de copiar las reglas IPv4 como base:
+Copie las reglas IPv4 utilizadas en este ejemplo como base, y cambie cualquier IP del formato IPv4 al formato IPv6:
 
 ```
 # cp /etc/iptables/iptables.rules /etc/iptables/ip6tables.rules
 
 ```
 
-el primer paso es cambiar las direcciones IP a las que se hacen referencia en las reglas de formato IPv4 a IPv6\.
+A few of the rules in this example have to be adapted for use with IPv6\. The ICMP protocol has been updated in IPv6, replacing the ICMP protocol for use with IPv4\. Hence, the reject error return codes `--reject-with icmp-port-unreachable` and `--reject-with icmp-proto-unreachable` have to be converted to ICMPv6 codes.
 
-A continuación, algunas de las reglas (configuradas como ejemplo en este artículo para IPv4) tienen que ser adaptadas. IPv6 obtuvo un nuevo protocolo ICMPv6, en sustitución de ICMP. Por lo tanto, los códigos de retorno de error de rechazo `--reject-with icmp-port-unreachable` y `--reject-with icmp-proto-unreachable` tienen que ser convertidos en códigos ICMPv6.
+Algunas de las reglas de este ejemplo deben adaptarse para su uso con IPv6\. El protocolo ICMP se ha actualizado en IPv6, reemplazando el protocolo ICMP para su uso con IPv4\. Por lo tanto, los códigos de retorno de error de rechazo `--reject-with icmp-port-unreachable` y {{ic | --reject-with icmp-proto-unreachable}. Por lo tanto, los códigos de retorno de error de rechazo `--reject-with icmp-port-unreachable` y `--reject-with icmp-proto-unreachable` tienen que ser convertidos en códigos ICMPv6.
 
 Los códigos de error de ICMPv6 disponibles se enumeran en [RFC 4443](https://tools.ietf.org/html/rfc4443#section-3.1), que especifica que una regla de cortafuegos para bloquear los intentos de conexión debe utilizar `--reject-with icmp6-adm-prohibited`. Si lo bloquea, básicamente informa al sistema remoto que la conexión fue rechazada por el cortafuegos, en lugar de informar que un servicio fue escuchado.
 
@@ -513,27 +466,38 @@ Lo anterior va a rechazar con la devolución de error por defecto `--reject-with
 El siguiente paso es asegurarse de que el protocolo y la extensión se cambian al apropiado para IPv6 en la regla de todas las nuevas peticiones de echo ICMP entrantes (pings):
 
 ```
-# ip6tables -A INPUT -p icmpv6 --icmpv6-type 8 -m conntrack --ctstate NEW -j ACCEPT
+# ip6tables -A INPUT -p ipv6-icmp --icmpv6-type 128 -m conntrack --ctstate NEW -j ACCEPT
 
 ```
 
 conntrack de netfilter no parece hacer el seguimiento del Protocolo Neighbor Discovery de ICMPv6 (el IPv6 equivalente de ARP), así que tenemos que permitir el tráfico ICMPv6 sin importar el estado para todas las subredes conectadas directamente. Lo siguiente debe insertarse después de descartar `--ctstate INVALID`, pero antes de cualquier otro objetivo DROP o REJECT, junto con la línea correspondiente de cada subred conectada directamente:
 
 ```
-# ip6tables -A INPUT -s fe80::/10 -p icmpv6 -j ACCEPT
+# ip6tables -A INPUT -s fe80::/10 -p ipv6-icmp -j ACCEPT
 
 ```
 
-Puesto que no hay filtro de ruta inversa del kernel para IPv6, es posible que desee activar uno para *ip6tables* con las reglas que siguen, donde la primera regla es necesaria para conservar, por lo general, la dirección de enlace local unicasts de ICMPv6 requerida:
+Como no existe un filtro de ruta inversa del kernel para IPv6, es posible que desee habilitar uno en *ip6tables* con lo siguiente:
 
 ```
-# ip6tables -t raw -A PREROUTING -p icmpv6 -s fe80::/10 -j ACCEPT
 # ip6tables -t raw -A PREROUTING -m rpfilter -j ACCEPT
 # ip6tables -t raw -A PREROUTING -j DROP
 
 ```
 
-Después de realizar la configuración, [active](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") el servicio **ip6tables**, que está destinado para funcionar en paralelo a *iptables*.
+### Guardar las reglas
+
+El conjunto de reglas ya está terminado y se debe guardar en el disco duro para que pueda ser cargado en cada arranque.
+
+Guarde las reglas de IPv4 y IPv6 con estas órdenes
+
+```
+# iptables-save > /etc/iptables/iptables.rules
+# ip6tables-save > /etc/iptables/ip6tables.rules
+
+```
+
+Después [active](/index.php/Enable "Enable") e [inicie](/index.php/Start "Start") `iptables.service` y `ip6tables.service`. Compruebe el estado de los servicios para asegurarse de que las reglas estén cargadas correctamente.
 
 ## Configurar una puerta de enlace NAT
 
@@ -612,21 +576,9 @@ Supongamos que tenemos otra subred, **10.3.0.0/16** (que comprende todas las dir
 
 ```
 
-El último paso es activar el reenvío IP (si no está ya activado):
+El último paso es activar [activar el reenvío de paquetes de red](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") (si no está ya activado):
 
-```
-# echo 1 > /proc/sys/net/ipv4/ip_forward
-
-```
-
-A continuación, edite la línea relevante en `/etc/sysctl.d/90-firewall.conf` para que permanezca en el reinicio (vea [sysctl](/index.php/Sysctl "Sysctl") para más detalles):
-
-```
-net.ipv4.ip_forward = 1
-
-```
-
-Las máquinas de estas subredes pueden ahora utilizar su nueva máquina NAT como su puerta de enlace. Tenga en cuenta que es posible que desee configurar un servidor DNS y DHCP como **dnsmasq** o una combinación de **bind** y **dhcpd** para simplificar la configuración de red en la resolución de DNS en los equipos clientes. Este no es el tema de esta guía.
+Las máquinas de estas subredes pueden ahora utilizar su nueva máquina NAT como su puerta de enlace. Tenga en cuenta que es posible que desee configurar un servidor DNS y [DHCP](/index.php/DHCP "DHCP") como [dnsmasq](/index.php/Dnsmasq "Dnsmasq") o una combinación de [bind](/index.php/Bind "Bind") and [dhcpd](/index.php/Dhcpd "Dhcpd") para simplificar la configuración de red en la resolución de DNS en los equipos clientes. Este no es el tema de esta guía.
 
 #### Configurar la cadena PREROUTING
 
@@ -635,16 +587,16 @@ A veces, queremos cambiar la dirección de un paquete entrante de la puerta de e
 Daremos dos ejemplos sencillos: en primer lugar, queremos cambiar todos los paquetes entrantes SSH (puerto 22) al servidor ssh en la máquina **192.168.0.5**:
 
 ```
-# iptables -A fw-open -d 192.168.0.5 -p tcp --dport 22 -j ACCEPT
 # iptables -t nat -A PREROUTING -i ppp0 -p tcp --dport 22 -j DNAT --to 192.168.0.5
+# iptables -A fw-open -d 192.168.0.5 -p tcp --dport 22 -j ACCEPT
 
 ```
 
 El segundo ejemplo le mostrará cómo cambiar los paquetes a un puerto diferente del puerto de entrada. Queremos cambiar cualquier conexión entrante en el puerto **8000** en nuestro servidor web **192.168.0.6**, al puerto **80**:
 
 ```
-# iptables -A fw-open -d 192.168.0.6 -p tcp --dport 80 -j ACCEPT
 # iptables -t nat -A PREROUTING -i ppp0 -p tcp --dport 8000 -j DNAT --to 192.168.0.6:80
+# iptables -A fw-open -d 192.168.0.6 -p tcp --dport 80 -j ACCEPT
 
 ```
 
@@ -659,14 +611,10 @@ Guarde las reglas con:
 
 ```
 
-y asegúrese de que sus reglas se cargan al arranque, activando el [demonio](/index.php/Daemon_(Espa%C3%B1ol) "Daemon (Español)") **iptables**.
+Esto supone que ha seguido los pasos [anteriores](#Guardar_las_reglas) para activar el servicio de systemd **iptables**.
 
 ## Véase también
 
-*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
-*   [Router](/index.php/Router "Router")
-*   [Firewalls](/index.php/Firewalls "Firewalls")
-*   [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall")
 *   [Methods to block SSH attacks](http://www.webhostingtalk.com/showthread.php?t=456571)
 *   [Using iptables to block brute force attacks](http://www.ducea.com/2006/06/28/using-iptables-to-block-brute-force-attacks/)
 *   [20 Iptables Examples For New SysAdmins](http://linuxconfig.org/collection-of-basic-linux-firewall-iptables-rules)

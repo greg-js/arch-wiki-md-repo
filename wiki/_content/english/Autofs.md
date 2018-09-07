@@ -8,6 +8,9 @@ AutoFS provides automounting of removable media or network shares when they are 
     *   [2.2 NFS network mounts](#NFS_network_mounts)
         *   [2.2.1 Manual NFS configuration](#Manual_NFS_configuration)
     *   [2.3 Samba](#Samba)
+        *   [2.3.1 Single shares](#Single_shares)
+        *   [2.3.2 Multiple shares](#Multiple_shares)
+        *   [2.3.3 Auto discovery](#Auto_discovery)
     *   [2.4 FTP and SSH (with FUSE)](#FTP_and_SSH_.28with_FUSE.29)
         *   [2.4.1 Remote FTP](#Remote_FTP)
         *   [2.4.2 Remote SSH](#Remote_SSH)
@@ -131,7 +134,7 @@ To mount a NFS share on server_name called /srv/shared_dir to another computer n
 
 ### Samba
 
-The Arch package does not provide any [Samba](/index.php/Samba "Samba") or CIFS templates/scripts (23.07.2009), but the following should work for single shares:
+#### Single shares
 
 Add the following to `/etc/autofs/auto.master`:
 
@@ -157,6 +160,19 @@ You can specify a user name and password to use with the share in the `other_opt
 ```
 
 **Note:** Escape $, and other characters, with a backslash when neccessary.
+
+#### Multiple shares
+
+You may be specify multiple shares in the `/etc/autofs/auto.[my_server]`, for instance:
+
+```
+[any_name] -fstype=cifs,[other_options] /photos ://[remote_server]/photos /music ://[remote_server]/music /video ://[remote_server]/video
+
+```
+
+#### Auto discovery
+
+See the comments in `/etc/autofs/auto.smb`.
 
 ### FTP and SSH (with FUSE)
 

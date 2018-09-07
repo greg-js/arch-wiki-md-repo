@@ -747,6 +747,8 @@ The client expects this file to be located in `/etc/openvpn/client/foo.conf`. No
 
 ### openvpn-unroot
 
+**Note:** If you intend to use a script such as the [#Update resolv-conf script](#Update_resolv-conf_script), you must add these scripts to your config before calling openvpn-unroot on it. Failing to do so will cause problems if the scripts require root permissions.
+
 The steps necessary for OpenVPN to [#Run as unprivileged user](#Run_as_unprivileged_user), can be performed automatically using [openvpn-unroot](https://github.com/wknapik/openvpn-unroot) ([openvpn-unroot-git](https://aur.archlinux.org/packages/openvpn-unroot-git/)).
 
 It automates the actions required for the [OpenVPN howto](https://community.openvpn.net/openvpn/wiki/UnprivilegedUser) by adapting it to systemd, and also working around the bug for persistent tun devices mentioned in the note.

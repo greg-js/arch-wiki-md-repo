@@ -1,8 +1,3 @@
-Related articles
-
-*   [Chromium](/index.php/Chromium "Chromium")
-*   [Firefox tweaks](/index.php/Firefox_tweaks "Firefox tweaks")
-
 The following tips and tricks should work for both Chromium and Chrome unless explicitly stated.
 
 ## Contents

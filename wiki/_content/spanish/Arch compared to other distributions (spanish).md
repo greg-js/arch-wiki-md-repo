@@ -97,7 +97,7 @@ Estas distribuciones ofrecen una amplia gama de ventajas y fortalezas y pueden s
 
 *   Tanto Arch como Fedora están dirigidos a usuarios y desarrolladores experimentados. Ambos alientan fuertemente a sus usuarios a contribuir al desarrollo del proyecto.
 
-*   Fedora ha ganado mucho reconocimiento de la comunidad por la integración de SELinux, los paquetes compilados de GCJ (para eliminar la necesidad de JRE de Oracle) y la contribución prolífica de los desarrolladores; de Red Hat y, por extensión, los de Fedora, contribuyen con el porcentaje más alto de código del núcleo de Linux en comparación con cualquier otro proyecto.
+*   Fedora ha ganado mucho reconocimiento de la comunidad por la integración de SELinux, los paquetes compilados de GCJ (para eliminar la necesidad de JRE de Oracle) y la contribución prolífica de los desarrolladores; de Red Hat y, por extensión, los de Fedora, contribuyen con el porcentaje más alto de código del kernel de Linux en comparación con cualquier otro proyecto.
 
 *   Arch Linux proporciona lo que ampliamente se considera como la wiki de una distribución más exhaustiva e integral. La wiki de Fedora se usa en el sentido original de la palabra «wiki», o una forma rápida de intercambiar información entre desarrolladores, probadores y usuarios. No pretende ser una base de conocimiento para el usuario final como en Arch. El wiki de Fedora se asemeja a un rastreador de incidencias o una wiki corporativa.
 
@@ -150,7 +150,7 @@ Mandriva Linux (anteriormente conocida como Mandrake Linux) se creó en 1998 con
 
 *   Los *BSD comparten un origen común y descienden directamente del trabajo realizado en UC Berkeley para proporcionar un sistema UNIX de redistribución libre. No son distribuciones GNU/Linux, más bien son sistemas operativos de tipo UNIX, derivadas del código UNIX original de AT&T.
 
-*   Arch y los *BSD comparten el concepto de una base y un sistema de ports estrechamente integrados. Sin embargo, a diferencia de las distribuciones GNU/Linux como Arch, el núcleo de los *BSD y los programas del espacio de usuario (tanto la shell y las utilidades más comunes como *ls*, *cp*, *cat* y *ps*) se desarrollan conjuntamente en un único repositorio fuente.
+*   Arch y los *BSD comparten el concepto de una base y un sistema de ports estrechamente integrados. Sin embargo, a diferencia de las distribuciones GNU/Linux como Arch, el kernel de los *BSD y los programas del espacio de usuario (tanto la shell y las utilidades más comunes como *ls*, *cp*, *cat* y *ps*) se desarrollan conjuntamente en un único repositorio fuente.
 
 *   La licencia BSD es generalmente más protectora del *programador*, en contraste con la GPL, que favorece la protección del *código* en sí mismo. Arch está publicada bajo la licencia GPL.
 

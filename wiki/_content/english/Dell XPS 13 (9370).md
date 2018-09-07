@@ -27,10 +27,12 @@ The installation process for Arch on the XPS 13 does not differ from any other P
 *   [7 Power Management](#Power_Management)
 *   [8 Firmware Updates](#Firmware_Updates)
 *   [9 Thermal Throttling](#Thermal_Throttling)
-*   [10 Touchpad](#Touchpad)
-*   [11 Audio](#Audio)
-*   [12 USB Type-C ports](#USB_Type-C_ports)
-*   [13 Fingerprint reader](#Fingerprint_reader)
+*   [10 Thermal Modes / Fan profiles](#Thermal_Modes_.2F_Fan_profiles)
+*   [11 Power Saving](#Power_Saving)
+*   [12 Touchpad](#Touchpad)
+*   [13 Audio](#Audio)
+*   [14 USB Type-C ports](#USB_Type-C_ports)
+*   [15 Fingerprint reader](#Fingerprint_reader)
 
 ## Booting
 
@@ -97,6 +99,45 @@ Package temperature above threshold, cpu clock throttled (total events = 971)
 ```
 
 This can be resolved using [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/). Despite originally conceived to resolve the same issue with Lenovo laptops, it works with the XPS 9370 (and should work well with other Skylake or newer laptops).
+
+To install run (if you have [yay](https://github.com/Jguer/yay) installed which is one of the many [AUR helpers](https://wiki.archlinux.org/index.php/AUR_helpers)):
+
+```
+ yay -S lenovo-throttling-fix-git
+ sudo systemctl enable --now lenovo_fix.service
+
+```
+
+## Thermal Modes / Fan profiles
+
+Just like in Windows by using Dell Power Manager you can set the thermal configuration and behaviour of the fans of your machine. This is done within a terminal with the following commands.
+
+To find out what thermal mode is set type:
+
+```
+ sudo smbios-thermal-ctl -g
+
+```
+
+To find all available thermal modes type:
+
+```
+ sudo smbios-thermal-ctl -i
+
+```
+
+And finally to set the desired thermal mode that you identified with the command before type:
+
+```
+ sudo smbios-thermal-ctl --set-thermal-mode=THERMAL_MODE
+
+```
+
+## Power Saving
+
+To save more battery use [tlp](https://wiki.archlinux.org/index.php/TLP) package AND/OR [Powertop](https://wiki.archlinux.org/index.php/Powertop).
+
+You can monitor the used power and also the temperature of your machine with the [s-tui](https://aur.archlinux.org/packages/s-tui/) tool.
 
 ## Touchpad
 

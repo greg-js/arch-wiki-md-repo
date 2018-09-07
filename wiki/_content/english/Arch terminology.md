@@ -31,7 +31,7 @@ This page is intended to be a page to demystify common terms used among the Arch
 
 ## ABS
 
-ABS stands for [Arch build system](/index.php/Arch_build_system "Arch build system") and can be used for:
+ABS stands for [Arch Build System](/index.php/Arch_Build_System "Arch Build System") and can be used for:
 
 *   Making new packages for software that has no packages available yet
 *   Customizing/modifying existing packages to fit your needs:

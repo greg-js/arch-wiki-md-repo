@@ -23,9 +23,9 @@ Este artículo explica algunos métodos para solucionar problemas generales. Par
         *   [2.1.3 Salida de depuración](#Salida_de_depuraci.C3.B3n)
     *   [2.2 Shell de recuperación](#Shell_de_recuperaci.C3.B3n)
     *   [2.3 Pantalla en blanco con una tarjeta gráfica Intel](#Pantalla_en_blanco_con_una_tarjeta_gr.C3.A1fica_Intel)
-    *   [2.4 Atascado mientras se carga el núcleo](#Atascado_mientras_se_carga_el_n.C3.BAcleo)
+    *   [2.4 Atascado mientras se carga el kernel](#Atascado_mientras_se_carga_el_kernel)
     *   [2.5 Sistema no arrancable](#Sistema_no_arrancable)
-    *   [2.6 Depurar los errores de los módulos del núcleo](#Depurar_los_errores_de_los_m.C3.B3dulos_del_n.C3.BAcleo)
+    *   [2.6 Depurar los errores de los módulos del kernel](#Depurar_los_errores_de_los_m.C3.B3dulos_del_kernel)
     *   [2.7 Depurar errores de hardware](#Depurar_errores_de_hardware)
 *   [3 Kernel panics](#Kernel_panics)
     *   [3.1 Examinar los mensajes de pánico](#Examinar_los_mensajes_de_p.C3.A1nico)
@@ -98,7 +98,7 @@ Cuando solicite ayuda, publique las salidas/registros completas/os, no solo las 
 *   Archivos de configuración relevantes
 *   Controladores involucrados
 *   Versiones de paquetes involucrados
-*   Núcleo: `dmesg`. Para un problema de arranque, al menos las últimas 10 líneas mostradas, preferiblemente más
+*   Kernel: `dmesg`. Para un problema de arranque, al menos las últimas 10 líneas mostradas, preferiblemente más
 *   Redes: Salida exacta de los comandos involucrados, y cualquier archivo de configuración
 *   Xorg: `/var/log/Xorg.0.log`, y registros *(logs)* anteriores si ha sobrescrito el problemático
 *   Pacman: si una actualización reciente rompió algo, busque en `/var/log/pacman.log`
@@ -116,7 +116,7 @@ Además, antes de publicar su pregunta, puede revisar [cómo hacer preguntas int
 
 ## Problemas de arranque
 
-El diagnóstico de errores durante el [proceso de arranque](/index.php/Arch_boot_process_(Espa%C3%B1ol) "Arch boot process (Español)") implica cambiar los [parámetros del núcleo](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") y reiniciar el sistema.
+El diagnóstico de errores durante el [proceso de arranque](/index.php/Arch_boot_process_(Espa%C3%B1ol) "Arch boot process (Español)") implica cambiar los [parámetros del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") y reiniciar el sistema.
 
 Si no es posible arrancar el sistema, inicie desde una [imagen en vivo](https://www.archlinux.org/download/) y [cambie la raíz](/index.php/Change_root_(Espa%C3%B1ol) "Change root (Español)") al sistema existente.
 
@@ -124,7 +124,7 @@ Si no es posible arrancar el sistema, inicie desde una [imagen en vivo](https://
 
 Después del proceso de inicio, la pantalla se borra y aparece el mensaje de inicio de sesión, lo que deja a los usuarios incapaces de leer los mensajes del arranque y los de error. Este comportamiento predeterminado puede cambiarse utilizando los métodos descritos en las secciones siguientes.
 
-Tenga en cuenta que, independientemente de la opción elegida, los mensajes del núcleo pueden mostrarse para su inspección después del arranque utilizando `dmesg` o todos los registros del arranque actual con `journalctl -b`.
+Tenga en cuenta que, independientemente de la opción elegida, los mensajes del kernel pueden mostrarse para su inspección después del arranque utilizando `dmesg` o todos los registros del arranque actual con `journalctl -b`.
 
 #### Control de flujo
 
@@ -141,51 +141,51 @@ Para ver los mensajes de error que ya han mostrado, consulte [Haga que los mensa
 
 El desplazamiento hacia atrás *(scrollback)* permite al usuario retroceder y ver el texto que se desplazó de la pantalla de una consola de texto. Esto es posible gracias a un búfer creado entre el adaptador de vídeo y el dispositivo de visualización llamado búfer de desplazamiento. Por defecto, las combinaciones de teclas `Shift+PageUp` y `Shift+PageDown` desplazan el búfer hacia arriba y hacia abajo respectivamente.
 
-Si al desplazarse hacia arriba hasta el final no le muestra la información suficiente, necesita expandir su búfer de desplazamiento para tener más salida. Esto se hace ajustando la consola de framebuffer del núcleo (fbcon) con el [parámetro del núcleo](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") `fbcon=scrollback:Nk` donde `N` es el tamaño de búfer deseado es kilobytes. El tamaño predeterminado es 32k.
+Si al desplazarse hacia arriba hasta el final no le muestra la información suficiente, necesita expandir su búfer de desplazamiento para tener más salida. Esto se hace ajustando la consola de framebuffer del kernel (fbcon) con el [parámetro del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") `fbcon=scrollback:Nk` donde `N` es el tamaño de búfer deseado es kilobytes. El tamaño predeterminado es 32k.
 
 Si esto no le funciona, es posible que su consola de framebuffer no esté habilitada correctamente. Consulte la [documentación sobre la consola de framebuffer](https://www.kernel.org/doc/Documentation/fb/fbcon.txt) para conocer otros parámetros, por ejemplo para cambiar el controlador de framebuffer.
 
 #### Salida de depuración
 
-La mayoría de los mensajes del núcleo están ocultos durante el arranque. Puede ver más de estos mensajes añadiendo diferentes parámetros de núcleo. Los más simples son:
+La mayoría de los mensajes del kernel están ocultos durante el arranque. Puede ver más de estos mensajes añadiendo diferentes parámetros de kernel. Los más simples son:
 
-*   `debug` habilita los mensajes de depuración tanto para el núcleo como para [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)")
-*   `ignore_loglevel` fuerza a que se impriman todos los mensajes del núcleo
+*   `debug` habilita los mensajes de depuración tanto para el kernel como para [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)")
+*   `ignore_loglevel` fuerza a que se impriman todos los mensajes del kernel
 
 Otros parámetros que puede añadir y que podrían ser útiles en ciertas situaciones son:
 
-*   `earlyprintk=vga,keep` imprime los primeros mensajes en el proceso de arranque del núcleo, en caso de que el núcleo falle antes de que se muestre el resultado. Debe cambiar `vga` a `efi` para los sistemas [EFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)")
-*   `log_buf_len=16M` asigna un búfer de mensajes del núcleo más grande (16MB), para garantizar que la salida de depuración no se sobrescriba
+*   `earlyprintk=vga,keep` imprime los primeros mensajes en el proceso de arranque del kernel, en caso de que el kernel falle antes de que se muestre el resultado. Debe cambiar `vga` a `efi` para los sistemas [EFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)")
+*   `log_buf_len=16M` asigna un búfer de mensajes del kernel más grande (16MB), para garantizar que la salida de depuración no se sobrescriba
 
-También hay una serie de parámetros de depuración separados para permitir la depuración en subsistemas específicos, poe ejemplo `bootmem_debug`, `sched_debug`. Consulte la [documentación de los parámetros del núcleo](https://www.kernel.org/doc/Documentation/admin-guide/kernel-parameters.txt) para obtener información específica.
+También hay una serie de parámetros de depuración separados para permitir la depuración en subsistemas específicos, poe ejemplo `bootmem_debug`, `sched_debug`. Consulte la [documentación de los parámetros del kernel](https://www.kernel.org/doc/Documentation/admin-guide/kernel-parameters.txt) para obtener información específica.
 
 **Nota:** Si no puede desplazarse hacia atrás lo suficiente para ver la salida del arranque deseada, debe aumentar el tamaño del [búfer del desplazamiento hacia atrás](#Desplazamiento_hacia_atr.C3.A1s).
 
 ### Shell de recuperación
 
-Obtener un shell interactivo en algún momento del proceso de arranque puede ayudarle a identificar exactamente dónde y por qué está fallando algo. Hay varios parámetros del núcleo para hacerlo, pero todos ellos lanzan un shell normal que le permite ejecutar `exit`, lo que posibilita al núcleo reanudar lo que estaba haciendo:
+Obtener un shell interactivo en algún momento del proceso de arranque puede ayudarle a identificar exactamente dónde y por qué está fallando algo. Hay varios parámetros del kernel para hacerlo, pero todos ellos lanzan un shell normal que le permite ejecutar `exit`, lo que posibilita al kernel reanudar lo que estaba haciendo:
 
 *   `rescue` inicia un shell poco después de que el sistema de archivos raíz se vuelva a leer/escribir
 *   `emergency` inicia un shell incluso más temprano, antes de que se instalen la mayoría de los sistemas de archivos
 *   `init=/bin/sh` (como último recurso) cambia el programa init a un shell de superusuario *(root)*. `rescue` y `emergency` dependen de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), pero esto debería funcionar incluso si *systemd* falla
 
-Otra opción es el shell de depuración de systemd que añade un shell de superusuario en `tty9` (accesible con Ctrl+Alt+F9). Se puede habilitar añadiendo `systemd.debug-shell` a los [parámetros del núcleo](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)"), o [habilitando](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") `debug-shell.service`. Asegúrese de desactivar el servicio cuando lo haya hecho para evitar el riesgo de seguridad por dejar abierto un shell de superusuario en cada arranque.
+Otra opción es el shell de depuración de systemd que añade un shell de superusuario en `tty9` (accesible con Ctrl+Alt+F9). Se puede habilitar añadiendo `systemd.debug-shell` a los [parámetros del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)"), o [habilitando](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") `debug-shell.service`. Asegúrese de desactivar el servicio cuando lo haya hecho para evitar el riesgo de seguridad por dejar abierto un shell de superusuario en cada arranque.
 
 ### Pantalla en blanco con una tarjeta gráfica Intel
 
-Esto es debido muy probablemente a un problema con la [configuración del modo del núcleo](/index.php/Kernel_mode_setting_(Espa%C3%B1ol) "Kernel mode setting (Español)"). Pruebe a [desactivar modesetting](/index.php/Kernel_mode_setting_(Espa%C3%B1ol)#Desactivar_modesetting "Kernel mode setting (Español)") o cambiar el [puerto de la tarjeta gráfica](/index.php/Intel_graphics_(Espa%C3%B1ol)#Problema_KMS:_la_consola_est.C3.A1_limitada_a_una_peque.C3.B1a_porci.C3.B3n_de_la_pantalla "Intel graphics (Español)").
+Esto es debido muy probablemente a un problema con la [configuración del modo del kernel](/index.php/Kernel_mode_setting_(Espa%C3%B1ol) "Kernel mode setting (Español)"). Pruebe a [desactivar modesetting](/index.php/Kernel_mode_setting_(Espa%C3%B1ol)#Desactivar_modesetting "Kernel mode setting (Español)") o cambiar el [puerto de la tarjeta gráfica](/index.php/Intel_graphics_(Espa%C3%B1ol)#Problema_KMS:_la_consola_est.C3.A1_limitada_a_una_peque.C3.B1a_porci.C3.B3n_de_la_pantalla "Intel graphics (Español)").
 
-### Atascado mientras se carga el núcleo
+### Atascado mientras se carga el kernel
 
-Pruebe a desactivar ACPI añadiendo `acpi=off` a los parámetros del núcleo.
+Pruebe a desactivar ACPI añadiendo `acpi=off` a los parámetros del kernel.
 
 ### Sistema no arrancable
 
 Si el sistema no arranca en absoluto, simplemente arranque desde una [imagen live](https://www.archlinux.org/download/) y [realice chroot](/index.php/Change_root "Change root") para iniciar sesión en el sistema y solucionar el problema.
 
-### Depurar los errores de los módulos del núcleo
+### Depurar los errores de los módulos del kernel
 
-Consulte esta sección sobre [como obtener información](/index.php/Kernel_modules_(Espa%C3%B1ol)#Obtener_informaci.C3.B3n "Kernel modules (Español)") de los módulos del núcleo.
+Consulte esta sección sobre [como obtener información](/index.php/Kernel_modules_(Espa%C3%B1ol)#Obtener_informaci.C3.B3n "Kernel modules (Español)") de los módulos del kernel.
 
 ### Depurar errores de hardware
 
@@ -195,18 +195,18 @@ Consulte esta sección sobre [como obtener información](/index.php/Kernel_modul
 
 ## Kernel panics
 
-Un pánico del núcleo (o *Kernel panic*) ocurre cuando el núcleo de Linux entra en un estado de fallo irrecuperable. El estado generalmente se origina en controladores de hardware defectuosos que provocan que la máquina quede estancada, no responda y requiera un reinicio. Justo antes del interbloqueo, se genera un mensaje de diagnóstico que consiste en: el "estado de la máquina" cuando ocurrió el fallo, un "seguimiento de la llamada" *(call trace)* que conduce a la función del núcleo que reconoció el fallo y una lista de módulos cargados en ese momento. Afortunadamente, estos *pánicos* no ocurren muy a menudo usando versiones *mainline* del núcleo, como los suministrados por los repositorios oficiales, pero cuando suceden, debe saber como manejarlos.
+Un pánico del kernel (o *Kernel panic*) ocurre cuando el kernel de Linux entra en un estado de fallo irrecuperable. El estado generalmente se origina en controladores de hardware defectuosos que provocan que la máquina quede estancada, no responda y requiera un reinicio. Justo antes del interbloqueo, se genera un mensaje de diagnóstico que consiste en: el "estado de la máquina" cuando ocurrió el fallo, un "seguimiento de la llamada" *(call trace)* que conduce a la función del kernel que reconoció el fallo y una lista de módulos cargados en ese momento. Afortunadamente, estos *pánicos* no ocurren muy a menudo usando versiones *mainline* del kernel, como los suministrados por los repositorios oficiales, pero cuando suceden, debe saber como manejarlos.
 
-**Nota:** Los *Kernel panic* a veces se conocen como *oops* o *kernel oops*. Si bien estos y los errores ocurren como resultado de un estado de error, un *oops* es más general ya que no conducen *necesariamente* a una máquina bloqueada: a veces el núcleo puede recuperarse de un *oops* eliminando la tarea afectada para poder continuar.
+**Nota:** Los *Kernel panic* a veces se conocen como *oops* o *kernel oops*. Si bien estos y los errores ocurren como resultado de un estado de error, un *oops* es más general ya que no conducen *necesariamente* a una máquina bloqueada: a veces el kernel puede recuperarse de un *oops* eliminando la tarea afectada para poder continuar.
 
-**Sugerencia:** Pase el parámetro del núcleo `oops=panic` al arrancar o escriba `1` en `/proc/sys/kernel/panic_on_oops` para forzar a un *oops* recuperable a emitir un *panic* en su lugar. Esto es aconsejable si le preocupa la pequeña posibilidad de sufrir una inestabilidad en el sistema como resultado de un *oops* recuperable que pueda hacer que los futuros errores sean difíciles de diagnosticar.
+**Sugerencia:** Pase el parámetro del kernel `oops=panic` al arrancar o escriba `1` en `/proc/sys/kernel/panic_on_oops` para forzar a un *oops* recuperable a emitir un *panic* en su lugar. Esto es aconsejable si le preocupa la pequeña posibilidad de sufrir una inestabilidad en el sistema como resultado de un *oops* recuperable que pueda hacer que los futuros errores sean difíciles de diagnosticar.
 
 ### Examinar los mensajes de pánico
 
-Si se produce un *kernel panic* al inicio del proceso de arranque, es posible que aparezca un mensaje en la consola que contenga "Kernel panic - not syncing:" pero una vez que [Systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") se está ejecutando, los mensajes del núcleo serán capturados y escritos en el registro del sistema. Sin embargo, cuando se produce un *kernel panic*, el mensaje de diagnóstico generado por el núcleo "casi nunca" se escribe en el archivo de registro en el disco porque los interbloqueos de la máquina antes de `system-journald` tienen la ocasión. Por lo tanto, la única forma de examinar el mensaje de pánico es verlo en la consola como sucede (sin recurrir a la configuración de un *kdump crashkernel*). Puede hacerlo arrancando con los siguientes parámetros del núcleo e intentando reproducir el mensaje de pánico en tty1:
+Si se produce un *kernel panic* al inicio del proceso de arranque, es posible que aparezca un mensaje en la consola que contenga "Kernel panic - not syncing:" pero una vez que [Systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") se está ejecutando, los mensajes del kernel serán capturados y escritos en el registro del sistema. Sin embargo, cuando se produce un *kernel panic*, el mensaje de diagnóstico generado por el kernel "casi nunca" se escribe en el archivo de registro en el disco porque los interbloqueos de la máquina antes de `system-journald` tienen la ocasión. Por lo tanto, la única forma de examinar el mensaje de pánico es verlo en la consola como sucede (sin recurrir a la configuración de un *kdump crashkernel*). Puede hacerlo arrancando con los siguientes parámetros del kernel e intentando reproducir el mensaje de pánico en tty1:
 
  `systemd.journald.forward_to_console=1 console=tty1` 
-**Sugerencia:** En caso de que el mensaje de pánico se desplace demasiado rápido como para examinarlo, intente pasar el parámetro del núcleo `pause_on_oops=*segundos*` al arrancar.
+**Sugerencia:** En caso de que el mensaje de pánico se desplace demasiado rápido como para examinarlo, intente pasar el parámetro del kernel `pause_on_oops=*segundos*` al arrancar.
 
 #### Escenario de ejemplo: módulo defectuoso
 
@@ -268,22 +268,22 @@ kernel: ---[ end Kernel panic - not syncing: Fatal exception
 
 Podemos suponer entonces que el pánico ocurrió durante la rutina de inicialización del módulo *firewire_core* al iniciarse. (Podríamos suponer, entonces, que el hardware firewire de la máquina es incompatible con esta versión del módulo del controlador firewire debido a un error del programador, y tendrá que esperar una nueva versión.) Mientras tanto, la forma más fácil de hacer funcionar la máquina nuevamente es evitar que el módulo se inicie. Podemos hacer esto de una de estas dos maneras:
 
-*   Si el módulo se está iniciando durante la ejecución de *initramfs*, reinicie con el parámetro del núcleo `rd.blacklist=firewire_core`.
-*   De lo contrario, reinicie con el parámetro del núcleo `module_blacklist=firewire_core`.
+*   Si el módulo se está iniciando durante la ejecución de *initramfs*, reinicie con el parámetro del kernel `rd.blacklist=firewire_core`.
+*   De lo contrario, reinicie con el parámetro del kernel `module_blacklist=firewire_core`.
 
 ### Reiniciar en una shell de superusuario y solucionar el problema
 
 Necesitará un shell de superusuario para realizar cambios en el sistema para que no se produzca el pánico. Si se produce un pánico durante el arranque, existen varias estrategias para obtener un shell de superusuario antes de que la máquina se bloquee:
 
-*   Reinicie con el parámetro del núcleo `emergency`, `rd.emergency`, o `-b` para obtener una manera de iniciar sesión justo después de que se monte el sistema de archivos raíz y `systemd` se ha iniciado.
+*   Reinicie con el parámetro del kernel `emergency`, `rd.emergency`, o `-b` para obtener una manera de iniciar sesión justo después de que se monte el sistema de archivos raíz y `systemd` se ha iniciado.
 
 **Nota:** En este punto, el sistema de archivos raíz se montará como **solo lectura**. Ejecute `# mount -o remount,rw /` para poder realizar cambios.
 
-*   Reinicie con el parámetro del núcleo `rescue`, `rd.rescue`, `single`, `s`, `S`, o { {ic|1}} para poder iniciar sesión justo después de montar los sistemas de archivos locales.
-*   Reinicie con el parámetro del núcleo `systemd.debug-shell=1` para obtener un shell de superusuario al iniciar en tty9\. Cambie a este presionando `Ctrl-Alt-F9`.
-*   Experimente reiniciando con diferentes conjuntos de parámetros del núcleo para posibilitar la deshabilitación de la función del núcleo que está causando el pánico. Pruebe los "viejos recursos" `acpi=off` y `nolapic`.
+*   Reinicie con el parámetro del kernel `rescue`, `rd.rescue`, `single`, `s`, `S`, o { {ic|1}} para poder iniciar sesión justo después de montar los sistemas de archivos locales.
+*   Reinicie con el parámetro del kernel `systemd.debug-shell=1` para obtener un shell de superusuario al iniciar en tty9\. Cambie a este presionando `Ctrl-Alt-F9`.
+*   Experimente reiniciando con diferentes conjuntos de parámetros del kernel para posibilitar la deshabilitación de la función del kernel que está causando el pánico. Pruebe los "viejos recursos" `acpi=off` y `nolapic`.
 
-**Sugerencia:** Consulte `Documentation/admin-guide/kernel-parameters.txt` en el código fuente del núcleo de Linux para ver todos los parámetros.
+**Sugerencia:** Consulte `Documentation/admin-guide/kernel-parameters.txt` en el código fuente del kernel de Linux para ver todos los parámetros.
 
 *   Como último recurso, arranque con el **CD de instalación de Arch Linux** y monte el sistema de archivos raíz en `/mnt` y luego ejecute `# arch-chroot /mnt`.
 

@@ -1,6 +1,6 @@
 | **Device** | **Status** |
 | Intel | Working |
-| HDMI | Not Tested |
+| HDMI | Working |
 | Wireless | Working |
 | Audio | Working |
 | Touchpad | Working |

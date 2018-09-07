@@ -391,7 +391,7 @@ Usually when a very popular package stays in the AUR it is because:
 *   Its license prohibits redistribution
 *   It helps retrieve user-submitted PKGBUILDs. [AUR helpers](/index.php/AUR_helpers "AUR helpers") are [unsupported](https://bbs.archlinux.org/viewtopic.php?pid=828310#p828310) by definition.
 
-See also [DeveloperWiki:Community repo candidates](/index.php/DeveloperWiki:Community_repo_candidates "DeveloperWiki:Community repo candidates") and [Rules for Packages Entering the community Repo](/index.php/AUR_Trusted_User_Guidelines#Rules_for_Packages_Entering_the_.5Bcommunity.5D_Repo "AUR Trusted User Guidelines").
+See also [Rules for Packages Entering the community Repo](/index.php/AUR_Trusted_User_Guidelines#Rules_for_Packages_Entering_the_.5Bcommunity.5D_Repo "AUR Trusted User Guidelines").
 
 ### How can I speed up repeated build processes?
 

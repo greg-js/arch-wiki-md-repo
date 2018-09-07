@@ -13,7 +13,7 @@ From the project [home page](https://www.videolan.org/vlc/):
     *   [5.2 Playing streamed content from a local DLNA server](#Playing_streamed_content_from_a_local_DLNA_server)
     *   [5.3 Control using hotkeys or cli](#Control_using_hotkeys_or_cli)
     *   [5.4 Preventing multiple instances](#Preventing_multiple_instances)
-    *   [5.5 Hardware acceleration support](#Hardware_acceleration_support)
+    *   [5.5 Hardware video acceleration](#Hardware_video_acceleration)
     *   [5.6 systemd service](#systemd_service)
     *   [5.7 Chromecast support](#Chromecast_support)
 *   [6 Troubleshooting](#Troubleshooting)
@@ -114,7 +114,7 @@ $ dbus-send --print-reply --session --dest=org.mpris.MediaPlayer2.vlc /org/mpris
 
 The default settings for VLC is to open a new instance of the program for each file that is opened. This can be annoying if you are using VLC for something like playing your music collection. You can disable this in *Tools > Preferences > Interface > Instances > Allow only one instance*. Optionally, tick *Enqueue files when in one instance mode* which keeps current file playing and adds any newly opened files to the current playlist.
 
-### Hardware acceleration support
+### Hardware video acceleration
 
 See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 

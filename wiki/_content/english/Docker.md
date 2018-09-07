@@ -45,6 +45,8 @@ Related articles
 
 ```
 
+Note that starting the docker service may fail if you have an active vpn connection. If this is the case, try disconnecting the vpn before starting the docker service. You may reconnect the vpn immediately afterwards.
+
 If you want to be able to run docker as a regular user, add yourself to the `docker` [group](/index.php/Group "Group").
 
 **Warning:** Anyone added to the `docker` group is root equivalent. More information [here](https://github.com/docker/docker/issues/9976) and [here](https://docs.docker.com/engine/security/security/).

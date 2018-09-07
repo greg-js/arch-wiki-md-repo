@@ -427,21 +427,15 @@ Some window managers (e.g. [Compiz](/index.php/Compiz "Compiz"), [Enlightenment]
 
 This section lists utilities for automating keyboard / mouse input and window operations (like moving, resizing or raising).
 
-*   **xautomation** — Controls X from the command line and does visual scraping, see [xte(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xte.1).
+| Tool | Package | Manual | keysym
+input | window
+operations | Note |
+| xte | [xautomation](https://www.archlinux.org/packages/?name=xautomation) | [xte(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xte.1) | Yes | No | Also contains screen scraping tools. Cannot simulate F13+. |
+| xdo | [xdo-git](https://aur.archlinux.org/packages/xdo-git/) | [xdo(1)](https://github.com/baskerville/xdo/blob/master/doc/xdo.1.txt) | No | Yes | Small X utility to perform elementary actions on windows. |
+| xdotool | [xdotool](https://www.archlinux.org/packages/?name=xdotool) | [xdotool(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdotool.1) | Yes | Yes | [Very buggy](https://github.com/jordansissel/xdotool/issues) and not in active development, e.g: has broken CLI parsing.[[2]](https://github.com/jordansissel/xdotool/issues/14#issuecomment-327968132)[[3]](https://github.com/jordansissel/xdotool/issues/71) |
+| xvkbd | [xvkbd](https://aur.archlinux.org/packages/xvkbd/) | [xvkbd(1)](http://t-sato.in.coocan.jp/xvkbd/#option) | Yes | No | Virtual keyboard for Xorg, also has the `-text` option for sending characters. |
 
-	[https://www.hoopajoo.net/projects/xautomation.html](https://www.hoopajoo.net/projects/xautomation.html) || [xautomation](https://www.archlinux.org/packages/?name=xautomation)
-
-*   **xdo** — Small X utility to perform elementary actions on windows.
-
-	[https://github.com/baskerville/xdo](https://github.com/baskerville/xdo) || [xdo-git](https://aur.archlinux.org/packages/xdo-git/)
-
-*   **xvkbd** — Virtual keyboard for Xorg, also includes a utility for sending characters.
-
-	[http://t-sato.in.coocan.jp/xvkbd/](http://t-sato.in.coocan.jp/xvkbd/) || [xvkbd](https://aur.archlinux.org/packages/xvkbd/)
-
-**Note:** [xdotool](https://www.archlinux.org/packages/?name=xdotool), another command-line X11 automation tool, is [very buggy](https://github.com/jordansissel/xdotool/issues) and not in active development. For instance, it cannot parse command-line arguments properly: [[2]](https://github.com/jordansissel/xdotool/issues/14#issuecomment-327968132), [[3]](https://github.com/jordansissel/xdotool/issues/71). Hence, the alternatives listed above should be preferred instead.
-
-See also [Clipboard#Tools](/index.php/Clipboard#Tools "Clipboard") and [xbindkeys](/index.php/Xbindkeys "Xbindkeys").
+See also [Clipboard#Tools](/index.php/Clipboard#Tools "Clipboard").
 
 ### Nested X session
 

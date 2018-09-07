@@ -64,7 +64,7 @@ The daemon needs to know your current display configuration when the laptop is d
 
  `~/.config/i3/config`  ` exec --no-startup-id dockd --daemon` 
 
-*   Log out and log back it
+*   Log out and log back in
 
 The daemon should now be configured and ready to use. Insert the ThinkPad into the dock and observe if the daemon switches to your external display automatically.
 

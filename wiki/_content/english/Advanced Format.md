@@ -3,7 +3,7 @@ The [Advanced Format](https://en.wikipedia.org/wiki/Advanced_Format "wikipedia:A
 There are two types of AF drives:
 
 *   Advanced Format drives, marked with an orange "AF" logo: internally, they use 4k sectors, but provide an emulation layer for compatibility with OSes which lack support for them.
-*   Advanced Format 4k native drives, marked with a blue "4Kn" logo: they require OS support (Windows 8+, or Linux 2.6.31+). Because they don't need a translation layer, they are cheaper, however they might be incompatible with old tools.
+*   Advanced Format 4k native drives, marked with a blue "4Kn" logo: they require OS support (Windows 8+, or Linux 2.6.31+). Because they do not need a translation layer, they are cheaper, however they might be incompatible with old tools.
 
 ## How to determine if HDD employ a 4k sector
 
@@ -19,8 +19,8 @@ Drives with a translation layer (see above) will usually report a logical block 
 
 Tools which will report the physical sector of a drive (provided the drive will report it correctly) includes
 
-*   smartmontools (since 5.41 ; `smartctl -a`, in information section)
-*   hdparm (since 9.12 ; `hdparm -I`, in configuration section)
+*   [smartmontools](/index.php/S.M.A.R.T. "S.M.A.R.T.") (since 5.41 ; `smartctl -a`, in information section)
+*   [hdparm](/index.php/Hdparm "Hdparm") (since 9.12 ; `hdparm -I`, in configuration section)
 
 Note that both works even for USB-attached discs (if the USB bridge supports SAT aka SCSI/ATA Translation, ANSI INCITS 431-2007).
 

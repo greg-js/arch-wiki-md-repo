@@ -22,7 +22,7 @@ Cada partición debe ser formateada con un [tipo de sistema de archivos](/index.
     *   [2.1 Partición única root](#Partici.C3.B3n_.C3.BAnica_root)
     *   [2.2 Particiones dedicadas](#Particiones_dedicadas)
     *   [2.3 Puntos de montaje](#Puntos_de_montaje)
-        *   [2.3.1 Partición root](#Partici.C3.B3n_root)
+        *   [2.3.1 Partición raíz](#Partici.C3.B3n_ra.C3.ADz)
         *   [2.3.2 /boot](#.2Fboot)
         *   [2.3.3 /home](#.2Fhome)
         *   [2.3.4 /var](#.2Fvar)
@@ -102,7 +102,7 @@ Crear una ruta de acceso como una partición separada permite elegir entre difer
 
 Los puntos de montaje siguientes son opciones posibles para particiones separadas, tome la decisión sobre la base de sus necesidades reales.
 
-#### Partición root
+#### Partición raíz
 
 El directorio raíz está en la parte superior de la jerarquía, el punto en el que está montado el sistema de archivos principal y de la que se derivan todos los demás sistemas de archivos. Todos los archivos y directorios aparecen debajo del directorio raíz *`/`*, incluso si están almacenados en diferentes dispositivos físicos. El contenido del sistema de archivos raíz debe ser adecuado para arrancar, restaurar, recuperar y/o reparar el sistema. Por lo tanto, ciertos directorios de *`/`* no son candidatos para particiones separadas.
 

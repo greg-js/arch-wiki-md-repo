@@ -141,11 +141,11 @@ Esta sección contiene información relacionada con el proceso de arranque. Se p
 
 ### Reconocimiento automático del hardware
 
-El hardware debe ser detectado automáticamente por [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") durante el proceso de arranque de forma predeterminada. Se puede lograr una mejora potencial en el tiempo de arranque desactivando la carga automática de los módulos y especificando los módulos requeridos manualmente, como se describe en [módulos del núcleo](/index.php/Kernel_modules_(Espa%C3%B1ol) "Kernel modules (Español)"). Además, [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") debería ser capaz de detectar automáticamente los controladores necesarios mediante `udev`, aunque los usuarios también tienen la opción de configurar el servidor X manualmente.
+El hardware debe ser detectado automáticamente por [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") durante el proceso de arranque de forma predeterminada. Se puede lograr una mejora potencial en el tiempo de arranque desactivando la carga automática de los módulos y especificando los módulos requeridos manualmente, como se describe en [módulos del kernel](/index.php/Kernel_modules_(Espa%C3%B1ol) "Kernel modules (Español)"). Además, [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") debería ser capaz de detectar automáticamente los controladores necesarios mediante `udev`, aunque los usuarios también tienen la opción de configurar el servidor X manualmente.
 
 ### Microcódigo
 
-Los procesadores pueden tener un [comportamiento defectuoso](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), que el núcleo puede corregir mediante la actualización del *microcódigo* al inicio. Los procesadores de Intel requieren un paquete separado para este fin. Consulte [microcódigo](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)") para más detalles.
+Los procesadores pueden tener un [comportamiento defectuoso](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), que el kernel puede corregir mediante la actualización del *microcódigo* al inicio. Los procesadores de Intel requieren un paquete separado para este fin. Consulte [microcódigo](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)") para más detalles.
 
 ### Conservar los mensajes del arranque
 
@@ -209,9 +209,9 @@ La categoría [multimedia](/index.php/Category:Multimedia_(Espa%C3%B1ol) "Catego
 
 ### Sonido
 
-El [sonido](/index.php/Sound_system_(Espa%C3%B1ol) "Sound system (Español)") es proporcionado por los controladores de sonido del núcleo:
+El [sonido](/index.php/Sound_system_(Espa%C3%B1ol) "Sound system (Español)") es proporcionado por los controladores de sonido del kernel:
 
-*   [ALSA](/index.php/Advanced_Linux_Sound_Architecture_(Espa%C3%B1ol) "Advanced Linux Sound Architecture (Español)") se incluye en el núcleo y es el método recomendado ya que generalmente funciona sin necesidad de configuración adicional (basta con [abrir los canales de audio](/index.php/Advanced_Linux_Sound_Architecture_(Espa%C3%B1ol)#Abrir_los_canales_de_audio "Advanced Linux Sound Architecture (Español)")).
+*   [ALSA](/index.php/Advanced_Linux_Sound_Architecture_(Espa%C3%B1ol) "Advanced Linux Sound Architecture (Español)") se incluye en el kernel y es el método recomendado ya que generalmente funciona sin necesidad de configuración adicional (basta con [abrir los canales de audio](/index.php/Advanced_Linux_Sound_Architecture_(Espa%C3%B1ol)#Abrir_los_canales_de_audio "Advanced Linux Sound Architecture (Español)")).
 
 *   [OSS](/index.php/Open_Sound_System_(Espa%C3%B1ol) "Open Sound System (Español)") es una alternativa viable en caso de que ALSA no funcione.
 
@@ -239,7 +239,7 @@ Para una mayor seguridad al navegar por la web, pagos en línea, conectarse a se
 
 ### Configurar un cortafuegos
 
-Un servidor de seguridad puede proporcionar una capa de protección adicional sobre la pila de red de Linux. Si bien el núcleo de Arch es capaz de utilizar [iptables](/index.php/Iptables_(Espa%C3%B1ol) "Iptables (Español)") de [Netfilter](https://en.wikipedia.org/wiki/es:Netfilter para ver las guías disponibles.
+Un servidor de seguridad puede proporcionar una capa de protección adicional sobre la pila de red de Linux. Si bien el kernel de Arch es capaz de utilizar [iptables](/index.php/Iptables_(Espa%C3%B1ol) "Iptables (Español)") de [Netfilter](https://en.wikipedia.org/wiki/es:Netfilter para ver las guías disponibles.
 
 ### Compartir recursos
 

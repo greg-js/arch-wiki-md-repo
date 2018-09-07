@@ -12,6 +12,7 @@ This article provides a list of (not commonly known) default keyboard shortcuts 
     *   [2.1 Readline](#Readline_2)
     *   [2.2 Xorg](#Xorg)
     *   [2.3 Key binding for X-selection-paste](#Key_binding_for_X-selection-paste)
+        *   [2.3.1 XMonad Window Manager](#XMonad_Window_Manager)
 *   [3 Tips and tricks](#Tips_and_tricks)
 *   [4 See also](#See_also)
 
@@ -112,6 +113,8 @@ See [Wikipedia:Virtual console](https://en.wikipedia.org/wiki/Virtual_console "w
 
 See [Keyboard configuration in Xorg#Frequently used XKB options](/index.php/Keyboard_configuration_in_Xorg#Frequently_used_XKB_options "Keyboard configuration in Xorg") for some common shortcuts, that are disabled by default.
 
+See [Keyboard configuration in Xorg#Keybinding](/index.php/Keyboard_configuration_in_Xorg#Keybinding "Keyboard configuration in Xorg") for defining custom keybindings.
+
 ### Key binding for X-selection-paste
 
 Users who prefer to work rather with the keyboard than the mouse may benefit from a key binding to the paste operation of the **middle mouse button**. This is especially useful in a keyboard-centered environment. A workflow example is:
@@ -137,18 +140,18 @@ This example binds the x-selection-paste operation to the `F12` key:
 
 ```
 
-The `"\D1"` code prefixes a 100 ms pause to inserting the selection buffer (see the [xvkbd home page](http://homepage3.nifty.com/tsato/xvkbd/)).
+The `"\D1"` code prefixes a 100 ms pause to inserting the selection buffer (see the [xvkbd home page](http://t-sato.in.coocan.jp/xvkbd/)).
 
 **Note:** Depending on your X configuration, you may need to drop the `-xsendevent` argument to xvkbd.
 
 The key codes for keys other than `F12` can be determined using `xbindkeys -k`.
 
-**References:**
+References:
 
 *   [Pasting X selection (not clipboard) contents with keyboard](http://unix.stackexchange.com/questions/11889/pasting-x-selection-not-clipboard-contents-with-keyboard)
 *   [xvkbd home page](http://homepage3.nifty.com/tsato/xvkbd/)
 
-**XMonad Window Manager**
+#### XMonad Window Manager
 
 In the [xmonad](https://www.archlinux.org/packages/?name=xmonad) window manager there is a built-in function to paste the x-selection-buffer content. In order to bind that function to a key-stroke (here `Insert` key) the following configuration can be used:
 

@@ -539,7 +539,7 @@ See also [Wikipedia:List of flashcard software](https://en.wikipedia.org/wiki/Li
 
 ### Accessibility
 
-See [Accessibility](/index.php/Accessibility "Accessibility") for tips on operating the desktop and [Category:Accessibility](/index.php/Category:Accessibility "Category:Accessibility") for all available articles. See also [Virtual keyboards](/index.php/List_of_applications/Utilities#Virtual_keyboards "List of applications/Utilities").
+See [Accessibility](/index.php/Accessibility "Accessibility") for tips on operating the desktop and [Category:Accessibility](/index.php/Category:Accessibility "Category:Accessibility") for all available articles. See also [On-screen keyboards](/index.php/List_of_applications/Utilities#On-screen_keyboards "List of applications/Utilities").
 
 #### Speech synthesizers
 

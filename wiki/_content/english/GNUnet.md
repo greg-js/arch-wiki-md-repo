@@ -16,6 +16,7 @@ See also [Wikipedia:GNUnet](https://en.wikipedia.org/wiki/GNUnet "wikipedia:GNUn
         *   [3.2.1 To index a file/directory](#To_index_a_file.2Fdirectory)
         *   [3.2.2 To unindex a file/directory](#To_unindex_a_file.2Fdirectory)
         *   [3.2.3 Modifying and removing indexed files](#Modifying_and_removing_indexed_files)
+*   [4 Web User Interface](#Web_User_Interface)
 
 ## Installation
 
@@ -75,3 +76,7 @@ Suppose you have forgotten which files you indexed, you can look up the pointers
 
 *   When you modify a file, the URI of the file changes. Therefore, GNUnet considers this to be a completely different file. Therefore, make sure that the original file is unindexed (using the gnunet-unindex command), modify the file, and then index the new file to make it accessible through the network.
 *   If you want to move/remove a file from your system, then you should unindex it first.
+
+## Web User Interface
+
+A Web interface for GNUnet exists and is available on AUR as [gnunet-webui-git](https://aur.archlinux.org/packages/gnunet-webui-git/).

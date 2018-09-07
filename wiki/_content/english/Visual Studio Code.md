@@ -7,6 +7,8 @@
 *   [3 Configuration](#Configuration)
     *   [3.1 Integrated Terminal](#Integrated_Terminal)
     *   [3.2 External Terminal](#External_Terminal)
+*   [4 Troubleshoot](#Troubleshoot)
+    *   [4.1 Global menu not working in KDE/Plasma](#Global_menu_not_working_in_KDE.2FPlasma)
 
 ## Installation
 
@@ -52,3 +54,9 @@ Example:
 "terminal.external.linuxExec": "gnome-terminal"
 
 ```
+
+## Troubleshoot
+
+### Global menu not working in KDE/Plasma
+
+Visual Studio Code uses DBus to pass the menu to Plasma, try installing [libdbusmenu-glib](https://www.archlinux.org/packages/?name=libdbusmenu-glib)

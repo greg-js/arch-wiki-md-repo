@@ -113,7 +113,7 @@
 | <small>6.8.</small> [Keyboard configuration](/index.php/Category:Keyboard_configuration_(Espa%C3%B1ol) "Category:Keyboard configuration (Español)") <small>(1) (también en [Teclados](/index.php/Category:Keyboards_(Espa%C3%B1ol) "Category:Keyboards (Español)"))</small> |
 | <small>6.9.</small> [Linux console](/index.php/Category:Linux_console_(Espa%C3%B1ol) "Category:Linux console (Español)") <small>(2)</small> |
 | <small>6.10.</small> [Localization](/index.php/Category:Localization_(Espa%C3%B1ol) "Category:Localization (Español)") <small>(1)</small> |
-| <small>6.11.</small> [Administración de paquetes](/index.php/Category:Package_management_(Espa%C3%B1ol) "Category:Package management (Español)") <small>(19)</small> |
+| <small>6.11.</small> [Administración de paquetes](/index.php/Category:Package_management_(Espa%C3%B1ol) "Category:Package management (Español)") <small>(18)</small> |
 | <small>6.12.</small> [Administración de energía](/index.php/Category:Power_management_(Espa%C3%B1ol) "Category:Power management (Español)") <small>(3)</small> |
 | <small>6.13.</small> [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)") <small>(11)</small> |
 | <small>6.13.1.</small> [Encriptación](/index.php/Category:Encryption_(Espa%C3%B1ol) "Category:Encryption (Español)") <small>(5)</small> |

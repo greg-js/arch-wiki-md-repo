@@ -784,7 +784,7 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
  |
 | [w3m](https://www.archlinux.org/packages/?name=w3m) | `~/.w3m` | [[140]](https://sourceforge.net/p/w3m/feature-requests/31/) |
 | [wpa_cli](https://w1.fi/) | `~/.wpa_cli_history` |
-| [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) | `~/.gnome` | [[141]](https://bugs.freedesktop.org/show_bug.cgi?id=90775) | For some reason the script `xdg-desktop-menu` hard-codes `gnome_user_dir="$HOME/.gnome/apps"`. This is used by [chromium](/index.php/Chromium "Chromium") amoung others. |
+| [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) | `~/.gnome` | [[141]](https://bugs.freedesktop.org/show_bug.cgi?id=90775) | For some reason the script `xdg-desktop-menu` hard-codes `gnome_user_dir="$HOME/.gnome/apps"`. This is used by [chromium](/index.php/Chromium "Chromium") among others. |
 | [xombrero](https://opensource.conformal.com/wiki/xombrero) | `~/.xombrero` | [[142]](https://github.com/conformal/xombrero/issues/74) |
 | [zenmap](https://nmap.org/zenmap/) [nmap](https://www.archlinux.org/packages/?name=nmap) | `~/.zenmap` | [[143]](http://seclists.org/nmap-dev/2012/q2/163) [[144]](https://github.com/nmap/nmap/issues/590) |
 | [zsh](/index.php/Zsh "Zsh") | 

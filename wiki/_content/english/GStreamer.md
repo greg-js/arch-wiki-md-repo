@@ -10,7 +10,7 @@ Designed to be cross-platform, it is known to work on Linux (x86, PowerPC and AR
 *   [2 Integration](#Integration)
     *   [2.1 PulseAudio](#PulseAudio)
     *   [2.2 KDE / Phonon integration](#KDE_.2F_Phonon_integration)
-    *   [2.3 Hardware acceleration](#Hardware_acceleration)
+    *   [2.3 Hardware video acceleration](#Hardware_video_acceleration)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -36,7 +36,7 @@ To make GStreamer useful, install the plugins packages you require. See [officia
 
 See [Phonon](/index.php/Phonon "Phonon").
 
-### Hardware acceleration
+### Hardware video acceleration
 
 See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 

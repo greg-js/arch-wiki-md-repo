@@ -12,8 +12,10 @@ DKIM is supported by most common mail providers, including Yahoo, Google and Out
 *   [6 Sendmail integration](#Sendmail_integration)
 *   [7 Multiple domains](#Multiple_domains)
 *   [8 Security](#Security)
-*   [9 Notes](#Notes)
-*   [10 See also](#See_also)
+*   [9 Troubleshooting](#Troubleshooting)
+    *   [9.1 Error: "milter-reject: END-OF-MESSAGE from localhost"](#Error:_.22milter-reject:_END-OF-MESSAGE_from_localhost.22)
+*   [10 Notes](#Notes)
+*   [11 See also](#See_also)
 
 ## The idea
 
@@ -219,6 +221,8 @@ The default configuration for the OpenDKIM daemon is less than ideal from a secu
 *   If your mail daemon is on the same host as the OpenDKIM daemon, there is no need for localhost tcp sockets and unix sockets may be used instead, allowing classic user/group access controls.
 *   OpenDKIM is using the `/tmp` folder by default whereas it could use its own folder with additional access restrictions.
 
+**Note:** This is example is for single domain setup.
+
 The following configuration files will fix most of those issues (assuming you are using Postfix) and drop some unnecessary options in the systemd service unit:
 
  `/etc/opendkim/opendkim.conf` 
@@ -266,6 +270,20 @@ Edit `/etc/postfix/main.cf` accordingly to make Postfix listen to this unix sock
 ```
 smtpd_milters = unix:/run/opendkim/opendkim.sock
 non_smtpd_milters = unix:/run/opendkim/opendkim.sock
+
+```
+
+## Troubleshooting
+
+### Error: "milter-reject: END-OF-MESSAGE from localhost"
+
+Most likely the Postfix milter protocol is set wrong in `/etc/postfix/main.cf`
+
+```
+# Postfix ≥ 2.6
+milter_protocol = 6
+# 2.3 ≤ Postfix ≤ 2.5
+milter_protocol = 2
 
 ```
 

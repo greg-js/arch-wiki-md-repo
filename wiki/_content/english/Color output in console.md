@@ -605,15 +605,40 @@ xterm-256color 256
 
 This command is useful to see what features that are supported by your terminal.
 
- `$ infocmp -1 | sed -nu 's/^[ \000\t]*//;s/[ \000\t]*$//;/[^ \t\000]\{1,\}/!d;/acsc/d;s/=.*,//p'|column -c80` 
+ `$ infocmp -1 | tr -d '\0\t,' | cut -f1 -d'=' | grep -v "$TERM" | sort | column -c80` 
 ```
-bel	cuu	ich	kb2	kf15	kf3	kf44	kf59	mc0	rmso	smul
-blink	cuu1	il	kbs	kf16	kf30	kf45	kf6	mc4	rmul	tbc
-bold	cvvis	il1	kcbt	kf17	kf31	kf46	kf60	mc5	rs1	u6
-cbt	dch	ind	kcub1	kf18	kf32	kf47	kf61	meml	rs2	u7
-civis	dch1	indn	kcud1	kf19	kf33	kf48	kf62	memu	sc	u8
-clear	dl	initc	kcuf1	kf2	kf34	kf49	kf63	op	setab	u9
-cnorm	dl1	invis	kcuu1	kf20	kf35	kf5	kf7	rc	setaf	vpa
+acsc		ed		kcuu1		kich1		rmso
+am		el		kDC		kLFT		rmul
+bce		el1		kdch1		km		rs1
+bel		enacs		kel		kmous		rs2
+blink		eo		kend		knp		s0ds
+bold		flash		kEND		kNXT		s1ds
+btns#5		fsl		kent		kpp		s2ds
+bw		home		kf1		kPRV		s3ds
+ccc		hpa		kf10		kRIT		sc
+civis		hs		kf11		kslt		setab
+clear		ht		kf12		lines#24	setaf
+cnorm		hts		kf13		lm#0		setb
+colors#0x100	ich		kf14		mc0		setf
+cols#80		ich1		kf15		mc4		sgr
+cr		il		kf16		mc5		sgr0
+csr		il1		kf17		mc5i		sitm
+cub		ind		kf18		mir		smacs
+cub1		indn		kf19		msgr		smam
+cud		initc		kf2		ncv#0		smcup
+cud1		is1		kf20		npc		smir
+cuf		is2		kf3		op		smkx
+cuf1		it#8		kf4		pairs#0x7fff	smso
+cup		ka1		kf5		rc		smul
+cuu		ka3		kf6		rev		tbc
+cuu1		kb2		kf7		ri		tsl
+cvvis		kbs		kf8		rin		u6
+dch		kc1		kf9		ritm		u7
+dch1		kc3		kfnd		rmacs		u8
+dl		kcbt		kFND		rmam		u9
+dl1		kcub1		kHOM		rmcup		vpa
+dsl		kcud1		khome		rmir		xenl
+ech		kcuf1		kIC		rmkx		xon
 
 ```
 

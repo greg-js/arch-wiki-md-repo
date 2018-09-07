@@ -16,13 +16,14 @@ Related articles
     *   [2.3 Widevine Content Decryption Module plugin](#Widevine_Content_Decryption_Module_plugin)
     *   [2.4 PDF viewer plugin](#PDF_viewer_plugin)
     *   [2.5 Certificates](#Certificates)
+    *   [2.6 Hardware video acceleration](#Hardware_video_acceleration)
 *   [3 Tips and tricks](#Tips_and_tricks)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Fonts](#Fonts)
         *   [4.1.1 Font rendering issues in PDF plugin](#Font_rendering_issues_in_PDF_plugin)
         *   [4.1.2 Font rendering issues of UTF characters](#Font_rendering_issues_of_UTF_characters)
         *   [4.1.3 Tab font size is too large](#Tab_font_size_is_too_large)
-    *   [4.2 Force 3D acceleration](#Force_3D_acceleration)
+    *   [4.2 Force GPU acceleration](#Force_GPU_acceleration)
     *   [4.3 WebGL](#WebGL)
     *   [4.4 Zoomed-in GUI](#Zoomed-in_GUI)
     *   [4.5 Password prompt on every start with GNOME Keyring](#Password_prompt_on_every_start_with_GNOME_Keyring)
@@ -45,7 +46,7 @@ Other alternatives include:
 
 	[https://build.chromium.org/](https://build.chromium.org/) || [chromium-snapshot-bin](https://aur.archlinux.org/packages/chromium-snapshot-bin/)
 
-*   **Chromium with [VA-API](/index.php/VA-API "VA-API") support** — with a patch to enable VA-API
+*   **Chromium with VA-API support** — see [#Hardware video acceleration](#Hardware_video_acceleration)
 
 	[https://chromium-review.googlesource.com/c/chromium/src/+/532294](https://chromium-review.googlesource.com/c/chromium/src/+/532294) || [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/)
 
@@ -99,6 +100,17 @@ Chromium and Google Chrome are bundled with the *Chromium PDF Viewer* plugin. If
 
 Chromium uses [Network Security Services](/index.php/Network_Security_Services "Network Security Services") for certificate management. Certificates can be managed in `chrome://settings/certificates`.
 
+### Hardware video acceleration
+
+**Note:** You might need to [#Force GPU acceleration](#Force_GPU_acceleration) and see [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") first.
+
+Accelerated video decoding via VA-API is available using [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/) and can be enabled either by:
+
+*   enabling `chrome://flags/#enable-accelerated-video` and `chrome://flags/#enable-accelerated-mjpeg-decode` flags;
+*   specifying `--enable-accelerated-video` and `--enable-accelerated-mjpeg-decode` on the command line or adding them to [persistent configuration](/index.php/Chromium/Tips_and_tricks#Making_flags_persistent "Chromium/Tips and tricks").
+
+Additionally `--disable-gpu-driver-bug-workarounds` has been tested and confirmed to remove video freezes (especially when watching in fullscreen).
+
 ## Tips and tricks
 
 See the main article: [Chromium/Tips and tricks](/index.php/Chromium/Tips_and_tricks "Chromium/Tips and tricks").
@@ -121,17 +133,17 @@ UTF characters may render as boxes (e.g. simplified Chinese characters). Install
 
 Chromium will use the GTK settings as described in [GTK+#Configuration](/index.php/GTK%2B#Configuration "GTK+"). When configured, Chromium will use the `gtk-font-name` setting for tabs (which may mismatch window font size). To override these settings, use `--force-device-scale-factor=1.0`.
 
-### Force 3D acceleration
+### Force GPU acceleration
 
 **Warning:** Disabling the rendering blacklist may cause unstable behaviour, including crashes of the host. See the bug reports in `chrome://gpu`.
 
-First follow [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration"). Then, to force 3D rendering, *enable* the flags: "Override software rendering list", "GPU rasterization", "Zero-copy rasterizer" in `chrome://flags`. Check if it is working in `chrome://gpu`. This may also alleviate tearing issues with the [radeon](/index.php/Radeon "Radeon") driver.
+To force GPU acceleration, *enable* the flags: "Override software rendering list", "GPU rasterization", "Zero-copy rasterizer" in `chrome://flags`. Check if it is working in `chrome://gpu`. This may also alleviate tearing issues with the [radeon](/index.php/Radeon "Radeon") driver.
 
 If "Native GpuMemoryBuffers" under `chrome://gpu` mentions software rendering, you additionally need to pass the `--enable-native-gpu-memory-buffers` flag, or some optimizations (like the zero-copy rasterizer) won't do anything. This flag isn't available under `chrome://flags` - it must be passed in either the chromium-flags.conf file (as noted in [Chromium/Tips and tricks#Making flags persistent](/index.php/Chromium/Tips_and_tricks#Making_flags_persistent "Chromium/Tips and tricks")) or directly on the command line.
 
 ### WebGL
 
-There is the possibility that your graphics card has been blacklisted by Chromium. See [#Force 3D acceleration](#Force_3D_acceleration).
+There is the possibility that your graphics card has been blacklisted by Chromium. See [#Force GPU acceleration](#Force_GPU_acceleration).
 
 If you are using Chromium with [Bumblebee](/index.php/Bumblebee "Bumblebee"), WebGL might crash due to GPU sandboxing. In this case, you can disable GPU sandboxing with `optirun chromium --disable-gpu-sandbox`.
 

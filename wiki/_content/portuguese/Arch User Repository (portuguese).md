@@ -391,7 +391,7 @@ Geralmente, quando um pacote muito popular se mantém no AUR é porque:
 *   O pacote é relacionado ao AUR (ex.: um [auxiliar do AUR](/index.php/Auxiliares_do_AUR "Auxiliares do AUR"))
 *   Sua licença proíbe redistribuição
 
-Veja também [DeveloperWiki:Community repo candidates](/index.php/DeveloperWiki:Community_repo_candidates "DeveloperWiki:Community repo candidates") e [regras para pacotes entrarem no repositório *community*](/index.php/AUR_Trusted_User_Guidelines_(Portugu%C3%AAs)#Regras_para_a_Entrada_de_Pacotes_no_Reposit.C3.B3rio_.5Bcommunity.5D "AUR Trusted User Guidelines (Português)").
+Veja também [regras para pacotes entrarem no repositório *community*](/index.php/AUR_Trusted_User_Guidelines_(Portugu%C3%AAs)#Regras_para_a_Entrada_de_Pacotes_no_Reposit.C3.B3rio_.5Bcommunity.5D "AUR Trusted User Guidelines (Português)").
 
 ### Como o posso agilizar processo de repetidas compilações?
 
