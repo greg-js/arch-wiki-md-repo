@@ -174,8 +174,10 @@ Relevant mount options are:
 *   `nodev`: Do not interpret character or block special devices on the file system.
 *   `nosuid`: Do not allow set-user-identifier or set-group-identifier bits to take effect.
 *   `noexec`: Do not allow direct execution of any binaries on the mounted filesystem.
-    *   Setting `noexec` on `/home` disallows executable scripts and breaks [Wine](/index.php/Wine "Wine") and [Steam](/index.php/Steam "Steam").
+    *   Setting `noexec` on `/home` disallows executable scripts and breaks [Wine](/index.php/Wine "Wine")* and [Steam](/index.php/Steam "Steam").
     *   Some packages (building [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms) for example) may require `exec` on `/var`.
+
+**Note:** Wine doesn't need exec flag for opening windows executables. It' only needed when wine itself is installed in /home
 
 Partitions used for data should always be mounted with `nodev`, `nosuid` and `noexec`.
 

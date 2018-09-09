@@ -24,12 +24,13 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
             *   [5.1.2.1 4c/1t CPU w/o Hyperthreading Example](#4c.2F1t_CPU_w.2Fo_Hyperthreading_Example)
             *   [5.1.2.2 4c/2t Intel CPU pinning example](#4c.2F2t_Intel_CPU_pinning_example)
             *   [5.1.2.3 4c/2t AMD CPU example](#4c.2F2t_AMD_CPU_example)
-    *   [5.2 Static huge pages](#Static_huge_pages)
-    *   [5.3 Dynamic huge pages](#Dynamic_huge_pages)
-    *   [5.4 CPU frequency governor](#CPU_frequency_governor)
-    *   [5.5 CPU pinning with isolcpus](#CPU_pinning_with_isolcpus)
-    *   [5.6 Improving performance on AMD CPUs](#Improving_performance_on_AMD_CPUs)
-    *   [5.7 Further tuning](#Further_tuning)
+    *   [5.2 Transparent huge pages](#Transparent_huge_pages)
+    *   [5.3 Static huge pages](#Static_huge_pages)
+    *   [5.4 Dynamic huge pages](#Dynamic_huge_pages)
+    *   [5.5 CPU frequency governor](#CPU_frequency_governor)
+    *   [5.6 CPU pinning with isolcpus](#CPU_pinning_with_isolcpus)
+    *   [5.7 Improving performance on AMD CPUs](#Improving_performance_on_AMD_CPUs)
+    *   [5.8 Further tuning](#Further_tuning)
 *   [6 Special procedures](#Special_procedures)
     *   [6.1 Using identical guest and host GPUs](#Using_identical_guest_and_host_GPUs)
         *   [6.1.1 Script variants](#Script_variants)
@@ -296,7 +297,7 @@ Most use cases for PCI passthroughs relate to performance-intensive domains such
 
 ### CPU pinning
 
-The default behavior for KVM guests is to run operations coming from the guest as a number of threads representing virtual processors. Those threads are managed by the Linux scheduler like any other thread and are dispatched to any available CPU cores based on niceness and priority queues. Since switching between threads adds a bit of overhead (because context switching forces the core to change its cache between operations), this can noticeably harm performance on the guest. CPU pinning aims to resolve this as it overrides process scheduling and ensures that the VM threads will always run and only run on those specific cores.
+The default behavior for KVM guests is to run operations coming from the guest as a number of threads representing virtual processors. Those threads are managed by the Linux scheduler like any other thread and are dispatched to any available CPU cores based on niceness and priority queues. As such, the local CPU cache benefits (L1/L2) are lost each time the host scheduler reschedules the virtual CPU thread on a different physical CPU. This can noticeably harm performance on the guest. CPU pinning aims to resolve this by limiting which physical CPUs the virtual CPUs are allowed to run on. The ideal setup is a one to one mapping such that the virtual CPU cores match physical CPU cores while taking hyperthreading/SMT into account.
 
 **Note:** For certain users enabling CPU pinning may introduce stuttering and short hangs, especially with the MuQSS scheduler (present in linux-ck and linux-zen kernels). You might want to try disabling pinning first if you experience similar issues, which effectively trades maximum performance for responsiveness at all times.
 
@@ -348,7 +349,7 @@ CPU NODE SOCKET CORE L1d:L1i:L2:L3 ONLINE MAXMHZ    MINMHZ
 
 As we see above, with AMD **Core 0** is sequential with **CPU 0 & 1**, whereas Intel places **Core 0** on **CPU 0 & 6**.
 
-If you prefer to have the host and guest running intensive tasks at the same time, it would then be preferable to leave at the very least, **Core 0** to the host. Next you will pin the amount of physical CPU's and their associated logical CPU's to the guest XML as shown below. It is also recommended to pin the emulator and iothread to **Core 0** as this helps eliminate latency within the VM.
+If you don't need all cores for the guest, it would then be preferable to leave at the very least one core for the host. Choosing which cores one to use for the host or guest should be based on the specific hardware characteristics of your CPU, however **Core 0** is a good choice for the host in most cases. If any cores are reserved for the host, it is recommended to pin the emulator and iothreads, if used, to the host cores rather than the VCPUs. This may improve performance and reduce latency for the guest since those threads will not pollute the cache or contend for scheduling with the guest VCPU threads. If all cores are passed to the guest, there is no need or benefit to pinning the emulator or iothreads.
 
 #### XML examples
 
@@ -424,11 +425,33 @@ If you prefer to have the host and guest running intensive tasks at the same tim
 
 If you do not intend to be doing any computation-heavy work on the host (or even anything at all) at the same time as you would on the VM, you may want to pin your VM threads across all of your cores, so that the VM can fully take advantage of the spare CPU time the host has available. Be aware that pinning all physical and logical cores of your CPU could induce latency in the guest VM.
 
+### Transparent huge pages
+
+QEMU will use 2MiB sized transparent huge pages automatically without any explicit configuration in QEMU or Libvirt, subject to some important caveats. When using VFIO the pages are locked in at boot time and transparent huge pages are allocated up front when the VM first boots. If the kernel memory is highly fragmented, or the VM is using a majority of the remaining free memory, it is likely that the kernel will not have enough 2MiB pages to fully satisfy the allocation. In such a case, it silently fails by using a mix of 2MiB and 4KiB pages. Since the pages are locked in VFIO mode, the kernel will not be able to convert those 4KiB pages to huge after the VM starts either. The number of available 2MiB huge pages available to THP is the same as via the **Dynamic huge pages** mechanism described in the following sections.
+
+To check how much memory THP is using globally:
+
+```
+$ grep AnonHugePages /proc/meminfo
+AnonHugePages:   8091648 kB
+
+```
+
+To check a specific QEMU instance. QEMU's PID must be substituted in the grep command:
+
+```
+$ grep -P 'AnonHugePages:\s+(?!0)\d+' /proc/[PID]/smaps
+AnonHugePages:   8087552 kB
+
+```
+
+In this example, the VM was allocated 8388608KiB of memory, but only 8087552KiB was available via THP. The remaining 301056KiB are allocated as 4KiB pages. There is no indication or warning when partial allocations occur. As such, THP's effectiveness is very much dependent on the host system's memory fragmentation at the time of VM startup. If this trade off is unacceptable or strict guarantees are required, **static huge pages** is recommended as described in the next section.
+
+Arch kernels have THP compiled in and enabled by default with **/sys/kernel/mm/transparent_hugepage/enabled** set to **madvise** mode.
+
 ### Static huge pages
 
 When dealing with applications that require large amounts of memory, memory latency can become a problem since the more memory pages are being used, the more likely it is that this application will attempt to access information across multiple memory "pages", which is the base unit for memory allocation. Resolving the actual address of the memory page takes multiple steps, and so CPUs normally cache information on recently used memory pages to make subsequent uses on the same pages faster. Applications using large amounts of memory run into a problem where, for instance, a virtual machine uses 4 GiB of memory divided into 4 KiB pages (which is the default size for normal pages), meaning that such cache misses can become extremely frequent and greatly increase memory latency. Huge pages exist to mitigate this issue by giving larger individual pages to those applications, increasing the odds that multiple operations will target the same page in succession. This is normally handeled with transparent huge pages, which dynamically manages hugepages to keep up with the demand.
-
-On a VM with a PCI passthrough, however, it is **not possible** to benefit from transparent huge pages, as IOMMU requires that the guest's memory be allocated and pinned as soon as the VM starts. It is therefore required to allocate huge pages statically in order to benefit from them.
 
 **Warning:** Static huge pages lock down the allocated amount of memory, making it unavailable for applications that are not configured to use them. Allocating 4 GiBs worth of huge pages on a machine with 8 GiB of memory will only leave you with 4 GiB of available memory on the host **even when the VM is not running**.
 

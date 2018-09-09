@@ -22,7 +22,7 @@ Related articles
 *   [3 Running](#Running)
 *   [4 Back-end configuration](#Back-end_configuration)
     *   [4.1 ALSA](#ALSA)
-        *   [4.1.1 Enable DTS via Alsa](#Enable_DTS_via_Alsa)
+        *   [4.1.1 Enable DTS via ALSA](#Enable_DTS_via_ALSA)
         *   [4.1.2 Expose PulseAudio sources, sinks and mixers to ALSA](#Expose_PulseAudio_sources.2C_sinks_and_mixers_to_ALSA)
         *   [4.1.3 ALSA/dmix without grabbing hardware device](#ALSA.2Fdmix_without_grabbing_hardware_device)
     *   [4.2 OSS](#OSS)
@@ -268,32 +268,13 @@ To prevent applications from using ALSA's OSS emulation and bypassing PulseAudio
 
 ```
 
-#### Enable DTS via Alsa
+#### Enable DTS via ALSA
 
-To enable Pulseaudio DTS via Alsa install [dcaenc](https://aur.archlinux.org/packages/dcaenc/) package and enable it in
+To enable PulseAudio DTS via ALSA install [dcaenc](https://aur.archlinux.org/packages/dcaenc/) package and enable it:
 
  `/etc/asound.conf`  `<confdir:pcm/dca.conf>` 
 
-then check for existence (usually already present)
-
- `/usr/share/pulseaudio/alsa-mixer/profile-sets/default.conf` 
-```
-[Mapping iec958-dts-surround-51]
-device-strings = dca:%f
-channel-map = front-left,front-right,rear-left,rear-right,front-center,lfe
-paths-output = iec958-stereo-output
-priority = 3
-direction = output
-
-[Mapping hdmi-dts-surround-51]
-device-strings = dcahdmi:%f
-channel-map = front-left,front-right,rear-left,rear-right,front-center,lfe
-paths-output = hdmi-output-0
-priority = 1
-direction = output
-```
-
-Restart Alsa and/or Pulseaudio. More details on installing this you will find on [dcaenc's Github](https://github.com/darealshinji/dcaenc) page.
+Finally restart PulseAudio. If experience volume issues with your DTS device and/or PulseAudio, you may fix it by looking for more setting option at [dcaenc's Github](https://github.com/darealshinji/dcaenc).
 
 #### Expose PulseAudio sources, sinks and mixers to ALSA
 

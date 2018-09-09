@@ -74,11 +74,10 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [6.3.3 Disable compositing](#Disable_compositing)
         *   [6.3.4 Flickering in fullscreen when compositing is enabled](#Flickering_in_fullscreen_when_compositing_is_enabled)
         *   [6.3.5 Screen tearing with NVIDIA](#Screen_tearing_with_NVIDIA)
-        *   [6.3.6 Plasma cursor sometimes shown incorrecty](#Plasma_cursor_sometimes_shown_incorrecty)
+        *   [6.3.6 Plasma cursor sometimes shown incorrectly](#Plasma_cursor_sometimes_shown_incorrectly)
     *   [6.4 Sound problems](#Sound_problems)
         *   [6.4.1 No sound after suspend](#No_sound_after_suspend)
-        *   [6.4.2 "Falling back to default" messages when trying to listen to any sound](#.22Falling_back_to_default.22_messages_when_trying_to_listen_to_any_sound)
-        *   [6.4.3 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
+        *   [6.4.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
     *   [6.5 Power management](#Power_management)
         *   [6.5.1 No Suspend/Hibernate options](#No_Suspend.2FHibernate_options)
     *   [6.6 KMail](#KMail)
@@ -588,7 +587,9 @@ $ qdbus org.kde.KWin /KWin supportInformation
 
 #### Disable desktop effects manually or automatically for defined applications
 
-Plasma has desktop effects enabled by default and e.g. not every game will disable them automatically. You can disable desktop effects in *System Settings > Desktop Effects* and you can toggle desktop effects with `Alt+Shift+F12`. Additionally, you can create custom KWin rules to automatically disable/enable compositing when a certain application/window starts under *System Settings > Window Management > Window Rules*.
+Plasma has desktop effects enabled by default and e.g. not every game will disable them automatically. You can disable desktop effects in *System Settings > Desktop Behavior > Desktop Effects* and you can toggle desktop effects with `Alt+Shift+F12`.
+
+Additionally, you can create custom KWin rules to automatically disable/enable compositing when a certain application/window starts under *System Settings > Window Management > Window Rules*.
 
 #### Disable compositing
 
@@ -596,17 +597,17 @@ In *System Settings > Display and Monitor*, uncheck *Enable compositor on startu
 
 #### Flickering in fullscreen when compositing is enabled
 
-In *System Settings > Display and Monitor*, uncheck *Allow applications to block compositing*. This may harm performance.
+In *System Settings > Display and Monitor > Compositor*, uncheck *Allow applications to block compositing*. This may harm performance.
 
 #### Screen tearing with NVIDIA
 
 See [NVIDIA/Troubleshooting#Avoid screen tearing in KDE (KWin)](/index.php/NVIDIA/Troubleshooting#Avoid_screen_tearing_in_KDE_.28KWin.29 "NVIDIA/Troubleshooting").
 
-#### Plasma cursor sometimes shown incorrecty
+#### Plasma cursor sometimes shown incorrectly
 
 Create the directory `~/.icons/default` and inside a file named `index.theme` with the following contents:
 
- `/home/*archie*/.icons/default/index.theme` 
+ `~/.icons/default/index.theme` 
 ```
 [Icon Theme]
 Inherits=breeze_cursors
@@ -636,21 +637,11 @@ $ plasmashell
 
 Some applications may also need to be restarted in order for sound to play from them again.
 
-#### "Falling back to default" messages when trying to listen to any sound
-
-When you encounter such messages:
-
-```
-The audio playback device *name_of_the_sound_device* does not work.
-Falling back to default
-
-```
-
-Go to *System Settings > Multimedia > Phonon* and set the device named `default` above all the other devices in each box you see.
-
 #### MP3 files cannot be played when using the GStreamer Phonon backend
 
-This can be solved by installing the GStreamer libav plugin (package [gst-libav](https://www.archlinux.org/packages/?name=gst-libav)). If you still encounter problems, you can try changing the Phonon backend used by installing another such as [phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc) or [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc). Then, make sure the backend is preferred via *System Settings > Multimedia > Backend*.
+This can be solved by installing the GStreamer libav plugin (package [gst-libav](https://www.archlinux.org/packages/?name=gst-libav)). If you still encounter problems, you can try changing the Phonon backend used by installing another such as [phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc) or [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc).
+
+Then, make sure the backend is preferred via *System Settings > Multimedia > Audio and Video > Backend*.
 
 ### Power management
 
@@ -676,7 +667,7 @@ Now go back to the System Settings page and carefully add the necessary resource
 
 #### Empty IMAP inbox in KMail
 
-For some IMAP accounts, kmail will show the inbox as a container with all other folders of this account inside. Kmail does not show messages in the inbox container but in all other subfolders, see [KDE Bug 284172](https://bugs.kde.org/show_bug.cgi?id=284172). To solve this problem simply disable the server side subscription in the kmail account settings.
+For some IMAP accounts KMail will show the inbox as a top-level container (so it will not be possible to read messages there) with all other folders of this account inside.[[8]](https://bugs.kde.org/show_bug.cgi?id=284172). To solve this problem simply disable the server-side subscriptions in the KMail account settings.
 
 ### Networking
 

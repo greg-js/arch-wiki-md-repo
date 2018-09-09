@@ -8,6 +8,7 @@
     *   [3.1 Enable copy to clipboard](#Enable_copy_to_clipboard)
     *   [3.2 Side-by-side mode](#Side-by-side_mode)
     *   [3.3 Titlebar and statusbar tweaks](#Titlebar_and_statusbar_tweaks)
+    *   [3.4 Tabbed Zathura](#Tabbed_Zathura)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -54,6 +55,15 @@ By default, the title and status bars will show the full path of the file opened
 *   If `window-title-home-tilde` is set to true, the path to `$HOME` will be contracted to `~` in the window title.
 *   If `statusbar-basename` is set to true, only the file name will be shown in the status bar.
 *   If `statusbar-home-tilde` is set to true, the path to `$HOME` will be contracted to `~` in the status bar.
+
+### Tabbed Zathura
+
+You can open Zathura in tabs using `tabbed`.
+
+```
+tabbed -c zathura -e
+
+```
 
 ## See also
 

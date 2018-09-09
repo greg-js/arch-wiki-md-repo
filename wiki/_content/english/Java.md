@@ -79,6 +79,14 @@ Most executables of the Java installation are provided by direct links in `/usr/
 
 	[http://openjdk.java.net/projects/jdk9/](http://openjdk.java.net/projects/jdk9/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=jre9-openjdk)</small> <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=jdk9-openjdk)</small>
 
+**OpenJDK EA** — Oracle's OpenJDK Early-Access Build for latest developement version.
+
+	[http://jdk.java.net](http://jdk.java.net) || [openjdk-devel](https://aur.archlinux.org/packages/openjdk-devel/)
+
+**OpenJFX EA** — Oracle's OpenJFX Early-Access Build for latest developement version.
+
+	[http://jdk.java.net/openjfx/](http://jdk.java.net/openjfx/) || [java-openjfx-devel](https://aur.archlinux.org/packages/java-openjfx-devel/)
+
 **Java SE** — Oracle's implementation of JRE and JDK.
 
 	[http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) || [jre](https://aur.archlinux.org/packages/jre/) [jre9](https://aur.archlinux.org/packages/jre9/) [jre8](https://aur.archlinux.org/packages/jre8/) [jre7](https://aur.archlinux.org/packages/jre7/) [jre6](https://aur.archlinux.org/packages/jre6/) [jdk](https://aur.archlinux.org/packages/jdk/) [jdk9](https://aur.archlinux.org/packages/jdk9/) [jdk8](https://aur.archlinux.org/packages/jdk8/) [jdk7](https://aur.archlinux.org/packages/jdk7/) [jdk6](https://aur.archlinux.org/packages/jdk6/) [jdk5](https://aur.archlinux.org/packages/jdk5/) [jdk-devel](https://aur.archlinux.org/packages/jdk-devel/)

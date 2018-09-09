@@ -36,6 +36,7 @@ Related articles
     *   [4.3 CFLAGS/CXXFLAGS in makepkg.conf do not work for QMAKE based packages](#CFLAGS.2FCXXFLAGS_in_makepkg.conf_do_not_work_for_QMAKE_based_packages)
     *   [4.4 Specifying install directory for QMAKE based packages](#Specifying_install_directory_for_QMAKE_based_packages)
     *   [4.5 WARNING: Package contains reference to $srcdir](#WARNING:_Package_contains_reference_to_.24srcdir)
+    *   [4.6 Makepkg fails to download dependencies when behind proxy](#Makepkg_fails_to_download_dependencies_when_behind_proxy)
 *   [5 See also](#See_also)
 
 ## Configuration
@@ -375,7 +376,17 @@ $ grep -R "$(pwd)/src" pkg/
 
 ```
 
-[Link](http://www.mail-archive.com/arch-general@archlinux.org/msg15561.html) to discussion thread.
+### Makepkg fails to download dependencies when behind proxy
+
+When Makepkg calls sudo, any [environment variables](/index.php/Environment_variables "Environment variables") are not passed, including `$http_proxy`. When it calls dependencies, it calls pacman to install the packages, therefore you need to edit `/etc/pacman.conf` instead. Add or uncomment the following line in your `pacman.conf`[[6]](http://www.mail-archive.com/arch-general@archlinux.org/msg15561.html):
+
+ `/etc/pacman.conf` 
+```
+...
+XferCommand = /usr/bin/curl -x http://username:password@proxy.proxyhost.com:80 -L -C - -f -o %o %u
+...
+
+```
 
 ## See also
 

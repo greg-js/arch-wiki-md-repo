@@ -11,6 +11,14 @@
 | Card Reader | Working |
 | Wireless switch | Working ([Some issues with kde](#rfkill_issues_with_KDE)) |
 
+Related articles
+
+*   [Dell XPS 13 (9333)](/index.php/Dell_XPS_13_(9333) "Dell XPS 13 (9333)")
+*   [Dell XPS 13 (9350)](/index.php/Dell_XPS_13_(9350) "Dell XPS 13 (9350)")
+*   [Dell XPS 13 (9360)](/index.php/Dell_XPS_13_(9360) "Dell XPS 13 (9360)")
+*   [Dell XPS 13 (9370)](/index.php/Dell_XPS_13_(9370) "Dell XPS 13 (9370)")
+*   [Dell XPS 13 2-in-1 (9365)](/index.php/Dell_XPS_13_2-in-1_(9365) "Dell XPS 13 2-in-1 (9365)")
+
 The [2015 Dell XPS 13 (9343)](http://www.dell.com/us/p/xps-13-9343-laptop/pd) is the second-generation model of Dell's XPS 13 line. Like its predecessor, it has official Linux support courtesy of Dell's Project Sputnik team[[1]](https://bartongeorge.io/2015/04/09/4th-gen-dell-xps-13-developer-edition-available/). They target Ubuntu 14.04 LTS, but the improvements and support from the Sputnik team are generally applicable to all distros.
 
 The installation process for Arch Linux on the XPS 13 does not differ from any other PC. For installation help, please see the [Installation guide](/index.php/Installation_guide "Installation guide") and [UEFI](/index.php/UEFI "UEFI") pages. This page covers the current status of hardware support on Arch, as well as post-installation recommendations.

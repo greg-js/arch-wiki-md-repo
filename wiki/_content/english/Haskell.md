@@ -200,7 +200,7 @@ To run executables within a cabal sandbox, you must also set `PATH=$PATH:$PWD/.c
 
 #### Removing packages
 
-There is no easy way to do it. Cabal does not have support this functionality.
+There is no easy way to do it. Cabal does not have support for this functionality.
 
 Consider installing to a sandbox instead, which can be deleted without affecting other sandboxes or your user-wide installation.
 

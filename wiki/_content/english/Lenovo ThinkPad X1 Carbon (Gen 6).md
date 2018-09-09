@@ -18,7 +18,7 @@ Related articles
         *   [2.1.2 Manual Installation](#Manual_Installation)
 *   [3 Suspend issues](#Suspend_issues)
     *   [3.1 Enabling S3](#Enabling_S3)
-    *   [3.2 Enabling S2idle](#Enabling_S2idle)
+    *   [3.2 Disabling the memory card reader](#Disabling_the_memory_card_reader)
     *   [3.3 BIOS configurations](#BIOS_configurations)
 *   [4 Power management/Throttling issues](#Power_management.2FThrottling_issues)
     *   [4.1 Throttling fix](#Throttling_fix)
@@ -79,13 +79,13 @@ In case your `efivars` are not properly set it is most likely due to you not bei
 
 #### Manual Installation
 
-[BIOS update 1.27](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-carbon-6th-gen-type-20kh-20kg/downloads) was released on 2018-07-28\. Obtain [geteltorito](https://aur.archlinux.org/packages/geteltorito/) and run `geteltorito.pl -o bios-update.img n23ur09w.iso` on the downloaded ISO file to create a valid [El Torito](https://en.wikipedia.org/wiki/El_Torito_(CD-ROM_standard) image file, then flash this file on a USB drive via `dd` like you would flash [Arch installation media](/index.php/USB_flash_installation_media "USB flash installation media"). For further information see [flashing BIOS from Linux](/index.php/Flashing_BIOS_from_Linux#Bootable_optical_disk_emulation "Flashing BIOS from Linux").
+[BIOS update 1.30](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-carbon-6th-gen-type-20kh-20kg/downloads) was released on 2018-09-07\. Obtain [geteltorito](https://aur.archlinux.org/packages/geteltorito/) and run `geteltorito.pl -o bios-update.img n23ur11w.iso` on the downloaded ISO file to create a valid [El Torito](https://en.wikipedia.org/wiki/El_Torito_(CD-ROM_standard) image file, then flash this file on a USB drive via `dd` like you would flash [Arch installation media](/index.php/USB_flash_installation_media "USB flash installation media"). For further information see [flashing BIOS from Linux](/index.php/Flashing_BIOS_from_Linux#Bootable_optical_disk_emulation "Flashing BIOS from Linux").
 
 The ThinkPad X1 Carbon supports setting a custom splash image at the earliest boot stage(instead of the red "Lenovo" logo), more information can be found in the `README.TXT` located in the `FLASH` folder of the update image.
 
 ## Suspend issues
 
-The 6th Generation X1 Carbon supports S0i3 (also known as Windows Modern Standby), but not S3 out of the box. Missing S3 also causes hybrid-suspend to go directly to hibernate. Thankfully, S3 can be enabled through an ACPI override.
+The 6th Generation X1 Carbon supports S0i3 (also known as Windows Modern Standby), but not S3 by default. Missing S3 also causes hybrid-suspend to go directly to hibernate. Thankfully, S3 can be enabled through a BIOS option from BIOS version 1.30 onward.
 
 ### Enabling S3
 
@@ -96,38 +96,9 @@ dmesg | grep -i "acpi: (supports"
 
 ```
 
-To enable S3 support, there is an automatic patching script [x1carbon2018s3](https://github.com/fiji-flo/x1carbon2018s3), that was written with full instructions on both enabling S3 and verifying the patch worked. Follow the instructions in the repository and verify with the above command afterwards.
+To enable S3 support, make sure you have at least BIOS version 1.30 installed. Then, go into the BIOS configuration, and `Config -> Power -> Sleep State - Set to "Linux"`. This should make S3 available. To verify, after making the changes in the BIOS configuration, boot into Linux, and run the `dmesg` command again to make sure that S3 is now available.
 
-The automatic script was based off of a guide written with [instructions for patching ACPI DSDT tables](https://delta-xi.net/#056) to manually add S3 support. A [forum thread](https://bbs.archlinux.org/viewtopic.php?id=234913) has further discussion related to this issue.
-
-### Enabling S2idle
-
-**Note:** Since [kernel version 4.18-rc2](https://lkml.org/lkml/2018/6/24/113) acpi.ec_no_wakeup=1 is set by default
-
-From [the Lenovo forums](https://forums.lenovo.com/t5/Linux-Discussion/X1-Carbon-Gen-6-cannot-enter-deep-sleep-S3-state-aka-Suspend-to/m-p/4016317/highlight/true#M10682): Add the following [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to enable S2idle support:
-
-```
-acpi.ec_no_wakeup=1
-
-```
-
-For example, for GRUB, one might edit `/etc/default/grub` and edit `GRUB_CMDLINE_LINUX_DEFAULT`:
-
-```
-GRUB_CMDLINE_LINUX_DEFAULT="quiet acpi.ec_no_wakeup=1"
-
-```
-
-then perform
-
-```
-sudo update-grub
-
-```
-
-and restart the system.
-
-**Note:** This supports only S2idle state, not S0i3 state as some seem to have been led to believe!
+### Disabling the memory card reader
 
 You might also need to disable the Realtek memory card reader (which appears to use a constant 2-3 W) either via the BIOS or via
 
@@ -135,8 +106,6 @@ You might also need to disable the Realtek memory card reader (which appears to 
 echo "2-3" | sudo tee /sys/bus/usb/drivers/usb/unbind
 
 ```
-
-The power consumption might still be higher than that of the S3 state in this case.
 
 ### BIOS configurations
 

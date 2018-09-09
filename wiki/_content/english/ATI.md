@@ -31,9 +31,9 @@ If unsure, try the open source driver first, it will suit most needs and is gene
     *   [7.2 Old methods](#Old_methods)
         *   [7.2.1 Dynamic frequency switching](#Dynamic_frequency_switching)
         *   [7.2.2 Profile-based frequency switching](#Profile-based_frequency_switching)
-        *   [7.2.3 Persistent configuration](#Persistent_configuration)
-        *   [7.2.4 Graphical tools](#Graphical_tools)
-    *   [7.3 Other notes](#Other_notes)
+    *   [7.3 Persistent configuration](#Persistent_configuration)
+    *   [7.4 Graphical tools](#Graphical_tools)
+    *   [7.5 Other notes](#Other_notes)
 *   [8 Fan Speed](#Fan_Speed)
 *   [9 TV out](#TV_out)
     *   [9.1 Force TV-out in KMS](#Force_TV-out_in_KMS)
@@ -320,9 +320,9 @@ As an example, we will activate the `low` profile (replace `low` with any of the
 
 ```
 
-#### Persistent configuration
+### Persistent configuration
 
-The activation described above is not persistent, you may use this [udev](/index.php/Udev "Udev") rule (example for [#Profile-based frequency switching](#Profile-based_frequency_switching)):
+The methods described above are not persistent. To make them persistent, you may create a [udev](/index.php/Udev "Udev") rule (example for [#Profile-based frequency switching](#Profile-based_frequency_switching)):
 
  `/etc/udev/rules.d/30-radeon-pm.rules` 
 ```
@@ -330,9 +330,17 @@ KERNEL=="dri/card0", SUBSYSTEM=="drm", DRIVERS=="radeon", ATTR{device/power_meth
 
 ```
 
-**Note:** If the above rule is failing, try removing the `dri/` prefix.
+As another example, [dynamic power management](#Dynamic_power_management) can be permanently forced to a certain performance level:
 
-#### Graphical tools
+ `/etc/udev/rules.d/30-radeon-pm.rules` 
+```
+KERNEL=="dri/card0", SUBSYSTEM=="drm", DRIVERS=="radeon", ATTR{device/power_dpm_force_performance_level}="high"
+
+```
+
+**Note:** If the above rules are failing, try removing the `dri/` prefix.
+
+### Graphical tools
 
 *   **Radeon-tray** — A small program to control the power profiles of your Radeon card via systray icon. It is written in PyQt4 and is suitable for non-Gnome users.
 

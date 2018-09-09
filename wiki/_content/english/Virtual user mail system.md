@@ -23,11 +23,11 @@ In the end, the provided solution will allow you to use the best currently avail
         *   [2.4.1 Setting up Postfix](#Setting_up_Postfix)
         *   [2.4.2 Create the file structure](#Create_the_file_structure)
     *   [2.5 Dovecot](#Dovecot)
-    *   [2.6 Dovecot DH parameters](#Dovecot_DH_parameters)
-    *   [2.7 PostfixAdmin](#PostfixAdmin_2)
-    *   [2.8 Roundcube](#Roundcube)
-        *   [2.8.1 Apache configuration](#Apache_configuration)
-        *   [2.8.2 Roundcube: Change Password Plugin](#Roundcube:_Change_Password_Plugin)
+        *   [2.5.1 DH parameters](#DH_parameters)
+    *   [2.6 PostfixAdmin](#PostfixAdmin_2)
+    *   [2.7 Roundcube](#Roundcube)
+        *   [2.7.1 Apache configuration](#Apache_configuration)
+        *   [2.7.2 Roundcube: Change Password Plugin](#Roundcube:_Change_Password_Plugin)
 *   [3 Fire it up](#Fire_it_up)
 *   [4 Testing](#Testing)
     *   [4.1 Error response](#Error_response)
@@ -35,7 +35,7 @@ In the end, the provided solution will allow you to use the best currently avail
 *   [5 Optional Items](#Optional_Items)
     *   [5.1 Quota](#Quota)
     *   [5.2 Autocreate and autosubscribe folders in Dovecot](#Autocreate_and_autosubscribe_folders_in_Dovecot)
-    *   [5.3 Dovecot Public Folder and Global ACL's](#Dovecot_Public_Folder_and_Global_ACL.27s)
+    *   [5.3 Dovecot public folder and global ACLs](#Dovecot_public_folder_and_global_ACLs)
 *   [6 Sidenotes](#Sidenotes)
     *   [6.1 Alternative vmail folder structure](#Alternative_vmail_folder_structure)
 *   [7 Troubleshooting](#Troubleshooting)
@@ -338,9 +338,11 @@ password_query = SELECT email as user, password, '/home/vmail/%d/%n' as userdb_h
 
 ```
 
-### Dovecot DH parameters
+**Tip:** Visit [http://wiki2.dovecot.org/Variables](http://wiki2.dovecot.org/Variables) to learn more about Dovecot variables.
 
-With v2.3 you are required to provide ssl_dh=</path/to/dh.pem yourself.
+#### DH parameters
+
+With v2.3 you are required to provide `ssl_dh = </path/to/dh.pem` yourself.
 
 To generate a new DH parameters file (this will take very long):
 
@@ -355,8 +357,6 @@ then add the file to `/etc/dovecot/dovecot.conf`
 ssl_dh = </etc/dovecot/dh.pem
 
 ```
-
-**Tip:** Visit [http://wiki2.dovecot.org/Variables](http://wiki2.dovecot.org/Variables) to learn more about Dovecot variables.
 
 ### PostfixAdmin
 
@@ -639,9 +639,7 @@ You should be able to see the quota in roundcube too.
 
 ### Autocreate and autosubscribe folders in Dovecot
 
-To automatically create the "usual" mail hierarchy, do the following:
-
-*   Modify your /etc/dovecot/dovecot.conf as follows, editing to your specific needs.
+To automatically create the "usual" mail hierarchy, modify your `/etc/dovecot/dovecot.conf` as follows, editing to your specific needs.
 
 ```
 namespace inbox {
@@ -668,17 +666,16 @@ namespace inbox {
    special_use = \Sent
  }
 }
-
 ```
 
-### Dovecot Public Folder and Global ACL's
+### Dovecot public folder and global ACLs
 
-To enable IMAP namespace public folders combined with global and per-folder ACL's, do the following:
+In this section we enable IMAP namespace public folders combined with global and per-folder [ACLs](/index.php/ACL "ACL").
 
-*   First, add the following lines to /etc/dovecot/dovecot.conf
+First, add the following lines to `/etc/dovecot/dovecot.conf`:
 
 ```
-### ACL's
+### ACLs
 mail_plugins = acl
 protocol imap {
   mail_plugins = $mail_plugins imap_acl
@@ -698,43 +695,26 @@ namespace {
  subscriptions = no
  list = children
 }
+```
+
+Create the root directory `/home/vmail/public` and the folders you want to publicly share, for example (the period is required!) `/home/vmail/public/.example-1`.
+
+Change the ownership of all files in the root directory:
+
+```
+$ chown -R vmail:vmail /home/vmail/public
 
 ```
 
-*   Create the folder:
+Finally, create and modify your global ACL file to allow users access to these folders:
 
-```
-mkdir /home/vmail/public
+ `/etc/dovecot/dovecot-acl`  `public/* user=admin@example.com lrwstipekxa` 
 
-```
+In the above example, user `admin@example.com` has access to, and can do anything to, all the public folders. Edit to fit your specific needs.
 
-*   Create the folders you want to publicly share, for example (the period is required!):
+**Note:**
 
-```
-mkdir /home/vmail/public/.example-1
-mkdir /home/vmail/public/.example-2
-
-```
-
-*   Change folder ownership:
-
-```
-chown -R vmail:vmail /home/vmail/public
-
-```
-
-*   Create and modify your global acl file to allow users access to these folders:
-
-```
-nano /etc/dovecot/dovecot-acl
------------------------------
-public/* user=admin@example.com lrwstipekxa
-
-```
-
-In the above example, user admin@example.com has access to, and can do anything to, all the public folders. Edit to fit your specific needs.
-
-*   lrwstipekxa are the permissions being granted. Visit the Dovecot wiki for further details.
+*   `lrwstipekxa` are the permissions being granted. Visit the Dovecot wiki for further details.
 *   Make sure the user subscribes to the folders in the client they are using.
 
 ## Sidenotes

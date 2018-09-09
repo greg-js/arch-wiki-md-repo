@@ -92,7 +92,7 @@ The zabbix user needs special network capabilities to utilize [fping](https://ww
 
 To achieve that, to the following:
 
-Edit the `zabbix-server-mysql`:
+Edit the `zabbix-server-mysql.service` unit:
 
  `# systemctl edit zabbix-server-mysql.service` 
 
@@ -107,7 +107,7 @@ Save & Close, and you're done.
 
 ### Starting
 
-[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `zabbix-server-mysql` service, if you are using MariaDB.
+[Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `zabbix-server-mysql.service` unit, if you are using MariaDB.
 
 Finally you can access Zabbix via your local web server, e.g.: [http://127.0.0.1/zabbix](http://127.0.0.1/zabbix), finish the installation wizard and access the frontend the first time. The default username is `Admin` and password `zabbix`.
 
@@ -167,4 +167,4 @@ While importing the databases, you might get an eror "Specified key was too long
 
 ## See also
 
-*   [Official manual for version 2.0](https://www.zabbix.com/documentation/doku.php?id=2.0)
+*   [Official manual](https://www.zabbix.com/documentation/)

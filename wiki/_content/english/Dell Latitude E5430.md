@@ -13,15 +13,36 @@ The Dell Latitude E5430 is a business line laptop made for corporate users who h
 
 ## Contents
 
-*   [1 Hardware support](#Hardware_support)
-    *   [1.1 Audio](#Audio)
-    *   [1.2 Bluetooth](#Bluetooth)
-    *   [1.3 Fingerprint reader](#Fingerprint_reader)
-    *   [1.4 Touchpad](#Touchpad)
-    *   [1.5 Wireless](#Wireless)
-*   [2 Troubleshooting](#Troubleshooting)
-    *   [2.1 Issue with XKeyboardConfig](#Issue_with_XKeyboardConfig)
-*   [3 Hardware Information](#Hardware_Information)
+*   [1 Hardware specification](#Hardware_specification)
+*   [2 Hardware support](#Hardware_support)
+    *   [2.1 Audio](#Audio)
+    *   [2.2 Bluetooth](#Bluetooth)
+    *   [2.3 Fingerprint reader](#Fingerprint_reader)
+    *   [2.4 Touchpad](#Touchpad)
+    *   [2.5 Wireless](#Wireless)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Issue with XKeyboardConfig](#Issue_with_XKeyboardConfig)
+*   [4 Hardware Information](#Hardware_Information)
+
+## Hardware specification
+
+| HW part | Description |
+| CPU | Intel® Core™ i3, i5 e i7 up to i7-35xxM; Intel® Celeron® Bxxx |
+| RAM | SDRAM DDR3 up to 1600 MHz, 2 slots for 1, 2, 4, or 8 GB DIMM |
+| Chipset | Chipset Mobile Intel® HM77 Express or QM77 Express |
+| Graphics | Intel® HD Graphics 3000 for Intel Core i3/i5/i7 2xxxM and Celeron® Bxxx,
+or Intel® HD Graphics 4000 for Intel Core i3/i5/i7 3xxxM |
+| Display | 14,0" LED backlight anti-glare, HD (1366 x 768) or HD+ (1600 x 900) |
+| Optical media | DVD-ROM, DVD+/-RW |
+| Power | Lithium ion battery of 4 cells (40 Wh) or 6 cells (60 Wh) with ExpressCharge™, or 9 cells (97 Wh) |
+| Connection | Bluetooth 4.0, 1x USB 3.0, 1x USB 3.0/eSata, 2x USB 2.0, 1x HDMI port, 1x VGA port |
+
+**Physical characteristics**
+
+| Height | 29,9 mm up to 32,5 mm |
+| Width | 350,00 mm |
+| Depth | 240,00 mm |
+| Weight | 2,04 kg |
 
 ## Hardware support
 
@@ -35,15 +56,15 @@ PC speaker capability is included. See [PC speaker](/index.php/PC_speaker "PC sp
 
 ### Bluetooth
 
-[Install](/index.php/Install "Install") the package [bluez](https://www.archlinux.org/packages/?name=bluez), [start](/index.php/Start "Start") `bluetooth` systemd service and use your preferred front-end to manage connections. See [Bluetooth](/index.php/Bluetooth "Bluetooth") for more information.
+[Install](/index.php/Install "Install") the [bluez](https://www.archlinux.org/packages/?name=bluez) package, [start](/index.php/Start "Start") `bluetooth` systemd service and use your preferred front-end to manage connections. See [Bluetooth](/index.php/Bluetooth "Bluetooth") for more information.
 
 ### Fingerprint reader
 
-[Install](/index.php/Install "Install") the package [fprintd](https://www.archlinux.org/packages/?name=fprintd). It is required to create fingerprint signature. See [fprint](/index.php/Fprint "Fprint") for more useful information.
+[Install](/index.php/Install "Install") the [fprintd](https://www.archlinux.org/packages/?name=fprintd) package, as it is required to create fingerprint signatures. See [fprint](/index.php/Fprint "Fprint") for more useful information.
 
 ### Touchpad
 
-[Install](/index.php/Install "Install") the package [libinput](https://www.archlinux.org/packages/?name=libinput) for enabling the touchpad.
+[Install](/index.php/Install "Install") the [libinput](https://www.archlinux.org/packages/?name=libinput) package. See [Laptop#Touchpad](/index.php/Laptop#Touchpad "Laptop").
 
 ### Wireless
 
@@ -62,7 +83,7 @@ In both cases, you will need the proprietary driver [broadcom-wl](/index.php/Bro
 
 ### Issue with XKeyboardConfig
 
-While starting the graphic interface, you might come across with the bug [#77504](https://bugs.freedesktop.org/show_bug.cgi?id=77504) reported in freedesktop bugzilla. It seems to apply to both Xorg and Wayland. During the display server startup, the XKEYBOARD keymap compiler (xkbcomb) reports:
+While starting the graphic interface, you might come across with the issue [!6](https://gitlab.freedesktop.org/xorg/app/xkbcomp/issues/6) reported in xkbcomp's Gitlab issue list at freedesktop Gitlab. It seems to apply to both Xorg and Wayland. During the display server startup, the XKEYBOARD keymap compiler (xkbcomb) reports:
 
 ```
 > Warning:          Compat map for group 2 redefined

@@ -19,9 +19,11 @@
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 No selection screen in x2goclient](#No_selection_screen_in_x2goclient)
     *   [5.2 Sessions do not logoff correctly](#Sessions_do_not_logoff_correctly)
-    *   [5.3 Shared folders do not mount (Windows Clients)](#Shared_folders_do_not_mount_.28Windows_Clients.29)
-    *   [5.4 Workaround for failing compositing window manager for remote session](#Workaround_for_failing_compositing_window_manager_for_remote_session)
-    *   [5.5 /bin/bash: No such file or directory when connect (or what ever shell you use)](#.2Fbin.2Fbash:_No_such_file_or_directory_when_connect_.28or_what_ever_shell_you_use.29)
+    *   [5.3 Local session blocks x2go session](#Local_session_blocks_x2go_session)
+    *   [5.4 Notification area disappeared](#Notification_area_disappeared)
+    *   [5.5 Shared folders do not mount (Windows Clients)](#Shared_folders_do_not_mount_.28Windows_Clients.29)
+    *   [5.6 Workaround for failing compositing window manager for remote session](#Workaround_for_failing_compositing_window_manager_for_remote_session)
+    *   [5.7 /bin/bash: No such file or directory when connect (or what ever shell you use)](#.2Fbin.2Fbash:_No_such_file_or_directory_when_connect_.28or_what_ever_shell_you_use.29)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -131,6 +133,16 @@ Here is a sample script for an XFCE session:
 
 ```
 
+### Local session blocks x2go session
+
+When you are logged in locally already, and when you try to log in with x2go, the session will terminate immediatelly.
+
+There is a dbus related problem, see [[5]](https://bugzilla.redhat.com/show_bug.cgi?id=1350004) for details and workarounds.
+
+### Notification area disappeared
+
+If you log in, but the notification area is missing, you can use exactly the same fix as for [X2Go#Local_session_blocks_x2go_session](/index.php/X2Go#Local_session_blocks_x2go_session "X2Go").
+
 ### Shared folders do not mount (Windows Clients)
 
 The ssh-daemon used by the X2go windows client uses depreceated ssh-dss keys by default and because Arch does not accept them your shared folders will not mount. Check out this [bug report](http://bugs.x2go.org/cgi-bin/bugreport.cgi?bug=1009) for more information.
@@ -144,7 +156,7 @@ This can be solved on the windows side by generating different type of key:
 
 And simply replace `c:\Users\User\.x2go\etc\ssh_host_dsa_key` and `c:\Users\User\.x2go\etc\ssh_host_dsa_key.pub` with the newly generated key files.
 
-Other workarrounds from [[5]](http://bugs.x2go.org/cgi-bin/bugreport.cgi?bug=1009) might help, too.
+Other workarrounds from [[6]](http://bugs.x2go.org/cgi-bin/bugreport.cgi?bug=1009) might help, too.
 
 ### Workaround for failing compositing window manager for remote session
 

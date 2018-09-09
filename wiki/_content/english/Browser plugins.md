@@ -68,7 +68,7 @@ To change the preferences (privacy settings, resource usage, etc.) of Flash Play
 
 You can also use the Flash settings file `/etc/adobe/mms.cfg`. Gentoo has an extensively commented [example mms.cfg](http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/www-plugins/adobe-flash/files/mms.cfg).
 
-To enable video decoding with [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration"), add/uncomment the following line:
+To enable video decoding with [hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") (NPAPI-only), add/uncomment the following line:
 
 ```
 EnableLinuxHWVideoDecode = 1

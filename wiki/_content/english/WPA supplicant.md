@@ -30,7 +30,7 @@ Related articles
 
 [Install](/index.php/Install "Install") the [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) package, which includes the main program *wpa_supplicant*, the passphrase tool *wpa_passphrase*, and the text front-end *wpa_cli*.
 
-Optionally also install the official [wpa_supplicant_gui](https://aur.archlinux.org/packages/wpa_supplicant_gui/), which provides *wpa_gui*, a graphical front-end for *wpa_supplicant* or [wpa-cute](https://aur.archlinux.org/packages/wpa-cute/) which is a fork from *wpa_gui* with a couple of fixes and improvements.
+Optionally, also install the official [wpa_supplicant_gui](https://aur.archlinux.org/packages/wpa_supplicant_gui/) which provides *wpa_gui*, a graphical front-end for *wpa_supplicant*, or [wpa-cute](https://aur.archlinux.org/packages/wpa-cute/) which is a fork from *wpa_gui* with a couple of fixes and improvements.
 
 ## Overview
 

@@ -133,6 +133,8 @@ By using the `pam_mkhomedir.so` module and by adding the `session` part in the `
 
 [Sieve](https://en.wikipedia.org/wiki/Sieve_(mail_filtering_language) is a programming language that can be used to create filters for email on mail server.
 
+**Note:** You must be using Dovecot as a local delivery agent (through LMTP or LDA) for plugins like Sieve to work. If you are following the [Virtual user mail system](/index.php/Virtual_user_mail_system "Virtual user mail system") guide, this is most likely not the case and you will need to modify your Postfix configuration. A guide can be found in the [Dovecot Wiki](https://wiki2.dovecot.org/HowTo/PostfixDovecotLMTP).
+
 #### Sieve Interpreter Plugin
 
 This facilitates the actual Sieve filtering upon delivery.
@@ -155,7 +157,7 @@ This facilitates the actual Sieve filtering upon delivery.
 
         ```
 
-**Note:** Nowadays it is recommended to use LMTP instead of LDA. Nevertheless the Dovecot LDA can still be used for small mailservers. More information can be found in the [Dovecot Wiki](http://wiki2.dovecot.org/LMTP)
+**Note:** Nowadays it is recommended to use LMTP instead of LDA. Nevertheless the Dovecot LDA can still be used for small mailservers. More information can be found in the [Dovecot Wiki](http://wiki2.dovecot.org/LMTP).
 
 *   Optionally, add configuration in `plugin` section. See [Sieve Interpreter Documentation](http://wiki2.dovecot.org/Pigeonhole/Sieve/Configuration) for configuration options and default values.
     Example: run `cp /usr/share/doc/dovecot/example-config/conf.d/90-sieve.conf /etc/dovecot/conf.d/90-sieve.conf` and verify in `/etc/dovecot/conf.d/90-sieve.conf`:

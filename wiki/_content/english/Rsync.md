@@ -244,7 +244,7 @@ ExecStart=/usr/bin/rsync %h/./documents %h/./music -CERrltm --delete ubuntu:
 
 ```
 
-Now all you have to do is [start](/index.php/Start "Start")/enable `backup.path` like a normal systemd service and it will start monitoring file changes and automatically starting `backup.service`.
+Now all you have to do is [start](/index.php/Start "Start")/enable `backup.path` like a normal systemd service and it will start monitoring file changes and automatically start `backup.service`.
 
 ### Differential backup on a week
 

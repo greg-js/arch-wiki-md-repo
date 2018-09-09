@@ -342,4 +342,4 @@ A sample configuration and guide is available [here](http://users.softlab.ece.nt
 
 ## See also
 
-*   [Madduck guide on extending XKB](http://madduck.net/docs/extending-xkb/)
+*   [Madduck guide on extending XKB](https://web.archive.org/web/20170825051821/http://madduck.net:80/docs/extending-xkb/) (archived at Wayback Machine)

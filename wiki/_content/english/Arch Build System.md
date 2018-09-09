@@ -10,15 +10,16 @@ Related articles
 *   [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
 *   [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS")
 
-This article provides an overview of the Arch Build System (ABS) along with a walkthrough for beginners. It is not intended to be a complete reference guide.
+The Arch build system is a *ports-like* system for building and packaging software from source code. While [pacman](/index.php/Pacman "Pacman") is the specialized Arch tool for binary package management (including packages built with the ABS), ABS is a collection of tools for compiling source into installable `.pkg.tar.xz` packages.
+
+*Ports* is a system used by *BSD to automate the process of building software from source code. The system uses a *port* to download, unpack, patch, compile, and install the given software. A *port* is merely a small directory on the user's computer, named after the corresponding software to be installed, that contains a few files with the instructions for building and installing the software from source. This makes installing software as simple as typing `make` or `make install clean` within the port's directory.
+
+ABS is a similar concept. ABS is made up of a directory tree that can be checked out using SVN. This tree represents, but does not contain, all official Arch software. Subdirectories do not contain the software package nor the source but rather a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") file and sometimes other files. By issuing [makepkg](/index.php/Makepkg "Makepkg") inside a directory containing a PKGBUILD, the software is first compiled and then packaged within the build directory. Then you can use [pacman](/index.php/Pacman "Pacman") to install or upgrade your new package.
 
 ## Contents
 
-*   [1 What is the Arch Build System?](#What_is_the_Arch_Build_System.3F)
-    *   [1.1 What is a ports-like system?](#What_is_a_ports-like_system.3F)
-    *   [1.2 ABS is a similar concept](#ABS_is_a_similar_concept)
-    *   [1.3 ABS overview](#ABS_overview)
-        *   [1.3.1 SVN tree](#SVN_tree)
+*   [1 ABS overview](#ABS_overview)
+    *   [1.1 SVN tree](#SVN_tree)
 *   [2 Why would I want to use ABS?](#Why_would_I_want_to_use_ABS.3F)
 *   [3 How to use ABS](#How_to_use_ABS)
     *   [3.1 Retrieve PKGBUILD source using Svn](#Retrieve_PKGBUILD_source_using_Svn)
@@ -32,19 +33,7 @@ This article provides an overview of the Arch Build System (ABS) along with a wa
     *   [4.2 Checkout an older version of a package](#Checkout_an_older_version_of_a_package)
 *   [5 Other tools](#Other_tools)
 
-## What is the Arch Build System?
-
-The Arch Build System is a *ports-like* system for building and packaging software from source code. While [pacman](/index.php/Pacman "Pacman") is the specialized Arch tool for binary package management (including packages built with the ABS), ABS is a collection of tools for compiling source into installable `.pkg.tar.xz` packages.
-
-### What is a ports-like system?
-
-*Ports* is a system used by *BSD to automate the process of building software from source code. The system uses a *port* to download, unpack, patch, compile, and install the given software. A *port* is merely a small directory on the user's computer, named after the corresponding software to be installed, that contains a few files with the instructions for building and installing the software from source. This makes installing software as simple as typing `make` or `make install clean` within the port's directory.
-
-### ABS is a similar concept
-
-ABS is made up of a directory tree that can be checked out using SVN. This tree represents, but does not contain, all official Arch software. Subdirectories do not contain the software package nor the source but rather a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") file and sometimes other files. By issuing [makepkg](/index.php/Makepkg "Makepkg") inside a directory containing a PKGBUILD, the software is first compiled and then packaged within the build directory. Then you can use [pacman](/index.php/Pacman "Pacman") to install or upgrade your new package.
-
-### ABS overview
+## ABS overview
 
 'ABS' may be used as an umbrella term since it includes and relies on several other components; therefore, though not technically accurate, 'ABS' can refer to the following tools as a complete toolkit:
 
@@ -70,7 +59,7 @@ ABS is made up of a directory tree that can be checked out using SVN. This tree 
 
 **Warning:** Official PKGBUILDs assume that packages are [built in a clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot"). Building software on a *dirty* build system may fail or cause unexpected behaviour at runtime, because if the build system detects dependencies dynamically, the result depends on what packages are available on the build system.
 
-#### SVN tree
+### SVN tree
 
 The *core*, *extra*, and *testing* [repositories](/index.php/Repositories "Repositories") are in the *packages* SVN repository for [checkout](#Non-recursive_checkout). The *community* and *multilib* repositories are in the *community* SVN repository.
 
@@ -94,7 +83,7 @@ The source code for the package is not present in the ABS directory. Instead, th
 
 ## Why would I want to use ABS?
 
-The Arch Build System is used to:
+The Arch build system is used to:
 
 *   Compile or recompile a package, for any reason
 *   Make and install new packages from source of software for which no packages are yet available (see [Creating packages](/index.php/Creating_packages "Creating packages"))

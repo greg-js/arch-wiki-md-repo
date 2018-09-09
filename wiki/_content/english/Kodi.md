@@ -42,7 +42,7 @@
 
 ## Installation
 
-The official stable release can be [installed](/index.php/Installed "Installed") via the [kodi](https://www.archlinux.org/packages/?name=kodi) package. Alternatively, recent alpha, beta, or RC builds are available from [kodi-pre-release](https://aur.archlinux.org/packages/kodi-pre-release/). Be sure to install the optional dependencies listed by pacman that apply to your specific use-case.
+The official stable release can be [installed](/index.php/Installed "Installed") via the [kodi](https://www.archlinux.org/packages/?name=kodi) package. Alternatively, recent alpha, beta, or RC builds are available from [kodi-pre-release](https://aur.archlinux.org/packages/kodi-pre-release/). Be sure to review/install optional dependencies listed by pacman to enable additional functionality.
 
 All of the official addons in the [kodi-addons](https://www.archlinux.org/groups/x86_64/kodi-addons/) group are disabled by default and need to be enabled in Kodi's addon menu after installation.
 
@@ -199,7 +199,7 @@ To work properly with Kodi, a file that maps the lirc events to Kodi keypresses 
 
 ### HDMI-CEC
 
-With a supported [USB-CEC adapter](https://www.pulse-eight.com/p/104/usb-hdmi-cec-adapter), Kodi can be used to automatically turn on and off your TV and other home theater equipment. Volume control from Kodi can be sent to a supported amplifier, one can manage DVD or Blu-Ray players from inside Kodi, and redirect the active source on the TV to whichever equipment needs it, all from one remote control. For more information see the [official Kodi wiki page on CEC](https://kodi.wiki/view/CEC) and [libCEC FAQ](http://libcec.pulse-eight.com/faq).
+With a supported [USB-CEC adapter](https://www.pulse-eight.com/p/104/usb-hdmi-cec-adapter), Kodi can be used to automatically turn on and off the TV and other home theater equipment. Volume control from Kodi can be sent to a supported amplifier, one can manage DVD or Blu-Ray players from inside Kodi, and redirect the active source on the TV to whichever equipment needs it, all from one remote control. For more information see the [official Kodi wiki page on CEC](https://kodi.wiki/view/CEC) and [libCEC FAQ](http://libcec.pulse-eight.com/faq).
 
 Install [libcec](https://www.archlinux.org/packages/?name=libcec).
 
@@ -229,7 +229,7 @@ Several things are needed for this to work:
 
 **Note:** The following guide is only an example of one configuration and is not meant to be limiting but illustrative. Key steps are shown but a detailed discussion is not offered.
 
-These assumptions are used for the guide, substitute to reflect your setup:
+These assumptions are used for the guide, substitute as needed:
 
 *   The media is located under following mount points: `/mnt/shows` `/mnt/movies` `/mnt/music`.
 *   The network addresses of all nodes are within the 192.168.0.* subnet range.
@@ -252,7 +252,7 @@ Create an empty directory in NFS root for each media directory to be shared. E.g
 
 ```
 
-[Bind mount](/index.php/NFS#Server "NFS") your media directories to the empty directories in `/srv/nfs/`.
+[Bind mount](/index.php/NFS#Server "NFS") the media directories to the empty directories in `/srv/nfs/`.
 
 Setup [exports](/index.php/NFS#Server "NFS"):
 
@@ -489,7 +489,7 @@ The [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package is used to
 
 **Tip:** By default, press `O` during playback to show codec information and CPU usage. More information about this overlay can be found at [https://kodi.wiki/view/Codecinfo](https://kodi.wiki/view/Codecinfo).
 
-If your setup does not or cannot make use of hardware acceleration, disable it and explicitly set video decoding to software. This is because [H.264 decoding is only multithreaded when video decoding is set to software](https://forum.kodi.tv/showthread.php?tid=170084&pid=1789661#pid1789661).
+If the hardware does not or cannot make use of acceleration, disable it and explicitly set video decoding to software. This is because [H.264 decoding is only multithreaded when video decoding is set to software](https://forum.kodi.tv/showthread.php?tid=170084&pid=1789661#pid1789661).
 
 To achieve this, go to *System Settings > Video*. Set the `settings level` to `Advanced` or `Expert`. Then go to *Acceleration* and set `Decoding method` to `software`.
 
@@ -497,7 +497,7 @@ To achieve this, go to *System Settings > Video*. Set the `settings level` to `A
 
 This problem can arise with third-party plugins installed, there is some issue with their termination[[1]](https://www.linuxquestions.org/questions/linux-software-2/kodi-freezes-on-exit-kodi-bin-won't-die-4175588180/),[[2]](https://www.reddit.com/r/archlinux/comments/5029oo/kodi_freezes_on_exit_kodibin_wont_die/).
 
-Workaround: find proper UI description file (`DialogButtonMenu.xml`) and tweak exit button type from internal Kodi's `Quit()` function call to sending signal from outside system to Kodi. Here is one-liner that makes modifications to any skin from your default Kodi package:
+Workaround: find proper UI description file (`DialogButtonMenu.xml`) and tweak exit button type from internal Kodi's `Quit()` function call to sending signal from outside system to Kodi. Here is one-liner that makes modifications to any skin from the default Kodi package:
 
 ```
 # find /usr/share/kodi/addons/skin.* -name DialogButtonMenu.xml -exec sed -i 's%<onclick>Quit()</onclick>%<onclick>System.Exec ("killall --signal SIGHUP kodi.bin")</onclick>%' {} \;

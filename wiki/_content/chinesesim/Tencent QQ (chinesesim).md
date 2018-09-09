@@ -5,28 +5,19 @@ QQ 是腾讯公司开发的即时通讯软件，为 ICQ 的仿制品，是中国
 *   [1 使用虚拟机](#.E4.BD.BF.E7.94.A8.E8.99.9A.E6.8B.9F.E6.9C.BA)
 *   [2 基于 WebQQ](#.E5.9F.BA.E4.BA.8E_WebQQ)
     *   [2.1 SmartQQ](#SmartQQ)
-    *   [2.2 官方 Adobe Air 客户端](#.E5.AE.98.E6.96.B9_Adobe_Air_.E5.AE.A2.E6.88.B7.E7.AB.AF)
-    *   [2.3 PyWebQQ (python-webqq)](#PyWebQQ_.28python-webqq.29)
-    *   [2.4 pidgin-lwqq](#pidgin-lwqq)
-    *   [2.5 telepathy/empathy-lwqq](#telepathy.2Fempathy-lwqq)
-    *   [2.6 gtkqq](#gtkqq)
-    *   [2.7 qtqq](#qtqq)
-    *   [2.8 weechat-webqq](#weechat-webqq)
-    *   [2.9 SmartIM](#SmartIM)
-*   [3 独立开发](#.E7.8B.AC.E7.AB.8B.E5.BC.80.E5.8F.91)
-    *   [3.1 libqq](#libqq)
-*   [4 官方版本](#.E5.AE.98.E6.96.B9.E7.89.88.E6.9C.AC)
-*   [5 Wine 模拟](#Wine_.E6.A8.A1.E6.8B.9F)
-    *   [5.1 Wine QQ](#Wine_QQ)
-    *   [5.2 Wine QQ 轻聊版](#Wine_QQ_.E8.BD.BB.E8.81.8A.E7.89.88)
-    *   [5.3 Wine TIM](#Wine_TIM)
-        *   [5.3.1 安装前的准备](#.E5.AE.89.E8.A3.85.E5.89.8D.E7.9A.84.E5.87.86.E5.A4.87)
-        *   [5.3.2 安装及配置](#.E5.AE.89.E8.A3.85.E5.8F.8A.E9.85.8D.E7.BD.AE)
-        *   [5.3.3 相关问题解决](#.E7.9B.B8.E5.85.B3.E9.97.AE.E9.A2.98.E8.A7.A3.E5.86.B3)
-    *   [5.4 CrossOver TM2013](#CrossOver_TM2013)
-    *   [5.5 Awesome 下的配置](#Awesome_.E4.B8.8B.E7.9A.84.E9.85.8D.E7.BD.AE)
-    *   [5.6 i3 下的配置](#i3_.E4.B8.8B.E7.9A.84.E9.85.8D.E7.BD.AE)
-*   [6 参阅](#.E5.8F.82.E9.98.85)
+    *   [2.2 weechat-webqq](#weechat-webqq)
+    *   [2.3 SmartIM](#SmartIM)
+*   [3 Wine 模拟](#Wine_.E6.A8.A1.E6.8B.9F)
+    *   [3.1 Wine QQ](#Wine_QQ)
+    *   [3.2 Wine QQ 轻聊版](#Wine_QQ_.E8.BD.BB.E8.81.8A.E7.89.88)
+    *   [3.3 Wine TIM](#Wine_TIM)
+        *   [3.3.1 安装前的准备](#.E5.AE.89.E8.A3.85.E5.89.8D.E7.9A.84.E5.87.86.E5.A4.87)
+        *   [3.3.2 安装及配置](#.E5.AE.89.E8.A3.85.E5.8F.8A.E9.85.8D.E7.BD.AE)
+        *   [3.3.3 相关问题解决](#.E7.9B.B8.E5.85.B3.E9.97.AE.E9.A2.98.E8.A7.A3.E5.86.B3)
+    *   [3.4 CrossOver TM2013](#CrossOver_TM2013)
+    *   [3.5 Awesome 下的配置](#Awesome_.E4.B8.8B.E7.9A.84.E9.85.8D.E7.BD.AE)
+    *   [3.6 i3 下的配置](#i3_.E4.B8.8B.E7.9A.84.E9.85.8D.E7.BD.AE)
+*   [4 参阅](#.E5.8F.82.E9.98.85)
 
 ## 使用虚拟机
 
@@ -42,8 +33,6 @@ QQ 是腾讯公司开发的即时通讯软件，为 ICQ 的仿制品，是中国
 
 ## 基于 WebQQ
 
-**警告:** 腾讯将关闭旧版的 WebQQ，并用SmartQQ取而代之, 届时恐怕所有依赖 WebQQ 协议的客户端都将不可用。
-
 ### SmartQQ
 
 [SmartQQ](http://w.qq.com/) 是腾讯推出的网页端 QQ，它高度模仿微信风格，功能欠完善，高度依赖网络环境，而且需要通过手机客户端扫描二维码登录。
@@ -51,48 +40,6 @@ QQ 是腾讯公司开发的即时通讯软件，为 ICQ 的仿制品，是中国
 将 Google Chrome 的把网站做为应用程序与其桌面提醒功能整合，也可以打造一个实用的 QQ 软件：
 
 1.  安装并运行 [Chromium (简体中文)](/index.php/Chromium_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Chromium (简体中文)")或者[火狐浏览器firefox](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Firefox (简体中文)")，并打开 [SmartQQ](http://w.qq.com/)，需要手机QQ客户端扫描二维码登陆，功能少。
-
-### 官方 Adobe Air 客户端
-
-**警告:** Adobe Air 的 Linux 版本似乎已经停止开发，且从 [Arch User Repository (简体中文)](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 编译安装时会用到大量 lib32 库，会与 64位 Arch Linux 原有的库发生冲突，不推荐使用
-
-腾讯官方提供的 WebQQ 客户端，基于 Adobe Air 平台。
-
-在 [Arch User Repository (简体中文)](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 安装 [webqq](https://aur.archlinux.org/packages/webqq/) 即可。
-
-### PyWebQQ (python-webqq)
-
-**注意:** 据用户报告，访问速度非常差，不推荐使用
-
-[PyWebQQ（python-webqq）](http://code.google.com/p/python-webqq/)是用 python-webkit 包装而成的 WebQQ 桌面版，均可以访问 Smart QQ 或 WebQQ。由于使用单独的浏览器内核，可以避免长期挂机拖慢浏览器。并且提供了简单的桌面整合，能最小化到托盘，支持消息提醒。
-
-在 [Arch User Repository (简体中文)](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 安装 [python-webqq-svn](https://aur.archlinux.org/packages/python-webqq-svn/) 即可。
-
-### pidgin-lwqq
-
-**警告:** 该作者已经停止对其更新，见（[github页面](https://github.com/xiehuc/pidgin-lwqq) ）。
-
-[pidgin-lwqq](https://github.com/xiehuc/pidgin-lwqq) 是一个 [Pidgin (简体中文)](/index.php/Pidgin_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pidgin (简体中文)") 插件，实现了 WebQQ 协议支持。目前该项目已经停止更新。
-
-### telepathy/empathy-lwqq
-
-telepathy的插件[telepathy-lwqq-git](https://aur.archlinux.org/packages/telepathy-lwqq-git/)，[empathy](https://www.archlinux.org/packages/?name=empathy)（基于telepahty框架）也支持。
-
-### gtkqq
-
-**警告:** 据用户报告，该程序缺失维护长达两年，已不可用
-
-[gtkqq](https://github.com/kernelhcy/gtkqq)是基于 WebQQ 协议的QQ客户端，基于GTK+开发。界面简洁清爽，功能比较完善。但目前还出于开发阶段，易崩溃。
-
-在 [Arch User Repository (简体中文)](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 安装 [gtkqq-git](https://aur.archlinux.org/packages/gtkqq-git/) 即可。
-
-### qtqq
-
-**警告:** 程序无法获取好友列表，暂不可用，作者未回应
-
-用 [qt (简体中文)](/index.php/Qt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Qt (简体中文)") 开发的 qq 客户端，基于 webqq3.0 协议。
-
-在 [Arch User Repository (简体中文)](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 安装 [qtqq-git](https://aur.archlinux.org/packages/qtqq-git/) 即可。
 
 ### weechat-webqq
 
@@ -110,34 +57,18 @@ SmartIM 是一个用java写的，包含简单的IM API封装的小程序，支�
 
 Github 地址： [Jamling/SmartIM](https://github.com/Jamling/SmartIM)。
 
-## 独立开发
-
-### libqq
-
-[libqq](http://code.google.com/p/libqq-pidgin/)是 Pidgin 下的QQ协议插件，采用2010版协议改写。目前已比较稳定，但开发貌似停滞不前。
-
-AUR：[libqq-svn](https://aur.archlinux.org/packages/libqq-svn/)、[libqq-pidgin-svn](https://aur.archlinux.org/packages/libqq-pidgin-svn/)（貌似一样）
-
-**优点**：基于功能强大的Pidgin，无需安装第三方软件，桌面整合好，节省资源。
-**缺点**：仍有稳定性问题。
-
-## 官方版本
-
-**警告:** QQ for Linux 已经无法使用。请勿尝试此方案。
-
-腾讯在 2008 年底发布了 QQ for Linux 1.0 Preview 3
-
 ## Wine 模拟
 
 [Wine (简体中文)](/index.php/Wine_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wine (简体中文)") 是类 UNIX 系统下运行微软 Windows 程序的"兼容层"，可以用它模拟 Windows 环境来运行 QQ/TM。
 
-**警告:** Wine QQ/TM 在平铺式窗口管理器下的样式可能会大规模失控，需要进行额外的配置
+**警告:**
+
+*   受 wine 上游的一个[Bug](https://bugs.winehq.org/show_bug.cgi?id=45199) 影响，官方仓库中提供的 [wine](https://www.archlinux.org/packages/?name=wine) 自3.8开始无法运行许多程序，包括 QQ 和 TIM。截止3.15-1版本此问题仍未修复。您可以将[wine](https://www.archlinux.org/packages/?name=wine)[降级](/index.php/Downgrading_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Downgrading packages (简体中文)")到3.7来绕过这个问题。也可以按照[FS#58833](https://bugs.archlinux.org/task/58833)，使用[ABS](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")修改编译参数之后重新编译安装[wine](https://www.archlinux.org/packages/?name=wine)。
+*   Wine QQ/TIM 在平铺式窗口管理器下的样式可能会大规模失控，需要进行额外的配置。
 
 ### Wine QQ
 
 目前较为成熟的 Wine 模拟方案为[deepin-qq-im](https://aur.archlinux.org/packages/deepin-qq-im/)，也可以从 [ArchLinux CN 源](https://www.archlinuxcn.org/archlinux-cn-repo-and-mirror/) 安装 deepin-qq-im。
-
-**警告:** 受 wine 上游的一个[Bug](https://bugs.winehq.org/show_bug.cgi?id=45199) 影响，官方仓库中提供的[wine](https://www.archlinux.org/packages/?name=wine)自3.8开始无法运行许多程序，包括 QQ 和 TIM。截止3.15-1版本此问题仍未修复。您可以将[wine](https://www.archlinux.org/packages/?name=wine)[降级](/index.php/Downgrading_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Downgrading packages (简体中文)")到3.7来绕过这个问题。也可以按照[FS#58833](https://bugs.archlinux.org/task/58833)二楼的方法，使用[ABS](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")修改编译参数之后重新编译安装[wine](https://www.archlinux.org/packages/?name=wine)。
 
 之前比较好的解决方案有 [清风老师](http://phpcj.org/wineqq/) 提供的 Wine QQ 方案等。
 
@@ -217,8 +148,6 @@ $ wineconsole .wine/drive_c/run-qqlight.bat
 ### Wine TIM
 
 [TIM](http://im.qq.com/download/)是腾讯推出的主打办公协同的QQ版本。
-
-**警告:** 受 wine 上游的一个[Bug](https://bugs.winehq.org/show_bug.cgi?id=45199) 影响，官方仓库中提供的[wine](https://www.archlinux.org/packages/?name=wine)自3.8开始无法运行许多程序，包括 QQ 和 TIM。截止3.15-1版本此问题仍未修复。您可以将[wine](https://www.archlinux.org/packages/?name=wine)[降级](/index.php/Downgrading_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Downgrading packages (简体中文)")到3.7来绕过这个问题。也可以按照[FS#58833](https://bugs.archlinux.org/task/58833)二楼的方法，使用[ABS](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")修改编译参数之后重新编译安装[wine](https://www.archlinux.org/packages/?name=wine)。
 
 同时，在 AUR 中，仍有已经稳定成熟的模拟方案：[deepin-wine-tim](https://aur.archlinux.org/packages/deepin-wine-tim/)。当然，你也可以选择按下文的方法手动安装配置。
 
@@ -339,10 +268,6 @@ wine '~/.wine/drive_c/Program Files/Tencent/TIM/Bin/TIM.exe'
 *   xfce4(xfwm4)下无法输入表情
 
 打开设置管理器-窗口管理器微调-焦点，取消勾选激活焦点防窃取和遵照标准的ICCCM焦点提示即可。 原因是表情窗口获取焦点时会发生不兼容现象。
-
-*   wine-3.8与wine-3.9版本出现无法加载gdi32.dll错误
-
-Archlinux打包的wine-3.8与wine-3.9.1版本会出现无法加载gdi32.dll的错误，可以使用命令“sudo pacman -U /var/cache/pacman/pkg/wine-3.7-1-x86_64.pkg.tar.xz”将wine降级到之前的3.7版本解决。为了避免被升级到新3.9版本，可以编辑"/etc/pacman.conf"文档，去掉"IgnorePkg"一行前面的"#"号，并在该行"="号后面添加"wine"；在后续更新中该问题得到解决后，记得去掉wine，以便更新之。
 
 ### CrossOver TM2013
 

@@ -29,7 +29,8 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 *   [5 HP](#HP)
     *   [5.1 HPLIP](#HPLIP)
     *   [5.2 foo2zjs](#foo2zjs)
-*   [6 Konica](#Konica)
+*   [6 Konica Minolta](#Konica_Minolta)
+    *   [6.1 foo2zjs](#foo2zjs_2)
 *   [7 Lexmark](#Lexmark)
     *   [7.1 Utilities](#Utilities_2)
     *   [7.2 Custom drivers](#Custom_drivers_3)
@@ -460,7 +461,7 @@ If your printer is [listed as requiring a binary plugin](https://developers.hp.c
 
 [foo2zjs](http://foo2zjs.rkkda.com/) supports some HP LaserJet printers. As of June 2018 the hplip package interferes with [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/), as described at [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1662809) and [FS#58815](https://bugs.archlinux.org/task/58815).
 
-## Konica
+## Konica Minolta
 
 | Printer | Driver/filter | Notes |
 | Minolta Magicolor 1600W | [foomatic](/index.php/CUPS#Foomatic "CUPS") |
@@ -471,6 +472,10 @@ If your printer is [listed as requiring a binary plugin](https://developers.hp.c
 | Minolta Magicolor 2530DL |
 | Minolta Magicolor 4690MF |
 | Printer | Driver/filter | Notes |
+
+### foo2zjs
+
+[#foo2zjs](#foo2zjs), mentioned above for supporting some HP printers, also support some Minolta printers.
 
 ## Lexmark
 

@@ -10,6 +10,14 @@
 | Function/Multimedia Keys | Working |  ? |
 | Fingerprint sensor | Not working |  ? |
 
+Related articles
+
+*   [Dell XPS 13 (9333)](/index.php/Dell_XPS_13_(9333) "Dell XPS 13 (9333)")
+*   [Dell XPS 13 (9343)](/index.php/Dell_XPS_13_(9343) "Dell XPS 13 (9343)")
+*   [Dell XPS 13 (9350)](/index.php/Dell_XPS_13_(9350) "Dell XPS 13 (9350)")
+*   [Dell XPS 13 (9360)](/index.php/Dell_XPS_13_(9360) "Dell XPS 13 (9360)")
+*   [Dell XPS 13 2-in-1 (9365)](/index.php/Dell_XPS_13_2-in-1_(9365) "Dell XPS 13 2-in-1 (9365)")
+
 The Dell XPS 13 Early 2018 (9370) is the fifth-generation model of the XPS 13 line. The laptop was released in January 2018 in both a standard edition with Windows installed as well as a Developer Edition with Ubuntu 16.04 installed, featuring kernel 4.4 as of now. There are only minor hardware differences between them, mostly in regards to the mainboard microchip manufacturers. [According to Dell](https://www.dell.com/community/Linux-Developer-Systems/XPS-13-Fingerprint-reader-Linux-support/m-p/5090726/highlight/true#M7295) the fingerprint reader is not present on the Linux variant. Just like the older versions ([9333](/index.php/Dell_XPS_13_(9333) "Dell XPS 13 (9333)"), [9343](/index.php/Dell_XPS_13_(9343) "Dell XPS 13 (9343)"), [9350](/index.php/Dell_XPS_13_(9350) "Dell XPS 13 (9350)"), and [9360](/index.php/Dell_XPS_13_(9360) "Dell XPS 13 (9360)")) it is available in different hardware configurations as well. These fifth gen models includes Intel's eighth generation Kaby Lake R processors, and can be configured with up to 16GB LPDDR3 2133 MHz RAM and a 1TB PCI SSD. Unlike previous iterations, the Wi-Fi/BT module is soldered and cannot be replaced, only the Killer 1435 (QCA6174A) is available for consumers, enterprise versions with the Intel 8265 modem also exist.
 
 The installation process for Arch on the XPS 13 does not differ from any other PC. For installation help, please see the [Installation guide](/index.php/Installation_guide "Installation guide") and [UEFI](/index.php/UEFI "UEFI"). This page covers the current status of hardware support on Arch, as well as post-installation recommendations.

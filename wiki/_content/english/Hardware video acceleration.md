@@ -91,7 +91,7 @@ There are several ways to achieve this on Linux:
 | [VLC media player](/index.php/VLC_media_player "VLC media player") | Yes | Yes | No | [VLC media player#Hardware video acceleration](/index.php/VLC_media_player#Hardware_video_acceleration "VLC media player") |
 | [mpv](/index.php/Mpv "Mpv") | Yes | Yes | Yes | [mpv#Hardware decoding](/index.php/Mpv#Hardware_decoding "Mpv") |
 | [MPlayer](/index.php/MPlayer "MPlayer") | Yes, via [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/) | Yes | No | [MPlayer#Hardware video acceleration](/index.php/MPlayer#Hardware_video_acceleration "MPlayer") |
-| [Flash](/index.php/Flash "Flash") | No | Yes | No | [Flash#Configuration](/index.php/Flash#Configuration "Flash") |
+| [Flash](/index.php/Flash "Flash") | No | NPAPI-only | No | [Flash#Configuration](/index.php/Flash#Configuration "Flash") |
 | [Kodi](/index.php/Kodi "Kodi") | Yes | Yes | Yes | [Kodi#Hardware video acceleration](/index.php/Kodi#Hardware_video_acceleration "Kodi") |
 | [Firefox](/index.php/Firefox "Firefox") | No | No | No | [Hardware decoding on Linux tracker bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1210726) |
 | [Chromium](/index.php/Chromium "Chromium") | Yes, via [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/) | No | No | [Chromium#Hardware video acceleration](/index.php/Chromium#Hardware_video_acceleration "Chromium") |

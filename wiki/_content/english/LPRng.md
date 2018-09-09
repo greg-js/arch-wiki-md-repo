@@ -144,7 +144,7 @@ This will check your configuration and create spool directories in `/var/spool/l
 
 ### Start the lpd daemon
 
-LPRng runs a daemon in background called `lpd` to manage print requests. Enable and start this daemon using [systemd](/index.php/Systemd "Systemd"). If these commands complete without complaint, you should be good to go.
+LPRng runs a daemon in background called `lpd` to manage print requests. [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") this daemon using [systemd](/index.php/Systemd "Systemd"). If these commands complete without complaint, you should be good to go.
 
 ```
 systemctl start lpd.service
@@ -152,7 +152,7 @@ systemctl enable lpd.service
 
 ```
 
-If any configuration files are changed, one must restart `lpd`.
+If any configuration files are changed, one must [restart](/index.php/Restart "Restart") `lpd`.
 
 ## Usage
 

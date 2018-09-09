@@ -14,7 +14,7 @@ This article is divided into three parts. In the first part I am going to show y
         *   [1.2.3 Install ttf-vdrsymbols](#Install_ttf-vdrsymbols)
         *   [1.2.4 start-stop-daemon](#start-stop-daemon)
         *   [1.2.5 vdr](#vdr)
-        *   [1.2.6 libblueray](#libblueray)
+        *   [1.2.6 libbluray](#libbluray)
         *   [1.2.7 xine-lib](#xine-lib)
         *   [1.2.8 vdr-plugin-xineliboutput-git](#vdr-plugin-xineliboutput-git)
     *   [1.3 DVB Card Kernel Modules and Firmware](#DVB_Card_Kernel_Modules_and_Firmware)
@@ -127,7 +127,7 @@ $ cd ..
 
 ```
 
-#### libblueray
+#### libbluray
 
 ```
 $ cd libbluray/

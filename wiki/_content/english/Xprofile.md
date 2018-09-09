@@ -11,7 +11,6 @@ The xprofile file is similar in style to [xinitrc](/index.php/Xinitrc "Xinitrc")
 The xprofile files are natively sourced by the following display managers:
 
 *   [GDM](/index.php/GDM "GDM") - `/etc/gdm/Xsession`
-*   KDM - `/usr/share/config/kdm/Xsession`
 *   [LightDM](/index.php/LightDM "LightDM") - `/etc/lightdm/Xsession`
 *   [LXDM](/index.php/LXDM "LXDM") - `/etc/lxdm/Xsession`
 *   [SDDM](/index.php/SDDM "SDDM") - `/usr/share/sddm/scripts/Xsession`
@@ -23,7 +22,6 @@ It is possible to source xprofile from a session started with one of the followi
 *   `startx`
 *   `xinit`
 *   [XDM](/index.php/XDM "XDM")
-*   [SLiM](/index.php/SLiM "SLiM")
 *   Any other [Display manager](/index.php/Display_manager "Display manager") which uses `~/.xsession` or `~/.xinitrc`
 
 All of these execute, directly or indirectly, `~/.xinitrc` or `/etc/X11/xinit/xinitrc` if it does not exist. That is why xprofile has to be sourced from these files.

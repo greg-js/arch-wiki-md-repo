@@ -45,7 +45,7 @@ This article describes how [Yubico](https://yubico.com)'s [YubiKey](https://en.w
     *   [6.1 Enable the CCID mode](#Enable_the_CCID_mode)
     *   [6.2 Use OpenPGP smartcard mode](#Use_OpenPGP_smartcard_mode)
 *   [7 Tips and tricks](#Tips_and_tricks)
-    *   [7.1 YubiKey and cryptsetup encrypted partition/disk](#YubiKey_and_cryptsetup_encrypted_partition.2Fdisk)
+    *   [7.1 YubiKey and LUKS encrypted partition/disk](#YubiKey_and_LUKS_encrypted_partition.2Fdisk)
     *   [7.2 Yubikey and KeePass](#Yubikey_and_KeePass)
         *   [7.2.1 keepassx2](#keepassx2)
         *   [7.2.2 KeePassXC](#KeePassXC)
@@ -411,11 +411,11 @@ See [GnuPG#Smartcards](/index.php/GnuPG#Smartcards "GnuPG")
 
 ## Tips and tricks
 
-### YubiKey and cryptsetup encrypted partition/disk
+### YubiKey and LUKS encrypted partition/disk
 
-Yubikey can be used to strenghen the security of your cryptsetup encrypted partition/disk (e.g. in LUKS format).
+YubiKey can be used to strengthen the security of your [LUKS](https://wiki.archlinux.org/index.php/Dm-crypt) encrypted partition/disk.
 
-A robust and comfortable to use implementation of a initramfs hook to integrate your yubikey using Challenge-Response (using a static non-private challenge) and optionally a password on top of it [can be found here](https://github.com/agherzan/yubikey-full-disk-encryption).
+One way to achieve it is to use a Challenge-Response mode for creating strong LUKS passphrases. [yubikey-full-disk-encryption](https://github.com/agherzan/yubikey-full-disk-encryption) is a robust and comfortable to use implementation of an [initramfs](/index.php/Initramfs "Initramfs") hook and on-demand scripts to create/open LUKS encrypted partitions/disks using a stored or manually provided challenge.
 
 Another way of using YubiKey for full disk encryption is to utilize its OpenPGP applet to decrypt the LUKS keyfile during boot. [initramfs-scencrypt](https://github.com/fuhry/initramfs-scencrypt) is a set of hooks for initramfs that automate this process.
 

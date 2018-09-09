@@ -140,7 +140,7 @@ rtorrent in the repos should be compiled with XML-RPC support.
 Add the following line to your rtorrent config file, usually ~/.rtorrent.rc.
 
 ```
-scgi_port = localhost:5050
+scgi_port = 127.0.0.1:5050
 
 ```
 

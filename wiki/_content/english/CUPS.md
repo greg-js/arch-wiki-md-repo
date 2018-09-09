@@ -151,8 +151,8 @@ See [CUPS local documentation](http://localhost:631/help/options.html) for more 
 	List the devices
 
 ```
-# lpinfo -v # 
-$ /usr/lib/cups/backend/snmp *ip_address* # Use SNMP to find a URI
+# lpinfo -v
+$ /usr/lib/cups/backend/snmp *ip_address*  # Use SNMP to find a URI
 
 ```
 

@@ -228,7 +228,7 @@ Ethernet controller is identified as `00:19.0 Ethernet controller: Intel Corpora
 
 #### UMTS
 
-The UMTS device is a Ericsson F3507g MiniPCIe WWAN/GPS card. The vendor identifier is 0bdb, while the device identifier is 1900 (both values are hexadecimal values). You can get more information about the card by using lsusb/usbview. In order to use the UTMS modem you will have to activate the device. You can edit and verify the settings of your UMTS modem by using minicom or another terminal emulation program like [picocom](http://code.google.com/p/picocom/) or [dterm](http://www.knossos.net.nz/dterm.html). I've used [tinycom](http://brokestream.com/tinyserial.html) which is inspired by the well known FreeBSD program 'tips'.
+The UMTS device is a Ericsson F3507g MiniPCIe WWAN/GPS card. The vendor identifier is 0bdb, while the device identifier is 1900 (both values are hexadecimal values). You can get more information about the card by using lsusb/[usbview](https://www.archlinux.org/packages/?name=usbview). In order to use the UTMS modem you will have to activate the device. You can edit and verify the settings of your UMTS modem by using minicom or another terminal emulation program like [picocom](http://code.google.com/p/picocom/) or [dterm](http://www.knossos.net.nz/dterm.html). I've used [tinycom](http://brokestream.com/tinyserial.html) which is inspired by the well known FreeBSD program 'tips'.
 
 ##### Activate the UMTS device
 

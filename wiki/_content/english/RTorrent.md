@@ -101,7 +101,7 @@ session.path.set = ~/.rtorrent.session
 The `schedule2` option has rTorrent watch a particular directory for new torrent files. Saving a torrent file to this directory will automatically start the download. Remember to create the directory that will be watched (e.g. `mkdir ~/watch`). Also, be careful when using this option as rTorrent will move the torrent file to your session folder and rename it to its hash value.
 
 ```
-schedule2 = watch_directory,5,5,load_start=/home/*user*/watch/*.torrent
+schedule2 = watch_directory,5,5,load.start=/home/*user*/watch/*.torrent
 schedule2 = untied_directory,5,5,stop_untied=
 schedule2 = tied_directory,5,5,start_tied=
 
