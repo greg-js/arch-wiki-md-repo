@@ -48,15 +48,16 @@ As of kernel 4.1.3 (released July 2015), a patched kernel is no longer necessary
     *   [2.9 Calibrated ICC profile](#Calibrated_ICC_profile)
         *   [2.9.1 QHD+ model](#QHD.2B_model)
 *   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 DE can't connect Bluetooth devices](#DE_can.27t_connect_Bluetooth_devices)
-    *   [3.2 Pink & green artifacts in video or webcam output](#Pink_.26_green_artifacts_in_video_or_webcam_output)
-    *   [3.3 Graphical artifacting/instability after S3 resume](#Graphical_artifacting.2Finstability_after_S3_resume)
-    *   [3.4 Connection issues with Broadcom wireless](#Connection_issues_with_Broadcom_wireless)
-    *   [3.5 rfkill issues with KDE](#rfkill_issues_with_KDE)
-    *   [3.6 EFISTUB does not boot](#EFISTUB_does_not_boot)
-    *   [3.7 Random kernel hangs at boot](#Random_kernel_hangs_at_boot)
-    *   [3.8 Sound doesn't work after upgrading to kernel 4.4+](#Sound_doesn.27t_work_after_upgrading_to_kernel_4.4.2B)
-    *   [3.9 Loud cracks/noise during boot or audio playback](#Loud_cracks.2Fnoise_during_boot_or_audio_playback)
+    *   [3.1 Sometimes the system fails to resume from suspend after closing and reopening the LID](#Sometimes_the_system_fails_to_resume_from_suspend_after_closing_and_reopening_the_LID)
+    *   [3.2 DE can't connect Bluetooth devices](#DE_can.27t_connect_Bluetooth_devices)
+    *   [3.3 Pink & green artifacts in video or webcam output](#Pink_.26_green_artifacts_in_video_or_webcam_output)
+    *   [3.4 Graphical artifacting/instability after S3 resume](#Graphical_artifacting.2Finstability_after_S3_resume)
+    *   [3.5 Connection issues with Broadcom wireless](#Connection_issues_with_Broadcom_wireless)
+    *   [3.6 rfkill issues with KDE](#rfkill_issues_with_KDE)
+    *   [3.7 EFISTUB does not boot](#EFISTUB_does_not_boot)
+    *   [3.8 Random kernel hangs at boot](#Random_kernel_hangs_at_boot)
+    *   [3.9 Sound doesn't work after upgrading to kernel 4.4+](#Sound_doesn.27t_work_after_upgrading_to_kernel_4.4.2B)
+    *   [3.10 Loud cracks/noise during boot or audio playback](#Loud_cracks.2Fnoise_during_boot_or_audio_playback)
 *   [4 See also](#See_also)
 
 ## Model differences
@@ -208,6 +209,19 @@ This profile has been made with the spectrophotometer's high resolution spectral
 *   [QHD+, D65, Gamma 2.2, max luminance](https://mega.nz/#!nkNVQDCI!YYcS32HLWk1Aqry30dmOrt0wrfH9W_VczNesHQEpG_U).
 
 ## Troubleshooting
+
+### Sometimes the system fails to resume from suspend after closing and reopening the LID
+
+According to [this kernel.org bug report](https://bugzilla.kernel.org/show_bug.cgi?id=86241) this is supposed to be fixed since a long time, yet it still happens with kernels up to 4.18.6 (at least on the QHD+ model). You can work it around with the following command:
+
+```
+sudo cat << EOF > /etc/modprobe.d/blacklist.suspend-bug.conf
+
+blacklist mei
+blacklist mei_me
+EOF
+
+```
 
 ### DE can't connect Bluetooth devices
 

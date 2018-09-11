@@ -218,7 +218,7 @@ menuentry '[loopback]archlinux-2017.10.01-x86_64.iso' {
 	set isofile='/boot/iso/archlinux-2017.10.01-x86_64.iso'
 	loopback loop $isofile
 	linux (loop)/arch/boot/x86_64/vmlinuz img_dev=$imgdevpath img_loop=$isofile earlymodules=loop
-	initrd (loop)/arch/boot/intel_ucode.img (loop)/arch/boot/amd_ucode.img initrd (loop)/arch/boot/x86_64/archiso.img
+	initrd (loop)/arch/boot/intel_ucode.img (loop)/arch/boot/amd_ucode.img (loop)/arch/boot/x86_64/archiso.img
 }
 ```
 

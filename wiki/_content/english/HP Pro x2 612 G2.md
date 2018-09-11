@@ -50,7 +50,7 @@ The HP Pro x2 612 G2 has Intel HD Graphics 615 integrated graphics, see [Intel g
 
 ## IIO Sensors
 
-[iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) is working with kernel 4.11\. With kernel version 4.12 is not working
+[iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) is working with kernel 4.11\. With kernel version 4.12 is not working
 
 [Issue on GitHub](https://github.com/hadess/iio-sensor-proxy/issues/163)
 

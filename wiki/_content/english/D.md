@@ -53,7 +53,7 @@ which will simply compile and run without leaving any object files in the direct
 
 ## Considerations
 
-There are however possible choices regarding the compiler you choose. The standard (reference one) is dmd, but [gdc](https://aur.archlinux.org/packages/gdc/) (GNU D Compiler) and [ldc](https://www.archlinux.org/packages/?name=ldc) (LLVM D Compiler) are also popular. Those are also in [community].
+There are however possible choices regarding the compiler you choose. The standard (reference one) is dmd, but [gdc](https://www.archlinux.org/packages/?name=gdc) (GNU D Compiler) and [ldc](https://www.archlinux.org/packages/?name=ldc) (LLVM D Compiler) are also popular. Those are also in [community].
 
 As of April 2017 [dmd's backend is now FOSS](https://github.com/dlang/dmd/pull/6680) (Boost-licensed). All 3 compilers share same front-end code and thus have almost identical support for language features (assuming same front-end version).
 

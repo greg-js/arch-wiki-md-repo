@@ -84,7 +84,7 @@ $ ln -s `/etc/xdg/qtchooser/4.conf` `~/.config/qtchooser/default.conf`
 
 *   **[Oxygen](https://en.wikipedia.org/wiki/Oxygen_Project "wikipedia:Oxygen Project")** — Одна из стандартных тем рабочего стола KDE.
 
-	[http://www.oxygen-icons.org/](http://www.oxygen-icons.org/) || [kdebase-runtime](https://www.archlinux.org/packages/?name=kdebase-runtime)
+	[http://www.oxygen-icons.org/](http://www.oxygen-icons.org/) || [kdebase-runtime](https://aur.archlinux.org/packages/kdebase-runtime/)
 
 *   **QtCurve** — Очень гибкая в настройке и популярная тема рабочего стола с поддержкой приложений GTK+ и Qt.
 
@@ -257,8 +257,8 @@ Rectangle {
 #### Python (PyQt)
 
 *   Пакеты:
-    *   [python-pyqt4](https://www.archlinux.org/packages/?name=python-pyqt4) — привязки Python 3.x для Qt 4
-    *   [python2-pyqt4](https://www.archlinux.org/packages/?name=python2-pyqt4) — привязки Python 2.x для Qt 4
+    *   [python-pyqt4](https://aur.archlinux.org/packages/python-pyqt4/) — привязки Python 3.x для Qt 4
+    *   [python2-pyqt4](https://aur.archlinux.org/packages/python2-pyqt4/) — привязки Python 2.x для Qt 4
     *   [python-pyqt5](https://www.archlinux.org/packages/?name=python-pyqt5) — привязки Python 3.x для Qt 5
     *   [python2-pyqt5](https://www.archlinux.org/packages/?name=python2-pyqt5) — привязки Python 2.x для Qt 5
 *   Сайт: [http://www.riverbankcomputing.co.uk/software/pyqt/intro](http://www.riverbankcomputing.co.uk/software/pyqt/intro)

@@ -225,7 +225,7 @@ $ pactl load-module module-dbus-protocol
 
 #### Installazione ed esecuzione del frontend grafico
 
-Si installi il pacchetto [python2-pyqt4](https://www.archlinux.org/packages/?name=python2-pyqt4) e si esegua:
+Si installi il pacchetto [python2-pyqt4](https://aur.archlinux.org/packages/python2-pyqt4/) e si esegua:
 
 ```
 $ qpaeq

@@ -39,4 +39,4 @@ Front Camera is detected properly and working fine. Camera on the back is not de
 
 ## Sensors
 
-Luxsensor and Gyroscope are working well under [GNOME](/index.php/GNOME "GNOME") with [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) installed.
+Luxsensor and Gyroscope are working well under [GNOME](/index.php/GNOME "GNOME") with [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) installed.

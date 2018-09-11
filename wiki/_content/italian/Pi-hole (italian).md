@@ -156,6 +156,7 @@ Abilita `nginx.service` `php-fpm.service` e ri/avvia i servizi.
 *   Se configuri usando il metodo del DHCP server e su un apparato il blocco della pubblicità non funziona, potrebbe avere ancora un rilascio DHCP obsoleto. Se non sai come rinnovarlo, prova a riavviare l'apparato.
 *   Un semplice metodo per capire se il router è configurato correttamente è per prima cosa rinnovare il rilascio DHCP, quindi verificare il contenuto del file `/etc/resolv.conf` su un client Linux. Si dovrebbe vedere l'indirizzo IP di Pi-hole e non l'indirizzo del router.
 *   Se hai problemi con il secondo metodo, prova a disabilitare il `dns-rebind` sul router (se presente).
+    *   Questo potrebbe anche risolvere i problemi di velocità, dove i client devono aspettare alcuni secondi per avere una risposta dal server DNS di pi-hole.
 
 ### Usare Pi-hole attraverso OpenVPN
 

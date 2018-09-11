@@ -1,8 +1,10 @@
-*The LPRng software is an enhanced, extended, and portable implementation of the Berkeley LPR print spooler functionality. While providing the same interface and meeting RFC1179 requirements, the implementation is completely new and provides support for the following features: lightweight (no databases needed) lpr, lpc, and lprm programs; dynamic redirection of print queues; automatic job holding; highly verbose diagnostics; multiple printers serving a single queue; client programs do not need to run SUID root; greatly enhanced security checks; and a greatly improved permission and authorization mechanism.*[[1]](http://www.lprng.org/)
+*The LPRng software is an enhanced, extended, and portable implementation of the Berkeley LPR print spooler functionality. While providing the same interface and meeting RFC1179 requirements, the implementation is completely new and provides support for the following features: lightweight (no databases needed) lpr, lpc, and lprm programs; dynamic redirection of print queues; automatic job holding; highly verbose diagnostics; multiple printers serving a single queue; client programs do not need to run SUID root; greatly enhanced security checks; and a greatly improved permission and authorization mechanism.*
 
-[LPRng](http://www.lprng.com/) is mature and stable and incorporates a flexible print filtering mechanism. It excels as a print server but can be used as a print client. It can also print from [CUPS](/index.php/CUPS "CUPS") clients installed on other machines with minor hand configuration on the CUPS side.
+LPRng is mature and stable and incorporates a flexible print filtering mechanism. It excels as a print server but can be used as a print client. It can also print from [CUPS](/index.php/CUPS "CUPS") clients installed on other machines with minor hand configuration on the CUPS side.
 
 **Note:** A disadvantage of LPRng is that Gnome3/GTK3 (including chrome and chromium) and KDE do not support lpr printing from their GUI. However, printing to a file and then using lpr works, though it is inconvenient.
+
+Wikipedia [LPRng](https://en.wikipedia.org/wiki/LPRng) article, and the history paragraph of one of two sites for [LPRng](http://lprng.sourceforge.net/) explain why there is another site for [LPRng](http://www.lprng.com/).
 
 ## Contents
 
@@ -35,7 +37,7 @@
     *   [poppler](https://www.archlinux.org/packages/?name=poppler)
     *   [enscript](https://www.archlinux.org/packages/?name=enscript)
     *   [ghostscript](https://www.archlinux.org/packages/?name=ghostscript)
-    *   [hplip](https://www.archlinux.org/packages/?name=hplip)
+    *   [hplip](https://www.archlinux.org/packages/?name=hplip) or [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/). hplip might interfere to foo2zjs-nightly, so first try whatever suits you most.
     *   [foomatic-filters-lprng](https://aur.archlinux.org/packages/foomatic-filters-lprng/)
 
 ## Configuration
@@ -134,7 +136,7 @@ HL2035:\
 
 Generally, one computer should be designated as the server for one or more printers. Other client computers should send their print jobs to the server rather than the printer directly.
 
-The rather non-obvious server setup in `printcap_server` is needed to make print filtering work on network printers, as opposed to printers attached directly to the server computer via, say, a USB port. (See the reference manual[[2]](http://www.lprng.org/LPRng-Reference/LPRng-Reference.html).)
+The rather non-obvious server setup in `printcap_server` is needed to make print filtering work on network printers, as opposed to printers attached directly to the server computer via, say, a USB port. (See the reference manual[[1]](http://www.lprng.org/LPRng-Reference/LPRng-Reference.html).)
 
 After creating the printcap file, run the command as root
 

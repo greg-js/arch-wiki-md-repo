@@ -43,7 +43,7 @@ To fully support all hardware in X, one needs to ensure that the following drive
 *   [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) (for the clickpad)
 *   [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) (for the digitizers)
 *   [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) (for the GPU)
-*   [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) (accelerometer/gyroscope, ambient light sensor, digital campass)
+*   [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) (accelerometer/gyroscope, ambient light sensor, digital campass)
 
 ### Bluetooth
 
@@ -143,16 +143,16 @@ Please note that you can have both the thinkpad-helix-utils **Toggle Touch** and
 
 ### Sensors
 
-For X11 to utilize, install the AUR package [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) to expose the dbus events. For example, [gnome](https://www.archlinux.org/groups/x86_64/gnome/) will automatically utilize the dbus events exposed by the [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) package to:
+For X11 to utilize, install the AUR package [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) to expose the dbus events. For example, [gnome](https://www.archlinux.org/groups/x86_64/gnome/) will automatically utilize the dbus events exposed by the [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) package to:
 
 *   Adjust the display brightness when moving from dark to bright lighting
 *   Automatically rotate the display based on orientation.
 
-See the upstream source for more information about [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) and how to configure/test its functionality.
+See the upstream source for more information about [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) and how to configure/test its functionality.
 
 ### Screen Rotation
 
-If you have both digitizers configured through the [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) driver and the [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) package, they will automatically rotate with the display.
+If you have both digitizers configured through the [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) driver and the [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) package, they will automatically rotate with the display.
 
 Alternatively, you can use a simple command like `xrandr --output eDP1 --rotate left` to rotate the screen with ease.
 

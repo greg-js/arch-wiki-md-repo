@@ -68,7 +68,7 @@ To prevent programs from overwriting `/etc/resolv.conf` you can also write-prote
 
 ```
 
-**Tip:** If you want multiple processes to write to `/etc/resolv.conf`, you can use [openresolv](/index.php/Openresolv "Openresolv").
+**Tip:** If you want multiple processes to write to `/etc/resolv.conf`, you can use [resolvconf](/index.php/Resolvconf "Resolvconf").
 
 ### Limit lookup time
 

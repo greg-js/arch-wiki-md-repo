@@ -104,7 +104,12 @@ Access permissions are displayed in three groups of characters, representing the
 List files owned by a user or group with the *find* utility:
 
 ```
-# find / -group *group*
+# find / -group *groupname*
+
+```
+
+```
+# find / -group *groupnumber*
 
 ```
 

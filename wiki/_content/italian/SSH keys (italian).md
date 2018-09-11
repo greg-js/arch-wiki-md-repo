@@ -259,7 +259,7 @@ Chiudere la shell ed avviarla di nuovo. Dovrebbe apparire il portachiavi e se è
 
 È necessario avviare ssh-agent ogni volta che si avvia una nuova sessione di X. Ssh-agent verrà spento al termine della sessione X.
 
-Installare una variante di x11-ssh-askpass, che chiederà la password ogni volta che si apre un nuova sessione di X. Sarà possibile scegliere tra l'originale [x11-ssh-askpass](https://www.archlinux.org/packages/?name=x11-ssh-askpass) [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) (che utilizza [kdelibs](https://www.archlinux.org/packages/?name=kdelibs)) oppure [openssh-askpass](https://www.archlinux.org/packages/?name=openssh-askpass) (che utilizza le qt) tutti reperibili dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
+Installare una variante di x11-ssh-askpass, che chiederà la password ogni volta che si apre un nuova sessione di X. Sarà possibile scegliere tra l'originale [x11-ssh-askpass](https://www.archlinux.org/packages/?name=x11-ssh-askpass) [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) (che utilizza [kdelibs](https://aur.archlinux.org/packages/kdelibs/)) oppure [openssh-askpass](https://www.archlinux.org/packages/?name=openssh-askpass) (che utilizza le qt) tutti reperibili dai [repository ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
 
 Dopo aver installato il pacchetto, chiudendo la sessione X ed effettuando nuovamente l'accesso verrà richiesta la password all'avvio della sessione X senza doverla immettere successivamente.
 

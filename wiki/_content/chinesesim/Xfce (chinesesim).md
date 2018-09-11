@@ -327,7 +327,7 @@ $ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string 
 
 #### 键盘音量键
 
-[xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin) 提供了一个面板小程序，它支持键盘音量控制和音量提示。或者，可以用不提供面板图标的 [xfce4-volumed-pulse](https://aur.archlinux.org/packages/xfce4-volumed-pulse/)，它还提供键绑定和通知控制。当同时使用 [pasystray](https://aur.archlinux.org/packages/pasystray/) 进行更细微的控制时会很方便。
+[xfce4-pulseaudio-plugin](https://www.archlinux.org/packages/?name=xfce4-pulseaudio-plugin) 提供了一个面板小程序，它支持键盘音量控制和音量提示。或者，可以用不提供面板图标的 [xfce4-volumed-pulse](https://aur.archlinux.org/packages/xfce4-volumed-pulse/)，它还提供键绑定和通知控制。当同时使用 [pasystray](https://www.archlinux.org/packages/?name=pasystray) 进行更细微的控制时会很方便。
 
 还可以用 [xfce4-mixer](https://git.xfce.org/apps/xfce4-mixer/)，它同样提供面板小程序和键盘快捷键，并支持Alsa。然而，请注意，它是基于已在1.0中放弃的GStreamer 0.10的功能。
 

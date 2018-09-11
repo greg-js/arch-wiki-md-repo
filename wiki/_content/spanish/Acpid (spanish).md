@@ -1,16 +1,18 @@
-[acpid](http://acpid.sourceforge.net/) es un "demonio" flexible y extensible para entregar [eventos ACPI](/index.php?title=ACPI_modules_(Espa%C3%B1ol)&action=edit&redlink=1 "ACPI modules (Español) (page does not exist)"). Vigila `/proc/acpi/event` y cuando hay un evento, ejecuta programas para manejarlo. Estos eventos se activan mediante ciertas acciones, como:
+**Estado de la traducción:** este artículo es una versión traducida de [Acpid](/index.php/Acpid "Acpid"). Fecha de la última traducción/revisión: **2018-09**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Acpid&diff=0&oldid=515037).
 
-*   Presionar teclas especiales, incluyendo el botón de Encendido/Hibernar/Suspender.
-*   Cerrando la tapa del portátil
-*   Desconectar un adaptador de Corriente Alterna a un portátil.
-*   Desconectar un jack de un teléfono, etc.
+Related articles
 
-**acpid** puede ser usado así mismo, o combinado con un sistema más robusto como [pm-utils](/index.php?title=Pm-utils_(Espa%C3%B1ol)&action=edit&redlink=1 "Pm-utils (Español) (page does not exist)") y [cpufrequtils](/index.php/CPU_frequency_scaling_(Espa%C3%B1ol) "CPU frequency scaling (Español)") para una mayor solución del control de energía.
+*   [Módulos ACPI](/index.php/ACPI_modules "ACPI modules")
+*   [DSDT](/index.php/DSDT "DSDT")
 
-**Nota:**
+[acpid2](http://acpid2.sourceforge.net/) es un demonio flexible y extensible para entregar [eventos ACPI](/index.php/ACPI_modules "ACPI modules"). Cuando ocurre un evento, ejecuta programas para manejarlo. Estos eventos son desencadenados por ciertas acciones, tales como:
 
-*   [Entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)"), como [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), gestor de inicio de sesión de [systemd](/index.php/Systemd_(Espa%C3%B1ol)#ACPI_administraci.C3.B3n_de_la_energ.C3.ADa "Systemd (Español)") y algunos demonios [manejadores de teclas extra](/index.php?title=Extra_Keyboard_Keys_(Espa%C3%B1ol)&action=edit&redlink=1 "Extra Keyboard Keys (Español) (page does not exist)") pueden implementar métodos propios de manejo de eventos, independientemente de acpid. Usar más de un sistema a la vez puede provocar un comportamiento inesperado, como suspenderse dos veces de una, tras apretar una vez el botón de hibernar. Ten esto en cuenta y activa solo manejadores deseados.
-*   Ya que por defecto el script que provee acpid, **/etc/acpi/handler.sh**, sobrescribirá la funcionalidad del botón de encendido/apagado de tu entorno de escritorio, seguramente querrás cambiar la rutina de apagado de acpid para evitar apagar el ordenador cuando presiones de golpe el botón de encendido/apagado (ver instrucciones a continuación).
+*   Presionando teclas especiales, incluido el botón de Encendido/Suspensión/Hibernación
+*   Cerrando la tapa de un portátil
+*   (Des)Enchufando un adaptador de corriente de un portátil
+*   (Des)Enchufando el conector del teléfono (módem), etc.
+
+**Nota:** Los [entornos de escritorio](/index.php?title=Desktop_environments_(Espa%C3%B1ol)&action=edit&redlink=1 "Desktop environments (Español) (page does not exist)"), como [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), el administrador de inicio de sesión de [systemd](/index.php/Power_Management_(Espa%C3%B1ol)#Eventos_de_ACPI "Power Management (Español)") y algunos demonios que [manejan teclas extra](/index.php/Extra_keyboard_keys "Extra keyboard keys") pueden implementar esquemas propios de manejo de eventos, independientes de acpid. La ejecución de más de un sistema al mismo tiempo puede provocar un comportamiento inesperado, como suspender dos veces seguidas después de presionar un botón de suspensión. Tenga esto en cuenta y active solo los manejadores que necesite.
 
 ## Contents
 
@@ -29,12 +31,7 @@
 
 ## Instalación
 
-[Instala](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [acpid](https://www.archlinux.org/packages/?name=acpid), disponible en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
-
-Para que empiece el arranque :
-
-*   Si usas [systemd](/index.php/Systemd "Systemd") (seguramente), ingresa en un terminal `systemctl enable acpid` ;
-*   Si usas [initscripts](/index.php/Rc.conf "Rc.conf"), edita `/etc/rc.conf` como superusuario y añade `acpid` a la variable DAEMONS.
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [acpid](https://www.archlinux.org/packages/?name=acpid). Entonces [inicie](/index.php/Start_(Espa%C3%B1ol) "Start (Español)") y/o [active](/index.php/Enable_(Espa%C3%B1ol) "Enable (Español)") `acpid.service`.
 
 ## Configuración
 

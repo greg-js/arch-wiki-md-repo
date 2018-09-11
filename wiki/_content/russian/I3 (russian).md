@@ -243,7 +243,7 @@ $ cp /etc/i3status.conf ~/.config/i3status/config
 
 *   **py3status** — Расширяемая оболочка i3status написанная на Python.
 
-	[https://github.com/ultrabug/py3status](https://github.com/ultrabug/py3status) || [py3status](https://aur.archlinux.org/packages/py3status/)
+	[https://github.com/ultrabug/py3status](https://github.com/ultrabug/py3status) || [py3status](https://www.archlinux.org/packages/?name=py3status)
 
 *   **YaGoStatus** — Еще одна оболочка для i3status (и не только) написанная на Go.
 

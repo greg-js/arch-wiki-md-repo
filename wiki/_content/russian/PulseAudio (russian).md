@@ -80,7 +80,7 @@
 *   Консольные (CLI) микшеры: [ponymix](https://www.archlinux.org/packages/?name=ponymix) и [pamixer](https://www.archlinux.org/packages/?name=pamixer)
 *   Консольные (curses) микшеры: [pulsemixer](https://www.archlinux.org/packages/?name=pulsemixer)
 *   Контроль громкости по сети: [PaWebControl](https://github.com/Siot/PaWebControl)
-*   Иконки панели задач: [pasystray](https://aur.archlinux.org/packages/pasystray/), [pasystray-git](https://aur.archlinux.org/packages/pasystray-git/), [pasystray-gtk2-standalone](https://aur.archlinux.org/packages/pasystray-gtk2-standalone/), и [pasystray-gtk3-standalone](https://aur.archlinux.org/packages/pasystray-gtk3-standalone/)
+*   Иконки панели задач: [pasystray](https://www.archlinux.org/packages/?name=pasystray), [pasystray-git](https://aur.archlinux.org/packages/pasystray-git/), [pasystray-gtk2-standalone](https://aur.archlinux.org/packages/pasystray-gtk2-standalone/), и [pasystray-gtk3-standalone](https://aur.archlinux.org/packages/pasystray-gtk3-standalone/)
 
 **Совет:** Неавтономная (non-standalone) версия `pasystray` может быть установлена сразу и с GTK2, и с GTK3\. Выбор производится при установке. Версия в виде отдельной программы (standalone) устанавливает только одну.
 

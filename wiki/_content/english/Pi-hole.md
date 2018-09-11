@@ -156,7 +156,8 @@ Copy the package provided default config for Pi-hole:
 *   If you setup a DHCP-based method and ad blocking does not work on a device, it might still have an outdated DHCP lease. If you do not know how to renew your DHCP lease, try restarting the device.
 *   A simple check to see that the router is setup correctly is to first renew a DHCP lease, then inspect the contents of `/etc/resolv.conf` on a Linux client. One should see the IP address of the Pi-hole box, not the IP address of the router.
 *   If you are having problems with method 2, try disabling the `dns-rebind` feature on the router (if present).
-*   If `pihole -g` or updating lists from the web UI fail with `DNS Resolution is Currently Unavailable`, adding `127.0.0.1 pi.hole` to `/etc/hosts` [may fix it](https://github.com/pi-hole/pi-hole/issues/1800)
+*   If `pihole -g` or updating lists from the web UI fail with `DNS Resolution is Currently Unavailable`, adding `127.0.0.1 pi.hole` to `/etc/hosts` [may fix it](https://github.com/pi-hole/pi-hole/issues/1800).
+    *   This might also fix DNS performance issues, where clients have to wait few seconds to get reply from the pi-hole DNS server.
 
 ### Using Pi-hole together with OpenVPN
 
@@ -190,7 +191,9 @@ To disable the password protection set a blank password.
 
 ## Pi-hole Standalone
 
-The Archlinux Pi-hole Standalone variant is born from the need to use Pi-hole services in a mobile context. [Sky-hole article](http://dlaa.me/blog/post/skyhole) was inspirational.
+**Note:** [pi-hole-standalone](https://aur.archlinux.org/packages/pi-hole-standalone/) is not officially supported by the Pi-hole project.
+
+The Arch Linux Pi-hole Standalone variant is born from the need to use Pi-hole services in a mobile context. [Sky-hole article](http://dlaa.me/blog/post/skyhole) was inspirational.
 
 ### Installation
 

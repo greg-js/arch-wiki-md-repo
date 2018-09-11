@@ -3,7 +3,7 @@
 | Wireless | **Working*** | iwlwifi |
 | Audio | **Working** | snd_hda_intel |
 | Touchscreen | **Working** | usbtouchscreen |
-| Accelerometer | **Working** | iio-sensor-proxy (aur package) |
+| Accelerometer | **Working** | iio-sensor-proxy |
 | Touchpad | **Working** | xf86-input-synaptics |
 | Camera | **Working** |
 | Card Reader | **Unknown** |

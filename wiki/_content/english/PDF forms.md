@@ -54,7 +54,7 @@ Note that it cannot properly handle select boxes yet in forms.
 
 The package can be [installed](/index.php/Install "Install") with [masterpdfeditor](https://aur.archlinux.org/packages/masterpdfeditor/).
 
-**Note:** Version 5.x of Master PDF Editor has restricted capabilities on document editing and leaves watermarks when saving documents. To install older 4.x version use [masterpdfeditor4](https://aur.archlinux.org/packages/masterpdfeditor4/) package instead.
+**Note:** Version 5.x of Master PDF Editor has restricted capabilities on document editing and leaves watermarks when saving documents. To install older 4.x version use [masterpdfeditor-qt4](https://aur.archlinux.org/packages/masterpdfeditor-qt4/) package instead.
 
 ### LibreOffice Draw
 

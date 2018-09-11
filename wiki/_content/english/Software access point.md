@@ -196,12 +196,21 @@ This could be caused by low entropy. Consider installing [haveged](/index.php/Ha
 
 ### NetworkManager is interfering
 
-hostapd may not work, if the device is managed by NetworkManager. You can mask the device:
+hostapd may not work, if the device is managed by NetworkManager. You can mask the device using MAC:
 
  `/etc/NetworkManager/NetworkManager.conf` 
 ```
 [keyfile]
 unmanaged-devices=mac:<hwaddr>
+
+```
+
+Or interface name:
+
+ `/etc/NetworkManager/NetworkManager.conf` 
+```
+[keyfile]
+unmanaged-devices=interface-name:<ifname>
 
 ```
 

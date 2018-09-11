@@ -53,7 +53,7 @@ This model only supports the S0 (s2idle) sleep mode. [[3]](https://patchwork.ker
 
 ### Screen not rotating
 
-You need to install [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) for automatic screen rotation to work.
+You need to install [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) for automatic screen rotation to work.
 
 ### Fingerprint sensor
 

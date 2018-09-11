@@ -38,6 +38,8 @@ The installation process for Arch on the XPS 13 does not differ from any other P
 *   [10 Thermal Modes / Fan profiles](#Thermal_Modes_.2F_Fan_profiles)
 *   [11 Power Saving](#Power_Saving)
 *   [12 Touchpad](#Touchpad)
+    *   [12.1 Cursor Jump](#Cursor_Jump)
+    *   [12.2 Sensitivity](#Sensitivity)
 *   [13 Audio](#Audio)
 *   [14 USB Type-C ports](#USB_Type-C_ports)
 *   [15 Fingerprint reader](#Fingerprint_reader)
@@ -149,6 +151,8 @@ You can monitor the used power and also the temperature of your machine with the
 
 ## Touchpad
 
+### Cursor Jump
+
 The touchpad can sometimes produce a "cursor jump". Sometimes this is detected and worked around by libinput, resulting in a similar journal entry:
 
 ```
@@ -157,6 +161,15 @@ libinput error: event12 - DELL07E6:00 06CB:76AF Touchpad: kernel bug: Touch jump
 ```
 
 There is a [libinput bug about this](https://gitlab.freedesktop.org/libinput/libinput/issues/36) where the conclusion was that this is probably a hardware issue or a bug in the kernel driver.
+
+### Sensitivity
+
+By default, the [libinput](/index.php/Libinput "Libinput") driver might not have the desired sensitivity. The acceleration can be changed via [xinput](/index.php/Xinput "Xinput") as follows:
+
+```
+ xinput --set-prop $(xinput | grep 'DELL.*Touchpad' | awk '{print $6}' | sed 's/id=//g') 'libinput Accel Speed' 0.5
+
+```
 
 ## Audio
 

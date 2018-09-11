@@ -68,7 +68,7 @@ Fbterm supports diverse [input methods](https://en.wikipedia.org/wiki/Input_meth
 
 To use a background image, Fbterm can be set to take a screen shot of the frame buffer device when it starts.
 
-The following script (using the [fbv](https://aur.archlinux.org/packages/fbv/) image viewer) is recommended in the man page:
+The following script (using the [fbv](https://www.archlinux.org/packages/?name=fbv) image viewer) is recommended in the man page:
 
 ```
 #!/bin/bash

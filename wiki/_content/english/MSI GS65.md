@@ -136,7 +136,7 @@ Device Descriptor:
 
 ```
 
-The Steel Series lights on the keyboard cannot be configured with [msi-keyboard-git](https://aur.archlinux.org/packages/msi-keyboard-git/) or [msiklm-git](https://aur.archlinux.org/packages/msiklm-git/), because those tools only work with region-based RGB lighting. For this laptop model, the tool [msi-perkeyrgb](https://github.com/Askannz/msi-perkeyrgb) provides partial control.
+The Steel Series lights on the keyboard cannot be configured with [msi-keyboard-git](https://aur.archlinux.org/packages/msi-keyboard-git/) or [msiklm-git](https://aur.archlinux.org/packages/msiklm-git/), because those tools only work with region-based RGB lighting. For this laptop model, the tool [msi-perkeyrgb](https://aur.archlinux.org/packages/msi-perkeyrgb/) provides partial control.
 
 #### Button Mapping
 

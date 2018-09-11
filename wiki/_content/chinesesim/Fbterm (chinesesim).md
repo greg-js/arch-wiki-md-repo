@@ -80,7 +80,7 @@ input-method=fcitx-fbterm
 
 想要使用背景图片，Fbterm 可以设置成启动时截取 frame buffer 设备的屏幕。
 
-下面的脚本 (使用 [fbv](https://aur.archlinux.org/packages/fbv/) 图形查看器) 是在man页面推荐的：
+下面的脚本 (使用 [fbv](https://www.archlinux.org/packages/?name=fbv) 图形查看器) 是在man页面推荐的：
 
 ```
 #!/bin/bash

@@ -18,7 +18,7 @@ This article contains scanner or manufacturer-specific instructions for [SANE](/
     *   [5.3 Epson Perfection 1270](#Epson_Perfection_1270)
     *   [5.4 Epson Perfection 1670/2480/2580/3490/3590](#Epson_Perfection_1670.2F2480.2F2580.2F3490.2F3590)
 *   [6 Fujitsu](#Fujitsu)
-    *   [6.1 S300M](#S300M)
+    *   [6.1 ScanSnap S300/S300M](#ScanSnap_S300.2FS300M)
 *   [7 HP](#HP)
     *   [7.1 Alternative way to scan with network HP scanner](#Alternative_way_to_scan_with_network_HP_scanner)
 *   [8 Medion](#Medion)
@@ -220,9 +220,9 @@ Other modifications were not needed for the Epson Perfection 3590 and might not 
 
 ## Fujitsu
 
-### S300M
+### ScanSnap S300/S300M
 
-For the operation of the scanner S300M a firmware file `/usr/share/sane/epjitsu/300M_0C00.nal` is required, which can be downloaded [here](http://sange.fi/~atehwa/cgi-bin/piki.cgi/fujitsu%20scansnap%20s300%20firmware), or extracted from the Windows driver.
+For the operation of the ScanSnap scanners S300 and S300M a firmware file `/usr/share/sane/epjitsu/300M_0C00.nal` is required, which can be downloaded [here](http://sange.fi/~atehwa/cgi-bin/piki.cgi/fujitsu%20scansnap%20s300%20firmware) or extracted from the Windows driver. The `300M_0C00.nal` and `300_0C00.nal` files are interchangeable; the S300 device can use the `300M_0C00.nal` file and the S300M device can use the `300_0C00.nal` file. The file can be renamed to fit the entry in `/etc/sane.d/epjitsu.conf`, or that entry can be edited to match the file name.
 
 ## HP
 

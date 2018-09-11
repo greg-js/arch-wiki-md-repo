@@ -41,7 +41,7 @@ At the moment (10.06.2017) you need to build a Kernel with custom patches to get
 
 ## Orientation Sensor
 
-You currently need to install [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) and reboot to make the orientation sensor work. This will disable the keyboard and touchpad, and invert the side volume buttons when the screen is held at the right orientation or is folded. To make the screen rotate automatically according to its physical orientation, you could compile and use this daemon [[2]](https://github.com/mrquincle/yoga-900-auto-rotate) written in C.
+You currently need to install [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) and reboot to make the orientation sensor work. This will disable the keyboard and touchpad, and invert the side volume buttons when the screen is held at the right orientation or is folded. To make the screen rotate automatically according to its physical orientation, you could compile and use this daemon [[2]](https://github.com/mrquincle/yoga-900-auto-rotate) written in C.
 
 ## Wireless Networking
 

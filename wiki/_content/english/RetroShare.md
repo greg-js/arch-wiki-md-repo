@@ -49,7 +49,7 @@ First, you have to create new profile. Then you need to explicitly add friends t
 
 **Warning:** It is [stongly recommended](https://retroshareteam.wordpress.com/2018/03/13/release-notes-for-v0-6-4/) to use Retroshare-Tor for privacy reasons when connecting to people you don't know and trust IRL.
 
-*   Retroshare-Tor: Use [this onion chatserver](http://ruv6gkdi2p42juij.onion/) with [tor-browser](https://www.archlinux.org/packages/?name=tor-browser) to find new friends
+*   Retroshare-Tor: Use [this onion chatserver](http://ruv6gkdi2p42juij.onion/) with [tor-browser](https://aur.archlinux.org/packages/tor-browser/) to find new friends
 *   Non-Tor (not recommended): Use [this clearnet chatserver](https://retroshare.ch/) to find new friends
 
 ## External Links

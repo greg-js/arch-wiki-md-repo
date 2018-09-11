@@ -134,7 +134,7 @@ To start Plasma with [xinit/startx](/index.php/Xinit "Xinit"), append `exec star
 
 ## Configuration
 
-Most settings for KDE applications are stored in `~/.config`. However, configuring KDE is primarily done through the **System Settings** application. It can be started from a terminal by executing `systemsettings5`.
+Most settings for KDE applications are stored in `~/.config/`. However, configuring KDE is primarily done through the **System Settings** application. It can be started from a terminal by executing `systemsettings5`.
 
 ### Personalization
 
@@ -228,7 +228,7 @@ Icon themes can be installed and changed on *System Settings > Icons*.
 
 #### Space efficiency
 
-The Plasma Netbook shell has been dropped from Plasma 5, see the following [KDE forum post](https://forum.kde.org/viewtopic.php?f=289&t=126631&p=335947&hilit=plasma+netbook#p335899) However, you can achieve something similar by editing the file `~/.config/kwinrc` adding `BorderlessMaximizedWindows=true` in the `[Windows]` section.
+The Plasma Netbook shell has been dropped from Plasma 5, see the following [KDE forum post](https://forum.kde.org/viewtopic.php?f=289&t=126631&p=335947&hilit=plasma+netbook#p335899). However, you can achieve something similar by editing the file `~/.config/kwinrc` adding `BorderlessMaximizedWindows=true` in the `[Windows]` section.
 
 #### Thumbnail generation
 
@@ -305,7 +305,7 @@ Phonon is being widely used within KDE, for both audio (e.g., the System notific
 
 #### Which backend should I choose?
 
-You can choose between backends based on [GStreamer](/index.php/GStreamer "GStreamer") and [VLC](/index.php/VLC "VLC") – each available in versions for Qt4 applications and Qt5 applications ([phonon-qt4-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt4-gstreamer), [phonon-qt5-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt5-gstreamer) – [phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc), [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc)).
+You can choose between backends based on [GStreamer](/index.php/GStreamer "GStreamer") and [VLC](/index.php/VLC "VLC") – each available in versions for Qt4 applications and Qt5 applications ([phonon-qt4-gstreamer](https://aur.archlinux.org/packages/phonon-qt4-gstreamer/), [phonon-qt5-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt5-gstreamer) – [phonon-qt4-vlc](https://aur.archlinux.org/packages/phonon-qt4-vlc/), [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc)).
 
 [Upstream prefers VLC](https://www.phoronix.com/scan.php?page=news_item&px=MTUwNDM) but prominent Linux distributions (Kubuntu and Fedora-KDE for example) prefer GStreamer because that allows them to easily leave out patented MPEG codecs from the default installation. Both backends have a slightly different [features set](https://community.kde.org/Phonon/FeatureMatrix). The Gstreamer backend has some optional codec dependency, install them as needed:
 
@@ -477,7 +477,7 @@ It is possible to use KDE Connect even if you do not use the Plasma desktop. For
 
 ### Use a different window manager
 
-The component chooser settings in Plasma does not allow changing the window manager anymore. [[6]](https://github.com/KDE/plasma-desktop/commit/2f83a4434a888cd17b03af1f9925cbb054256ade) In order to change the window manager used you need to set the `KDEWM` [environment variable](/index.php/Environment_variable "Environment variable") before KDE startup. [[7]](https://wiki.haskell.org/Xmonad/Using_xmonad_in_KDE) To do that you can create a script called `set_window_manager.sh` in `~/.config/plasma-workspace/env` and export the `KDEWM` variable there. For example to use the i3 window manager :
+The component chooser settings in Plasma does not allow changing the window manager anymore. [[6]](https://github.com/KDE/plasma-desktop/commit/2f83a4434a888cd17b03af1f9925cbb054256ade) In order to change the window manager used you need to set the `KDEWM` [environment variable](/index.php/Environment_variable "Environment variable") before KDE startup. [[7]](https://wiki.haskell.org/Xmonad/Using_xmonad_in_KDE) To do that you can create a script called `set_window_manager.sh` in `~/.config/plasma-workspace/env/` and export the `KDEWM` variable there. For example to use the i3 window manager :
 
  `~/.config/plasma-workspace/env/set_window_manager.sh`  `export KDEWM=/usr/bin/i3` 
 
@@ -639,7 +639,7 @@ Some applications may also need to be restarted in order for sound to play from 
 
 #### MP3 files cannot be played when using the GStreamer Phonon backend
 
-This can be solved by installing the GStreamer libav plugin (package [gst-libav](https://www.archlinux.org/packages/?name=gst-libav)). If you still encounter problems, you can try changing the Phonon backend used by installing another such as [phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc) or [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc).
+This can be solved by installing the GStreamer libav plugin (package [gst-libav](https://www.archlinux.org/packages/?name=gst-libav)). If you still encounter problems, you can try changing the Phonon backend used by installing another such as [phonon-qt4-vlc](https://aur.archlinux.org/packages/phonon-qt4-vlc/) or [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc).
 
 Then, make sure the backend is preferred via *System Settings > Multimedia > Audio and Video > Backend*.
 
@@ -661,7 +661,7 @@ $ cp -a ~/.config/akonadi ~/.config/akonadi-old
 
 ```
 
-Start *SystemSettings > Personal* and remove all the resources. Go back to Dolphin and remove the original `~/.local/share/akonadi` and `~/.config/akonadi` - the copies you made ensure that you can back-track if necessary.
+Start *SystemSettings > Personal* and remove all the resources. Go back to Dolphin and remove the original `~/.local/share/akonadi/` and `~/.config/akonadi/` - the copies you made ensure that you can back-track if necessary.
 
 Now go back to the System Settings page and carefully add the necessary resources. You should see the resource reading in your mail folders. Then start Kontact/KMail to see if it work properly.
 

@@ -352,7 +352,7 @@ KDE 中广泛地使用 Phonon 用于声音（例如系统通知或者 KDE 声音
 
 #### 我应该选择哪个后端？
 
-你可以在 [GStreamer](/index.php/GStreamer "GStreamer") 和 [VLC](/index.php/VLC "VLC") 之间做选择–每个后端都有 Qt4 和 Qt5 版本 ([phonon-qt4-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt4-gstreamer), [phonon-qt5-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt5-gstreamer) – [phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc), [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc)).
+你可以在 [GStreamer](/index.php/GStreamer "GStreamer") 和 [VLC](/index.php/VLC "VLC") 之间做选择–每个后端都有 Qt4 和 Qt5 版本 ([phonon-qt4-gstreamer](https://aur.archlinux.org/packages/phonon-qt4-gstreamer/), [phonon-qt5-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt5-gstreamer) – [phonon-qt4-vlc](https://aur.archlinux.org/packages/phonon-qt4-vlc/), [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc)).
 
 [KDE-Multimedia 上游建议使用 VLC 后端](http://lists.kde.org/?l=kde-multimedia&m=137994906723790&w=2)，但是很多 Linux 发行版 (例如 Kubuntu 和 Fedora-KDE ) 选择 GStreamer，因为它可以更方便的去掉专利 MPEG codecs。它们的 [功能](http://community.kde.org/Phonon/FeatureMatrix)有稍许不同。
 
@@ -757,7 +757,7 @@ Falling back to default
 
 #### 使用 GStreamer Phonon 后端时不能播放 MP3 文件
 
-安装 GStreamer libav 插件（软件包[gst-libav](https://www.archlinux.org/packages/?name=gst-libav)）可以解决问题。如果仍然碰到，你可以尝试换一个软件包，例如 [phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc) 或 [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc)。然后，请确保它是首选的后端，通过：
+安装 GStreamer libav 插件（软件包[gst-libav](https://www.archlinux.org/packages/?name=gst-libav)）可以解决问题。如果仍然碰到，你可以尝试换一个软件包，例如 [phonon-qt4-vlc](https://aur.archlinux.org/packages/phonon-qt4-vlc/) 或 [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc)。然后，请确保它是首选的后端，通过：
 
 ```
  系统设置 > 多媒体 > 后端

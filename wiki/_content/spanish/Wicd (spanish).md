@@ -260,7 +260,7 @@ Una posible solución consiste en eliminar los archivos de configuración ubicad
 
 ### Algunas notas sobre front-end gráficos para sudo
 
-Si recibe un error acerca de que wicd falla al no encontrar un programa gráfico con sudo, instale uno como [gksu](https://aur.archlinux.org/packages/gksu/), [ktsuss](https://aur.archlinux.org/packages/ktsuss/), o [kdebase-runtime](https://www.archlinux.org/packages/?name=kdebase-runtime), ejecutando la orden oportuna:
+Si recibe un error acerca de que wicd falla al no encontrar un programa gráfico con sudo, instale uno como [gksu](https://aur.archlinux.org/packages/gksu/), [ktsuss](https://aur.archlinux.org/packages/ktsuss/), o [kdebase-runtime](https://aur.archlinux.org/packages/kdebase-runtime/), ejecutando la orden oportuna:
 
 ```
 $ ktsuss wicd-client -n

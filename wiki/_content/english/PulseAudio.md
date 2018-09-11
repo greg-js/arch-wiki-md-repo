@@ -121,7 +121,7 @@ There are a number of front-ends available for controlling the PulseAudio daemon
 
 *   **pasystray** — System tray applet for PulseAudio.
 
-	[https://github.com/christophgysin/pasystray](https://github.com/christophgysin/pasystray) || [pasystray](https://aur.archlinux.org/packages/pasystray/)
+	[https://github.com/christophgysin/pasystray](https://github.com/christophgysin/pasystray) || [pasystray](https://www.archlinux.org/packages/?name=pasystray)
 
 *   **plasma-pa** — [KDE](/index.php/KDE "KDE") Plasma applet for audio volume management using PulseAudio
 

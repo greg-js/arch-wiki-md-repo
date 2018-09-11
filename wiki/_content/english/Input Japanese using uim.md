@@ -103,7 +103,7 @@ In Arch official repositories, uim is built with the following custom configurat
 *   `--with-qt4-immodule` - Build Qt4 immodule
 *   `--with-qt4` - Build uim-tools for Qt4
 
-If you want KDE4 plasma widget, install [automoc4](https://www.archlinux.org/packages/?name=automoc4) for making dependency, and add `--enable-kde4-applet` option to PKGBUILD file.
+If you want KDE4 plasma widget, install [automoc4](https://aur.archlinux.org/packages/automoc4/) for making dependency, and add `--enable-kde4-applet` option to PKGBUILD file.
 
 ### Input method
 

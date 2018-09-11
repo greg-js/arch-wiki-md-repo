@@ -27,6 +27,7 @@ This tutorial shows how to download, install, and configure the following softwa
         *   [1.4.2 USB Blaster not working](#USB_Blaster_not_working)
             *   [1.4.2.1 JTAG chain broken](#JTAG_chain_broken)
             *   [1.4.2.2 Error when scanning hardware - Server error](#Error_when_scanning_hardware_-_Server_error)
+        *   [1.4.3 Installation hangs when installing Quartus Prime Help and/or ModelSim](#Installation_hangs_when_installing_Quartus_Prime_Help_and.2For_ModelSim)
 *   [2 ModelSim-Altera Edition](#ModelSim-Altera_Edition)
     *   [2.1 Install](#Install)
     *   [2.2 Compatibility with Archlinux](#Compatibility_with_Archlinux)
@@ -321,6 +322,10 @@ If you still have problems, try restarting `jtagd`:
  $ /opt/altera/quartus/bin/jtagd
 
 ```
+
+#### Installation hangs when installing Quartus Prime Help and/or ModelSim
+
+For Quartus Prime Lite 17.1, or probably other versions, the installation process hangs when installing Quartus Prime Help and ModelSim. One workaround is to uncheck them in the "Select Components" step and install them later manually from the components folder.
 
 ## ModelSim-Altera Edition
 

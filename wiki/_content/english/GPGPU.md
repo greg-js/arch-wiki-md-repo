@@ -139,7 +139,7 @@ To find whether the installation was successful and if cuda is up and running, y
 *   **[Java](/index.php/Java "Java")**: [JCuda](http://www.jcuda.org/jcuda/JCuda.html)
 *   **[Mathematica](/index.php/Mathematica "Mathematica")**: [CUDAlink](http://reference.wolfram.com/mathematica/CUDALink/tutorial/Overview.html)
 *   **[Mono/.NET](/index.php/Mono "Mono")**: [CUDA.NET](http://www.hoopoe-cloud.com/Solutions/CUDA.NET/Default.aspx), [CUDAfy.NET](http://www.hybriddsp.com/)
-*   **Perl**: [Kappa](http://psilambda.com/download/kappa-for-perl), [CUDA-Minimal](https://github.com/run4flat/perl-CUDA-Minimal)
+*   **Perl**: [KappaCUDA](https://metacpan.org/pod/KappaCUDA), [CUDA-Minimal](https://github.com/run4flat/perl-CUDA-Minimal)
 *   **[Python](/index.php/Python "Python")**: [python-pycuda](https://www.archlinux.org/packages/?name=python-pycuda) or [Kappa](http://psilambda.com/download/kappa-for-python)
 *   **[Ruby](/index.php/Ruby "Ruby")**, **Lua**: [Kappa](http://psilambda.com/products/kappa/)
 

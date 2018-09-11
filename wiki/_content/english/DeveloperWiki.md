@@ -28,6 +28,7 @@
 
 ### Organization
 
+*   [DeveloperWiki:Projects](/index.php/DeveloperWiki:Projects "DeveloperWiki:Projects")
 *   [DeveloperWiki:Internal Projects](/index.php/DeveloperWiki:Internal_Projects "DeveloperWiki:Internal Projects")
 *   [DeveloperWiki:Roll Call](/index.php/DeveloperWiki:Roll_Call "DeveloperWiki:Roll Call")
 *   [DeveloperWiki:Linux Conferences](/index.php/DeveloperWiki:Linux_Conferences "DeveloperWiki:Linux Conferences")

@@ -194,7 +194,7 @@
 
 *   **[Ninja-IDE](https://en.wikipedia.org/wiki/Ninja-IDE "wikipedia:Ninja-IDE")** — Кроссплатформенная интегрированная среда разработки (IDE), работающая в Linux/X11, Mac OS X и Windows. Используется, в частности, для разработки на Python
 
-	[http://ninja-ide.org/](http://ninja-ide.org/) || [ninja-ide](https://www.archlinux.org/packages/?name=ninja-ide)
+	[http://ninja-ide.org/](http://ninja-ide.org/) || [ninja-ide](https://aur.archlinux.org/packages/ninja-ide/)
 
 *   **[Phpstorm](https://en.wikipedia.org/wiki/ru:PhpStorm "wikipedia:ru:PhpStorm")** — Коммерческая кроссплатформенная IDE для PHP, основанная на платформе JetBrains' IntelliJ IDEA и предоставляющая редактор PHP, HTML и JavaScript с анализом кода на лету, предотвращением ошибок и автоматическим рефакторингом кода PHP и JavaScript
 
@@ -236,7 +236,7 @@
 
 *   **[KMSCON](/index.php/KMSCON "KMSCON")** — Простой эмулятор терминала, основанный на kernel mode setting (KMS) linux
 
-	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://aur.archlinux.org/packages/kmscon/)
+	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://www.archlinux.org/packages/?name=kmscon)
 
 *   **[Konsole](https://en.wikipedia.org/wiki/ru:Konsole "wikipedia:ru:Konsole")** — Эмулятор терминала, включенный в окружение [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)")
 

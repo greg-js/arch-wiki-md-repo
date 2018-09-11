@@ -65,7 +65,7 @@ Related articles
 *   控制台 (CLI)混合器：[ponymix](https://www.archlinux.org/packages/?name=ponymix)和[pamixer](https://www.archlinux.org/packages/?name=pamixer)
 *   控制台 (curses) 混合器：[pulsemixer](https://www.archlinux.org/packages/?name=pulsemixer)
 *   网页音量控制：[PaWebControl](https://github.com/Siot/PaWebControl)
-*   系统托盘图标：[pasystray](https://aur.archlinux.org/packages/pasystray/)，[pasystray-git](https://aur.archlinux.org/packages/pasystray-git/)
+*   系统托盘图标：[pasystray](https://www.archlinux.org/packages/?name=pasystray)，[pasystray-git](https://aur.archlinux.org/packages/pasystray-git/)
 *   KF5 plasma 程序：[kmix](https://www.archlinux.org/packages/?name=kmix)和[plasma-pa](https://www.archlinux.org/packages/?name=plasma-pa)
 *   如果你想通过 PulseAudio 使用蓝牙耳机或其他蓝牙音频设备的话，请参见[Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset").
 
@@ -234,7 +234,7 @@ $ pactl load-module module-dbus-protocol
 
 ### 安装并运行图形前端
 
-安装[python-pyqt4](https://www.archlinux.org/packages/?name=python-pyqt4)并执行：
+安装[python-pyqt4](https://aur.archlinux.org/packages/python-pyqt4/)并执行：
 
 ```
 $ qpaeq

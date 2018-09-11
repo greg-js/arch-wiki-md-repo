@@ -460,6 +460,7 @@ If a file as been encrypted in addition to being signed, simply [decrypt](#Encry
 
 *   The main `gpg-agent.socket` is used by *gpg* to connect to the *gpg-agent* daemon.
 *   The intended use for the `gpg-agent-extra.socket` on a local system is to set up a Unix domain socket forwarding from a remote system. This enables to use *gpg* on the remote system without exposing the private keys to the remote system. See [gpg-agent(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpg-agent.1) for details.
+*   The `gpg-agent-browser.socket` allows web browsers to access the *gpg-agent* daemon.
 *   The `gpg-agent-ssh.socket` can be used by [SSH](/index.php/SSH "SSH") to cache [SSH keys](/index.php/SSH_keys "SSH keys") added by the *ssh-add* program. See [#SSH agent](#SSH_agent) for the necessary configuration.
 *   The `dirmngr.socket` starts a GnuPG daemon handling connections to keyservers.
 

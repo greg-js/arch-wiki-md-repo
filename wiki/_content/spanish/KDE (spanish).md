@@ -309,7 +309,7 @@ Phonon fue creado originalmente para permitir que el software KDE y Qt fuera ind
 
 #### ¿Qué backend debo elegir?
 
-Puede elegir entre backends basados en [GStreamer](/index.php/GStreamer "GStreamer") y [VLC](/index.php/VLC "VLC") – cada uno disponible en versiones para aplicaciones Qt4 y aplicaciones Qt5 ([phonon-qt4-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt4-gstreamer), [phonon-qt5-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt5-gstreamer) – [phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc), [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc)).
+Puede elegir entre backends basados en [GStreamer](/index.php/GStreamer "GStreamer") y [VLC](/index.php/VLC "VLC") – cada uno disponible en versiones para aplicaciones Qt4 y aplicaciones Qt5 ([phonon-qt4-gstreamer](https://aur.archlinux.org/packages/phonon-qt4-gstreamer/), [phonon-qt5-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt5-gstreamer) – [phonon-qt4-vlc](https://aur.archlinux.org/packages/phonon-qt4-vlc/), [phonon-qt5-vlc](https://www.archlinux.org/packages/?name=phonon-qt5-vlc)).
 
 [Upstream prefers VLC|Upstream prefiere VLC](https://www.phoronix.com/scan.php?page=news_item&px=MTUwNDM), pero las distribuciones Linux destacadas (Kubuntu y Fedora-KDE por ejemplo) prefieren GStreamer porque eso les permite fácilmente descartar los codecs MPEG patentados de la instalación por defecto. Ambos backends tienen un conjunto de características ligeramente diferente. [features set](https://community.kde.org/Phonon/FeatureMatrix).
 

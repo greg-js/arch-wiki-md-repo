@@ -89,7 +89,7 @@ See [HiDPI](/index.php/HiDPI "HiDPI").
 
 ### Sensors
 
-Install the [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) to get the accelerometer and light sensor working
+Install the [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) to get the accelerometer and light sensor working
 
 ## Troubleshooting
 
@@ -180,8 +180,8 @@ evdev:atkbd:dmi:bvn*:bvr*:bd*:svnLENOVO*:pn*:pvrLenovoYOGA900*
 
 ### Screen Rotation
 
-When you first boot the screen rotation may not work. A bug currently requires you to suspend and resume the laptop before the screen will rotate using the [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) package.
+When you first boot the screen rotation may not work. A bug currently requires you to suspend and resume the laptop before the screen will rotate using the [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) package.
 
 ### Light Sensor
 
-When you first boot the light sensor for automatic screen brightness may not work. A bug currently requires you to suspend and resume the laptop before the light sensor will work using the [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) package.
+When you first boot the light sensor for automatic screen brightness may not work. A bug currently requires you to suspend and resume the laptop before the light sensor will work using the [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) package.

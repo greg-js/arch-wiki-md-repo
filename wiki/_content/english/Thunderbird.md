@@ -74,9 +74,9 @@ JavaScript is disabled for message content but not RSS news feeds. To disable Ja
 
 	[FireTray AMO](https://addons.mozilla.org/thunderbird/addon/firetray/) ||
 
-*   **[Lightning](https://www.mozilla.org/projects/calendar/lightning/)** — A calendar extension that brings [Sunbird](https://en.wikipedia.org/wiki/Mozilla_Sunbird "wikipedia:Mozilla Sunbird")'s functionality to Thunderbird, including CalDAV support.
+*   **[Lightning](https://en.wikipedia.org/wiki/Lightning_(software) "wikipedia:Lightning (software)")** — A calendar extension that brings [Sunbird](https://en.wikipedia.org/wiki/Mozilla_Sunbird "wikipedia:Mozilla Sunbird")'s functionality to Thunderbird, including CalDAV support. Lightning now ships with Thunderbird, but due to differing release schedules it may have issues in Thunderbird testing releases. See [Mozilla support forum post](https://support.mozilla.org/en-US/questions/1211583). Also see [Lightning Release Schedule](https://developer.mozilla.org/en-US/docs/Mozilla/Calendar/Calendar_Versions).
 
-	[Lightning AMO](https://addons.mozilla.org/thunderbird/addon/lightning/) || [thunderbird-lightning-bin](https://aur.archlinux.org/packages/thunderbird-lightning-bin/)
+	[https://www.thunderbird.net/en-US/calendar/](https://www.thunderbird.net/en-US/calendar/) ||
 
 *   **SOGo Connector** — Lets you sync address books via CardDAV
 

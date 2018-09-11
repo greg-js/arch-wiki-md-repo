@@ -44,7 +44,9 @@ To maintain compatibility with [initscripts-fork](https://aur.archlinux.org/pack
 
 ### Booting
 
-For booting with OpenRC add your chosen init to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). OpenRC's built-in init is `/usr/bin/openrc-init`, and the one provided by [openrc-sysvinit](https://aur.archlinux.org/packages/openrc-sysvinit/) is `/usr/bin/init-openrc`.
+For booting with OpenRC set the `init` option in the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+To use OpenRC's built-in init, set `init=/usr/bin/openrc-init`. To use [SysVinit](/index.php/SysVinit "SysVinit"), provided by [openrc-sysvinit](https://aur.archlinux.org/packages/openrc-sysvinit/), set `init=/usr/bin/init-openrc`.
+Note that when using `openrc-init`, the `/etc/inittab` file is not used.
 
 ## Configuration
 
@@ -70,11 +72,21 @@ OpenRC services are enabled by issuing `rc-update add *service_name* *runlevel*`
 | dcron | default | Scheduling |
 | syslog-ng | default | System logs |
 
+**Warning:** If using `init=/usr/bin/openrc-init` in your kernel parameters, you'll need to manually enable [getty](/index.php/Getty "Getty") services, otherwise you'll be left with no interactive TTYs[[1]](https://github.com/OpenRC/openrc/blob/master/agetty-guide.md)
+
+If necessary, create services for each wanted [getty](/index.php/Getty "Getty") by creating symbolic links to `/etc/openrc/init.d/getty`. E.g. for `/dev/tty1`:
+
+```
+# ln -s /etc/openrc/init.d/agetty{,.tty1}
+# rc-update add agetty.tty1 default
+
+```
+
 See also [Native services](https://wiki.gentoo.org/wiki/Systemd#Native_services) and [Daemons](/index.php/Daemons "Daemons").
 
 ### Network
 
-The network is configured through `newnet`. [[1]](https://github.com/funtoo/openrc/blob/master/README.newnet) Modify the `/etc/openrc/conf.d/network` file; both the `ip` ([iproute2](https://www.archlinux.org/packages/?name=iproute2)) and the `ifconfig` ([net-tools](https://www.archlinux.org/packages/?name=net-tools)) commands are supported. Below is an example configuration using `ip`.
+The network is configured through `newnet`. [[2]](https://github.com/funtoo/openrc/blob/master/README.newnet) Modify the `/etc/openrc/conf.d/network` file; both the `ip` ([iproute2](https://www.archlinux.org/packages/?name=iproute2)) and the `ifconfig` ([net-tools](https://www.archlinux.org/packages/?name=net-tools)) commands are supported. Below is an example configuration using `ip`.
 
 ```
 ip_eth0="192.168.1.2/24"
@@ -85,7 +97,7 @@ ifup_eth0="ip link set \$int mtu 1500"
 
 The network service is added to the boot runlevel by default, so no further action is required. See [Network configuration](/index.php/Network_configuration "Network configuration") for general networking information.
 
-**Note:** You may also use [NetworkManager](/index.php/NetworkManager "NetworkManager"), [dhcpcd](/index.php/Dhcpcd "Dhcpcd") or [netcfg](https://aur.archlinux.org/packages/netcfg/) by enabling the respective services. *netcfg* mimics the [netctl](/index.php/Netctl "Netctl") behaviour (see [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1489283#p1489283) if you want to enable profiles connection on booting - requires `wpa_actiond`). See [netcfg features](https://www.archlinux.org/netcfg/features.html).
+**Note:** You may also use [NetworkManager](/index.php/NetworkManager "NetworkManager"), [dhcpcd](/index.php/Dhcpcd "Dhcpcd") or [netcfg](https://aur.archlinux.org/packages/netcfg/) by enabling the respective services. *netcfg* mimics the [netctl](/index.php/Netctl "Netctl") behaviour (see [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1489283#p1489283) if you want to enable profiles connection on booting - requires `wpa_actiond`). See [netcfg features](https://www.archlinux.org/netcfg/features.html).
 
 ### Boot logs
 
@@ -116,7 +128,7 @@ modules="vboxdrv acpi_cpufreq"
 
 Keyboard layout can be configured via `/etc/openrc/conf.d/keymaps` and `/etc/openrc/conf.d/consolefont`. You can also configure the settings through the `/etc/locale.conf` file, which is sourced via `/etc/profile.d/locale.sh`.
 
-See [[3]](http://wiki.gentoo.org/wiki/Localization/HOWTO#Keyboard_layout_for_the_console) and [Locale](/index.php/Locale "Locale") for details.
+See [[4]](http://wiki.gentoo.org/wiki/Localization/HOWTO#Keyboard_layout_for_the_console) and [Locale](/index.php/Locale "Locale") for details.
 
 ## Usage
 
@@ -191,7 +203,7 @@ sync; sync
 
 ### /etc/sysctl.conf not found
 
-By default, `sysctl --system` is called to load the sysctl configuration. [[4]](https://github.com/OpenRC/openrc/blob/master/init.d/sysctl.Linux.in#L17) This includes the `/etc/sysctl.conf` file, which was removed from Arch. [[5]](https://www.archlinux.org/news/deprecation-of-etcsysctlconf/)
+By default, `sysctl --system` is called to load the sysctl configuration. [[5]](https://github.com/OpenRC/openrc/blob/master/init.d/sysctl.Linux.in#L17) This includes the `/etc/sysctl.conf` file, which was removed from Arch. [[6]](https://www.archlinux.org/news/deprecation-of-etcsysctlconf/)
 
 To prevent a missing file error, create the file:
 

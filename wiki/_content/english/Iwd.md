@@ -13,6 +13,7 @@ Related articles
     *   [2.1 iwctl](#iwctl)
 *   [3 WPA Enterprise](#WPA_Enterprise)
     *   [3.1 EAP-PWD](#EAP-PWD)
+    *   [3.2 TLS Based EAP Methods](#TLS_Based_EAP_Methods)
 *   [4 Optional configuration](#Optional_configuration)
     *   [4.1 Disable auto-connect for a particular network](#Disable_auto-connect_for_a_particular_network)
     *   [4.2 Deny console (local) user from modifying the settings](#Deny_console_.28local.29_user_from_modifying_the_settings)
@@ -116,6 +117,37 @@ Autoconnect=True
 ```
 
 If you do not want autoconnect to the AP you can set the option to False and connect manually to the access point via `iwctl`. The same applies to the password, if you do not want to store it plaintext leave the option out of the file and just connect to the enterprise AP.
+
+### TLS Based EAP Methods
+
+As of now, to connect to EAP-TLS, EAP-TTLS, and EAP-PEAP, the kernel has to be patched. Edit the PKGBUILD for the kernel and add the following sources
+
+ `PKGBUILD` 
+```
+"iwd1.patch::[https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git/patch/?id=ab2a33c1c0b1b0a45c16746dd0101057c6d432ed](https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git/patch/?id=ab2a33c1c0b1b0a45c16746dd0101057c6d432ed)"
+"iwd2.patch::[https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git/patch/?id=3a478ace6154e33009f9b01acbd4eaf7615fef0e](https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git/patch/?id=3a478ace6154e33009f9b01acbd4eaf7615fef0e)"
+"iwd3.patch::[https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git/patch/?id=5faadff684460b7f4064f9f28db8915a56601147](https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git/patch/?id=5faadff684460b7f4064f9f28db8915a56601147)"
+"iwd4.patch::[https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git/patch/?id=3c7f3a6c70b47858a065b7a86313f390b083ee40](https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git/patch/?id=3c7f3a6c70b47858a065b7a86313f390b083ee40)" 
+"iwd5.patch::[https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git/patch/?id=5362bbfdf2a8a5810d4237e4dbbf5da043e47fb6](https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git/patch/?id=5362bbfdf2a8a5810d4237e4dbbf5da043e47fb6)"
+"iwd6.patch::[https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git/patch/?id=5c93ce3acc010425eab01dc8e0ffb5529f3f85c1](https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git/patch/?id=5c93ce3acc010425eab01dc8e0ffb5529f3f85c1)"
+"iwd7.patch::[https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git/patch/?id=ca4d545b92cf52ffe777cc7cfbaf64100dfa6e9c](https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git/patch/?id=ca4d545b92cf52ffe777cc7cfbaf64100dfa6e9c)"
+"iwd8.patch::[https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git/patch/?id=f2ac228eaba9fe3f4fcf80b121eb92707afdd4de](https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/linux-fs.git/patch/?id=f2ac228eaba9fe3f4fcf80b121eb92707afdd4de)"
+```
+
+And add the following line to the end of the kernel config:
+
+ `config`  `CONFIG_PKCS8_PRIVATE_KEY_PARSER=y` 
+
+Then update the checksums of the PKGBUILD:
+
+```
+$ updpkgsums
+
+```
+
+and build the package.
+
+Example configuration files for these network types can be found in subdirectories here [https://git.kernel.org/pub/scm/network/wireless/iwd.git/tree/autotests](https://git.kernel.org/pub/scm/network/wireless/iwd.git/tree/autotests)
 
 ## Optional configuration
 

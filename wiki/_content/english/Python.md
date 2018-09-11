@@ -146,7 +146,7 @@ The following [widget toolkit](https://en.wikipedia.org/wiki/Widget_toolkit "wik
 
 *   **pyQt** — [Qt](/index.php/Qt "Qt") bindings
 
-	[https://riverbankcomputing.com/software/pyqt/intro](https://riverbankcomputing.com/software/pyqt/intro) || [python2-pyqt4](https://www.archlinux.org/packages/?name=python2-pyqt4) [python2-pyqt5](https://www.archlinux.org/packages/?name=python2-pyqt5) [python-pyqt4](https://www.archlinux.org/packages/?name=python-pyqt4) [python-pyqt5](https://www.archlinux.org/packages/?name=python-pyqt5)
+	[https://riverbankcomputing.com/software/pyqt/intro](https://riverbankcomputing.com/software/pyqt/intro) || [python2-pyqt4](https://aur.archlinux.org/packages/python2-pyqt4/) [python2-pyqt5](https://www.archlinux.org/packages/?name=python2-pyqt5) [python-pyqt4](https://aur.archlinux.org/packages/python-pyqt4/) [python-pyqt5](https://www.archlinux.org/packages/?name=python-pyqt5)
 
 *   **pySide** — [Qt](/index.php/Qt "Qt") bindings
 

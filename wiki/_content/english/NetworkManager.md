@@ -26,16 +26,15 @@ Related articles
     *   [4.2 Enable NetworkManager Wait Online](#Enable_NetworkManager_Wait_Online)
     *   [4.3 Set up PolicyKit permissions](#Set_up_PolicyKit_permissions)
     *   [4.4 Proxy settings](#Proxy_settings)
-    *   [4.5 Disable NetworkManager when using dbus](#Disable_NetworkManager_when_using_dbus)
-    *   [4.6 Checking connectivity](#Checking_connectivity)
-    *   [4.7 DHCP client](#DHCP_client)
-    *   [4.8 DNS caching and split DNS](#DNS_caching_and_split_DNS)
-        *   [4.8.1 dnsmasq](#dnsmasq)
-            *   [4.8.1.1 Custom configuration](#Custom_configuration)
-            *   [4.8.1.2 IPv6](#IPv6)
-            *   [4.8.1.3 DNSSEC](#DNSSEC)
-        *   [4.8.2 systemd-resolved](#systemd-resolved)
-        *   [4.8.3 Other methods](#Other_methods)
+    *   [4.5 Checking connectivity](#Checking_connectivity)
+    *   [4.6 DHCP client](#DHCP_client)
+    *   [4.7 DNS caching and split DNS](#DNS_caching_and_split_DNS)
+        *   [4.7.1 dnsmasq](#dnsmasq)
+            *   [4.7.1.1 Custom configuration](#Custom_configuration)
+            *   [4.7.1.2 IPv6](#IPv6)
+            *   [4.7.1.3 DNSSEC](#DNSSEC)
+        *   [4.7.2 systemd-resolved](#systemd-resolved)
+        *   [4.7.3 Other methods](#Other_methods)
 *   [5 Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher)
     *   [5.1 Avoiding the dispatcher timeout](#Avoiding_the_dispatcher_timeout)
     *   [5.2 Dispatcher examples](#Dispatcher_examples)
@@ -84,6 +83,7 @@ Related articles
     *   [8.16 Unable to turn on wi-fi with Lenovo laptop (IdeaPad, Legion, etc.)](#Unable_to_turn_on_wi-fi_with_Lenovo_laptop_.28IdeaPad.2C_Legion.2C_etc..29)
     *   [8.17 Turn off hostname sending](#Turn_off_hostname_sending)
     *   [8.18 nm-applet disappears in i3wm](#nm-applet_disappears_in_i3wm)
+    *   [8.19 Disable NetworkManager when using dbus](#Disable_NetworkManager_when_using_dbus)
 *   [9 See also](#See_also)
 
 ## Installation
@@ -305,10 +305,6 @@ xhost +si:localuser:*username*
 
 See also [Proxy settings](/index.php/Proxy_settings "Proxy settings").
 
-### Disable NetworkManager when using dbus
-
-It might not be obvious, but the service automatically starts through *dbus*. To completely disable it you can [mask](/index.php/Mask "Mask") `NetworkManager.service` and `NetworkManager-dispatcher.service`.
-
 ### Checking connectivity
 
 NetworkManager can try to reach a page on Internet when connecting to a network. [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) is configured by default in `/usr/lib/NetworkManager/conf.d/20-connectivity.conf` to check connectivity to archlinux.org. To use a different webserver or disable connectivity checking create `/etc/NetworkManager/conf.d/20-connectivity.conf`, see "connectivity section" in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).
@@ -396,9 +392,9 @@ dns=systemd-resolved
 
 #### Other methods
 
-**Tip:** Set the local DNS server address in `/etc/resolvconf.conf` and [configure NetworkManager to use openresolv](#Use_openresolv).
+**Tip:** If [openresolv](/index.php/Openresolv "Openresolv") has a subscriber for the [local DNS resolver](/index.php/Domain_name_resolution#Resolvers "Domain name resolution"), set the local server address in `/etc/resolvconf.conf` and [configure NetworkManager to use openresolv](#Use_openresolv).
 
-With an already working caching DNS server, the DNS server address can be specified it in NetworkManagers' settings (usually by right-clicking the applet). Setup will depend on the type of front-end used; the process usually involves right-clicking on the applet, editing (or creating) a profile, and then choosing DHCP type as 'Automatic (specify addresses).' The DNS addresses will need to be entered and are usually in this form: `127.0.0.1, *DNS-server-one*, ...`.
+With an already working caching DNS server, the DNS server address can be specified in NetworkManagers' settings (usually by right-clicking the applet). Setup will depend on the type of front-end used; the process usually involves right-clicking on the applet, editing (or creating) a profile, and then choosing DHCP type as *Automatic (specify addresses)*. The DNS addresses will need to be entered and are usually in this form: `127.0.0.1, *DNS-server-one*, ...`.
 
 ## Network services with NetworkManager dispatcher
 
@@ -1029,6 +1025,10 @@ Environment="DISPLAY=:0.0"
 ```
 
 After reloading the daemons [restart](/index.php/Restart "Restart") `xfce4-notifyd.service`. Exit i3 and start it back up again and the applet should show on the tray.
+
+### Disable NetworkManager when using dbus
+
+It might not be obvious, but the service automatically starts through *dbus*. To completely disable it you can [mask](/index.php/Mask "Mask") `NetworkManager.service` and `NetworkManager-dispatcher.service`.
 
 ## See also
 

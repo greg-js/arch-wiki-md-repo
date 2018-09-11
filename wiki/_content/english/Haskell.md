@@ -10,18 +10,17 @@
     *   [2.3 Haskell development tools](#Haskell_development_tools)
 *   [3 Managing Haskell packages](#Managing_Haskell_packages)
     *   [3.1 Pros/Cons of the different methods](#Pros.2FCons_of_the_different_methods)
-    *   [3.2 ArchHaskell repository](#ArchHaskell_repository)
-    *   [3.3 cabal-install](#cabal-install)
-        *   [3.3.1 Preparation and $PATH](#Preparation_and_.24PATH)
-        *   [3.3.2 Installing packages user-wide](#Installing_packages_user-wide)
-        *   [3.3.3 Sandboxes](#Sandboxes)
-        *   [3.3.4 Removing packages](#Removing_packages)
-    *   [3.4 stack](#stack)
+    *   [3.2 cabal-install](#cabal-install)
+        *   [3.2.1 Preparation and $PATH](#Preparation_and_.24PATH)
+        *   [3.2.2 Installing packages user-wide](#Installing_packages_user-wide)
+        *   [3.2.3 Sandboxes](#Sandboxes)
+        *   [3.2.4 Removing packages](#Removing_packages)
+    *   [3.3 stack](#stack)
 *   [4 See also](#See_also)
 
 ## Installation
 
-Haskell generates machine code that can be run natively on Linux. There is nothing special required to run a binary (already compiled) software, like the ones provided in the [official repositories](/index.php/Official_repositories "Official repositories") or by the [#ArchHaskell repository](#ArchHaskell_repository). On the other side, [AUR](/index.php/AUR "AUR") packages or source codes requires a compiler to build the software.
+Haskell generates machine code that can be run natively on Linux. There is nothing special required to run a binary (already compiled) software, like the ones provided in the [official repositories](/index.php/Official_repositories "Official repositories"). On the other side, [AUR](/index.php/AUR "AUR") packages or source codes requires a compiler to build the software.
 
 Installing the compiler alone permits to build Haskell source code. A few additional tools are needed for development work.
 
@@ -138,9 +137,7 @@ Alternatively, you can use [stack](https://www.archlinux.org/packages/?name=stac
 
 Many Haskell libraries and executables are grouped in packages. They are all available on [Hackage](http://hackage.haskell.org), and a subset of them is curated on [Stackage](https://www.stackage.org). To install and manage these packages, several methods are available:
 
-*   Either (but not both):
-    *   [Official repositories](/index.php/Official_repositories "Official repositories"), or
-    *   [ArchHaskell repository](#ArchHaskell_repository)
+*   [Official repositories](/index.php/Official_repositories "Official repositories")
 *   [cabal-install](#cabal-install)
 *   [stack](#stack)
 *   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
@@ -153,14 +150,9 @@ The following table documents the advantages and disadvantages of different pack
 
 | **Method** | **Pros** | **Cons** |
 | [Official repositories](/index.php/Official_repositories "Official repositories") | Provided by ArchLinux developers, consistent versions of packages, already compiled | Only a few packages available, only dynamic libraries available |
-| [ArchHaskell repository](#ArchHaskell_repository) | Provided by ArchHaskell group, consistent versions of packages, already compiled | Need manual intervention to get started with |
 | [cabal-install](#cabal-install) | All packages available, root not required | Installed in home directory, [failures in dependency resolution](http://www.haskell.org/haskellwiki/Cabal/Survival#What_is_the_difficulty_caused_by_Cabal-install.3F), difficult to remove specific packages |
 | [stack](#stack) | All packages available (favors Stackage), root not required | Installed in home directory, versions are pinned to snapshot, difficult to remove specific packages |
 | [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") | Simple to get started | Risk of unmaintained or orphaned packages, incompatible versions of packages possible |
-
-### ArchHaskell repository
-
-See [Unofficial user repositories/ArchHaskell](/index.php/Unofficial_user_repositories/ArchHaskell "Unofficial user repositories/ArchHaskell") for details.
 
 ### cabal-install
 

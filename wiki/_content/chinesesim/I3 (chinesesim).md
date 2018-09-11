@@ -240,7 +240,7 @@ $ cp /etc/i3status.conf ~/.config/i3status/config
 
 *   **py3status** — 一个可扩展的基于Python的 i3status 包装器。
 
-	[https://github.com/ultrabug/py3status](https://github.com/ultrabug/py3status) || [py3status](https://aur.archlinux.org/packages/py3status/)
+	[https://github.com/ultrabug/py3status](https://github.com/ultrabug/py3status) || [py3status](https://www.archlinux.org/packages/?name=py3status)
 
 #### 状态栏中的图标字体
 

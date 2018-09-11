@@ -265,7 +265,7 @@ These applications support time, task and contacts management.
 
 *   **Go For It!** — Simple and stylish productivity app, featuring a to-do list, merged with a timer that keeps your focus on the current task. To-do lists are stored in the [Todo.txt](http://todotxt.com/) format.
 
-	[http://manuel-kehl.de/projects/go-for-it/](http://manuel-kehl.de/projects/go-for-it/) || [go-for-it](https://aur.archlinux.org/packages/go-for-it/)
+	[http://manuel-kehl.de/projects/go-for-it/](http://manuel-kehl.de/projects/go-for-it/) || [go-for-it-git](https://aur.archlinux.org/packages/go-for-it-git/)
 
 *   **GNOME To Do** — Personal task manager for GNOME.
 
@@ -529,7 +529,7 @@ See also [Wikipedia:List of flashcard software](https://en.wikipedia.org/wiki/Li
 
 *   **KRecipes** — KDE application designed to make organizing your personal recipes collection fast and easy.
 
-	[https://www.kde.org/applications/utilities/krecipes/](https://www.kde.org/applications/utilities/krecipes/) || [krecipes](https://www.archlinux.org/packages/?name=krecipes)
+	[https://www.kde.org/applications/utilities/krecipes/](https://www.kde.org/applications/utilities/krecipes/) || [krecipes](https://aur.archlinux.org/packages/krecipes/)
 
 #### Education management engines
 
@@ -685,7 +685,7 @@ See also [#Terminal multiplexers](#Terminal_multiplexers), which offer some of t
 
 *   **twin** — Text-mode window manager.
 
-	[https://sourceforge.net/projects/twin/](https://sourceforge.net/projects/twin/) || [twin](https://aur.archlinux.org/packages/twin/)
+	[https://sourceforge.net/projects/twin/](https://sourceforge.net/projects/twin/) || [twin](https://www.archlinux.org/packages/?name=twin)
 
 *   **Wmutils** — A set of tools for X windows manipulation.
 

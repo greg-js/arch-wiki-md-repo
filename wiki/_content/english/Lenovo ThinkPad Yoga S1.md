@@ -49,13 +49,13 @@ Laptop has STM Micro HID Sensor HUB with such sensors as
 *   inclination sensor
 *   ambient light sensor
 
-To work with sensors you need [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/). [thinkpad-yoga-scripts-git](https://aur.archlinux.org/packages/thinkpad-yoga-scripts-git/) also provides service for ambient light sensor. With [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) while turning into tablet mode touchpad and keyboard are automatically disabled on KDE Plasma 5.13.3, not sure about other DEs
+To work with sensors you need [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy). [thinkpad-yoga-scripts-git](https://aur.archlinux.org/packages/thinkpad-yoga-scripts-git/) also provides service for ambient light sensor. With [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) while turning into tablet mode touchpad and keyboard are automatically disabled on KDE Plasma 5.13.3, not sure about other DEs
 
 ## Troubleshooting
 
 ### Wakeup after suspend
 
-After installing [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) my Yoga is immediately waking after suspending. The soloution is to disable XHC in wake events
+After installing [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) my Yoga is immediately waking after suspending. The soloution is to disable XHC in wake events
 
 ```
 echo XHC | sudo tee /proc/acpi/wakeup

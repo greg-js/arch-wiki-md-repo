@@ -387,7 +387,7 @@ The solution is to install and start [cups](https://www.archlinux.org/packages/?
 
 ### hp-setup: "Qt/PyQt 4 initialization failed"
 
-[Install](/index.php/Install "Install") [python-pyqt4](https://www.archlinux.org/packages/?name=python-pyqt4), which is an optdepend of [hplip](https://www.archlinux.org/packages/?name=hplip). Alternatively, to run hp-setup with the command line interface, use the `-i` flag.
+[Install](/index.php/Install "Install") [python-pyqt4](https://aur.archlinux.org/packages/python-pyqt4/), which is an optdepend of [hplip](https://www.archlinux.org/packages/?name=hplip). Alternatively, to run hp-setup with the command line interface, use the `-i` flag.
 
 ### hp-setup: finds the printer automatically but reports "Unable to communicate with device" when printing test page immediately afterwards
 

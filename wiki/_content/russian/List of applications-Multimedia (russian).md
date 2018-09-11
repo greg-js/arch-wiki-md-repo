@@ -65,7 +65,7 @@
 
 *   **fbv** — Очень простая программа просмотра графических файлов для framebuffer-консоли
 
-	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://aur.archlinux.org/packages/fbv/)
+	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://www.archlinux.org/packages/?name=fbv)
 
 *   **fim** — Сильно настраиваемая framebuffer-программа просмотра изображений с поддержкой сценариев, основанная на *fbi*
 
@@ -417,7 +417,7 @@
 
 *   **[Amarok](/index.php/Amarok "Amarok")** — Зрелый, основанный на Qt проигрыватель, славящийся своим богатым функционалом
 
-	[http://amarok.kde.org/](http://amarok.kde.org/) || [amarok](https://www.archlinux.org/packages/?name=amarok)
+	[http://amarok.kde.org/](http://amarok.kde.org/) || [amarok](https://aur.archlinux.org/packages/amarok/)
 
 *   **[aTunes](https://en.wikipedia.org/wiki/ru:aTunes "wikipedia:ru:aTunes")** — Аудио проигрыватель, написанный на Java
 
@@ -603,7 +603,7 @@
 
 *   **[Puddletag](https://en.wikipedia.org/wiki/Puddletag "wikipedia:Puddletag")** — Замена знаменитого MP3tag из Windows
 
-	[http://puddletag.sourceforge.net/](http://puddletag.sourceforge.net/) || [puddletag](https://www.archlinux.org/packages/?name=puddletag)
+	[http://puddletag.sourceforge.net/](http://puddletag.sourceforge.net/) || [puddletag](https://aur.archlinux.org/packages/puddletag/)
 
 *   **Qoobar** — Универсальная QT-программа для работы с аудиотэгами (специализируется на классической музыке)
 

@@ -187,7 +187,7 @@ LLMNR will only be activated for the connection if both the systemd-resolved's g
 
 For [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") the setting is `LLMNR=` in the `[Network]` section. See [systemd.network(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5).
 
-**Warning:** Since [NetworkManager](/index.php/NetworkManager "NetworkManager") lacks control over per-connection LLMNR setting ([NetworkManager issue #13](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/13)), if you do not plan to use LLMNR the only option is to disable it globally in [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5). E.g.: `/etc/systemd/resolved.conf.d/disable_llmnr.conf` 
+**Warning:** [NetworkManager](/index.php/NetworkManager "NetworkManager") before version 1.14 lacks control over per-connection LLMNR setting ([NetworkManager issue #13](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/13)), if you do not plan to use LLMNR the only option is to disable it globally in [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5). E.g.: `/etc/systemd/resolved.conf.d/disable_llmnr.conf` 
 ```
 [Resolve]
 LLMNR=false
@@ -210,3 +210,5 @@ archlinux.org: 2a01:4f8:172:1d86::1
 -- Data is authenticated: no
 
 ```
+
+See [resolvectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolvectl.1#EXAMPLES) for more examples.

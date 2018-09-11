@@ -130,7 +130,7 @@ Swap:          3.0G        881M        2.1G
 
 ```
 
-Es importante distinguir entre memoria «free» y «available». En el ejemplo anterior, un portátil con 2,8G de memoria RAM total parece estar utilizando la mayor parte de ella, y solo disponer de 283M de memoria libre. Sin embargo, 1,4G de la misma está en «buff/cache». Todavía hay 1,2G disponibles para iniciar nuevas aplicaciones, sin tener que acudir a la memoria swap. Vea `man free(1)` para obtener más detalles. ¿El resultado de todo esto? ¡Más rendimiento!
+Es importante distinguir entre memoria «free» y «available». En el ejemplo anterior, un portátil con 2,8G de memoria RAM total parece estar utilizando la mayor parte de ella, y solo disponer de 283M de memoria libre. Sin embargo, 1,4G de la misma está en «buff/cache». Todavía hay 1,2G disponibles para iniciar nuevas aplicaciones, sin tener que acudir al espacio de intercambio. Consulte `man free(1)` para obtener más detalles. ¿El resultado de todo esto? ¡Más rendimiento!
 
 Consulte [este maravilloso artículo](http://www.linuxjournal.com/article/2770) ¡si su curiosidad se ha despertado! También hay un sitio web dedicado a aclarar esta confusión: [http://www.linuxatemyram.com/](http://www.linuxatemyram.com/)
 
@@ -213,7 +213,7 @@ Consulte las [recomendaciones generales](/index.php/General_recommendations_(Esp
 
 ### ¿Qué entorno de escritorio o gestor de ventanas debo usar?
 
-Ya que hay una gran variedad disponibles, use el que más se ajuste a sus necesidades. Véanse los artículos [Desktop environment (Español)](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") y [Window manager (Español)](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)").
+Ya que hay una gran variedad disponibles, use el que más se ajuste a sus necesidades. Consulte los artículos [Desktop environment (Español)](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") y [Window manager (Español)](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)").
 
 ### ¿Qué hace único a Arch respecto de otras distribuciones «minimalistas»?
 

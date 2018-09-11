@@ -136,7 +136,7 @@ AUR 中还有老版本使用的模块和库，可以通过带版本的 python �
 
 *   **pyQt** — [Qt](/index.php/Qt "Qt") 绑定
 
-	[https://www.riverbankcomputing.co.uk/software/pyqt/intro](https://www.riverbankcomputing.co.uk/software/pyqt/intro) || [python2-pyqt4](https://www.archlinux.org/packages/?name=python2-pyqt4) [python2-pyqt5](https://www.archlinux.org/packages/?name=python2-pyqt5) [python-pyqt4](https://www.archlinux.org/packages/?name=python-pyqt4) [python-pyqt5](https://www.archlinux.org/packages/?name=python-pyqt5)
+	[https://www.riverbankcomputing.co.uk/software/pyqt/intro](https://www.riverbankcomputing.co.uk/software/pyqt/intro) || [python2-pyqt4](https://aur.archlinux.org/packages/python2-pyqt4/) [python2-pyqt5](https://www.archlinux.org/packages/?name=python2-pyqt5) [python-pyqt4](https://aur.archlinux.org/packages/python-pyqt4/) [python-pyqt5](https://www.archlinux.org/packages/?name=python-pyqt5)
 
 *   **pySide** — [Qt](/index.php/Qt "Qt") bindings
 

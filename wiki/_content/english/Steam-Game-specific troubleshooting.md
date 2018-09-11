@@ -238,6 +238,7 @@
         *   [5.109.1 Start with black screen](#Start_with_black_screen)
     *   [5.110 Stellaris](#Stellaris)
         *   [5.110.1 No window opening, only sound](#No_window_opening.2C_only_sound)
+        *   [5.110.2 Immediate crash to desktop](#Immediate_crash_to_desktop)
     *   [5.111 Stephen's Sausage Roll](#Stephen.27s_Sausage_Roll)
         *   [5.111.1 No sound](#No_sound_7)
     *   [5.112 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
@@ -1931,6 +1932,24 @@ Run the game in windowed mode by using the `-window` flag. Then change the resol
 
 Happens with some AMD GPU and mesa combination, set multi_sampling=0 in ~/.local/share/Paradox\ Interactive/Stellaris/settings.txt.
 
+#### Immediate crash to desktop
+
+It seems that Stellaris requires a 32bit libnss_sss.so.2 to operate. You can confirm if this is your problem by running
+
+```
+# strace ~/.local/share/Steam/steamapps/common/Stellaris/stellaris 2>&1 | grep sss 
+
+```
+
+and seeing if you get output like
+
+```
+# openat(AT_FDCWD, "/usr/lib32/tls/i686/sse2/libnss_sss.so.2", O_RDONLY|O_LARGEFILE|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+
+```
+
+If this is indeed your problem, download the libnss-sss package from Ubuntu's repository [[10]](https://packages.ubuntu.com/bionic/i386/libnss-sss/download), extract the libnss_sss.so.2 from the downloaded package, and place it at ~/.local/share/Steam/steamapps/common/Stellaris. The game should now load properly.
+
 ### Stephen's Sausage Roll
 
 #### No sound
@@ -1985,7 +2004,7 @@ Dependencies:
 *   [lib32-glu](https://www.archlinux.org/packages/?name=lib32-glu)
 *   [lib32-libpulse](https://www.archlinux.org/packages/?name=lib32-libpulse) if you use PulseAudio
 
-The game bundles an outdated version of libstdc++ which prevents the game from starting. [[10]](http://steamcommunity.com/app/204060/discussions/0/364039785161291413) The following can be observed when you run Steam and S&S from the terminal:
+The game bundles an outdated version of libstdc++ which prevents the game from starting. [[11]](http://steamcommunity.com/app/204060/discussions/0/364039785161291413) The following can be observed when you run Steam and S&S from the terminal:
 
 ```
 libGL error: unable to load driver: i965_dri.so
@@ -2164,9 +2183,9 @@ LD_PRELOAD='/usr/lib/libstdc++.so.6:/usr/lib/libgcc_s.so.1:/usr/lib/libxcb.so.1:
 
 ```
 
-Otherwise, run the game via shell and set up proper audio device for FMOD, as discussed in [[11]](https://steamcommunity.com/app/237930/discussions/2/620695877176333955/).
+Otherwise, run the game via shell and set up proper audio device for FMOD, as discussed in [[12]](https://steamcommunity.com/app/237930/discussions/2/620695877176333955/).
 
-Also, check out this thread [[12]](https://steamcommunity.com/app/237930/discussions/2/492378265893557247/).
+Also, check out this thread [[13]](https://steamcommunity.com/app/237930/discussions/2/492378265893557247/).
 
 ### Transmissions: Element 120
 
@@ -2328,7 +2347,7 @@ If there is no audio after launching the game, install [pulseaudio-alsa](https:/
 
 #### Blank screen
 
-If having a green or blank screen on startup, run the game with `MESA_GL_VERSION_OVERRIDE=4.1COMPAT`. [[13]](https://forum.warthunder.com/index.php?/topic/267809-linux-potential-workaround-for-mesa-drivers-black-screen/) [[14]](http://forum.warthunder.com/index.php?search_term=0030709&app=core&module=search&do=search&fromMainBar=1&search_app=forums%3Aforum%3A920&sort_field=&sort_order=&search_in=posts)
+If having a green or blank screen on startup, run the game with `MESA_GL_VERSION_OVERRIDE=4.1COMPAT`. [[14]](https://forum.warthunder.com/index.php?/topic/267809-linux-potential-workaround-for-mesa-drivers-black-screen/) [[15]](http://forum.warthunder.com/index.php?search_term=0030709&app=core&module=search&do=search&fromMainBar=1&search_app=forums%3Aforum%3A920&sort_field=&sort_order=&search_in=posts)
 
 ### Warhammer 40,000: Dawn of War II
 
@@ -2356,7 +2375,7 @@ with:
 
 #### Stuck on black screen or logo on launch
 
-Add `-screen-fullscreen 0` to launch options. [[15]](https://steamcommunity.com/app/582500/discussions/1/1470840994974091613/)
+Add `-screen-fullscreen 0` to launch options. [[16]](https://steamcommunity.com/app/582500/discussions/1/1470840994974091613/)
 
 ### Worms W.M.D
 
@@ -2369,7 +2388,7 @@ $ ln -s ~/.steam/steam/ubuntu12_32/steam-runtime/amd64/lib/x86_64-linux-gnu/*dbu
 
 ```
 
-Now the game should run using the default "Play Worms W.M.D" option. See also Steam community discussions [[16]](https://steamcommunity.com/app/327030/discussions/2/133257959065155871/) and [[17]](https://steamcommunity.com/app/327030/discussions/1/343785380902286766/).
+Now the game should run using the default "Play Worms W.M.D" option. See also Steam community discussions [[17]](https://steamcommunity.com/app/327030/discussions/2/133257959065155871/) and [[18]](https://steamcommunity.com/app/327030/discussions/1/343785380902286766/).
 
 On some systems there are terrain bugs where holes in terrain are not rendered properly and worms can fall through terrain unexpectedly. These bugs can make the game unplayable in many situations and there is no known fix for them.
 

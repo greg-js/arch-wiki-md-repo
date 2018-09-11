@@ -496,7 +496,7 @@ The appearance of the *x11-ssh-askpass* dialog can be customized by setting its 
 
 There are other passphrase dialog programs which can be used instead of *x11-ssh-askpass*. The following list provides some alternative solutions.
 
-*   [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) is dependent on [kdelibs](https://www.archlinux.org/packages/?name=kdelibs) and is suitable for the [KDE](/index.php/KDE "KDE") Desktop Environment.
+*   [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) is dependent on [kdelibs](https://aur.archlinux.org/packages/kdelibs/) and is suitable for the [KDE](/index.php/KDE "KDE") Desktop Environment.
 
 *   [openssh-askpass](https://www.archlinux.org/packages/?name=openssh-askpass) depends on the [qt4](https://www.archlinux.org/packages/?name=qt4) libraries.
 

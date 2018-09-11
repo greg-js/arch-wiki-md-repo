@@ -89,7 +89,7 @@ Only the front speakers work out of the box right now.
 
 ### Accelerometer
 
-The accelerometer is not found by any userspace programs, Running `G_MESSAGES_DEBUG=all /usr/sbin/iio-sensor-proxy ` from [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) gives ` ** (process:12472): DEBUG: 11:45:31.305: Could not find any supported sensors ` 
+The accelerometer is not found by any userspace programs, Running `G_MESSAGES_DEBUG=all /usr/sbin/iio-sensor-proxy ` from [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) gives ` ** (process:12472): DEBUG: 11:45:31.305: Could not find any supported sensors ` 
 
 The accelerometer is connected to a new Intel Integrated Sensor Hub which is not supported by the kernel yet, but can be manually bound to the `intel-ish-ipc` driver.
 

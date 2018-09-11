@@ -54,7 +54,7 @@ From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Lo
         *   [6.3.2 Configure mkinitcpio for RAID](#Configure_mkinitcpio_for_RAID)
 *   [7 Graphical configuration](#Graphical_configuration)
 *   [8 Troubleshooting](#Troubleshooting)
-    *   [8.1 Changes that could be required due to changes in the Arch-Linux defaults](#Changes_that_could_be_required_due_to_changes_in_the_Arch-Linux_defaults)
+    *   [8.1 Boot/Shutdown-problems because of disabled lvmetad](#Boot.2FShutdown-problems_because_of_disabled_lvmetad)
     *   [8.2 LVM commands do not work](#LVM_commands_do_not_work)
     *   [8.3 Logical Volumes do not show up](#Logical_Volumes_do_not_show_up)
     *   [8.4 LVM on removable media](#LVM_on_removable_media)
@@ -356,8 +356,6 @@ If the root file system resides in a logical volume, the `root=` [kernel paramet
 ## Volume operations
 
 ### Advanced options
-
-If you need monitoring (needed for snapshots) you can enable lvmetad. For this set `use_lvmetad = 1` in `/etc/lvm/lvm.conf`. This is the default by now.
 
 You can restrict the volumes that are activated automatically by setting the `auto_activation_volume_list` in `/etc/lvm/lvm.conf`. If in doubt, leave this option commented out.
 
@@ -837,9 +835,9 @@ There is no "official" GUI tool for managing LVM volumes, but [system-config-lvm
 
 ## Troubleshooting
 
-### Changes that could be required due to changes in the Arch-Linux defaults
+### Boot/Shutdown-problems because of disabled lvmetad
 
-The `use_lvmetad = 1` must be set in `/etc/lvm/lvm.conf`. This is the default now - if you have a `lvm.conf.pacnew` file, you must merge this change.
+The `use_lvmetad = 1` **must** be set in `/etc/lvm/lvm.conf`. This is the default now - if you have a `lvm.conf.pacnew` file, you must merge this change.
 
 ### LVM commands do not work
 

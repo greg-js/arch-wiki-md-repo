@@ -42,7 +42,7 @@ Not tested : plugging an external microphone, audio through HDMI.
 | DisplayPort | Not tested |
 | USB-C | Not tested |
 | Dedicated GPU | Yes |
-| GPU switching | Yes with workaround | Starting X on integrated graphics with the dedicated GPU turned off causes the system to hang. See below for fix. Once the fix has been applied, **bumblebee** works. |
+| GPU switching | Yes with workaround | Starting X on integrated graphics with the dedicated GPU turned off causes the system to hang. See below for fix. Once the fix has been applied, **bumblebee** and **PRIME** both work. |
 | Screen backlighting control | Yes |
 | Keyboard RGB backlighting control | Partially | Only partial control is available, see below. |
 | SD card reader | Yes | A "wrong version" warning is thrown at boot about the SD controller, but it works. |
@@ -68,7 +68,7 @@ volume = off
 
 ```
 
-by
+with
 
 ```
 [Element Speaker]
@@ -89,7 +89,7 @@ To enable PRIME synchronisation for the built-in monitor, [enable DRM kernel mod
 
 ### RGB keyboard backlighting
 
-On Windows, RGB keyboard backlighting can be configured with the SteelSeries Engine software, which is not available on Linux. As an alternative, the tool [msi-perkeyrgb](https://github.com/Askannz/msi-perkeyrgb) provides partial control, specifically for MSI laptops with per-key RGB. Tools designed for models with region-based RGB, such as [MSIKLM](https://github.com/Gibtnix/MSIKLM), will not work.
+On Windows, RGB keyboard backlighting can be configured with the SteelSeries Engine software, which is not available on Linux. As an alternative, the tool [msi-perkeyrgb](https://aur.archlinux.org/packages/msi-perkeyrgb/) provides partial control, specifically for MSI laptops with per-key RGB. Tools designed for models with region-based RGB, such as [MSIKLM](https://github.com/Gibtnix/MSIKLM), will not work.
 
 Since the RGB settings are stored into the keyboard itself, another option for dual-boot owners is to configure the keyboard once in Windows, and then reboot into Linux.
 

@@ -216,10 +216,10 @@ bind-interfaces
 domain=example.com
 
 # Set default gateway
-dhcp-option=3,192.168.1.1
+dhcp-option=3,0.0.0.0
 
 # Set DNS servers to announce
-dhcp-option=6,192.168.1.1
+dhcp-option=6,0.0.0.0
 
 # Dynamic range of IPs to make available to LAN PC and the lease time. 
 # Ideally set the lease time to 5m only at first to test everything works okay before you set long-lasting records.

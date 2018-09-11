@@ -327,11 +327,11 @@ Screencast utilities allow you to create a video of your desktop or individual w
 
 *   **[Peek](https://en.wikipedia.org/wiki/Peek "wikipedia:Peek")** — Simple screencast tool that produces GIF, APNG, WebM or MP4 animations.
 
-	[https://github.com/phw/peek](https://github.com/phw/peek) || [peek](https://aur.archlinux.org/packages/peek/)
+	[https://github.com/phw/peek](https://github.com/phw/peek) || [peek](https://www.archlinux.org/packages/?name=peek)
 
 *   **RecordItNow** — Plugin based desktop recorder for KDE.
 
-	[http://recorditnow.sourceforge.net/](http://recorditnow.sourceforge.net/) || [recorditnow](https://www.archlinux.org/packages/?name=recorditnow)
+	[http://recorditnow.sourceforge.net/](http://recorditnow.sourceforge.net/) || [recorditnow](https://aur.archlinux.org/packages/recorditnow/)
 
 *   **[RecordMyDesktop](/index.php/RecordMyDesktop "RecordMyDesktop")** — Easy to use utility that records your desktop into the ogg format with a CLI, GTK+ or Qt interface. (inactive development)
 
@@ -379,7 +379,7 @@ That does not work on every single case, so in those cases, using `script` is ma
 
 ### Framebuffer
 
-Install a [framebuffer](/index.php/Framebuffer "Framebuffer") and use [fbgrab](https://aur.archlinux.org/packages/fbgrab/) or [fbdump](https://aur.archlinux.org/packages/fbdump/) to take a screenshot.
+Install a [framebuffer](/index.php/Framebuffer "Framebuffer") and use [fbgrab](https://www.archlinux.org/packages/?name=fbgrab) or [fbdump](https://www.archlinux.org/packages/?name=fbdump) to take a screenshot.
 
 ### Virtual console
 

@@ -106,4 +106,4 @@ Follow [HiDPI](/index.php/HiDPI "HiDPI") for recommendations here. Gnome works o
 
 ### Auto Rotation
 
-See [Tablet PC#Automatic rotation](/index.php/Tablet_PC#Automatic_rotation "Tablet PC") for common methods of achieving this. Installing [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) worked with no further configuration needed on Gnome.
+See [Tablet PC#Automatic rotation](/index.php/Tablet_PC#Automatic_rotation "Tablet PC") for common methods of achieving this. Installing [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) worked with no further configuration needed on Gnome.

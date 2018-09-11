@@ -388,7 +388,7 @@ PID *pid* (/usr/lib/cups/filter/foomatic-rip) stopped with status 3!
 
 ### hp-setup: "Qt/PyQt 4 initialization failed"
 
-[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [python-pyqt4](https://www.archlinux.org/packages/?name=python-pyqt4), который дополнительно требуется (optdepend) для [hplip](https://www.archlinux.org/packages/?name=hplip). Альтернативно вы можете запустить hp-setup с интерфейсом командной строки с помощью флага `-i`.
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [python-pyqt4](https://aur.archlinux.org/packages/python-pyqt4/), который дополнительно требуется (optdepend) для [hplip](https://www.archlinux.org/packages/?name=hplip). Альтернативно вы можете запустить hp-setup с интерфейсом командной строки с помощью флага `-i`.
 
 ### hp-setup: находит принтер автоматически, но сразу после этого сообщает "Unable to communicate with device" при печати тестовой страницы
 

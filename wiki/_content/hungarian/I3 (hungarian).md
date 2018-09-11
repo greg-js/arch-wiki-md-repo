@@ -244,7 +244,7 @@ Nem minden plugin van definiálva az alapértelmezett konfigurációban, és né
 
 *   **py3status** — Egy bővíthető i3status wrapper, Python-ban írva.
 
-	[https://github.com/ultrabug/py3status](https://github.com/ultrabug/py3status) || [py3status](https://aur.archlinux.org/packages/py3status/)
+	[https://github.com/ultrabug/py3status](https://github.com/ultrabug/py3status) || [py3status](https://www.archlinux.org/packages/?name=py3status)
 
 #### Ikonszerű betűk az állapotsoron
 

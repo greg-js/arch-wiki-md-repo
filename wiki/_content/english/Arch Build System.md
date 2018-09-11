@@ -88,7 +88,7 @@ The Arch build system is used to:
 *   Compile or recompile a package, for any reason
 *   Make and install new packages from source of software for which no packages are yet available (see [Creating packages](/index.php/Creating_packages "Creating packages"))
 *   Customize existing packages to fit your needs (enabling or disabling options, patching)
-*   Rebuild your entire system using your compiler flags, "à la FreeBSD" (e.g. with [pacbuilder-svn](https://aur.archlinux.org/packages/pacbuilder-svn/) (not available anymore) or [pacman-src-git](https://aur.archlinux.org/packages/pacman-src-git/))
+*   Rebuild your entire system using your compiler flags, "à la FreeBSD" (e.g. with [pacman-src-git](https://aur.archlinux.org/packages/pacman-src-git/))
 *   Cleanly build and install your own custom kernel (see [Kernel compilation](/index.php/Kernels#Compilation "Kernels"))
 *   Get kernel modules working with your custom kernel
 *   Easily compile and install a newer, older, beta, or development version of an Arch package by editing the version number in the PKGBUILD

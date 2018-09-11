@@ -1,25 +1,27 @@
-Ссылки по теме
+**Состояние перевода:** На этой странице представлен перевод статьи [QEMU](/index.php/QEMU "QEMU"). Дата последней синхронизации: 15 августа 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=QEMU&diff=0&oldid=535098).
+
+Related articles
 
 *   [Category:Hypervisors (Русский)](/index.php/Category:Hypervisors_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Hypervisors (Русский)")
 *   [Libvirt](/index.php/Libvirt "Libvirt")
+*   [QEMU/Guest graphics acceleration](/index.php/QEMU/Guest_graphics_acceleration "QEMU/Guest graphics acceleration")
 *   [PCI passthrough via OVMF](/index.php/PCI_passthrough_via_OVMF "PCI passthrough via OVMF")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [QEMU](/index.php/QEMU "QEMU"). Дата последней синхронизации: 22 июля 2017\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=QEMU&diff=0&oldid=482619).
+Согласно [странице о QEMU](http://wiki.qemu.org/Main_Page), "QEMU - универсальный с открытым исходным кодом эмулятор и виртуализатор."
 
-According to the [QEMU about page](http://wiki.qemu.org/Main_Page), "QEMU is a generic and open source machine emulator and virtualizer."
+При использовании в качестве машинного эмулятора QEMU может запускать ОС и программы созданные для одной платформы (например для плат ARM) на других (например, на вашем ПК x86). Эмуляция происходит с хорошей производительностью, благодаря использованию динамической трансляции.
 
-When used as a machine emulator, QEMU can run OSes and programs made for one machine (e.g. an ARM board) on a different machine (e.g. your x86 PC). By using dynamic translation, it achieves very good performance.
-
-QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.php/KVM "KVM") to use CPU extensions ([HVM](https://en.wikipedia.org/wiki/Hardware-assisted_virtualization "wikipedia:Hardware-assisted virtualization")) for virtualization. When used as a virtualizer, QEMU achieves near native performances by executing the guest code directly on the host CPU.
+QEMU может использовать другие гипервизоры, такие как [Xen](/index.php/Xen_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xen (Русский)") или [KVM](/index.php/KVM "KVM"), для использования расширений ЦП ([HVM](https://en.wikipedia.org/wiki/Hardware-assisted_virtualization "wikipedia:Hardware-assisted virtualization")) для виртуализации. При использовании в качестве виртуализатора QEMU достигает производительность схожую с нативной путем исполнения гостевого кода напрямую на ЦП хост-ситемы.
 
 ## Contents
 
-*   [1 Installation](#Installation)
-*   [2 Graphical front-ends for QEMU](#Graphical_front-ends_for_QEMU)
-*   [3 Creating new virtualized system](#Creating_new_virtualized_system)
-    *   [3.1 Creating a hard disk image](#Creating_a_hard_disk_image)
+*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
+*   [2 Графические интерфейсы для QEMU](#.D0.93.D1.80.D0.B0.D1.84.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81.D1.8B_.D0.B4.D0.BB.D1.8F_QEMU)
+*   [3 Создание новой виртуальной машины](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BD.D0.BE.D0.B2.D0.BE.D0.B9_.D0.B2.D0.B8.D1.80.D1.82.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.88.D0.B8.D0.BD.D1.8B)
+    *   [3.1 Создание образа жесткого диска](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BE.D0.B1.D1.80.D0.B0.D0.B7.D0.B0_.D0.B6.D0.B5.D1.81.D1.82.D0.BA.D0.BE.D0.B3.D0.BE_.D0.B4.D0.B8.D1.81.D0.BA.D0.B0)
         *   [3.1.1 Overlay storage images](#Overlay_storage_images)
         *   [3.1.2 Resizing an image](#Resizing_an_image)
+        *   [3.1.3 Converting an image](#Converting_an_image)
     *   [3.2 Preparing the installation media](#Preparing_the_installation_media)
     *   [3.3 Installing the operating system](#Installing_the_operating_system)
 *   [4 Running virtualized system](#Running_virtualized_system)
@@ -28,7 +30,7 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
 *   [5 Moving data between host and guest OS](#Moving_data_between_host_and_guest_OS)
     *   [5.1 Network](#Network)
     *   [5.2 QEMU's built-in SMB server](#QEMU.27s_built-in_SMB_server)
-    *   [5.3 Монтирование раздела внутри образа диска raw](#.D0.9C.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0_.D0.B2.D0.BD.D1.83.D1.82.D1.80.D0.B8_.D0.BE.D0.B1.D1.80.D0.B0.D0.B7.D0.B0_.D0.B4.D0.B8.D1.81.D0.BA.D0.B0_raw)
+    *   [5.3 Mounting a partition inside a raw disk image](#Mounting_a_partition_inside_a_raw_disk_image)
         *   [5.3.1 With manually specifying byte offset](#With_manually_specifying_byte_offset)
         *   [5.3.2 With loop module autodetecting partitions](#With_loop_module_autodetecting_partitions)
         *   [5.3.3 With kpartx](#With_kpartx)
@@ -54,6 +56,7 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [6.5 VDE2 Bridge](#VDE2_Bridge)
         *   [6.5.1 Basics](#Basics_2)
         *   [6.5.2 Startup scripts](#Startup_scripts_2)
+    *   [6.6 Shorthand configuration](#Shorthand_configuration)
 *   [7 Graphics](#Graphics)
     *   [7.1 std](#std)
     *   [7.2 qxl](#qxl)
@@ -75,6 +78,7 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
             *   [9.2.1.1 New Install of Windows](#New_Install_of_Windows)
             *   [9.2.1.2 Change Existing Windows VM to use virtio](#Change_Existing_Windows_VM_to_use_virtio)
         *   [9.2.2 Network drivers](#Network_drivers)
+        *   [9.2.3 Balloon driver](#Balloon_driver)
     *   [9.3 Preparing a FreeBSD guest](#Preparing_a_FreeBSD_guest)
 *   [10 QEMU Monitor](#QEMU_Monitor)
     *   [10.1 Accessing the monitor console](#Accessing_the_monitor_console)
@@ -107,35 +111,42 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [12.8 libgfapi error message](#libgfapi_error_message)
     *   [12.9 Kernel panic on LIVE-environments](#Kernel_panic_on_LIVE-environments)
     *   [12.10 Windows 7 guest suffers low-quality sound](#Windows_7_guest_suffers_low-quality_sound)
+    *   [12.11 Could not access KVM kernel module: Permission denied](#Could_not_access_KVM_kernel_module:_Permission_denied)
+    *   [12.12 "System Thread Exception Not Handled" when booting a Windows VM](#.22System_Thread_Exception_Not_Handled.22_when_booting_a_Windows_VM)
+    *   [12.13 Certain Windows games/applications crashing/causing a bluescreen](#Certain_Windows_games.2Fapplications_crashing.2Fcausing_a_bluescreen)
 *   [13 See also](#See_also)
 
-## Installation
+## Установка
 
-[Install](/index.php/Install "Install") the [qemu](https://www.archlinux.org/packages/?name=qemu) package (or [qemu-headless](https://www.archlinux.org/packages/?name=qemu-headless) for the version without GUI) and below optional packages for your needs:
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [qemu](https://www.archlinux.org/packages/?name=qemu) (или [qemu-headless](https://www.archlinux.org/packages/?name=qemu-headless) для версии без графического интерфейса пользователя) и необходимые вам дополнительные пакеты, перечисленные ниже:
 
-*   [qemu-arch-extra](https://www.archlinux.org/packages/?name=qemu-arch-extra) - extra architectures support
-*   [qemu-block-gluster](https://www.archlinux.org/packages/?name=qemu-block-gluster) - [Glusterfs](/index.php/Glusterfs "Glusterfs") block support
-*   [qemu-block-iscsi](https://www.archlinux.org/packages/?name=qemu-block-iscsi) - [iSCSI](/index.php/ISCSI "ISCSI") block support
-*   [qemu-block-rbd](https://www.archlinux.org/packages/?name=qemu-block-rbd) - RBD block support
-*   [samba](https://www.archlinux.org/packages/?name=samba) - [SMB/CIFS](/index.php/Samba "Samba") server support
+*   [qemu-arch-extra](https://www.archlinux.org/packages/?name=qemu-arch-extra) - поддержка дополнительных архитектур
+*   [qemu-block-gluster](https://www.archlinux.org/packages/?name=qemu-block-gluster) - поддержка блоков [Glusterfs](/index.php/Glusterfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Glusterfs (Русский)")
+*   [qemu-block-iscsi](https://www.archlinux.org/packages/?name=qemu-block-iscsi) - поддержка блоков [iSCSI](/index.php/ISCSI "ISCSI")
+*   [qemu-block-rbd](https://www.archlinux.org/packages/?name=qemu-block-rbd) - поддержка блоков RBD
+*   [samba](https://www.archlinux.org/packages/?name=samba) - поддержка сервера [SMB/CIFS](/index.php/Samba_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Samba (Русский)")
 
-## Graphical front-ends for QEMU
+## Графические интерфейсы для QEMU
 
-Unlike other virtualization programs such as [VirtualBox](/index.php/VirtualBox "VirtualBox") and [VMware](/index.php/VMware "VMware"), QEMU does not provide a GUI to manage virtual machines (other than the window that appears when running a virtual machine), nor does it provide a way to create persistent virtual machines with saved settings. All parameters to run a virtual machine must be specified on the command line at every launch, unless you have created a custom script to start your virtual machine(s). However, there are several GUI front-ends for QEMU:
+QEMU не предоставляет графический интерфейс пользователя для управления виртуальными машинами (кроме окна, которое появляется при запуске виртуальной машины) в отличие от других программ виртуализации, таких как [VirtualBox](/index.php/VirtualBox_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "VirtualBox (Русский)") и [VMware](/index.php/VMware_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "VMware (Русский)"), а также не обеспечивает способ создания постоянных виртуальных машин с сохраненными настройками. Все параметры запуска виртуальной машины должны быть указаны в командной строке при каждом ее запуске, если только вы не создали собственный скрипт для запуска вашей виртуальной машины.
 
-*   [virt-manager](https://www.archlinux.org/packages/?name=virt-manager)
-*   [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes)
-*   [qemu-launcher](https://aur.archlinux.org/packages/qemu-launcher/)
-*   [qtemu](https://aur.archlinux.org/packages/qtemu/)
-*   [aqemu](https://aur.archlinux.org/packages/aqemu/)
+[Libvirt](/index.php/Libvirt "Libvirt") предоставляет удобный способ управления виртуальными машинами QEMU. Для получения списка доступных графических интерфейсов смотрите [список клиентов libvirt](/index.php/Libvirt#Client "Libvirt").
 
-Additional front-ends with QEMU support are available for [libvirt](/index.php/Libvirt "Libvirt").
+Другие графические интерфейсы для QEMU:
 
-## Creating new virtualized system
+*   **AQEMU** — QEMU графический интерфейс, написанный на Qt5.
 
-### Creating a hard disk image
+	[https://github.com/tobimensch/aqemu](https://github.com/tobimensch/aqemu) || [aqemu](https://aur.archlinux.org/packages/aqemu/)
 
-**Tip:** See the [QEMU Wikibook](https://en.wikibooks.org/wiki/QEMU/Images) for more information on QEMU images.
+*   **QtEmu** — Графический интерфейс пользователя для QEMU, написанный на Qt4.
+
+	[https://qtemu.org/](https://qtemu.org/) || [qtemu](https://aur.archlinux.org/packages/qtemu/)
+
+## Создание новой виртуальной машины
+
+### Создание образа жесткого диска
+
+**Совет:** See the [QEMU Wikibook](https://en.wikibooks.org/wiki/QEMU/Images) for more information on QEMU images.
 
 To run QEMU you will need a hard disk image, unless you are booting a live system from CD-ROM or the network (and not doing so to install an operating system to a hard disk image). A hard disk image is a file which stores the contents of the emulated hard disk.
 
@@ -170,7 +181,7 @@ $ qemu-img create -o backing_file=*img1.raw*,backing_fmt=*raw* -f *qcow2* *img1.
 After that you can run your QEMU VM as usual (see [#Running virtualized system](#Running_virtualized_system)):
 
 ```
-$ qemu-system-i386 *img1.cow*
+$ qemu-system-x86_64 *img1.cow*
 
 ```
 
@@ -207,6 +218,17 @@ $ qemu-img resize *disk_image* +10G
 
 After enlarging the disk image, you must use file system and partitioning tools inside the virtual machine to actually begin using the new space. When shrinking a disk image, you must **first reduce the allocated file systems and partition sizes** using the file system and partitioning tools inside the virtual machine and then shrink the disk image accordingly, otherwise shrinking the disk image will result in data loss!
 
+#### Converting an image
+
+You can convert an image to other formats using `qemu-img convert`. This example shows how to convert a *raw* image to *qcow2*:
+
+```
+$ qemu-img convert -f raw -O qcow2 *input*.img *output*.qcow2
+
+```
+
+This will not remove the original input file.
+
 ### Preparing the installation media
 
 To install an operating system into your disk image, you need the installation medium (e.g. optical disk, USB-drive, or ISO image) for the operating system. The installation medium should not be mounted because QEMU accesses the media directly.
@@ -220,7 +242,7 @@ This is the first time you will need to start the emulator. To install the opera
 For example on i386 guests, to install from a bootable ISO file as CD-ROM and a raw disk image:
 
 ```
-$ qemu-system-i386 -cdrom *iso_image* -boot order=d -drive file=*disk_image*,format=raw
+$ qemu-system-x86_64 -cdrom *iso_image* -boot order=d -drive file=*disk_image*,format=raw
 
 ```
 
@@ -240,7 +262,7 @@ After the operating system has finished installing, the QEMU image can be booted
 `qemu-system-*` binaries (for example `qemu-system-i386` or `qemu-system-x86_64`, depending on guest's architecture) are used to run the virtualized guest. The usage is:
 
 ```
-$ qemu-system-i386 *options* *disk_image*
+$ qemu-system-x86_64 *options* *disk_image*
 
 ```
 
@@ -258,29 +280,21 @@ To start QEMU in KVM mode, append `-enable-kvm` to the additional start options.
 
 **Note:**
 
-*   If you get permission errors from KVM add your user to the `kvm` group.
 *   If you start your VM with a GUI tool and experience very bad performance, you should check for proper KVM support, as QEMU may be falling back to software emulation.
 *   KVM needs to be enabled in order to start Windows 7 and Windows 8 properly without a *blue screen*.
 
 ### Enabling IOMMU (Intel VT-d/AMD-Vi) support
 
-Using IOMMU opens to features like PCI passthrough and memory protection from faulty or malicious devices, see [wikipedia:Input-output memory management unit#Advantages](https://en.wikipedia.org/wiki/Input-output_memory_management_unit#Advantages "wikipedia:Input-output memory management unit") and [Memory Management (computer programming): Could you explain IOMMU in plain English?](https://www.quora.com/Memory-Management-computer-programming/Could-you-explain-IOMMU-in-plain-English).
+First enable IOMMU, see [PCI passthrough via OVMF#Setting up IOMMU](/index.php/PCI_passthrough_via_OVMF#Setting_up_IOMMU "PCI passthrough via OVMF").
 
-To enable IOMMU:
-
-1.  Ensure that AMD-Vi/Intel VT-d is supported by the CPU and is enabled in the BIOS settings.
-2.  Set the correct [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") based on the CPU-vendor:
-    *   Intel - `intel_iommu=on` or `intel_iommu=pt`
-    *   AMD - `amd_iommu=on`
-3.  Reboot and ensure IOMMU is enabled by checking `dmesg` for `DMAR`: `[0.000000] DMAR: IOMMU enabled`
-4.  Add `-device intel-iommu` to create the IOMMU device:
+Add `-device intel-iommu` to create the IOMMU device:
 
 ```
-$ qemu-system-x86_64 **-enable-kvm -machine q35,accel=kvm -device intel-iommu** -cpu host,hv_relaxed,hv_spinlocks=0x1fff,hv_vapic,hv_time ..
+$ qemu-system-x86_64 **-enable-kvm -machine q35,accel=kvm -device intel-iommu** -cpu host ..
 
 ```
 
-**Note:** On Intel CPU based systems creating an IOMMU device in a QEMU guest with `-device intel-iommu` will disable PCI passthrough with an error like: `Device at bus pcie.0 addr 09.0 requires iommu notifier which is currently not supported by intel-iommu emulation` While adding the kernel parameter `intel_iommu=on` is still needed for remapping IO (e.g. [PCI passthrough with vfio-pci](/index.php/PCI_passthrough_via_OVMF#Using_vfio-pci "PCI passthrough via OVMF")), `-device intel-iommu` should not be set if PCI PCI passthrough is required.
+**Note:** On Intel CPU based systems creating an IOMMU device in a QEMU guest with `-device intel-iommu` will disable PCI passthrough with an error like: `Device at bus pcie.0 addr 09.0 requires iommu notifier which is currently not supported by intel-iommu emulation` While adding the kernel parameter `intel_iommu=on` is still needed for remapping IO (e.g. [PCI passthrough with vfio-pci](/index.php/PCI_passthrough_via_OVMF#Isolating_the_GPU "PCI passthrough via OVMF")), `-device intel-iommu` should not be set if PCI PCI passthrough is required.
 
 ## Moving data between host and guest OS
 
@@ -297,7 +311,7 @@ QEMU's documentation says it has a "built-in" SMB server, but actually it just s
 To enable this feature, start QEMU with a command like:
 
 ```
-$ qemu-system-i386 *disk_image* -net nic -net user,smb=*shared_dir_path*
+$ qemu-system-x86_64 *disk_image* -net nic -net user,smb=*shared_dir_path*
 
 ```
 
@@ -310,7 +324,7 @@ Then, in the guest, you will be able to access the shared directory on the host 
 *   If you are using sharing options multiple times like `-net user,smb=*shared_dir_path1* -net user,smb=*shared_dir_path2*` or `-net user,smb=*shared_dir_path1*,smb=*shared_dir_path2*` then it will share only the last defined one.
 *   If you cannot access the shared folder and the guest system is Windows, check that the [NetBIOS protocol is enabled](http://ecross.mvps.org/howto/enable-netbios-over-tcp-ip-with-windows.htm) and that a firewall does not block [ports](http://technet.microsoft.com/en-us/library/cc940063.aspx) used by the NetBIOS protocol.
 
-### Монтирование раздела внутри образа диска raw
+### Mounting a partition inside a raw disk image
 
 When the virtual machine is not running, it is possible to mount partitions that are inside a raw disk image file by setting them up as loopback devices. This does not work with disk images in special formats, such as qcow2, although those can be mounted using `qemu-nbd`.
 
@@ -391,7 +405,7 @@ QEMU supports loading [Linux kernels](/index.php/Kernels "Kernels") and [init ra
 **Note:** In this example, it is the **host's** images that are being used, not the guest's. If you wish to use the guest's images, either mount `/dev/sda3` read-only (to protect the file system from the host) and specify the `/full/path/to/images` or use some kexec hackery in the guest to reload the guest's kernel (extends boot time).
 
 ```
-$ qemu-system-i386 -kernel /boot/vmlinuz-linux -initrd /boot/initramfs-linux.img -append root=/dev/sda /dev/sda3
+$ qemu-system-x86_64 -kernel /boot/vmlinuz-linux -initrd /boot/initramfs-linux.img -append root=/dev/sda /dev/sda3
 
 ```
 
@@ -452,7 +466,7 @@ Now, create a single primary partition corresponding to `/dev/hda*N*`. It should
 Finally, 'w'rite the result to the file: you are done. You now have a partition you can mount directly from your host, as well as part of a QEMU disk image:
 
 ```
-$ qemu-system-i386 -hdc /dev/md0 *[...]*
+$ qemu-system-x86_64 -hdc /dev/md0 *[...]*
 
 ```
 
@@ -488,7 +502,7 @@ nbd-server \
 The `.0` and `.1` suffixes are essential; the rest can be changed. After running the above script (which you may need to do as root to make sure nbd-server is able to access the partition), you can launch QEMU with:
 
 ```
-qemu-system-i386 -drive file=nbd:127.713705:10809:exportname=wrap *[...]*
+qemu-system-x86_64 -drive file=nbd:127.713705:10809:exportname=wrap *[...]*
 
 ```
 
@@ -505,7 +519,7 @@ By giving the `-net nic` argument to QEMU, it will, by default, assign a virtual
 Make sure that each virtual machine has a unique link-level address, but it should always start with `52:54:`. Use the following option, replace *X* with arbitrary hexadecimal digit:
 
 ```
-$ qemu-system-i386 -net nic,macaddr=52:54:*XX:XX:XX:XX* -net vde *disk_image*
+$ qemu-system-x86_64 -net nic,macaddr=52:54:*XX:XX:XX:XX* -net vde *disk_image*
 
 ```
 
@@ -515,7 +529,7 @@ Generating unique link-level addresses can be done in several ways:
 2.  Generate random link-level address each time the virtual machine is run. Practically zero probability of collisions, but the downside is that the DHCP server will assign a different IP address each time. You can use the following command in a script to generate random link-level address in a `macaddr` variable:
     ```
     printf -v macaddr "52:54:%02x:%02x:%02x:%02x" $(( $RANDOM & 0xff)) $(( $RANDOM & 0xff )) $(( $RANDOM & 0xff)) $(( $RANDOM & 0xff ))
-    qemu-system-i386 -net nic,macaddr="$macaddr" -net vde *disk_image*
+    qemu-system-x86_64 -net nic,macaddr="$macaddr" -net vde *disk_image*
     ```
 
 3.  Use the following script `qemu-mac-hasher.py` to generate the link-level address from the virtual machine name using a hashing function. Given that the names of virtual machines are unique, this method combines the benefits of the aforementioned methods: it generates the same link-level address each time the script is run, yet it preserves the practically zero probability of collisions. `qemu-mac-hasher.py` 
@@ -539,7 +553,7 @@ Generating unique link-level addresses can be done in several ways:
 
     ```
     vm_name="*VM Name*"
-    qemu-system-i386 -name "$vm_name" -net nic,macaddr=$(qemu-mac-hasher.py "$vm_name") -net vde *disk_image*
+    qemu-system-x86_64 -name "$vm_name" -net nic,macaddr=$(qemu-mac-hasher.py "$vm_name") -net vde *disk_image*
 
     ```
 
@@ -570,14 +584,14 @@ Tap devices are supported by the Linux bridge drivers, so it is possible to brid
 As indicated in the user-mode networking section, tap devices offer higher networking performance than user-mode. If the guest OS supports virtio network driver, then the networking performance will be increased considerably as well. Supposing the use of the tap0 device, that the virtio driver is used on the guest, and that no scripts are used to help start/stop networking, next is part of the qemu command one should see:
 
 ```
--net nic,model=virtio -net tap,ifname=tap0,script=no,downscript=no
+-device virtio-net,netdev=network0 -netdev tap,id=network0,ifname=tap0,script=no,downscript=no
 
 ```
 
 But if already using a tap device with virtio networking driver, one can even boost the networking performance by enabling vhost, like:
 
 ```
--net nic,model=virtio -net tap,ifname=tap0,script=no,downscript=no,vhost=on
+-device virtio-net,netdev=network0 -netdev tap,id=network0,ifname=tap0,script=no,downscript=no,vhost=on
 
 ```
 
@@ -590,6 +604,7 @@ If the bridge is given an IP address and traffic destined for it is allowed, but
 **Tip:**
 
 *   If you want to set up IP masquerading, e.g. NAT for virtual machines, see the [Internet sharing#Enable NAT](/index.php/Internet_sharing#Enable_NAT "Internet sharing") page.
+*   See [Network bridge](/index.php/Network_bridge "Network bridge") for information on creating bridge.
 *   You may want to have a DHCP server running on the bridge interface to service the virtual network. For example, to use the `172.20.0.1/16` subnet with [dnsmasq](/index.php/Dnsmasq "Dnsmasq") as the DHCP server:
 
 ```
@@ -630,14 +645,14 @@ allow *bridge1*
 Now start the VM. The most basic usage would be:
 
 ```
-$ qemu-system-i386 -net nic -net bridge,br=*bridge0* *[...]*
+$ qemu-system-x86_64 -net nic -net bridge,br=*bridge0* *[...]*
 
 ```
 
 With multiple taps, the most basic usage requires specifying the VLAN for all additional NICs:
 
 ```
-$ qemu-system-i386 -net nic -net bridge,br=*bridge0* -net nic,vlan=1 -net bridge,vlan=1,br=*bridge1* *[...]*
+$ qemu-system-x86_64 -net nic -net bridge,br=*bridge0* -net nic,vlan=1 -net bridge,vlan=1,br=*bridge1* *[...]*
 
 ```
 
@@ -718,7 +733,7 @@ printf -v macaddr "52:54:%02x:%02x:%02x:%02x" $(( $RANDOM & 0xff)) $(( $RANDOM &
 # Instead, uncomment and edit this line to set a static MAC address. The benefit is that the DHCP server will assign the same IP address.
 # macaddr='52:54:be:36:42:a9'
 
-qemu-system-i386 -net nic,macaddr=$macaddr -net tap,ifname="$IFACE" $*
+qemu-system-x86_64 -net nic,macaddr=$macaddr -net tap,ifname="$IFACE" $*
 
 sudo ip link set dev $IFACE down &> /dev/null
 sudo ip tuntap del $IFACE mode tap &> /dev/null
@@ -765,7 +780,7 @@ See [Internet sharing](/index.php/Internet_sharing "Internet sharing") as a refe
 
 There you can find what is needed to share the network between devices, included tap and tun ones. The following just hints further on some of the host configurations required. As indicated in the reference above, the client needs to be configured for a static IP, using the IP assigned to the tap interface as the gateway. The caveat is that the DNS servers on the client might need to be manually edited if they change when changing from one host device connected to the network to another.
 
-To allow IP forwarding on every boot, one need to add the following lines to sysctl configuration file inside /etc/sysctl.d:
+To allow IP forwarding on every boot, one need to add the following lines to sysctl configuration file inside `/etc/sysctl.d`:
 
 ```
 net.ipv4.ip_forward = 1
@@ -847,7 +862,7 @@ The interface is plugged in but not configured yet. To configure it, run this co
 Now, you just have to run KVM with these `-net` options as a normal user:
 
 ```
-$ qemu-system-i386 -net nic -net vde -hda *[...]*
+$ qemu-system-x86_64 -net nic -net vde -hda *[...]*
 
 ```
 
@@ -959,7 +974,7 @@ If the above method does not work or you do not want to mess with kernel configs
 Then, to start the VM with a connection to the network of the host:
 
 ```
-$ qemu-system-i386 -net nic,macaddr=52:54:00:00:EE:03 -net vde *disk_image*
+$ qemu-system-x86_64 -net nic,macaddr=52:54:00:00:EE:03 -net vde *disk_image*
 
 ```
 
@@ -1038,6 +1053,31 @@ WantedBy=multi-user.target
 
 And finally, you can create the [bridge interface with netctl](/index.php/Bridge_with_netctl "Bridge with netctl").
 
+### Shorthand configuration
+
+If you're using QEMU with various networking options a lot, you probably have created a lot of `-netdev` and `-device` argument pairs, which gets quite repetitive. You can instead use the `-nic` argument to combine `-netdev` and `-device` together, so that, for example, these arguments:
+
+```
+-netdev tap,id=network0,ifname=tap0,script=no,downscript=no,vhost=on -device virtio-net,netdev=network0
+
+```
+
+...become:
+
+```
+-nic tap,ifname=tap0,script=no,downscript=no,vhost=on,model=virtio-net
+
+```
+
+Notice the lack of network IDs, and that the device was created with `model=...`. The first half of the `-nic` parameters are `-netdev` parameters, whereas the second half (after `model=...`) are related with the device. The same parameters (for example, `smb=...`) are used. There's also a special parameter for `-nic` which completely disables the default (user-mode) networking:
+
+```
+-nic none
+
+```
+
+See [QEMU networking documentation](https://qemu.weilnetz.de/doc/qemu-doc.html#Network-options) for more information on parameters you can use.
+
 ## Graphics
 
 QEMU can use the following different graphic outputs: `std`, `qxl`, `vmware`, `virtio`, `cirrus` and `none`.
@@ -1061,7 +1101,7 @@ SPICE can only be used when using QXL as the graphical output.
 The following is example of booting with SPICE as the remote desktop protocol, including the support for copy and paste from host:
 
 ```
-$ qemu-system-i386 -vga qxl -spice port=5930,disable-ticketing -device virtio-serial-pci -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent
+$ qemu-system-x86_64 -vga qxl -spice port=5930,disable-ticketing -device virtio-serial-pci -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent
 
 ```
 
@@ -1076,7 +1116,7 @@ $ remote-viewer spice://127.0.0.1:5930
 
 ```
 
-The reference and test implementation [spice-gtk3](https://www.archlinux.org/packages/?name=spice-gtk3) can also be used:
+The reference and test implementation [spice-gtk](https://www.archlinux.org/packages/?name=spice-gtk) can also be used:
 
 ```
 $ spicy -h 127.0.0.1 -p 5930
@@ -1108,11 +1148,9 @@ $ spicy --uri="spice+unix:///tmp/vm_spice.socket"
 
 For improved support for multiple monitors, clipboard sharing, etc. the following packages should be installed on the guest:
 
-*   [spice-vdagent](https://www.archlinux.org/packages/?name=spice-vdagent): Spice agent xorg client that enables copy and paste between client and X-session and more
-*   [xf86-video-qxl](https://www.archlinux.org/packages/?name=xf86-video-qxl) [xf86-video-qxl-git](https://aur.archlinux.org/packages/xf86-video-qxl-git/): Xorg X11 qxl video driver
+*   [spice-vdagent](https://www.archlinux.org/packages/?name=spice-vdagent): Spice agent xorg client that enables copy and paste between client and X-session and more. [Enable](/index.php/Enable "Enable") `spice-vdagentd.service` after installation.
+*   [xf86-video-qxl](https://www.archlinux.org/packages/?name=xf86-video-qxl): Xorg X11 qxl video driver
 *   For other operating systems, see the Guest section on [SPICE-Space download](http://www.spice-space.org/download.html) page.
-
-Enable `spice-vdagentd.service` after installation.
 
 ##### Password authentication with SPICE
 
@@ -1148,7 +1186,7 @@ Keep in mind that the `--spice-host-subject` parameter needs to be set according
 
 **Tip:** You can get the subject line of the server certificate in the correct format for `--spice-host-subject` (with entries separated by commas) using the following command: `$ openssl x509 -noout -subject -in server-cert.pem | cut -d' ' -f2- | sed 's/\///' | sed 's/\//,/g'` 
 
-The equivalent [spice-gtk3](https://www.archlinux.org/packages/?name=spice-gtk3) command is:
+The equivalent [spice-gtk](https://www.archlinux.org/packages/?name=spice-gtk) command is:
 
 ```
 $ spicy -h *hostname* -s 5901 --spice-ca-file=ca-cert.pem --spice-host-subject="C=*XX*,L=*city*,O=*organization*,CN=*hostname*" --spice-secure-channels=all
@@ -1189,7 +1227,7 @@ This is like a PC that has no VGA card at all. You would not even be able to acc
 Given that you used the `-nographic` option, you can add the `-vnc display` option to have QEMU listen on `display` and redirect the VGA display to the VNC session. There is an example of this in the [#Starting QEMU virtual machines on boot](#Starting_QEMU_virtual_machines_on_boot) section's example configs.
 
 ```
-$ qemu-system-i386 -vga std -nographic -vnc :0
+$ qemu-system-x86_64 -vga std -nographic -vnc :0
 $ gvncviewer :0
 
 ```
@@ -1238,19 +1276,17 @@ To use e.g. `hda` driver for the guest use the `-soundhw hda` command with QEMU.
 
 QEMU offers guests the ability to use paravirtualized block and network devices using the [virtio](http://wiki.libvirt.org/page/Virtio) drivers, which provide better performance and lower overhead.
 
-*   A virtio block device requires the option `-drive` instead of the simple `-hd*` plus `if=virtio`:
+*   A virtio block device requires the option `-drive` for passing a disk image, with parameter `if=virtio`:
 
 ```
-$ qemu-system-i386 -boot order=c -drive file=*disk_image*,if=virtio
+$ qemu-system-x86_64 -boot order=c -drive file=*disk_image*,if=virtio
 
 ```
-
-**Note:** `-boot order=c` is absolutely necessary when you want to boot from it. There is no auto-detection as with `-hd*`.
 
 *   Almost the same goes for the network:
 
 ```
-$ qemu-system-i386 -net nic,model=virtio
+$ qemu-system-x86_64 -net nic,model=virtio
 
 ```
 
@@ -1287,7 +1323,7 @@ The floppy disk option is difficult because you will need to press F6 (Shift-F6 
 The ISO option to load drivers is the preferred way, but it is available only on Windows Vista and Windows Server 2008 and later. The procedure is to load the image with virtio drivers in an additional cdrom device along with the primary disk device and Windows installer:
 
 ```
-$ qemu-system-i386 ... \
+$ qemu-system-x86_64 ... \
 -drive file=*/path/to/primary/disk.img*,index=0,media=disk,if=virtio \
 -drive file=*/path/to/installer.iso*,index=2,media=cdrom \
 -drive file=*/path/to/virtio.iso*,index=3,media=cdrom \
@@ -1321,7 +1357,7 @@ $ qemu-img create -f qcow2 *fake.qcow2* 1G
 Run the original Windows guest (with the boot disk still in IDE mode) with the fake disk (in virtio mode) and a CD-ROM with the driver.
 
 ```
-$ qemu-system-i386 -m 512 -vga std -drive file=*windows_disk_image*,if=ide -drive file=*fake.qcow2*,if=virtio -cdrom virtio-win-0.1-81.iso
+$ qemu-system-x86_64 -m 512 -vga std -drive file=*windows_disk_image*,if=ide -drive file=*fake.qcow2*,if=virtio -cdrom virtio-win-0.1-81.iso
 
 ```
 
@@ -1330,7 +1366,7 @@ Windows will detect the fake disk and try to find a driver for it. If it fails, 
 When the installation is successful, you can turn off the virtual machine and launch it again, now with the boot disk attached in virtio mode:
 
 ```
-$ qemu-system-i386 -m 512 -vga std -drive file=*windows_disk_image*,if=virtio
+$ qemu-system-x86_64 -m 512 -vga std -drive file=*windows_disk_image*,if=virtio
 
 ```
 
@@ -1341,18 +1377,24 @@ $ qemu-system-i386 -m 512 -vga std -drive file=*windows_disk_image*,if=virtio
 Installing virtio network drivers is a bit easier, simply add the `-net` argument as explained above.
 
 ```
-$ qemu-system-i386 -m 512 -vga std -drive file=*windows_disk_image*,if=virtio -net nic,model=virtio -cdrom virtio-win-0.1-74.iso
+$ qemu-system-x86_64 -m 512 -vga std -drive file=*windows_disk_image*,if=virtio -net nic,model=virtio -cdrom virtio-win-0.1-74.iso
 
 ```
 
 Windows will detect the network adapter and try to find a driver for it. If it fails, go to the *Device Manager*, locate the network adapter with an exclamation mark icon (should be open), click *Update driver* and select the virtual CD-ROM. Do not forget to select the checkbox which says to search for directories recursively.
+
+#### Balloon driver
+
+If you want to track you guest memory state (for example via `virsh` command `dommemstat`) or change guest's memory size in runtime (you still won't be able to change memory size, but can limit memory usage via inflating balloon driver) you will need to install guest balloon driver.
+
+For this you will need to go to *Device Manager*, locate *PCI standard RAM Controller* in *System devices* (or unrecognized PCI controller from *Other devices*) and choose *Update driver*. In opened window you will need to choose *Browse my computer...* and select the CD-ROM (and don't forget the *Include subdirectories* checkbox). Reboot after installation. This will install the driver and you will be able to inflate the balloon (for example via hmp command `balloon *memory_size*`, which will cause balloon to take as much memory as possible in order to shrink the guest's available memory size to *memory_size*). However, you still won't be able to track guest memory state. In order to do this you will need to install *Balloon* service properly. For that open command line as administrator, go to the CD-ROM, *Balloon* directory and deeper, depending on your system and architecture. Once you are in *amd64* (*x86*) directory, run `blnsrv.exe -i` which will do the installation. After that `virsh` command `dommemstat` should be outputting all supported values.
 
 ### Preparing a FreeBSD guest
 
 Install the `emulators/virtio-kmod` port if you are using FreeBSD 8.3 or later up until 10.0-CURRENT where they are included into the kernel. After installation, add the following to your `/boot/loader.conf` file:
 
 ```
-virtio_loader="YES"
+virtio_load="YES"
 virtio_pci_load="YES"
 virtio_blk_load="YES"
 if_vtnet_load="YES"
@@ -1371,7 +1413,7 @@ And verify that `/etc/fstab` is consistent. If anything goes wrong, just boot in
 
 ## QEMU Monitor
 
-While QEMU is running, a monitor console is provided in order to provide several ways to interact with the virtual machine running. The QEMU Monitor offers interesting capabilities such as obtaining information about the current virtual machine, hotplugging devices, creating snapshots of the current state of the virtual machine, etc. To see the list of all commands, run `help` or `?` in the QEMU monitor console or review the relevant section of the [official QEMU documentation](http://download.qemu-project.org/qemu-doc.html#pcsys_005fmonitor).
+While QEMU is running, a monitor console is provided in order to provide several ways to interact with the virtual machine running. The QEMU Monitor offers interesting capabilities such as obtaining information about the current virtual machine, hotplugging devices, creating snapshots of the current state of the virtual machine, etc. To see the list of all commands, run `help` or `?` in the QEMU monitor console or review the relevant section of the [official QEMU documentation](https://qemu.weilnetz.de/doc/qemu-doc.html#pcsys_005fmonitor).
 
 ### Accessing the monitor console
 
@@ -1504,9 +1546,10 @@ WantedBy=multi-user.target
 
 ```
 
-**Note:** According to `systemd.service(5)` and `systemd.kill(5)` man pages it is necessary to use the `KillMode=none` option. Otherwise the main qemu process will be killed immediately after the `ExecStop` command quits (it simply echoes one string) and your quest system will not be able to shutdown correctly.
+**Note:**
 
-**Note:** It is necessary to use the `PIDFile` option. Otherwise `systemd` cannot tell whether the main qemu process was terminated and your quest system will not be able to shutdown correctly. On host shutdown it will proceed without waiting for the VM to shutdown.
+*   According to [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) and `5` man pages it is necessary to use the `KillMode=none` option. Otherwise the main qemu process will be killed immediately after the `ExecStop` command quits (it simply echoes one string) and your quest system will not be able to shutdown correctly.
+*   It is necessary to use the `PIDFile` option. Otherwise systemd cannot tell whether the main qemu process was terminated and your quest system will not be able to shutdown correctly. On host shutdown it will proceed without waiting for the VM to shutdown.
 
 Then create per-VM configuration files, named `/etc/conf.d/qemu.d/*vm_name*`, with the following variables set:
 
@@ -1528,7 +1571,7 @@ Example configs:
 ```
 type="system-x86_64"
 
-args="-enable-kvm -m 512 -hda /dev/mapper/vg0-vm1 -net nic,macaddr=DE:AD:BE:EF:E0:00 \
+args="-enable-kvm -m 512 -hda /dev/vg0/vm1 -net nic,macaddr=DE:AD:BE:EF:E0:00 \
  -net tap,ifname=tap0 -serial telnet:localhost:7000,server,nowait,nodelay \
  -monitor telnet:localhost:7100,server,nowait,nodelay -vnc :0"
 
@@ -1552,10 +1595,10 @@ To set which virtual machines will start on boot-up, [enable](/index.php/Enable 
 
 ### Mouse integration
 
-To prevent the mouse from being grabbed when clicking on the guest operating system's window, add the option `-usbdevice tablet`. This means QEMU is able to report the mouse position without having to grab the mouse. This also overrides PS/2 mouse emulation when activated. For example:
+To prevent the mouse from being grabbed when clicking on the guest operating system's window, add the options `-usb -device usb-tablet`. This means QEMU is able to report the mouse position without having to grab the mouse. This also overrides PS/2 mouse emulation when activated. For example:
 
 ```
-$ qemu-system-i386 -hda *disk_image* -m 512 -vga std -usbdevice tablet
+$ qemu-system-x86_64 -hda *disk_image* -m 512 -vga std -usb -device usb-tablet
 
 ```
 
@@ -1578,7 +1621,7 @@ A less invasive solution is to emulate an EHCI (USB 2) or XHCI (USB 3) controlle
 
 You can also add the `...,port=*<n>*` setting to the previous option to specify in which physical port of the virtual controller you want to attach your device, useful in the case you want to add multiple usb devices to the VM.
 
-**Note:** If you encounter permission errors when running QEMU, see [Udev#Writing udev rules](/index.php/Udev#Writing_udev_rules "Udev") for information on how to set permissions of the device.
+**Note:** If you encounter permission errors when running QEMU, see [udev#About udev rules](/index.php/Udev#About_udev_rules "Udev") for information on how to set permissions of the device.
 
 ### USB redirection with SPICE
 
@@ -1599,7 +1642,7 @@ We need to add one EHCI/UHCI controller per available USB redirection slot desir
 -device usb-redir,chardev=usbredirchardev3,id=usbredirdev3
 ```
 
-Both `spicy` from [spice-gtk3](https://www.archlinux.org/packages/?name=spice-gtk3) (*Input > Select USB Devices for redirection*) and `remote-viewer` from [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer) (*File > USB device selection*) support this feature. Please make sure that you have installed the necessary SPICE Guest Tools on the virtual machine for this functionality to work as expected (see the [#SPICE](#SPICE) section for more information).
+Both `spicy` from [spice-gtk](https://www.archlinux.org/packages/?name=spice-gtk) (*Input > Select USB Devices for redirection*) and `remote-viewer` from [virt-viewer](https://www.archlinux.org/packages/?name=virt-viewer) (*File > USB device selection*) support this feature. Please make sure that you have installed the necessary SPICE Guest Tools on the virtual machine for this functionality to work as expected (see the [#SPICE](#SPICE) section for more information).
 
 **Warning:** Keep in mind that when a USB device is redirected from the client, it will not be usable from the client operating system itself until the redirection is stopped. It is specially important to never redirect the input devices (namely mouse and keyboard), since it will be then difficult to access the SPICE client menus to revert the situation, because the client will not respond to the input devices after being redirected to the virtual machine.
 
@@ -1607,14 +1650,16 @@ Both `spicy` from [spice-gtk3](https://www.archlinux.org/packages/?name=spice-gt
 
 Kernel Samepage Merging (KSM) is a feature of the Linux kernel that allows for an application to register with the kernel to have its pages merged with other processes that also register to have their pages merged. The KSM mechanism allows for guest virtual machines to share pages with each other. In an environment where many of the guest operating systems are similar, this can result in significant memory savings.
 
-To enable KSM, simply run
+**Note:** Although KSM may reduce memory usage, it may increase CPU usage. Also note some security issues may occur, see [Wikipedia:Kernel same-page merging](https://en.wikipedia.org/wiki/Kernel_same-page_merging "wikipedia:Kernel same-page merging").
+
+To enable KSM:
 
 ```
 # echo 1 > /sys/kernel/mm/ksm/run
 
 ```
 
-To make it permanent, you can use [systemd's temporary files](/index.php/Systemd#Temporary_files "Systemd"):
+To make it permanent, use [systemd's temporary files](/index.php/Systemd#Temporary_files "Systemd"):
 
  `/etc/tmpfiles.d/ksm.conf` 
 ```
@@ -1655,7 +1700,7 @@ Fast Startup may also need to be disabled for changes to the `-smp` option to be
 If you use a MS Windows guest, you might want to use RDP to connect to your guest VM. If you are using a VLAN or are not in the same network as the guest, use:
 
 ```
-$ qemu-system-i386 -nographic -net user,hostfwd=tcp::5555-:3389
+$ qemu-system-x86_64 -nographic -net user,hostfwd=tcp::5555-:3389
 
 ```
 
@@ -1680,7 +1725,7 @@ There are a number of techniques that you can use to improve the performance of 
 *   If supported by drivers in the guest operating system, use [virtio](http://wiki.libvirt.org/page/Virtio) for network and/or block devices. For example:
 
 ```
-$ qemu-system-i386 -net nic,model=virtio -net tap,if=tap0,script=no -drive file=*disk_image*,media=disk,if=virtio
+$ qemu-system-x86_64 -net nic,model=virtio -net tap,if=tap0,script=no -drive file=*disk_image*,media=disk,if=virtio
 
 ```
 
@@ -1689,30 +1734,30 @@ $ qemu-system-i386 -net nic,model=virtio -net tap,if=tap0,script=no -drive file=
 *   If you have a raw disk image, you may want to disable the cache:
 
 ```
-$ qemu-system-i386 -drive file=*disk_image*,if=virtio,**cache=none**
+$ qemu-system-x86_64 -drive file=*disk_image*,if=virtio,**cache=none**
 
 ```
 
 *   Use the native Linux AIO:
 
 ```
-$ qemu-system-i386 -drive file=*disk_image*,if=virtio**,aio=native,cache.direct=on**
+$ qemu-system-x86_64 -drive file=*disk_image*,if=virtio**,aio=native,cache.direct=on**
 
 ```
 
 *   If you use a qcow2 disk image, I/O performance can be improved considerably by ensuring that the L2 cache is of sufficient size. The [formula](https://blogs.igalia.com/berto/2015/12/17/improving-disk-io-performance-in-qemu-2-5-with-the-qcow2-l2-cache/) to calculate L2 cache is: l2_cache_size = disk_size * 8 / cluster_size. Assuming the qcow2 image was created with the default cluster size of 64K, this means that for every 8 GB in size of the qcow2 image, 1 MB of L2 cache is best for performance. Only 1 MB is used by QEMU by default; specifying a larger cache is done on the QEMU command line. For instance, to specify 4 MB of cache (suitable for a 32 GB disk with a cluster size of 64K):
 
 ```
-$ qemu-system-i386 -drive file=*disk_image*,format=qcow2,l2-cache-size=4M
+$ qemu-system-x86_64 -drive file=*disk_image*,format=qcow2,l2-cache-size=4M
 
 ```
 
 *   If you are running multiple virtual machines concurrently that all have the same operating system installed, you can save memory by enabling [kernel same-page merging](https://en.wikipedia.org/wiki/Kernel_SamePage_Merging_(KSM) "wikipedia:Kernel SamePage Merging (KSM)"). See [#Enabling KSM](#Enabling_KSM).
-*   In some cases, memory can be reclaimed from running virtual machines by running a memory ballooning driver in the guest operating system and launching QEMU with the `-balloon virtio` option.
+*   In some cases, memory can be reclaimed from running virtual machines by running a memory ballooning driver in the guest operating system and launching QEMU using `--device virtio-balloon`.
 *   It is possible to use a emulation layer for an ICH-9 AHCI controller (although it may be unstable). The AHCI emulation supports [NCQ](https://en.wikipedia.org/wiki/Native_Command_Queuing "wikipedia:Native Command Queuing"), so multiple read or write requests can be outstanding at the same time:
 
 ```
-$ qemu-system-i386 -drive id=disk,file=*disk_image*,if=none -device ich9-ahci,id=ahci -device ide-drive,drive=disk,bus=ahci.0
+$ qemu-system-x86_64 -drive id=disk,file=*disk_image*,if=none -device ich9-ahci,id=ahci -device ide-drive,drive=disk,bus=ahci.0
 
 ```
 
@@ -1746,7 +1791,7 @@ Replace `-usbdevice tablet` with `-usb` as QEMU option.
 Should you find that some of your keys do not work or "press" the wrong key (in particular, the arrow keys), you likely need to specify your keyboard layout as an option. The keyboard layouts can be found in `/usr/share/qemu/keymaps`.
 
 ```
-$ qemu-system-i386 -k *keymap* *disk_image*
+$ qemu-system-x86_64 -k *keymap* *disk_image*
 
 ```
 
@@ -1792,6 +1837,51 @@ or some other boot hindering process (e.g. cannot unpack initramfs, cant start s
 
 Using the `hda` audio driver for Windows 7 guest may result in low-quality sound. Changing the audio driver to `ac97` by passing the `-soundhw ac97` arguments to QEMU and installing the AC97 driver from [Realtek AC'97 Audio Codecs](http://www.realtek.com.tw/downloads/downloadsView.aspx?Langid=1&PNid=14&PFid=23&Level=4&Conn=3&DownTypeID=3&GetDown=false) in the guest may solve the problem. See [Red Hat Bugzilla – Bug 1176761](https://bugzilla.redhat.com/show_bug.cgi?id=1176761#c16) for more information.
 
+### Could not access KVM kernel module: Permission denied
+
+If you encounter the following error:
+
+```
+ libvirtError: internal error: process exited while connecting to monitor: Could not access KVM kernel module: Permission denied failed to initialize KVM: Permission denied
+
+```
+
+Systemd 234 assign it a dynamic id to group kvm (see [bug](https://bugs.archlinux.org/task/54943)). A workground for avoid this error, you need edit the file `/etc/libvirt/qemu.conf` and change the line:
+
+```
+ group = "78"
+
+```
+
+to
+
+```
+ group = "kvm"
+
+```
+
+### "System Thread Exception Not Handled" when booting a Windows VM
+
+Windows 8 or Windows 10 guests may raise a generic compatibility exception at boot, namely "System Thread Exception Not Handled", which tends to be caused by legacy drivers acting strangely on real machines. On KVM machines this issue can generally be solved by setting the CPU model to `core2duo`.
+
+### Certain Windows games/applications crashing/causing a bluescreen
+
+Occasionally, applications running in the VM may crash unexpectedly, whereas they'd run normally on a physical machine. If, while running `dmesg -wH`, you encounter an error mentioning `MSR`, the reason for those crashes is that KVM injects a [General protection fault](https://en.wikipedia.org/wiki/General_protection_fault "wikipedia:General protection fault") (GPF) when the guest tries to access unsupported [Model-specific registers](https://en.wikipedia.org/wiki/Model-specific_register "wikipedia:Model-specific register") (MSRs) - this often results in guest applications/OS crashing. A number of those issues can be solved by passing the `ignore_msrs=1` option to the KVM module, which will ignore unimplemented MSRs.
+
+ `/etc/modprobe.d/kvm.conf` 
+```
+...
+options kvm ignore_msrs=1
+...
+```
+
+Cases where adding this option might help:
+
+*   GeForce Experience complaining about an unsupported CPU being present.
+*   StarCraft 2 and L.A. Noire reliably blue-screening Windows 10 with `KMODE_EXCEPTION_NOT_HANDLED`. The blue screen information does not identify a driver file in these cases.
+
+**Warning:** While this is normally safe and some applications might not work without this, silently ignoring unknown MSR accesses could potentially break other software within the VM or other VMs.
+
 ## See also
 
 *   [Official QEMU website](http://qemu.org)
@@ -1803,7 +1893,7 @@ Using the `hda` audio driver for Windows 7 guest may result in low-quality sound
 *   [Lastest docs](http://git.qemu.org/?p=qemu.git;a=tree;f=docs)
 *   [QEMU on Windows](http://qemu.weilnetz.de/)
 *   [Wikipedia](https://en.wikipedia.org/wiki/Qemu "wikipedia:Qemu")
-*   [QEMU - Debian Wiki](https://wiki.debian.org/QEMU)
+*   [Debian Wiki - QEMU](https://wiki.debian.org/QEMU "debian:QEMU")
 *   [QEMU Networking on gnome.org](https://people.gnome.org/~markmc/qemu-networking.html)
 *   [Networking QEMU Virtual BSD Systems](http://bsdwiki.reedmedia.net/wiki/networking_qemu_virtual_bsd_systems.html)
 *   [QEMU on gnu.org](https://www.gnu.org/software/hurd/hurd/running/qemu.html)

@@ -45,7 +45,7 @@ alias sound-slot-0 snd-hda-intel
 
 ### Accelerometer
 
-You need to build kernel manually to enable `bmc150_accel_i2c` IIO driver, and install [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) if you use a desktop environment. The DSDT data gives a faulty `ACCEL_MOUNT_MATRIX` data, so create the following file in `/etc/udev/hwdb.d/61-sensor-local.hwdb` with the following contents:
+You need to build kernel manually to enable `bmc150_accel_i2c` IIO driver, and install [iio-sensor-proxy](https://www.archlinux.org/packages/?name=iio-sensor-proxy) if you use a desktop environment. The DSDT data gives a faulty `ACCEL_MOUNT_MATRIX` data, so create the following file in `/etc/udev/hwdb.d/61-sensor-local.hwdb` with the following contents:
 
 ```
 sensor:modalias:acpi:BOSC0200*:dmi:*:svnALLDOCUBE:pni1101:*

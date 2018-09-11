@@ -320,8 +320,8 @@ Rectangle {
 #### Python (PyQt)
 
 *   Package:
-    *   [python-pyqt4](https://www.archlinux.org/packages/?name=python-pyqt4) - Python 3.x bindings for Qt 4
-    *   [python2-pyqt4](https://www.archlinux.org/packages/?name=python2-pyqt4) - Python 2.x bindings for Qt 4
+    *   [python-pyqt4](https://aur.archlinux.org/packages/python-pyqt4/) - Python 3.x bindings for Qt 4
+    *   [python2-pyqt4](https://aur.archlinux.org/packages/python2-pyqt4/) - Python 2.x bindings for Qt 4
     *   [python-pyqt5](https://www.archlinux.org/packages/?name=python-pyqt5) - Python 3.x bindings for Qt 5
     *   [python2-pyqt5](https://www.archlinux.org/packages/?name=python2-pyqt5) - Python 2.x bindings for Qt 5
 

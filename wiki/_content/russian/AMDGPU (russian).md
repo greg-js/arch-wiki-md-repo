@@ -1,3 +1,9 @@
+Related articles
+
+*   [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst")
+*   [ATI](/index.php/ATI "ATI")
+*   [Xorg](/index.php/Xorg "Xorg")
+
 **amdgpu** это свободный грфический драйвер для последних видеокарт AMD Radeon.
 
 В настоящий момент поддерживаются видекорты с архитектурой [Volcanic Islands (VI)](http://xorg.freedesktop.org/wiki/RadeonFeature/),некоторые видеокарты семейства [Sea Islands (CI)](https://www.phoronix.com/scan.php?page=news_item&px=AMD-AMDGPU-Released) и [Southern Islands (SI)](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-SI-Experimental-Code) (поддержку старее Sea Islands введут только в [Xorg 1.2.0](https://lists.x.org/archives/xorg-announce/2016-November/002741.html) и Linux 4.9). AMD не планируют поддержку видеокарт c архитектуройй до GCN.

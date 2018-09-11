@@ -464,7 +464,7 @@ Da [Wikipedia](https://en.wikipedia.org/wiki/it:Phonon "wikipedia:it:Phonon"):
 
 ### Quale backend si dovrebbe scegliere?
 
-Si possono utilizzare diversi backend come [GStreamer](/index.php/GStreamer "GStreamer") ([phonon-qt4-gstreamer](https://www.archlinux.org/packages/?name=phonon-qt4-gstreamer)) e [VLC](/index.php/VLC "VLC") ([phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc)) disponibili nei [Depositi Ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"), mentre QuickTime ([phonon-quicktime-git](https://aur.archlinux.org/packages/phonon-quicktime-git/)), e [AVKode](http://martinsandsmark.wordpress.com/2012/07/07/akademy/) ([phonon-avkode-git](https://aur.archlinux.org/packages/phonon-avkode-git/)) sono reperibili su [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)").
+Si possono utilizzare diversi backend come [GStreamer](/index.php/GStreamer "GStreamer") ([phonon-qt4-gstreamer](https://aur.archlinux.org/packages/phonon-qt4-gstreamer/)) e [VLC](/index.php/VLC "VLC") ([phonon-qt4-vlc](https://aur.archlinux.org/packages/phonon-qt4-vlc/)) disponibili nei [Depositi Ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)"), mentre QuickTime ([phonon-quicktime-git](https://aur.archlinux.org/packages/phonon-quicktime-git/)), e [AVKode](http://martinsandsmark.wordpress.com/2012/07/07/akademy/) ([phonon-avkode-git](https://aur.archlinux.org/packages/phonon-avkode-git/)) sono reperibili su [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)").
 
 La maggior parte degli utenti preferisce GStreamer o VLC, poiché sono maggiormente supportati. Si noti che possono essere installati più backend in una sola volta, e sceglierne uno in *Impostazioni di Sistema > Multimedia > Phonon > Backend*.
 
@@ -852,7 +852,7 @@ e si imposti il device chiamato `default` prima di tutti gli altri device in ogn
 
 ##### Non riesco a riprodurre file MP3 quando imposto come backend Gstreamer in Qt Phonon
 
-Si può risolvere installando i gstreamer plugins (pacchetto [gstreamer0.10-plugins](https://www.archlinux.org/groups/x86_64/gstreamer0.10-plugins/)). Se si dovessero incontrare altri problemi, si potrebbe provare a cambiare il backend utilizzato da Phonon, installandone un altro come [phonon-qt4-vlc](https://www.archlinux.org/packages/?name=phonon-qt4-vlc)
+Si può risolvere installando i gstreamer plugins (pacchetto [gstreamer0.10-plugins](https://www.archlinux.org/groups/x86_64/gstreamer0.10-plugins/)). Se si dovessero incontrare altri problemi, si potrebbe provare a cambiare il backend utilizzato da Phonon, installandone un altro come [phonon-qt4-vlc](https://aur.archlinux.org/packages/phonon-qt4-vlc/)
 
 L'odine di preferenza del backend può essere cambiato in:
 

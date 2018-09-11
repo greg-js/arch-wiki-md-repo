@@ -69,7 +69,6 @@ You will probably want to install a greeter. A greeter is a GUI that prompts the
 The official repositories contain the following greeters:
 
 *   [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter): this is the **default** greeter LightDM attempts to use when started unless configured to do otherwise.
-*   [lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter): A greeter used with KDE4.
 *   lightdm-deepin-greeter ([deepin-session-ui](https://www.archlinux.org/packages/?name=deepin-session-ui)): A greeter from the [Deepin](/index.php/Deepin "Deepin") project.
 
 Other alternative greeters are available in the [AUR](/index.php/AUR "AUR"):

@@ -167,7 +167,7 @@ In GRUB it is possible, by default, to change the look of the menu. Make sure to
 
 ### Setting the framebuffer resolution
 
-GRUB can set the framebuffer for both GRUB itself and the kernel. The old `vga=` way is deprecated. The preferred method is editing `/etc/default/grub` as the following sample:
+GRUB can set the framebuffer for both GRUB itself and the kernel. The old `vga=` way is deprecated. The preferred method is editing `/etc/default/grub` as the following sample to set width (pixels) x height (pixels) x [color depth](https://en.wikipedia.org/wiki/color_depth "wikipedia:color depth"):
 
 ```
 GRUB_GFXMODE=1024x768x32

@@ -87,7 +87,7 @@ If you are on GCN 1.1 or newer with AMDGPU and want to use DC, set `amdgpu.dc=1`
 *   To use the proprietary OpenCL component without AMDGPU PRO, [install](/index.php/Install "Install") [opencl-amd](https://aur.archlinux.org/packages/opencl-amd/) instead.
 *   A [downgrade](/index.php/Downgrade "Downgrade") of the [linux](https://www.archlinux.org/packages/?name=linux) (4.9) and [Xorg](/index.php/Xorg "Xorg") (1.18) packages is required to use AMDGPU PRO 17.10.
 
-AMD provides a proprietary, binary userland driver called *AMDGPU PRO*, which works on top of the open-source AMDGPU kernel driver. The driver provides OpenGL, [OpenCL](/index.php/OpenCL "OpenCL"), [Vulkan](/index.php/Vulkan "Vulkan") and [VDPAU](/index.php/VDPAU "VDPAU") support (although this is also supported by the open-source driver). For some workloads it provides better performance than the open-source driver ([example benchmark](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-PRO-16.40-Deus-MD)), while for others it is true the contrary ([example benchmark](https://openbenchmarking.org/prospect/1610315-TA-AMDGPUPRO08/998ba9b677230564e0fbca342a8e1b9a7e85b6ab)).
+AMD provides a proprietary, binary userland driver called *AMDGPU PRO*, which works on top of the open-source AMDGPU kernel driver. The driver provides OpenGL, [OpenCL](/index.php/OpenCL "OpenCL"), [Vulkan](/index.php/Vulkan "Vulkan") and [VDPAU](/index.php/VDPAU "VDPAU") support (although this is also supported by the open-source driver). For some workloads it provides better performance than the open-source driver ([example benchmark](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-PRO-16.40-Deus-MD)), while for others the contrary is true ([example benchmark](https://openbenchmarking.org/prospect/1610315-TA-AMDGPUPRO08/998ba9b677230564e0fbca342a8e1b9a7e85b6ab)).
 
 See the [release notes](https://support.amd.com/en-us/kb-articles/Pages/AMDGPU-PRO-Driver-for-Linux-Release-Notes.aspx) and the [announcement at the Phoronix forum](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/amd-linux/855699-amd-representative-says-their-vulkan-linux-driver-will-be-here-soon/page6) for more information.
 
@@ -216,39 +216,20 @@ EndSection
 
 ### Screen artifacts and frequency problem
 
-[Dynamic power management](/index.php/ATI#dynamic_power_management "ATI") may cause screen artifacts to appear when displaying to monitors at higher frequencies (120+Hz) due to issues in the way GPU clock speeds are managed[[2]](https://bugs.freedesktop.org/show_bug.cgi?id=96868)[[3]](https://bugs.freedesktop.org/show_bug.cgi?id=102646).
+[Dynamic power management](/index.php/ATI#Dynamic_power_management "ATI") may cause screen artifacts to appear when displaying to monitors at higher frequencies (120+Hz) due to issues in the way GPU clock speeds are managed[[2]](https://bugs.freedesktop.org/show_bug.cgi?id=96868)[[3]](https://bugs.freedesktop.org/show_bug.cgi?id=102646).
 
-A workaround is to force the GPU to a fixed performance level:
+A workaround [[4]](https://bugs.freedesktop.org/show_bug.cgi?id=96868#c13) is saving `high` or `low` in `/sys/class/drm/card0/device/power_dpm_force_performance_level`.
 
-```
-# echo high > /sys/class/drm/card0/device/power_dpm_force_performance_level
-
-```
-
-The available options for performance levels are:
-
-*   `auto` automatic switching between performance levels (default)
-*   `low` lowest performance level
-*   `high` highest performance level
-
-The workaround above is only temporary. It can be made persistent by creating a [udev](/index.php/Udev "Udev") rule:
-
- `/etc/udev/rules.d/30-amdgpu-pm.rules` 
-```
-KERNEL=="card0", SUBSYSTEM=="drm", DRIVERS=="amdgpu", ATTR{device/power_dpm_force_performance_level}="high"
-
-```
-
-There is also a GUI solution [[4]](https://github.com/marazmista/radeon-profile) where you can manage the "power_dpm" with [radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/) and [radeon-profile-daemon-git](https://aur.archlinux.org/packages/radeon-profile-daemon-git/).
+There is also a GUI solution [[5]](https://github.com/marazmista/radeon-profile) where you can manage the "power_dpm" with [radeon-profile-git](https://aur.archlinux.org/packages/radeon-profile-git/) and [radeon-profile-daemon-git](https://aur.archlinux.org/packages/radeon-profile-daemon-git/).
 
 ### Screen flickering
 
-If you experience flickering [[5]](https://bugzilla.kernel.org/show_bug.cgi?id=199101) add `amdgpu.dc=0` to your kernel parameters.
+If you experience flickering [[6]](https://bugzilla.kernel.org/show_bug.cgi?id=199101) add `amdgpu.dc=0` to your kernel parameters.
 
 ### R9 390 series Poor Performance and/or Instability
 
-If you experience issues [[6]](https://bugs.freedesktop.org/show_bug.cgi?id=91880) with a AMD R9 390 series graphics card, set `radeon.cik_support=0 amdgpu.cik_support=1 amdgpu.dpm=1 amdgpu.dc=1` as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to force DPM support.
+If you experience issues [[7]](https://bugs.freedesktop.org/show_bug.cgi?id=91880) with a AMD R9 390 series graphics card, set `radeon.cik_support=0 amdgpu.cik_support=1 amdgpu.dpm=1 amdgpu.dc=1` as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to force DPM support.
 
 ### Freezes with "[drm] IP block:gmc_v8_0 is hung!" kernel error
 
-If you experience freezes and kernel crashes during a GPU intensive task with the kernel error " [drm] IP block:gmc_v8_0 is hung!" [[7]](https://bugs.freedesktop.org/show_bug.cgi?id=102322), a workaround is to set `amggpu.vm_update_mode=3` as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to force the GPUVM page tables update to be done using the CPU. Downsides are listed here [[8]](https://bugs.freedesktop.org/show_bug.cgi?id=102322#c15).
+If you experience freezes and kernel crashes during a GPU intensive task with the kernel error " [drm] IP block:gmc_v8_0 is hung!" [[8]](https://bugs.freedesktop.org/show_bug.cgi?id=102322), a workaround is to set `amggpu.vm_update_mode=3` as [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to force the GPUVM page tables update to be done using the CPU. Downsides are listed here [[9]](https://bugs.freedesktop.org/show_bug.cgi?id=102322#c15).

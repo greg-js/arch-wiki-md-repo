@@ -41,7 +41,7 @@ There are two types of keyboard values in [Xorg](/index.php/Xorg "Xorg"): *keyco
 
 	keysym
 
-	The *keysym* is the value assigned to the *keycode*. For example, pressing `A` generates the `keycode 73`, which is mapped to the `keysym 0×61`, which matches `A` in the [ASCII table](https://en.wikipedia.org/wiki/ASCII "wikipedia:ASCII").
+	The *keysym* is the value assigned to the *keycode*. For example, pressing `a` generates the `keycode 38`, which is mapped to the `keysym 0×61`, which matches `a` in the [ASCII table](https://en.wikipedia.org/wiki/ASCII "wikipedia:ASCII").
 
 	The *keysyms* are managed by [Xorg](/index.php/Xorg "Xorg") in a table of *keycodes* defining the *keycode*-*keysym* relations, which is called the [keymap table](#Keymap_table). This can be shown by running `xmodmap`.
 
