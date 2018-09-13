@@ -86,6 +86,9 @@ KDE имеет активно поддерживаемый вики-ресурс
         *   [6.6.1 Сброс настроек Akonadi для решения проблем с KMail](#.D0.A1.D0.B1.D1.80.D0.BE.D1.81_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA_Akonadi_.D0.B4.D0.BB.D1.8F_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC_.D1.81_KMail)
     *   [6.7 Сеть](#.D0.A1.D0.B5.D1.82.D1.8C)
         *   [6.7.1 Зависания при использовании автоматического монтирования NFS-раздела](#.D0.97.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D1.8F_.D0.BF.D1.80.D0.B8_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B8_.D0.B0.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B3.D0.BE_.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_NFS-.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0)
+    *   [6.8 Слишком частое журналирование событий QXcbConnection](#.D0.A1.D0.BB.D0.B8.D1.88.D0.BA.D0.BE.D0.BC_.D1.87.D0.B0.D1.81.D1.82.D0.BE.D0.B5_.D0.B6.D1.83.D1.80.D0.BD.D0.B0.D0.BB.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.81.D0.BE.D0.B1.D1.8B.D1.82.D0.B8.D0.B9_QXcbConnection)
+    *   [6.9 Приложения на KF5/Qt 5 не отображают значки в i3/FVWM/awesome](#.D0.9F.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BD.D0.B0_KF5.2FQt_5_.D0.BD.D0.B5_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D1.8E.D1.82_.D0.B7.D0.BD.D0.B0.D1.87.D0.BA.D0.B8_.D0.B2_i3.2FFVWM.2Fawesome)
+    *   [6.10 Discover не отображает никакие приложения](#Discover_.D0.BD.D0.B5_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D0.B5.D1.82_.D0.BD.D0.B8.D0.BA.D0.B0.D0.BA.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F)
 *   [7 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Установка
@@ -674,6 +677,18 @@ $ rm ~/.local/share/akonadi ~/.config/akonadi
 #### Зависания при использовании автоматического монтирования NFS-раздела
 
 Использование [автоматического монтирования с systemd](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B5_.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.81_systemd "Fstab (Русский)") раздела с файловой системой [NFS (Русский)](/index.php/NFS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NFS (Русский)") может приводить к зависаниям, для более подробной информации смотрите [отчёт об ошибке](https://bugs.kde.org/show_bug.cgi?id=354137) на баг-трекере KDE.
+
+### Слишком частое журналирование событий QXcbConnection
+
+Смотрите [Qt#Disable/Change Qt journal logging behaviour](/index.php/Qt#Disable.2FChange_Qt_journal_logging_behaviour "Qt").
+
+### Приложения на KF5/Qt 5 не отображают значки в i3/FVWM/awesome
+
+Смотрите [Qt#Configuration of Qt5 apps under environments other than KDE Plasma](/index.php/Qt#Configuration_of_Qt5_apps_under_environments_other_than_KDE_Plasma "Qt").
+
+### Discover не отображает никакие приложения
+
+Проблему можно решить установкой пакета [packagekit-qt5](https://www.archlinux.org/packages/?name=packagekit-qt5).
 
 ## Смотрите также
 

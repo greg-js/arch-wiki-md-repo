@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [NetworkManager#nmcli](/index.php/NetworkManager#nmcli "NetworkManager")
+*   [ArchWiki:Archive](/index.php/ArchWiki:Archive "ArchWiki:Archive")

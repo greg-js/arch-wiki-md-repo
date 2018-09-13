@@ -281,7 +281,7 @@ Set the root [password](/index.php/Password "Password"):
 
 A Linux-capable boot loader must be installed in order to boot Arch Linux. See [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") for available choices.
 
-If you have an Intel or AMD CPU, [enable microcode updates](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
+If you have an Intel or AMD CPU, enable [microcode](/index.php/Microcode "Microcode") updates.
 
 ## Reboot
 

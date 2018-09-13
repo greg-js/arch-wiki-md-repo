@@ -17,7 +17,7 @@ A patch describes a set of line changes for one or multiple files. Patches are t
 
 **Note:** If you only need to change one or two lines, you might want to use `sed` instead.
 
-The `diff` tool compares files line by line if you save its output you have got a patch, e.g. `diff -ura foo bar > patch`. If you pass directories `diff` will compare the files they contain.
+The `diff` tool compares files line by line. If you save its output you have got a patch, e.g. `diff -ura foo bar > patch`. If you pass directories `diff` will compare the files they contain.
 
 1.  Delete the `src` directory if you have already built the package.
 2.  Run `makepkg -o` which will download and extract the source files, specified in `PKGBUILD`, but not build them.
@@ -37,28 +37,20 @@ This section outlines how to apply patches you created or downloaded from the In
 2.  Then use `updpkgsums` (from [pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib)) to update the `md5sums` array. Or manually add an entry to the `md5sums` array; you can generate sum of your patch using `md5sum` tool.
 3.  Create the `prepare()` function in the `PKGBUILD` if one is not already present.
 4.  The first step is to change into the directory that needs to be patched (in the `prepare()` function, not on your terminal! You want to automate the process of applying the patch). You can do this with something like `cd $srcdir/$pkgname-$pkgver` or something similar. `$pkgname-$pkgver` is often the name of a directory created by untarring a downloaded source file, but not in all cases.
-5.  Now you simply need to apply the patch from within this directory. This is very simply done by adding
-
-```
-patch -p1 -i *pkgname*.patch 
-
-```
-
-to your `prepare()` function, changing `*pkgname*.patch` to the name of the file containing the diff (the file that was automatically copied into your `src` directory because it was in the `source` array of the `PKGBUILD` file).
+5.  Now you simply need to apply the patch from within this directory. This is very simply done by adding `patch -p1 -i *pkgname*.patch` to your `prepare()` function, changing `*pkgname*.patch` to the name of the file containing the diff (the file that was automatically copied into your `src` directory because it was in the `source` array of the `PKGBUILD` file).
 
 An example prepare-function:
+```
+    prepare() {
+        cd $pkgname-$pkgver
+        patch -Np1 -i "${srcdir}/eject.patch"
+    }
 
 ```
-prepare() {
- cd $pkgname-$pkgver
- patch -Np1 -i "${srcdir}/eject.patch"
-}
 
-```
+Run `makepkg` (from the terminal now). If all goes well, the patch will be automatically applied, and your new package will contain whatever changes were included in the patch. If not, you may have to experiment with the `-p` option of patch. read [patch(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/patch.1) for more information. Basically it works as follows. If the diff file was created to apply patches to files in `myversion/`, the diff files will be applied to `myversion/file`. You are running it from within the `yourversion/` directory (because you would cd into that directory in the `PKGBUILD`), so when patch applies the file, you want it to apply it to the file `file`, taking off the `myversion/` part. `-p1` does this, by removing one directory from the path. However, if the developer patched in `myfiles/myversion`, you need to remove two directories, so you use `-p2`.
 
-Run `makepkg` (from the terminal now). If all goes well, the patch will be automatically applied, and your new package will contain whatever changes were included in the patch. If not, you may have to experiment with the `-p` option of patch. read [patch(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/patch.1) for more information. Basically it works as follows. If the diff file was created to apply patches to files in `myversion/`, the diff files will be applied to `myversion/file`. You are running it from within the `yourversion/` directory (because you cd would into that directory in the `PKGBUILD`), so when patch applies the file, you want it to apply it to the file `file`, taking off the `myversion/` part. `-p1` does this, by removing one directory from the path. However, if the developer patched in `myfiles/myversion`, you need to remove two directories, so you use `-p2`.
-
-If you do not apply a -p option, it will take off all directory structure. This is ok if all the files are in the base directory, but if the patch was created on `myversion/` and one of the edited files was `myversion/src/file`, and you run the patch without a `-p` option from within `yourversion`, it will try to patch a file named `yourversion/file`.
+If you do not apply a `-p` option, it will take off all directory structure. This is ok if all the files are in the base directory, but if the patch was created on `myversion/` and one of the edited files was `myversion/src/file`, and you run the patch without a `-p` option from within `yourversion`, it will try to patch a file named `yourversion/file`.
 
 Most developers create patches from the parent directory of the directory that is being patched, so `-p1` will usually be right.
 

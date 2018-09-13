@@ -20,13 +20,13 @@ QEMU может использовать другие гипервизоры, т
 *   [3 Создание новой виртуальной машины](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BD.D0.BE.D0.B2.D0.BE.D0.B9_.D0.B2.D0.B8.D1.80.D1.82.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.88.D0.B8.D0.BD.D1.8B)
     *   [3.1 Создание образа жесткого диска](#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BE.D0.B1.D1.80.D0.B0.D0.B7.D0.B0_.D0.B6.D0.B5.D1.81.D1.82.D0.BA.D0.BE.D0.B3.D0.BE_.D0.B4.D0.B8.D1.81.D0.BA.D0.B0)
         *   [3.1.1 Overlay storage images](#Overlay_storage_images)
-        *   [3.1.2 Resizing an image](#Resizing_an_image)
-        *   [3.1.3 Converting an image](#Converting_an_image)
-    *   [3.2 Preparing the installation media](#Preparing_the_installation_media)
-    *   [3.3 Installing the operating system](#Installing_the_operating_system)
-*   [4 Running virtualized system](#Running_virtualized_system)
-    *   [4.1 Enabling KVM](#Enabling_KVM)
-    *   [4.2 Enabling IOMMU (Intel VT-d/AMD-Vi) support](#Enabling_IOMMU_.28Intel_VT-d.2FAMD-Vi.29_support)
+        *   [3.1.2 Изменение размера образа](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.BC.D0.B5.D1.80.D0.B0_.D0.BE.D0.B1.D1.80.D0.B0.D0.B7.D0.B0)
+        *   [3.1.3 Преобразование образа](#.D0.9F.D1.80.D0.B5.D0.BE.D0.B1.D1.80.D0.B0.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BE.D0.B1.D1.80.D0.B0.D0.B7.D0.B0)
+    *   [3.2 Подготовка установочного носителя](#.D0.9F.D0.BE.D0.B4.D0.B3.D0.BE.D1.82.D0.BE.D0.B2.D0.BA.D0.B0_.D1.83.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BE.D1.87.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BD.D0.BE.D1.81.D0.B8.D1.82.D0.B5.D0.BB.D1.8F)
+    *   [3.3 Установка операционной системы](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_.D0.BE.D0.BF.D0.B5.D1.80.D0.B0.D1.86.D0.B8.D0.BE.D0.BD.D0.BD.D0.BE.D0.B9_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B)
+*   [4 Запуск виртуальной машины](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.B2.D0.B8.D1.80.D1.82.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.88.D0.B8.D0.BD.D1.8B)
+    *   [4.1 Включение KVM](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_KVM)
+    *   [4.2 Включение поддержки IOMMU (Intel VT-d/AMD-Vi)](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B8_IOMMU_.28Intel_VT-d.2FAMD-Vi.29)
 *   [5 Moving data between host and guest OS](#Moving_data_between_host_and_guest_OS)
     *   [5.1 Network](#Network)
     *   [5.2 QEMU's built-in SMB server](#QEMU.27s_built-in_SMB_server)
@@ -146,26 +146,26 @@ QEMU не предоставляет графический интерфейс �
 
 ### Создание образа жесткого диска
 
-**Совет:** See the [QEMU Wikibook](https://en.wikibooks.org/wiki/QEMU/Images) for more information on QEMU images.
+**Совет:** Для получения дополнительной информации о образах QEMU смотрите [QEMU Wikibook](https://en.wikibooks.org/wiki/QEMU/Images).
 
-To run QEMU you will need a hard disk image, unless you are booting a live system from CD-ROM or the network (and not doing so to install an operating system to a hard disk image). A hard disk image is a file which stores the contents of the emulated hard disk.
+Чтобы запустить QEMU вам нужен образ жесткого диск, конечно, если вы не запускаете live систему через CD-ROM или сеть (и при этом ничего не делаете для установки операционной системы на образ диска). Образ жесткого диска - файл, хранящий содержимое эмулируемого жесткого диска.
 
-A hard disk image can be *raw*, so that it is literally byte-by-byte the same as what the guest sees, and will always use the full capacity of the guest hard drive on the host. This method provides the least I/O overhead, but can waste a lot of space, as not-used space on the guest cannot be used on the host.
+Формат образа жесткого диска может быть *raw', так что он буквально одинаков побайтно по сравнению с тем, что отображается в госте. Он всегда будет использовать полную емкость гостевого жесткого диска на хосте. Этот способ обеспечивает наименьшие издержки ввода-вывода, но может занимать много места, поскольку неиспользуемое пространство в гостевой системе не может использоваться на хосте.*
 
-Alternatively, the hard disk image can be in a format such as *qcow2* which only allocates space to the image file when the guest operating system actually writes to those sectors on its virtual hard disk. The image appears as the full size to the guest operating system, even though it may take up only a very small amount of space on the host system. This image format also supports QEMU snapshotting functionality (see [#Creating and managing snapshots via the monitor console](#Creating_and_managing_snapshots_via_the_monitor_console) for details). However, using this format instead of *raw* will likely affect performance.
+Кроме того, формат образа жесткого диска может быть таким как, *qcow2*, в котором выделяется пространство файлу образа только, когда гостевая операционная система фактически записывает эти сектора на своем виртуальном жестком диске. В гостевой системе отображается фактический размер образа, хотя на хост-системе он может занимать только очень небольшое пространство. Этот формат также поддерживает функцию снимков экрана (для получения дополнительной информации смотрите [#Creating and managing snapshots via the monitor console](#Creating_and_managing_snapshots_via_the_monitor_console)). Но использование этого формата вместо *raw* может сказаться на производительности.
 
-QEMU provides the `qemu-img` command to create hard disk images. For example to create a 4 GB image in the *raw* format:
-
-```
-$ qemu-img create -f raw *image_file* 4G
+QEMU предоставляет команду `qemu-img` для создания образов жесткого диска. Например, чтобы создать образ с размером 4 Гб в формате *raw*, нужно выполнить:
 
 ```
+$ qemu-img create -f raw *файл_образа* 4G
 
-You may use `-f qcow2` to create a *qcow2* disk instead.
+```
 
-**Note:** You can also simply create a *raw* image by creating a file of the needed size using `dd` or `fallocate`.
+Вы можете использовать `-f qcow2` для создания диска *qcow2*.
 
-**Warning:** If you store the hard disk images on a [Btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs") for the directory before creating any images.
+**Примечание:** Также вы можете просто создать образ *raw*, используя `dd` или `fallocate` для создания файла с нужным размером.
+
+**Важно:** Если вы храните образы на файловой системе [Btrfs](/index.php/Btrfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Btrfs (Русский)"), вам следует рассмотреть возможность отключения [Копирования при записи](/index.php/Btrfs#.D0.9A.D0.BE.D0.BF.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8_.D0.B7.D0.B0.D0.BF.D0.B8.D1.81.D0.B8_.28CoW.29 "Btrfs") для каталогов перед созданием каких-либо образов.
 
 #### Overlay storage images
 
@@ -205,96 +205,102 @@ $ qemu-img rebase -u -b */new/img1.raw* */new/img1.cow*
 
 ```
 
-#### Resizing an image
+#### Изменение размера образа
 
-**Warning:** Resizing an image containing an NTFS boot file system could make the operating system installed on it unbootable. For full explanation and workaround see [[1]](http://tjworld.net/wiki/Howto/ResizeQemuDiskImages).
+**Важно:** Изменение размера образа, содержащего загрузочную файловую систему NTFS, может привести к тому, что установленная на нем операционная система станет незагружаемой. Для получения полного разъяснения этого и временного решения смотрите [[1]](http://tjworld.net/wiki/Howto/ResizeQemuDiskImages).
 
-The `qemu-img` executable has the `resize` option, which enables easy resizing of a hard drive image. It works for both *raw* and *qcow2*. For example, to increase image space by 10 GB, run:
-
-```
-$ qemu-img resize *disk_image* +10G
+Исполняемый файл `qemu-img` имеет параметр `resize`, который позволяет легко изменить размер образа жесткого диска. Это работает для образов *raw* и *qcow2*. Например, чтобы увеличить пространство образа на 10 ГБ, выполните:
 
 ```
-
-After enlarging the disk image, you must use file system and partitioning tools inside the virtual machine to actually begin using the new space. When shrinking a disk image, you must **first reduce the allocated file systems and partition sizes** using the file system and partitioning tools inside the virtual machine and then shrink the disk image accordingly, otherwise shrinking the disk image will result in data loss!
-
-#### Converting an image
-
-You can convert an image to other formats using `qemu-img convert`. This example shows how to convert a *raw* image to *qcow2*:
-
-```
-$ qemu-img convert -f raw -O qcow2 *input*.img *output*.qcow2
+$ qemu-img resize *образ_диска* +10G
 
 ```
 
-This will not remove the original input file.
+После увеличения, вы должны использовать файловую систему и инструменты разметки внутри виртуальной машины, чтобы начать использовать новое пространство. При сжатии образа диска вы должны **сначала уменьшить выделенные файловые системы и размеры разделов**, используя файловую систему и инструменты разбиения на виртуальной машине, а затем соответственно уменьшить размер образа диска, иначе сжатие образа диска приведет к потери данных!
 
-### Preparing the installation media
+#### Преобразование образа
 
-To install an operating system into your disk image, you need the installation medium (e.g. optical disk, USB-drive, or ISO image) for the operating system. The installation medium should not be mounted because QEMU accesses the media directly.
-
-**Tip:** If using an optical disk, it is a good idea to first dump the media to a file because this both improves performance and does not require you to have direct access to the devices (that is, you can run QEMU as a regular user without having to change access permissions on the media's device file). For example, if the CD-ROM device node is named `/dev/cdrom`, you can dump it to a file with the command: `$ dd if=/dev/cdrom of=*cd_image.iso*` 
-
-### Installing the operating system
-
-This is the first time you will need to start the emulator. To install the operating system on the disk image, you must attach both the disk image and the installation media to the virtual machine, and have it boot from the installation media.
-
-For example on i386 guests, to install from a bootable ISO file as CD-ROM and a raw disk image:
+Вы можете преобразовать образ в другие форматы, используя `qemu-img convert`. Этот пример показывает как конвертировать образ *raw* в *qcow2*:
 
 ```
-$ qemu-system-x86_64 -cdrom *iso_image* -boot order=d -drive file=*disk_image*,format=raw
+$ qemu-img convert -f raw -O qcow2 *входной*.img *выходной*.qcow2
 
 ```
 
-See [qemu(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/qemu.1) for more information about loading other media types (such as floppy, disk images or physical drives) and [#Running virtualized system](#Running_virtualized_system) for other useful options.
+Это не удаляет изначальный образ.
 
-After the operating system has finished installing, the QEMU image can be booted directly (see [#Running virtualized system](#Running_virtualized_system)).
+### Подготовка установочного носителя
 
-**Warning:** By default only 128 MB of memory is assigned to the machine. The amount of memory can be adjusted with the `-m` switch, for example `-m 512M` or `-m 2G`.
+Чтобы установить операционную систему на ваш образ диска, вам нужен установочный носитель (например, оптический диск, флешка USB или образ ISO) с ней. Не нужно его монтировать, потому что QEMU напрямую обращается к нему.
 
-**Tip:**
+**Совет:** При использовании оптического диска рекомендуется сначала записать его содержимое в файл, так как это повышает производительность и не требует прямого доступа к устройствам (то есть вы можете запускать QEMU от обычного пользователя без необходимости изменять права доступа к медиа устройствам). Например, если CD-ROM обозначается как `/dev/cdrom`, вы можете записать его содержимое в файл командой: `$ dd if=/dev/cdrom of=*образ_cd.iso*` 
 
-*   Instead of specifying `-boot order=x`, some users may feel more comfortable using a boot menu: `-boot menu=on`, at least during configuration and experimentation.
-*   If you need to replace floppies or CDs as part of the installation process, you can use the QEMU machine monitor (press `Ctrl+Alt+2` in the virtual machine's window) to remove and attach storage devices to a virtual machine. Type `info block` to see the block devices, and use the `change` command to swap out a device. Press `Ctrl+Alt+1` to go back to the virtual machine.
+### Установка операционной системы
 
-## Running virtualized system
+Это первый раз, когда вам нужно будет запустить эмулятор. Для установки операционной системы на образ диска, вы должны подключить образ диска и установочный носитель к виртуальной машине и загрузить его с установочного носителя.
 
-`qemu-system-*` binaries (for example `qemu-system-i386` or `qemu-system-x86_64`, depending on guest's architecture) are used to run the virtualized guest. The usage is:
-
-```
-$ qemu-system-x86_64 *options* *disk_image*
+Например, на гостевой системы i386 для установки из загрузочного файла ISO в качестве CD-ROM и образа диска raw, необходимо выполнить:
 
 ```
+$ qemu-system-x86_64 -cdrom *образ_iso* -boot order=d -drive file=*образ_диска*,format=raw
 
-Options are the same for all `qemu-system-*` binaries, see [qemu(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/qemu.1) for documentation of all options.
+```
 
-By default, QEMU will show the virtual machine's video output in a window. One thing to keep in mind: when you click inside the QEMU window, the mouse pointer is grabbed. To release it, press `Ctrl+Alt+g`.
+Для получения дополнительной информации о загрузки с других типов носителей (например, дискет, образов дисков или физических дисков) смотрите [qemu(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/qemu.1) и смотрите [#Запуск виртуальной машины](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.B2.D0.B8.D1.80.D1.82.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.88.D0.B8.D0.BD.D1.8B), чтобы узнать другие полезные параметры.
 
-**Warning:** QEMU should never be run as root. If you must launch it in a script as root, you should use the `-runas` option to make QEMU drop root privileges.
+После завершения установки операционной системы, образ QEMU может быть загружен напрямую (смотрите [#Запуск виртуальной машины](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.B2.D0.B8.D1.80.D1.82.D1.83.D0.B0.D0.BB.D1.8C.D0.BD.D0.BE.D0.B9_.D0.BC.D0.B0.D1.88.D0.B8.D0.BD.D1.8B)).
 
-### Enabling KVM
+**Важно:** По умолчанию для машины устанавливается только 128 МБ памяти. Объем памяти можно настроить с помощью параметра `-m`, например, `-m 512M` или `-m 2G`.
 
-KVM must be supported by your processor and kernel, and necessary [kernel modules](/index.php/Kernel_modules "Kernel modules") must be loaded. See [KVM](/index.php/KVM "KVM") for more information.
+**Совет:**
 
-To start QEMU in KVM mode, append `-enable-kvm` to the additional start options. To check if KVM is enabled for a running VM, enter the QEMU [Monitor](https://en.wikibooks.org/wiki/QEMU/Monitor) using `Ctrl+Alt+Shift+2`, and type `info kvm`.
+*   Вместо указания порядка загрузки `-boot order=x` некоторым пользователям удобнее использовать загрузочное меню: `-boot menu=on`, по крайней мере, во время настройки и экспериментов.
+*   Если вам нужно заменить дискету или CD во время установочного процесса, вы можете использовать монитор QEMU (нажмите `Ctrl+Alt+2` в окне виртуальной машины) для излечения и подключения устройств хранения данных в виртуальной машине. Введите `info block`, чтобы увидеть блочные устройства. Потом используйте команду по замене устройств `change`. Нажмите `Ctrl+Alt+1`, чтобы вернуться обратно в виртуальную машину.
 
-**Note:**
+## Запуск виртуальной машины
 
-*   If you start your VM with a GUI tool and experience very bad performance, you should check for proper KVM support, as QEMU may be falling back to software emulation.
-*   KVM needs to be enabled in order to start Windows 7 and Windows 8 properly without a *blue screen*.
+Двоичные файлы `qemu-system-*` (например, `qemu-system-i386` или `qemu-system-x86_64` в зависимости от архитектуры гостя) используются для запуска ВМ. Использование:
 
-### Enabling IOMMU (Intel VT-d/AMD-Vi) support
+```
+$ qemu-system-x86_64 *параметры* *образ_диска*
 
-First enable IOMMU, see [PCI passthrough via OVMF#Setting up IOMMU](/index.php/PCI_passthrough_via_OVMF#Setting_up_IOMMU "PCI passthrough via OVMF").
+```
 
-Add `-device intel-iommu` to create the IOMMU device:
+Параметры одинаковы для всех двоичных файлов `qemu-system-*`, посмотрите документацию [qemu(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/qemu.1), чтобы узнать все доступные параметры.
+
+По умолчанию QEMU показывает виртуальную машину в отдельном окне. Поэтому нужно помнить о одной вещи: когда вы нажимаете внутри окна QEMU, курсор мыши захватывается. Чтобы отпустить его, нажмите `Ctrl+Alt+g`.
+
+**Важно:** Никогда не нужно запускать QEMU от суперпользователя. Но если вам необходимо запустить его через скрипт от суперпользователя, используйте параметр `-runas`, чтобы понизить привилегии суперпользователя.
+
+### Включение KVM
+
+Процессор и ядро должны поддерживать KVM, а также необходимые [модули ядра](/index.php/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D0%B8_%D1%8F%D0%B4%D1%80%D0%B0 "Модули ядра") должны быть загружены. Для получения дополнительной информации смотрите [KVM](/index.php/KVM "KVM").
+
+Чтобы запустить QEMU в режиме KVM, добавьте `-enable-kvm` к дополнительным параметрам запуска. Для проверки работоспособности KVM для запущенной ВМ войдите в [Монитор](https://en.wikibooks.org/wiki/QEMU/Monitor) QEMU с помощью сочетания клавиш `Ctrl+Alt+Shift+2` и там введите `info kvm`.
+
+**Примечание:**
+
+*   Если вы запустили свою ВМ с помощью графического интерфейса и получили очень плохую производительность, проверьте поддержку KVM, поскольку QEMU может вернуться к программной эмуляции.
+*   Чтобы запустить Windows 7 и Windows 8 без *синего экрана*, необходимо включить KVM.
+
+### Включение поддержки IOMMU (Intel VT-d/AMD-Vi)
+
+Сначала включите IOMMU, для получения дополнительной информации смотрите [PCI passthrough via OVMF#Setting up IOMMU](/index.php/PCI_passthrough_via_OVMF#Setting_up_IOMMU "PCI passthrough via OVMF").
+
+Для создания устройства IOMMU добавьте `-device intel-iommu`:
 
 ```
 $ qemu-system-x86_64 **-enable-kvm -machine q35,accel=kvm -device intel-iommu** -cpu host ..
 
 ```
 
-**Note:** On Intel CPU based systems creating an IOMMU device in a QEMU guest with `-device intel-iommu` will disable PCI passthrough with an error like: `Device at bus pcie.0 addr 09.0 requires iommu notifier which is currently not supported by intel-iommu emulation` While adding the kernel parameter `intel_iommu=on` is still needed for remapping IO (e.g. [PCI passthrough with vfio-pci](/index.php/PCI_passthrough_via_OVMF#Isolating_the_GPU "PCI passthrough via OVMF")), `-device intel-iommu` should not be set if PCI PCI passthrough is required.
+**Примечание:**
+
+На системах с ЦП Intel создание устройства IOMMU в госте QEMU с параметром `-device intel-iommu` приведет к отключению PCI passthrough с ошибкой наподобие этой:
+
+ `Device at bus pcie.0 addr 09.0 requires iommu notifier which is currently not supported by intel-iommu emulation` 
+
+Добавление параметра ядра `intel_iommu=on`, пока все еще необходимо для переназначения ввода-вывода (например [PCI passthrough с vfio-pci](/index.php/PCI_passthrough_via_OVMF#Isolating_the_GPU "PCI passthrough via OVMF")). Если PCI passthrough необходим, не используйте параметр `-device intel-iommu`.
 
 ## Moving data between host and guest OS
 

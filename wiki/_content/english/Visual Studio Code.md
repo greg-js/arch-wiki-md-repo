@@ -7,26 +7,35 @@
 *   [3 Configuration](#Configuration)
     *   [3.1 Integrated Terminal](#Integrated_Terminal)
     *   [3.2 External Terminal](#External_Terminal)
-*   [4 Troubleshoot](#Troubleshoot)
+*   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Global menu not working in KDE/Plasma](#Global_menu_not_working_in_KDE.2FPlasma)
 
 ## Installation
 
 The following packages provide VSCode:
 
+*   [code](https://www.archlinux.org/packages/?name=code)
 *   [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/)
-*   [code](https://aur.archlinux.org/packages/code/)
 *   [code-git](https://aur.archlinux.org/packages/code-git/)
 
 ## Usage
 
-Run `code` (or `code-oss` if you are using [code](https://aur.archlinux.org/packages/code/) or [code-git](https://aur.archlinux.org/packages/code-git/) instead of [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/)).
+Run `code` for:
+
+*   [code](https://www.archlinux.org/packages/?name=code)
+*   [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/)
+
+Run `code-oss` for:
+
+*   For [code-git](https://aur.archlinux.org/packages/code-git/)
 
 If for any reason you wish to launch multiple instances of Visual Studio Code, the `-n` flag can be used.
 
 ## Configuration
 
-Visual Studio Code settings are stored in `~/.config/Code/User/settings.json`.
+[code](https://www.archlinux.org/packages/?name=code) stores settings in `~/.config/Code - OSS/User/settings.json`.
+
+[visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/) stores settings in `~/.config/Code/User/settings.json`.
 
 ### Integrated Terminal
 
@@ -55,7 +64,7 @@ Example:
 
 ```
 
-## Troubleshoot
+## Troubleshooting
 
 ### Global menu not working in KDE/Plasma
 

@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Installation guide](/index.php/Installation_guide "Installation guide"). Дата последней синхронизации: 23 августа 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=537115).
+**Состояние перевода:** На этой странице представлен перевод статьи [Installation guide](/index.php/Installation_guide "Installation guide"). Дата последней синхронизации: 3 сентября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Installation_guide&diff=0&oldid=539478).
 
 Этот документ является руководством по установке [Arch Linux](/index.php/Arch_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Linux (Русский)") из-под системы, запущенной с официального установочного образа. Перед установкой рекомендуется посмотреть [часто задаваемые вопросы](/index.php/%D0%A7%D0%B0%D1%81%D1%82%D0%BE_%D0%B7%D0%B0%D0%B4%D0%B0%D0%B2%D0%B0%D0%B5%D0%BC%D1%8B%D0%B5_%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B "Часто задаваемые вопросы"). Чтобы получить разъяснения по понятиям, используемым на этой странице, смотрите статью [Help:Чтение](/index.php/Help:%D0%A7%D1%82%D0%B5%D0%BD%D0%B8%D0%B5 "Help:Чтение"). В частности, примеры кода могут содержать заполнители (отформатированные в `*курсиве*`), которые необходимо заменить вручную.
 
@@ -287,7 +287,7 @@ FONT=cyr-sun16
 
 Для запуска Arch Linux необходимо установить загрузчик с поддержкой Linux. Чтобы узнать о всех доступных вариантах, обратитесь к категории [Загрузчики](/index.php/Category:Boot_loaders_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Boot loaders (Русский)").
 
-Если вы используете процессор Intel, дополнительно установите пакет [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) и [включите обновления микрокода](/index.php/Microcode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B8.D0.BA.D1.80.D0.BE.D0.BA.D0.BE.D0.B4.D0.B0 "Microcode (Русский)").
+Если вы используете процессор Intel или AMD, [включите обновление микрокода](/index.php/Microcode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.BD.D0.BD.D0.B5.D0.B3.D0.BE_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BC.D0.B8.D0.BA.D1.80.D0.BE.D0.BA.D0.BE.D0.B4.D0.B0 "Microcode (Русский)").
 
 ## Перезагрузка
 

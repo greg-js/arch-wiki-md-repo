@@ -191,7 +191,7 @@ Scripts are typically installed by putting them in the `~/.config/mpv/scripts/` 
 
 Since JavaScript support is still fairly new, there is currently very little in the way of scripts, but [documentation exists](https://mpv.io/manual/master/#javascript) for anyone interested in making their own.
 
-JavaScript support isn't available in the [mpv](https://www.archlinux.org/packages/?name=mpv) build, but it's supported by some AUR packages e.g. [mpv-full](https://aur.archlinux.org/packages/mpv-full/) and [mpv-full-git](https://aur.archlinux.org/packages/mpv-full-git/).
+JavaScript support is not available in the [mpv](https://www.archlinux.org/packages/?name=mpv) build, but it's supported by some AUR packages e.g. [mpv-full](https://aur.archlinux.org/packages/mpv-full/) and [mpv-full-git](https://aur.archlinux.org/packages/mpv-full-git/).
 
 ### Lua
 
@@ -303,6 +303,13 @@ To start the main stream of a video DVD, use the command:
 
 ```
 $ mpv dvd://
+
+```
+
+Install [libdvdcss](https://www.archlinux.org/packages/?name=libdvdcss), to fix the error:
+
+```
+[dvdnav] Error getting next block from DVD 1 (Error reading from DVD.)
 
 ```
 

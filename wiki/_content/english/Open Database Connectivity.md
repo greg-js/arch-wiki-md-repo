@@ -13,6 +13,9 @@ Open Database Connectivity, commonly ODBC, is an open specification for providin
         *   [2.2.1 Installation](#Installation_3)
         *   [2.2.2 Configuration](#Configuration_3)
         *   [2.2.3 Create a symbolic link](#Create_a_symbolic_link)
+    *   [2.3 SQLite](#SQLite)
+        *   [2.3.1 Installation](#Installation_4)
+        *   [2.3.2 Configuration](#Configuration_4)
 *   [3 Databases](#Databases)
     *   [3.1 Microsoft SQL Server 2000](#Microsoft_SQL_Server_2000)
     *   [3.2 Mariadb](#Mariadb)
@@ -20,6 +23,7 @@ Open Database Connectivity, commonly ODBC, is an open specification for providin
         *   [3.2.2 Testing the ODBC](#Testing_the_ODBC)
         *   [3.2.3 A couple useful websites](#A_couple_useful_websites)
     *   [3.3 Virtuoso / SPARQL](#Virtuoso_.2F_SPARQL)
+    *   [3.4 SQLite](#SQLite_2)
 
 ## ODBC engines
 
@@ -86,6 +90,29 @@ Next we need to create a symlink for `libmyodbc.so`. To do this we need to go to
 ```
 # cd /usr/lib/
 # ln -s ./libmyodbc5w.so ./libmyodbc.so
+
+```
+
+### SQLite
+
+sqliteodbc is ODBC driver/connector for sqlite.
+
+#### Installation
+
+Install the [sqliteodbc](https://aur.archlinux.org/packages/sqliteodbc/) package.
+
+#### Configuration
+
+Starting with `odbcinst.ini`, which lists all installed drivers.
+
+ `/etc/odbcinst.ini` 
+```
+[SQLite3]
+Description=SQLite ODBC Driver
+Driver=/usr/lib64/libsqlite3odbc.so
+Setup=/usr/lib64/libsqlite3odbc.so
+Threading=2
+UsageCount=1
 
 ```
 
@@ -208,5 +235,21 @@ Opening a connection using the default credentials (username: "dba", password: "
 
 ```
 $ isql VOS dba dba
+
+```
+
+### SQLite
+
+Setup `odbc.ini` by assign the sqlite file location.
+
+ `/etc/odbc.ini` 
+```
+[ODBC Data Sources]
+sampleDB            = SQLite3 Driver
+
+[sampleDB]
+Driver      = /usr/lib/libsqlite3odbc.so
+Description = Sample DB
+database    = /home/db/sample.sqlite
 
 ```

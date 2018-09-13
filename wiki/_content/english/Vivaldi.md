@@ -1,4 +1,4 @@
-[Vivaldi](http://vivaldi.com/) is a new web browser from former [Opera](/index.php/Opera "Opera") team members, based on [Chromium](/index.php/Chromium "Chromium") and focused on personalization aspects.
+[Vivaldi](http://vivaldi.com/) is a new web browser from former [Opera](/index.php/Opera "Opera") founder & team members, based on [Chromium](/index.php/Chromium "Chromium") and focused on personalization aspects.
 
 ## Contents
 

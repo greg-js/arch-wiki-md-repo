@@ -17,7 +17,7 @@
 *   [nvidia](https://www.archlinux.org/packages/?name=nvidia)
 *   [bbswitch](https://www.archlinux.org/packages/?name=bbswitch)
 *   [nvidia-xrun](https://aur.archlinux.org/packages/nvidia-xrun/) or [nvidia-xrun-git](https://aur.archlinux.org/packages/nvidia-xrun-git/)
-*   a [Window manager](/index.php/Window_manager "Window manager"), such as [openbox](https://www.archlinux.org/packages/?name=openbox) it only for running applications，becasue running some applications (such as Steam) directly with nvidia-xrun does not work well, use some window manager like openbox will be better.
+*   a [Window manager](/index.php/Window_manager "Window manager"), such as [openbox](https://www.archlinux.org/packages/?name=openbox) if only for running applications，because running some applications (such as Steam) directly with nvidia-xrun does not work well, using a window manager like openbox will work better.
 
 ## Configuration
 

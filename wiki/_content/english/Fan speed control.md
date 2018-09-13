@@ -237,6 +237,8 @@ Run `nbfc` to see all options. More information about configuration is available
 
 `i8kutils` is a daemon to configure fan speed according to CPU temperatures on some Dell Inspiron and Latitude laptops. It uses the `/proc/i8k` interface provided by the `dell_smm_hwmon` driver (formerly `i8k`). Results will vary depending on the exact model of laptop.
 
+**Warning:** i8kutils BIOS system calls stop the kernel for a moment on some systems (confirmed on Dell 9560), this can lead to side effects like audio dropouts, see [https://bugzilla.kernel.org/show_bug.cgi?id=201097](https://bugzilla.kernel.org/show_bug.cgi?id=201097)
+
 ### Installation
 
 [i8kutils](https://aur.archlinux.org/packages/i8kutils/) is the main package to control fan speed. Additionally, you might want to install these:

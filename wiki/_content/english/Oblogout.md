@@ -94,7 +94,7 @@ lock = K
 
 ## Dual Head
 
-When using multiple monitors, oblogout may cover all monitors. If you only want oblogout to appear on one monitor, you can create an application rule in the Openbox rc.xml file set oblogout's position and size.
+When using multiple monitors, oblogout may cover all monitors. If you only want oblogout to appear on one monitor, you can create an application rule in the Openbox rc.xml file to set oblogout's position and size.
 
 For example, if you have two monitors, and you only want oblogout to appear on the first monitor, add this to the applications section of `rc.xml`:
 

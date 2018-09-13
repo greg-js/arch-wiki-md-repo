@@ -301,7 +301,7 @@ When [mounting](#Manual_mounting) a share, specify the `seal` mount option to fo
 
 #### Disable printer sharing
 
-By default Samba share printers configured using [CUPS](/index.php/CUPS "CUPS").
+By default Samba shares printers configured using [CUPS](/index.php/CUPS "CUPS").
 
 If you do not want printers to be shared, use the following settings:
 

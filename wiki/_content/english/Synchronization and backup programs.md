@@ -43,7 +43,7 @@ See also:
 **Legend:**
 
 *   **Name**: the application name, linking to the ArchWiki article or the official website.
-*   **Installation**: a link to the package.
+*   **Package**: a link to the package.
 *   **Implementation**: the programming language, library, or utility that the application is based on.
 *   **Delta transfer**: only the modified *parts* of files are transferred.
 *   **Encrypted transfer**: data is encrypted by default when transferred over the network.
@@ -63,8 +63,8 @@ See also:
 *   **Other platforms**: supported operating systems other than Linux.
 *   **Specificity**: brief notes about special features that notably set the application apart from the others.
 
-| Name | Installation | Implementation | Delta transfer | Encrypted transfer | FS metadata | Resumable | Handles renames | Version control | Change propagation | Conflict resolution | FS monitoring | CLI | Other interfaces | License | Other platforms | Maintained | Specificity |
-| [Resilio Sync](/index.php/Resilio_Sync "Resilio Sync") | [rslsync](https://aur.archlinux.org/packages/rslsync/) |  ? (closed source) | Yes | Yes |  ? | Yes |  ? | Yes | **multi**directional |  ? |  ? | No | Web | Proprietary freemium | FreeBSD, Windows, macOS, Android, iOS, Windows Phone, Amazon Kindle Fire | Yes | P2P sync |
+| Name | Package | Implementation | Delta transfer | Encrypted transfer | FS metadata | Resumable | Handles renames | Version control | Change propagation | Conflict resolution | FS monitoring | CLI | Other interfaces | License | Other platforms | Maintained | Specificity |
+| [Resilio Sync](/index.php/Resilio_Sync "Resilio Sync") | [rslsync](https://aur.archlinux.org/packages/rslsync/) | C++ | Yes | Yes |  ? | Yes |  ? | Yes | **multi**directional |  ? |  ? | No | Web | Proprietary freemium | FreeBSD, Windows, macOS, Android, iOS, Windows Phone, Amazon Kindle Fire | Yes | P2P sync |
 | [FreeFileSync](https://www.freefilesync.org/) | [freefilesync](https://aur.archlinux.org/packages/freefilesync/) | C++ |  ? | SFTP [[1]](http://www.freefilesync.org/faq.php#features) |  ? |  ? | Yes [[2]](http://www.freefilesync.org/faq.php#features) | Yes [[3]](http://www.freefilesync.org/manual.php?topic=versioning) | **uni**directional / **multi**directional | Yes |  ? | No | Yes | GPL | Windows, macOS | Yes |
 | [git-annex](https://git-annex.branchable.com/) | [git-annex](https://www.archlinux.org/packages/?name=git-annex) | Haskell, git | rsync [[4]](http://git-annex.branchable.com/transferring_data/) | rsync [[5]](http://git-annex.branchable.com/transferring_data/) |  ? |  ? |  ? | Yes | **multi**directional; with git remotes [[6]](http://git-annex.branchable.com/sync/) | renames conflicting files [[7]](http://git-annex.branchable.com/automatic_conflict_resolution/) |  ? | Yes | [git-annex assistant](http://git-annex.branchable.com/assistant/) | GPLv3 | macOS, Android | Yes | Manage files with git |
 | [osync.sh](http://www.netpower.fr/osync) | [osync](https://aur.archlinux.org/packages/osync/) | Bash, based on rsync | rsync | rsync |  ? | Yes | No | Yes | **bi**directional | keeps multiple versions of a file [[8]](http://www.netpower.fr/sites/default/files/soft/html-doc/osync_v1.2.html#toc-Subsubsection-1.3.1) | optional [[9]](https://github.com/deajan/osync#daemon-mode) | Yes | No | BSD | Yes |

@@ -31,10 +31,6 @@ The [official app](https://desktop.telegram.org/):
 *   [telegram-desktop-bin](https://aur.archlinux.org/packages/telegram-desktop-bin/), built by upstream
 *   [telegram-desktop-systemqt-notoemoji](https://aur.archlinux.org/packages/telegram-desktop-systemqt-notoemoji/) Experimental build of Telegram Desktop using system Qt and emojis replaced with those from [Noto Color Emoji](https://github.com/googlei18n/noto-emoji).
 
-Alternative unofficial clients:
-
-*   [cutegram](https://aur.archlinux.org/packages/cutegram/), open-source client by Iranian developer [aseman](http://aseman.co/en/products/cutegram). The package is based on [Qt](/index.php/Qt "Qt") and has different capabilities from pure Telegram. Install [cutegram-git](https://aur.archlinux.org/packages/cutegram-git/) for latest development version.
-
 ### Command-line clients
 
 *   [telegram-cli-git](https://aur.archlinux.org/packages/telegram-cli-git/) provides command-line interface to connect and use Telegram. For more information about the program, visit the program page on [Github](https://github.com/vysheng/tg).

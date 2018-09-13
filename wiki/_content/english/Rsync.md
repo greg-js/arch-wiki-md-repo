@@ -48,6 +48,8 @@ Related articles
 
 	[http://luckybackup.sourceforge.net/index.html](http://luckybackup.sourceforge.net/index.html) || [luckybackup](https://aur.archlinux.org/packages/luckybackup/)
 
+Other tools using rsync are [rdiff-backup](https://www.archlinux.org/packages/?name=rdiff-backup) and [osync](https://aur.archlinux.org/packages/osync/).
+
 ## As a cp alternative
 
 rsync can be used as an advanced alternative for the `cp` command, especially for copying larger files:
@@ -385,9 +387,9 @@ If you wish to restore a backup, use the same rsync command that was executed bu
 
 ## File system cloning
 
-rsync provides a way to do a copy of all data in a file system while preserving as much information as possible, including the file system metadata. It is a procedure of data cloning on a file system level where source and destination file systems don't need to be of the same type. It can be used for backing up, file system migration or data recovery.
+rsync provides a way to do a copy of all data in a file system while preserving as much information as possible, including the file system metadata. It is a procedure of data cloning on a file system level where source and destination file systems do not need to be of the same type. It can be used for backing up, file system migration or data recovery.
 
-rsync's *archive* mode comes close to being fit for the job, but it doesn't back up the special file system metadata such as access control lists, extended attributes or sparse file properties. For successful cloning at the file system level, some additional options need to be provided:
+rsync's *archive* mode comes close to being fit for the job, but it does not back up the special file system metadata such as access control lists, extended attributes or sparse file properties. For successful cloning at the file system level, some additional options need to be provided:
 
 ```
 rsync -qaHAXS SOURCE_DIR DESTINATION_DIR

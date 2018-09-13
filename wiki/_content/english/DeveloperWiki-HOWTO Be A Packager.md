@@ -22,9 +22,8 @@
     *   [4.2 Moving a package between repos](#Moving_a_package_between_repos)
     *   [4.3 "Tagging" releases](#.22Tagging.22_releases)
 *   [5 Miscellaneous Stuff](#Miscellaneous_Stuff)
-    *   [5.1 SVN $Id$ tags](#SVN_.24Id.24_tags)
-    *   [5.2 Cleaning up your checkout](#Cleaning_up_your_checkout)
-    *   [5.3 Avoid having to enter your password all the time](#Avoid_having_to_enter_your_password_all_the_time)
+    *   [5.1 Cleaning up your checkout](#Cleaning_up_your_checkout)
+    *   [5.2 Avoid having to enter your password all the time](#Avoid_having_to_enter_your_password_all_the_time)
 
 ## Follow Package Guidelines
 
@@ -123,7 +122,6 @@ This step is only required when adding a new package to the repository for the f
   cd new-package
   $EDITOR trunk/PKGBUILD
   svn add .
-  svn propset svn:keywords "Id" trunk/PKGBUILD
   svn commit
 
 ```
@@ -226,7 +224,7 @@ or:
 i.e.:
 
 ```
-  ssh repos.archlinux.org "/packages/db-remove core i686 openssh"
+  ssh repos.archlinux.org "/packages/db-remove core x86_64 openssh"
 
 ```
 
@@ -276,22 +274,13 @@ Fetch the package dir using `archco` or `communityco` or from an svn checkout. T
 
 ```
   cd package-name/trunk
-  archrelease extra-i686
+  archrelease extra-x86_64
 
 ```
 
-This makes an svn copy of the trunk entries in a directory named `extra-i686` indicating that this package is in the extra repository for the *i686* architecture. This will be done automatically when using tools such as `extrapkg` (see [Use devtools to sign, upload and commit](/index.php/DeveloperWiki:HOWTO_Be_A_Packager#Use_devtools_to_sign.2C_upload_and_commit "DeveloperWiki:HOWTO Be A Packager")).
+This makes an svn copy of the trunk entries in a directory named `extra-x86_64` indicating that this package is in the extra repository for the *x86_64* architecture. This will be done automatically when using tools such as `extrapkg` (see [Use devtools to sign, upload and commit](/index.php/DeveloperWiki:HOWTO_Be_A_Packager#Use_devtools_to_sign.2C_upload_and_commit "DeveloperWiki:HOWTO Be A Packager")).
 
 ## Miscellaneous Stuff
-
-### SVN $Id$ tags
-
-`$Id$` tags are a nice helper for PKGBUILDs and should be added to the top of all PKGBUILDs in a comment. However, svn needs an additional push to know that it should modify this line on checkout.
-
-```
-  svn propset svn:keywords "Id" my-package/trunk/PKGBUILD
-
-```
 
 ### Cleaning up your checkout
 

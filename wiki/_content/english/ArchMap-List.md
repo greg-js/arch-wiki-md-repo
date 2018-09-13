@@ -1084,5 +1084,6 @@ You can use the following website to get your device's coordinates along with a 
 47.197523, 7.698578  "thatfatnerdfromnextdoor" # Herzogenbuchsee, Switzerland
 -43.590414, 172.380892 "grawlinson" # Christchurch, New Zealand
 36.718911, -4.427087 "AlonsoLP" # Málaga, Spain
+43.550649, 1.488707 "MiniKochi" # Toulouse, France
 
 ```

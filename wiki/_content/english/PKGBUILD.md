@@ -7,8 +7,6 @@ Related articles
 *   [Category:Package development](/index.php/Category:Package_development "Category:Package development")
 *   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
 *   [makepkg](/index.php/Makepkg "Makepkg")
-*   [pacman](/index.php/Pacman "Pacman")
-*   [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks")
 
 This article discusses variables definable by the maintainer in a PKGBUILD. For information on the PKGBUILD functions and creating packages in general, refer to [Creating packages](/index.php/Creating_packages "Creating packages"). Also read [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5).
 
@@ -19,6 +17,8 @@ Packages in Arch Linux are built using the [makepkg](/index.php/Makepkg "Makepkg
 Mandatory variables are `pkgname`, `pkgver`, `pkgrel`, and `arch`. `license` is not strictly necessary to build a package, but is recommended for any PKGBUILDs shared with others, as *makepkg* will produce a warning if not present.
 
 It is a common practice to define the variables in the PKGBUILD in same order as given here. However, this is not mandatory, as long as correct [Bash](/index.php/Bash "Bash") syntax is used.
+
+**Tip:** Use [namcap](/index.php/Namcap "Namcap") to check PKGBUILDs for common packaging mistakes.
 
 ## Contents
 

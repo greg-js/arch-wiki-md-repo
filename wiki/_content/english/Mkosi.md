@@ -23,7 +23,7 @@ Install [mkosi](https://aur.archlinux.org/packages/mkosi/) or [mkosi-git](https:
 | Distribution | Package |
 | Arch | [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts) |
 | Debian | [debootstrap](https://www.archlinux.org/packages/?name=debootstrap), [debian-archive-keyring](https://www.archlinux.org/packages/?name=debian-archive-keyring) |
-| Ubuntu |
+| Ubuntu | [debootstrap](https://www.archlinux.org/packages/?name=debootstrap), [ubuntu-keyring](https://www.archlinux.org/packages/?name=ubuntu-keyring) |
 | Fedora | [dnf](https://aur.archlinux.org/packages/dnf/) |
 | OpenSUSE | [zypper-git](https://aur.archlinux.org/packages/zypper-git/) |
 

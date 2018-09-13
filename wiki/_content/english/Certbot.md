@@ -16,6 +16,9 @@
 *   [3 Advanced Configuration](#Advanced_Configuration)
     *   [3.1 Automatic renewal](#Automatic_renewal)
         *   [3.1.1 systemd](#systemd)
+    *   [3.2 Automatic renewal for wildcard certificates](#Automatic_renewal_for_wildcard_certificates)
+        *   [3.2.1 Configure BIND for rfc2136](#Configure_BIND_for_rfc2136)
+        *   [3.2.2 Configure certbot for rfc2136](#Configure_certbot_for_rfc2136)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -260,6 +263,81 @@ WantedBy=timers.target
 ```
 
 [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `certbot.timer`.
+
+### Automatic renewal for wildcard certificates
+
+The process is fairly simple. To issue a wildcard certificate, you have to do it via a DNS challenge request, [using the ACMEv2 protocol](https://community.letsencrypt.org/t/acme-v2-and-wildcard-certificate-support-is-live/55579).
+
+While issuing a certificate manually is easy, it's not straight forward for automation. The DNS challenge represents a TXT record, given by certbot, which has to be set manually in the domain zone file.
+
+You'll need to update the zone file upon every renew. To avoid doing that manually, you may use [rfc2136](https://tools.ietf.org/html/rfc2136). Luckily, certbot has a plugin for this and we have a package for it - [certbot-dns-rfc2136](https://www.archlinux.org/packages/?name=certbot-dns-rfc2136). The plugin, as it is, is not enough. You'll also need to configure your DNS server to allow dynamic updates for TXT records.
+
+#### Configure BIND for rfc2136
+
+Generate a TSIG secret key:
+
+```
+$ tsig-keygen -a HMAC-SHA512 **example-key**
+
+```
+
+and add it in the configuration file:
+
+ `/etc/named.conf` 
+```
+...
+zone "**domain.ltd**" IN {
+        ...
+        // this is for certbot
+        update-policy {
+                grant **example-key** name _acme-challenge.**domain.ltd**. txt;
+        };
+        ...
+};
+
+key "**example-key**" {
+        algorithm hmac-sha512;
+        secret "**a_secret_key**";
+};
+...
+```
+
+[Restart](/index.php/Restart "Restart") `named.service`.
+
+#### Configure certbot for rfc2136
+
+Create a configuration file for the rfc2136 plugin.
+
+ `/etc/letsencrypt/rfc2136.ini` 
+```
+dns_rfc2136_server = **IP.ADD.RE.SS**
+dns_rfc2136_name = **example-key**
+dns_rfc2136_secret = **INSERT_KEY_WITHOUT_QUOTES**
+dns_rfc2136_algorithm = HMAC-SHA512
+```
+
+Since we're storing a copy of the secret key in it, we need to secure it too:
+
+```
+# chmod 600 /etc/letsencrypt/rfc2136.ini
+
+```
+
+Test what we did:
+
+```
+# certbot certonly --dns-rfc2136 --force-renewal --dns-rfc2136-credentials /etc/letsencrypt/rfc2136.ini --server [https://acme-v02.api.letsencrypt.org/directory](https://acme-v02.api.letsencrypt.org/directory) --email **example@domain.ltd** --agree-tos --no-eff-email -d '**domain.ltd'** -d '***.domain.ltd'**
+
+```
+
+If you pass the validation successfully and receive certificates, then you're good to go with automating certbot. Otherwise, something went wrong and you need to debug your setup. It basically boils down to:
+
+```
+# certbot renew
+
+```
+
+from now on. You may refer to the example above with `certbot.timer` and `certbot.service` or simply use any whatever mechanism you desire, i.e. crontab.
 
 ## See also
 

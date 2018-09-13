@@ -69,3 +69,4 @@ To load the ufsd driver at startup, create a `*.conf` file (e.g. `ufsd.conf`) in
 ## See also
 
 *   [Ufsd options](http://kb.paragon-software.com/paragon/include/templ/object2.jsp?objId=5833)
+*   [Driver porting on kernel 4.15, 4.16 (and more coming...)](https://github.com/antonio-petricca/paragon-ufsd-ntfs-driver-porting)

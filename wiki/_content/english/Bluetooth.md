@@ -152,6 +152,15 @@ By default, your Bluetooth adapter will not power on after a reboot. The former 
 AutoEnable=true
 ```
 
+Then you need to enable the Policy Bluez plugin by adding the `--plugin=policy` flag to the `ExecStart` command in the bluetooth systemd unit file:
+
+ `/etc/etc/systemd/system/bluetooth.target.wants/bluetooth.service` 
+```
+[Service]
+ExecStart=
+ExecStart=/usr/lib/bluetooth/bluetoothd --plugin=policy
+```
+
 ## Audio
 
 In order to be able to use audio equipment like bluetooth headphones or speakers, you need to install the additional [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) package.
@@ -168,10 +177,14 @@ Enable=Source
 
 ```
 
-More info in:
+Then enable the A2DP Bluez plugin by adding the `--plugin=a2dp` flag to the `ExecStart` command in the bluetooth systemd unit file:
 
-*   [https://gist.github.com/joergschiller/1673341](https://gist.github.com/joergschiller/1673341)
-*   [http://www.lightofdawn.org/blog/?viewDetailed=00031](http://www.lightofdawn.org/blog/?viewDetailed=00031)
+ `/etc/etc/systemd/system/bluetooth.target.wants/bluetooth.service` 
+```
+[Service]
+ExecStart=
+ExecStart=/usr/lib/bluetooth/bluetoothd --plugin=a2dp
+```
 
 ## Troubleshooting
 

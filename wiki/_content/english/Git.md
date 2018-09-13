@@ -109,6 +109,10 @@ See also [git GUI Clients](https://git-scm.com/download/gui/linux).
 
 	[https://github.com/FredrikNoren/ungit](https://github.com/FredrikNoren/ungit) || [nodejs-ungit](https://aur.archlinux.org/packages/nodejs-ungit/)
 
+*   **GitHub Desktop** — Electron-based graphical user interface built by the GitHub team.
+
+	[https://github.com/desktop/desktop](https://github.com/desktop/desktop) || [github-desktop](https://aur.archlinux.org/packages/github-desktop/)
+
 ## Configuration
 
 In order to use Git you need to set at least a name and email:

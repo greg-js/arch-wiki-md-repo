@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Telegram](/index.php/Telegram "Telegram"). Дата последней синхронизации: 21 августа 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Telegram&diff=0&oldid=536552).
+**Состояние перевода:** На этой странице представлен перевод статьи [Telegram](/index.php/Telegram "Telegram"). Дата последней синхронизации: 13 сентября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Telegram&diff=0&oldid=540882).
 
 [Telegram](https://en.wikipedia.org/wiki/ru:Telegram "wikipedia:ru:Telegram") — облачный кроссплатформенный мессенджер с опциональным end-to-end шифрованием. Для создания аккаунта требуется номер телефона.
 
@@ -32,10 +32,6 @@
 *   [telegram-desktop](https://www.archlinux.org/packages/?name=telegram-desktop) — официальное приложение (сборка от команды Arch Linux).
 *   [telegram-desktop-bin](https://aur.archlinux.org/packages/telegram-desktop-bin/) — официальное приложение (сборка от команды Telegram).
 *   [telegram-desktop-systemqt-notoemoji](https://aur.archlinux.org/packages/telegram-desktop-systemqt-notoemoji/) — экспериментальная сборка Telegram Desktop, использующая системные библиотеки Qt вместо встроенных и emoji от [Noto Color Emoji](https://github.com/googlei18n/noto-emoji).
-
-Альтернативные неофициальные клиенты:
-
-*   [cutegram](https://aur.archlinux.org/packages/cutegram/) — клиент с открытым исходным кодом от иранского разработчика [aseman](http://aseman.co/en/products/cutegram). Пакет использует [Qt](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)") и отличается от официального клиента возможностями. Для последней разрабатываемой версии установите пакет [cutegram-git](https://aur.archlinux.org/packages/cutegram-git/).
 
 ### Приложения для терминала
 

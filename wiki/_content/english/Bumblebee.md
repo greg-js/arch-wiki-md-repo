@@ -386,9 +386,7 @@ The BusID is 0:2:0
 
 #### Output wired to the NVIDIA chip
 
-On some notebooks, the digital Video Output (HDMI or DisplayPort) is hardwired to the NVIDIA chip. If you want to use all the displays on such a system simultaneously, you have to run 2 X Servers. The first will be using the Intel driver for the notebooks panel and a display connected on VGA. The second will be started through optirun on the NVIDIA card, and drives the digital display.
-
-*intel-virtual-output* is a tool provided in the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver set, as of v2.99\. Commandline usage is as follows:
+On some notebooks, the digital Video Output (HDMI or DisplayPort) is hardwired to the NVIDIA chip. If you want to use all the displays on such a system simultaneously, the easiest solution is to use *intel-virtual-output*, a tool provided in the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver set, as of v2.99. It will allow you to extend the existing X session onto other screens, leveraging virtual outputs to work with the discrete graphics card. Commandline usage is as follows:
 
  `$ intel-virtual-output [OPTION]... [TARGET_DISPLAY]...` 
 ```
@@ -402,15 +400,24 @@ On some notebooks, the digital Video Output (HDMI or DisplayPort) is hardwired t
 -h                   this help
 ```
 
-If no target displays are parsed on the commandline, *intel-virtual-output* will attempt to connect to any local display. The detected displays will be manageable via any desktop display manager such as xrandr or KDE Display.
+If this command alone does not work, you can try running it with optirun to enable the discrete graphics and allow it to detect the outputs accordingly. This is known to be necessary on Lenovo's Legion Y720.
 
-The tool will also start bumblebee (which may be left as default install). See the [Bumblebee wiki page](https://github.com/Bumblebee-Project/Bumblebee/wiki/Multi-monitor-setup) for more information.
+```
+$ optirun intel-virtual-output
 
-**Note:** In `/etc/bumblebee/xorg.conf.nvidia` change the lines `UseEDID` and `Option "AutoAddDevices" "false"` to `"true"`, if you are having trouble with device resolution detection. You will also need to comment out the line `Option "UseDisplayDevices" "none"` in order to use the display connected to the NVIDIA GPU.
+```
 
-When run in a terminal, it will daemonize itself unless the `-f` switch is used. The advantage of using it in foreground mode is that once the external display is disconnected, *intel-virtual-output* can then be killed and bumblebee will disable the nvidia chip. Games can be run on the external screen by first exporting the display `export DISPLAY=:8`, and then running the game with `optirun *game_bin*`, however, cursor and keyboard are not fully captured. Use `export DISPLAY=:0` to revert back to standard operation.
+If no target displays are parsed on the commandline, *intel-virtual-output* will attempt to connect to any local display. The detected displays will be manageable via any desktop display manager such as xrandr or KDE Display. The tool will also start bumblebee (which may be left as default install). See the [Bumblebee wiki page](https://github.com/Bumblebee-Project/Bumblebee/wiki/Multi-monitor-setup) for more information.
 
-If intel-virtual-output does not detect displays, see [[1]](https://unix.stackexchange.com/questions/321151/do-not-manage-to-activate-hdmi-on-a-laptop-that-has-optimus-bumblebee) for further configuration to try. If the laptop screen is stretched and the cursor is misplaced while the external monitor shows only the cursor, try killing any running compositing managers.
+When run in a terminal, *intel-virtual-output* will daemonize itself unless the `-f` switch is used. Games can be run on the external screen by first exporting the display `export DISPLAY=:8`, and then running the game with `optirun *game_bin*`, however, cursor and keyboard are not fully captured. Use `export DISPLAY=:0` to revert back to standard operation.
+
+If *intel-virtual-output* does not detect displays, see [[1]](https://unix.stackexchange.com/questions/321151/do-not-manage-to-activate-hdmi-on-a-laptop-that-has-optimus-bumblebee) for further configuration to try. If the laptop screen is stretched and the cursor is misplaced while the external monitor shows only the cursor, try killing any running compositing managers.
+
+**Note:** In `/etc/bumblebee/xorg.conf.nvidia` change the lines `Option "UseEDID" "false"` and `Option "AutoAddDevices" "false"` to `"true"`, and comment `Option "ConnectedMonitor"`. If you are having trouble with device resolution detection. You will also need to comment out the line `Option "UseDisplayDevices" "none"` in order to use the display connected to the NVIDIA GPU.
+
+If you don't want to use intel-virtual-output, another option is to configure Bumblebee to leave the discrete GPU on and directly configure X to use both the screens, as it will be able to detect them.
+
+As a last resort, you can run 2 X Servers. The first will be using the Intel driver for the notebook's screen. The second will be started through optirun on the NVIDIA card, to show on the external display. Make sure to disable any display/session manager before manually starting your desktop environment with optirun. Then, you can log in the integrated-graphics powered one.
 
 ### Multiple NVIDIA Graphics Cards
 

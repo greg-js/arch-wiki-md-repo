@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems"). Дата последней синхронизации: 1 сентября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Printer-specific_problems&diff=0&oldid=539124).
+**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems"). Дата последней синхронизации: 11 сентября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Printer-specific_problems&diff=0&oldid=540799).
 
 Ссылки по теме
 
@@ -31,7 +31,8 @@
 *   [5 HP](#HP)
     *   [5.1 HPLIP](#HPLIP)
     *   [5.2 foo2zjs](#foo2zjs)
-*   [6 Konica](#Konica)
+*   [6 Konica Minolta](#Konica_Minolta)
+    *   [6.1 foo2zjs](#foo2zjs_2)
 *   [7 Lexmark](#Lexmark)
     *   [7.1 Утилиты](#.D0.A3.D1.82.D0.B8.D0.BB.D0.B8.D1.82.D1.8B_2)
     *   [7.2 Специализированный драйверы](#.D0.A1.D0.BF.D0.B5.D1.86.D0.B8.D0.B0.D0.BB.D0.B8.D0.B7.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D0.B9_.D0.B4.D1.80.D0.B0.D0.B9.D0.B2.D0.B5.D1.80.D1.8B)
@@ -205,7 +206,7 @@ ftp $PRINTER_IP
 
 ## Canon
 
-Существует много возможных драйверов для принтеров Canon. [Многие принтеры Canon](http://gimp-print.sourceforge.net/p_Supported_Printers.php) поддерживаются [gutenprint](https://www.archlinux.org/packages/?name=gutenprint). Некоторые из принтеров Canon LBP, iR и MF используют драйвер, поддерживающий протоколы UFR II/UFR II LT/LIPSLX, который доступен как [cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/) или [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/). Другие используют драйверы [#CARPS](#CARPS), [#cnijfilter](#cnijfilter), или [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT").
+Существует много возможных драйверов для принтеров Canon. [Многие принтеры Canon](http://gimp-print.sourceforge.net/p_Supported_Printers.php) поддерживаются [gutenprint](https://www.archlinux.org/packages/?name=gutenprint). Некоторые из принтеров Canon LBP, iR и MF используют драйвер, поддерживающий протоколы UFR II/UFR II LT/LIPSLX, который доступен как [cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/) или [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/). Другие используют драйверы [#CARPS](#CARPS), [#cnijfilter](#cnijfilter) ([cnijfilter2](/index.php/AUR "AUR") / [cnijfilter2-bin](/index.php/AUR "AUR")) или [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT").
 
 | Принтер | Драйвер/фильтр | Примечание |
 | iP4300 | [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) | Или используйте драйвер [TurboPrint](http://www.turboprint.info/). |
@@ -245,6 +246,9 @@ ftp $PRINTER_IP
 | LBP9100C |
 | MF4720w | [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/) |
 | MG4200 series | [cnijfilter-mg4200](https://aur.archlinux.org/packages/cnijfilter-mg4200/) | Избегайте добавления принтера через [веб интерфейс](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.92.D0.B5.D0.B1_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D1.84.D0.B5.D0.B9.D1.81 "CUPS (Русский)"), т.к. он не найдет файл PPD. |
+| MX490 | [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/)
+[cnijfilter2-bin](https://aur.archlinux.org/packages/cnijfilter2-bin/) |
+| MX492 |
 | TS8050 | [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/) | Без [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/) печать завершится ошибкой фильтра или вы можете получить "рендеринг завершен", а принтер ничего не напечатает |
 | TS9020 | [canon-ts9020](https://aur.archlinux.org/packages/canon-ts9020/) |
 | Принтер | Драйвер/фильтр | Примечание |
@@ -462,7 +466,7 @@ $ hp-systray
 
 [foo2zjs](http://foo2zjs.rkkda.com/) поддерживает некоторые принтеры HP LaserJet. По состоянию на июнь 2018 года пакет hplip конфликтует с пакетом [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/), как описано на [форуме в этом посте](https://bbs.archlinux.org/viewtopic.php?pid=1662809) и [FS#58815](https://bugs.archlinux.org/task/58815).
 
-## Konica
+## Konica Minolta
 
 | Принтер | Драйвер/фильтр | Примечание |
 | Minolta Magicolor 1600W | [foomatic](/index.php/CUPS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Foomatic "CUPS (Русский)") |
@@ -473,6 +477,10 @@ $ hp-systray
 | Minolta Magicolor 2530DL |
 | Minolta Magicolor 4690MF |
 | Принтер | Драйвер/фильтр | Примечание |
+
+### foo2zjs
+
+Упомянутый выше [#foo2zjs](#foo2zjs) для некоторых принтеров HP также поддерживает некоторые принтеры Minolta.
 
 ## Lexmark
 

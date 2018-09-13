@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting"). Дата последней синхронизации: 13 августа 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Troubleshooting&diff=0&oldid=534590).
+**Состояние перевода:** На этой странице представлен перевод статьи [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting"). Дата последней синхронизации: 10 сентября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=CUPS/Troubleshooting&diff=0&oldid=540652).
 
 Ссылки по теме
 
@@ -43,6 +43,7 @@
     *   [5.8 hp-setup просит указать PPD-файл для обнаруженного принтера](#hp-setup_.D0.BF.D1.80.D0.BE.D1.81.D0.B8.D1.82_.D1.83.D0.BA.D0.B0.D0.B7.D0.B0.D1.82.D1.8C_PPD-.D1.84.D0.B0.D0.B9.D0.BB_.D0.B4.D0.BB.D1.8F_.D0.BE.D0.B1.D0.BD.D0.B0.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D0.B0)
     *   [5.9 hp-setup: "Qt/PyQt 4 initialization failed"](#hp-setup:_.22Qt.2FPyQt_4_initialization_failed.22)
     *   [5.10 hp-setup: находит принтер автоматически, но сразу после этого сообщает "Unable to communicate with device" при печати тестовой страницы](#hp-setup:_.D0.BD.D0.B0.D1.85.D0.BE.D0.B4.D0.B8.D1.82_.D0.BF.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80_.D0.B0.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.2C_.D0.BD.D0.BE_.D1.81.D1.80.D0.B0.D0.B7.D1.83_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D1.8D.D1.82.D0.BE.D0.B3.D0.BE_.D1.81.D0.BE.D0.BE.D0.B1.D1.89.D0.B0.D0.B5.D1.82_.22Unable_to_communicate_with_device.22_.D0.BF.D1.80.D0.B8_.D0.BF.D0.B5.D1.87.D0.B0.D1.82.D0.B8_.D1.82.D0.B5.D1.81.D1.82.D0.BE.D0.B2.D0.BE.D0.B9_.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B8.D1.86.D1.8B)
+    *   [5.11 hp-setup: "KeyError: 'family-class'"](#hp-setup:_.22KeyError:_.27family-class.27.22)
 *   [6 Другие](#.D0.94.D1.80.D1.83.D0.B3.D0.B8.D0.B5)
     *   [6.1 Принтер "приостановлен - "Paused"" или "Остановлен" cо статусом "Рендеринг завершен"](#.D0.9F.D1.80.D0.B8.D0.BD.D1.82.D0.B5.D1.80_.22.D0.BF.D1.80.D0.B8.D0.BE.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD_-_.22Paused.22.22_.D0.B8.D0.BB.D0.B8_.22.D0.9E.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.22_c.D0.BE_.D1.81.D1.82.D0.B0.D1.82.D1.83.D1.81.D0.BE.D0.BC_.22.D0.A0.D0.B5.D0.BD.D0.B4.D0.B5.D1.80.D0.B8.D0.BD.D0.B3_.D0.B7.D0.B0.D0.B2.D0.B5.D1.80.D1.88.D0.B5.D0.BD.22)
         *   [6.1.1 Низкий уровень чернил](#.D0.9D.D0.B8.D0.B7.D0.BA.D0.B8.D0.B9_.D1.83.D1.80.D0.BE.D0.B2.D0.B5.D0.BD.D1.8C_.D1.87.D0.B5.D1.80.D0.BD.D0.B8.D0.BB)
@@ -393,6 +394,19 @@ PID *pid* (/usr/lib/cups/filter/foomatic-rip) stopped with status 3!
 ### hp-setup: находит принтер автоматически, но сразу после этого сообщает "Unable to communicate with device" при печати тестовой страницы
 
 Это, по крайней мере, происходит с hplip 3.13.5-2 у принтера HP Officejet 6500A через локальное сетевое соединение. Чтобы решить проблему, укажите IP-адрес принтера HP для hp-setup, чтобы обнаружить принтер.
+
+### hp-setup: "KeyError: 'family-class'"
+
+Если при добавлении принтера в пользовательском интерфейсе он не работает, или вы получили `KeyError: 'family-class'` от `hp-setup`, возможно потребуется обновить вручную `/usr/share/hplip/data/models/models.dat`.
+
+Проверьте определен ли раздел `family-class=Undefined` для вашего принтера. Если нет, добавьте это:
+
+ `/usr/share/hplip/data/models/models.dat` 
+```
+[hp_laserjet_pro_mfp_m225dw]	
+...
+family-class=Undefined
+```
 
 ## Другие
 

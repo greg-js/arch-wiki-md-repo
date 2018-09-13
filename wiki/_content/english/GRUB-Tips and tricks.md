@@ -157,7 +157,7 @@ Following package may be installed:
 
 	[https://github.com/maz-1/grub2-editor](https://github.com/maz-1/grub2-editor) || [grub2-editor-frameworks](https://aur.archlinux.org/packages/grub2-editor-frameworks/)
 
-*   **startupmanager** — GUI app for changing the settings of GRUB Legacy, GRUB, Usplash and Splashy ([abandonned](https://launchpad.net/startup-manager/+announcement/8300))
+*   **startupmanager** — GUI app for changing the settings of GRUB Legacy, GRUB, Usplash and Splashy ([abandoned](https://launchpad.net/startup-manager/+announcement/8300))
 
 	[http://sourceforge.net/projects/startup-manager/](http://sourceforge.net/projects/startup-manager/) || [startupmanager](https://aur.archlinux.org/packages/startupmanager/)
 

@@ -361,6 +361,10 @@ Some image viewers and organizers like [digiKam](https://en.wikipedia.org/wiki/d
 
 	[https://sourceforge.net/projects/nufraw/](https://sourceforge.net/projects/nufraw/) || [gimp-nufraw](https://www.archlinux.org/packages/?name=gimp-nufraw)
 
+*   **Oqapy** — Photographic workflow application.
+
+	[https://oqapy.eu/](https://oqapy.eu/) || [oqapy](https://aur.archlinux.org/packages/oqapy/)
+
 *   **[Rawstudio](https://en.wikipedia.org/wiki/Rawstudio "wikipedia:Rawstudio")** — Raw-image converter written in GTK+.
 
 	[https://rawstudio.org/](https://rawstudio.org/) || [rawstudio](https://aur.archlinux.org/packages/rawstudio/)

@@ -84,7 +84,7 @@ Weston is the reference implementation of a Wayland compositor.
 | `Super+S` | Take a screenshot |
 | `Super+R` | Record a screencast. |
 
-Now that Wayland and its requirements are installed you should be ready to test it out.
+Now that once Wayland and its requirements are installed you should be ready to test it out.
 
 To launch Weston natively (from a TTY) or to run Weston inside a running X session:
 

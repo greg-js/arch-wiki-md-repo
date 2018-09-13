@@ -36,6 +36,7 @@ tmux is an ISC-licensed alternative to [GNU Screen](/index.php/GNU_Screen "GNU S
     *   [5.10 Terminal emulator window titles](#Terminal_emulator_window_titles)
     *   [5.11 Automatic layouting](#Automatic_layouting)
     *   [5.12 Vim friendly configuration](#Vim_friendly_configuration)
+    *   [5.13 Friendly pane splitting](#Friendly_pane_splitting)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Scrolling issues](#Scrolling_issues)
     *   [6.2 Mouse scrolling](#Mouse_scrolling)
@@ -756,6 +757,21 @@ bind-key -T copy-mode-vi 'v' send -X begin-selection
 bind-key -T copy-mode-vi 'y' send -X copy-selection
 bind-key -T copy-mode-vi 'Space' send -X halfpage-down
 bind-key -T copy-mode-vi 'Bspace' send -X halfpage-up
+
+```
+
+### Friendly pane splitting
+
+The default key-binding for splitting a pane vertically is `Ctrl` + `b` `%` and for splitting a pane horizontally is `Ctrl` + `b` `"`. That can be difficult to type depending of your keyboard layout and it is also hard to remember.
+
+A more friendly key-binding is to use `Ctrl` + `b` `h` for splitting horizontally and `Ctrl` + `b` `v` for splitting a pane vertically, it is also very convenient to remember.
+
+To make this change, add these lines in `~/.tmux.conf`:
+
+```
+# More friendly split pane
+bind-key h split-window -h
+bind-key v split-window -v
 
 ```
 

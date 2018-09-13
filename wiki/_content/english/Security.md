@@ -575,7 +575,7 @@ For example the DNS resolver is implemented in [glibc](https://www.archlinux.org
 
 See [OpenSSL](/index.php/OpenSSL "OpenSSL") and [Network Security Services](/index.php/Network_Security_Services "Network Security Services") (NSS) for managing custom server-side SSL certificates. Notably, the related [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") project is also supported.
 
-The default internet SSL certificate trustchains are provided by the [ca-certificates](https://www.archlinux.org/packages/?name=ca-certificates) package and its dependencies. Note that Arch relies on trust-sources (e.g. [ca-certificates-cacert](https://www.archlinux.org/packages/?name=ca-certificates-cacert), [ca-certificates-mozilla](https://www.archlinux.org/packages/?name=ca-certificates-mozilla)) providing the certificates to be trusted per default by the system.
+The default internet SSL certificate trustchains are provided by the [ca-certificates](https://www.archlinux.org/packages/?name=ca-certificates) package and its dependencies. Note that Arch relies on trust-sources (e.g. [ca-certificates-mozilla](https://www.archlinux.org/packages/?name=ca-certificates-mozilla)) providing the certificates to be trusted per default by the system.
 
 There may be occasions when you want to deviate from the default. For example, you may read some [news](https://www.theregister.co.uk/2016/05/27/blue_coat_ca_certs/) and want to distrust a certificate rather than wait until the trust-source providers do. The Arch infrastructure makes such easy:
 
