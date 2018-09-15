@@ -11,7 +11,7 @@ If there are laptop model specific instructions, the respective article is cross
 *   [1 Power management](#Power_management)
     *   [1.1 Battery state](#Battery_state)
         *   [1.1.1 ACPI](#ACPI)
-        *   [1.1.2 hibernate on low battery level](#hibernate_on_low_battery_level)
+        *   [1.1.2 Hibernate on low battery level](#Hibernate_on_low_battery_level)
             *   [1.1.2.1 Testing events](#Testing_events)
     *   [1.2 Suspend and Hibernate](#Suspend_and_Hibernate)
     *   [1.3 Hard drive spin down problem](#Hard_drive_spin_down_problem)
@@ -44,7 +44,7 @@ Battery state can be read using ACPI utilities from the terminal. ACPI command l
 *   [batterymon-clone](https://aur.archlinux.org/packages/batterymon-clone/) is a battery monitor that sits in the system tray, similar to batti.
 *   [batify](https://aur.archlinux.org/packages/batify/) is an udevrule file triggering plug and battery level notifications (multi-x sessions support).
 
-#### hibernate on low battery level
+#### Hibernate on low battery level
 
 If your battery sends events to [udev](/index.php/Udev "Udev") whenever it (dis)charges by 1%, you can use this udev rule to automatically hibernate the system when battery level is critical, and thus prevent all unsaved work from being lost.
 
@@ -62,7 +62,7 @@ Batteries can jump to a lower value instead of discharging continuously, therefo
 
 Other rules can be added to perform different actions depending on power supply status and/or capacity.
 
-If your system has no or missing ACPI events, use [cron](/index.php/Cron "Cron") with the following script:
+If your system has no or missing ACPI events, use [cron](/index.php/Cron "Cron") with the following script which uses [acpi](https://www.archlinux.org/packages/?name=acpi):
 
 ```
 #!/bin/sh
@@ -76,6 +76,10 @@ acpi -b | awk -F'[,:%]' '{print $2, $3}' | {
 }
 
 ```
+
+If you have more than one battery or if you are using a battery powered peripheral device, you should modify the second line of the script by adding `grep` to monitor the correct battery like so: `acpi -b | grep "Battery 0" | awk -F'[,:%]' '{print $2, $3}' | {`. Replace `Battery 0` with your required battery as reported by `acpi -b`.
+
+**Note:** Unplugging a battery or peripheral device may break your script since it can cause remaining batteries to be renamed, i.e. when `Battery 0` is unplugged, `Battery 1` becomes `Battery 0` automatically, and so on.
 
 ##### Testing events
 

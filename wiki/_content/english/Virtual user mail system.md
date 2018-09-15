@@ -36,11 +36,14 @@ In the end, the provided solution will allow you to use the best currently avail
     *   [5.1 Quota](#Quota)
     *   [5.2 Autocreate and autosubscribe folders in Dovecot](#Autocreate_and_autosubscribe_folders_in_Dovecot)
     *   [5.3 Dovecot public folder and global ACLs](#Dovecot_public_folder_and_global_ACLs)
+    *   [5.4 Fighting Spam](#Fighting_Spam)
 *   [6 Sidenotes](#Sidenotes)
     *   [6.1 Alternative vmail folder structure](#Alternative_vmail_folder_structure)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 IMAP/POP3 client failing to receive mails](#IMAP.2FPOP3_client_failing_to_receive_mails)
     *   [7.2 Roundcube not able to delete emails or view any 'standard' folders](#Roundcube_not_able_to_delete_emails_or_view_any_.27standard.27_folders)
+    *   [7.3 LMTP / Sieve](#LMTP_.2F_Sieve)
+    *   [7.4 Are your emails sent to gmail users ending up in their junk/spam folders?](#Are_your_emails_sent_to_gmail_users_ending_up_in_their_junk.2Fspam_folders.3F)
 
 ## Installation
 
@@ -717,6 +720,10 @@ In the above example, user `admin@example.com` has access to, and can do anythin
 *   `lrwstipekxa` are the permissions being granted. Visit the Dovecot wiki for further details.
 *   Make sure the user subscribes to the folders in the client they are using.
 
+### Fighting Spam
+
+As an alternative to SpamAssassin, consider [rspamd](https://aur.archlinux.org/packages/rspamd/). Out of the box, it delivers an amazing amount of spam reduction, greylisting, etc and includes a nifty webui. See also [[1]](https://thomas-leister.de/en/mailserver-debian-stretch/).
+
 ## Sidenotes
 
 ### Alternative vmail folder structure
@@ -742,3 +749,13 @@ $rcmail_config['default_imap_folders'] = array('INBOX', 'Drafts', 'Sent', 'Junk'
 $rcmail_config['create_default_folders'] = true;
 $rcmail_config['protect_default_folders'] = true;
 ```
+
+### LMTP / Sieve
+
+Is LMTP not connecting to sieve? Ensure that your server is not routing the messages locally. This can be set in `/etc/postfix/main.cf`:
+
+ `mydestination =` 
+
+### Are your emails sent to gmail users ending up in their junk/spam folders?
+
+Google gmail (and most other large email providers) will send your emails straight into your recipients junk / spam folder if you have not implemented SPF / DKIM / DMARC policies. (Hint: Rspamd, via the link above, shows you how to set this up, and will DKIM sign your emails.)

@@ -11,8 +11,11 @@ If you would like to run a full install of Arch Linux from a USB drive (i.e. wit
 ## Contents
 
 *   [1 BIOS and UEFI bootable USB](#BIOS_and_UEFI_bootable_USB)
-    *   [1.1 Using dd](#Using_dd)
+    *   [1.1 Using automatic tools](#Using_automatic_tools)
         *   [1.1.1 In GNU/Linux](#In_GNU.2FLinux)
+            *   [1.1.1.1 Using dd](#Using_dd)
+            *   [1.1.1.2 Using liveusb-builder](#Using_liveusb-builder)
+            *   [1.1.1.3 Using etcher](#Using_etcher)
         *   [1.1.2 In Windows](#In_Windows)
             *   [1.1.2.1 Using Rufus](#Using_Rufus)
             *   [1.1.2.2 Using USBwriter](#Using_USBwriter)
@@ -41,13 +44,15 @@ If you would like to run a full install of Arch Linux from a USB drive (i.e. wit
 
 ## BIOS and UEFI bootable USB
 
-### Using dd
+### Using automatic tools
+
+#### In GNU/Linux
+
+##### Using dd
 
 **Note:** This method is recommended due to its simplicity. If it does not work, switch to the alternative method [#Using manual formatting](#Using_manual_formatting) below.
 
 **Warning:** This will irrevocably destroy all data on `/dev/**sdx**`. To restore the USB drive as an empty, usable storage device after using the Arch ISO image, the ISO 9660 filesystem signature needs to be removed by running `wipefs --all /dev/**sdx**` as root, before [repartitioning](/index.php/Repartition "Repartition") and [reformating](/index.php/Reformat "Reformat") the USB drive.
-
-#### In GNU/Linux
 
 **Tip:** Find out the name of your USB drive with `lsblk`. Make sure that it is **not** mounted.
 
@@ -59,6 +64,32 @@ Run the following command, replacing `/dev/**sdx**` with your drive, e.g. `/dev/
 ```
 
 See [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) for more information about [dd](/index.php/Dd "Dd"). See [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1#DESCRIPTION) for more information about `oflag=sync`.
+
+##### Using liveusb-builder
+
+[liveusb-builder](https://github.com/mytbk/liveusb-builder) is a script suite to create multiboot USB stick for GNU/Linux distributions.
+
+**Note:** This tool is only tested under Arch Linux. If you are use another GNU/Linux distribution, there may be some difference.
+
+[Install](/index.php/Install "Install") [liveusb-builder-git](https://aur.archlinux.org/packages/liveusb-builder-git/).
+
+Download a recent Arch Linux ISO to your `~/isofiles` directory:
+
+```
+$ buildlive --downloadonly arch
+
+```
+
+Mount your USB stick, assume you have only one [FAT32](/index.php/FAT32 "FAT32") partition, then make a live USB. If your USB stick has a different partition scheme or you encounter problem, please check the [project homepage](https://github.com/mytbk/liveusb-builder#usage).
+
+```
+$ buildlive --root /path/to/usb-drive arch
+
+```
+
+##### Using etcher
+
+[Etcher](https://etcher.io/) is a powerful OS image flasher built with web technologies to ensure flashing an SDCard or USB drive is a pleasant and safe experience. It protects you from accidentally writing to your hard-drives, ensures every byte of data was written correctly and much more.
 
 #### In Windows
 

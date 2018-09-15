@@ -1,6 +1,6 @@
 From the project [home page](https://aria2.github.io/):
 
-	aria2 is a lightweight multi-protocol & multi-source command-line download utility. It supports [HTTP](https://en.wikipedia.org/wiki/HTTP and [Metalink](https://en.wikipedia.org/wiki/Metalink "wikipedia:Metalink"). aria2 can be manipulated via built-in [JSON-RPC](https://en.wikipedia.org/wiki/JSON-RPC "wikipedia:JSON-RPC") and [XML-RPC](https://en.wikipedia.org/wiki/XML-RPC "wikipedia:XML-RPC") interfaces.
+	aria2 is a lightweight multi-protocol & multi-source command-line download utility. It supports [HTTP](/index.php/HTTP "HTTP")/[HTTPS](/index.php/HTTPS "HTTPS"), [FTP](/index.php/FTP "FTP"), [BitTorrent](/index.php/BitTorrent "BitTorrent") and [Metalink](https://en.wikipedia.org/wiki/Metalink "wikipedia:Metalink"). aria2 can be manipulated via built-in [JSON-RPC](https://en.wikipedia.org/wiki/JSON-RPC "wikipedia:JSON-RPC") and [XML-RPC](https://en.wikipedia.org/wiki/XML-RPC "wikipedia:XML-RPC") interfaces.
 
 ## Contents
 

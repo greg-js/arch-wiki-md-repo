@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Core utilities (Português)#tar](/index.php/Core_utilities_(Portugu%C3%AAs)#tar "Core utilities (Português)")
+*   [Archiving and compression (Português)](/index.php/Archiving_and_compression_(Portugu%C3%AAs) "Archiving and compression (Português)")

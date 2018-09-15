@@ -7,6 +7,7 @@
     *   [3.2 Multimonitor](#Multimonitor)
 *   [4 Ultranav - Trackpoint and Touchpad](#Ultranav_-_Trackpoint_and_Touchpad)
 *   [5 Other](#Other)
+*   [6 FAN Settings with Thinkfan](#FAN_Settings_with_Thinkfan)
 
 ## GPT / MBR Partition Table
 
@@ -150,4 +151,28 @@ ACTION=="add",SUBSYSTEM=="input",ATTR{name}=="TPPS/2 IBM TrackPoint",ATTR{device
 ```
 video.use_native_backlight=0
 
+```
+
+## FAN Settings with Thinkfan
+
+Default temperature management allows only a limited fan speed. This inherently leads to overheating since the laptop is designed to run with unregulated fan speed under full load.
+
+Thinkfan.conf:
+
+ `thinkfan.conf` 
+```
+Section
+hwmon /sys/devices/virtual/thermal/thermal_zone0/temp
+# Fan   Temp1   Temp2
+(0,     0,      35)
+(1,     30,     40)
+(2,     35,     45)
+(3,     40,     50)
+(4,     45,     55)
+(5,     50,     60)
+(6,     55,     65)
+(7,     60,     70)
+(127,   65,     32767)
+# last line is unregulated/max speed.  Like this the Laptop will be ~ at 60
+EndSection
 ```

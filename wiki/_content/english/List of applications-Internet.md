@@ -1994,9 +1994,9 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 ##### Graphical
 
-*   **Birdie** — Beautiful Twitter client designed for elementary OS. In early stage of development.
+*   **Birdie** — Beautiful Twitter client designed for elementary OS.
 
-	[http://birdieapp.github.io/](http://birdieapp.github.io/) || [birdie-git](https://aur.archlinux.org/packages/birdie-git/)
+	[https://www.amuza.uk/birdie](https://www.amuza.uk/birdie) || [birdie-git](https://aur.archlinux.org/packages/birdie-git/)
 
 *   **Choqok** — Microblogging client for KDE that supports Twitter.com, Pump.io, GNU social and opendesktop.org services.
 

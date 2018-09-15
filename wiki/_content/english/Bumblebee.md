@@ -386,7 +386,7 @@ The BusID is 0:2:0
 
 #### Output wired to the NVIDIA chip
 
-On some notebooks, the digital Video Output (HDMI or DisplayPort) is hardwired to the NVIDIA chip. If you want to use all the displays on such a system simultaneously, the easiest solution is to use *intel-virtual-output*, a tool provided in the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver set, as of v2.99. It will allow you to extend the existing X session onto other screens, leveraging virtual outputs to work with the discrete graphics card. Commandline usage is as follows:
+On some notebooks, the digital Video Output (HDMI or DisplayPort) is hardwired to the NVIDIA chip. If you want to use all the displays on such a system simultaneously, the easiest solution is to use *intel-virtual-output*, a tool provided in the [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver set, as of v2.99\. It will allow you to extend the existing X session onto other screens, leveraging virtual outputs to work with the discrete graphics card. Commandline usage is as follows:
 
  `$ intel-virtual-output [OPTION]... [TARGET_DISPLAY]...` 
 ```

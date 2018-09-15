@@ -282,6 +282,10 @@ modprobe: ERROR: could not insert 'phram': Input/output error
 
 ## Automated tools
 
+*   **liveusb-builder** — A script suite to create multiboot USB stick for GNU/Linux distributions
+
+	[https://github.com/mytbk/liveusb-builder](https://github.com/mytbk/liveusb-builder) || [liveusb-builder-git](https://aur.archlinux.org/packages/liveusb-builder-git/)
+
 *   **MultiSystem** — A graphical tool that allows to install, manage, and remove multiple ISO images on a USB device.
 
 	[http://liveusb.info/dotclear/](http://liveusb.info/dotclear/) || [multisystem](https://aur.archlinux.org/packages/multisystem/)

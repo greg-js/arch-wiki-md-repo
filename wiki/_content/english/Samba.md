@@ -909,6 +909,22 @@ to your iptables setup.
 
 The client probably does not have access to shares. Make sure clients' IP address is in `hosts allow =` line in `/etc/samba/smb.conf`.
 
+Another problem could be, that the client uses an invalid protocol version. To check this try to connect with the `smbclient` where you specify the maximum protocol version manually:
+
+```
+$ smbclient -U <user name> -L //<server name> -m <protocol version: e. g. SMB2> -W <domain name>
+
+```
+
+If the command was successful then create a configuration file:
+
+ `~/.smb/smb.conf` 
+```
+[global]
+  workgroup = <domain name>
+  client max protocol = SMB2
+```
+
 ### Connection to SERVER failed: (Error NT_STATUS_UNSUCCESSFUL)
 
 You are probably passing wrong server name to `smbclient`. To find out the server name, run `hostnamectl` on the server and look at "Transient hostname" line

@@ -183,15 +183,18 @@ If you plan to use mDNS and use a [firewall](/index.php/Firewall "Firewall"), ma
 
 [Link-Local Multicast Name Resolution](https://en.wikipedia.org/wiki/Link-Local_Multicast_Name_Resolution "wikipedia:Link-Local Multicast Name Resolution") is a [hostname](/index.php/Hostname "Hostname") resolution protocol created by Microsoft.
 
-LLMNR will only be activated for the connection if both the systemd-resolved's global setting (`LLMNR=` in [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5)) and the [network manager's](/index.php/Network_manager "Network manager") per-connection setting is enabled. By default *systemd-resolved* enables LLMNR responder, [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") enables it by default and [NetworkManager](/index.php/NetworkManager "NetworkManager") does not have a setting to control it.
+LLMNR will only be activated for the connection if both the systemd-resolved's global setting (`LLMNR=` in [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5)) and the [network manager's](/index.php/Network_manager "Network manager") per-connection setting is enabled. By default *systemd-resolved* enables LLMNR responder; [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [NetworkManager](/index.php/NetworkManager "NetworkManager") enable it for connections.
 
-For [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") the setting is `LLMNR=` in the `[Network]` section. See [systemd.network(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5).
+*   For [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") the setting is `LLMNR=` in the `[Network]` section. See [systemd.network(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5).
+*   For [NetworkManager](/index.php/NetworkManager "NetworkManager") the setting is `llmnr=` in the `[connection]` section, see [nm-settings(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nm-settings.5). The values are `0` - disabled, `1` - resolver only, `2` - resolver and responder.
 
-**Warning:** [NetworkManager](/index.php/NetworkManager "NetworkManager") before version 1.14 lacks control over per-connection LLMNR setting ([NetworkManager issue #13](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/13)), if you do not plan to use LLMNR the only option is to disable it globally in [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5). E.g.: `/etc/systemd/resolved.conf.d/disable_llmnr.conf` 
+**Tip:** The default for all [NetworkManager](/index.php/NetworkManager "NetworkManager") connections can be set by creating a configuration file in `/etc/NetworkManager/conf.d/` and setting `connection.llmnr=` in the `[connection]` section. For example the following will disable LLMNR for all connections: `/etc/NetworkManager/conf.d/llmnr.conf` 
 ```
-[Resolve]
-LLMNR=false
+[connection]
+connection.llmnr=0
 ```
+
+See [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).
 
 If you plan to use LLMNR and use a [firewall](/index.php/Firewall "Firewall"), make sure to open UDP and TCP ports `5355`.
 

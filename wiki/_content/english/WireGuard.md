@@ -20,6 +20,7 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
     *   [4.1 DKMS module not available](#DKMS_module_not_available)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Store private keys in encrypted form](#Store_private_keys_in_encrypted_form)
+    *   [5.2 Handling Network Manager DNS updates](#Handling_Network_Manager_DNS_updates)
 
 ## Installation
 
@@ -213,3 +214,43 @@ It may be desirable to store private keys in encrypted form, such as through use
 ```
 
 where user is your username. See the `wg-quick(8)` man page for more details.
+
+### Handling Network Manager DNS updates
+
+By default, [Network Manager](/index.php/Network_Manager "Network Manager") tries to periodically update [DNS](/index.php/DNS "DNS") entries according to [DHCP](/index.php/DHCP "DHCP") settings. This can lead to connectivity and/or privacy problems. A seamless way around this is to use the per-interface [DNS](/index.php/DNS "DNS") capabilities provided by [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved").
+
+First we need to activate [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"):
+
+```
+ $ sudo systemctl enable --now systemd-resolved
+
+```
+
+Then we alter Network Manager's settings to ignore the Wireguard interface (here `wg0`) and to use `systemd-resolved`:
+
+ `/etc/NetworkManager/NetworkManager.conf` 
+```
+[main]
+dns=systemd-resolved
+
+[keyfile]
+unmanaged-devices=interface-name:wg0
+```
+
+Finally we update Wireguard's settings to explicitly set DNS through `systemd-resolved`:
+
+ `/etc/wireguard/wg0.conf` 
+```
+[Interface]
+Address = 10.0.0.2/24  # The client IP from wg0server.conf with the same subnet mask
+PrivateKey = [CLIENT PRIVATE KEY]
+PostUp = resolvectl domain %i "~."; resolvectl dns %i 10.0.0.1
+
+[Peer]
+PublicKey = [SERVER PUBLICKEY]
+AllowedIPs = 0.0.0.0/0, ::0/0
+Endpoint = [SERVER ENDPOINT]:51820
+PersistentKeepalive = 25
+```
+
+Note that setting `"~."` as a domain name is necessary for `systemd-resolved` to give priority to the newly available DNS server. No `PostDown` key is necessary as `systemd-resolved` automatically revert all parameters when `wg0` is torn down.

@@ -10,16 +10,18 @@
     *   [3.1 Office WPS for Linux 的启动命令是什么](#Office_WPS_for_Linux_.E7.9A.84.E5.90.AF.E5.8A.A8.E5.91.BD.E4.BB.A4.E6.98.AF.E4.BB.80.E4.B9.88)
     *   [3.2 Zip 模板压缩包乱码](#Zip_.E6.A8.A1.E6.9D.BF.E5.8E.8B.E7.BC.A9.E5.8C.85.E4.B9.B1.E7.A0.81)
     *   [3.3 公式无法正常显示](#.E5.85.AC.E5.BC.8F.E6.97.A0.E6.B3.95.E6.AD.A3.E5.B8.B8.E6.98.BE.E7.A4.BA)
+    *   [3.4 KDE中Microsoft Office文件格式被识别为Zip](#KDE.E4.B8.ADMicrosoft_Office.E6.96.87.E4.BB.B6.E6.A0.BC.E5.BC.8F.E8.A2.AB.E8.AF.86.E5.88.AB.E4.B8.BAZip)
+*   [4 参见](#.E5.8F.82.E8.A7.81)
 
 ## 安装
 
-自alpha18开始，WPS已经有x86_64版本，故所有用户均可直接安装 [AUR (简体中文)](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)") 中的 wps-office 即可。
+自alpha18开始，WPS已经有x86_64版本，故所有用户均可直接安装 [AUR (简体中文)](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)") 中的 [wps-office](https://aur.archlinux.org/packages/wps-office/) 即可。
 
 当然，你也可以通过添加[archlinuxcn源](https://www.archlinuxcn.org/archlinux-cn-repo-and-mirror/)后用pacman安装(仅限64位arch用户）。
 
 **注意:** 请留意自带字体的版权状况，可阅读 [WPS Office Linux 版最终用户协议](http://community.wps.cn/wiki/WPS_Office_Linux%E7%89%88%E6%9C%80%E7%BB%88%E7%94%A8%E6%88%B7%E5%8D%8F%E8%AE%AE) 第十四条
 
-此外 [AUR (简体中文)](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)") 还包含了可自定义安装字体、模板的 [wpsforlinux](https://aur.archlinux.org/packages/wpsforlinux/)，不自带字体、模板的 [wps-office-split](https://aur.archlinux.org/packages/wps-office-split/)、提供 fcitx immodule 的 [fcitx-wps](https://aur.archlinux.org/packages/fcitx-wps/) 等。
+此外可选安装wps需要的符号字体：[ttf-wps-fonts](https://aur.archlinux.org/packages/ttf-wps-fonts/)。
 
 ## 提示与技巧
 
@@ -40,7 +42,7 @@
 
 ```
 
-处理策略：WPS 自己的格式由 `wps-office-{wpp,wps,et}.xml` 定义，其他的用 `freedesktop.org.xml` 定义。同时修改 `desktop` 文件的 `MimeType` 项。
+处理策略：WPS 自己的格式由 {{ic|wps-office-{wpp,wps,et}.xml}} 定义，其他的用 `freedesktop.org.xml` 定义。同时修改 `desktop` 文件的 `MimeType` 项。
 
 在 PKGBUILD 文件中的 `package` 函数添加以下语句：
 
@@ -76,7 +78,7 @@ application\/vnd.openxmlformats-officedocument.wordprocessingml.document;"
 
 WPS 默认的 UI 为 Qt，事实上其捆绑的 Qt 为 4.7.4，从而因为版本不符，无法正常加载 qtcurve 之类的主题。但我们可以改为 GTK+，直接加上参数 `-style gtk+` 即可。
 
-可以修改`/usr/share/applications/wps-office-{wps,wpp,et}.desktop`一劳永逸设定：
+可以修改{{Ic|/usr/share/applications/wps-office-{wps,wpp,et}.desktop}}一劳永逸设定：
 
 ```
 Exec=/usr/bin/{wps,wpp,et} **-style gtk+** %f
@@ -103,3 +105,17 @@ symbol.ttf webdings.ttf wingding.ttf wingdng2.ttf wingdng3.ttf monotypesorts.ttf
 ```
 
 [AUR (简体中文)](/index.php/AUR_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AUR (简体中文)") 中的 [ttf-wps-fonts](https://aur.archlinux.org/packages/ttf-wps-fonts/) 包含了除monotypesorts.ttf之外的字体，直接安装即可。
+
+### KDE中Microsoft Office文件格式被识别为Zip
+
+在安装完成wps之后，系统的Microsoft Office文件格式会被识别为zip，无法与wps关联，可以通过删除/usr/share/mime/packages/下的mime文件即可修改格式识别：
+
+```
+sudo rm /usr/share/mime/packages/wps-office-*.xml
+sudo update-mime-database /usr/share/mime
+
+```
+
+## 参见
+
+*   [How to associate all Microsoft office files to WPS office applications?](https://forum.manjaro.org/t/how-to-associate-all-microsoft-office-files-to-wps-office-applications/33528/6)

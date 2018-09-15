@@ -601,7 +601,7 @@ La instalación por defecto establece el botón de encendido para suspender el s
 
 ```
 
-**Advertencia:** Tenga en cuenta que el demonio [acpid](/index.php/Acpid "Acpid") maneja tanto el evento «power button» como «hibernate button» . La ejecución de ambos sistemas al mismo tiempo puede dar lugar a un comportamiento inesperado.
+**Advertencia:** Tenga en cuenta que el demonio [acpid](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)") maneja tanto el evento «power button» como «hibernate button» . La ejecución de ambos sistemas al mismo tiempo puede dar lugar a un comportamiento inesperado.
 
 #### Distribución del teclado GDM
 

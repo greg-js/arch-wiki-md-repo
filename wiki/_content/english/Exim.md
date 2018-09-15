@@ -303,15 +303,24 @@ The existing router for local delivery can be reused. You may want to consider a
 
 ```
 
-**Note:** As of Exim 4.88 there is a limitation with the lmtp driver: in an ACL `verify = recipient/callout=no_cache` won't work as expected, i.e. non-existent user accounts won't throw a failure. To accomplish a receipient check against Dovecot you must replace the driver above by a
+**Note:** As of Exim 4.88 there is a limitation with the lmtp driver: in an ACL, `verify = recipient/callout=no_cache` won't work as expected, i.e. non-existent user accounts won't throw a failure. To accomplish a receipient check against Dovecot you must replace the driver above by a
 ```
 driver = smtp
 protocol = lmtp
-host = 127.0.0.1
 port = 2525
 ```
 
-Furthermore your Dovecot lmtp service must be adjusted accordingly.
+The host is specified in the router, not the transport. Thus, the router must look like:
+
+```
+lmtp_router:
+  driver = manualroute
+  domains = +local_domains
+  transport = local_delivery
+  route_list = * 127.0.0.1 byname
+```
+
+Furthermore your Dovecot lmtp service must be [adjusted accordingly](https://wiki.dovecot.org/LMTP/Exim#Using_LMTP_over_TCP_Socket). For example: here is a [Git commit that fixes this exact issue](https://yalis.fr/git/yves/home-server/commit/807b01c97b420713b6f1f6f73d35f2a440eb24e0).
 
 Since Dovecot is configured to provide a unix socket for the exim user, you may harden your security by adding the following line to the main configuration section.
 

@@ -1,50 +1,106 @@
+**Состояние перевода:** На этой странице представлен перевод статьи [Xbindkeys](/index.php/Xbindkeys "Xbindkeys"). Дата последней синхронизации: 5 сентября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Xbindkeys&diff=0&oldid=539929).
+
+Ссылки по теме
+
+*   [Xmodmap (Русский)](/index.php/Xmodmap_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xmodmap (Русский)")
+*   [Sxhkd](/index.php/Sxhkd "Sxhkd")
+*   [Xorg (Русский)#Автоматизация](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F "Xorg (Русский)")
+
+Xbindkeys - программа, позволяющая назначать команды клавишам (в том числе мультимедийным) или сочетаниям клавиш. Она не зависит от окружения рабочего стола и оконного менеджера.
+
 ## Contents
 
-*   [1 Xbindkeys](#Xbindkeys)
-*   [2 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
-*   [3 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
-    *   [3.1 Xbindkeysrc](#Xbindkeysrc)
-    *   [3.2 Настройка с помощью графической оболочки](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_.D0.B3.D1.80.D0.B0.D1.84.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B9_.D0.BE.D0.B1.D0.BE.D0.BB.D0.BE.D1.87.D0.BA.D0.B8)
-*   [4 Использование](#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5)
-*   [5 Симуляция мультимедиа клавиш](#.D0.A1.D0.B8.D0.BC.D1.83.D0.BB.D1.8F.D1.86.D0.B8.D1.8F_.D0.BC.D1.83.D0.BB.D1.8C.D1.82.D0.B8.D0.BC.D0.B5.D0.B4.D0.B8.D0.B0_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88)
-*   [6 Исправление Проблем](#.D0.98.D1.81.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.9F.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
-
-## Xbindkeys
-
-Xbindkeys - программа, позволяющая назначать команды клавишам (в том числе мультимедийным) или сочетаниям клавиш. Она независима от DE/WM и может быть полезна, если вы часто их меняете.
+*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
+*   [2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
+    *   [2.1 Управление звуком](#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B7.D0.B2.D1.83.D0.BA.D0.BE.D0.BC)
+    *   [2.2 Управление яркостью](#.D0.A3.D0.BF.D1.80.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D1.8F.D1.80.D0.BA.D0.BE.D1.81.D1.82.D1.8C.D1.8E)
+    *   [2.3 Графический способ](#.D0.93.D1.80.D0.B0.D1.84.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B9_.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1)
+*   [3 Определение кодов клавиш](#.D0.9E.D0.BF.D1.80.D0.B5.D0.B4.D0.B5.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.B4.D0.BE.D0.B2_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88)
+*   [4 Постоянные изменения](#.D0.9F.D0.BE.D1.81.D1.82.D0.BE.D1.8F.D0.BD.D0.BD.D1.8B.D0.B5_.D0.B8.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D1.8F)
+*   [5 Имитация мультимедийных клавиш](#.D0.98.D0.BC.D0.B8.D1.82.D0.B0.D1.86.D0.B8.D1.8F_.D0.BC.D1.83.D0.BB.D1.8C.D1.82.D0.B8.D0.BC.D0.B5.D0.B4.D0.B8.D0.B9.D0.BD.D1.8B.D1.85_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88)
+*   [6 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
 
 ## Установка
 
-Установить xbindkeys можно из extra-репозитория:
-
-```
-# pacman -S xbindkeys
-
-```
-
-Также в [AUR](/index.php/AUR "AUR") доступна графическая оболочка [[1]](https://aur.archlinux.org/packages.php?ID=4200) для xbindkeys.
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys).
 
 ## Настройка
 
-Создайте файл `.xbindkeysrc` в вашей домашней директории:
+Создайте пустой файл `~/.xbindkeysrc` или создайте образец файла (обратите внимание, что в нем настроены некоторые сочетания клавиш, такие как `Ctrl+f`, которые вы можете изменить или удалить):
 
 ```
-touch ~/.xbindkeysrc
-
-```
-
-Теперь вы можете редактировать его вручную, либо воспользоваться для настройки графической утилитой [[2]](https://aur.archlinux.org/packages.php?ID=4200).
-
-### Xbindkeysrc
-
-Посмотреть формат конфигурационного файла можно командой:
-
-```
-xbindkeys -k
+$ xbindkeys -d > ~/.xbindkeysrc
 
 ```
 
-Появится пустое окно. Нажимайте клавиши (сочетания клавиш), для которых вы хотите назначить команды и xbindkeys выведет вам кусок конфигурации, который можно использовать в `~/.xbindkeysrc`. Например, нажатие Alt + o приведёт к такому выводу:
+Теперь вы можете редактировать его вручную, либо воспользоваться для настройки графической утилитой.
+
+**Совет:** Для применения изменений выполните `xbindkeys -p` для перезагрузки настроенного файла.
+
+### Управление звуком
+
+Вот пример конфигурационного файла, который связывает комбинации клавиш Fn на ноутбуке с командами *pactl*, которые регулируют громкость звука. Обратите внимание, что символ решетки (#) используется для создания комментариев.
+
+```
+# Увеличить громкость звука
+"pactl set-sink-volume @DEFAULT_SINK@ +1000"
+   XF86AudioRaiseVolume
+
+```
+
+```
+# Уменьшить громкость звука
+"pactl set-sink-volume @DEFAULT_SINK@ -1000"
+   XF86AudioLowerVolume
+
+```
+
+```
+# Отключить звук
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+   XF86AudioMute
+
+```
+
+Для получения информации о дополнительных командах смотрите [PulseAudio (Русский)#Регулировка звука клавиатурой](/index.php/PulseAudio_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A0.D0.B5.D0.B3.D1.83.D0.BB.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B7.D0.B2.D1.83.D0.BA.D0.B0_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D0.BE.D0.B9 "PulseAudio (Русский)") или [ALSA#Keyboard volume control](/index.php/ALSA#Keyboard_volume_control "ALSA").
+
+### Управление яркостью
+
+Также можно определить сочетания клавиш, чтобы управлять яркостью экрана.
+
+```
+# Увеличить яркость
+"xbacklight -inc 10"
+   XF86MonBrightnessUp
+
+```
+
+```
+# Уменьшить яркость
+"xbacklight -dec 10"
+   XF86MonBrightnessDown
+
+```
+
+### Графический способ
+
+Для графической настройке [установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [xbindkeys_config-gtk2](https://aur.archlinux.org/packages/xbindkeys_config-gtk2/) и запустите:
+
+```
+$ xbindkeys_config
+
+```
+
+## Определение кодов клавиш
+
+Чтобы найти код клавиши, введите следующую команду:
+
+```
+$ xbindkeys -k
+
+```
+
+Появится пустое окно. Нажмите кнопку, которой вы хотите назначить команду и *xbindkeys* выведет удобный фрагмент, который можно вставить в `~/.xbindkeysrc`. Например, пока окно открыто, нажмите `Alt+o` и вы получите следующий вывод (результат может отличаться):
 
 ```
 "(Scheme function)"
@@ -53,82 +109,70 @@ xbindkeys -k
 
 ```
 
-Первая строка содержит команду. Вторая - состояние (0x8) и код (32) клавиши, полученные `xev`. В третьей строке содержится удобочитаемое название клавиши (сочетания клавиш), соответствующее предоставленным кодам. Что-бы использовать этот вывод, скопируйте все три строки в файл `~/.xbindkeysrc` и замените "(Scheme function)" той командой, которою вы хотите назначить на соответствующую клавишу (сочетание клавиш). Ниже представлен пример конфигурационного файла для управления громкостью с помощью Fn-сочетаний. Символом # обозначаются комментарии.
+Первая строка представляет собой команду. Вторая содержит состояние (0x8) и код клавиши (32), о котором сообщает `xev`. Третья строка содержит значение клавиш, связанные с указанным кодом. Чтобы использовать этот вывод, скопируйте одну из двух последних строк в `~/.xbindkeysrc` и замените "(Scheme function)" на команду, которую вы хотите использовать.
 
-```
-# Increase volume
-"amixer set Master playback 1+"
-    m:0x0 + c:123
-    XF86AudioRaiseVolume
+**Совет:** Используйте команду `xbindkeys -mk`, чтобы держать открытым приглашение для ввода нескольких нажатий клавиш. Для выхода нажмите `q`.
 
-# Decrease volume
-"amixer set Master playback 1-"
-    m:0x0 + c:122
-    XF86AudioLowerVolume
+Для определения клавиш мыши, вы можете использовать xev. Для получения дополнительной информации смотрите [[1]](https://blog.hanschen.org/2009/10/13/mouse-shortcuts-with-xbindkeys/).
 
-# Toggle mute
-"amixer set Master toggle"
-    m:0x0 + c:121
-    XF86AudioMute
+## Постоянные изменения
 
-```
-
-### Настройка с помощью графической оболочки
-
-Просто запустите:
-
-```
-xbindkeys_config
-
-```
-
-## Использование
-
-После настройки xbindkeys откройте `~/.xinitrc` и поместите
+После того как вы закончите настройку сочетаний клавиш, откройте файл [xprofile](/index.php/Xprofile_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xprofile (Русский)") или [xinitrc](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)") (в зависимости от вашего оконного менеджера) и поместите
 
 ```
 xbindkeys
 
 ```
 
-перед командой старта вашего WM/DE.
+перед строкой, которая запускает ваш оконный менеджер или окружение рабочего стола.
 
-Чтобы узнать комбинацию клавиш запустите xbindkeys -k или xbindkeys -mk
+## Имитация мультимедийных клавиш
 
-## Симуляция мультимедиа клавиш
-
-XF86Audio* и другие мультимедиа клавиши хороши, но возможно их нет на вашей клавиатуре. Можно симулировать эти самые клавиши
+XF86Audio* и другие мультимедийные клавиши [[2]](http://wiki.linuxquestions.org/wiki/XF86_keyboard_symbols) довольно хорошо реализованы в основных DE. Для клавиатур без таких клавиш вы можете имитировать их с помощью других клавиш.
 
 ```
-# сделать звук тише нажимая Super-minus
-"amixer set Master playback 1-"
+# Уменьшить громкость звука при нажатие Super-minus
+"pactl set-sink-volume 0 -1000"
    m:0x50 + c:20
    Mod2+Mod4 + minus
 
 ```
 
-Темнеменее чтобы "вызывать" эти клавиши вы можете воспользоваться инструментом [[3]](http://www.semicomplete.com/projects/xdotool/) или [[4]](http://xmacro.sourceforge.net/). Также вот скрипт который делает это However, to actually call the keys themselves you can use tools like xdotool[[5]](http://www.semicomplete.com/projects/xdotool/) (its in [community]) and xmacro[[6]](http://xmacro.sourceforge.net/) (in the AUR). Unfortunately since you'd already be holding down some modifier key (Super or Shift, for example), X will see the result as Super-XF86AudioLowerVolume which won't do anything useful. Here's a script based on xmacro and xmodmap from the xorg-server-utils package for doing this[[7]](https://bbs.archlinux.org/viewtopic.php?pid=843395).
+Однако для самого выполнения этих клавиш вы можете использовать такие инструменты, как [xdotool](https://www.archlinux.org/packages/?name=xdotool) (из [официальных репозиториев](/index.php/%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8 "Официальные репозитории")) и [xmacro](https://aur.archlinux.org/packages/xmacro/) (из [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)")). К сожалению, поскольку вы уже удерживаете некоторую клавишу-модификатор (например, Super или Shift), X распознает ввод как `Super-XF86AudioLowerVolume`, который ничего не выполняет ничего полезного. Ниже приведен скрипт, основанный на утилитах *xmacro* и *xmodmap* из пакета [xorg-xmodmap](https://www.archlinux.org/packages/?name=xorg-xmodmap) [[3]](https://bbs.archlinux.org/viewtopic.php?pid=843395).
 
 ```
 #!/bin/sh
-echo 'KeyStrRelease Super_L KeyStrRelease minus' | xmacroplay :0;
-xmodmap -e 'remove Mod4 = Super_L';
-echo 'KeyStrPress XF86AudioLowerVolume KeyStrRelease XF86AudioLowerVolume' | xmacroplay :0;
-xmodmap -e 'add Mod4 = Super_L';
-
+echo 'KeyStrRelease Super_L KeyStrRelease minus' 
 ```
 
-This works for calling XF86AudioLowerVolume once (assuming you're using Super-minus), but repeatedly calling it without releasing the Super key (like tapping on a volume button) doesn't work. If you'd like it to work that way, add the following line to the bottom of the script.
+Это работает для одного вызова клавиши XF86AudioLowerVolume (если вы используете сочетание `Super+minus`), а не для нескольких при условие, что вы не отпускаете клавишу Super. Однако, если вы хотите, чтобы это работало, добавьте следующую строку в конец скрипта:
 
 ```
 echo 'KeyStrPress Super_L' | xmacroplay :0
 
 ```
 
-With this modified script, if you press the key combination fast enough your Super_L key will remain 'on' till the next time you hit it, which may result in some interesting side-effects. Just tap it again to remove that state, or use the original script if you want things to 'just work' and do not mind not multi-tapping on volume up/down.
+С помощью этого модифицированного скрипта, если вы нажмете комбинацию клавиш достаточно быстро, ваша клавиша Super_L останется 'включенной' до следующего раза, когда вы ее нажмете, что может привести к некоторым интересным побочным эффектам. Просто нажмите Super_L снова, чтобы переключить его состояние, или используйте оригинальный скрипт, если хотите, чтобы все 'просто работало', и смиритесь с одним нажатием на громкость вверх/вниз.
 
-Эти инструкции совместимы с большим количеством XF86 мультимедиа клавиш.
+Эти инструкции совместимы с большим количеством XF86 мультимедиа клавиш (полезними из них будут XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioPlay, XF86AudioPrev, XF86AudioNext).
 
-## Исправление Проблем
+## Решение проблем
 
-Если комбинация клавиш которую вы добавили не работает наберите xbindkeys -n
+Если по какой-либо причине горячая клавиша, которую вы уже настроили в `~/.xbindkeysrc` не работает, откройте терминал и введите следующее:
+
+```
+$ xbindkeys -n
+
+```
+
+Нажимая на не рабочую горячую клавишу, вы можете увидеть любую ошибку *xbindkeys* (например: mistyped command/keycode,...).
+
+Если команда для сочетания клавиш работает через xdotool в командной строке, но не при ее нажатие (это особенно заметно в gnome), добавьте "+ Release" к этой комбинации:
+
+```
+"xdotool key --clearmodifiers XF86AudioPlay"
+    Mod2 + F7 + Release
+
+```
+
+Это заставит клавишу F7 воспроизвести/приостановить аудио. Где команда "xdotool" работает в командной строке. Если удалить "+ Release", сочетание клавиш не будет работать с xbindkeys.

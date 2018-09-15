@@ -42,7 +42,7 @@ Work on ALSA emulation is ongoing but first working code exists.
 
 ### Bluetooth
 
-PipeWire provides a bluetooth module which integrates directly into the Bluez Bluetooth framework. Paring and management hence works the same since it is handled by higher level interfaces.
+PipeWire provides a bluetooth module which integrates directly into the Bluez Bluetooth framework. Pairing and management hence works the same since it is handled by higher level interfaces.
 
 ## See also
 

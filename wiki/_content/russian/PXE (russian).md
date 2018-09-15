@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [PXE](/index.php/PXE "PXE"). Дата последней синхронизации: 14 января 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=PXE&diff=0&oldid=507511).
+**Состояние перевода:** На этой странице представлен перевод статьи [PXE](/index.php/PXE "PXE"). Дата последней синхронизации: 1 сентября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=PXE&diff=0&oldid=539122).
 
 Ссылки по теме
 
@@ -220,12 +220,12 @@ archiso_nfs_srv=${pxeserver}:/mnt/archiso
 ```
 LABEL 2
         MENU LABEL Arch Linux x86_64
-        LINUX */path/to/extracted/Arch/ISO*/arch/boot/x86_64/vmlinuz
-        NITRD */path/to/extracted/Arch/ISO*/arch/boot/intel_ucode.img,*/path/to/extracted/Arch/ISO*/arch/boot/x86_64/archiso.img
-        APPEND archisobasedir=arch archiso_http_srv=*http://httpserver/path/to/extracted/Arch/ISO*/ ip=::
+        LINUX */путь/до/распакованного/Arch/ISO*/arch/boot/x86_64/vmlinuz
+        INITRD */путь/до/распакованного/Arch/ISO*/arch/boot/intel_ucode.img,*/путь/до/распакованного/Arch/ISO*/arch/boot/amd_ucode.img,*/путь/до/распакованного/Arch/ISO*/arch/boot/x86_64/archiso.img
+        APPEND archisobasedir=arch archiso_http_srv=*http://httpserver/путь/до/распакованного/Arch/ISO*/ ip=::
         SYSAPPEND 2
         TEXT HELP
-        Arch Linux 2017.12.01 x86_64
+        Arch Linux 2018.09.01 x86_64
         ENDTEXT
 ```
 

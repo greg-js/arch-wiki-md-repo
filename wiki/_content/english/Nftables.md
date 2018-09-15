@@ -234,7 +234,7 @@ For example, the following lists the rules of the chain named `output` in the `i
 To edit a chain, simply call it by its name and define the rules you want to change.
 
 ```
-# nft chain <table> <family> <chain> { [ type <type> hook <hook> device <device> priority <priority> \; policy <policy> \; ] }
+# nft chain <family> <table> <chain> { [ type <type> hook <hook> device <device> priority <priority> \; policy <policy> \; ] }
 
 ```
 

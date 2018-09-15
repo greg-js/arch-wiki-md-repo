@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2018-08-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=532981) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2018-09-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=541010) na versão em inglês.
 
 Artigos relacionados
 
@@ -51,7 +51,8 @@ Para métodos gerais para melhorar a flexibilidade das dicas fornecidas ou do *p
         *   [3.1.3 aria2](#aria2)
         *   [3.1.4 Outros aplicativos](#Outros_aplicativos)
 *   [4 Utilitários](#Utilit.C3.A1rios)
-    *   [4.1 Front-ends gráficos](#Front-ends_gr.C3.A1ficos)
+    *   [4.1 Wrappers do pacman](#Wrappers_do_pacman)
+    *   [4.2 Front-ends gráficos](#Front-ends_gr.C3.A1ficos)
 
 ## Manutenção
 
@@ -255,7 +256,7 @@ Se você quiser fazer backup dos arquivos de configuração do seu sistema, voc�
 
 ```
 
-Executar esse comando com permissões de *root' vai garantir que os arquivos legíveis apenas pelo* root *(como o `/etc/sudoers`) sejam incluídos na saída.*
+Executar esse comando com permissões de *root* vai garantir que os arquivos legíveis apenas pelo *root* (como o `/etc/sudoers`) sejam incluídos na saída.
 
 **Dica:** Veja [#Listando todos os arquivos alterados de pacotes](#Listando_todos_os_arquivos_alterados_de_pacotes) para listar os arquivos alterados que o *pacman* conhece, e não apenas arquivos backup.
 
@@ -395,7 +396,7 @@ Primeiro, instale qualquer sistema de arquivos que tenha suporte a rede: [shfs-u
 
 Então, para compartilhar os pacotes, monte `/var/cache/pacman/pkg` do servidor em `/var/cache/pacman/pkg` para toda máquina cliente.
 
-**Nota:** Não torne `/var/cache/pacman/pkg` ou qualquer um de seus antecessores (ex., `/var`) um link simbólico. *Pacman* espera que esses sejam diretórios. Quando o *pacman* reinstala ou atualiza a si próprio, ele vai remover os links simbólicos e vai criar diretórios vazios no lugar. Porém, durante a transação, o *pacman* depende de alguns pacotes estarem lá, resultando em quebrar o processo de atualização. Veja [FS#50298](https://bugs.archlinux.org/task/50298) para mais detalhes.
+**Atenção:** Não torne `/var/cache/pacman/pkg` ou qualquer um de seus antecessores (ex., `/var`) um link simbólico. *Pacman* espera que esses sejam diretórios. Quando o *pacman* reinstala ou atualiza a si próprio, ele vai remover os links simbólicos e vai criar diretórios vazios no lugar. Porém, durante a transação, o *pacman* depende de alguns pacotes estarem lá, resultando em quebrar o processo de atualização. Veja [FS#50298](https://bugs.archlinux.org/task/50298) para mais detalhes.
 
 #### Duas vias com rsync
 
@@ -659,10 +660,6 @@ Existem outros aplicativos de download que você pode usar com *pacman*. Aqui es
 
 	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://www.archlinux.org/packages/?name=lostfiles)
 
-*   **Pacmatic** — Wrapper do *pacman* para verificar o Arch News antes de atualizar, evitar atualizações parciais e avisar sobre alterações de arquivo de configuração.
-
-	[http://kmkeen.com/pacmatic](http://kmkeen.com/pacmatic) || [pacmatic](https://www.archlinux.org/packages/?name=pacmatic)
-
 *   **pacutils** — Biblioteca auxiliar para programas baseados no libalpm.
 
 	[https://github.com/andrewgregory/pacutils](https://github.com/andrewgregory/pacutils) || [pacutils](https://www.archlinux.org/packages/?name=pacutils)
@@ -686,6 +683,18 @@ Existem outros aplicativos de download que você pode usar com *pacman*. Aqui es
 *   **[snap-pac](/index.php/Snapper#Wrapping_pacman_transactions_in_snapshots "Snapper")** — Faz o *pacman* usar automaticamente o snapper para criar snapshots pré/pós como o YaST do openSUSE.
 
 	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://www.archlinux.org/packages/?name=snap-pac)
+
+### Wrappers do pacman
+
+Veja também [Auxiliares do AUR#Wrappers do pacman](/index.php/Auxiliares_do_AUR#Wrappers_do_pacman "Auxiliares do AUR")
+
+*   **Pacmatic** — Wrapper do *pacman* para verificar o Arch News antes de atualizar, evitar atualizações parciais e avisar sobre alterações de arquivo de configuração.
+
+	[http://kmkeen.com/pacmatic](http://kmkeen.com/pacmatic) || [pacmatic](https://www.archlinux.org/packages/?name=pacmatic)
+
+*   **[Powerpill](/index.php/Powerpill_(Portugu%C3%AAs) "Powerpill (Português)")** — Usa download paralelo e segmentado por meio do [aria2](/index.php/Aria2 "Aria2") e do [Reflector](/index.php/Reflector "Reflector") para tentar acelerar downloads para o *pacman*.
+
+	[https://xyne.archlinux.ca/projects/powerpill/](https://xyne.archlinux.ca/projects/powerpill/) || [powerpill](https://aur.archlinux.org/packages/powerpill/)
 
 ### Front-ends gráficos
 

@@ -12,8 +12,9 @@ There are many ways to adjust the screen backlight of a monitor, laptop or integ
 *   [4 systemd-backlight service](#systemd-backlight_service)
 *   [5 Backlight utilities](#Backlight_utilities)
     *   [5.1 xbacklight](#xbacklight)
-    *   [5.2 setpci](#setpci)
-    *   [5.3 Using DBus with Gnome](#Using_DBus_with_Gnome)
+    *   [5.2 Light](#Light)
+    *   [5.3 setpci](#setpci)
+    *   [5.4 Using DBus with Gnome](#Using_DBus_with_Gnome)
 *   [6 Color correction](#Color_correction)
     *   [6.1 xcalib](#xcalib)
     *   [6.2 NVIDIA settings](#NVIDIA_settings)
@@ -22,7 +23,8 @@ There are many ways to adjust the screen backlight of a monitor, laptop or integ
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Backlight PWM modulation frequency (Intel i915 only)](#Backlight_PWM_modulation_frequency_.28Intel_i915_only.29)
     *   [8.2 Inverted Brightness (Intel i915 only)](#Inverted_Brightness_.28Intel_i915_only.29)
-    *   [8.3 sysfs modified but no brightness change](#sysfs_modified_but_no_brightness_change)
+    *   [8.3 Unable to control eDP Panel brightness (Intel i915 only)](#Unable_to_control_eDP_Panel_brightness_.28Intel_i915_only.29)
+    *   [8.4 sysfs modified but no brightness change](#sysfs_modified_but_no_brightness_change)
 
 ## Overview
 
@@ -192,7 +194,7 @@ If "0", does not restore the backlight settings on boot. However, settings will 
 
 	[https://github.com/jmesmon/illum](https://github.com/jmesmon/illum) || [illum-git](https://aur.archlinux.org/packages/illum-git/)
 
-*   **Light** — Program to control lights, leds and backlights. Works without X. Successor of *LightScript*.
+*   **Light** — Program to control lights, leds and backlights. Works reliably by directly accessing sysfs, and not depending on X. Provides many features, such as saving/restoring brightness, limiting minimum brightness, etc. Designed to be bound to hotkeys or integrated into other applications.
 
 	[https://haikarainen.github.io/light/](https://haikarainen.github.io/light/) || [light](https://aur.archlinux.org/packages/light/), [light-git](https://aur.archlinux.org/packages/light-git/)
 
@@ -254,6 +256,42 @@ EndSection
 ```
 
 See [FS#27677](https://bugs.archlinux.org/task/27677) and [https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741) for details.
+
+### Light
+
+If you do not specify a target (for example, a backlight controller or a keyboard led), Light (and brillo) will automatically identify the best backlight controller, also known as the target `sysfs/backlight/auto`.
+
+To increase brightness by 12%:
+
+```
+$ light -A 12
+
+```
+
+To subtract brightness by 432 in raw mode
+
+```
+$ light -r -U 432
+
+```
+
+To set the keyboard backlight brightness to 75% (target may vary depending on hardware, use -L to list them)
+
+```
+$ light -s "sysfs/leds/tpacpi::kbd_backlight" -S 75
+
+```
+
+To get a list of the available targets on your hardware
+
+```
+$ light -L
+
+```
+
+**Tip:** Light requires permissions to run. The PKGBUILD on the upstream repository will install udev rules that applies to backlights and leds in the sysfs. If you run into problems, try running light as root, or use sudo.
+
+Light also supports some exotic targets, for example leds/backlights on Razer keyboards (using the openrazer driver).
 
 ### setpci
 
@@ -388,11 +426,25 @@ Symptoms:
 
 This problem may be solved by adding `i915.invert_brightness=1` to the list of [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
+### Unable to control eDP Panel brightness (Intel i915 only)
+
+Embedded Display Port (eDP) v1.2 introduced a new display panel control protocol for backlight and other controls that works through the AUX channel.[[2]](https://www.vesa.org/wp-content/uploads/2010/12/DisplayPort-DevCon-Presentation-eDP-Dec-2010-v3.pdf)
+
+By default the i915 driver tries to use PWM to control backlight brightness, which might not work.
+
+To set the backlight through writes to DPCD registers using the AUX channel set `i915.enable_dpcd_backlight` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") or set in `/etc/modprobe/i915.conf`:
+
+ `/etc/modprobe.d/i915.conf` 
+```
+options i915 enable_dpcd_backlight
+
+```
+
 ### sysfs modified but no brightness change
 
 **Note:** This behavior and their workarounds have been confirmed on the Dell M6700 with Nvidia K5000m (BIOS version prior to A10) and Clevo P750ZM (Eurocom P5 Pro Extreme) with Nvidia 980m.
 
-On some systems, the brighness hotkeys on your keyboard correctly modify the values of the acpi interface in `/sys/class/backlight/acpi_video0/actual_brightness` but the brightness of the screen is not changed. Brigthness applets from [desktop environments](/index.php/Desktop_environments "Desktop environments") may also show changes to no effect.
+On some systems, the brightness hotkeys on your keyboard correctly modify the values of the acpi interface in `/sys/class/backlight/acpi_video0/actual_brightness` but the brightness of the screen is not changed. Brightness applets from [desktop environments](/index.php/Desktop_environments "Desktop environments") may also show changes to no effect.
 
 If you have tested the recommended kernel parameters and only `xbacklight` works, then you may be facing an incompatibility between your BIOS and kernel driver.
 

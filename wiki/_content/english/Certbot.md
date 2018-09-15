@@ -270,7 +270,7 @@ The process is fairly simple. To issue a wildcard certificate, you have to do it
 
 While issuing a certificate manually is easy, it's not straight forward for automation. The DNS challenge represents a TXT record, given by certbot, which has to be set manually in the domain zone file.
 
-You'll need to update the zone file upon every renew. To avoid doing that manually, you may use [rfc2136](https://tools.ietf.org/html/rfc2136). Luckily, certbot has a plugin for this and we have a package for it - [certbot-dns-rfc2136](https://www.archlinux.org/packages/?name=certbot-dns-rfc2136). The plugin, as it is, is not enough. You'll also need to configure your DNS server to allow dynamic updates for TXT records.
+You will need to update the zone file upon every renew. To avoid doing that manually, you may use [rfc2136](https://tools.ietf.org/html/rfc2136) for which certbot has a plugin packaged in [certbot-dns-rfc2136](https://www.archlinux.org/packages/?name=certbot-dns-rfc2136). You will also need to configure your DNS server to allow dynamic updates for TXT records.
 
 #### Configure BIND for rfc2136
 
@@ -316,12 +316,7 @@ dns_rfc2136_secret = **INSERT_KEY_WITHOUT_QUOTES**
 dns_rfc2136_algorithm = HMAC-SHA512
 ```
 
-Since we're storing a copy of the secret key in it, we need to secure it too:
-
-```
-# chmod 600 /etc/letsencrypt/rfc2136.ini
-
-```
+Since the file contains a copy of the secret key, secure it with [chmod](/index.php/Chmod "Chmod") by removing the group and others permissions.
 
 Test what we did:
 
@@ -330,14 +325,7 @@ Test what we did:
 
 ```
 
-If you pass the validation successfully and receive certificates, then you're good to go with automating certbot. Otherwise, something went wrong and you need to debug your setup. It basically boils down to:
-
-```
-# certbot renew
-
-```
-
-from now on. You may refer to the example above with `certbot.timer` and `certbot.service` or simply use any whatever mechanism you desire, i.e. crontab.
+If you pass the validation successfully and receive certificates, then you are good to go with automating certbot. Otherwise, something went wrong and you need to debug your setup. It basically boils down to running `certbot renew` from now on, see [#Automatic renewal](#Automatic_renewal).
 
 ## See also
 

@@ -481,18 +481,24 @@ To work around this, run Steam with `LIBGL_DRI3_DISABLE=1`, disabling DRI3 for S
 
 ### Launching games on Nvidia optimus laptops
 
-To be able to play games which require using Nvidia GPU (for example, Hitman 2016) on optimus enabled laptop, you should start Steam with *primusrun* prefix. Otherwise, game will not work. Keep in mind, that issuing some command such as `primusrun steam` while Steam is already running will not restart it. You should explicitly exit and then start Steam via `primusrun steam` command or start game immediately after start, for example with `primusrun steam steam://rungameid/236870`. After Steam was launched with primusrun prefix, you do not need to prefix your game with primusrun or optirun, because it does not matter.
+To be able to play games which require using Nvidia GPU (for example, Hitman 2016) on optimus enabled laptop, you should start game with *primusrun* prefix in launch options. Otherwise, game will not work.
+
+Find the game in steam library, right click -> Properties -> SET LAUNCH OPTIONS. Change options to
+
+`primusrun %command%`
+
+Running steam with primusrum used to work. While steam has changed some behavior that now running steam with primusrun would not have effect on launching games. As a result, you need to set launch options for each game (and you do NOT have to run steam with primusrun).
 
 For primusrun, VSYNC is enabled by default it could result in a mouse input delay lag, slightly decrease performance and in-game FPS might be locked to a refresh rate of a monitor/display. In order to disable VSYNC for primusrun default value of option vblank_mode needs to be overridden by environment variable.
 
-`vblank_mode=0 primusrun steam`
+`vblank_mode=0 primusrun %command%`
 
 Same with optirun that uses primus as a bridge.
 
-`vblank_mode=0 optirun -b primus steam`
+`vblank_mode=0 optirun -b primus %command%`
 
 If that did not work try:
 
-`LD_PRELOAD="libpthread.so.0 libGL.so.1" __GL_THREADED_OPTIMIZATIONS=1 optirun steam`
+`LD_PRELOAD="libpthread.so.0 libGL.so.1" __GL_THREADED_OPTIMIZATIONS=1 optirun %command%`
 
 For more details see [Bumblebee#Primusrun mouse delay (disable VSYNC)](/index.php/Bumblebee#Primusrun_mouse_delay_.28disable_VSYNC.29 "Bumblebee").

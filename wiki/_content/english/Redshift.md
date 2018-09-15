@@ -90,7 +90,7 @@ system=false
 users=
 ```
 
-[Restart](/index.php/Restart "Restart") `redshift.service` and/or any other Redshift instance to apply the chances.
+[Restart](/index.php/Restart "Restart") `redshift.service` and/or any other Redshift instance to apply the changes.
 
 **Note:**
 

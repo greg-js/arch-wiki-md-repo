@@ -3,60 +3,78 @@ Related articles
 *   [Arch User Repository (Lietuviškai)](/index.php?title=Arch_User_Repository_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "Arch User Repository (Lietuviškai) (page does not exist)")
 *   [Help:Editing (Lietuviškai)](/index.php?title=Help:Editing_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "Help:Editing (Lietuviškai) (page does not exist)")
 
-Biologiškai, [mutualism](https://en.wikipedia.org/wiki/Mutualism_(biology) yra bendradarbiavimas tarp dviejų organizmų su tarpusavio nauda. Šitas principas taikomas inicijuoti ir motyvuoti Arch bendruomenės narius, norinčius prisidėti ir padėti jų mėgstamos GNU/Linux distribucijos. Toks prisidėjimas naudingas ne tik bendruomenės nariui, bet ir kitiems draugams Archeriams kaip ir visiems [nemokamos ir atviros programinės įrangos](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software") fanams.
+Evoliucinėje biologijoje, [bendradarbiavimas](https://en.wikipedia.org/wiki/Co-operation_(evolution) apibūdinamas kaip dviejų ar daugiau individų veikimas bendros geros labui. Šitas principas taikomas inicijuoti ir motyvuoti Arch bendruomenės narius, norinčius prisidėti ir padėti jų mėgstamai GNU/Linux distribucijai. Toks prisidėjimas naudingas ne tik bendruomenės nariui, bet ir kitiems draugams Archeriams kaip ir visiems [nemokamos ir atviros programinės įrangos](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software") fanams.
+
+Šis straipsnis aprašo, kaip tiek nauji tiek patyrę Arch naudotojai gali pasidarbuoti bendruomenės labui. Tai nėra baigtinis sąrašas.
 
 ## Contents
 
-*   [1 Forumai](#Forumai)
-*   [2 Wiki](#Wiki)
-*   [3 Klaidos](#Klaidos)
-*   [4 AUR](#AUR)
-*   [5 Bendruomenės projektai](#Bendruomen.C4.97s_projektai)
-    *   [5.1 Paremtos Arch distribucijos](#Paremtos_Arch_distribucijos)
-    *   [5.2 AUR padėjėjai](#AUR_pad.C4.97j.C4.97jai)
-    *   [5.3 Pacman GUI aplinkos](#Pacman_GUI_aplinkos)
-    *   [5.4 Kita](#Kita)
-*   [6 Kaip programuotojas..](#Kaip_programuotojas..)
-    *   [6.1 Ką aš galiu padaryti](#K.C4.85_a.C5.A1_galiu_padaryti)
-    *   [6.2 Kaip aš galėčiau tapti Arch programuotoju?](#Kaip_a.C5.A1_gal.C4.97.C4.8Diau_tapti_Arch_programuotoju.3F)
-*   [7 Kaip menininkas..](#Kaip_menininkas..)
+*   [1 Oficialūs Arch Linux projektai](#Oficial.C5.ABs_Arch_Linux_projektai)
+    *   [1.1 Rašykite forumuose](#Ra.C5.A1ykite_forumuose)
+    *   [1.2 Tobulinkite vikipediją](#Tobulinkite_vikipedij.C4.85)
+    *   [1.3 Prisijunkite prie IRC](#Prisijunkite_prie_IRC)
+    *   [1.4 Praneškite apie įsidiegtus paketus](#Prane.C5.A1kite_apie_.C4.AFsidiegtus_paketus)
+    *   [1.5 Klaidų pranešimai ir jų taisymas](#Klaid.C5.B3_prane.C5.A1imai_ir_j.C5.B3_taisymas)
+    *   [1.6 Informuokite apie saugumo problemas](#Informuokite_apie_saugumo_problemas)
+    *   [1.7 Padėkite testuoti paketus](#Pad.C4.97kite_testuoti_paketus)
+    *   [1.8 AUR paketų kūrimas ir perėmimas](#AUR_paket.C5.B3_k.C5.ABrimas_ir_per.C4.97mimas)
+    *   [1.9 Oficialūs programinės įrangos projektai](#Oficial.C5.ABs_programin.C4.97s_.C4.AFrangos_projektai)
+    *   [1.10 Aukokite pinigus](#Aukokite_pinigus)
+*   [2 Bendruomenės projektai](#Bendruomen.C4.97s_projektai)
+    *   [2.1 Paremtos Arch distribucijos](#Paremtos_Arch_distribucijos)
+    *   [2.2 AUR padėjėjai](#AUR_pad.C4.97j.C4.97jai)
+    *   [2.3 Pacman GUI aplinkos](#Pacman_GUI_aplinkos)
+    *   [2.4 Kita](#Kita)
+*   [3 Kaip programuotojas..](#Kaip_programuotojas..)
+    *   [3.1 Ką aš galiu padaryti](#K.C4.85_a.C5.A1_galiu_padaryti)
+    *   [3.2 Kaip aš galėčiau tapti Arch programuotoju?](#Kaip_a.C5.A1_gal.C4.97.C4.8Diau_tapti_Arch_programuotoju.3F)
+*   [4 Kaip menininkas..](#Kaip_menininkas..)
 
-## Forumai
+## Oficialūs Arch Linux projektai
 
-Vienas iš lengvesnių būdų prisidėti yra dalyvauti tiek oficialiame [Arch Linux forume](https://bbs.archlinux.org/), tiek Lietuviškame [Arch Linux forume](http://sls.archlinux.lt/). Prašome perskaityti [Forum Etiquette (Lietuviškai)](/index.php?title=Forum_Etiquette_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "Forum Etiquette (Lietuviškai) (page does not exist)") pirmiausiai, o tik paskui laisvai skleisti savo idėjas, suteikti pagalbą naujiems vartotojams ar aplamai prisidėti prie bendruomenės. Naudokite forumo ypatybę Pranešti (kiekvieno forumo pranešimo apatinėje, dešinėje pusėje) pranešti forumo komandą apie piktnaudžiavimą.
+Susipažinkite su [Code of conduct (Lietuviškai)](/index.php?title=Code_of_conduct_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "Code of conduct (Lietuviškai) (page does not exist)")
 
-## Wiki
+### Rašykite forumuose
 
-[ArchWiki (Lietuviškai)](/index.php?title=AboutWiki_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "AboutWiki (Lietuviškai) (page does not exist)") yra bendruomeninis dokumentacijos procesas. Jeigu Jūs jaučiatės tinkami [redaguoti wiki puslapius](/index.php/Help:Editing "Help:Editing"), prašome peržiūrėti ar galite įgyvendinti kažkokius tikslus.
+Vienas iš lengviausių būdų prisidėti yra dalyvauti tiek oficialiame [Arch Linux forume](https://bbs.archlinux.org/), tiek lietuviškame [Arch Linux forume](http://sls.archlinux.lt/). Čia galėsite tiek susipažinti su bendruomene, tiek padėti naujiems nariams.
 
-Dideliam darbe svarbiausia yra profesionaliai ir lengvai pasiekti wiki, papildomi vadovai, dokumentai, kt. yra nepageidaujami. Tai yra tikais bendruomenės nuopelnas, bet wiki palaikymas visada bus labai didelė ir nedėkinga užduotis. Jeigu Jūs paimsite kažkokią užduoti spręsti rimtai, formali wiki palaikytojo pozicija yra būtina. Tai duoda darbui tikslą ir pripažinimą.
+### Tobulinkite vikipediją
 
-1.  Žymėkite straipsnius su reikiamais [straipsnių būsenos šablonais](/index.php/Help:Template#Article_status_templates "Help:Template") (e.g. `{{Deletion}}`, `{{Out of date}}`, `{{Translateme}}`, etc.)
-2.  [Pridėkite turinį prie neužbaigtų](/index.php/Special:WhatLinksHere/Template:Stub "Special:WhatLinksHere/Template:Stub") ir [plėskite nepilnai ar nykiai parašytus straipsnius](/index.php/Special:WhatLinksHere/Template:Expansion "Special:WhatLinksHere/Template:Expansion").
-3.  [Sumažinkite ir sujunkite dubliuojančius puslapius](/index.php/Special:WhatLinksHere/Template:Merge "Special:WhatLinksHere/Template:Merge").
-4.  [Mažinkite kategorijų skaičių](/index.php/Special:Categories "Special:Categories"). Peržiūrėkite wiki ar yra panašios kategorijos, kurias galima būtų sujungti; gerinkite wiki navigaciją.
-5.  [Kategorizuokite puslapius](/index.php/Special:UncategorizedPages "Special:UncategorizedPages").
-6.  [Pridėkite straipsnio santraukos laukus kiekvienam straipsniui](/index.php/Writing_Article_Overviews "Writing Article Overviews").
-7.  [Atnaujinkite DUK](/index.php/FAQ "FAQ") su atsakytais klausimais iš forumo ar pašalinkite pasenusius klausimus.
-8.  Taisykite kalbines, gramatines, kalbos klaidas ir stilių.
-    *   Išimkite pašalines nuorodas ar turinį; tekstas turi būti trumpas, griežtas ir įskaitomas.
-    *   Išimkite asmeninius pasisakymus ("Man patinka", "Mano kompiuteris"). Tai palaiko profesionalų toną.
-    *   Įsitikinkite, kad visi puslapiai yra panašaus stiliaus ir išdėstymo.
+[ArchWiki (Lietuviškai)](/index.php?title=ArchWiki:About_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "ArchWiki:About (Lietuviškai) (page does not exist)") yra bendruomenės palaikoma Arch Linux dokumentacija. Kviečiame visus [prisidėti](/index.php/ArchWiki:Contributing "ArchWiki:Contributing").
 
-Kiti naudingi puslapiai švarai palaikyti:
+### Prisijunkite prie IRC
 
-*   [Prašymai](/index.php/Requests "Requests")
-*   [Lūžę nukreipimai](/index.php/Special:BrokenRedirects "Special:BrokenRedirects")
-*   [Kartotiniai nukreipimai](/index.php/Special:DoubleRedirects "Special:DoubleRedirects")
-*   [Trumpi puslapiai](/index.php/Special:ShortPages "Special:ShortPages")
+Gali padėti kitiems naudotojams prisijungę prie [IRC channel](/index.php/IRC_channel "IRC channel"). Tačiau labai svarbu prieš dalyvaujant perskaityti [kanalo taisykles](/index.php/Code_of_conduct#IRC "Code of conduct"). Specifinėms temoms yra [daugiau kanalų](/index.php/IRC_channel#Other_channels "IRC channel")
 
-## Klaidos
+### Praneškite apie įsidiegtus paketus
 
-Atidaryti (arba uždaryti) klaidos pranešimus [Arch Linux klaidų seklyje](https://bugs.archlinux.org/) yra vienas iš būdų padėti bendruomenei. Tačiau, neefektingas klaidų seklio naudojimas gali palaužti produktyvumą, vietoj to, kad būti naudingu. [Šitas straipsnis](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") padės kiekvienam kaip teisingai informuoti bendruomenę apie klaidą ir kaip aplamai gaudyti klaidas.
+[pkgstats](/index.php/Pkgstats "Pkgstats") turi [systemd timer](/index.php/Systemd/Timers "Systemd/Timers") , kuris Arch Linux programuotojams siunčia jūsų sistemoje įdiegtų paketų sąrašą, kartu su architektūra ir nauojamais veidrožiais. Tai jiems padeda susidėioti prioritetus ir distribuciją padaryti dar geresne. Siunčiama informacija yra anoniminė ir jūsų identifikuoti negali. Surinktus duomenis galite pamatyti [statistikos puslapyje](https://www.archlinux.de/?page=Statistics). Daugiau informacijos galima rasti [šioje forumo temoje](https://bbs.archlinux.org/viewtopic.php?id=105431).
 
-## AUR
+### Klaidų pranešimai ir jų taisymas
 
-[Arch vartotojų saugykla](/index.php/Arch_User_Repository "Arch User Repository") yra bendruomenės valdoma PKGBUILD skriptų saugykla Arch vartotojams. Paketai AUR're yra statomi pasitelkiant į pagalbą PKGBUILD skriptus, kurie nėra pusiau sukompiliuoti binariniai paketai iš oficialios saugyklos. AUR buvo sukurtas organizuoti ir dalintis naujais paketais iš bendruomenės, taip pagreitinant populiarų paketų įtraukimą į `[community]` saugyklą.
+Pranešimas apie klaidas, bei jų taisymas [Arch Linux klaidų seklyje](https://bugs.archlinux.org/) yra vienas iš būdų padėti bendruomenei. Tačiau, neefektingas klaidų seklio naudojimas gali palaužti produktyvumą, vietoj to, kad būti naudingu. [Šitas straipsnis](/index.php/Reporting_bug_guidelines "Reporting bug guidelines") padės kiekvienam kaip teisingai informuoti bendruomenę apie klaidą ir kaip aplamai gaudyti klaidas.
+
+### Informuokite apie saugumo problemas
+
+Naujų pažeižiamumų randasi nuolatos. Padėkite [Arch Security Team](/index.php/Arch_Security_Team "Arch Security Team") susekti naujas pažeidžiamas vietas.
+
+### Padėkite testuoti paketus
+
+Testavimo saugyklose esantys paketai turi būti išbandyti ir pasirašyti, prieš jiems patenkant į pagrindinę saugyklą. Padėkite [Arch Testing Team](/index.php/Arch_Testing_Team "Arch Testing Team") ištestuoti naujus paketus.
+
+### AUR paketų kūrimas ir perėmimas
+
+[Arch vartotojų saugykla](/index.php/Arch_User_Repository "Arch User Repository") yra bendruomenės valdoma PKGBUILD skriptų saugykla Arch vartotojams. Paketai AUR're yra statomi pasitelkiant į pagalbą PKGBUILD skriptus, kurie nėra pusiau sukompiliuoti binariniai paketai iš oficialios saugyklos. AUR buvo sukurtas organizuoti ir dalintis naujais paketais iš bendruomenės, taip pagreitinant populiarų paketų įtraukimą į [Official repositories#community|oficialią bendruomenės saugyklą]].
+
+[aurphan](https://www.archlinux.org/packages/?name=aurphan) gali padėti surasti jūsų naudojamus apleistus paketus, kuriuos galėtumėte periimti savo globai.
+
+### Oficialūs programinės įrangos projektai
+
+[Oficialūs programinės įrangos projektai](https://git.archlinux.org/).
+
+### Aukokite pinigus
+
+Kaip padėti išlaikyti serverius galite sužinoti [oficialiame Arch Linux aukų puslapyje](https://www.archlinux.org/donate/)
 
 ## Bendruomenės projektai
 

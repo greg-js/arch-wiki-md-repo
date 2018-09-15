@@ -254,7 +254,7 @@ If you want to backup your system configuration files you could copy all files i
 
 ```
 
-Running this command with root permissions will ensure that files readable only by root (such as this`/etc/sudoers`) are included in the output.
+Running this command with root permissions will ensure that files readable only by root (such as `/etc/sudoers`) are included in the output.
 
 **Tip:** See [#Listing all changed files from packages](#Listing_all_changed_files_from_packages) to list all changed files *pacman* knows about, not only backup files.
 

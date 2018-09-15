@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2018-09-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=538808) na versão em inglês.
+
 Artigos relacionados
 
 *   [Depuração de rede](/index.php/Network_Debugging "Network Debugging")
@@ -36,6 +38,7 @@ Esse artigo explica como configurar uma conexão de rede.
     *   [5.6 Aliasing de endereço IP](#Aliasing_de_endere.C3.A7o_IP)
         *   [5.6.1 Exemplo](#Exemplo)
     *   [5.7 Modo promíscuo](#Modo_prom.C3.ADscuo)
+    *   [5.8 Investigar soquetes](#Investigar_soquetes)
 *   [6 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
     *   [6.1 Trocando computadores no modem a cabo](#Trocando_computadores_no_modem_a_cabo)
     *   [6.2 O problema de escala de janela TCP](#O_problema_de_escala_de_janela_TCP)
@@ -45,16 +48,17 @@ Esse artigo explica como configurar uma conexão de rede.
             *   [6.2.2.2 Bom](#Bom)
             *   [6.2.2.3 Melhor](#Melhor)
         *   [6.2.3 More about it](#More_about_it)
-    *   [6.3 Realtek sem link / Problema com WOL](#Realtek_sem_link_.2F_Problema_com_WOL)
-        *   [6.3.1 Habilitando a NIC diretamente no Linux](#Habilitando_a_NIC_diretamente_no_Linux)
-        *   [6.3.2 Revertendo/alterando driver do Windows](#Revertendo.2Falterando_driver_do_Windows)
-        *   [6.3.3 Habilitando WOL no driver do Windows](#Habilitando_WOL_no_driver_do_Windows)
-        *   [6.3.4 Driver Realtek mais novo para Linux](#Driver_Realtek_mais_novo_para_Linux)
-        *   [6.3.5 Ativando LAN Boot ROM na BIOS/CMOS](#Ativando_LAN_Boot_ROM_na_BIOS.2FCMOS)
-    *   [6.4 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
-    *   [6.5 Broadcom BCM57780](#Broadcom_BCM57780)
-    *   [6.6 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
-    *   [6.7 Placa-mãe Gigabyte com Realtek 8111/8168/8411](#Placa-m.C3.A3e_Gigabyte_com_Realtek_8111.2F8168.2F8411)
+    *   [6.3 Notificação de Congestionamento Explícito](#Notifica.C3.A7.C3.A3o_de_Congestionamento_Expl.C3.ADcito)
+    *   [6.4 Realtek sem link / Problema com WOL](#Realtek_sem_link_.2F_Problema_com_WOL)
+        *   [6.4.1 Habilitando a NIC diretamente no Linux](#Habilitando_a_NIC_diretamente_no_Linux)
+        *   [6.4.2 Revertendo/alterando driver do Windows](#Revertendo.2Falterando_driver_do_Windows)
+        *   [6.4.3 Habilitando WOL no driver do Windows](#Habilitando_WOL_no_driver_do_Windows)
+        *   [6.4.4 Driver Realtek mais novo para Linux](#Driver_Realtek_mais_novo_para_Linux)
+        *   [6.4.5 Ativando LAN Boot ROM na BIOS/CMOS](#Ativando_LAN_Boot_ROM_na_BIOS.2FCMOS)
+    *   [6.5 No interface with Atheros chipsets](#No_interface_with_Atheros_chipsets)
+    *   [6.6 Broadcom BCM57780](#Broadcom_BCM57780)
+    *   [6.7 Realtek RTL8111/8168B](#Realtek_RTL8111.2F8168B)
+    *   [6.8 Placa-mãe Gigabyte com Realtek 8111/8168/8411](#Placa-m.C3.A3e_Gigabyte_com_Realtek_8111.2F8168.2F8411)
 *   [7 Veja também](#Veja_tamb.C3.A9m)
 
 ## Verificar a conexão
@@ -134,9 +138,9 @@ Para configurar uma conexão de rede, siga as etapas abaixo:
     *   [endereço IP estático](#Endere.C3.A7o_IP_est.C3.A1tico)
     *   endereço IP dinâmico: use [DHCP](#DHCP)
 
-**Dica:** [#Gerenciadores de rede](#Gerenciadores_de_rede) fornecem configuração e conexão de rede automática baseada em perfis de rede.
+Arch Linux tornou obsoleto o [ifconfig](https://en.wikipedia.org/wiki/pt:ifconfig "wikipedia:pt:ifconfig") em favor do [iproute2](https://en.wikipedia.org/wiki/iproute2 "wikipedia:iproute2") (parte do [base](https://www.archlinux.org/groups/x86_64/base/)). *iproute2* fornece a interface de linha de comando [ip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8), usada para gerenciar to [interfaces de rede](#Interfaces_de_rede), [endereços IP](#Endere.C3.A7os_IP) e a [tabela de roteamento](#Tabela_de_roteamento). Esteja ciente que a configuração feita usando `ip` será perdida após a reinicialização. Para uma configuração persistente, você pode usar um [gerenciador de rede](/index.php/Gerenciador_de_rede "Gerenciador de rede") ou automatizar comandos *ip* usando scripts e [units de systemd](/index.php/Systemd_(Portugu%C3%AAs)#Escrevendo_arquivos_unit "Systemd (Português)"). Note também que os comandos `ip` geralmente podem ser abreviados, mas por melhor entendimento eles foram escritos na versão longa neste artigo.
 
-O pacote [iproute2](https://www.archlinux.org/packages/?name=iproute2) fornece o utilitário de linha de comando [ip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8), usado para gerenciar [interfaces de rede](#Interfaces_de_rede), [endereços IP](#Endere.C3.A7os_IP) e a [tabela de roteamento](#Tabela_de_roteamento). Saiba que a configuração feita usando `ip` será perdida após a inicialização. Você pode automatizar comandos *ip* usando scripts e [units de systemd](/index.php/Systemd_(Portugu%C3%AAs)#Escrevendo_arquivos_unit "Systemd (Português)"). Também note que comandos `ip` podem de forma geral ser abreviados, mas, para melhor clareza, eles são expressos na forma longa neste artigo.
+**Nota:** A imagem de instalação habilita [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (`dhcpcd@*interface*.service`) para [dispositivos de rede cabeados](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) na inicialização.
 
 ### Interfaces de rede
 
@@ -457,6 +461,35 @@ WantedBy=multi-user.target
 
 Se você deseja habilitar o modo pomíscuo na interface `eth0`, execute [*enable*](/index.php/Habilite "Habilite") `promiscuous@eth0.service`.
 
+### Investigar soquetes
+
+*ss* é um utilitário para investigar portas de rede e é parte do pacote [iproute2](https://www.archlinux.org/packages/?name=iproute2). Ele tem uma funcionalidade similar ao utilitário [obsoleto](https://www.archlinux.org/news/deprecation-of-net-tools/) netstat.
+
+Uso comum inclui:
+
+Exibe todos os TCP Sockets com nomes de serviços:
+
+```
+$ ss -at
+
+```
+
+Exibe todos os TCP Sockets com números de portas:
+
+```
+$ ss -atn
+
+```
+
+Exibe todos os UDP Sockets:
+
+```
+$ ss -au
+
+```
+
+Para mais informações, veja [ss(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ss.8).
+
 ## Solução de problemas
 
 ### Trocando computadores no modem a cabo
@@ -514,6 +547,26 @@ Esse problema é causado por roteadores/firewalls quebrados, então vamos mudá-
 Essa seção é baseada nos artigos, em inglês, do LWN [Escala de janela e roteadores quebrados](http://lwn.net/Articles/92727/) e do Kernel Trap [Escala de Janela na Internet](http://kerneltrap.org/node/6723).
 
 Há também vários tópicos relevantes no LKML.
+
+### Notificação de Congestionamento Explícito
+
+[Explicit Congestion Notification](https://en.wikipedia.org/wiki/Explicit_Congestion_Notification "wikipedia:Explicit Congestion Notification") (ECN), Notificação de Congestionamento Explícito, pode causar problemas de tráfego com roteadores antigos/ruins [[5]](https://bbs.archlinux.org/viewtopic.php?id=239892). Desde o [systemd 239](https://github.com/systemd/systemd/issues/9748), está habilitado para tráfego de entrada e de saída.
+
+Para habilitar apenas ECN quando requisitado pelas conexões de entrada (padrão do kernel):
+
+```
+# sysctl net.ipv4.tcp_ecn=2
+
+```
+
+Para desabilitar ECN completamente:
+
+```
+# sysctl net.ipv4.tcp_ecn=0
+
+```
+
+Veja também a [documentação do kernel](https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt).
 
 ### Realtek sem link / Problema com WOL
 

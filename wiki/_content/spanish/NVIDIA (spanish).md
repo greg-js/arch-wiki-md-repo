@@ -891,7 +891,7 @@ El controlador NVIDIA X.org puede detectar la fuente de alimentación. Para ver 
 
  `$ nvidia-settings -q GPUPowerSource -t`  `1` 
 
-Si aparece un mensaje de error similar al de abajo, entonces necesita tener instalado [acpid](/index.php/Acpid "Acpid") o iniciar el servicio systemd mediante `systemctl start acpid.service`
+Si aparece un mensaje de error similar al de abajo, entonces necesita tener instalado [acpid](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)") o iniciar el servicio systemd mediante `systemctl start acpid.service`
 
 ```
  ACPI: failed to connect to the ACPI event daemon; the daemon

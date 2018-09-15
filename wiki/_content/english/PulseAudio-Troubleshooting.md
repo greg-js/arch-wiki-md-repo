@@ -1266,7 +1266,16 @@ restore_alsa &
 
 ### Prevent Pulse from restarting after being killed
 
-Sometimes you may wish to temporarily disable Pulse. In order to do so you will have to prevent Pulse from restarting after being killed.
+Sometimes you may wish to temporarily disable Pulse. In order to do so you will have to prevent Pulse from restarting after being killed. To disable autospawning you can [issue](https://bbs.archlinux.org/viewtopic.php?pid=1807567#p1807567):
+
+```
+systemctl --user mask pulseaudio.socket
+systemctl --user stop pulseaudio
+systemctl --user unmask pulseaudio.socket # To reenable autospawning
+
+```
+
+On older systems you could set this option:
 
  `~/.config/pulse/client.conf` 
 ```

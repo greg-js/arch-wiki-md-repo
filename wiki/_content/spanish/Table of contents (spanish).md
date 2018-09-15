@@ -4,7 +4,7 @@
 | <small>1.1.1.</small> [Desarrollo de paquetes](/index.php/Category:Package_development_(Espa%C3%B1ol) "Category:Package development (Español)") <small>(8)</small> |
 | <small>1.1.2.</small> [Desarrollo de pacman](/index.php/Category:Pacman_development_(Espa%C3%B1ol) "Category:Pacman development (Español)") <small>(1)</small> |
 | <small>1.2.</small> [Arch projects](/index.php/Category:Arch_projects_(Espa%C3%B1ol) "Category:Arch projects (Español)") <small>(5)</small> |
-| <small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki_(Espa%C3%B1ol) "Category:ArchWiki (Español)") <small>(8)</small> |
+| <small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki_(Espa%C3%B1ol) "Category:ArchWiki (Español)") <small>(9)</small> |
 | <small>1.3.1.</small> [Ayuda](/index.php/Category:Help_(Espa%C3%B1ol) "Category:Help (Español)") <small>(10)</small> |
 | <small>1.4.</small> [Obtener e instalar Arch](/index.php/Category:Getting_and_installing_Arch_(Espa%C3%B1ol) "Category:Getting and installing Arch (Español)") <small>(12)</small> |
 | <small>1.5.</small> [Sistemas live de Arch](/index.php/Category:Live_Arch_systems_(Espa%C3%B1ol) "Category:Live Arch systems (Español)") <small>(2)</small> |
@@ -33,8 +33,9 @@
 | <small>2.10.4.1.</small> [Media servers](/index.php/Category:Media_servers_(Espa%C3%B1ol) "Category:Media servers (Español)") <small>(1) (también en [Multimedia](/index.php/Category:Multimedia_(Espa%C3%B1ol) "Category:Multimedia (Español)"), [Servers](/index.php/Category:Servers_(Espa%C3%B1ol) "Category:Servers (Español)"))</small> |
 | <small>2.11.</small> [Ofimática](/index.php/Category:Office_(Espa%C3%B1ol) "Category:Office (Español)") <small>(5)</small> |
 | <small>2.11.1.</small> [TeX](/index.php/Category:TeX_(Espa%C3%B1ol) "Category:TeX (Español)") <small>(1)</small> |
-| <small>2.12.</small> [Monitorización y notificación de estados](/index.php/Category:Status_monitoring_and_notification_(Espa%C3%B1ol) "Category:Status monitoring and notification (Español)") <small>(2)</small> |
-| <small>2.13.</small> [Editores de texto](/index.php/Category:Text_editors_(Espa%C3%B1ol) "Category:Text editors (Español)") <small>(3)</small> |
+| <small>2.12.</small> [Software comparisons](/index.php/Category:Software_comparisons_(Espa%C3%B1ol) "Category:Software comparisons (Español)") <small>(1)</small> |
+| <small>2.13.</small> [Monitorización y notificación de estados](/index.php/Category:Status_monitoring_and_notification_(Espa%C3%B1ol) "Category:Status monitoring and notification (Español)") <small>(2)</small> |
+| <small>2.14.</small> [Editores de texto](/index.php/Category:Text_editors_(Espa%C3%B1ol) "Category:Text editors (Español)") <small>(3)</small> |
 | <small>3.</small> [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)") <small>(9)</small> |
 | <small>3.1.</small> [Desarrollo de Arch](/index.php/Category:Arch_development_(Espa%C3%B1ol) "Category:Arch development (Español)") <small>(0) (también en [Acerca de Arch](/index.php/Category:About_Arch_(Espa%C3%B1ol) "Category:About Arch (Español)"))</small> |
 | <small>3.1.1.</small> [Desarrollo de paquetes](/index.php/Category:Package_development_(Espa%C3%B1ol) "Category:Package development (Español)") <small>(8)</small> |
@@ -66,24 +67,25 @@
 | <small>4.13.</small> [Almacenamiento](/index.php/Category:Storage_(Espa%C3%B1ol) "Category:Storage (Español)") <small>(1)</small> |
 | <small>4.13.1.</small> [Optical disc](/index.php/Category:Optical_disc_(Espa%C3%B1ol) "Category:Optical disc (Español)") <small>(1)</small> |
 | <small>5.</small> [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)") <small>(5)</small> |
-| <small>5.1.</small> [Sistema de Nombres de Dominio (DNS)](/index.php/Category:Domain_Name_System_(Espa%C3%B1ol) "Category:Domain Name System (Español)") <small>(5)</small> |
-| <small>5.2.</small> [Protocolo de Transferencia de Archivos (FTP)](/index.php/Category:File_Transfer_Protocol_(Espa%C3%B1ol) "Category:File Transfer Protocol (Español)") <small>(1)</small> |
-| <small>5.3.</small> [Cortafuegos](/index.php/Category:Firewalls_(Espa%C3%B1ol) "Category:Firewalls (Español)") <small>(6) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small> |
-| <small>5.4.</small> [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)") <small>(7) (también en [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)"))</small> |
-| <small>5.4.1.</small> [Clientes de correo electrónico](/index.php/Category:Email_clients_(Espa%C3%B1ol) "Category:Email clients (Español)") <small>(1)</small> |
-| <small>5.4.2.</small> [Internet Relay Chat (IRC)](/index.php/Category:Internet_Relay_Chat_(Espa%C3%B1ol) "Category:Internet Relay Chat (Español)") <small>(3)</small> |
-| <small>5.4.3.</small> [Navegadores web](/index.php/Category:Web_browser_(Espa%C3%B1ol) "Category:Web browser (Español)") <small>(5)</small> |
-| <small>5.5.</small> [Módems](/index.php/Category:Modems_(Espa%C3%B1ol) "Category:Modems (Español)") <small>(5) (también en [Hardware](/index.php/Category:Hardware_(Espa%C3%B1ol) "Category:Hardware (Español)"))</small> |
-| <small>5.6.</small> [Configuración de conexiones de red](/index.php/Category:Network_configuration_(Espa%C3%B1ol) "Category:Network configuration (Español)") <small>(4)</small> |
-| <small>5.6.1.</small> [Network managers](/index.php/Category:Network_managers_(Espa%C3%B1ol) "Category:Network managers (Español)") <small>(1)</small> |
-| <small>5.7.</small> [Network sharing](/index.php/Category:Network_sharing_(Espa%C3%B1ol) "Category:Network sharing (Español)") <small>(2)</small> |
-| <small>5.8.</small> [Servidores proxy](/index.php/Category:Proxy_servers_(Espa%C3%B1ol) "Category:Proxy servers (Español)") <small>(2) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small> |
-| <small>5.9.</small> [Escritorio remoto](/index.php/Category:Remote_desktop_(Espa%C3%B1ol) "Category:Remote desktop (Español)") <small>(1)</small> |
-| <small>5.10.</small> [Intérprete de órdenes seguras](/index.php/Category:Secure_Shell_(Espa%C3%B1ol) "Category:Secure Shell (Español)") <small>(5) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small> |
-| <small>5.11.</small> [Servers](/index.php/Category:Servers_(Espa%C3%B1ol) "Category:Servers (Español)") <small>(0)</small> |
-| <small>5.11.1.</small> [Media servers](/index.php/Category:Media_servers_(Espa%C3%B1ol) "Category:Media servers (Español)") <small>(1) (también en [Multimedia](/index.php/Category:Multimedia_(Espa%C3%B1ol) "Category:Multimedia (Español)"), [Retransmisión digital](/index.php/Category:Streaming_(Espa%C3%B1ol) "Category:Streaming (Español)"))</small> |
-| <small>5.12.</small> [Servidor web](/index.php/Category:Web_server_(Espa%C3%B1ol) "Category:Web server (Español)") <small>(7)</small> |
-| <small>5.13.</small> [Redes inalámbricas](/index.php/Category:Wireless_networking_(Espa%C3%B1ol) "Category:Wireless networking (Español)") <small>(2)</small> |
+| <small>5.1.</small> [DHCP](/index.php/Category:DHCP_(Espa%C3%B1ol) "Category:DHCP (Español)") <small>(1)</small> |
+| <small>5.2.</small> [Sistema de Nombres de Dominio (DNS)](/index.php/Category:Domain_Name_System_(Espa%C3%B1ol) "Category:Domain Name System (Español)") <small>(6)</small> |
+| <small>5.3.</small> [Protocolo de Transferencia de Archivos (FTP)](/index.php/Category:File_Transfer_Protocol_(Espa%C3%B1ol) "Category:File Transfer Protocol (Español)") <small>(1)</small> |
+| <small>5.4.</small> [Cortafuegos](/index.php/Category:Firewalls_(Espa%C3%B1ol) "Category:Firewalls (Español)") <small>(6) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small> |
+| <small>5.5.</small> [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)") <small>(7) (también en [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)"))</small> |
+| <small>5.5.1.</small> [Clientes de correo electrónico](/index.php/Category:Email_clients_(Espa%C3%B1ol) "Category:Email clients (Español)") <small>(1)</small> |
+| <small>5.5.2.</small> [Internet Relay Chat (IRC)](/index.php/Category:Internet_Relay_Chat_(Espa%C3%B1ol) "Category:Internet Relay Chat (Español)") <small>(3)</small> |
+| <small>5.5.3.</small> [Navegadores web](/index.php/Category:Web_browser_(Espa%C3%B1ol) "Category:Web browser (Español)") <small>(5)</small> |
+| <small>5.6.</small> [Módems](/index.php/Category:Modems_(Espa%C3%B1ol) "Category:Modems (Español)") <small>(5) (también en [Hardware](/index.php/Category:Hardware_(Espa%C3%B1ol) "Category:Hardware (Español)"))</small> |
+| <small>5.7.</small> [Configuración de conexiones de red](/index.php/Category:Network_configuration_(Espa%C3%B1ol) "Category:Network configuration (Español)") <small>(4)</small> |
+| <small>5.7.1.</small> [Network managers](/index.php/Category:Network_managers_(Espa%C3%B1ol) "Category:Network managers (Español)") <small>(1)</small> |
+| <small>5.8.</small> [Network sharing](/index.php/Category:Network_sharing_(Espa%C3%B1ol) "Category:Network sharing (Español)") <small>(2)</small> |
+| <small>5.9.</small> [Servidores proxy](/index.php/Category:Proxy_servers_(Espa%C3%B1ol) "Category:Proxy servers (Español)") <small>(2) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small> |
+| <small>5.10.</small> [Escritorio remoto](/index.php/Category:Remote_desktop_(Espa%C3%B1ol) "Category:Remote desktop (Español)") <small>(1)</small> |
+| <small>5.11.</small> [Intérprete de órdenes seguras](/index.php/Category:Secure_Shell_(Espa%C3%B1ol) "Category:Secure Shell (Español)") <small>(5) (también en [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)"))</small> |
+| <small>5.12.</small> [Servers](/index.php/Category:Servers_(Espa%C3%B1ol) "Category:Servers (Español)") <small>(0)</small> |
+| <small>5.12.1.</small> [Media servers](/index.php/Category:Media_servers_(Espa%C3%B1ol) "Category:Media servers (Español)") <small>(1) (también en [Multimedia](/index.php/Category:Multimedia_(Espa%C3%B1ol) "Category:Multimedia (Español)"), [Retransmisión digital](/index.php/Category:Streaming_(Espa%C3%B1ol) "Category:Streaming (Español)"))</small> |
+| <small>5.13.</small> [Servidor web](/index.php/Category:Web_server_(Espa%C3%B1ol) "Category:Web server (Español)") <small>(7)</small> |
+| <small>5.14.</small> [Redes inalámbricas](/index.php/Category:Wireless_networking_(Espa%C3%B1ol) "Category:Wireless networking (Español)") <small>(2)</small> |
 | <small>6.</small> [Administración del sistema](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)") <small>(6)</small> |
 | <small>6.1.</small> [Proceso de arranque](/index.php/Category:Boot_process_(Espa%C3%B1ol) "Category:Boot process (Español)") <small>(23)</small> |
 | <small>6.1.1.</small> [Cargadores de arranque](/index.php/Category:Boot_loaders_(Espa%C3%B1ol) "Category:Boot loaders (Español)") <small>(6)</small> |
@@ -92,11 +94,11 @@
 | <small>6.2.1.</small> [Shells de órdenes](/index.php/Category:Command_shells_(Espa%C3%B1ol) "Category:Command shells (Español)") <small>(3)</small> |
 | <small>6.2.2.</small> [Emuladores de terminal](/index.php/Category:Terminal_emulators_(Espa%C3%B1ol) "Category:Terminal emulators (Español)") <small>(2)</small> |
 | <small>6.2.3.</small> [Terminal multiplexers](/index.php/Category:Terminal_multiplexers_(Espa%C3%B1ol) "Category:Terminal multiplexers (Español)") <small>(1)</small> |
-| <small>6.3.</small> [Demonios y servicios del sistema](/index.php/Category:Daemons_and_system_services_(Espa%C3%B1ol) "Category:Daemons and system services (Español)") <small>(10)</small> |
+| <small>6.3.</small> [Demonios y servicios del sistema](/index.php/Category:Daemons_and_system_services_(Espa%C3%B1ol) "Category:Daemons and system services (Español)") <small>(9)</small> |
 | <small>6.4.</small> [Mejoras visuales](/index.php/Category:Eye_candy_(Espa%C3%B1ol) "Category:Eye candy (Español)") <small>(8)</small> |
 | <small>6.4.1.</small> [Arranque gráfico](/index.php/Category:Bootsplash_(Espa%C3%B1ol) "Category:Bootsplash (Español)") <small>(2) (también en [Proceso de arranque](/index.php/Category:Boot_process_(Espa%C3%B1ol) "Category:Boot process (Español)"))</small> |
 | <small>6.4.2.</small> [Tipografías](/index.php/Category:Fonts_(Espa%C3%B1ol) "Category:Fonts (Español)") <small>(1)</small> |
-| <small>6.5.</small> [Sistemas de archivos](/index.php/Category:File_systems_(Espa%C3%B1ol) "Category:File systems (Español)") <small>(18)</small> |
+| <small>6.5.</small> [Sistemas de archivos](/index.php/Category:File_systems_(Espa%C3%B1ol) "Category:File systems (Español)") <small>(19)</small> |
 | <small>6.5.1.</small> [Disk encryption](/index.php/Category:Disk_encryption_(Espa%C3%B1ol) "Category:Disk encryption (Español)") <small>(1) (también en [Encriptación](/index.php/Category:Encryption_(Espa%C3%B1ol) "Category:Encryption (Español)"))</small> |
 | <small>6.6.</small> [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces_(Espa%C3%B1ol) "Category:Graphical user interfaces (Español)") <small>(4)</small> |
 | <small>6.6.1.</small> [Entornos de escritorios](/index.php/Category:Desktop_environments_(Espa%C3%B1ol) "Category:Desktop environments (Español)") <small>(6)</small> |
@@ -114,9 +116,9 @@
 | <small>6.9.</small> [Linux console](/index.php/Category:Linux_console_(Espa%C3%B1ol) "Category:Linux console (Español)") <small>(2)</small> |
 | <small>6.10.</small> [Localization](/index.php/Category:Localization_(Espa%C3%B1ol) "Category:Localization (Español)") <small>(1)</small> |
 | <small>6.11.</small> [Administración de paquetes](/index.php/Category:Package_management_(Espa%C3%B1ol) "Category:Package management (Español)") <small>(18)</small> |
-| <small>6.12.</small> [Administración de energía](/index.php/Category:Power_management_(Espa%C3%B1ol) "Category:Power management (Español)") <small>(3)</small> |
+| <small>6.12.</small> [Administración de energía](/index.php/Category:Power_management_(Espa%C3%B1ol) "Category:Power management (Español)") <small>(4)</small> |
 | <small>6.13.</small> [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)") <small>(11)</small> |
-| <small>6.13.1.</small> [Encriptación](/index.php/Category:Encryption_(Espa%C3%B1ol) "Category:Encryption (Español)") <small>(5)</small> |
+| <small>6.13.1.</small> [Encriptación](/index.php/Category:Encryption_(Espa%C3%B1ol) "Category:Encryption (Español)") <small>(6)</small> |
 | <small>6.13.1.1.</small> [Disk encryption](/index.php/Category:Disk_encryption_(Espa%C3%B1ol) "Category:Disk encryption (Español)") <small>(1) (también en [Sistemas de archivos](/index.php/Category:File_systems_(Espa%C3%B1ol) "Category:File systems (Español)"))</small> |
 | <small>6.13.2.</small> [Cortafuegos](/index.php/Category:Firewalls_(Espa%C3%B1ol) "Category:Firewalls (Español)") <small>(6) (también en [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
 | <small>6.13.3.</small> [Servidores proxy](/index.php/Category:Proxy_servers_(Espa%C3%B1ol) "Category:Proxy servers (Español)") <small>(2) (también en [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |

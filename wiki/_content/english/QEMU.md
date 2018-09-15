@@ -98,6 +98,7 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [11.8 Windows-specific notes](#Windows-specific_notes)
         *   [11.8.1 Fast startup](#Fast_startup)
         *   [11.8.2 Remote Desktop Protocol](#Remote_Desktop_Protocol)
+    *   [11.9 Clone Linux system installed on physical equipment](#Clone_Linux_system_installed_on_physical_equipment)
 *   [12 Troubleshooting](#Troubleshooting)
     *   [12.1 Virtual machine runs too slowly](#Virtual_machine_runs_too_slowly)
     *   [12.2 Mouse cursor is jittery or erratic](#Mouse_cursor_is_jittery_or_erratic)
@@ -1708,6 +1709,10 @@ Then connect with either [rdesktop](https://www.archlinux.org/packages/?name=rde
 $ xfreerdp -g 2048x1152 localhost:5555 -z -x lan
 
 ```
+
+### Clone Linux system installed on physical equipment
+
+Linux system installed on physical equipment can be cloned for running on QEMU vm. See [Clone Linux system from hardware for QEMU virtual machine](https://coffeebirthday.wordpress.com/2018/09/14/clone-linux-system-for-qemu-virtual-machine/)
 
 ## Troubleshooting
 

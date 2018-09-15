@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=532688) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2018-09-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=540550) na versão em inglês.
 
 Artigos relacionados
 
@@ -127,7 +127,7 @@ Por vezes chamados de "espelhos" *(mirrors)*. Visite o artigo [Espelhos](/index.
 
 *Ports* é um sistema inicialmente usado pelas distribuições BSD consistindo em scripts de compilação que residem em uma árvore de diretório no sistema local. Basicamente, cada *port* contém um script dentro de um diretório intuitivamente nomeado pelo aplicativo terceiro instalável.
 
-O [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)") oferece a mesma funcionalidade para fornecer scripts de compilação chamados [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"), que são populados com informações para uma dada peça de software; *hashes* de integridade, instruções de compilação e licença, versão e URL do projeto. Esses PKGBUILDs são posteriormente analisados pelo [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"), o programa atual que gera pacotes é gerenciável de forma limpa pelo *pacman*.
+O [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)") oferece a mesma funcionalidade para fornecer scripts de compilação chamados [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)"), que são populados com informações para uma dada peça de software; *hashes* de integridade, instruções de compilação e licença, versão e URL do projeto. Esses PKGBUILDs são analisados pelo [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"), o programa atual que gera pacotes que são gerenciáveis de forma limpa pelo *pacman*.
 
 Todo pacote nos repositórios junto com aqueles presentes no AUR estão sujeitos a recompilação com *makepkg*.
 
@@ -145,7 +145,7 @@ Hardware deve ser detectado automaticamente pelo [udev](/index.php/Udev "Udev") 
 
 ### Microcódigo
 
-Processadores podem ter [comportamento falho](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), o que o kernel pode corrigir atualizando o *microcódigo* na inicialização. Processadores Intel exigem um pacote separado para esse efeito. Veja [Microcódigo](/index.php/Microcode "Microcode") para detalhes.
+Processadores podem ter [comportamento falho](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), o que o kernel pode corrigir atualizando o *microcódigo* na inicialização. Veja [Microcódigo](/index.php/Microcode "Microcode") para detalhes.
 
 ### Retendo mensagens de inicialização
 

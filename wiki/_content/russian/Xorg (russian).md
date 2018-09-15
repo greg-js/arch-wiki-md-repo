@@ -1,4 +1,4 @@
-**Состояние перевода:** На этой странице представлен перевод статьи [Xorg](/index.php/Xorg "Xorg"). Дата последней синхронизации: 23 августа 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Xorg&diff=0&oldid=537219).
+**Состояние перевода:** На этой странице представлен перевод статьи [Xorg](/index.php/Xorg "Xorg"). Дата последней синхронизации: 5 сентября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Xorg&diff=0&oldid=539938).
 
 Ссылки по теме
 
@@ -30,11 +30,12 @@ C [http://www.x.org/wiki/](http://www.x.org/wiki/):
     *   [3.1 Через файлы .conf](#.D0.A7.D0.B5.D1.80.D0.B5.D0.B7_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B_.conf)
     *   [3.2 Через файл xorg.conf](#.D0.A7.D0.B5.D1.80.D0.B5.D0.B7_.D1.84.D0.B0.D0.B9.D0.BB_xorg.conf)
 *   [4 Устройства ввода](#.D0.A3.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2.D0.B0_.D0.B2.D0.B2.D0.BE.D0.B4.D0.B0)
-    *   [4.1 Ускорение мыши](#.D0.A3.D1.81.D0.BA.D0.BE.D1.80.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BC.D1.8B.D1.88.D0.B8)
-    *   [4.2 Дополнительные кнопки мыши](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BA.D0.B8_.D0.BC.D1.8B.D1.88.D0.B8)
-    *   [4.3 Тачпад](#.D0.A2.D0.B0.D1.87.D0.BF.D0.B0.D0.B4)
-    *   [4.4 Тачскрин](#.D0.A2.D0.B0.D1.87.D1.81.D0.BA.D1.80.D0.B8.D0.BD)
-    *   [4.5 Настройка клавиатуры](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
+    *   [4.1 Идентификация ввода](#.D0.98.D0.B4.D0.B5.D0.BD.D1.82.D0.B8.D1.84.D0.B8.D0.BA.D0.B0.D1.86.D0.B8.D1.8F_.D0.B2.D0.B2.D0.BE.D0.B4.D0.B0)
+    *   [4.2 Ускорение мыши](#.D0.A3.D1.81.D0.BA.D0.BE.D1.80.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BC.D1.8B.D1.88.D0.B8)
+    *   [4.3 Дополнительные кнопки мыши](#.D0.94.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B8.D1.82.D0.B5.D0.BB.D1.8C.D0.BD.D1.8B.D0.B5_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BA.D0.B8_.D0.BC.D1.8B.D1.88.D0.B8)
+    *   [4.4 Тачпад](#.D0.A2.D0.B0.D1.87.D0.BF.D0.B0.D0.B4)
+    *   [4.5 Тачскрин](#.D0.A2.D0.B0.D1.87.D1.81.D0.BA.D1.80.D0.B8.D0.BD)
+    *   [4.6 Настройка клавиатуры](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
 *   [5 Настройка монитора](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.B0)
     *   [5.1 Начало работы](#.D0.9D.D0.B0.D1.87.D0.B0.D0.BB.D0.BE_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D1.8B)
     *   [5.2 Несколько мониторов](#.D0.9D.D0.B5.D1.81.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.BC.D0.BE.D0.BD.D0.B8.D1.82.D0.BE.D1.80.D0.BE.D0.B2)
@@ -47,12 +48,13 @@ C [http://www.x.org/wiki/](http://www.x.org/wiki/):
 *   [6 Композит](#.D0.9A.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82)
     *   [6.1 Список композитных менеджеров](#.D0.A1.D0.BF.D0.B8.D1.81.D0.BE.D0.BA_.D0.BA.D0.BE.D0.BC.D0.BF.D0.BE.D0.B7.D0.B8.D1.82.D0.BD.D1.8B.D1.85_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.BE.D0.B2)
 *   [7 Советы и рекомендации](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.80.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D0.B0.D1.86.D0.B8.D0.B8)
-    *   [7.1 Вложенная X-сессия](#.D0.92.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_X-.D1.81.D0.B5.D1.81.D1.81.D0.B8.D1.8F)
-    *   [7.2 Запуск программ с GUI удаленно](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC_.D1.81_GUI_.D1.83.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.BD.D0.BE)
-    *   [7.3 Отключение и включение при необходимости устройств ввода](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B8_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8_.D0.BD.D0.B5.D0.BE.D0.B1.D1.85.D0.BE.D0.B4.D0.B8.D0.BC.D0.BE.D1.81.D1.82.D0.B8_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2_.D0.B2.D0.B2.D0.BE.D0.B4.D0.B0)
-    *   [7.4 Закрытие приложения с помощью горячей клавиши](#.D0.97.D0.B0.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_.D0.B3.D0.BE.D1.80.D1.8F.D1.87.D0.B5.D0.B9_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8)
-    *   [7.5 Блокирование доступа к TTY](#.D0.91.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.B0_.D0.BA_TTY)
-    *   [7.6 Запрет пользователю закрывать, перезапускать X](#.D0.97.D0.B0.D0.BF.D1.80.D0.B5.D1.82_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8E_.D0.B7.D0.B0.D0.BA.D1.80.D1.8B.D0.B2.D0.B0.D1.82.D1.8C.2C_.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D1.82.D1.8C_X)
+    *   [7.1 Автоматизация](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D0.B7.D0.B0.D1.86.D0.B8.D1.8F)
+    *   [7.2 Вложенная X-сессия](#.D0.92.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.BD.D0.B0.D1.8F_X-.D1.81.D0.B5.D1.81.D1.81.D0.B8.D1.8F)
+    *   [7.3 Запуск программ с GUI удаленно](#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC_.D1.81_GUI_.D1.83.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.BD.D0.BE)
+    *   [7.4 Отключение и включение при необходимости устройств ввода](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B8_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8_.D0.BD.D0.B5.D0.BE.D0.B1.D1.85.D0.BE.D0.B4.D0.B8.D0.BC.D0.BE.D1.81.D1.82.D0.B8_.D1.83.D1.81.D1.82.D1.80.D0.BE.D0.B9.D1.81.D1.82.D0.B2_.D0.B2.D0.B2.D0.BE.D0.B4.D0.B0)
+    *   [7.5 Закрытие приложения с помощью горячей клавиши](#.D0.97.D0.B0.D0.BA.D1.80.D1.8B.D1.82.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_.D0.B3.D0.BE.D1.80.D1.8F.D1.87.D0.B5.D0.B9_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8)
+    *   [7.6 Блокирование доступа к TTY](#.D0.91.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.B0_.D0.BA_TTY)
+    *   [7.7 Запрет пользователю закрывать, перезапускать X](#.D0.97.D0.B0.D0.BF.D1.80.D0.B5.D1.82_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D1.8E_.D0.B7.D0.B0.D0.BA.D1.80.D1.8B.D0.B2.D0.B0.D1.82.D1.8C.2C_.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D1.82.D1.8C_X)
 *   [8 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
     *   [8.1 Общее](#.D0.9E.D0.B1.D1.89.D0.B5.D0.B5)
     *   [8.2 Черный экран, протокол не указан.., Ресурс временно недоступен для всех или некоторых пользователей](#.D0.A7.D0.B5.D1.80.D0.BD.D1.8B.D0.B9_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.2C_.D0.BF.D1.80.D0.BE.D1.82.D0.BE.D0.BA.D0.BE.D0.BB_.D0.BD.D0.B5_.D1.83.D0.BA.D0.B0.D0.B7.D0.B0.D0.BD...2C_.D0.A0.D0.B5.D1.81.D1.83.D1.80.D1.81_.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D0.BE_.D0.BD.D0.B5.D0.B4.D0.BE.D1.81.D1.82.D1.83.D0.BF.D0.B5.D0.BD_.D0.B4.D0.BB.D1.8F_.D0.B2.D1.81.D0.B5.D1.85_.D0.B8.D0.BB.D0.B8_.D0.BD.D0.B5.D0.BA.D0.BE.D1.82.D0.BE.D1.80.D1.8B.D1.85_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D0.B5.D0.B9)
@@ -150,7 +152,7 @@ Xorg автоматически ищет установленные драйве
 
 ## Настройка
 
-**Примечание:** Arch предоставляет файлы конфигурации по умолчанию в `/usr/share/X11/xorg.conf.d`. Большинству пользователей никакая дополнительная настройка не нужна.
+**Примечание:** Arch предоставляет файлы конфигурации по умолчанию в `/usr/share/X11/xorg.conf.d/`. Большинству пользователей никакая дополнительная настройка не нужна.
 
 Xorg можно настроить через `xorg.conf` и через файлы, заканчивающие на `.conf`: полный список каталог, где можно найти эти файлы есть в [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5) вместе с подробным объяснением всех доступных опций.
 
@@ -195,6 +197,10 @@ $ grep -e "Using input driver " Xorg.0.log
 Чтобы изменить поведение горячего подключения (hotplugging), смотрите статью [#Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0).
 
 Для получения конкретных инструкций, смотрите статью [libinput](/index.php/Libinput "Libinput"), следующие страницы ниже, или записи в [википедии Fedora](https://fedoraproject.org/wiki/Input_device_configuration).
+
+### Идентификация ввода
+
+Для получения дополнительной информации смотрите [Extra keyboard keys#In Xorg](/index.php/Extra_keyboard_keys#In_Xorg "Extra keyboard keys").
 
 ### Ускорение мыши
 
@@ -419,6 +425,20 @@ $ xrdb -query | grep dpi
 
 ## Советы и рекомендации
 
+### Автоматизация
+
+В этом разделе перечислены утилиты для автоматизации операций с окнами (например, перемещение, изменение размера или фокусировка), ввода/вывода клавиатуры и мыши.
+
+| Утилита | Пакет | Документация | эмуляция
+клавиш | операции
+с окнами | Примечание |
+| xte | [xautomation](https://www.archlinux.org/packages/?name=xautomation) | [xte(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xte.1) | Да | Нет | Также содержит инструменты для очистки экрана. Не может эмулировать F13+. |
+| xdo | [xdo-git](https://aur.archlinux.org/packages/xdo-git/) | [xdo(1)](https://github.com/baskerville/xdo/blob/master/doc/xdo.1.txt) | Нет | Да | Небольшая утилита X для выполнения элементарных действий над окнами. |
+| xdotool | [xdotool](https://www.archlinux.org/packages/?name=xdotool) | [xdotool(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdotool.1) | Да | Да | [Очень забагованный](https://github.com/jordansissel/xdotool/issues) и находится в неактивной разработке, например: имеет сломанный CLI parsing.[[2]](https://github.com/jordansissel/xdotool/issues/14#issuecomment-327968132)[[3]](https://github.com/jordansissel/xdotool/issues/71) |
+| xvkbd | [xvkbd](https://aur.archlinux.org/packages/xvkbd/) | [xvkbd(1)](http://t-sato.in.coocan.jp/xvkbd/#option) | Да | Нет | Виртуальная клавиатура для Xorg, также имеет параметр `-text` для отправки символов. |
+
+Также посмотрите [Clipboard#Tools](/index.php/Clipboard#Tools "Clipboard").
+
 ### Вложенная X-сессия
 
 Для запуска вложенного сеанса другой среды рабочего стола:
@@ -526,7 +546,7 @@ EndSection
 
 ### Общее
 
-Если произошла какая-то проблема с X, посмотрите лог (журнал), хранящийся в `/var/log/` или для пользователей без рут-доступа в `~/.local/share/xorg/` (по умолчанию с версии 1.16). Пользователям [GDM](/index.php/GDM "GDM") следует проверить журнал [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"). [[2]](https://bbs.archlinux.org/viewtopic.php?id=184639)
+Если произошла какая-то проблема с X, посмотрите лог (журнал), хранящийся в `/var/log/` или для пользователей без рут-доступа в `~/.local/share/xorg/` (по умолчанию с версии 1.16). Пользователям [GDM](/index.php/GDM "GDM") следует проверить журнал [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)"). [[4]](https://bbs.archlinux.org/viewtopic.php?id=184639)
 
 Файлы журналов имеют следующий вид `Xorg.n.log`, где `n` - номер монитора. Для одного пользовательского компьютера с настройками по умолчанию имя нужного журнала обычно `Xorg.0.log`, но для остальных оно может отличаться. Чтобы убедиться, что выбранный вами файл правильный, посмотрите временную отметку запуска сеанса X сервера и из какой консоли он был запущен. Например:
 
@@ -650,7 +670,7 @@ Please also check the log file at "/var/log/Xorg.0.log" for additional informati
 
 ### Использование Xorg без прав суперпользователя
 
-Xorg может запускаться со стандартными привилегиями пользователя через [systemd-logind(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-logind.8), для получения дополнительной информации смотрите [[3]](https://fedoraproject.org/wiki/Changes/XorgWithoutRootRights) и [FS#41257](https://bugs.archlinux.org/task/41257). Для этого необходимо:
+Xorg может запускаться со стандартными привилегиями пользователя через [systemd-logind(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-logind.8), для получения дополнительной информации смотрите [[5]](https://fedoraproject.org/wiki/Changes/XorgWithoutRootRights) и [FS#41257](https://bugs.archlinux.org/task/41257). Для этого необходимо:
 
 *   Запустить X через [xinit](/index.php/Xinitrc_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xinitrc (Русский)"); экранный менеджер не поддерживается
 *   [KMS](/index.php/Kernel_mode_setting_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Kernel mode setting (Русский)"); реализации в проприетарных драйверах монитора не допускает [автообнаружение](http://cgit.freedesktop.org/xorg/xserver/tree/hw/xfree86/xorg-wrapper.c#n222), поэтому необходимо вручную настроить `needs_root_rights = no` в `/etc/X11/Xwrapper.config`.
@@ -672,7 +692,7 @@ exec startx -- -keeptty > ~/.xorg.log 2>&1
 
 ```
 
-Или скопируйте `/etc/X11/xinit/xserverrc` в `~/.xserverrc` и добавьте `-keeptty`. Для получения дополнительной информации смотрите [[4]](https://bbs.archlinux.org/viewtopic.php?pid=1446402#p1446402).
+Или скопируйте `/etc/X11/xinit/xserverrc` в `~/.xserverrc` и добавьте `-keeptty`. Для получения дополнительной информации смотрите [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1446402#p1446402).
 
 ### Зеленый экран при попытке просмотра видео
 

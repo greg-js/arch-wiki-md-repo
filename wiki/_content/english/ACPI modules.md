@@ -123,12 +123,7 @@ Sometimes you see "ACPI: EC: input buffer is not empty, aborting transaction". T
 
 *   Use `acpi=off` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"), however this will kill all ACPI functionality like battery charging and power saving.
 
-*   In some cases disabeling [DPMS](/index.php/DPMS "DPMS") has been reported to solve the issue [[1]](https://ubuntuforums.org/showthread.php?p=8030130#10). However, screen brightness may no longer be fully controllable:
-
-```
-$ xset dpms force off
-
-```
+*   In some cases disabling [DPMS](/index.php/DPMS "DPMS") has been reported to solve the issue [[1]](https://ubuntuforums.org/showthread.php?p=8030130#10). However, screen brightness may no longer be fully controllable: `$ xset dpms force off` 
 
 *   Build a custom [kernel](/index.php/Kernel "Kernel") with patches of [bugs.launchpad.net](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/578506).
 

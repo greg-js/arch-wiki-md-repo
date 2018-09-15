@@ -78,4 +78,4 @@ Download the sources from [http://svn.unix-ag.uni-kl.de/vpnc/trunk/](http://svn.
 
 Temporary workaround found here: [https://bbs.archlinux.org/viewtopic.php?id=225556](https://bbs.archlinux.org/viewtopic.php?id=225556)
 
-Remember to change the PREFIX to /user instead /user/local so you overwrite the broken binary.
+Remember to change the PREFIX to /usr instead /usr/local so you overwrite the broken binary.

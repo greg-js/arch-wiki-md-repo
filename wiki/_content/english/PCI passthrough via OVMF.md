@@ -24,13 +24,14 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
             *   [5.1.2.1 4c/1t CPU w/o Hyperthreading Example](#4c.2F1t_CPU_w.2Fo_Hyperthreading_Example)
             *   [5.1.2.2 4c/2t Intel CPU pinning example](#4c.2F2t_Intel_CPU_pinning_example)
             *   [5.1.2.3 4c/2t AMD CPU example](#4c.2F2t_AMD_CPU_example)
-    *   [5.2 Transparent huge pages](#Transparent_huge_pages)
-    *   [5.3 Static huge pages](#Static_huge_pages)
-    *   [5.4 Dynamic huge pages](#Dynamic_huge_pages)
-    *   [5.5 CPU frequency governor](#CPU_frequency_governor)
-    *   [5.6 CPU pinning with isolcpus](#CPU_pinning_with_isolcpus)
-    *   [5.7 Improving performance on AMD CPUs](#Improving_performance_on_AMD_CPUs)
-    *   [5.8 Further tuning](#Further_tuning)
+    *   [5.2 Huge memory pages](#Huge_memory_pages)
+        *   [5.2.1 Transparent huge pages](#Transparent_huge_pages)
+        *   [5.2.2 Static huge pages](#Static_huge_pages)
+        *   [5.2.3 Dynamic huge pages](#Dynamic_huge_pages)
+    *   [5.3 CPU frequency governor](#CPU_frequency_governor)
+    *   [5.4 CPU pinning with isolcpus](#CPU_pinning_with_isolcpus)
+    *   [5.5 Improving performance on AMD CPUs](#Improving_performance_on_AMD_CPUs)
+    *   [5.6 Further tuning](#Further_tuning)
 *   [6 Special procedures](#Special_procedures)
     *   [6.1 Using identical guest and host GPUs](#Using_identical_guest_and_host_GPUs)
         *   [6.1.1 Script variants](#Script_variants)
@@ -425,7 +426,11 @@ If you don't need all cores for the guest, it would then be preferable to leave 
 
 If you do not intend to be doing any computation-heavy work on the host (or even anything at all) at the same time as you would on the VM, you may want to pin your VM threads across all of your cores, so that the VM can fully take advantage of the spare CPU time the host has available. Be aware that pinning all physical and logical cores of your CPU could induce latency in the guest VM.
 
-### Transparent huge pages
+### Huge memory pages
+
+When dealing with applications that require large amounts of memory, memory latency can become a problem since the more memory pages are being used, the more likely it is that this application will attempt to access information across multiple memory "pages", which is the base unit for memory allocation. Resolving the actual address of the memory page takes multiple steps, and so CPUs normally cache information on recently used memory pages to make subsequent uses on the same pages faster. Applications using large amounts of memory run into a problem where, for instance, a virtual machine uses 4 GiB of memory divided into 4 KiB pages (which is the default size for normal pages) for a total of 1.04 million pages, meaning that such cache misses can become extremely frequent and greatly increase memory latency. Huge pages exist to mitigate this issue by giving larger individual pages to those applications, increasing the odds that multiple operations will target the same page in succession.
+
+#### Transparent huge pages
 
 QEMU will use 2MiB sized transparent huge pages automatically without any explicit configuration in QEMU or Libvirt, subject to some important caveats. When using VFIO the pages are locked in at boot time and transparent huge pages are allocated up front when the VM first boots. If the kernel memory is highly fragmented, or the VM is using a majority of the remaining free memory, it is likely that the kernel will not have enough 2MiB pages to fully satisfy the allocation. In such a case, it silently fails by using a mix of 2MiB and 4KiB pages. Since the pages are locked in VFIO mode, the kernel will not be able to convert those 4KiB pages to huge after the VM starts either. The number of available 2MiB huge pages available to THP is the same as via the **Dynamic huge pages** mechanism described in the following sections.
 
@@ -449,9 +454,9 @@ In this example, the VM was allocated 8388608KiB of memory, but only 8087552KiB 
 
 Arch kernels have THP compiled in and enabled by default with **/sys/kernel/mm/transparent_hugepage/enabled** set to **madvise** mode.
 
-### Static huge pages
+#### Static huge pages
 
-When dealing with applications that require large amounts of memory, memory latency can become a problem since the more memory pages are being used, the more likely it is that this application will attempt to access information across multiple memory "pages", which is the base unit for memory allocation. Resolving the actual address of the memory page takes multiple steps, and so CPUs normally cache information on recently used memory pages to make subsequent uses on the same pages faster. Applications using large amounts of memory run into a problem where, for instance, a virtual machine uses 4 GiB of memory divided into 4 KiB pages (which is the default size for normal pages), meaning that such cache misses can become extremely frequent and greatly increase memory latency. Huge pages exist to mitigate this issue by giving larger individual pages to those applications, increasing the odds that multiple operations will target the same page in succession. This is normally handeled with transparent huge pages, which dynamically manages hugepages to keep up with the demand.
+While transparent huge pages should work in the vast majority of cases, they can also be allocated statically during boot. This should only be needed to make use 1 GiB hugepages on machines that support it, since transparent huge pages normally only go up to 2 MiB.
 
 **Warning:** Static huge pages lock down the allocated amount of memory, making it unavailable for applications that are not configured to use them. Allocating 4 GiBs worth of huge pages on a machine with 8 GiB of memory will only leave you with 4 GiB of available memory on the host **even when the VM is not running**.
 
@@ -471,9 +476,9 @@ Also, since static huge pages can only be used by applications that specifically
 
 ```
 
-### Dynamic huge pages
+#### Dynamic huge pages
 
-Hugepages could be allocated dynamically via `vm.nr_overcommit_hugepages` [sysctl](/index.php/Sysctl "Sysctl") parameter.
+Hugepages could be allocated manually via `vm.nr_overcommit_hugepages` [sysctl](/index.php/Sysctl "Sysctl") parameter.
 
  `/etc/sysctl.d/10-kvm.conf` 
 ```

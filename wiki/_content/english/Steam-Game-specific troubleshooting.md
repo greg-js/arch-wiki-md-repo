@@ -243,6 +243,8 @@
         *   [5.111.1 No sound](#No_sound_7)
     *   [5.112 Superbrothers: Sword & Sworcery EP](#Superbrothers:_Sword_.26_Sworcery_EP)
     *   [5.113 System Shock 2](#System_Shock_2)
+        *   [5.113.1 Game won't launch](#Game_won.27t_launch)
+        *   [5.113.2 Resolution fix](#Resolution_fix)
     *   [5.114 Tabletop Simulator](#Tabletop_Simulator)
         *   [5.114.1 CJK characters not showing in game](#CJK_characters_not_showing_in_game)
     *   [5.115 Team Fortress 2](#Team_Fortress_2)
@@ -2037,6 +2039,26 @@ mv /mnt/olhdd/steam/steamapps/common/SS2/lib/libxcb.so.1{,.old}
 mv /mnt/olhdd/steam/steamapps/common/SS2/lib/libxcb.so.1.1.0{,.old}
 
 ```
+
+#### Game won't launch
+
+If you encounter the game not launching do the following:
+
+Cut & Paste libsteam_api.so from the "SS2/Bin" folder within the main steam common folder and transfer it to "SS2" main game folder not the sub folder "SS2/bin"
+
+After Cut & Paste put LD_PRELOAD='/usr/$LIB/libxcb.so.1' %command% into the Launch options
+
+Once all of these have been implemented the game should work after hitting play on steam.
+
+#### Resolution fix
+
+You may encounter some resolution problems with this game on steam not working properly in full screen mode. Do the following:
+
+Open cam.cfg in the SS2 folder you may have to search for it via the search mode while in the game folder:
+
+Place game_screen_size 1024 768 or game_screen_size 1920 1080 depending on your resolution & put game_full_screen 1 into bottom of the cam.cfg file.
+
+Then go to cam_ext.cfg and next to the display setting place a simi-colon prefix next to the use_d3d_display option so it should be like this ;use_d3d_display it should then properly not go off-screen and should stay full screen within the active main screen.
 
 ### Tabletop Simulator
 

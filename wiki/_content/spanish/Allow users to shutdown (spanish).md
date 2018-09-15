@@ -29,4 +29,4 @@ alias halt="sudo halt"
 
 ## Usando acpid
 
-[acpid](/index.php/Acpid "Acpid") puede ser usado para permitir apagar el equipo por cualquiera con acceso fisico al botón de encendido del equipo.
+[acpid](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)") puede ser usado para permitir apagar el equipo por cualquiera con acceso fisico al botón de encendido del equipo.

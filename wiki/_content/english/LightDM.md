@@ -169,7 +169,7 @@ GTK3 themes can be specified with the `theme-name` variable in the `[greeter]` s
 
 #### Webkit2 greeter
 
-The [lightdm-webkit2-greeter](https://aur.archlinux.org/packages/lightdm-webkit2-greeter/) allows you to choose a background image directly on the login screen. It also offers an option to display a random image each time it starts. By default, images are sourced from `/usr/share/backgrounds`. You can change the background images directory by editing `lightdm-webkit2-greeter.conf`. For example:
+The [lightdm-webkit2-greeter](https://aur.archlinux.org/packages/lightdm-webkit2-greeter/) allows you to choose a background image directly on the login screen. It also offers an option to display a random image each time it starts if you use the [Material theme](https://github.com/artur9010/lightdm-webkit-material). By default, images are sourced from `/usr/share/backgrounds`. You can change the background images directory by editing `lightdm-webkit2-greeter.conf`. For example:
 
  `/etc/lightdm/lightdm-webkit2-greeter.conf` 
 ```

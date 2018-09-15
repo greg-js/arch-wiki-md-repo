@@ -2,58 +2,68 @@
 
 Apsilankykite **[Table of contents (Lietuviškai)](/index.php/Table_of_contents_(Lietuvi%C5%A1kai) "Table of contents (Lietuviškai)")** norėdami peržiūrėti ArchWiki kategorijas.
 
-## Pradžia
-
-Sekančios nuorodos yra naudingos pradedantiems dirbti su Arch Linux.
+## Distribucija
 
 	[Arch Linux (Lietuviškai)](/index.php/Arch_Linux_(Lietuvi%C5%A1kai) "Arch Linux (Lietuviškai)")
 
-	Trumpas Arch Linux apibūdinimas; Aprašoma ko galima tikėtis iš Arch Linux sistemos.
-
-	[The Arch Way (Lietuviškai)](/index.php/The_Arch_Way_(Lietuvi%C5%A1kai) "The Arch Way (Lietuviškai)")
-
-	Aprašoma Arch Linux principus ir filosofiją.
-
-	[Arch compared to other distributions (Lietuviškai)](/index.php/Arch_compared_to_other_distributions_(Lietuvi%C5%A1kai) "Arch compared to other distributions (Lietuviškai)")
-
-	Apibendrinami panašumai ir skirtumai tarp Arch ir kitų distribucijų.
-
-	[Getting involved (Lietuviškai)](/index.php/Getting_involved_(Lietuvi%C5%A1kai) "Getting involved (Lietuviškai)")
-
-	Aprašomi įvairūs būdai kaip archeriams (pradedantys ir pažengusieji vartotojai) galima prisidėti prie Arch bendruomenės.
-
-	[Forum etiquette](/index.php/Forum_etiquette "Forum etiquette")
-
-	Instrukcijos Arch forumo nariams.
-
-	[ArchWiki Tutorial (Lietuviškai)](/index.php?title=ArchWiki_Tutorial_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "ArchWiki Tutorial (Lietuviškai) (page does not exist)")
-
-	Trumpas vadovas kaip redaguoti ir prisidėti prie Arch Linux wiki.
-
-	[Official Arch Linux Install Guide (Lietuviškai)](/index.php?title=Official_Arch_Linux_Install_Guide_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "Official Arch Linux Install Guide (Lietuviškai) (page does not exist)")
-
-	Daug bendresnis įdiegimo vadovas; darant prielaidą, kad vartotojas yra patyręs UNIX/GNU/Linux metodikoje.
+	Arch Linux apžvalga apie tai ko galima tikėtis iš šios sistemos.
 
 	[FAQ (Lietuviškai)](/index.php/FAQ_(Lietuvi%C5%A1kai) "FAQ (Lietuviškai)")
 
 	Dažniausių užduodamų klausimų atsakimai.
 
+	[Arch compared to other distributions (Lietuviškai)](/index.php/Arch_compared_to_other_distributions_(Lietuvi%C5%A1kai) "Arch compared to other distributions (Lietuviškai)")
+
+	Arch Linux panašumai ir skirtumai su kitomis distribucijomis.
+
+	[Installation guide (Lietuviškai)](/index.php/Installation_guide_(Lietuvi%C5%A1kai) "Installation guide (Lietuviškai)")
+
+	Arch Linux sistemos įdiegimo vadovas.
+
 	[General Recommendations (Lietuviškai)](/index.php?title=General_Recommendations_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "General Recommendations (Lietuviškai) (page does not exist)")
 
-	Komentuojama populiarių straipsnių ir dažniausiai nurodomos informacijos rodyklė.
+	Anotuotas pamokų ir populiarių straipsnių indeksas
 
-## Wiki Naujienos
+	[List of applications (Lietuviškai)](/index.php?title=List_of_applications_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "List of applications (Lietuviškai) (page does not exist)")
 
-Peržiūrėkite [Wiki News](/index.php/Wiki_News "Wiki News") puslapį, jeigu norite sužinoti wiki naujienas.
+	Klasifikuotas bendrų oficialių ir AUR paketų sąrašas.
 
-Jeigu jūs norite ir sugebate prisidėti prie wiki, prašome perskaityti [šitą sąrašą](/index.php/Getting_involved#Wiki "Getting involved") idėjoms. Specifiškai, žmonės yra reikalingi versti ne angliškus puslapius. Prašome koordinuoti savo veiksmus su [administratoriais ir sysops'ais](/index.php/ContactList "ContactList").
+	[The Arch Way (Lietuviškai)](/index.php/The_Arch_Way_(Lietuvi%C5%A1kai) "The Arch Way (Lietuviškai)")
 
-## Internacionalizacija
+	Aprašoma Arch Linux principus ir filosofiją.
 
-Jeigu jums patogiau skaityti straipsnius jūsų gimtąja kalba, paspauskite [čia](/index.php/Help:I18n#Languages "Help:I18n") ir pamatysite palaikomų kalbų sąrašą ir internacionalizacijos informaciją.
+## Mūsų bendruomenė
 
-## Pagalba
+	[Code of conduct (Lietuviškai)](/index.php?title=Code_of_conduct_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "Code of conduct (Lietuviškai) (page does not exist)")
 
-Jei jums sunku ką nors rasti, pasinaudokite paieškos laukeliu kairėje. Arba, naudokite [Google](http://www.google.com/) "tinklapio" paieškos įrankiu, pridedant <tt>site:wiki.archlinux.org</tt> prie užklausos (pavyzdžiui [suraskite šitą puslapį "Arch Linux"](http://www.lmgtfy.com/?q=Arch+Linux+site%3Awiki.archlinux.org)).
+	Instrukcijos Arch bendruomenės nariams.
 
-Privaloma registracija, norint redaguoti. Paskui galima susipažinti su redagavimu [Sandbox](/index.php/Sandbox "Sandbox") arba savo paties asmeniniame puslapyje. Galima sintaksė aprašyta [Pagalbos kategorijoje](/index.php/Category:Help "Category:Help").
+	[Getting involved (Lietuviškai)](/index.php/Getting_involved_(Lietuvi%C5%A1kai) "Getting involved (Lietuviškai)")
+
+	Aprašomi įvairūs būdai kaip archer'iai galima prisidėti prie Arch bendruomenės.
+
+	[International communities (Lietuviškai)](/index.php?title=International_communities_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "International communities (Lietuviškai) (page does not exist)")
+
+	Nuorodos į viso pasaulio Arch Linux bendruomenes.
+
+	[IRC channels (Lietuviškai)](/index.php?title=IRC_channels_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "IRC channels (Lietuviškai) (page does not exist)")
+
+	Susiburkime su draugais archer'iais geram pabendravimui.
+
+## Vikipedija
+
+	[Help:Reading](/index.php/Help:Reading "Help:Reading")
+
+	Raskite paaiškinimus, jei sunku suprasti instrukcijas kai kuriuose straipsniuose.
+
+	[Help:Searching](/index.php/Help:Searching "Help:Searching")
+
+	Pabandykite naudotis paieškos laukeliu puslapio viršuje; sekite nuorodą, nuorodoje dar daugiau patarimų.
+
+	[ArchWiki:Contributing](/index.php/ArchWiki:Contributing "ArchWiki:Contributing")
+
+	Pradinis taškas tiems, kurie nori prisidėti prie wiki.
+
+	[Help:Editing](/index.php/Help:Editing "Help:Editing")
+
+	Pamoka apie straipsnių redagavimą ir įvadas į wiki teksto sintaksę.

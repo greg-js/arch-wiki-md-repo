@@ -6,7 +6,7 @@ Most mature terminal emulators permit users to copy or save their contents.
     *   [1.1 Terminals without CLIPBOARD selection](#Terminals_without_CLIPBOARD_selection)
     *   [1.2 Intercepting commands’s output](#Intercepting_commands.E2.80.99s_output)
     *   [1.3 Accessing Linux terminal backlog](#Accessing_Linux_terminal_backlog)
-*   [2 A cheatsheet for common emulators](#A_cheatsheet_for_common_emulators)
+*   [2 Comparison of common emulators](#Comparison_of_common_emulators)
 *   [3 Special cases](#Special_cases)
     *   [3.1 putty](#putty)
     *   [3.2 urxvt](#urxvt)
@@ -49,7 +49,7 @@ The backlog of a native terminal named `/dev/ttyN` may be accessed via `/dev/vcs
 
 ```
 
-## A cheatsheet for common emulators
+## Comparison of common emulators
 
 Unless the *Key combination* column states otherwise, the key combination is `Ctrl+Shift+c`.
 

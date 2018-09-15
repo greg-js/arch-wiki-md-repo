@@ -48,13 +48,13 @@ La administración de energía es muy importante para cualquiera que desee hacer
 
 El estado de la batería puede ser leído utilizando las utilidades ACPI en la terminal. Las utilidades de la línea de comandos que contienen las funcionalidades de ACPI son proporcionadas por el paquete [acpi](https://www.archlinux.org/packages/?name=acpi). Un simple monitor de batería que se aloja en la bandeja de sistema es [batterymon-clone](https://aur.archlinux.org/packages/batterymon-clone/) que puede ser encontrado en [Usuario de Arco Repository](/index.php/AUR "AUR").
 
-**Sugerencia:** Puede encontrar más información en el artículo [ACPI modules](/index.php/ACPI_modules "ACPI modules")
+**Sugerencia:** Puede encontrar más información en el artículo [módulos ACPI](/index.php/ACPI_modules_(Espa%C3%B1ol) "ACPI modules (Español)")
 
 ### Suspensión e hibernación
 
 El sistema se puede suspender manualmente, tanto a la memoria (standby) o al disco (hibernate) a veces, proporciona la forma más eficaz para optimizar la vida de batería, dependiendo de el patrón de uso del portátil. Así mismo, el kernel de Linux soporta relativamente estas operaciones, típicamente algunos ajustes tienen que hacerse antes de iniciar estas operaciones (generalmente debido a drivers problemáticos, módulos o hardware). Las siguientes herramientas proporcionan "wrappers" alrededor de las interfaces del kernel para suspender/reanudar:
 
-*   [Acpid](/index.php/Acpid "Acpid")
+*   [Acpid](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)")
 *   [Uswsusp](/index.php/Uswsusp "Uswsusp")
 
 Éstos se encuentran descritos con más detalle en [Suspende](/index.php?title=Suspende&action=edit&redlink=1 "Suspende (page does not exist)").

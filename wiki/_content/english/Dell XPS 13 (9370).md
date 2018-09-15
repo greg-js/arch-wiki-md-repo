@@ -62,6 +62,22 @@ Note that the `enable_psr=1` kernel parameter appears not to work properly, at l
 
 [Some user support requests indicate that currently-shipping 9370 models may bundle webcams that use UVC 1.5 firmware rather than 1.0](https://www.dell.com/community/Linux-General/Dell-xps-13-9370-Webcam-support/td-p/6032049), which was not supported [prior to kernel 4.17.4](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git/diff/drivers/media/usb/uvc/uvc_video.c?id=v4.17.4&id2=v4.17.3).
 
+For me the system seems to freeze sometime which is due to enable_psr=1, you can either disable enable_psr=0 where you will loose battery life but get no freezes, or enable_psr=2 where you save battery life like enable_psr=1 but without any freezes. enable_psr=1 maximizes batterylife but for me gives the system freezes, hopefully this will get fixed in the future.
+
+To do so with sudo create a file /etc/modprobe.d/1915.conf:
+
+```
+ options i915 enable_psr=2
+
+```
+
+Some other options that save battery life are:
+
+```
+ options i915 enable_psr=2 enable_rc6=7 enable_fbc=1 semaphores=1 lvds_downclock=1 enable_guc_loading=1 enable_guc_submission=1
+
+```
+
 ## Wifi
 
 The Wifi adapter is a Killer card with contains a Qualcomm Atheros QCA6174 module. It should work out of the box with the `ath10k_pci` driver in recent [linux](https://www.archlinux.org/packages/?name=linux) kernels. (In my case) the Wifi firmware sometimes crashes when waking up from suspend. (firmware version `WLAN.RM.4.4.1-00051-QCARMSWP-1`; [dmesg](https://gist.github.com/dsprenkels/eb1c7095385fe16ee9b128ab0834be21)) (In my case) the crash has not again occurred after booting `linux-4.15.7` or newer.

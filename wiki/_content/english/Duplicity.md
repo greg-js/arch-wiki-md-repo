@@ -1,4 +1,8 @@
-Duplicity is a network backup program.
+Related articles
+
+*   [Synchronization and backup programs](/index.php/Synchronization_and_backup_programs "Synchronization and backup programs")
+
+[Duplicity](https://www.nongnu.org/duplicity/) is a network backup program.
 
 It can save snapshots of directories and files to a remote GnuPG encrypted tar file, which acts as a backup repository. Connecting with the remote backup repository can take place through any of the following protocols: rsync, ftp, HSI, WebDAV, Tahoe-LAFS, or Amazon S3.
 
@@ -7,6 +11,7 @@ Backups are granularly incremental, meaning that only changes in files (since th
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 Front-ends](#Front-ends)
 *   [2 Basic Usage](#Basic_Usage)
     *   [2.1 Doing backups](#Doing_backups)
     *   [2.2 Restoring files from backup](#Restoring_files_from_backup)
@@ -17,10 +22,12 @@ Backups are granularly incremental, meaning that only changes in files (since th
 
 ## Installation
 
-[Install](/index.php/Install "Install") [duplicity](https://www.archlinux.org/packages/?name=duplicity) from the [Official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [duplicity](https://www.archlinux.org/packages/?name=duplicity) package.
 
-*   [duply](/index.php/Duply "Duply"), a shell front-end, is available in [AUR](/index.php/AUR "AUR").
-*   [deja-dup](https://www.archlinux.org/packages/?name=deja-dup), an easy-to-use front-end, is available in the [Official repositories](/index.php/Official_repositories "Official repositories"). It provides the command-line tool `deja-dup` and the GTK frontend `deja-dup-preferences`.
+### Front-ends
+
+*   [Duply](/index.php/Duply "Duply"), a shell front-end, is available in [AUR](/index.php/AUR "AUR").
+*   [deja-dup](https://www.archlinux.org/packages/?name=deja-dup), an easy-to-use front-end. It provides the command-line tool `deja-dup` and the GTK frontend `deja-dup-preferences`.
 
 ## Basic Usage
 

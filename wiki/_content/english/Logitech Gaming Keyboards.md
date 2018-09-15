@@ -47,6 +47,8 @@ Some Logitech Gaming Keyboards can work on Linux through Unofficial drivers. The
 *   G213
 *   G410
 *   G413
+*   G512
+*   G513
 *   G610
 *   G810
 *   G910

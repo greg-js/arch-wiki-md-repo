@@ -16,7 +16,7 @@
 
 ## Installation
 
-Install [rsnapshot](https://www.archlinux.org/packages/?name=rsnapshot) from the [Official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [rsnapshot](https://www.archlinux.org/packages/?name=rsnapshot) package.
 
 ## Configuration
 

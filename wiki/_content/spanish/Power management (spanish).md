@@ -17,7 +17,7 @@ También hay muchas herramientas de administración de energía:
 *   [systemd](/index.php/Systemd "Systemd")
 *   [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")
 *   [TLP](/index.php/TLP "TLP")
-*   [acpid](/index.php/Acpid "Acpid")
+*   [acpid](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)")
 
 **Nota:** Los ajustes relativos a la energía que se han establecido en un lugar/con alguna herramienta, pueden ser sobrescritos en otro lugar/con otras herramientas.
 
@@ -49,16 +49,16 @@ La acción especificada puede ser una cualquiera de las siguientes: `ignore`, `p
 
 Si estas opciones no están configuradas, systemd utilizará los valores predeterminados: `HandlePowerKey=poweroff`, `HandleSuspendKey=suspend`, `HandleHibernateKey=hibernate`, y `HandleLidSwitch=suspend`.
 
-En los sistemas que funcionan sin configuración gráfica o solo un simple administrador de ventanas como [i3](/index.php/I3 "I3") o [awesome](/index.php/Awesome "Awesome"), esto puede reemplazar al demonio [acpid](/index.php/Acpid "Acpid") que se utiliza generalmente para administrar estos eventos ACPI.
+En los sistemas que funcionan sin configuración gráfica o solo un simple administrador de ventanas como [i3](/index.php/I3 "I3") o [awesome](/index.php/Awesome "Awesome"), esto puede reemplazar al demonio [acpid](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)") que se utiliza generalmente para administrar estos eventos ACPI.
 
 **Nota:**
 
 *   Ejecute `systemctl restart systemd-logind.service` para que los cambios surtan efecto.
-*   Systemd no puede manejar los eventos de AC y de Batería que realiza ACPI, así que sigue siendo necesario el uso de [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") u otras herramientas similares a [acpid](/index.php/Acpid "Acpid").
+*   Systemd no puede manejar los eventos de AC y de Batería que realiza ACPI, así que sigue siendo necesario el uso de [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") u otras herramientas similares a [acpid](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)").
 
 En la versión actual de systemd, las opciones `Handle*` se aplican a todo el sistema, a menos que sean «inhibidas» (desactivadas temporalmente) por un programa, como un administrador de energía de un entorno de escritorio. Si estos inhibidores no son usados, se puede terminar en una situación en la que systemd suspenda el sistema, para luego, cuando se active el administrador de energía, este lo suspenda de nuevo.
 
-**Advertencia:** Actualmente, los administradores de energía en las nuevas versiones de [KDE](/index.php/KDE "KDE") y [GNOME](/index.php/GNOME "GNOME") son los únicos que poseen los comandos necesarios para «inhibir». Hasta tanto los otros lo hagan, tendrá que configurar manualmente las opciones `Handle` a `ignore` si desea administrar los eventos ACPI con [Xfce](/index.php/Xfce "Xfce"), [acpid](/index.php/Acpid "Acpid") u otros programas.
+**Advertencia:** Actualmente, los administradores de energía en las nuevas versiones de [KDE](/index.php/KDE "KDE") y [GNOME](/index.php/GNOME "GNOME") son los únicos que poseen los comandos necesarios para «inhibir». Hasta tanto los otros lo hagan, tendrá que configurar manualmente las opciones `Handle` a `ignore` si desea administrar los eventos ACPI con [Xfce](/index.php/Xfce "Xfce"), [acpid](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)") u otros programas.
 
 ### Suspensión e hibernación
 

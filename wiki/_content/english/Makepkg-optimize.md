@@ -55,7 +55,7 @@ After [setting up a chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot#
 
 #### Install required packages
 
-First, install [Git](/index.php/Git "Git") and some of the backends for [makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/)'s macros in the chroot:
+First, install [Git](/index.php/Git "Git") and some of the backends for the optimization macros:
 
 ```
 $ arch-nspawn -M /etc/makepkg.conf "$CHROOT"/root pacman -S git graphite openmp upx optipng
@@ -99,11 +99,11 @@ After the first building phase, bind the PGO folder:
 
 ```
 
-Once the package is built and [installed](/index.php/Pacman#Usage.23Additional_commands "Pacman"), test-run its executables.
+Once the package is [installed](/index.php/Pacman#Usage.23Additional_commands "Pacman"), test-run its executables.
 
-Then, for the second building phase, remove cruft but *do not* clean the chroot:
+Then, for the second building phase, remove package cruft but *do not* clean the chroot (do not pass `-c`):
 
-**Note:** If you have rebooted, be sure to rebind the PGO folder!
+**Note:** If you have rebooted, be sure to rebind the PGO folder. Alternatively, use [fstab](/index.php/Fstab "Fstab") to bind these folders persistently.
 
 ```
 $ rm -rf *.pkg.tar.xz pkg src; makechrootpkg -r "$CHROOT" -- --config /etc/makepkg-optimize.conf
