@@ -154,7 +154,7 @@ AutoEnable=true
 
 Then you need to enable the Policy Bluez plugin by adding the `--plugin=policy` flag to the `ExecStart` command in the bluetooth systemd unit file:
 
- `/etc/etc/systemd/system/bluetooth.target.wants/bluetooth.service` 
+ `/etc/systemd/system/bluetooth.service.d/policy.conf` 
 ```
 [Service]
 ExecStart=
@@ -179,7 +179,7 @@ Enable=Source
 
 Then enable the A2DP Bluez plugin by adding the `--plugin=a2dp` flag to the `ExecStart` command in the bluetooth systemd unit file:
 
- `/etc/etc/systemd/system/bluetooth.target.wants/bluetooth.service` 
+ `/etc/systemd/system/bluetooth.service.d/a2dp.conf` 
 ```
 [Service]
 ExecStart=

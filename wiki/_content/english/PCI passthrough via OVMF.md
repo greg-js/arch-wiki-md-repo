@@ -432,7 +432,7 @@ When dealing with applications that require large amounts of memory, memory late
 
 #### Transparent huge pages
 
-QEMU will use 2MiB sized transparent huge pages automatically without any explicit configuration in QEMU or Libvirt, subject to some important caveats. When using VFIO the pages are locked in at boot time and transparent huge pages are allocated up front when the VM first boots. If the kernel memory is highly fragmented, or the VM is using a majority of the remaining free memory, it is likely that the kernel will not have enough 2MiB pages to fully satisfy the allocation. In such a case, it silently fails by using a mix of 2MiB and 4KiB pages. Since the pages are locked in VFIO mode, the kernel will not be able to convert those 4KiB pages to huge after the VM starts either. The number of available 2MiB huge pages available to THP is the same as via the **Dynamic huge pages** mechanism described in the following sections.
+QEMU will use 2MiB sized transparent huge pages automatically without any explicit configuration in QEMU or Libvirt, subject to some important caveats. When using VFIO the pages are locked in at boot time and transparent huge pages are allocated up front when the VM first boots. If the kernel memory is highly fragmented, or the VM is using a majority of the remaining free memory, it is likely that the kernel will not have enough 2MiB pages to fully satisfy the allocation. In such a case, it silently fails by using a mix of 2MiB and 4KiB pages. Since the pages are locked in VFIO mode, the kernel will not be able to convert those 4KiB pages to huge after the VM starts either. The number of available 2MiB huge pages available to THP is the same as via the [#Dynamic huge pages](#Dynamic_huge_pages) mechanism described in the following sections.
 
 To check how much memory THP is using globally:
 
@@ -450,9 +450,9 @@ AnonHugePages:   8087552 kB
 
 ```
 
-In this example, the VM was allocated 8388608KiB of memory, but only 8087552KiB was available via THP. The remaining 301056KiB are allocated as 4KiB pages. There is no indication or warning when partial allocations occur. As such, THP's effectiveness is very much dependent on the host system's memory fragmentation at the time of VM startup. If this trade off is unacceptable or strict guarantees are required, **static huge pages** is recommended as described in the next section.
+In this example, the VM was allocated 8388608KiB of memory, but only 8087552KiB was available via THP. The remaining 301056KiB are allocated as 4KiB pages. Aside from manually checking, there is no indication when partial allocations occur. As such, THP's effectiveness is very much dependent on the host system's memory fragmentation at the time of VM startup. If this trade off is unacceptable or strict guarantees are required, [#Static huge pages](#Static_huge_pages) is recommended.
 
-Arch kernels have THP compiled in and enabled by default with **/sys/kernel/mm/transparent_hugepage/enabled** set to **madvise** mode.
+Arch kernels have THP compiled in and enabled by default with `/sys/kernel/mm/transparent_hugepage/enabled` set to `madvise` mode.
 
 #### Static huge pages
 

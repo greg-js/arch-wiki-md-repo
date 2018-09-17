@@ -94,7 +94,7 @@ DNS=91.239.100.100 89.233.43.71
 
 If *systemd-resolved* does not receive DNS server addresses from the [network manager](/index.php/Network_manager "Network manager") and no DNS servers are configured [manually](#Manually) then *systemd-resolved* falls back to the fallback DNS addresses to ensure that DNS resolution always works.
 
-**Note:** Currently *systemd-resolved* uses [Google DNS](/index.php/Alternative_DNS_services#Google "Alternative DNS services") as the fallback DNS.
+**Note:** Since [systemd](https://www.archlinux.org/packages/?name=systemd) 239.2-1 fallback DNS is set to [Cloudflare](/index.php/Alternative_DNS_services#Cloudflare "Alternative DNS services"), [Quad9 without filtering](/index.php/Alternative_DNS_services#Quad9 "Alternative DNS services") (and without DNSSEC) and [Google](/index.php/Alternative_DNS_services#Google "Alternative DNS services") DNS servers, it that order. [[1]](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/systemd&id=1129c0e187a3f81c2bf3737a4870f7adb0f81c23)
 
 The addresses can be changed by setting `FallbackDNS=` in [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5). E.g.:
 
@@ -114,7 +114,7 @@ FallbackDNS=
 
 #### DNSSEC
 
-[DNSSEC](/index.php/DNSSEC "DNSSEC") validation in disabled in the [systemd](https://www.archlinux.org/packages/?name=systemd) package ([FS#59391](https://bugs.archlinux.org/task/59391)). It can be enabled by setting `DNSSEC=true`:
+By default [DNSSEC](/index.php/DNSSEC "DNSSEC") validation will only be enabled if the upstream DNS server supports it. If you want to always validate DNSSEC, thus breaking DNS resolution with name servers that do not support it, set `DNSSEC=true`:
 
  `/etc/systemd/resolved.conf.d/dnssec.conf` 
 ```
@@ -167,7 +167,7 @@ The resolver provides [hostname](/index.php/Hostname "Hostname") resolution usin
 mDNS will only be activated for the connection if both the systemd-resolved's global setting (`MulticastDNS=` in [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5)) and the [network manager's](/index.php/Network_manager "Network manager") per-connection setting is enabled. By default *systemd-resolved* enables mDNS responder, but both [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [NetworkManager](/index.php/NetworkManager "NetworkManager") do not enable it for connections.
 
 *   For [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") the setting is `MulticastDNS=` in the `[Network]` section. See [systemd.network(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5).
-*   For [NetworkManager](/index.php/NetworkManager "NetworkManager") the setting is `mdns=` in the `[connection]` section, see [nm-settings(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nm-settings.5). The values are `0` - disabled, `1` - resolver only, `2` - resolver and responder. [[1]](https://cgit.freedesktop.org/NetworkManager/NetworkManager/tree/libnm-core/nm-setting-connection.h#n102)
+*   For [NetworkManager](/index.php/NetworkManager "NetworkManager") the setting is `mdns=` in the `[connection]` section, see [nm-settings(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nm-settings.5). The values are `0` - disabled, `1` - resolver only, `2` - resolver and responder. [[2]](https://cgit.freedesktop.org/NetworkManager/NetworkManager/tree/libnm-core/nm-setting-connection.h#n102)
 
 **Tip:** The default for all [NetworkManager](/index.php/NetworkManager "NetworkManager") connections can be set by creating a configuration file in `/etc/NetworkManager/conf.d/` and setting `connection.mdns=` in the `[connection]` section. For example the following will enable mDNS resolver for all connections: `/etc/NetworkManager/conf.d/mdns.conf` 
 ```

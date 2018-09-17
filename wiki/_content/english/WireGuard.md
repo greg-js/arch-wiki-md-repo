@@ -18,9 +18,13 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
     *   [3.2 Client (tunnel all traffic)](#Client_.28tunnel_all_traffic.29)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 DKMS module not available](#DKMS_module_not_available)
+    *   [4.2 Routes are periodically reset](#Routes_are_periodically_reset)
+    *   [4.3 Connection loss with NetworkManager](#Connection_loss_with_NetworkManager)
+        *   [4.3.1 Using resolvconf](#Using_resolvconf)
+        *   [4.3.2 Using dnsmasq](#Using_dnsmasq)
+        *   [4.3.3 Using systemd-resolved](#Using_systemd-resolved)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Store private keys in encrypted form](#Store_private_keys_in_encrypted_form)
-    *   [5.2 Handling Network Manager DNS updates](#Handling_Network_Manager_DNS_updates)
 
 ## Installation
 
@@ -202,6 +206,52 @@ you probably miss the linux headers.
 
 These headers are available in [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) or [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers) depending of the kernel installed on your system.
 
+### Routes are periodically reset
+
+Make sure that [NetworkManager](/index.php/NetworkManager "NetworkManager") is not managing your Wireguard interface:
+
+ `/etc/NetworkManager/conf.d/unmanaged.conf` 
+```
+[keyfile]
+unmanaged-devices=interface-name:wg0
+```
+
+### Connection loss with NetworkManager
+
+On desktop, connection loss can be experienced when all the traffic is tunnelled through a Wireguard interface: typically, the connection is seemingly lost after a while or upon new connection to an access point.
+
+By default `wg-quick` uses a resolvconf provider such as [openresolv](/index.php/Openresolv "Openresolv") to register new [DNS](/index.php/DNS "DNS") entries (i.e. `DNS` keyword in the configuration file). However [NetworkManager](/index.php/NetworkManager "NetworkManager") does not use resolvconf by default: every time a new [DHCP](/index.php/DHCP "DHCP") lease is acquired, [NetworkManager](/index.php/NetworkManager "NetworkManager") overwrites the global DNS addresses with the DHCP-provided ones which might not be available through the tunnel.
+
+#### Using resolvconf
+
+If resolvconf is already used by the system and you still experience connection loss, make sure NetworkManager is configured to use it: [NetworkManager#Use_openresolv](/index.php/NetworkManager#Use_openresolv "NetworkManager").
+
+#### Using dnsmasq
+
+See [Dnsmasq#openresolv](/index.php/Dnsmasq#openresolv "Dnsmasq") for configuration.
+
+#### Using systemd-resolved
+
+At the time of writing (Sept. 2018), the resolvconf-compatible mode offered by [systemd-resolvconf](https://www.archlinux.org/packages/?name=systemd-resolvconf) does not work with `wg-quick`. However `systemd-resolved` can still be used by `wg-quick` through the `PostUp` hook. First make sure that NetworkManager is configured with `systemd-resolved`: [NetworkManager#systemd-resolved](/index.php/NetworkManager#systemd-resolved "NetworkManager") and then alter the tunnel configuration:
+
+ `/etc/wireguard/wg0.conf` 
+```
+[Interface]
+Address = 10.0.0.2/24  # The client IP from wg0server.conf with the same subnet mask
+PrivateKey = [CLIENT PRIVATE KEY]
+PostUp = resolvectl domain %i "~."; resolvectl dns %i 10.0.0.1; resolvectl dnssec %i yes
+
+[Peer]
+PublicKey = [SERVER PUBLICKEY]
+AllowedIPs = 0.0.0.0/0, ::0/0
+Endpoint = [SERVER ENDPOINT]:51820
+PersistentKeepalive = 25
+```
+
+Setting `"~."` as a domain name is necessary for `systemd-resolved` to give priority to the newly available DNS server.
+
+No `PostDown` key is necessary as `systemd-resolved` automatically revert all parameters when `wg0` is torn down.
+
 ## Tips and tricks
 
 ### Store private keys in encrypted form
@@ -214,43 +264,3 @@ It may be desirable to store private keys in encrypted form, such as through use
 ```
 
 where user is your username. See the `wg-quick(8)` man page for more details.
-
-### Handling Network Manager DNS updates
-
-By default, [Network Manager](/index.php/Network_Manager "Network Manager") tries to periodically update [DNS](/index.php/DNS "DNS") entries according to [DHCP](/index.php/DHCP "DHCP") settings. This can lead to connectivity and/or privacy problems. A seamless way around this is to use the per-interface [DNS](/index.php/DNS "DNS") capabilities provided by [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved").
-
-First we need to activate [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"):
-
-```
- $ sudo systemctl enable --now systemd-resolved
-
-```
-
-Then we alter Network Manager's settings to ignore the Wireguard interface (here `wg0`) and to use `systemd-resolved`:
-
- `/etc/NetworkManager/NetworkManager.conf` 
-```
-[main]
-dns=systemd-resolved
-
-[keyfile]
-unmanaged-devices=interface-name:wg0
-```
-
-Finally we update Wireguard's settings to explicitly set DNS through `systemd-resolved`:
-
- `/etc/wireguard/wg0.conf` 
-```
-[Interface]
-Address = 10.0.0.2/24  # The client IP from wg0server.conf with the same subnet mask
-PrivateKey = [CLIENT PRIVATE KEY]
-PostUp = resolvectl domain %i "~."; resolvectl dns %i 10.0.0.1
-
-[Peer]
-PublicKey = [SERVER PUBLICKEY]
-AllowedIPs = 0.0.0.0/0, ::0/0
-Endpoint = [SERVER ENDPOINT]:51820
-PersistentKeepalive = 25
-```
-
-Note that setting `"~."` as a domain name is necessary for `systemd-resolved` to give priority to the newly available DNS server. No `PostDown` key is necessary as `systemd-resolved` automatically revert all parameters when `wg0` is torn down.

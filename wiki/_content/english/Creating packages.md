@@ -211,7 +211,7 @@ Please read [AUR User Guidelines#Submitting packages](/index.php/AUR_User_Guidel
 3.  Copy over the prototype `/usr/share/pacman/PKGBUILD.proto` and rename it to `PKGBUILD` in a temporary working directory.
 4.  Edit the `PKGBUILD` according to the needs of your package.
 5.  Run `makepkg` and check whether the package builds correctly.
-6.  If not, repeat the last two steps.
+6.  If not, repeat the previous two steps.
 
 ### Warnings
 

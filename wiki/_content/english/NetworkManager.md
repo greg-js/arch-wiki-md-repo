@@ -432,9 +432,8 @@ Scripts will receive the following arguments:
 
 If the above is working, then this section is not relevant. However, there is a general problem related to running dispatcher scripts which take longer to be executed. Initially an internal timeout of three seconds only was used. If the called script did not complete in time, it was killed. Later the timeout was extended to about 20 seconds (see the [Bugtracker](https://bugzilla.redhat.com/show_bug.cgi?id=982734) for more information). If the timeout still creates the problem, a work around may be to modify the dispatcher service file `/usr/lib/systemd/system/NetworkManager-dispatcher.service` to remain active after exit:
 
- `/etc/systemd/system/NetworkManager-dispatcher.service` 
+ `/etc/systemd/system/NetworkManager-dispatcher.service.d/remain_after_exit.conf` 
 ```
-.include /usr/lib/systemd/system/NetworkManager-dispatcher.service
 [Service]
 RemainAfterExit=yes
 ```
@@ -447,7 +446,7 @@ Now start and enable the modified `NetworkManager-dispatcher` service.
 
 #### Mount remote folder with sshfs
 
-As the script is run in a very restrictive environment, you have to export `SSH_AUTH_SOCK` in order to connect to your SSH agent. There are different ways to accomplish this, see [this message](https://bbs.archlinux.org/viewtopic.php?pid=1042030#p1042030) for more information. The example below works with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"), and will ask you for the password if not unlocked already. In case NetworkManager connects automatically on login, it is likely *gnome-keyring* has not yet started and the export will fail (hence the sleep). The `UUID` to match can be found with the command `nmcli con status` or `nmcli con list`.
+As the script is run in a very restrictive environment, you have to export `SSH_AUTH_SOCK` in order to connect to your SSH agent. There are different ways to accomplish this, see [this message](https://bbs.archlinux.org/viewtopic.php?pid=1042030#p1042030) for more information. The example below works with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"), and will ask you for the password if not unlocked already. In case NetworkManager connects automatically on login, it is likely *gnome-keyring* has not yet started and the export will fail (hence the sleep). The `UUID` to match can be found with the command `nmcli connection status` or `nmcli connection list`.
 
 ```
 #!/bin/sh
@@ -481,7 +480,7 @@ The following script will check if we connected to a specific network and mount 
 ```
 #!/bin/sh
 
-# Find the connection UUID with "nmcli con show" in terminal.
+# Find the connection UUID with "nmcli connection show" in terminal.
 # All NetworkManager connection types are supported: wireless, VPN, wired...
 if [ "$2" = "up" ]; then
   if [ "$CONNECTION_UUID" = "uuid" ]; then
@@ -550,13 +549,13 @@ interface=$1 status=$2
 case $status in
   up|vpn-down)
     if iwgetid | grep -qs ":\"$ESSID\""; then
-      nmcli con up id "$VPN_NAME"
+      nmcli connection up id "$VPN_NAME"
     fi
     ;;
   down)
     if iwgetid | grep -qs ":\"$ESSID\""; then
-      if nmcli con show --active | grep "$VPN_NAME"; then
-        nmcli con down id "$VPN_NAME"
+      if nmcli connection show --active | grep "$VPN_NAME"; then
+        nmcli connection down id "$VPN_NAME"
       fi
     fi
     ;;
@@ -590,13 +589,13 @@ interface=$1 status=$2
 case $status in
   up|vpn-down)
     if iwgetid | grep -qs ":\"$ESSID\""; then
-      nmcli con up id "$VPN_NAME" passwd-file /path/to/passwd-file
+      nmcli connection up id "$VPN_NAME" passwd-file /path/to/passwd-file
     fi
     ;;
   down)
     if iwgetid | grep -qs ":\"$ESSID\""; then
-      if nmcli con show --active | grep "$VPN_NAME"; then
-        nmcli con down id "$VPN_NAME"
+      if nmcli connection show --active | grep "$VPN_NAME"; then
+        nmcli connection down id "$VPN_NAME"
       fi
     fi
     ;;

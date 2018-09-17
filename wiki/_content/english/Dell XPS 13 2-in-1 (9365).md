@@ -57,7 +57,7 @@ You need to install [iio-sensor-proxy](https://www.archlinux.org/packages/?name=
 
 ### Fingerprint sensor
 
-The fingerprint sensor on this computer is not yet supported. [[4]](https://www.dell.com/community/Linux-Developer-Systems/XPS-13-Fingerprint-reader-Linux-support/td-p/5090723) . There is an open [fprint](/index.php/Fprint "Fprint") bug opened to track progress on this issue [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=99462)
+The fingerprint sensor on this computer is not yet supported. [[4]](https://www.dell.com/community/Linux-Developer-Systems/XPS-13-Fingerprint-reader-Linux-support/td-p/5090723) . There is an open [fprint](/index.php/Fprint "Fprint") bug opened to track progress on this issue [[5]](https://gitlab.freedesktop.org/libfprint/libfprint/issues/52)
 
 ### Soundcard turning off and coil whine
 

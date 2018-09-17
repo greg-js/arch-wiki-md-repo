@@ -55,7 +55,7 @@ Version: ThinkPad X1 Carbon 6th
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes | psmouse, rmi_smbus, i2c_i801 |
 | Camera | Yes | uvcvideo |
 | Fingerprint Reader | No** |  ? |
-| [Power management](/index.php/Power_management "Power management") | Yes |  ? |
+| [Power management](/index.php/Power_management "Power management") | Yes*** |  ? |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes | btusb |
 | microSD card reader | Yes | scsi_mod |
 | Keyboard Backlight | Yes | thinkpad_acpi |
@@ -64,6 +64,8 @@ Version: ThinkPad X1 Carbon 6th
 * no working linux pcie driver for Fibocom L850-GL [forum link](https://forums.lenovo.com/t5/Linux-Discussion/X1C-gen-6-Fibocom-L850-GL-Ubuntu-18-04/m-p/4078413) - also see [this forum](https://forums.lenovo.com/t5/Linux-Discussion/Linux-support-for-WWAN-LTE-L850-GL-on-T580-T480/td-p/4067969) for more progress.
 
 ** [the Validity90 project](https://github.com/nmikhailov/Validity90) began reverse engineering the reader, but updates have stopped recently.
+
+*** S3 suspend requires changes to BIOS settings - see section on [suspend issues](#Suspend_issues) for details.
 
 ## BIOS
 

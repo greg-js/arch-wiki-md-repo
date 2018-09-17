@@ -1,3 +1,5 @@
+**Состояние перевода:** На этой странице представлен перевод статьи [MATE](/index.php/MATE "MATE"). Дата последней синхронизации: 21 января 2015\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=MATE&diff=0&oldid=357540).
+
 Related articles
 
 *   [GNOME (Русский)](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)")

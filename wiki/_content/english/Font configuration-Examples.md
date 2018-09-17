@@ -11,8 +11,7 @@ Configurations can vary to a degree. Please post Fontconfig configurations with 
 *   [5 Default fonts](#Default_fonts)
     *   [5.1 Japanese](#Japanese)
     *   [5.2 Chinese](#Chinese)
-*   [6 Patched packages](#Patched_packages)
-*   [7 See also](#See_also)
+*   [6 See also](#See_also)
 
 ## Hinted fonts
 
@@ -369,22 +368,6 @@ or
 </fontconfig>
 
 ```
-
-## Patched packages
-
-**Warning:** AUR packages are maintained separately from applications in the [official repositories](/index.php/Official_repositories "Official repositories"). The whole graphical system can become inoperable, if the user-installed core graphical libraries become incompatible.
-
-**Note:**
-
-*   Configuration is usually necessary.
-*   The new font rendering will not be available until applications restart.
-*   Applications which [statically link](https://en.wikipedia.org/wiki/Static_library "wikipedia:Static library") to a library will not be affected by the system library, or patches applied to it.
-
-*   **freetype2-ubuntu** — Font configuration shipped with Ubuntu. [[1]](http://bazaar.launchpad.net/~ubuntu-branches/ubuntu/wily/fontconfig/wily/files/head:/debian/patches/) [[2]](http://bazaar.launchpad.net/~ubuntu-branches/ubuntu/wily/freetype/wily/files/head:/debian/patches-freetype/)
-
-	[https://launchpad.net/ubuntu/+source/freetype](https://launchpad.net/ubuntu/+source/freetype) || [freetype2-ubuntu](https://aur.archlinux.org/packages/freetype2-ubuntu/) [fontconfig-ubuntu](https://aur.archlinux.org/packages/fontconfig-ubuntu/)
-
-To restore the original packages, reinstall [freetype2](https://www.archlinux.org/packages/?name=freetype2), [cairo](https://www.archlinux.org/packages/?name=cairo), and [fontconfig](https://www.archlinux.org/packages/?name=fontconfig) as dependencies (use the `--asdeps` flag with pacman when reinstalling). Include [lib32-cairo](https://www.archlinux.org/packages/?name=lib32-cairo), [lib32-fontconfig](https://www.archlinux.org/packages/?name=lib32-fontconfig), and [lib32-freetype2](https://www.archlinux.org/packages/?name=lib32-freetype2) if you also installed 32-bit versions.
 
 ## See also
 

@@ -11,8 +11,8 @@ The following article briefly explains all necessary procedures to install a ful
     *   [4.1 Booting the Installation Media](#Booting_the_Installation_Media)
     *   [4.2 Post installation](#Post_installation)
 *   [5 Fixes](#Fixes)
-    *   [5.1 Internal Keyboard](#Internal_Keyboard)
-    *   [5.2 Sound](#Sound)
+    *   [5.1 Sound](#Sound)
+    *   [5.2 Internal Keyboard](#Internal_Keyboard)
     *   [5.3 Trackpad](#Trackpad)
 
 ## Write Protection
@@ -70,23 +70,21 @@ Unless RW protection has been voided and SeaBios has been set to boot as default
 
 ## Fixes
 
-Due to the recentness and unpopularity of the new Intel Braswell Chipset, a fair amount of issues must be fixed manually.
+Due to the unpopularity of the Intel Braswell Chipset, a number of issues may be encountered which require manual fixes.
 
-The following features are not expected to work out of box :
+As of [linux](https://www.archlinux.org/packages/?name=linux) 4.12.4 the internal keyboard and trackpad now work out of the box without the need for any additional kernel patches. The following features are not expected to work out of the box:
 
-*   Internal Keyboard
-*   Trackpad
 *   Sound/Audio
-
-Fixing those issues will require the user to compile and apply the patched [linux-galliumos](https://aur.archlinux.org/packages/linux-galliumos/) kernel and follow the proceeding steps below:
-
-### Internal Keyboard
-
-The internal keyboard becomes fully functional after the kernel has been patched, with the exception of hotkeys, which must be configured trough the [xkeyboard-config-chromebook](https://aur.archlinux.org/packages/xkeyboard-config-chromebook/) package.
 
 ### Sound
 
-To fix audio/sound output, install the [galliumos-braswell-config](https://aur.archlinux.org/packages/galliumos-braswell-config/) package using the `pacman --force` parameter.
+To fix audio/sound output, install the Braswell config files from [GalliumOS](https://github.com/GalliumOS/galliumos-braswell). Installing the [galliumos-braswell-config](https://aur.archlinux.org/packages/galliumos-braswell-config/) package using the `pacman --force` parameter automates this process.
+
+Currently, the internal microphone does not function and there is no known workaround.
+
+### Internal Keyboard
+
+The internal keyboard should be fully functional when using the latest kernel, with the exception of the top row hotkeys which are mapped to the function keys by default. See [Chrome_OS_devices#Hotkeys](/index.php/Chrome_OS_devices#Hotkeys "Chrome OS devices") for methods to implement the Chrome OS keyboard hotkeys.
 
 ### Trackpad
 
@@ -105,13 +103,25 @@ EndSection
 
 ```
 
-For [libinput](https://www.archlinux.org/packages/?name=libinput) support, add the following hwdb configuration under `/etc/udev/hwdb.d/99-touchpad-pressure.hwdb`
+To fix trackpad sensitivity issues when using the [libinput](https://www.archlinux.org/packages/?name=libinput) driver, add the following local device quirk under `/etc/libinput/local-overrides.quirks`
 
- `/etc/udev/hwdb.d/99-touchpad-pressure.hwdb` 
+ `/etc/libinput/local-overrides.quirks` 
 ```
-libinput:name:*Elan Touchpad:dmi:*svnGOOGLE:*pnEdgar*
- LIBINPUT_ATTR_PRESSURE_RANGE=1:15
+MatchUdevType=touchpad
+MatchName=*Elan Touchpad
+MatchDMIModalias=dmi:*svnGOOGLE:*pnEdgar*
+AttrPressureRange=4:3
 
 ```
 
-After the XServer has been restarted, the changes will take place
+After the XServer has been restarted, the changes will take place.
+
+When using hibernation ([Suspend_and_hibernate#Hibernation](/index.php/Suspend_and_hibernate#Hibernation "Suspend and hibernate")) an issue may be encountered where the module required for the touchpad `elan_i2c` is not loaded on resuming, meaning that the touchpad won't be operable. A workaround for this is to enable the required module during the [initramfs stage](/index.php/Arch_boot_process#initramfs "Arch boot process").
+
+ `/etc/mkinitcpio.conf` 
+```
+MODULES=(... elan_i2c ...)
+
+```
+
+After the recreating the initramfs image and rebooting the touchpad should now be working on resuming from hibernation.

@@ -297,7 +297,7 @@ To use native SMB transport encryption by default, set the `smb encrypt` paramet
 
 See [smb.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/smb.conf.5) for more information.
 
-When [mounting](#Manual_mounting) a share, specify the `seal` mount option to force usage of encryption.
+**Tip:** When [mounting](#Manual_mounting) a share, specify the `seal` mount option to force usage of encryption.
 
 #### Disable printer sharing
 

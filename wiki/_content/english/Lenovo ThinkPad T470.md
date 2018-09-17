@@ -32,7 +32,11 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
 
 ## Firmware (e.g. bios and peripherals)
 
-As of writing, the current BIOS version is 1.51\. By visiting the downloads section (T470) an ISO can be downloaded and burned to disk which will perform the update [from Lenovo](http://pcsupport.lenovo.com/gb/en/products/laptops-and-netbooks/thinkpad-t-series-laptops/thinkpad-t470/downloads). Or [extracted and copied on a USB Stick](http://www.thinkwiki.org/wiki/BIOS_Upgrade#Booting_from_a_USB_Flash_drive).
+As of writing, the current BIOS version is 1.52. The T470 is one of the models supported officially by Lenovo through the [fwupd](/index.php/Fwupd "Fwupd") firmware update program. If you are using a UEFI boot scheme, this is probably the easiest and most officially supported way to keep all the firmware programs updated.
+
+If it does not work for you or if you prefer these methods, it is still possible to do the BIOS update by booting on a specially crafted disk or USB stick. By visiting the downloads section (T470) an ISO can be downloaded and burned to disk which will perform the update [from Lenovo](http://pcsupport.lenovo.com/gb/en/products/laptops-and-netbooks/thinkpad-t-series-laptops/thinkpad-t470/downloads). Or [extracted and copied on a USB Stick](http://www.thinkwiki.org/wiki/BIOS_Upgrade#Booting_from_a_USB_Flash_drive).
+
+Another option that works if you got a CD-ISO from Lenovo is to follow [this guide](https://rikkonsecurity.wordpress.com/2017/06/16/how-to-update-thinkpad-t470-bios-from-linux-using-usb/) and convert the ISO to an IMG prior to dd-ing it to a USB stick.
 
 ## Kernel and hardware support
 

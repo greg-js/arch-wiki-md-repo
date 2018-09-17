@@ -87,6 +87,7 @@ install CD version
 *   Not working: TPM, Color calibrator, UEFI flash
 
  | HDMI audio requires nvhda module |
+| [Lenovo ThinkPad P52](/index.php/Lenovo_ThinkPad_P52 "Lenovo ThinkPad P52") | 2018.09 | Yes | Yes | Yes | Yes | Unknown | Suspend working, hibernate not tested | NA |
 
 #### T series
 
@@ -348,7 +349,8 @@ Solution: Update BIOS (at least 1.08).
 
 ### Lenovo IdeaPad Y700
 
-*   The subwoofer does not work out of the box and it seems that there is no solution yet.
+*   The subwoofer does not work out of the box.
+    *   Updating to Kernel 4.15 or later seems to fix the subwoofer.
 
 ## See also
 

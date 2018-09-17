@@ -161,6 +161,10 @@ Go to Settings Manager → Appearance → Fonts, and change the DPI parameter. T
 
 To enlarge icons in system tray, right-click on it (aim for empty space / top pixels / bottom pixels, so that you will not activate icons themselves) → “Properties” → set “Maximum icon size” to 32, 48 or 64.
 
+Xfwm comes with two hidpi themes: Default-hdpi and Default-xhdpi. You can set them under Settings Manager → Window Manager → Style → Theme.
+
+You can set the default icon sizes of gtk2 menus, buttons and so on under Settings Manager → Settings Editor → xsettings → Gtk → IconSizes, with a line like this: `gtk-large-toolbar=96,96:gtk-small-toolbar=64,64:gtk-menu=64,64:gtk-dialog=96,96:gtk-button=64,64:gtk-dnd=64,64`. "gtk-dnd" is for the icons during drag'n'drop, the others are quite self-explanatory. You can use any value your icon theme supports.
+
 ### Cinnamon
 
 Has good support out of the box.
@@ -226,6 +230,13 @@ If automatic detection of DPI does not produce the desired effect, scaling can b
 *   `QT_SCALE_FACTOR` scales fonts, but `QT_SCREEN_SCALE_FACTORS` does not scale fonts.
 *   If you also set the font DPI manually in *xrdb* to support other toolkits, `QT_SCALE_FACTORS` will give you huge fonts.
 *   If you have multiple screens of differing DPI ie: [#Side display](#Side_display) you may need to do `QT_SCREEN_SCALE_FACTORS="2;2"`
+
+An [alternative](https://bugreports.qt.io/browse/QTBUG-53022) is e.g.:
+
+```
+QT_FONT_DPI=96 vym
+
+```
 
 ### GDK 3 (GTK+ 3)
 

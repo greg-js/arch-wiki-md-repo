@@ -162,11 +162,13 @@ Just like other network interfaces, the wireless ones are controlled with *ip* f
 
 Managing a wireless connection requires a basic set of tools. Either use a [network manager](/index.php/Network_manager "Network manager") or use one of the following directly:
 
-| Software | Package | [WEXT](https://wireless.wiki.kernel.org/en/developers/documentation/wireless-extensions) | [nl80211](https://wireless.wiki.kernel.org/en/developers/documentation/nl80211) | WEP | WPA/WPA2 | Note |
-| [wireless_tools](http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html) | [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) | Yes | No | Yes | No | deprecated |
+| Software | Package | [WEXT](https://wireless.wiki.kernel.org/en/developers/documentation/wireless-extensions) | [nl80211](https://wireless.wiki.kernel.org/en/developers/documentation/nl80211) | WEP | WPA/WPA2 |
+| [wireless_tools](http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html) | [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) | Yes | No | Yes | No |
 | [iw](https://wireless.kernel.org/en/users/Documentation/iw) | [iw](https://www.archlinux.org/packages/?name=iw) | No | Yes | Yes | No |
 | [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant") | [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) | Yes | Yes | Yes | Yes |
 | [iwd](/index.php/Iwd "Iwd") | [iwd](https://www.archlinux.org/packages/?name=iwd) | No | Yes | Yes | Yes |
+
+1.  Deprecated.
 
 Note that some cards only support WEXT.
 

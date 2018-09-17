@@ -21,7 +21,7 @@ For more details on how EncFS compares to other disk encryption solution, see [D
 *   [3 Usage](#Usage)
     *   [3.1 Changing the password](#Changing_the_password)
 *   [4 User friendly mounting](#User_friendly_mounting)
-    *   [4.1 Mount using Gnome Encfs Manager](#Mount_using_Gnome_Encfs_Manager)
+    *   [4.1 Gnome Encfs Manager](#Gnome_Encfs_Manager)
     *   [4.2 Mount using gnome-encfs](#Mount_using_gnome-encfs)
     *   [4.3 Mount using CryptKeeper trayicon](#Mount_using_CryptKeeper_trayicon)
     *   [4.4 Mount using encfsui](#Mount_using_encfsui)
@@ -89,11 +89,11 @@ In this example, `~/.*name*` is the path to the directory which contains the enc
 
 ## User friendly mounting
 
-### Mount using Gnome Encfs Manager
+### Gnome Encfs Manager
 
 The [Gnome Encfs Manager](http://libertyzero.com/GEncfsM/) is an easy to use manager and mounter for encfs stashes featuring per-stash configuration, Gnome Keyring support, a tray menu inspired by Cryptkeeper but using the AppIndicator API and lots of unique features.
 
-Both [gnome-encfs-manager](https://aur.archlinux.org/packages/gnome-encfs-manager/) and a slightly more up to date [gnome-encfs-manager-bzr](https://aur.archlinux.org/packages/gnome-encfs-manager-bzr/) are available.
+Both [gnome-encfs-manager-bin](https://aur.archlinux.org/packages/gnome-encfs-manager-bin/) and a slightly more up to date [gnome-encfs-manager-bzr](https://aur.archlinux.org/packages/gnome-encfs-manager-bzr/) are available.
 
 ### Mount using gnome-encfs
 

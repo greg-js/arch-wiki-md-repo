@@ -172,9 +172,9 @@ $ gsettings set org.nemo.desktop show-desktop-icons false
 
 ### Themes and icons
 
-Linux Mint styled themes and icons can be installed with the [mint-x-theme](https://aur.archlinux.org/packages/mint-x-theme/) and [mint-x-icons](https://aur.archlinux.org/packages/mint-x-icons/) packages. The themes can be edited in `Settings → Themes → Other settings`.
+Linux Mint styled themes and icons can be installed with the [mint-themes](https://aur.archlinux.org/packages/mint-themes/), [mint-x-icons](https://aur.archlinux.org/packages/mint-x-icons/), and [mint-y-icons](https://aur.archlinux.org/packages/mint-y-icons/) packages. The themes can be edited in `Settings → Themes → Other settings`.
 
-Official Linux Mint Cinnamon themes can be installed using the [mint-cinnamon-themes](https://aur.archlinux.org/packages/mint-cinnamon-themes/) package.
+Official Linux Mint Cinnamon themes are also included in the [mint-themes](https://aur.archlinux.org/packages/mint-themes/) package.
 
 Setting the desktop theme via shell can be done like this:
 

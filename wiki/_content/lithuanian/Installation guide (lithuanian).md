@@ -1,171 +1,296 @@
-Čia papasakosiu, kaip greitai įsidiegti Arch linux (toliau Arch) į kompiuterį. Kol kas remiuosi tik [angliška](/index.php/Quick_Archlinux_Install "Quick Archlinux Install") šio puslapio versija.
+Šis dokumentas, tai [Arch Linux](/index.php/Arch_Linux_(Lietuvi%C5%A1kai) "Arch Linux (Lietuviškai)") įdiegimo iš "live" sistemos naudojantis oficialiu įdiegimo atvaizdu vadovas. Prieš diegiant, patariama paskaityti [DUK](/index.php/FAQ_(Lietuvi%C5%A1kai) "FAQ (Lietuviškai)"). Dėl pačio dokumento supratimo, žiūrėti [Help:Reading](/index.php/Help:Reading "Help:Reading"). Tiksliau, kodo pavyzdžiai gali turėti išryškintas vietas (formatuotas kaip `*italics*`) kurias reikės pakeisti patiems.
+
+Dėl detalesnių instrukcijų, žiūrėti atitinkamus [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") straipsnius arba įvairių programų [man puslapius](/index.php/Man_page "Man page"), į kuriuos bus nukreipimai šiame vadove. Norint interaktyvios pagalbos, eiti į [IRC kanalą](/index.php/IRC_channel "IRC channel") ir/arba [forumus](https://bbs.archlinux.org/).
+
+Arch Linux turėtų veikti bet kokioje [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64") architektūros mašinoje turinčioje bent 512 MB RAM. Pradinis diegimas su paketais iš [base](https://www.archlinux.org/groups/x86_64/base/) grupės turėtų užimti mažiau nei 800 MB disko vietos. Kadangi diegimo procese reikia gauti paketų iš nuotolinės saugyklos, šiame vadove daroma prielaida kad yra vikiantis interneto ryšys.
 
 ## Contents
 
-*   [1 Įžanga](#.C4.AE.C5.BEanga)
-*   [2 Būtina](#B.C5.ABtina)
-*   [3 Įdiegimas iš Arch kompaktinio disko](#.C4.AEdiegimas_i.C5.A1_Arch_kompaktinio_disko)
-    *   [3.1 Standžiojo disko dalijimas](#Stand.C5.BEiojo_disko_dalijimas)
-    *   [3.2 Nustatykite skirsnių prijungimo vietas](#Nustatykite_skirsni.C5.B3_prijungimo_vietas)
-    *   [3.3 Pasirinkite programas](#Pasirinkite_programas)
-    *   [3.4 Įdiekite programas](#.C4.AEdiekite_programas)
-    *   [3.5 Įdiekite sistemos branduolį](#.C4.AEdiekite_sistemos_branduol.C4.AF)
-    *   [3.6 Pritaikykite konfigūraciją](#Pritaikykite_konfig.C5.ABracij.C4.85)
-    *   [3.7 Įdiekite operacinės sistemos įkrovos programą](#.C4.AEdiekite_operacin.C4.97s_sistemos_.C4.AFkrovos_program.C4.85)
-    *   [3.8 Ready to reboot](#Ready_to_reboot)
-*   [4 Alternative Installing Methods](#Alternative_Installing_Methods)
-*   [5 Pirmi žingsniai naujoje sistemoje](#Pirmi_.C5.BEingsniai_naujoje_sistemoje)
+*   [1 Prieš diegimą](#Prie.C5.A1_diegim.C4.85)
+    *   [1.1 Nustatykite klaviatūros išdėstymą](#Nustatykite_klaviat.C5.ABros_i.C5.A1d.C4.97stym.C4.85)
+    *   [1.2 Patikrinkite įkrovos rėžimą](#Patikrinkite_.C4.AFkrovos_r.C4.97.C5.BEim.C4.85)
+    *   [1.3 Prisijunkite prie interneto](#Prisijunkite_prie_interneto)
+    *   [1.4 Atnaujinkite sistemos laikrodį](#Atnaujinkite_sistemos_laikrod.C4.AF)
+    *   [1.5 Padalinkite diskus](#Padalinkite_diskus)
+    *   [1.6 Suformatuokite particijas](#Suformatuokite_particijas)
+    *   [1.7 Prijunkite failų sistemas](#Prijunkite_fail.C5.B3_sistemas)
+*   [2 Įdiegimas](#.C4.AEdiegimas)
+    *   [2.1 Pasirinkite veidrodžius](#Pasirinkite_veidrod.C5.BEius)
+    *   [2.2 Įdiekite pagrininius paketus](#.C4.AEdiekite_pagrininius_paketus)
+*   [3 Sukonfigūruokite sistemą](#Sukonfig.C5.ABruokite_sistem.C4.85)
+    *   [3.1 Fstab](#Fstab)
+    *   [3.2 Chroot](#Chroot)
+    *   [3.3 Laiko zona](#Laiko_zona)
+    *   [3.4 Lokalizacija](#Lokalizacija)
+    *   [3.5 Tinklo konfigūracija](#Tinklo_konfig.C5.ABracija)
+    *   [3.6 Initramfs](#Initramfs)
+    *   [3.7 Root slaptažodis](#Root_slapta.C5.BEodis)
+    *   [3.8 Įkroviklis](#.C4.AEkroviklis)
+*   [4 Perkrovimas](#Perkrovimas)
+*   [5 Po diegimo](#Po_diegimo)
 
-## Įžanga
+## Prieš diegimą
 
-Šis vadovėlis skirtas tiems, kurie dar nežino, kas yra Arch bei kokios jo galimybės. Tinka tiems, kurie jau turi savo kompiuteryje įdiegtą Windows OS ir nori įdiegti Arch nepažeisdami jos.
+Parsisiųskite ir paleiskite diegimo terpę kaip nurodyta [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). Jūs kaip root vartotojas būsite prijungti pirmoje [virtualioje konsolėje](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") ir pateksite į [Zsh](/index.php/Zsh "Zsh") apvalkalo eilutę.
 
-Microsoft Windows operacinė sistema turėtų būti įdiegta į pirmą disko skirsnį, nes kitaip grub nesugebės jo rasti.
+Jei norite pereiti į kitą konsole, pvz.: kad galėtumėte skaityti šį vadovą per [ELinks](/index.php/ELinks "ELinks") ir kartu diegti, naudokitės `Alt+*arrow*` [komanda](/index.php/Keyboard_shortcuts "Keyboard shortcuts"). Konfigūracijos failų [keitimui](/index.php/Textedit "Textedit") galite naudoti: [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") ar [vim](/index.php/Vim#Usage "Vim").
 
-## Būtina
+### Nustatykite klaviatūros išdėstymą
 
-*   Bazinis arba pilnas Arch įdiegimo kompaktinis diskas. [Siųskitės iš čia](https://www.archlinux.org/download/).
-*   Nors vienas laisvas standusis diskas arba laisva vieta esamame skirsnyje. Su papildomais įrankiais (Windows Disk Management, Partition Magic ir t.t.), jūs galėsite sukurti atskirą skirsnį Arch
-
-## Įdiegimas iš Arch kompaktinio disko
-
-*   Įdėkite kompaktinį diską į jam skirtą vietą, perkraukite kompiuterį, ir nustatykite, kad kompiuterio pirmiausia krautųsi iš kompaktinių diskų įrenginio
-*   Dar turėtumėt pamatyti [įprastą Arch įkrovos vaizdą](http://home.arcor.de/Langeland/1.png)
-*   Paspauskite `Enter`
-*   Pasibaigus įkrovos procesui, parašykite:
-
-```
-/arch/setup
+Pradinis [išdėstymas](/index.php/Console_keymap "Console keymap") yra [US](https://en.wikipedia.org/wiki/File:KB_United_States-NoAltGr.svg "wikipedia:File:KB United States-NoAltGr.svg"). Galimus išdėstymus rasite:
 
 ```
-
-Jūs dabar diegsite iš kompaktinio disko, todėl interneto prieiga nebūtina.
-
-[Pagrindinis meniu](http://home.arcor.de/Langeland/6.png) atrodo taip.
-
-### Standžiojo disko dalijimas
-
-Jeigu turite tuščią kietą diską, galite iš karto pereiti prie automatinio dalinimo. Žinokite, kad tai ištrins visus jūsų standžiojo disko skirsnius! Jeigu norite išsaugoti esamus skirsnius, sekite nurodymus:
-
-*   Pasirinkite paruošti standųjį diską (Prepare Hard-Drive)
-*   Pasirinkite padalyti standųjį diską (Partition Hard-Drive)
-*   Pasirinkite diską, kur norite įdiegti Arch
-*   Su disko dalijimo programa cfdisk jūs galėsite sukurti naujus skirsnius standžiajame diske. Baziniam Arch įdiegimui reikalingi nors du skirsniai:
-
-```
- * vienas swap skirsnis
- * vienas duomenų skirsnis
+# ls /usr/share/kbd/keymaps/**/*.map.gz
 
 ```
 
-*   Jei jūsų Windows sistema įdiegta į pirmą skirsnį ir naudojama [ntfs](https://en.wikipedia.org/wiki/Ntfs "wikipedia:Ntfs") failų sistema, vaizdas turėtų atrodyti [taip](http://home.arcor.de/Langeland/9.png).
-
-cfdisk
-
-*   Jokiu būdu nelieskite ntfs (arba [vfat](https://en.wikipedia.org/wiki/Vfat "wikipedia:Vfat")) skirsnio, nes prarasite Windows skirsnį.
-*   Skirsnio swap tipas žymimas numeriu 82.
-*   Jei norite išeiti iš cfdisk nepalikdami jokių pakeitimų, pasirinkite quit, o norėdami išsaugoti - write.
-*   Po dalijimo su cfdisk turėtumėte matyti tokį [skirsnių išdėstymą](http://home.arcor.de/Langeland/10.png).
-
-### Nustatykite skirsnių prijungimo vietas
-
-*   Parinkite 3 punktą: nustatyti failų sistemos prijungimo vietas
-*   Pasirinkite skirsnį, kurį pažymėjote kaip swap
-*   Pasirinkite kitą failų sistemą į kurią rašysite Arch (prijungimo vieta /)
-*   Failų sistemą [ext3](https://en.wikipedia.org/wiki/Ext3 "wikipedia:Ext3")
-*   Pasirinkite atlikta (done)
-
-*Nepamirškite pasirinkt atlikta (done), nes kitaip nebūs atlikti jokie pakeitimai.*
-
-### Pasirinkite programas
-
-*   Pasirinkite kompaktinį diską
-*   Dabar turėtumėte matyti [programų kategorijas](http://home.arcor.de/Langeland/11.png)
-*   Pasirinkite Base kategoriją
-*   Pagal nutylėjimą (default) pažymėti visus
-*   Ok.
-
-### Įdiekite programas
-
-*   Tai labai paprasta: tiesiog paspauskite įdiegti (install), gerai ir visi pasirinkti paketai bus perkelti iš kompaktinio disko į failų sistemą kompiuteryje.
-
-### Įdiekite sistemos branduolį
-
-*   Pasirinkite "Kernel 2.6.x for IDE/SCSI systems".
-
-### Pritaikykite konfigūraciją
-
-*   Pasirinkite nano redaktorių keisti konfigūraciniams failams
-
-**Paredaguokite /etc/rc.conf** jei norite pakeisti klaviatūros išdėstymą, pvz. lt yra lietuvių.
-
-*   Jei naudojate maršrutizatorių, tai taip pat nurodykite faile /etc/rc.conf:
+Išdėstymui pakeisti, po [loadkeys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/loadkeys.1) pridėkite failo pavadinimą, praleisdami kelią ir failo plėtinį. Pavyzdžiui, [vokiečių kalbos](https://en.wikipedia.org/wiki/File:KB_Germany.svg "wikipedia:File:KB Germany.svg") klaviatūros išdėstymui:
 
 ```
-# Maršrutizatoriaus adresas
-gateway="default gw 192.168.0.1"
-ROUTES=(gateway) #Pašalinkite ! prie gateway
+# loadkeys de-latin1
 
 ```
 
-*   faile /etc/resolf.conf nurodykite savo naudojamą vardų serverį (dns)
+[Konsolės šriftai](/index.php/Console_fonts "Console fonts") randasi `/usr/share/kbd/consolefonts/` ir taip pat gali būti nustatyti su [setfont(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
+
+### Patikrinkite įkrovos rėžimą
+
+Jeigu [UEFI](/index.php/UEFI "UEFI") pagrindinėje plokštėje įjungtas UEFI rėžimas, [Archiso](/index.php/Archiso "Archiso") [užkraus](/index.php/Boot "Boot") Arch linux atitinkamai per [systemd-boot](/index.php/Systemd-boot "Systemd-boot"). Patikrinimui, pasiekite [efivars](/index.php/UEFI#UEFI_variables "UEFI") katalogą:
 
 ```
-nameserver 192.168.0.1
-
-```
-
-*   nano paprasta naudotis: Ctrl-o išsaugo pakeitimus, Ctrl-x išsaugo ir uždaro redaktorių.
-
-**Paredaguokite** menu.lst*.
-
-*   Čia nurodysite operacinių sistemų sąrašą, kurias galėsite įkrauti įjungę kompiuterį
-*   Turėtumėte matyti [Menu.lst](http://home.arcor.de/Langeland/13.png)
-
-*   Arch konfigūracijos dalis turėtų būti suderinta, o norėdami įkrauti Windows, pridėkite šias eilutes:
-
-```
-title Windows
-rootnoverify (hd0,0)
-chainloader +1
+# ls /sys/firmware/efi/efivars
 
 ```
 
-*   hd0,0 reiškia pirmą standųjį diską ir pirmą skirsnį, nenustebkite, nes skaičiuojama nuo 0, o ne nuo 1
+Jei katalogas neegzistuoja, sistema užkrauta [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") arba CSM rėžimu. Dėl detalių skaityti pagrindinės plokštės naudotojo vadovą.
 
-Paspauskite Ctrl-O, Ctrl-X ir viską išsaugokite.
+### Prisijunkite prie interneto
 
-### Įdiekite operacinės sistemos įkrovos programą
+Diegimo atvaizdas [laidinio tinklo įrenginiams](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) [dhcpcd](/index.php/Dhcpcd "Dhcpcd") įgalina įkrovos metu. Ryšį galima patikrinti su [ping](https://en.wikipedia.org/wiki/ping_(networking_utility) "wikipedia:ping (networking utility)"):
 
-*   Pasirinkite grub.
-*   Choose the entry on top of the list.
+```
+# ping archlinux.org
 
-### Ready to reboot
+```
 
-*   Exit the main menu, type reboot and the computer should reboot.
-*   Remove the CD
-*   You can choose between windows and arch, default is arch
+Jei ryšys negalimas, [sustabdykite](/index.php/Stop "Stop") *dhcpcd* tarnybą su `systemctl stop dhcpcd@*interface*` kur `*interface*` pavadinimas gali būti [tab-užbaigtas](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion"). Tuomet sukonfigūruokite tinklą kaip nurodyta - [Network configuration](/index.php/Network_configuration "Network configuration").
 
-## Alternative Installing Methods
+### Atnaujinkite sistemos laikrodį
 
-*   [Fast Arch Install from existing Linux System](/index.php/Fast_Arch_Install_from_existing_Linux_System "Fast Arch Install from existing Linux System")
-*   [The Official Arch Linux Installation Guide](https://www.archlinux.org/static/docs/arch-install-guide.html)
+Kad užtikrintumėte sistemos laikrodžio tikslumą, naudokite [timedatectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/timedatectl.1):
 
-## Pirmi žingsniai naujoje sistemoje
+```
+# timedatectl set-ntp true
 
-*   Prisijunkite kaip naudotojas root.
-*   Komanda `passwd` nustatykite root naudotojo slaptažodį.
+```
+
+Tarnybos statusui patikrinti naudokite `timedatectl status`.
+
+### Padalinkite diskus
+
+Kai "live" sistema atpažįsta diskus, jie priskiriami prie [bloko įrenginio](https://en.wikipedia.org/wiki/Device_file#Naming_conventions "wikipedia:Device file") kaip `/dev/sda` ar `/dev/nvme0n1`. Šiems įrenginiams identifikuoti, naudokite [lsblk](/index.php/Lsblk "Lsblk") arba *fdisk*.
+
+```
+# fdisk -l
+
+```
+
+Rezultatai besibaigiantys `rom`, `loop` ar `airoot` gali būti nuignoruoti.
+
+Sekančios *particijos* yra **reikalingos** pasirinktam įrenginiui:
+
+*   Viena particija root katalogui `/`.
+*   Jei įjungtas [UEFI](/index.php/UEFI "UEFI") , reikės [EFI sitemos particijos](/index.php/EFI_system_partition "EFI system partition").
+
+**Note:** [Swap](/index.php/Swap "Swap") vietai gali būti priskirta atskiroa particija arba [swap faile](/index.php/Swap_file "Swap file").
+
+*Particijų lentelės* modifikacijai naudokite [fdisk](/index.php/Fdisk "Fdisk") ar [parted](/index.php/Parted "Parted").
+
+```
+# fdisk /dev/*sda*
+
+```
+
+Dėl daugiau informacijos žiūrėti [Partitioning](/index.php/Partitioning "Partitioning").
+
+**Note:** Jei norite sukurti sukrautus blokinius įrenginius [LVM](/index.php/LVM "LVM"), [disk encryption](/index.php/Disk_encryption "Disk encryption") ar [RAID](/index.php/RAID "RAID"), darykite tai dabar.
+
+### Suformatuokite particijas
+
+Kai particijos sukurtos, kiekviena turėtų būti suformatuota atitinkamai [failų systemai](/index.php/File_system "File system"). Pavyzdžiui root particiją esančią `/dev/*sda1*` suformatuoti `*ext4*` sistemai, paleiskite:
+
+```
+# mkfs.*ext4* /dev/*sda1*
+
+```
+
+Jei sukūrėte swap particiją (pavyzdžiui `/dev/*sda3*`), inicijuokite ją su *mkswap*:
+
+```
+# mkswap /dev/*sda3*
+# swapon /dev/*sda3*
+
+```
+
+[Failų sistemos kūrimas](/index.php/File_systems#Create_a_file_system "File systems") rasite daugiau detalių.
+
+### Prijunkite failų sistemas
+
+[Prijunkite](/index.php/Mount "Mount") root particijos failų sistemą prie `/mnt`, pavyzdžiui:
+
+```
+# mount /dev/*sda1* /mnt
+
+```
+
+Sukurkite prijungimo taškus visoms likusioms particijoms ir jas atititinkamai prijunkite:
+
+```
+# mkdir /mnt/*boot*
+# mount /dev/*sda2* /mnt/*boot*
+
+```
+
+[genfstab](https://git.archlinux.org/arch-install-scripts.git/tree/genfstab.in) vėliau aptiks prijungtas failų sistemas ir swap vietą.
+
+## Įdiegimas
+
+### Pasirinkite veidrodžius
+
+Įdiegiami paketai turi būti parsisiųsti iš [mirror servers|veidrodinių serverių](/index.php/Mirrors "Mirrors"), kurie nurodomi `/etc/pacman.d/mirrorlist`. "Live" sistemoje, visi veidrodžiai yra įjungti, surūšiuoti pagal sinchronizacijos statusą ir greitį įdiegimo atvaizdo kūrimo metu.
+
+Kuo sąraše veidrodis aukščiau, tuo didesnis prioritetas jam skiriamas siunčiantis paketą. Failą galima atitinkamai redaguoti, geografiškai artimesnius veidrodžius perkeliant į aukštesnę sąrašo vietą, bet reiktų atsižvelgti ir į kitus kriterijus.
+
+Šį failą į naują sistemą vėliau nukopijuos*pacstrap*, tad viską derėtų atlikti tinkamai.
+
+### Įdiekite pagrininius paketus
+
+Naudokitės [pacstrap](https://projects.archlinux.org/arch-install-scripts.git/tree/pacstrap.in) skriptu ir įdiekite [base](https://www.archlinux.org/groups/x86_64/base/) paketų grupę:
+
+```
+# pacstrap /mnt base
+
+```
+
+Į šią grupę nėra įtrauka viskas kas yra "live" diegime, kaip kad [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) ar specifinė belaidė įranga; palyginimui žiūrėti [packages.x86_64](https://projects.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64).
+
+Kitų paketų ir grupių [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) [įdiegimui](/index.php/Install "Install"), pavadinimus pridėkite prie *pacstrap* (atskirdami tarpais) arba inividualiai su [pacman](/index.php/Pacman "Pacman") po [#Chroot](#Chroot) žingsnio.
+
+## Sukonfigūruokite sistemą
+
+### Fstab
+
+Sugeneruokite [fstab](/index.php/Fstab "Fstab") failą (naudokite `-U` arba `-L` nurodant [UUID](/index.php/UUID "UUID") arba etiketes, atitinkamai):
+
+```
+# genfstab -U /mnt >> /mnt/etc/fstab
+
+```
+
+Po to patikrinkite rezultatą faile `/mnt/etc/fstab` , kad nebūtų klaidų.
+
+### Chroot
+
+[Pakeiskite root](/index.php/Change_root "Change root") į naują sistemą:
+
+```
+# arch-chroot /mnt
+
+```
+
+### Laiko zona
+
+Nustatykite [laiko zoną](/index.php/Time_zone "Time zone"):
+
+```
+# ln -sf /usr/share/zoneinfo/*Region*/*City* /etc/localtime
+
+```
+
+Paleiskite [hwclock(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8) norėdami sugeneruoti `/etc/adjtime`:
+
+```
+# hwclock --systohc
+
+```
+
+Ši komanda daro prielaidą ka techninės įrangos laikrodis nustatytas į [UTC](https://en.wikipedia.org/wiki/UTC "wikipedia:UTC"). Daugiau detalių čia - [Laiko standartas](/index.php/Time#Time_standard "Time").
+
+### Lokalizacija
+
+Nukomentuokite `en_US.UTF-8 UTF-8` ir kitas reikalingas [lokales](/index.php/Locale "Locale") `/etc/locale.gen` faile, tada jas sugeneruokite su:
+
+```
+# locale-gen
+
+```
+
+Atitinkmai nustatykite `LANG` [kintamąjį](/index.php/Variable "Variable") [locale.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locale.conf.5) faile, pavyzdžiui:
+
+ `/etc/locale.conf`  `LANG=*en_US.UTF-8*` 
+
+Jeigu [nustatėte klaviatūros išdėstymą](#Set_the_keyboard_layout), padarykite pakeitimus pastovius [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) faile:
+
+ `/etc/vconsole.conf`  `KEYMAP=*de-latin1*` 
+
+### Tinklo konfigūracija
+
+Sukurkite [hostname](/index.php/Hostname "Hostname") failą:
+
+ `/etc/hostname` 
+```
+*myhostname*
+
+```
+
+Pridėkite atitinkamus įrašus į [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5):
+
+ `/etc/hosts` 
+```
+127.0.0.1	localhost
+::1		localhost
+127.0.1.1	*myhostname*.localdomain	*myhostname*
+
+```
+
+Jei sistema turi nuolatinį IP adresą, naudokite jį vietoje `127.0.1.1`.
+
+Užbaikite naujai įdiegto aplinkos [tinklo konfigūraciją](/index.php/Network_configuration "Network configuration").
+
+### Initramfs
+
+Sukurti naują *initramfs* dažnai nėra reikalinga, nes [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") buvo paleistas [linux](https://www.archlinux.org/packages/?name=linux) paketo diegimo su *pacstrap* metu.
+
+Specialioms konfigūracijoms, modifikuokite [mkinitcpio.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.conf.5) failą ir perkurkite failą su:
+
+```
+# mkinitcpio -p linux
+
+```
+
+### Root slaptažodis
+
+Nustatykite root [slaptažodį](/index.php/Password "Password"):
 
 ```
 # passwd
 
 ```
 
-*   Kasdieniam naudojimui susikurkite naudotojo paskyrą, kuri neturi administratoriaus ar kitų svarbių sistemos procesų teisių (taip jūs, tyčia ar netyčia, negalėsite pažeisti ar kitaip sutrikdyti sistemos darbo). Naudotojo sukūrimui naudojama komanda adduser.
+### Įkroviklis
 
-```
-# adduser
+Norint įkrauti Arch Linux, turi būti įdiegtas Linux-veikiantis įkroviklis. [Įkrovikliai](/index.php/Category:Boot_loaders "Category:Boot loaders") yra keletas pasirinkimo variantų. Jeigu turite Intel ar AMD CPU, įgalinkite [mikrokodo](/index.php/Microcode "Microcode") atnaujinimus.
 
-```
+## Perkrovimas
 
-Liko įdiegti jums reikalingas programas su Pacman. Mėgaukitės!
+Išeikite iš chroot aplinkos parašydami `exit` arba paspaudę `Ctrl+D`.
+
+Papildomai rankiniu būdu galite atjungti visas particijas `umount -R /mnt`: tai leidžia pamatyti "busy" particijas, ir rasti to priežastį su [fuser(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1).
+
+Galiausiai, perkraukite sistemą parašę `reboot`: bet kurią visdar prijungtą particiją *systemd* automatiškai atjungs. Nepamirškite pašalinti diegimo laikmenos ir į naują sistemą prisijungti su root paskyra.
+
+## Po diegimo
+
+Sistemos valdymo rekomendacijas ir įvairias po diegimines pamokas (kaip nustatyti grafinę naudotojo aplinką ar sureguliuti garsą) rasite[bendroise rekomendacijose](/index.php/General_recommendations "General recommendations")
+
+Taip pat aplankykite [programų sąrašą](/index.php/List_of_applications "List of applications"), kur galbūt rasite jus dominančių programų.

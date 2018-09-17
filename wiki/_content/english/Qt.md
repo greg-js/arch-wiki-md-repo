@@ -61,15 +61,15 @@ Qt packages do not provide the usual bins (e.g. *qmake*) in `/usr/bin` anymore. 
 
 By installing [qtchooser](https://aur.archlinux.org/packages/qtchooser/) you can restore the usual bins (e.g. *qmake*) in `/usr/bin` and setup the Qt toolkit to use. By default Qt5 is used.
 
-**Warning:** [qtchooser](https://aur.archlinux.org/packages/qtchooser/) now is conflict with [qt5-base](https://www.archlinux.org/packages/?name=qt5-base). You can install it in /usr/local if you really need it, but it's not officially supported[[1]](https://bugs.archlinux.org/task/51308).
+**Warning:** [qtchooser](https://aur.archlinux.org/packages/qtchooser/) is now in conflict with [qt5-base](https://www.archlinux.org/packages/?name=qt5-base). You can install it in /usr/local if you really need it, but it's not officially supported[[1]](https://bugs.archlinux.org/task/51308).
 
 ### Using environment variables
 
-To define default Qt toolkit, you can create `QT_SELECT` [environment variable](/index.php/Environment_variable "Environment variable"). For example, to set Qt4, do `export QT_SELECT=4` in your shell's init file (e.g. `~/.bash_profile` or `~/.zprofile`).
+To define the default Qt toolkit, you can create `QT_SELECT` [environment variable](/index.php/Environment_variable "Environment variable"). For example, to set Qt4, do `export QT_SELECT=4` in your shell's init file (e.g. `~/.bash_profile` or `~/.zprofile`).
 
 ### Using configuration files
 
-You can set default Qt toolkit by creating a symlink `~/.config/qtchooser/default.conf` to one of *.conf* files in `/etc/xdg/qtchooser/` directory. For example, to set Qt4 symlink `/etc/xdg/qtchooser/4.conf` to `~/.config/qtchooser/default.conf`:
+You can set the default Qt toolkit by creating a symlink `~/.config/qtchooser/default.conf` to one of *.conf* files in `/etc/xdg/qtchooser/` directory. For example, to set Qt4 symlink `/etc/xdg/qtchooser/4.conf` to `~/.config/qtchooser/default.conf`:
 
 ```
 $ ln -s `/etc/xdg/qtchooser/4.conf` `~/.config/qtchooser/default.conf`

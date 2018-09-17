@@ -1,9 +1,11 @@
+**Состояние перевода:** На этой странице представлен перевод статьи [Wayland](/index.php/Wayland "Wayland"). Дата последней синхронизации: 9 октября 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Wayland&diff=0&oldid=453433).
+
 Ссылки по теме
 
 *   [KMS](/index.php/KMS "KMS")
 *   [Xorg (Русский)](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)")
 
-**Wayland** это новый протокол управления окнами для Linux. Использование Wayland требует внесения изменений в систему и повторной установки некоторых ее компонентов. Для получения дополнительной информации о Wayland смотрите [домашюю страницу](http://wayland.freedesktop.org/).
+**Wayland** - новый протокол управления окнами для Linux. Использование Wayland требует внесения изменений в систему и повторной установки некоторых ее компонентов. Для получения дополнительной информации о Wayland смотрите [домашюю страницу](http://wayland.freedesktop.org/).
 
 ## Contents
 
@@ -29,7 +31,7 @@
 *   [7 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
     *   [7.1 LLVM assertion failure](#LLVM_assertion_failure)
     *   [7.2 Не запускается Weston после обновления до 1.7](#.D0.9D.D0.B5_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D0.B5.D1.82.D1.81.D1.8F_Weston_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F_.D0.B4.D0.BE_1.7)
-*   [8 См. также](#.D0.A1.D0.BC._.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [8 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Требования
 
@@ -324,7 +326,7 @@ modules=xwayland.so
 
 ```
 
-## См. также
+## Смотрите также
 
 *   [Cursor themes (Русский)](/index.php/Cursor_themes_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Cursor themes (Русский)")
 *   [Arch Linux forum discussion](https://bbs.archlinux.org/viewtopic.php?id=107499)

@@ -1,3 +1,5 @@
+**Состояние перевода:** На этой странице представлен перевод статьи [LXDE](/index.php/LXDE "LXDE"). Дата последней синхронизации: 10 мая 2014\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=LXDE&diff=0&oldid=314299).
+
 Ссылки по теме
 
 *   [Экранный менеджер](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер")
@@ -8,7 +10,7 @@
 *   [LXDM](/index.php/LXDM "LXDM")
 *   [LXQt](/index.php/LXQt "LXQt")
 
-[LXDE.org|Lightweight X11 Desktop Environment](http://lxde.org/): *"Одно из главных достоинств LXDE - небольшие требования к железу. Философия LXDE - это лёгкость, полезность и практичность."*
+[Lightweight X11 Desktop Environment](http://lxde.org/): *"Одно из главных достоинств LXDE - небольшие требования к железу. Философия LXDE - это лёгкость, полезность и практичность."*
 
 ## Contents
 

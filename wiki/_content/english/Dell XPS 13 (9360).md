@@ -27,37 +27,38 @@ As of kernel 4.5, the Intel Kaby Lake architecture is supported.
 ## Contents
 
 *   [1 Content Adaptive Brightness Control](#Content_Adaptive_Brightness_Control)
-*   [2 NVM Express SSD Power Saving](#NVM_Express_SSD_Power_Saving)
-*   [3 Video](#Video)
-    *   [3.1 Module-based Powersaving Options](#Module-based_Powersaving_Options)
-    *   [3.2 Blank screen issue after booting](#Blank_screen_issue_after_booting)
-*   [4 Wireless](#Wireless)
-*   [5 Bluetooth](#Bluetooth)
-*   [6 Thunderbolt 3 / USB 3.1](#Thunderbolt_3_.2F_USB_3.1)
-    *   [6.1 Ethernet repeatedly disconnects/reconnects with Dell USB-C adapter (DA200)](#Ethernet_repeatedly_disconnects.2Freconnects_with_Dell_USB-C_adapter_.28DA200.29)
-    *   [6.2 USB-C Compatibility Chart](#USB-C_Compatibility_Chart)
-    *   [6.3 Thunderbolt Firmware updates](#Thunderbolt_Firmware_updates)
-*   [7 SATA controller](#SATA_controller)
-*   [8 Touchpad](#Touchpad)
-    *   [8.1 Remove psmouse errors from dmesg](#Remove_psmouse_errors_from_dmesg)
-*   [9 Touchscreen](#Touchscreen)
-    *   [9.1 Gestures](#Gestures)
-    *   [9.2 Scrolling in Firefox](#Scrolling_in_Firefox)
-*   [10 Keyboard Backlight](#Keyboard_Backlight)
-*   [11 Hidden Keyboard Keys](#Hidden_Keyboard_Keys)
-    *   [11.1 Unobtrusive mode](#Unobtrusive_mode)
-*   [12 Firmware Updates](#Firmware_Updates)
-*   [13 Troubleshooting](#Troubleshooting)
-    *   [13.1 EFISTUB does not boot](#EFISTUB_does_not_boot)
-    *   [13.2 Not waking from suspend](#Not_waking_from_suspend)
-    *   [13.3 Power Drain after waking from standby](#Power_Drain_after_waking_from_standby)
-    *   [13.4 Popping sound on headphones/external speakers](#Popping_sound_on_headphones.2Fexternal_speakers)
-    *   [13.5 Crackling sound with screen changes](#Crackling_sound_with_screen_changes)
-    *   [13.6 Coil Whine](#Coil_Whine)
-    *   [13.7 Freezing after waking from suspend](#Freezing_after_waking_from_suspend)
-    *   [13.8 Continuous hissing sound with headphones](#Continuous_hissing_sound_with_headphones)
-*   [14 Fingerprint sensor](#Fingerprint_sensor)
-*   [15 See Also](#See_Also)
+*   [2 Power Saving](#Power_Saving)
+*   [3 NVM Express SSD Power Saving](#NVM_Express_SSD_Power_Saving)
+*   [4 Video](#Video)
+    *   [4.1 Module-based Powersaving Options](#Module-based_Powersaving_Options)
+    *   [4.2 Blank screen issue after booting](#Blank_screen_issue_after_booting)
+*   [5 Wireless](#Wireless)
+*   [6 Bluetooth](#Bluetooth)
+*   [7 Thunderbolt 3 / USB 3.1](#Thunderbolt_3_.2F_USB_3.1)
+    *   [7.1 Ethernet repeatedly disconnects/reconnects with Dell USB-C adapter (DA200)](#Ethernet_repeatedly_disconnects.2Freconnects_with_Dell_USB-C_adapter_.28DA200.29)
+    *   [7.2 USB-C Compatibility Chart](#USB-C_Compatibility_Chart)
+    *   [7.3 Thunderbolt Firmware updates](#Thunderbolt_Firmware_updates)
+*   [8 SATA controller](#SATA_controller)
+*   [9 Touchpad](#Touchpad)
+    *   [9.1 Remove psmouse errors from dmesg](#Remove_psmouse_errors_from_dmesg)
+*   [10 Touchscreen](#Touchscreen)
+    *   [10.1 Gestures](#Gestures)
+    *   [10.2 Scrolling in Firefox](#Scrolling_in_Firefox)
+*   [11 Keyboard Backlight](#Keyboard_Backlight)
+*   [12 Hidden Keyboard Keys](#Hidden_Keyboard_Keys)
+    *   [12.1 Unobtrusive mode](#Unobtrusive_mode)
+*   [13 Firmware Updates](#Firmware_Updates)
+*   [14 Troubleshooting](#Troubleshooting)
+    *   [14.1 EFISTUB does not boot](#EFISTUB_does_not_boot)
+    *   [14.2 Not waking from suspend](#Not_waking_from_suspend)
+    *   [14.3 Power Drain after waking from standby](#Power_Drain_after_waking_from_standby)
+    *   [14.4 Popping sound on headphones/external speakers](#Popping_sound_on_headphones.2Fexternal_speakers)
+    *   [14.5 Crackling sound with screen changes](#Crackling_sound_with_screen_changes)
+    *   [14.6 Coil Whine](#Coil_Whine)
+    *   [14.7 Freezing after waking from suspend](#Freezing_after_waking_from_suspend)
+    *   [14.8 Continuous hissing sound with headphones](#Continuous_hissing_sound_with_headphones)
+*   [15 Fingerprint sensor](#Fingerprint_sensor)
+*   [16 See Also](#See_Also)
 
 ## Content Adaptive Brightness Control
 
@@ -73,6 +74,42 @@ To test if your XPS 13 is affected by the CABC, go to this [test page](http://ty
 6.  Then download and install [this tool](http://www.dell.com/support/home/us/en/04/drivers/driversdetails?driverId=312K3) to update the panel firmware. The tool gives you the option to disable CABC
 7.  Reboot (from USB)
 8.  Reboot to Arch Linux and rerun the [test](http://tylerwatt12.com/dc/)
+
+## Power Saving
+
+It's possible to save around ~10/20% energy with somes tricks.
+
+First, we can disable SD-Card adapter in bios settings (-0.5W~)
+
+Then, it's possible to undervolt CPU and GPU with [[1]](https://wiki.archlinux.org/index.php/Undervolting_CPU#intel-undervolt%7Cintel-undervolt)
+
+This is an example of best stable values for a I5-7200u (depend of your cpu):
+
+CPU (0): -160.16 mV GPU (1): -125.00 mV CPU Cache (2): -89.84 mV
+
+Edit the config file
+
+`sudo nano /etc/intel-undervolt.conf`
+
+This is an example for i5-7200u
+
+`# CPU Undervolting`
+
+`apply 0 'CPU' -160`
+
+`apply 1 'GPU' -125`
+
+`apply 2 'CPU Cache' -90`
+
+`apply 3 'System Agent' 0`
+
+`apply 4 'Analog I/O' 0`
+
+`interval 5000`
+
+then enable/start the daemon :)
+
+`sudo systemctl enable intel-undervolt && sudo systemctl start intel-undervolt`
 
 ## NVM Express SSD Power Saving
 
@@ -384,7 +421,7 @@ Some users experienced a weird crackling, white noise sound when the display is 
 
 This issue should be patched as of the 4.14.15 kernel.
 
-If you're still encountering this issue, try manually applying this patch[[1]](https://lkml.org/lkml/2018/1/22/169). Adding the kernel parameter `i915 enable_guc=1` as described in [Intel graphics](/index.php/Intel_graphics "Intel graphics") might also help, however multiple people have reported that this does not fix the problem completely.
+If you're still encountering this issue, try manually applying this patch[[2]](https://lkml.org/lkml/2018/1/22/169). Adding the kernel parameter `i915 enable_guc=1` as described in [Intel graphics](/index.php/Intel_graphics "Intel graphics") might also help, however multiple people have reported that this does not fix the problem completely.
 
 ### Coil Whine
 
@@ -429,7 +466,7 @@ volume = 1
 
 ## Fingerprint sensor
 
-Dell officially does not support fingerprint reader functionality [[2]](http://en.community.dell.com/techcenter/os-applications/f/4613/t/20006668), however an effort on reverse engineering the protocol of Validity 138a:0090, 138a:0094, 138a:0097 fingerprint readers can be found at github [[3]](https://github.com/nmikhailov/Validity90).
+Dell officially does not support fingerprint reader functionality [[3]](http://en.community.dell.com/techcenter/os-applications/f/4613/t/20006668), however an effort on reverse engineering the protocol of Validity 138a:0090, 138a:0094, 138a:0097 fingerprint readers can be found at github [[4]](https://github.com/nmikhailov/Validity90).
 
 ## See Also
 

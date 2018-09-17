@@ -233,6 +233,7 @@
 | [systemd-networkd (Русский)](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [systemd/Timers (Русский)](/index.php/Systemd/Timers_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd/Timers (Русский)") | [Systemd/Tаймеры](/index.php/Systemd/T%D0%B0%D0%B9%D0%BC%D0%B5%D1%80%D1%8B "Systemd/Tаймеры") | [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") | - |
 | [Telegram (Русский)](/index.php/Telegram_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Telegram (Русский)") | Не требуется | [SlavMetal](/index.php/User:SlavMetal "User:SlavMetal") | - |
+| [Thunar (Русский)](/index.php/Thunar_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Thunar (Русский)") | Не требуется | [ArchLinuxUser](/index.php/User:ArchLinuxUser "User:ArchLinuxUser") | - |
 | [Udisks (Русский)](/index.php/Udisks_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udisks (Русский)") | Не требуется | [Vladimir Shatalin](/index.php/User:Vladimir_Shatalin "User:Vladimir Shatalin") | - |
 | [Unity3D (Русский)](/index.php/Unity3D_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Unity3D (Русский)") | Не требуется | [ArchLinuxUser](/index.php/User:ArchLinuxUser "User:ArchLinuxUser") | - |
 | [Vim (Русский)](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") | Не требуется | [MrReDoX](/index.php/User:MrReDoX "User:MrReDoX") | - |

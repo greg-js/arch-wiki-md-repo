@@ -8,79 +8,62 @@
 *   [2 Usage](#Usage)
 *   [3 Configuration](#Configuration)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Enabling the *Online Updater*](#Enabling_the_Online_Updater)
+    *   [4.1 Disabling the *Online Updater*](#Disabling_the_Online_Updater)
     *   [4.2 Enabling *SaveRAM Autosave Interval*](#Enabling_SaveRAM_Autosave_Interval)
-    *   [4.3 Reset settings to their default value](#Reset_settings_to_their_default_value)
+    *   [4.3 Filters and shaders](#Filters_and_shaders)
+    *   [4.4 Reset settings to their default value](#Reset_settings_to_their_default_value)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 No cores found](#No_cores_found)
     *   [5.2 Input devices do not operate](#Input_devices_do_not_operate)
     *   [5.3 Poor video performance](#Poor_video_performance)
-    *   [5.4 Save data is lost whenever RetroArch crashes](#Save_data_is_lost_whenever_RetroArch_crashes)
+    *   [5.4 Audio issues with ALSA](#Audio_issues_with_ALSA)
+    *   [5.5 Save data is lost whenever RetroArch crashes](#Save_data_is_lost_whenever_RetroArch_crashes)
 *   [6 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [retroarch](https://www.archlinux.org/packages/?name=retroarch) package or alternatively [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/) for the development version.
+[Install](/index.php/Install "Install") [retroarch](https://www.archlinux.org/packages/?name=retroarch) or alternatively [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/) for the development version.
 
-**Tip:** Install the [retroarch-assets-xmb](https://www.archlinux.org/packages/?name=retroarch-assets-xmb) package to allow the default menu driver (XMB) to work properly.
+**Tip:** [Install](/index.php/Install "Install") [retroarch-assets-xmb](https://www.archlinux.org/packages/?name=retroarch-assets-xmb) to get the fonts and icons for the RetroArch GUI. You need to edit RetroArch's [#Configuration](#Configuration) to load them.
 
 ## Usage
 
-RetroArch relies on separate libraries, called "cores", available from the [Community](https://www.archlinux.org/packages/?q=libretro) repository, the [AUR](https://aur.archlinux.org/packages/?O=0&K=libretro) and the [libretro Buildbot](https://buildbot.libretro.com/), for most of its functionalities.
+RetroArch relies on separate libraries, called "cores", for most of its functionality. These can be downloaded per-user within RetroArch itself (via the [libretro Buildbot](https://buildbot.libretro.com/)) or you can [install](/index.php/Install "Install") them system-wide via [Community](https://www.archlinux.org/groups/x86_64/libretro/) or [AUR](https://aur.archlinux.org/packages/?O=0&K=libretro).
 
-Each libretro core package will install a library to `/usr/lib/libretro/`. The syntax to choose one when executing *retroarch* is:
+By default RetroArch is configured to load the per-user cores that it downloads. Change your [#Configuration](#Configuration) if you install them elsewhere.
+
+The command to run a particular core is
 
 ```
-$ retroarch --libretro /usr/lib/libretro/*core*-libretro.so */path/to/rom*
+$ retroarch --libretro */path/to/some_core_libretro.so* */path/to/rom*
 
 ```
-
-A default core can be defined in the configuration, obviating the need to specify it on every run.
-
- `~/.config/retroarch/retroarch.cfg`  `libretro_path = "/usr/lib/libretro/*core*-libretro.so"` 
 
 ## Configuration
 
-RetroArch provides a very well commented skeleton configuration file located at `/etc/retroarch.cfg`.
+When you first run RetroArch it will create the user configuration file `~/.config/retroarch/retroarch.cfg`. If you install any RetroArch components system-wide with [pacman](/index.php/Pacman "Pacman"), you should specify these in the global configuration file and include them in your user file. For example,
 
-Copy the skeleton configuration file to your home directory
-
+ `/etc/retroarch.cfg` 
 ```
-$ cp /etc/retroarch.cfg ~/.config/retroarch/retroarch.cfg
-
+# for retroarch-assets-xmb
+assets_directory = "/usr/share/retroarch/assets"
+# for libretro-core-info
+libretro_info_path = "/usr/share/libretro/info"
+# for libretro cores
+libretro_directory = "/usr/lib/libretro"
 ```
+ `~/.config/retroarch/retroarch.cfg`  `#include "/etc/retroarch.cfg"` 
+**Note:** RetroArch does not support multiple search paths for these components. For example, if you install cores with [pacman](/index.php/Pacman "Pacman") **and** download cores using RetroArch's GUI, you cannot configure RetroArch to show all of them at once since they are installed in different directories.
 
-It supports split configuration files using the `#include "foo.cfg"` directive within the main configuration file, `retroarch.cfg`. This can be overridden using the `--appendconfig */path/to/config*` parameter and is beneficial if different keybinds, video configurations or audio settings are required for the various cores.
-
-**Tip:** RetroArch is capable of loading [bsnes xml filters](https://gitorious.org/bsnes/xml-shaders) and [cg shaders](https://github.com/libretro/common-shaders) that can be defined in `retroarch.cfg` as `video_bsnes_shader` and `video_cg_shader` respectively.
-
-**Note:**
-
-*   [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/) requires [nvidia-cg-toolkit](https://www.archlinux.org/packages/?name=nvidia-cg-toolkit) in order to use the *cg shaders*.
-*   When using [ALSA](/index.php/ALSA "ALSA") it is necessary for the `audio_out_rate` to be equal to the system's default output rate, usually `48000`.
+If you want to override your configuration (for example when running certain cores) you can use the `--appendconfig */path/to/config*` command line option.
 
 ## Tips and tricks
 
-### Enabling the *Online Updater*
+### Disabling the *Online Updater*
 
-Recent versions of RetroArch have introduced a built-in menu for updating and downloading core files and various assets from the [libretro Buildbot](https://buildbot.libretro.com/). To enable it, open `~/.config/retroarch/retroarch.cfg` and set `menu_show_core_updater` to `"true"`.
+If you prefer to install all RetroArch components with [pacman](/index.php/Pacman "Pacman"), you can disable RetroArch's built-in updater to prevent accidentally installing components the wrong way.
 
- `~/.config/retroarch/retroarch.cfg`  `menu_show_core_updater = "true"`  `Online Updater` 
-```
-Core Updater
-Thumbnails Updater
-Content Downloader
-Update Core Info Files
-Update Assets
-Update Joypad Profiles
-Update Cheats
-Update Databases
-Update Overlays
-Update GLSL Shaders
-Update Slang Shaders
-```
-
-These cores and assets are kept up to date and can be pulled from the updater any time there's an update.
+ `~/.config/retroarch/retroarch.cfg`  `menu_show_core_updater = "false"` 
 
 ### Enabling *SaveRAM Autosave Interval*
 
@@ -92,6 +75,12 @@ With the example above, RetroArch will write SRAM changes onto disk every 600 se
 
 **Warning:** Setting this value too low will cause all sorts of issue, most notably hardware degradation. See [[1]](https://github.com/libretro/RetroArch/issues/4901#issuecomment-300888019)
 
+### Filters and shaders
+
+RetroArch can load [BSNES XML filters](https://gitorious.org/bsnes/xml-shaders) and [CG shaders](https://github.com/libretro/common-shaders). These are set in `retroarch.cfg` with `video_bsnes_shader` and `video_cg_shader` respectively.
+
+**Note:** [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/) requires [nvidia-cg-toolkit](https://www.archlinux.org/packages/?name=nvidia-cg-toolkit) in order to use the *cg shaders*.
+
 ### Reset settings to their default value
 
 To reset a setting or keybind to its default value through the GUI, highlight it and press `Start`. To remove a button from a keybind, highlight the keybind and press `Y`.
@@ -100,15 +89,7 @@ To reset a setting or keybind to its default value through the GUI, highlight it
 
 ### No cores found
 
-By default RetroArch will attempt to find cores in `/usr/lib/libretro/`. Cores downloaded using the built-in *Online Updater* will fail to save unless RetroArch is run as root (not recommended, as it may overwrite cores installed by [pacman](/index.php/Pacman "Pacman") and also because it poses a security risk.[[2]](https://bugzilla.gnome.org//show_bug.cgi?id=772875#c5)) because users do not normally have permission to modify this directory. To use a user-owned directory instead, edit these lines:
-
- `~/.config/retroarch/retroarch.cfg` 
-```
-libretro_directory = "~/.config/retroarch/cores"
-libretro_info_path = "~/.config/retroarch/cores/info"
-```
-
-**Note:** Cores obtained from the [Community](https://www.archlinux.org/packages/?q=libretro) repository or the [AUR](https://aur.archlinux.org/packages/?O=0&K=libretro) will be installed to `/usr/lib/libretro/` regardless of this setting, because of this, it's recommended to stick to one method of obtaining cores, use the default directory when obtaining cores from the Community repository or the AUR or a user-owned directory (such as `~/.config/retroarch/cores`) when using the *Online Updater*.
+By default RetroArch searches for cores in `~/.config/retroarch/cores`, which is where the Online Updater installs them. Cores installed with [pacman](/index.php/Pacman "Pacman") are placed in `/usr/lib/libretro` and thus will not appear in RetroArch's GUI. You should choose one method of installing cores (pacman or the Online Updater) and change your [#Configuration](#Configuration) to match.
 
 ### Input devices do not operate
 
@@ -133,6 +114,10 @@ If rebooting the system or replugging the devices are not options, permissions m
 If poor video performance is met, RetroArch may be run on a separate thread by setting `video_threaded = true` in `~/.config/retroarch/retroarch.cfg`.
 
 This is, however, a solution that should be not be used if tweaking RetroArch's video resolution/refresh rate fixes the problem, as it makes perfect V-Sync impossible, and slightly increases latency.
+
+### Audio issues with ALSA
+
+When using [ALSA](/index.php/ALSA "ALSA") the `audio_out_rate` must match the system's default output rate, usually `48000`.
 
 ### Save data is lost whenever RetroArch crashes
 

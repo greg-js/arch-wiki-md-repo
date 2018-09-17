@@ -170,7 +170,7 @@ Pacman 是 Arch 的软件包管理器。[pacman](/index.php/Pacman_(%E7%AE%80%E4
 
 ### Microcode
 
-处理器可能有 [错误行为](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), kernel 可以通过更新启动时的 *Microcode* 来修正这些错误行为。 Intel 的处理器需要一个单独的包来达到这种效果。 参考 [Microcode](/index.php/Microcode "Microcode") 获取更多细节。
+处理器可能有 [错误行为](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), kernel 可以通过更新启动时的 *Microcode* 来修正这些错误行为。参考 [Microcode](/index.php/Microcode "Microcode") 获取更多细节。
 
 ### 保留启动信息
 

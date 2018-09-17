@@ -37,6 +37,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
     *   [4.2 Cheese Hangs While Opening Camera](#Cheese_Hangs_While_Opening_Camera)
     *   [4.3 Wifi is hardblocked (airplane mode) after waking up from suspend](#Wifi_is_hardblocked_.28airplane_mode.29_after_waking_up_from_suspend)
     *   [4.4 System freeze](#System_freeze)
+    *   [4.5 Display outputs don't work after suspend](#Display_outputs_don.27t_work_after_suspend)
 *   [5 More Information](#More_Information)
     *   [5.1 MS-16Q2](#MS-16Q2)
         *   [5.1.1 Microarchitecture, Processor and Platform](#Microarchitecture.2C_Processor_and_Platform)
@@ -257,6 +258,12 @@ It is not clear what causes this issue:
 Jul 22 20:27:40 almsi kernel: nvidia-modeset: ERROR: GPU:0: Failed to allocate memory for the display color lookup table.
 
 ```
+
+### Display outputs don't work after suspend
+
+If the laptop is suspended with another monitor connected, then on wake all display outputs do not recognise when an external display is connected to any port. This persists across reboots. Worryingly it also persists if you reboot into Windows.
+
+One workaround is to boot into Windows, suspend the laptop, then wake it. Connected displays will then be recognised when rebooting into Windows or Arch.
 
 ## More Information
 

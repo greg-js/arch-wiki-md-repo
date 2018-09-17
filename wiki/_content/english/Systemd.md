@@ -762,7 +762,7 @@ Aug 25 11:48:13 mypc systemd-modules-load[15630]: **Failed to find module 'insta
 **6.** Now, try to start `systemd-modules-load`:
 
 ```
-$ systemctl start systemd-modules-load
+# systemctl start systemd-modules-load
 
 ```
 

@@ -23,15 +23,6 @@ Disk encryption should only be viewed as an adjunct to the existing security mec
         *   [3.1.1 Cloud-storage optimized](#Cloud-storage_optimized)
     *   [3.2 Block device encryption](#Block_device_encryption)
     *   [3.3 Comparison table](#Comparison_table)
-        *   [3.3.1 Summary](#Summary)
-        *   [3.3.2 Basic classification](#Basic_classification)
-        *   [3.3.3 Practical implications](#Practical_implications)
-        *   [3.3.4 Usability features](#Usability_features)
-        *   [3.3.5 Security features](#Security_features)
-        *   [3.3.6 Performance features](#Performance_features)
-        *   [3.3.7 Block device encryption specific](#Block_device_encryption_specific)
-        *   [3.3.8 Stacked filesystem encryption specific](#Stacked_filesystem_encryption_specific)
-        *   [3.3.9 Compatibility & prevalence](#Compatibility_.26_prevalence)
 *   [4 Preparation](#Preparation)
     *   [4.1 Choosing a setup](#Choosing_a_setup)
     *   [4.2 Examples](#Examples)
@@ -136,20 +127,12 @@ For practical implications of the chosen layer of operation, see the [comparison
 
 The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") and plain ("-") encryption modes. If a specific feature requires using LUKS, this is indicated by "(with LUKS)". Likewise "(without LUKS)" indicates usage of LUKS is counter-productive to achieve the feature and plain mode should be used.
 
-| 
-
-##### Summary
-
- | Loop-AES | [dm-crypt](/index.php/Dm-crypt "Dm-crypt") +/- LUKS | [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") | VeraCrypt | [eCryptfs](/index.php/ECryptfs "ECryptfs") | [EncFS](/index.php/EncFS "EncFS") |
+| Summary | Loop-AES | [dm-crypt](/index.php/Dm-crypt "Dm-crypt") +/- LUKS | [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") | VeraCrypt | [eCryptfs](/index.php/ECryptfs "ECryptfs") | [EncFS](/index.php/EncFS "EncFS") |
 | Encryption type | block device | block device | block device | block device | stacked filesystem | stacked filesystem |
 | Main selling points | longest-existing one; possibly the fastest; works on legacy systems | de-facto standard for block device encryption on Linux; very flexible | very portable, well-polished, self-contained solution | maintained fork of TrueCrypt | slightly faster than EncFS; individual encrypted files portable between systems | easiest one to use; supports non-root administration |
 | Availability in Arch Linux | must manually compile custom kernel | *kernel modules:* already shipped with default kernel; *tools:* [device-mapper](https://www.archlinux.org/packages/?name=device-mapper), [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) | [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) (discontinued) or the backwards-compatible [veracrypt](https://www.archlinux.org/packages/?name=veracrypt) | [veracrypt](https://www.archlinux.org/packages/?name=veracrypt) | *kernel module:* already shipped with default kernel; *tools:* [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) | [encfs](https://www.archlinux.org/packages/?name=encfs) |
 | License | GPL | GPL | TrueCrypt License 3.1 | Apache License 2.0, parts subject to TrueCrypt License v3.0 | GPL | GPL |
-| 
-
-##### Basic classification
-
- | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
+| Basic classification | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
 | Encrypts | whole block devices | whole block devices | whole block devices | whole block devices | files | files |
 | Container for encrypted data may be... | a disk or disk partition / a file acting as a virtual partition | a disk or disk partition / a file acting as a virtual partition | a disk or disk partition / a file acting as a virtual partition | a disk or disk partition / a file acting as a virtual partition | a directory in an existing file system | a directory in an existing file system |
 | Relation to filesystem | operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else | operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else | operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else | operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else | adds an additional layer to an existing filesystem, to automatically encrypt/decrypt files whenever they are written/read | adds an additional layer to an existing filesystem, to automatically encrypt/decrypt files whenever they are written/read |
@@ -160,25 +143,17 @@ The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") 
 [[1]](https://github.com/rfjakob/encfs/blob/next/encfs/encfs.pod#environment-variables)[[2]](https://github.com/vgough/encfs/issues/48#issuecomment-69301831)
 
  |
-| 
-
-##### Practical implications
-
- | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
-| File metadata (number of files, dir structure, file sizes, permissions, mtimes, etc.) is encrypted | ✔ | ✔ | ✔ | ✔ | ✖
-(file and dir names can be encrypted though) | ✖
+| Practical implications | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
+| File metadata (number of files, dir structure, file sizes, permissions, mtimes, etc.) is encrypted | ✔ | ✔ | ✔ | ✔ | ✘
+(file and dir names can be encrypted though) | ✘
 (file and dir names can be encrypted though) |
-| Can be used to custom-encrypt whole hard drives (including partition tables) | ✔ | ✔ | ✔ | ✔ | ✖ | ✖ |
-| Can be used to encrypt swap space | ✔ | ✔ | ✔ | ✔ | ✖ | ✖ |
-| Can be used without pre-allocating a fixed amount of space for the encrypted data container | ✖ | ✖ | ✖ | ✖ | ✔ | ✔ |
-| Can be used to protect existing filesystems without block device access, e.g. NFS or Samba shares, cloud storage, etc. | ✖
-[](#cite_note-1) | ✖ | ✖ | ✖ | ✔ | ✔ |
-| Allows offline file-based backups of encrypted files | ✖ | ✖ | ✖ | ✖ | ✔ | ✔ |
-| 
-
-##### Usability features
-
- | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
+| Can be used to custom-encrypt whole hard drives (including partition tables) | ✔ | ✔ | ✔ | ✔ | ✘ | ✘ |
+| Can be used to encrypt swap space | ✔ | ✔ | ✔ | ✔ | ✘ | ✘ |
+| Can be used without pre-allocating a fixed amount of space for the encrypted data container | ✘ | ✘ | ✘ | ✘ | ✔ | ✔ |
+| Can be used to protect existing filesystems without block device access, e.g. NFS or Samba shares, cloud storage, etc. | ✘
+[](#cite_note-1) | ✘ | ✘ | ✘ | ✔ | ✔ |
+| Allows offline file-based backups of encrypted files | ✘ | ✘ | ✘ | ✘ | ✔ | ✔ |
+| Usability features | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
 | Support for automounting on login |  ? | ✔ | ✔
 
 with [systemd and /etc/crypttab](/index.php/TrueCrypt#Automounting_using_.2Fetc.2Fcrypttab "TrueCrypt")
@@ -189,17 +164,13 @@ with [systemd and /etc/crypttab](/index.php/TrueCrypt#Automounting_using_.2Fetc.
 
  | ✔ | ✔ |
 | Support for automatic unmounting in case of inactivity |  ? |  ? |  ? |  ? |  ? | ✔ |
-| Non-root users can create/destroy containers for encrypted data | ✖ | ✖ | ✖ | ✖ | limited | ✔ |
-| Provides a GUI | ✖ | ✖ | ✔ | ✔ | ✖ | ✔
+| Non-root users can create/destroy containers for encrypted data | ✘ | ✘ | ✘ | ✘ | limited | ✔ |
+| Provides a GUI | ✘ | ✘ | ✔ | ✔ | ✘ | ✔
 
 [[3]](http://www.libertyzero.com/GEncfsM/)[[4]](https://launchpad.net/gencfsm)
 
  |
-| 
-
-##### Security features
-
- | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
+| Security features | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
 | Supported ciphers | AES | AES, Anubis, CAST5/6, Twofish, Serpent, Camellia, Blowfish,… (every cipher the kernel Crypto API offers) | AES, Twofish, Serpent | AES, Twofish, Serpernt, Camellia, Kuznyechik | AES, Blowfish, Twofish... | AES, Blowfish, Twofish, and any other ciphers available on the system |
 | Support for salting |  ? | ✔
 (with LUKS) | ✔ | ✔ | ✔ |  ? |
@@ -211,33 +182,21 @@ AES-Twofish, AES-Twofish-Serpent, Serpent-AES, Serpent-Twofish-AES, Twofish-Serp
 
 AES-Twofish, AES-Twofish-Serpent, Serpent-AES, Serpent-Twofish-AES, Twofish-Serpent
 
- |  ? | ✖ |
+ |  ? | ✘ |
 | Support for key-slot diffusion |  ? | ✔
 (with LUKS) |  ? |  ? |  ? |  ? |
 | Protection against key scrubbing | ✔ | ✔
 (without LUKS) |  ? |  ? |  ? |  ? |
 | Support for multiple (independently revocable) keys for the same encrypted data |  ? | ✔
-(with LUKS) |  ? |  ? |  ? | ✖ |
-| 
-
-##### Performance features
-
- | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
+(with LUKS) |  ? |  ? |  ? | ✘ |
+| Performance features | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
 | Multithreading support |  ? | ✔
 [[5]](http://kernelnewbies.org/Linux_2_6_38#head-49f5f735853f8cc7c4d89e5c266fe07316b49f4c) | ✔ | ✔ |  ? |  ? |
 | Hardware-accelerated encryption support | ✔ | ✔ | ✔ | ✔ | ✔ | ✔
 [[6]](https://github.com/vgough/encfs/issues/118) |
-| 
-
-##### Block device encryption specific
-
- | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt |
-| Support for (manually) resizing the encrypted block device in-place |  ? | ✔ | ✖ | ✖ |
-| 
-
-##### Stacked filesystem encryption specific
-
- | eCryptfs | EncFs |
+| Block device encryption specific | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt |
+| Support for (manually) resizing the encrypted block device in-place |  ? | ✔ | ✘ | ✘ |
+| Stacked filesystem encryption specific | eCryptfs | EncFs |
 | Supported file systems | ext3, ext4, xfs (with caveats), jfs, nfs... | ext3, ext4, xfs (with caveats), jfs, nfs, cifs...
 
 [[7]](https://github.com/vgough/encfs)
@@ -245,12 +204,8 @@ AES-Twofish, AES-Twofish-Serpent, Serpent-AES, Serpent-Twofish-AES, Twofish-Serp
  |
 | Ability to encrypt filenames | ✔ | ✔ |
 | Ability to *not* encrypt filenames | ✔ | ✔ |
-| Optimized handling of sparse files | ✖ | ✔ |
-| 
-
-##### Compatibility & prevalence
-
- | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
+| Optimized handling of sparse files | ✘ | ✔ |
+| Compatibility & prevalence | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
 | Supported Linux kernel versions | 2.0 or newer | CBC-mode since 2.6.4, ESSIV 2.6.10, LRW 2.6.20, XTS 2.6.24 |  ? |  ? |  ? | 2.4 or newer |
 | Encrypted data can also be accessed from Windows | ✔
 (with [CrossCrypt](https://en.wikipedia.org/wiki/CrossCrypt "wikipedia:CrossCrypt"), [LibreCrypt](https://github.com/t-d-k/LibreCrypt)) | ?

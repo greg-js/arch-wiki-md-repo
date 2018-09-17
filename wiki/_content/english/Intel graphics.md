@@ -77,6 +77,15 @@ Refer to [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Ea
 
 ### Enable GuC / HuC firmware loading
 
+**Warning:** Setting `enable_gvt=1` when GuC/HuC is enabled is not supported as of linux 4.18.8\. The i915 module would fail to initialize as shown in system journal. `$ journalctl` 
+```
+... kernel: [drm:intel_gvt_init [i915]] *ERROR* i915 GVT-g loading failed due to Graphics virtualization is not yet supported with GuC submission
+... kernel: i915 0000:00:02.0: [drm:i915_driver_load [i915]] Device initialization failed (-5)
+... kernel: i915: probe of 0000:00:02.0 failed with error -5
+... kernel: snd_hda_intel 0000:00:1f.3: failed to add i915 component master (-19)
+
+```
+
 For Skylake and newer processors, some video features (e.g. CBR rate control on SKL low-power encoding mode) may require the use of an updated GPU firmware, which is currently (as of 4.16) not enabled by default. Enabling GuC/HuC firmware loading can cause issues on some systems; disable it if you experience freezing (for example, after resuming from hibernation).
 
 It is necessary to add `i915.enable_guc=3` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") to enable both GuG and HuC firmware loading. Alternatively, if the [initramfs](/index.php/Initramfs "Initramfs") already includes the `i915` module (see [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting")), you can set these options through a file in `/etc/modprobe.d/`, e.g.:

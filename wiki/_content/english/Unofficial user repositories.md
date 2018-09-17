@@ -31,7 +31,7 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.14 coderkun-aur-audio](#coderkun-aur-audio)
     *   [2.15 eatabrick](#eatabrick)
     *   [2.16 eschwartz](#eschwartz)
-    *   [2.17 FFY00](#FFY00)
+    *   [2.17 ffy00](#ffy00)
     *   [2.18 herecura](#herecura)
     *   [2.19 holo](#holo)
     *   [2.20 ivasilev](#ivasilev)
@@ -314,10 +314,10 @@ Server = https://pkgbuild.com/~eschwartz/repo/$arch
 
 ```
 
-### FFY00
+### ffy00
 
 *   **Maintainer:** [Filipe Laíns](https://www.archlinux.org/people/trusted-users/#FFY00)
-*   **Description:** Personal repo. Contains some packages related to the D language. x86_64 only.
+*   **Description:** Personal repo. Contains some packages related to the D language.
 *   **Key-ID:** Not needed, as maintainer is a TU
 
 ```

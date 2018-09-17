@@ -47,8 +47,8 @@ Update your sync database:
 
 The official Arch Linux kernel provides a *generic* package which is built for the x86_64 architecture that will run on *any* compatible x86_64 CPU. Repo-ck also hosts a generic version of [linux-ck](/index.php/Linux-ck "Linux-ck") but also provides optimized packages for specific CPUs.
 
-| CPU Type | Group Alias | Details |
-| Generic | *ck-generic* | Generic kernel similar to the official Arch Linux kernel. |
+| Brand | Group Alias | Details |
+| Any | *ck-generic* | Generic kernel similar to the official Arch Linux kernel. |
 | Intel | *ck-atom* | Intel Atom specific optimizations. |
 | *ck-silvermont* | Intel Silvermont specific optimizations. |
 | *ck-core2* | Intel Core 2-family including Dual and Quads. |

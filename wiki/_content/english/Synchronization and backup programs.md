@@ -13,6 +13,8 @@ This page lists and compares applications that synchronize data between two or m
 
 *   [1 Backup overview](#Backup_overview)
 *   [2 Data synchronization](#Data_synchronization)
+    *   [2.1 Legend](#Legend)
+    *   [2.2 Table](#Table)
 *   [3 Incremental backups](#Incremental_backups)
     *   [3.1 Single machine](#Single_machine)
         *   [3.1.1 Chunk-based increments](#Chunk-based_increments)
@@ -40,29 +42,85 @@ See also:
 *   [List of applications/Internet#Cloud synchronization clients](/index.php/List_of_applications/Internet#Cloud_synchronization_clients "List of applications/Internet")
 *   [Wikipedia:Comparison of file synchronization software](https://en.wikipedia.org/wiki/Comparison_of_file_synchronization_software "wikipedia:Comparison of file synchronization software")
 
-**Legend:**
+### Legend
 
-*   **Name**: the application name, linking to the ArchWiki article or the official website.
-*   **Package**: a link to the package.
-*   **Implementation**: the programming language, library, or utility that the application is based on.
-*   **Delta transfer**: only the modified *parts* of files are transferred.
-*   **Encrypted transfer**: data is encrypted by default when transferred over the network.
-*   **FS metadata**: file system permissions and attributes are synchronized.
-*   **Resumable**: the synchronization can be resumed if interrupted.
-*   **Handles renames**: moved/renamed files are detected and not stored or transferred twice. It typically means that a checksum of files or its chunks is computed. Applications missing this functionality can be supplemented by combining with [hsync](https://aur.archlinux.org/packages/hsync/), which *only* synchronizes renames.
-*   **Version control**: the old version of files are backed up (**reverse incremental backup**).
-*   **Change propagation**: specifies in how many directions changes can be propagated.
-    *   *unidirectional* means one-way synchronization of two locations,
-    *   *bidirectional* means two-way synchronization of two locations and
-    *   *multidirectional* means full synchronization of more than two locations.
-*   **Conflict resolution**: the application handles file conflicts, either automatically or interactively, i.e. it does not silently discard conflicting files. This attribute does not apply to applications that only propagate changes in one direction.
-*   **FS monitoring**: the application listens to file system events to trigger the synchronization.
-*   **CLI**: the application is command-line driven, i.e. it is scriptable.
-*   **Other interfaces**: the application has the specified user interfaces, e.g. GUI, TUI, or web-based.
-*   **License**: the license of the server and client applications.
-*   **Other platforms**: supported operating systems other than Linux.
-*   **Maintained**: whether the project is maintained.
-*   **Specificity**: brief notes about special features that notably set the application apart from the others.
+	Name
+
+	The application name, linking to the ArchWiki article or the official website.
+
+	Package
+
+	A link to the package.
+
+	Implementation
+
+	The programming language, library, or utility that the application is based on.
+
+	Delta transfer
+
+	Only the modified *parts* of files are transferred.
+
+	Encrypted transfer
+
+	Data is encrypted by default when transferred over the network.
+
+	FS metadata
+
+	File system permissions and attributes are synchronized.
+
+	Resumable
+
+	The synchronization can be resumed if interrupted.
+
+	Handles renames
+
+	Moved/renamed files are detected and not stored or transferred twice. It typically means that a checksum of files or its chunks is computed. Applications missing this functionality can be supplemented by combining with [hsync](https://aur.archlinux.org/packages/hsync/), which *only* synchronizes renames.
+
+	Version control
+
+	The old version of files are backed up (*reverse incremental backup*).
+
+	Change propagation
+
+	Specifies in how many directions changes can be propagated.
+
+*   *unidirectional* means one-way synchronization of two locations,
+*   *bidirectional* means two-way synchronization of two locations and
+*   *multidirectional* means full synchronization of more than two locations.
+
+	Conflict resolution
+
+	The application handles file conflicts, either automatically or interactively, i.e. it does not silently discard conflicting files. This attribute does not apply to applications that only propagate changes in one direction.
+
+	FS monitoring
+
+	The application listens to file system events to trigger the synchronization.
+
+	CLI
+
+	The application provides a command-line interface.
+
+	Other interfaces
+
+	The application has the specified user interfaces, e.g. GUI, TUI, or web-based.
+
+	License
+
+	The license of the server and client applications.
+
+	Other platforms
+
+	Supported operating systems other than Linux.
+
+	Maintained
+
+	The project is maintained.
+
+	Specificity
+
+	Brief notes about special features that notably set the application apart from the others.
+
+### Table
 
 | Name | Package | Implementation | Delta transfer | Encrypted transfer | FS metadata | Resumable | Handles renames | Version control | Change propagation | Conflict resolution | FS monitoring | CLI | Other interfaces | License | Other platforms | Maintained | Specificity |
 | [FreeFileSync](https://www.freefilesync.org/) | [freefilesync](https://aur.archlinux.org/packages/freefilesync/) | C++ |  ? | SFTP [[1]](http://www.freefilesync.org/faq.php#features) |  ? |  ? | Yes [[2]](http://www.freefilesync.org/faq.php#features) | Yes [[3]](http://www.freefilesync.org/manual.php?topic=versioning) | **uni**directional / **multi**directional | Yes |  ? | No | Yes | GPL | Windows, macOS | Yes |

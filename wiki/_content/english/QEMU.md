@@ -322,6 +322,7 @@ Then, in the guest, you will be able to access the shared directory on the host 
 
 *   If you are using sharing options multiple times like `-net user,smb=*shared_dir_path1* -net user,smb=*shared_dir_path2*` or `-net user,smb=*shared_dir_path1*,smb=*shared_dir_path2*` then it will share only the last defined one.
 *   If you cannot access the shared folder and the guest system is Windows, check that the [NetBIOS protocol is enabled](http://ecross.mvps.org/howto/enable-netbios-over-tcp-ip-with-windows.htm) and that a firewall does not block [ports](http://technet.microsoft.com/en-us/library/cc940063.aspx) used by the NetBIOS protocol.
+*   If you cannot access the shared folder and the guest system is Windows 10 Enterprise or Education or Windows Server 2016, [enable guest access](https://support.microsoft.com/en-us/help/4046019).
 
 ### Mounting a partition inside a raw disk image
 
