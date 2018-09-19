@@ -36,7 +36,7 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
             *   [7.8.2.2 Mimic Xbox 360 controller with other controllers](#Mimic_Xbox_360_controller_with_other_controllers)
     *   [7.9 Xbox Wireless Controller / Xbox One Wireless Controller](#Xbox_Wireless_Controller_.2F_Xbox_One_Wireless_Controller)
         *   [7.9.1 Connect Xbox Wireless Controller with usb cable](#Connect_Xbox_Wireless_Controller_with_usb_cable)
-        *   [7.9.2 Connect Xbox Wireless Controller with bluetooth](#Connect_Xbox_Wireless_Controller_with_bluetooth)
+        *   [7.9.2 Connect Xbox Wireless Controller with Bluetooth](#Connect_Xbox_Wireless_Controller_with_Bluetooth)
             *   [7.9.2.1 xpadneo](#xpadneo)
         *   [7.9.3 Connect Xbox Wireless Controller with Microsoft Xbox Wireless Adapter](#Connect_Xbox_Wireless_Controller_with_Microsoft_Xbox_Wireless_Adapter)
     *   [7.10 Logitech Dual Action](#Logitech_Dual_Action)
@@ -591,36 +591,30 @@ By default, xboxdrv outputs all events to the terminal. You can use this to test
 
 This is supported by the kernel and should work without additional packages.
 
-#### Connect Xbox Wireless Controller with bluetooth
+#### Connect Xbox Wireless Controller with Bluetooth
 
-You should disable ertm to get it work.
+You will probably have to disable Enhanced Retransmission Mode (ERTM) to make it work.
 
-either
+Use either:
 
 ```
 # echo 1 > /sys/module/bluetooth/parameters/disable_ertm
 
 ```
 
-or
-
-Add this file to your config:
+Or add this file to your module configuration:
 
  `/etc/modprobe.d/xbox_bt.conf`  `options bluetooth disable_ertm=1` 
 
 ##### xpadneo
 
-A relatively new driver which does (yet) support only the Xbox One S controller via Bluetooth is called 'xpadneo'. In exchange for supporting just one hardware so far, it enables one to read out the correct battery level, supports rumble (even the one on the trigger buttons - L2/R2), corrects the (sometimes wrong) button mapping and more.
+A relatively new driver which does (yet) support only the Xbox One S controller via Bluetooth is called [xpadneo](https://github.com/atar-axis/xpadneo/). In exchange for supporting just one controller so far, it enables one to read out the correct battery level, supports rumble (even the one on the trigger buttons - L2/R2), corrects the (sometimes wrong) button mapping and more.
 
-Installation is done using DKMS.
-
-Download: [https://github.com/atar-axis/xpadneo/](https://github.com/atar-axis/xpadneo/)
-
-Try [xpadneo-dkms-git](https://aur.archlinux.org/packages/xpadneo-dkms-git/).
+Installation is done using DKMS: [xpadneo-dkms-git](https://aur.archlinux.org/packages/xpadneo-dkms-git/)
 
 #### Connect Xbox Wireless Controller with Microsoft Xbox Wireless Adapter
 
-It is not work on Linux.
+It does not work on Linux.
 
 ### Logitech Dual Action
 

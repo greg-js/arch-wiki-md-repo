@@ -35,11 +35,14 @@ Every breach of policy triggers a message in the system log, and AppArmor can be
 
 ### Kernel
 
-[Install](/index.php/Install "Install") either [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) (4.17.4 or later) or [linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/). A third option is to compile a [#Custom kernel](#Custom_kernel).
+AppArmor is available in [linux](https://www.archlinux.org/packages/?name=linux) ([since 4.18.8.arch1-1](https://git.archlinux.org/svntogit/packages.git/commit/?id=c46609a4b0325c363455264844091b71de01eddc)), [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) ([since 4.18.8.zen1-1](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/linux-zen&id=3ab708208c8e13d5de08dabebc442d2d0be7a585)) and [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) ([since 4.17.4.a-1](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/linux-hardened&id=14eccc6c604d37fa3001146f5bd4ca32ffa15c4f)). Another option is to compile a [#Custom kernel](#Custom_kernel).
 
-To enable AppArmor as default security model on every boot, set the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"): `apparmor=1 security=apparmor`
+To enable AppArmor as default security model on every boot, set the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
 
-**Tip:** [linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/) should already use AppArmor as default security model (`CONFIG_DEFAULT_SECURITY_APPARMOR=y` and `CONFIG_SECURITY_APPARMOR_BOOTPARAM_VALUE=1`).
+```
+apparmor=1 security=apparmor
+
+```
 
 #### Custom kernel
 
@@ -79,7 +82,7 @@ To load all AppArmor profiles on startup, [enable](/index.php/Enable "Enable") `
 
 To test if AppArmor has been enabled:
 
- `# cat /sys/module/apparmor/parameters/enabled` 
+ `$ cat /sys/module/apparmor/parameters/enabled` 
 ```
 Y
 

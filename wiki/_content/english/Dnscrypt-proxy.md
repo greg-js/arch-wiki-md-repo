@@ -32,7 +32,7 @@ The service can be started in two mutually exclusive ways (i.e. only one of the 
 
 *   With the `.service` file.
 
-**Note:** The `listen_addresses` option must configured (e.g. `listen_addresses = ['127.0.0.1:53', '[::1]:53']`) in the configuration file when using the `.service` file.
+**Note:** The `listen_addresses` option must be configured (e.g. `listen_addresses = ['127.0.0.1:53', '[::1]:53']`) in the configuration file when using the `.service` file.
 
 *   Through the `.socket` activation.
 
@@ -40,7 +40,7 @@ The service can be started in two mutually exclusive ways (i.e. only one of the 
 
 ### Select resolver
 
-By leaving `server_names` commented out in the configuration file `/etc/dnscrypt-proxy/dnscrypt-proxy.toml`, *dnscrypt-proxy* will choose the fastest server from the sources already configured under `[sources]` [[1]](https://github.com/jedisct1/dnscrypt-proxy/wiki/Configuration#an-example-static-server-entry). The lists will be downloaded, verified, and automatically updated. [[2]](https://github.com/jedisct1/dnscrypt-proxy/wiki/Configuration-Sources#what-is-the-point-of-these-lists). Thus, configuring a specific set of servers is optional.
+By leaving `server_names` commented out in the configuration file `/etc/dnscrypt-proxy/dnscrypt-proxy.toml`, *dnscrypt-proxy* will choose the fastest server from the sources already configured under `[sources]` [[1]](https://github.com/jedisct1/dnscrypt-proxy/wiki/Configuration#an-example-static-server-entry). The lists will be downloaded, verified, and automatically updated [[2]](https://github.com/jedisct1/dnscrypt-proxy/wiki/Configuration-Sources#what-is-the-point-of-these-lists). Thus, configuring a specific set of servers is optional.
 
 To manually set which server is used, edit `/etc/dnscrypt-proxy/dnscrypt-proxy.toml` and uncomment the `server_names` variable, selecting one or more of the servers. For example, to use Cloudflare's servers:
 
@@ -55,7 +55,7 @@ A full list of resolvers is located at the [upstream page](https://download.dnsc
 
 **Tip:** If using [#Unbound](#Unbound) as your local DNS cache this section can be ignored, as *unbound* runs on port 53 by default.
 
-To see if any programs are using port 53, run
+To see if any programs are using port 53, run:
 
 ```
  $ ss -lp 'sport = :domain'

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Data da última tradução: 2018-08-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=533568) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Data da última tradução: 2018-09-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=540245) na versão em inglês.
 
 Artigos relacionados
 
@@ -388,8 +388,8 @@ Atingir o mínimo de votos não é o único requisito, tem que haver um TU inter
 Geralmente, quando um pacote muito popular se mantém no AUR é porque:
 
 *   Arch Linux já possui outra versão de um pacote nos repositórios
-*   O pacote é relacionado ao AUR (ex.: um [auxiliar do AUR](/index.php/Auxiliares_do_AUR "Auxiliares do AUR"))
 *   Sua licença proíbe redistribuição
+*   Ajuda a obter PKGBUILDs submetidos pelo usuário. [Auxiliares do AUR](/index.php/Auxiliares_do_AUR "Auxiliares do AUR"), por definição, [não possuem suporte](https://bbs.archlinux.org/viewtopic.php?pid=828310#p828310).
 
 Veja também [regras para pacotes entrarem no repositório *community*](/index.php/AUR_Trusted_User_Guidelines_(Portugu%C3%AAs)#Regras_para_a_Entrada_de_Pacotes_no_Reposit.C3.B3rio_.5Bcommunity.5D "AUR Trusted User Guidelines (Português)").
 

@@ -1057,7 +1057,11 @@ This signals that the xHCI USB controller in 00:14.0 cannot be reset and will th
 
 ## Complete setups and examples
 
-If you have trouble configuring a certain mechanism in your setup, you might want to look up [complete passthrough setup examples](/index.php/PCI_passthrough_via_OVMF/Examples "PCI passthrough via OVMF/Examples"). A few users have described their setups and you might want to look up certain tricks from their configuration files.
+For many reasons users may seek to see [complete passthrough setup examples](/index.php/PCI_passthrough_via_OVMF/Examples "PCI passthrough via OVMF/Examples").
+
+These examples offer a supplement to existing hardware compatibility lists. Additionally, if you have trouble configuring a certain mechanism in your setup, you might find these examples very valuable. Users there have described their setups in detail, and some have provided examples of their configuration files as well.
+
+We encourage those who successfully build their system from this resource to help improve it by contributing their builds. Due to the many different hardware manufacturers involved, the seemingly significant lack of sufficient documentation, as well as other issues due to the nature of this process, community contributions are necessary.
 
 ## Troubleshooting
 

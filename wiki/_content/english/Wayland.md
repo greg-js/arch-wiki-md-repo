@@ -3,7 +3,7 @@ Related articles
 *   [KMS](/index.php/KMS "KMS")
 *   [Xorg](/index.php/Xorg "Xorg")
 
-[Wayland](http://wayland.freedesktop.org/) is a protocol for a [compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") to talk to its clients, as well as a library implementing the protocol. It is supported on some desktop environments like [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE"). There is also a compositor reference implementation called Weston. [XWayland](https://wayland.freedesktop.org/xserver.html) implements a compatibility layer to seamlessly run legacy [X11](/index.php/X11 "X11") applications on Wayland.
+[Wayland](http://wayland.freedesktop.org/) is a protocol for a [compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") to talk to its clients, as well as a library implementing the protocol. It is supported on some desktop environments like [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE"). There is also a compositor reference implementation called Weston. XWayland implements a compatibility layer to seamlessly run legacy [X11](/index.php/X11 "X11") applications on Wayland.
 
 ## Contents
 
@@ -14,11 +14,11 @@ Related articles
     *   [2.2 Usage](#Usage)
     *   [2.3 Configuration](#Configuration)
         *   [2.3.1 XWayland](#XWayland)
-        *   [2.3.2 Screencast recording](#Screencast_recording)
-        *   [2.3.3 High DPI displays](#High_DPI_displays)
-        *   [2.3.4 Shell font](#Shell_font)
+        *   [2.3.2 High DPI displays](#High_DPI_displays)
+        *   [2.3.3 Shell font](#Shell_font)
     *   [2.4 Tips and tricks](#Tips_and_tricks)
-        *   [2.4.1 Window switching](#Window_switching)
+        *   [2.4.1 Screencast recording](#Screencast_recording)
+        *   [2.4.2 Window switching](#Window_switching)
 *   [3 GUI libraries](#GUI_libraries)
     *   [3.1 GTK+ 3](#GTK.2B_3)
     *   [3.2 Qt 5](#Qt_5)
@@ -83,8 +83,6 @@ Weston is the reference implementation of a Wayland compositor.
 | `Super+F***n***` | Switch to Workspace ***n*** |
 | `Super+S` | Take a screenshot |
 | `Super+R` | Record a screencast. |
-
-Now that once Wayland and its requirements are installed you should be ready to test it out.
 
 To launch Weston natively (from a TTY) or to run Weston inside a running X session:
 
@@ -269,19 +267,6 @@ xwayland=true
 
 **Note:** if X is not already configured you may need to configure a keymap: [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg")
 
-#### Screencast recording
-
-Weston has build-in screencast recording which can be started and stopped by pressing the `Super+r` key combination. Screencasts are saved to the file `capture.wcap` in the current working directory of Weston.
-
-The WCAP format is a lossless video format specific to Weston, which only records the difference in frames. To be able to play the recorded screencast, the WCAP file will need to be converted to a format which a media player can understand. First, convert the capture to the YUV pixel format:
-
-```
-$ wcap-decode capture.wcap --yuv4mpeg2 > capture.y4m
-
-```
-
-The YUV file can then be transcoded to other formats using [FFmpeg](/index.php/FFmpeg "FFmpeg").
-
 #### High DPI displays
 
 For [Retina](https://en.wikipedia.org/wiki/Retina_Display "wikipedia:Retina Display") or [HiDPI](/index.php/HiDPI "HiDPI") displays, use:
@@ -300,16 +285,27 @@ Weston uses the default sans-serif font for window title bars, clocks, etc. See 
 
 ### Tips and tricks
 
+#### Screencast recording
+
+Weston has build-in screencast recording which can be started and stopped by pressing the `Super+r` key combination. Screencasts are saved to the file `capture.wcap` in the current working directory of Weston. The WCAP format is a lossless video format specific to Weston, which only records the difference in frames. To be able to play the recorded screencast, the WCAP file will need to be converted to a format which a media player can understand. First, convert the capture to the YUV pixel format:
+
+```
+$ wcap-decode capture.wcap --yuv4mpeg2 > capture.y4m
+
+```
+
+The YUV file can then be transcoded to other formats using [FFmpeg](/index.php/FFmpeg "FFmpeg").
+
 #### Window switching
 
 To switch windows with `Super+Space` instead of `Super+Tab` use the following patch:
 
 ```
 diff --git a/shell.c b/shell.c
-index b846e30..ffe5e48 100644
+index 9a44715..348a576 100644
 --- a/shell.c
 +++ b/shell.c
-@@ -4457,7 +4457,7 @@ switcher_key(struct weston_keyboard_grab *grab,
+@@ -4510,7 +4510,7 @@ switcher_key(struct weston_keyboard_grab *grab,
  	struct switcher *switcher = container_of(grab, struct switcher, grab);
  	enum wl_keyboard_key_state state = state_w;
 
@@ -318,7 +314,7 @@ index b846e30..ffe5e48 100644
  		switcher_next(switcher);
  }
 
-@@ -4949,7 +4949,7 @@ shell_add_bindings(struct weston_compositor *ec, struct desktop_shell *shell)
+@@ -5003,7 +5003,7 @@ shell_add_bindings(struct weston_compositor *ec, struct desktop_shell *shell)
  		weston_compositor_add_button_binding(ec, BTN_MIDDLE, mod,
  						     rotate_binding, NULL);
 

@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [AUR Trusted User Guidelines](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines"). Data da última tradução: 2018-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_Trusted_User_Guidelines&diff=0&oldid=538847) na versão em inglês.
+
 Artigos relacionados
 
 *   [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
@@ -59,6 +61,8 @@ Os TUs também estão em uma posição de documentar práticas recomendadas.
 ### Regras para a Entrada de Pacotes no Repositório [community]
 
 *   Um pacote não pode já existir em qualquer um dos repositórios do Arch Linux. você deve tomar os cuidados necessários para se certificar que nenhum outro empacotador está no processo de promoção do mesmo pacote. Veja os comentários do pacote do AUR, leia os últimos títulos de assuntos no [aur-general](https://mailman.archlinux.org/mailman/listinfo/aur-general), pesquise [todos os projetos no rastreador de erro](https://bugs.archlinux.org/index.php?project=0&do=index&switch=1), use [grep](https://en.wikipedia.org/wiki/Grep "wikipedia:Grep") no [log do Subversion](http://svnbook.red-bean.com/en/1.7/svn.ref.svn.c.log.html) e envie uma mensagem rápida para o [canal IRC](/index.php/Canal_IRC "Canal IRC") privado de TUs.
+
+*   Auxiliares do AUR, como uma exceção especial, nunca serão permitidos.
 
 *   Somente pacotes "populares" podem entrar no repositório, sendo definido pelo 1% de uso no [pkgstats](https://www.archlinux.de/?page=PackageStatistics) ou 10 votos no AUR.
 

@@ -459,7 +459,7 @@ WantedBy=multi-user.target
 
 ```
 
-Se você deseja habilitar o modo pomíscuo na interface `eth0`, execute [*enable*](/index.php/Habilite "Habilite") `promiscuous@eth0.service`.
+Se você deseja habilitar o modo promíscuo na interface `eth0`, execute [*enable*](/index.php/Habilite "Habilite") `promiscuous@eth0.service`.
 
 ### Investigar soquetes
 

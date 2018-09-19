@@ -13,6 +13,8 @@ From the [official website](http://portswigger.net/burp/):
 
 Install [burpsuite](https://aur.archlinux.org/packages/burpsuite/) from [AUR](/index.php/AUR "AUR").
 
+This will install Burp Suite Community (free edition).
+
 ## Configuration
 
 Burp Proxy will work out of the box with HTTP connections. For HTTPS, PortSwigger's certificate must be installed first.

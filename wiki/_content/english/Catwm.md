@@ -42,7 +42,7 @@ Run `catwm` with [xinit](/index.php/Xinit "Xinit").
 
 ## Configuration
 
-Catwm uses it's config.h file for configuration. By default, some hotkeys are already set (Note: the default MOD key is the Alt key):
+Catwm uses its config.h file for configuration. By default, some hotkeys are already set (Note: the default MOD key is the Alt key):
 
 *   MOD + h (decrease the size of a current window)
 *   MOD + l (increase the size of a current window)

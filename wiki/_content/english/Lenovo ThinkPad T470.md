@@ -17,7 +17,8 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
     *   [2.2 Screen backlight](#Screen_backlight)
     *   [2.3 Thunderbolt 3](#Thunderbolt_3)
     *   [2.4 UEFI boot](#UEFI_boot)
-    *   [2.5 Special buttons](#Special_buttons)
+    *   [2.5 BIOS GPT boot](#BIOS_GPT_boot)
+    *   [2.6 Special buttons](#Special_buttons)
 *   [3 PCI and USB devices](#PCI_and_USB_devices)
     *   [3.1 T470 model 20HD](#T470_model_20HD)
         *   [3.1.1 lspci](#lspci)
@@ -88,7 +89,15 @@ With the latest kernel (4.12.12 as of writing), the *Alpine Ridge* thunderbolt 3
 
 After configuring the BIOS setup to allow UEFI boot (either *UEFI only* or *both*), it works flawlessly.
 
+### BIOS GPT boot
+
 **Note:** I was unable to boot with a GPT + BIOS configuration, and therefore switch to GPT + EFI. However, until another confirmation, it is quite probable that was caused by some bad configuration from my side.
+
+I can confirm that issue. Even with a recent bios (1.52), it doesn't work.
+
+I had to trick my ThinkPad into UEFI (because my bios is locked, found that method by pure luck). It works by installing the [syslinux](/index.php/Syslinux "Syslinux") bootloader on your freshly installed arch (be sure to follow the GPT specific instructions at [Syslinux#GUID_partition_table](/index.php/Syslinux#GUID_partition_table "Syslinux")) and the boot that syslinux with the arch install iso ('Boot existing OS' -> press `TAB` -> replace `hd0 0` with `hd1 0`). Syslinux should show you an option to boot the ArchLinux installation in UEFI mode. Mount you Arch installation, `arch-chroot` into it and install [grub](/index.php/Grub "Grub") (or your favorite bootloader) for UEFI. That did the trick for me.
+
+You have to create a proper UEFI partition. Have a look at [partitioning](/index.php/Partitioning "Partitioning").
 
 ### Special buttons
 

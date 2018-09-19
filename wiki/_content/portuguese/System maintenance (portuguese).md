@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [System maintenance](/index.php/System_maintenance "System maintenance"). Data da última tradução: 2018-08-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=537971) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [System maintenance](/index.php/System_maintenance "System maintenance"). Data da última tradução: 2018-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=539531) na versão em inglês.
 
 Artigos relacionados
 
@@ -73,7 +73,7 @@ Os backups podem ser automatizados com [systemd/Timers](/index.php/Systemd/Timer
 
 ### Arquivos de configuração
 
-Antes de editar quaisquer arquivos de configuração, crie um backup de forma que você possa reverter para uma versão funcional no caso de haver problemas. Editores como [vim](/index.php/Vim "Vim") e [emacs](/index.php/Emacs "Emacs") pode fazer isso automaticamente, assim como ferramentas como [etckeeper](/index.php/Etckeeper "Etckeeper") que mantêm `/etc` em um sistema de controle de versão (VCS); veja [dotfiles (Português)#Controle de versão](/index.php/Dotfiles_(Portugu%C3%AAs)#Controle_de_vers.C3.A3o "Dotfiles (Português)") para mais.
+Antes de editar quaisquer arquivos de configuração, crie um backup de forma que você possa reverter para uma versão funcional no caso de haver problemas. Editores como [vim](/index.php/Vim "Vim") e [emacs](/index.php/Emacs "Emacs") pode fazer isso automaticamente, assim como ferramentas como [etckeeper](/index.php/Etckeeper "Etckeeper") que mantêm `/etc` em um [sistema de controle de versão](/index.php/Version_control_system "Version control system") (VCS); veja [dotfiles (Português)#Controle de versão](/index.php/Dotfiles_(Portugu%C3%AAs)#Controle_de_vers.C3.A3o "Dotfiles (Português)") para mais.
 
 ### Lista de pacotes instalados
 
@@ -248,4 +248,4 @@ Para disponibilizá-lo como uma opção de boot, você precisará atualizar as c
 ## Veja também
 
 *   [Arch News Bash Script](https://bbs.archlinux.org/viewtopic.php?id=146850)
-*   [maint](https://aur.archlinux.org/packages/maint/)
+*   [Automatic Arch System Maintenance](https://bbs.archlinux.org/viewtopic.php?pid=1791008)

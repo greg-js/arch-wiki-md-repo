@@ -185,6 +185,16 @@ This modification assumes that you have already setup notmuch or mu/mu4e for you
 
 ### SSL error
 
+If you get the following error:
+
+```
+
+SSL error connecting imap.gmail.com (108.177.125.109:993): self signed certificate
+
+```
+
+Since google enforce SNI when you use TLS 1.3, ensure to run at least isync v1.3.0 See [https://sourceforge.net/p/isync/isync/merge-requests/2/](https://sourceforge.net/p/isync/isync/merge-requests/2/) for more details
+
 If you get certificate related errors like
 
 ```

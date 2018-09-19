@@ -104,11 +104,11 @@ If the touchpad is jumpy/imprecise, copy the two lines below into a new file:
 
  `/etc/udev/hwdb.d/90-libinput-x220-touchpad-fw81.hwdb` 
 ```
-libinput:name:SynPS/2 Synaptics TouchPad:dmi:*svnLENOVO:*:pvrThinkPadX220*
+touchpad:i8042:*
  LIBINPUT_MODEL_LENOVO_X220_TOUCHPAD_FW81=1
 ```
 
-then run `udevadm hwdb --update` and reboot.
+then run `udevadm hwdb --update && udevadm control --reload-rules && udevadm trigger`
 
 See [Fedora bug #1264453](https://bugzilla.redhat.com/show_bug.cgi?id=1264453) for more details.
 

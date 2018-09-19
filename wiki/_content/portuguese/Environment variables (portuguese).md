@@ -76,6 +76,7 @@ Nem sempre você deseja definir uma variável de ambiente globalmente. Por exemp
 *   `~/.pam_environment` é o equivalente específico de usuário de `/etc/security/pam_env.conf` [[1]](https://github.com/linux-pam/linux-pam/issues/6), usado pelo módulo pam_env. Veja [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) e [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5) para detalhes.
 *   Arquivos de configuração de usuário de seu [shell](/index.php/Shell_de_linha_de_comando "Shell de linha de comando"), por exemplo [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") ou [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
 *   `~/.profile` é usado por muitos shells como reserva, veja [Wikipedia:pt:Shell do Unix#Arquivos de configuração](https://en.wikipedia.org/wiki/pt:Shell_do_Unix#Arquivos_de_configura.C3.A7.C3.A3o "wikipedia:pt:Shell do Unix").
+*   [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") vai carregar variáveis de ambiente de `~/.config/environment.d/*.conf` veja [environment.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/environment.d.5) e [https://wiki.gnome.org/Initiatives/Wayland/SessionStart](https://wiki.gnome.org/Initiatives/Wayland/SessionStart).
 
 Para adicionar um diretório para o `PATH` para uso local, coloque o seguinte em `~/.bash_profile`:
 

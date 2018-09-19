@@ -425,6 +425,8 @@ Be sure to remove the `dev=default` option of the alsa driver or adjust it to sp
 
 **Warning:** The equalizer module is considered unstable and might be removed from PulseAudio. For more, see the [mailing list](https://lists.freedesktop.org/archives/pulseaudio-discuss/2014-March/020174.html).
 
+**Tip:** You might want to use [pulseeffects](https://www.archlinux.org/packages/?name=pulseeffects) instead.
+
 PulseAudio has an integrated 10-band equalizer system. In order to use the equalizer do the following:
 
 Install [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer):

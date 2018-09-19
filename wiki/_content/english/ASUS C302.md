@@ -1,4 +1,4 @@
-The [Asus C302](https://www.asus.com/uk/2-in-1-PCs/ASUS-Chromebook-Flip-C302CA/) ([also known as](https://www.reddit.com/r/chromeos/comments/7z6208/asus_c302ca_vs_asus_c302_any_differences/) Asus C302C and Asus C302CA) is a Chromebook, which can have Linux installed. Here are some pointers on the smooth running of Arch Linux.
+The [Asus C302](https://www.asus.com/uk/2-in-1-PCs/ASUS-Chromebook-Flip-C302CA/) ([also known as](https://www.reddit.com/r/chromeos/comments/7z6208/asus_c302ca_vs_asus_c302_any_differences/) Asus C302C and Asus C302CA) is a [Chromebook](/index.php/Chromebook "Chromebook"), which can have Linux installed. Here are some pointers on the smooth running of Arch Linux.
 
 ## Contents
 
@@ -6,6 +6,7 @@ The [Asus C302](https://www.asus.com/uk/2-in-1-PCs/ASUS-Chromebook-Flip-C302CA/)
 *   [2 Kernel Modules](#Kernel_Modules)
 *   [3 Screen](#Screen)
     *   [3.1 Vsync](#Vsync)
+    *   [3.2 Screen Flipping](#Screen_Flipping)
 *   [4 Keyboard](#Keyboard)
     *   [4.1 Keyboard Backlight](#Keyboard_Backlight)
 *   [5 Touchpad](#Touchpad)
@@ -49,9 +50,9 @@ options tpm_tis interrupts=0
 
 # Screen
 
-The screen is 12.5 inches diagonally. At 1920x1080 resolution, this is 176 DPI.
+The screen is 12.5 inches diagonally. At 1920x1080 resolution, this is 176 DPI, which is [HiDPI](/index.php/HiDPI "HiDPI").
 
-In ~/.xinitrc:
+In ~/.xinitrc, to set the screen dimensions (measured in millimetres):
 
 ```
 xrandr --fbmm 277x156
@@ -71,6 +72,38 @@ Section "Device"
     Identifier "Intel Graphics"
     Driver "intel"
 EndSection
+
+```
+
+## Screen Flipping
+
+To use the laptop in tent mode, the following script will flip both the screen and touch input:
+
+```
+#!/bin/dash
+
+set_normal() {
+	r="normal"
+	ctm="1 0 0 0 1 0 0 0 1"
+
+}
+
+set_upside_down() {
+	r="inverted"
+	ctm="-1 0 1 0 -1 1 0 0 1"
+}
+
+line=$(xrandr | grep '^eDP.* connected ')
+screen=$(printf "%s" "$line" | cut -d" " -f1)
+
+if $(printf "%s" "$line" | grep -q ' inverted (normal') ; then
+	set_normal
+else
+	set_upside_down
+fi
+
+xrandr --output "$screen" --rotate "$r"
+xinput set-prop "Elan Touchscreen" "Coordinate Transformation Matrix" $ctm
 
 ```
 
@@ -116,7 +149,7 @@ keycode 182 = XF86Close NoSymbol XF86Close
 
 (This list can be pruned.)
 
-And then call it in ~/.xinitrc:
+~/.Xmodmap will be loaded by /etc/X11/xinit/xinitrc, which effectively runs:
 
 ```
 xmodmap ~/.Xmodmap
@@ -137,21 +170,54 @@ echo 6 > "$b"
 
 It is a value between 0 (off) and 100 (full brightness). The default on ChromeOS is 25\. 6 is a reasonable lower value.
 
-ChromeOS is able to disable the keyboard backlight, when the keyboard is not being used - that functionality does not appear to be available in the Linux kernel.
+ChromeOS is able to disable the keyboard backlight, when the keyboard is not being used - that functionality does not appear to be available in the Linux kernel, but can be replicated in a simple script, with the aid of [xprintidle](https://www.archlinux.org/packages/?name=xprintidle), e.g.:
+
+```
+#!/bin/dash
+
+set_keyboard_backlight() {
+	printf "%s" "$1" > "/sys/devices/platform/GOOG0002:00/leds/chromeos::kbd_backlight/brightness"
+	b="$1"
+}
+
+b=0
+
+while true ; do
+	pgrep ^Xorg > /dev/null || exit 0
+
+	seconds_to_sleep=10
+	idle_millis=$(xprintidle)
+	if [ "$idle_millis" -gt 10000 ] ; then
+		nb=0
+		seconds_to_sleep=5
+	else
+		nb=25
+		seconds_to_sleep=15
+	fi
+
+	if [ "$nb" -ne "$b" ] ; then
+		set_keyboard_backlight "$nb"
+	fi
+
+	echo "nb=$nb, sleeping for $seconds_to_sleep"
+	sleep "$seconds_to_sleep"
+done
+
+```
 
 # Touchpad
 
-See [TrackPoint](/index.php/TrackPoint "TrackPoint") - the pressure sensitivity can be changed:
+As of [libinput](https://www.archlinux.org/packages/?name=libinput) 1.12.0-2, the [touchpad works nicely](https://bugs.archlinux.org/task/60072?project=1) with all of:
 
-In /etc/udev/hwdb.d/99-touchpad-pressure.hwdb
+*   Tapping:
+    *   1-finger tap = "left" button
+    *   2-finger tap = "right" button
+    *   3-finger tap = "middle" button
 
-```
-libinput:name:*Elan Touchpad:dmi:*svnGOOGLE:*pnCave*
- LIBINPUT_ATTR_PRESSURE_RANGE=1:41
-
-```
-
-Current [libinput bug report](https://gitlab.freedesktop.org/libinput/libinput/issues/140).
+*   Clickpad (clicking the lower portion of the touchpad):
+    *   Left side = "left" button
+    *   Right side = "right" button
+    *   Middle = "middle" button
 
 # Mouse
 

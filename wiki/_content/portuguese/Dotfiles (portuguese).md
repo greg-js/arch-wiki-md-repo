@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Dotfiles](/index.php/Dotfiles "Dotfiles"). Data da última tradução: 2018-08-16\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dotfiles&diff=0&oldid=535473) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Dotfiles](/index.php/Dotfiles "Dotfiles"). Data da última tradução: 2018-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dotfiles&diff=0&oldid=541936) na versão em inglês.
 
 Artigos relacionados
 
@@ -19,7 +19,7 @@ Este artigo coleta repositórios de usuários com arquivos de configuração per
 
 ## Controle de versão
 
-A gerência de *dotfiles* com software de controle de versão, como o [Git](/index.php/Git "Git"), ajuda a acompanhar as alterações, compartilhar com outras pessoas e sincronizar os *dotfiles* entre vários hosts.
+A gerência de *dotfiles* com [sistemas de controle de versão](/index.php/Version_control_system "Version control system"), como o [Git](/index.php/Git "Git"), ajuda a acompanhar as alterações, compartilhar com outras pessoas e sincronizar os *dotfiles* entre vários hosts.
 
 ### Usando gitignore
 
@@ -148,7 +148,6 @@ de shell) | WM / DE | Editor | Terminal | Multiplexador | Áudio | Monitor | E-m
 | [meskarune](https://github.com/meskarune/.dotfiles) | bash | herbstluftwm | vim | rxvt-unicode | screen | conky | weechat |
 | [neersighted](https://github.com/neersighted/dotfiles) | zsh | i3 | vim | rxvt-unicode | tmux | ncmpcpp | htop | mutt | irssi |
 | [OK100](https://github.com/ok100/configs) | bash | dwm | vim | rxvt-unicode | cmus | conky, dzen | mutt | weechat |
-| [polyzen](https://github.com/polyzen/dotfiles) | zsh | i3 | vim | termite | tmux | i3status | weechat |
 | [reisub0](https://github.com/reisub0/dot) | bash | awesome | neovim | termite | mpd | conky |
 | [sistematico](https://github.com/sistematico/majestic) | zsh/fish/bash | [i3 Gaps](https://github.com/Airblader/i3) | vim/nano | termite | tmux | ncmpcpp | polybar | mutt | weechat |
 | [sitilge](https://git.sitilge.id.lv/sitilge/dotfiles) | zsh | awesome | neovim | termite | thunderbird |

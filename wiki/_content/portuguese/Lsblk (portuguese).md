@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Core utilities (Português)#lsblk](/index.php/Core_utilities_(Portugu%C3%AAs)#lsblk "Core utilities (Português)")
+*   [Device file (Português)#lsblk](/index.php/Device_file_(Portugu%C3%AAs)#lsblk "Device file (Português)")

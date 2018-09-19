@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"). Data da última tradução: 2018-08-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&diff=0&oldid=537200) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"). Data da última tradução: 2018-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&diff=0&oldid=541361) na versão em inglês.
 
 Artigos relacionados
 
@@ -13,8 +13,11 @@ Se você deseja executar uma instalação completa do Arch Linux a partir de uma
 ## Contents
 
 *   [1 USB inicializável com BIOS e UEFI](#USB_inicializ.C3.A1vel_com_BIOS_e_UEFI)
-    *   [1.1 Usando dd](#Usando_dd)
+    *   [1.1 Usando ferramentas automáticas](#Usando_ferramentas_autom.C3.A1ticas)
         *   [1.1.1 No GNU/Linux](#No_GNU.2FLinux)
+            *   [1.1.1.1 Usando dd](#Usando_dd)
+            *   [1.1.1.2 Usando liveusb-builder](#Usando_liveusb-builder)
+            *   [1.1.1.3 Usando etcher](#Usando_etcher)
         *   [1.1.2 No Windows](#No_Windows)
             *   [1.1.2.1 Usando Rufus](#Usando_Rufus)
             *   [1.1.2.2 Usando USBwriter](#Usando_USBwriter)
@@ -43,13 +46,15 @@ Se você deseja executar uma instalação completa do Arch Linux a partir de uma
 
 ## USB inicializável com BIOS e UEFI
 
-### Usando dd
+### Usando ferramentas automáticas
+
+#### No GNU/Linux
+
+##### Usando dd
 
 **Nota:** Este método é recomendado devido à sua simplicidade. Se não funcionar, mude para o método alternativo [#Usando formatação manual](#Usando_formata.C3.A7.C3.A3o_manual) abaixo.
 
-**Atenção:** Isso destruirá irrevogavelmente todos os dados em `/dev/**sdx**`. Para restaurar a unidade USB como um dispositivo de armazenamento utilizável vazio após usar a imagem ISO do Arch, a assinatura do sistema de arquivos iso9660 precisa ser removida executando `wipefs --all /dev/**sdx**` como root, antes de [reparticionar](/index.php/Repartition "Repartition") e [reformatar](/index.php/Reformat "Reformat") a unidade USB.
-
-#### No GNU/Linux
+**Atenção:** Isso destruirá irrevogavelmente todos os dados em `/dev/**sdx**`. Para restaurar a unidade USB como um dispositivo de armazenamento utilizável vazio após usar a imagem ISO do Arch, a assinatura do sistema de arquivos ISO 9660 precisa ser removida executando `wipefs --all /dev/**sdx**` como root, antes de [reparticionar](/index.php/Repartition "Repartition") e [reformatar](/index.php/Reformat "Reformat") a unidade USB.
 
 **Dica:** Descubra o nome do sua unidade USB com `lsblk`. Certifique-se de que ela **não** esteja montada.
 
@@ -60,21 +65,50 @@ Execute o seguinte comando, substituindo `/dev/**sdx**` pela sua unidade, por ex
 
 ```
 
-Veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) para mais informações sobre `dd`. Veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1#DESCRIPTION) para mais informações sobre `oflag=sync`.
+Veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) para mais informações sobre [dd](/index.php/Dd "Dd"). Veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1#DESCRIPTION) para mais informações sobre `oflag=sync`.
+
+##### Usando liveusb-builder
+
+[liveusb-builder](https://github.com/mytbk/liveusb-builder) é um conjunto de scripts para criar pendrive multiboot para distribuições GNU/Linux.
+
+**Nota:** Essa ferramenta foi testada apenas no Arch Linux. Se você está usando outra distribuição GNU/Linux, pode haver alguma diferença.
+
+[Instale](/index.php/Instale "Instale") [liveusb-builder-git](https://aur.archlinux.org/packages/liveusb-builder-git/).
+
+Baixe uma ISO recente do Arch Linux para seu diretório `~/isofiles`:
+
+```
+$ buildlive --downloadonly arch
+
+```
+
+Monte seu pendrive, suponha que você tenha apenas uma partição [FAT32](/index.php/FAT32 "FAT32") e faça um Live USB. Se o seu pendrive tiver um esquema de partição diferente ou você encontrar algum problema, por favor, verifique o [site do projeto](https://github.com/mytbk/liveusb-builder#usage).
+
+```
+$ buildlive --root /path/to/usb-drive arch
+
+```
+
+##### Usando etcher
+
+[Etcher](https://etcher.io/) é um poderoso aplicador de imagem do sistema operacional criado com tecnologias web para garantir que o flash de um cartão SD ou unidade USB seja uma experiência agradável e segura. Ele protege você de gravar acidentalmente em seus discos rígidos, garante que todos os bytes de dados foram escritos corretamente e muito mais.
 
 #### No Windows
 
 ##### Usando Rufus
 
-[Rufus](https://rufus.akeo.ie/) é um escritor multiuso de ISO em USB. Basta selecionar a ISO do Arch Linux, a unidade USB na qual você deseja criar o Arch Linux inicializável e clicar em Iniciar.
+[Rufus](https://rufus.akeo.ie/) é um escritor multiuso de ISO em USB. Basta selecionar a ISO do Arch Linux, a unidade USB na qual você deseja criar o Arch Linux inicializável e clicar em *Iniciar*.
 
 Como o Rufus não se importa se a unidade está formatada corretamente ou não e fornece uma GUI, ela pode ser a ferramenta mais fácil e mais robusta a ser usada.
 
-**Nota:** Certifique-se de selecionar o modo **Imagem DD** no menu suspenso ou a imagem será transferida incorretamente.
+**Nota:** A imagem tem que ser transferida no **modo Imagem DD**.
+
+*   Para Rufus versão ≥ 3.0, selecione *GPT* a partir do menu suspenso *Esquema de partição*. Ao clicar em *Iniciar*, você verá o diálogo de seleção de modo, selecione o *modo Imagem DD*.
+*   Para Rufus versão < 3.0,selecione o modo *Imagem DD* a partir do menu suspenso na parte inferior.
 
 ##### Usando USBwriter
 
-Esse método não requer nenhuma solução alternativa e é tão simples quanto `dd` no Linux. Basta baixar o ISO do Arch Linux e, com permissões de administrador local, use o utilitário [USBwriter](http://sourceforge.net/p/usbwriter/wiki/Documentation/) para gravar na memória flash USB.
+Esse método não requer nenhuma solução alternativa e é tão simples quanto `dd` no Linux. Basta baixar o ISO do Arch Linux e, com permissões de administrador local, use o utilitário [USBwriter](https://sourceforge.net/p/usbwriter/wiki/Documentation/) para gravar na memória flash USB.
 
 ##### Usando win32diskimager
 
@@ -82,7 +116,7 @@ Esse método não requer nenhuma solução alternativa e é tão simples quanto 
 
 ##### Usando Cygwin
 
-Certifique-se que sua instalação de [Cygwin](http://www.cygwin.com/) contém o pacote `dd`.
+Certifique-se que sua instalação de [Cygwin](https://www.cygwin.com/) contém o pacote `dd`.
 
 **Dica:** Se você não quiser instalar o Cygwin, você pode fazer o download do `dd` para Windows em [http://www.chrysocome.net/dd](http://www.chrysocome.net/dd) aqui. Veja a próxima seção para mais informações.
 
@@ -188,7 +222,6 @@ Esse método é mais complicado do que gravar a imagem diretamente com `dd`, mas
 *   Certifique-se que o pacote [syslinux](https://www.archlinux.org/packages/?name=syslinux) está instalado no sistema.
 
 *   Se ainda não tiver feito, crie a tabela de partição e/ou a partição no dispositivo antes de continuar. A partição `/dev/sd**Xn**` deve ser formatada para [FAT32](/index.php/FAT32 "FAT32").
-
 *   Monte a imagem ISO, monte o sistema de arquivos FAT32 localizado no dispositivo flash USB e copie o conteúdo da imagem ISO para ele. Em seguida, desmonte a imagem ISO, mas mantenha a partição FAT32 montada (isso será usado em etapas subsequentes). Por exemplo:
 
 ```
@@ -205,12 +238,12 @@ Para inicializar um rótulo ou um [UUID](/index.php/UUID "UUID") para selecionar
 
 **Atenção:** A incompatibilidade de rótulos ou o UUID errado impede a inicialização da mídia criada.
 
-O Syslinux já está pré-instalado em */mnt/usb/arch/boot/syslinux*. Instale-o completamente nessa pasta seguindo [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux"). As instruções são reproduzidas aqui para sua conveniência:
+O Syslinux já está pré-instalado em `/mnt/usb/arch/boot/syslinux`. Instale-o completamente nessa pasta seguindo [Syslinux#Manual install](/index.php/Syslinux#Manual_install "Syslinux"). As instruções são reproduzidas aqui para sua conveniência.
 
-*   Sobrescreva os módulos existentes do Syslinux (`*.c32` arquivos presentes no USB (da ISO) com os do pacote syslinux (encontrado em */usr/lib/syslinux/bios*). Isso é necessário para evitar falhas de inicialização devido a uma possível incompatibilidade de versão.
+*   Sobrescreva os módulos existentes do Syslinux (arquivos **.c32*) presentes no USB (da ISO) com os do pacote [syslinux](https://www.archlinux.org/packages/?name=syslinux) (encontrado em `/usr/lib/syslinux/bios/`). Isso é necessário para evitar falhas de inicialização devido a uma possível incompatibilidade de versão.
 
 ```
-# cp /usr/lib/syslinux/bios/*.c32 /mnt/usb/arch/boot/syslinux
+# cp /usr/lib/syslinux/bios/*.c32 /mnt/usb/arch/boot/syslinux/
 
 ```
 
@@ -230,21 +263,14 @@ O Syslinux já está pré-instalado em */mnt/usb/arch/boot/syslinux*. Instale-o 
 **Nota:**
 
 *   Para formatação manual, não use nenhum utilitário **criador de USB inicializável** para criar o USB UEFI inicializável. Para formatação manual, não use *dd para Windows* para inserir o ISO na unidade USB.
-
 *   Nos comandos abaixo, **X:** é considerado como sendo a unidade flash USB no Windows.
-
 *   Windows usa barra invertida `\` como separador de caminho, então o mesmo é usado nos comandos abaixo.
-
 *   Todos os comandos devem ser executados no prompt de comandos do Windows **como administrador**.
-
 *   `>` denota o prompt de comando do Windows.
 
-*   Particione e formate o drive USB usando o [particionador de USB Rufus](http://rufus.akeo.ie/). Selecione a opção de esquema de partição como **MBR para BIOS e UEFI** e sistema de arquivos como **FAT32**. Desmarque a opção "Criar um disco inicializável usando imagem ISO" e "Criar arquivos estendidos de rótulo e ícone".
-
+*   Particione e formate o drive USB usando o [particionador de USB Rufus](https://rufus.akeo.ie/). Selecione a opção de esquema de partição como **MBR para BIOS e UEFI** e sistema de arquivos como **FAT32**. Desmarque a opção "Criar um disco inicializável usando imagem ISO" e "Criar arquivos estendidos de rótulo e ícone".
 *   Altere o **Rótulo do Volume** da unidade flash USB `X:` para corresponder ao LABEL mencionado na parte `archisolabel=` em `<ISO>\loader\entries\archiso-x86_64.conf`. Esta etapa é necessária para o ISO oficial ([Archiso](/index.php/Archiso "Archiso")). Esta etapa também pode ser executada usando o Rufus, durante a etapa anterior de "particionamento e formatação".
-
-*   Extraia a ISO (similar a extrair o arquivo ZIP) para a unidade flash USB (usando [7-Zip](http://7-zip.org/).
-
+*   Extraia a ISO (similar a extrair o arquivo ZIP) para a unidade flash USB (usando [7-Zip](https://www.7-zip.org/).
 *   Baixe os binários oficiais Syslinux 6.xx (arquivo zip) de [https://www.kernel.org/pub/linux/utils/boot/syslinux/](https://www.kernel.org/pub/linux/utils/boot/syslinux/) e extrai-a. A versão do Syslinux deve ser a mesma versão usada na imagem ISO.
 
 *   Execute o comando a seguir (no prompt de comando do Windows, como admin):
@@ -267,7 +293,6 @@ O Syslinux já está pré-instalado em */mnt/usb/arch/boot/syslinux*. Instale-o 
 **Nota:**
 
 *   A etapa acima instala o `ldlinux.sys` do Syslinux no VBR da partição USB, define a partição como "active/boot" na tabela de partições MBR e grava o código de inicialização do MBR no primeiro código de inicialização de 440 bytes região do USB.
-
 *   O opção `-d` espera um caminho com separador de caminho de barra como nos sistemas * unix.
 
 ## Outros métodos para sistemas BIOS
@@ -280,7 +305,7 @@ Isso permite inicializar vários ISOs de um único dispositivo USB, incluindo o 
 
 #### Usando o utilitário de disco do GNOME
 
-As distribuições Linux que usam o GNOME podem facilmente criar um live CD através do [nautilus](https://www.archlinux.org/packages/?name=nautilus) e do [gnome-disk-utility](https://www.archlinux.org/packages/?name=gnome-disk-utility). Basta clicar com o botão direito no arquivo .iso e selecionar "Abrir com Gravador de imagem de disco". Quando o Utilitário de disco do GNOME abrir, especifique a unidade flash no menu suspenso "Destino" e clique em "Iniciar Restauração".
+As distribuições Linux que usam o GNOME podem facilmente criar um live CD através do [nautilus](https://www.archlinux.org/packages/?name=nautilus) e do [gnome-disk-utility](https://www.archlinux.org/packages/?name=gnome-disk-utility). Basta clicar com o botão direito no arquivo *.iso* e selecionar *Abrir com Gravador de imagem de disco*. Quando o Utilitário de disco do GNOME abrir, especifique a unidade flash no menu suspenso *Destino* e clique em *Iniciar Restauração*.
 
 #### Fazendo uma unidade USB-ZIP
 
@@ -298,7 +323,7 @@ A partir daqui, continue com o método de formatação manual. A partição ser�
 
 #### Usando UNetbootin
 
-O UNetbootin pode ser usado em qualquer distribuição Linux ou no Windows para copiar seu iso para um dispositivo USB. No entanto, o Unetbootin sobrescreve o syslinux.cfg, portanto, ele cria um dispositivo USB que não inicializa corretamente. Por esse motivo, *'Unetbootin não é recomendado'* -- use `dd` ou um dos outros métodos discutidos neste tópico.
+O UNetbootin pode ser usado em qualquer distribuição Linux ou no Windows para copiar seu ISO para um dispositivo USB. No entanto, o Unetbootin sobrescreve o `syslinux.cfg`, portanto, ele cria um dispositivo USB que não inicializa corretamente. Por esse motivo, **Unetbootin não é recomendado** -- use `dd` ou um dos outros métodos discutidos neste tópico.
 
 **Atenção:** O UNetbootin escreve sobre o `syslinux.cfg` padrão; isso deve ser restaurado antes que o dispositivo USB seja inicializado corretamente.
 
@@ -352,7 +377,7 @@ Se sob o Vista ou o Win7, você deve abrir o console como administrador, senão 
 
 #### Carregar a mídia de instalação da RAM
 
-Este método usa [Syslinux](/index.php/Syslinux "Syslinux") e um [Ramdisk](/index.php/Ramdisk "Ramdisk") ([MEMDISK](http://www.syslinux.org/wiki/index.php/MEMDISK)) para carregar toda a imagem ISO do Arch Linux na RAM. Como isso será executado inteiramente a partir da memória do sistema, você precisará certificar-se de que o sistema em que você estará instalando tenha uma quantidade adequada. Uma quantidade mínima de RAM entre 500 MB e 1 GB deve ser suficiente para uma instalação do Arch Linux baseada em MEMDISK.
+Este método usa [Syslinux](/index.php/Syslinux "Syslinux") e um [Ramdisk](/index.php/Ramdisk "Ramdisk") ([MEMDISK](https://www.syslinux.org/wiki/index.php/MEMDISK)) para carregar toda a imagem ISO do Arch Linux na RAM. Como isso será executado inteiramente a partir da memória do sistema, você precisará certificar-se de que o sistema em que você estará instalando tenha uma quantidade adequada. Uma quantidade mínima de RAM entre 500 MB e 1 GB deve ser suficiente para uma instalação do Arch Linux baseada em MEMDISK.
 
 Para obter mais informações sobre os requisitos do sistema Arch Linux, bem como sobre os do MEMDISK, consulte o [Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação") e [aqui](http://www.etherboot.org/wiki/bootingmemdisk#preliminaries). Para referência, aqui está o [tópico do fórum anterior](https://bbs.archlinux.org/viewtopic.php?id=135266).
 
@@ -368,7 +393,7 @@ Comece formatando a unidade flash USB como **FAT32**. Em seguida, crie as seguin
 
 ##### Copiar os arquivos necessários à unidade flash USB
 
-Em seguida copie o ISO que você gostaria de inicializar na pasta `Boot/ISOs`. Depois disso, extraia os seguintes arquivos da última versão do [syslinux](https://www.archlinux.org/packages/?name=syslinux) do site [aqui](http://www.kernel.org/pub/linux/utils/boot/syslinux/) e copie-os para o seguinte pastas.
+Em seguida copie o ISO que você gostaria de inicializar na pasta `Boot/ISOs`. Depois disso, extraia os seguintes arquivos da última versão do [syslinux](https://www.archlinux.org/packages/?name=syslinux) do site [aqui](https://www.kernel.org/pub/linux/utils/boot/syslinux/) e copie-os para o seguinte pastas.
 
 *   `./win32/syslinux.exe` para a pasta `Área de trabalho` ou `Downloads` em seu sistema.
 *   `./memdisk/memdisk` para a pasta `Settings` em seu dispositivo flash USB.
@@ -377,7 +402,7 @@ Em seguida copie o ISO que você gostaria de inicializar na pasta `Boot/ISOs`. D
 
 Depois de copiar os arquivos necessários, navegue até a unidade flash USB, /boot/Settings e crie um arquivo `syslinux.cfg`.
 
-**Atenção:** Na linha `INITRD`, certifique-se de usar o nome do arquivo ISO que você copiou para a sua pasta `ISOs`!
+**Atenção:** Na linha `INITRD`, certifique-se de usar o nome do arquivo ISO que você copiou para a sua pasta `ISOs`.
  `/Boot/Settings/syslinux.cfg` 
 ```
 DEFAULT arch_iso
@@ -399,16 +424,16 @@ Finalmente, crie um arquivo `*.bat` onde `syslinux.exe` está localizado e execu
 ```
 @echo off
 syslinux.exe -m -a -d /Boot/Settings X:
+
 ```
 
 ## Solução de problemas
 
 *   Se você receber o erro "device did not show up after 30 seconds" devido à não montagem do `/dev/disk/by-label/ARCH_XXXXYY`, tente renomear sua mídia USB para `ARCH_XXXXYY` (por exemplo, `ARCH_201501`).
-
 *   Se você receber erros, tente usar outro dispositivo USB. Existem casos em que resolveu todos os problemas.
 
 ## Veja também
 
 *   [Gentoo wiki - LiveUSB/HOWTO](https://wiki.gentoo.org/wiki/LiveUSB/HOWTO)
 *   [Fedora wiki - How to create and use Live USB](https://fedoraproject.org/wiki/How_to_create_and_use_Live_USB)
-*   [openSUSE wiki - SDB:Live USB stick](http://en.opensuse.org/SDB:Live_USB_stick)
+*   [openSUSE wiki - SDB:Live USB stick](https://en.opensuse.org/SDB:Live_USB_stick)

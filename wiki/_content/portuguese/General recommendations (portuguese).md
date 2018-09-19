@@ -235,7 +235,7 @@ O [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "w
 
 ### Segurança de DNS
 
-Para melhor segurança ao navegar na web, jogar na internet, conectar a serviços [SSH](/index.php/SSH "SSH") e tarefas similares, considere usar software cliente habilitado para [DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)") que pode validar registros [DNS](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") assinados e [DNSCrypt](/index.php/DNSCrypt "DNSCrypt") para criptografar tráfego DNS.
+Para melhor segurança ao navegar na web, jogar na internet, conectar a serviços [SSH](/index.php/SSH "SSH") e tarefas similares, considere usar software cliente habilitado para [DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)") que pode validar registros [DNS](https://en.wikipedia.org/wiki/Domain_Name_System para criptografar tráfego DNS.
 
 ### Configuração de um firewall
 

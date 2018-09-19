@@ -4,7 +4,9 @@ Related articles
 *   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
 *   [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant")
 
-[IWD](https://iwd.wiki.kernel.org/) (iNet wireless daemon) is a wireless daemon for Linux, written by Intel aiming to replace [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant").[[1]](https://www.youtube.com/watch?v=F2Q86cphKDo) IWD works standalone or in combination with [ConnMan](/index.php/ConnMan "ConnMan") or [NetworkManager](/index.php/NetworkManager "NetworkManager"). It comes with different enhancements like an own crypto-library, called ELL, which docks directly into the Linux Kernel cryptography.
+[IWD](https://iwd.wiki.kernel.org/) (iNet wireless daemon) is a wireless daemon for Linux written by Intel that aims to replace [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant"). The core goal of the project is to optimize resource utilization by not depending on any external libraries and instead utilizing features provided by the Linux Kernel to the maximum extent possible. [[1]](https://www.youtube.com/watch?v=F2Q86cphKDo)
+
+IWD can work in standalone mode or in combination with comprehensive network managers like [ConnMan](/index.php/ConnMan "ConnMan") and [NetworkManager](/index.php/NetworkManager "NetworkManager").
 
 ## Contents
 

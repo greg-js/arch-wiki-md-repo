@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [ClamAV](/index.php/ClamAV "ClamAV"). Data da última tradução: 2018-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=ClamAV&diff=0&oldid=539450) na versão em inglês.
+
 [Clam AntiVirus](https://www.clamav.net) é uma caixa de ferramentas de antivírus, código aberto (GPL), para UNIX. Ele fornece uma série de utilitários, incluindo um daemon multi-threaded flexível e escalável, um scanner de linha de comando e uma ferramenta avançada para atualizações automáticas de banco de dados. Como o uso principal do ClamAV é em servidores de arquivos/e-mails para desktops Windows, ele principalmente detecta vírus e malwares do Windows com suas assinaturas embutidas.
 
 ## Contents
@@ -16,7 +18,9 @@
     *   [9.1 Erro: Clamd was NOT notified](#Erro:_Clamd_was_NOT_notified)
     *   [9.2 Erro: No supported database files found](#Erro:_No_supported_database_files_found)
     *   [9.3 Erro: Can't create temporary directory](#Erro:_Can.27t_create_temporary_directory)
-*   [10 Veja também](#Veja_tamb.C3.A9m)
+*   [10 Dicas e truques](#Dicas_e_truques)
+    *   [10.1 Executar em múltiplas threads](#Executar_em_m.C3.BAltiplas_threads)
+*   [11 Veja também](#Veja_tamb.C3.A9m)
 
 ## Instalação
 
@@ -303,6 +307,39 @@ Corrija as permissões:
 ```
 
 sendo *UID* e *GID* o informado na dica acima
+
+## Dicas e truques
+
+### Executar em múltiplas threads
+
+Ao varrer um arquivo ou diretório a partir da linha de comando usando `clamscan` ou `clamdscan`, apenas uma única thread de CPU é usada para varrer os arquivos um a um. Isso pode servir nos casos em que você não quer que o seu computador fique lento enquanto a verificação está em andamento, mas se você quiser digitalizar rapidamente uma pasta grande ou uma unidade USB, você pode querer usar todas as CPUs disponíveis para acelerar o processo.
+
+`clamscan` é projetado para funcionar em uma única thread, então você precisaria usar alguma coisa como `xargs` para executar a varredura em paralelo:
+
+```
+$ find /home/archie -type f -print | xargs -P 2 clamscan
+
+```
+
+Neste exemplo, o parâmetro `-P` para `xargs` executa `clamscan` em até 2 processos por vez. Se você tiver mais CPUs disponíveis, ajuste esse parâmetro de acordo. As opções `--max-lines` e `--max-args` permitirão um controle ainda melhor do envio em lote da carga de trabalho entre as threads.
+
+Use a seguinte versão se os nomes de arquivos puderem conter espaços ou outros caracteres especiais (como fazem frequentemente as unidades USB e ex-Windows):
+
+```
+$ find /home/archie -type f -print0 | xargs -0 -P 2 clamscan
+
+```
+
+`clamdscan` usa o daemon `clamd` para realizar a varredura. Você precisa iniciar o daemon `clamd` primeiro (veja [#Iniciando o daemon](#Iniciando_o_daemon)) e então executar o seguinte comando:
+
+```
+$ clamdscan --multiscan --fdpass /home/archie
+
+```
+
+Aqui, o parâmetro `--multiscan` permite que o `clamd` verifique o conteúdo do diretório em paralelo usando as threads disponíveis. O parâmetro `--fdpass` é necessário para passar as permissões do descritor de arquivo para `clamd`, pois o daemon está sendo executado sob o usuário e grupo `clamav`.
+
+O número de threads disponíveis para `clamdscan` é determinado em `/etc/clamav/clamd.conf` através do parâmetro `MaxThreads` [clamd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/clamd.conf.5). Mesmo que você possa ver que o número de `MaxThreads` especificado é mais de um (o padrão atual é 10), quando você inicia a varredura usando `clamdscan` na linha de comando e não especifica a opção `--multiscan`, apenas uma thread eficaz da CPU será usado para a varredura.
 
 ## Veja também
 

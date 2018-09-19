@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console"). Data da última tradução: 2018-09-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_console&diff=0&oldid=540144) na versão em inglês.
+
 Artigos relacionados
 
 *   [Configuração de teclado no Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg")

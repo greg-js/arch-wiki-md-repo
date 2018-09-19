@@ -73,7 +73,7 @@ Restart VLC for the change to take effect.
 Run VLC with the parameter `--extraintf=http` to use both the desktop and web interface. The `--http-host` parameter specifies the address to, which is `localhost` by default. To set a password, use `--http-password`, otherwise VLC will not allow you to log in.
 
 ```
-# vlc --extraintf=http --http-host 0.0.0.0:8080 --http-password 'yourpasswordhere'
+# vlc --extraintf=http --http-host 0.0.0.0 --http-port 8080 --http-password 'yourpasswordhere'
 
 ```
 

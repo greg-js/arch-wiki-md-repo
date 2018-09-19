@@ -1,4 +1,4 @@
-[Groovebasin](http://groovebasin.com/) is a music player server with a web-based user interface.
+[Groovebasin](https://github.com/andrewrk/groovebasin) is a music player server with a web-based user interface.
 
 Run it on a server connected to some speakers in your home or office. Guests can control the music player by connecting with a laptop, tablet, or smart phone. Further, you can stream your music library remotely.
 

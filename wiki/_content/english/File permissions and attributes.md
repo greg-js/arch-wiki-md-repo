@@ -68,6 +68,8 @@ Each of the three permission triads (`rwx` in the example above) can be made up 
 
 See `info Coreutils -n "Mode Structure"` and [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1) for more details.
 
+**Tip:** You can view permissions along a path with `namei -l *path*`.
+
 ### Examples
 
 Let us see some examples to clarify:

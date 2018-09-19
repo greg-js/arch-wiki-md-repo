@@ -19,16 +19,15 @@ Running SELinux under a Linux distribution requires three things: An SELinux ena
         *   [3.1.3 SELinux policy packages](#SELinux_policy_packages)
         *   [3.1.4 Other SELinux tools](#Other_SELinux_tools)
     *   [3.2 Installation](#Installation)
-    *   [3.3 Preparing the Kernel](#Preparing_the_Kernel)
-        *   [3.3.1 Via AUR](#Via_AUR)
-        *   [3.3.2 Using the GitHub repository](#Using_the_GitHub_repository)
-    *   [3.4 Changing boot loader configuration](#Changing_boot_loader_configuration)
-        *   [3.4.1 GRUB](#GRUB)
-        *   [3.4.2 Syslinux](#Syslinux)
-        *   [3.4.3 systemd-boot](#systemd-boot)
-    *   [3.5 Checking PAM](#Checking_PAM)
-    *   [3.6 Installing a policy](#Installing_a_policy)
-    *   [3.7 Testing in a Vagrant virtual machine](#Testing_in_a_Vagrant_virtual_machine)
+        *   [3.2.1 Via AUR](#Via_AUR)
+        *   [3.2.2 Using the GitHub repository](#Using_the_GitHub_repository)
+    *   [3.3 Changing boot loader configuration](#Changing_boot_loader_configuration)
+        *   [3.3.1 GRUB](#GRUB)
+        *   [3.3.2 Syslinux](#Syslinux)
+        *   [3.3.3 systemd-boot](#systemd-boot)
+    *   [3.4 Checking PAM](#Checking_PAM)
+    *   [3.5 Installing a policy](#Installing_a_policy)
+    *   [3.6 Testing in a Vagrant virtual machine](#Testing_in_a_Vagrant_virtual_machine)
 *   [4 Post-installation steps](#Post-installation_steps)
     *   [4.1 Swapfiles](#Swapfiles)
 *   [5 Working with SELinux](#Working_with_SELinux)
@@ -42,15 +41,15 @@ Running SELinux under a Linux distribution requires three things: An SELinux ena
 SELinux is not officially supported (see [[1]](https://lists.archlinux.org/pipermail/arch-general/2013-October/034352.html)[[2]](https://lists.archlinux.org/pipermail/arch-general/2017-February/043149.html)). The status of unofficial support is:
 
 | Name | Status | Available at |
-| SELinux enabled kernel | Implemented for [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened), but not [linux](https://www.archlinux.org/packages/?name=linux) | Removed since the 3.14 official [linux](https://www.archlinux.org/packages/?name=linux) kernel. |
+| SELinux enabled kernel | Implemented for [linux](https://www.archlinux.org/packages/?name=linux), [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) and [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) | Available in official repositories since [4.18.8](https://git.archlinux.org/svntogit/packages.git/commit/?id=c46609a4b0325c363455264844091b71de01eddc). |
 | SELinux Userspace tools and libraries | Implemented in AUR: [https://aur.archlinux.org/packages/?O=0&K=selinux](https://aur.archlinux.org/packages/?O=0&K=selinux) | Work is done at [https://github.com/archlinuxhardened/selinux](https://github.com/archlinuxhardened/selinux) |
 | SELinux Policy | Work in progress, using [Reference Policy](https://github.com/TresysTechnology/refpolicy) as upstream | Upstream: [https://github.com/TresysTechnology/refpolicy](https://github.com/TresysTechnology/refpolicy) (since release 20170805 the policy has integrated support for systemd and single-/usr/bin directory) |
 
 Summary of changes in AUR as compared to official core packages:
 
 | Name | Status and comments |
-| linux | Need a rebuild with some KConfig options enabled |
-| linux-hardened | SELinux support enabled, but audit support is disabled by default and needs to be enabled with audit=1 on the kernel line |
+| linux | Need following [kernel_parameters](/index.php/Kernel_parameters "Kernel parameters") at boot: `selinux=1 security=selinux` |
+| linux-hardened | Need following [kernel_parameters](/index.php/Kernel_parameters "Kernel parameters") at boot: `selinux=1 security=selinux` |
 | coreutils | Need a rebuild with `--with-selinux` flag to link with libselinux |
 | cronie | Need a rebuild with `--with-selinux` flag |
 | dbus | Need a rebuild with `--enable-libaudit` and `--enable-selinux` flags |
@@ -221,41 +220,6 @@ All SELinux related packages belong to the *selinux* group in the AUR.
 	pacman hook to label files accordingly to SELinux policy when installing and updating packages
 
 ### Installation
-
-### Preparing the Kernel
-
-Only ext2, ext3, ext4, JFS, XFS and BtrFS filesystems are supported to use SELinux. By default, the Arch Kernel does not have the SELinux LSM enabled. If you are using Arch Linux packaged kernel ([linux](https://www.archlinux.org/packages/?name=linux)), there is an AUR package which adds the configuration options for SELinux, [linux-selinux](https://aur.archlinux.org/packages/linux-selinux/). Otherwise, when you are using a custom kernel, please do make sure that Xattr (Extended Attributes), `CONFIG_AUDIT` and `CONFIG_SECURITY_SELINUX` are enabled in your config. (Source: [Debian Wiki](https://wiki.debian.org/SELinux/Setup#kernel "debian:SELinux/Setup"))
-
-Here is the complete list of options which need to be enabled on Linux 4.3.3 to use SELinux :
-
- `config.selinux-custom` 
-```
-CONFIG_AUDIT=y
-CONFIG_AUDITSYSCALL=y
-CONFIG_AUDIT_WATCH=y
-CONFIG_AUDIT_TREE=y
-CONFIG_NETLABEL=y
-CONFIG_IP_NF_SECURITY=m
-CONFIG_IP6_NF_SECURITY=m
-CONFIG_NETFILTER_XT_TARGET_AUDIT=m
-CONFIG_FANOTIFY_ACCESS_PERMISSIONS=y
-CONFIG_NFSD_V4_SECURITY_LABEL=y
-CONFIG_SECURITY=y
-CONFIG_SECURITY_NETWORK=y
-CONFIG_SECURITY_PATH=y
-CONFIG_LSM_MMAP_MIN_ADDR=65536
-CONFIG_SECURITY_SELINUX=y
-CONFIG_SECURITY_SELINUX_BOOTPARAM=y
-CONFIG_SECURITY_SELINUX_DISABLE=y
-CONFIG_SECURITY_SELINUX_DEVELOP=y
-CONFIG_SECURITY_SELINUX_BOOTPARAM_VALUE=1
-CONFIG_SECURITY_SELINUX_CHECKREQPROT_VALUE=1
-CONFIG_SECURITY_SELINUX_ENABLE_SECMARK_DEFAULT=y
-CONFIG_SECURITY_SELINUX_AVC_STATS=y
-CONFIG_DEFAULT_SECURITY_SELINUX=y
-```
-
-**Note:** If using proprietary drivers, such as [NVIDIA](/index.php/NVIDIA "NVIDIA") graphics drivers, you may need to [rebuild them](/index.php/NVIDIA#Custom_kernel "NVIDIA").
 
 There are two methods to install the requisite SELinux packages.
 

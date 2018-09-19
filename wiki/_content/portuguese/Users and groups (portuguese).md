@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2018-08-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=531655) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2018-09-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=540754) na versão em inglês.
 
 Artigos relacionados
 
@@ -107,6 +107,11 @@ Liste arquivos que pertencem a um usuário ou grupo com o utilitário *find*:
 
 ```
 # find / -group *grupo*
+
+```
+
+```
+# find / -group *númerogrupo*
 
 ```
 
@@ -459,7 +464,7 @@ Os seguintes grupos são usados para propósitos de sistema, uma atriubuição p
 
 ### Grupos pré-systemd
 
-Antes do Arch migrar para o [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"), os usuários tinham que ser adicionados manualmente a esses grupos para poder acessar os dispositivos correspondentes. Essa forma se tornou obsoleta em favor do [udev](/index.php/Udev "Udev") marcar os dispositivos com uma [etiqueta](https://github.com/systemd/systemd/blob/master/src/login/70-uaccess.rules) `uaccess` e *logind* atribuindo as permissões aos usuários de forma dinâmica via [ACLs](/index.php/ACL "ACL") de acordo com qual sessão está atualmente ativa. Observe que a sessão não deve ser quebrada para que isso funcione (consulte [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting")).
+Antes do Arch migrar para o [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)"), os usuários tinham que ser adicionados manualmente a esses grupos para poder acessar os dispositivos correspondentes. Essa forma se tornou obsoleta em favor do [udev](/index.php/Udev "Udev") marcar os dispositivos com uma [etiqueta](https://github.com/systemd/systemd/blob/master/src/login/70-uaccess.rules.m4) `uaccess` e *logind* atribuindo as permissões aos usuários de forma dinâmica via [ACLs](/index.php/ACL "ACL") de acordo com qual sessão está atualmente ativa. Observe que a sessão não deve ser quebrada para que isso funcione (consulte [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting")).
 
 Existem algumas exceções notáveis que exigem a adição de um usuário a alguns desses grupos: por exemplo, se você quiser permitir que os usuários acessem o dispositivo mesmo quando não estiverem logados. No entanto, observe que adicionar usuários aos grupos pode até fazer alguma funcionalidade quebrar (por exemplo, o grupo `audio` irá quebrar a troca rápida de usuários e permite que os aplicativos bloqueiem o mixer de software).
 

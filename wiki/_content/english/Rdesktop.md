@@ -68,7 +68,7 @@ In order to automatically scale the geometry to fit the screen, pass
 
 to the rdesktop command.
 
-Another options is to use the "-g" flag
+Another option is to use the "-g" flag
 
 ```
  $ rdesktop -g 100% -P -z 98.180.102.33:3389

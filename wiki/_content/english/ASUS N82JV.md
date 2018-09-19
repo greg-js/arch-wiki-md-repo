@@ -83,7 +83,7 @@ The official proprietary Nvidia drivers for linux do not support Nvidia Optimus 
 
 While it still isn't possible to *switch* in the manner that Optimus is supposed to switch, in order to make use of the dedicated graphic card you need to use [Bumblebee](/index.php/Bumblebee "Bumblebee"). In short, **it is possible to run a specific program with Nvidia**, while the rest of the system is relying on the Intel card.
 
-**Note:** Bumblebee's development is rapidly progressing, so be sure to check it's website[[2]](https://github.com/MrMEEE/bumblebee) regularly; it's also worth checking Linux Hybrid Graphics blog[[3]](http://linux-hybrid-graphics.blogspot.com/) and the mailing list[[4]](https://lists.launchpad.net/hybrid-graphics-linux/).
+**Note:** Bumblebee's development is rapidly progressing, so be sure to check its website[[2]](https://github.com/MrMEEE/bumblebee) regularly; it's also worth checking Linux Hybrid Graphics blog[[3]](http://linux-hybrid-graphics.blogspot.com/) and the mailing list[[4]](https://lists.launchpad.net/hybrid-graphics-linux/).
 
 #### Disabling the Nvidia card
 

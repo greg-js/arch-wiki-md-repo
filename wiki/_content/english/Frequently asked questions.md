@@ -34,6 +34,7 @@ Related articles
     *   [2.9 What to do before upgrading?](#What_to_do_before_upgrading.3F)
     *   [2.10 A package update was released, but pacman says the system is up to date](#A_package_update_was_released.2C_but_pacman_says_the_system_is_up_to_date)
     *   [2.11 Upstream project *X* has released a new version. How long will it take for the Arch package to update to that new version?](#Upstream_project_X_has_released_a_new_version._How_long_will_it_take_for_the_Arch_package_to_update_to_that_new_version.3F)
+    *   [2.12 If I need an older version of an installed library, can I just symlink to the newer version?](#If_I_need_an_older_version_of_an_installed_library.2C_can_I_just_symlink_to_the_newer_version.3F)
 *   [3 Installation](#Installation)
     *   [3.1 Arch needs an installer. Maybe a GUI installer?](#Arch_needs_an_installer._Maybe_a_GUI_installer.3F)
     *   [3.2 I installed Arch, and now I am at a shell! What now?](#I_installed_Arch.2C_and_now_I_am_at_a_shell.21_What_now.3F)
@@ -198,6 +199,16 @@ Follow the [System maintenance#Upgrading the system](/index.php/System_maintenan
 ### Upstream project *X* has released a new version. How long will it take for the Arch package to update to that new version?
 
 Package updates will be released when they are ready. The specific amount of time can be as short as a few hours after upstream releases a minor bugfix update to as long as several weeks after a large package group's major update. The amount of time from an upstream's new version to Arch releasing a new package depends on the specific packages and the availability of the package maintainers. Additionally, some packages spend some time in the [testing](/index.php/Testing "Testing") repository, so this can prolong the time before a package is updated. [Package maintainers](/index.php/Package_maintainer "Package maintainer") attempt to work quickly to bring stable updates to the repositories. If you find a package in the official repositories that is out of date, go to that package's page at the [package website](https://www.archlinux.org/packages/) and flag it.
+
+### If I need an older version of an installed library, can I just symlink to the newer version?
+
+If you are lucky, it might work, for a time. Regardless, it is not a proper solution, because:
+
+*   Libraries do not change versions randomly - the API/ABI will have likely changed (possibly with bits removed), and whether those changes affect the usage is just a matter of luck.
+*   The symlink would be untracked by a package manager. Newbies who immediately try to hack on system library files are in the greatest risk of making an unwanted change that they cannot diagnose/fix, which a package manager helps to guard against.
+*   A slight alternative of dumping the old library file into the filesystem, untracked, would be forgotten about, and not have potential security bugs noticed/patched.
+
+Instead, e.g. use/write a [compat package](https://aur.archlinux.org/packages/?SeB=n&K=compat), which provides the required library version.
 
 ## Installation
 

@@ -1,8 +1,3 @@
-Related articles
-
-*   [Arch User Repository (Lietuviškai)](/index.php?title=Arch_User_Repository_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "Arch User Repository (Lietuviškai) (page does not exist)")
-*   [Help:Editing (Lietuviškai)](/index.php?title=Help:Editing_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "Help:Editing (Lietuviškai) (page does not exist)")
-
 Evoliucinėje biologijoje, [bendradarbiavimas](https://en.wikipedia.org/wiki/Co-operation_(evolution) apibūdinamas kaip dviejų ar daugiau individų veikimas bendros geros labui. Šitas principas taikomas inicijuoti ir motyvuoti Arch bendruomenės narius, norinčius prisidėti ir padėti jų mėgstamai GNU/Linux distribucijai. Toks prisidėjimas naudingas ne tik bendruomenės nariui, bet ir kitiems draugams Archeriams kaip ir visiems [nemokamos ir atviros programinės įrangos](https://en.wikipedia.org/wiki/Free_and_open_source_software "wikipedia:Free and open source software") fanams.
 
 Šis straipsnis aprašo, kaip tiek nauji tiek patyrę Arch naudotojai gali pasidarbuoti bendruomenės labui. Tai nėra baigtinis sąrašas.
@@ -21,13 +16,13 @@ Evoliucinėje biologijoje, [bendradarbiavimas](https://en.wikipedia.org/wiki/Co-
     *   [1.9 Oficialūs programinės įrangos projektai](#Oficial.C5.ABs_programin.C4.97s_.C4.AFrangos_projektai)
     *   [1.10 Aukokite pinigus](#Aukokite_pinigus)
 *   [2 Bendruomenės projektai](#Bendruomen.C4.97s_projektai)
-    *   [2.1 Paremtos Arch distribucijos](#Paremtos_Arch_distribucijos)
-    *   [2.2 AUR padėjėjai](#AUR_pad.C4.97j.C4.97jai)
-    *   [2.3 Pacman GUI aplinkos](#Pacman_GUI_aplinkos)
+    *   [2.1 Groups](#Groups)
+    *   [2.2 Programinė Įranga](#Programin.C4.97_.C4.AEranga)
+    *   [2.3 ArchWiki naršymas](#ArchWiki_nar.C5.A1ymas)
     *   [2.4 Kita](#Kita)
-*   [3 Kaip programuotojas..](#Kaip_programuotojas..)
-    *   [3.1 Ką aš galiu padaryti](#K.C4.85_a.C5.A1_galiu_padaryti)
-    *   [3.2 Kaip aš galėčiau tapti Arch programuotoju?](#Kaip_a.C5.A1_gal.C4.97.C4.8Diau_tapti_Arch_programuotoju.3F)
+*   [3 DUK](#DUK)
+    *   [3.1 Kaip galiu tapti Arch programuotoju?](#Kaip_galiu_tapti_Arch_programuotoju.3F)
+    *   [3.2 Kaip tapti patikimu naudotoju](#Kaip_tapti_patikimu_naudotoju)
 *   [4 Kaip menininkas..](#Kaip_menininkas..)
 
 ## Oficialūs Arch Linux projektai
@@ -78,117 +73,119 @@ Kaip padėti išlaikyti serverius galite sužinoti [oficialiame Arch Linux aukų
 
 ## Bendruomenės projektai
 
-Arch turi gyvybiškai svarbią ir aktyvią bendruomenę, kuri susideda iš programuotojų ir padedančių projektų. Jeigu jūs turite projektą, kurį norite įtraukti, tai yra pati tinkamiausia vieta. Įkelkite nuorodą į savo projektą, projekto pradžios datą ir trumpą (vieno ar dviejų sakinių) projekto apibūdinimą.
-
 **Note:** Visi toliau išvardinti projektai yra palaikomi bendruomenės. Joks projektas nėra pažymėtas """oficialiu""" Arch projektu.
 
-#### [Paremtos Arch distribucijos](/index.php/Arch_based_distributions "Arch based distributions")
+Arch bendruomenė palaiko daugybę projektų. Drąsiai pridėkite ir savo!
 
-	Kitos distribucijos, paremos Arch Linux
+### Groups
 
-* * *
+Tikslinės Arch grupės prie kurių galima prisidėti.
 
-#### [AUR padėjėjai](/index.php/AUR_helpers "AUR helpers")
+	[ArchMap](/index.php/ArchMap "ArchMap")
 
-	Pagalbinės [AUR](/index.php/AUR "AUR") priemonės galutiniam vartotojui
+	ArchMap projektas kuria Arch Linux vartotojų visame žemėlpaį visame pasaulyje.
 
-* * *
+	[ArchAudio](http://archaudio.org)
 
-#### [Pacman GUI aplinkos](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends")
+	Trečiųjų šalių paketų saugyklą ir diskusijų lenta Arch Linux pro-audio naudotojams.
 
-	Grafinės [pacman](/index.php/Pacman "Pacman") aplinkos
+	[Arch Linux Subreddit](http://www.reddit.com/r/archlinux/)
 
-* * *
+	Vieta reddit naudotojams aptarti problemas susijusias su Arch.
 
-#### Kita
+	[Arch Linux Google Plus Community](https://plus.google.com/communities/113935870359973712582)
 
-	Projektai, kurie netelpa į egzistuojančias kategorijas
+	Google Plus Arch Linux naudotojų bendruomenė skirta bendravimui, klausimų uždavimui ir bendriems Arch Linux pokalbiams.
 
-* * *
+	[International communities](/index.php/International_communities "International communities")
 
-*   [ArchAudio](http://archaudio.org)
+	Vietinės bendruomenės ir naudotojų susirinkimo vietos.
 
-	Trečios šalies paketų saugykla ir forumas profesionaliems Arch Linux melomanams
+	[Arch Women](http://archwomen.org/)
 
-*   [Arch Hurd Project](/index.php/Arch_Hurd_Project "Arch Hurd Project")
+	Grupė su tiklsu išspręsti problemas kylančias Arch Linux naudotojoms ([forum thread](https://bbs.archlinux.org/viewtopic.php?id=136184)).
 
-	Projektas, skirtas dirbti Arch sistemai su GNU/Hurd.
+	[LinkedIn Group](http://www.linkedin.com/groups?gid=1399787)
 
-*   [Arch Linux Gaming Repository](http://arch-games.twilightlair.net)
+	Arch Linux grupė skirta naudotojams ir profesionalams.
 
-	Populiarių žaidimų kolekcija, kuri įtraukiama į [unsupported], tam kad išsaugoti archeriams kompiliavimo laiką. Jie taip pat užsiima sulaužytų žaidimų lopymų, kurie kitaip nebūtų kompiliuojami.
+### Programinė Įranga
 
-*   [ArchLinux.us](http://archlinux.us)
+Bendruomenės kuriama programinė įranga, kurios dėmesys skirtas Arch Linux.
 
-	@archlinux.us laiškai, paremti Gmail.
+	[Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
 
-*   [ArchLinux.me](http://archlinux.me)
+	Didžiulė bendruomenės varoma saugykla Arch naudotojams.
 
-	Arch Linux Blogai
+	[Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")
 
-*   [ArchLinux.mobi](http://archlinux.mobi)
+	Neoficiali binarinė saugykla palaikoma bendruomenė narių.
 
-	Mobilus priėjimas prie @archlinux.us elektroninių laiškų
+	[AUR padėjėjai](/index.php/AUR_helpers "AUR helpers")
 
-*   [ArchMap](/index.php/ArchMap "ArchMap")
+	Įrankiai skirti naudotojams padėti naudotis[Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
-	Google Earth Arch vartotojų žemėlapis
+	[Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends")
 
-*   [Arch Quote Database](http://qdb.archuser.com)
+	Grafinės [pacman](/index.php/Pacman "Pacman") sąsajos.
 
-	Humoristinių citatų iš [#archlinux](/index.php/Irc "Irc") kolekcija
+### ArchWiki naršymas
 
-*   [ArchServer Project](http://www.archserver.org)
+Yra keletas skirtingų metodų apsilankyti ArchWiki.
 
-	Darome Arch naudinga serveryje
+	[arch-wiki-docs](https://github.com/lahwaacz/arch-wiki-docs)
 
-*   [IgnorantGuru's Blog](http://igurublog.wordpress.com/)
+	Arch Wiki puslapiai optimizuoti naudojimui neprisijungus. Peketas: [arch-wiki-docs](https://www.archlinux.org/packages/?name=arch-wiki-docs).
 
-	Naudingi skriptai, modifikacijos ir patarimai
+	[arch-wiki-lite](http://kmkeen.com/arch-wiki-lite/)
 
-*   [Namcap Reports](/index.php/Namcap_Reports "Namcap Reports")
+	Arch-wiki-lite sumodeliuotas kuo geresniai patirčiai, žmogui, kuris netik kad neturi interneto bet ir negali atsidaryti grafinės naršyklės. Paketas: [arch-wiki-lite](https://www.archlinux.org/packages/?name=arch-wiki-lite).
 
-	namcap yra Arch Linux įrankis, kuris automatiškai suranda PKGBUILD dažniausiai pasitaikančias klaidas. Šitas tinklapis yra automatiškai generuojamas po namcap įrankio paleidimo core, extra ir community saugyklų medį.
+	[arch-wiki-man](https://github.com/greg-js/arch-wiki-man)
 
-*   [Veikiantis pacman OS X](http://archlinux-gaming.org/projects/archosx)
+	Arch Wiki pasiekiama taip lengvai kaip ir *man* puslapiai. Veikia neprisijungus. Paketas: [arch-wiki-man](https://aur.archlinux.org/packages/arch-wiki-man/).
 
-	OS paketų tvarkymas X su `pacman`
+	[ArchWiki Viewer for Android](https://bbs.archlinux.org/viewtopic.php?id=150538)
 
-*   [Parched](http://www.github.com/sebnow/parched)
+	Paprasta Arch Wiki žiūryklė prisijungus. Puslapių turinys suformatuotas mobiliam naudojimui.
 
-	ALPM paketas ir PKGBUILD analizatorius Python kalba
+	[Wikicurses](https://bbs.archlinux.org/viewtopic.php?id=187864)
 
-*   [Xyne's Arch Linux Stuff](http://xyne.archlinux.ca)
+	Paprasta *cursrs* sąsaja MediaWiki puslapiams kaip ArchWiki ar Wikipedia. Paketas: [wikicurses](https://www.archlinux.org/packages/?name=wikicurses), [wikicurses-git](https://aur.archlinux.org/packages/wikicurses-git/).
 
-	Xyne prisidėjimas prie Arch Linux bendruomenės
+### Kita
 
-## Kaip programuotojas..
+	[Xyne's Arch Linux Projects](http://xyne.archlinux.ca/projects/)
 
-*Šitas įrašas yra paremtas [šia](https://bbs.archlinux.org/viewtopic.php?id=24503) tema Arch forume*
+	Patikimų naudotojų Arch projektai.
 
-Pirma, įsiminkite, kad pagrindinė jūsų darbo prie Arch motyvacija yra teikti pagalbą bendruomenei, o ne tiesiog būti *"Arch programuotoju"*. Antra, jūs taip pat esate bendruomenės dalis; teikti pagalba kitiems, reiškia teikti pagalba ir sau.
+## DUK
 
-### Ką aš galiu padaryti
+### Kaip galiu tapti Arch programuotoju?
+
+Pirma, įsiminkite, kad pagrindinė jūsų darbo prie Arch motyvacija turėtų būti teikti pagalbą bendruomenei, o ne tiesiog būti *Arch programuotoju*.
+
+Nauji programuotojai, jau esamų, dažniausiai parenkami, kai padidėja darbo krūvis. Kartais būna pranešama apie atsiradusią vietą, bet dažniausiai jie tiesiog pakviečia žmogų, kuris žinos ką daro ir pritiks esamoje komandoje. Įnašų į Arch porfolis griausias kelias papulti komandon.
 
 Čia yra sąrašas, be jokios svarbumo tvarkos, kuriame yra išvardyti punktai, kaip galite būti naudingas bendruomenei:
 
-*   Pastatykite savo pagarbą teikdami pagalbą kitiems, kur tik tai įmanoma
-*   Atsakinėkite į klausimus forume, IRC ir elektroniniu paštu
-*   Prisijunkite prie Trusted Users užsitarnaudami teisę prisijungti prie paketų kūrimo taip parodydami savo įgūdžius
-*   Skelbkite paketus AUR'e
-*   Prisijunkite prie kokio nors atšakinio projekto, kuris kada nors gal bus įtraukas į Arch, arba pradėkite savo
-*   Dirbkite prie pacman, makepkg, initscripts ar kitokio pradinio kodo ir skelbkite savo lopus į klaidų seklį
-*   Peržiūrėkite klaidų seklį ir taisykite klaidas
-*   Ieškokite ir skelbkite aptiktas klaidas
-*   Taisykite wiki klaidas, sukurkite naujus puslapius, tvarkykite esamus puslapius, ir įsitikinkite, kad viskas yra nepasenę
-*   Skelbkite savo vertimus
+*   Padėkite bendruomenei kai tik galite, taip užsitarnausite gerą vardą, kaip pagalbininkas.
+*   Atsakinėkite į klausimus forume, IRC ir elektroniniu paštu.
+*   Prisijunkite prie [Trusted Users](/index.php/Trusted_Users "Trusted Users") užsitarnaudami teisę prisijungti prie paketų kūrimo taip parodydami savo įgūdžius.
+*   Skelbkite paketus AUR.
+*   Prisijunkite prie kokio nors atšakinio projekto, kuris kada nors gal bus įtraukas į Arch, arba pradėkite savo.
+*   Dirbkite prie *pacman*, *makepkg*, ar kitų [Arch projektų](https://git.archlinux.org/) ir skelbkite savo klaidų pataisymus į klaidų seklį.
+*   Peržiūrėkite [klaidų seklį](https://bugs.archlinux.org/) ir taisykite klaidas.
+*   Ieškokite ir skelbkite aptiktas klaidas.
+*   Taisykite wiki klaidas, sukurkite naujus puslapius, tvarkykite esamus puslapius, ir įsitikinkite, kad viskas yra nepasenę.
+*   Skelbkite savo vertimus.
 
-### Kaip aš galėčiau tapti Arch programuotoju?
+### Kaip tapti patikimu naudotoju
 
-Dažniausiai, nauji programuotojai yra parenkami iš jau esamų darbuotojų aplinkos. Kaikada esami programuotojai paskelbia kažkokią poziciją, į kurią galima pretenduoti, bet dažniausiai jie pakviečia ką nors iš savo pažįstamu, kurie tikrai bus geri toje srityje ir lengvai įsilies į komandą. Arch prisidėjimo portfelio turėjimas labai palengviną įsiliejimą į komandą.
+Skaitykite [Trusted Users#How do I become a TU?](/index.php/Trusted_Users#How_do_I_become_a_TU.3F "Trusted Users").
 
 ## Kaip menininkas..
 
-Jauskitės laisvai dalindamiesi darbastaliais, ekrano užsklandom, spalvų paletėmis, valdikliais, temom, ir kt. su bendruomenė forume.
+Jauskitės laisvai dalindamiesi darbastaliais, ekrano užsklandom, spalvų paletėmis, valdikliais, temom, ir kt. [forume](https://bbs.archlinux.org/viewforum.php?id=47).
 
-Taip pat žiūrėkite: [https://www.archlinux.org/art/](https://www.archlinux.org/art/)
+Taip pat žiūrėkite: [Arch Linux Art](https://www.archlinux.org/art/)

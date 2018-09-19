@@ -8,7 +8,7 @@ When you tell the people in the chat-room what your problem is, sometimes they w
 
 ## Output errors/messages to file
 
-Many of these programs will need to have a file to upload. If you are using a program that you need to share it's output you can put it in a text file by doing:
+Many of these programs will need to have a file to upload. If you are using a program that you need to share its output you can put it in a text file by doing:
 
 ```
 program > program-output.txt 2>&1 

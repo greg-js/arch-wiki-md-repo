@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch terminology](/index.php/Arch_terminology "Arch terminology"). Data da última tradução: 2018-08-12\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_terminology&diff=0&oldid=534146) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch terminology](/index.php/Arch_terminology "Arch terminology"). Data da última tradução: 2018-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_terminology&diff=0&oldid=539889) na versão em inglês.
 
 A intenção desta página é desmistificar os termos comumente usados pela comunidade do Arch Linux. Sinta-se à vontade para adicionar ou modificar quaisquer termos, mas por favor use a opção de editar da opção específica. Se você decidir adicionar algum termo, por favor adicione-o em ordem alfabética.
 
@@ -35,10 +35,12 @@ A intenção desta página é desmistificar os termos comumente usados pela comu
 
 ## ABS
 
-Acrônimo de [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)"), que pode ser traduzido como "Sistema de Compilação do Arch", é útil para:
+ABS é o acrônimo de [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)") ("Sistema de Compilação do Arch") e pode ser usado para:
 
-*   Fazer novos pacotes de software para os quais nenhum pacote está disponível
-*   Personalizar/modificar pacotes existentes para ajustar suas necessidades (habilitando ou desabilitando opções)
+*   Fazer novos pacotes para software que tem nenhum pacote disponível ainda
+*   Personalizar/modificar pacotes existentes para ajustar suas necessidades:
+    *   habilitar/desabilitar opções em tempo de compilação
+    *   Aplicar alterações no código-fonte via patches
 *   Recompilar seu sistema completo usando as flags do seu compilador, "a la Gentoo"
 *   Fazer com que módulos do kernel funcionem no seu kernel personalizado
 

@@ -256,9 +256,13 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 	[http://www.duply.net/](http://www.duply.net/) || [duply](https://aur.archlinux.org/packages/duply/)
 
+*   **restic** — Fast, secure, efficient backup program that supports backing up to many cloud services.
+
+	[https://restic.net/](https://restic.net/) || [restic](https://www.archlinux.org/packages/?name=restic)
+
 *   **[Tarsnap](https://en.wikipedia.org/wiki/Tarsnap "wikipedia:Tarsnap")** — Secure, efficient proprietary online backup service.
 
-	[http://www.tarsnap.com](http://www.tarsnap.com) || [tarsnap](https://www.archlinux.org/packages/?name=tarsnap)
+	[http://www.tarsnap.com/](http://www.tarsnap.com/) || [tarsnap](https://www.archlinux.org/packages/?name=tarsnap)
 
 #### Screen lockers
 

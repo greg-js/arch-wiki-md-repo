@@ -22,7 +22,7 @@ Installing gitolite automatically adds the *gitolite* user to the system, with h
 
 ### Admin SSH access
 
-To give you admin access, copy your SSH public key to `/var/lib/gitolite/*username*.pub`, where `username` is your username.
+To give yourself admin access, copy your SSH public key to `/var/lib/gitolite/*username*.pub`, where `username` is your username.
 
 ```
 # install -o gitolite -g gitolite ~/.ssh/id_rsa.pub /var/lib/gitolite/*username*.pub

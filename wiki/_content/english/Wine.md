@@ -565,7 +565,7 @@ These have their own communities and websites, and are **not supported** by grea
 
 *   **Lutris** — Gaming launcher for all types of games, including Wine games (with prefix management), native Linux games and emulators.
 
-	[lutris-git](https://aur.archlinux.org/packages/lutris-git/) || [https://lutris.net/](https://lutris.net/)
+	[lutris](https://www.archlinux.org/packages/?name=lutris) || [https://lutris.net/](https://lutris.net/)
 
 *   **PlayOnLinux** — Graphical prefix manager for Wine. Contains scripts to assist with program installation and configuration.
 

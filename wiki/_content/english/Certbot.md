@@ -107,7 +107,7 @@ server {
 **Note:**
 
 *   The Webroot method requires **HTTP on port 80** for Certbot to validate.
-*   The Server Name must match that of it's corresponding DNS.
+*   The Server Name must match that of its corresponding DNS.
 *   Permissions may need to be altered on the host to allow read-access to `[http://domain.tld/.well-known](http://domain.tld/.well-known)`.
 
 When using the webroot method the Certbot client places a challenge response inside `/path/to/domain.tld/html/.well-known/acme-challenge/` which is used for validation.

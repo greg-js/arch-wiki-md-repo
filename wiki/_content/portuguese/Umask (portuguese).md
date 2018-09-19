@@ -2,7 +2,7 @@ Artigos relacionados
 
 *   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
 
-O utilitário *umask* é usado para controlar a máscara de modo de criação de arquivo, o qual determinar o valor inicial dos bits de permissão de arquivo para arquivos recém-criados. O seguinte comportamento deste utilitário é padronizado pelo [POSIX](https://en.wikipedia.org/wiki/pt:POSIX "wikipedia:pt:POSIX") e descrito no [Manual do Programador POSIX](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/umask.html). Porque o *umask* afeta o ambiente de execução do shell atual, é geralmente implementado como um comando incorporado de um shell.
+O utilitário [umask](https://en.wikipedia.org/wiki/pt:umask "wikipedia:pt:umask") é usado para controlar a máscara de modo de criação de arquivo, o qual determinar o valor inicial dos bits de permissão de arquivo para arquivos recém-criados. O seguinte comportamento deste utilitário é padronizado pelo [POSIX](https://en.wikipedia.org/wiki/pt:POSIX "wikipedia:pt:POSIX") e descrito no [Manual do Programador POSIX](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/umask.html). Porque o *umask* afeta o ambiente de execução do shell atual, é geralmente implementado como um comando incorporado de um shell.
 
 ## Contents
 
@@ -77,5 +77,4 @@ Se você precisa definir um valor diferente, você pode editar diretamente esse 
 *   Manual do Programador POSIX:
     *   [umask](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/umask.html) (também disponível como [umask(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/umask.1p))
     *   [chmod (descrição estendida)](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/chmod.html#tag_20_17_13) (também disponível como [chmod(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1p))
-*   [wikipedia:pt:umask](https://en.wikipedia.org/wiki/pt:umask "wikipedia:pt:umask")
 *   [027 umask: um meio-termo entre segurança e simplicidade](https://blogs.gentoo.org/mgorny/2011/10/18/027-umask-a-compromise-between-security-and-simplicity/)

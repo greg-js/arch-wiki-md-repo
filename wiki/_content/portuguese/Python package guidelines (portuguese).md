@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines"). Data da última tradução: 2018-09-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Python_package_guidelines&diff=0&oldid=538740) na versão em inglês.
+
 **[Diretrizes de criação de pacotes](/index.php/Criando_pacotes "Criando pacotes")**
 
 * * *
@@ -9,7 +11,8 @@ Esse documento cobre padrões e diretrizes na escrita de [PKGBUILDs](/index.php/
 ## Contents
 
 *   [1 Nome do pacote](#Nome_do_pacote)
-    *   [1.1 Fonte](#Fonte)
+    *   [1.1 Arquitetura](#Arquitetura)
+    *   [1.2 Fonte](#Fonte)
 *   [2 Métodos de instalação](#M.C3.A9todos_de_instala.C3.A7.C3.A3o)
     *   [2.1 distutils](#distutils)
     *   [2.2 setuptools](#setuptools)
@@ -23,6 +26,12 @@ Para módulos de biblioteca do [Python 3](/index.php/Python#Python_3 "Python"), 
 O mesmo se aplica para Python 2, exceto que o prefixo (se necessário) é `python2-`.
 
 **Nota:** O nome do pacote deve estar todo em minúsculo.
+
+### Arquitetura
+
+Veja [PKGBUILD (Português)#arch](/index.php/PKGBUILD_(Portugu%C3%AAs)#arch "PKGBUILD (Português)").
+
+Um pacote Python que contenha extensões C usando a palavra-chave `ext_modules` no `setup.py` é dependente da arquitetura. Do contrário, muito provavelmente será independente desta.
 
 ### Fonte
 
@@ -107,7 +116,5 @@ python -O -m compileall "${pkgdir}/caminho/para/o/módulo"
 **Atenção:** O uso de pacotes *pip* e/ou de wheel é desencorajado em favor dos pacotes fonte setuptools, e deve ser usado somente quando o último não é uma opção viável (por exemplo, pacotes que **somente** vêm com roda fontes e, portanto, não pode ser instalado usando setuptools).
 
 ## Notas
-
-Na maioria dos casos, você deve colocar `any` no vetor `arch`, já que a maioria dos pacotes Python são independentes da arquitetura.
 
 Não instale um diretório chamado apenas `tests`, pois ele facilmente entra em conflito com outros pacotes Python (por exemplo, `/usr/lib/python2.7/site-packages/tests/`).

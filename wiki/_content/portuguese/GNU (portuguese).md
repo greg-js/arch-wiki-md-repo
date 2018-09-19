@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GNU](/index.php/GNU "GNU"). Data da última tradução: 2018-08-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNU&diff=0&oldid=537504) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GNU](/index.php/GNU "GNU"). Data da última tradução: 2018-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNU&diff=0&oldid=539208) na versão em inglês.
 
 Artigos relacionados
 
@@ -32,11 +32,11 @@ Embora a maioria dos softwares GNU também forneça [páginas man](/index.php/P%
 
 	[https://www.gnu.org/software/grub/](https://www.gnu.org/software/grub/) || [grub](https://www.archlinux.org/packages/?name=grub)
 
-*   **[bash](/index.php/Bash "Bash")** — É um shell compatível com sh que incorpora recursos úteis do Korn shell (ksh) e do C shell (csh).
+*   **[Bash](/index.php/Bash "Bash")** — É um shell compatível com sh que incorpora recursos úteis do Korn shell (ksh) e do C shell (csh).
 
 	[https://www.gnu.org/software/bash/](https://www.gnu.org/software/bash/) || [bash](https://www.archlinux.org/packages/?name=bash)
 
-*   **[coreutils](/index.php/Coreutils_(Portugu%C3%AAs) "Coreutils (Português)")** — coreutils fornece os utilitários básicos de manipulação de arquivo, shell e texto do sistema operacional GNU.
+*   **[Coreutils](/index.php/Coreutils_(Portugu%C3%AAs) "Coreutils (Português)")** — coreutils fornece os utilitários básicos de manipulação de arquivo, shell e texto do sistema operacional GNU.
 
 	[https://www.gnu.org/software/coreutils/](https://www.gnu.org/software/coreutils/) || [coreutils](https://www.archlinux.org/packages/?name=coreutils)
 
@@ -112,6 +112,7 @@ Muitas outras ferramentas opcionais do GNU está disponíveis nos [repositórios
 *   [GNU Emacs](/index.php/GNU_Emacs "GNU Emacs"), um editor de texto extensível, personalizável e autodocumentado
 *   [GnuPG](/index.php/GnuPG "GnuPG"), uma implementação do OpenPGP
 *   [GNU Octave](/index.php/GNU_Octave "GNU Octave"), uma linguagem de programação científica
+*   [GNU Readline](/index.php/Readline "Readline"), uma biblioteca de edição de linha para interfaces de linha de comando
 
 ## Veja também
 

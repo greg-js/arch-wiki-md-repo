@@ -24,7 +24,7 @@ See also [Persistent block device naming](/index.php/Persistent_block_device_nam
 
 ### lsblk
 
-The [util-linux](https://www.archlinux.org/packages/?name=util-linux) package provides the [lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) utility to lists block devices, for example:
+The [util-linux](https://www.archlinux.org/packages/?name=util-linux) package provides the [lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) utility which lists block devices, for example:
 
  `$ lsblk -f` 
 ```
@@ -57,8 +57,8 @@ Device nodes that do not have a physical device.
 
 *   [/dev/random](/index.php//dev/random "/dev/random"), see [random(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/random.4)
 *   [/dev/shm](/index.php//dev/shm "/dev/shm")
-*   [/dev/null](https://en.wikipedia.org/wiki//dev/null "w:/dev/null"), [/dev/zero](https://en.wikipedia.org/wiki//dev/zero "w:/dev/zero"), see [null(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/null.4)
-*   [/dev/full](https://en.wikipedia.org/wiki//dev/full "w:/dev/full"), see [full(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/full.4)
+*   [/dev/null](https://en.wikipedia.org/wiki//dev/null "wikipedia:/dev/null"), [/dev/zero](https://en.wikipedia.org/wiki//dev/zero "wikipedia:/dev/zero"), see [null(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/null.4)
+*   [/dev/full](https://en.wikipedia.org/wiki//dev/full "wikipedia:/dev/full"), see [full(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/full.4)
 
 ## See also
 

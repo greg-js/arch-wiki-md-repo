@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch Build System](/index.php/Arch_Build_System "Arch Build System"). Data da última tradução: 2018-08-26\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Build_System&diff=0&oldid=536956) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch Build System](/index.php/Arch_Build_System "Arch Build System"). Data da última tradução: 2018-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Build_System&diff=0&oldid=540727) na versão em inglês.
 
 Artigos relacionados
 
@@ -12,15 +12,16 @@ Artigos relacionados
 *   [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")
 *   [Aplicando patches no ABS](/index.php/Patching_in_ABS "Patching in ABS")
 
-Esse artigo fornece uma visão geral do Arch Build System (ABS) junto com um tutorial para iniciantes. Ele não tem a intenção de ser um guia de referência completo.
+O sistema de compilação do Arch *(Arch build system)* é um sistema *tipo portação* para compilar e empacotar software a partir do código-fonte. Enquanto o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") é a ferramenta especializada do Arch para gerenciamento de pacote binário (incluindo pacotes compilados com o ABS), ABS é uma coleção de ferramentas para compilar o fonte em pacotes `.pkg.tar.xz` instaláveis.
+
+*Ports* é um sistema usado por *BSD para automatizar o processo de compilação de software a partir do código-fonte. O sistema usa um *port* para baixar, descompactar, patch, compilar e instalar o software dado. Um *port* é meramente um pequeno diretório no computador do usuário, nomeado pelo software correspondente para ser instalado, que contém uns poucos arquivos com as instruções para compilar e instalar o software a partir dos fontes. Isso torna a instalação de softwares tão simples quanto digitar `make` ou `make install clean` dentro de diretório de portação.
+
+ABS é um conceito similar. ABS é feito de uma árvore de diretórios que pode ser obtida (*checkout*) usando o SVN. Essa árvore representa, mas não contém, todos os softwares oficiais do Arch. Subdiretórios não contêm o pacote de software nem o fonte, e sim um arquivo [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") e, algumas vezes, outros arquivos. Ao executar [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") dentro de um diretório contendo um PKGBUILD, o software é primeiro compilado e então empacotado dentro do diretório de compilação. Então, você pode usar [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") para instalar ou atualizar seu novo pacote.
 
 ## Contents
 
-*   [1 O que é o Arch Build System?](#O_que_.C3.A9_o_Arch_Build_System.3F)
-    *   [1.1 O que é um sistema tipo portação?](#O_que_.C3.A9_um_sistema_tipo_porta.C3.A7.C3.A3o.3F)
-    *   [1.2 ABS é um conceito similar](#ABS_.C3.A9_um_conceito_similar)
-    *   [1.3 Visão geral de ABS](#Vis.C3.A3o_geral_de_ABS)
-        *   [1.3.1 Árvore SVN](#.C3.81rvore_SVN)
+*   [1 Visão geral de ABS](#Vis.C3.A3o_geral_de_ABS)
+    *   [1.1 Árvore SVN](#.C3.81rvore_SVN)
 *   [2 Por que eu iria querer usar o ABS?](#Por_que_eu_iria_querer_usar_o_ABS.3F)
 *   [3 Como usar o ABS](#Como_usar_o_ABS)
     *   [3.1 Obtendo fonte de PKGBUILD usando Svn](#Obtendo_fonte_de_PKGBUILD_usando_Svn)
@@ -34,19 +35,7 @@ Esse artigo fornece uma visão geral do Arch Build System (ABS) junto com um tut
     *   [4.2 Faça checkout de uma versão anterior de um pacote](#Fa.C3.A7a_checkout_de_uma_vers.C3.A3o_anterior_de_um_pacote)
 *   [5 Outras ferramentas](#Outras_ferramentas)
 
-## O que é o Arch Build System?
-
-O Arch Build System (em português, "Sistema de Compilação do Arch") é sistema *tipo portação* para compilar e empacotar software a partir do código-fonte. Enquanto o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") é a ferramenta especializada do Arch para gerenciamento de pacote binário (incluindo pacotes compilados com o ABS), ABS é uma coleção de ferramentas para compilar o fonte em pacotes `.pkg.tar.xz` instaláveis.
-
-### O que é um sistema tipo portação?
-
-*Ports* é um sistema usado por *BSD para automatizar o processo de compilação de software a partir do código-fonte. O sistema usa um *port* para baixar, descompactar, patch, compilar e instalar o software dado. Um *port* é meramente um pequeno diretório no computador do usuário, nomeado pelo software correspondente para ser instalado, que contém uns poucos arquivos com as instruções para compilar e instalar o software a partir dos fontes. Isso torna a instalação de softwares tão simples quanto digitar `make` ou `make install clean` dentro de diretório de portação.
-
-### ABS é um conceito similar
-
-ABS é feito de uma árvore de diretórios que pode ser obtida (*checkout*) usando o SVN. Essa árvore representa, mas não contém, todos os softwares oficiais do Arch. Subdiretórios não contêm o pacote de software nem o fonte, e sim um arquivo [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") e, algumas vezes, outros arquivos. Ao executar [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") dentro de um diretório contendo um PKGBUILD, o software é primeiro compilado e então empacotado dentro do diretório de compilação. Então, você pode usar [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") para instalar ou atualizar seu novo pacote.
-
-### Visão geral de ABS
+## Visão geral de ABS
 
 "ABS" pode ser usado como um termo guarda-chuva já que ele inclui e depende de vários outros componentes; portanto, apesar de tecnicamente impreciso, "ABS" pode ser referir às seguintes ferramentas como um kit de ferramentas completos:
 
@@ -72,7 +61,7 @@ ABS é feito de uma árvore de diretórios que pode ser obtida (*checkout*) usan
 
 **Atenção:** PKGBUILDs oficiais presumem que pacotes são [compilados em um *chroot* limpo](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot"). Compilação de software em um sistema de compilação *sujo* pode falhar ou causar comportamentos inesperados em tempo de execução, porque se o sistema de compilação detecta dependências dinamicamente, o resultado depende de quais pacotes estão disponíveis no sistema de compilação.
 
-#### Árvore SVN
+### Árvore SVN
 
 Os [repositórios](/index.php/Reposit%C3%B3rios "Repositórios") *core*, *extra* e *testing* estão no repositório SVN *packages* para *[checkout](#Checkout_n.C3.A3o-recursivo)*. Os repositórios *community* e *multilib* estão no repositório SVN *community*.
 
@@ -96,12 +85,12 @@ O código-fonte do pacote não está presente no diretório ABS. Em vez disso, o
 
 ## Por que eu iria querer usar o ABS?
 
-O Arch Build System é usado para:
+O sistema de compilação do Arch é usado para:
 
 *   Compilar ou recompilar um pacote, para qualquer motivo
 *   *Make* e instalar novos pacotes de fontes de software para os quais nenhum pacote está instalado ainda (veja [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes"))
 *   Personalizar pacotes existentes para atender suas necessidades (habilitar ou desabilitar opções, *patching*)
-*   Recompilar todo o seu sistema usando suas *flags* de compilador, "à la FreeBSD" (ex.: com [pacbuilder-svn](https://aur.archlinux.org/packages/pacbuilder-svn/) (não mais disponível) ou [pacman-src-git](https://aur.archlinux.org/packages/pacman-src-git/)))
+*   Recompilar todo o seu sistema usando suas *flags* de compilador, "à la FreeBSD" (ex.: com [pacman-src-git](https://aur.archlinux.org/packages/pacman-src-git/)))
 *   Compilar e instalar, sem interferências, seu próprio kernel personalizado (veja [Compilação de kernel](/index.php/Kernels#Compilation "Kernels"))
 *   Fazer com que módulos de kernel funcionem com seu kernel personalizado
 *   Compilar e instalar facilmente uma versão mais nova, antiga, beta ou de desenvolvimento de um pacote do Arch editando o número de versão no PKGBUILD

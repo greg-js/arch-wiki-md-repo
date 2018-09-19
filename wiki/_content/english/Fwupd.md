@@ -55,9 +55,9 @@ $ fwupdmgr update
 
 **Note:** Some updates might require root rights.
 
-**Warning:** An update to your UEFI firmware may discard your boot loader installation, so it may be necessary to reinstall your boot loader after the firmware update is finished. If your system only applies the firmware update on a reboot, then you may need to have an Arch installation on a removable media ready to reinstall your boot loader so your system bootable again.
-
 ## Setup for UEFI BIOS upgrade
+
+**Warning:** An update to your UEFI firmware may discard your boot loader installation, so it may be necessary to reinstall your boot loader after the firmware update is finished. If your system only applies the firmware update on a reboot, then you may need to have an Arch installation on a removable media ready to reinstall your boot loader so your system bootable again.
 
 1.  Make sure you are booted in UEFI mode.
 2.  Verify [your EFI variables are accessible](/index.php/Unified_Extensible_Firmware_Interface#Requirements_for_UEFI_variable_support "Unified Extensible Firmware Interface").

@@ -351,6 +351,32 @@ To verify that SLI mode is enabled from a shell:
 
 **Warning:** After enabling SLI, your system may become frozen/non-responsive upon starting xorg. It is advisable that you disable your display manager before restarting.
 
+**Tip:** If this configuration does not work, you may need to use the PCI Bus ID provided by `nvidia-settings`, `$ nvidia-settings -q all | grep -i pcibus` 
+```
+Attribute 'PCIBus' (host:0[gpu:0]): 101.
+  'PCIBus' is an integer attribute.
+  'PCIBus' is a read-only attribute.
+  'PCIBus' can use the following target types: GPU, SDI Input Device.
+Attribute 'PCIBus' (host:0[gpu:1]): 23.
+  'PCIBus' is an integer attribute.
+  'PCIBus' is a read-only attribute.
+  'PCIBus' can use the following target types: GPU, SDI Input Device.
+```
+
+and comment out the PrimaryGPU option in your xorg.d configuration,
+
+ `/usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf` 
+```
+...
+
+Section "OutputClass"
+...
+    # Option "PrimaryGPU" "yes"
+...
+```
+
+Using this configuration may also solve any graphical boot issues.
+
 ### Enabling overclocking
 
 **Warning:** Please note that overclocking may damage hardware and that no responsibility may be placed on the authors of this page due to any damage to any information technology equipment from operating products out of specifications set by the manufacturer.

@@ -1,9 +1,9 @@
-**Status de tradução:** Esse artigo é uma tradução de [Archiving and compression](/index.php/Archiving_and_compression "Archiving and compression"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Archiving_and_compression&diff=0&oldid=534461) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Archiving and compression](/index.php/Archiving_and_compression "Archiving and compression"). Data da última tradução: 2018-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Archiving_and_compression&diff=0&oldid=539195) na versão em inglês.
 
 As ferramentas tradicionais de arquivamento e compactação (ou compressão) Unix são separadas de acordo com a [filosofia Unix](https://en.wikipedia.org/wiki/pt:Filosofia_Unix "wikipedia:pt:Filosofia Unix"):
 
 *   Um [arquivador ou empacotador de arquivo](https://en.wikipedia.org/wiki/File_archiver "wikipedia:File archiver") combina vários arquivos em um arquivo de pacote (p.ex., *tar*).
-*   Uma ferramenta [compressão](https://en.wikipedia.org/wiki/pt:Compress%C3%A3o_de_dados "wikipedia:pt:Compressão de dados") compacta ou descompacta dados.
+*   Uma ferramenta [compressão](https://en.wikipedia.org/wiki/pt:Compress%C3%A3o_de_dados "wikipedia:pt:Compressão de dados") compacta ou descompacta dados (p.ex., *gzip*).
 
 Essas ferramentas geralmente são usadas em sequência, criando primeiro um arquivo e, em seguida, compactando-o.
 
@@ -18,9 +18,9 @@ Claro que também existem [ferramentas que fazem ambos](#Arquivamento_e_compress
     *   [2.3 Comparação de recursos](#Compara.C3.A7.C3.A3o_de_recursos)
         *   [2.3.1 Descompressão](#Descompress.C3.A3o)
 *   [3 Comparação de uso](#Compara.C3.A7.C3.A3o_de_uso)
-    *   [3.1 Arquivamento apenas](#Arquivamento_apenas_2)
-    *   [3.2 Compressão apenas](#Compress.C3.A3o_apenas_2)
-    *   [3.3 Arquivamento e compressão](#Arquivamento_e_compress.C3.A3o_2)
+    *   [3.1 Uso para arquivamento apenas](#Uso_para_arquivamento_apenas)
+    *   [3.2 Uso para compressão apenas](#Uso_para_compress.C3.A3o_apenas)
+    *   [3.3 Uso para arquivamento e compressão](#Uso_para_arquivamento_e_compress.C3.A3o)
 *   [4 Ferramentas de conveniência](#Ferramentas_de_conveni.C3.AAncia)
 *   [5 Determinando o formato do pacote](#Determinando_o_formato_do_pacote)
 *   [6 Ferramentas esotéricas, raras e obsoletas](#Ferramentas_esot.C3.A9ricas.2C_raras_e_obsoletas)
@@ -29,15 +29,17 @@ Claro que também existem [ferramentas que fazem ambos](#Arquivamento_e_compress
 
 ## Arquivamento apenas
 
-| Nome | Pacotes | Manuais | Descrição |
+| Nome | Pacote | Manuais | Descrição |
+| GNU [tar](https://en.wikipedia.org/wiki/pt:tar_(computa%C3%A7%C3%A3o) | [tar](https://www.archlinux.org/packages/?name=tar) | [tar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1), [info](https://www.gnu.org/software/tar/manual/html_chapter/index.html) | [Utilitário principal](/index.php/Utilit%C3%A1rio_principal "Utilitário principal") de manipulação de pacotes tar (tarballs) onipresentes, que são usados pelo [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") e pelo [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"). |
+| [libarchive](http://libarchive.org/) | [libarchive](https://www.archlinux.org/packages/?name=libarchive) | [bsdtar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bsdtar.1)
+[bsdcpio(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bsdcpio.1) | Implementação de *tar* e *cpio* que também oferece uma biblioteca. Usado pelo [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") e [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). |
 | [ar](https://en.wikipedia.org/wiki/ar_(Unix) | [binutils](https://www.archlinux.org/packages/?name=binutils) | [ar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ar.1) | Arquivador legado do Unix antes do *tar*. Hoje usado apenas para criar arquivos de [biblioteca estática](https://en.wikipedia.org/wiki/pt:Biblioteca_est%C3%A1tica "wikipedia:pt:Biblioteca estática"). |
 | [cpio](https://en.wikipedia.org/wiki/pt:cpio "wikipedia:pt:cpio") | [cpio](https://www.archlinux.org/packages/?name=cpio) | [cpio(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cpio.1) | Arquivador de arquivos via stdin/stdout, oferece suporte a formatos cpio e tar. |
 | [DAR](http://dar.linux.free.fr/) | [dar](https://aur.archlinux.org/packages/dar/) | [dar(1)](http://dar.linux.free.fr/doc/man/dar.html) | Arquivador para fazer backup de sistemas de arquivos *live* grandes, lida com links absolutos, [atributos estendidos](/index.php/Extended_attributes "Extended attributes"), arquivos esparsos e tipos de nó-I. |
-| GNU [tar](https://en.wikipedia.org/wiki/pt:tar_(computa%C3%A7%C3%A3o) | [coreutils](https://www.archlinux.org/packages/?name=coreutils) | [tar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1) | Utilitário do GNU para manipulação de pacotes tar (tarballs) onipresente, veja [tar](/index.php/Tar_(Portugu%C3%AAs) "Tar (Português)") para exemplos de uso. |
-| [libarchive](http://libarchive.org/) | [libarchive](https://www.archlinux.org/packages/?name=libarchive) | [bsdtar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bsdtar.1)
-[bsdcpio(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bsdcpio.1) | Implementação de *tar* e *cpio* que também oferece uma biblioteca. Usado pelo [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") e [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). |
 
 **Dica:** O GNU tar e o BSD tar fazem automaticamente a delegação de descompactação para arquivos comprimidos bzip2, compress, gzip, lzip, lzma e xz. Ao criar arquivos, ambos oferecem suporte à opção `-a` para filtrar automaticamente o arquivo criado através do programa de compactação correto, com base na extensão do arquivo. Enquanto o BSD reconhece os formatos de compressão baseados no formato, o GNU tar adivinha apenas baseado na extensão do arquivo.
+
+Veja [#Uso para arquivamento apenas](#Uso_para_arquivamento_apenas).
 
 ## Ferramentas de compressão
 
@@ -45,7 +47,7 @@ Claro que também existem [ferramentas que fazem ambos](#Arquivamento_e_compress
 
 Esses programas de compactação implementam seu próprio formato de arquivo.
 
-| Nome | Pacotes | Manual | Ext | ext do Tar | Descrição | Implementações paralelas |
+| Nome | Pacote | Manual | Ext | ext do Tar | Descrição | Implementações paralelas |
 | [bzip2](https://en.wikipedia.org/wiki/pt:bzip2 "wikipedia:pt:bzip2") | [bzip2](https://www.archlinux.org/packages/?name=bzip2) | [bzip2(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bzip2.1) | .bz2, .bz | .tbz2, .tbz | Usa o [algoritmo Burrows–Wheeler](https://en.wikipedia.org/wiki/pt:M%C3%A9todo_de_Burrows-Wheeler "wikipedia:pt:Método de Burrows-Wheeler"). | [lbzip2](https://www.archlinux.org/packages/?name=lbzip2), [pbzip2](https://www.archlinux.org/packages/?name=pbzip2) |
 | [gzip](https://en.wikipedia.org/wiki/pt:gzip "wikipedia:pt:gzip") | [gzip](https://www.archlinux.org/packages/?name=gzip) | [gzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gzip.1) | .gz, .z | .tgz, .taz | GNU zip, baseado no algoritmo [DEFLATE](https://en.wikipedia.org/wiki/pt:DEFLATE "wikipedia:pt:DEFLATE"). | [pigz](https://www.archlinux.org/packages/?name=pigz) |
 | [lrzip](/index.php/Lrzip "Lrzip") | [lrzip](https://www.archlinux.org/packages/?name=lrzip) | [lrzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lrzip.1) | .lrz | Versão melhorada do [rzip](https://en.wikipedia.org/wiki/rzip "wikipedia:rzip"), usa múltiplos algoritmos. | é multithreaded |
@@ -56,15 +58,18 @@ Esses programas de compactação implementam seu próprio formato de arquivo.
 
 *   Implementações paralelas oferecem velocidades aprimoradas usando vários núcleos de CPU.
 *   Extensões de tar fazem referências a arquivos compactados em que o `tar` e a ferramenta de compactação são usados (p.ex., {ic|.tzo}} é `.tar.lzo`.
+*   Veja também [#Uso para compressão apenas](#Uso_para_compress.C3.A3o_apenas).
 
 ### Arquivamento e compressão
 
-| Nome | Pacotes | Manual | Ext | Descrição |
+| Nome | Pacotes | Manuais | Ext | Descrição |
 | [7z](https://en.wikipedia.org/wiki/pt:7z "wikipedia:pt:7z") | [p7zip](https://www.archlinux.org/packages/?name=p7zip) | [7z(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/7z.1) | .7z | Porte POSIX da linha de comando do 7-zip. Veja [p7zip](/index.php/P7zip "P7zip"). |
 | [RAR](https://en.wikipedia.org/wiki/pt:RAR "wikipedia:pt:RAR") | [rar](https://aur.archlinux.org/packages/rar/), [unrar](https://www.archlinux.org/packages/?name=unrar) | rar(1) | .rar | Ambos formato e utilitário [rar](/index.php/Rar "Rar") são proprietário. |
 | [ZIP](https://en.wikipedia.org/wiki/pt:ZIP "wikipedia:pt:ZIP") | [zip](https://www.archlinux.org/packages/?name=zip), [unzip](https://www.archlinux.org/packages/?name=unzip) | [zip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/zip.1), [unzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/unzip.1) | .zip | Amplamente usado fora do mundo do Linux. |
 | [Unarchiver](https://theunarchiver.com/) | [unarchiver](https://www.archlinux.org/packages/?name=unarchiver) | [unar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/unar.1), [lsar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsar.1) | *many* | Ferramenta de linha de comando de um aplicativo Mac, suporta mais de 40 formatos de pacote. |
 | [ZPAQ](https://en.wikipedia.org/wiki/ZPAQ "wikipedia:ZPAQ") | [zpaq](https://aur.archlinux.org/packages/zpaq/) | [zpaq(1)](http://mattmahoney.net/dc/zpaqdoc.html) | .zpaq | Um arquivador de alta taxa de compactação escrito em C++, usa vários algoritmos. |
+
+Veja também [#Uso para arquivamento e compressão](#Uso_para_arquivamento_e_compress.C3.A3o).
 
 ### Comparação de recursos
 
@@ -77,13 +82,13 @@ Esses programas de compactação implementam seu próprio formato de arquivo.
 
 ## Comparação de uso
 
-### Arquivamento apenas
+### Uso para arquivamento apenas
 
 | Nome | Criação de pacote | Extração de pacote | Listagem de conteúdo |
 | [tar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1) | `tar cfv pacote.tar arquivo1 arquivo2` | `tar xfv pacote.tar` | `tar -tvf pacote.tar` |
 | [cpio(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cpio.1) | `ls arquivo1 arquivo2 | cpio -o > pacote.cpio` | `cpio -i -vd < pacote.cpio` | `cpio -t < pacote.cpio` |
 
-### Compressão apenas
+### Uso para compressão apenas
 
 | Nome | Compressão | Descompressão | Descompressão para stdout |
 | [bzip2(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bzip2.1) | `bzip2 arquivo` | `bzip2 -d arquivo.bz2` | `bzcat arquivo.bz2` |
@@ -93,7 +98,7 @@ Esses programas de compactação implementam seu próprio formato de arquivo.
 `lrztar -d pasta.tar.lrz` | `lrzcat arquivo.lrz` |
 | [xz(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xz.1) | `xz arquivo` | `xz -d arquivo.xz` | `xzcat arquivo.xz` |
 
-### Arquivamento e compressão
+### Uso para arquivamento e compressão
 
 | Nome | Compressão | Descompressão | Descompressão para stdout | Listagem de conteúdo |
 | [7z(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/7z.1) | `7z a pacote.7z arquivo1 arquivo2` | `7z x pacote.7z` | `7z e -so pacote.7z arquivo1` | `7z l pacote.7z` |

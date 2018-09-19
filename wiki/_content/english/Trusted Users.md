@@ -46,7 +46,7 @@ For more information, see the [Trusted User Bylaws](https://aur.archlinux.org/tr
 | [Barthalion](https://aur.archlinux.org/packages.php?K=Barthalion&SeB=m) | Bartłomiej Piotrowski | spam@bpiotrowski.pl |
 | [BlackIkeEagle](https://aur.archlinux.org/packages.php?K=BlackIkeEagle&SeB=m) | [Ike Devolder](/index.php/User:BlackEagle "User:BlackEagle") | ike DOT devolder AT gmail DOT com |
 | [Bluewind](https://aur.archlinux.org/packages.php?K=bluewind&SeB=m) | Florian Pritz | bluewind@xinu.at |
-| [City-busz](https://aur.archlinux.org/packages.php?K=City-busz&SeB=m) | Balló György | ballogyor+arch at gmail dot com |
+| [City-busz](https://aur.archlinux.org/packages.php?K=City-busz&SeB=m) | [Balló György](/index.php/User:City-busz "User:City-busz") | ballogyor+arch at gmail dot com |
 | [coderobe](https://aur.archlinux.org/packages.php?K=coderobe&SeB=m) | Robin Broda | ebova ng oebqn qbg zr (rot13) |
 | [ConnorBehan](https://aur.archlinux.org/packages.php?K=ConnorBehan&SeB=m) | Connor Behan | connor.behan@gmail.com |
 | [lfleischer](https://aur.archlinux.org/packages.php?K=lfleischer&SeB=m) | Lukas Fleischer | lfleischer at archlinux dot org |

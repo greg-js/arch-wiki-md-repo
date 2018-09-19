@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Openresolv](/index.php/Openresolv "Openresolv"). Data da última tradução: 2018-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Openresolv&diff=0&oldid=534763) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Openresolv](/index.php/Openresolv "Openresolv"). Data da última tradução: 2018-09-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Openresolv&diff=0&oldid=538011) na versão em inglês.
 
 Artigos relacionados
 
@@ -57,10 +57,10 @@ Veja a [documentação oficial](https://roy.marples.name/projects/openresolv/con
 
 ### Definindo vários valores por opções
 
-A página man não menciona isso, mas para definir vários valores, para opções que oferecem suporte a isso (p.ex., `name-servers`, `/etc/resolv_conf_options` etc.) no `/etc/resolvconf.conf`, você precisa escrevê-los separados por espaço entre aspas. Por exemplo:
+A página man não menciona isso, mas para definir vários valores, para opções que oferecem suporte a isso (p.ex., `name_servers`, `/etc/resolv_conf_options` etc.) no `/etc/resolvconf.conf`, você precisa escrevê-los separados por espaço entre aspas. Por exemplo:
 
  `/etc/resolvconf.conf` 
 ```
 resolv_conf_options="edns0 single-request"
-name_servers="dns1.example.com dns2.example.com dns3.example.com"
+name_servers="192.168.35.1 fd7b:d0bd:7a6e::1"
 ```

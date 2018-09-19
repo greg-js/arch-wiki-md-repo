@@ -404,6 +404,13 @@ To check if it worked out, read out clocks and voltage under 3D load:
 
 ```
 
+You can reset to the default values using this:
+
+```
+# echo "r" > /sys/class/drm/card0/device/pp_od_clk_voltage
+
+```
+
 To set the allowed maximum power consumption of the GPU to e.g. 50 Watts, run
 
 ```

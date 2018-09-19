@@ -217,9 +217,13 @@ done
 
 ### Change touchpad sensitivity
 
-The method of finding the correct thresholds for when libinput registers a touch as DOWN and back UP again can be found [[2]](https://wayland.freedesktop.org/libinput/doc/latest/touchpad-pressure.html) in the upstream documentation. Their method of setting the sensitivity, via .quirk may not work.
+The method of finding the correct thresholds for when libinput registers a touch as DOWN and back UP again can be found [[2]](https://wayland.freedesktop.org/libinput/doc/latest/touchpad-pressure-debugging.html#touchpad-pressure-hwdb) in the upstream documentation.
 
-If so, to change the pressure at which the touchpad is registered, follow the answer on this [AskUbuntu question](https://askubuntu.com/questions/973090/how-to-configure-touchpad-tap-sensitivity).
+Custom touchpad pressure values can be set via temporary local device quirks. See [[3]](https://wayland.freedesktop.org/libinput/doc/latest/device-quirks.html).
+
+**Note:**
+
+Quirks are an internal API and are not guaranteed to work in future libinput versions. Between versions 1.11 and 1.12, udev rules [[4]](https://wayland.freedesktop.org/libinput/doc/1.11.3/udev_config.html#hwdb) were replaced by `.quirk` files [[5]](https://wayland.freedesktop.org/libinput/doc/latest/device-quirks.html).
 
 ### Disable touchpad
 

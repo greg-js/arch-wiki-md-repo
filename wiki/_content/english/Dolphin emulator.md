@@ -14,6 +14,7 @@ Dolphin is a Nintendo GameCube and Wii emulator, currently supporting the x86_64
     *   [4.2 Launching games fails with "WriteRest Op" error](#Launching_games_fails_with_.22WriteRest_Op.22_error)
     *   [4.3 Games play too fast](#Games_play_too_fast)
     *   [4.4 Emulation is too slow](#Emulation_is_too_slow)
+    *   [4.5 Games frequently stutter on first playthrough, but subsequent runs are smooth](#Games_frequently_stutter_on_first_playthrough.2C_but_subsequent_runs_are_smooth)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -57,7 +58,9 @@ On the final tab, "Paths", ISO directories can be set. The directory of game ISO
 
 ### Graphics section
 
-On the "General" tab, choose OpenGL from the backend drop-down list. Set the "Display" and "Other" settings to the desired configuration. V-sync is useful, but it can lead to slowdowns. The "render to main window" option improves the experience aesthetically.
+On the "General" tab, choose OpenGL from the backend drop-down list for the currently most compatible renderer. Set the "Display" and "Other" settings to the desired configuration. V-sync is useful, but it can lead to slowdowns. The "render to main window" option improves the experience aesthetically.
+
+If your graphics card supports [Vulkan](/index.php/Vulkan "Vulkan"), using the Vulkan backend may give you higher performance than OpenGL. Note that the Vulkan backend might not be compatible with certain titles, so if you run into issues with a game, try switching back to OpenGL before giving up. The official [compatibility list](https://dolphin-emu.org/compat/) often has hints about how each renderer handles a title.
 
 On the "Enhancements" tab are the options that can improve graphics. While they result to great output, they can slow the emulation down to the point of making games unplayable. Choose the best settings possible, as long as speed remains 100%.
 
@@ -155,6 +158,10 @@ Make sure the framelimit is set to a proper value for the game's region; 60 for 
 Double-check the [CPU scaling governor](/index.php/Cpu_scaling#Scaling_governors "Cpu scaling"). If using an NVidia graphics card, on nvidia-settings changing the powermizer setting to "Prefer maximum performance"; check its temperature to make sure the card does not overheat, though. Change Dolphin's priority using *nice*. Killing unnecessary processes and disabling compositing also helps. Configuring Dolphin correctly, as described above, is the most important part.
 
 Many systems have more than one GPU, like an integrated low-performance one by Intel and a dedicated graphics card. Run `DRI_PRIME=1 dolphin-emu` to execute Dolphin on your dedicated GPU. See [PRIME](/index.php/PRIME "PRIME") for details.
+
+### Games frequently stutter on first playthrough, but subsequent runs are smooth
+
+This stutter is likely introduced because graphics rendering has to pause due to shader compilation. Dolphin has gained advanced techniques for minimizing such stutter, called Ubershaders. They require strong GPUs to work best and thus aren't enabled by default. In the graphics configuration dialog under "Shader Compilation", try one of the options "Synchronous (Ubershaders)" or "Asynchronous (Ubershaders)". Hover over the radio buttons to see a more detailed explanation text in the dialog. Using the option "Compile Shaders Before Starting" may also reduce stutter, but at the cost of a longer delay before the game starts.
 
 *See also: [Improving performance](/index.php/Improving_performance "Improving performance") – most of the advice should be helpful.*
 

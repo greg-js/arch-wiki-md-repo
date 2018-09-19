@@ -1679,7 +1679,21 @@ Brightness is either 0% or 100% after resuming from suspend. Until the kernel is
 
 ##### WiFi
 
-WiFi does not work out of the box. Install [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) to connect to a network.
+WiFi does not work out of the box. Install [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) to connect to a network. If booting from the official Arch Linux ISO, one needs to unload a few standard modules in order to use the included wl module. Do so as follows:
+
+```
+# rmmod b43 ssb bcma wl
+
+```
+
+Now simply load the wl module:
+
+```
+# modprobe wl
+
+```
+
+This should automatically load the onboard wifi which can be seen by issuing: `ip a`. From here follow the [WPA_supplicant#Connecting_with_wpa_cli](/index.php/WPA_supplicant#Connecting_with_wpa_cli "WPA supplicant") article to bring up the wireless network.
 
 ##### Touchpad
 
