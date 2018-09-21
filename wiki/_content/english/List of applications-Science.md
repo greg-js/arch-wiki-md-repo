@@ -582,6 +582,10 @@ See also [Wikipedia:List of open source bioinformatics software](https://en.wiki
 
 	[http://mummer.sourceforge.net/](http://mummer.sourceforge.net/) || [mummer](https://aur.archlinux.org/packages/mummer/)
 
+*   **[Snapgene](https://en.wikipedia.org/wiki/Snapgene "wikipedia:Snapgene")** — Closed source molecular cloning application that offers a fast and easy way to plan, visualize, and document molecular biology procedures. Supports a wide range of cloning and PCR manipulations. The free version allows most common visualizations of a molecular biology workflow.
+
+	[http://www.snapgene.com/](http://www.snapgene.com/) || [snapgene-viewer](https://aur.archlinux.org/packages/snapgene-viewer/)
+
 *   **[UGENE](https://en.wikipedia.org/wiki/UGENE "wikipedia:UGENE")** — Application that integrates dozens of well-known biological tools and algorithms, providing both graphical user and command-line interfaces.
 
 	[http://ugene.net/](http://ugene.net/) || [ugene-bin](https://aur.archlinux.org/packages/ugene-bin/)

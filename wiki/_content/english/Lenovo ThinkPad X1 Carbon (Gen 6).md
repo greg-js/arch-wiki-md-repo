@@ -6,32 +6,6 @@ Related articles
 *   [Lenovo ThinkPad X1 Carbon (Gen 4)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_4) "Lenovo ThinkPad X1 Carbon (Gen 4)")
 *   [Lenovo ThinkPad X1 Carbon (Gen 5)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_5) "Lenovo ThinkPad X1 Carbon (Gen 5)")
 
-**Tip:** A great resource for thinkpads is [https://www.thinkwiki.org/wiki/ThinkWiki](https://www.thinkwiki.org/wiki/ThinkWiki)
-
-## Contents
-
-*   [1 Model description](#Model_description)
-    *   [1.1 Support](#Support)
-*   [2 BIOS](#BIOS)
-    *   [2.1 Updates](#Updates)
-        *   [2.1.1 Automatic Linux Vendor Firmware Service](#Automatic_Linux_Vendor_Firmware_Service)
-        *   [2.1.2 Manual Installation](#Manual_Installation)
-*   [3 Suspend issues](#Suspend_issues)
-    *   [3.1 Enabling S3](#Enabling_S3)
-    *   [3.2 Disabling the memory card reader](#Disabling_the_memory_card_reader)
-    *   [3.3 BIOS configurations](#BIOS_configurations)
-*   [4 Power management/Throttling issues](#Power_management.2FThrottling_issues)
-    *   [4.1 Throttling fix](#Throttling_fix)
-*   [5 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
-*   [6 Full-disk encryption](#Full-disk_encryption)
-    *   [6.1 Ramdisk module](#Ramdisk_module)
-*   [7 Tools](#Tools)
-    *   [7.1 Diagnostics](#Diagnostics)
-*   [8 References](#References)
-*   [9 Additional resources](#Additional_resources)
-
-## Model description
-
 The Lenovo ThinkPad X1 Carbon, 6th generation is an ultrabook introduced in early 2018\. It comes in several variants(`20KH*` and `20KG*`) and features a 14" screen, 8th-gen Intel Core processors and integrated [Intel UHD 620 graphics](/index.php/Intel_graphics "Intel graphics").
 
 To ensure you have this version, [install](/index.php/Install "Install") the package [dmidecode](https://www.archlinux.org/packages/?name=dmidecode) and run:
@@ -43,29 +17,49 @@ Version: ThinkPad X1 Carbon 6th
 
 ```
 
-### Support
-
 | **Device** | **Working** | **Modules** |
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes | i915, (intel_agp) |
 | [Wireless network](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") | Yes | iwlmvm |
 | Native Ethernet with [included dongle](https://www3.lenovo.com/us/en/accessories-and-monitors/cables-and-adapters/adapters/CABLE-BO-TP-OneLink%2B-to-RJ45-Adapter/p/4X90K06975) | Yes |  ? |
-| Mobile broadband | No* |  ? |
+| Mobile broadband | No¹ |  ? |
 | Audio | Yes | snd_hda_intel |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes | psmouse, rmi_smbus, i2c_i801 |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes | psmouse, rmi_smbus, i2c_i801 |
 | Camera | Yes | uvcvideo |
-| Fingerprint Reader | No** |  ? |
-| [Power management](/index.php/Power_management "Power management") | Yes*** |  ? |
+| Fingerprint Reader | No² |  ? |
+| [Power management](/index.php/Power_management "Power management") | Yes³ |  ? |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes | btusb |
 | microSD card reader | Yes | scsi_mod |
 | Keyboard Backlight | Yes | thinkpad_acpi |
 | Function/Multimedia Keys | Yes |  ? |
+| 
 
-* no working linux pcie driver for Fibocom L850-GL [forum link](https://forums.lenovo.com/t5/Linux-Discussion/X1C-gen-6-Fibocom-L850-GL-Ubuntu-18-04/m-p/4078413) - also see [this forum](https://forums.lenovo.com/t5/Linux-Discussion/Linux-support-for-WWAN-LTE-L850-GL-on-T580-T480/td-p/4067969) for more progress.
+1.  No working Linux driver for Fibocom L850-GL. See [this thread](https://forums.lenovo.com/t5/Linux-Discussion/X1C-gen-6-Fibocom-L850-GL-Ubuntu-18-04/m-p/4078413) and [this thread](https://forums.lenovo.com/t5/Linux-Discussion/Linux-support-for-WWAN-LTE-L850-GL-on-T580-T480/td-p/4067969) for more info.
+2.  [The Validity90 project](https://github.com/nmikhailov/Validity90) began reverse engineering the reader, but updates have stopped recently.
+3.  S3 suspend requires changes to BIOS settings - see section on [suspend issues](#Suspend_issues).
 
-** [the Validity90 project](https://github.com/nmikhailov/Validity90) began reverse engineering the reader, but updates have stopped recently.
+ |
 
-*** S3 suspend requires changes to BIOS settings - see section on [suspend issues](#Suspend_issues) for details.
+## Contents
+
+*   [1 BIOS](#BIOS)
+    *   [1.1 Updates](#Updates)
+        *   [1.1.1 Automatic Linux Vendor Firmware Service](#Automatic_Linux_Vendor_Firmware_Service)
+        *   [1.1.2 Manual Installation](#Manual_Installation)
+*   [2 Suspend issues](#Suspend_issues)
+    *   [2.1 Enabling S3](#Enabling_S3)
+    *   [2.2 Verifying S3](#Verifying_S3)
+    *   [2.3 Disabling the memory card reader](#Disabling_the_memory_card_reader)
+    *   [2.4 BIOS configurations](#BIOS_configurations)
+*   [3 Power management/Throttling issues](#Power_management.2FThrottling_issues)
+    *   [3.1 Throttling fix](#Throttling_fix)
+*   [4 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
+*   [5 Full-disk encryption](#Full-disk_encryption)
+    *   [5.1 Ramdisk module](#Ramdisk_module)
+*   [6 Tools](#Tools)
+    *   [6.1 Diagnostics](#Diagnostics)
+*   [7 References](#References)
+*   [8 Additional resources](#Additional_resources)
 
 ## BIOS
 
@@ -87,18 +81,22 @@ The ThinkPad X1 Carbon supports setting a custom splash image at the earliest bo
 
 ## Suspend issues
 
-The 6th Generation X1 Carbon supports S0i3 (also known as Windows Modern Standby), but not S3 by default. Missing S3 also causes hybrid-suspend to go directly to hibernate. Thankfully, S3 can be enabled through a BIOS option from BIOS version 1.30 onward.
+Since BIOS version 1.30, the X1 Carbon supports S3 mode when enabled in the BIOS menu (choose "Linux" sleep mode instead of the default "Windows 10"). See [#Automatic_Linux_Vendor_Firmware_Service](#Automatic_Linux_Vendor_Firmware_Service) for instructions to update and verify your BIOS version.
 
 ### Enabling S3
 
-First, verify S3 is not currently available by running the following command and making sure S3 is not listed in the supported modes.
+To enable S3 support, make sure you have at least BIOS version 1.30 installed. Then, go into the BIOS configuration, and `Config -> Power -> Sleep State - Set to "Linux"`. This should make S3 available. To verify, after making the changes in the BIOS configuration, boot into Linux, and run the `dmesg` command again to make sure that S3 is now available.
+
+### Verifying S3
+
+To check whether S3 is recognized and usable by Linux, run:
 
 ```
 dmesg | grep -i "acpi: (supports"
 
 ```
 
-To enable S3 support, make sure you have at least BIOS version 1.30 installed. Then, go into the BIOS configuration, and `Config -> Power -> Sleep State - Set to "Linux"`. This should make S3 available. To verify, after making the changes in the BIOS configuration, boot into Linux, and run the `dmesg` command again to make sure that S3 is now available.
+and check for `S3` in the list.
 
 ### Disabling the memory card reader
 
@@ -183,9 +181,6 @@ With LUKS for root, i915 needs to be loaded in ramdisk in order to access the pa
 
 ## References
 
-*   [A good night's sleep for the Lenovo X1 Carbon Gen6](https://delta-xi.net/#056): Patching ACPI DSDT tables to add S3 support
-*   [Lenovo forums: Cannot enter deep sleep S3](https://forums.lenovo.com/t5/Linux-Discussion/X1-Carbon-Gen-6-cannot-enter-deep-sleep-S3-state-aka-Suspend-to/td-p/3998182/highlight/true)
-*   [Thread: No deep sleep](https://bbs.archlinux.org/viewtopic.php?id=234913): Includes DSDT patching solution and further discussion
 *   [T480s throttling bug](https://www.reddit.com/r/thinkpad/comments/870u0a/t480s_linux_throttling_bug/), affects X1C6 as well
 *   [Lenovo forums: T480s low cTDP and trip temperature in Linux](https://forums.lenovo.com/t5/Linux-Discussion/T480s-low-cTDP-and-trip-temperature-in-Linux/td-p/4028489)
 *   [Thread: TrackPoint/Touchpad issues, 20KG model](https://bbs.archlinux.org/viewtopic.php?id=236367)
@@ -201,3 +196,4 @@ With LUKS for root, i915 needs to be loaded in ramdisk in order to access the pa
 *   [Dell XPS 13 9370 quirks](https://gist.github.com/greigdp/bb70fbc331a0aaf447c2d38eacb85b8f): Some pointers on getting Watt usage down to ~2W, Intel video powersaving features might be interesting, see also the [Intel Graphics](/index.php/Intel_graphics "Intel graphics") page for interesting power-saving options.
 *   [Dell XPS 13 (9360)](/index.php/Dell_XPS_13_(9360) "Dell XPS 13 (9360)"): Shares some hardware with the X1C6
 *   [Intel Blog: Best practice to debug Linux* suspend/hibernate issues](https://01.org/blogs/rzhang/2015/best-practice-debug-linux-suspend/hibernate-issues), including the [pm-graph](https://github.com/01org/pm-graph) tool to analyze power usage during suspend
+*   [A comprehensive example Arch install for the X1C6](https://github.com/ejmg/an-idiots-guide-to-installing-arch-on-a-lenovo-carbon-x1-gen-6)

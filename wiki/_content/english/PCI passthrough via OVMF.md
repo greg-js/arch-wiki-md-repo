@@ -354,7 +354,7 @@ If you don't need all cores for the guest, it would then be preferable to leave 
 
 #### XML examples
 
-**Note:** If you are not using Virtio storage drivers for your VM, *do not* use the **iothread** lines from the XML examples that are shown below.
+**Note:** Do not use the **iothread** lines from the XML examples shown below if you have not added an **iothread** to your disk controller. **iothread'**s only work on **virtio-scsi** or **virtio-blk** devices.
 
 ##### 4c/1t CPU w/o Hyperthreading Example
 

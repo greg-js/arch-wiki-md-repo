@@ -37,6 +37,8 @@ Related articles
     *   [4.4 Specifying install directory for QMAKE based packages](#Specifying_install_directory_for_QMAKE_based_packages)
     *   [4.5 WARNING: Package contains reference to $srcdir](#WARNING:_Package_contains_reference_to_.24srcdir)
     *   [4.6 Makepkg fails to download dependencies when behind proxy](#Makepkg_fails_to_download_dependencies_when_behind_proxy)
+        *   [4.6.1 Enable proxy by setting its URL in XferCommand](#Enable_proxy_by_setting_its_URL_in_XferCommand)
+        *   [4.6.2 Enable proxy via sudoer's env_keep](#Enable_proxy_via_sudoer.27s_env_keep)
 *   [5 See also](#See_also)
 
 ## Configuration
@@ -378,7 +380,13 @@ $ grep -R "$(pwd)/src" pkg/
 
 ### Makepkg fails to download dependencies when behind proxy
 
-When Makepkg calls sudo, any [environment variables](/index.php/Environment_variables "Environment variables") are not passed, including `$http_proxy`. When it calls dependencies, it calls pacman to install the packages, therefore you need to edit `/etc/pacman.conf` instead. Add or uncomment the following line in your `pacman.conf`[[6]](http://www.mail-archive.com/arch-general@archlinux.org/msg15561.html):
+When *makepkg* calls dependencies, it calls pacman to install the packages, which requires administrative privileges via *sudo*. However, *sudo* does not pass any [environment variables](/index.php/Environment_variables "Environment variables") to the privileged environment, and includes the proxy-related variables `ftp_proxy`, `http_proxy`, `https_proxy`, and `no_proxy`.
+
+In order to have *makepkg* working behind a proxy you have to do one of the following methods.
+
+#### Enable proxy by setting its URL in XferCommand
+
+The XferCommand can be set to use the desired proxy URL in `/etc/pacman.conf`. Add or uncomment the following line in your `pacman.conf`[[6]](http://www.mail-archive.com/arch-general@archlinux.org/msg15561.html):
 
  `/etc/pacman.conf` 
 ```
@@ -387,6 +395,10 @@ XferCommand = /usr/bin/curl -x http://username:password@proxy.proxyhost.com:80 -
 ...
 
 ```
+
+#### Enable proxy via sudoer's env_keep
+
+Alternatively, one may want to use sudoer's `env_keep` option, which enables preserving given variables the privileged environment. See [Sudo#Environment variables](/index.php/Sudo#Environment_variables "Sudo") for more information.
 
 ## See also
 

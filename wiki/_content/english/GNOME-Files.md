@@ -17,8 +17,9 @@ Files is the default file manager for [GNOME](https://wiki.gnome.org/). Files at
 *   [2 Configuration](#Configuration)
     *   [2.1 Desktop Icons](#Desktop_Icons)
     *   [2.2 Change default item view](#Change_default_item_view)
-    *   [2.3 Remove folders from the places sidebar](#Remove_folders_from_the_places_sidebar)
-    *   [2.4 Always show text-entry location](#Always_show_text-entry_location)
+    *   [2.3 Sort by type](#Sort_by_type)
+    *   [2.4 Remove folders from the places sidebar](#Remove_folders_from_the_places_sidebar)
+    *   [2.5 Always show text-entry location](#Always_show_text-entry_location)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Thumbnails](#Thumbnails)
     *   [3.2 Create an empty document in Files 3.6 and above](#Create_an_empty_document_in_Files_3.6_and_above)
@@ -88,6 +89,15 @@ You can change the default view for the items by setting the `default-folder-vie
 
 ```
 $ gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
+
+```
+
+### Sort by type
+
+To sort files in all folders by type:
+
+```
+$ gsettings set org.gnome.nautilus.preferences default-sort-order 'type'
 
 ```
 

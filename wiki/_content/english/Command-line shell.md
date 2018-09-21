@@ -76,7 +76,7 @@ These shells can all be linked from `/usr/bin/sh`. When [Bash](/index.php/Bash "
 
 *   **xonsh** — A retrocompatible shell based on the python interpreter.
 
-	[http://xon.sh/](http://xon.sh/) || [xonsh](https://aur.archlinux.org/packages/xonsh/)
+	[http://xon.sh/](http://xon.sh/) || [xonsh](https://www.archlinux.org/packages/?name=xonsh)
 
 ## Changing your default shell
 

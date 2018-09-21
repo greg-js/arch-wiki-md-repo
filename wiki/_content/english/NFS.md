@@ -245,7 +245,7 @@ To apply changes, [Restart](/index.php/Restart "Restart") `iptables.service`.
 
 ### Client
 
-Users intending to use NFS4 with [Kerberos](/index.php/Kerberos "Kerberos") need to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `nfs-client.target`, which starts `rpc-gssd.service`.
+Users intending to use NFS4 with [Kerberos](/index.php/Kerberos "Kerberos") need to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `nfs-client.target`, which starts `rpc-gssd.service`. The rpc-gssd .service will wait until the [random number generator](/index.php/Random_number_generator "Random number generator") pool is initialized possibly delaying the boot process, make sure there is enough entropy available to avoid delays at boot time.
 
 #### Manual mounting
 

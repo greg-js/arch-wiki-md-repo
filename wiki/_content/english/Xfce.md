@@ -107,9 +107,9 @@ A number of graphical tools are available for this task:
 
 	[http://www.gnome.org/](http://www.gnome.org/) || [alacarte](https://www.archlinux.org/packages/?name=alacarte)
 
-*   **XAME** — GUI tool written in Gambas designed specifically for editing menu entries in Xfce, it will not work in other environments. (Discontinued)
+*   **XAME (XFCE Applications Menu Editor)** — GUI tool written in Gambas designed specifically for editing menu entries in Xfce, it will not work in other environments. (Discontinued)
 
-	[http://www.redsquirrel87.com/XAME.php](http://www.redsquirrel87.com/XAME.php) || [xame](https://aur.archlinux.org/packages/xame/)
+	[http://redsquirrel87.altervista.org/doku.php/xfce-applications-menu-editor](http://redsquirrel87.altervista.org/doku.php/xfce-applications-menu-editor) || [xame](https://aur.archlinux.org/packages/xame/)
 
 Alternatively, create the file `~/.config/menus/xfce-applications.menu` manually. See the example configuration below:
 

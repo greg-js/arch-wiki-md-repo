@@ -29,7 +29,7 @@ The ipxe.pxe image is a PXE image. It can be chainloaded from an existing PXE en
 
 ## UEFI
 
-The ipxe.efi image can be used to launch Arch Linux netboot in UEFI mode. Only 64 Bit UEFI is supported. The ipxe.efi image can be added as a boot option via efibootmgr, chainloaded from a boot manager like systemd-boot or launched directly from the UEFI shell.
+The ipxe.efi image can be used to launch Arch Linux netboot in UEFI mode. Only 64 Bit UEFI is supported. The ipxe.efi image can be added as a boot option via efibootmgr, chainloaded from a boot manager like [systemd-boot](/index.php/Systemd-boot "Systemd-boot") or launched directly from the UEFI shell.
 
 ### Installation with efibootmgr
 

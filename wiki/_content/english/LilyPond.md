@@ -6,6 +6,7 @@
     *   [1.1 Front-ends](#Front-ends)
 *   [2 Usage](#Usage)
 *   [3 Text editor support](#Text_editor_support)
+    *   [3.1 Emacs lilypond-mode](#Emacs_lilypond-mode)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -52,6 +53,12 @@ For more information, see `info lilypond`, [lilypond(1)](https://jlk.fjfi.cvut.c
 LilyPond comes with modes for [Emacs](/index.php/Emacs "Emacs") and [Vim](/index.php/Vim "Vim"), see the [documentation](http://lilypond.org/doc/Documentation/usage/text-editor-support).
 
 For Vim see the filetype plugin `/usr/share/vim/vimfiles/ftplugin/lilypond.vim` for the available key mappings.
+
+### Emacs `lilypond-mode`
+
+[lilypond](https://www.archlinux.org/packages/?name=lilypond) package installs some [Emacs](/index.php/Emacs "Emacs") files including `/usr/share/emacs/site-lisp/lilypond-mode.el`.
+
+To use `lilypond-mode`, firstly **M-x load-library <RET> lilypond-mode <RET>** then again **M-x lilypond-mode <RET>**.
 
 ## See also
 

@@ -18,7 +18,7 @@ The advantages of Courier-MTA are:
 ## Contents
 
 *   [1 Preamble](#Preamble)
-*   [2 Installing](#Installing)
+*   [2 Installation](#Installation)
 *   [3 TLS](#TLS)
 *   [4 Authuserdb authentication](#Authuserdb_authentication)
 *   [5 Creating the vmail user](#Creating_the_vmail_user)
@@ -37,7 +37,7 @@ The following text describes a setup for two local domains on one physical machi
 
 **Note:** If you would like to test on your local box but have no DNS-server running, the setup fails on some edges because Courier-MTA needs at least an MX entry to work. To work around that you can recompile courier-mta from "abs". Add `--without-tcpddns` to the configure attributes and go make some coffee, since this will take a while. Then make sure, that you add our dummy domains "domain1" and "domain2" to your `/etc/hosts`.
 
-## Installing
+## Installation
 
 [Install](/index.php/Install "Install") the [courier-mta](https://aur.archlinux.org/packages/courier-mta/) package.
 

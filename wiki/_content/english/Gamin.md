@@ -4,7 +4,7 @@ Gamin re-implements the [FAM](/index.php/FAM "FAM") specification with [inotify]
 
 ## Installation
 
-Install the [gamin](https://www.archlinux.org/packages/?name=gamin) package.
+[Install](/index.php/Install "Install") the [gamin](https://www.archlinux.org/packages/?name=gamin) package.
 
 ## See also
 

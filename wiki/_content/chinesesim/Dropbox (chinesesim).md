@@ -1,3 +1,7 @@
+Related articles
+
+*   [Backup programs](/index.php/Backup_programs "Backup programs")
+
 **翻译状态：** 本文是英文页面 [Dropbox](/index.php/Dropbox "Dropbox") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-12-16，点击[这里](https://wiki.archlinux.org/index.php?title=Dropbox&diff=0&oldid=349226)可以查看翻译后英文页面的改动。
 
 [Dropbox](https://www.dropbox.com) is a file sharing system that recently introduced a GNU/Linux client. Use it to transparently sync files across computers and architectures. Simply drop files into your `~/Dropbox` folder, and they will automatically sync to your centralized repository.

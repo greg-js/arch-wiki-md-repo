@@ -688,7 +688,7 @@ New echo requests (pings) will be accepted:
 
 ```
 
-New upd traffic will jump to the UDP chain:
+New udp traffic will jump to the UDP chain:
 
 ```
 # nft add rule inet filter input ip protocol udp ct state new jump UDP

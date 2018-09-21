@@ -1,14 +1,14 @@
+**Status de tradução:** Esse artigo é uma tradução de [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). Data da última tradução: 2018-09-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=PKGBUILD&diff=0&oldid=540781) na versão em inglês.
+
 Artigos relacionados
 
-*   [Padrões de empacotamento do Arch](/index.php/Arch_packaging_standards_(Portugu%C3%AAs) "Arch packaging standards (Português)")
+*   [Padrões de empacotamento do Arch](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")
 *   [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes")
 *   [.SRCINFO](/index.php/.SRCINFO_(Portugu%C3%AAs) ".SRCINFO (Português)")
 *   [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)")
 *   [Category:Package development (Português)](/index.php/Category:Package_development_(Portugu%C3%AAs) "Category:Package development (Português)")
 *   [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)")
 *   [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)")
-*   [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
-*   [Pacman/Dicas e truques](/index.php/Pacman/Dicas_e_truques "Pacman/Dicas e truques")
 
 Esse artigo discute variáveis definíveis pelo mantenedor em um PKGBUILD. Para informações sobre funções do PKGBUILD e criação de pacotes em geral, veja [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes"). Leia também [PKGBUILD(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/PKGBUILD.5).
 
@@ -19,6 +19,8 @@ Pacotes no Arch Linux são compilados usando o utilitário [makepkg](/index.php/
 Variáveis obrigatórias são `pkgname`, `pkgver`, `pkgrel` e `arch`. `license` não é estritamente necessária para compilar um pacote, mas é recomendada para quaisquer PKGBUILDs compartilhados com outras pessoas, já que *makepkg* vai produzir um aviso se não estiver presente.
 
 É uma prática comum definir as variáveis no PKGBUILD da mesma forma dadas aqui. Porém, isso não é obrigatório, desde que a sintaxe [Bash](/index.php/Bash "Bash") correta seja usada.
+
+**Dica:** Use [namcap](/index.php/Namcap_(Portugu%C3%AAs) "Namcap (Português)") para verificar PKGBUILDs por erros comuns de empacotamento.
 
 ## Contents
 
@@ -148,8 +150,8 @@ A licença sob a qual o software é distribuído. O pacote [licenses](https://ww
 
 Informações e perspectivas adicionais sobre licenças de software aberto e livre podem ser encontradas nas seguintes páginas:
 
-*   [w:pt:Licença de software livre](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_de_software_livre "w:pt:Licença de software livre")
-*   [w:Comparison of free and open-source software licenses](https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses "w:Comparison of free and open-source software licenses")
+*   [Wikipedia:pt:Licença de software livre](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_de_software_livre "wikipedia:pt:Licença de software livre")
+*   [Wikipedia:Comparison of free and open-source software licenses](https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses "wikipedia:Comparison of free and open-source software licenses")
 *   [A Legal Issues Primer for Open Source and Free Software Projects](https://www.softwarefreedom.org/resources/2008/foss-primer.html)
 *   [Projeto GNU - Várias licenças e comentários sobre elas](https://www.gnu.org/licenses/license-list.html)
 *   [Debian - License information](https://www.debian.org/legal/licenses/)

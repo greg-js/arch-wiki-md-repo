@@ -67,7 +67,7 @@
 
 其他的 greeter 可以从 [AUR](/index.php/AUR "AUR") 安装:
 
-*   [lightdm-webkit2-greeter](https://aur.archlinux.org/packages/lightdm-webkit2-greeter/): 一个用 Webkit2 做主题引擎的 greeter. 替代 [lightdm-webkit-greeter](https://aur.archlinux.org/packages/lightdm-webkit-greeter/)。
+*   [lightdm-webkit2-greeter](https://www.archlinux.org/packages/?name=lightdm-webkit2-greeter): 一个用 Webkit2 做主题引擎的 greeter. 替代 [lightdm-webkit-greeter](https://aur.archlinux.org/packages/lightdm-webkit-greeter/)。
 *   [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/): Ubuntu [Unity](/index.php/Unity "Unity") 使用的 greeter.
 *   [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/): 一个来自 ElementaryOS Project 的 greeter.
 
@@ -118,7 +118,7 @@ $ lightdm --test-mode --debug
 `/etc/lightdm/lightdm.conf` 包含 LightDM 的默认配置。某些 greeter 拥有自己的配置文件。例如
 
 *   [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter): `/etc/lightdm/lightdm-gtk-greeter.conf`
-*   [lightdm-webkit2-greeter](https://aur.archlinux.org/packages/lightdm-webkit2-greeter/): `/etc/lightdm/lightdm-webkit2-greeter.conf`
+*   [lightdm-webkit2-greeter](https://www.archlinux.org/packages/?name=lightdm-webkit2-greeter): `/etc/lightdm/lightdm-webkit2-greeter.conf`
 *   [lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter): `/etc/lightdm/lightdm-kde-greeter.conf`
 
 可以直接修改 LightDM 的配置文件，或者使用位于 `/usr/lib/lightdm/lightdm/` 的 `lightdm-set-defaults`程序。想知道一些可用选项，执行:
@@ -159,7 +159,7 @@ background=/usr/share/pixmaps/black_and_white_photography-wallpaper-1920x1080.jp
 
 #### Webkit2 greeter
 
-The [lightdm-webkit2-greeter](https://aur.archlinux.org/packages/lightdm-webkit2-greeter/) allows you to choose a background image directly on the login screen. It also offers an option to display a random image each time it starts. By default, images are sourced from `/usr/share/backgrounds`. You can change the background images directory by editing `lightdm-webkit2-greeter.conf`. For example:
+The [lightdm-webkit2-greeter](https://www.archlinux.org/packages/?name=lightdm-webkit2-greeter) allows you to choose a background image directly on the login screen. It also offers an option to display a random image each time it starts. By default, images are sourced from `/usr/share/backgrounds`. You can change the background images directory by editing `lightdm-webkit2-greeter.conf`. For example:
 
  `/etc/lightdm/lightdm-webkit2-greeter.conf` 
 ```

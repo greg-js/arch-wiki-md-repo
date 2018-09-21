@@ -5,7 +5,8 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Admin SSH access](#Admin_SSH_access)
-    *   [2.2 Adding http(s) access via Apache (with basic authentication)](#Adding_http.28s.29_access_via_Apache_.28with_basic_authentication.29)
+    *   [2.2 Create a repository](#Create_a_repository)
+    *   [2.3 Adding http(s) access via Apache (with basic authentication)](#Adding_http.28s.29_access_via_Apache_.28with_basic_authentication.29)
 *   [3 Add users](#Add_users)
     *   [3.1 ssh users](#ssh_users)
     *   [3.2 http(s) users](#http.28s.29_users)
@@ -64,6 +65,25 @@ $ git clone gitolite@*hostname*:gitolite-admin
 ```
 
 For reference see [Gitolite](https://github.com/sitaramc/gitolite/).
+
+### Create a repository
+
+To create a repository, first check out the `gitolite-admin` repository as a client.
+
+```
+$ git clone gitolite@*server*:gitolite-admin
+
+```
+
+Append a new repository to `gitolite-admin/conf/gitolite.conf`:
+
+```
+repo *repository_name*
+    RW+     =   @all
+
+```
+
+Commit and push the changes and gitolite will automatically generate the necessary files on the server.
 
 ### Adding http(s) access via Apache (with basic authentication)
 
@@ -141,13 +161,7 @@ Finally, in the gitolite-admin repository you cloned in the previous section, ed
 
 Ask each user who will get access to send you an [SSH public key](/index.php/SSH_keys "SSH keys"). Rename each public key to `*username*.pub`, where `*username*` is the user name which will be used in `gitolite.conf`. Then move all new public keys to the `keydir` directory in the cloned `gitolite-admin` repo. You can also organise them into various subdirectories of `keydir` if you wish, since the entire tree is searched.
 
-Finally commit and push the changes:
-
-```
-$ git commit -a
-$ git push
-
-```
+Finally commit and push the changes.
 
 See the [add/remove users](http://gitolite.com/gitolite/basic-admin/#addremove-users) in the official documentation for details.
 

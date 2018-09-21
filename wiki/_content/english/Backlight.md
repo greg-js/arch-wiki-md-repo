@@ -12,9 +12,8 @@ There are many ways to adjust the screen backlight of a monitor, laptop or integ
 *   [4 systemd-backlight service](#systemd-backlight_service)
 *   [5 Backlight utilities](#Backlight_utilities)
     *   [5.1 xbacklight](#xbacklight)
-    *   [5.2 Light](#Light)
-    *   [5.3 setpci](#setpci)
-    *   [5.4 Using DBus with Gnome](#Using_DBus_with_Gnome)
+    *   [5.2 setpci](#setpci)
+    *   [5.3 Using DBus with Gnome](#Using_DBus_with_Gnome)
 *   [6 Color correction](#Color_correction)
     *   [6.1 xcalib](#xcalib)
     *   [6.2 NVIDIA settings](#NVIDIA_settings)
@@ -256,42 +255,6 @@ EndSection
 ```
 
 See [FS#27677](https://bugs.archlinux.org/task/27677) and [https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=651741) for details.
-
-### Light
-
-If you do not specify a target (for example, a backlight controller or a keyboard led), Light (and brillo) will automatically identify the best backlight controller, also known as the target `sysfs/backlight/auto`.
-
-To increase brightness by 12%:
-
-```
-$ light -A 12
-
-```
-
-To subtract brightness by 432 in raw mode
-
-```
-$ light -r -U 432
-
-```
-
-To set the keyboard backlight brightness to 75% (target may vary depending on hardware, use -L to list them)
-
-```
-$ light -s "sysfs/leds/tpacpi::kbd_backlight" -S 75
-
-```
-
-To get a list of the available targets on your hardware
-
-```
-$ light -L
-
-```
-
-**Tip:** Light requires permissions to run. The PKGBUILD on the upstream repository will install udev rules that applies to backlights and leds in the sysfs. If you run into problems, try running light as root, or use sudo.
-
-Light also supports some exotic targets, for example leds/backlights on Razer keyboards (using the openrazer driver).
 
 ### setpci
 

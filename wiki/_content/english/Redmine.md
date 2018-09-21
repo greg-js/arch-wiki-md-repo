@@ -520,8 +520,6 @@ Inspect the downloaded files, mainly the [PKGBUILD](/index.php/PKGBUILD "PKGBUIL
 
 ```
 
-**Note:** To simplify all this [AUR](/index.php/AUR "AUR") install and update process, you can always use the [AUR helpers](/index.php/AUR_helpers "AUR helpers"), although this is not a supported way.
-
 Update the gems requirements:
 
 ```

@@ -18,8 +18,7 @@ This article describes how both new and experienced Arch users can contribute to
 *   [2 Community projects](#Community_projects)
     *   [2.1 Groups](#Groups)
     *   [2.2 Software](#Software)
-    *   [2.3 ArchWiki browsing](#ArchWiki_browsing)
-    *   [2.4 Other](#Other)
+    *   [2.3 Other](#Other)
 *   [3 FAQ](#FAQ)
     *   [3.1 How can I become an Arch Developer?](#How_can_I_become_an_Arch_Developer.3F)
     *   [3.2 How can I become a Trusted User?](#How_can_I_become_a_Trusted_User.3F)
@@ -125,37 +124,9 @@ Community-developed software that focuses on Arch Linux.
 
 	Unofficial binary repositories maintained by community members.
 
-	[AUR helpers](/index.php/AUR_helpers "AUR helpers")
-
-	Utilities to aid end users in using the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
-
 	[Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends")
 
 	Graphical front-ends for [pacman](/index.php/Pacman "Pacman").
-
-### ArchWiki browsing
-
-They offer you some different methods to visit ArchWiki.
-
-	[arch-wiki-docs](https://github.com/lahwaacz/arch-wiki-docs)
-
-	Pages from Arch Wiki optimized for offline browsing. Package: [arch-wiki-docs](https://www.archlinux.org/packages/?name=arch-wiki-docs).
-
-	[arch-wiki-lite](http://kmkeen.com/arch-wiki-lite/)
-
-	Arch-wiki-lite is designed to offer the smoothest possible experience for the poor person stuck without internet access or any way of starting a graphical web browser. Package: [arch-wiki-lite](https://www.archlinux.org/packages/?name=arch-wiki-lite).
-
-	[arch-wiki-man](https://github.com/greg-js/arch-wiki-man)
-
-	The Arch Wiki easily accessible and searchable as man pages. Works offline. Package: [arch-wiki-man](https://aur.archlinux.org/packages/arch-wiki-man/).
-
-	[ArchWiki Viewer for Android](https://bbs.archlinux.org/viewtopic.php?id=150538)
-
-	A simple viewer for the ArchLinux Wiki online. Page content is formatted for optimal mobile viewing.
-
-	[Wikicurses](https://bbs.archlinux.org/viewtopic.php?id=187864)
-
-	A simple curses interface for MediaWiki sites such as ArchWiki or Wikipedia. Packages: [wikicurses](https://www.archlinux.org/packages/?name=wikicurses), [wikicurses-git](https://aur.archlinux.org/packages/wikicurses-git/).
 
 ### Other
 

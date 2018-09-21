@@ -3,7 +3,7 @@
 | <small>1.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(17) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
 | <small>1.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(48)</small> |
 | <small>1.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
-| <small>1.2.</small> [Arch projects](/index.php/Category:Arch_projects "Category:Arch projects") <small>(7)</small> |
+| <small>1.2.</small> [Arch projects](/index.php/Category:Arch_projects "Category:Arch projects") <small>(8)</small> |
 | <small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki") <small>(12)</small> |
 | <small>1.3.1.</small> [Help](/index.php/Category:Help "Category:Help") <small>(15)</small> |
 | <small>1.4.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(2)</small> |

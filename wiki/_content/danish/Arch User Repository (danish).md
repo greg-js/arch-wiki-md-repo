@@ -20,8 +20,6 @@ Related articles
     *   [2.2 Anvendelse af fakeroot](#Anvendelse_af_fakeroot)
     *   [2.3 Sende pakker til UNSUPPORTED](#Sende_pakker_til_UNSUPPORTED)
     *   [2.4 Vedligehold af pakker i UNSUPPORTED](#Vedligehold_af_pakker_i_UNSUPPORTED)
-*   [3 AUR-scripts til download og vedligehold](#AUR-scripts_til_download_og_vedligehold)
-    *   [3.1 List over AUR-scripts](#List_over_AUR-scripts)
 
 ## Brugeren og AUR
 
@@ -119,22 +117,3 @@ Når du vil sende en pakke ind, skal du være opmærksom på de følgende regler
 *   Tjek for tilbagemeldinger og kommentarer fra andre brugere. Prøv ligeledes at indlemme enhver forbedring, de foreslår - tag det som en læreproces!
 *   Vær venlig IKKE blot at indsende pakker, for så blot at glemme alt om dem! Det er brugerens arbejde at vedligeholde pakken ved at tjekke for opdateringer og at forbedre PKGBUILDs, så længe de findes i UNSUPPORTED.
 *   Hvis du - af en eller anden årsag - ikke kan/vil vedligeholde pakken, skal du framelde dig på AUR web-brugerfladen og/eller sende en meddelelse til AUR Mailing List.
-
-## AUR-scripts til download og vedligehold
-
-### List over AUR-scripts
-
-1.  aur-sync (Perl) - for at downloade alle AUR tar-arkiver
-2.  aur-install (bash)
-3.  aurup (bash) - for at oploade pakker til AUR
-4.  aurscripts (bash):
-    1.  aurcreate - opret rene pakker for opload til AUR
-    2.  aurdownload - download og udpak pakker fra AUR
-    3.  aurupdate - opdatér pakkeversion (hvis specificeret) og md5-summe
-5.  autoaur (bash, afhængig af 'aurscripts', opdaterer automatisk alle dine pakker installerede fra AUR)
-6.  [yaourt](http://archlinux.fr/yaourt-en) (bash, en 'indpakning' til 'srcpac' med AUR-understøttelse og mere)
-7.  [aurbuild](/index.php/Aurbuild "Aurbuild") (Python, *stoppet*)
-8.  qpkg (Python, virker også med ikke-AUR programmer, *stoppet*)
-9.  autarchy (bash) - til at oprette et tar-arkiv med alle filer krævet af PKGBUILD (bedre end 'aurcreate')
-
-Alle disse scripts kan findes i UNSUPPORTED.

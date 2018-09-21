@@ -74,7 +74,7 @@ The official repositories contain the following greeters:
 Other alternative greeters are available in the [AUR](/index.php/AUR "AUR"):
 
 *   [lightdm-slick-greeter](https://aur.archlinux.org/packages/lightdm-slick-greeter/): A GTK+ Based greeter that is preferred over the [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) by distro creators
-*   [lightdm-webkit2-greeter](https://aur.archlinux.org/packages/lightdm-webkit2-greeter/): A greeter that uses Webkit2 for theming. It supersedes [lightdm-webkit-greeter](https://aur.archlinux.org/packages/lightdm-webkit-greeter/).
+*   [lightdm-webkit2-greeter](https://www.archlinux.org/packages/?name=lightdm-webkit2-greeter): A greeter that uses Webkit2 for theming. It supersedes [lightdm-webkit-greeter](https://aur.archlinux.org/packages/lightdm-webkit-greeter/).
 *   [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/): The greeter used by Ubuntu's [Unity](/index.php/Unity "Unity").
 *   [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/): A greeter from the elementary OS project.
 *   [lightdm-mini-greeter](https://aur.archlinux.org/packages/lightdm-mini-greeter/): A minimal, configurable, single-user greeter.
@@ -141,7 +141,7 @@ Some greeters have their own configuration files. For example:
 
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter): `/etc/lightdm/lightdm-gtk-greeter.conf`
 
-[lightdm-webkit2-greeter](https://aur.archlinux.org/packages/lightdm-webkit2-greeter/): `/etc/lightdm/lightdm-webkit2-greeter.conf`
+[lightdm-webkit2-greeter](https://www.archlinux.org/packages/?name=lightdm-webkit2-greeter): `/etc/lightdm/lightdm-webkit2-greeter.conf`
 
 [lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter): `/etc/lightdm/lightdm-kde-greeter.conf`
 
@@ -169,7 +169,7 @@ GTK3 themes can be specified with the `theme-name` variable in the `[greeter]` s
 
 #### Webkit2 greeter
 
-The [lightdm-webkit2-greeter](https://aur.archlinux.org/packages/lightdm-webkit2-greeter/) allows you to choose a background image directly on the login screen. It also offers an option to display a random image each time it starts if you use the [Material theme](https://github.com/artur9010/lightdm-webkit-material). By default, images are sourced from `/usr/share/backgrounds`. You can change the background images directory by editing `lightdm-webkit2-greeter.conf`. For example:
+The [lightdm-webkit2-greeter](https://www.archlinux.org/packages/?name=lightdm-webkit2-greeter) allows you to choose a background image directly on the login screen. It also offers an option to display a random image each time it starts if you use the [Material theme](https://github.com/artur9010/lightdm-webkit-material). By default, images are sourced from `/usr/share/backgrounds`. You can change the background images directory by editing `lightdm-webkit2-greeter.conf`. For example:
 
  `/etc/lightdm/lightdm-webkit2-greeter.conf` 
 ```

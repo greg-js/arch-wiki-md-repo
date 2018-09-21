@@ -406,7 +406,7 @@ And their meaning is (from the manpage):
 
 ```
 
-Produced copy can be simply reread and checked (for example after a data recovery attempt) at the file system level with `diff`'s recursive option:
+Additionally, use `-x` if you have other filesystems mounted under the tree that you want to exclude from the copy. Produced copy can be simply reread and checked (for example after a data recovery attempt) at the file system level with `diff`'s recursive option:
 
 ```
 diff -r SOURCE_DIR DESTINATION_DIR

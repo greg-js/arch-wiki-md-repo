@@ -681,8 +681,6 @@ There are other downloading applications that you can use with *pacman*. Here th
 
 ### Pacman wrappers
 
-See also [AUR helpers#Pacman wrappers](/index.php/AUR_helpers#Pacman_wrappers "AUR helpers").
-
 *   **Pacmatic** — *Pacman* wrapper to check Arch News before upgrading, avoid partial upgrades, and warn about configuration file changes.
 
 	[http://kmkeen.com/pacmatic](http://kmkeen.com/pacmatic) || [pacmatic](https://www.archlinux.org/packages/?name=pacmatic)
@@ -693,7 +691,7 @@ See also [AUR helpers#Pacman wrappers](/index.php/AUR_helpers#Pacman_wrappers "A
 
 ### Graphical front-ends
 
-See also [AUR helpers#Graphical](/index.php/AUR_helpers#Graphical "AUR helpers").
+**Warning:** PackageKit may open system permissions in unexpected ways, and is otherwise not recommended for general usage. See [FS#50459](https://bugs.archlinux.org/task/50459) and [FS#57943](https://bugs.archlinux.org/task/57943).
 
 *   **Apper** — Application and package manager for KDE using PackageKit.
 

@@ -76,7 +76,7 @@ There are some "unofficial" utilities which allow to print specific information 
 
  `$ xkb-switch`  `us` 
 
-*   [xkblayout-state](https://aur.archlinux.org/packages/xkblayout-state/):
+*   [xkblayout-state-git](https://aur.archlinux.org/packages/xkblayout-state-git/):
 
  `$ xkblayout-state print "%s"`  `de` 
 

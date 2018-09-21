@@ -17,25 +17,24 @@ This page is a guide to selecting and configuring your mirrors, and a listing of
     *   [3.2 Server-side ranking](#Server-side_ranking)
 *   [4 Troubleshooting](#Troubleshooting)
 *   [5 Unofficial mirrors](#Unofficial_mirrors)
-    *   [5.1 Austria](#Austria)
-    *   [5.2 Canada](#Canada)
-    *   [5.3 China](#China)
-    *   [5.4 France](#France)
-    *   [5.5 Indonesia](#Indonesia)
-    *   [5.6 Iran](#Iran)
-    *   [5.7 Italy](#Italy)
-    *   [5.8 Japan](#Japan)
-    *   [5.9 Malaysia](#Malaysia)
-    *   [5.10 Netherlands](#Netherlands)
-    *   [5.11 New Zealand](#New_Zealand)
-    *   [5.12 Poland](#Poland)
-    *   [5.13 Russia](#Russia)
-    *   [5.14 South Africa](#South_Africa)
-    *   [5.15 Sweden](#Sweden)
-    *   [5.16 Thailand](#Thailand)
-    *   [5.17 Turkey](#Turkey)
-    *   [5.18 United States](#United_States)
-    *   [5.19 Sourceforge (old ISOs)](#Sourceforge_.28old_ISOs.29)
+    *   [5.1 Canada](#Canada)
+    *   [5.2 China](#China)
+    *   [5.3 France](#France)
+    *   [5.4 Indonesia](#Indonesia)
+    *   [5.5 Iran](#Iran)
+    *   [5.6 Italy](#Italy)
+    *   [5.7 Japan](#Japan)
+    *   [5.8 Malaysia](#Malaysia)
+    *   [5.9 Netherlands](#Netherlands)
+    *   [5.10 New Zealand](#New_Zealand)
+    *   [5.11 Poland](#Poland)
+    *   [5.12 Russia](#Russia)
+    *   [5.13 South Africa](#South_Africa)
+    *   [5.14 Sweden](#Sweden)
+    *   [5.15 Thailand](#Thailand)
+    *   [5.16 Turkey](#Turkey)
+    *   [5.17 United States](#United_States)
+    *   [5.18 Sourceforge (old ISOs)](#Sourceforge_.28old_ISOs.29)
 *   [6 See also](#See_also)
 
 ## Official mirrors
@@ -188,11 +187,6 @@ Be sure to uncomment a preferred mirror as described above, then:
 ## Unofficial mirrors
 
 These mirrors are *not* listed in `/etc/pacman.d/mirrorlist`.
-
-### Austria
-
-*   [http://gd.tuwien.ac.at/opsys/linux/archlinux/](http://gd.tuwien.ac.at/opsys/linux/archlinux/) - *Vienna University of Technology*
-*   [ftp://gd.tuwien.ac.at/opsys/linux/archlinux/](ftp://gd.tuwien.ac.at/opsys/linux/archlinux/)
 
 ### Canada
 

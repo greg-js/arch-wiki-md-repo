@@ -78,7 +78,7 @@ Esses shells podem todos serem vinculados a `/usr/bin/sh`. Quando [Bash](/index.
 
 *   **xonsh** — AUm shell retrocompatível com base no interpretador python.
 
-	[http://xon.sh/](http://xon.sh/) || [xonsh](https://aur.archlinux.org/packages/xonsh/)
+	[http://xon.sh/](http://xon.sh/) || [xonsh](https://www.archlinux.org/packages/?name=xonsh)
 
 ## Alterando seu shell padrão
 

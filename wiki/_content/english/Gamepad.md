@@ -345,6 +345,8 @@ You can now disconnect your controller. The next time you hit the PlayStation bu
 
 Alternatively, you can press the share button and the PlayStation button simultaneously to put the gamepad in pairing mode, and pair as you would normally.
 
+GNOME's Settings also provides a graphical interface to pair sixaxis controllers when connected by wire.
+
 Remember to disconnect the controller when you are done as the controller will stay on when connected and drain the battery.
 
 **Note:** If the controller does not connect, make sure the bluetooth interface is turned on and the controllers have been trusted. (See [Bluetooth](/index.php/Bluetooth "Bluetooth"))

@@ -237,6 +237,8 @@ ath10k_pci 0000:3a:00.0: firmware ver RM.4.4.1.c1-00042-QCARMSWP-1 api 6 feature
 
 ```
 
+The latest bios update (2.9.0), which also contains important microcode security updates, manages to make these crashes occur no matter what firmware you load. Installing an [alternative intel wifi card](https://www.amazon.com/Intel-Dual-Band-Wireless-Ac-8265/dp/B01MZA1AB2) solves the problem.
+
 ## Bluetooth
 
 After following the instructions given at [Bluetooth](/index.php/Bluetooth "Bluetooth") tethering of internet connections via phone works immediately.

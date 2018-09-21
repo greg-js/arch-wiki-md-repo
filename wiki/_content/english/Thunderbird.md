@@ -64,7 +64,7 @@ JavaScript is disabled for message content but not RSS news feeds. To disable Ja
 
 *   **[Enigmail](/index.php/Thunderbird/Enigmail "Thunderbird/Enigmail")** — Extension for writing and receiving email signed and/or encrypted with the OpenPGP standard.
 
-	[https://www.enigmail.net](https://www.enigmail.net) || [thunderbird-enigmail](https://aur.archlinux.org/packages/thunderbird-enigmail/), [thunderbird-enigmail-bin](https://aur.archlinux.org/packages/thunderbird-enigmail-bin/)
+	[https://www.enigmail.net](https://www.enigmail.net) || [thunderbird-extension-enigmail](https://www.archlinux.org/packages/?name=thunderbird-extension-enigmail), [thunderbird-enigmail-git](https://aur.archlinux.org/packages/thunderbird-enigmail-git/)
 
 *   **TorBirdy** — Extension that configures Thunderbird to make connections over the [Tor](/index.php/Tor "Tor") anonymity network
 

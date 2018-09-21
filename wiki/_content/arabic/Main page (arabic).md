@@ -1,4 +1,4 @@
-**مرحباً بك إلى [موسوعة آرتش](/index.php?title=ArchWiki&action=edit&redlink=1 "ArchWiki (page does not exist)")، مصدرك الأوحد للحصول على توثيقات نظام آرتش لينُكس على الويب.**
+**مرحباً بك إلى [موسوعة آرتش](/index.php/ArchWiki "ArchWiki")، مصدرك الأوحد للحصول على توثيقات نظام آرتش لينُكس على الويب.**
 
 اطّلع على [جدول المحتويات](/index.php/Table_of_contents_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Table of contents (العربية)") للحصول على قائمة بتصنيفات مقالات الموسوعة.
 

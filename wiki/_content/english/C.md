@@ -55,7 +55,7 @@ You can use the [GNU toolchain](/index.php/GNU_toolchain "GNU toolchain") or the
 
 *   **[SDCC](https://en.wikipedia.org/wiki/Small_Device_C_Compiler "wikipedia:Small Device C Compiler")** — Retargettable ANSI C compiler.
 
-	[http://sdcc.sourceforge.net/](http://sdcc.sourceforge.net/) || [sdcc](https://aur.archlinux.org/packages/sdcc/)
+	[http://sdcc.sourceforge.net/](http://sdcc.sourceforge.net/) || [sdcc](https://www.archlinux.org/packages/?name=sdcc)
 
 See also [Wikipedia:List of compilers#C compilers](https://en.wikipedia.org/wiki/List_of_compilers#C_compilers "wikipedia:List of compilers").
 

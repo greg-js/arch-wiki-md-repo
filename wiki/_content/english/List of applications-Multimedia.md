@@ -247,6 +247,10 @@ See also [Wikipedia:Image organizer](https://en.wikipedia.org/wiki/Image_organiz
 
 #### Image processing
 
+*   **CairoSVG** — SVG to PNG, PDF, PS converter.
+
+	[https://cairosvg.org/](https://cairosvg.org/) || [python-cairosvg](https://www.archlinux.org/packages/?name=python-cairosvg)
+
 *   **Converseen** — Batch image converter and resizer.
 
 	[http://converseen.fasterland.net/](http://converseen.fasterland.net/) || [converseen](https://www.archlinux.org/packages/?name=converseen)
@@ -1015,7 +1019,7 @@ See also [Professional audio](/index.php/Professional_audio "Professional audio"
 
 *   **[REAPER](https://en.wikipedia.org/wiki/REAPER "wikipedia:REAPER")** — Proprietary digital audio workstation, offering a full multitrack audio and MIDI recording, editing, processing, mixing and mastering toolset.
 
-	[https://www.reaper.fm/](https://www.reaper.fm/) || [reaper](https://aur.archlinux.org/packages/reaper/)
+	[https://www.reaper.fm/](https://www.reaper.fm/) || [reaper-bin](https://aur.archlinux.org/packages/reaper-bin/)
 
 *   **[Rosegarden](https://en.wikipedia.org/wiki/Rosegarden "wikipedia:Rosegarden")** — Digital audio workstation program developed with ALSA and Qt that acts as an audio and MIDI sequencer, scorewriter and musical composition and editing tool.
 
@@ -1413,7 +1417,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 *   **GNOME Twitch** — Twitch client for GNOME using [GStreamer](/index.php/GStreamer "GStreamer").
 
-	[http://gnome-twitch.vinszent.com/](http://gnome-twitch.vinszent.com/) || [gnome-twitch](https://aur.archlinux.org/packages/gnome-twitch/)
+	[http://gnome-twitch.vinszent.com/](http://gnome-twitch.vinszent.com/) || [gnome-twitch](https://www.archlinux.org/packages/?name=gnome-twitch)
 
 *   **[GNOME Videos](https://en.wikipedia.org/wiki/GNOME_Videos "wikipedia:GNOME Videos")** — Media player (audio and video) for the GNOME desktop that uses [GStreamer](/index.php/GStreamer "GStreamer"). Part of [gnome](https://www.archlinux.org/groups/x86_64/gnome/).
 

@@ -89,11 +89,13 @@ To query the units activity and status, see [journalctl](/index.php/Journalctl "
 
 #### Continuous TRIM
 
-**Note:** There is no need to enable continuous TRIM if you run `fstrim` periodically.
+**Note:** There is no need to enable continuous TRIM if you run `fstrim` periodically. If you want to use TRIM, use either periodic TRIM or continuous TRIM.
 
-The main benefit of continuous TRIM is speed; an SSD can perform more efficient [garbage collection](https://arstechnica.com/gadgets/2015/04/ask-ars-my-ssd-does-garbage-collection-so-i-dont-need-trim-right/). However, results vary and particularly earlier SSD generations may also show just the opposite effect. Also for this reason, some distributions decided against using it (e.g. Ubuntu [[5]](https://www.phoronix.com/scan.php?page=news_item&px=MTUxOTY) [[6]](https://blueprints.launchpad.net/ubuntu/+spec/core-1311-ssd-trimming)).
+Instead of issuing TRIM commands once in a while (by default once a week if using `fstrim.timer`), it is also possible to issue TRIM commands each time files are deleted instead. The latter is the continuous TRIM.
 
-**Note:** Before [SATA 3.1](https://en.wikipedia.org/wiki/Serial_ATA#SATA_revision_3.1 for details.
+**Warning:** Before [SATA 3.1](https://en.wikipedia.org/wiki/Serial_ATA#SATA_revision_3.1 for details.
+
+**Note:** Continuous TRIM is not the most preferred way to issue TRIM commands among the Linux community. For example, Ubuntu enables periodic TRIM by default [[5]](https://askubuntu.com/questions/1034169/is-trim-enabled-on-my-ubuntu-18-04-installation), Debian does not recommend using continuous TRIM [[6]](https://wiki.debian.org/SSDOptimization#Mounting_SSD_filesystems) and Red Hat recommends using periodic TRIM over using continuous TRIM if feasible. [[7]](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/ch02s04.html)
 
 Using the `discard` option for a mount in `/etc/fstab` enables continuous TRIM in device operations:
 
@@ -167,7 +169,7 @@ Operations like formatting the device or installing operating systems are not af
 
 The above output shows the device is **not locked** by a HDD-password on boot and the **frozen** state safeguards the device against malwares which may try to lock it by setting a password to it at runtime.
 
-If you intend to set a password to a "frozen" device yourself, a motherboard BIOS with support for it is required. A lot of notebooks have support, because it is required for [hardware encryption](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption "wikipedia:Hardware-based full disk encryption"), but support may not be trivial for a desktop/server board. For the Intel DH67CL/BL motherboard, for example, the motherboard has to be set to "maintenance mode" by a physical jumper to access the settings (see [[7]](https://sstahlman.blogspot.in/2014/07/hardware-fde-with-intel-ssd-330-on.html?showComment=1411193181867#c4579383928221016762), [[8]](https://communities.intel.com/message/251978#251978)).
+If you intend to set a password to a "frozen" device yourself, a motherboard BIOS with support for it is required. A lot of notebooks have support, because it is required for [hardware encryption](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption "wikipedia:Hardware-based full disk encryption"), but support may not be trivial for a desktop/server board. For the Intel DH67CL/BL motherboard, for example, the motherboard has to be set to "maintenance mode" by a physical jumper to access the settings (see [[8]](https://sstahlman.blogspot.in/2014/07/hardware-fde-with-intel-ssd-330-on.html?showComment=1411193181867#c4579383928221016762), [[9]](https://communities.intel.com/message/251978#251978)).
 
 **Warning:** Do not try to change the above **lock** security settings with `hdparm` unless you know exactly what you are doing.
 

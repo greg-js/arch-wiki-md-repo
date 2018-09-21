@@ -663,7 +663,7 @@ $ cp -a ~/.config/akonadi ~/.config/akonadi-old
 
 Start *SystemSettings > Personal* and remove all the resources. Go back to Dolphin and remove the original `~/.local/share/akonadi/` and `~/.config/akonadi/` - the copies you made ensure that you can back-track if necessary.
 
-Now go back to the System Settings page and carefully add the necessary resources. You should see the resource reading in your mail folders. Then start Kontact/KMail to see if it work properly.
+Now go back to the System Settings page and carefully add the necessary resources. You should see the resource reading in your mail folders. Then start Kontact/KMail to see if it works properly.
 
 #### Empty IMAP inbox in KMail
 

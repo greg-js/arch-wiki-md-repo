@@ -61,8 +61,6 @@ Installing a tool like "blueman" from the AUR and starting the bluetooth DAEMON 
 
 ## Nvidia GPU (Optimus)
 
-**Tip:** Your best bet for this part is to install an [AUR helper](/index.php/AUR_helper "AUR helper") to ease in installing the following packages
-
 You need to install the packages [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) and [bbswitch](https://www.archlinux.org/packages/?name=bbswitch).
 
 In short, Bumblebee allows you to use the switchable GPU and use it only when you want to via the 'optirun' application.

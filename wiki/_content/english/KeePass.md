@@ -79,7 +79,7 @@ KeePass is by default, installed at `/usr/share/keepass/`. Copy `plugin.plgx` to
 
 	Extension allowing Firefox to form-fill passwords stored in KeePass.
 
-*   [KeePass Helper (legacy addon)](https://addons.mozilla.org/en-us/firefox/addon/keepass-helper/), [TitleURL](https://addons.mozilla.org/en-US/firefox/addon/url-in-title/)
+*   [KeePass Helper](https://addons.mozilla.org/en-US/firefox/addon/keepass-helper-url-in-title/), [TitleURL](https://addons.mozilla.org/en-US/firefox/addon/url-in-title/)
 
 	Modifies window title to assist autotype feature.
 

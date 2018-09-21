@@ -87,7 +87,7 @@ install CD version
 *   Not working: TPM, Color calibrator, UEFI flash
 
  | HDMI audio requires nvhda module |
-| [Lenovo ThinkPad P52](/index.php/Lenovo_ThinkPad_P52 "Lenovo ThinkPad P52") | 2018.09 | Yes | Yes | Yes | Yes | Unknown | Suspend working, hibernate not tested | NA |
+| [Lenovo ThinkPad P52](/index.php/Lenovo_ThinkPad_P52 "Lenovo ThinkPad P52") | 2018.09 | Yes | Yes | Yes | Yes | Unknown | Suspend working, hibernate not tested | NA | Touchpad (No) |
 
 #### T series
 

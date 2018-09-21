@@ -10,7 +10,7 @@ Do [freedesktop.org](https://www.freedesktop.org/wiki/Software/xdg-user-dirs/):
 
 	A maneira como funciona é que o [xdg-user-dirs-update(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdg-user-dirs-update.1) é executado muito cedo na fase de login. Este programa lê um arquivo de configuração e um conjunto de diretórios padrão. Em seguida, ele cria versões localizadas desses diretórios no diretório inicial dos usuários e configura um arquivo de configuração em `$XDG_CONFIG_HOME/user-dirs.dirs` (XDG_CONFIG_HOME tem como padrão ~/.config) que os aplicativos podem ler para localizar esses diretórios.
 
-A maioria dos [gerenciadores de arquivo](/index.php/File_manager "File manager") indicam diretórios de usuário XDG com ícones especiais.
+A maioria dos [gerenciadores de arquivos](/index.php/Gerenciadores_de_arquivos "Gerenciadores de arquivos") indica diretórios de usuário XDG com ícones especiais.
 
 ## Criando diretórios padrão
 

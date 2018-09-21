@@ -257,10 +257,11 @@ You can try the antivirus capabilities with a test virus (not a real virus) avai
 
 ## Transparent web proxy
 
-Transparency happens by redirecting all www requests eth0 picks up, to Squid. You'll need to indicate Squid that it is running like a transparent web proxy by adding the `intercept` (for squid 3.2) parameter to the `http_port` option:
+Transparency happens by redirecting all www requests eth0 picks up, to Squid. You'll need to add a port with an `intercept` (for squid 3.2) parameter. Note that at least one port must be available without the intercept parameter:
 
 ```
- http_port 3128 **intercept**
+ http_port 3128
+ http_port 3129 **intercept**
 
 ```
 
@@ -271,7 +272,7 @@ From a terminal with root privileges, run:
 ```
 # gid=`id -g proxy`
 # iptables -t nat -A OUTPUT -p tcp --dport 80 -m owner --gid-owner $gid -j ACCEPT
-# iptables -t nat -A OUTPUT -p tcp --dport 80 -j DNAT --to-destination SQUIDIP:3128
+# iptables -t nat -A OUTPUT -p tcp --dport 80 -j DNAT --to-destination SQUIDIP:3129
 # iptables-save > /etc/iptables/iptables.rules
 
 ```
@@ -287,7 +288,7 @@ Replace SQUIDIP with the public IP(s) which squid may use for its listening port
 [Edit](/index.php/Edit "Edit") `/etc/shorewall/rules` and add
 
 ```
-REDIRECT	loc	3128	tcp	www # redirect to Squid on port 3128
+REDIRECT	loc	3129	tcp	www # redirect to Squid on port 3128
 ACCEPT		$FW	net	tcp	www # allow Squid to fetch the www content
 
 ```

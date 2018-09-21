@@ -23,7 +23,7 @@ Related articles
     *   [1.14 Why is Arch using all my RAM?](#Why_is_Arch_using_all_my_RAM.3F)
     *   [1.15 Where did all my free space go?](#Where_did_all_my_free_space_go.3F)
 *   [2 Package management](#Package_management)
-    *   [2.1 I have found an error with Package X. What should I do?](#I_have_found_an_error_with_Package_X._What_should_I_do.3F)
+    *   [2.1 I have found an error with package X. What should I do?](#I_have_found_an_error_with_package_X._What_should_I_do.3F)
     *   [2.2 Arch packages need to use a unique naming convention. ".pkg.tar.gz" and ".pkg.tar.xz" are too long and/or confusing](#Arch_packages_need_to_use_a_unique_naming_convention._.22.pkg.tar.gz.22_and_.22.pkg.tar.xz.22_are_too_long_and.2For_confusing)
     *   [2.3 Pacman needs a library so other applications can easily access package information](#Pacman_needs_a_library_so_other_applications_can_easily_access_package_information)
     *   [2.4 Pacman needs feature X!](#Pacman_needs_feature_X.21)
@@ -141,7 +141,7 @@ The answer to this question depends on your system. There are some [fine utiliti
 
 See the [pacman](/index.php/Pacman "Pacman"), [pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks") and [Official repositories](/index.php/Official_repositories "Official repositories") pages for more answers.
 
-### I have found an error with Package X. What should I do?
+### I have found an error with package X. What should I do?
 
 First, you need to figure out if this error is something the Arch team can fix. Sometimes it is not (e.g. Firefox crashes may be the fault of the Mozilla team); this is called an *upstream error*. If it is an Arch problem, there is a series of steps you can take:
 

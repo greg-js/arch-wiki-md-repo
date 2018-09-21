@@ -149,4 +149,4 @@ After changing this, just restart your system and wireless should be working aga
 
 ### Graphics
 
-Instead of radeonhd drivers you can use the proprietary catalyst drivers for better performance. The catalyst drivers are available in the [AUR](/index.php/AUR "AUR") and setup is exactly as described on the [ATI](/index.php/ATI "ATI") page. Installing an [AUR Helper](/index.php/AUR_Helper "AUR Helper") is recommended if you intend to maintain such a system. It will make the process of building packages from the AUR much easier.
+Instead of radeonhd drivers you can use the proprietary catalyst drivers for better performance. The catalyst drivers are available in the [AUR](/index.php/AUR "AUR") and setup is exactly as described on the [ATI](/index.php/ATI "ATI") page.

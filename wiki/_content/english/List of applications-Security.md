@@ -490,7 +490,7 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 *   **[Enigmail](https://en.wikipedia.org/wiki/Enigmail "wikipedia:Enigmail")** — A security extension to Mozilla Thunderbird and Seamonkey. It enables you to write and receive email messages signed and/or encrypted with the OpenPGP standard.
 
-	[https://enigmail.net](https://enigmail.net) || [thunderbird-enigmail](https://aur.archlinux.org/packages/thunderbird-enigmail/)
+	[https://enigmail.net](https://enigmail.net) || [thunderbird-extension-enigmail](https://www.archlinux.org/packages/?name=thunderbird-extension-enigmail)
 
 *   **GNOME Keysign** — GTK/GNOME application to use GnuPG for signing other people's keys. Quickly, easily, and securely.
 

@@ -53,5 +53,4 @@ The recognized text may be saved to disc as a text or html file in UTF-8 encodin
 ## See also
 
 *   [List of applications#OCR software](/index.php/List_of_applications#OCR_software "List of applications")
-*   [http://symmetrica.net/cuneiform-linux/yagf-en.html](http://symmetrica.net/cuneiform-linux/yagf-en.html) - YAGF home page
 *   [https://launchpad.net/cuneiform-linux](https://launchpad.net/cuneiform-linux) - Linux port of Cuneiform

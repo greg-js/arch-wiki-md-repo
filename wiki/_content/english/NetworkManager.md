@@ -380,7 +380,7 @@ dnssec-check-unsigned
 
 NetworkManager can use [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") as a DNS resolver and cache. Make sure that *systemd-resolved* is properly configured and that `systemd-resolved.service` is [started](/index.php/Started "Started") before using it.
 
-systemd-resolved will be used automatically if `/etc/resolv.conf` is a symlink to `/run/systemd/resolve/stub-resolv.conf`, `/run/systemd/resolve/resolv.conf` or `/usr/lib/systemd/resolv.conf`.
+systemd-resolved will be used automatically if `/etc/resolv.conf` is a [symlink](/index.php/Systemd-resolved#DNS "Systemd-resolved") to `/run/systemd/resolve/stub-resolv.conf`, `/run/systemd/resolve/resolv.conf` or `/usr/lib/systemd/resolv.conf`.
 
 You can enable it explicitly by setting the `dns=` option in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5):
 

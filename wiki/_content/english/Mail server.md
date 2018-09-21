@@ -1,16 +1,29 @@
-A **mail server** or [mail transfer agent](https://en.wikipedia.org/wiki/Message_transfer_agent "wikipedia:Message transfer agent") (MTA) receives and sends emails via [SMTP](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol "wikipedia:Simple Mail Transfer Protocol"). Received and accepted emails are then passed to a [mail delivery agent](https://en.wikipedia.org/wiki/Mail_delivery_agent "wikipedia:Mail delivery agent") (MDA), which stores the mail in a mailbox (usually in [mbox](https://en.wikipedia.org/wiki/mbox "wikipedia:mbox") or [Maildir](https://en.wikipedia.org/wiki/Maildir "wikipedia:Maildir") format). If you want users to be able to remotely access their mail using [email clients](/index.php/Email_client "Email client") or [mail retrieval agents](/index.php/Category:Mail_retrieval_agents "Category:Mail retrieval agents"), you need to run a [POP3](https://en.wikipedia.org/wiki/Post_Office_Protocol "wikipedia:Post Office Protocol") and/or [IMAP](https://en.wikipedia.org/wiki/IMAP "wikipedia:IMAP") server.
+A **mail server** or [mail transfer agent](https://en.wikipedia.org/wiki/Message_transfer_agent "wikipedia:Message transfer agent") (MTA) receives and sends emails via [SMTP](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol "wikipedia:Simple Mail Transfer Protocol"). Received and accepted emails are then passed to a [mail delivery agent](https://en.wikipedia.org/wiki/Mail_delivery_agent "wikipedia:Mail delivery agent") (MDA), which stores the mail in a mailbox (usually in [mbox](https://en.wikipedia.org/wiki/mbox "wikipedia:mbox") or [Maildir](https://en.wikipedia.org/wiki/Maildir "wikipedia:Maildir") format). If you want users to be able to remotely access their mail using [email clients](/index.php/Email_client "Email client") (MUA) or [mail retrieval agents](/index.php/Category:Mail_retrieval_agents "Category:Mail retrieval agents"), you need to run a [POP3](https://en.wikipedia.org/wiki/Post_Office_Protocol "wikipedia:Post Office Protocol") and/or [IMAP](https://en.wikipedia.org/wiki/IMAP "wikipedia:IMAP") server.
 
-| Software | Package | [MTA](https://en.wikipedia.org/wiki/Message_transfer_agent "wikipedia:Message transfer agent") | [MDA](https://en.wikipedia.org/wiki/Mail_delivery_agent "wikipedia:Mail delivery agent") | [POP3](https://en.wikipedia.org/wiki/Post_Office_Protocol "wikipedia:Post Office Protocol") | [IMAP](https://en.wikipedia.org/wiki/IMAP "wikipedia:IMAP") | [SPF](#Sender_Policy_Framework) |
-| [Sendmail](/index.php/Sendmail "Sendmail") | [sendmail](https://aur.archlinux.org/packages/sendmail/) | Yes | No | No | No | through [Milter](https://en.wikipedia.org/wiki/Milter "wikipedia:Milter") |
-| [Exim](/index.php/Exim "Exim") | [exim](https://www.archlinux.org/packages/?name=exim) | Yes | Yes | No | No | experimental[[1]](https://github.com/Exim/exim/wiki/SPF) |
-| [OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD") | [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd) | Yes | Yes | No | No | No |
-| [Postfix](/index.php/Postfix "Postfix") | [postfix](https://www.archlinux.org/packages/?name=postfix) | Yes | Yes | No | No | Yes |
-| [Courier](/index.php/Courier_Mail_Server "Courier Mail Server") | [courier-mta](https://aur.archlinux.org/packages/courier-mta/) | Yes | Yes | Yes | Yes | Yes |
-| [Cyrus IMAP](https://en.wikipedia.org/wiki/Cyrus_IMAP_server "wikipedia:Cyrus IMAP server") | [cyrus-imapd](https://aur.archlinux.org/packages/cyrus-imapd/) | Yes | Yes | Yes | Yes |  ? |
-| [Dovecot](/index.php/Dovecot "Dovecot") | [dovecot](https://www.archlinux.org/packages/?name=dovecot) | No | Yes | Yes | Yes |
-| [UW IMAP](https://en.wikipedia.org/wiki/UW_IMAP "wikipedia:UW IMAP") | [imap](https://www.archlinux.org/packages/?name=imap) | No | Yes | Yes | Yes |
-| [fdm](/index.php/Fdm "Fdm") | [fdm](https://www.archlinux.org/packages/?name=fdm) | No | Yes | No | No |
-| [Procmail](/index.php/Procmail "Procmail") | [procmail](https://www.archlinux.org/packages/?name=procmail) | No | Yes | No | No |
+```
++---------+  SMTP  +---+   +---+               +----------------+
+|Other MTA| <----> |MTA| --|MDA|-> Storage <-- |POP3/IMAP server|
++---------+        +---+   +---+               +----------------+
+                     ^                                 ^
+                     |     SMTP    +---+               |
+                     +-------------|MUA|---------------+
+                                   +---+
+
+```
+
+The *SPF* column refers to [Sender Policy Framework](#Sender_Policy_Framework) support.
+
+| Software | Package | [MTA](https://en.wikipedia.org/wiki/Message_transfer_agent "wikipedia:Message transfer agent") | [MDA](https://en.wikipedia.org/wiki/Mail_delivery_agent "wikipedia:Mail delivery agent") | [POP3](https://en.wikipedia.org/wiki/Post_Office_Protocol "wikipedia:Post Office Protocol") & [IMAP](https://en.wikipedia.org/wiki/IMAP "wikipedia:IMAP") | [SPF](#Sender_Policy_Framework) |
+| [Sendmail](/index.php/Sendmail "Sendmail") | [sendmail](https://aur.archlinux.org/packages/sendmail/) | Yes | No | No | through [Milter](https://en.wikipedia.org/wiki/Milter "wikipedia:Milter") |
+| [Exim](/index.php/Exim "Exim") | [exim](https://www.archlinux.org/packages/?name=exim) | Yes | Yes | No | [experimental](https://github.com/Exim/exim/wiki/SPF) |
+| [OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD") | [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd) | Yes | Yes | No | No |
+| [Postfix](/index.php/Postfix "Postfix") | [postfix](https://www.archlinux.org/packages/?name=postfix) | Yes | Yes | No | Yes |
+| [Courier](/index.php/Courier_Mail_Server "Courier Mail Server") | [courier-mta](https://aur.archlinux.org/packages/courier-mta/) | Yes | Yes | Yes | Yes |
+| [Cyrus IMAP](https://en.wikipedia.org/wiki/Cyrus_IMAP_server "wikipedia:Cyrus IMAP server") | [cyrus-imapd](https://aur.archlinux.org/packages/cyrus-imapd/) | Yes | Yes | Yes | ? |
+| [Dovecot](/index.php/Dovecot "Dovecot") | [dovecot](https://www.archlinux.org/packages/?name=dovecot) | No | Yes | Yes |
+| [UW IMAP](https://en.wikipedia.org/wiki/UW_IMAP "wikipedia:UW IMAP") | [imap](https://www.archlinux.org/packages/?name=imap) | No | Yes | Yes |
+| [fdm](/index.php/Fdm "Fdm") | [fdm](https://www.archlinux.org/packages/?name=fdm) | No | Yes | No |
+| [Procmail](/index.php/Procmail "Procmail") | [procmail](https://www.archlinux.org/packages/?name=procmail) | No | Yes | No |
 
 See also [Wikipedia:Comparison of e-mail servers](https://en.wikipedia.org/wiki/Comparison_of_e-mail_servers "wikipedia:Comparison of e-mail servers").
 

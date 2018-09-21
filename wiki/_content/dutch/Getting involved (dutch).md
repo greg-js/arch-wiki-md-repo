@@ -87,17 +87,9 @@ Arch heeft een vitale en actieve gemeenschap van software-ontwikkelaars. Als u e
 
 	Andere distributies op Arch Linux
 
-[**AUR Helpers**](/index.php/AUR_helpers "AUR helpers")
-
-	Hulpprogramma's voor eindgebruikers te helpen bij het gebruik van de AUR
-
 [**Pacman GUI Frontends**](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends")
 
 	Grafische front-ends voor pacman
-
-[**rc.conf GUI Frontends**](/index.php/Rc.conf_GUI_Frontends "Rc.conf GUI Frontends")
-
-	Grafische front-ends voor rc.conf
 
 [**netcfg**](/index.php/Netcfg "Netcfg")
 

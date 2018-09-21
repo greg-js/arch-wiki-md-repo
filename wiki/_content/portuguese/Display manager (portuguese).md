@@ -46,7 +46,7 @@ Um [gerenciador de exibição](https://en.wikipedia.org/wiki/X_display_manager_(
 
 ### Gráficos
 
-*   **[GDM](/index.php/GDM "GDM")** — Gerenciador de exibição do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)").
+*   **[GDM](/index.php/GDM_(Portugu%C3%AAs) "GDM (Português)")** — Gerenciador de exibição do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)").
 
 	[https://wiki.gnome.org/Projects/GDM](https://wiki.gnome.org/Projects/GDM) || [gdm](https://www.archlinux.org/packages/?name=gdm)
 

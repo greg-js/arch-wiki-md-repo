@@ -718,7 +718,7 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 *   **drive** — Tiny program to pull or push Google Drive files.
 
-	[https://github.com/odeke-em/drive](https://github.com/odeke-em/drive) || [drive](https://aur.archlinux.org/packages/drive/)
+	[https://github.com/odeke-em/drive](https://github.com/odeke-em/drive) || [drive-bin](https://aur.archlinux.org/packages/drive-bin/)
 
 *   **DriveSync** — Command line utility that synchronizes your Google Drive files with a local folder on your machine.
 
@@ -1968,7 +1968,7 @@ See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "
 
 *   **Nikola** — A static site generator written in Python, with incremental rebuilds and multiple markup formats.
 
-	[https://getnikola.com/](https://getnikola.com/) || [nikola](https://aur.archlinux.org/packages/nikola/)
+	[https://getnikola.com/](https://getnikola.com/) || [nikola](https://www.archlinux.org/packages/?name=nikola)
 
 *   **Pelican** — A static site generator, powered by Python.
 
@@ -1994,7 +1994,7 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 *   **turses** — Twitter client for the console based off *tyrs* with major improvements.
 
-	[https://github.com/louipc/turses](https://github.com/louipc/turses) || [turses](https://aur.archlinux.org/packages/turses/)
+	[https://github.com/louipc/turses](https://github.com/louipc/turses) || [turses-git](https://aur.archlinux.org/packages/turses-git/)
 
 ##### Graphical
 

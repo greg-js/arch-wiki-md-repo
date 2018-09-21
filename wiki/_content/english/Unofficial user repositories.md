@@ -5,11 +5,11 @@ Related articles
 
 This article lists binary repositories freely created and shared by the community, often providing pre-built versions of PKGBUILDS found in the [AUR](/index.php/AUR "AUR").
 
-**Warning:** The official Arch Linux Developers and the Trusted Users do not perform tests of any sort to verify the contents of these repositories. You must decide whether to trust their maintainers and you take full responsibility for any consequences of using any unofficial repository.
-
 In order to use these repositories, add them to `/etc/pacman.conf`, as explained in [pacman#Repositories and mirrors](/index.php/Pacman#Repositories_and_mirrors "Pacman"). If a repository is signed, you must obtain and locally sign the associated key, as explained in [Pacman-key#Adding unofficial keys](/index.php/Pacman-key#Adding_unofficial_keys "Pacman-key").
 
 If you want to create your own custom repository, follow [pacman tips#Custom local repository](/index.php/Pacman_tips#Custom_local_repository "Pacman tips").
+
+**Warning:** The official Arch Linux Developers and the Trusted Users do not perform tests of any sort to verify the contents of these repositories. You must decide whether to trust their maintainers and you take full responsibility for any consequences of using any unofficial repository.
 
 ## Contents
 
@@ -44,20 +44,20 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.27 mobile](#mobile)
     *   [2.28 nah](#nah)
     *   [2.29 pkgbuilder](#pkgbuilder)
-    *   [2.30 qt-debug](#qt-debug)
-    *   [2.31 quarry](#quarry)
-    *   [2.32 repo-ck](#repo-ck)
-    *   [2.33 seblu](#seblu)
-    *   [2.34 seiichiro](#seiichiro)
-    *   [2.35 sergej-repo](#sergej-repo)
-    *   [2.36 siosm-aur](#siosm-aur)
-    *   [2.37 sublime-text](#sublime-text)
-    *   [2.38 subtitlecomposer](#subtitlecomposer)
-    *   [2.39 tredaelli-systemd](#tredaelli-systemd)
-    *   [2.40 trinity](#trinity)
-    *   [2.41 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-    *   [2.42 xyne-x86_64](#xyne-x86_64)
-    *   [2.43 y3xz](#y3xz)
+    *   [2.30 post-factum kernels](#post-factum_kernels)
+    *   [2.31 qt-debug](#qt-debug)
+    *   [2.32 quarry](#quarry)
+    *   [2.33 repo-ck](#repo-ck)
+    *   [2.34 seblu](#seblu)
+    *   [2.35 seiichiro](#seiichiro)
+    *   [2.36 sergej-repo](#sergej-repo)
+    *   [2.37 siosm-aur](#siosm-aur)
+    *   [2.38 sublime-text](#sublime-text)
+    *   [2.39 subtitlecomposer](#subtitlecomposer)
+    *   [2.40 tredaelli-systemd](#tredaelli-systemd)
+    *   [2.41 trinity](#trinity)
+    *   [2.42 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+    *   [2.43 xyne-x86_64](#xyne-x86_64)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -77,13 +77,11 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [3.16 ownstuff](#ownstuff)
     *   [3.17 pantheon](#pantheon)
     *   [3.18 pietma](#pietma)
-    *   [3.19 Pival81 arch xapps](#Pival81_arch_xapps)
-    *   [3.20 pnsft-pur](#pnsft-pur)
-    *   [3.21 post-factum kernels](#post-factum_kernels)
-    *   [3.22 QOwnNotes](#QOwnNotes)
-    *   [3.23 rakudo](#rakudo)
-    *   [3.24 rust-git](#rust-git)
-    *   [3.25 zrootfs](#zrootfs)
+    *   [3.19 pnsft-pur](#pnsft-pur)
+    *   [3.20 QOwnNotes](#QOwnNotes)
+    *   [3.21 rakudo](#rakudo)
+    *   [3.22 rust-git](#rust-git)
+    *   [3.23 zrootfs](#zrootfs)
 
 ## Adding your repository to this page
 
@@ -359,8 +357,6 @@ Server = https://repo.holocm.org/archlinux/x86_64
 *   **Upstream page:** [https://ivasilev.net/pacman](https://ivasilev.net/pacman)
 *   **Key-ID:** [17DAB671](https://pgp.mit.edu/pks/lookup?op=vindex&search=0xB77A3C8832838F1F80ADFD7E1D0507B417DAB671)
 
-**Note:** I maintain **any** and **x86_64** repos. **x86_64** includes packages from **any**. **$arch** can be overridden by both.
-
 ```
 [ivasilev]
 Server = https://ivasilev.net/pacman/$arch
@@ -478,6 +474,20 @@ Server = https://repo.nah.nz/$repo
 ```
 [pkgbuilder]
 Server = https://pkgbuilder-repo.chriswarrick.com/
+
+```
+
+### post-factum kernels
+
+*   **Maintainer**: [Oleksandr Natalenko aka post-factum](https://aur.archlinux.org/account/post-factum)
+*   **Upstream page**: [https://pfactum.github.io/pf-kernel/](https://pfactum.github.io/pf-kernel/)
+*   **Description**: [pf-kernel](/index.php/Kernel#Major_patchsets "Kernel") and other packages by its developer, post-factum
+*   **Key-ID:**: 95C357D2AF5DA89D
+*   **Keyfile**: [https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/home_post-factum_kernels_Arch.key](https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/home_post-factum_kernels_Arch.key)
+
+```
+[home_post-factum_kernels_Arch]
+Server = https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/$arch
 
 ```
 
@@ -637,18 +647,6 @@ Server = https://download.opensuse.org/repositories/home:/mrmariusz/ArchLinux/$a
 ```
 [xyne-x86_64]
 Server = https://xyne.archlinux.ca/repos/xyne
-
-```
-
-### y3xz
-
-*   **Maintainer:** [User:Yuvadm](/index.php/User:Yuvadm "User:Yuvadm")
-*   **Description:** Some preciously compiled packages, mostly armv7 and aarch64 stuff.
-*   **Key-ID:** `7B40CAB49DA99130954A47CF271386AA2EB7672F`
-
-```
-[y3xz]
-Server = http://arch.y3xz.com/repo/$arch
 
 ```
 
@@ -869,20 +867,9 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 
-### Pival81 arch xapps
-
-*   **Maintainer:** Valerio Pizzi ([Pival81](https://github.com/Pival81) <pival801@gmail.com>)
-*   **Description:** [XApps](https://github.com/linuxmint/xapps) packages.
-
-```
-[home_Pival81_arch_xapps_Arch_Extra]
-Server = https://download.opensuse.org/repositories/home:/Pival81:/arch:/xapps/Arch_Extra/$arch 
-
-```
-
 ### pnsft-pur
 
-*   **Maintainer:**
+*   **Maintainer:** [ponsfoot](https://aur.archlinux.org/account/ponsfoot)
 *   **Description:** Japanese input method packages Mozc (vanilla) and libkkc
 
 ```
@@ -891,21 +878,9 @@ Server = https://downloads.sourceforge.net/project/pnsft-aur/pur/x86_64
 
 ```
 
-### post-factum kernels
-
-*   **Maintainer**: [Oleksandr Natalenko aka post-factum](https://aur.archlinux.org/account/post-factum)
-*   **Upstream page**: [https://pfactum.github.io/pf-kernel/](https://pfactum.github.io/pf-kernel/)
-*   **Description**: [pf-kernel](/index.php/Kernel#Major_patchsets "Kernel") and other packages by its developer, post-factum
-
-```
-[home_post-factum_kernels_Arch]
-Server = https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/$arch
-
-```
-
 ### QOwnNotes
 
-*   **Maintainer:** [http://www.qownnotes.org](http://www.qownnotes.org)
+*   **Maintainer:** [Patrizio Bekerle](https://aur.archlinux.org/account/pbek) (pbek), QOwnNotes author
 *   **Description:** QOwnNotes is a open source notepad and todo list manager with markdown support and [ownCloud](/index.php/OwnCloud "OwnCloud") integration.
 
 ```

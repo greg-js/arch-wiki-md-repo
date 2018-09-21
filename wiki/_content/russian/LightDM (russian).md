@@ -67,7 +67,7 @@
 
 Другие альтернативные Экраны приветствия доступны в [AUR](/index.php/AUR "AUR").
 
-*   [lightdm-webkit2-greeter](https://aur.archlinux.org/packages/lightdm-webkit2-greeter/): Экран приветствия, который использует Webkit2 для тем. Он заменяет [lightdm-webkit-greeter](https://aur.archlinux.org/packages/lightdm-webkit-greeter/).
+*   [lightdm-webkit2-greeter](https://www.archlinux.org/packages/?name=lightdm-webkit2-greeter): Экран приветствия, который использует Webkit2 для тем. Он заменяет [lightdm-webkit-greeter](https://aur.archlinux.org/packages/lightdm-webkit-greeter/).
 *   [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/): Экран приветствия использующийся в Ubuntu [Unity](/index.php/Unity "Unity").
 *   [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/): Экран приветствия из проекта elementary OS.
 

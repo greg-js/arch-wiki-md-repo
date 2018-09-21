@@ -16,7 +16,7 @@
 下列安装包包含了 VSCode:
 
 *   [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin/)
-*   [code](https://aur.archlinux.org/packages/code/)
+*   [code](https://www.archlinux.org/packages/?name=code)
 *   [code-git](https://aur.archlinux.org/packages/code-git/)
 
 ## 调试 C#

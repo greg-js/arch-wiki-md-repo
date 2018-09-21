@@ -312,7 +312,7 @@ To force your clock to the correct time, and to also write the correct UTC to yo
 
 *   [Linux Tips - Linux, Clocks, and Time](http://sunnyan.tistory.com/entry/Linux-Clocks-and-Time)
 *   [An introduction to timekeeping in Linux VMs](https://opensource.com/article/17/6/timekeeping-linux-vms)
-*   [Sources for Time Zone and Daylight Saving Time Data](http://www.twinsun.com/tz/tz-link.htm) for [tzdata](https://www.archlinux.org/packages/?name=tzdata)
+*   [Sources for Time Zone and Daylight Saving Time Data](https://data.iana.org/time-zones/tz-link.html) for [tzdata](https://www.archlinux.org/packages/?name=tzdata)
 *   [Time Scales](https://www.ucolick.org/~sla/leapsecs/timescales.html)
 *   [Gentoo: System time](https://wiki.gentoo.org/wiki/System_time "gentoo:System time")
 *   [Wikipedia:Time](https://en.wikipedia.org/wiki/Time "wikipedia:Time")

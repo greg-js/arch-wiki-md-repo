@@ -53,6 +53,10 @@ This article documents the configuration of `libgphoto2` to access digital camer
 
 	[https://launchpad.net/pantheon-photos](https://launchpad.net/pantheon-photos) || [pantheon-photos](https://www.archlinux.org/packages/?name=pantheon-photos)
 
+*   **Rapid Photo Downloader** — Download photos and videos from cameras, memory cards and portable storage devices.
+
+	[http://www.damonlynch.net/rapid/](http://www.damonlynch.net/rapid/) || [rapid-photo-downloader](https://www.archlinux.org/packages/?name=rapid-photo-downloader)
+
 *   **[Rawstudio](https://en.wikipedia.org/wiki/Rawstudio "wikipedia:Rawstudio")** — An open source raw-image converter written in GTK+. Supports tethered shooting with gphoto2.
 
 	[https://rawstudio.org/](https://rawstudio.org/) || [rawstudio](https://aur.archlinux.org/packages/rawstudio/)

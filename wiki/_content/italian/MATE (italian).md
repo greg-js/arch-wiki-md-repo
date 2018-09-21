@@ -172,7 +172,7 @@ Se si usa NetworkManager per la connessione, è possibile installare [network-ma
 
 ## Usare Compiz Fusion sans Emerald
 
-Se si volesse usare Marco con [Compiz (Italiano)](/index.php/Compiz_(Italiano) "Compiz (Italiano)"), installare e lanciare Compiz Fusion normalmente,installare il pacchetto *gtk-window-decorator* e digitare il seguente comando per creare un symlink:
+Se si volesse usare Mate con [Compiz (Italiano)](/index.php/Compiz_(Italiano) "Compiz (Italiano)"), installare e lanciare Compiz Fusion normalmente,installare il pacchetto *gtk-window-decorator* e digitare il seguente comando per creare un symlink:
 
 ```
 # ln -s /usr/lib/libmarco-private.so.0 /usr/lib/libmetacity-private.so.0

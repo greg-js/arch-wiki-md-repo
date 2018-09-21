@@ -587,7 +587,7 @@ Exemplos:
 
 Veja [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1), [systemd.journal-fields(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.journal-fields.7) ou a [publicação de blogue](http://0pointer.de/blog/projects/journalctl.html) do Lennart para detalhes.
 
-**Dica:** Por padrão, *journalctl* trunca linhas maiores que a largura da tela, mas em alguns casos pode ser melhor habilitar *wrapping* em vez de trucamento'. Isso pode ser controlado pela [variável de ambiente](/index.php/Environment_variable "Environment variable") `SYSTEMD_LESS`, que contém opções passadas ao [less](/index.php/Utilit%C3%A1rios_principais#less "Utilitários principais") (o paginador padrão) e usa como padrão `FRSXMK` (veja [less(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/less.1) e [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) para detalhes).
+**Dica:** Por padrão, *journalctl* trunca linhas maiores que a largura da tela, mas em alguns casos pode ser melhor habilitar *wrapping* em vez de trucamento'. Isso pode ser controlado pela [variável de ambiente](/index.php/Vari%C3%A1vel_de_ambiente "Variável de ambiente") `SYSTEMD_LESS`, que contém opções passadas ao [less](/index.php/Utilit%C3%A1rios_principais#less "Utilitários principais") (o paginador padrão) e usa como padrão `FRSXMK` (veja [less(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/less.1) e [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) para detalhes).
 
 Ao omitir a opção `S`, a saída estará sob *wrap* em vez de truncamento. Por exemplo, inicie *journalctl* da seguinte forma:
 
@@ -595,7 +595,7 @@ Ao omitir a opção `S`, a saída estará sob *wrap* em vez de truncamento. Por 
 $ SYSTEMD_LESS=FRXMK journalctl
 
 ```
-Se você quiser definir esse comportamento como padrão, [exporte](/index.php/Environment_variables#Per_user "Environment variables") a variável a partir de `~/.bashrc` ou `~/.zshrc`.
+Se você quiser definir esse comportamento como padrão, [exporte](/index.php/Vari%C3%A1vel_de_ambiente#Por_usu.C3.A1rio "Variável de ambiente") a variável a partir de `~/.bashrc` ou `~/.zshrc`.
 
 ### Limite no tamanho do journal
 
@@ -789,7 +789,7 @@ O *systemd* tem várias opções para diagnosticar problemas com o processo de i
 
 ### Diagnosticar um serviço
 
-Se algum serviço do *systemd* se comportar mal ou você quiser obter mais informações sobre o que está acontecendo, defina a [variável de ambiente](/index.php/Environment_variable "Environment variable") `SYSTEMD_LOG_LEVEL` com `debug`. Por exemplo, para executar o daemon *systemd-networkd* no modo de depuração:
+Se algum serviço do *systemd* se comportar mal ou você quiser obter mais informações sobre o que está acontecendo, defina a [variável de ambiente](/index.php/Vari%C3%A1vel_de_ambiente "Variável de ambiente") `SYSTEMD_LOG_LEVEL` com `debug`. Por exemplo, para executar o daemon *systemd-networkd* no modo de depuração:
 
 Adicione um [arquivo *drop-in*](#Arquivos_drop-in) para o serviço adicionando as duas linhas:
 

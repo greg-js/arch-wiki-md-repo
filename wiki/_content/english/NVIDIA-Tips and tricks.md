@@ -227,7 +227,7 @@ nvidia-settings -a "[gpu:0]/GPUFanControlState=1" -a "[fan:0]/GPUCurrentFanSpeed
 
 ```
 
-If you use a login manager such as GDM or KDM, you can create a desktop entry file to process this setting. Create `~/.config/autostart/nvidia-fan-speed.desktop` and place this text inside it. Again, change `*n*` to the speed percentage you want.
+If you use a login manager such as [GDM](/index.php/GDM "GDM") or [SDDM](/index.php/SDDM "SDDM"), you can create a desktop entry file to process this setting. Create `~/.config/autostart/nvidia-fan-speed.desktop` and place this text inside it. Again, change `*n*` to the speed percentage you want.
 
 ```
 [Desktop Entry]

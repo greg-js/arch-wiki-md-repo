@@ -149,7 +149,7 @@ There are a number of front-ends available for controlling the PulseAudio daemon
 
 *   **PulseEffects** — Audio effects for PulseAudio applications.
 
-	[https://github.com/wwmm/pulseeffects](https://github.com/wwmm/pulseeffects) || [pulseeffects](https://aur.archlinux.org/packages/pulseeffects/)
+	[https://github.com/wwmm/pulseeffects](https://github.com/wwmm/pulseeffects) || [pulseeffects](https://www.archlinux.org/packages/?name=pulseeffects)
 
 *   **Volctl** — Per-application system tray applet volume control for PulseAudio.
 
@@ -467,7 +467,7 @@ load-module module-dbus-protocol
 
 [pulseaudio-equalizer-ladspa](https://aur.archlinux.org/packages/pulseaudio-equalizer-ladspa/) (based on [swh-plugins](https://www.archlinux.org/packages/?name=swh-plugins)) can be used as an alternative to [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer).
 
-[pulseeffects](https://aur.archlinux.org/packages/pulseeffects/) applies peak limiting, compression, reverberation, auto volume and 15 bands equalization to Pulseaudio applications output.
+[pulseeffects](https://www.archlinux.org/packages/?name=pulseeffects) applies peak limiting, compression, reverberation, auto volume and 15 bands equalization to Pulseaudio applications output.
 
 ## Applications
 

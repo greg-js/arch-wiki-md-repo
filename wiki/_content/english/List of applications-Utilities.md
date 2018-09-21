@@ -369,7 +369,7 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 *   **Gentoo** — A lightweight file manager for GTK.
 
-	[http://www.obsession.se/gentoo/](http://www.obsession.se/gentoo/) || [gentoo](https://aur.archlinux.org/packages/gentoo/)
+	[https://sourceforge.net/projects/gentoo/](https://sourceforge.net/projects/gentoo/) || [gentoo](https://aur.archlinux.org/packages/gentoo/)
 
 *   **[GNOME Files](/index.php/GNOME_Files "GNOME Files")** — Extensible, heavyweight file manager used by default in GNOME with support for custom scripts.
 
@@ -715,7 +715,7 @@ See also [Wikipedia:List of build automation software](https://en.wikipedia.org/
 
 *   **[Apache Ant](https://en.wikipedia.org/wiki/Apache_Ant "wikipedia:Apache Ant")** — Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent upon each other.
 
-	[http://ant.apache.org/](http://ant.apache.org/) || [apache-ant](https://www.archlinux.org/packages/?name=apache-ant)
+	[http://ant.apache.org/](http://ant.apache.org/) || [ant](https://www.archlinux.org/packages/?name=ant)
 
 *   **[Apache Maven](https://en.wikipedia.org/wiki/Apache_Maven "wikipedia:Apache Maven")** — Build automation tool used primarily for Java.
 

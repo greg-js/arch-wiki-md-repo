@@ -2,75 +2,69 @@ QQ 是腾讯公司开发的即时通讯软件，为 ICQ 的仿制品，是中国
 
 ## Contents
 
-*   [1 使用虚拟机](#.E4.BD.BF.E7.94.A8.E8.99.9A.E6.8B.9F.E6.9C.BA)
-*   [2 基于 WebQQ](#.E5.9F.BA.E4.BA.8E_WebQQ)
-    *   [2.1 SmartQQ](#SmartQQ)
-    *   [2.2 weechat-webqq](#weechat-webqq)
-    *   [2.3 SmartIM](#SmartIM)
-*   [3 Wine 模拟](#Wine_.E6.A8.A1.E6.8B.9F)
-    *   [3.1 Wine QQ](#Wine_QQ)
-    *   [3.2 Wine QQ 轻聊版](#Wine_QQ_.E8.BD.BB.E8.81.8A.E7.89.88)
-    *   [3.3 Wine TIM](#Wine_TIM)
-        *   [3.3.1 安装前的准备](#.E5.AE.89.E8.A3.85.E5.89.8D.E7.9A.84.E5.87.86.E5.A4.87)
-        *   [3.3.2 安装及配置](#.E5.AE.89.E8.A3.85.E5.8F.8A.E9.85.8D.E7.BD.AE)
-        *   [3.3.3 相关问题解决](#.E7.9B.B8.E5.85.B3.E9.97.AE.E9.A2.98.E8.A7.A3.E5.86.B3)
-    *   [3.4 CrossOver TM2013](#CrossOver_TM2013)
-    *   [3.5 Awesome 下的配置](#Awesome_.E4.B8.8B.E7.9A.84.E9.85.8D.E7.BD.AE)
-    *   [3.6 i3 下的配置](#i3_.E4.B8.8B.E7.9A.84.E9.85.8D.E7.BD.AE)
-*   [4 参阅](#.E5.8F.82.E9.98.85)
+*   [1 虚拟机](#.E8.99.9A.E6.8B.9F.E6.9C.BA)
+*   [2 Wine](#Wine)
+    *   [2.1 Deepin QQ/TIM](#Deepin_QQ.2FTIM)
+    *   [2.2 Crossover](#Crossover)
+    *   [2.3 AppImage](#AppImage)
+    *   [2.4 清风老师的 Wine QQ 方案](#.E6.B8.85.E9.A3.8E.E8.80.81.E5.B8.88.E7.9A.84_Wine_QQ_.E6.96.B9.E6.A1.88)
+    *   [2.5 手动 Wine 方案](#.E6.89.8B.E5.8A.A8_Wine_.E6.96.B9.E6.A1.88)
+        *   [2.5.1 QQ 轻聊版](#QQ_.E8.BD.BB.E8.81.8A.E7.89.88)
+        *   [2.5.2 TIM](#TIM)
+*   [3 基于 SmartQQ](#.E5.9F.BA.E4.BA.8E_SmartQQ)
+    *   [3.1 SmartQQ](#SmartQQ)
+    *   [3.2 weechat-webqq](#weechat-webqq)
+    *   [3.3 SmartIM](#SmartIM)
+*   [4 提示与技巧](#.E6.8F.90.E7.A4.BA.E4.B8.8E.E6.8A.80.E5.B7.A7)
+    *   [4.1 HiDPI 支持](#HiDPI_.E6.94.AF.E6.8C.81)
+    *   [4.2 平铺式窗口管理器下的配置](#.E5.B9.B3.E9.93.BA.E5.BC.8F.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8.E4.B8.8B.E7.9A.84.E9.85.8D.E7.BD.AE)
+        *   [4.2.1 Awesome](#Awesome)
+        *   [4.2.2 i3](#i3)
+*   [5 疑难解答](#.E7.96.91.E9.9A.BE.E8.A7.A3.E7.AD.94)
+    *   [5.1 字体配置](#.E5.AD.97.E4.BD.93.E9.85.8D.E7.BD.AE)
+    *   [5.2 文件被占用](#.E6.96.87.E4.BB.B6.E8.A2.AB.E5.8D.A0.E7.94.A8)
+    *   [5.3 xfce4(xfwm4)下无法输入表情](#xfce4.28xfwm4.29.E4.B8.8B.E6.97.A0.E6.B3.95.E8.BE.93.E5.85.A5.E8.A1.A8.E6.83.85)
+*   [6 参阅](#.E5.8F.82.E9.98.85)
 
-## 使用虚拟机
+## 虚拟机
 
-简单方便，不用解决各种依赖、字体等问题。这里建议使用 VirtualBox。
+您可以在虚拟机中运行一个完整的 Windows 系统，并在此中运行 QQ。相比于其他的方案，这种方案出错的几率是最小的，缺点是占用的资源较多。
 
-1\. 安装[virtualbox](https://www.archlinux.org/packages/?name=virtualbox)，可参看[VirtualBox (简体中文)](/index.php/VirtualBox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VirtualBox (简体中文)") 。 2\. 下载[Microsoft 提供的正版虚拟机专用系统](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)(选择 VirtualBox 格式的下载）。
+一般使用 [VirtualBox](/index.php/VirtualBox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "VirtualBox (简体中文)") 即可满足需求，也可以参考 [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") 选择其它的虚拟机程序。
 
-3\. 从虚拟机导入系统（根据使用需求设置虚拟机要使用的 CPU 和内存配置）；
+**提示：**
 
-4\. 在虚拟机中的 Windows 系统中安装腾讯 QQ。
+*   根据[许可条款](https://www.microsoft.com/en-us/Useterms/OEM/Windows/10Mobile/UseTerms_OEM_Windows_10Mobile_ChineseSimplified.htm)，在每个虚拟设备上运行 Windows 都需要单独的授权。但您可以选择使用[微软提供的虚拟机专用系统](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)(免费使用）。
+*   如果您使用 VirtualBox，建议您开启**[无缝模式](https://www.virtualbox.org/manual/ch04.html#seamlesswindows)**，这个功能能让您在宿主机的桌面下无缝操作虚拟机中的窗口。
 
-技巧：VirtualBox 的**无缝模式**（默认按键 CTRL + L)开启后，虚拟机系统中开启的窗口就如同在宿主机中的原生窗口一样，使用体验大大提升。
+## Wine
 
-## 基于 WebQQ
-
-### SmartQQ
-
-[SmartQQ](http://w.qq.com/) 是腾讯推出的网页端 QQ，它高度模仿微信风格，功能欠完善，高度依赖网络环境，而且需要通过手机客户端扫描二维码登录。
-
-将 Google Chrome 的把网站做为应用程序与其桌面提醒功能整合，也可以打造一个实用的 QQ 软件：
-
-1.  安装并运行 [Chromium (简体中文)](/index.php/Chromium_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Chromium (简体中文)")或者[火狐浏览器firefox](/index.php/Firefox_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Firefox (简体中文)")，并打开 [SmartQQ](http://w.qq.com/)，需要手机QQ客户端扫描二维码登陆，功能少。
-
-### weechat-webqq
-
-**注意:** 也可选择其它支持IRC协议的聊天客户端
-
-在 [WeeChat](/index.php/WeeChat "WeeChat") 可使用的 QQ 插件脚本，使用 perl语言开发的 [Mojo-Webqq](https://github.com/sjdy521/Mojo-Webqq)库，基于 smartqq 协议 。 源码脚本可访问 [weechat-webqq](https://github.com/wxg4net/weechat-webqq) 获取
-
-### SmartIM
-
-SmartIM 是一个用java写的，包含简单的IM API封装的小程序，支持SmartQQ、微信。不过遗憾的是仍然需要扫描二维码。
-
-不支持图片，视频，表情和语音，不过支持依赖第三方服务器的文件传输。
-
-使用方法：只需将jar包下载下来，然后安装java-openjdk之后，就可以在终端通过“java -jar”的方式直接运行了。
-
-Github 地址： [Jamling/SmartIM](https://github.com/Jamling/SmartIM)。
-
-## Wine 模拟
-
-[Wine (简体中文)](/index.php/Wine_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wine (简体中文)") 是类 UNIX 系统下运行微软 Windows 程序的"兼容层"，可以用它模拟 Windows 环境来运行 QQ/TM。
+[Wine](/index.php/Wine_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wine (简体中文)") 是类 UNIX 系统下运行微软 Windows 程序的"兼容层"，可以用它模拟 Windows 环境来运行 QQ/TIM。
 
 **警告:**
 
 *   受 wine 上游的一个[Bug](https://bugs.winehq.org/show_bug.cgi?id=45199) 影响，官方仓库中提供的 [wine](https://www.archlinux.org/packages/?name=wine) 自3.8开始无法运行许多程序，包括 QQ 和 TIM。截止3.15-1版本此问题仍未修复。您可以将[wine](https://www.archlinux.org/packages/?name=wine)[降级](/index.php/Downgrading_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Downgrading packages (简体中文)")到3.7来绕过这个问题。也可以按照[FS#58833](https://bugs.archlinux.org/task/58833)，使用[ABS](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")修改编译参数之后重新编译安装[wine](https://www.archlinux.org/packages/?name=wine)。
-*   Wine QQ/TIM 在平铺式窗口管理器下的样式可能会大规模失控，需要进行额外的配置。
+*   Wine QQ/TIM 在平铺式窗口管理器下的样式可能会大规模失控，需要进行[额外的配置](#.E5.B9.B3.E9.93.BA.E5.BC.8F.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8.E4.B8.8B.E7.9A.84.E9.85.8D.E7.BD.AE)。
 
-### Wine QQ
+### Deepin QQ/TIM
 
-目前较为成熟的 Wine 模拟方案为[deepin-qq-im](https://aur.archlinux.org/packages/deepin-qq-im/)，也可以从 [ArchLinux CN 源](https://www.archlinuxcn.org/archlinux-cn-repo-and-mirror/) 安装 deepin-qq-im。
+Deepin QQ/TIM 是 wine 中相对成熟的方案。几乎开箱即用，bug 较少。
 
-之前比较好的解决方案有 [清风老师](http://phpcj.org/wineqq/) 提供的 Wine QQ 方案等。
+您可以安装[deepin-qq-im](https://aur.archlinux.org/packages/deepin-qq-im/)或[deepin-wine-tim](https://aur.archlinux.org/packages/deepin-wine-tim/)，也可以从 [ArchLinux CN 源](https://www.archlinuxcn.org/archlinux-cn-repo-and-mirror/) 安装。
+
+### Crossover
+
+可以使用 [CrossOver](/index.php/CrossOver "CrossOver") 运行 QQ、TM2013 和 TIM。更多详情可以参阅[CrossOver的兼容性列表](https://www.codeweavers.com/compatibility)。
+
+### AppImage
+
+AppImage 是一种把应用打包成单一文件的格式。您可以在[[1]](https://github.com/askme765cs/Wine-QQ-TIM)下载到封装好的 Wine QQ/TIM。只需要赋予可执行权限即可使用。由于 AppImage 格式附带了程序所需要的依赖，所以这种方式受系统中其他组件版本的影响最小。
+
+**注意:** 由于 AppImage 不使用系统的 Wine，所以对 Wine 的调整可能无效，例如[#HiDPI 支持](#HiDPI_.E6.94.AF.E6.8C.81)。
+
+### 清风老师的 Wine QQ 方案
+
+您也可以使用[清风老师](http://phpcj.org/wineqq/) 提供的 Wine QQ 方案。
 
 **注意:**
 
@@ -78,15 +72,15 @@ Github 地址： [Jamling/SmartIM](https://github.com/Jamling/SmartIM)。
 
  `$HOME/.local/share/applications/wine-QQ.desktop`  `Exec=env LC_ALL=zh_CN.UTF-8 wine ".wine/drive_c/Program Files/QQ/Bin/QQ.exe"` 
 
-*   此方案只需要安装[wine](https://www.archlinux.org/packages/?name=wine)即可，安装其它的 Wine 库可能造成干扰。第一次启动的时候会自动下载安装`Mono`库。如果安装失败，可以首先删除`$HOME/.wine`并卸载所有 Wine 相关的包后重启系统，得到一个相对干净的环境再尝试按上面博客的步骤进行安装。
-
 *   安装成功之后要取消勾选 QQ 的自动更新，以免自动更新导致不可用。
 
-### Wine QQ 轻聊版
+### 手动 Wine 方案
 
-**注意:** 此方案使用QQ轻聊版6.7，更高版本在当前wine版本需要[额外的调整](https://blog.lilydjwg.me/2015/10/26/run-tencent-qq-lite-with-wine.186640.html)才能安装
+#### QQ 轻聊版
 
-安装[winetricks](https://www.archlinux.org/packages/?name=winetricks)、[wine](https://www.archlinux.org/packages/?name=wine)。创建 qqlight.verb 如下，
+**注意:** 此方案使用QQ轻聊版6.7，更高版本在当前wine版本需要[额外的调整](https://blog.lilydjwg.me/2015/10/26/run-tencent-qq-lite-with-wine.186640.html)才能安装。
+
+安装[winetricks](https://www.archlinux.org/packages/?name=winetricks)、[wine](https://www.archlinux.org/packages/?name=wine)。创建 qqlight.verb 如下：
 
 ```
 w_metadata qqlight apps \
@@ -131,151 +125,81 @@ load_qqlight()
 
 ```
 
-运行 winetricks 安装，
+运行 winetricks 安装：
 
 ```
 $ winetricks qqlight.verb
 
 ```
 
-安装完成后通过 wineconsole 启动，
+安装完成后通过 wineconsole 启动：
 
 ```
 $ wineconsole .wine/drive_c/run-qqlight.bat
 
 ```
 
-### Wine TIM
+#### TIM
 
-[TIM](http://im.qq.com/download/)是腾讯推出的主打办公协同的QQ版本。
+1.  安装[wine](https://www.archlinux.org/packages/?name=wine)、[wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) 和 [wine-mono](https://www.archlinux.org/packages/?name=wine-mono)。
+2.  执行`winetricks riched20`，也可使用 `winecfg` 设置函数库顶替。
+3.  中文字体显示见[#字体配置](#.E5.AD.97.E4.BD.93.E9.85.8D.E7.BD.AE)。
+4.  安装 TIM。
 
-同时，在 AUR 中，仍有已经稳定成熟的模拟方案：[deepin-wine-tim](https://aur.archlinux.org/packages/deepin-wine-tim/)。当然，你也可以选择按下文的方法手动安装配置。
+**提示：**
 
-#### 安装前的准备
+安装的tim可能没有在程序列表中生成图标。若要自行添加图标，新建一个名为tim.desktop的文件，写入以下内容：
 
-**提示：** 如果使用crossover内建的TIM可忽略该准备步骤。
-
-可参考[Wine (简体中文)](/index.php/Wine_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wine (简体中文)")
-
-*   安装[wine](https://www.archlinux.org/packages/?name=wine)、[wine_gecko](https://www.archlinux.org/packages/?name=wine_gecko) 和 [wine-mono](https://www.archlinux.org/packages/?name=wine-mono)
-
+ `tim.desktop` 
 ```
-$ pacman -S wine wine_gecko wine-mono winetricks
-
+[Desktop Entry]
+Encoding=UTF-8
+Version=1
+Name=TIM
+Comment=Tencent TIM
+Exec=wine '~/.wine/drive_c/Program Files/Tencent/TIM/Bin/TIM.exe'
+Icon=~/.wine/drive_c/Program Files/Tencent/TIM/TIMUninst.ico
+Terminal=false
+Type=Application
+Categories=Network;
 ```
+将 `tim.desktop` 移动到`~/.local/share/applications`或`/usr/share/applications`文件夹下即可。
 
-*   使用内建函数库
+## 基于 SmartQQ
 
-打开winecfg，在函数库一项中的“新增函数库顶替”中选择添加riched20，也可也执行以下命令添加：
+### SmartQQ
 
-```
-$ winetricks riched20
+[SmartQQ](http://w.qq.com/) 是腾讯推出的网页端 QQ，它高度模仿微信风格，功能欠完善，高度依赖网络环境，而且需要通过手机客户端扫描二维码登录。
 
-```
+### weechat-webqq
 
-*   中文字体显示
+**提示：** 也可选择其它支持IRC协议的聊天客户端。
 
-可以提供windows字体[Font configuration#Applications without fontconfig support](/index.php/Font_configuration#Applications_without_fontconfig_support "Font configuration")或使用linux的字体，方法如下：
+在 [WeeChat](/index.php/WeeChat "WeeChat") 可使用的 QQ 插件脚本，使用 perl语言开发的 [Mojo-Webqq](https://github.com/sjdy521/Mojo-Webqq)库，基于 smartqq 协议。 源码脚本可访问 [weechat-webqq](https://github.com/wxg4net/weechat-webqq) 获取。
 
-**警告:** 经测试，使用文泉驿和思源黑体，均出现部分位置文字内容无法显示的情况（但影响很小）
+### SmartIM
 
-**提示：** 默认显示dpi为96,可能使文字显示毛躁不清，可在winecfg的“显示”选项卡中将dpi适当调高（例如缩放125%则为120，缩放150%则为144）。
+[SmartIM](https://github.com/Jamling/SmartIM) 是一个用java写的，包含简单的IM API封装的小程序，支持SmartQQ、微信。不过遗憾的是仍然需要扫描二维码。
 
-新建一个reg文件，例如名为wine-fonts.reg，写入如下内容：
+不支持图片，视频，表情和语音，不过支持依赖第三方服务器的文件传输。
 
-```
-REGEDIT4
-[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink]
-"Lucida Sans Unicode"="wqy-microhei.ttc"
-"Microsoft Sans Serif"="wqy-microhei.ttc"
-"Microsoft YaHei"="wqy-microhei.ttc"
-"MS Sans Serif"="wqy-microhei.ttc"
-"Tahoma"="wqy-microhei.ttc" 
-"Tahoma Bold"="wqy-microhei.ttc"
-"SimSun"="wqy-microhei.ttc"
-"Arial"="wqy-microhei.ttc"
-"Arial Black"="wqy-microhei.ttc"
-"宋体"="wqy-microhei.ttc"
-"新細明體"="wqy-microhei.ttc"
+只需将jar包下载下来，并安装[OpenJDK](/index.php/Java#Officially_supported_packages "Java")，就可以在终端通过“java -jar”的方式直接运行了。
 
-```
+## 提示与技巧
 
-保存后运行：
+### HiDPI 支持
 
-```
- $ wine regedit
+在 HiDPI 显示器上，QQ/TIM 的界面可能会过小。在较新版本的 QQ/TIM 中已经加入了对 HiDPI 的支持。只需手动调整 Wine 的 DPI 即可。
 
-```
+执行 `winecfg`，在打开的窗口中切换到**显示**选项卡并调整 DPI。
 
-打开regedit图形界面，点击注册表-导入注册表文件，然后选择wine-fonts.reg即可。
+**注意:** 如果您使用的不是默认的 Wine 容器（例如使用了deepin QQ/TIM），那么需要在执行 `winecfg` 时指定`WINEPREFIX` 变量。例如`env WINEPREFIX=$HOME/.deepinwine/Deepin-QQ winecfg` 或是 `env WINEPREFIX=$HOME/.deepinwine/Deepin-TIM winecfg`。
 
-#### 安装及配置
+### 平铺式窗口管理器下的配置
 
-*   安装tim
+#### Awesome
 
-使用wine安装tim。可以使用右键菜单中的“运行程”序运行tim的exe文件进行安装，也可以使用命令行：
-
-```
- $ wine tim.exe
-
-```
-
-*   增加启动菜单项
-
-安装的tim可能没有在程序列表中生成图标。自行添加图标，新建一个名为tim.desktop的文件，写入以下内容：
-
-```
- [Desktop Entry]
- Encoding=UTF-8
- Version=1
- Name=TIM
- Comment=Tencent TIM
- Exec=wine '~/.wine/drive_c/Program Files/Tencent/TIM/Bin/TIM.exe'
- Icon=~/.wine/drive_c/Program Files/Tencent/TIM/TIMUninst.ico
- Terminal=false
- Type=Application
- Categories=Network;
-
-```
-
-其中comment是程序介绍，Exec是执行命令，Icon是要显示的图表，可以根据实际情况进行修改。（自带的ico图表不太清晰，可下载[该图标文件](https://sqimg.qq.com/qq_product_operations/eim/site/img/share.png)更换） 将tim.desktop移动到~/.local/share/applications或/usr/share/applications文件夹下即可。
-
-**注意:** desktop entry 有时无法使用，需要将里面的相对路径改成绝对路径。
-
-#### 相关问题解决
-
-*   文件被占用
-
-打开进程管理器，杀死 TIM.exe 进程即可。 原因是退出tim后，某些相关进程仍然在后台运行。也可以使用如下脚本来启动 TIM，它会首先查找已有的 TIM.exe 进程，杀死该进程后启动新的 TIM：
-
- `start-tim.sh` 
-```
-#!/bin/sh
-# script to start TIM
-# kill TIM before start TIM
-for pid in `pgrep TIM.exe`; do
-	if [ -n ${pid} ]; then
-		kill ${pid}
-	fi
-done
-# start TIM
-wine '~/.wine/drive_c/Program Files/Tencent/TIM/Bin/TIM.exe'
-
-```
-
-然后将上文中的 tim.desktop 中的 `Exec` 的值改为 `start-tim.sh` 即可．
-
-*   xfce4(xfwm4)下无法输入表情
-
-打开设置管理器-窗口管理器微调-焦点，取消勾选激活焦点防窃取和遵照标准的ICCCM焦点提示即可。 原因是表情窗口获取焦点时会发生不兼容现象。
-
-### CrossOver TM2013
-
-关于 [CrossOver](/index.php/CrossOver "CrossOver") 版本的 TM2013 相关信息参见[此处](http://www.codeweavers.com/support/forums/general/?t=37;msg=151682)。除了更加稳定之外，和自行 Wine 的版本没有明显区别。
-
-### Awesome 下的配置
-
-Wine QQ/TM 在平铺式窗口管理器下可能不太听话。以下是一些 [Awesome (简体中文)](/index.php/Awesome_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Awesome (简体中文)") 配置，其作用为：
+Wine QQ/TM 在平铺式窗口管理器下可能不太听话。以下是一些 [Awesome](/index.php/Awesome_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Awesome (简体中文)") 配置，其作用为：
 
 *   将所有 TM 的窗口设置为浮动
 *   清除不需要的窗口边框、避免菜单弹出时焦点移动到菜单上
@@ -367,15 +291,48 @@ end)
 
 [一个完整的 Awesome 配置](https://github.com/lilydjwg/myawesomerc)。
 
-### i3 下的配置
+#### i3
 
-原生配置下，启动 `qq2012` 时会自动最大化，且边框不美观，可在 [i3 (简体中文)](/index.php/I3_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "I3 (简体中文)") 的 `config` 设置如下两条规则以改善：
+原生配置下，启动 `qq2012` 时会自动最大化，且边框不美观，可在 [i3](/index.php/I3 "I3") 的 `config` 设置如下两条规则以改善：
 
 ```
 for_window [instance="QQ.exe"] floating enable
 for_window [instance="QQ.exe"] border none
 
 ```
+
+## 疑难解答
+
+### 字体配置
+
+如果中文的显示遇到问题，可以尝试先执行`winetricks fakechinese`。
+
+另请参阅 [Wine#Fonts](/index.php/Wine#Fonts "Wine") 和 [Font_configuration#Applications_without_fontconfig_support](/index.php/Font_configuration#Applications_without_fontconfig_support "Font configuration")。
+
+### 文件被占用
+
+杀死 QQ 或 TIM 的进程即可。 在退出 QQ/TIM 之后，某些相关进程仍然在后台运行。也可以使用如下脚本来启动 QQ/TIM，它会首先查找已有的进程，杀死该进程后启动新的 QQ/TIM。
+
+ `start-tim.sh` 
+```
+#!/bin/sh
+# script to start TIM
+# kill TIM before start TIM
+for pid in `pgrep TIM.exe`; do
+	if [ -n ${pid} ]; then
+		kill ${pid}
+	fi
+done
+# start TIM
+wine '~/.wine/drive_c/Program Files/Tencent/TIM/Bin/TIM.exe'
+
+```
+
+上面的例子适用于 TIM，稍作修改之后即可应用于 QQ。
+
+### xfce4(xfwm4)下无法输入表情
+
+打开设置管理器-窗口管理器微调-焦点，取消勾选激活焦点防窃取和遵照标准的ICCCM焦点提示即可。 原因是表情窗口获取焦点时会发生不兼容现象。
 
 ## 参阅
 
