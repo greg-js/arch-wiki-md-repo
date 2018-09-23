@@ -24,7 +24,7 @@ Related articles
 
 ## Usage
 
-See the [youtube-dl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/youtube-dl.1) [man page](/index.php/Man_page "Man page").
+See [youtube-dl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/youtube-dl.1).
 
 ```
 $ youtube-dl [OPTIONS] *URL*
@@ -67,9 +67,7 @@ $ youtube-dl -x -f bestaudio *URL*
 
 ## Configuration
 
-The system-wide configuration file is `/etc/youtube-dl.conf` and the user-specific configuration file is `~/.config/youtube-dl/config`
-
-The syntax is simply one command-line option per line. See the [youtube-dl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/youtube-dl.1) [man page](/index.php/Man_page "Man page") for supported options. Example configuration:
+The system-wide configuration file is `/etc/youtube-dl.conf` and the user-specific configuration file is `~/.config/youtube-dl/config`. The syntax is simply one command-line option per line. Example configuration:
 
  `~/.config/youtube-dl/config` 
 ```
@@ -79,6 +77,8 @@ The syntax is simply one command-line option per line. See the [youtube-dl(1)](h
 # Prefer 1080p or lower resolutions
 -f (bestvideo[height<=1080]/bestvideo)+bestaudio/best[height<=1080]/best
 ```
+
+See [[1]](https://github.com/rg3/youtube-dl/blob/master/README.md#configuration) for more information.
 
 ## Tips and tricks
 

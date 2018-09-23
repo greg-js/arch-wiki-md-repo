@@ -34,7 +34,7 @@
 
 В некоторых процессорах Intel устаревший микрокод может привести к нестабильности работы с Wayland когда установлен драйвер nvidia, вызывая крах gdm.
 
-[Обновление микрокода](/index.php/Microcode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B8.D0.BA.D1.80.D0.BE.D0.BA.D0.BE.D0.B4.D0.B0 "Microcode (Русский)") должно решить проблему.
+[Обновление микрокода](/index.php/Microcode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9F.D0.BE.D0.B7.D0.B4.D0.BD.D0.B5.D0.B5_.D0.BE.D0.B1.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BC.D0.B8.D0.BA.D1.80.D0.BE.D0.BA.D0.BE.D0.B4.D0.B0 "Microcode (Русский)") должно решить проблему.
 
 ## Поврежденный экран: проблема "Шести экранов"
 
@@ -401,7 +401,7 @@ where `*displayName*` is the name of the display device e.g. `DFP-4`. You can fi
 
 ## Overclocking with nvidia-settings GUI not working
 
-Workaround is to use nvidia-settings CLI to query and set certain variables after enabling overclocking(as explained in [NVIDIA/Tips and tricks#Enabling overclocking](/index.php/NVIDIA/Tips_and_tricks#Enabling_overclocking "NVIDIA/Tips and tricks"). [nvidia-settings(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/nvidia-settings.1) for more information.
+Workaround is to use nvidia-settings CLI to query and set certain variables after enabling overclocking(as explained in [NVIDIA/Tips and tricks#Enabling overclocking](/index.php/NVIDIA/Tips_and_tricks#Enabling_overclocking "NVIDIA/Tips and tricks"). [nvidia-settings(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nvidia-settings.1) for more information.
 
 Example to query all variables:
 

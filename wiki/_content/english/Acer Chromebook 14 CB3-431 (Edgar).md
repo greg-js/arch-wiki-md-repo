@@ -84,7 +84,7 @@ Currently, the internal microphone does not function and there is no known worka
 
 ### Internal Keyboard
 
-The internal keyboard should be fully functional when using the latest kernel, with the exception of the top row hotkeys which are mapped to the function keys by default. See [Chrome_OS_devices#Hotkeys](/index.php/Chrome_OS_devices#Hotkeys "Chrome OS devices") for methods to implement the Chrome OS keyboard hotkeys.
+The internal keyboard should be fully functional when using the latest kernel, with the exception of the top row hotkeys which are mapped to the function keys by default. See [Chrome OS devices#Hotkeys](/index.php/Chrome_OS_devices#Hotkeys "Chrome OS devices") for methods to implement the Chrome OS keyboard hotkeys.
 
 ### Trackpad
 
@@ -116,7 +116,7 @@ AttrPressureRange=4:3
 
 After the XServer has been restarted, the changes will take place.
 
-When using hibernation ([Suspend_and_hibernate#Hibernation](/index.php/Suspend_and_hibernate#Hibernation "Suspend and hibernate")) an issue may be encountered where the module required for the touchpad `elan_i2c` is not loaded on resuming, meaning that the touchpad won't be operable. A workaround for this is to enable the required module during the [initramfs stage](/index.php/Arch_boot_process#initramfs "Arch boot process").
+When using hibernation ([Suspend and hibernate#Hibernation](/index.php/Suspend_and_hibernate#Hibernation "Suspend and hibernate")) an issue may be encountered where the module required for the touchpad `elan_i2c` is not loaded on resuming, meaning that the touchpad won't be operable. A workaround for this is to enable the required module during the [initramfs stage](/index.php/Arch_boot_process#initramfs "Arch boot process").
 
  `/etc/mkinitcpio.conf` 
 ```

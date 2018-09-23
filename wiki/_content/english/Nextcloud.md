@@ -259,6 +259,10 @@ To overrule the data directory on the current setup, [append](/index.php/Append 
 
  `/etc/webapps/nextcloud/config/config.php`  `'datadirectory' => '/usr/share/webapps/nextcloud/data'` 
 
+If you have set `open_basedir` in your PHP/web server configuration file (e.g. `/etc/httpd/conf/extra/nextcloud.conf`), it may be necessary to add your */path/to/data* directory to the string on the line starting with `php_admin_value open_basedir` :
+
+ `/etc/httpd/conf/extra/nextcloud.conf`  `php_admin_value open_basedir "*/path/to/data/*:/srv/http/:/dev/urandom:/tmp/:/usr/share/pear/:/usr/share/webapps/nextcloud/:/etc/webapps/nextcloud"` 
+
 ### Configure caching
 
 It is recommended to [enable caching](https://docs.nextcloud.com/server/13/admin_manual/configuration_server/caching_configuration.html). The Nextcloud documentation provides instructions on [Redis](/index.php/Redis "Redis"), Memcached and [APCu](/index.php/PHP#APCu "PHP").
@@ -690,6 +694,10 @@ If everything is working, you should see 'Transactional File Locking Enabled' un
 ### "Cannot write into apps directory"
 
 As mentioned in the [official admin manual](https://docs.nextcloud.com/server/13/admin_manual/installation/apps_management_installation.html), either you need an apps directory that is writable by the http user, or you need to set `appstoreenabled` to `false`.
+
+If you have set `open_basedir` in your PHP/web server configuration file (e.g. `/etc/httpd/conf/extra/nextcloud.conf`), it may be necessary to add your */path/to/data* directory to the string on the line starting with `php_admin_value open_basedir` :
+
+ `/etc/httpd/conf/extra/nextcloud.conf`  `php_admin_value open_basedir "*/path/to/data/*:/srv/http/:/dev/urandom:/tmp/:/usr/share/pear/:/usr/share/webapps/nextcloud/:/etc/webapps/nextcloud"` 
 
 ### Installed apps get blocked because of MIME type error
 

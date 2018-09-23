@@ -855,7 +855,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 ##### 客户端
 
-**Note:** Some [IM clientsalso](#Instant_messaging) offer voice and video communication
+**Note:** Some [IM clients](#Instant_messaging)also offer voice and video communication
 
 ###### SIP
 
@@ -1029,7 +1029,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 #### Usenet 新闻播报与新闻抓取
 
-Some [email clientsalso](#Email_clients) support NNTP. This section mainly lists NNTP-only client.
+Some [email clients](#Email_clients)also support NNTP. This section mainly lists NNTP-only client.
 
 See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/List_of_Usenet_newsreaders "wikipedia:List of Usenet newsreaders"), [Wikipedia:Comparison of Usenet newsreaders](https://en.wikipedia.org/wiki/Comparison_of_Usenet_newsreaders "wikipedia:Comparison of Usenet newsreaders").
 

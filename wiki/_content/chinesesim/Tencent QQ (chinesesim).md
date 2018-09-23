@@ -24,6 +24,7 @@ QQ 是腾讯公司开发的即时通讯软件，为 ICQ 的仿制品，是中国
     *   [5.1 字体配置](#.E5.AD.97.E4.BD.93.E9.85.8D.E7.BD.AE)
     *   [5.2 文件被占用](#.E6.96.87.E4.BB.B6.E8.A2.AB.E5.8D.A0.E7.94.A8)
     *   [5.3 xfce4(xfwm4)下无法输入表情](#xfce4.28xfwm4.29.E4.B8.8B.E6.97.A0.E6.B3.95.E8.BE.93.E5.85.A5.E8.A1.A8.E6.83.85)
+    *   [5.4 在非中文 locale 下无法输入中文](#.E5.9C.A8.E9.9D.9E.E4.B8.AD.E6.96.87_locale_.E4.B8.8B.E6.97.A0.E6.B3.95.E8.BE.93.E5.85.A5.E4.B8.AD.E6.96.87)
 *   [6 参阅](#.E5.8F.82.E9.98.85)
 
 ## 虚拟机
@@ -66,13 +67,7 @@ AppImage 是一种把应用打包成单一文件的格式。您可以在[[1]](ht
 
 您也可以使用[清风老师](http://phpcj.org/wineqq/) 提供的 Wine QQ 方案。
 
-**注意:**
-
-*   如果系统默认不是中文环境可能无法输入中文,解决方法是修改启动文件的`Exec`:
-
- `$HOME/.local/share/applications/wine-QQ.desktop`  `Exec=env LC_ALL=zh_CN.UTF-8 wine ".wine/drive_c/Program Files/QQ/Bin/QQ.exe"` 
-
-*   安装成功之后要取消勾选 QQ 的自动更新，以免自动更新导致不可用。
+**注意:** 安装成功之后要取消勾选 QQ 的自动更新，以免自动更新导致不可用。
 
 ### 手动 Wine 方案
 
@@ -146,11 +141,7 @@ $ wineconsole .wine/drive_c/run-qqlight.bat
 3.  中文字体显示见[#字体配置](#.E5.AD.97.E4.BD.93.E9.85.8D.E7.BD.AE)。
 4.  安装 TIM。
 
-**提示：**
-
-安装的tim可能没有在程序列表中生成图标。若要自行添加图标，新建一个名为tim.desktop的文件，写入以下内容：
-
- `tim.desktop` 
+**提示：** 安装的tim可能没有在程序列表中生成图标。若要自行添加图标，新建一个名为tim.desktop的文件，写入以下内容： `tim.desktop` 
 ```
 [Desktop Entry]
 Encoding=UTF-8
@@ -307,7 +298,7 @@ for_window [instance="QQ.exe"] border none
 
 如果中文的显示遇到问题，可以尝试先执行`winetricks fakechinese`。
 
-另请参阅 [Wine#Fonts](/index.php/Wine#Fonts "Wine") 和 [Font_configuration#Applications_without_fontconfig_support](/index.php/Font_configuration#Applications_without_fontconfig_support "Font configuration")。
+另请参阅 [Wine#Fonts](/index.php/Wine#Fonts "Wine") 和 [Font configuration#Applications without fontconfig support](/index.php/Font_configuration#Applications_without_fontconfig_support "Font configuration")。
 
 ### 文件被占用
 
@@ -332,7 +323,27 @@ wine '~/.wine/drive_c/Program Files/Tencent/TIM/Bin/TIM.exe'
 
 ### xfce4(xfwm4)下无法输入表情
 
-打开设置管理器-窗口管理器微调-焦点，取消勾选激活焦点防窃取和遵照标准的ICCCM焦点提示即可。 原因是表情窗口获取焦点时会发生不兼容现象。
+打开设置管理器-窗口管理器微调-焦点，取消勾选激活焦点防窃取和遵照标准的ICCCM焦点提示即可。
+
+原因是表情窗口获取焦点时会发生不兼容现象。
+
+### 在非中文 locale 下无法输入中文
+
+修改 `.desktop` 文件的 `Exec`，这个文件一般位于 `/usr/share/applications/` 或者 `~/.local/share/applications/`。
+
+在 `Exec` 行中加入 `env LC_ALL=zh_CN.UTF-8`。 例如，原来的 `Exec` 为：
+
+```
+Exec=".wine/drive_c/Program Files/QQ/Bin/QQ.exe"
+
+```
+
+则应改为：
+
+```
+Exec=env LC_ALL=zh_CN.UTF-8 wine ".wine/drive_c/Program Files/QQ/Bin/QQ.exe"
+
+```
 
 ## 参阅
 

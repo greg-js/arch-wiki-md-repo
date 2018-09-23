@@ -1350,7 +1350,7 @@ Newcomers may find it quite hard to find help for Mutt. Actually most of the top
 
 *   [The official Mutt website](http://www.mutt.org/)
 *   [Official Manual](http://www.mutt.org/doc/manual/)
-*   [The Mutt wiki](http://wiki.mutt.org/)
+*   [The Mutt wiki](https://gitlab.com/muttmua/mutt/wikis/home/)
 *   [Brisbin's great guide on how to setup different IMAP accounts with Mutt, offlineimap, msmtp](http://pbrisbin.com/posts/two_accounts_in_mutt/)
 *   [A Quick Guide to Mutt](http://srobb.net/mutt.html)
 *   [Steve Losh on Mutt, offlineimap, msmtp, notmuch (focused on Gmail)](http://stevelosh.com/blog/2012/10/the-homely-mutt/)

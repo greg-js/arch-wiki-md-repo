@@ -433,7 +433,7 @@ $ xrdb -query | grep dpi
 клавиш | операции
 с окнами | Примечание |
 | xte | [xautomation](https://www.archlinux.org/packages/?name=xautomation) | [xte(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xte.1) | Да | Нет | Также содержит инструменты для очистки экрана. Не может эмулировать F13+. |
-| xdo | [xdo-git](https://aur.archlinux.org/packages/xdo-git/) | [xdo(1)](https://github.com/baskerville/xdo/blob/master/doc/xdo.1.txt) | Нет | Да | Небольшая утилита X для выполнения элементарных действий над окнами. |
+| xdo | [xdo-git](https://aur.archlinux.org/packages/xdo-git/) | [xdo(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdo.1) | Нет | Да | Небольшая утилита X для выполнения элементарных действий над окнами. |
 | xdotool | [xdotool](https://www.archlinux.org/packages/?name=xdotool) | [xdotool(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdotool.1) | Да | Да | [Очень забагованный](https://github.com/jordansissel/xdotool/issues) и находится в неактивной разработке, например: имеет сломанный CLI parsing.[[2]](https://github.com/jordansissel/xdotool/issues/14#issuecomment-327968132)[[3]](https://github.com/jordansissel/xdotool/issues/71) |
 | xvkbd | [xvkbd](https://aur.archlinux.org/packages/xvkbd/) | [xvkbd(1)](http://t-sato.in.coocan.jp/xvkbd/#option) | Да | Нет | Виртуальная клавиатура для Xorg, также имеет параметр `-text` для отправки символов. |
 

@@ -480,7 +480,7 @@ Server = https://pkgbuilder-repo.chriswarrick.com/
 ### post-factum kernels
 
 *   **Maintainer**: [Oleksandr Natalenko aka post-factum](https://aur.archlinux.org/account/post-factum)
-*   **Upstream page**: [https://pfactum.github.io/pf-kernel/](https://pfactum.github.io/pf-kernel/)
+*   **Upstream page**: [https://gitlab.com/post-factum/pf-kernel/wikis/README](https://gitlab.com/post-factum/pf-kernel/wikis/README)
 *   **Description**: [pf-kernel](/index.php/Kernel#Major_patchsets "Kernel") and other packages by its developer, post-factum
 *   **Key-ID:**: 95C357D2AF5DA89D
 *   **Keyfile**: [https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/home_post-factum_kernels_Arch.key](https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/home_post-factum_kernels_Arch.key)

@@ -2,6 +2,7 @@ Related articles
 
 *   [Partitioning](/index.php/Partitioning "Partitioning")
 *   [Core utilities#lsblk](/index.php/Core_utilities#lsblk "Core utilities")
+
 *   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
 *   [fsck](/index.php/Fsck "Fsck")
 *   [fstab](/index.php/Fstab "Fstab")

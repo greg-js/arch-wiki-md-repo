@@ -100,7 +100,7 @@ Almost everything works out of the box. Most of the hardware is based on the Int
 
 The [kernel module](/index.php/Kernel_module "Kernel module") `thinkpad_acpi` picks up most of the sensors. The kernel module `tp_smapi` is not currently supported. PCIe ASPM does not currently work.
 
-[Udev](/index.php/Udev "Udev") does not not notify whenever battery discharges by 1%, but it does notify at 80%, 20%, 5%, 4% and 0%. To take advantage of this, see (Suspend On Low Battery [Laptop#hibernate on low battery level](/index.php/Laptop#hibernate_on_low_battery_level "Laptop"))
+[Udev](/index.php/Udev "Udev") does not not notify whenever battery discharges by 1%, but it does notify at 80%, 20%, 5%, 4% and 0%. To take advantage of this, see (Suspend On Low Battery [Laptop#Hibernate on low battery level](/index.php/Laptop#Hibernate_on_low_battery_level "Laptop"))
 
 ### Wake From Suspend
 

@@ -6,7 +6,7 @@
 
 [The Arch Way](/index.php/The_Arch_Way_(Suomi) "The Arch Way (Suomi)")
 
-[Arch verrattuna muihin jakeluihin](/index.php/Arch_Compared_to_Other_Distributions_(Suomi) "Arch Compared to Other Distributions (Suomi)")
+[Arch verrattuna muihin jakeluihin](/index.php/Arch_compared_to_other_distributions_(Suomi) "Arch compared to other distributions (Suomi)")
 
 [Usein kysytyt kysymykset](/index.php/FAQ_(Suomi) "FAQ (Suomi)")
 

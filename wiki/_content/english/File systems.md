@@ -2,6 +2,7 @@ Related articles
 
 *   [Partitioning](/index.php/Partitioning "Partitioning")
 *   [Core utilities#lsblk](/index.php/Core_utilities#lsblk "Core utilities")
+
 *   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
 *   [fsck](/index.php/Fsck "Fsck")
 *   [fstab](/index.php/Fstab "Fstab")
@@ -30,7 +31,7 @@ Individual drive partitions can be setup using one of the many different availab
 *   [3 Create a file system](#Create_a_file_system)
 *   [4 Mount a file system](#Mount_a_file_system)
     *   [4.1 List mounted file systems](#List_mounted_file_systems)
-    *   [4.2 Umount a file system](#Umount_a_file_system)
+    *   [4.2 Unmount a file system](#Unmount_a_file_system)
 *   [5 See also](#See_also)
 
 ## Types of file systems
@@ -262,7 +263,7 @@ sda
 
 ```
 
-Mounted file systems **must** be [unmounted](#Umount_a_file_system) before proceeding. In the above example an existing filesystem is on `/dev/sda2` and is mounted at `/mnt`. It would be unmounted with:
+Mounted file systems **must** be [unmounted](#Unmount_a_file_system) before proceeding. In the above example an existing filesystem is on `/dev/sda2` and is mounted at `/mnt`. It would be unmounted with:
 
 ```
 # umount /dev/sda2
@@ -342,7 +343,7 @@ $ findmnt /dev/sda1
 
 *findmnt* gathers information from `/etc/fstab`, `/etc/mtab`, and `/proc/self/mounts`.
 
-### Umount a file system
+### Unmount a file system
 
 To unmount a file system use [umount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/umount.8). Either the device containing the file system (e.g., `/dev/sda1`) or the mount point (e.g., `/mnt`) can be specified:
 

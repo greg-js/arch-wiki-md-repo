@@ -355,7 +355,7 @@ Emacs is known for featuring options beyond the duties of regular text editing, 
 
 ### Mouse support
 
-Using a mouse with the console for copy-paste operations can be preferred over [GNU Screen](/index.php/GNU_Screen "GNU Screen")'s traditional copy mode. Refer to [Console mouse support](/index.php/Console_mouse_support "Console mouse support") for comprehensive directions. Note that you can already do this in [terminal emulators](/index.php/Terminal_emulators "Terminal emulators") with the [clipboard](/index.php/Clipboard "Clipboard").
+Using a mouse with the console for copy-paste operations can be preferred over [GNU Screen](/index.php/GNU_Screen "GNU Screen")'s traditional copy mode. Refer to [General purpose mouse](/index.php/General_purpose_mouse "General purpose mouse") for comprehensive directions. Note that you can already do this in [terminal emulators](/index.php/Terminal_emulator "Terminal emulator") with the [clipboard](/index.php/Clipboard "Clipboard").
 
 ### Scrollback buffer
 

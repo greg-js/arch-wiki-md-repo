@@ -90,17 +90,13 @@ The nvme SSD is a Toshiba KXG50ZNV256G, KXG50ZNV512G or KXG50ZNV1T02\. The stock
 
 ## Wifi
 
-The Wifi adapter is a Killer card with contains a Qualcomm Atheros QCA6174 module. It should work out of the box with the `ath10k_pci` driver in recent [linux](https://www.archlinux.org/packages/?name=linux) kernels. (In my case) the Wifi firmware sometimes crashes when waking up from suspend. (firmware version `WLAN.RM.4.4.1-00051-QCARMSWP-1`; [dmesg](https://gist.github.com/dsprenkels/eb1c7095385fe16ee9b128ab0834be21)) (In my case) the crash has not again occurred after booting `linux-4.15.7` or newer.
-
-If you experience a firmware crash you can try to update the ath10k firmware. [Here are the Ubuntu instructions from Dell](https://www.dell.com/support/article/us/en/19/sln306440/killer-n1535-wireless-firmware-manual-update-guide-for-ubuntu-systems?lang=en); the [latest firmware releases can be found here](https://github.com/kvalo/ath10k-firmware). Usually it takes some time for the latest one to get into the linux-firmware packages.
+The Wifi adapter contains a Qualcomm Atheros QCA6174 module. It should work out of the box with the `ath10k_pci` driver in recent [linux](https://www.archlinux.org/packages/?name=linux) kernels.
 
 ## Bluetooth
 
 The Bluetooth adapter sometimes becomes unavailable after waking up from suspend and can even stay deactivated and invisible after a warm reboot.
 
 ## Keyboard
-
-With older firmware, some keys were skipped when typing fast. The issue is fixed in system firmware 1.3.3.
 
 The keyboard backlight has a feature that makes it automatically turn off after a given timeout. This timeout can be adjusted by writing into `/sys/class/leds/dell\:\:kbd_backlight/stop_timeout`. For example,
 
@@ -136,14 +132,6 @@ Package temperature above threshold, cpu clock throttled (total events = 971)
 
 This can be resolved using [lenovo-throttling-fix-git](https://aur.archlinux.org/packages/lenovo-throttling-fix-git/). Despite originally conceived to resolve the same issue with Lenovo laptops, it works with the XPS 9370 (and should work well with other Skylake or newer laptops).
 
-To install run (if you have [yay](https://github.com/Jguer/yay) installed which is one of the many [AUR helpers](https://wiki.archlinux.org/index.php/AUR_helpers)):
-
-```
- yay -S lenovo-throttling-fix-git
- sudo systemctl enable --now lenovo_fix.service
-
-```
-
 ## Thermal Modes / Fan profiles
 
 Just like in Windows by using Dell Power Manager you can set the thermal configuration and behaviour of the fans of your machine. This is done within a terminal with the following commands.
@@ -151,27 +139,27 @@ Just like in Windows by using Dell Power Manager you can set the thermal configu
 To find out what thermal mode is set type:
 
 ```
- sudo smbios-thermal-ctl -g
+# smbios-thermal-ctl -g
 
 ```
 
 To find all available thermal modes type:
 
 ```
- sudo smbios-thermal-ctl -i
+# smbios-thermal-ctl -i
 
 ```
 
 And finally to set the desired thermal mode that you identified with the command before type:
 
 ```
- sudo smbios-thermal-ctl --set-thermal-mode=THERMAL_MODE
+# smbios-thermal-ctl --set-thermal-mode=THERMAL_MODE
 
 ```
 
 ## Power Saving
 
-To save more battery use [tlp](https://wiki.archlinux.org/index.php/TLP) package AND/OR [Powertop](https://wiki.archlinux.org/index.php/Powertop).
+To save more battery use [tlp](/index.php/Tlp "Tlp") package AND/OR [Powertop](/index.php/Powertop "Powertop").
 
 You can monitor the used power and also the temperature of your machine with the [s-tui](https://aur.archlinux.org/packages/s-tui/) tool.
 

@@ -104,7 +104,7 @@ Using the `discard` option for a mount in `/etc/fstab` enables continuous TRIM i
 
 ```
 
-**Note:** Specifying the discard mount option in `/etc/fstab` does not work on XFS on `/` because it gets remounted on boot. According to [this thread](https://bbs.archlinux.org/viewtopic.php?id=143254) it has to be set using the `rootflags=discard` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
+**Note:** Specifying the `discard` mount option in `/etc/fstab` will not work on the `/` filesystem because it is already mounted when `/etc/fstab` is read. The `discard` option either needs to be written in the filesystem's metadata as a default option ([ext4](/index.php/Ext4 "Ext4") and [F2FS](/index.php/F2FS "F2FS") only) or set using the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `rootflags=discard`. [[8]](https://bbs.archlinux.org/viewtopic.php?id=143254)
 
 On the ext4 filesystem, the `discard` flag can also be set as a [default mount option](/index.php/Access_Control_Lists#Enabling_ACL "Access Control Lists") using *tune2fs*:
 
@@ -169,7 +169,7 @@ Operations like formatting the device or installing operating systems are not af
 
 The above output shows the device is **not locked** by a HDD-password on boot and the **frozen** state safeguards the device against malwares which may try to lock it by setting a password to it at runtime.
 
-If you intend to set a password to a "frozen" device yourself, a motherboard BIOS with support for it is required. A lot of notebooks have support, because it is required for [hardware encryption](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption "wikipedia:Hardware-based full disk encryption"), but support may not be trivial for a desktop/server board. For the Intel DH67CL/BL motherboard, for example, the motherboard has to be set to "maintenance mode" by a physical jumper to access the settings (see [[8]](https://sstahlman.blogspot.in/2014/07/hardware-fde-with-intel-ssd-330-on.html?showComment=1411193181867#c4579383928221016762), [[9]](https://communities.intel.com/message/251978#251978)).
+If you intend to set a password to a "frozen" device yourself, a motherboard BIOS with support for it is required. A lot of notebooks have support, because it is required for [hardware encryption](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption "wikipedia:Hardware-based full disk encryption"), but support may not be trivial for a desktop/server board. For the Intel DH67CL/BL motherboard, for example, the motherboard has to be set to "maintenance mode" by a physical jumper to access the settings (see [[9]](https://sstahlman.blogspot.in/2014/07/hardware-fde-with-intel-ssd-330-on.html?showComment=1411193181867#c4579383928221016762), [[10]](https://communities.intel.com/message/251978#251978)).
 
 **Warning:** Do not try to change the above **lock** security settings with `hdparm` unless you know exactly what you are doing.
 
@@ -233,7 +233,7 @@ ADATA has a utility available for Linux (i686) on their [support page](http://ww
 
 Crucial provides an option for updating the firmware with an ISO image. These images can be found after selecting the product on their [SSD support page](http://www.crucial.com/usa/en/support-ssd) and downloading the "Manual Boot File."
 
-**Note:** ISO images provided by Crucial does not seem to be hybrid. If you will use just the `dd` command to copy the image to some device, the [MBR](/index.php/MBR "MBR") won't be present, making such device unbootable.
+**Note:** ISO images provided by Crucial does not seem to be hybrid. If you will use just the `dd` command to copy the image to some device, the [MBR](/index.php/MBR "MBR") will not be present, making such device unbootable.
 
 Owners of an M4 Crucial model, may check if a firmware upgrade is needed with `smartctl`.
 

@@ -37,7 +37,7 @@ The TUs are governed using the [TU bylaws](https://aur.archlinux.org/trusted-use
     *   Attach one SSH public key. If you do not have one, use `ssh-keygen` to generate one. Check the [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") wiki page for more information about SSH keys.
     *   Ask him to whitelist you from arch-dev-public.
     *   Tell him if you want an @archlinux.org email.
-    *   All the information based on this [template](https://www.archlinux.org/people/trusted-users/) to have access on dev interface (archweb).
+    *   All the information based on this [template](https://www.archlinux.org/people/trusted-users/) to have access on dev interface (archweb). If you already have an account, ask to be added to the Trusted Users group.
 10.  Ask your sponsor:
     *   to give you TU status on the AUR.
     *   to open a new task in the "Keyring" project of the bug tracker following the instructions in [this message](https://lists.archlinux.org/pipermail/arch-dev-public/2013-September/025456.html) in order to have your PGP key signed by three master key holders.

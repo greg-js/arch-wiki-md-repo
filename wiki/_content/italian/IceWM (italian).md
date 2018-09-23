@@ -89,6 +89,6 @@ Si noti che IceWM è un window manager puro, quindi non include un file manager.
 ## Articoli correlati
 
 *   [Xinitrc](/index.php/Xinitrc_(Italiano) "Xinitrc (Italiano)")
-*   [Sito ufficiale di IceWM](http://www.icewm.org/)
+*   [Sito ufficiale di IceWM](https://ice-wm.org/)
 *   [IceWM - The Cool Window Manager](http://www.osnews.com/story.php/7774/IceWM--The-Cool-Window-Manager/) - Introduzione dettagliata su OSNews
 *   [IceWM - A desktop for Windows emigrants](http://polishlinux.org/apps/window-managers/icewm-a-desktop-for-windows-emmigrants/) - Panoramica e tutorial da polishlinux.org

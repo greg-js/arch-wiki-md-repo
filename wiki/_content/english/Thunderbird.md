@@ -226,7 +226,7 @@ Thunderbird will generally follow GTK theming in use on your system. However, tw
     2.  Select the Calendar tab
     3.  Check `Optimize colors for accessibility`
 
-Further customization can be attained by creating and editing a `userchrome.css` file in a process similar to Firefox. See [Firefox/Tweaks#General_user_interface_CSS_settings](/index.php/Firefox/Tweaks#General_user_interface_CSS_settings "Firefox/Tweaks") and [Mozillazine's userchrome page](http://kb.mozillazine.org/UserChrome.css).
+Further customization can be attained by creating and editing a `userchrome.css` file in a process similar to Firefox. See [Firefox/Tweaks#General user interface CSS settings](/index.php/Firefox/Tweaks#General_user_interface_CSS_settings "Firefox/Tweaks") and [Mozillazine's userchrome page](http://kb.mozillazine.org/UserChrome.css).
 
 ## Troubleshooting
 

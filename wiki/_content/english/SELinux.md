@@ -48,8 +48,8 @@ SELinux is not officially supported (see [[1]](https://lists.archlinux.org/piper
 Summary of changes in AUR as compared to official core packages:
 
 | Name | Status and comments |
-| linux | Need following [kernel_parameters](/index.php/Kernel_parameters "Kernel parameters") at boot: `selinux=1 security=selinux` |
-| linux-hardened | Need following [kernel_parameters](/index.php/Kernel_parameters "Kernel parameters") at boot: `selinux=1 security=selinux` |
+| linux | Need following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") at boot: `selinux=1 security=selinux` |
+| linux-hardened | Need following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") at boot: `selinux=1 security=selinux` |
 | coreutils | Need a rebuild with `--with-selinux` flag to link with libselinux |
 | cronie | Need a rebuild with `--with-selinux` flag |
 | dbus | Need a rebuild with `--enable-libaudit` and `--enable-selinux` flags |

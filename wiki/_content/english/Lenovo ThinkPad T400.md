@@ -217,7 +217,7 @@ Additionally, there is a patch for the audio driver for conexant's chipsets prov
 
 ## Multimedia Keys
 
-The screen brightness controls and the flashlight work without any tweaking. The other keys can be mapped using [xev](/index.php/Extra_keyboard_keys#In_Xorg "Extra keyboard keys") and xbindkeys. By following [this guide](http://wiki.linuxquestions.org/wiki/Configuring_keyboards#Enabling_Keyboard_Multimedia_Keys) you should be able to get everything working, but here's summary :
+The screen brightness controls and the flashlight work without any tweaking. The other keys can be mapped using [xev](/index.php/Xev "Xev") and xbindkeys. By following [this guide](http://wiki.linuxquestions.org/wiki/Configuring_keyboards#Enabling_Keyboard_Multimedia_Keys) you should be able to get everything working, but here's summary :
 
 *   First, open a terminal and type `xev`. This starts the "Event tester".
 *   Place your cursor on the "Event tester" window.

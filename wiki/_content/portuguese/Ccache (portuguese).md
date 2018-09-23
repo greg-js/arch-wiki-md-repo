@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Ccache](/index.php/Ccache "Ccache"). Data da última tradução: 2018-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Ccache&diff=0&oldid=541930) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Ccache](/index.php/Ccache "Ccache"). Data da última tradução: 2018-09-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Ccache&diff=0&oldid=542513) na versão em inglês.
 
 Artigos relacionados
 
@@ -25,7 +25,7 @@ Artigos relacionados
 
 ## Instalação
 
-[Instale](/index.php/Instale "Instale") o pacote [ccache](https://www.archlinux.org/packages/?name=ccache). Veja [ccache(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ccache.1) para detalhes.
+[Instale](/index.php/Instale "Instale") o pacote [ccache](https://www.archlinux.org/packages/?name=ccache).
 
 ## Configuração
 
@@ -34,6 +34,8 @@ O comportamento padrão pode ser sobrescrito pelos arquivos de configuração. P
 1.  Variáveis de ambiente
 2.  Arquivo de configuração específico do cache (`$HOME/.ccache/ccache.conf`)
 3.  Arquivo de configuração para todo sistema (`/etc/ccache.conf`)
+
+Veja [ccache(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ccache.1) para detalhes.
 
 ### Habilitar ccache para makepkg
 

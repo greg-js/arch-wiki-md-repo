@@ -85,7 +85,7 @@ The size of our community led to the creation of multiple IRC channels. To get a
 | [#archlinux-reproducible](ircs://chat.freenode.net/archlinux-reproducible) | Discussion channel for achieving reproducible builds. |
 | [#archlinux-security](ircs://chat.freenode.net/archlinux-security) | Discussion of security issues within Arch packages. |
 | [#archlinux-testing](ircs://chat.freenode.net/archlinux-testing) | Discussion channel regarding the testing repositories. |
-| [#archlinux-wiki](ircs://chat.freenode.net/archlinux-wiki) | Discussion about [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About"), its articles and the [Arch Linux Forums](https://bbs.archlinux.org/). |
+| [#archlinux-wiki](ircs://chat.freenode.net/archlinux-wiki) | Discussion about [ArchWiki](/index.php/ArchWiki "ArchWiki"), its articles and the [Arch Linux Forums](https://bbs.archlinux.org/). |
 | [#archlinux-women](ircs://chat.freenode.net/archlinux-women) | Discussing gender and equality, mostly in English. |
 | [#archlinux-proaudio](ircs://chat.freenode.net/archlinux-proaudio) | Discussion of [Arch Linux Pro Audio](/index.php/Professional_audio "Professional audio"). Users also in the unofficial #archaudio |
 

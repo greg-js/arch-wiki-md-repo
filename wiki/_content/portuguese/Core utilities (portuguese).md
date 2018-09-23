@@ -63,9 +63,9 @@ Os redirecionamentos rm, mv, cp e shell excluem ou sobrescrevem arquivos sem per
 Essa tabela lista utilitários principais que geralmente são úteis.
 
 | Pacote | Comando | Descrição | Documentação | Alternativas |
-| embutido no shell | alias | define ou exibe aliases | [alias(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alias.1) |
-| type | imprime o tipo de um comando | [type(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/type.1) | [which(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/which.1) |
-| time | obtenha o tempo de um comando | [time(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/time.1) |
+| embutido no shell | alias | define ou exibe aliases | [alias(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alias.1p) |
+| type | imprime o tipo de um comando | [type(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/type.1p) | [which(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/which.1) |
+| time | obtenha o tempo de um comando | [time(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/time.1p) |
 | GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) | tee | lê a stdin e escreve para stdout e arquivos | [tee(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tee.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/tee-invocation.html) |
 | mktemp | cria um arquivo ou diretório temporário | [mktemp(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mktemp.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html) |
 | od | despeja arquivos em octal e outros formatos | [od(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/od.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/od-invocation.html) | [hexdump(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hexdump.1), [vim](/index.php/Vim "Vim")'s [xxd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xxd.1) |

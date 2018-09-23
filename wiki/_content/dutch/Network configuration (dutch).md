@@ -304,7 +304,7 @@ GUI | [Archiso](/index.php/Archiso "Archiso") [[1]](https://git.archlinux.org/ar
 | [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") | No | No | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | `systemd-networkd.service`, `systemd-resolved.service` |
 | [Wicd](/index.php/Wicd "Wicd") | Yes | Yes | No | `wicd-curses` | `wicd.service` |
 
-Zie ook de [List of applications#Network_managers](/index.php/List_of_applications#Network_managers "List of applications").
+Zie ook de [List of applications#Network managers](/index.php/List_of_applications#Network_managers "List of applications").
 
 ## Bepaal de hostnaam
 

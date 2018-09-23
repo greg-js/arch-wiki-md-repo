@@ -352,6 +352,8 @@ The *pwck* command can be used to verify the integrity of the user database. It 
 
 ## Group management
 
+	*"Group" redirects here. For package groups, see [Package group](/index.php/Package_group "Package group").*
+
 `/etc/group` is the file that defines the groups on the system (see [group(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) for details).
 
 Display group membership with the `groups` command:

@@ -1,4 +1,4 @@
-**Welcome to the [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About"): your source for Arch Linux documentation on the web.**
+**Welcome to the [ArchWiki](/index.php/ArchWiki "ArchWiki"): your source for Arch Linux documentation on the web.**
 
 Visit the [Table of contents](/index.php/Table_of_contents "Table of contents") for a listing of article categories.
 
@@ -52,9 +52,9 @@ Visit the [Table of contents](/index.php/Table_of_contents "Table of contents") 
 
 	Find clarifications if you struggle to understand instructions in some articles.
 
-	[Help:Searching](/index.php/Help:Searching "Help:Searching")
+	[Help:Browsing](/index.php/Help:Browsing "Help:Browsing")
 
-	Try using the search box at the top of the page; follow the link for more tricks.
+	How to search the wiki, find related articles and view the wiki offline.
 
 	[ArchWiki:Contributing](/index.php/ArchWiki:Contributing "ArchWiki:Contributing")
 

@@ -141,7 +141,7 @@ Swap:         1537          0       1537
 
 ### Q) 시스템 여유공간이 다 어디로 갔죠?
 
-**A)** 대답은 여러분의 시스템이 어떤가에 따라 달라집니다. 답을 찾아줄 수도 있는 [좋은 유틸리티들](/index.php/List_of_applications#Disk_usage_display_programs "List of applications")이 있습니다.
+**A)** 대답은 여러분의 시스템이 어떤가에 따라 달라집니다. 답을 찾아줄 수도 있는 [좋은 유틸리티들](/index.php/List_of_applications#Disk_usage_display "List of applications")이 있습니다.
 
 ## 패키지 관리
 

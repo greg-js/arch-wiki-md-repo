@@ -35,25 +35,27 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [6.2 Thunderbird](#Thunderbird)
     *   [6.3 Wine applications](#Wine_applications)
     *   [6.4 Skype](#Skype)
-    *   [6.5 Spotify](#Spotify)
-    *   [6.6 Zathura document viewer](#Zathura_document_viewer)
-    *   [6.7 Sublime Text 3](#Sublime_Text_3)
-    *   [6.8 IntelliJ IDEA](#IntelliJ_IDEA)
-    *   [6.9 NetBeans](#NetBeans)
-    *   [6.10 Gimp 2.8](#Gimp_2.8)
-    *   [6.11 Steam](#Steam)
-        *   [6.11.1 Official HiDPI support](#Official_HiDPI_support)
-        *   [6.11.2 Unofficial](#Unofficial)
-    *   [6.12 Java applications](#Java_applications)
-    *   [6.13 Mono applications](#Mono_applications)
-    *   [6.14 MATLAB](#MATLAB)
-    *   [6.15 VirtualBox](#VirtualBox)
-    *   [6.16 Zoom](#Zoom)
-    *   [6.17 Unsupported applications](#Unsupported_applications)
+    *   [6.5 Slack](#Slack)
+    *   [6.6 Spotify](#Spotify)
+    *   [6.7 Zathura document viewer](#Zathura_document_viewer)
+    *   [6.8 Sublime Text 3](#Sublime_Text_3)
+    *   [6.9 IntelliJ IDEA](#IntelliJ_IDEA)
+    *   [6.10 NetBeans](#NetBeans)
+    *   [6.11 Gimp 2.8](#Gimp_2.8)
+    *   [6.12 Steam](#Steam)
+        *   [6.12.1 Official HiDPI support](#Official_HiDPI_support)
+        *   [6.12.2 Unofficial](#Unofficial)
+    *   [6.13 Java applications](#Java_applications)
+    *   [6.14 Mono applications](#Mono_applications)
+    *   [6.15 MATLAB](#MATLAB)
+    *   [6.16 VirtualBox](#VirtualBox)
+    *   [6.17 Zoom](#Zoom)
+    *   [6.18 Unsupported applications](#Unsupported_applications)
 *   [7 Multiple displays](#Multiple_displays)
     *   [7.1 Side display](#Side_display)
     *   [7.2 Multiple external monitors](#Multiple_external_monitors)
     *   [7.3 Mirroring](#Mirroring)
+    *   [7.4 Scripts](#Scripts)
 *   [8 Linux console](#Linux_console)
 *   [9 See also](#See_also)
 
@@ -368,6 +370,16 @@ and change the "dpi" setting found in the "Graphics" tab. This only affects the 
 
 Skype for Linux ([skypeforlinux-stable-bin](https://aur.archlinux.org/packages/skypeforlinux-stable-bin/) package) uses [#GDK 3 (GTK+ 3)](#GDK_3_.28GTK.2B_3.29).
 
+### Slack
+
+Slack ([slack-desktop](https://aur.archlinux.org/packages/slack-desktop/)), like all [Electron](https://electronjs.org/) apps, can be configured to use a custom scaling value by adding a `--force-device-scale-factor` flag to the .desktop file. This is normally located at `/usr/share/applications/`. The flag should be added to the line beginning with "Exec=". For example:
+
+ `/usr/share/applications/slack.desktop` 
+```
+Exec=env LD_PRELOAD=/usr/lib/libcurl.so.3 /usr/bin/slack --force-device-scale-factor=1.5 %U
+
+```
+
 ### Spotify
 
 You can change scale factor by simple `Ctrl++` for zoom in, `Ctrl+-` for zoom out and `Ctrl+0` for default scale. Scaling setting will be saved in `~/.config/spotify/Users/YOUR-SPOTIFY-USER-NAME/prefs`:
@@ -504,47 +516,11 @@ The HiDPI setting applies to the whole desktop, so non-HiDPI external displays s
 One workaround is to use [xrandr](/index.php/Xrandr "Xrandr")'s scale option. To have a non-HiDPI monitor (on DP1) right of an internal HiDPI display (eDP1), one could run:
 
 ```
-xrandr --output eDP-1 --auto --output DP-1 --auto --scale 2x2 --right-of eDP-1
+$ xrandr --output eDP-1 --auto --output DP-1 --auto --scale 2x2 --right-of eDP-1
 
 ```
 
-When extending above the internal display, you may see part of the internal display on the external monitor. In that case, specify the position manually, e.g. using [this script](https://gist.github.com/wvengen/178642bbc8236c1bdb67).
-
-You may run into problems with your mouse not being able to reach the whole screen. That is a [known bug](https://bugs.freedesktop.org/show_bug.cgi?id=39949) with an xserver-org patch (or try the panning option, but that might cause other problems).
-
-An example of the panning syntax for a 4k laptop with an external 1920x1080 monitor to the right:
-
-```
-xrandr --output eDP-1 --auto --output HDMI-1 --auto --panning 3840x2160+3840+0 --scale 2x2 --right-of eDP-1
-
-```
-
-Generically if your HiDPI monitor is AxB pixels and your regular monitor is CxD and you are scaling by [ExF], the commandline for right-of is:
-
-```
-xrandr --output eDP-1 --auto --output HDMI-1 --auto --panning [C*E]x[D*F]+[A]+0 --scale [E]x[F] --right-of eDP-1
-
-```
-
-If panning is not a solution for you it may be better to set position of monitors and fix manually the total display screen.
-
-An example of the syntax for a 2560x1440 WQHD 210 DPI laptop monitor (eDP1) using native resolution placed below a 1920x1080 FHD 96 DPI external monitor (HDMI) scaled to match global DPI settings:
-
-```
-xrandr --output eDP-1 --auto --pos 0x1458 --output HDMI-1 --scale 1.35x1.35 --auto --pos 0x0 --fb 2592x2898
-
-```
-
-The total screen size (--fb) and positioning (--pos) are to be calculated taking into account the scaling factor.
-
-In this case laptop monitor (eDP1) has no scaling and uses native mode for resolution so it will total 2560x1440, but external monitor (HDMI) is scaled and it has to be considered a larger screen so (1920*1.35)x(1080*1.35) from where the eDP1 Y position came 1080*1.35=1458 and the total screen size: since one on top of the other X=(greater between eDP1 and HDMI, so 1920*1.35=2592) and Y=(sum of the calculated heights of eDP1 and HDMI, so 1440+(1080*1.35)=2898).
-
-Generically if your hidpi monitor is AxB pixels and your regular monitor is CxD and you are scaling by [ExF] and hidpi is placed below regular one, the commandline for right-of is:
-
-```
-xrandr --output eDP-1 --auto --pos 0x(DxF) --output HDMI-1 --auto --scale [E]x[F] --pos 0x0 --fb [greater between A and (C*E)]x[B+(D*F)]
-
-```
+When extending above the internal display, you may see part of the internal display on the external monitor. In that case, specify the position manually.
 
 You may adjust the "sharpness" parameter on your monitor settings to adjust the blur level introduced with scaling.
 
@@ -555,7 +531,7 @@ You may adjust the "sharpness" parameter on your monitor settings to adjust the 
 There might be some problems in scaling more than one external monitors which have lower dpi than the built-in HiDPI display. In that case, you may want to try downscaling the HiDPI display instead, with e.g.
 
 ```
-xrandr --output eDP1 --scale 0.5x0.5 --output DP2 --right-of eDP1 --output HDMI1 --right-of DP2
+$ xrandr --output eDP1 --scale 0.5x0.5 --output DP2 --right-of eDP1 --output HDMI1 --right-of DP2
 
 ```
 
@@ -565,28 +541,35 @@ In addition, when you downscale the HiDPI display, the font on the HiDPI display
 
 If all you want is to mirror ("unify") displays, this is easy as well:
 
-With AxB your native HiDPI resolution (for ex 3200x1800) and CxD your external screen resolution (for ex 1920x1200)
+With AxB your native HiDPI resolution (for ex 3200x1800) and CxD your external screen resolution (e.g. 1920x1200)
 
 ```
-xrandr --output HDMI --scale [A/C]x[B/D]
+$ xrandr --output HDMI --scale [A/C]x[B/D]
 
 ```
 
 In this example which is QHD (3200/1920 = 1.66 and 1800/1200 = 1.5)
 
 ```
-xrandr --output HDMI --scale 1.66x1.5
+$ xrandr --output HDMI --scale 1.66x1.5
 
 ```
 
 For UHD to 1080p (3840/1920=2 2160/1080=2)
 
 ```
-xrandr --output HDMI --scale 2x2
+$ xrandr --output HDMI --scale 2x2
 
 ```
 
 You may adjust the "sharpness" parameter on your monitor settings to adjust the blur level introduced with scaling.
+
+### Scripts
+
+There are several scripts which automate the commands described above.
+
+*   [This script](https://gist.github.com/wvengen/178642bbc8236c1bdb67) extend a non-HiDPI external display above a HiDPI internal display.
+*   [xrandr-extend](https://github.com/ashwinvis/xrandr-extend).
 
 ## Linux console
 

@@ -48,7 +48,7 @@ There are various ways to transfer files between a computer and an Android devic
 *   special USB sticks / regular USB stick with adapter
 *   [Bluetooth](/index.php/Bluetooth "Bluetooth")
 *   Arch Linux software with Android counterparts
-    *   client or server for protocols that can be used to transfer files (eg. [SSH](/index.php/SSH "SSH"), [FTP](/index.php/Category:File_Transfer_Protocol "Category:File Transfer Protocol"), [Samba](/index.php/Samba "Samba") or HTTP)
+    *   client or server for protocols that can be used to transfer files (eg. [SSH](/index.php/SSH "SSH"), [FTP](/index.php/FTP "FTP"), [Samba](/index.php/Samba "Samba") or HTTP)
     *   [KDE Connect](/index.php/KDE_Connect "KDE Connect") ([kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect)) – integrates your Android device with the KDE desktop (featuring synced notifications & clipboard, multimedia control, and file/URL sharing).
     *   [sendanywhere](https://aur.archlinux.org/packages/sendanywhere/) – cross-platform file sharing
     *   [cloud synchronization clients](/index.php/Cloud_synchronization_clients "Cloud synchronization clients")

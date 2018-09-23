@@ -5,7 +5,7 @@ Related articles
 *   [WeeChat](/index.php/WeeChat "WeeChat")
 *   [HexChat](/index.php/HexChat "HexChat")
 
-[irssi](https://irssi.org/) is a modular, ncurses based IRC (Internet Relay Chat) client. It also supports [SILC](https://en.wikipedia.org/wiki/SILC_(protocol) and [ICB](http://www.icb.net/_jrudd/icb/protocol.html) protocols via plugins.
+[Irssi](https://irssi.org/) is a modular, ncurses based [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat and [ICB](http://www.icb.net/_jrudd/icb/protocol.html) protocols via plugins.
 
 ## Contents
 
@@ -37,33 +37,33 @@ Several scripts are available in the AUR under [**irssi-script**](https://aur.ar
 
 For a detailed introduction see the [official documentation](https://irssi.org/documentation).
 
-**Note:** This section assumes you already know the basics of [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat "wikipedia:Internet Relay Chat") and have used other clients in the past
+**Note:** This section assumes you already know the basics of IRC and have used other clients in the past
 
-A terminal multiplexer such as [tmux](/index.php/Tmux "Tmux") or [Screen](/index.php/Screen "Screen") is recommended. It allows the user to easily disconnect and reconnect to a session, and scripts such as [nicklist.pl](http://wouter.coekaerts.be/site/irssi/nicklist) depend on a secondary window. To start irssi, run:
+A [terminal multiplexer](/index.php/Terminal_multiplexer "Terminal multiplexer") such as [tmux](/index.php/Tmux "Tmux") or [Screen](/index.php/Screen "Screen") is recommended. It allows the user to easily disconnect and reconnect to a session, and scripts such as [nicklist.pl](http://wouter.coekaerts.be/site/irssi/nicklist) depend on a secondary window. To start irssi, run:
 
 ```
 $ irssi
 
 ```
 
+See also [irssi(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/irssi.1).
+
 ### Commands
 
+Irssi commands start with a slash and are case-insensitive. You can find out about them with the built-in `/help` pages, which are also [available online](https://irssi.org/documentation/help/).
+
 | Command | Description |
-| `/server`, `/s` | Change the server of the current network. |
-| `/connect`, `/c` | Open a new connection to a server. This is used to connect to multiple servers simultaneously (`Ctrl+Shift+x` switches between multiple servers). |
-| `/disconnect`, `/dc` | Closes the current connection to a server. |
+| [/help](https://irssi.org/documentation/help/help/) | List all commands or describe a given command. |
+| [/network](https://irssi.org/documentation/help/network/) | Manage your IRC networks. |
+| [/server](https://irssi.org/documentation/help/server/) | Manage your IRC servers. |
+| [/connect](https://irssi.org/documentation/help/connect/) | Connect to a server or network. |
+| [/disconnect](https://irssi.org/documentation/help/disconnect/) | Closes the current connection to a server. |
 | `ALT+(1-0,q-p,etc)` | Changes the currently active window. `Ctrl+n` cycles to the next window, `Ctrl+p` to the previous window. |
-| `/window 1` | Go to the first window. Windows are ordered by the first two rows on the keyboard: (1-0), (q-p). |
-| `/window close`, `/wc` | Close the current window. |
-| `/window move 1` | Move the current window to the first window position. |
-| `/layout save` | Save the current window positions for later use. |
-| `/statusbar` | Show interface elements. |
-| `/statusbar topic disable` | Removes the topic bar. |
-| `/statusbar window placement top` | Moves the windows list to the top. |
-| `/statusbar window remove time` | Removes the time element from the window bar. |
-| `/set` | Show a list of current settings. |
-| `/help` | Describe a provided parameter. |
-| `/alias` | Create a shortcut. |
+| [/window](https://irssi.org/documentation/help/window/) | Manage your irssi windows. |
+| [/layout](https://irssi.org/documentation/help/layout/) | Save or delete your window configuration. |
+| [/statusbar](https://irssi.org/documentation/help/statusbar/) | Manage the statusbars. |
+| [/set](https://irssi.org/documentation/help/set/) | View or change settings. |
+| [/alias](https://irssi.org/documentation/help/alias/) | Manage your aliases. |
 
 ## Configuration
 
@@ -74,13 +74,13 @@ Personal configuration file should be located at `~/.irssi/config`; there is a t
 
 ### Authenticating with SASL
 
-**Tip:** Irssi version 0.8.18 now supports built-in SASL.
+Irssi supports the [Simple Authentication and Security Layer](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer "wikipedia:Simple Authentication and Security Layer") (SASL).
 
-In order to add network with sasl mechanism here's an example:
+You can add a network with SASL mechanism as follows:
 
 ```
-/SERVER ADD -auto -ssl -ssl_verify -ssl_capath /etc/ssl/certs -network freenode -port 6697 chat.freenode.net
-/NETWORK ADD -sasl_mechanism plain -sasl_username <username> -sasl_password <password> freenode
+/SERVER ADD -ssl -ssl_verify -ssl_capath /etc/ssl/certs -network freenode -port 6697 chat.freenode.net
+/NETWORK ADD -sasl_mechanism plain -sasl_username *username* -sasl_password *password* freenode
 
 ```
 
@@ -91,7 +91,7 @@ In order to add network with sasl mechanism here's an example:
 *   If you have an existing network, then type second command line only.
 *   If your password contains `$`, you have to prefix it with another `$` for *irssi* to properly parse it.
 
-Restart irssi, connect network and look for "SASL authentication succeeded".
+Restart irssi, connect network and look for *SASL authentication succeeded*.
 
 ### Automatically connect to #archlinux on startup
 

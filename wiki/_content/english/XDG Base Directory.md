@@ -15,7 +15,6 @@ This article summarizes the [XDG Base Directory specification](https://specifica
     *   [2.2 Supported](#Supported)
     *   [2.3 Partial](#Partial)
     *   [2.4 Hardcoded](#Hardcoded)
-        *   [2.4.1 Won't fix](#Won.27t_fix)
 *   [3 Libraries](#Libraries)
 *   [4 See also](#See_also)
 
@@ -399,8 +398,8 @@ IRB.conf[:HISTORY_FILE] ||= File.join(ENV["XDG_DATA_HOME"], "irb", "history")
  |
 | [irssi](/index.php/Irssi "Irssi") | `~/.irssi` | [[80]](https://github.com/irssi/irssi/pull/511) | `$ irssi --config="$XDG_CONFIG_HOME"/irssi/config --home="$XDG_DATA_HOME"/irssi` |
 | [isync](/index.php/Isync "Isync") | `~/.mbsyncrc` | `$ mbsync -c "$XDG_CONFIG_HOME"/isync/mbsyncrc` |
-| [Java](/index.php/Java "Java") (OpenJDK) | `~/.java/.userPrefs` | `$ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java` |
-| [less](/index.php/Core_utilities#less "Core utilities") | `~/.lesshst` | 
+| [Java](/index.php/Java "Java") OpenJDK | `~/.java/.userPrefs` | [[81]](https://bugzilla.redhat.com/show_bug.cgi?id=1154277) | `$ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java` |
+| [less](/index.php/Core_utilities "Core utilities") | `~/.lesshst` | 
 
 `$ mkdir -p "$XDG_CACHE_HOME"/less
 $ export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
@@ -409,8 +408,8 @@ $ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history`
 `$ export LESSHISTFILE=-` can be used to disable this feature.
 
  |
-| [libdvdcss](http://www.videolan.org/developers/libdvdcss.html) | `~/.dvdcss` | [[81]](https://mailman.videolan.org/pipermail/libdvdcss-devel/2014-August/001022.html) | `$ export DVDCSS_CACHE="$XDG_DATA_HOME"/dvdcss` |
-| [libice](https://www.x.org/releases/current/doc/libICE/ice.html) | `~/.ICEauthority` | [[82]](https://bugs.freedesktop.org/show_bug.cgi?id=49173) | `$ export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority`
+| [libdvdcss](http://www.videolan.org/developers/libdvdcss.html) | `~/.dvdcss` | [[82]](https://mailman.videolan.org/pipermail/libdvdcss-devel/2014-August/001022.html) | `$ export DVDCSS_CACHE="$XDG_DATA_HOME"/dvdcss` |
+| [libice](https://www.x.org/releases/current/doc/libICE/ice.html) | `~/.ICEauthority` | [[83]](https://bugs.freedesktop.org/show_bug.cgi?id=49173) | `$ export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority`
 
 Make sure `XDG_CACHE_HOME` is set beforehand to directory user running [Xorg](/index.php/Xorg "Xorg") has write access to.
 
@@ -460,9 +459,9 @@ $ export TERMINFO_DIRS="$XDG_DATA_HOME"/terminfo:/usr/share/terminfo`
 
  |
 | [ncmpc](http://www.musicpd.org/clients/ncmpc/) | `~/.ncmpc` | `ncmpc -f "$XDG_CONFIG_HOME"/ncmpc/config` |
-| [Netbeans](/index.php/Netbeans "Netbeans") | `~/.netbeans` | [[83]](https://netbeans.org/bugzilla/show_bug.cgi?id=215961) | `$ netbeans --userdir "${XDG_CONFIG_HOME}"/netbeans` |
-| [Node.js](/index.php/Node.js "Node.js") | `~/.node_repl_history` | `$ export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history` [[84]](https://nodejs.org/api/repl.html#repl_environment_variable_options) |
-| [notmuch](/index.php/Notmuch "Notmuch") | `~/.notmuch-config` | [[85]](http://notmuchmail.org/pipermail/notmuch/2011/007007.html) | 
+| [Netbeans](/index.php/Netbeans "Netbeans") | `~/.netbeans` | [[84]](https://netbeans.org/bugzilla/show_bug.cgi?id=215961) | `$ netbeans --userdir "${XDG_CONFIG_HOME}"/netbeans` |
+| [Node.js](/index.php/Node.js "Node.js") | `~/.node_repl_history` | `$ export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history` [[85]](https://nodejs.org/api/repl.html#repl_environment_variable_options) |
+| [notmuch](/index.php/Notmuch "Notmuch") | `~/.notmuch-config` | [[86]](http://notmuchmail.org/pipermail/notmuch/2011/007007.html) | 
 
 `$ export NOTMUCH_CONFIG="$XDG_CONFIG_HOME"/notmuch/notmuchrc
 $ export NMBGIT="$XDG_DATA_HOME"/notmuch/nmbug`
@@ -473,7 +472,7 @@ $ export NMBGIT="$XDG_DATA_HOME"/notmuch/nmbug`
 `~/.npm
 ~/.npmrc`
 
- | [[86]](https://github.com/npm/npm/issues/6675) | `$ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc` `npmrc` 
+ | [[87]](https://github.com/npm/npm/issues/6675) | `$ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc` `npmrc` 
 ```
 prefix=${XDG_DATA_HOME}/npm
 cache=${XDG_CACHE_HOME}/npm
@@ -509,7 +508,7 @@ pkg local_list /home/<your username>/.local/share/octave/octave_packages;
 The `local_list` option must be given an absolute path.
 
  |
-| [openscad](http://www.openscad.org/) | `~/.OpenSCAD` | [7c3077b0f](https://github.com/openscad/openscad/commit/7c3077b0f) | [[87]](https://github.com/openscad/openscad/issues/125) | Does not fully honour XDG Base Directory Specification, see [[88]](https://github.com/openscad/openscad/issues/373)
+| [openscad](http://www.openscad.org/) | `~/.OpenSCAD` | [7c3077b0f](https://github.com/openscad/openscad/commit/7c3077b0f) | [[88]](https://github.com/openscad/openscad/issues/125) | Does not fully honour XDG Base Directory Specification, see [[89]](https://github.com/openscad/openscad/issues/373)
 
 Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/PlatformUtils-posix.cc#L20) `~/.local/share`.
 
@@ -517,7 +516,7 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 | [OpenSSL](/index.php/OpenSSL "OpenSSL") | `~/.rnd` | Seeding file .rnd's location can be set with RANDFILE environment variable per [FAQ](https://www.openssl.org/docs/faq.html). |
 | [GNU parallel](http://www.gnu.org/software/parallel/) | `~/.parallel` | [20170422](https://git.savannah.gnu.org/cgit/parallel.git/commit/?id=685018f532f4e2d24b84eb28d5de3d759f0d1af1) | `$ export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel` |
 | [Pass](/index.php/Pass "Pass") | `~/.password-store` | `$ export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass` |
-| [Pidgin](/index.php/Pidgin "Pidgin") | `~/.purple` | [[89]](https://developer.pidgin.im/ticket/4911) | `$ pidgin --config="$XDG_DATA_HOME"/purple` |
+| [Pidgin](/index.php/Pidgin "Pidgin") | `~/.purple` | [[90]](https://developer.pidgin.im/ticket/4911) | `$ pidgin --config="$XDG_DATA_HOME"/purple` |
 | [postgresql](https://www.postgresql.org/) | 
 
 `~/.psqlrc
@@ -525,7 +524,7 @@ Currently it [hard-codes](https://github.com/openscad/openscad/blob/master/src/P
 ~/.pgpass
 ~/.pg_service.conf`
 
- | 9.2 | [[90]](https://www.postgresql.org/docs/current/static/app-psql.html) [[91]](https://www.postgresql.org/docs/current/static/libpq-envars.html) | 
+ | 9.2 | [[91]](https://www.postgresql.org/docs/current/static/app-psql.html) [[92]](https://www.postgresql.org/docs/current/static/libpq-envars.html) | 
 
 `$ export PSQLRC="$XDG_CONFIG_HOME/pg/psqlrc"
 $ export PSQL_HISTORY="$XDG_CACHE_HOME/pg/psql_history"
@@ -536,25 +535,25 @@ It is required to create both directories `$ mkdir "$XDG_CONFIG_HOME/pg" && mkdi
 
  |
 | [PulseAudio](/index.php/PulseAudio "PulseAudio") | `~/.esd_auth` | Very likely generated by the `module-esound-protocol-unix.so` module. It can be configured to use a different location but it makes much more sense to just comment out this module in `/etc/pulse/default.pa` or `"$XDG_CONFIG_HOME"/pulse/default.pa`. |
-| [pylint](https://www.pylint.org/) | `~/.pylint.d` | [[92]](https://github.com/PyCQA/pylint/issues/1364) | `$ export PYLINTHOME="$XDG_CACHE_HOME"/pylint` |
 | [python-setuptools](https://pypi.python.org/pypi/setuptools) | `~/.python-eggs` | `$ export PYTHON_EGG_CACHE="$XDG_CACHE_HOME"/python-eggs` |
+| [pylint](https://www.pylint.org/) | `~/.pylint.d` | [[93]](https://github.com/PyCQA/pylint/issues/1364) | `$ export PYLINTHOME="$XDG_CACHE_HOME"/pylint` |
 | [readline](/index.php/Readline "Readline") | `~/.inputrc` | `$ export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc` |
-| [rlwrap](http://utopia.knoware.nl/~hlub/uck/rlwrap/) | `~/.*_history` | [[93]](https://github.com/hanslub42/rlwrap/issues/25) | `$ export RLWRAP_HOME="$XDG_DATA_HOME"/rlwrap` |
+| [rlwrap](http://utopia.knoware.nl/~hlub/uck/rlwrap/) | `~/.*_history` | [[94]](https://github.com/hanslub42/rlwrap/issues/25) | `$ export RLWRAP_HOME="$XDG_DATA_HOME"/rlwrap` |
 | [RubyGems](https://rubygems.org/) | `~/.gem` | 
 
 `$ export GEM_HOME="$XDG_DATA_HOME"/gem
 $ export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem`
 
  |
-| [rustup](https://www.rustup.rs/) | `~/.rustup` | [[94]](https://github.com/rust-lang-nursery/rustup.rs/issues/247) | `$ export RUSTUP_HOME="$XDG_DATA_HOME"/rustup` |
+| [rustup](https://www.rustup.rs/) | `~/.rustup` | [[95]](https://github.com/rust-lang-nursery/rustup.rs/issues/247) | `$ export RUSTUP_HOME="$XDG_DATA_HOME"/rustup` |
 | [sbt](http://www.scala-sbt.org/) | `~/.sbt`
 
 `~/.ivy2`
 
- | [[95]](https://github.com/sbt/sbt/issues/3681) | `$ sbt -ivy "$XDG_DATA_HOME"/ivy2 -sbt-dir "$XDG_DATA_HOME"/sbt` (beware [[96]](https://github.com/sbt/sbt/issues/3598)) |
+ | [[96]](https://github.com/sbt/sbt/issues/3681) | `$ sbt -ivy "$XDG_DATA_HOME"/ivy2 -sbt-dir "$XDG_DATA_HOME"/sbt` (beware [[97]](https://github.com/sbt/sbt/issues/3598)) |
 | [screen](/index.php/Screen "Screen") | `~/.screenrc` | `$ export SCREENRC="$XDG_CONFIG_HOME"/screen/screenrc` |
-| [stack](https://www.stackage.org/) | `~/.stack` | [[97]](https://github.com/commercialhaskell/stack/issues/342) | `$ export STACK_ROOT="$XDG_DATA_HOME"/stack` |
-| [subversion](/index.php/Subversion "Subversion") | `~/.subversion` | [[98]](https://issues.apache.org/jira/browse/SVN-4599) [[99]](https://mail-archives.apache.org/mod_mbox/subversion-users/201204.mbox/%3c4F8FBCC6.4080205@ritsuka.org%3e)[[100]](http://mail-archives.apache.org/mod_mbox/subversion-dev/201509.mbox/%3c20150917222954.GA20331@teapot%3e) | `$ svn --config-dir "$XDG_CONFIG_HOME"/subversion` |
+| [stack](https://www.stackage.org/) | `~/.stack` | [[98]](https://github.com/commercialhaskell/stack/issues/342) | `$ export STACK_ROOT="$XDG_DATA_HOME"/stack` |
+| [subversion](/index.php/Subversion "Subversion") | `~/.subversion` | [[99]](https://issues.apache.org/jira/browse/SVN-4599) [[100]](https://mail-archives.apache.org/mod_mbox/subversion-users/201204.mbox/%3c4F8FBCC6.4080205@ritsuka.org%3e)[[101]](http://mail-archives.apache.org/mod_mbox/subversion-dev/201509.mbox/%3c20150917222954.GA20331@teapot%3e) | `$ svn --config-dir "$XDG_CONFIG_HOME"/subversion` |
 | [task](https://www.archlinux.org/packages/?name=task) | 
 
 `~/.task
@@ -572,7 +571,7 @@ $ export TASKRC="$XDG_CONFIG_HOME"/task/taskrc`
 `$ tiptop -W "$XDG_CONFIG_HOME"/tiptop`
 
  |
-| [tmux](/index.php/Tmux "Tmux") | `~/.tmux.conf` | [[101]](http://comments.gmane.org/gmane.comp.terminal-emulators.tmux.user/6013) [[102]](http://sourceforge.net/p/tmux/mailman/message/30619546/) | `$ tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf`
+| [tmux](/index.php/Tmux "Tmux") | `~/.tmux.conf` | [[102]](https://github.com/tmux/tmux/issues/142) | `$ tmux -f "$XDG_CONFIG_HOME"/tmux/tmux.conf`
 
 `$ export TMUX_TMPDIR="$XDG_RUNTIME_DIR"`
 
@@ -655,40 +654,64 @@ Note that these variables are respected by *xinit*, but not by *startx*. Instead
 | [anthy](https://osdn.net/projects/anthy/) | `~/.anthy` | [[107]](https://osdn.net/ticket/browse.php?group_id=14&tid=28397) |
 | [Apache Directory Studio](https://directory.apache.org/studio/) | `~/.ApacheDirectoryStudio` |
 | [ARandR](https://christian.amsuess.com/tools/arandr/) | `~/.screenlayout` |
+| [Arduino](/index.php/Arduino "Arduino") | 
+
+`~/.arduino15
+~/.jssc`
+
+ | [[108]](https://github.com/arduino/Arduino/issues/3915) |
 | [Audacity](https://www.audacityteam.org/) | `~/.audacity-data/` |
 | [Avidemux](http://fixounet.free.fr/avidemux/) | `~/.avidemux6` |
-| [cabal](https://www.haskell.org/cabal/) | `~/.cabal/` | [[108]](https://github.com/haskell/cabal/issues/680) | See discussion for potential workarounds. It is not very easy or straightforward but may be possible to emulate Base Directory compliance. |
-| [chatty](https://aur.archlinux.org/packages/chatty/) | `~/.chatty/` | [[109]](https://github.com/chatty/chatty/issues/273) |
+| [Bash](/index.php/Bash "Bash") | 
+
+`~/.bashrc
+~/.bash_history
+~/.bash_profile
+~/.bash_login
+~/.bash_logout`
+
+ | [[109]](http://savannah.gnu.org/support/?108134) | `$ export HISTFILE="$XDG_DATA_HOME"/bash/history`
+
+A specified `bashrc` can be sourced from `/etc/bashrc`.
+
+Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive shells.
+
+ |
+| [cabal](https://www.haskell.org/cabal/) | `~/.cabal/` | [[110]](https://github.com/haskell/cabal/issues/680) | See discussion for potential workarounds. It is not very easy or straightforward but may be possible to emulate Base Directory compliance. |
+| [chatty](https://aur.archlinux.org/packages/chatty/) | `~/.chatty/` | [[111]](https://github.com/chatty/chatty/issues/273) |
 | [cmake](https://www.archlinux.org/packages/?name=cmake) | `~/.cmake/` | Used for the user package registry `~/.cmake/packages/<package>`, detailed in [cmake-packages(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cmake-packages.7#User_Package_Registry) and [the Package registry wiki page](https://gitlab.kitware.com/cmake/community/wikis/doc/tutorials/Package-Registry). Looks like it's hardcoded, for example in [cmFindPackageCommand.cxx](https://gitlab.kitware.com/cmake/cmake/blob/v3.12.1/Source/cmFindPackageCommand.cxx#L1221). |
-| [cryptomator](https://aur.archlinux.org/packages/cryptomator/) | `~/.Cryptomator` | [[110]](https://github.com/cryptomator/cryptomator/issues/710) |
-| [darcs](/index.php/Darcs "Darcs") | `~/.darcs/` | [[111]](http://bugs.darcs.net/issue2453) |
-| [dbus](/index.php/Dbus "Dbus") | `~/.dbus/` | [[112]](https://bugs.freedesktop.org/show_bug.cgi?id=35887) | This should be avoidable with kdbus [citation needed]. |
+| [cryptomator](https://aur.archlinux.org/packages/cryptomator/) | `~/.Cryptomator` | [[112]](https://github.com/cryptomator/cryptomator/issues/710) |
+| [CUPS](/index.php/CUPS "CUPS") | `~/.cups/` | [[113]](http://www.cups.org/str.php?L4243) |
+| [darcs](/index.php/Darcs "Darcs") | `~/.darcs/` | [[114]](http://bugs.darcs.net/issue2453) |
+| [dbus](/index.php/Dbus "Dbus") | `~/.dbus/` | [[115]](https://bugs.freedesktop.org/show_bug.cgi?id=35887) | This should be avoidable with kdbus [citation needed]. |
 | [devede](https://www.archlinux.org/packages/?name=devede) | `~/.devedeng` | Hardcoded [here](https://gitlab.com/rastersoft/devedeng/blob/f0893b3ff7b14723bd148db35bdfe2d284156d19/src/devedeng/configuration_data.py#L111) |
 | [Dia](https://wiki.gnome.org/Apps/Dia) | `~/.dia/` |
-| [Eclipse](/index.php/Eclipse "Eclipse") | `~/.eclipse/` | [[113]](https://bugs.eclipse.org/bugs/show_bug.cgi?id=200809) | Option `-Dosgi.configuration.area=@user.home/.config/..` overrides but must be added to `"$ECLIPSE_HOME"/eclipse.ini"` rather than command line which means you must have write access to `$ECLIPSE_HOME`. (Arch Linux hard-codes `$ECLIPSE_HOME` in `/usr/bin/eclipse`) |
+| [Eclipse](/index.php/Eclipse "Eclipse") | `~/.eclipse/` | [[116]](https://bugs.eclipse.org/bugs/show_bug.cgi?id=200809) | Option `-Dosgi.configuration.area=@user.home/.config/..` overrides but must be added to `"$ECLIPSE_HOME"/eclipse.ini"` rather than command line which means you must have write access to `$ECLIPSE_HOME`. (Arch Linux hard-codes `$ECLIPSE_HOME` in `/usr/bin/eclipse`) |
 | [Emacs](/index.php/Emacs "Emacs") | 
 
 `~/.emacs
 ~/.emacs.d/`
 
- | [[114]](http://debbugs.gnu.org/cgi/bugreport.cgi?bug=583) | It's possible to set `HOME`, but it has unexpected side effects. So far the most promising approach is modifying another Emacs environment variable to alter the load path and author your own site file which can manually load up your init file, but it changes the load process significantly. |
+ | [[117]](http://debbugs.gnu.org/cgi/bugreport.cgi?bug=583) | It's possible to set `HOME`, but it has unexpected side effects. So far the most promising approach is modifying another Emacs environment variable to alter the load path and author your own site file which can manually load up your init file, but it changes the load process significantly. |
 | [Fetchmail](http://www.fetchmail.info/) | `~/.fetchmailrc` |
-| [Firefox](/index.php/Firefox "Firefox") | `~/.mozilla/` | [[115]](https://bugzil.la/259356) |
-| [GHC](https://www.haskell.org/ghc/) | `~/.ghc` | [[116]](https://ghc.haskell.org/trac/ghc/ticket/6077) |
-| [Goldendict](/index.php/Goldendict "Goldendict") | `~/.goldendict/` | [[117]](https://github.com/goldendict/goldendict/issues/151) |
-| [gramps](https://www.archlinux.org/packages/?name=gramps) | `~/.gramps/` | [[118]](https://gramps-project.org/bugs/view.php?id=8025) |
-| [grsync](https://www.archlinux.org/packages/?name=grsync) | `~/.grsync/` | [[119]](https://sourceforge.net/p/grsync/feature-requests/15/) |
+| [Firefox](/index.php/Firefox "Firefox") | `~/.mozilla/` | [[118]](https://bugzil.la/259356) |
+| [Flatpak](/index.php/Flatpak "Flatpak") | `~/.var/` | [[119]](https://github.com/flatpak/flatpak/issues/46) [[120]](https://github.com/flatpak/flatpak.github.io/issues/191) [[121]](https://github.com/flatpak/flatpak/issues/1651) |
+| [GHC](https://www.haskell.org/ghc/) | `~/.ghc` | [[122]](https://ghc.haskell.org/trac/ghc/ticket/6077) |
+| [Goldendict](/index.php/Goldendict "Goldendict") | `~/.goldendict/` | [[123]](https://github.com/goldendict/goldendict/issues/151) |
+| [gramps](https://www.archlinux.org/packages/?name=gramps) | `~/.gramps/` | [[124]](https://gramps-project.org/bugs/view.php?id=8025) |
+| [grsync](https://www.archlinux.org/packages/?name=grsync) | `~/.grsync/` | [[125]](https://sourceforge.net/p/grsync/feature-requests/15/) |
 | [gtk-recordMyDesktop](http://recordmydesktop.sourceforge.net/about.php) | `~/.gtk-recordmydesktop` |
-| [hplip](https://www.archlinux.org/packages/?name=hplip) | `~/.hplip/` | [https://bugs.launchpad.net/hplip/+bug/307152](https://bugs.launchpad.net/hplip/+bug/307152) |
-| [idris](http://www.idris-lang.org/) | `~/.idris` | [[120]](https://github.com/idris-lang/Idris-dev/pull/3456) |
-| [Java](/index.php/Java "Java") (OpenJDK) | `~/.java/fonts`, `~/.java/webview` | [[121]](https://bugzilla.redhat.com/show_bug.cgi?id=1154277) |
+| [hplip](https://www.archlinux.org/packages/?name=hplip) | `~/.hplip/` | [[126]](https://bugs.launchpad.net/hplip/+bug/307152) |
+| [idris](http://www.idris-lang.org/) | `~/.idris` | [[127]](https://github.com/idris-lang/Idris-dev/pull/3456) |
+| [Java](/index.php/Java "Java") OpenJDK | `~/.java/fonts` | [[128]](https://bugzilla.redhat.com/show_bug.cgi?id=1154277) |
+| [Java](/index.php/Java "Java") OpenJFX | `~/.java/webview` |
 | [julia](http://julialang.org/) | 
 
 `~/.juliarc.jl
 ~/.julia_history`
 
- | [[122]](https://github.com/JuliaLang/julia/issues/4630) [[123]](https://github.com/JuliaLang/julia/issues/10016) |
-| [Linux PAM](http://www.linux-pam.org/) | `~/.pam_environment` | [[124]](https://github.com/linux-pam/linux-pam/issues/7) | Hardcoded in [modules/pam_env/pam_env.c](https://github.com/linux-pam/linux-pam/blob/master/modules/pam_env/pam_env.c) |
+ | [[129]](https://github.com/JuliaLang/julia/issues/4630) [[130]](https://github.com/JuliaLang/julia/issues/10016) |
+| [Linux PAM](http://www.linux-pam.org/) | `~/.pam_environment` | [[131]](https://github.com/linux-pam/linux-pam/issues/7) | Hardcoded in [modules/pam_env/pam_env.c](https://github.com/linux-pam/linux-pam/blob/master/modules/pam_env/pam_env.c) |
 | [lldb](http://lldb.llvm.org/) | 
 
 `~/.lldb
@@ -701,37 +724,40 @@ Note that these variables are respected by *xinit*, but not by *startx*. Instead
 ~/.matho_history`
 
  | History can be moved by using `rlwrap mathomatic -r` with the `RLWRAP_HOME` environment set appropriately. |
-| [Minecraft](/index.php/Minecraft "Minecraft") | `~/.minecraft/` | [[125]](https://bugs.mojang.com/browse/MCL-2563) |
+| [Minecraft](/index.php/Minecraft "Minecraft") | `~/.minecraft/` | [[132]](https://bugs.mojang.com/browse/MCL-2563) |
+| [Minetest](/index.php/Minetest "Minetest") | `~/.minetest/` | [[133]](https://github.com/minetest/minetest/issues/864) |
 | [mongodb](https://www.mongodb.org/) | 
 
 `~/.mongorc.js
 ~/.dbshell`
 
- | [[126]](https://jira.mongodb.org/browse/DOCS-5652?jql=text%20~%20%22.mongorc.js%22) | [This Stack Overflow thread](http://stackoverflow.com/a/22349050/4200039) suggests a partial workaround using command-line switch `--norc`. |
+ | [[134]](https://jira.mongodb.org/browse/DOCS-5652?jql=text%20~%20%22.mongorc.js%22) | [This Stack Overflow thread](http://stackoverflow.com/a/22349050/4200039) suggests a partial workaround using command-line switch `--norc`. |
+| [Nestopia UE](http://0ldsk00l.ca/nestopia/) | `~/.nestopia/` | [[135]](https://github.com/0ldsk00l/nestopia/pull/292) |
  `~/.netrc` | Like `~/.ssh`, many programs expect this file to be here. These include projects like curl (`CURLOPT_NETRC_FILE`), ftp (`NETRC`), s-nail (`NETRC`), etc. While some of them offer alternative configurable locations, many do not such as w3m, wget and lftp. |
-| [node-gyp](https://github.com/nodejs/node-gyp) | `~/.node-gyp` | [[127]](https://github.com/nodejs/node-gyp/issues/175) [[128]](https://github.com/nodejs/node-gyp/issues/21) [[129]](https://github.com/nodejs/node-gyp/issues/1124) | Discussion seems as though partial support may soon be added. |
-| [NSS](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS) | `~/.pki` | [[130]](https://bugzilla.mozilla.org/show_bug.cgi?id=818686) |
-| [palemoon](https://www.palemoon.org/) | `~/.moonchild productions` | [[131]](https://forum.palemoon.org/viewtopic.php?f=5&t=9639) |
+| [node-gyp](https://github.com/nodejs/node-gyp) | `~/.node-gyp` | [[136]](https://github.com/nodejs/node-gyp/issues/175) [[137]](https://github.com/nodejs/node-gyp/issues/21) [[138]](https://github.com/nodejs/node-gyp/issues/1124) | Discussion seems as though partial support may soon be added. |
+| [NSS](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS) | `~/.pki` | [[139]](https://bugzilla.mozilla.org/show_bug.cgi?id=818686) |
+| [OpenSSH](/index.php/OpenSSH "OpenSSH") | `~/.ssh` | [[140]](https://bugzilla.mindrot.org/show_bug.cgi?id=2050) | Assumed to be present by many ssh daemons and clients such as DropBear and OpenSSH. |
+| [palemoon](https://www.palemoon.org/) | `~/.moonchild productions` | [[141]](https://forum.palemoon.org/viewtopic.php?f=5&t=9639) |
 | [perf](https://perf.wiki.kernel.org/index.php/Main_Page) | `~/.debug` | Hardcoded in [tools/perf/util/config.c:29](https://github.com/torvalds/linux/blob/master/tools/perf/util/config.c#L29). |
 | various [shells](/index.php/Shell "Shell") and [display managers](/index.php/Display_manager "Display manager") | `~/.profile` |
 | [python](/index.php/Python "Python") | `~/.python_history` | All history from interactive sessions is saved to `~/.python_history` by default since [version 3.4](https://bugs.python.org/issue5845), custom path can still be set the same way as in older versions (see [this example](https://docs.python.org/3/library/readline.html?highlight=readline#example)). |
 | [Qt Designer](https://doc.qt.io/qt-5/qtdesigner-manual.html) | `~/.designer` |
-| [Quod Libet](https://quodlibet.readthedocs.io/en/latest/) | `~/.quodlibet` | [[132]](https://github.com/quodlibet/quodlibet/issues/138) |
+| [Quod Libet](https://quodlibet.readthedocs.io/en/latest/) | `~/.quodlibet` | [[142]](https://github.com/quodlibet/quodlibet/issues/138) |
 | [racket](https://racket-lang.org/) | `~/.racketrc` |
 | [RedNotebook](http://rednotebook.sourceforge.net/) | `~/.rednotebook` |
 | [Remarkable](https://remarkableapp.github.io/linux.html) | `~/.remarkable` |
-| [Ren'Py](https://www.renpy.org/) | `~/.renpy` | [[133]](https://github.com/renpy/renpy/issues/1377) |
+| [Ren'Py](https://www.renpy.org/) | `~/.renpy` | [[143]](https://github.com/renpy/renpy/issues/1377) |
 | [SANE](/index.php/SANE "SANE") | `~/.sane/` | `scanimage` creates a `.cal` file there |
 | [scribus](https://www.archlinux.org/packages/?name=scribus) | `~/.scribus` |
-| [SeaMonkey](http://www.seamonkey-project.org/) | `~/.mozilla/` | [[134]](https://bugzil.la/726939) |
-| [simplescreenrecorder](https://www.archlinux.org/packages/?name=simplescreenrecorder) | `~/.ssr/` | [[135]](https://github.com/MaartenBaert/ssr/issues/407) | Author seems against this feature. |
+| [SeaMonkey](http://www.seamonkey-project.org/) | `~/.mozilla/` | [[144]](https://bugzil.la/726939) |
+| [simplescreenrecorder](https://www.archlinux.org/packages/?name=simplescreenrecorder) | `~/.ssr/` | [[145]](https://github.com/MaartenBaert/ssr/issues/407) | Author seems against this feature. |
 | [Solfege](https://www.gnu.org/software/solfege/solfege.html) | 
 
 `~/.solfege
 ~/.solfegerc
 ~/lessonfiles`
 
- | [[136]](https://savannah.gnu.org/bugs/index.php?50251) |
+ | [[146]](https://savannah.gnu.org/bugs/index.php?50251) |
 | [SpamAssassin](https://spamassassin.apache.org/) | `~/.spamassassin` |
 | [spectrwm](/index.php/Spectrwm "Spectrwm") | `~/.spectrwm` |
 | [SQLite](/index.php/SQLite "SQLite") | 
@@ -739,18 +765,18 @@ Note that these variables are respected by *xinit*, but not by *startx*. Instead
 `~/.sqlite_history
 ~/.sqliterc`
 
- | [[137]](https://unix.stackexchange.com/questions/306890/change-location-of-sqlite-history-file)[[138]](http://sqlite.1065341.n5.nabble.com/Customizing-the-location-of-the-sqlite-history-td87055.html) | `$ sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc` |
+ | [[147]](https://unix.stackexchange.com/questions/306890/change-location-of-sqlite-history-file)[[148]](http://sqlite.1065341.n5.nabble.com/Customizing-the-location-of-the-sqlite-history-td87055.html) | `$ sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc` |
 | [Steam](/index.php/Steam "Steam") | 
 
 `~/.steam
 ~/.steampath
 ~/.steampid`
 
- | [[139]](https://github.com/ValveSoftware/steam-for-linux/issues/1890) | Many game engines (Unity 3D, Unreal) follow the specification, but then individual game publishers hardcode the paths in [Steam Auto-Cloud](https://www.ctrl.blog/entry/flatpak-steamcloud-xdg) causing game-saves to sync to the wrong directory. |
+ | [[149]](https://github.com/ValveSoftware/steam-for-linux/issues/1890) | Many game engines (Unity 3D, Unreal) follow the specification, but then individual game publishers hardcode the paths in [Steam Auto-Cloud](https://www.ctrl.blog/entry/flatpak-steamcloud-xdg) causing game-saves to sync to the wrong directory. |
 | [TeamSpeak](/index.php/TeamSpeak "TeamSpeak") | `~/.ts3client` |
 | [texinfo](https://www.archlinux.org/packages/?name=texinfo) | `~/.infokey` | `$ info --init-file "$XDG_CONFIG_HOME/infokey"` |
 | [TeXmacs](http://www.texmacs.org/) | `~/.TeXmacs` |
-| [Thunderbird](/index.php/Thunderbird "Thunderbird") | `~/.thunderbird/` | [[140]](https://bugzil.la/735285) |
+| [Thunderbird](/index.php/Thunderbird "Thunderbird") | `~/.thunderbird/` | [[150]](https://bugzil.la/735285) |
 | [tllocalmgr](https://git.archlinux.org/users/remy/texlive-localmanager.git/) | `~/.texlive` |
 | [vim](/index.php/Vim "Vim") | 
 
@@ -780,16 +806,16 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 *   [https://tlvince.com/vim-respect-xdg](https://tlvince.com/vim-respect-xdg)
 
  |
-| [vimperator](http://www.vimperator.org/) | `~/.vimperatorrc` | [[141]](http://www.mozdev.org/pipermail/vimperator/2009-October/004848.html) | `$ export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"`
+| [vimperator](http://www.vimperator.org/) | `~/.vimperatorrc` | [[151]](http://www.mozdev.org/pipermail/vimperator/2009-October/004848.html) | `$ export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"`
 
 `$ export VIMPERATOR_RUNTIME="$XDG_CONFIG_HOME"/vimperator`
 
  |
-| [w3m](https://www.archlinux.org/packages/?name=w3m) | `~/.w3m` | [[142]](https://sourceforge.net/p/w3m/feature-requests/31/) |
+| [w3m](https://www.archlinux.org/packages/?name=w3m) | `~/.w3m` | [[152]](https://sourceforge.net/p/w3m/feature-requests/31/) |
 | [wpa_cli](https://w1.fi/) | `~/.wpa_cli_history` |
-| [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) | `~/.gnome` | [[143]](https://bugs.freedesktop.org/show_bug.cgi?id=90775) | For some reason the script `xdg-desktop-menu` hard-codes `gnome_user_dir="$HOME/.gnome/apps"`. This is used by [chromium](/index.php/Chromium "Chromium") among others. |
-| [xombrero](https://opensource.conformal.com/wiki/xombrero) | `~/.xombrero` | [[144]](https://github.com/conformal/xombrero/issues/74) |
-| [zenmap](https://nmap.org/zenmap/) [nmap](https://www.archlinux.org/packages/?name=nmap) | `~/.zenmap` | [[145]](http://seclists.org/nmap-dev/2012/q2/163) [[146]](https://github.com/nmap/nmap/issues/590) |
+| [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) | `~/.gnome` | [[153]](https://bugs.freedesktop.org/show_bug.cgi?id=90775) | For some reason the script `xdg-desktop-menu` hard-codes `gnome_user_dir="$HOME/.gnome/apps"`. This is used by [chromium](/index.php/Chromium "Chromium") among others. |
+| [xombrero](https://opensource.conformal.com/wiki/xombrero) | `~/.xombrero` | [[154]](https://github.com/conformal/xombrero/issues/74) |
+| [zenmap](https://nmap.org/zenmap/) [nmap](https://www.archlinux.org/packages/?name=nmap) | `~/.zenmap` | [[155]](http://seclists.org/nmap-dev/2012/q2/163) [[156]](https://github.com/nmap/nmap/issues/590) |
 | [zsh](/index.php/Zsh "Zsh") | 
 
 `~/.zshrc
@@ -799,41 +825,11 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 ~/.zlogout
 ~/.histfile`
 
- | [[147]](http://www.zsh.org/mla/workers/2013/msg00692.html) | Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
+ | [[157]](http://www.zsh.org/mla/workers/2013/msg00692.html) | Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
 
 `$ export HISTFILE="$XDG_DATA_HOME"/zsh/history`
 
  |
-
-#### Won't fix
-
-| Application | Legacy Path | Discussion | Notes |
-| [Arduino](/index.php/Arduino "Arduino") | 
-
-`~/.arduino15
-~/.jssc`
-
- | [[148]](https://github.com/arduino/Arduino/issues/3915) |
-| [bash](/index.php/Bash "Bash") | 
-
-`~/.bashrc
-~/.bash_history
-~/.bash_profile
-~/.bash_login
-~/.bash_logout`
-
- | [[149]](http://savannah.gnu.org/support/?108134) | `$ export HISTFILE="$XDG_DATA_HOME"/bash/history`
-
-A specified `bashrc` can be sourced from `/etc/bashrc`.
-
-Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive shells.
-
- |
-| [CUPS](/index.php/CUPS "CUPS") | `~/.cups/` | [[150]](http://www.cups.org/str.php?L4243) |
-| [Flatpak](/index.php/Flatpak "Flatpak") | `~/.var/` | [[151]](https://github.com/flatpak/flatpak/issues/46) [[152]](https://github.com/flatpak/flatpak.github.io/issues/191) [[153]](https://github.com/flatpak/flatpak/issues/1651) |
-| [Minetest](/index.php/Minetest "Minetest") | `~/.minetest/` | [[154]](https://github.com/minetest/minetest/issues/864) |
-| [OpenSSH](/index.php/OpenSSH "OpenSSH") | `~/.ssh` | [[155]](https://bugzilla.mindrot.org/show_bug.cgi?id=2050) | Assumed to be present by many ssh daemons and clients such as DropBear and OpenSSH. |
-| [Nestopia UE](http://0ldsk00l.ca/nestopia/) | `~/.nestopia/` | [[156]](https://github.com/0ldsk00l/nestopia/pull/292) |
 
 ## Libraries
 

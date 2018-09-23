@@ -1,3 +1,12 @@
+Related articles
+
+*   [Firewalls](/index.php/Firewalls "Firewalls")
+*   [Network configuration](/index.php/Network_configuration "Network configuration")
+*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
+*   [Network bridge](/index.php/Network_bridge "Network bridge")
+*   [List of applications/Internet#Network managers](/index.php/List_of_applications/Internet#Network_managers "List of applications/Internet")
+*   [Network Debugging](/index.php/Network_Debugging "Network Debugging")
+
 From [Wikipedia](https://en.wikipedia.org/wiki/Jumbo_frame "wikipedia:Jumbo frame"):
 
 	*In computer networking, jumbo frames are Ethernet frames with more than 1,500 bytes of payload (MTU). Conventionally, jumbo frames can carry up to 9,000 bytes of payload, but variations exist and some care must be taken when using the term. Many, but not all, Gigabit Ethernet switches and Gigabit Ethernet network interface cards support jumbo frames, but all Fast Ethernet switches and Fast Ethernet network interface cards support only standard-sized frames.*

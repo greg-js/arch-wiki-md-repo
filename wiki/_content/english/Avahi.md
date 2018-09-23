@@ -73,7 +73,7 @@ Be sure to open UDP port `5353` if you're using a [firewall](/index.php/Firewall
 
 ### Link-Local (Bonjour/Zeroconf) chat
 
-Avahi can be used for bonjour protocol support under linux. Check [Wikipedia:Comparison of instant messaging clients](https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_clients "wikipedia:Comparison of instant messaging clients") or [List of applications#Instant messaging](/index.php/List_of_applications#Instant_messaging "List of applications") for a list of clients supporting the bonjour protocol.
+Avahi can be used for bonjour protocol support under linux. Check [Wikipedia:Comparison of instant messaging clients](https://en.wikipedia.org/wiki/Comparison_of_instant_messaging_clients "wikipedia:Comparison of instant messaging clients") or [List of applications#Instant messaging clients](/index.php/List_of_applications#Instant_messaging_clients "List of applications") for a list of clients supporting the bonjour protocol.
 
 ### Obtaining IPv4LL IP address
 

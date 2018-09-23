@@ -33,7 +33,7 @@ Related articles
 
 有两个版本的 *udisks*，分别称为 [udisks](https://aur.archlinux.org/packages/udisks/) 和 [udisks2](https://www.archlinux.org/packages/?name=udisks2)。为了集中精力开发*udisks2*，*udisks* 的开发已终止 。[[1]](http://davidz25.blogspot.be/2012/03/simpler-faster-better.html)
 
-*udisksd* ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) 和 *udisks-daemon* ([udisks](https://aur.archlinux.org/packages/udisks/)) 都是由 [D-Bus](/index.php/D-Bus "D-Bus") 在后台启动，不应该被显式地启用。（参阅 [udisksd(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisksd.8) 和 [udisks-daemon()](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisks-daemon.)）。可以通过 *udisksctl* 和 *udisks* 以命令行方式分别进行管控。详情参阅 [udisksctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisksctl.1) 和 [udisks(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisks.8)。
+*udisksd* ([udisks2](https://www.archlinux.org/packages/?name=udisks2)) 和 *udisks-daemon* ([udisks](https://aur.archlinux.org/packages/udisks/)) 都是由 [D-Bus](/index.php/D-Bus "D-Bus") 在后台启动，不应该被显式地启用。（参阅 [udisksd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisksd.8) 和 [udisks-daemon()](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisks-daemon.)）。可以通过 *udisksctl* 和 *udisks* 以命令行方式分别进行管控。详情参阅 [udisksctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisksctl.1) 和 [udisks(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisks.8)。
 
 ## 配置
 
@@ -198,7 +198,7 @@ The above line is also useful to hide multi device btrfs filesystems, as all the
 
 ```
 
-详情请参考[udisks(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/udisks.8).
+详情请参考[udisks(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/udisks.8).
 
 ### 物理设备移除后再连接，无法再次挂载
 

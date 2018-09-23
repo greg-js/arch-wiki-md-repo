@@ -1,6 +1,7 @@
 Ссылки по теме
 
 *   [Core utilities#lsblk](/index.php/Core_utilities#lsblk "Core utilities")
+
 *   [Разрешения и атрибуты файлов](/index.php/%D0%A0%D0%B0%D0%B7%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F_%D0%B8_%D0%B0%D1%82%D1%80%D0%B8%D0%B1%D1%83%D1%82%D1%8B_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2 "Разрешения и атрибуты файлов")
 *   [Fsck (Русский)](/index.php/Fsck_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fsck (Русский)")
 *   [fstab (Русский)](/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Fstab (Русский)")
@@ -11,6 +12,7 @@
 *   [NTFS-3G (Русский)](/index.php/NTFS-3G_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NTFS-3G (Русский)")
 *   [FAT (Русский)](/index.php/FAT_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "FAT (Русский)")
 *   [QEMU (Русский)#Монтирование раздела внутри образа диска raw](/index.php/QEMU_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9C.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0_.D0.B2.D0.BD.D1.83.D1.82.D1.80.D0.B8_.D0.BE.D0.B1.D1.80.D0.B0.D0.B7.D0.B0_.D0.B4.D0.B8.D1.81.D0.BA.D0.B0_raw "QEMU (Русский)")
+
 *   [Samba (Русский)](/index.php/Samba_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Samba (Русский)")
 *   [tmpfs (Русский)](/index.php/Tmpfs_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Tmpfs (Русский)")
 *   [udev (Русский)](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)")

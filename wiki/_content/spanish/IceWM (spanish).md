@@ -95,6 +95,6 @@ Se debe señalar que IceWM es un gestor de ventanas y por lo tanto no incluye un
 ## See also
 
 *   [Xinitrc](/index.php/Xinitrc "Xinitrc")
-*   [Sitio Oficial de IceWM](http://www.icewm.org/)
+*   [Sitio Oficial de IceWM](https://ice-wm.org/)
 *   [IceWM - The Cool Window Manager](http://www.osnews.com/story.php/7774/IceWM--The-Cool-Window-Manager/) - Detallada introducción en OSNews
 *   [IceWM - A desktop for Windows emigrants](http://polishlinux.org/apps/window-managers/icewm-a-desktop-for-windows-emmigrants/) - Intoducción y tutorial en polishlinux.org

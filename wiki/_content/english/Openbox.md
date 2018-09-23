@@ -521,7 +521,7 @@ See [PCManFM](/index.php/PCManFM#Desktop_management "PCManFM"), [SpaceFM](/index
 
 **Note:** You may have to edit `~/.conkyrc` and set `own_window_type` to `normal`.
 
-See [List of applications#Wallpaper_setters](/index.php/List_of_applications#Wallpaper_setters "List of applications").
+See [List of applications#Wallpaper setters](/index.php/List_of_applications#Wallpaper_setters "List of applications").
 
 ### Compositing effects
 

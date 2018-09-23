@@ -12,8 +12,8 @@ The simple solution is to give the audio and video processes a **higher priority
 ## Contents
 
 *   [1 Configuration](#Configuration)
-    *   [1.1 pam](#pam)
-    *   [1.2 Configuring PAM](#Configuring_PAM)
+    *   [1.1 Configuring PAM](#Configuring_PAM)
+    *   [1.2 Configuring systemd services](#Configuring_systemd_services)
 *   [2 Hard and soft realtime](#Hard_and_soft_realtime)
 *   [3 Power is nothing without control](#Power_is_nothing_without_control)
 *   [4 Tips and tricks](#Tips_and_tricks)
@@ -27,25 +27,25 @@ The simple solution is to give the audio and video processes a **higher priority
 
 ## Configuration
 
-By default, real-time prioritizing is enabled on Arch, however its configuration is simplistic and open to editing by the user. For example, in order to allow users to set nice priorities below 0, we need to tweak the default hard limit provided by [PAM](/index.php/PAM "PAM").
+By default, real-time prioritizing is enabled on Arch. System, group and user wide configuration can be achieved using [PAM](/index.php/PAM "PAM") and [systemd](/index.php/Systemd "Systemd").
 
-### pam
+The [realtime](https://www.archlinux.org/groups/x86_64/realtime/) package group provides additional tools to modify the realtime scheduling policies of [IRQs](https://en.wikipedia.org/wiki/Interrupt_request_(PC_architecture) and processes.
 
-The [pam](https://www.archlinux.org/packages/?name=pam) package from the official repositories provides the *pluggable authentication modules* for the linux kernel.
-
-**Note:** If you are running a custom kernel, ensure you have enabled "preemptible kernel" settings. The stock Arch kernel needs no modifications.
+**Note:** When running a custom kernel, ensure it is `PREEMPT` enabled to make use of the methods mentioned above.
 
 ### Configuring PAM
 
-The `/etc/security/limits.conf` file provides configuration for the `pam_limits` PAM module, which sets limits on system resources. It lets you do things like define the default nice level for all processes, individual groups, the maximum locked-in memory address space, and more.
+The `/etc/security/limits.conf` file provides configuration for the `pam_limits` PAM module, which sets limits on system resources (see [limits.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/limits.conf.5)).
 
-**Note:** Processes initiated by Systemd service ignore limits.conf. You need to set in the .service files, for more info, man systemd.exec.
+**Tip:** It is advised to externalize the configuration of `pam_limits` to separate files below `/etc/security/limits.conf.d` as those take precedence over the main configuration file.
 
 There are two types of resource limits that `pam_limits` provides: **hard limits** and **soft limits**. Hard limits are set by `root` and enforced by the kernel, while soft limits may be configured by the user within the range allowed by the hard limits.
 
-Installing the package [realtime-privileges](https://www.archlinux.org/packages/?name=realtime-privileges) and adding the user to the 'realtime' group, provides reasonable default values, see [professional audio#System configuration](/index.php/Professional_audio#System_configuration "Professional audio") for more information.
+Installing the package [realtime-privileges](https://www.archlinux.org/packages/?name=realtime-privileges) and adding the user to the `realtime` group, provides reasonable default values (e.g. relevant for [Professional audio](/index.php/Professional_audio "Professional audio")).
 
-There are an infinite variety of possible PAM limits configurations, it is highly advisable to read the [limits.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/limits.conf.5) page in order to better understand these functions.
+### Configuring systemd services
+
+Processes spawned by systemd system services need to specifically setup equivalents to `limits.conf`. Further information can be found in the sections `CREDENTIALS` and `PROCESS PROPERTIES` in [systemd.exec(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.exec.5).
 
 ## Hard and soft realtime
 

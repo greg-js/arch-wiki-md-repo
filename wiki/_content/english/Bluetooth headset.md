@@ -12,15 +12,16 @@ Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio pl
     *   [1.1 Configuration via CLI](#Configuration_via_CLI)
         *   [1.1.1 Setting up auto connection](#Setting_up_auto_connection)
     *   [1.2 Configuration via GNOME Bluetooth](#Configuration_via_GNOME_Bluetooth)
-    *   [1.3 Troubleshooting](#Troubleshooting)
-        *   [1.3.1 Bad sound / Static noise / "Muddy" sound](#Bad_sound_.2F_Static_noise_.2F_.22Muddy.22_sound)
-        *   [1.3.2 Selected audio profile, but headset inactive and audio cannot be redirected](#Selected_audio_profile.2C_but_headset_inactive_and_audio_cannot_be_redirected)
-        *   [1.3.3 Pairing fails with AuthenticationFailed](#Pairing_fails_with_AuthenticationFailed)
-        *   [1.3.4 Pairing works, but connecting does not](#Pairing_works.2C_but_connecting_does_not)
-        *   [1.3.5 Connecting works, but there are sound glitches all the time](#Connecting_works.2C_but_there_are_sound_glitches_all_the_time)
-        *   [1.3.6 Connecting works, but I cannot play sound](#Connecting_works.2C_but_I_cannot_play_sound)
-        *   [1.3.7 UUIDs has unsupported type](#UUIDs_has_unsupported_type)
-        *   [1.3.8 PC shows device as paired, but is not recognized by device](#PC_shows_device_as_paired.2C_but_is_not_recognized_by_device)
+    *   [1.3 LDAC](#LDAC)
+    *   [1.4 Troubleshooting](#Troubleshooting)
+        *   [1.4.1 Bad sound / Static noise / "Muddy" sound](#Bad_sound_.2F_Static_noise_.2F_.22Muddy.22_sound)
+        *   [1.4.2 Selected audio profile, but headset inactive and audio cannot be redirected](#Selected_audio_profile.2C_but_headset_inactive_and_audio_cannot_be_redirected)
+        *   [1.4.3 Pairing fails with AuthenticationFailed](#Pairing_fails_with_AuthenticationFailed)
+        *   [1.4.4 Pairing works, but connecting does not](#Pairing_works.2C_but_connecting_does_not)
+        *   [1.4.5 Connecting works, but there are sound glitches all the time](#Connecting_works.2C_but_there_are_sound_glitches_all_the_time)
+        *   [1.4.6 Connecting works, but I cannot play sound](#Connecting_works.2C_but_I_cannot_play_sound)
+        *   [1.4.7 UUIDs has unsupported type](#UUIDs_has_unsupported_type)
+        *   [1.4.8 PC shows device as paired, but is not recognized by device](#PC_shows_device_as_paired.2C_but_is_not_recognized_by_device)
 *   [2 Legacy method: ALSA-BTSCO](#Legacy_method:_ALSA-BTSCO)
     *   [2.1 Connecting the headset](#Connecting_the_headset)
         *   [2.1.1 Pairing the headset with your computer](#Pairing_the_headset_with_your_computer)
@@ -98,7 +99,7 @@ After pairing, you also need to explicitly connect the device (every time?):
 
 ```
 
-If you're getting a connection error `org.bluez.Error.Failed` retry by killing existing PulseAudio daemon first:
+If you are getting a connection error `org.bluez.Error.Failed` retry by killing existing PulseAudio daemon first:
 
 ```
 $ pulseaudio -k
@@ -161,6 +162,10 @@ You can use [GNOME Bluetooth](/index.php/Bluetooth#Graphical "Bluetooth") graphi
 First, you need to be sure that `bluetooth.service` systemd unit is running.
 
 Open GNOME Bluetooth and activate the bluetooth. After scanning for devices, you can connect to your headset selecting it on the device list. You can directly access to sound configuration panel from the device menu. On the sound panel, a new sink should appear when your device is connected.
+
+### LDAC
+
+[LDAC](https://en.wikipedia.org/wiki/LDAC_(codec) support can be enabled by installing [pulseaudio-modules-bt-git](https://aur.archlinux.org/packages/pulseaudio-modules-bt-git/). See its [project page](https://github.com/EHfive/pulseaudio-modules-bt) for configuration tips.
 
 ### Troubleshooting
 
@@ -248,7 +253,7 @@ module-bluez5-discover
 
 This is very likely to occur when the Bluetooth and the WiFi share the same chip as they share the same physical antenna and possibly band range (2.4GHz). Although this works seamlessly on Windows, this is not the case on Linux.
 
-A possible solution is to move your WiFi network to 5GHz so that there will be no interference. If your card/router doesn't support this, you can upgrade your WiFi drivers/firmware. This approach works on Realtek 8723BE and latest rtl drivers for this chip from AUR.
+A possible solution is to move your WiFi network to 5GHz so that there will be no interference. If your card/router does not support this, you can upgrade your WiFi drivers/firmware. This approach works on Realtek 8723BE and latest rtl drivers for this chip from AUR.
 
 If nothing of the previous is possible, a less effective mitigation is to tweak the fragment size and the latency on PulseAudio output port, trying to compensate interference. Reasonable values must be chosen, because these settings can make the audio out of sync (e.g. when playing videos). To change the latency of the bluetooth headset's port (e.g. to 125000 microseconds in the following example):
 
@@ -753,7 +758,7 @@ If PulseAudio fails when changing the profile to A2DP with bluez 4.1+ and PulseA
 
 #### A2DP sink profile is unavailable
 
-When the A2DP sink profile is unavailable it won't be possible to switch to the A2DP sink (output) with a PulseAudio front-end and the A2DP sink won't even be listed. This can be confirmed with `pactl`.
+When the A2DP sink profile is unavailable it will not be possible to switch to the A2DP sink (output) with a PulseAudio front-end and the A2DP sink will not even be listed. This can be confirmed with `pactl`.
 
 ```
  $ pactl list | grep -C2 A2DP
@@ -775,7 +780,7 @@ Trying to manually set the card profile with `pacmd` will fail.
 
 This is known to happen from version 10.0 of Pulseaudio when connecting to Bluetooth headphones via Bluedevil or another BlueZ front-end. See [related bug report.](https://gitlab.freedesktop.org/pulseaudio/pulseaudio/issues/525)
 
-This issue also appears after initial pairing of Headphones with some Bluetooth controllers (e.g. `0a12:0001, Cambridge Silicon Radio`) which might default to the `Handsfree` or `Headset - HS` service and won't allow switching to the A2DP PulseAudio sink that requires the `AudioSink` service.
+This issue also appears after initial pairing of Headphones with some Bluetooth controllers (e.g. `0a12:0001, Cambridge Silicon Radio`) which might default to the `Handsfree` or `Headset - HS` service and will not allow switching to the A2DP PulseAudio sink that requires the `AudioSink` service.
 
 Possible solutions:
 

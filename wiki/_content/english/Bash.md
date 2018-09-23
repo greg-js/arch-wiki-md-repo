@@ -197,6 +197,8 @@ abiword may be found in the following packages:
 
 ```
 
+**Note:** The pkgfile database may need to be updated before this will work. See [pkgfile#Installation](/index.php/Pkgfile#Installation "Pkgfile") for details.
+
 An alternative "command not found" hook is provided by [command-not-found](https://aur.archlinux.org/packages/command-not-found/), which looks like this:
 
  `$ abiword` 

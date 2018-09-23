@@ -433,11 +433,11 @@ The test used by mkinitcpio to determine if `/dev` is mounted is to see if `/dev
 
 ### Possibly missing firmware for module XXXX
 
-When initramfs are being rebuild after a kernel update, you might get these two warnings:
+When initramfs are being rebuild after a kernel update, you might get these or similar warnings:
 
 ```
 ==> WARNING: Possibly missing firmware for module: aic94xx
-==> WARNING: Possibly missing firmware for module: smsmdtv 
+==> WARNING: Possibly missing firmware for module: wd719x 
 
 ```
 

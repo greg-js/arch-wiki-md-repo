@@ -2,12 +2,13 @@ Related articles
 
 *   [TeX Live FAQ](/index.php/TeX_Live_FAQ "TeX Live FAQ")
 *   [TeX Live and CJK](/index.php/TeX_Live_and_CJK "TeX Live and CJK")
-*   [Ooolatex](/index.php/Ooolatex "Ooolatex")
-*   [List of applications/Documents#Scientific_documents](/index.php/List_of_applications/Documents#Scientific_documents "List of applications/Documents")
+*   [List of applications/Documents#TeX editors](/index.php/List_of_applications/Documents#TeX_editors "List of applications/Documents")
 
-[TeX Live](https://www.tug.org/texlive/) is an "easy way to get up and running with the [TeX](https://en.wikipedia.org/wiki/TeX "wikipedia:TeX") document production system. It provides a comprehensive TeX system with binaries for most flavors of Unix, including GNU/Linux, and also Windows. It includes all the major TeX-related programs, macro packages, and fonts that are free software, including support for many languages around the world."
+According to [Wikipedia](https://en.wikipedia.org/wiki/TeX_Live "wikipedia:TeX Live"):
 
-TeX Live is one of the most popular distributions for [LaTeX](https://en.wikipedia.org/wiki/LaTeX "wikipedia:LaTeX"), [ConTeXt](https://en.wikipedia.org/wiki/ConTeXt "wikipedia:ConTeXt") and friends.
+	**TeX Live** is a free software distribution for the [TeX](https://en.wikipedia.org/wiki/TeX "wikipedia:TeX") typesetting system that includes major TeX-related programs, macro packages, and fonts.
+
+TeX Live includes the [tex(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tex.1) and [pdftex(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pdftex.1) programs, the [LaTeX](https://en.wikipedia.org/wiki/LaTeX "wikipedia:LaTeX") and [ConTeXt](https://en.wikipedia.org/wiki/ConTeXt "wikipedia:ConTeXt") TeX macro packages and the [XeTeX](https://en.wikipedia.org/wiki/XeTeX "wikipedia:XeTeX") and [LuaTeX](https://en.wikipedia.org/wiki/LuaTeX "wikipedia:LuaTeX") TeX engines.
 
 ## Contents
 
@@ -27,23 +28,18 @@ TeX Live is one of the most popular distributions for [LaTeX](https://en.wikiped
 
 ## Installation
 
-The TeX Live packages are arranged into two groups in the [official repositories](/index.php/Official_repositories "Official repositories"):
+The TeX Live packages are arranged into two [package groups](/index.php/Package_group "Package group"):
 
 *   [texlive-most](https://www.archlinux.org/groups/x86_64/texlive-most/) includes TeX Live applications.
 *   [texlive-lang](https://www.archlinux.org/groups/x86_64/texlive-lang/) provides various character sets and non-English features.
 
-The essential package [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) contains the basic texmf-dist tree, while [texlive-bin](https://www.archlinux.org/packages/?name=texlive-bin) contains the binaries, libraries, and the texmf tree. [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) is based on the “medium” install scheme of the upstream distribution. All other packages are based on the eponymous collections in TeX Live. To determine which CTAN packages are included in each package, lookup the files:
+The essential package [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) contains the basic texmf-dist tree, while [texlive-bin](https://www.archlinux.org/packages/?name=texlive-bin) contains the binaries, libraries, and the texmf tree. [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) is based on the "medium" install scheme of the upstream distribution. All other packages are based on the eponymous collections in TeX Live. To determine which CTAN packages are included in each package, look up the files `/var/lib/texmf/arch/installedpkgs/<package>_<revnr>.pkgs`.
 
-```
- /var/lib/texmf/arch/installedpkgs/<package>_<revnr>.pkgs
-
-```
-
-**Note:** [texlive-langextra](https://www.archlinux.org/packages/?name=texlive-langextra) provides language support for African, Arabic, Armenian, Croatian, Hebrew, Indic, Mongolian, Tibetan and Vietnamese.
+The [texlive-langextra](https://www.archlinux.org/packages/?name=texlive-langextra) package provides language support for African, Arabic, Armenian, Croatian, Hebrew, Indic, Mongolian, Tibetan and Vietnamese.
 
 ### Manual installation
 
-See the [LaTeX Wikibook](https://en.wikibooks.org/wiki/LaTeX/Installation#Custom_installation_with_TeX_Live) and [TeX Live Guide](https://tug.org/texlive/doc/texlive-en/texlive-en.html#x1-140003). For programs that require TeX Live to be installed (e.g. kile) you can use the [texlive-installer](https://aur.archlinux.org/packages/texlive-installer/) package provides the TeX Live installer.
+Alternatively you can install TeX Live with the upstream installer, which is packaged as [texlive-installer](https://aur.archlinux.org/packages/texlive-installer/). For more information, see the [LaTeX Wikibook](https://en.wikibooks.org/wiki/LaTeX/Installation#Custom_installation_with_TeX_Live "wikibooks:LaTeX/Installation") and the [TeX Live Guide](https://tug.org/texlive/doc/texlive-en/texlive-en.html#x1-140003).
 
 ## Usage
 
@@ -188,4 +184,6 @@ Afterwards, you need to run `texhash` to update the TeX database:
 
 ## See also
 
-*   [A (Not So) Short In­tro­duc­tion to LaTeX2ε](https://www.ctan.org/tex-archive/info/lshort/english)
+*   [The TeX Live Guide](https://www.tug.org/texlive/doc/texlive-en/texlive-en.html)
+*   [Wikibooks:LaTeX](https://en.wikibooks.org/wiki/LaTeX "wikibooks:LaTeX")
+*   [The Not So Short In­tro­duc­tion to LaTeX 2ε](https://tobi.oetiker.ch/lshort/lshort.pdf)

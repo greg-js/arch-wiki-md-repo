@@ -39,7 +39,7 @@ This example assumes that the pre-existing disk is `/dev/sda`, which contains on
 
 The first step is creating the [partition](/index.php/Partition "Partition") on the new disk, `/dev/sdb1`, that will be used as the mirror for the RAID array. In general, in this step it is not needed to recreate the exact partitioning scheme of the pre-existing drive; RAID can even be configured on whole disks, and [partitions](https://raid.wiki.kernel.org/index.php/Partitioning_RAID_/_LVM_on_RAID#Partitions%20on%20a%20RAID%20device) or [logical volumes](/index.php/LVM "LVM") created later.
 
-Make sure that the partition type is set as `FD`. See [RAID#Prepare the devices](/index.php/RAID#Prepare_the_devices "RAID") and [RAID#Partition_the_devices](/index.php/RAID#Partition_the_devices "RAID") for more information.
+Make sure that the partition type is set as `FD`. See [RAID#Prepare the devices](/index.php/RAID#Prepare_the_devices "RAID") and [RAID#Partition the devices](/index.php/RAID#Partition_the_devices "RAID") for more information.
 
 ### Create the RAID device
 
@@ -185,7 +185,7 @@ Then save the array configuration with UUIDs to make it easier for the system to
 
 #### Rebuild initcpio
 
-Follow [RAID#Configure_mkinitcpio](/index.php/RAID#Configure_mkinitcpio "RAID").
+Follow [RAID#Configure mkinitcpio](/index.php/RAID#Configure_mkinitcpio "RAID").
 
 ### Install the boot loader on the RAID array
 

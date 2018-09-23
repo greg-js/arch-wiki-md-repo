@@ -6,16 +6,13 @@ Related articles
 *   [HexChat](/index.php/HexChat "HexChat")
 *   [Quassel](/index.php/Quassel "Quassel")
 
-[WeeChat](https://weechat.org/) is a highly extendable and feature rich [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat "wikipedia:Internet Relay Chat") Client currently under heavy development.
+[WeeChat](https://weechat.org/) is a highly extendable and feature rich [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat "wikipedia:Internet Relay Chat") client.
 
 ## Contents
 
-*   [1 Installing](#Installing)
-*   [2 Running WeeChat](#Running_WeeChat)
+*   [1 Installation](#Installation)
+*   [2 Usage](#Usage)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Internal commands](#Internal_commands)
-    *   [3.2 Internal menu-based](#Internal_menu-based)
-    *   [3.3 Configuration Files](#Configuration_Files)
 *   [4 Connecting to a server](#Connecting_to_a_server)
 *   [5 Creating a Server profile](#Creating_a_Server_profile)
 *   [6 Configuring SSL](#Configuring_SSL)
@@ -37,62 +34,31 @@ Related articles
 *   [10 See also](#See_also)
     *   [10.1 Guides](#Guides)
 
-## Installing
+## Installation
 
 [Install](/index.php/Install "Install") the [weechat](https://www.archlinux.org/packages/?name=weechat) package, or [weechat-git](https://aur.archlinux.org/packages/weechat-git/) for the development version.
 
-## Running WeeChat
+## Usage
 
-Since WeeChat shall have multiple interfaces at some point, run **weechat-[interface]** to start WeeChat as desired.
+WeeChat provides two executables:
 
-The current implementation only comes with `weechat-ncurses`. Therefore, the following commands are interchangeable until other interfaces are implemented:
+*   `weechat`, the curses interface, see [weechat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/weechat.1)
+*   `weechat-headless`, the headless version, see [weechat-headless(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/weechat-headless.1)
 
-```
-$ weechat
-$ weechat-ncurses
-
-```
+Read the [quick start guide](https://weechat.org/files/doc/stable/weechat_quickstart.en.html). For details consult the [user's guide](https://weechat.org/files/doc/stable/weechat_user.en.html).
 
 ## Configuration
 
-You can configure WeeChat in 3 ways: using WeeChat's internal commands; using **iset**; or by editing the .conf files directly. WeeChat will automatically save settings on exit or when you run `/save`, so if you are editing a .conf file in an editor, be sure to run `/reload` from the console before exiting, otherwise your changes will be lost.
+By default WeeChat stores its configuration files in `~/.weechat`. Editing these files directly is not recommended because WeeChat may write them at any time.[[1]](https://www.weechat.org/files/doc/stable/weechat_user.en.html#files_and_directories)
 
-### Internal commands
-
-The `/set` command follows this structure: `/set [file.name].[section].[directive]`
-
-You can get a list of all configurable options by typing `/set` in the **weechat** buffer window. Since there are nearly 600 default configurable options, you can search through them with a wildcard syntax: `/set irc.server.*` or `/set *server*` as an example. You can get help on each option with the `/help` command:
+Instead you should use the [/set command](https://weechat.org/files/doc/devel/weechat_user.en.html#command_weechat_set). You can get a list of all configurable options by running `/set` in the WeeChat buffer window. Since there are nearly 600 default configurable options, you can search through them with a wildcard syntax: `/set irc.server.*` or `/set *server*` as an example. You can get help on each option with the `/help` command:
 
 ```
 /help irc.server.freenode.autoconnect
 
 ```
 
-### Internal menu-based
-
-For a more convenient method, install the **iset** script. If you have weechat 0.3.9 or newer, run:
-
-```
-/script install iset.pl
-
-```
-
-In older versions, use `/weeget install iset`, or download [iset.pl](https://www.weechat.org/scripts/source/stable/iset.pl.html/) into your `~/.weechat/perl/autoload` directory manually.
-
-Afterwards, run
-
-```
-/iset
-
-```
-
-to get a buffer with all configuration options.
-
-### Configuration Files
-
-The .conf files for WeeChat are saved to `~/.weechat`. These files are not commented. Detailed information can be found within the program itself (see **Internally** above), or WeeChat's [user guide](https://www.weechat.org/files/doc/stable/weechat_user.en.html).
-
-**Tip:** in case you want to move `.weechat` directory somewhere else (like in your **$XDG_CONFIG_HOME**), use this option: `$weechat -d $XDG_CONFIG_HOME/weechat` or set the environment variable `WEECHAT_HOME`.
+**Tip:** In case you want to move `~/.weechat` directory somewhere else (like in your `$XDG_CONFIG_HOME`), use this option: `$weechat -d $XDG_CONFIG_HOME/weechat` or set the environment variable `WEECHAT_HOME`.
 
 ## Connecting to a server
 

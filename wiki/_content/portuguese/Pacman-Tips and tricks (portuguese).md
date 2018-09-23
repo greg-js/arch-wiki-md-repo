@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2018-09-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=541010) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2018-09-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=542522) na versão em inglês.
 
 Artigos relacionados
 
@@ -65,6 +65,7 @@ Veja também [Manutenção do sistema](/index.php/Manuten%C3%A7%C3%A3o_do_sistem
 Você pode querer obter a lista de pacotes instalados com sua versão, o que é útil ao relatar erros ou discutir pacotes instalados.
 
 *   Listar todos os pacotes instalados explicitamente: `pacman -Qe`.
+*   Listar todos os pacotes no grupo de nome `grupo`: `pacman -Sg grupo`
 *   Listar todos pacotes nativos (ou seja, presente na base de dados de sincronização) instalados explicitamente que não são dependências diretas ou opcional: `pacman -Qent`.
 *   Listar todos os pacotes externos (geralmente baixados e instalados manualmente ou removidos do repositório): `pacman -Qm`.
 *   Listar todos os pacotes nativos (instalados a partir de base(s) de dados de sincronização): `pacman -Qn`.
@@ -697,6 +698,8 @@ Veja também [Auxiliares do AUR#Wrappers do pacman](/index.php/Auxiliares_do_AUR
 	[https://xyne.archlinux.ca/projects/powerpill/](https://xyne.archlinux.ca/projects/powerpill/) || [powerpill](https://aur.archlinux.org/packages/powerpill/)
 
 ### Front-ends gráficos
+
+**Atenção:** PackageKit pode abrir permissões do sistema em formas inesperada e, do contrário, não é recomendado para uso geral. Veja [FS#50459](https://bugs.archlinux.org/task/50459) e [FS#57943](https://bugs.archlinux.org/task/57943).
 
 Veja também [Auxiliares do AUR#Gráficos](/index.php/Auxiliares_do_AUR#Gr.C3.A1ficos "Auxiliares do AUR").
 

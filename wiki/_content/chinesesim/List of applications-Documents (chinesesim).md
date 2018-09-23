@@ -412,7 +412,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 #### 电子书阅读
 
-**Note:** Some [PDF and DjVu viewersalso](#PDF_and_DjVu) support other e-book formats.
+**Note:** Some [PDF and DjVu viewers](#PDF_and_DjVu)also support other e-book formats.
 
 *   **[Calibre](https://en.wikipedia.org/wiki/Calibre_(software) "wikipedia:Calibre (software)")** — E-book library management application that can also convert between different formats and sync with a variety of e-book readers. Supported formats include CBZ, CBR, CBC, CHM, DJVU, EPUB, FictionBook, HTML, HTMLZ, LIT, LRF, Mobipocket, ODT, PDF, PRC, PDB, PML, RB, RTF, SNB, TCR, TXT and TXTZ.
 

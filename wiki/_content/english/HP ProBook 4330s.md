@@ -37,7 +37,16 @@ The fan can be controlled (throttled) in software, otherwise it never shuts off,
 
 ### Intel CPU microcode
 
-See [Microcode#Enabling Intel microcode updates](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
+See [Microcode#Installation](/index.php/Microcode#Installation "Microcode").
+
+Related articles
+
+*   [HP_ProBook_4530s](/index.php/HP_ProBook_4530s "HP ProBook 4530s")
+*   [HP_ProBook_4730s](/index.php/HP_ProBook_4730s "HP ProBook 4730s")
+*   [Intel_graphics](/index.php/Intel_graphics "Intel graphics")
+*   [Power_management](/index.php/Power_management "Power management")
+*   [GRUB](/index.php/GRUB "GRUB")
+*   [GRUB/Tips and tricks](/index.php/GRUB/Tips_and_tricks "GRUB/Tips and tricks")
 
 ### Synaptics Touchpad
 

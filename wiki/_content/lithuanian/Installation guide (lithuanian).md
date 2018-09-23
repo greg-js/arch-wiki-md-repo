@@ -229,7 +229,7 @@ Atitinkmai nustatykite `LANG` [kintamąjį](/index.php/Variable "Variable") [loc
 
  `/etc/locale.conf`  `LANG=*en_US.UTF-8*` 
 
-Jeigu [nustatėte klaviatūros išdėstymą](#Set_the_keyboard_layout), padarykite pakeitimus pastovius [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) faile:
+Jeigu [nustatėte klaviatūros išdėstymą](#Nustatykite_klaviat.C5.ABros_i.C5.A1d.C4.97stym.C4.85), padarykite pakeitimus pastovius [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) faile:
 
  `/etc/vconsole.conf`  `KEYMAP=*de-latin1*` 
 

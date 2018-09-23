@@ -6,7 +6,7 @@ Related articles
 *   [pam_abl](/index.php/Pam_abl "Pam abl")
 *   [pam_oath](/index.php/Pam_oath "Pam oath")
 
-The Linux Pluggable Authentication Modules (PAM) provide a framework for system-wide user authentication. To quote the [project](http://www.linux-pam.org/whatispam.html):
+The [Linux Pluggable Authentication Modules](http://www.linux-pam.org/) (PAM) provide a framework for system-wide user authentication. To quote the [project](http://www.linux-pam.org/whatispam.html):
 
 	PAM provides a way to develop programs that are independent of authentication scheme. These programs need "authentication modules" to be attached to them at run-time in order to work. Which authentication module is to be attached is dependent upon the local system setup and is at the discretion of the local system administrator.
 
@@ -87,7 +87,7 @@ auth      required  pam_unix.so     try_first_pass nullok
 auth      optional  pam_permit.so
 ```
 
-From [pam_unix(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pam_unix.8): "The authentication component `pam_unix.so` performs the task of checking the users credentials (password). The default action of this module is to not permit the user access to a service if their official password is blank. " - the latter being what `pam_permit.so` is used for. Simply swapping the control values `required` and `optional` for both lines is enough to disable password authentication, i.e. any user may logon without providing a password.
+From [pam_unix(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_unix.8): "The authentication component `pam_unix.so` performs the task of checking the users credentials (password). The default action of this module is to not permit the user access to a service if their official password is blank. " - the latter being what `pam_permit.so` is used for. Simply swapping the control values `required` and `optional` for both lines is enough to disable password authentication, i.e. any user may logon without providing a password.
 
 Second, as the contrary example, per default configuration creating the following file:
 

@@ -1,6 +1,7 @@
 Related articles
 
 *   [Font configuration](/index.php/Font_configuration "Font configuration")
+*   [Linux console#Fonts](/index.php/Linux_console#Fonts "Linux console")
 *   [Java Runtime Environment Fonts](/index.php/Java_Runtime_Environment_Fonts "Java Runtime Environment Fonts")
 *   [Metric-compatible fonts](/index.php/Metric-compatible_fonts "Metric-compatible fonts")
 
@@ -20,47 +21,44 @@ Note that certain font licenses may impose some legal limitations.
     *   [2.3 Manual installation](#Manual_installation)
     *   [2.4 Older applications](#Older_applications)
     *   [2.5 Pango Warnings](#Pango_Warnings)
-*   [3 Console fonts](#Console_fonts)
-    *   [3.1 Preview and temporary changes](#Preview_and_temporary_changes)
-    *   [3.2 Persistent configuration](#Persistent_configuration)
-*   [4 Font packages](#Font_packages)
-    *   [4.1 Bitmap](#Bitmap)
-    *   [4.2 Latin script](#Latin_script)
-        *   [4.2.1 Families](#Families)
-        *   [4.2.2 Monospaced](#Monospaced)
-        *   [4.2.3 Sans-serif](#Sans-serif)
-        *   [4.2.4 Serif](#Serif)
-        *   [4.2.5 Unsorted](#Unsorted)
-    *   [4.3 Non-latin scripts](#Non-latin_scripts)
-        *   [4.3.1 Ancient Scripts](#Ancient_Scripts)
-        *   [4.3.2 Arabic](#Arabic)
-        *   [4.3.3 Braille](#Braille)
-        *   [4.3.4 Chinese, Japanese, Korean, Vietnamese](#Chinese.2C_Japanese.2C_Korean.2C_Vietnamese)
-            *   [4.3.4.1 Pan-CJK](#Pan-CJK)
-            *   [4.3.4.2 Chinese](#Chinese)
-            *   [4.3.4.3 Japanese](#Japanese)
-            *   [4.3.4.4 Korean](#Korean)
-            *   [4.3.4.5 Vietnamese](#Vietnamese)
-        *   [4.3.5 Cyrillic](#Cyrillic)
-        *   [4.3.6 Greek](#Greek)
-        *   [4.3.7 Hebrew](#Hebrew)
-        *   [4.3.8 Indic](#Indic)
-        *   [4.3.9 Khmer](#Khmer)
-        *   [4.3.10 Mongolic and Tungusic](#Mongolic_and_Tungusic)
-        *   [4.3.11 Persian](#Persian)
-        *   [4.3.12 Tai–Kadai](#Tai.E2.80.93Kadai)
-        *   [4.3.13 Tibeto-Burman](#Tibeto-Burman)
-    *   [4.4 Emoji and symbols](#Emoji_and_symbols)
-    *   [4.5 Math](#Math)
-    *   [4.6 Other operating system fonts](#Other_operating_system_fonts)
-*   [5 Fallback font order with X11](#Fallback_font_order_with_X11)
-*   [6 Font alias](#Font_alias)
-*   [7 Tips and tricks](#Tips_and_tricks)
-    *   [7.1 List all installed fonts](#List_all_installed_fonts)
-    *   [7.2 Lists installed fonts for a particular language](#Lists_installed_fonts_for_a_particular_language)
-    *   [7.3 Set terminal font on-the-fly](#Set_terminal_font_on-the-fly)
-    *   [7.4 Application-specific font cache](#Application-specific_font_cache)
-*   [8 See also](#See_also)
+*   [3 Font packages](#Font_packages)
+    *   [3.1 Bitmap](#Bitmap)
+    *   [3.2 Latin script](#Latin_script)
+        *   [3.2.1 Families](#Families)
+        *   [3.2.2 Monospaced](#Monospaced)
+        *   [3.2.3 Sans-serif](#Sans-serif)
+        *   [3.2.4 Serif](#Serif)
+        *   [3.2.5 Unsorted](#Unsorted)
+    *   [3.3 Non-latin scripts](#Non-latin_scripts)
+        *   [3.3.1 Ancient Scripts](#Ancient_Scripts)
+        *   [3.3.2 Arabic](#Arabic)
+        *   [3.3.3 Braille](#Braille)
+        *   [3.3.4 Chinese, Japanese, Korean, Vietnamese](#Chinese.2C_Japanese.2C_Korean.2C_Vietnamese)
+            *   [3.3.4.1 Pan-CJK](#Pan-CJK)
+            *   [3.3.4.2 Chinese](#Chinese)
+            *   [3.3.4.3 Japanese](#Japanese)
+            *   [3.3.4.4 Korean](#Korean)
+            *   [3.3.4.5 Vietnamese](#Vietnamese)
+        *   [3.3.5 Cyrillic](#Cyrillic)
+        *   [3.3.6 Greek](#Greek)
+        *   [3.3.7 Hebrew](#Hebrew)
+        *   [3.3.8 Indic](#Indic)
+        *   [3.3.9 Khmer](#Khmer)
+        *   [3.3.10 Mongolic and Tungusic](#Mongolic_and_Tungusic)
+        *   [3.3.11 Persian](#Persian)
+        *   [3.3.12 Tai–Kadai](#Tai.E2.80.93Kadai)
+        *   [3.3.13 Tibeto-Burman](#Tibeto-Burman)
+    *   [3.4 Emoji and symbols](#Emoji_and_symbols)
+    *   [3.5 Math](#Math)
+    *   [3.6 Other operating system fonts](#Other_operating_system_fonts)
+*   [4 Fallback font order with X11](#Fallback_font_order_with_X11)
+*   [5 Font alias](#Font_alias)
+*   [6 Tips and tricks](#Tips_and_tricks)
+    *   [6.1 List all installed fonts](#List_all_installed_fonts)
+    *   [6.2 Lists installed fonts for a particular language](#Lists_installed_fonts_for_a_particular_language)
+    *   [6.3 Set terminal font on-the-fly](#Set_terminal_font_on-the-fly)
+    *   [6.4 Application-specific font cache](#Application-specific_font_cache)
+*   [7 See also](#See_also)
 
 ## Font formats
 
@@ -222,72 +220,6 @@ You can test for a default font being set like so:
 LiberationMono-Regular.ttf: "Liberation Mono" "Regular"
 
 ```
-
-## Console fonts
-
-**Note:** This section is about the [Linux console](https://en.wikipedia.org/wiki/Linux_console "wikipedia:Linux console"). For alternative console solutions offering more features (full Unicode fonts, modern graphics adapters etc.), see [fbterm](/index.php/Fbterm "Fbterm"), [KMSCON](/index.php/KMSCON "KMSCON") or similar projects.
-
-By default, the [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") uses the kernel built-in font with a [CP437](https://en.wikipedia.org/wiki/CP437 "wikipedia:CP437") character set, but this can be easily changed.
-
-The [Linux console](https://en.wikipedia.org/wiki/Linux_console "wikipedia:Linux console") uses UTF-8 encoding by default, but because the standard VGA-compatible framebuffer is used, a console font is limited to either a standard 256, or 512 glyphs. If the font has more than 256 glyphs, the number of colours is reduced from 16 to 8\. In order to assign correct symbol to be displayed to the given Unicode value, a special translation map, often called *unimap*, is needed. Nowadays most of the console fonts have the *unimap* built-in; historically, it had to be loaded separately.
-
-The [kbd](https://www.archlinux.org/packages/?name=kbd) package provides tools to change virtual console font and font mapping. Available fonts are saved in the `/usr/share/kbd/consolefonts/` directory, those ending with *.psfu* or *.psfu.gz* have a Unicode translation map built-in.
-
-Keymaps, the connection between the key pressed and the character used by the computer, are found in the subdirectories of `/usr/share/kbd/keymaps/`, see [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") for details.
-
-**Note:** Replacing the font can cause issues with programs that expect a standard VGA-style font, such as those using line drawing graphics.
-
-**Tip:** For European based languages written in Latin/Greek letters you can use `eurlatgr` font, it includes a broad range of Latin/Greek letter variations as well as special characters [[2]](https://lists.altlinux.org/pipermail/kbd/2014-February/000439.html).
-
-### Preview and temporary changes
-
-**Tip:** An organized library of images for previewing is available: [Linux console fonts screenshots](http://alexandre.deverteuil.net/pages/consolefonts/).
-
-```
-$ showconsolefont
-
-```
-
-shows a table of glyphs or letters of a font.
-
-`setfont` temporarily change the font if passed a font name (in `/usr/share/kbd/consolefonts/`) such as
-
-```
-$ setfont lat2-16 -m 8859-2
-
-```
-
-So to have a **small 8x8** font, with that font installed like seen below, use e.g.:
-
-```
-$ setfont -h8 /usr/share/kbd/consolefonts/drdos8x8.psfu.gz
-
-```
-
-Font names are case-sensitive. With no parameter, `setfont` returns the console to the default font.
-
-**Tip:** All font changing commands can be typed in "blind".
-
-**Note:** *setfont* only works on the console currently being used. Any other consoles, active or inactive, remain unaffected.
-
-### Persistent configuration
-
-The `FONT` variable in `/etc/vconsole.conf` is used to set the font at boot, persistently for all consoles. See [vconsole.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/vconsole.conf.5) for details.
-
-For displaying characters such as *Č, ž, đ, š* or *Ł, ę, ą, ś* using the font `lat2-16.psfu.gz`:
-
- `/etc/vconsole.conf` 
-```
-...
-FONT=lat2-16
-FONT_MAP=8859-2
-```
-
-It means that second part of ISO/IEC 8859 characters are used with size 16\. You can change font size using other values (e.g. `lat2-08`). For the regions determined by 8859 specification, look at the [Wikipedia:ISO/IEC 8859#The parts of ISO/IEC 8859](https://en.wikipedia.org/wiki/ISO/IEC_8859#The_parts_of_ISO.2FIEC_8859 "wikipedia:ISO/IEC 8859").
-
-To use the specified font in early userspace, use the `consolefont` hook in `/etc/mkinitcpio.conf`. See [Mkinitcpio#HOOKS](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") for more information.
-
-If the fonts seems to not change on boot, or change only temporarily, it is most likely that they got reset when graphics driver was initialized and console was switched to framebuffer. To avoid this, load your graphics driver earlier. See for example [Kernel mode setting#Early KMS start](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting"), [[3]](https://bbs.archlinux.org/viewtopic.php?id=145765) or other ways to setup your framebuffer before `/etc/vconsole.conf` is applied.
 
 ## Font packages
 
@@ -644,7 +576,7 @@ For terminal emulators that use `Xresources`, fonts can be set by using escape s
 
 ### Application-specific font cache
 
-Matplotlib ([python-matplotlib](https://www.archlinux.org/packages/?name=python-matplotlib) or [python2-matplotlib](https://www.archlinux.org/packages/?name=python2-matplotlib)) uses its own font cache, so after updating fonts, be sure to remove `~/.matplotlib/fontList.cache`, `~/.cache/matplotlib/fontList.cache`, `~/.sage/matplotlib-1.2.1/fontList.cache`, etc. so it will regenerate its cache and find the new fonts [[4]](http://matplotlib.1069221.n5.nabble.com/getting-matplotlib-to-recognize-a-new-font-td40500.html).
+Matplotlib ([python-matplotlib](https://www.archlinux.org/packages/?name=python-matplotlib) or [python2-matplotlib](https://www.archlinux.org/packages/?name=python2-matplotlib)) uses its own font cache, so after updating fonts, be sure to remove `~/.matplotlib/fontList.cache`, `~/.cache/matplotlib/fontList.cache`, `~/.sage/matplotlib-1.2.1/fontList.cache`, etc. so it will regenerate its cache and find the new fonts [[1]](http://matplotlib.1069221.n5.nabble.com/getting-matplotlib-to-recognize-a-new-font-td40500.html).
 
 ## See also
 

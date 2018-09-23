@@ -95,7 +95,7 @@ After configuring the BIOS setup to allow UEFI boot (either *UEFI only* or *both
 
 I can confirm that issue. Even with a recent bios (1.52), it doesn't work.
 
-I had to trick my ThinkPad into UEFI (because my bios is locked, found that method by pure luck). It works by installing the [syslinux](/index.php/Syslinux "Syslinux") bootloader on your freshly installed arch (be sure to follow the GPT specific instructions at [Syslinux#GUID_partition_table](/index.php/Syslinux#GUID_partition_table "Syslinux")) and the boot that syslinux with the arch install iso ('Boot existing OS' -> press `TAB` -> replace `hd0 0` with `hd1 0`). Syslinux should show you an option to boot the ArchLinux installation in UEFI mode. Mount you Arch installation, `arch-chroot` into it and install [grub](/index.php/Grub "Grub") (or your favorite bootloader) for UEFI. That did the trick for me.
+I had to trick my ThinkPad into UEFI (because my bios is locked, found that method by pure luck). It works by installing the [syslinux](/index.php/Syslinux "Syslinux") bootloader on your freshly installed arch (be sure to follow the GPT specific instructions at [Syslinux#GUID partition table](/index.php/Syslinux#GUID_partition_table "Syslinux")) and the boot that syslinux with the arch install iso ('Boot existing OS' -> press `TAB` -> replace `hd0 0` with `hd1 0`). Syslinux should show you an option to boot the ArchLinux installation in UEFI mode. Mount you Arch installation, `arch-chroot` into it and install [GRUB](/index.php/GRUB "GRUB") (or your favorite bootloader) for UEFI. That did the trick for me.
 
 You have to create a proper UEFI partition. Have a look at [partitioning](/index.php/Partitioning "Partitioning").
 

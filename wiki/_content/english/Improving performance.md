@@ -84,7 +84,7 @@ $ free -h
 
 ```
 
-*   If CPU load is consistently high even with enough RAM available, then try to lower CPU usage by disabling running [daemons](/index.php/Daemons "Daemons") and/or processes. This can be monitored in several ways, for example with [htop](https://www.archlinux.org/packages/?name=htop), `pstree` or any other [system monitoring](/index.php/List_of_applications#System_monitoring "List of applications") tool:
+*   If CPU load is consistently high even with enough RAM available, then try to lower CPU usage by disabling running [daemons](/index.php/Daemons "Daemons") and/or processes. This can be monitored in several ways, for example with [htop](https://www.archlinux.org/packages/?name=htop), `pstree` or any other [system monitoring](/index.php/List_of_applications#System_monitors "List of applications") tool:
 
 ```
 $ htop
@@ -329,6 +329,8 @@ An alternative scheduler designed to be used on desktop computers is MuQSS, deve
 Some applications such as running a TV tuner card at full HD resolution (1080p) may benefit from using a [realtime kernel](/index.php/Realtime_kernel "Realtime kernel").
 
 ### Adjusting priorities of processes
+
+See also [nice(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nice.1) and [renice(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/renice.1).
 
 #### Ananicy
 

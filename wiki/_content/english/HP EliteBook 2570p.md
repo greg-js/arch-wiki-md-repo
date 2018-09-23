@@ -116,6 +116,15 @@ Some of the lines are commented out because ASPM does not work properly with som
 
 ## Documentation
 
+Related articles
+
+*   [Intel_graphics](/index.php/Intel_graphics "Intel graphics")
+*   [Power_management](/index.php/Power_management "Power management")
+*   [GRUB](/index.php/GRUB "GRUB")
+*   [GRUB/Tips and tricks](/index.php/GRUB/Tips_and_tricks "GRUB/Tips and tricks")
+*   [ACPI modules](/index.php/ACPI_modules "ACPI modules")
+*   [DSDT](/index.php/DSDT "DSDT")
+
 *   [Linux User Guide](http://h20565.www2.hp.com/portal/site/hpsc/template.PAGE/action.process/public/psi/manualsDisplay/?sp4ts.oid=5259393&javax.portlet.action=true&spf_p.tpst=psiContentDisplay&javax.portlet.begCacheTok=com.vignette.cachetoken&spf_p.prp_psiContentDisplay=wsrp-interactionState%3DdocId%253Demr_na-c03500525%257CdocLocale%253Den_US&javax.portlet.endCacheTok=com.vignette.cachetoken)
 *   [Specifications](https://www.fajnykomputer.pl/pl/p/file/b7a0ac330691b6f4eec20261b93dfaab/quick_spec_hp_elitebook_2570p.pdf)
 *   [Maintenance and Service Guide](http://h20628.www2.hp.com/km-ext/kmcsdirect/emr_na-c03559419-1.pdf)

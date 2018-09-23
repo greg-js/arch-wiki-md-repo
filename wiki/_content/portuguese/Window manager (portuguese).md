@@ -101,7 +101,7 @@ Veja [Comparison of tiling window managers](/index.php/Comparison_of_tiling_wind
 
 *   **[IceWM](/index.php/IceWM "IceWM")** — Window manager for the X Window System. The goal of IceWM is speed, simplicity, and not getting in the user's way.
 
-	[http://www.icewm.org/](http://www.icewm.org/) || [icewm](https://www.archlinux.org/packages/?name=icewm)
+	[https://ice-wm.org/](https://ice-wm.org/) || [icewm](https://www.archlinux.org/packages/?name=icewm)
 
 *   **jbwm** — jbwm is a window manager based on evilwm, with a minimal configuration size of approximately 16kb, focused on small binary size and usability, incorporating optional title-bars and XFT title-bar font rendering as compile-time options. jbwm also features easier to use keybindings than evilwm.
 

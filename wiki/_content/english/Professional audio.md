@@ -2,6 +2,7 @@ Related articles
 
 *   [Sound system](/index.php/Sound_system "Sound system")
 *   [JACK](/index.php/JACK "JACK")
+*   [Realtime kernel](/index.php/Realtime_kernel "Realtime kernel")
 *   [envy24control](/index.php/Envy24control "Envy24control")
 
 Modern Linux systems are more than capable of supporting your (semi-)professional audio needs. Latencies of 5ms down to even as low as 1ms can be achieved with good hardware and proper configuration.
@@ -34,26 +35,32 @@ Modern Linux systems are more than capable of supporting your (semi-)professiona
     *   [7.1 Steinberg's SDKs](#Steinberg.27s_SDKs)
 *   [8 Arch Linux Pro Audio Project](#Arch_Linux_Pro_Audio_Project)
 *   [9 Linux and Arch Linux Pro Audio in the news](#Linux_and_Arch_Linux_Pro_Audio_in_the_news)
-*   [10 Mailing list](#Mailing_list)
+*   [10 Mailing lists](#Mailing_lists)
 *   [11 IRC](#IRC)
+*   [12 See also](#See_also)
 
 ## Getting started
 
-Some of the major pro audio applications are already available from the official Arch Linux repositories. For anything which is not, you can either add a binary repository (see further down below) or if you prefer to compile, search the AUR. Nothing stops you from building directly off of upstream releases, but then you might as well run LFS.
+Arch Linux provides the package groups [pro-audio](https://www.archlinux.org/groups/x86_64/pro-audio/) (holding all relevant (semi-) professional applications), [lv2-plugins](https://www.archlinux.org/groups/x86_64/lv2-plugins/), [ladspa-plugins](https://www.archlinux.org/groups/x86_64/ladspa-plugins/), [dssi-plugins](https://www.archlinux.org/groups/x86_64/dssi-plugins/) and [vst-plugins](https://www.archlinux.org/groups/x86_64/vst-plugins/) (the latter being subgroups of the first group).
 
-Start by installing [JACK](/index.php/JACK "JACK"). See [List of applications#Audio](/index.php/List_of_applications#Audio "List of applications") and [awesome-linuxaudio](https://github.com/nodiscc/awesome-linuxaudio) for the available applications.
+**Tip:** See [Pacman/Tips and tricks#Listing packages](/index.php/Pacman/Tips_and_tricks#Listing_packages "Pacman/Tips and tricks") for listing members of and [Pacman#Installing package groups](/index.php/Pacman#Installing_package_groups "Pacman") for installing package groups.
+
+Low-latency audio on Linux is achieved using [JACK](/index.php/JACK "JACK") (all applications in the [pro-audio](https://www.archlinux.org/groups/x86_64/pro-audio/) group are [JACK](/index.php/JACK "JACK") clients).
+
+**Note:** [JACK](/index.php/JACK "JACK") uses audio backends, such as [ALSA](/index.php/ALSA "ALSA"), [FFADO](http://ffado.org), [OSS](/index.php/OSS "OSS") or [Portaudio](http://www.portaudio.com/). Depending on your setup, make sure those are configured properly!
 
 ### System configuration
 
+**Note:** The quality of information on best practices and system configuration vary a great deal (and are outdated or sometimes even contradictory in many locations). While for some systems and setups a higher level of optimization is necessary, for most users this will not be the case. Try a standard setup with the vanilla Arch Linux kernel first. Only if you require a setup with lower latency and greater stability, start considering optimizations!
+
 You may want to consider the following often seen system optimizations:
 
-*   Add yourself to the *realtime* [group](/index.php/Group "Group").
-*   Add the `threadirqs` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
-*   Install [linux-rt](https://aur.archlinux.org/packages/linux-rt/) kernel.
-*   Set the [cpufreq](/index.php/Cpufreq "Cpufreq") governor to *performance*.
-*   Add *noatime* to [fstab](/index.php/Fstab "Fstab") (see [Improving performance#Mount options](/index.php/Improving_performance#Mount_options "Improving performance")).
-
-Realtime configuration has mostly been automated. There is no longer any need to edit files like `/etc/security/limits.conf` for realtime access. However, if you must change the settings, see `/etc/security/limits.d/99-realtime-privileges.conf` and `/usr/lib/udev/rules.d/40-realtime-privileges.rules` (these files are provided by [realtime-privileges](https://www.archlinux.org/packages/?name=realtime-privileges)). Additionaly, you may want to increase the highest requested RTC interrupt frequency (default is 64 Hz) by [running the following at boot](/index.php/Systemd_FAQ#How_can_I_make_a_script_start_during_the_boot_process.3F "Systemd FAQ"):
+*   Setting the [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling") governor to *performance*.
+*   [Configuring pam_limits](/index.php/Realtime_process_management#Configuring_PAM "Realtime process management") (e.g. by installing [realtime-privileges](https://www.archlinux.org/packages/?name=realtime-privileges) and adding your user to the `realtime` group).
+*   Using the `threadirqs` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") (consult [[1]](https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html) for reference) - enforced by default by the [realtime kernel patchset](/index.php/Realtime_kernel_patchset "Realtime kernel patchset").
+*   Using the [realtime kernel patchset](/index.php/Realtime_kernel_patchset "Realtime kernel patchset").
+*   Add `noatime` to [fstab](/index.php/Fstab "Fstab") (see [Improving performance#Mount options](/index.php/Improving_performance#Mount_options "Improving performance")).
+*   Increasing the highest requested RTC interrupt frequency (default is 64 Hz) by [running the following at boot](/index.php/Systemd_FAQ#How_can_I_make_a_script_start_during_the_boot_process.3F "Systemd FAQ"):
 
 ```
 echo 2048 > /sys/class/rtc/rtc0/max_user_freq
@@ -61,11 +68,19 @@ echo 2048 > /proc/sys/dev/hpet/max-user-freq
 
 ```
 
-By default, swap frequency defined by "swappiness" is set to 60\. By reducing this number to 10, the system will wait much longer before trying to write to disk. Then, there is *inotify* which watches for changes to files and reports them to applications requesting this information. When working with lots of audio data, a lot of watches will need to be kept track of, so they will need to be increased. These two settings can be adjusted in `/etc/sysctl.d/99-sysctl.conf`.
+*   Reducing *swappiness* (aka swap frequency, set to `60` by default) to e.g. `10` will make the system wait much longer before trying to write to disk. This can be done on the fly with `sysctl vm.swappiness=10` (see [sysctl(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.8)) or setup permanently, using a configuration file (see [sysctl.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sysctl.d.5)) such as:
+
+ `/etc/sysctl.d/90-swappiness.conf` 
+```
+ vm.swappiness = 10
 
 ```
-vm.swappiness = 10
-fs.inotify.max_user_watches = 524288
+
+*   Increasing the maximum watches on files (defaults to `524288`) to e.g. `600000`, that *inotify* keeps track of for your user, can help with applications, that require many file handles (such as [DAWs](/index.php/List_of_applications#Digital_audio_workstations "List of applications")). This again can be done on the fly with `sysctl fs.inotify.max_user_watches=600000` or in a dedicated configuration file:
+
+ `/etc/sysctl.d/90-max_user_watches.conf` 
+```
+ fs.inotify.max_user_watches = 600000
 
 ```
 
@@ -93,13 +108,6 @@ The steps below are mostly to double-check that you have a working multimedia sy
 
 ```
 $ speaker-test
-
-```
-
-*   Am I in the realtime group? See [ALSA](/index.php/ALSA "ALSA") or [OSS](/index.php/OSS "OSS").
-
-```
-$ groups | grep realtime
 
 ```
 
@@ -316,7 +324,7 @@ export DSSI_PATH=/usr/lib/dssi:/usr/local/lib/dssi:~/.dssi:/someother/custom/dir
 
 *   IRQ issues can occur and cause problems. An example is video hardware reserving the bus, causing needless interrupts in the system I/O path. See discussion at [FFADO IRQ Priorities How-To](http://subversion.ffado.org/wiki/IrqPriorities). If you have a realtime or a recent kernel, you can use [rtirq](https://www.archlinux.org/packages/?name=rtirq) to adjust priorities of IRQ handling threads.
 
-*   Do not use the **irqbalance** daemon, or do so carefully [[1]](http://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_MRG/1.3/html/Realtime_Tuning_Guide/sect-Realtime_Tuning_Guide-General_System_Tuning-Interrupt_and_Process_Binding.html).
+*   Do not use the **irqbalance** daemon, or do so carefully [[2]](http://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_MRG/1.3/html/Realtime_Tuning_Guide/sect-Realtime_Tuning_Guide-General_System_Tuning-Interrupt_and_Process_Binding.html).
 
 *   If you need to use multiple audio devices with JACK2, the **alsa_in** and **alsa_out** utilities. can be used to have extra devices wrapped and show up as outputs in the JACK patchbay.
 
@@ -550,7 +558,7 @@ For all your Arch- and ArchAudio-related audio issues hop on to **IRC**: #archau
 *   [An Arch Tale](http://www.linuxjournal.com/content/arch-tale) - Article by fellow musician and writer Dave Phillips, October 2011
 *   [From Windows to Linux: a sound decision](http://www.itwire.com/opinion-and-analysis/open-sauce/36698-from-windows-to-linux-a-sound-decision) - Interview with Geoff "songshop" Beasley, February 2010
 
-## Mailing list
+## Mailing lists
 
 *   [Arch Linux Pro-audio](https://lists.archlinux.org/listinfo/arch-proaudio) Discussion about real-time multimedia, including (semi-)pro audio and video
 *   [Linux Audio Developer](https://lists.linuxaudio.org/listinfo/linux-audio-dev) The Linux pro-audio related mailing list with much traffic and a huge subscriber community of mainly developers.
@@ -562,3 +570,10 @@ For all your Arch- and ArchAudio-related audio issues hop on to **IRC**: #archau
 *   #lau on freenode.net: General Linux Audio channel for users
 *   #lad on freenode.net: General Linux AUdio channel for developers
 *   #opensourcemusicians on freenode.net: Large general OSS musician discussion channel
+
+## See also
+
+*   [Audio](/index.php/List_of_applications#Audio "List of applications") A comprehensive list of audio applications on Arch Linux
+*   [Realtime kernel](/index.php/Realtime_kernel "Realtime kernel")
+*   [awesome-linuxaudio](https://github.com/nodiscc/awesome-linuxaudio) A list of software and resources for professional audio/video/live events production on the Linux platform
+*   [Realtime](https://wiki.linuxfoundation.org/realtime/start) The Linux Foundation wiki on the PREEMPT_RT patches

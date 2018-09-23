@@ -914,7 +914,7 @@ The disk layout in this example is:
 |                     |                      |                |                      |                      |                      |
 |                     |                      |                | /dev/MyVolGroup/root | /dev/MyVolGroup/swap | /dev/MyVolGroup/home |
 | /dev/sda1           | /dev/sda2            | /dev/sda3      +----------------------+----------------------+----------------------+
-| **un**encrypted         | **un**encrypted          | LUKS encrypted | /dev/sda4 encrypted using LVM on LUKS                              |
+| unencrypted         | unencrypted          | LUKS encrypted | /dev/sda4 encrypted using LVM on LUKS                              |
 +---------------------+----------------------+----------------+--------------------------------------------------------------------+
 
 ```
@@ -1140,7 +1140,7 @@ Additionally an optional plain-encrypted [swap](/index.php/Swap "Swap") partitio
 ```
 +----------------------+----------------------+----------------------+
 | EFI system partition | System partition     | Swap partition       |
-| **un**encrypted          | LUKS-encrypted       | plain-encrypted      |
+| unencrypted          | LUKS-encrypted       | plain-encrypted      |
 |                      |                      |                      |
 | /efi                 | /                    | [SWAP]               |
 | /dev/sda1            | /dev/sda2            | /dev/sda3            |

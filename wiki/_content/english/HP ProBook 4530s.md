@@ -79,7 +79,7 @@ The fan can be controlled (throttled) in software, otherwise it never shuts off,
 
 ### Intel CPU microcode
 
-See [Microcode#Enabling Intel microcode updates](/index.php/Microcode#Enabling_Intel_microcode_updates "Microcode").
+See [Microcode#Installation](/index.php/Microcode#Installation "Microcode").
 
 ### Network
 

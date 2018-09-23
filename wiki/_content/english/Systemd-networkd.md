@@ -199,6 +199,7 @@ These files are aimed at setting network configuration variables, especially for
 
 #### [Match]
 
+*   `MacAddress=` a whitespace-separated list of hardware addresses
 *   `Name=` the device name
 *   `Host=` the machine hostname
 *   `Virtualization=` check whether the system is executed in a virtualized environment or not. A `Virtualization=no` key will only apply on your host machine, while `Virtualization=yes` apply to any container or VM.
@@ -206,16 +207,18 @@ These files are aimed at setting network configuration variables, especially for
 #### [Link]
 
 *   `MACAddress=` useful for [MAC address spoofing](/index.php/MAC_address_spoofing#systemd-networkd "MAC address spoofing")
-*   `MTUBytes=` setting a larger MTU value ([jumbo frames](/index.php/Jumbo_frames "Jumbo frames")) can significantly speed up your network transfers
+*   `MTUBytes=` setting a larger MTU value (e.g. when using [jumbo frames](/index.php/Jumbo_frames "Jumbo frames")) can significantly speed up your network transfers
+*   `Multicast` allow the usage of [multicast](https://en.wikipedia.org/wiki/Multicast_address "wikipedia:Multicast address") on interface(s)
 
 #### [Network]
 
-*   `DHCP=` enables the DHCP client
+*   `DHCP=` enables the DHCP client, accepts `yes`, `no`, `ipv4`, `ipv6`
 *   `DHCPServer=` enables the DHCP server
-*   `DNS=` DNS server address
-*   `Bridge=` the bridge name
-*   `IPForward=` enables IP packet forwarding
+*   `MulticastDNS=` when `true`, enables [multicast DNS](https://tools.ietf.org/html/rfc6762) support
+*   `DNSSEC=` a boolean or `allow-downgrade`
+*   `DNS=` to configure static [DNS](/index.php/DNS "DNS") addresses, may be specified more than once
 *   `Domains=` a list of domains to be resolved on this link
+*   `IPForward=` configures IP packet forwarding, takes either a boolean argument, `ipv4` or `ipv6`
 
 #### [Address]
 
@@ -232,7 +235,8 @@ If `Destination` is not present in `[Route]` section this section is treated as 
 
 #### [DHCP]
 
-*   `UseDomains=true` can sometimes fix local name resolving when using systemd-resolved
+*   `Anonymize=` when true, the options sent to the DHCP server will follow the [RFC7844](https://tools.ietf.org/html/rfc7844) (Anonymity Profiles for DHCP Clients) to minimize disclosure of identifying information
+*   `UseDomains=` can sometimes fix local name resolving when using [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved")
 
 ### netdev files
 

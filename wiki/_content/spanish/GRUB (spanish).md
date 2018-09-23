@@ -305,7 +305,7 @@ Sin más cambios, se le solicitará dos veces una contraseña: la primera para G
 
 ### Entradas múltiples
 
-Para obtener sugerencias sobre la administración de varias entradas de GRUB, por ejemplo, al usar tanto kernel [linux](https://www.archlinux.org/packages/?name=linux) como [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernels, consulte [GRUB/Tips_and_tricks_(Español)#Múltiples_entradas](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol)#M.C3.BAltiples_entradas "GRUB/Tips and tricks (Español)").
+Para obtener sugerencias sobre la administración de varias entradas de GRUB, por ejemplo, al usar tanto kernel [linux](https://www.archlinux.org/packages/?name=linux) como [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernels, consulte [GRUB/Tips and tricks (Español)#Múltiples entradas](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol)#M.C3.BAltiples_entradas "GRUB/Tips and tricks (Español)").
 
 ### Cargar en cadena un archivo .efi de Arch Linux
 

@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Keyboard configuration in Xorg#Configuring compose key](/index.php/Keyboard_configuration_in_Xorg#Configuring_compose_key "Keyboard configuration in Xorg")
+*   [Xorg/Keyboard configuration#Configuring compose key](/index.php/Xorg/Keyboard_configuration#Configuring_compose_key "Xorg/Keyboard configuration")

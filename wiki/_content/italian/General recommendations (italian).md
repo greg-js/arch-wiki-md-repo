@@ -20,10 +20,10 @@ Si assume che i lettori abbiano letto e seguito la [Guida per Principianti](/ind
         *   [1.2.1 Caratteri per la console](#Caratteri_per_la_console)
         *   [1.2.2 Patch per la visualizzazione dei font](#Patch_per_la_visualizzazione_dei_font)
 *   [2 Audio/video](#Audio.2Fvideo)
-    *   [2.1 Browser plugins](#Browser_plugins)
-    *   [2.2 Codecs](#Codecs)
+    *   [2.1 Browser plugin](#Browser_plugin)
+    *   [2.2 Codec](#Codec)
 *   [3 Fase di *boot*](#Fase_di_boot)
-    *   [3.1 Avviare i *daemons* in background](#Avviare_i_daemons_in_background)
+    *   [3.1 Avviare i *daemon* in background](#Avviare_i_daemon_in_background)
     *   [3.2 Riconoscimento automatico dell'hardware](#Riconoscimento_automatico_dell.27hardware)
     *   [3.3 Attivare *Num Lock* all'avvio](#Attivare_Num_Lock_all.27avvio)
     *   [3.4 Mantenere i messaggi di boot](#Mantenere_i_messaggi_di_boot)
@@ -108,21 +108,21 @@ Le librerie che gestiscono i font possono essere compilate con patch per miglior
 
 *[Category:Multimedia (Italiano)](/index.php/Category:Multimedia_(Italiano) "Category:Multimedia (Italiano)") include ulteriori risorse sulle componenti multimediali.*
 
-### Browser plugins
+### Browser plugin
 
 Per usufruire dei contenuti web multimediali e per un'esperienza web *completa*, si possono installare dei [plugin per il browser](/index.php/Browser_plugins "Browser plugins") come Adobe Acrobat Reader, Adobe Flash Player e Java.
 
-### Codecs
+### Codec
 
-I [codecs](/index.php/Codecs_(Italiano) "Codecs (Italiano)") vengono utilizzati dalle applicazioni multimediali per decodificare flussi audio e video. Per riprodurre questo tipo di file gli utenti devono curarsi di aver installato un codec appropriato.
+I [codec](/index.php/Codecs_(Italiano) "Codecs (Italiano)") vengono utilizzati dalle applicazioni multimediali per decodificare flussi audio e video. Per riprodurre questo tipo di file gli utenti devono curarsi di aver installato un codec appropriato.
 
 ## Fase di *boot*
 
 *Questa sezione contiene informazioni riguardanti il processo di boot (avvio). Una spiegazione del processo di boot di Arch si può trovare alla pagina [Arch boot process (Italiano)](/index.php/Arch_boot_process_(Italiano) "Arch boot process (Italiano)"). Per altro, si guardi [Category:Boot process (Italiano)](/index.php/Category:Boot_process_(Italiano) "Category:Boot process (Italiano)").*
 
-### Avviare i *daemons* in background
+### Avviare i *daemon* in background
 
-I *daemons* (demoni) sono programmi che girano in background, e normalmente vengono avviati durante la fase di boot. In modo da velocizzare le fasi di avvio alcuni daemons possono essere avviati in background, permettendo così al processo di boot di continuare mentre il daemon viene caricato. Si veda [Daemon (Italiano)](/index.php/Daemon_(Italiano) "Daemon (Italiano)") per una spiegazione esaustiva.
+I *daemon* (demoni) sono programmi che girano in background, e normalmente vengono avviati durante la fase di boot. Allo scopo di velocizzare le fasi di avvio, alcuni daemon possono essere avviati in background, consentendo così al processo di boot di proseguire durante il loro caricamento. Si veda [Daemon (Italiano)](/index.php/Daemon_(Italiano) "Daemon (Italiano)") per una spiegazione esaustiva.
 
 ### Riconoscimento automatico dell'hardware
 
@@ -134,7 +134,7 @@ Per attivare la funzione *Num Lock* all'avvio del sistema, si segua [Activating 
 
 ### Mantenere i messaggi di boot
 
-Una volta che il processo di boot conclude, lo schermo viene pulito per visualizzare la schermata di login, privando gli utenti della possibilità di recuperare informazioni sul processo di boot. Per superare questa limitazione si veda [Disable clearing of boot messages](/index.php/Disable_clearing_of_boot_messages "Disable clearing of boot messages").
+Una volta che il processo di boot si conclude, lo schermo viene pulito per visualizzare la schermata di login, privando gli utenti della possibilità di recuperare informazioni sul processo di boot. Per superare questa limitazione si veda [Disable clearing of boot messages](/index.php/Disable_clearing_of_boot_messages "Disable clearing of boot messages").
 
 ### Lanciare X all'avvio
 
@@ -150,7 +150,7 @@ Gli utenti possono definire delle scorciatoie tramite un comando della shell per
 
 ### Complementi per Bash
 
-Un elenco di vari settaggi per Bash, inclusi autocompletamento e ricerca nello storico è disponibile alla voce [Bash (Italiano)#Trucchi e Consigli](/index.php/Bash_(Italiano)#Trucchi_e_Consigli "Bash (Italiano)").
+Un elenco di varie impostazioni per Bash, inclusi l'auto-completamento e la ricerca nello storico, disponibile alla voce [Bash (Italiano)#Trucchi e Consigli](/index.php/Bash_(Italiano)#Trucchi_e_Consigli "Bash (Italiano)").
 
 ### File compressi
 

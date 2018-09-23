@@ -82,7 +82,7 @@ The touchpad works well with [xf86-input-synaptics](https://www.archlinux.org/pa
 
 ## Console fonts
 
-Since some of these come with HiDPI displays the default console font is barely readable - refer to [Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts") on how to change them.
+Since some of these come with HiDPI displays the default console font is barely readable - refer to [Linux_console#Fonts](/index.php/Linux_console#Fonts "Linux console") on how to change them.
 
 ## Wifi instability
 

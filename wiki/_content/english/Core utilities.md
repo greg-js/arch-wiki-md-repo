@@ -19,6 +19,8 @@ Most command-line interfaces are documented in [man pages](/index.php/Man_page "
     *   [3.1 find alternatives](#find_alternatives)
     *   [3.2 diff alternatives](#diff_alternatives)
     *   [3.3 grep alternatives](#grep_alternatives)
+        *   [3.3.1 Code searchers](#Code_searchers)
+        *   [3.3.2 Interactive filters](#Interactive_filters)
 *   [4 See also](#See_also)
 
 ## Essentials
@@ -64,11 +66,13 @@ rm, mv, cp and shell redirections happily delete or overwrite files without aski
 This table lists core utilities that often come in handy.
 
 | Package | Command | Description | Documentation | Alternatives |
-| shell built-ins | alias | define or display aliases | [alias(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alias.1) |
-| type | print the type of a command | [type(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/type.1) | [which(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/which.1) |
-| time | time a command | [time(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/time.1) |
+| shell built-ins | alias | define or display aliases | [alias(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alias.1p) |
+| type | print the type of a command | [type(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/type.1p) | [which(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/which.1) |
+| time | time a command | [time(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/time.1p) |
 | GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) | tee | read stdin and write to stdout and files | [tee(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tee.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/tee-invocation.html) |
 | mktemp | make a temporary file or directory | [mktemp(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mktemp.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html) |
+| cut | print selected parts of lines | [cut(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cut.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/cut-invocation.html) |
+| tr | translate or delete characters | [tr(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tr.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html) |
 | od | dump files in octal and other formats | [od(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/od.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/od-invocation.html) | [hexdump(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hexdump.1), [vim](/index.php/Vim "Vim")'s [xxd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xxd.1) |
 | sort | sort lines | [sort(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sort.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/sort-invocation.html) |
 | uniq | report or omit repeated lines | [uniq(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/uniq.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/uniq-invocation.html) |
@@ -95,10 +99,6 @@ Alternatives to the core utilities in the [base](https://www.archlinux.org/group
 *   **fuzzy-find** — Fuzzy completion for finding files.
 
 	[https://github.com/silentbicycle/ff](https://github.com/silentbicycle/ff) || [ff-git](https://aur.archlinux.org/packages/ff-git/)
-
-*   **fzf** — General-purpose command-line fuzzy finder, powered by find by default.
-
-	[https://github.com/junegunn/fzf](https://github.com/junegunn/fzf) || [fzf](https://www.archlinux.org/packages/?name=fzf), [fzf-git](https://aur.archlinux.org/packages/fzf-git/)
 
 *   **[mlocate](/index.php/Mlocate "Mlocate")** — Merging locate/updatedb implementation.
 
@@ -127,6 +127,12 @@ See also [List of applications/Utilities#Comparison, diff, merge](/index.php/Lis
 
 ### grep alternatives
 
+*   **mgrep** — A multiline grep.
+
+	[https://sourceforge.net/projects/multiline-grep/](https://sourceforge.net/projects/multiline-grep/) || [mgrep](https://aur.archlinux.org/packages/mgrep/)
+
+#### Code searchers
+
 The following three tools aim to replace grep for code search. They do recursive search by default, skip binary files and respect `.gitignore`.
 
 *   **ack** — A Perl-based grep replacement, aimed at programmers with large trees of heterogeneous source code.
@@ -141,7 +147,23 @@ The following three tools aim to replace grep for code search. They do recursive
 
 	[https://github.com/ggreer/the_silver_searcher](https://github.com/ggreer/the_silver_searcher) || [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher)
 
-And then there is also [mgrep](https://aur.archlinux.org/packages/mgrep/), a multiline grep.
+#### Interactive filters
+
+*   **[fzf](/index.php/Fzf "Fzf")** — General-purpose command-line fuzzy finder, powered by find by default.
+
+	[https://github.com/junegunn/fzf](https://github.com/junegunn/fzf) || [fzf](https://www.archlinux.org/packages/?name=fzf), [fzf-git](https://aur.archlinux.org/packages/fzf-git/)
+
+*   **fzy** — A fast, simple fuzzy text selector with an advanced scoring algorithm.
+
+	[https://github.com/jhawthorn/fzy](https://github.com/jhawthorn/fzy) || [fzy](https://www.archlinux.org/packages/?name=fzy), [fzy-git](https://aur.archlinux.org/packages/fzy-git/)
+
+*   **peco** — Simplistic interactive filtering tool.
+
+	[https://github.com/peco/peco](https://github.com/peco/peco) || [peco](https://aur.archlinux.org/packages/peco/), [peco-git](https://aur.archlinux.org/packages/peco-git/)
+
+*   **percol** — Adds flavor of interactive filtering to the traditional pipe concept of the UNIX shell.
+
+	[https://github.com/mooz/percol](https://github.com/mooz/percol) || [percol](https://www.archlinux.org/packages/?name=percol), [percol-git](https://aur.archlinux.org/packages/percol-git/)
 
 ## See also
 

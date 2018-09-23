@@ -413,7 +413,7 @@ See [GnuPG#Smartcards](/index.php/GnuPG#Smartcards "GnuPG")
 
 ### YubiKey and LUKS encrypted partition/disk
 
-YubiKey can be used to strengthen the security of your [LUKS](https://wiki.archlinux.org/index.php/Dm-crypt) encrypted partition/disk.
+YubiKey can be used to strengthen the security of your [LUKS](/index.php/LUKS "LUKS") encrypted partition/disk.
 
 One way to achieve it is to use a Challenge-Response mode for creating strong LUKS passphrases. [yubikey-full-disk-encryption](https://github.com/agherzan/yubikey-full-disk-encryption) is a robust and comfortable to use implementation of an [initramfs](/index.php/Initramfs "Initramfs") hook and on-demand scripts to create/open LUKS encrypted partitions/disks using a stored or manually provided challenge.
 

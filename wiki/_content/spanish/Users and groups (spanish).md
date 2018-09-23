@@ -235,7 +235,7 @@ Para cambiar el nombre de inicio de sesión de un usuario:
 
 **Advertencia:** Asegúrese de no haber iniciado sesión como el usuario cuyo nombre va a cambiar. Abra un nuevo tty (`Ctrl+Alt+F1`) e inicie sesión como superusuario o como otro usuario y haga *su* como superusuario. El usermod debería evitar que hagas esto por error.
 
-Cambiar un nombre de usuario es seguro y fácil cuando se hace correctamente, simplemente use el comando [usermod](#Otros_ejemplos_de_administraci.C3.B3n_de_usuario). Si el usuario está asociado a un grupo con el mismo nombre, puede cambiarle el nombre con el comando [groupmod](#Administraci.C3.B3n_de_grupos).
+Cambiar un nombre de usuario es seguro y fácil cuando se hace correctamente, simplemente use el comando [usermod](#Otros_ejemplos_de_administraci.C3.B3n_de_usuarios). Si el usuario está asociado a un grupo con el mismo nombre, puede cambiarle el nombre con el comando [groupmod](#Administraci.C3.B3n_de_grupos).
 
 Alternativamente, el archivo `/etc/passwd` puede modificarse directamente, consulte [#Base de datos del usuario](#Base_de_datos_del_usuario) para una introducción a su formato.
 

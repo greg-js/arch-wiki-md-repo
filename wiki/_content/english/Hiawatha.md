@@ -168,14 +168,14 @@ In the user's configuration file, the value of the variable `HIAWATHA_RESTART_CO
 
 #### Obtain a certificate
 
-The detailed instructions are described in `README.txt` and the tool configuration is defined in `letsencrypt.conf`. In short, there are two steps to get a certificate:
+The detailed instructions are described in `INSTALL` and the tool configuration is defined in `letsencrypt.conf`. In short, there are two steps to get a certificate:
 
 1.  Register an account with the Let's Encrypt certificate authority (CA). An account key file will be created. `$ ./letsencrypt register` 
 2.  Request a website certificate: *www.my-domain.org* must be the first hostname of a `VirtualHost`. Any following webserver's hostname will be used as an alternative hostname for the certificate. The file `www.my-domain.org.pem` will be created. `# ./letsencrypt request www.my-domain.org` 
 
-If the above succeeds, you can switch from the ***testing*** to the ***production*** CA by changing the `LE_CA_HOSTNAME` setting in the configuration file and go through the **two steps** above again. Do not rush into production before making sure the test was successful: letsencrypt enforces rate limit for failed attempts.
+If the above succeeds, you can switch from the ***testing*** to the ***production*** CA by changing the `LE_CA_HOSTNAME` setting in the configuration file and go through the **two steps** above again. Do not rush into production before making sure the test was successful: letsencrypt enforces rate limit for failed attempts and one may get temporarily banned.
 
-**Note:** The port `80` must be forwarded to your server and a binding to port `80` must be configured in hiawatha so that letsencrypt can fetch the challenge, let say `http://*www.my-domain.org*/.well-known/acme-challenge/Cl887Wpvc297mfkdNZRuAl48h_FTLnA_ZbhJo3FdExY`
+**Note:** Let's Encrypt CA requests a file via HTTP during the challenge operation. This file must be accessible in a location like `http://*www.my-domain.org*/.well-known/acme-challenge/*Cl887Wpvc297mfkdNZRuAl48h_FTLnA_ZbhJo3FdExY*`. Therefore your website must be reachable via HTTP: the external port `80` must be forwarded to your server and a binding to port `80` must be configured in hiawatha so that Let's Encrypt CA can fetch the challenge.
 
 #### Auto renewal
 

@@ -224,7 +224,7 @@ By default `wg-quick` uses a resolvconf provider such as [openresolv](/index.php
 
 #### Using resolvconf
 
-If resolvconf is already used by the system and you still experience connection loss, make sure NetworkManager is configured to use it: [NetworkManager#Use_openresolv](/index.php/NetworkManager#Use_openresolv "NetworkManager").
+If resolvconf is already used by the system and you still experience connection loss, make sure NetworkManager is configured to use it: [NetworkManager#Use openresolv](/index.php/NetworkManager#Use_openresolv "NetworkManager").
 
 #### Using dnsmasq
 

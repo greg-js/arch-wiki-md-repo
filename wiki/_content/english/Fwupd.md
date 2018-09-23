@@ -78,7 +78,7 @@ Alternatively, you have to manually sign the UEFI executable used to perform upg
 
 ```
 
-To automatically sign this file when installed or upgraded, a [Pacman hook](/index.php/Pacman#Hooks "Pacman") can be used:
+To automatically sign this file when installed or upgraded, a [Pacman hook](/index.php/Pacman_hook "Pacman hook") can be used:
 
  `/etc/pacman.d/hooks/sign-fwupd-secureboot.hook` 
 ```

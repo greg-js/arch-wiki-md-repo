@@ -1,14 +1,9 @@
 Related articles
 
 *   [Postfix with SASL](/index.php/Postfix_with_SASL "Postfix with SASL")
-*   [Amavis](/index.php/Amavis "Amavis")
 *   [Virtual user mail system](/index.php/Virtual_user_mail_system "Virtual user mail system")
-*   [Courier MTA](/index.php/Courier_MTA "Courier MTA")
-*   [Exim](/index.php/Exim "Exim")
-*   [OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD")
 *   [OpenDMARC](/index.php/OpenDMARC "OpenDMARC")
 *   [OpenDKIM](/index.php/OpenDKIM "OpenDKIM")
-*   [SOGo](/index.php/SOGo "SOGo")
 
 From [Postfix's site](http://www.postfix.org/):
 

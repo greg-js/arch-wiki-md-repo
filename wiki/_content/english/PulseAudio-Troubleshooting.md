@@ -623,7 +623,7 @@ If you are using the [module-echo-cancel](#Enable_Echo.2FNoise-Cancellation), yo
 *   TeamSpeak:
     1.  Tools -> Options -> Check 'Advanced Options' check box
     2.  Uncheck: 'Echo reduction', 'Echo cancellation', 'Remove background noise' and 'Automatic voice gain control'
-*   Firefox: see [Firefox_tweaks#Disable_WebRTC_audio_post_processing](/index.php/Firefox_tweaks#Disable_WebRTC_audio_post_processing "Firefox tweaks")
+*   Firefox: see [Firefox tweaks#Disable WebRTC audio post processing](/index.php/Firefox_tweaks#Disable_WebRTC_audio_post_processing "Firefox tweaks")
 *   Steam:
     1.  In window "Friends List" -> Manage friends list settings (gear symbol) -> VOICE -> Show Advanced Settings
     2.  Set the following sliders to "OFF": "Echo cancellation", "Noise cancellation", "Automatic volume/gain control"

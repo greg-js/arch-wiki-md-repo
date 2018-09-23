@@ -77,7 +77,7 @@ Emuliatorius tai programa, kurios tikslas replikuoti kitos platformos ar sistemo
 
 Taip pat žiūrėti [Category:Emulation](/index.php/Category:Emulation "Category:Emulation") ir [Emulation General wiki](http://emulation.gametechwiki.com/index.php/Main_Page).
 
-**Note:** Galimai naujesniam emuliatorių pasirinkimui, patikrinkite [AUR 'emuliatorių' kategoriją](https://aur.archlinux.org/packages.php?O=0&K=&do_Search=Go&detail=1&L=0&C=5&SeB=nd&SB=n&SO=a&PP=25)
+**Note:** Galimai naujesniam emuliatorių pasirinkimui, patikrinkite [AUR su žodžiu 'emulator'](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=emulator&outdated=off&SB=n&SO=a&PP=50&do_Search=Go)
 
 **Warning:** Legalu turėti aukšto lygio emuliatorių, tačiau bet koks autorinių teisių saugomų ROMų platinimas ar neautorizuotos emuliacijos (be rašytinio autorių leidimo naudoti) yra **nelegalu**. To pasekoje, Arch Linux neplatina autorinių teisų saugomo turinio, įskaitant žæidimų ROMus ir rip'intus konsolių BIOSus. Jūs esate visiškai atsakingi už bet kokį emuliatorių gautų iš [official repositories](/index.php/Official_repositories "Official repositories") arba [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") naudojimą, taip pat už bet kokias teisines pasekmes to rezultate. Arch Linux neprisiima visiškai jokios atsakomybės.
 

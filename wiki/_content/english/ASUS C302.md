@@ -15,7 +15,7 @@ The [Asus C302](https://www.asus.com/uk/2-in-1-PCs/ASUS-Chromebook-Flip-C302CA/)
     *   [7.1 Pulseaudio](#Pulseaudio)
 *   [8 Coil Whine](#Coil_Whine)
 
-# Bootup
+## Bootup
 
 In /etc/default/grub
 
@@ -33,7 +33,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="acpi_osi=Linux intel_iommu=on,igfx_off"
 
 The CPU is an Intel Core M3, so install [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode)
 
-# Kernel Modules
+## Kernel Modules
 
 In e.g. /etc/modprobe.d/skylake.conf
 
@@ -48,7 +48,7 @@ options tpm_tis interrupts=0
 
 ```
 
-# Screen
+## Screen
 
 The screen is 12.5 inches diagonally. At 1920x1080 resolution, this is 176 DPI, which is [HiDPI](/index.php/HiDPI "HiDPI").
 
@@ -59,9 +59,9 @@ xrandr --fbmm 277x156
 
 ```
 
-## Vsync
+### Vsync
 
-For proper vsync (including e.g. fullscreen Youtube in Firefox) in XFCE, install [xfwm4-git](https://aur.archlinux.org/packages/xfwm4-git) (which also requires libxpresent), and enable XFCE's compositor.
+For proper vsync (including e.g. fullscreen Youtube in Firefox) in XFCE, install [xfwm4-git](https://aur.archlinux.org/packages/xfwm4-git/), and enable XFCE's compositor.
 
 Proper vsync also requires [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel), rather than modesetting.
 
@@ -75,7 +75,7 @@ EndSection
 
 ```
 
-## Screen Flipping
+### Screen Flipping
 
 To use the laptop in tent mode, the following script will flip both the screen and touch input:
 
@@ -107,7 +107,7 @@ xinput set-prop "Elan Touchscreen" "Coordinate Transformation Matrix" $ctm
 
 ```
 
-# Keyboard
+## Keyboard
 
 To use the top row of Chromebook keys as useful keys in xorg, use e.g.:
 
@@ -156,7 +156,7 @@ xmodmap ~/.Xmodmap
 
 ```
 
-## Keyboard Backlight
+### Keyboard Backlight
 
 To be able to change the keyboard backlight brightness as a normal user, run as root:
 
@@ -205,7 +205,7 @@ done
 
 ```
 
-# Touchpad
+## Touchpad
 
 As of [libinput](https://www.archlinux.org/packages/?name=libinput) 1.12.0-2, the [touchpad works nicely](https://bugs.archlinux.org/task/60072?project=1) with all of:
 
@@ -219,7 +219,7 @@ As of [libinput](https://www.archlinux.org/packages/?name=libinput) 1.12.0-2, th
     *   Right side = "right" button
     *   Middle = "middle" button
 
-# Mouse
+## Mouse
 
 Due to the limited amount of USB ports, a Bluetooth mouse is a good option. The Logitech M590 mouse works great.
 
@@ -240,7 +240,7 @@ EndSection
 
 Then, the "speed" of the mouse can be set using the XFCE GUI, in "Settings - Mouse", setting the "acceleration" to e.g. 2.0
 
-# Sound
+## Sound
 
 Sound is a [work in-progress](https://github.com/GalliumOS/galliumos-distro/issues/379). Sound is reliable when using headphones only.
 
@@ -253,10 +253,10 @@ amixer -q -c0 sset Headphone 70% &
 
 ```
 
-## Pulseaudio
+### Pulseaudio
 
 To prevent audio "clicks", comment out "load-module module-suspend-on-idle" in /etc/pulse/default.pa and /etc/pulse/system.pa
 
-# Coil Whine
+## Coil Whine
 
 There is occasional [coil whine](https://www.notebookcheck.net/FAQ-Coil-Whine.225152.0.html), with no apparent method to reduce/eliminate it.

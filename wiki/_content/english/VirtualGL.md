@@ -30,18 +30,21 @@ Install the virtualgl package using pacman, then follow the instructions [here](
 ## Using VirtualGL with X11 forwarding
 
 ```
- **server:                                              client:**
-······································               ·················
-: ┌───────────┐ *X11 commands*         :               : ┌───────────┐ :
-: │application│━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━▶│<font color="blue">X server</font>   │ :
-: │           │        ┌───────────┐ :               : │           │ :
-: │           │        │<font color="red">X server</font>   │ :               : ├┈┈┈┈┈┈┈┈┈╮ │ :
-: │ ╭┈┈┈┈┈┈┈┈┈┤ *OpenGL* │ ╭┈┈┈┈┈┈┈┈┈┤ : *image stream*  : │VirtualGL┊ │ :
-: │ ┊VirtualGL│━━━━━━━▶│ ┊VirtualGL│━━━━━━━━━━━━━━━━━━▶│client   ┊ │ :     <font color="blue">⬛</font> = "2D" rendering happens here
-: └─┴─────────┘        └─┴─────────┘ :               : └─────────┴─┘ :     <font color="red">⬛</font> = "3D" rendering happens here
-······································               ·················
+  server:                                              client:
+ ······································               ·················
+ : ┌───────────┐ X11 commands         :               : ┌───────────┐ :
+ : │application│━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━▶│X server 2)│ :
+ : │           │        ┌───────────┐ :               : │           │ :
+ : │           │        │X server 1)│ :               : ├┈┈┈┈┈┈┈┈┈╮ │ :
+ : │ ╭┈┈┈┈┈┈┈┈┈┤ OpenGL │ ╭┈┈┈┈┈┈┈┈┈┤ : image stream  : │VirtualGL┊ │ :
+ : │ ┊VirtualGL│━━━━━━━▶│ ┊VirtualGL│━━━━━━━━━━━━━━━━━━▶│client   ┊ │ :
+ : └─┴─────────┘        └─┴─────────┘ :               : └─────────┴─┘ :
+ ······································               ·················
 
 ```
+
+1.  "3D" rendering happens here
+2.  "2D" rendering happens here
 
 *Advantages of this set-up, compared to using [VirtualGL with VNC](#Using_VirtualGL_with_VNC):*
 
@@ -83,18 +86,21 @@ You do not need to restrict yourself to the shell that `vglconnect` opened for y
 ## Using VirtualGL with VNC
 
 ```
- **server:                                                           client:**
-···················································               ················
-: ┌───────────┐ *X11 commands*         ┌──────────┐ : *image stream*  : ┌──────────┐ :
-: │application│━━━━━━━━━━━━━━━━━━━━━▶│<font color="blue">VNC server</font>│━━━━━━━━━━━━━━━━━━▶│VNC viewer│ :
-: │           │        ┌───────────┐ └──────────┘ :               : └──────────┘ :
-: │           │        │<font color="red">X server</font>   │        ▲     :               :              :
-: │ ╭┈┈┈┈┈┈┈┈┈┤ *OpenGL* │ ╭┈┈┈┈┈┈┈┈┈┤ *images* ┃     :               :              :
-: │ ┊VirtualGL│━━━━━━━▶│ ┊VirtualGL│━━━━━━━━┛     :               :              :     <font color="blue">⬛</font> = "2D" rendering happens here
-: └─┴─────────┘        └─┴─────────┘              :               :              :     <font color="red">⬛</font> = "3D" rendering happens here
-···················································               ················
+  server:                                                              client:
+ ······················································               ················
+ : ┌───────────┐ X11 commands         ┌─────────────┐ : image stream  : ┌──────────┐ :
+ : │application│━━━━━━━━━━━━━━━━━━━━━▶│VNC server 2)│━━━━━━━━━━━━━━━━━━▶│VNC viewer│ :
+ : │           │        ┌───────────┐ └─────────────┘ :               : └──────────┘ :
+ : │           │        │X server 1)│        ▲        :               :              :
+ : │ ╭┈┈┈┈┈┈┈┈┈┤ OpenGL │ ╭┈┈┈┈┈┈┈┈┈┤ images ┃        :               :              :
+ : │ ┊VirtualGL│━━━━━━━▶│ ┊VirtualGL│━━━━━━━━┛        :               :              :
+ : └─┴─────────┘        └─┴─────────┘                 :               :              :
+ ······················································               ················
 
 ```
+
+1.  "3D" rendering happens here
+2.  "2D" rendering happens here
 
 *Advantages of this set-up, compared to using [VirtualGL with X11 Forwarding](#Using_VirtualGL_with_X11_forwarding):*
 

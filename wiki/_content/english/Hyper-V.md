@@ -60,6 +60,8 @@ If using DHCP for the VM, the IP address will be assigned by the DHCP server in 
 
 #### Internal switch
 
+As of version 1803 ("Fall Creators Update"), Windows 10 has a NAT Switch built in (named "Default Switch") that gives you instant internet access after installing your virtual machine if you set it up to use DHCP, see [this Technet blog post](https://blogs.technet.microsoft.com/virtualization/2017/11/13/whats-new-in-hyper-v-for-windows-10-fall-creators-update/), so you don't need the instructions below to get a working NAT switch.
+
 To create an internal switch, follow the same steps as the external switch, however replace the relevant choices for 'internal switch'. Starting with Windows 10 Anniversary Update (Version 1607, OS Build 14393), native NAT support for internal switches was added to Hyper-V. For earlier versions, Internet Connection Sharing (ICS) can be used to enable network access for virtual machines on internal switches.
 
 To find out which version and build of Windows you are using, on a command prompt or PowerShell, run:

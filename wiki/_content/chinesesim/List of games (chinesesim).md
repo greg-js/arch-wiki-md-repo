@@ -9,6 +9,7 @@
 Related articles
 
 *   [List of applications#Emulators](/index.php/List_of_applications#Emulators "List of applications")
+
 *   [List_of_Applications_(简体中文)](/index.php/List_of_Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications (简体中文)")
 
 **Note:** 本页面力求列出已知的GNU / Linux下运行所有游戏。访问通过[official repositories](/index.php/Official_repositories "Official repositories") and [AUR](/index.php/AUR "AUR"). 欲了解更多有关运行游戏，相关的系统配置提示， 参阅 [Gaming](/index.php/Gaming "Gaming"). 对于可能更多的最新选择的可用游戏 在 AUR, 请检查 [AUR 'games' category](https://aur.archlinux.org/packages.php?O=0&K=&do_Search=Go&detail=1&C=6&SeB=nd&SB=n&SO=a&PP=25).

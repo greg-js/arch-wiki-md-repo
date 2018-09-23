@@ -198,7 +198,9 @@ Namcap will:
 2.  Scan all ELF files in package using `ldd`, automatically reporting which packages with required shared libraries are missing from `depends` and which can be omitted as transitive dependencies
 3.  Heuristically search for missing and redundant dependencies
 
-and much more. Get into the habit of checking your packages with namcap to avoid having to fix the simplest mistakes after package submission.
+and much more.
+
+Get into the habit of checking your packages with namcap to avoid having to fix the simplest mistakes after package submission.
 
 ## Submitting packages to the AUR
 

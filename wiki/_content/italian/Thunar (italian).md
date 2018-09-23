@@ -43,7 +43,7 @@ Thunar usa [gvfs](https://www.archlinux.org/packages/?name=gvfs) per gestire l'a
 
 ## Thunar Volume Manager
 
-Thunar supporta già di suo il montaggio\smontaggio delle periferiche, questo plugin però fornisce funzionalità aggiuntive, come la possibilità di eseguire comandi particolari alla connessione di una periferica o di aprire automaticamente una finestra di Thunar per una periferica appena montata.
+Thunar supporta già di suo il montaggio\smontaggio delle periferiche. Questo plugin, però, fornisce funzionalità aggiuntive, come la possibilità di eseguire comandi particolari alla connessione di una periferica o di aprire automaticamente una finestra di Thunar per una periferica appena montata.
 
 #### Installazione
 

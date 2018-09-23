@@ -196,7 +196,7 @@
 | <small>6.8.5.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(56)</small> |
 | <small>6.9.</small> [Kernel](/index.php/Category:Kernel "Category:Kernel") <small>(33)</small> |
 | <small>6.10.</small> [Keyboard configuration](/index.php/Category:Keyboard_configuration "Category:Keyboard configuration") <small>(9) (also in [Keyboards](/index.php/Category:Keyboards "Category:Keyboards"))</small> |
-| <small>6.11.</small> [Linux console](/index.php/Category:Linux_console "Category:Linux console") <small>(4)</small> |
+| <small>6.11.</small> [Linux console](/index.php/Category:Linux_console "Category:Linux console") <small>(5)</small> |
 | <small>6.12.</small> [Localization](/index.php/Category:Localization "Category:Localization") <small>(17)</small> |
 | <small>6.13.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(30)</small> |
 | <small>6.14.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(19)</small> |

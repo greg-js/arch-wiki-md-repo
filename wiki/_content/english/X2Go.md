@@ -141,7 +141,7 @@ There is a dbus related problem, see [[5]](https://bugzilla.redhat.com/show_bug.
 
 ### Notification area disappeared
 
-If you log in, but the notification area is missing, you can use exactly the same fix as for [X2Go#Local_session_blocks_x2go_session](/index.php/X2Go#Local_session_blocks_x2go_session "X2Go").
+If you log in, but the notification area is missing, you can use exactly the same fix as for [#Local session blocks x2go session](#Local_session_blocks_x2go_session).
 
 ### Shared folders do not mount (Windows Clients)
 

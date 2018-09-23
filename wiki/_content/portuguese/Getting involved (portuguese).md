@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Getting involved](/index.php/Getting_involved "Getting involved"). Data da última tradução: 2018-09-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Getting_involved&diff=0&oldid=542355) na versão em inglês.
+
 Na biologia, o [mutualismo](https://en.wikipedia.org/wiki/pt:Mutualismo_(biologia) é uma interação entre dois organismos onde ambos tem benefícios. Este princípio se aplica aos membros proativos da comunidade Arch, que desejam contribuir e se envolver com o projeto em prol de sua distribuição Linux favorita. Esta participação beneficia não apenas membros da comunidade e seguidores do Arch, mas também, toda a gama dos usuários de [software livre e de código aberto](https://en.wikipedia.org/wiki/pt:https://pt.wikipedia.org/wiki/Software_livre_e_de_c%C3%B3digo_aberto "wikipedia:pt:https://pt.wikipedia.org/wiki/Software livre e de código aberto").
 
 Este artigo descreve como usuários novos e experientes do Arch podem contribuir para a comunidade. Note que não é uma lista exaustiva.
@@ -18,8 +20,7 @@ Este artigo descreve como usuários novos e experientes do Arch podem contribuir
 *   [2 Projetos da comunidade](#Projetos_da_comunidade)
     *   [2.1 Grupos](#Grupos)
     *   [2.2 Software](#Software)
-    *   [2.3 Navegação do ArchWiki](#Navega.C3.A7.C3.A3o_do_ArchWiki)
-    *   [2.4 Outros](#Outros)
+    *   [2.3 Outros](#Outros)
 *   [3 FAQ](#FAQ)
     *   [3.1 Como posso me tornar um desenvolvedor do Arch?](#Como_posso_me_tornar_um_desenvolvedor_do_Arch.3F)
     *   [3.2 Como me torno um Trusted User?](#Como_me_torno_um_Trusted_User.3F)
@@ -39,7 +40,7 @@ A [ArchWiki](/index.php/SobreWiki "SobreWiki") é uma documentação do Arch Lin
 
 ### Ingresse nas salas de chat
 
-Você pode ajudar outros usuários a resolver problemas através do [canal do IRC](/index.php/Canais_IRC "Canais IRC"). É de suma importância que você leia as [regras do canal](/index.php/C%C3%B3digo_de_conduta#IRC "Código de conduta") antes de participar. [Canais especiais](/index.php/IRC_channels_(Portugu%C3%AAs)#Outros_canais "IRC channels (Português)") estão disponíveis para tópicos específicos.
+Você pode ajudar outros usuários a resolver problemas através do [canal do IRC](/index.php/Canais_IRC "Canais IRC"). É de suma importância que você leia as [regras do canal](/index.php/C%C3%B3digo_de_conduta#IRC "Código de conduta") antes de participar. [Canais especiais](/index.php/Canais_IRC#Outros_canais "Canais IRC") estão disponíveis para tópicos específicos.
 
 ### Relate pacotes instalados
 
@@ -53,7 +54,7 @@ Contudo, o uso inefetivo pode ser contra-produtivo. Por favor, leia [Diretrizes 
 
 ### Informe sobre problemas de segurança
 
-Novas vulnerabilidades são localizadas todo momento. Ajude a [Equipe de Segurança do Arch](/index.php/Arch_Security_Team "Arch Security Team") a se manter antenada a novas vulnerabilidades.
+Novas vulnerabilidades são localizadas todo momento. Ajude a [Equipe de Segurança do Arch](/index.php/Equipe_de_Seguran%C3%A7a_do_Arch "Equipe de Segurança do Arch") a se manter antenada a novas vulnerabilidades.
 
 ### Ajude a testar pacotes
 
@@ -123,37 +124,9 @@ Softwares desenvolvidos pela comunidade com foco no Arch.
 
 	Repositórios não-oficiais de binários mantidos por membros da comunidade.
 
-	[Auxiliares do AUR](/index.php/Auxiliares_do_AUR "Auxiliares do AUR")
-
-	Utilitários para ajudar usuários no uso do [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)").
-
 	[Frontends GUI do pacman](/index.php/Pacman/Tips_and_tricks_(Portugu%C3%AAs)#Front-ends_gr.C3.A1ficos "Pacman/Tips and tricks (Português)")
 
 	Ferramentas gráficas para o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)").
-
-### Navegação do ArchWiki
-
-Nós oferecemos diferentes métodos para visitar o ArchWiki.
-
-	[arch-wiki-docs](https://github.com/lahwaacz/arch-wiki-docs)
-
-	Páginas do Arch Wiki otimizadas para navegação *offline*. Pacote: [arch-wiki-docs](https://www.archlinux.org/packages/?name=arch-wiki-docs).
-
-	[arch-wiki-lite](http://kmkeen.com/arch-wiki-lite/)
-
-	Arch-wiki-lite é projetado para oferecer a experiência mais suave possível para pessoas hipossuficientes que não tenham acesso à internet ou qualquer outra forma de iniciar uma interface gráfica web. Pacote: [arch-wiki-lite](https://www.archlinux.org/packages/?name=arch-wiki-lite).
-
-	[arch-wiki-man](https://github.com/greg-js/arch-wiki-man)
-
-	O Arch Wiki facilmente acessível e pesquisável como páginas man. Funciona sem Internet. Pacote: [arch-wiki-man](https://aur.archlinux.org/packages/arch-wiki-man/).
-
-	[ArchWiki Viewer for Android](https://bbs.archlinux.org/viewtopic.php?id=150538)
-
-	Um visualizador simples para o ArchLinux Wiki online. Conteúdo da página é formatado para uma visão otimizada para *mobile*.
-
-	[Wikicurses](https://bbs.archlinux.org/viewtopic.php?id=187864)
-
-	Uma interface simples em *curses* para os sites do MediaWiki tal como ArchWiki ou Wikipédia. Pacotes: [wikicurses](https://www.archlinux.org/packages/?name=wikicurses), [wikicurses-git](https://aur.archlinux.org/packages/wikicurses-git/).
 
 ### Outros
 

@@ -52,9 +52,9 @@ Visite a [tabela de conteúdo](/index.php/Tabela_de_conte%C3%BAdo "Tabela de con
 
 	Encontre esclarecimentos se você tiver dificuldade para entender instruções em alguns artigos.
 
-	[Help:Searching (Português)](/index.php/Help:Searching_(Portugu%C3%AAs) "Help:Searching (Português)")
+	[Help:Browsing (Português)](/index.php/Help:Browsing_(Portugu%C3%AAs) "Help:Browsing (Português)")
 
-	Tente usar a caixa de pesquisa no topo da página; siga o link para mais truques.
+	Como pesquisar no wiki, localizar artigos relacionados e visualizar o wiki offline.
 
 	[ArchWiki:Contributing (Português)](/index.php/ArchWiki:Contributing_(Portugu%C3%AAs) "ArchWiki:Contributing (Português)")
 

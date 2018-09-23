@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Comparison of desktop environments](/index.php/Comparison_of_desktop_environments "Comparison of desktop environments"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Comparison_of_desktop_environments&diff=0&oldid=534940) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Comparison of desktop environments](/index.php/Comparison_of_desktop_environments "Comparison of desktop environments"). Data da última tradução: 2018-09-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Comparison_of_desktop_environments&diff=0&oldid=541258) na versão em inglês.
 
 Veja [Ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop") para o artigo principal.
 

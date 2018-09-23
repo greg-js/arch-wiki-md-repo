@@ -66,7 +66,7 @@ Working this way does have certain advantages, such as windows popping up on one
 
 [RandR](https://en.wikipedia.org/wiki/RandR "wikipedia:RandR") (**R**otate **and** **R**esize) is an [X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") extension, which allows clients to dynamically change (e.g. resize, rotate, reflect) screens. In most cases, it can fully replace the old Xinerama setup. See [an explanation](http://i3wm.org/docs/multi-monitor.html#_the_explanation) why RandR is better than Xinerama.
 
-RandR can be configured for the current session via the [xrandr](/index.php/Xrandr "Xrandr") tool or persistently via an [xorg.conf](/index.php/Xorg#Configuration "Xorg") file.
+RandR can be configured for the current session via the [xrandr](/index.php/Xrandr "Xrandr") tool or persistently via an [xorg.conf](/index.php/Xorg.conf "Xorg.conf") file.
 
 **Note:** There are multiple ways to configure the same thing, you might have to experiment a little before you find the best configuration.
 

@@ -100,7 +100,7 @@ $ dmesg | grep acpi
 
 ```
 
-Añada los que estén funcionando a los archivos de configuración en `/etc/modules-load.d`. `/etc/modules-load.d` se describe en [Kernel modules (Español)#Automatic module handling](/index.php/Kernel_modules_(Espa%C3%B1ol)#Automatic_module_handling "Kernel modules (Español)").
+Añada los que estén funcionando a los archivos de configuración en `/etc/modules-load.d`. `/etc/modules-load.d` se describe en [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
 
 ## Obteniendo información
 

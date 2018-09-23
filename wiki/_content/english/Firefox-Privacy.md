@@ -72,7 +72,7 @@ The value for the key is your browser's user agent. Select a known common one.
 **Tip:**
 
 *   The value `Mozilla/5.0 (Windows NT 6.1; rv:52.0) Gecko/20100101 Firefox/52.0` is used as the user agent for the Tor browser, thus being very common.
-*   The [#Enable Anti-Fingerprinting](#Enable_Anti-Fingerprinting) option also enables the Tor browser user agent and changes your browser platform automatically.
+*   The [#Anti-fingerprinting](#Anti-fingerprinting) option also enables the Tor browser user agent and changes your browser platform automatically.
 
 **Warning:** Changing the user agent without changing to a corresponding platform will make your browser nearly unique.
 

@@ -145,7 +145,7 @@ Swap:         1537          0       1537
 
 ### Q) 我磁碟內的空間都跑到哪裡去了？
 
-**A)** 檢查一下您的系統吧。這裡有一些[不錯的工具程式](/index.php/Common_Applications#Disk_usage_display_programs "Common Applications")可以幫助您找到問題的根源。
+**A)** 檢查一下您的系統吧。這裡有一些[不錯的工具程式](/index.php/Common_Applications#Disk_usage_display "Common Applications")可以幫助您找到問題的根源。
 
 ## 軟體包管理
 

@@ -352,21 +352,21 @@ For the purposes of disk encryption, each blockdevice (or individual file in the
 Whenever the operating system or an application requests a certain fragment of data from the blockdevice/file, the whole sector (or sectors) that contains the data will be read from disk, decrypted on-the-fly, and temporarily stored in memory:
 
 ```
-          ╔═══════╗
- sector 1 ║"???.."║
-          ╠═══════╣         ╭┈┈┈┈┈╮
- sector 2 ║"???.."║         ┊ key ┊
-          ╠═══════╣         ╰┈┈┬┈┈╯
-          :       :            │
-          ╠═══════╣            ▼             ┣┉┉┉┉┉┉┉┫
- sector n ║"???.."║━━━━━━━(decryption)━━━━━━▶┋"abc.."┋ sector n
-          ╠═══════╣                          ┣┉┉┉┉┉┉┉┫
-          :       :
-          ╚═══════╝
+           ╔═══════╗
+  sector 1 ║"???.."║
+           ╠═══════╣         ╭┈┈┈┈┈╮
+  sector 2 ║"???.."║         ┊ key ┊
+           ╠═══════╣         ╰┈┈┬┈┈╯
+           :       :            │
+           ╠═══════╣            ▼             ┣┉┉┉┉┉┉┉┫
+  sector n ║"???.."║━━━━━━━(decryption)━━━━━━▶┋"abc.."┋ sector n
+           ╠═══════╣                          ┣┉┉┉┉┉┉┉┫
+           :       :
+           ╚═══════╝
 
-          encrypted                          unencrypted
-     blockdevice or                          data in RAM
-       file on disk
+           encrypted                          unencrypted
+      blockdevice or                          data in RAM
+        file on disk
 
 ```
 
@@ -403,15 +403,15 @@ Frequently the encryption techniques use cryptographic functions to enhance the 
 A common setup is to apply so-called "key stretching" to the passphrase (via a "key derivation function"), and use the resulting enhanced passphrase as the mount key for decrypting the actual master key (which has been previously stored in encrypted form):
 
 ```
-╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮                         ╭┈┈┈┈┈┈┈┈┈┈┈╮
-┊ mount passphrase ┊━━━━━⎛key derivation⎞━━━▶┊ mount key ┊
-╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯ ,───⎝   function   ⎠    ╰┈┈┈┈┈┬┈┈┈┈┈╯
-╭──────╮            ╱                              │
-│ salt │───────────´                               │
-╰──────╯                                           │
-╭─────────────────────╮                            ▼         ╭┈┈┈┈┈┈┈┈┈┈┈┈╮
-│ encrypted master key│━━━━━━━━━━━━━━━━━━━━━━(decryption)━━━▶┊ master key ┊
-╰─────────────────────╯                                      ╰┈┈┈┈┈┈┈┈┈┈┈┈╯
+ ╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╮                         ╭┈┈┈┈┈┈┈┈┈┈┈╮
+ ┊ mount passphrase ┊━━━━━⎛key derivation⎞━━━▶┊ mount key ┊
+ ╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯ ,───⎝   function   ⎠    ╰┈┈┈┈┈┬┈┈┈┈┈╯
+ ╭──────╮            ╱                              │
+ │ salt │───────────´                               │
+ ╰──────╯                                           │
+ ╭─────────────────────╮                            ▼         ╭┈┈┈┈┈┈┈┈┈┈┈┈╮
+ │ encrypted master key│━━━━━━━━━━━━━━━━━━━━━━(decryption)━━━▶┊ master key ┊
+ ╰─────────────────────╯                                      ╰┈┈┈┈┈┈┈┈┈┈┈┈╯
 
 ```
 
@@ -428,18 +428,18 @@ After it has been derived, the master key is securely stored in memory (e.g. in 
 It is usually not used for de/encrypting the disk data directly, though. For example, in the case of stacked filesystem encryption, each file can be automatically assigned its own encryption key. Whenever the file is to be read/modified, this file key first needs to be decrypted using the main key, before it can itself be used to de/encrypt the file contents:
 
 ```
-                          ╭┈┈┈┈┈┈┈┈┈┈┈┈╮
-                          ┊ master key ┊
-  *file on disk:*           ╰┈┈┈┈┈┬┈┈┈┈┈┈╯
- ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┐        │
- ╎╭───────────────────╮╎        ▼          ╭┈┈┈┈┈┈┈┈┈┈╮
- ╎│ encrypted file key│━━━━(decryption)━━━▶┊ file key ┊
- ╎╰───────────────────╯╎                   ╰┈┈┈┈┬┈┈┈┈┈╯
- ╎┌───────────────────┐╎                        ▼           ┌┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┐
- ╎│ encrypted file    │◀━━━━━━━━━━━━━━━━━(de/encryption)━━━▶┊ readable file ┊
- ╎│ contents          │╎                                    ┊ contents      ┊
- ╎└───────────────────┘╎                                    └┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┘
- └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┘
+                           ╭┈┈┈┈┈┈┈┈┈┈┈┈╮
+                           ┊ master key ┊
+   file on disk:           ╰┈┈┈┈┈┬┈┈┈┈┈┈╯
+  ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┐        │
+  ╎╭───────────────────╮╎        ▼          ╭┈┈┈┈┈┈┈┈┈┈╮
+  ╎│ encrypted file key│━━━━(decryption)━━━▶┊ file key ┊
+  ╎╰───────────────────╯╎                   ╰┈┈┈┈┬┈┈┈┈┈╯
+  ╎┌───────────────────┐╎                        ▼           ┌┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┐
+  ╎│ encrypted file    │◀━━━━━━━━━━━━━━━━━(de/encryption)━━━▶┊ readable file ┊
+  ╎│ contents          │╎                                    ┊ contents      ┊
+  ╎└───────────────────┘╎                                    └┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┘
+  └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ┘
 
 ```
 
@@ -477,26 +477,26 @@ Simply applying it to each block separately without modification (dubbed the "*e
 The most basic (and common) mode of operation used in practice is "*cipher-block chaining (CBC)*". When encrypting a sector with this mode, each block of plaintext data is combined in a mathematical way with the ciphertext of the previous block, before encrypting it using the cipher. For the first block, since it has no previous ciphertext to use, a special pre-generated data block stored with the sector's cryptographic metadata and called an "**initialization vector (IV)**" is used:
 
 ```
-                                  ╭──────────────╮
-                                  │initialization│
-                                  │vector        │
-                                  ╰────────┬─────╯
-          ╭  ╠══════════╣        ╭─key     │      ┣┉┉┉┉┉┉┉┉┉┉┫        
-          │  ║          ║        ▼         ▼      ┋          ┋         . START
-          ┴  ║"????????"║◀━━━━(cipher)━━━━(+)━━━━━┋"Hello, W"┋ block  ╱╰────┐
-    sector n ║          ║                         ┋          ┋ 1      ╲╭────┘
-  of file or ║          ║──────────────────╮      ┋          ┋         ' 
- blockdevice ╟──────────╢        ╭─key     │      ┠┈┈┈┈┈┈┈┈┈┈┨
-          ┬  ║          ║        ▼         ▼      ┋          ┋
-          │  ║"????????"║◀━━━━(cipher)━━━━(+)━━━━━┋"orld !!!"┋ block
-          │  ║          ║                         ┋          ┋ 2
-          │  ║          ║──────────────────╮      ┋          ┋
-          │  ╟──────────╢                  │      ┠┈┈┈┈┈┈┈┈┈┈┨
-          │  ║          ║                  ▼      ┋          ┋
-          :  :   ...    :        ...      ...     :   ...    : ...
+                                   ╭──────────────╮
+                                   │initialization│
+                                   │vector        │
+                                   ╰────────┬─────╯
+           ╭  ╠══════════╣        ╭─key     │      ┣┉┉┉┉┉┉┉┉┉┉┫        
+           │  ║          ║        ▼         ▼      ┋          ┋         . START
+           ┴  ║"????????"║◀━━━━(cipher)━━━━(+)━━━━━┋"Hello, W"┋ block  ╱╰────┐
+     sector n ║          ║                         ┋          ┋ 1      ╲╭────┘
+   of file or ║          ║──────────────────╮      ┋          ┋         ' 
+  blockdevice ╟──────────╢        ╭─key     │      ┠┈┈┈┈┈┈┈┈┈┈┨
+           ┬  ║          ║        ▼         ▼      ┋          ┋
+           │  ║"????????"║◀━━━━(cipher)━━━━(+)━━━━━┋"orld !!!"┋ block
+           │  ║          ║                         ┋          ┋ 2
+           │  ║          ║──────────────────╮      ┋          ┋
+           │  ╟──────────╢                  │      ┠┈┈┈┈┈┈┈┈┈┈┨
+           │  ║          ║                  ▼      ┋          ┋
+           :  :   ...    :        ...      ...     :   ...    : ...
 
-               ciphertext                         plaintext
-                  on disk                         in RAM
+                ciphertext                         plaintext
+                   on disk                         in RAM
 
 ```
 

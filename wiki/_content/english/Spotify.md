@@ -379,10 +379,12 @@ You may also add the following lines to your hosts file to block ads in SpotifyÂ
 127.0.0.1 www.omaze.com
 127.0.0.1 omaze.com
 127.0.0.1 bounceexchange.com
-127.0.0.1 spclient.wg.spotify.com
+#127.0.0.1 spclient.wg.spotify.com
 127.0.0.1 securepubads.g.doubleclick.net
 
 ```
+
+spclient.wg.spotify.com now appears to block radio and daily mixes, as well as recently played songs.
 
 ### Remote Control
 

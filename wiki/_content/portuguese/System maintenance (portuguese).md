@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [System maintenance](/index.php/System_maintenance "System maintenance"). Data da última tradução: 2018-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=539531) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [System maintenance](/index.php/System_maintenance "System maintenance"). Data da última tradução: 2018-09-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=542230) na versão em inglês.
 
 Artigos relacionados
 
@@ -171,7 +171,7 @@ Sempre tente usar drivers de código aberto antes de recorrer a drivers propriet
 
 ### Tenha cuidado com pacotes não oficiais
 
-Seja cauteloso ao usar pacotes do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") ou um [repositório não oficial de usuários](/index.php/Unofficial_user_repository "Unofficial user repository"). A maioria é fornecida pelos usuários e, portanto, pode não ter os mesmos padrões que aqueles nos repositórios oficiais. Tenha cuidado com [auxiliares do AUR](/index.php/Auxiliares_do_AUR "Auxiliares do AUR") que automatizam a instalação de pacotes do AUR. **Sempre** verifique PKGBUILDs por sanidade e sinais de erro ou código malicioso antes de compilar a/ou instalar o pacote.
+Seja cauteloso ao usar pacotes do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)") ou um [repositório não oficial de usuários](/index.php/Unofficial_user_repository "Unofficial user repository"). A maioria é fornecida pelos usuários e, portanto, pode não ter os mesmos padrões que aqueles nos repositórios oficiais. Evite [auxiliares do AUR](/index.php/Auxiliares_do_AUR "Auxiliares do AUR") que automatizam a instalação de pacotes do AUR. **Sempre** verifique PKGBUILDs por sanidade e sinais de erro ou código malicioso antes de compilar a/ou instalar o pacote.
 
 Para simplificar a manutenção, limite a quantidade de pacotes não oficiais usados. Faça verificações periódicas de quais estão em uso e remova (ou substitua por suas contrapartes oficiais) quaisquer outros. Veja [pacman/Dicas e truques#Manutenção](/index.php/Pacman/Dicas_e_truques#Manuten.C3.A7.C3.A3o "Pacman/Dicas e truques") para comandos úteis.
 

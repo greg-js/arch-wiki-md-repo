@@ -63,11 +63,11 @@ Los paquetes en los repositorios de prueba deben probarse y firmarse antes de se
 
 ### Crear y adoptar paquetes de AUR
 
-El repositorio [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") contiene los scripts de los paquetes realizados por la comunidad para que los usuarios pueden instalar fácilmente software que no está en los repositorios oficiales. Los paquetes más populares terminan incluyéndose en el repositorio oficial [[community]](/index.php/Arch_User_Repository_(Espa%C3%B1ol)#.5Bcommunity.5D "Arch User Repository (Español)").
+El repositorio [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") contiene los scripts de los paquetes realizados por la comunidad para que los usuarios pueden instalar fácilmente software que no está en los repositorios oficiales. Los paquetes más populares terminan incluyéndose en el repositorio oficial [community](/index.php/Arch_User_Repository_(Espa%C3%B1ol)#community "Arch User Repository (Español)").
 
 Se puede ayudar mediante la creación y adopción de paquetes.
 
-[aurphan](https://www.archlinux.org/packages/?name=aurphan) puede ayudarle a identificar los paquetes huérfanos que use, para que puede adoptarles.
+[aurphan](https://www.archlinux.org/packages/?name=aurphan) puede ayudarle a identificar los paquetes huérfanos que use, para que pueda adoptarlos.
 
 ### Proyectos oficiales de software
 

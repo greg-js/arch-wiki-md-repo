@@ -213,7 +213,7 @@ Por favor, leia [AUR (Português)#Enviando pacotes](/index.php/AUR_(Portugu%C3%A
 3.  Copie o protótipo `/usr/share/pacman/PKGBUILD.proto` e renomeie-o para `PKGBUILD` em um diretório de trabalho temporário.
 4.  Edite o `PKGBUILD` de acordo com as necessidades do seu pacote.
 5.  Execute `makepkg` e verifique se o pacote resultante compila corretamente.
-6.  Se não, repita as últimas duas etapas.
+6.  Se não, repita as duas etapas anteriores.
 
 ### Avisos
 

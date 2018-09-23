@@ -81,7 +81,7 @@ It's possible to save around ~10/20% energy with somes tricks.
 
 First, we can disable SD-Card adapter in bios settings (-0.5W~)
 
-Then, it's possible to undervolt CPU and GPU with [[1]](https://wiki.archlinux.org/index.php/Undervolting_CPU#intel-undervolt%7Cintel-undervolt)
+Then, it's possible to undervolt CPU and GPU with [intel-undervolt](/index.php/Undervolting_CPU#intel-undervolt "Undervolting CPU")
 
 This is an example of best stable values for a I5-7200u (depend of your cpu):
 
@@ -423,7 +423,7 @@ Some users experienced a weird crackling, white noise sound when the display is 
 
 This issue should be patched as of the 4.14.15 kernel.
 
-If you're still encountering this issue, try manually applying this patch[[2]](https://lkml.org/lkml/2018/1/22/169). Adding the kernel parameter `i915 enable_guc=1` as described in [Intel graphics](/index.php/Intel_graphics "Intel graphics") might also help, however multiple people have reported that this does not fix the problem completely.
+If you're still encountering this issue, try manually applying this patch[[1]](https://lkml.org/lkml/2018/1/22/169). Adding the kernel parameter `i915 enable_guc=1` as described in [Intel graphics](/index.php/Intel_graphics "Intel graphics") might also help, however multiple people have reported that this does not fix the problem completely.
 
 ### Coil Whine
 
@@ -468,7 +468,7 @@ volume = 1
 
 ## Fingerprint sensor
 
-Dell officially does not support fingerprint reader functionality [[3]](http://en.community.dell.com/techcenter/os-applications/f/4613/t/20006668), however an effort on reverse engineering the protocol of Validity 138a:0090, 138a:0094, 138a:0097 fingerprint readers can be found at github [[4]](https://github.com/nmikhailov/Validity90).
+Dell officially does not support fingerprint reader functionality [[2]](http://en.community.dell.com/techcenter/os-applications/f/4613/t/20006668), however an effort on reverse engineering the protocol of Validity 138a:0090, 138a:0094, 138a:0097 fingerprint readers can be found at github [[3]](https://github.com/nmikhailov/Validity90).
 
 ## See Also
 

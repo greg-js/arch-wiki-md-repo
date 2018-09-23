@@ -33,7 +33,7 @@
 
 [Install](/index.php/Install "Install") the [fish](https://www.archlinux.org/packages/?name=fish) package. For the development version, install the [fish-git](https://aur.archlinux.org/packages/fish-git/) package.
 
-Once installed simply type `fish` to drop into the fish shell.
+Once installed, simply type `fish` to drop into the fish shell.
 
 Documentation can be found by typing `help` from fish; it will be opened in a web browser. It is recommended to read at least the "Syntax overview" section, since fish's syntax is different from many other shells.
 
@@ -51,7 +51,7 @@ If you decide to set fish as the default user shell, the first step is to set th
 
 The next step is to port the current needed actions and configuration performed in the various Bash initialization scripts, namely `/etc/profile`, `~/.bash_profile`, `/etc/bash.bashrc` and `~/.bashrc`, into the fish framework.
 
-In particular the content of the `$PATH` environment variable, once directly logged under fish, should be checked and adjusted to one's need. In fish `$PATH` is a global environment variable, which means that it is exported to child processes and lost upon reboot. The recommended way of adding permanently additional locations to the path is by assigning them to the `fish_user_paths` universal variable. This variable is automatically added to `$PATH` and is preserved across restarts of the shell. For example by setting:
+In particular, the content of the `$PATH` environment variable, once directly logged under fish, should be checked and adjusted to one's need. In fish, `$PATH` is defined as a *global environment variable*: it has a *global* scope across all functions, it is lost upon reboot and it is an *environment variable* which means it is exported to child processes. The recommended way of adding permanently additional locations to the path is by assigning them to the `fish_user_paths` universal variable. This variable is automatically added to `$PATH` and is preserved across restarts of the shell. For example by setting:
 
 ```
 $ set -U fish_user_paths */first/path* */second/path* */third/one*
@@ -104,7 +104,9 @@ Whenever you run *tmux*, you will be dropped into fish.
 
 ## Configuration
 
-The configuration file run at every login is located at `~/.config/fish/config.fish`. Adding commands or functions to the file will execute/define them when opening a terminal, similar to `.bashrc`. The user's functions are located in the directory `~/.config/fish/functions` under the filenames `*function_name*.fish`.
+The configuration file runs at every login and is located at `~/.config/fish/config.fish`. Adding commands or functions to the file will execute/define them when opening a terminal, similar to `.bashrc`. Note that whenever a variable needs to be preserved, it be set as *universal* rather than defined in the aforementioned configuration file.
+
+The user's functions are located in the directory `~/.config/fish/functions` under the filenames `*function_name*.fish`.
 
 ### Web interface
 

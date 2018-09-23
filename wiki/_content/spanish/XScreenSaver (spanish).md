@@ -1,3 +1,12 @@
+## Contents
+
+*   [1 Configuración](#Configuraci.C3.B3n)
+*   [2 Arrancando Xscreensaver](#Arrancando_Xscreensaver)
+    *   [2.1 Ejemplo de ~/.xinitrc](#Ejemplo_de_.7E.2F.xinitrc)
+*   [3 bloquear pantalla](#bloquear_pantalla)
+
+## Configuración
+
 ## Arrancando Xscreensaver
 
 En algunas máquinas, el simple hecho de instalar el programa xscreensaver no es suficiente para que funcione correctamente. El programa de xscreensaver tiene que ser arrancado, tarea de la que se ocupa habitualmente el gestor de escritorio.

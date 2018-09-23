@@ -77,7 +77,7 @@ With the example above, RetroArch will write SRAM changes onto disk every 600 se
 
 ### Filters and shaders
 
-RetroArch can load [BSNES XML filters](https://gitorious.org/bsnes/xml-shaders) and [CG shaders](https://github.com/libretro/common-shaders). These are set in `retroarch.cfg` with `video_bsnes_shader` and `video_cg_shader` respectively. The shaders can also be obtained and updated directly inside RetroArch using the online updater.
+RetroArch can load [BSNES XML filters](https://gitorious.org/bsnes/xml-shaders) and [CG shaders](https://github.com/libretro/common-shaders). These are set in `retroarch.cfg` with `video_bsnes_shader` and `video_cg_shader` respectively. The shaders can also be obtained and updated directly inside RetroArch using the Online Updater.
 
 **Note:** [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/) requires [nvidia-cg-toolkit](https://www.archlinux.org/packages/?name=nvidia-cg-toolkit) in order to use the *cg shaders*.
 

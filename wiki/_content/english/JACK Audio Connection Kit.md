@@ -298,6 +298,8 @@ For JACK-MIDI, you may want to set the **MIDI Driver** to **seq** or **raw** in 
 
 For ALSA-MIDI, make sure to turn on **Enable ALSA Sequencer support** in QjackCtl *Setup > Misc*. This will add the *ALSA* tab in QjackCtl *Connect* window where your MIDI controller will show up.
 
+**Note:** [jack2](https://www.archlinux.org/packages/?name=jack2) does not come with bridging support for legacy ALSA MIDI only applications. Therefore [a2jmidid](https://www.archlinux.org/packages/?name=a2jmidid) is required [until upstream achieves feature parity on this](https://github.com/jackaudio/jack2/issues/362).
+
 For bridging ALSA-MIDI to JACK-MIDI, you may consider using a2jmidid ([a2jmidid](https://www.archlinux.org/packages/?name=a2jmidid)). The following command will export all available ALSA MIDI ports to JACK MIDI ports:
 
 ```

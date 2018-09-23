@@ -223,7 +223,7 @@ Installing [r8152-dkms](https://aur.archlinux.org/packages/r8152-dkms/) fixes th
 
 In order for the internal USB hub in the dock to work, you need to set Thunderbolt 3 security appropriately.
 
-The easiest, but insecure, way to do so is to change the "Security Level" to "No Security" under Thuderbolt settings in the BIOS. Be aware, however, that this directly exposes the PCIe bus to any device plugged into your laptop, leaving you vulnerable to attacks such as [DMA attacks](https://en.wikipedia.org/wiki/DMA_attack) and [Thunderstrike](https://trmm.net/Thunderstrike_2).
+The easiest, but insecure, way to do so is to change the "Security Level" to "No Security" under Thuderbolt settings in the BIOS. Be aware, however, that this directly exposes the PCIe bus to any device plugged into your laptop, leaving you vulnerable to attacks such as [DMA attacks](https://en.wikipedia.org/wiki/DMA_attack "wikipedia:DMA attack") and [Thunderstrike](https://trmm.net/Thunderstrike_2).
 
 The more secure (but still under development) way to enable USB ports on the dock is to use the [bolt](https://christian.kellner.me/2017/12/14/introducing-bolt-thunderbolt-3-security-levels-for-gnulinux/) tool, which can be found in the AUR as [bolt-git](https://aur.archlinux.org/packages/bolt-git/). To use this tool, set "Security level" in the Thunderbolt settings in the BIOS to "Secure". After booting, attach the dock and (using the laptop's own keyboard) run `boltctl list` to find the UUID of your dock, then run `boltctl enroll --policy=auto <uuid>` to give the dock permission to access the PCIe bus automatically whenever it is plugged in. This procedure is verified to work with the X1 Carbon Gen 5 and Lenovo's dock. It may or may not work with other docks.
 

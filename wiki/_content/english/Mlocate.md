@@ -16,7 +16,7 @@ While the [GNU findutils](https://www.gnu.org/software/findutils/) also include 
 
 ## Usage
 
-Before [locate(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locate.1) can be used, the database will need to be created, this is done with the [updatedb(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.1) command, which (as the name suggests) updates the database.
+Before [locate(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locate.1) can be used, the database will need to be created, this is done with the [updatedb(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.8) command, which (as the name suggests) updates the database.
 
 The package contains an `updatedb.timer` unit, which invokes a database update each day. The timer is enabled right after installation, [start](/index.php/Start "Start") it manually if you want to use it before reboot. You can also manually run *updatedb* as root at any time.
 

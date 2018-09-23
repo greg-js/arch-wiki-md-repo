@@ -761,4 +761,4 @@ Make sure the boot order puts `Arch Linux Signed` first. If not change it with `
 
 ```
 
-Afterwards, `cryptsetup close lukskey` and [shred](/index.php/Securely_wipe_disk#shred "Securely wipe disk") or [dd](/index.php/Securely_wipe_disk#dd "Securely wipe disk") the old keyfile with random data before deleting it, then make sure that the new keyfile is renamed to the same name of the old one: `key.img` or other name.
+Afterwards, `cryptsetup close lukskey` and [shred](/index.php/Shred "Shred") or [dd](/index.php/Securely_wipe_disk#dd "Securely wipe disk") the old keyfile with random data before deleting it, then make sure that the new keyfile is renamed to the same name of the old one: `key.img` or other name.

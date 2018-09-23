@@ -12,7 +12,7 @@ Related articles
 *   (Des)Enchufando un adaptador de corriente de un portátil
 *   (Des)Enchufando el conector del teléfono (módem), etc.
 
-**Nota:** Los [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)"), como [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), el administrador de inicio de sesión de [systemd](/index.php/Power_Management_(Espa%C3%B1ol)#Eventos_de_ACPI "Power Management (Español)") y algunos demonios que [manejan teclas extra](/index.php/Extra_keyboard_keys "Extra keyboard keys") pueden implementar esquemas propios de manejo de eventos, independientes de acpid. La ejecución de más de un sistema al mismo tiempo puede provocar un comportamiento inesperado, como suspender dos veces seguidas después de presionar un botón de suspensión. Tenga esto en cuenta y active solo los manejadores que necesite.
+**Nota:** Los [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)"), como [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), el administrador de inicio de sesión de [systemd](/index.php/Power_management_(Espa%C3%B1ol)#Eventos_de_ACPI "Power management (Español)") y algunos demonios que [manejan teclas extra](/index.php/Extra_keyboard_keys "Extra keyboard keys") pueden implementar esquemas propios de manejo de eventos, independientes de acpid. La ejecución de más de un sistema al mismo tiempo puede provocar un comportamiento inesperado, como suspender dos veces seguidas después de presionar un botón de suspensión. Tenga esto en cuenta y active solo los manejadores que necesite.
 
 ## Contents
 

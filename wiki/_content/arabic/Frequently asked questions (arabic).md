@@ -137,7 +137,7 @@ Swap:          3.0G        881M        2.1G
 
 ### أين اختفت كل مساحة جهازي الخالية؟
 
-الجواب على هذا السؤال يعتمد على نظامك، هناك بعض [الأدوات الجيدة](/index.php/Common_Applications#Disk_usage_display_programs "Common Applications") التي قد تساعدك في العثور على الجواب.
+الجواب على هذا السؤال يعتمد على نظامك، هناك بعض [الأدوات الجيدة](/index.php/Common_Applications#Disk_usage_display "Common Applications") التي قد تساعدك في العثور على الجواب.
 
 ## إدارة الحزم
 

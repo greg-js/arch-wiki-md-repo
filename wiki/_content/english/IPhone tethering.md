@@ -24,7 +24,7 @@ Tethering natively over USB is the optimal choice as it provides a more stable c
 
 To tether your iPhone over USB, you will need to install [usbmuxd](https://www.archlinux.org/packages/?name=usbmuxd) and [libimobiledevice](https://www.archlinux.org/packages/?name=libimobiledevice).
 
-Next enable **Personal Hotspot** on your iPhone and plug it into your computer. At this point you will have a new ethernet device available and should be able to use any [network manager](/index.php/List_of_applications#Network_Managers "List of applications") to connect to the internet through the new iPhone ethernet device, just like you would any other ethernet connection.
+Next enable **Personal Hotspot** on your iPhone and plug it into your computer. At this point you will have a new ethernet device available and should be able to use any [network manager](/index.php/List_of_applications#Network_managers "List of applications") to connect to the internet through the new iPhone ethernet device, just like you would any other ethernet connection.
 
 #### Using systemd-networkd
 

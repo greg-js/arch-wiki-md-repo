@@ -293,7 +293,7 @@ Esta sección se relaciona con el artículos sobre los [demonios](/index.php/Dae
 
 La mayoría de las distribuciones tienen un comando de localización (*locate*) disponible para poder buscar rápidamente los archivos. Para obtener esta funcionalidad en Arch Linux, se recomienda la instalación de [mlocate](https://www.archlinux.org/packages/?name=mlocate). Después de la instalación, se debe ejecutar *updatedb* para indexar los sistemas de archivos.
 
-Los [motores de búsqueda de escritorio](/index.php/List_of_applications/Utilities_(Espa%C3%B1ol)#Buscadores "List of applications/Utilities (Español)") ofrecen un servicio similar, mientras están mejor integrados en los [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)").
+Los [motores de búsqueda de escritorio](/index.php/List_of_applications/Utilities_(Espa%C3%B1ol)#Gestores_de_archivos "List of applications/Utilities (Español)") ofrecen un servicio similar, mientras están mejor integrados en los [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)").
 
 ### Entrega de correo electrónico local
 

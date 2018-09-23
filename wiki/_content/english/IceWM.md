@@ -135,6 +135,6 @@ If you have defined shutdown and reboot commands (such as systemctl poweroff and
 
 ## See also
 
-*   [Official IceWM website](http://www.icewm.org/)
+*   [Official IceWM website](https://ice-wm.org/)
 *   [IceWM - The Cool Window Manager](http://www.osnews.com/story.php/7774/IceWM--The-Cool-Window-Manager/) - Detailed introduction on OSNews
 *   [IceWM - A desktop for Windows emigrants](http://polishlinux.org/apps/window-managers/icewm-a-desktop-for-windows-emmigrants/) - Overview and tutorial from polishlinux.org

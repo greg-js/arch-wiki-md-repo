@@ -63,6 +63,7 @@ See also [System maintenance](/index.php/System_maintenance "System maintenance"
 You may want to get the list of installed packages with their version, which is useful when reporting bugs or discussing installed packages.
 
 *   List all explicitly installed packages: `pacman -Qe`.
+*   List all packages in the group named `group`: `pacman -Sg group`
 *   List all explicitly installed native packages (i.e. present in the sync database) that are not direct or optional dependencies: `pacman -Qent`.
 *   List all foreign packages (typically manually downloaded and installed or packages removed from the repositories): `pacman -Qm`.
 *   List all native packages (installed from the sync database(s)): `pacman -Qn`.

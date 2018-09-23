@@ -4,7 +4,7 @@ LPRng is mature and stable and incorporates a flexible print filtering mechanism
 
 **Note:** A disadvantage of LPRng is that Gnome3/GTK3 (including chrome and chromium) and KDE do not support lpr printing from their GUI. However, printing to a file and then using lpr works, though it is inconvenient.
 
-Wikipedia [LPRng](https://en.wikipedia.org/wiki/LPRng) article, and the history paragraph of one of two sites for [LPRng](http://lprng.sourceforge.net/) explain why there is another site for [LPRng](http://www.lprng.com/).
+Wikipedia [LPRng](https://en.wikipedia.org/wiki/LPRng "wikipedia:LPRng") article, and the history paragraph of one of two sites for [LPRng](http://lprng.sourceforge.net/) explain why there is another site for [LPRng](http://www.lprng.com/).
 
 ## Contents
 

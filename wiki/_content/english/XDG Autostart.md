@@ -8,8 +8,8 @@ You need to use either a [desktop environment](/index.php/Desktop_environment "D
 
 The Autostart directories in order of preference are:
 
-*   user-specific: `[$XDG_CONFIG_HOME](/index.php/$XDG_CONFIG_HOME "$XDG CONFIG HOME")/autostart` (`~/.config/autostart` by default)
-*   system-wide: `[$XDG_CONFIG_DIRS](/index.php/$XDG_CONFIG_DIRS "$XDG CONFIG DIRS")/autostart` (`/etc/xdg/autostart` by default)[[1]](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html#referencing)
+*   user-specific: `$XDG_CONFIG_HOME/autostart` (`~/.config/autostart` by default)
+*   system-wide: `$XDG_CONFIG_DIRS/autostart` (`/etc/xdg/autostart` by default)[[1]](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html#referencing)
 
 System-wide [desktop entries](/index.php/Desktop_entries "Desktop entries") can be overridden by user-specific entries with the same filename.
 

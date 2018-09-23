@@ -48,18 +48,7 @@ See [Wikipedia:Magic SysRq key](https://en.wikipedia.org/wiki/Magic_SysRq_key "w
 
 #### Virtual console
 
-See [Wikipedia:Virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console")
-
-| Keyboard Shortcut | Description |
-| `Ctrl+Alt+Del` | Reboots Computer (specified by the symlink `/usr/lib/systemd/system/ctrl-alt-del.target`) |
-| `Alt+F1`, `F2`, `F3`, ... | Switch to *n*-th virtual console |
-| `Alt+ ←` | Switch to previous virtual console |
-| `Alt+ →` | Switch to next virtual console |
-| `Scroll Lock` | When Scroll Lock is activated, input/output is locked |
-| `Shift+PgUp`/`PgDown` | Scrolls console buffer up/down |
-| `Ctrl+c` | Kills current task |
-| `Ctrl+d` | Inserts an EOF |
-| `Ctrl+z` | Pauses current Task |
+See [Linux console#Keyboard shortcuts](/index.php/Linux_console#Keyboard_shortcuts "Linux console").
 
 #### Readline
 

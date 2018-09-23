@@ -100,7 +100,7 @@ Arch Linux би трябвало да работи на всяка [x86_64](http
 Следните *дялове* са **необходими** за избраното устройство:
 
 *   Един дял за root директорията `/`.
-*   Ако [UEFI](/index.php/UEFI "UEFI") е включено, и [системен дял](/index.php/EFI_System_Partition "EFI System Partition").
+*   Ако [UEFI](/index.php/UEFI "UEFI") е включено, и [системен дял](/index.php/EFI_system_partition "EFI system partition").
 
 **Note:** [Swap](/index.php/Swap "Swap") може да бъде отделен дял или [файл](/index.php/Swap_file "Swap file").
 

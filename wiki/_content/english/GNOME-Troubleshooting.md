@@ -33,6 +33,7 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [29 Low OpenGL performance and stuttering on proprietary NVIDIA driver](#Low_OpenGL_performance_and_stuttering_on_proprietary_NVIDIA_driver)
 *   [30 GNOME Wayland session not available](#GNOME_Wayland_session_not_available)
 *   [31 gnome-control-center is empty and does not list any categories](#gnome-control-center_is_empty_and_does_not_list_any_categories)
+*   [32 Gnome freezes for a second after using a Function (Fn) key shortcut](#Gnome_freezes_for_a_second_after_using_a_Function_.28Fn.29_key_shortcut)
 
 ## Shell freezes
 
@@ -366,3 +367,14 @@ Under alternative window managers (i3 for example), *gnome-control-center* start
  gnome-control-center &
 
 ```
+
+## Gnome freezes for a second after using a Function (Fn) key shortcut
+
+This is a problem with the brazilian portuguese ABNT 2 keyboard. If you have the brazilian portuguese enabled, GNOME might experience this problem. To fix this issue and keep using this keyboard layout, un-map the scroll lock button by commenting this line at `/usr/share/X11/xkb/symbols/br`:
+
+```
+ modifier_map Mod3   { Scroll_Lock };
+
+```
+
+And restart the session (log out and in).

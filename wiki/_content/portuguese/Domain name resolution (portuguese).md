@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). Data da última tradução: 2018-09-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Domain_name_resolution&diff=0&oldid=540554) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). Data da última tradução: 2018-09-22\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Domain_name_resolution&diff=0&oldid=542529) na versão em inglês.
 
 Artigos relacionados
 
@@ -126,14 +126,14 @@ Na tabela abaixo, as colunas têm o seguinte sentido:
 | [glibc](#Resolvedor_do_glibc) | Não | Não | [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Não | Não | Não |
 | [BIND](/index.php/BIND "BIND") | Sim | Sim | se inscreve no [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Sim |  ? |  ? |
 | [dnscrypt-proxy](/index.php/Dnscrypt-proxy_(Portugu%C3%AAs) "Dnscrypt-proxy (Português)") | Sim | Não | Não | Não | Não | Sim | Implementa um cliente de protocolo [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt"). |
-| [dnsmasq](/index.php/Dnsmasq_(Portugu%C3%AAs) "Dnsmasq (Português)") | Sim | Não | se inscreve no [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Sim | Não [[2]](http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2018q2/012131.html) | Não |
-| [Knot Resolver](/index.php/Knot_Resolver "Knot Resolver") | Sim | Sim | Não | Sim | Sim | Não [[3]](https://gitlab.labs.nic.cz/knot/knot-resolver/issues/243) |
+| [dnsmasq](/index.php/Dnsmasq_(Portugu%C3%AAs) "Dnsmasq (Português)") | Sim | Não | se inscreve no [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Sim | [Não](http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2018q2/012131.html) | Não |
+| [Knot Resolver](/index.php/Knot_Resolver "Knot Resolver") | Sim | Sim | Não | Sim | Sim | [Não](https://gitlab.labs.nic.cz/knot/knot-resolver/issues/243) |
 | [pdnsd](/index.php/Pdnsd "Pdnsd") | Sim | Sim | se inscreve no [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Não | Não | Não |
 | [Stubby](/index.php/Stubby "Stubby") | Não | Não | Não | Sim | Sim | Não |
-| [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") | Sim | Não | [systemd-resolvconf](/index.php/Systemd-resolvconf "Systemd-resolvconf") | Sim | Inseguro | Não [[4]](https://github.com/systemd/systemd/issues/8639) |
-| [Unbound](/index.php/Unbound "Unbound") | Sim | Sim | se inscreve no [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Sim | Sim | Não [[5]](https://nlnetlabs.nl/bugs-script/show_bug.cgi?id=1200) |
+| [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") | Sim | Não | [systemd-resolvconf](/index.php/Systemd-resolvconf "Systemd-resolvconf") | Sim | Inseguro | [Não](https://github.com/systemd/systemd/issues/8639) |
+| [Unbound](/index.php/Unbound "Unbound") | Sim | Sim | se inscreve no [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Sim | Sim | [Não](https://nlnetlabs.nl/bugs-script/show_bug.cgi?id=1200) |
 
-1.  Do [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5): *Note que o resolvedor não é capaz de autenticar o servidor, ele é vulnerável a ataques "man-in-the-middle".* [[6]](https://github.com/systemd/systemd/issues/9397) Além disso, o único modo suportado é "opportunistic", o que *torna o DNS-over-TLS vulnerável a ataques de "downgrade"*.
+1.  Do [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5): *Note que o resolvedor não é capaz de autenticar o servidor, ele é vulnerável a ataques "man-in-the-middle".* [[2]](https://github.com/systemd/systemd/issues/9397) Além disso, o único modo suportado é "opportunistic", o que *torna o DNS-over-TLS vulnerável a ataques de "downgrade"*.
 
 ## Privacidade
 

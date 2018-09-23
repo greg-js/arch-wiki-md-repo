@@ -136,7 +136,7 @@ Consulte [este maravilloso artículo](http://www.linuxjournal.com/article/2770) 
 
 ### ¿De dónde vino todo mi espacio libre?
 
-La respuesta a esta pregunta depende de su sistema. Hay algunas [utilidades de discoque](/index.php/Common_Applications#Disk_usage_display_programs "Common Applications") pueden ayudarle a encontrar la respuesta.
+La respuesta a esta pregunta depende de su sistema. Hay algunas [utilidades de discoque](/index.php/Common_Applications#Disk_usage_display "Common Applications") pueden ayudarle a encontrar la respuesta.
 
 ## Administración de paquetes
 

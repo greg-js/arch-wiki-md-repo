@@ -150,7 +150,7 @@ Will plot a detailed graphic with the boot sequence: kernel time, userspace time
 
 ### dd
 
-The dd utility can be used to measure both reads and writes. This method is dependent on partition alignment! In other words, if you failed to properly align your partitions, this fact will be seen here since you are writing and reading to a mounted filesystem.
+The [dd](/index.php/Dd "Dd") utility can be used to measure both reads and writes. This method is dependent on partition alignment! In other words, if you failed to properly align your partitions, this fact will be seen here since you are writing and reading to a mounted filesystem.
 
 **Note:** This method requires the command to be executed from a mounted partition on the device of interest!
 
@@ -198,8 +198,6 @@ $ rm tempfile
 ```
 
 **Note:** Some SSD controllers have compression hardware, which may skew benchmark results. See [http://www.pugetsystems.com/labs/articles/SSDs-Advertised-vs-Actual-Performance-179/](http://www.pugetsystems.com/labs/articles/SSDs-Advertised-vs-Actual-Performance-179/)
-
-See also [Core utilities#dd](/index.php/Core_utilities#dd "Core utilities").
 
 ### dcfldd
 

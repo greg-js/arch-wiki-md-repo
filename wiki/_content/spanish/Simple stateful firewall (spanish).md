@@ -578,7 +578,7 @@ Supongamos que tenemos otra subred, **10.3.0.0/16** (que comprende todas las dir
 
 El último paso es activar [activar el reenvío de paquetes de red](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") (si no está ya activado):
 
-Las máquinas de estas subredes pueden ahora utilizar su nueva máquina NAT como su puerta de enlace. Tenga en cuenta que es posible que desee configurar un servidor DNS y [DHCP](/index.php/DHCP "DHCP") como [dnsmasq](/index.php/Dnsmasq "Dnsmasq") o una combinación de [bind](/index.php/Bind "Bind") and [dhcpd](/index.php/Dhcpd "Dhcpd") para simplificar la configuración de red en la resolución de DNS en los equipos clientes. Este no es el tema de esta guía.
+Las máquinas de estas subredes pueden ahora utilizar su nueva máquina NAT como su puerta de enlace. Tenga en cuenta que es posible que desee configurar un servidor DNS y [DHCP](/index.php/DHCP "DHCP") como [dnsmasq](/index.php/Dnsmasq "Dnsmasq") o una combinación de [BIND](/index.php/BIND "BIND") and [dhcpd](/index.php/Dhcpd "Dhcpd") para simplificar la configuración de red en la resolución de DNS en los equipos clientes. Este no es el tema de esta guía.
 
 #### Configurar la cadena PREROUTING
 

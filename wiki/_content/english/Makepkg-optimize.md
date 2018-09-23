@@ -30,7 +30,7 @@ To make optimizations available, install their backends: [graphite](https://www.
 
 ## Build an optimized package
 
-First, edit [`/etc/makepkg-optimize.conf`](/index.php/Makepkg-optimize#Configuration "Makepkg-optimize") and select your preferred optimizations for [`ARCHITECTURE, COMPILE FLAGS`](/index.php/Makepkg#Building_optimized_binaries "Makepkg"), `BUILD ENVIRONMENT`, `GLOBAL PACKAGE OPTIONS` and `COMPRESSION DEFAULTS`.
+First, edit [`/etc/makepkg-optimize.conf`](#Configuration) and select your preferred optimizations for [`ARCHITECTURE, COMPILE FLAGS`](/index.php/Makepkg#Building_optimized_binaries "Makepkg"), `BUILD ENVIRONMENT`, `GLOBAL PACKAGE OPTIONS` and `COMPRESSION DEFAULTS`.
 
 **Warning:** While many packages build with all optimizations enabled, some will not. It may take a few attempts to find which--if any--optimizations a package is compatible with. Some software may also experience runtime problems caused by over-optimization.
 
@@ -77,11 +77,11 @@ Then edit `$CHROOT/root/etc/makepkg-optimize.conf` and set `PROFDEST=/mnt/pgo` u
 
 ### Using the chroot
 
-**Note:** When [updating](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot#Building_in_the_Chroot "DeveloperWiki:Building in a Clean Chroot") the chroot, [AUR packages](/index.php/Makepkg-optimize#Install_required_packages "Makepkg-optimize") will have to be updated manually
+**Note:** When [updating](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot#Building_in_the_Chroot "DeveloperWiki:Building in a Clean Chroot") the chroot, [AUR packages](#Install_required_packages) will have to be updated manually
 
 #### Build a package
 
-First, edit [`$CHROOT/root/etc/makepkg-optimize.conf`](/index.php/Makepkg-optimize#Configuration "Makepkg-optimize") and select your preferred optimizations for [`ARCHITECTURE, COMPILE FLAGS`](/index.php/Makepkg#Building_optimized_binaries "Makepkg"), `BUILD ENVIRONMENT`, `GLOBAL PACKAGE OPTIONS` and `COMPRESSION DEFAULTS`.
+First, edit [`$CHROOT/root/etc/makepkg-optimize.conf`](#Configuration) and select your preferred optimizations for [`ARCHITECTURE, COMPILE FLAGS`](/index.php/Makepkg#Building_optimized_binaries "Makepkg"), `BUILD ENVIRONMENT`, `GLOBAL PACKAGE OPTIONS` and `COMPRESSION DEFAULTS`.
 
 When [building](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot#Building_in_the_Chroot "DeveloperWiki:Building in a Clean Chroot"), pass the [makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/) configuration file to makepkg:
 
@@ -99,7 +99,7 @@ After the first building phase, bind the PGO folder:
 
 ```
 
-Once the package is [installed](/index.php/Pacman#Usage.23Additional_commands "Pacman"), test-run its executables.
+Once the package is [installed](/index.php/Pacman#Additional_commands "Pacman"), test-run its executables.
 
 Then, for the second building phase, remove package cruft but *do not* clean the chroot (do not pass `-c`):
 

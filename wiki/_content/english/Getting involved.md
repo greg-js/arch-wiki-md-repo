@@ -34,7 +34,7 @@ One of the easiest ways to get involved is participating in the [Arch Linux Foru
 
 ### Improve this wiki
 
-[ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") is a collaboratively maintained Arch Linux documentation. All users are encouraged to [contribute](/index.php/ArchWiki:Contributing "ArchWiki:Contributing").
+[ArchWiki](/index.php/ArchWiki "ArchWiki") is a collaboratively maintained Arch Linux documentation. All users are encouraged to [contribute](/index.php/ArchWiki:Contributing "ArchWiki:Contributing").
 
 ### Join the chatroom
 

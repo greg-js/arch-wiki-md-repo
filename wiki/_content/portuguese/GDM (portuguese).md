@@ -175,7 +175,7 @@ Para mais informações, veja o seguinte [tópico no forum](https://bbs.archlinu
 
 ### Configuração no DConf
 
-Some GDM settings are stored in a DConf database. They can be configured either by adding *keyfiles* to the `/etc/dconf/db/gdm.d` directory and then recompiling the GDM database by running `dconf update` as root or by logging into the GDM user on the system and changing the setting directly using the *gsettings* command line tool. Note that for the former approach, a GDM profile file is required - this must be created manually as it is no longer shipped upstream, see below:
+Algumas configurações do GDM são armazenadas em um banco de dados DConf. Eles podem ser configurados adicionando *arquivo-chaves* ao diretório `/etc/dconf/db/gdm.d` e, em seguida, recompilando o banco de dados do GDM executando `dconf update` como root ou fazendo login no usuário do GDM no sistema e alterando a configuração diretamente usando a ferramenta de linha de comando *gsettings*. Observe que, para a abordagem anterior, é necessário um arquivo de perfil do GDM - isso deve ser criado manualmente, pois não é mais enviado pelo desenvolvedor, veja abaixo:
 
  `/etc/dconf/profile/gdm` 
 ```
@@ -184,7 +184,7 @@ system-db:gdm
 file-db:/usr/share/gdm/greeter-dconf-defaults
 ```
 
-For the latter approach, you can log into the GDM user with the command below:
+Para a última abordagem, você pode efetuar login no usuário do GDM com o comando abaixo:
 
 ```
 # machinectl shell gdm@
@@ -193,44 +193,44 @@ For the latter approach, you can log into the GDM user with the command below:
 
 #### Logo da tela de autenticação
 
-Either create the following keyfile
+Crie o seguinte arquivo-chave
 
  `/etc/dconf/db/gdm.d/02-logo` 
 ```
 [org/gnome/login-screen]
-logo='*/path/to/logo.png*'
+logo='*/caminho/para/logo.png*'
 ```
 
-and then recompile the GDM database or alternatively log in to the GDM user and execute the following:
+e recompile o banco de dados do GDM ou, alternativamente, autentique-se ao usuário GDM e execute o seguinte:
 
 ```
-$ gsettings set org.gnome.login-screen logo '*/path/to/logo.png*'
+$ gsettings set org.gnome.login-screen logo '*/caminho/para/logo.png*'
 
 ```
 
 #### Alterando o tema do cursor
 
-GDM disregards [GNOME](/index.php/GNOME "GNOME") cursor theme settings and it also ignores the cursor theme set according to the [XDG specification](/index.php/Cursor_themes#XDG_specification "Cursor themes"). To change the cursor theme used in GDM, either create the following keyfile
+O GDM desconsidera as configurações do tema do cursor [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") e também ignora o conjunto de temas do cursor de acordo com a [especificação XDG](/index.php/Cursor_themes#XDG_specification "Cursor themes"). Para alterar o tema do cursor usado no GDM, crie o seguinte arquivo-chave
 
  `/etc/dconf/db/gdm.d/10-cursor-settings` 
 ```
 [org/gnome/desktop/interface]
-cursor-theme='*theme-name'*
+cursor-theme='*nome-tema'*
 
 ```
 
-and then recompile the GDM database or alternatively log in to the GDM user and execute the following:
+e recompile o banco de dados do GDM ou, alternativamente, autentique-se como o usuário GDM e execute o seguinte:
 
 ```
-$ gsettings set org.gnome.desktop.interface cursor-theme '*theme-name*'
+$ gsettings set org.gnome.desktop.interface cursor-theme '*nome-tema*'
 
 ```
 
 #### Fonte maior para a tela de autenticação
 
-Click on the accessibility icon at the top right of the screen (a white circle with the silhouette of a person in the centre) and check the *Large Text* option.
+Clique no ícone de acessibilidade no canto superior direito da tela (um círculo branco com a silhueta de uma pessoa no centro) e marque a opção *Texto grande*.
 
-To set a specific scaling factor, you can create the following keyfile:
+Para definir um fator de escala específico, você pode criar o seguinte arquivo-chave:
 
  `/etc/dconf/db/gdm.d/03-scaling` 
 ```
@@ -238,7 +238,7 @@ To set a specific scaling factor, you can create the following keyfile:
 text-scaling-factor='*1.25*'
 ```
 
-and then recompile the GDM database or alternatively log in to the GDM user and execute the following:
+e, em seguida, recompile o banco de dados do GDM ou, alternativamente, efetue login no usuário do GDM e execute o seguinte:
 
 ```
 $ gsettings set org.gnome.desktop.interface text-scaling-factor '*1.25*'
@@ -247,9 +247,9 @@ $ gsettings set org.gnome.desktop.interface text-scaling-factor '*1.25*'
 
 #### Desligando o som
 
-This tweak disables the audible feedback heard when the system volume is adjusted (via keyboard) on the login screen.
+Este ajuste desativa o feedback audível ouvido quando o volume do sistema é ajustado (via teclado) na tela de login.
 
-Either create the following keyfile:
+Crie o seguinte arquivo-chave:
 
  `/etc/dconf/db/gdm.d/04-sound` 
 ```
@@ -257,7 +257,7 @@ Either create the following keyfile:
 event-sounds='false'
 ```
 
-and then recompile the GDM database or alternatively log in to the GDM user and execute the following:
+e recompile o banco de dados do GDM ou, alternativamente, efetue login no usuário do GDM e execute o seguinte:
 
 ```
 $ gsettings set org.gnome.desktop.sound event-sounds 'false'
@@ -266,56 +266,56 @@ $ gsettings set org.gnome.desktop.sound event-sounds 'false'
 
 #### Configurando o comportamento do botão de energia
 
-**Note:**
+**Nota:**
 
-*   The [logind settings](/index.php/Power_management#ACPI_events "Power management") for the power button are overriden by GNOME Settings Daemon. [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=755953#c4)
-*   As of GDM 3.18, the power button cannot be set to *interactive*. [[3]](https://bugzilla.gnome.org/show_bug.cgi?id=753713#c6)
-*   In some cases, this setting will be ignored and hardcoded defaults will be used. [[4]](https://bugzilla.gnome.org/show_bug.cgi?id=755953#c17)
+*   As [configurações do logind](/index.php/Power_management#ACPI_events "Power management") para o botão de energia são substituídas pelo daemon de configurações do GNOME. [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=755953#c4)
+*   A partir do GDM 3.18, o botão de energia não pode ser ajustado para *interativo*. [[3]](https://bugzilla.gnome.org/show_bug.cgi?id=753713#c6)
+*   Em alguns casos, essa configuração será ignorada e os padrões codificados serão usados. [[4]](https://bugzilla.gnome.org/show_bug.cgi?id=755953#c17)
 
-**Warning:** Please note that the [acpid](/index.php/Acpid "Acpid") daemon also handles the "power button" and "hibernate button" events. Running both systems at the same time may lead to unexpected behaviour.
+**Atenção:** Observe que o daemon [acpid](/index.php/Acpid "Acpid") também lida com os eventos "botão liga/desliga" e "botão de hibernação". Executar os dois sistemas ao mesmo tempo pode levar a um comportamento inesperado.
 
-Either create the following keyfile:
+Crie o seguinte arquivo-chave:
 
  `/etc/dconf/db/gdm.d/05-power` 
 ```
 [org/gnome/settings-daemon/plugins/power]
-power-button-action='*action*'
+power-button-action='*ação*'
 ```
 
-and then recompile the GDM database or alternatively log in to the GDM user and execute the following:
+e recompile o banco de dados do GDM ou, alternativamente, efetue login no usuário do GDM e execute o seguinte:
 
 ```
-$ gsettings set org.gnome.settings-daemon.plugins.power power-button-action '*action*'
+$ gsettings set org.gnome.settings-daemon.plugins.power power-button-action '*ação*'
 
 ```
 
-where *action* can be one of `nothing`, `suspend` or `hibernate`.
+sendo *ação* uma entre `nothing`, `suspend` ou `hibernate`.
 
 #### Habilitando tap-to-click
 
-Tap-to-click is disabled in GDM (and GNOME) by default, but you can easily enable it with a dconf setting.
+Tap-to-click (em português, "tocar para clicar") está desabilitado no GDM (e no GNOME) por padrão, mas você pode facilmente habilitá-lo com uma configuração no dconf.
 
-**Note:** If you want to do this under X, you have to first set up correct X server access permissions - see [#Configure X server access permission](#Configure_X_server_access_permission).
+**Nota:** Se você quiser fazer isso no X, você precisa primeiro configurar as permissões corretas de acesso ao servidor X - veja [#Configurar permissão de acesso do servidor X](#Configurar_permiss.C3.A3o_de_acesso_do_servidor_X).
 
-To directly enable tap-to-click, use:
+Para habilitar tap-to-click diretamente, use:
 
  `# sudo -u gdm gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true` 
 
-If you prefer to do this with a GUI, use:
+Se você preferir fazer isso com uma GUI, use:
 
  `# sudo -u gdm dconf-editor` 
 
-To check the if it was set correctly, use:
+Para verificar se ela está definida corretamente, use:
 
  `$ sudo -u gdm gsettings get org.gnome.desktop.peripherals.touchpad tap-to-click` 
 
-If you get the error `dconf-WARNING **: failed to commit changes to dconf: Error spawning command line`, make sure dbus is running:
+Se você receber um erro `dconf-WARNING **: failed to commit changes to dconf: Error spawning command line`, certifique-se que dbus está em excecução:
 
  `$ sudo -u gdm dbus-launch gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true` 
 
 #### Desabilitar/Habilitar o menu de acessibilidade
 
-To disable or enable the Accessibility Menu, set the following key in dconf editor:
+Para desabilitar ou habilitar o Menu de Acessibilidade, defina a seguinte chave no editor dconf:
 
 ```
 # machinectl shell gdm@
@@ -323,7 +323,7 @@ To disable or enable the Accessibility Menu, set the following key in dconf edit
 # exit
 ```
 
-The menu is disabled when the key is false, enabled when it is true.
+O menu é desabilitado quando a chave estiver em falso, habilitado quando estiver em verdadeiro.
 
 ### Layout do teclado
 

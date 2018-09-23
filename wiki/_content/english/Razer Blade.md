@@ -50,7 +50,7 @@ You can fix this by running
 
 ```
 
-This will not persist on a restart though. To run this command on every startup, see [Systemd#Writing_unit_files](/index.php/Systemd#Writing_unit_files "Systemd").
+This will not persist on a restart though. To run this command on every startup, see [Systemd#Writing unit files](/index.php/Systemd#Writing_unit_files "Systemd").
 
 # Late-2017 version Razer Blade Stealth
 

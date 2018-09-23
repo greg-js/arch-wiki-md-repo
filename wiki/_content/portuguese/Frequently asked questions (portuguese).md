@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=532704) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions"). Data da última tradução: 2018-09-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=542367) na versão em inglês.
 
 Artigos relacionados
 
@@ -29,13 +29,14 @@ Artigos relacionados
     *   [2.2 Os pacotes do Arch precisam usar uma nomenclatura única. ".pkg.tar.gz" e "pkg.tar.xz" é muito longo e/ou confuso](#Os_pacotes_do_Arch_precisam_usar_uma_nomenclatura_.C3.BAnica._.22.pkg.tar.gz.22_e_.22pkg.tar.xz.22_.C3.A9_muito_longo_e.2Fou_confuso)
     *   [2.3 O pacman precisa de uma biblioteca para que outros aplicativos possam acessar facilmente informações dos pacotes](#O_pacman_precisa_de_uma_biblioteca_para_que_outros_aplicativos_possam_acessar_facilmente_informa.C3.A7.C3.B5es_dos_pacotes)
     *   [2.4 O pacman precisa do recurso X!](#O_pacman_precisa_do_recurso_X.21)
-    *   [2.5 Eu acabei de instalar o Pacote X. Como eu o inicio?](#Eu_acabei_de_instalar_o_Pacote_X._Como_eu_o_inicio.3F)
+    *   [2.5 Eu acabei de instalar o pacote X. Como eu o inicio?](#Eu_acabei_de_instalar_o_pacote_X._Como_eu_o_inicio.3F)
     *   [2.6 Por que há uma única versão de cada biblioteca compartilhada nos repositórios oficiais?](#Por_que_h.C3.A1_uma_.C3.BAnica_vers.C3.A3o_de_cada_biblioteca_compartilhada_nos_reposit.C3.B3rios_oficiais.3F)
     *   [2.7 E se eu executar uma atualização completa do sistema e houver uma atualização para uma biblioteca compartilhada, mas não para os aplicativos que dependem dela?](#E_se_eu_executar_uma_atualiza.C3.A7.C3.A3o_completa_do_sistema_e_houver_uma_atualiza.C3.A7.C3.A3o_para_uma_biblioteca_compartilhada.2C_mas_n.C3.A3o_para_os_aplicativos_que_dependem_dela.3F)
     *   [2.8 É possível haver uma atualização de versão maior do kernel no repositório e que alguns dos pacotes de driver não tenham sido atualizados?](#.C3.89_poss.C3.ADvel_haver_uma_atualiza.C3.A7.C3.A3o_de_vers.C3.A3o_maior_do_kernel_no_reposit.C3.B3rio_e_que_alguns_dos_pacotes_de_driver_n.C3.A3o_tenham_sido_atualizados.3F)
     *   [2.9 O que fazer antes de atualizar?](#O_que_fazer_antes_de_atualizar.3F)
     *   [2.10 Uma atualização de pacote foi lançada, mas o pacman diz que o sistema está atualizado](#Uma_atualiza.C3.A7.C3.A3o_de_pacote_foi_lan.C3.A7ada.2C_mas_o_pacman_diz_que_o_sistema_est.C3.A1_atualizado)
     *   [2.11 Upstream do projeto *X* lançou uma nova versão. Quanto tempo vai levar para o pacote do Arch ser atualizado para essa nova versão?](#Upstream_do_projeto_X_lan.C3.A7ou_uma_nova_vers.C3.A3o._Quanto_tempo_vai_levar_para_o_pacote_do_Arch_ser_atualizado_para_essa_nova_vers.C3.A3o.3F)
+    *   [2.12 Se eu precisar de uma versão mais antiga de uma biblioteca instalada, posso simplesmente fazer um link simbólico para a versão mais recente?](#Se_eu_precisar_de_uma_vers.C3.A3o_mais_antiga_de_uma_biblioteca_instalada.2C_posso_simplesmente_fazer_um_link_simb.C3.B3lico_para_a_vers.C3.A3o_mais_recente.3F)
 *   [3 Instalação](#Instala.C3.A7.C3.A3o)
     *   [3.1 O Arch precisa de um instalador. Talvez um instalador gráfico?](#O_Arch_precisa_de_um_instalador._Talvez_um_instalador_gr.C3.A1fico.3F)
     *   [3.2 Eu instalei o Arch e agora eu estou em um shell! O que faço agora?](#Eu_instalei_o_Arch_e_agora_eu_estou_em_um_shell.21_O_que_fa.C3.A7o_agora.3F)
@@ -164,7 +165,7 @@ Se você acha que sua ideia tem fundamento, então você pode discuti-la na [pac
 
 Porém, a melhor forma de ter um recurso adicionado ao pacman ou Arch Linux é implementá-lo você mesmo. O patch ou código pode ou não ser aceito oficialmente, mas talvez outros vão apreciar, testar e contribuir para seu esforço.
 
-### Eu acabei de instalar o Pacote X. Como eu o inicio?
+### Eu acabei de instalar o pacote X. Como eu o inicio?
 
 Se você está usando um ambiente desktop como [KDE](/index.php/KDE "KDE") ou [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)"), o programa deve ser automaticamente mostrado em seu menu. Se você está tentando executar o programa de um terminal e não mostrar o nome do binário, use:
 
@@ -200,6 +201,16 @@ Mirrors do *pacman* não são sincronizados imediatamente. Leva cerca de 24 hora
 ### Upstream do projeto *X* lançou uma nova versão. Quanto tempo vai levar para o pacote do Arch ser atualizado para essa nova versão?
 
 Atualizações de pacotes serão lançadas quando elas estiverem prontas. A quantidade específica de tempo pode ser tão curta quanto algumas horas após o upstream lançar uma atualização menor de correção de erros e tão longa quanto várias semanas após a atualização de versão maior de um grupo grande de pacotes. A quantidade de tempo de uma nova versão do upstream até o Arch lançar um novo pacote depende dos pacotes específicos e da disponibilidade dos mantenedores de pacote. Adicionalmente, alguns pacotes ficam algum tempo no repositório [testing](/index.php/Testing_(Portugu%C3%AAs) "Testing (Português)"), então isso pode prolongar o tempo antes de um pacote ser atualizado. Cada [mantenedor de pacote](/index.php/Mantenedor_de_pacote "Mantenedor de pacote") tenta trabalhar rapidamente para trazer atualizações estáveis para os repositórios. Se você encontrar um pacote nos repositórios oficiais que está desatualizado, vá até a página do pacote no [site de pacotes](https://www.archlinux.org/packages/) e sinalize-o como tal.
+
+### Se eu precisar de uma versão mais antiga de uma biblioteca instalada, posso simplesmente fazer um link simbólico para a versão mais recente?
+
+Se você tiver sorte, pode funcionar por um tempo. Independentemente disso, não é uma solução adequada, porque:
+
+*   As bibliotecas não alteram versões aleatoriamente - a API/ABI provavelmente terá mudado (possivelmente com partes removidas) e se essas mudanças afetam ou não o uso é apenas uma questão de sorte.
+*   O link simbólico não seria rastreado por um gerenciador de pacotes. Novatos que tentam imediatamente hackear arquivos da biblioteca do sistema correm o maior risco de fazer uma alteração indesejada que eles não podem diagnosticar/consertar, algo que um gerenciador de pacotes ajuda a evitar.
+*   Uma alternativa de colocar o arquivo da antigo biblioteca no sistema de arquivos, sem rastreamento, poderia ser esquecida e potenciais bugs de segurança não seriam notados/corrigidos.
+
+Em vez disso, prefira algo como, por exemplo, usar/escrever um [pacote compat](https://aur.archlinux.org/packages/?SeB=n&K=compat), que fornece a versão necessária da biblioteca.
 
 ## Instalação
 

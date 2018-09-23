@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2018-08-13\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=531724) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2018-09-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=541788) na versão em inglês.
 
 Artigos relacionados
 
@@ -87,7 +87,7 @@ GNOME possui três sessões disponíveis, todos usando o GNOME Shell.
 
 O GNOME pode ser iniciado tanto graficamente, usando um [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição"), ou manualmente pelo console.
 
-**Nota:** Suporte para bloqueio de tela no GNOME é fornecido pelo GDM. Se o GNOME não for iniciado usando o GDM, você terá que usar outro bloqueador de tela para fornecer esta funcionalidade - veja [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
+**Nota:** Suporte para bloqueio de tela no GNOME (e muito mais) é fornecido pelo GDM. Se o GNOME não for iniciado usando o GDM, você terá que usar outro bloqueador de tela para fornecer esta funcionalidade. Veja [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
 
 ### Graficamente
 
@@ -370,7 +370,7 @@ $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/But
 
 ##### Ícones na área de trabalho
 
-Até o GNOME 3.28, os ícones na área de trabalho eram fornecidos pelo [Arquivos](/index.php/Files "Files"), que desenhava uma janela transparente sobre a área de trabalho contendo os ícones. A partir do GNOME 3.28 essa funcionalidade foi removida e os ícones da área de trabalho não estão mais disponíveis no GNOME. Possíveis soluções incluem o uso do [Nemo](/index.php/Nemo "Nemo") (um fork do Arquivos que ainda possui a funcionalidade de ícones do desktop) ou a instalação do [gnome-shell-extension-desktop-icons](https://aur.archlinux.org/packages/gnome-shell-extension-desktop-icons/) que replica parcialmente a funcionalidade do ícone do desktop disponível no GNOME 3.26 e abaixo. Para mais informações, consulte o seguinte [tópico no fórum do Arch](https://bbs.archlinux.org/viewtopic.php?id=235633).
+Até o GNOME 3.28, os ícones na área de trabalho eram fornecidos pelo [Arquivos](/index.php/Files "Files"), que desenhava uma janela transparente sobre a área de trabalho contendo os ícones. A partir do GNOME 3.28 essa funcionalidade foi removida e os ícones da área de trabalho não estão mais disponíveis no GNOME. Possíveis soluções incluem o uso do [Nemo](/index.php/Nemo "Nemo") (um fork do Arquivos que ainda possui a funcionalidade de ícones do desktop) ou a instalação do [gnome-shell-extension-desktop-icons](https://aur.archlinux.org/packages/gnome-shell-extension-desktop-icons/) que replica parcialmente a funcionalidade do ícone do desktop disponível no GNOME 3.26 e anteriores. Para mais informações, consulte o seguinte [tópico no fórum do Arch](https://bbs.archlinux.org/viewtopic.php?id=235633).
 
 ##### Tela de bloqueio e plano de fundo
 

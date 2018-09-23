@@ -6,7 +6,7 @@ Related articles
 
 [IWD](https://iwd.wiki.kernel.org/) (iNet wireless daemon) is a wireless daemon for Linux written by Intel that aims to replace [WPA supplicant](/index.php/WPA_supplicant "WPA supplicant"). The core goal of the project is to optimize resource utilization by not depending on any external libraries and instead utilizing features provided by the Linux Kernel to the maximum extent possible. [[1]](https://www.youtube.com/watch?v=F2Q86cphKDo)
 
-IWD can work in standalone mode or in combination with comprehensive network managers like [ConnMan](/index.php/ConnMan "ConnMan") and [NetworkManager](/index.php/NetworkManager "NetworkManager").
+IWD can work in standalone mode or in combination with comprehensive network managers like [ConnMan](/index.php/ConnMan "ConnMan"), [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [NetworkManager](/index.php/NetworkManager "NetworkManager").
 
 ## Contents
 
@@ -29,7 +29,7 @@ IWD can work in standalone mode or in combination with comprehensive network man
 
 The [iwd](https://www.archlinux.org/packages/?name=iwd) package provides the client program `iwctl`, the daemon `iwd` and the Wi-Fi monitoring tool `iwmon`.
 
-Once the iwd daemon is running ([start/enable](/index.php/Start/enable "Start/enable") `iwd.service`) you can control it using the `iwctl` command.
+Once the iwd daemon is running, [start/enable](/index.php/Start/enable "Start/enable") `iwd.service` so it can be controlled using the `iwctl` command.
 
 ### iwctl
 
@@ -54,21 +54,28 @@ List all wifi devices:
 Scan for networks:
 
 ```
-[iwd]# device *interface* scan
+[iwd]# station *interface* scan
 
 ```
 
 List networks:
 
 ```
-[iwd]# device *interface* get-networks
+[iwd]# station *interface* get-networks
 
 ```
 
 Connect to a WPA2 protected network (will prompt you for the passphrase):
 
 ```
-[iwd]# device *interface* connect *network_name*
+[iwd]# station *interface* connect *network_name*
+
+```
+
+To disconnect from a network:
+
+```
+[iwd]# station *interface* disconnect
 
 ```
 
@@ -76,7 +83,7 @@ Connect to a WPA2 protected network (will prompt you for the passphrase):
 
 *   `iwd` automatically stores network passphrases (as encrypted `PreSharedKey`) in the `/var/lib/iwd` directory and uses them to auto-connect in the future.
 *   To connect to a network with spaces in the SSID, the network name should be double quoted when connecting.
-*   IWD only supports PSK pass-phrases from 8 to 63 ASCII-encoded characters. The following error message will be ouputted if the requirements are not met: "PMK generation failed. Ensure Crypto Engine is properly configured"
+*   IWD only supports PSK pass-phrases from 8 to 63 ASCII-encoded characters. The following error message will be given if the requirements are not met: "PMK generation failed. Ensure Crypto Engine is properly configured"
 
 Displaying details of a WiFi device (like MAC address, state and connected network):
 

@@ -141,4 +141,4 @@ If you are an avid user of clipboard managers, you can may need to disable your 
 
 ## See Also
 
-*   [List of applications/Security#Password_managers](/index.php/List_of_applications/Security#Password_managers "List of applications/Security")
+*   [List of applications/Security#Password managers](/index.php/List_of_applications/Security#Password_managers "List of applications/Security")

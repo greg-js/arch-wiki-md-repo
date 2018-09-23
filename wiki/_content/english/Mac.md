@@ -1693,7 +1693,7 @@ Now simply load the wl module:
 
 ```
 
-This should automatically load the onboard wifi which can be seen by issuing: `ip a`. From here follow the [WPA_supplicant#Connecting_with_wpa_cli](/index.php/WPA_supplicant#Connecting_with_wpa_cli "WPA supplicant") article to bring up the wireless network.
+This should automatically load the onboard wifi which can be seen by issuing: `ip a`. From here follow the [WPA supplicant#Connecting with wpa_cli](/index.php/WPA_supplicant#Connecting_with_wpa_cli "WPA supplicant") article to bring up the wireless network.
 
 ##### Touchpad
 

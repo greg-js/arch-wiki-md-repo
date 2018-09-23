@@ -31,7 +31,7 @@ Other [clipboard managers](/index.php/Clipboard_manager "Clipboard manager") suc
 
 ### Intercepting commands’s output
 
-Use [tee](https://en.wikipedia.org/wiki/Tee_(command)) to intercept the output of a command.
+Use [tee](https://en.wikipedia.org/wiki/Tee_(command) to intercept the output of a command.
 
 ```
 $ command 2>&1 | tee output-file

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Data da última tradução: 2018-09-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=540245) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Data da última tradução: 2018-09-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=542235) na versão em inglês.
 
 Artigos relacionados
 
@@ -293,7 +293,7 @@ $ git push
 ### Mantendo pacotes
 
 *   Verifique os feedback e comentários de outros usuários e tente incorporar quaisquer melhorias que eles sugerirem; considere isso um processo de aprendizado!
-*   Por favor, não envie um comentário contendo a versão toda vez que você atualizar o pacote. Isso deixa a seção de comentário usável para o conteúdo valioso mencionado acima. [Auxiliares do AUR](/index.php/Auxiliares_do_AUR "Auxiliares do AUR") são mais adequados para verificar por atualizações.
+*   Por favor, não envie um comentário contendo a versão toda vez que você atualizar o pacote. Isso deixa a seção de comentário usável para o conteúdo valioso mencionado acima.
 *   Por favor, não apenas envie e depois esqueça dos pacotes! É trabalho do mantenedor manter o pacote, verificando atualizações e melhorando o PKGBUILD.
 *   Se você não quer mais continuar mantendo o pacote por algum motivo, basta abandonar (`disown`) o pacote usando a interface web do AUR e/ou postar uma mensagem na Lista de Discussão do AUR. Se todos os mantenedores de um pacote AUR o abandonarem, ele se tornará um pacote ["órfão"](https://aur.archlinux.org/packages/?SB=n&do_Orphans=Orphans).
 
@@ -419,8 +419,6 @@ A forma mais simples é verificar o status HTTP da página AUR do pacote:
 $ comm -23 <(pacman -Qqm | sort) <(curl [https://aur.archlinux.org/packages.gz](https://aur.archlinux.org/packages.gz) | gzip -cd | sort)
 
 ```
-
-Se você está usando um [auxiliar do AUR](/index.php/Auxiliares_do_AUR "Auxiliares do AUR"), você pode abreviar esse script substituindo o comando curl com qualquer outro comando de consulta de AUR por um pacote.
 
 ### Como eu posso obter uma lista de todos os pacotes do AUR?
 
