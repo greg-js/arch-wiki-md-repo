@@ -29,7 +29,7 @@ Os pacotes do [KDE](/index.php/KDE "KDE") no Arch Linux seguem um certo esquema.
 
 ## Diretório de compilação
 
-A good way of building [CMake](https://en.wikipedia.org/wiki/CMake "wikipedia:CMake") packages is to make a build directory outside the root of the project and run cmake from that directory. The [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") should look this way:
+Uma boa maneira de compilar pacotes de [CMake](https://en.wikipedia.org/wiki/pt:CMake deve ficar assim:
 
 ```
 prepare() {
@@ -45,14 +45,14 @@ build() {
 
 ## Prefixo de instalação
 
-Every packages must set the `CMAKE_INSTALL_PREFIX` variable, but also we have to respect custom built versions of KDE, so please use:
+Cada pacote deve definir a variável `CMAKE_INSTALL_PREFIX`, mas também temos que respeitar as versões personalizadas do KDE, então use:
 
 ```
 -DCMAKE_INSTALL_PREFIX=$(kde4-config --prefix)
 
 ```
 
-When a package is moved to [extra] or [community] that line must be changed to:
+Quando um pacote é movido para [extra] ou [community], essa linha deve ser alterada para:
 
 ```
 -DCMAKE_INSTALL_PREFIX=/usr
@@ -61,7 +61,7 @@ When a package is moved to [extra] or [community] that line must be changed to:
 
 ## Tipo de compilação
 
-Please specify the build type; this makes it really simple to rebuild a package with debug symbols by just using a sed rule.
+Por favor, especifique o tipo de compilação; Isso torna realmente simples recompilar um pacote com símbolos de depuração usando apenas uma regra *sed*.
 
 ```
 -DCMAKE_BUILD_TYPE=Release
@@ -72,14 +72,14 @@ Please specify the build type; this makes it really simple to rebuild a package 
 
 ### KDE4
 
-On systems where both [qt4](https://www.archlinux.org/packages/?name=qt4) and [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) are installed, `qmake` refers to the 5.x version, so force cmake to use Qt4 this way:
+Em sistemas onde ambos [qt4](https://www.archlinux.org/packages/?name=qt4) e [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) estão instalados, o *qmake* refere-se à versão 5.x, então force o *cmake* a usar o Qt4 desta maneira:
 
 ```
  export QT_SELECT=4
 
 ```
 
-or using this option in cmake:
+ou usando essa opção em *cmake*:
 
 ```
 -DQT_QMAKE_EXECUTABLE=/usr/bin/qmake-qt4
@@ -88,7 +88,7 @@ or using this option in cmake:
 
 ### KF5
 
-The same rules as for KDE4, but you need force cmake to use Qt5 instead of Qt4:
+As mesmas regras que para o KDE4, mas você precisa forçar o *cmake* a usar o Qt5 ao invés do Qt4:
 
 ```
  export QT_SELECT=5
@@ -99,52 +99,52 @@ The same rules as for KDE4, but you need force cmake to use Qt5 instead of Qt4:
 
 ### Módulo de Configuração do KDE
 
-KDE Config Module packages should be named `kcm-*module*`.
+Pacotes de módulo de configuração do KDE devem ser nomeados `kcm-*module*`.
 
 ### Widgets do Plasma
 
-Plasma widgets (formerly Plasmoids) packages should be named `kdeplasma-applets-*widgetname*` so that they are recognizable as [KDE](/index.php/KDE "KDE")-related packages; this also distinguishes them from the official packages.
+Os pacotes de widgets de Plasma (anteriormente Plasmoids) devem ser nomeados `kdeplasma-applets-*nome_widget*` para que sejam reconhecidos como pacotes relacionados ao [KDE](/index.php/KDE "KDE"); isso também os distingue dos pacotes oficiais.
 
 ### Executores
 
-Plasma runners packages should be named `kdeplasma-runners-*runnername*` so that they are recognizable as [KDE](/index.php/KDE "KDE")-related packages; this also distinguishes them from the official packages.
+Os pacotes de corredores de plasma devem ser nomeados `kdeplasma-runners-*nome_do_runner*` para que sejam reconhecidos como pacotes relacionados ao [KDE](/index.php/KDE "KDE"); isso também os distingue dos pacotes oficiais.
 
 ### Menus de serviço
 
-Service menus packages should be named `kde-servicemenus-*servicename*` so that they are recognizable as [KDE](/index.php/KDE "KDE")-related packages
+Os pacotes de menus de serviço devem ser nomeados `kde-servicemenus-*nome_do_serviço*` para que sejam reconhecidos como pacotes relacionados ao [KDE](/index.php/KDE "KDE")
 
 ### Temas
 
-Plasma themes packages should be named `kdeplasma-themes-*themename*` so that they are recognizable as [KDE](/index.php/KDE "KDE")-related packages.
+Os pacotes de temas de plasma devem ser nomeados `kdeplasma-themes-*nome_do_tema*` para que sejam reconhecidos como pacotes relacionados ao [KDE](/index.php/KDE "KDE").
 
 ## Nomenclatura de pacote KF5
 
 ### Widgets de plasma
 
-Plasma widgets (formerly Plasmoids) packages should be named `plasma5-applets-*widgetname*` so that they are recognizable as Plasma 5-related packages; this also distinguishes them from the official packages.
+Os pacotes de widgets de plasma (anteriormente Plasmoids) devem ser nomeados `plasma5-applets-*nome_do_widget*` para que sejam reconhecíveis como pacotes relacionados ao Plasma 5; isso também os distingue dos pacotes oficiais.
 
 ### Executores
 
-Plasma runners packages should be named `plasma5-runners-*runnername*` so that they are recognizable as Plasma 5-related packages; this also distinguishes them from the official packages.
+Os pacotes de corredores de plasma devem ser nomeados `plasma5-runners-*nome_do_runner*` para que sejam reconhecidos como pacotes relacionados ao Plasma 5; isso também os distingue dos pacotes oficiais.
 
 ### Menus de serviço
 
-Service menus packages should be named `kf5-servicemenus-*servicename*` so that they are recognizable as KF5-related packages
+Os pacotes de menus de serviço devem ser nomeados `kf5-servicemenus-*nome_do_serviço*` para que sejam reconhecidos como pacotes relacionados ao KF5
 
 ### Temas
 
-Plasma themes packages should be named `plasma5-themes-*themename*` so that they are recognizable as Plasma 5-related packages.
+Os pacotes de temas de plasma devem ser nomeados `plasma5-themes-*nome_do_tema*` para que sejam reconhecidos como pacotes relacionados ao Plasma 5.
 
 ## Arquivos de .install
 
-For many [KDE](/index.php/KDE "KDE") packages, all `.install` files look almost exactly the same. Some packages install icons in the hicolor icon theme; use the `xdg-icon-resource` utility provided by the [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) package, which is a dependency of the [qt4](https://www.archlinux.org/packages/?name=qt4) package. So use this line:
+Para muitos pacotes [KDE](/index.php/KDE "KDE"), todos os arquivos `.install` parecem quase exatamente os mesmos. Alguns pacotes instalam ícones no tema do ícone hicolor; use o utilitário `xdg-icon-resource` fornecido pelo pacote [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils), que é uma dependência do pacote [qt4](https://www.archlinux.org/packages/?name=qt4). Então use esta linha:
 
 ```
 xdg-icon-resource forceupdate --theme hicolor &> /dev/null
 
 ```
 
-Many packages install Freedesktop.org compatible `.desktop` files and register MimeType entries in them. Running `update-desktop-database` in `post_install` is recommended as that tool is provided by the [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils) package which is a dependency of the [qt4](https://www.archlinux.org/packages/?name=qt4) package. So use this line:
+Muitos pacotes instalam arquivos `.desktop` compatíveis com o Freedesktop.org e registram entradas MimeType neles. A execução do `update-desktop-database` em `post_install` é recomendada, já que essa ferramenta é fornecida pelo pacote [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils), que é uma dependência do [pacote qt4](https://www.archlinux.org/packages/?name=pacote+qt4). Então use esta linha:
 
 ```
 update-desktop-database -q

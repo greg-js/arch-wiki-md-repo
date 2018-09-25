@@ -243,7 +243,7 @@ If using *OpenRC* with a [desktop environment](/index.php/Desktop_environment "D
 
 See [ConsoleKit](/index.php/ConsoleKit "ConsoleKit") for more information.
 
-Begin with OpenRC 0.28 SysVinit is replaced with openrc-init, shutdown is replaced with openrc-shutdown, by using consolekit the system may hang up when shuting down from desktop session. So use [elogind-openrc](https://aur.archlinux.org/packages/elogind-openrc/) instead. Enable it with:
+Begin with OpenRC 0.28 SysVinit is replaced with openrc-init, shutdown is replaced with openrc-shutdown, by using consolekit the system may hang up when shuting down from desktop session. So use [elogind-git](https://aur.archlinux.org/packages/elogind-git/) instead. Enable it with:
 
 ```
 # rc-update add elogind default

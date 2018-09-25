@@ -27,7 +27,7 @@ From [Wikipedia:Avahi (software)](https://en.wikipedia.org/wiki/Avahi_(software)
 
 You can manage the Avahi daemon with `avahi-daemon.service` [using systemd](/index.php/Systemd#Using_units "Systemd").
 
-**Note:** [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") has a built-in multicast DNS service, make sure it is disabled before using Avahi. For more details, refer to [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5).
+**Note:** [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") has a built-in multicast DNS service, make sure to disable systemd-resolved's mDNS resolver and responder or [disable](/index.php/Disable "Disable") `systemd-resolved.service` entirely before using Avahi. For details, refer to [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5).
 
 ## Using Avahi
 

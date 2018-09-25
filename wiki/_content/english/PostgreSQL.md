@@ -29,6 +29,7 @@ Related articles
 ## Installation
 
 [Install](/index.php/Install "Install") the [postgresql](https://www.archlinux.org/packages/?name=postgresql) package. It will also create a system user called *postgres*.
+
 **Warning:** See [#Upgrading PostgreSQL](#Upgrading_PostgreSQL) for necessary steps before installing new versions of the PostgreSQL packages.
 
 **Note:** Commands that should be run as the *postgres* user are prefixed by `[postgres]$` in this article.

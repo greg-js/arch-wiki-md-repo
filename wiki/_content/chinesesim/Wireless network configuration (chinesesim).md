@@ -464,7 +464,7 @@ GUI | 控制台工具 |
 | [Netctl](/index.php/Netctl "Netctl") | Yes | Yes | Yes | No | `netctl`,`wifi-menu` |
 | [NetworkManager](/index.php/NetworkManager "NetworkManager") | Yes | Yes | Yes | Yes | `nmcli`,`nmtui` |
 | [Wicd](/index.php/Wicd "Wicd") | Yes | Yes | No | Yes | `wicd-curses` |
-| [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar") | Yes |  ? |  ? | Yes | `wifi-radar` |
+| [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar") | Yes | ? | ? | Yes | `wifi-radar` |
 
 #### Connman
 

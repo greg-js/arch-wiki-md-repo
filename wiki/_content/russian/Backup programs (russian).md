@@ -92,7 +92,7 @@
 
 	[http://safekeep.sourceforge.net/](http://safekeep.sourceforge.net/) || [safekeep](https://aur.archlinux.org/packages/safekeep/)
 
-*   **Link-Backup** — Утилита похожая на основу Rsync-скриптов, но не использует Rsync. ПРИМЕЧАНИЕ: не разрабатывается с 2008\.
+*   **Link-Backup** — Утилита похожая на основу Rsync-скриптов, но не использует Rsync. ПРИМЕЧАНИЕ: не разрабатывается с 2008.
     *   Creates hard links between a series of backed-up trees (snapshots).
     *   Intelligently handles renames, moves, and duplicate files without additional storage or transfer.
     *   The backup directory contains `.catalog`, a catalog of all unique file instances; backup trees hard-link to this catalog.

@@ -40,7 +40,7 @@ Non è sempre necesario installare un codec specifico se si installa un lettore 
 
 	[https://alac.macosforge.org/](https://alac.macosforge.org/) || [alac-svn](https://aur.archlinux.org/packages/alac-svn/)
 
-*   **[CELT](https://en.wikipedia.org/wiki/CELT "wikipedia:CELT")** — Algoritmo di compressione per l'audio. Come MP3, Vorbis, AAC, ed è adatto per la trasmissione di musica con alta qualità. A differenza di questi formati CELT impone un ritardo sul segnale molto ridotto, è tipico per i formati di trasmissione vocale come Speex, GSM, o G.729\.
+*   **[CELT](https://en.wikipedia.org/wiki/CELT "wikipedia:CELT")** — Algoritmo di compressione per l'audio. Come MP3, Vorbis, AAC, ed è adatto per la trasmissione di musica con alta qualità. A differenza di questi formati CELT impone un ritardo sul segnale molto ridotto, è tipico per i formati di trasmissione vocale come Speex, GSM, o G.729.
 
 	[http://www.celt-codec.org/](http://www.celt-codec.org/) || [celt](https://www.archlinux.org/packages/?name=celt)
 
@@ -84,7 +84,7 @@ Non è sempre necesario installare un codec specifico se si installa un lettore 
 
 	[https://www.videolan.org/developers/libdca.html](https://www.videolan.org/developers/libdca.html) || [libdca](https://www.archlinux.org/packages/?name=libdca)
 
-*   **libde265** — Implementazione open source del codec video h.265\.
+*   **libde265** — Implementazione open source del codec video h.265.
 
 	[https://github.com/strukturag/libde265](https://github.com/strukturag/libde265) || [libde265](https://www.archlinux.org/packages/?name=libde265) [libde265-git](https://aur.archlinux.org/packages/libde265-git/)
 

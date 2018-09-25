@@ -399,7 +399,6 @@ Locality Name (eg, city) []:Chicago
 Organization Name (eg, company) [Internet Widgits Pty Ltd]:Example Company LTD.
 Organizational Unit Name (eg, section) []:Information Technology
 Common Name (e.g. server FQDN or YOUR name) []:Example Company LTD.
-
 Email Address []:
 ```
 

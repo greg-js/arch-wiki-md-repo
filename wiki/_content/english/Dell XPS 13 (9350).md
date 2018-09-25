@@ -5,11 +5,11 @@
 | Wireless | Working | brcmfmac |
 | Bluetooth | Works after installing firmware | btbcm |
 | Audio | Working | snd_hda_intel |
-| Touchpad | Working |  ? |
+| Touchpad | Working | ? |
 | Webcam | Working | uvcvideo |
 | Card Reader | Working | rtsx_pci |
 | Wireless switch | Working | intel_hid |
-| Function/Multimedia Keys | Working |  ? |
+| Function/Multimedia Keys | Working | ? |
 | TPM 1.2/2.0 | Working | tpm |
 
 Related articles

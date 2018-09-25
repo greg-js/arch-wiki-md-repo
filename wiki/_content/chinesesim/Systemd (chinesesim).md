@@ -32,10 +32,10 @@
         *   [2.3.4 示例](#.E7.A4.BA.E4.BE.8B)
 *   [3 目标（target）](#.E7.9B.AE.E6.A0.87.EF.BC.88target.EF.BC.89)
     *   [3.1 获取当前目标](#.E8.8E.B7.E5.8F.96.E5.BD.93.E5.89.8D.E7.9B.AE.E6.A0.87)
-    *   [3.2 创建新目标](#.E5.88.9B.E5.BB.BA.E6.96.B0.E7.9B.AE.E6.A0.87)
-    *   [3.3 目标表](#.E7.9B.AE.E6.A0.87.E8.A1.A8)
-    *   [3.4 切换运行级别/目标](#.E5.88.87.E6.8D.A2.E8.BF.90.E8.A1.8C.E7.BA.A7.E5.88.AB.2F.E7.9B.AE.E6.A0.87)
-    *   [3.5 修改默认运行级别/目标](#.E4.BF.AE.E6.94.B9.E9.BB.98.E8.AE.A4.E8.BF.90.E8.A1.8C.E7.BA.A7.E5.88.AB.2F.E7.9B.AE.E6.A0.87)
+    *   [3.2 创建自定义目标](#.E5.88.9B.E5.BB.BA.E8.87.AA.E5.AE.9A.E4.B9.89.E7.9B.AE.E6.A0.87)
+    *   [3.3 "SysV 运行级别" 与 "systemd 目标" 对照表](#.22SysV_.E8.BF.90.E8.A1.8C.E7.BA.A7.E5.88.AB.22_.E4.B8.8E_.22systemd_.E7.9B.AE.E6.A0.87.22_.E5.AF.B9.E7.85.A7.E8.A1.A8)
+    *   [3.4 切换当前运行目标](#.E5.88.87.E6.8D.A2.E5.BD.93.E5.89.8D.E8.BF.90.E8.A1.8C.E7.9B.AE.E6.A0.87)
+    *   [3.5 更改开机默认启动目标](#.E6.9B.B4.E6.94.B9.E5.BC.80.E6.9C.BA.E9.BB.98.E8.AE.A4.E5.90.AF.E5.8A.A8.E7.9B.AE.E6.A0.87)
 *   [4 临时文件](#.E4.B8.B4.E6.97.B6.E6.96.87.E4.BB.B6)
 *   [5 定时器](#.E5.AE.9A.E6.97.B6.E5.99.A8)
 *   [6 挂载](#.E6.8C.82.E8.BD.BD)
@@ -400,11 +400,11 @@ $ systemctl list-units --type=target
 
 ```
 
-### 创建新目标
+### 创建自定义目标
 
-在 Fedora 中，运行级别 0、1、3、5、6 都被赋予特定用途，并且都对应一个 systemd 的*目标*。然而，移植用户定义的运行级别（2、4）没有什么好方法。要实现类似功能，可以以原有的启动级别为基础，创建一个新的*目标* `/etc/systemd/system/<新目标>`（可以参考 `/usr/lib/systemd/system/graphical.target`），创建 `/etc/systemd/system/<新目标>.wants` 目录，向其中加入额外服务的链接（指向 `/usr/lib/systemd/system/` 中的单元文件）。
+在 *sysvinit* 中有明确定义的运行级别（如：0、1、3、5、6）与 *systemd* 中特定的 *目标* 存在一一对应的关系。然而，对于用户自定义运行级别（2、4）却没有。如需要同样功能，建议你以原有运行级别所对应的 systemd 目标为基础，新建一个`/etc/systemd/system/*<目标名>.target*`（可参考`/usr/lib/systemd/system/graphical.target`）, 然后创建目录`/etc/systemd/system/<目标名>.wants`，并向其中加入需启用的服务链接（指向`/ur/lib/systemd/system/`）。
 
-### 目标表
+### "SysV 运行级别" 与 "systemd 目标" 对照表
 
 | SysV 运行级别 | Systemd 目标 | 注释 |
 | 0 | runlevel0.target, poweroff.target | 中断系统（halt） |
@@ -415,30 +415,40 @@ $ systemctl list-units --type=target
 | 6 | runlevel6.target, reboot.target | 重启 |
 | emergency | emergency.target | 急救模式（Emergency shell） |
 
-### 切换运行级别/目标
+### 切换当前运行目标
 
-systemd 中，运行级别通过“目标单元”访问。通过如下命令切换：
+systemd中，运行目标通过“目标单元”访问。通过如下命令切换：
 
 ```
 # systemctl isolate graphical.target
 
 ```
 
-该命令对下次启动无影响。等价于`telinit 3` 或 `telinit 5`。
+该命令仅更改当前运行目标，对下次启动无影响。这等价于sysvinit中的 `telinit 3` 或 `telinit 5` 命令。
 
-### 修改默认运行级别/目标
+### 更改开机默认启动目标
 
-开机启动的目标是 `default.target`，默认链接到 `graphical.target` （大致相当于原来的运行级别5）。可以通过[内核参数](/index.php/Kernel_parameters_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel parameters (简体中文)")更改默认运行级别：
+开机启动的目标是 `default.target`，默认链接到 `graphical.target` （大致相当于原来的运行级别5）。
 
-*   `systemd.unit=multi-user.target` （大致相当于级别3）
-*   `systemd.unit=rescue.target` （大致相当于级别1）
-
-另一个方法是修改 `default.target`。可以通过 `systemctl` 修改它：
+用 *systemctl* 验证当前的默认启动目标：
 
 ```
-# systemctl set-default multi-user.target
+# systemctl get-default
 
 ```
+
+用 *systemctl* 修改`default.target`以变更开机默认启动目标：
+
+ `$ systemctl set-default multi-user.target` 
+```
+Removed /etc/systemd/system/default.target.
+Created symlink /etc/systemd/system/default.target -> /usr/lib/systemd/system/graphical.target.
+```
+
+另一方法是向bootloader添加[内核参数](/index.php/Kernel_parameters_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel parameters (简体中文)")：
+
+*   `systemd.unit=multi-user.target` （大致相当于运行级别3）
+*   `systemd.unit=rescue.target` （大致相当于运行级别1）
 
 ## 临时文件
 

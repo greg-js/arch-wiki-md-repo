@@ -24,12 +24,12 @@ GTK+, The GIMP Toolkit, was initially made by the [GNU Project](/index.php/GNU_P
         *   [4.3.1 Emacs keybindings](#Emacs_keybindings)
     *   [4.4 GNOME menu delay](#GNOME_menu_delay)
     *   [4.5 Reduce widget sizes](#Reduce_widget_sizes)
-    *   [4.6 File-Chooser Startup-Location](#File-Chooser_Startup-Location)
-    *   [4.7 Legacy scrolling behavior](#Legacy_scrolling_behavior)
-    *   [4.8 Disable overlay scrollbars](#Disable_overlay_scrollbars)
-        *   [4.8.1 Remove overlay scroll indicators](#Remove_overlay_scroll_indicators)
-    *   [4.9 Hide CSD buttons](#Hide_CSD_buttons)
-    *   [4.10 Disable mouse paste](#Disable_mouse_paste)
+    *   [4.6 Hide CSD buttons](#Hide_CSD_buttons)
+    *   [4.7 Disable mouse paste](#Disable_mouse_paste)
+    *   [4.8 File-Chooser Startup-Location](#File-Chooser_Startup-Location)
+    *   [4.9 Legacy scrolling behavior](#Legacy_scrolling_behavior)
+    *   [4.10 Disable overlay scrollbars](#Disable_overlay_scrollbars)
+        *   [4.10.1 Remove overlay scroll indicators](#Remove_overlay_scroll_indicators)
 *   [5 GDK backends](#GDK_backends)
     *   [5.1 Broadway backend](#Broadway_backend)
     *   [5.2 Wayland backend](#Wayland_backend)
@@ -332,6 +332,24 @@ gtk-menu-images = 0
 
 See also [[1]](http://martin.ankerl.com/2008/10/10/how-to-make-a-compact-gnome-theme/) and [[2]](http://gnome-look.org/content/show.php/Simple+eGTK?content=119812).
 
+### Hide CSD buttons
+
+To remove the minimize and maximize buttons. [[3]](https://developer.gnome.org/gtk3/3.22/GtkSettings.html#GtkSettings--gtk-decoration-layout)
+
+```
+gtk-decoration-layout=menu:close
+
+```
+
+### Disable mouse paste
+
+To turn off pasting on middle mouse button click (aka PRIMARY):
+
+```
+gtk-enable-primary-paste=false
+
+```
+
 ### File-Chooser Startup-Location
 
 Open the file-chooser within the **current-working-directory** and not the **recent** location. Normally the **current-working-directory** is **home-directory**.
@@ -382,14 +400,6 @@ The positions of the overlay scrollbars are indicated by thin dashed lines in th
 undershoot.top, undershoot.right, undershoot.bottom, undershoot.left { background-image: none; }
 
 ```
-
-### Hide CSD buttons
-
-Add `gtk-decoration-layout=menu:close` to `~/.config/gtk-3.0/settings.ini` to remove minimize and maximize buttons. [[3]](https://developer.gnome.org/gtk3/3.22/GtkSettings.html#GtkSettings--gtk-decoration-layout)
-
-### Disable mouse paste
-
-Add `gtk-enable-primary-paste=false` to `~/.config/gtk-3.0/settings.ini` to turn off pasting on middle mouse button click (aka PRIMARY).
 
 ## GDK backends
 

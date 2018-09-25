@@ -120,7 +120,7 @@ Both machine A and machine B are using EIDE hard drives circa ~2004; a modern SA
 
 **Summary of Test 1**
 
-| 4k vs. 1.5k |  % change | 9k vs. 1.5k |  % change |
+| 4k vs. 1.5k | % change | 9k vs. 1.5k | % change |
 | A to B | +9 % | A to B | -2 % |
 | B to A | +98 % | B to A | +98 % |
 
@@ -136,7 +136,7 @@ Both machine A and machine B are using EIDE hard drives circa ~2004; a modern SA
 
 **Summary of Test 2**
 
-| 4k vs. 1.5k |  % change | 9k vs. 1.5k |  % change |
+| 4k vs. 1.5k | % change | 9k vs. 1.5k | % change |
 | A to B | +16 % | A to B | +4 % |
 | B to A | +4% | B to A | +92 % |
 

@@ -29,13 +29,14 @@
             *   [1.5.1.2 Graphical](#Graphical_2)
         *   [1.5.2 Cloud storage servers](#Cloud_storage_servers)
         *   [1.5.3 Cloud synchronization clients](#Cloud_synchronization_clients)
-        *   [1.5.4 File transfer clients](#File_transfer_clients)
-        *   [1.5.5 File transfer servers](#File_transfer_servers)
-        *   [1.5.6 BitTorrent clients](#BitTorrent_clients)
-            *   [1.5.6.1 Console](#Console_3)
-            *   [1.5.6.2 Graphical](#Graphical_3)
-        *   [1.5.7 Other P2P networks](#Other_P2P_networks)
-        *   [1.5.8 Pastebin clients](#Pastebin_clients)
+        *   [1.5.4 FTP](#FTP)
+            *   [1.5.4.1 FTP clients](#FTP_clients)
+            *   [1.5.4.2 FTP servers](#FTP_servers)
+        *   [1.5.5 BitTorrent clients](#BitTorrent_clients)
+            *   [1.5.5.1 Console](#Console_3)
+            *   [1.5.5.2 Graphical](#Graphical_3)
+        *   [1.5.6 Other P2P networks](#Other_P2P_networks)
+        *   [1.5.7 Pastebin clients](#Pastebin_clients)
     *   [1.6 Communication](#Communication)
         *   [1.6.1 Email clients](#Email_clients)
             *   [1.6.1.1 Console](#Console_4)
@@ -505,7 +506,7 @@ See also [List of ACME clients](https://letsencrypt.org/docs/client-options/).
 
 	[https://github.com/Neilpang/acme.sh](https://github.com/Neilpang/acme.sh) || [acme.sh-git](https://aur.archlinux.org/packages/acme.sh-git/)
 
-*   **acme-client** — Secure Let's Encrypt client.
+*   **acme-client** — Secure Let's Encrypt client, written in C
 
 	[https://kristaps.bsd.lv/acme-client/](https://kristaps.bsd.lv/acme-client/) || [acme-client](https://aur.archlinux.org/packages/acme-client/)
 
@@ -521,15 +522,15 @@ See also [List of ACME clients](https://letsencrypt.org/docs/client-options/).
 
 	[https://github.com/certbot/certbot](https://github.com/certbot/certbot) || [certbot](https://www.archlinux.org/packages/?name=certbot)
 
-*   **dehydrated** — ACME client written in Bash.
+*   **dehydrated** — ACME client, written in Bash.
 
 	[https://github.com/lukas2511/dehydrated](https://github.com/lukas2511/dehydrated) || [dehydrated](https://aur.archlinux.org/packages/dehydrated/), [dehydrated-git](https://aur.archlinux.org/packages/dehydrated-git/)
 
-*   **getssl** — ACME client written in Bash.
+*   **getssl** — ACME client, written in Bash.
 
 	[https://github.com/srvrco/getssl](https://github.com/srvrco/getssl) || [getssl](https://aur.archlinux.org/packages/getssl/), [getssl-git](https://aur.archlinux.org/packages/getssl-git/)
 
-*   **lego** — Lets Encrypt client and ACME library written in Go.
+*   **lego** — Lets Encrypt client and ACME library, written in Go.
 
 	[https://github.com/xenolf/lego](https://github.com/xenolf/lego) || [lego-git](https://aur.archlinux.org/packages/lego-git/)
 
@@ -545,7 +546,7 @@ See also [List of ACME clients](https://letsencrypt.org/docs/client-options/).
 
 	[https://github.com/unixcharles/acme-client](https://github.com/unixcharles/acme-client) || [ruby-acme-client](https://aur.archlinux.org/packages/ruby-acme-client/)
 
-*   **simp_le** — Simple Let's Encrypt client.
+*   **simp_le** — Simple Let's Encrypt client, written in Python.
 
 	[https://github.com/zenhack/simp_le](https://github.com/zenhack/simp_le) || [simp_le-git](https://aur.archlinux.org/packages/simp_le-git/)
 
@@ -800,7 +801,9 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[https://disk.yandex.ru/](https://disk.yandex.ru/) || [yandex-disk](https://aur.archlinux.org/packages/yandex-disk/)
 
-#### File transfer clients
+#### FTP
+
+##### FTP clients
 
 See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/wiki/Comparison_of_FTP_client_software "wikipedia:Comparison of FTP client software").
 
@@ -826,7 +829,7 @@ See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/
 
 Some file managers like [Dolphin](/index.php/Dolphin "Dolphin"), [GNOME Files](/index.php/GNOME_Files "GNOME Files") and [Thunar](/index.php/Thunar "Thunar") also provide FTP functionality.
 
-#### File transfer servers
+##### FTP servers
 
 See also [Wikipedia:List of FTP server software](https://en.wikipedia.org/wiki/List_of_FTP_server_software "wikipedia:List of FTP server software").
 

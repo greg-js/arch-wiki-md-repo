@@ -437,7 +437,7 @@ The *D-Bus* plugin will cause Compiz to crash if enabled in conjunction with cer
 
 ### Workspace pager and window buttons issues
 
-Only a few [panels and docks](/index.php/List_of_applications#Taskbars_.2F_panels_.2F_docks "List of applications") are compatible with Compiz's [viewports](/index.php/Compiz/Configuration#Workspaces_and_Viewports "Compiz/Configuration"). Incompatible panels and docks may display issues such as showing all window buttons in all workspaces or the workspace pager may only show one workspace available. The panels listed below are known to be compatible:
+Only a few [taskbars](/index.php/List_of_applications/Other#Taskbars "List of applications/Other") are compatible with Compiz's [viewports](/index.php/Compiz/Configuration#Workspaces_and_Viewports "Compiz/Configuration"). Incompatible panels and docks may display issues such as showing all window buttons in all workspaces or the workspace pager may only show one workspace available. The panels listed below are known to be compatible:
 
 *   [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel) (partial, see [#Xfce panel issues](#Xfce_panel_issues))
 *   [mate-panel](https://www.archlinux.org/packages/?name=mate-panel)

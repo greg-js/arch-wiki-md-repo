@@ -187,9 +187,9 @@ They all follow the same rules:
 
 **Tip:**
 
-*   to override a system-supplied file in `/usr/lib/systemd/network` in a permanent manner (i.e even after upgrade), place a file with same name in `/etc/systemd/network` and symlink it to `/dev/null`
-*   the `*` joker can be used in `VALUE` (e.g `en*` will match any Ethernet device)
-*   following this [Arch-general thread](https://mailman.archlinux.org/pipermail/arch-general/2014-March/035381.html), the best practice is to setup specific container network settings *inside the container* with **networkd** configuration files.
+*   To override a system-supplied file in `/usr/lib/systemd/network` in a permanent manner (i.e even after upgrade), place a file with same name in `/etc/systemd/network` and symlink it to `/dev/null`
+*   The `*` joker can be used in `VALUE` (e.g `en*` will match any Ethernet device), a boolean can be simple written as `yes` or `no`.
+*   Following this [Arch-general thread](https://mailman.archlinux.org/pipermail/arch-general/2014-March/035381.html), the best practice is to setup specific container network settings *inside the container* with **networkd** configuration files.
 
 ### network files
 
@@ -214,7 +214,7 @@ These files are aimed at setting network configuration variables, especially for
 
 *   `DHCP=` enables the DHCP client, accepts `yes`, `no`, `ipv4`, `ipv6`
 *   `DHCPServer=` enables the DHCP server
-*   `MulticastDNS=` when `true`, enables [multicast DNS](https://tools.ietf.org/html/rfc6762) support
+*   `MulticastDNS=` accepts a boolean or `resolve`, enables [multicast DNS](https://tools.ietf.org/html/rfc6762) support
 *   `DNSSEC=` a boolean or `allow-downgrade`
 *   `DNS=` to configure static [DNS](/index.php/DNS "DNS") addresses, may be specified more than once
 *   `Domains=` a list of domains to be resolved on this link
@@ -563,7 +563,7 @@ If running services like [Samba](/index.php/Samba "Samba")/[NFS](/index.php/NFS 
 
 ### systemd-resolve not searching the local domain
 
-systemd-resolved may not search the local domain when given just the hostname, even when `UseDomains=yes` or `Domains=[domain-list]` is present in the appropriate *.network* file, and that file produces the expected `search [domain-list]` in `resolv.conf`. If you run into this problem:
+[systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") may not search the local domain when given just the hostname, even when `UseDomains=yes` or `Domains=[domain-list]` is present in the appropriate *.network* file, and that file produces the expected `search [domain-list]` in `resolv.conf`. If you run into this problem:
 
 *   Trim `/etc/nsswitch.conf`'s `hosts` database (e.g., by removing `[!UNAVAIL=return]` option after `resolve` service)
 *   Switch to using fully-qualified domain names

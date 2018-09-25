@@ -101,7 +101,7 @@ $ grep -q "^flags.*\blm\b" /proc/cpuinfo && echo "x86_64" || echo "not x86_64"
 Да. Вы можете использовать
 
 *   версии библиотек из репозитория [multilib] или
-*   chroot-окружение i686\.
+*   chroot-окружение i686.
 
 ### Репозиторий [Multilib](/index.php/Multilib_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Multilib (Русский)")
 

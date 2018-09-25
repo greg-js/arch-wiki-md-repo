@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration"). Data da última tradução: 2018-09-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=541441) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration"). Data da última tradução: 2018-09-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&diff=0&oldid=543345) na versão em inglês.
 
 Artigos relacionados
 
@@ -628,69 +628,69 @@ Veja [[5]](https://wikidevi.com/wiki/Realtek) para uma lista de chipsets Realtek
 
 #### rtl8192cu
 
-The driver is now in the kernel, but many users have reported being unable to make a connection although scanning for networks does work.
+O driver agora está no kernel, mas muitos usuários relataram não conseguir estabelecer uma conexão, embora a verificação de redes funcione.
 
-[8192cu-dkms](https://aur.archlinux.org/packages/8192cu-dkms/) includes many patches, try this if it does not work fine with the driver in kernel.
+[8192cu-dkms](https://aur.archlinux.org/packages/8192cu-dkms/) inclui muitos patches, tente isso se não funcionar bem com o driver no kernel.
 
 #### rtl8723ae/rtl8723be
 
-The `rtl8723ae` and `rtl8723be` modules are included in the mainline Linux kernel.
+Os módulos `rtl8723ae` e `rtl8723be` estão incluídos no kernel Linux padrão.
 
-Some users may encounter errors with powersave on this card. This is shown with occasional disconnects that are not recognized by high level network managers ([netctl](/index.php/Netctl "Netctl"), [NetworkManager](/index.php/NetworkManager "NetworkManager")). This error can be confirmed by running `dmesg -w` or `journalctl -f` and looking for output related to powersave and the `rtl8723ae`/`rtl8723be` module. If you are having this issue, use the `fwlps=0` kernel option, which should prevent the WiFi card from automatically sleeping and halting connection.
+Alguns usuários podem encontrar erros com economia de energia neste cartão. Isso é mostrado com desconexões ocasionais que não são reconhecidas pelos gerenciadores de rede de alto nível ([netctl](/index.php/Netctl "Netctl"), [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)")). Este erro pode ser confirmado executando `dmesg -w` ou `journalctl -f` e procurando resultados relacionados a economia de energia e ao módulo `rtl8723ae`/`rtl8723be`. Se você está tendo este problema, use a opção de kernel `fwlps=0`, que deve impedir que a placa WiFi entre automaticamente e pare a conexão.
 
  `/etc/modprobe.d/rtl8723ae.conf`  `options rtl8723ae fwlps=0` 
 
-or
+ou
 
  `/etc/modprobe.d/rtl8723be.conf`  `options rtl8723be fwlps=0` 
 
-If you have poor signal, perhaps your device has only one physical antenna connected, and antenna autoselection is broken. You can force the choice of antenna with `ant_sel=1` or `ant_sel=2` kernel option. [[6]](https://bbs.archlinux.org/viewtopic.php?id=208472)
+Se você tiver um sinal fraco, talvez seu dispositivo tenha apenas uma antena física conectada e a seleção automática da antena esteja interrompida. Você pode forçar a escolha da antena com a opção do kernel `ant_sel=1` ou `ant_sel=2`. [[6]](https://bbs.archlinux.org/viewtopic.php?id=208472)
 
 #### rtl88xxau
 
-Realtek chipsets rtl8811au/rtl8812au/rtl8814au/rtl8821au designed for various USB adapters ranging from AC600 to AC1900.
+Chipsets rtl8811au/rtl8812au/rtl8814au/rtl8821au da Realtek projetados para vários adaptadores USB, de AC600 a AC1900.
 
-Several packages provide the kernel drivers:
+Vários pacotes fornece os drivers de kernel:
 
-| Chipset | Driver version | [AUR](/index.php/AUR "AUR") package | Notes |
-| rtl8812au | 5.2.9.3 | [rtl8812au-dkms-git](https://aur.archlinux.org/packages/rtl8812au-dkms-git/) | Latest driver version for rtl8812au only |
-| rtl8811au, rtl8812au and rtl8821au | 5.1.5 | [rtl8821au-dkms-git](https://aur.archlinux.org/packages/rtl8821au-dkms-git/) | Works, for rtl8812au latest version is recommended instead |
-| rtl8814au | 4.3.21 | [rtl8814au-dkms-git](https://aur.archlinux.org/packages/rtl8814au-dkms-git/) | Possibly works for rtl8813au too |
+| Chipset | Versão de driver | Pacote | Notas |
+| rtl8812au | 5.2.9.3 | [rtl8812au-dkms-git](https://aur.archlinux.org/packages/rtl8812au-dkms-git/) | Versão mais recente do driver para rtl8812au |
+| rtl8811au, rtl8812au e rtl8821au | 5.1.5 | [rtl8821au-dkms-git](https://aur.archlinux.org/packages/rtl8821au-dkms-git/) | Funciona, para rtl8812au a versão mais recente é recomendada |
+| rtl8814au | 4.3.21 | [rtl8814au-dkms-git](https://aur.archlinux.org/packages/rtl8814au-dkms-git/) | Possivelmente funciona para rtl8813au também |
 
-These require [DKMS](/index.php/DKMS "DKMS") so make sure you have your proper kernel headers installed.
+Esses exibem [DKMS](/index.php/DKMS "DKMS"), então certifique-se que você tenha os cabeçalhos apropriados para seu kernel instalados.
 
 #### rtl8822bu
 
-[rtl8822bu-dkms-git](https://aur.archlinux.org/packages/rtl8822bu-dkms-git/) provides a kernel module for the Realtek 8822bu chipset found in the Edimax EW7822ULC USB3 and Asus AC53 Nano USB 802.11ac adapter.
+[rtl8822bu-dkms-git](https://aur.archlinux.org/packages/rtl8822bu-dkms-git/) fornece um módulo de kernel para o chipset Realtek 8822bu encontrado no adaptador Edimax EW7822ULC USB3 e Asus AC53 Nano USB 802.11ac.
 
-This requires [DKMS](/index.php/DKMS "DKMS"), so make sure you have your proper kernel headers installed.
+Ele exige [DKMS](/index.php/DKMS "DKMS"), então certifique-se que você tenha os cabeçalhos apropriados para seu kernel instalados.
 
 #### rtl8xxxu
 
-Issues with the `rtl8xxxu` mainline kernel module may be solved by compiling a third-party module for the specific chipset. The source code can be found in [GitHub repositories](https://github.com/lwfinger?tab=repositories).
+Os problemas com o módulo de kernel da linha principal `rtl8xxxu` podem ser resolvidos pela compilação de um módulo de terceiros para o chipset específico. O código-fonte pode ser encontrado em [repositórios GitHub](https://github.com/lwfinger?tab=repositories).
 
-Some drivers may be already prepared in the AUR, e.g. [rtl8723bu-git](https://aur.archlinux.org/packages/rtl8723bu-git/) and [rtl8723bu-git-dkms](https://aur.archlinux.org/packages/rtl8723bu-git-dkms/).
+Alguns drivers podem estar preparados no AUR como, por exemplo, [rtl8723bu-git](https://aur.archlinux.org/packages/rtl8723bu-git/) e [rtl8723bu-git-dkms](https://aur.archlinux.org/packages/rtl8723bu-git-dkms/).
 
 ### Atheros
 
-The [MadWifi team](http://madwifi-project.org/) currently maintains three different drivers for devices with Atheros chipset:
+A [equipe MadWifi](http://madwifi-project.org/) atualmente mantém três drivers diferentes para dispositivos com chipset Atheros:
 
-*   `madwifi` is an old, obsolete driver. Not present in Arch kernel since 2.6.39.1.
-*   `ath5k` is newer driver, which replaces the `madwifi` driver. Currently a better choice for some chipsets, but not all chipsets are supported (see below)
-*   `ath9k` is the newest of these three drivers, it is intended for newer Atheros chipsets. All of the chips with 802.11n capabilities are supported.
+*   `madwifi` é um driver antigo e obsoleto, não presente no Arch kernel desde 2.6.39.1.
+*   `ath5k` é um driver mais novo, que substitui o driver `madwifi`. Atualmente uma escolha melhor para alguns chipsets, mas nem todos os chipsets têm suporte (veja abaixo)
+*   `ath9k` é o mais novo desses três e é destinado a chipsets Atheros mais novos. Há suporte a todos os chips com capacidades 802.11n.
 
-There are some other drivers for some Atheros devices. See [Linux Wireless documentation](http://wireless.kernel.org/en/users/Drivers/Atheros#PCI_.2F_PCI-E_.2F_AHB_Drivers) for details.
+Há alguns outros drivers para alguns dispositivos Atheros. Veja a [documentação Linux Wireless](http://wireless.kernel.org/en/users/Drivers/Atheros#PCI_.2F_PCI-E_.2F_AHB_Drivers) para detalhes.
 
 #### ath5k
 
-External resources:
+Recursos externos:
 
 *   [http://wireless.kernel.org/en/users/Drivers/ath5k](http://wireless.kernel.org/en/users/Drivers/ath5k)
 *   [http://wiki.debian.org/ath5k](http://wiki.debian.org/ath5k)
 
-If you find web pages randomly loading very slow, or if the device is unable to lease an IP address, try to switch from hardware to software encryption by loading the `ath5k` module with `nohwcrypt=1` option. See [Kernel modules#Setting module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules") for details.
+Se você encontrar páginas da Web sendo carregadas aleatoriamente muito lentamente ou se o dispositivo não puder conceder um endereço IP, tente alternar de criptografia de hardware para software carregando o módulo `ath5k` com `nohwcrypt=1` opção. Veja [Kernel modules#Setting module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules") para detalhes.
 
-Some laptops may have problems with their wireless LED indicator flickering red and blue. To solve this problem, do:
+Alguns laptops podem ter problemas com o indicador LED sem fio piscando em vermelho e azul. Para resolver esse problema, faça:
 
 ```
 # echo none > /sys/class/leds/ath5k-phy0::tx/trigger
@@ -698,31 +698,31 @@ Some laptops may have problems with their wireless LED indicator flickering red 
 
 ```
 
-For alternatives, see [this bug report](https://bugzilla.redhat.com/show_bug.cgi?id=618232).
+Para alternativas, veja [esse relatório de erro](https://bugzilla.redhat.com/show_bug.cgi?id=618232).
 
 #### ath9k
 
-External resources:
+Recursos externos:
 
 *   [http://wireless.kernel.org/en/users/Drivers/ath9k](http://wireless.kernel.org/en/users/Drivers/ath9k)
 *   [http://wiki.debian.org/ath9k](http://wiki.debian.org/ath9k)
 
-As of Linux 3.15.1, some users have been experiencing a decrease in bandwidth. In some cases this can fixed by editing `/etc/modprobe.d/ath9k.conf` and adding the line:
+A partir do Linux 3.15.1, alguns usuários experimentaram uma diminuição na largura de banda. Em alguns casos isso pode ser corrigido editando `/etc/modprobe.d/ath9k.conf` e adicionando a linha:
 
 ```
 options ath9k nohwcrypt=1
 
 ```
 
-**Note:** Check with the command lsmod what module(-name) is in use and change it if named otherwise (e.g. ath9k_htc).
+**Nota:** Verifique com o comando *lsmod* qual o (nome do) módulo está em uso e altere-o se nomeado de outra forma (por exemplo, ath9k_htc).
 
-In the unlikely event that you have stability issues that trouble you, you could try using the [backports-patched](https://aur.archlinux.org/packages/backports-patched/) package. An [ath9k mailing list](https://lists.ath9k.org/mailman/listinfo/ath9k-devel) exists for support and development related discussions.
+No caso improvável de você ter problemas de estabilidade que o incomodem, você pode tentar usar o pacote [backports-patched](https://aur.archlinux.org/packages/backports-patched/). Existe uma [lista de discussão](https://lists.ath9k.org/mailman/listinfo/ath9k-devel) para discussões relacionadas a suporte e desenvolvimento.
 
 ##### Economia de energia
 
-Although [Linux Wireless](http://wireless.kernel.org/en/users/Documentation/dynamic-power-save) says that dynamic power saving is enabled for Atheros ath9k single-chips newer than AR9280, for some devices (e.g. AR9285) [powertop](https://www.archlinux.org/packages/?name=powertop) might still report that power saving is disabled. In this case enable it manually.
+Embora o [Linux Wireless](http://wireless.kernel.org/en/users/Documentation/dynamic-power-save) diga que a economia de energia dinâmica está habilitada para chips Atheros ath9k mais recentes que AR9280, para alguns dispositivos (por exemplo, AR9285) o [powertop](https://www.archlinux.org/packages/?name=powertop) ainda pode relatar que a economia de energia está desativada. Nesse caso, habilite-a manualmente.
 
-On some devices (e.g. AR9285), enabling the power saving might result in the following error:
+Em alguns dispositivos (por exemplo, AR9285), habilitar economia de energia pode resultar no seguinte erro:
 
  `# iw dev wlan0 set power_save on` 
 ```
@@ -730,7 +730,7 @@ command failed: Operation not supported (-95)
 
 ```
 
-The solution is to set the `ps_enable=1` option for the `ath9k` module:
+A solução é definir a opção `ps_enable=1` para o módulo `ath9k`:
 
  `/etc/modprobe.d/ath9k.conf`  `options ath9k ps_enable=1` 
 
@@ -738,54 +738,54 @@ The solution is to set the `ps_enable=1` option for the `ath9k` module:
 
 #### ipw2100 e ipw2200
 
-These modules are fully supported in the kernel, but they require additional firmware. Depending on which of the chipsets you have, [install](/index.php/Install "Install") either [ipw2100-fw](https://www.archlinux.org/packages/?name=ipw2100-fw) or [ipw2200-fw](https://www.archlinux.org/packages/?name=ipw2200-fw). Then [reload](/index.php/Kernel_modules#Manual_module_handling "Kernel modules") the appropriate module.
+Esses módulos são totalmente suportados no kernel, mas requerem firmware adicional. Dependendo de qual dos chipsets você tem, [instale](/index.php/Instale "Instale") [ipw2100-fw](https://www.archlinux.org/packages/?name=ipw2100-fw) ou [ipw2200-fw](https://www.archlinux.org/packages/?name=ipw2200-fw). Então [recarregue](/index.php/Kernel_modules#Manual_module_handling "Kernel modules") o módulo apropriado.
 
-**Tip:** You may use the following [module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules"):
+**Dica:** Você pode usar as seguintes [opções de módulo](/index.php/Kernel_modules#Setting_module_options "Kernel modules"):
 
-*   use the `rtap_iface=1` option to enable the radiotap interface
-*   use the `led=1` option to enable a front LED indicating when the wireless is connected or not
+*   use a opção `rtap_iface=1` habilitar a interface radiotap
+*   use a opção `led=1` para habilitar um LED frontal indicando quando a rede sem-fio está conectada ou não
 
 #### iwlegacy
 
-[iwlegacy](http://wireless.kernel.org/en/users/Drivers/iwlegacy) is the wireless driver for Intel's 3945 and 4965 wireless chips. The firmware is included in the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package.
+O [iwlegacy](http://wireless.kernel.org/en/users/Drivers/iwlegacy) é o driver sem fio para os chips sem fio 3945 e 4965 da Intel. O firmware está incluído no pacote [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware).
 
-[udev](/index.php/Udev "Udev") should load the driver automatically, otherwise load `iwl3945` or `iwl4965` manually. See [Kernel modules](/index.php/Kernel_modules "Kernel modules") for details.
+[udev](/index.php/Udev "Udev") deve carregar automaticamente o driver, do contrário carregue `iwl3945` ou `iwl4965` manualmente. Veja [Módulos de kernel](/index.php/Kernel_modules "Kernel modules") para detalhes.
 
-If you have problems connecting to networks in general, random failures with your card on bootup or your link quality is very poor, try to disable 802.11n:
+Se você tiver problemas para se conectar a redes em geral, falhas aleatórias com seu cartão na inicialização ou a qualidade do seu link é muito fraca, tente desabilitar o 802.11n:
 
  `/etc/modprobe.d/iwl4965.conf`  `options iwl4965 11n_disable=1` 
 
-If the failures persist during bootup and you are using Nouveau driver, try [enabling early KMS](/index.php/Nouveau#Enable_early_KMS "Nouveau") to prevent the conflict [[8]](https://bbs.archlinux.org/viewtopic.php?pid=1748667#p1748667).
+Se as falhas persistirem durante a inicialização e você estiver usando o driver Nouveau, tente [ativar o KMS antigo](/index.php/Nouveau#Enable_early_KMS "Nouveau") para evitar o conflito [[8]](https://bbs.archlinux.org/viewtopic.php?pid=1748667#p1748667).
 
 #### iwlwifi
 
-[iwlwifi](http://wireless.kernel.org/en/users/Drivers/iwlwifi) is the wireless driver for Intel's current wireless chips, such as 5100AGN, 5300AGN, and 5350AGN. See the [full list of supported devices](http://wireless.kernel.org/en/users/Drivers/iwlwifi#Supported_Devices). The firmware is included in the [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package. The [linux-firmware-iwlwifi-git](https://aur.archlinux.org/packages/linux-firmware-iwlwifi-git/) may contain some updates sooner.
+O [iwlwifi](http://wireless.kernel.org/en/users/Drivers/iwlwifi) é o driver sem fio para os chips sem fio atuais da Intel, como 5100AGN, 5300AGN e 5350AGN. Veja a [lista completa de dispositivos suportados](http://wireless.kernel.org/en/users/Drivers/iwlwifi#Supported_Devices). O firmware está incluído no pacote [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware). O [linux-firmware-iwlwifi-git](https://aur.archlinux.org/packages/linux-firmware-iwlwifi-git/) pode conter algumas atualizações mais cedo.
 
-If you have problems connecting to networks in general or your link quality is very poor, try to disable 802.11n, and perhaps also enable software encryption:
+Se você tiver problemas para se conectar a redes em geral ou se a qualidade do link for muito ruim, tente desativar o 802.11n e talvez também ative a criptografia do software:
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi 11n_disable=1 swcrypto=1` 
 
-If you have a problem with slow uplink speed in 802.11n mode, for example 20Mbps, try to enable antenna aggregation:
+Se você tiver um problema com a velocidade de uplink lenta no modo 802.11n, por exemplo 20Mbps, tente ativar a agregação de antena:
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi 11n_disable=8` 
 
-Do not be confused with the option name, when the value is set to `8` it does not disable anything but re-enables transmission antenna aggregation.[[9]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[10]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
+Não se confunda com o nome da opção, quando o valor é definido como `8`, ele não desabilita nada, mas reativa a agregação da antena de transmissão. [[9]](http://forums.gentoo.org/viewtopic-t-996692.html?sid=81bdfa435c089360bdfd9368fe0339a9) [[10]](https://bugzilla.kernel.org/show_bug.cgi?id=81571)
 
-In case this does not work for you, you may try disabling [power saving](/index.php/Power_saving#Network_interfaces "Power saving") for your wireless adapter.
+Caso isso não funcione, você pode tentar desativar [economia de energia](/index.php/Power_saving#Network_interfaces "Power saving") para seu adaptador sem fio.
 
-[Some](http://ubuntuforums.org/showthread.php?t=2183486&p=12845473#post12845473) have never gotten this to work. [Others](http://ubuntuforums.org/showthread.php?t=2205733&p=12935783#post12935783) found salvation by disabling N in their router settings after trying everything. This is known to have be the only solution on more than one occasion. The second link there mentions a 5ghz option that might be worth exploring.
+[Alguns](http://ubuntuforums.org/showthread.php?t=2183486&p=12845473#post12845473) nunca conseguiram que isso funcionasse. [Outros](http://ubuntuforums.org/showthread.php?t=2205733&p=12935783#post12935783) encontraram a salvação desativando N nas configurações do roteador depois de tentar tudo. Sabe-se que esta é a única solução em mais de uma ocasião. O segundo link menciona uma opção de 5Ghz que pode valer a pena ser explorada.
 
 ##### Coexistência com Bluetooth
 
-If you have difficulty connecting a bluetooth headset and maintaining good downlink speed, try disabling bluetooth coexistence [[11]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
+Se você tiver dificuldade em conectar um fone de ouvido Bluetooth e manter uma boa velocidade de downlink, tente desabilitar a coexistência Bluetooth [[11]](https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi#wifibluetooth_coexistence):
 
  `/etc/modprobe.d/iwlwifi.conf`  `options iwlwifi bt_coex_active=0` 
 
 #### Desabilitar piscada de LED
 
-**Note:** This works with the `iwlegacy` and `iwlwifi` drivers.
+**Nota:** Isso funciona com os drivers `iwlegacy` e `iwlwifi`.
 
-The default settings on the module are to have the LED blink on activity. Some people find this extremely annoying. To have the LED on solid when Wi-Fi is active, you can use the [systemd-tmpfiles](/index.php/Systemd#Temporary_files "Systemd"):
+As configurações padrão no módulo são para que o LED pisque na atividade. Algumas pessoas acham isso extremamente irritante. Para que o LED fique sólido quando o Wi-Fi estiver ativo, você pode usar o [systemd-tmpfiles](/index.php/Systemd_(Portugu%C3%AAs)#Arquivos_tempor.C3.A1rios "Systemd (Português)"):
 
  `/etc/tmpfiles.d/phy0-led.conf` 
 ```
@@ -793,84 +793,84 @@ w /sys/class/leds/phy0-led/trigger - - - - phy0radio
 
 ```
 
-Run `systemd-tmpfiles --create phy0-led.conf` for the change to take effect, or reboot.
+Execute `systemd-tmpfiles --create phy0-led.conf` para que a alteração surta efeito ou reinicie.
 
-To see all the possible trigger values for this LED:
+Para ver todos os valores possíveis para esse LED:
 
 ```
 # cat /sys/class/leds/phy0-led/trigger
 
 ```
 
-**Tip:** If you do not have `/sys/class/leds/phy0-led`, you may try to use the `led_mode="1"` [module option](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). It should be valid for both `iwlwifi` and `iwlegacy` drivers.
+**Dica:** Se você não tiver `/sys/class/leds/phy0-led`, você pode tentar usar a [opção de módulo](/index.php/Kernel_modules#Setting_module_options "Kernel modules") `led_mode="1"`. Deve ser válida para ambos drivers `iwlwifi` e `iwlegacy`.
 
 ### Broadcom
 
-See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless").
+Veja [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless").
 
 ### Outros drivers/dispositivos
 
 #### Tenda w322u
 
-Treat this Tenda card as an `rt2870sta` device. See [#rt2x00](#rt2x00).
+Trate essa placa Tenda como um dispositivo `rt2870sta`. Veja [#rt2x00](#rt2x00).
 
 #### orinoco
 
-This should be a part of the kernel package and be installed already.
+Isso deve ser parte do pacote do kernel e já estar instalado.
 
-Some Orinoco chipsets are Hermes II. You can use the `wlags49_h2_cs` driver instead of `orinoco_cs` and gain WPA support. To use the driver, [blacklist](/index.php/Blacklist "Blacklist") `orinoco_cs` first.
+Alguns chipsets Orinoco são Hermes II. Você pode usar o driver `wlags49_h2_cs` em vez do `orinoco_cs` e ganhar suporte a WPA. Para usar o driver, [coloque em lista negra](/index.php/Blacklist "Blacklist") `orinoco_cs` primeiro.
 
 #### prism54
 
-The driver `p54` is included in kernel, but you have to download the appropriate firmware for your card from [this site](http://linuxwireless.org/en/users/Drivers/p54#firmware) and install it into the `/usr/lib/firmware` directory.
+O driver `p54` está incluído no kernel, mas você precisa fazer o download do firmware apropriado para sua placa [neste site](http://linuxwireless.org/en/users/Drivers/p54#firmware) e instalá-lo no diretório `/usr/lib/firmware`.
 
-**Note:** There is also older, deprecated driver `prism54`, which might conflict with the newer driver (`p54pci` or `p54usb`). Make sure to [blacklist](/index.php/Blacklist "Blacklist") `prism54`.
+**Nota:** Também existe um driver mais antigo e obsoleto `prism54`, que pode entrar em conflito com o driver mais recente (`p54pci` ou `p54usb`). Certifique-se de [colocar em lista negra](/index.php/Blacklist "Blacklist") `prism54`.
 
 #### ACX100/111
 
-**Warning:** The drivers for these devices [are broken](https://mailman.archlinux.org/pipermail/arch-dev-public/2011-June/020669.html) and do not work with newer kernel versions.
+**Atenção:** Os drivers para esses dispositivos [estão quebrados](https://mailman.archlinux.org/pipermail/arch-dev-public/2011-June/020669.html) e não funcionam com versões mais recentes do kernel.
 
-Packages: `tiacx` `tiacx-firmware` (deleted from official repositories and AUR)
+Pacotes: `tiacx` `tiacx-firmware` (excluídos dos repositórios oficiais e do AUR)
 
-See [official wiki](http://sourceforge.net/apps/mediawiki/acx100/index.php?title=Main_Page) for details.
+Veja o [wiki oficial](http://sourceforge.net/apps/mediawiki/acx100/index.php?title=Main_Page) para detalhes.
 
 #### zd1211rw
 
-[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) is a driver for the ZyDAS ZD1211 802.11b/g USB WLAN chipset, and it is included in recent versions of the Linux kernel. See [[12]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) for a list of supported devices. You only need to [install](/index.php/Install "Install") the firmware for the device, provided by the [zd1211-firmware](https://aur.archlinux.org/packages/zd1211-firmware/) package.
+[`zd1211rw`](http://zd1211.wiki.sourceforge.net/) é um driver para o chipset WLAN ZyDAS ZD1211 802.11b/g USB, e está incluído nas versões recentes do kernel do Linux. Consulte [[12]](http://www.linuxwireless.org/en/users/Drivers/zd1211rw/devices) para obter uma lista de dispositivos suportados. Você só precisa [instalar](/index.php/Instalar "Instalar") o firmware do dispositivo, fornecido pelo pacote [zd1211-firmware](https://aur.archlinux.org/packages/zd1211-firmware/).
 
 #### hostap_cs
 
-[Host AP](http://hostap.epitest.fi/) is a Linux driver for wireless LAN cards based on Intersil's Prism2/2.5/3 chipset. The driver is included in Linux kernel.
+[Host AP](http://hostap.epitest.fi/) é um driver Linux para placas de rede local sem fio baseado no chipset Prism2/2.5/3 da Intersil. O driver está incluído no kernel do Linux.
 
-**Note:** Make sure to [blacklist](/index.php/Blacklist "Blacklist") the `orinico_cs` driver, it may cause problems.
+**Nota:** Certifique-se de [colocar em lista negra](/index.php/Blacklist "Blacklist") o driver `orinico_cs`, pois pode causar problemas.
 
 ### ndiswrapper
 
-Ndiswrapper is a wrapper script that allows you to use some Windows drivers in Linux. You will need the `.inf` and `.sys` files from your Windows driver.
+Ndiswrapper é um script wrapper que permite usar alguns drivers do Windows no Linux. Você precisará dos arquivos `.inf` e `.sys` do seu driver do Windows.
 
-**Warning:** Be sure to use drivers appropriate to your architecture (x86 vs. x86_64).
+**Atenção:** Certifique-se de usar os drivers apropriados para sua arquitetura (x86 vs. x86_64).
 
-**Tip:** If you need to extract these files from an `*.exe` file, you can use [cabextract](https://www.archlinux.org/packages/?name=cabextract).
+**Dica:** Se você precisar extrair esses arquivos de um arquivo `*.exe`, você pode usar [cabextract](https://www.archlinux.org/packages/?name=cabextract).
 
-Follow these steps to configure ndiswrapper.
+Siga essas etapas para configurar ndiswrapper.
 
-1\. Install [ndiswrapper-dkms](https://www.archlinux.org/packages/?name=ndiswrapper-dkms)
+1\. Instale [ndiswrapper-dkms](https://www.archlinux.org/packages/?name=ndiswrapper-dkms)
 
-2\. Install the driver to `/etc/ndiswrapper/*`
-
-```
-# ndiswrapper -i filename.inf
+2\. Instale o driver para `/etc/ndiswrapper/*`
 
 ```
+# ndiswrapper -i *nome_de_arquivo*.inf
 
-3\. List all installed drivers for ndiswrapper
+```
+
+3\. Liste todos os drivers instalados para ndiswrapper
 
 ```
 $ ndiswrapper -l
 
 ```
 
-4\. Let ndiswrapper write its configuration in `/etc/modprobe.d/ndiswrapper.conf`:
+4\. Deixe o ndiswrapper escrever sua configuração no `/etc/modprobe.d/ndiswrapper.conf`:
 
 ```
 # ndiswrapper -m
@@ -878,9 +878,9 @@ $ ndiswrapper -l
 
 ```
 
-Now the ndiswrapper install is almost finished; follow the instructions on [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules") to automatically load the module at boot.
+Agora a instalação do ndiswrapper está quase concluída; siga as instruções em [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules") para carregar automaticamente o módulo na inicialização.
 
-The important part is making sure that ndiswrapper exists on this line, so just add it alongside the other modules. It would be best to test that ndiswrapper will load now, so:
+A parte importante é certificar-se de que ndiswrapper existe nesta linha, por isso basta adicioná-lo ao lado dos outros módulos. Seria melhor testar se o ndiswrapper será carregado agora, então:
 
 ```
 # modprobe ndiswrapper
@@ -888,15 +888,15 @@ The important part is making sure that ndiswrapper exists on this line, so just 
 
 ```
 
-and *wlan0* should now exist. If you have problems, some help is available at: [ndiswrapper howto](http://sourceforge.net/p/ndiswrapper/ndiswrapper/HowTos/) and [ndiswrapper FAQ](http://sourceforge.net/p/ndiswrapper/ndiswrapper/FAQ/).
+e *wlan0* deve existir agora. Se você tiver problemas, alguma ajuda está disponível em: [ndiswrapper howto](http://sourceforge.net/p/ndiswrapper/ndiswrapper/HowTos/) e [ndiswrapper FAQ](http://sourceforge.net/p/ndiswrapper/ndiswrapper/FAQ/).
 
 ### backports-patched
 
-[backports-patched](https://aur.archlinux.org/packages/backports-patched/) provide drivers released on newer kernels backported for usage on older kernels. The project started since 2007 and was originally known as compat-wireless, evolved to compat-drivers and was recently renamed simply to backports.
+[backports-patched](https://aur.archlinux.org/packages/backports-patched/) fornece drivers lançados em novos kernels portados para uso em kernels mais antigos. O projeto começou desde 2007 e era originalmente conhecido como compat-wireless, evoluiu para compat-drivers e foi recentemente renomeado simplesmente para backports.
 
-If you are using old kernel and have wireless issue, drivers in this package may help.
+Se você estiver usando o kernel antigo e tiver problemas de conexão sem fio, os drivers neste pacote podem ajudar.
 
 ## Veja também
 
-*   [The Linux Wireless project](http://wireless.kernel.org/)
-*   [Aircrack-ng guide on installing drivers](http://aircrack-ng.org/doku.php?id=install_drivers)
+*   [O projeto Linux Wireless](http://wireless.kernel.org/)
+*   [Guia de Aircrack-ng para instalação de drivers](http://aircrack-ng.org/doku.php?id=install_drivers)

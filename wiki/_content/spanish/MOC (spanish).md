@@ -78,7 +78,7 @@ Aqui algunos de los atajos de teclado. Tenga en cuenta que deben ser respetadas 
 | Aumenta el volumen en 5% | . |
 | Lleva el volumen al 10~100% | Meta + 1~0 |
 | Cierra la interfaz del cliente |
-| Archivo de ayuda |  ? |
+| Archivo de ayuda | ? |
 
 # Cerrando moc
 

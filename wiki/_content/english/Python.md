@@ -182,6 +182,10 @@ To use these with Python, you may need to install the associated widget kits.
 
 	[https://jupyter.org/](https://jupyter.org/) || [jupyter-notebook](https://www.archlinux.org/packages/?name=jupyter-notebook)
 
+*   **ptpython** — Fancy interface for the Python interpreter based on [prompt-toolkit](https://github.com/jonathanslenders/python-prompt-toolkit) input interface.
+
+	[https://github.com/jonathanslenders/ptpython](https://github.com/jonathanslenders/ptpython) || [ptpython](https://aur.archlinux.org/packages/ptpython/) [ptpython2](https://aur.archlinux.org/packages/ptpython2/)
+
 ### Virtual environment
 
 Python provides tools to create isolated environments in which you can install packages without interfering with the other virtual environments nor with the system Python's packages. It could change the *python* interpreter used for a specific application.

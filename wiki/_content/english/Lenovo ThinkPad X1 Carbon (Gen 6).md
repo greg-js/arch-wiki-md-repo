@@ -20,18 +20,18 @@ Version: ThinkPad X1 Carbon 6th
 | **Device** | **Working** | **Modules** |
 | [Intel graphics](/index.php/Intel_graphics "Intel graphics") | Yes | i915, (intel_agp) |
 | [Wireless network](/index.php/Wireless_network_configuration#iwlwifi "Wireless network configuration") | Yes | iwlmvm |
-| Native Ethernet with [included dongle](https://www3.lenovo.com/us/en/accessories-and-monitors/cables-and-adapters/adapters/CABLE-BO-TP-OneLink%2B-to-RJ45-Adapter/p/4X90K06975) | Yes |  ? |
-| Mobile broadband | No¹ |  ? |
+| Native Ethernet with [included dongle](https://www3.lenovo.com/us/en/accessories-and-monitors/cables-and-adapters/adapters/CABLE-BO-TP-OneLink%2B-to-RJ45-Adapter/p/4X90K06975) | Yes | ? |
+| Mobile broadband | No¹ | ? |
 | Audio | Yes | snd_hda_intel |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes | psmouse, rmi_smbus, i2c_i801 |
 | [TrackPoint](/index.php/TrackPoint "TrackPoint") | Yes | psmouse, rmi_smbus, i2c_i801 |
 | Camera | Yes | uvcvideo |
-| Fingerprint Reader | No² |  ? |
-| [Power management](/index.php/Power_management "Power management") | Yes³ |  ? |
+| Fingerprint Reader | No² | ? |
+| [Power management](/index.php/Power_management "Power management") | Yes³ | ? |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Yes | btusb |
 | microSD card reader | Yes | scsi_mod |
 | Keyboard Backlight | Yes | thinkpad_acpi |
-| Function/Multimedia Keys | Yes |  ? |
+| Function/Multimedia Keys | Yes | ? |
 | 
 
 1.  No working Linux driver for Fibocom L850-GL. See [this thread](https://forums.lenovo.com/t5/Linux-Discussion/X1C-gen-6-Fibocom-L850-GL-Ubuntu-18-04/m-p/4078413) and [this thread](https://forums.lenovo.com/t5/Linux-Discussion/Linux-support-for-WWAN-LTE-L850-GL-on-T580-T480/td-p/4067969) for more info.

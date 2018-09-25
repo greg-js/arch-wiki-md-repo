@@ -26,15 +26,15 @@ O pacote [go](https://www.archlinux.org/packages/?name=go) contém a ferramenta 
 
 ### Nomenclatura
 
-*   For applications written in Go, use the name of the application as the package name, in lowercase.
-    *   Be creative if the name is already taken.
-*   For PKGBUILDS that uses the "go" tool to download the package, only add "-git" to the package name if it is not built from a tarball or a from a tagged release (but from trunk/HEAD).
-    *   Similarly for mercurial packages, only add "-hg" to the package name if it is not a release-revision.
-    *   Extend this pattern for other version control systems.
-    *   The go tool has its own logic for which branch or tag it should use. See `go get --help`.
-*   Consider adding the name of the author to the package name if there are several applications that are named the same, like [dcpu16-kballard](https://aur.archlinux.org/packages/dcpu16-kballard/).
-    *   In general, the most popular packages should be allowed to use the shortest or "best" name.
-*   Postfixes to the package names (like `-hg`, `-git` or `-svn`) are optional if there are no official releases from the project in question. On one hand, it is common to use them when the package downloads from a VCS. On the other hand, most Go projects do not have any release-tarballs, only the repo which is used for branching/tagging the official release, if it is not *trunk*. Also, `go get`, which is the "official" way to install Go modules, uses the repositories directly. Use your better judgement.
+*   Para aplicativos escritos em Go, use o nome do aplicativo como o nome do pacote, em letras minúsculas.
+    *   Seja criativo se o nome já estiver sendo usado.
+*   Para o PKGBUILDS que usa a ferramenta "go" para baixar o pacote, adicione apenas "-git" ao nome do pacote, se ele não for construído a partir de um tarball ou de um lançamento marcado (mas do trunk/HEAD).
+    *   Da mesma forma, para pacotes mercurial, adicione apenas "-hg" ao nome do pacote, se não for uma revisão de versão.
+    *   Estenda esse padrão para outros sistemas de controle de versão.
+    *   A ferramenta go tem sua própria lógica para qual branch ou tag deve ser usada. Veja `go get --help`.
+*   Considere adicionar o nome do autor ao nome do pacote se houver vários aplicativos com o mesmo nome, como [dcpu16-kballard](https://aur.archlinux.org/packages/dcpu16-kballard/).
+    *   Em geral, os pacotes mais populares devem poder usar o nome mais curto ou "melhor".
+*   Correções posteriores para os nomes dos pacotes (como `-hg`, `-git` ou `-svn`) são opcionais se não houver versões oficiais do projeto em questão. Por um lado, é comum usá-los quando o pacote é baixado de um VCS. Por outro lado, a maioria dos projetos Go não possui tarballs de lançamento, apenas o repositório que é usado para branching/tagging o release oficial, se não for *trunk*. Além disso, o `go get`, que é a maneira "oficial" de instalar os módulos do Go, usa os repositórios diretamente. Use seu melhor julgamento.
 
 ### Empacotamento
 

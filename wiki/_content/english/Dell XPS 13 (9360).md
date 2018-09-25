@@ -5,10 +5,10 @@
 | Audio | Working | snd_hda_intel |
 | Touchpad | Working | hid_multitouch (mousedev) |
 | Webcam | Working | uvcvideo |
-| USB-C / Thunderbolt 3 | Working |  ? |
+| USB-C / Thunderbolt 3 | Working | ? |
 | Wireless switch | Working | intel_hid |
-| Function/Multimedia Keys | Working |  ? |
-| Fingerprint sensor | Not working |  ? |
+| Function/Multimedia Keys | Working | ? |
+| Fingerprint sensor | Not working | ? |
 
 Related articles
 

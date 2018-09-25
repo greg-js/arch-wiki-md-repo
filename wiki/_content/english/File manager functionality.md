@@ -97,19 +97,19 @@ Another option is to install a separate [mount application](/index.php/List_of_a
 
 #### Windows access
 
-If using [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb), to access Windows/CIFS/Samba file shares first open the file manager, and enter the following into the path name, changing <sever name> and <share name> as appropriate:
+If using [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb), to access Windows/CIFS/Samba file shares first open the file manager, and enter the following into the path name, changing `*server_name*` and `*share_name*` as appropriate:
 
 ```
-smb://<server name>/<share name>
+smb://*server_name*/*share_name*
 
 ```
 
 #### Apple access
 
-AFP support is included in [gvfs](https://www.archlinux.org/packages/?name=gvfs). To access AFP files first open the file manager, and enter the following into the path name, changing <sever name> and <share name> as appropriate:
+AFP support is included in [gvfs](https://www.archlinux.org/packages/?name=gvfs). To access AFP files first open the file manager, and enter the following into the path name, changing `*server_name*` and `*share_name*` as appropriate:
 
 ```
-afp://<server name>/<share name>
+afp://*server_name*/*share_name*
 
 ```
 
@@ -197,14 +197,14 @@ $ xdg-mime query default inode/directory
 To ensure that directories are opened in the file manager, run the following command:
 
 ```
-$ xdg-mime default *my-file-manager.desktop* inode/directory
+$ xdg-mime default *my_file_manager.desktop* inode/directory
 
 ```
 
-where `*my-file-manager.desktop*` is the desktop entry for your file manager — `*org.gnome.Nautilus.desktop*` for example.
+where `*my_file_manager.desktop*` is the desktop entry for your file manager — `*org.gnome.Nautilus.desktop*` for example.
 
 **Tip:** If you want the change to be system-wide, run the command above as root or create/edit the following file: `/usr/share/applications/mimeapps.list` 
 ```
 [Default Applications]
-inode/directory=*my-file-manager.desktop*
+inode/directory=*my_file_manager.desktop*
 ```

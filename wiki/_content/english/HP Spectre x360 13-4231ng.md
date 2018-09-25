@@ -3,12 +3,12 @@
 | Wireless | Working, see issues | iwlwifi |
 | Bluetooth | Working | bluetooth |
 | Audio | Working | snd_hda_intel |
-| Touchpad | Working |  ? |
+| Touchpad | Working | ? |
 | Touchscreen | Working | hid_multitouch |
 | Webcam | Working | uvcvideo |
 | Card Reader | Working | rtsx_pci |
 | Wireless switch | Working, see issues | intel-hid |
-| Function/Multimedia Keys | Working |  ? |
+| Function/Multimedia Keys | Working | ? |
 
 This article covers hardware specific configuration of this laptop, some minor issues remain after customization. These can be performed after an installation of Arch Linux has been finished and the machine rebooted into it.
 

@@ -1,6 +1,8 @@
 Related articles
 
 *   [Disk cloning](/index.php/Disk_cloning "Disk cloning")
+*   [USB flash installation media#Using dd](/index.php/USB_flash_installation_media#Using_dd "USB flash installation media")
+*   [Benchmarking#dd](/index.php/Benchmarking#dd "Benchmarking")
 
 [dd](https://en.wikipedia.org/wiki/dd_(Unix) is a [core utility](/index.php/Core_utility "Core utility") whose primary purpose is to convert and copy a file.
 

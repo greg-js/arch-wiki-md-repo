@@ -121,4 +121,4 @@ Hay una serie de temas GTK+ adicionales en [AUR](/index.php/Arch_User_Repository
 
 ### GTK+ y Qt
 
-Si tiene aplicaciones GTK+ y Qt (KDE) en su escritorio, entonces sabe que sus apariencias no combinan bien. Si desea que los estilos GTK+ coincidan con los estilos Qt, consulte la [unificación de aspectos para las palicaciones Qt y GTK](/index.php/Uniform_look_for_Qt_and_GTK_applications_(Espa%C3%B1ol) "Uniform look for Qt and GTK applications (Español)").
+Si tiene aplicaciones GTK+ y Qt (KDE) en su escritorio, entonces sabe que sus apariencias no combinan bien. Si desea que los estilos GTK+ coincidan con los estilos Qt, véase [unificación de aspectos para las palicaciones Qt y GTK](/index.php/Uniform_look_for_Qt_and_GTK_applications_(Espa%C3%B1ol) "Uniform look for Qt and GTK applications (Español)").

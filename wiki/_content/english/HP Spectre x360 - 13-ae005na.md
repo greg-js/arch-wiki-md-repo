@@ -3,15 +3,15 @@
 | Wireless | Working | iwlwifi |
 | Bluetooth | Working | bluetooth |
 | Audio | Partially Working | snd_hda_intel |
-| Touchpad | Working |  ? |
+| Touchpad | Working | ? |
 | Touchscreen | Working | hid_multitouch |
-| Pen input | Working |  ? |
+| Pen input | Working | ? |
 | Webcam | working | uvcvideo |
 | Card Reader | Working | rtsx_pci |
-| Wireless Switch | Working |  ? |
-| Function/Multimedia Keys | Working |  ? |
-| Suspend/Resume | Working |  ? |
-| Fingerprint sensor | Untested |  ? |
+| Wireless Switch | Working | ? |
+| Function/Multimedia Keys | Working | ? |
+| Suspend/Resume | Working | ? |
+| Fingerprint sensor | Untested | ? |
 
 This article covers specific configuation of this laptop. Currently based on experience with Gnome, running on Wayland.
 
@@ -99,6 +99,8 @@ Most of the media keys work without configuration in Gnome, but in order to get 
 options snd-hda-intel model=hp-led-gpio
 
 ```
+
+**Note:** This is no longer needed with newer kernels, since at least 4.17.x but probably earlier. Also since 4.18.9 the mute led also functions
 
 ### HiDPI
 

@@ -198,11 +198,11 @@ cifratura implementata nel...
 
 metadati cifrati memorizzati in...
 
- |  ? |  ? |  ? | l'inizio di ogni file cifrato | file di controllo al livello superiore di ogni contenitore EncFS |
+ | ? | ? | ? | l'inizio di ogni file cifrato | file di controllo al livello superiore di ogni contenitore EncFS |
 
 chiave di cifratura memorizzata in...
 
- |  ? |  ? |  ? | la chiave può essere posizionata ovunque | nel file di controllo all'inizio di ogni contenitore EncFS |
+ | ? | ? | ? | la chiave può essere posizionata ovunque | nel file di controllo all'inizio di ogni contenitore EncFS |
 | 
 
 ##### *applicazioni pratiche*
@@ -241,11 +241,11 @@ permette backup dei file cifrati offline
 
 permette il montaggio automatico dei filesystem al login
 
- |  ? |  ? |  ? |  ? | ✔ |
+ | ? | ? | ? | ? | ✔ |
 
 permette lo smontaggio automatico dei filesystem in caso di inattività
 
- |  ? |  ? |  ? |  ? | ✔ |
+ | ? | ? | ? | ? | ✔ |
 
 utenti non-root posso creare/eliminare contenitori per dati cifrati
 
@@ -262,30 +262,30 @@ fornisce una GUI
 
 cifrature supportate
 
- | AES | AES, Twofish, Serpent |  ? | AES, blowfish, twofish... | AES, Twofish |
+ | AES | AES, Twofish, Serpent | ? | AES, blowfish, twofish... | AES, Twofish |
 
 supporto per il salting
 
- |  ? | ✔
-(with LUKS) | ✔ | ✔ |  ? |
+ | ? | ✔
+(with LUKS) | ✔ | ✔ | ? |
 
 supporto per cifrature multiple scalate
 
- |  ? |  ? | ✔ |  ? | ✖ |
+ | ? | ? | ✔ | ? | ✖ |
 
 supporto per la diffusione di key-slot
 
- |  ? | ✔
-(with LUKS) |  ? |  ? |  ? |
+ | ? | ✔
+(with LUKS) | ? | ? | ? |
 
 protezione contro la forzatura delle chiavi
 
- | ✔ |  ? |  ? |  ? |  ? |
+ | ✔ | ? | ? | ? | ? |
 
 supporto per chiavi multiple usate sugli stessi dati
 
- |  ? | ✔
-(with LUKS) |  ? |  ? | ✖ |
+ | ? | ✔
+(with LUKS) | ? | ? | ✖ |
 | 
 
 ##### *caratteristiche di performance*
@@ -294,15 +294,15 @@ supporto per chiavi multiple usate sugli stessi dati
 
 supporto per il multithreading
 
- |  ? | ✖ | ✔ |  ? |  ? |
+ | ? | ✖ | ✔ | ? | ? |
 
 supporto per la cifratura con accelerazione hardware
 
- |  ? |  ? | ✔ | ✔ |  ? |
+ | ? | ? | ✔ | ✔ | ? |
 
 ottimizzato per il trattamento di file sparsi
 
- |  ? |  ? |  ? | ✖ |  ? |
+ | ? | ? | ? | ✖ | ? |
 | 
 
 ##### *specifiche della cifratura dei dispositivi a blocchi*
@@ -311,7 +311,7 @@ ottimizzato per il trattamento di file sparsi
 
 supporto per il ridimensionamento manuale del dispositivo a blocchi cifrato
 
- |  ? | ✔ | ✖ |
+ | ? | ✔ | ✖ |
 | 
 
 ##### *specifiche della cifratura del filesystem stacked*
@@ -320,7 +320,7 @@ supporto per il ridimensionamento manuale del dispositivo a blocchi cifrato
 
 filesystem supportati
 
- | ext3, ext4, xfs (with caveats), jfs, nfs... |  ? |
+ | ext3, ext4, xfs (with caveats), jfs, nfs... | ? |
 
 capacità di cifrare i nomi dei file
 
@@ -337,24 +337,24 @@ capacità di *non* cifrare i nomi dei file
 
 versioni del kernel Linux supportate
 
- | 2.0 or newer |  ? |  ? |  ? | 2.4 or newer |
- i dati cifrati possono essere letti da... | Windows | ✔ (with ) | ✔ (with ) | ✔ |  ? |  ? |
- Mac OS X |  ? |  ? | ✔ |  ? |     ✔ |
- FreeBSD |  ? |  ? | ✖ |  ? |     ✔ |
+ | 2.0 or newer | ? | ? | ? | 2.4 or newer |
+ i dati cifrati possono essere letti da... | Windows | ✔ (with ) | ✔ (with ) | ✔ | ? | ? |
+ Mac OS X | ? | ? | ✔ | ? |     ✔ |
+ FreeBSD | ? | ? | ✖ | ? |     ✔ |
 
 usato da
 
- |  ? | 
+ | ? | 
 
 *   *Arch Linux installer* (system encryption)
 *   *Ubuntu alternate installer* (system encryption)
 
- |  ? | 
+ | ? | 
 
 *   *Ubuntu installer* (home dir encryption)
 *   *Chromium OS* (encryption of cached user data)
 
- |  ? |
+ | ? |
 
 ## Preparazione
 

@@ -1,3 +1,5 @@
+**Estado de la traducción:** este artículo es una versión traducida de [GRUB](/index.php/GRUB "GRUB"). Fecha de la última traducción/revisión: **2018-08-21**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=GRUB&diff=0&oldid=534863).
+
 Artículos relacionados
 
 *   [Arch boot process (Español)](/index.php/Arch_boot_process_(Espa%C3%B1ol) "Arch boot process (Español)")
@@ -9,8 +11,6 @@ Artículos relacionados
 *   [GRUB/EFI examples](/index.php/GRUB/EFI_examples "GRUB/EFI examples")
 *   [GRUB/Tips and tricks (Español)](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol) "GRUB/Tips and tricks (Español)")
 *   [Multiboot USB drive](/index.php/Multiboot_USB_drive "Multiboot USB drive")
-
-**Estado de la traducción:** este artículo es una versión traducida de [GRUB](/index.php/GRUB "GRUB"). Fecha de la última traducción/revisión: **2018-08-21**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=GRUB&diff=0&oldid=534863).
 
 [GRUB](https://www.gnu.org/software/grub/) (GRand Unified Bootloader) es un [gestor multiarranque](/index.php/Category:Boot_loaders_(Espa%C3%B1ol) "Category:Boot loaders (Español)"). Procede de [PUPA](http://www.nongnu.org/pupa/), el cual fue un proyecto de investigación desarrollado para reemplazar lo que hoy se conoce como [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy"). Este último resultó demasiado difícil de mantener y GRUB se reescribió desde cero con el objetivo de proporcionarle modularidad y portabilidad [[1]](https://www.gnu.org/software/grub/grub-faq.html#q1). Al GRUB actual también se le conoce como GRUB 2, mientras que GRUB Legacy corresponde a las versiones 0.9x.
 
@@ -71,7 +71,7 @@ Artículos relacionados
     *   [6.14 El sistema de archivos BTRFS antiguo presiste en la instalación](#El_sistema_de_archivos_BTRFS_antiguo_presiste_en_la_instalaci.C3.B3n)
     *   [6.15 Windows 8/10 no es encontrado](#Windows_8.2F10_no_es_encontrado)
     *   [6.16 Modalidad EFI en VirtualBox](#Modalidad_EFI_en_VirtualBox)
-*   [7 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [7 Consulte también](#Consulte_tambi.C3.A9n)
 
 ## Sistemas BIOS
 
@@ -190,7 +190,7 @@ UTilice la herramienta *grub-mkconfig* para generar `grub.cfg`:
 
 ```
 
-Por defecto, los scripts de generación añaden automáticamente las entradas de menú para Arch Linux a cualquier configuración generada. Véase [Multiboot USB drive#Boot entries](/index.php/Multiboot_USB_drive#Boot_entries "Multiboot USB drive") y [#Dual-booting](#Dual-booting) para entradas de menú personalizadas para otros sistemas.
+Por defecto, los scripts de generación añaden automáticamente las entradas de menú para Arch Linux a cualquier configuración generada. Consulte [Multiboot USB drive#Boot entries](/index.php/Multiboot_USB_drive#Boot_entries "Multiboot USB drive") y [#Arranque dual](#Arranque_dual) para entradas de menú personalizadas para otros sistemas.
 
 **Sugerencia:** Para que *grub-mkconfig* busque otros sistemas instalados y los añada automáticamente al menú, [instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [os-prober](https://www.archlinux.org/packages/?name=os-prober) y [monte](/index.php/Mount "Mount") las particiones que contienen otros sistemas.
 
@@ -201,7 +201,7 @@ Por defecto, los scripts de generación añaden automáticamente las entradas de
 
 ## Configuración
 
-Esta sección cubre solo la edición del archivo de configuración `/etc/default/grub`. Véase [GRUB/Tips and tricks (Español)](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol) "GRUB/Tips and tricks (Español)") si necesita más opciones.
+Esta sección cubre solo la edición del archivo de configuración `/etc/default/grub`. Consulte [GRUB/Tips and tricks (Español)](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol) "GRUB/Tips and tricks (Español)") si necesita más opciones.
 
 Recuerde siempre [#Generar el archivo de configuración principal](#Generar_el_archivo_de_configuraci.C3.B3n_principal) después de realizar cambios en `/etc/default/grub`.
 
@@ -217,7 +217,7 @@ Para generar la entrada de recuperación en GRUB hay que comentar `#GRUB_DISABLE
 
 También se puede usar `GRUB_CMDLINE_LINUX="resume=UUID=*uuid-of-swap-partition*"`
 
-Véase [Kernel parameters (Español)](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") para obtener más información.
+Consulte [Kernel parameters (Español)](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") para obtener más información.
 
 ### LVM
 
@@ -565,11 +565,11 @@ boot
 
 #### Cargar en modo normal
 
-Véase el ejemplo en [#Utilizar la consola de rescate](#Utilizar_la_consola_de_rescate)
+Consulte el ejemplo en [#Utilizar la consola de rescate](#Utilizar_la_consola_de_rescate)
 
 ### Utilizar la consola de rescate
 
-Véase primero [#Utilizar la consola de rescate](#Utilizar_la_consola_de_rescate) más arriba. Si no es capaz de iniciar la shell estándar, una posible solución es arrancar un liv eCD o alguna otra distribución a modo de recuperación para corregir los errores de configuración y reinstalar GRUB. Sin embargo, un disco de recuperación no siempre es posible (ni necesario), y la consola de emergencia es sorprendentemente robusta.
+Consulte primero [#Utilizar la consola de rescate](#Utilizar_la_consola_de_rescate) más arriba. Si no es capaz de iniciar la shell estándar, una posible solución es arrancar un liv eCD o alguna otra distribución a modo de recuperación para corregir los errores de configuración y reinstalar GRUB. Sin embargo, un disco de recuperación no siempre es posible (ni necesario), y la consola de emergencia es sorprendentemente robusta.
 
 Las órdenes disponibles en esta modalidad incluyen `insmod`, `ls`, `set` y `unset`. Este ejemplo utiliza `set` y `insmod`. `set` cambia el valor de las variables, mientras que `insmod` añade nuevos módulos para ampliar la funcionalidad básica.
 
@@ -741,7 +741,7 @@ grub-setup: error: If you really want blocklists, use --force.
 
 ```
 
-Este problema se produce cuando se intenta instalar GRUB en VMWare. Más información [aquí](https://bbs.archlinux.org/viewtopic.php?pid=581760#p581760). También puede ocurrir cuando la partición comienza justo después del MBR (bloque 63), sin dejar un espacio de alrededor de 1 MB (2048 bloques) antes de la primera partición. Véase [#Instrucciones específicas para Master Boot Record (MBR)](#Instrucciones_espec.C3.ADficas_para_Master_Boot_Record_.28MBR.29).
+Este problema se produce cuando se intenta instalar GRUB en VMWare. Más información [aquí](https://bbs.archlinux.org/viewtopic.php?pid=581760#p581760). También puede ocurrir cuando la partición comienza justo después del MBR (bloque 63), sin dejar un espacio de alrededor de 1 MB (2048 bloques) antes de la primera partición. Consulte [#Instrucciones específicas para Master Boot Record (MBR)](#Instrucciones_espec.C3.ADficas_para_Master_Boot_Record_.28MBR.29).
 
 ### UEFI
 
@@ -865,11 +865,11 @@ Una configuración en Windows 8/10 llamada «Hiberboot», «Hybrid Boot» or «F
 
 ### Modalidad EFI en VirtualBox
 
-Instale GRUB en la [#Ruta de arranque default/fallback ruta de arranque default/fallback](#Ruta_de_arranque_default.2Ffallback_ruta_de_arranque_default.2Ffallback).
+Instale GRUB en la [ruta de arranque default/fallback](#Ruta_de_arranque_default.2Ffallback).
 
 Consulte también [VirtualBox#Installation in EFI mode](/index.php/VirtualBox#Installation_in_EFI_mode "VirtualBox").
 
-## Véase también
+## Consulte también
 
 *   [Wikipedia:GNU GRUB](https://en.wikipedia.org/wiki/GNU_GRUB "wikipedia:GNU GRUB")
 *   [Manual oficial de GRUB](https://www.gnu.org/software/grub/manual/grub.html)

@@ -8,7 +8,7 @@ Artículos relacionados
 
 Esta página pretende mostrar una comparación entre Arch Linux y otras distribuciones de GNU/Linux y sistemas operativos basados en UNIX. Los resúmenes que siguen son breves descripciones que pueden ayudar a un usario a decidir si Arch Linux se adapta a sus necesidades. Aunque las revisiones y descripciones pueden ser útiles, la propia experiencia es siempre la mejor manera de comparar las distribuciones.
 
-Para una comparación más completa, consulte esta [comparación de sistemas operativos](https://en.wikipedia.org/wiki/Comparison_of_operating_systems "w:Comparison of operating systems") y esta [comparación de distribuciones Linux](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions "w:Comparison of Linux distributions").
+Para una comparación más completa, véase esta [comparación de sistemas operativos](https://en.wikipedia.org/wiki/Comparison_of_operating_systems "w:Comparison of operating systems") y esta [comparación de distribuciones Linux](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions "w:Comparison of Linux distributions").
 
 En adelante, solo se compara Arch Linux con otras distribuciones. Las adaptaciones de la comunidad que admiten arquitecturas que no sean x86_64 se pueden encontrar listados entre las [distribuciones basadas en Arch](/index.php/Arch-based_distributions_(Espa%C3%B1ol) "Arch-based distributions (Español)").
 
@@ -154,7 +154,7 @@ Mandriva Linux (anteriormente conocida como Mandrake Linux) se creó en 1998 con
 
 *   La licencia BSD es generalmente más protectora del *programador*, en contraste con la GPL, que favorece la protección del *código* en sí mismo. Arch está publicada bajo la licencia GPL.
 
-*   Para obtener más información sobre las variantes de los *BSD, consulte esta [comparación de los sistemas operativos BSD](https://en.wikipedia.org/wiki/Comparison_of_BSD_operating_systems "wikipedia:Comparison of BSD operating systems").
+*   Para obtener más información sobre las variantes de los *BSD, véase esta [comparación de los sistemas operativos BSD](https://en.wikipedia.org/wiki/Comparison_of_BSD_operating_systems "wikipedia:Comparison of BSD operating systems").
 
 ## Véase también
 

@@ -44,7 +44,7 @@ Different environments exist to play games in Linux:
 *   Web – games running in a web browser
     *   HTML5 games use canvas and WebGL technologies and work in all modern browsers
     *   [Flash](/index.php/Flash "Flash")-based – you need to install the plugin to play.
-*   Specialized environments (software emulators) – Required for running software designed for other architectures or systems. Check the [list of emulators](/index.php/List_of_applications/Other#Emulators "List of applications/Other") for more details.
+*   Specialized environments (software emulators) – Required for running software designed for other architectures or systems. Check the [list of emulators](#Emulators) for more details.
     *   [Wine](/index.php/Wine "Wine") – allows running of some Windows games, as well as a large amount of Windows software. Performance in Wine varies, the additional CPU overhead will cause slowdown in some games while in some cases games may run faster. Consult [Wine AppDB](http://appdb.winehq.org/) for game-specific compatibility information.
     *   [Crossover Games](http://www.codeweavers.com/) – members of the Codeweavers team are prime supporters of Wine. Using Crossover Games makes the installation & setting up of some games easier, more reliable & even possible, when compared to using other methods. Crossover is a paid commercial product, which also provides a [forum](http://www.codeweavers.com/support/forums/) where the developers are very much involved in the community.
     *   [DOSBox](/index.php/DOSBox "DOSBox") is a minimal virtual machine which runs a full DOS-compatible environment. It can be used to run classic DOS titles.

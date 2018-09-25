@@ -15,19 +15,19 @@ No momento, há relativamente poucos pacotes [Lisp](https://en.wikipedia.org/wik
 
 ## Nomenclatura e estrutura de diretórios
 
-There is at least one package in the base repository ([libgpg-error](https://www.archlinux.org/packages/?name=libgpg-error)) that includes lisp files, which are placed in `/usr/share/common-lisp/source/gpg-error`. In keeping with this, other lisp packages should also place their files in `/usr/share/common-lisp/source/*pkgname*`.
+Há pelo menos um pacote no repositório base ([libgpg-error](https://www.archlinux.org/packages/?name=libgpg-error)) que inclui arquivos lisp, que são colocados em `/usr/share/common-lisp/source/gpg-error`. De acordo com isso, outros pacotes lisp também devem colocar seus arquivos em `/usr/share/common-lisp/source/*pkgname*`.
 
-The package directory should be the name of the lisp package, not what it's called in the [Arch repository](/index.php/Official_repositories "Official repositories") (or [AUR](/index.php/AUR "AUR")). This applies even to single-file packages.
+O diretório do pacote deve ser o nome do pacote lisp, não o que é chamado nos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") do Arch (ou no [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)")). Isso se aplica até mesmo a pacotes de arquivo único.
 
-For example, a Lisp package called *"cl-ppcre"* should be called `cl-ppcre` in AUR and reside in `/usr/share/common-lisp/source/**cl-ppcre**`. A Lisp package called *"alexandria"* should be called `cl-alexandria` in AUR and reside in `/usr/share/common-lisp/source/**alexandria**`.
+Por exemplo, um pacote Lisp chamado *"cl-ppcre"* deve ser chamado `cl-ppcre` no AUR e residir em `/usr/share/common-lisp/source/**cl-ppcre**`. Um pacote Lisp chamado *"alexandria"* deve ser chamado `cl-alexandria` no AUR e residir em `/usr/share/common-lisp/source/**alexandria**`.
 
 ## ASDF
 
-Try to avoid the usage of ASDF-Install as a means of installing these system-wide packages.
+Tente evitar o uso do ASDF-Install como um meio de instalar esses pacotes em todo o sistema.
 
-ASDF itself may be necessary or helpful as a means of compiling and/or loading packages. In that case, it is suggested that the directory used for the central registry (the location of all of the symlinks to `*.asd`) be `/usr/share/common-lisp/systems/`.
+O próprio ASDF pode ser necessário ou útil como meio de compilar e/ou carregar pacotes. Nesse caso, sugere-se que o diretório usado para o registro central (a localização de todos os links simbólicos para `*.asd`) seja `/usr/share/common-lisp/systems/`.
 
-However, I have observed problems with doing the compilation with asdf as a part of the package compilation process. However, it does work during an install, through use of a `*package*.install` file. Such a file might look like this:
+No entanto, tenho observado problemas em fazer a compilação com asdf como parte do processo de compilação de pacotes. No entanto, ele funciona durante uma instalação, através do uso de um arquivo `*pacote*.install`. Esse arquivo pode ser assim:
 
  `cl-ppcre.install` 
 ```
@@ -67,7 +67,7 @@ $op $*
 
 ```
 
-Of course, for this example to work, there needs to be a symlink to package.asd in the asdf system directory. During package compilation, a stanza such as this will do the trick...
+Obviamente, para este exemplo funcionar, é necessário que haja um link simbólico para *pacote*.asd no diretório do sistema asdf. Durante a compilação do pacote, um bloco como essa fará o truque...
 
 ```
 pushd ${_lispdir}/systems
@@ -77,30 +77,26 @@ popd
 
 ```
 
-...where `$_lispdir` is `$pkgdir/usr/share/common-lisp`. By linking to a relative, rather than an absolute, path, it's possible to guarantee that the link will not break post-install.
+...sendo que `$_lispdir` é `$pkgdir/usr/share/common-lisp`. Ao vincular a um caminho relativo, em vez de absoluto, é possível garantir que o link não interromperá a pós-instalação.
 
 ## Empacotamento específico do Lisp
 
-When possible, do not make packages specific to a single lisp implementation; try to be as cross-platform as the package itself will allow. If, however, the package is specifically designed for a single lisp implementation (i.e., the developers haven't gotten around to adding support for others yet, or the package's purpose is specifically to provide a capability that is built in to another lisp implementation), it is appropriate to make your Arch package lisp-specific.
+Quando possível, não crie pacotes específicos para uma única implementação de lisp; tente ser tão multiplataforma quanto o próprio pacote permitir. Se, no entanto, o pacote for projetado especificamente para uma implementação única de lisp (ou seja, os desenvolvedores ainda não conseguiram adicionar suporte para outros, ou o propósito do pacote é especificamente fornecer um recurso integrado a outra implementação de lisp), é apropriado tornar o seu pacote Arch específico de lisp.
 
-To avoid making packages implementation-specific, ideally all implementation packages (SBCL, cmucl, clisp) would be built with the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") field **common-lisp**. However, that's not the case (and that would likely cause problems for people who prefer to have multiple lisps at their fingertips). In the meantime, you could (a) not make your package depend on *any* lisp and include a statement in the package.install file telling folks to make sure they have a lisp installed (not ideal), or (b) Take direction from the *sbcl* PKGBUILD and include a conditional statement to figure out which lisp is needed (which is hackish and, again, far from ideal). Other ideas are welcome.
+Para evitar tornar os pacotes específicos da implementação, idealmente todos os pacotes de implementação (SBCL, cmucl, clisp) seriam construídos com o campo [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") **common-lisp**. No entanto, esse não é o caso (e isso provavelmente causaria problemas para pessoas que preferem ter vários lisps na ponta dos dedos). Enquanto isso, você poderia (a) não fazer com que seu pacote dependa de *qualquer* lisp e incluir uma declaração no arquivo *package*.install informando às pessoas para ter certeza de que possuem um lisp instalado (não ideal) ou (b) se baseie no PKGBUILD do *sbcl* e inclua uma declaração condicional para descobrir qual lisp é necessário (que envolve muito hacking e, novamente, longe do ideal). Outras ideias são bem-vindas.
 
-Also note that if ASDF is needed to install/compile/load the package, things could potentially get awkward as far as dependencies go, since SBCL comes with asdf installed, clisp does not but there is an AUR package, and CMUCL may or may not have it (the author of this doc. knows next to nothing about CMUCL; sorry).
+Observe também que se o ASDF for necessário para instalar/compilar/carregar o pacote, as coisas podem ficar estranhas no que diz respeito às dependências, já que o SBCL vem com asdf instalado, enquanto o clisp não, mas há um pacote AUR e a CMUCL pode ou não tê-lo.
 
-People currently maintaining lisp-specific packages that do not need to be lisp-specific should consider doing at least one of the following:
+As pessoas que atualmente mantêm pacotes específicos de lisp que não precisam ser específicos de lisp devem considerar fazer pelo menos um dos seguintes procedimentos:
 
-*   Editing their PKGBUILDs to be cross-platform, provided someone else is not already maintaining the same package for a different lisp.
-
-*   Offering to take over maintenance or help with maintenance of the same package for a different lisp, and then combining them into a single package.
-
-*   Offering up their package to the maintainer of a different lisp's version of the same package, so as to allow that person to combine them into a single package.
-
-(Note that joyfulgirl, the author of this doc., currently maintains clisp versions of cl-ppcre and of stumpwm; she is open to either giving up the packages to the maintainers of the SBCL versions or to maintain the new, cross-platform versions herself if the SBCL-version maintainers do not want to).
+*   Editar seus PKGBUILDs para serem multiplataformas, desde que outra pessoa não esteja mantendo o mesmo pacote para um lisp diferente.
+*   Se oferecer para assumir a manutenção ou ajudar na manutenção do mesmo pacote para um lisp diferente e, em seguida, combiná-los em um único pacote.
+*   Oferecer seu pacote ao mantenedor de uma versão diferente do mesmo pacote, para permitir que essa pessoa os combine em um único pacote.
 
 ## Coisas que você, o leitor, pode fazer
 
-*   Maintain lisp packages following these guidelines
-*   Update and fix problems with these guidelines
-*   Keep up with what's changed here
-*   Provide (polite) thoughts, feedback, and suggestions both on this document and to people's work.
-*   Translate this page and future updates to this page.
+*   Manter pacotes lisp seguindo essas diretrizes
+*   Atualizar e corrigir problemas com essas diretrizes
+*   Se manter atualizado com o que foi alterado aqui
+*   Fornecer ideias, feedback e sugestões (educados) tanto para esse documento quanto para o trabalho das pessoas.
+*   Traduzir essa página e atualizações futuras a esta página.

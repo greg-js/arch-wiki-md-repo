@@ -163,7 +163,7 @@ Firefox keeps bookmarks, history, passwords in SQLite databases. SQLite database
 You can use [profile-cleaner](https://aur.archlinux.org/packages/profile-cleaner/) to do this, while Firefox is **not** running:
 
 <caption>profile-cleaner usage example:</caption>
-| SQLite database | Size Before | Size After |  % change |
+| SQLite database | Size Before | Size After | % change |
 | urlclassifier3.sqlite | 37 M | 30 M | 19 % |
 | places.sqlite | 16 M | 2.4 M | 85 % |
 

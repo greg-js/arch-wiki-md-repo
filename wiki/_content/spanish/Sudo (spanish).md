@@ -41,7 +41,7 @@ Sudo también se puede usar para ejecutar comandos como otros usuarios; además,
 
 ## Utilización
 
-Para comenzar a usar `sudo` como un usuario sin privilegios, debe estar configurado correctamente. Consulte la sección de [configuración](#Configuraci.C3.B3n).
+Para comenzar a usar `sudo` como un usuario sin privilegios, debe estar configurado correctamente. Véase la sección [configuración](#Configuraci.C3.B3n).
 
 Para usar *sudo*, simplemente anteponga `sudo` y un espacio al comando y sus argumentos:
 
@@ -57,11 +57,11 @@ $ sudo pacman -Syu
 
 ```
 
-Consulte [sudo(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sudo.8) para más información.
+Véase [sudo(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sudo.8) para más información.
 
 ## Configuración
 
-Consulte [sudoers(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sudoers.5) para más información, como configurar el tiempo de espera de la contraseña.
+Véase [sudoers(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sudoers.5) para más información, como configurar el tiempo de espera de la contraseña.
 
 ### Ver la configuración actual
 
@@ -84,7 +84,7 @@ Para establecer nano como el editor de **visudo** durante la sesión actual de s
 
 Alternativamente, puede editar una copia del archivo `/etc/sudoers` y verificarlo utilizando `visudo -c -f */copy/of/sudoers*`. Esto podría ser útil en caso de que quiera eludir el bloqueo del archivo con visudo.
 
-Para cambiar el editor permanentemente, consulte la sección sobre [variables de entorno por usuario](/index.php/Environment_variables_(Espa%C3%B1ol)#Por_usuario "Environment variables (Español)"). Para cambiar el editor elegido solo para `visudo` de forma permanente en todo el sistema, añada lo siguiente a `/etc/sudoers` (suponiendo que `nano` es su editor preferido):
+Para cambiar el editor permanentemente, véase la sección [variables de entorno por usuario](/index.php/Environment_variables_(Espa%C3%B1ol)#Por_usuario "Environment variables (Español)"). Para cambiar el editor elegido solo para `visudo` de forma permanente en todo el sistema, añada lo siguiente a `/etc/sudoers` (suponiendo que `nano` es su editor preferido):
 
 ```
 # Restablece el entorno predeterminado
@@ -142,7 +142,7 @@ NOMBRE_DE_USUARIO NOMBRE_DEL_EQUIPO= NOPASSWD: /usr/bin/halt,/usr/bin/poweroff,/
 
 ```
 
-Un ejemplo detallado de `sudoers` está disponible en `/usr/share/doc/sudo/examples/sudoers`. Por otro lado, consulte [sudoers(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sudoers.5) para obtener información detallada.
+Un ejemplo detallado de `sudoers` está disponible en `/usr/share/doc/sudo/examples/sudoers`. Por otro lado, véase [sudoers(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sudoers.5) para obtener información detallada.
 
 ### Permisos de archivo predeterminados de sudoers
 
@@ -212,13 +212,13 @@ Defaults:%wheel targetpw
 
 ### Desactivar el acceso de superusuario
 
-Los usuarios pueden querer deshabilitar el inicio de sesión del superusuario. Sin este, los atacantes deben primero adivinar un nombre de usuario configurado como sudoer, así como su contraseña. Consulte por ejemplo [Denegar](/index.php/Secure_Shell_(Espa%C3%B1ol)#Denegar "Secure Shell (Español)").
+Los usuarios pueden querer deshabilitar el inicio de sesión del superusuario. Sin este, los atacantes deben primero adivinar un nombre de usuario configurado como sudoer, así como su contraseña. Véase por ejemplo [Denegar](/index.php/Secure_Shell_(Espa%C3%B1ol)#Denegar "Secure Shell (Español)").
 
 **Advertencia:**
 
 *   Tenga cuidado, puede bloquearse al deshabilitar el inicio de sesión del superusuario. Sudo no se instala automáticamente y su configuración predeterminada no permite el acceso al superusuario sin contraseña ni con su propia contraseña. Asegúrese de que el usuario esté configurado correctamente como un sudoer *antes* de deshabilitar la cuenta de superusuario.
 *   Si ha cambiado su archivo sudoers para usar rootpw como predeterminado, entonces no desactive el inicio de sesión del superusuario con ninguno de los siguientes comandos.
-*   Si ya está bloqueado, consulte como [reiniciar la contraseña del superusuario](/index.php/Reset_root_password "Reset root password") para obtener ayuda.
+*   Si ya está bloqueado, véase como [reiniciar la contraseña del superusuario](/index.php/Reset_root_password "Reset root password") para obtener ayuda.
 
 La cuenta puede ser bloqueada mediante `passwd`:
 
@@ -379,9 +379,9 @@ admin% screen
 *sudo* analiza los archivos contenidos en el directorio `/etc/sudoers.d/`. Esto significa que en lugar de editar `/etc/sudoers`, puede cambiar la configuración mediante archivos independientes y soltarlos en ese directorio. Esto tiene dos ventajas:
 
 *   No hay necesidad de editar un archivo `sudoers.pacnew`;
-*   Si hay un problema con una nueva entrada, puede eliminar el archivo afectado en lugar de editar `/etc/sudoers` (pero consulte la advertencia a continuación).
+*   Si hay un problema con una nueva entrada, puede eliminar el archivo afectado en lugar de editar `/etc/sudoers` (pero véase la advertencia a continuación).
 
-El formato para las entradas en estos archivos complementarios es el mismo que para `/etc/sudoers`. Para editarlos directamente, utilice `visudo -f /etc/sudoers.d/*nombre_archivo*`. Consulte la sección "Incluir otros archivos desde sudoers" de [sudoers(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sudoers.5) para obtener más información.
+El formato para las entradas en estos archivos complementarios es el mismo que para `/etc/sudoers`. Para editarlos directamente, utilice `visudo -f /etc/sudoers.d/*nombre_archivo*`. Véase la sección "Incluir otros archivos desde sudoers" de [sudoers(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sudoers.5) para obtener más información.
 
 Los archivos en el directorio `/etc/sudoers.d/` se analizan en orden lexicográfico, los nombres de archivo que contienen `.` o `~` se omiten. Para evitar problemas de clasificación, los nombres de los archivos deben comenzar con dos dígitos, por ejemplo `01_foo`.
 
@@ -393,7 +393,7 @@ Los archivos en el directorio `/etc/sudoers.d/` se analizan en orden lexicográf
 
 `sudo -e` o `sudoedit` le permite editar un archivo como otro usuario mientras ejecuta el editor de texto como su usuario.
 
-Esto es especialmente útil para editar archivos como superusuario sin elevar el privilegio de su editor de texto. Consulte [sudo(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sudo.8#e) para más detalles.
+Esto es especialmente útil para editar archivos como superusuario sin elevar el privilegio de su editor de texto. Véase [sudo(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sudo.8#e) para más detalles.
 
 Tenga en cuenta que puede configurar el editor para cualquier programa, por lo que, por ejemplo, uno puede usar [meld](https://www.archlinux.org/packages/?name=meld) para administrar archivos [pacnew](/index.php/Pacman/Pacnew_and_Pacsave_(Espa%C3%B1ol) "Pacman/Pacnew and Pacsave (Español)"):
 
@@ -433,4 +433,4 @@ Esto establece el umask de sudo en umask predeterminado del superusuario (0022) 
 
 La página de los autores tiene una [lista de todas las opciones](http://www.sudo.ws/sudo/sudoers.man.html#x5355444f455253204f5054494f4e53) que se puede usar con el comando `Defaults` en el archivo `/etc/sudoers`.
 
-Consulte [[1]](https://gist.github.com/AladW/7eca9799b9ea624eca31) para obtener una lista de opciones (analizadas desde el código fuente de la versión 1.8.7) en un formato optimizado para `sudoers`.
+Véase [[1]](https://gist.github.com/AladW/7eca9799b9ea624eca31) para obtener una lista de opciones (analizadas desde el código fuente de la versión 1.8.7) en un formato optimizado para `sudoers`.

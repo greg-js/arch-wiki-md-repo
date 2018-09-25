@@ -34,7 +34,7 @@ Antes de instalar um ambiente de desktop, é necessária uma instalação funcio
 
 	[https://budgie-desktop.org/](https://budgie-desktop.org/) || [budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop)
 
-*   **[Cinnamon](/index.php/Cinnamon "Cinnamon")** — O Cinnamon se esforça para fornecer uma experiência de usuário tradicional. Cinnamon é um fork do GNOME 3\.
+*   **[Cinnamon](/index.php/Cinnamon "Cinnamon")** — O Cinnamon se esforça para fornecer uma experiência de usuário tradicional. Cinnamon é um fork do GNOME 3.
 
 	[http://developer.linuxmint.com/projects/cinnamon-projects.html](http://developer.linuxmint.com/projects/cinnamon-projects.html) || [cinnamon](https://www.archlinux.org/packages/?name=cinnamon)
 
@@ -50,7 +50,7 @@ Antes de instalar um ambiente de desktop, é necessária uma instalação funcio
 
 	[https://www.gnome.org/gnome-3/](https://www.gnome.org/gnome-3/) || [gnome](https://www.archlinux.org/groups/x86_64/gnome/)
 
-*   **[GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")** — GNOME Flashback é um shell para o GNOME 3 que foi inicialmente chamado de modo flashback do GNOME. O layout de desktop e a tecnologia subjacente é similar a do GNOME 2\.
+*   **[GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")** — GNOME Flashback é um shell para o GNOME 3 que foi inicialmente chamado de modo flashback do GNOME. O layout de desktop e a tecnologia subjacente é similar a do GNOME 2.
 
 	[https://wiki.gnome.org/Projects/GnomeFlashback](https://wiki.gnome.org/Projects/GnomeFlashback) || [gnome-flashback](https://www.archlinux.org/packages/?name=gnome-flashback)
 
@@ -66,7 +66,7 @@ Antes de instalar um ambiente de desktop, é necessária uma instalação funcio
 
 	[http://lxqt.org/](http://lxqt.org/) || [lxqt](https://www.archlinux.org/groups/x86_64/lxqt/)
 
-*   **[MATE](/index.php/MATE "MATE")** — O Mate fornece um ambiente de desktop intuitivo e atraente para usuários de Linux que usam metáforas tradicionais. O MATE começou como um fork do GNOME 2, mas agora usa o GTK+ 3\.
+*   **[MATE](/index.php/MATE "MATE")** — O Mate fornece um ambiente de desktop intuitivo e atraente para usuários de Linux que usam metáforas tradicionais. O MATE começou como um fork do GNOME 2, mas agora usa o GTK+ 3.
 
 	[https://mate-desktop.org/](https://mate-desktop.org/) || [mate](https://www.archlinux.org/groups/x86_64/mate/)
 
@@ -104,7 +104,7 @@ Antes de instalar um ambiente de desktop, é necessária uma instalação funcio
 
 	[https://vicr123.com/theshell](https://vicr123.com/theshell) || [theshell](https://aur.archlinux.org/packages/theshell/)
 
-*   **[Trinity](/index.php/Trinity "Trinity")** — O projeto Trinity Desktop Environment (TDE) é um ambiente de desktop do computador para sistemas operacionais tipo Unix com o objetivo principal de manter o estilo de computação geral do KDE 3.5\.
+*   **[Trinity](/index.php/Trinity "Trinity")** — O projeto Trinity Desktop Environment (TDE) é um ambiente de desktop do computador para sistemas operacionais tipo Unix com o objetivo principal de manter o estilo de computação geral do KDE 3.5.
 
 	[http://www.trinitydesktop.org/](http://www.trinitydesktop.org/) || Veja [Trinity](/index.php/Trinity "Trinity")
 

@@ -208,11 +208,11 @@ cifrado implementado en...
 
 metadatos criptográficos almacedados en...
 
- |  ? | con LUKS: en la cabecera de LUKS | al principio/final del dispositivo (descifrado)([format](http://www.truecrypt.org/docs/volume-format-specification)) | en la cabecera de cada archivo cifrado | en el archivo de control al principio de cada contenedor EncFs |
+ | ? | con LUKS: en la cabecera de LUKS | al principio/final del dispositivo (descifrado)([format](http://www.truecrypt.org/docs/volume-format-specification)) | en la cabecera de cada archivo cifrado | en el archivo de control al principio de cada contenedor EncFs |
 
 clave de cifrado almacenada en...
 
- |  ? | con LUKS: en la cabecera de LUKS | el archivo de claves se puede almacenar en cualquier lugar | en el archivo de control al principio de cada contenedor EncFs |
+ | ? | con LUKS: en la cabecera de LUKS | el archivo de claves se puede almacenar en cualquier lugar | en el archivo de control al principio de cada contenedor EncFs |
 | 
 
 ##### *implicaciones prácticas*
@@ -251,11 +251,11 @@ permite copias de seguridad basadas en archivos offline de los archivos cifrados
 
 soporte para montaje automático al iniciar sesión
 
- |  ? | ✔ |  ? | ✔ | ✔ |
+ | ? | ✔ | ? | ✔ | ✔ |
 
 soporte para desmontaje automático en caso de inactividad
 
- |  ? |  ? |  ? |  ? | ✔ |
+ | ? | ? | ? | ? | ✔ |
 
 los usuarios normales pueden crear/eliminar los contenedores para datos cifrados
 
@@ -276,27 +276,27 @@ algoritmos de cifrado soportados
 
 soporte para salting
 
- |  ? | ✔
-(con LUKS) | ✔ | ✔ |  ? |
+ | ? | ✔
+(con LUKS) | ✔ | ✔ | ? |
 
 soporte para múltiples sistemas de cifrado en cascada
 
- |  ? | No en un solo dispositivo, pero permite conectarse a dispositivos de bloques en cascada | ✔ |  ? | ✖ |
+ | ? | No en un solo dispositivo, pero permite conectarse a dispositivos de bloques en cascada | ✔ | ? | ✖ |
 
 soporte para la difusión del key-slot
 
- |  ? | ✔
-(con LUKS) |  ? |  ? |  ? |
+ | ? | ✔
+(con LUKS) | ? | ? | ? |
 
 protección contra el forzado de clave
 
  | ✔ | ✔
-(sin LUKS) |  ? |  ? |  ? |
+(sin LUKS) | ? | ? | ? |
 
 soporte para múltiples claves (revocables independientemente) para los mismos datos cifrados
 
- |  ? | ✔
-(con LUKS) |  ? |  ? | ✖ |
+ | ? | ✔
+(con LUKS) | ? | ? | ✖ |
 | 
 
 ##### *características de rendimiento*
@@ -305,7 +305,7 @@ soporte para múltiples claves (revocables independientemente) para los mismos d
 
 soporte [multithreading](https://en.wikipedia.org/wiki/es:Multihilo "wikipedia:es:Multihilo")
 
- |  ? | ✔ | ✔ |  ? |  ? |
+ | ? | ✔ | ✔ | ? | ? |
 
 soporte para cifrado de hardware acelerado
 
@@ -318,7 +318,7 @@ soporte para cifrado de hardware acelerado
 
 soporte para redimensionar (manualmente) el dispositivo de bloque cifrado
 
- |  ? | ✔ | ✖ |
+ | ? | ✔ | ✖ |
 | 
 
 ##### *específico del cifrado de sistemas de archivos apilados*
@@ -327,7 +327,7 @@ soporte para redimensionar (manualmente) el dispositivo de bloque cifrado
 
 sistemas de archivos soportados
 
- | ext3, ext4, xfs (con salvedades), jfs, nfs... |  ? |
+ | ext3, ext4, xfs (con salvedades), jfs, nfs... | ? |
 
 capacidad para cifrar los nombres de los archivos
 
@@ -348,24 +348,24 @@ optimizado para el manejo de archivos dispersos
 
 versiones del kernel de Linux que lo soportan
 
- | 2.0 o posterior | modalidad CBC a partir de 2.6.4, ESSIV 2.6.10, LRW 2.6.20, XTS 2.6.24 |  ? |  ? | 2.4 o posterior |
- los datos cifrados también pueden ser leídos desde... | Windows | ✔ (con ) | ✔ (con ) | ✔ |  ? |     ? |
- Mac OS X |  ? |  ? | ✔ |  ? |     ✔ |
- FreeBSD |  ? |  ? | ✖ |  ? |     ✔ |
+ | 2.0 o posterior | modalidad CBC a partir de 2.6.4, ESSIV 2.6.10, LRW 2.6.20, XTS 2.6.24 | ? | ? | 2.4 o posterior |
+ los datos cifrados también pueden ser leídos desde... | Windows | ✔ (con ) | ✔ (con ) | ✔ | ? |     ? |
+ Mac OS X | ? | ? | ✔ | ? |     ✔ |
+ FreeBSD | ? | ? | ✖ | ? |     ✔ |
 
 utilizado por...
 
- |  ? | 
+ | ? | 
 
 *   Instalador de Debian/Ubuntu (cifrado del sistema)
 *   Instalador de Fedora
 
- |  ? | 
+ | ? | 
 
 *   Instalador de Ubuntu (cifrado del directorio home)
 *   Chromium OS (cifrado de los datos del usuario en caché)
 
- |  ? |
+ | ? |
 
 ## Preparación
 

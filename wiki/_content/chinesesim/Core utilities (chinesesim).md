@@ -260,6 +260,7 @@ sda
 ### ip
 
 [ip](https://en.wikipedia.org/wiki/Iproute2 "wikipedia:Iproute2") 显示关于网络设备，IP 地址，路由表和其他 Linux [IP](https://en.wikipedia.org/wiki/Internet_Protocol "wikipedia:Internet Protocol") 软件栈的对象信息。通过附加各种命令，你可以操纵或配置大多数对象。
+
 **注意:** *ip* 命令在 [iproute2](https://www.archlinux.org/packages/?name=iproute2) 包中提供，这个包已经包含在 [base](https://www.archlinux.org/groups/x86_64/base/) 组。
 
 | 子命令 | 作用 | 手册页名称 |

@@ -197,6 +197,7 @@ To remove a `server`:
 #### TLS/SSL
 
 [OpenSSL](/index.php/OpenSSL "OpenSSL") provides TLS/SSL support and is installed by default on Arch installations.
+
 **Tip:**
 
 *   You may want to read the [ngx_http_ssl_module](http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_certificate) docs first before configuring SSL.

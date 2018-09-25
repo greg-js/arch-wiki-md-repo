@@ -368,6 +368,10 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 
 	[https://github.com/nmeum/tpm](https://github.com/nmeum/tpm) || [tpm](https://aur.archlinux.org/packages/tpm/)
 
+*   **LastPass** — Hosted password manager.
+
+	[https://www.lastpass.com/](https://www.lastpass.com/) || [lastpass-cli](https://www.archlinux.org/packages/?name=lastpass-cli)
+
 ##### Graphical
 
 *   **Bitwarden** — Open source password manager with desktop, mobile, browser, and CLI versions. Cloud or self-hosted.
@@ -409,10 +413,6 @@ See also [Synchronization and backup programs#Incremental backups](/index.php/Sy
 *   **KWalletManager** — Tool to manage the passwords on your system. By using the KDE wallet subsystem it not only allows you to keep your own secrets but also to access and manage the passwords of every application that integrates with the wallet.
 
 	[https://www.kde.org/applications/system/kwalletmanager/](https://www.kde.org/applications/system/kwalletmanager/) || [kwalletmanager](https://www.archlinux.org/packages/?name=kwalletmanager)
-
-*   **LastPass** — Hosted password manager.
-
-	[https://www.lastpass.com/](https://www.lastpass.com/) || [lastpass-cli](https://www.archlinux.org/packages/?name=lastpass-cli)
 
 *   **OTPClient** — Highly secure and easy to use GTK+ software for two-factor authentication that supports both Time-based One-time Passwords (TOTP) and HMAC-Based One-Time Passwords (HOTP).
 

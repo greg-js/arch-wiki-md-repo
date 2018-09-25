@@ -80,15 +80,19 @@ You can choose one of the following implementations:
 
 	[https://github.com/lxde/lxqt-notificationd](https://github.com/lxde/lxqt-notificationd) || [lxqt-notificationd](https://www.archlinux.org/packages/?name=lxqt-notificationd)
 
+*   **mako** — A lightweight notification daemon for [Wayland](/index.php/Wayland "Wayland"); it currently works on [Sway](/index.php/Sway "Sway") 1.0 alpha.
+
+	[https://github.com/emersion/mako](https://github.com/emersion/mako) || [mako](https://aur.archlinux.org/packages/mako/) [mako-git](https://aur.archlinux.org/packages/mako-git/)
+
+*   **MATE Notification Daemon** — Notification server for [MATE](/index.php/MATE "MATE").
+
+	[https://github.com/mate-desktop/mate-notification-daemon/](https://github.com/mate-desktop/mate-notification-daemon/) || [mate-notification-daemon](https://www.archlinux.org/packages/?name=mate-notification-daemon)
+
 *   **Notification Daemon** — The original notification server.
 
 	[https://github.com/GNOME/notification-daemon](https://github.com/GNOME/notification-daemon) || [notification-daemon](https://www.archlinux.org/packages/?name=notification-daemon)
 
 	You can run it manually using `/usr/lib/notification-daemon-1.0/notification-daemon`.
-
-*   **MATE Notification Daemon** — Notification server for [MATE](/index.php/MATE "MATE").
-
-	[https://github.com/mate-desktop/mate-notification-daemon/](https://github.com/mate-desktop/mate-notification-daemon/) || [mate-notification-daemon](https://www.archlinux.org/packages/?name=mate-notification-daemon)
 
 *   **Notify OSD** — Notification server for [Unity](/index.php/Unity "Unity").
 

@@ -90,7 +90,7 @@ Veja também [Wikipedia:List of input methods for Unix platforms](https://en.wik
 
 | Idioma | Back-end | [Fcitx](/index.php/Fcitx "Fcitx") | [IBus](/index.php/IBus "IBus") | [SCIM](/index.php/SCIM "SCIM") | [uim](/index.php/Uim "Uim") | [gcin](/index.php/Gcin "Gcin") | Hime |
 | Vietnamita | [UniKey](http://www.unikey.org/linux.php) | [fcitx-unikey](https://www.archlinux.org/packages/?name=fcitx-unikey) | [ibus-unikey](https://www.archlinux.org/packages/?name=ibus-unikey) | [scim-unikey](https://github.com/scim-im/scim-unikey) | - | - | - |
-| Outros | [m17n-lib](https://www.archlinux.org/packages/?name=m17n-lib) | [fcitx-m17n](https://www.archlinux.org/packages/?name=fcitx-m17n) | [ibus-m17n](https://www.archlinux.org/packages/?name=ibus-m17n) | [scim-m17n](https://www.archlinux.org/packages/?name=scim-m17n) | depende |  ? |  ? |
+| Outros | [m17n-lib](https://www.archlinux.org/packages/?name=m17n-lib) | [fcitx-m17n](https://www.archlinux.org/packages/?name=fcitx-m17n) | [ibus-m17n](https://www.archlinux.org/packages/?name=ibus-m17n) | [scim-m17n](https://www.archlinux.org/packages/?name=scim-m17n) | depende | ? | ? |
 
 ### Método de GTK IM
 

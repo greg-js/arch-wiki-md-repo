@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Sound system](/index.php/Sound_system "Sound system"). Data da última tradução: 2018-08-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Sound_system&diff=0&oldid=526747) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Sound system](/index.php/Sound_system "Sound system"). Data da última tradução: 2018-09-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Sound_system&diff=0&oldid=537953) na versão em inglês.
 
 Esse artigo é sobre gerenciamento básico de som. Para tópicos avançados, veja [áudio profissional](/index.php/Professional_audio "Professional audio").
 
@@ -11,44 +11,44 @@ Esse artigo é sobre gerenciamento básico de som. Para tópicos avançados, vej
 
 ## Informações gerais
 
-The Arch sound system consists of several levels:
+O sistema de som do Arch consiste em vários níveis:
 
-*   Drivers and interface – hardware support and control
-*   Usermode API (libraries) – utilized and required by applications
-*   **(optional)** Usermode sound servers – best for the complex desktop, needed for multiple simultaneous audio apps, and vital for more advanced capabilities e.g. pro audio
-*   **(optional)** Sound frameworks – higher-level application environments not involving server processes
+*   Drivers e interface – suporte e controle de hardware
+*   API (bibliotecas) de modo de usuário – utilizado e exigido por aplicativos
+*   **(opcional)** Servidores de som de modo de usuário – melhor para desktop complexos, necessário para vários apps de áudio simultâneos e vital para as capacidades mais avançadas, por exemplo, áudio pro
+*   **(opcional)** Frameworks de som – ambientes de aplicativos de alto nível não envolvendo processos de servidor
 
-A default Arch installation already includes the kernel sound system ([ALSA](/index.php/ALSA "ALSA")), and lots of utilities for it can be installed from the [official repositories](/index.php/Official_repositories "Official repositories"). If you want additional features you can switch to [OSS](/index.php/OSS "OSS") or install one of several [sound servers](https://en.wikipedia.org/wiki/sound_server "wikipedia:sound server").
+Uma instalação padrão do Arch já inclui o sistema de som do kernel ([ALSA](/index.php/ALSA_(Portugu%C3%AAs) "ALSA (Português)")), e muitos utilitários para ele podem ser instalados a partir dos [repositórios oficiais](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais"). Se você quiser recursos adicionais, pode alternar para [OSS](/index.php/OSS "OSS") ou instalar um dos vários [servidores de som](https://en.wikipedia.org/wiki/pt:Servidor_de_som "wikipedia:pt:Servidor de som").
 
 ## Drivers e interface
 
-*   **[ALSA](/index.php/ALSA "ALSA")** — A Linux kernel component providing device drivers and lowest-level support for audio hardware.
+*   **[ALSA](/index.php/ALSA_(Portugu%C3%AAs) "ALSA (Português)")** — Um componente do kernel do Linux que fornece drivers de dispositivo e suporte de nível mais baixo para hardware de áudio.
 
-	[http://www.alsa-project.org/](http://www.alsa-project.org/) || present in stock kernel
+	[http://www.alsa-project.org/](http://www.alsa-project.org/) || presente no kernel padrão
 
-*   **[Open Sound System](/index.php/Open_Sound_System "Open Sound System") (OSS)** — An alternative sound architecture for Unix-like and POSIX-compatible systems. OSS version 3 was the original sound system for Linux and is in the kernel, but was superseded by ALSA in 2002 when OSS version 4 became proprietary software. OSSv4 became free software again in 2007 when 4Front Technologies released its source code and provided it under the GPL. OSS does not support as wide a variety of hardware as ALSA, but does better for some.
+*   **[Open Sound System](/index.php/Open_Sound_System "Open Sound System") (OSS)** — Uma arquitetura de som alternativa para sistemas compatíveis com Unix e POSIX. O OSS versão 3 foi o sistema de som original para Linux e está no kernel, mas foi substituído pelo ALSA em 2002, quando o OSS versão 4 se tornou software proprietário. O OSSv4 tornou-se software livre novamente em 2007, quando a 4Front Technologies divulgou seu código-fonte e o forneceu sob a GPL. O OSS não possui suporte a uma variedade tão grande de hardware como o ALSA, mas é melhor para alguns.
 
 	[http://www.opensound.com/](http://www.opensound.com/) || [oss](https://aur.archlinux.org/packages/oss/)
 
 ## Servidores de som
 
-*   **[PulseAudio](/index.php/PulseAudio "PulseAudio")** — A very popular sound server, usable by most common desktop Linux applications today. Very good at handling multiple simultaneous inputs, and can do network audio as well. Very easy to get working, in fact very often all one has to do is install the package and it will automatically run. Not intended for pro audio low-latency applications.
+*   **[PulseAudio](/index.php/PulseAudio_(Portugu%C3%AAs) "PulseAudio (Português)")** — Um servidor de som muito popular, utilizável pela maioria dos aplicativos de desktop comuns hoje em dia. Muito bom em lidar com várias entradas simultâneas e também pode fazer áudio de rede. Muito fácil de começar a trabalhar, na verdade, muitas vezes tudo o que tem a fazer é instalar o pacote e ele será executado automaticamente. Não destinado a aplicativos pro audio de baixa latência.
 
 	[https://www.freedesktop.org/wiki/Software/PulseAudio/](https://www.freedesktop.org/wiki/Software/PulseAudio/) || [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio)
 
-*   **[JACK Audio Connection Kit](/index.php/JACK_Audio_Connection_Kit "JACK Audio Connection Kit")** — The older edition of a sound server for pro audio use, especially for low-latency applications including recording, effects, realtime synthesis, and many others. Although this edition is the older, it retains a very active and devoted development team, and which edition to use is not clear, trial and error is often helpful.
+*   **[JACK Audio Connection Kit](/index.php/JACK_Audio_Connection_Kit "JACK Audio Connection Kit")** — A edição mais antiga de um servidor de som para uso profissional de áudio, especialmente para aplicativos de baixa latência, incluindo gravação, efeitos, síntese em tempo real e muitos outros. Embora esta edição seja a mais antiga, ela mantém uma equipe de desenvolvimento muito ativa e dedicada, e a edição a ser usada não é clara, a tentativa e o erro geralmente são úteis.
 
 	[http://jackaudio.org/](http://jackaudio.org/) || [jack](https://www.archlinux.org/packages/?name=jack)
 
-*   **JACK2** — This is the newer edition of JACK, designed explicitly towards multi-processor systems, and also includes transport over network.
+*   **JACK2** — Esta é a edição mais recente do JACK, projetada explicitamente para sistemas multiprocessados e também inclui transporte pela rede.
 
 	[https://github.com/jackaudio/jackaudio.github.com/wiki/Q_difference_jack1_jack2](https://github.com/jackaudio/jackaudio.github.com/wiki/Q_difference_jack1_jack2) || [jack2](https://www.archlinux.org/packages/?name=jack2)
 
-*   **JACK2 with D-Bus** — This is JACK2 with a different startup architecture, capable of running well at all times in coexistence with PulseAudio and non-JACK applications, which is a problem for the other two categories of JACK setup.
+*   **JACK2 with D-Bus** — Este é o JACK2 com uma arquitetura de inicialização diferente, capaz de funcionar bem em todos os momentos em coexistência com os aplicativos PulseAudio e não-JACK, o que é um problema para as outras duas categorias de configuração do JACK.
 
 	[https://github.com/jackaudio/jackaudio.github.com/wiki/WalkThrough_User_jack_control](https://github.com/jackaudio/jackaudio.github.com/wiki/WalkThrough_User_jack_control) || [jack2-dbus](https://www.archlinux.org/packages/?name=jack2-dbus)
 
-*   **[NAS](https://en.wikipedia.org/wiki/Network_Audio_System "wikipedia:Network Audio System")** — This is a sound server supported by some major applications.
+*   **[NAS](https://en.wikipedia.org/wiki/Network_Audio_System "wikipedia:Network Audio System")** — Este é um servidor de som suportado por alguns dos principais aplicativos.
 
 	[https://www.radscan.com/nas/nas-links.html](https://www.radscan.com/nas/nas-links.html) || [nas](https://aur.archlinux.org/packages/nas/)
 
@@ -56,5 +56,5 @@ A default Arch installation already includes the kernel sound system ([ALSA](/in
 
 *   [MIDI](/index.php/MIDI "MIDI")
 *   [Codecs](/index.php/Codecs "Codecs")
-*   [Professional audio](/index.php/Professional_audio "Professional audio")
+*   [Áudio profissional](/index.php/Professional_audio "Professional audio")
 *   [PC speaker](/index.php/PC_speaker "PC speaker")

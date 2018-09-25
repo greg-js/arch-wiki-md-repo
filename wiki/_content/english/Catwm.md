@@ -134,4 +134,4 @@ const char* volup[] = {"amixer","set","PCM","5\%+",NULL};
 
 If both of those do not work, try to use one of the devices outputted by the *amixer* command. Also make sure you have the alsa-utils package installed.
 
-*alsamixer*
+If all of that still doesn't work, check to see if the device is not muted in *alsamixer*.

@@ -39,26 +39,24 @@ Related articles
         *   [6.1.8 Search](#Search)
     *   [6.2 Advanced settings](#Advanced_settings)
         *   [6.2.1 Appearance](#Appearance)
-            *   [6.2.1.1 GTK+ themes and icon themes](#GTK.2B_themes_and_icon_themes)
-                *   [6.2.1.1.1 Global dark theme](#Global_dark_theme)
-            *   [6.2.1.2 Window manager themes](#Window_manager_themes)
-                *   [6.2.1.2.1 Titlebar height](#Titlebar_height)
-                *   [6.2.1.2.2 Titlebar button order](#Titlebar_button_order)
-                *   [6.2.1.2.3 Hide titlebar when maximized](#Hide_titlebar_when_maximized)
-            *   [6.2.1.3 GNOME Shell themes](#GNOME_Shell_themes)
-            *   [6.2.1.4 Icons on menu](#Icons_on_menu)
-        *   [6.2.2 Desktop](#Desktop)
-            *   [6.2.2.1 Icons on the Desktop](#Icons_on_the_Desktop)
-            *   [6.2.2.2 Lock screen and background](#Lock_screen_and_background)
-            *   [6.2.2.3 Disable top left hot corner](#Disable_top_left_hot_corner)
-        *   [6.2.3 Extensions](#Extensions)
-        *   [6.2.4 Input methods](#Input_methods)
-        *   [6.2.5 Fonts](#Fonts)
-        *   [6.2.6 Autostart](#Autostart)
-        *   [6.2.7 Power](#Power)
-            *   [6.2.7.1 Configure behaviour on lid switch close](#Configure_behaviour_on_lid_switch_close)
-            *   [6.2.7.2 Change critical battery level action](#Change_critical_battery_level_action)
-        *   [6.2.8 Sort applications into application (app) folders](#Sort_applications_into_application_.28app.29_folders)
+            *   [6.2.1.1 Themes](#Themes)
+            *   [6.2.1.2 Titlebar height](#Titlebar_height)
+            *   [6.2.1.3 Titlebar button order](#Titlebar_button_order)
+            *   [6.2.1.4 Hide titlebar when maximized](#Hide_titlebar_when_maximized)
+            *   [6.2.1.5 GNOME Shell themes](#GNOME_Shell_themes)
+            *   [6.2.1.6 Icons on menu](#Icons_on_menu)
+        *   [6.2.2 Apps grid folders](#Apps_grid_folders)
+        *   [6.2.3 Autostart](#Autostart)
+        *   [6.2.4 Desktop](#Desktop)
+            *   [6.2.4.1 Icons on the Desktop](#Icons_on_the_Desktop)
+            *   [6.2.4.2 Lock screen and background](#Lock_screen_and_background)
+            *   [6.2.4.3 Disable top left hot corner](#Disable_top_left_hot_corner)
+        *   [6.2.5 Extensions](#Extensions)
+        *   [6.2.6 Fonts](#Fonts)
+        *   [6.2.7 Input methods](#Input_methods)
+        *   [6.2.8 Power](#Power)
+            *   [6.2.8.1 Configure behaviour on lid switch close](#Configure_behaviour_on_lid_switch_close)
+            *   [6.2.8.2 Change critical battery level action](#Change_critical_battery_level_action)
     *   [6.3 Use a different window manager](#Use_a_different_window_manager)
 *   [7 See also](#See_also)
 
@@ -185,6 +183,8 @@ $ gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 
 
 ```
 
+**Tip:** To change the daytime temperature in a Wayland session install [this extension](https://extensions.gnome.org/extension/1276/night-light-slider/).
+
 #### Date & time
 
 If the system has a configured [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon"), it will be effective for GNOME as well. The synchronization can be set to manual control from the menu, if required.
@@ -260,30 +260,16 @@ GNOME settings (which are stored in the DConf database) can also be configured u
 
 #### Appearance
 
-##### GTK+ themes and icon themes
+##### Themes
 
-To install a new theme or icon set, add the relevant `~/.local/share/themes` or `~/.local/share/icons` respectively (add to `/usr/share/` instead of `~/.local/share/` for the themes to be available systemwide.) They and other GUI settings can also be defined in `~/.config/gtk-3.0/settings.ini`:
+GNOME uses Adwaita by default. To apply Adwaita dark only to GTK+2 applications use the following symlink:
 
- `~/.config/gtk-3.0/settings.ini` 
 ```
-[Settings]
-gtk-theme-name = Adwaita
-# next option is applicable only if selected theme supports it
-gtk-application-prefer-dark-theme = true
-# set font name and dimension
-gtk-font-name = Sans 10
+$ ln -s /usr/share/themes/Adwaita-dark ~/.themes/Adwaita
 
 ```
 
-Additional theme locations:
-
-*   [DeviantArt](http://www.deviantart.com/browse/all/customization/skins/linuxutil/desktopenv/gnome/gtk3/).
-*   [gnome-look.org](http://gnome-look.org/).
-*   [GTK+ 3 themes in the AUR](https://aur.archlinux.org/packages.php?O=0&K=gtk3&do_Search=Go).
-*   [Cursor themes in the AUR](https://aur.archlinux.org/packages.php?O=0&K=xcursor&do_Search=Go&PP=50&SB=v&SO=d).
-*   [Icon themes in the AUR](https://aur.archlinux.org/packages.php?O=0&K=icon-theme&do_Search=Go&PP=50&SB=v&SO=d).
-
-Once installed, they can be selected using the GNOME Tweaks or GSettings - see below for GSettings commands:
+To select new themes or icons first move them to `~/.local/share/themes/` or `~/.local/share/icons/` then use GNOME Tweaks or the GSettings commands below:
 
 For the GTK+ theme:
 
@@ -292,22 +278,18 @@ $ gsettings set org.gnome.desktop.interface gtk-theme *theme-name*
 
 ```
 
-For the icon theme
+For the icon theme:
 
 ```
 $ gsettings set org.gnome.desktop.interface icon-theme *theme-name*
 
 ```
 
-###### Global dark theme
+**Note:** The window manager theme follows the GTK+ theme. Using `org.gnome.desktop.wm.preferences theme` is deprecated and ignored.
 
-GNOME will use the Adwaita light theme by default however a dark variant of this theme (called the Global Dark Theme) also exists and can be selected using the Tweaks or by editing the GTK+ 3 settings file - see [GTK+#Dark theme variant](/index.php/GTK%2B#Dark_theme_variant "GTK+"). Some applications such as Image Viewer (*eog*) use the dark theme by default. It should be noted that the Global Dark Theme only works with GTK+ 3 applications; some GTK+ 3 applications may only have partial support for the Global Dark theme. Qt and GTK+ 2 support for the Global Dark Theme may be added in the future.
+See [GTK+#Themes](/index.php/GTK%2B#Themes "GTK+").
 
-##### Window manager themes
-
-The window manager theme follows the GTK+ theme. Using `org.gnome.desktop.wm.preferences theme` is deprecated and ignored.
-
-###### Titlebar height
+##### Titlebar height
 
 **Note:** Applying this configuration shrinks the titlebar of the GNOME-terminal and Chromium, but does not appear to affect the Nautilus titlebar height.
  `~/.config/gtk-3.0/gtk.css` 
@@ -328,7 +310,7 @@ headerbar.default-decoration button.titlebutton {
 
 See [[3]](https://ask.fedoraproject.org/en/question/10035/shrink-title-bar/?answer=86149#post-id-86149) for more information.
 
-###### Titlebar button order
+##### Titlebar button order
 
 To set the order for the GNOME window manager (Mutter, Metacity):
 
@@ -339,7 +321,7 @@ $ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximi
 
 **Tip:** The colon indicates which side of the titlebar the window buttons will appear.
 
-###### Hide titlebar when maximized
+##### Hide titlebar when maximized
 
 *   [Install](/index.php/Install "Install") [gnome-shell-extension-pixel-saver-git](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver-git/) or [gnome-shell-extension-pixel-saver](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver/). Maximized windows get the title bar merged into the activity bar, saving precious pixels.
 
@@ -351,9 +333,7 @@ $ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximi
 
 The theme of GNOME Shell itself is configurable. To use a Shell theme, firstly ensure that you have the [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) package installed. Then enable the *User Themes* extension, either through GNOME Tweaks or through the [GNOME Shell Extensions](https://extensions.gnome.org) webpage. Shell themes can then be loaded and selected using the GNOME Tweaks.
 
-There are a number of GNOME Shell themes available [in the AUR](https://aur.archlinux.org/packages.php?O=0&K=gnome-shell-theme&do_Search=Go&PP=50&SB=v&SO=d).
-
-Shell themes can also be downloaded from [gnome-look.org](http://gnome-look.org/).
+There are a number of GNOME Shell themes available [in the AUR](https://aur.archlinux.org/packages.php?O=0&K=gnome-shell-theme&do_Search=Go&PP=50&SB=v&SO=d). Shell themes can also be downloaded from [gnome-look.org](http://gnome-look.org/).
 
 ##### Icons on menu
 
@@ -364,130 +344,7 @@ $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/But
 
 ```
 
-#### Desktop
-
-##### Icons on the Desktop
-
-Up until GNOME 3.28, icons on the desktop were provided by [Files](/index.php/Files "Files") which would draw a transparent window over the desktop containing the icons. As of GNOME 3.28 this functionality has been removed and desktop icons are no longer available in GNOME. Possible workarounds include using [Nemo](/index.php/Nemo "Nemo") (a fork of Files which still has desktop icons functionality) or installing [gnome-shell-extension-desktop-icons](https://aur.archlinux.org/packages/gnome-shell-extension-desktop-icons/) which partially replicates the desktop icon functionality available in GNOME 3.26 and prior. For more information, please see the following [Arch forum thread](https://bbs.archlinux.org/viewtopic.php?id=235633).
-
-##### Lock screen and background
-
-When setting the Desktop or Lock screen background, it is important to note that the Pictures tab will only display pictures located in `/home/*username*/Pictures` folder. If you wish to use a picture not located in this folder, use the commands indicated below.
-
-For the desktop background:
-
-```
-$ gsettings set org.gnome.desktop.background picture-uri 'file:///path/to/my/picture.jpg'
-
-```
-
-For the lock screen background
-
-```
-$ gsettings set org.gnome.desktop.screensaver picture-uri 'file:///path/to/my/picture.jpg'
-
-```
-
-##### Disable top left hot corner
-
-You can disable the top left hot corner with the [gnome-shell-extension-no-topleft-hot-corner](https://aur.archlinux.org/packages/gnome-shell-extension-no-topleft-hot-corner/) package.
-
-#### Extensions
-
-**Note:** The GNOME Shell browser plugin which allows users to install extensions from [extensions.gnome.org](https://extensions.gnome.org) works out-of-the-box for browsers such as [GNOME/Web](/index.php/GNOME/Web "GNOME/Web"). For [Firefox](/index.php/Firefox "Firefox"), Google Chrome/Chromium, Opera and Vivaldi browsers, it is required to install [chrome-gnome-shell](https://www.archlinux.org/packages/?name=chrome-gnome-shell) and the appropriate browser extension.
-
-GNOME Shell can be customized with extensions per user or system-wide.
-
-The catalogue of extensions is available at [extensions.gnome.org](https://extensions.gnome.org). By a user they can be installed and activated in the browser by setting the switch in the top left of the screen to **ON** and clicking **Install** on the resulting dialog (if the extension in question is not installed). After installation it is shown in the [extensions.gnome.org/local/](https://extensions.gnome.org/local/) tab, which has to be visited as well to check for available updates. Installed extensions can also be enabled or disabled using [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks).
-
-More information about GNOME shell extensions is available on the [GNOME Shell Extensions about page](https://extensions.gnome.org/about/).
-
-[Installing](/index.php/Installing "Installing") extensions via a package makes them available for all users of the system and automates the update process.
-
-The [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) package provides a set of extensions maintained as part of the GNOME project (many of the included extensions are used by the GNOME Classic session).
-
-Users who want a taskbar but do not wish to use the GNOME Classic session may want to enable the *Window list* extension (provided by the [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) package).
-
-Listing currently enabled extensions can be achieved with:
-
-```
-$ gsettings get org.gnome.shell enabled-extensions
-
-```
-
-#### Input methods
-
-GNOME has integrated support for [input methods](/index.php/Input_method "Input method") through [IBus](/index.php/IBus "IBus"), only [ibus](https://www.archlinux.org/packages/?name=ibus) and the wanted input method engine (e.g. [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin) for Intelligent Pinyin) needed to be installed, after installation the input method engine can be added as a keyboard layout in GNOME's Regional & Language Settings.
-
-#### Fonts
-
-**Tip:** If you set the *Scaling factor* to a value above 1.00, the Accessibility menu will be automatically enabled.
-
-Fonts can be set for Window titles, Interface (applications), Documents and Monospace. See the Fonts tab in the Tweaks for the relevant options.
-
-For hinting, RGBA will likely be desired as this fits most monitors types, and if fonts appear too blocked reduce hinting to *Slight* or *None*.
-
-#### Autostart
-
-GNOME implements [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart").
-
-The [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks) allows managing autostart-entries.
-
-**Tip:** If the plus sign button in the Tweaks's Startup Applications section is unresponsive, try start the Tweaks from the terminal using the following command: `gnome-tweaks`. See the following [forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1413631#p1413631).
-
-**Note:** The deprecated *gnome-session-properties* dialog can be added by [installing](/index.php/Install "Install") the [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/) package.
-
-#### Power
-
-When you are using a laptop you might want to alter the following settings:
-
-```
-$ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout *3600*
-$ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type *hibernate*
-$ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout *1800*
-$ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type *hibernate*
-$ gsettings set org.gnome.settings-daemon.plugins.power power-button-action *suspend*
-$ gsettings set org.gnome.desktop.lockdown disable-lock-screen *true*
-
-```
-
-To keep the monitor active when the lid is closed:
-
-```
-$ gsettings set org.gnome.settings-daemon.plugins.xrandr default-monitors-setup do-nothing
-
-```
-
-GNOME 3.24 deprecated the following settings:
-
-```
-org.gnome.settings-daemon.plugins.power button-hibernate
-org.gnome.settings-daemon.plugins.power button-power
-org.gnome.settings-daemon.plugins.power button-sleep
-org.gnome.settings-daemon.plugins.power button-suspend
-org.gnome.settings-daemon.plugins.power critical-battery-action
-
-```
-
-##### Configure behaviour on lid switch close
-
-The GNOME Tweaks can optionally *inhibit* the *systemd* setting for the lid close ACPI event.[[4]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) To *inhibit* the setting, start the tweaks tool and, under the power tab, check the *Don't suspend on lid close* option. This means that the system will do nothing on lid close instead of suspending - the default behaviour. Checking the setting creates `~/.config/autostart/ignore-lid-switch-tweak.desktop` which will autostart the Tweaks's inhibitor.
-
-If you do not want the system to suspend or do nothing on lid close, you will need to ensure that the setting described above is **not** checked and then configure *systemd* with `HandleLidSwitch=*preferred_behaviour*` as described in [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
-
-##### Change critical battery level action
-
-The settings panel does not provide an option for changing the critical battery level action. These settings have been removed from dconf as well. They are now managed by upower. Edit the upower settings in `/etc/UPower/UPower.conf`. Find these settings and adjust to your needs.
-
- `/etc/UPower/UPower.conf` 
-```
-PercentageLow=10
-PercentageCritical=3
-PercentageAction=2
-CriticalPowerAction=HybridSleep
-```
-
-#### Sort applications into application (app) folders
+#### Apps grid folders
 
 **Tip:** The [gnome-catgen](https://github.com/prurigro/gnome-catgen) ([gnome-catgen-git](https://aur.archlinux.org/packages/gnome-catgen-git/)) script allows you to manage folders through the creation of files in `~/.local/share/applications-categories` named after each category and containing a list of the desktop files belonging to apps you would like to have inside. Optionally, you can have it cycle through each app without a folder and input the desired category until you ctrl-c or run out of apps.
 
@@ -528,7 +385,124 @@ $ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-fold
 
 ```
 
-For further information, refer to the [app-folders schema](https://git.gnome.org/browse/gsettings-desktop-schemas/tree/schemas/org.gnome.desktop.app-folders.gschema.xml.in).
+For more information, see [[4]](https://git.gnome.org/browse/gsettings-desktop-schemas/tree/schemas/org.gnome.desktop.app-folders.gschema.xml.in) and [[5]](https://wiki.gentoo.org/wiki/Gnome_Applications_Folders).
+
+#### Autostart
+
+GNOME implements [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart").
+
+The [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks) allows managing autostart-entries.
+
+**Tip:** If the plus sign button in the Tweaks's Startup Applications section is unresponsive, try start the Tweaks from the terminal using the following command: `gnome-tweaks`. See the following [forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1413631#p1413631).
+
+**Note:** The deprecated *gnome-session-properties* dialog can be added by [installing](/index.php/Install "Install") the [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/) package.
+
+#### Desktop
+
+##### Icons on the Desktop
+
+Up until GNOME 3.28, icons on the desktop were provided by [Files](/index.php/Files "Files") which would draw a transparent window over the desktop containing the icons. As of GNOME 3.28 this functionality has been removed and desktop icons are no longer available in GNOME. Possible workarounds include using [Nemo](/index.php/Nemo "Nemo") (a fork of Files which still has desktop icons functionality) or installing [gnome-shell-extension-desktop-icons](https://aur.archlinux.org/packages/gnome-shell-extension-desktop-icons/) which partially replicates the desktop icon functionality available in GNOME 3.26 and prior. For more information, please see the following [Arch forum thread](https://bbs.archlinux.org/viewtopic.php?id=235633).
+
+##### Lock screen and background
+
+When setting the Desktop or Lock screen background, it is important to note that the Pictures tab will only display pictures located in `/home/*username*/Pictures` folder. If you wish to use a picture not located in this folder, use the commands indicated below.
+
+For the desktop background:
+
+```
+$ gsettings set org.gnome.desktop.background picture-uri 'file:///path/to/my/picture.jpg'
+
+```
+
+For the lock screen background
+
+```
+$ gsettings set org.gnome.desktop.screensaver picture-uri 'file:///path/to/my/picture.jpg'
+
+```
+
+##### Disable top left hot corner
+
+You can disable the top left hot corner with the [gnome-shell-extension-no-topleft-hot-corner](https://aur.archlinux.org/packages/gnome-shell-extension-no-topleft-hot-corner/) package.
+
+#### Extensions
+
+The catalogue of extensions is available at [extensions.gnome.org](https://extensions.gnome.org). They can be installed and activated in a browser by setting the switch in the top left of the screen to **ON** and clicking **Install** on the popup window (if the extension in question is not installed). Installed extensions may be seen at [extensions.gnome.org/local](https://extensions.gnome.org/local/), where available updates can be checked. Installed extensions can also be enabled or disabled with [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks).
+
+**Note:** Extensions from [extensions.gnome.org](https://extensions.gnome.org) can be installed right away with [GNOME/Web](/index.php/GNOME/Web "GNOME/Web"). For other browsers, it is required to install [chrome-gnome-shell](https://www.archlinux.org/packages/?name=chrome-gnome-shell) and the appropriate browser extension.
+
+GNOME Shell can be customized with extensions per user or system-wide. Installing extensions with [pacman](/index.php/Pacman "Pacman") makes them available for all users of the system and automates the update process. The [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) package provides a set of extensions maintained as part of the GNOME project (many of the included extensions are used by the GNOME Classic session). Users who want a taskbar but do not wish to use the GNOME Classic session may want to enable the *Window list* extension (provided by the [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) package).
+
+To list currently enabled extensions:
+
+```
+$ gsettings get org.gnome.shell enabled-extensions
+
+```
+
+For more information about GNOME shell extensions, see [[6]](https://extensions.gnome.org/about/).
+
+#### Fonts
+
+**Tip:** If you set the *Scaling factor* to a value above 1.00, the Accessibility menu will be automatically enabled.
+
+Fonts can be set for Window titles, Interface (applications), Documents and Monospace. See the Fonts tab in the Tweaks for the relevant options.
+
+For hinting, RGBA will likely be desired as this fits most monitors types, and if fonts appear too blocked reduce hinting to *Slight* or *None*.
+
+#### Input methods
+
+GNOME has integrated support for [input methods](/index.php/Input_method "Input method") through [IBus](/index.php/IBus "IBus"), only [ibus](https://www.archlinux.org/packages/?name=ibus) and the wanted input method engine (e.g. [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin) for Intelligent Pinyin) needed to be installed, after installation the input method engine can be added as a keyboard layout in GNOME's Regional & Language Settings.
+
+#### Power
+
+When you are using a laptop you might want to alter the following settings:
+
+```
+$ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout *3600*
+$ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type *hibernate*
+$ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout *1800*
+$ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type *hibernate*
+$ gsettings set org.gnome.settings-daemon.plugins.power power-button-action *suspend*
+$ gsettings set org.gnome.desktop.lockdown disable-lock-screen *true*
+
+```
+
+To keep the monitor active when the lid is closed:
+
+```
+$ gsettings set org.gnome.settings-daemon.plugins.xrandr default-monitors-setup do-nothing
+
+```
+
+GNOME 3.24 deprecated the following settings:
+
+```
+org.gnome.settings-daemon.plugins.power button-hibernate
+org.gnome.settings-daemon.plugins.power button-power
+org.gnome.settings-daemon.plugins.power button-sleep
+org.gnome.settings-daemon.plugins.power button-suspend
+org.gnome.settings-daemon.plugins.power critical-battery-action
+
+```
+
+##### Configure behaviour on lid switch close
+
+The GNOME Tweaks can optionally *inhibit* the *systemd* setting for the lid close ACPI event.[[7]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) To *inhibit* the setting, start the tweaks tool and, under the power tab, check the *Don't suspend on lid close* option. This means that the system will do nothing on lid close instead of suspending - the default behaviour. Checking the setting creates `~/.config/autostart/ignore-lid-switch-tweak.desktop` which will autostart the Tweaks's inhibitor.
+
+If you do not want the system to suspend or do nothing on lid close, you will need to ensure that the setting described above is **not** checked and then configure *systemd* with `HandleLidSwitch=*preferred_behaviour*` as described in [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
+
+##### Change critical battery level action
+
+The settings panel does not provide an option for changing the critical battery level action. These settings have been removed from dconf as well. They are now managed by upower. Edit the upower settings in `/etc/UPower/UPower.conf`. Find these settings and adjust to your needs.
+
+ `/etc/UPower/UPower.conf` 
+```
+PercentageLow=10
+PercentageCritical=3
+PercentageAction=2
+CriticalPowerAction=HybridSleep
+```
 
 ### Use a different window manager
 

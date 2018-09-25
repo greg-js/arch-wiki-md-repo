@@ -139,7 +139,7 @@ Install **virtualbox** with the **virtualbox-host-dkms** package. Then setup DKM
 
 Users wishing to downgrade to a previous version of Linux-ck, have several options:
 
-*   Source archives are [available](http://repo-ck.com/bench.htm) dating back to linux-ck-3.3.7-1\.
+*   Source archives are [available](http://repo-ck.com/bench.htm) dating back to linux-ck-3.3.7-1.
 *   [AUR.git](http://pkgbuild.com/git/aur-mirror.git/log/linux-ck) holds AUR git commits for Linux-ck, dating back to linux-ck-2.6.39.3-1.
 
 ### Forum support

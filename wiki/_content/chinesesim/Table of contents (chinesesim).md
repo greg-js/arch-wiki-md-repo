@@ -135,5 +135,5 @@
 | <small>8.9.4.</small> [安全终端 (SSH)](/index.php/Category:Secure_Shell_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Secure Shell (简体中文)") <small>(5) (同时还属于 [网络](/index.php/Category:Networking_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Networking (简体中文)"))</small> |
 | <small>8.10.</small> [系统修复](/index.php/Category:System_recovery_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:System recovery (简体中文)") <small>(16)</small> |
 | <small>8.11.</small> [虚拟化](/index.php/Category:Virtualization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Virtualization (简体中文)") <small>(8)</small> |
-| <small>8.11.1.</small> [Hypervisors](/index.php/Category:Hypervisors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Hypervisors (简体中文)") <small>(2)</small> |
+| <small>8.11.1.</small> [Hypervisors](/index.php/Category:Hypervisors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Hypervisors (简体中文)") <small>(3)</small> |
 | <small>9.</small> [终端模拟器](/index.php/Category:Terminal_emulators_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Terminal emulators (简体中文)") <small>(4) (同时还属于 [应用程序](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)"))</small> |

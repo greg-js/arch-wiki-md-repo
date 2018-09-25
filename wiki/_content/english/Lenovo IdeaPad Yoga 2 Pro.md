@@ -84,10 +84,10 @@ No keypad available at all.
 | `Fn+F3` | Audio volume up | XF86AudioRaiseVolume |
 | `Fn+F4` | Close application | `Alt_L+F4` |
 | `Fn+F5` | Refresh page | `F5` |
-| `Fn+F6` | Disable Touchpad |  ? |
-| `Fn+F7` | Airplane mode |  ? |
+| `Fn+F6` | Disable Touchpad | ? |
+| `Fn+F7` | Airplane mode | ? |
 | `Fn+F8` | Unknown | `Alt_L+Tab` |
-| `Fn+F9` | Turn off LCD |  ? |
+| `Fn+F9` | Turn off LCD | ? |
 | `Fn+F10` | Toggle display | `Super+p` |
 | `Fn+F11` | Dim LCD backlight | XF86MonBrightnessDown |
 | `Fn+F12` | Brighten LCD backlight | XF86MonBrightnessUp |

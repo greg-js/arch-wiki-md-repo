@@ -26,7 +26,7 @@ Related articles
     *   [3.4 Habilitar el control Wi-Fi](#Habilitar_el_control_Wi-Fi)
     *   [3.5 Obtener el nombre de usuario de la pantalla actual](#Obtener_el_nombre_de_usuario_de_la_pantalla_actual)
         *   [3.5.1 Conectar a un socket acpid](#Conectar_a_un_socket_acpid)
-*   [4 Consulte también](#Consulte_tambi.C3.A9n)
+*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
 ## Instalación
 
@@ -98,7 +98,7 @@ $4 00000b31
 
 Como habrá notado, el botón de suspensión en la salida del ejemplo se reconoce realmente como *SBTN*, en lugar de la etiqueta *SLPB* especificada en el archivo `/etc/acpi/handler.sh` predeterminado. Para que la función de suspensión funcione correctamente en esta máquina, debería reemplazar *SLPB)* por *SBTN)*.
 
-Al utilizar esta información como base, puede personalizar fácilmente el archivo `/etc/acpi/handler.sh` para ejecutar una variedad de comandos según el evento que se active. Consulte la sección [#Consejos y trucos](#Consejos_y_trucos) a continuación para conocer otros comandos usados comúnmente.
+Al utilizar esta información como base, puede personalizar fácilmente el archivo `/etc/acpi/handler.sh` para ejecutar una variedad de comandos según el evento que se active. Véase la sección [#Consejos y trucos](#Consejos_y_trucos) a continuación para conocer otros comandos usados comúnmente.
 
 ### Configuración alternativa
 
@@ -149,7 +149,7 @@ Al usar este método, es fácil crear cualquier cantidad de scripts de eventos/a
 
 Los siguientes son ejemplos de eventos que se pueden usar en el script `/etc/acpi/handler.sh`. Estos ejemplos se deben modificar para que se ajusten a su entorno específico, por ejemplo cambiando los nombres de las variables de evento interpretados por `acpi_listen`.
 
-Para configurar el brillo de la pantalla del portátil cuando esté o no enchufado (es posible que sea necesario ajustar los números, consulte `/sys/class/backlight/acpi_video0/max_brightness`):
+Para configurar el brillo de la pantalla del portátil cuando esté o no enchufado (es posible que sea necesario ajustar los números, véase `/sys/class/backlight/acpi_video0/max_brightness`):
 
 ```
 ac_adapter)
@@ -168,7 +168,7 @@ ac_adapter)
 
 ### Activar el control del volumen
 
-Averigüe la identidad acpi de los botones de volumen (consultar arriba) y sustitúyalos por los eventos acpi en los archivos a continuación.
+Averigüe la identidad acpi de los botones de volumen (ver arriba) y sustitúyalos por los eventos acpi en los archivos a continuación.
 
  `/etc/acpi/events/vol-d` 
 ```
@@ -188,9 +188,9 @@ action=amixer set Master 5+
 
 **Nota:** Estos comandos pueden no funcionar como se espera con PulseAudio. [[1]](https://lists.freedesktop.org/archives/pulseaudio-discuss/2015-December/025062.html) Para una funcionalidad completa, ejecute comandos como el usuario actual mientras especifica la [variable de entorno](/index.php/Environment_variables_(Espa%C3%B1ol) "Environment variables (Español)") `XDG_RUNTIME_DIR`, por ejemplo con `sudo -u *usuario* XDG_RUNTIME_DIR=/run/user/*1000* pactl`.
 
-**Sugerencia:** Desactive o vincule los botones de volumen en Xorg para evitar conflictos con otras aplicaciones. Consulte [Xmodmap](/index.php/Xmodmap "Xmodmap") para más detalles.
+**Sugerencia:** Desactive o vincule los botones de volumen en Xorg para evitar conflictos con otras aplicaciones. Véase [Xmodmap](/index.php/Xmodmap "Xmodmap") para más detalles.
 
-Consulte también [[2]](http://web.archive.org/web/20150711044207/http://blog.lastlog.de/posts/fixing_volume_change_in_linux).
+Véase también [[2]](http://web.archive.org/web/20150711044207/http://blog.lastlog.de/posts/fixing_volume_change_in_linux).
 
 ### Activar el control del brillo
 
@@ -246,14 +246,14 @@ esac
 
 ### Obtener el nombre de usuario de la pantalla actual
 
-Para ejecutar comandos que dependan de [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)"), es necesario definir la visualización X así como el archivo MIT Magic Cookie (a través de XAUTHORITY). Después es tener una credencial de seguridad que proporciona acceso de lectura y escritura al servidor X, a la pantalla y a cualquier dispositivo de entrada (consulte [xauth(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xauth.1)).
+Para ejecutar comandos que dependan de [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)"), es necesario definir la visualización X así como el archivo MIT Magic Cookie (a través de XAUTHORITY). Después es tener una credencial de seguridad que proporciona acceso de lectura y escritura al servidor X, a la pantalla y a cualquier dispositivo de entrada (Véase [xauth(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xauth.1)).
 
-Consulte [[3]](https://gist.githubusercontent.com/AladW/de1c5676d93d05a5a0e1/raw/16e010ecda9f2328e1e22d4e02ac814ed27717b4/gistfile1.txt) para una función de ejemplo cuando se usa [xinitrc](/index.php/Xinitrc "Xinitrc").
+Véase [[3]](https://gist.githubusercontent.com/AladW/de1c5676d93d05a5a0e1/raw/16e010ecda9f2328e1e22d4e02ac814ed27717b4/gistfile1.txt) para una función de ejemplo cuando se usa [xinitrc](/index.php/Xinitrc "Xinitrc").
 
 **Nota:**
 
-*   Si la luz de fondo de la pantalla LCD no se apaga cuando la tapa está cerrada, puede hacerlo manualmente ejecutando `getXuser xset dpms force off` y `getXuser xset dpms force on` en los eventos de tapa cerrada y abierta respectivamente. Si la pantalla está en blanco pero la luz de fondo encendida, en su lugar utilice [vbetool](https://www.archlinux.org/packages/?name=vbetool) con `betool dpms off` y `vbetool dpms on`. Consulte también [Configuración de XScreenSaver](/index.php/XScreenSaver_(Espa%C3%B1ol)#Configuraci.C3.B3n "XScreenSaver (Español)").
-*   Cuando utilice *who* o *w*, asegúrese de que se cree `/run/utmp` en el momento del arranque. Consulte [utmp(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/utmp.5) para más detalles.
+*   Si la luz de fondo de la pantalla LCD no se apaga cuando la tapa está cerrada, puede hacerlo manualmente ejecutando `getXuser xset dpms force off` y `getXuser xset dpms force on` en los eventos de tapa cerrada y abierta respectivamente. Si la pantalla está en blanco pero la luz de fondo encendida, en su lugar utilice [vbetool](https://www.archlinux.org/packages/?name=vbetool) con `betool dpms off` y `vbetool dpms on`. Véase también [Configuración de XScreenSaver](/index.php/XScreenSaver_(Espa%C3%B1ol)#Configuraci.C3.B3n "XScreenSaver (Español)").
+*   Cuando utilice *who* o *w*, asegúrese de que se cree `/run/utmp` en el momento del arranque. Véase [utmp(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/utmp.5) para más detalles.
 
 #### Conectar a un socket acpid
 
@@ -272,7 +272,7 @@ done
 
 Donde *handler.sh* puede ser una script similar a `/etc/acpi/handler.sh`.
 
-## Consulte también
+## Véase también
 
 *   [Página principal de acpid](http://acpid.sourceforge.net/)
 *   [Wiki de Gentoo](https://wiki.gentoo.org/wiki/ACPI#Configuration)

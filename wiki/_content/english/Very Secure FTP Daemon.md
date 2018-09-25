@@ -251,7 +251,7 @@ pasv_address=*yourdomain.org*
 
 It may be necessary to adjust the default FTP listening port and the passive mode data ports:
 
-*   For FTP servers exposed to the web, to reduce the likelihood of the server being attacked, the listening port can be changed to something other than the standard port 21\.
+*   For FTP servers exposed to the web, to reduce the likelihood of the server being attacked, the listening port can be changed to something other than the standard port 21.
 *   To limit the passive mode ports to open ports, a range can be provided.
 
 The ports can be defined in the configuration file as illustrated below:

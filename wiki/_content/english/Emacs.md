@@ -4,7 +4,7 @@
 
 *   [1 Installation](#Installation)
 *   [2 Running Emacs](#Running_Emacs)
-    *   [2.1 No Colors](#No_Colors)
+    *   [2.1 No colors](#No_colors)
     *   [2.2 As a daemon](#As_a_daemon)
     *   [2.3 As a systemd unit](#As_a_systemd_unit)
 *   [3 Getting help](#Getting_help)
@@ -95,7 +95,7 @@ $ emacs filename.txt
 
 ```
 
-### No Colors
+### No colors
 
 By default, Emacs starts with a color theme showing hyperlinks in dark blue. To start Emacs on a text terminal without any color theme or scheme:
 

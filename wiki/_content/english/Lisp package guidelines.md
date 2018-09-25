@@ -90,9 +90,7 @@ Also note that if ASDF is needed to install/compile/load the package, things cou
 People currently maintaining lisp-specific packages that do not need to be lisp-specific should consider doing at least one of the following:
 
 *   Editing their PKGBUILDs to be cross-platform, provided someone else is not already maintaining the same package for a different lisp.
-
 *   Offering to take over maintenance or help with maintenance of the same package for a different lisp, and then combining them into a single package.
-
 *   Offering up their package to the maintainer of a different lisp's version of the same package, so as to allow that person to combine them into a single package.
 
 (Note that joyfulgirl, the author of this doc., currently maintains clisp versions of cl-ppcre and of stumpwm; she is open to either giving up the packages to the maintainers of the SBCL versions or to maintain the new, cross-platform versions herself if the SBCL-version maintainers do not want to).

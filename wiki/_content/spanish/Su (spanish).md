@@ -7,7 +7,7 @@ Artículos relacionados
 
 El comando **su** (del inglés **s**ubstitute **u**ser, o usuario sustituto) se usa para asumir la identidad de otro usuario en el sistema, el superusuario *(root)* por defecto.
 
-Consulte [PAM](/index.php/PAM "PAM") para ver las formas de configurar el comportamiento de **su**.
+Véase [PAM](/index.php/PAM "PAM") para las formas de configurar el comportamiento de **su**.
 
 ## Contents
 

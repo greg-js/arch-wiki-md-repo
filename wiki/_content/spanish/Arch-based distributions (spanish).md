@@ -7,7 +7,7 @@ Artículos relacionados
 *   [TalkingArch](/index.php/TalkingArch "TalkingArch")
 *   [DeveloperWiki:TrademarkPolicy](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy")
 
-**Advertencia:** Las distribuciones basadas en Arch **no** tienen soporte de la comunidad o los desarrolladores de Arch. Consulte [Soporte *solo* para la distribución Arch Linux](/index.php/Code_of_conduct_(Espa%C3%B1ol)#Soporte_.2Asolo.2A_para_la_distribuci.C3.B3n_Arch_Linux "Code of conduct (Español)")
+**Advertencia:** Las distribuciones basadas en Arch **no** tienen soporte de la comunidad o los desarrolladores de Arch. Véase [Soporte *solo* para la distribución Arch Linux](/index.php/Code_of_conduct_(Espa%C3%B1ol)#Soporte_.2Asolo.2A_para_la_distribuci.C3.B3n_Arch_Linux "Code of conduct (Español)")
 
 Esta página enumera las distribuciones que se derivan de Arch Linux **en su totalidad o en parte**, para ayudar a hacer cumplir la [política de marca registrada de Arch Linux](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy"). Aunque pretende ser lo más completo posible, no es una lista exhaustiva. Se prefieren los enlaces al proyecto SourceForge para simplificar el mantenimiento.
 
@@ -28,7 +28,7 @@ Esta página enumera las distribuciones que se derivan de Arch Linux **en su tot
     *   [2.11 2007](#2007)
     *   [2.12 2006](#2006)
     *   [2.13 2004](#2004)
-*   [3 Consulte también](#Consulte_tambi.C3.A9n)
+*   [3 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
 ## Activas
 
@@ -187,7 +187,7 @@ Estas distribuciones ya no se desarrollan, pero muestran algo de la historia que
 
 *   [Arch Linux Embedded Project](https://web.archive.org/web/20090327055005/http://www.datavibe.net/~essiene/ale/)
 
-## Consulte también
+## Véase también
 
 *   [Wikipedia:Arch Linux#Derivatives](https://en.wikipedia.org/wiki/Arch_Linux#Derivatives "wikipedia:Arch Linux")
 *   [DistroWatch distributions based on Arch](https://distrowatch.com/search.php?&basedon=Arch&status=All#simple)

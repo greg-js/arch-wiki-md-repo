@@ -120,7 +120,7 @@ In the table below, the columns have the following meaning:
 
 | Resolver | Cache | Recursor | *resolvconf* compatibility | Validates DNSSEC | DNS over TLS | DNS over HTTPS | Notes |
 | [glibc](#Glibc_resolver) | No | No | [openresolv](/index.php/Openresolv "Openresolv") | No | No | No |
-| [BIND](/index.php/BIND "BIND") | Yes | Yes | [openresolv](/index.php/Openresolv "Openresolv") subscriber | Yes |  ? |  ? |
+| [BIND](/index.php/BIND "BIND") | Yes | Yes | [openresolv](/index.php/Openresolv "Openresolv") subscriber | Yes | ? | ? |
 | [dnscrypt-proxy](/index.php/Dnscrypt-proxy "Dnscrypt-proxy") | Yes | No | No | No | No | Yes | Implements a [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt") protocol client. |
 | [dnsmasq](/index.php/Dnsmasq "Dnsmasq") | Yes | No | [openresolv](/index.php/Openresolv "Openresolv") subscriber | Yes | [No](http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2018q2/012131.html) | No |
 | [Knot Resolver](/index.php/Knot_Resolver "Knot Resolver") | Yes | Yes | No | Yes | Yes | [No](https://gitlab.labs.nic.cz/knot/knot-resolver/issues/243) |

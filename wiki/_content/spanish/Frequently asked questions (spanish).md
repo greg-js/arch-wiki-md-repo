@@ -49,7 +49,7 @@ Artículos relacionados
 
 ### ¿Qué es Arch Linux?
 
-Consulte el artículo [Arch Linux](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)").
+Véase el artículo [Arch Linux](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)").
 
 ### ¿Por qué podría preferir no usar Arch?
 
@@ -72,7 +72,7 @@ No, pero el proyecto [Arch Linux ARM](http://archlinuxarm.org/) proporciona un p
 
 ### ¿Sigue Arch el estándar de jerarquía del sistema de archivos de la Fundación Linux (FHS)?
 
-Arch Linux sigue la *jerarquía del sistema de archivos* para sistemas operativos que usan el administrador de servicios [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"). Consulte [file-hierarchy(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/file-hierarchy.7) para obtener una explicación de cada directorio junto con sus designaciones. En particular, `/bin`, `/sbin`, y `/usr/sbin` son enlaces simbólicos a `/usr/bin`, y `/lib` junto a `/lib64` son enlaces simbólicos a `/usr/lib`.
+Arch Linux sigue la *jerarquía del sistema de archivos* para sistemas operativos que usan el administrador de servicios [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"). Véase [file-hierarchy(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/file-hierarchy.7) para obtener una explicación de cada directorio junto con sus designaciones. En particular, `/bin`, `/sbin`, y `/usr/sbin` son enlaces simbólicos a `/usr/bin`, y `/lib` junto a `/lib64` son enlaces simbólicos a `/usr/lib`.
 
 ### Soy un completo principiante en GNU/Linux. ¿Debo usar Arch?
 
@@ -80,7 +80,7 @@ Si es un principiante y quiere usar Arch, tenga en cuanta únicamente que debe e
 
 Antes de pedir ayuda, haga su propia investigación independiente buscando en Google, indagando en el foro (y leyendo el resto de estas preguntas frecuentes) y buscando en la excelente documentación proporcionada por la wiki de Arch. *Hay una razón por la que estos recursos se ponen a disposición del usuario en primer lugar.* Son muchos los *voluntarios* que dedican miles de horas compilando esta excelente información.
 
-Consulte también [Arch terminology#RTFM](/index.php/Arch_terminology#RTFM "Arch terminology") y la [guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)").
+Véase también [Arch terminology#RTFM](/index.php/Arch_terminology#RTFM "Arch terminology") y la [guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)").
 
 ### ¿Arch está diseñado para ser utilizado como un servidor?, ¿un escritorio?, ¿una estación de trabajo
 
@@ -98,7 +98,7 @@ Los lanzamientos de Arch Linux son simplemente un entorno live para la instalaci
 
 Es *el usuario* el responsable en última instancia de la estabilidad de su propio sistema de lanzamiento continuo. El usuario decide el momento de actualizar, e integra los cambios necesarios cuando se requiere. Si el usuario accede a la comunidad en busca de ayuda, a menudo se le presta de manera oportuna. La diferencia entre Arch y otras distribuciones es que Arch es verdaderamente una distribución «do-it-yourself» ; las denuncias de ruptura son equivocadas e improductivas, cuando se debe a los cambios hechos a las aplicaciones por los desarrolladores de las mismas, sin ser responsabilidad del equipo que desarrolla Arch.
 
-Consulte el artículo [mantenimiento del sistema](/index.php/System_maintenance_(Espa%C3%B1ol) "System maintenance (Español)") para obtener consejos sobre cómo hacer que un sistema Arch Linux sea lo más estable posible.
+Véase el artículo [mantenimiento del sistema](/index.php/System_maintenance_(Espa%C3%B1ol) "System maintenance (Español)") para obtener consejos sobre cómo hacer que un sistema Arch Linux sea lo más estable posible.
 
 ### Arch necesita más prensa (es decir, publicidad)
 
@@ -110,7 +110,7 @@ Posiblemente sea así. ¡No dude en ofrecer su tiempo! Visite los [foros](https:
 
 ### ¿Por qué va mi internet tan lento en comparación con otros sistemas operativos?
 
-¿Está su red configurada correctamente? Consulte el artículo sobre la [configuración de red](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)").
+¿Está su red configurada correctamente? Véase el artículo sobre la [configuración de red](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)").
 
 También tenga en cuenta que Arch Linux no viene con [traffic shaping](https://en.wikipedia.org/wiki/Traffic_shaping "wikipedia:Traffic shaping") habilitado. Por lo tanto, es posible que si un programa, de alguna manera, utiliza su conexión de Internet al máximo –sin importar si se trata de P2P o de conexiones de un clásico client-server– otras conexiones locales se encontrarán obstruidas, traduciéndose en retrasos graves y tiempos de espera. El auxilio puede venir instalando un [firewalls](/index.php/Firewalls "Firewalls") como Shorewall o Vuurmuur; también hay scripts estáticos para [iproute2](https://www.archlinux.org/packages/?name=iproute2) (como por ejemplo [este derivado](http://serendipity.ruwenzori.net/index.php/2008/06/01/modified-wondershaper-for-better-voip-qos) de Wondershaper), que realiza precisamente esta tarea.
 
@@ -130,17 +130,17 @@ Swap:          3.0G        881M        2.1G
 
 ```
 
-Es importante distinguir entre memoria «free» y «available». En el ejemplo anterior, un portátil con 2,8G de memoria RAM total parece estar utilizando la mayor parte de ella, y solo disponer de 283M de memoria libre. Sin embargo, 1,4G de la misma está en «buff/cache». Todavía hay 1,2G disponibles para iniciar nuevas aplicaciones, sin tener que acudir al espacio de intercambio. Consulte `man free(1)` para obtener más detalles. ¿El resultado de todo esto? ¡Más rendimiento!
+Es importante distinguir entre memoria «free» y «available». En el ejemplo anterior, un portátil con 2,8G de memoria RAM total parece estar utilizando la mayor parte de ella, y solo disponer de 283M de memoria libre. Sin embargo, 1,4G de la misma está en «buff/cache». Todavía hay 1,2G disponibles para iniciar nuevas aplicaciones, sin tener que acudir al espacio de intercambio. Véase `man free(1)` para obtener más detalles. ¿El resultado de todo esto? ¡Más rendimiento!
 
-Consulte [este maravilloso artículo](http://www.linuxjournal.com/article/2770) ¡si su curiosidad se ha despertado! También hay un sitio web dedicado a aclarar esta confusión: [http://www.linuxatemyram.com/](http://www.linuxatemyram.com/)
+Véase [este maravilloso artículo](http://www.linuxjournal.com/article/2770) ¡si su curiosidad se ha despertado! También hay un sitio web dedicado a aclarar esta confusión: [http://www.linuxatemyram.com/](http://www.linuxatemyram.com/)
 
 ### ¿De dónde vino todo mi espacio libre?
 
-La respuesta a esta pregunta depende de su sistema. Hay algunas [utilidades de discoque](/index.php/Common_Applications#Disk_usage_display "Common Applications") pueden ayudarle a encontrar la respuesta.
+La respuesta a esta pregunta depende de su sistema. Hay algunas [utilidades de disco](/index.php/List_of_applications_(Espa%C3%B1ol)#Programas_de_visualizaci.C3.B3n_sobre_la_utilizaci.C3.B3n_del_disco "List of applications (Español)") que pueden ayudarle a encontrar la respuesta.
 
 ## Administración de paquetes
 
-Consulte las páginas [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)"), [pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks_(Espa%C3%B1ol) "Pacman/Tips and tricks (Español)") y [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") para obtener más respuestas.
+Véase las páginas [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)"), [pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks_(Espa%C3%B1ol) "Pacman/Tips and tricks (Español)") y [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") para obtener más respuestas.
 
 ### He encontrado un error con el paquete X. ¿Qué debo hacer?
 
@@ -209,15 +209,15 @@ Dado que la instalación no se produce con frecuencia (léase el resto de este a
 
 ### He instalado Arch, ¡y estoy en una shell! ¿Y ahora qué?
 
-Consulte las [recomendaciones generales](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)").
+Véase las [recomendaciones generales](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)").
 
 ### ¿Qué entorno de escritorio o gestor de ventanas debo usar?
 
-Ya que hay una gran variedad disponibles, use el que más se ajuste a sus necesidades. Consulte los artículos [Desktop environment (Español)](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") y [Window manager (Español)](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)").
+Ya que hay una gran variedad disponibles, use el que más se ajuste a sus necesidades. Véase los artículos [Desktop environment (Español)](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") y [Window manager (Español)](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)").
 
 ### ¿Qué hace único a Arch respecto de otras distribuciones «minimalistas»?
 
-Consulte [Arch compared to other distributions (Español)](/index.php/Arch_compared_to_other_distributions_(Espa%C3%B1ol) "Arch compared to other distributions (Español)").
+Véase [Arch compared to other distributions (Español)](/index.php/Arch_compared_to_other_distributions_(Espa%C3%B1ol) "Arch compared to other distributions (Español)").
 
 ## 64 bits
 

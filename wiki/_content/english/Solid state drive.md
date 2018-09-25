@@ -91,7 +91,7 @@ To query the units activity and status, see [journalctl](/index.php/Journalctl "
 
 **Note:** There is no need to enable continuous TRIM if you run `fstrim` periodically. If you want to use TRIM, use either periodic TRIM or continuous TRIM.
 
-Instead of issuing TRIM commands once in a while (by default once a week if using `fstrim.timer`), it is also possible to issue TRIM commands each time files are deleted instead. The latter is the continuous TRIM.
+Instead of issuing TRIM commands once in a while (by default once a week if using `fstrim.timer`), it is also possible to issue TRIM commands each time files are deleted instead. The latter is known as the continuous TRIM.
 
 **Warning:** Before [SATA 3.1](https://en.wikipedia.org/wiki/Serial_ATA#SATA_revision_3.1 for details.
 
@@ -104,7 +104,7 @@ Using the `discard` option for a mount in `/etc/fstab` enables continuous TRIM i
 
 ```
 
-**Note:** Specifying the `discard` mount option in `/etc/fstab` will not work on the `/` filesystem because it is already mounted when `/etc/fstab` is read. The `discard` option either needs to be written in the filesystem's metadata as a default option ([ext4](/index.php/Ext4 "Ext4") and [F2FS](/index.php/F2FS "F2FS") only) or set using the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `rootflags=discard`. [[8]](https://bbs.archlinux.org/viewtopic.php?id=143254)
+**Note:** Specifying the discard mount option in `/etc/fstab` does not work with an XFS `/` partition. According to [this thread](https://bbs.archlinux.org/viewtopic.php?id=143254), it has to be set using the `rootflags=discard` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
 
 On the ext4 filesystem, the `discard` flag can also be set as a [default mount option](/index.php/Access_Control_Lists#Enabling_ACL "Access Control Lists") using *tune2fs*:
 
@@ -113,7 +113,7 @@ On the ext4 filesystem, the `discard` flag can also be set as a [default mount o
 
 ```
 
-Using the default mount options instead of an entry in `/etc/fstab` is useful for external drives, because such partition will be mounted with the default options also on other machines. There is no need to edit `/etc/fstab` on every machine.
+Using the default mount options instead of an entry in `/etc/fstab` is particularly useful for external drives, because such partition will be mounted with the default options also on other machines. This way, there is no need to edit `/etc/fstab` on every machine.
 
 **Note:** The default mount options are not listed in `/proc/mounts`.
 
@@ -169,7 +169,7 @@ Operations like formatting the device or installing operating systems are not af
 
 The above output shows the device is **not locked** by a HDD-password on boot and the **frozen** state safeguards the device against malwares which may try to lock it by setting a password to it at runtime.
 
-If you intend to set a password to a "frozen" device yourself, a motherboard BIOS with support for it is required. A lot of notebooks have support, because it is required for [hardware encryption](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption "wikipedia:Hardware-based full disk encryption"), but support may not be trivial for a desktop/server board. For the Intel DH67CL/BL motherboard, for example, the motherboard has to be set to "maintenance mode" by a physical jumper to access the settings (see [[9]](https://sstahlman.blogspot.in/2014/07/hardware-fde-with-intel-ssd-330-on.html?showComment=1411193181867#c4579383928221016762), [[10]](https://communities.intel.com/message/251978#251978)).
+If you intend to set a password to a "frozen" device yourself, a motherboard BIOS with support for it is required. A lot of notebooks have support, because it is required for [hardware encryption](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption "wikipedia:Hardware-based full disk encryption"), but support may not be trivial for a desktop/server board. For the Intel DH67CL/BL motherboard, for example, the motherboard has to be set to "maintenance mode" by a physical jumper to access the settings (see [[8]](https://sstahlman.blogspot.in/2014/07/hardware-fde-with-intel-ssd-330-on.html?showComment=1411193181867#c4579383928221016762), [[9]](https://communities.intel.com/message/251978#251978)).
 
 **Warning:** Do not try to change the above **lock** security settings with `hdparm` unless you know exactly what you are doing.
 

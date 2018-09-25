@@ -452,7 +452,7 @@ You should be able to login as root after restarting GDM.
 
 The users for the gdm user list are gathered by [AccountsService](https://www.freedesktop.org/wiki/Software/AccountsService/). It will automatically hide system users (UID < 1000). To hide ordinary users from the login list create or edit a file named after the user to hide in `/var/lib/AccountsService/users/` to contain at least:
 
- `/var/lib/AccountsService/users/<username>` 
+ `/var/lib/AccountsService/users/*username*` 
 ```
 [User]
 SystemAccount=true
@@ -534,9 +534,11 @@ GDM uses a separate dconf database to control power management. You can make GDM
 
 ```
 $ IFS=$'
-'; for x in $(sudo -u YOUR_USER gsettings list-recursively org.gnome.settings-daemon.plugins.power); do eval "sudo -u gdm dbus-launch gsettings set $x"; done; unset IFS
+'; for x in $(sudo -u *username* gsettings list-recursively org.gnome.settings-daemon.plugins.power); do eval "sudo -u gdm dbus-launch gsettings set $x"; done; unset IFS
 
 ```
+
+where *username* is your user's name.
 
 Or to simply disable auto-suspend (also run the command with `ac` replaced with `battery` to also disable it while running on battery):
 

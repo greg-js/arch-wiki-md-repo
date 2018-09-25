@@ -59,6 +59,7 @@ Device nodes that do not have a physical device.
 *   [/dev/shm](/index.php//dev/shm "/dev/shm")
 *   [/dev/null](https://en.wikipedia.org/wiki//dev/null "wikipedia:/dev/null"), [/dev/zero](https://en.wikipedia.org/wiki//dev/zero "wikipedia:/dev/zero"), see [null(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/null.4)
 *   [/dev/full](https://en.wikipedia.org/wiki//dev/full "wikipedia:/dev/full"), see [full(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/full.4)
+*   [/dev/ttyX](/index.php//dev/ttyX "/dev/ttyX"), where X is a number
 
 ## See also
 

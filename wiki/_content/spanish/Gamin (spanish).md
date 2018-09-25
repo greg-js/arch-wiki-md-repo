@@ -8,6 +8,6 @@ Gamin re-implementa la especificación [FAM](/index.php/FAM_(Espa%C3%B1ol) "FAM 
 
 Instale el paquete [gamin](https://www.archlinux.org/packages/?name=gamin).
 
-## Consulte también
+## Véase también
 
 *   [FAM, Gamin e inotify](http://www.noah.org/wiki/FAM,_Gamin,_inotify)

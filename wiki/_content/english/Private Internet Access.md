@@ -3,8 +3,13 @@
 ## Contents
 
 *   [1 Manual](#Manual)
-    *   [1.1 Installation](#Installation)
-    *   [1.2 Usage](#Usage)
+    *   [1.1 NetworkManager applet approach](#NetworkManager_applet_approach)
+        *   [1.1.1 Installation](#Installation)
+        *   [1.1.2 Configuration](#Configuration)
+        *   [1.1.3 Usage](#Usage)
+    *   [1.2 OpenVPN command line approach](#OpenVPN_command_line_approach)
+        *   [1.2.1 Installation](#Installation_2)
+        *   [1.2.2 Usage](#Usage_2)
 *   [2 Automatic](#Automatic)
     *   [2.1 Official installation script](#Official_installation_script)
     *   [2.2 Official Linux client](#Official_Linux_client)
@@ -17,18 +22,45 @@
 
 ## Manual
 
-### Installation
-
-Download [OpenVPN configurations from PIA](https://www.privateinternetaccess.com/openvpn/openvpn-strong.zip). Unzip the file and move all files to `/etc/openvpn/client`. Ensure the files have `root` as the owner.
-
-**Tip:** To be able to use [OpenVPN#systemd service configuration](/index.php/OpenVPN#systemd_service_configuration "OpenVPN") (e.g `systemctl start openvpn-client@*<config>*`), rename the all the files and replace `.opvn` extension with `.conf` and replace spaces in configuration file names with underscores.
-
 **Note:**
 
 *   [Disable ipv6](/index.php/Disable_ipv6 "Disable ipv6") since it is not supported by PIA.[[1]](https://helpdesk.privateinternetaccess.com/hc/en-us/articles/232324908-Why-Do-You-Block-IPv6-)
 *   Ensure you are using PIA's [DNS](/index.php/DNS "DNS") servers, listed on their website.
 
-### Usage
+### NetworkManager applet approach
+
+#### Installation
+
+Download [OpenVPN configuration files from PIA](https://www.privateinternetaccess.com/openvpn/openvpn.zip). Extract the ZIP file to a place in your user home directory or elsewhere that is memorable for future access.
+
+Install and configure [NetworkManager](/index.php/NetworkManager "NetworkManager") along with the NetworkManager applet and OpenVPN plugin.
+
+#### Configuration
+
+1.  Right click on the NetworkManager applet from your desktop environment, and click Edit Connections. Click the Plus sign in the bottom left corner of the Network Connections window that appears.
+2.  When you choose a connection type, click the drop down menu and scroll all the way down until you reach "Import a saved VPN configuration". Select that option. Now, click Create.
+3.  Navigate to the directory you extracted all of the openvpn files to earlier, then open one of the files from that folder. Generally speaking, you will want to open the file that is associated with the connection you specifically want.
+4.  After you have opened one of the openvpn files, the window that appears should be "Editing <connection type>". Type in your Username and Password that you received from Private Internet Access. There is an icon in the password box indicating user permission of the credentials; change the settings as you wish.
+5.  Now, click Advanced. Next to "Use LZO data compression", click the drop down menu to select "adaptive". Click the OK button at the bottom left of the window to save this change.
+6.  Click Save at the bottom left of the "Editing <connection type>" window.
+
+#### Usage
+
+Left click on the NetworkManager applet. There is a VPN Connections menu. Inside it should be the VPN connection you saved. Click on it to connect to Private Internet Access.
+
+When a gold lock has appeared over the NetworkManager applet, you are successfully connected to Private Internet Access. Visit [Private Internet Access](https://www.privateinternetaccess.com/) and confirm that you are connected by referring to the status message at the top of their homepage.
+
+**Note:** If the VPN asks for a password, and you would like to avoid entering the password each time you attempt to connect, be sure to click the icon in the password box as noted previously regarding permission of credentials and change it to all users.
+
+### OpenVPN command line approach
+
+#### Installation
+
+Download [OpenVPN configurations from PIA](https://www.privateinternetaccess.com/openvpn/openvpn-strong.zip). Unzip the file and move all files to `/etc/openvpn/client`. Ensure the files have `root` as the owner.
+
+**Tip:** To be able to use [OpenVPN#systemd service configuration](/index.php/OpenVPN#systemd_service_configuration "OpenVPN") (e.g `systemctl start openvpn-client@*<config>*`), rename the all the files and replace `.opvn` extension with `.conf` and replace spaces in configuration file names with underscores.
+
+#### Usage
 
 See [OpenVPN#Starting OpenVPN](/index.php/OpenVPN#Starting_OpenVPN "OpenVPN").
 

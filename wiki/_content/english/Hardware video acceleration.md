@@ -64,7 +64,7 @@ There are several ways to achieve this on Linux:
 ([AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") only) | [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl)
 (VA-API adapter) |
 | Decoding |
-| MPEG2 | Radeon 9500 and newer, GeForce 8 and newer | GeForce 8 and newer |  ? | No |
+| MPEG2 | Radeon 9500 and newer, GeForce 8 and newer | GeForce 8 and newer | ? | No |
 | MPEG4 | Radeon HD 6000 and newer, GeForce 200 and newer | GeForce 200 and newer |
 | H.264 | Radeon HD 2000 and newer, GeForce 8 and newer | GeForce 8 and newer | See VA-API |
 | HEVC (H.265) | Radeon R9 285 and newer | GeForce 900 and newer | No |

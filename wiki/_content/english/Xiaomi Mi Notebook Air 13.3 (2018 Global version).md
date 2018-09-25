@@ -3,11 +3,11 @@
 | Wireless | Working | iwlwifi |
 | Bluetooth | Working | btusb |
 | Audio | Working | snd_hda_intel |
-| Touchpad | Working |  ? |
+| Touchpad | Working | ? |
 | Webcam | Working | uvcvideo |
-| USB-C / Thunderbolt 3 | Working |  ? |
-| Function/Multimedia Keys | Working |  ? |
-| Fingerprint | Unsupported |  ? |
+| USB-C / Thunderbolt 3 | Working | ? |
+| Function/Multimedia Keys | Working | ? |
+| Fingerprint | Unsupported | ? |
 
 The Mi Notebook Air 13.3 is an aluminium Ultrabook. It is a product by the Chinese Company Xiaomi and is available in China or Europe through online-shops. Using the [Intel Core i5 8250U](https://ark.intel.com/products/124967/Intel-Core-i5-8250U-Processor-6M-Cache-up-to-3_40-GHz) @ 3.4 GHz and the NVIDIA GeForce MX150, it provides good power for a decent price.
 

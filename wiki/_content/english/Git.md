@@ -39,7 +39,7 @@ Related articles
     *   [4.1 Using git-config](#Using_git-config)
     *   [4.2 Adopting a good etiquette](#Adopting_a_good_etiquette)
     *   [4.3 Speeding up authentication](#Speeding_up_authentication)
-    *   [4.4 Protocol Defaults](#Protocol_Defaults)
+    *   [4.4 Protocol defaults](#Protocol_defaults)
     *   [4.5 Bash completion](#Bash_completion)
     *   [4.6 Git prompt](#Git_prompt)
     *   [4.7 Visual representation](#Visual_representation)
@@ -513,7 +513,7 @@ You may wish to avoid the hassle of authenticating interactively at every push t
 *   If you are authenticating with SSH keys, use an [SSH agent](/index.php/SSH_agent "SSH agent"). See also [SSH#Speeding up SSH](/index.php/SSH#Speeding_up_SSH "SSH") and [SSH#Keep alive](/index.php/SSH#Keep_alive "SSH").
 *   If you are authenticating with username and password, switch to [SSH keys](/index.php/SSH_keys "SSH keys") if the server supports SSH, otherwise try [git-credential-cache](https://git-scm.com/docs/git-credential-cache) or [git-credential-store](https://git-scm.com/docs/git-credential-store).
 
-### Protocol Defaults
+### Protocol defaults
 
 If you are running a multiplexed SSH connection as shown above, Git over SSH might be faster than HTTPS. Also, some servers (like the AUR) only allow pushing via SSH. For example, the following config will set Git over SSH for any repository hosted on the AUR.
 

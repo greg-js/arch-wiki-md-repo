@@ -198,7 +198,7 @@ alsactl store
 *   Caso você não tenha o Controle de Volume do Gnome,
     *   Edite o arquivo /etc/asound.state. É neste arquivo que as configurações do mixer são salvas.
     *   Encontre uma linha que diz: 'IEC958 Playback Switch'. Próxima a ela, você encontrará uma linha dizendo **value:false**. Mude para **value:true**
-    *   Agora encontre esta linha: 'IEC958 Playback AC97-SPSA' e mude o seu valor para 0\.
+    *   Agora encontre esta linha: 'IEC958 Playback AC97-SPSA' e mude o seu valor para 0.
     *   Reinicie o alsa.
 
 Método alternativo para ativar a saída SPDIF automaticamente durante o login (testado na SoundBlaster Audigy)

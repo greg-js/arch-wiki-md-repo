@@ -191,7 +191,7 @@ Y luego guarde el archivo.
 
 ### LightDM
 
-Consulte [LightDM#NumLock on by default](/index.php/LightDM#NumLock_on_by_default "LightDM").
+Véase [LightDM#NumLock on by default](/index.php/LightDM#NumLock_on_by_default "LightDM").
 
 ### LXDM
 

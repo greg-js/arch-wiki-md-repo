@@ -96,8 +96,8 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| IBM ThinkPad T60 | Yes | Yes | Yes | Yes | Yes | Yes |  ? | NA |
-| IBM ThinkPad T60p | Yes | Yes | Yes | Yes | Yes | Yes |  ? | NA | ThinkFinger |
+| IBM ThinkPad T60 | Yes | Yes | Yes | Yes | Yes | Yes | ? | NA |
+| IBM ThinkPad T60p | Yes | Yes | Yes | Yes | Yes | Yes | ? | NA | ThinkFinger |
 | [IBM ThinkPad T61](/index.php/IBM_ThinkPad_T61 "IBM ThinkPad T61") | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | IBM ThinkPad T61p | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo ThinkPad T400](/index.php/Lenovo_ThinkPad_T400 "Lenovo ThinkPad T400") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
@@ -107,20 +107,20 @@ install CD version
 | [Lenovo ThinkPad T420s](/index.php/Lenovo_ThinkPad_T420s "Lenovo ThinkPad T420s") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA | Card Reader |
 | [Lenovo ThinkPad T430](/index.php/Lenovo_ThinkPad_T430 "Lenovo ThinkPad T430") | Yes | Yes | Yes | Yes | Yes | Yes* | Yes* | Not tested |
 | [Lenovo ThinkPad T440p](#Lenovo_ThinkPad_T440p) | Yes | Yes | Yes | Yes | Yes | Yes* | NA | NA | Card Reader | See below |
-| [Lenovo ThinkPad T440s](/index.php/Lenovo_ThinkPad_T440s "Lenovo ThinkPad T440s") | Yes | Yes | Yes | Yes | Yes* |  ? | Yes |  ? | See wiki page for more details about wireless |
-| [Lenovo ThinkPad T450s](/index.php/Lenovo_ThinkPad_T450s "Lenovo ThinkPad T450s") | 2015.10.01 | Yes | Yes | Yes | Yes | Yes |  ? | NA | SD Card reader; fingerprint scanner |
-| [Lenovo ThinkPad T460s](/index.php/Lenovo_ThinkPad_T460s "Lenovo ThinkPad T460s") | Yes | Yes | no beep | Yes | Yes | Yes |  ? | NA | SD Card reader |
+| [Lenovo ThinkPad T440s](/index.php/Lenovo_ThinkPad_T440s "Lenovo ThinkPad T440s") | Yes | Yes | Yes | Yes | Yes* | ? | Yes | ? | See wiki page for more details about wireless |
+| [Lenovo ThinkPad T450s](/index.php/Lenovo_ThinkPad_T450s "Lenovo ThinkPad T450s") | 2015.10.01 | Yes | Yes | Yes | Yes | Yes | ? | NA | SD Card reader; fingerprint scanner |
+| [Lenovo ThinkPad T460s](/index.php/Lenovo_ThinkPad_T460s "Lenovo ThinkPad T460s") | Yes | Yes | no beep | Yes | Yes | Yes | ? | NA | SD Card reader |
 | [Lenovo ThinkPad T25](/index.php/Lenovo_ThinkPad_T25 "Lenovo ThinkPad T25") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card reader; fingerprint scanner; Touchscreen |
 | [Lenovo ThinkPad T470](/index.php/Lenovo_ThinkPad_T470 "Lenovo ThinkPad T470") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card reader; fingerprint scanner |
 | [Lenovo ThinkPad T470s](/index.php/Lenovo_ThinkPad_T470s "Lenovo ThinkPad T470s") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card reader; fingerprint scanner |
-| [Lenovo ThinkPad T480](/index.php/Lenovo_ThinkPad_T480 "Lenovo ThinkPad T480") | 2018.07.01 | Yes | Yes | Yes | Yes | Yes |  ? | NA | Thunderbolt 3 (USB-C); SD Card reader; fingerprint scanner |
+| [Lenovo ThinkPad T480](/index.php/Lenovo_ThinkPad_T480 "Lenovo ThinkPad T480") | 2018.07.01 | Yes | Yes | Yes | Yes | Yes | ? | NA | Thunderbolt 3 (USB-C); SD Card reader; fingerprint scanner |
 | [Lenovo ThinkPad T480s](/index.php/Lenovo_ThinkPad_T480s "Lenovo ThinkPad T480s") | 2018.03.01 | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card reader; Thunderbolt 3 (USB-C) | For [video h/w acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") install [chromium-vaapi-bin](https://aur.archlinux.org/packages/chromium-vaapi-bin/) and ensure to enable acceleration in `about:flags`. Check everything is working in `about:gpu`. |
 | Lenovo ThinkPad T500 | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad T520](/index.php/Lenovo_ThinkPad_T520 "Lenovo ThinkPad T520") | Yes | Yes | Yes | Yes | Yes | Yes | NA | NA |
 | [Lenovo ThinkPad T530](/index.php/Lenovo_ThinkPad_T530 "Lenovo ThinkPad T530") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo ThinkPad T550](/index.php/Lenovo_ThinkPad_T550 "Lenovo ThinkPad T550") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | DisplayPort |
 | Lenovo ThinkPad T560 | Yes | Yes | Yes | Yes | Yes | Yes | Yes* | NA | MiniDP; Fingerprint scanner; Intel + Nvidia GPU; Card Reader | See special notes for the hardware specifications of this test device |
-| [Lenovo ThinkPad T570](/index.php/Lenovo_ThinkPad_T570 "Lenovo ThinkPad T570") | Yes | Yes | Yes | Yes | Yes |  ? | Yes* | NA | not yet fully tested |
+| [Lenovo ThinkPad T570](/index.php/Lenovo_ThinkPad_T570 "Lenovo ThinkPad T570") | Yes | Yes | Yes | Yes | Yes | ? | Yes* | NA | not yet fully tested |
 | Lenovo ThinkPad T580 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | SD Card Reader is supported; [Fingerprint reader is not supported](https://forums.lenovo.com/t5/Linux-Discussion/Thinkpad-T580-Synaptics-Metallica-MIS-Touch-Fingerprint-Reader/m-p/4057745) | Tested on *2 May 2018* (with *Linux 4.16.5*) |
 
 #### W series
@@ -230,7 +230,7 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| Lenovo S21e-20 | 2015.07.01 | Yes | Yes | NA | Yes* |  ? | Yes | NA | SD Card (Yes), USB 3.0 (Yes), HDMI Out (?), Touchpad (Yes*) |
+| Lenovo S21e-20 | 2015.07.01 | Yes | Yes | NA | Yes* | ? | Yes | NA | SD Card (Yes), USB 3.0 (Yes), HDMI Out (?), Touchpad (Yes*) |
 
 ### U Series
 
@@ -246,7 +246,7 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| Lenovo V110-15ISK |  ??? | Yes | Yes | Yes | Yes | Not Tested | Yes | NA | SD Card (Not Tested), USB 3.0 (Not Tested), HDMI Out (Not Tested), Touchpad (Yes), Webcam (Yes) |
+| Lenovo V110-15ISK | ??? | Yes | Yes | Yes | Yes | Not Tested | Yes | NA | SD Card (Not Tested), USB 3.0 (Not Tested), HDMI Out (Not Tested), Touchpad (Yes), Webcam (Yes) |
 
 ### Y series
 

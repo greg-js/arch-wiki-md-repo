@@ -25,17 +25,18 @@ Wikipedia [LPRng](https://en.wikipedia.org/wiki/LPRng "wikipedia:LPRng") article
 *   [3 Usage](#Usage)
 *   [4 CUPS and LPRng](#CUPS_and_LPRng)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Gnome2/GTK2](#Gnome2.2FGTK2)
-    *   [5.2 LXDE](#LXDE)
-    *   [5.3 Postscript printing](#Postscript_printing)
-        *   [5.3.1 Double-Sided PS](#Double-Sided_PS)
+    *   [5.1 Printer specific instrcutions](#Printer_specific_instrcutions)
+    *   [5.2 Gnome2/GTK2](#Gnome2.2FGTK2)
+    *   [5.3 LXDE](#LXDE)
+    *   [5.4 Postscript printing](#Postscript_printing)
+        *   [5.4.1 Double-Sided PS](#Double-Sided_PS)
 
 ## Installation
 
 *   Install the [lprng](https://aur.archlinux.org/packages/lprng/) package from the AUR.
 *   Install optional filter packages:
     *   [poppler](https://www.archlinux.org/packages/?name=poppler)
-    *   [enscript](https://www.archlinux.org/packages/?name=enscript)
+    *   Any one out of [a2ps](https://www.archlinux.org/packages/?name=a2ps), [enscript](https://www.archlinux.org/packages/?name=enscript), [mpage](https://aur.archlinux.org/packages/mpage/)
     *   [ghostscript](https://www.archlinux.org/packages/?name=ghostscript)
     *   [hplip](https://www.archlinux.org/packages/?name=hplip) or [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/). hplip might interfere to foo2zjs-nightly, so first try whatever suits you most.
     *   [foomatic-filters-lprng](https://aur.archlinux.org/packages/foomatic-filters-lprng/)
@@ -171,6 +172,10 @@ Other useful commands are `lpq` (examine the print queue) and `lprm` (remove a p
 [CUPS](/index.php/CUPS "CUPS") may be used to access a printer on a server from a client machine on which LPRng is not installed. The trick is to configure CUPS to access the printer via the `lpd` protocol. This is easy to do using the web interface to CUPS. Also, since the server as set up here does all necessary print filtering, tell CUPS to use the `raw` filter. Alternative divisions between filtering responsibilities can be devised, depending on your needs.
 
 ## Troubleshooting
+
+### Printer specific instrcutions
+
+Despite its title, some of the information at [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems") is not Cups specific.
 
 ### Gnome2/GTK2
 

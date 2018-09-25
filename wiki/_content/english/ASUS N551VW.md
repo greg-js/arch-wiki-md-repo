@@ -7,7 +7,7 @@
 | Touchpad | Working | Elantech |
 | Camera | Working | uvcvideo |
 | Card Reader | Working | rtsx_usb? |
-| Bluetooth | Not Tested | bluetooth? |
+| Bluetooth | Working | bluetooth? |
 
 ## Contents
 
@@ -76,6 +76,12 @@ xrandr --output eDP-1-1 --mode 1920x1080_60.00
 ## Audio
 
 Works over regular jack and also over HDMI. For regular jack to work please select Analog Stereo Output in PulseAudio Volume Control. External ASUS subwoofer does not work though (I believe it requires a MS Windows based driver)
+
+ASUS subwoofer workaround:
+
+Install hadajackretask then:
+
+1 . Select Realtek ALC668 2\. Check “Show unconnected pins” 3\. Check “Override” on “Pin ID: 0x1a” and “Internal speaker (LFE)” 4\. “Apply now” 5\. “Install boot override”
 
 ## Keyboard
 

@@ -171,5 +171,4 @@ Related articles
 ### ما الذي يمكنني فعله كفنّان؟
 
 لا تتردّد في مشاركة خلفيات سطح المكتب، splash screens، لوحات الألوان، الودجات، السمات، إلخ. مع المجتمع على [art subforum](https://bbs.archlinux.org/viewforum.php?id=47).
-
 طالع أيضًا [Arch Linux Art](https://www.archlinux.org/art/).

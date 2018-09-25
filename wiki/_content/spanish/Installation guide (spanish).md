@@ -53,7 +53,7 @@ Para modificar la distribución de teclado, añada un nombre de archivo correspo
 
 ```
 
-Los [tipos de letras para consola](/index.php/Fonts#Console_fonts "Fonts") se encuentran en `/usr/share/kbd/consolefonts/` y se pueden configurar igualmente con [setfont(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
+Los [tipos de letras para consola](/index.php/Fonts "Fonts") se encuentran en `/usr/share/kbd/consolefonts/` y se pueden configurar igualmente con [setfont(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
 
 ### Comprobación del modo de arranque
 

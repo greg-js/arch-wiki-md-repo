@@ -49,7 +49,7 @@ freshclamd.service | Anti-virus toolkit for Unix. |
  ifplugd | ifplugd@.service | Start/stop network on network cable plugged in/out. |
 | [iptables](/index.php/Iptables "Iptables") | iptables | iptables.service | Load firewall rules for IPv4. |
 | ip6tables | ip6tables.service | Load firewall rules for IPv6. |
-| [IPFS](/index.php/IPFS "IPFS") | ipfs daemon |  ? | A peer-to-peer hypermedia protocol node |
+| [IPFS](/index.php/IPFS "IPFS") | ipfs daemon | ? | A peer-to-peer hypermedia protocol node |
  irqbalance | irqbalance.service | Irqbalance is the Linux utility tasked with making sure that interrupts from your hardware devices are handled in as efficient a manner as possible. |
 | [KDE](/index.php/KDE "KDE") | kdm | kdm.service | KDE Display Manager. |
 | [krb5](https://www.archlinux.org/packages/?name=krb5) | krb5-kadmind | krb5-kadmind.service | Kerberos 5 administration server. |
@@ -59,14 +59,14 @@ freshclamd.service | Anti-virus toolkit for Unix. |
 | [lighttpd](/index.php/Lighttpd "Lighttpd") | lighttpd | lighttpd.service | Lighttpd HTTP Server (Web Server). |
 | [libvirt](/index.php/Libvirt "Libvirt") | libvirt | libvirtd.service | libvirt is a virtualization API and a daemon for managing virtual machines (VMs). |
 | [lxdm](/index.php/LXDE "LXDE") | lxdm | lxdm.service | LXDE Display Manager. |
-| [man-db](https://www.archlinux.org/packages/?name=man-db) |  ? | man-db.timer
+| [man-db](https://www.archlinux.org/packages/?name=man-db) | ? | man-db.timer
 
 man-db.service
 
  | Daily man-db cache update. |
  mdadm | mdadm.service | MD Administration (Linux software RAID). |
 | [miniDLNA](/index.php/MiniDLNA "MiniDLNA") | minidlna | minidlna.service | simple DLNA/UPnP media server. |
-  ? | ModemManager.service | Makes mobile broadband (3G) modem available to [NetworkManager](/index.php/NetworkManager "NetworkManager"). |
+ ? | ModemManager.service | Makes mobile broadband (3G) modem available to [NetworkManager](/index.php/NetworkManager "NetworkManager"). |
 | [mpd](/index.php/Mpd "Mpd") | mpd | mpd.service | Music Player Daemon. |
 | [MySQL](/index.php/MySQL "MySQL") | mysqld | mysqld.service | MySQL database server. |
 | [MythTV](/index.php/MythTV "MythTV") | mythbackend | mythbackend.service | Back-end for the MythTV digital video recording/home theater software. |
@@ -102,7 +102,7 @@ NetworkManager-wait-online.service | NetworkManager daemon, provides configurati
 | [samba](/index.php/Samba "Samba") | samba | smb.service
 nmb.service
 winbind.service | File and print services for Microsoft Windows clients. |
-| [LVM](/index.php/LVM "LVM") |  ? | blk-availability.service
+| [LVM](/index.php/LVM "LVM") | ? | blk-availability.service
 lvm2-lvmetad.service
 lvm2-monitor.service
 lvm2-pvscan.service | LVM is a logical volume manager for the Linux kernel; it manages disk drives and similar mass-storage devices. |
@@ -110,7 +110,7 @@ lvm2-pvscan.service | LVM is a logical volume manager for the Linux kernel; it m
  saslauthd | saslauthd.service | SASL authentication daemon. |
 | [lm_sensors](/index.php/Lm_sensors "Lm sensors") | sensord | sensord.service | Sensor information logging daemon. |
 | sensors | lm_sensors.service | Initialize hardware monitoring sensors (load necessary kernel modules). |
-| [shadow](https://www.archlinux.org/packages/?name=shadow) |  ? | shadow.timer
+| [shadow](https://www.archlinux.org/packages/?name=shadow) | ? | shadow.timer
 
 shadow.service
 
@@ -126,11 +126,11 @@ shadow.service
  svnserve | svnserve.service | Subversion server. |
 | [syslog-ng](/index.php/Syslog-ng "Syslog-ng") | syslog-ng | syslog-ng.service | System logger next generation. |
 | [Timidity](/index.php/Timidity "Timidity") | timidity++ | timidity.service | Software synthesizer for MIDI. |
-| [Tinc](/index.php/Tinc "Tinc") |  ? | tincd@.service | One for each configuration directory like /etc/tinc/*<vpnname>*/ |
+| [Tinc](/index.php/Tinc "Tinc") | ? | tincd@.service | One for each configuration directory like /etc/tinc/*<vpnname>*/ |
 | [Tor](/index.php/Tor "Tor") | tor | tor.service | Onion routing for anonymous communication. |
 | [Transmission](/index.php/Transmission "Transmission") | transmissiond | transmission.service | BitTorrent Daemon. |
 | [Ufw](/index.php/Ufw "Ufw") | ufw | ufw.service | Uncomplicated FireWall. |
-| [Urxvtd](/index.php/Urxvt "Urxvt") |  ? | urxvtd.service | urxvt daemon. |
+| [Urxvtd](/index.php/Urxvt "Urxvt") | ? | urxvtd.service | urxvt daemon. |
 | [VirtualBox](/index.php/VirtualBox "VirtualBox") | vboxservice | vboxservice.service | VirtualBox Guest Service. |
 | [vnStat](/index.php/VnStat "VnStat") | vnstat | vnstat.service | Lightweight network traffic monitor. |
 | [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") | vsftpd | vsftpd.service (permanent)

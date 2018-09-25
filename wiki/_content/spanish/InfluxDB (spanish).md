@@ -5,14 +5,14 @@ Artículos relacionados
 *   [Telegraf](/index.php/Telegraf "Telegraf")
 *   [Grafana](/index.php/Grafana "Grafana")
 
-InfluxDB es una base de datos de series de tiempo construida desde cero para manejar altas cargas de escritura y consultas. Es la segunda pieza de la [pila TICK](https://www.influxdata.com/time-series-platform/). InfluxDB está destinado a ser utilizado como una almacenamiento de reserva para cualquier tipo de uso que involucre grandes cantidades de datos con marcas de tiempo, incluyendo la supervisión DevOps, métricas de aplicaciones, datos de sensores IoT y análisis en tiempo real. Para obtener información más detallada, consulte la [documentación oficial](https://docs.influxdata.com/influxdb/).
+InfluxDB es una base de datos de series de tiempo construida desde cero para manejar altas cargas de escritura y consultas. Es la segunda pieza de la [pila TICK](https://www.influxdata.com/time-series-platform/). InfluxDB está destinado a ser utilizado como una almacenamiento de reserva para cualquier tipo de uso que involucre grandes cantidades de datos con marcas de tiempo, incluyendo la supervisión DevOps, métricas de aplicaciones, datos de sensores IoT y análisis en tiempo real. Para obtener información más detallada, véase la [documentación oficial](https://docs.influxdata.com/influxdb/).
 
 ## Contents
 
 *   [1 Instalación](#Instalaci.C3.B3n)
 *   [2 Configuración](#Configuraci.C3.B3n)
 *   [3 Utilización](#Utilizaci.C3.B3n)
-*   [4 Consulte también](#Consulte_tambi.C3.A9n)
+*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
 ## Instalación
 
@@ -32,7 +32,7 @@ También se puede usar con otros complementos de entrada, como por ejemplo [coll
 
 La operaciones con la base de datos se pueden hacer mediante su API HTTP, tanto para [escribir](https://docs.influxdata.com/influxdb/latest/guides/writing_data/) como para [consultar](https://docs.influxdata.com/influxdb/latest/guides/querying_data/).
 
-## Consulte también
+## Véase también
 
 *   [InfluxData](https://www.influxdata.com/)
 *   [Github](https://github.com/influxdata/influxdb/)

@@ -7,8 +7,8 @@
 | Webcam | Working ¹ | uvcvideo |
 | USB-C / Thunderbolt 3 | Working | intel_wmi_thunderbolt |
 | Wireless switch | Working | intel_hid |
-| Function/Multimedia Keys | Working |  ? |
-| Fingerprint sensor | Not working |  ? |
+| Function/Multimedia Keys | Working | ? |
+| Fingerprint sensor | Not working | ? |
 
 Related articles
 
@@ -26,7 +26,7 @@ The installation process for Arch on the XPS 13 does not differ from any other P
 
 ## Contents
 
-*   [1 Booting](#Booting)
+*   [1 UEFI](#UEFI)
 *   [2 Content Adaptive Brightness Control](#Content_Adaptive_Brightness_Control)
 *   [3 Video](#Video)
 *   [4 Storage](#Storage)
@@ -45,9 +45,15 @@ The installation process for Arch on the XPS 13 does not differ from any other P
 *   [15 USB Type-C ports](#USB_Type-C_ports)
 *   [16 Fingerprint reader](#Fingerprint_reader)
 
-## Booting
+## UEFI
 
-To boot from a USB device attached via the USB-C to USB-A adapter included in the box, you'll need to enable Thunderbolt boot in the BIOS (press F2 while the Dell logo is displayed). Once enabled, F12 on boot will enter the boot menu. It is also possible to use the right USB-C port directly without any BIOS adjustment.
+Before installing it is necessary to modify some UEFI Settings. They can be accessed by pressing the F2 key repeatedly when booting.
+
+*   Change the SATA Mode from the default "RAID" to "AHCI". This will allow Linux to detect the NVME SSD. If dual booting with an existing Windows installation, Windows will not boot after the change but [this can be fixed without a reinstallation](https://triplescomputers.com/blog/uncategorized/solution-switch-windows-10-from-raidide-to-ahci-operation/).
+*   Disable secure boot to allow Linux to boot.
+*   To boot from a USB device attached via the USB-C to USB-A adapter included in the box, you'll need to enable Thunderbolt boot. Once enabled, F12 on boot will enter the boot menu.
+
+It is also possible to use the right USB-C port directly without any UEFI adjustment.
 
 ## Content Adaptive Brightness Control
 

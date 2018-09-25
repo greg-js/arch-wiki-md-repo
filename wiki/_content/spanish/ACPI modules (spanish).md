@@ -19,7 +19,7 @@ Los módulos ACPI son módulos del kernel para diferentes partes de ACPI. Permit
 *   [4 Solución de problemas](#Soluci.C3.B3n_de_problemas)
     *   [4.1 Corregir DSDT](#Corregir_DSDT)
     *   [4.2 Corregir ACPI para portátiles](#Corregir_ACPI_para_port.C3.A1tiles)
-*   [5 Consulte también](#Consulte_tambi.C3.A9n)
+*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
 ## ¿Qué módulos están disponibles?
 
@@ -122,7 +122,7 @@ El uso de `/proc` para almacenar información ACPI ha sido desaconsejado y desap
 
 ### Corregir DSDT
 
-Si persisten los problemas con la administración de energía a pesar de haber cargado los módulos adecuados, un [DSDT](https://en.wikipedia.org/wiki/DSDT#ACPI_Tables "wikipedia:DSDT") poco amistoso para Linux podría ser la causa. Consulte el artículo de la wiki en [DSDT](/index.php/DSDT "DSDT").
+Si persisten los problemas con la administración de energía a pesar de haber cargado los módulos adecuados, un [DSDT](https://en.wikipedia.org/wiki/DSDT#ACPI_Tables "wikipedia:DSDT") poco amistoso para Linux podría ser la causa. Véase el artículo de la wiki en [DSDT](/index.php/DSDT "DSDT").
 
 ### Corregir ACPI para portátiles
 
@@ -136,6 +136,6 @@ A veces verá "ACPI: EC: input buffer is not empty, aborting transaction". Este 
 
 *   Construir un [kernel](/index.php/Kernel_(Espa%C3%B1ol) "Kernel (Español)") a medida con los parches en [bugs.launchpad.net](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/578506).
 
-## Consulte también
+## Véase también
 
 *   [Wikipedia:es:Advanced Configuration and Power Interface](https://en.wikipedia.org/wiki/es:Advanced_Configuration_and_Power_Interface "wikipedia:es:Advanced Configuration and Power Interface")

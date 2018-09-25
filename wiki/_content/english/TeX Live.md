@@ -12,19 +12,30 @@ TeX Live includes the [tex(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tex.1)
 
 ## Contents
 
-*   [1 Installation](#Installation)
-    *   [1.1 Manual installation](#Manual_installation)
-*   [2 Usage](#Usage)
-*   [3 Important information](#Important_information)
-    *   [3.1 Paper size](#Paper_size)
-    *   [3.2 Error with "formats not generated" upon update](#Error_with_.22formats_not_generated.22_upon_update)
-    *   [3.3 Fonts](#Fonts)
-*   [4 TeXLive Local Manager](#TeXLive_Local_Manager)
-*   [5 Install .sty files](#Install_.sty_files)
-    *   [5.1 Manual Installation](#Manual_Installation_2)
-    *   [5.2 Using PKGBUILDs](#Using_PKGBUILDs)
-*   [6 Updating babelbib language definitions](#Updating_babelbib_language_definitions)
-*   [7 See also](#See_also)
+*   [1 Terms](#Terms)
+*   [2 Installation](#Installation)
+    *   [2.1 Manual installation](#Manual_installation)
+*   [3 Usage](#Usage)
+*   [4 Important information](#Important_information)
+    *   [4.1 Paper size](#Paper_size)
+    *   [4.2 Error with "formats not generated" upon update](#Error_with_.22formats_not_generated.22_upon_update)
+    *   [4.3 Fonts](#Fonts)
+*   [5 TeXLive Local Manager](#TeXLive_Local_Manager)
+*   [6 Install .sty files](#Install_.sty_files)
+    *   [6.1 Manual Installation](#Manual_Installation_2)
+    *   [6.2 Using PKGBUILDs](#Using_PKGBUILDs)
+*   [7 Updating babelbib language definitions](#Updating_babelbib_language_definitions)
+*   [8 See also](#See_also)
+
+## Terms
+
+	[CTAN](https://www.ctan.org/)
+
+	The cen­tral place for all kinds of ma­te­rial around TeX.
+
+	texmf trees
+
+	See the [TeX Live Guide](https://www.tug.org/texlive/doc/texlive-en/texlive-en.html#x1-110002.3) and the [TeX Directory Structure](https://tug.org/tds/).
 
 ## Installation
 
@@ -57,11 +68,11 @@ You will probably want a [TeX editor](/index.php/List_of_applications/Documents#
 
 ## Important information
 
-*   The [biber](https://www.archlinux.org/packages/?name=biber) utility used to handle biblatex bibliography is provided as a separate package.
+*   The [biber](https://www.archlinux.org/packages/?name=biber) utility used to handle [biblatex](https://ctan.org/pkg/biblatex) bibliography is provided as a separate package.
 
-*   The way to handle font mappings for updmap was improved in September 2009, and installation should now be much more reliable than in the past. In the meantime, if you encounter error messages about unavailable map files, simply remove them by hand from the `updmap.cfg` file (ideally using `updmap-sys --edit`). You can also run `updmap-sys --syncwithtrees` to automatically comment out outdated map lines from the config file.
+*   The way to handle font mappings for [updmap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updmap.1) was improved in September 2009, and installation should now be much more reliable than in the past. In the meantime, if you encounter error messages about unavailable map files, simply remove them by hand from the `updmap.cfg` file (ideally using `updmap-sys --edit`). You can also run `updmap-sys --syncwithtrees` to automatically comment out outdated map lines from the config file.
 
-*   The ConTeXt formats (for MKII and MKIV) are not automatically generated upon installation. See [the ConTeXT wiki](http://wiki.contextgarden.net) for instructions on how to do this.
+*   The ConTeXt formats (for Mark II and IV) are not automatically generated upon installation. See [the ConTeXT wiki](http://wiki.contextgarden.net) for instructions on how to do this.
 
 *   The packages containing the documentation and sources are **no longer available** in official repositories. You can locally build them with [tllocalmgr](#TeXLive_Local_Manager). You can also consult documentation online at [https://tug.org/texlive/Contents/live/doc.html](https://tug.org/texlive/Contents/live/doc.html) or on CTAN. Another possibility is using the online documentation at `http://texdoc.net/pkg/packagename` which resolves to the relevant pdf for `packagename`, similar to the command line tool `texdoc` (which is useless without locally installed documentation). The documentation is now contained in [texlive-most-doc](https://aur.archlinux.org/packages/texlive-most-doc/).
 
@@ -73,7 +84,7 @@ You will probably want a [TeX editor](/index.php/List_of_applications/Documents#
 
 *   System-wide configuration files are under `/usr/share/texmf-config`. User-specific ones should be put under `~/.texlive/texmf-config`. `$TEXMFHOME` is `~/texmf` and `$TEXMFVAR` is `~/.texlive/texmf-var`.
 
-*   A skeleton of a local texmf tree is at `/usr/local/share/texmf`: this directory is writable for members of the group **tex**.
+*   A skeleton of a local texmf tree is at `/usr/local/share/texmf`: this directory is writable for members of the group `tex`.
 
 ### Paper size
 
@@ -165,7 +176,7 @@ To install a LaTeX package on a global level, you should use a [PKGBUILD](/index
 
 ## Updating babelbib language definitions
 
-If you have the very specific problem of babelbib not having the latest language definitions that you need, and you do not want to recompile everything, you can get them manually from [https://www.tug.org/texlive/devsrc/Master/texmf-dist/tex/latex/babelbib/](https://www.tug.org/texlive/devsrc/Master/texmf-dist/tex/latex/babelbib/) and put them in `/usr/share/texmf-dist/tex/latex/babelbib/`. For example:
+If you have the very specific problem of [babelbib](https://www.ctan.org/pkg/babelbib) not having the latest language definitions that you need, and you do not want to recompile everything, you can get them manually from [https://www.tug.org/texlive/devsrc/Master/texmf-dist/tex/latex/babelbib/](https://www.tug.org/texlive/devsrc/Master/texmf-dist/tex/latex/babelbib/) and put them in `/usr/share/texmf-dist/tex/latex/babelbib/`. For example:
 
 ```
 # cd /usr/share/texmf-dist/tex/latex/babelbib/ 

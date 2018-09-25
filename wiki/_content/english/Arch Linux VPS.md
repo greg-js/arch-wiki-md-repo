@@ -70,7 +70,7 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 | [TransIP](https://www.transip.eu/) | [2017.01.01](https://www.transip.eu/vps/vps-os/) | [KVM](https://www.transip.eu/vps/vps-technology/) | Amsterdam, NL | For latest image, submit ticket. Also registrar. |
 | [upCUBE](https://upcube.io) | Latest | Docker | Germany | Different prepared arch linux templates available |
 | [Virpus](http://virpus.com/) | [2014.11.07](http://virpus.com/linux-vps.php) | Xen | Kansas City, US-KS; Los Angeles, US-CA | Arch is **not** offered as a choice when creating a server (even though the Arch logo is prominently featured on the site). As of 2018, the most recent version of Ubuntu offered is 14.04, and the limited-time promo code for new sign ups is over two years old. None of this generates much trust. |
-| [Virtual Master](https://www.virtualmaster.com/) | 2012-08 |  ?? | Prague, CZ |
+| [Virtual Master](https://www.virtualmaster.com/) | 2012-08 | ?? | Prague, CZ |
 | [VPS6.NET](https://vps6.net/) | 2013.01.xx | OpenVZ, Xen, HVM-ISO | [Multiple US](http://vps6.net/network/); Frankfurt, DE; Bucharest, RO; Istanbul, TR | Registrar. |
 | [VPSBG.eu](https://www.vpsbg.eu/) | 2013.10 | OpenVZ | [Sofia, Bulgaria](https://vpsbg.eu/en/index.php?page=vps-datacenter) | Offshore VPS in Bulgaria - anonymous registrations and Bitcoin are accepted. |
 | [VPSCHEAP](https://www.vpscheap.net) | Latest | NVM KVM | Dallas, TX, USA | Has one plan that allows you to select ArchLinux, but doesn't appear in any other plan, but available on request |

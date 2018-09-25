@@ -737,7 +737,6 @@ Sharename       Type      Comment
 * * *
 
        ----      -------
-
 MY_MUSIC        Disk
 SHAREDDOCS      Disk
 PRINTER$        Disk
@@ -749,7 +748,6 @@ Server               Comment
 * * *
 
             -------
-
 PUTER
 
 Workgroup            Master

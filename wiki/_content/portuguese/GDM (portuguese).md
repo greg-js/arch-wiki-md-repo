@@ -1,11 +1,11 @@
-**Status de tradução:** Esse artigo é uma tradução de [GDM](/index.php/GDM "GDM"). Data da última tradução: 2018-09-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GDM&diff=0&oldid=540366) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GDM](/index.php/GDM "GDM"). Data da última tradução: 2018-09-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GDM&diff=0&oldid=543257) na versão em inglês.
 
 Artigos relacionados
 
 *   [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)")
 *   [Gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição")
 
-Do [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "O GNOME Display Manager (GDM) é um programa que gerencia servidores gráficos de exibição e lida com logins de usuários gráficos."
+Do [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "O Gerenciador de Exibição do GNOME (GDM) é um programa que gerencia servidores gráficos de exibição e lida com logins de usuários gráficos."
 
 [Gerenciadores de exibição](/index.php/Gerenciadores_de_exibi%C3%A7%C3%A3o "Gerenciadores de exibição") fornecem a usuários de [X Window System](/index.php/X_Window_System_(Portugu%C3%AAs) "X Window System (Português)") e [Wayland](/index.php/Wayland "Wayland") com um prompt de login gráfico.
 
@@ -327,79 +327,79 @@ O menu é desabilitado quando a chave estiver em falso, habilitado quando estive
 
 ### Layout do teclado
 
-The system keyboard layout will be applied to GDM. See [Keyboard configuration in Xorg#Using X configuration files](/index.php/Keyboard_configuration_in_Xorg#Using_X_configuration_files "Keyboard configuration in Xorg").
+O layout do teclado do sistema será aplicado ao GDM. Veja [Keyboard configuration in Xorg#Using X configuration files](/index.php/Keyboard_configuration_in_Xorg#Using_X_configuration_files "Keyboard configuration in Xorg").
 
-**Tip:** See [Wikipedia:ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1 "wikipedia:ISO 3166-1") for a list of keymaps.
+**Dica:** Veja [Wikipedia:ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1 "wikipedia:ISO 3166-1") para uma lista de *keymaps*.
 
-If a system has multiple users, it is possible to specify a keyboard layout for GDM to use which is different from the system keyboard layout. Firstly, ensure the package [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) is installed. Then start *gnome-control-center* and navigate to *Region & Language -> Input Sources*. In the header bar, hit the *Login Screen* toggle button and then choose a keyboard layout from the list. Note that the *Login Screen* button will not be visible in the header bar unless multiple users are present on the system [[5]](https://bugzilla.gnome.org/show_bug.cgi?id=741500).
+Se um sistema tiver vários usuários, é possível especificar um layout de teclado para o GDM usar, o que é diferente do layout do teclado do sistema. Em primeiro lugar, certifique-se de que o pacote [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) esteja instalado. Então inicie o *gnome-control-center* e navegue até *Região & Idioma -> Fontes de entrada*. Na barra de cabeçalho, pressione o botão de alternância *Tela de início de sessão* e escolha um layout de teclado na lista. Observe que o botão *Tela de início de sessão* não estará visível na barra de cabeçalho, a menos que vários usuários estejam presentes no sistema [[5]](https://bugzilla.gnome.org/show_bug.cgi?id=741500).
 
-Users of GDM 2.x (legacy GDM) may need to edit `~/.dmrc` as shown below:
+Usuários do GDM 2.x (GDM legado) pode precisar editar `~/.dmrc` como mostrado abaixo:
 
  `~/.dmrc` 
 ```
 [Desktop]
-Language=de_DE.UTF-8   # change to your default lang
-Layout=de   nodeadkeys # change to your keyboard layout
+Language=de_DE.UTF-8   # altera seu idioma padrão
+Layout=de   nodeadkeys # altera seu layout padrão
 ```
 
 ### Alterar o idioma
 
-The system language will be applied to GDM. If a system has multiple users, it is possible to set a language for GDM different to the system language. In this case, firstly ensure that [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) is installed. Then, start *gnome-control-center* and choose *Region & Language*. In the header bar, check the *Login Screen* toggle button. Finally, click on *Language* and choose your language from the list. You will be prompted for your root password. Note that the *Login Screen* button will not be visible in the header bar unless multiple users are present on the system [[6]](https://bugzilla.gnome.org/show_bug.cgi?id=741500).
+O idioma do sistema será aplicado ao GDM. Se um sistema tiver vários usuários, é possível definir um idioma para o GDM diferente do idioma do sistema. Neste caso, primeiro certifique-se de que [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) esteja instalado. Então, inicie o 'gnome-control-center' e escolha *Região & Idioma*. Na barra de cabeçalho, marque o botão de alternância *Tela de início de sessão*. Por fim, clique em *Idioma* e escolha seu idioma na lista. Você será solicitado a fornecer sua senha de root. Observe que o botão *Tela de início de sessão* não estará visível na barra de cabeçalho, a menos que vários usuários estejam presentes no sistema [[6]](https://bugzilla.gnome.org/show_bug.cgi?id=741500).
 
-**Tip:** By adding 2 different input languages, logging out then selecting your default language GDM will remember your choice once the second option is removed.
+**Dica:** Ao adicionar dois idiomas de entrada diferentes, efetuando logout e selecionando seu idioma padrão, o GDM se lembrará de sua escolha assim que a segunda opção for removida.
 
 ### Usuários e autenticação
 
 #### Autenticação automática
 
-To enable automatic login with GDM, add the following to `/etc/gdm/custom.conf` (replace *username* with your own):
+Para habilitar a autenticação automática com o GDM, adicione o seguinte a `/etc/gdm/custom.conf` (substitua *nome-de-usuário* por seu próprio):
 
  `/etc/gdm/custom.conf` 
 ```
-# Enable automatic login for user
+# Habilita autenticação automática para o usuário
 [daemon]
-AutomaticLogin=*username*
+AutomaticLogin=*nome-de-usuário*
 AutomaticLoginEnable=True
 ```
 
-**Tip:** If GDM fails after adding these lines, comment them out from a TTY.
+**Dica:** Se o GDM falhar após adicionar essas linhas, comente-as de um TTY.
 
-or for an automatic login with a delay:
+ou para uma autenticação automática com um atraso:
 
  `/etc/gdm/custom.conf` 
 ```
 [daemon]
 
 TimedLoginEnable=true
-TimedLogin=*username*
+TimedLogin=*nome-de-usuário*
 TimedLoginDelay=1
 ```
 
-You can set the session used for automatic login (replace `gnome-xorg` with desired session):
+Você pode definir a sessão usada para autenticação automática (substitua `gnome-xorg` pela sessão desejada):
 
- `/var/lib/AccountsService/users/*username*`  `XSession=gnome-xorg` 
+ `/var/lib/AccountsService/users/*nome-de-usuário*`  `XSession=gnome-xorg` 
 
 #### Autenticação sem senha
 
-If you want to bypass the password prompt in GDM then simply add the following line on the first line of `/etc/pam.d/gdm-password`:
+Se você quiser ignorar o prompt de senha no GDM, basta adicionar a seguinte linha na primeira linha de `/etc/pam.d/gdm-password`:
 
 ```
 auth sufficient pam_succeed_if.so user ingroup nopasswdlogin
 
 ```
 
-Then, add the group `nopasswdlogin` to your system. See [Groups](/index.php/Groups "Groups") for group descriptions and group management commands.
+Em seguida, adicione o grupo `nopasswdlogin` ao seu sistema. Veja [Grupos](/index.php/Grupo "Grupo") para descrições de grupos e comandos de gerenciamento de grupos.
 
-Now, add your user to the `nopasswdlogin` group and you will only have to click on your username to login.
+Agora, adicione seu usuário ao grupo `nopasswdlogin` e você só terá que clicar no seu nome de usuário para se autenticar.
 
-**Warning:**
+**Atenção:**
 
-*   Do **not** do this for a **root** account.
-*   You won't be able to change your session type at login with GDM anymore. If you want to change your default session type, you will first need to remove your user from the `nopasswdlogin` group.
+*   **Não** faça isso para a conta **root**.
+*   Você não poderá mais alterar seu tipo de sessão na autenticação com o GDM. Se você quiser alterar o tipo de sessão padrão, primeiro precisará remover o usuário do grupo `nopasswdlogin`.
 
 #### Desligamento sem senha para várias sessões
 
-GDM uses polkit and logind to gain permissions for shutdown. You can shutdown the system when multiple users are logged in by setting:
+O GDM usa o polkit e o logind para obter permissões para o encerramento. Você pode desligar o sistema quando vários usuários estão autenticados, definindo:
 
  `/etc/polkit-1/localauthority.conf.d/org.freedesktop.logind.policy` 
 ```
@@ -422,11 +422,11 @@ GDM uses polkit and logind to gain permissions for shutdown. You can shutdown th
 </policyconfig>
 ```
 
-You can find all available logind options (e.g. reboot-multiple-sessions) [here](http://www.freedesktop.org/wiki/Software/systemd/logind#Security).
+Você pode encontrar todas as opções de logind disponíveis (por exemplo, reboot-multiple-sessions) [here](http://www.freedesktop.org/wiki/Software/systemd/logind#Security).
 
 #### Habilitar autenticação como root no GDM
 
-It is not advised to login as root, but if necessary you can edit `/etc/pam.d/gdm-password` and add the following line before the line `auth required pam_deny.so`:
+Não é aconselhável fazer login como root, mas, se necessário, você pode editar `/etc/pam.d/gdm-password` e adicionar a seguinte linha antes da linha `auth required pam_deny.so`:
 
 `/etc/pam.d/gdm-password`
 
@@ -435,7 +435,7 @@ auth            sufficient      pam_succeed_if.so uid eq 0 quiet
 
 ```
 
-The file should look something like this:
+O arquivo deve ser algo como isto:
 
 `/etc/pam.d/gdm-password`
 
@@ -448,13 +448,13 @@ auth            required        pam_deny.so
 
 ```
 
-You should be able to login as root after restarting GDM.
+Você deve poder autenticar como root após reiniciar o GDM.
 
 #### Ocultar usuário da lista de login
 
-The users for the gdm user list are gathered by [AccountsService](https://www.freedesktop.org/wiki/Software/AccountsService/). It will automatically hide system users (UID < 1000). To hide ordinary users from the login list create or edit a file named after the user to hide in `/var/lib/AccountsService/users/` to contain at least:
+Os usuários da lista de usuários do gdm são reunidos por [AccountsService](https://www.freedesktop.org/wiki/Software/AccountsService/). Ele irá ocultar automaticamente os usuários do sistema (UID <1000). Para ocultar usuários comuns da lista de login, crie ou edite um arquivo com o nome do usuário para ocultar em `/var/lib/AccountsService/users/` para conter pelo menos:
 
- `/var/lib/AccountsService/users/<username>` 
+ `/var/lib/AccountsService/users/*nome-de-usuário*` 
 ```
 [User]
 SystemAccount=true
@@ -462,24 +462,24 @@ SystemAccount=true
 
 ### Definir as configurações de monitor padrão
 
-Some [desktop environments](/index.php/Desktop_environments "Desktop environments") store display settings in `~/.config/monitors.xml`. *xrandr* commands are then generated on the base of the file content. GDM has a similar file stored in `/var/lib/gdm/.config/monitors.xml`.
+Alguns [ambientes de desktop](/index.php/Ambientes_de_desktop "Ambientes de desktop") armazenam configurações de exibição em `~/.config/monitors.xml`. Os comandos *xrandr* são então gerados na base do conteúdo do arquivo. O GDM tem um arquivo semelhante armazenado em `/var/lib/gdm/.config/monitors.xml`.
 
-If you have your monitors setup as you like (orientation, primary and so on) in `~/.config/monitors.xml` and want GDM to honor those settings:
+Se você tiver a configuração de seus monitores como quiser (orientação, primária e assim por diante) em `~/.config/monitors.xml` e quiser que o GDM honre essas configurações:
 
 ```
 # cp ~/.config/monitors.xml /var/lib/gdm/.config/monitors.xml
 
 ```
 
-Changes will take effect on logout. This is necessary because GDM does not respect `xorg.conf`.
+As alterações entrarão em vigor no encerramento da sessão. Isso é necessário porque o GDM não respeita `xorg.conf`.
 
-**Note:** If you use GDM under Wayland, you must also use a `monitors.xml` that was created under Wayland. See [GNOME bug 748098](https://bugzilla.gnome.org/show_bug.cgi?id=748098) for more info. Alternatively, you can force GDM to [#Use Xorg backend](#Use_Xorg_backend), and use a `monitors.xml` that was created under Xorg.
+**Nota:** Se você usa GDM sob o Wayland, você também deve usar um `monitors.xml` que foi criado sob Wayland. Veja [bug 748098 do GNOME](https://bugzilla.gnome.org/show_bug.cgi?id=748098) para mais informações. Alternativamente, você pode forçar o GDM a [#Usar backend do Xorg](#Usar_backend_do_Xorg) e usar um `monitors.xml` que foi criado sob Xorg.
 
 ### Configurar permissão de acesso do servidor X
 
-You can use the `xhost` command to configure X server access permissions.
+Você pode usar o comando `xhost` para configurar permissões de acesso ao servidor X.
 
-For instance, to grant GDM the right to access the X server, use the following command:
+Por exemplo, para conceder ao GDM o direito de acessar o servidor X, use o seguinte comando:
 
  `# xhost +SI:localuser:gdm` 
 
@@ -487,11 +487,11 @@ For instance, to grant GDM the right to access the X server, use the following c
 
 ### Falha ao usar driver proprietários da NVIDIA
 
-GDM uses the [Wayland](/index.php/Wayland "Wayland") backend by default which conflicts with NVIDIA driver. Turning off the Wayland backend could enable proprietary NVIDIA driver.
+O GDM usa o backend [Wayland](/index.php/Wayland "Wayland") por padrão que entra em conflito com o driver NVIDIA. Desativar o backend Wayland pode habilitar o driver NVIDIA proprietário.
 
 ### Falha no encerramento da sessão
 
-If GDM starts up properly on boot, but fails after repeated attempts on logout, try adding this line to the daemon section of `/etc/gdm/custom.conf`:
+Se o GDM iniciar corretamente na inicialização, mas falhar após tentativas repetidas de encerramento de sessão, tente adicionar essa linha à seção do daemon do `/etc/gdm/custom.conf`:
 
 ```
 GdmXserverTimeout=60
@@ -500,11 +500,11 @@ GdmXserverTimeout=60
 
 ### Xorg sem senha
 
-See [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg").
+Veja [Xorg#Rootless Xorg](/index.php/Xorg#Rootless_Xorg "Xorg").
 
 ### Usar backend do Xorg
 
-The [Wayland](/index.php/Wayland "Wayland") backend is used by default and the [Xorg](/index.php/Xorg "Xorg") backend is used only if the Wayland backend cannot be started. As the Wayland backend has been [reported](https://bugzilla.redhat.com/show_bug.cgi?id=1199890) to cause problems for some users, use of the Xorg backend may be necessary. To use the Xorg backend by default, edit the `/etc/gdm/custom.conf` file and uncomment the following line:
+O backend [Wayland](/index.php/Wayland "Wayland") é usado por padrão e o backend [Xorg](/index.php/Xorg_(Portugu%C3%AAs) "Xorg (Português)") é usado somente se o backend de Wayland não puder ser iniciado. Como o backend Wayland foi [relatado](https://bugzilla.redhat.com/show_bug.cgi?id=1199890) para causar problemas para alguns usuários, o uso do backend do Xorg pode ser necessário. Para usar o backend do Xorg por padrão, edite o arquivo `/etc/gdm/custom.conf` e remova o comentário da seguinte linha:
 
 ```
 #WaylandEnable=false
@@ -513,14 +513,14 @@ The [Wayland](/index.php/Wayland "Wayland") backend is used by default and the [
 
 ### Remoção incompleta do gdm
 
-After removing [gdm](https://www.archlinux.org/packages/?name=gdm), [systemd](/index.php/Systemd "Systemd") may report the following:
+Após remover [gdm](https://www.archlinux.org/packages/?name=gdm), o [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") pode relatar o seguinte:
 
 ```
 user 'gdm': directory '/var/lib/gdm' does not exist
 
 ```
 
-To remove this warning, login as root and delete the primary user "gdm" and then delete the group "gdm":
+Para remover esse aviso, autentique-se como root e exclua o usuário primário "gdm" e exclua o grupo "gdm":
 
 ```
 # userdel gdm
@@ -528,19 +528,21 @@ To remove this warning, login as root and delete the primary user "gdm" and then
 
 ```
 
-Verify that gdm is successfully removed via `pwck` and `grpck`. To round it off, you may want to double-check no [unowned files](/index.php/Pacman/Tips_and_tricks#Identify_files_not_owned_by_any_package "Pacman/Tips and tricks") for gdm remain.
+Verifique se gdm foi removido com sucesso via `pwck` e `grpck`. Para completar, você pode querer se certificar que não há arquivos [arquivos sem dono](/index.php/Pacman/Dicas_e_truques#Identificar_arquivos_que_perten.C3.A7am_a_nenhum_pacote "Pacman/Dicas e truques") por restos do gdm.
 
 ### Suspensão automática do GDM (GNOME 3.28)
 
-GDM uses a separate dconf database to control power management. You can make GDM behave the same way as user sessions by copying the user settings to GDM's dconf database.
+O GDM usa um banco de dados separado do dconf para controlar o gerenciamento de energia. Você pode fazer o GDM se comportar da mesma maneira que as sessões do usuário copiando as configurações do usuário para o banco de dados dconf do GDM.
 
 ```
 $ IFS=$'
-'; for x in $(sudo -u YOUR_USER gsettings list-recursively org.gnome.settings-daemon.plugins.power); do eval "sudo -u gdm dbus-launch gsettings set $x"; done; unset IFS
+'; for x in $(sudo -u *nome-de-usuário* gsettings list-recursively org.gnome.settings-daemon.plugins.power); do eval "sudo -u gdm dbus-launch gsettings set $x"; done; unset IFS
 
 ```
 
-Or to simply disable auto-suspend (also run the command with `ac` replaced with `battery` to also disable it while running on battery):
+sendo *nome-de-usuário* o nome do seu usuário.
+
+Ou simplesmente desabilitar a suspensão automática (também execute o comando com `ac` substituído por `battery` para também desativá-lo durante a execução com bateria):
 
 ```
 $ sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
@@ -549,4 +551,4 @@ $ sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power 
 
 ## Veja também
 
-*   [GDM Reference Manual](https://help.gnome.org/admin/gdm/stable/index.html.en)
+*   [Manual de referência do GDM](https://help.gnome.org/admin/gdm/stable/index.html.pt_BR)

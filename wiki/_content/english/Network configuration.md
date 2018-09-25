@@ -75,7 +75,9 @@ To troubleshoot a network connection, go through the following conditions and en
 
 ### Ping
 
-[ping](https://en.wikipedia.org/wiki/Ping_(networking_utility) is used to test if you can reach a host. `$ ping www.example.com` 
+[ping](https://en.wikipedia.org/wiki/Ping_(networking_utility) is used to test if you can reach a host.
+
+ `$ ping www.example.com` 
 ```
 PING www.example.com (93.184.216.34): 56(84) data bytes
 64 bytes from 93.184.216.34: icmp_seq=0 ttl=56 time=11.632 ms
@@ -548,14 +550,14 @@ There are also several relevant threads on the LKML.
 
 [Explicit Congestion Notification](https://en.wikipedia.org/wiki/Explicit_Congestion_Notification "wikipedia:Explicit Congestion Notification") (ECN) may cause traffic problems with old/bad routers [[5]](https://bbs.archlinux.org/viewtopic.php?id=239892). As of [systemd 239](https://github.com/systemd/systemd/issues/9748), it is enabled for both ingoing and outgoing traffic.
 
-To enable ECN only when requested by incoming connections (kernel default):
+To enable ECN only when requested by incoming connections (the reasonably safe, kernel default):
 
 ```
 # sysctl net.ipv4.tcp_ecn=2
 
 ```
 
-To disable ECN completely:
+To disable ECN completely (to e.g. test whether ECN was causing problems):
 
 ```
 # sysctl net.ipv4.tcp_ecn=0

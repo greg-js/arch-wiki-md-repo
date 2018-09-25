@@ -48,7 +48,7 @@ With the ESP mounted to `*esp*`, use [bootctl(1)](https://jlk.fjfi.cvut.cz/arch/
 
 ```
 
-This will copy the *systemd-boot* boot loader to the EFI partition: on a x64 architecture system the two identical binaries `*esp*/EFI/systemd/systemd-bootx64.efi` and `*esp*/EFI/Boot/BOOTX64.EFI` will be transferred to the ESP. It will then set *systemd-boot* as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
+This will copy the *systemd-boot* boot loader to the EFI partition: on a x64 architecture system the two identical binaries `*esp*/EFI/systemd/systemd-bootx64.efi` and `*esp*/EFI/BOOT/BOOTX64.EFI` will be transferred to the ESP. It will then set *systemd-boot* as the default EFI application (default boot entry) loaded by the EFI Boot Manager.
 
 Then, go to the [#Configuration](#Configuration) section to add boot loaders to make *systemd-boot* to function properly at boot time.
 
@@ -106,12 +106,13 @@ The loader configuration is stored in the file `*esp*/loader/loader.conf` and it
 
 See [loader.conf manual](https://www.freedesktop.org/software/systemd/man/loader.conf.html) for the full list of options.
 
-Example:
+A loader configuration example is provided thereafter:
 
  `*esp*/loader/loader.conf` 
 ```
 default  arch
 timeout  4
+console-mode max
 editor   no
 
 ```

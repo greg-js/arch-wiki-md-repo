@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [File manager functionality](/index.php/File_manager_functionality "File manager functionality"). Data da última tradução: 2018-09-20\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=File_manager_functionality&diff=0&oldid=540790) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [File manager functionality](/index.php/File_manager_functionality "File manager functionality"). Data da última tradução: 2018-09-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=File_manager_functionality&diff=0&oldid=543293) na versão em inglês.
 
 Artigos relacionados
 
@@ -33,144 +33,144 @@ Este artigo descreve os pacotes de software adicionais necessários para expandi
 
 ## Visão geral
 
-**Note:** When installed, the software packages listed below will automatically be sourced by all installed - and capable - file managers, and within all desktop environments and/or window managers.
+**Nota:** Quando instalados, os pacotes de software listados abaixo serão automaticamente originados por todos os gerenciadores de arquivos instalados e capazes, e em todos os ambientes de área de trabalho e/ou gerenciadores de janelas.
 
-A file manager alone will not provide the features and functionality that users of full desktop environments such as [Xfce](/index.php/Xfce "Xfce") or [KDE](/index.php/KDE "KDE") will be accustomed to. This is because additional software packages will be required to enable a given file manager to:
+Um gerenciador de arquivos sozinho não fornecerá os recursos e funcionalidades aos quais os usuários de ambientes de desktop completos, como o [Xfce](/index.php/Xfce "Xfce") ou o [KDE](/index.php/KDE "KDE"), estarão acostumados. Isso ocorre porque pacotes de software adicionais serão necessários para permitir que um determinado gerenciador de arquivos:
 
-*   Display and access other partitions
-*   Display, mount, and access removable media (e.g. USB sticks, optical discs, and digital cameras)
-*   Enable networking / shared networks with other installed operating systems
-*   Enable thumbnailing
-*   Archive and extract compressed files
-*   Automatically mount removable media
+*   Exibe e acesso outras partições
+*   Exibe, monte e acesse mídias removíveis (e.x., pendrives, discos óticos e câmeras digitais)
+*   Habilite conectividade/redes compartilhadas com outros sistemas operacionais instalados
+*   Habilite miniaturização
+*   Arquive e extraia arquivos comprimidos
+*   Monte automaticamente mídia removível
 
-When a file manager has been installed as part of a full desktop environment, most of these packages will usually have been installed automatically. Consequently, where a file manager has been installed for a standalone window manager then - as is the case with the window manager itself - only a basic foundation will be provided. The user must then determine the nature and extent of the features and functionality to be added.
+Quando um gerenciador de arquivos é instalado como parte de um ambiente de desktop completo, a maioria desses pacotes geralmente é instalada automaticamente. Consequentemente, quando um gerenciador de arquivos foi instalado para um gerenciador de janelas autônomo, como é o caso do próprio gerenciador de janelas, apenas uma base básica será fornecida. O usuário deve determinar a natureza e a extensão dos recursos e funcionalidades a serem adicionados.
 
 ## Recursos adicionais
 
-Particularly where using - or intending to use - a lightweight environment, it should be noted that more file manager features and functions will usually mean the use of more memory. See also [udisks](/index.php/Udisks "Udisks").
+Particularmente, quando usando - ou pretendendo usar - um ambiente leve, deve-se notar que mais recursos e funções do gerenciador de arquivos geralmente significam o uso de mais memória. Veja também [udisks](/index.php/Udisks "Udisks").
 
 ### Montando
 
-*   The Gnome virtual filesystem ([gvfs](https://www.archlinux.org/packages/?name=gvfs)) provides mounting and trash functionality. GVFS uses [udisks2](https://www.archlinux.org/packages/?name=udisks2) for mounting functionality and is the recommended solution for most file managers.
+*   O sistema de arquivos virtual do GNOME ([gvfs](https://www.archlinux.org/packages/?name=gvfs)) fornece funcionalidade de montagem e lixo. O GVFS usa [udisks2](https://www.archlinux.org/packages/?name=udisks2) para funcionalidade de montagem e é a solução recomendada para a maioria dos gerenciadores de arquivos.
 
-**Tip:** For some file managers it may be useful to have the package [gamin](https://www.archlinux.org/packages/?name=gamin) installed. [Gamin](/index.php/Gamin "Gamin") is a file and directory monitoring system.
+**Dica:** Para alguns gerenciadores de arquivos, pode ser útil ter o pacote [gamin](https://www.archlinux.org/packages/?name=gamin) instalado. [Gamin](/index.php/Gamin_(Portugu%C3%AAs) "Gamin (Português)") é um sistema de monitoramento de arquivos e diretórios.
 
-Folders used by GVFS:
+Pastas usadas pelo GVFS:
 
-*   `/usr/lib/gvfs/` contains `gvfsd-*` files, where `*` refers to the various supported file system types.
-*   `/usr/share/gvfs/mounts/` contains mount rules for GVFS. To use one's own rules, create `~/.gvfs/mounts`.
+*   `/usr/lib/gvfs/` contém `gvfsd-*` arquivos, sendo que `*` se refere a vários tipos de sistema de arquivos suportados.
+*   `/usr/share/gvfs/mounts/` contém regras de montagem para GVFS. Para usar suas próprias regras, crie `~/.gvfs/mounts`.
 
-Additional packages for installation usually follows the [gvfs-* pattern](https://www.archlinux.org/packages/?q=gvfs-), for example:
+Pacotes adicionais para instalação geralmente seguem o [padrão gvfs-*](https://www.archlinux.org/packages/?q=gvfs-), por exemplo:
 
-*   [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp): media players and mobile devices that use [MTP](/index.php/MTP "MTP")
-*   [gvfs-gphoto2](https://www.archlinux.org/packages/?name=gvfs-gphoto2): digital cameras and mobile devices that use [PTP](https://en.wikipedia.org/wiki/Picture_Transfer_Protocol "wikipedia:Picture Transfer Protocol")
-*   [gvfs-afc](https://www.archlinux.org/packages/?name=gvfs-afc): Apple mobile devices
+*   [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp): reprodutores de mídia e dispositivos móveis que usam [MTP](/index.php/MTP "MTP")
+*   [gvfs-gphoto2](https://www.archlinux.org/packages/?name=gvfs-gphoto2): câmeras digitais e dispositivos móveis que usam [PTP](https://en.wikipedia.org/wiki/Picture_Transfer_Protocol "wikipedia:Picture Transfer Protocol")
+*   [gvfs-afc](https://www.archlinux.org/packages/?name=gvfs-afc): dispositivos móveis da Apple
 
 #### Daemon de gerenciador de arquivos
 
-The first is to simply autostart or run the installed file manager in [daemon](/index.php/Daemon "Daemon") mode (i.e. as a background process). For example, when using [PCManFM](/index.php/PCManFM "PCManFM") in [Openbox](/index.php/Openbox "Openbox"), the following command would be added to the `~/.config/openbox/autostart` file:
+A primeira é simplesmente iniciar automaticamente ou executar o gerenciador de arquivos instalado no modo [daemon](/index.php/Daemon_(Portugu%C3%AAs) "Daemon (Português)") (ou seja, como um processo em segundo plano). Por exemplo, quando usando [PCManFM](/index.php/PCManFM "PCManFM") em [Openbox](/index.php/Openbox "Openbox"), o seguinte comando será adicionado ao arquivo `~/.config/openbox/autostart`:
 
 ```
 pcmanfm -d &
 
 ```
 
-It will also be necessary to configure the file manager itself in respect to volume management (e.g. what it will do and what applications will be launched when certain file types are detected upon mounting).
+Também será necessário configurar o gerenciador de arquivos em relação ao gerenciamento de volume (por exemplo, o que ele fará e quais aplicativos serão lançados quando determinados tipos de arquivo forem detectados na montagem).
 
-**Tip:** Most desktop environments will start the file manager in daemon mode by default so manual intervention will not be required in these use cases.
+**Dica:** A maioria dos ambientes de desktop iniciará o gerenciador de arquivos no modo daemon por padrão, portanto, a intervenção manual não será necessária nesses casos de uso.
 
 #### Autônomo
 
-Another option is to install a separate [mount application](/index.php/List_of_applications#Mount_tools "List of applications"). The advantages of using this are:
+Outra opção é instalar um [aplicativo de montagem](/index.php/List_of_applications#Mount_tools "List of applications") separado. As vantagens de usar isso são:
 
-*   Less memory may be required to run as a background / [daemon](/index.php/Daemon "Daemon") process than a file manager
-*   It is not file manager specific, allowing them to be freely added, removed, and switched
-*   [gvfs](https://www.archlinux.org/packages/?name=gvfs) may not have to be installed for mounting, lessening memory use.
+*   Menos memória pode ser necessária para ser executada como um processo de segundo plano [daemon](/index.php/Daemon_(Portugu%C3%AAs) "Daemon (Português)") do que um gerenciador de arquivos
+*   Não é específico do gerenciador de arquivos, permitindo que sejam livremente adicionados, removidos e alternados
+*   [gvfs](https://www.archlinux.org/packages/?name=gvfs) pode não ter que ser instalado para montar, reduzindo o uso de memória.
 
 ### Redes
 
-**Note:** It will also be necessary to enable [Bluetooth](/index.php/Bluetooth "Bluetooth") and/or networking with [Windows](/index.php/Samba "Samba") to enable the relevant file manager functionality in turn.
+**Nota:** Também será necessário ativar o [Bluetooth](/index.php/Bluetooth "Bluetooth") e/ou a rede com o [Windows](/index.php/Samba "Samba") para habilitar a funcionalidade relevante do gerenciador de arquivos.
 
-*   [obexfs](https://aur.archlinux.org/packages/obexfs/): Bluetooth device mounting and file transfers (see [Bluetooth](/index.php/Bluetooth "Bluetooth"))
-*   [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb): Windows File and printer sharing for **Non-KDE** desktops (see [Samba](/index.php/Samba "Samba"))
-*   [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing): Windows File and printer sharing for [KDE](/index.php/KDE "KDE") (see [Samba#KDE](/index.php/Samba#KDE "Samba"))
-*   [sshfs](https://www.archlinux.org/packages/?name=sshfs): FUSE client based on the SSH File Transfer Protocol
+*   [obexfs](https://aur.archlinux.org/packages/obexfs/): Transferências de arquivos e montagem de dispositivos Bluetooth (veja [Bluetooth](/index.php/Bluetooth "Bluetooth"))
+*   [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb): Compartilhamento de arquivos e impressoras Windows para ambientes que **não sejam KDE** (veja [Samba](/index.php/Samba "Samba"))
+*   [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing): Compartilhamento de arquivos e impressoras Windows para [KDE](/index.php/KDE "KDE") (veja [Samba#KDE](/index.php/Samba#KDE "Samba"))
+*   [sshfs](https://www.archlinux.org/packages/?name=sshfs): Cliente FUSE baseado no protocolo de transferência de arquivos SSH
 
 #### Acesso a Windows
 
-If using [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb), to access Windows/CIFS/Samba file shares first open the file manager, and enter the following into the path name, changing <sever name> and <share name> as appropriate:
+Se estiver usando [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb), para acessar os compartilhamentos de arquivos do Windows/CIFS/Samba abra primeiro o gerenciador de arquivos e digite o seguinte no nome do caminho, alterando `*nome_do_servidor*` e `*nome_do_compartilhamento*` conforme apropriado:
 
 ```
-smb://<server name>/<share name>
+smb://*nome_do_servidor*/*nome_do_compartilhamento*
 
 ```
 
 #### Acesso a Apple
 
-AFP support is included in [gvfs](https://www.archlinux.org/packages/?name=gvfs). To access AFP files first open the file manager, and enter the following into the path name, changing <sever name> and <share name> as appropriate:
+Suporte a AFP está incluso no [gvfs](https://www.archlinux.org/packages/?name=gvfs). Para acessar os compartilhamentos de arquivos de AFP abra primeiro o gerenciador de arquivos e digite o seguinte no nome do caminho, alterando `*nome_do_servidor*` e `*nome_do_compartilhamento*` conforme apropriado:
 
 ```
-afp://<server name>/<share name>
+afp://*nome_do_servidor*/*nome_do_compartilhamento*
 
 ```
 
 ### Visualização de miniaturas
 
-Some file managers may not support thumbnailing, even when the packages listed have been installed. Check the documentation for the relevant file manager.
+Alguns gerenciadores de arquivos podem não suportar miniaturas, mesmo quando os pacotes listados foram instalados. Verifique a documentação do gerenciador de arquivos relevante.
 
-You may not see thumbnails for remote storage, including [MTP](/index.php/MTP "MTP"). Check your file manager's settings, e.g. for [Thunar](/index.php/Thunar "Thunar") one has to set "Show thumbnails: always".
+Você não pode ver miniaturas para armazenamento remoto, incluindo [MTP](/index.php/MTP "MTP"). Verifique as configurações do seu gerenciador de arquivos, por exemplo para [Thunar](/index.php/Thunar "Thunar") é preciso definir "Mostrar miniaturas: sempre".
 
 #### Gerenciadores de arquivo além do Dolphin e Konqueror
 
-These packages apply to most file managers, such as [PCManFM](/index.php/PCManFM "PCManFM"), [SpaceFM](/index.php/SpaceFM "SpaceFM"), [Thunar](/index.php/Thunar "Thunar") and [xfe](https://aur.archlinux.org/packages/xfe/). The exceptions are Dolphin and Konqueror, used in the [KDE](/index.php/KDE "KDE") desktop environment.
+Esses pacotes se aplicam à maioria dos gerenciadores de arquivos, como [PCManFM](/index.php/PCManFM "PCManFM"), [SpaceFM](/index.php/SpaceFM "SpaceFM"), [Thunar](/index.php/Thunar "Thunar") e [xfe](https://aur.archlinux.org/packages/xfe/). As exceções são Dolphin e Konqueror, usados no ambiente de desktop [KDE](/index.php/KDE "KDE").
 
-*   [tumbler](https://www.archlinux.org/packages/?name=tumbler): Image files. This **<u>must</u>** also be installed to expand thumbnailing capabilities to other file types
-*   [poppler-glib](https://www.archlinux.org/packages/?name=poppler-glib): Adobe `.pdf` files
-*   [ffmpegthumbnailer](https://www.archlinux.org/packages/?name=ffmpegthumbnailer): Video files
-*   [freetype2](https://www.archlinux.org/packages/?name=freetype2): Font files
-*   [libgsf](https://www.archlinux.org/packages/?name=libgsf): `.odf` files
-*   [raw-thumbnailer](https://www.archlinux.org/packages/?name=raw-thumbnailer): `.raw` files
-*   [totem](https://www.archlinux.org/packages/?name=totem): Video files and tagged audio files ([GNOME Files](/index.php/GNOME_Files "GNOME Files"), and Caja only)
-*   [evince](https://www.archlinux.org/packages/?name=evince) or [atril](https://www.archlinux.org/packages/?name=atril): `.pdf` files
+*   [tumbler](https://www.archlinux.org/packages/?name=tumbler): Arquivos de imagem. Ele também **<u>deve</u>** deve ser instalado para expandir as capacidades de miniaturas para outros tipos de arquivos
+*   [poppler-glib](https://www.archlinux.org/packages/?name=poppler-glib): Arquivos `.pdf` do Adobe
+*   [ffmpegthumbnailer](https://www.archlinux.org/packages/?name=ffmpegthumbnailer): Arquivos de vídeo
+*   [freetype2](https://www.archlinux.org/packages/?name=freetype2): Arquivos de fonte
+*   [libgsf](https://www.archlinux.org/packages/?name=libgsf): Arquivos `.odf`
+*   [raw-thumbnailer](https://www.archlinux.org/packages/?name=raw-thumbnailer): Arquivos `.raw`
+*   [totem](https://www.archlinux.org/packages/?name=totem): Arquivos de vídeo e arquivos de áudio rotulados ([Arquivos do GNOME](/index.php/GNOME_Files "GNOME Files") e Caja apenas)
+*   [evince](https://www.archlinux.org/packages/?name=evince) ou [atril](https://www.archlinux.org/packages/?name=atril): Arquivos `.pdf`
 
 #### Dolphin e Konqueror (KDE)
 
-See [Dolphin#File previews](/index.php/Dolphin#File_previews "Dolphin").
+Veja [Dolphin#File previews](/index.php/Dolphin#File_previews "Dolphin").
 
 ### Arquivos de pacotes
 
-To extract compressed files such as tarballs (`.tar` and `.tar.gz`) within a file manager, it will first be necessary to install a GUI archiver such as [file-roller](https://www.archlinux.org/packages/?name=file-roller). See [List of applications#Archiving and compression tools](/index.php/List_of_applications#Archiving_and_compression_tools "List of applications") for further information. An additional package such as [unzip](https://www.archlinux.org/packages/?name=unzip) must also be installed to support the use of zipped `.zip` files. Once an archiver has been installed, files in the file manager may consequently be right-clicked to be archived or extracted.
+Para extrair arquivos compactados, como tarballs (`.tar` e `.tar.gz`) dentro de um gerenciador de arquivos, primeiro será necessário instalar um arquivador GUI, como o [file-roller](https://www.archlinux.org/packages/?name=file-roller). Veja [List of applications#Archiving and compression tools](/index.php/List_of_applications#Archiving_and_compression_tools "List of applications") para mais informações. Um pacote adicional como [unzip](https://www.archlinux.org/packages/?name=unzip) também deve ser instalado para suportar o uso de arquivos zipados (`.zip`). Depois que um arquivador é instalado, os arquivos no gerenciador de arquivos podem, consequentemente, ser clicados com o botão direito do mouse para serem arquivados ou extraídos.
 
-Archive files are mounted under folder `/run/user/$(id -u)/gvfs/` with automatically created mount point that contains full path to the file in its name where all `/` are replaced with `%252F` and `:` replaced with `%253A` [hex codes](https://www.owasp.org/index.php/Double_Encoding).
+Os empacotadores de arquivos são montados na pasta `/run/user/$(id -u)/gvfs/` com ponto de montagem criado automaticamente que contém caminho completo para o arquivo em seu nome, onde todos `/` são substituídos por `%252F` e `:` substituído por `%253A`, que são [códigos hexa](https://www.owasp.org/index.php/Double_Encoding).
 
-Example of path to the mounted archive `/full/path/to/file/name.zip`
+Example de caminho para o pacote montado `/caminho/para/nome/de/arquivo.zip`
 
 ```
-/run/user/$(id -u)/gvfs/archive:host=file%253A%252F%252F%252F**full%252Fpath%252Fto%252Ffile%252Fname.zip**
+/run/user/$(id -u)/gvfs/archive:host=file%253A%252F%252F%252F**caminho%252Fpara%252Fnome%252Fde%252Farquivo.zip**
 
 ```
 
 ### Suporte a leitura/escrita de NTFS
 
-See the [NTFS-3G](/index.php/NTFS-3G "NTFS-3G") article.
+Veja o artigo [NTFS-3G](/index.php/NTFS-3G "NTFS-3G").
 
 ### Notificações de desktop
 
-Some file managers make use of [desktop notifications](/index.php/Desktop_notifications "Desktop notifications") to confirm various events and statuses like mounting, unmounting and ejection of removable media.
+Alguns gerenciadores de arquivos fazem uso de [notificações de desktop](/index.php/Desktop_notifications "Desktop notifications") para confirmar vários eventos e status, como montagem, desmontagem e ejeção de mídia removível.
 
 ### Habilitar funcionalidade de lixeira em sistemas diferentes (unidades externas)
 
-Make [trash directories](http://www.ramendik.ru/docs/trashspec.html) `.Trash-*<uid>*` for each users on the top level of filesystems:
+Crie [diretórios de lixeira](http://www.ramendik.ru/docs/trashspec.html) `.Trash-*<uid>*` para cada usuário no nível de topo de sistemas de arquivoa:
 
-For example (mount point: /media/sdc1, uid: 1000, gid: 1000):
+Por exemplo (ponto de montagem: /media/sdc1, uid: 1000, gid: 1000):
 
 ```
 # mkdir /media/sdc1/.Trash-1000
 
 ```
 
-and `chown` them:
+e execute `chown` neles:
 
 ```
 # chown 1000:1000 /media/sdc1/.Trash-1000
@@ -181,32 +181,32 @@ and `chown` them:
 
 ### "Not Authorized" ao tentar montar as unidades
 
-File managers using [udisks](/index.php/Udisks "Udisks") require a [polkit](/index.php/Polkit "Polkit") authentication agent. See [polkit#Authentication agents](/index.php/Polkit#Authentication_agents "Polkit").
+Gerenciadores de arquivos usando [udisks](/index.php/Udisks "Udisks") precisam de um agente de autenticação [polkit](/index.php/Polkit "Polkit"). Veja [polkit#Authentication agents](/index.php/Polkit#Authentication_agents "Polkit").
 
 ### Senhas necessária para acessar partições
 
-The need to enter a password to access other partitions or mounted removable media will likely be due to the default permission settings of [udisks2](https://www.archlinux.org/packages/?name=udisks2). More specifically, permission may be set to the root account only, not the user account. See [Udisks#Configuration](/index.php/Udisks#Configuration "Udisks") for details.
+A necessidade de inserir uma senha para acessar outras partições ou mídia removível montada provavelmente será devido às configurações de permissão padrão de [udisks2](https://www.archlinux.org/packages/?name=udisks2). Mais especificamente, a permissão pode ser definida apenas para a conta raiz, não para a conta do usuário. Veja [Udisks#Configuration](/index.php/Udisks#Configuration "Udisks") para detalhes.
 
 ### Diretórios não são abertos no gerenciador de arquivos
 
-You may find that an application that is not a file manager, [Audacious](/index.php/Audacious "Audacious") for example, is set as the default application for opening directories — an application that specifies that it can handle the `inode/directory` MIME type in its desktop entry can become the default. You can query the default application for opening directories with the following command:
+Você pode descobrir que um aplicativo que não é um gerenciador de arquivos, [Audacious](/index.php/Audacious "Audacious") por exemplo, está definido como o aplicativo padrão para abrir diretórios - um aplicativo que especifica que ele pode manipular o tipo MIME `inode/directory` em sua entrada de desktop pode se tornar o padrão. Você pode consultar o aplicativo padrão para abrir diretórios com o seguinte comando:
 
 ```
 $ xdg-mime query default inode/directory
 
 ```
 
-To ensure that directories are opened in the file manager, run the following command:
+Para se certificar que diretórios são abertos no gerenciador de arquivos, execute o seguinte comando:
 
 ```
-$ xdg-mime default *my-file-manager.desktop* inode/directory
+$ xdg-mime default *meu_gerenciador_de_arquivos.desktop* inode/directory
 
 ```
 
-where `*my-file-manager.desktop*` is the desktop entry for your file manager — `*org.gnome.Nautilus.desktop*` for example.
+sendo que `*meu_gerenciador_de_arquivos.desktop*` é a entrada de desktop para o seu gerenciador de arquivos — `*org.gnome.Nautilus.desktop*`, por exemplo.
 
-**Tip:** If you want the change to be system-wide, run the command above as root or create/edit the following file: `/usr/share/applications/mimeapps.list` 
+**Dica:** Se você quiser que a alteração se aplique a todo sistema, execute o comando acima como root ou crie/edite o arquivo a seguir: `/usr/share/applications/mimeapps.list` 
 ```
 [Default Applications]
-inode/directory=*my-file-manager.desktop*
+inode/directory=*meu_gerenciador_de_arquivos.desktop*
 ```

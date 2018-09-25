@@ -124,7 +124,7 @@ Na tabela abaixo, as colunas têm o seguinte sentido:
 
 | Resolvedor | Cache | Recursor | Compatibilidade *resolvconf* | Valida DNSSEC | DNS por TLS | DNS por HTTPS | Notas |
 | [glibc](#Resolvedor_do_glibc) | Não | Não | [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Não | Não | Não |
-| [BIND](/index.php/BIND "BIND") | Sim | Sim | se inscreve no [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Sim |  ? |  ? |
+| [BIND](/index.php/BIND "BIND") | Sim | Sim | se inscreve no [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Sim | ? | ? |
 | [dnscrypt-proxy](/index.php/Dnscrypt-proxy_(Portugu%C3%AAs) "Dnscrypt-proxy (Português)") | Sim | Não | Não | Não | Não | Sim | Implementa um cliente de protocolo [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt"). |
 | [dnsmasq](/index.php/Dnsmasq_(Portugu%C3%AAs) "Dnsmasq (Português)") | Sim | Não | se inscreve no [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Sim | [Não](http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2018q2/012131.html) | Não |
 | [Knot Resolver](/index.php/Knot_Resolver "Knot Resolver") | Sim | Sim | Não | Sim | Sim | [Não](https://gitlab.labs.nic.cz/knot/knot-resolver/issues/243) |

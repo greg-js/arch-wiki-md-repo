@@ -6,7 +6,7 @@
 | Bluetooth | Modify | bluez bluez-utils |
 | Audio | Working | snd_hda_intel |
 | Touchpad | Modify | libinput libinput-gestures |
-| Webcam | Working |  ? |
+| Webcam | Working | ? |
 | Card Reader | Working | rtsx_pci |
 | Wireless switch | Working | intel_hid |
 | Function/Multimedia Keys | Working |

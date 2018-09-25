@@ -1,8 +1,8 @@
 **Estado de la traducción:** este artículo es una versión traducida de [Daemons](/index.php/Daemons "Daemons"). Fecha de la última traducción/revisión: **2018-08-14**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Daemons&diff=0&oldid=519085).
 
-Un [demonio](https://en.wikipedia.org/wiki/es:Demonio_(inform%C3%A1tica) es un programa que se ejecuta como un proceso en segundo plano (o de fondo, sin una terminal o interfaz de usuario), comúnmente esperando que ocurran eventos y ofreciendo servicios. Un buen ejemplo es un servidor web que espera una solicitud para entregar una página, o un servidor ssh esperando a que alguien intente iniciar sesión. Si bien estas son aplicaciones completas, hay demonios cuyo trabajo no es tan visible. Los demonios son para tareas como escribir mensajes en un archivo de registro (por ejemplo, `syslog`, `metalog`) o para mantener la precisión del reloj de su sistema (por ejemplo, [ntpd](/index.php/Network_Time_Protocol_daemon_(Espa%C3%B1ol) "Network Time Protocol daemon (Español)")). Para obtener más información, consulte [daemon(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/daemon.7).
+Un [demonio](https://en.wikipedia.org/wiki/es:Demonio_(inform%C3%A1tica) es un programa que se ejecuta como un proceso en segundo plano (o de fondo, sin una terminal o interfaz de usuario), comúnmente esperando que ocurran eventos y ofreciendo servicios. Un buen ejemplo es un servidor web que espera una solicitud para entregar una página, o un servidor ssh esperando a que alguien intente iniciar sesión. Si bien estas son aplicaciones completas, hay demonios cuyo trabajo no es tan visible. Los demonios son para tareas como escribir mensajes en un archivo de registro (por ejemplo, `syslog`, `metalog`) o para mantener la precisión del reloj de su sistema (por ejemplo, [ntpd](/index.php/Network_Time_Protocol_daemon_(Espa%C3%B1ol) "Network Time Protocol daemon (Español)")). Para obtener más información, véase [daemon(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/daemon.7).
 
-En Arch Linux, los demonios son administrados por [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"). El comando [systemctl](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)") es la interfaz de usuario utilizada para administrarlos. Lee los archivos `*nombre*.Service` que contienen información sobre como y cuándo iniciar el demonio asociado. Los archivos de servicio se almacenan en `/{etc,usr/lib,run}/systemd/system`. Consulte [Usar las unidades](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") para más detalles.
+En Arch Linux, los demonios son administrados por [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"). El comando [systemctl](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)") es la interfaz de usuario utilizada para administrarlos. Lee los archivos `*nombre*.Service` que contienen información sobre como y cuándo iniciar el demonio asociado. Los archivos de servicio se almacenan en `/{etc,usr/lib,run}/systemd/system`. Véase [Usar las unidades](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") para más detalles.
 
 ## Listado de demonios
 
@@ -51,7 +51,7 @@ freshclamd.service | Conjunto de herramientas de antivirus para Unix. |
  ifplugd | ifplugd@.service | Inicio/parada de la conexión de red cuando el cable de red esté conectado o no. |
 | [iptables](/index.php/Iptables "Iptables") | iptables | iptables.service | Carga las reglas del cortafuegos para ipv4. |
 | ip6tables | ip6tables.service | Carga las reglas del cortafuegos para ipv6. |
-| [IPFS](/index.php/IPFS "IPFS") | demonio ipfs |  ? | Un nodo de protocolo hipermedia punto-a-punto |
+| [IPFS](/index.php/IPFS "IPFS") | demonio ipfs | ? | Un nodo de protocolo hipermedia punto-a-punto |
  irqbalance | irqbalance.service | Irqbalance es la utilidad Linux encargada de asegurarse de que las interrupciones de los dispositivos de hardware se manejan de una manera lo más eficiente posible. |
 | [KDE](/index.php/KDE "KDE") | kdm | kdm.service | Administrador de pantalla KDE. |
 | [krb5](https://www.archlinux.org/packages/?name=krb5) | krb5-kadmind | krb5-kadmind.service | Servidor para la administración de Kerberos 5. |
@@ -61,14 +61,14 @@ freshclamd.service | Conjunto de herramientas de antivirus para Unix. |
 | [lighttpd](/index.php/Lighttpd "Lighttpd") | lighttpd | lighttpd.service | Server HTTP Lighttpd (Servidor Web). |
 | [libvirt](/index.php/Libvirt "Libvirt") | libvirt | libvirtd.service | libvirt es una API de virtualización y un demonio para la gestión de máquinas virtuales (VMs). |
 | [lxdm](/index.php/LXDE "LXDE") | lxdm | lxdm.service | Administrador de pantallas LXDE. |
-| [man-db](https://www.archlinux.org/packages/?name=man-db) |  ? | man-db.timer
+| [man-db](https://www.archlinux.org/packages/?name=man-db) | ? | man-db.timer
 
 man-db.service
 
  | Actualización diaria del caché man-db. |
  mdadm | mdadm.service | Administración MD (Linux Software RAID). |
 | [miniDLNA](/index.php/MiniDLNA "MiniDLNA") | minidlna | minidlna.service | Sencillo servidor multimedia DLNA/UPnP. |
-  ? | ModemManager.service | Gestión de banda ancha por módem (3G) disponible para [NetworkManager](/index.php/NetworkManager "NetworkManager"). |
+ ? | ModemManager.service | Gestión de banda ancha por módem (3G) disponible para [NetworkManager](/index.php/NetworkManager "NetworkManager"). |
 | [mpd](/index.php/Music_Player_Daemon "Music Player Daemon") | mpd | mpd.service | Demonio de Music Player. |
 | [MySQL](/index.php/MySQL "MySQL") | mysqld | mysqld.service | Servidor de base de datos MySQL. |
 | [MythTV](/index.php/MythTV "MythTV") | mythbackend | mythbackend.service | Backend para el software de vídeo digital MythTV. |
@@ -104,7 +104,7 @@ NetworkManager-wait-online.service | Demonio de NetworkManager, proporciona la d
 | [samba](/index.php/Samba "Samba") | samba | smbd.service
 nmbd.service
 winbindd.service | Servicios de archivos e impresión para los clientes de Microsoft Windows. |
-| [LVM](/index.php/LVM "LVM") |  ? | blk-availability.service
+| [LVM](/index.php/LVM "LVM") | ? | blk-availability.service
 lvm2-lvmetad.service
 lvm2-monitor.service
 lvm2-pvscan.service | LVM es un administrador de volumen lógico para el kernel de Linux; administra unidades de disco y dispositivos similares de almacenamiento masivo. |
@@ -112,7 +112,7 @@ lvm2-pvscan.service | LVM es un administrador de volumen lógico para el kernel 
  saslauthd | saslauthd.service | Demonio de autenticación SASL. |
 | [lm_sensors](/index.php/Lm_sensors "Lm sensors") | sensord | sensord.service | Demonio para el registro de la información de los sensores. |
 | sensors | lm_sensors.service | Inicialización de los sensores que monitorizan el hardware (cargados necesariamente por lo módulos del kernel). |
-| [shadow](https://www.archlinux.org/packages/?name=shadow) |  ? | shadow.timer
+| [shadow](https://www.archlinux.org/packages/?name=shadow) | ? | shadow.timer
 
 shadow.service
 
@@ -128,11 +128,11 @@ shadow.service
  svnserve | svnserve.service | Servidor de Subversion. |
 | [syslog-ng](/index.php/Syslog-ng "Syslog-ng") | syslog-ng | syslog-ng.service | Nueva generación del registro del sistema. |
 | [Timidity](/index.php/Timidity "Timidity") | timidity++ | timidity.service | Sintetizador de software para MIDI. |
-| [Tinc](/index.php/Tinc "Tinc") |  ? | tincd@.service | Uno para cada directorio de configuración como /etc/tinc/*<nombrevpn>*/ |
+| [Tinc](/index.php/Tinc "Tinc") | ? | tincd@.service | Uno para cada directorio de configuración como /etc/tinc/*<nombrevpn>*/ |
 | [Tor](/index.php/Tor "Tor") | tor | tor.service | Enrutamiento para comunicaciones anónimas. |
 | [Transmission](/index.php/Transmission "Transmission") | transmissiond | transmission.service | Demonio de Bit Torrent. |
 | [Ufw](/index.php/Ufw "Ufw") | ufw | ufw.service | Uncomplicated FireWall. |
-| [Urxvtd](/index.php/Urxvt "Urxvt") |  ? | urxvtd.service | Demonio urxvt. |
+| [Urxvtd](/index.php/Urxvt "Urxvt") | ? | urxvtd.service | Demonio urxvt. |
 | [VirtualBox](/index.php/VirtualBox "VirtualBox") | vboxservice | vboxservice.service | Servicio VirtualBox Guest. |
 | [vnStat](/index.php/VnStat "VnStat") | vnstat | vnstat.service | Monitor de tráfico de red ligero. |
 | [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") | vsftpd | vsftpd.service (permanente)

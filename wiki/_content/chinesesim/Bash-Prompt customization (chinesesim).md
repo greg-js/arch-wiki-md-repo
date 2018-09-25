@@ -9,7 +9,7 @@
 
 ## Contents
 
-*   [1 提示符　](#.E6.8F.90.E7.A4.BA.E7.AC.A6.E3.80.80)
+*   [1 提示符　](#.E6.8F.90.E7.A4.BA.E7.AC.A6)
 *   [2 技巧](#.E6.8A.80.E5.B7.A7)
     *   [2.1 Bash 转义字符](#Bash_.E8.BD.AC.E4.B9.89.E5.AD.97.E7.AC.A6)
     *   [2.2 Terminfo escape sequences](#Terminfo_escape_sequences)

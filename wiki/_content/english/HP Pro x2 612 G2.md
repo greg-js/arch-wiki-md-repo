@@ -3,17 +3,17 @@
 | **Device** | **Status** | **Modules** |
 | Video | Working | i915 |
 | Wireless | Working | iwlwifi |
-| LTE/HSPA+ 4G Mobile Broadband | Not tested |  ? |
+| LTE/HSPA+ 4G Mobile Broadband | Not tested | ? |
 | Bluetooth | Working | bluetooth |
 | Audio | Working | snd_hda_intel |
-| Touchscreen | Working |  ? |
-| Webcam | Not working |  ? |
+| Touchscreen | Working | ? |
+| Webcam | Not working | ? |
 | microSD Card Reader | Working | rtsx_pci |
 | Wireless switch | Working | intel_hid |
-| Function/Multimedia Keys | Buggy |  ? |
+| Function/Multimedia Keys | Buggy | ? |
 | Power Management | Working | ... |
 | Finger Print Scanner | Not working | libfprint |
-| Smart Card Reader | Not tested |  ? |
+| Smart Card Reader | Not tested | ? |
 | Ambient light sensor | Working, kernel = 4.11 | iio-sensor-proxy |
 | Acceleration sensor, Magnetometer, Gyro | Working, kernel = 4.11 | iio-sensor-proxy |
 
@@ -74,7 +74,7 @@ It's also possible to deactivate some devices and ports over the BIOS.
 | **Function Key** | **Status** | **Comment** |
 | Body - Volume down | Working |
 | Body - Volume down | Working |
-| Keyboard - Switches the screen image among display devices connected to the system (FN + F1) | Working |  ? |
+| Keyboard - Switches the screen image among display devices connected to the system (FN + F1) | Working | ? |
 | Keyboard - Decreases the screen brightness (FN + F3) | Working |
 | Keyboard - Increases the screen brightness (FN + F4) | Working |
 | Keyboard - Mute (FN + F5) | Working | mute light of the key is not working |

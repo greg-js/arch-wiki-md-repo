@@ -5,10 +5,17 @@
 *   [3 Drivers](#Drivers)
     *   [3.1 Nvidia/Optimus](#Nvidia.2FOptimus)
     *   [3.2 Touchpad](#Touchpad)
+        *   [3.2.1 GS63-8RE](#GS63-8RE)
     *   [3.3 Networking](#Networking)
         *   [3.3.1 Wireless](#Wireless)
     *   [3.4 Audio](#Audio)
     *   [3.5 SteelSeries Keyboard](#SteelSeries_Keyboard)
+        *   [3.5.1 GS63-8RE](#GS63-8RE_2)
+    *   [3.6 Sleep](#Sleep)
+    *   [3.7 Web Camera](#Web_Camera)
+        *   [3.7.1 GS63-8RE](#GS63-8RE_3)
+    *   [3.8 Power Management](#Power_Management)
+        *   [3.8.1 GS63-8RE](#GS63-8RE_4)
 *   [4 Misc](#Misc)
     *   [4.1 BIOS](#BIOS)
 
@@ -20,17 +27,18 @@ This issue was discussed in this thread: [https://bbs.archlinux.org/viewtopic.ph
 
 As of 2018, the patch is now part of the mainstream kernel. Intel driver (i915) works, but without power management. It is only possible to run a graphical environment with the nvidia card ON. In order to get the maximum performance out of this notebook, it is recommended to use [nvidia-xrun](https://aur.archlinux.org/packages/nvidia-xrun-git). Bumblebee is not working on the 2017 model.
 
-| **Device** | **GS63 (2016)** | **GS63 (2017)** | **GS73 (2016)** |
-| [Display](/index.php?title=Display&action=edit&redlink=1 "Display (page does not exist)") | -- | Full HD 120Hz/3ms | -- |
-| [Intel IGU](/index.php?title=Intel_IGU&action=edit&redlink=1 "Intel IGU (page does not exist)") | Yes | Yes i915 |  ?? |
-| [Nvidia GPU](/index.php?title=Nvidia_GPU&action=edit&redlink=1 "Nvidia GPU (page does not exist)") | Yes | Yes nvidia |  ?? |
-| [Network](/index.php/Network "Network") | Yes | Yes |  ?? |
-| Atheros Wireless | Yes | Yes |  ?? |
-| [ALSA](/index.php/ALSA "ALSA") | Yes | Yes |  ?? |
-| [Touchpad](/index.php/Touchpad "Touchpad") | Manual | Yes |  ?? |
-| [Webcam](/index.php/Webcam "Webcam") | Yes | Yes |  ?? |
-| Card Reader | Yes | mmc warning |  ?? |
-| [Power management](/index.php/Power_management "Power management") | Yes | No |  ?? |
+| **Device** | **GS63 (2016)** | **GS63 (2017)** | **[GS63-8RE](https://www.msi.com/Laptop/GS63-Stealth-8RE/Specification) (2018)** |
+| CPU | Yes i7-6700HQ | Yes i7-7700HQ | Yes i7-8750H |
+| Display | -- | Full HD 120Hz/3ms | Full HD 120Hz/3ms |
+| Intel IGU | Yes Intel HD Graphics 530 | Yes HD Graphics 630 (i915) | Yes Intel HD Graphics 630 |
+| Nvidia GPU | Yes GTX 1060 | Yes GTX 1070 | Yes GTX 1060 |
+| [Network](/index.php/Network "Network") | Yes | Yes | Yes |
+| Atheros Wireless | Yes | Yes | Yes |
+| [ALSA](/index.php/ALSA "ALSA") | Yes | Yes | Yes |
+| [Touchpad](/index.php/Touchpad "Touchpad") | Manual | Yes | Yes |
+| [Webcam](/index.php/Webcam "Webcam") | Yes | Yes | Yes |
+| Card Reader | Yes | mmc warning | Yes |
+| [Power management](/index.php/Power_management "Power management") | Yes | No | Yes |
 
 ## Installation
 
@@ -48,7 +56,11 @@ For HDMI/DP ouput: [Bumblebee#Output wired to the NVIDIA chip](/index.php/Bumble
 
 This laptop uses an Elantech touchpad, and as such [libinput](/index.php/Libinput "Libinput") works well.
 
-Note* As of 2017.04.18, some multitouch aspects of the touchpad do not seem to be working (two finger scroll, for instance). This bug has been reported [here](https://bugs.freedesktop.org/show_bug.cgi?id=100696).
+Note* As of 2017.04.18, some multitouch aspects of the touchpad do not seem to be working (two finger scroll, for instance). This bug has been reported in [100696](https://bugs.freedesktop.org/show_bug.cgi?id=100696).
+
+#### GS63-8RE
+
+Two finger scrolling worked out of the box. Tested on 2018.09.23. Install [libinput-gestures](https://aur.archlinux.org/packages/libinput-gestures/) for more multitouch actions.
 
 ### Networking
 
@@ -66,8 +78,28 @@ As a workaround it is possible to reassign a microphone input jack using hdajack
 
 To set color to Steel Series Keyboard use [MSIKLM](https://github.com/Gibtnix/MSIKLM)
 
+#### GS63-8RE
+
+Use the instructions on [MSI_GS65#Lights](/index.php/MSI_GS65#Lights "MSI GS65") to install [msi-perkeyrgb](https://aur.archlinux.org/packages/msi-perkeyrgb/).
+
+### Sleep
+
+If the laptop doesn't fully enter sleep mode, bluetooth and mobile light stay on and sleep light does not come on. Then try reinstalling [tlp](/index.php/Tlp "Tlp").
+
+### Web Camera
+
+#### GS63-8RE
+
+`Fn + F6` will toggle disable/ enable the web camera.
+
+### Power Management
+
+#### GS63-8RE
+
+After installing [nvidia](/index.php/Nvidia "Nvidia"), [bumblebee](/index.php/Bumblebee "Bumblebee"), and [bbswitch](/index.php/Bbswitch "Bbswitch") while running [KDE](/index.php/KDE "KDE") power usage is down to ~7W or 9 hours according to [powertop](/index.php/Powertop "Powertop").
+
 ## Misc
 
 ### BIOS
 
-To access the BIOS, from a cold shutdown, repeatedly press the `delete` key immediately after pressing the power button.
+To access the BIOS, from a cold shutdown, repeatedly press the `delete` key immediately after pressing the power button. To access the Boot Device Menu, from a cold shutdown, repeatedly press the `F11` key immediately after pressing the power button.

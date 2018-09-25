@@ -11,7 +11,7 @@ Desde [wikipedia](https://en.wikipedia.org/wiki/es:C%C3%B3dec "wikipedia:es:Cód
 
 En general, los codecs son utilizados por aplicaciones multimedia para codificar o decodificar transmisiones de audio o vídeo. Para reproducir transmisiones codificadas, los usuarios deben asegurarse de que esté instalado un códec apropiado.
 
-Este artículo trata solo con codecs y backends de aplicaciones; consulte la [lista de aplicaciones multimedia](/index.php/List_of_applications#Multimedia "List of applications") para obtener una lista de reproductores multimedia ([MPlayer](/index.php/MPlayer "MPlayer"), [mpv](/index.php/Mpv "Mpv") y [VLC](/index.php/VLC "VLC") son ​​opciones populares).
+Este artículo trata solo con codecs y backends de aplicaciones; véase la [lista de aplicaciones multimedia](/index.php/List_of_applications#Multimedia "List of applications") para obtener una lista de reproductores multimedia ([MPlayer](/index.php/MPlayer "MPlayer"), [mpv](/index.php/Mpv "Mpv") y [VLC](/index.php/VLC "VLC") son ​​opciones populares).
 
 ## Contents
 
@@ -183,7 +183,7 @@ De [http://www.gstreamer.net/](http://www.gstreamer.net/):
 
 	GStreamer es una biblioteca para construir grafos de componentes de manejo de medios. Las aplicaciones son compatibles con la reproducción simple de Ogg/Vorbis, la transmisión de audio/vídeo al procesamiento complejo de audio (mezcla) y vídeo (edición no lineal).
 
-Simplemente, GStreamer es un *back-end* o *framework* utilizado por muchas aplicaciones de medios. Consulte el artículo [GStreamer](/index.php/GStreamer "GStreamer").
+Simplemente, GStreamer es un *back-end* o *framework* utilizado por muchas aplicaciones de medios. Véase el artículo [GStreamer](/index.php/GStreamer "GStreamer").
 
 ### xine
 

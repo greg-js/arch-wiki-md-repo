@@ -29,7 +29,7 @@ Los usuarios y grupos se utilizan en GNU/Linux para el [control de acceso](https
 
 ## Descripción
 
-	*El superusuario (root) redirige aquí. Para el directorio raíz, consulte [Partición raíz](/index.php/Partitioning_(Espa%C3%B1ol)#Partici.C3.B3n_ra.C3.ADz "Partitioning (Español)").*
+	*El superusuario (root) redirige aquí. Para el directorio raíz, véase [Partición raíz](/index.php/Partitioning_(Espa%C3%B1ol)#Partici.C3.B3n_ra.C3.ADz "Partitioning (Español)").*
 
 Un *usuario* es cualquiera que use una computadora. En este caso, estamos describiendo los nombres que representan a esos usuarios. Puede ser Mary o Bill, y pueden usar los nombres Dragonlady o Pirate en lugar de su nombre real. Lo único que importa es que la computadora tenga un nombre para cada cuenta que cree, y es este nombre por el que una persona obtiene acceso para usar la computadora. Algunos servicios del sistema también se ejecutan utilizando cuentas de usuario restringidas o privilegiadas.
 
@@ -116,11 +116,11 @@ Puede listar los archivos que pertenecen a un usuario o a un grupo con la orden 
 
 El usuario y el grupo propietarios de un archivo pueden ser cambiados con el comando [chown](/index.php/Chown "Chown") (***ch**ange **own**er*). Los permisos de acceso a un archivo se pueden cambiar con el comando [chmod](/index.php/Chmod "Chmod") (***ch**ange **mod**e*).
 
-Consulte [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), y [Linux file permissions](http://www.linux.com/learn/tutorials/309527-understanding-linux-file-permissions) para obtener información adicional.
+Véase [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), y [Linux file permissions](http://www.linux.com/learn/tutorials/309527-understanding-linux-file-permissions) para obtener información adicional.
 
 ## Lista de archivos
 
-**Advertencia:** No modifique estos archivos manualmente. Existen utilidades que bloquean el manejo de las propiedades y evitan invalidar el formato de la base de datos. Consulte [administración de usuarios](#Administraci.C3.B3n_de_usuarios) y [administración de grupos](#Administraci.C3.B3n_de_grupos) para más detalles.
+**Advertencia:** No modifique estos archivos manualmente. Existen utilidades que bloquean el manejo de las propiedades y evitan invalidar el formato de la base de datos. Véase [administración de usuarios](#Administraci.C3.B3n_de_usuarios) y [administración de grupos](#Administraci.C3.B3n_de_grupos) para más detalles.
 
 | Archivo | Propósito |
 | `/etc/shadow` | Información reservada de las cuentas de usuario |
@@ -132,7 +132,7 @@ Consulte [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(
 
 ## Administración de usuarios
 
-Para listar los usuarios que actualmente están conectados en el sistema, se puede usar el comando *who*. Para listar todas las cuentas de usuario existentes, incluidas sus propiedades almacenadas en la [base de datos del usuario](#Base_de_datos_del_usuario), ejecute `passwd -Sa` como superusuario. Consulte [passwd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/passwd.1) para la descripción del formato de salida.
+Para listar los usuarios que actualmente están conectados en el sistema, se puede usar el comando *who*. Para listar todas las cuentas de usuario existentes, incluidas sus propiedades almacenadas en la [base de datos del usuario](#Base_de_datos_del_usuario), ejecute `passwd -Sa` como superusuario. Véase [passwd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/passwd.1) para la descripción del formato de salida.
 
 Para añadir un nuevo usuario, utilice el ocmando *useradd*:
 
@@ -161,7 +161,7 @@ Para añadir un nuevo usuario, utilice el ocmando *useradd*:
 
 **Nota:** La contraseña del usuario recién creado debe definirse después, utilizando *passwd* como se muestra en [#Ejemplo para añadir un usuario](#Ejemplo_para_a.C3.B1adir_un_usuario).
 
-Cuando el intérprete de comandos de inicio de sesión no es funcional, por ejemplo, cuando la cuenta de usuario se crea para un servicio específico, se puede especificar `/usr/bin/nologin` en lugar de un intérprete de comandos normal para rechazar amablemente el inicio de sesión (Consulte [nologin(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nologin.8)).
+Cuando el intérprete de comandos de inicio de sesión no es funcional, por ejemplo, cuando la cuenta de usuario se crea para un servicio específico, se puede especificar `/usr/bin/nologin` en lugar de un intérprete de comandos normal para rechazar amablemente el inicio de sesión (véase [nologin(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nologin.8)).
 
 ### Ejemplo para añadir un usuario
 
@@ -183,7 +183,7 @@ Aunque no es necesario proteger al usuario `archie` recién creado con una contr
 
 El comando *useradd* anterior también creará automáticamente un grupo llamado `archie` con el mismo GID que el UID del usuario `archie` y lo convierte en el grupo predeterminado para `archie` al iniciar sesión. Hacer que cada usuario tenga su propio grupo (con nombre de grupo igual al nombre de usuario y GID igual al UID) es la forma de añadir usuarios preferida.
 
-También puede hacer que el grupo predeterminado sea distinto usando la opción `-g`, pero tenga en cuenta que en sistemas multiusuario, no se recomienda utilizar un único grupo predeterminado (por ejemplo, `users`) para cada usuario. La razón es que, por lo general, el método para facilitar el acceso de escritura compartido para grupos específicos de usuarios establece el valor de usuario [umask](/index.php/Umask "Umask") en `002`, lo que significa que el grupo predeterminado siempre tendrá acceso de escritura a cualquier archivo que cree. Consulte también [User Private Groups](https://security.ias.edu/how-and-why-user-private-groups-unix). Si un usuario debe ser miembro de un grupo específico, especifique ese grupo como un grupo suplementario al crear el usuario.
+También puede hacer que el grupo predeterminado sea distinto usando la opción `-g`, pero tenga en cuenta que en sistemas multiusuario, no se recomienda utilizar un único grupo predeterminado (por ejemplo, `users`) para cada usuario. La razón es que, por lo general, el método para facilitar el acceso de escritura compartido para grupos específicos de usuarios establece el valor de usuario [umask](/index.php/Umask "Umask") en `002`, lo que significa que el grupo predeterminado siempre tendrá acceso de escritura a cualquier archivo que cree. Véase también [User Private Groups](https://security.ias.edu/how-and-why-user-private-groups-unix). Si un usuario debe ser miembro de un grupo específico, especifique ese grupo como un grupo suplementario al crear el usuario.
 
 En el escenario recomendado, donde el grupo predeterminado tiene el mismo nombre que el usuario, todos los archivos se pueden escribir de forma predeterminada solo por el usuario que los creó. Para permitir el acceso de escritura a un grupo específico, los archivos/carpetas compartidos se pueden escribir de forma predeterminada por todos en este grupo y, el grupo propietario, se puede fijar automáticamente al grupo dueño del directorio personal estableciendo el bit setgid en este directorio:
 
@@ -237,7 +237,7 @@ Para cambiar el nombre de inicio de sesión de un usuario:
 
 Cambiar un nombre de usuario es seguro y fácil cuando se hace correctamente, simplemente use el comando [usermod](#Otros_ejemplos_de_administraci.C3.B3n_de_usuarios). Si el usuario está asociado a un grupo con el mismo nombre, puede cambiarle el nombre con el comando [groupmod](#Administraci.C3.B3n_de_grupos).
 
-Alternativamente, el archivo `/etc/passwd` puede modificarse directamente, consulte [#Base de datos del usuario](#Base_de_datos_del_usuario) para una introducción a su formato.
+Alternativamente, el archivo `/etc/passwd` puede modificarse directamente, véase [#Base de datos del usuario](#Base_de_datos_del_usuario) para una introducción a su formato.
 
 Tenga también en cuenta las siguientes notas:
 
@@ -305,7 +305,7 @@ Para cambiar el intérprete de comandos de inicio de sesión del usuario:
 
 ```
 
-**Sugerencia:** El script [adduser](https://aur.archlinux.org/packages/adduser/) permite realizar los trabajos de *useradd*, *chfn* y *passwd* de forma interactiva. Consulte también [FS#32893](https://bugs.archlinux.org/task/32893).
+**Sugerencia:** El script [adduser](https://aur.archlinux.org/packages/adduser/) permite realizar los trabajos de *useradd*, *chfn* y *passwd* de forma interactiva. Véase también [FS#32893](https://bugs.archlinux.org/task/32893).
 
 ## Base de datos del usuario
 
@@ -348,7 +348,7 @@ El comando *pwck* se puede usar para verificar la integridad de la base de datos
 
 ## Administración de grupos
 
-`/etc/group` es el archivo que define los grupos en el sistema (consulte [group(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) para más detalles).
+`/etc/group` es el archivo que define los grupos en el sistema (véase [group(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) para más detalles).
 
 El comando `groups` muestra la pertenencia al grupo:
 
@@ -418,7 +418,7 @@ Las actualizaciones del paquete [filesystem](https://www.archlinux.org/packages/
 
 ## Listado de grupos
 
-Esta sección explica el propósito de los grupos esenciales del paquete [core/filesystem](https://git.archlinux.org/svntogit/packages.git/tree/trunk/group?h=packages/filesystem). Hay muchos otros grupos, que se crearán con el [GID correcto](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database") cuando se instale el paquete correspondiente. Consulte la página principal del software para más detalles.
+Esta sección explica el propósito de los grupos esenciales del paquete [core/filesystem](https://git.archlinux.org/svntogit/packages.git/tree/trunk/group?h=packages/filesystem). Hay muchos otros grupos, que se crearán con el [GID correcto](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database") cuando se instale el paquete correspondiente. Véase la página principal del software para más detalles.
 
 **Nota:** La eliminación posterior de un paquete no elimina el usuario/grupo creado automáticamente (UID/GID) de nuevo. Esto es intencionado porque cualquier archivo creado durante su uso se dejaría huérfano con el posible riesgo de seguridad.
 
@@ -446,7 +446,7 @@ Los siguientes grupos se utilizan para fines del sistema, solo es necesario su a
 | Grupo | Archivos afectados | Propósito |
 | dbus | Utilizado internamente por [dbus](https://www.archlinux.org/packages/?name=dbus) |
 | kmem | `/dev/port`, `/dev/mem`, `/dev/kmem` |
-| locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | Consulte [Core utilities (Español)#locate](/index.php/Core_utilities_(Espa%C3%B1ol)#locate "Core utilities (Español)"). |
+| locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | Véase [Core utilities (Español)#locate](/index.php/Core_utilities_(Espa%C3%B1ol)#locate "Core utilities (Español)"). |
 | lp | `/dev/lp[0-9]*`, `/dev/parport[0-9]*` | Acceso a dispositivos de puerto paralelo (impresoras y otros). |
 | mail | `/usr/bin/mail` |
 | nobody | Grupo sin privilegios. |
@@ -458,12 +458,12 @@ Los siguientes grupos se utilizan para fines del sistema, solo es necesario su a
 
 ### Grupos pre-systemd
 
-Antes de que Arch migrase a [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), los usuarios tenían que añadirse manualmente a estos grupos para poder acceder a los dispositivos correspondientes. Esta metodología está obsoleta en favor de [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") marcando los dispositivos con `uaccess` [tag](https://github.com/systemd/systemd/blob/master/src/login/70-uaccess.rules) y *logind* asignando los permisos a los usuarios dinámicamente a través de [ACLs](/index.php/Access_Control_Lists_(Espa%C3%B1ol) "Access Control Lists (Español)") según la sesión que esté actualmente activa. Tenga en cuenta que la sesión no debe interrumpirse para que esto funcione (consulte [Permisos de sesión](/index.php/General_troubleshooting_(Espa%C3%B1ol)#Permisos_de_sesi.C3.B3n "General troubleshooting (Español)") para comprobarlo).
+Antes de que Arch migrase a [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), los usuarios tenían que añadirse manualmente a estos grupos para poder acceder a los dispositivos correspondientes. Esta metodología está obsoleta en favor de [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") marcando los dispositivos con `uaccess` [tag](https://github.com/systemd/systemd/blob/master/src/login/70-uaccess.rules) y *logind* asignando los permisos a los usuarios dinámicamente a través de [ACLs](/index.php/Access_Control_Lists_(Espa%C3%B1ol) "Access Control Lists (Español)") según la sesión que esté actualmente activa. Tenga en cuenta que la sesión no debe interrumpirse para que esto funcione (véase [Permisos de sesión](/index.php/General_troubleshooting_(Espa%C3%B1ol)#Permisos_de_sesi.C3.B3n "General troubleshooting (Español)") para comprobarlo).
 
 Hay algunas excepciones notables que requieren añadir un usuario a algunos de estos grupos: por ejemplo, si desea permitir que los usuarios accedan al dispositivo incluso cuando no están conectados. Sin embargo, tenga en cuenta que añadir usuarios a los grupos puede incluso causar la rotura de alguna funcionalidad (por ejemplo, el grupo `audio` romperá el cambio rápido de usuario y permite que las aplicaciones bloqueen el mezclador por software).
 
 | Grupo | Archivos afectados | Propósito |
-| audio | `/dev/audio`, `/dev/snd/*`, `/dev/rtc0` | Acceso directo a hardware de sonido para todas las sesiones. Todavía es necesario hacer que [ALSA](/index.php/Advanced_Linux_Sound_Architecture_(Espa%C3%B1ol) "Advanced Linux Sound Architecture (Español)") y [OSS](/index.php/Open_Sound_System_(Espa%C3%B1ol) "Open Sound System (Español)") funcionen en sesiones remotas, consulte [ALSA#User privileges](/index.php/ALSA#User_privileges "ALSA"). También utilizado por [JACK](/index.php/JACK "JACK") para dar a los usuarios permisos de procesamiento en tiempo real. |
+| audio | `/dev/audio`, `/dev/snd/*`, `/dev/rtc0` | Acceso directo a hardware de sonido para todas las sesiones. Todavía es necesario hacer que [ALSA](/index.php/Advanced_Linux_Sound_Architecture_(Espa%C3%B1ol) "Advanced Linux Sound Architecture (Español)") y [OSS](/index.php/Open_Sound_System_(Espa%C3%B1ol) "Open Sound System (Español)") funcionen en sesiones remotas, véase [ALSA#User privileges](/index.php/ALSA#User_privileges "ALSA"). También utilizado por [JACK](/index.php/JACK "JACK") para dar a los usuarios permisos de procesamiento en tiempo real. |
 | disk | `/dev/sd[a-z][1-9]` | Acceso a dispositivos de bloques no afectados por otros grupos como `optical`, `floppy`, y `storage`. |
 | floppy | `/dev/fd[0-9]` | Acceso a unidades de disquete. |
 | input | `/dev/input/event[0-9]*`, `/dev/input/mouse[0-9]*` | Acceso a dispositivos de entrada. Introducido en systemd 215 [[2]](http://lists.freedesktop.org/archives/systemd-commits/2014-June/006343.html). |
@@ -482,6 +482,6 @@ Los siguientes grupos no tienen actualmente ninguna propósito:
 | daemon |
 | lock | Usado para el acceso de bloqueo de archivos. Requerido por ejemplo en [gnokii](https://www.archlinux.org/packages/?name=gnokii). |
 | mem |
-| network | No utilizado por defecto. Puede ser utilizado, por ejemplo para otorgar acceso a NetworkManager (consulte [Configurar permisos PolicyKit](/index.php/NetworkManager_(Espa%C3%B1ol)#Configurar_permisos_PolicyKit "NetworkManager (Español)")). |
+| network | No utilizado por defecto. Puede ser utilizado, por ejemplo para otorgar acceso a NetworkManager (véase [Configurar permisos PolicyKit](/index.php/NetworkManager_(Espa%C3%B1ol)#Configurar_permisos_PolicyKit "NetworkManager (Español)")). |
 | power |
 | uuidd |

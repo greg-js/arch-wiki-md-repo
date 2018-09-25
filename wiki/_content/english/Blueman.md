@@ -118,7 +118,7 @@ If your Bluetooth applet or manager doesn't show or detect any Bluetooth adapter
 
 If you can't send or receive files and you encounter a python-dbus-exception error similar or exactly like `process org.bluez.obex exited with status 1` then it is advised to start the obexd-service manually from `/usr/lib/bluetooth/obexd` and see if that helps. Since the default permissions assume 755 it is possible to start the daemon from a user-account and/or create an autostarter.
 
-Should the error persist or another occur then try using [obexftp](https://aur.archlinux.org/packages/obexftp/) for file transfers instead, see [Bluetooth#ObexFTP transfers](/index.php/Bluetooth#ObexFTP_transfers "Bluetooth").
+Should the error persist or another occur then try using [ObexFTP](/index.php/ObexFTP "ObexFTP") for file transfers instead.
 
 ## See also
 

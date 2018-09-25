@@ -152,8 +152,8 @@ The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") 
 | Container for encrypted data may be... | a disk or disk partition / a file acting as a virtual partition | a disk or disk partition / a file acting as a virtual partition | a disk or disk partition / a file acting as a virtual partition | a disk or disk partition / a file acting as a virtual partition | a directory in an existing file system | a directory in an existing file system |
 | Relation to filesystem | operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else | operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else | operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else | operates below filesystem layer: does not care whether the content of the encrypted block device is a filesystem, a partition table, a LVM setup, or anything else | adds an additional layer to an existing filesystem, to automatically encrypt/decrypt files whenever they are written/read | adds an additional layer to an existing filesystem, to automatically encrypt/decrypt files whenever they are written/read |
 | Encryption implemented in... | kernelspace | kernelspace | kernelspace | kernelspace | kernelspace | userspace (using FUSE) |
-| Cryptographic metadata stored in... |  ? | with LUKS: LUKS Header | begin/end of (decrypted) device ([format](http://www.truecrypt.org/docs/volume-format-specification)) | begin/end of (decrypted) device ([format spec](https://www.veracrypt.fr/en/VeraCrypt%20Volume%20Format%20Specification.html)) | header of each encrypted file | control file at the top level of each EncFs container |
-| Wrapped encryption key stored in... |  ? | with LUKS: LUKS header | begin/end of (decrypted) device ([format spec](http://www.truecrypt.org/docs/volume-format-specification)) | begin/end of (decrypted) device ([format spec](https://www.veracrypt.fr/en/VeraCrypt%20Volume%20Format%20Specification.html)) | key file that can be stored anywhere | key file that can be stored anywhere
+| Cryptographic metadata stored in... | ? | with LUKS: LUKS Header | begin/end of (decrypted) device ([format](http://www.truecrypt.org/docs/volume-format-specification)) | begin/end of (decrypted) device ([format spec](https://www.veracrypt.fr/en/VeraCrypt%20Volume%20Format%20Specification.html)) | header of each encrypted file | control file at the top level of each EncFs container |
+| Wrapped encryption key stored in... | ? | with LUKS: LUKS header | begin/end of (decrypted) device ([format spec](http://www.truecrypt.org/docs/volume-format-specification)) | begin/end of (decrypted) device ([format spec](https://www.veracrypt.fr/en/VeraCrypt%20Volume%20Format%20Specification.html)) | key file that can be stored anywhere | key file that can be stored anywhere
 
 [[1]](https://github.com/rfjakob/encfs/blob/next/encfs/encfs.pod#environment-variables)[[2]](https://github.com/vgough/encfs/issues/48#issuecomment-69301831)
 
@@ -177,7 +177,7 @@ The column "dm-crypt +/- LUKS" denotes features of dm-crypt for both LUKS ("+") 
 ##### Usability features
 
  | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
-| Support for automounting on login |  ? | ✔ | ✔
+| Support for automounting on login | ? | ✔ | ✔
 
 with [systemd and /etc/crypttab](/index.php/TrueCrypt#Automounting_using_.2Fetc.2Fcrypttab "TrueCrypt")
 
@@ -186,7 +186,7 @@ with [systemd and /etc/crypttab](/index.php/TrueCrypt#Automounting_using_.2Fetc.
 with [systemd and /etc/crypttab](/index.php/TrueCrypt#Automounting_using_.2Fetc.2Fcrypttab "TrueCrypt")
 
  | ✔ | ✔ |
-| Support for automatic unmounting in case of inactivity |  ? |  ? |  ? |  ? |  ? | ✔ |
+| Support for automatic unmounting in case of inactivity | ? | ? | ? | ? | ? | ✔ |
 | Non-root users can create/destroy containers for encrypted data | ✖ | ✖ | ✖ | ✖ | limited | ✔ |
 | Provides a GUI | ✖ | ✖ | ✔ | ✔ | ✖ | ✔
 
@@ -199,9 +199,9 @@ with [systemd and /etc/crypttab](/index.php/TrueCrypt#Automounting_using_.2Fetc.
 
  | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
 | Supported ciphers | AES | AES, Anubis, CAST5/6, Twofish, Serpent, Camellia, Blowfish,… (every cipher the kernel Crypto API offers) | AES, Twofish, Serpent | AES, Twofish, Serpernt, Camellia, Kuznyechik | AES, Blowfish, Twofish... | AES, Blowfish, Twofish, and any other ciphers available on the system |
-| Support for salting |  ? | ✔
-(with LUKS) | ✔ | ✔ | ✔ |  ? |
-| Support for cascading multiple ciphers |  ? | Not in one device, but blockdevices can be cascaded | ✔
+| Support for salting | ? | ✔
+(with LUKS) | ✔ | ✔ | ✔ | ? |
+| Support for cascading multiple ciphers | ? | Not in one device, but blockdevices can be cascaded | ✔
 
 AES-Twofish, AES-Twofish-Serpent, Serpent-AES, Serpent-Twofish-AES, Twofish-Serpent
 
@@ -209,20 +209,20 @@ AES-Twofish, AES-Twofish-Serpent, Serpent-AES, Serpent-Twofish-AES, Twofish-Serp
 
 AES-Twofish, AES-Twofish-Serpent, Serpent-AES, Serpent-Twofish-AES, Twofish-Serpent
 
- |  ? | ✖ |
-| Support for key-slot diffusion |  ? | ✔
-(with LUKS) |  ? |  ? |  ? |  ? |
+ | ? | ✖ |
+| Support for key-slot diffusion | ? | ✔
+(with LUKS) | ? | ? | ? | ? |
 | Protection against key scrubbing | ✔ | ✔
-(without LUKS) |  ? |  ? |  ? |  ? |
-| Support for multiple (independently revocable) keys for the same encrypted data |  ? | ✔
-(with LUKS) |  ? |  ? |  ? | ✖ |
+(without LUKS) | ? | ? | ? | ? |
+| Support for multiple (independently revocable) keys for the same encrypted data | ? | ✔
+(with LUKS) | ? | ? | ? | ✖ |
 | 
 
 ##### Performance features
 
  | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
-| Multithreading support |  ? | ✔
-[[5]](http://kernelnewbies.org/Linux_2_6_38#head-49f5f735853f8cc7c4d89e5c266fe07316b49f4c) | ✔ | ✔ |  ? |  ? |
+| Multithreading support | ? | ✔
+[[5]](http://kernelnewbies.org/Linux_2_6_38#head-49f5f735853f8cc7c4d89e5c266fe07316b49f4c) | ✔ | ✔ | ? | ? |
 | Hardware-accelerated encryption support | ✔ | ✔ | ✔ | ✔ | ✔ | ✔
 [[6]](https://github.com/vgough/encfs/issues/118) |
 | 
@@ -230,7 +230,7 @@ AES-Twofish, AES-Twofish-Serpent, Serpent-AES, Serpent-Twofish-AES, Twofish-Serp
 ##### Block device encryption specific
 
  | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt |
-| Support for (manually) resizing the encrypted block device in-place |  ? | ✔ | ✖ | ✖ |
+| Support for (manually) resizing the encrypted block device in-place | ? | ✔ | ✖ | ✖ |
 | 
 
 ##### Stacked filesystem encryption specific
@@ -249,23 +249,23 @@ AES-Twofish, AES-Twofish-Serpent, Serpent-AES, Serpent-Twofish-AES, Twofish-Serp
 ##### Compatibility & prevalence
 
  | Loop-AES | dm-crypt +/- LUKS | TrueCrypt | VeraCrypt | eCryptfs | EncFs |
-| Supported Linux kernel versions | 2.0 or newer | CBC-mode since 2.6.4, ESSIV 2.6.10, LRW 2.6.20, XTS 2.6.24 |  ? |  ? |  ? | 2.4 or newer |
+| Supported Linux kernel versions | 2.0 or newer | CBC-mode since 2.6.4, ESSIV 2.6.10, LRW 2.6.20, XTS 2.6.24 | ? | ? | ? | 2.4 or newer |
 | Encrypted data can also be accessed from Windows | ✔
 (with [CrossCrypt](https://en.wikipedia.org/wiki/CrossCrypt "wikipedia:CrossCrypt"), [LibreCrypt](https://github.com/t-d-k/LibreCrypt)) | ?
-(with [FreeOTFE](https://en.wikipedia.org/wiki/FreeOTFE "wikipedia:FreeOTFE"), [LibreCrypt](https://github.com/t-d-k/LibreCrypt)) | ✔ | ✔ |  ? |  ?
+(with [FreeOTFE](https://en.wikipedia.org/wiki/FreeOTFE "wikipedia:FreeOTFE"), [LibreCrypt](https://github.com/t-d-k/LibreCrypt)) | ✔ | ✔ | ? | ?
 [[8]](http://members.ferrara.linux.it/freddy77/encfs.html) |
-| Encrypted data can also be accessed from Mac OS X |  ? |  ? | ✔ | ✔ |  ? | ✔
+| Encrypted data can also be accessed from Mac OS X | ? | ? | ✔ | ✔ | ? | ✔
 [[9]](https://sites.google.com/a/arg0.net/www/encfs-mac-build) |
-| Encrypted data can also be accessed from FreeBSD |  ? |  ? | ✔
+| Encrypted data can also be accessed from FreeBSD | ? | ? | ✔
 
 (with VeraCrypt)
 
  | ✔
- |  ? | ✔
+ | ? | ✔
 [[10]](http://www.freshports.org/sysutils/fusefs-encfs/) |
-| Used by |  ? | Debian/Ubuntu installer (system encryption)
-Fedora installer |  ? |  ? | Ubuntu installer (home dir encryption)
-Chromium OS (encryption of cached user data [[11]](https://www.chromium.org/chromium-os/chromiumos-design-docs/protecting-cached-user-data)) |  ? |
+| Used by | ? | Debian/Ubuntu installer (system encryption)
+Fedora installer | ? | ? | Ubuntu installer (home dir encryption)
+Chromium OS (encryption of cached user data [[11]](https://www.chromium.org/chromium-os/chromiumos-design-docs/protecting-cached-user-data)) | ? |
 
 1.  [^](#Practical_implications) well, a single file in those filesystems could be used as a container (virtual loop-back device!) but then one would not actually be using the filesystem (and the features it provides) anymore
 

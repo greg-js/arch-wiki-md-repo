@@ -59,7 +59,7 @@ freshclamd.service | Антивирус для Unix. |
 | [lxdm](/index.php/LXDE "LXDE") | lxdm | lxdm.service | LXDE Display Manager. |
  mdadm | mdadm.service | MD Administration (Linux software RAID). |
 | [miniDLNA](/index.php/MiniDLNA "MiniDLNA") | minidlna | minidlna.service | simple DLNA/UPnP media server. |
-  ? | ModemManager.service | Makes mobile broadband (3G) modem available to [NetworkManager](/index.php/NetworkManager "NetworkManager"). |
+ ? | ModemManager.service | Makes mobile broadband (3G) modem available to [NetworkManager](/index.php/NetworkManager "NetworkManager"). |
 | [mpd](/index.php/Mpd "Mpd") | mpd | mpd.service | Music Player Daemon. |
 | [MySQL](/index.php/MySQL "MySQL") | mysqld | mysqld.service | MySQL database server. |
 | [MythTV](/index.php/MythTV "MythTV") | mythbackend | mythbackend.service | Back-end for the MythTV digital video recording/home theater software. |
@@ -112,11 +112,11 @@ winbindd.service | Служба Файлов и принтеров для кли
  svnserve | svnserve.service | Subversion server. |
 | [syslog-ng](/index.php/Syslog-ng "Syslog-ng") | syslog-ng | syslog-ng.service | System logger next generation. |
 | [Timidity](/index.php/Timidity "Timidity") | timidity++ | timidity.service | Software synthesizer for MIDI. |
-| [Tinc](/index.php/Tinc "Tinc") |  ? | tincd@.service | One for each configuration directory like /etc/tinc/*<vpnname>*/ |
+| [Tinc](/index.php/Tinc "Tinc") | ? | tincd@.service | One for each configuration directory like /etc/tinc/*<vpnname>*/ |
 | [Tor](/index.php/Tor "Tor") | tor | tor.service | Onion routing for anonymous communication. |
 | [Transmission](/index.php/Transmission "Transmission") | transmissiond | transmission.service | Демон BitTorrent. |
 | [Ufw](/index.php/Ufw "Ufw") | ufw | ufw.service | Uncomplicated FireWall. |
-| [Urxvtd](/index.php/Rxvt-unicode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Rxvt-unicode (Русский)") |  ? | urxvtd.service | Демон urxvt. |
+| [Urxvtd](/index.php/Rxvt-unicode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Rxvt-unicode (Русский)") | ? | urxvtd.service | Демон urxvt. |
 | [VirtualBox](/index.php/VirtualBox "VirtualBox") | vboxservice | vboxservice.service | VirtualBox Guest Service. |
 | [vnStat](/index.php/VnStat "VnStat") | vnstat | vnstat.service | Lightweight network traffic monitor. |
 | [Very Secure FTP Daemon](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon") | vsftpd | vsftpd.service (permanent)

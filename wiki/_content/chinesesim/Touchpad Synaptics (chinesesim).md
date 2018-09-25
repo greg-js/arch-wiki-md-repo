@@ -229,9 +229,9 @@ To change these settings in **Cinnamon**:
 可以通过下面的方法来阻止Mate配置守护程序改写当前配置：
 
 1.  运行 `dconf-editor}`
+`*   编辑 `org.mate.SettingsDaemon.plugins.mouse`*   取消**active**勾选 .`
 
-3.  `编辑 <code>org.mate.SettingsDaemon.plugins.mouse`
-4.  取消**active**勾选 .
+`
 
 ## 高级配置
 
@@ -252,8 +252,9 @@ To change these settings in **Cinnamon**:
 
 然后，您可以使用`xipunt`来查看您的触摸板有什么特性
 
+`
 ```
-$ xinput list-props "SynPS/2 Synaptics TouchPad" </code>
+`$ xinput list-props "SynPS/2 Synaptics TouchPad"` 
 
 ```
 

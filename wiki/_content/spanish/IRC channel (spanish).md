@@ -10,7 +10,7 @@ Artículos relacionados
 
 Para unirse a los canales [IRC](https://en.wikipedia.org/wiki/es:Internet_Relay_Chat se incluye en el artículo oficial de [instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)").
 
-Debe familiarizarse con nuestro [código de conducta](/index.php/Code_of_conduct_(Espa%C3%B1ol) "Code of conduct (Español)") y en particular con el de [IRC](/index.php/Code_of_conduct_(Espa%C3%B1ol)#IRC "Code of conduct (Español)") antes de unirse a cualquiera de los canales oficiales. Para obtener una lista de las abreviaturas comúnmente utilizadas, consulte la [terminología de Arch](/index.php/Arch_terminology_(Espa%C3%B1ol) "Arch terminology (Español)") y la [jerga de IRC](http://www.ircbeginner.com/ircinfo/abbreviations.html).
+Debe familiarizarse con nuestro [código de conducta](/index.php/Code_of_conduct_(Espa%C3%B1ol) "Code of conduct (Español)") y en particular con el de [IRC](/index.php/Code_of_conduct_(Espa%C3%B1ol)#IRC "Code of conduct (Español)") antes de unirse a cualquiera de los canales oficiales. Para obtener una lista de las abreviaturas comúnmente utilizadas, véase [terminología de Arch](/index.php/Arch_terminology_(Espa%C3%B1ol) "Arch terminology (Español)") y [jerga de IRC](http://www.ircbeginner.com/ircinfo/abbreviations.html).
 
 ## Contents
 
@@ -51,7 +51,7 @@ Para registrarse en NickServ, siga el [FAQ de freenode](https://freenode.net/kb/
 
 ### Operadores del canal
 
-Los operadores de arco son operaciones tanto en **#archlinux** como en **#archlinux-offtopic**. Consulte la lista a continuación o ejecute `/msg phrik listops` en freenode.
+Los operadores de arco son operaciones tanto en **#archlinux** como en **#archlinux-offtopic**. Véase la lista a continuación o ejecute `/msg phrik listops` en freenode.
 
 Si por algún motivo necesita la ayuda de un operador, no dude en `/query` o `/msg` a nosotros. Aquí está la lista de operadores a 8 de febrero de 2016:
 

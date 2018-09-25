@@ -42,7 +42,7 @@
 
 	[https://alac.macosforge.org/](https://alac.macosforge.org/) || [alac-git](https://aur.archlinux.org/packages/alac-git/)
 
-*   **[CELT](https://en.wikipedia.org/wiki/CELT "wikipedia:CELT")** — Compression algorithm for audio. Like MP3, Vorbis, and AAC it is suitable for transmitting music with high quality. Unlike these formats CELT imposes very little delay on the signal, even less than is typical for speech centric formats like Speex, GSM, or G.729\.
+*   **[CELT](https://en.wikipedia.org/wiki/CELT "wikipedia:CELT")** — Compression algorithm for audio. Like MP3, Vorbis, and AAC it is suitable for transmitting music with high quality. Unlike these formats CELT imposes very little delay on the signal, even less than is typical for speech centric formats like Speex, GSM, or G.729.
 
 	[http://www.celt-codec.org/](http://www.celt-codec.org/) || [celt](https://www.archlinux.org/packages/?name=celt)
 

@@ -38,7 +38,7 @@ Este artículo explica algunos métodos para solucionar problemas generales. Par
 *   [8 Mensaje: "file: could not find any magic files!"](#Mensaje:_.22file:_could_not_find_any_magic_files.21.22)
     *   [8.1 Problema](#Problema)
     *   [8.2 Solución](#Soluci.C3.B3n)
-*   [9 Consulte también](#Consulte_tambi.C3.A9n)
+*   [9 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
 ## Procedimientos generales
 
@@ -86,7 +86,7 @@ le resultará más útil formular su problema en el contexto del sistema como un
 
 Con toda la información delante suya, debe tener una buena idea de lo que está sucediendo con el sistema y ahora puede comenzar a trabajar en una solución adecuada.
 
-Si necesita soporte adicional, puede encontrarlo en [los foros](https://bbs.archlinux.org) o el IRC en irc.freenode.net #archlinux. Consulte [Canales de IRC](/index.php/IRC_channel_(Espa%C3%B1ol) "IRC channel (Español)") para otras opciones.
+Si necesita soporte adicional, puede encontrarlo en [los foros](https://bbs.archlinux.org) o el IRC en irc.freenode.net #archlinux. Véase [Canales de IRC](/index.php/IRC_channel_(Espa%C3%B1ol) "IRC channel (Español)") para otras opciones.
 
 **Nota:** [Soporte *solo* para la distribución Arch Linux](/index.php/Code_of_conduct_(Espa%C3%B1ol)#Soporte_.2Asolo.2A_para_la_distribuci.C3.B3n_Arch_Linux "Code of conduct (Español)") y no [Distribuciones basadas en Arch](/index.php/Arch-based_distributions_(Espa%C3%B1ol) "Arch-based distributions (Español)").
 
@@ -112,7 +112,7 @@ Una de las mejores formas de publicar esta información es usar un *pastebin* en
 
 Luego se mostrará un enlace que puede pegar en el foro o IRC.
 
-Además, antes de publicar su pregunta, puede revisar [cómo hacer preguntas inteligentes](http://www.catb.org/esr/faqs/smart-questions.html). Consulte también [Código de conducta](/index.php/Code_of_conduct_(Espa%C3%B1ol) "Code of conduct (Español)").
+Además, antes de publicar su pregunta, puede revisar [cómo hacer preguntas inteligentes](http://www.catb.org/esr/faqs/smart-questions.html). Véase también [Código de conducta](/index.php/Code_of_conduct_(Espa%C3%B1ol) "Code of conduct (Español)").
 
 ## Problemas de arranque
 
@@ -135,7 +135,7 @@ Esta es una administración básica que se aplica a la mayoría de los emuladore
 
 Esto pausa no solo la salida, sino también los programas que intentan imprimir en el terminal, ya que bloquearán sobre las llamadas `write()` mientras la salida esté en pausa. Si su *init* parece congelado, asegúrese de que la consola del sistema no esté en pausa.
 
-Para ver los mensajes de error que ya han mostrado, consulte [Haga que los mensajes de inicio permanezcan en tty1](/index.php/Getty#Have_boot_messages_stay_on_tty1 "Getty").
+Para ver los mensajes de error que ya han mostrado, véase [Haga que los mensajes de inicio permanezcan en tty1](/index.php/Getty#Have_boot_messages_stay_on_tty1 "Getty").
 
 #### Desplazamiento hacia atrás
 
@@ -143,7 +143,7 @@ El desplazamiento hacia atrás *(scrollback)* permite al usuario retroceder y ve
 
 Si al desplazarse hacia arriba hasta el final no le muestra la información suficiente, necesita expandir su búfer de desplazamiento para tener más salida. Esto se hace ajustando la consola de framebuffer del kernel (fbcon) con el [parámetro del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)") `fbcon=scrollback:Nk` donde `N` es el tamaño de búfer deseado es kilobytes. El tamaño predeterminado es 32k.
 
-Si esto no le funciona, es posible que su consola de framebuffer no esté habilitada correctamente. Consulte la [documentación sobre la consola de framebuffer](https://www.kernel.org/doc/Documentation/fb/fbcon.txt) para conocer otros parámetros, por ejemplo para cambiar el controlador de framebuffer.
+Si esto no le funciona, es posible que su consola de framebuffer no esté habilitada correctamente. Véase la [documentación sobre la consola de framebuffer](https://www.kernel.org/doc/Documentation/fb/fbcon.txt) para conocer otros parámetros, por ejemplo para cambiar el controlador de framebuffer.
 
 #### Salida de depuración
 
@@ -157,7 +157,7 @@ Otros parámetros que puede añadir y que podrían ser útiles en ciertas situac
 *   `earlyprintk=vga,keep` imprime los primeros mensajes en el proceso de arranque del kernel, en caso de que el kernel falle antes de que se muestre el resultado. Debe cambiar `vga` a `efi` para los sistemas [EFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)")
 *   `log_buf_len=16M` asigna un búfer de mensajes del kernel más grande (16MB), para garantizar que la salida de depuración no se sobrescriba
 
-También hay una serie de parámetros de depuración separados para permitir la depuración en subsistemas específicos, poe ejemplo `bootmem_debug`, `sched_debug`. Consulte la [documentación de los parámetros del kernel](https://www.kernel.org/doc/Documentation/admin-guide/kernel-parameters.txt) para obtener información específica.
+También hay una serie de parámetros de depuración separados para permitir la depuración en subsistemas específicos, poe ejemplo `bootmem_debug`, `sched_debug`. Véase la [documentación de los parámetros del kernel](https://www.kernel.org/doc/Documentation/admin-guide/kernel-parameters.txt) para obtener información específica.
 
 **Nota:** Si no puede desplazarse hacia atrás lo suficiente para ver la salida del arranque deseada, debe aumentar el tamaño del [búfer del desplazamiento hacia atrás](#Desplazamiento_hacia_atr.C3.A1s).
 
@@ -185,7 +185,7 @@ Si el sistema no arranca en absoluto, simplemente arranque desde una [imagen liv
 
 ### Depurar los errores de los módulos del kernel
 
-Consulte esta sección sobre [como obtener información](/index.php/Kernel_modules_(Espa%C3%B1ol)#Obtener_informaci.C3.B3n "Kernel modules (Español)") de los módulos del kernel.
+Véase [como obtener información](/index.php/Kernel_modules_(Espa%C3%B1ol)#Obtener_informaci.C3.B3n "Kernel modules (Español)") de los módulos del kernel.
 
 ### Depurar errores de hardware
 
@@ -283,7 +283,7 @@ Necesitará un shell de superusuario para realizar cambios en el sistema para qu
 *   Reinicie con el parámetro del kernel `systemd.debug-shell=1` para obtener un shell de superusuario al iniciar en tty9\. Cambie a este presionando `Ctrl-Alt-F9`.
 *   Experimente reiniciando con diferentes conjuntos de parámetros del kernel para posibilitar la deshabilitación de la función del kernel que está causando el pánico. Pruebe los "viejos recursos" `acpi=off` y `nolapic`.
 
-**Sugerencia:** Consulte `Documentation/admin-guide/kernel-parameters.txt` en el código fuente del kernel de Linux para ver todos los parámetros.
+**Sugerencia:** Véase `Documentation/admin-guide/kernel-parameters.txt` en el código fuente del kernel de Linux para ver todos los parámetros.
 
 *   Como último recurso, arranque con el **CD de instalación de Arch Linux** y monte el sistema de archivos raíz en `/mnt` y luego ejecute `# arch-chroot /mnt`.
 
@@ -291,13 +291,13 @@ Deshabilite el servicio o programa que causa el pánico, invierta una actualizac
 
 ## Administrar paquetes
 
-Consulte [solución de problemas con pacman](/index.php/Pacman_(Espa%C3%B1ol)#Soluci.C3.B3n_de_problemas "Pacman (Español)") para los temas más generales, y [solución de problemas de cifrado de paquetes con pacman](/index.php/Pacman/Package_signing_(Espa%C3%B1ol)#Soluci.C3.B3n_de_problemas "Pacman/Package signing (Español)") para los problemas con las claves PGP.
+Véase [solución de problemas con pacman](/index.php/Pacman_(Espa%C3%B1ol)#Soluci.C3.B3n_de_problemas "Pacman (Español)") para los temas más generales, y [solución de problemas de cifrado de paquetes con pacman](/index.php/Pacman/Package_signing_(Espa%C3%B1ol)#Soluci.C3.B3n_de_problemas "Pacman/Package signing (Español)") para los problemas con las claves PGP.
 
 ## fuser
 
 *fuser* es una utilidad de línea de órdenes para la identificación de los procesos que utilizan recursos como archivos, sistemas de archivos y puertos TCP/UDP.
 
-*fuser* está incluido en el paquete [psmisc](https://www.archlinux.org/packages/?name=psmisc), que debe estar ya instalado como parte del grupo [base](https://www.archlinux.org/groups/x86_64/base/). Consulte [fuser(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1) para más detalles.
+*fuser* está incluido en el paquete [psmisc](https://www.archlinux.org/packages/?name=psmisc), que debe estar ya instalado como parte del grupo [base](https://www.archlinux.org/groups/x86_64/base/). Véase [fuser(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1) para más detalles.
 
 ## Permisos de sesión
 
@@ -312,9 +312,9 @@ $ loginctl show-session $XDG_SESSION_ID
 
 Esta debe contener `Remote=no` y `Active=yes` en la salida. Si no es así, asegúrese de que X se ejecuta en la misma tty donde se produjo el inicio de sesión. Esto es necesario a fin de preservar la sesión iniciada. Esto es manejado de forma predeterminada por `/etc/X11/xinit/xserverrc`.
 
-También debe iniciarse una sesión de D-Bus junto con X. Consulte como [iniciar la sesión de usuario](/index.php/D-Bus_(Espa%C3%B1ol)#Iniciar_la_sesi.C3.B3n_de_usuario "D-Bus (Español)") para más información.
+También debe iniciarse una sesión de D-Bus junto con X. Véase [iniciar la sesión de usuario](/index.php/D-Bus_(Espa%C3%B1ol)#Iniciar_la_sesi.C3.B3n_de_usuario "D-Bus (Español)") para más información.
 
-Las acciones [polkit](/index.php/Polkit "Polkit") no requieren una configuración posterior. Algunas acciones polkit requieren una autenticación adicional, incluso con una sesión local. Un agente de autenticación polkit debe estar en ejecución para que esto funcione. Consulte [Agentes de autenticación](/index.php/Polkit#Authentication_agents "Polkit") para más información.
+Las acciones [polkit](/index.php/Polkit "Polkit") no requieren una configuración posterior. Algunas acciones polkit requieren una autenticación adicional, incluso con una sesión local. Un agente de autenticación polkit debe estar en ejecución para que esto funcione. Véase [Agentes de autenticación](/index.php/Polkit#Authentication_agents "Polkit") para más información.
 
 ## Mensaje: "error while loading shared libraries"
 
@@ -356,7 +356,7 @@ Es probable que una actualización del paquete haya agregado un `*archivo*.conf`
 6.  Reconstruya el [initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") ejecutando `# mkinitcpio -p linux`.
 7.  Salga del chroot, desmonte los sistemas de archivos y reinicie de nuevo el sistema.
 
-## Consulte también
+## Véase también
 
 *   [Fix the Most Common Problems](http://www.tuxradar.com/content/how-fix-most-common-linux-problems)
 *   [A how-to in troubleshooting for newcomers](https://www.reddit.com/r/archlinux/comments/tjjwr/archlinux_a_howto_in_troubleshooting_for_newcomers/)

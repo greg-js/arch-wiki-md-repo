@@ -211,7 +211,7 @@ Los temas que estén bloqueados/cerrados, ya sea porque estén documentados en l
 
 ### [Listas de correo](https://lists.archlinux.org//listinfo/)
 
-Consulte el [estilo de publicación de la lista de correo](https://lists.archlinux.org/pipermail/arch-general/2014-August/036950.html).
+Véase el [estilo de publicación de la lista de correo](https://lists.archlinux.org/pipermail/arch-general/2014-August/036950.html).
 
 #### Publicar por encima
 

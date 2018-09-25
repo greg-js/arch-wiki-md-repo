@@ -3,7 +3,7 @@ Artículos relacionados
 *   [Jumbo frames](/index.php/Jumbo_frames "Jumbo frames")
 *   [Firewalls (Español)](/index.php/Firewalls_(Espa%C3%B1ol) "Firewalls (Español)")
 *   [Wireless Setup (Español)](/index.php/Wireless_Setup_(Espa%C3%B1ol) "Wireless Setup (Español)")
-*   [List of applications#Network Managers (Español)](/index.php/List_of_applications#Network_Managers_.28Espa.C3.B1ol.29 "List of applications")
+*   [List of applications#Network managers](/index.php/List_of_applications#Network_managers "List of applications")
 
 Esta página explica cómo configurar una conexión cableada (**wired**) a una red. Si necesita configurar una conexión inalámbrica (**wireless**) consulte la página de [Wireless Setup](/index.php/Wireless_Setup_(Espa%C3%B1ol) "Wireless Setup (Español)").
 

@@ -26,7 +26,7 @@ Busybox commands are symbolic links to `/usr/bin/busybox` and thus take very lit
 
 ### init
 
-Init scripts can be used together with busybox-init, for example [minirc](https://aur.archlinux.org/packages/minirc/). See [init](/index.php/Init "Init") for details.
+Init scripts can be used together with busybox-init, for example [minirc-git](https://aur.archlinux.org/packages/minirc-git/). See [init](/index.php/Init "Init") for details.
 
 ### getty
 

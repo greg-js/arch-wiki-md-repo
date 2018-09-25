@@ -77,29 +77,29 @@ Este documento es un índice con anotaciones a otros artículos populares e info
 
 ## Administración del sistema
 
-Esta sección se ocupa de las tareas administrativas y de gestión del sistema. Para más información, consulte [Core utilities (Español)](/index.php/Core_utilities_(Espa%C3%B1ol) "Core utilities (Español)") y [Category:System administration (Español)](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)").
+Esta sección se ocupa de las tareas administrativas y de gestión del sistema. Para más información, véase [Core utilities (Español)](/index.php/Core_utilities_(Espa%C3%B1ol) "Core utilities (Español)") y [Category:System administration (Español)](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)").
 
 ### Usuarios y grupos
 
-Una instalación nueva deja solamente la cuenta de [superusuario](https://en.wikipedia.org/wiki/es:Root en un servidor, [es inseguro](https://apple.stackexchange.com/questions/192365/is-it-ok-to-use-the-root-user-as-a-normal-user/192422#192422). En su lugar, debe crear y usar cuentas de usuario sin privilegios para la mayoría de las tareas, solo utilizando la cuenta root para la administración del sistema. Consulte la [administración de usuarios](/index.php/Users_and_groups_(Espa%C3%B1ol)#Administraci.C3.B3n_de_usuarios "Users and groups (Español)") para obtener más detalles.
+Una instalación nueva deja solamente la cuenta de [superusuario](https://en.wikipedia.org/wiki/es:Root en un servidor, [es inseguro](https://apple.stackexchange.com/questions/192365/is-it-ok-to-use-the-root-user-as-a-normal-user/192422#192422). En su lugar, debe crear y usar cuentas de usuario sin privilegios para la mayoría de las tareas, solo utilizando la cuenta root para la administración del sistema. Véase [Administración de usuarios](/index.php/Users_and_groups_(Espa%C3%B1ol)#Administraci.C3.B3n_de_usuarios "Users and groups (Español)") para obtener más detalles.
 
-Los usuarios y grupos son un mecanismo para el *control de acceso*; los administradores pueden ajustar la pertenencia y propiedad de grupo para otorgar o denegar a los usuarios y servicios el acceso a los recursos del sistema. Consulte el artículo [usuarios y grupos](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") para más detalles y conocer potenciales riesgos de seguridad.
+Los usuarios y grupos son un mecanismo para el *control de acceso*; los administradores pueden ajustar la pertenencia y propiedad de grupo para otorgar o denegar a los usuarios y servicios el acceso a los recursos del sistema. Véase [usuarios y grupos](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") para más detalles y conocer potenciales riesgos de seguridad.
 
 ### Escalado de privilegios
 
-Los comandos [su](/index.php/Su_(Espa%C3%B1ol) "Su (Español)") y [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") le permiten ejecutar comandos como otro usuario. Por defecto, *su* lo transfiere a un shell de inicio de sesión como usuario root, y *sudo* le concede temporalmente privilegios de root para un solo comando. Consulte sus respectivos artículos para las diferencias.
+Los comandos [su](/index.php/Su_(Espa%C3%B1ol) "Su (Español)") y [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") le permiten ejecutar comandos como otro usuario. Por defecto, *su* lo transfiere a un shell de inicio de sesión como usuario root, y *sudo* le concede temporalmente privilegios de root para un solo comando. Véase sus respectivos artículos para las diferencias.
 
 ### Administración de servicios
 
-Arch Linux usa [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") como proceso [init](/index.php/Init "Init"), que es un administrador de sistemas y servicios para Linux. Para el mantenimiento de su instalación de Arch Linux, es una buena idea aprender los conceptos básicos al respecto. La interacción con *systemd* se realiza a través del comando *systemctl*. Consulte [uso básico de systemctl](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)") para obtener más información.
+Arch Linux usa [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") como proceso [init](/index.php/Init "Init"), que es un administrador de sistemas y servicios para Linux. Para el mantenimiento de su instalación de Arch Linux, es una buena idea aprender los conceptos básicos al respecto. La interacción con *systemd* se realiza a través del comando *systemctl*. Véase [uso básico de systemctl](/index.php/Systemd_(Espa%C3%B1ol)#Uso_b.C3.A1sico_de_systemctl "Systemd (Español)") para obtener más información.
 
 ### Mantenimiento del sistema
 
-Arch es un sistema de lanzamiento continuo y cuenta con una rápida rotación de paquetes, por lo que los usuarios deben dedicar un tiempo a realizar el [mantenimiento del sistema](/index.php/System_maintenance_(Espa%C3%B1ol) "System maintenance (Español)"). Consulte [Security](/index.php/Security "Security") para obtener recomendaciones y buenas prácticas sobre el fortalecimiento *(hardening)* del sistema.
+Arch es un sistema de lanzamiento continuo y cuenta con una rápida rotación de paquetes, por lo que los usuarios deben dedicar un tiempo a realizar el [mantenimiento del sistema](/index.php/System_maintenance_(Espa%C3%B1ol) "System maintenance (Español)"). Véase [Security](/index.php/Security "Security") para obtener recomendaciones y buenas prácticas sobre el fortalecimiento *(hardening)* del sistema.
 
 ## Administración de paquetes
 
-Esta sección contiene información útil relacionada con la administración de los paquetes. Para más información, consulte [Frequently asked questions (Español)#Administración de paquetes](/index.php/Frequently_asked_questions_(Espa%C3%B1ol)#Administraci.C3.B3n_de_paquetes "Frequently asked questions (Español)") y [Category:Package management (Español)](/index.php/Category:Package_management_(Espa%C3%B1ol) "Category:Package management (Español)").
+Esta sección contiene información útil relacionada con la administración de los paquetes. Para más información, véase [Frequently asked questions (Español)#Administración de paquetes](/index.php/Frequently_asked_questions_(Espa%C3%B1ol)#Administraci.C3.B3n_de_paquetes "Frequently asked questions (Español)") y [Category:Package management (Español)](/index.php/Category:Package_management_(Espa%C3%B1ol) "Category:Package management (Español)").
 
 **Nota:** Es imprescindible mantenerse al día de los cambios en Arch Linux para conocer aquellos que requieren una intervención manual, **antes** de actualizar su sistema. Suscríbase a la [arch-announce mailing list](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) y compruebe la página principal de [Arch news](https://www.archlinux.org/) antes de realizar cualquier actualización. Por otro lado, puede encontrar útil suscribirse a este [RSS feed](https://www.archlinux.org/feeds/news/).
 
@@ -107,11 +107,11 @@ Esta sección contiene información útil relacionada con la administración de 
 
 [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") es el *administrador de paquetes* de Arch Linux: todos los usuarios deben familiarizarse con él antes de leer cualquier otro artículo.
 
-Consulte [pacman/Tips and tricks (Español)](/index.php/Pacman/Tips_and_tricks_(Espa%C3%B1ol) "Pacman/Tips and tricks (Español)") para obtener sugerencias sobre cómo mejorar su interacción con pacman y la administración de paquetes en general.
+Véase [pacman/Tips and tricks (Español)](/index.php/Pacman/Tips_and_tricks_(Espa%C3%B1ol) "Pacman/Tips and tricks (Español)") para obtener sugerencias sobre cómo mejorar su interacción con pacman y la administración de paquetes en general.
 
 ### Repositorios
 
-Consulte los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") para más detalles sobre el propósito de cada repositorio mantenido oficialmente.
+Véase los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)") para más detalles sobre el propósito de cada repositorio mantenido oficialmente.
 
 Si planea utilizar aplicaciones de 32 bits, tendrá que activar el repositorio [multilib](/index.php/Official_repositories_(Espa%C3%B1ol)#multilib "Official repositories (Español)").
 
@@ -121,7 +121,7 @@ Considere instalar el servicio [pkgstats](/index.php/Pkgstats_(Espa%C3%B1ol) "Pk
 
 ### Servidores de réplicas
 
-Consulte el artículo sobre [réplicas](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)") *(mirrors)* para conocer los pasos a seguir para aprovechar al máximo el uso y obtener las réplicas de los repositorios oficiales más actualizados. Como se explica en el artículo, un consejo especialmente bueno consiste en verificar periódicamente la página del [estado de las réplicas](https://www.archlinux.org/mirrors/status/) para consultar la lista de las réplicas que han sido recientemente sincronizadas.
+Véase el artículo sobre [réplicas](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)") *(mirrors)* para conocer los pasos a seguir para aprovechar al máximo el uso y obtener las réplicas de los repositorios oficiales más actualizados. Como se explica en el artículo, un consejo especialmente bueno consiste en verificar periódicamente la página del [estado de las réplicas](https://www.archlinux.org/mirrors/status/) para ver la lista de las réplicas que han sido recientemente sincronizadas.
 
 ### Sistema de construcción de Arch
 
@@ -137,7 +137,7 @@ Si bien el sistema de construcción de Arch (ABS) permite la posibilidad de cons
 
 ## Arranque
 
-Esta sección contiene información relacionada con el proceso de arranque. Se puede encontrar una descripción general del proceso de arranque de Arch en el artículo [proceso de arranque](/index.php/Arch_boot_process_(Espa%C3%B1ol) "Arch boot process (Español)"). Para obtener más información, consulte la categoría [proceso de arranque](/index.php/Category:Boot_process_(Espa%C3%B1ol) "Category:Boot process (Español)").
+Esta sección contiene información relacionada con el proceso de arranque. Se puede encontrar una descripción general del proceso de arranque de Arch en el artículo [proceso de arranque](/index.php/Arch_boot_process_(Espa%C3%B1ol) "Arch boot process (Español)"). Para obtener más información, Véase la categoría [proceso de arranque](/index.php/Category:Boot_process_(Espa%C3%B1ol) "Category:Boot process (Español)").
 
 ### Reconocimiento automático del hardware
 
@@ -145,7 +145,7 @@ El hardware debe ser detectado automáticamente por [udev](/index.php/Udev_(Espa
 
 ### Microcódigo
 
-Los procesadores pueden tener un [comportamiento defectuoso](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), que el kernel puede corregir mediante la actualización del *microcódigo* al inicio. Los procesadores de Intel requieren un paquete separado para este fin. Consulte [microcódigo](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)") para más detalles.
+Los procesadores pueden tener un [comportamiento defectuoso](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), que el kernel puede corregir mediante la actualización del *microcódigo* al inicio. Los procesadores de Intel requieren un paquete separado para este fin. Véase [microcódigo](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)") para más detalles.
 
 ### Conservar los mensajes del arranque
 
@@ -153,11 +153,11 @@ Una vez que concluye el arranque, la pantalla se borra y aparece el inicio de se
 
 ### Activar Bloq Num al inicio
 
-Bloq Num es una tecla de alternancia que se encuentra en la mayoría de los teclados. Para activar Bloq Num de modo que permanezca activo el teclado numérico durante el arranque, consulte [activando Bloq Num al inicio](/index.php/Activating_Numlock_on_Bootup_(Espa%C3%B1ol) "Activating Numlock on Bootup (Español)").
+Bloq Num es una tecla de alternancia que se encuentra en la mayoría de los teclados. Para activar Bloq Num de modo que permanezca activo el teclado numérico durante el arranque, véase [activando Bloq Num al inicio](/index.php/Activating_Numlock_on_Bootup_(Espa%C3%B1ol) "Activating Numlock on Bootup (Español)").
 
 ## Interfaz gráfica de usuario
 
-Esta sección proporciona orientación para los usuarios que deseen ejecutar aplicaciones gráficas en su sistema. Consulte la categoría [interfaces gráficos de usuario](/index.php/Category:Graphical_user_interfaces "Category:Graphical user interfaces") para obtener información adicional.
+Esta sección proporciona orientación para los usuarios que deseen ejecutar aplicaciones gráficas en su sistema. Véase la categoría [interfaces gráficos de usuario](/index.php/Category:Graphical_user_interfaces "Category:Graphical user interfaces") para obtener información adicional.
 
 ### Servidor de pantalla
 
@@ -171,7 +171,7 @@ El controlador de pantalla predeterminado *vesa* funcionará con la mayoría de 
 
 ### Entornos de escritorio
 
-Aunque Xorg proporciona el marco básico para crear un entorno gráfico, se pueden considerar necesarios componentes adicionales para una experiencia de usuario completa. Los [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") como [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), [KDE](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)"), [LXDE](/index.php/LXDE_(Espa%C3%B1ol) "LXDE (Español)") y [Xfce](/index.php/Xfce_(Espa%C3%B1ol) "Xfce (Español)") combinan una amplia gama de *clientes X*, como un administrador de ventanas, un panel, un administrador de archivos, un emulador de terminal, un editor de texto, iconos y otras utilidades. Los usuarios con menos experiencia pueden querer instalar un entorno de escritorio para un entorno más familiar. Consulte la categoría [entornos de escritorio](/index.php/Category:Desktop_environments_(Espa%C3%B1ol) "Category:Desktop environments (Español)") para obtener información adicional.
+Aunque Xorg proporciona el marco básico para crear un entorno gráfico, se pueden considerar necesarios componentes adicionales para una experiencia de usuario completa. Los [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") como [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), [KDE](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)"), [LXDE](/index.php/LXDE_(Espa%C3%B1ol) "LXDE (Español)") y [Xfce](/index.php/Xfce_(Espa%C3%B1ol) "Xfce (Español)") combinan una amplia gama de *clientes X*, como un administrador de ventanas, un panel, un administrador de archivos, un emulador de terminal, un editor de texto, iconos y otras utilidades. Los usuarios con menos experiencia pueden querer instalar un entorno de escritorio para un entorno más familiar. Véase la categoría [entornos de escritorio](/index.php/Category:Desktop_environments_(Espa%C3%B1ol) "Category:Desktop environments (Español)") para obtener información adicional.
 
 ### Administradores de ventanas
 
@@ -183,25 +183,25 @@ La mayoría de los entornos de escritorio incluyen un [administrador de pantalla
 
 ## Administración de energía
 
-Esta sección puede ser de utilidad para los propietarios de portátiles o usuarios que busquen controlar de administración de energía. Para obtener más información, consulte la categoría de [administración de energía](/index.php/Category:Power_management_(Espa%C3%B1ol) "Category:Power management (Español)").
+Esta sección puede ser de utilidad para los propietarios de portátiles o usuarios que busquen controlar de administración de energía. Para obtener más información, véase la categoría de [administración de energía](/index.php/Category:Power_management_(Espa%C3%B1ol) "Category:Power management (Español)").
 
-Consulte el artículo de [administración de energía](/index.php/Power_management_(Espa%C3%B1ol) "Power management (Español)") para una descripción más general.
+Véase [administración de energía](/index.php/Power_management_(Espa%C3%B1ol) "Power management (Español)") para una descripción más general.
 
 ### Eventos de ACPI
 
-Los usuarios pueden configurar cómo reacciona el sistema a los eventos de ACPI, como presionar el botón de encendido o cerrar la tapa del portátil. Para el nuevo método (recomendado) usando [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), consulte la [administración de energía con systemd](/index.php/Power_management_(Espa%C3%B1ol)#Administraci.C3.B3n_de_energ.C3.ADa_con_systemd "Power management (Español)"). Para el método anterior, consulte [acpid](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)").
+Los usuarios pueden configurar cómo reacciona el sistema a los eventos de ACPI, como presionar el botón de encendido o cerrar la tapa del portátil. Para el nuevo método (recomendado) usando [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), véase [administración de energía con systemd](/index.php/Power_management_(Espa%C3%B1ol)#Administraci.C3.B3n_de_energ.C3.ADa_con_systemd "Power management (Español)"). Para el método anterior, véase [acpid](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)").
 
 ### Regulación de la frecuencia de la CPU
 
-Los procesadores modernos pueden disminuir su frecuencia y voltaje para reducir el calor y el consumo de energía. Menos calor conduce a un sistema más silencioso y prolonga la vida útil del hardware. Consulte la [regulación de la frecuencia de la CPU](/index.php/CPU_frequency_scaling_(Espa%C3%B1ol) "CPU frequency scaling (Español)") para más detalles.
+Los procesadores modernos pueden disminuir su frecuencia y voltaje para reducir el calor y el consumo de energía. Menos calor conduce a un sistema más silencioso y prolonga la vida útil del hardware. Véase [regulación de la frecuencia de la CPU](/index.php/CPU_frequency_scaling_(Espa%C3%B1ol) "CPU frequency scaling (Español)") para más detalles.
 
 ### Portátiles
 
-Para los artículos relacionados con la informática portátil junto con las guías de instalación específicas de cada modelo, consulte la categoría [Portátiles](/index.php/Category:Laptops_(Espa%C3%B1ol) "Category:Laptops (Español)"). Para obtener una descripción general de los artículos y recomendaciones relacionados con portátiles, consulte el artículo [Portátil](/index.php/Laptop_(Espa%C3%B1ol) "Laptop (Español)").
+Para los artículos relacionados con la informática portátil junto con las guías de instalación específicas de cada modelo, véase la categoría [Portátiles](/index.php/Category:Laptops_(Espa%C3%B1ol) "Category:Laptops (Español)"). Para obtener una descripción general de los artículos y recomendaciones relacionados con portátiles, véase el artículo [Portátil](/index.php/Laptop_(Espa%C3%B1ol) "Laptop (Español)").
 
 ### Suspensión e hibernación
 
-Consulte el artículo [suspensión e hibernación](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate").
+Véase [suspensión e hibernación](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate").
 
 ## Multimedia
 
@@ -215,7 +215,7 @@ El [sonido](/index.php/Sound_system_(Espa%C3%B1ol) "Sound system (Español)") es
 
 *   [OSS](/index.php/Open_Sound_System_(Espa%C3%B1ol) "Open Sound System (Español)") es una alternativa viable en caso de que ALSA no funcione.
 
-Los usuarios también pueden querer instalar y configurar un [servidor de sonido](/index.php/Sound_system_(Espa%C3%B1ol)#Servidores_de_sonido "Sound system (Español)") tal como [PulseAudio](/index.php/PulseAudio_(Espa%C3%B1ol) "PulseAudio (Español)"). Para conocer los requisitos de audio avanzados, consulte [audio profesional](/index.php/Professional_audio "Professional audio").
+Los usuarios también pueden querer instalar y configurar un [servidor de sonido](/index.php/Sound_system_(Espa%C3%B1ol)#Servidores_de_sonido "Sound system (Español)") tal como [PulseAudio](/index.php/PulseAudio_(Espa%C3%B1ol) "PulseAudio (Español)"). Para conocer los requisitos de audio avanzados, véase [audio profesional](/index.php/Professional_audio "Professional audio").
 
 ### Complementos para el navegador
 
@@ -227,7 +227,7 @@ Los [códecs](/index.php/Codecs_(Espa%C3%B1ol) "Codecs (Español)") son ​​ut
 
 ## Redes
 
-Esta sección se limita a pequeños procedimientos de red. Consulte el artículo de [configuración de red](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)") para obtener una guía completa. Para más información, consulte la categoría [Redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)").
+Esta sección se limita a pequeños procedimientos de red. Véase [configuración de red](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)") para obtener una guía completa. Para más información, véase la categoría [Redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)").
 
 ### Sincronización del reloj
 
@@ -245,13 +245,13 @@ Un servidor de seguridad puede proporcionar una capa de protección adicional so
 
 Para compartir archivos entre las máquinas en una red, siga el artículo [NFS](/index.php/NFS_(Espa%C3%B1ol) "NFS (Español)") o el [SSHFS](/index.php/SSHFS "SSHFS").
 
-Utilice [Samba](/index.php/Samba_(Espa%C3%B1ol) "Samba (Español)") para unirse a una red de Windows. Para configurar la máquina para utilizar la autenticación de Active Directory, consulte la [integración con Active Directory](/index.php/Active_Directory_Integration "Active Directory Integration").
+Utilice [Samba](/index.php/Samba_(Espa%C3%B1ol) "Samba (Español)") para unirse a una red de Windows. Para configurar la máquina para utilizar la autenticación de Active Directory, véase [integración con Active Directory](/index.php/Active_Directory_Integration "Active Directory Integration").
 
-Consulte también la categoría sobre [compartir recursos](/index.php/Category:Network_sharing_(Espa%C3%B1ol) "Category:Network sharing (Español)").
+Véase también la categoría sobre [compartir recursos](/index.php/Category:Network_sharing_(Espa%C3%B1ol) "Category:Network sharing (Español)").
 
 ## Dispositivos de entrada
 
-Esta sección contiene consejos para la configuración de dispositivos de entrada más populares. Para obtener más información, consulte la categoría de los [dispositivos de entrada](/index.php/Category:Input_devices_(Espa%C3%B1ol) "Category:Input devices (Español)").
+Esta sección contiene consejos para la configuración de dispositivos de entrada más populares. Para obtener más información, véase la categoría de los [dispositivos de entrada](/index.php/Category:Input_devices_(Espa%C3%B1ol) "Category:Input devices (Español)").
 
 ### Distribuciones de teclado
 
@@ -263,11 +263,11 @@ Los propietarios de ratones avanzados o inusuales pueden descubrir que no todos 
 
 ### Pantalla táctil del portátil
 
-Muchas computadoras portátiles usan dispositivos de señalamiento [Synaptics](https://www.synaptics.com/) o [ALPS](http://www.alps.com/). Para estos y otros modelos de panel táctil, puede usar el controlador de entrada Synaptics o libinput; consulte los artículos de [Synaptics](/index.php/Touchpad_Synaptics_(Espa%C3%B1ol) "Touchpad Synaptics (Español)") y [libinput](/index.php/Libinput_(Espa%C3%B1ol) "Libinput (Español)") para más detalles sobre la instalación y configuración.
+Muchas computadoras portátiles usan dispositivos de señalamiento [Synaptics](https://www.synaptics.com/) o [ALPS](http://www.alps.com/). Para estos y otros modelos de panel táctil, puede usar el controlador de entrada Synaptics o libinput; véase [Synaptics](/index.php/Touchpad_Synaptics_(Espa%C3%B1ol) "Touchpad Synaptics (Español)") y [libinput](/index.php/Libinput_(Espa%C3%B1ol) "Libinput (Español)") para más detalles sobre la instalación y configuración.
 
 ### TrackPoints
 
-Consulte el artículo [TrackPoint](/index.php/TrackPoint "TrackPoint") para configurar su dispositivo TrackPoint.
+Véase [TrackPoint](/index.php/TrackPoint "TrackPoint") para configurar su dispositivo TrackPoint.
 
 ## Optimización
 
@@ -287,7 +287,7 @@ El artículo sobre [discos de estado sólido](/index.php/Solid_State_Drives "Sol
 
 ## Servicios del sistema
 
-Esta sección se relaciona con el artículos sobre los [demonios](/index.php/Daemons_(Espa%C3%B1ol) "Daemons (Español)"). Para obtener más información, consulte la categoría [daemons y servicios del sistema](/index.php/Category:Daemons_and_system_services_(Espa%C3%B1ol) "Category:Daemons and system services (Español)").
+Esta sección se relaciona con el artículos sobre los [demonios](/index.php/Daemons_(Espa%C3%B1ol) "Daemons (Español)"). Para obtener más información, véase la categoría [daemons y servicios del sistema](/index.php/Category:Daemons_and_system_services_(Espa%C3%B1ol) "Category:Daemons and system services (Español)").
 
 ### Índice de archivos y búsqueda
 
@@ -297,15 +297,15 @@ Los [motores de búsqueda de escritorio](/index.php/List_of_applications/Utiliti
 
 ### Entrega de correo electrónico local
 
-Una configuración predeterminada no proporciona una forma de sincronizar el correo electrónico. Para configurar *Postfix* para la entrega simple en el buzón local, consulte [Postfix](/index.php/Postfix "Postfix"). Otras opciones son [SSMTP](/index.php/SSMTP "SSMTP"), [msmtp](/index.php/Msmtp "Msmtp") y [fdm](/index.php/Fdm "Fdm").
+Una configuración predeterminada no proporciona una forma de sincronizar el correo electrónico. Para configurar *Postfix* para la entrega simple en el buzón local, véase [Postfix](/index.php/Postfix "Postfix"). Otras opciones son [SSMTP](/index.php/SSMTP "SSMTP"), [msmtp](/index.php/Msmtp "Msmtp") y [fdm](/index.php/Fdm "Fdm").
 
 ### Impresión
 
-[CUPS](/index.php/CUPS_(Espa%C3%B1ol) "CUPS (Español)") es un sistema de impresión de código abierto basado en estándares desarrollado por Apple. Consulte la categoría sobre [impresoras](/index.php/Category:Printers_(Espa%C3%B1ol) "Category:Printers (Español)") para los artículos específicos de cada impresora.
+[CUPS](/index.php/CUPS_(Espa%C3%B1ol) "CUPS (Español)") es un sistema de impresión de código abierto basado en estándares desarrollado por Apple. Véase la categoría [impresoras](/index.php/Category:Printers_(Espa%C3%B1ol) "Category:Printers (Español)") para los artículos específicos de cada impresora.
 
 ## Apariencia
 
-Esta sección contiene los ajustes de las «chucherías» *(Eye Candy)*, buscados con frecuencia para una experiencia estética más agradable. Para más información, consulte la categoría sobre [Eye Candy](/index.php/Category:Eye_candy_(Espa%C3%B1ol) "Category:Eye candy (Español)").
+Esta sección contiene los ajustes de las «chucherías» *(Eye Candy)*, buscados con frecuencia para una experiencia estética más agradable. Para más información, véase la categoría [Eye Candy](/index.php/Category:Eye_candy_(Espa%C3%B1ol) "Category:Eye candy (Español)").
 
 ### Tipos de letra
 
@@ -313,15 +313,15 @@ Es posible que quiera instalar un conjunto de fuentes TrueType, ya que solo se i
 
 Se puede encontrar una gran cantidad de información sobre el tema en los artículos sobre los [tipos de letra](/index.php/Fonts_(Espa%C3%B1ol) "Fonts (Español)") y la [configuración de los tipos de letra](/index.php/Font_configuration "Font configuration").
 
-Si pasa una cantidad significativa de tiempo trabajando desde la consola virtual (es decir, fuera de un servidor X), puede que quiera cambiar el tipo de letra de la consola para mejorar la legibilidad; consulte [Tipos de letra de consola](/index.php/Fonts#Console_fonts "Fonts").
+Si pasa una cantidad significativa de tiempo trabajando desde la consola virtual (es decir, fuera de un servidor X), puede que quiera cambiar el tipo de letra de la consola para mejorar la legibilidad; véase [Tipos de letra de consola](/index.php/Fonts#Console_fonts "Fonts").
 
 ### Temas para GTK+ y Qt
 
-Una gran parte de las aplicaciones con una interfaz gráfica para sistemas Linux se basan en los kits de herramientas [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") o [Qt](/index.php/Qt "Qt"). Consulte dichos artículos y [Apariencia uniforme para aplicaciones Qt y GTK](/index.php/Uniform_look_for_Qt_and_GTK_applications_(Espa%C3%B1ol) "Uniform look for Qt and GTK applications (Español)") para obtener ideas de como mejorar la apariencia de los programas instalados y adaptarlos a su gusto.
+Una gran parte de las aplicaciones con una interfaz gráfica para sistemas Linux se basan en los kits de herramientas [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") o [Qt](/index.php/Qt "Qt"). Véase dichos artículos y [Apariencia uniforme para aplicaciones Qt y GTK](/index.php/Uniform_look_for_Qt_and_GTK_applications_(Espa%C3%B1ol) "Uniform look for Qt and GTK applications (Español)") para obtener ideas de como mejorar la apariencia de los programas instalados y adaptarlos a su gusto.
 
 ## Mejoras para la línea de comandos
 
-Esta sección contiene pequeñas modificaciones que mejoran la usabilidad de los programas de línea de comandos. Para obtener más información, consulte la categoría sobre [Command shells](/index.php/Category:Command_shells_(Espa%C3%B1ol) "Category:Command shells (Español)").
+Esta sección contiene pequeñas modificaciones que mejoran la usabilidad de los programas de línea de comandos. Para obtener más información, véase la categoría [Command shells](/index.php/Category:Command_shells_(Espa%C3%B1ol) "Category:Command shells (Español)").
 
 ### Mejoras de autocompletado con Tab
 
@@ -333,7 +333,7 @@ Crear alias para un comando, o un grupo del mismo, es una forma de ahorrar tiemp
 
 ### Shells alternativas
 
-[Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") es el shell que está instalado por defecto en un sistema Arch. Sin embargo, los medios de instalación en vivo usan [zsh](/index.php/Zsh_(Espa%C3%B1ol) "Zsh (Español)") con el paquete de complemento [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config). Consulte el [listado de shells](/index.php/Command-line_shell#List_of_shells "Command-line shell") para conocer más alternativas.
+[Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") es el shell que está instalado por defecto en un sistema Arch. Sin embargo, los medios de instalación en vivo usan [zsh](/index.php/Zsh_(Espa%C3%B1ol) "Zsh (Español)") con el paquete de complemento [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config). Véase [listado de shells](/index.php/Command-line_shell#List_of_shells "Command-line shell") para conocer más alternativas.
 
 ### Complementos para bash
 
@@ -345,23 +345,23 @@ Esta sección se desarrolla en [Color output in console](/index.php/Color_output
 
 ### Archivos comprimidos
 
-Los archivos comprimidos se encuentran con frecuencia en un sistema GNU/Linux. [Tar](/index.php/Core_utilities_(Espa%C3%B1ol)#tar "Core utilities (Español)") es una de las herramientas de archivo más comúnmente utilizadas, y los usuarios deberían estar familiarizados con su sintaxis (los paquetes de Arch Linux, por ejemplo, son simplemente archivos tar comprimidos con xzip). Consulte el artículo sobre [archivado y compresión](/index.php/Archiving_and_compression "Archiving and compression").
+Los archivos comprimidos se encuentran con frecuencia en un sistema GNU/Linux. [Tar](/index.php/Core_utilities_(Espa%C3%B1ol)#tar "Core utilities (Español)") es una de las herramientas de archivo más comúnmente utilizadas, y los usuarios deberían estar familiarizados con su sintaxis (los paquetes de Arch Linux, por ejemplo, son simplemente archivos tar comprimidos con xzip). Véase el artículo [archivado y compresión](/index.php/Archiving_and_compression "Archiving and compression").
 
 ### Indicador de la línea de comandos
 
-El indicador de la línea de comandos (PS1, o *console prompt*) se puede personalizar en gran medida. Consulte [personalización del indicador de Bash](/index.php/Bash/Prompt_customization "Bash/Prompt customization") o [indficadores de Zsh](/index.php/Zsh_(Espa%C3%B1ol)#Prompts "Zsh (Español)") si usa Bash o Zsh, respectivamente.
+El indicador de la línea de comandos (PS1, o *console prompt*) se puede personalizar en gran medida. Véase [personalización del indicador de Bash](/index.php/Bash/Prompt_customization "Bash/Prompt customization") o [indficadores de Zsh](/index.php/Zsh_(Espa%C3%B1ol)#Prompts "Zsh (Español)") si usa Bash o Zsh, respectivamente.
 
 ### Shell emacs
 
-Emacs es conocido por ofrecer opciones más allá de los usuales en la edición de texto, una de ellas es un reemplazo completo de la shell. Consulte [Emacs#Colored output issues](/index.php/Emacs#Colored_output_issues "Emacs") para obtener una solución con respecto a los caracteres ilegibles que pueden producirse al habilitar la salida coloreada.
+Emacs es conocido por ofrecer opciones más allá de los usuales en la edición de texto, una de ellas es un reemplazo completo de la shell. Véase [Emacs#Colored output issues](/index.php/Emacs#Colored_output_issues "Emacs") para obtener una solución con respecto a los caracteres ilegibles que pueden producirse al habilitar la salida coloreada.
 
 ### Soporte del ratón
 
-Se puede preferir utilizar un ratón con la línea de comandos para operaciones de copiar y pegar en lugar del modo de copia tradicional de [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Consulte el artículo sobre el [soporte del ratón](/index.php/General_purpose_mouse_(Espa%C3%B1ol) "General purpose mouse (Español)") para obtener instrucciones detalladas. Tenga en cuenta que ya puede hacer esto en [emuladores de terminal](/index.php/Terminal_emulators "Terminal emulators") con el [portapapeles](/index.php/Clipboard "Clipboard").
+Se puede preferir utilizar un ratón con la línea de comandos para operaciones de copiar y pegar en lugar del modo de copia tradicional de [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Véase [soporte del ratón](/index.php/General_purpose_mouse_(Espa%C3%B1ol) "General purpose mouse (Español)") para obtener instrucciones detalladas. Tenga en cuenta que ya puede hacer esto en [emuladores de terminal](/index.php/Terminal_emulators "Terminal emulators") con el [portapapeles](/index.php/Clipboard "Clipboard").
 
 ### Búfer de desplazamiento hacia atrás
 
-Para poder guardar y ver el texto que se ha desplazado fuera de la pantalla, consulte [desplazamiento hacia atrás](/index.php/General_troubleshooting#Scrollback "General troubleshooting").
+Para poder guardar y ver el texto que se ha desplazado fuera de la pantalla, véase [desplazamiento hacia atrás](/index.php/General_troubleshooting#Scrollback "General troubleshooting").
 
 ### Administración de las sesiones
 

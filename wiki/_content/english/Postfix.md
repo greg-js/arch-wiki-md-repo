@@ -190,7 +190,7 @@ To see all of your configs, type `postconf`. To see how you differ from the defa
 
 ## Start Postfix
 
-**Note:** You must run `newaliases` at least once for postfix to run, even if you did not set up any [#Aliases](#Aliases).
+**Note:** You must run `newaliases` at least once for Postfix to run, even if you did not set up any [#Aliases](#Aliases).
 
 [Start/enable](/index.php/Start/enable "Start/enable") the `postfix.service`.
 
@@ -315,7 +315,7 @@ $CONF['database_name'] = 'postfix_db';
 
 ```
 
-If installing dovecot and you changed the password scheme in dovecot (to SHA512-CRYPT for example), reflect that with postfix
+If installing dovecot and you changed the password scheme in dovecot (to SHA512-CRYPT for example), reflect that with Postfix
 
  `/etc/webapps/postfixadmin/config.inc.php` 
 ```
@@ -678,7 +678,7 @@ Finally, restart postfix.service
 
 ### Postfix in a chroot jail
 
-Postfix is not put in a chroot jail by default. The Postfix documentation [[1]](http://www.postfix.org/BASIC_CONFIGURATION_README.html#chroot_setup) provides details about how to accomplish such a jail. The steps are outlined below and are based on the chroot-setup script provided in the postfix source code.
+Postfix is not put in a chroot jail by default. The Postfix documentation [[1]](http://www.postfix.org/BASIC_CONFIGURATION_README.html#chroot_setup) provides details about how to accomplish such a jail. The steps are outlined below and are based on the chroot-setup script provided in the Postfix source code.
 
 First, go into the `master.cf` file in the directory `/etc/postfix` and change all the chroot entries to 'yes' (y) except for the services `qmgr`, `proxymap`, `proxywrite`, `local`, and `virtual`
 
@@ -751,11 +751,11 @@ cond_copy '/usr/lib/libdb.so*' lib
 
 ```
 
-And don't forget to reload postfix.
+And don't forget to reload Postfix.
 
 ### Rule-based mail processing
 
-With policy services one can easily finetune postfix' behaviour of mail delivery. [postfwd](https://www.archlinux.org/packages/?name=postfwd) and [policyd](https://aur.archlinux.org/pkgbase/policyd) provide services to do so. This allows you to e.g. implement time-aware grey- and blacklisting of senders and receivers as well as [SPF](/index.php/SPF "SPF") policy checking.
+With policy services one can easily finetune Postfix' behaviour of mail delivery. [postfwd](https://www.archlinux.org/packages/?name=postfwd) and [policyd](https://aur.archlinux.org/pkgbase/policyd) provide services to do so. This allows you to e.g. implement time-aware grey- and blacklisting of senders and receivers as well as [SPF](/index.php/SPF "SPF") policy checking.
 
 Policy services are standalone services and connected to Postfix like this:
 
@@ -776,7 +776,7 @@ Placing policy services at the end of the queue reduces load, as only legitimate
 
 **Warning:** This is not a trivial section. Be aware that you make sure you know what you are doing. You better read [Common Mistakes](https://dane.sys4.de/common_mistakes) before.
 
-[DANE](/index.php/DANE "DANE") supports several types of records, however not all of them are suitable in postfix.
+[DANE](/index.php/DANE "DANE") supports several types of records, however not all of them are suitable in Postfix.
 
 Certificate usage 0 is unsupported, 1 is mapped to 3 and 2 is optional, thus it is recommendet to publish a "3" record. More on [Resource Records](/index.php/DANE#Resource_Record "DANE").
 
@@ -826,7 +826,7 @@ example.com dane-only
 
 ```
 
-**Note:** For global mandatory DANE, change `smtp_tls_security_level` to `dane-only`. Be aware that this makes postfix tempfail on all delivieres that do not use DANE at all!
+**Note:** For global mandatory DANE, change `smtp_tls_security_level` to `dane-only`. Be aware that this makes Postfix tempfail on all delivieres that do not use DANE at all!
 
 Full documentation is found [here](http://www.postfix.org/TLS_README.html#client_tls_dane).
 
@@ -880,7 +880,7 @@ RUN_AS=postsrsd
 CHROOT=/usr/lib/postsrsd
 ```
 
-Enable and start the daemon, making sure it runs after reboot as well. Then configure postfix accordingly by tweaking the following lines:
+Enable and start the daemon, making sure it runs after reboot as well. Then configure Postfix accordingly by tweaking the following lines:
 
  `/etc/postfix/main.cf` 
 ```
@@ -890,7 +890,7 @@ recipient_canonical_maps = tcp:localhost:10002
 recipient_canonical_classes= envelope_recipient,header_recipient
 ```
 
-Restart postfix and start forwarding mail.
+Restart Postfix and start forwarding mail.
 
 ## Troubleshooting
 

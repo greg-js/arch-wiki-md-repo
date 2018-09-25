@@ -13,33 +13,33 @@
 
 ## Separação de pacote
 
-Packages that contain [kernel modules](/index.php/Kernel_modules "Kernel modules") should be treated specially, to support users who wish to have more than one kernel installed on a system.
+Pacotes que contêm [módulos do kernel](/index.php/Kernel_modules "Kernel modules") devem ser tratados especialmente, para suportar usuários que desejam ter mais de um kernel instalado em um sistema.
 
-When packaging software containing a kernel module and other non-module supporting files/utilities, it is important to separate the kernel modules from the supporting files.
+Ao empacotar software contendo um módulo do kernel e outros arquivos/utilitários de suporte não módulo, é importante separar os módulos do kernel dos arquivos de suporte.
 
 ### Diretrizes
 
-When packaging such software (using the [NVIDIA](/index.php/NVIDIA "NVIDIA") drivers as an example) the convention is:
+Ao empacotar tais softwares (usando os drivers [NVIDIA](/index.php/NVIDIA "NVIDIA") como um exemplo), a convenção é:
 
-*   create an `nvidia` package containing just the kernel modules built for the vanilla kernel
-*   create an `nvidia-utils` package containing the supporting files
-*   make sure `nvidia` depends on `nvidia-utils` (unless there's a good reason not to do so)
-*   for another kernel like `kernel26-mm`, create `nvidia-mm` containing the kernel modules built against that kernel which provides nvidia and also depends on `nvidia-utils`
-*   make sure `nvidia` depends on the current major kernel version, for example:
+*   crie um pacote `nvidia` contendo apenas os módulos de kernel compilado para o kernel padrão
+*   crie um pacote `nvidia-utils` contendo os arquivos sem suporte
+*   certique-se que `nvidia` depende de `nvidia-utils` (a menos que haja um bom motivo para não fazê-lo)
+*   para outro kernel, como `kernel26-mm`, crie `nvidia-mm` contendo os módulos de kernel compilados com o kernel que fornece nvidia e também depende em `nvidia-utils`
+*   certifique-se que `nvidia` depende na versão de kernel atual, por exemplo:
 
 ```
 depends=('kernel26>=2.6.24-2' 'kernel26<2.6.25-0' 'nvidia-utils')
 
 ```
 
-Note that it is `2.6.24-2`, not `-1` in above example - this is because there was a configuration change to important kernel subsystem that required all modules to be rebuilt. You should always change depends version in such cases, otherwise some people with out-of-sync kernel and module version will report that module is broken.
+Note que é `2.6.24-2`, e não `-1` no exemplo acima - isso ocorre porque houve uma alteração de configuração no subsistema de kernel importante que exigiu a recriação de todos os módulos. Você deve sempre mudar a versão depende de tais casos, caso contrário, algumas pessoas com versões fora do sync do kernel e do módulo reportarão que o módulo está quebrado.
 
 ### Motivos
 
-While kernel modules built for different kernels always live in different directories and can peacefully coexist, the supporting files are expected to be found in one location. If one package contained module and supporting files, you would be unable to install the modules for more than one kernel because the supporting files in the packages would cause pacman file conflicts.
+Enquanto os módulos do kernel construídos para diferentes kernels sempre vivem em diretórios diferentes e podem coexistir pacificamente, espera-se que os arquivos de suporte sejam encontrados em um único local. Se um pacote contivesse arquivos de módulo e de suporte, você não conseguiria instalar os módulos para mais de um kernel porque os arquivos de suporte nos pacotes causariam conflitos de arquivos do pacman.
 
-The separation of modules and accompanying files allows multiple kernel module packages to be installed for multiple kernels on the same system while sharing the supporting files among them in the expected location.
+A separação dos módulos e dos arquivos anexos permite que vários pacotes de módulos do kernel sejam instalados para múltiplos kernels no mesmo sistema, compartilhando os arquivos de suporte entre eles no local esperado.
 
 ## Colocação de arquivos
 
-If a package includes a kernel module that is meant to override an existing module of the same name, such module should be placed in the `/lib/modules/2.6.xx-ARCH/updates` directory. When **depmod** is run, modules in this directory will take precedence.
+Se um pacote inclui um módulo do kernel que deve substituir um módulo existente com o mesmo nome, tal módulo deve ser colocado no diretório `/lib/modules/2.6.xx-ARCH/updates`. Quando o **depmod** é executado, os módulos neste diretório terão precedência.

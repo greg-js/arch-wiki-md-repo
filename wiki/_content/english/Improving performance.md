@@ -235,7 +235,7 @@ To change the active I/O scheduler to *bfq* for device *sda*, use:
 
 ```
 
-SSDs can handle many IOPS and tend to perform best with simple algorithm like *noop* or *deadline* while *BFQ* is well adapted to HDDs. The process to change I/O scheduler, depending on whether the disk is rotating or not can be automated and persist across reboots with a [udev](/index.php/Udev "Udev") rule like this:
+SSDs can handle many IOPS and tend to perform best with simple algorithm like *noop* or *deadline* while *BFQ* is well adapted to HDDs. The process to change I/O scheduler, depending on whether the disk is rotating or not can be automated and persist across reboots. For example the [udev](/index.php/Udev "Udev") rule below sets the scheduler to *mq-deadline* for non-rotational drives, it covers the naming schemes for SATA SSD, eMMC and NVMe SSD and to *bfq* for SATA HDD.
 
  `/etc/udev/rules.d/60-ioschedulers.rules` 
 ```
@@ -245,7 +245,7 @@ ACTION=="add|change", KERNEL=="sd[a-z]|mmcblk[0-9]*|nvme[0-9]*", ATTR{queue/rota
 ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="1", ATTR{queue/scheduler}="bfq"
 ```
 
-Save it, then reboot or force [reload/trigger](/index.php/Udev#Loading_new_rules "Udev") of the rules.
+Then reboot or force [udev#Loading new rules](/index.php/Udev#Loading_new_rules "Udev").
 
 #### Tuning I/O scheduler
 

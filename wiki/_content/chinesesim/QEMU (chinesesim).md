@@ -1,22 +1,22 @@
 相关文章
 
-*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
+*   [Category:Hypervisors (简体中文)](/index.php/Category:Hypervisors_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Hypervisors (简体中文)")
 *   [Libvirt (简体中文)](/index.php/Libvirt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Libvirt (简体中文)")
+*   [QEMU/Guest graphics acceleration](/index.php/QEMU/Guest_graphics_acceleration "QEMU/Guest graphics acceleration")
+*   [PCI passthrough via OVMF (简体中文)](/index.php/PCI_passthrough_via_OVMF_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PCI passthrough via OVMF (简体中文)")
 
 **翻译状态：** 本文是英文页面 [QEMU](/index.php/QEMU "QEMU") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-25，点击[这里](https://wiki.archlinux.org/index.php?title=QEMU&diff=0&oldid=447331)可以查看翻译后英文页面的改动。
 
-来自 [QEMU 关于页面](http://wiki.qemu.org/Main_Page),
+来自 [QEMU 关于页面](http://wiki.qemu.org/Main_Page)：“Qemu”是一个广泛使用的开源计算机模拟器和虚拟机。"
 
-	"Qemu是一个广泛使用的开源计算机模拟器和虚拟机"
+当作为模拟器时，可以在一种架构（如x86 PC）下运行另一种架构（如ARM）下的操作系统和程序。通过使用动态转换，它可以获得非常好的性能。
 
-当作为模拟器时，可以在一种架构(如PC机)下运行另一种架构(如ARM)下的操作系统和程序。通过动态转化，可以获得很高的运行效率。
-
-当 QEME 作为虚拟机时，可以使用 [xen](/index.php/Xen_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xen (简体中文)") 或 [kvm](/index.php/KVM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KVM (简体中文)") 访问 CPU 的扩展功能([HVM](https://en.wikipedia.org/wiki/Hardware-assisted_virtualization "wikipedia:Hardware-assisted virtualization"))，在主机 CPU 上直接执行虚拟客户端的代码，获得接近于真机的性能表现。
+作为虚拟机时，QEMU可以使用其他虚拟机管理程序（如 [Xen](/index.php/Xen_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xen (简体中文)") 或 [KVM](/index.php/KVM_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "KVM (简体中文)")）来使用CPU扩展（[HVM](https://en.wikipedia.org/wiki/Hardware-assisted_virtualization "wikipedia:Hardware-assisted virtualization")）进行虚拟化，通过在主机CPU上直接执行客户机代码来获得接近于宿主机的性能。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 QEMU 图形前端](#QEMU_.E5.9B.BE.E5.BD.A2.E5.89.8D.E7.AB.AF)
+*   [2 QEMU 的图形前端](#QEMU_.E7.9A.84.E5.9B.BE.E5.BD.A2.E5.89.8D.E7.AB.AF)
 *   [3 创建新虚拟系统](#.E5.88.9B.E5.BB.BA.E6.96.B0.E8.99.9A.E6.8B.9F.E7.B3.BB.E7.BB.9F)
     *   [3.1 创建硬盘镜像](#.E5.88.9B.E5.BB.BA.E7.A1.AC.E7.9B.98.E9.95.9C.E5.83.8F)
         *   [3.1.1 上层存储镜像](#.E4.B8.8A.E5.B1.82.E5.AD.98.E5.82.A8.E9.95.9C.E5.83.8F)
@@ -95,17 +95,21 @@
 
 ## 安装
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [qemu](https://www.archlinux.org/packages/?name=qemu)，并根据需要安装下面的可选软件包：
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [qemu](https://www.archlinux.org/packages/?name=qemu)，(或 [qemu-headless](https://www.archlinux.org/packages/?name=qemu-headless)，一个没有GUI的版本）并根据需要安装下面的可选软件包：
 
-*   [qemu-arch-extra](https://www.archlinux.org/packages/?name=qemu-arch-extra) - 其它架构支持
-*   [qemu-block-gluster](https://www.archlinux.org/packages/?name=qemu-block-gluster) - glusterfs block 支持
-*   [qemu-block-iscsi](https://www.archlinux.org/packages/?name=qemu-block-iscsi) - iSCSI block 支持
+*   [qemu-arch-extra](https://www.archlinux.org/packages/?name=qemu-arch-extra) - 额外架构支持
+*   [qemu-block-gluster](https://www.archlinux.org/packages/?name=qemu-block-gluster) - [Glusterfs](/index.php/Glusterfs "Glusterfs") block 支持
+*   [qemu-block-iscsi](https://www.archlinux.org/packages/?name=qemu-block-iscsi) - [iSCSI](/index.php/ISCSI "ISCSI") block 支持
 *   [qemu-block-rbd](https://www.archlinux.org/packages/?name=qemu-block-rbd) - RBD block 支持
-*   [samba](https://www.archlinux.org/packages/?name=samba) - SMB/CIFS 服务器支持
+*   [samba](https://www.archlinux.org/packages/?name=samba) - [SMB/CIFS](/index.php/Samba "Samba") 服务器支持
 
-## QEMU 图形前端
+## QEMU 的图形前端
 
-与其他的虚拟方案如 [VirtualBox](/index.php/VirtualBox "VirtualBox") 和 [VMware](/index.php/VMware "VMware")不同, QEMU不提供用户图形界面来管理虚拟机 (除了运行虚拟机时出现的窗口), 也没有提供一种持久保存虚拟机设置方式. 必须每一次在命令行上指定所有运行虚拟机的参数,除非你已经创建了一个自定义的脚本来启动你的虚拟机. 有几个程序为 QEMU 提供图形界面：
+与其他的虚拟化程序如 [VirtualBox](/index.php/VirtualBox "VirtualBox") 和 [VMware](/index.php/VMware "VMware") 不同, QEMU不提供管理虚拟机的GUI（运行虚拟机时出现的窗口除外），也不提供创建具有已保存设置的持久虚拟机的方法。除非您已创建自定义脚本以启动虚拟机，否则必须在每次启动时在命令行上指定运行虚拟机的所有参数。
+
+[Libvirt](/index.php/Libvirt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Libvirt (简体中文)")提供了一种管理 QEMU 虚拟机的便捷方式。有关可用的前端，请参阅 [libvirt 客户端列表](/index.php/Libvirt_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.A2.E6.88.B7.E7.AB.AF "Libvirt (简体中文)")。
+
+其他图形前端：
 
 *   [virt-manager](https://www.archlinux.org/packages/?name=virt-manager)
 *   [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes)
@@ -113,19 +117,17 @@
 *   [qtemu](https://aur.archlinux.org/packages/qtemu/)
 *   [aqemu](https://aur.archlinux.org/packages/aqemu/)
 
-[libvirt](/index.php/Libvirt "Libvirt") 也有支持 QEME 的额外前端界面。
-
 ## 创建新虚拟系统
 
 ### 创建硬盘镜像
 
-**提示：** [QEMU Wikibook](https://en.wikibooks.org/wiki/QEMU/Images) 提供了 QEMU 镜像的更多信息。
+**提示：** 有关QEMU图像的更多信息，请参阅 [QEMU Wikibook](https://en.wikibooks.org/wiki/QEMU/Images)。
 
-除非直接从 CD-ROM 或网络引导并且不安装系统到本地，运行 QEMU 时都需要硬盘镜像。硬盘镜像是一个文件，存储虚拟机硬盘上的内容。
+除非直接从 CD-ROM 或网络引导（并且不安装系统到本地），运行 QEMU 时都需要硬盘镜像。硬盘镜像是一个文件，存储虚拟机硬盘上的内容。
 
-一个硬盘镜像可能是 *raw*镜像, 和客户机器上看到的内容一模一样，主机上占用的空间客户机上的大小一样。这个方式 I/O 效率最高，但是因为客户机器上没使用的空间也被占用，所以有点浪费空间。
+一个硬盘镜像可能是 *raw*镜像, 和客户机器上看到的内容一模一样，并且将始终使用主机上的来宾硬盘驱动器的全部容量。此方法提供的I / O开销最小，但可能会浪费大量空间，因为guest虚拟机上未使用的空间无法在主机上使用。
 
-另外一种方式是*qcow2* 格式，仅当客户系统实际写入内容的时候，才会分配镜像空间。对客户机器来说，硬盘大小是完整大小，但是在主机系统上实际仅占用和很小的空间。使用这种方式会影响效率.
+另外一种方式是*qcow2* 格式，仅当客户系统实际写入内容的时候，才会分配镜像空间。对客户机器来说，硬盘大小表现为完整大小，即使它可能仅占用主机系统上的非常小的空间。此映像格式还支持QEMU快照功能（有关详细信息，请参阅 [#Creating and managing snapshots via the monitor console](#Creating_and_managing_snapshots_via_the_monitor_console)）。但是，使用此格式而不是 *raw* 可能会影响性能。
 
 QEMU 提供 `qemu-img`命令创建硬盘镜像.例如创建一个 4 GB *raw* 格式的镜像:
 
@@ -134,11 +136,13 @@ $ qemu-img create -f raw *image_file* 4G
 
 ```
 
-您可以用 `-f qcow2` 改为创建一个 *qcow2* 磁盘
+您也可以用 `-f qcow2` 创建一个 *qcow2* 镜像。
 
 用 `dd` 或 `fallocate` 也可以创建一个 *raw* 镜像。
 
-**Warning:** 如果硬盘镜像存储在 [Btrfs](/index.php/Btrfs "Btrfs") 系统上，在创建前请考虑禁用 [写时复制](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs")。
+**Note:** 您也可以通过 `dd` 或 `fallocate` 创建一个所需大小的 *raw* 镜像。
+
+**Warning:** 如果硬盘镜像存储在 [Btrfs](/index.php/Btrfs "Btrfs") 系统上，则应在创建任何映像之前考虑禁用该目录的 [写时复制](/index.php/Btrfs#Copy-on-Write_.28CoW.29 "Btrfs")。
 
 #### 上层存储镜像
 

@@ -170,8 +170,8 @@ Kolumna "dm-crypt +/- LUKS" oznacza funkcje cryptu dm dla LUKS ("+") i zwykłych
 | Pojemnik do szyfrowania danych może być ... | partycja dysku lub dysk / plik działający jako partycja wirtualna | partycja dysku lub dysk / plik działający jako partycja wirtualna | partycja dysku lub dysk / plik działający jako partycja wirtualna | katalog w istniejącym systemie plików | katalog w istniejącym systemie plików |
 | Odniesienie do systemu plików | działa pod warstwą systemu plików: nie obchodzi, czy zawartość zaszyfrowanego urządzenia blokowego to system plików, tabela partycji, konfiguracja LVM lub cokolwiek innego | działa pod warstwą systemu plików: nie obchodzi, czy zawartość zaszyfrowanego urządzenia blokowego to system plików, tabela partycji, konfiguracja LVM lub cokolwiek innego | działa pod warstwą systemu plików: nie obchodzi, czy zawartość zaszyfrowanego urządzenia blokowego to system plików, tabela partycji, konfiguracja LVM lub cokolwiek innego | dodaje dodatkową warstwę do istniejącego systemu plików, aby automatycznie szyfrować / deszyfrować pliki | dodaje dodatkową warstwę do istniejącego systemu plików, aby automatycznie szyfrować / deszyfrować pliki |
 | Szyfrowanie zaimplementowane w... | w przestrzeni jądra | w przestrzeni jądra | w przestrzeni jądra | w przestrzeni jądra | w przestrzeni użytkownika (za pomocą FUSE) |
-| Metadane kryptograficzne przechowywane w... |  ? | w LUKS: LUKS Header | begin/end of (decrypted) device ([format](http://www.truecrypt.org/docs/volume-format-specification)) | nagłówek każdego zaszyfrowanego pliku | plik kontrolny na najwyższym poziomie każdego kontenera EncF |
-| klucz do szyfrowania przechowywany w. |  ? | w LUKS: LUKS header | begin/end of (decrypted) device ([format](http://www.truecrypt.org/docs/volume-format-specification)) | kluczowy plik, który może być przechowywany w dowolnym miejscu | kluczowy plik, który może być przechowywany w dowolnym miejscu
+| Metadane kryptograficzne przechowywane w... | ? | w LUKS: LUKS Header | begin/end of (decrypted) device ([format](http://www.truecrypt.org/docs/volume-format-specification)) | nagłówek każdego zaszyfrowanego pliku | plik kontrolny na najwyższym poziomie każdego kontenera EncF |
+| klucz do szyfrowania przechowywany w. | ? | w LUKS: LUKS header | begin/end of (decrypted) device ([format](http://www.truecrypt.org/docs/volume-format-specification)) | kluczowy plik, który może być przechowywany w dowolnym miejscu | kluczowy plik, który może być przechowywany w dowolnym miejscu
 
 [[1]](https://github.com/rfjakob/encfs/blob/next/encfs/encfs.pod#environment-variables)[[2]](https://github.com/vgough/encfs/issues/48#issuecomment-69301831)
 
@@ -195,8 +195,8 @@ Kolumna "dm-crypt +/- LUKS" oznacza funkcje cryptu dm dla LUKS ("+") i zwykłych
 ##### Usability features
 
  | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
-| Wsparcie dla automatyzacji podczas logowania |  ? | ✔ |  ? | ✔ | ✔ |
-| Obsługa automatycznego odmontowania w przypadku braku aktywności |  ? |  ? |  ? |  ? | ✔ |
+| Wsparcie dla automatyzacji podczas logowania | ? | ✔ | ? | ✔ | ✔ |
+| Obsługa automatycznego odmontowania w przypadku braku aktywności | ? | ? | ? | ? | ✔ |
 | Użytkownicy niebędący administratorami mogą tworzyć / usuwać kontenery w celu szyfrowania danych | ✖ | ✖ | ✖ | limited | ✔ |
 | Zapewnia GUI | ✖ | ✖ | ✔ | ✖ | ✔
 
@@ -209,22 +209,22 @@ Kolumna "dm-crypt +/- LUKS" oznacza funkcje cryptu dm dla LUKS ("+") i zwykłych
 
  | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
 | Obsługiwane szyfry | AES | AES, Anubis, CAST5/6, Twofish, Serpent, Camellia, Blowfish,… (every cipher the kernel Crypto API offers) | AES, Twofish, Serpent | AES, Blowfish, Twofish... | AES, Blowfish, Twofish, and any other ciphers available on the system |
-| Wsparcie dla solenia |  ? | ✔
-(with LUKS) | ✔ | ✔ |  ? |
-| Obsługa kaskadowania wielu szyfrów |  ? | Not in one device, but blockdevices can be cascaded | ✔ |  ? | ✖ |
-| Wsparcie dla dyfuzji kluczy |  ? | ✔
-(with LUKS) |  ? |  ? |  ? |
+| Wsparcie dla solenia | ? | ✔
+(with LUKS) | ✔ | ✔ | ? |
+| Obsługa kaskadowania wielu szyfrów | ? | Not in one device, but blockdevices can be cascaded | ✔ | ? | ✖ |
+| Wsparcie dla dyfuzji kluczy | ? | ✔
+(with LUKS) | ? | ? | ? |
 | Ochrona przed key scrubbing | ✔ | ✔
-(without LUKS) |  ? |  ? |  ? |
-| Support for multiple (independently revocable) keys for the same encrypted data |  ? | ✔
-(with LUKS) |  ? |  ? | ✖ |
+(without LUKS) | ? | ? | ? |
+| Support for multiple (independently revocable) keys for the same encrypted data | ? | ✔
+(with LUKS) | ? | ? | ✖ |
 | 
 
 ##### Funkcje wydajności
 
  | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
-| Obsługa wielowątkowości |  ? | ✔
-[[8](#See_also)] | ✔ |  ? |  ? |
+| Obsługa wielowątkowości | ? | ✔
+[[8](#See_also)] | ✔ | ? | ? |
 | wsparcie szyfrowania sprzętowa akceleracja | ✔ | ✔ | ✔ | ✔ | ✔
 [[13](#See_also)] |
 | 
@@ -232,7 +232,7 @@ Kolumna "dm-crypt +/- LUKS" oznacza funkcje cryptu dm dla LUKS ("+") i zwykłych
 ##### Block device encryption specific
 
  | Loop-AES | dm-crypt +/- LUKS | Truecrypt |
-| Obsługa ręcznej zmiany rozmiaru zaszyfrowanego urządzenia blokowego w miejscu |  ? | ✔ | ✖ |
+| Obsługa ręcznej zmiany rozmiaru zaszyfrowanego urządzenia blokowego w miejscu | ? | ✔ | ✖ |
 | 
 
 ##### Skumulowane szyfrowanie systemu plików
@@ -251,18 +251,18 @@ Kolumna "dm-crypt +/- LUKS" oznacza funkcje cryptu dm dla LUKS ("+") i zwykłych
 ##### Zgodność i rozpowszechnienie
 
  | Loop-AES | dm-crypt +/- LUKS | Truecrypt | eCryptfs | EncFs |
-| Obsługiwane wersje jądra Linux | 2.0 lub nowszy | CBC-mode since 2.6.4, ESSIV 2.6.10, LRW 2.6.20, XTS 2.6.24 |  ? |  ? | 2.4 lub nowszy |
+| Obsługiwane wersje jądra Linux | 2.0 lub nowszy | CBC-mode since 2.6.4, ESSIV 2.6.10, LRW 2.6.20, XTS 2.6.24 | ? | ? | 2.4 lub nowszy |
 | Szyfrowane dane można również uzyskać z poziomu systemu Windows | ✔
 (with [[3](#See_also)], [[14](#See_also)]) | ?
-(with [[4](#See_also)], [[14](#See_also)]) | ✔ |  ? |  ?
+(with [[4](#See_also)], [[14](#See_also)]) | ✔ | ? | ?
 [[9](#See_also)] |
-| Zaszyfrowane dane można również uzyskać z systemu Mac OS X. |  ? |  ? | ✔ |  ? | ✔
+| Zaszyfrowane dane można również uzyskać z systemu Mac OS X. | ? | ? | ✔ | ? | ✔
 [[5](#See_also)] |
-| Szyfrowane dane można również uzyskać z FreeBSD |  ? |  ? | ✖ |  ? | ✔
+| Szyfrowane dane można również uzyskać z FreeBSD | ? | ? | ✖ | ? | ✔
 [[6](#See_also)] |
-| Używany przez |  ? | Debian/Instalator Ubuntu (szyfrowanie systemu)
-Instalator Fedory |  ? | Instalator Ubuntu (home dir encryption)
-Chromium OS (encryption of cached user data [[7](#See_also)]) |  ? |
+| Używany przez | ? | Debian/Instalator Ubuntu (szyfrowanie systemu)
+Instalator Fedory | ? | Instalator Ubuntu (home dir encryption)
+Chromium OS (encryption of cached user data [[7](#See_also)]) | ? |
 
 ## Przygotowanie
 
