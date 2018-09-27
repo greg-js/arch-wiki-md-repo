@@ -67,6 +67,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [10.10 virt-manager has permission issues](#virt-manager_has_permission_issues)
     *   [10.11 Host lockup after VM shutdown](#Host_lockup_after_VM_shutdown)
     *   [10.12 Host lockup if guest is left running during sleep](#Host_lockup_if_guest_is_left_running_during_sleep)
+    *   [10.13 Cannot boot after upgrading ovmf](#Cannot_boot_after_upgrading_ovmf)
 *   [11 See also](#See_also)
 
 ## Prerequisites
@@ -1381,6 +1382,17 @@ Type=simple
 ExecStart=/usr/bin/systemd-inhibit --what=sleep --why="Libvirt domain \"%i\" is running" --who=%U --mode=block sleep infinity
 
 ```
+
+### Cannot boot after upgrading ovmf
+
+If you cannot boot after upgrading from ovmf-1:r23112.018432f0ce-1 then you need to remove the old *VARS.fd file in `/var/lib/libvirt/qemu/nvram`:
+
+```
+mv /var/lib/libvirt/qemu/nvram/vmname_VARS.fd /var/lib/libvirt/qemu/nvram/vmname_VARS.fd.old
+
+```
+
+See further details [here](https://bugs.archlinux.org/task/57825)
 
 ## See also
 

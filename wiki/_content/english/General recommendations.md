@@ -291,7 +291,7 @@ This section relates to [daemons](/index.php/Daemons "Daemons"). For more, pleas
 
 Most distributions have a *locate* command available to be able to quickly search for files. To get this functionality in Arch Linux, [mlocate](https://www.archlinux.org/packages/?name=mlocate) is the recommended install. After the install you should run *updatedb* to index the filesystems.
 
-[Desktop search engines](/index.php/List_of_applications/Utilities#Finders "List of applications/Utilities") provide a similar service, while better integrated into [desktop environments](/index.php/Desktop_environment "Desktop environment").
+[Desktop search engines](/index.php/List_of_applications/Utilities#File_searching "List of applications/Utilities") provide a similar service, while better integrated into [desktop environments](/index.php/Desktop_environment "Desktop environment").
 
 ### Local mail delivery
 
@@ -311,7 +311,7 @@ You may wish to install a set of TrueType fonts, as only unscalable bitmap fonts
 
 A plethora of information on the subject can be found in the [Fonts](/index.php/Fonts "Fonts") and [Font configuration](/index.php/Font_configuration "Font configuration") articles.
 
-If spending a significant amount of time working from the virtual console (i.e. outside an X server), users may wish to change the console font to improve readability; see [Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts").
+If spending a significant amount of time working from the virtual console (i.e. outside an X server), users may wish to change the console font to improve readability; see [Linux_console#Fonts](/index.php/Linux_console#Fonts "Linux console").
 
 ### GTK+ and Qt themes
 

@@ -32,7 +32,7 @@
 
 아치 리눅스는 최소 메모리가 512MB인 [x86_64](https://en.wikipedia.org/wiki/X86-64 "w:X86-64") 호환 기계에서 실행되어야 합니다. [base](https://www.archlinux.org/groups/x86_64/base/) 그룹의 모든 패키지를 설치하는 기본 설치를 하면 800MB 미만의 디스크 공간을 차지합니다. 인터넷 연결이 되어 있어야 공식 패키지 저장소에서 패키지를 다운로드할 수 있습니다.
 
-[아치 리눅스 다운로드 및 설치](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")에 설명된 대로 설치 매체를 다운로드하고 부팅하십시오. 첫번째 [가상 콘솔](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console")로 루트 사용자로 로그인한 [Zsh](/index.php/Zsh "Zsh") 쉘 프롬프트가 제공될 것입니다. [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)과 같은 일반적인 명령어는 명령어 일부를 입력한 후 탭 키를 누르면 명령어 전체가 자동으로 완성되는 [탭 완성](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion")으로 입력될 수 있습니다.
+[아치 리눅스 다운로드 및 설치](/index.php/Getting_and_installing_Arch "Getting and installing Arch")에 설명된 대로 설치 매체를 다운로드하고 부팅하십시오. 첫번째 [가상 콘솔](https://en.wikipedia.org/wiki/Virtual_console "w:Virtual console")로 루트 사용자로 로그인한 [Zsh](/index.php/Zsh "Zsh") 쉘 프롬프트가 제공될 것입니다. [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1)과 같은 일반적인 명령어는 명령어 일부를 입력한 후 탭 키를 누르면 명령어 전체가 자동으로 완성되는 [탭 완성](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion")으로 입력될 수 있습니다.
 
 다른 콘솔로 이동하려면, 예를 들어 설치를 하고 있는 콘솔이 아닌 다른 콘솔로 이동해 [ELinks](/index.php/ELinks "ELinks")를 실행해 이 안내서를 보는 경우라면 `Alt+*화살표*` [바로가기](/index.php/Keyboard_shortcuts "Keyboard shortcuts")를 사용하십시오. 설정 파일을 [편집](/index.php/Textedit "Textedit")하려면 [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "w:vi"), [vim](/index.php/Vim#Usage "Vim") 등을 사용하십시오.
 

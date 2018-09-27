@@ -74,18 +74,19 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | HL-L2300D | [brother-hll2300d](https://aur.archlinux.org/packages/brother-hll2300d/) |
 | HL-L2350DW | [brother-hll2350dw](https://aur.archlinux.org/packages/brother-hll2350dw/) |
 | HL-L2380DW | [brother-hll2380dw](https://aur.archlinux.org/packages/brother-hll2380dw/) |
-| HL-L2395DW | [brother-hll2395dw](https://aur.archlinux.org/packages/brother-hll2395dw/) | Use socket protocol (`socket://hostname-or-ip:9100`). |
-| HL-L5100DN | HP LaserJet Foomatic driver | This model will emulate a HP LaserJet. `lpd://hostname-or-ip/BINARY_P1` |
+| HL-L2395DW | [brother-hll2395dw](https://aur.archlinux.org/packages/brother-hll2395dw/) | Use the `socket` protocol as described in [#Network printing](#Network_printing) |
+| HL-L5100DN | HP LaserJet Foomatic driver | This model will emulate a HP LaserJet. Use the `lpd` protocol as described in [#Network printing](#Network_printing). |
 | MFC-420CN | [brother-mfc-420cn](https://aur.archlinux.org/packages/brother-mfc-420cn/) |
 | MFC-440CN | [brother-mfc-440cn](https://aur.archlinux.org/packages/brother-mfc-440cn/) |
 | MFC-7360N | [brother-mfc7360n](https://aur.archlinux.org/packages/brother-mfc7360n/) |
+| MFC-7460DN | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Use the *Generic PCL 6 Printer wide margin - CUPS+Gutenprint* driver, with address `ipp://hostname-or-ip/pcl_p1`. |
 | MFC-7840W | [brother-mfc-7840w](https://aur.archlinux.org/packages/brother-mfc-7840w/) |
 | MFC-9320CW | Install Brother's driver. |
 | MFC-9332CDW | [brother-mfc-9332cdw](https://aur.archlinux.org/packages/brother-mfc-9332cdw/) |
 | MFC-9840CDW | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or Brother's driver. This printer also works with the generic PCL-6 driver from the [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) package. Use **pcl_p1** for the printer's address when using the PCL-6 driver. |
 | MFC-J470DW | [brother-mfc-j470dw](https://aur.archlinux.org/packages/brother-mfc-j470dw/) |
 | MFC-J4710DW | [brother-mfc-j4710dw](https://aur.archlinux.org/packages/brother-mfc-j4710dw/) |
-| MFC-J480DW | [brother-mfc-j480dw](https://aur.archlinux.org/packages/brother-mfc-j480dw/) | Use `ipp://` described below. |
+| MFC-J480DW | [brother-mfc-j480dw](https://aur.archlinux.org/packages/brother-mfc-j480dw/) | Use the `ipp` protocol as described in [#Network printing](#Network_printing). |
 | MFC-J5520DW | [brother-mfc-j5520dw](https://aur.archlinux.org/packages/brother-mfc-j5520dw/) |
 | MFC-J5910DW | [brother-mfc-j5910dw](https://aur.archlinux.org/packages/brother-mfc-j5910dw/) |
 | MFC-J650DW | Install Brother's driver. |

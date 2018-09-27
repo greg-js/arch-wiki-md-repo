@@ -2,7 +2,7 @@
 | <small>1.</small> [About Arch](/index.php/Category:About_Arch_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:About Arch (العربية)")‎ <small>(9)</small> |
 | <small>1.1.</small> [ArchWiki](/index.php/Category:ArchWiki_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:ArchWiki (العربية)")‎ <small>(1)</small> |
 | <small>1.1.1.</small> [Help](/index.php/Category:Help_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Help (العربية)")‎ <small>(1)</small> |
-| <small>1.2.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Getting and installing Arch (العربية)")‎ <small>(3)</small> |
+| <small>1.2.</small> [Installation process](/index.php/Category:Installation_process_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Installation process (العربية)")‎ <small>(3)</small> |
 | <small>1.3.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Live Arch systems (العربية)")‎ <small>(2)</small> |
 | <small>2.</small> [Applications](/index.php/Category:Applications_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:Applications (العربية)")‎ <small>(0)</small> |
 | <small>2.1.</small> [File managers](/index.php/Category:File_managers_(%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9) "Category:File managers (العربية)")‎ <small>(6)</small> |

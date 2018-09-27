@@ -1,15 +1,18 @@
+**Estado de la traducción:** este artículo es una versión traducida de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). Fecha de la última traducción/revisión: **2018-09-26**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=543767).
+
 Artículos relacionados
 
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
-*   [Master Boot Record (Español)](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)")
-*   [GUID Partition Table (Español)](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)")
-*   [Unified Extensible Firmware Interface (Español)](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)")
-*   [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)")
-*   [systemd (Español)](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)")
-*   [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)")
-*   [Autostarting (Español)](/index.php/Autostarting_(Espa%C3%B1ol) "Autostarting (Español)")
+*   [Gestores de arranque](/index.php/Boot_loaders "Boot loaders")
+*   [Master Boot Record](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)")
+*   [GUID Partition Table](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)")
+*   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)")
+*   [mkinitcpio](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)")
+*   [init](/index.php/Init "Init")
+*   [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)")
+*   [fstab](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)")
+*   [Autostarting](/index.php/Autostarting_(Espa%C3%B1ol) "Autostarting (Español)")
 
-Para arrancar Arch Linux, un [gestor de arranque](/index.php/Boot_loaders "Boot loaders") capaz de iniciar Linux, como [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") o [Syslinux](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)"), debe estar instalado en el [Master Boot Record](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)") o la [GUID Partition Table](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)"). El gestor de arranque es el responsable de cargar el kernel y el [ramdisk inicial](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") antes de iniciarse el proceso de arranque. El proceso es bastante diferente según se trate de un sistema [BIOS](https://en.wikipedia.org/wiki/es:BIOS "wikipedia:es:BIOS") o de [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)"), cuyos detalles se describen en esta página o en las enlazadas.
+Para iniciar Arch Linux, un [gestor de arranque](/index.php/Boot_loaders "Boot loaders") capaz de iniciar Linux como [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") o [Syslinux](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)"), debe instalarse en el [Master Boot Record](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)") o en la [GUID Partition Table](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)"). El gestor de arranque es el responsable de cargar el kernel y el [disco ram inicial](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") antes de iniciar el proceso de arranque. El proceso es bastante diferente para los sistemas [BIOS](https://en.wikipedia.org/wiki/es:BIOS "wikipedia:es:BIOS") y [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)"), cuyos detalles se describen en esta página o en las enlazadas.
 
 ## Contents
 
@@ -19,15 +22,18 @@ Para arrancar Arch Linux, un [gestor de arranque](/index.php/Boot_loaders "Boot 
 *   [2 Procesos de arranque](#Procesos_de_arranque)
     *   [2.1 Bajo BIOS](#Bajo_BIOS)
     *   [2.2 Bajo UEFI](#Bajo_UEFI)
-*   [3 Kernel](#Kernel)
-*   [4 initramfs](#initramfs)
-*   [5 Fase init](#Fase_init)
-*   [6 Getty](#Getty)
-*   [7 Gestor de pantallas](#Gestor_de_pantallas)
-*   [8 Login](#Login)
-*   [9 Shell](#Shell)
-*   [10 xinit](#xinit)
-*   [11 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [3 Gestor de arranque](#Gestor_de_arranque)
+    *   [3.1 Comparación de características](#Comparaci.C3.B3n_de_caracter.C3.ADsticas)
+    *   [3.2 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [4 Kernel](#Kernel)
+*   [5 initramfs](#initramfs)
+*   [6 Fase init](#Fase_init)
+*   [7 Getty](#Getty)
+*   [8 Gestor de pantallas](#Gestor_de_pantallas)
+*   [9 Login](#Login)
+*   [10 Shell](#Shell)
+*   [11 xinit](#xinit)
+*   [12 Véase también](#V.C3.A9ase_tambi.C3.A9n_2)
 
 ## Tipos de firmware
 
@@ -61,6 +67,37 @@ Un firmware EFI x86_64 no incluye el soporte para lanzar aplicaciones de 32-bit 
 ### Bajo UEFI
 
 Véase la página principal: [Proceso de arranque bajo UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#Proceso_de_arranque_bajo_UEFI "Unified Extensible Firmware Interface (Español)") .
+
+## Gestor de arranque
+
+El [gestor de arranque](/index.php/Boot_loader_(Espa%C3%B1ol) "Boot loader (Español)") es la primera pieza de software iniciada por [BIOS](https://en.wikipedia.org/wiki/BIOS deseados, y el [disco RAM inicial](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") en función de los archivos de configuración.
+
+**Nota:** La carga de las actualizaciones de [microcódigo](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)") requiere unos ajustes en la configuración del gestor de arranque. [[1]](https://www.archlinux.org/news/changes-to-intel-microcodeupdates/)
+
+### Comparación de características
+
+**Nota:**
+
+*   Los gestores de arranque solo necesitan soporte del sistema de archivos en el que residen el kernel e initramfs (el sistema de archivos en el que se encuentra `/boot`).
+*   Como GPT es parte de la especificación UEFI, todos los gestores de arranque UEFI soportan discos GPT. Es posible usar GPT en sistemas BIOS mediante el "arranque híbrido" con [MBR híbrido](https://www.rodsbooks.com/gdisk/hybrid.html), o el nuevo protocolo [GPT-only](http://repo.or.cz/syslinux.git/blob/HEAD:/doc/gpt.txt). Sin embargo, este protocolo puede causar problemas con ciertas implementaciones de BIOS; consulte [rodsbooks](http://www.rodsbooks.com/gdisk/bios.html#bios) para más detalles.
+*   El cifrado mencionado en la compatibilidad del sistema de archivos es un [cifrado a nivel de sistema de archivos](https://en.wikipedia.org/wiki/Filesystem-level_encryption "wikipedia:Filesystem-level encryption"), no tiene relación con el [cifrado a nivel de bloque](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)").
+
+| Nombre | Firmware | Multi-arranque | [Sistemas de archivos](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)") | Notas |
+| BIOS | [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)") | [Btrfs](/index.php/Btrfs "Btrfs") | [ext4](/index.php/Ext4_(Espa%C3%B1ol) "Ext4 (Español)") | ReiserFS v3 | [VFAT](/index.php/VFAT "VFAT") | [XFS](/index.php/XFS "XFS") |
+| [EFISTUB](/index.php/EFISTUB_(Espa%C3%B1ol) "EFISTUB (Español)") | – | Si | – | – | – | – | Solo ESP | – | Kernel convertido en ejecutable EFI para ser iniciado directamente desde el firmware [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)") u otro gestor de arranque. |
+| [Clover](/index.php/Clover "Clover") | Emula UEFI | Si | Si | No | Sin cifrado | No | Si | No | Bifurcación de rEFIt modificada para ejecutar [macOS en hardware que no es de Apple](https://en.wikipedia.org/wiki/es:Hackintosh "wikipedia:es:Hackintosh"). |
+| [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") | Si | Si | Si | Sin compresión zstd | Si | Si | Si | Si | En la configuración de BIOS/GPT requiere una [partición de arranque BIOS](/index.php/BIOS_boot_partition "BIOS boot partition").
+Soporta RAID, LUKS1 y LVM (pero no volúmenes aprovisionados ligeros). |
+| [rEFInd](/index.php/REFInd "REFInd") | No | Si | Si | Sin: cifrado, compresión zstd | Sin cifrado | Sin características *tail-packing* | Si | No | Soporta autodetección de kernel y parámetros sin configuración explícita. |
+| [Syslinux](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)") | Si | [Parcial](/index.php/Syslinux_(Espa%C3%B1ol)#Limitaciones_de_Syslinux_en_la_modalidad_UEFI "Syslinux (Español)") | [Parcial](/index.php/Syslinux_(Espa%C3%B1ol)#Chainloading "Syslinux (Español)") | Sin: volúmenes multi-dispositivo, compresión, cifrado | Sin cifrado | No | Si | v4 en [MBR](/index.php/Partitioning_(Espa%C3%B1ol)#Master_Boot_Record "Partitioning (Español)") solo | No admite ciertas características de los [sistemas de archivos](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)") [[2]](http://www.syslinux.org/wiki/index.php?title=Filesystem) |
+| [systemd-boot](/index.php/Systemd-boot_(Espa%C3%B1ol) "Systemd-boot (Español)") | No | Si | Si | No | No | No | Solo ESP | No | No se pueden ejecutar binarios desde particiones que no sean [ESP](/index.php/EFI_system_partition "EFI system partition"). |
+| [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") | Sin GPT | No | Si | No | No | Si | Si | Solo v4 | [Descontinuado](https://www.gnu.org/software/grub/grub-legacy.html) a favor de [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)"). |
+| [LILO](/index.php/LILO_(Espa%C3%B1ol) "LILO (Español)") | Sin GPT | No | Si | No | Sin cifrado | Si | Si | Solo MBR [[3]](http://xfs.org/index.php/XFS_FAQ#Q:_Does_LILO_work_with_XFS.3F) | [Descontinuado](http://web.archive.org/web/20180323163248/http://lilo.alioth.debian.org/) debido a sus limitaciones (por ejemplo, con Btrfs, GPT, RAID). |
+
+### Véase también
+
+*   [Rod Smith - Administrando EFI Boot Loaders para Linux](http://www.rodsbooks.com/efi-bootloaders/)
+*   [Comparación de administradores de arranque](https://en.wikipedia.org/wiki/Comparison_of_boot_loaders "wikipedia:Comparison of boot loaders")
 
 ## Kernel
 

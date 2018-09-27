@@ -74,6 +74,7 @@ If the output contains more than the first line of column names, you need to dis
 Modify the [resolv.conf](/index.php/Resolv.conf "Resolv.conf") file and replace the current set of resolver addresses with the address for *localhost* and options [[3]](https://github.com/jedisct1/dnscrypt-proxy/wiki/Installation-linux#step-4-change-the-system-dns-settings):
 
 ```
+nameserver ::1
 nameserver 127.0.0.1
 options edns0 single-request-reopen
 

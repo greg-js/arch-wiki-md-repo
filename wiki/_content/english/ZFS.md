@@ -63,6 +63,7 @@ As a result:
         *   [7.6.1 Unexported pool](#Unexported_pool)
         *   [7.6.2 Incorrect hostid](#Incorrect_hostid)
     *   [7.7 Devices have different sector alignment](#Devices_have_different_sector_alignment)
+    *   [7.8 Pool resilvering stuck/restarting/slow?](#Pool_resilvering_stuck.2Frestarting.2Fslow.3F)
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Embed the archzfs packages into an archiso](#Embed_the_archzfs_packages_into_an_archiso)
     *   [8.2 Encryption in ZFS using dm-crypt](#Encryption_in_ZFS_using_dm-crypt)
@@ -901,6 +902,10 @@ config:
 
 errors: No known data errors
 ```
+
+### Pool resilvering stuck/restarting/slow?
+
+According to the ZFSonLinux github it's a known issue since 2012 with ZFS-ZED which causes the resilvering process to constantly restart, sometimes get stuck and be generally slow for some hardware. The simplest mitigation is to stop zfs-zed.service until the resilver completes
 
 ## Tips and tricks
 

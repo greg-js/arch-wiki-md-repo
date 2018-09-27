@@ -50,6 +50,7 @@ In `/etc/php/php.ini`, enable the following modules:
 ```
 extension=curl
 extension=iconv
+extension=mysqli # for MySQL
 extension=pdo_mysql # for MySQL
 extension=pdo_pgsql # for PostgreSQL
 extension=pgsql # for legacy PostgreSQL plugins

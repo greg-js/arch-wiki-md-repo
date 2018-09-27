@@ -2,7 +2,7 @@ Este artículo describe la instalación y configuración de ciertos dispositivos
 
 # Instalación de Archlinux
 
-No se encontró ningún problema durante la instalación de Archlinux, puede instalarlo desde una **llave USB** o un **CD** normalmente y sin mucho trabajo. Para ver como crear una llave USB para la instalación vea: [USB flash installation media (Español)](/index.php/USB_flash_installation_media_(Espa%C3%B1ol) "USB flash installation media (Español)"), para más información de como crear soportes de instalación y/o simplemente para más información sobre la instalación de Archlinux lea la categoría: [Getting and installing Arch (Español)](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch").
+No se encontró ningún problema durante la instalación de Archlinux, puede instalarlo desde una **llave USB** o un **CD** normalmente y sin mucho trabajo. Para ver como crear una llave USB para la instalación vea: [USB flash installation media (Español)](/index.php/USB_flash_installation_media_(Espa%C3%B1ol) "USB flash installation media (Español)"), para más información de como crear soportes de instalación y/o simplemente para más información sobre la instalación de Archlinux lea la página: [Getting and installing Arch (Español)](/index.php/Getting_and_installing_Arch_(Espa%C3%B1ol) "Getting and installing Arch (Español)").
 
 ## Tabla de dispositivos
 

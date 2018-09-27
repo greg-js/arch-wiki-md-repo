@@ -53,7 +53,7 @@ Choose the option *Create Factory Default Backup*, select the partition Windows 
 
 ### Booting
 
-The Acer E3-111 does not have an optical drive. See [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") for alternative methods.
+The Acer E3-111 does not have an optical drive. See [Getting and installing Arch](/index.php/Getting_and_installing_Arch "Getting and installing Arch") for alternative methods.
 
 Both [UEFI](/index.php/UEFI "UEFI") and Legacy (BIOS) boot are supported. To switch modes, press `F2` at the boot splash screen to enter the EFI setup, then select the *Boot* tab. Alternatively, access the EFI setup by [rebooting in Windows](http://acer-au.custhelp.com/app/answers/detail/a_id/32048/~/accessing-uefi-in-windows-8.1).
 

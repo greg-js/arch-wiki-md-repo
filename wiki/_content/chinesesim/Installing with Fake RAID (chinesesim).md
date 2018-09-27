@@ -1,3 +1,8 @@
+相关文章
+
+*   [Installing with Software RAID or LVM](/index.php/Installing_with_Software_RAID_or_LVM "Installing with Software RAID or LVM")
+*   [Convert a single drive system to RAID](/index.php/Convert_a_single_drive_system_to_RAID "Convert a single drive system to RAID")
+
 本指南的目的是使用由板上BIOS的RAID控制器所生成的RAID，从而使得GRUB可以从RAID**内**的Linux和Windows的分区启动。当使用所谓的"fake RAID"或"host RAID"时,硬盘是`/dev/mapper/chipsetName_randomName`而不是`/dev/sdX`.
 
 ## Contents

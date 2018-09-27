@@ -1745,7 +1745,7 @@ See also [Wikipedia:List of SIP software#Servers](https://en.wikipedia.org/wiki/
 
 *   **Nextcloud Talk** — Video- and audio-conferencing app for Nextcloud.
 
-	[https://github.com/nextcloud/spreed](https://github.com/nextcloud/spreed) || [nextcloud-app-spreed](https://aur.archlinux.org/packages/nextcloud-app-spreed/)
+	[https://github.com/nextcloud/spreed](https://github.com/nextcloud/spreed) || [nextcloud-app-spreed](https://www.archlinux.org/packages/?name=nextcloud-app-spreed)
 
 *   **Rocket.Chat** — Web chat server, developed in JavaScript, using the Meteor fullstack framework.
 

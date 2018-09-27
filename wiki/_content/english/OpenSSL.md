@@ -186,7 +186,7 @@ If you want to communicate securely with a server for the first time, you need t
 
 ### Creating certificate signing requests
 
-To obtain a certificate from a certificate authority, you need to create a [Certificate Signing Request](https://en.wikipedia.org/wiki/Certificate_signing_request "wikipedia:Certificate signing request") (CSR) and sign it with a previously [generated private key](#Generating_private_keys):
+To obtain a certificate from a certificate authority, you need to create a [Certificate Signing Request](https://en.wikipedia.org/wiki/Certificate_signing_request "wikipedia:Certificate signing request") (CSR) and sign it with a previously generated [private key](#Generating_private_keys):
 
 ```
 $ openssl req -new -sha256 -key private/key.pem -out req.csr

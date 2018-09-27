@@ -66,7 +66,7 @@ $ gpg --recv-keys <fingerprint-from-previous-step>
 
 ```
 
-Note the signature was generated for the tar archive (i.e. extension `.tar`), not the compressed `.tar.xz` file that you have downloaded. You need to decompress the latter without untarring it. Verify that you have [core/xz](https://www.archlinux.org/packages/?name=core%2Fxz) installed, then you can proceed like so:
+Note the signature was generated for the tar archive (i.e. extension `.tar`), not the compressed `.tar.xz` file that you have downloaded. You need to decompress the latter without untarring it. Verify that you have [xz](https://www.archlinux.org/packages/?name=xz) installed, then you can proceed like so:
 
 ```
 $ unxz linux-4.8.6.tar.xz

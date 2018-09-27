@@ -1,31 +1,26 @@
-[Sendmail](https://en.wikipedia.org/wiki/Sendmail "wikipedia:Sendmail") is the classic SMTP server from the Unix world.
+[Sendmail](https://en.wikipedia.org/wiki/Sendmail "wikipedia:Sendmail") is the classic [mail transfer agent](/index.php/Mail_transfer_agent "Mail transfer agent") from the Unix world. This article builds upon [Mail server](/index.php/Mail_server "Mail server").
 
-The goal of this article is to setup Sendmail for local user accounts, without using mysql or other database, and allowing also the creation of *mail-only accounts*.
+The goal of this article is to setup Sendmail for local user accounts, without using MySQL or other database, and allowing also the creation of *mail-only accounts*.
 
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 DNS Records](#DNS_Records)
-*   [3 Adding users](#Adding_users)
-*   [4 Configuration](#Configuration)
-    *   [4.1 Create TLS certs](#Create_TLS_certs)
-    *   [4.2 sendmail.cf](#sendmail.cf)
-    *   [4.3 local-host-names](#local-host-names)
-    *   [4.4 access.db](#access.db)
-    *   [4.5 aliases.db](#aliases.db)
-    *   [4.6 virtusertable.db](#virtusertable.db)
-    *   [4.7 Start on boot](#Start_on_boot)
-    *   [4.8 SASL authentication](#SASL_authentication)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Forward all the mail of one domain to certain user](#Forward_all_the_mail_of_one_domain_to_certain_user)
+*   [2 Adding users](#Adding_users)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Obtain TLS certificate](#Obtain_TLS_certificate)
+    *   [3.2 sendmail.cf](#sendmail.cf)
+    *   [3.3 local-host-names](#local-host-names)
+    *   [3.4 access.db](#access.db)
+    *   [3.5 aliases.db](#aliases.db)
+    *   [3.6 virtusertable.db](#virtusertable.db)
+    *   [3.7 Start on boot](#Start_on_boot)
+    *   [3.8 SASL authentication](#SASL_authentication)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Forward all the mail of one domain to certain user](#Forward_all_the_mail_of_one_domain_to_certain_user)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [sendmail](https://aur.archlinux.org/packages/sendmail/), [procmail](https://www.archlinux.org/packages/?name=procmail) and [m4](https://www.archlinux.org/packages/?name=m4) packages.
-
-## DNS Records
-
-You should have a domain, and edit your MX records to point your server. Remember some servers have problems with MX records pointing to CNAMEs, so your MX should point to an A record instead.
 
 ## Adding users
 
@@ -38,7 +33,7 @@ Create a [Linux user](/index.php/Users_and_groups "Users and groups") for each u
 
 ## Configuration
 
-### Create TLS certs
+### Obtain TLS certificate
 
 **Warning:** If you deploy [TLS](https://en.wikipedia.org/wiki/TLS "wikipedia:TLS"), be sure to follow [weakdh.org's guide](https://weakdh.org/sysadmin.html) and [disable SSLv3](http://disablessl3.com/) to prevent vulnerabilities. For more information see [Server-side TLS](/index.php/Server-side_TLS "Server-side TLS").
 

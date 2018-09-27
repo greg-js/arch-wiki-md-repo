@@ -80,7 +80,7 @@ Some boot loaders (e.g. [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy"), [LI
 
 ## Installation
 
-Obtain the latest installation media and boot the Arch Linux installer as outlined in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch").
+Obtain the latest installation media and boot the Arch Linux installer as outlined in [Getting and installing Arch](/index.php/Getting_and_installing_Arch "Getting and installing Arch").
 
 #### Load kernel modules
 

@@ -33,7 +33,7 @@ Arch Linux puede ejecutarse en cualquier máquina compatible [x86_64](https://en
 
 ## Preinstalación
 
-Descargue e inicie el soporte de instalación como se explica en la categoría [obtener e instalar Arch](/index.php/Category:Getting_and_installing_Arch_(Espa%C3%B1ol) "Category:Getting and installing Arch (Español)"). Se iniciará sesión en la primera [consola virtual](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") como superusuario *(root)*, y se le presentará un intérprete de comandos [Zsh](/index.php/Zsh "Zsh").
+Descargue e inicie el soporte de instalación como se explica en el artículo [obtener e instalar Arch](/index.php/Getting_and_installing_Arch_(Espa%C3%B1ol) "Getting and installing Arch (Español)"). Se iniciará sesión en la primera [consola virtual](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") como superusuario *(root)*, y se le presentará un intérprete de comandos [Zsh](/index.php/Zsh "Zsh").
 
 Para cambiar a una consola diferente —por ejemplo, para ver esta guía con [ELinks](/index.php/ELinks "ELinks") junto con la instalación— utilice el [atajo](/index.php/Keyboard_shortcuts "Keyboard shortcuts") `Alt+*flecha*`. Para [editar](/index.php/Textedit "Textedit") archivos de configuración, dispone de [nano](/index.php/Nano_(Espa%C3%B1ol)#Uso "Nano (Español)"), [vi](https://en.wikipedia.org/wiki/es:vi "wikipedia:es:vi") y [vim](/index.php/Vim_(Espa%C3%B1ol)#Gu.C3.ADa_r.C3.A1pida_de_VIM "Vim (Español)").
 

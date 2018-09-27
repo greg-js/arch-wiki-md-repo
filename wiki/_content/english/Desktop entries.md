@@ -189,7 +189,7 @@ If the developers of an application do not include icons in their source package
 The [freedesktop.org standard](http://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html) specifies in which order and directories programs should look for icons:
 
 1.  `$HOME/.icons` (for backwards compatibility)
-2.  `[$XDG_DATA_DIRS](/index.php/XDG_Base_Directory#System_directories "XDG Base Directory")/icons`
+2.  `$XDG_DATA_DIRS/icons`
 3.  `/usr/share/pixmaps`
 
 ## Tools

@@ -1,6 +1,6 @@
-Virtual reality is the process of simulating an environment for a user, using a variety of peripherals, head mounted displays or CAVEs, and trackers. Instead of showing you a static viewpoint from a screen, it renders your viewpoint relative to where you are standing, on a head-attached or projected surface, to give an effect identical to your own eyes.
+[Virtual reality](https://en.wikipedia.org/wiki/Virtual_reality "wikipedia:Virtual reality") is the process of simulating an environment for a user, using a variety of peripherals, head mounted displays or [CAVEs](https://en.wikipedia.org/wiki/Cave_automatic_virtual_environment "wikipedia:Cave automatic virtual environment"), and trackers. Instead of showing you a static viewpoint from a screen, it renders your viewpoint relative to where you are standing, on a head-attached or projected surface, to give an effect identical to your own eyes.
 
-A number of peripherals have been released or are about to be released recently which have brought affordable, extremely immersive virtual reality to everyone. Most of these peripherals have full or partial Linux support, and many have AUR packages.
+A number of peripherals have been released or are about to be released recently which have brought affordable, extremely immersive virtual reality to everyone. Most of these peripherals have full or partial Linux support, and many have [AUR](/index.php/AUR "AUR") packages.
 
 ## Contents
 

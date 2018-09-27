@@ -269,7 +269,7 @@ $ ln -s /usr/share/themes/Adwaita-dark ~/.themes/Adwaita
 
 ```
 
-To select new themes or icons first move them to `~/.local/share/themes/` or `~/.local/share/icons/` then use GNOME Tweaks or the GSettings commands below:
+To select new themes (move them to the appropriate directory and) use GNOME Tweaks or the GSettings commands below:
 
 For the GTK+ theme:
 
@@ -287,7 +287,7 @@ $ gsettings set org.gnome.desktop.interface icon-theme *theme-name*
 
 **Note:** The window manager theme follows the GTK+ theme. Using `org.gnome.desktop.wm.preferences theme` is deprecated and ignored.
 
-See [GTK+#Themes](/index.php/GTK%2B#Themes "GTK+").
+See [GTK+#Themes](/index.php/GTK%2B#Themes "GTK+") and [Icons#Manually](/index.php/Icons#Manually "Icons").
 
 ##### Titlebar height
 

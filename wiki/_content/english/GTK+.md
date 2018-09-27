@@ -80,7 +80,7 @@ $ GTK_THEME=Adwaita:dark gnome-calculator
 
 	will launch GNOME Calculator with the dark variant of Adwaita theme.
 
-More themes can be installed from the official repositories or the [AUR](/index.php/AUR "AUR").
+More themes can be installed from the official repositories or the [AUR](/index.php/AUR "AUR"). Manually extracted themes go in `~/.themes/` or `~/.local/share/themes/` directory.
 
 **GTK+ 2 and GTK+ 3.20 or newer are supported:**
 
@@ -150,7 +150,7 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 	[https://cgit.kde.org/qtcurve.git](https://cgit.kde.org/qtcurve.git) || [qtcurve-gtk2](https://www.archlinux.org/packages/?name=qtcurve-gtk2)
 
-There are a number of additional GTK+ themes in the [AUR](/index.php/AUR "AUR"): [search for gtk-theme](https://aur.archlinux.org/packages.php?K=gtk-theme), [search for gtk2-theme](https://aur.archlinux.org/packages.php?K=gtk2-theme).
+There are a number of additional GTK+ themes in the AUR, example: [search for gtk-theme](https://aur.archlinux.org/packages.php?K=gtk-theme) or [search for gtk2-theme](https://aur.archlinux.org/packages.php?K=gtk2-theme).
 
 **Note:** Because GTK+ 3 changes rapidly, GTK+ 3 themes often require re-working after a GTK+ 3 release. For this reason, not all GTK+ 3 themes may look as intended when used with the latest GTK+ 3 version.
 

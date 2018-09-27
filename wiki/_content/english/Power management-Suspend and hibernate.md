@@ -185,6 +185,28 @@ The relevant devices are `EHC1`, `EHC2` and `XHC` (for USB 3.0). To toggle their
 
 This should result in suspension working again. However, this settings are only temporary and would have to be set at every reboot. To automate this take a look at [systemd#Writing unit files](/index.php/Systemd#Writing_unit_files "Systemd"). See [BBS thread](https://bbs.archlinux.org/viewtopic.php?pid=1575617#p1575617) for a possible solution and more information.
 
+If you use `nouveau` driver, the reason of instantaneous wakeup may be a bug in that driver, which sometimes prevents graphics card from suspension. One possible workaround is unloading `nouveau` kernel module right before going to sleep and loading it back after wakeup. To do this, create the following script:
+
+ `/usr/lib/systemd/system-sleep/10-nouveau.sh` 
+```
+#!/bin/bash
+
+case $1/$2 in
+  pre/*)
+    # echo "Going to $2..."
+    /usr/bin/echo "0" > /sys/class/vtconsole/vtcon1/bind
+    /usr/bin/rmmod nouveau
+    ;;
+  post/*)
+    # echo "Waking up from $2..."
+    /usr/bin/modprobe nouveau
+    /usr/bin/echo "1" > /sys/class/vtconsole/vtcon1/bind
+    ;;
+esac
+```
+
+The first echo line unbinds nouveaufb from the framebuffer console driver (fbcon). Usually it is `vtcon1` as in this example, but it may also be another `vtcon*`. See `/sys/class/vtconsole/vtcon*/name` which one of them is a "frame buffer device" [[4]](https://nouveau.freedesktop.org/wiki/KernelModeSetting/).
+
 ### System does not power off when hibernating
 
 When you hibernate your system, the system should power off (after saving the state on the disk). Sometimes, you might see the power LED is still glowing. If that happens, it might be instructive to set the `HibernateMode` to `shutdown` in [sleep.conf.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sleep.conf.d.5):

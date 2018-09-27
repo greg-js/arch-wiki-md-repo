@@ -39,9 +39,9 @@ Arch Linux 可在任何 RAM 不小於 512MB 的 [x86_64](https://en.wikipedia.or
 
 ## Pre-installation 安裝前的準備
 
-Download and boot the installation medium as explained in [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). You will be logged in on the first [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt.
+Download and boot the installation medium as explained in [Getting and installing Arch](/index.php/Getting_and_installing_Arch "Getting and installing Arch"). You will be logged in on the first [virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") as the root user, and presented with a [Zsh](/index.php/Zsh "Zsh") shell prompt.
 
-根據 [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") 中所述，下載並引導安裝媒介。啟動完成後將會自動以 root 身份登錄虛擬控制台（[virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console")）並進入 [Zsh](/index.php/Zsh "Zsh") 命令解譯器。
+根據 [Getting and installing Arch](/index.php/Getting_and_installing_Arch "Getting and installing Arch") 中所述，下載並引導安裝媒介。啟動完成後將會自動以 root 身份登錄虛擬控制台（[virtual console](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console")）並進入 [Zsh](/index.php/Zsh "Zsh") 命令解譯器。
 
 To switch to a different console—for example, to view this guide with [ELinks](/index.php/ELinks "ELinks") alongside the installation—use the `Alt+*arrow*` [shortcut](/index.php/Keyboard_shortcuts "Keyboard shortcuts"). To [edit](/index.php/Textedit "Textedit") configuration files, [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") and [vim](/index.php/Vim#Usage "Vim") are available.
 

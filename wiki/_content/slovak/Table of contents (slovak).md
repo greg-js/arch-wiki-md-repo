@@ -1,7 +1,7 @@
 | [Slovenský](/index.php/Category:Slovensk%C3%BD "Category:Slovenský") <small>(14)</small> |
 | <small>1.</small> [About Arch](/index.php/Category:About_Arch_(Slovensk%C3%BD) "Category:About Arch (Slovenský)") <small>(1)</small> |
 | <small>1.1.</small> [ArchWiki](/index.php/Category:ArchWiki_(Slovensk%C3%BD) "Category:ArchWiki (Slovenský)") <small>(2)</small> |
-| <small>1.2.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(Slovensk%C3%BD) "Category:Getting and installing Arch (Slovenský)") <small>(2)</small> |
+| <small>1.2.</small> [Installation process](/index.php/Category:Installation_process_(Slovensk%C3%BD) "Category:Installation process (Slovenský)") <small>(2)</small> |
 | <small>1.3.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems_(Slovensk%C3%BD) "Category:Live Arch systems (Slovenský)") <small>(1)</small> |
 | <small>2.</small> [Help](/index.php/Category:Help_(Slovensk%C3%BD) "Category:Help (Slovenský)") <small>(1)</small> |
 | <small>3.</small> [Networking](/index.php/Category:Networking_(Slovensk%C3%BD) "Category:Networking (Slovenský)") <small>(0)</small> |

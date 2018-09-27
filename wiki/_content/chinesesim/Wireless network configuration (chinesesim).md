@@ -213,7 +213,7 @@ WPA 或 WPA2 PSK 加密 | [ip](/index.php/Core_utilities_(%E7%AE%80%E4%BD%93%E4%
 
 **Note:**
 
-*   [安装介质](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")上提供了手工管理和 [netctl](https://www.archlinux.org/packages/?name=netctl) 管理的工具
+*   [安装介质](/index.php/Getting_and_installing_Arch "Getting and installing Arch")上提供了手工管理和 [netctl](https://www.archlinux.org/packages/?name=netctl) 管理的工具
 *   示例中使用网络接口 `wlan0` 和热点 `*your_essid*`。
 *   大部分命令需要以 [root 权限](/index.php/Users_and_groups "Users and groups")执行，否则会无输出就退出。
 

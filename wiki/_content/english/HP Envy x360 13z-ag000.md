@@ -12,7 +12,7 @@ The specs of my particular model are:
 | Bluetooth | Realtek RTL8822BE | **Working** | btusb |
 | Audio | **Working** | snd_hda_intel |
 | Touchpad | Synaptics | **Working** | synaptics |
-| Camera | Normal 1080p + IR 336x340 | **Untested** | uvcvideo |
+| Camera | Normal 1080p + IR 336x340 | **Working** | uvcvideo |
 | Sensors | STM Sensor hub | **Not Working** | On Windows used for orientation sensing and hard drive drop protection |
 | USB C | AMD xHCI Host Controller | **Not Working** | Data and DP working |
 

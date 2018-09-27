@@ -7,9 +7,9 @@ Related articles
 *   [SOGo](/index.php/SOGo "SOGo")
 *   [Virtual user mail system](/index.php/Virtual_user_mail_system "Virtual user mail system")
 
-This article describes how to set up a mail server suitable for personal or small office use.
+[Dovecot](http://www.dovecot.org/) is an open source [IMAP](https://en.wikipedia.org/wiki/IMAP "wikipedia:IMAP") and [POP3](https://en.wikipedia.org/wiki/POP3 "wikipedia:POP3") server for Linux/UNIX-like systems, written primarily with security in mind. Dovecot primarily aims to be a lightweight, fast and easy to set up open source mailserver. For more detailed information, please see the official [Dovecot Wiki](http://wiki2.dovecot.org/).
 
-[Dovecot](http://www.dovecot.org/) is an open source [IMAP](https://en.wikipedia.org/wiki/IMAP "wikipedia:IMAP") and [POP3](https://en.wikipedia.org/wiki/POP3 "wikipedia:POP3") server for Linux/UNIX-like systems, written primarily with security in mind. Developed by Timo Sirainen, Dovecot was first released in July 2002\. Dovecot primarily aims to be a lightweight, fast and easy to set up open source mailserver. For more detailed information, please see the official [Dovecot Wiki](http://wiki2.dovecot.org/).
+This article describes how to set up Dovecot for personal or small office use.
 
 ## Contents
 
@@ -38,7 +38,7 @@ This article describes how to set up a mail server suitable for personal or smal
 
 *   Each mail account served by Dovecot, has a local user account defined on the server.
 *   The server uses [PAM](/index.php/PAM "PAM") to authenticate the user against the local user database (/etc/passwd).
-*   [SSL](https://en.wikipedia.org/wiki/Transport_Layer_Security "wikipedia:Transport Layer Security") is used to encrypt the authentication password.
+*   [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security "wikipedia:Transport Layer Security") is used to encrypt the authentication password.
 *   The common [Maildir](https://en.wikipedia.org/wiki/Maildir "wikipedia:Maildir") format is used to store the mail in the user's home directory.
 *   A [MDA](https://en.wikipedia.org/wiki/Mail_delivery_agent "wikipedia:Mail delivery agent") has already been set up to deliver mail to the local users.
 

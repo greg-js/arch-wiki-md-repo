@@ -12,9 +12,9 @@
 | <small>5.</small> [Daemons and system services](/index.php/Category:Daemons_and_system_services_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Daemons and system services (Ελληνικά)") <small>(2)</small> |
 | <small>6.</small> [Development](/index.php/Category:Development_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Development (Ελληνικά)") <small>(1)</small> |
 | <small>7.</small> [General](/index.php/Category:General_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:General (Ελληνικά)") <small>(1)</small> |
-| <small>8.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Getting and installing Arch (Ελληνικά)") <small>(3)</small> |
-| <small>9.</small> [Hardware](/index.php/Category:Hardware_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Hardware (Ελληνικά)") <small>(0)</small> |
-| <small>9.1.</small> [CPU](/index.php/Category:CPU_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:CPU (Ελληνικά)") <small>(1)</small> |
+| <small>8.</small> [Hardware](/index.php/Category:Hardware_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Hardware (Ελληνικά)") <small>(0)</small> |
+| <small>8.1.</small> [CPU](/index.php/Category:CPU_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:CPU (Ελληνικά)") <small>(1)</small> |
+| <small>9.</small> [Installation process](/index.php/Category:Installation_process_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Installation process (Ελληνικά)") <small>(3)</small> |
 | <small>10.</small> [Networking](/index.php/Category:Networking_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Networking (Ελληνικά)") <small>(1)</small> |
 | <small>10.1.</small> [Firewalls](/index.php/Category:Firewalls_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Firewalls (Ελληνικά)") <small>(1) (επίσης σε [Security](/index.php/Category:Security_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Security (Ελληνικά)"))</small> |
 | <small>10.2.</small> [Wireless networking](/index.php/Category:Wireless_networking_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Category:Wireless networking (Ελληνικά)") <small>(1)</small> |

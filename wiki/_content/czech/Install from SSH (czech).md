@@ -8,7 +8,7 @@ Tento článek má ukázat uživatelům, jak nainstalovat Arch vzdáleně prost�
 
 **Note:** : Tyto kroky vyžadují fyzický přístup k zařízení. Je zřejmé, že je-li fyzicky umístěno jinde, budou muset být koordinovány s jinou osobou.
 
-Nabootujte cílový počítač do živého prostředí Arch pomocí [Live CD/USB image](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"): uživatel bude přihlášen jako root.
+Nabootujte cílový počítač do živého prostředí Arch pomocí [Live CD/USB image](/index.php/Getting_and_installing_Arch "Getting and installing Arch"): uživatel bude přihlášen jako root.
 
 V tomto okamžiku nastavte síť na cílovém stroji, jak je například navrženo v [Installation guide#Connect to the Internet](/index.php/Installation_guide#Connect_to_the_Internet "Installation guide")
 

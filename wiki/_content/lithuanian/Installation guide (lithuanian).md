@@ -31,7 +31,7 @@ Arch Linux turėtų veikti bet kokioje [x86_64](https://en.wikipedia.org/wiki/X8
 
 ## Prieš diegimą
 
-Parsisiųskite ir paleiskite diegimo terpę kaip nurodyta [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). Jūs kaip root vartotojas būsite prijungti pirmoje [virtualioje konsolėje](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") ir pateksite į [Zsh](/index.php/Zsh "Zsh") apvalkalo eilutę.
+Parsisiųskite ir paleiskite diegimo terpę kaip nurodyta [Getting and installing Arch](/index.php/Getting_and_installing_Arch "Getting and installing Arch"). Jūs kaip root vartotojas būsite prijungti pirmoje [virtualioje konsolėje](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") ir pateksite į [Zsh](/index.php/Zsh "Zsh") apvalkalo eilutę.
 
 Jei norite pereiti į kitą konsole, pvz.: kad galėtumėte skaityti šį vadovą per [ELinks](/index.php/ELinks "ELinks") ir kartu diegti, naudokitės `Alt+*arrow*` [komanda](/index.php/Keyboard_shortcuts "Keyboard shortcuts"). Konfigūracijos failų [keitimui](/index.php/Textedit "Textedit") galite naudoti: [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") ar [vim](/index.php/Vim#Usage "Vim").
 

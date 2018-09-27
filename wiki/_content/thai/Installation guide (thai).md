@@ -1,4 +1,4 @@
-นี่คือเอกสารแนะนำการติดตั้ง [Arch Linux](/index.php/Arch_Linux_(%E0%B9%84%E0%B8%97%E0%B8%A2) "Arch Linux (ไทย)") โดยใช้ installation image อย่างเป็นทางการ ก่อนติดตั้ง เราแนะนำให้คุณอ่าน [คำถามที่พบบ่อย](/index.php/FAQ "FAQ") และถ้าคุณกำลังมองหาวิธีการติดตั้งแบบละเอียด ลองไปดูที่ [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
+นี่คือเอกสารแนะนำการติดตั้ง [Arch Linux](/index.php/Arch_Linux_(%E0%B9%84%E0%B8%97%E0%B8%A2) "Arch Linux (ไทย)") โดยใช้ installation image อย่างเป็นทางการ ก่อนติดตั้ง เราแนะนำให้คุณอ่าน [คำถามที่พบบ่อย](/index.php/FAQ "FAQ") และถ้าคุณกำลังมองหาวิธีการติดตั้งแบบละเอียด ลองไปดูที่ [Getting and installing Arch](/index.php/Getting_and_installing_Arch "Getting and installing Arch")
 
 คุณสามารถขอความช่วยเหลือจากวิกิหรืออ่าน [man page](/index.php/Man_page "Man page") ของโปรแกรมต่าง ๆ; ดูที่ [archlinux(7)](https://projects.archlinux.org/svntogit/packages.git/tree/filesystem/trunk/archlinux.7.txt) สำหรับภาพโดยรวมในการตั้งค่า และสำหรับความช่วยเหลือเชิงโต้ตอบ คุณสามารถใช้ [ช่อง IRC](/index.php/IRC_channel "IRC channel") และ [กระดานข่าว](https://bbs.archlinux.org/) ได้
 
@@ -21,7 +21,7 @@
 
 ## ก่อนเริ่มติดตั้ง
 
-ดาวน์โหลดและบู๊ตจากสื่อการติดตั้งตามวิธีในหน้า [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch") จากนั้นจึงกลับมาทำตามขั้นตอนในหน้านี้
+ดาวน์โหลดและบู๊ตจากสื่อการติดตั้งตามวิธีในหน้า [Getting and installing Arch](/index.php/Getting_and_installing_Arch "Getting and installing Arch") จากนั้นจึงกลับมาทำตามขั้นตอนในหน้านี้
 
 การติดตั้งจำเป็นต้องดึงแพคเกจมาจากอินเทอร์เน็ต ดังนั้นคุณต้องมีการเชื่อมต่ออินเทอร์เน็ตที่ใช้งานได้
 

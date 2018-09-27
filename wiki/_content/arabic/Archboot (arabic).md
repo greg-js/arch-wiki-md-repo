@@ -402,6 +402,4 @@ umount <chrootpath>/proc
 
 ```
 
-وقتا ممتعا! tpowa
-
-( مطور Archboot )
+وقتا ممتعا! tpowa ( مطور Archboot )

@@ -5,6 +5,7 @@
 *   [1 Installation](#Installation)
     *   [1.1 Autoboot at startup](#Autoboot_at_startup)
     *   [1.2 Running as Terminal Server (Xorg)](#Running_as_Terminal_Server_.28Xorg.29)
+        *   [1.2.1 Troubleshoting](#Troubleshoting)
     *   [1.3 Running with Vino (Gnome VNC-Server for root session)](#Running_with_Vino_.28Gnome_VNC-Server_for_root_session.29)
 *   [2 Usage](#Usage)
 *   [3 See also](#See_also)
@@ -24,6 +25,18 @@ The [xrdp](https://aur.archlinux.org/packages/xrdp/) package contains service fi
 Add `allowed_users=anybody` to `/etc/X11/Xwrapper.config` to allow anybody to start X
 
 Edit `~/.xinitrc` or `/etc/X11/xinit/xinitrc` to launch your DE.
+
+#### Troubleshoting
+
+If you encounter black box around mouse pointer create `~/.Xresources-xrdp` with line `Xcursor.core:1` and load it in `~/.xinitrc` like
+
+```
+xrdb ~/.Xresources-xrdp
+exec startlxde
+
+```
+
+You may need to install [xorg-xrdb](https://www.archlinux.org/packages/?name=xorg-xrdb).
 
 ### Running with Vino (Gnome VNC-Server for root session)
 

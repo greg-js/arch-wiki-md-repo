@@ -821,14 +821,7 @@ There have been issues with [kgpg](https://www.archlinux.org/packages/?name=kgpg
 
 For Wayland sessions, `gnome-session` sets `SSH_AUTH_SOCK` to the standard gnome-keyring socket, `$XDG_RUNTIME_DIR/keyring/ssh`. This overrides any value set in `~/.pam_environmment` or systemd unit files.
 
-To disable this behavior, set the `GSM_SKIP_AGENT_WORKAROUND` variable:
-
- `~/.pam_environment` 
-```
-SSH_AGENT_PID	DEFAULT=
-SSH_AUTH_SOCK	DEFAULT="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
-GSM_SKIP_SSH_AGENT_WORKAROUND	DEFAULT="true"
-```
+See GNOME Keyring wiki entry on how to disable this behavior. [GNOME/Keyring#Disable keyring daemon components](/index.php/GNOME/Keyring#Disable_keyring_daemon_components "GNOME/Keyring")
 
 ### mutt
 

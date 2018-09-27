@@ -1,3 +1,7 @@
+Related articles
+
+*   [Diskless System](/index.php/Diskless_System "Diskless System")
+
 **翻译状态：** 本文是英文页面 [PXE](/index.php/PXE "PXE") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2014-08-31，点击[这里](https://wiki.archlinux.org/index.php?title=PXE&diff=0&oldid=332953)可以查看翻译后英文页面的改动。
 
 [维基百科：预启动执行环境](https://en.wikipedia.org/wiki/Preboot_Execution_Environment "wikipedia:Preboot Execution Environment")：

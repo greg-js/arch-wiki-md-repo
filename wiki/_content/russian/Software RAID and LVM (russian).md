@@ -1,3 +1,10 @@
+Ссылки по теме
+
+*   [RAID](/index.php/RAID "RAID")
+*   [LVM (Русский)](/index.php/LVM_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "LVM (Русский)")
+*   [Installing with Fake RAID](/index.php/Installing_with_Fake_RAID "Installing with Fake RAID")
+*   [Convert a single drive system to RAID](/index.php/Convert_a_single_drive_system_to_RAID "Convert a single drive system to RAID")
+
 ## Оговорка
 
 Установка системы с RAID является сложным процессом. Все, что угодно может пойти не так. Вы можете сделать ошибку, я мог сделать ошибку, ошибка может быть где-то. В первую очередь, сделайте резервное копирование всех ваших данных. Убедитесь, что подключены только диски участвующие в установке. Вы были предупреждены!

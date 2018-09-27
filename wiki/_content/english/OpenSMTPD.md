@@ -4,7 +4,7 @@ Related articles
 *   [Postfix](/index.php/Postfix "Postfix")
 *   [Exim](/index.php/Exim "Exim")
 
-[OpenSMTPD](https://www.opensmtpd.org/) is a free SMTP server, developed as part of the OpenBSD project.
+[OpenSMTPD](https://www.opensmtpd.org/) is a free [mail transfer agent](/index.php/Mail_transfer_agent "Mail transfer agent"), developed as part of the OpenBSD project. This article builds upon [Mail server](/index.php/Mail_server "Mail server").
 
 ## Contents
 

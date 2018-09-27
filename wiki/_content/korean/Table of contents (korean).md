@@ -27,7 +27,7 @@
 | <small>11.1.1.</small> [Arch development](/index.php/Category:Arch_development_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Arch development (한국어)") <small>(0) (또한 에 [Development](/index.php/Category:Development_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Development (한국어)"))</small> |
 | <small>11.1.1.1.</small> [Package development](/index.php/Category:Package_development_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Package development (한국어)") <small>(1)</small> |
 | <small>11.1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:ArchWiki (한국어)") <small>(2)</small> |
-| <small>11.1.3.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Getting and installing Arch (한국어)") <small>(2)</small> |
+| <small>11.1.3.</small> [Installation process](/index.php/Category:Installation_process_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Installation process (한국어)") <small>(2)</small> |
 | <small>12.</small> [소프트웨어](/index.php/Category:Software_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Software (한국어)") <small>(0)</small> |
 | <small>12.1.</small> [패키지 관리](/index.php/Category:Package_management_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Package management (한국어)") <small>(3)</small> |
 | <small>12.2.</small> [유틸리티](/index.php/Category:Utilities_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Category:Utilities (한국어)") <small>(2)</small> |

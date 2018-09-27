@@ -61,7 +61,11 @@ upstream_recursive_servers:
 
 After selecting a resolver, modify the [resolv.conf](/index.php/Resolv.conf "Resolv.conf") file and replace the current set of resolver addresses with address for *localhost*:
 
- `/etc/resolv.conf`  `nameserver 127.0.0.1` 
+ `/etc/resolv.conf` 
+```
+nameserver ::1
+nameserver 127.0.0.1
+```
 
 Other programs may overwrite this setting; see [resolv.conf#Overwriting of /etc/resolv.conf](/index.php/Resolv.conf#Overwriting_of_.2Fetc.2Fresolv.conf "Resolv.conf") for details.
 

@@ -36,11 +36,12 @@ Related articles
     *   [5.1 Job for netctl@wlan(...).service failed](#Job_for_netctl.40wlan.28....29.service_failed)
     *   [5.2 dhcpcd: ipv4_addroute: File exists](#dhcpcd:_ipv4_addroute:_File_exists)
     *   [5.3 DHCP timeout issues](#DHCP_timeout_issues)
-    *   [5.4 Connection timeout issues](#Connection_timeout_issues)
-    *   [5.5 Problems with netctl-auto on resume](#Problems_with_netctl-auto_on_resume)
-    *   [5.6 netctl-auto does not automatically unblock a wireless card to use an interface](#netctl-auto_does_not_automatically_unblock_a_wireless_card_to_use_an_interface)
-    *   [5.7 RTNETLINK answers: File exists (with multiple NICs)](#RTNETLINK_answers:_File_exists_.28with_multiple_NICs.29)
-    *   [5.8 Problems with eduroam and other MSCHAPv2 connections](#Problems_with_eduroam_and_other_MSCHAPv2_connections)
+    *   [5.4 DHCP Troubleshooting](#DHCP_Troubleshooting)
+    *   [5.5 Connection timeout issues](#Connection_timeout_issues)
+    *   [5.6 Problems with netctl-auto on resume](#Problems_with_netctl-auto_on_resume)
+    *   [5.7 netctl-auto does not automatically unblock a wireless card to use an interface](#netctl-auto_does_not_automatically_unblock_a_wireless_card_to_use_an_interface)
+    *   [5.8 RTNETLINK answers: File exists (with multiple NICs)](#RTNETLINK_answers:_File_exists_.28with_multiple_NICs.29)
+    *   [5.9 Problems with eduroam and other MSCHAPv2 connections](#Problems_with_eduroam_and_other_MSCHAPv2_connections)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -503,6 +504,10 @@ On some systems dhcpcd in combination with netctl causes timeout issues on resum
 ### DHCP timeout issues
 
 If you are having timeout issues when requesting leases via DHCP you can set the timeout value higher than netctl's 30 seconds by default. Create a file in `/etc/netctl/hooks/` or `/etc/netctl/interfaces/`, add `TimeoutDHCP=40` to it for a timeout of 40 seconds and make the file executable.
+
+### DHCP Troubleshooting
+
+If dhcpcd fails to obtain an address, add the `-d` option to `/usr/lib/netctl/dhcp` and then use `journalctl -xe` to view the debugging messages which may indicate, for example, that the IP address offered by the server is rejected by the client after detecting that the IP address is already in use.
 
 ### Connection timeout issues
 

@@ -56,7 +56,7 @@ and notes |
 | [XFS](/index.php/XFS "XFS") | Yes | Yes | [[3]](http://xfs.org/index.php/FITRIM/discard) |
 | [F2FS](/index.php/F2FS "F2FS") | Yes | Yes |
 | [VFAT](/index.php/VFAT "VFAT") | Yes | No |
-| [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) | No | Yes | since version 2015.3.14, [[4]](http://permalink.gmane.org/gmane.comp.file-systems.ntfs-3g.devel/1101) |
+| [NTFS-3G](/index.php/NTFS-3G "NTFS-3G") | No | Yes | since version 2015.3.14, [[4]](http://permalink.gmane.org/gmane.comp.file-systems.ntfs-3g.devel/1101) |
 
 **Warning:** Users need to be certain that their SSD supports TRIM before attempting to use it. Data loss can occur otherwise!
 

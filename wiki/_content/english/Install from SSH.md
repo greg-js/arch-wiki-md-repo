@@ -1,6 +1,6 @@
 This article is intended to show users how to install Arch remotely via an [SSH](/index.php/SSH "SSH") connection. Consider this approach over the standard one in scenarios such as the following:
 
-*   HTPC without a proper monitor (e.g. an SDTV);
+*   Home theater PC without a proper monitor (e.g. an SDTV);
 *   PC located in another city, state, country (friend's house, parent's house, etc.);
 *   PC that you would rather setup remotely, for example from the comfort of one's own workstation with copy/paste abilities from the ArchWiki.
 
@@ -8,7 +8,7 @@ This article is intended to show users how to install Arch remotely via an [SSH]
 
 **Note:** These steps require physical access to the machine. Obviously, if physically located elsewhere, this will need to be coordinated with another person.
 
-Boot the target machine into a live Arch environment via the [Live CD/USB image](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"): this will log the user in as root.
+Boot the target machine into a live Arch environment via the [Live CD/USB image](/index.php/Getting_and_installing_Arch "Getting and installing Arch"): this will log the user in as root.
 
 At this point, setup the network on the target machine as for example suggested in [Installation guide#Connect to the Internet](/index.php/Installation_guide#Connect_to_the_Internet "Installation guide").
 

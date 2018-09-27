@@ -1,6 +1,6 @@
 | [Dansk](/index.php/Category:Dansk "Category:Dansk") <small>(15)</small> |
 | <small>1.</small> [Artikler om Arch Linux](/index.php/Category:About_Arch_(Dansk) "Category:About Arch (Dansk)") <small>(2)</small> |
-| <small>1.1.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(Dansk) "Category:Getting and installing Arch (Dansk)") <small>(1)</small> |
+| <small>1.1.</small> [Installation process](/index.php/Category:Installation_process_(Dansk) "Category:Installation process (Dansk)") <small>(1)</small> |
 | <small>2.</small> [Applications](/index.php/Category:Applications_(Dansk) "Category:Applications (Dansk)") <small>(0)</small> |
 | <small>2.1.</small> [Application launchers](/index.php/Category:Application_launchers_(Dansk) "Category:Application launchers (Dansk)") <small>(1)</small> |
 | <small>3.</small> [Gaming](/index.php/Category:Gaming_(Dansk) "Category:Gaming (Dansk)") <small>(1)</small> |

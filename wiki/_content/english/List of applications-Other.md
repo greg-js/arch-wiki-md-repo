@@ -681,7 +681,7 @@ See the main article: [Desktop environment#List of desktop environments](/index.
 
 ##### Console
 
-See also [#Terminal multiplexers](#Terminal_multiplexers), which offer some of the functions of window managers for the console.
+See also [List of applications/Utilities#Terminal multiplexers](/index.php/List_of_applications/Utilities#Terminal_multiplexers "List of applications/Utilities"), which offer some of the functions of window managers for the console.
 
 *   **twin** — Text-mode window manager.
 

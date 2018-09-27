@@ -9,9 +9,9 @@ This is an install and configuration guide for the Dell Inspiron 13 5368 laptop 
 | Touchscreen | Working | usbhid |
 | Webcam | Working | uvcvideo |
 | Wireless switch | Working | intel_hid |
-| Keyboard backlight switch | Working |  ? |
-| Harddisk/Battery light switch | Working |  ? |
-| Function/Multimedia Keys | Working |  ? |
+| Keyboard backlight switch | Working | ? |
+| Harddisk/Battery light switch | Working | ? |
+| Function/Multimedia Keys | Working | ? |
 
 See the [Laptop/Dell](/index.php/Laptop/Dell "Laptop/Dell") chart for information on other Dell laptops.
 
@@ -63,7 +63,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ## Installation
 
-See [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
+See [Installation guide](/index.php/Installation_guide "Installation guide").
 
 ## Hardware
 

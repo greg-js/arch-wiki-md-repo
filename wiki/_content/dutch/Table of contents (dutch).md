@@ -2,7 +2,7 @@
 | <small>1.</small> [Over Arch](/index.php/Category:About_Arch_(Nederlands) "Category:About Arch (Nederlands)") <small>(5)</small> |
 | <small>1.1.</small> [Arch ontwikkeling](/index.php/Category:Arch_development_(Nederlands) "Category:Arch development (Nederlands)") <small>(1)</small> |
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(Nederlands) "Category:ArchWiki (Nederlands)") <small>(2)</small> |
-| <small>1.3.</small> [Verkrijgen en installeren van Arch](/index.php/Category:Getting_and_installing_Arch_(Nederlands) "Category:Getting and installing Arch (Nederlands)") <small>(3)</small> |
+| <small>1.3.</small> [Installation process](/index.php/Category:Installation_process_(Nederlands) "Category:Installation process (Nederlands)") <small>(3)</small> |
 | <small>2.</small> [Database management systems](/index.php/Category:Database_management_systems_(Nederlands) "Category:Database management systems (Nederlands)") <small>(1)</small> |
 | <small>3.</small> [Ontwikkeling](/index.php/Category:Development_(Nederlands) "Category:Development (Nederlands)") <small>(2)</small> |
 | <small>4.</small> [General](/index.php/Category:General_(Nederlands) "Category:General (Nederlands)") <small>(6)</small> |

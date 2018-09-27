@@ -10,7 +10,7 @@ Related articles
 *   [GRUB/Tips and tricks](/index.php/GRUB/Tips_and_tricks "GRUB/Tips and tricks")
 *   [Multiboot USB drive](/index.php/Multiboot_USB_drive "Multiboot USB drive")
 
-[GRUB](https://www.gnu.org/software/grub/) (GRand Unified Bootloader) is a [multi-boot loader](/index.php/Category:Boot_loaders "Category:Boot loaders"). It is derived from [PUPA](http://www.nongnu.org/pupa/) which was a research project to develop the replacement of what is now known as [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy"). The latter had become too difficult to maintain and GRUB was rewritten from scratch with the aim to provide modularity and portability [[1]](https://www.gnu.org/software/grub/grub-faq.html#q1). The current GRUB is also referred to as GRUB 2 while GRUB Legacy corresponds to versions 0.9x.
+[GRUB](https://www.gnu.org/software/grub/) (GRand Unified Bootloader) is a [multi-boot loader](/index.php/Boot_loader "Boot loader"). It is derived from [PUPA](http://www.nongnu.org/pupa/) which was a research project to develop the replacement of what is now known as [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy"). The latter had become too difficult to maintain and GRUB was rewritten from scratch with the aim to provide modularity and portability [[1]](https://www.gnu.org/software/grub/grub-faq.html#q1). The current GRUB is also referred to as GRUB 2 while GRUB Legacy corresponds to versions 0.9x.
 
 **Note:** In the entire article `*esp*` denotes the mountpoint of the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") aka ESP.
 

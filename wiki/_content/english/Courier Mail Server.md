@@ -3,12 +3,12 @@ Related articles
 *   [Courier Email Server](/index.php/Courier_Email_Server "Courier Email Server")
 *   [Virtual user mail system](/index.php/Virtual_user_mail_system "Virtual user mail system")
 
-[Courier MTA](http://www.courier-mta.org/) is an SMTP and POP3/IMAP4 Server with courier.
+[Courier MTA](http://www.courier-mta.org/) is a [mail transfer agent](/index.php/Mail_transfer_agent "Mail transfer agent") and POP3/IMAP4 server with Courier. This article builds upon [Mail server](/index.php/Mail_server "Mail server").
 
 The advantages of Courier-MTA are:
 
 *   Authentication for MTA and POP3/IMAP happens against one data source
-*   This datasource can be a MySQL, PgSQL or LDAP, but also can be simpler like PAM or a compiled plaintextfile (BerkeleyDB)
+*   This data source can be a MySQL, PgSQL or LDAP, but also can be simpler like PAM or a compiled plaintextfile (BerkeleyDB)
 *   Easy support of virtual users
 *   SMTP-auth out of the box
 *   Comes with webmail
@@ -35,13 +35,13 @@ The advantages of Courier-MTA are:
 
 The following text describes a setup for two local domains on one physical machine, which is not so uncommon for single users or small companies. We authenticate against a BerkeleyDB-based ".dat" file which is created from a text or multiple textfiles automatically by tools that come with courier. This method is described in the Courier documentation as *authuserdb*, so do not get confused about names. The authentication against other providers happens in an adequate way and is covered in courier-authlibs documentation. There are differences in the handling of SASL methods (such as PLAIN or CRAM-MD5) depending on which authentication backend (*authuserd*, *authpam*, *authmysql* ...) you like to use. Just do not expect that this setup can be painlessly converted from the described *authuserdb* to *authmysql*.
 
-**Note:** If you would like to test on your local box but have no DNS-server running, the setup fails on some edges because Courier-MTA needs at least an MX entry to work. To work around that you can recompile courier-mta from "abs". Add `--without-tcpddns` to the configure attributes and go make some coffee, since this will take a while. Then make sure, that you add our dummy domains "domain1" and "domain2" to your `/etc/hosts`.
+**Note:** If you would like to test on your local box but have no DNS server running, the setup fails on some edges because Courier-MTA needs at least an MX entry to work. To work around that you can recompile courier-mta from "abs". Add `--without-tcpddns` to the configure attributes and go make some coffee, since this will take a while. Then make sure, that you add our dummy domains "domain1" and "domain2" to your `/etc/hosts`.
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [courier-mta](https://aur.archlinux.org/packages/courier-mta/) package.
 
-Any other mail transfer agents (like cyrus) or smtp servers (sendmail, postfix, etc) must be uninstalled for this, so answer 'yes' when prompted to do so.
+Any other mail transfer agents (like Cyrus) or SMTP servers (Sendmail, Postfix, etc.) must be uninstalled for this, so answer 'yes' when prompted to do so.
 
 ## TLS
 
@@ -51,7 +51,7 @@ To obtain a certificate, see [OpenSSL#Certificates](/index.php/OpenSSL#Certifica
 
 ## Authuserdb authentication
 
-Let courier know that we want to authenticate against authuserdb.
+Let Courier know that we want to authenticate against authuserdb.
 
 In the file `/etc/authlib/authdaemonrc` find `authmodulelist=...` then remove all listed modules except for *authuserdb*:
 
@@ -165,7 +165,7 @@ Make sure you become root again by leaving the "vmail" account by typing `exit` 
 
 ## Creating the user database
 
-Now it's time to create the BerkeleyDB from the plain textfiles. It is important that the files in `/etc/authlib/userdb` are visible for root only. If they have any world or group rights, courier will not allow the creation of the db-files from the information.
+Now it's time to create the BerkeleyDB from the plain text files. It is important that the files in `/etc/authlib/userdb` are visible for root only. If they have any world or group rights, courier will not allow the creation of the db-files from the information.
 
 ```
 # chmod 700 /etc/authlib/userdb && chmod 600 /etc/authlib/userdb/*
@@ -185,7 +185,7 @@ If you encounter any errors while testing the authentication, please consult [th
 
 ## Configuring courier
 
-Now we are now done with authentication stuff. It gave us a flexible layout which can be easily extended. Time to move on to courier's configuration itself. First, we will try to give some aliases for the server. The aliases follow the userdb's scheme very closely. Unlike in other servers, there is no need to handle with all aliases in just one file. Again, you can create several plain textfiles in one folder, where you can handle the aliases by domains or even finer structured if you like. The folder's location is again not negotiable, you must use `/etc/courier/aliases`. There is already a "system" file which deals with root, postmaster and the usual suspects. Just add a "user1@domain1" behind the existing "postmaster: " to have all system relevant mails delivered to "user1@domain1". We just assume that this user is your primary account.
+Now we are now done with authentication stuff. It gave us a flexible layout which can be easily extended. Time to move on to courier's configuration itself. First, we will try to give some aliases for the server. The aliases follow the userdb's scheme very closely. Unlike in other servers, there is no need to handle with all aliases in just one file. Again, you can create several plain text files in one folder, where you can handle the aliases by domains or even finer structured if you like. The folder's location is again not negotiable, you must use `/etc/courier/aliases`. There is already a "system" file which deals with root, postmaster and the usual suspects. Just add a "user1@domain1" behind the existing "postmaster: " to have all system relevant mails delivered to "user1@domain1". We just assume that this user is your primary account.
 
 ```
 # cat > /etc/courier/aliases/domain1 << EOALIASES
@@ -198,7 +198,7 @@ EOALIASES
 
 ```
 
-Repeat that for every domain and user, in our testcase for user2@domain2\. It might help to create another scheme here like naming your files domain1.user1 which makes administration easier and more transparent. This will also help on automated, script-based administration.
+Repeat that for every domain and user, in our test case for user2@domain2\. It might help to create another scheme here like naming your files domain1.user1 which makes administration easier and more transparent. This will also help on automated, script-based administration.
 
 Finally, these aliases must be exported to the BerkeleyDB. Again, Courier comes with a little utility for that task, it's called `makealiases`:
 
@@ -292,11 +292,11 @@ Finally, convert into a BerkeleyDB:
 
 ## Testing your setup
 
-Now the server is read to rock. Let's run several tests on the SMTP server and see if it's working nicely at least for sending and receiving mails.
+Now the server is ready. Let's run several tests on the SMTP server and see if it's working nicely at least for sending and receiving mails.
 
 ```
 ###############################################################################
-# this is  a testcase suggested on couriers very own webpage, we just convert it
+# this is  a test case suggested on couriers very own webpage, we just convert it
 # from a local to a virtual user
 
 # prepare as vmail
@@ -315,13 +315,13 @@ exit
 
 ```
 
-Let's test some more stuff, which can be useful.
+Let us test some more stuff, which can be useful.
 
 Send an ordinary mail (as root or ordinary user):
 
 ```
 $ echo "To: user2@domain2
-From: user1@domain1" | /usr/bin/sendmail
+From: user1@domain1" | sendmail
 
 ```
 
@@ -329,7 +329,7 @@ Send a mail to an alias:
 
 ```
 $ echo "To: userer2@domain2
-From: user1@domain1" | /usr/bin/sendmail
+From: user1@domain1" | sendmail
 
 ```
 
@@ -337,13 +337,13 @@ Send a mail to an external email address:
 
 ```
 $ echo "To: me_freak@gmail.com
-From: user1@domain1" | /usr/bin/sendmail
+From: user1@domain1" | sendmail
 
 ```
 
 ## Configuring IMAP and POP3
 
-So far, our operations have been focused on the box which runs the server itself. Now we need to setup some interaction related configuration. Since security is important we will setup some nice authentication modes, which doesn't send cleartext passwords. Courier supports CRAM-MD5 among others. You will have to make sure that your clients support that too. So far I tested sylpheed-claws > 1.0.4, esmtp and thunderbird with these settings.
+So far, our operations have been focused on the box which runs the server itself. Now we need to setup some interaction related configuration. Since security is important we will setup some nice authentication modes, which doesn't send cleartext passwords. Courier supports CRAM-MD5 among others. You will have to make sure that your clients support that too. So far I tested sylpheed-claws > 1.0.4, esmtp and Thunderbird with these settings.
 
 Now it comes in, that we will have to configure the several server daemons. Courier is already running (from the perftest above) but it doesn't provide services to the network. So we have to configure esmtpd, pop3d and imapd with their respective configuration files in `/etc/courier/<servicename>` .
 
@@ -366,7 +366,7 @@ The imapd setting is a bit different. In `/etc/courier/imapd` there is a long li
 
 ## Remarks
 
-Because of our very small testcase with just 2 boxes and no domaincontrol we have to take a look at couriers intrinsics and work around a little issue. Courier is nitpicking about RFC compliance, which does mean you have to make sure that you understand how to configure your e-mail clients for testing. This will fail in our testing:
+Because of our very small test case with just two boxes and no domain control we have to take a look at Courier's intrinsics and work around a little issue. Courier is nitpicking about RFC compliance, which does mean you have to make sure that you understand how to configure your e-mail clients for testing. This will fail in our testing:
 
 ```
 +------------+            +---------------+                +-------------------+

@@ -259,7 +259,7 @@ See also [Wikipedia:Terminal pager](https://en.wikipedia.org/wiki/Terminal_pager
 
 	[https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/about/](https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/about/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
 
-*   **[less](/index.php/Core_utilities#less "Core utilities")** — A program similar to more, but with support for both forward and backward scrolling, as well as partial loading of files.
+*   **[less](/index.php/Core_utilities#Essentials "Core utilities")** — A program similar to more, but with support for both forward and backward scrolling, as well as partial loading of files.
 
 	[https://www.gnu.org/software/less/](https://www.gnu.org/software/less/) || [less](https://www.archlinux.org/packages/?name=less)
 

@@ -1,4 +1,4 @@
-[Roundcube](http://roundcube.net) is a full-featured, [PHP](/index.php/PHP "PHP") web-based mail client.
+[Roundcube](https://roundcube.net) is a full-featured, [PHP](/index.php/PHP "PHP") web-based mail client.
 
 ## Contents
 
@@ -51,11 +51,11 @@ $ mysql -u root -p roundcubemail < /usr/share/webapps/roundcubemail/SQL/mysql.in
 
 ### SQLite
 
-A SQLite DB will be created automagically by Roundcube. Ensure the file specified in the config is located in a basedir location. Consider adding /var/lib/roundcubemail to your basedir definition. This implies creating the directory and chowning it to http.
+A SQLite DB will be created automagically by Roundcube. Ensure the file specified in the configuration is located in a basedir location. Consider adding /var/lib/roundcubemail to your basedir definition. This implies creating the directory and chowning it to http.
 
 ### Other Databases
 
-Roundcubemail has installation scripts for mssql, Oracle, and Postgres.
+Roundcubemail has installation scripts for mssql, Oracle, and PostgreSQL.
 
 ### Roundcube
 
@@ -96,7 +96,7 @@ If you are not using Apache, check the information available in /etc/webapps/rou
 
 ### PHP
 
-Make sure to adjust following variables to these minimal values in your PHP config:
+Make sure to adjust following variables to these minimal values in your PHP configuration:
 
  `/etc/php/php.ini` 
 ```
@@ -134,7 +134,7 @@ Restart Apache (`httpd.service`).
 
 ### Webserver (Nginx)
 
-**Warning:** This is an example config of RoundCube running in an subdirectory of the web root and has been compiled based on experiments with information from multiple sources, proceed with caution
+**Warning:** This is an example configuration of RoundCube running in an subdirectory of the web root and has been compiled based on experiments with information from multiple sources, proceed with caution
 
 **Note:** This assumes you already have a working [nginx](/index.php/Nginx "Nginx") server setup with [php-fpm](/index.php/Nginx#FastCGI "Nginx").
 
@@ -217,7 +217,7 @@ Because the `~/roundcube/config` directory contains sensitive information about 
 
 ### Setting Roundcube up for use with an IMAP/SMTP server that only allows TLS authentication
 
-It's quite common for modern IMAP/SMTP servers to only allow encrypted authentication, say using STARTTLS. **If you are setting Roundcube up for TLS authentication, the web-based installer won't help you.** You will need to edit the `/etc/webapps/roundcubemail/config/config.inc.php` by hand, adding the following lines:
+It is quite common for modern IMAP/SMTP servers to only allow encrypted authentication, say using STARTTLS. **If you are setting Roundcube up for TLS authentication, the web-based installer won't help you.** You will need to edit the `/etc/webapps/roundcubemail/config/config.inc.php` by hand, adding the following lines:
 
 ```
  $config['default_host'] = 'tls://mail.my_domain.org';

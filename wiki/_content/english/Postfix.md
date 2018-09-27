@@ -5,55 +5,48 @@ Related articles
 *   [OpenDMARC](/index.php/OpenDMARC "OpenDMARC")
 *   [OpenDKIM](/index.php/OpenDKIM "OpenDKIM")
 
-From [Postfix's site](http://www.postfix.org/):
+[Postfix](https://en.wikipedia.org/wiki/Postfix_(software) is a [mail transfer agent](/index.php/Mail_transfer_agent "Mail transfer agent") that according to [its website](http://www.postfix.org/):
 
-	Postfix attempts to be fast, easy to administer, and secure, while at the same time being sendmail compatible enough to not upset existing users. Thus, the outside has a sendmail-ish flavor, but the inside is completely different.
+	attempts to be fast, easy to administer, and secure, while at the same time being sendmail compatible enough to not upset existing users. Thus, the outside has a sendmail-ish flavor, but the inside is completely different.
 
-The goal of this article is to setup Postfix and explain what the basic configuration files do. There are instructions for setting up local system user-only delivery and a link to a guide for virtual user delivery.
+This article builds upon [Mail server](/index.php/Mail_server "Mail server"). The goal of this article is to setup Postfix and explain what the basic configuration files do. There are instructions for setting up local system user-only delivery and a link to a guide for virtual user delivery.
 
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 master.cf](#master.cf)
-    *   [2.2 main.cf](#main.cf)
-        *   [2.2.1 Default message and mailbox size limits](#Default_message_and_mailbox_size_limits)
-    *   [2.3 Aliases](#Aliases)
-    *   [2.4 Local mail](#Local_mail)
-    *   [2.5 Virtual mail](#Virtual_mail)
-    *   [2.6 DNS records](#DNS_records)
-    *   [2.7 Check configuration](#Check_configuration)
+    *   [2.1 Aliases](#Aliases)
+    *   [2.2 Local mail](#Local_mail)
+    *   [2.3 Virtual mail](#Virtual_mail)
+    *   [2.4 Check configuration](#Check_configuration)
 *   [3 Start Postfix](#Start_Postfix)
 *   [4 TLS](#TLS)
     *   [4.1 Secure SMTP (sending)](#Secure_SMTP_.28sending.29)
     *   [4.2 Secure SMTP (receiving)](#Secure_SMTP_.28receiving.29)
         *   [4.2.1 SMTPS (port 465)](#SMTPS_.28port_465.29)
-*   [5 Extra](#Extra)
-    *   [5.1 PostfixAdmin](#PostfixAdmin)
-    *   [5.2 Blacklist incoming emails](#Blacklist_incoming_emails)
-    *   [5.3 Postgrey](#Postgrey)
-        *   [5.3.1 Installation](#Installation_2)
-        *   [5.3.2 Configuration](#Configuration_2)
-        *   [5.3.3 Whitelisting](#Whitelisting)
-        *   [5.3.4 Troubleshooting](#Troubleshooting)
-    *   [5.4 SpamAssassin](#SpamAssassin)
-        *   [5.4.1 Spam Assassin rule update](#Spam_Assassin_rule_update)
-        *   [5.4.2 SpamAssassin stand-alone generic setup](#SpamAssassin_stand-alone_generic_setup)
-        *   [5.4.3 SpamAssassin combined with Dovecot LDA / Sieve (Mailfiltering)](#SpamAssassin_combined_with_Dovecot_LDA_.2F_Sieve_.28Mailfiltering.29)
-        *   [5.4.4 SpamAssassin combined with Dovecot LMTP / Sieve](#SpamAssassin_combined_with_Dovecot_LMTP_.2F_Sieve)
-        *   [5.4.5 Call ClamAV from SpamAssassin](#Call_ClamAV_from_SpamAssassin)
-    *   [5.5 Using Razor](#Using_Razor)
-    *   [5.6 Hide the sender's IP and user agent in the Received header](#Hide_the_sender.27s_IP_and_user_agent_in_the_Received_header)
-    *   [5.7 Postfix in a chroot jail](#Postfix_in_a_chroot_jail)
-    *   [5.8 Rule-based mail processing](#Rule-based_mail_processing)
-    *   [5.9 DANE (DNSSEC)](#DANE_.28DNSSEC.29)
-        *   [5.9.1 Resource Record](#Resource_Record)
-        *   [5.9.2 Configuration](#Configuration_3)
-    *   [5.10 Sender Policy Framework](#Sender_Policy_Framework)
-    *   [5.11 Sender Rewriting Scheme](#Sender_Rewriting_Scheme)
-*   [6 Troubleshooting](#Troubleshooting_2)
-    *   [6.1 Warning: "database /etc/postfix/*.db is older than source file .."](#Warning:_.22database_.2Fetc.2Fpostfix.2F.2A.db_is_older_than_source_file_...22)
-*   [7 See also](#See_also)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Blacklist incoming emails](#Blacklist_incoming_emails)
+    *   [5.2 Hide the sender's IP and user agent in the Received header](#Hide_the_sender.27s_IP_and_user_agent_in_the_Received_header)
+    *   [5.3 Postfix in a chroot jail](#Postfix_in_a_chroot_jail)
+    *   [5.4 DANE (DNSSEC)](#DANE_.28DNSSEC.29)
+        *   [5.4.1 Resource Record](#Resource_Record)
+        *   [5.4.2 Configuration](#Configuration_2)
+*   [6 Extras](#Extras)
+    *   [6.1 Postgrey](#Postgrey)
+        *   [6.1.1 Installation](#Installation_2)
+        *   [6.1.2 Configuration](#Configuration_3)
+        *   [6.1.3 Whitelisting](#Whitelisting)
+        *   [6.1.4 Troubleshooting](#Troubleshooting)
+    *   [6.2 SpamAssassin](#SpamAssassin)
+        *   [6.2.1 SpamAssassin stand-alone generic setup](#SpamAssassin_stand-alone_generic_setup)
+        *   [6.2.2 SpamAssassin combined with Dovecot LDA / Sieve (Mailfiltering)](#SpamAssassin_combined_with_Dovecot_LDA_.2F_Sieve_.28Mailfiltering.29)
+        *   [6.2.3 SpamAssassin combined with Dovecot LMTP / Sieve](#SpamAssassin_combined_with_Dovecot_LMTP_.2F_Sieve)
+    *   [6.3 Rule-based mail processing](#Rule-based_mail_processing)
+    *   [6.4 Sender Policy Framework](#Sender_Policy_Framework)
+    *   [6.5 Sender Rewriting Scheme](#Sender_Rewriting_Scheme)
+*   [7 Troubleshooting](#Troubleshooting_2)
+    *   [7.1 Warning: "database /etc/postfix/*.db is older than source file .."](#Warning:_.22database_.2Fetc.2Fpostfix.2F.2A.db_is_older_than_source_file_...22)
+*   [8 See also](#See_also)
 
 ## Installation
 
@@ -61,69 +54,16 @@ The goal of this article is to setup Postfix and explain what the basic configur
 
 ## Configuration
 
-### master.cf
+See [Postfix Basic Configuration](http://www.postfix.org/BASIC_CONFIGURATION_README.html). Configuration files are in `/etc/postfix` by default. The two most important files are:
 
-`/etc/postfix/master.cf` is the master configuration file where you can specify which protocols will be served. It is also the place where you can put your new pipes e.g. to check for Spam!
+*   `master.cf`, defines what Postfix services are enabled an what how clients connect to them, see [master(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/master.5)
+*   `main.cf`, the main configuration file, see [postconf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/postconf.5)
 
-It is recommended to enable secure SMTP as described in [#Secure SMTP (sending)](#Secure_SMTP_.28sending.29) and [#Secure SMTP (receiving)](#Secure_SMTP_.28receiving.29).
-
-See [this page](http://www.postfix.org/TLS_README.html) for more information about encrypting outgoing and incoming email.
-
-### main.cf
-
-`/etc/postfix/main.cf` is the main configuration file where everything is configured. The settings below are recommended for virtual local-only delivery.
-
-*   `myhostname` should be set if your mail server has multiple domains, and you do not want the primary domain to be the mail host. You should have both a DNS A record and an MX record point to this hostname.
-
-	 `myhostname = mail.nospam.net` 
-
-*   `mydomain` is usually the value of `myhostname`, minus the first part. If your domain is wonky, then just set it manually.
-
-	 `mydomain = nospam.net` 
-
-*   `myorigin` is where the email will be seen as being sent from. I usually set this to the value of `mydomain`. For simple servers, this works fine. This is for mail originating from a local account. Since we are not doing local delivery (except sending), then this is not really as important as it normally would be.
-
-	 `myorigin = $mydomain` 
-
-*   `mydestination` is the lookup for local users.
-
-	 `mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain` 
-
-*   `mynetworks` and `mynetworks_style` control relaying, and whom is allowed to. We do not want any relaying.
-
-	For our sakes, we will simply set `mynetwork_style` to host, as we are trying to make a standalone Postfix host, that people will use webmail on. No relaying, no other MTA's. Just webmail.
-
-	 `mynetworks_style = host` 
-
-*   `relaydomains` controls the destinations that Postfix will relay TO. The default value is empty. This should be fine for now.
-
-	 `relay_domains =` 
-
-*   `home_mailbox` or `mail_spool_directory` control how mail is delivered/stored for the users.
-
-	If set, `mail_spool_directory` specifies an absolute path where mail gets delivered. By default Postfix stores mails in `/var/spool/mail`.
-
-	 `mail_spool_directory = /home/vmailer` 
-
-	Alternatively, if set, `home_mailbox` specifies a mailbox relative to the user's home directory where mail gets delivered (eg: /home/vmailer).
-
-	Courier-IMAP requires "Maildir" format, so you **must** set it like the following example with trailing slash:
-
-	 `home_mailbox = Maildir/` 
-
-#### Default message and mailbox size limits
-
-Postfix imposes both message and mailbox size limits by default. The message_size_limit controls the maximum size in bytes of a message, including envelope information. (default 10240000) The mailbox_size_limit controls the maximum size of any local individual mailbox or maildir file. This limits the size of **any** file that is written to upon local delivery, **including files written by external commands** (i.e. procmail) that are executed by the local delivery agent. (default is 51200000, set to 0 for no limit) If bounced message notifications are generated, check the size of the local mailbox under `/var/spool/mail` and use postconf to check these size limits:
-
-```
-# postconf mailbox_size_limit
-mailbox_size_limit = 51200000
-# postconf message_size_limit
-message_size_limit = 10240000
-
-```
+Configuration changes need a `postfix.service` [reload](/index.php/Reload "Reload") in order to take effect.
 
 ### Aliases
+
+See [aliases(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/postfix/aliases.5.en).
 
 You can specify aliases (also known as forwarders) in `/etc/postfix/aliases`.
 
@@ -176,11 +116,7 @@ All other settings may remain unchanged. After setting up the above configuratio
 
 Virtual mail is mail that does not map to a user account (`/etc/passwd`).
 
-See [Virtual user mail system](/index.php/Virtual_user_mail_system "Virtual user mail system") for a comprehensive guide how to set it up.
-
-### DNS records
-
-See [Mail server#MX record](/index.php/Mail_server#MX_record "Mail server").
+See [Virtual user mail system with Postfix, Dovecot and Roundcube](/index.php/Virtual_user_mail_system_with_Postfix,_Dovecot_and_Roundcube "Virtual user mail system with Postfix, Dovecot and Roundcube") for a comprehensive guide how to set it up.
 
 ### Check configuration
 
@@ -208,7 +144,7 @@ By default, Postfix/sendmail will not send email encrypted to other SMTP servers
 
  `/etc/postfix/main.cf`  `smtp_tls_security_level = may` 
 
-To *enforce* TLS (and fail when the remote server does not support it), change `may` to `encrypt`. Note, however, that this violates RFC 2487 if the SMTP server is publicly referenced.
+To *enforce* TLS (and fail when the remote server does not support it), change `may` to `encrypt`. Note, however, that this violates [RFC:2487](https://tools.ietf.org/html/rfc2487 "rfc:2487") if the SMTP server is publicly referenced.
 
 ### Secure SMTP (receiving)
 
@@ -284,99 +220,7 @@ If they are not there, go ahead and add them (replace the other listing for port
 
 ```
 
-## Extra
-
-### PostfixAdmin
-
-[PostfixAdmin](http://postfixadmin.sourceforge.net/) is a web interface for Postfix used to manage mailboxes, virtual domains and aliases.
-
-To use PostfixAdmin, you need a working Apache/MySQL/PHP setup as described in [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server").
-
-For IMAP functionality, you will need to install [php-imap](https://www.archlinux.org/packages/?name=php-imap) and uncomment `extension=imap` in `/etc/php/php.ini`.
-
-Next, [install](/index.php/Install "Install") [postfixadmin](https://www.archlinux.org/packages/?name=postfixadmin).
-
-Edit the PostfixAdmin configuration file:
-
- `/etc/webapps/postfixadmin/config.inc.php` 
-```
-$CONF['configured'] = true;
-// correspond to dovecot maildir path /home/vmail/%d/%u 
-$CONF['domain_path'] = 'YES';
-$CONF['domain_in_mailbox'] = 'NO';
-$CONF['database_type'] = 'mysqli';
-$CONF['database_host'] = 'localhost';
-$CONF['database_user'] = 'postfix_user';
-$CONF['database_password'] = 'hunter2';
-$CONF['database_name'] = 'postfix_db';
-
-// globally change all instances of ''change-this-to-your.domain.tld'' 
-// to an appropriate value
-
-```
-
-If installing dovecot and you changed the password scheme in dovecot (to SHA512-CRYPT for example), reflect that with Postfix
-
- `/etc/webapps/postfixadmin/config.inc.php` 
-```
-$CONF['encrypt'] = 'dovecot:SHA512-CRYPT';
-
-```
-
-As of dovecot 2, dovecotpw has been deprecated. You will also want to ensure that your config reflects the new binary name.
-
- `/etc/webapps/postfixadmin/config.inc.php` 
-```
-$CONF['dovecotpw'] = "/usr/sbin/doveadm pw";
-
-```
-
-**Note:** For this to work it does not suffice to have dovecot installed, it also needs to be configured. See [Dovecot#Dovecot configuration](/index.php/Dovecot#Dovecot_configuration "Dovecot").
-
-Create the Apache configuration file:
-
- `/etc/httpd/conf/extra/httpd-postfixadmin.conf` 
-```
-Alias /postfixadmin "/usr/share/webapps/postfixAdmin/public"
-<Directory "/usr/share/webapps/postfixAdmin/public">
-    DirectoryIndex index.html index.php
-    AllowOverride All
-    Options FollowSymlinks
-    Require all granted
-</Directory>
-
-```
-
-To only allow localhost access to postfixadmin (for heightened security), add this to the previous <Directory> directive:
-
-```
-   Order Deny,Allow
-   Deny from all
-   Allow from 127.0.0.1
-
-```
-
-Now, include httpd-postfixadmin.conf to `/etc/httpd/conf/httpd.conf`:
-
-```
-# PostfixAdmin configuration
-Include conf/extra/httpd-postfixadmin.conf
-
-```
-
-Finally, navigate to [http://127.0.0.1:80/postfixadmin/setup.php](http://127.0.0.1:80/postfixadmin/setup.php) to finish the setup. Generate your setup password hash at the bottom of the page once it is done. Write the hash to the config file
-
- `/etc/webapps/postfixadmin/config.inc.php` 
-```
-$CONF['setup_password'] = 'yourhashhere';
-
-```
-
-Now you can create a superadmin account at [http://127.0.0.1:80/postfixadmin/setup.php](http://127.0.0.1:80/postfixadmin/setup.php)
-
-**Note:** If you go to yourdomain/postfixadmin/setup.php and it says do not find config.inc.php, add `/etc/webapps/postfixadmin` to the `open_basedir` line in `/etc/php/php.ini`.
-
-**Note:** If you get a blank page check the syntax of the file with `php -l /etc/webapps/postfixadmin/config.inc.php`.
+## Tips and tricks
 
 ### Blacklist incoming emails
 
@@ -385,7 +229,7 @@ Manually blacklisting incoming emails by sender address can easily be done with 
 Create and open `/etc/postfix/blacklist_incoming` file and append sender email address:
 
 ```
-user@blacklistdomain.com REJECT
+user@example.com REJECT
 
 ```
 
@@ -405,9 +249,173 @@ smtpd_recipient_restrictions = check_sender_access hash:/etc/postfix/blacklist_i
 
 Finally [restart](/index.php/Restart "Restart") `postfix.service`.
 
+### Hide the sender's IP and user agent in the Received header
+
+This is a privacy concern mostly, if you use Thunderbird and send an email. The received header will contain your LAN and WAN IP and info about the email client you used. (Original source: [AskUbuntu](http://askubuntu.com/questions/78163/when-sending-email-with-postfix-how-can-i-hide-the-senders-ip-and-username-in)) What we want to do is remove the Received header from outgoing emails. This can be done by the following steps:
+
+Add the following line to `main.cf`:
+
+```
+smtp_header_checks = regexp:/etc/postfix/smtp_header_checks
+
+```
+
+Create `/etc/postfix/smtp_header_checks` with this content:
+
+```
+/^Received: .*/     IGNORE
+/^User-Agent: .*/   IGNORE
+
+```
+
+Finally, [restart](/index.php/Restart "Restart") `postfix.service`.
+
+### Postfix in a chroot jail
+
+Postfix is not put in a chroot jail by default. The Postfix documentation [[1]](http://www.postfix.org/BASIC_CONFIGURATION_README.html#chroot_setup) provides details about how to accomplish such a jail. The steps are outlined below and are based on the chroot-setup script provided in the Postfix source code.
+
+First, go into the `master.cf` file in the directory `/etc/postfix` and change all the chroot entries to 'yes' (y) except for the services `qmgr`, `proxymap`, `proxywrite`, `local`, and `virtual`
+
+Second, create two functions that will help us later with copying files over into the chroot jail (see last step)
+
+```
+CP="cp -p"
+
+```
+
+```
+cond_copy() {
+  # find files as per pattern in $1
+  # if any, copy to directory $2
+  dir=`dirname "$1"`
+  pat=`basename "$1"`
+  lr=`find "$dir" -maxdepth 1 -name "$pat"`
+  if test ! -d "$2" ; then exit 1 ; fi
+  if test "x$lr" != "x" ; then $CP $1 "$2" ; fi
+}
+
+```
+
+Next, make the new directories for the jail:
+
+```
+set -e
+umask 022
+
+```
+
+```
+POSTFIX_DIR=${POSTFIX_DIR-/var/spool/postfix}
+cd ${POSTFIX_DIR}
+
+```
+
+```
+mkdir -p etc lib usr/lib/zoneinfo
+test -d /lib64 && mkdir -p lib64
+
+```
+
+Find the localtime file
+
+```
+lt=/etc/localtime
+if test ! -f $lt ; then lt=/usr/lib/zoneinfo/localtime ; fi
+if test ! -f $lt ; then lt=/usr/share/zoneinfo/localtime ; fi
+if test ! -f $lt ; then echo "cannot find localtime" ; exit 1 ; fi
+rm -f etc/localtime
+
+```
+
+Copy localtime and some other system files into the chroot's etc
+
+```
+$CP -f $lt /etc/services /etc/resolv.conf /etc/nsswitch.conf etc
+$CP -f /etc/host.conf /etc/hosts /etc/passwd etc
+ln -s -f /etc/localtime usr/lib/zoneinfo
+
+```
+
+Copy required libraries into the chroot using the previously created function `cond_copy`
+
+```
+cond_copy '/usr/lib/libnss_*.so*' lib
+cond_copy '/usr/lib/libresolv.so*' lib
+cond_copy '/usr/lib/libdb.so*' lib
+
+```
+
+And don't forget to reload Postfix.
+
+### DANE (DNSSEC)
+
+#### Resource Record
+
+**Warning:** This is not a trivial section. Be aware that you make sure you know what you are doing. You better read [Common Mistakes](https://dane.sys4.de/common_mistakes) before.
+
+[DANE](/index.php/DANE "DANE") supports several types of records, however not all of them are suitable in Postfix.
+
+Certificate usage 0 is unsupported, 1 is mapped to 3 and 2 is optional, thus it is recommendet to publish a "3" record. More on [Resource Records](/index.php/DANE#Resource_Record "DANE").
+
+#### Configuration
+
+Opportunistic DANE is configured this way:
+
+ `/etc/postfix/main.cf` 
+```
+smtpd_use_tls = yes
+smtp_dns_support_level = dnssec
+smtp_tls_security_level = dane
+
+```
+ `/etc/postfix/master.cf` 
+```
+dane       unix  -       -       n       -       -       smtp
+  -o smtp_dns_support_level=dnssec
+  -o smtp_tls_security_level=dane
+
+```
+
+To use per-domain policies, e.g. opportunistic DANE for example.org and mandatory DANE for example.com, use something like this:
+
+ `/etc/postfix/main.cf` 
+```
+indexed = ${default_database_type}:${config_directory}/
+
+# Per-destination TLS policy
+#
+smtp_tls_policy_maps = ${indexed}tls_policy
+
+# default_transport = smtp, but some destinations are special:
+#
+transport_maps = ${indexed}transport
+
+```
+ `transport` 
+```
+example.com dane
+example.org dane
+
+```
+ `tls_policy` 
+```
+example.com dane-only
+
+```
+
+**Note:** For global mandatory DANE, change `smtp_tls_security_level` to `dane-only`. Be aware that this makes Postfix tempfail on all delivieres that do not use DANE at all!
+
+Full documentation is found [here](http://www.postfix.org/TLS_README.html#client_tls_dane).
+
+## Extras
+
+*   **[PostfixAdmin](/index.php/PostfixAdmin "PostfixAdmin")** — A web-based administrative interface for Postfix.
+
+	[http://postfixadmin.sourceforge.net/](http://postfixadmin.sourceforge.net/) || [postfixadmin](https://www.archlinux.org/packages/?name=postfixadmin)
+
 ### Postgrey
 
-[Postgrey](http://postgrey.schweikert.ch/) can be used to enable greylisting for a Postfix mail server.
+[Postgrey](http://postgrey.schweikert.ch/) can be used to enable [greylisting](https://en.wikipedia.org/wiki/Greylisting "wikipedia:Greylisting") for a Postfix mail server.
 
 #### Installation
 
@@ -458,66 +466,13 @@ To add your own list of whitelisted clients in addition to the default ones, cre
 
 #### Troubleshooting
 
-If you specify --unix=/path/to/socket and the socket file is not created ensure you have removed the default --inet=127.0.0.1:10030 from the service file.
+If you specify `--unix=/path/to/socket` and the socket file is not created ensure you have removed the default `--inet=127.0.0.1:10030` from the service file.
 
 For a full documentation of possible options see `perldoc postgrey`.
 
 ### SpamAssassin
 
-Install the [spamassassin](https://www.archlinux.org/packages/?name=spamassassin) package.
-
-Go over `/etc/mail/spamassassin/local.cf` and configure it to your needs.
-
-#### Spam Assassin rule update
-
-Update the SpamAssassin matching patterns and compile them:
-
-```
-# sa-update && sa-compile
-
-```
-
-You will want to run this periodically, the best way to do so is by setting up a [Systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers").
-
-Create the following service, which will run these commands:
-
- `/etc/systemd/system/spamassassin-update.service` 
-```
-[Unit]
-Description=spamassassin housekeeping stuff
-
-[Service]
-#User=spamd
-#Group=spamd
-Type=oneshot
-
-# remove --allowplugins, if you do not want plugin updates from SA.
-ExecStart=/bin/sh -c '/usr/bin/vendor_perl/sa-update --allowplugins && {\
- /usr/bin/vendor_perl/sa-compile --quiet;\
- /usr/bin/systemctl -q --no-block try-restart spamassassin.service; }'
-SuccessExitStatus=1
-
-# uncomment the following ExecStart line to train SA's bayes filter
-# and specify the path to the mailbox that contains spam email(s)
-#ExecStart=/usr/bin/vendor_perl/sa-learn --spam <path_to_your_spam_mailbox>
-```
-
-Then create the timer, which will execute the previous service daily:
-
- `/etc/systemd/system/spamassassin-update.timer` 
-```
-[Unit]
-Description=spamassassin house keeping
-
-[Timer]
-OnCalendar=daily
-Persistent=true
-
-[Install]
-WantedBy=timers.target
-```
-
-Now you can [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `spamassassin-update.timer`.
+This section describes how to integrate [SpamAssassin](/index.php/SpamAssassin "SpamAssassin").
 
 #### SpamAssassin stand-alone generic setup
 
@@ -599,160 +554,6 @@ Compile the sieve rules `spamassassin.svbin`:
 
 Finally, [restart](/index.php/Restart "Restart") `dovecot.service`.
 
-#### Call ClamAV from SpamAssassin
-
-Install and setup clamd as described in [ClamAV](/index.php/ClamAV "ClamAV").
-
-Follow one of the above instructions to call SpamAssassin from within your mail system.
-
-[Install](/index.php/Install "Install") the [perl-cpanplus-dist-arch](https://www.archlinux.org/packages/?name=perl-cpanplus-dist-arch) package. Then install the ClamAV perl library as follows:
-
-```
- # /usr/bin/vendor_perl/cpanp -i File::Scan::ClamAV
-
-```
-
-Add the 2 files from [http://wiki.apache.org/spamassassin/ClamAVPlugin](http://wiki.apache.org/spamassassin/ClamAVPlugin) into `/etc/mail/spamassassin/`. Edit `/etc/mail/spamassassin/clamav.pm` and update `$CLAM_SOCK` to point to your Clamd socket location (default is `/var/lib/clamav/clamd.sock`).
-
-Finally, [restart](/index.php/Restart "Restart") `spamassassin.service`.
-
-### Using Razor
-
-Make sure you have installed SpamAssassin first, then:
-
-[Install](/index.php/Install "Install") the [razor](https://www.archlinux.org/packages/?name=razor) package.
-
-Register with Razor.
-
-```
- # mkdir /etc/mail/spamassassin/razor
- # chown spamd:spamd /etc/mail/spamassassin/razor
- # sudo -u spamd -s
- $ cd /etc/mail/spamassassin/razor
- $ razor-admin -home=/etc/mail/spamassassin/razor -register
- $ razor-admin -home=/etc/mail/spamassassin/razor -create
- $ razor-admin -home=/etc/mail/spamassassin/razor -discover
-
-```
-
-Tell SpamAssassin about Razor, add
-
-```
- razor_config /etc/mail/spamassassin/razor/razor-agent.conf
-
-```
-
-to `/etc/mail/spamassassin/local.cf`.
-
-Tell Razor about itself, add
-
-```
- razorhome = /etc/mail/spamassassin/razor/
-
-```
-
-to `/etc/mail/spamassassin/razor/razor-agent.conf`
-
-Finally, [restart](/index.php/Restart "Restart") `spamassassin.service`.
-
-### Hide the sender's IP and user agent in the Received header
-
-This is a privacy concern mostly, if you use Thunderbird and send an email. The received header will contain your LAN and WAN IP and info about the email client you used. (Original source: [AskUbuntu](http://askubuntu.com/questions/78163/when-sending-email-with-postfix-how-can-i-hide-the-senders-ip-and-username-in)) What we want to do is remove the Received header from outgoing emails. This can be done by the following steps:
-
-Add this line to main.cf
-
-```
-smtp_header_checks = regexp:/etc/postfix/smtp_header_checks
-
-```
-
-Create /etc/postfix/smtp_header_checks with this content:
-
-```
-/^Received: .*/     IGNORE
-/^User-Agent: .*/   IGNORE
-
-```
-
-Finally, restart postfix.service
-
-### Postfix in a chroot jail
-
-Postfix is not put in a chroot jail by default. The Postfix documentation [[1]](http://www.postfix.org/BASIC_CONFIGURATION_README.html#chroot_setup) provides details about how to accomplish such a jail. The steps are outlined below and are based on the chroot-setup script provided in the Postfix source code.
-
-First, go into the `master.cf` file in the directory `/etc/postfix` and change all the chroot entries to 'yes' (y) except for the services `qmgr`, `proxymap`, `proxywrite`, `local`, and `virtual`
-
-Second, create two functions that will help us later with copying files over into the chroot jail (see last step)
-
-```
-CP="cp -p"
-
-```
-
-```
-cond_copy() {
-  # find files as per pattern in $1
-  # if any, copy to directory $2
-  dir=`dirname "$1"`
-  pat=`basename "$1"`
-  lr=`find "$dir" -maxdepth 1 -name "$pat"`
-  if test ! -d "$2" ; then exit 1 ; fi
-  if test "x$lr" != "x" ; then $CP $1 "$2" ; fi
-}
-
-```
-
-Next, make the new directories for the jail:
-
-```
-set -e
-umask 022
-
-```
-
-```
-POSTFIX_DIR=${POSTFIX_DIR-/var/spool/postfix}
-cd ${POSTFIX_DIR}
-
-```
-
-```
-mkdir -p etc lib usr/lib/zoneinfo
-test -d /lib64 && mkdir -p lib64
-
-```
-
-Find the localtime file
-
-```
-lt=/etc/localtime
-if test ! -f $lt ; then lt=/usr/lib/zoneinfo/localtime ; fi
-if test ! -f $lt ; then lt=/usr/share/zoneinfo/localtime ; fi
-if test ! -f $lt ; then echo "cannot find localtime" ; exit 1 ; fi
-rm -f etc/localtime
-
-```
-
-Copy localtime and some other system files into the chroot's etc
-
-```
-$CP -f $lt /etc/services /etc/resolv.conf /etc/nsswitch.conf etc
-$CP -f /etc/host.conf /etc/hosts /etc/passwd etc
-ln -s -f /etc/localtime usr/lib/zoneinfo
-
-```
-
-Copy required libraries into the chroot using the previously created function `cond_copy`
-
-```
-cond_copy '/usr/lib/libnss_*.so*' lib
-cond_copy '/usr/lib/libresolv.so*' lib
-cond_copy '/usr/lib/libdb.so*' lib
-
-```
-
-And don't forget to reload Postfix.
-
 ### Rule-based mail processing
 
 With policy services one can easily finetune Postfix' behaviour of mail delivery. [postfwd](https://www.archlinux.org/packages/?name=postfwd) and [policyd](https://aur.archlinux.org/pkgbase/policyd) provide services to do so. This allows you to e.g. implement time-aware grey- and blacklisting of senders and receivers as well as [SPF](/index.php/SPF "SPF") policy checking.
@@ -769,66 +570,6 @@ smtpd_recipient_restrictions =
 ```
 
 Placing policy services at the end of the queue reduces load, as only legitimate mails are processed. Be sure to place it before the first permit statement to catch all incoming messages.
-
-### DANE (DNSSEC)
-
-#### Resource Record
-
-**Warning:** This is not a trivial section. Be aware that you make sure you know what you are doing. You better read [Common Mistakes](https://dane.sys4.de/common_mistakes) before.
-
-[DANE](/index.php/DANE "DANE") supports several types of records, however not all of them are suitable in Postfix.
-
-Certificate usage 0 is unsupported, 1 is mapped to 3 and 2 is optional, thus it is recommendet to publish a "3" record. More on [Resource Records](/index.php/DANE#Resource_Record "DANE").
-
-#### Configuration
-
-Opportunistic DANE is configured this way:
-
- `/etc/postfix/main.cf` 
-```
-smtpd_use_tls = yes
-smtp_dns_support_level = dnssec
-smtp_tls_security_level = dane
-
-```
- `/etc/postfix/master.cf` 
-```
-dane       unix  -       -       n       -       -       smtp
-  -o smtp_dns_support_level=dnssec
-  -o smtp_tls_security_level=dane
-
-```
-
-To use per-domain policies, e.g. opportunistic DANE for example.org and mandatory DANE for example.com, use something like this:
-
- `/etc/postfix/main.cf` 
-```
-indexed = ${default_database_type}:${config_directory}/
-
-# Per-destination TLS policy
-#
-smtp_tls_policy_maps = ${indexed}tls_policy
-
-# default_transport = smtp, but some destinations are special:
-#
-transport_maps = ${indexed}transport
-
-```
- `transport` 
-```
-example.com dane
-example.org dane
-
-```
- `tls_policy` 
-```
-example.com dane-only
-
-```
-
-**Note:** For global mandatory DANE, change `smtp_tls_security_level` to `dane-only`. Be aware that this makes Postfix tempfail on all delivieres that do not use DANE at all!
-
-Full documentation is found [here](http://www.postfix.org/TLS_README.html#client_tls_dane).
 
 ### Sender Policy Framework
 
@@ -916,5 +657,6 @@ and restart `postfix.service`
 
 ## See also
 
-*   [Out of Office](http://linox.be/index.php/2005/07/13/44/) for Squirrelmail 
+*   [Official documentation](http://www.postfix.org/documentation.html)
 *   [Postfix Ubuntu documentation](https://help.ubuntu.com/community/Postfix)
+*   [Out of Office](http://linox.be/index.php/2005/07/13/44/) for Squirrelmail

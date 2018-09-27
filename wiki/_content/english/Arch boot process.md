@@ -10,7 +10,7 @@ Related articles
 *   [fstab](/index.php/Fstab "Fstab")
 *   [Autostarting](/index.php/Autostarting "Autostarting")
 
-To run Arch Linux various software is run which is called "booting". When switching on hardware its firmware is run. It executes a boot loader which then executes the linux kernel. The kernel starts an init process which runs userspace programs depending on how the system is configured. Two main types of firmware exist, [Unified Extensible Firmware Interface (UEFI)](/index.php/UEFI "UEFI") and [Basic Input/Output System (BIOS)](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS").
+In order to boot Arch Linux, a Linux-capable [boot loader](/index.php/Boot_loader "Boot loader") such as [GRUB](/index.php/GRUB "GRUB") or [Syslinux](/index.php/Syslinux "Syslinux") must be installed to the [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") or the [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table"). The boot loader is responsible for loading the kernel and [initial ramdisk](/index.php/Initial_ramdisk "Initial ramdisk") before initiating the boot process. The procedure is quite different for [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") and [UEFI](/index.php/UEFI "UEFI") systems, the detailed description is given on this or linked pages.
 
 ## Contents
 
@@ -22,6 +22,8 @@ To run Arch Linux various software is run which is called "booting". When switch
     *   [2.2 Under UEFI](#Under_UEFI)
     *   [2.3 Multibooting in UEFI](#Multibooting_in_UEFI)
 *   [3 Boot loader](#Boot_loader)
+    *   [3.1 Feature comparison](#Feature_comparison)
+    *   [3.2 See also](#See_also)
 *   [4 Kernel](#Kernel)
 *   [5 initramfs](#initramfs)
 *   [6 Init process](#Init_process)
@@ -30,7 +32,7 @@ To run Arch Linux various software is run which is called "booting". When switch
 *   [9 Login](#Login)
 *   [10 Shell](#Shell)
 *   [11 GUI, xinit or wayland](#GUI.2C_xinit_or_wayland)
-*   [12 See also](#See_also)
+*   [12 See also](#See_also_2)
 
 ## Firmware types
 
@@ -80,6 +82,33 @@ See also [Dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot w
 ## Boot loader
 
 The [boot loader](/index.php/Boot_loader "Boot loader") is the first piece of software started by the [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") or [UEFI](/index.php/UEFI "UEFI"). It is responsible for loading the kernel with the wanted [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), and [initial RAM disk](/index.php/Mkinitcpio "Mkinitcpio") based on config files.
+
+**Note:** Loading [Microcode](/index.php/Microcode "Microcode") updates requires adjustments in boot loader configuration. [[1]](https://www.archlinux.org/news/changes-to-intel-microcodeupdates/)
+
+### Feature comparison
+
+**Note:**
+
+*   Boot loaders only need to support the file system on which kernel and initramfs reside (the file system on which `/boot` is located).
+*   As GPT is part of the UEFI specification, all UEFI boot loaders support GPT disks. GPT on BIOS systems is possible, using either "hybrid booting" with [Hybrid MBR](https://www.rodsbooks.com/gdisk/hybrid.html), or the new [GPT-only](http://repo.or.cz/syslinux.git/blob/HEAD:/doc/gpt.txt) protocol. This protocol may however cause issues with certain BIOS implementations; see [rodsbooks](http://www.rodsbooks.com/gdisk/bios.html#bios) for details.
+*   Encryption mentioned in file system support is [filesystem-level encryption](https://en.wikipedia.org/wiki/Filesystem-level_encryption "wikipedia:Filesystem-level encryption"), it has no bearing on [block-level encryption](/index.php/Dm-crypt "Dm-crypt").
+
+| Name | Firmware | Multi-boot | [File systems](/index.php/File_systems "File systems") | Notes |
+| BIOS | [UEFI](/index.php/UEFI "UEFI") | [Btrfs](/index.php/Btrfs "Btrfs") | [ext4](/index.php/Ext4 "Ext4") | ReiserFS v3 | [VFAT](/index.php/VFAT "VFAT") | [XFS](/index.php/XFS "XFS") |
+| [EFISTUB](/index.php/EFISTUB "EFISTUB") | – | Yes | – | – | – | – | ESP only | – | Kernel turned into EFI executable to be loaded directly from [UEFI](/index.php/UEFI "UEFI") firmware or another bootloader. |
+| [Clover](/index.php/Clover "Clover") | emulates UEFI | Yes | Yes | No | without encryption | No | Yes | No | Fork of rEFIt modified to run [macOS on non-Apple hardware](https://en.wikipedia.org/wiki/Hackintosh "wikipedia:Hackintosh"). |
+| [GRUB](/index.php/GRUB "GRUB") | Yes | Yes | Yes | without zstd compression | Yes | Yes | Yes | Yes | On BIOS/GPT configuration requires a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition").
+Supports RAID, LUKS1 and LVM (but not thin provisioned volumes). |
+| [rEFInd](/index.php/REFInd "REFInd") | No | Yes | Yes | without: encryption, zstd compression | without encryption | without tail-packing feature | Yes | No | Supports auto-detecting kernels and parameters without explicit configuration. |
+| [Syslinux](/index.php/Syslinux "Syslinux") | Yes | [Partial](/index.php/Syslinux#Limitations_of_UEFI_Syslinux "Syslinux") | [Partial](/index.php/Syslinux#Chainloading "Syslinux") | without: multi-device volumes, compression, encryption | without encryption | No | Yes | v4 on [MBR](/index.php/MBR "MBR") only | No support for certain [file system](/index.php/File_system "File system") features [[2]](http://www.syslinux.org/wiki/index.php?title=Filesystem) |
+| [systemd-boot](/index.php/Systemd-boot "Systemd-boot") | No | Yes | Yes | No | No | No | ESP only | No | Cannot launch binaries from partitions other than [ESP](/index.php/ESP "ESP"). |
+| [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") | without GPT | No | Yes | No | No | Yes | Yes | v4 only | [Discontinued](https://www.gnu.org/software/grub/grub-legacy.html) in favor of [GRUB](/index.php/GRUB "GRUB"). |
+| [LILO](/index.php/LILO "LILO") | without GPT | No | Yes | No | without encryption | Yes | Yes | MBR only [[3]](http://xfs.org/index.php/XFS_FAQ#Q:_Does_LILO_work_with_XFS.3F) | [Discontinued](http://web.archive.org/web/20180323163248/http://lilo.alioth.debian.org/) due to limitations (e.g. with Btrfs, GPT, RAID). |
+
+### See also
+
+*   [Rod Smith - Managing EFI Boot Loaders for Linux](http://www.rodsbooks.com/efi-bootloaders/)
+*   [Wikipedia:Comparison of boot loaders](https://en.wikipedia.org/wiki/Comparison_of_boot_loaders "wikipedia:Comparison of boot loaders")
 
 ## Kernel
 

@@ -335,7 +335,7 @@ if ! pacman -r "$newroot" -Sy --needed "${pacman_args[@]}"; then
 
 ## 使用ISO
 
-有关各种选项，请参见 [Category:Getting_and_installing_Arch_(简体中文)#安装方式](/index.php/Category:Getting_and_installing_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85.E6.96.B9.E5.BC.8F "Category:Getting and installing Arch (简体中文)") 部分。
+有关各种选项，请参见 部分。
 
 ## 提示和技巧
 

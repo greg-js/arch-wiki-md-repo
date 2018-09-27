@@ -1,7 +1,7 @@
 Related articles
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders")
+*   [Boot loader](/index.php/Boot_loader "Boot loader")
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
 *   [EFISTUB](/index.php/EFISTUB "EFISTUB")
 

@@ -146,7 +146,7 @@ ptot.axes_labels(['$\\xi$','$\\frac{R_h}{\\max(a,b)}$'])
 
 ```
 $ pdflatex <doc.tex>
-$ sage <doc.sage>
+$ sage <doc.sagetex.sage>
 $ pdflatex <doc.tex>
 
 ```

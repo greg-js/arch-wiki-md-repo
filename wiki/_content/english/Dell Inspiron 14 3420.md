@@ -49,7 +49,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ## Installation
 
-See [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch")
+See [Installation guide](/index.php/Installation_guide "Installation guide").
 
 ## Hardware
 

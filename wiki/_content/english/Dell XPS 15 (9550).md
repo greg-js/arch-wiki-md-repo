@@ -30,6 +30,7 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
 *   [5 Power Management](#Power_Management)
     *   [5.1 Suspend & Hibernate](#Suspend_.26_Hibernate)
     *   [5.2 Battery](#Battery)
+    *   [5.3 Fans](#Fans)
 *   [6 Bluetooth](#Bluetooth)
 *   [7 Thunderbolt 3 Docks](#Thunderbolt_3_Docks)
 *   [8 USB-C / Thunderbolt 3 Compatibility Chart](#USB-C_.2F_Thunderbolt_3_Compatibility_Chart)
@@ -138,6 +139,12 @@ Suspend works without issues, however Hibernation is not completely stable. Writ
 ### Battery
 
 Battery life can be improved by installing [powertop](https://www.archlinux.org/packages/?name=powertop) and calibrating it. See [Powertop](/index.php/Powertop "Powertop") for more info. To further improve the battery life, you can disable the touchscreen in the BIOS.
+
+### Fans
+
+The fans may remain on even at low temperatures, draining the battery and producing an unpleasant noise that will only stop on reboot. This is due to the fans being controlled by the BIOS by default.
+
+To prevent this behavior, configure i8k as described in [Fan speed control#Dell_laptops](/index.php/Fan_speed_control#Dell_laptops "Fan speed control") and use [dell-bios-fan-control-git](https://aur.archlinux.org/packages/dell-bios-fan-control-git/) utility to disable BIOS control of fans which conflicts with i8k. You may also want to [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `dell-bios-fan-control.service` to ensure BIOS control of fans is disabled at boot.
 
 ## Bluetooth
 

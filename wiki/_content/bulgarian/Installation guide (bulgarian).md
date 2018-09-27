@@ -1,6 +1,6 @@
 Тази страница е ръководство за исталирането на [Arch Linux](/index.php/Arch_Linux "Arch Linux") от “живия“ диск зареден от официалния инсталационен образ. Преди инсталиране е препорачително да погледнете [често задаваните въпроси](/index.php/FAQ "FAQ"). За нормите използвани в този документ вижте [Help:Reading](/index.php/Help:Reading "Help:Reading"). В частност , примери форматирани с `*курсив*` трябва да бъдат заменени.
 
-За по обстойни иструкции вижте съответните [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") страници или [man page](/index.php/Man_page "Man page") ръководства на самите програми, връзки и за двете от които са налични на тази страница. При нужда от помощ може да се обърнете към [чат-а](/index.php/IRC_channel "IRC channel") или да оставите своите въпроси във [форума](https://bbs.archlinux.org/).
+За по обстойни иструкции вижте съответните [ArchWiki](/index.php/ArchWiki "ArchWiki") страници или [man page](/index.php/Man_page "Man page") ръководства на самите програми, връзки и за двете от които са налични на тази страница. При нужда от помощ може да се обърнете към [чат-а](/index.php/IRC_channel "IRC channel") или да оставите своите въпроси във [форума](https://bbs.archlinux.org/).
 
 Arch Linux би трябвало да работи на всяка [x86_64](https://en.wikipedia.org/wiki/X86-64 "wikipedia:X86-64") съвместима машина с поне 512 MB RAM. Основна инсталация с всички пакети от група [base](https://www.archlinux.org/groups/x86_64/base/) може да заеме по-малко от 800 MB of дисково пространство. Тъй като инсталационният процес трябва да вземе пакети от външни хранилища, това ръководство приема, че е налична работеща интернет връзка.
 
@@ -11,7 +11,7 @@ Arch Linux би трябвало да работи на всяка [x86_64](http
     *   [1.2 Проверете boot режима](#.D0.9F.D1.80.D0.BE.D0.B2.D0.B5.D1.80.D0.B5.D1.82.D0.B5_boot_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B0)
     *   [1.3 Свързване с интернет](#.D0.A1.D0.B2.D1.8A.D1.80.D0.B7.D0.B2.D0.B0.D0.BD.D0.B5_.D1.81_.D0.B8.D0.BD.D1.82.D0.B5.D1.80.D0.BD.D0.B5.D1.82)
     *   [1.4 Обновяване на системния часовник](#.D0.9E.D0.B1.D0.BD.D0.BE.D0.B2.D1.8F.D0.B2.D0.B0.D0.BD.D0.B5_.D0.BD.D0.B0_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.BD.D0.B8.D1.8F_.D1.87.D0.B0.D1.81.D0.BE.D0.B2.D0.BD.D0.B8.D0.BA)
-    *   [1.5 Раделяне на дялове](#.D0.A0.D0.B0.D0.B4.D0.B5.D0.BB.D1.8F.D0.BD.D0.B5_.D0.BD.D0.B0_.D0.B4.D1.8F.D0.BB.D0.BE.D0.B2.D0.B5)
+    *   [1.5 Разделяне на дялове](#.D0.A0.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D1.8F.D0.BD.D0.B5_.D0.BD.D0.B0_.D0.B4.D1.8F.D0.BB.D0.BE.D0.B2.D0.B5)
     *   [1.6 Форматиране на дяловете](#.D0.A4.D0.BE.D1.80.D0.BC.D0.B0.D1.82.D0.B8.D1.80.D0.B0.D0.BD.D0.B5_.D0.BD.D0.B0_.D0.B4.D1.8F.D0.BB.D0.BE.D0.B2.D0.B5.D1.82.D0.B5)
     *   [1.7 Включване на файловите системи](#.D0.92.D0.BA.D0.BB.D1.8E.D1.87.D0.B2.D0.B0.D0.BD.D0.B5_.D0.BD.D0.B0_.D1.84.D0.B0.D0.B9.D0.BB.D0.BE.D0.B2.D0.B8.D1.82.D0.B5_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B8)
 *   [2 Инсталиране](#.D0.98.D0.BD.D1.81.D1.82.D0.B0.D0.BB.D0.B8.D1.80.D0.B0.D0.BD.D0.B5)
@@ -31,7 +31,7 @@ Arch Linux би трябвало да работи на всяка [x86_64](http
 
 ## Преди инсталацията
 
-Свалете и включете инсталационния носител, според [сдобиване с Arch](/index.php/Category:Getting_and_installing_Arch "Category:Getting and installing Arch"). Ще бъдете логнати в първата [виртуална конзола](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") като root потребител със [Zsh](/index.php/Zsh "Zsh") шел.
+Свалете и включете инсталационния носител, според [сдобиване с Arch](/index.php/Getting_and_installing_Arch "Getting and installing Arch"). Ще бъдете логнати в първата [виртуална конзола](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") като root потребител със [Zsh](/index.php/Zsh "Zsh") шел.
 
 За да смените с друга конзола — например, за да видите това ръководство с [ELinks](/index.php/ELinks "ELinks") по време на инсталацията — натиснете [клавишната комбинация](/index.php/Keyboard_shortcuts#Virtual_console "Keyboard shortcuts") `Alt+*стрелка*`. За да [редактирате](/index.php/Textedit "Textedit") конфигурационни файлове, използвайте [nano](/index.php/Nano#Usage "Nano"), [vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") или [vim](/index.php/Vim#Usage "Vim").
 
@@ -86,7 +86,7 @@ Arch Linux би трябвало да работи на всяка [x86_64](http
 
 За да проверите състоянието на услугата, използвайте `timedatectl status`.
 
-### Раделяне на дялове
+### Разделяне на дялове
 
 Разпознатите от системата твърдите дискове са показани като `/dev/sda` или `/dev/nvme0n1` ([block устройства](https://en.wikipedia.org/wiki/Device_file#Naming_conventions "wikipedia:Device file")). За да ги видите използвайте [lsblk](/index.php/Lsblk "Lsblk") или *fdisk*.
 

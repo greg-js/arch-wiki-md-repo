@@ -1739,7 +1739,7 @@ See also [FFmpeg#Recording webcam](/index.php/FFmpeg#Recording_webcam "FFmpeg") 
 
 *   **MJPG-streamer** — Command line application which can be used to stream M-JPEG over an IP-based network from a webcam to various types of viewers.
 
-	[https://github.com/jacksonliam/mjpg-streamer](https://github.com/jacksonliam/mjpg-streamer) || [mjpg-streamer-jacksonliam-git](https://aur.archlinux.org/packages/mjpg-streamer-jacksonliam-git/)
+	[https://github.com/jacksonliam/mjpg-streamer](https://github.com/jacksonliam/mjpg-streamer) || [mjpg-streamer](https://aur.archlinux.org/packages/mjpg-streamer/)
 
 *   **[Motion](/index.php/Motion "Motion")** — Highly configurable program that monitors video signals from many types of cameras. It is able to detect if a significant part of the picture has changed; in other words, it can detect motion.
 

@@ -1,5 +1,9 @@
 **حالة الترجمة：** هذه المقالة هي إصدار مُترجَم من [LibreOffice](/index.php/LibreOffice "LibreOffice"). آخر تاريخ ترجمة: 2014-11-06\. انقر [هذه الوصلة](https://wiki.archlinux.org/index.php?title=LibreOffice&diff=0&oldid=333741) للتحقّق من تغييرات الصفحة الإنجليزية بعد الترجمة.
 
+Related articles
+
+*   [Apache OpenOffice](/index.php/Apache_OpenOffice "Apache OpenOffice")
+
 من [Home - LibreOffice](http://www.libreoffice.org/):
 
 	*LibreOffice is the free power-packed Open Source personal productivity suite for Windows, Macintosh and Linux, that gives you six feature-rich applications for all your document production and data processing needs: Writer, Calc, Impress, Draw, Math and Base. [Support](http://www.libreoffice.org/get-help/) and [documentation](http://www.libreoffice.org/get-help/documentation/) is free from our large, dedicated community of users, contributors and developers. [You, too, can also get involved!](http://www.libreoffice.org/get-involved/)*

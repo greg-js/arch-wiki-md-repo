@@ -5,7 +5,7 @@
 | <small>1.2.</small> [Arch projects](/index.php/Category:Arch_projects_(Portugu%C3%AAs) "Category:Arch projects (Português)") <small>(2)</small> |
 | <small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki_(Portugu%C3%AAs) "Category:ArchWiki (Português)") <small>(6)</small> |
 | <small>1.3.1.</small> [Help](/index.php/Category:Help_(Portugu%C3%AAs) "Category:Help (Português)") <small>(15)</small> |
-| <small>1.4.</small> [Baixando e Instalando o Arch](/index.php/Category:Getting_and_installing_Arch_(Portugu%C3%AAs) "Category:Getting and installing Arch (Português)") <small>(5)</small> |
+| <small>1.4.</small> [Installation process](/index.php/Category:Installation_process_(Portugu%C3%AAs) "Category:Installation process (Português)") <small>(5)</small> |
 | <small>2.</small> [Applications](/index.php/Category:Applications_(Portugu%C3%AAs) "Category:Applications (Português)") <small>(0)</small> |
 | <small>2.1.</small> [Command-line](/index.php/Category:Command-line_(Portugu%C3%AAs) "Category:Command-line (Português)") <small>(3) (também em [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)"))</small> |
 | <small>2.1.1.</small> [Command shells](/index.php/Category:Command_shells_(Portugu%C3%AAs) "Category:Command shells (Português)") <small>(1) (também em [Programming languages](/index.php/Category:Programming_languages_(Portugu%C3%AAs) "Category:Programming languages (Português)"))</small> |
@@ -65,7 +65,7 @@
 | <small>6.2.</small> [Servidor X](/index.php/Category:X_server_(Portugu%C3%AAs) "Category:X server (Português)") <small>(6)</small> |
 | <small>7.</small> [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)") <small>(4)</small> |
 | <small>7.1.</small> [Processo de Inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)") <small>(3)</small> |
-| <small>7.1.1.</small> [Boot loaders](/index.php/Category:Boot_loaders_(Portugu%C3%AAs) "Category:Boot loaders (Português)") <small>(1)</small> |
+| <small>7.1.1.</small> [Boot loaders](/index.php/Category:Boot_loaders_(Portugu%C3%AAs) "Category:Boot loaders (Português)") <small>(2)</small> |
 | <small>7.1.2.</small> [Bootsplash](/index.php/Category:Bootsplash_(Portugu%C3%AAs) "Category:Bootsplash (Português)") <small>(1) (também em [Aparência](/index.php/Category:Eye_candy_(Portugu%C3%AAs) "Category:Eye candy (Português)"))</small> |
 | <small>7.1.3.</small> [Init](/index.php/Category:Init_(Portugu%C3%AAs) "Category:Init (Português)") <small>(1)</small> |
 | <small>7.2.</small> [Command-line](/index.php/Category:Command-line_(Portugu%C3%AAs) "Category:Command-line (Português)") <small>(3) (também em [Applications](/index.php/Category:Applications_(Portugu%C3%AAs) "Category:Applications (Português)"))</small> |

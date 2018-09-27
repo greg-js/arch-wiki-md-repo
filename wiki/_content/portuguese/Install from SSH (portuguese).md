@@ -8,7 +8,7 @@ Este artigo possui o intuito de mostrar aos usuários como instalar o Arch atrav
 
 **Nota:** Esses passos exigem acesso físico à máquina. Obviamente, se estiver localizado fisicamente em outro lugar, isso precisará ser coordenado com outra pessoa.
 
-Inicie a máquina destino em um ambiente Arch *live* por meio de uma [imagem Live CD/USB](/index.php/Category:Getting_and_installing_Arch_(Portugu%C3%AAs) "Category:Getting and installing Arch (Português)"): isso vai autenticar o usuário como root.
+Inicie a máquina destino em um ambiente Arch *live* por meio de uma: isso vai autenticar o usuário como root.
 
 Neste ponto, configure a rede na máquina destino como, por exemplo, sugerido no [Guia de instalação#Conectar à Internet](/index.php/Guia_de_instala%C3%A7%C3%A3o#Conectar_.C3.A0_Internet "Guia de instalação").
 

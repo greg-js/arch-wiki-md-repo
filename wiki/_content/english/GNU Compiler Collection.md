@@ -17,5 +17,6 @@ Other available front-ends are:
 
 ## See also
 
-*   [https://gcc.gnu.org/](https://gcc.gnu.org/)
+*   [Info manual](https://gcc.gnu.org/onlinedocs/gcc/)
+*   [Official website](https://gcc.gnu.org/)
 *   [gcc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gcc.1)

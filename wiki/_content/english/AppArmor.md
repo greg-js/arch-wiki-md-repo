@@ -64,9 +64,11 @@ CONFIG_DEFAULT_SECURITY_APPARMOR=y
 
 ### Userspace Tools
 
-The userspace tools and libraries to control AppArmor are supplied by the [apparmor](https://aur.archlinux.org/packages/apparmor/) package.
+The userspace tools and libraries to control AppArmor are supplied by [apparmor](https://www.archlinux.org/packages/?name=apparmor) or [apparmor](https://aur.archlinux.org/packages/apparmor/).
 
-The package is a split package which consists of following sub-packages:
+**Note:** The [apparmor](https://aur.archlinux.org/packages/apparmor/) package will no longer be updated, it will be replaced by the [apparmor](https://www.archlinux.org/packages/?name=apparmor) package that is currently in *community-testing*. To use it you must enable the [testing repositories](/index.php/Official_repositories#Testing_repositories "Official repositories").
+
+The [apparmor](https://aur.archlinux.org/packages/apparmor/) package is a split package which consists of following sub-packages:
 
 *   [apparmor](https://aur.archlinux.org/packages/apparmor/) (meta package)
 *   [apparmor-libapparmor](https://aur.archlinux.org/packages/apparmor-libapparmor/)

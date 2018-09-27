@@ -2,9 +2,9 @@ Related articles
 
 *   [PCI_passthrough_via_OVMF](/index.php/PCI_passthrough_via_OVMF "PCI passthrough via OVMF")
 *   [QEMU](/index.php/QEMU "QEMU")
-*   [Intel_graphics](/index.php/Intel_graphics "Intel graphics")
+*   [Intel graphics](/index.php/Intel_graphics "Intel graphics")
 
-Intel GVT-g is a technology that provides mediated device passthrough for Intel GPUs (Broadwell and newer). It can be used to virtualize the GPU for multiple guest VMs, effectively providing near-native graphics performance in the VM and still letting your host use the virtualized GPU normally. This is useful if you want accelerated graphics in Windows VMs running on ultrabooks without dedicated GPUs for [full device passthrough](/index.php/PCI_passthrough_via_OVMF "PCI passthrough via OVMF"). (Similar technologies exist for NVIDIA and AMD GPUs, but they're available only in the "professional" GPU lines like Quadro, Radeon Pro and so on.)
+[Intel GVT-g](https://github.com/intel/gvt-linux/wiki/GVTg_Setup_Guide) is a technology that provides mediated device passthrough for Intel GPUs (Broadwell and newer). It can be used to virtualize the GPU for multiple guest VMs, effectively providing near-native graphics performance in the VM and still letting your host use the virtualized GPU normally. This is useful if you want accelerated graphics in Windows VMs running on ultrabooks without dedicated GPUs for [full device passthrough](/index.php/PCI_passthrough_via_OVMF "PCI passthrough via OVMF"). (Similar technologies exist for NVIDIA and AMD GPUs, but they're available only in the "professional" GPU lines like Quadro, Radeon Pro and so on.)
 
 There is also a variant of this technology called GVT-d - it is essentially Intel's name for full device passthrough with the vfio-pci driver. With GVT-d, the host cannot use the virtualized GPU.
 
@@ -14,7 +14,7 @@ You'll have to create a virtual GPU (vGPU) first, then assign it to your VM. The
 
 You'll need to:
 
-*   Use at least Linux 4.16 and QEMU 2.12.
+*   Use at least Linux 4.16 and [QEMU](/index.php/QEMU "QEMU") 2.12.
 *   Add `i915.enable_gvt=1` to your kernel parameters to enable GPU virtualization.
 *   Find the PCI address of your GPU (`$GVT_PCI` in commands below), as it resides in `/sys/bus/pci/devices`. It looks like this: `0000:00:02.0` - you can look it up by running `lspci`, looking for `VGA compatible controller: Intel Corporation HD Graphics ...` and noting down the address on the left.
 *   Generate the vGPU GUID (`$GVT_GUID` in commands below) which you'll use to create and assign the vGPU. A single virtual GPU can be assigned only to a single VM - create as many GUIDs as you want vGPUs. (You can do so by running `uuidgen`.)

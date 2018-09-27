@@ -10,6 +10,6 @@ See the following [guide](https://gist.github.com/randrew/81d4fed3ef72e56bb3d24b
 
 ## Emoji glitch
 
-There is a bug with some emoji fonts (known: [ttf-emojione-color](https://aur.archlinux.org/packages/ttf-emojione-color/), [noto-fonts-emoji](https://aur.archlinux.org/packages/noto-fonts-emoji/)) which generates rendering glitches, currently not fixed. Emoji fonts known to behave well include [ttf-twemoji-color](https://aur.archlinux.org/packages/ttf-twemoji-color/) and [ttf-symbola](https://aur.archlinux.org/packages/ttf-symbola/), so it is recommended to use one of them. Please note that some dialogs in the application always use system fonts, so it is sufficient to rely on the mentioned font in one's fontconfig to experience the bug.
+There is a bug with some emoji fonts (known: [ttf-emojione-color](https://aur.archlinux.org/packages/ttf-emojione-color/), [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji)) which generates rendering glitches, currently not fixed. Emoji fonts known to behave well include [ttf-twemoji-color](https://aur.archlinux.org/packages/ttf-twemoji-color/) and [ttf-symbola](https://aur.archlinux.org/packages/ttf-symbola/), so it is recommended to use one of them. Please note that some dialogs in the application always use system fonts, so it is sufficient to rely on the mentioned font in one's fontconfig to experience the bug.
 
 For further updates and information, see the relevant [ticket](https://dev.cancel.fm/tktview?name=d2dc78360c) on the issue tracker.

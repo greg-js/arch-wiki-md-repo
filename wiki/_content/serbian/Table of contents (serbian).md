@@ -2,7 +2,7 @@
 | <small>1.</small> [About Arch](/index.php/Category:About_Arch_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:About Arch (Српски)") <small>(6)</small> |
 | <small>1.1.</small> [ArchWiki](/index.php/Category:ArchWiki_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:ArchWiki (Српски)") <small>(1)</small> |
 | <small>1.1.1.</small> [Help](/index.php/Category:Help_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Help (Српски)") <small>(1)</small> |
-| <small>1.2.</small> [Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Getting and installing Arch (Српски)") <small>(1)</small> |
+| <small>1.2.</small> [Installation process](/index.php/Category:Installation_process_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Installation process (Српски)") <small>(1)</small> |
 | <small>2.</small> [Applications](/index.php/Category:Applications_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Applications (Српски)") <small>(0)</small> |
 | <small>2.1.</small> [Database management systems](/index.php/Category:Database_management_systems_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Database management systems (Српски)") <small>(1)</small> |
 | <small>2.2.</small> [Internet applications](/index.php/Category:Internet_applications_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Internet applications (Српски)") <small>(0) (такође у [Networking](/index.php/Category:Networking_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "Category:Networking (Српски)"))</small> |

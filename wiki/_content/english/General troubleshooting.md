@@ -305,8 +305,6 @@ $ loginctl show-session $XDG_SESSION_ID
 
 This should contain `Remote=no` and `Active=yes` in the output. If it does not, make sure that X runs on the same tty where the login occurred. This is required in order to preserve the logind session.
 
-A D-Bus session should also be started along with X. See [D-Bus#Starting the user session](/index.php/D-Bus#Starting_the_user_session "D-Bus") for more information on this.
-
 Basic [polkit](/index.php/Polkit "Polkit") actions do not require further set-up. Some polkit actions require further authentication, even with a local session. A polkit authentication agent needs to be running for this to work. See [polkit#Authentication agents](/index.php/Polkit#Authentication_agents "Polkit") for more information on this.
 
 ## Message: "error while loading shared libraries"

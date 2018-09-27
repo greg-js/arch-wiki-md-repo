@@ -4,7 +4,7 @@
 | <small>1.1.1.</small> [Sviluppo dei Pacchetti](/index.php/Category:Package_development_(Italiano) "Category:Package development (Italiano)") <small>(19)</small> |
 | <small>1.2.</small> [ArchWiki](/index.php/Category:ArchWiki_(Italiano) "Category:ArchWiki (Italiano)") <small>(3)</small> |
 | <small>1.2.1.</small> [Guida](/index.php/Category:Help_(Italiano) "Category:Help (Italiano)") <small>(2)</small> |
-| <small>1.3.</small> [Ottenere ed installare Arch](/index.php/Category:Getting_and_installing_Arch_(Italiano) "Category:Getting and installing Arch (Italiano)") <small>(9)</small> |
+| <small>1.3.</small> [Installation process](/index.php/Category:Installation_process_(Italiano) "Category:Installation process (Italiano)") <small>(9)</small> |
 | <small>1.4.</small> [Sistemi live di Arch](/index.php/Category:Live_Arch_systems_(Italiano) "Category:Live Arch systems (Italiano)") <small>(1)</small> |
 | <small>2.</small> [Applicazioni](/index.php/Category:Applications_(Italiano) "Category:Applications (Italiano)") <small>(8)</small> |
 | <small>2.1.</small> [Compressione dei dati e archiviazione](/index.php/Category:Data_compression_and_archiving_(Italiano) "Category:Data compression and archiving (Italiano)") <small>(1)</small> |

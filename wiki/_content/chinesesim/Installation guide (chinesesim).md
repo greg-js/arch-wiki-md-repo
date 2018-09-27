@@ -34,7 +34,7 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 ## 安装准备
 
-根据 [Category:Getting and installing Arch](/index.php/Category:Getting_and_installing_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Getting and installing Arch (简体中文)") 中所述，下载并引导安装介质。启动完成后将会自动以 root 身份登录虚拟控制台并进入 [Zsh](/index.php/Zsh_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Zsh (简体中文)") 命令提示符。
+根据 [Getting and installing Arch](/index.php/Getting_and_installing_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Getting and installing Arch (简体中文)") 中所述，下载并引导安装介质。启动完成后将会自动以 root 身份登录虚拟控制台并进入 [Zsh](/index.php/Zsh_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Zsh (简体中文)") 命令提示符。
 
 如果你想切换至其它的虚拟终端来干点别的事, 例如使用 [ELinks](/index.php/ELinks "ELinks") 来查看本篇指南，使用 `Alt+*方向鍵*` [快捷键](/index.php/Keyboard_shortcuts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Keyboard shortcuts (简体中文)")。可以使用 [nano](/index.php/Nano#Usage "Nano")、[vi](https://en.wikipedia.org/wiki/vi "w:vi") 或 [vim](/index.php/Vim#Usage "Vim") 来 [编辑](/index.php/Textedit "Textedit") 配置文件。
 

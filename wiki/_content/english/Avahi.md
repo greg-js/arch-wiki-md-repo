@@ -19,7 +19,9 @@ From [Wikipedia:Avahi (software)](https://en.wikipedia.org/wiki/Avahi_(software)
         *   [3.2.2 Samba](#Samba)
         *   [3.2.3 Vsftpd](#Vsftpd)
     *   [3.3 AirPrint from Mobile Devices](#AirPrint_from_Mobile_Devices)
-*   [4 See also](#See_also)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Hostname changes with appending incrementing numbers](#Hostname_changes_with_appending_incrementing_numbers)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -234,6 +236,12 @@ Alternatively, [https://raw.github.com/tjfontaine/airprint-generate/master/airpr
 ```
 
 **Note:** If your printer under [http://localhost:631/printers](http://localhost:631/printers) is "Not Shared", this python script won't output any file to /etc/avahi/services; in that case, you'll need to "Modify Printer" under one of the CUPS drop-down menus to turn sharing on. If that doesn't work, check out the ArchWiki on [CUPS printer sharing](/index.php/CUPS_printer_sharing "CUPS printer sharing").
+
+## Troubleshooting
+
+### Hostname changes with appending incrementing numbers
+
+This is a [known bug](https://github.com/lathiat/avahi/issues/117) that is caused by a hostname race condition. As a temporary workaround [disabling IPv6 will make the bug less common](https://github.com/lathiat/avahi/issues/117#issuecomment-302849130).
 
 ## See also
 

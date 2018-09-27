@@ -1,12 +1,12 @@
 | [Español](/index.php/Category:Espa%C3%B1ol "Category:Español") <small>(2)</small> |
-| <small>1.</small> [Acerca de Arch](/index.php/Category:About_Arch_(Espa%C3%B1ol) "Category:About Arch (Español)") <small>(18)</small> |
+| <small>1.</small> [Acerca de Arch](/index.php/Category:About_Arch_(Espa%C3%B1ol) "Category:About Arch (Español)") <small>(19)</small> |
 | <small>1.1.</small> [Desarrollo de Arch](/index.php/Category:Arch_development_(Espa%C3%B1ol) "Category:Arch development (Español)") <small>(0) (también en [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)"))</small> |
 | <small>1.1.1.</small> [Desarrollo de paquetes](/index.php/Category:Package_development_(Espa%C3%B1ol) "Category:Package development (Español)") <small>(8)</small> |
 | <small>1.1.2.</small> [Desarrollo de pacman](/index.php/Category:Pacman_development_(Espa%C3%B1ol) "Category:Pacman development (Español)") <small>(1)</small> |
 | <small>1.2.</small> [Arch projects](/index.php/Category:Arch_projects_(Espa%C3%B1ol) "Category:Arch projects (Español)") <small>(5)</small> |
 | <small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki_(Espa%C3%B1ol) "Category:ArchWiki (Español)") <small>(9)</small> |
 | <small>1.3.1.</small> [Ayuda](/index.php/Category:Help_(Espa%C3%B1ol) "Category:Help (Español)") <small>(10)</small> |
-| <small>1.4.</small> [Obtener e instalar Arch](/index.php/Category:Getting_and_installing_Arch_(Espa%C3%B1ol) "Category:Getting and installing Arch (Español)") <small>(12)</small> |
+| <small>1.4.</small> [Installation process](/index.php/Category:Installation_process_(Espa%C3%B1ol) "Category:Installation process (Español)") <small>(12)</small> |
 | <small>1.5.</small> [Sistemas live de Arch](/index.php/Category:Live_Arch_systems_(Espa%C3%B1ol) "Category:Live Arch systems (Español)") <small>(2)</small> |
 | <small>2.</small> [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)") <small>(7)</small> |
 | <small>2.1.</small> [Lanzadores de aplicaciones](/index.php/Category:Application_launchers_(Espa%C3%B1ol) "Category:Application launchers (Español)") <small>(1)</small> |
@@ -106,8 +106,9 @@
 | <small>6.4.</small> [Mejoras visuales](/index.php/Category:Eye_candy_(Espa%C3%B1ol) "Category:Eye candy (Español)") <small>(9)</small> |
 | <small>6.4.1.</small> [Arranque gráfico](/index.php/Category:Bootsplash_(Espa%C3%B1ol) "Category:Bootsplash (Español)") <small>(2) (también en [Proceso de arranque](/index.php/Category:Boot_process_(Espa%C3%B1ol) "Category:Boot process (Español)"))</small> |
 | <small>6.4.2.</small> [Tipografías](/index.php/Category:Fonts_(Espa%C3%B1ol) "Category:Fonts (Español)") <small>(1)</small> |
-| <small>6.5.</small> [Sistemas de archivos](/index.php/Category:File_systems_(Espa%C3%B1ol) "Category:File systems (Español)") <small>(19)</small> |
-| <small>6.5.1.</small> [Disk encryption](/index.php/Category:Disk_encryption_(Espa%C3%B1ol) "Category:Disk encryption (Español)") <small>(1) (también en [Encriptación](/index.php/Category:Encryption_(Espa%C3%B1ol) "Category:Encryption (Español)"))</small> |
+| <small>6.5.</small> [Sistemas de archivos](/index.php/Category:File_systems_(Espa%C3%B1ol) "Category:File systems (Español)") <small>(14)</small> |
+| <small>6.5.1.</small> [Disk encryption](/index.php/Category:Disk_encryption_(Espa%C3%B1ol) "Category:Disk encryption (Español)") <small>(6) (también en [Encriptación](/index.php/Category:Encryption_(Espa%C3%B1ol) "Category:Encryption (Español)"))</small> |
+| <small>6.5.2.</small> [Storage virtualization](/index.php/Category:Storage_virtualization_(Espa%C3%B1ol) "Category:Storage virtualization (Español)") <small>(2)</small> |
 | <small>6.6.</small> [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces_(Espa%C3%B1ol) "Category:Graphical user interfaces (Español)") <small>(4)</small> |
 | <small>6.6.1.</small> [Entornos de escritorios](/index.php/Category:Desktop_environments_(Espa%C3%B1ol) "Category:Desktop environments (Español)") <small>(6)</small> |
 | <small>6.6.1.1.</small> [GNOME](/index.php/Category:GNOME_(Espa%C3%B1ol) "Category:GNOME (Español)") <small>(1)</small> |
@@ -126,8 +127,8 @@
 | <small>6.11.</small> [Administración de paquetes](/index.php/Category:Package_management_(Espa%C3%B1ol) "Category:Package management (Español)") <small>(18)</small> |
 | <small>6.12.</small> [Administración de energía](/index.php/Category:Power_management_(Espa%C3%B1ol) "Category:Power management (Español)") <small>(4)</small> |
 | <small>6.13.</small> [Seguridad](/index.php/Category:Security_(Espa%C3%B1ol) "Category:Security (Español)") <small>(11)</small> |
-| <small>6.13.1.</small> [Encriptación](/index.php/Category:Encryption_(Espa%C3%B1ol) "Category:Encryption (Español)") <small>(6)</small> |
-| <small>6.13.1.1.</small> [Disk encryption](/index.php/Category:Disk_encryption_(Espa%C3%B1ol) "Category:Disk encryption (Español)") <small>(1) (también en [Sistemas de archivos](/index.php/Category:File_systems_(Espa%C3%B1ol) "Category:File systems (Español)"))</small> |
+| <small>6.13.1.</small> [Encriptación](/index.php/Category:Encryption_(Espa%C3%B1ol) "Category:Encryption (Español)") <small>(3)</small> |
+| <small>6.13.1.1.</small> [Disk encryption](/index.php/Category:Disk_encryption_(Espa%C3%B1ol) "Category:Disk encryption (Español)") <small>(6) (también en [Sistemas de archivos](/index.php/Category:File_systems_(Espa%C3%B1ol) "Category:File systems (Español)"))</small> |
 | <small>6.13.2.</small> [Cortafuegos](/index.php/Category:Firewalls_(Espa%C3%B1ol) "Category:Firewalls (Español)") <small>(6) (también en [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
 | <small>6.13.3.</small> [Servidores proxy](/index.php/Category:Proxy_servers_(Espa%C3%B1ol) "Category:Proxy servers (Español)") <small>(2) (también en [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |
 | <small>6.13.4.</small> [Intérprete de órdenes seguras](/index.php/Category:Secure_Shell_(Espa%C3%B1ol) "Category:Secure Shell (Español)") <small>(5) (también en [Administración de redes](/index.php/Category:Networking_(Espa%C3%B1ol) "Category:Networking (Español)"))</small> |

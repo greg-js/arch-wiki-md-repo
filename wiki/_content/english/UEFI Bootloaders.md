@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Category:Boot loaders](/index.php?title=Category:Boot_loaders&redirect=no "Category:Boot loaders")
+*   [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process")

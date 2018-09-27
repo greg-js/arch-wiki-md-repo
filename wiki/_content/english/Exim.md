@@ -5,7 +5,7 @@ Related articles
 *   [Virtual user mail system](/index.php/Virtual_user_mail_system "Virtual user mail system")
 *   [Fail2ban](/index.php/Fail2ban "Fail2ban")
 
-[Exim](http://exim.org/) is a versatile [SMTP](https://en.wikipedia.org/wiki/SMTP "wikipedia:SMTP") server. While the [Exim wiki](https://github.com/Exim/exim/wiki/) provides some helpful how-tos on certain specific use cases, a [detailed description](https://exim.org/exim-html-current/doc/html/spec_html/index.html) of all configuration options is available as well.
+[Exim](https://en.wikipedia.org/wiki/Exim "wikipedia:Exim") is a versatile [mail transfer agent](/index.php/Mail_transfer_agent "Mail transfer agent"). This article builds upon [Mail server](/index.php/Mail_server "Mail server"). While the [Exim wiki](https://github.com/Exim/exim/wiki/) provides some helpful how-tos on certain specific use cases, a [detailed description](https://exim.org/exim-html-current/doc/html/spec_html/index.html) of all configuration options is available as well.
 
 ## Contents
 
@@ -24,6 +24,7 @@ Related articles
     *   [5.1 Rate limits](#Rate_limits)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 451 Temporary local problem](#451_Temporary_local_problem)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -31,7 +32,7 @@ Related articles
 
 ## Basic configuration
 
-Exim comes with a bulky default configuration file which is located in `/etc/mail/exim.conf`. Many options in there are not necessary in a regular use case. By default configuration is done in a single file containing several chapters. Below is a very basic configuration, which provides: local delivers to system users (Maildir format) and authorized relaying to MX hosts. The description is based on a domain "mydomain.tld" served on a host "hostname.mydomain.tld". It is highly recommended to consult the official documentation before using the given documentation below.
+Exim comes with a bulky default configuration file which is located in `/etc/mail/exim.conf`. Many options in there are not necessary in a regular use case. By default configuration is done in a single file containing several chapters. Below is a very basic configuration, which provides: local delivers to system users ([Maildir](https://en.wikipedia.org/wiki/Maildir "wikipedia:Maildir") format) and authorized relaying to MX hosts. The description is based on a domain "mydomain.tld" served on a host "hostname.mydomain.tld". It is highly recommended to consult the official documentation before using the given documentation below.
 
 ### Main parameters
 
@@ -109,7 +110,7 @@ begin authenticators
 
 ```
 
-**Note:** Exim loads certificate files during mail processing with the low privilege user exim. While it is good to run an internet facing process with such a user, it is somewhat strange to give access to a private key to such user. If your server serves multiple purposes (e.g. http, imap, smtp) with multiple dns aliases (cname or several names pointing to a single ip) it may be wise to request multiple certificates. If the exim certificate gets lost, damage is limited to smtp.
+**Note:** Exim loads certificate files during mail processing with the low privilege user `exim`. While it is good to run an internet facing process with such a user, it is somewhat strange to give access to a private key to such user. If your server serves multiple purposes (e.g. HTTP, IMAP, SMTP) with multiple DNS aliases (CNAME or several names pointing to a single IP) it may be wise to request multiple certificates. If the Exim private key gets lost, damage is limited to SMTP.
 
 ### Routing, transport & retry
 
@@ -254,7 +255,7 @@ where `*machine*` is the hostname of your laptop or PC and `*mydomain*` is the d
 
 ## Dovecot LMTP delivery & SASL authentication
 
-In this section the integration of [Dovecot](/index.php/Dovecot "Dovecot") is described. It is assumed that Dovecot & Exim are already setup and configured. Dovecot will serve as SASL authenticator and local transport mechanism. For this purpose the Dovecot services will be setup as follows.
+In this section the integration of [Dovecot](/index.php/Dovecot "Dovecot") is described. It is assumed that Dovecot & Exim are already setup and configured. Dovecot will serve as [SASL](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer "wikipedia:Simple Authentication and Security Layer") authenticator and local transport mechanism. For this purpose the Dovecot services will be setup as follows.
 
  `/etc/dovecot/conf.d/10-master.conf` 
 ```
@@ -279,7 +280,7 @@ service lmtp {
 
 ```
 
-To use the dovecot SASL in a TLS protected environment, add the following authenticator to Exim.
+To use the Dovecot SASL in a TLS protected environment, add the following authenticator to Exim.
 
  `/etc/mail/exim.conf - authenticators section` 
 ```
@@ -292,7 +293,7 @@ To use the dovecot SASL in a TLS protected environment, add the following authen
 
 ```
 
-The existing router for local delivery can be reused. You may want to consider add a `dsn_lasthop` to the router definition. If [DSN](https://de.wikipedia.org/wiki/Delivery_Status_Notification) is used, exim will assume final delivery of the message at this point. In the transport section the transport for local delivery must be replaced by the following transport definition.
+The existing router for local delivery can be reused. You may want to consider add a `dsn_lasthop` to the router definition. If [DSN](https://en.wikipedia.org/wiki/de:Delivery_Status_Notification "wikipedia:de:Delivery Status Notification") is used, Exim will assume final delivery of the message at this point. In the transport section the transport for local delivery must be replaced by the following transport definition.
 
  `/etc/mai/exim.conf - transports section` 
 ```
@@ -437,3 +438,7 @@ In local submission is required, consider imposing a rate limit to it. Do so by 
 ### 451 Temporary local problem
 
 If you are getting a "451 Temporary Local Problem" when testing SMTP, you are probably sending as root. By default Exim will not allow you to send as root.
+
+## See also
+
+*   [Official website](https://www.exim.org/)
