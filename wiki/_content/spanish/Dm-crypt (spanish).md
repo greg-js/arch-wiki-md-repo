@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [dm-crypt](/index.php/Dm-crypt "Dm-crypt"). Fecha de la última traducción/revisión: **2018-09-25**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Dm-crypt&diff=0&oldid=543196).
+**Estado de la traducción:** este artículo es una versión traducida de [dm-crypt](/index.php/Dm-crypt "Dm-crypt"). Fecha de la última traducción/revisión: **2018-09-25**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Dm-crypt&diff=0&oldid=543196).
 
 Artículos relacionados
 

@@ -127,4 +127,4 @@ To have it started automatically on boot, enable *pyload* service.
 
 ## See also
 
-[List of applications/Internet#Web content downloaders](/index.php/List_of_applications/Internet#Web_content_downloaders "List of applications/Internet")
+[List of applications/Internet#Download managers](/index.php/List_of_applications/Internet#Download_managers "List of applications/Internet")

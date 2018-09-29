@@ -1,4 +1,4 @@
-**翻译状态：** 本文是英文页面 [Boot Loaders](/index.php/Boot_Loaders "Boot Loaders") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-11-05，点击[这里](https://wiki.archlinux.org/index.php?title=Boot+Loaders&diff=0&oldid=397545)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Boot loader](/index.php/Boot_loader "Boot loader") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-11-05，点击[这里](https://wiki.archlinux.org/index.php?title=Boot+loader&diff=0&oldid=397545)可以查看翻译后英文页面的改动。
 
 启动加载器是 [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") 或 [UEFI](/index.php/UEFI "UEFI") 启动的第一个程序。负责使用正确的[内核](/index.php/Kernel_parameters "Kernel parameters")加载设备模块, 并[启动初始 RMA](/index.php/Mkinitcpio "Mkinitcpio")，开始 [启动过程](/index.php/Boot_process "Boot process")。Arch Linux 支持 [不同的 Bootloader](/index.php/Category:Boot_loaders "Category:Boot loaders")。
 

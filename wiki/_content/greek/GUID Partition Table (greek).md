@@ -3,7 +3,7 @@
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
 *   [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")
 *   [Partitioning](/index.php/Partitioning "Partitioning")
-*   [Arch Boot Process](/index.php/Arch_Boot_Process "Arch Boot Process")
+*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
 
 Ο πίνακας κατατμήσεων GUID (GPT) είναι ενας νέος τρόπος κατάτμησης ο οποίος αποτελεί μέρος της προδιαγραφής Unified Extensible Firmware Interface, και κάνει χρήση του καθολικά μοναδικού αναγνωριστικού συσκευών. Διαφέρει από το Master Boot Record (ο συνήθης τρόπος κατάτμησης) σε πολλές πτυχές και έχει πολλά πλεονεκτήματα.
 
@@ -74,7 +74,7 @@
 
 ### Συστήματα UEFI
 
-Όλοι οι UEFI Bootloaders υποστηρίζουν δίσκους GPT disks μιας και το GPT είναι μέρος της προδιαγραφής UEFI και ως εκ τούτου υποχρεωτική για την εκκίνηση συστημάτων UEFI. Δείτε το [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") για περισσότερες πληροφορίες.
+Όλοι οι UEFI Bootloaders υποστηρίζουν δίσκους GPT disks μιας και το GPT είναι μέρος της προδιαγραφής UEFI και ως εκ τούτου υποχρεωτική για την εκκίνηση συστημάτων UEFI. Δείτε το [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process") για περισσότερες πληροφορίες.
 
 ### Συστήματα BIOS
 

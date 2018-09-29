@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2018-09-19\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=540754) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2018-09-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=544159) na versão em inglês.
 
 Artigos relacionados
 
@@ -120,7 +120,7 @@ Liste arquivos que pertencem a um usuário ou grupo com o utilitário *find*:
 
 ```
 
-O usuário e o grupo donos de um arquivo podem ser alterados com o comando [chown](/index.php?title=Chown_(Portugu%C3%AAs)&action=edit&redlink=1 "Chown (Português) (page does not exist)") (*change owner* ou mudar o dono). As permissões de acesso a um arquivo podem ser alteradas com o comando [chmod](/index.php/Chmod "Chmod") (*change mode* ou mudar o modo).
+O usuário e o grupo donos de um arquivo podem ser alterados com o comando [chown](/index.php/Chown "Chown") (*change owner* ou mudar o dono). As permissões de acesso a um arquivo podem ser alteradas com o comando [chmod](/index.php/Chmod "Chmod") (*change mode* ou mudar o modo).
 
 Veja [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1) e [Permissões de acesso a arquivos e diretórios](http://www.guiafoca.org/cgs/guia/inic_interm/ch-perm.html) para detalhes adicionais.
 
@@ -354,6 +354,8 @@ O comando *pwck* pode ser usado para verificar a integridade da base de dados de
 
 ## Gerenciamento de grupo
 
+	*"Grupo" redireciona para aqui. Para grupos de pacotes, veja [Grupo de pacotes](/index.php/Grupo_de_pacotes "Grupo de pacotes").*
+
 `/etc/group` é o arquivo que define os grupos no sistema (veja [group(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) para detalhes).
 
 Mostre associação a grupos com o comando `groups`:
@@ -452,7 +454,7 @@ Os seguintes grupos são usados para propósitos de sistema, uma atriubuição p
 | Grupo | Arquivos afetados | Propósito |
 | dbus | Usado internamente pelo [dbus](https://www.archlinux.org/packages/?name=dbus) |
 | kmem | `/dev/port`, `/dev/mem`, `/dev/kmem` |
-| locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | Veja [locate](/index.php/Locate_(Portugu%C3%AAs) "Locate (Português)"). |
+| locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | Veja [Locate](/index.php/Locate_(Portugu%C3%AAs) "Locate (Português)"). |
 | lp | `/dev/lp[0-9]*`, `/dev/parport[0-9]*` | Acesso a dispositivos de porta paralela (impressoras e outros). |
 | mail | `/usr/bin/mail` |
 | nobody | Grupo sem privilégios. |

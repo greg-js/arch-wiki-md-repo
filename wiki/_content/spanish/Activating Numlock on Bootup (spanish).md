@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Activating Numlock on Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup"). Fecha de la última traducción/revisión: **2018-08-11**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Activating_Numlock_on_Bootup&diff=0&oldid=530619).
+**Estado de la traducción:** este artículo es una versión traducida de [Activating Numlock on Bootup](/index.php/Activating_Numlock_on_Bootup "Activating Numlock on Bootup"). Fecha de la última traducción/revisión: **2018-08-11**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Activating_Numlock_on_Bootup&diff=0&oldid=530619).
 
 ## Contents
 

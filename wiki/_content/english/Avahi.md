@@ -138,7 +138,7 @@ Avahi comes with an example service file to advertise a SSH server. To enable it
 
 #### NFS
 
-If you have an [NFS](/index.php/NFS "NFS") share set up, you can use Avahi to be able to automount them in Zeroconf-enabled browsers (such as Konqueror on KDE and Finder on macOS).
+If you have an [NFS](/index.php/NFS "NFS") share set up, you can use Avahi to be able to automount them in Zeroconf-enabled browsers (such as Konqueror on KDE and Finder on macOS) or file managers such as [GNOME/Files](/index.php/GNOME/Files "GNOME/Files").
 
 Create a `.service` file in `/etc/avahi/services` with the following contents:
 

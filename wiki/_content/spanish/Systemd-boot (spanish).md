@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Systemd-boot](/index.php/Systemd-boot "Systemd-boot"). Fecha de la última traducción/revisión: **2016-09-19**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Systemd-boot&diff=0&oldid=448431).
+**Estado de la traducción:** este artículo es una versión traducida de [Systemd-boot](/index.php/Systemd-boot "Systemd-boot"). Fecha de la última traducción/revisión: **2016-09-19**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Systemd-boot&diff=0&oldid=448431).
 
 Artículos relacionados
 

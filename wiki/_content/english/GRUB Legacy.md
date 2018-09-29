@@ -1,7 +1,6 @@
 Related articles
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
 *   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
 *   [grub-gfx](/index.php/Grub-gfx "Grub-gfx")
 *   [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters")
@@ -73,7 +72,7 @@ Additionally, GRUB must be installed to the boot sector of a drive or partition 
 
 The short answer is No. GRUB legacy will not be removed from your system and will stay fully functional.
 
-However, as any other packages which are not supported anymore, bugs are unlikely to be fixed. So you should consider upgrading to [GRUB version 2.x](/index.php/GRUB "GRUB"), or one of the other supported [Boot loaders](/index.php/Boot_loaders "Boot loaders").
+However, as any other packages which are not supported anymore, bugs are unlikely to be fixed. So you should consider upgrading to [GRUB version 2.x](/index.php/GRUB "GRUB"), or one of the other supported [Boot loaders](/index.php/Boot_loader "Boot loader").
 
 GRUB legacy does not support [GPT](/index.php/GPT "GPT") disks, [Btrfs](/index.php/Btrfs "Btrfs") filesystem and [UEFI](/index.php/UEFI "UEFI") firmwares.
 

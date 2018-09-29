@@ -111,7 +111,7 @@ For max. performance on SSD, partitioons are aligned to 1 GB and 64 GB, respecti
 
 ### "Invalid partition table!" when booting
 
-If you use BIOS+[MBR](/index.php/MBR "MBR") boot method and msdos partition table, the BIOS may show this error message before entering [Syslinux](/index.php/Syslinux "Syslinux") or other [boot loaders](/index.php/Boot_loaders "Boot loaders"). To bypass it, press Enter. To prevent it, put the "boot" flag on a primary partition (instead of a logical partition). You may refer to the wiki page of your boot loader to see how this works. It may be a "kindly reminder" to Windows users, since Windows can only boot on primary partitions.
+If you use BIOS+[MBR](/index.php/MBR "MBR") boot method and msdos partition table, the BIOS may show this error message before entering [Syslinux](/index.php/Syslinux "Syslinux") or other [boot loaders](/index.php/Boot_loader "Boot loader"). To bypass it, press Enter. To prevent it, put the "boot" flag on a primary partition (instead of a logical partition). You may refer to the wiki page of your boot loader to see how this works. It may be a "kindly reminder" to Windows users, since Windows can only boot on primary partitions.
 
 ### Keyboard inputs the same character multiple times on one keypress
 

@@ -34,7 +34,7 @@ See previous generation [ASUS Zenbook UX31E](/index.php/ASUS_Zenbook_UX31E "ASUS
 
 ## Installation
 
-To install Arch Linux on UX31A, you can follow the official [Installation guide](/index.php/Installation_guide "Installation guide"). Since the UX31A uses UEFI and GPT, make sure to also read the [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") pages. To prepare a UEFI USB device, read [UEFI#Create UEFI bootable USB from ISO](/index.php/UEFI#Create_UEFI_bootable_USB_from_ISO "UEFI").
+To install Arch Linux on UX31A, you can follow the official [Installation guide](/index.php/Installation_guide "Installation guide"). Since the UX31A uses UEFI and GPT, make sure to also read the [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process") pages. To prepare a UEFI USB device, read [UEFI#Create UEFI bootable USB from ISO](/index.php/UEFI#Create_UEFI_bootable_USB_from_ISO "UEFI").
 
 ### Boot from USB medium
 

@@ -8,7 +8,7 @@ Artículos relacionados
 *   [Syslog-ng](/index.php/Syslog-ng "Syslog-ng")
 *   [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot")
 
-**Estado de la traducción:** este artículo es una versión traducida de [Secure Shell](/index.php/Secure_Shell "Secure Shell"). Fecha de la última traducción/revisión: **2018-01-05**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Secure_Shell&diff=0&oldid=352767).
+**Estado de la traducción:** este artículo es una versión traducida de [Secure Shell](/index.php/Secure_Shell "Secure Shell"). Fecha de la última traducción/revisión: **2018-01-05**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Secure_Shell&diff=0&oldid=352767).
 
 **S**ecure **Sh**ell o **SSH** es un protocolo de red que permite el intercambio de datos sobre un canal seguro entre dos computadoras. SSH usa técnicas de cifrado que hacen que la información que viaja por el medio de comunicación vaya de manera no legible y ninguna tercera persona pueda descubrir el usuario y contraseña de la conexión ni lo que se escribe durante toda la sesión. SSH usa criptografía de clave pública para autenticar el equipo remoto y permitir al mismo autenticar al usuario si es necesario.
 

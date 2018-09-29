@@ -59,4 +59,4 @@ $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMM
 
 ## 더 보기
 
-*   [님프 깃랩](https://gitlab.com/hodong/nimf)
+*   [님프 깃랩](https://gitlab.com/nimf-i18n/nimf)

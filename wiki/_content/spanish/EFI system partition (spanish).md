@@ -3,7 +3,7 @@ Artículos relacionados
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
 *   [Category:Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders")
 
-**Estado de la traducción:** este artículo es una versión traducida de [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). Fecha de la última traducción/revisión: **2018-08-23**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=EFI_system_partition&diff=0&oldid=534179).
+**Estado de la traducción:** este artículo es una versión traducida de [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). Fecha de la última traducción/revisión: **2018-08-23**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=EFI_system_partition&diff=0&oldid=534179).
 
 La [partición del sistema EFI](https://en.wikipedia.org/wiki/EFI_system_partition "wikipedia:EFI system partition") (también llamada EFISYS o, por sus siglas en inglés, ESP) es una partición independiente del sistema operativo, que actúa como el lugar de almacenamiento para los cargadores de arranque EFI, las aplicaciones y los controladores que serán lanzados por el firmware UEFI. Es obligatoria para el arranque UEFI.
 

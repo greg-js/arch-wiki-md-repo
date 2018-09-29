@@ -7,7 +7,7 @@ Artículos relacionados
 
 GUID Partition Table (GPT) es un nuevo formato de particionado integrante de la especificación [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), que usa un [identificador único global](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier") para los dispositivos. Es diferente del [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") (el estilo más comúnmente utilizado de partición) en muchos aspectos y tiene muchas ventajas.
 
-**Advertencia:** Si quiere un arranque dual con Windows en la misma unidad, recuerde que Windows no puede arrancar desde un disco con tabla GPT en modalidad BIOS. Si ya tiene instalado Windows en la unidad con tabla de particiones MBR para arrancar a través de la BIOS, no convierta la unidad a una tabla de particionado GPT, dado que Windows no podrá arrancar, independientemente del gestor de arranque que utilice para cargar Windows. Necesita instalar Windows en modo UEFI y utilizar uno de los [gestores de arranque de UEFI](/index.php/UEFI_Bootloaders "UEFI Bootloaders") para cargar en cadena Windows, si se está arrancando desde una unidad con tabla GPT. Esta es una limitación de Windows.
+**Advertencia:** Si quiere un arranque dual con Windows en la misma unidad, recuerde que Windows no puede arrancar desde un disco con tabla GPT en modalidad BIOS. Si ya tiene instalado Windows en la unidad con tabla de particiones MBR para arrancar a través de la BIOS, no convierta la unidad a una tabla de particionado GPT, dado que Windows no podrá arrancar, independientemente del gestor de arranque que utilice para cargar Windows. Necesita instalar Windows en modo UEFI y utilizar uno de los [gestores de arranque de UEFI](/index.php/Boot_loader "Boot loader") para cargar en cadena Windows, si se está arrancando desde una unidad con tabla GPT. Esta es una limitación de Windows.
 
 Para entender GPT, es importante entender lo que es MBR y cuáles son sus desventajas.
 
@@ -75,7 +75,7 @@ La opción `CONFIG_EFI_PARTITION` en la configuración del kernel permite el sop
 
 ### Sistemas UEFI
 
-Todos los gestores de arranque UEFI admiten discos GPT desde el momento en que GPT es una parte de la especificación UEFI y, por lo tanto, obligatorio para el arranque UEFI. Consulte [Boot loaders](/index.php/Boot_loaders "Boot loaders") para más información.
+Todos los gestores de arranque UEFI admiten discos GPT desde el momento en que GPT es una parte de la especificación UEFI y, por lo tanto, obligatorio para el arranque UEFI. Consulte [Boot loaders](/index.php/Boot_loader "Boot loader") para más información.
 
 ### Sistemas BIOS
 

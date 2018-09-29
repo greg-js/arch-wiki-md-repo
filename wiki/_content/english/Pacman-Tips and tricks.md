@@ -49,8 +49,7 @@ For general methods to improve the flexibility of the provided tips or *pacman* 
         *   [3.1.3 aria2](#aria2)
         *   [3.1.4 Other applications](#Other_applications)
 *   [4 Utilities](#Utilities)
-    *   [4.1 Pacman wrappers](#Pacman_wrappers)
-    *   [4.2 Graphical front-ends](#Graphical_front-ends)
+    *   [4.1 Graphical](#Graphical)
 
 ## Maintenance
 
@@ -656,6 +655,10 @@ There are other downloading applications that you can use with *pacman*. Here th
 
 	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://www.archlinux.org/packages/?name=lostfiles)
 
+*   **Pacmatic** — *Pacman* wrapper to check Arch News before upgrading, avoid partial upgrades, and warn about configuration file changes.
+
+	[http://kmkeen.com/pacmatic](http://kmkeen.com/pacmatic) || [pacmatic](https://www.archlinux.org/packages/?name=pacmatic)
+
 *   **pacutils** — Helper library for libalpm based programs.
 
 	[https://github.com/andrewgregory/pacutils](https://github.com/andrewgregory/pacutils) || [pacutils](https://www.archlinux.org/packages/?name=pacutils)
@@ -667,6 +670,10 @@ There are other downloading applications that you can use with *pacman*. Here th
 *   **pkgtools** — Collection of scripts for Arch Linux packages.
 
 	[https://github.com/Daenyth/pkgtools](https://github.com/Daenyth/pkgtools) || [pkgtools](https://aur.archlinux.org/packages/pkgtools/)
+
+*   **[Powerpill](/index.php/Powerpill "Powerpill")** — Uses parallel and segmented downloading through [aria2](/index.php/Aria2 "Aria2") and [Reflector](/index.php/Reflector "Reflector") to try to speed up downloads for *pacman*.
+
+	[https://xyne.archlinux.ca/projects/powerpill/](https://xyne.archlinux.ca/projects/powerpill/) || [powerpill](https://aur.archlinux.org/packages/powerpill/)
 
 *   **repoctl** — Tool to help manage local repositories.
 
@@ -680,48 +687,14 @@ There are other downloading applications that you can use with *pacman*. Here th
 
 	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://www.archlinux.org/packages/?name=snap-pac)
 
-### Pacman wrappers
+### Graphical
 
-*   **Pacmatic** — *Pacman* wrapper to check Arch News before upgrading, avoid partial upgrades, and warn about configuration file changes.
+**Warning:** PackageKit opens up system permissions by default, and is otherwise not recommended for general usage. See [FS#50459](https://bugs.archlinux.org/task/50459) and [FS#57943](https://bugs.archlinux.org/task/57943).
 
-	[http://kmkeen.com/pacmatic](http://kmkeen.com/pacmatic) || [pacmatic](https://www.archlinux.org/packages/?name=pacmatic)
-
-*   **[Powerpill](/index.php/Powerpill "Powerpill")** — Uses parallel and segmented downloading through [aria2](/index.php/Aria2 "Aria2") and [Reflector](/index.php/Reflector "Reflector") to try to speed up downloads for *pacman*.
-
-	[https://xyne.archlinux.ca/projects/powerpill/](https://xyne.archlinux.ca/projects/powerpill/) || [powerpill](https://aur.archlinux.org/packages/powerpill/)
-
-### Graphical front-ends
-
-**Warning:** PackageKit may open system permissions in unexpected ways, and is otherwise not recommended for general usage. See [FS#50459](https://bugs.archlinux.org/task/50459) and [FS#57943](https://bugs.archlinux.org/task/57943).
-
-*   **Apper** — Application and package manager for KDE using PackageKit.
-
-	[https://www.kde.org/applications/system/apper/](https://www.kde.org/applications/system/apper/) || [apper](https://www.archlinux.org/packages/?name=apper)
-
-*   **Arch-Update** — Update indicator for Gnome-Shell.
-
-	[https://github.com/RaphaelRochet/arch-update](https://github.com/RaphaelRochet/arch-update) || [gnome-shell-extension-arch-update](https://aur.archlinux.org/packages/gnome-shell-extension-arch-update/)
-
-*   **Arch Update Notifier** — Update indicator for KDE
-
-	[https://github.com/I-Dream-in-Code/kde-arch-update-plasmoid](https://github.com/I-Dream-in-Code/kde-arch-update-plasmoid) || [plasma5-applets-kde-arch-update-notifier-git](https://aur.archlinux.org/packages/plasma5-applets-kde-arch-update-notifier-git/)
-
-*   **Discover** — Collection of package management tools for KDE, using PackageKit.
-
-	[https://projects.kde.org/projects/kde/workspace/discover](https://projects.kde.org/projects/kde/workspace/discover) || [discover](https://www.archlinux.org/packages/?name=discover)
-
-*   **GNOME Packagekit** — GTK+ based package management tool.
-
-	[https://freedesktop.org/software/PackageKit/](https://freedesktop.org/software/PackageKit/) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
-
-*   **GNOME Software** — Application manager for GNOME.
-
-	[https://wiki.gnome.org/Apps/Software](https://wiki.gnome.org/Apps/Software) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
-
-*   **pcurses** — Package management in a curses frontend.
-
-	[https://github.com/schuay/pcurses](https://github.com/schuay/pcurses) || [pcurses](https://www.archlinux.org/packages/?name=pcurses)
-
-*   **tkPacman** — Depends only on Tcl/Tk and X11, and interacts with the package database via the CLI of *pacman*.
-
-	[http://sourceforge.net/projects/tkpacman](http://sourceforge.net/projects/tkpacman) || [tkpacman](https://aur.archlinux.org/packages/tkpacman/)
+| Name | Written in | GUI toolkit | Arch Linux packages via | Specificity |
+| [discover](https://www.archlinux.org/packages/?name=discover) | C++/QML | Qt 5 | [packagekit-qt5](https://www.archlinux.org/packages/?name=packagekit-qt5) | [AppStream](https://www.freedesktop.org/wiki/Distributions/AppStream/), [Flatpak](/index.php/Flatpak "Flatpak"), [fwupd](/index.php/Fwupd "Fwupd") |
+| [gnome-software](https://www.archlinux.org/packages/?name=gnome-software) | C | GTK+ 3 | [gnome-software-packagekit-plugin](https://www.archlinux.org/packages/?name=gnome-software-packagekit-plugin) | [AppStream](https://www.freedesktop.org/wiki/Distributions/AppStream/), [Flatpak](/index.php/Flatpak "Flatpak"), [fwupd](/index.php/Fwupd "Fwupd") |
+| [apper](https://www.archlinux.org/packages/?name=apper) | C++ | Qt 5 | [packagekit-qt5](https://www.archlinux.org/packages/?name=packagekit-qt5) | [AppStream](https://www.freedesktop.org/wiki/Distributions/AppStream/) |
+| [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit) | C | GTK+ 3 | [packagekit](https://www.archlinux.org/packages/?name=packagekit) | – |
+| [pcurses](https://www.archlinux.org/packages/?name=pcurses) | C++ | ncurses | pacman | – |
+| [tkpacman](https://aur.archlinux.org/packages/tkpacman/) | Tcl | Tk | pacman | – |

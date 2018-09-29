@@ -218,7 +218,7 @@ It most likely means that you did not run `poweroff` like *you were instructed t
 
 ### "Missing operating system. FATAL: INT18: BOOT FAILURE"
 
-*   You either need to install or reinstall a bootloader. See [Boot loaders](/index.php/Boot_loaders "Boot loaders").
+*   You either need to install or reinstall a bootloader. See [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process").
 
 *   You are using a [Btrfs](/index.php/Btrfs "Btrfs") filesystem with compression for `/boot`, for which [Syslinux](/index.php/Syslinux "Syslinux") currently cannot boot from.
 

@@ -86,7 +86,7 @@ pkill e4rat-collect
 
 Upon successful boot and after having waited the allotted time you should see the file `/var/lib/e4rat/startup.log`.
 
-Do not forget to remove the e4rat-collect command from your [Boot Loader](/index.php/Boot_Loader "Boot Loader") configuration file (not necessary if you inserted it on the grub command line).
+Do not forget to remove the e4rat-collect command from your [Boot loader](/index.php/Boot_loader "Boot loader") configuration file (not necessary if you inserted it on the grub command line).
 
 ### e4rat-realloc
 

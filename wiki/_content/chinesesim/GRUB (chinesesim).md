@@ -3,7 +3,6 @@
 相关文章
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
 *   [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")
 *   [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
@@ -134,7 +133,7 @@ GPT 后面的空间也可以用作 BIOS 启动分区，但是这会违反 GPT �
 
 **注意:**
 
-*   建议阅读并理解[UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders")
+*   建议阅读并理解[UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [Boot loaders](/index.php/Boot_loaders "Boot loaders")
 *   使用UEFI安装时，重要的是从开始安装时您的机器就在 UEFI 模式。Arch Linux的安装介质必须是UEFI启动。
 
 ### 检查你是否使用GPT且有ESP分区

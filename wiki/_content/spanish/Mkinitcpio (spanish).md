@@ -71,7 +71,7 @@ $ git clone [git://projects.archlinux.org/mkinitcpio.git](git://projects.archlin
 
 Por defecto, el script mkinitcpio genera dos imágenes después de instalar o actualizar el kernel: `/boot/initramfs-linux.img` y `/boot/initramfs-linux-fallback.img`. La imagen *fallback* utiliza el mismo archivo de configuración que la imagen *predeterminada*, con la excepción del hook **autodetect** que se omite durante la creación, incluyendo, por tanto, una amplia gama de módulos. El hook de detección (**autodetect**) detecta automáticamente los módulos necesarios y personaliza la imagen para un hardware específico, lo que reduce el initramfs.
 
-Los usuarios pueden crear cuantas imágenes initramfs deseen, con perfiles de configuración diferentes. La imagen deseada se debe especificar para el gestor de arranque, a menudo en su [archivo de configuración.](/index.php/Boot_Loader#Configuration_files "Boot Loader") Después de realizar los cambios en el fichero de configuración, la imagen debe ser regenerada. Para el valor del kernel de Arch Linux, [linux](https://www.archlinux.org/packages/?name=linux), ésto se hace mediante la ejecución de este comando como root:
+Los usuarios pueden crear cuantas imágenes initramfs deseen, con perfiles de configuración diferentes. La imagen deseada se debe especificar para el [gestor de arranque](/index.php/Arch_boot_process_(Espa%C3%B1ol)#Gestor_de_arranque "Arch boot process (Español)"), a menudo en su archivo de configuración. Después de realizar los cambios en el fichero de configuración, la imagen debe ser regenerada. Para el valor del kernel de Arch Linux, [linux](https://www.archlinux.org/packages/?name=linux), ésto se hace mediante la ejecución de este comando como root:
 
 ```
 # mkinitcpio -p linux

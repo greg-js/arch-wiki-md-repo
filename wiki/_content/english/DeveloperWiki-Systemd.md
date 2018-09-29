@@ -7,8 +7,7 @@ This page is for planning.
         *   [1.1.1 Example of a simple conversion](#Example_of_a_simple_conversion)
     *   [1.2 tmpfiles.d](#tmpfiles.d)
     *   [1.3 modules-load.d](#modules-load.d)
-    *   [1.4 ntp-units.d](#ntp-units.d)
-    *   [1.5 sysctl.d](#sysctl.d)
+    *   [1.4 sysctl.d](#sysctl.d)
 
 ## Packaging notes
 
@@ -105,10 +104,6 @@ WantedBy=multi-user.target
 
 *   Instead of loading necessary modules when a service is started (as some rc scripts do), ship a `modules-load.d(5)` config file in `/usr/lib/modules-load.d`.
 *   Add `modprobe` lines to `post_install` (and `post_upgrade` if needed) to ensure the necessary modules are loaded on install, not just on the next boot
-
-### ntp-units.d
-
-*   For NTP daemons, systemd-timedated requires an additional file in `/usr/lib/systemd/ntp-units.d`. It should be named after the package it belongs to (with a .list suffix), and contain the name of the service which starts the NTP daemon itself.
 
 ### sysctl.d
 

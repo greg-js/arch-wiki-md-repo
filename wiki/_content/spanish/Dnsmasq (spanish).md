@@ -6,7 +6,7 @@ Artículos relacionados
 *   [Pdnsd](/index.php/Pdnsd "Pdnsd")
 *   [unbound](/index.php/Unbound "Unbound")
 
-**Estado de la traducción:** este artículo es una versión traducida de [dnsmasq](/index.php/Dnsmasq "Dnsmasq"). Fecha de la última traducción/revisión: **2018-09-14**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Dnsmasq&diff=0&oldid=540516).
+**Estado de la traducción:** este artículo es una versión traducida de [dnsmasq](/index.php/Dnsmasq "Dnsmasq"). Fecha de la última traducción/revisión: **2018-09-14**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Dnsmasq&diff=0&oldid=540516).
 
 [dnsmasq](http://www.thekelleys.org.uk/dnsmasq/doc.html) proporciona un [servidor DNS](https://en.wikipedia.org/wiki/Name_server "wikipedia:Name server"), un [servidor DHCP](https://en.wikipedia.org/wiki/es:Dynamic_Host_Configuration_Protocol "wikipedia:es:Dynamic Host Configuration Protocol") con soporte para [DHCPv6](https://en.wikipedia.org/wiki/es:DHCPv6 "wikipedia:es:DHCPv6") y [PXE](https://en.wikipedia.org/wiki/es:Preboot_Execution_Environment "wikipedia:es:Preboot Execution Environment"), y un [servidor TFTP](https://en.wikipedia.org/wiki/es:Trivial_File_Transfer_Protocol "wikipedia:es:Trivial File Transfer Protocol"). Está diseñado para ser liviano y consumir poco, adecuado para enrutadores y cortafuegos con recursos limitados. dnsmasq también se puede configurar para almacenar en caché las consultas a DNS con el fin mejorar las velocidades de búsqueda de DNS de los sitios visitados con anterioridad.
 

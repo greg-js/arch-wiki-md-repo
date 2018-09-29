@@ -67,7 +67,7 @@ For a verbose status, another way is to execute:
 
 ## Using a signed boot loader
 
-Using a signed boot loader means using a boot loader signed with Microsoft's key. There are two known signed boot loaders PreLoader and shim, their purpose is to chainload other EFI binaries (usually [boot loaders](/index.php/Boot_loaders "Boot loaders")). Since Microsoft would never sign a boot loader that automatically launches any unsigned binary, PreLoader and shim use a whitelist called Machine Owner Key list. If the SHA256 hash of the binary (Preloader and shim) or key the binary is signed with (shim) is in the MokList they execute it, if not they launch a key management utility which allows enrolling the hash or key.
+Using a signed boot loader means using a boot loader signed with Microsoft's key. There are two known signed boot loaders PreLoader and shim, their purpose is to chainload other EFI binaries (usually [boot loaders](/index.php/Boot_loader "Boot loader")). Since Microsoft would never sign a boot loader that automatically launches any unsigned binary, PreLoader and shim use a whitelist called Machine Owner Key list. If the SHA256 hash of the binary (Preloader and shim) or key the binary is signed with (shim) is in the MokList they execute it, if not they launch a key management utility which allows enrolling the hash or key.
 
 ### PreLoader
 

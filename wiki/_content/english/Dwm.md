@@ -8,10 +8,8 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Download sources](#Download_sources)
-    *   [1.2 Configuration](#Configuration)
-        *   [1.2.1 Status bar](#Status_bar)
-    *   [1.3 Create package](#Create_package)
+    *   [1.1 Configuration](#Configuration)
+        *   [1.1.1 Status bar](#Status_bar)
 *   [2 Starting](#Starting)
 *   [3 Usage](#Usage)
 *   [4 Tips and tricks](#Tips_and_tricks)
@@ -32,9 +30,7 @@ Related articles
 
 ## Installation
 
-### Download sources
-
-Download the [dwm](https://aur.archlinux.org/packages/dwm/) or [dwm-git](https://aur.archlinux.org/packages/dwm-git/) [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") sources, and make any required [#Configuration](#Configuration) changes before building and installing.
+dwm can be installed with [dwm](https://aur.archlinux.org/packages/dwm/) or [dwm-git](https://aur.archlinux.org/packages/dwm-git/). Make any required [#Configuration](#Configuration) changes **before** building and installing, see [makepkg](/index.php/Makepkg "Makepkg").
 
 ### Configuration
 
@@ -46,15 +42,9 @@ The official website has a number of [patches](http://dwm.suckless.org/patches/)
 
 See the [dwmstatus](https://dwm.suckless.org/dwmstatus/) section on the dwm website. Also see the [#Statusbar configuration](#Statusbar_configuration) section.
 
-### Create package
-
-You should [create a package](/index.php/Create_a_package "Create a package") using a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") so that [pacman](/index.php/Pacman "Pacman") is aware of the package. Then [install](/index.php/Install "Install") the package.
-
 ## Starting
 
-Select *Dwm* from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice.
-
-Alternatively, to start dwm with [startx](/index.php/Startx "Startx") append the following to `~/.xinitrc`:
+Select *Dwm* from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice. Alternatively, to start dwm with [startx](/index.php/Startx "Startx") append the following to `~/.xinitrc`:
 
 ```
 exec dwm

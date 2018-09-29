@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Archboot](/index.php/Archboot "Archboot"). Fecha de la última traducción/revisión: **2016-04-04**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Archboot&diff=0&oldid=410240).
+**Estado de la traducción:** este artículo es una versión traducida de [Archboot](/index.php/Archboot "Archboot"). Fecha de la última traducción/revisión: **2016-04-04**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Archboot&diff=0&oldid=410240).
 
 Archboot es un conjunto de scripts para generar medios de almacenamiento booteables en CD/USB/PXE.
 

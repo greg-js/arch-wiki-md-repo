@@ -199,7 +199,7 @@ we need to edit how the service calls bind.
 
 ```
 
-How, restart the systemd service.
+Now, restart the systemd service.
 
 ## See also
 

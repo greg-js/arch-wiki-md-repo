@@ -125,7 +125,7 @@ These are the more popular scripts and tools designed to help power saving:
 
 *systemd* handles some power-related [ACPI](https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface "wikipedia:Advanced Configuration and Power Interface") events, whose actions can be configured in `/etc/systemd/logind.conf` or `/etc/systemd/logind.conf.d/*.conf` — see [logind.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/logind.conf.5). On systems with no dedicated power manager, this may replace the [acpid](/index.php/Acpid "Acpid") daemon which is usually used to react to these ACPI events.
 
-The specified action for each event can be one of `ignore`, `poweroff`, `reboot`, `halt`, `suspend`, `hibernate`, `hybrid-sleep`, `lock` or `kexec`. In case of hibernation and suspension, they must be properly [set up](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate"). If an event is not configured, *systemd* will use a default action.
+The specified action for each event can be one of `ignore`, `poweroff`, `reboot`, `halt`, `suspend`, `hibernate`, `hybrid-sleep`, `suspend-then-hibernate`, `lock` or `kexec`. In case of hibernation and suspension, they must be properly [set up](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate"). If an event is not configured, *systemd* will use a default action.
 
 | Event handler | Description | Default action |
 | `HandlePowerKey` | Triggered when the power key/button is pressed. | `poweroff` |

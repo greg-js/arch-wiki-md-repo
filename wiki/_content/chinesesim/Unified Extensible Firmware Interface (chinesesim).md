@@ -169,7 +169,7 @@ Linux 内核通过两个接口来把 EFI 变量数据传递给用户空间:
 ### UEFI 变量正常工作的需求
 
 1.  内核处理器的位数应该与 EFI 处理器的位数相符。
-2.  内核应以 EFI 模式(通过 [EFISTUB](/index.php/EFISTUB "EFISTUB") 或 [EFI 引导器](/index.php/Boot_loaders "Boot loaders")，而不是 BIOS/CSM 或者同为 BIOS/CSM 的"bootcamp")启动。
+2.  内核应以 EFI 模式(通过 [EFISTUB](/index.php/EFISTUB "EFISTUB") 或 [EFI 引导器](/index.php/Boot_loader "Boot loader")，而不是 BIOS/CSM 或者同为 BIOS/CSM 的"bootcamp")启动。
 3.  EFI 运行时服务支持应出现在内核中 (`CONFIG_EFI=y`, 运行 `zgrep CONFIG_EFI /proc/config.gz` 来核对是否共存 ).
 4.  EFI 运行时服务在内核命令行中**不应被禁用**，即**不应使用**内核参数 `noefi`.
 5.  `efivarfs` 文件系统应被挂载在 `/sys/firmware/efi/efivars`, 否则参考下文 [#挂载 efivarfs](#.E6.8C.82.E8.BD.BD_efivarfs) 部分。

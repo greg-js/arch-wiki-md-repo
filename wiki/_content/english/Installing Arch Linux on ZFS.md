@@ -44,7 +44,7 @@ ZFS manages its own partitions, so only a basic partition table scheme is requir
 
 Drives larger than 2TB require a GPT partition table. GRUB on BIOS/GPT configurations require a small (1~2MiB) BIOS boot partition to embed its image of boot code.
 
-Depending upon your machine's firmware or your choice of boot mode, booting may or may not require an EFI partition. On a BIOS machine (or a UEFI machine booting in legacy mode) EFI partition is not required. Consult [Boot loaders](/index.php/Boot_loaders "Boot loaders") for more info.
+Depending upon your machine's firmware or your choice of boot mode, booting may or may not require an EFI partition. On a BIOS machine (or a UEFI machine booting in legacy mode) EFI partition is not required. Consult [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process") for more information.
 
 ### Partition scheme
 

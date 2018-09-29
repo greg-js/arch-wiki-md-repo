@@ -1,6 +1,6 @@
 < Volver a [Dm-crypt (Español)](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)")
 
-**Estado de la traducción:** este artículo es una versión traducida de [Dm-crypt/Encrypting a non-root file system](/index.php/Dm-crypt/Encrypting_a_non-root_file_system "Dm-crypt/Encrypting a non-root file system"). Fecha de la última traducción/revisión: **2018-09-26**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_a_non-root_file_system&diff=0&oldid=543819).
+**Estado de la traducción:** este artículo es una versión traducida de [Dm-crypt/Encrypting a non-root file system](/index.php/Dm-crypt/Encrypting_a_non-root_file_system "Dm-crypt/Encrypting a non-root file system"). Fecha de la última traducción/revisión: **2018-09-26**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_a_non-root_file_system&diff=0&oldid=543819).
 
 Los siguientes son ejemplos de encriptación de un sistema de archivos secundario, es decir, no raíz, con dm-crypt.
 

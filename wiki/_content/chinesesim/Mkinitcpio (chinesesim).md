@@ -71,7 +71,7 @@ mkinitcpio 是一个创建初始内存盘的 bash 脚本。摘自[mkinitcpio手�
 
 每次升级内核，mkinitcpio都会默认创建两个内存盘镜像：*默认*镜像`/boot/initramfs-linux.img`和*fallback*镜像`/boot/initramfs-linux-fallback.img`。*fallback*镜像和*默认*镜像只有一个区别，就是创建时跳过了**autodetect**钩子扩展，因而它包含更多的内核模块。**autodetect**扩展会探测硬件信息，针对硬件向镜像添加需要的模块，因此缩小了镜像。
 
-在创建初始化内存盘镜像时，可以使用很多不同配置。创建完成后，在启动引导器[配置文件](/index.php/Boot_Loader "Boot Loader")中添加启动项目，即可使用新镜像。更改mkinitcpio配置后，需要手动重新生成镜像。以Arch默认的内核[linux](https://www.archlinux.org/packages/?name=linux)为例：
+在创建初始化内存盘镜像时，可以使用很多不同配置。创建完成后，在启动引导器[配置文件](/index.php/Boot_loader "Boot loader")中添加启动项目，即可使用新镜像。更改mkinitcpio配置后，需要手动重新生成镜像。以Arch默认的内核[linux](https://www.archlinux.org/packages/?name=linux)为例：
 
 ```
 # mkinitcpio -p linux

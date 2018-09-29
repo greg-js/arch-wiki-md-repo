@@ -1,6 +1,5 @@
 Articoli correlati
 
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
 *   [Master Boot Record (Italiano)](/index.php/Master_Boot_Record_(Italiano) "Master Boot Record (Italiano)")
 *   [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
 *   [Unified Extensible Firmware Interface (Italiano)](/index.php/Unified_Extensible_Firmware_Interface_(Italiano) "Unified Extensible Firmware Interface (Italiano)")
@@ -9,7 +8,7 @@ Articoli correlati
 *   [fstab (Italiano)](/index.php/Fstab_(Italiano) "Fstab (Italiano)")
 *   [Autostarting](/index.php/Autostarting "Autostarting")
 
-Per avviare Linux è necessario aver installato nel [Master Boot Record](/index.php/Master_Boot_Record_(Italiano) "Master Boot Record (Italiano)") o nella [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") un [boot loader](/index.php/Boot_loaders "Boot loaders") compatibile con Linux, come [GRUB](/index.php/GRUB_(Italiano) "GRUB (Italiano)") o [Syslinux](/index.php/Syslinux_(Italiano) "Syslinux (Italiano)"). Il boot loader è responsabile per il caricamento del kernel e il [ramdisk iniziale](/index.php/Mkinitcpio_(Italiano) "Mkinitcpio (Italiano)") prima di iniziare il processo di boot. La procedura è piuttosto differente tra sistemi [BIOS](https://en.wikipedia.org/wiki/it:BIOS "wikipedia:it:BIOS") e [UEFI](/index.php/UEFI "UEFI"), e la descrizione dettagliata è presentata in questa pagina o quelle collegate.
+Per avviare Linux è necessario aver installato nel [Master Boot Record](/index.php/Master_Boot_Record_(Italiano) "Master Boot Record (Italiano)") o nella [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") un [boot loader](/index.php/Boot_loader "Boot loader") compatibile con Linux, come [GRUB](/index.php/GRUB_(Italiano) "GRUB (Italiano)") o [Syslinux](/index.php/Syslinux_(Italiano) "Syslinux (Italiano)"). Il boot loader è responsabile per il caricamento del kernel e il [ramdisk iniziale](/index.php/Mkinitcpio_(Italiano) "Mkinitcpio (Italiano)") prima di iniziare il processo di boot. La procedura è piuttosto differente tra sistemi [BIOS](https://en.wikipedia.org/wiki/it:BIOS "wikipedia:it:BIOS") e [UEFI](/index.php/UEFI "UEFI"), e la descrizione dettagliata è presentata in questa pagina o quelle collegate.
 
 ## Contents
 
@@ -28,7 +27,7 @@ Per avviare Linux è necessario aver installato nel [Master Boot Record](/index.
 1.  Accensione del sistema - [Power-on self-test](https://en.wikipedia.org/wiki/it:Power-on_self-test "wikipedia:it:Power-on self-test") o POST
 2.  Dopo il POST, il BIOS inizializza l'hardware necessario per il boot (dischi, controller della tastiera ecc.)
 3.  Il BIOS esegue i primi 440 byte ([Master Boot Record](/index.php/Master_Boot_Record_(Italiano) "Master Boot Record (Italiano)")) del primo disco rigido secondo l'ordine del BIOS
-4.  Il codice di boot nell'MBR prende quindi il controllo dal BIOS e esegue il prossimo blocco di codice (se esistente) (in genere un [boot loader](/index.php/Boot_loaders "Boot loaders"))
+4.  Il codice di boot nell'MBR prende quindi il controllo dal BIOS e esegue il prossimo blocco di codice (se esistente) (in genere un [boot loader](/index.php/Boot_loader "Boot loader"))
 5.  Il secondo codice lanciato (il vero boot loader) legge quindi i suoi file ausiliari e di configurazione
 6.  Basandosi sui valori nei propri file di configurazione, il boot loader carica il kernel e l'initramfs nella memoria di sistema (RAM) ed infine esegue il kernel
 

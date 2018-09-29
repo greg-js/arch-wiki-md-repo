@@ -9,7 +9,7 @@ Related articles
 
 The [Unified Extensible Firmware Interface](http://www.uefi.org/) (UEFI or EFI for short) is a new model for the interface between operating systems and firmware. It provides a standard environment for booting an operating system and running pre-boot applications.
 
-It is distinct from the commonly used "[MBR boot code](/index.php/Partitioning#Master_Boot_Record_.28bootstrap_code.29 "Partitioning")" method followed for [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") systems. See [Arch boot process](/index.php/Arch_boot_process "Arch boot process") for their differences and the boot process using UEFI. To set up UEFI boot loaders, see [Boot loader](/index.php/Boot_loader "Boot loader").
+It is distinct from the commonly used "[MBR boot code](/index.php/Partitioning#Master_Boot_Record_.28bootstrap_code.29 "Partitioning")" method followed for [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") systems. See [Arch boot process](/index.php/Arch_boot_process "Arch boot process") for their differences and the boot process using UEFI. To set up UEFI boot loaders, see [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process").
 
 ## Contents
 

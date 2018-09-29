@@ -60,25 +60,23 @@ Two versions of GTK+ are currently available in the [official repositories](/ind
 
 In GTK+ 2, the default theme is *Raleigh*, but Arch Linux has a custom configuration file at `/usr/share/gtk-2.0/gtkrc`, which sets the default theme to *Adwaita*. In GTK+ 3, the default theme is *Adwaita*, but *HighContrast*, *HighContrastInverse* and *Raleigh* themes are also included.
 
-To force a specific theme, you can set environment variables.
+To force a specific theme, set the following [environment variables](/index.php/Environment_variables "Environment variables"):
 
-*   For GTK+ 2, use the `GTK2_RC_FILES` environment variable, for example:
+*   For GTK+ 2, use `GTK2_RC_FILES`. For example to launch [GIMP](/index.php/GIMP "GIMP") with the theme *Industrial*:
 
 ```
 $ GTK2_RC_FILES=/usr/share/themes/Industrial/gtk-2.0/gtkrc gimp
 
 ```
 
-	will launch GIMP with the Industrial theme.
+**Tip:** `gtkrc` can also be a custom file in your home directory created by any of the [#Configuration tools](#Configuration_tools).
 
-*   For GTK+ 3, use the `GTK_THEME` environment variable, for example:
+*   For GTK+ 3, use `GTK_THEME`. For example to launch GNOME Calculator with the dark variant of *Adwaita*:
 
 ```
 $ GTK_THEME=Adwaita:dark gnome-calculator
 
 ```
-
-	will launch GNOME Calculator with the dark variant of Adwaita theme.
 
 More themes can be installed from the official repositories or the [AUR](/index.php/AUR "AUR"). Manually extracted themes go in `~/.themes/` or `~/.local/share/themes/` directory.
 

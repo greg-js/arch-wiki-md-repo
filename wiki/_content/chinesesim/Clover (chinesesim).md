@@ -1,3 +1,9 @@
+Related articles
+
+*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
+*   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
+*   [EFISTUB](/index.php/EFISTUB "EFISTUB")
+
 **翻译状态：** 本文是英文页面 [Clover](/index.php/Clover "Clover") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-25，点击[这里](https://wiki.archlinux.org/index.php?title=Clover&diff=0&oldid=438963)可以查看翻译后英文页面的改动。
 
 Clover 是一个为了在非 Macintosh 计算机上安装 Mac OS X 而开发的 UEFI 引导程序。除了 OS X，Clover 也可以引导其他操作系统。Clover 可以用于引导支持 [EFISTUB](/index.php/EFISTUB "EFISTUB") 的 Linux 内核。相对于其他的引导器来说，Clover 原生支持现今被广泛使用的宽屏显示器所采用的高分辨率界面。

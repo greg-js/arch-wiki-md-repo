@@ -90,7 +90,7 @@
 
 *   從 1.99-6版起, GRUB2 支援 [Btrfs](/index.php/Btrfs "Btrfs") as root (without a separate `/boot` filesystem) compressed with either zlib or LZO.
 
-*   For GRUB2 UEFI info, it is recommended to read the [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") pages before reading this page.
+*   For GRUB2 UEFI info, it is recommended to read the [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [Boot loader](/index.php/Boot_loader "Boot loader") pages before reading this page.
 
 ### 給 GRUB 舊版的使用者
 
@@ -128,7 +128,7 @@ Usually the post-MBR gap (after the 512 byte MBR region and before the start of 
 
 ##### 創建並掛載到UEFI系統分割區(Create and Mount the UEFI SYSTEM PARTITION)
 
-**注意:** 建議先閱讀 [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") 頁面
+**注意:** 建議先閱讀 [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [Boot loader](/index.php/Boot_loader "Boot loader") 頁面
 
 遵循 [Unified Extensible Firmware Interface#Create_an_UEFI_System_Partition_in_Linux](/index.php/Unified_Extensible_Firmware_Interface#Create_an_UEFI_System_Partition_in_Linux "Unified Extensible Firmware Interface") 中創建 UEFI SYSTEM PARTITION的指引. 接在將 UEFI SYSTEM PARTITION（也就是ESP分割區） 掛載在 `/boot/efi`. 如果您已經將 UEFI System Partition 掛載在其他掛載點, 以此掛載點置換在下面指引中的 {ic|/boot/efi}} :
 
@@ -394,7 +394,7 @@ menuentry "Microsoft Windows XP" {
 
 ### UEFI系統(UEFI systems)
 
-**Note:** 在閱讀這個部份前，建議先閱讀 [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") 頁面
+**Note:** 在閱讀這個部份前，建議先閱讀 [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [Boot loader](/index.php/Boot_loader "Boot loader") 頁面
 
 #### 安裝grub-uefi套件(Install grub-uefi package)
 

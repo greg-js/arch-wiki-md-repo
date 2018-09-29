@@ -62,8 +62,8 @@
 | <small>6.4.1.</small> [Gestori delle Sessioni](/index.php/Category:Display_managers_(Italiano) "Category:Display managers (Italiano)") <small>(3)</small> |
 | <small>6.4.2.</small> [Gestori delle finestre Dinamici](/index.php/Category:Dynamic_WMs_(Italiano) "Category:Dynamic WMs (Italiano)") <small>(1)</small> |
 | <small>6.4.3.</small> [KDE](/index.php/Category:KDE_(Italiano) "Category:KDE (Italiano)") <small>(1)</small> |
-| <small>6.4.4.</small> [Gestore delle finestre Statici](/index.php/Category:Stacking_WMs_(Italiano) "Category:Stacking WMs (Italiano)") <small>(14)</small> |
-| <small>6.5.</small> [Eye candy](/index.php/Category:Eye_candy_(Italiano) "Category:Eye candy (Italiano)") <small>(10)</small> |
+| <small>6.4.4.</small> [Gestore delle finestre Statici](/index.php/Category:Stacking_WMs_(Italiano) "Category:Stacking WMs (Italiano)") <small>(13)</small> |
+| <small>6.5.</small> [Eye candy](/index.php/Category:Eye_candy_(Italiano) "Category:Eye candy (Italiano)") <small>(9)</small> |
 | <small>6.5.1.</small> [Bootsplash](/index.php/Category:Bootsplash_(Italiano) "Category:Bootsplash (Italiano)") <small>(2) (anche in [Processo di Avvio](/index.php/Category:Boot_process_(Italiano) "Category:Boot process (Italiano)"))</small> |
 | <small>6.5.2.</small> [Caratteri](/index.php/Category:Fonts_(Italiano) "Category:Fonts (Italiano)") <small>(2)</small> |
 | <small>6.6.</small> [File system](/index.php/Category:File_systems_(Italiano) "Category:File systems (Italiano)") <small>(17)</small> |

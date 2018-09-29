@@ -1,7 +1,7 @@
 Articoli correlati
 
 *   [Arch Boot Process (Italiano)](/index.php/Arch_Boot_Process_(Italiano) "Arch Boot Process (Italiano)")
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
+*   [Boot loader)](/index.php?title=Boot_loader)&action=edit&redlink=1 "Boot loader) (page does not exist)")
 
 [Syslinux](https://en.wikipedia.org/wiki/SYSLINUX [Wikipedia:FAT](https://en.wikipedia.org/wiki/FAT e [Btrfs](/index.php/Btrfs "Btrfs").
 

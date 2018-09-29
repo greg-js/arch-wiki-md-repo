@@ -112,7 +112,7 @@ KMS per le schede video ATI richiede il driver opensource di [Xorg (Italiano)](/
 
 1\. Il primo metodo consiste nell'aggiungere alla riga di boot del kernel il parametro `radeon.modeset=1`. Consultare la pagina relativa al proprio bootloader per sapere come fare.
 
-*   Rimuovere qualsiasi opzione `vga=` dalla linea del *kernel* nel [file di configurazione del bootloader](/index.php/Boot_Loader#Configuration_files "Boot Loader"). L'uso di altri driver del framebuffer (come `[uvesafb](/index.php/Uvesafb_(Italiano) "Uvesafb (Italiano)")` o `radeonfb`) provocherebbe conflitti con KMS.
+*   Rimuovere qualsiasi opzione `vga=` dalla linea del *kernel* nel [file di configurazione del bootloader](/index.php/Boot_loader#Configuration_files "Boot loader"). L'uso di altri driver del framebuffer (come `[uvesafb](/index.php/Uvesafb_(Italiano) "Uvesafb (Italiano)")` o `radeonfb`) provocherebbe conflitti con KMS.
 *   La velocità dell'AGP può essere impostata con il parametro `radeon.agpmode=x`, dove x può assumere i valori 1, 2, 4, 8 (velocità AGP) o -1 (PCI mode).
 
 2\. Altrimenti, quando l'[initramfs](/index.php/Mkinitcpio_(Italiano) "Mkinitcpio (Italiano)") è caricato:
@@ -132,7 +132,7 @@ Se si sta utilizzando un kernel personalizzato (es:linux-zen), ricordarsi di uti
 **Nota:** Per il supporto all'AGP, potrebbe essere necessario aggiungere {ic
 , `ali_agp`, `ati_agp`, `amd_agp`, o `amd64_agp`) al file .conf appropriato in `/etc/modules-load.d`.}}
 
-1.  Rimuovere qualsiasi opzione `vga=` dalla linea del *kernel* nel [file di configurazione del bootloader](/index.php/Boot_Loader#Configuration_files "Boot Loader"). L'utilizzo di altri driver del framebuffer (come `[uvesafb](/index.php/Uvesafb_(Italiano) "Uvesafb (Italiano)")` o `radeonfb`) provocherebbe conflitti con KMS. Rimuovere qualsiasi altro modulo relativo al framebuffer da `/etc/mkinitcpio.conf`. `video=` può essere utilizzato in abbinamento a KMS.
+1.  Rimuovere qualsiasi opzione `vga=` dalla linea del *kernel* nel [file di configurazione del bootloader](/index.php/Boot_loader#Configuration_files "Boot loader"). L'utilizzo di altri driver del framebuffer (come `[uvesafb](/index.php/Uvesafb_(Italiano) "Uvesafb (Italiano)")` o `radeonfb`) provocherebbe conflitti con KMS. Rimuovere qualsiasi altro modulo relativo al framebuffer da `/etc/mkinitcpio.conf`. `video=` può essere utilizzato in abbinamento a KMS.
 2.  Aggiungere `options radeon modeset=1` a `/etc/modprobe.d/modprobe.conf`.
 3.  **Riavviare** il sistema.
 

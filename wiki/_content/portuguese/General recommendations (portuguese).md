@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2018-09-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=540550) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2018-09-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=543471) na versão em inglês.
 
 Artigos relacionados
 
@@ -293,7 +293,7 @@ Essa seção está relacionada a [daemons](/index.php/Daemons_(Portugu%C3%AAs) "
 
 A maioria das distribuições possuem um comando `locate` disponível para possibilitar uma pesquisa rápida por arquivos. Para obter essa funcionalidade no Arch Linux, [mlocate](https://www.archlinux.org/packages/?name=mlocate) é a instalação recomendável. Após tê-lo instalado, você deve executar `updatedb` para indexar os sistemas de arquivos.
 
-[Mecanismos de pesquisa](/index.php/List_of_applications/Utilities#Desktop_search_engines "List of applications/Utilities") fornecem um serviço similar, ao mesmo tempo mais integrado ao [ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop").
+[Mecanismos de pesquisa](/index.php/List_of_applications/Utilities#File_searching "List of applications/Utilities") fornecem um serviço similar, ao mesmo tempo mais integrado ao [ambiente de desktop](/index.php/Ambiente_de_desktop "Ambiente de desktop").
 
 ### Entrega local de correio
 
@@ -313,7 +313,7 @@ Você pode querer instalar um conjunto de fontes TrueType, já que fontes bitmap
 
 Uma abundância de informações sobre o assunto pode ser localizada nos artigos [Fontes](/index.php/Fonts "Fonts") e [Configuração de fonte](/index.php/Font_configuration "Font configuration").
 
-Se for dispender uma quantidade significante de tempo trabalhando pelo console virtual (i.e. fora de um servidor X), usuários podem querer alterar a fonte do console para melhorar a legibilidade; veja [Fonts#Console fonts](/index.php/Fonts#Console_fonts "Fonts").
+Se for dispender uma quantidade significante de tempo trabalhando pelo console virtual (i.e. fora de um servidor X), usuários podem querer alterar a fonte do console para melhorar a legibilidade; veja [Console do Linux#Fontes](/index.php/Console_do_Linux#Fontes "Console do Linux").
 
 ### Temas GTK+ e Qt
 

@@ -7,8 +7,8 @@
 | <small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki") <small>(12)</small> |
 | <small>1.3.1.</small> [Help](/index.php/Category:Help "Category:Help") <small>(15)</small> |
 | <small>1.4.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(2)</small> |
-| <small>1.5.</small> [Installation process](/index.php/Category:Installation_process "Category:Installation process") <small>(30)</small> |
-| <small>1.6.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(4)</small> |
+| <small>1.5.</small> [Installation process](/index.php/Category:Installation_process "Category:Installation process") <small>(31)</small> |
+| <small>1.6.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(5)</small> |
 | <small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(16)</small> |
 | <small>2.1.</small> [Accessibility](/index.php/Category:Accessibility "Category:Accessibility") <small>(7)</small> |
 | <small>2.2.</small> [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers") <small>(13)</small> |

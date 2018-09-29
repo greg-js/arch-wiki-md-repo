@@ -217,13 +217,13 @@ Use the [lightdm-settings](https://aur.archlinux.org/packages/lightdm-settings/)
 
 First, make sure the [accountsservice](https://www.archlinux.org/packages/?name=accountsservice) package from the [official repositories](/index.php/Official_repositories "Official repositories") is installed, then set it up as follows, replacing `*username*` with the desired user's login name.
 
-*   Create the file `/var/lib/AccountsService/icons/*username*.png` using a 96x96 PNG image file. Different image file formats are possible too, e.g., JPEG.
+*   Create the file `/var/lib/accountsservice/icons/*username*.png` using a 96x96 PNG image file. Different image file formats are possible too, e.g., JPEG.
 
-*   Edit or create the account settings file `/var/lib/AccountsService/users/*username*`, and add the lines
+*   Edit or create the account settings file `/var/lib/accountsservice/users/*username*`, and add the lines
 
 ```
 [User]
-Icon=/var/lib/AccountsService/icons/*username*.png
+Icon=/var/lib/accountsservice/icons/*username*.png
 
 ```
 

@@ -1,7 +1,6 @@
 相关文章
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
 *   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
 *   [grub-gfx](/index.php/Grub-gfx "Grub-gfx")
 *   [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters")
@@ -75,7 +74,7 @@ GRUB Legacy 已从[官方源](/index.php/%E5%AE%98%E6%96%B9%E6%BA%90 "官方源"
 
 不是必须的。老 GRUB 不会从系统删除，照旧工作。
 
-然而，和其它不被支持的软件包一样，后续的 bug 将无人修复。所以建议所有的用户抽时间升级到 [GRUB version 2.x](/index.php/GRUB "GRUB"), 或其它支持的 [Boot Loader](/index.php/Boot_Loader "Boot Loader").
+然而，和其它不被支持的软件包一样，后续的 bug 将无人修复。所以建议所有的用户抽时间升级到 [GRUB version 2.x](/index.php/GRUB "GRUB"), 或其它支持的 [Boot loader](/index.php/Boot_loader "Boot loader").
 
 GRUB legacy 不支持 [GPT](/index.php/GPT "GPT") 硬盘，[Btrfs](/index.php/Btrfs "Btrfs") 文件系统和 [UEFI](/index.php/UEFI "UEFI") 固件。
 

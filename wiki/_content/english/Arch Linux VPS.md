@@ -94,7 +94,7 @@ See [QEMU#Preparing an (Arch) Linux guest](/index.php/QEMU#Preparing_an_.28Arch.
 
 It is possible to directly copy an installation of Arch Linux over the top of a working OpenVZ VPS. This tutorial explains how to create a basic installation of Arch Linux with `pacstrap` (as used in a standard install) and then replace the contents of a target VPS with it using [rsync](/index.php/Rsync "Rsync").
 
-This process (with minor modification) also works to migrate existing Arch installations between various environments and has been confirmed to work in migrating from OpenVZ to Xen and from Xen to OpenVZ. For an install to Xen, other hardware-virtualized platforms, or even to physical hardware, extra steps (basically running `mkinitcpio` and [installing a bootloader](/index.php/Boot_loaders "Boot loaders")) are needed.
+This process (with minor modification) also works to migrate existing Arch installations between various environments and has been confirmed to work in migrating from OpenVZ to Xen and from Xen to OpenVZ. For an install to Xen, other hardware-virtualized platforms, or even to physical hardware, extra steps (basically running `mkinitcpio` and installing a [boot loader](/index.php/Boot_loader "Boot loader")) are needed.
 
 ##### Prerequisites
 

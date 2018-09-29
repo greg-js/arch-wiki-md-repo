@@ -12,30 +12,21 @@ TeX Live includes the [tex(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tex.1)
 
 ## Contents
 
-*   [1 Terms](#Terms)
-*   [2 Installation](#Installation)
-    *   [2.1 Manual installation](#Manual_installation)
-*   [3 Usage](#Usage)
-*   [4 Important information](#Important_information)
-    *   [4.1 Paper size](#Paper_size)
-    *   [4.2 Error with "formats not generated" upon update](#Error_with_.22formats_not_generated.22_upon_update)
-    *   [4.3 Fonts](#Fonts)
-*   [5 TeXLive Local Manager](#TeXLive_Local_Manager)
-*   [6 Install .sty files](#Install_.sty_files)
-    *   [6.1 Manual Installation](#Manual_Installation_2)
-    *   [6.2 Using PKGBUILDs](#Using_PKGBUILDs)
-*   [7 Updating babelbib language definitions](#Updating_babelbib_language_definitions)
-*   [8 See also](#See_also)
-
-## Terms
-
-	[CTAN](https://www.ctan.org/)
-
-	The cen­tral place for all kinds of ma­te­rial around TeX.
-
-	texmf trees
-
-	See the [TeX Live Guide](https://www.tug.org/texlive/doc/texlive-en/texlive-en.html#x1-110002.3) and the [TeX Directory Structure](https://tug.org/tds/).
+*   [1 Installation](#Installation)
+    *   [1.1 TeXLive Local Manager](#TeXLive_Local_Manager)
+    *   [1.2 Manual installation](#Manual_installation)
+*   [2 Usage](#Usage)
+    *   [2.1 CTAN](#CTAN)
+    *   [2.2 texmf trees](#texmf_trees)
+*   [3 Important information](#Important_information)
+    *   [3.1 Paper size](#Paper_size)
+    *   [3.2 Error with "formats not generated" upon update](#Error_with_.22formats_not_generated.22_upon_update)
+    *   [3.3 Fonts](#Fonts)
+*   [4 Install .sty files](#Install_.sty_files)
+    *   [4.1 Manual Installation](#Manual_Installation_2)
+    *   [4.2 Using PKGBUILDs](#Using_PKGBUILDs)
+*   [5 Updating babelbib language definitions](#Updating_babelbib_language_definitions)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -44,9 +35,15 @@ The TeX Live packages are arranged into two [package groups](/index.php/Package_
 *   [texlive-most](https://www.archlinux.org/groups/x86_64/texlive-most/) includes TeX Live applications.
 *   [texlive-lang](https://www.archlinux.org/groups/x86_64/texlive-lang/) provides various character sets and non-English features.
 
-The essential package [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) contains the basic texmf-dist tree, while [texlive-bin](https://www.archlinux.org/packages/?name=texlive-bin) contains the binaries, libraries, and the texmf tree. [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) is based on the "medium" install scheme of the upstream distribution. All other packages are based on the eponymous collections in TeX Live. To determine which CTAN packages are included in each package, look up the files `/var/lib/texmf/arch/installedpkgs/<package>_<revnr>.pkgs`.
+The essential package [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) contains the basic *TEXMFDIST* tree, while [texlive-bin](https://www.archlinux.org/packages/?name=texlive-bin) contains the binaries and libraries. [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) is based on the "medium" install scheme of the upstream distribution. All other packages are based on the eponymous collections in TeX Live. To determine which CTAN packages are included in each package, look up the files `/var/lib/texmf/arch/installedpkgs/<package>_<revnr>.pkgs`.
 
 The [texlive-langextra](https://www.archlinux.org/packages/?name=texlive-langextra) package provides language support for African, Arabic, Armenian, Croatian, Hebrew, Indic, Mongolian, Tibetan and Vietnamese.
+
+You additionally may want to install a [TeX editor](/index.php/List_of_applications/Documents#TeX_editors "List of applications/Documents").
+
+### TeXLive Local Manager
+
+[texlive-localmanager-git](https://aur.archlinux.org/packages/texlive-localmanager-git/) is a utility which allows to conveniently manage a TeX Live installation on Arch Linux. See [Usage](https://git.archlinux.org/users/remy/texlive-localmanager.git/tree/tllocalmgr#n809) for details.
 
 ### Manual installation
 
@@ -54,37 +51,39 @@ Alternatively you can install TeX Live with the upstream installer, which is pac
 
 ## Usage
 
-You can test your installation with
+### CTAN
 
-```
-$ tex '\empty Hello world!\bye'
-$ pdftex '\empty Hello world!\bye'
+[CTAN](https://www.ctan.org/) is the cen­tral place for all kinds of ma­te­rial around TeX.
 
-```
+### texmf trees
 
-You should get a DVI or a PDF file accordingly.
+See the [TeX Live Guide](https://www.tug.org/texlive/doc/texlive-en/texlive-en.html#x1-110002.3) and the [TeX Directory Structure](https://tug.org/tds/).
 
-You will probably want a [TeX editor](/index.php/List_of_applications/Documents#TeX_editors "List of applications/Documents"). There are also a few online solutions that let you create TeX-based documents without TeX Live. See the [LaTeX wikibook](https://en.wikibooks.org/wiki/LaTeX/Installation#Online_solutions).
+The following table lists the texmf trees in the reverse order they are searched (later trees override earlier ones).
+
+| Variables | Arch default [[1]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/texmf.cnf?h=packages/texlive-core) | Description |
+| TEXMFDIST | /usr/share/texmf-dist | files of the original distribution |
+| TEXMFLOCAL | /usr/local/share/texmf:/usr/share/texmf | used by administrators for system-wide installation of additional or updated macros, fonts, etc. |
+| TEXMFSYSVAR | /var/lib/texmf | used by [updmap-sys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updmap-sys.1) and [fmtutil-sys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fmtutil-sys.1) to store (cached) runtime data |
+| TEXMFSYSCONFIG | /etc/texmf | used by [updmap-sys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updmap-sys.1) and [fmtutil-sys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fmtutil-sys.1) to store modified configuration data |
+| TEXMFHOME | ~/texmf | used by users for their own individual installations of additional or updated macros, fonts, etc. |
+| TEXMFVAR | ~/.texlive/texmf-var | used by [updmap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updmap.1) and [fmtutil(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fmtutil.1) to store (cached) runtime data |
+| TEXMFCONFIG | ~/.texlive/texmf-config | used by [updmap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updmap.1) and [fmtutil(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fmtutil.1) to store modified configuration data |
+| TEXMFCACHE | $TEXMFSYSVAR;$TEXMFVAR | used by ConTEXt MkIV and LuaLATEX to store (cached) runtime data |
+
+The default values are defined in `/etc/texmf/web2c/texmf.cnf`, they can be overridden with [environment variables](/index.php/Environment_variables "Environment variables").
+
+You can also find out the value of a variable with `kpsewhich -var *VARIABLE*`.
 
 ## Important information
 
 *   The [biber](https://www.archlinux.org/packages/?name=biber) utility used to handle [biblatex](https://ctan.org/pkg/biblatex) bibliography is provided as a separate package.
-
 *   The way to handle font mappings for [updmap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updmap.1) was improved in September 2009, and installation should now be much more reliable than in the past. In the meantime, if you encounter error messages about unavailable map files, simply remove them by hand from the `updmap.cfg` file (ideally using `updmap-sys --edit`). You can also run `updmap-sys --syncwithtrees` to automatically comment out outdated map lines from the config file.
-
 *   The ConTeXt formats (for Mark II and IV) are not automatically generated upon installation. See [the ConTeXT wiki](http://wiki.contextgarden.net) for instructions on how to do this.
-
 *   The packages containing the documentation and sources are **no longer available** in official repositories. You can locally build them with [tllocalmgr](#TeXLive_Local_Manager). You can also consult documentation online at [https://tug.org/texlive/Contents/live/doc.html](https://tug.org/texlive/Contents/live/doc.html) or on CTAN. Another possibility is using the online documentation at `http://texdoc.net/pkg/packagename` which resolves to the relevant pdf for `packagename`, similar to the command line tool `texdoc` (which is useless without locally installed documentation). The documentation is now contained in [texlive-most-doc](https://aur.archlinux.org/packages/texlive-most-doc/).
-
 *   TeX Live (upstream) now provides a tool for incremental updates of CTAN packages. On that basis, we also plan to update our packages on a regular basis (we have written tools that almost automate that task).
-
 *   Some tools and utilities included in TeX Live rely on [ghostscript](https://www.archlinux.org/packages/?name=ghostscript), [perl](https://www.archlinux.org/packages/?name=perl), [python2](https://www.archlinux.org/packages/?name=python2), and [ruby](https://www.archlinux.org/packages/?name=ruby).
-
 *   For help and information about TeX Live see: [https://tug.org/texlive/doc.html](https://tug.org/texlive/doc.html) and [https://tug.org/texlive/doc/texlive-en/texlive-en.html](https://tug.org/texlive/doc/texlive-en/texlive-en.html)
-
-*   System-wide configuration files are under `/usr/share/texmf-config`. User-specific ones should be put under `~/.texlive/texmf-config`. `$TEXMFHOME` is `~/texmf` and `$TEXMFVAR` is `~/.texlive/texmf-var`.
-
-*   A skeleton of a local texmf tree is at `/usr/local/share/texmf`: this directory is writable for members of the group `tex`.
 
 ### Paper size
 
@@ -129,10 +128,6 @@ And then update fontconfig:
 
  `# fc-cache && mkfontscale && mkfontdir` 
 **Note:** This may cause conflicts with XeTeX/XeLaTeX if the same fonts are (separately) available to both TeX and Fontconfig, i.e. if multiple copies of the same font are available on the search path.
-
-## TeXLive Local Manager
-
-[texlive-localmanager-git](https://aur.archlinux.org/packages/texlive-localmanager-git/) is a utility which allows to conveniently manage a TeX Live installation on Arch Linux. See [Usage](https://git.archlinux.org/users/remy/texlive-localmanager.git/tree/tllocalmgr#n809) for details.
 
 ## Install .sty files
 

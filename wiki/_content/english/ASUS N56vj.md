@@ -1,3 +1,7 @@
+Related articles
+
+*   [ASUS N56jr](/index.php/ASUS_N56jr "ASUS N56jr")
+
 This page is a set of instructions, known issues, tips and workarounds for installing and configuring Arch Linux on the ASUS N56-VJ/VZ and ASUS N76-VJ/VZ Laptops
 
 ## Contents
@@ -9,7 +13,7 @@ This page is a set of instructions, known issues, tips and workarounds for insta
 
 ## Installation
 
-**Note:** Since these laptops' BIOS does not support legacy boot, please read [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") pages before following further instructions.
+**Note:** Since these laptops' BIOS does not support legacy boot, please read [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process") pages before following further instructions.
 
 **Note:** To choose a boot device: please press `Escape` after machine starts and then choose the suitable installation source e.g. [USB Installation Media](/index.php/USB_Installation_Media "USB Installation Media").
 

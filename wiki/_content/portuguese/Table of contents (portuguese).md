@@ -67,7 +67,7 @@
 | <small>7.1.</small> [Processo de Inicialização](/index.php/Category:Boot_process_(Portugu%C3%AAs) "Category:Boot process (Português)") <small>(3)</small> |
 | <small>7.1.1.</small> [Boot loaders](/index.php/Category:Boot_loaders_(Portugu%C3%AAs) "Category:Boot loaders (Português)") <small>(2)</small> |
 | <small>7.1.2.</small> [Bootsplash](/index.php/Category:Bootsplash_(Portugu%C3%AAs) "Category:Bootsplash (Português)") <small>(1) (também em [Aparência](/index.php/Category:Eye_candy_(Portugu%C3%AAs) "Category:Eye candy (Português)"))</small> |
-| <small>7.1.3.</small> [Init](/index.php/Category:Init_(Portugu%C3%AAs) "Category:Init (Português)") <small>(1)</small> |
+| <small>7.1.3.</small> [Init](/index.php/Category:Init_(Portugu%C3%AAs) "Category:Init (Português)") <small>(2)</small> |
 | <small>7.2.</small> [Command-line](/index.php/Category:Command-line_(Portugu%C3%AAs) "Category:Command-line (Português)") <small>(3) (também em [Applications](/index.php/Category:Applications_(Portugu%C3%AAs) "Category:Applications (Português)"))</small> |
 | <small>7.2.1.</small> [Command shells](/index.php/Category:Command_shells_(Portugu%C3%AAs) "Category:Command shells (Português)") <small>(1) (também em [Programming languages](/index.php/Category:Programming_languages_(Portugu%C3%AAs) "Category:Programming languages (Português)"))</small> |
 | <small>7.3.</small> [Configuration files](/index.php/Category:Configuration_files_(Portugu%C3%AAs) "Category:Configuration files (Português)") <small>(1)</small> |
@@ -82,7 +82,7 @@
 | <small>7.8.1.2.</small> [Tiling WMs](/index.php/Category:Tiling_WMs_(Portugu%C3%AAs) "Category:Tiling WMs (Português)") <small>(1)</small> |
 | <small>7.9.</small> [Kernel](/index.php/Category:Kernel_(Portugu%C3%AAs) "Category:Kernel (Português)") <small>(1)</small> |
 | <small>7.10.</small> [Keyboard configuration](/index.php/Category:Keyboard_configuration_(Portugu%C3%AAs) "Category:Keyboard configuration (Português)") <small>(1) (também em [Keyboards](/index.php/Category:Keyboards_(Portugu%C3%AAs) "Category:Keyboards (Português)"))</small> |
-| <small>7.11.</small> [Linux console](/index.php/Category:Linux_console_(Portugu%C3%AAs) "Category:Linux console (Português)") <small>(1)</small> |
+| <small>7.11.</small> [Linux console](/index.php/Category:Linux_console_(Portugu%C3%AAs) "Category:Linux console (Português)") <small>(2)</small> |
 | <small>7.12.</small> [Localization](/index.php/Category:Localization_(Portugu%C3%AAs) "Category:Localization (Português)") <small>(2)</small> |
 | <small>7.13.</small> [Gerenciamento de pacotes](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)") <small>(19)</small> |
 | <small>7.14.</small> [Power management](/index.php/Category:Power_management_(Portugu%C3%AAs) "Category:Power management (Português)") <small>(1)</small> |

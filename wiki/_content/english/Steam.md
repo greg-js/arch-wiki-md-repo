@@ -112,7 +112,7 @@ By default Steam simply appends your option string to the launch command. To set
 To start Steam in Big Picture Mode from a [Display manager](/index.php/Display_manager "Display manager"), you can either:
 
 *   Install [steamos-compositor](https://aur.archlinux.org/packages/steamos-compositor/)
-*   Manually add a Steam entry (*but you loose the steam compositor advantages mainly you **can't** control Big Picture mode with keyboard or gamepad*):
+*   Manually add a Steam entry (*but you lose the steam compositor advantages: mainly you **can't** control Big Picture mode with keyboard or gamepad*):
 
 create a `/usr/share/xsessions/steam-big-picture.desktop` file with the following contents:
 

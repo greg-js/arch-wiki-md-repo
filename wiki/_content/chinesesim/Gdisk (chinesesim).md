@@ -182,7 +182,7 @@ Repeat this procedure until you have the partitions you desire.
 
 **Tip:** 更多信息请阅读 Rod Smith 的 [MBR 到 GPT 转换说明](https://www.rodsbooks.com/gdisk/mbr2gpt.html)。
 
-转换之后，需要重新安装 [bootloaders](/index.php/Bootloaders "Bootloaders") 并配置为从 GPT 启动。
+转换之后，需要重新安装 [boot loaders](/index.php/Boot_loader "Boot loader") 并配置为从 GPT 启动。
 
 gdisk、sgdisk 和 cgdisk 能将 MBR 和 [BSD 盘符](https://en.wikipedia.org/wiki/BSD_disklabel "wikipedia:BSD disklabel") 无损转换为 GPT。转换时，所有 MBR 主分区和逻辑分区都会变成 GPT 分区并生成有正确的分区类型 GUID 和唯一分区 GUID.
 

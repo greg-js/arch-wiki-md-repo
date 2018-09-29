@@ -700,7 +700,7 @@ También puede seguir estos pasos:
 *   Asegúrese de quitar el antiguo `/etc/X11/xorg.conf`
 *   Si ha instalado el paquete [catalyst-hook](https://aur.archlinux.org/packages/catalyst-hook/), asegúrese de desactivar el servicio de systemd.
 
-*   Si utiliza la opción `nomodese` en su [archivo de configuración](/index.php/Boot_Loader#Configuration_files "Boot Loader") en la línea de parámetros del kernel y va a utilizar [KMS](#Kernel_mode-setting_.28KMS.29), retírelo.
+*   Si utiliza la opción `nomodese` en su [archivo de configuración](/index.php/Boot_loader#Configuration_files "Boot loader") en la línea de parámetros del kernel y va a utilizar [KMS](#Kernel_mode-setting_.28KMS.29), retírelo.
 *   **Reinicie** antes de instalar el otro controlador.
 
 ## Solución de problemas

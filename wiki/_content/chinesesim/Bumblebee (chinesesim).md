@@ -629,11 +629,11 @@ MODULES="i915 nouveau bbswitch"
 
 每次内核更新之后你都要执行一次这个命令。
 
-另外，[如下](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28GPU_fallen_off_the_bus_.2F_RmInitAdapter_failed.21.29) 内核参数需要加到 [bootloader](/index.php/Bootloaders "Bootloaders")配置中。
+另外，[如下](#Failed_to_initialize_the_NVIDIA_GPU_at_PCI:1:0:0_.28GPU_fallen_off_the_bus_.2F_RmInitAdapter_failed.21.29) 内核参数需要加到 [boot loader](/index.php/Boot_loader "Boot loader")配置中。
 
 #### Failed to initialize the NVIDIA GPU at PCI:1:0:0 (GPU fallen off the bus / RmInitAdapter failed!)
 
-把 `rcutree.rcu_idle_gp_delay=1` 加到[bootloader](/index.php/Bootloaders "Bootloaders") 配置的内核参数中。 (参考设置另见[BBS post](https://bbs.archlinux.org/viewtopic.php?id=169742) )
+把 `rcutree.rcu_idle_gp_delay=1` 加到[boot loader](/index.php/Boot_loader "Boot loader") 配置的内核参数中。 (参考设置另见[BBS post](https://bbs.archlinux.org/viewtopic.php?id=169742) )
 
 #### Could not load GPU driver
 

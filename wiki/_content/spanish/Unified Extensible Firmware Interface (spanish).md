@@ -5,7 +5,7 @@ Artículos relacionados
 *   [GUID Partition Table (Español)](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)")
 *   [Secure Boot](/index.php/Secure_Boot "Secure Boot")
 
-**Estado de la traducción:** este artículo es una versión traducida de [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"). Fecha de la última traducción/revisión: **2018-08-31**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&diff=0&oldid=538790).
+**Estado de la traducción:** este artículo es una versión traducida de [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"). Fecha de la última traducción/revisión: **2018-08-31**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&diff=0&oldid=538790).
 
 **Advertencia:** Si bien es cieto que la instalación en modalidad UEFI es la opción a la que se tiende, no obstante, hay que advertir que las primeras implementaciones de UEFI «pueden» tener más inconvenientes que beneficios que su opositor BIOS. Por tanto, es recomendable hacer una búsqueda relacionada con su modelo de placa base particular para obtener información sobre la conveniencia de optar por la modalidad UEFI antes de continuar.
 
@@ -69,7 +69,7 @@ Un firmware UEFI x86_64 no incluye soporte para el inicio de aplicaciones EFI de
 
 Compruebe si el directorio `/sys/firmware/efi` existe; si existe, significa que el kernel ha arrancado en modalidad UEFI. En ese caso, se presumirá que la arquitectura de UEFI coincidirá con la del kernel (es decir, i686 o x86_64)
 
-**Nota:** El chip del sistema Atom de Intel es entregado con UEFI de 32 bit (desde el 2 de noviembre de 2013). Véase [esta página](#Booting_64-bit_kernel_on_32-bit_UEFI) para obtener más información. Vea también [esta publicación del blog de Intel](https://software.intel.com/en-us/blogs/2015/07/22/why-cheap-systems-run-32-bit-uefi-on-x64-systems).
+**Nota:** El chip del sistema Atom de Intel es entregado con UEFI de 32 bit (desde el 2 de noviembre de 2013). Véase [esta página](#Arrancar_el_kernel_de_64-bit_en_UEFI_de_32-bit) para obtener más información. Vea también [esta publicación del blog de Intel](https://software.intel.com/en-us/blogs/2015/07/22/why-cheap-systems-run-32-bit-uefi-on-x64-systems).
 
 ### Mac de Apple
 
@@ -122,8 +122,8 @@ El kernel de Linux expone los datos de las variables UEFI en el espacio de usuar
 
 ### Requisitos para que el soporte de las variables UEFI funcione correctamente
 
-1.  La [arquitectura](#UEFI_firmware_bitness) del procesador del Kernel y del procesador de UEFI deben coincidir.
-2.  El kernel debe arrancar en modo EFI (a través de [EFISTUB](/index.php/EFISTUB "EFISTUB") o de cualquier otro [gestor de arranque EFI](/index.php/Boot_loaders "Boot loaders"), no a través de BIOS/CSM o «bootcamp» de Apple que también es BIOS/CSM)
+1.  La [arquitectura](#Firmware_de_UEFI) del procesador del Kernel y del procesador de UEFI deben coincidir.
+2.  El kernel debe arrancar en modo EFI (a través de [EFISTUB](/index.php/EFISTUB "EFISTUB") o de cualquier otro [gestor de arranque EFI](/index.php/Boot_loader "Boot loader"), no a través de BIOS/CSM o «bootcamp» de Apple que también es BIOS/CSM)
 3.  El soporte para EFI Runtime Services debe estar presente en el kernel (`CONFIG_EFI=y`, compruebe si están presente con `zgrep CONFIG_EFI /proc/config.gz`).
 4.  Los EFI Runtime Services del kernel NO DEBEN ser desactivados a través de un terminal, es decir, el parámetro `noefi` del kernel NO DEBE ser usado.
 5.  El sistema de archivos `efivarfs` debe estar montado en `/sys/firmware/efi/efivars`, en otro caso, debe [montar efivarfs](#Montar_efivarfs).

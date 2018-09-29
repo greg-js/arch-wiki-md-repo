@@ -148,7 +148,7 @@ ping archlinux.org
 
 If no response is received, the connection is not working. If this is the case, you are probably experiencing [a bug Microsoft has acknowledged](https://support.microsoft.com/kb/974909). You can try installing the hotfix from the Knowledge Base page, or just wait a little while and try again.
 
-In general, you may now install Arch as you would on any other system. The Generation 1 VMs are BIOS-only (no UEFI), so you must follow the BIOS-specific instructions for the various [bootloaders](/index.php/Bootloaders "Bootloaders").
+In general, you may now install Arch as you would on any other system. The Generation 1 VMs are BIOS-only (no UEFI), so you must follow the BIOS-specific instructions for the various [boot loaders](/index.php/Boot_loader "Boot loader").
 
 ## Post-installation
 

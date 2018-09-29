@@ -1,6 +1,6 @@
 < Volver a [Dm-crypt (Español)](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)")
 
-**Estado de la traducción:** este artículo es una versión traducida de [Dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"). Fecha de la última traducción/revisión: **2015-06-27**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_an_entire_system&diff=0&oldid=379213).
+**Estado de la traducción:** este artículo es una versión traducida de [Dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"). Fecha de la última traducción/revisión: **2015-06-27**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Dm-crypt/Encrypting_an_entire_system&diff=0&oldid=379213).
 
 Los siguientes son ejemplos de escenarios comunes en el cifrado completo de un sistema con *dm-crypt*. Se explican todas las adaptaciones que se necesitan hacer al [proceso de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)"). Todas las herramientas necesarias para ello están presentes en la [imagen de instalación](https://www.archlinux.org/download/).
 

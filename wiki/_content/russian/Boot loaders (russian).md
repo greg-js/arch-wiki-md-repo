@@ -2,7 +2,7 @@
 
 *   [Microcode (Русский)](/index.php/Microcode_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Microcode (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [Boot loaders](/index.php/Boot_loaders "Boot loaders"). Дата последней синхронизации: 2015-04-01\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Boot_loaders&diff=0&oldid=363255).
+**Состояние перевода:** На этой странице представлен перевод статьи [Boot loader](/index.php/Boot_loader "Boot loader"). Дата последней синхронизации: 2015-04-01\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Boot_loader&diff=0&oldid=363255).
 
 Загрузчик (boot loader) - это первичная программа, которую запускает [BIOS](https://en.wikipedia.org/wiki/ru:BIOS перед тем как начать [процесс загрузки](/index.php/Arch_boot_process_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch boot process (Русский)"). В Arch вы можете использовать [различные виды](/index.php/Category:Boot_loaders_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Boot loaders (Русский)") загрузчиков, такие как [GRUB](/index.php/GRUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GRUB (Русский)") и [Syslinux](/index.php/Syslinux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Syslinux (Русский)"). Некоторые загрузчики поддерживают только BIOS или только UEFI, а некоторые поддерживают и то и то.
 

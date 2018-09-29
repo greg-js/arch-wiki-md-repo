@@ -462,10 +462,31 @@ SystemAccount=true
 
 Some [desktop environments](/index.php/Desktop_environments "Desktop environments") store display settings in `~/.config/monitors.xml`. *xrandr* commands are then generated on the base of the file content. GDM has a similar file stored in `/var/lib/gdm/.config/monitors.xml`.
 
-If you have your monitors setup as you like (orientation, primary and so on) in `~/.config/monitors.xml` and want GDM to honor those settings:
+If you have your monitors setup as you like (orientation, scaling, primary and so on) in `~/.config/monitors.xml` and want GDM to honor those settings:
 
 ```
-# cp ~/.config/monitors.xml /var/lib/gdm/.config/monitors.xml
+$ sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/
+$ sudo chown gdm:gdm /var/lib/gdm/.config/monitors.xml
+
+```
+
+The relevant parts of `monitors.xml` for screen rotation and scaling are:
+
+```
+<monitors version="2">
+  <configuration>
+    <logicalmonitor>
+      ...
+      <scale>2</scale>
+      ...
+      <transform>
+        <rotation>right</rotation>
+        <flipped>no</flipped>
+      </transform>
+      ...
+    </logicalmonitor>
+  </configuration>
+</monitors>
 
 ```
 

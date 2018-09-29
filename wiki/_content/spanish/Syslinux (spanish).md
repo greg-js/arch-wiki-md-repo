@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Syslinux](/index.php/Syslinux "Syslinux"). Fecha de la última traducción/revisión: **2015-01-06**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Syslinux&diff=0&oldid=354890).
+**Estado de la traducción:** este artículo es una versión traducida de [Syslinux](/index.php/Syslinux "Syslinux"). Fecha de la última traducción/revisión: **2015-01-06**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Syslinux&diff=0&oldid=354890).
 
 Artículos relacionados
 

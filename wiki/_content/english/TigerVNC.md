@@ -91,6 +91,16 @@ unset DBUS_SESSION_BUS_ADDRESS
 exec startxfce4
 ```
 
+Some desktop environments may require [D-Bus](/index.php/D-Bus "D-Bus") session. For example, starting [Gnome](/index.php/Gnome "Gnome"):
+
+ `~/.vnc/xstartup` 
+```
+#!/bin/sh
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+exec dbus-launch gnome-session
+```
+
 Make sure `~/.vnc/xstartup` has a execute permission:
 
 ```

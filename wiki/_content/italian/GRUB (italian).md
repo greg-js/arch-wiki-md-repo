@@ -2,7 +2,6 @@ Articoli correlati
 
 *   [GRUB Legacy (Italiano)](/index.php/GRUB_Legacy_(Italiano) "GRUB Legacy (Italiano)")
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
 *   [Master Boot Record (Italiano)](/index.php/Master_Boot_Record_(Italiano) "Master Boot Record (Italiano)")
 *   [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
 *   [Unified Extensible Firmware Interface (Italiano)](/index.php/Unified_Extensible_Firmware_Interface_(Italiano) "Unified Extensible Firmware Interface (Italiano)")
@@ -166,7 +165,7 @@ Solitamente, il gap dopo il [MBR](/index.php/Master_Boot_Record_(Italiano) "Mast
 
 #### Sistemi UEFI
 
-**Nota:** Per ulteriori informazioni su GRUB2 UEFI, è consigliabile leggere le pagine [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Italiano) "Unified Extensible Firmware Interface (Italiano)"), [GPT](/index.php/GPT "GPT") e [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") prima di proseguire con questo articolo.
+**Nota:** Per ulteriori informazioni su GRUB2 UEFI, è consigliabile leggere le pagine [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Italiano) "Unified Extensible Firmware Interface (Italiano)"), [GPT](/index.php/GPT "GPT") e [Boot loader](/index.php/Boot_loader "Boot loader") prima di proseguire con questo articolo.
 
 ##### Controllare se si sta utilizzando GPT ed una partizione EFI di sistema
 

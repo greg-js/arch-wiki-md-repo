@@ -1,6 +1,5 @@
 Related articles
 
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
 *   [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")
 *   [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
@@ -10,7 +9,7 @@ Related articles
 *   [fstab](/index.php/Fstab "Fstab")
 *   [Autostarting](/index.php/Autostarting "Autostarting")
 
-In order to boot Arch Linux, a Linux-capable [boot loader](/index.php/Boot_loader "Boot loader") such as [GRUB](/index.php/GRUB "GRUB") or [Syslinux](/index.php/Syslinux "Syslinux") must be installed to the [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") or the [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table"). The boot loader is responsible for loading the kernel and [initial ramdisk](/index.php/Initial_ramdisk "Initial ramdisk") before initiating the boot process. The procedure is quite different for [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") and [UEFI](/index.php/UEFI "UEFI") systems, the detailed description is given on this or linked pages.
+In order to boot Arch Linux, a Linux-capable [boot loader](#Boot_loader) such as [GRUB](/index.php/GRUB "GRUB") or [Syslinux](/index.php/Syslinux "Syslinux") must be installed to the [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") or the [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table"). The boot loader is responsible for loading the kernel and [initial ramdisk](/index.php/Initial_ramdisk "Initial ramdisk") before initiating the boot process. The procedure is quite different for [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") and [UEFI](/index.php/UEFI "UEFI") systems, the detailed description is given on this or linked pages.
 
 ## Contents
 
@@ -23,7 +22,6 @@ In order to boot Arch Linux, a Linux-capable [boot loader](/index.php/Boot_loade
     *   [2.3 Multibooting in UEFI](#Multibooting_in_UEFI)
 *   [3 Boot loader](#Boot_loader)
     *   [3.1 Feature comparison](#Feature_comparison)
-    *   [3.2 See also](#See_also)
 *   [4 Kernel](#Kernel)
 *   [5 initramfs](#initramfs)
 *   [6 Init process](#Init_process)
@@ -32,7 +30,7 @@ In order to boot Arch Linux, a Linux-capable [boot loader](/index.php/Boot_loade
 *   [9 Login](#Login)
 *   [10 Shell](#Shell)
 *   [11 GUI, xinit or wayland](#GUI.2C_xinit_or_wayland)
-*   [12 See also](#See_also_2)
+*   [12 See also](#See_also)
 
 ## Firmware types
 
@@ -40,7 +38,7 @@ In order to boot Arch Linux, a Linux-capable [boot loader](/index.php/Boot_loade
 
 A [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") or Basic Input-Output System is the very first program (firmware) that is executed once the system is switched on. In most cases it is stored in a flash memory in the motherboard itself and independent of the system storage.
 
-The BIOS loads the beginning 512 bytes ([Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")) of the first valid disk in the BIOS disk order. Of these 512 bytes, the first 440 contains the first stage of a [boot loader](/index.php/Boot_loader "Boot loader") like [GRUB](/index.php/GRUB "GRUB"), [Syslinux](/index.php/Syslinux "Syslinux") or [LILO](/index.php/LILO "LILO"). Since very little can be achieved by a program of this size, the second stage (residing on the next disk sectors) is loaded from here and looks up a file stored on the partition itself (the actual bootloader). This then loads an operating system by either chain-loading or directly loading the operating system kernel.
+The BIOS loads the beginning 512 bytes ([Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")) of the first valid disk in the BIOS disk order. Of these 512 bytes, the first 440 contains the first stage of a [boot loader](#Boot_loader) like [GRUB](/index.php/GRUB "GRUB"), [Syslinux](/index.php/Syslinux "Syslinux") or [LILO](/index.php/LILO "LILO"). Since very little can be achieved by a program of this size, the second stage (residing on the next disk sectors) is loaded from here and looks up a file stored on the partition itself (the actual boot loader). This then loads an operating system by either chain-loading or directly loading the operating system kernel.
 
 ### UEFI
 
@@ -57,8 +55,8 @@ UEFI does not launch any boot code in the MBR whether it exists or not. Instead 
 1.  System switched on - [Power-on self-test](https://en.wikipedia.org/wiki/Power-on_self-test "wikipedia:Power-on self-test") or POST process.
 2.  After POST, BIOS initializes the necessary system hardware for booting (disk, keyboard controllers etc.).
 3.  BIOS launches the first 440 bytes ([Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")) of the first disk in the BIOS disk order.
-4.  The MBR boot code then takes control from BIOS and launches its next stage code (if any) (mostly [boot loader](/index.php/Boot_loader "Boot loader") code).
-5.  The actual [boot loader](/index.php/Boot_loader "Boot loader"), such as [GRUB](/index.php/GRUB "GRUB") or [Syslinux](/index.php/Syslinux "Syslinux"), is launched.
+4.  The MBR boot code then takes control from BIOS and launches its next stage code (if any) (mostly [boot loader](#Boot_loader) code).
+5.  The actual [boot loader](#Boot_loader), such as [GRUB](/index.php/GRUB "GRUB") or [Syslinux](/index.php/Syslinux "Syslinux"), is launched.
 
 ### Under UEFI
 
@@ -75,13 +73,13 @@ If [Secure Boot](/index.php/Secure_Boot "Secure Boot") is enabled, the boot proc
 
 ### Multibooting in UEFI
 
-Since each OS or vendor can maintain its own files within the EFI System Partition without affecting the other, multi-booting using UEFI is just a matter of launching a different UEFI application corresponding to the particular OS's bootloader. This removes the need for relying on chainloading mechanisms of one [boot loader](/index.php/Boot_loader "Boot loader") to load another OS.
+Since each OS or vendor can maintain its own files within the EFI System Partition without affecting the other, multi-booting using UEFI is just a matter of launching a different UEFI application corresponding to the particular OS's boot loader. This removes the need for relying on chainloading mechanisms of one [boot loader](#Boot_loader) to load another OS.
 
 See also [Dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows").
 
 ## Boot loader
 
-The [boot loader](/index.php/Boot_loader "Boot loader") is the first piece of software started by the [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") or [UEFI](/index.php/UEFI "UEFI"). It is responsible for loading the kernel with the wanted [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), and [initial RAM disk](/index.php/Mkinitcpio "Mkinitcpio") based on config files.
+The boot loader is the first piece of software started by the [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") or [UEFI](/index.php/UEFI "UEFI"). It is responsible for loading the kernel with the wanted [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), and [initial RAM disk](/index.php/Mkinitcpio "Mkinitcpio") based on config files.
 
 **Note:** Loading [Microcode](/index.php/Microcode "Microcode") updates requires adjustments in boot loader configuration. [[1]](https://www.archlinux.org/news/changes-to-intel-microcodeupdates/)
 
@@ -95,7 +93,7 @@ The [boot loader](/index.php/Boot_loader "Boot loader") is the first piece of so
 
 | Name | Firmware | Multi-boot | [File systems](/index.php/File_systems "File systems") | Notes |
 | BIOS | [UEFI](/index.php/UEFI "UEFI") | [Btrfs](/index.php/Btrfs "Btrfs") | [ext4](/index.php/Ext4 "Ext4") | ReiserFS v3 | [VFAT](/index.php/VFAT "VFAT") | [XFS](/index.php/XFS "XFS") |
-| [EFISTUB](/index.php/EFISTUB "EFISTUB") | – | Yes | – | – | – | – | ESP only | – | Kernel turned into EFI executable to be loaded directly from [UEFI](/index.php/UEFI "UEFI") firmware or another bootloader. |
+| [EFISTUB](/index.php/EFISTUB "EFISTUB") | – | Yes | – | – | – | – | ESP only | – | Kernel turned into EFI executable to be loaded directly from [UEFI](/index.php/UEFI "UEFI") firmware or another boot loader. |
 | [Clover](/index.php/Clover "Clover") | emulates UEFI | Yes | Yes | No | without encryption | No | Yes | No | Fork of rEFIt modified to run [macOS on non-Apple hardware](https://en.wikipedia.org/wiki/Hackintosh "wikipedia:Hackintosh"). |
 | [GRUB](/index.php/GRUB "GRUB") | Yes | Yes | Yes | without zstd compression | Yes | Yes | Yes | Yes | On BIOS/GPT configuration requires a [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition").
 Supports RAID, LUKS1 and LVM (but not thin provisioned volumes). |
@@ -105,10 +103,7 @@ Supports RAID, LUKS1 and LVM (but not thin provisioned volumes). |
 | [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") | without GPT | No | Yes | No | No | Yes | Yes | v4 only | [Discontinued](https://www.gnu.org/software/grub/grub-legacy.html) in favor of [GRUB](/index.php/GRUB "GRUB"). |
 | [LILO](/index.php/LILO "LILO") | without GPT | No | Yes | No | without encryption | Yes | Yes | MBR only [[3]](http://xfs.org/index.php/XFS_FAQ#Q:_Does_LILO_work_with_XFS.3F) | [Discontinued](http://web.archive.org/web/20180323163248/http://lilo.alioth.debian.org/) due to limitations (e.g. with Btrfs, GPT, RAID). |
 
-### See also
-
-*   [Rod Smith - Managing EFI Boot Loaders for Linux](http://www.rodsbooks.com/efi-bootloaders/)
-*   [Wikipedia:Comparison of boot loaders](https://en.wikipedia.org/wiki/Comparison_of_boot_loaders "wikipedia:Comparison of boot loaders")
+See also [Wikipedia:Comparison of boot loaders](https://en.wikipedia.org/wiki/Comparison_of_boot_loaders "wikipedia:Comparison of boot loaders").
 
 ## Kernel
 
@@ -155,3 +150,4 @@ Once the user's [shell](/index.php/Shell "Shell") is started, it will typically 
 *   [Boot Linux Grub Into Single User Mode](http://www.cyberciti.biz/faq/grub-boot-into-single-user-mode/)
 *   [NeoSmart: The BIOS/MBR Boot Process](https://neosmart.net/wiki/mbr-boot-process/)
 *   [Kernel Newbie Corner: initrd and initramfs](https://www.linux.com/learn/kernel-newbie-corner-initrd-and-initramfs-whats)
+*   [Rod Smith - Managing EFI Boot Loaders for Linux](http://www.rodsbooks.com/efi-bootloaders/)

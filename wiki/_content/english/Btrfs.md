@@ -107,7 +107,7 @@ You must include either the `udev` hook or the `btrfs` hook in `/etc/mkinitcpio.
 
 *   If the disks in your multi-disk array have different sizes, this may not use the full capacity of all drives. In order to utilize the full capacity of all disks, use `-d single` instead of `-d raid0 -m raid1` (metadata mirrored, data not mirrored and not striped)
 *   Mounting such a filesystem may result in all but one of the according *.device*-jobs getting stuck and systemd never finishing startup due to a [bug](https://github.com/systemd/systemd/issues/1921) in handling this type of filesystem.
-*   Some [boot loaders](/index.php/Boot_loaders "Boot loaders") such as [Syslinux](/index.php/Syslinux "Syslinux") do not support multi-device file systems.
+*   Some [boot loaders](/index.php/Boot_loader "Boot loader") such as [Syslinux](/index.php/Syslinux "Syslinux") do not support multi-device file systems.
 
 See [#RAID](#RAID) for advice on maintenance specific to multi-device Btrfs file systems.
 

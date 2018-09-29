@@ -50,7 +50,7 @@ In order to install Arch on the S7 you need to disable Secure Boot from the BIOS
 
 ## Booting
 
-The information in [Boot loaders](/index.php/Boot_loaders "Boot loaders") applies here. GRUB is confirmed to work.
+The information in [Boot loaders](/index.php/Boot_loader "Boot loader") applies here. GRUB is confirmed to work.
 
 ### Change Boot from UEFI to BIOS
 

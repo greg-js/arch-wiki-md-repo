@@ -4,7 +4,7 @@ Related articles
 *   [VMware/Installing Arch as a guest](/index.php/VMware/Installing_Arch_as_a_guest "VMware/Installing Arch as a guest")
 *   [Moving an existing install into (or out of) a virtual machine](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine "Moving an existing install into (or out of) a virtual machine")
 
-This article is about the latest major [VMware](https://en.wikipedia.org/wiki/VMware "wikipedia:VMware") versions, meaning [VMware Workstation](https://en.wikipedia.org/wiki/VMware_Workstation "wikipedia:VMware Workstation") Pro and Player 12.5 and 14\.
+This article is about the latest major [VMware](https://en.wikipedia.org/wiki/VMware "wikipedia:VMware") versions, meaning [VMware Workstation](https://en.wikipedia.org/wiki/VMware_Workstation "wikipedia:VMware Workstation") Pro and Player 15, 14 and 12.5\.
 
 You may also be interested in [VMware/Installing Arch as a guest](/index.php/VMware/Installing_Arch_as_a_guest "VMware/Installing Arch as a guest"). For older versions, use the [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) package.
 
@@ -26,6 +26,9 @@ You may also be interested in [VMware/Installing Arch as a guest](/index.php/VMw
     *   [4.3 Extracting the installer](#Extracting_the_installer)
         *   [4.3.1 Using the modified BIOS](#Using_the_modified_BIOS)
     *   [4.4 Enable 3D graphics on Intel and Optimus](#Enable_3D_graphics_on_Intel_and_Optimus)
+    *   [4.5 System speedup tricks](#System_speedup_tricks)
+        *   [4.5.1 Disable transparent hugepages](#Disable_transparent_hugepages)
+        *   [4.5.2 Ensure direct RAM access](#Ensure_direct_RAM_access)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Kernel headers for version 4.x-xxxx were not found. If you installed them[...]](#Kernel_headers_for_version_4.x-xxxx_were_not_found._If_you_installed_them.5B....5D)
     *   [5.2 USB devices not recognized](#USB_devices_not_recognized)
@@ -54,7 +57,7 @@ You may also be interested in [VMware/Installing Arch as a guest](/index.php/VMw
 
 You can either install using VMware bundle or package [vmware-workstation](https://aur.archlinux.org/packages/vmware-workstation/). The latter is preferred if using *VMware Workstation* on x86_64.
 
-**Note:** VMware version 14 drops support for a number of CPUs including early Intel Core i7 CPUs. Check the [Processor Requirements for Host Systems](https://docs.vmware.com/en/VMware-Workstation-Pro/14.0/com.vmware.ws.using.doc/GUID-BBD199AA-C346-4334-9F56-5A42F7328594.html). If version 14 does not support your CPU then you can use [vmware-workstation12](https://aur.archlinux.org/packages/vmware-workstation12/).
+**Note:** VMware has dropped support for a number of CPUs including early Intel Core i7 CPUs since version 14\. Check the [Processor Requirements for Host Systems](https://docs.vmware.com/en/VMware-Workstation-Pro/14.0/com.vmware.ws.using.doc/GUID-BBD199AA-C346-4334-9F56-5A42F7328594.html). If your CPU is not supported in the newer releases then you can use [vmware-workstation12](https://aur.archlinux.org/packages/vmware-workstation12/).
 
 ### VMware bundle
 
@@ -116,9 +119,9 @@ Lastly, load the VMware modules:
 
 ### Kernel modules
 
-VMware Workstation 12.5 supports kernels up to 4.8 out of the box.
+VMware Workstation 15.0 supports kernel 4.14 and up out of the box. Older versions 14.1 and 12.5.7 have native support for kernels up to 4.13 and 4.12, respectively.
 
-For VMware bundle versions, a collection of patches needed for the VMware host modules to build against recent kernels can be found from the following GitHub repository, [vmware-host-modules](https://github.com/mkubecek/vmware-host-modules/). See the INSTALL document found on the repository for the most up-to-date module installation instructions for VMware versions from 12.5.5 and up.
+For VMware 14 and 12.5 bundle versions, a collection of patches needed for the VMware host modules to build against recent kernels can be found from the following GitHub repository, [vmware-host-modules](https://github.com/mkubecek/vmware-host-modules/). See the INSTALL document found on the repository for the most up-to-date module installation instructions for VMware Workstation versions from 12.5.5 and up.
 
 Alternatively, the modules can be patched installing the [vmware-patch](https://aur.archlinux.org/packages/vmware-patch/) package and executing:
 
@@ -276,6 +279,33 @@ Disabling 3D on this host due to presence of Mesa DRI driver.  Set mks.gl.allowB
 ```
 
 The config file where you can set this setting is `~/.vmware/preferences`.
+
+### System speedup tricks
+
+See also [Improving performance](/index.php/Improving_performance "Improving performance").
+
+#### Disable transparent hugepages
+
+If you notice the guest and/or the host frequently freezing when running a VM, you may want to disable transparent hugepages. To disable them for the current session, run (on the host):
+
+```
+# echo never > /sys/kernel/mm/transparent_hugepage/enabled
+
+```
+
+To make the change persistent across boots, add the [kernel parameter](/index.php/Kernel_parameters "Kernel parameters") `transparent_hugepage=never`.
+
+#### Ensure direct RAM access
+
+By default, VMware writes a running guest system's RAM to a file on disk. If you're certain you have enough spare memory, you can ensure the guest OS writes its memory directly to the host's RAM by adding the following to the VM's `.vmx`:
+
+ `*Virtual_machine_name*.vmx` 
+```
+MemTrimRate = "0" 
+sched.mem.pshare.enable = "FALSE" 
+prefvmx.useRecommendedLockedMemSize = "TRUE"
+mainmem.backing = "swap"
+```
 
 ## Troubleshooting
 

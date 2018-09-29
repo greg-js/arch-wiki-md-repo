@@ -3,6 +3,7 @@ Related articles
 *   [Remastering the Install ISO](/index.php/Remastering_the_Install_ISO "Remastering the Install ISO")
 *   [Archiso as pxe server](/index.php/Archiso_as_pxe_server "Archiso as pxe server")
 *   [Archboot](/index.php/Archboot "Archboot")
+*   [Offline installation](/index.php/Offline_installation "Offline installation")
 
 **Archiso** is a small set of bash scripts capable of building fully functional Arch Linux live CD/DVD/USB images. It is the same tool used to generate the official images, but since it is a very generic tool, it can be used to generate anything from rescue systems, install disks, to special interest live CD/DVD/USB systems, and who knows what else. Simply put, if it involves Arch on a shiny coaster, it can do it. The heart and soul of Archiso is *mkarchiso*. All of its options are documented in its usage output, so its direct usage will not be covered here. Instead, this wiki article will act as a guide for rolling your own live media in no time!
 
@@ -22,21 +23,10 @@ Related articles
 *   [3 Build the ISO](#Build_the_ISO)
     *   [3.1 Rebuild the ISO](#Rebuild_the_ISO)
 *   [4 Using the ISO](#Using_the_ISO)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Installation without Internet access](#Installation_without_Internet_access)
-        *   [5.1.1 Install the archiso to the new root](#Install_the_archiso_to_the_new_root)
-        *   [5.1.2 Chroot and configure the base system](#Chroot_and_configure_the_base_system)
-            *   [5.1.2.1 Restore the configuration of journald](#Restore_the_configuration_of_journald)
-            *   [5.1.2.2 Remove special udev rule](#Remove_special_udev_rule)
-            *   [5.1.2.3 Disable and remove the services created by archiso](#Disable_and_remove_the_services_created_by_archiso)
-            *   [5.1.2.4 Remove special scripts of the Live environment](#Remove_special_scripts_of_the_Live_environment)
-            *   [5.1.2.5 Importing archlinux keys](#Importing_archlinux_keys)
-            *   [5.1.2.6 Configure the system](#Configure_the_system)
-            *   [5.1.2.7 Enable graphical login (optional)](#Enable_graphical_login_.28optional.29)
-*   [6 See also](#See_also)
-    *   [6.1 Documentation and tutorials](#Documentation_and_tutorials)
-    *   [6.2 Example customization template](#Example_customization_template)
-    *   [6.3 Creating a offline installation ISO](#Creating_a_offline_installation_ISO)
+*   [5 See also](#See_also)
+    *   [5.1 Documentation and tutorials](#Documentation_and_tutorials)
+    *   [5.2 Example customization template](#Example_customization_template)
+    *   [5.3 Creating a offline installation ISO](#Creating_a_offline_installation_ISO)
 
 ## Setup
 
@@ -287,112 +277,6 @@ This increases the speed of the initial bootstrap, since it does not have to dow
 ## Using the ISO
 
 See the [Getting and installing Arch#Installation methods](/index.php/Getting_and_installing_Arch#Installation_methods "Getting and installing Arch") section for various options.
-
-## Tips and tricks
-
-### Installation without Internet access
-
-If you wish to install the archiso (e.g. [the official monthly release](https://www.archlinux.org/download/)) as it is without an Internet connection, or, if you do not want to download the packages you want again:
-
-First, follow the [Installation guide](/index.php/Installation_guide "Installation guide"), skipping the [Installation guide#Connect to the Internet](/index.php/Installation_guide#Connect_to_the_Internet "Installation guide") section, until the [Installation guide#Install the base packages](/index.php/Installation_guide#Install_the_base_packages "Installation guide") step.
-
-#### Install the archiso to the new root
-
-Instead of installing the packages with `pacstrap` (which would try to download from the remote repositories), copy *everything* in the live environment to the new root:
-
-```
-# cp -ax / /mnt
-
-```
-
-**Note:** The option (`-x`) excludes some special directories, as they should not be copied to the new root.
-
-Then, copy the kernel image to the new root, in order to keep the integrity of the new system:
-
-```
-# cp -vaT /run/archiso/bootmnt/arch/boot/$(uname -m)/vmlinuz /mnt/boot/vmlinuz-linux
-
-```
-
-After that, generate a fstab as described in [Installation guide#Fstab](/index.php/Installation_guide#Fstab "Installation guide").
-
-#### Chroot and configure the base system
-
-Next, chroot into your newly installed system:
-
-```
-# arch-chroot /mnt /bin/bash
-
-```
-
-**Note:** Before performing the other [Installation guide#Configure the system](/index.php/Installation_guide#Configure_the_system "Installation guide") steps (e.g. locale, keymap, etc.), it is necessary to get rid of the trace of the Live environment (in other words, the customization of archiso which does not fit a non-Live environment).
-
-##### Restore the configuration of journald
-
-[This customization of archiso](https://projects.archlinux.org/archiso.git/tree/configs/releng/airootfs/root/customize_airootfs.sh#n19) will lead to storing the system journal in RAM, it means that the journal will not be available after reboot:
-
-```
-# sed -i 's/Storage=volatile/#Storage=auto/' /etc/systemd/journald.conf
-
-```
-
-##### Remove special udev rule
-
-[This rule of udev](https://projects.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) starts the dhcpcd automatically if there are any wired network interfaces.
-
-```
-# rm /etc/udev/rules.d/81-dhcpcd.rules
-
-```
-
-##### Disable and remove the services created by archiso
-
-Some service files are created for the Live environment, please disable the services and remove the file as they are unnecessary for the new system:
-
-```
-# systemctl disable pacman-init.service choose-mirror.service
-# rm -r /etc/systemd/system/{choose-mirror.service,pacman-init.service,etc-pacman.d-gnupg.mount,getty@tty1.service.d}
-# rm /etc/systemd/scripts/choose-mirror
-
-```
-
-##### Remove special scripts of the Live environment
-
-There are some scripts installed in the live system by archiso scripts, which are unnecessary for the new system:
-
-```
-# rm /etc/systemd/system/getty@tty1.service.d/autologin.conf
-# rm /root/{.automated_script.sh,.zlogin}
-# rm /etc/mkinitcpio-archiso.conf
-# rm -r /etc/initcpio
-
-```
-
-##### Importing archlinux keys
-
-In order to use the official repositories, we need to import the archlinux master keys ([pacman/Package signing#Initializing the keyring](/index.php/Pacman/Package_signing#Initializing_the_keyring "Pacman/Package signing")). This step is usually done by pacstrap but can be achieved with
-
-```
-# pacman-key --init
-# pacman-key --populate archlinux
-
-```
-
-**Note:** Keyboard or mouse activity is needed to generate entropy and speed-up the first step.
-
-##### Configure the system
-
-Now you can follow the skipped steps of the [Installation guide#Configure the system](/index.php/Installation_guide#Configure_the_system "Installation guide") section (setting a locale, timezone, hostname, etc.) and finish the installation by creating an initial ramdisk as described in [Installation guide#Initramfs](/index.php/Installation_guide#Initramfs "Installation guide").
-
-##### Enable graphical login (optional)
-
-If using a display manager like GDM, you may want to change the systemd default target from multi-user.target to one that allows graphical login.
-
-```
-# systemctl disable multi-user.target
-# systemctl enable graphical.target
-
-```
 
 ## See also
 

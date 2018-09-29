@@ -128,7 +128,7 @@ Try to install [gtkmm3](https://www.archlinux.org/packages/?name=gtkmm3) manuall
 
 ### Installation (from guest)
 
-Install the dependencies: [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) (for building), [net-tools](https://www.archlinux.org/packages/?name=net-tools) (for `ifconfig`, used by the installer) and [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) (for kernel headers).
+Install the dependencies: [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) (for building), [net-tools](https://www.archlinux.org/packages/?name=net-tools) (for `ifconfig`, used by the installer) and [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) (for kernel headers). A make dependency for checking out `open-vm-tools` is [asp](https://www.archlinux.org/packages/?name=asp).
 
 Then, create bogus init directories for the installer:
 
@@ -164,12 +164,12 @@ You can safely ignore the following build failures:
 *   "Warning: This script could not find mkinitrd or update-initramfs and cannot remake the initrd file!"
 *   Fuse components not found on the system.
 
-Enable `vmware-vmblock-fuse` systemd services) (make sure you install the dependencies manually or use the *-s* flag:
+Enable `vmware-vmblock-fuse` systemd services (make sure you install the dependencies manually or use the `-s` flag):
 
 ```
- # asp checkout open-vm-tools
- # cd open-vmtools/repos/community-x86_64/
- # makepkg -s --asdeps
+ $ asp checkout open-vm-tools
+ $ cd open-vm-tools/repos/community-x86_64/
+ $ makepkg -s --asdeps
  # cp vm* /usr/lib/systemd/system
  # systemctl enable vmware-vmblock-fuse
  # systemctl enable vmtoolsd

@@ -2,17 +2,20 @@
 
 **Note:** Do not edit this article prior to discussion in [Talk:AUR helpers](/index.php/Talk:AUR_helpers "Talk:AUR helpers").
 
-AUR helpers automate certain tasks for using the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Most helpers automate the process of retrieving a package's [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") from the AUR and building the package. In most cases packages installed from the AUR are not checked for updates by [pacman](/index.php/Pacman "Pacman"); thus some helpers check the AUR for updates and automate the re-build process. However, keep in mind that a rebuild of an AUR package, or any other packages built and installed locally, may be required when shared libraries are updated, not just when the package is updated.
+AUR helpers automate certain usage of the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Most AUR helpers can search for packages in the AUR and retrieve their [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") – others additionally assist with the build and install process.
+
+[Pacman](/index.php/Pacman "Pacman") only handles updates for pre-built packages in its repositories. AUR packages are redistributed in form of [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") and need an AUR helper to automate the re-build process. However, keep in mind that a rebuild of package may be required when its shared library dependencies are updated, not only when the package itself is updated.
 
 Since AUR helpers are unsupported, they are not present in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Contents
 
 *   [1 Legend](#Legend)
-*   [2 Search-only](#Search-only)
-*   [3 Build and search](#Build_and_search)
+*   [2 Search and download](#Search_and_download)
+*   [3 Download and build](#Download_and_build)
 *   [4 Pacman wrappers](#Pacman_wrappers)
 *   [5 Graphical](#Graphical)
+    *   [5.1 Update notifiers](#Update_notifiers)
 *   [6 Libraries](#Libraries)
 *   [7 Maintenance](#Maintenance)
 *   [8 Uploading](#Uploading)
@@ -72,19 +75,19 @@ The columns have the following meaning:
 *   Table rows are sorted by column values, where *Yes* or *N/A* take precedence over *Partial* or *Optional* and *No*, or alphabetically if values are equal.
 *   *Optional* means that a feature is available, but only through a command-line argument or configuration option. *Partial* means that a feature is not fully implemented, or that it partially deviates from the given criteria.
 
-## Search-only
+## Search and download
 
 | Name | Written in | File review | Git clone | Reliable parser | Reliable solver | Shell completion | Specificity |
 | [pbget](https://aur.archlinux.org/packages/pbget/) | Python | Yes | Yes | Yes | – | – | – |
 | [yaah](https://aur.archlinux.org/packages/yaah/) | Bash | Yes | Optional | Yes | – | bash | – |
 | [auracle-git](https://aur.archlinux.org/packages/auracle-git/) | C++ | Yes | No | Yes | Yes | – | print build order |
 | [cower](https://aur.archlinux.org/packages/cower/) | C | Yes | No | Yes | – | bash, zsh | regex support, sort by votes/popularity |
-| [package-query](https://aur.archlinux.org/packages/package-query/) | C | Yes | – | [No](https://github.com/archlinuxfr/package-query/issues/135) | – | – | – |
+| [package-query](https://aur.archlinux.org/packages/package-query/) | C | Yes | – | [No](https://github.com/archlinuxfr/package-query/issues/135) | – | – | search only |
 | [repoctl](https://aur.archlinux.org/packages/repoctl/) | Go | Yes | No | [Yes](https://github.com/goulash/pacman/blob/master/aur/aur.go) | – | zsh | local repository support |
 | [aurel](https://aur.archlinux.org/packages/aurel/)
 <small>([discontinued](https://bbs.archlinux.org/viewtopic.php?pid=1522459#p1522459))</small> | Emacs Lisp | Yes | No | Yes | – | – | Emacs integration |
 
-## Build and search
+## Download and build
 
 | Name | Written in | File review | Diff view | Git clone | Reliable parser | Reliable solver | Split packages | Clean build | Batch interaction | Shell completion | Specificity |
 | [aurutils](https://aur.archlinux.org/packages/aurutils/) | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | Yes | 1 | zsh | [vifm](/index.php/Vifm "Vifm"), [local repository](/index.php/Local_repository "Local repository"), [package signing](/index.php/Package_signing "Package signing"), [clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot") support, sort by votes/popularity |
@@ -126,24 +129,28 @@ See also [pacman/Tips and tricks#Pacman wrappers](/index.php/Pacman/Tips_and_tri
 
 ## Graphical
 
-See also [pacman/Tips and tricks#Graphical front-ends](/index.php/Pacman/Tips_and_tricks#Graphical_front-ends "Pacman/Tips and tricks").
-
 **Warning:**
 
 *   Graphical AUR helpers are typically aimed at [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"). Their use in [Arch Linux](/index.php/Arch_Linux "Arch Linux") may lead to a defective system, for example through unattended [partial upgrades](/index.php/Partial_upgrades "Partial upgrades").
 *   If a helper has *known* problematic behavior, it is colored with a red entry.
 
-| Name | Written in | GUI toolkit | Backend helper | Notes |
-| [aarchup](https://aur.archlinux.org/packages/aarchup/) | C | GTK+ 2 | auracle | – |
-| [argon](https://aur.archlinux.org/packages/argon/) | Python | GTK+ 3 | auracle, pacaur | – |
-| [cylon](https://aur.archlinux.org/packages/cylon/) | Bash | TUI | auracle, trizen | – |
-| [kalu](https://aur.archlinux.org/packages/kalu/) | C | GTK+ 3 | – | – |
-| [pactray](https://aur.archlinux.org/packages/pactray/) | Python | GTK+3 | auracle | – |
-| [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/) | Vala | GTK+ 3 | – | Uses [libalpm(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3) instead of [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) |
-| [pakku-gui](https://aur.archlinux.org/packages/pakku-gui/) | Python | GTK+ 3 | pakku | – |
-| [pkgbrowser](https://aur.archlinux.org/packages/pkgbrowser/) | Python | Qt 5 | – | – |
-| [updatehint](https://aur.archlinux.org/packages/updatehint/) | Bash | GTK+ 3 | auracle | – |
-| [octopi](https://aur.archlinux.org/packages/octopi/) | C++ | Qt 5 | trizen, pacaur, yaourt | [enabled on install](https://github.com/aarnt/octopi/blob/271c7e1/octopi.install) notifier service regularly [performs partial upgrades](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) |
+| Name | Written in | GUI toolkit | Notes |
+| [argon](https://aur.archlinux.org/packages/argon/) | Python | GTK+ 3 | – |
+| [cylon](https://aur.archlinux.org/packages/cylon/) | Bash | TUI | – |
+| [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/) | Vala | GTK+ 3 | uses [libalpm(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3) instead of [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) |
+| [pakku-gui](https://aur.archlinux.org/packages/pakku-gui/) | Python | GTK+ 3 | – |
+| [PkgBrowser](https://aur.archlinux.org/packages/PkgBrowser/) | Python | Qt 5 | read-only browser for repository packages and AUR |
+| [octopi](https://aur.archlinux.org/packages/octopi/) | C++ | Qt 5 | [enabled on install](https://github.com/aarnt/octopi/blob/271c7e1/octopi.install) notifier service regularly [performs partial upgrades](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) |
+
+### Update notifiers
+
+| Name | Package | Written in | GUI toolkit |
+| aarchup | [aarchup](https://aur.archlinux.org/packages/aarchup/) | C | GTK+ 2 |
+| arch-update | [gnome-shell-extension-arch-update](https://aur.archlinux.org/packages/gnome-shell-extension-arch-update/) | JavaScript | Clutter |
+| kalu | [kalu](https://aur.archlinux.org/packages/kalu/) | C | GTK+ 3 |
+| pactray | [pactray](https://aur.archlinux.org/packages/pactray/) | Python | GTK+ 3 |
+| Arch Updater | [plasma5-applets-kde-arch-update-notifier-git](https://aur.archlinux.org/packages/plasma5-applets-kde-arch-update-notifier-git/) | C++/QML | Qt 5 |
+| updatehint | [updatehint](https://aur.archlinux.org/packages/updatehint/) | Bash | GTK+ 3 |
 
 ## Libraries
 

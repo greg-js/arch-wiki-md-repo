@@ -8,6 +8,7 @@ Arch Linux is not officially supported by [Lattice Diamond](http://www.latticese
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Place & Route fails](#Place_.26_Route_fails)
     *   [3.2 Programming with FTDI cables doesn't work](#Programming_with_FTDI_cables_doesn.27t_work)
+    *   [3.3 Diamond crashes when FTDI based serial interface exists on a Lattice starter kit](#Diamond_crashes_when_FTDI_based_serial_interface_exists_on_a_Lattice_starter_kit)
 
 ## Prerequisites
 
@@ -37,3 +38,23 @@ Programming FPGAs with FTDI chip based cables will not work if `ftdi_sio` kernel
 ```
 
 Now the programmer should work until you re-attach it again (so you must run the command above every time the programmer is plugged).
+
+### Diamond crashes when FTDI based serial interface exists on a Lattice starter kit
+
+The "Lattice Diamond 3.9 Installation Notice for Linux" document describes how to manually setup the serial driver but naming the udev rule as explained in that document does not work. Below are the instructions that work.
+
+1\. Find your username which is given in /etc/group file. Log out if required. For example :
+
+username:x:1000:
+
+2\. Create a working file called 51-lattice.rules.
+
+3\. Add the following information to the 51-lattice.rules file:
+
+1.  Lattice - from Lattice Diamond 3.9 Installation Notice for Linux p.20 and [https://github.com/jandob/lattice-diamond-archlinux](https://github.com/jandob/lattice-diamond-archlinux) showing a higher number used for the .rules file
+
+SUBSYSTEM=="usb",ACTION=="add",ATTRS{idVendor}=="1134",ATTRS{idProduct}=="8001",MODE=="0660",GROUP=="username:x:1000:",SYMLINK+="lattice-%n"
+
+1.  FTDI
+
+SUBSYSTEM=="usb",ACTION=="add",ATTRS{idVendor}=="0403",ATTRS{idProduct}=="6010",MODE=="0666",GROUP=="username:x:1000:",SYMLINK+="ftdi-%n" SUBSYSTEM=="usb",ATTRS{idVendor}=="0403",ATTRS{idProduct}=="6010",RUN+="/bin/sh -c 'basename %p > /sys/bus/usb/drivers/ftdi_sio/unbind'"

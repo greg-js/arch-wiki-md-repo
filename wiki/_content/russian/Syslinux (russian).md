@@ -1,7 +1,7 @@
 Ссылки по теме
 
 *   [Процесс загрузки Arch](/index.php/Arch_Boot_Process_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Boot Process (Русский)")
-*   [Загрузчики](/index.php/Boot_loaders "Boot loaders")
+*   [Загрузчики](/index.php/Boot_loader "Boot loader")
 
 **Состояние перевода:** На этой странице представлен перевод статьи [Syslinux](/index.php/Syslinux "Syslinux"). Дата последней синхронизации: 2014-10-16\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Syslinux&diff=0&oldid=340289).
 

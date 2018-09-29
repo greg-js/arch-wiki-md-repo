@@ -104,7 +104,7 @@ Other packages can be installed by appending their names to the above command (s
 
 ### Install and configure a boot loader
 
-See [Boot loaders](/index.php/Boot_loaders "Boot loaders") for the available choices.
+See [Boot loaders](/index.php/Boot_loader "Boot loader") for the available choices.
 
 ### Unmount and reboot
 

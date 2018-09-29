@@ -176,7 +176,7 @@ Write the table to disk and exit via the `w` command.
 
 *gdisk*, *sgdisk* and *cgdisk* have the ability to convert MBR and [BSD disklabels](https://en.wikipedia.org/wiki/BSD_disklabel "wikipedia:BSD disklabel") to GPT without data loss. Upon conversion, all the MBR primary partitions and the logical partitions become GPT partitions with the correct partition type GUIDs and Unique partition GUIDs created for each partition.
 
-After conversion, the [bootloaders](/index.php/Bootloaders "Bootloaders") will need to be reinstalled to configure them to boot from GPT.
+After conversion, the [boot loader](/index.php/Boot_loader "Boot loader") will need to be reinstalled to configure it to boot from GPT.
 
 **Warning:**
 

@@ -10,7 +10,7 @@
 *   [fstab (简体中文)](/index.php/Fstab_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fstab (简体中文)")
 *   [Autostarting](/index.php/Autostarting "Autostarting")
 
-**翻译状态：** 本文是英文页面 [Arch_Boot_Process](/index.php/Arch_Boot_Process "Arch Boot Process") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-01，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_Boot_Process&diff=0&oldid=477810)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Arch boot process](/index.php/Arch_boot_process "Arch boot process") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-01，点击[这里](https://wiki.archlinux.org/index.php?title=Arch+boot+process&diff=0&oldid=477810)可以查看翻译后英文页面的改动。
 
 为了启动 Arch Linux，一个与 Linux 兼容的 [启动引导器](/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Boot loaders (简体中文)")，比如 [GRUB](/index.php/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GRUB (简体中文)") 或者 [Syslinux](/index.php/Syslinux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Syslinux (简体中文)") 必须事先被安装到[主引导记录](/index.php/%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95 "主引导记录")或者 [GUID 分区表](/index.php/GUID_Partition_Table_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GUID Partition Table (简体中文)")。启动引导程序负责在初始化启动进程之前，加载好内核和 [initial ramdisk](/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Mkinitcpio (简体中文)")。具体过程因 [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") 和 [UEFI](/index.php/UEFI "UEFI") 系统而异，细节在正文中给出。
 
@@ -73,7 +73,7 @@ UEFI 主流都支持 MBR 和 GPT 分区表。Apple-Intel Macs 上的 EFI 还支�
 
 ### UEFI 的多重引导
 
-因为每个操作系统或者提供者都可以维护自己的 EFI 系统分区中的文件，同时不影响其他系统，所以 UEFI 的多重启动只是简单的运行不同的UEFI 程序，对应于特定操作系统的引导程序。这避免了依赖 chainloading 机制（通过一个[启动引导程序](/index.php/Boot_loaders "Boot loaders")加载另一个引导程序，来切换操作系统）。
+因为每个操作系统或者提供者都可以维护自己的 EFI 系统分区中的文件，同时不影响其他系统，所以 UEFI 的多重启动只是简单的运行不同的UEFI 程序，对应于特定操作系统的引导程序。这避免了依赖 chainloading 机制（通过一个[启动引导程序](/index.php/Boot_loader "Boot loader")加载另一个引导程序，来切换操作系统）。
 
 参阅 [Dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows").
 

@@ -1,7 +1,6 @@
 Related articles
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
 
 The Linux kernel supports EFISTUB booting which allows [EFI](/index.php/EFI "EFI") firmware to load the kernel as an EFI executable. The option is enabled by default on Arch Linux kernels, or if compiling a the kernel one can activate it by setting `CONFIG_EFI_STUB=y` in the Kernel configuration. See [The EFI Boot Stub](https://www.kernel.org/doc/Documentation/efi-stub.txt) for more information.
@@ -36,7 +35,7 @@ First, you must create an [EFI system partition](/index.php/EFI_system_partition
 
 ### Using a boot manager
 
-There are several UEFI boot managers which can provide additional options or simplify the process of UEFI booting - especially if you have multiple kernels/operating systems. See [Boot loaders](/index.php/Boot_loaders "Boot loaders") for more information.
+There are several UEFI boot managers which can provide additional options or simplify the process of UEFI booting - especially if you have multiple kernels/operating systems. See [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process") for more information.
 
 ### Using UEFI Shell
 

@@ -6,7 +6,7 @@ Related articles
 
 In spite of their scope, man pages are designed to be self-contained documents, consequentially limiting themselves to referring to other man pages when discussing related subjects. This is in sharp contrast with the hyperlink-aware [Info documents](/index.php/Info_manual "Info manual"), GNU's attempt at replacing the traditional man page format.
 
-[man-db](https://www.archlinux.org/packages/?name=man-db) implements *man* on Arch Linux, and [less](/index.php/Core_utilities#less "Core utilities") is the default pager used with *man*.
+[man-db](https://www.archlinux.org/packages/?name=man-db) implements *man* on Arch Linux, and [less](/index.php/Core_utilities#Essentials "Core utilities") is the default pager used with *man*.
 
 ## Contents
 

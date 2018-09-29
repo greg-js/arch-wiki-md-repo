@@ -11,7 +11,7 @@ Artículos relacionados
 *   [Creating packages (Español)](/index.php/Creating_packages_(Espa%C3%B1ol) "Creating packages (Español)")
 *   [AUR helpers (Español)](/index.php/AUR_helpers_(Espa%C3%B1ol) "AUR helpers (Español)")
 
-**Estado de la traducción:** este artículo es una versión traducida de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Fecha de la última traducción/revisión: **2018-09-21**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=542235).
+**Estado de la traducción:** este artículo es una versión traducida de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Fecha de la última traducción/revisión: **2018-09-21**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=542235).
 
 Arch User Repository (AUR) es un repositorio promovido por los usuarios de la comunidad de Arch. Este contiene descripciones de los paquetes ([PKGBUILD](/index.php/PKGBUILD "PKGBUILD")) que le permiten compilar un paquete desde el código fuente con [makepkg](/index.php/Makepkg "Makepkg") y luego instalarlo a través de [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)"). AUR fue creado para organizar y compartir paquetes nuevos de la comunidad y ayudar a acelerar la inclusión de los paquetes más populares en el repositorio [community](/index.php/Community "Community"). Este documento explica cómo los usuarios pueden acceder y utilizar AUR.
 
@@ -332,7 +332,7 @@ Los paquetes en AUR no son más que «scripts de compilación», es decir, instr
 
 Inscríbase en el [sitio web de AUR](https://aur.archlinux.org/) para tener acceso a la opción "Vote for this package" («Vote por este paquete») mientras explora los paquetes. Después de registrarse, también es posible votar desde la línea de órdenes con [aurvote](https://aur.archlinux.org/packages/aurvote/), [aurvote-git](https://aur.archlinux.org/packages/aurvote-git/) o [aur-auto-vote-git](https://aur.archlinux.org/packages/aur-auto-vote-git/).
 
-Alternativamente, si ha configurado [ssh authentication](#Authentication) como se indicó anteriormente, puede votar directamente desde la línea de órdenes usando su clave ssh. Esto significa que no necesitará guardar o escribir su contraseña AUR.
+Alternativamente, si ha configurado [autenticación ssh](#Verificaci.C3.B3n) como se indicó anteriormente, puede votar directamente desde la línea de órdenes usando su clave ssh. Esto significa que no necesitará guardar o escribir su contraseña AUR.
 
 ```
 ssh aur@aur.archlinux.org vote <PACKAGE_NAME>
@@ -409,9 +409,9 @@ Véase también [System maintenance#Use proven software packages](/index.php/Sys
 
 Es posible que el paquete haya sido adoptado por un TU (Trusted Users —*«usuarios de confianza»*—) y ahora esté en el repositorio de [community](/index.php/Community "Community").
 
-Los paquetes pueden eliminarse si no cumplen con las [#Rules of submission](#Rules_of_submission). Consulte los [aur-requests archivos](https://lists.archlinux.org/pipermail/aur-requests/) para conocer el motivo de la eliminación.
+Los paquetes pueden eliminarse si no cumplen con las [#Reglas de envío](#Reglas_de_env.C3.ADo). Consulte los [aur-requests archivos](https://lists.archlinux.org/pipermail/aur-requests/) para conocer el motivo de la eliminación.
 
-Si el paquete estaba presente en AUR3, podría no haber sido [migrado a AUR4](https://lists.archlinux.org/pipermail/aur-general/2015-August/031322.html). Consulte los [#Git repositories for AUR3 packages](#Git_repositories_for_AUR3_packages) donde se conservará.
+Si el paquete estaba presente en AUR3, podría no haber sido [migrado a AUR4](https://lists.archlinux.org/pipermail/aur-general/2015-August/031322.html). Consulte los [#Repositorios Git para paquetes AUR3](#Repositorios_Git_para_paquetes_AUR3) donde se conservará.
 
 ### ¿Cómo puedo averiguar si alguno de los paquetes instalados desapareció de AUR?
 

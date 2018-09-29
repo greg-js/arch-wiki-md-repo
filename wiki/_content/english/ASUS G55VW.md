@@ -18,9 +18,9 @@ Press `Escape` to get the boot menu. If usb bootable device is not listed, enter
 
 ### Set up UEFI boot
 
-**Note:** It is recommended to read the [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") pages before following those instructions.
+**Note:** It is recommended to read the [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process") pages before following those instructions.
 
-It is possible to use [UEFISTUB](/index.php/UEFI_Bootloaders#Setting_up_EFISTUB "UEFI Bootloaders") in-kernel bootloader, if you wish. We present here the [GRUB2](/index.php/GRUB2 "GRUB2") way. We assume `x86_64` version of Arch Linux.
+It is possible to use [EFISTUB](/index.php/EFISTUB "EFISTUB") in-kernel bootloader, if you wish. We present here the [GRUB2](/index.php/GRUB2 "GRUB2") way. We assume `x86_64` version of Arch Linux.
 
 **Warning:** UX31A firmware is `x86_64`, so it makes it compulsory to use `x86_64` kernel to be able to dual boot with Windows in UEFI mode
 
@@ -32,7 +32,7 @@ second partition: [GUID Partition Table](/index.php/GUID_Partition_Table "GUID P
 
 Step 0 (optional): install [x86_64 UEFI Shell 2.0 (Beta)](https://edk2.svn.sourceforge.net/svnroot/edk2/trunk/edk2/ShellBinPkg/UefiShell/X64/Shell.efi):
 
-See [UEFI#UEFI Shell](/index.php/UEFI#UEFI_Shell "UEFI"). Can be useful during install, especially it allows to manually boot using [UEFISTUB](/index.php/UEFI_Bootloaders#Setting_up_EFISTUB "UEFI Bootloaders").
+See [UEFI#UEFI Shell](/index.php/UEFI#UEFI_Shell "UEFI"). Can be useful during install, especially it allows to manually boot using [EFISTUB](/index.php/EFISTUB "EFISTUB").
 
 Step 1: granted you can boot into your install through install disk, grub1 or via a liveusb and a chroot:
 

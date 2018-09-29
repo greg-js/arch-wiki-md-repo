@@ -1,4 +1,4 @@
-[Atom](https://atom.io/) is an open-source text editor developed by GitHub that is licensed under the MIT License. It is written predominantly in CoffeeScript and JavaScript and uses Node.js as its runtime environment. It is extensively extensible via use of over 5,000 available packages and 1,000 themes. It uses its own package manager for managing these packages and themes, apm.
+[Atom](https://atom.io/) is an open-source, cross-platform text editor developed by GitHub that is licensed under the MIT License. It is written predominantly in CoffeeScript and JavaScript and uses Node.js as its runtime environment. It is extensively extensible via use of over 5,000 available packages and 1,000 themes. It uses its own package manager for managing these packages and themes, apm.
 
 ## Contents
 
@@ -47,7 +47,7 @@ More info on this issue in [Environment variables#Per user](/index.php/Environme
 
 ### Unable to delete files
 
-By default, [Electron](https://electron.atom.io/) apps use `gvfs-trash` to delete files. For users not using [GNOME](/index.php/GNOME "GNOME") the `ELECTRON_TRASH` environmental variable can be used to specify which trash utility should be used.
+By default, [Electron](https://electron.atom.io/) apps use `gvfs-trash` to delete files. This command is deprecated and no longer exists, so the `ELECTRON_TRASH` environment variable must be used instead to specify which trash utility should be used.
 
 For example, for deleting files under [Plasma](/index.php/Plasma "Plasma"):
 
@@ -56,7 +56,7 @@ $ ELECTRON_TRASH=kioclient5 atom
 
 ```
 
-At the time of writing, Electron supports `kioclient5`, `kioclient`, `trash-cli` and `gvfs-trash` (default). More info is available at this [Github pull request page](https://github.com/electron/electron/pull/7178).
+At the time of writing, Electron supports `kioclient5`, `kioclient`, `trash-cli`, `gio` and `gvfs-trash` (default). More info is available at this [Github pull request page](https://github.com/electron/electron/pull/7178).
 
 ### Black window content on startup
 

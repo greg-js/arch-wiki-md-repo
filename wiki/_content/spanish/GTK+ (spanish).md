@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [GTK+](/index.php/GTK%2B "GTK+"). Fecha de la última traducción/revisión: **en fase de traducción**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=GTK%2B&diff=0&oldid=535659).
+**Estado de la traducción:** este artículo es una versión traducida de [GTK+](/index.php/GTK%2B "GTK+"). Fecha de la última traducción/revisión: **en fase de traducción**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=GTK%2B&diff=0&oldid=535659).
 
 Artículos relacionados
 

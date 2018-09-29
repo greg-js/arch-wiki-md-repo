@@ -42,7 +42,7 @@ It's probably good to consider on forehand what the differences are and which wi
 
 ## Installation
 
-To install an x86_64 system, follow the [Mac](/index.php/Mac "Mac") EFI installation instructions. It is recommended to read the [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") pages before trying any of this on your machine. Also of note, [GIST](https://gist.github.com/Apsu/4108795).
+To install an x86_64 system, follow the [Mac](/index.php/Mac "Mac") EFI installation instructions. It is recommended to read the [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process") pages before trying any of this on your machine. Also of note, [GIST](https://gist.github.com/Apsu/4108795).
 
 See notes on **video support** before attempting installation!
 

@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [International communities](/index.php/International_communities "International communities"). Fecha de la última traducción/revisión: **2018-08-23**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=International_communities&diff=0&oldid=535233).
+**Estado de la traducción:** este artículo es una versión traducida de [International communities](/index.php/International_communities "International communities"). Fecha de la última traducción/revisión: **2018-08-23**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=International_communities&diff=0&oldid=535233).
 
 Artículos relacionados
 

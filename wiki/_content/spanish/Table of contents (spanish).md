@@ -1,12 +1,12 @@
 | [Español](/index.php/Category:Espa%C3%B1ol "Category:Español") <small>(2)</small> |
-| <small>1.</small> [Acerca de Arch](/index.php/Category:About_Arch_(Espa%C3%B1ol) "Category:About Arch (Español)") <small>(19)</small> |
+| <small>1.</small> [Acerca de Arch](/index.php/Category:About_Arch_(Espa%C3%B1ol) "Category:About Arch (Español)") <small>(18)</small> |
 | <small>1.1.</small> [Desarrollo de Arch](/index.php/Category:Arch_development_(Espa%C3%B1ol) "Category:Arch development (Español)") <small>(0) (también en [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)"))</small> |
 | <small>1.1.1.</small> [Desarrollo de paquetes](/index.php/Category:Package_development_(Espa%C3%B1ol) "Category:Package development (Español)") <small>(8)</small> |
 | <small>1.1.2.</small> [Desarrollo de pacman](/index.php/Category:Pacman_development_(Espa%C3%B1ol) "Category:Pacman development (Español)") <small>(1)</small> |
 | <small>1.2.</small> [Arch projects](/index.php/Category:Arch_projects_(Espa%C3%B1ol) "Category:Arch projects (Español)") <small>(5)</small> |
 | <small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki_(Espa%C3%B1ol) "Category:ArchWiki (Español)") <small>(9)</small> |
-| <small>1.3.1.</small> [Ayuda](/index.php/Category:Help_(Espa%C3%B1ol) "Category:Help (Español)") <small>(10)</small> |
-| <small>1.4.</small> [Installation process](/index.php/Category:Installation_process_(Espa%C3%B1ol) "Category:Installation process (Español)") <small>(12)</small> |
+| <small>1.3.1.</small> [Ayuda](/index.php/Category:Help_(Espa%C3%B1ol) "Category:Help (Español)") <small>(12)</small> |
+| <small>1.4.</small> [Installation process](/index.php/Category:Installation_process_(Espa%C3%B1ol) "Category:Installation process (Español)") <small>(13)</small> |
 | <small>1.5.</small> [Sistemas live de Arch](/index.php/Category:Live_Arch_systems_(Espa%C3%B1ol) "Category:Live Arch systems (Español)") <small>(2)</small> |
 | <small>2.</small> [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)") <small>(7)</small> |
 | <small>2.1.</small> [Lanzadores de aplicaciones](/index.php/Category:Application_launchers_(Espa%C3%B1ol) "Category:Application launchers (Español)") <small>(1)</small> |
@@ -33,18 +33,20 @@
 | <small>2.10.5.</small> [Raster graphics](/index.php/Category:Raster_graphics_(Espa%C3%B1ol) "Category:Raster graphics (Español)") <small>(2)</small> |
 | <small>2.11.</small> [Ofimática](/index.php/Category:Office_(Espa%C3%B1ol) "Category:Office (Español)") <small>(5)</small> |
 | <small>2.11.1.</small> [TeX](/index.php/Category:TeX_(Espa%C3%B1ol) "Category:TeX (Español)") <small>(1)</small> |
-| <small>2.12.</small> [Software comparisons](/index.php/Category:Software_comparisons_(Espa%C3%B1ol) "Category:Software comparisons (Español)") <small>(1)</small> |
-| <small>2.13.</small> [Monitorización y notificación de estados](/index.php/Category:Status_monitoring_and_notification_(Espa%C3%B1ol) "Category:Status monitoring and notification (Español)") <small>(2)</small> |
-| <small>2.14.</small> [Editores de texto](/index.php/Category:Text_editors_(Espa%C3%B1ol) "Category:Text editors (Español)") <small>(3) (también en [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)"))</small> |
+| <small>2.12.</small> [Search](/index.php/Category:Search_(Espa%C3%B1ol) "Category:Search (Español)") <small>(1)</small> |
+| <small>2.13.</small> [Software comparisons](/index.php/Category:Software_comparisons_(Espa%C3%B1ol) "Category:Software comparisons (Español)") <small>(1)</small> |
+| <small>2.14.</small> [Monitorización y notificación de estados](/index.php/Category:Status_monitoring_and_notification_(Espa%C3%B1ol) "Category:Status monitoring and notification (Español)") <small>(2)</small> |
+| <small>2.15.</small> [Editores de texto](/index.php/Category:Text_editors_(Espa%C3%B1ol) "Category:Text editors (Español)") <small>(3) (también en [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)"))</small> |
 | <small>3.</small> [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)") <small>(9)</small> |
 | <small>3.1.</small> [Desarrollo de Arch](/index.php/Category:Arch_development_(Espa%C3%B1ol) "Category:Arch development (Español)") <small>(0) (también en [Acerca de Arch](/index.php/Category:About_Arch_(Espa%C3%B1ol) "Category:About Arch (Español)"))</small> |
 | <small>3.1.1.</small> [Desarrollo de paquetes](/index.php/Category:Package_development_(Espa%C3%B1ol) "Category:Package development (Español)") <small>(8)</small> |
 | <small>3.1.2.</small> [Desarrollo de pacman](/index.php/Category:Pacman_development_(Espa%C3%B1ol) "Category:Pacman development (Español)") <small>(1)</small> |
-| <small>3.2.</small> [Lenguaje de programación](/index.php/Category:Programming_languages_(Espa%C3%B1ol) "Category:Programming languages (Español)") <small>(4)</small> |
-| <small>3.2.1.</small> [Shells de órdenes](/index.php/Category:Command_shells_(Espa%C3%B1ol) "Category:Command shells (Español)") <small>(3) (también en [Command-line](/index.php/Category:Command-line_(Espa%C3%B1ol) "Category:Command-line (Español)"))</small> |
-| <small>3.3.</small> [Editores de texto](/index.php/Category:Text_editors_(Espa%C3%B1ol) "Category:Text editors (Español)") <small>(3) (también en [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)"))</small> |
-| <small>3.4.</small> [Version Control System](/index.php/Category:Version_Control_System_(Espa%C3%B1ol) "Category:Version Control System (Español)") <small>(1)</small> |
-| <small>3.5.</small> [Conjunto de widgets](/index.php/Category:Widget_toolkits_(Espa%C3%B1ol) "Category:Widget toolkits (Español)") <small>(2) (también en [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces_(Espa%C3%B1ol) "Category:Graphical user interfaces (Español)"))</small> |
+| <small>3.2.</small> [Integrated development environments](/index.php/Category:Integrated_development_environments_(Espa%C3%B1ol) "Category:Integrated development environments (Español)") <small>(1)</small> |
+| <small>3.3.</small> [Lenguaje de programación](/index.php/Category:Programming_languages_(Espa%C3%B1ol) "Category:Programming languages (Español)") <small>(4)</small> |
+| <small>3.3.1.</small> [Shells de órdenes](/index.php/Category:Command_shells_(Espa%C3%B1ol) "Category:Command shells (Español)") <small>(3) (también en [Command-line](/index.php/Category:Command-line_(Espa%C3%B1ol) "Category:Command-line (Español)"))</small> |
+| <small>3.4.</small> [Editores de texto](/index.php/Category:Text_editors_(Espa%C3%B1ol) "Category:Text editors (Español)") <small>(3) (también en [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)"))</small> |
+| <small>3.5.</small> [Version Control System](/index.php/Category:Version_Control_System_(Espa%C3%B1ol) "Category:Version Control System (Español)") <small>(1)</small> |
+| <small>3.6.</small> [Conjunto de widgets](/index.php/Category:Widget_toolkits_(Espa%C3%B1ol) "Category:Widget toolkits (Español)") <small>(2) (también en [Graphical user interfaces](/index.php/Category:Graphical_user_interfaces_(Espa%C3%B1ol) "Category:Graphical user interfaces (Español)"))</small> |
 | <small>4.</small> [Hardware](/index.php/Category:Hardware_(Espa%C3%B1ol) "Category:Hardware (Español)") <small>(1)</small> |
 | <small>4.1.</small> [Bluetooth](/index.php/Category:Bluetooth_(Espa%C3%B1ol) "Category:Bluetooth (Español)") <small>(1)</small> |
 | <small>4.2.</small> [CPU](/index.php/Category:CPU_(Espa%C3%B1ol) "Category:CPU (Español)") <small>(3)</small> |
@@ -94,8 +96,8 @@
 | <small>5.15.1.</small> [Navegadores web](/index.php/Category:Web_browser_(Espa%C3%B1ol) "Category:Web browser (Español)") <small>(5) (también en [Aplicaciones de internet](/index.php/Category:Internet_applications_(Espa%C3%B1ol) "Category:Internet applications (Español)"))</small> |
 | <small>5.16.</small> [Servidor web](/index.php/Category:Web_server_(Espa%C3%B1ol) "Category:Web server (Español)") <small>(7)</small> |
 | <small>5.17.</small> [Redes inalámbricas](/index.php/Category:Wireless_networking_(Espa%C3%B1ol) "Category:Wireless networking (Español)") <small>(2)</small> |
-| <small>6.</small> [Administración del sistema](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)") <small>(7)</small> |
-| <small>6.1.</small> [Proceso de arranque](/index.php/Category:Boot_process_(Espa%C3%B1ol) "Category:Boot process (Español)") <small>(23)</small> |
+| <small>6.</small> [Administración del sistema](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)") <small>(8)</small> |
+| <small>6.1.</small> [Proceso de arranque](/index.php/Category:Boot_process_(Espa%C3%B1ol) "Category:Boot process (Español)") <small>(22)</small> |
 | <small>6.1.1.</small> [Cargadores de arranque](/index.php/Category:Boot_loaders_(Espa%C3%B1ol) "Category:Boot loaders (Español)") <small>(6)</small> |
 | <small>6.1.2.</small> [Arranque gráfico](/index.php/Category:Bootsplash_(Espa%C3%B1ol) "Category:Bootsplash (Español)") <small>(2) (también en [Mejoras visuales](/index.php/Category:Eye_candy_(Espa%C3%B1ol) "Category:Eye candy (Español)"))</small> |
 | <small>6.2.</small> [Command-line](/index.php/Category:Command-line_(Espa%C3%B1ol) "Category:Command-line (Español)") <small>(4) (también en [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)"))</small> |
@@ -103,7 +105,7 @@
 | <small>6.2.2.</small> [Emuladores de terminal](/index.php/Category:Terminal_emulators_(Espa%C3%B1ol) "Category:Terminal emulators (Español)") <small>(2)</small> |
 | <small>6.2.3.</small> [Terminal multiplexers](/index.php/Category:Terminal_multiplexers_(Espa%C3%B1ol) "Category:Terminal multiplexers (Español)") <small>(1)</small> |
 | <small>6.3.</small> [Demonios y servicios del sistema](/index.php/Category:Daemons_and_system_services_(Espa%C3%B1ol) "Category:Daemons and system services (Español)") <small>(9)</small> |
-| <small>6.4.</small> [Mejoras visuales](/index.php/Category:Eye_candy_(Espa%C3%B1ol) "Category:Eye candy (Español)") <small>(9)</small> |
+| <small>6.4.</small> [Mejoras visuales](/index.php/Category:Eye_candy_(Espa%C3%B1ol) "Category:Eye candy (Español)") <small>(8)</small> |
 | <small>6.4.1.</small> [Arranque gráfico](/index.php/Category:Bootsplash_(Espa%C3%B1ol) "Category:Bootsplash (Español)") <small>(2) (también en [Proceso de arranque](/index.php/Category:Boot_process_(Espa%C3%B1ol) "Category:Boot process (Español)"))</small> |
 | <small>6.4.2.</small> [Tipografías](/index.php/Category:Fonts_(Espa%C3%B1ol) "Category:Fonts (Español)") <small>(1)</small> |
 | <small>6.5.</small> [Sistemas de archivos](/index.php/Category:File_systems_(Espa%C3%B1ol) "Category:File systems (Español)") <small>(14)</small> |
@@ -117,7 +119,7 @@
 | <small>6.6.3.</small> [Conjunto de widgets](/index.php/Category:Widget_toolkits_(Espa%C3%B1ol) "Category:Widget toolkits (Español)") <small>(2) (también en [Desarrollo](/index.php/Category:Development_(Espa%C3%B1ol) "Category:Development (Español)"))</small> |
 | <small>6.6.4.</small> [Administradores de ventanas](/index.php/Category:Window_managers_(Espa%C3%B1ol) "Category:Window managers (Español)") <small>(0)</small> |
 | <small>6.6.4.1.</small> [Administradores de ventanas dinánicas](/index.php/Category:Dynamic_WMs_(Espa%C3%B1ol) "Category:Dynamic WMs (Español)") <small>(3)</small> |
-| <small>6.6.4.2.</small> [Administradores de ventanas apiladas (o flotantes)](/index.php/Category:Stacking_WMs_(Espa%C3%B1ol) "Category:Stacking WMs (Español)") <small>(7)</small> |
+| <small>6.6.4.2.</small> [Administradores de ventanas apiladas (o flotantes)](/index.php/Category:Stacking_WMs_(Espa%C3%B1ol) "Category:Stacking WMs (Español)") <small>(6)</small> |
 | <small>6.6.4.3.</small> [Administradores de ventanas en mosaicos](/index.php/Category:Tiling_WMs_(Espa%C3%B1ol) "Category:Tiling WMs (Español)") <small>(2)</small> |
 | <small>6.6.5.</small> [Servidor X](/index.php/Category:X_server_(Espa%C3%B1ol) "Category:X server (Español)") <small>(16)</small> |
 | <small>6.7.</small> [Kernel](/index.php/Category:Kernel_(Espa%C3%B1ol) "Category:Kernel (Español)") <small>(7)</small> |

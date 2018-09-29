@@ -1392,7 +1392,7 @@ mv /var/lib/libvirt/qemu/nvram/vmname_VARS.fd /var/lib/libvirt/qemu/nvram/vmname
 
 ```
 
-See further details [here](https://bugs.archlinux.org/task/57825)
+See [FS#57825](https://bugs.archlinux.org/task/57825) for further details.
 
 ## See also
 

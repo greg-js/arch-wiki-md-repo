@@ -7,7 +7,7 @@ This article describes how to modify and create keyboard layouts. If you are loo
 *   [1 Precautions and preparations](#Precautions_and_preparations)
 *   [2 Getting and setting XKB layout](#Getting_and_setting_XKB_layout)
     *   [2.1 Using rules](#Using_rules)
-    *   [2.2 Using keymap (deprecated)](#Using_keymap_.28deprecated.29)
+    *   [2.2 Using keymap](#Using_keymap)
 *   [3 Basic information on XKB](#Basic_information_on_XKB)
     *   [3.1 Tools and values](#Tools_and_values)
     *   [3.2 Keycode translation](#Keycode_translation)
@@ -75,7 +75,7 @@ EndSection
 
 ```
 
-### Using keymap (deprecated)
+### Using keymap
 
 Use [xkbcomp(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xkbcomp.1) (package [xorg-xkbcomp](https://www.archlinux.org/packages/?name=xorg-xkbcomp)) to manipulate XKB data. To get current configuration, run
 
@@ -100,7 +100,7 @@ Once the layout is ready, save it as `~/.Xkeymap` and make `~/.xinitrc` load it 
 
 ```
 
-The actual file name is irrelevant. Note that unlike standard system-wide configuration via `xorg.conf`, this is a per-user keymap. Also, there is absolutely no problem changing XKB configuration while X is running.
+The actual file name is irrelevant. Note that unlike standard system-wide configuration via `xorg.conf`, this is a per-user keymap. Also, there is no problem changing XKB configuration while X is running.
 
 ## Basic information on XKB
 
@@ -108,7 +108,14 @@ The core XKB functionality is quite simple, and it's necessary to have a some id
 
 ### Tools and values
 
-Use xev (package [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev)) to get keycodes and to check how your keymap works. Sample output:
+Use xev (package [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev)) to get keycodes and to check how your keymap works.
+
+```
+$ xev -event keyboard
+
+```
+
+Sample output:
 
 ```
    KeyPress event, serial 45, synthetic NO, window 0x2200001,

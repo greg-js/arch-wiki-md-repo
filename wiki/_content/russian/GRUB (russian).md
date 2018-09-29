@@ -2,7 +2,6 @@
 
 *   [GRUB Legacy (Русский)](/index.php/GRUB_Legacy_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GRUB Legacy (Русский)")
 *   [Arch Boot Process (Русский)](/index.php/Arch_Boot_Process_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Arch Boot Process (Русский)")
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
 *   [Master Boot Record (Русский)](/index.php/Master_Boot_Record_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Master Boot Record (Русский)")
 *   [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
 *   [Unified Extensible Firmware Interface (Русский)](/index.php/Unified_Extensible_Firmware_Interface_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Unified Extensible Firmware Interface (Русский)")

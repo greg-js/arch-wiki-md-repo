@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [GRUB](/index.php/GRUB "GRUB"). Fecha de la última traducción/revisión: **2018-08-21**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=GRUB&diff=0&oldid=534863).
+**Estado de la traducción:** este artículo es una versión traducida de [GRUB](/index.php/GRUB "GRUB"). Fecha de la última traducción/revisión: **2018-08-21**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=GRUB&diff=0&oldid=534863).
 
 Artículos relacionados
 

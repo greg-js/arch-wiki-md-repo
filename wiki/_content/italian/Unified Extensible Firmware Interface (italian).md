@@ -232,7 +232,7 @@ Il filesystem FAT32 non è case-sensitive(non fa distinzione tra maiuscole e min
 
 ## Bootloader Linux per UEFI
 
-Consultare [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders").
+Consultare [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process").
 
 ## Creare una partizione di sistema UEFI con Linux
 

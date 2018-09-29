@@ -1,19 +1,19 @@
-Esta categoría contiene información sobre los lanzamientos de [Arch Linux](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)"), descarga e instalación.
+**Estado de la traducción:** este artículo es una versión traducida de [Getting and installing Arch](/index.php/Getting_and_installing_Arch "Getting and installing Arch"). Fecha de la última traducción/revisión: **2018-09-27**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Getting_and_installing_Arch&diff=0&oldid=544121).
 
-La ISO de instalación y su firma [GnuPG](/index.php/GnuPG_(Espa%C3%B1ol) "GnuPG (Español)") pueden ser descargadas desde la pagina de [Descargas](https://archlinux.org/download/).
+La imagen de instalación y su firma [GnuPG](/index.php/GnuPG_(Espa%C3%B1ol) "GnuPG (Español)") pueden ser descargadas desde la pagina de [Descargas](https://archlinux.org/download/).
 
 ## Verificar firma
 
 Es recomendado verificar la imagen de instalación antes de usarla, especialmente al descargala de un mirror *HTTP*, donde es mas posible que la imagen sea interceptada para [servir imagenes maliciosas](http://www.cs.arizona.edu/stork/packagemanagersecurity/attacks-on-package-managers.html#explanation).
 
-En un sistema con [GnuPG](/index.php/GnuPG_(Espa%C3%B1ol) "GnuPG (Español)") instalado, descargue la firma *PGP signature* (en la sección *Checksums*) en el mismo directorio donde descargo la ISO, y [verifique](/index.php/GnuPG_(Espa%C3%B1ol)#Verificaci.C3.B3n_de_firmas "GnuPG (Español)") la firma ejecutando `gpg --keyserver-options auto-key-retrieve --verify archlinux-<version>-x86_64.iso.sig`.
+En un sistema con [GnuPG](/index.php/GnuPG_(Espa%C3%B1ol) "GnuPG (Español)") instalado, descargue la firma *PGP signature* (en la sección *Checksums*) en el mismo directorio donde descargo la ISO, y [verifique](/index.php/GnuPG_(Espa%C3%B1ol)#Verificaci.C3.B3n_de_firmas "GnuPG (Español)") la firma ejecutando `gpg --keyserver pgp.mit.edu --keyserver-options auto-key-retrieve --verify archlinux-<version>-x86_64.iso.sig`.
 
-En un sistema Arch Linux puede ejecutar `pacman-key -v archlinux-<version>-x86_64.iso.sig`.
+En un sistema Arch Linux puede ejecutar `pacman-key -v archlinux-<version>-x86_64.iso.sig` con privilegios de root.
 
 **Nota:**
 
 *   La firma puede en si ser manipulada si se descarga de un mirror y no de [archlinux.org](https://archlinux.org/download/). En este caso asegúrese que la clave pública usada para descifrar la firma esta firmada por una clave conocida. El comando `gpg` mostrara la huella digital de la clave pública.
-*   Otro método para verificar la autenticidad de la firma es cerciorándose que la huella digital de la clave pública es idéntica a la huella digital del [desarrollador de Arch Linux](https://www.archlinux.org/people/developers/) que firmo la ISO. Vea [Wikipedia#Criptografía asimétrica](https://es.wikipedia.org/wiki/Criptograf%C3%ADa_asim%C3%A9trica) para mayor información.
+*   Otro método para verificar la autenticidad de la firma es cerciorándose que la huella digital de la clave pública es idéntica a la huella digital del [desarrollador de Arch Linux](https://www.archlinux.org/people/developers/) que firmo la ISO. Vea [Wikipedia#Criptografía asimétrica](https://es.wikipedia.org/wiki/Criptograf%C3%ADa_asim%C3%A9trica) para mayor información sobre el proceso de clave pública para autenticar claves.
 
 ## Métodos de instalación
 

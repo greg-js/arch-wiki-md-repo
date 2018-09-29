@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Users and groups](/index.php/Users_and_groups "Users and groups"). Fecha de la última traducción/revisión: **2018-09-05**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=533656).
+**Estado de la traducción:** este artículo es una versión traducida de [Users and groups](/index.php/Users_and_groups "Users and groups"). Fecha de la última traducción/revisión: **2018-09-05**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=533656).
 
 Artículos relacionados
 
@@ -446,7 +446,7 @@ Los siguientes grupos se utilizan para fines del sistema, solo es necesario su a
 | Grupo | Archivos afectados | Propósito |
 | dbus | Utilizado internamente por [dbus](https://www.archlinux.org/packages/?name=dbus) |
 | kmem | `/dev/port`, `/dev/mem`, `/dev/kmem` |
-| locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | Véase [Core utilities (Español)#locate](/index.php/Core_utilities_(Espa%C3%B1ol)#locate "Core utilities (Español)"). |
+| locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | Véase [Locate](/index.php/Mlocate_(Espa%C3%B1ol) "Mlocate (Español)"). |
 | lp | `/dev/lp[0-9]*`, `/dev/parport[0-9]*` | Acceso a dispositivos de puerto paralelo (impresoras y otros). |
 | mail | `/usr/bin/mail` |
 | nobody | Grupo sin privilegios. |

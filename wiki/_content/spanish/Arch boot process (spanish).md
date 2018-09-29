@@ -1,8 +1,8 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). Fecha de la última traducción/revisión: **2018-09-26**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=543767).
+**Estado de la traducción:** este artículo es una versión traducida de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). Fecha de la última traducción/revisión: **2018-09-26**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=543767).
 
 Artículos relacionados
 
-*   [Gestores de arranque](/index.php/Boot_loaders "Boot loaders")
+*   [Gestores de arranque](/index.php/Boot_loader "Boot loader")
 *   [Master Boot Record](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)")
 *   [GUID Partition Table](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)")
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)")
@@ -12,7 +12,7 @@ Artículos relacionados
 *   [fstab](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)")
 *   [Autostarting](/index.php/Autostarting_(Espa%C3%B1ol) "Autostarting (Español)")
 
-Para iniciar Arch Linux, un [gestor de arranque](/index.php/Boot_loaders "Boot loaders") capaz de iniciar Linux como [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") o [Syslinux](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)"), debe instalarse en el [Master Boot Record](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)") o en la [GUID Partition Table](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)"). El gestor de arranque es el responsable de cargar el kernel y el [disco ram inicial](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") antes de iniciar el proceso de arranque. El proceso es bastante diferente para los sistemas [BIOS](https://en.wikipedia.org/wiki/es:BIOS "wikipedia:es:BIOS") y [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)"), cuyos detalles se describen en esta página o en las enlazadas.
+Para iniciar Arch Linux, un [gestor de arranque](/index.php/Boot_loader "Boot loader") capaz de iniciar Linux como [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") o [Syslinux](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)"), debe instalarse en el [Master Boot Record](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)") o en la [GUID Partition Table](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)"). El gestor de arranque es el responsable de cargar el kernel y el [disco ram inicial](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") antes de iniciar el proceso de arranque. El proceso es bastante diferente para los sistemas [BIOS](https://en.wikipedia.org/wiki/es:BIOS "wikipedia:es:BIOS") y [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)"), cuyos detalles se describen en esta página o en las enlazadas.
 
 ## Contents
 
@@ -32,7 +32,7 @@ Para iniciar Arch Linux, un [gestor de arranque](/index.php/Boot_loaders "Boot l
 *   [8 Gestor de pantallas](#Gestor_de_pantallas)
 *   [9 Login](#Login)
 *   [10 Shell](#Shell)
-*   [11 xinit](#xinit)
+*   [11 GUI, xinit o wayland](#GUI.2C_xinit_o_wayland)
 *   [12 Véase también](#V.C3.A9ase_tambi.C3.A9n_2)
 
 ## Tipos de firmware
@@ -129,15 +129,16 @@ El programa *login* inicia una sesión para el usuario mediante el establecimien
 
 Una vez que la [shell](/index.php/Shell "Shell") del usuario se inicia, normalmente ejecuta un archivo de configuración runtime, como por ejemplo [.bashrc](/index.php/.bashrc ".bashrc"), antes de presentar un prompt para el usuario. Si la cuenta está configurada para [iniciar X al iniciar sesión](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)"), el archivo de configuración mencionado llamará a [startx](/index.php/Startx "Startx") o [xinit](/index.php/Xinit "Xinit").
 
-## xinit
+## GUI, xinit o wayland
 
-[xinit](/index.php/Xinit "Xinit") ejecuta el archivo de configuración del usuario [.xinitrc](/index.php/.xinitrc ".xinitrc"), que normalmente arrancará un [gestor de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)"). Cuando el usuario ha terminado y sale del gestor de ventanas, xinit, startx, la shell, y el programa login terminarán en ese orden, devolviéndonos a getty.
+[xinit](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") ejecuta el archivo de configuración [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") del usuario , que normalmente inicia un [administrador de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)"). Cuando el usuario finaliza y sale del administrador de ventanas, xinit, startx, el shell y el inicio de sesión finalizarán en ese orden, volviendo a getty.
 
 ## Véase también
 
-*   [Early Userspace en Arch Linux](http://archlinux.me/brain0/2010/02/13/early-userspace-in-arch-linux/)
+*   [Early Userspace en Arch Linux](https://web.archive.org/web/20150430223035/http://archlinux.me/brain0/2010/02/13/early-userspace-in-arch-linux/)
 *   [El Proceso de Arranque de Linux desde Dentro](http://www.ibm.com/developerworks/linux/library/l-linuxboot/)
-*   [Boot con GRUB](http://www.linuxjournal.com/article/4622)
 *   [Wikipedia: Proceso de inicio de Linux](https://en.wikipedia.org/wiki/es:Proceso_de_arranque_en_Linux "wikipedia:es:Proceso de arranque en Linux")
 *   [Wikipedia: initrd](https://en.wikipedia.org/wiki/es:initrd "wikipedia:es:initrd")
 *   [Del Arranque de Linux con GRUB en Modo Single User](http://www.cyberciti.biz/faq/grub-boot-into-single-user-mode/)
+*   [NeoSmart: El proceso de arranque BIOS/MBR](https://neosmart.net/wiki/mbr-boot-process/)
+*   [Kernel Newbie Corner: initrd e initramfs](https://www.linux.com/learn/kernel-newbie-corner-initrd-and-initramfs-whats)

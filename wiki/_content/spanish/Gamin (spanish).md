@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Gamin](/index.php/Gamin "Gamin"). Fecha de la última traducción/revisión: **2018-09-14**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Gamin&diff=0&oldid=507014).
+**Estado de la traducción:** este artículo es una versión traducida de [Gamin](/index.php/Gamin "Gamin"). Fecha de la última traducción/revisión: **2018-09-14**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Gamin&diff=0&oldid=507014).
 
 [Gamin](https://en.wikipedia.org/wiki/Gamin "wikipedia:Gamin") es un sistema de supervisión de archivos y directorios definido como un subconjunto del sistema FAM (File Alteration Monitor). Es un servicio provisto por una biblioteca que permite la detección de modificaciones en un archivo o directorio.
 

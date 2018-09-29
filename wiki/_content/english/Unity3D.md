@@ -9,17 +9,19 @@ Not to be confused with Canonical's [Unity](/index.php/Unity "Unity").
 ## Contents
 
 *   [1 Installation](#Installation)
+    *   [1.1 Alternative Installation Method](#Alternative_Installation_Method)
 *   [2 Android Remote](#Android_Remote)
     *   [2.1 Prepare computer](#Prepare_computer)
         *   [2.1.1 Install packages](#Install_packages)
         *   [2.1.2 Configure the Editor](#Configure_the_Editor)
     *   [2.2 Prepare Android](#Prepare_Android)
     *   [2.3 Test](#Test)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Unity crashes on first launch before/while signing in](#Unity_crashes_on_first_launch_before.2Fwhile_signing_in)
-    *   [3.2 Unity crashes when trying to load project](#Unity_crashes_when_trying_to_load_project)
-    *   [3.3 Unity crashes if ~/.config/user-dirs.dirs is missing](#Unity_crashes_if_.7E.2F.config.2Fuser-dirs.dirs_is_missing)
-    *   [3.4 Minor stuttering while playtesting (NVIDIA)](#Minor_stuttering_while_playtesting_.28NVIDIA.29)
+*   [3 Visual Studio Code](#Visual_Studio_Code)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Unity crashes on first launch before/while signing in](#Unity_crashes_on_first_launch_before.2Fwhile_signing_in)
+    *   [4.2 Unity crashes when trying to load project](#Unity_crashes_when_trying_to_load_project)
+    *   [4.3 Unity crashes if ~/.config/user-dirs.dirs is missing](#Unity_crashes_if_.7E.2F.config.2Fuser-dirs.dirs_is_missing)
+    *   [4.4 Minor stuttering while playtesting (NVIDIA)](#Minor_stuttering_while_playtesting_.28NVIDIA.29)
 
 ## Installation
 
@@ -28,6 +30,10 @@ Simply install the [AUR](/index.php/AUR "AUR") package [unity-editor](https://au
 **Warning:** The Unity package is **huge**. For a successful installation you'll need about 17GiB of free space for the package building, and another 8GiB for it to install.
 
 **Note:** By default the PKGBUILD redirects all the output of the installer, which downloads and processes about 2GB of data. As this process can be very long it might be useful to monitor it by using `tail -f /tmp/Unity.log`
+
+### Alternative Installation Method
+
+Unity has made available a program called Unity Hub that is designed to streamline your workflow by providing a centralized location where you can manage your Unity Projects and simplifies how you find, download, and manage your Unity Editor installs. The application comes available as an AppImage. To install the Unity Hub simply install the [unityhub](https://aur.archlinux.org/packages/unityhub/) package.
 
 ## Android Remote
 
@@ -73,6 +79,28 @@ Connect the phone to the computer and launch Unity Remote.
 Open the Editor and press play. You should now see your game transmitted to your Android device.
 
 If it doesn't work or you have questions, see the [Unity Documentation](http://docs.unity3d.com/Manual/UnityRemote5.html).
+
+## Visual Studio Code
+
+For those using the [Visual Studio Code](/index.php/Visual_Studio_Code "Visual Studio Code") as their script editor, there are a few additional steps you need to do to get it running without displaying errors similar to:
+
+```
+[fail]: The reference assemblies for framework ".NETFramework,Version=v3.5" were not found
+
+```
+
+```
+[warn]: OmniSharp.MSBuild.ProjectFile.ProjectFileInfo Unable to create directory "/Debug/". Access to the path "/Debug/" is denied.
+[fail]: OmniSharp.MSBuild.ProjectFile.ProjectFileInfo Could not write lines to file "/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache". Could not find a part of the path "/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache".
+
+```
+
+To eliminate these errors you need to install the following packages: [dotnet-runtime](https://www.archlinux.org/packages/?name=dotnet-runtime), [dotnet-sdk](https://www.archlinux.org/packages/?name=dotnet-sdk), [msbuild-stable](https://aur.archlinux.org/packages/msbuild-stable/), and [mono](https://www.archlinux.org/packages/?name=mono). Finally remember to install the C# extension from the VS Code Marketplace by pressing Ctrl-P and entering:
+
+```
+ext install ms-vscode.csharp
+
+```
 
 ## Troubleshooting
 

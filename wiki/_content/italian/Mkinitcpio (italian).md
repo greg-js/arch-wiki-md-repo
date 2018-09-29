@@ -70,7 +70,7 @@ $ git clone [git://projects.archlinux.org/mkinitcpio.git](git://projects.archlin
 
 Per impostazione predefinita, lo script mkinitcpio genera due immagini dopo l'installazione o l'aggiornamento del kernel: `/boot/initramfs-linux.img` e `/boot/initramfs-linux-fallback.img`. L'immagine *fallback* utilizza lo stesso file di configurazione come l'immagine *predefinita*, ad eccezione dell' hook **autodetect** che è saltato durante la creazione, includendo quindi anche una vasta gamma di moduli. L'hook di rilevazione (**autodetect**) automatica rileva i moduli necessari e personalizza l'immagine per hardware specifico, riducendo l'initramfs.
 
-Gli utenti possono creare quante immagini initramfs desiderano, con differenti profili di configurazione. L'immagine desiderata deve essere specificato per il bootloader, spesso nei suoi [file di configurazione](/index.php/Boot_Loader#Configuration_files "Boot Loader"). Dopo le modifiche apportate al file di configurazione, l'immagine deve essere rigenerata. Per lo stock kernel di Arch Linux, [linux](https://www.archlinux.org/packages/?name=linux), questo si ottiene lanciando questo comando con i privilegi di root:
+Gli utenti possono creare quante immagini initramfs desiderano, con differenti profili di configurazione. L'immagine desiderata deve essere specificato per il bootloader, spesso nei suoi [file di configurazione](/index.php/Boot_loader#Configuration_files "Boot loader"). Dopo le modifiche apportate al file di configurazione, l'immagine deve essere rigenerata. Per lo stock kernel di Arch Linux, [linux](https://www.archlinux.org/packages/?name=linux), questo si ottiene lanciando questo comando con i privilegi di root:
 
 ```
 # mkinitcpio -p linux

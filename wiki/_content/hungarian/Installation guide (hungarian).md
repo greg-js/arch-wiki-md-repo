@@ -110,7 +110,7 @@ FONT_MAP=8859-2
 
 ### Boot loader telepítése és beállítása
 
-Lásd [Boot loaderek](/index.php/Boot_loaders "Boot loaders") az elérhető választékért.
+Lásd [Boot loaderek](/index.php/Boot_loader "Boot loader") az elérhető választékért.
 
 ### Leválasztás és újraindítás
 

@@ -1,7 +1,6 @@
 Ссылки по теме
 
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
 *   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
 *   [grub-gfx (Русский)](/index.php/Grub-gfx_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Grub-gfx (Русский)")
 *   [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters")

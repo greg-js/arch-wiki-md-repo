@@ -452,7 +452,7 @@ The following groups are used for system purposes, an assignment to users is onl
 | Group | Affected files | Purpose |
 | dbus | used internally by [dbus](https://www.archlinux.org/packages/?name=dbus) |
 | kmem | `/dev/port`, `/dev/mem`, `/dev/kmem` |
-| locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | See [Core utilities#locate](/index.php/Core_utilities#locate "Core utilities"). |
+| locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | See [Locate](/index.php/Locate "Locate"). |
 | lp | `/dev/lp[0-9]*`, `/dev/parport[0-9]*` | Access to parallel port devices (printers and others). |
 | mail | `/usr/bin/mail` |
 | nobody | Unprivileged group. |

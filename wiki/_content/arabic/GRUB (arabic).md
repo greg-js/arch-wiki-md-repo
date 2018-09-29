@@ -106,7 +106,7 @@
 
 #### أنظمة UEFI
 
-**ملاحظة:** يوصى بقراءة وفهم هذه الصفحات [UEFI](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), [GPT](/index.php/GUID_Partition_Table "GUID Partition Table") و [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders") .
+**ملاحظة:** يوصى بقراءة وفهم هذه الصفحات [UEFI](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), [GPT](/index.php/GUID_Partition_Table "GUID Partition Table") و [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process") .
 
 ##### إنشاء وتوصيل قسم بنظام UEFI
 

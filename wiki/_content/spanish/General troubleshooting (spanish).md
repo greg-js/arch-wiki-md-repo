@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting"). Fecha de la última traducción/revisión: **2018-08-23**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=General_troubleshooting&diff=0&oldid=536162).
+**Estado de la traducción:** este artículo es una versión traducida de [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting"). Fecha de la última traducción/revisión: **2018-08-23**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=General_troubleshooting&diff=0&oldid=536162).
 
 Artículos relacionados
 

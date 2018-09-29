@@ -110,7 +110,7 @@ KMS para tarjetas de vídeo ATI exige el controlador de código abierto de [Xorg
 
 1\. Retiraremos todos los controladores UMS en conflicto de la línea de órdenes del kernel:
 
-*   Eliminaremos todas las opciones `vga=` de la línea del *kernel* en el [archivo de configuración](/index.php/Boot_Loader#Configuration_files "Boot Loader") del gestor de arranque. El uso de otros controladores framebuffer (como `[uvesafb](/index.php/Uvesafb "Uvesafb")` o `radeonfb`) entrarán en conflicto con KMS.
+*   Eliminaremos todas las opciones `vga=` de la línea del *kernel* en el [archivo de configuración](/index.php/Boot_loader#Configuration_files "Boot loader") del gestor de arranque. El uso de otros controladores framebuffer (como `[uvesafb](/index.php/Uvesafb "Uvesafb")` o `radeonfb`) entrarán en conflicto con KMS.
 *   La velocidad del bus AGP la podemos ajustar con la opción `radeon.agpmode=x` en la línea del kernel, donde x puede tener los valores 1, 2, 4, 8 (velocidad AGP) o -1 (modo PCI).
 
 2\. De otro modo, cuando [initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") se cargue:
@@ -130,7 +130,7 @@ Si tiene un kernel especial (por ejemplo, linux-zen), recuerde utilizar el archi
 
 **Nota:** Para soporte AGP, puede ser necesario añadir `intel_agp`, `ali_agp`, `ati_agp`, `amd_agp`, o `amd64_agp`) a los archivos .conf apropiados en `/etc/modules-load.d`.
 
-1.  Elimine todas las opciones `vga=` de la línea del *kernel* en el [archivo de configuración](/index.php/Boot_Loader#Configuration_files "Boot Loader") del gestor de arranque. El uso de otros controladores framebuffer (como `[uvesafb](/index.php/Uvesafb "Uvesafb")` o `radeonfb`) entrarán en conflicto con KMS. Retire cualquier otro módulo relacionado con framebuffer de `/etc/mkinitcpio.conf`. La opción `video=` puede ahora ser utilizada en conjunción con KMS.
+1.  Elimine todas las opciones `vga=` de la línea del *kernel* en el [archivo de configuración](/index.php/Boot_loader#Configuration_files "Boot loader") del gestor de arranque. El uso de otros controladores framebuffer (como `[uvesafb](/index.php/Uvesafb "Uvesafb")` o `radeonfb`) entrarán en conflicto con KMS. Retire cualquier otro módulo relacionado con framebuffer de `/etc/mkinitcpio.conf`. La opción `video=` puede ahora ser utilizada en conjunción con KMS.
 2.  **Reiniciar** el sistema.
 
 ## Optimizar prestaciones

@@ -362,7 +362,7 @@ To enable sound theme:
 
 Alternatively, [xfce4-mixer](https://git.xfce.org/apps/xfce4-mixer/) also provides a panel applet and keyboard shortcuts which supports Alsa as well. Note however, that it is based on a feature of GStreamer 0.10 which has been abandoned in 1.0.
 
-For non desktop environment specific alternatives, see [List of applications#Volume managers](/index.php/List_of_applications#Volume_managers "List of applications").
+For non desktop environment specific alternatives, see [List of applications/Multimedia#Volume control](/index.php/List_of_applications/Multimedia#Volume_control "List of applications/Multimedia").
 
 ##### Shortcuts
 

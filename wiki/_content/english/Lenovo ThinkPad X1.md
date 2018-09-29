@@ -32,7 +32,7 @@ In order to turn off UEFI booting you will need to boot into your BIOS and chang
 
 Installation from UEFI bootable USB works with the default bootloader, so rEFInd is unnecessary. In the BIOS under Startup, set "UEFI/Legacy Boot" to UEFI only. The default partition table (and Windows installation) uses MBR. For UEFI, reformat the disk as GPT.
 
-Booting using an [efibootmgr entry](/index.php/UEFI_Bootloaders#Using_efibootmgr_entry "UEFI Bootloaders") works well. The warnings about incompatibility and embedding arguments to do not apply.
+Booting using an [efibootmgr](/index.php/Efibootmgr "Efibootmgr") entry works well. The warnings about incompatibility and embedding arguments to do not apply.
 
 ## Hardware
 

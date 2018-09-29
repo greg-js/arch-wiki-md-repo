@@ -147,7 +147,7 @@ mkinitcpio -p linux
 
 Пользователь должен рассмотреть вариант отключение KMS, если он столкнулся при его использовании с *kernel panic*, искажением фрэймбуфера при загрузке, отстутствии сигнала от видеокарты, отказе загрузки [Xorg](/index.php/Xorg "Xorg"), невозможности Xorg вернуться к программной растеризации Mesa (без 3D ускорения), или проблемой выключения компьютера.
 
-*   Добавьте `radeon.modeset=0` (или `nomodeset`, если не сработало) в строку kernel конфигурационного файла вашего загрузчика [configuration file](/index.php/Boot_Loader#Configuration_files "Boot Loader"). Это должно сработать.
+*   Добавьте `radeon.modeset=0` (или `nomodeset`, если не сработало) в строку kernel конфигурационного файла вашего загрузчика [configuration file](/index.php/Boot_loader#Configuration_files "Boot loader"). Это должно сработать.
 
 **Примечание:** Добавление **nomodeset** в строку kernel может помешать GNOME'у 3 или KDE's запускать графические эффекты при загрузке.
 

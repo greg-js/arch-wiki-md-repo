@@ -69,7 +69,7 @@ GRUB deve essere installato nel settore di boot di un'unità o di una partizione
 
 La risposta breve è no. GRUB legacy non sarà rimosso dal sistema e continuerà a funzionare.
 
-D'altra parte però, come ogni pacchetto non più supportato dall'upstream, eventuali bug non verranno risolti. Per questo motivo è necessario prendere in considerazione l'idea di aggiornare GRUB alla versione 2.x, o un altro [Boot Loader](/index.php/Boot_Loader "Boot Loader") supportato.
+D'altra parte però, come ogni pacchetto non più supportato dall'upstream, eventuali bug non verranno risolti. Per questo motivo è necessario prendere in considerazione l'idea di aggiornare GRUB alla versione 2.x, o un altro [Boot loader](/index.php/Boot_loader "Boot loader") supportato.
 
 GRUB Legacy non supporta partizioni [GPT](/index.php/GPT "GPT"), il filesystem [Btrfs](/index.php/Btrfs "Btrfs") e il firmware [UEFI](/index.php?title=UEFI_(Italiano)&action=edit&redlink=1 "UEFI (Italiano) (page does not exist)").
 

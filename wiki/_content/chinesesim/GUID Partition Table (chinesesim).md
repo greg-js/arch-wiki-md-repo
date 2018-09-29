@@ -56,13 +56,13 @@
 
 ### UEFI 系统
 
-因为 GPT 是 UEFI 标准的一部分，因此所有 UEFI 引导器都支持 GPT 硬盘，并是从 UEFI 启动的强制要求。更多信息见 [Boot loaders](/index.php/Boot_loaders "Boot loaders").
+因为 GPT 是 UEFI 标准的一部分，因此所有 UEFI 引导器都支持 GPT 硬盘，并是从 UEFI 启动的强制要求。更多信息见 [Boot loaders](/index.php/Boot_loader "Boot loader").
 
 ### BIOS 系统
 
 尽管理论上 GPT 支持 BIOS 系统，但有时会无效甚至完全不兼容。技术上 BIOS 假设为只执行 MBR 上的代码，因此，保住了不同的分区方案的可能性。然而 BIOS 可能会执行其他的检查比如: 检查 MBR 完整性，甚至可能是对整个 MBR 分区表(尽管通常只是第一个分区)。如果在这种情况下，下面列出了一些该问题的解决方案。
 
-**警告:** 对于 Windows 来说，**不支持**从 BIOS/GPT 分区方案启动。如果你已安装 Windows 在 BIOS/MBR 分区方案上，**不要** 转换驱动器到 GPT! 如果完成, Windows 会启动失败 - 与启动 Windows 的引导器无关。我们可以在 UEFI 模式里安装 Windows 或者使用 [UEFI bootloader](/index.php/UEFI_Bootloaders "UEFI Bootloaders") (它使用 GPT), 或者还原/安装 Windows 到 BIOS/GPT 混合 MBR (见分区成例).
+**警告:** 对于 Windows 来说，**不支持**从 BIOS/GPT 分区方案启动。如果你已安装 Windows 在 BIOS/MBR 分区方案上，**不要** 转换驱动器到 GPT! 如果完成, Windows 会启动失败 - 与启动 Windows 的引导器无关。我们可以在 UEFI 模式里安装 Windows 或者使用 [UEFI boot loader](/index.php/Boot_loader "Boot loader") (它使用 GPT), 或者还原/安装 Windows 到 BIOS/GPT 混合 MBR (见分区成例).
 
 支持 GPT/BIOS 分区方案的引导器:
 

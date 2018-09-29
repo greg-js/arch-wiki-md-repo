@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [ACPI modules](/index.php/ACPI_modules "ACPI modules"). Fecha de la última traducción/revisión: **2018-09-13**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=ACPI_modules&diff=0&oldid=541074).
+**Estado de la traducción:** este artículo es una versión traducida de [ACPI modules](/index.php/ACPI_modules "ACPI modules"). Fecha de la última traducción/revisión: **2018-09-13**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=ACPI_modules&diff=0&oldid=541074).
 
 Artículos relacionados
 

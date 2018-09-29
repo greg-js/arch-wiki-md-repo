@@ -102,7 +102,7 @@ See [Openbox Menus](http://openbox.org/wiki/Help:Menus) for further help on crea
 
 ### Volume control
 
-Tint2 does not come with a volume control applet. See [List of applications#Volume_managers](/index.php/List_of_applications#Volume_managers "List of applications").
+Tint2 does not come with a volume control applet. See [List_of_applications/Multimedia#Volume_control](/index.php/List_of_applications/Multimedia#Volume_control "List of applications/Multimedia").
 
 ## Running tint2
 
@@ -153,20 +153,9 @@ tint2 -c <path_to_second_config_file>
 
 ## Enabling transparency
 
-To make tint2 look its best, some form of compositing is required. If your tint2 has a large black rectangular box behind it you are either using a window manager without native compositing (like Openbox) or it is not enabled.
+To make tint2 look its best, some form of compositing may be required. To use compositing with Openbox see [Xorg#List of composite managers](/index.php/Xorg#List_of_composite_managers "Xorg"). A restart of tint2 may be required to enable transparency.
 
-To enable compositing under Openbox you can install [Xcompmgr](/index.php/Xcompmgr "Xcompmgr"). The packages is` [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr).
-
-Xcompmgr can be started like this:
-
-```
-$ xcompmgr
-
-```
-
-You will have to kill and restart tint2 to enable transparency.
-
-If Xcompmgr is used solely to provide tint2 with transparency effects it can be run at boot by changing the autostart section in `~/.config/openbox/autostart` to this:
+If [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") is used solely to provide tint2 with transparency effects it can be run at boot by adding the following to `~/.config/openbox/autostart`:
 
 ```
 # Launch Xcomppmgr and tint2 with openbox
@@ -177,7 +166,7 @@ fi
 
 ```
 
-Other (better) ways to make Xcompmgr run at startup are discussed in the [Openbox](/index.php/Openbox "Openbox") article.
+See [Openbox](/index.php/Openbox "Openbox") for other (better) ways to make Xcompmgr run at startup.
 
 ### Fullscreen/Overlay
 

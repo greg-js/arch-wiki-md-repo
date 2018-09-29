@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [InfluxDB](/index.php/InfluxDB "InfluxDB"). Fecha de la última traducción/revisión: **2018-08-11**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=InfluxDB&diff=0&oldid=533358).
+**Estado de la traducción:** este artículo es una versión traducida de [InfluxDB](/index.php/InfluxDB "InfluxDB"). Fecha de la última traducción/revisión: **2018-08-11**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=InfluxDB&diff=0&oldid=533358).
 
 Artículos relacionados
 

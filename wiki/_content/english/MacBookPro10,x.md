@@ -98,7 +98,7 @@ Alternatively, install [broadcom-wl-dkms](https://www.archlinux.org/packages/?na
 
 #### Direct EFI booting
 
-See [UEFI Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders").
+See [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process").
 
 As of August 2013, refind can autodetect the Arch kernel, removing the need for copying the kernel into the EFI partition. Simply install refind and enable the "scan_all_linux_kernels" and "also_scan_dirs" options in refind.conf (see link above for instructions.)
 

@@ -496,7 +496,7 @@ If booting a [btrfs](/index.php/Btrfs "Btrfs") subvolume as root, amend the `opt
 ...
 menuentry "Arch Linux" {
         icon     /EFI/refind/icons/os_arch.png
-        volume   "Arch Linux"
+        volume   "[bootdevice]"
         loader   /boot/vmlinuz-linux
         initrd   /boot/initramfs-linux.img
         options  "root=PARTUUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX* rw **rootflags=subvol=ROOT**"

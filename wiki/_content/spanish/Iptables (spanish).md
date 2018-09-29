@@ -6,7 +6,7 @@ Artículos relacionados
 *   [Simple stateful firewall (Español)](/index.php/Simple_stateful_firewall_(Espa%C3%B1ol) "Simple stateful firewall (Español)")
 *   [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP.2FIP_stack_hardening "Sysctl")
 
-**Estado de la traducción:** este artículo es una versión traducida de [Iptables](/index.php/Iptables "Iptables"). Fecha de la última traducción/revisión: **2018-09-04**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Iptables&diff=0&oldid=536649).
+**Estado de la traducción:** este artículo es una versión traducida de [Iptables](/index.php/Iptables "Iptables"). Fecha de la última traducción/revisión: **2018-09-04**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Iptables&diff=0&oldid=536649).
 
 *iptables* es una utilidad de línea de órdenes para configurar el [cortafuegos](/index.php/Firewalls_(Espa%C3%B1ol) "Firewalls (Español)") del kernel de Linux implementado como parte del proyecto [Netfilter](https://en.wikipedia.org/wiki/es:Netfilter "wikipedia:es:Netfilter"). El término *iptables* también se usa comúnmente para referirse a dicho cortafuegos del kernel. Puede configurarse directamente con iptables, o usando uno de los muchos frontend existentes de [consola](#De_consola) y [gráficos](#Gr.C3.A1ficos). El término *iptables* se usa para [IPv4](https://en.wikipedia.org/wiki/IPv4 "wikipedia:IPv4"), y el término *ip6tables* para [IPv6](/index.php/IPv6 "IPv6"). Tanto *iptables* como *ip6tables* tienen la misma sintaxis, pero algunas opciones son específicas de IPv4 o de IPv6.
 

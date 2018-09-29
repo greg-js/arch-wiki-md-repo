@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2018-09-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=541740) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2018-09-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=543459) na versão em inglês.
 
 Artigos relacionados
 
@@ -552,14 +552,14 @@ Há também vários tópicos relevantes no LKML.
 
 [Explicit Congestion Notification](https://en.wikipedia.org/wiki/Explicit_Congestion_Notification "wikipedia:Explicit Congestion Notification") (ECN), Notificação de Congestionamento Explícito, pode causar problemas de tráfego com roteadores antigos/ruins [[5]](https://bbs.archlinux.org/viewtopic.php?id=239892). Desde o [systemd 239](https://github.com/systemd/systemd/issues/9748), está habilitado para tráfego de entrada e de saída.
 
-Para habilitar apenas ECN quando requisitado pelas conexões de entrada (padrão do kernel):
+Para habilitar apenas ECN quando requisitado pelas conexões de entrada (padrão do kernel razoavelmente seguro):
 
 ```
 # sysctl net.ipv4.tcp_ecn=2
 
 ```
 
-Para desabilitar ECN completamente:
+Para desabilitar ECN completamente (para, por exemplo, testar se ECN estava causando problemas):
 
 ```
 # sysctl net.ipv4.tcp_ecn=0

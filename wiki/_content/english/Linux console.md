@@ -31,7 +31,7 @@ Despite many improvements in the console, its full backward compatibility with l
 
 ### Virtual consoles
 
-The console is presented to the user as a series of [virtual consoles](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console"). These give the impression that several independent terminals are running concurrently; each virtual console can be logged in with different users, run its own shell and have its own font settings. The virtual consoles each use a device `/dev/ttyX`, and you can switch between them by pressing `Alt+Fx` (where x is equal to the virtual console number, beginning with 1). The device `/dev/console` is automatically mapped to the active virtual console.
+The console is presented to the user as a series of [virtual consoles](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console"). These give the impression that several independent terminals are running concurrently; each virtual console can be logged in with different users, run its own shell and have its own font settings. The virtual consoles each use a device `/dev/ttyX`, and you can switch between them by pressing `Alt+F*x*` (where `*x*` is equal to the virtual console number, beginning with 1). The device `/dev/console` is automatically mapped to the active virtual console.
 
 See also [chvt(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chvt.1), [openvt(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/openvt.1) and [deallocvt(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/deallocvt.1).
 
