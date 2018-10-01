@@ -421,7 +421,7 @@ These have their own sites, and are not supported in the Wine forums.
 
 ### PlayOnLinux/PlayOnMac
 
-[PlayOnLinux](http://www.playonlinux.com/) is a graphical Windows and DOS program manager. It contains scripts to assist the configuration and running of programs, it can manage multiple Wine versions and even use a specific version for each executable (eg. because of regressions). If you need to know which Wine version works best for a certain game, try the [Wine Application Database](http://appdb.winehq.org/). You can find the [playonlinux](https://www.archlinux.org/packages/?name=playonlinux) package in [community](/index.php/Community "Community").
+[PlayOnLinux](http://www.playonlinux.com/) ([playonlinux](https://www.archlinux.org/packages/?name=playonlinux)) is a graphical Windows and DOS program manager. It contains scripts to assist the configuration and running of programs, it can manage multiple Wine versions and even use a specific version for each executable (eg. because of regressions). If you need to know which Wine version works best for a certain game, try the [Wine Application Database](http://appdb.winehq.org/).
 
 ### PyWinery
 

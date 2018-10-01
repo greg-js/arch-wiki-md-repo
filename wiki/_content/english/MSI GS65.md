@@ -7,6 +7,7 @@
 | Webcam | Working | uvcvideo |
 | Bluetooth | Working | btusb |
 | USB | Working |
+| Thunderbolt | Working | thunderbolt |
 | Power management | Partially Working |
 | Keyboard | Partially Working |
 | Touchpad | Partially Working | libinput |

@@ -65,7 +65,7 @@ Archlinux、ArchLinux、archLinux、aRcHlInUx 等等称呼都不是标准的。
 
 ## AUR
 
-[Arch用户软件仓库](https://aur.archlinux.org)（Arch User Repository，AUR）是为用户而建、由用户主导的Arch软件仓库。AUR中的软件包以软件包生成脚本（[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")）的形式提供，用户自己通过[makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)")生成包，再由[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")安装。创建AUR的初衷是方便用户维护和分享新软件包，并由官方定期从中挑选软件包进入[community](/index.php/Community "Community")仓库。本文介绍用户访问和使用AUR的方法。
+[Arch用户软件仓库](https://aur.archlinux.org)（Arch User Repository，AUR）是为用户而建、由用户主导的Arch软件仓库。AUR中的软件包以软件包生成脚本（[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")）的形式提供，用户自己通过[makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)")生成包，再由[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")安装。创建AUR的初衷是方便用户维护和分享新软件包，并由官方定期从中挑选软件包进入[community](/index.php/Community_repository "Community repository")仓库。本文介绍用户访问和使用AUR的方法。
 
 许多官方仓库软件包都来自AUR。通过AUR，大家相互分享新的软件包生成脚本（[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")和其他相关文件）。用户还可以为软件包投票。如果一个软件包投票足够多、没有协议问题、打包质量好，那么它就很有希望被收录进官方[community]仓库（以后就可以直接通过[pacman](/index.php/Pacman "Pacman") 或 [abs](/index.php/ABS "ABS") 安装了）。
 

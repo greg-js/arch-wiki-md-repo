@@ -375,7 +375,7 @@ La opción integrada para eliminar todos los paquetes de la memoria caché que n
 
 **Advertencia:**
 
-*   haga esto únicamente cuando esté seguro de que no se requieren versiones anteriores de paquetes, por ejemplo para un [downgrade](/index.php/Downgrade "Downgrade") posterior. `pacman -Sc` solo deja disponibles las versiones de los paquetes que están *actualmente instalados*, las versiones anteriores tendrían que ser recuperadas por otros medios, como [Archive](/index.php/Archive "Archive");
+*   haga esto únicamente cuando esté seguro de que no se requieren versiones anteriores de paquetes, por ejemplo para un [downgrade](/index.php/Downgrade "Downgrade") posterior. `pacman -Sc` solo deja disponibles las versiones de los paquetes que están *actualmente instalados*, las versiones anteriores tendrían que ser recuperadas por otros medios, como [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive");
 *   es posible vaciar completamente la carpeta de la caché con `pacman -Scc`. Además de lo anterior, esto también impide la reinstalación de un paquete directamente *desde* la carpeta de la caché, requiriendo, en caso de necesidad, de una nueva descarga. Debe evitarse, a menos que se necesite recuperar inmediatemente espacio en el disco.
 
 Debido a las limitaciones anteriores, considere el uso de una alternativa que le permita más control sobre qué paquetes y cuántos desea eliminar de la memoria caché:
@@ -416,7 +416,7 @@ Descargar un paquete sin instalarlo:
 
 ```
 
-Instalar un paquete 'local' que no proviene de un repositorio remoto (por ejemplo, el paquete viene de [AUR](/index.php/Arch_User_Repository "Arch User Repository")):
+Instalar un paquete 'local' que no proviene de un repositorio remoto (por ejemplo, el paquete viene de [AUR](/index.php/AUR "AUR")):
 
 ```
 # pacman -U /ruta/al/paquete/nombre_paquete-versión.pkg.tar.xz

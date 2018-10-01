@@ -329,7 +329,7 @@ extra/libusb-compat 0.1.5-1
 
 ```
 
-在上述例子中，需要 [安装](/index.php/Installed "Installed") 软件包 [libusb-compat](https://www.archlinux.org/packages/?name=libusb-compat)。
+在上述例子中，需要 [安装](/index.php/Install "Install") 软件包 [libusb-compat](https://www.archlinux.org/packages/?name=libusb-compat)。
 
 这个错误也有可能意味着你用来安装这个软件的 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 里没有将这个共享库作为它的依赖库：如果来自官方源，请 [报告一个 bug](/index.php/Reporting_bug_guidelines_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Reporting bug guidelines (简体中文)")；如果来自 [AUR](/index.php/AUR "AUR")，请在 AUR 网站相关页面上把它报告给维护者。
 

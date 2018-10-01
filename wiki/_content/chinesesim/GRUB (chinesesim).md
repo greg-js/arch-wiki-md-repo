@@ -133,7 +133,7 @@ GPT 后面的空间也可以用作 BIOS 启动分区，但是这会违反 GPT �
 
 **注意:**
 
-*   建议阅读并理解[UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [Boot loaders](/index.php/Boot_loaders "Boot loaders")
+*   建议阅读并理解[UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process")
 *   使用UEFI安装时，重要的是从开始安装时您的机器就在 UEFI 模式。Arch Linux的安装介质必须是UEFI启动。
 
 ### 检查你是否使用GPT且有ESP分区

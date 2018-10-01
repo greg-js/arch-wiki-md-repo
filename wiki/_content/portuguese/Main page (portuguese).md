@@ -34,7 +34,7 @@ Visite a [tabela de conteúdo](/index.php/Tabela_de_conte%C3%BAdo "Tabela de con
 
 	Diretrizes para a comunidade Arch.
 
-	[Participe](/index.php/Getting_involved_(Portugu%C3%AAs) "Getting involved (Português)")
+	[Participe](/index.php/Participe "Participe")
 
 	Descreve as várias formas que Archers podem contribuir para a comunidade do Arch.
 

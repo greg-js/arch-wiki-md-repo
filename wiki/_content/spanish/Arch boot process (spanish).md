@@ -2,7 +2,6 @@
 
 Artículos relacionados
 
-*   [Gestores de arranque](/index.php/Boot_loader "Boot loader")
 *   [Master Boot Record](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)")
 *   [GUID Partition Table](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)")
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)")

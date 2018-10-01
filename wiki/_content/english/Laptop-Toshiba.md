@@ -1,7 +1,6 @@
-| [Laptop main page](/index.php/Laptop "Laptop") |
-| [Acer](/index.php/Laptop/Acer "Laptop/Acer") - [Apple](/index.php/Laptop/Apple "Laptop/Apple") - [Asus](/index.php/Laptop/Asus "Laptop/Asus") - [Compaq](/index.php/Laptop/Compaq "Laptop/Compaq") (discontinued) - [Dell](/index.php/Laptop/Dell "Laptop/Dell") - [Fujitsu](/index.php/Laptop/Fujitsu "Laptop/Fujitsu") - [HP](/index.php/Laptop/HP "Laptop/HP") - [IBM/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo") - [Samsung](/index.php/Laptop/Samsung "Laptop/Samsung") - [Sony](/index.php/Laptop/Sony "Laptop/Sony") - <a class="mw-selflink selflink">Toshiba</a> - [Other](/index.php/Laptop/Other "Laptop/Other") |
+[Acer](/index.php/Laptop/Acer "Laptop/Acer") – [Apple](/index.php/Laptop/Apple "Laptop/Apple") – [ASUS](/index.php/Laptop/ASUS "Laptop/ASUS") – [Dell](/index.php/Laptop/Dell "Laptop/Dell") – [Fujitsu](/index.php/Laptop/Fujitsu "Laptop/Fujitsu") – [HP](/index.php/Laptop/HP "Laptop/HP") – [IBM/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo") – [MSI](/index.php/Laptop/MSI "Laptop/MSI") – [Samsung](/index.php/Laptop/Samsung "Laptop/Samsung") – [Sony](/index.php/Laptop/Sony "Laptop/Sony") – <a class="mw-selflink selflink">Toshiba</a> – [Other](/index.php/Laptop/Other "Laptop/Other")
 
-## Model list
+## Satellite
 
 | Model version | Arch Linux
 install CD version
@@ -60,6 +59,13 @@ Battery: NA
 Dimming of display: OK
 Frequency scaling of CPU: OK | Didn't test | Chicony USB 2.0 Camera works with [Linux UVC driver](http://linux-uvc.berlios.de).
 Microphone works out-of-box with ALSA. | NA |
+
+## Portege
+
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Portege z835-P330 | Current | Intel HD Graphics (Sandy Bridge: make sure to enable i915_enable_rc6 and i915_enable_fbc for maximum battery life) | Sound (hda) works. Volume control works. | Intel 82579LM works | Centrino Wireless-N 1000 (iwlagn) works. | NA | Suspend to
 RAM: works
 Disk: not tested
@@ -83,5 +89,3 @@ Disk: not tested
 Battery: 2h/3:50h with power saving
 Dimming of display: works | NA | Camera works
 Microphone works | NA |
-| Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
-| Hardware support |

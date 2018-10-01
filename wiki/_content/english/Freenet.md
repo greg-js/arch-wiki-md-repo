@@ -23,7 +23,7 @@ You need to visit freenet's web interface at [http://127.0.0.1:8888/](http://127
 
 ### Manual Configuration
 
-The [Freenet wiki](http://new-wiki.freenetproject.org/Main_Page) will be useful if you decide to configure things by hand. Manual configuration is done by editing
+The [Freenet wiki](http://wiki.freenetproject.org/Main_Page) will be useful if you decide to configure things by hand. Manual configuration is done by editing
 
 ```
 /opt/freenet/freenet.ini

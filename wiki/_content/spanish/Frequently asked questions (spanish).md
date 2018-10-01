@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions"). Fecha de la última traducción/revisión: **2018-08-10**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=532704).
+**Estado de la traducción:** este artículo es una versión traducida de [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions"). Fecha de la última traducción/revisión: **2018-09-29**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=542367).
 
 Artículos relacionados
 
@@ -36,6 +36,7 @@ Artículos relacionados
     *   [2.9 ¿Qué hacer antes de actualizar?](#.C2.BFQu.C3.A9_hacer_antes_de_actualizar.3F)
     *   [2.10 Un paquete de actualización fue liberado, pero pacman dice que el sistema está al día](#Un_paquete_de_actualizaci.C3.B3n_fue_liberado.2C_pero_pacman_dice_que_el_sistema_est.C3.A1_al_d.C3.ADa)
     *   [2.11 El proyecto *X* ha lanzado una nueva versión. ¿Cuánto tiempo demorará el paquete Arch para actualizar a esa nueva versión?](#El_proyecto_X_ha_lanzado_una_nueva_versi.C3.B3n._.C2.BFCu.C3.A1nto_tiempo_demorar.C3.A1_el_paquete_Arch_para_actualizar_a_esa_nueva_versi.C3.B3n.3F)
+    *   [2.12 Si necesito una versión anterior de una biblioteca instalada, ¿puedo simplemente enlazar a la versión más nueva?](#Si_necesito_una_versi.C3.B3n_anterior_de_una_biblioteca_instalada.2C_.C2.BFpuedo_simplemente_enlazar_a_la_versi.C3.B3n_m.C3.A1s_nueva.3F)
 *   [3 Instalación](#Instalaci.C3.B3n)
     *   [3.1 Arch necesita un instalador. ¿Tal vez una instalación a través de GUI?](#Arch_necesita_un_instalador._.C2.BFTal_vez_una_instalaci.C3.B3n_a_trav.C3.A9s_de_GUI.3F)
     *   [3.2 He instalado Arch, ¡y estoy en una shell! ¿Y ahora qué?](#He_instalado_Arch.2C_.C2.A1y_estoy_en_una_shell.21_.C2.BFY_ahora_qu.C3.A9.3F)
@@ -200,6 +201,16 @@ Los servidores de réplicas de *pacman* no se sincronizan inmediatamente. Puede 
 ### El proyecto *X* ha lanzado una nueva versión. ¿Cuánto tiempo demorará el paquete Arch para actualizar a esa nueva versión?
 
 Las actualizaciones del paquete se lanzarán cuando estén listas. La cantidad específica de tiempo puede ser tan breve como unas pocas horas después de que se libere una actualización menor de corrección de errores, hasta varias semanas después de la actualización de un gran grupo de paquetes. La cantidad de tiempo desde la nueva versión hasta que Arch libera un nuevo paquete depende de los paquetes específicos y la disponibilidad de los mantenedores del paquete. Además, algunos paquetes pasan algún tiempo en el repositorio [testing](/index.php/Testing "Testing"), por lo que esto puede prolongar el tiempo antes de que se actualice un paquete. Los [mantenedores](/index.php/Package_maintainer "Package maintainer") intentan trabajar lo más rápido posible para llevar actualizaciones estables a los repositorios. Si encuentra un paquete en los repositorios oficiales que está desactualizado, vaya al [sitio web del paquete](https://www.archlinux.org/packages/) y márquelo.
+
+### Si necesito una versión anterior de una biblioteca instalada, ¿puedo simplemente enlazar a la versión más nueva?
+
+Si tiene suerte, podría funcionar, por un tiempo. En cualquier caso, no es una solución adecuada, porque:
+
+*   Las bibliotecas no cambian las versiones al azar - es probable que la API/ABI haya cambiado (posiblemente con bits eliminados), y es solo una cuestión de suerte si esos cambios afectan al uso.
+*   El enlace simbólico no será rastreado por un administrador de paquetes. Los principiantes que intenten modificar de forma inmediata los archivos de la biblioteca del sistema, corren el mayor riesgo de realizar un cambio no deseado que no pueden diagnosticar/corregir, que el administrador de paquetes ayuda a evitar.
+*   Una pequeña alternativa al volcado del archivo de biblioteca antiguo en el sistema de archivos, sin seguimiento, se olvidará, y no se detectarán/corregirán posibles errores de seguridad.
+
+En su lugar, utilice/escriba por ejemplo un [paquete de compatibilidad](https://aur.archlinux.org/packages/?SeB=n&K=compat), que proporcione la versión de la biblioteca requerida.
 
 ## Instalación
 

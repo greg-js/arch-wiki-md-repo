@@ -585,7 +585,7 @@ Examples:
 
 See [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1), [systemd.journal-fields(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.journal-fields.7), or Lennart's [blog post](http://0pointer.de/blog/projects/journalctl.html) for details.
 
-**Tip:** By default, *journalctl* truncates lines longer than screen width, but in some cases, it may be better to enable wrapping instead of truncating. This can be controlled by the `SYSTEMD_LESS` [environment variable](/index.php/Environment_variable "Environment variable"), which contains options passed to [less](/index.php/Core_utilities#less "Core utilities") (the default pager) and defaults to `FRSXMK` (see [less(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/less.1) and [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) for details).
+**Tip:** By default, *journalctl* truncates lines longer than screen width, but in some cases, it may be better to enable wrapping instead of truncating. This can be controlled by the `SYSTEMD_LESS` [environment variable](/index.php/Environment_variable "Environment variable"), which contains options passed to [less](/index.php/Core_utilities#Essentials "Core utilities") (the default pager) and defaults to `FRSXMK` (see [less(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/less.1) and [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) for details).
 
 By omitting the `S` option, the output will be wrapped instead of truncated. For example, start *journalctl* as follows:
 

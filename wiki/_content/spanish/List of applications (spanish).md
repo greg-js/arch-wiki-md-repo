@@ -6,7 +6,7 @@
 
 Artículos relacionados
 
-*   [Utilidades centrales](/index.php/Core_utilities_(Espa%C3%B1ol) "Core utilities (Español)")
+*   [Utilidades principales](/index.php/Core_utilities_(Espa%C3%B1ol) "Core utilities (Español)")
 *   [Lista de juegos](/index.php/List_of_games_(Espa%C3%B1ol) "List of games (Español)")
 
 Este artículo contiene un listado general de aplicaciones, ordenadas por categorías, a modo de referencia para aquellos que buscan determinados paquetes. Muchas de las secciones se dividen en aplicaciones de consola y aplicaciones gráficas.

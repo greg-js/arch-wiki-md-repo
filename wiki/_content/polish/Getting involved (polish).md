@@ -48,7 +48,7 @@ Zgłaszanie i usuwanie błędów na [bug tracker](https://bugs.archlinux.org/) j
 
 ### Tworzenie i zarządzanie pakietami AUR
 
-[Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") zawiera stworzone przez społeczność pakiety, które mogę zostać zainstalowane przez pozostałych użytkowników, a które nie są zawarte w oficjalnych repozytoriach systemu. Najpopularniejsze pakiety otrzymują szansę na wciągnięcie ich do oficjalnego repozytorium [community](/index.php/Community "Community").
+[Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") zawiera stworzone przez społeczność pakiety, które mogę zostać zainstalowane przez pozostałych użytkowników, a które nie są zawarte w oficjalnych repozytoriach systemu. Najpopularniejsze pakiety otrzymują szansę na wciągnięcie ich do oficjalnego repozytorium [community](/index.php/Community_repository "Community repository").
 
 Wspomóc społeczność możesz poprzez tworzenie nowych lub przejmowanie już istniejących pakietów.
 

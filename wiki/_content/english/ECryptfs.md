@@ -236,7 +236,7 @@ The latter should be automatically unmounted and made unavailable when the user 
 
 ### ecryptfs-simple
 
-Use [ecryptfs-simple](http://xyne.archlinux.ca/projects/ecryptfs-simple/) if you just want to use eCryptfs to mount arbitrary directories the way you can with [EncFS](/index.php/EncFS "EncFS"). ecryptfs-simple does not require root privileges or entries in `/etc/fstab`, nor is it limited to hard-coded directories such as `~/.Private`. The package is available to be [installed](/index.php/Installed "Installed") as [ecryptfs-simple](https://aur.archlinux.org/packages/ecryptfs-simple/) and from [Xyne's repos](http://xyne.archlinux.ca/repos/).
+Use [ecryptfs-simple](http://xyne.archlinux.ca/projects/ecryptfs-simple/) if you just want to use eCryptfs to mount arbitrary directories the way you can with [EncFS](/index.php/EncFS "EncFS"). ecryptfs-simple does not require root privileges or entries in `/etc/fstab`, nor is it limited to hard-coded directories such as `~/.Private`. The package is available to be [installed](/index.php/Install "Install") as [ecryptfs-simple](https://aur.archlinux.org/packages/ecryptfs-simple/) and from [Xyne's repos](http://xyne.archlinux.ca/repos/).
 
 As the name implies, usage is simple:
 

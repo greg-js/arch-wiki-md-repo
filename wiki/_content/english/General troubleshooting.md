@@ -325,7 +325,7 @@ extra/libusb-compat 0.1.5-1
 
 ```
 
-In this case, the [libusb-compat](https://www.archlinux.org/packages/?name=libusb-compat) package needs to be [installed](/index.php/Installed "Installed").
+In this case, the [libusb-compat](https://www.archlinux.org/packages/?name=libusb-compat) package needs to be [installed](/index.php/Install "Install").
 
 The error could also mean that the package that you used to install your program does not list the library as a dependency in its [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"): if it is an official package, [report a bug](/index.php/Report_a_bug "Report a bug"); if it is an [AUR](/index.php/AUR "AUR") package, report it to the maintainer using its page in the AUR website.
 

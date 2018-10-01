@@ -1,3 +1,9 @@
+Related articles
+
+*   [Opera](/index.php/Opera "Opera")
+*   [Vivaldi](/index.php/Vivaldi "Vivaldi")
+*   [Qt](/index.php/Qt "Qt")
+
 [Otter Browser](https://otter-browser.org) is a web browser which aims to recreate [Opera](/index.php/Opera "Opera") UI. It's based on [Qt5](/index.php/Qt "Qt") and QtWebKit, with experimental support of QtWebEngine.
 
 ## Contents
@@ -9,7 +15,7 @@
 
 ## Installation
 
-Otter Browser can be [installed](/index.php/Installed "Installed") with [otter-browser](https://aur.archlinux.org/packages/otter-browser/), [otter-browser-weekly](https://aur.archlinux.org/packages/otter-browser-weekly/) ( or [otter-browser-git](https://aur.archlinux.org/packages/otter-browser-git/). It's recommended to use *-weekly* package, which combines new features from *-git* with more stable experience.
+Otter Browser can be [installed](/index.php/Install "Install") with [otter-browser](https://aur.archlinux.org/packages/otter-browser/), [otter-browser-weekly](https://aur.archlinux.org/packages/otter-browser-weekly/) ( or [otter-browser-git](https://aur.archlinux.org/packages/otter-browser-git/). It's recommended to use *-weekly* package, which combines new features from *-git* with more stable experience.
 
 ## Tips and tricks
 

@@ -20,7 +20,7 @@ Related articles
     *   [1.2 Master Boot Record (MBR) specific instructions](#Master_Boot_Record_.28MBR.29_specific_instructions)
     *   [1.3 Installation](#Installation)
 *   [2 UEFI systems](#UEFI_systems)
-    *   [2.1 Check for an EFI System Partition](#Check_for_an_EFI_System_Partition)
+    *   [2.1 Check for an EFI system partition](#Check_for_an_EFI_system_partition)
     *   [2.2 Installation](#Installation_2)
 *   [3 Generate the main configuration file](#Generate_the_main_configuration_file)
 *   [4 Configuration](#Configuration)
@@ -121,7 +121,7 @@ See [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8)
 *   It is recommended to read and understand the [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [Arch boot process#Under UEFI](/index.php/Arch_boot_process#Under_UEFI "Arch boot process") pages.
 *   When installing to use UEFI it is important to start the install with your machine in UEFI mode. The Arch Linux install media must be UEFI bootable.
 
-### Check for an EFI System Partition
+### Check for an EFI system partition
 
 To boot from a disk using UEFI, the recommended disk partition table is GPT and this is the layout that is assumed in this article. An [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) is required on every bootable disk. If you are installing Arch Linux on an UEFI-capable computer with an installed operating system, like Windows 10 for example, it is very likely that you already have an ESP.
 
@@ -150,16 +150,16 @@ First, [install](/index.php/Install "Install") the packages [grub](https://www.a
 
 Then follow the below steps to install GRUB:
 
-1.  [Mount the EFI System Partition](/index.php/EFI_system_partition#Mount_the_partition "EFI system partition") and in the remainder of this section, substitute `*esp*` with its mount point.
-2.  Choose a bootloader identifier, here named `***GRUB***`. A directory of that name will be created to store the EFI binary in the ESP and this is the name that will appear in the UEFI boot menu to identify the GRUB boot entry.
-3.  Execute the following command to install the GRUB EFI application `grubx64.efi` to `*esp*/EFI/***GRUB***/` and install its modules to `/boot/grub/x86_64-efi/`.
+1.  [Mount the EFI system partition](/index.php/EFI_system_partition#Mount_the_partition "EFI system partition") and in the remainder of this section, substitute `*esp*` with its mount point.
+2.  Choose a bootloader identifier, here named `GRUB`. A directory of that name will be created to store the EFI binary in the ESP and this is the name that will appear in the UEFI boot menu to identify the GRUB boot entry.
+3.  Execute the following command to install the GRUB EFI application `grubx64.efi` to `*esp*/EFI/GRUB/` and install its modules to `/boot/grub/x86_64-efi/`.
 
 ```
-# grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=***GRUB***
+# grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=GRUB
 
 ```
 
-After the above install completed the main GRUB directory is located at `/boot/grub/`. Note that `grub-install` also tries to [create an entry in the firmware boot manager](/index.php/GRUB/Tips_and_tricks#Create_a_GRUB_entry_in_the_firmware_boot_manager "GRUB/Tips and tricks"), named `***GRUB***` in the above example.
+After the above install completed the main GRUB directory is located at `/boot/grub/`. Note that `grub-install` also tries to [create an entry in the firmware boot manager](/index.php/GRUB/Tips_and_tricks#Create_a_GRUB_entry_in_the_firmware_boot_manager "GRUB/Tips and tricks"), named `GRUB` in the above example.
 
 Remember to [#Generate the main configuration file](#Generate_the_main_configuration_file) after finalizing [#Configuration](#Configuration).
 
@@ -217,6 +217,8 @@ You can also use `GRUB_CMDLINE_LINUX="resume=UUID=*uuid-of-swap-partition*"`
 See [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for more info.
 
 ### LVM
+
+**Warning:** GRUB does not support thin-provisioned logical volumes.
 
 If you use [LVM](/index.php/LVM "LVM") for your `/boot` or `/` root partition, make sure that the `lvm` module is preloaded:
 
@@ -296,9 +298,7 @@ Without further changes you will be prompted twice for a passhrase: the first fo
 
 *   If you use a special keymap, a default GRUB installation will not know it. This is relevant for how to enter the passphrase to unlock the LUKS blockdevice.
 *   In order to perform system updates involving the `/boot` mount point, ensure that the encrypted `/boot` is unlocked and mounted before performing an update. With a separate `/boot` partition, this may be accomplished automatically on boot by using [crypttab](/index.php/Crypttab "Crypttab") with a [keyfile](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption").
-*   If you experience issues getting the prompt for a password to display (errors regarding cryptouuid, cryptodisk, or "device not found"), try reinstalling grub as below appending the following to the end of your installation command:
-
- `# grub-install --target=x86_64-efi --efi-directory=*esp* --bootloader-id=grub **--modules="part_gpt part_msdos"**` 
+*   If you experience issues getting the prompt for a password to display (errors regarding cryptouuid, cryptodisk, or "device not found"), try reinstalling grub and appending `--modules="part_gpt part_msdos"` to the end of your `grub-install` command.
 
 ### Multiple entries
 
@@ -345,10 +345,11 @@ menuentry "System restart" {
 #### "Firmware setup" menu entry (UEFI only)
 
 ```
-menuentry "Firmware setup" {
-	fwsetup
-}
-
+if [ ${grub_platform} == "efi" ]; then
+	menuentry "Firmware setup" {
+		fwsetup
+	}
+fi
 ```
 
 #### GNU/Linux menu entry
@@ -380,7 +381,7 @@ menuentry "Other Linux" {
 
 #### Windows installed in UEFI/GPT Mode menu entry
 
-This mode determines where the Windows bootloader resides and chain-loads it after Grub when the menu entry is selected. The main task here is finding the EFI partition and running the bootloader from it.
+This mode determines where the Windows bootloader resides and chain-loads it after Grub when the menu entry is selected. The main task here is finding the EFI system partition and running the bootloader from it.
 
 **Note:** This menuentry will work only in UEFI boot mode and only if the Windows bitness matches the UEFI bitness. It will not work in BIOS installed GRUB. See [Dual boot with Windows#Windows UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations "Dual boot with Windows") and [Dual boot with Windows#Bootloader UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations "Dual boot with Windows") for more information.
 
@@ -399,7 +400,7 @@ fi
 
 where `$hints_string` and `$fs_uuid` are obtained with the following two commands.
 
-The `$fs_uuid` command determines the UUID of the EFI partition:
+The `$fs_uuid` command determines the UUID of the EFI system partition:
 
  `# grub-probe --target=fs_uuid *esp*/EFI/Microsoft/Boot/bootmgfw.efi`  `1ce5-7f28` 
 
@@ -427,32 +428,30 @@ For Windows Vista/7/8/8.1/10:
 
 ```
 if [ "${grub_platform}" == "pc" ]; then
-  menuentry "Microsoft Windows Vista/7/8/8.1/10 BIOS/MBR" {
-    insmod part_msdos
-    insmod ntfs
-    insmod search_fs_uuid
-    insmod ntldr     
-    search --fs-uuid --set=root --hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetal=ahci0,msdos1 *XXXXXXXXXXXXXXXX*
-    ntldr /bootmgr
-  }
+	menuentry "Microsoft Windows Vista/7/8/8.1/10 BIOS/MBR" {
+		insmod part_msdos
+		insmod ntfs
+		insmod search_fs_uuid
+		insmod ntldr     
+		search --fs-uuid --set=root --hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetal=ahci0,msdos1 *XXXXXXXXXXXXXXXX*
+		ntldr /bootmgr
+	}
 fi
-
 ```
 
 For Windows XP:
 
 ```
 if [ "${grub_platform}" == "pc" ]; then
-  menuentry "Microsoft Windows XP" {
-    insmod part_msdos
-    insmod ntfs
-    insmod search_fs_uuid
-    insmod ntldr     
-    search --fs-uuid --set=root --hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetal=ahci0,msdos1 *XXXXXXXXXXXXXXXX*
-    ntldr /ntldr
-  }
+	menuentry "Microsoft Windows XP" {
+		insmod part_msdos
+		insmod ntfs
+		insmod search_fs_uuid
+		insmod ntldr     
+		search --fs-uuid --set=root --hint-bios=hd0,msdos1 --hint-efi=hd0,msdos1 --hint-baremetal=ahci0,msdos1 *XXXXXXXXXXXXXXXX*
+		ntldr /ntldr
+	}
 fi
-
 ```
 
 **Note:** In some cases, GRUB may be installed without a clean Windows 8, in which case you cannot boot Windows without having an error with `\boot\bcd` (error code `0xc000000f`). You can fix it by going to Windows Recovery Console (`cmd.exe` from install disk) and executing:
@@ -757,15 +756,15 @@ If GRUB loads but drops into the rescue shell with no errors, it can be due to o
 
 #### GRUB UEFI not loaded
 
-An example of a working EFI:
+An example of a working UEFI:
 
  `# efibootmgr -v` 
 ```
 BootCurrent: 0000
 Timeout: 3 seconds
 BootOrder: 0000,0001,0002
-Boot0000* Grub HD(1,800,32000,23532fbb-1bfa-4e46-851a-b494bfe9478c)File(\efi\grub\grub.efi)
-Boot0001* Shell HD(1,800,32000,23532fbb-1bfa-4e46-851a-b494bfe9478c)File(\EfiShell.efi)
+Boot0000* GRUB HD(1,800,32000,23532fbb-1bfa-4e46-851a-b494bfe9478c)File(\EFI\GRUB\grubx64.efi)
+Boot0001* Shell HD(1,800,32000,23532fbb-1bfa-4e46-851a-b494bfe9478c)File(\shellx64.efi)
 Boot0002* Festplatte BIOS(2,0,00)P0: SAMSUNG HD204UI
 
 ```
@@ -773,7 +772,7 @@ Boot0002* Festplatte BIOS(2,0,00)P0: SAMSUNG HD204UI
 If the screen only goes black for a second and the next boot option is tried afterwards, according to [this post](https://bbs.archlinux.org/viewtopic.php?pid=981560#p981560), moving GRUB to the partition root can help. The boot option has to be deleted and recreated afterwards. The entry for GRUB should look like this then:
 
 ```
-Boot0000* Grub HD(1,800,32000,23532fbb-1bfa-4e46-851a-b494bfe9478c)File(\grub.efi)
+Boot0000* GRUB HD(1,800,32000,23532fbb-1bfa-4e46-851a-b494bfe9478c)File(\grubx64.efi)
 
 ```
 

@@ -42,7 +42,7 @@
 
 ## Installation
 
-The official stable release can be [installed](/index.php/Installed "Installed") via the [kodi](https://www.archlinux.org/packages/?name=kodi) package. Alternatively, recent alpha, beta, or RC builds are available from [kodi-pre-release](https://aur.archlinux.org/packages/kodi-pre-release/). Be sure to review/install optional dependencies listed by pacman to enable additional functionality.
+The official stable release can be [installed](/index.php/Install "Install") via the [kodi](https://www.archlinux.org/packages/?name=kodi) package. Alternatively, recent alpha, beta, or RC builds are available from [kodi-pre-release](https://aur.archlinux.org/packages/kodi-pre-release/). Be sure to review/install optional dependencies listed by pacman to enable additional functionality.
 
 All of the official addons in the [kodi-addons](https://www.archlinux.org/groups/x86_64/kodi-addons/) group are disabled by default and need to be enabled in Kodi's addon menu after installation.
 
@@ -205,8 +205,8 @@ Install [libcec](https://www.archlinux.org/packages/?name=libcec).
 
 When connected, the USB-CEC's `/dev` entry (usually `/dev/ttyACM*`) will default to being owned by the `uucp` group, so in order to use the device the user running Kodi needs to belong to that group. The user also needs to belong to the `lock` group, otherwise Kodi will be unable to connect to the device. See [Users and groups#Group management](/index.php/Users_and_groups#Group_management "Users and groups") for instructions on how to add users to groups.
 
-*   Add all users that will use Kodi to the `uucp` and `lock` [groups](/index.php/Groups "Groups").
-*   If [running kodi-standalone](#Running_standalone), add the user `kodi` to the `uucp` and `lock` [groups](/index.php/Groups "Groups").
+*   Add all users that will use Kodi to the `uucp` and `lock` [groups](/index.php/Group "Group").
+*   If [running kodi-standalone](#Running_standalone), add the user `kodi` to the `uucp` and `lock` [groups](/index.php/Group "Group").
 
 **Note:** Trying to use the USB-CEC without belonging to above groups may lead to problems, including Kodi crashes, so make sure the correct user belongs to both groups.
 

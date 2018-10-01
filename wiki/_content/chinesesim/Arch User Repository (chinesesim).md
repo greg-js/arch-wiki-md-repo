@@ -13,7 +13,7 @@
 
 **翻译状态：** 本文是英文页面 [Arch_User_Repository](/index.php/Arch_User_Repository "Arch User Repository") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-09-04，点击[这里](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=488175)可以查看翻译后英文页面的改动。
 
-[Arch用户软件仓库](https://aur.archlinux.org)（Arch User Repository，AUR）是为用户而建、由用户主导的Arch软件仓库。AUR中的软件包以软件包生成脚本（[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")）的形式提供，用户自己通过[makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)")生成包，再由[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")安装。创建AUR的初衷是方便用户维护和分享新软件包，并由官方定期从中挑选软件包进入[community](/index.php/Community "Community")仓库。本文介绍用户访问和使用AUR的方法。
+[Arch用户软件仓库](https://aur.archlinux.org)（Arch User Repository，AUR）是为用户而建、由用户主导的Arch软件仓库。AUR中的软件包以软件包生成脚本（[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")）的形式提供，用户自己通过[makepkg](/index.php/Makepkg_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Makepkg (简体中文)")生成包，再由[pacman](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")安装。创建AUR的初衷是方便用户维护和分享新软件包，并由官方定期从中挑选软件包进入[community](/index.php/Community_repository "Community repository")仓库。本文介绍用户访问和使用AUR的方法。
 
 许多官方仓库软件包都来自AUR。通过AUR，大家相互分享新的软件包生成脚本（[PKGBUILD](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "PKGBUILD (简体中文)")和其他相关文件）。用户还可以为软件包投票。如果一个软件包投票足够多、没有协议问题、打包质量好，那么它就很有希望被收录进官方[community]仓库（以后就可以直接通过[pacman](/index.php/Pacman "Pacman") 或 [abs](/index.php/ABS "ABS") 安装了）。
 
@@ -163,7 +163,7 @@ $ makepkg -si
 
 [AUR网站](https://aur.archlinux.org)的评论机制为用户提供了一种对PKGBUILD提建议的渠道。注意，最好不要在评论处贴自己的代码，因为代码很占地方，还很容易被新的评论刷掉。最好直接email通知维护人员，或者用[pastebin](/index.php/Pastebin "Pastebin")贴代码。
 
-'*所有的* Arch用户都可以通过AUR Web界面为软件包投票.大多数软件包都有机会被TU收录进[community](/index.php/Community "Community")仓库.投票数是[community]仓库软件包选拔的重要依据之一。
+'*所有的* Arch用户都可以通过AUR Web界面为软件包投票.大多数软件包都有机会被TU收录进[community](/index.php/Community_repository "Community repository")仓库.投票数是[community]仓库软件包选拔的重要依据之一。
 
 ## 分享和维护软件包
 

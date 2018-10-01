@@ -1,3 +1,4 @@
-Redirect to:
+**Root** may refer to:
 
-*   [Users and groups#Overview](/index.php/Users_and_groups#Overview "Users and groups")
+*   [Root user](/index.php/Root_user "Root user")
+*   [Root directory](/index.php/Root_directory "Root directory")

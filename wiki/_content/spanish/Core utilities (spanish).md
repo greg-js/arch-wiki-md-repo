@@ -1,515 +1,173 @@
+**Estado de la traducción:** este artículo es una versión traducida de [Core utilities](/index.php/Core_utilities "Core utilities"). Fecha de la última traducción/revisión: **2018-09-30**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=545027).
+
 Artículos relacionados
 
-*   [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)")
-*   [Zsh](/index.php/Zsh_(Espa%C3%B1ol) "Zsh (Español)")
+*   [Command-line shell](/index.php/Command-line_shell "Command-line shell")
+*   [Usuarios y grupos](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)")
+*   [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)")
+*   [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)")
 *   [Recomendaciones generales](/index.php/General_recommendations_(Espa%C3%B1ol) "General recommendations (Español)")
-*   [Proyecto GNU](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)")
-*   [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)")
-*   [cron](/index.php/Cron "Cron")
-*   [File system search](/index.php/File_system_search "File system search")
-*   [man page (Español)](/index.php/Man_page_(Espa%C3%B1ol) "Man page (Español)")
-*   [Securely wipe disk#shred](/index.php/Securely_wipe_disk#shred "Securely wipe disk")
-*   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
 
-Este artículo trata sobre las utilidades de los sistemas GNU/Linux denominadas *core*, tales como *less*, *ls*, y *grep*. El ámbito de este artículo incluye (pero no está limitado) a las utilidades del paquete [coreutils](https://www.archlinux.org/packages/?name=coreutils) de GNU. Los siguientes son trucos, consejos e información relacionada con dichas utilidades.
+Las *utilidades principales* son las herramientas básicas y fundamentales de un sistema [GNU](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)")/[Linux](/index.php/Linux_(Espa%C3%B1ol) "Linux (Español)"). En Arch Linux se encuentran en el grupo [base](https://www.archlinux.org/groups/x86_64/base/). Este artículo proporciona una visión general e incompleta de ellos, vincula su documentación y describe alternativas útiles. El alcance de este artículo incluye, pero no se limita, a [GNU coreutils](https://www.gnu.org/software/coreutils/coreutils.html). La mayoría de los servicios básicos son herramientas tradicionales [Unix](https://en.wikipedia.org/wiki/es:Unix "wikipedia:es:Unix") (véase [Heirloom](/index.php/Heirloom "Heirloom")) y muchos fueron estandarizados por [POSIX](https://en.wikipedia.org/wiki/es:POSIX "wikipedia:es:POSIX") pero se han seguido desarrollado para proporcionar más funciones.
+
+La mayoría de las interfaces de línea de comandos están documentadas en las [páginas del manual](/index.php/Man_page_(Espa%C3%B1ol) "Man page (Español)"), las utilidades del [Proyecto GNU](/index.php/GNU_Project_(Espa%C3%B1ol) "GNU Project (Español)") están documentadas en los [manuales de información](/index.php/Info_manual "Info manual"), algunos [intérpretes de comandos](/index.php/Shell "Shell") proporcionan un comando `help` para los comandos incorporados de la [línea de comandos](/index.php/Shell "Shell"). Además, la mayoría de los comandos imprimen su uso cuando se ejecutan con el indicador `--help`.
 
 ## Contents
 
-*   [1 Comandos básicos](#Comandos_b.C3.A1sicos)
-*   [2 cat](#cat)
-*   [3 dd](#dd)
-    *   [3.1 Comprobar el progreso de dd en ejecución](#Comprobar_el_progreso_de_dd_en_ejecuci.C3.B3n)
-        *   [3.1.1 Usando el visor de tubería (pv)](#Usando_el_visor_de_tuber.C3.ADa_.28pv.29)
-    *   [3.2 derivados de dd](#derivados_de_dd)
-*   [4 grep](#grep)
-    *   [4.1 Salida con colores](#Salida_con_colores)
-    *   [4.2 Salida de error estándar](#Salida_de_error_est.C3.A1ndar)
-*   [5 iconv](#iconv)
-    *   [5.1 Convertir el fichero reemplazándolo](#Convertir_el_fichero_reemplaz.C3.A1ndolo)
-*   [6 ip](#ip)
-*   [7 less](#less)
-    *   [7.1 Salida en color mediante variables de entorno](#Salida_en_color_mediante_variables_de_entorno)
-    *   [7.2 Salida en color mediante wrappers](#Salida_en_color_mediante_wrappers)
-    *   [7.3 Vim como visualizador alternativo](#Vim_como_visualizador_alternativo)
-    *   [7.4 Salida coloreada cuando lee de entrada estándar](#Salida_coloreada_cuando_lee_de_entrada_est.C3.A1ndar)
-*   [8 ls](#ls)
-*   [9 lsblk](#lsblk)
-*   [10 mkdir](#mkdir)
-*   [11 mv](#mv)
-*   [12 rm](#rm)
-*   [13 sed](#sed)
-*   [14 seq](#seq)
-*   [15 tar](#tar)
-*   [16 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+*   [1 Esenciales](#Esenciales)
+    *   [1.1 Previniendo la pérdida de datos](#Previniendo_la_p.C3.A9rdida_de_datos)
+*   [2 No esenciales](#No_esenciales)
+*   [3 Alternativas](#Alternativas)
+    *   [3.1 Alternativas a find](#Alternativas_a_find)
+    *   [3.2 Alternativas a diff](#Alternativas_a_diff)
+    *   [3.3 Alternativas a grep](#Alternativas_a_grep)
+        *   [3.3.1 Buscadores de código](#Buscadores_de_c.C3.B3digo)
+        *   [3.3.2 Filtros interactivos](#Filtros_interactivos)
+*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+
+## Esenciales
 
-## Comandos básicos
+La siguiente tabla enumera algunos comandos importantes con los que los usuarios de Arch Linux deben estar familiarizados. Véase también [intro(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/intro.1).
 
-La siguiente tabla lista los comandos básicos de consola que todo usuario linux debería conocer. Comandos en **negrita** son parte de la línea de comandos, los otros son programas separados llamados desde la consola. Véase las siguientes secciones y *Artículos relacionados* para más detalles.
+| Paquete | Comando | Descripción | Documentación | Alternativas |
+| incluído en la línea de comandos | cd | cambia de directorio | [cd(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cd.1p) |
+| GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) | ls | lista el directorio | [ls(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ls.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html) | [exa](https://www.archlinux.org/packages/?name=exa), [tree](https://www.archlinux.org/packages/?name=tree) |
+| cat | concatena archivos a la salida estándar | [cat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cat.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/cat-invocation.html) | [tac(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tac.1) |
+| mkdir | crea un directorio | [mkdir(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkdir.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/mkdir-invocation.html) |
+| rmdir | elimina un directorio vacío | [rmdir(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rmdir.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/rmdir-invocation.html) |
+| rm | elimina archivos o directorios | [rm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rm.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/rm-invocation.html) | [shred](/index.php/Shred "Shred") |
+| cp | copia archivos o directorios | [cp(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cp.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/cp-invocation.html) |
+| mv | mueve archivos o directorios | [mv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mv.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/mv-invocation.html) |
+| ln | crea enlaces duros o simbólicos | [ln(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ln.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/ln-invocation.html) |
+| [chown](/index.php/Chown "Chown") | cambia el usuario y grupo del archivo | [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/chown-invocation.html) | [chgrp(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chgrp.1) |
+| [chmod](/index.php/Chmod "Chmod") | cambia los permisos del archivo | [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/chmod-invocation.html) |
+| [dd](/index.php/Dd "Dd") | convierte y copia un archivo | [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/dd-invocation.html) |
+| df | informa del espacio disponible en disco del sistema de archivo | [df(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/df.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/df-invocation.html) |
+| GNU [tar](https://www.archlinux.org/packages/?name=tar) | [tar](/index.php/Tar "Tar") | empaquetador tar | [tar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1), [info](https://www.gnu.org/software/tar/manual/html_chapter/index.html) | [archivers](/index.php/Archiver "Archiver") |
+| GNU [less](https://www.archlinux.org/packages/?name=less) | less | paginador de terminal | [less(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/less.1) | [terminal pagers](/index.php/Terminal_pager "Terminal pager") |
+| GNU [findutils](https://www.archlinux.org/packages/?name=findutils) | find | busca archivos o directorios | [find(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/find.1), [info](https://www.gnu.org/software/findutils/manual/html_node/find_html/index.html), [GregsWiki](https://mywiki.wooledge.org/UsingFind "gregswiki:UsingFind") | [#find alternatives](#find_alternatives) |
+| GNU [diffutils](https://www.archlinux.org/packages/?name=diffutils) | diff | compara archivos línea por línea | [diff(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/diff.1), [info](https://www.gnu.org/software/diffutils/manual/html_node/Invoking-diff.html) | [#diff alternatives](#diff_alternatives) |
+| GNU [grep](https://www.archlinux.org/packages/?name=grep) | grep | imprime las línea que coinciden con un patrón | [grep(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grep.1), [info](https://www.gnu.org/software/grep/manual/html_node/index.html) | [#grep alternatives](#grep_alternatives) |
+| GNU [sed](https://www.archlinux.org/packages/?name=sed) | sed | editor de secuencias (stream editor) | [sed(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sed.1), [info](https://www.gnu.org/software/sed/manual/html_node/index.html), [one-liners](http://sed.sourceforge.net/sed1line.txt) |
+| GNU [gawk](https://www.archlinux.org/packages/?name=gawk) | awk | lenguaje de escaneo y procesamiento de patrones | [gawk(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gawk.1), [info](https://www.gnu.org/software/gawk/manual/html_node/index.html) | [nawk](https://www.archlinux.org/packages/?name=nawk), [mawk](https://aur.archlinux.org/packages/mawk/) |
+| [util-linux](https://www.archlinux.org/packages/?name=util-linux) | [lsblk](/index.php/Lsblk "Lsblk") | lista los dispositivos de bloques | [lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) |
+| [mount](/index.php/Mount "Mount") | monta un sistema de archivos | [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) |
+| [umount](/index.php/Umount "Umount") | desmonta un sistema de archivos | [umount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/umount.8) |
+| [su](/index.php/Su "Su") | substitute user | [su(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/su.1) | [sudo](/index.php/Sudo "Sudo") |
+| kill | finaliza un proceso | [kill(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/kill.1) | [pkill(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pkill.1), [killall(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/killall.1) |
+| [procps-ng](https://www.archlinux.org/packages/?name=procps-ng) | pgrep | buscar procesos por nombre o atributos | [pgrep(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pgrep.1) | [pidof(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pidof.1) |
+| ps | muestra información sobre los procesos | [ps(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ps.1) | [top(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/top.1), [htop](https://www.archlinux.org/packages/?name=htop) |
+| free | muestra la cantidad de memoria libre y utilizada | [free(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/free.1) |
 
-| Comando | Descripción | Ejemplo |
-| man | Muestra la página del manual para ese comando | man ed |
-| **cd** | Cambia de directorio | cd /etc/pacman.d |
-| mkdir | Crea un directorio | mkdir ~/newfolder |
-| rmdir | Elimina un directorio vacío | rmdir ~/emptyfolder |
-| rm | Elimina un fichero | rm -r ~/file.txt |
-| rm -r | Elimina directorios y sus contenidos | rm -r ~/.cache |
-| ls | Lista archivos | ls *.avi |
-| ls -a | Lista archivos ocultos | ls -a /home/archie |
-| ls -al | Lista archivos ocultos y propiedades de los archivos |
-| mv | Mueve un fichero | mv ~/compressed.zip ~/archive/compressed2.zip |
-| cp | Copia un fichero | cp ~/.bashrc ~/.bashrc.bak |
-| chmod +x | Da permisos de ejecución a un fichero | chmod +x ~/.local/bin/myscript.sh |
-| cat | Muestra el contenido de un archivo | cat /etc/hostname |
-| strings | Muestra caracteres imprimibles en un fichero binario | strings /usr/bin/free |
-| find | Busca un archivo | find ~ -name myfile |
-| mount | Monta una partición | mount /dev/sdc1 /media/usb |
-| df -h | Muestra el espacio disponible en todas las particiones |
-| ps -A | Muestra todos los procesos en ejecución |
-| killall | Mata todas las instancias de un proceso en ejecución |
+### Previniendo la pérdida de datos
 
-## cat
+rm, mv, cp y las redirecciones de la línea de comandos eliminan o sobrescriben archivos sin preguntar. rm, mv y cp son compatibles con el indicador `-i` para avisar al usuario antes de cada eliminación / sobreescritura. A algunos usuarios les gusta habilitar el indicador `-i` de forma predeterminada utilizando [aliases](/index.php/Alias "Alias"). Sin embargo, estas configuraciones de la línea de comandos son peligrosas porque te acostumbra a ellas, lo que da como resultado la posible pérdida de datos cuando utiliza otro sistema o usuario que no tiene dicho indicador. La mejor forma de evitar la pérdida de datos es hacer [copias de seguridad](/index.php/Backup "Backup").
 
-[cat](https://en.wikipedia.org/wiki/cat_(Unix) (*concatenate*) es una utilidad estándar de unix que concatena y lista ficheros.
+## No esenciales
 
-*   Dado que *cat* no es un comando integrado en la consola, en bastantes ocasiones encontrará más conveniente usar una [redirección (English)](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)"), por ejemplo en scripts, o si le preocupa el rendimiento. De hecho `< *file*` hace lo mismo que `cat *file*`.
+Esta tabla enumera las utilidades principales que a menudo son útiles.
 
-*   *cat* es capaz de trabajar con múltiples líneas, aunque esto se ve a veces como una mala práctica.
+| Paquete | Comando | Descripción | Documentación | Alternativas |
+| incluidos en la línea de comandos | alias | define o muestra los aliases | [alias(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alias.1p) |
+| type | imprime el tipo de un comando | [type(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/type.1p) | [which(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/which.1) |
+| time | temporiza un comando | [time(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/time.1p) |
+| GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) | tee | lee de la entrada estándar y escribe en la salida estándar y archivos | [tee(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tee.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/tee-invocation.html) |
+| mktemp | crea un archivo o directorio temporal | [mktemp(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mktemp.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html) |
+| cut | imprime partes seleccionadas de líneas | [cut(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cut.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/cut-invocation.html) |
+| tr | traduce o elimina caracteres | [tr(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tr.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html) |
+| od | vuelca archivos en octal y otros formatos | [od(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/od.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/od-invocation.html) | [hexdump(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hexdump.1), [vim](/index.php/Vim "Vim")'s [xxd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xxd.1) |
+| sort | ordena lineas | [sort(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sort.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/sort-invocation.html) |
+| uniq | informa u omite líneas repetidas | [uniq(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/uniq.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/uniq-invocation.html) |
+| comm | compara dos archivos ordenados línea por línea | [comm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/comm.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/comm-invocation.html) |
+| head | vuelca la primera parte de los archivos | [head(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/head.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/head-invocation.html) |
+| tail | vuelca la última parte de los archivos, o sigue los archivos | [tail(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tail.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/tail-invocation.html) |
+| wc | imprime el recuento de líneas nuevas, palabras y bytes | [wc(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wc.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/wc-invocation.html) |
+| GNU [binutils](https://www.archlinux.org/packages/?name=binutils) | strings | imprime caracteres imprimibles en archivos binarios | [strings(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/strings.1), [info](https://sourceware.org/binutils/docs/binutils/strings.html) |
+| GNU [glibc](https://www.archlinux.org/packages/?name=glibc) | iconv | convierte codificaciones de caracteres | [iconv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) | [recode](https://www.archlinux.org/packages/?name=recode) |
+| [file](https://www.archlinux.org/packages/?name=file) | file | estima el tipo de archivo | [file(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/file.1) |
 
-```
-$ cat << EOF >> *ruta/al/fichero*
-*primera linea*
-...
-*últimalinea*
-EOF
+El paquete [moreutils](https://www.archlinux.org/packages/?name=moreutils) proporciona herramientas útiles como [sponge(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sponge.1) que no se encuentran en GNU coreutils.
 
-```
+## Alternativas
 
-	Una alternativa mejor es el comando *echo*:
+Las alternativas a las utilidades principales del grupo [base](https://www.archlinux.org/groups/x86_64/base/) son [BusyBox](/index.php/BusyBox "BusyBox"), [Heirloom Toolchest](/index.php/Heirloom "Heirloom"), [9base](https://www.archlinux.org/packages/?name=9base), [sbase-git](https://aur.archlinux.org/packages/sbase-git/) y [ubase-git](https://aur.archlinux.org/packages/ubase-git/).
 
-```
-$ echo "\
-*primera línea*
-...
-*última línea*" \
->> *ruta/al/fichero*
+### Alternativas a find
 
-```
+*   **fd** — Alternativa simple, rápida y sencilla de find. Ignora los archivos ocultos y `.gitignore` por defecto.
 
-*   Si necesita lista las líneas del fichero en orden inverso, existe una utilidad llamada tac [tac](https://en.wikipedia.org/wiki/tac_(Unix) (*cat* invertido).
+	[Https://github.com/sharkdp/fd](Https://github.com/sharkdp/fd) || [fd](https://www.archlinux.org/packages/?name=fd)
 
-## dd
+*   **fuzzy-find** — Completado difuso para la búsqueda de archivos.
 
-[dd](https://en.wikipedia.org/wiki/dd_(Unix) es un comando de sistemas operativos Unix y tipo-Unix cuyo propósito principal es convertir y copiar un fichero.
+	[Https://github.com/silentbicycle/ff](Https://github.com/silentbicycle/ff) || [ff-git](https://aur.archlinux.org/packages/ff-git/)
 
-**Note:** *cp* hace lo mismo que *dd* sin pasarle argumentos pero no está diseñado para procedimientos de borrado de discos más versátiles.
+*   **[mlocate](/index.php/Mlocate_(Espa%C3%B1ol) "Mlocate (Español)")** — Mezcla las implementaciónes locate/updatedb.
 
-### Comprobar el progreso de dd en ejecución
+	[Https://pagure.io/mlocate](Https://pagure.io/mlocate) || [mlocate](https://www.archlinux.org/packages/?name=mlocate)
 
-**Sugerencia:** Esta tarea ha sido facilitada en versiones recientes (desde la version 8.24 del paquete [coreutils](https://www.archlinux.org/packages/?name=coreutils)) de *dd*. Para monitorear el progreso de *dd* simplemente adjunte el parámetro `status=progress` al comando.
+Para buscadores de archivos en modo gráfico, véase [List of applications/Utilities#File searching](/index.php/List_of_applications/Utilities#File_searching "List of applications/Utilities").
 
-Por defecto, no hay salida para *dd* hasta que la tarea ha terminado. Con *kill* y la señal `USR1` puede forzar a imprimir el estatus sin matar al programa. Habra una segunda terminal como root e introduzca el siguiente comando:
+### Alternativas a diff
 
-```
-# killall -USR1 dd
+Mientras que [diffutils](https://www.archlinux.org/packages/?name=diffutils) no proporciona una comparación (diff) de palabras, muchos otros programas lo hacen:
 
-```
+*   [git](/index.php/Git_(Espa%C3%B1ol) "Git (Español)") diff puede hacer una comparación de palabras con `--color-words`, utilizando `--no-index` también se puede usar para archivos fuera de la estructura de trabajo de Git.
+*   **dwdiff** — Una interfaz de comparación de palabras para el programa diff; admite colores.
 
-**Note:** Esto afectará de igual manera a todas las instancias en ejecución de *dd*.
+	[https://os.ghalkes.nl/dwdiff.html](https://os.ghalkes.nl/dwdiff.html) || [dwdiff](https://www.archlinux.org/packages/?name=dwdiff)
 
-O:
+*   **GNU wdiff** — Una implementación para palabras de GNU diff; no admite colores.
 
-```
-# kill -USR1 *pid_del_comando_dd*
+	[https://www.gnu.org/software/wdiff/](https://www.gnu.org/software/wdiff/) || [wdiff](https://www.archlinux.org/packages/?name=wdiff)
 
-```
+*   **cwdiff** — Un envoltorio de wdiff de GNU que colorea el resultado.
 
-Por ejemplo:
+	[Https://github.com/junghans/cwdiff](Https://github.com/junghans/cwdiff) || [cwdiff](https://aur.archlinux.org/packages/cwdiff/), [cwdiff-git](https://aur.archlinux.org/packages/cwdiff-git/)
 
-```
-# kill -USR1 $(pidof dd)
+Véase también [List of applications/Utilities#Comparison, diff, merge](/index.php/List_of_applications/Utilities#Comparison.2C_diff.2C_merge "List of applications/Utilities").
 
-```
+### Alternativas a grep
 
-Esto provoca que *dd* imprima de forma inmediata el progreso en la terminal. Por ejemplo:
+*   **mgrep** — Un grep multilínea.
 
-```
-605+0 records in
-605+0 records out
-634388480 bytes (634 MB) copied, 8.17097 s, 77.6 MB/s
+	[Https://sourceforge.net/projects/multiline-grep/](Https://sourceforge.net/projects/multiline-grep/) || [mgrep](https://aur.archlinux.org/packages/mgrep/)
 
-```
+#### Buscadores de código
 
-#### Usando el visor de tubería (pv)
+Las siguientes tres herramientas tienen como objetivo reemplazar grep para la búsqueda de código. Realizan búsquedas recursivas de manera predeterminada, omiten archivos binarios y respetan `.gitignore`.
 
-Como alternativa puede usar [pv](https://www.archlinux.org/packages/?name=pv) para monitorizar el pipeline de dd:
+*   **ack** — Un reemplazo de grep basado en Perl, dirigido a programadores con grandes estructuras de código fuente heterogéneo.
 
-```
-# dd if=*/origen/de/flujo_de_archivo* | pv -*opciones_de_monitorización* -s *tamaño_del_archivo* | dd of=*/destino/de/flujo_de_archivo*
+	[Https://beyondgrep.com/](Https://beyondgrep.com/) || [ack](https://www.archlinux.org/packages/?name=ack)
 
-```
+*   **ripgrep (rg)** — Una herramienta de búsqueda que combina las capacidades de ag con la velocidad de grep.
 
-Para usar el visor de tuberías con mayor facilidad puede añadir esto a bashrc o a zshrc:
+	[Https://github.com/BurntSushi/ripgrep](Https://github.com/BurntSushi/ripgrep) || [ripgrep](https://www.archlinux.org/packages/?name=ripgrep)
 
-```
-copy() {
-    size=$(stat -c%s $1)
-    dd if=$1 &> /dev/null | pv -petrb -s $size | dd of=$2
-}
+*   **La herramienta de búsqueda de código Silver Searcher (ag)** — similar a Ack, pero más rápida.
 
-```
+	[Https://github.com/ggreer/the_silver_searcher](Https://github.com/ggreer/the_silver_searcher) || [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher)
 
-Y usarlo con:
+#### Filtros interactivos
 
-```
-# copy */fichero/de/origen* */fichero/de/destino*
+*   **[fzf](/index.php/Fzf "Fzf")** — Buscador difuso de línea de comandos de propósito general, potenciado por find por defecto.
 
-```
+	[Https://github.com/junegunn/fzf](Https://github.com/junegunn/fzf) || [fzf](https://www.archlinux.org/packages/?name=fzf), [fzf-git](https://aur.archlinux.org/packages/fzf-git/)
 
-### derivados de dd
+*   **fzy** — Un selector de texto difuso simple y rápido con un algoritmo de puntuación avanzado.
 
-Otros programas por el estilo de *dd* muestra un estatus de salida periódico, p.ej: una simple barra de progreso.
+	[Https://github.com/jhawthorn/fzy](Https://github.com/jhawthorn/fzy) || [fzy](https://www.archlinux.org/packages/?name=fzy), [fzy-git](https://aur.archlinux.org/packages/fzy-git/)
 
-	dcfldd 
+*   **peco** — Herramienta de filtrado interactivo simplista.
 
-	[dcfldd](https://www.archlinux.org/packages/?name=dcfldd) es una versión mejorada de dd con características utiles para análisis forense y seguridad. Acepta la mayoría de los parámetros de dd e incluye salida de estatus. La última versión estable de dcfldd fue el 19 de diciembre de 2006.
+	[Https://github.com/peco/peco](Https://github.com/peco/peco) || [peco](https://aur.archlinux.org/packages/peco/), [peco-git](https://aur.archlinux.org/packages/peco-git/)
 
-	ddrescue 
+*   **percol** — Añade algo del filtrado interactivo al concepto de conducto (pipe) tradicional del intérprete de comandos de UNIX.
 
-	GNU [ddrescue](https://www.archlinux.org/packages/?name=ddrescue) es una herramienta de recuperación de datos. Es capaz de ignorar errores de lectura, lo que es una característica útil en situaciones de borrado de disco en casi cualquier caso. Véase [official manual](http://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html) para más detalles.
-
-## grep
-
-[grep](https://en.wikipedia.org/wiki/grep "wikipedia:grep") (de [ed](https://en.wikipedia.org/wiki/ed "wikipedia:ed") *g/re/p*, *global/regular expression/print*) es una utilidad para búsqueda de texto en línea de comandos escrito originalmente para Unix. El comando *grep* busca ficheros o en la entrada estándar de manera global líneas que coincidan con una expresión regular dada y las imprime en la salida estándar del programa.
-
-*   Recuerde que *grep* maneja ficheros files, por lo que un comando como `cat *archivo* | grep *patrón*` es remplazable por `grep *patrón* *archivo*`
-
-*   Alternativas a *grep* optimizadas para código fuente existen, como, [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher) y [ack](https://www.archlinux.org/packages/?name=ack).
-
-### Salida con colores
-
-La salida con colores de `grep` puede ser muy útil para aprender [expresiones regulares](https://en.wikipedia.org/wiki/regexp "wikipedia:regexp") y características adicionales de `grep`.
-
-Para habilitar el coloreado de *grep* agregue la siguiente entrada en el archivo de configuración de su terminal (p.ej:. si usa [Bash](/index.php/Bash "Bash")):
-
- `~/.bashrc`  `alias grep='grep --color=auto'` 
-
-Para incluir numeración de las líneas en la salida, incluya `-n` en la entrada anterior.
-
-La variable de entorno `GREP_COLOR` puede usarse para definir el color de resaltado por defecto (por defecto es rojo). Para cambiar el color busque en [secuencia de escape ANSI](http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html) para el color que desee y añádalo con:
-
-```
-export GREP_COLOR="1;32"
-
-```
-
-`GREP_COLORS` puede usarse para definir búsquedas específicas.
-
-### Salida de error estándar
-
-Algunos comandos envían sus resultados a la salida de error estándar, por lo que grep no parece tener efecto aparente. En este caso redirija la salida de error a la salida estándar con:
-
-```
-$ *comando* 2>&1 | grep *argumentos*
-
-```
-
-o usando el método abreviado de Bash 4:
-
-```
-$ *comando* |& grep *argumentos*
-
-```
-
-Véase también [I/O Redirection](http://www.tldp.org/LDP/abs/html/io-redirection.html).
-
-## iconv
-
-`iconv` convierte la codificación de caracteres de una codificación a otra.
-
-El siguiente comando convertirá el fichero `foo` de ISO-8859-15 a UTF-8 guardándolo en `foo.utf`:
-
-```
-$ iconv -f ISO-8859-15 -t UTF-8 foo >foo.utf
-
-```
-
-Vea [iconv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/iconv.1) para más detalles.
-
-### Convertir el fichero reemplazándolo
-
-**Sugerencia:** puede usar [recode](https://www.archlinux.org/packages/?name=recode) en lugar de iconv si no quiere tocar el mtime.
-
-Al contrario que [sed](#sed), *iconv* no provee una opción para convertir remplazando el propio fichero. Sin embargo, `sponge` puede usarse para tal fin, esta incluido en [moreutils](https://www.archlinux.org/packages/?name=moreutils).
-
-```
-$ iconv -f WINDOWS-1251 -t UTF-8 foobar.txt | sponge foobar.txt
-
-```
-
-Vea [sponge(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sponge.1) para más detalles.
-
-## ip
-
-[ip](https://en.wikipedia.org/wiki/Iproute2 "wikipedia:Iproute2") permite mostrar información sobre los dispositivos de red, direcciones IP, tablas de enrutamiento y otros objetos en la pila de procotolos [IP](https://en.wikipedia.org/wiki/Internet_Protocol "wikipedia:Internet Protocol") de Linux. Añadiendo varios comandos, puede manipular y configurar la mayoría de estos objetos.
-
-**Note:** La utilidad *ip* la provee el paquete [iproute2](https://www.archlinux.org/packages/?name=iproute2), que está incluido en el grupo [base](https://www.archlinux.org/groups/x86_64/base/).
-
-| Objecto | Propósito | Nombre de página en el manual |
-| ip addr | manejo de dirección de protocolo | ip-address |
-| ip addrlabel | manejo etiquetado protocolo | ip-addrlabel |
-| ip l2tp | Tunel ethernet sobre IP (L2TPv3) | ip-l2tp |
-| ip link | configuración dispositivo de red | ip-link |
-| ip maddr | manejo direcciones multicast | ip-maddress |
-| ip monitor | monitorizado de mensajes netlink | ip-monitor |
-| ip mroute | manejo de cache de enrutado multicast | ip-mroute |
-| ip mrule | manejo la base de datos de politicas de enrutado multicast |
-| ip neigh | manejo de tablas ARP/Vecinos | ip-neighbour |
-| ip netns | manejo de proceso del espacio de nombres en red | ip-netns |
-| ip ntable | configuración tabla de vecinos | ip-ntable |
-| ip route | manejo de la tabla de enrutamiento | ip-route |
-| ip rule | manejo de la base de datos de políticas de enrutamiento | ip-rule |
-| ip tcp_metrics | manejo de metricas TCP | ip-tcp_metrics |
-| ip tunnel | configuración de tunel | ip-tunnel |
-| ip tuntap | manejo de dispositivos TUN/TAP |
-| ip xfrm | manejo de políticas IPsec | ip-xfrm |
-
-El comando `help` está disponible para todos los objetos. Por ejemplo, escribiendo `ip addr help` se mostrará la sintaxis del comando disponible para el objeto address. Para un uso avanzado véase [documentación iproute2](http://www.policyrouting.org/iproute2.doc.html).
-
-El artículo [Configuración de Red](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)") muestra como el comando *ip* es usado en la práctica para varias tareas típicas.
-
-**Nota:** Puede que esté familiarizado con el comando [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig"), que era usado en versiones anteriores de Linux para la configuración de interfaces. Ahora está obsoleto en Arch Linux; debería usar *ip* en su lugar.
-
-## less
-
-[less](https://en.wikipedia.org/wiki/less_(Unix) es un visualizador de archivos de texto en consola. Al contrario que otros visualizadores similares como [more](https://en.wikipedia.org/wiki/more_(command) y [pg](https://en.wikipedia.org/wiki/pg_(Unix) "wikipedia:pg (Unix)"), *less* ofrece una interfaz mucho más avanzada y completa [feature-set](http://www.greenwoodsoftware.com/less/faq.html).
-
-Véase [List of applications#Terminal pagers](/index.php/List_of_applications#Terminal_pagers "List of applications") para más alternativas.
-
-### Salida en color mediante variables de entorno
-
-Añada las siguientes líneas a su archivo de configuración de la terminal:
-
- `~/.bashrc` 
-```
-export LESS=-R
-export LESS_TERMCAP_me=$(printf '\e[0m')
-export LESS_TERMCAP_se=$(printf '\e[0m')
-export LESS_TERMCAP_ue=$(printf '\e[0m')
-export LESS_TERMCAP_mb=$(printf '\e[1;32m')
-export LESS_TERMCAP_md=$(printf '\e[1;34m')
-export LESS_TERMCAP_us=$(printf '\e[1;32m')
-export LESS_TERMCAP_so=$(printf '\e[1;44;1m')
-```
-
-Cambie los valores a su gusto. Referencias: [ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors "wikipedia:ANSI escape code").
-
-### Salida en color mediante wrappers
-
-Puede habilitar el resaltado de sintaxis en *less*. Primero, instale [source-highlight](https://www.archlinux.org/packages/?name=source-highlight), y a continuación añada estás lineas a su archivo de configuración de la terminal:
-
- `~/.bashrc` 
-```
-export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
-export LESS='-R '
-
-```
-
-Usuarios asíduos de la línea de comandos pueden querar instalar [lesspipe](https://www.archlinux.org/packages/?name=lesspipe).
-
-Los usarios puede listar archivos comprimidos dentro de un archivador usando su visualizador:
-
- `$ less *compressed_file*.tar.gz` 
-```
-==> usa archivo_tar:fichero_contenido para ver un fichero en el archivador
--rw------- *usuario*/*grupo*  695 2008-01-04 19:24 *archivo_comprimido*/*contenido1*
--rw------- *usuario*/*grupo*   43 2007-11-07 11:17 *archivo_comprimido*/*contenido2*
-*archivo_comprimido*.tar.gz (END)
-```
-
-*lesspipe* también concede a *less* la capacidad para interactuar con ficheros que no sean archivadores, sirviendo como alternativa para el comando específico asociado a según el tipo de archivo en concreto (como ver HTML mediante [python-html2text](https://www.archlinux.org/packages/?name=python-html2text)).
-
-Vuelva a loguearse tras instalar *lesspipe* para activarlo, o usando source `/etc/profile.d/lesspipe.sh`.
-
-### Vim como visualizador alternativo
-
-[Vim](/index.php/Vim "Vim") (*visual editor improved*) tiene un script para ver el contenido de fichero de texto, binarios, directorios. Añada la siguiente línea a su archivo de configuración de la terminal para usarlo como visualizador:
-
- `~/.bashrc`  `alias less='/usr/share/vim/vim74/macros/less.sh'` 
-
-Existe una alternativa a la macro *less.sh*, que puede funcionar como la variable de entorno `PAGER`. Instale [vimpager](https://www.archlinux.org/packages/?name=vimpager) añada lo siguiente a su archivo de configuración de la terminal:
-
- `~/.bashrc` 
-```
-export PAGER='vimpager'
-alias less=$PAGER
-```
-
-Ahora los programas que usen la variable de entorno `PAGER`, como [git](/index.php/Git "Git"), usarán *vim* como un visualizador.
-
-### Salida coloreada cuando lee de entrada estándar
-
-**Nota:** Se recomienda añadir [#Salida en color mediante variables de entorno](#Salida_en_color_mediante_variables_de_entorno) a su `~/.bashrc` o `~/.zshrc`, ya que lo siguiente esta basado en `export LESS=R`
-
-Cuando ejecuta un comando y redirige su [salida estándar](https://en.wikipedia.org/wiki/Standard_output "wikipedia:Standard output") (*stdout*) a *less* para visualizarla (p.ej: `pacman -Qe | less`), puede encontrarse con que la salida ya no sale coloreada. Esto suele pasar porque el programa intentar detectar si su *salida estándar* es un terminal interactivo, en cuyo caso imprime el texto coloreado, en caso contrario no. Esto es un buen comportamiento cuando quiere redirigir la *salida estándar* a un fichero, p.ej: `pacman -Qe > pkglst-backup.txt`, pero menos indicado cuando quiere visualizar la salid con `less`.
-
-Algunos programas proveen una opción para deshabilitar la detección de tty interactiva:
-
-```
-# dmesg --color=always | less
-
-```
-
-En el caso de que el programa no proporcione una opción similar, es posible engañarlo para que crea que la *salida estándar* es un terminal interactivo con las siguientes utilidades:
-
-*   **stdoutisatty** — Un pequeño programa que captura la llamada a la función `isatty` .
-
-	[https://github.com/lilydjwg/stdoutisatty](https://github.com/lilydjwg/stdoutisatty). || [stdoutisatty-git](https://aur.archlinux.org/packages/stdoutisatty-git/)
-
-	Ejemplo: `stdoutisatty *program* | less`
-
-*   **socat** — Un relevo para transferencia de datos bidireccional entre dos canales de datos independientes. Esta basado en el programa de GNU [readline](https://www.archlinux.org/packages/?name=readline).
-
-	[http://www.dest-unreach.org/socat/](http://www.dest-unreach.org/socat/) || [socat](https://www.archlinux.org/packages/?name=socat)
-
-	Ejemplo: `socat EXEC:"*program*",pty STDIO | less`
-
-*   **[script](https://en.wikipedia.org/wiki/Script_(Unix) "wikipedia:Script (Unix)")** — Una utilidad que hace typescript de una sesión de terminal.
-
-	|| [util-linux](https://www.archlinux.org/packages/?name=util-linux)
-
-	Ejemplo: `script -fqc "*program*" | less` or [[2]](http://stackoverflow.com/questions/1401002/trick-an-application-into-thinking-its-stdin-is-interactive-not-a-pipe/20401674#20401674)
-
-*   **unbuffer** — Un script basado en *sh* y [Tcl](http://tcl.tk/).
-
-	[http://expect.sourceforge.net/example/unbuffer.man.html](http://expect.sourceforge.net/example/unbuffer.man.html) || [expect](https://www.archlinux.org/packages/?name=expect)
-
-	Ejemplo: `unbuffer *program* | less`
-
-De forma alternativa, usando el módulo [zpty](http://zsh.sourceforge.net/Doc/Release/Zsh-Modules.html#The-zsh_002fzpty-Module) de [zsh](/index.php/Zsh "Zsh"): [[3]](http://lilydjwg.is-programmer.com/2011/6/29/using-zpty-module-of-zsh.27677.html)
-
- `~/.zshrc` 
-```
-zmodload zsh/zpty
-
-pty() {
-	zpty pty-${UID} ${1+$@}
-	if [[ ! -t 1 ]];then
-		setopt local_traps
-		trap '' INT
-	fi
-	zpty -r pty-${UID}
-	zpty -d pty-${UID}
-}
-
-ptyless() {
-	pty $@ | less
-}
-```
-
-Uso:
-
-```
-$ ptyless *program*
-
-```
-
-Para redirigirlo a un visualizador (less en este ejemplo):
-
-```
-$ pty *program* | less
-
-```
-
-## ls
-
-[ls](https://en.wikipedia.org/wiki/ls "wikipedia:ls") (*list*) es un comando para lista fichero en sistemas operativos Unix y similares.
-
-*   *ls* puede listar [permisos de ficheros](/index.php/File_permissions_and_attributes#Viewing_permissions "File permissions and attributes").
-
-*   Salida coloreada puede ser habilitada con un simple alias. El fichero `~/.bashrc` debería tener la siguiente entrada copiada de `/etc/skel/.bashrc`:
-
-	`alias ls='ls --color=auto'`
-
-El siguiente paso mejorará aún más la salida coloreada de *ls*; por ejemplo, enlaces simbólicos rotos (huérfanos) se mostrarán en un tono rojo. Añada la siguiente línea a su archivo de configuración de la terminal:
-
-	`eval $(dircolors -b)`
-
-## lsblk
-
-[lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) mostrará todos los [dispositivos de bloque](https://en.wikipedia.org/wiki/es:Archivo_de_dispositivo#Dispositivos_orientados_a_bloques "w:es:Archivo de dispositivo") disponibles, con una descripcion de su esquema de particion, por ejemplo:
-
- `$ lsblk -f` 
-```
-NAME   FSTYPE   LABEL       UUID                                 MOUNTPOINT
-sda
-├─sda1 vfat                 C4DA-2C4D                            /boot
-├─sda2 swap                 5b1564b2-2e2c-452c-bcfa-d1f572ae99f2 [SWAP]
-└─sda3 ext4                 56adc99b-a61e-46af-aab7-a6d07e504652 /
-
-```
-
-El comienzo del nombre del dispositivo especifica el tipo de bloque. La mayoria de dispositivos de almacenamiento modernos (v.g. discos duros, [SSDs](/index.php/SSD "SSD") o memorias de USB) son reconocidos como discos de SCSI (`sd`). El tipo es seguido por una letra minúscula comenzando por la letra `a` para el primer dispositivo (`sda`), `b` para el segundo dispositivo y así consecutivamente. Particiones *existentes* en cada disco duro serán enumeradas comenzando con el numero `1` para la primera partición (`sda1`), `2` para la segunda y así consecutivamente.
-
-En el ejemplo anterior solo hay un dispositivo disponible (`sda`), y tiene tres particiones (`sda1` hasta `sda3`), cada una con un [sistema de archivos](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)") diferente.
-
-Otros tipos de dispositivos comunes son por ejemplo `mmcblk` para memorias en tarjetas y `nvme` para dispositivos [NVMe](/index.php/NVMe "NVMe").
-
-## mkdir
-
-[mkdir](https://en.wikipedia.org/wiki/mkdir "wikipedia:mkdir") (*make directory*) es un comando para crear directorios.
-
-*   Para crear un directorio y toda su jerarquía, es usado el argumento `-p`, de otra forma se monstraría un error. Como se supone que los usuario saben lo que quieren, el argumento `-p` puede usarse por defecto:
-
-	 `alias mkdir='mkdir -p -v'` 
-
-	El argumento `-v` hace que la salida sea más detallada.
-
-*   Cambiar los permisos con *chmod* tras crear el directorio no es necesario pues la opción `-m` permite definir los permisos de acceso.
-
-**Sugerencia:** Si tan solo quiere un directorio temporal, una mejor alternativa es [mktemp](https://en.wikipedia.org/wiki/Temporary_file "wikipedia:Temporary file") (*make termporary*): `mktemp -p`.
-
-## mv
-
-[mv](https://en.wikipedia.org/wiki/mv "wikipedia:mv") (*move*) es un comando para renombrar y mover ficheros y directorios.
-
-*   Puede ser muy peligroso, por lo que se recomiendo limitar su ámbito:
-
-	 `alias mv=' timeout 8 mv -iv'` 
-
-	Este alias suspende *mv* tras ocho segundos, pide confirmación para borrar tres o más ficheros, lista las operaciones en curso y no almacena en el historial de la terminal si la terminal esta configurada para no almacenar aquellos comandos que empiezen por un espacio.
-
-## rm
-
-[rm](https://en.wikipedia.org/wiki/rm_(Unix) (*remove*) es un comando que sirve para eliminar ficheros y directorios.
-
-*   Puede ser muy peligroso, por lo que se recomiendo limitar su ámbito:
-
-	 `alias rm=' timeout 3 rm -Iv --one-file-system'` 
-
-	Este alias suspende *rm* tras 3 segundos, pide confirmación para borrar tres o más ficheros, lista las operaciones en curso, no involucra mñas de un sistema de ficheros y no almacena en el historial de la terminal si la terminal esta configurada para no almacenar aquellos comandos que empiezen por un espacio. Sustituya `-I` por `-i` si prefiere confirmación por cada fichero.
-
-	Usuarios de Zsh pueden querer poner `noglob` antes de `timeout` para evitar expansiones implicitas.
-
-*   Para eliminar directorios vacíos, use *rmdir*, si el objetivo contiene ficheros fallará.
-
-## sed
-
-[sed](https://en.wikipedia.org/wiki/sed "wikipedia:sed") (*stream editor*) es una utilidad de Unix que parsea y transforma texto
-
-Aquí hay un puñado [list](http://sed.sourceforge.net/sed1line.txt) de ejemplo de una línea de como usar sed muy útiles.
-
-**Sugerencia:** Alternativas más potentes son [AWK](https://en.wikipedia.org/wiki/AWK "wikipedia:AWK") e incluso el lenguaje [Perl](https://en.wikipedia.org/wiki/Perl "wikipedia:Perl").
-
-## seq
-
-**seq** (*sequence*) es una utilidad para generar secuencias de números. Hay alternativas integradas en la shell disponibles, por lo que es una buena práctica usarlas como se explica en [Wikipedia](https://en.wikipedia.org/wiki/Seq_(Unix) "wikipedia:Seq (Unix)").
-
-## tar
+	[Https://github.com/mooz/percol](Https://github.com/mooz/percol) || [percol](https://www.archlinux.org/packages/?name=percol), [percol-git](https://aur.archlinux.org/packages/percol-git/) 
 
 ## Véase también
 
-*   [A sampling of coreutils](http://www.reddit.com/r/commandline/comments/19garq/a_sampling_of_coreutils_120/) [, part 2](http://www.reddit.com/r/commandline/comments/19ge6v/a_sampling_of_coreutils_2040/) [, part 3](http://www.reddit.com/r/commandline/comments/19j1w3/a_sampling_of_coreutils_4060/) - Overview of commands in coreutils
-
-*   [GNU Coreutils Manpage](http://www.gnu.org/software/coreutils/manual/coreutils.html)
-
-*   [Learn the DD command](http://www.linuxquestions.org/questions/linux-newbie-8/learn-the-dd-command-362506/)
+*   [Documentación de GNU Coreutils](https://www.gnu.org/software/coreutils/manual/coreutils.html)
+*   [Utilidades POSIX](http://pubs.opengroup.org/onlinepubs/9699919799/idx/utilities.html)

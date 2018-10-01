@@ -136,7 +136,7 @@ Packages can be installed from within `R` using the `**install.packages(c("pkgna
 
 **Note:**
 
-*   `**install.packages()**` requires [tk](https://www.archlinux.org/packages/?name=tk) to be [installed](/index.php/Installed "Installed") for selecting mirrors. Try installing this package if you see:
+*   `**install.packages()**` requires [tk](https://www.archlinux.org/packages/?name=tk) to be [installed](/index.php/Install "Install") for selecting mirrors. Try installing this package if you see:
 
 `Error: .onLoad failed in loadNamespace() for 'tcltk', details (...)`
 
@@ -195,7 +195,7 @@ R does not include a point-and-click graphical user interface for statistics or 
 
 ### R Commander frontend
 
-R Commander is a popular user interface to R. There is no Arch linux package available to install R commander, but it is an R package so it can be installed easily from within R. R Commander requires [tk](https://www.archlinux.org/packages/?name=tk) to be [installed](/index.php/Installed "Installed").
+R Commander is a popular user interface to R. There is no Arch linux package available to install R commander, but it is an R package so it can be installed easily from within R. R Commander requires [tk](https://www.archlinux.org/packages/?name=tk) to be [installed](/index.php/Install "Install").
 
 To install R Commander, run 'R' from the command line. Then type:
 

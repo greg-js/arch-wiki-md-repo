@@ -15,7 +15,7 @@
 
 ### Install
 
-You can follow standard [Installation](/index.php/Installation "Installation") process. No problems with [UEFI](/index.php/UEFI "UEFI") spotted.
+You can follow the standard [Installation guide](/index.php/Installation_guide "Installation guide"). No problems with [UEFI](/index.php/UEFI "UEFI") spotted.
 
 #### WiFi
 

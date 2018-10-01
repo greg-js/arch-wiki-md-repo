@@ -38,42 +38,45 @@ In order to boot Arch Linux, a Linux-capable [boot loader](#Boot_loader) such as
 
 A [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") or Basic Input-Output System is the very first program (firmware) that is executed once the system is switched on. In most cases it is stored in a flash memory in the motherboard itself and independent of the system storage.
 
-The BIOS loads the beginning 512 bytes ([Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")) of the first valid disk in the BIOS disk order. Of these 512 bytes, the first 440 contains the first stage of a [boot loader](#Boot_loader) like [GRUB](/index.php/GRUB "GRUB"), [Syslinux](/index.php/Syslinux "Syslinux") or [LILO](/index.php/LILO "LILO"). Since very little can be achieved by a program of this size, the second stage (residing on the next disk sectors) is loaded from here and looks up a file stored on the partition itself (the actual boot loader). This then loads an operating system by either chain-loading or directly loading the operating system kernel.
-
 ### UEFI
 
-UEFI has support for reading both the partition table as well as understanding filesystems. Hence it is not limited by 440 byte code limitation (MBR boot code) as in BIOS systems. It does not use the MBR boot code at all.
+[Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") has support for reading both the partition table as well as file systems. UEFI does not launch any boot code in the MBR whether it exists or not, instead booting relies on boot entries in NVRAM.
 
-The commonly used UEFI firmwares support both MBR and GPT [partition table](/index.php/Partition_table "Partition table"). EFI in Apple-Intel Macs are known to also support Apple Partition Map besides MBR and GPT. Most UEFI firmwares have support for accessing FAT12 (floppy disks), FAT16 and FAT32 filesystems in HDDs and ISO9660 (and UDF) in CD/DVDs. EFI in Intel Macs can also access HFS/HFS+ filesystems, in addition to the mentioned ones.
+The UEFI specification mandates support for the [FAT12](/index.php/FAT12 "FAT12"), [FAT16](/index.php/FAT16 "FAT16"), and [FAT32](/index.php/FAT32 "FAT32") file systems (see [UEFI specification version 2.7, section 13.3.1.1](http://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1019485)), but any conformant vendor can optionally add support for additional filesystems; for example, Apple [Macs](/index.php/Mac "Mac") support (and by default use) their own HFS+ filesystem drivers. UEFI implementations also support ISO-9660 for optical discs.
 
-UEFI does not launch any boot code in the MBR whether it exists or not. Instead it uses a special partition in the partition table called [EFI system partition](/index.php/EFI_system_partition "EFI system partition") in which files required to be launched by the firmware are stored. Each vendor can store its files under `<EFI SYSTEM PARTITION>/EFI/<VENDOR NAME>/` folder and can use the firmware or its shell ([UEFI shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface")) to launch the boot program. An EFI System Partition is usually formatted as [FAT32](/index.php/FAT32 "FAT32") or (less commonly) FAT16.
+UEFI launches EFI applications, e.g. [boot loaders](#Boot_loader), boot managers, [UEFI shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface"), etc. These applications are usually stored as files in the [EFI system partition](/index.php/EFI_system_partition "EFI system partition"). Each vendor can store its files in the EFI system partition under the `/EFI/*vendor_name*` folder. The applications can be launched by adding a boot entry to the NVRAM or from the UEFI shell.
 
 ## System initialization
 
 ### Under BIOS
 
-1.  System switched on - [Power-on self-test](https://en.wikipedia.org/wiki/Power-on_self-test "wikipedia:Power-on self-test") or POST process.
+1.  System switched on, the [power-on self-test (POST)](https://en.wikipedia.org/wiki/Power-on_self-test "wikipedia:Power-on self-test") is executed.
 2.  After POST, BIOS initializes the necessary system hardware for booting (disk, keyboard controllers etc.).
-3.  BIOS launches the first 440 bytes ([Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")) of the first disk in the BIOS disk order.
-4.  The MBR boot code then takes control from BIOS and launches its next stage code (if any) (mostly [boot loader](#Boot_loader) code).
-5.  The actual [boot loader](#Boot_loader), such as [GRUB](/index.php/GRUB "GRUB") or [Syslinux](/index.php/Syslinux "Syslinux"), is launched.
+3.  BIOS launches the first 440 bytes ([the Master Boot Record bootstrap code area](/index.php/Partitioning#Master_Boot_Record_.28bootstrap_code.29 "Partitioning")) of the first disk in the BIOS disk order.
+4.  The boot loader's first stage in the MBR boot code then launches its second stage code (if any) from either:
+    *   next disk sectors (the so called post-MBR gap).
+    *   a partition's or a partitionless disk's [volume boot record (VBR)](https://en.wikipedia.org/wiki/Volume_boot_record "wikipedia:Volume boot record").
+    *   the [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") ([GRUB](/index.php/GRUB "GRUB") on BIOS/GPT only).
+5.  The actual [boot loader](#Boot_loader) is launched.
+6.  The boot loader then loads an operating system by either chain-loading or directly loading the operating system kernel.
 
 ### Under UEFI
 
-1.  System switched on. The Power On Self Test (POST) is executed.
-2.  UEFI firmware is loaded. Firmware initializes the hardware required for booting.
-3.  Firmware reads the boot entries in the firmware's boot manager to determine which UEFI application to be launched and from where (i.e. from which disk and partition). A boot entry could simply be a disk. In this case the firmware looks for an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") on that disk and tries to find the fallback UEFI application `\EFI\BOOT\BOOTX64.EFI` (`BOOTIA32.EFI` on [32-bit EFI systems](/index.php/Unified_Extensible_Firmware_Interface#UEFI_firmware_bitness "Unified Extensible Firmware Interface")). This is how UEFI bootable thumb drives work.
-4.  Firmware launches the UEFI application.
-    *   This could be a boot loader, e.g. the Arch kernel itself (since [EFISTUB](/index.php/EFISTUB "EFISTUB") is enabled by default).
-    *   It could be some other application such as a shell or a boot manager like [systemd-boot](/index.php/Systemd-boot "Systemd-boot"), [rEFInd](/index.php/REFInd "REFInd").
+1.  System switched on, the [power-on self-test (POST)](https://en.wikipedia.org/wiki/Power-on_self-test "wikipedia:Power-on self-test") is executed.
+2.  UEFI initializes the hardware required for booting.
+3.  Firmware reads the boot entries in the NVRAM to determine which EFI application to launch and from where (e.g. from which disk and partition).
+    *   A boot entry could simply be a disk. In this case the firmware looks for an [EFI system partition](/index.php/EFI_system_partition "EFI system partition") on that disk and tries to find a EFI application in the fallback boot path `\EFI\BOOT\BOOTX64.EFI` (`BOOTIA32.EFI` on [IA32 (32-bit) EFI systems](/index.php/Unified_Extensible_Firmware_Interface#UEFI_firmware_bitness "Unified Extensible Firmware Interface")). This is how UEFI bootable removable media work.
+4.  Firmware launches the EFI application.
+    *   This could be a [boot loader](#Boot_loader) or the Arch [kernel](/index.php/Kernel "Kernel") itself using [EFISTUB](/index.php/EFISTUB "EFISTUB").
+    *   It could be some other EFI application such as a UEFI shell or a [boot manager](#Boot_loader) like [systemd-boot](/index.php/Systemd-boot "Systemd-boot") or [rEFInd](/index.php/REFInd "REFInd").
 
 If [Secure Boot](/index.php/Secure_Boot "Secure Boot") is enabled, the boot process will verify authenticity of the EFI binary by signature.
 
-**Note:** Some UEFI systems have a very basic boot manager, which can only use the fallback UEFI application path.
+**Note:** Some UEFI systems can only boot from the fallback boot path.
 
 ### Multibooting in UEFI
 
-Since each OS or vendor can maintain its own files within the EFI System Partition without affecting the other, multi-booting using UEFI is just a matter of launching a different UEFI application corresponding to the particular OS's boot loader. This removes the need for relying on chainloading mechanisms of one [boot loader](#Boot_loader) to load another OS.
+Since each OS or vendor can maintain its own files within the EFI system partition without affecting the other, multi-booting using UEFI is just a matter of launching a different EFI application corresponding to the particular OS's boot loader. This removes the need for relying on chainloading mechanisms of one [boot loader](#Boot_loader) to load another OS.
 
 See also [Dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows").
 

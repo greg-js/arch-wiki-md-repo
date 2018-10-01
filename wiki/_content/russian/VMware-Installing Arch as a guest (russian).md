@@ -572,7 +572,7 @@ The following problems may occur with mouse:
 *   Mouse cursor jumps when entering/leaving virtual machine
 *   Mouse position jumps to where it left the guest VM
 
-You can try to [Remove](/index.php/Remove "Remove") the [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse) package. [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse) and [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) should be sufficient for handling mouse and keyboard inputs.
+You can try to [uninstall](/index.php/Uninstall "Uninstall") the [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse) package. [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse) and [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) should be sufficient for handling mouse and keyboard inputs.
 
 You can try to add these settings to your `.vmx` configuration file ([Mouse position jumps to where it left the guest VM](https://forums.mageia.org/en/viewtopic.php?f=7&t=7977)):
 

@@ -11,19 +11,20 @@ Related articles
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-*   [3 Tips and tricks](#Tips_and_tricks)
-    *   [3.1 Mount helpers](#Mount_helpers)
-        *   [3.1.1 udevadm monitor](#udevadm_monitor)
-    *   [3.2 Mount to /media (udisks2)](#Mount_to_.2Fmedia_.28udisks2.29)
-    *   [3.3 Mount loop devices](#Mount_loop_devices)
-    *   [3.4 Hide selected partitions](#Hide_selected_partitions)
-        *   [3.4.1 Example](#Example)
-    *   [3.5 Apply ATA settings (udisks2)](#Apply_ATA_settings_.28udisks2.29)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Hidden devices (udisks2)](#Hidden_devices_.28udisks2.29)
-    *   [4.2 Devices do not remain unmounted (udisks)](#Devices_do_not_remain_unmounted_.28udisks.29)
-    *   [4.3 Broken standby timer (udisks2)](#Broken_standby_timer_.28udisks2.29)
-*   [5 See also](#See_also)
+*   [3 Usage](#Usage)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Mount helpers](#Mount_helpers)
+        *   [4.1.1 udevadm monitor](#udevadm_monitor)
+    *   [4.2 Mount to /media (udisks2)](#Mount_to_.2Fmedia_.28udisks2.29)
+    *   [4.3 Mount loop devices](#Mount_loop_devices)
+    *   [4.4 Hide selected partitions](#Hide_selected_partitions)
+        *   [4.4.1 Example](#Example)
+    *   [4.5 Apply ATA settings (udisks2)](#Apply_ATA_settings_.28udisks2.29)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Hidden devices (udisks2)](#Hidden_devices_.28udisks2.29)
+    *   [5.2 Devices do not remain unmounted (udisks)](#Devices_do_not_remain_unmounted_.28udisks.29)
+    *   [5.3 Broken standby timer (udisks2)](#Broken_standby_timer_.28udisks2.29)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -36,6 +37,24 @@ There are two versions of *udisks* called [udisks](https://aur.archlinux.org/pac
 Actions a user can perform using udisks are restricted with [Polkit](/index.php/Polkit "Polkit"). If the [user session](/index.php/Session "Session") is not activated or present (for example, when controlling udisks from a [systemd/User](/index.php/Systemd/User "Systemd/User") service), adjust Polkit rules accordingly.
 
 See [[2]](https://github.com/coldfix/udiskie/wiki/Permissions) for common udisks permissions for the `storage` group, and [[3]](https://gist.github.com/grawity/3886114#file-udisks2-allow-mount-internal-js) for a more restrictive example. If you are using [Dolphin](/index.php/Dolphin "Dolphin"), you may see [[4]](https://gist.github.com/Scrumplex/8f528c1f63b5f4bfabe14b0804adaba7).
+
+## Usage
+
+To manually mount a removable drive, for example `/dev/sdc`:
+
+```
+$ udisksctl mount -b /dev/sdc1
+
+```
+
+To unmount:
+
+```
+$ udisksctl unmount -b /dev/sdc1
+
+```
+
+See `udisksctl --help` for more.
 
 ## Tips and tricks
 

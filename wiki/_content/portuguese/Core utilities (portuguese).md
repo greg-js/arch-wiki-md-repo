@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Core utilities](/index.php/Core_utilities "Core utilities"). Data da última tradução: 2018-09-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=539205) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Core utilities](/index.php/Core_utilities "Core utilities"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=545027) na versão em inglês.
 
 Artigos relacionados
 
@@ -20,6 +20,8 @@ A maioria das interfaces de linha de comando está documentada em [páginas man]
     *   [3.1 Alternativas ao find](#Alternativas_ao_find)
     *   [3.2 Alternativas ao diff](#Alternativas_ao_diff)
     *   [3.3 Alternativas ao grep](#Alternativas_ao_grep)
+        *   [3.3.1 Pesquisadores de código](#Pesquisadores_de_c.C3.B3digo)
+    *   [3.4 Filtros interativos](#Filtros_interativos)
 *   [4 Veja também](#Veja_tamb.C3.A9m)
 
 ## Essenciais
@@ -40,7 +42,7 @@ A tabela a seguir lista alguns comandos importantes, com os quais os usuários d
 | [chmod](/index.php/Chmod "Chmod") | altera permissões de arquivo | [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/chmod-invocation.html) |
 | [dd](/index.php/Dd "Dd") | converte e copia um arquivo | [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/dd-invocation.html) |
 | df | relata uso de espaço em disco pelos sistemas de arquivos | [df(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/df.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/df-invocation.html) |
-| GNU [tar](https://www.archlinux.org/packages/?name=tar) | [tar](/index.php/Tar_(Portugu%C3%AAs) "Tar (Português)") | arquivador tar | [tar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1), [info](https://www.gnu.org/software/tar/manual/html_chapter/index.html) | [arquivadores](/index.php/Arquivamento_e_compress%C3%A3o "Arquivamento e compressão") |
+| GNU [tar](https://www.archlinux.org/packages/?name=tar) | [tar](/index.php/Tar_(Portugu%C3%AAs) "Tar (Português)") | arquivador tar | [tar(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tar.1), [info](https://www.gnu.org/software/tar/manual/html_chapter/index.html) | [arquivadores](/index.php/Arquivador "Arquivador") |
 | GNU [less](https://www.archlinux.org/packages/?name=less) | less | paginador de terminal | [less(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/less.1) | [paginadores de terminal](/index.php/Terminal_pager "Terminal pager") |
 | GNU [findutils](https://www.archlinux.org/packages/?name=findutils) | find | pesquisa por arquivos ou diretórios | [find(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/find.1), [info](https://www.gnu.org/software/findutils/manual/html_node/find_html/index.html), [GregsWiki](https://mywiki.wooledge.org/UsingFind "gregswiki:UsingFind") | [#Alternativas ao find](#Alternativas_ao_find) |
 | GNU [diffutils](https://www.archlinux.org/packages/?name=diffutils) | diff | compara arquivos linha por linha | [diff(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/diff.1), [info](https://www.gnu.org/software/diffutils/manual/html_node/Invoking-diff.html) | [#Alternativas ao diff](#Alternativas_ao_diff) |
@@ -68,6 +70,8 @@ Essa tabela lista utilitários principais que geralmente são úteis.
 | time | obtenha o tempo de um comando | [time(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/time.1p) |
 | GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) | tee | lê a stdin e escreve para stdout e arquivos | [tee(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tee.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/tee-invocation.html) |
 | mktemp | cria um arquivo ou diretório temporário | [mktemp(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mktemp.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html) |
+| cut | imprime partes selecionadas de linhas | [cut(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cut.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/cut-invocation.html) |
+| tr | traduz ou exclui caracteres | [tr(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tr.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html) |
 | od | despeja arquivos em octal e outros formatos | [od(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/od.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/od-invocation.html) | [hexdump(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hexdump.1), [vim](/index.php/Vim "Vim")'s [xxd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xxd.1) |
 | sort | ordena linhas | [sort(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sort.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/sort-invocation.html) |
 | uniq | relata ou omite linhas repetidas | [uniq(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/uniq.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/uniq-invocation.html) |
@@ -94,10 +98,6 @@ Alternativas aos utilitários principais no grupo [base](https://www.archlinux.o
 *   **fuzzy-find** — Completação aproximada para localizar arquivos.
 
 	[https://github.com/silentbicycle/ff](https://github.com/silentbicycle/ff) || [ff-git](https://aur.archlinux.org/packages/ff-git/)
-
-*   **fzf** — Localizador aproximado de linha de comando de propósito geral, movido a find por padrão.
-
-	[https://github.com/junegunn/fzf](https://github.com/junegunn/fzf) || [fzf](https://www.archlinux.org/packages/?name=fzf), [fzf-git](https://aur.archlinux.org/packages/fzf-git/)
 
 *   **[mlocate](/index.php/Mlocate "Mlocate")** — Implementação de fusão entre locate e updatedb.
 
@@ -126,6 +126,12 @@ Veja também [List of applications/Utilities#Comparison, diff, merge](/index.php
 
 ### Alternativas ao grep
 
+*   **mgrep** — Um grep multilinha.
+
+	[https://sourceforge.net/projects/multiline-grep/](https://sourceforge.net/projects/multiline-grep/) || [mgrep](https://aur.archlinux.org/packages/mgrep/)
+
+#### Pesquisadores de código
+
 As três ferramentas a seguir visam substituir o grep na pesquisa de código. Elas fazem pesquisa recursiva por padrão, ignoram arquivos vinários e respeitam o `.gitignore`.
 
 *   **ack** — Um substituto do grep baseado em Perl, tendo com alvo programadores com grandes árvores de código-fonte heretogêneo.
@@ -140,7 +146,23 @@ As três ferramentas a seguir visam substituir o grep na pesquisa de código. El
 
 	[https://github.com/ggreer/the_silver_searcher](https://github.com/ggreer/the_silver_searcher) || [the_silver_searcher](https://www.archlinux.org/packages/?name=the_silver_searcher)
 
-E, então, há também o [mgrep](https://aur.archlinux.org/packages/mgrep/), um grep multilinha.
+### Filtros interativos
+
+*   **fzf** — Localizador aproximado de linha de comando de propósito geral, movido a find por padrão.
+
+	[https://github.com/junegunn/fzf](https://github.com/junegunn/fzf) || [fzf](https://www.archlinux.org/packages/?name=fzf), [fzf-git](https://aur.archlinux.org/packages/fzf-git/)
+
+*   **fzy** — Um seletor de texto aproximado rápido e simples com um algoritmo avançado de pontuação.
+
+	[https://github.com/jhawthorn/fzy](https://github.com/jhawthorn/fzy) || [fzy](https://www.archlinux.org/packages/?name=fzy), [fzy-git](https://aur.archlinux.org/packages/fzy-git/)
+
+*   **peco** — Ferramenta simplista de filtragem interativa.
+
+	[https://github.com/peco/peco](https://github.com/peco/peco) || [peco](https://aur.archlinux.org/packages/peco/), [peco-git](https://aur.archlinux.org/packages/peco-git/)
+
+*   **percol** — Adiciona o sabor da filtragem interativa ao conceito tradicional de pipe do shell do UNIX.
+
+	[https://github.com/mooz/percol](https://github.com/mooz/percol) || [percol](https://www.archlinux.org/packages/?name=percol), [percol-git](https://aur.archlinux.org/packages/percol-git/)
 
 ## Veja também
 

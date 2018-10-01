@@ -79,9 +79,8 @@ Include conf/extra/phpmyadmin.conf
 
 参考[nginx#PHP configuration file](/index.php/Nginx#PHP_configuration_file "Nginx")，为php创建一个单独的配置文件，并使用一个服务器块，例如：
 
-server {
-
 ```
+server {
     server_name     phpmyadmin.<domain.tld>;
     root    /usr/share/webapps/phpMyAdmin;
     index   index.php;

@@ -21,7 +21,7 @@ Related articles
 
 ## Installation
 
-GNOME Flashback can be [installed](/index.php/Installed "Installed") from the [gnome-flashback](https://www.archlinux.org/packages/?name=gnome-flashback) package. It's recommended to install its optional dependencies also to get a more complete desktop environment.
+GNOME Flashback can be [installed](/index.php/Install "Install") from the [gnome-flashback](https://www.archlinux.org/packages/?name=gnome-flashback) package. It's recommended to install its optional dependencies also to get a more complete desktop environment.
 
 You can also install the following packages which provide some additional applets for the GNOME Panel:
 

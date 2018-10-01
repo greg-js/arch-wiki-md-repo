@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GDM](/index.php/GDM "GDM"). Data da última tradução: 2018-09-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GDM&diff=0&oldid=543257) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GDM](/index.php/GDM "GDM"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GDM&diff=0&oldid=545369) na versão em inglês.
 
 Artigos relacionados
 
@@ -352,13 +352,13 @@ O idioma do sistema será aplicado ao GDM. Se um sistema tiver vários usuários
 
 #### Autenticação automática
 
-Para habilitar a autenticação automática com o GDM, adicione o seguinte a `/etc/gdm/custom.conf` (substitua *nome-de-usuário* por seu próprio):
+Para habilitar a autenticação automática com o GDM, adicione o seguinte a `/etc/gdm/custom.conf` (substitua *nome_de_usuário* por seu próprio):
 
  `/etc/gdm/custom.conf` 
 ```
 # Habilita autenticação automática para o usuário
 [daemon]
-AutomaticLogin=*nome-de-usuário*
+AutomaticLogin=*nome_de_usuário*
 AutomaticLoginEnable=True
 ```
 
@@ -371,13 +371,13 @@ ou para uma autenticação automática com um atraso:
 [daemon]
 
 TimedLoginEnable=true
-TimedLogin=*nome-de-usuário*
+TimedLogin=*nome_de_usuário*
 TimedLoginDelay=1
 ```
 
 Você pode definir a sessão usada para autenticação automática (substitua `gnome-xorg` pela sessão desejada):
 
- `/var/lib/AccountsService/users/*nome-de-usuário*`  `XSession=gnome-xorg` 
+ `/var/lib/AccountsService/users/*nome_de_usuário*`  `XSession=gnome-xorg` 
 
 #### Autenticação sem senha
 
@@ -452,9 +452,9 @@ Você deve poder autenticar como root após reiniciar o GDM.
 
 #### Ocultar usuário da lista de login
 
-Os usuários da lista de usuários do gdm são reunidos por [AccountsService](https://www.freedesktop.org/wiki/Software/AccountsService/). Ele irá ocultar automaticamente os usuários do sistema (UID <1000). Para ocultar usuários comuns da lista de login, crie ou edite um arquivo com o nome do usuário para ocultar em `/var/lib/AccountsService/users/` para conter pelo menos:
+Os usuários da lista de usuários do gdm são reunidos por [AccountsService](https://www.freedesktop.org/wiki/Software/AccountsService/). Ele irá ocultar automaticamente os usuários do sistema (UID <1000). Para ocultar usuários comuns da lista de login, crie ou edite um arquivo com o nome do usuário para ocultar em `/var/lib/accountsservice/users/` para conter pelo menos:
 
- `/var/lib/AccountsService/users/*nome-de-usuário*` 
+ `/var/lib/accountsservice/users/*nome_de_usuário*` 
 ```
 [User]
 SystemAccount=true
@@ -464,10 +464,31 @@ SystemAccount=true
 
 Alguns [ambientes de desktop](/index.php/Ambientes_de_desktop "Ambientes de desktop") armazenam configurações de exibição em `~/.config/monitors.xml`. Os comandos *xrandr* são então gerados na base do conteúdo do arquivo. O GDM tem um arquivo semelhante armazenado em `/var/lib/gdm/.config/monitors.xml`.
 
-Se você tiver a configuração de seus monitores como quiser (orientação, primária e assim por diante) em `~/.config/monitors.xml` e quiser que o GDM honre essas configurações:
+Se você tiver a configuração de seus monitores como quiser (orientação, escala, primário e assim por diante) em `~/.config/monitors.xml` e quiser que o GDM honre essas configurações:
 
 ```
-# cp ~/.config/monitors.xml /var/lib/gdm/.config/monitors.xml
+$ sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/
+$ sudo chown gdm:gdm /var/lib/gdm/.config/monitors.xml
+
+```
+
+As partes relevantes de `monitors.xml` para rotação e escala de tela são:
+
+```
+<monitors version="2">
+  <configuration>
+    <logicalmonitor>
+      ...
+      <scale>2</scale>
+      ...
+      <transform>
+        <rotation>right</rotation>
+        <flipped>no</flipped>
+      </transform>
+      ...
+    </logicalmonitor>
+  </configuration>
+</monitors>
 
 ```
 
@@ -536,11 +557,11 @@ O GDM usa um banco de dados separado do dconf para controlar o gerenciamento de 
 
 ```
 $ IFS=$'
-'; for x in $(sudo -u *nome-de-usuário* gsettings list-recursively org.gnome.settings-daemon.plugins.power); do eval "sudo -u gdm dbus-launch gsettings set $x"; done; unset IFS
+'; for x in $(sudo -u *nome_de_usuário* gsettings list-recursively org.gnome.settings-daemon.plugins.power); do eval "sudo -u gdm dbus-launch gsettings set $x"; done; unset IFS
 
 ```
 
-sendo *nome-de-usuário* o nome do seu usuário.
+sendo `*nome_de_usuário*` o nome do seu usuário.
 
 Ou simplesmente desabilitar a suspensão automática (também execute o comando com `ac` substituído por `battery` para também desativá-lo durante a execução com bateria):
 

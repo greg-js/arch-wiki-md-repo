@@ -197,7 +197,7 @@ In order to get flash to work with jack you will need to [install](/index.php/In
 
 You can also use more flexible method to allow Alsa programs (including Flash) play sound while jack is running:
 
-First you must install the jack plugin for Alsa by [installing](/index.php/Installing "Installing") the [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) package. Enable it by editing (or creating) `/etc/asound.conf` (system wide settings) to have these lines:
+First you must install the jack plugin for Alsa by [installing](/index.php/Install "Install") the [alsa-plugins](https://www.archlinux.org/packages/?name=alsa-plugins) package. Enable it by editing (or creating) `/etc/asound.conf` (system wide settings) to have these lines:
 
 ```
 # convert alsa API over jack API

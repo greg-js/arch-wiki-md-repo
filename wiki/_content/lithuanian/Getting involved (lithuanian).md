@@ -16,7 +16,7 @@ Evoliucinėje biologijoje, [bendradarbiavimas](https://en.wikipedia.org/wiki/Co-
     *   [1.9 Oficialūs programinės įrangos projektai](#Oficial.C5.ABs_programin.C4.97s_.C4.AFrangos_projektai)
     *   [1.10 Aukokite pinigus](#Aukokite_pinigus)
 *   [2 Bendruomenės projektai](#Bendruomen.C4.97s_projektai)
-    *   [2.1 Groups](#Groups)
+    *   [2.1 Grupės](#Grup.C4.97s)
     *   [2.2 Programinė Įranga](#Programin.C4.97_.C4.AEranga)
     *   [2.3 ArchWiki naršymas](#ArchWiki_nar.C5.A1ymas)
     *   [2.4 Kita](#Kita)
@@ -77,7 +77,7 @@ Kaip padėti išlaikyti serverius galite sužinoti [oficialiame Arch Linux aukų
 
 Arch bendruomenė palaiko daugybę projektų. Drąsiai pridėkite ir savo!
 
-### Groups
+### Grupės
 
 Tikslinės Arch grupės prie kurių galima prisidėti.
 

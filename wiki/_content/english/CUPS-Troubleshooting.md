@@ -286,7 +286,7 @@ PID *pid* (/usr/lib/cups/filter/foomatic-rip) stopped with status 3!
 
 ```
 
-make sure [hplip](https://www.archlinux.org/packages/?name=hplip) has been [installed](/index.php/Installed "Installed").
+make sure [hplip](https://www.archlinux.org/packages/?name=hplip) has been [installed](/index.php/Install "Install").
 
 ### CUPS: "Filter failed"
 

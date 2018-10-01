@@ -521,7 +521,7 @@ set root='cryptouuid/1234abcdef1234abcdef1234abcdef'
 Take note of all of those modules: they'll need to be included in the core image. Now, create a tarball containing your keymap. This will be bundled in the core image as a memdisk:
 
 ```
-# ckbcomp dvorak | grub-mklayout > dvorak.gkb
+# grub-kbdcomp -o dvorak.gkb dvorak
 # tar cf memdisk.tar dvorak.gkb
 
 ```

@@ -100,7 +100,7 @@ For the `System service scripts directory`, use `/etc/init.d` (the default).
 
 ### Package build for x86_64
 
-Install [vmware-workstation](https://aur.archlinux.org/packages/vmware-workstation/), [vmware-workstation12](https://aur.archlinux.org/packages/vmware-workstation12/) or [vmware-workstation11](https://aur.archlinux.org/packages/vmware-workstation11/) for respectively versions 14, 12 and 11 of *VMware Workstation*. It is also necessary to install the appropriate headers package(s) for your installed kernel(s): for example [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) or [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers).
+Install [vmware-workstation](https://aur.archlinux.org/packages/vmware-workstation/), [vmware-workstation14](https://aur.archlinux.org/packages/vmware-workstation14/), [vmware-workstation12](https://aur.archlinux.org/packages/vmware-workstation12/) or [vmware-workstation11](https://aur.archlinux.org/packages/vmware-workstation11/) for respectively versions 15, 14, 12 and 11 of *VMware Workstation*. It is also necessary to install the appropriate headers package(s) for your installed kernel(s): for example [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) or [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers).
 
 Then, as desired, enable some of the following services:
 

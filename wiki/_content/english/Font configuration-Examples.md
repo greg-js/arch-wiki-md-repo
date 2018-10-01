@@ -8,10 +8,11 @@ Configurations can vary to a degree. Please post Fontconfig configurations with 
 *   [2 No hinting for *italic* or **bold**](#No_hinting_for_italic_or_bold)
 *   [3 Enable anti-aliasing only for bigger fonts](#Enable_anti-aliasing_only_for_bigger_fonts)
 *   [4 Disable bold font](#Disable_bold_font)
-*   [5 Default fonts](#Default_fonts)
-    *   [5.1 Japanese](#Japanese)
-    *   [5.2 Chinese](#Chinese)
-*   [6 See also](#See_also)
+*   [5 Disable ligatures for monospaced fonts](#Disable_ligatures_for_monospaced_fonts)
+*   [6 Default fonts](#Default_fonts)
+    *   [6.1 Japanese](#Japanese)
+    *   [6.2 Chinese](#Chinese)
+*   [7 See also](#See_also)
 
 ## Hinted fonts
 
@@ -134,6 +135,92 @@ For when a font does not present itself well in bold and you can't disable bold 
     </edit>
 </match>
 ...
+
+```
+
+## Disable ligatures for monospaced fonts
+
+This prevents letter combinations like "ffi" from being squashed into a single-width character in some monospaced fonts. The whole `<match>` block needs to be duplicated to include extra fonts.
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+  <description>Disable ligatures for monospaced fonts to avoid ff, fi, ffi, etc. becoming only one character wide</description>
+
+  <match target="font">
+    <test name="family" compare="eq" ignore-blanks="true">
+      <string>Nimbus Mono PS</string>
+    </test>
+    <edit name="fontfeatures" mode="append">
+      <string>liga off</string>
+      <string>dlig off</string>
+    </edit>
+  </match>
+</fontconfig>
+
+```
+
+You can test the effectiveness of this with the following command:
+
+```
+echo -e "| worksheet |
+| buffering |
+| difficult |
+| finishing |
+| different |
+| efficient |" | pango-view --font="Nimbus Mono PS" /dev/stdin
+
+```
+
+Some programs (such as Firefox) do not support the `fontfeatures` tag, so for those replacing the font with another is the only option. This will set "DejaVu Sans Mono" (a font without ligatures) to be the default monospace font:
+
+```
+$ cat >> /etc/fonts/conf.d/99-force-monospace-font.conf
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+  <description>Set the default monospaced font to one without ligatures for ff, fi, ffi, etc.</description>
+
+  <!-- Generic name aliasing -->
+  <alias>
+    <family>monospace</family>
+    <prefer>
+      <family>DejaVu Sans Mono</family>
+    </prefer>
+  </alias>
+
+  <!-- Generic name assignment -->
+  <alias>
+    <family>DejaVu Sans Mono</family>
+    <default>
+      <family>monospace</family>
+    </default>
+  </alias>
+
+  <!-- Original PostScript base font mapping -->
+  <alias binding="same">
+    <family>DejaVu Sans Mono</family>
+    <default>
+      <family>Courier</family>
+    </default>
+  </alias>
+
+  <!-- Font substitution rules -->
+  <alias binding="same">
+    <family>Courier</family>
+    <accept>
+      <family>DejaVu Sans Mono</family>
+    </accept>
+  </alias>
+
+  <alias binding="same">
+    <family>TeX Gyre Cursor</family>
+    <accept>
+      <family>DejaVu Sans Mono</family>
+    </accept>
+  </alias>
+</fontconfig>
 
 ```
 

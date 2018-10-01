@@ -2,7 +2,7 @@ Zerotier is an open source, cross-platform and easy to use virtual LAN / Hamachi
 
 ## Installing
 
-ZeroTier can be [installed](/index.php/Installed "Installed") with the [zerotier-one](https://www.archlinux.org/packages/?name=zerotier-one).
+ZeroTier can be [installed](/index.php/Install "Install") with the [zerotier-one](https://www.archlinux.org/packages/?name=zerotier-one).
 
 ## Configuration
 

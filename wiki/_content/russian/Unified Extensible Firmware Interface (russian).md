@@ -230,7 +230,7 @@ FAT32 filesystem is case-insensitive since it does not use UTF-8 encoding by def
 
 ## Загрузчики Linux для UEFI
 
-Смотреть [UEFI загрузчики](/index.php/Boot_loaders "Boot loaders").
+Смотреть [UEFI загрузчики](/index.php/Arch_boot_process#Boot_loader "Arch boot process").
 
 ## Создание UEFI раздела в Linux
 

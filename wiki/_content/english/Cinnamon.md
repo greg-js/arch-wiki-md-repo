@@ -37,7 +37,7 @@ Related articles
 
 ## Installation
 
-Cinnamon can be [installed](/index.php/Installed "Installed") with the package [cinnamon](https://www.archlinux.org/packages/?name=cinnamon).
+Cinnamon can be [installed](/index.php/Install "Install") with the package [cinnamon](https://www.archlinux.org/packages/?name=cinnamon).
 
 ## Starting
 

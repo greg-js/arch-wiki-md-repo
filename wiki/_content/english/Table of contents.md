@@ -1,12 +1,16 @@
 | [English](/index.php/Category:English "Category:English") <small>(2)</small> |
-| <small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(23)</small> |
-| <small>1.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(17) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
-| <small>1.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(48)</small> |
-| <small>1.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
-| <small>1.2.</small> [Arch projects](/index.php/Category:Arch_projects "Category:Arch projects") <small>(8)</small> |
-| <small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki") <small>(12)</small> |
-| <small>1.3.1.</small> [Help](/index.php/Category:Help "Category:Help") <small>(15)</small> |
-| <small>1.4.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(2)</small> |
+| <small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(18)</small> |
+| <small>1.1.</small> [Arch community](/index.php/Category:Arch_community "Category:Arch community") <small>(5)</small> |
+| <small>1.1.1.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(2)</small> |
+| <small>1.2.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(17) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
+| <small>1.2.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(48)</small> |
+| <small>1.2.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
+| <small>1.3.</small> [Arch projects](/index.php/Category:Arch_projects "Category:Arch projects") <small>(8)</small> |
+| <small>1.4.</small> [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki") <small>(12)</small> |
+| <small>1.4.1.</small> [Disambiguation pages](/index.php/Category:Disambiguation_pages "Category:Disambiguation pages") <small>(3)</small> |
+| <small>1.4.2.</small> [Help](/index.php/Category:Help "Category:Help") <small>(15)</small> |
+| <small>1.4.3.</small> [Lists](/index.php/Category:Lists "Category:Lists") <small>(25)</small> |
+| <small>1.4.4.</small> [Software comparisons](/index.php/Category:Software_comparisons "Category:Software comparisons") <small>(4) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>1.5.</small> [Installation process](/index.php/Category:Installation_process "Category:Installation process") <small>(31)</small> |
 | <small>1.6.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(5)</small> |
 | <small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(16)</small> |
@@ -54,7 +58,7 @@
 | <small>2.13.</small> [Office](/index.php/Category:Office "Category:Office") <small>(21)</small> |
 | <small>2.13.1.</small> [TeX](/index.php/Category:TeX "Category:TeX") <small>(3)</small> |
 | <small>2.14.</small> [Search](/index.php/Category:Search "Category:Search") <small>(5)</small> |
-| <small>2.15.</small> [Software comparisons](/index.php/Category:Software_comparisons "Category:Software comparisons") <small>(4)</small> |
+| <small>2.15.</small> [Software comparisons](/index.php/Category:Software_comparisons "Category:Software comparisons") <small>(4) (also in [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki"))</small> |
 | <small>2.16.</small> [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification") <small>(13)</small> |
 | <small>2.17.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(14) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
 | <small>2.18.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(36) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
@@ -175,7 +179,7 @@
 | <small>6.2.3.</small> [Terminal multiplexers](/index.php/Category:Terminal_multiplexers "Category:Terminal multiplexers") <small>(3)</small> |
 | <small>6.3.</small> [Configuration files](/index.php/Category:Configuration_files "Category:Configuration files") <small>(7)</small> |
 | <small>6.4.</small> [Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services") <small>(14)</small> |
-| <small>6.5.</small> [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy") <small>(28)</small> |
+| <small>6.5.</small> [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy") <small>(29)</small> |
 | <small>6.5.1.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(2) (also in [Boot process](/index.php/Category:Boot_process "Category:Boot process"))</small> |
 | <small>6.5.2.</small> [Fonts](/index.php/Category:Fonts "Category:Fonts") <small>(7)</small> |
 | <small>6.6.</small> [File systems](/index.php/Category:File_systems "Category:File systems") <small>(49)</small> |
@@ -199,9 +203,9 @@
 | <small>6.10.</small> [Keyboard configuration](/index.php/Category:Keyboard_configuration "Category:Keyboard configuration") <small>(10) (also in [Keyboards](/index.php/Category:Keyboards "Category:Keyboards"))</small> |
 | <small>6.11.</small> [Linux console](/index.php/Category:Linux_console "Category:Linux console") <small>(5)</small> |
 | <small>6.12.</small> [Localization](/index.php/Category:Localization "Category:Localization") <small>(17)</small> |
-| <small>6.13.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(30)</small> |
+| <small>6.13.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(31)</small> |
 | <small>6.14.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(19)</small> |
-| <small>6.15.</small> [Security](/index.php/Category:Security "Category:Security") <small>(71)</small> |
+| <small>6.15.</small> [Security](/index.php/Category:Security "Category:Security") <small>(72)</small> |
 | <small>6.15.1.</small> [Cryptography](/index.php/Category:Cryptography "Category:Cryptography") <small>(5)</small> |
 | <small>6.15.1.1.</small> [Cryptocurrencies](/index.php/Category:Cryptocurrencies "Category:Cryptocurrencies") <small>(4) (also in [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications"))</small> |
 | <small>6.15.1.2.</small> [Encryption](/index.php/Category:Encryption "Category:Encryption") <small>(9)</small> |

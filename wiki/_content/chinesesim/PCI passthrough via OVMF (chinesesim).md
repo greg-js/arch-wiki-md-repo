@@ -1177,7 +1177,7 @@ user="*user*"
 
 ```
 
-如果仍然不能工作，确保你的用户已经加入了kvm和libvirt[组](/index.php/Groups "Groups")。
+如果仍然不能工作，确保你的用户已经加入了kvm和libvirt[组](/index.php/Group "Group")。
 
 ### 虚拟机关闭之后宿主机核心无响应
 

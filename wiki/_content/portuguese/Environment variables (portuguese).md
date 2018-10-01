@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Environment variables](/index.php/Environment_variables "Environment variables"). Data da última tradução: 2018-08-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=536709) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Environment variables](/index.php/Environment_variables "Environment variables"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=540287) na versão em inglês.
 
 Artigos relacionados
 
@@ -39,7 +39,7 @@ $ env EDITOR=vim xterm
 
 O comando *set*, embutido no [Bash](/index.php/Bash "Bash"), permite alterar as variáveis de opções shell e definir os parâmetros posicionais, ou para exibir os nomes das variáveis de shell. Para mais informações, veja [a documentação do *set*](http://www.gnu.org/software/bash/manual/bash.html#The-Set-Builtin).
 
-Cada processo armazena seu ambiente no arquivo `/proc/$PID/environ`. Esse arquivo contém um par de chave-valor delimitado por um caractere nulo (`\x0`). Um formato mais legível para humanos pode ser obtido com o [sed](/index.php/Utilit%C3%A1rios_principais#sed "Utilitários principais"), p.ex. `sed 's:\x0:
+Cada processo armazena seu ambiente no arquivo `/proc/$PID/environ`. Esse arquivo contém um par de chave-valor delimitado por um caractere nulo (`\x0`). Um formato mais legível para humanos pode ser obtido com o [sed](/index.php/Sed_(Portugu%C3%AAs) "Sed (Português)"), p.ex. `sed 's:\x0:
 :g' /proc/$PID/environ`.
 
 ## Definindo variáveis

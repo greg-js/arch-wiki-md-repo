@@ -39,7 +39,7 @@ A detailed accounting of what features have been implemented and what features a
 
 ## Installation
 
-*sway* can be [installed](/index.php/Installed "Installed") with the [sway](https://www.archlinux.org/packages/?name=sway) package. Note that this will install the stable, but abandoned, *0.15* version which is based on the (also abandoned) [wlc](https://github.com/Cloudef/wlc) library.
+*sway* can be [installed](/index.php/Install "Install") with the [sway](https://www.archlinux.org/packages/?name=sway) package. Note that this will install the stable, but abandoned, *0.15* version which is based on the (also abandoned) [wlc](https://github.com/Cloudef/wlc) library.
 
 At the time of writing, *sway 1.0-alpha* - based on the new [wlroots](https://github.com/swaywm/wlroots) library - is under active development and quite stable. Install the following two [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") packages instead: [wlroots-git](https://aur.archlinux.org/packages/wlroots-git/) and [sway-wlroots-git](https://aur.archlinux.org/packages/sway-wlroots-git/)
 

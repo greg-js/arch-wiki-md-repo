@@ -6,7 +6,7 @@ Related articles
 
 **Note:** Do not edit this page unless you are a channel op in #archlinux. You are welcome to use the discussion page.
 
-To join [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat "wikipedia:Internet Relay Chat") channels, you need an [IRC client](/index.php/List_of_applications/Internet#IRC_clients "List of applications/Internet"). The [Irssi](/index.php/Irssi "Irssi") client is included on the official [installation](/index.php/Installation "Installation") media.
+To join [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat "wikipedia:Internet Relay Chat") channels, you need an [IRC client](/index.php/List_of_applications/Internet#IRC_clients "List of applications/Internet"). The [Irssi](/index.php/Irssi "Irssi") client is included on the official [installation media](/index.php/Installation_media "Installation media").
 
 You are expected to familiarize yourself with our [Code of conduct](/index.php/Code_of_conduct "Code of conduct") and [Code of conduct#IRC](/index.php/Code_of_conduct#IRC "Code of conduct") before joining any of the official channels. For a list of commonly used abbreviations, see [Arch terminology](/index.php/Arch_terminology "Arch terminology") and [IRC Jargon](http://www.ircbeginner.com/ircinfo/abbreviations.html).
 

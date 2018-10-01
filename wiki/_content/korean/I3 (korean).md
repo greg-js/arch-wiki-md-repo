@@ -17,7 +17,7 @@
 
 ## 설치
 
-i3는 `[community](/index.php/Community "Community")` 저장소에 있다. [i3](https://www.archlinux.org/groups/x86_64/i3/) 그룹을 설치하면 그에 속하는 [i3lock](https://www.archlinux.org/packages/?name=i3lock), [i3status](https://www.archlinux.org/packages/?name=i3status) 와 [i3-wm](https://www.archlinux.org/packages/?name=i3-wm)이 설치된다. 또 다른 방법으로 그룹 내 각 꾸러미를 따로 설치할 수도 있다. 창 관리자는 [i3-wm](https://www.archlinux.org/packages/?name=i3-wm), 상태 표시 줄은 [i3status](https://www.archlinux.org/packages/?name=i3status), 화면 잠금기는 [i3lock](https://www.archlinux.org/packages/?name=i3lock)이다.
+i3는 [community](/index.php/Community_repository "Community repository") 저장소에 있다. [i3](https://www.archlinux.org/groups/x86_64/i3/) 그룹을 설치하면 그에 속하는 [i3lock](https://www.archlinux.org/packages/?name=i3lock), [i3status](https://www.archlinux.org/packages/?name=i3status) 와 [i3-wm](https://www.archlinux.org/packages/?name=i3-wm)이 설치된다. 또 다른 방법으로 그룹 내 각 꾸러미를 따로 설치할 수도 있다. 창 관리자는 [i3-wm](https://www.archlinux.org/packages/?name=i3-wm), 상태 표시 줄은 [i3status](https://www.archlinux.org/packages/?name=i3status), 화면 잠금기는 [i3lock](https://www.archlinux.org/packages/?name=i3lock)이다.
 
 개발 버전을 설치하려면 [i3-git](https://aur.archlinux.org/packages/i3-git/)를 [AUR](/index.php/AUR "AUR")에서 설치하라. 그놈 세션을 추가하려면 [i3-gnome](https://aur.archlinux.org/packages/i3-gnome/)를 설치하라.
 

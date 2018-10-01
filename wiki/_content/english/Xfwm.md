@@ -105,7 +105,7 @@ Go to `Accessibility` and check `Hide title of windows when maximized`.
 
 ### No icons shown in browser for downloaded items
 
-This is fixed by [installing](/index.php/Installing "Installing") [xfce4-settings](https://www.archlinux.org/packages/?name=xfce4-settings) from the [official repositories](/index.php/Official_repositories "Official repositories").
+This is fixed by [installing](/index.php/Install "Install") [xfce4-settings](https://www.archlinux.org/packages/?name=xfce4-settings) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ### Number of workspaces changes unexpectedly
 

@@ -81,9 +81,9 @@ GNOME has three available sessions, all using GNOME Shell.
 
 ## Starting
 
-GNOME can be started either graphically, using a [display manager](/index.php/Display_manager "Display manager"), or manually from the console.
+GNOME can be started either graphically with a [display manager](/index.php/Display_manager "Display manager") or manually from the console (some features may be missing).
 
-**Note:** Support for screen locking (and more) in GNOME is provided by GDM. If GNOME is not started with GDM, some features and functionality may be missing, in which case see (not limited to) [GTK+#Themes](/index.php/GTK%2B#Themes "GTK+") and [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
+**Note:** Support for screen locking (and more) in GNOME is provided by GDM. If GNOME is not started with GDM, another screen locker may be used. See [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
 
 ### Graphically
 

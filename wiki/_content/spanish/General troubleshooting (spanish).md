@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting"). Fecha de la última traducción/revisión: **2018-08-23**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=General_troubleshooting&diff=0&oldid=536162).
+**Estado de la traducción:** este artículo es una versión traducida de [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting"). Fecha de la última traducción/revisión: **2018-09-29**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=General_troubleshooting&diff=0&oldid=543735).
 
 Artículos relacionados
 
@@ -311,8 +311,6 @@ $ loginctl show-session $XDG_SESSION_ID
 ```
 
 Esta debe contener `Remote=no` y `Active=yes` en la salida. Si no es así, asegúrese de que X se ejecuta en la misma tty donde se produjo el inicio de sesión. Esto es necesario a fin de preservar la sesión iniciada. Esto es manejado de forma predeterminada por `/etc/X11/xinit/xserverrc`.
-
-También debe iniciarse una sesión de D-Bus junto con X. Véase [iniciar la sesión de usuario](/index.php/D-Bus_(Espa%C3%B1ol)#Iniciar_la_sesi.C3.B3n_de_usuario "D-Bus (Español)") para más información.
 
 Las acciones [polkit](/index.php/Polkit "Polkit") no requieren una configuración posterior. Algunas acciones polkit requieren una autenticación adicional, incluso con una sesión local. Un agente de autenticación polkit debe estar en ejecución para que esto funcione. Véase [Agentes de autenticación](/index.php/Polkit#Authentication_agents "Polkit") para más información.
 

@@ -152,7 +152,7 @@ And, if you installed e.g. fluidr3 as wiki says, set the location to:
 **Note:**
 
 *   Read the [mailing list thread](https://mailman.archlinux.org/pipermail/aur-general/2014-February/027378.html) about merging fluidr3 with [soundfont-fluid](https://www.archlinux.org/packages/?name=soundfont-fluid).
-*   Fluidsynth support is not included in the [vlc](https://www.archlinux.org/packages/?name=vlc) package, however it is included in [vlc-git](https://aur.archlinux.org/packages/vlc-git/).
+*   Fluidsynth support is not included in the [vlc](https://www.archlinux.org/packages/?name=vlc) package, however it is included in [vlc-git](https://aur.archlinux.org/packages/vlc-git/), or can be added with [vlc-plugin-fluidsynth](https://aur.archlinux.org/packages/vlc-plugin-fluidsynth/)
 
 #### Audacious
 

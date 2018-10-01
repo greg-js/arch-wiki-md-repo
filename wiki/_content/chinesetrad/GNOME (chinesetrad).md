@@ -412,7 +412,7 @@ The catalogue of extensions is available at [extensions.gnome.org](https://exten
 
 More information about GNOME shell extensions is available on the [GNOME Shell Extensions about page](https://extensions.gnome.org/about/).
 
-[Installing](/index.php/Installing "Installing") extensions via a package makes them available for all users of the system and automates the update process.
+[Installing](/index.php/Install "Install") extensions via a package makes them available for all users of the system and automates the update process.
 
 The [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) package provides a set of extensions maintained as part of the GNOME project (many of the included extensions are used by the GNOME Classic session).
 

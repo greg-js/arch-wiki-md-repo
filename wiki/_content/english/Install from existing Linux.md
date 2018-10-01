@@ -68,6 +68,8 @@ Then follow [Installation guide#Installation](/index.php/Installation_guide#Inst
 
 **Tip:** In order to avoid redownloading all the packages, consider following [Pacman/Tips and tricks#Network shared pacman cache](/index.php/Pacman/Tips_and_tricks#Network_shared_pacman_cache "Pacman/Tips and tricks") or using *pacstrap'*s `-c` option.
 
+**Tip:** When the grub boot-loader is used, the `grub-mkconfig` may detect devices incorrectly. This will result in `Error:no such device` error when trying to boot from the stick. To solve this problem, from the host running Arch Linux, mount the newly installed partitions, `arch-chroot` to the new partition, then install and configure grub. The last step may require disabling `lvmetad` from `/etc/lvm/lvm.conf` by setting `use_lvmetad=0`.
+
 **Note:** If you only want to create an exact copy of an existing Arch installation, it is also possible to just copy the filesystem to the new partition. With this method, you will still need to
 
 *   Create [`/etc/fstab`](/index.php/Installation_guide#Fstab "Installation guide") and edit `/etc/hostname`

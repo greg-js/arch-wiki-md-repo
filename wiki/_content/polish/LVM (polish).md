@@ -130,7 +130,7 @@ LVM zapewnia większą elastyczność niż zwykłe partycje dysku twardego:
 
 You should create your LVM Volumes between the [partitioning](/index.php/Partitioning "Partitioning") and [formatting](/index.php/File_systems#Create_a_file_system "File systems") steps of the [installation procedure](/index.php/Installation_guide "Installation guide"). Zamiast bezpośrednio formatować partycję, która ma być głównym systemem plików, system plików zostanie utworzony wewnątrz woluminu logicznego (LV).
 
-Upewnij się, że [lvm2](https://www.archlinux.org/packages/?name=lvm2) pakiet to [installed](/index.php/Installed "Installed").
+Upewnij się, że [lvm2](https://www.archlinux.org/packages/?name=lvm2) pakiet to [installed](/index.php/Install "Install").
 
 Szybki przegląd:
 

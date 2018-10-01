@@ -61,7 +61,7 @@ ABS is a similar concept. ABS is made up of a directory tree that can be checked
 
 ### SVN tree
 
-The *core*, *extra*, and *testing* [repositories](/index.php/Repositories "Repositories") are in the *packages* SVN repository for [checkout](#Non-recursive_checkout). The *community* and *multilib* repositories are in the *community* SVN repository.
+The *core*, *extra*, and *testing* [official repositories](/index.php/Official_repositories "Official repositories") are in the *packages* SVN repository for [checkout](#Non-recursive_checkout). The *community* and *multilib* repositories are in the *community* SVN repository.
 
 Each package has its own subdirectory. Within it there are `repos` and `trunk` directories. `repos` is further broken down by repository name (e.g., *core*) and architecture. PKGBUILD's and files found in `repos` are used in official builds. Files found in `trunk` are used by developers in preparation before being copied to `repos`.
 
@@ -109,7 +109,7 @@ To retrieve the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") required to build a c
 
 **Warning:** Do not download the whole repository; only follow the instructions below. The entire SVN repository is huge. Not only will it take an obscene amount of disk space, but it will also tax the archlinux.org server for you to download it. If you abuse this service, your address may be blocked. Never use the public SVN for any sort of scripting.
 
-To checkout the *core*, *extra*, and *testing* [repositories](/index.php/Repositories "Repositories"):
+To checkout the *core*, *extra*, and *testing* [official repositories](/index.php/Official_repositories "Official repositories"):
 
 ```
 $ svn checkout --depth=empty svn://svn.archlinux.org/packages

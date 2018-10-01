@@ -86,7 +86,7 @@ See [FAT#Writing to FAT32 as normal user](/index.php/FAT#Writing_to_FAT32_as_nor
 
 #### Mount tools
 
-Multiple [mount tools](/index.php/List_of_applications#Mount_tools "List of applications") facilitate mounting as a regular user.
+Multiple [mount tools](/index.php/List_of_applications/Utilities#Mount_tools "List of applications/Utilities") facilitate mounting as a regular user.
 
 ## Troubleshooting
 

@@ -21,8 +21,6 @@ In general, a [domain name](https://en.wikipedia.org/wiki/Domain_name "wikipedia
 
 ## Name Service Switch
 
-	*"NSS" redirects here. For Mozilla cryptographic libraries, see [Network Security Services](/index.php/Network_Security_Services "Network Security Services").*
-
 The [Name Service Switch](https://en.wikipedia.org/wiki/Name_Service_Switch "wikipedia:Name Service Switch") (NSS) facility is part of the GNU C Library ([glibc](https://www.archlinux.org/packages/?name=glibc)) and backs the [getaddrinfo(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/getaddrinfo.3) API, used to resolve domain names. NSS allows system databases to be provided by separate services, whose search order can be configured by the administrator in [nsswitch.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nsswitch.conf.5). The database responsible for domain name resolution is the `hosts` database, for which glibc offers the following services:
 
 *   `file`: reads the `/etc/hosts` file, see [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5)
@@ -137,7 +135,7 @@ Most DNS servers keep a log of IP addresses and sites visited on a more or less 
 
 ## Lookup utilities
 
-To query specific DNS servers and DNS/[DNSSEC](/index.php/DNSSEC "DNSSEC") records you can use dedicated DNS lookup utilities. These tools implement DNS themselves and do not use [NSS](/index.php/NSS "NSS").
+To query specific DNS servers and DNS/[DNSSEC](/index.php/DNSSEC "DNSSEC") records you can use dedicated DNS lookup utilities. These tools implement DNS themselves and do not use [NSS](#Name_Service_Switch).
 
 *   [ldns](https://www.archlinux.org/packages/?name=ldns) provides [drill(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/drill.1), which is a tool designed to retrieve information out of the DNS.
 

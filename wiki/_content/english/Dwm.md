@@ -9,21 +9,19 @@ Related articles
 
 *   [1 Installation](#Installation)
     *   [1.1 Configuration](#Configuration)
-        *   [1.1.1 Status bar](#Status_bar)
 *   [2 Starting](#Starting)
 *   [3 Usage](#Usage)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Statusbar configuration](#Statusbar_configuration)
         *   [4.1.1 Conky statusbar](#Conky_statusbar)
     *   [4.2 Restart dwm without logging out or closing programs](#Restart_dwm_without_logging_out_or_closing_programs)
-    *   [4.3 Make the right Alt key work as if it were Mod4 (Windows Key)](#Make_the_right_Alt_key_work_as_if_it_were_Mod4_.28Windows_Key.29)
+    *   [4.3 Bind the right Alt key to Mod4](#Bind_the_right_Alt_key_to_Mod4)
     *   [4.4 Space around font in dwm's bar](#Space_around_font_in_dwm.27s_bar)
     *   [4.5 Disable focus follows mouse behaviour](#Disable_focus_follows_mouse_behaviour)
-    *   [4.6 Make some windows start floating](#Make_some_windows_start_floating)
+    *   [4.6 Floating layout for some windows](#Floating_layout_for_some_windows)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Fixing misbehaving Java applications](#Fixing_misbehaving_Java_applications)
-    *   [5.2 Fixing the extra topbar that does not disappear when changing resolution/monitors](#Fixing_the_extra_topbar_that_does_not_disappear_when_changing_resolution.2Fmonitors)
-    *   [5.3 Fixing gaps around terminal windows](#Fixing_gaps_around_terminal_windows)
+    *   [5.2 Fixing gaps around terminal windows](#Fixing_gaps_around_terminal_windows)
 *   [6 Known issues](#Known_issues)
     *   [6.1 Crashes due to Emojis in some fonts](#Crashes_due_to_Emojis_in_some_fonts)
 *   [7 See also](#See_also)
@@ -38,30 +36,28 @@ dwm is configured at compile-time by editing some of its source files, specifica
 
 The official website has a number of [patches](http://dwm.suckless.org/patches/) that can add extra functionality to dwm. These patches primarily make changes to the `dwm.c` file but also make changes to the `config.h` file where appropriate. For information on applying patches, see the [Patching packages](/index.php/Patching_packages "Patching packages") article.
 
-#### Status bar
-
-See the [dwmstatus](https://dwm.suckless.org/dwmstatus/) section on the dwm website. Also see the [#Statusbar configuration](#Statusbar_configuration) section.
-
 ## Starting
 
-Select *Dwm* from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice. Alternatively, to start dwm with [startx](/index.php/Startx "Startx") append the following to `~/.xinitrc`:
+Select *Dwm* from the menu in a [display manager](/index.php/Display_manager "Display manager") of choice. Alternatively, to start dwm with [startx](/index.php/Startx "Startx") append `exec dwm` to `~/.xinitrc` and prepend other programs to execute them as well, for example:
 
 ```
-exec dwm
+redshift -O3500; xset r rate 300 50; exec dwm
 
 ```
 
 ## Usage
 
-Consult the [dwm tutorial](https://dwm.suckless.org/tutorial) for information on basic dwm usage. Additionally see [dwm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dwm.1).
+See the [dwm tutorial](https://dwm.suckless.org/tutorial) for information on basic dwm usage.
 
 ## Tips and tricks
 
 ### Statusbar configuration
 
+For more examples of status bars see [[1]](https://dwm.suckless.org/status_monitor/).
+
 **Note:** The following requires the [xorg-xsetroot](https://www.archlinux.org/packages/?name=xorg-xsetroot) package to be installed.
 
-Dwm reads the name of the root window and redirects it to the statusbar. The root window is the window within which all other windows are drawn and arranged by the window manager. Like any other window, the root window has a title/name, but it is usually undefined because the root window always runs in the background.
+dwm reads the name of the root window and redirects it to the statusbar. The root window is the window within which all other windows are drawn and arranged by the window manager. Like any other window, the root window has a title/name, but it is usually undefined because the root window always runs in the background.
 
 The information that you want dwm to show in the statusbar should be defined with `xsetroot -name ""` command in `~/.xinitrc` or `~/.xprofile` (if you are using a [display manager](/index.php/Display_manager "Display manager")). For example:
 
@@ -86,8 +82,6 @@ exec dwm
 In this case the date is shown in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601 "wikipedia:ISO 8601") format and [PCManFM](/index.php/PCManFM "PCManFM") is launched at startup.
 
 **Note:** It is not recommended to set the update interval equal to zero or remove the "sleep" line entirely since this will cause CPU usage to rise substantially (you can assess the effect with *top* and [powertop](/index.php/Powertop "Powertop")).
-
-More examples of statusbars are included [on the suckless wiki](https://dwm.suckless.org/dwmstatus/).
 
 #### Conky statusbar
 
@@ -154,9 +148,9 @@ do
 done
 ```
 
-### Make the right Alt key work as if it were Mod4 (Windows Key)
+### Bind the right Alt key to Mod4
 
-When using Mod4 (the Super/Windows Key) as the `MODKEY`, it may be equally convenient to have the right Alt key (`Alt_R`) act as `Mod4`. This will allow you to perform otherwise awkward keystrokes one-handed, such as zooming with `Alt_R`+`Enter`.
+When using Mod4 (the Super/Windows Key) as the `MODKEY`, it may be equally convenient to have the right `Alt` key (`Alt_R`) act as `Mod4`. This will allow you to perform otherwise awkward keystrokes one-handed, such as zooming with `Alt_R`+`Enter`.
 
 First, find out which keycode is assigned to `Alt_R`:
 
@@ -191,7 +185,7 @@ To disable focus follows mouse behaviour comment out the following line in defin
 
 Note that this change can cause some difficulties; the first click on an inactive window will only bring the focus to it. To interact with window contents (buttons, fields etc) you need to click again. Also, if you have several monitors, you may notice that the keyboard focus does not switch to another monitor activated by clicking.
 
-### Make some windows start floating
+### Floating layout for some windows
 
 For some windows, such as preferences dialogs, it does not make sense for these windows to be tiled - they should be free-floating instead. For example, to make Firefox's preferences dialog float, add the following to your rules array in `config.h`:
 
@@ -205,12 +199,6 @@ For some windows, such as preferences dialogs, it does not make sense for these 
 ### Fixing misbehaving Java applications
 
 Try setting `export _JAVA_AWT_WM_NONREPARENTING=1`. Also see the [Java](/index.php/Java#Non-reparenting_window_managers_.2F_Grey_window_.2F_Programs_not_drawing_properly "Java") page.
-
-### Fixing the extra topbar that does not disappear when changing resolution/monitors
-
-**Note:** This patch is intended for dwm-6.0\. The development version of dwm has already implemented this.
-
-When resizing or connecting/disconnecting different monitors there may be a remnant of the topbar stuck on the screen which cannot be removed. To fix this bug, rebuild dwm with [this patch](http://ix.io/fea).
 
 ### Fixing gaps around terminal windows
 
@@ -234,9 +222,9 @@ X Error of failed request: BadLength (poly request too large or internal Xlib le
 
 ```
 
-This only occurs with some fonts, such as [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) and [bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont). See [[1]](https://lists.suckless.org/dev/1608/30245.html), [[2]](https://lists.suckless.org/dev/1610/30710.html), [[3]](https://bbs.archlinux.org/viewtopic.php?id=226928), and [[4]](https://www.reddit.com/r/archlinux/comments/703ayu/anyone_with_dwm_and_notofontsemoji/). To workaround this uninstall the problematic font or use a different font for dwm.
+This only occurs with some fonts, such as [noto-fonts-emoji](https://www.archlinux.org/packages/?name=noto-fonts-emoji) and [bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont). See [[2]](https://lists.suckless.org/dev/1608/30245.html), [[3]](https://lists.suckless.org/dev/1610/30710.html), [[4]](https://bbs.archlinux.org/viewtopic.php?id=226928), and [[5]](https://www.reddit.com/r/archlinux/comments/703ayu/anyone_with_dwm_and_notofontsemoji/). To workaround this uninstall the problematic font or use a different font for dwm.
 
-Alternatively see [[5]](https://lists.suckless.org/dev/1610/30720.html) for a possible fix.
+Alternatively see [[6]](https://lists.suckless.org/dev/1610/30720.html) for a possible fix.
 
 ## See also
 

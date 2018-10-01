@@ -20,7 +20,7 @@ Apsilankykite **[Table of contents (Lietuviškai)](/index.php/Table_of_contents_
 
 	Arch Linux sistemos įdiegimo vadovas.
 
-	[General Recommendations (Lietuviškai)](/index.php?title=General_Recommendations_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "General Recommendations (Lietuviškai) (page does not exist)")
+	[General recommendations (Lietuviškai)](/index.php/General_recommendations_(Lietuvi%C5%A1kai) "General recommendations (Lietuviškai)")
 
 	Anotuotas pamokų ir populiarių straipsnių indeksas
 
@@ -42,7 +42,7 @@ Apsilankykite **[Table of contents (Lietuviškai)](/index.php/Table_of_contents_
 
 	Aprašomi įvairūs būdai kaip archer'iai galima prisidėti prie Arch bendruomenės.
 
-	[International communities (Lietuviškai)](/index.php?title=International_communities_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "International communities (Lietuviškai) (page does not exist)")
+	[International communities (Lietuviškai)](/index.php/International_communities_(Lietuvi%C5%A1kai) "International communities (Lietuviškai)")
 
 	Nuorodos į viso pasaulio Arch Linux bendruomenes.
 

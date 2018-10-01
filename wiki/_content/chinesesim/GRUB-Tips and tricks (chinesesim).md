@@ -184,7 +184,7 @@ GRUB_GFXPAYLOAD_LINUX=keep
 **Note:**
 
 *   如果示例不起作用,请尝试用`vbemode="0x105"`代替`gfxmode="1024x768x32"`.请使用适合你屏幕的分辨率.
-*   可以通过`# hwinfo --framebuffer`命令来显示所有可以使用的分辨率模式(hwinfo在[community](/index.php/Community "Community")里),在GRUB命令行下,可以使用`vbeinfo` 命令
+*   可以通过`# hwinfo --framebuffer`命令来显示所有可以使用的分辨率模式(hwinfo在[community](/index.php/Community_repository "Community repository")里),在GRUB命令行下,可以使用`vbeinfo` 命令
 
 这种方法不管用的话,可以试试老的`vga=`方法.将它添加到`"GRUB_CMDLINE_LINUX_DEFAULT="`里面就行了,比如 `"GRUB_CMDLINE_LINUX_DEFAULT="quiet splash vga=792"` 这会将系统的分辨率设定为1024*768
 

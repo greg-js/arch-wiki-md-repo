@@ -203,7 +203,7 @@ $ diskutil unmountDisk /dev/diskX
 Now copy the ISO image file to the device. The `dd` command is similar to its Linux counterpart, but notice the 'r' before 'disk' for raw mode which makes the transfer much faster:
 
 ```
-# dd if=path/to/arch.iso of=/dev/**r**diskX bs=1M
+# dd if=path/to/arch.iso of=/dev/**r**diskX bs=1m
 
 ```
 

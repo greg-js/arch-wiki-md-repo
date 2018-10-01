@@ -16,7 +16,8 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language) "wi
 *   [1 Installation](#Installation)
     *   [1.1 Python 3](#Python_3)
     *   [1.2 Python 2](#Python_2)
-    *   [1.3 Old versions](#Old_versions)
+    *   [1.3 Alternative implementations](#Alternative_implementations)
+    *   [1.4 Old versions](#Old_versions)
 *   [2 Package management](#Package_management)
 *   [3 Widget bindings](#Widget_bindings)
 *   [4 Tips and tricks](#Tips_and_tricks)
@@ -100,6 +101,16 @@ $ which python
 ```
 
 A similar approach in tricking the environment, which also relies on `#!/usr/bin/env python` to be called by the script in question, is to use a [virtual environment](#Virtual_environment).
+
+### Alternative implementations
+
+Sections above refer to the reference implementation of Python, called CPython. However, there are also other implementations available - the most popular ones:
+
+*   [PyPy](/index.php/PyPy "PyPy") is a Python 2.7/3.5 implementation utilizing a JIT compiler. It is generally faster and uses less memory, but is not fully compatible with CPython (although the majority of packages and code will work without any changes).
+*   [Jython](http://www.jython.org/) is a Python 2.7 implementation built in Java. It allows easy integration of Python and Java code, but is not fully compatible with CPython libraries. It is often used to provide Python as a scripting language in a bigger Java application.
+*   [IronPython](http://ironpython.net/) is a Python 2.7 implementation built in .NET - it achieves the same goals as Jython, but for .NET languages (like C#/VB).
+*   [MicroPython](https://micropython.org/) is a limited Python 3.4 implementation targeting microcontrollers and other embedded environments (like UEFI), but is incompatible with most standard packages due to [minor syntax changes and severely limited standard library](http://docs.micropython.org/en/latest/pyboard/genrst/index.html). It is often used for prototyping in with embedded environments (as it provides a Python REPL).
+*   [More implementations are available](https://en.wikipedia.org/wiki/Python_(programming_language)#Implementations), although most are no longer maintained due to improvements in the most popular ones.
 
 ### Old versions
 

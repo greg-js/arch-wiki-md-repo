@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [IRC channel](/index.php/IRC_channel "IRC channel"). Data da última tradução: 2018-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=IRC_channel&diff=0&oldid=534201) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [IRC channel](/index.php/IRC_channel "IRC channel"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=IRC_channel&diff=0&oldid=545060) na versão em inglês.
 
 Artigos relacionados
 
@@ -8,7 +8,7 @@ Artigos relacionados
 
 **Nota:** Não edite a [página em inglês](/index.php/IRC_channel "IRC channel") a menos que você seja um operador de canal no #archlinux. Você é bem-vindo para usar a [página de discussão](/index.php/Talk:IRC_channel "Talk:IRC channel").
 
-Para entrar nos canais [IRC](https://en.wikipedia.org/wiki/pt:Internet_Relay_Chat "wikipedia:pt:Internet Relay Chat"), você precisa de um [cliente IRC](/index.php/List_of_applications/Internet#IRC_clients "List of applications/Internet"). O cliente [Irssi](/index.php/Irssi "Irssi") é incluído na mídia oficial de [instalação](/index.php/Instala%C3%A7%C3%A3o "Instalação").
+Para entrar nos canais [IRC](https://en.wikipedia.org/wiki/pt:Internet_Relay_Chat "wikipedia:pt:Internet Relay Chat"), você precisa de um [cliente IRC](/index.php/List_of_applications/Internet#IRC_clients "List of applications/Internet"). O cliente [Irssi](/index.php/Irssi "Irssi") é incluído na [mídia de instalação](/index.php/M%C3%ADdia_de_instala%C3%A7%C3%A3o "Mídia de instalação") oficial.
 
 Espera-se que você esteja familiarizado com nosso [Código de conduta](/index.php/C%C3%B3digo_de_conduta "Código de conduta") e o [Código de conduta#IRC](/index.php/C%C3%B3digo_de_conduta#IRC "Código de conduta") antes de entrar em qualquer um dos canais oficiais. Para uma lista da s abreviações comumente usadas, veja [Terminologia do Arch](/index.php/Terminologia_do_Arch "Terminologia do Arch") e [Jargão do IRC](http://www.ircbeginner.com/ircinfo/abbreviations.html).
 
@@ -87,7 +87,7 @@ O tamanho de nossa comunidade levou à criação de múltiplos canais IRC. Para 
 | [#archlinux-reproducible](ircs://chat.freenode.net/archlinux-reproducible) | Canal de discussão para atingir compilações reproduzíveis. |
 | [#archlinux-security](ircs://chat.freenode.net/archlinux-security) | Discussão sobre questões de segurança em pacotes do Arch. |
 | [#archlinux-testing](ircs://chat.freenode.net/archlinux-testing) | Canal de discussão a cerca dos repositórios de teste. |
-| [#archlinux-wiki](ircs://chat.freenode.net/archlinux-wiki) | Discussão sobre [ArchWiki](/index.php/ArchWiki:About_(Portugu%C3%AAs) "ArchWiki:About (Português)"), seus artigos e os [Fóruns do Arch Linux](https://bbs.archlinux.org/). |
+| [#archlinux-wiki](ircs://chat.freenode.net/archlinux-wiki) | Discussão sobre [ArchWiki](/index.php/ArchWiki_(Portugu%C3%AAs) "ArchWiki (Português)"), seus artigos e os [Fóruns do Arch Linux](https://bbs.archlinux.org/). |
 | [#archlinux-women](ircs://chat.freenode.net/archlinux-women) | Discutindo gênero e igualdade, principalmente em inglês. |
 | [#archlinux-proaudio](ircs://chat.freenode.net/archlinux-proaudio) | Discussão de [Arch Linux Pro Audio](/index.php/Professional_audio "Professional audio"). Usuários também no #archaudio não oficial |
 

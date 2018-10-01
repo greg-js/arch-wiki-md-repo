@@ -58,7 +58,7 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
 
 ## Installation
 
-[Install](/index.php/Install "Install") [lightdm](https://www.archlinux.org/packages/?name=lightdm).
+[Install](/index.php/Install "Install") the [lightdm](https://www.archlinux.org/packages/?name=lightdm) package.
 
 **Tip:** Stable releases are even-numbered (1.8, 1.10) while development releases are odd-numbered (1.9, 1.11). These development releases are available with [lightdm-devel](https://aur.archlinux.org/packages/lightdm-devel/). Also available is [lightdm-git](https://aur.archlinux.org/packages/lightdm-git/).
 
@@ -113,7 +113,7 @@ $ dm-tool --help
 
 ### User switching
 
-**Warning:** The use of lightDM's built-in screen lockers like `dm-tool lock` or `dm-tool switch-to-greeter` [are **not** recommended](https://bbs.archlinux.org/viewtopic.php?pid=1712213#p1712213). Use [light-locker](#Lock_the_screen_using_light-locker) or something from [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
+**Warning:** The use of lightDM's built-in screen lockers like `dm-tool lock` or `dm-tool switch-to-greeter` are [**not** recommended](https://bbs.archlinux.org/viewtopic.php?pid=1712213#p1712213). Use [light-locker](#Lock_the_screen_using_light-locker) or something from [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
 
 LightDM's *dm-tool* command can be used to allow multiple users to be logged in on separate ttys. The following will send a signal requesting that the current session be locked and then will initiate a switch to LightDM's greeter, allowing a new user to log in to the system.
 

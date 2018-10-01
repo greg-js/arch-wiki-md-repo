@@ -8,7 +8,7 @@
 
 ## Installation
 
-Ps2pdf is provided by [installing](/index.php/Installing "Installing") the [ghostscript](https://www.archlinux.org/packages/?name=ghostscript) package.
+[Install](/index.php/Install "Install") the [ghostscript](https://www.archlinux.org/packages/?name=ghostscript) package.
 
 ## How do I create a PDF from PS the easy way?
 

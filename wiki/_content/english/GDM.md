@@ -43,7 +43,7 @@ From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "The GN
 
 ## Installation
 
-GDM can be [installed](/index.php/Installed "Installed") with the [gdm](https://www.archlinux.org/packages/?name=gdm) package, and it is installed as part of the [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group.
+GDM can be [installed](/index.php/Install "Install") with the [gdm](https://www.archlinux.org/packages/?name=gdm) package, and it is installed as part of the [gnome](https://www.archlinux.org/groups/x86_64/gnome/) group.
 
 If you would prefer to use legacy GDM which was used in GNOME 2 and has its own configuration utility, install the [gdm-old](https://aur.archlinux.org/packages/gdm-old/) package. Note that the rest of this article discusses current GDM, not legacy GDM, unless indicated otherwise.
 
@@ -386,7 +386,7 @@ auth sufficient pam_succeed_if.so user ingroup nopasswdlogin
 
 ```
 
-Then, add the group `nopasswdlogin` to your system. See [Groups](/index.php/Groups "Groups") for group descriptions and group management commands.
+Then, add the group `nopasswdlogin` to your system. See [Groups](/index.php/Group "Group") for group descriptions and group management commands.
 
 Now, add your user to the `nopasswdlogin` group and you will only have to click on your username to login.
 
@@ -450,9 +450,9 @@ You should be able to login as root after restarting GDM.
 
 #### Hide user from login list
 
-The users for the gdm user list are gathered by [AccountsService](https://www.freedesktop.org/wiki/Software/AccountsService/). It will automatically hide system users (UID < 1000). To hide ordinary users from the login list create or edit a file named after the user to hide in `/var/lib/AccountsService/users/` to contain at least:
+The users for the gdm user list are gathered by [AccountsService](https://www.freedesktop.org/wiki/Software/AccountsService/). It will automatically hide system users (UID < 1000). To hide ordinary users from the login list create or edit a file named after the user to hide in `/var/lib/accountsservice/users/` to contain at least:
 
- `/var/lib/AccountsService/users/*username*` 
+ `/var/lib/accountsservice/users/*username*` 
 ```
 [User]
 SystemAccount=true
@@ -559,7 +559,7 @@ $ IFS=$'
 
 ```
 
-where *username* is your user's name.
+where `*username*` is your user's name.
 
 Or to simply disable auto-suspend (also run the command with `ac` replaced with `battery` to also disable it while running on battery):
 

@@ -1,3 +1,8 @@
+Related articles
+
+*   [Laptop](/index.php/Laptop "Laptop")
+*   [Laptop/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo")
+
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -12,7 +17,7 @@
 
 ## Installation
 
-Use the [Installation](/index.php/Installation "Installation") guide.
+Use the [Installation guide](/index.php/Installation_guide "Installation guide").
 
 ## Configuration
 

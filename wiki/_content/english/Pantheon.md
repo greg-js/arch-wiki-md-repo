@@ -43,7 +43,7 @@ Although the [elementary OS](https://elementary.io/) release schedule and toolch
 
 **Note:** The pantheon repository is no more, from now on pantheon packages will be available in the extra-alucryd repository, and they will be signed.
 
-[Alucryd's unofficial repo](https://github.com/alucryd/aur-alucryd/tree/master/pantheon) contains more and more up-to-date packages than the few available in [community](/index.php/Community "Community"). To use it add the following lines at the top of your sources in `/etc/pacman.conf`:
+[Alucryd's unofficial repo](https://github.com/alucryd/aur-alucryd/tree/master/pantheon) contains more and more up-to-date packages than the few available in the [community repository](/index.php/Community_repository "Community repository"). To use it add the following lines at the top of your sources in `/etc/pacman.conf`:
 
 ```
 [extra-alucryd]

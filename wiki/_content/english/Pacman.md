@@ -645,7 +645,7 @@ If *pacman* is interrupted while changing the database, this stale lock file can
 
 This error manifests as `Not found in sync db`, `Target not found` or `Failed retrieving file`.
 
-Firstly, ensure the package actually exists. If certain the package exists, your package list may be out-of-date. Try running `pacman -Syyu` to force a refresh of all package lists and upgrade. Also make sure the selected [mirrors](/index.php/Mirrors "Mirrors") are up-to-date and [repositories](/index.php/Repositories "Repositories") are correctly configured.
+Firstly, ensure the package actually exists. If certain the package exists, your package list may be out-of-date. Try running `pacman -Syyu` to force a refresh of all package lists and upgrade. Also make sure the selected [mirrors](/index.php/Mirrors "Mirrors") are up-to-date and [repositories](#Repositories_and_mirrors) are correctly configured.
 
 It could also be that the repository containing the package is not enabled on your system, e.g. the package could be in the [multilib](/index.php/Multilib "Multilib") repository, but *multilib* is not enabled in your `pacman.conf`.
 

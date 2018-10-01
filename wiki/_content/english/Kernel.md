@@ -84,7 +84,7 @@ If you have not actually patched or customized a kernel before it is not that ha
 
 Some of the listed packages may also be available as binary packages via [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories").
 
-*   **AppArmor** — The [Mandatory Access Control](https://en.wikipedia.org/wiki/Mandatory_access_control "wikipedia:Mandatory access control") (MAC) system, implemented upon the [Linux Security Modules](https://en.wikipedia.org/wiki/Linux_Security_Modules "wikipedia:Linux Security Modules") (LSM).
+*   **AppArmor** — The [Mandatory Access Control](https://en.wikipedia.org/wiki/Mandatory_access_control "wikipedia:Mandatory access control") (MAC) system, implemented upon the [Linux Security Modules](https://en.wikipedia.org/wiki/Linux_Security_Modules "wikipedia:Linux Security Modules") (LSM). While [linux](https://www.archlinux.org/packages/?name=linux) supports apparmor this kernel has the required [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") enabled by default.
 
 	[AppArmor](/index.php/AppArmor "AppArmor") || [linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/)
 

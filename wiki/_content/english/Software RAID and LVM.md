@@ -371,7 +371,7 @@ Since the installer builds the initrd using `/etc/mdadm.conf` in the target syst
 
 ### Prepare hard drive
 
-Follow the directions outlined the in [Installation](/index.php/Installation "Installation") section until you reach the *Prepare Hard Drive* section. Skip the first two steps and navigate to the *Manually Configure block devices, filesystems and mountpoints* page. Remember to only configure the PVs (e.g. `/dev/VolGroupArray/lvhome`) and **not** the actual disks (e.g. `/dev/sda1`).
+Follow the directions outlined the in [#Installation](#Installation) section until you reach the *Prepare Hard Drive* section. Skip the first two steps and navigate to the *Manually Configure block devices, filesystems and mountpoints* page. Remember to only configure the PVs (e.g. `/dev/VolGroupArray/lvhome`) and **not** the actual disks (e.g. `/dev/sda1`).
 
 **Warning:** `mkfs.xfs` will not align the chunk size and stripe size for optimum performance (see: [Optimum RAID](http://www.linuxpromagazine.com/Issues/2009/108/RAID-Performance)).
 

@@ -21,7 +21,7 @@ This article gives several methods to spoof a Media Access Control (MAC) address
 
 ## Manually
 
-There are two methods for spoofing a MAC address: [installing](/index.php/Installing "Installing") and configuring either [iproute2](https://www.archlinux.org/packages/?name=iproute2) or [macchanger](https://www.archlinux.org/packages/?name=macchanger). Both of them are outlined below.
+There are two methods for spoofing a MAC address: [installing](/index.php/Install "Install") and configuring either [iproute2](https://www.archlinux.org/packages/?name=iproute2) or [macchanger](https://www.archlinux.org/packages/?name=macchanger). Both of them are outlined below.
 
 ### iproute2
 

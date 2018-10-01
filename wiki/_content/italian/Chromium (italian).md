@@ -280,7 +280,7 @@ Per usare KParts Plugin, installare [kpartsplugin](https://www.archlinux.org/pac
 
 ### Certificati
 
-Chromium usa [NSS](/index.php/Nss "Nss") per la gestione dei certificati. I certificati possono essere gestiti (e aggiunti) andando in Opzioni -> Preferenze -> Roba da smanettoni -> Gestisci i certificati.
+Chromium usa [NSS](/index.php/Network_Security_Services "Network Security Services") per la gestione dei certificati. I certificati possono essere gestiti (e aggiunti) andando in Opzioni -> Preferenze -> Roba da smanettoni -> Gestisci i certificati.
 
 ## Tips & tricks
 

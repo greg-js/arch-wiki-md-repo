@@ -91,7 +91,7 @@ passwordeval    "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.msmtp-gm
 
 To send mails using the `mail` command you must install the package [s-nail](https://www.archlinux.org/packages/?name=s-nail), which also provides the `mailx` command. You will also need to provide a `sendmail`-compatible MTA, either by installing [msmtp-mta](https://www.archlinux.org/packages/?name=msmtp-mta) (which symlinks `sendmail` to `msmtp`) or by editing `/etc/mail.rc` to set the sendmail path:
 
- `/etc/mail.rc`  `set sendmail=/usr/bin/msmtp` 
+ `/etc/mail.rc`  `set mta=/usr/bin/msmtp` 
 
 A `.msmtprc` file will need to be in the home of every user who wants to send mail or alternatively the system wide `/etc/msmtprc` can be used.
 

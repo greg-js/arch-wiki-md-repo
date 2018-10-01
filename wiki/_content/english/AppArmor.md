@@ -4,7 +4,7 @@ Related articles
 *   [SELinux](/index.php/SELinux "SELinux")
 *   [TOMOYO Linux](/index.php/TOMOYO_Linux "TOMOYO Linux")
 
-[AppArmor](https://en.wikipedia.org/wiki/AppArmor "wikipedia:AppArmor") is a [Mandatory Access Control](/index.php/Mandatory_Access_Control "Mandatory Access Control") (MAC) system, implemented upon the [Linux Security Modules](https://en.wikipedia.org/wiki/Linux_Security_Modules "wikipedia:Linux Security Modules") (LSM).
+[AppArmor](https://gitlab.com/apparmor) is a [Mandatory Access Control](/index.php/Mandatory_Access_Control "Mandatory Access Control") (MAC) system, implemented upon the [Linux Security Modules](https://en.wikipedia.org/wiki/Linux_Security_Modules "wikipedia:Linux Security Modules") (LSM).
 
 AppArmor, like most other LSMs, supplements rather than replaces the default Discretionary Access Control (DAC). As such it's impossible to grant a process more privileges than it had in the first place.
 
@@ -29,7 +29,9 @@ Every breach of policy triggers a message in the system log, and AppArmor can be
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Get desktop notification on DENIED actions](#Get_desktop_notification_on_DENIED_actions)
     *   [4.2 Cache profiles](#Cache_profiles)
-*   [5 See also](#See_also)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Failing to start Samba SMB/CIFS server](#Failing_to_start_Samba_SMB.2FCIFS_server)
+*   [6 See also](#See_also)
 
 ## Installation
 
@@ -64,21 +66,7 @@ CONFIG_DEFAULT_SECURITY_APPARMOR=y
 
 ### Userspace Tools
 
-The userspace tools and libraries to control AppArmor are supplied by [apparmor](https://www.archlinux.org/packages/?name=apparmor) or [apparmor](https://aur.archlinux.org/packages/apparmor/).
-
-**Note:** The [apparmor](https://aur.archlinux.org/packages/apparmor/) package will no longer be updated, it will be replaced by the [apparmor](https://www.archlinux.org/packages/?name=apparmor) package that is currently in *community-testing*. To use it you must enable the [testing repositories](/index.php/Official_repositories#Testing_repositories "Official repositories").
-
-The [apparmor](https://aur.archlinux.org/packages/apparmor/) package is a split package which consists of following sub-packages:
-
-*   [apparmor](https://aur.archlinux.org/packages/apparmor/) (meta package)
-*   [apparmor-libapparmor](https://aur.archlinux.org/packages/apparmor-libapparmor/)
-*   [apparmor-utils](https://aur.archlinux.org/packages/apparmor-utils/)
-*   [apparmor-parser](https://aur.archlinux.org/packages/apparmor-parser/)
-*   [apparmor-profiles](https://aur.archlinux.org/packages/apparmor-profiles/)
-*   [apparmor-pam](https://aur.archlinux.org/packages/apparmor-pam/)
-*   [apparmor-vim](https://aur.archlinux.org/packages/apparmor-vim/)
-
-To load all AppArmor profiles on startup, [enable](/index.php/Enable "Enable") `apparmor.service`.
+The userspace tools and libraries to control AppArmor are supplied by [apparmor](https://www.archlinux.org/packages/?name=apparmor) package. To load all AppArmor profiles on startup, [enable](/index.php/Enable "Enable") `apparmor.service`.
 
 ### Testing
 
@@ -110,9 +98,14 @@ apparmor module is loaded.
 
 ## Disabling
 
-To disable AppArmor for the current session, [stop](/index.php/Stop "Stop") `apparmor.service`, or [disable](/index.php/Disable "Disable") it to prevent it from starting at the next boot.
+To disable AppArmor by unloading all profiles for the current session, run :
 
-Alternatively you may choose to disable the kernel modules required by AppArmor by appending `apparmor=0 security=""` to the [kernel boot parameters](/index.php/Kernel_parameters "Kernel parameters").
+```
+# aa-teardown 
+
+```
+
+To prevent from loading AppArmor profiles at the next boot [disable](/index.php/Disable "Disable") `apparmor.service`. To prevent the kernel from loading AppArmor, remove `apparmor=1 security="apparmor"` from the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
 ## Configuration
 
@@ -164,7 +157,7 @@ Most common use cases are covered by the following statements:
 
 Remember that those permission do not allow binaries to exceed the permission dictated by the Discretionary Access Control (DAC).
 
-This is merely a short overview, for a more detailed guide be sure to have a look at the [documentation](https://gitlab.com/apparmor/apparmor/wikis/AppArmor_Core_Policy_Reference).
+This is merely a short overview, for a more detailed guide be sure to have a look at the [apparmor.d(5)](http://manpages.ubuntu.com/manpages/bionic/man5/apparmor.d.5.html) man page and [documentation](https://gitlab.com/apparmor/apparmor/wikis/AppArmor_Core_Policy_Reference).
 
 ### Parsing profiles
 
@@ -174,14 +167,51 @@ To load (enforce or complain), unload, reload, cache and stat profiles use `appa
 
 ### Get desktop notification on DENIED actions
 
-The notify daemon displays desktop notifications whenever AppArmor denies a program access. The script must be started at each boot and needs a few additional parameters:
+The notification daemon displays desktop notifications whenever AppArmor denies a program access. To automatically start `aa-notify` daemon on login follow below steps:
+
+1\. Install and enable [Audit framework](/index.php/Audit_framework "Audit framework").
+
+2\. Allow your desktop user to read audit logs with [Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists"):
 
 ```
-# aa-notify -p -f /var/log/audit/audit.log --display $DISPLAY
+# setfacl -m u:<user>:rx /var/log/audit   # allow <user> to read and navigate below /var/log/audit directory
+# setfacl -R -m u:<user>:r /var/log/audit # allow <user> to read all files in /var/log/audit
+# setfacl -dm u:<user>:r /var/log/audit   # allow <user> to read all new files created inside /var/log/audit
 
 ```
 
-The daemon relies on the auditing events being logged to a text file which can be specified using `-f`. To circumvent [systemd](/index.php/Systemd "Systemd") not logging to a file it is necessary to [enable](/index.php/Enable "Enable") `auditd.service` and pass its log file to `aa-notify`. No special auditing rules are necessary for this to work, therefore the overhead is not as significant as it was when [#Auditing and generating profiles](#Auditing_and_generating_profiles).
+3\. Create desktop launcher with the below content:
+
+ `~/.config/autostart/apparmor-notify.desktop` 
+```
+[Desktop Entry]
+Type=Application
+Name=AppArmor Notify
+Comment=Receive on screen notifications of AppArmor denials
+TryExec=/usr/bin/aa-notify
+Exec=/usr/bin/aa-notify -p -s 1 -w 60
+StartupNotify=false
+NoDisplay=true
+```
+
+4\. Re-login and check if `aa-notify` daemon is running:
+
+```
+$ ps aux |grep aa-notify
+
+```
+
+**Note:** Depending on your specific system configuration there could be A LOT of notifications displayed.
+
+To undo above, run:
+
+```
+# setfacl -R -b /var/log/audit
+$ rm ~/.config/autostart/apparmor-notify.desktop
+
+```
+
+For more information, see [aa-notify(8)](https://manpages.debian.org/unstable/apparmor-notify/aa-notify.8.en.html).
 
 ### Cache profiles
 
@@ -189,18 +219,20 @@ Since AppArmor has to translate the configured profiles into a binary format it 
 
 To circumvent some of those problems AppArmor can cache profiles in `/etc/apparmor.d/cache/`. However this behaviour is disabled by default therefore it must be done manually with `apparmor_parser`. In order to write to the cache use `-W` (overwrite existing profiles with `-T`) and reload the profiles using `-r`. Refer to [#Parsing profiles](#Parsing_profiles) for a brief overview of additional arguments.
 
+## Troubleshooting
+
+### Failing to start Samba SMB/CIFS server
+
+See [Samba#Permission issues on AppArmor](/index.php/Samba#Permission_issues_on_AppArmor "Samba").
+
 ## See also
 
+*   [Wikipedia:AppArmor](https://en.wikipedia.org/wiki/AppArmor "wikipedia:AppArmor")
 *   [AppArmor wiki](https://gitlab.com/apparmor/apparmor/wikis/home)
 *   [AppArmor Core Policy Reference](https://gitlab.com/apparmor/apparmor/wikis/AppArmor_Core_Policy_Reference) — Detailed description of available options in a profile
 *   [Ubuntu Tutorial](https://ubuntuforums.org/showthread.php?t=1008906) — General overview of available utilities and profile creation
 *   [Ubuntu Wiki](https://help.ubuntu.com/community/AppArmor) — Basic command overview
 *   [AppArmor Versions](https://gitlab.com/apparmor/apparmor/wikis/AppArmor_versions) — Version overview and links to the respective release notes
-*   [apparmor.d(5)](http://manpages.ubuntu.com/manpages/bionic/man5/apparmor.d.5.html) — Structure of the AppArmor configuration directory
-*   [apparmor_parser(8)](http://manpages.ubuntu.com/manpages/bionic/man8/apparmor_parser.8.html) — The most fundamental AppArmor utility to load, unload, cache and stat profiles
 *   [Kernel Interfaces](https://gitlab.com/apparmor/apparmor/wikis/Kernel_interfaces) — Low level interfaces to the AppArmor kernel module
-*   [Apparmor Profile Migration](https://wiki.ubuntu.com/ApparmorProfileMigration) — Emergence of profiles
 *   [wikipedia:Linux Security Modules](https://en.wikipedia.org/wiki/Linux_Security_Modules "wikipedia:Linux Security Modules") — Linux kernel module on which basis AppArmor is build upon
-*   [Launchpad Project Page](https://launchpad.net/apparmor)
-*   [AppArmor GitLab project page](https://gitlab.com/apparmor)
-*   [FS#21406](https://bugs.archlinux.org/task/21406) — Initial discussion about the introduction of AppArmor
+*   [AppArmor in openSUSE Security Guide](https://doc.opensuse.org/documentation/leap/security/single-html/book.security/index.html#part.apparmor)

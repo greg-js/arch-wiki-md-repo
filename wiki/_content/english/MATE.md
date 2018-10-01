@@ -49,7 +49,7 @@ From [MATE homepage](https://mate-desktop.org/):
 
 ## Installation
 
-MATE is available in the [official repositories](/index.php/Official_repositories "Official repositories") and can be [installed](/index.php/Installed "Installed") with one of the following:
+MATE is available in the [official repositories](/index.php/Official_repositories "Official repositories") and can be [installed](/index.php/Install "Install") with one of the following:
 
 *   The [mate](https://www.archlinux.org/groups/x86_64/mate/) group contains the core desktop environment required for the standard MATE experience.
 *   The [mate-extra](https://www.archlinux.org/groups/x86_64/mate-extra/) group contains additional utilities and applications that integrate well with the MATE desktop. Installing just the [mate-extra](https://www.archlinux.org/groups/x86_64/mate-extra/) group will not pull in the whole [mate](https://www.archlinux.org/groups/x86_64/mate/) group via dependencies. If you want to install all MATE packages then you will need to explicitly install both groups.

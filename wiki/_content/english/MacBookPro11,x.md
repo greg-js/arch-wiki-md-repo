@@ -133,7 +133,7 @@ You may now use `wifi-menu` to connect to your network of choice.
 MacBooks can be easily configured to use [systemd-boot](/index.php/Systemd-boot "Systemd-boot") or [GRUB](/index.php/GRUB "GRUB") directly from the Apple bootloader, without the need for third-party tools such as [rEFInd](/index.php/REFInd "REFInd"). Systemd-boot is the recommended way for systems that support UEFI.
 
 *   First, make sure you mounted the EFI System Partition at `/boot` (that is within the chroot, so mount it as `/mnt/boot` with `mount /dev/sdXY /mnt/boot`)
-*   Proceed with [Installation](/index.php/Installation "Installation") normally
+*   Proceed with [Installation guide](/index.php/Installation_guide "Installation guide") normally
 *   Once inside the chrooted enviroment, type the following command to install *systemd-boot*:
 
  `# bootctl --path=/boot install` 

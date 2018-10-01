@@ -1,3 +1,8 @@
+Related articles
+
+*   [Codecs](/index.php/Codecs "Codecs")
+*   [FAT](/index.php/FAT "FAT")
+
 [Rockbox](https://www.rockbox.org) is a free replacement firmware for digital audio players (MP3 players). Its enhancements include support for pretty much all [codecs](/index.php/Codecs "Codecs"), advanced sound settings, applications, utilities and games.
 
 **Tip:** Rockbox can often be installed alongside the original firmware.
@@ -19,7 +24,7 @@ Check if your device has a usable Rockbox port: [https://www.rockbox.org/](https
 
 ### Rockbox Utility
 
-The official tool to manage Rockbox can be [installed](/index.php/Installed "Installed") with the [rbutil](https://www.archlinux.org/packages/?name=rbutil) package. [Rockbox Utility](https://www.rockbox.org/wiki/RockboxUtility) can install the replacement boot loader, the main firmware, and any extra features like fonts, themes and applications.
+The official tool to manage Rockbox can be [installed](/index.php/Install "Install") with the [rbutil](https://www.archlinux.org/packages/?name=rbutil) package. [Rockbox Utility](https://www.rockbox.org/wiki/RockboxUtility) can install the replacement boot loader, the main firmware, and any extra features like fonts, themes and applications.
 
 ### Installing Rockbox on your device
 

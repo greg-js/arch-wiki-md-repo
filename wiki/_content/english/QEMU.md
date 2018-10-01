@@ -1298,7 +1298,7 @@ To use virtio devices after an Arch Linux guest has been installed, the followin
 
 If you want to boot from a virtio disk, the initial ramdisk must contain the necessary modules. By default, this is handled by [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")'s `autodetect` hook. Otherwise use the `MODULES` array in `/etc/mkinitcpio.conf` to include the necessary modules and rebuild the initial ramdisk.
 
- `/etc/mkinitcpio.conf`  `MODULES="virtio virtio_blk virtio_pci virtio_net"` 
+ `/etc/mkinitcpio.conf`  `MODULES=(virtio virtio_blk virtio_pci virtio_net)` 
 
 Virtio disks are recognized with the prefix `**v**` (e.g. `**v**da`, `**v**db`, etc.); therefore, changes must be made in at least `/etc/fstab` and `/boot/grub/grub.cfg` when booting from a virtio disk.
 

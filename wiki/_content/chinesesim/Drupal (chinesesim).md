@@ -27,7 +27,7 @@
 
 ### 从源安装
 
-1.  直接从源（[community](/index.php/Community "Community")）中安装 [drupal](https://www.archlinux.org/packages/?name=drupal) `pacman -S drupal` 
+1.  [安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [drupal](https://www.archlinux.org/packages/?name=drupal)。
 2.  使用自己喜欢的编辑器，编辑文件`/etc/php/php.ini` `# vim /etc/php/php.ini` 找到下面一行："`;extension=json.so`"，如果有注释就去掉注释（第一个字符“;”），如果没有这行就在这个文件的`[PHP]`区块添加。
     对于Drupal 7来说，还需要启用数据库的PDO扩展，例如MySQL， `extension=pdo_mysql.so`。
 3.  打开文件`/etc/httpd/conf/httpd.conf` `# vim /etc/httpd/conf/httpd.conf` 找到以"`<Directory "/srv/http">`"（根据自己的Drupal安装目录而定）开始的部分，找到"`AllowOverride None`"，替换为"`AllowOverride All`"，这样可以启用Drupal的简洁连接（clear URL's）。

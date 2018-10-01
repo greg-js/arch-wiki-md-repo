@@ -64,7 +64,7 @@ This article details the installation and configuration process of the ***Synapt
 
 ## Installation
 
-The Synaptics driver can be [installed](/index.php/Installed "Installed") with the package [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics).
+The Synaptics driver can be [installed](/index.php/Install "Install") with the package [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics).
 
 ## Configuration
 

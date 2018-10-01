@@ -2,7 +2,6 @@ Related articles
 
 *   [TeX Live FAQ](/index.php/TeX_Live_FAQ "TeX Live FAQ")
 *   [TeX Live and CJK](/index.php/TeX_Live_and_CJK "TeX Live and CJK")
-*   [List of applications/Documents#TeX editors](/index.php/List_of_applications/Documents#TeX_editors "List of applications/Documents")
 
 According to [Wikipedia](https://en.wikipedia.org/wiki/TeX_Live "wikipedia:TeX Live"):
 
@@ -13,37 +12,50 @@ TeX Live includes the [tex(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tex.1)
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 TeXLive Local Manager](#TeXLive_Local_Manager)
-    *   [1.2 Manual installation](#Manual_installation)
+    *   [1.1 tllocalmgr](#tllocalmgr)
+    *   [1.2 Package documentation](#Package_documentation)
+    *   [1.3 Manual installation](#Manual_installation)
 *   [2 Usage](#Usage)
-    *   [2.1 CTAN](#CTAN)
-    *   [2.2 texmf trees](#texmf_trees)
+    *   [2.1 texmf trees and Kpathsea](#texmf_trees_and_Kpathsea)
 *   [3 Important information](#Important_information)
-    *   [3.1 Paper size](#Paper_size)
-    *   [3.2 Error with "formats not generated" upon update](#Error_with_.22formats_not_generated.22_upon_update)
-    *   [3.3 Fonts](#Fonts)
-*   [4 Install .sty files](#Install_.sty_files)
-    *   [4.1 Manual Installation](#Manual_Installation_2)
-    *   [4.2 Using PKGBUILDs](#Using_PKGBUILDs)
-*   [5 Updating babelbib language definitions](#Updating_babelbib_language_definitions)
+*   [4 Tips and tricks](#Tips_and_tricks)
+    *   [4.1 Changing default paper size](#Changing_default_paper_size)
+    *   [4.2 Making fonts available to Fontconfig](#Making_fonts_available_to_Fontconfig)
+    *   [4.3 Updating babelbib language definitions](#Updating_babelbib_language_definitions)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Error with "formats not generated" upon update](#Error_with_.22formats_not_generated.22_upon_update)
 *   [6 See also](#See_also)
 
 ## Installation
 
-The TeX Live packages are arranged into two [package groups](/index.php/Package_group "Package group"):
+*   The [texlive-most](https://www.archlinux.org/groups/x86_64/texlive-most/) group contains most TeX Live packages.
+    *   [texlive-core](https://www.archlinux.org/packages/?name=texlive-core), the essential package, based on the *medium* upstream install scheme (all other packages are based on the upstream collections). The package includes [pacman hooks](/index.php/Pacman_hook "Pacman hook") to automate *mktexlsr*, *fmtutil* and *updmap*.[[1]](https://git.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/texlive-core)
+    *   [texlive-bin](https://www.archlinux.org/packages/?name=texlive-bin) contains the binaries and libraries (it is a dependency of [texlive-core](https://www.archlinux.org/packages/?name=texlive-core)).
+*   The [texlive-lang](https://www.archlinux.org/groups/x86_64/texlive-lang/) group contains packages providing character sets and features for non-English languages.
+    *   [texlive-langextra](https://www.archlinux.org/packages/?name=texlive-langextra) provides language support for African, Arabic, Armenian, Croatian, Hebrew, Indic, Mongolian, Tibetan and Vietnamese.
+*   The [biber](https://www.archlinux.org/packages/?name=biber) utility used to handle [biblatex](https://ctan.org/pkg/biblatex) bibliography is provided as a separate package.
 
-*   [texlive-most](https://www.archlinux.org/groups/x86_64/texlive-most/) includes TeX Live applications.
-*   [texlive-lang](https://www.archlinux.org/groups/x86_64/texlive-lang/) provides various character sets and non-English features.
+To determine which [CTAN](https://www.ctan.org/) packages are included in each *texlive-* package, look up the files `/var/lib/texmf/arch/installedpkgs/<package>_<revnr>.pkgs`.
 
-The essential package [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) contains the basic *TEXMFDIST* tree, while [texlive-bin](https://www.archlinux.org/packages/?name=texlive-bin) contains the binaries and libraries. [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) is based on the "medium" install scheme of the upstream distribution. All other packages are based on the eponymous collections in TeX Live. To determine which CTAN packages are included in each package, look up the files `/var/lib/texmf/arch/installedpkgs/<package>_<revnr>.pkgs`.
+**Note:** Some tools and utilities included in TeX Live rely on [ghostscript](https://www.archlinux.org/packages/?name=ghostscript), [perl](https://www.archlinux.org/packages/?name=perl), [python2](https://www.archlinux.org/packages/?name=python2), or [ruby](https://www.archlinux.org/packages/?name=ruby).
 
-The [texlive-langextra](https://www.archlinux.org/packages/?name=texlive-langextra) package provides language support for African, Arabic, Armenian, Croatian, Hebrew, Indic, Mongolian, Tibetan and Vietnamese.
+**Tip:** You may want to install a [TeX editor](/index.php/List_of_applications/Documents#TeX_editors "List of applications/Documents").
 
-You additionally may want to install a [TeX editor](/index.php/List_of_applications/Documents#TeX_editors "List of applications/Documents").
+### tllocalmgr
 
-### TeXLive Local Manager
+The `tllocalmgr` utility, provided by [texlive-localmanager-git](https://aur.archlinux.org/packages/texlive-localmanager-git/), lets you install (and update) packages from CTAN as [pacman](/index.php/Pacman "Pacman") packages, see [its usage](https://git.archlinux.org/users/remy/texlive-localmanager.git/tree/tllocalmgr#n809) (`-h`) for details.
 
-[texlive-localmanager-git](https://aur.archlinux.org/packages/texlive-localmanager-git/) is a utility which allows to conveniently manage a TeX Live installation on Arch Linux. See [Usage](https://git.archlinux.org/users/remy/texlive-localmanager.git/tree/tllocalmgr#n809) for details.
+### Package documentation
+
+The packages in the official repositories do not contain the documentation or source files of font/macro packages.
+
+For offline access with `texdoc` you can either [install](/index.php/Install "Install") the whole TeX Live documentation and source files with [texlive-most-doc](https://aur.archlinux.org/packages/texlive-most-doc/) or install documentation of specific packages with *tllocalmgr*.
+
+You can also access the documentation online at:
+
+*   [https://tug.org/texlive/Contents/live/doc.html](https://tug.org/texlive/Contents/live/doc.html)
+*   [https://ctan.org/](https://ctan.org/) – the cen­tral place for all kinds of ma­te­rial around TeX
+*   [http://texdoc.net/](http://texdoc.net/) (`http://texdoc.net/pkg/*packagename*` directly yields the relevant PDF)
 
 ### Manual installation
 
@@ -51,60 +63,59 @@ Alternatively you can install TeX Live with the upstream installer, which is pac
 
 ## Usage
 
-### CTAN
+**Note:**
 
-[CTAN](https://www.ctan.org/) is the cen­tral place for all kinds of ma­te­rial around TeX.
+*   While [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) provides the [tlmgr](https://www.tug.org/texlive/tlmgr.html) script in *TEXMFDIST* it is broken. For package installations you can use [tllocalmgr](#tllocalmgr) instead.
+*   The [texconfig(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/texconfig.1) command is mostly broken because it partially depends on *tlmgr* ([FS#59094](https://bugs.archlinux.org/task/59094)). The interactive mode of `texconfig` requires [dialog](https://www.archlinux.org/packages/?name=dialog).
 
-### texmf trees
+See the following resources:
 
-See the [TeX Live Guide](https://www.tug.org/texlive/doc/texlive-en/texlive-en.html#x1-110002.3) and the [TeX Directory Structure](https://tug.org/tds/).
+*   [Wikibooks:LaTeX](https://en.wikibooks.org/wiki/LaTeX "wikibooks:LaTeX")
+*   [The Not So Short In­tro­duc­tion to LaTeX 2ε](https://tobi.oetiker.ch/lshort/lshort.pdf)
+*   [Getting to Grips with LaTeX – Andrew Roberts](https://www.andy-roberts.net/writing/latex)
+*   [The TeX FAQ](https://texfaq.org/)
 
-The following table lists the texmf trees in the reverse order they are searched (later trees override earlier ones).
+### texmf trees and Kpathsea
 
-| Variables | Arch default [[1]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/texmf.cnf?h=packages/texlive-core) | Description |
+texmf trees (*texmf* stands for TeX and [Metafont](https://en.wikipedia.org/wiki/Metafont "wikipedia:Metafont")) should follow the [TeX Directory Structure](https://tug.org/tds/), or files may not be found.[[2]](https://www.tug.org/texlive/doc/texlive-en/texlive-en.html#x1-110002.3)
+
+TeX Live uses the [Kpathsea](https://tug.org/texinfohtml/kpathsea.html) library to lookup paths by filename across multiple texmf trees and the current working directory.
+
+Kpathsea searches the following variables in the reverse order (later trees override earlier ones).
+
+| Variables | Arch default  | Used by [[3]](https://www.tug.org/texlive/doc/texlive-en/texlive-en.html#x1-110002.3) |
 | TEXMFDIST | /usr/share/texmf-dist | files of the original distribution |
-| TEXMFLOCAL | /usr/local/share/texmf:/usr/share/texmf | used by administrators for system-wide installation of additional or updated macros, fonts, etc. |
-| TEXMFSYSVAR | /var/lib/texmf | used by [updmap-sys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updmap-sys.1) and [fmtutil-sys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fmtutil-sys.1) to store (cached) runtime data |
-| TEXMFSYSCONFIG | /etc/texmf | used by [updmap-sys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updmap-sys.1) and [fmtutil-sys(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fmtutil-sys.1) to store modified configuration data |
-| TEXMFHOME | ~/texmf | used by users for their own individual installations of additional or updated macros, fonts, etc. |
-| TEXMFVAR | ~/.texlive/texmf-var | used by [updmap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updmap.1) and [fmtutil(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fmtutil.1) to store (cached) runtime data |
-| TEXMFCONFIG | ~/.texlive/texmf-config | used by [updmap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updmap.1) and [fmtutil(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fmtutil.1) to store modified configuration data |
-| TEXMFCACHE | $TEXMFSYSVAR;$TEXMFVAR | used by ConTEXt MkIV and LuaLATEX to store (cached) runtime data |
+| TEXMFLOCAL | /usr/local/share/texmf:/usr/share/texmf | administrators for system-wide installation of additional or updated macros, fonts, etc. |
+| TEXMFSYSVAR | /var/lib/texmf | updmap and fmtutil (user mode) to store (cached) runtime data |
+| TEXMFSYSCONFIG | /etc/texmf | updmap and fmtutil (user mode) to store modified configuration data |
+| TEXMFHOME | ~/texmf | users for their own individual installations of additional or updated macros, fonts, etc. |
+| TEXMFVAR | ~/.texlive/texmf-var | updmap and fmtutil (sys mode) to store (cached) runtime data |
+| TEXMFCONFIG | ~/.texlive/texmf-config | updmap and fmtutil (sys mode) to store modified configuration data |
+| TEXMFCACHE | $TEXMFSYSVAR;$TEXMFVAR | ConTeXt MkIV and LuaLaTeX to store (cached) runtime data |
 
-The default values are defined in `/etc/texmf/web2c/texmf.cnf`, they can be overridden with [environment variables](/index.php/Environment_variables "Environment variables").
+1.  The default values are defined in `/etc/texmf/web2c/texmf.cnf`[[4]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/texmf.cnf?h=packages/texlive-core), they can be overridden with [environment variables](/index.php/Environment_variables "Environment variables").
 
-You can also find out the value of a variable with `kpsewhich -var *VARIABLE*`.
+Kpathsea provides the [kpsewhich(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/kpsewhich.1) command to lookup paths. When run with the `-var` argument it can also print the values of variables.
+
+Kpathsea uses filename databases (`ls-R`) to speed up searches in system-wide texmf trees (configured with the *TEXMFDBS* variable). This means that when system-wide file trees are changed, [mktexlsr(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mktexlsr.1) or `texhash` (a symlink) need to be run as [root](/index.php/Root_user "Root user"). Fortunately the [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) automates this with a [pacman hook](/index.php/Pacman_hook "Pacman hook") targeting all default system-wide texmf trees but `/usr/local/share/texmf`.[[5]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/mktexlsr.hook?h=packages/texlive-core) So as long as you install system-wide packages via [pacman](/index.php/Pacman "Pacman") you should not need to run *mktexlsr* or *texhash* at all.
 
 ## Important information
 
-*   The [biber](https://www.archlinux.org/packages/?name=biber) utility used to handle [biblatex](https://ctan.org/pkg/biblatex) bibliography is provided as a separate package.
-*   The way to handle font mappings for [updmap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updmap.1) was improved in September 2009, and installation should now be much more reliable than in the past. In the meantime, if you encounter error messages about unavailable map files, simply remove them by hand from the `updmap.cfg` file (ideally using `updmap-sys --edit`). You can also run `updmap-sys --syncwithtrees` to automatically comment out outdated map lines from the config file.
 *   The ConTeXt formats (for Mark II and IV) are not automatically generated upon installation. See [the ConTeXT wiki](http://wiki.contextgarden.net) for instructions on how to do this.
-*   The packages containing the documentation and sources are **no longer available** in official repositories. You can locally build them with [tllocalmgr](#TeXLive_Local_Manager). You can also consult documentation online at [https://tug.org/texlive/Contents/live/doc.html](https://tug.org/texlive/Contents/live/doc.html) or on CTAN. Another possibility is using the online documentation at `http://texdoc.net/pkg/packagename` which resolves to the relevant pdf for `packagename`, similar to the command line tool `texdoc` (which is useless without locally installed documentation). The documentation is now contained in [texlive-most-doc](https://aur.archlinux.org/packages/texlive-most-doc/).
 *   TeX Live (upstream) now provides a tool for incremental updates of CTAN packages. On that basis, we also plan to update our packages on a regular basis (we have written tools that almost automate that task).
-*   Some tools and utilities included in TeX Live rely on [ghostscript](https://www.archlinux.org/packages/?name=ghostscript), [perl](https://www.archlinux.org/packages/?name=perl), [python2](https://www.archlinux.org/packages/?name=python2), and [ruby](https://www.archlinux.org/packages/?name=ruby).
-*   For help and information about TeX Live see: [https://tug.org/texlive/doc.html](https://tug.org/texlive/doc.html) and [https://tug.org/texlive/doc/texlive-en/texlive-en.html](https://tug.org/texlive/doc/texlive-en/texlive-en.html)
+*   The way to handle font mappings for [updmap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updmap.1) was improved in September 2009, and installation should now be much more reliable than in the past. In the meantime, if you encounter error messages about unavailable map files, simply remove them by hand from the `updmap.cfg` file (ideally using `updmap-sys --edit`). You can also run `updmap-sys --syncwithtrees` to automatically comment out outdated map lines from the config file.
 
-### Paper size
+## Tips and tricks
+
+### Changing default paper size
 
 It is currently impossible to set the default page size, because the Arch package removes the tool necessary for this, see [FS#59094](https://bugs.archlinux.org/task/59094).
 
 Usually, you would run the `texconfig` command, which is also capable of changing other useful settings.
 
-### Error with "formats not generated" upon update
+### Making fonts available to Fontconfig
 
-See [this bug report](https://bugs.archlinux.org/task/16467). (**Note that if you do not use the experimental engine *LuaTeX*, you can ignore this.**) This situation typically occurs when the configuration files `language.def` and/or `language.dat` for hyphenation patterns contain references to files from earlier releases of `texlive-core`, in particular to the latest experimental hyphenation patterns for German, whose file name changes frequently. Currently they should point to `dehyph{n,t}-x-2009-06-19.tex`.
-
-To solve this, you need to either remove these files: `/usr/share/texmf-config/tex/generic/config/language.{def,dat}` or update them using the newest version under: `/usr/share/texmf/tex/generic/config/language.{def,dat}` and then run
-
-```
-# fmtutil-sys --missing
-
-```
-
-### Fonts
-
-By default, the fonts that come with the various TeX Live packages are not automatically available to Fontconfig. If you want to use them with, say XeTeX or [LibreOffice](/index.php/LibreOffice "LibreOffice"), the easiest approach is to make symlinks as follows:
+By default, the fonts that come with the various TeX Live packages are not automatically available to [Fontconfig](/index.php/Fontconfig "Fontconfig"). If you want to use them with, say XeTeX or [LibreOffice](/index.php/LibreOffice "LibreOffice"), the easiest approach is to make symlinks as follows:
 
 ```
  ln -s /usr/share/texmf-dist/fonts/opentype/public/<some_fonts_you_want> ~/.fonts/OTF/ (or TTF or Type1) 
@@ -129,47 +140,7 @@ And then update fontconfig:
  `# fc-cache && mkfontscale && mkfontdir` 
 **Note:** This may cause conflicts with XeTeX/XeLaTeX if the same fonts are (separately) available to both TeX and Fontconfig, i.e. if multiple copies of the same font are available on the search path.
 
-## Install .sty files
-
-TeX Live (and teTeX) uses its own directory indexes (files named `ls-R`), and you need to refresh them after you copy something into one of the TeX trees. Or TeX can not see them. Magic command:
-
- `# mktexlsr` 
-
-or
-
- `# texhash` 
-
-or
-
- `# texconfig[-sys] rehash` 
-
-A command line program to search through these indexes is
-
-```
-kpsewhich
-
-```
-
-Hence you can check that TeX can find a particular file by running
-
-```
-kpsewhich <filename.sty>
-
-```
-
-The output should be the full path to that file.
-
-Alternatively, sty files that are intended only for a particular user should go in the `~/texmf/` tree. For instance, the latex package wrapfig consists of the file `wrapfig.sty` and would go in `~/texmf/tex/latex/wrapfig/wrapfig.sty`. There is no need to run `mktexlsr` or equivalent because `~/texmf` is searched every time tex is run.
-
-### Manual Installation
-
-You should **not** manually install files into `/usr/share/texmf-dist/tex/latex/<package name>/*`. Instead, install local *.sty* files in `TEXMFLOCAL`, if they should be available to all users, or into `TEXMFHOME`, if they are specific to you. Use `kpsewhich -var TEXMFLOCAL` to get the local directory and install into `<local directory>/tex/latex/<package name>/`. The `TEXMFHOME` directory will automatically be searched when TeX tools are executed. If you use `TEXMFLOCAL`, you need to update the database as described above in order for the files to be found.
-
-### Using PKGBUILDs
-
-To install a LaTeX package on a global level, you should use a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") for the sake of simplifying maintenance. Examples can be found in the [AUR](/index.php/AUR "AUR"), e.g. [texlive-gantt](https://aur.archlinux.org/packages/texlive-gantt/).
-
-## Updating babelbib language definitions
+### Updating babelbib language definitions
 
 If you have the very specific problem of [babelbib](https://www.ctan.org/pkg/babelbib) not having the latest language definitions that you need, and you do not want to recompile everything, you can get them manually from [https://www.tug.org/texlive/devsrc/Master/texmf-dist/tex/latex/babelbib/](https://www.tug.org/texlive/devsrc/Master/texmf-dist/tex/latex/babelbib/) and put them in `/usr/share/texmf-dist/tex/latex/babelbib/`. For example:
 
@@ -188,8 +159,21 @@ Afterwards, you need to run `texhash` to update the TeX database:
 
 ```
 
+## Troubleshooting
+
+### Error with "formats not generated" upon update
+
+See [FS#16467](https://bugs.archlinux.org/task/16467). (Note that if you do not use the experimental engine *LuaTeX*, you can ignore this.) This situation typically occurs when the configuration files `language.def` and/or `language.dat` for hyphenation patterns contain references to files from earlier releases of [texlive-core](https://www.archlinux.org/packages/?name=texlive-core), in particular to the latest experimental hyphenation patterns for German, whose file name changes frequently. Currently they should point to `dehyph{n,t}-x-2009-06-19.tex`.
+
+To solve this, you need to either remove these files: `/etc/texmf/tex/generic/config/language.{def,dat}` or update them using the newest version under: `/usr/share/texmf/tex/generic/config/language.{def,dat}` and then run
+
+```
+# fmtutil-sys --missing
+
+```
+
 ## See also
 
-*   [The TeX Live Guide](https://www.tug.org/texlive/doc/texlive-en/texlive-en.html)
-*   [Wikibooks:LaTeX](https://en.wikibooks.org/wiki/LaTeX "wikibooks:LaTeX")
-*   [The Not So Short In­tro­duc­tion to LaTeX 2ε](https://tobi.oetiker.ch/lshort/lshort.pdf)
+*   [TeX Live documentation](https://tug.org/texlive/doc.html)
+*   [The TeX Live Guide](https://tug.org/texlive/doc/texlive-en/texlive-en.html) (not completely applicable)
+*   [TeX - LaTeX Stack Exchange](https://tex.stackexchange.com/)

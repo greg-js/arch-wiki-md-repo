@@ -698,7 +698,7 @@ For ease of use, you might to wish to implement the "[Allow users to shutdown](/
 
 ### LILO and GRUB interaction
 
-If the [LILO](/index.php/LILO "LILO") package is installed on your system, [remove](/index.php/Remove "Remove") it. As some tasks (e.g. kernel compilation using `make all`) will make a LILO call, and LILO will then be installed over GRUB. LILO may have been included in your base system, depending on your installer media version and whether you selected/deselected it during the package selection stage.
+If the [LILO](/index.php/LILO "LILO") package is installed on your system, [uninstall](/index.php/Uninstall "Uninstall") it. As some tasks (e.g. kernel compilation using `make all`) will make a LILO call, and LILO will then be installed over GRUB. LILO may have been included in your base system, depending on your installer media version and whether you selected/deselected it during the package selection stage.
 
 **Note:** Removing [lilo](https://aur.archlinux.org/packages/lilo/) will not remove LILO from the MBR if it has been installed there; it will merely remove the [lilo](https://aur.archlinux.org/packages/lilo/) package. The LILO bootloader installed to the MBR will be overwritten when GRUB (or another bootloader) is installed over it.
 

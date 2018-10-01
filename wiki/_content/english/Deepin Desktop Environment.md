@@ -18,7 +18,7 @@ The [Deepin Desktop Environment](https://www.deepin.org/en/?language=en) (DDE) i
 
 ## Installation
 
-To get a minimal desktop interface, you may start by [installing](/index.php/Installing "Installing") [deepin](https://www.archlinux.org/groups/x86_64/deepin/) group. This will pull all the basic components.
+To get a minimal desktop interface, you may start by [installing](/index.php/Install "Install") [deepin](https://www.archlinux.org/groups/x86_64/deepin/) group. This will pull all the basic components.
 
 The [deepin-extra](https://www.archlinux.org/groups/x86_64/deepin-extra/) groups contains some extra applications for a more complete desktop environment.
 

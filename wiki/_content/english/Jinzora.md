@@ -32,7 +32,7 @@ extension=iconv
 
 ```
 
-The PHP gd extension requires the gd library, [php-gd](https://www.archlinux.org/packages/?name=php-gd), to be [installed](/index.php/Installed "Installed").
+The PHP gd extension requires the gd library, [php-gd](https://www.archlinux.org/packages/?name=php-gd), to be [installed](/index.php/Install "Install").
 
 Also take a look at the open_basedir setting. Your media directory should be or below the paths specified in this directory.
 

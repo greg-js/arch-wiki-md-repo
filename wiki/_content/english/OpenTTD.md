@@ -19,7 +19,7 @@ OpenTTD is a free re-implementation of the popular DOS game [Transport Tycoon De
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [openttd](https://www.archlinux.org/packages/?name=openttd) package from the [community](/index.php/Community "Community") repository.
+[Install](/index.php/Install "Install") the [openttd](https://www.archlinux.org/packages/?name=openttd) package.
 
 If you do not own the original game, [openttd-opengfx](https://www.archlinux.org/packages/?name=openttd-opengfx) and [openttd-opensfx](https://www.archlinux.org/packages/?name=openttd-opensfx) contains the free graphics & sounds.
 

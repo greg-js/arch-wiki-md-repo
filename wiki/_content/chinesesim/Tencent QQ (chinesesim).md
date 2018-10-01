@@ -42,10 +42,7 @@ QQ 是腾讯公司开发的即时通讯软件，为 ICQ 的仿制品，是中国
 
 [Wine](/index.php/Wine_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wine (简体中文)") 是类 UNIX 系统下运行微软 Windows 程序的"兼容层"，可以用它模拟 Windows 环境来运行 QQ/TIM。
 
-**警告:**
-
-*   受 wine 上游的一个[Bug](https://bugs.winehq.org/show_bug.cgi?id=45199) 影响，官方仓库中提供的 [wine](https://www.archlinux.org/packages/?name=wine) 自3.8开始无法运行许多程序，包括 QQ 和 TIM。截止3.15-1版本此问题仍未修复。您可以将[wine](https://www.archlinux.org/packages/?name=wine)[降级](/index.php/Downgrading_packages_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Downgrading packages (简体中文)")到3.7来绕过这个问题。也可以按照[FS#58833](https://bugs.archlinux.org/task/58833)，使用[ABS](/index.php/Arch_Build_System_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Build System (简体中文)")修改编译参数之后重新编译安装[wine](https://www.archlinux.org/packages/?name=wine)。
-*   Wine QQ/TIM 在平铺式窗口管理器下的样式可能会大规模失控，需要进行[额外的配置](#.E5.B9.B3.E9.93.BA.E5.BC.8F.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8.E4.B8.8B.E7.9A.84.E9.85.8D.E7.BD.AE)。
+**警告:** Wine QQ/TIM 在平铺式窗口管理器下的样式可能会大规模失控，需要进行[额外的配置](#.E5.B9.B3.E9.93.BA.E5.BC.8F.E7.AA.97.E5.8F.A3.E7.AE.A1.E7.90.86.E5.99.A8.E4.B8.8B.E7.9A.84.E9.85.8D.E7.BD.AE)。
 
 ### Deepin QQ/TIM
 

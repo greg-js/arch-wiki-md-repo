@@ -35,7 +35,7 @@
 ## Installation
 
 *   Install [arduino](https://www.archlinux.org/packages/?name=arduino) and [arduino-docs](https://www.archlinux.org/packages/?name=arduino-docs) for its offline documentation.
-*   Add yourself to the `uucp` and `lock` [groups](/index.php/Groups "Groups") (more information in the [#Accessing serial](#Accessing_serial) section).
+*   Add yourself to the `uucp` and `lock` [groups](/index.php/Group "Group") (more information in the [#Accessing serial](#Accessing_serial) section).
 *   You may need to [load](/index.php/Kernel_modules "Kernel modules") the `cdc_acm` module.
 
 ### AVR Boards

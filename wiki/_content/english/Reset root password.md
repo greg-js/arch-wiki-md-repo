@@ -1,4 +1,4 @@
-This guide will show you how to reset a forgotten [root](/index.php/Root "Root") password. Several methods are listed to help you accomplish this.
+This guide will show you how to reset a forgotten [root](/index.php/Root_user "Root user") password. Several methods are listed to help you accomplish this.
 
 **Warning:** An attacker could use the methods mentioned below to break into your system. No matter how secure the operating system is or how good passwords are, having physical access amounts to loading an alternate OS and exposing your data, unless you use [disk encryption](/index.php/Disk_encryption "Disk encryption").
 

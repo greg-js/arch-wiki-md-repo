@@ -294,7 +294,7 @@ You may see output like the following in the main window after starting **weecha
 
 The default configuration for weechat attempts to load all plugins found in /usr/lib/weechat/plugins which in this case includes ruby, lua, aspell and tcl. These packages are not required by the weechat package and may not be installed on your machine. There are two options if these errors bother you:
 
-1.  [Install](/index.php/Packages "Packages") [ruby](https://www.archlinux.org/packages/?name=ruby), [lua](https://www.archlinux.org/packages/?name=lua), [aspell](https://www.archlinux.org/packages/?name=aspell) and/or [tcl](https://www.archlinux.org/packages/?name=tcl) from the [official repositories](/index.php/Official_repositories "Official repositories").
+1.  [Install](/index.php/Install "Install") [ruby](https://www.archlinux.org/packages/?name=ruby), [lua](https://www.archlinux.org/packages/?name=lua), [aspell](https://www.archlinux.org/packages/?name=aspell) and/or [tcl](https://www.archlinux.org/packages/?name=tcl) from the [official repositories](/index.php/Official_repositories "Official repositories").
 2.  Or, run `/set weechat.plugin.autoload "*,!ruby,!lua,!aspell,!tcl"` which will prevent loading those plugins with a bang (!) prefix.
 
 ## Getting Help

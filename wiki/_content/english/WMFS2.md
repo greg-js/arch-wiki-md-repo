@@ -40,7 +40,7 @@ And of course, the new, fun stuff:
 
 ## Installation
 
-WMFS can be [installed](/index.php/Installed "Installed") via the [wmfs2-git](https://aur.archlinux.org/packages/wmfs2-git/) package.
+WMFS can be [installed](/index.php/Install "Install") via the [wmfs2-git](https://aur.archlinux.org/packages/wmfs2-git/) package.
 
 ## Basic usage
 

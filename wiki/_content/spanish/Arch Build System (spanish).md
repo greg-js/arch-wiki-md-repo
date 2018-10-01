@@ -63,7 +63,7 @@ ABS es un concepto similar. ABS es un componente de un árbol de directorios (el
 
 ### Árbol SVN
 
-Los [repositorios](/index.php/Repositories "Repositories") *core*, *extra* y *testing* están en el repositorio SVN *packages* para [descargar](#Descarga_no_recursiva). Los repositorios *community* y *multilib* están en el repositorio SVN *community*.
+Los [repositorios](/index.php/Official_repositories "Official repositories") *core*, *extra* y *testing* están en el repositorio SVN *packages* para [descargar](#Descarga_no_recursiva). Los repositorios *community* y *multilib* están en el repositorio SVN *community*.
 
 Cada paquete tiene su propio subdirectorio. Dentro de él, están los directorios `repos` y `trunk`. El directorio `repos` se ramifica por el nombre del repositorio (por ejemplo, *core*) y por la arquitectura. Los PKGBUILD y los archivos encontrados en `repos` se utilizan en las compilaciones oficiales. Los archivos que se encuentran en `trunk` son utilizados por los desarrolladores para prepararlos antes de ser copiados a `repos`.
 

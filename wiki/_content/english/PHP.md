@@ -136,7 +136,7 @@ Instruction can be found on the [PHP pthreads extension](/index.php/PHP_pthreads
 
 ### PCNTL
 
-PCNTL allows you to create process directly into the server side machine. While this may seen as something you would want, it also gives the power to PHP to mess things up really badly. So it is a PHP extension that cannot be loaded like other more convenient extension. This is because of the great power it gives to PHP. To enable it PCNTL has to be compiled into PHP.
+PCNTL allows you to create process directly into the server side machine. While this may seen as something you would want, it also gives PHP the power to mess things up really badly. So it is a PHP extension that cannot be loaded like other more convenient extension. This is because of the great power it gives to PHP. To enable it PCNTL has to be compiled into PHP.
 
 The php package on Arch Linux is currently built with "--enable-pcntl", so that it should be available by default.
 

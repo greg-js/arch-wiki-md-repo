@@ -19,7 +19,7 @@ De [página web do projeto](http://freedesktop.org/wiki/Software/systemd):
 
 ## Contents
 
-*   [1 Uso básico systemctl](#Uso_b.C3.A1sico_systemctl)
+*   [1 Uso básico do systemctl](#Uso_b.C3.A1sico_do_systemctl)
     *   [1.1 Analisando o estado do sistema](#Analisando_o_estado_do_sistema)
     *   [1.2 Usando units](#Usando_units)
     *   [1.3 Gerenciamento de energia](#Gerenciamento_de_energia)
@@ -66,7 +66,7 @@ De [página web do projeto](http://freedesktop.org/wiki/Software/systemd):
     *   [9.9 Desabilitar modo de emergência em máquina remota](#Desabilitar_modo_de_emerg.C3.AAncia_em_m.C3.A1quina_remota)
 *   [10 Veja também](#Veja_tamb.C3.A9m)
 
-## Uso básico systemctl
+## Uso básico do systemctl
 
 O principal comando usado para introspecção e controle *systemd* é *systemctl*. Alguns de seus usos são examinando o estado do sistema e gerenciando o sistema e serviços. Consulte [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) para mais detalhes.
 

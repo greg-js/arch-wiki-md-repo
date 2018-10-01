@@ -94,7 +94,7 @@ To see a list of known Xorg fonts use `xlsfonts`, from the [xorg-xlsfonts](https
 
 ## Fontconfig configuration
 
-Fontconfig is documented in the [fonts-conf](http://www.freedesktop.org/software/fontconfig/fontconfig-user.html) man page.
+Fontconfig is documented in the [fonts-conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fonts-conf.5) man page.
 
 Configuration can be done per-user through `$XDG_CONFIG_HOME/fontconfig/fonts.conf`, and globally with `/etc/fonts/local.conf`. The settings in the per-user configuration have precedence over the global configuration. Both these files use the same syntax.
 
@@ -482,7 +482,7 @@ hinting: True(s)
 
 ```
 
-Look up the meaning of the numbers at [http://www.freedesktop.org/software/fontconfig/fontconfig-user.html](http://www.freedesktop.org/software/fontconfig/fontconfig-user.html). Eg. 'hintstyle: 3' means 'hintfull'
+Look up the meaning of the numbers at [fonts-conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fonts-conf.5) Eg. 'hintstyle: 3' means 'hintfull'
 
 ## Applications without fontconfig support
 
@@ -632,7 +632,7 @@ Everything should now work as it did before the update, the *font alias* should 
 
 ## See also
 
-*   [Fontconfig Users' Guide](http://www.freedesktop.org/software/fontconfig/fontconfig-user.html)
+*   [fonts-conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fonts-conf.5)
 *   [Fonts in X11R6.8.2](http://www.x.org/X11R6.8.2/doc/fonts.html) - Official Xorg font information
 *   [FreeType 2 overview](http://freetype.sourceforge.net/freetype2/)
 *   [Gentoo font-rendering thread](https://forums.gentoo.org/viewtopic-t-723341.html)

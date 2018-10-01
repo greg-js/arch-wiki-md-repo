@@ -1,10 +1,10 @@
-**Estado de la traducción:** este artículo es una versión traducida de [RethinkDB](/index.php/RethinkDB "RethinkDB"). Fecha de la última traducción/revisión: **2018-08-13**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=RethinkDB&diff=0&oldid=533304).
+**Estado de la traducción:** este artículo es una versión traducida de [RethinkDB](/index.php/RethinkDB "RethinkDB"). Fecha de la última traducción/revisión: **2018-09-29**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=RethinkDB&diff=0&oldid=544767).
 
 RethinkDB es una base de datos orientada a documentos similar a [MongoDB](/index.php/MongoDB "MongoDB"), pero tiene como objetivo superar la escalabilidad y la limitación práctica de esta última. [[1]](http://www.rethinkdb.com/docs/comparisons/mongodb/) [[2]](http://www.rethinkdb.com/blog/mongodb-biased-comparison/) RethinkDB está diseñado para almacenar documentos JSON y escalar a múltiples máquinas con muy poco esfuerzo. Tiene un lenguaje de consulta agradable que admite consultas como la unión de tablas *(joins)* y agrupar por *(group by)*. Es fácil de configurar y aprender. Para más información, véase la [página oficial](https://www.rethinkdb.com/).
 
 ## Instalación
 
-Instale [rethinkdb](https://www.archlinux.org/packages/?name=rethinkdb) desde el repositorio oficial.
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") [rethinkdb](https://www.archlinux.org/packages/?name=rethinkdb) desde el repositorio oficial.
 
 Cree y establezca permisos de usuario para la carpeta RethinkDB:
 

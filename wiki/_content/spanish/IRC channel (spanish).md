@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [IRC channel](/index.php/IRC_channel "IRC channel"). Fecha de la última traducción/revisión: **2018-08-13**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=IRC_channel&diff=0&oldid=534201).
+**Estado de la traducción:** este artículo es una versión traducida de [IRC channel](/index.php/IRC_channel "IRC channel"). Fecha de la última traducción/revisión: **2018-09-29**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=IRC_channel&diff=0&oldid=544842).
 
 Artículos relacionados
 
@@ -87,7 +87,7 @@ El tamaño de nuestra comunidad condujo a la creación de múltiples canales de 
 | [#archlinux-reproducible](ircs://chat.freenode.net/archlinux-reproducible) | Debate para lograr compilaciones reproducibles. |
 | [#archlinux-security](ircs://chat.freenode.net/archlinux-security) | Debate de problemas de seguridad dentro de los paquetes de Arch. |
 | [#archlinux-testing](ircs://chat.freenode.net/archlinux-testing) | Debate sobre los repositorios de prueba. |
-| [#archlinux-wiki](ircs://chat.freenode.net/archlinux-wiki) | Debate sobre [ArchWiki](/index.php/ArchWiki:About_(Espa%C3%B1ol) "ArchWiki:About (Español)"), sus artículos y [foros](https://bbs.archlinux.org/). |
+| [#archlinux-wiki](ircs://chat.freenode.net/archlinux-wiki) | Debate sobre [ArchWiki](/index.php/ArchWiki_(Espa%C3%B1ol) "ArchWiki (Español)"), sus artículos y [foros](https://bbs.archlinux.org/). |
 | [#archlinux-women](ircs://chat.freenode.net/archlinux-women) | Debate sobre género e igualdad, principalmente en inglés. |
 | [#archlinux-proaudio](ircs://chat.freenode.net/archlinux-proaudio) | Debate sobre [audio profesional](/index.php/Professional_audio "Professional audio") en Arch. También en el canal no oficial #archaudio. |
 

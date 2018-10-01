@@ -108,6 +108,8 @@ For more information about all available options see [exports(5)](https://jlk.fj
 
 [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `nfs-server.service`.
 
+If you are exporting ZFS shares, also start and enable `zfs-share.service`. Without this, ZFS shares will no longer be exported after a reboot.
+
 #### Miscellaneous
 
 ##### Restricting NFS to interfaces/IPs

@@ -347,6 +347,8 @@ export _JAVA_OPTIONS='-Dsun.java2d.opengl=true'
 
 ```
 
+**Note:** Enabling this option may cause the UI of software like JetBrains IDEs misbehave, making them drawing windows, popups and toolbars partially.
+
 ### Non-reparenting window managers / Grey window / Programs not drawing properly
 
 Non-reparenting window managers user should set the following environment variable in their `.xinitrc`

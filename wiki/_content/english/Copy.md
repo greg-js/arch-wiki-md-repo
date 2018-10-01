@@ -1,3 +1,4 @@
-Redirect to:
+**Copy** may refer to:
 
-*   [Core utilities#File management](/index.php/Core_utilities#File_management "Core utilities")
+*   [cp](/index.php/Core_utilities#Essentials "Core utilities"), the command to copy files or directories
+*   copying with the [Clipboard](/index.php/Clipboard "Clipboard")

@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Users and groups](/index.php/Users_and_groups "Users and groups"). Fecha de la última traducción/revisión: **2018-09-05**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=533656).
+**Estado de la traducción:** este artículo es una versión traducida de [Users and groups](/index.php/Users_and_groups "Users and groups"). Fecha de la última traducción/revisión: **2018-09-29**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=544897).
 
 Artículos relacionados
 
@@ -29,8 +29,6 @@ Los usuarios y grupos se utilizan en GNU/Linux para el [control de acceso](https
 
 ## Descripción
 
-	*El superusuario (root) redirige aquí. Para el directorio raíz, véase [Partición raíz](/index.php/Partitioning_(Espa%C3%B1ol)#Partici.C3.B3n_ra.C3.ADz "Partitioning (Español)").*
-
 Un *usuario* es cualquiera que use una computadora. En este caso, estamos describiendo los nombres que representan a esos usuarios. Puede ser Mary o Bill, y pueden usar los nombres Dragonlady o Pirate en lugar de su nombre real. Lo único que importa es que la computadora tenga un nombre para cada cuenta que cree, y es este nombre por el que una persona obtiene acceso para usar la computadora. Algunos servicios del sistema también se ejecutan utilizando cuentas de usuario restringidas o privilegiadas.
 
 La administración de los usuarios se realiza con fines de seguridad al limitar el acceso de ciertas maneras específicas. El [superusuario](https://en.wikipedia.org/wiki/es:Root y [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") para la escalada de privilegios controlada.
@@ -53,7 +51,7 @@ De [Extendiendo la abstracción de archivo de UNIX para fines generales de admin
 
 	Una abstracción fundamental, muy potente y consistente, proporcionada en UNIX y los sistemas operativos compatibles es la abstracción de archivos. Muchos servicios del sistema operativo e interfaces de dispositivos se implementan para proporcionar una metáfora de archivo o sistema de archivos a las aplicaciones. Esto permite nuevos usos y aumenta en gran medida el poder de las aplicaciones existentes — herramientas simples diseñadas para usos específicos pueden, con las abstracciones de archivos de UNIX, utilizarse de maneras novedosas. Una herramienta simple, como cat, diseñada para leer uno o más archivos y enviar los contenidos a la salida estándar, se puede utilizar para leer desde dispositivos E/S *(entrada/salida)* a través de archivos de dispositivos especiales, que generalmente se encuentran en el directorio `/dev`. En muchos sistemas, la grabación y reproducción de audio se puede hacer simplemente con los comandos, «{`cat /dev/audio > miarchivo`» y «{`cat miarchivo > /dev/audio`», respectivamente.
 
-Cada archivo en un sistema GNU/Linux es propiedad de un usuario y un grupo. Además, hay tres tipos de permisos de acceso: lectura, escritura y ejecución. Los permisos de acceso pueden aplicarse de forma diferente al usuario propietario del archivo, al grupo propietario y a otros (aquellos que no tienen la propiedad). Uno puede determinar los propietarios y permisos de un archivo al ver el formato de listado extenso del comando [ls](/index.php/Core_utilities_(Espa%C3%B1ol)#ls "Core utilities (Español)"):
+Cada archivo en un sistema GNU/Linux es propiedad de un usuario y un grupo. Además, hay tres tipos de permisos de acceso: lectura, escritura y ejecución. Los permisos de acceso pueden aplicarse de forma diferente al usuario propietario del archivo, al grupo propietario y a otros (aquellos que no tienen la propiedad). Uno puede determinar los propietarios y permisos de un archivo al ver el formato de listado extenso del comando [ls](/index.php/Core_utilities_(Espa%C3%B1ol)#Esenciales "Core utilities (Español)"):
 
  `$ ls -l /boot/` 
 ```
@@ -105,7 +103,12 @@ Los permisos de acceso se muestran en tres grupos de caracteres, representando l
 Puede listar los archivos que pertenecen a un usuario o a un grupo con la orden `find`:
 
 ```
-# find / -group *grupo*
+# find / -group *nombredegrupo*
+
+```
+
+```
+# find / -group *númerodegrupo*
 
 ```
 
@@ -446,7 +449,7 @@ Los siguientes grupos se utilizan para fines del sistema, solo es necesario su a
 | Grupo | Archivos afectados | Propósito |
 | dbus | Utilizado internamente por [dbus](https://www.archlinux.org/packages/?name=dbus) |
 | kmem | `/dev/port`, `/dev/mem`, `/dev/kmem` |
-| locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | Véase [Locate](/index.php/Mlocate_(Espa%C3%B1ol) "Mlocate (Español)"). |
+| locate | `/usr/bin/locate`, `/var/lib/locate`, `/var/lib/mlocate`, `/var/lib/slocate` | Véase [Locate](/index.php/Locate_(Espa%C3%B1ol) "Locate (Español)"). |
 | lp | `/dev/lp[0-9]*`, `/dev/parport[0-9]*` | Acceso a dispositivos de puerto paralelo (impresoras y otros). |
 | mail | `/usr/bin/mail` |
 | nobody | Grupo sin privilegios. |
@@ -458,7 +461,7 @@ Los siguientes grupos se utilizan para fines del sistema, solo es necesario su a
 
 ### Grupos pre-systemd
 
-Antes de que Arch migrase a [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), los usuarios tenían que añadirse manualmente a estos grupos para poder acceder a los dispositivos correspondientes. Esta metodología está obsoleta en favor de [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") marcando los dispositivos con `uaccess` [tag](https://github.com/systemd/systemd/blob/master/src/login/70-uaccess.rules) y *logind* asignando los permisos a los usuarios dinámicamente a través de [ACLs](/index.php/Access_Control_Lists_(Espa%C3%B1ol) "Access Control Lists (Español)") según la sesión que esté actualmente activa. Tenga en cuenta que la sesión no debe interrumpirse para que esto funcione (véase [Permisos de sesión](/index.php/General_troubleshooting_(Espa%C3%B1ol)#Permisos_de_sesi.C3.B3n "General troubleshooting (Español)") para comprobarlo).
+Antes de que Arch migrase a [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), los usuarios tenían que añadirse manualmente a estos grupos para poder acceder a los dispositivos correspondientes. Esta metodología está obsoleta en favor de [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)") marcando los dispositivos con `uaccess` [tag](https://github.com/systemd/systemd/blob/master/src/login/70-uaccess.rules.m4) y *logind* asignando los permisos a los usuarios dinámicamente a través de [ACLs](/index.php/Access_Control_Lists_(Espa%C3%B1ol) "Access Control Lists (Español)") según la sesión que esté actualmente activa. Tenga en cuenta que la sesión no debe interrumpirse para que esto funcione (véase [Permisos de sesión](/index.php/General_troubleshooting_(Espa%C3%B1ol)#Permisos_de_sesi.C3.B3n "General troubleshooting (Español)") para comprobarlo).
 
 Hay algunas excepciones notables que requieren añadir un usuario a algunos de estos grupos: por ejemplo, si desea permitir que los usuarios accedan al dispositivo incluso cuando no están conectados. Sin embargo, tenga en cuenta que añadir usuarios a los grupos puede incluso causar la rotura de alguna funcionalidad (por ejemplo, el grupo `audio` romperá el cambio rápido de usuario y permite que las aplicaciones bloqueen el mezclador por software).
 

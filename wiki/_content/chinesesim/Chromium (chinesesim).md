@@ -93,7 +93,7 @@ Chromium 和 Google Chrome 已经内置了 *Chromium PDF Viewer* 插件，所以
 
 ### 证书管理
 
-Chromium 使用 [NSS](/index.php/Nss "Nss") 管理证书，可以通过`chrome://settings/certificates`.设置。
+Chromium 使用 [NSS](/index.php/Network_Security_Services "Network Security Services") 管理证书，可以通过`chrome://settings/certificates`.设置。
 
 ## 提示和技巧
 

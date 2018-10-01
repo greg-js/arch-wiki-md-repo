@@ -199,7 +199,7 @@ These files are aimed at setting network configuration variables, especially for
 
 #### [Match]
 
-*   `MacAddress=` a whitespace-separated list of hardware addresses
+*   `MACAddress=` a whitespace-separated list of hardware addresses
 *   `Name=` the device name
 *   `Host=` the machine hostname
 *   `Virtualization=` check whether the system is executed in a virtualized environment or not. A `Virtualization=no` key will only apply on your host machine, while `Virtualization=yes` apply to any container or VM.

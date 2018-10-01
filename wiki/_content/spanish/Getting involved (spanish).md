@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Getting involved](/index.php/Getting_involved "Getting involved"). Fecha de la última traducción/revisión: **2018-08-14**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Getting_involved&diff=0&oldid=509439).
+**Estado de la traducción:** este artículo es una versión traducida de [Getting involved](/index.php/Getting_involved "Getting involved"). Fecha de la última traducción/revisión: **2018-09-29**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Getting_involved&diff=0&oldid=544843).
 
 En biología evolutiva, la [cooperation](https://en.wikipedia.org/wiki/Co-operation_(evolution) describe las interacciones donde un individuo que paga un pequeño coste produce un beneficio mayor para otro u otros. Si es correspondido, de esta contribución costosa pueden beneficiarse todos los involucrados enormemente. Este principio también se aplica a los miembros proactivos de la comunidad de Arch que quieran involucrarse y colaborar con su distribución de Linux preferida. Esta participación no solo beneficia a los miembros de la comunidad y sus compañeros Archers, sino también a todos los usuarios del [software libre y de código abierto](https://en.wikipedia.org/wiki/es:Software_libre_y_de_c%C3%B3digo_abierto "wikipedia:es:Software libre y de código abierto").
 
@@ -20,8 +20,7 @@ En este artículo se describe cómo los usuarios nuevos o experimentados en Arch
 *   [2 Proyectos de la comunidad](#Proyectos_de_la_comunidad)
     *   [2.1 Grupos](#Grupos)
     *   [2.2 Software](#Software)
-    *   [2.3 Navegar por ArchWiki](#Navegar_por_ArchWiki)
-    *   [2.4 Otros](#Otros)
+    *   [2.3 Otros](#Otros)
 *   [3 FAQ](#FAQ)
     *   [3.1 ¿Cómo puedo convertirme en un desarrollador de Arch?](#.C2.BFC.C3.B3mo_puedo_convertirme_en_un_desarrollador_de_Arch.3F)
     *   [3.2 ¿Cómo puedo ser un Trusted User?](#.C2.BFC.C3.B3mo_puedo_ser_un_Trusted_User.3F)
@@ -37,7 +36,7 @@ Una de las maneras más fáciles de colaborar es participando en los [Foros de A
 
 ### Mejorar esta wiki
 
-[ArchWiki](/index.php/ArchWiki:About_(Espa%C3%B1ol) "ArchWiki:About (Español)") es una documentación sobre Arch Linux mantenido de forma colectiva. Se anima a todos los usuarios a [colaborar](/index.php/ArchWiki:Contributing_(Espa%C3%B1ol) "ArchWiki:Contributing (Español)").
+[ArchWiki](/index.php/ArchWiki_(Espa%C3%B1ol) "ArchWiki (Español)") es una documentación sobre Arch Linux mantenido de forma colectiva. Se anima a todos los usuarios a [colaborar](/index.php/ArchWiki:Contributing_(Espa%C3%B1ol) "ArchWiki:Contributing (Español)").
 
 ### Unirse a la sala de chat
 
@@ -127,37 +126,9 @@ Software desarrollado por la comunidad centrado en Arch Linux.
 
 	Repositorios de binarios no oficiales mantenidos por miembros de la comunidad.
 
-	[AUR helpers](/index.php/AUR_helpers "AUR helpers")
-
-	Utilidades para ayudar a los usuarios finales en el uso de los paquetes disponibles en [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
-
 	[Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends")
 
 	Interfaces gráficas para [pacman](/index.php/Pacman "Pacman").
-
-### Navegar por ArchWiki
-
-He aquí algunos métodos diferentes para visitar ArchWiki.
-
-	[arch-wiki-docs](https://github.com/lahwaacz/arch-wiki-docs)
-
-	Páginas de Arch Wiki optimizadas para navegar fuera de línea. Paquete: [arch-wiki-docs](https://www.archlinux.org/packages/?name=arch-wiki-docs).
-
-	[arch-wiki-lite](http://kmkeen.com/arch-wiki-lite/)
-
-	Arch-wiki-lite está diseñado para ofrecer una experiencia lo más cómoda posible para aquellos sin acceso a Internet o sin poder iniciar un navegador gráfico. Paquete: [arch-wiki-lite](https://www.archlinux.org/packages/?name=arch-wiki-lite).
-
-	[arch-wiki-man](https://github.com/greg-js/arch-wiki-man)
-
-	Arch Wiki es fácilmente accesible y puede buscarse como páginas man. Funciona sin conexión. Paquete: [arch-wiki-man](https://aur.archlinux.org/packages/arch-wiki-man/).
-
-	[ArchWiki Viewer for Android](https://bbs.archlinux.org/viewtopic.php?id=150538)
-
-	Un visor simple para la Wiki de ArchLinux en línea. El contenido de la página está formateado para una visualización óptima en el móvil.
-
-	[Wikicurses](https://bbs.archlinux.org/viewtopic.php?id=187864)
-
-	Una sencilla interfaz para los sitios MediaWiki, como lo son ArchWiki o Wikipedia. Paquete: [wikicurses](https://www.archlinux.org/packages/?name=wikicurses), [wikicurses-git](https://aur.archlinux.org/packages/wikicurses-git/).
 
 ### Otros
 

@@ -15,7 +15,7 @@ FrankenWM is a dynamic tiling [window manager](/index.php/Window_manager "Window
 
 ## Installation
 
-You can get FrankenWM by [installing](/index.php/Installing "Installing") the [frankenwm-git](https://aur.archlinux.org/packages/frankenwm-git/) package or directly from [Github](https://github.com/sulami/FrankenWM). Any Configuration has to be done at compile time, so you might want to have a look at the section below.
+You can get FrankenWM by [installing](/index.php/Install "Install") the [frankenwm-git](https://aur.archlinux.org/packages/frankenwm-git/) package or directly from [Github](https://github.com/sulami/FrankenWM). Any Configuration has to be done at compile time, so you might want to have a look at the section below.
 
 ### AUR
 

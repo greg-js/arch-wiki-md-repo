@@ -45,7 +45,7 @@ Related articles
 
 ## Installing
 
-Firefox can be [installed](/index.php/Installed "Installed") with the [firefox](https://www.archlinux.org/packages/?name=firefox) package.
+Firefox can be [installed](/index.php/Install "Install") with the [firefox](https://www.archlinux.org/packages/?name=firefox) package.
 
 Other alternatives include:
 

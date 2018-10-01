@@ -214,7 +214,7 @@ For more information, see [x0vncserver(1)](https://jlk.fjfi.cvut.cz/arch/manpage
 
 ### Starting and stopping x0vncserver via systemd
 
-In order to have a VNC Server runnning x0vncserver, which is the easiest way for most users to quickly have remote access to the current desktop, you can create a systemd unit as follows replacing the user and the options with the desired ones:
+In order to have a VNC Server running x0vncserver, which is the easiest way for most users to quickly have remote access to the current desktop, you can create a systemd unit as follows replacing the user and the options with the desired ones:
 
  `/etc/systemd/system/x0vncserver.service` 
 ```

@@ -141,7 +141,7 @@ When the system starts with Secure Boot enabled, follow the steps above to enrol
 
 **Note:** Since you are going to remove stuff, is a good idea to backup it.
 
-[Uninstall](/index.php/Uninstall "Uninstall") [preloader-signed](https://aur.archlinux.org/packages/preloader-signed/) and simply [remove](/index.php/Remove "Remove") the copied files and revert configuration; for [systemd-boot](/index.php/Systemd-boot "Systemd-boot") use:
+[Uninstall](/index.php/Uninstall "Uninstall") [preloader-signed](https://aur.archlinux.org/packages/preloader-signed/) and simply remove the copied files and revert configuration; for [systemd-boot](/index.php/Systemd-boot "Systemd-boot") use:
 
 ```
 # rm *esp*/EFI/systemd/{PreLoader,HashTool}.efi
@@ -259,7 +259,7 @@ In *MokManager* select *Enroll key from disk*, find `MOK.cer` and add it to MokL
 
 #### Remove shim
 
-[Uninstall](/index.php/Uninstall "Uninstall") [shim-signed](https://aur.archlinux.org/packages/shim-signed/), [remove](/index.php/Remove "Remove") the copied *shim* and *MokManager* files and rename back your boot loader.
+[Uninstall](/index.php/Uninstall "Uninstall") [shim-signed](https://aur.archlinux.org/packages/shim-signed/), remove the copied *shim* and *MokManager* files and rename back your boot loader.
 
 ## Using your own keys
 

@@ -17,7 +17,7 @@ Biedt een overzicht van het Arch User Repository.
 
 ## Overzicht
 
-Het **Arch Linux User-Community Repository (AUR)** is een door de gemeenschap onderhouden repository voor Arch gebruikers. Het AUR was in eerste instantie ontstaan om het delen van PKGBUILDS in de gemeenschap te organiseren en om het opnemen van door gebruikers gemaakte PKGBUILDS in de [community](/index.php/Community "Community") repository te bevorderen.
+Het **Arch Linux User-Community Repository (AUR)** is een door de gemeenschap onderhouden repository voor Arch gebruikers. Het AUR was in eerste instantie ontstaan om het delen van PKGBUILDS in de gemeenschap te organiseren en om het opnemen van door gebruikers gemaakte PKGBUILDS in de [community repository](/index.php/Community_repository "Community repository") te bevorderen.
 
 Het AUR wordt de geboorteplaats van Arch's nieuwe pakketten genoemd. In AUR kunnen de gebruikers hun eigen pakketten delen. De AUR gemeenschap stemt voor of tegen de pakketten, en zodra een pakket een hoog aantal stemmen heeft, zal een TU (Trusted User, vertrouwde gebruiker) het pakket overnemen en onderhouden in de [community] repository, welke toegankelijk is via [pacman](/index.php/Pacman "Pacman") en [ABS](/index.php/ABS "ABS").
 

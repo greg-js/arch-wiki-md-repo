@@ -42,8 +42,6 @@ Redshift will at least need your location to start (unless `-O` is used), meanin
 
 Redshift reads the configuration file `~/.config/redshift/redshift.conf`, if it exists. However, Redshift does not create that configuration file, so you may want to create it manually. See [redshift.conf.sample](https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample).
 
-**Note:** There seems to be a bug in Redshift that causes the transition option in the configuration file to not work as described: Instead of handling the transition between day and night it **only** changes the transition between application start-up and shutdown (and delay the latter as a consequence). See the [talk page](/index.php/Talk:Redshift#Day_and_night_transition "Talk:Redshift") and the [issue on the Redshift project page](https://github.com/jonls/redshift/issues/270) for more information.
-
 ### Quick start
 
 To just get it up and running with a basic setup, issue:
@@ -275,6 +273,16 @@ WantedBy=default.target
 ```
 
 Start and enable the service with systemctl: `$ systemctl --user enable --now geoclue-agent.service` and try running redshift again.
+
+If you still get the same error, it may be because of geoclue being locked down to a few programs by default. Try adding the following lines to `/etc/geoclue/geoclue.conf` (see [redshift issue 158](https://github.com/jonls/redshift/issues/158#issuecomment-71329118) and [FS#40360](https://bugs.archlinux.org/task/40360)) and run `$ redshift` again:
+
+ `/etc/geoclue/geoclue.conf` 
+```
+[redshift]
+allowed=true
+system=false
+users=
+```
 
 ## See also
 

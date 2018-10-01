@@ -42,7 +42,7 @@ This comprises both the [Enlightenment](https://www.enlightenment.org/) [window 
 
 ### Installation
 
-Enlightenment can be [installed](/index.php/Installed "Installed") with the package [enlightenment](https://www.archlinux.org/packages/?name=enlightenment).
+[Install](/index.php/Install "Install") the [enlightenment](https://www.archlinux.org/packages/?name=enlightenment) package.
 
 You might also want to install [terminology](https://www.archlinux.org/packages/?name=terminology), which is an EFL-based terminal emulator that integrates well with Enlightenment.
 

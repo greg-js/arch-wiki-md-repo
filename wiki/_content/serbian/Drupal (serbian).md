@@ -26,9 +26,7 @@ Ovaj dokument opisuje kako da podesite Drupal (6.x) sa Apach-om, MySQL-om ili Po
 
 #### iz Arch repozitorijuma
 
-*   [Drupal paket](https://www.archlinux.org/packages/community/any/drupal/) u [community](/index.php/Community "Community")
-
- `pacman -S drupal` 
+*   [drupal](https://www.archlinux.org/packages/?name=drupal)
 
 1.  Otvorite fajl **`/etc/php/php.ini`** sa editorom vaseg izbora, npr. `# nano /etc/php/php.ini` 
 2.  Nadjite liniju koja startuje sa, ";extension=json.so" i promenite je u, "extension=json.so". (Uklonite prefiks ";"). Ako ova linija ne postoji, dodajte je. Ova linija moze biti u "Dynamic Extensions" sekciji fajla ili na samom kraju fajla.

@@ -1,4 +1,4 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"). Fecha de la última traducción/revisión: **2018-08-15**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=535346).
+**Estado de la traducción:** este artículo es una versión traducida de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"). Fecha de la última traducción/revisión: **2018-09-29**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=544595).
 
 Artículos relacionados
 

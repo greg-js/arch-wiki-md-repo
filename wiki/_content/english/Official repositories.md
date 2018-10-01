@@ -61,6 +61,8 @@ This repository can be found in `.../extra/os/` on your favorite mirror.
 
 ### community
 
+	*"Community" redirects here. For the Arch community, see [Category:Arch community](/index.php/Category:Arch_community "Category:Arch community").*
+
 This repository can be found in `.../community/os/` on your favorite mirror.
 
 *community* contains packages that have been adopted by [Trusted Users](/index.php/Trusted_Users "Trusted Users") from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Some of these packages may eventually make the transition to the [core](#core) or [extra](#extra) repositories as the developers consider them crucial to the distribution.

@@ -6,7 +6,7 @@ Related articles
 *   [Stubby](/index.php/Stubby "Stubby")
 *   [openresolv](/index.php/Openresolv "Openresolv")
 
-[systemd-resolved](https://www.freedesktop.org/wiki/Software/systemd/resolved/) is a [systemd](/index.php/Systemd "Systemd") service that provides network name resolution to local applications via a [D-Bus](/index.php/D-Bus "D-Bus") interface, the `resolve` [NSS](/index.php/NSS "NSS") service ([nss-resolve(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nss-resolve.8)), and a local DNS stub listener on `127.0.0.53`. See [systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8) for the usage.
+[systemd-resolved](https://www.freedesktop.org/wiki/Software/systemd/resolved/) is a [systemd](/index.php/Systemd "Systemd") service that provides network name resolution to local applications via a [D-Bus](/index.php/D-Bus "D-Bus") interface, the `resolve` [NSS](/index.php/Name_Service_Switch "Name Service Switch") service ([nss-resolve(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nss-resolve.8)), and a local DNS stub listener on `127.0.0.53`. See [systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8) for the usage.
 
 ## Contents
 
@@ -25,7 +25,7 @@ Related articles
 
 ## Installation
 
-*systemd-resolved* is a part of the [systemd](https://www.archlinux.org/packages/?name=systemd) package that is [installed](/index.php/Installed "Installed") by default.
+*systemd-resolved* is a part of the [systemd](https://www.archlinux.org/packages/?name=systemd) package that is [installed](/index.php/Install "Install") by default.
 
 ## Configuration
 

@@ -53,7 +53,7 @@ fortune
 
 ```
 
-**Note:** *fortune* displays quotes and phrases deemed by its maintainer to be [non-offensive](https://github.com/shlomif/fortune-mod/blob/master/fortune-mod/Offensive). Aphorisms can be enabled as a mix of offensive/non-offensive or as potentially offensive output only. See [fortune(6)](http://jlk.fjfi.cvut.cz/arch/manpages/man/fortune.6) for more information.
+**Note:** *fortune* displays quotes and phrases deemed by its maintainer to be [non-offensive](https://github.com/shlomif/fortune-mod/blob/master/fortune-mod/Offensive). Aphorisms can be enabled as a mix of offensive/non-offensive or as potentially offensive output only. See [fortune(6)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fortune.6) for more information.
 
 ### Cowsay
 

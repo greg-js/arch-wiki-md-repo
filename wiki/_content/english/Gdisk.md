@@ -107,7 +107,7 @@ To use *gdisk*, run the program with the name of the device you want to change/e
 
 **Warning:** If you create a new partition table on a disk with data on it, it will erase all the data on the disk. Make sure this is what you want to do.
 
-To create a new GUID Partition Table and clear all current partition data, type `o` at the prompt. Skip this step if the table you require has already been created.
+To create a new [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") and clear all current partition data, type `o` at the prompt. Skip this step if the table you require has already been created.
 
 ### Create partitions
 

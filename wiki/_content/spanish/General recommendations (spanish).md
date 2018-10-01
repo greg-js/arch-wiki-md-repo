@@ -1,8 +1,8 @@
-**Estado de la traducción:** este artículo es una versión traducida de [General recommendations](/index.php/General_recommendations "General recommendations"). Fecha de la última traducción/revisión: **2018-08-13**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=532688).
+**Estado de la traducción:** este artículo es una versión traducida de [General recommendations](/index.php/General_recommendations "General recommendations"). Fecha de la última traducción/revisión: **2018-09-29**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=543471).
 
 Artículos relacionados
 
-*   [Preguntas frecuentes](/index.php/FAQ_(Espa%C3%B1ol) "FAQ (Español)")
+*   [Preguntas frecuentes](/index.php/Frequently_asked_questions_(Espa%C3%B1ol) "Frequently asked questions (Español)")
 *   [Guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)")
 *   [Lista de aplicaciones](/index.php/List_of_applications_(Espa%C3%B1ol) "List of applications (Español)")
 
@@ -77,7 +77,7 @@ Este documento es un índice con anotaciones a otros artículos populares e info
 
 ## Administración del sistema
 
-Esta sección se ocupa de las tareas administrativas y de gestión del sistema. Para más información, véase [Core utilities (Español)](/index.php/Core_utilities_(Espa%C3%B1ol) "Core utilities (Español)") y [Category:System administration (Español)](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)").
+Esta sección se ocupa de las tareas administrativas y de gestión del sistema. Para más información, véase [Utilidades principales](/index.php/Core_utilities_(Espa%C3%B1ol) "Core utilities (Español)") y la categoría [Administración del sistema](/index.php/Category:System_administration_(Espa%C3%B1ol) "Category:System administration (Español)").
 
 ### Usuarios y grupos
 
@@ -127,7 +127,7 @@ Véase el artículo sobre [réplicas](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors
 
 Los *ports* son un sistema usado inicialmente por distribuciones BSD que consisten en secuencias de comandos *(scripts)* de compilación que se encuentran en un árbol de directorios en el sistema local. En pocas palabras, cada *port* contiene una secuencia de comandos dentro de un directorio con un nombre intuitivo que hace referencia a la aplicación de terceros instalable.
 
-El [sistema de construcción de Arch](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)") (ABS, *Arch Build System*) ofrece la misma funcionalidad al proporcionar unas secuencias de comandos de compilación llamadas [PKGBUILDs](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)"), que se cargan con información conocida para una determinada pieza de software: control de la integridad, URL del proyecto, versión, licencia e instrucciones de compilación. Estos PKGBUILDs son analizados posteriormente por [makepkg](/index.php/Makepkg_(Espa%C3%B1ol) "Makepkg (Español)"), el programa que actualmente genera paquetes es gestionado limpiamente por pacman.
+El [sistema de construcción de Arch](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)") (ABS, *Arch Build System*) ofrece la misma funcionalidad al proporcionar unas secuencias de comandos de compilación llamadas [PKGBUILDs](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)"), que se cargan con información conocida para una determinada pieza de software: control de la integridad, URL del proyecto, versión, licencia e instrucciones de compilación. Estos PKGBUILDs son analizados por [makepkg](/index.php/Makepkg_(Espa%C3%B1ol) "Makepkg (Español)"), el programa que actualmente genera paquetes que son gestionado limpiamente por *pacman*.
 
 Cada paquete de los repositorios junto con los presentes en AUR están sujetos a recompilación con makepkg.
 
@@ -145,7 +145,7 @@ El hardware debe ser detectado automáticamente por [udev](/index.php/Udev_(Espa
 
 ### Microcódigo
 
-Los procesadores pueden tener un [comportamiento defectuoso](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), que el kernel puede corregir mediante la actualización del *microcódigo* al inicio. Los procesadores de Intel requieren un paquete separado para este fin. Véase [microcódigo](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)") para más detalles.
+Los procesadores pueden tener un [comportamiento defectuoso](http://www.anandtech.com/show/8376/intel-disables-tsx-instructions-erratum-found-in-haswell-haswelleep-broadwelly), que el kernel puede corregir mediante la actualización del *microcódigo* al inicio. Véase [microcódigo](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)") para más detalles.
 
 ### Conservar los mensajes del arranque
 
@@ -313,7 +313,7 @@ Es posible que quiera instalar un conjunto de fuentes TrueType, ya que solo se i
 
 Se puede encontrar una gran cantidad de información sobre el tema en los artículos sobre los [tipos de letra](/index.php/Fonts_(Espa%C3%B1ol) "Fonts (Español)") y la [configuración de los tipos de letra](/index.php/Font_configuration "Font configuration").
 
-Si pasa una cantidad significativa de tiempo trabajando desde la consola virtual (es decir, fuera de un servidor X), puede que quiera cambiar el tipo de letra de la consola para mejorar la legibilidad; véase [Tipos de letra de consola](/index.php/Fonts#Console_fonts "Fonts").
+Si pasa una cantidad significativa de tiempo trabajando desde la consola virtual (es decir, fuera de un servidor X), puede que quiera cambiar el tipo de letra de la consola para mejorar la legibilidad; véase [Tipos de letra de consola](/index.php/Linux_console#Fonts "Linux console").
 
 ### Temas para GTK+ y Qt
 
@@ -345,7 +345,7 @@ Esta sección se desarrolla en [Color output in console](/index.php/Color_output
 
 ### Archivos comprimidos
 
-Los archivos comprimidos se encuentran con frecuencia en un sistema GNU/Linux. [Tar](/index.php/Core_utilities_(Espa%C3%B1ol)#tar "Core utilities (Español)") es una de las herramientas de archivo más comúnmente utilizadas, y los usuarios deberían estar familiarizados con su sintaxis (los paquetes de Arch Linux, por ejemplo, son simplemente archivos tar comprimidos con xzip). Véase el artículo [archivado y compresión](/index.php/Archiving_and_compression "Archiving and compression").
+Los archivos comprimidos se encuentran con frecuencia en un sistema GNU/Linux. [Tar](/index.php/Core_utilities_(Espa%C3%B1ol)#Esenciales "Core utilities (Español)") es una de las herramientas de archivo más comúnmente utilizadas, y los usuarios deberían estar familiarizados con su sintaxis (los paquetes de Arch Linux, por ejemplo, son simplemente archivos tar comprimidos con xzip). Véase el artículo [archivado y compresión](/index.php/Archiving_and_compression "Archiving and compression").
 
 ### Indicador de la línea de comandos
 
@@ -357,7 +357,7 @@ Emacs es conocido por ofrecer opciones más allá de los usuales en la edición 
 
 ### Soporte del ratón
 
-Se puede preferir utilizar un ratón con la línea de comandos para operaciones de copiar y pegar en lugar del modo de copia tradicional de [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Véase [soporte del ratón](/index.php/General_purpose_mouse_(Espa%C3%B1ol) "General purpose mouse (Español)") para obtener instrucciones detalladas. Tenga en cuenta que ya puede hacer esto en [emuladores de terminal](/index.php/Terminal_emulators "Terminal emulators") con el [portapapeles](/index.php/Clipboard "Clipboard").
+Se puede preferir utilizar un ratón con la línea de comandos para operaciones de copiar y pegar en lugar del modo de copia tradicional de [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Véase [soporte del ratón](/index.php/General_purpose_mouse_(Espa%C3%B1ol) "General purpose mouse (Español)") para obtener instrucciones detalladas. Tenga en cuenta que ya puede hacer esto en [emuladores de terminal](/index.php/Terminal_emulator "Terminal emulator") con el [portapapeles](/index.php/Clipboard "Clipboard").
 
 ### Búfer de desplazamiento hacia atrás
 

@@ -11,7 +11,7 @@ Related articles
 *   [Creating packages](/index.php/Creating_packages "Creating packages")
 *   [AUR helpers](/index.php/AUR_helpers "AUR helpers")
 
-The Arch User Repository (AUR) is a community-driven repository for Arch users. It contains package descriptions ([PKGBUILDs](/index.php/PKGBUILD "PKGBUILD")) that allow you to compile a package from source with [makepkg](/index.php/Makepkg "Makepkg") and then install it via [pacman](/index.php/Pacman#Additional_commands "Pacman"). The AUR was created to organize and share new packages from the community and to help expedite popular packages' inclusion into the [community](/index.php/Community "Community") repository. This document explains how users can access and utilize the AUR.
+The Arch User Repository (AUR) is a community-driven repository for Arch users. It contains package descriptions ([PKGBUILDs](/index.php/PKGBUILD "PKGBUILD")) that allow you to compile a package from source with [makepkg](/index.php/Makepkg "Makepkg") and then install it via [pacman](/index.php/Pacman#Additional_commands "Pacman"). The AUR was created to organize and share new packages from the community and to help expedite popular packages' inclusion into the [community repository](/index.php/Community_repository "Community repository"). This document explains how users can access and utilize the AUR.
 
 A good number of new packages that enter the official repositories start in the AUR. In the AUR, users are able to contribute their own package builds (PKGBUILD and related files). The AUR community has the ability to vote for packages in the AUR. If a package becomes popular enough — provided it has a compatible license and good packaging technique — it may be entered into the *community* repository (directly accessible by [pacman](/index.php/Pacman "Pacman") or [abs](/index.php/Abs "Abs")).
 
@@ -169,7 +169,7 @@ Other useful flags are
 
 The [AUR Web Interface](https://aur.archlinux.org) has a comments facility that allows users to provide suggestions and feedback on improvements to the PKGBUILD contributor. Avoid pasting patches or PKGBUILDs into the comments section: they quickly become obsolete and just end up needlessly taking up lots of space. Instead email those files to the maintainer, or even use a [pastebin](/index.php/Pastebin "Pastebin").
 
-One of the easiest activities for **all** Arch users is to browse the AUR and **vote** for their favourite packages using the online interface. All packages are eligible for adoption by a TU for inclusion in the [community](/index.php/Community "Community") repository, and the vote count is one of the considerations in that process; it is in everyone's interest to vote!
+One of the easiest activities for **all** Arch users is to browse the AUR and **vote** for their favourite packages using the online interface. All packages are eligible for adoption by a TU for inclusion in the [community repository](/index.php/Community_repository "Community repository"), and the vote count is one of the considerations in that process; it is in everyone's interest to vote!
 
 ## Sharing and maintaining packages
 
@@ -257,6 +257,7 @@ If you have already created a git repository, you can simply create a remote for
 
 ```
 $ git remote add *remote_name* ssh://aur@aur.archlinux.org/*package_name*.git
+$ git branch --set-upstream-to=*remote_name*/master master
 $ git fetch *remote_name*
 
 ```
@@ -320,7 +321,7 @@ The [Python-Markdown](https://python-markdown.github.io/) syntax is supported in
 
 ### What is the AUR?
 
-The AUR (Arch User Repository) is a place where the Arch Linux community can upload [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") of applications, libraries, etc., and share them with the entire community. Fellow users can then vote for their favorites to be moved into the [community](/index.php/Community "Community") repository to be shared with Arch Linux users in binary form.
+The AUR (Arch User Repository) is a place where the Arch Linux community can upload [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") of applications, libraries, etc., and share them with the entire community. Fellow users can then vote for their favorites to be moved into the [community repository](/index.php/Community_repository "Community repository") to be shared with Arch Linux users in binary form.
 
 ### What kind of packages are permitted on the AUR?
 
@@ -339,11 +340,11 @@ ssh aur@aur.archlinux.org vote <PACKAGE_NAME>
 
 ### What is a Trusted User / TU?
 
-A [Trusted User](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines"), in short TU, is a person who is chosen to oversee AUR and the [community](/index.php/Community "Community") repository. They are the ones who maintain popular PKGBUILDs in *community*, and overall keep the AUR running.
+A [Trusted User](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines"), in short TU, is a person who is chosen to oversee AUR and the [community repository](/index.php/Community_repository "Community repository"). They are the ones who maintain popular PKGBUILDs in *community*, and overall keep the AUR running.
 
 ### What is the difference between the Arch User Repository and the community repository?
 
-The Arch User Repository is where all PKGBUILDs that users submit are stored, and must be built manually with [makepkg](/index.php/Makepkg "Makepkg"). When PKGBUILDs receive enough community interest and the support of a TU, they are moved into the [community](/index.php/Community "Community") repository (maintained by the TUs), where the binary packages can be installed with [pacman](/index.php/Pacman "Pacman").
+The Arch User Repository is where all PKGBUILDs that users submit are stored, and must be built manually with [makepkg](/index.php/Makepkg "Makepkg"). When PKGBUILDs receive enough community interest and the support of a TU, they are moved into the [community repository](/index.php/Community_repository "Community repository") (maintained by the TUs), where the binary packages can be installed with [pacman](/index.php/Pacman "Pacman").
 
 ### Foo in the AUR is outdated; what should I do?
 
@@ -381,7 +382,7 @@ If you would like to have your PKGBUILD reviewed, post it on the [aur-general ma
 
 ### How to get a PKGBUILD into the community repository?
 
-Usually, at least 10 votes are required for something to move into [community](/index.php/Community "Community"). However, if a TU wants to support a package, it will often be found in the repository.
+Usually, at least 10 votes are required for something to move into [community](/index.php/Community_repository "Community repository"). However, if a TU wants to support a package, it will often be found in the repository.
 
 Reaching the required minimum of votes is not the only requirement, there has to be a TU willing to maintain the package. TUs are not required to move a package into the *community* repository even if it has thousands of votes.
 
@@ -405,7 +406,7 @@ See also [System maintenance#Use proven software packages](/index.php/System_mai
 
 ### Why has foo disappeared from the AUR?
 
-It is possible the package has been adopted by a TU and is now in the [community](/index.php/Community "Community") repository.
+It is possible the package has been adopted by a TU and is now in the [community repository](/index.php/Community_repository "Community repository").
 
 Packages may be deleted if they did not fulfill the [#Rules of submission](#Rules_of_submission). See the [aur-requests archives](https://lists.archlinux.org/pipermail/aur-requests/) for the reason for deletion.
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Desktop environment](/index.php/Desktop_environment "Desktop environment"). Data da última tradução: 2018-08-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Desktop_environment&diff=0&oldid=537393) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Desktop environment](/index.php/Desktop_environment "Desktop environment"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Desktop_environment&diff=0&oldid=544591) na versão em inglês.
 
 Artigos relacionados
 
@@ -126,7 +126,6 @@ Outros componentes geralmente fornecidos por ambientes de área de trabalho são
 *   Daemon de notificação: [Desktop notifications](/index.php/Desktop_notifications "Desktop notifications")
 *   Agente de autenticação de Polkit: [Polkit#Authentication agents](/index.php/Polkit#Authentication_agents "Polkit")
 *   Bloqueador de tela: [List of applications#Screen lockers](/index.php/List_of_applications#Screen_lockers "List of applications")
-*   Gerenciador de volume de som: [List of applications#Volume managers](/index.php/List_of_applications#Volume_managers "List of applications")
 *   Aplicativos padrão: [XDG MIME Applications#mimeapps.list](/index.php/XDG_MIME_Applications#mimeapps.list "XDG MIME Applications")
 
 ### Usar um gerenciador de janela diferente

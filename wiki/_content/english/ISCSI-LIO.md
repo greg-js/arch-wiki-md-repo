@@ -22,7 +22,7 @@ It is highly recommended to use the free branch versions of the packages: [targe
 
 ## targetcli
 
-Run `targetcli status` as [root](/index.php/Root "Root") to see some information about the running configuration.
+Run `targetcli status` as [root](/index.php/Root_user "Root user") to see some information about the running configuration.
 
 You can use **targetcli** to create the whole configuration, see targetcli(8).
 

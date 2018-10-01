@@ -27,8 +27,6 @@ Users and groups are used on GNU/Linux for [access control](https://en.wikipedia
 
 ## Overview
 
-	*"root" redirects here. For the root directory, see [Partitioning#/](/index.php/Partitioning#.2F "Partitioning").*
-
 A *user* is anyone who uses a computer. In this case, we are describing the names which represent those users. It may be Mary or Bill, and they may use the names Dragonlady or Pirate in place of their real name. All that matters is that the computer has a name for each account it creates, and it is this name by which a person gains access to use the computer. Some system services also run using restricted or privileged user accounts.
 
 Managing users is done for the purpose of security by limiting access in certain specific ways. The [superuser](https://en.wikipedia.org/wiki/Superuser "wikipedia:Superuser") (root) has complete access to the operating system and its configuration; it is intended for administrative use only. Unprivileged users can use the [su](/index.php/Su "Su") and [sudo](/index.php/Sudo "Sudo") programs for controlled privilege escalation.
@@ -351,8 +349,6 @@ The *pwck* command can be used to verify the integrity of the user database. It 
 **Note:** Arch Linux defaults of the files are created as *.pacnew* files by new releases of the [filesystem](https://www.archlinux.org/packages/?name=filesystem) package. Unless Pacman outputs related messages for action, these *.pacnew* files can, and should, be disregarded/removed. New required default users and groups are added or re-added as needed by [systemd-sysusers(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sysusers.8).
 
 ## Group management
-
-	*"Group" redirects here. For package groups, see [Package group](/index.php/Package_group "Package group").*
 
 `/etc/group` is the file that defines the groups on the system (see [group(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) for details).
 

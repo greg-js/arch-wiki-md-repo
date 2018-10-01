@@ -13,7 +13,7 @@ Related articles
 
 ## Installation
 
-Use the [Installation](/index.php/Installation "Installation") guide. Make sure that Secure Boot is disable in BIOS Setup.
+Use the [Installation guide](/index.php/Installation_guide "Installation guide"). Make sure that Secure Boot is disable in BIOS Setup.
 
 ## Configuration
 

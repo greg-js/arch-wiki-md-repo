@@ -47,25 +47,26 @@ Related articles
     *   [3.2 Remote control of Windows computer](#Remote_control_of_Windows_computer)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 Failed to start Samba SMB/CIFS server](#Failed_to_start_Samba_SMB.2FCIFS_server)
-    *   [4.2 No dialect specified on mount](#No_dialect_specified_on_mount)
-    *   [4.3 Unable to overwrite files, permissions errors](#Unable_to_overwrite_files.2C_permissions_errors)
-    *   [4.4 Windows clients keep asking for password even if Samba shares are created with guest permissions](#Windows_clients_keep_asking_for_password_even_if_Samba_shares_are_created_with_guest_permissions)
-    *   [4.5 Windows 7 connectivity problems - mount error(12): cannot allocate memory](#Windows_7_connectivity_problems_-_mount_error.2812.29:_cannot_allocate_memory)
-    *   [4.6 Windows 10 1709 and up connectivity problems - "Windows cannot access" 0x80004005](#Windows_10_1709_and_up_connectivity_problems_-_.22Windows_cannot_access.22_0x80004005)
-    *   [4.7 Error: Failed to retrieve printer list: NT_STATUS_UNSUCCESSFUL](#Error:_Failed_to_retrieve_printer_list:_NT_STATUS_UNSUCCESSFUL)
-    *   [4.8 Sharing a folder fails](#Sharing_a_folder_fails)
-    *   [4.9 "Browsing" network fails with "Failed to retrieve share list from server"](#.22Browsing.22_network_fails_with_.22Failed_to_retrieve_share_list_from_server.22)
-    *   [4.10 Protocol negotiation failed: NT_STATUS_INVALID_NETWORK_RESPONSE](#Protocol_negotiation_failed:_NT_STATUS_INVALID_NETWORK_RESPONSE)
-    *   [4.11 Connection to SERVER failed: (Error NT_STATUS_UNSUCCESSFUL)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_UNSUCCESSFUL.29)
-    *   [4.12 Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_CONNECTION_REFUSED.29)
-    *   [4.13 Protocol negotiation failed: NT_STATUS_CONNECTION_RESET](#Protocol_negotiation_failed:_NT_STATUS_CONNECTION_RESET)
-    *   [4.14 Password Error when correct credentials are given (error 1326)](#Password_Error_when_correct_credentials_are_given_.28error_1326.29)
-    *   [4.15 Mapping reserved Windows characters](#Mapping_reserved_Windows_characters)
-    *   [4.16 Folder shared inside graphical environment is not available to guests](#Folder_shared_inside_graphical_environment_is_not_available_to_guests)
-        *   [4.16.1 Verify correct samba configuration](#Verify_correct_samba_configuration)
-        *   [4.16.2 Verify correct shared folder creation](#Verify_correct_shared_folder_creation)
-        *   [4.16.3 Verify folder access by guest](#Verify_folder_access_by_guest)
-    *   [4.17 Mount error: Host is down](#Mount_error:_Host_is_down)
+    *   [4.2 Permission issues on AppArmor](#Permission_issues_on_AppArmor)
+    *   [4.3 No dialect specified on mount](#No_dialect_specified_on_mount)
+    *   [4.4 Unable to overwrite files, permissions errors](#Unable_to_overwrite_files.2C_permissions_errors)
+    *   [4.5 Windows clients keep asking for password even if Samba shares are created with guest permissions](#Windows_clients_keep_asking_for_password_even_if_Samba_shares_are_created_with_guest_permissions)
+    *   [4.6 Windows 7 connectivity problems - mount error(12): cannot allocate memory](#Windows_7_connectivity_problems_-_mount_error.2812.29:_cannot_allocate_memory)
+    *   [4.7 Windows 10 1709 and up connectivity problems - "Windows cannot access" 0x80004005](#Windows_10_1709_and_up_connectivity_problems_-_.22Windows_cannot_access.22_0x80004005)
+    *   [4.8 Error: Failed to retrieve printer list: NT_STATUS_UNSUCCESSFUL](#Error:_Failed_to_retrieve_printer_list:_NT_STATUS_UNSUCCESSFUL)
+    *   [4.9 Sharing a folder fails](#Sharing_a_folder_fails)
+    *   [4.10 "Browsing" network fails with "Failed to retrieve share list from server"](#.22Browsing.22_network_fails_with_.22Failed_to_retrieve_share_list_from_server.22)
+    *   [4.11 Protocol negotiation failed: NT_STATUS_INVALID_NETWORK_RESPONSE](#Protocol_negotiation_failed:_NT_STATUS_INVALID_NETWORK_RESPONSE)
+    *   [4.12 Connection to SERVER failed: (Error NT_STATUS_UNSUCCESSFUL)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_UNSUCCESSFUL.29)
+    *   [4.13 Connection to SERVER failed: (Error NT_STATUS_CONNECTION_REFUSED)](#Connection_to_SERVER_failed:_.28Error_NT_STATUS_CONNECTION_REFUSED.29)
+    *   [4.14 Protocol negotiation failed: NT_STATUS_CONNECTION_RESET](#Protocol_negotiation_failed:_NT_STATUS_CONNECTION_RESET)
+    *   [4.15 Password Error when correct credentials are given (error 1326)](#Password_Error_when_correct_credentials_are_given_.28error_1326.29)
+    *   [4.16 Mapping reserved Windows characters](#Mapping_reserved_Windows_characters)
+    *   [4.17 Folder shared inside graphical environment is not available to guests](#Folder_shared_inside_graphical_environment_is_not_available_to_guests)
+        *   [4.17.1 Verify correct samba configuration](#Verify_correct_samba_configuration)
+        *   [4.17.2 Verify correct shared folder creation](#Verify_correct_shared_folder_creation)
+        *   [4.17.3 Verify folder access by guest](#Verify_folder_access_by_guest)
+    *   [4.18 Mount error: Host is down](#Mount_error:_Host_is_down)
 *   [5 See also](#See_also)
 
 ## Server
@@ -82,7 +83,9 @@ A documented example as in `smb.conf.default` from the [Samba git repository](ht
 
 **Note:**
 
-*   The default configuration sets `log file` to a non-writable location, which will cause errors - change this to the correct location: `log file = /var/log/samba/%m.log`.
+*   The default configuration sets `log file` to a non-writable location, which will cause errors - apply one of the following workarounds:
+    *   Change the log file location to a writable path: `log file = /var/log/samba/%m.log`
+    *   Change logging to a non-file backend solution: `logging = syslog` with `syslog only = yes`, or use `logging = systemd`
 *   If required; the `workgroup` specified in the `[global]` section has to match the Windows workgroup (default `WORKGROUP`).
 
 **Tip:** Whenever you modify the `smb.conf` file, run the [testparm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/testparm.1) command to check for syntactic errors.
@@ -796,6 +799,27 @@ Possible solutions:
 
 ```
 # chmod 0755 /var/cache/samba/msg
+
+```
+
+### Permission issues on AppArmor
+
+The following adjustments should be applied when using Samba together with [AppArmor](/index.php/AppArmor "AppArmor"):
+
+*   The pid file and log file paths used in the [samba](https://www.archlinux.org/packages/?name=samba) package differ from the ones used in the AppArmor profiles [[1]](https://gitlab.com/apparmor/apparmor/merge_requests/210). Change the `pid directory` to `var/run/samba/` and use a non-file `logging` backend:
+
+ `/etc/samba/smb.conf` 
+```
+[global]
+pid directory = /var/run/samba/
+logging = systemd ; or syslog with syslog only
+```
+
+*   If using a [share path](#Creating_a_share) located outside of a home-directory whitelist it in `/etc/apparmor.d/local/usr.sbin.smbd`. E.g.:
+
+ `/etc/apparmor.d/local/usr.sbin.smbd` 
+```
+/data/** rw,
 
 ```
 

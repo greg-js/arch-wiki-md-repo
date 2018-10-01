@@ -46,7 +46,7 @@ Međutim, neučinkovita uporaba može biti kontra-produktivna. Molimo pročitajt
 
 ### Pravljanje i usvajanje AUR paketa
 
-*Arch korisnički repozitorij* sadrži paket skripti koje su napravili ljudi iz naše zajednice, tako da korisnici mogu jednostavno instalirati softver koji nije u službenih repozitorijama. Popularni aranžmani mogu biti uključeni u službene [repozitorije](/index.php/Community "Community").
+*Arch korisnički repozitorij* sadrži paket skripti koje su napravili ljudi iz naše zajednice, tako da korisnici mogu jednostavno instalirati softver koji nije u službenih repozitorijama. Popularni aranžmani mogu biti uključeni u službene [repozitorije](/index.php/Community_repository "Community repository").
 
 Možete pomoći sa kreiranjem i usvajanjem paketa.
 

@@ -66,7 +66,7 @@ Other optional dependencies are shown in the table below.
 
 The *netctl* profile files are stored in `/etc/netctl/` and example configuration files are available in `/etc/netctl/examples/`.
 
-To use an example profile, simply [copy](/index.php/Copy "Copy") it from `/etc/netctl/examples/` to `/etc/netctl/` and configure it to your needs; see basic [#Example profiles](#Example_profiles) below. The first parameter you need to create a profile is the network `Interface`, see [Network configuration#Network interfaces](/index.php/Network_configuration#Network_interfaces "Network configuration") for details.
+To use an example profile, simply copy it from `/etc/netctl/examples/` to `/etc/netctl/` and configure it to your needs; see basic [#Example profiles](#Example_profiles) below. The first parameter you need to create a profile is the network `Interface`, see [Network configuration#Network interfaces](/index.php/Network_configuration#Network_interfaces "Network configuration") for details.
 
 **Tip:**
 

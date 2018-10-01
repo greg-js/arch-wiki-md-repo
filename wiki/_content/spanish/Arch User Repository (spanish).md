@@ -1,3 +1,5 @@
+**Estado de la traducción:** este artículo es una versión traducida de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Fecha de la última traducción/revisión: **2018-09-21**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=544908).
+
 Artículos relacionados
 
 *   [makepkg (Español)](/index.php/Makepkg_(Espa%C3%B1ol) "Makepkg (Español)")
@@ -11,9 +13,7 @@ Artículos relacionados
 *   [Creating packages (Español)](/index.php/Creating_packages_(Espa%C3%B1ol) "Creating packages (Español)")
 *   [AUR helpers (Español)](/index.php/AUR_helpers_(Espa%C3%B1ol) "AUR helpers (Español)")
 
-**Estado de la traducción:** este artículo es una versión traducida de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Fecha de la última traducción/revisión: **2018-09-21**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=542235).
-
-Arch User Repository (AUR) es un repositorio promovido por los usuarios de la comunidad de Arch. Este contiene descripciones de los paquetes ([PKGBUILD](/index.php/PKGBUILD "PKGBUILD")) que le permiten compilar un paquete desde el código fuente con [makepkg](/index.php/Makepkg "Makepkg") y luego instalarlo a través de [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)"). AUR fue creado para organizar y compartir paquetes nuevos de la comunidad y ayudar a acelerar la inclusión de los paquetes más populares en el repositorio [community](/index.php/Community "Community"). Este documento explica cómo los usuarios pueden acceder y utilizar AUR.
+Arch User Repository (AUR) es un repositorio promovido por los usuarios de la comunidad de Arch. Este contiene descripciones de los paquetes ([PKGBUILD](/index.php/PKGBUILD "PKGBUILD")) que le permiten compilar un paquete desde el código fuente con [makepkg](/index.php/Makepkg "Makepkg") y luego instalarlo a través de [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)"). AUR fue creado para organizar y compartir paquetes nuevos de la comunidad y ayudar a acelerar la inclusión de los paquetes más populares en el [repositorio community](/index.php/Repositorio_community "Repositorio community"). Este documento explica cómo los usuarios pueden acceder y utilizar AUR.
 
 Un buen número de paquetes nuevos que entran en los repositorios oficiales tienen su origen en AUR. En AUR, los usuarios pueden aportar sus propias compilaciones de paquetes (PKGBUILD y los archivos relacionados). La comunidad de AUR tiene la posibilidad de votar a favor o en contra de los paquetes de AUR. Si un paquete llega a ser lo suficientemente popular —siempre que tenga una licencia compatible y la técnica de un buen empaquetado— puede ser introducido en el repositorio *community* (directamente accesible por [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") o [abs](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)")).
 
@@ -171,7 +171,7 @@ Otros indicadores útiles son:
 
 La [interfaz Web de AUR](https://aur.archlinux.org) facilita hacer comentarios que permite a los usuarios proporcionar sugerencias y feedback para contribuir a mejorar el PKGBUILD. Evite pegar parches o PKGBUILD en la sección de comentarios: se vuelven rápidamente obsoletos y acaban ocupando innecesariamente mucho espacio. En su lugar, envíe los archivos al mantenedor, o incluso utilice un [cliente pastebin](/index.php/Pastebin_Clients "Pastebin Clients").
 
-Una de las actividades más fáciles para **todos** los usuarios de Arch es navegar por AUR y **votar** por sus paquetes favoritos utilizando la interfaz web. Todos los paquetes son elegibles para ser adoptados por un TU (Trusted Users —*«usuarios de confianza»*—) para su inclusión en el repositorio [community](/index.php/Community "Community"), y el recuento de votos es uno de los factores considerados en este proceso, ¡por lo que votar es un interés de todos!
+Una de las actividades más fáciles para **todos** los usuarios de Arch es navegar por AUR y **votar** por sus paquetes favoritos utilizando la interfaz web. Todos los paquetes son elegibles para ser adoptados por un TU (Trusted Users —*«usuarios de confianza»*—) para su inclusión en el [repositorio community](/index.php/Repositorio_community "Repositorio community"), y el recuento de votos es uno de los factores considerados en este proceso, ¡por lo que votar es un interés de todos!
 
 ## Compartir y mantener los paquetes
 
@@ -322,7 +322,7 @@ La sintaxis de [Python-Markdown](https://python-markdown.github.io/) es compatib
 
 ### ¿Que es AUR?
 
-AUR (Arch User Repository) es el lugar donde la comunidad de Arch Linux puede subir los [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") de las aplicaciones, bibliotecas, etc., y compartirlos con el resto de la comunidad. Los demás usuarios pueden votar para que sus favoritos entren en el repositorio [community](/index.php/Community "Community") de modo que puedan ser instalados en Arch Linux en formato binario.
+AUR (Arch User Repository) es el lugar donde la comunidad de Arch Linux puede subir los [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") de las aplicaciones, bibliotecas, etc., y compartirlos con el resto de la comunidad. Los demás usuarios pueden votar para que sus favoritos entren en el [repositorio community](/index.php/Repositorio_community "Repositorio community") de modo que puedan ser instalados en Arch Linux en formato binario.
 
 ### ¿Qué tipo de paquetes se permiten en AUR?
 
@@ -341,11 +341,11 @@ ssh aur@aur.archlinux.org vote <PACKAGE_NAME>
 
 ### ¿Qué es un usuario de confianza / Trusted Users (TU)?
 
-Un [Trusted Users (*«usuarios de confianza»*)](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines"), siglas en inglés TU, es una persona encargada de supervisar el repositorio AUR y el repositorio [community](/index.php/Community "Community"). Ellos son los que colocan los paquetes más votados en el repositorio *community*, marcan los PKGBUILDs como seguros y mantienen AUR.
+Un [Trusted Users (*«usuarios de confianza»*)](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines"), siglas en inglés TU, es una persona encargada de supervisar el repositorio AUR y el [repositorio community](/index.php/Repositorio_community "Repositorio community"). Ellos son los que colocan los paquetes más votados en el repositorio *community*, marcan los PKGBUILDs como seguros y mantienen AUR.
 
 ### ¿Cuál es la diferencia entre Arch User Repository y el repositorio community?
 
-Arch User Repository contiene todos los PKGBUILD que los usuarios envían; para instalarlos tiene que construirlos manualmente con [makepkg](/index.php/Makepkg "Makepkg"). Cuando un PKGBUILD obtiene suficientes votos, pasa al repositorio [community](/index.php/Community "Community") (mantenido por los usuarios de confianza), donde los paquetes binarios pueden instalarse directamente con [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)").
+Arch User Repository contiene todos los PKGBUILD que los usuarios envían; para instalarlos tiene que construirlos manualmente con [makepkg](/index.php/Makepkg "Makepkg"). Cuando un PKGBUILD obtiene suficientes votos, pasa al [repositorio community](/index.php/Repositorio_community "Repositorio community") (mantenido por los usuarios de confianza), donde los paquetes binarios pueden instalarse directamente con [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)").
 
 ### Un paquete en AUR está desactualizado, ¿qué hago?
 
@@ -383,7 +383,7 @@ Si quisiera recibir comentarios a tu PKGBUILD, envíelo a la lista de correo de 
 
 ### ¿Qué hacer para que un PKGBUILD pase al repositorio community?
 
-Por lo general, son necesarios, al menos, 10 votos para que algo se mueva al repositorio [community](/index.php/Community "Community"). Sin embargo, si un TU (Trusted Users —*«usuarios de confianza»*—) quiere apoyar un paquete, se suele pasar dicho paquete al repositorio.
+Por lo general, son necesarios, al menos, 10 votos para que algo se mueva al [repositorio community](/index.php/Repositorio_community "Repositorio community"). Sin embargo, si un TU (Trusted Users —*«usuarios de confianza»*—) quiere apoyar un paquete, se suele pasar dicho paquete al repositorio.
 
 Llegar al mínimo requerido de votos no es el único requisito, tiene que haber un TU (Trusted Users —*«usuarios de confianza»*—) dispuesto a mantener el paquete. Los TU (Trusted Users —*«usuarios de confianza»*—) no están obligados a mover un paquete al repositorio *community*, incluso si tiene miles de votos.
 
@@ -407,7 +407,7 @@ Véase también [System maintenance#Use proven software packages](/index.php/Sys
 
 ### ¿Por qué foo desapareció de AUR?
 
-Es posible que el paquete haya sido adoptado por un TU (Trusted Users —*«usuarios de confianza»*—) y ahora esté en el repositorio de [community](/index.php/Community "Community").
+Es posible que el paquete haya sido adoptado por un TU (Trusted Users —*«usuarios de confianza»*—) y ahora esté en el [repositorio community](/index.php/Repositorio_community "Repositorio community").
 
 Los paquetes pueden eliminarse si no cumplen con las [#Reglas de envío](#Reglas_de_env.C3.ADo). Consulte los [aur-requests archivos](https://lists.archlinux.org/pipermail/aur-requests/) para conocer el motivo de la eliminación.
 

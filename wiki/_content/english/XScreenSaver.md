@@ -146,7 +146,7 @@ heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
 
 #### Kodi
 
-[Kodi](/index.php/Kodi "Kodi") has no native support to disable XScreenSaver (it uses its own screensaver). [Install](/index.php/Install "Install") the [kodi-prevent-xscreensaver](https://aur.archlinux.org/packages/kodi-prevent-xscreensaver/) package as a workaround.
+[Kodi](/index.php/Kodi "Kodi") has no native support to disable XScreenSaver (it uses its own screensaver). [Install](/index.php/Install "Install") the [kodi-prevent-xscreensaver](https://aur.archlinux.org/packages/kodi-prevent-xscreensaver/) package as a workaround or try Kodi extension from [https://sourceforge.net/projects/osscreensavermanager/](https://sourceforge.net/projects/osscreensavermanager/) .
 
 #### Browser HTML5 video/Flash
 

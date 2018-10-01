@@ -1343,7 +1343,7 @@ user="*user*"
 
 ```
 
-If that does not work make sure your user account is added to the kvm and libvirt [groups](/index.php/Groups "Groups").
+If that does not work make sure your user account is added to the kvm and libvirt [groups](/index.php/Group "Group").
 
 ### Host lockup after VM shutdown
 

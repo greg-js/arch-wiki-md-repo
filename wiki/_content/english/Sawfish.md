@@ -13,7 +13,7 @@ Sawfish is a highly customizable [window manager](/index.php/Window_manager "Win
 
 ## Installation
 
-Sawfish can be [installed](/index.php/Installed "Installed") with the [sawfish](https://aur.archlinux.org/packages/sawfish/) package.
+[Install](/index.php/Install "Install") the [sawfish](https://aur.archlinux.org/packages/sawfish/) package.
 
 ## Starting
 

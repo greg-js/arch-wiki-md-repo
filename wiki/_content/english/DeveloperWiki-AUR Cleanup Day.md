@@ -52,6 +52,10 @@ Check for the package in the sorted lists below before adding.
 
 *   Up to page 10 [https://aur.archlinux.org/packages/?O=0&SeB=nd&K=&outdated=on&SB=l&SO=a&PP=50&do_Orphans=Orphans](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=&outdated=on&SB=l&SO=a&PP=50&do_Orphans=Orphans)
 
+<-- Replaced by -->
+
+*   [mysql-jdbc](https://aur.archlinux.org/packages/mysql-jdbc/) replaced by [mysql-connector-java](https://aur.archlinux.org/packages/mysql-connector-java/)
+
 <--Should be renamed-->
 
 *   [python-sphinx](https://www.archlinux.org/packages/?name=python-sphinx) to sphinx - [python- packages are libraries](https://wiki.archlinux.org/index.php/Python_package_guidelines#Package_naming), which this is not

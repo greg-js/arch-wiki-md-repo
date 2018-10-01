@@ -56,7 +56,7 @@ To [pkgstats](/index.php/Pkgstats "Pkgstats") παρέχει ένα cron job τ�
 
 ### Δημιουργία και υιοθέτηση AUR πακέτων
 
-To [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") περιέχει package scripts δημιουργημένα από την κοινότητα έτσι ώστε οι χρήστες να μπορούν εύκολα να εγκαταστήσουν λογισμικό που δεν είναι στα επίσημα αποθετήρια. Τα δημοφιλή πακέτα περιλαμβάνονται στο επίσημο [community](/index.php/Community "Community") αποθετήριο.
+To [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") περιέχει package scripts δημιουργημένα από την κοινότητα έτσι ώστε οι χρήστες να μπορούν εύκολα να εγκαταστήσουν λογισμικό που δεν είναι στα επίσημα αποθετήρια. Τα δημοφιλή πακέτα περιλαμβάνονται στο επίσημο [community](/index.php/Community_repository "Community repository") αποθετήριο.
 
 Μπορείτε να βοηθήσετε στη δημιουργία και υιοθέτηση πακέτων.
 

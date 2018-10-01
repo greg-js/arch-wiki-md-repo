@@ -70,7 +70,7 @@
 
 Btrfs 支持已经包含在[linux](https://www.archlinux.org/packages/?name=linux)和[linux-lts](https://www.archlinux.org/packages/?name=linux-lts)的内核中.[GRUB 2](/index.php/GRUB "GRUB"),[mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")和 [Syslinux](/index.php/Syslinux "Syslinux") 也已经支持 Btrfs，不需要额外配置。
 
-要使用一些用户空间工具,[安装](/index.php/Installing "Installing") [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) 软件包.
+要使用一些用户空间工具,[安装](/index.php/Install "Install") [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) 软件包.
 
 ## 分区
 

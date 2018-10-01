@@ -47,7 +47,7 @@ Bij de open-vm-tools worden de volgende utilities meegeleverd:
 
 ## Installatie Open-VM-Tools
 
-Installeer de `open-vm-tools` package van de [[community](/index.php/Community "Community")] repository:
+Installeer de `open-vm-tools` package van de [community repository](/index.php/Community_repository "Community repository"):
 
 ```
 pacman -S open-vm-tools

@@ -1,13 +1,13 @@
-**Estado de la traducción:** este artículo es una versión traducida de [su](/index.php/Su "Su"). Fecha de la última traducción/revisión: **2018-08-09**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Su&diff=0&oldid=516603).
+**Estado de la traducción:** este artículo es una versión traducida de [su](/index.php/Su "Su"). Fecha de la última traducción/revisión: **2018-09-29**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Su&diff=0&oldid=539200).
 
 Artículos relacionados
 
 *   [Usuarios y grupos](/index.php/Users_and_Groups_(Espa%C3%B1ol) "Users and Groups (Español)")
 *   [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)")
 
-El comando **su** (del inglés **s**ubstitute **u**ser, o usuario sustituto) se usa para asumir la identidad de otro usuario en el sistema, el superusuario *(root)* por defecto.
+La [utilidad](/index.php/Core_utility_(Espa%C3%B1ol) "Core utility (Español)") [su](https://en.wikipedia.org/wiki/es:Su_(Unix) (usuario sustituto) se utiliza para asumir la identidad de otro usuario en el sistema, el superusuario *(root)* por defecto.
 
-Véase [PAM](/index.php/PAM "PAM") para las formas de configurar el comportamiento de **su**.
+Véase [PAM](/index.php/PAM "PAM") para las formas de configurar el comportamiento de *su*.
 
 ## Contents
 
@@ -20,7 +20,7 @@ Véase [PAM](/index.php/PAM "PAM") para las formas de configurar el comportamien
 
 ## Instalación
 
-su es parte del paquete [util-linux](https://www.archlinux.org/packages/?name=util-linux), que se instala por defecto en Arch como miembro del grupo [base](https://www.archlinux.org/groups/x86_64/base/).
+su es parte del paquete [util-linux](https://www.archlinux.org/packages/?name=util-linux).
 
 ## Utilización
 
@@ -34,6 +34,8 @@ Para asumir el inicio de sesión de otro usuario, pase el nombre de usuario que 
 Se le pedirá la contraseña del usuario que está invocando.
 
 Si no se pasa ningún nombre de usuario, su asume que es el superusuario *(root)* y la contraseña por la que se le preguntará será la de superusuario.
+
+Para más información, véase [su(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/su.1).
 
 ## Sudo, una alternativa
 

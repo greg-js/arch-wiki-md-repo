@@ -9,7 +9,7 @@
     *   [4.3 Steam Link](#Steam_Link)
 *   [5 Games](#Games)
     *   [5.1 Alien Isolation](#Alien_Isolation)
-        *   [5.1.1 Missing libpcre.so.3](#Missing_libpcre.so.3)
+        *   [5.1.1 Missing libpcre.so.3 and libidn.so.11](#Missing_libpcre.so.3_and_libidn.so.11)
     *   [5.2 Amnesia: The Dark Descent](#Amnesia:_The_Dark_Descent)
     *   [5.3 And Yet It Moves](#And_Yet_It_Moves)
         *   [5.3.1 Game does not start](#Game_does_not_start)
@@ -65,7 +65,7 @@
     *   [5.26 Deus Ex: Mankind divided](#Deus_Ex:_Mankind_divided)
     *   [5.27 The Clockwork Man](#The_Clockwork_Man)
     *   [5.28 Company of Heroes 2](#Company_of_Heroes_2)
-        *   [5.28.1 Missing libpcre.so.3](#Missing_libpcre.so.3_2)
+        *   [5.28.1 Missing libpcre.so.3](#Missing_libpcre.so.3)
     *   [5.29 Cossacks 3](#Cossacks_3)
         *   [5.29.1 No sound](#No_sound_2)
         *   [5.29.2 Flashing screen with primus](#Flashing_screen_with_primus)
@@ -360,10 +360,11 @@ And reboot before trying again.
 
 ### Alien Isolation
 
-#### Missing libpcre.so.3
+#### Missing libpcre.so.3 and libidn.so.11
 
 ```
-$ ln -s /usr/lib/libpcre.so *GAME*/lib/x86_64/libpcre.so.3
+$ ln -s /usr/lib/libpcre.so '*GAME*/lib/x86_64/libpcre.so.3'
+$ ln -s /usr/lib/libidn.so '*GAME*/lib/x86_64/libidn.so.11'
 
 ```
 
@@ -676,7 +677,7 @@ Run the game with `UNITY_DISABLE_GRAPHICS_DRIVER_WORKAROUNDS=yes`.
 
 ### Civilization V
 
-Run the game with `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6' %command%`.[[3]](https://github.com/ValveSoftware/steam-for-linux/issues/4379)
+Run the game with `LD_PRELOAD='./libcxxrt.so:/usr/$LIB/libstdc++.so.6:/usr/lib32/libopenal.so.1' %command%`.[[3]](https://github.com/ValveSoftware/steam-for-linux/issues/4379)
 
 #### Stuttering sound with PulseAudio
 

@@ -122,7 +122,7 @@ and configure the [#Init scripts](#Init_scripts) accordingly. See also [[2]](htt
 
 	Device permissions
 
-Add users to respective [groups](/index.php/Groups "Groups") for device access and reboot. Current group membership should first be checked with `id *user*`.
+Add users to respective [groups](/index.php/Group "Group") for device access and reboot. Current group membership should first be checked with `id *user*`.
 
 ```
 # usermod -a -G video,audio,power,disk,storage,optical,lp,scanner *user*
