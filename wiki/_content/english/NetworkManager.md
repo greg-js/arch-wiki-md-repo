@@ -787,10 +787,10 @@ NetworkManager supports two types MAC Address Randomization: randomization durin
 
 Randomization during Wi-Fi scanning is enabled by default, but it may be disabled by adding the following lines to `/etc/NetworkManager/NetworkManager.conf` or a dedicated configuration file under `/etc/NetworkManager/conf.d`:
 
+ `/etc/NetworkManager/conf.d/wifi_rand_mac.conf` 
 ```
 [device]
 wifi.scan-rand-mac-address=no
-
 ```
 
 MAC randomization for network connections can be set to different modes for both wireless and ethernet interfaces. See [the Gnome blog post](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/) for more details on the different modes.

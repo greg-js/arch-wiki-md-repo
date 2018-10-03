@@ -1,4 +1,5 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Environment variables](/index.php/Environment_variables "Environment variables"). Fecha de la última traducción/revisión: **2017-12-22**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [del historial ver cambios](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=ID).
+**Estado de la traducción**
+Este artículo es una traducción de [Environment variables](/index.php/Environment_variables "Environment variables"), revisada por última vez el **2017-12-22**. Si advierte que la versión inglesa [del historial ha cambiado](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=ID) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 

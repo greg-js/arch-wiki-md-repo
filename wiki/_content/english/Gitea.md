@@ -25,7 +25,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [gitea](https://aur.archlinux.org/packages/gitea/) or [gitea-git](https://aur.archlinux.org/packages/gitea-git/) package.
+[Install](/index.php/Install "Install") the [gitea](https://aur.archlinux.org/packages/gitea/), [gitea-bin](https://aur.archlinux.org/packages/gitea-bin/) or, [gitea-git](https://aur.archlinux.org/packages/gitea-git/) package.
 
 Gitea requires the use of a database backend, the following are supported:
 

@@ -1,8 +1,9 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Eclipse](/index.php/Eclipse "Eclipse"). Fecha de la última traducción/revisión: **2018-09-29**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Eclipse&diff=0&oldid=544551).
+**Estado de la traducción**
+Este artículo es una traducción de [Eclipse](/index.php/Eclipse "Eclipse"), revisada por última vez el **2018-09-29**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Eclipse&diff=0&oldid=544551) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [Eclipse](https://eclipse.org) es un proyecto de la comunidad de código abierto, que tiene como objetivo proporcionar una plataforma de desarrollo universal. El proyecto Eclipse es ampliamente conocido por su entorno de desarrollo integrado multiplataforma (IDE). Los paquetes de Arch Linux (y esta guía) se relacionan específicamente con el IDE.
 
-El IDE de Eclipse está escrito principalmente en Java, pero se puede usar para desarrollar aplicaciones en varios lenguages, incluidos Java, C/C++, PHP, Perl y Python. El IDE también puede proporcionar soporte de subversión y administración de tareas.
+El IDE de Eclipse está escrito principalmente en Java, pero se puede usar para desarrollar aplicaciones en varios lenguajes, incluidos Java, C/C++, PHP, Perl y Python. El IDE también puede proporcionar soporte de subversión y administración de tareas.
 
 ## Contents
 
@@ -25,7 +26,7 @@ El IDE de Eclipse está escrito principalmente en Java, pero se puede usar para 
     *   [4.6 Eclipse 4.6 no puede abrir marketplace adecuadamente](#Eclipse_4.6_no_puede_abrir_marketplace_adecuadamente)
     *   [4.7 Mostrar en el Explorador del sistema no funciona](#Mostrar_en_el_Explorador_del_sistema_no_funciona)
     *   [4.8 Muestra problemas en Wayland](#Muestra_problemas_en_Wayland)
-*   [5 Ver también](#Ver_tambi.C3.A9n)
+*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
 ## Instalación
 
@@ -216,6 +217,6 @@ Con el superusuario, abrir el archivo `/usr/bin/eclipse` y anexar esta línea an
 
 Esto forzará la ejecución de Eclipse en XWayland.
 
-## Ver también
+## Véase también
 
 *   [¿Cómo usar Subversion con Eclipse?](https://www.ibm.com/developerworks/library/os-ecl-subversion/)

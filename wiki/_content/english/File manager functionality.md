@@ -138,7 +138,7 @@ See [Dolphin#File previews](/index.php/Dolphin#File_previews "Dolphin").
 
 ### Archive files
 
-To extract compressed files such as tarballs (`.tar` and `.tar.gz`) within a file manager, it will first be necessary to install a GUI archiver such as [file-roller](https://www.archlinux.org/packages/?name=file-roller). See [List of applications#Archiving and compression tools](/index.php/List_of_applications#Archiving_and_compression_tools "List of applications") for further information. An additional package such as [unzip](https://www.archlinux.org/packages/?name=unzip) must also be installed to support the use of zipped `.zip` files. Once an archiver has been installed, files in the file manager may consequently be right-clicked to be archived or extracted.
+To extract compressed files such as tarballs (`.tar` and `.tar.gz`) within a file manager, it will first be necessary to install a GUI archiver such as [file-roller](https://www.archlinux.org/packages/?name=file-roller). See [List of applications/Utilities#Archiving and compression tools](/index.php/List_of_applications/Utilities#Archiving_and_compression_tools "List of applications/Utilities") for further information. An additional package such as [unzip](https://www.archlinux.org/packages/?name=unzip) must also be installed to support the use of zipped `.zip` files. Once an archiver has been installed, files in the file manager may consequently be right-clicked to be archived or extracted.
 
 Archive files are mounted under folder `/run/user/$(id -u)/gvfs/` with automatically created mount point that contains full path to the file in its name where all `/` are replaced with `%252F` and `:` replaced with `%253A` [hex codes](https://www.owasp.org/index.php/Double_Encoding).
 
@@ -197,14 +197,14 @@ $ xdg-mime query default inode/directory
 To ensure that directories are opened in the file manager, run the following command:
 
 ```
-$ xdg-mime default *my_file_manager.desktop* inode/directory
+$ xdg-mime default *my_file_manager*.desktop inode/directory
 
 ```
 
-where `*my_file_manager.desktop*` is the desktop entry for your file manager — `*org.gnome.Nautilus.desktop*` for example.
+where `*my_file_manager*.desktop` is the desktop entry for your file manager — `org.gnome.Nautilus.desktop` for example.
 
 **Tip:** If you want the change to be system-wide, run the command above as root or create/edit the following file: `/usr/share/applications/mimeapps.list` 
 ```
 [Default Applications]
-inode/directory=*my_file_manager.desktop*
+inode/directory=*my_file_manager*.desktop
 ```

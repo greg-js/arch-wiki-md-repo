@@ -40,7 +40,7 @@ Alternatives are [redshiftgui-bin](https://aur.archlinux.org/packages/redshiftgu
 
 Redshift will at least need your location to start (unless `-O` is used), meaning the latitude and longitude of your location. Redshift employs several routines for obtaining your location. If none of them works (e.g. none of the used helper programs is installed), you need to enter your location manually.
 
-Redshift reads the configuration file `~/.config/redshift/redshift.conf`, if it exists. However, Redshift does not create that configuration file, so you may want to create it manually. See [redshift.conf.sample](https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample).
+Redshift reads the configuration file `~/.config/redshift.conf`, if it exists. However, Redshift does not create that configuration file, so you may want to create it manually. See [redshift.conf.sample](https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample).
 
 ### Quick start
 
@@ -95,7 +95,7 @@ users=
 *   If using [GNOME](/index.php/GNOME "GNOME"), also toggle Location Services to "On" in *Settings > Privacy*.
 *   Due possible bugs with geoclue2 and Redshift [[2]](https://github.com/jonls/redshift/issues/318), it may be required to use the `manual` location-provider instead, e.g. for Paris:
 
- `~/.config/redshift/redshift.conf` 
+ `~/.config/redshift.conf` 
 ```
 [redshift]
 ...

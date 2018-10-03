@@ -17,25 +17,22 @@ Every breach of policy triggers a message in the system log, and AppArmor can be
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Kernel](#Kernel)
-        *   [1.1.1 Custom kernel](#Custom_kernel)
-    *   [1.2 Userspace Tools](#Userspace_Tools)
-    *   [1.3 Testing](#Testing)
-*   [2 Disabling](#Disabling)
+    *   [1.1 Custom kernel](#Custom_kernel)
+*   [2 Usage](#Usage)
+    *   [2.1 Display current status](#Display_current_status)
+    *   [2.2 Parsing profiles](#Parsing_profiles)
+    *   [2.3 Disabling loading](#Disabling_loading)
 *   [3 Configuration](#Configuration)
     *   [3.1 Auditing and generating profiles](#Auditing_and_generating_profiles)
     *   [3.2 Understanding profiles](#Understanding_profiles)
-    *   [3.3 Parsing profiles](#Parsing_profiles)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Get desktop notification on DENIED actions](#Get_desktop_notification_on_DENIED_actions)
-    *   [4.2 Cache profiles](#Cache_profiles)
+    *   [4.2 Speed-up AppArmor start by caching profiles](#Speed-up_AppArmor_start_by_caching_profiles)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Failing to start Samba SMB/CIFS server](#Failing_to_start_Samba_SMB.2FCIFS_server)
 *   [6 See also](#See_also)
 
 ## Installation
-
-### Kernel
 
 AppArmor is available in [linux](https://www.archlinux.org/packages/?name=linux) ([since 4.18.8.arch1-1](https://git.archlinux.org/svntogit/packages.git/commit/?id=c46609a4b0325c363455264844091b71de01eddc)), [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) ([since 4.18.8.zen1-1](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/linux-zen&id=3ab708208c8e13d5de08dabebc442d2d0be7a585)) and [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened) ([since 4.17.4.a-1](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/linux-hardened&id=14eccc6c604d37fa3001146f5bd4ca32ffa15c4f)).
 
@@ -45,6 +42,8 @@ To enable AppArmor as default security model on every boot, set the following [k
 apparmor=1 security=apparmor
 
 ```
+
+[Install](/index.php/Install "Install") [apparmor](https://www.archlinux.org/packages/?name=apparmor) for userspace tools and libraries to control AppArmor. To load all AppArmor profiles on startup, [enable](/index.php/Enable "Enable") `apparmor.service`.
 
 #### Custom kernel
 
@@ -64,13 +63,11 @@ CONFIG_DEFAULT_SECURITY_APPARMOR=y
 
 ```
 
-### Userspace Tools
+## Usage
 
-The userspace tools and libraries to control AppArmor are supplied by [apparmor](https://www.archlinux.org/packages/?name=apparmor) package. To load all AppArmor profiles on startup, [enable](/index.php/Enable "Enable") `apparmor.service`.
+### Display current status
 
-### Testing
-
-To test if AppArmor has been enabled:
+To test if AppArmor has been correctly enabled:
 
  `$ cat /sys/module/apparmor/parameters/enabled` 
 ```
@@ -96,16 +93,20 @@ apparmor module is loaded.
 
 ```
 
-## Disabling
+### Parsing profiles
 
-To disable AppArmor by unloading all profiles for the current session, run :
+To load (enforce or complain), unload, reload, cache and stat profiles use `apparmor_parser`. The default action (`-a`) is to load a new profile in enforce mode, loading it in complain mode is possible using the `-C` switch, in order to overwrite an existing profile use the `-r` option and to remove a profile use `-R`. Each action may also apply to multiple profiles. Refer to [apparmor_parser(8)](https://man.cx/apparmor_parser(8)) man page for more information.
+
+### Disabling loading
+
+Disable AppArmor by unloading all profiles for the current session:
 
 ```
 # aa-teardown 
 
 ```
 
-To prevent from loading AppArmor profiles at the next boot [disable](/index.php/Disable "Disable") `apparmor.service`. To prevent the kernel from loading AppArmor, remove `apparmor=1 security="apparmor"` from the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+To prevent from loading AppArmor profiles at the next boot [disable](/index.php/Disable "Disable") `apparmor.service`. To prevent the kernel from loading AppArmor, remove `apparmor=1 security=apparmor` from the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
 ## Configuration
 
@@ -113,16 +114,9 @@ To prevent from loading AppArmor profiles at the next boot [disable](/index.php/
 
 To create new profiles the [Audit framework](/index.php/Audit_framework "Audit framework") should be running. This is because Arch Linux adopted [systemd](/index.php/Systemd "Systemd") and doesn't do kernel logging to file by default. AppArmor can grab kernel audit logs from the userspace auditd daemon, allowing you to build a profile.
 
-To get kernel audit logs, you'll need to have rules in place to monitor the desired application. Most often a basic rule configured with [auditctl(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/auditctl.8) will suffice:
+New AppArmor profiles can be created by utilizing [aa-genprof(8)](https://manpages.debian.org/unstable/apparmor-utils/aa-genprof.8.en.html) and [aa-logprof(8)](https://manpages.debian.org/unstable/apparmor-utils/aa-logprof.8.en.html) tools available in [apparmor](https://www.archlinux.org/packages/?name=apparmor) package. Detailed guide about using those tools is available at [AppArmor wiki - Profiling with tools](https://gitlab.com/apparmor/apparmor/wikis/Profiling_with_tools).
 
-```
-# auditctl -a exit,always -F arch=b64 -S all -F path=/usr/bin/chromium -F key=MonitorChromium
-
-```
-
-Be sure to read [Audit framework#Adding rules](/index.php/Audit_framework#Adding_rules "Audit framework") if this is unfamiliar to you.
-
-**Note:** Remember to stop the service afterwards (and maybe clear `/var/log/audit/audit.log`) because it may cause overhead depending on your rules.
+Alternatively profiles may be also created manually, see guide available at [AppArmor wiki - Profiling by hand](https://gitlab.com/apparmor/apparmor/wikis/Profiling_by_hand).
 
 ### Understanding profiles
 
@@ -159,28 +153,26 @@ Remember that those permission do not allow binaries to exceed the permission di
 
 This is merely a short overview, for a more detailed guide be sure to have a look at the [apparmor.d(5)](http://manpages.ubuntu.com/manpages/bionic/man5/apparmor.d.5.html) man page and [documentation](https://gitlab.com/apparmor/apparmor/wikis/AppArmor_Core_Policy_Reference).
 
-### Parsing profiles
-
-To load (enforce or complain), unload, reload, cache and stat profiles use `apparmor_parser`. The default action (`-a`) is to load a new profile in enforce mode, loading it in complain mode is possible using the `-C` switch, in order to overwrite an existing profile use the `-r` option and to remove a profile use `-R`. Each action may also apply to multiple profiles. Refer to [apparmor_parser(8)](https://man.cx/apparmor_parser(8)) man page for more information.
-
 ## Tips and tricks
 
 ### Get desktop notification on DENIED actions
 
 The notification daemon displays desktop notifications whenever AppArmor denies a program access. To automatically start `aa-notify` daemon on login follow below steps:
 
-1\. Install and enable [Audit framework](/index.php/Audit_framework "Audit framework").
-
-2\. Allow your desktop user to read audit logs with [Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists"):
+Install and enable [Audit framework](/index.php/Audit_framework "Audit framework"). Allow your desktop user to read audit logs in `/var/log/audit` by adding it to `audit` [group](/index.php/Group "Group"):
 
 ```
-# setfacl -m u:<user>:rx /var/log/audit   # allow <user> to read and navigate below /var/log/audit directory
-# setfacl -R -m u:<user>:r /var/log/audit # allow <user> to read all files in /var/log/audit
-# setfacl -dm u:<user>:r /var/log/audit   # allow <user> to read all new files created inside /var/log/audit
+# groupadd -r audit
+# gpasswd -a <username> audit
 
 ```
 
-3\. Create desktop launcher with the below content:
+Add `audit` group to `auditd.conf`:
+
+ `/etc/audit/auditd.conf`  `log_group = audit` 
+**Tip:** You may use other already existing system groups like `wheel` or `adm`.
+
+Create [desktop launcher](/index.php/Desktop_launcher "Desktop launcher") with the below content:
 
  `~/.config/autostart/apparmor-notify.desktop` 
 ```
@@ -189,35 +181,49 @@ Type=Application
 Name=AppArmor Notify
 Comment=Receive on screen notifications of AppArmor denials
 TryExec=/usr/bin/aa-notify
-Exec=/usr/bin/aa-notify -p -s 1 -w 60
+Exec=/usr/bin/aa-notify -p -s 1 -w 60 -f /var/log/audit/audit.log
 StartupNotify=false
 NoDisplay=true
 ```
 
-4\. Re-login and check if `aa-notify` daemon is running:
+Reboot and check if `aa-notify` daemon is running:
 
 ```
-$ ps aux |grep aa-notify
+$ ps aux | grep aa-notify
 
 ```
 
 **Note:** Depending on your specific system configuration there could be A LOT of notifications displayed.
 
-To undo above, run:
-
-```
-# setfacl -R -b /var/log/audit
-$ rm ~/.config/autostart/apparmor-notify.desktop
-
-```
-
 For more information, see [aa-notify(8)](https://manpages.debian.org/unstable/apparmor-notify/aa-notify.8.en.html).
 
-### Cache profiles
+### Speed-up AppArmor start by caching profiles
 
-Since AppArmor has to translate the configured profiles into a binary format it may take some time to load them. Besides being bothersome for the user, it may also increases the boot time significantly!
+Since AppArmor has to translate the configured profiles into a binary format it may significantly increase the boot time. You can check current AppArmor startup time with:
 
-To circumvent some of those problems AppArmor can cache profiles in `/etc/apparmor.d/cache/`. However this behaviour is disabled by default therefore it must be done manually with `apparmor_parser`. In order to write to the cache use `-W` (overwrite existing profiles with `-T`) and reload the profiles using `-r`. Refer to [#Parsing profiles](#Parsing_profiles) for a brief overview of additional arguments.
+```
+$ systemd-analyze blame | grep apparmor
+
+```
+
+To enable caching AppArmor profiles, uncomment:
+
+ `/etc/apparmor/parser.conf` 
+```
+## Turn creating/updating of the cache on by default
+write-cache
+```
+
+To change default cache location from `/etc/apparmor.d/cache.d/` to `/var/cache/apparmor/` add:
+
+ `/etc/apparmor/parser.conf`  `cache-loc=/var/cache/apparmor` 
+
+Reboot and check AppArmor startup time again to see improvement:
+
+```
+$ systemd-analyze blame | grep apparmor
+
+```
 
 ## Troubleshooting
 

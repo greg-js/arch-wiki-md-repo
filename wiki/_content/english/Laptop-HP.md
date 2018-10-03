@@ -1,5 +1,12 @@
 [Acer](/index.php/Laptop/Acer "Laptop/Acer") – [Apple](/index.php/Laptop/Apple "Laptop/Apple") – [ASUS](/index.php/Laptop/ASUS "Laptop/ASUS") – [Dell](/index.php/Laptop/Dell "Laptop/Dell") – [Fujitsu](/index.php/Laptop/Fujitsu "Laptop/Fujitsu") – <a class="mw-selflink selflink">HP</a> – [IBM/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo") – [MSI](/index.php/Laptop/MSI "Laptop/MSI") – [Samsung](/index.php/Laptop/Samsung "Laptop/Samsung") – [Sony](/index.php/Laptop/Sony "Laptop/Sony") – [Toshiba](/index.php/Laptop/Toshiba "Laptop/Toshiba") – [Other](/index.php/Laptop/Other "Laptop/Other")
 
+## Contents
+
+*   [1 Model List](#Model_List)
+*   [2 Troubleshooting](#Troubleshooting)
+    *   [2.1 Fan noise](#Fan_noise)
+    *   [2.2 HP Compaq 8510w](#HP_Compaq_8510w)
+
 ## Model List
 
 | Model version | Arch Linux
@@ -87,7 +94,7 @@ DVD/CD: Not tested
 SD slot: Not tested
 Touchkeys: N/A
 FireWire: Not tested | If using nvidia driver, nvidiabl should be used to allow backlight adjustments. |
-| HP Compaq 8510w* | 2008 | NVIDIA FX570M (*nvidia driver*) | Intel sound card: *snd-hda-intel)* | *e1000* | Intel wireless: *iwl4965* | -- | ACPI: Yes
+| HP Compaq 8510w | 2008 | NVIDIA FX570M (*nvidia driver*) | Intel sound card: *snd-hda-intel)* | *e1000* | Intel wireless: *iwl4965* | -- | ACPI: Yes
 Suspend to RAM: Yes
 Suspend to Disk: Yes
 Battery: Yes
@@ -96,7 +103,7 @@ CPU frequency scaling: Yes (*acpi-cpufreq*) | not tested | Hot keys: Yes
 DVD/CD: Yes
 SD slot: Yes
 Touchkeys: Yes
-FireWire: untested | -- |
+FireWire: untested | [#Troubleshooting](#Troubleshooting) |
 | [HP tx2z](/index.php/HP_tx2z "HP tx2z") | 2009.08 | Radeon HD 3200 driver: *radeon* | Intel HDA driver: *snd-hda-intel* | RTL8111/8168B driver: *r8169* | Broadcom 4322 driver: [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) | not tested | not tested | not tested | Hot keys: yes
 LightScribe: not tested
 webcam: yes
@@ -192,7 +199,11 @@ Keyboard backlit: works | Secure boot works with GRUB, coexists with Windows Pro
 | Model version | Arch Linux Install CD version | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other | Remarks |
 | Hardware support |
 
-## Configuration
+## Troubleshooting
+
+### Fan noise
+
+Since Linux 4.1x laptop's fan may not spin down to a lower rev step (and noise) effectively appearing stuck at higher spinning speed with no apparent temperature reason. Possible workarounds are a quick suspend to ram or power off for more than 10 minutes.
 
 ### HP Compaq 8510w
 

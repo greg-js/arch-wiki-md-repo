@@ -10,7 +10,8 @@ Artículos relacionados
 *   [PKGBUILD (Español)](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)")
 *   [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS")
 
-**Estado de la traducción:** este artículo es una versión traducida de [Arch Build System](/index.php/Arch_Build_System "Arch Build System"). Fecha de la última traducción/revisión: **2018-09-21**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch_Build_System&diff=0&oldid=540727).
+**Estado de la traducción**
+Este artículo es una traducción de [Arch Build System](/index.php/Arch_Build_System "Arch Build System"), revisada por última vez el **2018-09-21**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Arch_Build_System&diff=0&oldid=540727) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Arch Build System (*«sistema de compilación de Arch»*), ABS para abreviar, es un sistema tipo *ports* para la construcción y empaquetado de software desde el código fuente. Mientras [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") es la herramienta especializada de Arch para la gestión de los paquetes binarios (incluyendo los paquetes creados con ABS), el sistema ABS es una colección de herramientas para compilar el código fuente y crear paquetes `.pkg.tar.xz` instalables.
 

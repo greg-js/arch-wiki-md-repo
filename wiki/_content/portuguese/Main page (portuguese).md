@@ -1,4 +1,6 @@
-**Bem-vindo ao Wiki [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)"): a sua fonte para a documentação do Arch Linux na web.**
+**Status de tradução:** Esse artigo é uma tradução de [Main page](/index.php/Main_page "Main page"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Main_page&diff=0&oldid=542960) na versão em inglês.
+
+**Bem-vindo ao [ArchWiki](/index.php/ArchWiki_(Portugu%C3%AAs) "ArchWiki (Português)"): a sua fonte para a documentação do Arch Linux na web.**
 
 Visite a [tabela de conteúdo](/index.php/Tabela_de_conte%C3%BAdo "Tabela de conteúdo") para uma listagem de categorias de artigo.
 
@@ -18,7 +20,7 @@ Visite a [tabela de conteúdo](/index.php/Tabela_de_conte%C3%BAdo "Tabela de con
 
 	[Guia de instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o "Guia de instalação")
 
-	Guia pela processo de instalação do Arch Linux.
+	Guia do processo de instalação do Arch Linux.
 
 	[Recomendações gerais](/index.php/Recomenda%C3%A7%C3%B5es_gerais "Recomendações gerais")
 

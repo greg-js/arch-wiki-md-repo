@@ -2,7 +2,8 @@ Artículos relacionados
 
 *   [Unbound#DNSSEC validation](/index.php/Unbound#DNSSEC_validation "Unbound")
 
-**Estado de la traducción:** este artículo es una versión traducida de [DNSSEC](/index.php/DNSSEC "DNSSEC"). Fecha de la última traducción/revisión: **2018-09-14**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=DNSSEC&diff=0&oldid=537948).
+**Estado de la traducción**
+Este artículo es una traducción de [DNSSEC](/index.php/DNSSEC "DNSSEC"), revisada por última vez el **2018-09-14**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=DNSSEC&diff=0&oldid=537948) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Del [artículo de Wikipedia sobre DNSSEC](https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions "wikipedia:Domain Name System Security Extensions"):
 

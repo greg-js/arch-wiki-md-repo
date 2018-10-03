@@ -182,24 +182,28 @@ In the examples above, the sandbox configures the transmission-gtk profile and s
 
 ## Firejail with Apparmor
 
-Since 0.942, [firejail-apparmor](https://aur.archlinux.org/packages/firejail-apparmor/), has supported more direct integration with Apparmor through a generic apparmor profile. During installation, the profile, `firejail-default`, is placed in `/etc/apparmor.d` directory, and needs to be loaded into the kernel by running the following command as root:
+Since 0.9.42, [firejail-apparmor](https://aur.archlinux.org/packages/firejail-apparmor/), has supported more direct integration with Apparmor through a generic apparmor profile. During installation, the profile, `firejail-default`, is placed in `/etc/apparmor.d` directory, and needs to be loaded into the kernel by running the following command as root:
 
 ```
-# aa-enforce firejail-default
+# apparmor_parser -r /etc/apparmor.d/firejail-default
 
 ```
 
 To quote the manual:
 
-	*The installed profile tries to replicate some advanced security features inspired by kernel-based Grsecurity:*
+	*The installed profile is supplemental for main firejail functions and among other things does the following:*
 
-	*- Prevent information leakage in /proc and /sys directories.The resulting filesystem is barely enough for running commands such as "top" and "ps aux".*
+	*- Disable ptrace. With ptrace it is possible to inspect and hijack running programs. Usually this is needed only for debugging.*
 
-	*- Allow running programs only from well-known system paths, such as /bin, /sbin, /usr/bin etc. Running programs and scripts from user home or other directories writable by the user is not allowed.*
+	*- Whitelist write access to several files under /run, /proc and /sys.*
 
-	*- Disable D-Bus. D-Bus has long been a huge security hole, and most programs don't use it anyway. You should have no problems running Chromium or Firefox.*
+	*- Allow running programs only from well-known system paths, such as /bin, /sbin, /usr/bin etc. Those paths are available as read-only. Running programs and scripts from user home or other directories writable by the user is not allowed.*
 
-With the release of 0.9.50, local customisations of the apparmor profile are supported by editing the file `/etc/apparmor.d/local/firejail-local`
+	*- Prevent using non-standard network sockets. Only unix, inet, inet6, netlink, raw and packet are allowed.*
+
+	*- Deny access to known sensitive paths like .snapshots.*
+
+Local customizations of the apparmor profile are supported by editing the file `/etc/apparmor.d/local/firejail-local`
 
 #### Apparmor usage
 

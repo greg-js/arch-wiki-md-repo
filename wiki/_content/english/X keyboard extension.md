@@ -172,7 +172,7 @@ Generally it is XKB task to provide different keysyms, but states are handled la
 
 Also, states in XKB have somewhat delayed effect, that is, you must have the state set prior to pressing a key.
 
-Example: `Ctrl+h` can be configured to act as backspace in rxvt (application setting). This way rxvt will receive `h` keysym with `Control` bit set in the state value, and it will be clearly different from `Backspace` keysym. Alternatively, XKB can be used to make `Ctrl+h` combination generate `Backspace` keysym with `Control` bit set; in this case, rxvt will not see any difference between physical `Backspace` key and `h` key as long as `Ctrl` key is pressed. Making `Ctrl+h` combination generate `Backspace` keysym with no `Control` bit set is an XKB task, too, but it's much more difficult to implement than `Control+Backspace`.
+Example: `Ctrl+h` can be configured to act as backspace in [rxvt](/index.php/Rxvt "Rxvt") (application setting). This way rxvt will receive `h` keysym with `Control` bit set in the state value, and it will be clearly different from `Backspace` keysym. Alternatively, XKB can be used to make `Ctrl+h` combination generate `Backspace` keysym with `Control` bit set; in this case, rxvt will not see any difference between physical `Backspace` key and `h` key as long as `Ctrl` key is pressed. Making `Ctrl+h` combination generate `Backspace` keysym with no `Control` bit set is an XKB task, too, but it's much more difficult to implement than `Control+Backspace`.
 
 ### Actions
 

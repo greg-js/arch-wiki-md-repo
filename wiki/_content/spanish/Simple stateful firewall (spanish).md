@@ -6,7 +6,8 @@ Artículos relacionados
 *   [Router](/index.php/Router "Router")
 *   [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall")
 
-**Estado de la traducción:** este artículo es una versión traducida de [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall"). Fecha de la última traducción/revisión: **2018-09-05**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Simple_stateful_firewall&diff=0&oldid=538197).
+**Estado de la traducción**
+Este artículo es una traducción de [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall"), revisada por última vez el **2018-09-05**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Simple_stateful_firewall&diff=0&oldid=538197) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 	Según [Wikipedia (en inglés)](https://en.wikipedia.org/wiki/Stateful_firewall "wikipedia:Stateful firewall")
 

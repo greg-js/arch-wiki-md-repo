@@ -455,9 +455,9 @@ You can:
 
  `/etc/NetworkManager/dispatcher.d/10_squid` 
 ```
-if [ $1 == 'wlp2s0' ]
+if test "$1" = 'wlp2s0'
 then
-    if [ $2 == 'up' ]
+    if test "$2" = 'up'
     then
         systemctl start squid
     else

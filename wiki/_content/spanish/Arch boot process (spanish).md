@@ -1,4 +1,5 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"). Fecha de la última traducción/revisión: **2018-09-26**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=543767).
+**Estado de la traducción**
+Este artículo es una traducción de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"), revisada por última vez el **2018-10-02**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=545626) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -11,65 +12,80 @@ Artículos relacionados
 *   [fstab](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)")
 *   [Autostarting](/index.php/Autostarting_(Espa%C3%B1ol) "Autostarting (Español)")
 
-Para iniciar Arch Linux, un [gestor de arranque](/index.php/Boot_loader "Boot loader") capaz de iniciar Linux como [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") o [Syslinux](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)"), debe instalarse en el [Master Boot Record](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)") o en la [GUID Partition Table](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)"). El gestor de arranque es el responsable de cargar el kernel y el [disco ram inicial](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") antes de iniciar el proceso de arranque. El proceso es bastante diferente para los sistemas [BIOS](https://en.wikipedia.org/wiki/es:BIOS "wikipedia:es:BIOS") y [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)"), cuyos detalles se describen en esta página o en las enlazadas.
+Para iniciar Arch Linux, un [gestor de arranque](#Gestor_de_arranque) capaz de iniciar Linux como [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") o [Syslinux](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)"), debe instalarse en el [Master Boot Record](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)") o en la [GUID Partition Table](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)"). El gestor de arranque es el responsable de cargar el kernel y el [disco ram inicial](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") antes de iniciar el proceso de arranque. El proceso es bastante diferente para los sistemas [BIOS](https://en.wikipedia.org/wiki/es:BIOS "wikipedia:es:BIOS") y [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)"), cuyos detalles se describen en esta página o en las enlazadas.
 
 ## Contents
 
 *   [1 Tipos de firmware](#Tipos_de_firmware)
     *   [1.1 BIOS](#BIOS)
     *   [1.2 UEFI](#UEFI)
-*   [2 Procesos de arranque](#Procesos_de_arranque)
+*   [2 Inicialización del sistema](#Inicializaci.C3.B3n_del_sistema)
     *   [2.1 Bajo BIOS](#Bajo_BIOS)
     *   [2.2 Bajo UEFI](#Bajo_UEFI)
+    *   [2.3 Arranque múltiple en UEFI](#Arranque_m.C3.BAltiple_en_UEFI)
 *   [3 Gestor de arranque](#Gestor_de_arranque)
     *   [3.1 Comparación de características](#Comparaci.C3.B3n_de_caracter.C3.ADsticas)
-    *   [3.2 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 *   [4 Kernel](#Kernel)
 *   [5 initramfs](#initramfs)
-*   [6 Fase init](#Fase_init)
+*   [6 Proceso de inicio (Init)](#Proceso_de_inicio_.28Init.29)
 *   [7 Getty](#Getty)
 *   [8 Gestor de pantallas](#Gestor_de_pantallas)
-*   [9 Login](#Login)
-*   [10 Shell](#Shell)
+*   [9 Inicio de sesión](#Inicio_de_sesi.C3.B3n)
+*   [10 Intérprete de órdenes](#Int.C3.A9rprete_de_.C3.B3rdenes)
 *   [11 GUI, xinit o wayland](#GUI.2C_xinit_o_wayland)
-*   [12 Véase también](#V.C3.A9ase_tambi.C3.A9n_2)
+*   [12 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
 ## Tipos de firmware
 
 ### BIOS
 
-Una BIOS o *«Basic Input-Output System»* es el primer programa (firmware) que se ejecuta cuando el sistema es puesto en marcha. En la mayoría de los casos, este se almacena en una memoria flash en la propia placa base e independiente del almacenamiento del sistema. La BIOS lanza los primeros 440 bytes ([Master Boot Record](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)")) del primer disco según el orden de discos de la BIOS. Dado que se puede obtener muy poco de un programa que debe adaptarse solo a los primeros 440 bytes del disco, por lo general, un gestor de arranque común como [GRUB](/index.php/GRUB2_(Espa%C3%B1ol) "GRUB2 (Español)"), [Syslinux](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)") o [LILO](/index.php/LILO "LILO") sería cargado por la BIOS, el cual, seguidamente, se ocuparía de cargar el sistema operativo, ya sea cargando los sistemas en cadena, ya sea cargando directamente el kernel.
+Una [BIOS](https://en.wikipedia.org/wiki/es:BIOS "wikipedia:es:BIOS") o sistema básico de entrada-salida *(Basic Input-Output System)* es el primer programa (firmware) que se ejecuta una vez que se enciende el sistema. En la mayoría de los casos, se almacena en una memoria flash en la propia placa base e independiente del almacenamiento del sistema.
 
 ### UEFI
 
-UEFI tiene la capacidad de leer tanto la tabla de particiones, como de reconocer los sistemas de archivos. Por lo tanto, no está restringido por la limitación del código de los 440 bytes (código de arranque del MBR) como en los sistemas BIOS. No utiliza el código de arranque MBR en absoluto.
+[UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)") tiene soporte para leer tanto la tabla de particiones como los sistemas de archivos. UEFI no ejecuta ningún código de arranque en el MBR, exista o no, en su lugar el arranque depende de las entradas de arranque en la NVRAM.
 
-Los firmwares UEFI comunmente utilizados dan apoyo tanto a los sistemas de particionado MBR como GPT. Las EFI de Apple son conocidas por apoyar mapas de particionado Apple, además de MBR y GPT. La mayoría de los firmwares UEFI tienen soporte para acceder a sistemas de archivos FAT12 (disquetes), FAT16 y FAT32 en discos duros, y ISO9660 (y UDF) en CD/DVD. El firmware EFI en Apple puede acceder también a HFS/HFS+, aparte de los mencionados.
+La especificación UEFI exige el soporte para los sistemas de archivos [FAT12, FAT16, y FAT32](/index.php/FAT "FAT") (véase [Especificación UEFI versión 2.7, sección 13.3.1.1](http://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1019485)), pero cualquier proveedor puede añadir opcionalmente soporte para sistemas de archivos adicionales; por ejemplo, Apple [Mac](/index.php/Mac "Mac") admite (y de forma predeterminada) sus propios controladores de sistema de archivos HFS+. Las implementaciones UEFI también son compatibles con ISO-9660 para discos ópticos.
 
-UEFI no ejecuta ningún código de arranque del MBR, tanto si existe como si no. En su lugar, utiliza una partición especial de la tabla de particiones, llamada **EFI SYSTEM PARTITION** (partición del sistema EFI), en la que se guardan los archivos necesarios para ser lanzado el firmware. Cada proveedor puede almacenar sus archivos en la carpeta `<EFI SYSTEM PARTITION>/EFI/<FABRICANTE>/` y pueden usar el firmware o la shell (shell de UEFI) para iniciar el programa de arranque. Una partición del sistema EFI usa, por lo general, el formato FAT32 (principalmente) o FAT16.
+UEFI lanza aplicaciones EFI, por ejemplo. [gestores de arranque](#Gestor_de_arranque), [intérpretes de órdenes UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#Int.C3.A9rprete_de_.C3.B3rdenes_UEFI "Unified Extensible Firmware Interface (Español)"), etc. Estas aplicaciones generalmente se almacenan como archivos en la [partición del sistema EFI](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)"). Cada proveedor puede almacenar sus archivos en la partición del sistema EFI en la carpeta `/EFI/*nombre del proveedor*`. Las aplicaciones se pueden iniciar añadiendo una entrada de arranque a la NVRAM o desde el intérprete de órdenes UEFI.
 
-Bajo UEFI, todos los programas que son cargados por un sistema operativo o por otros instrumentos (como aplicaciones de pruebas de memoria) o herramientas de recuperación fuera del sistema operativo, deben ser aplicaciones UEFI correspondiente a la arquitectura del firmware EFI. La mayor parte de los firmware UEFI en el mercado, incluyendo los recientes Mac de Apple, usan un firmware EFI x86_64\. Solo algunos Mac antiguos (anteriores a 2008) que funcionan utilizando EFI IA32 (32-bit), algunos ultrabooks recientes de Intel Cloverfield y algunas placas bases de Intel Servers, son conocidos por operar con un firmware EFI 1.10 de Intel.
-
-Un firmware EFI x86_64 no incluye el soporte para lanzar aplicaciones de 32-bit (a diferencia del EFI de Linux y de Windows x86_64 que incluyen dicho apoyo). En definitiva, la aplicación UEFI (esto es, el gestor de arranque) debe ser compilada para la arquitectura correcta.
-
-## Procesos de arranque
+## Inicialización del sistema
 
 ### Bajo BIOS
 
-1.  Encendido del sistema —Power On Self Test—, o proceso [POST](https://en.wikipedia.org/wiki/es:POST "wikipedia:es:POST").
-2.  Después del POST la BIOS inicializa el hardware necesario para el arranque del sistema (disco, controladores del teclado, etc.).
-3.  La BIOS ejecuta el código de los primeros 440 bytes (la región del código de arranque del MBR) del primer disco de los que aparecen ordenados en la BIOS.
-4.  El código de arranque del MBR entonces toma el control desde la BIOS y ejecuta el código de la siguiente etapa (en su caso) (normalmente, el código del gestor de arranque).
-5.  El código (segunda etapa) lanzado (el gestor de arranque presente) entonces lee los archivos de configuración y apoyo.
-6.  En base a los datos de los archivos de configuración, el gestor de arranque carga el kernel e initramfs en la memoria del sistema (RAM), e inicia el kernel.
+1.  Encendido del sistema, se ejecuta la [autoprueba de encendido (POST)](https://en.wikipedia.org/wiki/es:POST "wikipedia:es:POST").
+2.  Después del POST, la BIOS inicializa el hardware del sistema necesario para el inicio (disco, controladores de teclado, etc.).
+3.  BIOS inicia los primeros 440 bytes ([el área del código de arranque del MBR](/index.php/Partitioning#Master_Boot_Record_.28bootstrap_code.29 "Partitioning")) del primer disco según el orden de la BIOS.
+4.  La primera etapa del cargador de arranque en el código de arranque del MBR, luego inicia el código de su segunda etapa (si existe) desde:
+    *   sectores de discos siguientes (la denominada brecha posterior al MBR).
+    *   un disco de partición o un disco sin partición [volume boot record (VBR)](https://en.wikipedia.org/wiki/Volume_boot_record "wikipedia:Volume boot record").
+    *   la [partición de inicio de BIOS](/index.php/BIOS_boot_partition_(Espa%C3%B1ol) "BIOS boot partition (Español)") ([GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") solo en BIOS/GPT).
+5.  Se inicia el [gestor de arranque](#Gestor_de_arranque).
+6.  El gestor de arranque carga un sistema operativo ya sea en cadena o cargando directamente el kernel del sistema operativo.
 
 ### Bajo UEFI
 
-Véase la página principal: [Proceso de arranque bajo UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#Proceso_de_arranque_bajo_UEFI "Unified Extensible Firmware Interface (Español)") .
+1.  Encendido del sistema, se ejecuta la [autoprueba de encendido (POST)](https://en.wikipedia.org/wiki/es:POST "wikipedia:es:POST").
+2.  UEFI inicializa el hardware requerido para el arranque.
+3.  El firmware lee las entradas de arranque en la NVRAM para determinar qué aplicación EFI se lanzará y desde dónde (por ejemplo, desde qué disco y partición).
+    *   Una entrada de arranque podría simplemente ser un disco. En este caso, el firmware busca una [partición del sistema EFI](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)") en ese disco e intenta encontrar una aplicación EFI en la ruta de arranque alternativa `\EFI\BOOT\BOOTX64.EFI` (`BOOTIA32.EFI` en [IA32 (32 bits) sistemas EFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol)#Firmware_de_UEFI "Unified Extensible Firmware Interface (Español)")). Así es como funcionan los medios extraíbles de arranque UEFI.
+4.  El firmware lanza la aplicación EFI.
+    *   Podría ser un [gestor de arranque](#Gestor_de_arranque) o el [kernel](/index.php/Kernel_(Espa%C3%B1ol) "Kernel (Español)") de Arch usando [EFISTUB](/index.php/EFISTUB_(Espa%C3%B1ol) "EFISTUB (Español)").
+    *   Podría ser alguna otra aplicación EFI, como un intérprete de órdenes UEFI o un [gestor de arranque](#Gestor_de_arranque) como [systemd-boot](/index.php/Systemd-boot_(Espa%C3%B1ol) "Systemd-boot (Español)") o [rEFInd](/index.php/REFInd "REFInd").
+
+Si el [inicio seguro](/index.php/Secure_Boot "Secure Boot") está habilitado, el proceso de arranque verificará la autenticidad del binario EFI por la firma.
+
+**Nota:** Algunos sistemas UEFI solo pueden arrancar desde la ruta de inicio alternativa.
+
+### Arranque múltiple en UEFI
+
+Dado que cada sistema operativo o proveedor puede mantener sus propios archivos dentro de la partición del sistema EFI sin afectar al otro, el arranque múltiple con UEFI es simplemente una cuestión de iniciar una aplicación EFI diferente correspondiente al gestor de arranque del sistema operativo en particular. Esto elimina la necesidad de confiar en los mecanismos de carga en cadena de un [gestor de arranque](#Gestor_de_arranque) para cargar otro sistema operativo.
+
+Véase también [Arranque dual con Windows](/index.php/Dual_boot_with_Windows_(Espa%C3%B1ol) "Dual boot with Windows (Español)").
 
 ## Gestor de arranque
 
-El [gestor de arranque](/index.php/Boot_loader_(Espa%C3%B1ol) "Boot loader (Español)") es la primera pieza de software iniciada por [BIOS](https://en.wikipedia.org/wiki/BIOS deseados, y el [disco RAM inicial](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") en función de los archivos de configuración.
+El gestor de arranque es la primera pieza de software iniciada por [BIOS](https://en.wikipedia.org/wiki/BIOS deseados, y el [disco RAM inicial](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") en función de los archivos de configuración.
 
 **Nota:** La carga de las actualizaciones de [microcódigo](/index.php/Microcode_(Espa%C3%B1ol) "Microcode (Español)") requiere unos ajustes en la configuración del gestor de arranque. [[1]](https://www.archlinux.org/news/changes-to-intel-microcodeupdates/)
 
@@ -93,44 +109,43 @@ Soporta RAID, LUKS1 y LVM (pero no volúmenes aprovisionados ligeros). |
 | [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") | Sin GPT | No | Si | No | No | Si | Si | Solo v4 | [Descontinuado](https://www.gnu.org/software/grub/grub-legacy.html) a favor de [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)"). |
 | [LILO](/index.php/LILO_(Espa%C3%B1ol) "LILO (Español)") | Sin GPT | No | Si | No | Sin cifrado | Si | Si | Solo MBR [[3]](http://xfs.org/index.php/XFS_FAQ#Q:_Does_LILO_work_with_XFS.3F) | [Descontinuado](http://web.archive.org/web/20180323163248/http://lilo.alioth.debian.org/) debido a sus limitaciones (por ejemplo, con Btrfs, GPT, RAID). |
 
-### Véase también
-
-*   [Rod Smith - Administrando EFI Boot Loaders para Linux](http://www.rodsbooks.com/efi-bootloaders/)
-*   [Comparación de administradores de arranque](https://en.wikipedia.org/wiki/Comparison_of_boot_loaders "wikipedia:Comparison of boot loaders")
+Véase también [Wikipedia:Comparación de gestores de arranque](https://en.wikipedia.org/wiki/Comparison_of_boot_loaders "wikipedia:Comparison of boot loaders")
 
 ## Kernel
 
-El kernel es el núcleo de un sistema operativo. Funciona en un nivel bajo (*kernelspace*) que interactúa entre el hardware de la máquina y los programas que utilizan los recursos del hardware para funcionar. Para hacer un uso eficiente de la CPU, el kernel utiliza un sistema de programación para arbitrar qué tareas tienen prioridad en un momento dado, creando la ilusión (para la precepción humana) que varias tareas se están ejecutando simultáneamente.
+El [kernel](/index.php/Kernel_(Espa%C3%B1ol) "Kernel (Español)") es el núcleo de un sistema operativo. Funciona en un nivel bajo (*kernelspace*) que interactúa entre el hardware de la máquina y los programas que utilizan los recursos del hardware para funcionar. Para hacer un uso eficiente de la CPU, el kernel utiliza un sistema de programación para arbitrar qué tareas tienen prioridad en un momento dado, creando la ilusión de varias tareas siendo ejecutadas simultáneamente.
 
 ## initramfs
 
-Después de estar cargado, el Kernel descomprime la imagen [initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") (sistema de archivos RAM inicial), que se convierte en el sistema de ficheros root inicial. El kernel seguidamente ejecuta `/init` como el primer proceso. El primer espacio de usuario (*«early userspace»*) comienza.
+Una vez cargado el kernel, este desempaqueta el [initramfs](/index.php/Initramfs_(Espa%C3%B1ol) "Initramfs (Español)") (sistema de archivos RAM inicial), que se convierte en el sistema de archivos raíz inicial. El kernel ejecuta entonces `/init` como el primer proceso. El *espacio de usuario inicial* comienza.
 
-El propósito de initramfs es arrancar el sistema hasta el punto donde se puede acceder al sistema de archivos raíz (consulte [FHS](/index.php/Frequently_asked_questions_(Espa%C3%B1ol)#.C2.BFSigue_Arch_el_est.C3.A1ndar_de_jerarqu.C3.ADa_del_sistema_de_archivos_de_la_Fundaci.C3.B3n_Linux_.28FHS.29.3F "Frequently asked questions (Español)") para más detalles). Esto significa que los módulos que se requieren para dispositivos como IDE, SCSI, SATA, USB/FW (si el arranque se realiza desde una unidad externa) deben ser cargados desde initramfs si no están compilados en el kernel; una vez que los módulos necesarios se cargan (ya sea de forma explícita a través de un programa o script, o implícitamente a través de [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)")), el proceso de arranque continúa. Por esta razón, el initramfs sólo debe contener los módulos necesarios para acceder al sistema de archivos raíz, no tiene por qué contener todos los módulos que sirven al completo funcionamiento de la máquina. La mayoría de los módulos se cargarán más tarde por udev, durante la fase init.
+El propósito de initramfs es arrancar el sistema hasta el punto en que pueda acceder al sistema de archivos raíz (véase [FHS](/index.php/FHS_(Espa%C3%B1ol) "FHS (Español)") para obtener más información). Esto significa que cualquier módulo que se requiera para dispositivos como IDE, SCSI, SATA, USB/FW (si se arranca desde una unidad externa) debe poder cargarse desde initramfs si no está integrado en el kernel; Una vez que se cargan los módulos adecuados (ya sea explícitamente a través de un programa o script, o implícitamente a través de [udev](/index.php/Udev_(Espa%C3%B1ol) "Udev (Español)")), el proceso de arranque continúa. Por esta razón, el initramfs solo necesita contener los módulos necesarios para acceder al sistema de archivos raíz; no es necesario que contenga todos los módulos que uno quiera usar. La mayoría de los módulos se cargarán más tarde por udev, durante el proceso de inicio *(Init)*.
 
-## Fase init
+## Proceso de inicio (Init)
 
-En la etapa final del *«early userspace»*, el verdadero sistema de archivos root es montado, y pasa a sustituir al sistema de archivos root inicial. `/sbin/init` se ejecuta, sustituyendo al proceso `/init`. Arch Linux utiliza [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") como proceso init.
+En la etapa final del espacio de usuario inicial, la verdadera raíz se monta y luego reemplaza el sistema de archivos raíz inicial. Se ejecuta `/sbin/init`, reemplazando el proceso `/init`. Arch utiliza [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") como [init](/index.php/Init "Init") predeterminado.
 
 ## Getty
 
-[init](/index.php/Init "Init") lanza las [getty](/index.php/Getty "Getty"), una para cada [terminal virtual](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") (normalmente seis de ellas), las cuales inicializan cada tty pidiendo el nombre de usuario y contraseña. Una vez que se proporcionan el nombre de usuario y la contraseña, getty los compara con las que se encuentran en `/etc/passwd`, llamando a continuación al programa [login](#Login), para que, una vez inicida la sesión de usuario, lance la shell de usuario de acuerdo con lo definido en `/etc/passwd`. Alternativamente, getty puede iniciar directamente un gestor de pantallas si existe uno presente en el sistema.
+[init](/index.php/Init "Init") llama a [getty](/index.php/Getty "Getty") una vez por cada [terminal virtual](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") (típicamente seis de ellos), lo que inicializa cada tty y solicita un nombre de usuario y una contraseña. Una vez que se proporcionan el nombre de usuario y la contraseña, getty los compara con `/etc/passwd` y `/etc/shadow`, luego llama al [inicio de sesión](#Inicio_de_sesi.C3.B3n). Alternativamente, getty puede iniciar un gestor de pantalla si hay uno presente en el sistema.
 
 ## Gestor de pantallas
 
-Si hay un [gestor de pantallas (o gestor de inicio de sesión)](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") instalado, este se ejecutará en la tty configurada, reemplazando el prompt de inicio de la getty. En su defecto, si no hay un gestor de pantallas, se mostrará el prompt de getty que pedirá en modo texto al usuario las credenciales, para poder realizar [inicio de sesión](#Login).
+Se puede configurar un [gestor de pantalla](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") para reemplazar el indicador de inicio de sesión getty en un tty.
 
-## Login
+## Inicio de sesión
 
-El programa *login* inicia una sesión para el usuario mediante el establecimiento de las variables de entorno y arranca la shell del usuario, basada en `/etc/passwd`.
+El programa *login* inicia una sesión para el usuario configurando variables de entorno e iniciando el intérprete de órdenes del usuario, basado en `/etc/passwd`.
 
-## Shell
+El programa *login* muestra el contenido de [/etc/motd](https://en.wikipedia.org/wiki/motd_(Unix) (mensaje del día) después de un inicio de sesión exitoso, justo antes de que se ejecute el intérprete de órdenes de inicio de sesión. Es un buen lugar para mostrar sus términos de servicio para recordar a los usuarios sus políticas locales o cualquier cosa que desee decirles.
 
-Una vez que la [shell](/index.php/Shell "Shell") del usuario se inicia, normalmente ejecuta un archivo de configuración runtime, como por ejemplo [.bashrc](/index.php/.bashrc ".bashrc"), antes de presentar un prompt para el usuario. Si la cuenta está configurada para [iniciar X al iniciar sesión](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)"), el archivo de configuración mencionado llamará a [startx](/index.php/Startx "Startx") o [xinit](/index.php/Xinit "Xinit").
+## Intérprete de órdenes
+
+Una vez que el [intérprete de órdenes](/index.php/Shell "Shell") del usuario se inicia, normalmente ejecutará un archivo de configuración, como [bashrc](/index.php/Bashrc "Bashrc"), antes de presentar el indicador del intérprete de órdenes al usuario. Si la cuenta está configurada para [arrancar X al iniciar sesión](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)"), el archivo de configuración llamará a [startx](/index.php/Startx_(Espa%C3%B1ol) "Startx (Español)") o [xinit](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)").
 
 ## GUI, xinit o wayland
 
-[xinit](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") ejecuta el archivo de configuración [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") del usuario , que normalmente inicia un [administrador de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)"). Cuando el usuario finaliza y sale del administrador de ventanas, xinit, startx, el shell y el inicio de sesión finalizarán en ese orden, volviendo a getty.
+[xinit](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") ejecuta el archivo de configuración [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") del usuario, que normalmente inicia un [gestor de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)"). Cuando el usuario finaliza y sale del gestor de ventanas, xinit, startx, el intérprete de órdenes y el inicio de sesión finalizarán en ese orden, volviendo a getty.
 
 ## Véase también
 
@@ -141,3 +156,4 @@ Una vez que la [shell](/index.php/Shell "Shell") del usuario se inicia, normalme
 *   [Del Arranque de Linux con GRUB en Modo Single User](http://www.cyberciti.biz/faq/grub-boot-into-single-user-mode/)
 *   [NeoSmart: El proceso de arranque BIOS/MBR](https://neosmart.net/wiki/mbr-boot-process/)
 *   [Kernel Newbie Corner: initrd e initramfs](https://www.linux.com/learn/kernel-newbie-corner-initrd-and-initramfs-whats)
+*   [Rod Smith - Manejando los gestores de arranque EFI para Linux](http://www.rodsbooks.com/efi-bootloaders/)

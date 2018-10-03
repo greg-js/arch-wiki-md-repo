@@ -1,4 +1,5 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Domain Name System (Español)](/index.php?title=Domain_Name_System_(Espa%C3%B1ol)&action=edit&redlink=1 "Domain Name System (Español) (page does not exist)"). Fecha de la última traducción/revisión: **2017-01-24**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Domain_Name_System_(Espa%C3%B1ol)&diff=0&oldid={{{3}}}).
+**Estado de la traducción**
+Este artículo es una traducción de [Domain Name System (Español)](/index.php?title=Domain_Name_System_(Espa%C3%B1ol)&action=edit&redlink=1 "Domain Name System (Español) (page does not exist)"), revisada por última vez el **2017-01-24**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Domain_Name_System_(Espa%C3%B1ol)&diff=0&oldid={{{3}}}) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 

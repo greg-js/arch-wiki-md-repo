@@ -395,6 +395,10 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 	[http://fox-toolkit.org/](http://fox-toolkit.org/) || [fox](https://www.archlinux.org/packages/?name=fox)
 
+*   **[PCManFM](/index.php/PCManFM "PCManFM")** — Very fast and lightweight file manager which can also optionally manage the desktop icons and background.
+
+	[http://wiki.lxde.org/en/PCManFM](http://wiki.lxde.org/en/PCManFM) || [pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm)
+
 *   **qtFM** — Small, lightweight filemanager for Linux desktops based on pure Qt.
 
 	[http://www.qtfm.org/](http://www.qtfm.org/) || [qtfm](https://aur.archlinux.org/packages/qtfm/)
@@ -403,17 +407,9 @@ See also [Wikipedia:Comparison of file managers](https://en.wikipedia.org/wiki/C
 
 	[http://rox.sourceforge.net](http://rox.sourceforge.net) || [rox](https://www.archlinux.org/packages/?name=rox)
 
-*   **[SpaceFM](/index.php/SpaceFM "SpaceFM")** — GTK+ multi-panel tabbed file manager.
-
-	[http://ignorantguru.github.com/spacefm/](http://ignorantguru.github.com/spacefm/) || [spacefm](https://aur.archlinux.org/packages/spacefm/)
-
 *   **[Thunar](/index.php/Thunar "Thunar")** — File manager that can be run as a daemon with excellent start up and directory load times.
 
 	[http://docs.xfce.org/xfce/thunar/start](http://docs.xfce.org/xfce/thunar/start) || [thunar](https://www.archlinux.org/packages/?name=thunar)
-
-*   **[Xfe](https://en.wikipedia.org/wiki/Xfe "wikipedia:Xfe")** — Microsoft Explorer-like file manager for X (X File Explorer).
-
-	[http://roland65.free.fr/xfe/](http://roland65.free.fr/xfe/) || [xfe](https://aur.archlinux.org/packages/xfe/)
 
 ###### Twin-panel
 
@@ -439,9 +435,9 @@ Note that some of these twin-panel file managers can also be set to have only on
 
 	[http://www.mucommander.com/](http://www.mucommander.com/) || [mucommander](https://aur.archlinux.org/packages/mucommander/)
 
-*   **[PCManFM](/index.php/PCManFM "PCManFM")** — Lightweight file manager which features tabbed and dual pane browsing; also it can optionally manage the desktop icons and background.
+*   **[SpaceFM](/index.php/SpaceFM "SpaceFM")** — GTK+ multi-panel tabbed file manager.
 
-	[http://wiki.lxde.org/en/PCManFM](http://wiki.lxde.org/en/PCManFM) || [pcmanfm](https://www.archlinux.org/packages/?name=pcmanfm)
+	[http://ignorantguru.github.com/spacefm/](http://ignorantguru.github.com/spacefm/) || [spacefm](https://aur.archlinux.org/packages/spacefm/)
 
 *   **Sunflower** — Small and highly customizable twin-panel file manager for Linux with support for plugins.
 
@@ -458,6 +454,10 @@ Note that some of these twin-panel file managers can also be set to have only on
 *   **Worker** — Fast, lightweight and feature-rich file manager for the X Window System.
 
 	[http://www.boomerangsworld.de/worker/](http://www.boomerangsworld.de/worker/) || [worker](https://aur.archlinux.org/packages/worker/)
+
+*   **[Xfe](https://en.wikipedia.org/wiki/Xfe "wikipedia:Xfe")** — Microsoft Explorer-like file manager for X (X File Explorer).
+
+	[http://roland65.free.fr/xfe/](http://roland65.free.fr/xfe/) || [xfe](https://aur.archlinux.org/packages/xfe/)
 
 #### Trash management
 
@@ -866,6 +866,10 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 *   **[KTurtle](https://en.wikipedia.org/wiki/KTurtle "wikipedia:KTurtle")** — Educational programming environment that aims to make learning how to program as easily as possible. Part of [kdeedu](https://www.archlinux.org/groups/x86_64/kdeedu/).
 
 	[https://www.kde.org/applications/education/kturtle/](https://www.kde.org/applications/education/kturtle/) || [kturtle](https://www.archlinux.org/packages/?name=kturtle)
+
+*   **[Processing](https://en.wikipedia.org/wiki/Processing_(programming_language) "wikipedia:Processing (programming language)")** — Playground for teaching non-programmers the fundamentals of computer programming in a visual context.
+
+	[https://processing.org/](https://processing.org/) || [processing](https://www.archlinux.org/packages/?name=processing)
 
 *   **[Scratch](https://en.wikipedia.org/wiki/Scratch_(programming_language) "wikipedia:Scratch (programming language)")** — Programming system and content development tool for educational and entertainment purposes, such as creating interactive projects and simple sprite-based games. It is used primarly by unskilled users (such as children) as an entry to [event-driven programming](https://en.wikipedia.org/wiki/Event-driven_programming "wikipedia:Event-driven programming").
 

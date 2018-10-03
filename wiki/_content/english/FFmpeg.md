@@ -99,7 +99,7 @@ $ ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -c:v ffvhuff
 
 ```
 
-Here, the Huffyuv codec used, which is fast, but procedures huge file size.
+Here, the Huffyuv codec is used, which is fast, but produces huge file sizes.
 
 To take a screencast `screen.mp4` with lossy encoding and with audio:
 

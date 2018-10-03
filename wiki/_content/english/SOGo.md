@@ -45,7 +45,7 @@ Related articles
     *   [5.5 TLS configuration](#TLS_configuration)
     *   [5.6 Sieve configuration](#Sieve_configuration)
 *   [6 Postfix configuration](#Postfix_configuration)
-    *   [6.1 Basic configuratoin](#Basic_configuratoin)
+    *   [6.1 Basic configuration](#Basic_configuration_2)
     *   [6.2 User sources](#User_sources_2)
         *   [6.2.1 Active Directory](#Active_Directory_3)
         *   [6.2.2 Maria DB](#Maria_DB_2)
@@ -56,7 +56,7 @@ Related articles
     *   [6.5 TLS configuration](#TLS_configuration_2)
     *   [6.6 Testing the Postfix SASL configuration](#Testing_the_Postfix_SASL_configuration)
 *   [7 SOGo configuration](#SOGo_configuration)
-    *   [7.1 Basic configuration](#Basic_configuration_2)
+    *   [7.1 Basic configuration](#Basic_configuration_3)
     *   [7.2 SOGo user sources](#SOGo_user_sources)
         *   [7.2.1 Active Directory](#Active_Directory_4)
         *   [7.2.2 Maria DB](#Maria_DB_3)
@@ -745,7 +745,7 @@ Reload dovecot
 
 ## Postfix configuration
 
-### Basic configuratoin
+### Basic configuration
 
 Create a minimal Postfix configuration. Replace **server**.**internal**.**domain.tld** with a valid internal FQDN):
 

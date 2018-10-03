@@ -21,13 +21,22 @@ Want to see it in action? A StumpWM user created a [video](http://www.archive.or
     *   [1.2 With Clisp](#With_Clisp)
 *   [2 Documentation and Support](#Documentation_and_Support)
 *   [3 Tweaking](#Tweaking)
-*   [4 Troubleshooting](#Troubleshooting)
+*   [4 Configuration](#Configuration)
+    *   [4.1 Change cursor from default X shape](#Change_cursor_from_default_X_shape)
+    *   [4.2 Change window focus on mouse click](#Change_window_focus_on_mouse_click)
+    *   [4.3 Enable modeline](#Enable_modeline)
+    *   [4.4 Set font for messages and modeline](#Set_font_for_messages_and_modeline)
+*   [5 Troubleshooting](#Troubleshooting)
 
 ## Installation
 
 [Install](/index.php/Install "Install") [stumpwm](https://aur.archlinux.org/packages/stumpwm/) or [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/). The stable version supports multiple common-lisp implementations. The git version only supports sbcl.
 
 SBCL is recommended for maximum performance.
+
+After installing put `exec stumpwm` in your `~/.xinitrc` and run `startx`.
+
+To quit, with the default configuration press `C-t ;` then type quit and press enter.
 
 ### With SBCL
 
@@ -64,6 +73,79 @@ If you are an emacs user, you will find an emacs minor mode for editing StumpWM 
 
 `stumpish` is the STUMP window manager Interactive SHell. It is a program that allows the user to interact with StumpWM while it is running, from the comfort of a terminal (or using the emacs mode). It can be found in the contrib/ directory of the StumpWM source. If you use clisp, this file can also be found in `/usr/bin/`.
 
+## Configuration
+
+StumpWM stores its configuration in `~/.stumpwmrc` or you can use `~/.config/stumpwm/config`
+
+### Change cursor from default X shape
+
+By default StumpWM leaves the cursor as XOrg's standard X shape with the hotspot in the centre. You can have the more usual left-facing pointer by running
+
+```
+xsetroot -cursor_name left_ptr
+
+```
+
+You can also put this in your config file
+
+```
+(run-shell-command "xsetroot -cursor_name left_ptr")
+
+```
+
+### Change window focus on mouse click
+
+Clicking on another window will send the click event to that window, but it will not get focus meaning any keyboard input will go to whichever window has focus. The following line makes focus change to any window that is clicked on.
+
+```
+(setf *mouse-focus-policy* :click) 
+
+```
+
+### Enable modeline
+
+This sets up a basic modeline with the group name followed by window names on the left and the date and time on the right.
+
+First set the window name format and overall modeline format
+
+```
+(setf *window-format* "%m%n%s%c")
+(setf *screen-mode-line-format* (list "[^B%n^b] %W^>%d"))
+
+```
+
+The date format is constructed using the same format specifiers as [strftime(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/strftime.3) e.g.
+
+```
+(setf *time-modeline-string* "%a %b %e %k:%M")
+
+```
+
+Optionally change how often the modeline updates on its own, in seconds (it also updates whenever you do something with StumpWM like switch window).
+
+```
+(setf *mode-line-timeout* 2)
+
+```
+
+Finally enable the modeline (this must come *after* you have set the options you wanted)
+
+```
+(enable-mode-line (current-screen) (current-head) t)
+
+```
+
+### Set font for messages and modeline
+
+StumpWM uses the default XOrg font which is probably small and pixellated. You can use the ttf-fonts module to set a custom font.
+
+```
+(ql:quickload "clx-truetype")
+(load-module "ttf-fonts")
+(set-font (make-instance 'xft:font :family "DejaVu Sans Mono" :subfamily "Book" :size 11))
+
+```
+
 ## Troubleshooting
 
 *   If you have problems configuring multiple monitors, maybe you need to install 'xorg-xdpyinfo' package.
@@ -91,3 +173,14 @@ in the REPL, it can be solved by deleting `~/.Xauthority`. See [this issue on gi
  `export SBCL_HOME=/usr/lib/sbcl/` 
 
 Then you may reinstall stumpwm
+
+*   If you can't use the mousewheel to scroll in some programs, try adding
+
+```
+(setf (getenv "GDK_CORE_DEVICE_EVENTS") "1")
+
+```
+
+to your `.stumpwmrc` (source: [[1]](https://mmk2410.org/2018/02/15/scrolling-doesnt-work-in-gtk-3-apps-in-stumpwm/))
+
+*   Quicklisp won't work in StumpWM if you installed it after installing StumpWM - in that case uninstall and reinstall StumpWM

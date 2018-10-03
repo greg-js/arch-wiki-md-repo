@@ -2,7 +2,8 @@ Artículos relacionados
 
 *   [iptables (Español)](/index.php/Iptables_(Espa%C3%B1ol) "Iptables (Español)")
 
-**Estado de la traducción:** este artículo es una versión traducida de [Nftables](/index.php/Nftables "Nftables"). Fecha de la última traducción/revisión: **2018-09-03**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Nftables&diff=0&oldid=528452).
+**Estado de la traducción**
+Este artículo es una traducción de [Nftables](/index.php/Nftables "Nftables"), revisada por última vez el **2018-09-03**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Nftables&diff=0&oldid=528452) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [nftables](http://netfilter.org/projects/nftables/) es un proyecto de netfilter que tiene como objetivo reemplazar el marco existente de tablas{ip,ip6,arp,eb}. Proporciona un nuevo marco de filtrado de paquetes, una nueva utilidad en el espacio de usuario (nft) y una capa de compatibilidad para las tablas{ip,ip6}. Utiliza los hooks existentes, el sistema de seguimiento de la conexiones, los componentes de la línea de espera de los paquetes de red («*packet queues*») del espacio de usuario y el subsistema de registro de netfilter.
 

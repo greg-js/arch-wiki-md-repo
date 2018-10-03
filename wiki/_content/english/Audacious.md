@@ -5,14 +5,16 @@
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
     *   [2.1 Interfaces](#Interfaces)
-        *   [2.1.1 Adding Winamp skins](#Adding_Winamp_skins)
-    *   [2.2 Plugin configuration](#Plugin_configuration)
+        *   [2.1.1 GTK+](#GTK.2B)
+        *   [2.1.2 Qt5](#Qt5)
+        *   [2.1.3 Winamp](#Winamp)
+    *   [2.2 Plugins](#Plugins)
         *   [2.2.1 AMIDI-Plug (MIDI Player)](#AMIDI-Plug_.28MIDI_Player.29)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Audtool](#Audtool)
-    *   [3.2 MP3 problems](#MP3_problems)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Audacious sets itself as the default file manager](#Audacious_sets_itself_as_the_default_file_manager)
+    *   [4.1 Audacious starts instead of file manager](#Audacious_starts_instead_of_file_manager)
+    *   [4.2 MP3 problems](#MP3_problems)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -25,21 +27,21 @@
 
 ### Interfaces
 
-**Note:** GTK+ is now the default interface in Audacious 2.4 and above.
-
 Audacious currently provides three interfaces:
 
-*   Winamp classic interface
-*   GTK+ interface
-*   Qt5 interface.
+#### GTK+
 
-For Qt5 interface, install [audacious-qt5](https://aur.archlinux.org/packages/audacious-qt5/) since package from official repository doesn't have Qt5 enabled by default. However, package from AUR doesn't support GTK+. If you want support for both Qt5 and GTK+, you should remove `--disable-gtk` option in [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") of both audacious-qt5 and [audacious-plugins-qt5](https://aur.archlinux.org/packages/audacious-plugins-qt5/). One may switch between interfaces in Audacious settings.
+GTK+ 2 is the default interface in Audacious 2.4 and above.
 
-#### Adding Winamp skins
+#### Qt5
 
-Adding Winamp skins to Audacious is very simple. Just copy your skin file (.zip, .wsz, .tgz, .tar.gz, or .tar.bz2 file) to either `~/.local/share/audacious/Skins` (affect your user only) or `/usr/share/audacious/Skins` (affects every user), and then you can browse and select it from *Skinned Interface* tab in *Preferences*. Another way is dragging the skin file directly into the list view of available skins.
+For the Qt5 interface install the [audacious-qt5](https://aur.archlinux.org/packages/audacious-qt5/) package and [audacious-plugins-qt5](https://aur.archlinux.org/packages/audacious-plugins-qt5/). To support both Qt5 and GTK+ and switch between interfaces, remove `--disable-gtk` from the [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") of both packages.
 
-### Plugin configuration
+#### Winamp
+
+To add classic Winamp skins to Audacious, just copy them to either `~/.local/share/audacious/Skins` (user only) or `/usr/share/audacious/Skins` (system wide), then select them from the *Skinned Interface* tab in *Preferences*. Alternatively drag the skin file directly into the list view of available skins.
+
+### Plugins
 
 #### AMIDI-Plug (MIDI Player)
 
@@ -51,9 +53,9 @@ Afterwards, the plugin will be enabled, and in the plugin configuration panel (F
 
 ### Audtool
 
-Audacious is shipped with a powerful management tool called Audtool. Audtool could be used to retrieve information or to control the player.
+Audacious is shipped with a powerful management tool called Audtool which could be used to retrieve information or to control the player.
 
-For example, to retrieve current song title or artist, issue the following command:
+For example, to retrieve the current song's title or artist, issue the following commands:
 
 ```
 $ audtool current-song
@@ -61,22 +63,17 @@ $ audtool current-song-tuple-data artist
 
 ```
 
-There are also functions to control playback, manipulate the playlist, equalizer and main window. For the whole option list, see:
+There are also functions to control playback, manipulate the playlist, equalizer and main window. See `audtool --help` for the whole list of options.
 
-```
-$ audtool --help
+## Troubleshooting
 
-```
+### Audacious starts instead of file manager
+
+See [File manager functionality#Directories are not opened in the file manager](/index.php/File_manager_functionality#Directories_are_not_opened_in_the_file_manager "File manager functionality").
 
 ### MP3 problems
 
 Install [mpg123](https://www.archlinux.org/packages/?name=mpg123).
-
-## Troubleshooting
-
-### Audacious sets itself as the default file manager
-
-See [File manager functionality#Directories are not opened in the file manager](/index.php/File_manager_functionality#Directories_are_not_opened_in_the_file_manager "File manager functionality").
 
 ## See also
 

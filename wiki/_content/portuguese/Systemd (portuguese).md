@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2018-09-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=541568) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=544989) na versão em inglês.
 
 Artigos relacionados
 
@@ -587,7 +587,7 @@ Exemplos:
 
 Veja [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1), [systemd.journal-fields(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.journal-fields.7) ou a [publicação de blogue](http://0pointer.de/blog/projects/journalctl.html) do Lennart para detalhes.
 
-**Dica:** Por padrão, *journalctl* trunca linhas maiores que a largura da tela, mas em alguns casos pode ser melhor habilitar *wrapping* em vez de trucamento'. Isso pode ser controlado pela [variável de ambiente](/index.php/Vari%C3%A1vel_de_ambiente "Variável de ambiente") `SYSTEMD_LESS`, que contém opções passadas ao [less](/index.php/Utilit%C3%A1rios_principais#less "Utilitários principais") (o paginador padrão) e usa como padrão `FRSXMK` (veja [less(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/less.1) e [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) para detalhes).
+**Dica:** Por padrão, *journalctl* trunca linhas maiores que a largura da tela, mas em alguns casos pode ser melhor habilitar *wrapping* em vez de trucamento'. Isso pode ser controlado pela [variável de ambiente](/index.php/Vari%C3%A1vel_de_ambiente "Variável de ambiente") `SYSTEMD_LESS`, que contém opções passadas ao [less](/index.php/Utilit%C3%A1rios_principais#Essenciais "Utilitários principais") (o paginador padrão) e usa como padrão `FRSXMK` (veja [less(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/less.1) e [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) para detalhes).
 
 Ao omitir a opção `S`, a saída estará sob *wrap* em vez de truncamento. Por exemplo, inicie *journalctl* da seguinte forma:
 

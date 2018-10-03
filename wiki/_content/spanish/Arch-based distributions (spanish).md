@@ -1,4 +1,5 @@
-**Estado de la traducción:** este artículo es una versión traducida de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"). Fecha de la última traducción/revisión: **2018-09-29**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=544595).
+**Estado de la traducción**
+Este artículo es una traducción de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"), revisada por última vez el **2018-10-01**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=545397) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -82,6 +83,7 @@ Estas distribuciones ya no se desarrollan, pero muestran algo de la historia que
 *   [ALOBE](https://sourceforge.net/projects/alobearchlinuxoldboyeditionv1/)
 *   [ArchBox](https://sourceforge.net/projects/archbox-linux/)
 *   [Arch Linux WSL Edition](https://github.com/alwsl/alwsl)
+*   [Aseman OS](https://asemanos.gitlab.io/)
 *   [Astian OS](https://sourceforge.net/projects/astian-os/)
 *   [Audiophile Linux](http://www.ap-linux.com/) 
 *   [Feliz](https://sourceforge.net/projects/feliz/)

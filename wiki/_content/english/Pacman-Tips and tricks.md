@@ -177,7 +177,7 @@ $ comm -23 <(curl https://git.archlinux.org/archiso.git/plain/configs/releng/pac
 To list all development/unstable packages, run:
 
 ```
-$ pacman -Qq | grep -Ee '-(cvs|svn|git|hg|bzr|darcs)$'
+$ pacman -Qq | grep -Ee '-(bzr|cvs|darcs|git|hg|svn)$'
 
 ```
 

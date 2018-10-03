@@ -5,7 +5,8 @@ Artículos relacionados
 *   [GUID Partition Table (Español)](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)")
 *   [Secure Boot](/index.php/Secure_Boot "Secure Boot")
 
-**Estado de la traducción:** este artículo es una versión traducida de [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"). Fecha de la última traducción/revisión: **2018-08-31**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&diff=0&oldid=538790).
+**Estado de la traducción**
+Este artículo es una traducción de [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), revisada por última vez el **2018-08-31**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&diff=0&oldid=538790) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 **Advertencia:** Si bien es cieto que la instalación en modalidad UEFI es la opción a la que se tiende, no obstante, hay que advertir que las primeras implementaciones de UEFI «pueden» tener más inconvenientes que beneficios que su opositor BIOS. Por tanto, es recomendable hacer una búsqueda relacionada con su modelo de placa base particular para obtener información sobre la conveniencia de optar por la modalidad UEFI antes de continuar.
 
@@ -26,10 +27,10 @@ Es un método distito del comunmente usado «[código de arranque MBR](/index.ph
         *   [4.2.1 Montar efivarfs](#Montar_efivarfs)
     *   [4.3 Herramientas en el espacio de usuario](#Herramientas_en_el_espacio_de_usuario)
         *   [4.3.1 efibootmgr](#efibootmgr)
-*   [5 La shell de UEFI](#La_shell_de_UEFI)
-    *   [5.1 Obtener la shell de UEFI](#Obtener_la_shell_de_UEFI)
-    *   [5.2 Lanzar la shell de UEFI](#Lanzar_la_shell_de_UEFI)
-    *   [5.3 Órdenes importantes de la shell de UEFI](#.C3.93rdenes_importantes_de_la_shell_de_UEFI)
+*   [5 Intérprete de órdenes UEFI](#Int.C3.A9rprete_de_.C3.B3rdenes_UEFI)
+    *   [5.1 Obtener el intérprete de órdenes UEFI](#Obtener_el_int.C3.A9rprete_de_.C3.B3rdenes_UEFI)
+    *   [5.2 Lanzar el intérprete de órdenes UEFI](#Lanzar_el_int.C3.A9rprete_de_.C3.B3rdenes_UEFI)
+    *   [5.3 Órdenes importantes del intérprete UEFI](#.C3.93rdenes_importantes_del_int.C3.A9rprete_UEFI)
         *   [5.3.1 bcfg](#bcfg)
         *   [5.3.2 map](#map)
         *   [5.3.3 edit](#edit)
@@ -177,7 +178,7 @@ Existen algunas herramientas que permiten acceder/modificar las variables UEFI, 
 
 **Nota:**
 
-*   Si `efibootmgr` no funciona en absoluto en su sistema, puede reiniciar en la [shell de UEFI](#La_shell_de_UEFI) y utilizar la orden `bcfg` para crear una entrada de arranque en el gestor de arranque.
+*   Si `efibootmgr` no funciona en absoluto en su sistema, puede reiniciar en el [intérprete de órdenes UEFI](#Int.C3.A9rprete_de_.C3.B3rdenes_UEFI) y utilizar la orden `bcfg` para crear una entrada de arranque en el gestor de arranque.
 *   Si no es posible usar `efibootmgr`, algunos firmwares UEFI permiten a los usuarios gestionar directamente las entradas de inicio de UEFI desde la interfaz que aparece durante el arranque. Por ejemplo, algunas BIOS de ASUS tienen una opción llamada «Add New Boot Option» (*«Añadir nueva opción de arranque»*) que permite seleccionar una partición de sistema EFI local e introducir manualmente la ubicación del código de EFI (por ejemplo `\EFI\refind\refind_x64.efi`).
 *   Las siguientes órdenes utilizan el cargador de arranque [rEFInd](/index.php/REFInd "REFInd") como ejemplo.
 
@@ -206,13 +207,13 @@ Consulte [efibootmgr(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/efibootmgr.8
 
 **Nota:** UEFI utiliza una barra invertida `\` como separador de ruta, pero *efibootmgr* convierte automáticamente los separadores de ruta en barra normal `/` al estilo UNIX.
 
-## La shell de UEFI
+## Intérprete de órdenes UEFI
 
-La shell (esto es, el intérprete de línea de órdenes) de UEFI es una shell/terminal para el firmware, que permite ejecutar aplicaciones UEFI que incluyen los cargadores de arranque UEFI. Aparte de esto, la shell también se puede utilizar para obtener información variada sobre el sistema o del firmware del mapa de la memoria (memmap), modificar las variables del gestor de arranque (bcfg), ejecutar programas de gestión de particiones (diskpart), cargar los controladores UEFI, editar archivos de texto (edit), hexedit, etc.
+El intérprete de órdenes de UEFI es una intérprete/terminal para el firmware, que permite ejecutar aplicaciones UEFI que incluyen los cargadores de arranque UEFI. Aparte de esto, el intérprete también se puede utilizar para obtener información variada sobre el sistema o del firmware del mapa de la memoria (memmap), modificar las variables del gestor de arranque (bcfg), ejecutar programas de gestión de particiones (diskpart), cargar los controladores UEFI, editar archivos de texto (edit), hexedit, etc.
 
-### Obtener la shell de UEFI
+### Obtener el intérprete de órdenes UEFI
 
-Puede descargar una shell de UEFI con licencia BSD de Tianocore de Intel desde el proyecto UDK/EDK2.
+Puede descargar un intérprete de órdenes UEFI con licencia BSD de Tianocore de Intel desde el proyecto UDK/EDK2.
 
 *   Paquete de [AUR](/index.php/AUR "AUR") [uefi-shell-git](https://aur.archlinux.org/packages/uefi-shell-git/) (recomendado) —proporciona la shell x86_64 para x86_64 (64-bit) de UEFI y la shell IA32 para IA32 (32-bit) de UEFI— compilado directamente de la última fuente de TianoCore EDK2.
 *   Hay copias de la shell v1 y v2 en el directorio EFI en la imagen de instalación de Arch.
@@ -222,7 +223,7 @@ Puede descargar una shell de UEFI con licencia BSD de Tianocore de Intel desde e
 
 La versión 2.0 de la shell únicamente funciona en sistemas UEFI 2.3 + y se recomienda su uso con preferencia a la shell 1.0 en esos sistemas. La versión 1.3 de la shell debería funcionar en todos los sistemas UEFI, independientemente de la especificación de la versión del firmware. Más información en [ShellPkg](http://sourceforge.net/apps/mediawiki/tianocore/index.php?title=ShellPkg) y [este correo](http://sourceforge.net/mailarchive/message.php?msg_id=28690732).
 
-### Lanzar la shell de UEFI
+### Lanzar el intérprete de órdenes UEFI
 
 Algunas placas base Asus y otras basadas en el firmware UEFI AMI Aptio x86_64 (de Sandy Bridge en adelante) ofrecen una opción llamada `«Launch EFI Shell from filesystem device»`. Para estas placas base, descargue la shell de UEFI x86_64 y cópiela a la partición del sistema UEFI renombrándola como `<UEFI_SYSTEM_PARTITION>/shellx64.efi` (normalmente en la carpeta `/boot/efi/shellx64.efi`).
 
@@ -230,9 +231,9 @@ Los sistemas con un firmware UEFI Phoenix SecureCore Tiano se sabe que llevan in
 
 **Nota:** Si es incapaz de lanzar la shell de UEFI directamente desde el firmware mediante cualquiera de los métodos mencionados anteriormente, cree una unidad USB formateada con FAT32 conteniendo la `Shell.efi`, copiada con la ruta `(USB)/efi/boot/bootx64.efi`. Este USB debería aparecer en el menú de arranque del firmware. La inicialización de esta opción lanzará la shell de UEFI.
 
-### Órdenes importantes de la shell de UEFI
+### Órdenes importantes del intérprete UEFI
 
-Las órdenes de la shell de UEFI generalmente dan soporte a la opción `-b` que hace una pausa después de la salida de cada página. Ejecute `help -b` para ver las órdenes disponibles.
+Las órdenes del intérprete UEFI generalmente dan soporte a la opción `-b` que hace una pausa después de la salida de cada página. Ejecute `help -b` para ver las órdenes disponibles.
 
 Puede obtener más información en [http://software.intel.com/en-us/articles/efi-shells-and-scripting/](http://software.intel.com/en-us/articles/efi-shells-and-scripting/)
 
@@ -243,7 +244,7 @@ La orden `bcfg` se utiliza para modificar las entradas en la NVRAM de UEFI, lo q
 **Nota:**
 
 *   Se recomienda probar `bcfg` únicamente si `efibootmgr` no puede crear entradas de inicio que funcionen en el propio sistema.
-*   La versión 1 del binario oficial de la shell de UEFI no proporciona soporte para la orden `bcfg`. Consulte [#Obtener la shell de UEFI](#Obtener_la_shell_de_UEFI) para un binario UEFI shell v2 modificado que puede funcionar en UEFI con firmwares anteriores a 2.3.
+*   La versión 1 del binario oficial del intérprete de órdenes UEFI no proporciona soporte para la orden `bcfg`. Consulte [#Obtener el intérprete de órdenes UEFI](#Obtener_el_int.C3.A9rprete_de_.C3.B3rdenes_UEFI) para un binario UEFI shell v2 modificado que puede funcionar en UEFI con firmwares anteriores a 2.3.
 
 Para conocer una lista de entradas de arranque actuales:
 
@@ -303,7 +304,7 @@ Shell> bcfg -? -v -b
 
 La orden `map` muestra un mapeado de los dispositivos, es decir, los nombres de los sistemas de archivos disponibles (`FS0`) y los dispositivos de almacenamiento (`blk0`).
 
-Antes de ejecutar órdenes relacionadas con el sistema de archivos, como `cd` o `ls`, debe cambiar la shell al sistema de archivos correspondiente, escribiendo su nombre:
+Antes de ejecutar órdenes relacionadas con el sistema de archivos, como `cd` o `ls`, debe cambiar el intérprete de órdenes al sistema de archivos correspondiente, escribiendo su nombre:
 
 ```
 Shell> FS0:

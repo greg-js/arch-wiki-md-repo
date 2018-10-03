@@ -1,4 +1,4 @@
-**Warning:** AUR helpers are **not** [supported](https://bbs.archlinux.org/viewtopic.php?pid=828310#p828310) by Arch Linux. You should become familiar with the [manual build process](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") in order to be prepared to troubleshoot problems.
+**Warning:** AUR helpers are **not supported** by Arch Linux. You should become familiar with the [manual build process](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") in order to be prepared to troubleshoot problems.
 
 **Note:** Do not edit this article prior to discussion in [Talk:AUR helpers](/index.php/Talk:AUR_helpers "Talk:AUR helpers").
 

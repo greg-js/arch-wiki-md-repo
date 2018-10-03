@@ -3,7 +3,8 @@ Artículos relacionados
 *   [fail2ban](/index.php/Fail2ban "Fail2ban")
 *   [Secure Shell (Español)](/index.php/Secure_Shell_(Espa%C3%B1ol) "Secure Shell (Español)")
 
-**Estado de la traducción:** este artículo es una versión traducida de [Sshguard](/index.php/Sshguard "Sshguard"). Fecha de la última traducción/revisión: **2018-09-03**. Puede ayudar a actualizar la traducción, si advierte que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=Sshguard&diff=0&oldid=513055).
+**Estado de la traducción**
+Este artículo es una traducción de [Sshguard](/index.php/Sshguard "Sshguard"), revisada por última vez el **2018-09-03**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Sshguard&diff=0&oldid=513055) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 **Advertencia:** Utilizar de una lista negra de IP detendrá ataques triviales, pero esto le supondrá el uso de un demonio adicional y de un registro fiable (la partición donde esté /var puede llenarse, especialmente si un atacante está golpeando el servidor). Además, con el conocimiento de su dirección IP, el atacante puede enviar paquetes con un encabezado de fuente falsificado y bloquearlo fuera del servidor. [SSH keys](/index.php/SSH_keys "SSH keys") le ofrece una solución elegante al problema del ataque de fuerza bruta, sin tantos inconvenientes.
 

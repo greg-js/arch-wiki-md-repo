@@ -1,6 +1,6 @@
-**Status de tradução:** Esse artigo é uma tradução de [Mail server](/index.php/Mail_server "Mail server"). Data da última tradução: 2018-09-22\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Mail_server&diff=0&oldid=542618) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Mail server](/index.php/Mail_server "Mail server"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Mail_server&diff=0&oldid=543629) na versão em inglês.
 
-Um **servidor de e-mail** ou [agente de transferência de e-mail](https://en.wikipedia.org/wiki/pt:Mail_transfer_agent "wikipedia:pt:Mail transfer agent") (MTA) recebe e envia e-mails via [SMTP](https://en.wikipedia.org/wiki/pt:Simple_Mail_Transfer_Protocol "wikipedia:pt:Simple Mail Transfer Protocol"). E-mails recebidos e aceitos são então passados para um [agente de entrega de e-mail](https://en.wikipedia.org/wiki/Mail_delivery_agent "wikipedia:Mail delivery agent") (MDA), que armazena o e-mail em uma caixa de correio (geralmente nos formatos [mbox](https://en.wikipedia.org/wiki/mbox "wikipedia:mbox") ou [Maildir](https://en.wikipedia.org/wiki/Maildir "wikipedia:Maildir")). Se você quiser que os usuários possam acessar remotamente seus e-mails usando [clientes de e-mail](/index.php/Email_client "Email client") (MUA) ou [agentes de recuperação de e-mail](/index.php/Category:Mail_retrieval_agents "Category:Mail retrieval agents"), será necessário executar um servidor [POP3](https://en.wikipedia.org/wiki/pt:Post_Office_Protocol "wikipedia:pt:Post Office Protocol") e/ou [IMAP](https://en.wikipedia.org/wiki/pt:Internet_Message_Access_Protocol "wikipedia:pt:Internet Message Access Protocol").
+Um servidor de e-mail consiste em vários componentes. Um [agente de transferência de e-mail](https://en.wikipedia.org/wiki/pt:Mail_transfer_agent "wikipedia:pt:Mail transfer agent") (MTA) recebe e envia e-mails via [SMTP](https://en.wikipedia.org/wiki/pt:Simple_Mail_Transfer_Protocol "wikipedia:pt:Simple Mail Transfer Protocol"). E-mails recebidos e aceitos são então passados para um [agente de entrega de e-mail](https://en.wikipedia.org/wiki/Mail_delivery_agent "wikipedia:Mail delivery agent") (MDA), que armazena o e-mail em uma caixa de correio (geralmente nos formatos [mbox](https://en.wikipedia.org/wiki/mbox "wikipedia:mbox") ou [Maildir](https://en.wikipedia.org/wiki/Maildir "wikipedia:Maildir")). Se você quiser que os usuários possam acessar remotamente seus e-mails usando [clientes de e-mail](/index.php/Email_client "Email client") (MUA), será necessário executar um servidor [POP3](https://en.wikipedia.org/wiki/pt:Post_Office_Protocol "wikipedia:pt:Post Office Protocol") e/ou [IMAP](https://en.wikipedia.org/wiki/pt:Internet_Message_Access_Protocol "wikipedia:pt:Internet Message Access Protocol").
 
 ```
 +---------+  SMTP  +---+   +---+                     +------------------+
@@ -13,42 +13,87 @@ Um **servidor de e-mail** ou [agente de transferência de e-mail](https://en.wik
 
 ```
 
-A coluna *SPF* refer-se ao suporte a [Sender Policy Framework](#Sender_Policy_Framework).
+## Contents
 
-| Software | Pacote | [MTA](https://en.wikipedia.org/wiki/pt:MTA "wikipedia:pt:MTA") | [MDA](https://en.wikipedia.org/wiki/Mail_delivery_agent "wikipedia:Mail delivery agent") | [POP3](https://en.wikipedia.org/wiki/pt:Post_Office_Protocol "wikipedia:pt:Post Office Protocol") & [IMAP](https://en.wikipedia.org/wiki/pt:Internet_Message_Access_Protocol "wikipedia:pt:Internet Message Access Protocol") | [SPF](#Sender_Policy_Framework) |
-| [Sendmail](/index.php/Sendmail "Sendmail") | [sendmail](https://aur.archlinux.org/packages/sendmail/) | Sim | Não | Não | por meio do [Milter](https://en.wikipedia.org/wiki/Milter "wikipedia:Milter") |
-| [Exim](/index.php/Exim "Exim") | [exim](https://www.archlinux.org/packages/?name=exim) | Sim | Sim | Não | [experimental](https://github.com/Exim/exim/wiki/SPF) |
-| [OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD") | [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd) | Sim | Sim | Não | Não |
-| [Postfix](/index.php/Postfix "Postfix") | [postfix](https://www.archlinux.org/packages/?name=postfix) | Sim | Sim | Não | Sim |
-| [Courier](/index.php/Courier_Mail_Server "Courier Mail Server") | [courier-mta](https://aur.archlinux.org/packages/courier-mta/) | Sim | Sim | Sim | Sim |
-| [Cyrus IMAP](https://en.wikipedia.org/wiki/pt:Cyrus_(IMAP) | [cyrus-imapd](https://aur.archlinux.org/packages/cyrus-imapd/) | Sim | Sim | Sim | ? |
-| [Dovecot](/index.php/Dovecot "Dovecot") | [dovecot](https://www.archlinux.org/packages/?name=dovecot) | Não | Sim | Sim |
-| [UW IMAP](https://en.wikipedia.org/wiki/UW_IMAP "wikipedia:UW IMAP") | [imap](https://www.archlinux.org/packages/?name=imap) | Não | Sim | Sim |
-| [fdm](/index.php/Fdm "Fdm") | [fdm](https://www.archlinux.org/packages/?name=fdm) | Não | Sim | Não |
-| [Procmail](/index.php/Procmail "Procmail") | [procmail](https://www.archlinux.org/packages/?name=procmail) | Não | Sim | Não |
+*   [1 Software](#Software)
+    *   [1.1 Servidores POP3/IMAP](#Servidores_POP3.2FIMAP)
+    *   [1.2 MDAs autônomos](#MDAs_aut.C3.B4nomos)
+*   [2 Portas](#Portas)
+*   [3 Registro MX](#Registro_MX)
+*   [4 TLS](#TLS)
+*   [5 Autenticação](#Autentica.C3.A7.C3.A3o)
+    *   [5.1 Sender Policy Framework](#Sender_Policy_Framework)
+    *   [5.2 Sender Rewriting Scheme](#Sender_Rewriting_Scheme)
+    *   [5.3 DKIM](#DKIM)
+*   [6 Sites de teste](#Sites_de_teste)
+*   [7 Dicas e truques](#Dicas_e_truques)
+
+## Software
+
+Todos esses softwares, exceto o Sendmail, incluem um agente de entrega de e-mail.
+
+*   **[Exim](/index.php/Exim "Exim")** — Um agente de transferência de e-mail altamente configurável.
+
+	[https://exim.org/](https://exim.org/) || [exim](https://www.archlinux.org/packages/?name=exim)
+
+*   **[OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD")** — Um agente de transferência de e-mail, parte do projeto OpenBSD.
+
+	[https://opensmtpd.org/](https://opensmtpd.org/) || [opensmtpd](https://www.archlinux.org/packages/?name=opensmtpd)
+
+*   **[Postfix](/index.php/Postfix "Postfix")** — Um agente de transferência de e-mail, destinado a ser rápido, fácil de administrar e seguro.
+
+	[http://www.postfix.org/](http://www.postfix.org/) || [postfix](https://www.archlinux.org/packages/?name=postfix)
+
+*   **[Sendmail](/index.php/Sendmail "Sendmail")** — Um agente de transferência de e-mail bem conhecido.
+
+	[http://www.sendmail.org/](http://www.sendmail.org/) || [sendmail](https://aur.archlinux.org/packages/sendmail/)
+
+### Servidores POP3/IMAP
+
+*   **[Courier](/index.php/Courier "Courier")** — Um agente de transferência de e-mail, fornecendo serviços POP3, IMAP, webmail e lista de discussão como componentes individuais.
+
+	[https://www.courier-mta.org/](https://www.courier-mta.org/) || [courier-mta](https://aur.archlinux.org/packages/courier-mta/)
+
+*   **[Cyrus IMAP](https://en.wikipedia.org/wiki/pt:Cyrus_(IMAP) "wikipedia:pt:Cyrus (IMAP)")** — Um agente de transferência de e-mail com um formato de spool de email personalizado fornece serviços POP3 e IMAP.
+
+	[https://www.cyrusimap.org/](https://www.cyrusimap.org/) || [cyrus-imapd](https://aur.archlinux.org/packages/cyrus-imapd/)
+
+*   **[Dovecot](/index.php/Dovecot "Dovecot")** — Um servidor IMAP e POP3 escrito para ser seguro, rápido e simples de configurar.
+
+	[https://dovecot.org/](https://dovecot.org/) || [dovecot](https://www.archlinux.org/packages/?name=dovecot)
+
+*   **[UW IMAP](https://en.wikipedia.org/wiki/UW_IMAP "wikipedia:UW IMAP")** — Um servidor IMAP/POP.
+
+	[https://www.washington.edu/imap/](https://www.washington.edu/imap/) || [imap](https://www.archlinux.org/packages/?name=imap)
+
+### MDAs autônomos
+
+*   **[fdm](/index.php/Fdm "Fdm")** — Um programa simples para entregar e filtrar mensagens.
+
+	[https://github.com/nicm/fdm](https://github.com/nicm/fdm) || [fdm](https://www.archlinux.org/packages/?name=fdm)
+
+*   **[Procmail](/index.php/Procmail "Procmail")** — Um programa para filtrar, classificar e armazenar email (não-mantido).
+
+	[http://www.procmail.org/](http://www.procmail.org/) || [procmail](https://www.archlinux.org/packages/?name=procmail)
 
 Veja também [Wikipedia:Comparison of e-mail servers](https://en.wikipedia.org/wiki/Comparison_of_e-mail_servers "wikipedia:Comparison of e-mail servers").
 
-## Contents
+## Portas
 
-*   [1 Registro MX](#Registro_MX)
-*   [2 TLS](#TLS)
-*   [3 Autenticação](#Autentica.C3.A7.C3.A3o)
-    *   [3.1 Sender Policy Framework](#Sender_Policy_Framework)
-    *   [3.2 Sender Rewriting Scheme](#Sender_Rewriting_Scheme)
-    *   [3.3 DKIM](#DKIM)
-*   [4 Sites de teste](#Sites_de_teste)
-*   [5 Dicas e truques](#Dicas_e_truques)
+| Propósito | Porta | Protocolo | Criptografia |
+| Aceitar e-mail de outros MTAs. | 25 | SMTP | STARTTLS |
+| Aceitar submissões a partir de MUAs. | 587 | SMTP | STARTTLS |
+| 465 | [SMTPS](https://en.wikipedia.org/wiki/SMTPS "wikipedia:SMTPS") | TLS implícito |
+| Permitir que MUAs acessem e-mails. | 110 | POP3 | STARTTLS |
+| 995 | POP3S | TLS implícito |
+| 143 | IMAP | STARTTLS |
+| 993 | IMAPS | TLS implícito |
+
+Observe que o TLS implícito é mais seguro do que o [STARTTLS](https://en.wikipedia.org/wiki/Opportunistic_TLS "wikipedia:Opportunistic TLS"), porque o último é vulnerável a [ataques *man-in-the-middle*](https://en.wikipedia.org/wiki/pt:Ataque_man-in-the-middle "wikipedia:pt:Ataque man-in-the-middle"). Para mais informações, consulte [[1]](https://serverfault.com/questions/523804/is-starttls-less-safe-than-tls-ssl) e [RFC:8314](https://tools.ietf.org/html/rfc8314 "rfc:8314").
 
 ## Registro MX
 
-Se você quiser receber e-mails, precisará definir um [registro MX](https://en.wikipedia.org/wiki/pt:MX_record "wikipedia:pt:MX record"), ou *MX record*, do seu nome de domínio para apontar para o seu servidor de e-mail. Geralmente isso é feito a partir da interface de configuração do seu provedor de domínio.
-
-Um registro de troca de e-mails (registro MX) é um tipo de registro de recurso no Sistema de Nomes de Domínio (DNS) que especifica um servidor de e-mails responsável por aceitar mensagens de email em nome do domínio de um destinatário.
-
-Quando uma mensagem de e-mail é enviada pela Internet, o agente de transferência de e-mail de envio consulta o Sistema de Nome de Domínio para registros MX do nome de domínio de cada destinatário. Essa consulta retorna uma lista de nomes de host de servidores de troca de mensagens que aceitam emails de entrada para esse domínio e suas preferências. O agente de envio, em seguida, tenta estabelecer uma conexão SMTP com um desses servidores, começando com aquele com o menor número de preferência, entregando a mensagem ao primeiro servidor com o qual uma conexão pode ser feita.
-
-**Nota:** Alguns servidores de e-mail não entregarão e-mails para você se seu registro MX apontar para um CNAME. Para obter melhores resultados, sempre aponte um registro MX para uma definição de registro. Para mais informações, veja, por exemplo, a [lista do Wikipédia com tipos de registros DNS](https://en.wikipedia.org/wiki/List_of_DNS_record_types "wikipedia:List of DNS record types").
+Hospedar um servidor de e-mail requer um [nome de domínio](https://en.wikipedia.org/wiki/pt:Dom%C3%ADnio "wikipedia:pt:Domínio") com um [registro MX](https://en.wikipedia.org/wiki/pt:Mx_record "wikipedia:pt:Mx record") apontando para o nome de domínio do seu agente de transferência de e-mail. O nome de domínio usado como o valor do registro MX deve ser mapeado para pelo menos um [endereço de registro](https://en.wikipedia.org/wiki/A_record "wikipedia:A record") (A, AAAA) e não deve ter um [registro CNAME](https://en.wikipedia.org/wiki/CNAME_record "wikipedia:CNAME record") caso contrário, você está quebrando a [RFC 2181](https://tools.ietf.org/html/rfc2181#section-10.3 "rfc:2181") e pode não receber mensagens de alguns servidores de e-mail. A configuração de registros DNS geralmente é feita a partir da interface de configuração do seu [registrador de nomes de domínio](https://en.wikipedia.org/wiki/pt:Registrar "wikipedia:pt:Registrar").
 
 ## TLS
 
@@ -66,11 +111,15 @@ Do [Wikipédia](https://en.wikipedia.org/wiki/Sender_Policy_Framework "wikipedia
 
 	**Sender Policy Framework** (**SPF**) é um protocolo de validação de e-mail projetado para detectar e bloquear falsificação de e-mail, fornecendo um mecanismo para permitir o recebimento de troca de e-mails para verificar se o e-mail recebido de um domínio vem de um endereço IP autorizado pelos administradores do domínio.
 
-Para permitir que outros trocadores de e-mail validem e-mails aparentemente enviados de seu domínio, você precisa definir um registro DNS TXT, conforme explicado no [artigo da Wikipédia](https://en.wikipedia.org/wiki/pt:Sender_Policy_Framework "wikipedia:pt:Sender Policy Framework"). Para validar as mensagens recebidas usando o SPF, você precisa configurar seu servidor de e-mail para usar uma implementação SPF. Existem várias [implementações SPF](http://www.openspf.org/Implementations) disponíveis, [perl-mail-spf](https://www.archlinux.org/packages/?name=perl-mail-spf) e [perl-mail-spf-query](https://www.archlinux.org/packages/?name=perl-mail-spf-query) podem ser encontradas no repositórios oficiais.
+Para permitir que outros trocadores de e-mail validem e-mails aparentemente enviados de seu domínio, você precisa definir um registro DNS TXT, conforme explicado no [artigo da Wikipédia](https://en.wikipedia.org/wiki/pt:Sender_Policy_Framework "wikipedia:pt:Sender Policy Framework"). Para validar as mensagens recebidas usando o SPF, você precisa configurar seu agente de transferência de e-mail para usar uma implementação SPF. Existem várias [implementações SPF](http://www.openspf.org/Implementations) disponíveis, [libspf2](https://www.archlinux.org/packages/?name=libspf2), [perl-mail-spf](https://www.archlinux.org/packages/?name=perl-mail-spf) e [perl-mail-spf-query](https://www.archlinux.org/packages/?name=perl-mail-spf-query) podem ser encontradas no repositórios oficiais.
 
-*   Para [Sendmail](/index.php/Sendmail "Sendmail") [spfmilter-acme](https://aur.archlinux.org/packages/spfmilter-acme/) pode ser usado.
-*   Para [Postfix](/index.php/Postfix "Postfix"), veja [Postfix#Sender Policy Framework](/index.php/Postfix#Sender_Policy_Framework "Postfix").
-*   [Courier Mail Server](/index.php/Courier_Mail_Server "Courier Mail Server") oferece suporte nativamente a SPF.
+<caption>Suporte a validação de SPF</caption>
+| [Courier](/index.php/Courier_Mail_Server "Courier Mail Server") | Sim, embutido |
+| [Postfix](/index.php/Postfix "Postfix") | [Sim](/index.php/Postfix#Sender_Policy_Framework "Postfix") |
+| [Sendmail](/index.php/Sendmail "Sendmail") | por meio do [Milter](https://en.wikipedia.org/wiki/Milter "wikipedia:Milter") e do [spfmilter-acme](https://aur.archlinux.org/packages/spfmilter-acme/) |
+| [Exim](/index.php/Exim "Exim") | [experimental](https://github.com/Exim/exim/wiki/SPF), exibe [libspf2](https://www.archlinux.org/packages/?name=libspf2) |
+| [OpenSMTPD](/index.php/OpenSMTPD "OpenSMTPD") | Não |
+| [Cyrus IMAP](https://en.wikipedia.org/wiki/pt:Cyrus_(IMAP) | ? |
 
 Os seguintes sites permitem você validar seu registro SPF:
 
@@ -108,6 +157,6 @@ A maioria dos servidores de e-mail pode ser configurada para remover os endereç
 Extras disponíveis que geralmente podem ser integrados são:
 
 *   [ClamAV](/index.php/ClamAV_(Portugu%C3%AAs) "ClamAV (Português)") para verificação de e-mails por vírus
-*   [spamassassin](https://www.archlinux.org/packages/?name=spamassassin) para identificar e filtrar spam
+*   [SpamAssassin](/index.php/SpamAssassin "SpamAssassin") para identificar e filtrar spam
 *   [Sieve](https://en.wikipedia.org/wiki/Sieve_(mail_filtering_language) – uma linguagem de programação para filtrar e-mail
 *   [webmail](https://en.wikipedia.org/wiki/pt:Webmail "wikipedia:pt:Webmail") como o [Roundcube](/index.php/Roundcube "Roundcube") ou o [Squirrelmail](/index.php/Squirrelmail "Squirrelmail")

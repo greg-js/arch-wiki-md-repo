@@ -13,6 +13,7 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
     *   [2.3 Basic checkups](#Basic_checkups)
     *   [2.4 Persistent configuration](#Persistent_configuration)
     *   [2.5 Example peer configuration](#Example_peer_configuration)
+    *   [2.6 Example configuration for systemd-networkd](#Example_configuration_for_systemd-networkd)
 *   [3 Setup a VPN server](#Setup_a_VPN_server)
     *   [3.1 Server](#Server)
     *   [3.2 Client (tunnel all traffic)](#Client_.28tunnel_all_traffic.29)
@@ -114,9 +115,10 @@ The config can be saved by utilizing `showconf`
 
 #### Example peer configuration
 
- `/etc/wireguard/wg0.conf` 
+ `/etc/wireguard/30-wg0.conf` 
 ```
 [Interface]
+Address = 10.0.0.1/32
 PrivateKey = [CLIENT PRIVATE KEY]
 
 [Peer]
@@ -124,6 +126,39 @@ PublicKey = [SERVER PUBLICKEY]
 AllowedIPs = 10.0.0.0/24, 10.123.45.0/24, 1234:4567:89ab::/48
 Endpoint = [SERVER ENDPOINT]:51820
 PersistentKeepalive = 25
+```
+
+#### Example configuration for systemd-networkd
+
+ `/etc/systemd/network/30-wg0.netdev` 
+```
+[NetDev]
+Name = wg0
+Kind = wireguard
+Description = Wireguard
+
+[WireGuard]
+PrivateKey = [CLIENT PRIVATE KEY]
+
+[WireGuardPeer]
+PublicKey = [SERVER PUBLIC KEY]
+PresharedKey = [PRE SHARED KEY]
+AllowedIPs = 10.0.0.0/24
+Endpoint = [SERVER ENDPOINT]:51820
+PersistentKeepalive = 25
+```
+ `/etc/systemd/network/30-wg0.network` 
+```
+[Match]
+Name = wg0
+
+[Network]
+Address = 10.0.0.3/32
+DNS = 10.0.0.1
+
+[Route]
+Gateway = 10.0.0.1
+Route = 10.0.0.0/24
 ```
 
 ## Setup a VPN server

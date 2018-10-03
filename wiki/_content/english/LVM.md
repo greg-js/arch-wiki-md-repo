@@ -91,7 +91,7 @@ Basic building blocks of LVM:
 Example:
 
 ```
-**Physical disks**
+Physical disks
 
   Disk1 (/dev/sda):
      _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
@@ -108,7 +108,7 @@ Example:
 ```
 
 ```
-**LVM logical volumes**
+LVM logical volumes
 
   Volume Group1 (/dev/MyVolGroup/ = /dev/sda1 + /dev/sda2 + /dev/sdb1):
      _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _

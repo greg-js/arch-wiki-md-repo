@@ -200,27 +200,20 @@ $ gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons tru
 
 See [Hardware video acceleration#Failed to open VDPAU backend](/index.php/Hardware_video_acceleration#Failed_to_open_VDPAU_backend "Hardware video acceleration").
 
-Since your system probably doesn't support VDPAU you should tell VLC to use VA-API instead, see [#Hardware acceleration support](#Hardware_acceleration_support).
+Since your system probably doesn't support VDPAU you should tell VLC to use VA-API instead, see [#Hardware video acceleration](#Hardware_video_acceleration).
 
 ### No playback via SFTP of media files names containing spaces
 
 If VLC does not play any videos or audio files over SFTP make sure you have [sshfs](https://www.archlinux.org/packages/?name=sshfs) installed.
 
-If it refuses to play any media files containing spaces via SFTP and always asks for authentication change the Exec line in the vlc.desktop file from
-
-```
-Exec=/usr/bin/vlc --started-from-file %U
-
-```
-
-to
+If it refuses to play any media files containing spaces via SFTP and always asks for authentication change the Exec line in the `vlc.desktop` file to:
 
 ```
 Exec=/usr/bin/vlc --started-from-file %F
 
 ```
 
-[[1]](https://bugs.launchpad.net/ubuntu/+source/vlc/+bug/239431/comments/11)
+See [[1]](https://bugs.launchpad.net/ubuntu/+source/vlc/+bug/239431/comments/11).
 
 ## See also
 

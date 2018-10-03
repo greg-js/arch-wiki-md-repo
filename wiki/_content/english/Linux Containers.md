@@ -23,12 +23,13 @@ Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn
     *   [2.1 Required software](#Required_software)
         *   [2.1.1 Enable support to run unprivileged containers (optional)](#Enable_support_to_run_unprivileged_containers_.28optional.29)
     *   [2.2 Host network configuration](#Host_network_configuration)
-    *   [2.3 Container creation](#Container_creation)
-    *   [2.4 Container configuration](#Container_configuration)
-        *   [2.4.1 Basic config with networking](#Basic_config_with_networking)
-        *   [2.4.2 Mounts within the container](#Mounts_within_the_container)
-        *   [2.4.3 Xorg program considerations (optional)](#Xorg_program_considerations_.28optional.29)
-        *   [2.4.4 OpenVPN considerations](#OpenVPN_considerations)
+    *   [2.3 Alternate Network - Bridge on same network as host](#Alternate_Network_-_Bridge_on_same_network_as_host)
+    *   [2.4 Container creation](#Container_creation)
+    *   [2.5 Container configuration](#Container_configuration)
+        *   [2.5.1 Basic config with networking](#Basic_config_with_networking)
+        *   [2.5.2 Mounts within the container](#Mounts_within_the_container)
+        *   [2.5.3 Xorg program considerations (optional)](#Xorg_program_considerations_.28optional.29)
+        *   [2.5.4 OpenVPN considerations](#OpenVPN_considerations)
 *   [3 Managing containers](#Managing_containers)
     *   [3.1 Basic usage](#Basic_usage)
     *   [3.2 Advanced usage](#Advanced_usage)
@@ -40,6 +41,7 @@ Alternatives for using containers are [systemd-nspawn](/index.php/Systemd-nspawn
     *   [5.2 No network-connection with veth in container config](#No_network-connection_with_veth_in_container_config)
     *   [5.3 Error: unknown command](#Error:_unknown_command)
     *   [5.4 Error: Failed at step KEYRING spawning...](#Error:_Failed_at_step_KEYRING_spawning...)
+    *   [5.5 Errors due to mknod changes in linux 4.18 kernel](#Errors_due_to_mknod_changes_in_linux_4.18_kernel)
 *   [6 See also](#See_also)
 
 ## Privileged containers or unprivileged containers
@@ -192,6 +194,60 @@ You also need to [install](/index.php/Install "Install") [dnsmasq](https://www.a
 [Enable](/index.php/Enable "Enable") and/or [start](/index.php/Start "Start") `lxc-net.service` to use the bridge:
 
 See [Network bridge](/index.php/Network_bridge "Network bridge") for more information.
+
+### Alternate Network - Bridge on same network as host
+
+If you would like the containers to be on the same network as your host machine and not utilize NAT and firewall forwarding rules you can do the following.
+
+You will setup a manual bridge using netctl that includes the hosts ethernet adapter. You set your ethernet to not have an ip address and instead assign an ip address to the bridge that it is binded to.
+
+In this scenario you will not be using the lxc-net service stop it if you enabled it.
+
+```
+# systemctl stop lxc-net
+# systemctl disable lxc-net
+
+```
+ `/etc/netctl/ethernet` 
+```
+Description="Manual Ethernet setup for bridge"
+Interface=eno1     # your interface
+Connection=ethernet
+IP=no
+```
+ `/etc/netctl/bridge` 
+```
+Description="Bridge Interface"
+Interface=br0
+Connection=bridge
+BindsToInterfaces=(eno1)
+IP=dhcp
+```
+
+Make sure to first shutdown your current ethernet connections prior to bringing these up.
+
+```
+# netctl stop-all
+# netctl start ethernet
+# netctl start bridge
+# netctl enable ethernet
+# netctl enable bridge
+
+```
+
+Now change the default config for your containers.
+
+ `/etc/lxc/default.conf` 
+```
+lxc.idmap = u 0 100000 65536
+lxc.idmap = g 0 100000 65536
+
+lxc.net.0.type = veth
+lxc.net.0.link = br0
+lxc.net.0.flags = up
+```
+
+Now when you create a new container and start it, it should get an DHCP ip from the same network as the host.
 
 ### Container creation
 
@@ -505,6 +561,18 @@ Then add the following line to the container configuration **after** lxc.idmap
 lxc.seccomp.profile = /etc/lxc/unpriv.seccomp
 
 ```
+
+### Errors due to mknod changes in linux 4.18 kernel
+
+Applications may have errors such as the following with nginx:
+
+nginx failes with [emerg]: open("/dev/null") failed (13: Permission denied)
+
+There has been changes in linux 4.18 kernel with how mknod is handled and how it interacts with systemd's Privatedevice feature.
+
+Workaround is to revert to a 4.17 version kernel until fixed upstream
+
+*   [After upgrading to 3.4 nginx won't start on container because it can't open /dev/null #4950](https://github.com/lxc/lxd/issues/4950)
 
 ## See also
 

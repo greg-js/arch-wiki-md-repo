@@ -43,7 +43,7 @@ freshclamd.service | Anti-virus para Unix. |
 | [inetutils](https://www.archlinux.org/packages/?name=inetutils) | ftpd | ftpd.service | Daemon ftp do inetutils. |
 | [GDM](/index.php/GDM_(Portugu%C3%AAs) "GDM (Português)") | gdm | gdm.service | GNOME Display Manager. |
 | [Git](/index.php/Git "Git") | git-daemon | git-daemon.socket | Daemon Git. |
-| [gpm](/index.php/Console_mouse_support "Console mouse support") | gpm | gpm.service | Habilita o mouse na console. |
+| [gpm](/index.php/Suporte_a_mouse_de_console "Suporte a mouse de console") | gpm | gpm.service | Habilita o mouse na console. |
 | [hddtemp](/index.php/Hddtemp "Hddtemp") | hddtemp | hddtemp.service | Monitor de temperatura de HDs. |
  healthd | healthd.service | Um daemon para alertar eventos de saúde de hardware (parte do [lm_sensors](/index.php/Lm_sensors "Lm sensors")). |
 | [apache](/index.php/Apache "Apache") | httpd | httpd.service | Apache HTTP Server (Web Server). |

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Man page](/index.php/Man_page "Man page"). Data da última tradução: 2018-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Man_page&diff=0&oldid=535241) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Man page](/index.php/Man_page "Man page"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Man_page&diff=0&oldid=544517) na versão em inglês.
 
 Artigos relacionados
 
@@ -8,7 +8,7 @@ Artigos relacionados
 
 Apesar de seu escopo, páginas man são projetadas para serem documentos autocontidos, consequentemente limitando-as a fazer referência a outras páginas man ao discutir assuntos relatados. Esse é um contraste nítido com os [documentos info](/index.php/Manual_info "Manual info") compatíveis com hiperlinks, a tentativa do GNU de substituir o formato tradicional de página man.
 
-[man-db](https://www.archlinux.org/packages/?name=man-db) implementa *man* no Arch Linux, e o [less](/index.php/Core_utilities_(Portugu%C3%AAs)#less "Core utilities (Português)") é o paginador padrão usado com *man*.
+[man-db](https://www.archlinux.org/packages/?name=man-db) implementa *man* no Arch Linux, e o [less](/index.php/Utilit%C3%A1rios_principais#Essenciais "Utilitários principais") é o paginador padrão usado com *man*.
 
 ## Contents
 

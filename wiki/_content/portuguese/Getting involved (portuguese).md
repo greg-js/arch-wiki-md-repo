@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Getting involved](/index.php/Getting_involved "Getting involved"). Data da última tradução: 2018-09-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Getting_involved&diff=0&oldid=542355) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Getting involved](/index.php/Getting_involved "Getting involved"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Getting_involved&diff=0&oldid=544843) na versão em inglês.
 
 Na biologia, o [mutualismo](https://en.wikipedia.org/wiki/pt:Mutualismo_(biologia) é uma interação entre dois organismos onde ambos tem benefícios. Este princípio se aplica aos membros proativos da comunidade Arch, que desejam contribuir e se envolver com o projeto em prol de sua distribuição Linux favorita. Esta participação beneficia não apenas membros da comunidade e seguidores do Arch, mas também, toda a gama dos usuários de [software livre e de código aberto](https://en.wikipedia.org/wiki/pt:https://pt.wikipedia.org/wiki/Software_livre_e_de_c%C3%B3digo_aberto "wikipedia:pt:https://pt.wikipedia.org/wiki/Software livre e de código aberto").
 
@@ -36,7 +36,7 @@ Uma das formas mais fáceis de participar e se envolver com o projeto é atravé
 
 ### Melhore esta wiki
 
-A [ArchWiki](/index.php/SobreWiki "SobreWiki") é uma documentação do Arch Linux mantida colaborativamente. Todos os usuários são incentivados a [contribuir](/index.php/ArchWiki:Contributing_(Portugu%C3%AAs) "ArchWiki:Contributing (Português)").
+A [ArchWiki](/index.php/ArchWiki_(Portugu%C3%AAs) "ArchWiki (Português)") é uma documentação do Arch Linux mantida colaborativamente. Todos os usuários são incentivados a [contribuir](/index.php/ArchWiki:Contributing_(Portugu%C3%AAs) "ArchWiki:Contributing (Português)").
 
 ### Ingresse nas salas de chat
 

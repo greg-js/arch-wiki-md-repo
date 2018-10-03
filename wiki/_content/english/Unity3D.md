@@ -9,7 +9,8 @@ Not to be confused with Canonical's [Unity](/index.php/Unity "Unity").
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Alternative Installation Method](#Alternative_Installation_Method)
+    *   [1.1 Android Support](#Android_Support)
+    *   [1.2 Alternative Installation Method](#Alternative_Installation_Method)
 *   [2 Android Remote](#Android_Remote)
     *   [2.1 Prepare computer](#Prepare_computer)
         *   [2.1.1 Install packages](#Install_packages)
@@ -22,14 +23,20 @@ Not to be confused with Canonical's [Unity](/index.php/Unity "Unity").
     *   [4.2 Unity crashes when trying to load project](#Unity_crashes_when_trying_to_load_project)
     *   [4.3 Unity crashes if ~/.config/user-dirs.dirs is missing](#Unity_crashes_if_.7E.2F.config.2Fuser-dirs.dirs_is_missing)
     *   [4.4 Minor stuttering while playtesting (NVIDIA)](#Minor_stuttering_while_playtesting_.28NVIDIA.29)
+    *   [4.5 Error: Multiple Unity instances cannot open the same project](#Error:_Multiple_Unity_instances_cannot_open_the_same_project)
+    *   [4.6 Android Remote not working / Running Android build fails with "Unable to forward network traffic to device"](#Android_Remote_not_working_.2F_Running_Android_build_fails_with_.22Unable_to_forward_network_traffic_to_device.22)
 
 ## Installation
 
-Simply install the [AUR](/index.php/AUR "AUR") package [unity-editor](https://aur.archlinux.org/packages/unity-editor/) or [unity-editor-beta](https://aur.archlinux.org/packages/unity-editor-beta/) for the beta version.
+Simply install the [AUR](/index.php/AUR "AUR") package [unity-editor](https://aur.archlinux.org/packages/unity-editor/), [unity-editor-beta](https://aur.archlinux.org/packages/unity-editor-beta/) for the beta version or [unity-editor-lts](https://aur.archlinux.org/packages/unity-editor-lts/) for the lts version.
 
 **Warning:** The Unity package is **huge**. For a successful installation you'll need about 17GiB of free space for the package building, and another 8GiB for it to install.
 
 **Note:** By default the PKGBUILD redirects all the output of the installer, which downloads and processes about 2GB of data. As this process can be very long it might be useful to monitor it by using `tail -f /tmp/Unity.log`
+
+### Android Support
+
+Install [unity-editor-android](https://aur.archlinux.org/packages/unity-editor-android/), [unity-editor-beta-android](https://aur.archlinux.org/packages/unity-editor-beta-android/) or [unity-editor-lts-android](https://aur.archlinux.org/packages/unity-editor-lts-android/) depending on your install choice.
 
 ### Alternative Installation Method
 
@@ -123,3 +130,18 @@ See how to generate the xdg files here: [XDG user directories](/index.php/XDG_us
 Vsync does not seem to work correctly with NVIDIA graphics cards / drivers. Solution: In [nvidia-settings](https://www.archlinux.org/packages/?name=nvidia-settings) go to "OpenGL Settings" and turn off "Sync to VBlank".
 
 The behaviour occured/noticed when used "transform.Rotate" in combination with "Input.GetKey".
+
+### Error: Multiple Unity instances cannot open the same project
+
+Unity probably did not shutdown properly, in this case you should navigate to your project folder and delete **Temp** folder.
+
+### Android Remote not working / Running Android build fails with "Unable to forward network traffic to device"
+
+Try this workaround :
+
+1.  Close Unity.
+2.  Plug in the android device.
+3.  Find your device ID with `adb devices`
+4.  Use `adb -s "deviceID" forward "tcp:34999" " "` replacing `"deviceID"` with the correct one.
+
+That's it now you can open unity and test it, an error "socket bind failed" will appear that you can safely ignore.

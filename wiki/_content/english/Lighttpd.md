@@ -118,6 +118,15 @@ $SERVER["socket"] == ":443" {
 
 ```
 
+If you get a "empty reply from server" when trying to curl [https://domain](https://domain), trying adding
+
+```
+ssl.openssl.ssl-conf-cmd = ("Protocol" => "-ALL, TLSv1.2") 
+
+```
+
+to the above. This may also fix Firefox not being able to load the HTTPS version of your site
+
 #### Password protecting a directory
 
 Note that this module requires [libmariadbclient](https://www.archlinux.org/packages/?name=libmariadbclient) to be installed. A passwd file which is lighttpd's equivalent to the system's `/etc/passwd` is needed for user authentication. The setup requires a specific format and md5sum hashed password but users can quickly and easily create an entry using the following as an example:

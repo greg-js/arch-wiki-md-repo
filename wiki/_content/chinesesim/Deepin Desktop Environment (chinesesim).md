@@ -1,36 +1,30 @@
-**翻译状态：** 本文是英文页面 [Deepin_Desktop_Environment](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-07-30，点击[这里](https://wiki.archlinux.org/index.php?title=Deepin_Desktop_Environment&diff=0&oldid=373183)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Deepin_Desktop_Environment](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-10-02，点击[这里](https://wiki.archlinux.org/index.php?title=Deepin_Desktop_Environment&diff=0&oldid=545101)可以查看翻译后英文页面的改动。
 
-[DDE](http://www.linuxdeepin.com/feature2014.en.html) (Deepin Desktop Environment) 是deepin linux默认的桌面环境。
+[深度桌面环境](https://www.deepin.org/dde/) (Deepin Desktop Environment, DDE) 是 Linux 发行版 Deepin 的桌面环境。
 
 ## Contents
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
-*   [2 启动Deepin 桌面环境](#.E5.90.AF.E5.8A.A8Deepin_.E6.A1.8C.E9.9D.A2.E7.8E.AF.E5.A2.83)
-    *   [2.1 使用登录管理器](#.E4.BD.BF.E7.94.A8.E7.99.BB.E5.BD.95.E7.AE.A1.E7.90.86.E5.99.A8)
-    *   [2.2 使用xinitrc](#.E4.BD.BF.E7.94.A8xinitrc)
-*   [3 热区](#.E7.83.AD.E5.8C.BA)
-*   [4 反馈bugs](#.E5.8F.8D.E9.A6.88bugs)
+*   [2 启动](#.E5.90.AF.E5.8A.A8)
+    *   [2.1 通过显示管理器](#.E9.80.9A.E8.BF.87.E6.98.BE.E7.A4.BA.E7.AE.A1.E7.90.86.E5.99.A8)
+    *   [2.2 通过 xinit](#.E9.80.9A.E8.BF.87_xinit)
+*   [3 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
+    *   [3.1 从待机状态恢复后没有背景](#.E4.BB.8E.E5.BE.85.E6.9C.BA.E7.8A.B6.E6.80.81.E6.81.A2.E5.A4.8D.E5.90.8E.E6.B2.A1.E6.9C.89.E8.83.8C.E6.99.AF)
+*   [4 报告 Bug](#.E6.8A.A5.E5.91.8A_Bug)
 
 ## 安装
 
-如果你想安装一个最小化的dde，安装deepin组即可，但我们推荐你安装完整的dde，这会给你带来更多的特性，包括:
+如果你想安装一个最小化的 DDE，[安装](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6.E5.8C.85 "Help:Reading (简体中文)") [deepin](https://www.archlinux.org/groups/x86_64/deepin/) 组即可。这将安装所有基础组件。
 
-*   **deepin-game-center**: Deepin游戏中心，可能会无法启动
-*   **deepin-movie**: Deepin 视频播放器，可能会无法启动。
-*   **deepin-music-player**: Deepin 音乐播放器
-*   **deepin-screenshot**: Deepin截图工具
-*   **deepin-terminal**: Deepin 终端
+[deepin-extra](https://www.archlinux.org/groups/x86_64/deepin-extra/) 组包含了一些额外的应用程序来提供一个更完整的桌面环境。
 
-```
-pacman -S deepin deepin-extra
+要能够使用内置的网络管理，需要安装 [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) 包，并且 `NetworkManager.service` 需要被 [激活并设为开机自启](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)")。
 
-```
+## 启动
 
-## 启动Deepin 桌面环境
+### 通过显示管理器
 
-### 使用登录管理器
-
-deepin默认lightdm greeter是lightdm-deepin-greeter，可通过pacman安装，安装后需编辑lightdm.conf:
+要使用 DDE 默认的 lightdm greeter，你必须修改 `[Seat:*]` 部分下的配置文件以声明：
 
  `/etc/lightdm/lightdm.conf` 
 ```
@@ -39,24 +33,63 @@ deepin默认lightdm greeter是lightdm-deepin-greeter，可通过pacman安装，�
 greeter-session=lightdm-deepin-greeter
 ```
 
-### 使用xinitrc
+需要注意的是，非 root 用户需要存在有效的主目录才能使 greeter 工作。
 
-*查看 [xinitrc](/index.php/Xinitrc "Xinitrc") 页面以获得更多详情.*
+### 通过 xinit
 
- `~/.xinitrc` 
-```
-exec startdde
+要通过 [xinit](/index.php/Xinit_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xinit (简体中文)") 使用 DDE，你需要添加一下内容到你的 .xinitrc 文件。
 
-```
+ `~/.xinitrc`  `exec startdde` 
 
 Execute `startx` or `xinit` to start DDE.
 
 **Note:** 如果你想在开机时自动启动xorg，请参阅 [Start X at login](/index.php/Start_X_at_login "Start X at login") .
 
-## 热区
+## 故障排除
 
-默认的热区为:左上角打开启动器，右下角打开控制中心。热区设置可在控制中心更改。
+### 从待机状态恢复后没有背景
 
-## 反馈bugs
+由于 NVIDIA 驱动存储其 FBO 的方式[[1]](https://devtalk.nvidia.com/default/topic/787748/linux/-nvidia340xx-archlinux64-gnome3-14-the-background-of-desktop-and-lockscreen-mess-after-resume-from-/post/4367179/#4367179)，从待机状态下恢复后背景突然消失，仅留下一个可能带有一些颜色噪音的白色屏幕。这个 bug 似乎在 GNOME 上游被修复，但在 DDE 中仍然存在。
 
-Any upstream or arch packaging related bugs should be reported [here](https://github.com/linuxdeepin/developer-center/issues). FaSheng is one of the Deepin developers and also a contributor/maintainer for arch-deepin and if you file bug reports on his github page then there's much greater chance that the bug will be fixed. ;-)
+一个可能的解决方法是在每次计算机从待机中恢复时重启窗口管理器。完成这项任务的一个方式是创建下列的 systemd 服务
+
+ `/etc/systemd/system/resume@.service` 
+```
+[Unit]
+Description=User resume actions
+After=suspend.target
+
+[Service]
+User=%I
+Type=simple
+ExecStart=/usr/bin/deepin-wm-restart.sh
+
+[Install]
+WantedBy=suspend.target
+
+```
+
+来运行下列的脚本
+
+ `/usr/bin/deepin-wm-restart.sh` 
+```
+#!/bin/bash
+export DISPLAY=:0
+deepin-wm --replace
+
+```
+
+一旦在正确的目录中创建了这两个文件，要启用这个脚本，只需要运行这些命令：
+
+```
+# chmod +x /usr/bin/deepin-wm-restart.sh
+# systemctl enable resume@*user*
+# systemctl start resume@*user* 
+
+```
+
+第一个命令使你创建的脚本可执行，第二个命令确保服务始终在开机时启动，最后一个命令使服务立即启动，因此你可以测试解决方法而无需重启。
+
+## 报告 Bug
+
+任何上游或 Arch 打包相关 bug 应在 [这里](https://github.com/linuxdeepin/developer-center/issues) 报告。所有的深度开发人员将看见 bug 报告并且尽可能快地解决它们。

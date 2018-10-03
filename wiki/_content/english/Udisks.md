@@ -60,7 +60,7 @@ See `udisksctl --help` for more.
 
 ### Mount helpers
 
-The automatic mounting of devices is easily achieved with udisks wrappers. See also [List of applications#Mount tools](/index.php/List_of_applications#Mount_tools "List of applications").
+The automatic mounting of devices is easily achieved with udisks wrappers. See also [List of applications/Utilities#Mount tools](/index.php/List_of_applications/Utilities#Mount_tools "List of applications/Utilities").
 
 **Note:** [Desktop environments](/index.php/Desktop_environment "Desktop environment"), such as [GNOME](/index.php/GNOME "GNOME") and [KDE](/index.php/KDE "KDE") may also provide a udisk wrapper.
 

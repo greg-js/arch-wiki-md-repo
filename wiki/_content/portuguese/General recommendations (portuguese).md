@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2018-09-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=543471) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=544785) na versão em inglês.
 
 Artigos relacionados
 
@@ -357,7 +357,7 @@ Emacs é conhecido por conter opções diversas às tarefas de esperada edição
 
 ### Suporte a mouse
 
-Usar um mouse com o console para operações de copiar-colar pode ser preferido em relação ao modo de cópia tradicional do [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Veja o [Suporte a mouse no console](/index.php/Console_mouse_support "Console mouse support") para direções compreensivas. Note que você já pode fazer isso em [emuladores de terminal](/index.php/Terminal_emulators "Terminal emulators") com a [área de transferência](/index.php/Clipboard "Clipboard").
+Usar um mouse com o console para operações de copiar-colar pode ser preferido em relação ao modo de cópia tradicional do [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Veja o [General purpose mouse](/index.php/General_purpose_mouse_(Portugu%C3%AAs) "General purpose mouse (Português)") para direções compreensivas. Note que você já pode fazer isso em [emuladores de terminal](/index.php/Terminal_emulators "Terminal emulators") com a [área de transferência](/index.php/Clipboard "Clipboard").
 
 ### Buffer de scrollback
 

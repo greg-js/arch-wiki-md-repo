@@ -4,7 +4,7 @@ Related articles
 *   [PCManFM](/index.php/PCManFM "PCManFM")
 *   [Window manager](/index.php/Window_manager "Window manager")
 
-[SpaceFM](https://ignorantguru.github.io/spacefm/) (a fork of [PCManFM](/index.php/PCManFM "PCManFM")) is a lightweight, highly configurable, desktop-independent multi-panel tabbed file and desktop manager. It features a built-in virtual file system, a [udev](/index.php/Udev "Udev")-based device manager, a customisable menu system, and [Bash](/index.php/Bash "Bash") integration.
+[SpaceFM](https://ignorantguru.github.io/spacefm/) (a fork of PCManFM) is a lightweight, highly configurable, desktop-independent multi-panel tabbed file and desktop manager. It features a built-in virtual file system, a [udev](/index.php/Udev "Udev")-based device manager, a customisable menu system, and [Bash](/index.php/Bash "Bash") integration.
 
 ## Contents
 

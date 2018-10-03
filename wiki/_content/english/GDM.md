@@ -450,9 +450,9 @@ You should be able to login as root after restarting GDM.
 
 #### Hide user from login list
 
-The users for the gdm user list are gathered by [AccountsService](https://www.freedesktop.org/wiki/Software/AccountsService/). It will automatically hide system users (UID < 1000). To hide ordinary users from the login list create or edit a file named after the user to hide in `/var/lib/accountsservice/users/` to contain at least:
+The users for the gdm user list are gathered by [AccountsService](https://www.freedesktop.org/wiki/Software/AccountsService/). It will automatically hide system users (UID < 1000). To hide ordinary users from the login list create or edit a file named after the user to hide in `/var/lib/AccountsService/users/` to contain at least:
 
- `/var/lib/accountsservice/users/*username*` 
+ `/var/lib/AccountsService/users/*username*` 
 ```
 [User]
 SystemAccount=true

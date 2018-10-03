@@ -80,6 +80,7 @@ These distributions are no longer developed, but show some of the history surrou
 *   [ALOBE](https://sourceforge.net/projects/alobearchlinuxoldboyeditionv1/)
 *   [ArchBox](https://sourceforge.net/projects/archbox-linux/)
 *   [Arch Linux WSL Edition](https://github.com/alwsl/alwsl)
+*   [Aseman OS](https://sourceforge.net/projects/asemanos/)
 *   [Astian OS](https://sourceforge.net/projects/astian-os/)
 *   [Audiophile Linux](http://www.ap-linux.com/) 
 *   [Feliz](https://sourceforge.net/projects/feliz/)

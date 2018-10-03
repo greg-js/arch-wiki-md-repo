@@ -744,6 +744,10 @@ See also [#Markup languages](#Markup_languages).
 
 	[https://wagner.pp.ru/~vitus/software/catdoc/](https://wagner.pp.ru/~vitus/software/catdoc/) || [catdoc](https://www.archlinux.org/packages/?name=catdoc)
 
+*   **[mutool](/index.php/MuPDF "MuPDF")** — All purpose tool based on MuPDF for dealing with document files in various manners.
+
+	[https://mupdf.com/](https://mupdf.com/) || [mupdf-tools](https://www.archlinux.org/packages/?name=mupdf-tools)
+
 *   **[Pandoc](https://en.wikipedia.org/wiki/Pandoc "wikipedia:Pandoc")** — Swiss-army knife for converting markup and document formats.
 
 	[http://johnmacfarlane.net/pandoc](http://johnmacfarlane.net/pandoc) || [pandoc](https://www.archlinux.org/packages/?name=pandoc)

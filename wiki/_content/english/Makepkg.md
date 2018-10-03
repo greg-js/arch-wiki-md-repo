@@ -295,23 +295,9 @@ This bug is currently being tracked: [FS#49946](https://bugs.archlinux.org/task/
 
 ### CFLAGS/CXXFLAGS/LDFLAGS in makepkg.conf do not work for CMake based packages
 
-In order to let CMake use the variables defined in the *makepkg* configuration file, pass the variables to *cmake* in the `build()` function. For example:
+In order to let CMake use the variables defined in `makepkg.conf`, simply do not specify the `-DCMAKE_BUILD_TYPE` flag when configuring a cmake project. [[6]](https://lists.archlinux.org/pipermail/arch-dev-public/2018-March/029181.html)
 
- `PKGBUILD` 
-```
-...
-
-build() {
-  ...
-  cmake \
-    -DCMAKE_C_FLAGS:STRING="${CFLAGS}" \
-    -DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS}" \
-    -DCMAKE_EXE_LINKER_FLAGS:STRING="${LDFLAGS}" \
-    -DCMAKE_SHARED_LINKER_FLAGS:STRING="${LDFLAGS}" \
-  ...
-}
-
-```
+This will cause cmake to use a build type of `None` which then uses the environmental variables such as `CFLAGS`, `CPPFLAGS`, etc.
 
 ### CFLAGS/CXXFLAGS in makepkg.conf do not work for QMAKE based packages
 
@@ -386,7 +372,7 @@ In order to have *makepkg* working behind a proxy you have to do one of the foll
 
 #### Enable proxy by setting its URL in XferCommand
 
-The XferCommand can be set to use the desired proxy URL in `/etc/pacman.conf`. Add or uncomment the following line in your `pacman.conf`[[6]](http://www.mail-archive.com/arch-general@archlinux.org/msg15561.html):
+The XferCommand can be set to use the desired proxy URL in `/etc/pacman.conf`. Add or uncomment the following line in your `pacman.conf`[[7]](http://www.mail-archive.com/arch-general@archlinux.org/msg15561.html):
 
  `/etc/pacman.conf` 
 ```
