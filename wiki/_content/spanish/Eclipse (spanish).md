@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Eclipse](/index.php/Eclipse "Eclipse"), revisada por última vez el **2018-09-29**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Eclipse&diff=0&oldid=544551) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Eclipse](/index.php/Eclipse "Eclipse"), revisada por última vez el **2018-10-02**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Eclipse&diff=0&oldid=544551) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [Eclipse](https://eclipse.org) es un proyecto de la comunidad de código abierto, que tiene como objetivo proporcionar una plataforma de desarrollo universal. El proyecto Eclipse es ampliamente conocido por su entorno de desarrollo integrado multiplataforma (IDE). Los paquetes de Arch Linux (y esta guía) se relacionan específicamente con el IDE.
 
@@ -42,7 +42,7 @@ No puede instalar múltiples de estos al mismo tiempo ya que entran en conflicto
 
 ## Complementos
 
-Muchos complementos se instalan fácilmente usando **pacman** (ver [Eclipse plugin package guidelines](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") para mayor información). Esto también los mantendrá actualizados. Alternativamente, puede elegir entre [Eclipse Marketplace](#Eclipse_Marketplace) o la terminal [Administrador de complementos](#Administrador_de_complementos).
+Muchos complementos se instalan fácilmente usando **pacman** (ver [Eclipse plugin package guidelines (Español)](/index.php/Eclipse_plugin_package_guidelines_(Espa%C3%B1ol) "Eclipse plugin package guidelines (Español)") para mayor información). Esto también los mantendrá actualizados. Alternativamente, puede elegir entre [Eclipse Marketplace](#Eclipse_Marketplace) o la terminal [Administrador de complementos](#Administrador_de_complementos).
 
 ### Agregar el sitio de actualización predeterminado
 
@@ -100,7 +100,7 @@ Para recibir notificaciones de actualización, vaya a *Ventana> Preferencias> In
 
 	[http://pydev.org/](http://pydev.org/) || [eclipse-pydev](https://aur.archlinux.org/packages/eclipse-pydev/)
 
-*   **Subclipse** — soporte [Subversion](/index.php/Subversion "Subversion").
+*   **Subclipse** — soporte [Subversion (Español)](/index.php/Subversion_(Espa%C3%B1ol) "Subversion (Español)").
 
 	[https://github.com/subclipse/subclipse](https://github.com/subclipse/subclipse) || [eclipse-subclipse](https://aur.archlinux.org/packages/eclipse-subclipse/)
 

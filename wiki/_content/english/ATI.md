@@ -511,7 +511,7 @@ This can be a life-saver, when using videocards that have more than two outputs.
 
 ## Turn vsync off
 
-The radeon driver will enable vsync by default, which is perfectly fine except for benchmarking. To turn it off, create `~/.drirc` (or edit it if it already exists) and add the following section:
+The radeon driver will probably enable vsync by default, which is perfectly fine except for benchmarking. To turn it off try the `vblank_mode=0` [environment variable](/index.php/Environment_variable "Environment variable") or create `~/.drirc` (edit it if it already exists) and add the following:
 
  `~/.drirc` 
 ```
@@ -526,20 +526,9 @@ The radeon driver will enable vsync by default, which is perfectly fine except f
 
 ```
 
-Make sure the driver is **dri2**, not your video card code (like r600).
+**Note:** Make sure the driver is **dri2**, not your video card code (like r600).
 
-If vsync is still enabled, you can try to disable it by editing the xf86-video-ati configuration :
-
- `/etc/X11/xorg.conf.d/20-radeon.conf` 
-```
-Section "Device"
-	Identifier  "My Graphics Card"
-	Driver	"radeon"
-	Option	"EXAVSync" "off"
-	Option "SwapbuffersWait" "false" 
-EndSection
-
-```
+If vsync is still enabled, you can disable it by editing `/etc/X11/xorg.conf.d/20-radeon.conf`. See [#Driver options](#Driver_options).
 
 ## Troubleshooting
 

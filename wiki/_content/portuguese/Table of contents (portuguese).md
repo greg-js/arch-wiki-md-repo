@@ -1,11 +1,13 @@
 | [Português](/index.php/Category:Portugu%C3%AAs "Category:Português") <small>(5)</small> |
-| <small>1.</small> [Sobre o Arch](/index.php/Category:About_Arch_(Portugu%C3%AAs) "Category:About Arch (Português)") <small>(18)</small> |
-| <small>1.1.</small> [Desenvolvimento do Arch](/index.php/Category:Arch_development_(Portugu%C3%AAs) "Category:Arch development (Português)") <small>(4) (também em [Development](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)"))</small> |
-| <small>1.1.1.</small> [Desenvolvimento de pacotes](/index.php/Category:Package_development_(Portugu%C3%AAs) "Category:Package development (Português)") <small>(36)</small> |
-| <small>1.2.</small> [Arch projects](/index.php/Category:Arch_projects_(Portugu%C3%AAs) "Category:Arch projects (Português)") <small>(2)</small> |
-| <small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki_(Portugu%C3%AAs) "Category:ArchWiki (Português)") <small>(6)</small> |
-| <small>1.3.1.</small> [Help](/index.php/Category:Help_(Portugu%C3%AAs) "Category:Help (Português)") <small>(15)</small> |
-| <small>1.4.</small> [Installation process](/index.php/Category:Installation_process_(Portugu%C3%AAs) "Category:Installation process (Português)") <small>(5)</small> |
+| <small>1.</small> [Sobre o Arch](/index.php/Category:About_Arch_(Portugu%C3%AAs) "Category:About Arch (Português)") <small>(17)</small> |
+| <small>1.1.</small> [Arch community](/index.php/Category:Arch_community_(Portugu%C3%AAs) "Category:Arch community (Português)") <small>(2)</small> |
+| <small>1.2.</small> [Desenvolvimento do Arch](/index.php/Category:Arch_development_(Portugu%C3%AAs) "Category:Arch development (Português)") <small>(4) (também em [Development](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)"))</small> |
+| <small>1.2.1.</small> [Desenvolvimento de pacotes](/index.php/Category:Package_development_(Portugu%C3%AAs) "Category:Package development (Português)") <small>(36)</small> |
+| <small>1.3.</small> [Arch projects](/index.php/Category:Arch_projects_(Portugu%C3%AAs) "Category:Arch projects (Português)") <small>(2)</small> |
+| <small>1.4.</small> [ArchWiki](/index.php/Category:ArchWiki_(Portugu%C3%AAs) "Category:ArchWiki (Português)") <small>(6)</small> |
+| <small>1.4.1.</small> [Help](/index.php/Category:Help_(Portugu%C3%AAs) "Category:Help (Português)") <small>(15)</small> |
+| <small>1.4.2.</small> [Lists](/index.php/Category:Lists_(Portugu%C3%AAs) "Category:Lists (Português)") <small>(3)</small> |
+| <small>1.5.</small> [Installation process](/index.php/Category:Installation_process_(Portugu%C3%AAs) "Category:Installation process (Português)") <small>(6)</small> |
 | <small>2.</small> [Applications](/index.php/Category:Applications_(Portugu%C3%AAs) "Category:Applications (Português)") <small>(0)</small> |
 | <small>2.1.</small> [Command-line](/index.php/Category:Command-line_(Portugu%C3%AAs) "Category:Command-line (Português)") <small>(3) (também em [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)"))</small> |
 | <small>2.1.1.</small> [Command shells](/index.php/Category:Command_shells_(Portugu%C3%AAs) "Category:Command shells (Português)") <small>(1) (também em [Programming languages](/index.php/Category:Programming_languages_(Portugu%C3%AAs) "Category:Programming languages (Português)"))</small> |
@@ -31,6 +33,7 @@
 | <small>4.4.</small> [Input devices](/index.php/Category:Input_devices_(Portugu%C3%AAs) "Category:Input devices (Português)") <small>(0)</small> |
 | <small>4.4.1.</small> [Keyboards](/index.php/Category:Keyboards_(Portugu%C3%AAs) "Category:Keyboards (Português)") <small>(0)</small> |
 | <small>4.4.1.1.</small> [Keyboard configuration](/index.php/Category:Keyboard_configuration_(Portugu%C3%AAs) "Category:Keyboard configuration (Português)") <small>(1) (também em [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)"))</small> |
+| <small>4.4.2.</small> [Mice](/index.php/Category:Mice_(Portugu%C3%AAs) "Category:Mice (Português)") <small>(1)</small> |
 | <small>4.5.</small> [Laptops](/index.php/Category:Laptops_(Portugu%C3%AAs) "Category:Laptops (Português)") <small>(0)</small> |
 | <small>4.5.1.</small> [HP](/index.php/Category:HP_(Portugu%C3%AAs) "Category:HP (Português)") <small>(1)</small> |
 | <small>4.6.</small> [Mobile devices](/index.php/Category:Mobile_devices_(Portugu%C3%AAs) "Category:Mobile devices (Português)") <small>(0)</small> |
@@ -82,7 +85,7 @@
 | <small>7.8.1.2.</small> [Tiling WMs](/index.php/Category:Tiling_WMs_(Portugu%C3%AAs) "Category:Tiling WMs (Português)") <small>(1)</small> |
 | <small>7.9.</small> [Kernel](/index.php/Category:Kernel_(Portugu%C3%AAs) "Category:Kernel (Português)") <small>(1)</small> |
 | <small>7.10.</small> [Keyboard configuration](/index.php/Category:Keyboard_configuration_(Portugu%C3%AAs) "Category:Keyboard configuration (Português)") <small>(1) (também em [Keyboards](/index.php/Category:Keyboards_(Portugu%C3%AAs) "Category:Keyboards (Português)"))</small> |
-| <small>7.11.</small> [Linux console](/index.php/Category:Linux_console_(Portugu%C3%AAs) "Category:Linux console (Português)") <small>(2)</small> |
+| <small>7.11.</small> [Linux console](/index.php/Category:Linux_console_(Portugu%C3%AAs) "Category:Linux console (Português)") <small>(3)</small> |
 | <small>7.12.</small> [Localization](/index.php/Category:Localization_(Portugu%C3%AAs) "Category:Localization (Português)") <small>(2)</small> |
 | <small>7.13.</small> [Gerenciamento de pacotes](/index.php/Category:Package_management_(Portugu%C3%AAs) "Category:Package management (Português)") <small>(19)</small> |
 | <small>7.14.</small> [Power management](/index.php/Category:Power_management_(Portugu%C3%AAs) "Category:Power management (Português)") <small>(1)</small> |

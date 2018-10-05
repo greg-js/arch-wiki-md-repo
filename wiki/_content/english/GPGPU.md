@@ -112,7 +112,7 @@ To find out all possible (known) properties of the OpenCL platform and devices a
 
 ## CUDA
 
-CUDA (Compute Unified Device Architecture) is [NVIDIA](/index.php/NVIDIA "NVIDIA")'s proprietary, closed-source parallel computing architecture and framework. It requires a Nvidia GPU. It consists of several components:
+[CUDA](https://en.wikipedia.org/wiki/CUDA "wikipedia:CUDA") (Compute Unified Device Architecture) is [NVIDIA](/index.php/NVIDIA "NVIDIA")'s proprietary, closed-source parallel computing architecture and framework. It requires a Nvidia GPU. It consists of several components:
 
 *   required:
     *   proprietary Nvidia kernel module

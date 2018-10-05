@@ -20,7 +20,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl) package, or [youtube-dl-git](https://aur.archlinux.org/packages/youtube-dl-git/) for the development version.
+[Install](/index.php/Install "Install") the [youtube-dl](https://www.archlinux.org/packages/?name=youtube-dl) package, or [youtube-dl-git](https://aur.archlinux.org/packages/youtube-dl-git/) for the development version. It is recommended to also install [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) as it is used for muxing for some sites.
 
 ## Usage
 
@@ -35,7 +35,9 @@ $ youtube-dl [OPTIONS] *URL*
 
 ### Format selection
 
-In cases where multiple formats of a video are available, youtube-dl will default to downloading the best possible version. If you'd like to choose a specific format to download, first get a list of the available formats:
+In cases where multiple formats of a video are available, youtube-dl will download the best ones by default.
+
+If you'd like to choose a specific format to download, first get a list of the available formats:
 
 ```
 $ youtube-dl -F *URL*
@@ -46,13 +48,6 @@ Note the format code for the version you want, and then run:
 
 ```
 $ youtube-dl -f *format* *URL*
-
-```
-
-You can often download audio-only or video-only formats this way. If you have [FFmpeg](/index.php/FFmpeg "FFmpeg"), you can download both a video-only and audio-only format and mux them together into a single file:
-
-```
-$ youtube-dl -f *video_format*+*audio_format* *URL*
 
 ```
 

@@ -140,8 +140,9 @@ Unity probably did not shutdown properly, in this case you should navigate to yo
 Try this workaround :
 
 1.  Close Unity.
-2.  Plug in the android device.
-3.  Find your device ID with `adb devices`
-4.  Use `adb -s "deviceID" forward "tcp:34999" " "` replacing `"deviceID"` with the correct one.
+2.  Shutdown adb daemon with `adb kill-server`
+3.  Plug in the android device.
+4.  Find your device ID with `adb devices`
+5.  Use `adb -s "deviceID" forward "tcp:34999" " "` replacing `"deviceID"` with the correct one.
 
 That's it now you can open unity and test it, an error "socket bind failed" will appear that you can safely ignore.

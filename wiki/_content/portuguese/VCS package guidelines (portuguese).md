@@ -114,7 +114,7 @@ Se a tag contiver um prefixo, como `v` ou o nome do projeto, ele deverá ser cor
 ```
 pkgver() {
   cd "$pkgname"
-  # cutting off 'foo-' prefix that presents in the git tag
+  # cortando o prefixo "foo-" apresentado na tag do git
   git describe --long | sed 's/^foo-//;s/\([^-]*-g\)/r\1/;s/-/./g'
 }
 ```
@@ -145,7 +145,7 @@ git describe --long | sed -r 's/-([0-9,a-g,A-G]{7}.*)//' | sed 's/-/./'
 
 ```
 
-Ambos os métodos também podem ser combinados, para suportar repositórios que iniciam sem uma tag, mas são marcados mais tarde (use um bashismo):
+Ambos os métodos também podem ser combinados, para suportar repositórios que iniciam sem uma tag, mas são marcados mais tarde (use um "bashismo"):
 
 ```
 pkgver() {
@@ -158,8 +158,8 @@ pkgver() {
 ```
 
 ```
-0.9.9.r27.g2b039da  # if tags exist
-r1581.2b039da       # else fallback
+0.9.9.r27.g2b039da  # se tags existirem
+r1581.2b039da       # do contrário
 
 ```
 
@@ -236,7 +236,7 @@ source=("git://algumlugar.org/algumacoisa/algumacoisa.git"
         "git://algumlugar.org/meusubmódulo/meusubmódulo.git")
 
 prepare() {
-  cd something
+  cd algumacoisa
   git submodule init
   git config submodule.meusubmódulo.url $srcdir/meusubmódulo
   git submodule update

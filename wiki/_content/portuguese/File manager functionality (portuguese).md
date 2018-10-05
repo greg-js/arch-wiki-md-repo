@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [File manager functionality](/index.php/File_manager_functionality "File manager functionality"). Data da última tradução: 2018-09-23\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=File_manager_functionality&diff=0&oldid=543293) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [File manager functionality](/index.php/File_manager_functionality "File manager functionality"). Data da última tradução: 2018-10-04\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=File_manager_functionality&diff=0&oldid=545704) na versão em inglês.
 
 Artigos relacionados
 
@@ -140,7 +140,7 @@ Veja [Dolphin#File previews](/index.php/Dolphin#File_previews "Dolphin").
 
 ### Arquivos de pacotes
 
-Para extrair arquivos compactados, como tarballs (`.tar` e `.tar.gz`) dentro de um gerenciador de arquivos, primeiro será necessário instalar um arquivador GUI, como o [file-roller](https://www.archlinux.org/packages/?name=file-roller). Veja [List of applications#Archiving and compression tools](/index.php/List_of_applications#Archiving_and_compression_tools "List of applications") para mais informações. Um pacote adicional como [unzip](https://www.archlinux.org/packages/?name=unzip) também deve ser instalado para suportar o uso de arquivos zipados (`.zip`). Depois que um arquivador é instalado, os arquivos no gerenciador de arquivos podem, consequentemente, ser clicados com o botão direito do mouse para serem arquivados ou extraídos.
+Para extrair arquivos compactados, como tarballs (`.tar` e `.tar.gz`) dentro de um gerenciador de arquivos, primeiro será necessário instalar um arquivador GUI, como o [file-roller](https://www.archlinux.org/packages/?name=file-roller). Veja [List of applications/Utilities#Archiving and compression tools](/index.php/List_of_applications/Utilities#Archiving_and_compression_tools "List of applications/Utilities") para mais informações. Um pacote adicional como [unzip](https://www.archlinux.org/packages/?name=unzip) também deve ser instalado para suportar o uso de arquivos zipados (`.zip`). Depois que um arquivador é instalado, os arquivos no gerenciador de arquivos podem, consequentemente, ser clicados com o botão direito do mouse para serem arquivados ou extraídos.
 
 Os empacotadores de arquivos são montados na pasta `/run/user/$(id -u)/gvfs/` com ponto de montagem criado automaticamente que contém caminho completo para o arquivo em seu nome, onde todos `/` são substituídos por `%252F` e `:` substituído por `%253A`, que são [códigos hexa](https://www.owasp.org/index.php/Double_Encoding).
 
@@ -199,14 +199,14 @@ $ xdg-mime query default inode/directory
 Para se certificar que diretórios são abertos no gerenciador de arquivos, execute o seguinte comando:
 
 ```
-$ xdg-mime default *meu_gerenciador_de_arquivos.desktop* inode/directory
+$ xdg-mime default *meu_gerenciador_de_arquivos*.desktop inode/directory
 
 ```
 
-sendo que `*meu_gerenciador_de_arquivos.desktop*` é a entrada de desktop para o seu gerenciador de arquivos — `*org.gnome.Nautilus.desktop*`, por exemplo.
+sendo que `*meu_gerenciador_de_arquivos*.desktop` é a entrada de desktop para o seu gerenciador de arquivos — `*org.gnome.Nautilus*.desktop`, por exemplo.
 
 **Dica:** Se você quiser que a alteração se aplique a todo sistema, execute o comando acima como root ou crie/edite o arquivo a seguir: `/usr/share/applications/mimeapps.list` 
 ```
 [Default Applications]
-inode/directory=*meu_gerenciador_de_arquivos.desktop*
+inode/directory=*meu_gerenciador_de_arquivos*.desktop
 ```

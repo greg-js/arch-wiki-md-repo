@@ -5,9 +5,9 @@
 | <small>1.2.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(17) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
 | <small>1.2.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(48)</small> |
 | <small>1.2.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
-| <small>1.3.</small> [Arch projects](/index.php/Category:Arch_projects "Category:Arch projects") <small>(8)</small> |
+| <small>1.3.</small> [Arch projects](/index.php/Category:Arch_projects "Category:Arch projects") <small>(9)</small> |
 | <small>1.4.</small> [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki") <small>(12)</small> |
-| <small>1.4.1.</small> [Disambiguation pages](/index.php/Category:Disambiguation_pages "Category:Disambiguation pages") <small>(3)</small> |
+| <small>1.4.1.</small> [Disambiguation pages](/index.php/Category:Disambiguation_pages "Category:Disambiguation pages") <small>(14)</small> |
 | <small>1.4.2.</small> [Help](/index.php/Category:Help "Category:Help") <small>(15)</small> |
 | <small>1.4.3.</small> [Lists](/index.php/Category:Lists "Category:Lists") <small>(25)</small> |
 | <small>1.4.4.</small> [Software comparisons](/index.php/Category:Software_comparisons "Category:Software comparisons") <small>(4) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
@@ -75,7 +75,7 @@
 | <small>3.2.1.</small> [Web frameworks](/index.php/Category:Web_frameworks "Category:Web frameworks") <small>(2) (also in [Web applications](/index.php/Category:Web_applications "Category:Web applications"))</small> |
 | <small>3.3.</small> [Integrated development environments](/index.php/Category:Integrated_development_environments "Category:Integrated development environments") <small>(4)</small> |
 | <small>3.4.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems") <small>(6) (also in [Web applications](/index.php/Category:Web_applications "Category:Web applications"))</small> |
-| <small>3.5.</small> [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages") <small>(25)</small> |
+| <small>3.5.</small> [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages") <small>(26)</small> |
 | <small>3.5.1.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(10) (also in [Command-line](/index.php/Category:Command-line "Category:Command-line"))</small> |
 | <small>3.6.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(14) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>3.7.</small> [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System") <small>(16)</small> |

@@ -12,4 +12,5 @@ The installation can be done as usual for an x86_64 uefi system.
 
 ## Problems
 
-The HDMI port works but it doesn't support audio output, it seems to be a common problem with intel devices and Linux right now.
+*   The HDMI port works but it doesn't support audio output, it seems to be a common problem with intel devices and Linux right now.
+*   Do not change the operating system setting in the BIOS from Windows to Linux. This causes the built in keyboard to become unresponsive during boot-time (although USB keyboards still work) and reverses the backlight controls.

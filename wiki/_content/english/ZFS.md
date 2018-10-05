@@ -36,6 +36,8 @@ As a result:
 *   [5 Tuning](#Tuning)
     *   [5.1 General](#General_2)
     *   [5.2 SSD Caching](#SSD_Caching)
+        *   [5.2.1 SLOG](#SLOG)
+        *   [5.2.2 L2ARC](#L2ARC)
     *   [5.3 Database](#Database)
     *   [5.4 /tmp](#.2Ftmp)
     *   [5.5 ZVOLs](#ZVOLs)
@@ -220,7 +222,7 @@ Drives partitioned with GPT have labels and UUID that look like this.
 Now, finally, create the ZFS pool:
 
 ```
-# zpool create -f -m <mount> <pool> raidz <ids>
+# zpool create -f -m <mount> <pool> [raidz(2|3)|mirror] <ids>
 
 ```
 
@@ -232,11 +234,11 @@ Now, finally, create the ZFS pool:
 
 *   **pool**: This is the name of the pool.
 
-*   **raidz**: This is the type of virtual device that will be created from the pool of devices. Raidz is a special implementation of raid5\. See [Jeff Bonwick's Blog -- RAID-Z](https://blogs.oracle.com/bonwick/entry/raid_z) for more information about raidz. The usage of **mirror** instead may be better when using RAID-1 [[3]](http://blog.programster.org/zfs-create-disk-pools).
+*   **raidz(2|3)|mirror**: This is the type of virtual device that will be created from the pool of devices, raidz is a single disk of parity, raidz2 for 2 disks of parity and raidz3 for 3 disks of parity, similar to raid5 and raid6\. Also available is **mirror**, which is similar to raid1 or raid10, but isn't constrained to just 2 device. If not specified, each device will be added as a vdev which is similar to raid0\. After creation, a device can be added to each single drive vdev to turn it into a mirror, which can be useful for migrating data.
 
 *   **ids**: The names of the drives or partitions that to include into the pool. Get it from `/dev/disk/by-id`.
 
-Here is an example for the full command:
+Create pool with single raidz vdev:
 
 ```
 # zpool create -f -m /mnt/data bigdata \
@@ -248,9 +250,24 @@ Here is an example for the full command:
 
 ```
 
+Create pool with two mirror vdevs:
+
+```
+# zpool create -f -m /mnt/data bigdata \
+               mirror \
+                  ata-ST3000DM001-9YN166_S1F0KDGY \
+                  ata-ST3000DM001-9YN166_S1F0JKRR \
+               mirror \
+                  ata-ST3000DM001-9YN166_S1F0KBP8 \
+                  ata-ST3000DM001-9YN166_S1F0JTM1
+
+```
+
 ### Advanced Format disks
 
-In case Advanced Format disks are used which have a native sector size of 4096 bytes instead of 512 bytes, the automated sector size detection algorithm of ZFS might detect 512 bytes because of backwards compatibility with legacy systems. This would result in degraded performance. To make sure a correct sector size is used, the `ashift=12` option should be used (See the [ZFS on Linux FAQ](https://github.com/zfsonlinux/zfs/wiki/faq#advanced-format-disks)). The full command would in this case be:
+At pool creation, **ashift=12** should always be used, except with SSDs that have 8k sectors where **ashift=13** is correct. A vdev of 512 byte disks using 4k sectors will not experience performance issues, but a 4k disk using 512 byte sectors will. Since **ashift** cannot be changed after pool creation, even a pool with only 512 byte disks should use 4k because those disks may need to be replaced with 4k disks or the pool may be expanded by adding a vdev composed of 4k disks. Because correct detection of 4k disks is not reliabile, `-o ashift=12` should always be specified during pool creation. See the [ZFS on Linux FAQ](https://github.com/zfsonlinux/zfs/wiki/faq#advanced-format-disks) for more details.
+
+Create pool with ashift=12 and single raidz vdev:
 
 ```
 # zpool create -f -o ashift=12 -m /mnt/data bigdata \
@@ -361,37 +378,38 @@ Other options for zfs can be displayed again, using the zfs command:
 
 ### SSD Caching
 
-You can also add SSD devices as a write intent log (external ZIL or SLOG) and also as a layer 2 adaptive replacement cache (l2arc). The process to add them is very similar to creating a new VDEV.
+You can add SSD devices as a write intent log (external ZIL or SLOG) and also as a layer 2 adaptive replacement cache (L2ARC). The process to add them is very similar to adding a new VDEV.
 
 All of the below references to device-id are the IDs from `/dev/disk/by-id/*`.
 
-To add a ZIL:
+#### SLOG
 
-```
- # zpool add <pool> log <device-id>
-
-```
-
-Or to add a mirrored ZIL:
+To add a mirrored SLOG:
 
 ```
  # zpool add <pool> log mirror <device-id-1> <device-id-2>
 
 ```
 
-To add an l2arc:
+Or to add a single device SLOG (unsafe):
+
+```
+ # zpool add <pool> log <device-id>
+
+```
+
+Because the SLOG device stores data that has not been written to the pool, it is important to use devices that can finish writes when power is lost. It is also important to use redundancy, since a device failure can cause data loss. In addition, the SLOG is only used for sync writes, so may not provide any performance improvement.
+
+#### L2ARC
+
+To add L2ARC:
 
 ```
  # zpool add <pool> cache <device-id>
 
 ```
 
-Or to add a mirrored l2arc:
-
-```
- # zpool add <pool> cache mirror <device-id-1> <device-id-2>
-
-```
+Because every block cached in L2ARC uses a small amount of memory, it is generally only useful in workloads where the amount of hot data is *bigger* than the maximum amount of memory that can fit in the computer, but small enough to fit into L2ARC. It is also cleared at reboot and is only a read cache, so redundancy is unnecessary. Un-intuitively, L2ARC can actually harm performance since it takes memory away from ARC.
 
 ### Database
 
@@ -654,7 +672,7 @@ To use [ACL](/index.php/ACL "ACL") on a ZFS pool:
 
 ```
 
-Setting `xattr` is recommended for performance reasons [[4]](https://github.com/zfsonlinux/zfs/issues/170#issuecomment-27348094).
+Setting `xattr` is recommended for performance reasons [[3]](https://github.com/zfsonlinux/zfs/issues/170#issuecomment-27348094).
 
 ### Swap volume
 

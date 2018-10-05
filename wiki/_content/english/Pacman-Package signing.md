@@ -28,7 +28,8 @@ Examples of webs of trust:
     *   [3.2 Disabling signature checking](#Disabling_signature_checking)
     *   [3.3 Resetting all the keys](#Resetting_all_the_keys)
     *   [3.4 Removing stale packages](#Removing_stale_packages)
-    *   [3.5 Updating keys via proxy](#Updating_keys_via_proxy)
+    *   [3.5 Signature is unknown trust](#Signature_is_unknown_trust)
+    *   [3.6 Updating keys via proxy](#Updating_keys_via_proxy)
 *   [4 See also](#See_also)
 
 ## Setup
@@ -213,6 +214,17 @@ If you want to remove or reset all the keys installed in your system, you can re
 If the same packages keep failing and you are sure you did all the *pacman-key* stuff right, try removing them like so `rm /var/cache/pacman/pkg/*badpackage**` so that they are freshly downloaded.
 
 This might actually be the solution if you get a message like `error: linux: signature from "Some Person <Some.Person@example.com>" is invalid` or similar when upgrading (i.e. you might not be the victim of a MITM attack after all, your downloaded file was simply corrupt).
+
+### Signature is unknown trust
+
+Sometimes when running `pacman -Suy` you might encounter this error:
+
+```
+error: PackageName: signature from "XXX" is unknown trust
+
+```
+
+This occurs because the key is not present and/or not trusted in the local pacman-key gpg database. Pacman does not seem to always be able to check if the key was received and marked as trusted before continuing. Mitigate by [manually signing the untrusted key locally](/index.php/Pacman/Package_signing#Adding_unofficial_keys "Pacman/Package signing") or [resetting all the keys](/index.php/Pacman/Package_signing#Resetting_all_the_keys "Pacman/Package signing").
 
 ### Updating keys via proxy
 

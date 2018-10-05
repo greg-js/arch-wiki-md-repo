@@ -69,13 +69,11 @@ CONFIG_DEFAULT_SECURITY_APPARMOR=y
 
 To test if AppArmor has been correctly enabled:
 
- `$ cat /sys/module/apparmor/parameters/enabled` 
+ `$ aa-enabled` 
 ```
-Y
+Yes
 
 ```
-
-`Y` — enabled, `N` — disabled, `no such file` — module not in kernel.
 
 To display the current loaded status use `apparmor_status`:
 

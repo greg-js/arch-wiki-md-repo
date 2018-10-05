@@ -72,7 +72,7 @@ Artículos relacionados
     *   [6.14 El sistema de archivos BTRFS antiguo presiste en la instalación](#El_sistema_de_archivos_BTRFS_antiguo_presiste_en_la_instalaci.C3.B3n)
     *   [6.15 Windows 8/10 no es encontrado](#Windows_8.2F10_no_es_encontrado)
     *   [6.16 Modalidad EFI en VirtualBox](#Modalidad_EFI_en_VirtualBox)
-*   [7 Consulte también](#Consulte_tambi.C3.A9n)
+*   [7 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
 ## Sistemas BIOS
 
@@ -870,7 +870,7 @@ Instale GRUB en la [ruta de arranque default/fallback](#Ruta_de_arranque_default
 
 Consulte también [VirtualBox#Installation in EFI mode](/index.php/VirtualBox#Installation_in_EFI_mode "VirtualBox").
 
-## Consulte también
+## Véase también
 
 *   [Wikipedia:GNU GRUB](https://en.wikipedia.org/wiki/GNU_GRUB "wikipedia:GNU GRUB")
 *   [Manual oficial de GRUB](https://www.gnu.org/software/grub/manual/grub.html)

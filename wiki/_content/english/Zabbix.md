@@ -8,8 +8,6 @@
         *   [1.1.2 Zabbix-frontend installation](#Zabbix-frontend_installation)
     *   [1.2 Configuration](#Configuration)
     *   [1.3 ICMP/ping discovery](#ICMP.2Fping_discovery)
-        *   [1.3.1 Installation fping](#Installation_fping)
-        *   [1.3.2 Set fping capabilities](#Set_fping_capabilities)
     *   [1.4 Starting](#Starting)
 *   [2 Agent setup](#Agent_setup)
     *   [2.1 Installation](#Installation_2)
@@ -26,8 +24,6 @@
 ### Installation
 
 #### Zabbix-server installation
-
-**Note:** Zabbix uses [fping](https://www.archlinux.org/packages/?name=fping) to do ICMP/Ping discovery, which is broken. [fping-git](https://aur.archlinux.org/packages/fping-git/) is the latest development version, which does work, albeit fping needs extra capabilities to run as non-root user. See [#ICMP/ping discovery](#ICMP.2Fping_discovery) for further details.
 
 Install the [zabbix-server](https://www.archlinux.org/packages/?name=zabbix-server) package. This includes the necessary scripts for use with MariaDB or PostgreSQL. The rest of this guide will assume that you will be using MariaDB.
 
@@ -78,32 +74,7 @@ $ mysql -u zabbix -p zabbix < /usr/share/zabbix-server/mysql/data.sql
 
 ### ICMP/ping discovery
 
-When you want to use ICMP discovery (e.g. ping) in Zabbix,you need to do the following two things:
-
-#### Installation fping
-
-Install [fping](https://www.archlinux.org/packages/?name=fping)
-
-**Note:** If [fping](https://www.archlinux.org/packages/?name=fping) fails, try installing [fping-git](https://aur.archlinux.org/packages/fping-git/). As of version 4.0 there is a bug, that is resolved in the latest developement version, [fping-git](https://aur.archlinux.org/packages/fping-git/).
-
-#### Set fping capabilities
-
-The zabbix user needs special network capabilities to utilize [fping](https://www.archlinux.org/packages/?name=fping).
-
-To achieve that, to the following:
-
-Edit the `zabbix-server-mysql.service` unit:
-
- `# systemctl edit zabbix-server-mysql.service` 
-
-And add the following lines:
-
-```
-[Service]
-ExecStartPre=+/usr/bin/setcap cap_net_raw+ep /usr/bin/fping
-```
-
-Save & Close, and you're done.
+To use ICMP discovery (e.g. ping) in Zabbix, [install](/index.php/Install "Install") the [fping](https://www.archlinux.org/packages/?name=fping) package.
 
 ### Starting
 

@@ -815,11 +815,11 @@ pid directory = /var/run/samba/
 logging = systemd ; or syslog with syslog only
 ```
 
-*   If using a [share path](#Creating_a_share) located outside of a home-directory whitelist it in `/etc/apparmor.d/local/usr.sbin.smbd`. E.g.:
+*   If using a [share path](#Creating_a_share) located outside of a home-directory, whitelist it in `/etc/apparmor.d/local/usr.sbin.smbd`. E.g.:
 
  `/etc/apparmor.d/local/usr.sbin.smbd` 
 ```
-/data/** rw,
+/data/** lrwk,
 
 ```
 

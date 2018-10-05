@@ -1,4 +1,4 @@
-[Crystal](http://crystal-lang.org) is a statically typed, compiled programming language with [Ruby](/index.php/Ruby "Ruby") inspired syntax and global type inference.
+[Crystal](https://en.wikipedia.org/wiki/Crystal_(programming_language) is a statically typed, compiled programming language with [Ruby](/index.php/Ruby "Ruby") inspired syntax and global type inference.
 
 ## Contents
 

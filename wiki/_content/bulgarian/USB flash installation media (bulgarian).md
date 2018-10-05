@@ -138,7 +138,7 @@ Download win32 disk imager from [http://launchpad.net/win32-image-writer](http:/
 
 ### С UNetBootin
 
-Another way to make a USB drive bootable, is by using UNetBootin ([see above](#UNetBootin))
+Another way to make a USB drive bootable, is by using UNetBootin ([see above](#.D0.A1_UNetBootin)).
 
 ## Стар метод с ISO
 

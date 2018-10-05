@@ -38,7 +38,7 @@ Wikipedia [LPRng](https://en.wikipedia.org/wiki/LPRng "wikipedia:LPRng") article
     *   [poppler](https://www.archlinux.org/packages/?name=poppler)
     *   Any one out of [a2ps](https://www.archlinux.org/packages/?name=a2ps), [enscript](https://www.archlinux.org/packages/?name=enscript), [mpage](https://aur.archlinux.org/packages/mpage/)
     *   [ghostscript](https://www.archlinux.org/packages/?name=ghostscript)
-    *   [hplip](https://www.archlinux.org/packages/?name=hplip) or [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/). hplip might interfere to foo2zjs-nightly, so first try whatever suits you most.
+    *   [hplip](https://www.archlinux.org/packages/?name=hplip)
     *   [foomatic-filters-lprng](https://aur.archlinux.org/packages/foomatic-filters-lprng/)
 
 ## Configuration

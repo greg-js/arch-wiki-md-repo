@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [GTK+](/index.php/GTK%2B "GTK+"), revisada por última vez el **en fase de traducción**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GTK%2B&diff=0&oldid=535659) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [GTK+](/index.php/GTK%2B "GTK+"), revisada por última vez el **en fase de traducción**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GTK%2B&diff=0&oldid=545475) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -14,6 +14,13 @@ De la [web de GTK+](http://www.gtk.org):
 
 GTK+ (GIMP Toolkit) fue originalmente creado por el [Proyecto GNU](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)") para [GIMP](/index.php/GIMP "GIMP"), pero ahora es un conjunto de herramientas popular con conectores a múltiples lenguajes de programación. Este artículo explora las herramientas utilizadas para configurar el tema GTK+, el estilo, los iconos, las fuentes y sus tamaños, y también detalla la configuración manual.
 
+## Contents
+
+*   [1 Instalación](#Instalaci.C3.B3n)
+*   [2 Temas](#Temas)
+    *   [2.1 GTK+ y Qt](#GTK.2B_y_Qt)
+*   [3 Herramientas de configuración](#Herramientas_de_configuraci.C3.B3n)
+
 ## Instalación
 
 Dos versiones de GTK+ estan disponibles en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"). Se pueden [instalar](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") con los siguientes paquetes:
@@ -26,27 +33,25 @@ Dos versiones de GTK+ estan disponibles en los [repositorios oficiales](/index.p
 
 En GTK+ 2, el tema predeterminado es *Raleigh*, pero Arch Linux tiene un archivo de configuración personalizado en `/usr/share/gtk-2.0/gtkrc`, que establece *Adwaita* como el tema predeterminado. En GTK+ 3, el tema predeterminado es *Adwaita*, pero también se incluyen *HighContrast*, *HighContrastInverse* y *Raleigh*.
 
-Para forzar un tema específico, puede establecer variables de entorno.
+Para forzar un tema específico, establezca las siguientes [variables de entorno](/index.php/Environment_variables_(Espa%C3%B1ol) "Environment variables (Español)").
 
-*   Para GTK+ 2, utilice la variable de entorno `GTK2_RC_FILES`, por ejemplo:
+*   Para GTK+ 2, utilice `GTK2_RC_FILES`. Por ejemplo para lanzar [GIMP](/index.php/GIMP "GIMP") con el tema *Industrial*:
 
 ```
 $ GTK2_RC_FILES=/usr/share/themes/Industrial/gtk-2.0/gtkrc gimp
 
 ```
 
-	lanzará GIMP con el tema Industrial.
+**Sugerencia:** `gtkrc` puede ser también un archivo personalizado en su directorio de inicio creado por cualquiera de las [#Herramientas de configuración](#Herramientas_de_configuraci.C3.B3n).
 
-*   Para GTK+ 3, utilice la variable de entorno `GTK_THEME`, por ejemplo:
+*   Para GTK+ 3, utilice `GTK_THEME`. Por ejemplo para lanzar la calculadora de GNOME con la variante oscura de *Adwaita*:
 
 ```
 $ GTK_THEME=Adwaita:dark gnome-calculator
 
 ```
 
-	lanzará la calculadora de GNOME con la variante oscura del tema Adwaita.
-
-Se pueden instalar más temas desde los repositorios oficiales o desde [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)").
+Se pueden instalar más temas desde los repositorios oficiales o desde [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)"). Los temas extraídos manualmente van en el directorio `~/.themes/` o `~/.local/share/themes/`.
 
 **Compatibles con GTK+ 2 y GTK+ 3.20 o posterior:**
 
@@ -116,10 +121,22 @@ Se pueden instalar más temas desde los repositorios oficiales o desde [AUR](/in
 
 	[Https://cgit.kde.org/qtcurve.git](Https://cgit.kde.org/qtcurve.git) || [qtcurve-gtk2](https://www.archlinux.org/packages/?name=qtcurve-gtk2)
 
-Hay una serie de temas GTK+ adicionales en [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)"): [búsqueda de gtk-theme](https://aur.archlinux.org/packages.php?K=gtk-theme), [búsqueda de gtk2-theme](https://aur.archlinux.org/packages.php?K=gtk2-theme).
+Hay una serie de temas GTK+ adicionales en AUR, por ejemplo: [búsqueda de gtk-theme](https://aur.archlinux.org/packages.php?K=gtk-theme), [búsqueda de gtk2-theme](https://aur.archlinux.org/packages.php?K=gtk2-theme).
 
 **Nota:** Debido a que GTK+ 3 cambia rápidamente, los temas GTK+ 3 a menudo requieren una revisión después de una nueva versión GTK+ 3\. Por esta razón, no todos los temas de GTK+ 3 se muestran como se pretendía cuando se utilizó con la última versión de GTK+ 3.
 
 ### GTK+ y Qt
 
-Si tiene aplicaciones GTK+ y Qt (KDE) en su escritorio, entonces sabe que sus apariencias no combinan bien. Si desea que los estilos GTK+ coincidan con los estilos Qt, véase [unificación de aspectos para las palicaciones Qt y GTK](/index.php/Uniform_look_for_Qt_and_GTK_applications_(Espa%C3%B1ol) "Uniform look for Qt and GTK applications (Español)").
+Si tiene aplicaciones GTK+ y Qt (KDE) en su escritorio, entonces sabe que sus apariencias no combinan bien. Si desea que los estilos GTK+ coincidan con los estilos Qt, véase [unificación de aspectos para las aplicaciones Qt y GTK](/index.php/Uniform_look_for_Qt_and_GTK_applications_(Espa%C3%B1ol) "Uniform look for Qt and GTK applications (Español)").
+
+## Herramientas de configuración
+
+La mayoría de los [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") proporcionan herramientas para configurar el tema GTK+, los iconos, la fuente y el tamaño de la misma, y administrar estas configuraciones a través de [XSettings](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html):
+
+*   Si utiliza [Cinnamon](/index.php/Cinnamon "Cinnamon"), emplee la herramienta Temas (*cinnamon-settings themes*): diríjase a *Configuración del sistema > Temas*.
+*   Si utiliza [Enlightenment](/index.php/Enlightenment_(Espa%C3%B1ol) "Enlightenment (Español)"): diríjase a *Configuración > Todos > Aspecto > Tema de aplicación*.
+*   Si utiliza [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), emplee los ajustes de GNOME (*gnome-tweaks*): instale [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks).
+*   Si utiliza [MATE](/index.php/MATE_(Espa%C3%B1ol) "MATE (Español)"), emplee la herramienta de Preferencias de apariencia (*mate-apariencia-propiedades*): diríjase a *Sistema > Configuración > Apariencia*.
+*   Si utiliza [Xfce](/index.php/Xfce_(Espa%C3%B1ol) "Xfce (Español)"), emplee la herramienta Apariencia: diríjase a *Configuración > Apariencia*.
+
+Otras herramientas del GUI generalmente sobrescriben los [archivos de configuración](#Configuraci.C3.B3n).

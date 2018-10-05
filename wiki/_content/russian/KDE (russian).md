@@ -11,6 +11,8 @@
 *   [Trinity](/index.php/Trinity "Trinity")
 *   [Uniform Look for Qt and GTK Applications (Русский)](/index.php/Uniform_Look_for_Qt_and_GTK_Applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Uniform Look for Qt and GTK Applications (Русский)")
 
+**Состояние перевода:** На этой странице представлен перевод статьи [KDE](/index.php/KDE "KDE"). Дата последней синхронизации: 5 октября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=542150).
+
 KDE — проект, в настоящее время состоящий из [среды рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") (KDE Plasma), набора библиотек и фреймворков (KDE Frameworks), а также набора приложений (KDE Applications).
 
 KDE имеет активно поддерживаемый вики-ресурс [UserBase](https://userbase.kde.org/). Здесь пользователи могут получить наиболее актуальную и подробную информацию о большинстве приложений KDE.
@@ -84,6 +86,7 @@ KDE имеет активно поддерживаемый вики-ресурс
         *   [6.5.1 Отсутствие ждущего/спящего режима](#.D0.9E.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D0.B8.D0.B5_.D0.B6.D0.B4.D1.83.D1.89.D0.B5.D0.B3.D0.BE.2F.D1.81.D0.BF.D1.8F.D1.89.D0.B5.D0.B3.D0.BE_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B0)
     *   [6.6 KMail](#KMail)
         *   [6.6.1 Сброс настроек Akonadi для решения проблем с KMail](#.D0.A1.D0.B1.D1.80.D0.BE.D1.81_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B5.D0.BA_Akonadi_.D0.B4.D0.BB.D1.8F_.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC_.D1.81_KMail)
+        *   [6.6.2 Пустая папка входящих сообщений в IMAP-аккаунте KMail](#.D0.9F.D1.83.D1.81.D1.82.D0.B0.D1.8F_.D0.BF.D0.B0.D0.BF.D0.BA.D0.B0_.D0.B2.D1.85.D0.BE.D0.B4.D1.8F.D1.89.D0.B8.D1.85_.D1.81.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D0.B9_.D0.B2_IMAP-.D0.B0.D0.BA.D0.BA.D0.B0.D1.83.D0.BD.D1.82.D0.B5_KMail)
     *   [6.7 Сеть](#.D0.A1.D0.B5.D1.82.D1.8C)
         *   [6.7.1 Зависания при использовании автоматического монтирования NFS-раздела](#.D0.97.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D1.8F_.D0.BF.D1.80.D0.B8_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B8_.D0.B0.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B3.D0.BE_.D0.BC.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D1.8F_NFS-.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.B0)
     *   [6.8 Слишком частое журналирование событий QXcbConnection](#.D0.A1.D0.BB.D0.B8.D1.88.D0.BA.D0.BE.D0.BC_.D1.87.D0.B0.D1.81.D1.82.D0.BE.D0.B5_.D0.B6.D1.83.D1.80.D0.BD.D0.B0.D0.BB.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.81.D0.BE.D0.B1.D1.8B.D1.82.D0.B8.D0.B9_QXcbConnection)
@@ -659,22 +662,21 @@ $ plasmashell
 
 #### Сброс настроек Akonadi для решения проблем с KMail
 
-Первым делом убедитесь, что KMail не запущен. Сохраните настройки Akonadi:
+Первым делом убедитесь, что KMail не запущен. После чего сохраните настройки Akonadi:
 
 ```
-$ cp ~/.local/share/akonadi ~/.local/share/akonadi-old
-$ cp ~/.config/akonadi ~/.config/akonadi-old
-
-```
-
-Откройте *SystemSettings > Personal* и удалите все ресурсы. Вернитесь в терминал и удалите исходные файлы настроек:
-
-```
-$ rm ~/.local/share/akonadi ~/.config/akonadi
+$ cp -a ~/.local/share/akonadi ~/.local/share/akonadi-old
+$ cp -a ~/.config/akonadi ~/.config/akonadi-old
 
 ```
 
-Снова вернитесь к *SystemSettings* и внимательно добавьте все необходимые ресурсы. Сохраните настройки и запустите Kontact/KMail чтобы убедиться, что теперь все работает корректно.
+Откройте *System Settings > Personal* и удалите все ресурсы. Вернитесь в Dolphin и удалите исходные `~/.local/share/akonadi/` и `~/.config/akonadi/` - копии которых вы сделали ранее, чтобы иметь возможность их восстановить.
+
+Снова вернитесь в *System Settings* и внимательно добавьте все необходимые ресурсы. Вы должны увидеть считывание ресурсов в папках с письмами. Сохраните настройки и запустите Kontact/KMail чтобы убедиться, что теперь все работает корректно.
+
+#### Пустая папка входящих сообщений в IMAP-аккаунте KMail
+
+Для некоторых аккаунтов KMail использующих протокол IMAP, папка входящих сообщений может отображаться в виде контейнера верхнего уровня (таким образом, делая прочтение сообщений невозможным) со всеми остальными директориями в нём.[[8]](https://bugs.kde.org/show_bug.cgi?id=284172). Для решений этой проблемы достаточно отключить подписки на стороне сервера (server-side subscriptions) в настройках аккаунта в KMail.
 
 ### Сеть
 

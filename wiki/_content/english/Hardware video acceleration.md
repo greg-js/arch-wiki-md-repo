@@ -39,25 +39,31 @@ There are several ways to achieve this on Linux:
 *   The features supported by your GPU may vary. To see what your GPU supports see [#Verification](#Verification).
 
 <caption>VA-API</caption>
- [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) [[1]](https://github.com/01org/intel-vaapi-driver/blob/master/README) | [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) | [Catalyst XvBA](/index.php/AMD_Catalyst#Video_acceleration "AMD Catalyst") | [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)
+ [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) [[1]](https://github.com/01org/intel-vaapi-driver/blob/master/README) | [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver) [[2]](https://github.com/intel/media-driver/blob/master/README.md) | [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) | [Catalyst XvBA](/index.php/AMD_Catalyst#Video_acceleration "AMD Catalyst") | [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)
 
 (VDPAU adapter)
 
  |
 | Decoding |
+| AVC | ? | Broadwell and newer | ? | ? | ? |
 | MPEG2 | GMA 4500 and newer | Radeon HD 6000 and newer | Radeon HD 4000 and newer | See VDPAU |
-| MPEG4 | No | Radeon HD 6000 and newer | Radeon HD 6000 and newer |
-| H.264 | GMA 4500, Ironlake Graphics and newer | Radeon HD 2000 and newer | Radeon HD 4000 and newer |
-| HEVC (H.265) | Cherryview/Braswell and newer | Radeon R9 285 and newer | No |
-| VC1 | Sandy Bridge Graphics and newer | Radeon HD 2000 and newer | Radeon HD 4000 and newer |
+| MPEG4 | No | No | Radeon HD 6000 and newer | Radeon HD 6000 and newer |
+| H.264 | GMA 4500, Ironlake Graphics and newer | Broadwell and newer? [[3]](https://github.com/intel/media-driver/issues/342) | Radeon HD 2000 and newer | Radeon HD 4000 and newer |
+| HEVC (H.265) 8bit | Cherryview/Braswell and newer | Skylake and newer | Radeon R9 285 and newer | No |
+| HEVC (H.265) 10bit | ? | Broxton/Apollo Lake and newer | ? |
+| VC1 | Sandy Bridge Graphics and newer | Broadwell and newer | Radeon HD 2000 and newer | Radeon HD 4000 and newer |
 | VP8 | Broadwell and newer | No | No | No |
-| VP9 | Broxton and newer | Raven Ridge and newer | No |
+| VP9 8bit | Broxton and newer | Broxton/Apollo Lake and newer | Raven Ridge and newer |
+| VP9 10bit | ? | Kaby Lake and newer | ? |
 | Encoding |
-| MPEG2 | Ivy Bridge Graphics and newer | No | No | No |
-| H.264 | Sandy Bridge Graphics and newer | Radeon HD 7000 and newer |
-| HEVC (H.265) | Skylake and newer | Raven Ridge and newer |
+| AVC | ? | Broadwell and newer | ? | No | No |
+| MPEG2 | Ivy Bridge Graphics and newer | Broadwell and newer, excepted for Broxton/Apollo Lake | No |
+| H.264 | Sandy Bridge Graphics and newer | Broadwell and newer? [[4]](https://github.com/intel/media-driver/issues/342) | Radeon HD 7000 and newer |
+| HEVC (H.265) 8bit | Skylake and newer | Skylake and newer | Raven Ridge and newer |
+| HEVC (H.265) 10bit | ? | Cannonlake and newer | ? |
 | VP8 | Cherryview/Braswell and newer | No |
-| VP9 | Kaby Lake and newer | No |
+| VP9 8bit | Kaby Lake and newer | Icelake and newer |
+| VP9 10bit | ? |
 
 <caption>VDPAU</caption>
  [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) | [amdgpu-pro-vdpau](https://aur.archlinux.org/packages/amdgpu-pro-vdpau/)
@@ -103,7 +109,7 @@ The choice varies depending on your video card vendor:
 
 *   For Intel Graphics use VA-API.
 *   For NVIDIA cards use VDPAU.
-*   For AMD cards you can use both (with [mesa](https://www.archlinux.org/packages/?name=mesa)). The difference is really only in the application implementation [[2]](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/open-source-amd-linux/887994-vaapi-or-vdpau).
+*   For AMD cards you can use both (with [mesa](https://www.archlinux.org/packages/?name=mesa)). The difference is really only in the application implementation [[5]](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/open-source-amd-linux/887994-vaapi-or-vdpau).
 
 There are also two specific types of drivers for VA-API and VDPAU:
 
@@ -119,9 +125,9 @@ For pre-2007 cards see [XvMC](/index.php/XvMC "XvMC").
 **Open source drivers:**
 
 *   [ATI](/index.php/ATI "ATI")/[AMDGPU](/index.php/AMDGPU "AMDGPU") Radeon 9500 and newer GPUs are supported by [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) with [mesa](https://www.archlinux.org/packages/?name=mesa).
-*   [Intel](/index.php/Intel "Intel") GMA 4500 series and newer GPUs are supported by [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) with [mesa](https://www.archlinux.org/packages/?name=mesa).
+*   [Intel](/index.php/Intel "Intel") GMA 4500 series and newer GPUs (up to Coffee Lake) are supported by [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) with [mesa](https://www.archlinux.org/packages/?name=mesa).
     *   To get better support on GMA 4500 consider using [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) instead, see [Intel#Hardware accelerated H.264 decoding on GMA 4500](/index.php/Intel#Hardware_accelerated_H.264_decoding_on_GMA_4500 "Intel") for instructions and caveats.
-    *   A new usermode driver being developed by Intel is available for Broadwell, Skylake, Kabylake, Apollolake and Canonlake: [intel-media-driver](https://aur.archlinux.org/packages/intel-media-driver/)
+*   [Intel](/index.php/Intel "Intel") HD Graphics series starting from Broadwell can also use the newer userspace driver (mandatory for CannonLake+): [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver)
 *   [NVIDIA](/index.php/Nouveau "Nouveau") GeForce 8 series and newer GPUs are supported by [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) (see [#Installing VDPAU](#Installing_VDPAU)).
 
 **Proprietary drivers:**

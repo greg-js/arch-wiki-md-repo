@@ -12,8 +12,8 @@ Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Officially supported packages](#Officially_supported_packages)
-    *   [1.2 Unofficially supported packages](#Unofficially_supported_packages)
+    *   [1.1 OpenJDK](#OpenJDK)
+    *   [1.2 Other implementations](#Other_implementations)
 *   [2 Switching between JVM](#Switching_between_JVM)
     *   [2.1 List compatible Java environments installed](#List_compatible_Java_environments_installed)
     *   [2.2 Change default Java environment](#Change_default_Java_environment)
@@ -42,7 +42,7 @@ Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net
 
 **Note:**
 
-*   Installing a JDK will automatically pull its JRE dependency.
+*   Arch Linux officially only supports the [OpenJDK](#OpenJDK) implementation.
 *   After installation, the Java environment will need to be recognized by the shell (`$PATH` variable). This can be done by sourcing `/etc/profile` from the command line or by logging out/in again of a Desktop Environment.
 
 Two *common* packages are respectively pulled as dependency, named [java-runtime-common](https://www.archlinux.org/packages/?name=java-runtime-common) (containing common files for Java Runtime Environments) and [java-environment-common](https://www.archlinux.org/packages/?name=java-environment-common) (containing common files for Java Development Kits). The provided environment file `/etc/profile.d/jre.sh` points to a linked location `/usr/lib/jvm/default/bin`, set by the `archlinux-java` helper script. The links `/usr/lib/jvm/default` and `/usr/lib/jvm/default-runtime` should **always** be edited with `archlinux-java`. This is used to display and point to a working default Java environment in `/usr/lib/jvm/java-${JAVA_MAJOR_VERSION}-${VENDOR_NAME}` or a Java runtime in `/usr/lib/jvm/java-${JAVA_MAJOR_VERSION}-${VENDOR_NAME}/jre`.
@@ -51,19 +51,26 @@ Most executables of the Java installation are provided by direct links in `/usr/
 
 **Warning:** File `/etc/profile.d/jdk.sh` is not provided any more by any package.
 
-### Officially supported packages
+### OpenJDK
 
-**OpenJDK 10** — The open-source reference implementation of the tenth edition of Java SE.
+[OpenJDK](https://en.wikipedia.org/wiki/OpenJDK "wikipedia:OpenJDK") is an open-source implementation of the Java Platform, Standard Edition (Java SE).
 
-	[http://openjdk.java.net/projects/jdk/10/](http://openjdk.java.net/projects/jdk/10/) || [jre10-openjdk-headless](https://www.archlinux.org/packages/?name=jre10-openjdk-headless) [jre10-openjdk](https://www.archlinux.org/packages/?name=jre10-openjdk) [jdk10-openjdk](https://www.archlinux.org/packages/?name=jdk10-openjdk) [openjdk10-doc](https://www.archlinux.org/packages/?name=openjdk10-doc) [openjdk10-src](https://www.archlinux.org/packages/?name=openjdk10-src)
+	Headless JRE
 
-**OpenJDK 8** — The open-source implementation of the eight edition of Java SE.
+	The minimal Java runtime - needed for executing non GUI Java programs.
 
-	[http://openjdk.java.net/projects/jdk8/](http://openjdk.java.net/projects/jdk8/) || [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src)
+	Full JRE
 
-**OpenJDK 7** — The open-source implementation of the seventh edition of Java SE.
+	Full Java runtime environment - needed for executing Java GUI programs, depends on headless JRE.
 
-	[http://openjdk.java.net/projects/jdk7/](http://openjdk.java.net/projects/jdk7/) || [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src)
+	JDK
+
+	[Java Development Kit](https://en.wikipedia.org/wiki/Java_Development_Kit "wikipedia:Java Development Kit") - needed for Java development, depends on full JRE.
+
+| Version | Headless JRE | Full JRE | JDK | Documentation | Sources |
+| [OpenJDK 10](http://openjdk.java.net/projects/jdk/10/) | [jre10-openjdk-headless](https://www.archlinux.org/packages/?name=jre10-openjdk-headless) | [jre10-openjdk](https://www.archlinux.org/packages/?name=jre10-openjdk) | [jdk10-openjdk](https://www.archlinux.org/packages/?name=jdk10-openjdk) | [openjdk10-doc](https://www.archlinux.org/packages/?name=openjdk10-doc) | [openjdk10-src](https://www.archlinux.org/packages/?name=openjdk10-src) |
+| [OpenJDK 8](http://openjdk.java.net/projects/jdk8/) | [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) | [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) | [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) | [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) | [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src) |
+| [OpenJDK 7](http://openjdk.java.net/projects/jdk7/) | [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) | [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) | [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) | [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) | [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src) |
 
 **IcedTea-Web** — Java Web Start and the deprecated Java browser plugin.
 
@@ -71,13 +78,7 @@ Most executables of the Java installation are provided by direct links in `/usr/
 
 **OpenJFX 8** — The open-source implementation of JavaFX. You [do not need](https://wiki.openjdk.java.net/display/OpenJFX/Repositories+and+Releases) to install this package if you are making use of Java SE (the Oracle's implementation of JRE and JDK described below). This package only concerns users of the open source implementation of Java (OpenJDK project).
 
-	[http://openjdk.java.net/projects/openjfx/](http://openjdk.java.net/projects/openjfx/) || [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx) [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc) [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src)
-
-### Unofficially supported packages
-
-**OpenJDK 9** — The open-source implementation of the ninth edition of Java SE.
-
-	[http://openjdk.java.net/projects/jdk9/](http://openjdk.java.net/projects/jdk9/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=jre9-openjdk)</small> <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=jdk9-openjdk)</small>
+	[http://openjdk.java.net/projects/openjfx/](http://openjdk.java.net/projects/openjfx/) || [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx), [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc), [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src)
 
 **OpenJDK EA** — Oracle's OpenJDK Early-Access Build for latest developement version.
 
@@ -86,6 +87,8 @@ Most executables of the Java installation are provided by direct links in `/usr/
 **OpenJFX EA** — Oracle's OpenJFX Early-Access Build for latest developement version.
 
 	[http://jdk.java.net/openjfx/](http://jdk.java.net/openjfx/) || [java-openjfx-devel](https://aur.archlinux.org/packages/java-openjfx-devel/)
+
+### Other implementations
 
 **Java SE** — Oracle's implementation of JRE and JDK.
 

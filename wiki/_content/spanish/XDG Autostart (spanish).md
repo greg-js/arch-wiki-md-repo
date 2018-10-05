@@ -3,7 +3,7 @@ Este artículo es una traducción de [XDG Autostart](/index.php/XDG_Autostart "X
 
 La [especificación XDG Autostart](https://specifications.freedesktop.org/autostart-spec/autostart-spec-latest.html) define un método para [iniciar automáticamente](/index.php/Autostarting_(Espa%C3%B1ol) "Autostarting (Español)") [entradas de escritorio](/index.php/Desktop_entries "Desktop entries") ordinarias durante el inicio y montaje de medios extraíbles en un [entorno de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)"), colocándolos en [directorios](#Directorios) específicos.
 
-## Prerequisitos
+## Requisitos previos
 
 Debe utilizar un [entorno de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") que lo admita o una implementación dedicada, como [dex](https://www.archlinux.org/packages/?name=dex), [dapper](https://aur.archlinux.org/packages/dapper/) o [fbautostart](https://aur.archlinux.org/packages/fbautostart/).
 

@@ -15,7 +15,7 @@
 
 ## 使用
 
-很多程序会自动使用 *aspell*，无需额外配置。用户也可以手动执行 *aspell*，参考 [aspell(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/aspell.1).
+很多程序会自动使用 *aspell*，无需额外配置。用户也可以手动执行 *aspell*，参考 [aspell(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/aspell.1).
 
 对单个文件执行拼写检查:
 

@@ -1,4 +1,4 @@
-[Hashcat](https://hashcat.net/hashcat/) is powerfull utility for recovering passwords from hash. It supports over 200 hash algorithms. It can use CPU, GPU and other hardware accelerators.
+[Hashcat](https://en.wikipedia.org/wiki/Hashcat "wikipedia:Hashcat") is powerfull utility for recovering passwords from hash. It supports over 200 hash algorithms. It can use CPU, GPU and other hardware accelerators.
 
 ## Installation
 
@@ -16,3 +16,7 @@ hashcat -m *hash_type* *hash_file* *dictionary_file*
 ```
 
 More examples and usage details can be found at [Hashcat wiki](https://hashcat.net/wiki/).
+
+## See also
+
+*   [Official website](https://hashcat.net/hashcat/)

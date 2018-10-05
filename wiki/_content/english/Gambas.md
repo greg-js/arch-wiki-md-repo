@@ -1,4 +1,4 @@
-**Gambas** is an object-oriented dialect of the BASIC programming language as well as the integrated development environment that accompanies it.
+[Gambas](https://en.wikipedia.org/wiki/Gambas "wikipedia:Gambas") is an object-oriented dialect of the BASIC programming language as well as the integrated development environment that accompanies it.
 
 ## Installation
 

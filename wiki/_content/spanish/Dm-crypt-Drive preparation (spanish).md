@@ -1,9 +1,14 @@
 < Volver a [Dm-crypt (Español)](/index.php/Dm-crypt_(Espa%C3%B1ol) "Dm-crypt (Español)")
 
 **Estado de la traducción**
-Este artículo es una traducción de [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"), revisada por última vez el **2017-09-29**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dm-crypt/Drive_preparation&diff=0&oldid=450405) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation"), revisada por última vez el **2018-10-03**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dm-crypt/Drive_preparation&diff=0&oldid=519186) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
-Antes de cifrar una unidad, es recomendable realizar un borrado seguro del disco, sobrescribiendo toda la unidad con datos aleatorios. Para evitar ataques criptográficos o [recuperación de archivos](/index.php/File_recovery "File recovery") no deseados, lo ideal es que estos datos sean indistinguibles de los datos escritos posteriormente por dm-crypt. Para comprender mejor el tema vea [Disk encryption#Preparing the disk](/index.php/Disk_encryption#Preparing_the_disk "Disk encryption").
+Artículos relacionados
+
+*   [Disk encryption (Español)#Preparar el disco](/index.php/Disk_encryption_(Espa%C3%B1ol)#Preparar_el_disco "Disk encryption (Español)")
+*   [Securely wipe disk](/index.php/Securely_wipe_disk "Securely wipe disk")
+
+Antes de cifrar una unidad, es recomendable realizar un borrado seguro del disco, sobrescribiendo toda la unidad con datos aleatorios. Para evitar ataques criptográficos o [recuperación de archivos](/index.php/File_recovery "File recovery") no deseados, lo ideal es que estos datos sean indistinguibles de los datos escritos posteriormente por dm-crypt. Para comprender mejor el tema vea [Disk encryption (Español)#Preparar el disco](/index.php/Disk_encryption_(Espa%C3%B1ol)#Preparar_el_disco "Disk encryption (Español)").
 
 ## Contents
 
@@ -40,29 +45,30 @@ Para obtener instrucciones detalladas sobre cómo borrar y preparar una unidad, 
 
 Los dos métodos siguientes son específicos para dm-crypt y se mencionan porque son muy rápidos y se pueden realizar después de configurar la partición también.
 
-Las [FAQ de cryptsetup](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects) mencionan un procedimiento muy sencillo para usar en un volumen existente de dm-crypt para limpiar todo el espacio libre accesible en el bloque subyacente del dispositivo con datos aleatorios al actuar como un simple generador de números pseudoaleatorios. También se afirma que protege contra la divulgación de patrones de uso. Esto se debe a que los datos cifrados son prácticamente indistinguibles de los aleatorios.
+Las [FAQ de cryptsetup](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects) (elemento 2.19 «*¿Cómo puedo limpiar un dispositivo con aleatoriedad criptográfica?*») mencionan un procedimiento muy sencillo para usar en un volumen existente de dm-crypt para limpiar todo el espacio libre accesible en el bloque subyacente del dispositivo con datos aleatorios al actuar como un simple generador de números pseudoaleatorios. También se afirma que protege contra la divulgación de patrones de uso. Esto se debe a que los datos cifrados son prácticamente indistinguibles de los aleatorios.
 
 #### Limpiar un disco o partición vacíos con dm-crypt
 
-En primer lugar, cree un contenedor temporal cifrado en la partición (`sdXY`) o en el disco completo (`sdX`), que va a ser cifrado, por ejemplo usando parámetros de cifrado predeterminados y una clave aleatoria a través de la opción `--key-file /dev/{u}random` (véase también [Random number generation](/index.php/Random_number_generation "Random number generation")):
+En primer lugar, cree un contenedor temporal cifrado en la partición (`sdXY`) o en el disco completo (`sdX`), que va a ser cifrado:
 
 ```
-# cryptsetup open --type plain /dev/sdXY container --key-file /dev/random
+# cryptsetup open --type plain -d /dev/urandom /dev/<dispositivo_de_bloque> para_ser_borrado
 
 ```
 
 En segundo lugar, compruebe que existe:
 
- `# fdisk -l` 
+ `# lsblk` 
 ```
-Disk /dev/mapper/container: 1000 MB, 1000277504 bytes
-...
-Disk /dev/mapper/container does not contain a valid partition table
+NAME                 MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+sda                    8:0    0  1.8T  0 disk
+└─para_ser_borrado   252:0    0  1.8T  0 crypt
+
 ```
 
 Limpie el contenedor con ceros. Un uso de `if=/dev/urandom` no es necesario ya que el cifrado de encriptación se utiliza para enfarruyar.
 
- `# dd if=/dev/zero of=/dev/mapper/container status=progress`  `dd: writing to ‘/dev/mapper/container’: No space left on device` 
+ `# dd if=/dev/zero of=/dev/mapper/para_ser_borrado status=progress`  `dd: writing to ‘/dev/mapper/para_ser_borrado’: No space left on device` 
 **Sugerencia:**
 
 *   La utilización de *dd* con la opción `bs=`, por ejemplo `bs=1M`, se utiliza con frecuencia para aumentar el rendimiento del disco de la operación.
@@ -71,29 +77,29 @@ Limpie el contenedor con ceros. Un uso de `if=/dev/urandom` no es necesario ya q
 Finalmente, cierre el contenedor temporal:
 
 ```
-# cryptsetup close container
+# cryptsetup close para_ser_borrado
 
 ```
 
-Al cifrar un sistema completo, el siguiente paso es [particionar](#Partitioning). Si acaba de cifrar una partición, continúe en [dm-crypt/Encrypting a non-root file system#Partition](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Partition "Dm-crypt/Encrypting a non-root file system").
+Al cifrar un sistema completo, el siguiente paso es [#Particionar](#Particionar). Si acaba de cifrar una partición, continúe en [Dm-crypt/Encrypting a non-root file system (Español)#Partición](/index.php/Dm-crypt/Encrypting_a_non-root_file_system_(Espa%C3%B1ol)#Partici.C3.B3n "Dm-crypt/Encrypting a non-root file system (Español)").
 
 #### Limpiar espacio libre con dm-crypt después de la instalación
 
-Los usuarios que no tuvieron tiempo para realizar el borrado antes de la [instalación](/index.php/Dm-crypt/Encrypting_an_entire_system "Dm-crypt/Encrypting an entire system"), pueden lograr un efecto similar una vez que se arranque el sistema cifrado y se monten los sistemas de archivos. Sin embargo, considere la posibilidad de que el sistema de archivos afectado haya establecido un espacio reservado, por ejemplo para el usuario root u otro mecanismo de [cuota de disco](/index.php/Disk_quota "Disk quota"), que puede limitar el borrado, incluso cuando se realiza por el usuario root: en esos casos, es posible que algunas partes del dispositivo de bloque subyacente no se escriban en absoluto.
+Los usuarios que no tuvieron tiempo para realizar el borrado antes de la [instalación](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting an entire system (Español)"), pueden lograr un efecto similar una vez que se arranque el sistema cifrado y se monten los sistemas de archivos. Sin embargo, considere la posibilidad de que el sistema de archivos afectado haya establecido un espacio reservado, por ejemplo para el usuario root u otro mecanismo de [cuota de disco](/index.php/Disk_quota "Disk quota"), que puede limitar el borrado, incluso cuando se realiza por el usuario root: en esos casos, es posible que algunas partes del dispositivo de bloque subyacente no se escriban en absoluto.
 
 Para ejecutar el borrado, llene temporalmente el espacio libre restante de la partición escribiendo en un archivo presente en el contenedor cifrado:
 
- `# dd if=/dev/zero of=/file/in/container status=progress`  `dd: writing to ‘/file/in/container’: No space left on device` 
+ `# dd if=/dev/zero of=/archivo/en/contenedor status=progress`  `dd: writing to ‘/archivo/en/contenedor’: No space left on device` 
 
-Sincronice la caché del disco y, luego, elimine el archivo para recuperar el espacio libre.
+Sincronice el caché del disco y luego elimine el archivo para reclamar el espacio libre.
 
 ```
 # sync
-# rm /file/in/container
+# rm /archivo/en/contenedor
 
 ```
 
-El proceso anterior debe repetirse para cada dispositivo de bloqueo de partición creado y del sistema de archivos en él. Por ejemplo, la instalación de [LVM on LUKS](/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS "Dm-crypt/Encrypting an entire system"), el proceso debe realizarse para cada volumen lógico.
+El proceso anterior debe repetirse para cada partición creada y su sistema de archivos de cada dispositivo de bloque. Por ejemplo, la instalación de [LVM sobre LUKS](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#LVM_sobre_LUKS "Dm-crypt/Encrypting an entire system (Español)"), el proceso debe realizarse para cada volumen lógico.
 
 #### Limpiar el encabezado LUKS
 
@@ -108,16 +114,16 @@ En un encabezado con un único valor predeterminado de 256 bits, el tamaño de l
 Para poner a cero el encabezado, utilice:
 
 ```
-# head -c 1052672 /dev/urandom > /dev/sda1; sync
+# head -c 1052672 /dev/urandom > */dev/sdX1*; sync
 
 ```
 
-Para una longitud de clave de 512 bits (por ejemplo, para aes-xts-plain con clave de 512 bits) el encabezado le dedica 2 MB.
+Para una longitud de clave de 512 bits (por ejemplo, para aes-xts-plain con clave de 512 bits) el encabezado le dedica 2 MiB. El encabezado de LUKS2 es de 4MiB.
 
 En caso de duda, basta con ser generoso y sobrescribir los primeros 10 MB o menos.
 
 ```
-# dd if=/dev/urandom of=/dev/sda1 bs=512 count=20480
+# dd if=/dev/urandom of=*/dev/sdX1* bs=512 count=20480
 
 ```
 
@@ -129,23 +135,25 @@ Al limpiar el encabezado con datos aleatorios, todo lo que queda en el dispositi
 
 Esta sección solo se aplica cuando se cifra un sistema completo. Después de que se haya sobrescrito de forma segura la unidad o los discos, se tendrá que elegir adecuadamente un esquema de particionado, teniendo en cuenta los requisitos de dm-crypt y los efectos que tendrán las diversas opciones en la gestión del sistema resultante.
 
-Es importante tener en cuenta que en [casi](#Boot_partition_.28GRUB.29) todos los casos debe haber una partición separada para `/boot` que debe permanecer sin cifrar, ya que el gestor de arranque necesita acceder al directorio `/boot` donde se cargarán los módulos de encriptación y de initramfs necesarios para iniciar el resto del sistema (vea [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") para más detalles). Si esto plantea problemas de seguridad, vea [dm-crypt/Specialties#Securing the unencrypted boot partition](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties").
+Es importante tener en cuenta que en [casi](#Partici.C3.B3n_de_arranque_.28GRUB.29) todos los casos debe haber una partición separada para `/boot` que debe permanecer sin cifrar, ya que el gestor de arranque necesita acceder al directorio `/boot` donde se cargarán los módulos de encriptación y de initramfs necesarios para iniciar el resto del sistema (vea [mkinitcpio (Español)](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") para más detalles). Si esto plantea problemas de seguridad, vea [dm-crypt/Specialties#Securing the unencrypted boot partition](/index.php/Dm-crypt/Specialties#Securing_the_unencrypted_boot_partition "Dm-crypt/Specialties").
 
 Otro factor importante a tener en cuenta es cómo se manejarán el espacio de swap y la suspensión del sistema, vea [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
 
 ### Particiones físicas
 
-En el caso más simple, las capas cifradas pueden hacerse directamente sobre las particiones físicas; vea [Partitioning](/index.php/Partitioning "Partitioning") para ver los métodos para crearlas. Al igual que en un sistema sin cifrar, será suficiente con una partición raíz, además de otra para `/boot`, como se indicó anteriormente. Este método permite decidir qué particiones cifrar y cuáles dejar sin cifrar, y funciona igual, independientemente del número de discos implicados. También será posible añadir o eliminar particiones en el futuro, pero el tamaño de una partición estará limitado por el tamaño del disco que lo aloja. Por último, tenga en cuenta que para abrir cada partición encriptada se necesitarán claves o frases de acceso separadas, aunque esto se puede automatizar durante el arranque usando el archivo `crypttab`, vea [Dm-crypt/System configuration#crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration").
+En el caso más simple, las capas cifradas pueden hacerse directamente sobre las particiones físicas; vea [Partitioning (Español)](/index.php/Partitioning_(Espa%C3%B1ol) "Partitioning (Español)") para ver los métodos para crearlas. Al igual que en un sistema sin cifrar, será suficiente con una partición raíz, además de otra para `/boot`, como se indicó anteriormente. Este método permite decidir qué particiones cifrar y cuáles dejar sin cifrar, y funciona igual, independientemente del número de discos implicados. También será posible añadir o eliminar particiones en el futuro, pero el tamaño de una partición estará limitado por el tamaño del disco que lo aloja. Por último, tenga en cuenta que para abrir cada partición encriptada se necesitarán claves o frases de acceso separadas, aunque esto se puede automatizar durante el arranque usando el archivo `crypttab`, vea [Dm-crypt/System configuration#crypttab](/index.php/Dm-crypt/System_configuration#crypttab "Dm-crypt/System configuration").
 
 ### Dispositivos de bloques apilados
 
-Sin embargo, si se necesita más flexibilidad, dm-crypt puede coexistir con otros dispositivos de bloque apilados como [LVM](/index.php/LVM "LVM") y [RAID](/index.php/RAID "RAID"). Los contenedores cifrados pueden residir por debajo o por encima de otros dispositivos de bloque apilados:
+Sin embargo, si se necesita más flexibilidad, dm-crypt puede coexistir con otros dispositivos de bloque apilados como [LVM (Español)](/index.php/LVM_(Espa%C3%B1ol) "LVM (Español)") y [RAID (Español)](/index.php/RAID_(Espa%C3%B1ol) "RAID (Español)"). Los contenedores cifrados pueden residir por debajo o por encima de otros dispositivos de bloque apilados:
 
 *   Si los dispositivos LVM/RAID se crean encima de la capa cifrada, será posible agregar, quitar y cambiar el tamaño de los sistemas de archivos de la misma partición cifrada libremente, y solo se necesitará una clave o frase de acceso para todos ellos. Dado que la capa cifrada reside en una partición física, no será posible, sin embargo, explotar la capacidad de LVM y RAID para abarcar varios discos.
 *   Si la capa cifrada se crea en la parte superior de los dispositivos LVM/RAID, todavía será posible reorganizar los sistemas de archivos en el futuro, pero con mayor complejidad, ya que las capas de cifrado tendrán que ser ajustadas en consecuencia. Además, se requerirán frases secretas o claves separadas para abrir cada dispositivo encriptado. Esta, sin embargo, es la única opción para sistemas que necesitan sistemas de archivos cifrados que abarquen múltiples discos.
 
 ### Subvolúmenes Btrfs
 
-Las [características de subvolumes](/index.php/Btrfs#Subvolumes "Btrfs") integradas en el sistema de archivos [Btrfs](/index.php/Btrfs "Btrfs") se pueden usar con dm-crypt, reemplazando completamente la necesidad de LVM si no se requieren otros sistemas de archivos. Sin embargo, tenga en cuenta que los archivos de intercambio [no son soportados](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F) por brtrfs, por lo que es necesaria una partición [swap](/index.php/Encrypted_swap "Encrypted swap") cifrada si se desea un espacio de [intercambio](/index.php/Swap "Swap") . Vea también [Dm-crypt/Encrypting an entire system#Btrfs subvolumes with swap](/index.php/Dm-crypt/Encrypting_an_entire_system#Btrfs_subvolumes_with_swap "Dm-crypt/Encrypting an entire system").
+Las [características de subvolumes](/index.php/Btrfs#Subvolumes "Btrfs") integradas en el sistema de archivos [Btrfs](/index.php/Btrfs "Btrfs") se pueden usar con dm-crypt, reemplazando completamente la necesidad de LVM si no se requieren otros sistemas de archivos. Sin embargo, tenga en cuenta que los archivos de intercambio [no son soportados](https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F) por brtrfs, por lo que es necesaria una partición [de intercambio](/index.php/Encrypted_swap "Encrypted swap") cifrada si se desea un espacio de [intercambio](/index.php/Swap_(Espa%C3%B1ol) "Swap (Español)"). Vea también [Dm-crypt/Encrypting an entire system (Español)#Subvolúmenes btrfs con espacio de intercambio](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#Subvol.C3.BAmenes_btrfs_con_espacio_de_intercambio "Dm-crypt/Encrypting an entire system (Español)").
 
 ### Partición de arranque (GRUB)
+
+Véase [dm-crypt/Encrypting an entire system (Español)#Cifrar partición de arranque (GRUB)](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol)#Cifrar_partici.C3.B3n_de_arranque_.28GRUB.29 "Dm-crypt/Encrypting an entire system (Español)").

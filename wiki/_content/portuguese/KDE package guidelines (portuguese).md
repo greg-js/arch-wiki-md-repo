@@ -144,7 +144,7 @@ xdg-icon-resource forceupdate --theme hicolor &> /dev/null
 
 ```
 
-Muitos pacotes instalam arquivos `.desktop` compatíveis com o Freedesktop.org e registram entradas MimeType neles. A execução do `update-desktop-database` em `post_install` é recomendada, já que essa ferramenta é fornecida pelo pacote [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils), que é uma dependência do [pacote qt4](https://www.archlinux.org/packages/?name=pacote+qt4). Então use esta linha:
+Muitos pacotes instalam arquivos `.desktop` compatíveis com o Freedesktop.org e registram entradas MimeType neles. A execução do `update-desktop-database` em `post_install` é recomendada, já que essa ferramenta é fornecida pelo pacote [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils), que é uma dependência do pacote [qt4](https://www.archlinux.org/packages/?name=qt4). Então use esta linha:
 
 ```
 update-desktop-database -q

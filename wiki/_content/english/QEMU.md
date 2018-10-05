@@ -1199,7 +1199,7 @@ Although it is a bit buggy, it performs better than std and cirrus. Install the 
 
 ### virtio
 
-`virtio-vga` / `virtio-gpu` is a paravirtual 3D graphics driver based on [virgl](https://virgil3d.github.io/). Currently a work in progress, supporting only very recent (>= 4.4) Linux guests with [mesa](https://www.archlinux.org/packages/?name=mesa) (>=11.2) compiled with the option `--with-gallium-drivers=virgl`.
+`virtio-vga` / `virtio-gpu` is a paravirtual 3D graphics driver based on [virgl](https://virgil3d.github.io/). Currently a work in progress, supporting only very recent (>= 4.4) Linux guests with [mesa](https://www.archlinux.org/packages/?name=mesa) (>=11.2) compiled with the option `gallium-drivers=virgl`.
 
 To enable 3D acceleration on the guest system select this vga with `-vga virtio` and enable the opengl context in the display device with `-display sdl,gl=on` or `-display gtk,gl=on` for the sdl and gtk display output respectively. Successful configuration can be confirmed looking at the kernel log in the guest:
 
@@ -1209,10 +1209,6 @@ To enable 3D acceleration on the guest system select this vga with `-vga virtio`
 [drm] virgl 3d acceleration enabled
 
 ```
-
-As of September 2016, support for the spice protocol is under development and can be tested installing the development release of [spice](https://www.archlinux.org/packages/?name=spice) (>= 0.13.2) and recompiling qemu.
-
-For more information visit [kraxel's blog](https://www.kraxel.org/blog/tag/virgl/).
 
 ### cirrus
 
@@ -1757,7 +1753,7 @@ $ qemu-system-x86_64 -drive file=*disk_image*,format=qcow2,l2-cache-size=4M
 ```
 
 *   If you are running multiple virtual machines concurrently that all have the same operating system installed, you can save memory by enabling [kernel same-page merging](https://en.wikipedia.org/wiki/Kernel_SamePage_Merging_(KSM) "wikipedia:Kernel SamePage Merging (KSM)"). See [#Enabling KSM](#Enabling_KSM).
-*   In some cases, memory can be reclaimed from running virtual machines by running a memory ballooning driver in the guest operating system and launching QEMU using `--device virtio-balloon`.
+*   In some cases, memory can be reclaimed from running virtual machines by running a memory ballooning driver in the guest operating system and launching QEMU using `-device virtio-balloon`.
 *   It is possible to use a emulation layer for an ICH-9 AHCI controller (although it may be unstable). The AHCI emulation supports [NCQ](https://en.wikipedia.org/wiki/Native_Command_Queuing "wikipedia:Native Command Queuing"), so multiple read or write requests can be outstanding at the same time:
 
 ```

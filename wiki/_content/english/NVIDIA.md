@@ -24,17 +24,18 @@ This article covers the proprietary [NVIDIA](http://www.nvidia.com) graphics car
     *   [2.1 Minimal configuration](#Minimal_configuration)
     *   [2.2 Automatic configuration](#Automatic_configuration)
     *   [2.3 NVIDIA Settings](#NVIDIA_Settings)
-    *   [2.4 Multiple monitors](#Multiple_monitors)
-        *   [2.4.1 Using NVIDIA Settings](#Using_NVIDIA_Settings)
-        *   [2.4.2 ConnectedMonitor](#ConnectedMonitor)
-        *   [2.4.3 TwinView](#TwinView)
-            *   [2.4.3.1 Manual CLI configuration with xrandr](#Manual_CLI_configuration_with_xrandr)
-            *   [2.4.3.2 Vertical sync using TwinView](#Vertical_sync_using_TwinView)
-            *   [2.4.3.3 Gaming using TwinView](#Gaming_using_TwinView)
-        *   [2.4.4 Mosaic mode](#Mosaic_mode)
-            *   [2.4.4.1 Base Mosaic](#Base_Mosaic)
-            *   [2.4.4.2 SLI Mosaic](#SLI_Mosaic)
-    *   [2.5 Driver persistence](#Driver_persistence)
+    *   [2.4 Multiple GPUs/SLI](#Multiple_GPUs.2FSLI)
+    *   [2.5 Multiple monitors](#Multiple_monitors)
+        *   [2.5.1 Using NVIDIA Settings](#Using_NVIDIA_Settings)
+        *   [2.5.2 ConnectedMonitor](#ConnectedMonitor)
+        *   [2.5.3 TwinView](#TwinView)
+            *   [2.5.3.1 Manual CLI configuration with xrandr](#Manual_CLI_configuration_with_xrandr)
+            *   [2.5.3.2 Vertical sync using TwinView](#Vertical_sync_using_TwinView)
+            *   [2.5.3.3 Gaming using TwinView](#Gaming_using_TwinView)
+        *   [2.5.4 Mosaic mode](#Mosaic_mode)
+            *   [2.5.4.1 Base Mosaic](#Base_Mosaic)
+            *   [2.5.4.2 SLI Mosaic](#SLI_Mosaic)
+    *   [2.6 Driver persistence](#Driver_persistence)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -191,6 +192,10 @@ $ nvidia-settings --load-config-only
 See [Autostarting](/index.php/Autostarting "Autostarting") to start this command on every boot.
 
 **Note:** [Xorg](/index.php/Xorg "Xorg") may not start or crash on startup after saving `nvidia-settings` changes. Adjusting or deleting the generated `~/.nvidia-settings-rc` and/or [Xorg](/index.php/Xorg "Xorg") file(s) should recover normal startup.
+
+### Multiple GPUs/SLI
+
+If you're planning to use an SLI setup, you should check [NVIDIA/Tips and tricks#Enabling SLI](/index.php/NVIDIA/Tips_and_tricks#Enabling_SLI "NVIDIA/Tips and tricks") as manual configuration changes might be required for a working setup.
 
 ### Multiple monitors
 

@@ -389,7 +389,7 @@
 
 *   **[Uzbl](https://en.wikipedia.org/wiki/ru:Uzbl "wikipedia:ru:Uzbl")** — Группа инструментов веб-интерфейса, которая придерживается философии Unix
 
-	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://www.archlinux.org/packages/?name=uzbl-browser)
+	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://aur.archlinux.org/packages/uzbl-browser/)
 
 *   **Vimb** — Быстрый и легковесный веб-браузер в стиле vim, основанный на движке webkit и тулките GTK
 
@@ -535,7 +535,7 @@
 
 *   **[Tribler](https://en.wikipedia.org/wiki/Tribler "wikipedia:Tribler")** — Клиент bittorrent системы обмена файлами 4-го поколения
 
-	[http://www.tribler.org](http://www.tribler.org) || [tribler](https://aur.archlinux.org/packages/tribler/)
+	[http://www.tribler.org](http://www.tribler.org) || [tribler](https://www.archlinux.org/packages/?name=tribler)
 
 ###### Бэкенд libktorrent
 
@@ -795,7 +795,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Psi](https://en.wikipedia.org/wiki/ru:Psi клиент Jabber
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi)
 
 *   **Psi+** — Расширенная версия клиента Psi с большим количеством новых [возможностей](http://psi-plus.com/wiki/en:features#differences_between_psi_beta_version_and_the_official_psi_015-dev_version)
 
@@ -953,7 +953,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Psi](https://en.wikipedia.org/wiki/ru:Psi "wikipedia:ru:Psi")** — Основанный на Qt клиент Jabber, поддерживающий видеоконференции (начиная с версии 0.13)
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/) [psi-plus-git](https://aur.archlinux.org/packages/psi-plus-git/)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi) [psi-plus-git](https://aur.archlinux.org/packages/psi-plus-git/)
 
 *   **[QuteCom](https://en.wikipedia.org/wiki/QuteCom "wikipedia:QuteCom")** — Приложение VoIP, которое позволяет вам бесплатно совершать голосовые и видео звонки с компьютера на компьютер и объединить все ваши IM-контакты в одном месте (прежнее название - Wengo Phone)
 
@@ -1045,7 +1045,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **RSS Guard** — Крошечная программа чтения новостей RSS и ATOM, разработанная с использованием фреймворка Qt
 
-	[https://bitbucket.org/skunkos/rssguard](https://bitbucket.org/skunkos/rssguard) || [rssguard](https://aur.archlinux.org/packages/rssguard/)
+	[https://bitbucket.org/skunkos/rssguard](https://bitbucket.org/skunkos/rssguard) || [rssguard](https://www.archlinux.org/packages/?name=rssguard)
 
 *   **[RSSOwl](https://en.wikipedia.org/wiki/RSSOwl "wikipedia:RSSOwl")** — Мощный агрегатор фидов (feeds) RSS и Atom, написанный на Java с использованием Eclipse Rich Client Platform и SWT в качестве тулкита виджетов
 
@@ -1065,7 +1065,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **QuiteRSS** — Программа чтения фидов (feeds) RSS/Atom, написанная на Qt/С++
 
-	[http://quiterss.org/ru/node](http://quiterss.org/ru/node) || [quiterss](https://aur.archlinux.org/packages/quiterss/)
+	[http://quiterss.org/ru/node](http://quiterss.org/ru/node) || [quiterss](https://www.archlinux.org/packages/?name=quiterss)
 
 #### Подкаст-клиенты
 
@@ -1319,7 +1319,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **fbv** — Очень простая программа просмотра графических файлов для framebuffer-консоли
 
-	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://aur.archlinux.org/packages/fbv/)
+	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://www.archlinux.org/packages/?name=fbv)
 
 *   **fim** — Сильно настраиваемая framebuffer-программа просмотра изображений с поддержкой сценариев, основанная на *fbi*
 
@@ -1543,7 +1543,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[FreeCAD](https://en.wikipedia.org/wiki/ru:FreeCAD_(Juergen_Riegel%27s) "wikipedia:ru:FreeCAD (Juergen Riegel's)")** — Программа САПР/CAE, основанная на OpenCascade, Qt и Python, с такими возможностями, как записи макросов, верстка и способность работать в качестве сервера
 
-	[http://sourceforge.net/projects/free-cad/](http://sourceforge.net/projects/free-cad/) || [freecad](https://www.archlinux.org/packages/?name=freecad)
+	[http://sourceforge.net/projects/free-cad/](http://sourceforge.net/projects/free-cad/) || [freecad](https://aur.archlinux.org/packages/freecad/)
 
 *   **LeoCAD** — Программа САПР для создания виртуальных моделей LEGO. Имеет простой в использовании интерфейс и, на данный момент, около 6000 различных кубиков, созданных сообществом LDraw
 
@@ -1593,6 +1593,8 @@ eDonkey по-прежнему является второй по величин�
 
 Смотрите статью [Создание скриншотов](/index.php/Taking_a_screenshot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Taking a screenshot (Русский)").
 
+*   **Joxi** - очень удобная программа для скриншотов. Есть реклама.
+
 ### Аудио
 
 #### Аудиосистемы
@@ -1633,7 +1635,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://herrie.info/](http://herrie.info/) || [herrie](https://aur.archlinux.org/packages/herrie/)
 
-*   **[MOC](/index.php/Moc "Moc")** — Консольный аудио проигрыватель Ncurses с поддержкой форматов MP3, OGG и WAV
+*   **[MOC](/index.php/MOC "MOC")** — Консольный аудио проигрыватель Ncurses с поддержкой форматов MP3, OGG и WAV
 
 	[http://moc.daper.net/](http://moc.daper.net/) || [moc](https://www.archlinux.org/packages/?name=moc)
 
@@ -1669,7 +1671,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Amarok](/index.php/Amarok "Amarok")** — Зрелый, основанный на Qt проигрыватель, славящийся своим богатым функционалом
 
-	[http://amarok.kde.org/](http://amarok.kde.org/) || [amarok](https://www.archlinux.org/packages/?name=amarok)
+	[http://amarok.kde.org/](http://amarok.kde.org/) || [amarok](https://aur.archlinux.org/packages/amarok/)
 
 *   **[aTunes](https://en.wikipedia.org/wiki/ru:aTunes "wikipedia:ru:aTunes")** — Аудио проигрыватель, написанный на Java
 
@@ -1855,7 +1857,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Puddletag](https://en.wikipedia.org/wiki/Puddletag "wikipedia:Puddletag")** — Замена знаменитого MP3tag из Windows
 
-	[http://puddletag.sourceforge.net/](http://puddletag.sourceforge.net/) || [puddletag](https://www.archlinux.org/packages/?name=puddletag)
+	[http://puddletag.sourceforge.net/](http://puddletag.sourceforge.net/) || [puddletag](https://aur.archlinux.org/packages/puddletag/)
 
 *   **Qoobar** — Универсальная QT-программа для работы с аудиотэгами (специализируется на классической музыке)
 
@@ -2069,7 +2071,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[RecordMyDesktop](https://en.wikipedia.org/wiki/ru:RecordMyDesktop "wikipedia:ru:RecordMyDesktop")** — Простая в использовании утилита, производящая запись вашего рабочего стола в файлы формата *.ogg*, с интерфейсами CLI, Qt или GTK+
 
-	[http://recordmydesktop.sourceforge.net/](http://recordmydesktop.sourceforge.net/) || [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop) [gtk-recordmydesktop](https://www.archlinux.org/packages/?name=gtk-recordmydesktop) [qt-recordmydesktop](https://www.archlinux.org/packages/?name=qt-recordmydesktop)
+	[http://recordmydesktop.sourceforge.net/](http://recordmydesktop.sourceforge.net/) || [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop) [gtk-recordmydesktop](https://www.archlinux.org/packages/?name=gtk-recordmydesktop) [qt-recordmydesktop](https://aur.archlinux.org/packages/qt-recordmydesktop/)
 
 *   **simplescreenrecorder** — Программа записи экрана с богатым функционалом, написанная на C++/Qt4 и поддерживающая X11 и OpenGL
 
@@ -2263,7 +2265,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Ninja-IDE](https://en.wikipedia.org/wiki/Ninja-IDE "wikipedia:Ninja-IDE")** — Кроссплатформенная интегрированная среда разработки (IDE), работающая в Linux/X11, Mac OS X и Windows. Используется, в частности, для разработки на Python
 
-	[http://ninja-ide.org/](http://ninja-ide.org/) || [ninja-ide](https://www.archlinux.org/packages/?name=ninja-ide)
+	[http://ninja-ide.org/](http://ninja-ide.org/) || [ninja-ide](https://aur.archlinux.org/packages/ninja-ide/)
 
 *   **[Phpstorm](https://en.wikipedia.org/wiki/ru:PhpStorm "wikipedia:ru:PhpStorm")** — Коммерческая кроссплатформенная IDE для PHP, основанная на платформе JetBrains' IntelliJ IDEA и предоставляющая редактор PHP, HTML и JavaScript с анализом кода на лету, предотвращением ошибок и автоматическим рефакторингом кода PHP и JavaScript
 
@@ -2305,7 +2307,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[KMSCON](/index.php/KMSCON "KMSCON")** — Простой эмулятор терминала, основанный на kernel mode setting (KMS) linux
 
-	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://aur.archlinux.org/packages/kmscon/)
+	[https://github.com/dvdhrm/kmscon](https://github.com/dvdhrm/kmscon) || [kmscon](https://www.archlinux.org/packages/?name=kmscon)
 
 *   **[Konsole](https://en.wikipedia.org/wiki/ru:Konsole "wikipedia:ru:Konsole")** — Эмулятор терминала, включенный в окружение [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)")
 
@@ -2935,7 +2937,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[Lostfiles](/index.php/Lostfiles "Lostfiles")** — Скрипт для обнаружения файлов, не принадлежащих ни одному пакету
 
-	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://aur.archlinux.org/packages/lostfiles/)
+	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://www.archlinux.org/packages/?name=lostfiles)
 
 *   **[Pacmatic](/index.php/Enhancing_Arch_Linux_Stability_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A0.D0.B0.D1.81.D1.81.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_pacmatic "Enhancing Arch Linux Stability (Русский)")** — Обертка для Pacman, которая проверяет новости Arch перед обновлением, избегает частичных обновлений и предупреждает об изменениях в конфигурационных файлах
 
@@ -3425,7 +3427,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **llpp** — Очень быстрая программа чтения PDF, основанная на MuPDF и поддерживающая непрерывную прокрутку страниц, закладки и поиск по тексту во всем документе
 
-	[http://repo.or.cz/w/llpp.git](http://repo.or.cz/w/llpp.git) || [llpp](https://aur.archlinux.org/packages/llpp/)
+	[http://repo.or.cz/w/llpp.git](http://repo.or.cz/w/llpp.git) || [llpp](https://www.archlinux.org/packages/?name=llpp)
 
 *   **[MuPDF](https://en.wikipedia.org/wiki/MuPDF "wikipedia:MuPDF")** — Очень быстрая программа просмотра PDF и XPS, а также тулкит, написанный на portable C. Имеет поддержку шрифтов CJK
 
@@ -3541,7 +3543,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **gscan2pdf** — Производит сканирование, вызывает движок OCR, осуществляет небольшую постобработку и создает готовый документ
 
-	[http://gscan2pdf.sourceforge.net/](http://gscan2pdf.sourceforge.net/) || [gscan2pdf](https://aur.archlinux.org/packages/gscan2pdf/)
+	[http://gscan2pdf.sourceforge.net/](http://gscan2pdf.sourceforge.net/) || [gscan2pdf](https://www.archlinux.org/packages/?name=gscan2pdf)
 
 *   **OCRFeeder** — Python GUI для Gnome, который выполняет анализ и передачу документа и может использовать движки CuneiForm, GOCR, Ocrad или Tesseract. Может производить импорт из файлов PDF или изображений, а экспортировать в HTML или OpenDocument
 
@@ -3771,7 +3773,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **hashdeep** — Кроссплатформенная утилита для вычисления хэшей и контрольных сумм любого количества файлов
 
-	[http://md5deep.sourceforge.net/](http://md5deep.sourceforge.net/) || [hashdeep](https://aur.archlinux.org/packages/hashdeep/)
+	[http://md5deep.sourceforge.net/](http://md5deep.sourceforge.net/) || [hashdeep](https://www.archlinux.org/packages/?name=hashdeep)
 
 *   **MassHash** — Набор инструментов для работы с хэшами файлов (с интерфейсами CLI и GTK+ GUI), написанный на [python](/index.php/Python_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Python (Русский)"). Поддерживает алгоритмы MD5, SHA-1, SHA-224, SHA-256, SHA-384 и SHA-512
 
@@ -4337,10 +4339,6 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://www.freedesktop.org/wiki/Software/Plymouth/](http://www.freedesktop.org/wiki/Software/Plymouth/) || [plymouth](https://aur.archlinux.org/packages/plymouth/)
 
-*   **[Splashy](/index.php/Splashy_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Splashy (Русский)")** — Графический процесс загрузки, разработанный для замены устаревшей программы Bootsplash
-
-	[https://alioth.debian.org/projects/splashy/](https://alioth.debian.org/projects/splashy/) || [splashy-full](https://aur.archlinux.org/packages/splashy-full/)
-
 *   **xsplash** — Новая программа, используемая в Ubuntu, начиная с версии 9.10
 
 	[https://launchpad.net/xsplash](https://launchpad.net/xsplash) || [xsplash-bzr](https://aur.archlinux.org/packages/xsplash-bzr/)
@@ -4383,7 +4381,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **twin** — Текстовый оконный менеджер
 
-	[http://sourceforge.net/projects/twin/](http://sourceforge.net/projects/twin/) || [twin](https://aur.archlinux.org/packages/twin/)
+	[http://sourceforge.net/projects/twin/](http://sourceforge.net/projects/twin/) || [twin](https://www.archlinux.org/packages/?name=twin)
 
 ##### Графические
 
@@ -4625,7 +4623,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **[GnuCash](https://en.wikipedia.org/wiki/ru:GnuCash "wikipedia:ru:GnuCash")** — Финансовое приложение, реализующее систему бухгалтерского учета с двойной записью, с функциями, полезными для ведения бухгалтерии на малых предприятиях
 
-	[http://www.gnucash.org/](http://www.gnucash.org/) || [gnucash](https://aur.archlinux.org/packages/gnucash/)
+	[http://www.gnucash.org/](http://www.gnucash.org/) || [gnucash](https://www.archlinux.org/packages/?name=gnucash)
 
 *   **[Grisbi](https://en.wikipedia.org/wiki/ru:Grisbi "wikipedia:ru:Grisbi")** — Персональная финансовая система, которую можно использовать, в том числе, и на предприятиях
 
@@ -4826,7 +4824,7 @@ eDonkey по-прежнему является второй по величин�
 
 *   **PCSXR** — Эмулятор PlayStation; Debian-форк заброшенного оригинального PCSX
 
-	[http://pcsxr.codeplex.com/](http://pcsxr.codeplex.com/) || [pcsxr](https://www.archlinux.org/packages/?name=pcsxr)
+	[http://pcsxr.codeplex.com/](http://pcsxr.codeplex.com/) || [pcsxr](https://aur.archlinux.org/packages/pcsxr/)
 
 *   **PCSX2** — Эмулятор PlayStation 2\. До сих пор поддерживается и разрабатывается. Требует наличия файлов BIOS
 

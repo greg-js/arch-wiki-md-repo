@@ -116,7 +116,6 @@ There are several Bitcoin miners in the [official repositories](/index.php/Offic
 
 *   [Bitcoin Whitepaper](https://bitcoin.org/bitcoin.pdf) - The original whitepaper published by Satoshi Nakamoto before the launch of the live Bitcoin network.
 *   [bitcoin.org](https://www.bitcoin.org/) - Today the site is an independent open source project with contributors from around the world. Final publication authority is held by the co-owners, but all regular activity is organized through the public pull request process and managed by the site co-maintainers.
-*   [bitcoincore.org](https://bitcoincore.org/) - Official website of the Bitcoin reference implementation that is used by the majority of nodes on the network.
 *   [bitcoin.it Wiki](https://en.bitcoin.it/wiki/Main_Page) - Bitcoin Wikipedia.
 *   [Satoshi Nakamoto Institute](http://satoshi.nakamotoinstitute.org/) - Thoughts and quotes from the designer.
 *   [Coin Dance](https://coin.dance/) - Broad purpose network statistics.

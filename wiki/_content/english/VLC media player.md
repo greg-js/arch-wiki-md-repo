@@ -122,10 +122,10 @@ VLC automatically tries to use an available API, but you can override it by goin
 
 ### systemd service
 
-VLC's web interface can be started from systemd. First, you need to create a default user. This example will use UID 75 since it's not reserved according to [DeveloperWiki:UID / GID Database](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database").
+VLC's web interface can be started from systemd. First, you need to create a default user:
 
 ```
-# useradd -c "VLC daemon" -d / -G audio -M -p \! -r -s /usr/bin/nologin -u 75 -U vlcd
+# useradd -c "VLC daemon" -d / -G audio -M -p \! -r -s /usr/bin/nologin -U vlcd
 
 ```
 

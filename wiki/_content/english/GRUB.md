@@ -30,15 +30,18 @@ Related articles
     *   [4.4 Encryption](#Encryption)
         *   [4.4.1 Root partition](#Root_partition)
         *   [4.4.2 Boot partition](#Boot_partition)
-    *   [4.5 Multiple entries](#Multiple_entries)
-    *   [4.6 Chainloading an Arch Linux .efi file](#Chainloading_an_Arch_Linux_.efi_file)
-    *   [4.7 Dual-booting](#Dual-booting)
-        *   [4.7.1 "Shutdown" menu entry](#.22Shutdown.22_menu_entry)
-        *   [4.7.2 "Restart" menu entry](#.22Restart.22_menu_entry)
-        *   [4.7.3 "Firmware setup" menu entry (UEFI only)](#.22Firmware_setup.22_menu_entry_.28UEFI_only.29)
-        *   [4.7.4 GNU/Linux menu entry](#GNU.2FLinux_menu_entry)
-        *   [4.7.5 Windows installed in UEFI/GPT Mode menu entry](#Windows_installed_in_UEFI.2FGPT_Mode_menu_entry)
-        *   [4.7.6 Windows installed in BIOS/MBR mode](#Windows_installed_in_BIOS.2FMBR_mode)
+    *   [4.5 Boot menu entries](#Boot_menu_entries)
+        *   [4.5.1 GRUB commands](#GRUB_commands)
+            *   [4.5.1.1 "Shutdown" menu entry](#.22Shutdown.22_menu_entry)
+            *   [4.5.1.2 "Restart" menu entry](#.22Restart.22_menu_entry)
+            *   [4.5.1.3 "Firmware setup" menu entry (UEFI only)](#.22Firmware_setup.22_menu_entry_.28UEFI_only.29)
+        *   [4.5.2 EFI binaries](#EFI_binaries)
+            *   [4.5.2.1 UEFI Shell](#UEFI_Shell)
+            *   [4.5.2.2 Chainloading an Arch Linux .efi file](#Chainloading_an_Arch_Linux_.efi_file)
+        *   [4.5.3 Dual-booting](#Dual-booting)
+            *   [4.5.3.1 GNU/Linux menu entry](#GNU.2FLinux_menu_entry)
+            *   [4.5.3.2 Windows installed in UEFI/GPT Mode menu entry](#Windows_installed_in_UEFI.2FGPT_Mode_menu_entry)
+            *   [4.5.3.3 Windows installed in BIOS/MBR mode](#Windows_installed_in_BIOS.2FMBR_mode)
 *   [5 Using the command shell](#Using_the_command_shell)
     *   [5.1 Pager support](#Pager_support)
     *   [5.2 Using the command shell environment to boot operating systems](#Using_the_command_shell_environment_to_boot_operating_systems)
@@ -206,13 +209,11 @@ Remember to always [#Generate the main configuration file](#Generate_the_main_co
 
 To pass custom additional arguments to the Linux image, you can set the `GRUB_CMDLINE_LINUX` + `GRUB_CMDLINE_LINUX_DEFAULT` variables in `/etc/default/grub`. The two are appended to each other and passed to kernel when generating regular boot entries. For the *recovery* boot entry, only `GRUB_CMDLINE_LINUX` is used in the generation.
 
-It is not necessary to use both, but can be useful. For example, you could use `GRUB_CMDLINE_LINUX_DEFAULT="resume=/dev/sdaX quiet"` where `sda**X**` is your swap partition to enable resume after hibernation. This would generate a recovery boot entry without the resume and without `quiet` suppressing kernel messages during a boot from that menu entry. Though, the other (regular) menu entries would have them as options.
+It is not necessary to use both, but can be useful. For example, you could use `GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID=*uuid-of-swap-partition* quiet"` where `*uuid-of-swap-partition*` is the [UUID](/index.php/UUID "UUID") of your swap partition to enable resume after [hibernation](/index.php/Hibernation "Hibernation"). This would generate a recovery boot entry without the resume and without `quiet` suppressing kernel messages during a boot from that menu entry. Though, the other (regular) menu entries would have them as options.
 
 By default *grub-mkconfig* determines the [UUID](/index.php/UUID "UUID") of the root filesystem for the configuration. To disable this, uncomment `GRUB_DISABLE_LINUX_UUID=true`.
 
 For generating the GRUB recovery entry you have to ensure that `GRUB_DISABLE_RECOVERY` is not set to `true` in `/etc/default/grub`.
-
-You can also use `GRUB_CMDLINE_LINUX="resume=UUID=*uuid-of-swap-partition*"`
 
 See [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for more info.
 
@@ -300,29 +301,15 @@ Without further changes you will be prompted twice for a passhrase: the first fo
 *   In order to perform system updates involving the `/boot` mount point, ensure that the encrypted `/boot` is unlocked and mounted before performing an update. With a separate `/boot` partition, this may be accomplished automatically on boot by using [crypttab](/index.php/Crypttab "Crypttab") with a [keyfile](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption").
 *   If you experience issues getting the prompt for a password to display (errors regarding cryptouuid, cryptodisk, or "device not found"), try reinstalling grub and appending `--modules="part_gpt part_msdos"` to the end of your `grub-install` command.
 
-### Multiple entries
-
-For tips on managing multiple GRUB entries, for example when using both [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernels, see [GRUB/Tips and tricks#Multiple entries](/index.php/GRUB/Tips_and_tricks#Multiple_entries "GRUB/Tips and tricks").
-
-### Chainloading an Arch Linux .efi file
-
-If you have an *.efi* file generated from following [Secure Boot](/index.php/Secure_Boot "Secure Boot") or other means, `/etc/grub.d/40_custom` can be edited to add a new menu entry before regenerating `grub.cfg` with `grub-mkconfig`.
-
- `/etc/grub.d/40_custom` 
-```
-menuentry 'Arch Linux .efi' {
-insmod part_gpt
-insmod chain
-set root='(hdX,gptY)'
-chainloader /EFI/*path*/*file*.efi
-}
-```
-
-### Dual-booting
+### Boot menu entries
 
 The best way to add other entries is editing `/etc/grub.d/40_custom` or `/boot/grub/custom.cfg`. The entries in this file will be automatically added after rerunning `grub-mkconfig`.
 
-#### "Shutdown" menu entry
+For tips on managing multiple GRUB entries, for example when using both [linux](https://www.archlinux.org/packages/?name=linux) and [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) kernels, see [GRUB/Tips and tricks#Multiple entries](/index.php/GRUB/Tips_and_tricks#Multiple_entries "GRUB/Tips and tricks").
+
+#### GRUB commands
+
+##### "Shutdown" menu entry
 
 ```
 menuentry "System shutdown" {
@@ -332,7 +319,7 @@ menuentry "System shutdown" {
 
 ```
 
-#### "Restart" menu entry
+##### "Restart" menu entry
 
 ```
 menuentry "System restart" {
@@ -342,7 +329,7 @@ menuentry "System restart" {
 
 ```
 
-#### "Firmware setup" menu entry (UEFI only)
+##### "Firmware setup" menu entry (UEFI only)
 
 ```
 if [ ${grub_platform} == "efi" ]; then
@@ -352,7 +339,44 @@ if [ ${grub_platform} == "efi" ]; then
 fi
 ```
 
-#### GNU/Linux menu entry
+#### EFI binaries
+
+When launched in UEFI mode, GRUB can chainload other EFI binaries.
+
+**Tip:** To show these menu entries only when GRUB is launched in UEFI mode, enclose them in the following `if` statement:
+```
+if [ ${grub_platform} == "efi" ]; then
+	*place UEFI-only menu entries here*
+fi
+```
+
+##### UEFI Shell
+
+You can launch [UEFI Shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface") by using placing it in the root of the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") and adding this menu entry:
+
+```
+menuentry "UEFI Shell" {
+	insmod chain
+	search --set=root --file /shellx64.efi
+	chainloader /shellx64.efi
+}
+```
+
+##### Chainloading an Arch Linux .efi file
+
+If you have an *.efi* file generated from following [Secure Boot](/index.php/Secure_Boot "Secure Boot") or other means, you can add it to the boot menu. For example:
+
+```
+menuentry "Arch Linux .efi" {
+	insmod chain
+	search --set=root --fs-uuid *FILESYSTEM_UUID*
+	chainloader /EFI/arch/vmlinuz.efi
+}
+```
+
+#### Dual-booting
+
+##### GNU/Linux menu entry
 
 Assuming that the other distribution is on partition `sda2`:
 
@@ -379,7 +403,7 @@ menuentry "Other Linux" {
 }
 ```
 
-#### Windows installed in UEFI/GPT Mode menu entry
+##### Windows installed in UEFI/GPT Mode menu entry
 
 This mode determines where the Windows bootloader resides and chain-loads it after Grub when the menu entry is selected. The main task here is finding the EFI system partition and running the bootloader from it.
 
@@ -412,7 +436,7 @@ The `$hints_string` command will determine the location of the EFI system partit
 
 These two commands assume the ESP Windows uses is mounted at `*esp*`. There might be case differences in the path to Windows's EFI file, what with being Windows, and all.
 
-#### Windows installed in BIOS/MBR mode
+##### Windows installed in BIOS/MBR mode
 
 **Note:** GRUB supports booting `bootmgr` directly and [chainloading](https://www.gnu.org/software/grub/manual/grub.html#Chain_002dloading) of partition boot sector is no longer required to boot Windows in a BIOS/MBR setup.
 
