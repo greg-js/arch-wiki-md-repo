@@ -43,7 +43,7 @@ Procede a establecer el entono en consola ajustando y/o comentando los comandos 
 
 **Sugerencia:** [NANORC](http://www.nano-editor.org/dist/v2.2/nanorc.5.html) detalla la lista completa de comandos de configuración disponibles para nano.
 
-**Note:** La linea de comandos ignoras la configuración por defecto y da prioridad a los comandos de configuración establecidos en `~/.nanorc`
+**Nota:** La linea de comandos ignora la configuración por defecto y da prioridad a los comandos de configuración establecidos en `~/.nanorc`
 
 ### Resaltado de sintaxis
 

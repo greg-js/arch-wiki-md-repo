@@ -86,9 +86,9 @@ There are several ways to achieve this on Linux:
 | MPEG-2 | Yes | No |
 | VC-1 | Yes | No |
 | H.264 | Yes | Yes |
-| HEVC (H.265) | Pascal and newer | Pascal and newer |
+| HEVC (H.265) | Some Maxwell2 and newer | Pascal and newer |
 | VP8 | Maxwell2 and newer | No |
-| VP9 | Pascal and newer | No |
+| VP9 | Some Maxwell2 and newer | No |
 
 ### Software
 

@@ -1,4 +1,8 @@
-[Yakuake](http://yakuake.kde.org/) is a top-down terminal for [KDE](/index.php/KDE "KDE") (in the style of [Guake](/index.php/Guake "Guake") for [GNOME](/index.php/GNOME "GNOME"), [Tilda](/index.php/Tilda "Tilda") or the terminal used in Quake).
+Related articles
+
+*   [KDE](/index.php/KDE "KDE")
+
+[Yakuake](https://www.kde.org/applications/system/yakuake/) is a top-down terminal for [KDE](/index.php/KDE "KDE") in the style of [Guake](/index.php/Guake "Guake") for [GNOME](/index.php/GNOME "GNOME"), [Tilda](/index.php/Tilda "Tilda") or the terminal used in Quake.
 
 ## Contents
 
@@ -21,7 +25,7 @@ $ yakuake
 
 ```
 
-After yakuake has started you can click on configure yakuake by clicking on the "Open Menu" button (middle button on the bottom right hand side of the interface) and select "Configure Shortcuts" to change the hotkey to drop/retract the terminal automatically, by default it is set to F12.
+After Yakuake has started you can click on configure Yakuake by clicking on the *Open Menu* button (middle button on the bottom right hand side of the interface) and select *Configure Shortcuts* to change the hotkey to drop/retract the terminal automatically, by default it is set to F12.
 
 ## Yakuake scripting
 
@@ -31,10 +35,10 @@ Example of such a script is given below. This includes opening tabs, renaming ta
 
 ```
 #!/bin/bash
-# Starting yakuake based on user preferences. Information based on [http://forums.gentoo.org/viewtopic-t-873915-start-0.html](http://forums.gentoo.org/viewtopic-t-873915-start-0.html)
+# Starting Yakuake based on user preferences. Information based on [http://forums.gentoo.org/viewtopic-t-873915-start-0.html](http://forums.gentoo.org/viewtopic-t-873915-start-0.html)
 # Adding sessions from previous website is broken, use this: [http://pawelkoston.pl/blog/sublime-text-3-cheatsheet-modules-web-develpment/](http://pawelkoston.pl/blog/sublime-text-3-cheatsheet-modules-web-develpment/)
 
-# This line is needed in case yakuake does not accept fcitx inputs.
+# This line is needed in case Yakuake does not accept fcitx inputs.
 /usr/bin/yakuake --im /usr/bin/fcitx --inputstyle onthespot &
 
 # gives Yakuake a couple seconds before sending dbus commands

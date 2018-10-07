@@ -33,12 +33,7 @@ The Xorg server uses the [X keyboard extension](/index.php/X_keyboard_extension 
 *   [4 Adjusting typematic delay and rate](#Adjusting_typematic_delay_and_rate)
     *   [4.1 Using xset](#Using_xset)
     *   [4.2 Using XServer startup options](#Using_XServer_startup_options)
-*   [5 Keybinding](#Keybinding)
-    *   [5.1 Third-party tools](#Third-party_tools)
-        *   [5.1.1 sxhkd](#sxhkd)
-        *   [5.1.2 actkbd](#actkbd)
-        *   [5.1.3 xbindkeys](#xbindkeys)
-*   [6 See also](#See_also)
+*   [5 See also](#See_also)
 
 ## Viewing keyboard settings
 
@@ -311,34 +306,6 @@ A more resistant way to set the typematic delay and rate is to make them the *se
 *   `-arinterval *miliseconds*` - sets the autorepeat interval (length of time in milliseconds that should elapse between autorepeat-generated keystrokes).
 
 See [Xserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xserver.1) for a full list of X server options and refer to your [display manager](/index.php/Display_manager "Display manager") for information about how to pass these options.
-
-## Keybinding
-
-When we are in a graphical environment we may want to execute a command when certain key combination is pressed (i.e. bind a command to a *keysym*). There are multiple ways to do that:
-
-*   The most portable way using low level tools, such as [acpid](/index.php/Acpid "Acpid"). Not all keys are supported, but configuration in uniform way is possible for keyboard keys, power adapter connection and even headphone jack (un)plugging events. It is also difficult to run programs inside X session correctly.
-*   The universal way using [Xorg](/index.php/Xorg "Xorg") utilities (e.g. [xbindkeys](/index.php/Xbindkeys "Xbindkeys")) and eventually your desktop environment or window manager tools.
-*   The quicker way using a third-party program to do everything in GUI, such as the Gnome Control Center.
-
-### Third-party tools
-
-#### sxhkd
-
-A simple X hotkey daemon with a powerful and compact configuration syntax. See [sxhkd](/index.php/Sxhkd "Sxhkd") for details.
-
-#### actkbd
-
-From [actkbd home page](http://users.softlab.ece.ntua.gr/~thkala/projects/actkbd/):
-
-	[actkbd](https://aur.archlinux.org/packages/actkbd/) (available in [AUR](/index.php/AUR "AUR")) is a simple daemon that binds actions to keyboard events. It recognises key combinations and can handle press, repeat and release events. Currently it only supports the linux-2.6 evdev interface. It uses a plain-text configuration file which contains all the bindings.
-
-A sample configuration and guide is available [here](http://users.softlab.ece.ntua.gr/~thkala/projects/actkbd/latest/README).
-
-#### xbindkeys
-
-[xbindkeys](/index.php/Xbindkeys "Xbindkeys") allows advanced mapping of keysyms to actions independently of the Desktop Environment.
-
-**Tip:** If you find `xbindkeys` difficult to use, try the graphical manager [xbindkeys_config-gtk2](https://aur.archlinux.org/packages/xbindkeys_config-gtk2/) from the [AUR](/index.php/AUR "AUR").
 
 ## See also
 

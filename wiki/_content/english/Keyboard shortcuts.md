@@ -8,9 +8,12 @@ This article provides a list of (not commonly known) default keyboard shortcuts 
         *   [1.2.1 Virtual console](#Virtual_console)
         *   [1.2.2 Readline](#Readline)
     *   [1.3 Xorg and Wayland](#Xorg_and_Wayland)
-*   [2 User customization](#User_customization)
+*   [2 Customization](#Customization)
     *   [2.1 Readline](#Readline_2)
     *   [2.2 Xorg](#Xorg)
+        *   [2.2.1 sxhkd](#sxhkd)
+        *   [2.2.2 actkbd](#actkbd)
+        *   [2.2.3 xbindkeys](#xbindkeys)
     *   [2.3 Key binding for X-selection-paste](#Key_binding_for_X-selection-paste)
         *   [2.3.1 XMonad Window Manager](#XMonad_Window_Manager)
 *   [3 Tips and tricks](#Tips_and_tricks)
@@ -92,7 +95,7 @@ See [Linux console#Keyboard shortcuts](/index.php/Linux_console#Keyboard_shortcu
 | `Shift+Insert`
 `Mouse Button 2` | Paste text from the [PRIMARY buffer](/index.php/Clipboard "Clipboard") | By default, Qt maps `Shift+Insert` to CLIPBOARD instead of the PRIMARY buffer (see e.g. [[1]](http://doc.qt.io/qt-5/qlineedit.html#details)) and `Ctrl+Shift+Insert` is mapped to the PRIMARY buffer. |
 
-## User customization
+## Customization
 
 ### Readline
 
@@ -100,9 +103,31 @@ See [Linux console#Keyboard shortcuts](/index.php/Linux_console#Keyboard_shortcu
 
 ### Xorg
 
-See [Keyboard configuration in Xorg#Frequently used XKB options](/index.php/Keyboard_configuration_in_Xorg#Frequently_used_XKB_options "Keyboard configuration in Xorg") for some common shortcuts, that are disabled by default.
+See [Xorg/Keyboard configuration#Frequently used XKB options](/index.php/Xorg/Keyboard_configuration#Frequently_used_XKB_options "Xorg/Keyboard configuration") for some common shortcuts, that are disabled by default.
 
-See [Keyboard configuration in Xorg#Keybinding](/index.php/Keyboard_configuration_in_Xorg#Keybinding "Keyboard configuration in Xorg") for defining custom keybindings.
+When we are in a graphical environment we may want to execute a command when certain key combination is pressed (i.e. bind a command to a *keysym*). There are multiple ways to do that:
+
+*   The most portable way using low level tools, such as [acpid](/index.php/Acpid "Acpid"). Not all keys are supported, but configuration in uniform way is possible for keyboard keys, power adapter connection and even headphone jack (un)plugging events. It is also difficult to run programs inside X session correctly.
+*   The universal way using [Xorg](/index.php/Xorg "Xorg") utilities (e.g. [xbindkeys](/index.php/Xbindkeys "Xbindkeys")) and eventually your desktop environment or window manager tools.
+*   The quicker way using a third-party program to do everything in GUI, such as the Gnome Control Center.
+
+#### sxhkd
+
+A simple X hotkey daemon with a powerful and compact configuration syntax. See [sxhkd](/index.php/Sxhkd "Sxhkd") for details.
+
+#### actkbd
+
+From [actkbd home page](http://users.softlab.ece.ntua.gr/~thkala/projects/actkbd/):
+
+	[actkbd](https://aur.archlinux.org/packages/actkbd/) (available in [AUR](/index.php/AUR "AUR")) is a simple daemon that binds actions to keyboard events. It recognises key combinations and can handle press, repeat and release events. Currently it only supports the linux-2.6 evdev interface. It uses a plain-text configuration file which contains all the bindings.
+
+A sample configuration and guide is available [here](http://users.softlab.ece.ntua.gr/~thkala/projects/actkbd/latest/README).
+
+#### xbindkeys
+
+[xbindkeys](/index.php/Xbindkeys "Xbindkeys") allows advanced mapping of keysyms to actions independently of the Desktop Environment.
+
+**Tip:** If you find `xbindkeys` difficult to use, try the graphical manager [xbindkeys_config-gtk2](https://aur.archlinux.org/packages/xbindkeys_config-gtk2/) from the [AUR](/index.php/AUR "AUR").
 
 ### Key binding for X-selection-paste
 

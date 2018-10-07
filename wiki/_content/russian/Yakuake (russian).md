@@ -1,4 +1,10 @@
-**Yakuake** — выпадающий сверху эмулятор терминала для [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)") в стиле [Tilda](/index.php/Tilda "Tilda"), [Guake](/index.php/Guake_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Guake (Русский)") для [GNOME](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)") и консоли в игре Quake.
+Ссылки по теме
+
+*   [KDE (Русский)](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)")
+
+**Состояние перевода:** На этой странице представлен перевод статьи [Yakuake](/index.php/Yakuake "Yakuake"). Дата последней синхронизации: 5 октября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Yakuake&diff=0&oldid=546149).
+
+[Yakuake](https://www.kde.org/applications/system/yakuake/) — выпадающий сверху эмулятор терминала для [KDE (Русский)](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)") в стиле [Guake (Русский)](/index.php/Guake_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Guake (Русский)") для [GNOME (Русский)](/index.php/GNOME_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "GNOME (Русский)"), [Tilda](/index.php/Tilda "Tilda") или консоли в игре Quake.
 
 ## Contents
 
@@ -10,92 +16,76 @@
 
 ## Установка
 
-[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [yakuake](https://www.archlinux.org/packages/?name=yakuake) из [официальных репозиториев](/index.php/Official_repositories_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Official repositories (Русский)").
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [yakuake](https://www.archlinux.org/packages/?name=yakuake).
 
 ## Использование
 
-После установки вы можете запустить Yakuake командой:
+После установки вы можете запустить Yakuake следующей командой:
 
 ```
 $ yakuake
 
 ```
 
-Теперь вы можете настроить Yakuake, выбрав *Open Menu* (средняя кнопка внизу справа окна терминала), затем *Configure Yakuake*. Выберите *Configure Shortcuts* для изменения сочетания клавиши для появления/исчезания терминала. По умолчанию используется клавиша `F12`.
+Теперь вы можете настроить Yakuake нажав на кнопку *Открыть меню* (средняя кнопка в правом нижнем углу окна терминала) и выбрав *Комбинации клавиш* для изменения сочетания клавиш для появления/исчезания терминала. По умолчанию используется клавиша F12.
 
 ## Управление Yakuake из скрипта
 
-Как и [Guake](/index.php/Guake_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Guake (Русский)"), Yakuake позволяет настраивать себя после запуска посредством передачи сигналов через [D-Bus](/index.php/D-Bus "D-Bus"). Таким образом, его можно использовать в сеансе, опрелеяемом пользователем (*user defined session*). Вы можете создавать вкладки, устанавливать их имена, запросить запуск конкретной команды в любой открытой вкладке или просто показать/скрыть окно Yakuake, вручную в окне любого терминала либо создав для этого скрипт. Ниже приведен пример такого скрипта.
+Как и [Guake (Русский)](/index.php/Guake_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Guake (Русский)"), Yakuake позволяет контролировать себя во время исполнения посредством передачи сигналов через [D-Bus](/index.php/D-Bus "D-Bus"). Таким образом, его можно использовать в сеансе, определяемом пользователем (user defined session). Вы можете создавать вкладки, задавать им названия, запрашивать запуск конкретной команды в любой открытой вкладке или просто показывать/скрывать окно Yakuake, вручную в терминале или создав для этого отдельный скрипт.
+
+Ниже приведён пример такого скрипта. Он включает в себя открытие и переименование вкладок, разделение окна терминала и запуск команд.
 
 ```
 #!/bin/bash
-# Starting yakuake based on user preferences. Information based on [http://forums.gentoo.org/viewtopic-t-873915-start-0.html](http://forums.gentoo.org/viewtopic-t-873915-start-0.html)
-# Adding sessions from previous website is broken, use this: [http://pawelkoston.pl/blog/sublime-text-3-cheatsheet-modules-web-develpment/](http://pawelkoston.pl/blog/sublime-text-3-cheatsheet-modules-web-develpment/)
-# This line is needed in case yakuake does not accept fcitx inputs.
-/usr/bin/yakuake --im /usr/bin/fcitx --inputstyle onthespot
+# Запуск Yakuake с настройками пользователя. Информация основана на [http://forums.gentoo.org/viewtopic-t-873915-start-0.html](http://forums.gentoo.org/viewtopic-t-873915-start-0.html)
+# Добавление сессий с предыдущего сайта больше не работает, используйте этот: [http://pawelkoston.pl/blog/sublime-text-3-cheatsheet-modules-web-develpment/](http://pawelkoston.pl/blog/sublime-text-3-cheatsheet-modules-web-develpment/)
 
-# Start iotop in its own tab.
+# Данная строка нужна в случае, если Yakuake не воспринимает ввод через fcitx.
+/usr/bin/yakuake --im /usr/bin/fcitx --inputstyle onthespot &
+
+# Это даёт Yakuake несколько секунд перед отправкой сигналов D-Bus.
+sleep 2      
+
+# Запуск htop в отдельной вкладке, разделение терминала и запуск iotop.                                                        
+TERMINAL_ID_0=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.terminalIdsForSessionId 0)
+qdbus org.kde.yakuake /yakuake/tabs setTabTitle 0 "user"
+qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 0 "htop"
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.splitTerminalLeftRight ${TERMINAL_ID_0}
+qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 1 "iotop
+
+# Запуск нескольких сессий root-пользователя в одной вкладке (сверху и снизу).                                                                                
+SESSION_ID_1=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession)
+TERMINAL_ID_1=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.terminalIdsForSessionId ${SESSION_ID_1})
+qdbus org.kde.yakuake /yakuake/tabs setTabTitle 1 "root"
+qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 2 "su"
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.splitTerminalTopBottom ${TERMINAL_ID_1}
+qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 3 "su" 
+
+# Запуск irssi в отдельной вкладке.                                                                                          
 qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
-qdbus org.kde.yakuake /yakuake/tabs setTabTitle 0 "iotop"
-qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 0 "iotop"
+qdbus org.kde.yakuake /yakuake/tabs setTabTitle 2 "irssi"
+qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 4 "ssh home -t 'tmux attach -t irssi; bash -l'" 
 
-# Start htop in its own tab.
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
-qdbus org.kde.yakuake /yakuake/tabs setTabTitle 1 "htop"
-qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 1 "htop"
-
-# Start atop in its own tab.
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
-qdbus org.kde.yakuake /yakuake/tabs setTabTitle 2 "atop"
-qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 2 "atop"
-
-# Start (watching) iptables in its own tab.
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
-qdbus org.kde.yakuake /yakuake/tabs setTabTitle 3 "iptables -nvL"
-qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 3 "~/.iptables.sh"
-
-# Start journalctl --follow --full in its own tab.
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
-qdbus org.kde.yakuake /yakuake/tabs setTabTitle 4 "journalctl"
-qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 4 "journalctl --follow --full"
-
-# Start irssi in its own tab.
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
-qdbus org.kde.yakuake /yakuake/tabs setTabTitle 5 "irssi"
-qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 5 "irssi"
-
-# Start root shell 1 in its own tab.
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
-qdbus org.kde.yakuake /yakuake/tabs setTabTitle 6 "rootshell0"
-qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 6 "sudo -i"
-
-# Start root shell 2 in its own tab.
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
-qdbus org.kde.yakuake /yakuake/tabs setTabTitle 7 "rootshell1"
-qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 7 "sudo -i"
-
-# Start shell 1 in its own tab.
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
-qdbus org.kde.yakuake /yakuake/tabs setTabTitle 8 "shell0"
-
-# Start shell 2 in its own tab.
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
-qdbus org.kde.yakuake /yakuake/tabs setTabTitle 9 "shell1"
-
-# Kill default (and now redundant) new shell tab. Already there are two shells each opened for both root and user.
-qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.removeSession 10
+# Запуск нескольких терминалов SSH в одной вкладке.                                                                                   
+SESSION_ID_2=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession)
+TERMINAL_ID_2=$(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.terminalIdsForSessionId ${SESSION_ID_2})
+qdbus org.kde.yakuake /yakuake/tabs setTabTitle 3 "work server"
+qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 5 "ssh work"
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.splitTerminalLeftRight ${TERMINAL_ID_2}
+qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal 6 "ssh work" 
 
 ```
 
 ### dbus-send вместо qdbus
 
-Вы можете заменить *qdbus* из состава [Qt](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)") более традиционной утилитой *dbus-send*. Например, чтобы показать/скрыть окно Yakuake:
+Вы можете заменить *qdbus* из состава [Qt (Русский)](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)") более традиционной утилитой *dbus-send*. Например, чтобы показать/скрыть окно Yakuake:
 
 ```
-$ dbus-send  --type=method_call --dest=org.kde.yakuake /yakuake/window org.kde.yakuake.toggleWindowState
+$ dbus-send --type=method_call --dest=org.kde.yakuake /yakuake/window org.kde.yakuake.toggleWindowState
 
 ```
 
 ## Смотрите также
 
-*   [Взаимодействие с Yakuake посредством D-BUS](http://gentoo.ru/node/21774)
+*   [Взаимодействие с Yakuake посредством D-BUS](https://gentoo.ru/node/21774)
+*   [Создание скриптов для Yakuake на coderwall.com](https://coderwall.com/p/kq9ghg/yakuake-scripting)

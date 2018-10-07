@@ -26,7 +26,6 @@ Related articles
     *   [3.1 Arch Linux](#Arch_Linux)
     *   [3.2 Debian](#Debian)
         *   [3.2.1 Manually](#Manually)
-    *   [3.3 Arch Linux image with snapshot repository](#Arch_Linux_image_with_snapshot_repository)
 *   [4 Remove Docker and images](#Remove_Docker_and_images)
 *   [5 Useful tips](#Useful_tips)
 *   [6 Troubleshooting](#Troubleshooting)
@@ -236,23 +235,6 @@ Build Debian image with [debootstrap](https://www.archlinux.org/packages/?name=d
 # cd jessie-chroot
 # tar cpf - . | docker import - debian
 # docker run -t -i --rm debian /bin/bash
-
-```
-
-### Arch Linux image with snapshot repository
-
-Arch Linux on Docker can become problematic when multiple images are created and updated each having different package versions. To keep Docker containers with consistent package versions, an unofficial [Docker image with a snapshot repository](https://registry.hub.docker.com/u/pritunl/archlinux/) is available. This allows installing new packages from the official repository as it was on the day that the snapshot was created.
-
-```
-$ docker pull pritunl/archlinux:latest
-$ docker run --rm -t -i pritunl/archlinux:latest /bin/bash
-
-```
-
-Alternatively, you could use [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive") by freezing `/etc/pacman.d/mirrorlist`:
-
-```
-Server=https://archive.archlinux.org/repos/2020/01/02/$repo/os/$arch
 
 ```
 

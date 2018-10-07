@@ -14,6 +14,7 @@ The [Deepin Desktop Environment](https://www.deepin.org/en/?language=en) (DDE) i
     *   [2.2 Via xinit](#Via_xinit)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 No background after resuming from standby](#No_background_after_resuming_from_standby)
+    *   [3.2 Wireless network does not connect](#Wireless_network_does_not_connect)
 *   [4 Bug reporting](#Bug_reporting)
 
 ## Installation
@@ -89,6 +90,17 @@ Once those two files are created in the correct directories, in order to enable 
 ```
 
 The first command makes the script you created executable, the second makes sure that the service always start at boot and the last one starts the service immediately so you can test the workaround without having to reboot the system.
+
+### Wireless network does not connect
+
+NetworkManager sets the MAC address generated randomly. This was already enabled by default, to disable it add the following lines to the NetworkManager configuration file.
+
+ `/etc/NetworkManager/NetworkManager.conf` 
+```
+[device]
+wifi.scan-rand-mac-address=no
+
+```
 
 ## Bug reporting
 

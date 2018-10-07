@@ -155,7 +155,7 @@ ExecStop=/usr/bin/vncserver -kill %i
 WantedBy=multi-user.target
 ```
 
-**Note:** If you plan to use [Xfce](/index.php/Xfce "Xfce") desktop environment on VNC server then [D-Bus](/index.php/D-Bus "D-Bus") startup before VNC server may be required. Just change ExecStartPre field in [Service] section to ExecStartPre=/bin/sh -c '/usr/bin/vncserver -kill %i > /dev/null 2>&1 || : ; /usr/bin/dbus-launch'
+**Note:** If you plan to use [Xfce](/index.php/Xfce "Xfce") desktop environment on VNC server then [D-Bus](/index.php/D-Bus "D-Bus") starting before VNC server may be required. Just add ExecStartPre=/usr/bin/dbus-launch entry in [Service] section of unit file.
 
 **Note:** Do not run this service if your local area network is untrusted.
 

@@ -86,7 +86,7 @@ Once the modules are loaded, you should be able to find a new device: `/dev/inpu
 
 Both interfaces are also supported in wine and reported as separate devices. You can test them with `wine control joy.cpl`.
 
-**Tip:** Input devices by default have **input** group, for example [pcsx2](https://www.archlinux.org/packages/?name=pcsx2) have no access to gamepad without rights. Make sure your user in **input** group.
+**Tip:** Input devices by default have **input** group; for example, [pcsx2](https://www.archlinux.org/packages/?name=pcsx2) have no access to gamepad without rights. Make sure your user is in the **input** group.
 
 ### Joystick API
 

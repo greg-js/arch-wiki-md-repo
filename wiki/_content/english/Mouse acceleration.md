@@ -256,6 +256,15 @@ EndSection
 
 and restart X.
 
+Another option is this command:
+
+```
+$ xinput --set-prop <device id> 'libinput Accel Profile Enabled' 0, 1
+
+```
+
+Which doesn't need an X restart, but isn't persistent. Although it can be set up to run automatically with [Autostarting](/index.php/Autostarting "Autostarting").
+
 To confirm that acceleration has been disabled, enter the following:
 
 ```

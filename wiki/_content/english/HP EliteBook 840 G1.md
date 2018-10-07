@@ -1,6 +1,6 @@
 | **Device** | **Status** | **Modules** |
 | Intel graphics | **Working** | xf86-video-intel |
-| AMD graphics ([PRIME](/index.php/PRIME "PRIME")) | **Working** | xf86-video-ati |
+| AMD graphics ([PRIME](/index.php/PRIME "PRIME")) | **Working** | xf86-video-amdgpu |
 | HDMI | **Working** | xf86-video-intel |
 | Ethernet | **Working** |
 | Wireless | **Working** |
@@ -21,9 +21,10 @@
         *   [1.1.1 Using the "Customized Boot" path option (recommended)](#Using_the_.22Customized_Boot.22_path_option_.28recommended.29)
         *   [1.1.2 Change the OS boot loader path to match the hard coded path](#Change_the_OS_boot_loader_path_to_match_the_hard_coded_path)
     *   [1.2 Encryption](#Encryption)
-    *   [1.3 Audio](#Audio)
-    *   [1.4 Wireless](#Wireless)
-    *   [1.5 Resume / wake on lid open](#Resume_.2F_wake_on_lid_open)
+    *   [1.3 AMD Graphics](#AMD_Graphics)
+    *   [1.4 Audio](#Audio)
+    *   [1.5 Wireless](#Wireless)
+    *   [1.6 Resume / wake on lid open](#Resume_.2F_wake_on_lid_open)
 *   [2 See also](#See_also)
 
 ## Configuration
@@ -69,6 +70,12 @@ or
 This notebook supports [HDD FDE (SED)](https://en.wikipedia.org/wiki/Hardware-based_full_disk_encryption#Hard_disk_drive_FDE "wikipedia:Hardware-based full disk encryption"). The HDD/SSD can be locked by setting a password in the UEFI pre-boot graphical environment under the option "DriveLock" (this requires setting a password for the UEFI pre-boot graphical environment first). If you replace the HDD/SSD, make sure to get a compatible one to make use of this feature.
 
 Otherwise, see [Disk encryption](/index.php/Disk_encryption "Disk encryption") for software-based encryption.
+
+### AMD Graphics
+
+In order to get the dedicated AMD graphics card to function properly, install [AMDGPU](/index.php/AMDGPU "AMDGPU") first. Set the following kernel parameters: `amdgpu.si_support=1 radeon.si_support=0`.
+
+Now, any application run with `DRI_PRIME=1` (as described for using [PRIME](/index.php/PRIME "PRIME")) is using the dedicated GPU.
 
 ### Audio
 

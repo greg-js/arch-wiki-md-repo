@@ -34,11 +34,11 @@ This section will guide you through installing Oracle onto a fresh installation 
 
 #### Required packages for Oracle database installation
 
-[Install](/index.php/Install "Install") the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group and these packages: [elfutils](https://www.archlinux.org/packages/?name=elfutils), [gdb](https://www.archlinux.org/packages/?name=gdb), [icu](https://www.archlinux.org/packages/?name=icu), [libstdc++5](https://www.archlinux.org/packages/?name=libstdc%2B%2B5), [sysstat](https://www.archlinux.org/packages/?name=sysstat), [unixodbc](https://www.archlinux.org/packages/?name=unixodbc) and [unzip](https://www.archlinux.org/packages/?name=unzip).
+[Install](/index.php/Install "Install") the [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/) group and these packages: [elfutils](https://www.archlinux.org/packages/?name=elfutils), [gdb](https://www.archlinux.org/packages/?name=gdb), [icu](https://www.archlinux.org/packages/?name=icu), [libstdc++5](https://www.archlinux.org/packages/?name=libstdc%2B%2B5), [sysstat](https://www.archlinux.org/packages/?name=sysstat), [unixodbc](https://www.archlinux.org/packages/?name=unixodbc), [unzip](https://www.archlinux.org/packages/?name=unzip) and [libaio](https://www.archlinux.org/packages/?name=libaio).
 
 Install a [Java](/index.php/Java "Java") runtime environment, like [jre10-openjdk](https://www.archlinux.org/packages/?name=jre10-openjdk) and [jdk10-openjdk](https://www.archlinux.org/packages/?name=jdk10-openjdk).
 
-From the [AUR](/index.php/AUR "AUR"), install [ksh](https://aur.archlinux.org/packages/ksh/) (other implementations like [these](/index.php/Ksh "Ksh") may work), [beecrypt](https://aur.archlinux.org/packages/beecrypt/), [rpm-org](https://aur.archlinux.org/packages/rpm-org/) and [libaio](https://www.archlinux.org/packages/?name=libaio).
+From the [AUR](/index.php/AUR "AUR"), install [ksh](https://aur.archlinux.org/packages/ksh/) (other implementations like [these](/index.php/Ksh "Ksh") may work), [beecrypt](https://aur.archlinux.org/packages/beecrypt/) and [rpm-org](https://aur.archlinux.org/packages/rpm-org/).
 
 Oracle database 32-bit requires [lib32-unixodbc](https://aur.archlinux.org/packages/lib32-unixodbc/), [lib32-libaio](https://www.archlinux.org/packages/?name=lib32-libaio), [lib32-libstdc++5](https://www.archlinux.org/packages/?name=lib32-libstdc%2B%2B5), [lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc) and [lib32-gcc-libs](https://www.archlinux.org/packages/?name=lib32-gcc-libs).
 

@@ -201,7 +201,7 @@ Proceed as usual.
 
 ## Getting hardware working on up-to-date kernels
 
-With some kernel patches on newer kernels the x205ta works. The built-in microphone does not work. (Refer to "Sound".) The Intel Baytrail CPU should be able to consume less power than it does. There are still occasional freezes possible due to the CPU power states not being properly supported. (Refer to "Freezes".)
+With some kernel patches on newer kernels the x205ta works. The Intel Baytrail CPU should be able to consume less power than it does. There are still occasional freezes possible due to the CPU power states not being properly supported. (Refer to "Freezes".)
 
 ### Kernel patches
 
@@ -229,7 +229,7 @@ Setting kernel argument `intel_idle.max_cstate=1` solves the problem on a patche
 
 #### Sound
 
-There has recently been some success in getting the x205ta's Realtek RT5648 sound card working. The relevant patches are in Linux release 4.11 and later. Updated Alsa-lib's UCM files are available in [alsa-lib-x205ta](https://aur.archlinux.org/packages/alsa-lib-x205ta/).
+There has recently been some success in getting the x205ta's Realtek RT5648 sound card working, including microphone support. The relevant patches are in Linux release 4.11 and later. Updated Alsa-lib's UCM files are available in [alsa-lib-x205ta](https://aur.archlinux.org/packages/alsa-lib-x205ta/).
 
 In order to have working headphone jack (as of kernel 4.14) is it required to add an "options" line in any modprobe file
 

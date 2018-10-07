@@ -1,6 +1,6 @@
 Related articles
 
-*   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
+*   [Key binding](/index.php/Key_binding "Key binding")
 
 This article lists and describes [screenshot](https://en.wikipedia.org/wiki/Screenshot "wikipedia:Screenshot") and [screencast](https://en.wikipedia.org/wiki/Screencast "wikipedia:Screencast") software.
 
@@ -53,6 +53,10 @@ This article lists and describes [screenshot](https://en.wikipedia.org/wiki/Scre
 *   **[GNOME Screenshot](https://en.wikipedia.org/wiki/GNOME_Screenshot "wikipedia:GNOME Screenshot")** — Screenshot tool for the GNOME desktop.
 
 	[https://gitlab.gnome.org/GNOME/gnome-screenshot/](https://gitlab.gnome.org/GNOME/gnome-screenshot/) || [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot)
+
+*   **grim** — Grab images from a Wayland compositor. It currently works on [Sway](/index.php/Sway "Sway") 1.0 alpha.
+
+	[https://github.com/emersion/grim](https://github.com/emersion/grim) || [grim-git](https://aur.archlinux.org/packages/grim-git/)
 
 *   **gscreenshot** — Simple GTK+ screenshot utility with delays, selection, and copy-to-clipboard functionality.
 

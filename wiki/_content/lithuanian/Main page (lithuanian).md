@@ -24,7 +24,7 @@ Apsilankykite **[Table of contents (Lietuviškai)](/index.php/Table_of_contents_
 
 	Anotuotas pamokų ir populiarių straipsnių indeksas
 
-	[List of applications (Lietuviškai)](/index.php?title=List_of_applications_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "List of applications (Lietuviškai) (page does not exist)")
+	[List of applications (Lietuviškai)](/index.php/List_of_applications_(Lietuvi%C5%A1kai) "List of applications (Lietuviškai)")
 
 	Klasifikuotas bendrų oficialių ir AUR paketų sąrašas.
 
@@ -46,7 +46,7 @@ Apsilankykite **[Table of contents (Lietuviškai)](/index.php/Table_of_contents_
 
 	Nuorodos į viso pasaulio Arch Linux bendruomenes.
 
-	[IRC channels (Lietuviškai)](/index.php?title=IRC_channels_(Lietuvi%C5%A1kai)&action=edit&redlink=1 "IRC channels (Lietuviškai) (page does not exist)")
+	[IRC channel (Lietuviškai)](/index.php/IRC_channel_(Lietuvi%C5%A1kai) "IRC channel (Lietuviškai)")
 
 	Susiburkime su draugais archer'iais geram pabendravimui.
 

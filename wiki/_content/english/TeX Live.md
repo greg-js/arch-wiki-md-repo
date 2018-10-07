@@ -65,7 +65,7 @@ Alternatively you can install TeX Live with the upstream installer, which is pac
 
 **Note:**
 
-*   While [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) provides the [tlmgr](https://www.tug.org/texlive/tlmgr.html) script in *TEXMFDIST* it is broken. For package installations you can use [tllocalmgr](#tllocalmgr) instead.
+*   While [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) provides the [tlmgr](https://www.tug.org/texlive/tlmgr.html) script in *TEXMFDIST*, it is broken. For package installations you can use [tllocalmgr](#tllocalmgr) instead.
 *   The [texconfig(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/texconfig.1) command is mostly broken because it partially depends on *tlmgr* ([FS#59094](https://bugs.archlinux.org/task/59094)). The interactive mode of `texconfig` requires [dialog](https://www.archlinux.org/packages/?name=dialog).
 
 See the following resources:

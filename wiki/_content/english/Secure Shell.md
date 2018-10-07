@@ -664,9 +664,7 @@ There are several [client configuration](#Configuration) options which can speed
     *   a time in seconds,
     *   `yes` to wait forever, the connection will never be closed automatically.
 
-*   Another option to improve speed is to enable compression with the `Compression yes` option or the `-C` flag.
-
-**Note:** [ssh(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh.1) states that "[c]ompression is desirable on modem lines and other slow connections, but will only slow down things on fast networks." This tip might be counterproductive depending on your network configuration.
+*   Compression can increase speed on slow connections, it is enabled with the `Compression yes` option or the `-C` flag. However the compression algorithm used is the relatively slow [gzip(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gzip.1) which becomes the bottleneck on fast networks. In order to speed up the connection one should use the `Compression no` option on local or fast networks.
 
 *   Login time can be shortened by bypassing IPv6 lookup using the `AddressFamily inet` option or `-4` flag.
 

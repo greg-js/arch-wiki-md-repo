@@ -35,7 +35,7 @@ From [http://www.x.org/wiki/](http://www.x.org/wiki/):
     *   [4.5 Touchscreen](#Touchscreen)
     *   [4.6 Keyboard settings](#Keyboard_settings)
 *   [5 Monitor settings](#Monitor_settings)
-    *   [5.1 Getting started](#Getting_started)
+    *   [5.1 Manual configuration](#Manual_configuration)
     *   [5.2 Multiple monitors](#Multiple_monitors)
         *   [5.2.1 More than one graphics card](#More_than_one_graphics_card)
     *   [5.3 Display size and DPI](#Display_size_and_DPI)
@@ -198,7 +198,7 @@ For specific instructions, see also the [libinput](/index.php/Libinput "Libinput
 
 ### Input identification
 
-See [Extra keyboard keys#In Xorg](/index.php/Extra_keyboard_keys#In_Xorg "Extra keyboard keys").
+See [Keyboard input#Identifying keycodes in Xorg](/index.php/Keyboard_input#Identifying_keycodes_in_Xorg "Keyboard input").
 
 ### Mouse acceleration
 
@@ -222,37 +222,40 @@ See [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "
 
 ## Monitor settings
 
-### Getting started
+### Manual configuration
 
-**Note:** Newer versions of Xorg are auto-configuring, you should not need to use this.
+**Note:**
 
-First, create a new config file, such as `/etc/X11/xorg.conf.d/10-monitor.conf`.
+*   Newer versions of Xorg are auto-configuring, so manual configuration should not be needed.
+*   If Xorg is unable to detect a monitor or to avoid auto-configuring, a configuration file such as the example below can be used. A common case where this is necessary is a headless system, which boots without a monitor and starts Xorg automatically, either from a [virtual console](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console") at [login](/index.php/Start_X_at_login "Start X at login"), or from a [display manager](/index.php/Display_manager "Display manager").
 
- `/etc/X11/xorg.conf.d/10-monitor.conf` 
+For a headless configuration the [xf86-video-dummy](https://www.archlinux.org/packages/?name=xf86-video-dummy) driver is necessary, [install](/index.php/Install "Install") it and create a configuration file, such as the following:
+
+ `/etc/X11/xorg.conf.d/10-headless.conf` 
 ```
-Section "Monitor"
-    Identifier             "Monitor0"
+ection "Monitor"
+        Identifier "Monitor0"
+        HorizSync 28.0-80.0
+        VertRefresh 48.0-75.0
+        ModeLine "1920x1080" 148.800 1920 2448 2492 2622 1080 1084 1089 1135 +hsync +vsync
 EndSection
 
 Section "Device"
-    Identifier             "Device0"
-    Driver                 "vesa" #Choose the driver used for this monitor
+        Identifier "Card0"
+        VideoRam 256000
+        Driver "dummy"
 EndSection
 
 Section "Screen"
-    Identifier             "Screen0"  #Collapse Monitor and Device section to Screen section
-    Device                 "Device0"
-    Monitor                "Monitor0"
-    DefaultDepth           16 #Choose the depth (16||24)
-    SubSection             "Display"
-        Depth              16
-        Modes              "1024x768_75.00" #Choose the resolution
-    EndSubSection
+        Identifier "Screen0"
+        Device "Card0"
+        Monitor "Monitor0"
+        SubSection "Display"
+                Depth 24
+                Modes "1920x1080"
+        EndSubSection
 EndSection
-
 ```
-
-**Note:** By default, Xorg needs to be able to detect a monitor and will not start otherwise. A workaround is to create a configuration file such as the example above and thus avoid auto-configuring. A common case where this is necessary is a headless system, which boots without a monitor and starts Xorg automatically, either from a [virtual console](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console") at [login](/index.php/Start_X_at_login "Start X at login"), or from a [display manager](/index.php/Display_manager "Display manager").
 
 ### Multiple monitors
 
@@ -427,8 +430,8 @@ Some window managers (e.g. [Compiz](/index.php/Compiz "Compiz"), [Enlightenment]
 
 This section lists utilities for automating keyboard / mouse input and window operations (like moving, resizing or raising).
 
-| Tool | Package | Manual | keysym
-input | window
+| Tool | Package | Manual | [Keysym](/index.php/Keysym "Keysym")
+input | Window
 operations | Note |
 | xautomation | [xautomation](https://www.archlinux.org/packages/?name=xautomation) | [xte(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xte.1) | Yes | No | Also contains screen scraping tools. Cannot simulate F13+. |
 | xdo | [xdo-git](https://aur.archlinux.org/packages/xdo-git/) | [xdo(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xdo.1) | No | Yes | Small X utility to perform elementary actions on windows. |

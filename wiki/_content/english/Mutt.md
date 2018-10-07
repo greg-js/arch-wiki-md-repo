@@ -697,7 +697,7 @@ This starts Mutt in read-only mode, and you can browse other emails at your conv
 
 **Note:** When changing folders (with `c` or `y`) the read-only mode is not preserved. Instead `Esc c` has to be used.
 
-**Tip:** This solution calls for a bit of typing, so it is suitable to bind the following command to a keyboard shortcut (see [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") for details):
+**Tip:** This solution calls for a bit of typing, so it is suitable to bind the following command to a [keyboard shortcut](/index.php/Keyboard_shortcut "Keyboard shortcut"):
 ```
 $TERMINAL -e mutt -R
 

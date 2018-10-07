@@ -19,7 +19,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [dmenu](https://www.archlinux.org/packages/?name=dmenu) package from the [official repositories](/index.php/Official_repositories "Official repositories"). If you want the development build from git, install the [dmenu-git](https://aur.archlinux.org/packages/dmenu-git/) package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+[Install](/index.php/Install "Install") the [dmenu](https://www.archlinux.org/packages/?name=dmenu) package, or [dmenu-git](https://aur.archlinux.org/packages/dmenu-git/) for the development version.
 
 Various patched variants exist which extend dmenu's default functionality. Consider installing one of the following packages from the [AUR](/index.php/AUR "AUR"):
 
@@ -49,7 +49,7 @@ third" | dmenu
 
 ### Manually Adding Items
 
-*dmenu* will look for executables in the directories defined in your `$PATH`. See the following article for information on modifying your `$PATH`: [Environment variables](/index.php/Environment_variables "Environment variables")
+*dmenu* will look for executables in the directories defined in your `$PATH`. For information on modifying your `$PATH` see [environment variables](/index.php/Environment_variables "Environment variables").
 
 ### Fonts
 

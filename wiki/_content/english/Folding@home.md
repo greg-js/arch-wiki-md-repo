@@ -57,7 +57,9 @@ The behaviour of foldingathome can be customized by editing `/opt/fah/config.xml
 
 ### Run f@h with limited privileges
 
-It's not necessary to run folding with root privileges.
+It's not necessary to run folding with root privileges. The easy way is to use [foldingathome-noroot](https://aur.archlinux.org/packages/foldingathome-noroot/), which makes use of `systemd`'s `DynamicUser` feature. Note that certain files are in different locations, and there is a script `/opt/fah/fah-config` to generate the `config.xml`. To set it up manually, read on.
+
+* * *
 
 Create a dedicated user `fah` for folding without critical privileges:
 

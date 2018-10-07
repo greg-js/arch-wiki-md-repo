@@ -51,7 +51,7 @@ This article provides information on basic system diagnostics relating to perfor
 *   [4 Graphics](#Graphics)
     *   [4.1 Xorg configuration](#Xorg_configuration)
     *   [4.2 Mesa configuration](#Mesa_configuration)
-    *   [4.3 Overclocking with amdgpu](#Overclocking_with_amdgpu)
+    *   [4.3 Overclocking](#Overclocking_2)
 *   [5 RAM and swap](#RAM_and_swap)
     *   [5.1 Clock frequency and timings](#Clock_frequency_and_timings)
     *   [5.2 Root on RAM overlay](#Root_on_RAM_overlay)
@@ -355,8 +355,6 @@ The purpose of [irqbalance](https://www.archlinux.org/packages/?name=irqbalance)
 
 ## Graphics
 
-As with CPUs, overclocking can directly improve performance, but is generally recommended against. There are several packages in the [AUR](/index.php/AUR "AUR"), such as [amdoverdrivectrl](https://aur.archlinux.org/packages/amdoverdrivectrl/) (ATI) and [nvclock](https://aur.archlinux.org/packages/nvclock/) (NVIDIA).
-
 ### Xorg configuration
 
 Graphics performance may depend on the settings in [xorg.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xorg.conf.5); see the [NVIDIA](/index.php/NVIDIA "NVIDIA"), [ATI](/index.php/ATI "ATI") and [Intel](/index.php/Intel "Intel") articles. Improper settings may stop Xorg from working, so caution is advised.
@@ -373,61 +371,11 @@ The performance of the Mesa drivers can be configured via [drirc](https://dri.fr
 
 	[https://dri.freedesktop.org/wiki/DriConf/](https://dri.freedesktop.org/wiki/DriConf/) || [driconf](https://www.archlinux.org/packages/?name=driconf)
 
-### Overclocking with amdgpu
+### Overclocking
 
-Since Linux 4.17, it is possible to adjust clocks and voltages of the graphics card via `/sys/class/drm/card0/device/pp_od_clk_voltage`. It is however required to unlock access to it in sysfs by appending the boot parameter `amdgpu.ppfeaturemask=0xffffffff`.
+As with CPUs, overclocking can directly improve performance, but is generally recommended against. There are several packages in the [AUR](/index.php/AUR "AUR"), such as [amdoverdrivectrl](https://aur.archlinux.org/packages/amdoverdrivectrl/) (ATI) and [nvclock](https://aur.archlinux.org/packages/nvclock/) (NVIDIA).
 
-After this, the range of allowed values must be increased to allow higher clocks than used by default. To allow the maximum GPU clock to be increased by e.g. up to 2%, run:
-
-```
-echo "2" > /sys/class/drm/card0/device/pp_sclk_od
-
-```
-
-**Note:** Running cat `/sys/class/drm/card0/device/pp_sclk_od` does always return either 1 or 0, no matter the value added to it via `echo`.
-
-Unlike with previous kernel versions, this alone doesn't lead to a higher clock. The values in `pp_od_clk_voltage` for the pstates have to be adjusted as well. It's a good idea to get the default values as a guidance by simply reading the file. In this example, the default clock is 1196MHz and a range increase by 2% allows up to 1219MHz.
-
-To set the GPU clock for the maximum pstate 7 on a Polaris GPU to 1209MHz and 900mV voltage, run:
-
-```
-# echo "s 7 1209 900" > /sys/class/drm/card0/device/pp_od_clk_voltage
-
-```
-
-**Warning:** Double check the entered values, as mistakes might instantly cause fatal hardware damage!
-
-To apply, run
-
-```
-# echo "c" > /sys/class/drm/card0/device/pp_od_clk_voltage
-
-```
-
-To check if it worked out, read out clocks and voltage under 3D load:
-
-```
-# watch -n 0.5  cat /sys/kernel/debug/dri/0/amdgpu_pm_info
-
-```
-
-You can reset to the default values using this:
-
-```
-# echo "r" > /sys/class/drm/card0/device/pp_od_clk_voltage
-
-```
-
-To set the allowed maximum power consumption of the GPU to e.g. 50 Watts, run
-
-```
-# echo 50000000 > /sys/class/drm/card0/device/hwmon/hwmon0/power1_cap
-
-```
-
-If the video card bios doesn't provide a maximum value above the default setting, you can only decrease the power limit, but not increase.
-
-**Note:** The above procedure was tested with a Polaris RX 560 card. There may be different behavior or bugs with different GPUs.
+See [AMDGPU#Overclocking](/index.php/AMDGPU#Overclocking "AMDGPU") or [NVIDIA/Tips_and_tricks#Enabling_overclocking](/index.php/NVIDIA/Tips_and_tricks#Enabling_overclocking "NVIDIA/Tips and tricks").
 
 ## RAM and swap
 

@@ -70,14 +70,14 @@ GVFS使用的文件夹：
 
 #### 文件管理守护程序
 
-The first is to simply autostart or run the installed file manager in [daemon](/index.php/Daemon "Daemon") mode (i.e. as a background process). For example, when using [PCManFM](/index.php/PCManFM "PCManFM") in [Openbox](/index.php/Openbox "Openbox"), the following command would be added to the `~/.config/openbox/autostart` file:
+第一种是简单地以守护进程[daemon](/index.php/Daemon "Daemon")模式自动启动或运行已安装的文件管理器(即作为后台进程)。例如，在[Openbox](/index.php/Openbox "Openbox")中使用[PCManFM](/index.php/PCManFM "PCManFM")时，以下命令将添加到 `~/.config/openbox/autostart` 文件中：
 
 ```
 pcmanfm -d &
 
 ```
 
-It will also be necessary to configure the file manager itself in respect to volume management (e.g. what it will do and what applications will be launched when certain file types are detected upon mounting).
+还需要在卷管理方面配置文件管理器本身(例如，当安装时检测到某些文件类型时，它将执行什么操作以及将启动哪些应用程序)。
 
 **Tip:** Most desktop environments will start the file manager in daemon mode by default so manual intervention will not be required in these use cases.
 

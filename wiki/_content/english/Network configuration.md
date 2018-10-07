@@ -12,6 +12,7 @@ This article explains how to configure a network connection.
 
 *   [1 Check the connection](#Check_the_connection)
     *   [1.1 Ping](#Ping)
+    *   [1.2 Traceroute](#Traceroute)
 *   [2 Device driver](#Device_driver)
     *   [2.1 Check the status](#Check_the_status)
     *   [2.2 Load the module](#Load_the_module)
@@ -90,9 +91,21 @@ For every reply you receive ping prints a line like above. For more information 
 
 Note that computers can be configured not to respond to ICMP echo requests.[[1]](https://unix.stackexchange.com/questions/412446/how-to-disable-ping-response-icmp-echo-in-linux-all-the-time)
 
-When you receive no reply, you can use a [traceroute](https://en.wikipedia.org/wiki/Traceroute "wikipedia:Traceroute") ([traceroute(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/traceroute.8) or [tracepath(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tracepath.8)) to further diagnose the route to the host.
+When you receive no reply, you can run a [traceroute](#Traceroute) to further diagnose the route to the host.
 
 **Note:** If you receive an error like `ping: icmp open socket: Operation not permitted` when executing *ping*, try to re-install the [iputils](https://www.archlinux.org/packages/?name=iputils) package.
+
+### Traceroute
+
+[Traceroute](https://en.wikipedia.org/wiki/Traceroute "wikipedia:Traceroute") is a tool to display the path of packets across an IP network.
+
+There are several implementations available:
+
+*   [tracepath(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tracepath.8) from [iputils](https://www.archlinux.org/packages/?name=iputils) (part of [base](https://www.archlinux.org/groups/x86_64/base/))
+*   [traceroute(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/traceroute.8) from [traceroute](https://www.archlinux.org/packages/?name=traceroute)
+*   **MTR** — Combines the functionality of traceroute and ping into one tool.
+
+	[http://www.bitwizard.nl/mtr/](http://www.bitwizard.nl/mtr/) || [mtr](https://www.archlinux.org/packages/?name=mtr), [mtr-gtk](https://www.archlinux.org/packages/?name=mtr-gtk)
 
 ## Device driver
 

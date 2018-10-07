@@ -5,6 +5,7 @@ Some Logitech Gaming Keyboards can work on Linux through Unofficial drivers. The
 *   [https://github.com/tolga9009/sidewinderd](https://github.com/tolga9009/sidewinderd)
 *   [https://github.com/Wattos/logitech-g710-linux-driver](https://github.com/Wattos/logitech-g710-linux-driver)
 *   [https://github.com/MatMoul/g810-led](https://github.com/MatMoul/g810-led)
+*   [https://github.com/spectras/keyleds](https://github.com/spectras/keyleds)
 
 ## Install
 
@@ -53,6 +54,14 @@ Some Logitech Gaming Keyboards can work on Linux through Unofficial drivers. The
 *   G810
 *   G910
 *   GPRO
+
+[keyleds](https://aur.archlinux.org/packages/keyleds/) led supports (possible lua scripting):
+
+*   G410
+*   G610
+*   G810
+*   G910
+*   GPro
 
 ## G510 on g15daemon
 

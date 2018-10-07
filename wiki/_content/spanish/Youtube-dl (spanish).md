@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Youtube-dl](/index.php/Youtube-dl "Youtube-dl"), revisada por última vez el **2018-10-04**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Youtube-dl&diff=0&oldid=545853) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Youtube-dl](/index.php/Youtube-dl "Youtube-dl"), revisada por última vez el **2018-10-05**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Youtube-dl&diff=0&oldid=545853) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -96,7 +96,7 @@ $ youtube-dl --external-downloader aria2c --external-downloader-args '-c -x 5 -k
 
 ### Recortar (descarga parcial)
 
-Partes de [DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP "wikipedia:Dynamic Adaptive Streaming over HTTP") se pueden descargar usando la salida de `youtube-dl -g'f format URL` *como entrada* ffmpeg *con las opciones `-ss`, `-t` y `-c copy` [opciones](http://ffmpeg.org/ffmpeg.html#Main-options).*
+Partes de [DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP "wikipedia:Dynamic Adaptive Streaming over HTTP") se pueden descargar usando la salida de `youtube-dl -g -f format URL` *como entrada* ffmpeg *con las opciones `-ss`, `-t` y `-c copy` [opciones](http://ffmpeg.org/ffmpeg.html#Main-options).*
 
 ### URL del portapapeles
 

@@ -45,6 +45,7 @@ From [MATE homepage](https://mate-desktop.org/):
     *   [5.5 Enabling panel shadow](#Enabling_panel_shadow)
     *   [5.6 Disabling scroll in taskbar](#Disabling_scroll_in_taskbar)
     *   [5.7 Logout/shutdown delayed by at-spi-registryd](#Logout.2Fshutdown_delayed_by_at-spi-registryd)
+    *   [5.8 Caja's text file preview](#Caja.27s_text_file_preview)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -433,6 +434,10 @@ Whilst there is no way of disabling this feature through MATE's settings, this f
 ### Logout/shutdown delayed by at-spi-registryd
 
 When logging out or shutting down, you may find that you are presented with an *A program is still running: at-spi-registryd.desktop* popup. As a workaround, you can prevent *at-spi-registryd* from starting - see [GTK+#Suppress warning about accessibility bus](/index.php/GTK%2B#Suppress_warning_about_accessibility_bus "GTK+") - though this may have an effect on some accessibility features.
+
+### Caja's text file preview
+
+Since the migration to GTK+3 this feature is not working.[[4]](https://github.com/mate-desktop/caja/issues/1047)
 
 ## See also
 

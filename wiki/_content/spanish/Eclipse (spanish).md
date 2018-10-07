@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Eclipse](/index.php/Eclipse "Eclipse"), revisada por última vez el **2018-10-02**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Eclipse&diff=0&oldid=544551) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Eclipse](/index.php/Eclipse "Eclipse"), revisada por última vez el **2018-10-05**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Eclipse&diff=0&oldid=544551) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [Eclipse](https://eclipse.org) es un proyecto de la comunidad de código abierto, que tiene como objetivo proporcionar una plataforma de desarrollo universal. El proyecto Eclipse es ampliamente conocido por su entorno de desarrollo integrado multiplataforma (IDE). Los paquetes de Arch Linux (y esta guía) se relacionan específicamente con el IDE.
 
@@ -135,17 +135,17 @@ Si tiene acceso constante a Internet en su máquina, puede usar la documentació
 
 ### Versión fuera de línea
 
-Puede almacenar la documentación localmente instalando el paquete [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc). Eclipse puede encontrar los javadocs automáticamente. Si eso no funciona, configure la ubicación de Javadoc para rt.jar en `file: / usr / share / doc / java8-openjdk / api`.
+Puede almacenar la documentación localmente instalando el paquete [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc). Eclipse puede encontrar los javadocs automáticamente. Si eso no funciona, configure la ubicación de Javadoc para rt.jar en `file:/usr/share/doc/java8-openjdk/api`.
 
 ## Solución de problemas
 
 ### Ctrl+X cierra Eclipse
 
-Parte de [este](https://bugs.eclipse.org/bugs/show_bug.cgi?id=318177) error. Solo busque en `~ / workspace / .metadata / .plugins / org.eclipse.e4.workbench / workbench.xmi` y elimine la combinación incorrecta de `Ctrl + X`. Por lo general, es el primero.
+Parte de [este](https://bugs.eclipse.org/bugs/show_bug.cgi?id=318177) error. Solo busque en `~/workspace/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi` y elimine la combinación incorrecta de `Ctrl + X`. Por lo general, es el primero.
 
 ### Tema oscuro
 
-Eclipse proporciona un tema oscuro que se puede habilitar en Ventana> Preferencias> General> Apariencia y seleccionando el tema "Oscuro". El tema oscuro usa sus propios colores en lugar de los colores del tema GTK, si prefiere respetar completamente la configuración de color GTK, quite o mueva a la subcarpeta de respaldo todos los archivos .css de `/ usr / share / eclipse /plugins/org.eclipse.ui.themes_1.0.0.xxxx/css/`.
+Eclipse proporciona un tema oscuro que se puede habilitar en Ventana> Preferencias> General> Apariencia y seleccionando el tema "Oscuro". El tema oscuro usa sus propios colores en lugar de los colores del tema GTK, si prefiere respetar completamente la configuración de color GTK, quite o mueva a la subcarpeta de respaldo todos los archivos .css de `/usr/share/eclipse/plugins/org.eclipse.ui.themes_1.0.0.xxxx/css/`.
 
 ### Cambiar el tamaño de fuente del título predeterminado de la ventana
 
@@ -156,7 +156,7 @@ No puede cambiar el tamaño de la fuente del título de la ventana con las prefe
 
 ```
 
-Abra el archivo apropiado con su editor de texto, es decir, e4_default_gtk.css si está utilizando el "tema GTK". Busque .MPartStack y cambie el tamaño de la fuente al tamaño deseado
+Abra el archivo apropiado con su editor de texto, es decir, e4_default_gtk.css si está utilizando el "tema GTK". Busque .MPartStack y cambie el tamaño de la fuente al tamaño deseado.
 
 ```
 .MPartStack {
@@ -211,7 +211,7 @@ Al ejecutar Eclipse en Wayland, puede encontrar problemas de renderizado, como u
 Con el superusuario, abrir el archivo `/usr/bin/eclipse` y anexar esta línea antes de la línea `exec`:
 
 ```
-   export GDK_BACKEND=x11
+export GDK_BACKEND=x11
 
 ```
 

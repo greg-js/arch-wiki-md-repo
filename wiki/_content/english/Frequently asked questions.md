@@ -10,18 +10,17 @@ Related articles
     *   [1.1 What is Arch Linux?](#What_is_Arch_Linux.3F)
     *   [1.2 Why would I not want to use Arch?](#Why_would_I_not_want_to_use_Arch.3F)
     *   [1.3 What architectures does Arch support?](#What_architectures_does_Arch_support.3F)
-    *   [1.4 Does Arch support ARM CPUs?](#Does_Arch_support_ARM_CPUs.3F)
-    *   [1.5 Does Arch follow the Linux Foundation's Filesystem Hierarchy Standard (FHS)?](#Does_Arch_follow_the_Linux_Foundation.27s_Filesystem_Hierarchy_Standard_.28FHS.29.3F)
-    *   [1.6 I am a complete GNU/Linux beginner. Should I use Arch?](#I_am_a_complete_GNU.2FLinux_beginner._Should_I_use_Arch.3F)
-    *   [1.7 Is Arch designed to be used as a server? A desktop? A workstation?](#Is_Arch_designed_to_be_used_as_a_server.3F_A_desktop.3F_A_workstation.3F)
-    *   [1.8 I really like Arch, except the development team needs to implement feature X](#I_really_like_Arch.2C_except_the_development_team_needs_to_implement_feature_X)
-    *   [1.9 When will the new release be made available?](#When_will_the_new_release_be_made_available.3F)
-    *   [1.10 Is Arch Linux a stable distribution? Will I get frequent breakage?](#Is_Arch_Linux_a_stable_distribution.3F_Will_I_get_frequent_breakage.3F)
-    *   [1.11 Arch needs more press (i.e. advertisement)](#Arch_needs_more_press_.28i.e._advertisement.29)
-    *   [1.12 Arch needs more developers](#Arch_needs_more_developers)
-    *   [1.13 Why is my internet so slow compared to other operating systems?](#Why_is_my_internet_so_slow_compared_to_other_operating_systems.3F)
-    *   [1.14 Why is Arch using all my RAM?](#Why_is_Arch_using_all_my_RAM.3F)
-    *   [1.15 Where did all my free space go?](#Where_did_all_my_free_space_go.3F)
+    *   [1.4 Does Arch follow the Linux Foundation's Filesystem Hierarchy Standard (FHS)?](#Does_Arch_follow_the_Linux_Foundation.27s_Filesystem_Hierarchy_Standard_.28FHS.29.3F)
+    *   [1.5 I am a complete GNU/Linux beginner. Should I use Arch?](#I_am_a_complete_GNU.2FLinux_beginner._Should_I_use_Arch.3F)
+    *   [1.6 Is Arch designed to be used as a server? A desktop? A workstation?](#Is_Arch_designed_to_be_used_as_a_server.3F_A_desktop.3F_A_workstation.3F)
+    *   [1.7 I really like Arch, except the development team needs to implement feature X](#I_really_like_Arch.2C_except_the_development_team_needs_to_implement_feature_X)
+    *   [1.8 When will the new release be made available?](#When_will_the_new_release_be_made_available.3F)
+    *   [1.9 Is Arch Linux a stable distribution? Will I get frequent breakage?](#Is_Arch_Linux_a_stable_distribution.3F_Will_I_get_frequent_breakage.3F)
+    *   [1.10 Arch needs more press (i.e. advertisement)](#Arch_needs_more_press_.28i.e._advertisement.29)
+    *   [1.11 Arch needs more developers](#Arch_needs_more_developers)
+    *   [1.12 Why is my internet so slow compared to other operating systems?](#Why_is_my_internet_so_slow_compared_to_other_operating_systems.3F)
+    *   [1.13 Why is Arch using all my RAM?](#Why_is_Arch_using_all_my_RAM.3F)
+    *   [1.14 Where did all my free space go?](#Where_did_all_my_free_space_go.3F)
 *   [2 Package management](#Package_management)
     *   [2.1 I have found an error with package X. What should I do?](#I_have_found_an_error_with_package_X._What_should_I_do.3F)
     *   [2.2 Arch packages need to use a unique naming convention. ".pkg.tar.gz" and ".pkg.tar.xz" are too long and/or confusing](#Arch_packages_need_to_use_a_unique_naming_convention._.22.pkg.tar.gz.22_and_.22.pkg.tar.xz.22_are_too_long_and.2For_confusing)
@@ -63,11 +62,9 @@ You may **not** want to use Arch, if:
 
 ### What architectures does Arch support?
 
-Arch only supports the x86_64 (sometimes called amd64) architecture. Support for i686 was dropped in November 2017[[1]](https://www.archlinux.org/news/the-end-of-i686-support/). If your machine is not capable, consider switching to [Arch Linux 32](https://archlinux32.org/).
+Arch only supports the x86_64 (sometimes called amd64) architecture. Support for i686 was dropped in November 2017 [[1]](https://www.archlinux.org/news/the-end-of-i686-support/).
 
-### Does Arch support ARM CPUs?
-
-No, but the [Arch Linux ARM](http://archlinuxarm.org/) project provides a port of Arch Linux to several ARM platforms. See [[2]](http://ix.io/73w/irc).
+There are *unofficial* ports for the i686 architecture [[2]](https://archlinux32.org/) and [ARM](https://en.wikipedia.org/wiki/ARM_architecture "wikipedia:ARM architecture") CPUs [[3]](http://archlinuxarm.org/), each with their own community channels. [[4]](http://ix.io/73w/irc)
 
 ### Does Arch follow the Linux Foundation's Filesystem Hierarchy Standard (FHS)?
 

@@ -72,6 +72,15 @@ $ mysql -u zabbix -p zabbix < /usr/share/zabbix-server/mysql/data.sql
 
 ```
 
+Now edit `/etc/zabbix/zabbix_server.conf` with the database settings:
+
+ `/etc/zabbix/zabbix_server.conf` 
+```
+DBName=zabbix
+DBUser=zabbix
+DBPassword=test
+```
+
 ### ICMP/ping discovery
 
 To use ICMP discovery (e.g. ping) in Zabbix, [install](/index.php/Install "Install") the [fping](https://www.archlinux.org/packages/?name=fping) package.
@@ -80,7 +89,7 @@ To use ICMP discovery (e.g. ping) in Zabbix, [install](/index.php/Install "Insta
 
 [Enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `zabbix-server-mysql.service` unit, if you are using MariaDB.
 
-Finally you can access Zabbix via your local web server, e.g.: [http://127.0.0.1/zabbix](http://127.0.0.1/zabbix), finish the installation wizard and access the frontend the first time. The default username is `Admin` and password `zabbix`.
+Finally you can access Zabbix via your local web server, e.g.: [http://localhost/zabbix/](http://localhost/zabbix/), finish the installation wizard and access the frontend the first time. The default username is `Admin` and password `zabbix`.
 
 See appendix for a link to the official documentation, which explains all further steps in using it.
 

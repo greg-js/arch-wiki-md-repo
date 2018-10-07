@@ -1,7 +1,7 @@
 Related articles
 
 *   [Help:i18n](/index.php/Help:I18n "Help:I18n")
-*   [IRC channel](/index.php/IRC_channel "IRC channel")
+*   [IRC channel (Lietuviškai)](/index.php/IRC_channel_(Lietuvi%C5%A1kai) "IRC channel (Lietuviškai)")
 
 [https://archlinux.org](https://archlinux.org) yra oficialaus Arch Linux tinklalapio, forumų ir vikipedijos namai. Tačiau yra ir keletas neoficialių bendruomenės palaikomų tinklalapių skirtų tarptautiniams naudotojams, kurie geriau bendrautų savo kalba. Šias bendruomenes galima rasti žemiau.
 

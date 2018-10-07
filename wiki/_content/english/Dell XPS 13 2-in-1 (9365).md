@@ -24,7 +24,7 @@ The Dell XPS 13 2-in-1 (9365) is the early 2017 model. It can be used like a tab
 
 Bios can be accessed with F2 or F12 on DELL logo boot screen.
 
-With Bios version 1.1.0 or 1.3.1 you have to set sata operation to AHCI first and then uncheck in Advanced Boot options -> Legacy ROM.[[1]](http://en.community.dell.com/support-forums/laptop/f/3518/t/20004529?pi41097=1)
+With Bios version 1.1.0 or 1.3.1 to 2.1.2 you have to set sata operation to AHCI first and then uncheck in Advanced Boot options -> Legacy ROM.[[1]](http://en.community.dell.com/support-forums/laptop/f/3518/t/20004529?pi41097=1)
 
 **Note:**
 
@@ -43,7 +43,7 @@ It is also needed to set the following settings [[2]](https://www.dell.com/commu
 **Note:**
 
 *   Some changes in BIOS might reset other settings. Check your BIOS settings twice.
-*   Those settings are working as of 2018/02/16
+*   Those settings are working as of 2018/10/06
 
 ## Troubleshooting
 

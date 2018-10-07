@@ -1,4 +1,4 @@
-This page assumes that you have read [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys"), which provides wider context to the problem.
+This page assumes that you have read [Keyboard input](/index.php/Keyboard_input "Keyboard input"), which provides wider context.
 
 Mapping *scancodes* to *keycodes* is universal and not specific to Linux console or Xorg, which means that changes to this mapping will be effective in both.
 

@@ -166,7 +166,7 @@ Las siguientes tres herramientas tienen como objetivo reemplazar grep para la b�
 
 *   **percol** — Añade algo del filtrado interactivo al concepto de conducto (pipe) tradicional del intérprete de comandos de UNIX.
 
-	[Https://github.com/mooz/percol](Https://github.com/mooz/percol) || [percol](https://www.archlinux.org/packages/?name=percol), [percol-git](https://aur.archlinux.org/packages/percol-git/) 
+	[Https://github.com/mooz/percol](Https://github.com/mooz/percol) || [percol](https://www.archlinux.org/packages/?name=percol), [percol-git](https://aur.archlinux.org/packages/percol-git/)
 
 ## Véase también
 

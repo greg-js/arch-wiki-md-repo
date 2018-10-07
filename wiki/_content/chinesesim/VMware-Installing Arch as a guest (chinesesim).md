@@ -3,7 +3,7 @@
 *   [VMware](/index.php/VMware "VMware")
 *   [Installing VMWare vCLI](/index.php/Installing_VMWare_vCLI "Installing VMWare vCLI")
 
-**翻译状态：** 本文是英文页面 [VMware/Installing Arch as a guest](/index.php/VMware/Installing_Arch_as_a_guest "VMware/Installing Arch as a guest") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-08，点击[这里](https://wiki.archlinux.org/index.php?title=VMware%2FInstalling+Arch+as+a+guest&diff=0&oldid=492075)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [VMware/Installing Arch as a guest](/index.php/VMware/Installing_Arch_as_a_guest "VMware/Installing Arch as a guest") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-10-06，点击[这里](https://wiki.archlinux.org/index.php?title=VMware%2FInstalling+Arch+as+a+guest&diff=0&oldid=492075)可以查看翻译后英文页面的改动。
 
 这篇文章是关于如何在[VMware](/index.php/VMware "VMware")产品，比如[Player (Plus)](http://www.vmware.com/products/player/)，[Fusion](http://www.vmware.com/products/fusion/)或[Workstation](http://www.vmware.com/products/workstation/)中安装ArchLinux。
 
@@ -15,9 +15,6 @@
     *   [3.1 实用工具](#.E5.AE.9E.E7.94.A8.E5.B7.A5.E5.85.B7)
     *   [3.2 内核模块](#.E5.86.85.E6.A0.B8.E6.A8.A1.E5.9D.97)
     *   [3.3 安装](#.E5.AE.89.E8.A3.85)
-        *   [3.3.1 多用户目标](#.E5.A4.9A.E7.94.A8.E6.88.B7.E7.9B.AE.E6.A0.87)
-        *   [3.3.2 图形界面目标](#.E5.9B.BE.E5.BD.A2.E7.95.8C.E9.9D.A2.E7.9B.AE.E6.A0.87)
-    *   [3.4 在窗口大小变动后自动重设分辨率](#.E5.9C.A8.E7.AA.97.E5.8F.A3.E5.A4.A7.E5.B0.8F.E5.8F.98.E5.8A.A8.E5.90.8E.E8.87.AA.E5.8A.A8.E9.87.8D.E8.AE.BE.E5.88.86.E8.BE.A8.E7.8E.87)
 *   [4 官方的 VMware Tools](#.E5.AE.98.E6.96.B9.E7.9A.84_VMware_Tools)
     *   [4.1 模块](#.E6.A8.A1.E5.9D.97)
     *   [4.2 安装（从客户机）](#.E5.AE.89.E8.A3.85.EF.BC.88.E4.BB.8E.E5.AE.A2.E6.88.B7.E6.9C.BA.EF.BC.89)
@@ -36,18 +33,21 @@
         *   [6.4.2 平行虚拟化网络驱动](#.E5.B9.B3.E8.A1.8C.E8.99.9A.E6.8B.9F.E5.8C.96.E7.BD.91.E7.BB.9C.E9.A9.B1.E5.8A.A8)
         *   [6.4.3 虚拟机设置](#.E8.99.9A.E6.8B.9F.E6.9C.BA.E8.AE.BE.E7.BD.AE)
 *   [7 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [7.1 声音问题](#.E5.A3.B0.E9.9F.B3.E9.97.AE.E9.A2.98)
-    *   [7.2 鼠标问题](#.E9.BC.A0.E6.A0.87.E9.97.AE.E9.A2.98)
-    *   [7.3 启动故障](#.E5.90.AF.E5.8A.A8.E6.95.85.E9.9A.9C)
-        *   [7.3.1 启动速度慢](#.E5.90.AF.E5.8A.A8.E9.80.9F.E5.BA.A6.E6.85.A2)
-        *   [7.3.2 关机/重启时卡住不动](#.E5.85.B3.E6.9C.BA.2F.E9.87.8D.E5.90.AF.E6.97.B6.E5.8D.A1.E4.BD.8F.E4.B8.8D.E5.8A.A8)
-    *   [7.4 窗口分辨率自动适配](#.E7.AA.97.E5.8F.A3.E5.88.86.E8.BE.A8.E7.8E.87.E8.87.AA.E5.8A.A8.E9.80.82.E9.85.8D)
-        *   [7.4.1 方案 1](#.E6.96.B9.E6.A1.88_1)
-        *   [7.4.2 方案 2](#.E6.96.B9.E6.A1.88_2)
-        *   [7.4.3 方案 3](#.E6.96.B9.E6.A1.88_3)
-    *   [7.5 拖拽与复制粘贴](#.E6.8B.96.E6.8B.BD.E4.B8.8E.E5.A4.8D.E5.88.B6.E7.B2.98.E8.B4.B4)
-    *   [7.6 在 VMware Workstation 11 版上运行共享 VM](#.E5.9C.A8_VMware_Workstation_11_.E7.89.88.E4.B8.8A.E8.BF.90.E8.A1.8C.E5.85.B1.E4.BA.AB_VM)
-    *   [7.7 Shared folder not mounted after system upgrade](#Shared_folder_not_mounted_after_system_upgrade)
+    *   [7.1 客户机网络速度减慢](#.E5.AE.A2.E6.88.B7.E6.9C.BA.E7.BD.91.E7.BB.9C.E9.80.9F.E5.BA.A6.E5.87.8F.E6.85.A2)
+    *   [7.2 较新的内核下的文件共享问题](#.E8.BE.83.E6.96.B0.E7.9A.84.E5.86.85.E6.A0.B8.E4.B8.8B.E7.9A.84.E6.96.87.E4.BB.B6.E5.85.B1.E4.BA.AB.E9.97.AE.E9.A2.98)
+    *   [7.3 声音问题](#.E5.A3.B0.E9.9F.B3.E9.97.AE.E9.A2.98)
+    *   [7.4 鼠标问题](#.E9.BC.A0.E6.A0.87.E9.97.AE.E9.A2.98)
+    *   [7.5 启动故障](#.E5.90.AF.E5.8A.A8.E6.95.85.E9.9A.9C)
+        *   [7.5.1 启动速度慢](#.E5.90.AF.E5.8A.A8.E9.80.9F.E5.BA.A6.E6.85.A2)
+        *   [7.5.2 关机/重启时卡住不动](#.E5.85.B3.E6.9C.BA.2F.E9.87.8D.E5.90.AF.E6.97.B6.E5.8D.A1.E4.BD.8F.E4.B8.8D.E5.8A.A8)
+    *   [7.6 窗口分辨率自动适配](#.E7.AA.97.E5.8F.A3.E5.88.86.E8.BE.A8.E7.8E.87.E8.87.AA.E5.8A.A8.E9.80.82.E9.85.8D)
+        *   [7.6.1 方案 1](#.E6.96.B9.E6.A1.88_1)
+        *   [7.6.2 方案 2](#.E6.96.B9.E6.A1.88_2)
+        *   [7.6.3 方案 3](#.E6.96.B9.E6.A1.88_3)
+        *   [7.6.4 方案 4](#.E6.96.B9.E6.A1.88_4)
+    *   [7.7 拖拽与复制粘贴](#.E6.8B.96.E6.8B.BD.E4.B8.8E.E5.A4.8D.E5.88.B6.E7.B2.98.E8.B4.B4)
+    *   [7.8 在 VMware Workstation 11 版上运行共享 VM](#.E5.9C.A8_VMware_Workstation_11_.E7.89.88.E4.B8.8A.E8.BF.90.E8.A1.8C.E5.85.B1.E4.BA.AB_VM)
+    *   [7.9 系统更新后共享文件夹没有被挂载](#.E7.B3.BB.E7.BB.9F.E6.9B.B4.E6.96.B0.E5.90.8E.E5.85.B1.E4.BA.AB.E6.96.87.E4.BB.B6.E5.A4.B9.E6.B2.A1.E6.9C.89.E8.A2.AB.E6.8C.82.E8.BD.BD)
 
 ## 编译进内核的驱动程序（模块）
 
@@ -82,9 +82,9 @@ MODULES="... vmw_balloon vmw_pvscsi vmware_vmhgfs vsock vmw_vsock_vmci_transport
 
 2007 年，VMware 将 [VMware Tools](http://kb.vmware.com/kb/340) 中的大部分代码以 LGPL 协议发布，这就是 [Open-VM-Tools](http://sourceforge.net/projects/open-vm-tools/)。官方的 VMware Tools 不再[单独](http://packages.vmware.com/tools/esx/latest/repos/index.html)向 Arch Linux 提供。
 
-以往，VMware Tools 方案所提供的网络与储存驱动是最好的，而且还带有时间同步等功能。然而网络与 SCSI 驱动这部分代码已经早就合入 Linux 内核了。VMware Tools 的优势只剩下 Unity mode 等附加功能。
+以往，VMware Tools 方案所提供的网络与储存驱动是最好的，而且还带有时间同步等功能。然而网络与 SCSI 驱动这部分代码已经早就合入 Linux 内核了。
 
-VMware Tools 与 Open-VM-Tools 两个方案都需要额外安装软件包 [xf86-video-vmware](https://www.archlinux.org/packages/?name=xf86-video-vmware)。
+VMware Tools 曾经有使用 Unity mode 功能的优势，但由于使用的人不多且维护困难，于是从 VMWare Workstation 12 开始移除了 Linux 客户机的 Unity mode 支持。详情请阅 [此跟帖](https://communities.vmware.com/thread/518735) 的答案。
 
 ## Open-VM-Tools
 
@@ -95,54 +95,21 @@ VMware Tools 与 Open-VM-Tools 两个方案都需要额外安装软件包 [xf86-
 *   `vmtoolsd` - 负责汇报虚拟机状态的服务。
 *   `vmware-checkvm` - 用于检测虚拟机中是否在运行着某程序的工具。
 *   `vmware-toolbox-cmd` - 用于收集宿主系统信息的工具。
-*   `vmware-user-suid-wrapper` - 用于实现宿主 / 客机系统间共享剪贴板。
+*   `vmware-user` - Tool to enable clipboard sharing (copy/paste) between host and guest.
 *   `vmware-vmblock-fuse` - 文件系统。基于 [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace") (Filesystem in Userspace) 实现了宿主 / 客机之间拖拽文件。
 *   `vmware-xferlogs` - 向虚拟机的日志文件输出日志与调试信息。
 *   `vmhgfs-fuse` - 挂载 HGFS 共享目录的工具。
 
 ### 内核模块
 
-[open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) 软件包里包含了如下内核模块：
-
 *   `vmhgfs` - 旧有的 HGFS 驱动。这是传统的宿主机-客机间共享目录的方案。
 *   `vmxnet` - 旧有的 VMXNET 网卡驱动。
 
 ### 安装
 
-[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) 软件包。
+[安装](/index.php/%E5%AE%89%E8%A3%85 "安装") [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) 。 如果你想使用共享文件夹，你还需要安装 [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) 包。 然后 [启动](/index.php?title=%E5%90%AF%E5%8A%A8&action=edit&redlink=1 "启动 (page does not exist)") 并 [启用](/index.php/%E5%90%AF%E7%94%A8 "启用") `vmtoolsd.service` 和 `vmware-vmblock-fuse.service`。
 
-Open-VM-Tools 会从文件 `/etc/arch-release` 读取系统版本信息，但这个文件是空的。需要做如下的操作来满足它:
-
-```
-# cat /proc/version > /etc/arch-release
-
-```
-
-#### 多用户目标
-
-**注意:** 对“目标”术语的解释见：[Systemd (简体中文)#目标（target）](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E7.9B.AE.E6.A0.87.EF.BC.88target.EF.BC.89 "Systemd (简体中文)")
-
-本小节的操作步骤可以帮你将系统启动至 `multi-user.target`。如果你想要启动至 `graphical.target` 那么请跳过本小节。
-
-[启动服务](/index.php/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E5.8D.95.E5.85.83 "Systemd (简体中文)") `vmtoolsd.service`。如果需要的话，也可以设置成开机自动启动。
-
-#### 图形界面目标
-
-如果你希望启动至 `graphical.target`，那么按照如下步骤配置：
-
-```
-# 将 vmware-vmblock-fuse.service 设置成开机自启动
-systemctl enable vmware-vmblock-fuse.service
-
-```
-
-如果你还安装了 [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/)，那么你还需要将 `dkms.service` 这个 Systemd 服务也设置成开机自启动。这个服务会在每次内核更新之后自动重新编译内核模块。
-
-如果不能正常工作，可以试试手动安装 [gtkmm](https://www.archlinux.org/packages/?name=gtkmm) 。
-
-### 在窗口大小变动后自动重设分辨率
-
-按照这里：[[1]](https://bbs.archlinux.org/viewtopic.php?pid=1081629#p1081629) 的步骤，在登录到 X 会话之后，启动 `/usr/bin/vmware-user-suid-wrapper`。
+如果该功能无法正常工作，请尝试手动安装 [gtkmm3](https://www.archlinux.org/packages/?name=gtkmm3) 。如要启用客户机的拖拽与复制粘贴功能，则需要安装 [gtkmm3](https://www.archlinux.org/packages/?name=gtkmm3) 。
 
 ## 官方的 VMware Tools
 
@@ -161,7 +128,7 @@ systemctl enable vmware-vmblock-fuse.service
 
 ### 安装（从客户机）
 
-安装依赖项：[base-devel](https://www.archlinux.org/groups/x86_64/base-devel/)（用于编译模块），[net-tools](https://www.archlinux.org/packages/?name=net-tools)（提供 `ifconfig` 供安装程序调用）和 [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) (提供内核头文件)。
+安装依赖项：[base-devel](https://www.archlinux.org/groups/x86_64/base-devel/)（用于编译模块），[net-tools](https://www.archlinux.org/packages/?name=net-tools)（提供 `ifconfig` 供安装程序调用）和 [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) (提供内核头文件)。为签出 `open-vm-tools` 的生成依赖项是 [asp](https://www.archlinux.org/packages/?name=asp)。
 
 然后创建 init 目录，满足安装程序：
 
@@ -197,13 +164,15 @@ systemctl enable vmware-vmblock-fuse.service
 *   “Warning: This script could not find mkinitrd or update-initramfs and cannot remake the initrd file!”
 *   在系统中找不到 Fuse 组件
 
-从 [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) 中拷贝并启用 `vmware-vmblock-fuse` 服务：
+启用 `vmware-vmblock-fuse` systemd 服务（请确保你手动安装了依赖或使用 `-s` 参数）：
 
 ```
- # pacman -S asp
- # asp checkout open-vm-tools
- # cp open-vm-tools/trunk/vmware-* /usr/lib/systemd/system
- # systemctl enable vmware-vmblock-fuse.service
+ $ asp checkout open-vm-tools
+ $ cd open-vm-tools/repos/community-x86_64/
+ $ makepkg -s --asdeps
+ # cp vm* /usr/lib/systemd/system
+ # systemctl enable vmware-vmblock-fuse
+ # systemctl enable vmtoolsd
 
 ```
 
@@ -221,7 +190,7 @@ systemctl enable vmware-vmblock-fuse.service
 
 ```
 
-**Tip:** 在 GitHub 上有个项目 [[2]](https://github.com/rasa/vmware-tools-patches) 尝试将这些步骤全自动处理。
+**Tip:** 在 GitHub 上有个项目 [[1]](https://github.com/rasa/vmware-tools-patches) 尝试将这些步骤全自动处理。
 
 ## Xorg 配置
 
@@ -445,6 +414,16 @@ mainMem.partialLazyRestore = "FALSE"
 
 ## 故障排除
 
+### 客户机网络速度减慢
+
+Arch Linux，和其他 Linux 客户机一样，当使用 NAT 模式的时候也许会碰到网络速度减慢的问题。为了解决这个问题，请在宿主机下把对应的客户机的网络模式切换为 **桥接模式** ，在必要时修改客户机网络的配置文件。有关配置的详细信息请参阅 [Network configuration (简体中文)](/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)") 。如果在 Windows 宿主机下，使用正确的客户机网络配置忍让无法正确连接网络, 可使用 **管理员** 运行 **虚拟网络编辑器** 并点击左下方的 **还原默认设置** 按钮。
+
+### 较新的内核下的文件共享问题
+
+由于 [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) 包已经不再更新，较新的内核无法正确地使用它的做出兼容宿主机和客户机之间文件共享的修补。该[Github 仓库](https://github.com/davispuh/open-vm-tools-dkms) 有一些修补文件可以手动应用它们并解决问题。
+
+你还被推荐查看该包的 AUR comment 部分。
+
 ### 声音问题
 
 如果虚拟机发出了恼人的巨响，那有可能是 [PC 扬声器](/index.php/PC_speaker "PC speaker")的原因。在客户机系统里禁用 PC 扬声器即可解决：
@@ -465,7 +444,7 @@ mainMem.partialLazyRestore = "FALSE"
 *   箭头在移入/移出虚拟机时跳跃
 *   箭头会跳跃到从虚拟机移出的位置
 
-可以先删掉软件包 [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse) 试试看。
+可以先卸载软件包 [xf86-input-vmmouse](https://www.archlinux.org/packages/?name=xf86-input-vmmouse) 试试看。
 
 为解决[鼠标箭头跳跃到从虚拟机移出的位置](https://forums.mageia.org/en/viewtopic.php?f=7&t=7977)的问题，可以试试在 `.vmx` 配置文件里写入这些：
 
@@ -539,18 +518,35 @@ VMware Worksation 的这一设置位于：*View -> Autosize -> Autofit Guest*
 
 再重启试试看。
 
+#### 方案 4
+
+[启用](/index.php/%E5%90%AF%E7%94%A8 "启用") `vmtoolsd.service`.
+
 ### 拖拽与复制粘贴
 
-拖拽与复制粘贴功能依赖 [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) 和 [gtkmm](https://www.archlinux.org/packages/?name=gtkmm) 这两个包。
+**Tip:** 由于与 *gtkmm3* 的依赖关系没有明确声明导致该功能无法正常使用。此问题在 [FS#43159](https://bugs.archlinux.org/task/43159)有详述。
 
-`/etc/xdg/autostart/vmware-user.desktop` 服务可能会在登录时调用程序 *vmware-user-suid-wrapper*，该程序需要依赖 *gtkmm*，但这一依赖关系未被明确声明。此问题在 [FS#43159](https://bugs.archlinux.org/task/43159) 有详述。
+为了确保拖拽与复制粘贴功能正常工作，需要安装 [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) 和 [gtkmm3](https://www.archlinux.org/packages/?name=gtkmm3) 这两个包。
+
+使 `vmware-user` 在 [X11](/index.php/X11 "X11") 之后运行：
+
+*   确保 `etc/xdg/autostart/vmware-user.desktop` 存在，如果文件不存在，请运行：
+
+```
+# cp /etc/vmware-tools/vmware-user.desktop /etc/xdg/autostart/vmware-user.desktop
+
+```
+
+或
+
+*   添加 `vmware-user` 到 [Xinitrc](/index.php/Xinitrc "Xinitrc")
 
 ### 在 VMware Workstation 11 版上运行共享 VM
 
 Workstation 11 有个 bug：当 Arch 客户机以共享 VM 模式运行，且启动了 vmtoolsd 服务时，vmware-hostd 会崩溃。open-vm-tools 有个补丁来[绕过](https://github.com/vmware/open-vm-tools/issues/31)这一问题。
 
-### Shared folder not mounted after system upgrade
+### 系统更新后共享文件夹没有被挂载
 
-This is probably only happens to [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools). Since the vmhgfs module belongs to [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) which belongs to AUR repositiory, therefore would not get's updated automatically by the `pacman -Syu` command. Always update the [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) manually before the system upgrade.
+这个问题基本上只会在 [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) 出现。 自从 `vmhgfs` 模块属于 [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) 以后，使用 `pacman -Syu` 命令并不会升级传统的文件系统驱动。 因此在升级官方仓库之前应该手动升级 [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) 。
 
-If you happened to get in to this situation, you need to remove the automount for shared file system, upgrade and do a `mkinitcpio -p linux`.
+如果在系统升级之后共享文件夹没有被挂载，则删除共享文件系统自动挂载，升级 [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) 后执行 `pacman -Syu` ，最后执行 `mkinitcpio -p linux`。不要忘记恢复文件系统自动挂载。

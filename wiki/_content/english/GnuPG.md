@@ -95,7 +95,7 @@ The default configuration files are `~/.gnupg/gpg.conf` and `~/.gnupg/dirmngr.co
 
 By default, the gnupg directory has its [permissions](/index.php/Permissions "Permissions") set to `700` and the files it contains have their permissions set to `600`. Only the owner of the directory has permission to read, write, and access the files. This is for security purposes and should not be changed. In case this directory or any file inside it does not follow this security measure, you will get warnings about unsafe file and home directory permissions.
 
-Append to these files any long options you want. Do not write the two dashes, but simply the name of the option and required arguments. You will find skeleton files in `/usr/share/gnupg`. These files are copied to `~/.gnupg` the first time gpg is run if they do not exist there. Other examples are found in [#See also](#See_also).
+Append to these files any long options you want. Do not write the two dashes, but simply the name of the option and required arguments. You will find skeleton files in `/usr/share/doc/gnupg/`. These files are copied to `~/.gnupg` the first time gpg is run if they do not exist there. Other examples are found in [#See also](#See_also).
 
 Additionally, [pacman](/index.php/Pacman "Pacman") uses a different set of configuration files for package signature verification. See [Pacman/Package signing](/index.php/Pacman/Package_signing "Pacman/Package signing") for details.
 
@@ -108,7 +108,7 @@ If you want to setup some default options for new users, put configuration files
 
 ```
 
-This will add the respective `/home/user1/.gnupg` and `/home/user2/.gnupg` and copy the files from the skeleton directory to it. Users with existing GnuPG home directory are simply skipped.
+This will add the respective `/home/user1/.gnupg/` and `/home/user2/.gnupg/` and copy the files from the skeleton directory to it. Users with existing GnuPG home directory are simply skipped.
 
 ## Usage
 
@@ -780,7 +780,7 @@ Not enough random bytes available. Please do some other work to give the OS a ch
 To check the available entropy, check the kernel parameters:
 
 ```
-cat /proc/sys/kernel/random/entropy_avail
+$ cat /proc/sys/kernel/random/entropy_avail
 
 ```
 
@@ -825,7 +825,7 @@ See GNOME Keyring wiki entry on how to disable this behavior. [GNOME/Keyring#Dis
 
 ### mutt
 
-Mutt might not use *gpg-agent* correctly, you need to set an [environment variable](/index.php/Environment_variable "Environment variable") `GPG_AGENT_INFO` (the content doesn't matter) when running mutt. Be also sure to enable password caching correctly, see [#Cache passwords](#Cache_passwords).
+Mutt might not use *gpg-agent* correctly, you need to set an [environment variable](/index.php/Environment_variable "Environment variable") `GPG_AGENT_INFO` (the content does not matter) when running mutt. Be also sure to enable password caching correctly, see [#Cache passwords](#Cache_passwords).
 
 See [this forum thread](https://bbs.archlinux.org/viewtopic.php?pid=1490821#p1490821)
 

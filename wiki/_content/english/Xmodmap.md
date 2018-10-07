@@ -1,7 +1,7 @@
 Related articles
 
 *   [Xorg](/index.php/Xorg "Xorg")
-*   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
+*   [Keyboard input](/index.php/Keyboard_input "Keyboard input")
 *   [Extra keyboard keys in console](/index.php/Extra_keyboard_keys_in_console "Extra keyboard keys in console")
 *   [Xbindkeys](/index.php/Xbindkeys "Xbindkeys")
 
@@ -75,11 +75,11 @@ Each *keysym* column in the table corresponds to a particular combination of mod
 
 Not all *keysyms* have to be set, but to assign only a latter *keysym*, use the `NoSymbol` value.
 
-To see which *keycode* corresponds to a key, see [Extra keyboard keys#In Xorg](/index.php/Extra_keyboard_keys#In_Xorg "Extra keyboard keys") for details on the *xev* utility which will output relevant keycode/keysym information about a key when you press it.
+To see which *keycode* corresponds to a key, see [Keyboard input#Identifying keycodes in Xorg](/index.php/Keyboard_input#Identifying_keycodes_in_Xorg "Keyboard input") for details on the *xev* utility which will output relevant keycode/keysym information about a key when you press it.
 
 **Tip:** There are predefined descriptive *keysyms* for multimedia keys, e.g. `XF86AudioMute` or `XF86Mail`. These *keysyms* can be found in `/usr/include/X11/XF86keysym.h`. Many multimedia programs are designed to work with these *keysyms* out-of-the-box, without the need to configure any third-party application.
 
-Note that xmodmap is influenced by xkbd settings, so all eight keysym are available for the US(intl) xkbd layout but not for the default US (it is missing the ralt_switch symbol defined in level3). To have all 8 keysyms available you should configure the *(intl)* variant of the keyboard. Using US layout as an example, `$ setxkbmap -layout 'us(intl)'` before calling xmodmap to test your changes in the current X session. To permanently make this change, edit the xorg configuration or your .xprofile or .xinitrc file. See [Keyboard configuration in Xorg#Setting keyboard layout](/index.php/Keyboard_configuration_in_Xorg#Setting_keyboard_layout "Keyboard configuration in Xorg") for a full explanation.
+Note that xmodmap is influenced by xkbd settings, so all eight keysym are available for the US(intl) xkbd layout but not for the default US (it is missing the ralt_switch symbol defined in level3). To have all 8 keysyms available you should configure the *(intl)* variant of the keyboard. Using US layout as an example, `$ setxkbmap -layout 'us(intl)'` before calling xmodmap to test your changes in the current X session. To permanently make this change, edit the xorg configuration or your .xprofile or .xinitrc file. See [Xorg/Keyboard configuration#Setting keyboard layout](/index.php/Xorg/Keyboard_configuration#Setting_keyboard_layout "Xorg/Keyboard configuration") for a full explanation.
 
 ## Custom table
 

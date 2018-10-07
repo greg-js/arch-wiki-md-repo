@@ -22,16 +22,18 @@ Owners of unsupported AMD/ATI video cards may use the [Radeon open source](/inde
 *   [3 Loading](#Loading)
     *   [3.1 Enable early KMS](#Enable_early_KMS)
 *   [4 Xorg configuration](#Xorg_configuration)
-*   [5 Performance tuning](#Performance_tuning)
-    *   [5.1 Enabling video acceleration](#Enabling_video_acceleration)
-    *   [5.2 Driver options](#Driver_options)
-*   [6 Enable GPU display scaling](#Enable_GPU_display_scaling)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 Xorg or applications won't start](#Xorg_or_applications_won.27t_start)
-    *   [7.2 Screen artifacts and frequency problem](#Screen_artifacts_and_frequency_problem)
-    *   [7.3 Screen flickering](#Screen_flickering)
-    *   [7.4 R9 390 series Poor Performance and/or Instability](#R9_390_series_Poor_Performance_and.2For_Instability)
-    *   [7.5 Freezes with "[drm] IP block:gmc_v8_0 is hung!" kernel error](#Freezes_with_.22.5Bdrm.5D_IP_block:gmc_v8_0_is_hung.21.22_kernel_error)
+    *   [4.1 Tear Free Rendering](#Tear_Free_Rendering)
+    *   [4.2 DRI level](#DRI_level)
+*   [5 Features](#Features)
+    *   [5.1 Video acceleration](#Video_acceleration)
+    *   [5.2 Overclocking](#Overclocking)
+    *   [5.3 Enable GPU display scaling](#Enable_GPU_display_scaling)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Xorg or applications won't start](#Xorg_or_applications_won.27t_start)
+    *   [6.2 Screen artifacts and frequency problem](#Screen_artifacts_and_frequency_problem)
+    *   [6.3 Screen flickering](#Screen_flickering)
+    *   [6.4 R9 390 series Poor Performance and/or Instability](#R9_390_series_Poor_Performance_and.2For_Instability)
+    *   [6.5 Freezes with "[drm] IP block:gmc_v8_0 is hung!" kernel error](#Freezes_with_.22.5Bdrm.5D_IP_block:gmc_v8_0_is_hung.21.22_kernel_error)
 
 ## Selecting the right driver
 
@@ -76,7 +78,7 @@ The flags depend on the cards GCN version:
 
 AMD DC (display code), introduced in [linux](https://www.archlinux.org/packages/?name=linux) 4.15-4.17, is a new display stack that brings support for atomic mode-setting and HDMI/DP audio. For more info about AMDGPU-DC, see [this article](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-DC-Accepted).
 
-If you are on GCN 1.1 or newer with AMDGPU and want to use DC, set `amdgpu.dc=1` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter").
+If you are on GCN 1.1 or newer with AMDGPU and want to use DC, set `amdgpu.dc=1` as [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") or [module option](/index.php/Kernel_module#Setting_module_options "Kernel module") when using [KMS](/index.php/KMS "KMS").
 
 ### AMDGPU PRO
 
@@ -140,35 +142,89 @@ Section "Device"
  EndSection
 ```
 
-Using this section, you can enable features and tweak the driver settings.
+Using this section, you can enable features and tweak the driver settings, see [amdgpu(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/amdgpu.4) first before setting driver options.
 
-## Performance tuning
+### Tear Free Rendering
 
-### Enabling video acceleration
-
-See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
-
-### Driver options
-
-The following options apply to `/etc/X11/xorg.conf.d/**20-amdgpu.conf**`.
-
-Please read [amdgpu(4)](https://jlk.fjfi.cvut.cz/arch/manpages/man/amdgpu.4) first before setting driver options.
-
-**DRI** sets the maximum level of DRI to enable. Valid values are *2* for DRI2 or *3* for DRI3\. The default is *3* for DRI3 if the Xorg version is >= 1.18.3, otherwise DRI2 is used:
-
-```
-Option "DRI" "3" 
-
-```
-
-**TearFree** controls tearing prevention using the hardware page flipping mechanism. If this option is set, the default value of the property is set to *auto*, which means that TearFree is on for outputs with rotation or other RandR transforms:
+*TearFree* controls tearing prevention using the hardware page flipping mechanism. If this option is set, the default value of the property is 'on' or 'off' accordingly. If this option isn't set, the default value of the property is auto, which means that TearFree is on for rotated outputs, outputs with RandR transforms applied and for RandR 1.4 slave outputs, otherwise off:
 
 ```
 Option "TearFree" "true"
 
 ```
 
-## Enable GPU display scaling
+### DRI level
+
+*DRI* sets the maximum level of DRI to enable. Valid values are *2* for DRI2 or *3* for DRI3\. The default is *3* for DRI3 if the [Xorg](/index.php/Xorg "Xorg") version is >= 1.18.3, otherwise DRI2 is used:
+
+```
+Option "DRI" "3" 
+
+```
+
+## Features
+
+### Video acceleration
+
+See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
+
+### Overclocking
+
+Since Linux 4.17, it is possible to adjust clocks and voltages of the graphics card via `/sys/class/drm/card0/device/pp_od_clk_voltage`. It is however required to unlock access to it in sysfs by appending the boot parameter `amdgpu.ppfeaturemask=0xffffffff`.
+
+After this, the range of allowed values must be increased to allow higher clocks than used by default. To allow the maximum GPU clock to be increased by e.g. up to 2%, run:
+
+```
+echo "2" > /sys/class/drm/card0/device/pp_sclk_od
+
+```
+
+**Note:** Running cat `/sys/class/drm/card0/device/pp_sclk_od` does always return either 1 or 0, no matter the value added to it via `echo`.
+
+Unlike with previous kernel versions, this alone doesn't lead to a higher clock. The values in `pp_od_clk_voltage` for the pstates have to be adjusted as well. It's a good idea to get the default values as a guidance by simply reading the file. In this example, the default clock is 1196MHz and a range increase by 2% allows up to 1219MHz.
+
+To set the GPU clock for the maximum pstate 7 on a Polaris GPU to 1209MHz and 900mV voltage, run:
+
+```
+# echo "s 7 1209 900" > /sys/class/drm/card0/device/pp_od_clk_voltage
+
+```
+
+**Warning:** Double check the entered values, as mistakes might instantly cause fatal hardware damage!
+
+To apply, run
+
+```
+# echo "c" > /sys/class/drm/card0/device/pp_od_clk_voltage
+
+```
+
+To check if it worked out, read out clocks and voltage under 3D load:
+
+```
+# watch -n 0.5  cat /sys/kernel/debug/dri/0/amdgpu_pm_info
+
+```
+
+You can reset to the default values using this:
+
+```
+# echo "r" > /sys/class/drm/card0/device/pp_od_clk_voltage
+
+```
+
+To set the allowed maximum power consumption of the GPU to e.g. 50 Watts, run
+
+```
+# echo 50000000 > /sys/class/drm/card0/device/hwmon/hwmon0/power1_cap
+
+```
+
+If the video card bios doesn't provide a maximum value above the default setting, you can only decrease the power limit, but not increase.
+
+**Note:** The above procedure was tested with a Polaris RX 560 card. There may be different behavior or bugs with different GPUs.
+
+### Enable GPU display scaling
 
 To avoid the usage of the scaler which is built in the display, and use the GPU own scaler instead, when not using the native resolution of the monitor, execute:
 

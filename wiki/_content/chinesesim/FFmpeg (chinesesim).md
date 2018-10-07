@@ -8,7 +8,7 @@ From the project [home page](http://www.ffmpeg.org/):
 
 *   [1 安装](#.E5.AE.89.E8.A3.85)
 *   [2 编码例子](#.E7.BC.96.E7.A0.81.E4.BE.8B.E5.AD.90)
-    *   [2.1 屏幕投影](#.E5.B1.8F.E5.B9.95.E6.8A.95.E5.BD.B1)
+    *   [2.1 屏幕捕获（录屏）](#.E5.B1.8F.E5.B9.95.E6.8D.95.E8.8E.B7.EF.BC.88.E5.BD.95.E5.B1.8F.EF.BC.89)
     *   [2.2 Recording webcam](#Recording_webcam)
     *   [2.3 VOB to any container](#VOB_to_any_container)
     *   [2.4 x264 lossless](#x264_lossless)
@@ -54,7 +54,7 @@ Forks:
 
 ## 编码例子
 
-### 屏幕投影
+### 屏幕捕获（录屏）
 
 FFmpeg 包含 [x11grab](http://www.ffmpeg.org/ffmpeg-devices.html#x11grab) 和 [ALSA](http://www.ffmpeg.org/ffmpeg-devices.html#alsa-1) 虚拟化设备，使它能够捕捉用户的全部全部图像和音频输出。
 

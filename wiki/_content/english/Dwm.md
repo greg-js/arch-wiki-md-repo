@@ -14,10 +14,10 @@ Related articles
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Statusbar configuration](#Statusbar_configuration)
         *   [4.1.1 Conky statusbar](#Conky_statusbar)
-    *   [4.2 Restart dwm without logging out or closing programs](#Restart_dwm_without_logging_out_or_closing_programs)
+    *   [4.2 Restart dwm](#Restart_dwm)
     *   [4.3 Bind the right Alt key to Mod4](#Bind_the_right_Alt_key_to_Mod4)
     *   [4.4 Space around font in dwm's bar](#Space_around_font_in_dwm.27s_bar)
-    *   [4.5 Disable focus follows mouse behaviour](#Disable_focus_follows_mouse_behaviour)
+    *   [4.5 Disable focus follows mouse](#Disable_focus_follows_mouse)
     *   [4.6 Floating layout for some windows](#Floating_layout_for_some_windows)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Fixing misbehaving Java applications](#Fixing_misbehaving_Java_applications)
@@ -112,9 +112,9 @@ $mpd_smart :: ${cpu cpu1}% / ${cpu cpu2}%  ${loadavg 1} ${loadavg 2 3} :: ${acpi
 
 For icons and color options, see [dzen](/index.php/Dzen "Dzen").
 
-### Restart dwm without logging out or closing programs
+### Restart dwm
 
-For restarting dwm without logging out or closing applications, change or add a startup script so that it loads dwm in a *while* loop, see below:
+To restart dwm without logging out or closing applications, change or add a startup script so that it loads dwm in a *while* loop, for example:
 
 ```
 while true; do
@@ -177,7 +177,7 @@ By default, dwm's bar adds 2px around the size of the font. To change this, modi
 
  `bh = dc.h = dc.font.height + 2;` 
 
-### Disable focus follows mouse behaviour
+### Disable focus follows mouse
 
 To disable focus follows mouse behaviour comment out the following line in definiton of struct handler in `dwm.c`
 
