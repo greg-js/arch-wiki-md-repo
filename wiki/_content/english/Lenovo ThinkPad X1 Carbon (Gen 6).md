@@ -53,13 +53,17 @@ Version: ThinkPad X1 Carbon 6th
     *   [2.4 BIOS configurations](#BIOS_configurations)
 *   [3 Power management/Throttling issues](#Power_management.2FThrottling_issues)
     *   [3.1 Throttling fix](#Throttling_fix)
-*   [4 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
-*   [5 Full-disk encryption](#Full-disk_encryption)
-    *   [5.1 Ramdisk module](#Ramdisk_module)
-*   [6 Tools](#Tools)
-    *   [6.1 Diagnostics](#Diagnostics)
-*   [7 References](#References)
-*   [8 Additional resources](#Additional_resources)
+*   [4 Configuration](#Configuration)
+    *   [4.1 Keyboard Fn Shortcuts](#Keyboard_Fn_Shortcuts)
+    *   [4.2 Special buttons](#Special_buttons)
+    *   [4.3 HDR Display Color Calibration](#HDR_Display_Color_Calibration)
+*   [5 TrackPoint and Touchpad issues](#TrackPoint_and_Touchpad_issues)
+*   [6 Full-disk encryption](#Full-disk_encryption)
+    *   [6.1 Ramdisk module](#Ramdisk_module)
+*   [7 Tools](#Tools)
+    *   [7.1 Diagnostics](#Diagnostics)
+*   [8 References](#References)
+*   [9 Additional resources](#Additional_resources)
 
 ## BIOS
 
@@ -75,7 +79,7 @@ In case your `efivars` are not properly set it is most likely due to you not bei
 
 #### Manual Installation
 
-[BIOS update 1.30](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-carbon-6th-gen-type-20kh-20kg/downloads) was released on 2018-09-07\. Obtain [geteltorito](https://aur.archlinux.org/packages/geteltorito/) and run `geteltorito.pl -o bios-update.img n23ur11w.iso` on the downloaded ISO file to create a valid [El Torito](https://en.wikipedia.org/wiki/El_Torito_(CD-ROM_standard) image file, then flash this file on a USB drive via `dd` like you would flash [Arch installation media](/index.php/USB_flash_installation_media "USB flash installation media"). For further information see [flashing BIOS from Linux](/index.php/Flashing_BIOS_from_Linux#Bootable_optical_disk_emulation "Flashing BIOS from Linux").
+[BIOS update 1.31](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-carbon-6th-gen-type-20kh-20kg/downloads) was released on 2018-10-02\. Obtain [geteltorito](https://aur.archlinux.org/packages/geteltorito/) and run `geteltorito.pl -o bios-update.img n23ur12w.iso` on the downloaded ISO file to create a valid [El Torito](https://en.wikipedia.org/wiki/El_Torito_(CD-ROM_standard) image file, then flash this file on a USB drive via `dd` like you would flash [Arch installation media](/index.php/USB_flash_installation_media "USB flash installation media"). For further information see [flashing BIOS from Linux](/index.php/Flashing_BIOS_from_Linux#Bootable_optical_disk_emulation "Flashing BIOS from Linux").
 
 The ThinkPad X1 Carbon supports setting a custom splash image at the earliest boot stage (instead of the red "Lenovo" logo), more information can be found in the `README.TXT` located in the `FLASH` folder of the update image.
 
@@ -131,6 +135,78 @@ sudo systemctl enable --now lenovo_fix.service
 The script also supports more advance thermal/performance features including CPU undervolting. See the [lenovo-throttling-fix repository](https://github.com/erpalma/lenovo-throttling-fix) `README.md` for details.
 
 **Note:** If you installed [thermald](https://www.archlinux.org/packages/?name=thermald), it may conflict with the throttling fix in this package. Consider disabling thermald or otherwise work around this.
+
+## Configuration
+
+### Keyboard Fn Shortcuts
+
+*   Fn+4 sends XF86Sleep (puts computer to sleep by default)
+*   Fn+S sends Alt_L+Sys_Req
+*   Fn+P sends Pause
+*   Fn+B sends Control_L+Break
+*   Fn+K sends Scroll_Lock
+*   Fn+Space toggles the keyboard backlight
+*   Fn by itself sends XF86WakeUp (wakes computer from sleep by default)
+
+### Special buttons
+
+Some special buttons are not supported by X server due to keycode number limit.
+
+| Key combination | Scancode | Keycode |
+| `Fn+F11` | `0x49` | `374` `KEY_KEYBOARD` |
+| `Fn+F12` | `0x45` | `364` `KEY_FAVORITES` |
+
+You can remap unsupported keys using [udev hwdb](/index.php/Map_scancodes_to_keycodes "Map scancodes to keycodes"):
+
+ `/etc/udev/hwdb.d/90-thinkpad-keyboard.hwdb` 
+```
+evdev:name:ThinkPad Extra Buttons:dmi:bvn*:bvr*:bd*:svnLENOVO*:pn*
+ KEYBOARD_KEY_45=prog1
+ KEYBOARD_KEY_49=prog2
+
+```
+
+Update hwdb after editing the rule.
+
+```
+# udevadm hwdb --update
+# udevadm trigger --sysname-match="event*"
+
+```
+
+### HDR Display Color Calibration
+
+For models with the 1440p HDR display, the default color profile can be corrected using an ICC calibration provided by [notebookcheck.net's review](https://www.notebookcheck.net/Lenovo-ThinkPad-X1-Carbon-2018-WQHD-HDR-i7-Laptop-Review.284682.0.html).
+
+```
+ wget [https://www.notebookcheck.net/uploads/tx_nbc2/B140QAN02_0.icm](https://www.notebookcheck.net/uploads/tx_nbc2/B140QAN02_0.icm)
+ colormgr import-profile B140QAN02_0.icm
+
+```
+
+This will import the ICC profile, and next you'll need to activate it for your display. Find your display's object path:
+
+```
+ colormgr get-devices | sed -rn 's/Object Path:\s*(.*eDP1.*)/\1/p'
+
+```
+
+And your new color profile object path:
+
+```
+ colormgr get-profiles | grep -4 -i B140QAN02
+
+```
+
+And finally activate the profile and set it as the default for this display:
+
+```
+ colormgr device-add-profile <device object id> <profile object id>
+ colormgr device-make-profile-default <device object id> <profile object id>
+
+```
+
+You can verify the profile is active by running `colormgr get-devices`.
 
 ## TrackPoint and Touchpad issues
 

@@ -79,7 +79,7 @@ match all action "inbox"
 
 ```
 
-This will collect the mail from the listed accounts and deliver it to the INBOX folder that we made. Refer to the `fdm(1)` man page for specifics on how to connect to other types of mail servers (POP3 for example).
+This will collect the mail from the listed accounts and deliver it to the INBOX folder that we made. Refer to the [fdm(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fdm.1) man page for specifics on how to connect to other types of mail servers (POP3 for example).
 
 **Tip:** You can also specify your login name and/or password in the `.netrc` file.
 

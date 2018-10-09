@@ -21,7 +21,7 @@ For general methods to improve the flexibility of the provided tips or *pacman* 
     *   [1.5 Removing everything but base group](#Removing_everything_but_base_group)
     *   [1.6 Getting the dependencies list of several packages](#Getting_the_dependencies_list_of_several_packages)
     *   [1.7 Listing changed backup files](#Listing_changed_backup_files)
-    *   [1.8 Back-up the pacman database](#Back-up_the_pacman_database)
+    *   [1.8 Backup the pacman database](#Backup_the_pacman_database)
     *   [1.9 Check changelogs easily](#Check_changelogs_easily)
 *   [2 Installation and recovery](#Installation_and_recovery)
     *   [2.1 Installing packages from a CD/DVD or USB stick](#Installing_packages_from_a_CD.2FDVD_or_USB_stick)
@@ -36,12 +36,13 @@ For general methods to improve the flexibility of the provided tips or *pacman* 
         *   [2.3.7 Preventing unwanted cache purges](#Preventing_unwanted_cache_purges)
     *   [2.4 Recreate a package from the file system](#Recreate_a_package_from_the_file_system)
     *   [2.5 List of installed packages](#List_of_installed_packages)
-    *   [2.6 Listing all changed files from packages](#Listing_all_changed_files_from_packages)
-    *   [2.7 Reinstalling all packages](#Reinstalling_all_packages)
-    *   [2.8 Restore pacman's local database](#Restore_pacman.27s_local_database)
-    *   [2.9 Recovering a USB key from existing install](#Recovering_a_USB_key_from_existing_install)
-    *   [2.10 Viewing a single file inside a .pkg file](#Viewing_a_single_file_inside_a_.pkg_file)
-    *   [2.11 Find applications that use libraries from older packages](#Find_applications_that_use_libraries_from_older_packages)
+    *   [2.6 Install packages from a list](#Install_packages_from_a_list)
+    *   [2.7 Listing all changed files from packages](#Listing_all_changed_files_from_packages)
+    *   [2.8 Reinstalling all packages](#Reinstalling_all_packages)
+    *   [2.9 Restore pacman's local database](#Restore_pacman.27s_local_database)
+    *   [2.10 Recovering a USB key from existing install](#Recovering_a_USB_key_from_existing_install)
+    *   [2.11 Viewing a single file inside a .pkg file](#Viewing_a_single_file_inside_a_.pkg_file)
+    *   [2.12 Find applications that use libraries from older packages](#Find_applications_that_use_libraries_from_older_packages)
 *   [3 Performance](#Performance)
     *   [3.1 Download speeds](#Download_speeds)
         *   [3.1.1 Powerpill](#Powerpill)
@@ -258,9 +259,9 @@ Running this command with root permissions will ensure that files readable only 
 
 **Tip:** See [#Listing all changed files from packages](#Listing_all_changed_files_from_packages) to list all changed files *pacman* knows about, not only backup files.
 
-### Back-up the pacman database
+### Backup the pacman database
 
-The following command can be used to back up the local *pacman* database:
+The following command can be used to backup the local *pacman* database:
 
 ```
 $ tar -cjf pacman_database.tar.bz2 /var/lib/pacman/local
@@ -464,44 +465,21 @@ An alternative tool would be [fakepkg](https://aur.archlinux.org/packages/fakepk
 
 ### List of installed packages
 
-Keeping a list of explicitly installed packages can be useful to speed up installation on a new system:
+Keeping a list of all the explicitly installed packages can be useful, to backup a system for example or speed up installation on a new system:
 
 ```
 $ pacman -Qqe > pkglist.txt
 
 ```
 
-**Note:** If the option `-t` was used, when reinstalling the list all the non-top-level packages would be set as dependencies. With option `-n`, foreign packages (e.g. from AUR) would be omitted from the list.
+**Note:**
 
-To install packages from the list backup, run:
+*   With option `-t`, the packages already required by other explicitly installed packages are not mentioned. If reinstalling from this list they will be installed but as dependencies only.
+*   With option `-n`, foreign packages (e.g. from [AUR](/index.php/AUR "AUR")) would be omitted from the list.
+*   Use `comm -13 <(pacman -Qqdt | sort) < (pacman -Qqdtt | sort) > optdeplist.txt` to also create a list of the installed optional dependencies which can be reinstalled with `--asdeps`.
+*   Use `pacman -Qqem > foreignpkglist.txt` to create the list of AUR and other foreign packages that have been explicitly installed.
 
-```
-# pacman -S - < pkglist.txt
-
-```
-
-**Tip:**
-
-*   To skip already installed packages, use `--needed`.
-*   Use `comm -13 <(pacman -Qqdt | sort) <(pacman -Qqdtt | sort) > optdeplist.txt` to also create a list of the installed optional dependencies which can be reinstalled with `--asdeps`.
-
-In case the list includes foreign packages, such as [AUR](/index.php/AUR "AUR") packages, remove them first:
-
-```
-# pacman -S $(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))
-
-```
-
-To remove all the packages on your system that are not mentioned in the list:
-
-```
-# pacman -Rsu $(comm -23 <(pacman -Qq | sort) <(sort pkglist.txt))
-
-```
-
-**Tip:** These tasks can be automated. See [bacpac](https://aur.archlinux.org/packages/bacpac/), [packup](https://aur.archlinux.org/packages/packup/), [pacmanity](https://aur.archlinux.org/packages/pacmanity/), and [pug](https://aur.archlinux.org/packages/pug/) for examples.
-
-If you would like to keep an up-to-date list of explicitly installed packages (e.g. in combination with a versioned `/etc/`), you can set up a [hook](/index.php/Pacman#Hooks "Pacman"). Example:
+To keep an up-to-date list of explicitly installed packages (e.g. in combination with a versioned `/etc/`), you can set up a [hook](/index.php/Pacman#Hooks "Pacman"). Example:
 
 ```
 [Trigger]
@@ -512,9 +490,34 @@ Target = *
 
 [Action]
 When = PostTransaction
-Exec = /bin/sh -c '/usr/bin/pacman -Qqe > /etc/packages.txt'
+Exec = /bin/sh -c '/usr/bin/pacman -Qqe > /etc/pkglist.txt'
 
 ```
+
+### Install packages from a list
+
+To install packages from a previously saved list of packages, while not reinstalling previously installed packages that are already up-to-date, run:
+
+```
+# pacman -S --needed - < pkglist.txt
+
+```
+
+However, it is likely foreign packages such as from the AUR or installed locally are present in the list. To filter out from the list the foreign packages, the previous command line can be enriched as follows:
+
+```
+# pacman -S --needed $(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))
+
+```
+
+Eventually, to make sure the installed packages of your system match the list and remove all the packages that are not mentioned in it:
+
+```
+# pacman -Rsu $(comm -23 <(pacman -Qq | sort) <(sort pkglist.txt))
+
+```
+
+**Tip:** These tasks can be automated. See [bacpac](https://aur.archlinux.org/packages/bacpac/), [packup](https://aur.archlinux.org/packages/packup/), [pacmanity](https://aur.archlinux.org/packages/pacmanity/), and [pug](https://aur.archlinux.org/packages/pug/) for examples.
 
 ### Listing all changed files from packages
 
@@ -534,11 +537,11 @@ For recovery of the database see [#Restore pacman's local database](#Restore_pac
 To reinstall all native packages, use:
 
 ```
-# pacman -Qnq | pacman -S -
+# pacman -Qqn | pacman -S -
 
 ```
 
-Foreign (AUR) packages must be reinstalled separately; you can list them with `pacman -Qmq`.
+Foreign (AUR) packages must be reinstalled separately; you can list them with `pacman -Qqm`.
 
 *Pacman* preserves the [installation reason](/index.php/Installation_reason "Installation reason") by default.
 

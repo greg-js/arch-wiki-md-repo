@@ -62,7 +62,7 @@ Véase [Command-line shell#Configuration files](/index.php/Command-line_shell#Co
 
 ## En el inicio del entorno de escritorio
 
-Muchos [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") implementan [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart").
+Muchos [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") implementan [XDG Autostart](/index.php/XDG_Autostart_(Espa%C3%B1ol) "XDG Autostart (Español)").
 
 Si los entornos de escritorio tienen un artículo, véase su sección *Inicio automático*.
 

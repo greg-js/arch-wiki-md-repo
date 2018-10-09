@@ -116,10 +116,18 @@ To run a service on the first Saturday of every month, use:
 
 ```
 
-When using the `DayOfWeek` part, at least one weekday has to be specified. If you want something to run every day on 4am, use:
+When using the `DayOfWeek` part, at least one weekday has to be specified. If you want something to run every day at 4am, use:
 
 ```
  OnCalendar=*-*-* 4:00:00
+
+```
+
+To run a service at different times, `OnCalendar` may be specified more than once. In the example below, the service runs at 22:30 on weekdays and at 20:00 on weekends.
+
+```
+ OnCalendar=Mon..Fri 22:30
+ OnCalendar=Sat,Sun 20:00
 
 ```
 

@@ -46,7 +46,7 @@ También soporta archivos de configuración divididos usando la directiva `#incl
 
 **Nota:** [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/) requiere [nvidia-cg-toolkit](https://www.archlinux.org/packages/?name=nvidia-cg-toolkit) para poder usar los *cg shaders*.
 
-**Advertencia:** Al utilizar '[ALSA](/index.php/ALSA "ALSA") *es necesario que el `audio_out_rate` sea ​​igual a la velocidad de salida predeterminada del sistema, normalmente 48000.*
+**Advertencia:** Al utilizar '[ALSA](/index.php/ALSA_(Espa%C3%B1ol) "ALSA (Español)") *es necesario que el `audio_out_rate` sea ​​igual a la velocidad de salida predeterminada del sistema, normalmente 48000.*
 
 ## Actualizador en línea
 

@@ -73,7 +73,7 @@ Recuerde que MPD cambia el usuario de root a aquel mencionado en el archivo `/et
 
 ### Correcta Configuración de Sonido
 
-Para que la salido de audio funcione, asegúrese de haber configurado la tarjeta de sonido y el mixer correctamente. Vea [ALSA](/index.php/ALSA "ALSA"). No olvide activar los canales requeridos en alsamixer, incrementar el volumen y guardar los cambios con alsactl store. Vea `~/.mpd/error` si aún no funciona.
+Para que la salido de audio funcione, asegúrese de haber configurado la tarjeta de sonido y el mixer correctamente. Vea [ALSA](/index.php/ALSA_(Espa%C3%B1ol) "ALSA (Español)"). No olvide activar los canales requeridos en alsamixer, incrementar el volumen y guardar los cambios con alsactl store. Vea `~/.mpd/error` si aún no funciona.
 
 Asegúrese que su tarjeta pueda hacer mezclas por hardware (la mayoría de ellas pueden, incluidas aquellas integradas de la board), si no, esto podría traer problemas con múltiples reproducciones de sonido. Por ejemplo, Mplayer no podría reproducir sonido mientras el daemon se esté ejecutando, mostrando un mensaje de error indicando que el dispositivo se encuentra ocupado.
 

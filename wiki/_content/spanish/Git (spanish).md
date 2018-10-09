@@ -44,7 +44,7 @@ Artículos relacionados
 
 [Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [git](https://www.archlinux.org/packages/?name=git). Para la versión en desarrollo instale el paquete [git-git](https://aur.archlinux.org/packages/git-git/). Verifique los requerimientos opcionales al usar *git svn*, *git gui* and *gitk*.
 
-**Nota:** Para activar corrección de lenguaje en *git-gui*, el paquete [aspell](https://www.archlinux.org/packages/?name=aspell) es necesario, asi como el diccionario correspondiente con la [variable de entorno](/index.php/Environment_variables_(Espa%C3%B1ol) "Environment variables (Español)") `LC_MESSAGES`. Vea [FS#28181](https://bugs.archlinux.org/task/28181) y el articulo [aspell](/index.php/Aspell "Aspell").
+**Nota:** Para activar corrección de lenguaje en *git-gui*, el paquete [aspell](https://www.archlinux.org/packages/?name=aspell) es necesario, asi como el diccionario correspondiente con la [variable de entorno](/index.php/Environment_variables_(Espa%C3%B1ol) "Environment variables (Español)") `LC_MESSAGES`. Vea [FS#28181](https://bugs.archlinux.org/task/28181) y el articulo [aspell](/index.php/Aspell_(Espa%C3%B1ol) "Aspell (Español)").
 
 ## Configuración
 

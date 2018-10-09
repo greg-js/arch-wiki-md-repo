@@ -155,3 +155,4 @@ USB:
     *   1x USB 3.1 Type-C: OK
 
  | USB drive detection took some work (looking in the BIOS, disabling secure boot). Installation was not successful on the first try. In order to boot I enabled secureboot, cleared trusted bootloaders at secureboot settings, saved, rebooted, entered BIOS, added GRUB as trusted UEFI file, saved, rebooted, entered BIOS, disabled secureboot. Grub will appear in the boot order list even if secureboot is disabled. Must be done at each firmware update. |
+| Acer Aspire E5-553-T337 | 2018.08.07 | Perfectly OK,Amd radeon R5 | OK | OK | OK | OK | OK | OK | OK | Everything works fine.no complaints |

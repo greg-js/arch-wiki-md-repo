@@ -13,7 +13,7 @@ La columna *Paquete* contiene un enlace a la página de ArchWiki relativa a cada
 
 | Paquete | initscripts | systemd | Descripción |
 | [acpid](/index.php/Acpid_(Espa%C3%B1ol) "Acpid (Español)") | acpid | acpid.service | Un demonio transmisor de los eventos de la gestión de energía por ACPI con soporte para netlink. |
-| [alsa](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") | alsa | *siempre activo* – alsa-store.service, alsa-restore.service | Guarda el estado de una tarjeta de sonido (por ejemplo, el volumen) al cierre y lo restaura en el arranque. |
+| [alsa](/index.php/Advanced_Linux_Sound_Architecture_(Espa%C3%B1ol) "Advanced Linux Sound Architecture (Español)") | alsa | *siempre activo* – alsa-store.service, alsa-restore.service | Guarda el estado de una tarjeta de sonido (por ejemplo, el volumen) al cierre y lo restaura en el arranque. |
 | [at](https://www.archlinux.org/packages/?name=at) | atd | atd.service | Guarda trabajos en cola para su posterior ejecución. |
 | [Autofs](/index.php/Autofs "Autofs") | autofs | autofs.service | Monta automáticamente medios extraibles o recursos compartidos de red cuando se insertan o se accede a ellos. |
 | [Avahi](/index.php/Avahi "Avahi") | avahi-daemon | avahi-daemon.service | Permite a los programas encontrar automáticamente servicios de redes locales. |

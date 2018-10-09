@@ -832,7 +832,7 @@ Para activar la aceleración de hardware en [MPlayer](/index.php/MPlayer "MPlaye
 
 **Advertencia:** El códec `ffodivxvdpau` solo es compatible con las series más reciente de hardware NVIDIA. Considere la posibilidad de omitirlo en función de su hardware específico.
 
-Para activar la aceleración de hardware en [VLC](/index.php/VLC "VLC") ir a:
+Para activar la aceleración de hardware en [VLC](/index.php/VLC_(Espa%C3%B1ol) "VLC (Español)") ir a:
 
 `**Tools** (**Herramientas**)` -> `**Preferences** (**Preferencias**)` -> `**Input & Codecs**` -> active `**Use GPU accelerated decoding**`
 

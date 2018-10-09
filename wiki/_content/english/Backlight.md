@@ -181,7 +181,7 @@ If "0", does not restore the backlight settings on boot. However, settings will 
 
 	[http://calise.sourceforge.net/](http://calise.sourceforge.net/) || [calise](https://aur.archlinux.org/packages/calise/)
 
-*   **Clight** — User daemon utility that aims to fully manage your display. It will automagically change screen backlight level to match ambient brightness, as computed by capturing frames from webcam. Moreover, it can manage your screen temperature, just like redshift does. Finally, it can dim your screen after a timeout.
+*   **Clight** — User daemon utility that aims to fully manage your display. It will automagically change screen backlight level to match ambient brightness, as computed by capturing frames from webcam, even on external monitors. Moreover, it can manage your screen temperature, just like redshift does. Finally, it can dim your screen after a timeout.
 
 	[https://github.com/FedeDP/Clight](https://github.com/FedeDP/Clight) || [clight-git](https://aur.archlinux.org/packages/clight-git/)
 

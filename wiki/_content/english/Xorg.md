@@ -227,13 +227,13 @@ See [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "
 **Note:**
 
 *   Newer versions of Xorg are auto-configuring, so manual configuration should not be needed.
-*   If Xorg is unable to detect a monitor or to avoid auto-configuring, a configuration file such as the example below can be used. A common case where this is necessary is a headless system, which boots without a monitor and starts Xorg automatically, either from a [virtual console](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console") at [login](/index.php/Start_X_at_login "Start X at login"), or from a [display manager](/index.php/Display_manager "Display manager").
+*   If Xorg is unable to detect any monitor or to avoid auto-configuring, a configuration file can be used. A common case where this is necessary is a headless system, which boots without a monitor and starts Xorg automatically, either from a [virtual console](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console") at [login](/index.php/Start_X_at_login "Start X at login"), or from a [display manager](/index.php/Display_manager "Display manager").
 
 For a headless configuration the [xf86-video-dummy](https://www.archlinux.org/packages/?name=xf86-video-dummy) driver is necessary, [install](/index.php/Install "Install") it and create a configuration file, such as the following:
 
  `/etc/X11/xorg.conf.d/10-headless.conf` 
 ```
-ection "Monitor"
+Section "Monitor"
         Identifier "Monitor0"
         HorizSync 28.0-80.0
         VertRefresh 48.0-75.0

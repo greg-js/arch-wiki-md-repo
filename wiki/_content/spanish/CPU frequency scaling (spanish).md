@@ -96,7 +96,7 @@ Se puede considerar a los reguladores como esquemas de potencia de la UCP precon
 
 Reguladores disponibles:
 
-	Schedutil *(Por defecto, ha estado incorporado desde el kernel 4.7 al día de hoy)*
+	Schedutil *(Por defecto, ha estado incorporado desde el kernel 4.7 al kenel 4.18)*
 
 	Ya que aprovecha los datos de utilización del planificador del núcleo en un intento de tomar mejores decisiones sobre el ajuste del estado de frecuencia / rendimiento del CPU.
 

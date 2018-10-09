@@ -20,8 +20,7 @@ Related articles
     *   [1.2 Master Boot Record (MBR) specific instructions](#Master_Boot_Record_.28MBR.29_specific_instructions)
     *   [1.3 Installation](#Installation)
 *   [2 UEFI systems](#UEFI_systems)
-    *   [2.1 Check for an EFI system partition](#Check_for_an_EFI_system_partition)
-    *   [2.2 Installation](#Installation_2)
+    *   [2.1 Installation](#Installation_2)
 *   [3 Generate the main configuration file](#Generate_the_main_configuration_file)
 *   [4 Configuration](#Configuration)
     *   [4.1 Additional arguments](#Additional_arguments)
@@ -37,7 +36,8 @@ Related articles
             *   [4.5.1.3 "Firmware setup" menu entry (UEFI only)](#.22Firmware_setup.22_menu_entry_.28UEFI_only.29)
         *   [4.5.2 EFI binaries](#EFI_binaries)
             *   [4.5.2.1 UEFI Shell](#UEFI_Shell)
-            *   [4.5.2.2 Chainloading an Arch Linux .efi file](#Chainloading_an_Arch_Linux_.efi_file)
+            *   [4.5.2.2 gdisk](#gdisk)
+            *   [4.5.2.3 Chainloading an Arch Linux .efi file](#Chainloading_an_Arch_Linux_.efi_file)
         *   [4.5.3 Dual-booting](#Dual-booting)
             *   [4.5.3.1 GNU/Linux menu entry](#GNU.2FLinux_menu_entry)
             *   [4.5.3.2 Windows installed in UEFI/GPT Mode menu entry](#Windows_installed_in_UEFI.2FGPT_Mode_menu_entry)
@@ -81,8 +81,8 @@ On a BIOS/[GPT](/index.php/GPT "GPT") configuration, a [BIOS boot partition](htt
 
 **Note:**
 
-*   Before attempting this method keep in mind that not all systems will be able to support this partitioning scheme. Read more on [GUID partition tables](/index.php/Partitioning#GUID_Partition_Table "Partitioning").
-*   This additional partition is only needed on a GRUB, BIOS/GPT partitioning scheme. Previously, for a GRUB, BIOS/MBR partitioning scheme, GRUB used the Post-MBR gap for the embedding the `core.img`). On GPT, however, there is no guaranteed unused space before the first partition.
+*   Before attempting this method keep in mind that not all systems will be able to support this partitioning scheme. Read more on [Partitioning#GUID Partition Table](/index.php/Partitioning#GUID_Partition_Table "Partitioning").
+*   This additional partition is only needed on a GRUB, BIOS/GPT partitioning scheme. Previously, for a GRUB, BIOS/MBR partitioning scheme, GRUB used the post-MBR gap for the embedding the `core.img`). On GPT, however, there is no guaranteed unused space before the first partition.
 *   For [UEFI](/index.php/UEFI "UEFI") systems this extra partition is not required, since no embedding of boot sectors takes place in that case. However, UEFI systems still require an [EFI system partition](/index.php/EFI_system_partition "EFI system partition").
 
 Create a mebibyte partition (`+1M` with *fdisk* or *gdisk*) on the disk with no file system and with partition type GUID `21686148-6449-6E6F-744E-656564454649`.
@@ -107,7 +107,7 @@ Usually the post-[MBR](/index.php/MBR "MBR") gap (after the 512 byte MBR region 
 
 ```
 
-where `/dev/sd**X**` is the disk where grub is to be installed (for example, disk `/dev/sda` and **not** partition `/dev/sda1`).
+where `/dev/sd**X**` is the disk where GRUB is to be installed (for example, disk `/dev/sda` and **not** partition `/dev/sda1`).
 
 Now you must [#Generate the main configuration file](#Generate_the_main_configuration_file).
 
@@ -121,26 +121,9 @@ See [grub-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grub-install.8)
 
 **Note:**
 
-*   It is recommended to read and understand the [UEFI](/index.php/UEFI "UEFI"), [GPT](/index.php/GPT "GPT") and [Arch boot process#Under UEFI](/index.php/Arch_boot_process#Under_UEFI "Arch boot process") pages.
+*   It is recommended to read and understand the [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), [Partitioning#GUID Partition Table](/index.php/Partitioning#GUID_Partition_Table "Partitioning") and [Arch boot process#Under UEFI](/index.php/Arch_boot_process#Under_UEFI "Arch boot process") pages.
 *   When installing to use UEFI it is important to start the install with your machine in UEFI mode. The Arch Linux install media must be UEFI bootable.
-
-### Check for an EFI system partition
-
-To boot from a disk using UEFI, the recommended disk partition table is GPT and this is the layout that is assumed in this article. An [EFI system partition](/index.php/EFI_system_partition "EFI system partition") (ESP) is required on every bootable disk. If you are installing Arch Linux on an UEFI-capable computer with an installed operating system, like Windows 10 for example, it is very likely that you already have an ESP.
-
-To find out the disk partition scheme and the system partition, use `parted` as root on the disk you want to boot from:
-
-```
-# parted /dev/sd*x* print
-
-```
-
-The command returns:
-
-*   The disk partition layout: if the disk is GPT, it indicates `Partition Table: gpt`.
-*   The list of partitions on the disk: Look for the EFI system partition in the list, it is a small (usually about 100-550 MiB) partition with a `fat32` file system and with the flag `esp` enabled. To confirm this is the ESP, mount it and check whether it contains a directory named `EFI`, if it does this is definitely the ESP.
-
-Once it is found, **take note of the partition number**, it will be required for the [GRUB installation](#Installation_2). If you do not have an ESP, you will need to create one. See the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") article.
+*   To boot from a disk using UEFI, an EFI system partition is required. Follow [EFI system partition#Check for an existing partition](/index.php/EFI_system_partition#Check_for_an_existing_partition "EFI system partition") to find out if you have one already, otherwise you need to create it.
 
 ### Installation
 
@@ -261,7 +244,7 @@ Where the RAID 1 array housing `/boot` is housed on `/dev/sda` and `/dev/sdb`.
 
 #### Root partition
 
-To encrypt a root filesystem to be used with GRUB, add the `encrypt` hook or the `sd-encrypt` hook (if using systemd hooks) to [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details, and [Mkinitcpio#Common hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") for alternative encryption hooks.
+To encrypt a root filesystem to be used with GRUB, add the `encrypt` hook or the `sd-encrypt` hook (if using systemd hooks) to [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_configuration#mkinitcpio "Dm-crypt/System configuration") for details, and [mkinitcpio#Common hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") for alternative encryption hooks.
 
 If using the `encrypt` hook, add the `cryptdevice` parameter to `/etc/default/grub`.
 
@@ -275,7 +258,7 @@ where *device-UUID* is the UUID of the LUKS-encrypted device.
 
 Be sure to [generate the main configuration file](#Generate_the_main_configuration_file) when done.
 
-For further information about bootloader configuration for encrypted devices, see [Dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
+For further information about bootloader configuration for encrypted devices, see [dm-crypt/System configuration#Boot loader](/index.php/Dm-crypt/System_configuration#Boot_loader "Dm-crypt/System configuration").
 
 **Note:** If you wish to encrypt `/boot` either as a separate partition or part of the `/` partition, further setup is required. See [#Boot partition](#Boot_partition).
 
@@ -299,7 +282,7 @@ Without further changes you will be prompted twice for a passhrase: the first fo
 
 *   If you use a special keymap, a default GRUB installation will not know it. This is relevant for how to enter the passphrase to unlock the LUKS blockdevice.
 *   In order to perform system updates involving the `/boot` mount point, ensure that the encrypted `/boot` is unlocked and mounted before performing an update. With a separate `/boot` partition, this may be accomplished automatically on boot by using [crypttab](/index.php/Crypttab "Crypttab") with a [keyfile](/index.php/Dm-crypt/Device_encryption#With_a_keyfile_embedded_in_the_initramfs "Dm-crypt/Device encryption").
-*   If you experience issues getting the prompt for a password to display (errors regarding cryptouuid, cryptodisk, or "device not found"), try reinstalling grub and appending `--modules="part_gpt part_msdos"` to the end of your `grub-install` command.
+*   If you experience issues getting the prompt for a password to display (errors regarding cryptouuid, cryptodisk, or "device not found"), try reinstalling GRUB and appending `--modules="part_gpt part_msdos"` to the end of your `grub-install` command.
 
 ### Boot menu entries
 
@@ -362,6 +345,18 @@ menuentry "UEFI Shell" {
 }
 ```
 
+##### gdisk
+
+Download the [gdisk EFI application](/index.php/Gdisk#gdisk_EFI_application "Gdisk") and copy `gdisk_x64.efi` to `*esp*/EFI/tools/`.
+
+```
+menuentry "gdisk" {
+	insmod chain
+	search --set=root --file /EFI/tools/gdisk_x64.efi
+	chainloader /EFI/tools/gdisk_x64.efi
+}
+```
+
 ##### Chainloading an Arch Linux .efi file
 
 If you have an *.efi* file generated from following [Secure Boot](/index.php/Secure_Boot "Secure Boot") or other means, you can add it to the boot menu. For example:
@@ -388,7 +383,7 @@ menuentry "Other Linux" {
 }
 ```
 
-Alternatively let grub search for the right partition by *UUID* or *label*:
+Alternatively let GRUB search for the right partition by *UUID* or *label*:
 
 ```
 menuentry "Other Linux" {
@@ -440,9 +435,9 @@ These two commands assume the ESP Windows uses is mounted at `*esp*`. There migh
 
 **Note:** GRUB supports booting `bootmgr` directly and [chainloading](https://www.gnu.org/software/grub/manual/grub.html#Chain_002dloading) of partition boot sector is no longer required to boot Windows in a BIOS/MBR setup.
 
-**Warning:** It is the **system partition** that has `/bootmgr`, not your "real" Windows partition (usually C:). In `blkid` output, the system partition is the one with `LABEL="SYSTEM RESERVED"` or `LABEL="SYSTEM"` and is only about 100 to 200 MB in size (much like the boot partition for Arch). See [Wikipedia:System partition and boot partition](https://en.wikipedia.org/wiki/System_partition_and_boot_partition "wikipedia:System partition and boot partition") for more info.
+**Warning:** It is the **system partition** that has `/bootmgr`, not your "real" Windows partition (usually `C:`). In `blkid` output, the system partition is the one with `LABEL="SYSTEM RESERVED"` or `LABEL="SYSTEM"` and is only about 100 to 200 MiB in size (much like the boot partition for Arch). See [Wikipedia:System partition and boot partition](https://en.wikipedia.org/wiki/System_partition_and_boot_partition "wikipedia:System partition and boot partition") for more info.
 
-Throughout this section, it is assumed your Windows partition is `/dev/sda1`. A different partition will change every instance of hd0,msdos1\. Add the below code to `/etc/grub.d/40_custom` or `/boot/grub/custom.cfg` and regenerate `grub.cfg` with `grub-mkconfig` as explained above to boot Windows (XP, Vista, 7, 8 or 10) installed in BIOS/MBR mode:
+Throughout this section, it is assumed your Windows partition is `/dev/sda1`. A different partition will change every instance of `hd0,msdos1`. Add the below code to `/etc/grub.d/40_custom` or `/boot/grub/custom.cfg` and regenerate `grub.cfg` with `grub-mkconfig` as explained above to boot Windows (XP, Vista, 7, 8 or 10) installed in BIOS/MBR mode:
 
 **Note:** These menu entries will work only in BIOS boot mode. It will not work in UEFI installed GRUB. See [Dual boot with Windows#Windows UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Windows_UEFI_vs_BIOS_limitations "Dual boot with Windows") and [Dual boot with Windows#Bootloader UEFI vs BIOS limitations](/index.php/Dual_boot_with_Windows#Bootloader_UEFI_vs_BIOS_limitations "Dual boot with Windows") .
 
@@ -493,7 +488,7 @@ Do **not** use `bootrec.exe /Fixmbr` because it will wipe GRUB out. Or you can u
 
 ## Using the command shell
 
-Since the MBR is too small to store all GRUB modules, only the menu and a few basic commands reside there. The majority of GRUB functionality remains in modules in `/boot/grub`, which are inserted as needed. In error conditions (e.g. if the partition layout changes) GRUB may fail to boot. When this happens, a command shell may appear.
+Since the MBR is too small to store all GRUB modules, only the menu and a few basic commands reside there. The majority of GRUB functionality remains in modules in `/boot/grub/`, which are inserted as needed. In error conditions (e.g. if the partition layout changes) GRUB may fail to boot. When this happens, a command shell may appear.
 
 GRUB offers multiple shells/prompts. If there is a problem reading the menu but the bootloader is able to find the disk, you will likely be dropped to the "normal" shell:
 

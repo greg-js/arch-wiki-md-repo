@@ -81,7 +81,7 @@ See [Pacman tips#List of installed packages](/index.php/Pacman_tips#List_of_inst
 
 ### Pacman database
 
-See [Pacman tips#Back-up the pacman database](/index.php/Pacman_tips#Back-up_the_pacman_database "Pacman tips").
+See [pacman/Tips and tricks#Backup the pacman database](/index.php/Pacman/Tips_and_tricks#Backup_the_pacman_database "Pacman/Tips and tricks").
 
 ### LUKS headers
 

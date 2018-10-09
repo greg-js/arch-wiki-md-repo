@@ -222,7 +222,7 @@ See also [Wikipedia:Comparison of BitTorrent clients](https://en.wikipedia.org/w
 
 *   **[Tribler](https://en.wikipedia.org/wiki/Tribler "wikipedia:Tribler")** — Client Bittorrent di quarta generazione per il file sharing.
 
-	[http://www.tribler.org](http://www.tribler.org) || [tribler](https://aur.archlinux.org/packages/tribler/)
+	[http://www.tribler.org](http://www.tribler.org) || [tribler](https://www.archlinux.org/packages/?name=tribler)
 
 *   **[Vuze](https://en.wikipedia.org/wiki/Vuze "wikipedia:Vuze")** — Client BitTorrent sviluppato in Java (conosciuto anche come Azureus).
 
@@ -360,11 +360,11 @@ See also [Wikipedia:Comparison of instant messaging clients#XMPP-related feature
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Client jabber basato sulle Qt.
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi)
 
 *   **Psi+** — Versione estesa del client Psi Jabber con molte nuove [caratteristiche](http://psi-plus.com/wiki/en:features#differences_between_psi_beta_version_and_the_official_psi_015-dev_version).
 
-	[https://code.google.com/p/psi-dev/](https://code.google.com/p/psi-dev/) || [psi-plus](https://www.archlinux.org/packages/?name=psi-plus)
+	[https://code.google.com/p/psi-dev/](https://code.google.com/p/psi-dev/) || [psi-plus](https://aur.archlinux.org/packages/psi-plus/)
 
 *   **[Tkabber](https://en.wikipedia.org/wiki/Tkabber "wikipedia:Tkabber")** — Client XMPP facile da hackerare ricco di funzionalità, dall'autore del server ejabberd XMPP.
 
@@ -510,7 +510,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Client jabber Qt-based con supporto alla video conferenza (since version 0.13).
 
-	[http://psi-im.org/](http://psi-im.org/) || [psi](https://aur.archlinux.org/packages/psi/) [psi-plus](https://www.archlinux.org/packages/?name=psi-plus)
+	[http://psi-im.org/](http://psi-im.org/) || [psi](https://www.archlinux.org/packages/?name=psi) [psi-plus](https://aur.archlinux.org/packages/psi-plus/)
 
 *   **[QuteCom](https://en.wikipedia.org/wiki/QuteCom "wikipedia:QuteCom")** — Applicazione softphone che permette di effettuare liberamente chiamate e video da PC a PC, e può integrare tutti i propri contatti IM in un unico posto (Comunemente chiamato Wengo Phone).
 
@@ -762,7 +762,7 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **quite-rss** — RSS/Atom feed reader scritto in Qt/С++.
 
-	[http://code.google.com/p/quite-rss/](http://code.google.com/p/quite-rss/) || [quiterss](https://aur.archlinux.org/packages/quiterss/)
+	[http://code.google.com/p/quite-rss/](http://code.google.com/p/quite-rss/) || [quiterss](https://www.archlinux.org/packages/?name=quiterss)
 
 ### Web browser
 
@@ -874,7 +874,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 *   **[Uzbl](https://en.wikipedia.org/wiki/Uzbl "wikipedia:Uzbl")** — Gruppo di strumenti di interfaccia web che segue la filosofia UNIX.
 
-	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://www.archlinux.org/packages/?name=uzbl-browser)
+	[http://uzbl.org/](http://uzbl.org/) || [uzbl-browser](https://aur.archlinux.org/packages/uzbl-browser/)
 
 *   **[Vimprobable](/index.php/Vimprobable "Vimprobable")** — Browser che si comporta come il plugin Vimperator disponibili per Mozilla Firefox. Si basa sul motore WebKit e usa le GTK.
 
@@ -1012,7 +1012,7 @@ See also [Wikipedia:Comparison of image viewers](https://en.wikipedia.org/wiki/C
 
 *   **fbv** — Visualizzatore di immagini che sfrutta il framebuffer.
 
-	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://aur.archlinux.org/packages/fbv/)
+	[http://s-tech.elsat.net.pl/fbv/](http://s-tech.elsat.net.pl/fbv/) || [fbv](https://www.archlinux.org/packages/?name=fbv)
 
 *   **fim** — Visualizzatore di immagini che sfrutta il framebuffer, altamente configurabile e basato su fbi.
 
@@ -1204,7 +1204,7 @@ See also [Wikipedia:List of computer-aided design editors](https://en.wikipedia.
 
 *   **[FreeCAD](https://en.wikipedia.org/wiki/FreeCAD "wikipedia:FreeCAD")** — CAD/CAE, basato su OpenCascade, Qt e Python con molte caratteristiche quali la registrazione di macro, workbenches e la possibilità di essere eseguito come server.
 
-	[http://sourceforge.net/projects/free-cad/](http://sourceforge.net/projects/free-cad/) || [freecad](https://www.archlinux.org/packages/?name=freecad)
+	[http://sourceforge.net/projects/free-cad/](http://sourceforge.net/projects/free-cad/) || [freecad](https://aur.archlinux.org/packages/freecad/)
 
 *   **[LibreCAD](https://en.wikipedia.org/wiki/LibreCAD "wikipedia:LibreCAD")** — Potente applicazione CAD 2D basata sulle Qt. Nato come fork da QCad Community Edition.
 
@@ -1276,7 +1276,7 @@ I programmi Screencast consentono di creare un video del vostro desktop o di sin
 
 *   **[RecordMyDesktop](https://en.wikipedia.org/wiki/RecordMyDesktop "wikipedia:RecordMyDesktop")** — Utility di facile utilizzo che registra il desktop in formato ogg/Theora. Sono disponibili front-end in GTK e Qt.
 
-	[http://recordmydesktop.sourceforge.net/](http://recordmydesktop.sourceforge.net/) || [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop) [gtk-recordmydesktop](https://www.archlinux.org/packages/?name=gtk-recordmydesktop) [qt-recordmydesktop](https://www.archlinux.org/packages/?name=qt-recordmydesktop)
+	[http://recordmydesktop.sourceforge.net/](http://recordmydesktop.sourceforge.net/) || [recordmydesktop](https://www.archlinux.org/packages/?name=recordmydesktop) [gtk-recordmydesktop](https://www.archlinux.org/packages/?name=gtk-recordmydesktop) [qt-recordmydesktop](https://aur.archlinux.org/packages/qt-recordmydesktop/)
 
 *   **simplescreenrecorder** — Programma per la registrazione dello schermo ricco di funzionalità, che supporta X11 e OpenGL.
 
@@ -1325,7 +1325,7 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 	[http://herrie.info/](http://herrie.info/) || [herrie](https://aur.archlinux.org/packages/herrie/)
 
-*   **[Moc](/index.php/Moc "Moc")** — Lettore audio da console in ncurses con supporto per formati MP3, Ogg, e WAV.
+*   **[MOC](/index.php/MOC "MOC")** — Lettore audio da console in ncurses con supporto per formati MP3, Ogg, e WAV.
 
 	[http://moc.daper.net/](http://moc.daper.net/) || [moc](https://www.archlinux.org/packages/?name=moc)
 
@@ -1353,7 +1353,7 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 *   **[Amarok](/index.php/Amarok "Amarok")** — Maturo lettore basato su Qt, conosciuto per la sua ricchezza di funzionalità.
 
-	[http://amarok.kde.org/](http://amarok.kde.org/) || [amarok](https://www.archlinux.org/packages/?name=amarok)
+	[http://amarok.kde.org/](http://amarok.kde.org/) || [amarok](https://aur.archlinux.org/packages/amarok/)
 
 *   **[aTunes](https://en.wikipedia.org/wiki/aTunes "wikipedia:aTunes")** — Lettore audio scritto in Java.
 
@@ -1535,7 +1535,7 @@ See also [Wikipedia:Comparison of audio player software](https://en.wikipedia.or
 
 *   **[Puddletag](https://en.wikipedia.org/wiki/Puddletag "wikipedia:Puddletag")** — Rimpiazzo del famoso MP3tag per Windows.
 
-	[http://puddletag.sourceforge.net/](http://puddletag.sourceforge.net/) || [puddletag](https://www.archlinux.org/packages/?name=puddletag)
+	[http://puddletag.sourceforge.net/](http://puddletag.sourceforge.net/) || [puddletag](https://aur.archlinux.org/packages/puddletag/)
 
 ### Editor Audio
 
@@ -2359,7 +2359,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 *   **gscan2pdf** — Scans, runs an OCR engine, minor post-processing, creates a document.
 
-	[http://gscan2pdf.sourceforge.net/](http://gscan2pdf.sourceforge.net/) || [gscan2pdf](https://aur.archlinux.org/packages/gscan2pdf/)
+	[http://gscan2pdf.sourceforge.net/](http://gscan2pdf.sourceforge.net/) || [gscan2pdf](https://www.archlinux.org/packages/?name=gscan2pdf)
 
 *   **OCRopus** — Piattaforma OCR per l'analisi del layout del documento, motori OCR (si può utilizzare Tesseract o il proprio motore), modellazione del linguaggio naturale, etc.
 
@@ -3461,7 +3461,7 @@ See also [Wikipedia:Comparison of accounting software](https://en.wikipedia.org/
 
 *   **[GnuCash](https://en.wikipedia.org/wiki/GnuCash "wikipedia:GnuCash")** — Applicazione finanziaria che implementa un sistema di contabilità in partita doppia con funzioni per contabilità delle piccole imprese.
 
-	[http://www.gnucash.org/](http://www.gnucash.org/) || [gnucash](https://aur.archlinux.org/packages/gnucash/)
+	[http://www.gnucash.org/](http://www.gnucash.org/) || [gnucash](https://www.archlinux.org/packages/?name=gnucash)
 
 *   **[Grisbi](https://en.wikipedia.org/wiki/Grisbi "wikipedia:Grisbi")** — Sistema di finanza personale per la gestione di conti terzi, le spese e le categorie ricevute, così come le linee di bilancio, esercizi, e altre informazioni che lo rende adatto per le associazioni.
 
@@ -3512,7 +3512,7 @@ See also [Wikipedia:List of video game console emulators](https://en.wikipedia.o
 
 *   **PCSXR** — Emulatore della PlayStation; Fork Debian dell'abbandonato progetto originale PCSX
 
-	[http://pcsxr.codeplex.com/](http://pcsxr.codeplex.com/) || [pcsxr](https://www.archlinux.org/packages/?name=pcsxr)
+	[http://pcsxr.codeplex.com/](http://pcsxr.codeplex.com/) || [pcsxr](https://aur.archlinux.org/packages/pcsxr/)
 
 *   **PCSX2** — Emulatore per PlayStation 2\. É ancora mantenuto e sviluppato.
 

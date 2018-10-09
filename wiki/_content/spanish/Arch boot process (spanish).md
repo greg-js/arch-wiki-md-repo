@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"), revisada por última vez el **2018-10-02**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=545626) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Arch boot process](/index.php/Arch_boot_process "Arch boot process"), revisada por última vez el **2018-10-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Arch_boot_process&diff=0&oldid=546665) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -12,7 +12,7 @@ Artículos relacionados
 *   [fstab](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)")
 *   [Autostarting](/index.php/Autostarting_(Espa%C3%B1ol) "Autostarting (Español)")
 
-Para iniciar Arch Linux, un [gestor de arranque](#Gestor_de_arranque) capaz de iniciar Linux como [GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") o [Syslinux](/index.php/Syslinux_(Espa%C3%B1ol) "Syslinux (Español)"), debe instalarse en el [Master Boot Record](/index.php/Master_Boot_Record_(Espa%C3%B1ol) "Master Boot Record (Español)") o en la [GUID Partition Table](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)"). El gestor de arranque es el responsable de cargar el kernel y el [disco ram inicial](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") antes de iniciar el proceso de arranque. El proceso es bastante diferente para los sistemas [BIOS](https://en.wikipedia.org/wiki/es:BIOS "wikipedia:es:BIOS") y [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)"), cuyos detalles se describen en esta página o en las enlazadas.
+Para iniciar Arch Linux, debe configurarse un [gestor de arranque](#Gestor_de_arranque) capaz de iniciar Linux. El gestor de arranque es el responsable de cargar el kernel y el [disco ram inicial](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") antes de iniciar el proceso de arranque. El proceso es bastante diferente para los sistemas [BIOS](https://en.wikipedia.org/wiki/es:BIOS "wikipedia:es:BIOS") y [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)"), cuyos detalles se describen en esta página o en las enlazadas.
 
 ## Contents
 
@@ -57,7 +57,7 @@ UEFI lanza aplicaciones EFI, por ejemplo. [gestores de arranque](#Gestor_de_arra
 2.  Después del POST, la BIOS inicializa el hardware del sistema necesario para el inicio (disco, controladores de teclado, etc.).
 3.  BIOS inicia los primeros 440 bytes ([el área del código de arranque del MBR](/index.php/Partitioning#Master_Boot_Record_.28bootstrap_code.29 "Partitioning")) del primer disco según el orden de la BIOS.
 4.  La primera etapa del cargador de arranque en el código de arranque del MBR, luego inicia el código de su segunda etapa (si existe) desde:
-    *   sectores de discos siguientes (la denominada brecha posterior al MBR).
+    *   sectores de discos siguientes tras el MBR, por ejemplo la denominada brecha posterior al MBR (solo en la tabla de particiones MBR).
     *   un disco de partición o un disco sin partición [volume boot record (VBR)](https://en.wikipedia.org/wiki/Volume_boot_record "wikipedia:Volume boot record").
     *   la [partición de inicio de BIOS](/index.php/BIOS_boot_partition_(Espa%C3%B1ol) "BIOS boot partition (Español)") ([GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)") solo en BIOS/GPT).
 5.  Se inicia el [gestor de arranque](#Gestor_de_arranque).

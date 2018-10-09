@@ -72,6 +72,7 @@ install CD version
 | [Lenovo ThinkPad L380 Yoga](/index.php/Lenovo_ThinkPad_L380_Yoga "Lenovo ThinkPad L380 Yoga") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Trackpoint*, Fingerprint reader |
 | Lenovo ThinkPad L420 | Yes | Yes | Yes | Yes | Yes | Not tested | Yes | NA |
 | Lenovo ThinkPad L430 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Trackpoint* |
+| Lenovo ThinkPad L520 | Yes | Yes | Yes | Yes | Not tested | Not tested | Not tested | Not tested | Not tested |
 | Lenovo ThinkPad L530 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA | Trackpoint*, Fingerprint reader |
 
 #### P series

@@ -23,7 +23,7 @@ La instalación, por defecto, de Arch ya incluye sistema de sonido en el kernel,
 
 ## Controladores e interfaces
 
-*   **[Advanced Linux Sound Architecture (ALSA)](/index.php/ALSA "ALSA")** — Un componente del kernel de Linux que proporciona controladores de dispositivos y da soporte mínimo para el hardware de audio.
+*   **[Advanced Linux Sound Architecture (ALSA)](/index.php/ALSA_(Espa%C3%B1ol) "ALSA (Español)")** — Un componente del kernel de Linux que proporciona controladores de dispositivos y da soporte mínimo para el hardware de audio.
 
 	[http://www.alsa-project.org/main/index.php/Main_Page](http://www.alsa-project.org/main/index.php/Main_Page) || presente de serie en el kernel
 

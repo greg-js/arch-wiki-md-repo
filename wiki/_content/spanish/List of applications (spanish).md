@@ -2313,7 +2313,7 @@ Véanse los artículos de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Comparison of word processors](https://en.wikipedia.org/wiki/Comparison_of_word_processors "wikipedia:Comparison of word processors").
 
-*   **[Abiword](/index.php/Abiword "Abiword")** — Procesador de texto completo.
+*   **[Abiword](/index.php/Abiword_(Espa%C3%B1ol) "Abiword (Español)")** — Procesador de texto completo.
 
 	[http://www.abisource.com/](http://www.abisource.com/) || [abiword](https://www.archlinux.org/packages/?name=abiword)
 

@@ -20,6 +20,13 @@ GTK+ (GIMP Toolkit) fue originalmente creado por el [Proyecto GNU](/index.php/GN
 *   [2 Temas](#Temas)
     *   [2.1 GTK+ y Qt](#GTK.2B_y_Qt)
 *   [3 Herramientas de configuración](#Herramientas_de_configuraci.C3.B3n)
+*   [4 Configuración](#Configuraci.C3.B3n)
+    *   [4.1 Configuración básica del tema](#Configuraci.C3.B3n_b.C3.A1sica_del_tema)
+    *   [4.2 Variante oscura del tema](#Variante_oscura_del_tema)
+    *   [4.3 Atajos de teclado](#Atajos_de_teclado)
+        *   [4.3.1 Combinaciones de teclas Emacs](#Combinaciones_de_teclas_Emacs)
+    *   [4.4 Retraso del menú de GNOME](#Retraso_del_men.C3.BA_de_GNOME)
+    *   [4.5 Reducir el tamaño de los widgets](#Reducir_el_tama.C3.B1o_de_los_widgets)
 
 ## Instalación
 
@@ -131,7 +138,7 @@ Si tiene aplicaciones GTK+ y Qt (KDE) en su escritorio, entonces sabe que sus ap
 
 ## Herramientas de configuración
 
-La mayoría de los [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") proporcionan herramientas para configurar el tema GTK+, los iconos, la fuente y el tamaño de la misma, y administrar estas configuraciones a través de [XSettings](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html):
+La mayoría de los [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)") proporcionan herramientas para configurar el tema GTK+, los iconos, la tipografía y el tamaño de la misma, y administrar estas configuraciones a través de [XSettings](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html):
 
 *   Si utiliza [Cinnamon](/index.php/Cinnamon "Cinnamon"), emplee la herramienta Temas (*cinnamon-settings themes*): diríjase a *Configuración del sistema > Temas*.
 *   Si utiliza [Enlightenment](/index.php/Enlightenment_(Espa%C3%B1ol) "Enlightenment (Español)"): diríjase a *Configuración > Todos > Aspecto > Tema de aplicación*.
@@ -140,3 +147,132 @@ La mayoría de los [entornos de escritorio](/index.php/Desktop_environment_(Espa
 *   Si utiliza [Xfce](/index.php/Xfce_(Espa%C3%B1ol) "Xfce (Español)"), emplee la herramienta Apariencia: diríjase a *Configuración > Apariencia*.
 
 Otras herramientas del GUI generalmente sobrescriben los [archivos de configuración](#Configuraci.C3.B3n).
+
+**Compatibles con GTK+ 2 y GTK+ 3:**
+
+*   **KDE GTK Configurator** — Aplicación que le permite cambiar el estilo y la tipografía de las aplicaciones GTK+ 2 y Gtk+ 3.
+
+	[Https://cgit.kde.org/kde-gtk-config.git](Https://cgit.kde.org/kde-gtk-config.git) || [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config)
+
+	Después de la instalación, `kde-gtk-config` se puede encontrar también en *Configuración del sistema > Estilo de aplicación > GTK*.
+
+*   **LXAppearance** — Herramienta independiente del escritorio de configuración de estilo GTK+ 2 y GTK+ 3 del proyecto LXDE (no requiere otras partes del escritorio LXDE).
+
+	[Http://wiki.lxde.org/en/LXAppearance](Http://wiki.lxde.org/en/LXAppearance) || [lxappearance](https://www.archlinux.org/packages/?name=lxappearance)
+
+*   **Oo-mox** — Aplicación gráfica para generar diferentes variaciones de color de los temas Numix y Flat-Plat (GTK+ 2 y 3), Archdroid y Gnome-Colors. También permite generar temas GTK+ 2 pre-escalados para pantallas HiDPI.
+
+	[https://github.com/actionless/oomox](https://github.com/actionless/oomox) || [oomox](https://aur.archlinux.org/packages/oomox/)
+
+**Compatible solo con GTK+ 2:**
+
+*   **GTK+ Change Theme** — Pequeño programa que le permite cambiar su tema GTK+ 2.0 (considerada una mejor alternativa a *switch2*).
+
+	[Http://plasmasturm.org/code/gtk-chtheme/](Http://plasmasturm.org/code/gtk-chtheme/) || [gtk-chtheme](https://www.archlinux.org/packages/?name=gtk-chtheme)
+
+*   **GTK+ Preference Tool** — Selector de temas GTK+ y cambio de tipografía.
+
+	[Http://gtk-win.sourceforge.net/home/index.php/Main/GTKPreferenceTool](Http://gtk-win.sourceforge.net/home/index.php/Main/GTKPreferenceTool) || [gtk2_prefs](https://aur.archlinux.org/packages/gtk2_prefs/)
+
+*   **GTK+ Theme Switch** — Intercambiador simple de temas GTK+.
+
+	[http://muhri.net/nav.php3?node=gts](http://muhri.net/nav.php3?node=gts) || [gtk-theme-switch2](https://www.archlinux.org/packages/?name=gtk-theme-switch2)
+
+## Configuración
+
+Los ajustes de GTK+ se puede especificar manualmente en los archivos de configuración, pero los entornos de escritorio y las aplicaciones pueden anular esta configuración. Dependiendo de la versión GTK+, estos archivos se encuentran en:
+
+*   GTK+ 2 específico del usuario: `~/.gtkrc-2.0`
+*   GTK+ 2 en todo el sistema: `/etc/gtk-2.0/gtkrc`
+*   GTK+ 3 específico del usuario: `$XDG_CONFIG_HOME/gtk-3.0/settings.ini`, o `$HOME/.config/gtk-3.0/settings.ini` si `$XDG_CONFIG_HOME` no está establecido
+*   GTK+ 3 en todo el sistema: `/etc/gtk-3.0/settings.ini`
+
+**Nota:**
+
+*   Véase [Propiedades *GtkSettings* de GTK+ 3](http://library.gnome.org/devel/gtk3/stable/GtkSettings.html#GtkSettings.properties) (y [Propiedades de GTK+ 2](http://library.gnome.org/devel/gtk2/stable/GtkSettings.html#GtkSettings.properties)) en el manual de referencia de programación de GTK+ para ver la lista completa de las opciones de configuración actualmente admitidas de GTK+.
+*   Algunas de las configuraciones que se describen a continuación (como `gtk-icon-size`) están en desuso y se ignoran desde GTK+ 3.10.
+*   Si edita sus archivos de configuración GTK+, solo las aplicaciones recién iniciadas mostrarán los cambios.
+
+### Configuración básica del tema
+
+Para cambiar manualmente el tema, los iconos, la tipografía y el tamaño de la fuente GTK+, añada lo siguiente a los archivos de configuración, por ejemplo:
+
+**GTK+ 2:**
+
+ `~/.gtkrc-2.0` 
+```
+gtk-icon-theme-name = "Adwaita"
+gtk-theme-name = "Adwaita"
+gtk-font-name = "DejaVu Sans 11"
+```
+
+**GTK+ 3:**
+
+ `$XDG_CONFIG_HOME/gtk-3.0/settings.ini` 
+```
+[Settings]
+gtk-icon-theme-name = Adwaita
+gtk-theme-name = Adwaita
+gtk-font-name = DejaVu Sans 11
+```
+
+**Nota:** El nombre del tema del icono es el nombre definido en el archivo de índice del tema, *no* el nombre de su directorio.
+
+### Variante oscura del tema
+
+Algunos temas de GTK+ 3 contienen una variante oscura del tema, pero solo se usa de forma predeterminada cuando la aplicación lo solicita explícitamente. Para usar la variante oscura del tema con todas las aplicaciones GTK+ 3, establezca:
+
+```
+gtk-application-prefer-dark-theme = true
+
+```
+
+### Atajos de teclado
+
+Los atajos de teclado (también conocidos como "aceleradores" en GTK+ o métodos abreviados de teclado) se pueden cambiar al colocar el ratón sobre el elemento del menú correspondiente y presionar la combinación de teclas deseada. Para habilitar esta característica, establezca:
+
+```
+gtk-can-change-accels = 1
+
+```
+
+#### Combinaciones de teclas Emacs
+
+Para obtener combinaciones de teclas similares a Emacs en aplicaciones gtk:
+
+Para GTK2, añada `gtk-key-theme-name="Emacs"` en `~/.gtkrc-2.0`.
+
+Para GTK3 añada lo siguiente al archivo anotado:
+
+ `~/.config/gtk-3.0/settings.ini` 
+```
+[Settings]
+gtk-key-theme-name = Emacs
+```
+
+Entonces ejecute:
+
+```
+$ gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
+
+```
+
+XFCE tiene una configuración similar:
+
+```
+$ xfconf-query -c xsettings -p /Gtk/KeyThemeName -s Emacs
+
+```
+
+Los archivos de configuración en `/usr/share/themes/Emacs/` determinan cuáles son los enlaces de Emacs, y se pueden cambiar. Copiar secciones en el archivo `~/.gtkrc-2.0` de los usuarios permite realizar cambios para cada usuario.
+
+### Retraso del menú de GNOME
+
+Esta configuración controla el retraso entre apuntar el ratón hacia un menú y la apertura del mismo. Este retraso se mide en milisegundos.
+
+```
+gtk-menu-popup-delay = 0
+
+```
+
+### Reducir el tamaño de los widgets

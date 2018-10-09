@@ -136,7 +136,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 
 <caption>Visión general de entornos de escritorio</caption>
 | Entorno de escritorio | librerías de desarrollo | Gestor de ventanas | Barra de tareas | Emulador de Terminal | Gestor de Ficheros | Calculadora | Editor de texto | Visor de Imagen | Reproductor multimedia | Navegador web | Gestor de inicio |
-| [Budgie Desktop](/index.php/Budgie_Desktop "Budgie Desktop") | [GTK+](/index.php/GTK%2B "GTK+") 3
+| [Budgie Desktop](/index.php/Budgie_Desktop "Budgie Desktop") | [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | budgie-wm
 [budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/) | budgie-panel
 [budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/) | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
@@ -148,7 +148,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [budgie-git](https://aur.archlinux.org/packages/budgie-git/) | [Chromium](/index.php/Chromium "Chromium")
 [chromium](https://www.archlinux.org/packages/?name=chromium) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
-| [Cinnamon](/index.php/Cinnamon "Cinnamon") | [GTK+](/index.php/GTK%2B "GTK+") 3
+| [Cinnamon](/index.php/Cinnamon "Cinnamon") | [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | Muffin
 [muffin](https://www.archlinux.org/packages/?name=muffin) | Cinnamon
 [cinnamon](https://www.archlinux.org/packages/?name=cinnamon) | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
@@ -160,7 +160,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [totem](https://www.archlinux.org/packages/?name=totem) | [Firefox](/index.php/Firefox "Firefox")
 [firefox](https://www.archlinux.org/packages/?name=firefox) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
-| [Deepin Desktop Environment](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment") | [GTK+](/index.php/GTK%2B "GTK+") 3
+| [Deepin Desktop Environment](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment") | [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Compiz](/index.php/Compiz "Compiz")
 [compiz](https://aur.archlinux.org/packages/compiz/) | Dock
 [deepin-desktop-environment](https://aur.archlinux.org/packages/deepin-desktop-environment/) | Deepin Terminal
@@ -196,7 +196,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [rage](https://aur.archlinux.org/packages/rage/) | Elbow
 [elbow-git](https://aur.archlinux.org/packages/elbow-git/) | [XDM](/index.php/XDM "XDM")
 [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm) |
-| [GNOME](/index.php/GNOME "GNOME") | [GTK+](/index.php/GTK%2B "GTK+") 3
+| [GNOME](/index.php/GNOME "GNOME") | [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Mutter](https://en.wikipedia.org/wiki/Mutter_(window_manager) "wikipedia:Mutter (window manager)")
 [mutter](https://www.archlinux.org/packages/?name=mutter) | [GNOME Shell](https://en.wikipedia.org/wiki/GNOME_Shell "wikipedia:GNOME Shell")
 [gnome-shell](https://www.archlinux.org/packages/?name=gnome-shell) | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
@@ -208,7 +208,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [totem](https://www.archlinux.org/packages/?name=totem) | [Epiphany](/index.php/Epiphany "Epiphany")
 [epiphany](https://www.archlinux.org/packages/?name=epiphany) | [GDM](/index.php/GDM "GDM")
 [gdm](https://www.archlinux.org/packages/?name=gdm) |
-| [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback") | [GTK+](/index.php/GTK%2B "GTK+") 3
+| [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback") | [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Metacity](https://en.wikipedia.org/wiki/Metacity "wikipedia:Metacity")
 [metacity](https://www.archlinux.org/packages/?name=metacity) | [GNOME Panel](https://en.wikipedia.org/wiki/GNOME_Panel "wikipedia:GNOME Panel")
 [gnome-panel](https://www.archlinux.org/packages/?name=gnome-panel) | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
@@ -268,7 +268,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [kdemultimedia-dragonplayer](https://www.archlinux.org/packages/?name=kdemultimedia-dragonplayer) | [Konqueror](http://www.konqueror.org/)
 [konqueror](https://www.archlinux.org/packages/?name=konqueror) | [SDDM](/index.php/SDDM "SDDM")
 [sddm](https://www.archlinux.org/packages/?name=sddm) |
-| [LXDE](/index.php/LXDE "LXDE") | [GTK+](/index.php/GTK%2B "GTK+") 2
+| [LXDE](/index.php/LXDE "LXDE") | [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") 2
 [gtk2](https://www.archlinux.org/packages/?name=gtk2) | [Openbox](/index.php/Openbox "Openbox")
 [openbox](https://www.archlinux.org/packages/?name=openbox) | [LXPanel](http://wiki.lxde.org/en/LXPanel)
 [lxpanel](https://www.archlinux.org/packages/?name=lxpanel) | [LXTerminal](http://wiki.lxde.org/en/LXTerminal)
@@ -292,7 +292,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [smplayer](https://www.archlinux.org/packages/?name=smplayer) | QupZilla
 [qupzilla](https://www.archlinux.org/packages/?name=qupzilla) | SDDM
 [sddm](https://www.archlinux.org/packages/?name=sddm) |
-| [MATE](/index.php/MATE "MATE") (GTK+ 2) | [GTK+](/index.php/GTK%2B "GTK+") 2/3
+| [MATE](/index.php/MATE "MATE") (GTK+ 2) | [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") 2/3
 [gtk2](https://www.archlinux.org/packages/?name=gtk2) [gtk3](https://www.archlinux.org/packages/?name=gtk3) | Marco
 [marco](https://www.archlinux.org/packages/?name=marco) | MATE Panel
 [mate-panel](https://www.archlinux.org/packages/?name=mate-panel) | MATE Terminal
@@ -304,7 +304,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [parole](https://www.archlinux.org/packages/?name=parole) | [Midori](/index.php/Midori "Midori")
 [midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
-| [MATE](/index.php/MATE "MATE") (GTK+ 3) | [GTK+](/index.php/GTK%2B "GTK+") 3
+| [MATE](/index.php/MATE "MATE") (GTK+ 3) | [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | Marco
 [marco](https://www.archlinux.org/packages/?name=marco) | MATE Panel
 [mate-panel](https://www.archlinux.org/packages/?name=mate-panel) | MATE Terminal
@@ -316,7 +316,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [parole](https://www.archlinux.org/packages/?name=parole) | [Midori](/index.php/Midori "Midori")
 [midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
-| Maynard | [GTK+](/index.php/GTK%2B "GTK+") 3
+| Maynard | [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | Weston
 [weston](https://www.archlinux.org/packages/?name=weston) | Maynard
 [maynard-git](https://aur.archlinux.org/packages/maynard-git/) | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
@@ -327,7 +327,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [eog](https://www.archlinux.org/packages/?name=eog) | [GNOME Videos](https://en.wikipedia.org/wiki/GNOME_Videos "wikipedia:GNOME Videos")
 [totem](https://www.archlinux.org/packages/?name=totem) | [Epiphany](/index.php/Epiphany "Epiphany")
 [epiphany](https://www.archlinux.org/packages/?name=epiphany) | - |
-| [Pantheon](/index.php/Pantheon "Pantheon") | [GTK+](/index.php/GTK%2B "GTK+") 3
+| [Pantheon](/index.php/Pantheon "Pantheon") | [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Gala](https://launchpad.net/gala)
 [gala-bzr](https://aur.archlinux.org/packages/gala-bzr/) | [Plank](https://launchpad.net/plank)/[Wingpanel](https://launchpad.net/wingpanel)
 [plank](https://www.archlinux.org/packages/?name=plank) [wingpanel](https://aur.archlinux.org/packages/wingpanel/) | [Pantheon Terminal](https://launchpad.net/pantheon-terminal)
@@ -339,7 +339,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [totem](https://www.archlinux.org/packages/?name=totem) | [Midori](/index.php/Midori "Midori")
 [midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") Pantheon Greeter
 [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/) |
-| [ROX](/index.php/ROX "ROX") | [GTK+](/index.php/GTK%2B "GTK+") 2
+| [ROX](/index.php/ROX "ROX") | [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") 2
 [gtk2](https://www.archlinux.org/packages/?name=gtk2) | [OroboROX](http://rox.sourceforge.net/desktop/OroboROX.html)
 [oroborox](https://aur.archlinux.org/packages/oroborox/) | [ROX-Filer](http://rox.sourceforge.net/desktop/ROX-Filer.html)
 [rox](https://www.archlinux.org/packages/?name=rox) | [ROXTerm](http://roxterm.sourceforge.net/)
@@ -351,7 +351,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=musicbox)</small> | [Midori](/index.php/Midori "Midori")
 [midori](https://www.archlinux.org/packages/?name=midori) | [XDM](/index.php/XDM "XDM")
 [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm) |
-| [Sugar](/index.php/Sugar "Sugar") | [GTK+](/index.php/GTK%2B "GTK+") 3
+| [Sugar](/index.php/Sugar "Sugar") | [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Metacity](https://en.wikipedia.org/wiki/Metacity "wikipedia:Metacity")
 [metacity](https://www.archlinux.org/packages/?name=metacity) | Sugar
 [sugar](https://www.archlinux.org/packages/?name=sugar) | Terminal
@@ -364,7 +364,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [sugar-activity-browse](https://www.archlinux.org/packages/?name=sugar-activity-browse) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
 | [Trinity](/index.php/Trinity "Trinity") | TQt | TWin | Kicker | Konsole | Konqueror | KCalc | Kwrite / Kate | Kuickshow | Kaffeine | Konqueror | TDM |
-| [Unity](/index.php/Unity "Unity") | [GTK+](/index.php/GTK%2B "GTK+") 3
+| [Unity](/index.php/Unity "Unity") | [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Compiz](/index.php/Compiz "Compiz")
 [compiz-ubuntu](https://aur.archlinux.org/packages/compiz-ubuntu/) | Unity
 [unity](https://aur.archlinux.org/packages/unity/) | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
@@ -376,7 +376,7 @@ Ver también [Wikipedia:es:Comparación de entornos de escritorios de X Window S
 [totem](https://www.archlinux.org/packages/?name=totem) | [Firefox](/index.php/Firefox "Firefox")
 [firefox](https://www.archlinux.org/packages/?name=firefox) | [LightDM](/index.php/LightDM "LightDM") Unity Greeter
 [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/) |
-| [Xfce](/index.php/Xfce "Xfce") | [GTK+](/index.php/GTK%2B "GTK+") 2/3
+| [Xfce](/index.php/Xfce "Xfce") | [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") 2/3
 [gtk2](https://www.archlinux.org/packages/?name=gtk2) [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Xfwm4](http://docs.xfce.org/xfce/xfwm4/start)
 [xfwm4](https://www.archlinux.org/packages/?name=xfwm4) | [Xfce Panel](http://docs.xfce.org/xfce/xfce4-panel/start)
 [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel) | [Terminal](http://www.xfce.org/projects/terminal)

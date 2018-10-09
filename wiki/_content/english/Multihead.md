@@ -212,7 +212,9 @@ See [NVIDIA#TwinView](/index.php/NVIDIA#TwinView "NVIDIA") for an example config
 
 [Xinerama](https://en.wikipedia.org/wiki/Xinerama "wikipedia:Xinerama") is the old way of doing genuine multihead X. Xinerama combines all monitors into a single screen (`:0`) making it possible to drag windows between screens.
 
-Xinerama is configured via custom [X configuration files](/index.php/Xorg#Configuration "Xorg"). Here are some examples:
+Xinerama is configured via custom [X configuration files](/index.php/Xorg#Configuration "Xorg"). There is also a GUI tool named [WideGuy](https://openapplibrary.org/project/wideguy) to make toggling Xinerama easier. Note that to use WideGuy you still need an Xorg configuration with a ServerLayout section.
+
+Here are some [X configuration](/index.php/Xorg#Configuration "Xorg") examples:
 
 This is a ServerLayout section which controls where each monitor sits relative to the others.
 

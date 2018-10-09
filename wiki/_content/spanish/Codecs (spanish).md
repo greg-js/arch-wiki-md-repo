@@ -6,13 +6,13 @@ Artículos relacionados
 *   [Reproducir DVD](/index.php/Optical_disc_drive_(Espa%C3%B1ol)#Reproducir_DVD "Optical disc drive (Español)")
 *   [GStreamer](/index.php/GStreamer_(Espa%C3%B1ol) "GStreamer (Español)")
 *   [MPlayer](/index.php/MPlayer_(Espa%C3%B1ol) "MPlayer (Español)")
-*   [VLC media player](/index.php/VLC_media_player "VLC media player")
+*   [Reproductor multimedia VLC](/index.php/VLC_media_player_(Espa%C3%B1ol) "VLC media player (Español)")
 
 Desde [wikipedia](https://en.wikipedia.org/wiki/es:C%C3%B3dec "wikipedia:es:Códec"): «un códec es un dispositivo o programa informático capaz de codificar y/o decodificar un flujo de datos o señal digitales.»
 
 En general, los codecs son utilizados por aplicaciones multimedia para codificar o decodificar transmisiones de audio o vídeo. Para reproducir transmisiones codificadas, los usuarios deben asegurarse de que esté instalado un códec apropiado.
 
-Este artículo trata solo con codecs y backends de aplicaciones; véase la [lista de aplicaciones multimedia](/index.php/List_of_applications#Multimedia "List of applications") para obtener una lista de reproductores multimedia ([MPlayer](/index.php/MPlayer "MPlayer"), [mpv](/index.php/Mpv "Mpv") y [VLC](/index.php/VLC "VLC") son ​​opciones populares).
+Este artículo trata solo con codecs y backends de aplicaciones; véase la [lista de aplicaciones multimedia](/index.php/List_of_applications#Multimedia "List of applications") para obtener una lista de reproductores multimedia ([MPlayer](/index.php/MPlayer "MPlayer"), [mpv](/index.php/Mpv "Mpv") y [VLC](/index.php/VLC_(Espa%C3%B1ol) "VLC (Español)") son ​​opciones populares).
 
 ## Contents
 
@@ -198,7 +198,7 @@ Tenga en cuenta que el proyecto xine en sí mismo proporciona un reproductor de 
 
 ### libavcodec
 
-[libavcodec](/index.php/FFmpeg "FFmpeg") es parte del proyecto [FFmpeg](http://ffmpeg.org/). Incluye una gran cantidad de codecs de vídeo y audio. Los codecs de libavcodec se incluyen con reproductores multimedia como [MPlayer](/index.php/MPlayer "MPlayer") y [VLC](/index.php/VLC "VLC"), por lo que es posible que no necesite instalar el paquete [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg).
+[libavcodec](/index.php/FFmpeg "FFmpeg") es parte del proyecto [FFmpeg](http://ffmpeg.org/). Incluye una gran cantidad de codecs de vídeo y audio. Los codecs de libavcodec se incluyen con reproductores multimedia como [MPlayer](/index.php/MPlayer "MPlayer") y [VLC](/index.php/VLC_(Espa%C3%B1ol) "VLC (Español)"), por lo que es posible que no necesite instalar el paquete [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg).
 
 ## Consejos y trucos
 

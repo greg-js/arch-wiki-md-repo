@@ -93,7 +93,12 @@ Select the session: *GNOME*, *GNOME Classic*, or *GNOME on Xorg* from the displa
 
 #### Xorg sessions
 
-*   For the GNOME on Xorg session, add to the `~/.xinitrc` file: `exec gnome-session`.
+*   For the GNOME on Xorg session, add to the `~/.xinitrc` file:
+    ```
+    export GDK_BACKEND=x11
+    exec gnome-session
+    ```
+
 *   For the GNOME Classic session, add to the `~/.xinitrc` file:
     ```
     export XDG_CURRENT_DESKTOP=GNOME-Classic:GNOME

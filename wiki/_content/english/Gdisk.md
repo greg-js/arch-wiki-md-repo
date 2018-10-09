@@ -32,6 +32,7 @@ Related articles
     *   [5.3 Recover GPT header](#Recover_GPT_header)
     *   [5.4 Expand a GPT disk](#Expand_a_GPT_disk)
     *   [5.5 Prevent GPT partition automounting](#Prevent_GPT_partition_automounting)
+    *   [5.6 gdisk EFI application](#gdisk_EFI_application)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -266,6 +267,16 @@ Alternatively using *sgdisk*, the attribute can be set using the `-A`/`--attribu
 # sgdisk -A 2:set:63 /dev/sda
 
 ```
+
+### gdisk EFI application
+
+There is no package for the EFI version of <a class="mw-selflink selflink">gdisk</a>, but Rod Smith provides a prebuilt gdisk EFI binary on [SourceForge](https://sourceforge.net/projects/gptfdisk/files/gptfdisk/). Download `gdisk-efi-*.zip` and extract the archive. To use it, copy `gdisk_x64.efi` to the [EFI system partition](/index.php/EFI_system_partition "EFI system partition") and launch it from your [boot loader](/index.php/Boot_loader "Boot loader") or [UEFI Shell](/index.php/Unified_Extensible_Firmware_Interface#UEFI_Shell "Unified Extensible Firmware Interface").
+
+*gdisk_x64.efi* allows you to edit the partition table before the operating system is even booted. It is used the same way as the *gdisk* binary on Linux.
+
+**Note:** *gdisk_x64.efi* cannot access the file system, thus it cannot backup the partition table or restore it from backup.
+
+See [README-efi.txt](https://sourceforge.net/p/gptfdisk/code/ci/master/tree/README-efi.txt) for more information.
 
 ## See also
 

@@ -1,25 +1,61 @@
-**Dynamic DNS** or **DDNS** is a method of updating, in real time, a [DNS](/index.php/DNS "DNS") to point to a changing IP address on the Internet. This is used to provide a persistent domain name for a resource lacking a static IP. To use DDNS, you need to both sign up with a DDNS provider and set up an automatic update tool that will notify the provider when your IP address changes.
+According to [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_DNS "wikipedia:Dynamic DNS"):
+
+	**Dynamic DNS** (**DDNS** or **DynDNS**) is a method of automatically updating a [name server](https://en.wikipedia.org/wiki/name_server "wikipedia:name server") in the [Domain Name System](https://en.wikipedia.org/wiki/Domain_Name_System "wikipedia:Domain Name System") (DNS), often in real time, with the active DDNS configuration of its configured hostnames, addresses or other information.
+
+	The term is used to describe two different concepts. The first is "dynamic DNS updating" which refers to systems that are used to update traditional DNS records without manual editing. These mechanisms are explained in [RFC 2136](https://tools.ietf.org/html/rfc2136 "rfc:2136"), and use the [TSIG](https://en.wikipedia.org/wiki/TSIG "wikipedia:TSIG") mechanism to provide security. The second kind of dynamic DNS permits lightweight and immediate updates often using an update client, which do not use the RFC2136 standard for updating DNS records. These clients provide a persistent addressing method for devices that change their location, configuration or [IP address](https://en.wikipedia.org/wiki/IP_address "wikipedia:IP address") frequently.
+
+For RFC2136 there is [nsupdate(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nsupdate.1) from [bind-tools](https://www.archlinux.org/packages/?name=bind-tools). For dynamic DNS services there are several packages available, see [#Update clients](#Update_clients).
 
 ## Contents
 
-*   [1 Update tools](#Update_tools)
-    *   [1.1 Router](#Router)
-    *   [1.2 ddclient](#ddclient)
-        *   [1.2.1 Use an external website to determine IP address](#Use_an_external_website_to_determine_IP_address)
-        *   [1.2.2 Starting ddclient after networking is up](#Starting_ddclient_after_networking_is_up)
-    *   [1.3 Other tools](#Other_tools)
-*   [2 Other providers](#Other_providers)
-    *   [2.1 duiadns](#duiadns)
-    *   [2.2 FreeDns.io](#FreeDns.io)
-    *   [2.3 Now-DNS](#Now-DNS)
-    *   [2.4 System-NS](#System-NS)
-    *   [2.5 Loopia.se](#Loopia.se)
+*   [1 Router](#Router)
+*   [2 Update clients](#Update_clients)
+    *   [2.1 Multi-service clients](#Multi-service_clients)
+    *   [2.2 Single-service clients](#Single-service_clients)
+    *   [2.3 ddclient](#ddclient)
+        *   [2.3.1 Use an external website to determine IP address](#Use_an_external_website_to_determine_IP_address)
+        *   [2.3.2 Starting ddclient after networking is up](#Starting_ddclient_after_networking_is_up)
+*   [3 Other providers](#Other_providers)
 
-## Update tools
-
-### Router
+## Router
 
 If the device needing DDNS sits behind a router, you should first check if the router itself can update any DDNS services. Although the selection of services may be limited, there are several advantages to using the router: it will probably be easier to set up, will require little to no maintenance, and will have no downtime (if the router is down you won't have Internet anyway).
+
+## Update clients
+
+Note that some dynamic DNS providers do not require a dedicated client and can be updated with [curl](https://www.archlinux.org/packages/?name=curl).
+
+### Multi-service clients
+
+*   **ddclient** — Update dynamic DNS entries for accounts on many dynamic DNS services.
+
+	[https://github.com/ddclient/ddclient](https://github.com/ddclient/ddclient) || [ddclient](https://www.archlinux.org/packages/?name=ddclient)
+
+*   **inadyn-fork** — Dynamic DNS client with SSL/TLS support.
+
+	[http://troglobit.com/inadyn.html](http://troglobit.com/inadyn.html) || [inadyn-fork](https://aur.archlinux.org/packages/inadyn-fork/), [inadyn-fork-git](https://aur.archlinux.org/packages/inadyn-fork-git/)
+
+*   **inadyn-mt** — A simple dynamic DNS client based on inadyn.
+
+	[http://inadyn-mt.sourceforge.net/](http://inadyn-mt.sourceforge.net/) || [inadyn-mt](https://aur.archlinux.org/packages/inadyn-mt/)
+
+*   **ndyndns** — Supports DynDNS and Namecheap.
+
+	[https://github.com/niklata/ndyndns](https://github.com/niklata/ndyndns) || [ndyndns](https://aur.archlinux.org/packages/ndyndns/)
+
+### Single-service clients
+
+*   **duckdns** — Update your DuckDNS.org entries from your computer with systemd.
+
+	[https://www.duckdns.org/](https://www.duckdns.org/) || [duckdns](https://aur.archlinux.org/packages/duckdns/)
+
+*   **noip** — Dynamic DNS Client Updater for no-ip.com services.
+
+	[http://www.no-ip.com/downloads.php?page=linux](http://www.no-ip.com/downloads.php?page=linux) || [noip](https://aur.archlinux.org/packages/noip/)
+
+*   **petrified** — Bash client to update dynamic DNS at freedns.afraid.org.
+
+	[https://gitlab.com/troyengel/petrified](https://gitlab.com/troyengel/petrified) || [petrified](https://aur.archlinux.org/packages/petrified/)
 
 ### ddclient
 
@@ -30,17 +66,16 @@ After installing, edit the default config `/etc/ddclient/ddclient.conf` to set u
 Some of the compatible services are listed below, but you can also check the [examples](http://sourceforge.net/p/ddclient/code/HEAD/tree/trunk/sample-etc_ddclient.conf) and [protocols](http://sourceforge.net/p/ddclient/wiki/protocols/) for more.
 
 <caption>ddclient compatible services</caption>
-| Service | Cost | Available Records | Hostname Limit | Config Notes | Alternative tools |
-| [Now-DNS](http://now-dns.com/) | Free | A, AAAA | unlimited | [example](https://now-dns.com/client/ddclient.conf) |
-| [ChangeIP](http://www.changeip.com/) | Free or paid | A, AAAA, CNAME, MX, codomains | 7 free | [example](https://sourceforge.net/p/ddclient/wiki/protocols/#changeip) |
-| [DNSdynamic](http://www.dnsdynamic.org/) | Free | [example](https://www.dnsdynamic.org/api.php) |
-| [Duck DNS](https://www.duckdns.org/) | Free | [example](https://sourceforge.net/p/ddclient/wiki/protocols/#duckdns) | [duckdns](https://aur.archlinux.org/packages/duckdns/) |
-| [FreeDNS](http://freedns.afraid.org/) | Free or paid | CNAME, A, AAAA, MX, NS, TXT, LOC, RP, HINFO, SRV | 5 free | [example](http://freedns.afraid.org/scripts/freedns.clients.php) | [afraid-dyndns-uv](https://aur.archlinux.org/packages/afraid-dyndns-uv/), [petrified](https://aur.archlinux.org/packages/petrified/) |
-| [No-IP](http://www.noip.com/) | Free or paid | 3 free, 25+ paid | Use protocol `noip`, server `dynupdate.no-ip.com` | [noip](https://aur.archlinux.org/packages/noip/) |
-| [nsupdate.info](https://www.nsupdate.info/) | Free and open source | A, AAAA | Use protocol `dyndns2` | [inadyn-fork](https://aur.archlinux.org/packages/inadyn-fork/) |
-| [Dyn DNS](https://dyn.com/dns/) | Free or paid | A, CNAME, MX | [example](https://sourceforge.net/p/ddclient/wiki/protocols/#dyndns2) | [ndyndns](https://aur.archlinux.org/packages/ndyndns/) |
-| [Namecheap](https://www.namecheap.com/) | Paid | A, CNAME | [example](https://sourceforge.net/p/ddclient/wiki/protocols/#namecheap) | [ndyndns](https://aur.archlinux.org/packages/ndyndns/) |
-| [Dynu](https://www.dynu.com/) | Free or paid | 4 free, 500 paid | [example](https://www.dynu.com/DynamicDNS/IPUpdateClient/DDClient) |
+| Service | Config Notes |
+| [Now-DNS](http://now-dns.com/) | [example](https://now-dns.com/client/ddclient.conf) |
+| [ChangeIP](http://www.changeip.com/) | [example](https://sourceforge.net/p/ddclient/wiki/protocols/#changeip) |
+| [Duck DNS](https://www.duckdns.org/) | [example](https://sourceforge.net/p/ddclient/wiki/protocols/#duckdns) |
+| [FreeDNS](http://freedns.afraid.org/) | [example](http://freedns.afraid.org/scripts/freedns.clients.php) |
+| [No-IP](http://www.noip.com/) | Use protocol `noip`, server `dynupdate.no-ip.com` |
+| [nsupdate.info](https://www.nsupdate.info/) | Use protocol `dyndns2` |
+| [Dyn DNS](https://dyn.com/dns/) | [example](https://sourceforge.net/p/ddclient/wiki/protocols/#dyndns2) |
+| [Namecheap](https://www.namecheap.com/) | [example](https://sourceforge.net/p/ddclient/wiki/protocols/#namecheap) |
+| [Dynu](https://www.dynu.com/) | [example](https://www.dynu.com/DynamicDNS/IPUpdateClient/DDClient) |
 
 **Note:** Free users of no-ip are required to manually confirm their domain(s) every 30 days. Domain confirmation is not required for Enhanced users though. More info at [Why is My Hostname Pending Deletion?](http://www.noip.com/support/knowledgebase/why-is-my-hostname-pending-deletion/)
 
@@ -68,32 +103,6 @@ Wants=network-online.target
 
 Additional configuration for `network-online.target` may be necessary, see [[1]](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget#cutthecraphowdoimakenetwork.targetworkforme).
 
-### Other tools
-
-Other DDNS updaters that work with several providers are [inadyn-mt](https://aur.archlinux.org/packages/inadyn-mt/) ([supported providers](http://sourceforge.net/projects/inadyn-mt)) and [ndyndns](https://aur.archlinux.org/packages/ndyndns/) (supports DynDNS and Namecheap).
-
 ## Other providers
 
-The following DDNS providers are not compatible with [ddclient](#ddclient) so updating your IP with them may require a special tool or some custom scripting. Remember that if the service allows you to update your IP using the command line, you can automate the process using tools such as [cron](/index.php/Cron "Cron") or [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers").
-
-### duiadns
-
-[Duiadns.org](https://www.duiadns.net) is a free service.
-
-### FreeDns.io
-
-[FreeDns.io](https://freedns.io) provides free A and AAAA DNS records and CNAME, TXT and MX records with a premium membership. You can update your IP using their HTTP API (with a 60 requests-per-hour limit). They provide [several example scripts](https://github.com/nkovacne/freedns-samples).
-
-### Now-DNS
-
-[Now-DNS.com](https://now-dns.com) is a free service which is easy and uncomplicated to set up.
-
-### System-NS
-
-[System-NS](http://system-ns.com/) is a free service which can be updated via the command line. See [the official documentation](https://system-ns.com/services/dynamic).
-
-### Loopia.se
-
-If you use loopia.se as name server, you can query updates of DNS records via *curl* as described in the [official documentation](https://support.loopia.se/wiki/curl/).
-
-If you use 2FA for login, or by some other reason would rather use the LoopiaAPI via a python script to change the DNS dynamically, you should follow the instructions [on this page](https://support.loopia.se/wiki/uppdatera-dynamisk-ip-adress-med-loopiaapi/). The python file is well written and easy to understand, and basically all you need to do is to generate an API key on your login at Loopia kundzon first.
+Other DDNS providers are not compatible with [ddclient](#ddclient) so updating your IP with them may require a special tool or some custom scripting. Remember that if the service allows you to update your IP using the command line, you can automate the process using tools such as [cron](/index.php/Cron "Cron") or [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers").

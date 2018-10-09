@@ -50,6 +50,7 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
     *   [3.6 Laggy sound](#Laggy_sound)
     *   [3.7 Choppy/distorted sound](#Choppy.2Fdistorted_sound)
     *   [3.8 Sound stuttering when streaming over network](#Sound_stuttering_when_streaming_over_network)
+    *   [3.9 Pops when starting and stopping playback](#Pops_when_starting_and_stopping_playback)
 *   [4 Hardware and Cards](#Hardware_and_Cards)
     *   [4.1 No HDMI sound output after some time with the monitor turned off](#No_HDMI_sound_output_after_some_time_with_the_monitor_turned_off)
     *   [4.2 No HDMI sound using a headless server](#No_HDMI_sound_using_a_headless_server)
@@ -880,6 +881,20 @@ and switch to it:
 On receiver side load rtp module:
 
  `/etc/pulse/default.pa`  `load-module module-rtp-recv` 
+
+### Pops when starting and stopping playback
+
+PulseAudio can suspend sinks after a period of inactivity. This can make an audible noise (like a crack/pop/scratch). Sometimes even when move the slider volume, or open and close windows (KDE4). This behavior is enabled in default configuration files:
+
+ `/etc/pulse/default.pa`  `load-module module-suspend-on-idle`  `/etc/pulse/system.pa`  `load-module module-suspend-on-idle` 
+
+Commenting that line in relevant file fixes that issue. A better solution is to add the following file:
+
+ `~/.config/pulse/default.pa` 
+```
+.include /etc/pulse/default.pa
+unload-module module-suspend-on-idle
+```
 
 ## Hardware and Cards
 

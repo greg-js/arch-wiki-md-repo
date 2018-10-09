@@ -26,7 +26,7 @@ Este comando depende de que la expansión de llaves este disponible en los inté
 
 ```
 
-Usando el conjunto de opciones `-aAX`, los ficheros son transferidos en modo archivo, asegurándose que los enlaces simbólicos, dispositivos, permisos y atributos de propiedad,tiempos de modificación, [ACLs](/index.php/ACL "ACL") y atributos extendidos son preservados.
+Usando el conjunto de opciones `-aAX`, los ficheros son transferidos en modo archivo, asegurándose que los enlaces simbólicos, dispositivos, permisos y atributos de propiedad,tiempos de modificación, [ACLs](/index.php/ACL_(Espa%C3%B1ol) "ACL (Español)") y atributos extendidos son preservados.
 
 La opción `--exclude` hará que aquellos ficheros que coincidan con los patrones dados sean excluidos. Los contenidos de `/dev`, `/proc`, `/sys`, `/tmp` y `/run` se excluyeron porque son inicializados al cargar el sistema (mientras que las carpetas en si mismas *no* son creadas), `/lost+found` es específico del sistema de archivos. Entrecomillar los patrones de exclusión evitará su expansión por parte del [intérprete de ordenes](/index.php/Shell "Shell"), lo que es necesario cuando, por ejemplo, se hacen copias de seguridad por [SSH (Español)](/index.php/SSH_(Espa%C3%B1ol) "SSH (Español)").
 

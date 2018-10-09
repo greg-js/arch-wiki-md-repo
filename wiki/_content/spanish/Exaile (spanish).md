@@ -1,27 +1,27 @@
 ## Contents
 
-*   [1 Descripcion](#Descripcion)
+*   [1 Descripción](#Descripci.C3.B3n)
 *   [2 Instalacion](#Instalacion)
-*   [3 Activando Imagenes de álbum, Letras de canciones y tablaturas de guitarra](#Activando_Imagenes_de_.C3.A1lbum.2C_Letras_de_canciones_y_tablaturas_de_guitarra)
+*   [3 Activando Imágenes de álbum, Letras de canciones y tablaturas de guitarra](#Activando_Im.C3.A1genes_de_.C3.A1lbum.2C_Letras_de_canciones_y_tablaturas_de_guitarra)
 *   [4 Tocando CD de Audio](#Tocando_CD_de_Audio)
 *   [5 Problemas Conocidos](#Problemas_Conocidos)
     *   [5.1 Barra de progreso se detiene en 0:00](#Barra_de_progreso_se_detiene_en_0:00)
     *   [5.2 "Playback error encountered! Configured audiosink bin0 is not working"](#.22Playback_error_encountered.21_Configured_audiosink_bin0_is_not_working.22)
     *   [5.3 Tocando Archivos desde carpetas compartidas por SMB](#Tocando_Archivos_desde_carpetas_compartidas_por_SMB)
 
-# Descripcion
+# Descripción
 
 [Exaile](http://www.exaile.org/) es un reproductor de musica escrito en python que usa el conjuto de herramientas GTK+. Exaile es liberado bajo la licencia[GPL](http://www.gnu.org/copyleft/gpl.html). Las Caracteristicas que incluye son:
 
-*   Obtencion de Letras de canciones, Caratulas de album , informacion del album, artista y/o grupo desde wikipedia y partituras de las canciones
+*   Obtencion de Letras de canciones, Caratulas de álbum , información del álbum, artista y/o grupo desde wikipedia y partituras de las canciones
 
-*   Pestañas de listas de Reproduccion de musica
+*   Pestañas de listas de Reproducción de música
 
 *   Soporte para Ipod
 
 *   Soporte para Last.fm
 
-*   Directorio de busqueda para SHOUTcast
+*   Directorio de búsqueda para SHOUTcast
 
 *   Track blacklisting
 
@@ -54,7 +54,7 @@ pacman -S exaile
 
 ```
 
-Si tu usas [ALSA](/index.php/ALSA "ALSA") y quieres usar alsasink en vez del que viene por default , se debe instalar el plugin gstreamer0.10-base-plugins:
+Si tu usas [ALSA](/index.php/ALSA_(Espa%C3%B1ol) "ALSA (Español)") y quieres usar alsasink en vez del que viene por default , se debe instalar el plugin gstreamer0.10-base-plugins:
 
 ```
 pacman -S gstreamer0.10-base-plugins
@@ -63,7 +63,7 @@ pacman -S gstreamer0.10-base-plugins
 
 Esto tambien resuelve un problema si no se escucha sonido alguno luego de la instalacion y ademas cuando se intenta reproducir varios sonidos de diversas fuentes.
 
-# Activando Imagenes de álbum, Letras de canciones y tablaturas de guitarra
+# Activando Imágenes de álbum, Letras de canciones y tablaturas de guitarra
 
 Mientras se instala Exaile via pacman va a instalar cualquier dependencia necesaria, 2 paquetes necesarios ([gnome-python-extras](https://www.archlinux.org/packages/search/?q=gnome-python-extras) & [libgtkhtml](https://www.archlinux.org/packages/search/?q=libgtkhtml)) van a ser necesario para activar las imagenes de albums , letras de canciones , tablaturas de guitarra y funciones de wiki en Exaile.
 
@@ -80,7 +80,7 @@ Exaile requiere el paquete 'python-cddb' para poder tocar cd's de audio. El paqu
 
 ### Barra de progreso se detiene en 0:00
 
-First, make sure there are no problems with your sound architecture ([ALSA](/index.php/ALSA "ALSA"), [OSS](/index.php/OSS "OSS"), etc.). And your *playback sink* in Exaile is set correctly. Try setting it to automatic first.
+First, make sure there are no problems with your sound architecture ([ALSA](/index.php/ALSA_(Espa%C3%B1ol) "ALSA (Español)"), [OSS](/index.php/OSS "OSS"), etc.). And your *playback sink* in Exaile is set correctly. Try setting it to automatic first.
 
 If you're trying to listen to an MP3 file, try playing an audio file encoded in a different format, such as .ogg or .flac. If these play correctly then try installing gstreamer-ugly.
 

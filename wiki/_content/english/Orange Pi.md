@@ -12,6 +12,7 @@ This article is strongly based on [Banana Pi](/index.php/Banana_Pi "Banana Pi").
         *   [1.1.2 Compile and copy U-Boot bootloader](#Compile_and_copy_U-Boot_bootloader)
         *   [1.1.3 Using U-Boot precompiled binaries](#Using_U-Boot_precompiled_binaries)
         *   [1.1.4 Login / SSH](#Login_.2F_SSH)
+    *   [1.2 Additional step, Wi-Fi Driver (RTL8189ES/ETV)](#Additional_step.2C_Wi-Fi_Driver_.28RTL8189ES.2FETV.29)
 *   [2 Orange Pi PC2](#Orange_Pi_PC2)
     *   [2.1 UBoot](#UBoot)
     *   [2.2 Kernel](#Kernel)
@@ -121,6 +122,39 @@ SSH login for root is disabled by default. Login with the default user account a
 | Type | Username | Password |
 | Root | `root` | `root` |
 | User | `alarm` | `alarm` |
+
+### Additional step, Wi-Fi Driver (RTL8189ES/ETV)
+
+This driver will require to Orange Pi Plus / Plus 2.
+
+First, Install the kernel headers.
+
+```
+# sudo pacman -S base-devel git linux-armv7-headers
+
+```
+
+Then, build out-of-tree driver.
+
+**Note:** Replace KSRC to your own kernel version.
+
+```
+# git clone [https://github.com/jwrdegoede/rtl8189ES_linux.git](https://github.com/jwrdegoede/rtl8189ES_linux.git)
+# cd rtl8189ES_linux
+# make -j4 ARCH=arm KSRC=/usr/lib/modules/4.18.11-1-ARCH/build/ 
+
+```
+
+And install manually.
+
+**Note:** Replace modules directory to your own kernel version.
+
+```
+# cp 8189es.ko /usr/lib/modules/4.18.11-1-ARCH/kernel/drivers/net/wireless/realtek/
+# depmod -a
+# modprobe 8189es
+
+```
 
 ## Orange Pi PC2
 

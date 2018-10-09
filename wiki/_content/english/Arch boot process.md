@@ -9,7 +9,7 @@ Related articles
 *   [fstab](/index.php/Fstab "Fstab")
 *   [Autostarting](/index.php/Autostarting "Autostarting")
 
-In order to boot Arch Linux, a Linux-capable [boot loader](#Boot_loader) such as [GRUB](/index.php/GRUB "GRUB") or [Syslinux](/index.php/Syslinux "Syslinux") must be installed to the [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") or the [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table"). The boot loader is responsible for loading the kernel and [initial ramdisk](/index.php/Initial_ramdisk "Initial ramdisk") before initiating the boot process. The procedure is quite different for [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") and [UEFI](/index.php/UEFI "UEFI") systems, the detailed description is given on this or linked pages.
+In order to boot Arch Linux, a Linux-capable [boot loader](#Boot_loader) must be set up. The boot loader is responsible for loading the kernel and [initial ramdisk](/index.php/Initial_ramdisk "Initial ramdisk") before initiating the boot process. The procedure is quite different for [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") and [UEFI](/index.php/UEFI "UEFI") systems, the detailed description is given on this or linked pages.
 
 ## Contents
 
@@ -54,7 +54,7 @@ UEFI launches EFI applications, e.g. [boot loaders](#Boot_loader), boot managers
 2.  After POST, BIOS initializes the necessary system hardware for booting (disk, keyboard controllers etc.).
 3.  BIOS launches the first 440 bytes ([the Master Boot Record bootstrap code area](/index.php/Partitioning#Master_Boot_Record_.28bootstrap_code.29 "Partitioning")) of the first disk in the BIOS disk order.
 4.  The boot loader's first stage in the MBR boot code then launches its second stage code (if any) from either:
-    *   next disk sectors (the so called post-MBR gap).
+    *   next disk sectors after the MBR, i.e. the so called post-MBR gap (only on a MBR partition table).
     *   a partition's or a partitionless disk's [volume boot record (VBR)](https://en.wikipedia.org/wiki/Volume_boot_record "wikipedia:Volume boot record").
     *   the [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") ([GRUB](/index.php/GRUB "GRUB") on BIOS/GPT only).
 5.  The actual [boot loader](#Boot_loader) is launched.

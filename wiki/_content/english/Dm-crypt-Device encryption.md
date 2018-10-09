@@ -831,14 +831,14 @@ A keyfile can be of arbitrary content and size.
 Here `dd` is used to generate a keyfile of 2048 random bytes, storing it in the file `/etc/mykeyfile`:
 
 ```
-# dd bs=512 count=4 if=/dev/urandom of=/etc/mykeyfile
+# dd bs=512 count=4 if=/dev/random of=/etc/mykeyfile
 
 ```
 
 If you are planning to store the keyfile on an external device, you can also simply change the outputfile to the corresponding directory:
 
 ```
-# dd bs=512 count=4 if=/dev/urandom of=/media/usbstick/mykeyfile
+# dd bs=512 count=4 if=/dev/random of=/media/usbstick/mykeyfile
 
 ```
 
@@ -987,7 +987,7 @@ If using `sd-encrypt` instead of `encrypt`, specify the location of the keyfile 
 [Generate the keyfile](#Creating_a_keyfile_with_random_characters), give it suitable permissions and [add it as a LUKS key](#Adding_LUKS_keys):
 
 ```
-# dd bs=512 count=4 if=/dev/urandom of=/crypto_keyfile.bin
+# dd bs=512 count=4 if=/dev/random of=/crypto_keyfile.bin
 # chmod 000 /crypto_keyfile.bin
 # chmod 600 /boot/initramfs-linux*
 # cryptsetup luksAddKey /dev/sdX# /crypto_keyfile.bin

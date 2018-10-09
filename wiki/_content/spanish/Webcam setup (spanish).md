@@ -312,7 +312,7 @@ $ xawtv -nodga
 
 ### VLC
 
-[VLC](/index.php/VLC "VLC") puede usarse también para grabar y ver con su webcam. en el menú archivo de VLC, abra el diálogo 'Dispositivo de captura...' e introduzca los dispositivos de audio y video. O,desde la línea de comandos, ejecute:
+[VLC](/index.php/VLC_(Espa%C3%B1ol) "VLC (Español)") puede usarse también para grabar y ver con su webcam. en el menú archivo de VLC, abra el diálogo 'Dispositivo de captura...' e introduzca los dispositivos de audio y video. O,desde la línea de comandos, ejecute:
 
 ```
 $ vlc v4l:// :v4l-vdev="/dev/video0" :v4l-adev="/dev/audio2"

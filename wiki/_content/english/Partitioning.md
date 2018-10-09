@@ -10,11 +10,11 @@ Related articles
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
 
-[Partitioning](https://en.wikipedia.org/wiki/Disk_partitioning "w:Disk partitioning") a hard drive divides the available space into sections that can be accessed independently. An entire drive may be allocated to a single partition, or multiple ones for cases such as dual-booting, maintaining a [swap](/index.php/Swap "Swap") partition, or to logically separate data such as audio and video files.
+[Partitioning](https://en.wikipedia.org/wiki/Disk_partitioning "wikipedia:Disk partitioning") a hard drive divides the available space into sections that can be accessed independently. An entire drive may be allocated to a single partition, or multiple ones for cases such as dual-booting, maintaining a [swap](/index.php/Swap "Swap") partition, or to logically separate data such as audio and video files.
 
-The required information is stored in a [#Partition table](#Partition_table) scheme such as MBR or GPT.
+The required information is stored in a [partition table](#Partition_table) scheme such as MBR or GPT.
 
-Partition tables are created and modified using one of many [#Partitioning tools](#Partitioning_tools) which must be compatible to the chosen scheme of partitioning table. Available tools include [fdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted "Parted").
+Partition tables are created and modified using one of many [partitioning tools](#Partitioning_tools) which must be compatible to the chosen scheme of partitioning table. Available tools include [fdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted "Parted").
 
 Once created, a partition must be formatted with an appropriate [file system](/index.php/File_system "File system") before data can be written to it.
 
@@ -63,7 +63,7 @@ There are two main types of partition table available: Master Boot Record (MBR),
 
 The [Master Boot Record](https://en.wikipedia.org/wiki/Master_boot_record "wikipedia:Master boot record") (MBR) is the first 512 bytes of a storage device. It contains an operating system bootloader and the storage device's partition table. It plays an important role in the [boot process](/index.php/Boot_process "Boot process") under [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") systems. See [Wikipedia:Master boot record#Disk partitioning](https://en.wikipedia.org/wiki/Master_boot_record#Disk_partitioning "wikipedia:Master boot record") for the MBR structure.
 
-**Note:** The MBR is not located in a partition; it is located at the first sector of the device (physical offset 0), preceding the first partition. (The boot sector present on a partitionless device or within an individual partition is called a [volume boot record](https://en.wikipedia.org/wiki/Volume_boot_record "w:Volume boot record") instead.)
+**Note:** The MBR is not located in a partition; it is located at the first sector of the device (physical offset 0), preceding the first partition. (The boot sector present on a partitionless device or within an individual partition is called a [volume boot record](https://en.wikipedia.org/wiki/Volume_boot_record "wikipedia:Volume boot record") instead.)
 
 #### Master Boot Record (partition table)
 
@@ -81,13 +81,13 @@ The customary numbering scheme is to create primary partitions *sda1* through *s
 
 #### Master Boot Record (bootstrap code)
 
-The first 440 bytes of MBR are **bootstrap code area**. On BIOS systems it usually contains the first stage of the boot loader. The bootstrap code can be backed up, restored from backup or erased [using dd](/index.php/Dd#Backup_and_restore_MBR "Dd").
+The first 440 bytes of MBR are the **bootstrap code area**. On BIOS systems it usually contains the first stage of the boot loader. The bootstrap code can be backed up, restored from backup or erased [using dd](/index.php/Dd#Backup_and_restore_MBR "Dd").
 
 ### GUID Partition Table
 
-[GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") (GPT) is a partitioning scheme that is part of the [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") specification; it uses [globally unique identifiers](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier") (GUIDs), or UUIDs in the Linux world, to define partitions and [partition types](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table"). It is designed to succeed the [#Master Boot Record](#Master_Boot_Record) partitioning scheme method.
+[GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table") (GPT) is a partitioning scheme that is part of the [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") specification; it uses [globally unique identifiers](https://en.wikipedia.org/wiki/Globally_unique_identifier "wikipedia:Globally unique identifier") (GUIDs), or UUIDs in the Linux world, to define partitions and [partition types](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table"). It is designed to succeed the [Master Boot Record](#Master_Boot_Record) partitioning scheme method.
 
-At the start of a GUID Partition Table disk there is a [protective Master Boot Record](https://en.wikipedia.org/wiki/GUID_Partition_Table#Protective_MBR_.28LBA_0.29 "wikipedia:GUID Partition Table") to protect against GPT-unaware software. This protective MBR just like a real MBR has a [bootstrap code area](#Master_Boot_Record_.28bootstrap_code.29) which can be used for BIOS/GPT booting with boot loaders that support it.
+At the start of a GUID Partition Table disk there is a [protective Master Boot Record](https://en.wikipedia.org/wiki/GUID_Partition_Table#Protective_MBR_.28LBA_0.29 "wikipedia:GUID Partition Table") (PMBR) to protect against GPT-unaware software. This protective MBR just like a real MBR has a [bootstrap code area](#Master_Boot_Record_.28bootstrap_code.29) which can be used for BIOS/GPT booting with boot loaders that support it.
 
 ### Choosing between GPT and MBR
 

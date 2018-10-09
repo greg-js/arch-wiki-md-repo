@@ -201,7 +201,7 @@ NBFC is a cross-platform fan control solution for notebooks. It comes with a pow
 
 ### Installation
 
-NBFC can be installed as [nbfc-git](https://aur.archlinux.org/packages/nbfc-git/). Also start and enable `nbfc.service`.
+NBFC can be installed as [nbfc](https://aur.archlinux.org/packages/nbfc/) or [nbfc-git](https://aur.archlinux.org/packages/nbfc-git/). Also start and enable `nbfc.service`.
 
 ### Configuration
 

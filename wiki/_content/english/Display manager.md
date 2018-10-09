@@ -32,7 +32,7 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 
 *   **[nodm](/index.php/Nodm "Nodm")** — Minimalistic display manager for automatic logins.
 
-	[https://github.com/spanezz/nodm](https://github.com/spanezz/nodm) || [nodm](https://www.archlinux.org/packages/?name=nodm)
+	[https://github.com/spanezz/nodm](https://github.com/spanezz/nodm) || [nodm](https://www.archlinux.org/packages/?name=nodm) – [unmaintained as of 2018-10](https://github.com/spanezz/nodm/issues/8)
 
 *   **[Ly](/index.php/Ly "Ly")** — Experimental ncurses display manager.
 

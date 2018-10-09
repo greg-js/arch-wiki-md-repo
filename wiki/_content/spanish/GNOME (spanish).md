@@ -3,7 +3,7 @@ Artículos relacionados
 *   [Desktop Environment (Español)](/index.php/Desktop_Environment_(Espa%C3%B1ol) "Desktop Environment (Español)")
 *   [Display Manager (Español)](/index.php/Display_Manager_(Espa%C3%B1ol) "Display Manager (Español)")
 *   [Window Manager (Español)](/index.php/Window_Manager_(Espa%C3%B1ol) "Window Manager (Español)")
-*   [GTK+](/index.php/GTK%2B "GTK+")
+*   [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)")
 *   [GDM (Español)](/index.php/GDM_(Espa%C3%B1ol) "GDM (Español)")
 *   [Nautilus (Español)](/index.php/Nautilus_(Espa%C3%B1ol) "Nautilus (Español)")
 *   [Gedit](/index.php/Gedit "Gedit")

@@ -475,7 +475,7 @@ See also [Network configuration#Network managers](/index.php/Network_configurati
 
 	[https://www.privoxy.org/](https://www.privoxy.org/) || [privoxy](https://www.archlinux.org/packages/?name=privoxy)
 
-*   **[Project V](/index.php?title=Project_V&action=edit&redlink=1 "Project V (page does not exist)")** — Project V is a set of tools to help you build your own privacy network over internet.
+*   **Project V** — Project V is a set of tools to help you build your own privacy network over internet.
 
 	[https://www.v2ray.com/en/](https://www.v2ray.com/en/) || [v2ray](https://www.archlinux.org/packages/?name=v2ray)
 

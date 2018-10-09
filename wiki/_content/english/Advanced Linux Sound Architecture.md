@@ -71,7 +71,7 @@ ALSA is a set of built-in GNU/Linux kernel modules. Therefore, manual installati
 
 Usually, local users have permission to play audio and change mixer levels.
 
-To allow remote users to use ALSA, you need to [add](/index.php/Users_and_groups#Group_management "Users and groups") those users to the `audio` group.
+To allow remote users to use ALSA, you need to [add](/index.php/Users_and_groups#Group_management "Users and groups") those users to the `audio` group, however this is not recommended by default (see note below).
 
 **Note:** Adding users to the `audio` group allows direct access to devices. Keep in mind, that this allows applications to exclusively reserve output devices. This may break software mixing or fast-user-switching on multi-seat systems. Therefore, adding a user to the `audio` group is **not** recommended by default; unless you specifically need to [[1]](https://wiki.ubuntu.com/Audio/TheAudioGroup).
 

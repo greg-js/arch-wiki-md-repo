@@ -179,11 +179,11 @@ Los siguientes *[widget toolkit](https://en.wikipedia.org/wiki/widget_toolkit "w
 
 	[http://www.pyside.org/](http://www.pyside.org/) || [python2-pyside](https://aur.archlinux.org/packages/python2-pyside/) [python-pyside](https://aur.archlinux.org/packages/python-pyside/)
 
-*   **pyGTK** — Bindings [GTK+ 2](/index.php/GTK%2B "GTK+")
+*   **pyGTK** — Bindings [GTK+ 2](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)")
 
 	[http://www.pygtk.org/](http://www.pygtk.org/) || [pygtk](https://www.archlinux.org/packages/?name=pygtk)
 
-*   **PyGObject** — Bindings [GTK+ 2/3](/index.php/GTK%2B "GTK+") mediante introspección de GObject
+*   **PyGObject** — Bindings [GTK+ 2/3](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") mediante introspección de GObject
 
 	[https://wiki.gnome.org/PyGObject/](https://wiki.gnome.org/PyGObject/) || [python2-gobject2](https://www.archlinux.org/packages/?name=python2-gobject2) [python2-gobject](https://www.archlinux.org/packages/?name=python2-gobject) [python-gobject2](https://www.archlinux.org/packages/?name=python-gobject2) [python-gobject](https://www.archlinux.org/packages/?name=python-gobject)
 

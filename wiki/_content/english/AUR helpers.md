@@ -78,9 +78,9 @@ The columns have the following meaning:
 ## Search and download
 
 | Name | Written in | File review | Git clone | Reliable parser | Reliable solver | Shell completion | Specificity |
+| [auracle-git](https://aur.archlinux.org/packages/auracle-git/) | C++ | Yes | [Yes](https://github.com/falconindy/auracle/commit/c73bbee) | Yes | Yes | bash | print build order |
 | [pbget](https://aur.archlinux.org/packages/pbget/) | Python | Yes | Yes | Yes | – | – | – |
 | [yaah](https://aur.archlinux.org/packages/yaah/) | Bash | Yes | Optional | Yes | – | bash | – |
-| [auracle-git](https://aur.archlinux.org/packages/auracle-git/) | C++ | Yes | No | Yes | Yes | – | print build order |
 | [cower](https://aur.archlinux.org/packages/cower/) | C | Yes | No | Yes | – | bash, zsh | regex support, sort by votes/popularity |
 | [package-query](https://aur.archlinux.org/packages/package-query/) | C | Yes | – | [No](https://github.com/archlinuxfr/package-query/issues/135) | – | – | search only |
 | [repoctl](https://aur.archlinux.org/packages/repoctl/) | Go | Yes | No | [Yes](https://github.com/goulash/pacman/blob/master/aur/aur.go) | – | zsh | local repository support |
@@ -102,8 +102,6 @@ The columns have the following meaning:
 <small>([discontinued](https://github.com/m45t3r/burgaur/issues/7#issuecomment-365599675))</small> | Python/C | Optional | No | No | No | No | No | Yes | – | – | wrapper for *cower* |
 
 ## Pacman wrappers
-
-See also [pacman/Tips and tricks#Pacman wrappers](/index.php/Pacman/Tips_and_tricks#Pacman_wrappers "Pacman/Tips and tricks").
 
 **Warning:** [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) wrappers abstract the work of the package manager. They may (optionally or by default) introduce [unsafe flags](/index.php/System_maintenance#Avoid_certain_pacman_commands "System maintenance"), or other unexpected behavior leading to a defective system.
 

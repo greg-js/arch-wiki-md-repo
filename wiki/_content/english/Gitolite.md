@@ -1,4 +1,4 @@
-[Gitolite](https://github.com/sitaramc/gitolite/wiki/) allows you to host Git repositories for multiple users easily and securely.
+[Gitolite](https://github.com/sitaramc/gitolite) allows you to host Git repositories for multiple users easily and securely.
 
 ## Contents
 

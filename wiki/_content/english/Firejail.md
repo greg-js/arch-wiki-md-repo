@@ -297,7 +297,7 @@ $ firecfg --fix
 
 ```
 
-There may cases for which you need to manually modify the EXEC line of the `.desktop` file in `~/.local/share/applications/` to explicitly call Firejail.
+There may be cases for which you need to manually modify the EXEC line of the `.desktop` file in `~/.local/share/applications/` to explicitly call Firejail.
 
 ### Symbolic links
 

@@ -258,7 +258,7 @@ Reinicie Firefox y comprube si ha resuelto el problema.
 
 ### Sitios web rotos / campos de entrada con temas Gtk oscuros
 
-Cuando se usa un tema [GTK](/index.php/GTK "GTK") oscuro, es posible que algunas páginas de Internet tengan campos de entrada y de texto ilegibles (p.e. Amazon - texto blanco sobre fondo blanco). Esto puede suceder porque el sitio web sólo defina el color de fondo o el de texto, y Firefox utilice el del tema [GTK](/index.php/GTK "GTK").
+Cuando se usa un tema [GTK](/index.php/GTK_(Espa%C3%B1ol) "GTK (Español)") oscuro, es posible que algunas páginas de Internet tengan campos de entrada y de texto ilegibles (p.e. Amazon - texto blanco sobre fondo blanco). Esto puede suceder porque el sitio web sólo defina el color de fondo o el de texto, y Firefox utilice el del tema [GTK](/index.php/GTK_(Espa%C3%B1ol) "GTK (Español)").
 
 Una solución es definir explícitamente colores estándar para todas las páginas web en `~/.mozilla/firefox/.../chrome/userContent.css`.
 

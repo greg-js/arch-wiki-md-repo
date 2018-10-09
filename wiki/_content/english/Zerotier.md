@@ -57,3 +57,18 @@ and see a list of networks the computer is connected to by running:
 # zerotier-cli listnetworks
 
 ```
+
+## Manual configuration
+
+Manual configuration can be achieved by creating the file `local.conf` in the program's home directory `/var/lib/zerotier-one`. This allows you to set various configuration options, such as restricting the service to specific interfaces, or enforcing use of a different port. This file **must** be valid JSON as it can be re-written by zerotier-one. Below is an example `local.conf` which stops zerotier-one using docker and bridged interfaces:
+
+```
+{
+    "settings": {
+        "interfacePrefixBlacklist": [ "docker", "br-" ]
+    }
+}
+
+```
+
+More information on the available configuration items is available on the [program's GitHub repo](https://github.com/zerotier/ZeroTierOne/tree/master/service#local-configuration-file)

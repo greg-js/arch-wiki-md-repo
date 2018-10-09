@@ -71,7 +71,7 @@ Las copias de seguridad pueden automatizarse con [systemd/Timers](/index.php/Sy
 
 ### Archivos de configuración
 
-Antes de editar cualquier archivo de configuración, cree una copia de seguridad para que pueda volver a una versión anterior en caso de problemas. Editores como [vim](/index.php/Vim "Vim") y [emacs](/index.php/Emacs "Emacs") pueden hacer esto automáticamente, así como herramientas como [etckeeper](/index.php/Etckeeper "Etckeeper") que mantienen el directorio `/etc` en un sistema de control de versiones (VCS); Vea el [dotfiles#Version control](/index.php/Dotfiles#Version_control "Dotfiles") para más información.
+Antes de editar cualquier archivo de configuración, cree una copia de seguridad para que pueda volver a una versión anterior en caso de problemas. Editores como [vim](/index.php/Vim "Vim") y [emacs](/index.php/Emacs "Emacs") pueden hacer esto automáticamente, así como herramientas como [Etckeeper](/index.php/Etckeeper_(Espa%C3%B1ol) "Etckeeper (Español)") que mantienen el directorio `/etc` en un sistema de control de versiones (VCS); Vea el [dotfiles#Version control](/index.php/Dotfiles#Version_control "Dotfiles") para más información.
 
 ### Lista de paquetes instalados
 

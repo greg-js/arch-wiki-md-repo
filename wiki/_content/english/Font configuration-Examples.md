@@ -5,7 +5,7 @@ Configurations can vary to a degree. Please post Fontconfig configurations with 
 ## Contents
 
 *   [1 Hinted fonts](#Hinted_fonts)
-*   [2 No hinting for *italic* or **bold**](#No_hinting_for_italic_or_bold)
+*   [2 No hinting for italic or bold](#No_hinting_for_italic_or_bold)
 *   [3 Enable anti-aliasing only for bigger fonts](#Enable_anti-aliasing_only_for_bigger_fonts)
 *   [4 Disable bold font](#Disable_bold_font)
 *   [5 Disable ligatures for monospaced fonts](#Disable_ligatures_for_monospaced_fonts)
@@ -45,7 +45,7 @@ Configurations can vary to a degree. Please post Fontconfig configurations with 
 
 ```
 
-## No hinting for *italic* or **bold**
+## No hinting for italic or bold
 
 ```
 <?xml version='1.0'?>
@@ -164,7 +164,7 @@ This prevents letter combinations like "ffi" from being squashed into a single-w
 You can test the effectiveness of this with the following command:
 
 ```
-echo -e "| worksheet |
+$ echo -e "| worksheet |
 | buffering |
 | difficult |
 | finishing |
@@ -173,56 +173,7 @@ echo -e "| worksheet |
 
 ```
 
-Some programs (such as Firefox) do not support the `fontfeatures` tag, so for those replacing the font with another is the only option. This will set "DejaVu Sans Mono" (a font without ligatures) to be the default monospace font:
-
-```
-$ cat >> /etc/fonts/conf.d/99-force-monospace-font.conf
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-<fontconfig>
-  <description>Set the default monospaced font to one without ligatures for ff, fi, ffi, etc.</description>
-
-  <!-- Generic name aliasing -->
-  <alias>
-    <family>monospace</family>
-    <prefer>
-      <family>DejaVu Sans Mono</family>
-    </prefer>
-  </alias>
-
-  <!-- Generic name assignment -->
-  <alias>
-    <family>DejaVu Sans Mono</family>
-    <default>
-      <family>monospace</family>
-    </default>
-  </alias>
-
-  <!-- Original PostScript base font mapping -->
-  <alias binding="same">
-    <family>DejaVu Sans Mono</family>
-    <default>
-      <family>Courier</family>
-    </default>
-  </alias>
-
-  <!-- Font substitution rules -->
-  <alias binding="same">
-    <family>Courier</family>
-    <accept>
-      <family>DejaVu Sans Mono</family>
-    </accept>
-  </alias>
-
-  <alias binding="same">
-    <family>TeX Gyre Cursor</family>
-    <accept>
-      <family>DejaVu Sans Mono</family>
-    </accept>
-  </alias>
-</fontconfig>
-
-```
+Some programs (such as Firefox) do not support the `fontfeatures` tag, so for those replacing the font with another is the only option. See [Font configuration#Replace or set default fonts](/index.php/Font_configuration#Replace_or_set_default_fonts "Font configuration") for details.
 
 ## Default fonts
 

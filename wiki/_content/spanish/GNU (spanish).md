@@ -72,7 +72,7 @@ Dentro del grupo **base-devel** hay muchos miembros de [GNU toolchain](https://e
 
 Muchas otras herramientas opcionales GNU se encuentran disponibles en los [repositorios oficiales](/index.php/Official_repositories "Official repositories"):
 
-**widget toolkit:** [GTK+](/index.php/GTK%2B "GTK+")
+**widget toolkit:** [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)")
 
 **ambiente de escritorio:** [GNOME](/index.php/GNOME "GNOME")
 

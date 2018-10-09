@@ -245,13 +245,13 @@ See also BBS Article: [iozone to evaluate I/O schedulers... results NOT what you
 
 ### Phoronix Test Suite
 
-*The [Phoronix Test Suite](http://www.phoronix-test-suite.com/) is the most comprehensive testing and benchmarking platform available that provides an extensible framework for which new tests can be easily added. The software is designed to effectively carry out both qualitative and quantitative benchmarks in a clean, reproducible, and easy-to-use manner.*
+The [Phoronix Test Suite](http://www.phoronix-test-suite.com/) is the most comprehensive testing and benchmarking platform available that provides an extensible framework for which new tests can be easily added. The software is designed to effectively carry out both qualitative and quantitative benchmarks in a clean, reproducible, and easy-to-use manner.
 
-*The Phoronix Test Suite is based upon the extensive testing and internal tools developed by Phoronix.com since 2004 along with support from leading tier-one computer hardware and software vendors. This software is open-source and licensed under the GNU GPLv3.*
+The Phoronix Test Suite is based upon the extensive testing and internal tools developed by Phoronix.com since 2004 along with support from leading tier-one computer hardware and software vendors. This software is open-source and licensed under the GNU GPLv3.
 
-*Originally developed for automated Linux testing, support to the Phoronix Test Suite has since been added for OpenSolaris, Apple macOS, Microsoft Windows, and BSD operating systems. The Phoronix Test Suite consists of a lightweight processing core (pts-core) with each benchmark consisting of an XML-based profile and related resource scripts. The process from the benchmark installation, to the actual benchmarking, to the parsing of important hardware and software components is heavily automated and completely repeatable, asking users only for confirmation of actions.*
+Originally developed for automated Linux testing, support to the Phoronix Test Suite has since been added for OpenSolaris, Apple macOS, Microsoft Windows, and BSD operating systems. The Phoronix Test Suite consists of a lightweight processing core (pts-core) with each benchmark consisting of an XML-based profile and related resource scripts. The process from the benchmark installation, to the actual benchmarking, to the parsing of important hardware and software components is heavily automated and completely repeatable, asking users only for confirmation of actions.
 
-*The Phoronix Test Suite interfaces with OpenBenchmarking.org as a collaborative web platform for the centralized storage of test results, sharing of test profiles and results, advanced analytical features, and other functionality. Phoromatic is an enterprise component to orchestrate test execution across multiple systems with remote management capabilities.*
+The Phoronix Test Suite interfaces with OpenBenchmarking.org as a collaborative web platform for the centralized storage of test results, sharing of test profiles and results, advanced analytical features, and other functionality. Phoromatic is an enterprise component to orchestrate test execution across multiple systems with remote management capabilities.
 
 This suite can be [installed](/index.php/Pacman "Pacman") with the package [phoronix-test-suite](https://aur.archlinux.org/packages/phoronix-test-suite/). There is also a developmental version available with [phoronix-test-suite-git](https://aur.archlinux.org/packages/phoronix-test-suite-git/).
 

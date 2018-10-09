@@ -1,3 +1,5 @@
+**Warning:** The latest version packaged 1.0.34 is vulnerable.[[1]](http://tinc-vpn.org/security/).
+
 [tinc](http://tinc-vpn.org/) is a Virtual Private Network (VPN) daemon that uses tunnelling and encryption to create a secure private network between hosts on the Internet.
 
 ## Contents

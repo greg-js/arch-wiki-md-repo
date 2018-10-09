@@ -1,3 +1,12 @@
+Ссылки по теме
+
+*   [Дополнительные клавиши в Xorg](/index.php/%D0%94%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D1%88%D0%B8_%D0%B2_Xorg "Дополнительные клавиши в Xorg")
+*   [Extra keyboard keys in console](/index.php/Extra_keyboard_keys_in_console "Extra keyboard keys in console")
+*   [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg")
+*   [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console")
+*   [Map scancodes to keycodes](/index.php/Map_scancodes_to_keycodes "Map scancodes to keycodes")
+*   [Xmodmap (Русский)](/index.php/Xmodmap_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xmodmap (Русский)")
+
 **Состояние перевода:** На этой странице представлен перевод статьи [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys"). Дата последней синхронизации: 2015-06-29\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=Extra_keyboard_keys&diff=0&oldid=379429).
 
 На многих клавиатурах есть *специальные клавиши* (их иногда называют *горячими клавишами* или *мультимедиа клавишами*), которые сделаны для того, чтобы запускать приложения или печатать специальные символы (которые не назначены на стандартной национальной раскладке). [udev (Русский)](/index.php/Udev_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Udev (Русский)") содержит в себу большую базу данных назначений клавиш, соответствующих конкретным клавиатурам, поэтому чаще всего клавиатуры работают из коробки. Если у вас очень новая или очень редкая клавиатура, вам может понадобиться настроить раскладку самостоятельно.

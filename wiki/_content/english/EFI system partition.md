@@ -7,32 +7,50 @@ The [EFI system partition](https://en.wikipedia.org/wiki/EFI_system_partition "w
 
 The UEFI specification mandates support for the FAT12, FAT16, and FAT32 filesystems (see [UEFI specification version 2.7, section 13.3.1.1](http://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1019485)), but any conformant vendor can optionally add support for additional filesystems; for example, Apple [Macs](/index.php/Mac "Mac") support (and by default use) their own HFS+ filesystem drivers.
 
-**Warning:**
-
-*   The EFI system partition must be a physical partition in the main partition table of the disk, not under LVM or software RAID etc.
-*   If [dual-booting](/index.php/Dual_boot_with_Windows "Dual boot with Windows") with an existing installation of Windows on a UEFI/GPT system, avoid reformatting the ESP, as this includes the Windows *.efi* file required to boot it. In other words, use the existing partition as is and simply [#Mount the partition](#Mount_the_partition).
-
 ## Contents
 
-*   [1 Create the partition](#Create_the_partition)
-    *   [1.1 GPT partitioned disks](#GPT_partitioned_disks)
-    *   [1.2 MBR partitioned disks](#MBR_partitioned_disks)
-*   [2 Format the partition](#Format_the_partition)
-*   [3 Mount the partition](#Mount_the_partition)
-    *   [3.1 Alternative mount points](#Alternative_mount_points)
-        *   [3.1.1 Using bind mount](#Using_bind_mount)
-        *   [3.1.2 Using systemd](#Using_systemd)
-        *   [3.1.3 Using incron](#Using_incron)
-        *   [3.1.4 Using mkinitcpio hook](#Using_mkinitcpio_hook)
-        *   [3.1.5 Using mkinitcpio hook (2)](#Using_mkinitcpio_hook_.282.29)
-        *   [3.1.6 Using pacman hook](#Using_pacman_hook)
-*   [4 Known issues](#Known_issues)
-    *   [4.1 ESP on RAID](#ESP_on_RAID)
-*   [5 See also](#See_also)
+*   [1 Check for an existing partition](#Check_for_an_existing_partition)
+*   [2 Create the partition](#Create_the_partition)
+    *   [2.1 GPT partitioned disks](#GPT_partitioned_disks)
+    *   [2.2 MBR partitioned disks](#MBR_partitioned_disks)
+*   [3 Format the partition](#Format_the_partition)
+*   [4 Mount the partition](#Mount_the_partition)
+    *   [4.1 Alternative mount points](#Alternative_mount_points)
+        *   [4.1.1 Using bind mount](#Using_bind_mount)
+        *   [4.1.2 Using systemd](#Using_systemd)
+        *   [4.1.3 Using incron](#Using_incron)
+        *   [4.1.4 Using mkinitcpio hook](#Using_mkinitcpio_hook)
+        *   [4.1.5 Using mkinitcpio hook (2)](#Using_mkinitcpio_hook_.282.29)
+        *   [4.1.6 Using pacman hook](#Using_pacman_hook)
+*   [5 Known issues](#Known_issues)
+    *   [5.1 ESP on RAID](#ESP_on_RAID)
+*   [6 See also](#See_also)
+
+## Check for an existing partition
+
+If you are installing Arch Linux on an UEFI-capable computer with an installed operating system, like [Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") 10 for example, it is very likely that you already have an EFI system partition.
+
+To find out the disk partition scheme and the system partition, use [parted](/index.php/Parted "Parted") as root on the disk you want to boot from:
+
+```
+# parted /dev/sd*x* print
+
+```
+
+The command returns:
+
+*   The disk's partition table: it indicates `Partition Table: gpt` if the partition table is [GPT](/index.php/GPT "GPT") or `Partition Table: msdos` if it is [MBR](/index.php/MBR "MBR").
+*   The list of partitions on the disk: Look for the EFI system partition in the list, it is a small (usually about 100–550 MiB or 100–577 MB) partition with a `fat32` file system and with the flag `esp` enabled. To confirm this is the ESP, mount it and check whether it contains a directory named `EFI`, if it does this is definitely the ESP.
+
+**Warning:** When dual-booting, avoid reformatting the ESP, as this may includes file required to boot other operating systems.
+
+If you found an existing EFI system partition, simply proceed to [#Mount the partition](#Mount_the_partition). If you did not find one, you will need to create it, proceed to [#Create the partition](#Create_the_partition).
 
 ## Create the partition
 
 The following two sections show how to create an EFI system partition (ESP).
+
+**Warning:** The EFI system partition must be a physical partition in the main partition table of the disk, not under LVM or software RAID etc.
 
 **Note:** It is recommended to use [GPT](/index.php/GPT "GPT") for UEFI boot, because some UEFI firmwares do not allow UEFI/MBR boot.
 
@@ -42,7 +60,7 @@ According to a Microsoft note[[2]](https://docs.microsoft.com/en-us/windows-hard
 
 ### GPT partitioned disks
 
-EFI system partition on GPT is identified by the [partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`.
+EFI system partition on a [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") is identified by the [partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`.
 
 **Choose one** of the following methods to create an ESP for a GPT partitioned disk:
 
@@ -54,7 +72,7 @@ Proceed to [#Format the partition](#Format_the_partition) section below.
 
 ### MBR partitioned disks
 
-EFI system partition on MBR is identified by the [partition type ID](https://en.wikipedia.org/wiki/Partition_type "wikipedia:Partition type") `EF`.
+EFI system partition on a [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") partition table is identified by the [partition type ID](https://en.wikipedia.org/wiki/Partition_type "wikipedia:Partition type") `EF`.
 
 **Choose one** of the following methods to create an ESP for a MBR partitioned disk:
 

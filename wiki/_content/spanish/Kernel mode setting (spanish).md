@@ -1,3 +1,9 @@
+Artículos relacionados
+
+*   [ATI (Español)](/index.php/ATI_(Espa%C3%B1ol) "ATI (Español)")
+*   [Intel (Español)](/index.php/Intel_(Espa%C3%B1ol) "Intel (Español)")
+*   [Nouveau (Español)](/index.php/Nouveau_(Espa%C3%B1ol) "Nouveau (Español)")
+
 Kernel [Mode Setting](https://en.wikipedia.org/wiki/Mode-setting "wikipedia:Mode-setting") (KMS) es un método de fijación de la resolución y la profundidad de la pantalla en el espacio del kernel, en vez de en el espacio de usuario (userspace).
 
 KMS permite la resolución nativa en el framebuffer y permite al instante una consola (TTY) de conmutación. KMS también puede permitir a las nuevas tecnologías (como DRI2) reducir los defectos y aumentar el rendimiento 3D, incluso el ahorro de energía en el espacio del kernel.
