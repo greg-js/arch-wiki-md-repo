@@ -5,99 +5,109 @@
 
 **Состояние перевода:** На этой странице представлен перевод статьи [SDDM](/index.php/SDDM "SDDM"). Дата последней синхронизации: 2015-06-29\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=SDDM&diff=0&oldid=379176).
 
-SDDM ([простой десктопный экранный менеджер](https://en.wikipedia.org/wiki/Simple_Desktop_Display_Manager Plasma desktop. Из английской Википедии:
+[Simple Desktop Display Manager](https://github.com/sddm/sddm/) (SDDM) – это предпочтительный [экранный менеджер](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер") для [KDE](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "KDE (Русский)") Plasma.
 
-	*Simple Desktop Display Manager (SDDM) - это дисплейный менеджер (программа для графического логин скрина) для X11\. SDDM был написан с нуля на языке C++11 и поддерживает установку тем через QML. SDDM является заменой устаревшему KDE Display Manager и интегрируется в KDE Frameworks 5, KDE Plasma 5 и KDE Applications 5.*
+Из [Википедии](https://en.wikipedia.org/wiki/ru:Simple_Desktop_Display_Manager "wikipedia:ru:Simple Desktop Display Manager"):
+
+	*Simple Desktop Display Manager (SDDM) — это дисплейный менеджер (программа для графического логин скрина) для X11 . SDDM был написан с нуля на языке C++11 и поддерживает установку тем через QML. SDDM является заменой устаревшему KDE Display Manager и интегрируется в KDE Frameworks 5, KDE Plasma 5 и KDE Applications 5.*
+
+**Примечание:** Протокол Wayland поддерживается не полностью [[1]](https://github.com/sddm/sddm/issues/440). Сеансы Wayland отображаются в списке, но сам SDDM использует X11.
 
 ## Contents
 
 *   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
 *   [2 Настройка](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0)
     *   [2.1 Автоматический вход в систему](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B9_.D0.B2.D1.85.D0.BE.D0.B4_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83)
-    *   [2.2 Настройки темы](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8_.D1.82.D0.B5.D0.BC.D1.8B)
-        *   [2.2.1 Главная тема](#.D0.93.D0.BB.D0.B0.D0.B2.D0.BD.D0.B0.D1.8F_.D1.82.D0.B5.D0.BC.D0.B0)
-        *   [2.2.2 Редактирование тем](#.D0.A0.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.82.D0.B5.D0.BC)
-        *   [2.2.3 Курсор мыши](#.D0.9A.D1.83.D1.80.D1.81.D0.BE.D1.80_.D0.BC.D1.8B.D1.88.D0.B8)
-        *   [2.2.4 Изменение вашего аватара](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2.D0.B0.D1.88.D0.B5.D0.B3.D0.BE_.D0.B0.D0.B2.D0.B0.D1.82.D0.B0.D1.80.D0.B0)
-    *   [2.3 Numlock](#Numlock)
-    *   [2.4 Настройка GUI](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_GUI)
+    *   [2.2 Автоматическая разблокировка KDE Wallet при входе в систему](#.D0.90.D0.B2.D1.82.D0.BE.D0.BC.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.B0.D1.8F_.D1.80.D0.B0.D0.B7.D0.B1.D0.BB.D0.BE.D0.BA.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B0_KDE_Wallet_.D0.BF.D1.80.D0.B8_.D0.B2.D1.85.D0.BE.D0.B4.D0.B5_.D0.B2_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.83)
+    *   [2.3 Настройки темы](#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B8_.D1.82.D0.B5.D0.BC.D1.8B)
+        *   [2.3.1 Текущая тема](#.D0.A2.D0.B5.D0.BA.D1.83.D1.89.D0.B0.D1.8F_.D1.82.D0.B5.D0.BC.D0.B0)
+        *   [2.3.2 Редактирование тем](#.D0.A0.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.82.D0.B5.D0.BC)
+        *   [2.3.3 Тестирование (предпросмотр) темы](#.D0.A2.D0.B5.D1.81.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.28.D0.BF.D1.80.D0.B5.D0.B4.D0.BF.D1.80.D0.BE.D1.81.D0.BC.D0.BE.D1.82.D1.80.29_.D1.82.D0.B5.D0.BC.D1.8B)
+        *   [2.3.4 Курсор мыши](#.D0.9A.D1.83.D1.80.D1.81.D0.BE.D1.80_.D0.BC.D1.8B.D1.88.D0.B8)
+        *   [2.3.5 Изменение вашего аватара](#.D0.98.D0.B7.D0.BC.D0.B5.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B2.D0.B0.D1.88.D0.B5.D0.B3.D0.BE_.D0.B0.D0.B2.D0.B0.D1.82.D0.B0.D1.80.D0.B0)
+    *   [2.4 Numlock](#Numlock)
 *   [3 Решение проблем](#.D0.A0.D0.B5.D1.88.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.BB.D0.B5.D0.BC)
     *   [3.1 Зависания после входа](#.D0.97.D0.B0.D0.B2.D0.B8.D1.81.D0.B0.D0.BD.D0.B8.D1.8F_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.B2.D1.85.D0.BE.D0.B4.D0.B0)
     *   [3.2 Не работают эффекты рабочего стола в KDE Plasma](#.D0.9D.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D1.8E.D1.82_.D1.8D.D1.84.D1.84.D0.B5.D0.BA.D1.82.D1.8B_.D1.80.D0.B0.D0.B1.D0.BE.D1.87.D0.B5.D0.B3.D0.BE_.D1.81.D1.82.D0.BE.D0.BB.D0.B0_.D0.B2_KDE_Plasma)
     *   [3.3 SDDM запускается на tty1, а не на tty7](#SDDM_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BD.D0.B0_tty1.2C_.D0.B0_.D0.BD.D0.B5_.D0.BD.D0.B0_tty7)
     *   [3.4 Один или более пользователей не отображаются на экране приветствия](#.D0.9E.D0.B4.D0.B8.D0.BD_.D0.B8.D0.BB.D0.B8_.D0.B1.D0.BE.D0.BB.D0.B5.D0.B5_.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D0.B5.D0.BB.D0.B5.D0.B9_.D0.BD.D0.B5_.D0.BE.D1.82.D0.BE.D0.B1.D1.80.D0.B0.D0.B6.D0.B0.D1.8E.D1.82.D1.81.D1.8F_.D0.BD.D0.B0_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B5_.D0.BF.D1.80.D0.B8.D0.B2.D0.B5.D1.82.D1.81.D1.82.D0.B2.D0.B8.D1.8F)
     *   [3.5 SDDM грузит только US раскладку клавиатуры](#SDDM_.D0.B3.D1.80.D1.83.D0.B7.D0.B8.D1.82_.D1.82.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_US_.D1.80.D0.B0.D1.81.D0.BA.D0.BB.D0.B0.D0.B4.D0.BA.D1.83_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D0.B0.D1.82.D1.83.D1.80.D1.8B)
-    *   [3.6 На экране входа не активны кнопки выключения, перезагрузки](#.D0.9D.D0.B0_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.B5_.D0.B2.D1.85.D0.BE.D0.B4.D0.B0_.D0.BD.D0.B5_.D0.B0.D0.BA.D1.82.D0.B8.D0.B2.D0.BD.D1.8B_.D0.BA.D0.BD.D0.BE.D0.BF.D0.BA.D0.B8_.D0.B2.D1.8B.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D1.8F.2C_.D0.BF.D0.B5.D1.80.D0.B5.D0.B7.D0.B0.D0.B3.D1.80.D1.83.D0.B7.D0.BA.D0.B8)
 
 ## Установка
 
-[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [sddm](https://www.archlinux.org/packages/?name=sddm).
+[Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") пакет [sddm](https://www.archlinux.org/packages/?name=sddm). Опционально установите пакет [sddm-kcm](https://www.archlinux.org/packages/?name=sddm-kcm) для использования модуля [KCM](/index.php/KDE_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#KCM "KDE (Русский)").
 
 Теперь следуйте инструкциям из раздела [Экранный менеджер#Запуск экранного менеджера](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80#.D0.97.D0.B0.D0.BF.D1.83.D1.81.D0.BA_.D1.8D.D0.BA.D1.80.D0.B0.D0.BD.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80.D0.B0 "Экранный менеджер"), чтобы запускать SDDM при загрузке.
 
 ## Настройка
 
-Настройки SDDM хранятся в файле `/etc/sddm.conf`. Для получения полного списка настроек смотрите страницу справочного руководства [sddm.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sddm.conf.5).
+Настройки SDDM по умолчанию хранятся в файле `/usr/lib/sddm/sddm.conf.d/default.conf`. Для каких-либо изменений создайте конфигурационный файл(ы) в директории `/etc/sddm.conf.d/`. Для получения полного списка настроек смотрите страницу справочного руководства [sddm.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sddm.conf.5).
 
-На системах с [systemd](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)") всё должно работать из коробки, так как для управления сессиями SDDM по умолчанию использует `systemd-logind`. Поэтому при установке пакета конфигурационный файл не создаётся. Однако SDDM предоставляет команду для генерации примера конфигурационного файла с настройками по умолчанию для тех, кому это может понадобиться:
+Пакет [sddm-kcm](https://www.archlinux.org/packages/?name=sddm-kcm) (входящий в группу [plasma](https://www.archlinux.org/groups/x86_64/plasma/)) предлагает графический интерфейс для конфигурации SDDM в *Параметрах системы* KDE Plasma. Также в [AUR (Русский)](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)") доступен редактор настроек [sddm-config-editor-git](https://aur.archlinux.org/packages/sddm-config-editor-git/) на основе [Qt (Русский)](/index.php/Qt_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Qt (Русский)").
 
-```
-# sddm --example-config > /etc/sddm.conf
-
-```
+Всё должно работать "из коробки", так как Arch Linux использует [systemd (Русский)](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)") и SDDM по умолчанию использует `systemd-logind` для управления сессиями.
 
 ### Автоматический вход в систему
 
-SDDM поддерживает автовход. Для этого настройте конфигурационный файл, например, так:
+SDDM поддерживает автоматический вход. Для этого настройте конфигурационный файл, например:
 
- `/etc/sddm.conf` 
+ `/etc/sddm.conf.d/autologin.conf` 
 ```
 [Autologin]
-User=john
+User=ivan
 Session=plasma.desktop
 ```
 
-Если в папке /usr/share/xsessions/ Вместо plasma.desktop есть файл kde-plasma.desktop напишите
+Эта конфигурация позволит автоматически запускать KDE Plasma для пользователя `ivan` при загрузке системы. Все доступные сеансы доступны в директории `/usr/share/xsessions/`.
 
- `/etc/sddm.conf` 
-```
-[Autologin]
-User=john
-Session=kde-plasma.desktop
-```
+Также недоступна возможность автоматического входа в KDE Plasma с одновременной блокировкой сеанса [[2]](https://github.com/sddm/sddm/issues/306).
 
-С этой конфигурацией при загрузке системы будет происходить автовход в сессию KDE Plasma для пользователя `john`. Доступные типы сессий можно посмотреть в каталоге `/usr/share/xsessions/`.
-
-**Важно:** При неправильной настройке автоматический вход сделает взлом вашего ноутбука элементарным для того, кто имеет к нему физический доступ. Включайте автовход только если у вас активирован другой способ аутентификации, например, пароль для [расшифровки файловой системы](/index.php/System_Encryption_with_LUKS_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "System Encryption with LUKS (Русский)").
-
-Если включить автовход в KDE Plasma, то исчезнет возможность блокировки сессии [(по крайней мере в данный момент это так)](https://github.com/sddm/sddm/issues/306).
-
-Вы можете добавить маленький скрипт, который активирует скринсейвер KDE при автозапуске в качестве обходного пути:
+Вы можете добавить скрипт, который активирует скринсейвер KDE при автозапуске в качестве обходного пути:
 
 ```
-#!/bin/bash                                                                                                                                                         
-/usr/bin/qdbus-qt4 org.kde.screensaver /ScreenSaver SetActive true &
-exit 0
+#!/bin/sh
+/usr/bin/dbus-send --session --type=method_call --dest=org.freedesktop.ScreenSaver /ScreenSaver org.freedesktop.ScreenSaver.Lock &
 
 ```
+
+### Автоматическая разблокировка KDE Wallet при входе в систему
+
+Смотрите [KDE Wallet#Unlock KDE Wallet automatically on login](/index.php/KDE_Wallet#Unlock_KDE_Wallet_automatically_on_login "KDE Wallet").
 
 ### Настройки темы
 
-Настройки темы могут быть изменены в секции `[Theme]`.
+Настройки темы могут быть изменены в секции `[Theme]`. Также можно увидеть предпросмотр тем, если вы используете приложение *Параметры системы* в KDE Plasma.
 
-Некоторые темы доступны в [AUR](/index.php/AUR "AUR"), например [archlinux-themes-sddm](https://aur.archlinux.org/packages/archlinux-themes-sddm/).
+Задайте значение `breeze` для стандартной темы KDE Plasma.
 
-#### Главная тема
+Также некоторые темы доступны в [AUR (Русский)](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)"), например, [archlinux-themes-sddm](https://aur.archlinux.org/packages/archlinux-themes-sddm/).
 
-Установите главную тему с помощью значения `Current`, например `Current=archlinux-simplyblack`.
+#### Текущая тема
+
+Установите текущую тему с помощью значения `Current`, например, `Current=archlinux-simplyblack`.
 
 #### Редактирование тем
 
-Каталогом тем для SDDM по умолчанию является `/usr/share/sddm/themes/`. Вы можете добавить свои собственные темы в подкаталог этого каталога. Изучите установленные файлы для их изменения или создания собственной темы.
+Каталогом тем для SDDM по умолчанию является `/usr/share/sddm/themes/`. Вы можете добавить свои собственные темы в отдельный подкаталог этой директории. Заметьте, что названия подкаталогов должны совпадать с названием самой темы. Изучите установленные файлы для их изменения или создания собственной темы.
+
+#### Тестирование (предпросмотр) темы
+
+В случае необходимости, вы можете предварительно просматривать тему SDDM. Это особенно полезно в случае, когда вы не уверены в том, как тема будет смотреться (в частности, после её редактирования) без необходимости выхода из аккаунта. Вы можете выполнить команду вроде следующей:
+
+```
+$ sddm-greeter --theme /usr/share/sddm/themes/breeze
+
+```
+
+Эта команда должна открыть новое окно с предварительным просмотром темы.
+
+**Примечание:** Это лишь предварительный просмотр. В этом режиме не работают некоторые функции, например, выключение, переход в режим сна или вход в систему.
 
 #### Курсор мыши
 
-Чтобы задать тему для курсора мыши, установите `CursorTheme` на предпочитаемую вами тему курсоров.
+Чтобы задать тему для курсора мыши, установите `CursorTheme` на предпочитаемую вами тему курсора.
+
+Допустимыми значениями для [Plasma (Русский)](/index.php/Plasma_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Plasma (Русский)") являются `breeze_cursors`, `Breeze_Snow` и `breeze-dark`.
 
 #### Изменение вашего аватара
 
@@ -106,11 +116,6 @@ exit 0
 ### Numlock
 
 Если вы хотите, чтобы Numlock автоматически включался, пропишите `Numlock=on` в секции `[General]`.
-
-### Настройка GUI
-
-*   Системные настройки KDE Frameworks содержат конфигурационный модуль для SDDM. Установите пакет [sddm-kcm](https://www.archlinux.org/packages/?name=sddm-kcm), чтобы использовать его.
-*   В AUR есть [sddm-config-editor-git](https://aur.archlinux.org/packages/sddm-config-editor-git/), основанный на Qt.
 
 ## Решение проблем
 
@@ -153,26 +158,3 @@ MinimumUid=500 #Мой UID равен 501
 ### SDDM грузит только US раскладку клавиатуры
 
 SDDM грузит раскладку клавиатуры, заданную в `/etc/X11/xorg.conf.d/00-keyboard.conf`. Вы можете сгенерировать этот конфигурационный файл командой `localectl set-x11-keymap`. Прочтите [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") для дополнительной информации.
-
-### На экране входа не активны кнопки выключения, перезагрузки
-
-При входе систему не работают кнопки выключения, перезагрузки. Однако, при принудительной перезагрузке sddm.service после загрузки системы всё работает. Проблема в том, что sddm.service должен запускаться после systemd-logind.service. Однако, этого не происходит. Как одно из решений проблемы внести следующие изменения в файл юнита:
-
- `/usr/lib/systemd/system/sddm.service` 
-```
-[Unit]
-Description=Simple Desktop Display Manager
-Documentation=man:sddm(1) man:sddm.conf(5)
-Conflicts=getty@tty1.service
-#В строку ниже добавляем systemd-logind.service
-After=systemd-user-sessions.service getty@tty1.service plymouth-quit.service systemd-logind.service
-
-[Service]
-ExecStart=/usr/bin/sddm
-Restart=always
-
-[Install]
-Alias=display-manager.service
-```
-
-Теперь после перезагрузки системы всё работает корректно.

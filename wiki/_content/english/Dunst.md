@@ -17,9 +17,7 @@ Related articles
 
 [Install](/index.php/Install "Install") the [dunst](https://www.archlinux.org/packages/?name=dunst) package. There is no need to start or enable dunst; it is called by systemd when programs send notifications through dbus.
 
-An example configuration file is included at `/usr/share/dunst/dunstrc`.
-
-Copy this file to `~/.config/dunst/dunstrc` and edit it accordingly.
+An example configuration file is included at `/usr/share/dunst/dunstrc`. Copy this file to `~/.config/dunst/dunstrc` and edit it accordingly.
 
 ## Appearance
 
@@ -51,7 +49,7 @@ icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x1
 
 ## Shortcuts
 
-Idle thresholds can be set letting the notification stay onscreen if the user is idle longer than the threhold.
+Idle thresholds can be set letting the notification stay onscreen if the user is idle longer than the threshold.
 
 To close a notification before it times out use `Control + space`. If multiple notifications are onscreen `Control + Shift + Space` closes all of them.
 

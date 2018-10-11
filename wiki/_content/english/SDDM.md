@@ -38,7 +38,7 @@ From [Wikipedia:Simple Desktop Display Manager](https://en.wikipedia.org/wiki/Si
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [sddm](https://www.archlinux.org/packages/?name=sddm) package. Optionally install [sddm-kcm](https://www.archlinux.org/packages/?name=sddm-kcm) for the KDE Config Module.
+[Install](/index.php/Install "Install") the [sddm](https://www.archlinux.org/packages/?name=sddm) package. Optionally install [sddm-kcm](https://www.archlinux.org/packages/?name=sddm-kcm) for the [KDE Config Module](/index.php/KDE#KCM "KDE").
 
 Follow [Display manager#Loading the display manager](/index.php/Display_manager#Loading_the_display_manager "Display manager") to start SDDM at boot.
 
@@ -46,7 +46,7 @@ Follow [Display manager#Loading the display manager](/index.php/Display_manager#
 
 The default configuration file for SDDM can be found at `/usr/lib/sddm/sddm.conf.d/default.conf`. For any changes, create configuration file(s) in `/etc/sddm.conf.d/`. See [sddm.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sddm.conf.5) for all options.
 
-The [sddm-kcm](https://www.archlinux.org/packages/?name=sddm-kcm) package (included in the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group) provides a GUI to configure SDDM in Plasma's system settings. There is also a Qt-based [sddm-config-editor-git](https://aur.archlinux.org/packages/sddm-config-editor-git/) available in the [AUR](/index.php/AUR "AUR").
+The [sddm-kcm](https://www.archlinux.org/packages/?name=sddm-kcm) package (included in the [plasma](https://www.archlinux.org/groups/x86_64/plasma/) group) provides a GUI to configure SDDM in Plasma's system settings. There is also a [Qt](/index.php/Qt "Qt")-based [sddm-config-editor-git](https://aur.archlinux.org/packages/sddm-config-editor-git/) available in the [AUR](/index.php/AUR "AUR").
 
 Everything should work out of the box, since Arch Linux uses [systemd](/index.php/Systemd "Systemd") and SDDM defaults to using `systemd-logind` for session management.
 

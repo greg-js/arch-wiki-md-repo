@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [ArchWiki:Archive](/index.php/ArchWiki:Archive "ArchWiki:Archive")
+*   [Arch Security Team](/index.php/Arch_Security_Team "Arch Security Team")

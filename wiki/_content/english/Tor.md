@@ -897,7 +897,7 @@ chown tor:tor /var/lib/tor/filename
 Or to change everything listed by the above find example, modify the command to this:
 
 ```
-find /var/lib/tor/ ! -user tor -exec chown tor:tor {} \;
+chown -R -v tor:tor /var/lib/tor
 
 ```
 
@@ -924,7 +924,7 @@ The process will be run as tor user. For this purpose change user and group ID t
 
 ```
 # chown -R tor:tor /var/lib/tor/
-# chmod -R 755 /var/lib/tor
+# chmod -R 700 /var/lib/tor
 
 ```
 

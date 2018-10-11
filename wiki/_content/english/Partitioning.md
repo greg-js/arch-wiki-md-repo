@@ -63,7 +63,10 @@ There are two main types of partition table available: Master Boot Record (MBR),
 
 The [Master Boot Record](https://en.wikipedia.org/wiki/Master_boot_record "wikipedia:Master boot record") (MBR) is the first 512 bytes of a storage device. It contains an operating system bootloader and the storage device's partition table. It plays an important role in the [boot process](/index.php/Boot_process "Boot process") under [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") systems. See [Wikipedia:Master boot record#Disk partitioning](https://en.wikipedia.org/wiki/Master_boot_record#Disk_partitioning "wikipedia:Master boot record") for the MBR structure.
 
-**Note:** The MBR is not located in a partition; it is located at the first sector of the device (physical offset 0), preceding the first partition. (The boot sector present on a partitionless device or within an individual partition is called a [volume boot record](https://en.wikipedia.org/wiki/Volume_boot_record "wikipedia:Volume boot record") instead.)
+**Note:**
+
+*   The MBR is not located in a partition; it is located at the first sector of the device (physical offset 0), preceding the first partition.
+*   The boot sector present on a partitionless device or within an individual partition is called a [volume boot record (VBR)](https://en.wikipedia.org/wiki/Volume_boot_record "wikipedia:Volume boot record") instead.
 
 #### Master Boot Record (partition table)
 
@@ -117,7 +120,7 @@ The section on [#Partitioning tools](#Partitioning_tools) contains a table indic
 
 ### Partitionless disk
 
-Partitionless disk a.k.a. [superfloppy](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq#what-is-a-superfloppy) refers to using a storage device without using a partition table, having one file system occupying the whole storage device. The boot sector present on a partitionless device is called a [volume boot record (VBR)](https://en.wikipedia.org/wiki/Volume_boot_record "wikipedia:Volume boot record").
+Partitionless disk a.k.a. [superfloppy](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq#what-is-a-superfloppy) refers to a storage device without a partition table, having one file system occupying the whole storage device. The boot sector present on a partitionless device is called a [volume boot record (VBR)](https://en.wikipedia.org/wiki/Volume_boot_record "wikipedia:Volume boot record").
 
 #### Btrfs partitioning
 

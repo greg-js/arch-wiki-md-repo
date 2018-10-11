@@ -1,6 +1,6 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/binfmt_misc "wikipedia:binfmt misc"):
 
-	"*binfmt_misc is a capability of the Linux kernel which allows arbitrary executable file formats to be recognized and passed to certain user space applications, such as emulators and virtual machines.*"
+	**binfmt_misc** is a capability of the Linux kernel which allows arbitrary executable file formats to be recognized and passed to certain user space applications, such as emulators and virtual machines.
 
 In plain language, this allows you to take a file such as a [Java](/index.php/Java "Java") jar or [Mono](/index.php/Mono "Mono") exe that you would ordinarily run via a line such as
 

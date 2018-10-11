@@ -154,6 +154,8 @@ Example: `cryptkey=rootfs:/secretkey`
 
 Also note that if `cryptkey` is not specified, it defaults to `/crypto_keyfile.bin` (in the initramfs).[[2]](https://git.archlinux.org/svntogit/packages.git/tree/trunk/hooks-encrypt?h=packages/cryptsetup#n8)
 
+**Note:** If USB hard drive initialization fails on boot, add `usb_storage` to the `MODULES` array of [mkinitcpio](/index.php/Mkinitcpio#MODULES "Mkinitcpio") [[3]](https://bugs.archlinux.org/task/60272).
+
 See also [dm-crypt/Device encryption#Keyfiles](/index.php/Dm-crypt/Device_encryption#Keyfiles "Dm-crypt/Device encryption").
 
 #### crypto

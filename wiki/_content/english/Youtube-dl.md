@@ -37,7 +37,7 @@ $ youtube-dl [OPTIONS] *URL*
 
 In cases where multiple formats of a video are available, youtube-dl will download the best ones by default.
 
-If you'd like to choose a specific format to download, first get a list of the available formats:
+If you'd like to choose a specific one to download, first get a list of the available formats:
 
 ```
 $ youtube-dl -F *URL*
@@ -82,7 +82,7 @@ See [[1]](https://github.com/rg3/youtube-dl/blob/master/README.md#configuration)
 Some websites throttle download speeds. You can often increase speeds by using [Aria2](/index.php/Aria2 "Aria2"), an external downloader which supports multi-connection downloads. Example:
 
 ```
-$ youtube-dl --external-downloader aria2c --external-downloader-args '-c -x 5 -k 2M' *URL*
+$ youtube-dl --external-downloader aria2c --external-downloader-args '-c -j 3 -x 3 -s 3 -k 1M' *URL*
 
 ```
 

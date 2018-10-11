@@ -47,7 +47,7 @@ To have your static ip assigned at boot, see [Network configuration#Static IP ad
 The default `dhcpd.conf` contains many uncommented examples, so relocate it:
 
 ```
-# mv /etc/dhcpd.conf /etc/dhcpd.conf.example
+# cp /etc/dhcpd.conf.example /etc/dhcpd.conf
 
 ```
 

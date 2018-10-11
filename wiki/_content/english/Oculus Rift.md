@@ -1,4 +1,4 @@
-The Oculus Rift is a virtual reality head-mounted display developed by [Oculus VR](http://www.oculusvr.com/).
+The Oculus Rift is a virtual reality head-mounted display developed by [Oculus VR](http://www.oculusvr.com/). Note: CV1 Remains unsupported in Linux. This article covers setup for DK1 and DK2 only.
 
 ## Contents
 

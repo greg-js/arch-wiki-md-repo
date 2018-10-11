@@ -13,7 +13,11 @@ From [docs.saltstack.com](http://docs.saltstack.com/):
     *   [2.3 Salt Key](#Salt_Key)
     *   [2.4 Salt Cloud](#Salt_Cloud)
 *   [3 Salt commands](#Salt_commands)
-*   [4 See also](#See_also)
+*   [4 Salt States](#Salt_States)
+    *   [4.1 Salt Environments](#Salt_Environments)
+    *   [4.2 Creating a State](#Creating_a_State)
+    *   [4.3 The top file](#The_top_file)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -109,6 +113,74 @@ For more commands see documentation or run:
 # salt '*' sys.doc
 
 ```
+
+## Salt States
+
+In addition to running commands, salt can use what are known as states. A state is like a configuration file that allows setting up a new installation in the exact same way. A state can also be ran on that install after several weeks to make sure the computer is still in a known configuration.
+
+### Salt Environments
+
+States can be separated into different environments. These environments can be used for making changes in a test environment before moving to a production machine, configuring a group of servers the same way, etc. The base environment is /srv/salt by default, and sometimes /srv/salt must be manually created.
+
+Different environments can be set up in the salt-master file. Check /etc/salt/master for more info.
+
+### Creating a State
+
+A state is a text file ending in *.sls located within a configured environment. This assumes the only the default base environment set up.
+
+Create a file in /srv/salt called test.sls.
+
+```
+# vim /srv/salt/test.sls
+
+```
+
+Add the following to the file:
+
+```
+netcat:
+ pkg.installed: []
+
+```
+
+Now run the state:
+
+```
+# salt '*' state.apply test
+
+```
+
+Salt will search the base environment folder for anything called test.sls and apply the configuration it finds to all servers. In this case, **netcat** will be installed on all servers.
+
+For more information on state file syntax and using states, see here: [https://docs.saltstack.com/en/latest/topics/tutorials/starting_states.html](https://docs.saltstack.com/en/latest/topics/tutorials/starting_states.html)
+
+### The top file
+
+The top file is the main way to apply different configs to different servers at once. The top file is called **top.sls** and is placed in the root of an environment. The top file configuration can be ran with the following command.
+
+```
+# salt '*' state.apply
+
+```
+
+Let us assume we have 2 servers: fs01, web01\. Let's also assume we have 3 states in the base environment: nettools.sls, samba.sls, apache.sls. Here is a sample top file.
+
+```
+# Applied to all servers
+'*':
+  nettools
+
+# Applied only to fs01
+fs01:
+  samba
+
+# Applied only to web01
+web01:
+  apache
+
+```
+
+When **state.apply** is ran, the top file is read, and the states are applied to the correct servers. IE: nettools on all servers, samba on fs01, apache on web01.
 
 ## See also
 

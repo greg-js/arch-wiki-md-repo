@@ -152,17 +152,17 @@ The script also supports more advance thermal/performance features including CPU
 
 Some special buttons are not supported by X server due to keycode number limit.
 
-| Key combination | Scancode | Keycode |
-| `Fn+F11` | `0x49` | `374` `KEY_KEYBOARD` |
-| `Fn+F12` | `0x45` | `364` `KEY_FAVORITES` |
+| Key combination | Scancode | Keycode | Note |
+| `Fn+F11` | `0x49` | `374` `KEY_KEYBOARD` | Not recognized in [Wayland](/index.php/Wayland "Wayland") |
+| `Fn+F12` | `0x45` | `364` `KEY_FAVORITES` | Recognized correctly on [Wayland](/index.php/Wayland "Wayland") |
 
 You can remap unsupported keys using [udev hwdb](/index.php/Map_scancodes_to_keycodes "Map scancodes to keycodes"):
 
  `/etc/udev/hwdb.d/90-thinkpad-keyboard.hwdb` 
 ```
 evdev:name:ThinkPad Extra Buttons:dmi:bvn*:bvr*:bd*:svnLENOVO*:pn*
- KEYBOARD_KEY_45=prog1
- KEYBOARD_KEY_49=prog2
+ KEYBOARD_KEY_49=prog1
+ KEYBOARD_KEY_45=prog2
 
 ```
 

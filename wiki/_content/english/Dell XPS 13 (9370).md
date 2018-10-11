@@ -204,6 +204,7 @@ Also all three Type-C ports support DisplayPort alternate mode. It is taken care
 *   [Club3D Type-C to DisplayPort 1.2 adapter](https://www.club-3d.com/en/detail/2350/usb_3.1_type_c_to_displayport_1.2/) (tested with 1080p and 4K, both work at 60 Hz)
 *   [Dell Type-C to VGA adapter](https://www.dell.com/en-us/shop/dell-adapter-usb-c-to-vga/apd/470-abnc/pc-accessories) (tested with 1080p at 60 Hz)
 *   [Dell Type-C to HDMI adapter](https://www.dell.com/en-us/work/shop/dell-adapter-usb-c-to-hdmi/apd/470-abmz/pc-accessories) (tested with 1080p and 4K, both work at 60 Hz)
+*   [Moshi USB-C to HDMI Adapter](https://www.moshi.com/en/product/usb-c-to-hdmi-adapter/silver) (tested with 1080p and 4K, both work at 60 Hz)
 
 ## Fingerprint reader
 

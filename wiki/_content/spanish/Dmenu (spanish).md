@@ -23,6 +23,6 @@ Grabe el guión en algún sitio (~/bin es una buena elección) y haga que sea ej
 
 Ahora, necesitará ligar dicho guión a una combinación de teclas. Esto puede hacerse bien via su gestor de ventanas o configuración de su entorno de escritorio, bien con un programa tal como xbindkeys. Vea el artículo [Hotkeys](/index.php/Hotkeys "Hotkeys") para obtener más información.
 
-# Recursos adicionales
+# Véase también
 
 *   [dmenu](http://www.suckless.org/wiki/tools/xlib) - El sitio web oficial de dmenu

@@ -1,4 +1,5 @@
-**Estado de la traducción:** este artículo es una versión traducida de [DokuWiki](/index.php/DokuWiki "DokuWiki"). Fecha de la última traducción/revisión: **2017-9-16**. Puedes ayudar a actualizar la traducción, si adviertes que la versión inglesa ha cambiado: [ver cambios](https://wiki.archlinux.org/index.php?title=DokuWiki&diff=0&oldid=).
+**Estado de la traducción**
+Este artículo es una traducción de [DokuWiki](/index.php/DokuWiki "DokuWiki"), revisada por última vez el **2017-9-16**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=DokuWiki&diff=0&oldid=) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 "[DokuWiki](https://www.dokuwiki.org/dokuwiki#) es un wiki que cumple con los estándares, simple de usar y que permite a los usuarios crear ricos repositorios de documentación. Además permite a los individuos, equipos y empresas crear y colaborar utilizando una sintaxis sencilla pero potente que garantiza que los archivos de datos permanezcan estructurados y legible fuera del wiki".
 

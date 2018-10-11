@@ -5,7 +5,7 @@ Related articles
 *   [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd")
 *   [Vagrant](/index.php/Vagrant "Vagrant")
 
-[Docker](https://www.docker.com) is a utility to pack, ship and run any application as a lightweight container.
+[Docker](https://en.wikipedia.org/wiki/Docker_(software) is a utility to pack, ship and run any application as a lightweight container.
 
 ## Contents
 
@@ -374,6 +374,6 @@ when building or running a Docker image, even though you do have enough disk spa
 
 ## See also
 
+*   [Official website](https://www.docker.com)
 *   [Arch Linux on docs.docker.com](https://docs.docker.com/engine/installation/linux/archlinux/)
 *   [Are Docker containers really secure?](http://opensource.com/business/14/7/docker-security-selinux) — opensource.com
-*   [Wikipedia:Docker (software)](https://en.wikipedia.org/wiki/Docker_(software) "wikipedia:Docker (software)")

@@ -18,7 +18,7 @@ Control groups can be used in multiple ways:
 ## Contents
 
 *   [1 Installing](#Installing)
-*   [2 Managing Resource Groups with Systemd](#Managing_Resource_Groups_with_Systemd)
+*   [2 Managing resource groups with systemd](#Managing_resource_groups_with_systemd)
 *   [3 Simple usage](#Simple_usage)
     *   [3.1 Manual usage](#Manual_usage)
     *   [3.2 Ad-hoc groups](#Ad-hoc_groups)
@@ -37,7 +37,7 @@ Control groups can be used in multiple ways:
 
 After installation of the [cgmanager](https://www.archlinux.org/packages/?name=cgmanager) package, you need to [Start](/index.php/Start "Start") `cgmanager.service` before its `cgm` client can be used.
 
-## Managing Resource Groups with Systemd
+## Managing resource groups with systemd
 
 You can [enable](/index.php/Enable "Enable") the `cgconfig` service with systemd. This gives you the capability to track more easily any errors in `cgconfig.conf`.
 

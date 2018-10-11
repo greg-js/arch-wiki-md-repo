@@ -551,7 +551,7 @@ table inet filter {
 
 ### Different rules for different interfaces
 
-If your box has more than one network interface, and you'd like to use different rules for different interfaces, you may want to use a "dispatching" filter chain, and then interface-specific filter chains. For example, let's assume your box acts as a home router, you want to run a web server accessible over the LAN (interface nsp3s0), but not from the public internet (interface enp2s0), you may want to consider a structure like this:
+If your box has more than one network interface, and you would like to use different rules for different interfaces, you may want to use a "dispatching" filter chain, and then interface-specific filter chains. For example, let us assume your box acts as a home router, you want to run a web server accessible over the LAN (interface nsp3s0), but not from the public internet (interface enp2s0), you may want to consider a structure like this:
 
 ```
 table inet filter {

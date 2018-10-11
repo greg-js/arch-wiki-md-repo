@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [GTK+](/index.php/GTK%2B "GTK+"), revisada por última vez el **en fase de traducción**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GTK%2B&diff=0&oldid=545475) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [GTK+](/index.php/GTK%2B "GTK+"), revisada por última vez el **2018-10-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GTK%2B&diff=0&oldid=545475) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -27,6 +27,13 @@ GTK+ (GIMP Toolkit) fue originalmente creado por el [Proyecto GNU](/index.php/GN
         *   [4.3.1 Combinaciones de teclas Emacs](#Combinaciones_de_teclas_Emacs)
     *   [4.4 Retraso del menú de GNOME](#Retraso_del_men.C3.BA_de_GNOME)
     *   [4.5 Reducir el tamaño de los widgets](#Reducir_el_tama.C3.B1o_de_los_widgets)
+    *   [4.6 Ocultar los botones CSD](#Ocultar_los_botones_CSD)
+    *   [4.7 Desactivar pegar desde el ratón](#Desactivar_pegar_desde_el_rat.C3.B3n)
+    *   [4.8 Posición inicial del selector de archivos](#Posici.C3.B3n_inicial_del_selector_de_archivos)
+    *   [4.9 Comportamiento de desplazamiento heredado](#Comportamiento_de_desplazamiento_heredado)
+    *   [4.10 Deshabilitar las barras de desplazamiento superpuestas](#Deshabilitar_las_barras_de_desplazamiento_superpuestas)
+        *   [4.10.1 Eliminar indicadores de la barra de desplazamiento de superposición](#Eliminar_indicadores_de_la_barra_de_desplazamiento_de_superposici.C3.B3n)
+*   [5 GDK backends](#GDK_backends)
 
 ## Instalación
 
@@ -276,3 +283,107 @@ gtk-menu-popup-delay = 0
 ```
 
 ### Reducir el tamaño de los widgets
+
+Si tiene una pantalla pequeña o simplemente no le gustan los iconos y widgets grandes, puede cambiarles el tamaño fácilmente.
+
+Para tener iconos sin texto en las barras de herramientas ([valores válidos](https://developer.gnome.org/gtk3/stable/gtk3-Standard-Enumerations.html#GtkToolbarStyle)), utilice:
+
+```
+gtk-toolbar-style = GTK_TOOLBAR_ICONS
+
+```
+
+Para tener iconos más pequeños, utilice una línea como esta:
+
+```
+gtk-icon-sizes = "panel-menu=16,16:panel=16,16:gtk-menu=16,16:gtk-large-toolbar=16,16\
+:gtk-small-toolbar=16,16:gtk-button=16,16"
+
+```
+
+O bien, para eliminar los iconos de los botones por completo:
+
+```
+gtk-button-images = 0
+
+```
+
+También puede eliminar los iconos de los menús:
+
+```
+gtk-menu-images = 0
+
+```
+
+Véase también [[1]](http://martin.ankerl.com/2008/10/10/how-to-make-a-compact-gnome-theme/) y [[2]](http://gnome-look.org/content/show.php/Simple+eGTK?content=119812).
+
+### Ocultar los botones CSD
+
+Para eliminar los botones minimizar y maximizar. [[3]](https://developer.gnome.org/gtk3/3.22/GtkSettings.html#GtkSettings--gtk-decoration-layout)
+
+```
+gtk-decoration-layout=menu:close
+
+```
+
+### Desactivar pegar desde el ratón
+
+Para desactivar el pegado al pulsar el botón central del ratón (también conocido como PRIMARIO):
+
+```
+gtk-enable-primary-paste=false
+
+```
+
+### Posición inicial del selector de archivos
+
+Abra el selector de archivos dentro del **directorio de trabajo actual** y no en la ubicación **reciente**. Normalmente, el **directorio de trabajo actual** es el **directorio personal**.
+
+**GTK+ 3**
+
+Modifique DConf con *gsettings*, ya que el archivo de base de datos ($XDG_CONFIG_HOME/dconf/users) es binario:
+
+```
+$ gsettings set org.gtk.Settings.FileChooser startup-mode cwd
+
+```
+
+**GTK+ 2**
+
+Modifique el archivo de configuración `~/.config/gtk-2.0/gtkfilechooser.ini`:
+
+ `~/.config/gtk-2.0/gtkfilechooser.ini`  `StartupMode=cwd` 
+
+### Comportamiento de desplazamiento heredado
+
+**Nota:** Esta configuración no es obedecida por todas las aplicaciones GTK+.
+
+**Sugerencia:** El comportamiento de desplazamiento heredado se puede lograr de manera segura pulsando simplemente con el botón derecho en lugar de pulsar con el botón izquierdo.
+
+Antes de GTK+ 3.6, pulsando a cada lado del control deslizante en la barra de desplazamiento movía la barra de desplazamiento aproximadamente una página en la dirección donde pulsaba. Desde GTK+ 3.6, el control deslizante se mueve directamente a la posición donde se pulsa. Este comportamiento se puede revertir en algunas aplicaciones creando el archivo con el contenido siguiente:
+
+ `~/.config/gtk-3.0/settings.ini` 
+```
+[Settings]
+gtk-primary-button-warps-slider = false
+
+```
+
+### Deshabilitar las barras de desplazamiento superpuestas
+
+Desde GTK+ 3.15, las barras de desplazamiento superpuestas están habilitadas de forma predeterminada, lo que significa que las barras de desplazamiento se mostrarán solo al pasar el ratón en las aplicaciones de GTK+ 3\. Este comportamiento se puede revertir configurando la siguiente variable de entorno: `GTK_OVERLAY_SCROLLING=0`. Véase [Variables de entorno # aplicaciones gráficas](/index.php/Environment_variables_(Espa%C3%B1ol)#Graphical_applications "Environment variables (Español)").
+
+GTK+ 4 ya no admitirá `GTK_OVERLAY_SCROLLING`. Ya ha sido [eliminado](https://github.com/GNOME/gtk/commit/e49615184a9d85bb0bb4e289b3ee8252adee3813#diff-3cf94c6e1eb009e20985034bc2210bfd) de la rama principal de desarrollo. A partir de GTK+ 4, la naturaleza de superposición de las barras de desplazamiento es parte del kit de herramientas. Se ha eliminado el conmutador general para evitar que los desarrolladores rompan aplicaciones que no han sido probadas con ambas combinaciones. Para permitir que los desarrolladores de aplicaciones decidan qué aspecto deberían tener sus aplicaciones, en su lugar, el kit de herramientas proporciona un mecanismo para excluir o añadir una configuración para los usuarios. La función [gtk_scrolled_window_set_overlay_scrolling()](https://developer.gnome.org/gtk3/stable/GtkScrolledWindow.html#gtk-scrolled-window-setlay-scrolling) se puede usar para habilitar/deshabilitar las barras de desplazamiento superpuestas *por cada usuario*. Los desarrolladores de aplicaciones pueden utilizar opcionalmente [GSettings](https://blog.gtk.org/2017/05/01/first-steps-with-gsettings/) para que el usuario tenga una configuración vinculada a esta propiedad.
+
+#### Eliminar indicadores de la barra de desplazamiento de superposición
+
+Las posiciones de las barras de desplazamiento de superposición se indican mediante líneas finas discontinuas en la ventana de la aplicación. Estas líneas discontinuas estarán presentes incluso cuando la barra de desplazamiento de superposición se deshabilite utilizando la variable de entorno que se analiza en la sección anterior. Para eliminar las líneas indicadoras, cree el siguiente archivo:
+
+ `~/.config/gtk-3.0/gtk.css` 
+```
+/* Remove dotted lines from GTK+ 3 applications */
+undershoot.top, undershoot.right, undershoot.bottom, undershoot.left { background-image: none; }
+
+```
+
+## GDK backends

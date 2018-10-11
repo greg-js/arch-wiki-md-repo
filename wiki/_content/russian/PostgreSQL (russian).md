@@ -25,20 +25,6 @@ $ sudo pacman -S postgresql
 
 ```
 
-*   Создаём конфигурационный файл из готовых шаблонов systemd (они находятся по адресу /usr/lib/tmpfiles.d/)
-
-```
-$ systemd-tmpfiles --create postgresql.conf
-
-```
-
-*   С версии 9.6 немного иначе:
-
-```
-$ sudo cp /usr/share/postgresql/postgresql.conf.sample /var/lib/postgres/data/postgresql.conf
-
-```
-
 *   Инициализируем кластер с нужной локалью (она должна быть доступна в системе). Обратите внимание, что в данном примере используем `ru_RU.UTF-8`
 
 ```

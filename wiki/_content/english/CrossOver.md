@@ -1,8 +1,4 @@
-Related articles
-
-*   [Wine](/index.php/Wine "Wine")
-
-[CrossOver](http://www.codeweavers.com/) is the paid, commercialized version of Wine which provides more comprehensive end-user support. It includes scripts, patches, a [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface "wikipedia:Graphical user interface"), and third-party software which may never be accepted in the Wine Project. This combination makes running Windows programs considerably easier for those less tech-savvy.
+[CrossOver](http://www.codeweavers.com/) is the paid, commercialized version of [Wine](/index.php/Wine "Wine") which provides more comprehensive end-user support. It includes scripts, patches, a [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface "wikipedia:Graphical user interface"), and third-party software which may never be accepted in the Wine Project. This combination makes running Windows programs considerably easier for those less tech-savvy.
 
 ## Installation
 

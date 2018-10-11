@@ -15,6 +15,7 @@ Related articles
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 No locale support](#No_locale_support)
     *   [3.2 Missing menu entries](#Missing_menu_entries)
+    *   [3.3 Environmental Variables](#Environmental_Variables)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -96,6 +97,10 @@ $ rm ~/.cache/dmenu_run
 ```
 
 Note that there will most likely be only one cache file, depending on if `$XDG_CACHE_HOME` is set. See the contents of `/usr/bin/dmenu_run` for more information.
+
+### Environmental Variables
+
+Environmental variables needed for applications should instead be added to `/etc/environment`.
 
 ## See also
 

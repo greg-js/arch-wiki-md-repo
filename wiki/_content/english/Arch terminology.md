@@ -86,7 +86,7 @@ See [Custom local repository](/index.php/Custom_local_repository "Custom local r
 
 ## Developer
 
-Half-gods working to improve Arch for no financial gain. [Developers](https://www.archlinux.org/people/developers/) are outranked only by our gods, Judd Vinet and Aaron Griffin, who in turn are outranked by tacos.
+Half-gods working to improve Arch for no financial gain. [Developers](https://www.archlinux.org/people/developers/) are outranked only by our gods, Judd Vinet and Aaron Griffin.
 
 ## extra/[extra]
 
@@ -133,13 +133,7 @@ Arch's package manager pacman can install, update, and remove those packages. Us
 
 ## Package maintainer
 
-The role of the package maintainer is to update packages as new versions become available upstream and to field support questions relating to bugs in said packages. The term may be applied to any of the following:
-
-*   A core Arch Linux developer who maintains a software package in one of the official repositories (core, extra, or testing).
-*   A [Trusted User](/index.php/AUR_Trusted_User_Guidelines "AUR Trusted User Guidelines") of the community who maintains software packages in the unsupported/unofficial community repository.
-*   A normal user who maintains a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and local source files in the [AUR](/index.php/AUR "AUR").
-
-The maintainer of a package is the person currently responsible for the package. Previous maintainers should be listed as contributors in the PKGBUILD along with others who have contributed to the package.
+See [Package maintainer](/index.php/Package_maintainer "Package maintainer").
 
 ## pacman
 

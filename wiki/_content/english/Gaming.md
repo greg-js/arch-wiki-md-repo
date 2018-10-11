@@ -1,6 +1,7 @@
 Related articles
 
 *   [List of games](/index.php/List_of_games "List of games")
+*   [Video game platform emulators](/index.php/Video_game_platform_emulators "Video game platform emulators")
 *   [Xorg](/index.php/Xorg "Xorg")
 
 This page contains information about running games and related system configuration tips.
@@ -10,31 +11,28 @@ This page contains information about running games and related system configurat
 *   [1 Game environments](#Game_environments)
 *   [2 Getting games](#Getting_games)
     *   [2.1 Digital distribution](#Digital_distribution)
-*   [3 Emulators](#Emulators)
-    *   [3.1 Consoles](#Consoles)
-    *   [3.2 Other](#Other)
-*   [4 Running games](#Running_games)
-    *   [4.1 Multi-screen setups](#Multi-screen_setups)
-    *   [4.2 Keyboard grabbing](#Keyboard_grabbing)
-    *   [4.3 Starting games in a separate X server](#Starting_games_in_a_separate_X_server)
-    *   [4.4 Adjusting mouse detections](#Adjusting_mouse_detections)
-    *   [4.5 Mouse focus in GNOME](#Mouse_focus_in_GNOME)
-    *   [4.6 Binaural Audio with OpenAL](#Binaural_Audio_with_OpenAL)
-    *   [4.7 Tuning PulseAudio](#Tuning_PulseAudio)
-        *   [4.7.1 Enabling realtime priority and negative nice level](#Enabling_realtime_priority_and_negative_nice_level)
-        *   [4.7.2 Using higher quality remixing for better sound](#Using_higher_quality_remixing_for_better_sound)
-        *   [4.7.3 Matching hardware buffers to Pulse's buffering](#Matching_hardware_buffers_to_Pulse.27s_buffering)
-    *   [4.8 Double check your CPU frequency scaling settings](#Double_check_your_CPU_frequency_scaling_settings)
-*   [5 Improving framerates and responsiveness with scheduling policies](#Improving_framerates_and_responsiveness_with_scheduling_policies)
-    *   [5.1 For Wine programs](#For_Wine_programs)
-    *   [5.2 For everything else](#For_everything_else)
-        *   [5.2.1 Policies](#Policies)
-        *   [5.2.2 Nice levels](#Nice_levels)
-        *   [5.2.3 Core affinity](#Core_affinity)
-        *   [5.2.4 General case](#General_case)
-        *   [5.2.5 Optimus, and other helping programs](#Optimus.2C_and_other_helping_programs)
-*   [6 Using alternate kernels](#Using_alternate_kernels)
-    *   [6.1 Using BFQ](#Using_BFQ)
+*   [3 Running games](#Running_games)
+    *   [3.1 Multi-screen setups](#Multi-screen_setups)
+    *   [3.2 Keyboard grabbing](#Keyboard_grabbing)
+    *   [3.3 Starting games in a separate X server](#Starting_games_in_a_separate_X_server)
+    *   [3.4 Adjusting mouse detections](#Adjusting_mouse_detections)
+    *   [3.5 Mouse focus in GNOME](#Mouse_focus_in_GNOME)
+    *   [3.6 Binaural Audio with OpenAL](#Binaural_Audio_with_OpenAL)
+    *   [3.7 Tuning PulseAudio](#Tuning_PulseAudio)
+        *   [3.7.1 Enabling realtime priority and negative nice level](#Enabling_realtime_priority_and_negative_nice_level)
+        *   [3.7.2 Using higher quality remixing for better sound](#Using_higher_quality_remixing_for_better_sound)
+        *   [3.7.3 Matching hardware buffers to Pulse's buffering](#Matching_hardware_buffers_to_Pulse.27s_buffering)
+    *   [3.8 Double check your CPU frequency scaling settings](#Double_check_your_CPU_frequency_scaling_settings)
+*   [4 Improving framerates and responsiveness with scheduling policies](#Improving_framerates_and_responsiveness_with_scheduling_policies)
+    *   [4.1 For Wine programs](#For_Wine_programs)
+    *   [4.2 For everything else](#For_everything_else)
+        *   [4.2.1 Policies](#Policies)
+        *   [4.2.2 Nice levels](#Nice_levels)
+        *   [4.2.3 Core affinity](#Core_affinity)
+        *   [4.2.4 General case](#General_case)
+        *   [4.2.5 Optimus, and other helping programs](#Optimus.2C_and_other_helping_programs)
+*   [5 Using alternate kernels](#Using_alternate_kernels)
+    *   [5.1 Using BFQ](#Using_BFQ)
 
 ## Game environments
 
@@ -44,7 +42,7 @@ Different environments exist to play games in Linux:
 *   Web – games running in a web browser
     *   HTML5 games use canvas and WebGL technologies and work in all modern browsers
     *   [Flash](/index.php/Flash "Flash")-based – you need to install the plugin to play.
-*   Specialized environments (software emulators) – Required for running software designed for other architectures or systems. Check the [list of emulators](#Emulators) for more details.
+*   Specialized environments (software emulators) – Required for running software designed for other architectures or systems. See [Video game platform emulators](/index.php/Video_game_platform_emulators "Video game platform emulators") for more details.
     *   [Wine](/index.php/Wine "Wine") – allows running of some Windows games, as well as a large amount of Windows software. Performance in Wine varies, the additional CPU overhead will cause slowdown in some games while in some cases games may run faster. Consult [Wine AppDB](http://appdb.winehq.org/) for game-specific compatibility information.
     *   [Crossover Games](http://www.codeweavers.com/) – members of the Codeweavers team are prime supporters of Wine. Using Crossover Games makes the installation & setting up of some games easier, more reliable & even possible, when compared to using other methods. Crossover is a paid commercial product, which also provides a [forum](http://www.codeweavers.com/support/forums/) where the developers are very much involved in the community.
     *   [DOSBox](/index.php/DOSBox "DOSBox") is a minimal virtual machine which runs a full DOS-compatible environment. It can be used to run classic DOS titles.
@@ -71,133 +69,6 @@ Just because games are available for Linux doesn't mean that they are native, th
 *   [GOG.com](https://www.gog.com/games/linux)
     *   GOG.com officially only supports Ubuntu and Linux Mint.
     *   The [lgogdownloader](https://aur.archlinux.org/packages/lgogdownloader/) package can be used to download GOG titles from the command line.
-
-## Emulators
-
-An emulator is a program which serves to replicate the functions of another platform or system so as to allow applications and games to be run in environments they were not programmed for.
-
-See also [Category:Emulation](/index.php/Category:Emulation "Category:Emulation") and the [Emulation General wiki](http://emulation.gametechwiki.com/index.php/Main_Page).
-
-**Note:** For possibly more up to date selection of emulators, try checking the [AUR 'emulators' category](https://aur.archlinux.org/packages.php?O=0&K=&do_Search=Go&detail=1&L=0&C=5&SeB=nd&SB=n&SO=a&PP=25)
-
-**Warning:** Owning a high-level emulator is legal, but distribution of any type of copyrighted ROMs and unauthorized emulation (without written permission of the copyright holder allowing the user to do so) are **illegal**. Consequently, Arch Linux does not distribute this copyrighted content, including game ROMs and ripped console BIOSs. You are fully responsible for whatever usage of the emulators obtained from the [official repositories](/index.php/Official_repositories "Official repositories") or the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") you make, as well as any legal repercussion that result. Arch Linux bears no responsibility at all.
-
-### Consoles
-
-See also [Wikipedia:List of video game console emulators](https://en.wikipedia.org/wiki/List_of_video_game_console_emulators "wikipedia:List of video game console emulators").
-
-*   **Citra** — Nintendo 3DS emulator.
-
-	[http://citra-emu.org/](http://citra-emu.org/) || [citra-git](https://aur.archlinux.org/packages/citra-git/)
-
-*   **DeSmuME** — Nintendo DS emulator.
-
-	[http://desmume.org/](http://desmume.org/) || [desmume](https://www.archlinux.org/packages/?name=desmume)
-
-*   **[Dolphin](/index.php/Dolphin_emulator "Dolphin emulator")** — Very capable GameCube and Wii emulator.
-
-	[http://dolphin-emu.org/](http://dolphin-emu.org/) || [dolphin-emu](https://www.archlinux.org/packages/?name=dolphin-emu)
-
-*   **epsxe** — Emulator for the PlayStation video game console for x86-based PC hardware.
-
-	[http://www.epsxe.com/](http://www.epsxe.com/) || [epsxe](https://aur.archlinux.org/packages/epsxe/)
-
-*   **FCEUX** — NTSC and PAL 8 bit Nintendo/Famicom emulator that is an evolution of the original FCE Ultra emulator. It is accurate, compatible and actively maintained.
-
-	[http://fceux.com/](http://fceux.com/) || [fceux](https://www.archlinux.org/packages/?name=fceux)
-
-*   **Gambatte** — Accurate Game Boy Color emulator
-
-	[https://github.com/sinamas/gambatte](https://github.com/sinamas/gambatte) || Qt GUI frontend ([gambatte-qt](https://aur.archlinux.org/packages/gambatte-qt/)), SDL CLI frontend ([gambatte-sdl](https://aur.archlinux.org/packages/gambatte-sdl/)).
-
-*   **Gens2** — Emulator for Sega Genesis, Sega CD and 32X that is written in assembly language and no longer actively developed.
-
-*   activate OpenGL, set video resolution per custom to 1024x600 for streched full-screen or 800x600 for non-streched;
-*   use "Normal" renderer, I couldn't find a visible advantage with the other ones.
-
-	[http://www.gens.me/](http://www.gens.me/) || [gens](https://www.archlinux.org/packages/?name=gens)
-
-*   **Gens-GS** — Gens2, rewritten in C++, combining features from various Gens forks.
-
-	[http://segaretro.org/Gens/GS](http://segaretro.org/Gens/GS) || [gens-gs](https://www.archlinux.org/packages/?name=gens-gs)
-
-*   **gngeo** — Command-line NeoGeo emulator.
-
-	[http://gngeo.googlecode.com](http://gngeo.googlecode.com) || [gngeo](https://aur.archlinux.org/packages/gngeo/)
-
-*   **higan** — Multisystem emulator focusing on accuracy, supporting SNES, NES, GB, GBC, GBA.
-
-	[https://byuu.org/emulation/higan/](https://byuu.org/emulation/higan/) || [higan](https://www.archlinux.org/packages/?name=higan)
-
-*   **mednafen** — Command line driven multi system emulator.
-
-	[http://mednafen.sourceforge.net/](http://mednafen.sourceforge.net/) || [mednafen](https://www.archlinux.org/packages/?name=mednafen)
-
-*   **Mupen64Plus** — Highly compatible Nintendo 64 emulator with plugin system.
-
-	[http://www.mupen64plus.org/](http://www.mupen64plus.org/) || [mupen64plus](https://www.archlinux.org/packages/?name=mupen64plus) or a graphical front-end, such as [m64py](https://aur.archlinux.org/packages/m64py/) or [cutemupen](https://aur.archlinux.org/packages/cutemupen/).
-
-*   **[Nestopia](/index.php/Nestopia "Nestopia")** — Very accurate NES emulator.
-
-	[http://0ldsk00l.ca/nestopia/](http://0ldsk00l.ca/nestopia/) || [nestopia](https://aur.archlinux.org/packages/nestopia/)
-
-*   **pSX** — A not plugin-based PlayStation emulator with fairly high compatibility.
-
-	[http://psxemulator.gazaxian.com/](http://psxemulator.gazaxian.com/) || [psx](https://aur.archlinux.org/packages/psx/)
-
-*   **[PCSXR](/index.php/PCSX-Reloaded "PCSX-Reloaded")** — PlayStation emulator; Debian fork of the abandoned original PCSX
-
-	[http://pcsxr.codeplex.com/](http://pcsxr.codeplex.com/) || [pcsxr](https://aur.archlinux.org/packages/pcsxr/)
-
-*   **PCSX2** — PlayStation 2 emulator. It is still being maintained and developed. It requires BIOS files.
-
-	[http://www.pcsx2.net/](http://www.pcsx2.net/) || [pcsx2](https://www.archlinux.org/packages/?name=pcsx2)
-
-*   **PPSSPP** — PlayStation Portable emulator.
-
-	[http://ppsspp.org/](http://ppsspp.org/) || [ppsspp](https://www.archlinux.org/packages/?name=ppsspp)
-
-*   **Snes9x** — Portable, freeware Super Nintendo Entertainment System (SNES) emulator.
-
-	[http://www.snes9x.com/](http://www.snes9x.com/) || [snes9x](https://www.archlinux.org/packages/?name=snes9x)
-
-*   **[Visual Boy Advance](/index.php/Visual_Boy_Advance "Visual Boy Advance")** — Game Boy emulator with Game Boy Advance, Game Boy Color, and Super Game Boy support.
-
-	[http://vba.ngemu.com/](http://vba.ngemu.com/) || [vbam-wx](https://www.archlinux.org/packages/?name=vbam-wx)
-
-*   **ZSNES** — Highly compatible Super Nintendo emulator.
-
-	[http://www.zsnes.com/](http://www.zsnes.com/) || [zsnes](https://www.archlinux.org/packages/?name=zsnes)
-
-### Other
-
-*   **DOSBox** — Open-source DOS emulator which primarily focuses on running DOS Games.
-
-	[http://www.dosbox.com/](http://www.dosbox.com/) || [dosbox](https://www.archlinux.org/packages/?name=dosbox)
-
-*   **DOSEmu** — Open-source DOS emulator.
-
-	[http://www.dosemu.org/](http://www.dosemu.org/) || [dosemu](https://www.archlinux.org/packages/?name=dosemu)
-
-*   **MAME** — Multiple Arcade Machine Emulator.
-
-	[http://mamedev.org/](http://mamedev.org/) || [sdlmame](https://www.archlinux.org/packages/?name=sdlmame)
-
-*   **ResidualVM** — Cross-platform 3D game interpreter which allows you to play LucasArts' Lua-based 3D adventures.
-
-	[http://residualvm.org/](http://residualvm.org/) || [residualvm](https://aur.archlinux.org/packages/residualvm/)
-
-*   **[RetroArch](/index.php/RetroArch "RetroArch")** — Frontend to libretro (emulation library, using modified versions of existing emulators as plugins).
-
-	[http://www.libretro.com/](http://www.libretro.com/) || [retroarch](https://www.archlinux.org/packages/?name=retroarch)
-
-*   **ScummVM** — Virtual machine for old school adventures.
-
-	[http://www.scummvm.org/](http://www.scummvm.org/) || [scummvm](https://www.archlinux.org/packages/?name=scummvm)
-
-*   **X Neko Project II** — PC-9801 emulator.
-
-	[http://www.asahi-net.or.jp/~aw9k-nnk/np2/](http://www.asahi-net.or.jp/~aw9k-nnk/np2/) || [xnp2](https://aur.archlinux.org/packages/xnp2/)
 
 ## Running games
 

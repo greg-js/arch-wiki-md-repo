@@ -1,4 +1,4 @@
-[Citrix Receiver](https://en.wikipedia.org/wiki/Citrix_Receiver "wikipedia:Citrix Receiver") is the client component of XenDesktop and XenApp, developed by Citrix Systems.
+[Citrix Receiver](https://en.wikipedia.org/wiki/Citrix_Receiver "wikipedia:Citrix Receiver") is the client component of [XenDesktop](https://en.wikipedia.org/wiki/XenDesktop "wikipedia:XenDesktop") (desktop virtualization software) and [XenApp](https://en.wikipedia.org/wiki/XenApp "wikipedia:XenApp") (application virtualization software), developed by [Citrix Systems](https://en.wikipedia.org/wiki/Citrix_Systems "wikipedia:Citrix Systems").
 
 ## Contents
 

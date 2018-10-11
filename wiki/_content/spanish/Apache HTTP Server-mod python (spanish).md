@@ -1,3 +1,5 @@
+**Advertencia:** mod_python está [desatendido](http://blog.dscpl.com.au/2010/06/modpython-project-is-now-officially.html) y tiene múltiples problemas de seguridad, rendimiento y estabilidad. Se recomienda encarecidamente utilizar [mod_wsgi](/index.php/Mod_wsgi "Mod wsgi") en su lugar.
+
 ## Contents
 
 *   [1 Introducción](#Introducci.C3.B3n)

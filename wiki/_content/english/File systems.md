@@ -84,6 +84,10 @@ Some FUSE-based file systems:
 
 	[http://collectskin.com/adbfs/](http://collectskin.com/adbfs/) || [adbfs-git](https://aur.archlinux.org/packages/adbfs-git/)
 
+*   **apfs-fuse-git** — FUSE driver for APFS (Apple File System).
+
+	[https://github.com/sgan81/apfs-fuse](https://github.com/sgan81/apfs-fuse) || [apfs-fuse-git](https://aur.archlinux.org/packages/apfs-fuse-git/)
+
 *   **CloudFusion** — Linux file system (FUSE) to access Dropbox, Sugarsync, Amazon S3, Google Drive or WebDAV servers.
 
 	[https://joe42.github.io/CloudFusion/](https://joe42.github.io/CloudFusion/) || [cloudfusion-git](https://aur.archlinux.org/packages/cloudfusion-git/)

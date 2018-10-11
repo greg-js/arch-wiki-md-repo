@@ -23,7 +23,7 @@ To start ZeroNet [start/enable](/index.php/Start/enable "Start/enable") `zeronet
 
 ### Tor
 
-By default, ZeroNet uses clearnet and Tor if available. To enable Tor support you first neet to install [Tor](/index.php/Tor "Tor") via [tor](https://www.archlinux.org/packages/?name=tor). Then, give ZeroNet access to control Tor using the following instructions.
+By default, ZeroNet uses clearnet and Tor if available. To enable Tor support you first need to install [Tor](/index.php/Tor "Tor") via [tor](https://www.archlinux.org/packages/?name=tor). Then, give ZeroNet access to control Tor using the following instructions.
 
 ```
 # usermod -a -G tor zeronet
@@ -35,6 +35,7 @@ By default, ZeroNet uses clearnet and Tor if available. To enable Tor support yo
 ```
 ControlPort 9051
 DataDirectoryGroupReadable 1
+CacheDirectoryGroupReadable 1
 CookieAuthentication 1
 CookieAuthFileGroupReadable 1
 CookieAuthFile /var/lib/tor/control_auth_cookie
@@ -42,6 +43,23 @@ CookieAuthFile /var/lib/tor/control_auth_cookie
 ```
 
 You may also want to [start/enable](/index.php/Start/enable "Start/enable") `tor.service`.
+
+Eventually check Tor file permissions
+
+```
+stat -c%a /var/lib/tor
+
+```
+
+should print `750`. if not, run `sudo chmod 0750 /var/lib/tor`
+
+To force all ZeroNet connections through Tor,
+append to your `/etc/zeronet.conf` file
+
+```
+tor = always
+
+```
 
 ## Creating ZeroNet sites
 
