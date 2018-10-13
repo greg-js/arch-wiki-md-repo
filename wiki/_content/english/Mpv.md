@@ -10,10 +10,10 @@ Related articles
 *   [1 Installation](#Installation)
     *   [1.1 Front ends](#Front_ends)
 *   [2 Configuration](#Configuration)
-    *   [2.1 General settings - mpv.conf](#General_settings_-_mpv.conf)
+    *   [2.1 General settings](#General_settings)
         *   [2.1.1 High quality configurations](#High_quality_configurations)
         *   [2.1.2 Profiles](#Profiles)
-    *   [2.2 Key bindings - input.conf](#Key_bindings_-_input.conf)
+    *   [2.2 Key bindings](#Key_bindings)
     *   [2.3 Additional configuration files](#Additional_configuration_files)
 *   [3 Scripts](#Scripts)
     *   [3.1 JavaScript](#JavaScript)
@@ -64,46 +64,39 @@ See [List of applications/Multimedia#mpv-based](/index.php/List_of_applications/
 
 **Note:** Configuration files are read system-wide from `/etc/mpv` and per-user from `~/.config/mpv` (unless the [environment variable](/index.php/Environment_variable "Environment variable") `XDG_CONFIG_HOME` is set), where per-user settings override system-wide settings, all of which are overridden by the command line. User specific configuration is suggested since it may require some trial and error.
 
-First create the `~/.config/mpv` directory if it does not already exist.
+To help you get started *mpv* provides sample configuration files with default settings. Copy them to use as a starting point:
 
 ```
-$ mkdir ~/.config/mpv
-
-```
-
-To help you get you started *mpv* provides a couple empty sample configuration files with a lot of options commented out, they are located at `/usr/share/doc/mpv/`.
-
-*   `mpv.conf` will contain the majority of *mpv'*s settings.
-*   `input.conf` will just contain key bindings.
-
-Read through both of them to get an idea of how they work and what options are available. You may copy them to your config folder to use as a starting point if you like:
-
-```
-$ cp /usr/share/doc/mpv/mpv.conf ~/.config/mpv/mpv.conf
-$ cp /usr/share/doc/mpv/input.conf ~/.config/mpv/input.conf
+$ cp -r /usr/share/doc/mpv/ ~/.config/
 
 ```
 
-### General settings - mpv.conf
+`mpv.conf` contains the majority of *mpv'*s settings, `input.conf` contains key bindings. Read through both of them to get an idea of how they work and what options are available.
+
+### General settings
+
+Add the following settings to `~/.config/mpv/mpv.conf`.
 
 #### High quality configurations
 
 This loads high quality OpenGL options. Most users can run these without any problems, but they are not enabled by default to avoid causing problems for the few users who cannot run them.
 
- `~/.config/mpv/mpv.conf`  `profile=gpu-hq` 
+```
+profile=gpu-hq
+
+```
 
 The `gpu-hq` profile defaults to the `spline36` scaling filter for mid quality and speed. For the best quality video output, the manual states that if your hardware can run it, `ewa_lanczossharp` is probably what you should use.
 
- `~/.config/mpv/mpv.conf` 
 ```
 profile=gpu-hq
 scale=ewa_lanczossharp
 cscale=ewa_lanczossharp
+
 ```
 
 These last three options are a little more complicated. The first option makes it so that if audio and video go out of sync then instead of dropping video frames it will resample the audio (a slight change in audio pitch is often less noticeable than dropped frames). The mpv wiki has an in depth article on it titled [Display Synchronization](https://github.com/mpv-player/mpv/wiki/Display-synchronization). The remaining two essentially make motion appear smoother on your display by changing the way that frames are shown so that the source framerate jives better with your display's refresh rate (not to be confused with SVP's technique which actually converts video to 60fps). The mpv wiki has an in depth article on it titled [Interpolation](https://github.com/mpv-player/mpv/wiki/Interpolation) though it is also commonly known as *smoothmotion*.
 
- `~/.config/mpv/mpv.conf` 
 ```
 profile=gpu-hq
 scale=ewa_lanczossharp
@@ -111,6 +104,7 @@ cscale=ewa_lanczossharp
 video-sync=display-resample
 interpolation
 tscale=oversample
+
 ```
 
 Beyond this there is still a lot you can do but things become more complicated, require more powerful video cards, and are in constant development. As a brief overview, it is possible to load special shaders that perform exotic scaling and sharpening techniques including some that actually use deep neural networks trained on images (for both real world and animated content). To learn more about this take a look around the [mpv wiki](https://github.com/mpv-player/mpv/wiki), particularly the [user shader's section](https://github.com/mpv-player/mpv/wiki/User-Scripts#user-shaders).
@@ -125,61 +119,77 @@ In `mpv.conf` it is possible to create *profiles* which are essentially just "gr
 *   Create special profiles for special content.
 *   *nest* profiles so that you can make more complicated *profiles* out of simpler ones.
 
-Creating a profile is easy. The area at the top of `mpv.conf` is called the top level, any options you write there will kick into effect once *mpv* is started. However, once you define a profile by writing its name in brackets then every option you write below it (until you define a new profile) is considered part of that profile. Here is an example `mpv.conf`:
+Creating a profile is easy. The area at the top of `mpv.conf` is called the top level, any options you write there will kick into effect once mpv is started. However, once you define a profile by writing its name in brackets then every option you write below it (until you define a new profile) is considered part of that profile. Here is an example `mpv.conf`:
 
- `~/.config/mpv/mpv.conf` 
 ```
 profile=myprofile2        #Top level area, load myprofile2
 ontop=yes                 #Always on top
 
+```
+
+```
 [myprofile1]              #A simple profile, top level area ends here
 profile-desc="a profile"  #Optional description for profile
 fs=yes                    #Start in full screen
 
+```
+
+```
 [myprofile2]              #Another simple profile
 profile=gpu-hq            #A built in profile that comes with mpv
 log-file=~~/log           #Sets a location for writing a log file, ~~/ translates to ~/.config/mpv
+
 ```
 
 There are only two lines within the top level area and there are two separate profiles defined below it. When *mpv* starts it sees the first line, loads the options in `myprofile2` (which means it loads the options in `gpu-hq` and `log-file=~~/log`) finally it loads `ontop=yes` and finishes starting up. Note, `myprofile1` is never loaded because it's never called in the top level area.
 
-Alternatively one could call mpv from the command line with
+Alternatively one could call mpv from the command line with:
 
 ```
 $ mpv --profile=myprofile1 video.mkv
 
 ```
 
-and it would ignore all options except the ones in `myprofile1`.
+and it would ignore all options except the ones for `myprofile1`.
 
-### Key bindings - input.conf
+### Key bindings
 
-Key bindings are actually fairly straightforward given the examples in `/usr/share/doc/mpv/input.conf` and the relevant section in the [manual](https://mpv.io/manual/master/#command-interface).
+Key bindings are fairly straightforward given the examples in `/usr/share/doc/mpv/input.conf` and the relevant section in the [manual](https://mpv.io/manual/master/#command-interface).
 
-Here is an `input.conf` file that attempts to reproduce [MPC-HC keybindings](https://github.com/dragons4life/MPC-HC-config-for-MPV/blob/master/input.conf) in mpv.
-
-Here are some more fun examples:
+Add the following examples to `~/.config/mpv/input.conf`:
 
 ```
-Alt+RIGHT add video-rotate 90
-Alt+LEFT add video-rotate -90
-Alt+- add video-zoom -0.25
-Alt+= add video-zoom 0.25
-Alt+j add video-pan-x -0.05
-Alt+l add video-pan-x 0.05
-Alt+i add video-pan-y 0.05
-Alt+k add video-pan-y -0.05
-Alt+BS set video-zoom 0; set video-pan-x 0; set video-pan-y 0
+shift+s         screenshot each-frame
+Shift+UP        seek  600
+Shift+DOWN      seek -600
+=               cycle video-unscaled
+-               cycle-values window-scale 2 3 1 .5
+WHEEL_UP        add volume 5
+WHEEL_DOWN      add volume -5
+WHEEL_LEFT      ignore
+WHEEL_RIGHT     ignore
+Alt+RIGHT       add video-rotate 90
+Alt+LEFT        add video-rotate -90
+Alt+-           add video-zoom -0.25
+Alt+=           add video-zoom 0.25
+Alt+j           add video-pan-x -0.05
+Alt+l           add video-pan-x 0.05
+Alt+i           add video-pan-y 0.05
+Alt+k           add video-pan-y -0.05
+Alt+BS          set video-zoom 0; set video-pan-x 0; set video-pan-y 0
 
 ```
+
+For an attempt to reproduce MPC-HC key bindings in mpv, see [[1]](https://github.com/dragons4life/MPC-HC-config-for-MPV/blob/master/input.conf).
 
 ### Additional configuration files
 
-In addition there are a few more configuration files one can create:
+In addition there are a few more configuration files and directories that can be created, among which:
 
-*   `~/.config/mpv/script-opts/osc.conf` manages the [On Screen Controller](https://mpv.io/manual/master/#on-screen-controller)
-*   If you are using any Lua scripts then you can create a corresponding conf file for each one here: `~/.config/mpv/script-opts/*scriptname*.conf`
-*   [lots more](https://mpv.io/manual/master/#files)
+*   `~/.config/mpv/script-opts/osc.conf` manages the [On Screen Controller](https://mpv.io/manual/master/#on-screen-controller).
+*   `~/.config/mpv/scripts/*script-name*.lua` for Lua scripts. See [[2]](https://github.com/mpv-player/mpv/issues/3500#issuecomment-305646994) for an example.
+
+See [https://mpv.io/manual/master/#files](https://mpv.io/manual/master/#files) for more.
 
 ## Scripts
 
@@ -285,7 +295,7 @@ Even with hardware decoding enabled, it will only be used for [some codecs](http
 
 Because GNOME in Wayland mode also runs an Xorg server, video acceleration will fail with `[vaapi] libva: va_getDriverName() failed with unknown libva error,driver_name=(null)`.
 
-To make *mpv* use the Wayland compositor, add the mpv option `opengl-backend=wayland`[[1]](https://github.com/01org/intel-vaapi-driver/issues/203#issuecomment-311299852). Note however that this will prevent the display of window decorations (titlebar and border).
+To make *mpv* use the Wayland compositor, add the mpv option `opengl-backend=wayland`[[3]](https://github.com/01org/intel-vaapi-driver/issues/203#issuecomment-311299852). Note however that this will prevent the display of window decorations (titlebar and border).
 
 ### Save position on quit
 

@@ -28,14 +28,7 @@ For testing purposes, the default database backend for Etherpad is the file-base
 
 If you want to use [MySQL](/index.php/MySQL "MySQL"), [PostgreSQL](/index.php/PostgreSQL "PostgreSQL") or [SQLite](/index.php/SQLite "SQLite"), you can adjust those settings in the settings.json file. Further, you can set a password for the administrator interface on [http://localhost:9001/admin](http://localhost:9001/admin), change port and listening address, etc.
 
-At least, don't forget to set a sessionkey, e.g. generate with [pwgen](https://www.archlinux.org/packages/?name=pwgen) and `pwgen --symbols 10 1` and write it down to:
-
- `/usr/share/webapps/etherpad-lite/settings.json` 
-```
-
-"sessionKey" : "",
-
-```
+At least, don't forget to set a sessionkey, e.g. generate with [pwgen](https://www.archlinux.org/packages/?name=pwgen) and `pwgen --symbols 10 1` and write it down to `/etc/etherpad-lite/SESSIONKEY.txt`.
 
 Your Etherpad installation can be extended with plugins listed at the administrator interface.
 
@@ -43,7 +36,7 @@ Your Etherpad installation can be extended with plugins listed at the administra
 
 the default IP is `0.0.0.0`, change it to 127.0.0.1 as assumed later.
 
- `/usr/share/webapps/etherpad-lite/settings.json` 
+ `/etc/etherpad-lite/settings.json` 
 ```
 
   //IP and port which etherpad should bind at

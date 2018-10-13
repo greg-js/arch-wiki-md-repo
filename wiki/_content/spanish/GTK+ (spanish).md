@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [GTK+](/index.php/GTK%2B "GTK+"), revisada por última vez el **2018-10-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GTK%2B&diff=0&oldid=545475) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [GTK+](/index.php/GTK%2B "GTK+"), revisada por última vez el **2018-10-11**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GTK%2B&diff=0&oldid=545475) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -33,7 +33,23 @@ GTK+ (GIMP Toolkit) fue originalmente creado por el [Proyecto GNU](/index.php/GN
     *   [4.9 Comportamiento de desplazamiento heredado](#Comportamiento_de_desplazamiento_heredado)
     *   [4.10 Deshabilitar las barras de desplazamiento superpuestas](#Deshabilitar_las_barras_de_desplazamiento_superpuestas)
         *   [4.10.1 Eliminar indicadores de la barra de desplazamiento de superposición](#Eliminar_indicadores_de_la_barra_de_desplazamiento_de_superposici.C3.B3n)
-*   [5 GDK backends](#GDK_backends)
+*   [5 Backends de GDK](#Backends_de_GDK)
+    *   [5.1 Backend de Broadway](#Backend_de_Broadway)
+    *   [5.2 Backend de Wayland](#Backend_de_Wayland)
+*   [6 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+    *   [6.1 Diferentes temas entre aplicaciones GTK+ 2 y GTK+ 3](#Diferentes_temas_entre_aplicaciones_GTK.2B_2_y_GTK.2B_3)
+    *   [6.2 Tema no aplicado en aplicaciones del superusuario](#Tema_no_aplicado_en_aplicaciones_del_superusuario)
+    *   [6.3 Decoraciones del lado del cliente](#Decoraciones_del_lado_del_cliente)
+    *   [6.4 Cedilla ç/Ç en lugar de ć/Ć](#Cedilla_.C3.A7.2F.C3.87_en_lugar_de_.C4.87.2F.C4.86)
+    *   [6.5 Suprimir advertencia referente al bus de accesibilidad](#Suprimir_advertencia_referente_al_bus_de_accesibilidad)
+    *   [6.6 Falta de coincidencia del color de fondo de la barra de título](#Falta_de_coincidencia_del_color_de_fondo_de_la_barra_de_t.C3.ADtulo)
+    *   [6.7 Eventos de enfoque incorrecto con administradores de ventanas de mosaico](#Eventos_de_enfoque_incorrecto_con_administradores_de_ventanas_de_mosaico)
+    *   [6.8 Soporte de miniaturas para el diálogo del archivo GTK+ 2](#Soporte_de_miniaturas_para_el_di.C3.A1logo_del_archivo_GTK.2B_2)
+    *   [6.9 Iconos de botón/menú en algunas aplicaciones en la sesión Wayland de GNOME](#Iconos_de_bot.C3.B3n.2Fmen.C3.BA_en_algunas_aplicaciones_en_la_sesi.C3.B3n_Wayland_de_GNOME)
+    *   [6.10 GTK+ 3 sin polkit](#GTK.2B_3_sin_polkit)
+    *   [6.11 Algunos temas de GTK+ 2 solo cambian la paleta de colores de la interfaz de usuario](#Algunos_temas_de_GTK.2B_2_solo_cambian_la_paleta_de_colores_de_la_interfaz_de_usuario)
+*   [7 Ejemplos](#Ejemplos)
+*   [8 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
 ## Instalación
 
@@ -386,4 +402,261 @@ undershoot.top, undershoot.right, undershoot.bottom, undershoot.left { backgroun
 
 ```
 
-## GDK backends
+## Backends de GDK
+
+GDK (la capa de abstracción subyacente de GTK+) admite varios backends para mostrar aplicaciones de GTK+. El backend predeterminado es *x11*.
+
+### Backend de Broadway
+
+El backend de GDK Broadway proporciona soporte para mostrar aplicaciones GTK+ en un navegador web, utilizando HTML5 y sockets web. [[4]](https://developer.gnome.org/gtk3/3.8/gtk-broadway.html)
+
+Cuando use broadwayd, especifique el número de pantalla a emplear, con el prefijo de dos puntos, similar a X. El número de pantalla predeterminado es 1.
+
+```
+$ display_number=:5
+
+```
+
+Inícielo:
+
+```
+$ broadwayd $display_number
+
+```
+
+El puerto utilizado por defecto es:
+
+```
+port = 8080 + $display_number
+
+```
+
+Apunte su navegador a [http://127.0.0.1:port](http://127.0.0.1:port).
+
+Para iniciar aplicaciones:
+
+```
+$ GDK_BACKEND=broadway BROADWAY_DISPLAY=$display_number *<<aplicación>>*
+
+```
+
+Alternativamente, puede configurar la dirección y el puerto
+
+```
+$ broadwayd --port $port_number --address $address $display_number
+
+```
+
+### Backend de Wayland
+
+El backend de GDK [Wayland](/index.php/Wayland_(Espa%C3%B1ol) "Wayland (Español)") se puede habilitar configurando la variable de entorno `GDK_BACKEND=wayland`.
+
+**Sugerencia:** Para deshabilitar las decoraciones de la ventana GTK en Wayland, [instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [gtk3-optional-csd](https://aur.archlinux.org/packages/gtk3-optional-csd/) y establezca la variable de entorno `GTK_CSD=0`.
+
+## Solución de problemas
+
+### Diferentes temas entre aplicaciones GTK+ 2 y GTK+ 3
+
+En general, si un tema seleccionado es compatible con GTK+ 2 y GTK+ 3, este se aplicará a todas las aplicaciones GTK+ 2 y GTK+ 3\. Si un tema seleccionado solo es compatible con GTK+ 2, se utilizará para las aplicaciones de GTK+ 2 y el tema predeterminado de GTK+ se utilizará para las aplicaciones de GTK+ 3\. Si el tema seleccionado solo es compatible con GTK+ 3, se utilizará para las aplicaciones de GTK+ 3 y el tema predeterminado de GTK+ se utilizará para las aplicaciones de GTK+ 2\. Por lo tanto, para la consistencia del tema de la aplicación, es mejor utilizar un tema que sea compatible con GTK+ 2 y GTK+ 3.
+
+Puede encontrar qué temas instalados en su sistema tienen las versiones GTK+ 2 y GTK+ 3 mediante esta orden (no funciona con nombres que contengan espacios):
+
+```
+find $(find ~/.themes /usr/share/themes/ -wholename "*/gtk-3.0" | sed -e "s/^\(.*\)\/gtk-3.0$/\1/") -wholename "*/gtk-2.0" | sed -e "s/.*\/\(.*\)\/gtk-2.0/\1"/
+
+```
+
+### Tema no aplicado en aplicaciones del superusuario
+
+Como los archivos de temas del usuario (`$XDG_CONFIG_HOME/gtk-3.0/settings.ini`, `~/.gtkrc-2.0`) no son leídos por otras cuentas, el tema seleccionado no se aplicará a [las aplicaciones X ejecutadas como superusuario](/index.php/Running_X_apps_as_root "Running X apps as root"). Las posibles soluciones incluyen:
+
+*   Crear enlaces simbólicos, por ejemplo:
+
+```
+# ln -s /home/[username]/.gtkrc-2.0 /etc/gtk-2.0/gtkrc
+# ln -s /home/[username]/.config/gtk-3.0/settings.ini /etc/gtk-3.0/settings.ini
+
+```
+
+*   Configurar los archivos de temas en todo el sistema: `/etc/gtk-3.0/settings.ini` (GTK+ 3) o `/etc/gtk-2.0/gtkrc` (GTK+ 2)
+*   Ajustar el tema como superusuario:
+
+```
+# sudo lxappearance
+
+```
+
+*   Utilizar un demonio de configuración (esto es lo que hacen la mayoría de los entornos de escritorio). Una variante agnóstica de escritorio que utiliza [XSettings](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html) está disponible en [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)") bajo [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/).
+
+### Decoraciones del lado del cliente
+
+GTK 3.12 introdujo las [decoraciones del lado del cliente](http://blogs.gnome.org/mclasen/2013/12/05/client-side-decorations-in-themes/), que separa la barra de título del administrador de ventanas. Esto puede presentar problemas como las [dobles barras de títulos](http://redmine.audacious-media-player.org/boards/1/topics/1135), la no existencia de estas o las [sombras dobles](https://github.com/chjj/compton/issues/189) con la composición habilitada.
+
+Para eliminar la sombra y la brecha alrededor de las ventanas (por ejemplo, en combinación con un administrador de ventanas de mosaico), cree el siguiente archivo:
+
+ `~/.config/gtk-3.0/gtk.css` 
+```
+.window-frame, .window-frame:backdrop {
+ box-shadow: 0 0 0 black;
+ border-style: none;
+ margin: 0;
+ border-radius: 0;
+}
+
+.titlebar {
+ border-radius: 0;
+}
+
+.window-frame.csd.popup {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.13);
+}
+
+.header-bar {
+  background-image: none;
+  background-color: #ededed;
+  box-shadow: none;
+}
+/* You may want to use this if you don't like the double title.
+GtkLabel.title {
+    opacity: 0;
+}*/
+
+```
+
+Para ajustar los botones en la barra superior, utilice la configuración `gtk-decoration-layout`. [[5]](https://developer.gnome.org/gtk3/stable/GtkSettings.html#GtkSettings--gtk-decoration-layout) El siguiente ejemplo eliminan todos los botones:
+
+ `~/.config/gtk-3.0/settings.ini`  `gtk-decoration-layout=menu:` 
+
+### Cedilla ç/Ç en lugar de ć/Ć
+
+Véase [[6]](https://bugs.launchpad.net/ubuntu/+source/gtk+2.0/+bug/518056), y [[7]](https://bugs.launchpad.net/ubuntu/+source/gtk+2.0/+bug/518056/comments/37) para una solución utilizando Xcompose (disposición internacional de EE.UU.).
+
+### Suprimir advertencia referente al bus de accesibilidad
+
+Si no utiliza ninguna de las funciones de [accesibilidad de Gnome](https://wiki.gnome.org/Accessibility), puede recibir advertencias en inglés como:
+
+```
+WARNING **: Couldn't connect to accessibility bus:
+
+```
+
+O en español:
+
+```
+ADVERTENCIA **: No se pudo conectar al bus de accesibilidad:
+
+```
+
+Para suprimir estas advertencias, ejecute los programas con `NO_AT_BRIDGE=1` o configúrelo como una [variable de entorno](/index.php/Environment_variable_(Espa%C3%B1ol) "Environment variable (Español)") global.
+
+### Falta de coincidencia del color de fondo de la barra de título
+
+Si está utilizando un [administrador de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") que utiliza un tema de decoración de ventanas que imita el color de fondo del tema GTK+, es posible que el color de la barra de título ya no coincida completamente con el color de la aplicación en algunas aplicaciones GTK+ 3\. Como solución, cree el siguiente archivo:
+
+ `~/.config/gtk-3.0/gtk.css` 
+```
+/* Always use background color */
+GtkWindow {
+    background-color: @theme_bg_color;
+}
+
+/* Fix tooltip background override */
+.tooltip {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.tooltip * {
+    background-color: transparent;
+}
+
+/* Fix Nautilus desktop window background override */
+NautilusWindow {
+     background-color: transparent; 
+}
+
+```
+
+### Eventos de enfoque incorrecto con administradores de ventanas de mosaico
+
+**Nota:** Esto deshabilita el soporte de la pantalla táctil para aplicaciones GTK+ 3\. [[8]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c14)
+
+[Defina](/index.php/Define "Define") `GDK_CORE_DEVICE_EVENTS=1` para utilizar la entrada de estilo GTK+ 2, en lugar de xinput2\. [[9]](https://bugzilla.gnome.org/show_bug.cgi?id=677329#c10)
+
+### Soporte de miniaturas para el diálogo del archivo GTK+ 2
+
+Instale [gtk2-patched-filechooser-icon-view](https://aur.archlinux.org/packages/gtk2-patched-filechooser-icon-view/) para tener la opción de ver los archivos como miniaturas en lugar de la lista en el selector de archivos de GTK+.
+
+### Iconos de botón/menú en algunas aplicaciones en la sesión Wayland de GNOME
+
+Su archivo `~/.config/gtk-3.0/settings.ini` está mal configurado. Esto puede ocurrir si prueba otros entornos de escritorio basados ​​en GTK+. Estos son los valores afectados:
+
+ `~/.config/gtk-3.0/settings.ini` 
+```
+[Settings]
+gtk-button-images=1
+gtk-menu-images=1
+```
+
+Simplemente cámbielos a 0 o elimine todo el archivo para usar los valores predeterminados de GNOME.
+
+### GTK+ 3 sin polkit
+
+GTK+ 3 depende del polkit a través de colord, que es requerido para imprimir. Sin embargo, la impresión funciona bien sin polkit instalado; al menos con una impresora monocromática y versiones de paquete gtk3-print-backends=3.22.19-2 y colord=1.4.1-1.
+
+### Algunos temas de GTK+ 2 solo cambian la paleta de colores de la interfaz de usuario
+
+Según el tema elegido compatible con GTK+ 2, los controles de la interfaz de usuario pueden tener la apariencia predeterminada de Raleigh, posiblemente con una paleta de colores diferente. Esto se debe a que estos temas requieren el motor Murrine de GTK+ 2, que no está disponible (los programas GTK+ 2 deben avisar de ello en su salida de error estándar). Instale el paquete [gtk-engine-murrine](https://www.archlinux.org/packages/?name=gtk-engine-murrine).
+
+## Ejemplos
+
+Ejemplo de configuración de GTK+ 2:
+
+ `~/.gtkrc-2.0` 
+```
+# GTK theme
+include "/usr/share/themes/Clearlooks/gtk-2.0/gtkrc"
+
+# Font
+style "myfont" {
+    font_name = "DejaVu Sans 8"
+}
+widget_class "*" style "myfont"
+gtk-font-name = "DejaVu Sans 8"
+
+# Icon theme
+gtk-icon-theme-name = "Tango"
+
+# Toolbar style
+gtk-toolbar-style = GTK_TOOLBAR_ICONS
+```
+
+Ejemplo de GTK+ 3 de una configuración convertida de GTK+ 2.x a GTK+ 3.x por [lxappearance](https://www.archlinux.org/packages/?name=lxappearance):
+
+ `$XDG_CONFIG_HOME/gtk-3.0/settings.ini` 
+```
+[Settings] 
+gtk-theme-name=TraditionalOk
+gtk-icon-theme-name=Fog
+gtk-font-name=Luxi Sans 12
+gtk-cursor-theme-name=mate
+gtk-cursor-theme-size=24
+gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
+gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
+gtk-button-images=1
+gtk-menu-images=1
+gtk-enable-event-sounds=0
+gtk-enable-input-feedback-sounds=0
+gtk-xft-antialias=1
+gtk-xft-hinting=1
+gtk-xft-hintstyle=hintslight
+gtk-xft-rgba=rgb
+```
+
+## Véase también
+
+*   [Web oficial de GTK+](http://www.gtk.org/)
+*   [Artículo en Wikipedia sobre GTK+](https://en.wikipedia.org/wiki/es:GTK%2B "wikipedia:es:GTK+")
+*   [Tutorial de GTK+ 2.0](http://developer.gnome.org/gtk-tutorial/stable/)
+*   [Manual de referencia de GTK+ 3](http://developer.gnome.org/gtk3/stable/)
+*   [Tutorial de gtkmm](http://developer.gnome.org/gtkmm-tutorial/stable/)
+*   [Manual de referencia de gtkmm](http://developer.gnome.org/gtkmm/stable/)

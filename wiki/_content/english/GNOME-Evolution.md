@@ -83,7 +83,7 @@ type = Maildir
 localfolders = /home/path/to/your/maildir
 # This needs to be specified so offlineimap does not complain during resync 
 sep = .
-nametrans = lambda folder: re.sub('^.', *,*
+nametrans = lambda folder: re.sub('^.', ''***,***
                        re.sub('^$', '.INBOX', folder))
 
 [Repository MyMailserver]
@@ -97,7 +97,7 @@ remoteport = 143
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 # Translate your INBOX to be the root directory.
 # All other directories need a dot before the actual name.
-nametrans = lambda folder: re.sub('^.INBOX$', *,*
+nametrans = lambda folder: re.sub('^.INBOX$', ''***,***
                        re.sub('^', '.', folder))
 
 ```
@@ -107,7 +107,7 @@ In case of Gmail instead of standard IMAP server, you will most likely need to a
 For remote Mailserver Repository:
 
 ```
-nametrans = lambda folder: re.sub('^.INBOX$', *,*
+nametrans = lambda folder: re.sub('^.INBOX$', ''***,***
                           re.sub('^', '.',
                           re.sub('\.', '_2E',
                           re.sub('^\[Gmail\].Drafts$', 'Drafts',
@@ -121,10 +121,12 @@ and for local Repository:
 nametrans = lambda folder: re.sub('^Sent$',   '[Gmail].Sent Mail',
                           re.sub('^Drafts$', '[Gmail].Drafts',
                           re.sub('_2E', '.',
-                          re.sub('^.', *,*
+                          re.sub('^.', ''***,***
                           re.sub('^$', '.INBOX', folder)))))
 
 ```
+
+Other examples for nametrans configurations, including for Courier-imap servers can be found [here](https://www.offlineimap.org/doc/nametrans.html).
 
 **Warning:** Please note that any space indenting a line of code in `~/.offlineimaprc` would be considered as appending that line to the previous line. In other words, always make sure there is no space before any lines in your config file.
 

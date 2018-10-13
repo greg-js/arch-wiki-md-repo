@@ -160,7 +160,7 @@ An IOMMU group is the smallest set of physical devices that can be passed to a v
 
 #### Plugging your guest GPU in an unisolated CPU-based PCIe slot
 
-Not all PCI-E slots are the same. Most motherboards have PCIe slots provided by both the CPU and the PCH. Depending on your CPU, it is possible that your processor-based PCIe slot does not support isolation properly, in which case the PCI slot itself will be appear to be grouped with the device that is connected to it.
+Not all PCI-E slots are the same. Most motherboards have PCIe slots provided by both the CPU and the PCH. Depending on your CPU, it is possible that your processor-based PCIe slot does not support isolation properly, in which case the PCI slot itself will appear to be grouped with the device that is connected to it.
 
 ```
 IOMMU Group 1 00:01.0 PCI bridge: Intel Corporation Xeon E3-1200 v2/3rd Gen Core processor PCI Express Root Port (rev 09)
@@ -169,7 +169,7 @@ IOMMU Group 1 01:00.1 Audio device: NVIDIA Corporation Device 0fbc (rev a1)
 
 ```
 
-This is fine so long as only your guest GPU is included in here, such as above. Depending on what is plugged in your other PCIe slots and whether they are allocated to your CPU or your PCH, you may find yourself with additional devices within the same group, which would force you to pass those as well. If you are ok with passing everything that is in there to your VM, you are free to continue. Otherwise, you will either need to try and plug your GPU in your other PCIe slots (if you have any) and see if those provide isolation from the rest or to install the ACS override patch, which comes with its own drawbacks. See [#Bypassing the IOMMU groups (ACS override patch)](#Bypassing_the_IOMMU_groups_.28ACS_override_patch.29) for more information.
+This is fine so long as only your guest GPU is included in here, such as above. Depending on what is plugged in to your other PCIe slots and whether they are allocated to your CPU or your PCH, you may find yourself with additional devices within the same group, which would force you to pass those as well. If you are ok with passing everything that is in there to your VM, you are free to continue. Otherwise, you will either need to try and plug your GPU in your other PCIe slots (if you have any) and see if those provide isolation from the rest or to install the ACS override patch, which comes with its own drawbacks. See [#Bypassing the IOMMU groups (ACS override patch)](#Bypassing_the_IOMMU_groups_.28ACS_override_patch.29) for more information.
 
 **Note:** If they are grouped with other devices in this manner, pci root ports and bridges should neither be bound to vfio at boot, nor be added to the VM.
 
@@ -789,12 +789,12 @@ virsh attach-device [VM-Name] [USBdevice]
 
 Replace [VM-Name] with the name of your virtual machine, which can be seen under virt-manager. Additionally replace [USBdevice] with the **full** path to the .xml file for the device you wish to pass-through. Add additional lines for more than 1 device. For example here is my script:
 
- `/home/ajmar/.VFIOinput/input_attach.sh` 
+ `/home/$USER/.VFIOinput/input_attach.sh` 
 ```
 #!/bin/bash
 
-virsh attach-device win10 /home/ajmar/.VFIOinput/input_mouse.xml
-virsh attach-device win10 /home/ajmar/.VFIOinput/input_keyboard.xml
+virsh attach-device win10 /home/$USER/.VFIOinput/input_mouse.xml
+virsh attach-device win10 /home/$USER/.VFIOinput/input_keyboard.xml
 ```
 
 Next duplicate the script file and replace `attach-device` with `detach-device`. Ensure both scripts are executable with `chmod +x $script.sh`

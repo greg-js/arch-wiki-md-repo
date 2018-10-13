@@ -171,7 +171,7 @@ Por esas razones, compatibilidad con versiones antiguas de OpenSSH o con [otros 
 
 ### Selección de ubicación y contraseña
 
-Al ejecutar el comando `ssh-keygen`, se le preguntara por la ubicación deseada de su llave privada. Por defecto, las llaves son guardadas en la carpeta `~/.ssh/` y se les nombra de acuerdo y tipo de encriptado usado. Se recomiendo aceptar la ubicación y nombre por defecto para que los ejemplos en de este articulo funcionen sin problemas.
+Al ejecutar el comando `ssh-keygen`, se le preguntara por la ubicación deseada de su llave privada. Por defecto, las llaves son guardadas en la carpeta `~/.ssh/` y se les nombra de acuerdo y tipo de encriptado usado. Se recomienda que acepte el nombre y la ubicación predeterminados para que los ejemplos de códigos posteriores en este artículo funcionen correctamente.
 
 Cuando se le pregunte por una contraseña, seleccione algo que no sea fácil de adivinar. Una contraseña aleatoria y larga es generalmente mucho más difícil de descifrar si cae en manos equivocadas.
 

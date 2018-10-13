@@ -1,5 +1,5 @@
 | [English](/index.php/Category:English "Category:English") <small>(2)</small> |
-| <small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(18)</small> |
+| <small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(19)</small> |
 | <small>1.1.</small> [Arch community](/index.php/Category:Arch_community "Category:Arch community") <small>(5)</small> |
 | <small>1.1.1.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(2)</small> |
 | <small>1.2.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(17) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
@@ -7,13 +7,13 @@
 | <small>1.2.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
 | <small>1.3.</small> [Arch projects](/index.php/Category:Arch_projects "Category:Arch projects") <small>(9)</small> |
 | <small>1.4.</small> [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki") <small>(12)</small> |
-| <small>1.4.1.</small> [Disambiguation pages](/index.php/Category:Disambiguation_pages "Category:Disambiguation pages") <small>(15)</small> |
+| <small>1.4.1.</small> [Disambiguation pages](/index.php/Category:Disambiguation_pages "Category:Disambiguation pages") <small>(14)</small> |
 | <small>1.4.2.</small> [Help](/index.php/Category:Help "Category:Help") <small>(15)</small> |
-| <small>1.4.3.</small> [Lists](/index.php/Category:Lists "Category:Lists") <small>(25)</small> |
+| <small>1.4.3.</small> [Lists](/index.php/Category:Lists "Category:Lists") <small>(26)</small> |
 | <small>1.4.4.</small> [Software comparisons](/index.php/Category:Software_comparisons "Category:Software comparisons") <small>(4) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
 | <small>1.5.</small> [Installation process](/index.php/Category:Installation_process "Category:Installation process") <small>(31)</small> |
 | <small>1.6.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems "Category:Live Arch systems") <small>(5)</small> |
-| <small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(16)</small> |
+| <small>2.</small> [Applications](/index.php/Category:Applications "Category:Applications") <small>(17)</small> |
 | <small>2.1.</small> [Accessibility](/index.php/Category:Accessibility "Category:Accessibility") <small>(7)</small> |
 | <small>2.2.</small> [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers") <small>(13)</small> |
 | <small>2.3.</small> [Command-line](/index.php/Category:Command-line "Category:Command-line") <small>(9) (also in [System administration](/index.php/Category:System_administration "Category:System administration"))</small> |
@@ -24,9 +24,9 @@
 | <small>2.5.</small> [Database management systems](/index.php/Category:Database_management_systems "Category:Database management systems") <small>(14)</small> |
 | <small>2.5.1.</small> [Relational DBMSs](/index.php/Category:Relational_DBMSs "Category:Relational DBMSs") <small>(3)</small> |
 | <small>2.6.</small> [Dictionaries](/index.php/Category:Dictionaries "Category:Dictionaries") <small>(4)</small> |
-| <small>2.7.</small> [Emulation](/index.php/Category:Emulation "Category:Emulation") <small>(16)</small> |
+| <small>2.7.</small> [Emulation](/index.php/Category:Emulation "Category:Emulation") <small>(14)</small> |
 | <small>2.8.</small> [File managers](/index.php/Category:File_managers "Category:File managers") <small>(10)</small> |
-| <small>2.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(37)</small> |
+| <small>2.9.</small> [Gaming](/index.php/Category:Gaming "Category:Gaming") <small>(38)</small> |
 | <small>2.10.</small> [Internet applications](/index.php/Category:Internet_applications "Category:Internet applications") <small>(14)</small> |
 | <small>2.10.1.</small> [Anonymity networks](/index.php/Category:Anonymity_networks "Category:Anonymity networks") <small>(4)</small> |
 | <small>2.10.2.</small> [BitTorrent clients](/index.php/Category:BitTorrent_clients "Category:BitTorrent clients") <small>(6)</small> |
@@ -58,15 +58,16 @@
 | <small>2.13.</small> [Office](/index.php/Category:Office "Category:Office") <small>(21)</small> |
 | <small>2.13.1.</small> [TeX](/index.php/Category:TeX "Category:TeX") <small>(3)</small> |
 | <small>2.14.</small> [Search](/index.php/Category:Search "Category:Search") <small>(5)</small> |
-| <small>2.15.</small> [Software comparisons](/index.php/Category:Software_comparisons "Category:Software comparisons") <small>(4) (also in [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki"))</small> |
-| <small>2.16.</small> [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification") <small>(13)</small> |
-| <small>2.17.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(14) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
-| <small>2.18.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(36) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
-| <small>2.18.1.</small> [Content management systems](/index.php/Category:Content_management_systems "Category:Content management systems") <small>(4)</small> |
-| <small>2.18.2.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems") <small>(6) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
-| <small>2.18.3.</small> [Web admin interfaces](/index.php/Category:Web_admin_interfaces "Category:Web admin interfaces") <small>(5)</small> |
-| <small>2.18.4.</small> [Web frameworks](/index.php/Category:Web_frameworks "Category:Web frameworks") <small>(2) (also in [Frameworks](/index.php/Category:Frameworks "Category:Frameworks"))</small> |
-| <small>2.18.5.</small> [Wiki software](/index.php/Category:Wiki_software "Category:Wiki software") <small>(6)</small> |
+| <small>2.15.</small> [Simulation](/index.php/Category:Simulation "Category:Simulation") <small>(3)</small> |
+| <small>2.16.</small> [Software comparisons](/index.php/Category:Software_comparisons "Category:Software comparisons") <small>(4) (also in [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki"))</small> |
+| <small>2.17.</small> [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification") <small>(13)</small> |
+| <small>2.18.</small> [Text editors](/index.php/Category:Text_editors "Category:Text editors") <small>(14) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
+| <small>2.19.</small> [Web applications](/index.php/Category:Web_applications "Category:Web applications") <small>(36) (also in [Web](/index.php/Category:Web "Category:Web"))</small> |
+| <small>2.19.1.</small> [Content management systems](/index.php/Category:Content_management_systems "Category:Content management systems") <small>(4)</small> |
+| <small>2.19.2.</small> [Issue tracking systems](/index.php/Category:Issue_tracking_systems "Category:Issue tracking systems") <small>(6) (also in [Development](/index.php/Category:Development "Category:Development"))</small> |
+| <small>2.19.3.</small> [Web admin interfaces](/index.php/Category:Web_admin_interfaces "Category:Web admin interfaces") <small>(5)</small> |
+| <small>2.19.4.</small> [Web frameworks](/index.php/Category:Web_frameworks "Category:Web frameworks") <small>(2) (also in [Frameworks](/index.php/Category:Frameworks "Category:Frameworks"))</small> |
+| <small>2.19.5.</small> [Wiki software](/index.php/Category:Wiki_software "Category:Wiki software") <small>(6)</small> |
 | <small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(38)</small> |
 | <small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(17) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small> |
 | <small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(48)</small> |
@@ -120,7 +121,7 @@
 | <small>4.16.</small> [Storage](/index.php/Category:Storage "Category:Storage") <small>(18)</small> |
 | <small>4.16.1.</small> [Optical disc](/index.php/Category:Optical_disc "Category:Optical disc") <small>(6)</small> |
 | <small>4.17.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11) (also in [Television](/index.php/Category:Television "Category:Television"))</small> |
-| <small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(59)</small> |
+| <small>5.</small> [Networking](/index.php/Category:Networking "Category:Networking") <small>(60)</small> |
 | <small>5.1.</small> [DHCP](/index.php/Category:DHCP "Category:DHCP") <small>(3)</small> |
 | <small>5.2.</small> [Distributed computing](/index.php/Category:Distributed_computing "Category:Distributed computing") <small>(5)</small> |
 | <small>5.3.</small> [Domain Name System](/index.php/Category:Domain_Name_System "Category:Domain Name System") <small>(19)</small> |
@@ -168,7 +169,7 @@
 | <small>5.21.</small> [WebDAV](/index.php/Category:WebDAV "Category:WebDAV") <small>(7)</small> |
 | <small>5.22.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(8)</small> |
 | <small>5.22.1.</small> [Bluetooth](/index.php/Category:Bluetooth "Category:Bluetooth") <small>(6) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
-| <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(23)</small> |
+| <small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(24)</small> |
 | <small>6.1.</small> [Boot process](/index.php/Category:Boot_process "Category:Boot process") <small>(27)</small> |
 | <small>6.1.1.</small> [Boot loaders](/index.php/Category:Boot_loaders "Category:Boot loaders") <small>(10)</small> |
 | <small>6.1.2.</small> [Bootsplash](/index.php/Category:Bootsplash "Category:Bootsplash") <small>(2) (also in [Eye candy](/index.php/Category:Eye_candy "Category:Eye candy"))</small> |
@@ -216,5 +217,5 @@
 | <small>6.15.5.</small> [Virtual Private Network](/index.php/Category:Virtual_Private_Network "Category:Virtual Private Network") <small>(16) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
 | <small>6.15.5.1.</small> [VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") <small>(7)</small> |
 | <small>6.16.</small> [System recovery](/index.php/Category:System_recovery "Category:System recovery") <small>(31)</small> |
-| <small>6.17.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(27)</small> |
+| <small>6.17.</small> [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") <small>(25)</small> |
 | <small>6.17.1.</small> [Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") <small>(9)</small> |

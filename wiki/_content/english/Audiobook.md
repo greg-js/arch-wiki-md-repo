@@ -247,7 +247,7 @@ done
 
 It can be a laborious process to convert and Audible book format — [article](http://linuxtidbits.wordpress.com/2011/09/21/audible-com-and-linux-arghh/).
 
-A much easier way is to use this script to fetch your activation bytes from the Audible website — [link](https://github.com/inAudible-NG/audible-activator/).
+A much easier way is to use this script to retrieve your activation bytes from a downloaded Audible audiobook — [link](https://github.com/inAudible-NG/tables).
 
 You can then use [mpv](https://www.archlinux.org/packages/?name=mpv) to listen to the file:
 

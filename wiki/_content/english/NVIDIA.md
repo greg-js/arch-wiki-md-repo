@@ -56,7 +56,7 @@ These instructions are for those using the stock [linux](https://www.archlinux.o
 
 3\. Install the appropriate driver for your card:
 
-*   For GeForce 600 series cards and newer [NVEx and newer], [install](/index.php/Install "Install") the [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) package.
+*   For GeForce 600 series cards (except 610, 620, 625, 705, 800A and other low end rebrands) and newer [NVEx and newer], [install](/index.php/Install "Install") the [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) package.
 
 *   If these packages do not work, [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/) may have a newer driver version that offers support.
 *   There is also [nvidia-llb-dkms](https://aur.archlinux.org/packages/nvidia-llb-dkms/), which is built from Nvidia's [long lived branch](http://www.phoronix.com/scan.php?page=news_item&px=OTkxOA).

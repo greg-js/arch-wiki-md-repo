@@ -16,6 +16,7 @@ Related articles
     *   [2.1 Set Nemo as default file browser](#Set_Nemo_as_default_file_browser)
     *   [2.2 Show / hide desktop icons](#Show_.2F_hide_desktop_icons)
     *   [2.3 Change application for "Open in terminal" context menu entry](#Change_application_for_.22Open_in_terminal.22_context_menu_entry)
+    *   [2.4 Set keyboard shortcut for "Open in terminal"](#Set_keyboard_shortcut_for_.22Open_in_terminal.22)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Nemo Actions](#Nemo_Actions)
         *   [3.1.1 Clam Scan](#Clam_Scan)
@@ -98,6 +99,14 @@ Alternatively, change the default setting with *gsettings* to the preferred term
 $ gsettings set org.cinnamon.desktop.default-applications.terminal exec <terminal-name>
 
 ```
+
+### Set keyboard shortcut for "Open in terminal"
+
+Edit or create `~/.gnome2/accels/nemo` and add the following line (replacing "F4" with the desired key combination):
+
+ `~/.gnome2/accels/nemo`  `(gtk_accel_path "<Actions>/DirViewActions/OpenInTerminal" "F4")` 
+
+`<Alt>`, `<Primary>`, and `<Shift>` can be used as key modifiers (for example, `<Primary><Shift>t`).
 
 ## Tips and tricks
 

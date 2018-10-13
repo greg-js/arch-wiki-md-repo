@@ -12,6 +12,11 @@ Related articles
 *   [2 Installation](#Installation)
 *   [3 Configuration](#Configuration)
     *   [3.1 Relay Configuration](#Relay_Configuration)
+    *   [3.2 Open Tor ControlPort](#Open_Tor_ControlPort)
+        *   [3.2.1 Set a Tor Control cookie file](#Set_a_Tor_Control_cookie_file)
+        *   [3.2.2 Set a Tor Control password](#Set_a_Tor_Control_password)
+        *   [3.2.3 Open Tor ControlSocket](#Open_Tor_ControlSocket)
+        *   [3.2.4 Test your Tor Control](#Test_your_Tor_Control)
 *   [4 Running Tor in a Chroot](#Running_Tor_in_a_Chroot)
 *   [5 Running Tor in a systemd-nspawn container with a virtual network interface](#Running_Tor_in_a_systemd-nspawn_container_with_a_virtual_network_interface)
     *   [5.1 Host installation and configuration](#Host_installation_and_configuration)
@@ -97,6 +102,165 @@ The maximum file descriptor number that can be opened by Tor can be set with `Li
 If your computer is not running a webserver, and you have not set `AccountingMax`, consider changing your `ORPort` to `443` and/or your `DirPort` to `80`. Many Tor users are stuck behind firewalls that only let them browse the web, and this change will let them reach your Tor relay. If you are already using ports `80` and `443`, other useful ports are `22`, `110`, and `143`.[[1]](https://www.torproject.org/docs/tor-relay-debian) But since these are privileged ports, to do so Tor must be run as root, by setting `User=root` in `tor.service` and `User tor` in `torrc`.
 
 You may wish to review [Lifecycle of a New Relay](https://blog.torproject.org/blog/lifecycle-of-a-new-relay) Tor documentation.
+
+### Open Tor ControlPort
+
+Most users will not need this. But some programs will ask you to *open your Tor ControlPort* so they get low-level access to your Tor node.
+
+Via the ControlPort, other apps can change and monitor your Tor node, to modify your Tor config while Tor is running, or to get details about Tor network status and Tor circuits.
+
+append to your `torrc` file
+
+```
+ControlPort 9051
+
+```
+
+quote from Tor's [control-spec.txt](https://gitweb.torproject.org/torspec.git/tree/control-spec.txt): 'For security, the [Tor control] stream should not be accessible by untrusted parties.'
+
+So, for more security, we will restrict access to the ControlPort, either with a *cookie file*, or a *control password*, or both.
+
+#### Set a Tor Control cookie file
+
+To your `torrc` add
+
+```
+CookieAuthentication 1
+CookieAuthFile /var/lib/tor/control_auth_cookie
+CookieAuthFileGroupReadable 1
+DataDirectoryGroupReadable 1
+CacheDirectoryGroupReadable 1 # workaround for tor bug #26913
+
+```
+
+With *cookie auth*, access to your ControlPort is restricted by file permissions to your Tor cookie file, and to your Tor data directory.
+
+With the config above, all users in the `tor` group have access to your Tor cookie file.
+
+Add *user* to the `tor` group
+
+```
+# usermod -a -G tor *user*
+
+```
+
+... and as *user*, reload group settings
+
+```
+$ newgrp tor
+
+```
+
+restart tor
+
+```
+# systemctl restart tor
+
+```
+
+Now *user* should have access to your Tor cookie file.
+
+```
+$ stat -c%a /var/lib/tor /var/lib/tor/control_auth_cookie
+
+```
+
+should print `750` and `640`.
+
+#### Set a Tor Control password
+
+Convert your password from plain-text to hash
+
+```
+# set +o history # unset bash history
+# tor --hash-password *your_password*
+# set -o history # set bash history
+
+```
+
+and add that hash to your `torrc`
+
+```
+HashedControlPassword *your_hash*
+
+```
+
+the bash history commands prevent your clear-text password from being written to your bash $HISTFILE
+
+#### Open Tor ControlSocket
+
+If some program needs access to your Tor ControlSocket, as in Unix Domain Socket, add to your `torrc`
+
+```
+ControlSocket /var/lib/tor/control_socket
+ControlSocketsGroupWritable 1
+DataDirectoryGroupReadable 1
+CacheDirectoryGroupReadable 1 # workaround for tor bug #26913
+
+```
+
+and add the user, who will run the program, to the `tor` group
+
+```
+# usermod -a -G tor user
+
+```
+
+reload your group settings with
+
+```
+$ newgrp tor
+
+```
+
+restart tor
+
+```
+# systemctl restart tor
+
+```
+
+and run your program.
+
+this
+
+```
+# stat -c%a /var/lib/tor /var/lib/tor/control_socket
+
+```
+
+should print `750` and `660`
+
+#### Test your Tor Control
+
+To test your ControlPort, run [gnu-netcat](https://www.archlinux.org/packages/?name=gnu-netcat) with
+
+```
+$ echo -e 'PROTOCOLINFO\r
+' | nc 127.0.0.1 9051
+
+```
+
+To test your ControlSocket, run [socat](https://www.archlinux.org/packages/?name=socat) with
+
+```
+$ echo -e 'PROTOCOLINFO\r
+' | sudo -u *user* socat - UNIX-CLIENT:/var/lib/tor/control_socket
+
+```
+
+both commands should print
+
+```
+250-PROTOCOLINFO 1
+250-AUTH METHODS=COOKIE,SAFECOOKIE,HASHEDPASSWORD COOKIEFILE="/var/lib/tor/control_auth_cookie"
+250-VERSION Tor="0.3.4.8"
+250 OK
+514 Authentication required.
+
+```
+
+See Tor's [control-spec.txt](https://gitweb.torproject.org/torspec.git/tree/control-spec.txt) for more commands.
 
 ## Running Tor in a Chroot
 
@@ -589,6 +753,8 @@ If `# cat /proc/cpuinfo` returns that your CPU supports AES instructions and `# 
 ##### arm
 
 If `ControlPort 9051` and `CookieAuthentication 1` is specified in `/etc/tor/torrc`, [arm](https://www.archlinux.org/packages/?name=arm) can be started with `sudo -u tor arm`. If you want to watch Tor connections in [arm](https://www.archlinux.org/packages/?name=arm) `DisableDebuggerAttachment 0` must also be specified.
+
+If you want to run `arm` as a different user than `tor`, read section [#Set a Tor Control cookie file](#Set_a_Tor_Control_cookie_file)
 
 ##### iptables
 

@@ -29,6 +29,7 @@ Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net
     *   [4.5 Applications not resizing with WM, menus immediately closing](#Applications_not_resizing_with_WM.2C_menus_immediately_closing)
     *   [4.6 System freezes when debugging JavaFX Applications](#System_freezes_when_debugging_JavaFX_Applications)
     *   [4.7 JavaFX's MediaPlayer constructor throws an exception](#JavaFX.27s_MediaPlayer_constructor_throws_an_exception)
+    *   [4.8 Java applications cannot open external links](#Java_applications_cannot_open_external_links)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Better font rendering](#Better_font_rendering)
     *   [5.2 Silence 'Picked up _JAVA_OPTIONS' message on command line](#Silence_.27Picked_up_JAVA_OPTIONS.27_message_on_command_line)
@@ -287,6 +288,10 @@ which is a result of some incompatibilities of JavaFX with modern [ffmpeg](https
 Working solution is to install [ffmpeg-compat-55](https://aur.archlinux.org/packages/ffmpeg-compat-55/).
 
 See [http://www.reddit.com/r/archlinux/comments/70o8o6/using_a_javafx_mediaplayer_in_arch/](http://www.reddit.com/r/archlinux/comments/70o8o6/using_a_javafx_mediaplayer_in_arch/)
+
+### Java applications cannot open external links
+
+If a Java application is not able to open a link to, for example, your web browser, install [gvfs](https://www.archlinux.org/packages/?name=gvfs). This is required by the Desktop.Action.BROWSE method. See [[3]](https://bugs.launchpad.net/ubuntu/+source/openjdk-8/+bug/1574879/comments/2)
 
 ## Tips and tricks
 

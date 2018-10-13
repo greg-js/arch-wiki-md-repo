@@ -4320,7 +4320,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 *   **Alacritty** — A cross-platform, GPU-accelerated terminal emulator.
 
-	[https://github.com/jwilm/alacritty](https://github.com/jwilm/alacritty) || [alacritty-git](https://aur.archlinux.org/packages/alacritty-git/)
+	[https://github.com/jwilm/alacritty](https://github.com/jwilm/alacritty) || [alacritty](https://www.archlinux.org/packages/?name=alacritty)
 
 *   **aterm** — Xterm replacement with transparency support. It has been deprecated in favour of urxvt since 2008.
 

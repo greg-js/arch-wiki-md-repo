@@ -5,60 +5,45 @@ Related articles
 *   [Minimal initramfs](/index.php/Minimal_initramfs "Minimal initramfs")
 *   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
 
-**mkinitcpio** is the next generation of [initramfs](https://en.wikipedia.org/wiki/initramfs "wikipedia:initramfs") creation.
-
-## Contents
-
-*   [1 Overview](#Overview)
-*   [2 Installation](#Installation)
-*   [3 Image creation and activation](#Image_creation_and_activation)
-    *   [3.1 Generate customized manual initcpio](#Generate_customized_manual_initcpio)
-*   [4 Configuration](#Configuration)
-    *   [4.1 MODULES](#MODULES)
-    *   [4.2 BINARIES and FILES](#BINARIES_and_FILES)
-    *   [4.3 HOOKS](#HOOKS)
-        *   [4.3.1 Build hooks](#Build_hooks)
-        *   [4.3.2 Runtime hooks](#Runtime_hooks)
-        *   [4.3.3 Common hooks](#Common_hooks)
-    *   [4.4 COMPRESSION](#COMPRESSION)
-    *   [4.5 COMPRESSION_OPTIONS](#COMPRESSION_OPTIONS)
-*   [5 Runtime customization](#Runtime_customization)
-    *   [5.1 init from base hook](#init_from_base_hook)
-    *   [5.2 Using RAID](#Using_RAID)
-    *   [5.3 Using net](#Using_net)
-    *   [5.4 Using LVM](#Using_LVM)
-    *   [5.5 Using encrypted root](#Using_encrypted_root)
-    *   [5.6 /usr as a separate partition](#.2Fusr_as_a_separate_partition)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Extracting the image](#Extracting_the_image)
-    *   [6.2 Recompressing a modified extracted image](#Recompressing_a_modified_extracted_image)
-    *   [6.3 "/dev must be mounted" when it already is](#.22.2Fdev_must_be_mounted.22_when_it_already_is)
-    *   [6.4 Possibly missing firmware for module XXXX](#Possibly_missing_firmware_for_module_XXXX)
-    *   [6.5 Standard rescue procedures](#Standard_rescue_procedures)
-        *   [6.5.1 Boot succeeds on one machine and fails on another](#Boot_succeeds_on_one_machine_and_fails_on_another)
-*   [7 See also](#See_also)
-
-## Overview
-
-mkinitcpio is a Bash script used to create an initial ramdisk environment. From the [mkinitcpio(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8) man page:
+[mkinitcpio](https://projects.archlinux.org/mkinitcpio.git/) is a Bash script used to create an [initial ramdisk](https://en.wikipedia.org/wiki/Initial_ramdisk "wikipedia:Initial ramdisk") environment. From the [mkinitcpio(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkinitcpio.8) man page:
 
 	The initial ramdisk is in essence a very small environment (early userspace) which loads various kernel modules and sets up necessary things before handing over control to `init`. This makes it possible to have, for example, encrypted root file systems and root file systems on a software RAID array. mkinitcpio allows for easy extension with custom hooks, has autodetection at runtime, and many other features.
 
 Traditionally, the kernel was responsible for all hardware detection and initialization tasks early in the [boot process](/index.php/Boot_process "Boot process") before mounting the root file system and passing control to `init`. However, as technology advances, these tasks have become increasingly complex.
 
-Nowadays, the root file system may be on a wide range of hardware, from SCSI to SATA to USB drives, controlled by a variety of drive controllers from different manufacturers. Additionally, the root file system may be encrypted or compressed; within a software RAID array or a logical volume group. The simple way to handle that complexity is to pass management into userspace: an initial ramdisk.
-
-See also: [/dev/brain0 » Blog Archive » Early Userspace in Arch Linux](https://web.archive.org/web/20150430223035/http://archlinux.me/brain0/2010/02/13/early-userspace-in-arch-linux/).
-
-mkinitcpio is a modular tool for building an initramfs CPIO image, offering many advantages over alternative methods; these advantages include:
-
-*   The use of [BusyBox](http://www.busybox.net/) to provide a small and lightweight base for early userspace.
-*   Support for **[udev](/index.php/Udev "Udev")** for hardware auto-detection at runtime, thus preventing the loading of unnecessary modules.
-*   Using an extendable hook-based init script, which supports custom hooks that can easily be included in packages.
-*   Support for [LVM2](/index.php/LVM2 "LVM2"), [dm-crypt](/index.php/Dm-crypt "Dm-crypt") for both plain and LUKS volumes, [RAID](/index.php/RAID "RAID"), and [swsusp](https://en.wikipedia.org/wiki/swsusp "wikipedia:swsusp") for resuming, and booting from USB mass storage devices.
-*   The ability to allow many features to be configured from the kernel command line without needing to rebuild the image.
+Nowadays, the root file system may be on a wide range of hardware, from SCSI to SATA to USB drives, controlled by a variety of drive controllers from different manufacturers. Additionally, the root file system may be encrypted or compressed; within a software RAID array or a logical volume group. The simple way to handle that complexity is to pass management into userspace: an initial ramdisk. See also: [/dev/brain0 » Blog Archive » Early Userspace in Arch Linux](https://web.archive.org/web/20150430223035/http://archlinux.me/brain0/2010/02/13/early-userspace-in-arch-linux/).
 
 mkinitcpio has been developed by the Arch Linux developers and from community contributions. See the [public Git repository](https://projects.archlinux.org/mkinitcpio.git/).
+
+## Contents
+
+*   [1 Installation](#Installation)
+*   [2 Image creation and activation](#Image_creation_and_activation)
+    *   [2.1 Generate customized manual initcpio](#Generate_customized_manual_initcpio)
+*   [3 Configuration](#Configuration)
+    *   [3.1 MODULES](#MODULES)
+    *   [3.2 BINARIES and FILES](#BINARIES_and_FILES)
+    *   [3.3 HOOKS](#HOOKS)
+        *   [3.3.1 Build hooks](#Build_hooks)
+        *   [3.3.2 Runtime hooks](#Runtime_hooks)
+        *   [3.3.3 Common hooks](#Common_hooks)
+    *   [3.4 COMPRESSION](#COMPRESSION)
+    *   [3.5 COMPRESSION_OPTIONS](#COMPRESSION_OPTIONS)
+*   [4 Runtime customization](#Runtime_customization)
+    *   [4.1 init from base hook](#init_from_base_hook)
+    *   [4.2 Using RAID](#Using_RAID)
+    *   [4.3 Using net](#Using_net)
+    *   [4.4 Using LVM](#Using_LVM)
+    *   [4.5 Using encrypted root](#Using_encrypted_root)
+    *   [4.6 /usr as a separate partition](#.2Fusr_as_a_separate_partition)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Extracting the image](#Extracting_the_image)
+    *   [5.2 Recompressing a modified extracted image](#Recompressing_a_modified_extracted_image)
+    *   [5.3 "/dev must be mounted" when it already is](#.22.2Fdev_must_be_mounted.22_when_it_already_is)
+    *   [5.4 Possibly missing firmware for module XXXX](#Possibly_missing_firmware_for_module_XXXX)
+    *   [5.5 Standard rescue procedures](#Standard_rescue_procedures)
+        *   [5.5.1 Boot succeeds on one machine and fails on another](#Boot_succeeds_on_one_machine_and_fails_on_another)
+*   [6 See also](#See_also)
 
 ## Installation
 

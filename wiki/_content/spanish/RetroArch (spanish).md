@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [RetroArch](/index.php/RetroArch "RetroArch"), revisada por última vez el **2017-09-14**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=RetroArch&diff=0&oldid=542813) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 **Nota:** RetroArch no está afiliado con [Arch Linux](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)").
 
 [RetroArch](http://www.retroarch.com/) es un emulador multisistema, modular, impulsado por línea de comandos, diseñado para ser rápido, ligero y portátil. Algunas de sus características se pueden encontrar en algunos otros emuladores, como el rebobinado en tiempo real y el ocultamiento de juego basado en la API libretro.

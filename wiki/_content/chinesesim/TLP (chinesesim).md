@@ -72,7 +72,7 @@ RUNTIME_PM_BLACKLIST="01:00.0"
 
 ### 无线设备设置向导
 
-无线设备设置向导可根据网络连接/断开事件进行更复杂的管理。它需要[[NetworkManager,{Pkg|tlp-rdw}}并需要启用`NetworkManager-dispatcher.service`。
+无线设备设置向导可根据网络连接/断开事件进行更复杂的管理。它需要[networkmanager](https://www.archlinux.org/packages/?name=networkmanager), [tlp-rdw](https://www.archlinux.org/packages/?name=tlp-rdw)并需要启用`NetworkManager-dispatcher.service`。
 
 详情请访问[TLP configuration](http://linrunner.de/en/tlp/docs/tlp-configuration.html#rdw)
 

@@ -171,7 +171,7 @@ Cree una nueva sección `neg` en el fichero `/etc/pdnsd.conf` especificando las 
 *   `types`
     Puede ser establecido como *domain* a fin de bloquear automáticamente todos los *hosts* de un mismo dominio.
 
-Recuerde que puede consultar siempre la documentación para más información, incluyendo la *man page*: [pdnsd(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pdnsd.8) y [pdnsd.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pdnsd.conf.5). Asimismo, tenga en cuenta que el fichero de configuración por defecto provee ejemplos y comentarios explicativos.
+Recuerde que puede consultar siempre la documentación para más información, incluyendo la *man page*: [pdnsd(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pdnsd.8) y [pdnsd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pdnsd.conf.5). Asimismo, tenga en cuenta que el fichero de configuración por defecto provee ejemplos y comentarios explicativos.
 
 ## Preguntas Frecuentes
 

@@ -33,7 +33,7 @@ From [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "The GN
     *   [3.6 Setup default monitor settings](#Setup_default_monitor_settings)
     *   [3.7 Configure X server access permission](#Configure_X_server_access_permission)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Failure to use proprietary NVIDIA driver](#Failure_to_use_proprietary_NVIDIA_driver)
+    *   [4.1 Wayland and the proprietary NVIDIA driver](#Wayland_and_the_proprietary_NVIDIA_driver)
     *   [4.2 Failure on logout](#Failure_on_logout)
     *   [4.3 Rootless Xorg](#Rootless_Xorg)
     *   [4.4 Use Xorg backend](#Use_Xorg_backend)
@@ -492,7 +492,7 @@ The relevant parts of `monitors.xml` for screen rotation and scaling are:
 
 Changes will take effect on logout. This is necessary because GDM does not respect `xorg.conf`.
 
-**Note:** If you use GDM under Wayland, you must also use a `monitors.xml` that was created under Wayland. See [GNOME bug 748098](https://bugzilla.gnome.org/show_bug.cgi?id=748098) for more info. Alternatively, you can force GDM to [#Use Xorg backend](#Use_Xorg_backend), and use a `monitors.xml` that was created under Xorg.
+**Note:** If you use GDM under Wayland, you must also use a `monitors.xml` that was created under Wayland. See [GDM bug 224](https://gitlab.gnome.org/GNOME/gdm/issues/224) for more info. Alternatively, you can force GDM to [#Use Xorg backend](#Use_Xorg_backend), and use a `monitors.xml` that was created under Xorg.
 
 ### Configure X server access permission
 
@@ -504,9 +504,9 @@ For instance, to grant GDM the right to access the X server, use the following c
 
 ## Troubleshooting
 
-### Failure to use proprietary NVIDIA driver
+### Wayland and the proprietary NVIDIA driver
 
-GDM uses the [Wayland](/index.php/Wayland "Wayland") backend by default which conflicts with NVIDIA driver. Turning off the Wayland backend could enable proprietary NVIDIA driver.
+GDM doesn't work well in Wayland mode with the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver. When using this driver, GDM will use Xorg instead.[[7]](https://gitlab.gnome.org/GNOME/gdm/merge_requests/46)
 
 ### Failure on logout
 

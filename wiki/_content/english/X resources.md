@@ -23,7 +23,7 @@ Among other things they can be used to:
     *   [2.4 Xresources syntax](#Xresources_syntax)
         *   [2.4.1 Basic syntax](#Basic_syntax)
         *   [2.4.2 Wildcard matching](#Wildcard_matching)
-        *   [2.4.3 Commenting](#Commenting)
+        *   [2.4.3 Comments](#Comments)
         *   [2.4.4 Include files](#Include_files)
     *   [2.5 Getting resource values](#Getting_resource_values)
 *   [3 Sample usage](#Sample_usage)
@@ -150,13 +150,13 @@ If you want to apply this same rule to all programs that contain the resource `h
 
 For more information about wildcard matching rules see [XrmGetResource(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/XrmGetResource.3#MATCHING_RULES).
 
-#### Commenting
+#### Comments
 
-To add a comment to your Xresources file, simply prefix it with an exclamation mark (`!`), for example:
+Lines starting with an exclamation mark (`!`) are ignored, for example:
 
 ```
 ! The following rule will be ignored because it has been commented out
-!Xft.antialias:        true
+!Xft.antialias: true
 
 ```
 

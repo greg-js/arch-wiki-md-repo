@@ -31,6 +31,8 @@ Bcache needs the backing device to be formatted as a bcache block device. In mos
 
 ## Setting up a bcache device on an existing system
 
+**Warning:** make-bcache **will not** import an existing drive or partition – it will reformat it. If you want to use an existing data partition as backing device, see [#Converting_existing_disks](#Converting_existing_disks).
+
 1\. Install the [bcache-tools](https://aur.archlinux.org/packages/bcache-tools/) package from [AUR](/index.php/AUR "AUR").
 
 2\. Create a backing device (This will typically be your mechanical drive). The backing device can be a whole device, a partition or any other standard block device. This will create /dev/bcache0

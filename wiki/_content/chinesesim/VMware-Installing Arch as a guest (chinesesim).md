@@ -3,7 +3,7 @@
 *   [VMware](/index.php/VMware "VMware")
 *   [Installing VMWare vCLI](/index.php/Installing_VMWare_vCLI "Installing VMWare vCLI")
 
-**翻译状态：** 本文是英文页面 [VMware/Installing Arch as a guest](/index.php/VMware/Installing_Arch_as_a_guest "VMware/Installing Arch as a guest") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-10-06，点击[这里](https://wiki.archlinux.org/index.php?title=VMware%2FInstalling+Arch+as+a+guest&diff=0&oldid=492075)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [VMware/Installing Arch as a guest](/index.php/VMware/Installing_Arch_as_a_guest "VMware/Installing Arch as a guest") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-9-30，点击[这里](https://wiki.archlinux.org/index.php?title=VMware%2FInstalling+Arch+as+a+guest&diff=0&oldid=545127)可以查看翻译后英文页面的改动。
 
 这篇文章是关于如何在[VMware](/index.php/VMware "VMware")产品，比如[Player (Plus)](http://www.vmware.com/products/player/)，[Fusion](http://www.vmware.com/products/fusion/)或[Workstation](http://www.vmware.com/products/workstation/)中安装ArchLinux。
 

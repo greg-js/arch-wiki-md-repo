@@ -91,7 +91,7 @@ alias su='su -l'
 
 ### su y wheel
 
-su de BSD permite únicamente a los miembros del [grupo](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") «wheel» asumir la identidad del superusuario por defecto. Este no es el comportamiento por defecto de su en GNU, pero dicho comportamiento puede ser imitado usando [PAM](/index.php?title=PAM_(Espa%C3%B1ol)&action=edit&redlink=1 "PAM (Español) (page does not exist)"). Descomente la línea apropiada en `/etc/pam.d/su` y `/etc/pam.d/su-l`:
+su de BSD permite únicamente a los miembros del [grupo](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") «wheel» asumir la identidad del superusuario por defecto. Este no es el comportamiento por defecto de su en GNU, pero dicho comportamiento puede ser imitado usando [PAM](/index.php/PAM "PAM"). Descomente la línea apropiada en `/etc/pam.d/su` y `/etc/pam.d/su-l`:
 
 ```
 auth required pam_wheel.so use_uid

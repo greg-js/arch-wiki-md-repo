@@ -450,9 +450,17 @@ connmand[473]: wlp2s0 {del} route 82.165.8.211 gw 10.20.30.4 scope 0 <UNIVERSE>
 
 ```
 
-It likely is Connman performing a connectivity check to the ipv4.connman.net host (which resolves to the IP address `82.165.8.211` at current).[[7]](https://01.org/jira/browse/CM-657) See the [Connman README](http://git.kernel.org/cgit/network/connman/connman.git/tree/README#n358) for more information on why and what - apart from the connecting IP - it transmits.
+It likely is Connman performing a connectivity check to the ipv4.connman.net host (which resolves to the IP address `82.165.8.211` at current).[[7]](https://01.org/jira/browse/CM-657) See the [Connman README](http://git.kernel.org/cgit/network/connman/connman.git/tree/README#n358) for more information on why and what - apart from the connecting IP - it transmits. This behaviour can be prevented by adding the following to `/etc/connman/main.conf`:
 
-While there is no option to configure the destination host of the check, the connection itself is functional (unless behind a captive portal) if the check is blocked by a firewall rule:
+```
+[General]
+EnableOnlineCheck=false
+
+```
+
+This setting will cause that the default device will not switch to ONLINE, but stay in READY state.[[8]](https://www.mankier.com/5/connman.conf) However, the connection will still be functional.
+
+The connection itself is also functional (unless behind a captive portal) if the check is blocked by a firewall rule:
 
 ```
 # ip6tables -A OUTPUT -d ipv6.connman.net -j REJECT
@@ -462,7 +470,7 @@ While there is no option to configure the destination host of the check, the con
 
 ### File /proc/net/pnp doesn't exist
 
-If you see this in your error log it is caused by bug in connman [[8]](https://bbs.archlinux.org/viewtopic.php?id=227689#p1766928) and can be ignored. [Bug Report](https://01.org/jira/browse/CM-690)
+If you see this in your error log it is caused by bug in connman [[9]](https://bbs.archlinux.org/viewtopic.php?id=227689#p1766928) and can be ignored. [Bug Report](https://01.org/jira/browse/CM-690)
 
 ## See also
 

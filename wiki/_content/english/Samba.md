@@ -142,7 +142,7 @@ To change an user password, use `smbpasswd`:
 
 **Note:** To allow the usage of *guests* on public shares, one may need to [append](/index.php/Append "Append") `map to guest = Bad User` in the `[global]` section of `/etc/samba/smb.conf`. A different `guest account` may be used instead of the default provided `nobody`.
 
-Make sure shares have been proper defined as can be seen in the *Share Definitions* section of [smb.conf.default](https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD).
+Make sure shares have been properly defined as per the *Share Definitions* section of [smb.conf.default](https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD).
 
 #### Starting services
 

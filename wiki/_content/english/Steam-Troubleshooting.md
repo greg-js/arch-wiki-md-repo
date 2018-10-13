@@ -39,10 +39,11 @@
     *   [9.7 Mesa: Game does not launch, complaining about OpenGL version supported by the card](#Mesa:_Game_does_not_launch.2C_complaining_about_OpenGL_version_supported_by_the_card)
     *   [9.8 2K games do not run on XFS partitions](#2K_games_do_not_run_on_XFS_partitions)
     *   [9.9 Steam controller not being detected correctly](#Steam_controller_not_being_detected_correctly)
-    *   [9.10 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
-    *   [9.11 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
-    *   [9.12 Symbol lookup error using DRI3](#Symbol_lookup_error_using_DRI3)
-    *   [9.13 Launching games on Nvidia optimus laptops](#Launching_games_on_Nvidia_optimus_laptops)
+    *   [9.10 Steam controller makes a game crash](#Steam_controller_makes_a_game_crash)
+    *   [9.11 Steam hangs on "Installing breakpad exception handler..."](#Steam_hangs_on_.22Installing_breakpad_exception_handler....22)
+    *   [9.12 Killing standalone compositors when launching games](#Killing_standalone_compositors_when_launching_games)
+    *   [9.13 Symbol lookup error using DRI3](#Symbol_lookup_error_using_DRI3)
+    *   [9.14 Launching games on Nvidia optimus laptops](#Launching_games_on_Nvidia_optimus_laptops)
 
 ## Introduction
 
@@ -439,6 +440,10 @@ If you are running 2K games such as Civilization 5 on [XFS](/index.php/XFS "XFS"
 ### Steam controller not being detected correctly
 
 See [Gamepad#Steam Controller](/index.php/Gamepad#Steam_Controller "Gamepad").
+
+### Steam controller makes a game crash
+
+See [Gamepad#Steam Controller makes a game crash or not recognized](/index.php/Gamepad#Steam_Controller_makes_a_game_crash_or_not_recognized "Gamepad").
 
 ### Steam hangs on "Installing breakpad exception handler..."
 

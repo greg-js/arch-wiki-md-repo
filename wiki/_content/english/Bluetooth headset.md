@@ -786,14 +786,14 @@ Possible solutions:
 
 *   For some headsets, using the headset's volume or play/pause controls while connected can trigger the A2DP profile to become available.
 
-*   It is possible that connecting to a headset via [bluetoothctl](https://www.archlinux.org/packages/?name=bluetoothctl) will make the A2DP sink profile available.
+*   It is possible that connecting to a headset via `bluetoothctl` from [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) will make the A2DP sink profile available.
 
 ```
 [bluetooth]# connect *[headset MAC here]*
 
 ```
 
-*   Manually switching to Bluetooth's `AudioSink` service which would make the A2DP profile and its A2DP PulseAudio sink available. This can be done with blueman-manager which included in [blueman](https://www.archlinux.org/packages/?name=blueman) or by registering the UUID of the AudioSink service with [bluetoothctl](https://www.archlinux.org/packages/?name=bluetoothctl).
+*   Manually switching to Bluetooth's `AudioSink` service which would make the A2DP profile and its A2DP PulseAudio sink available. This can be done with blueman-manager which included in [blueman](https://www.archlinux.org/packages/?name=blueman) or by registering the UUID of the AudioSink service with `bluetoothctl` .
 
 ```
  $ bluetoothctl

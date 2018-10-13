@@ -25,7 +25,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [gitea](https://aur.archlinux.org/packages/gitea/), [gitea-bin](https://aur.archlinux.org/packages/gitea-bin/) or, [gitea-git](https://aur.archlinux.org/packages/gitea-git/) package.
+[Install](/index.php/Install "Install") the [gitea](https://www.archlinux.org/packages/?name=gitea), [gitea-bin](https://aur.archlinux.org/packages/gitea-bin/) or, [gitea-git](https://aur.archlinux.org/packages/gitea-git/) package.
 
 Gitea requires the use of a database backend, the following are supported:
 
@@ -45,6 +45,8 @@ See the [Gitea docs](https://docs.gitea.io/en-us/customizing-gitea/) for more co
 ### MariaDB/MySQL
 
 **Note:** MySQL socket support can be enabled by using `/var/run/mysqld/mysqld.sock` as the listen address.
+
+**Warning:** Gitea does not work with MariaDB < 10.2 out of the box ([workaround](https://github.com/go-gitea/gitea/issues/2979)), and the [mariadb](https://www.archlinux.org/packages/?name=mariadb) package is hold on 10.1 to keep [compatibility](https://lists.archlinux.org/pipermail/arch-general/2017-September/044255.html) with depending packages.
 
 The following is an example of setting up [MariaDB](/index.php/MariaDB "MariaDB"), setting your desired password:
 

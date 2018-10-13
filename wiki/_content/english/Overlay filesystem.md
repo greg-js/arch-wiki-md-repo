@@ -37,6 +37,18 @@ Example:
 
 ```
 
+**Note:** The order of lower directories is the rightmost is the lowest, thus the upper directory is on top of the first directory in the left-to-right list of lower directories; NOT on top of the last directory in the list, as the order (or logic) might seem to suggest.
+
+The above example will have the order:
+
+```
+/upper
+/lower1 
+/lower2
+/lower3
+
+```
+
 To add an overlayfs entry to `/etc/fstab` use the following format:
 
  `/etc/fstab`  `overlay */merged* overlay noauto,x-systemd.automount,lowerdir=*/lower*,upperdir=*/upper*,workdir=*/work* 0 0` 

@@ -359,7 +359,7 @@ load-module module-dbus-protocol
 
 ### Альтернативные эквалайзеры
 
-[pulseaudio-equalizer-ladspa](https://aur.archlinux.org/packages/pulseaudio-equalizer-ladspa/) (основан на [swh-plugins](https://www.archlinux.org/packages/?name=swh-plugins)) может использоваться как альтернатива [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer).
+[pulseaudio-equalizer-ladspa](https://www.archlinux.org/packages/?name=pulseaudio-equalizer-ladspa) (основан на [swh-plugins](https://www.archlinux.org/packages/?name=swh-plugins)) может использоваться как альтернатива [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer).
 
 [pulseeffects](https://www.archlinux.org/packages/?name=pulseeffects) применяет ограничение пиковой громкости, компрессию, реверберацию, авто уровень гроскости и 15-полосный эквалайзер к выводу приложений Pulseaudio.
 

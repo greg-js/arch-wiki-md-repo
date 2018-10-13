@@ -8,12 +8,12 @@ Los [usuarios de confianza](https://www.archlinux.org/people/trusted-users/) (*T
 
 ## Contents
 
-*   [1 Como me convierto en un TU?](#Como_me_convierto_en_un_TU.3F)
+*   [1 ¿Cómo me convierto en un TU?](#.C2.BFC.C3.B3mo_me_convierto_en_un_TU.3F)
 *   [2 Usuarios de confianza activos](#Usuarios_de_confianza_activos)
 *   [3 Usuarios de confianza inactivos](#Usuarios_de_confianza_inactivos)
-*   [4 Some Past Trusted Users](#Some_Past_Trusted_Users)
+*   [4 Algunos usuarios de confianza anteriores](#Algunos_usuarios_de_confianza_anteriores)
 
-## Como me convierto en un TU?
+## ¿Cómo me convierto en un TU?
 
 Los requisitos *mínimos* para convertirse en un TU son los siguientes:
 
@@ -37,7 +37,7 @@ Para más información, véase el [Trusted User Bylaws](https://aur.archlinux.or
 
 ## Usuarios de confianza activos
 
-| Nick | Name | E-Mail |
+| Apodo | Nombre | Correo electrónico |
 | [alad](https://aur.archlinux.org/packages/?K=Alad&SeB=m) | [Alad Wenter](/index.php/User:Alad "User:Alad") | alad@archlinux.org |
 | [alucryd](https://aur.archlinux.org/packages.php?K=alucryd&SeB=m) | Maxime Gauduin | alucryd@archlinux.org |
 | [anatolik](https://aur.archlinux.org/packages.php?K=anatolik&SeB=m) | Anatol Pomozov | anatol dot pomozov + arch at gmail |
@@ -92,11 +92,11 @@ Para más información, véase el [Trusted User Bylaws](https://aur.archlinux.or
 
 ## Usuarios de confianza inactivos
 
-| Nick | Name | E-Mail | Comments/Reference |
+| Apodo | Nombre | Correo electrónico | Comentarios/Referencia |
 
-## Some Past Trusted Users
+## Algunos usuarios de confianza anteriores
 
-| Nick | Name |
+| Apodo | Nombre |
 | [abhidg](https://aur.archlinux.org/packages.php?K=abhidg&SeB=m) | Abhishek Dasgupta |
 | [Allan](https://aur.archlinux.org/packages.php?K=Allan&SeB=m) | Allan McRae |
 | [Ambrevar](https://aur.archlinux.org/packages.php?K=Ambrevar&SeB=m) | [Pierre Neidhardt](/index.php/User:Ambrevar "User:Ambrevar") |

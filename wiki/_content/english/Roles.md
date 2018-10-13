@@ -32,10 +32,6 @@
 
 	The [ArchWiki Translation Teams](/index.php/ArchWiki:Translation_Team "ArchWiki:Translation Team") translate the ArchWiki into other languages.
 
-	AUR maintainer
-
-	AUR maintainers submit and maintain packages in the [AUR](/index.php/AUR "AUR").
-
 ## Package maintainer
 
 The role of a package maintainer is to update packages as new versions become available upstream and to field support questions relating to bugs in said packages. The term applies to:

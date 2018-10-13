@@ -770,18 +770,23 @@ Specify `--init-file <file>` as an alternative to `~/.bashrc` for interactive sh
 `~/.sqlite_history
 ~/.sqliterc`
 
- | [[140]](https://unix.stackexchange.com/questions/306890/change-location-of-sqlite-history-file)[[141]](http://sqlite.1065341.n5.nabble.com/Customizing-the-location-of-the-sqlite-history-td87055.html) | `$ sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc` |
+ | [[140]](https://www.sqlite.org/src/info/696e82f7c82d1720) | `$ export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
+`
+
+`$ sqlite3 -init "$XDG_CONFIG_HOME"/sqlite3/sqliterc`
+
+ |
 | [Steam](/index.php/Steam "Steam") | 
 
 `~/.steam
 ~/.steampath
 ~/.steampid`
 
- | [[142]](https://github.com/ValveSoftware/steam-for-linux/issues/1890) | Many game engines (Unity 3D, Unreal) follow the specification, but then individual game publishers hardcode the paths in [Steam Auto-Cloud](https://www.ctrl.blog/entry/flatpak-steamcloud-xdg) causing game-saves to sync to the wrong directory. |
+ | [[141]](https://github.com/ValveSoftware/steam-for-linux/issues/1890) | Many game engines (Unity 3D, Unreal) follow the specification, but then individual game publishers hardcode the paths in [Steam Auto-Cloud](https://www.ctrl.blog/entry/flatpak-steamcloud-xdg) causing game-saves to sync to the wrong directory. |
 | [TeamSpeak](/index.php/TeamSpeak "TeamSpeak") | `~/.ts3client` |
 | [texinfo](https://www.archlinux.org/packages/?name=texinfo) | `~/.infokey` | `$ info --init-file "$XDG_CONFIG_HOME/infokey"` |
 | [TeXmacs](http://www.texmacs.org/) | `~/.TeXmacs` |
-| [Thunderbird](/index.php/Thunderbird "Thunderbird") | `~/.thunderbird/` | [[143]](https://bugzil.la/735285) |
+| [Thunderbird](/index.php/Thunderbird "Thunderbird") | `~/.thunderbird/` | [[142]](https://bugzil.la/735285) |
 | [tllocalmgr](https://git.archlinux.org/users/remy/texlive-localmanager.git/) | `~/.texlive` |
 | [vim](/index.php/Vim "Vim") | 
 
@@ -811,16 +816,16 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 *   [https://tlvince.com/vim-respect-xdg](https://tlvince.com/vim-respect-xdg)
 
  |
-| [vimperator](http://www.vimperator.org/) | `~/.vimperatorrc` | [[144]](http://www.mozdev.org/pipermail/vimperator/2009-October/004848.html) | `$ export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"`
+| [vimperator](http://www.vimperator.org/) | `~/.vimperatorrc` | [[143]](http://www.mozdev.org/pipermail/vimperator/2009-October/004848.html) | `$ export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"`
 
 `$ export VIMPERATOR_RUNTIME="$XDG_CONFIG_HOME"/vimperator`
 
  |
-| [w3m](https://www.archlinux.org/packages/?name=w3m) | `~/.w3m` | [[145]](https://sourceforge.net/p/w3m/feature-requests/31/) |
+| [w3m](https://www.archlinux.org/packages/?name=w3m) | `~/.w3m` | [[144]](https://sourceforge.net/p/w3m/feature-requests/31/) |
 | [wpa_cli](https://w1.fi/) | `~/.wpa_cli_history` |
-| [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) | `~/.gnome` | [[146]](https://bugs.freedesktop.org/show_bug.cgi?id=90775) | For some reason the script `xdg-desktop-menu` hard-codes `gnome_user_dir="$HOME/.gnome/apps"`. This is used by [chromium](/index.php/Chromium "Chromium") among others. |
-| [xombrero](https://opensource.conformal.com/wiki/xombrero) | `~/.xombrero` | [[147]](https://github.com/conformal/xombrero/issues/74) |
-| [zenmap](https://nmap.org/zenmap/) [nmap](https://www.archlinux.org/packages/?name=nmap) | `~/.zenmap` | [[148]](http://seclists.org/nmap-dev/2012/q2/163) [[149]](https://github.com/nmap/nmap/issues/590) |
+| [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) | `~/.gnome` | [[145]](https://bugs.freedesktop.org/show_bug.cgi?id=90775) | For some reason the script `xdg-desktop-menu` hard-codes `gnome_user_dir="$HOME/.gnome/apps"`. This is used by [chromium](/index.php/Chromium "Chromium") among others. |
+| [xombrero](https://opensource.conformal.com/wiki/xombrero) | `~/.xombrero` | [[146]](https://github.com/conformal/xombrero/issues/74) |
+| [zenmap](https://nmap.org/zenmap/) [nmap](https://www.archlinux.org/packages/?name=nmap) | `~/.zenmap` | [[147]](http://seclists.org/nmap-dev/2012/q2/163) [[148]](https://github.com/nmap/nmap/issues/590) |
 | [zsh](/index.php/Zsh "Zsh") | 
 
 `~/.zshrc
@@ -830,7 +835,7 @@ export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc
 ~/.zlogout
 ~/.histfile`
 
- | [[150]](http://www.zsh.org/mla/workers/2013/msg00692.html) | Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
+ | [[149]](http://www.zsh.org/mla/workers/2013/msg00692.html) | Consider exporting `ZDOTDIR=$HOME/.config/zsh` in `~/.zshenv` (this is hardcoded due to the bootstrap problem). You could also add this to `/etc/zsh/zshenv` and avoid the need for any dotfiles in your `HOME`. Doing this however requires root privilege which may not be viable and is system-wide.
 
 `$ export HISTFILE="$XDG_DATA_HOME"/zsh/history`
 

@@ -52,6 +52,7 @@ Joysticks can be a bit of a hassle to get working in Linux. Not because they are
     *   [8.2 Joystick not working in FNA/SDL based games](#Joystick_not_working_in_FNA.2FSDL_based_games)
     *   [8.3 Joystick not recognized by all programs](#Joystick_not_recognized_by_all_programs)
     *   [8.4 Steam Controller not pairing](#Steam_Controller_not_pairing)
+    *   [8.5 Steam Controller makes a game crash or not recognized](#Steam_Controller_makes_a_game_crash_or_not_recognized)
 
 ## Joystick input systems
 
@@ -787,3 +788,14 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="28de", MODE="0666"
 ```
 
 You may have to reboot in order for the change to take effect.
+
+### Steam Controller makes a game crash or not recognized
+
+If your Steam Controller is working well in Steam Big Picture mode, but not recognized by a game or the game starts crashing when you plug in the controller, this may be because of the native driver that has been added to the Linux kernel 4.18\. Try to unload it, restart Steam and replug the controller.
+
+The module name of the driver is *hid_steam*, so to unload it you may perform:
+
+```
+# sudo rmmod hid_steam
+
+```

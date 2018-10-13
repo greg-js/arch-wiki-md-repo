@@ -98,14 +98,19 @@ Queste istruzioni sono per gli utenti che usano il pacchetto stock [linux](https
 
 2\. Determinare il driver necessario per la vostra scheda video visitando il sito NVIDIA nella pagina dei [download dei driver](http://www.nvidia.com/Download/index.aspx?lang=it) guardando il nome del driver NVIDIA. Potete anche controllare [questa lista](http://www.nvidia.com/object/IO_32667.html) per le vecchie schede o cercare il codice del nome nella [pagina dei nomi dei codici sul wiki di nouveau](http://nouveau.freedesktop.org/wiki/CodeNames).}}
 
+**Suggerimento:** Controllare la wiki inglese o il sito ufficiale Nvidia per essere sicuri che stiate installando la versione corretta del driver
+
 3\. Installare il driver appropriato per la propria scheda:
 
-*   Per schede serie GeForce 8 e superiori [NV50 e nuovi], installare il pacchetto [nvidia](https://www.archlinux.org/packages/?name=nvidia) disponibile nei [repositori ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
-*   Per schede serie GeForce 6/7 e superiori [[NV40-NV50], installare il pacchetto [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) disponibile nei [repositori ufficiali](/index.php/Official_repositories_(Italiano) "Official repositories (Italiano)").
-*   Per schede serie GeForce 5 FX [NV30-NV38], installare il pacchetto [nvidia-173xx](https://aur.archlinux.org/packages/nvidia-173xx/), disponibile su [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)").
-*   Per schede serie GeForce2/3/4 MX/Ti [NV11 and NV17-NV28], installare il pacchetto [nvidia-96xx](https://aur.archlinux.org/packages/nvidia-96xx/), disponibile su [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)").
+*   Pe schede GeForce RTX 20 o superiori, [installa](/index.php?title=Installa&action=edit&redlink=1 "Installa (page does not exist)") il pacchetto [nvidia](https://www.archlinux.org/packages/?name=nvidia) o [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts).
 
-	Per i modelli GPU più recenti, può essere necessario installare [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/) da [AUR](/index.php/AUR_(Italiano) "AUR (Italiano)") , dal momento che i driver stabili potrebbero non supportare le nuove funzionalità introdotte . Provare prima quelli stabili.
+*   Se questi pacchetti non funzionano, [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/) potrebbe avere una versione ancora più aggiornata.
+*   Esiste anche [nvidia-llb-dkms](https://aur.archlinux.org/packages/nvidia-llb-dkms/), compilata da Nvidia's [long lived branch](http://www.phoronix.com/scan.php?page=news_item&px=OTkxOA).
+
+*   Per schede serie 400/500/600/700/900 degli anni 2010-2015, [installa](/index.php?title=Installa&action=edit&redlink=1 "Installa (page does not exist)") il pacchetto [nvidia-390xx](https://www.archlinux.org/packages/?name=nvidia-390xx) o [nvidia-390xx-lts](https://www.archlinux.org/packages/?name=nvidia-390xx-lts).
+*   Per schede GeForce 8/9, ION e serie 100-300 [NV5x, NV8x, NV9x and NVAx] degli anni 2006-2010, [installa](/index.php?title=Installa&action=edit&redlink=1 "Installa (page does not exist)") il pacchetto [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) o [nvidia-340xx-lts](https://www.archlinux.org/packages/?name=nvidia-340xx-lts).
+
+*   Per schede ancora più vecchie (2006 o precedenti), controlla [#Unsupported drivers](#Unsupported_drivers).
 
 	Se siete in ambiente a 64-bit e necessitate del supporto OpenGL a 32-bit, sarà necessario installare il pacchetto *lib32* equivalente dal deposito [multilib](/index.php/Multilib "Multilib") (per esempio [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl) o *lib32-nvidia-{304xx,173xx,96xx}-utils*).}}
 

@@ -87,21 +87,21 @@ Alternatively, provide a custom `pacman.conf` and `makepkg.conf` with the follow
 
 ### Building in the Chroot
 
-Firstly, make sure the chroot is up to date with:
+Firstly, make sure the base chroot is up to date with:
 
 ```
 # arch-nspawn $CHROOT/root pacman -Syu
 
 ```
 
-Then, to build a package in the chroot, run the following from the dir containing the PKGBUILD:
+Then, to build a package in the working chroot (by default, `$CHROOT/$USER`), run the following from the dir containing the PKGBUILD:
 
 ```
 $ makechrootpkg -c -r $CHROOT
 
 ```
 
-Passing the -c flag to makechrootpkg ensures that the working chroot (named `$CHROOT/$USERNAME`) is cleaned before building starts.
+Passing the `-c` flag to `makechrootpkg` ensures that the working chroot is cleaned before building starts.
 
 ### Manual package installation
 
@@ -116,7 +116,7 @@ If done from a directory that contains a PKGBUILD, the package will then be buil
 
 ### Installation after building
 
-Tell makechrootpkg to simply install a package to the rw layer of the chroot after building by passing the -i arg. Unrecognized args get passed to makepkg, so this calls `makepkg` with the -i arg.
+Tell makechrootpkg to simply install a package to the working chroot after building by passing the -i arg. Arguments passed after the end-of-options marker `--` get passed to makepkg, so this calls `makepkg` with the `-i` arg.
 
 ```
 # makechrootpkg -r $CHROOT -- -i

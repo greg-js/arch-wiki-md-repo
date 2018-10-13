@@ -227,9 +227,9 @@ SDDM may also incorrectly display the layout as US but will immediately change t
 
 ### Screen resolution is too low
 
-Issue may be caused by HiDPI usage for monitors with corrupted EDID: [[5]](https://github.com/sddm/sddm/issues/692). If you have [enabled HiDPI](#Enable_HiDPI), try to disable it.
+Issue may be caused by HiDPI usage for monitors with corrupted [EDID](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data "wikipedia:Extended Display Identification Data") [[5]](https://github.com/sddm/sddm/issues/692). If you have [enabled HiDPI](#Enable_HiDPI), try to disable it.
 
-If even the above fails, you can try setting your screen size in a Xorg conf file:
+If even the above fails, you can try setting your screen size in a Xorg configuration file:
 
  `/etc/X11/xorg.conf.d/90-monitor.conf` 
 ```

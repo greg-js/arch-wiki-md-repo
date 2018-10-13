@@ -10,7 +10,8 @@ Related articles
 *   [2 Rebooting using kexec](#Rebooting_using_kexec)
     *   [2.1 Manually](#Manually)
     *   [2.2 Systemd](#Systemd)
-        *   [2.2.1 Separate /boot partition](#Separate_.2Fboot_partition)
+        *   [2.2.1 Custom unit file](#Custom_unit_file)
+        *   [2.2.2 Separate /boot partition](#Separate_.2Fboot_partition)
 *   [3 See also](#See_also)
 
 ## Installation
@@ -41,7 +42,18 @@ It is also possible to load kernel manually and then let systemd handle service 
 
 ### Systemd
 
-You will need to create a new unit file, `kexec-load@.service`, that will load the specified kernel to be kexec'ed:
+By default, if [systemd-boot](/index.php/Systemd-boot "Systemd-boot") is used and no kernel was loaded manually using `kexec -l` before, systemd will load the kernel specified in the default boot loader entry. For example, to reboot into the newer kernel after a system update, you may simply run:
+
+```
+# systemctl kexec
+
+```
+
+The command will refuse to execute if you have several initrd entries (e.g. for [Microcode](/index.php/Microcode "Microcode") updates) which are currently not supported.
+
+#### Custom unit file
+
+If the default behavior does not work for you or you desire to conveniently load custom kernels, you may wrap the kernel loading into a service unit. Create a new unit file, `kexec-load@.service`, that will load the specified kernel to be kexec'ed:
 
  `/etc/systemd/system/kexec-load@.service` 
 ```

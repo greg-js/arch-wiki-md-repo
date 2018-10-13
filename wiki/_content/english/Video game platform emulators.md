@@ -28,7 +28,7 @@ An emulator is a program which serves to replicate the functions of another plat
 
 *   **Gambatte** — Accurate Game Boy Color emulator
 
-	[https://github.com/sinamas/gambatte](https://github.com/sinamas/gambatte) || Qt GUI frontend ([gambatte-qt](https://aur.archlinux.org/packages/gambatte-qt/)), SDL CLI frontend ([gambatte-sdl](https://aur.archlinux.org/packages/gambatte-sdl/)).
+	[https://github.com/sinamas/gambatte](https://github.com/sinamas/gambatte). || Qt GUI frontend ([gambatte-qt](https://aur.archlinux.org/packages/gambatte-qt/)), SDL CLI frontend ([gambatte-sdl](https://aur.archlinux.org/packages/gambatte-sdl/)).
 
 *   **Gens2** — Emulator for Sega Genesis, Sega CD and 32X that is written in assembly language and no longer actively developed.
 
@@ -49,7 +49,7 @@ An emulator is a program which serves to replicate the functions of another plat
 
 	[https://byuu.org/emulation/higan/](https://byuu.org/emulation/higan/) || [higan](https://www.archlinux.org/packages/?name=higan)
 
-*   **mednafen** — Command line driven multi system emulator.
+*   **mednafen** — Command-line driven multisystem emulator.
 
 	[http://mednafen.sourceforge.net/](http://mednafen.sourceforge.net/) || [mednafen](https://www.archlinux.org/packages/?name=mednafen)
 
@@ -101,7 +101,7 @@ An emulator is a program which serves to replicate the functions of another plat
 
 *   **MAME** — Multiple Arcade Machine Emulator.
 
-	[http://mamedev.org/](http://mamedev.org/) || [sdlmame](https://www.archlinux.org/packages/?name=sdlmame)
+	[http://mamedev.org/](http://mamedev.org/) || [mame](https://www.archlinux.org/packages/?name=mame)
 
 *   **ResidualVM** — Cross-platform 3D game interpreter which allows you to play LucasArts' Lua-based 3D adventures.
 

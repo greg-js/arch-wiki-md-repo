@@ -1,6 +1,6 @@
 Artículos relacionados
 
-*   [Scan print and save Script](/index.php?title=Scan_print_and_save_Script&action=edit&redlink=1 "Scan print and save Script (page does not exist)")
+*   [SANE/Scanner-specific problems](/index.php/SANE/Scanner-specific_problems "SANE/Scanner-specific problems")
 *   [Scanner Button Daemon](/index.php/Scanner_Button_Daemon "Scanner Button Daemon")
 
 Sane proporciona una biblioteca y una herramienta en línea de órdenes para utilizar los escáneres bajo GNU/Linux. [Aquí](http://www.sane-project.org/sane-supported-devices.html) se puede comprobar si sane es compatible con su escáner.

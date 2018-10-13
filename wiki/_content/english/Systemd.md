@@ -312,7 +312,6 @@ To avoid conflicts with pacman, unit files provided by packages should not be di
 
 *   You can use *systemd-delta* to see which unit files have been overridden or extended and what exactly has been changed.
 *   Use `systemctl cat *unit*` to view the content of a unit file and all associated drop-in snippets.
-*   The default syntax highlighting for *systemd* unit files within [Vim](/index.php/Vim "Vim") is the same as for [INI files](https://en.wikipedia.org/wiki/Ini_file "wikipedia:Ini file"). However, if you want something more systemd-specific, install [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd).
 
 #### Replacement unit files
 

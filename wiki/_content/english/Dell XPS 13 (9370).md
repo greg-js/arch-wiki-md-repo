@@ -87,10 +87,12 @@ Some other options that save battery life are:
 
 ## Storage
 
-The nvme SSD is a Toshiba KXG50ZNV256G, KXG50ZNV512G or KXG50ZNV1T02\. The stock firmware version AADA4102 has severe problems when the ssd enters the lowest power state. This results in a unresponsive device (kernel complains about read-only filesystem) The problems can occur any time, but seem to have become way more common on Kernel 4.18 on battery power. [Firmware Version AADA4105](https://www.dell.com/support/home/us/en/19/drivers/driversdetails?driverid=c0pf8) seems to fix the problem. As the upgrade is only possible under windows the following kernel parameter works as a workaround (see [Solid state drive/NVMe](/index.php/Solid_state_drive/NVMe "Solid state drive/NVMe")):
+The nvme SSD is a Toshiba KXG50ZNV256G, KXG50ZNV512G or KXG50ZNV1T02\. The stock firmware version AADA4102 has severe problems when the ssd enters the lowest power state. This results in a unresponsive device (kernel complains about read-only filesystem) The problems can occur any time, but seem to have become way more common on Kernel 4.18 on battery power. [Firmware Version AADA4105](https://www.dell.com/support/home/us/en/19/drivers/driversdetails?driverid=c0pf8) seems to fix the problem.
+
+As the upgrade is only possible under windows and as even with upgraded driver the disk may be completely undected by the kernel because of the SSD not being responsive in the deepest sleep mode. The following kernel parameter works as a workaround, preventing the disk to enter the problematic sleep mode (see [Solid state drive/NVMe](/index.php/Solid_state_drive/NVMe "Solid state drive/NVMe")):
 
 ```
- nvme_core.default_ps_max_latency_us=6000   
+ nvme_core.default_ps_max_latency_us=6000
 
 ```
 

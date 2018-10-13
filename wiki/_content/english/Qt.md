@@ -171,18 +171,9 @@ If you have GTK+ and Qt applications, their looks might not exactly blend in ver
 
 ### Configuration of Qt5 apps under environments other than KDE Plasma
 
-Unlike Qt4, Qt5 doesn't ship a qtconfig utility to configure fonts, icons or styles. Instead, it will try to use the settings from the running DE. In KDE Plasma or GNOME this works well, but in other less popular DEs or WM it can lead to missing icons in Qt5 applications. One way to solve this is to fake the running desktop environment by setting `XDG_CURRENT_DESKTOP=KDE` or `GNOME`, and then using the corresponding configuration application to set the desired icon set.
+Unlike Qt4, Qt5 doesn't ship a qtconfig utility to configure fonts, icons or styles. Instead, it will try to use the settings from the running desktop environment. In KDE Plasma or GNOME this works well, but in other less popular desktop environments or window managers it can lead to missing icons in Qt5 applications. One way to solve this is to fake the running desktop environment by setting `XDG_CURRENT_DESKTOP=KDE` or `GNOME`, and then using the corresponding configuration application to set the desired icon set.
 
-Another solution is provided by the [qt5ct](https://www.archlinux.org/packages/?name=qt5ct) package, which provides a DE independent Qt5 QPA and a configuration utility. After installing the package, run `qt5ct` to set an icon theme, and set the environment variable `QT_QPA_PLATFORMTHEME="qt5ct"` so that the settings are picked up by Qt applications. Alternatively, use `--platformtheme qt5ct` as argument to the Qt5 application. If using [i3](/index.php/I3 "I3") add this environmental variable to the [system configuration](/index.php/Dmenu#Environmental_Variables "Dmenu") file `/etc/environment` instead.
-
-To automatically set `QT_QPA_PLATFORMTHEME` for user session, add the following line to `~/.xprofile`.
-
-```
-[ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"
-
-```
-
-This will export `QT_QPA_PLATFORMTHEME` environment variable for the whole user session. Note that this doesn't work on [enlightenment](/index.php/Enlightenment "Enlightenment") because it has its own custom environment variable setting instead of getting it from `~/.profile` file.
+Another solution is provided by the [qt5ct](https://www.archlinux.org/packages/?name=qt5ct) package, which provides a Qt5 QPA independent of the desktop environment and a configuration utility. After installing the package, run `qt5ct` to set an icon theme, and set the [environment variable](/index.php/Environment_variable "Environment variable") `QT_QPA_PLATFORMTHEME="qt5ct"` so that the settings are picked up by Qt applications. Alternatively, use `--platformtheme qt5ct` as argument to the Qt5 application.
 
 If the below errors are received, and some icons still do not appear in some of the apps, install [oxygen](https://www.archlinux.org/packages/?name=oxygen) and [oxygen-icons](https://www.archlinux.org/packages/?name=oxygen-icons):
 

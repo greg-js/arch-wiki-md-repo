@@ -132,6 +132,8 @@ In the table below, the columns have the following meaning:
 
 ## Privacy
 
+DNS is not encrypted, so you may want to use a [resolver](#Resolver) that supports an encrypted protocol, like [DNS over TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS"), [DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") or [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt").
+
 Most DNS servers keep a log of IP addresses and sites visited on a more or less temporary basis. The data collected can be used to perform various statistical studies. Personally-identifying information have value and can also be rented or sold to third parties. [Alternative DNS services](/index.php/Alternative_DNS_services "Alternative DNS services") provides a list of popular services, check their privacy policy for information about how user data is handled.
 
 ## Lookup utilities

@@ -22,8 +22,8 @@ Los UC se rigen por el [Estatuto UC](https://aur.archlinux.org/trusted-user/TUby
 
 ### TODO lista para el nuevo usuario de confianza
 
-*   Instalar el paquete *devtools'.*
-*   Envíar su clave pública ssh public a Lukas Fleischer. Si no tienes una, usa *ssh-keygen* para generarla. Puedes revisar la página del wiki [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") para mas información sobre como crear claves ssh y configurar un cliente-ssh para usar esta.
+*   Instalar el paquete [devtools](https://www.archlinux.org/packages/?name=devtools).
+*   Envíar su clave pública ssh public a Lukas Fleischer. Si no tienes una, usa [ssh-keygen(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh-keygen.1) para generarla. Puedes revisar la página del wiki [SSH keys (Español)](/index.php/SSH_keys_(Espa%C3%B1ol) "SSH keys (Español)") para mas información sobre como crear claves ssh y configurar un cliente-ssh para usar esta.
 *   Crear el directorio *staging/community* dentro de tu carpeta personal en aur.archlinux.org. Este es un paso **importante**, porque devtools scripts usa este directorio para procesar los paquetes entrantes.
 *   Recuerde a Allan a cambiar su cuenta en los foros
 *   Asegúrese que su sponsor le ha dado estado de UC en AUR

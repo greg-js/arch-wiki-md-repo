@@ -30,7 +30,7 @@ To make optimizations available, install their backends: [graphite](https://www.
 
 ## Build an optimized package
 
-First, edit [`/etc/makepkg-optimize.conf`](#Configuration) and select your preferred optimizations for [`ARCHITECTURE, COMPILE FLAGS`](/index.php/Makepkg#Building_optimized_binaries "Makepkg"), `BUILD ENVIRONMENT`, `GLOBAL PACKAGE OPTIONS` and `COMPRESSION DEFAULTS`.
+First, edit [`/etc/makepkg-optimize.conf`](#Configuration) and select your preferred optimizations for [`ARCHITECTURE, COMPILE FLAGS`](/index.php/Makepkg#Building_optimized_binaries "Makepkg"), [`BUILD ENVIRONMENT`](https://aur.archlinux.org/cgit/aur.git/tree/buildenv_ext.conf?h=makepkg-optimize), [`GLOBAL PACKAGE OPTIONS`](https://aur.archlinux.org/cgit/aur.git/tree/pkgopts_ext.conf?h=makepkg-optimize) and [`COMPRESSION DEFAULTS`](https://aur.archlinux.org/cgit/aur.git/tree/compress-param_max.conf?h=makepkg-optimize).
 
 **Warning:** While many packages build with all optimizations enabled, some will not. It may take a few attempts to find which--if any--optimizations a package is compatible with. Some software may also experience runtime problems caused by over-optimization.
 
@@ -55,14 +55,22 @@ After [setting up a chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot#
 
 #### Install required packages
 
-First, install [Git](/index.php/Git "Git") and some of the backends for the optimization macros:
+First, install some of the backends for the optimization macros to the base chroot:
 
 ```
-$ arch-nspawn -M /etc/makepkg.conf "$CHROOT"/root pacman -S git graphite openmp upx optipng
+$ arch-nspawn -M /etc/makepkg.conf "$CHROOT"/root pacman -S graphite openmp upx optipng
 
 ```
 
-Then [download](/index.php/Arch_User_Repository#Acquire_build_files "Arch User Repository"), [build](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot#Building_in_the_Chroot "DeveloperWiki:Building in a Clean Chroot") and [install](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot#Manual_package_installation "DeveloperWiki:Building in a Clean Chroot") [pacman-buildenv_ext-git](https://aur.archlinux.org/packages/pacman-buildenv_ext-git/), [makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/), and [nodejs-svgo](https://aur.archlinux.org/packages/nodejs-svgo/).
+Then [download](/index.php/Arch_User_Repository#Acquire_build_files "Arch User Repository") and [build](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot#Building_in_the_Chroot "DeveloperWiki:Building in a Clean Chroot") [pacman-buildenv_ext-git](https://aur.archlinux.org/packages/pacman-buildenv_ext-git/), [makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/), and [nodejs-svgo](https://aur.archlinux.org/packages/nodejs-svgo/).
+
+To install them in the base chroot, copy their package files into it, and install them with pacman, e.g.:
+
+```
+# cp nodejs-svgo-1.1.1-1-any.pkg.tar.xz.pkg.tar.xz "$CHROOT"/root/root/
+$ arch-nspawn -M /etc/makepkg.conf "$CHROOT"/root pacman -U /root/nodejs-svgo-1.1.1-1-any.pkg.tar.xz.pkg.tar.xz
+
+```
 
 #### Create a [Profile-guided Optimization](https://en.wikipedia.org/wiki/Profile-guided_optimization "wikipedia:Profile-guided optimization") cache
 
@@ -81,7 +89,7 @@ Then edit `$CHROOT/root/etc/makepkg-optimize.conf` and set `PROFDEST=/mnt/pgo` u
 
 #### Build a package
 
-First, edit [`$CHROOT/root/etc/makepkg-optimize.conf`](#Configuration) and select your preferred optimizations for [`ARCHITECTURE, COMPILE FLAGS`](/index.php/Makepkg#Building_optimized_binaries "Makepkg"), `BUILD ENVIRONMENT`, `GLOBAL PACKAGE OPTIONS` and `COMPRESSION DEFAULTS`.
+First, edit [`$CHROOT/root/etc/makepkg-optimize.conf`](#Configuration) and select your preferred optimizations.
 
 When [building](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot#Building_in_the_Chroot "DeveloperWiki:Building in a Clean Chroot"), pass the [makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/) configuration file to makepkg:
 
@@ -101,11 +109,11 @@ After the first building phase, bind the PGO folder:
 
 Once the package is [installed](/index.php/Pacman#Additional_commands "Pacman"), test-run its executables.
 
-Then, for the second building phase, remove package cruft but *do not* clean the chroot (do not pass `-c`):
+For the second building phase, remove the original package file and do not pass `-c` to `makechrootpkg`:
 
-**Note:** If you have rebooted, be sure to rebind the PGO folder. Alternatively, use [fstab](/index.php/Fstab "Fstab") to bind these folders persistently.
+**Note:** If you have rebooted, be sure to rebind the PGO folder before rebuilding. Alternatively, use [fstab](/index.php/Fstab "Fstab") to bind these folders persistently.
 
 ```
-$ rm -rf *.pkg.tar.xz pkg src; makechrootpkg -r "$CHROOT" -- --config /etc/makepkg-optimize.conf
+$ rm *.pkg.tar.xz; makechrootpkg -r "$CHROOT" -- --config /etc/makepkg-optimize.conf
 
 ```

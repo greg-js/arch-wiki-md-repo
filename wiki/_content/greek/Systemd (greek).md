@@ -51,7 +51,7 @@
 
 ## Βασική χρήση της εντολής systemctl
 
-Η βασική εντολή που χρησιμοποιείται για τον έλεγχο του *systemd* είναι η **systemctl**. Μερικές από τις χρήσεις της εντολής εξετάζουν την κατάσταση του συστήματος και διαχειρίζονται το σύστημα και τις υπηρεσίες (services). Δες το [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) για περισσότερες λεπτομέρειες.
+Η βασική εντολή που χρησιμοποιείται για τον έλεγχο του *systemd* είναι η **systemctl**. Μερικές από τις χρήσεις της εντολής εξετάζουν την κατάσταση του συστήματος και διαχειρίζονται το σύστημα και τις υπηρεσίες (services). Δες το [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) για περισσότερες λεπτομέρειες.
 
 **Συμβουλή:** Μπορείτε να χρησιμοποιήσετε όλες τις ακόλουθες εντολές του systemctl μαζί με το `-H *user*@*host*` switch για να ελέγξετε το *systemd* σε μια απομακρυσμένη μηχανή. Αυτό θα χρησιμοποιήσει το δικτυακό πρωτόκολλο [SSH(*αγγλικά*)](/index.php/SSH "SSH") για να συνδεθεί στο απομακρυσμένο *systemd* σύστημα.
 
@@ -97,9 +97,9 @@ $ systemctl list-unit-files
 *   Τα σημεία προσάρτησης θα μεταφράζονται αυτόματα σε κατάλληλη μονάδα*.mount*. Για παράδειγμα, το να προσδιορίσουμε το `/home` είναι ισοδύναμο με το `home.mount`.
 *   Ομοίως με τα σημεία προσάρτησης, οι συσκευές θα μεταφράζονται αυτόματα σε κατάλληλη μονάδα *.device* και ως εκ τούτου το να προσδιορίζουμε το `/dev/sda2` είναι ισοδύναμο με το `dev-sda2.device`.
 
-Δείτε στο [systemd.unit(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) για λεπτομέρειες.
+Δείτε στο [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.unit.5) για λεπτομέρειες.
 
-**Συμβουλή:** Οι περισσότερες από τις παρακάτω εντολές λειτουργούν επίσης όταν πολλαπλές μονάδες προσδιοριστούν, δείτε το [systemctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) για περισσότερες πληροφορίες.
+**Συμβουλή:** Οι περισσότερες από τις παρακάτω εντολές λειτουργούν επίσης όταν πολλαπλές μονάδες προσδιοριστούν, δείτε το [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) για περισσότερες πληροφορίες.
 
 Για να ενεργοποιήσετε μια μονάδα αμέσως:
 
@@ -228,7 +228,7 @@ $ systemctl hybrid-sleep
 
 ### Είδος
 
-Υπάρχουν πολλά διαφορετικά είδη start-up που πρέπει να σκεφτούμε όταν γράφουμε ένα προσαρμοσμένο αρχείο service. Αυτό το καθορίζουμε με την παράμετρο `Type=` στο τμήμα `[Service]`. Δείτε στο [systemd.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) για πιο λεπτομερή εξήγηση.
+Υπάρχουν πολλά διαφορετικά είδη start-up που πρέπει να σκεφτούμε όταν γράφουμε ένα προσαρμοσμένο αρχείο service. Αυτό το καθορίζουμε με την παράμετρο `Type=` στο τμήμα `[Service]`. Δείτε στο [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) για πιο λεπτομερή εξήγηση.
 
 *   `Type=simple` (προεπιλογή): Ο *systemd* θεωρεί ότι η υπηρεσία πρέπει να εκκινήσει αμέσως. Η διεργασία δεν πρέπει να γίνεται fork. Μην χρησιμοποιείτε αυτόν τον τύπο αν άλλες υπηρεσίες πρέπει να τακτοποιηθούν βάση της συγκεκριμένης υπηρεσίας, εκτός και αν ενεργοποιείται μέσω socket.
 *   `Type=forking`: O *systemd* θεωρεί πως η υπηρεσία έχει εκκινηθεί όταν η διεργασία έχει γίνει fork και η parent έχει τερματιστεί. Για κλασικές διεργασίες deamon χρησιμοποιείστε αυτόν τον τύπο, εκτός αν γνωρίζετε πως δεν είναι απαραίτητο. Πρέπει να προσδιορίσετε και το `PIDFile=`, έτσι ώστε ο *systemd* να μπορεί να παρακολουθεί την βασική διεργασία.
@@ -394,7 +394,7 @@ Show all messages from this boot:
 
 ```
 
-However, often one is interested in messages not from the current, but from the previous boot (e.g. if an unrecoverable system crash happened). This is possible through optional offset parameter of the `-b` flag: `journalctl -b -0` shows messages from the current boot, `journalctl -b -1` from the previous boot, `journalctl -b -2` from the second previous and so on. See [journalctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) for full description, the semantics is much more powerful.
+However, often one is interested in messages not from the current, but from the previous boot (e.g. if an unrecoverable system crash happened). This is possible through optional offset parameter of the `-b` flag: `journalctl -b -0` shows messages from the current boot, `journalctl -b -1` from the previous boot, `journalctl -b -2` from the second previous and so on. See [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1) for full description, the semantics is much more powerful.
 
 Follow new messages:
 
@@ -431,7 +431,7 @@ Show kernel ring buffer:
 
 ```
 
-See [journalctl(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1), [systemd.journal-fields(7)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.journal-fields.7), or Lennert's [blog post](http://0pointer.de/blog/projects/journalctl.html) for details.
+See [journalctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journalctl.1), [systemd.journal-fields(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.journal-fields.7), or Lennert's [blog post](http://0pointer.de/blog/projects/journalctl.html) for details.
 
 ### Journal size limit
 
@@ -442,7 +442,7 @@ SystemMaxUse=50M
 
 ```
 
-Refer to [journald.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/journald.conf.5) for more info.
+Refer to [journald.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/journald.conf.5) for more info.
 
 ### Journald in conjunction with syslog
 

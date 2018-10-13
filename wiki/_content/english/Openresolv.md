@@ -44,7 +44,7 @@ Stand-alone [DHCP](/index.php/DHCP "DHCP") clients:
 
 Openresolv can be configured to pass name servers and search domains to DNS resolvers. The supported resolvers are:
 
-*   [unbound](/index.php/Unbound "Unbound")
+*   [Unbound](/index.php/Unbound "Unbound")
 *   [dnsmasq#openresolv](/index.php/Dnsmasq#openresolv "Dnsmasq")
 *   [BIND](/index.php/BIND "BIND")
 *   [pdnsd](/index.php/Pdnsd "Pdnsd")
