@@ -183,12 +183,22 @@ By default, only English language dictionaries are installed. More dictionaries 
 If you want the cursor to [appear in its previous position](http://vim.wikia.com/wiki/Restore_cursor_to_file_position_in_previous_editing_session) after you open a file, add the following to your `~/.vimrc`:
 
 ```
-augroup resCur
-  autocmd!
-  autocmd BufReadPost * call setpos(".", getpos("'\""))
-augroup END
+set viminfo='10,\"100,:100,%,n~/.viminfo
 
 ```
+
+where each parameter is identified by an identifier:
+
+```
+ 'q  : q, number of edited file remembered
+ \"m : m, number of lines saved for each register
+ :p  : p, number of  history cmd lines remembered
+ %   : saves and restore the buffer list
+ n...: fully qualified path to the  `.viminfo` files (note this is a literal "*n*")
+
+```
+
+For this to work the version of `vim` you installed must have been compiled with the `viminfo` module.
 
 ### Replace vi command with Vim
 

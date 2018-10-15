@@ -363,7 +363,7 @@ Afterwards, restart gitlab-related services:
 
 ### Basic SSH
 
-After completing the basic installation, set up SSH access for users. Configuration for [OpenSSH](/index.php/Secure_Shell#OpenSSH "Secure Shell") is described below. [Other SSH clients and servers](/index.php/Secure_Shell#Other_SSH_clients_and_servers "Secure Shell") will require different modifications.
+After completing the basic installation, set up SSH access for users. Configuration for [OpenSSH](/index.php/OpenSSH "OpenSSH") is described below. [Other SSH clients and servers](/index.php/Secure_Shell#Other_SSH_clients_and_servers "Secure Shell") will require different modifications.
 
 For tips on adding user SSH keys, the process is well-documented on the [GitLab](https://docs.gitlab.com/ee/ssh/) website. You can check the administrator logs at `/var/lib/gitlab/log/gitlab-shell.log` to confirm user SSH keys are being submitted properly. Behind the scenes, GitLab adds these keys to its *authorized_keys* file in `/var/lib/gitlab/.ssh/authorized_keys`.
 

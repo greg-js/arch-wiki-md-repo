@@ -210,7 +210,7 @@ Antes de iniciar la instalación, las claves de pacman deben ser configuradas. A
 
 #### Instalación
 
-Siga la [guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") sobre el [montaje de los sistemas de archivos](/index.php/Installation_guide_(Espa%C3%B1ol)#Montaje_de_los_sistemas_de_archivos "Installation guide (Español)") y la [instalación de los paquetes del sistema base](/index.php/Installation_guide_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_los_paquetes_del_sistema_base "Installation guide (Español)").
+Siga la [guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") sobre el [montaje de los sistemas de archivos](/index.php/Installation_guide_(Espa%C3%B1ol)#Montar_los_sistemas_de_archivos "Installation guide (Español)") y la [instalación de los paquetes del sistema base](/index.php/Installation_guide_(Espa%C3%B1ol)#Instalar_los_paquetes_del_sistema_base "Installation guide (Español)").
 
 ##### Anfitrión basado en Debian
 
@@ -233,7 +233,7 @@ En Debian, los puntos de /dev/shm a /run/shm. Sin embargo, en el chroot basado e
 
 #### Configurar el sistema
 
-A partír de aquí, basta con seguir la [guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") desde [Montaje de los sistemas de archivos](/index.php/Installation_guide_(Espa%C3%B1ol)#Montaje_de_los_sistemas_de_archivos "Installation guide (Español)").
+A partír de aquí, basta con seguir la [guía de instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") desde [Montaje de los sistemas de archivos](/index.php/Installation_guide_(Espa%C3%B1ol)#Montar_los_sistemas_de_archivos "Installation guide (Español)").
 
 ## Sustituir el sistema existente sin un LiveCD
 

@@ -72,7 +72,7 @@ $ vncserver -kill :1
 
 #### Editar el archivo xstartup
 
-El archivo fuente de Vncserver es `~/.vnc/xstartup` que funciona como un archivo [.xinitrc](/index.php/.xinitrc ".xinitrc"). Como mínimo, los usuarios deben definir un entorno de escritorio para empezar, si se desea un entorno gráfico. Por ejemplo, para iniciar xfce4:
+El archivo fuente de Vncserver es `~/.vnc/xstartup` que funciona como un archivo [.xinitrc](/index.php/.xinitrc_(Espa%C3%B1ol) ".xinitrc (Español)"). Como mínimo, los usuarios deben definir un entorno de escritorio para empezar, si se desea un entorno gráfico. Por ejemplo, para iniciar xfce4:
 
 ```
 #!/bin/sh

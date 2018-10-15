@@ -25,27 +25,27 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
     *   [4.2 Fastboot](#Fastboot)
     *   [4.3 Intel GVT-g Graphics Virtualization Support](#Intel_GVT-g_Graphics_Virtualization_Support)
 *   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Tear-free video](#Tear-free_video)
-    *   [5.2 Disable Vertical Synchronization (VSYNC)](#Disable_Vertical_Synchronization_.28VSYNC.29)
-    *   [5.3 Setting scaling mode](#Setting_scaling_mode)
-    *   [5.4 KMS Issue: console is limited to small area](#KMS_Issue:_console_is_limited_to_small_area)
-    *   [5.5 Hardware accelerated H.264 decoding on GMA 4500](#Hardware_accelerated_H.264_decoding_on_GMA_4500)
-    *   [5.6 Setting brightness and gamma](#Setting_brightness_and_gamma)
+    *   [5.1 Setting scaling mode](#Setting_scaling_mode)
+    *   [5.2 Hardware accelerated H.264 decoding on GMA 4500](#Hardware_accelerated_H.264_decoding_on_GMA_4500)
+    *   [5.3 Setting brightness and gamma](#Setting_brightness_and_gamma)
 *   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 SNA issues](#SNA_issues)
-    *   [6.2 DRI3 issues](#DRI3_issues)
-    *   [6.3 Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)](#Font_and_screen_corruption_in_GTK.2B_applications_.28missing_glyphs_after_suspend.2Fresume.29)
-    *   [6.4 Blank screen during boot, when "Loading modules"](#Blank_screen_during_boot.2C_when_.22Loading_modules.22)
-    *   [6.5 X freeze/crash with intel driver](#X_freeze.2Fcrash_with_intel_driver)
-    *   [6.6 Baytrail complete freeze](#Baytrail_complete_freeze)
-    *   [6.7 Adding undetected resolutions](#Adding_undetected_resolutions)
-    *   [6.8 Weathered colors (color range problem)](#Weathered_colors_.28color_range_problem.29)
-    *   [6.9 Backlight is not adjustable](#Backlight_is_not_adjustable)
-    *   [6.10 Corruption/Unresponsiveness in Chromium and Firefox](#Corruption.2FUnresponsiveness_in_Chromium_and_Firefox)
-    *   [6.11 Kernel crashing w/kernels 4.0+ on Broadwell/Core-M chips](#Kernel_crashing_w.2Fkernels_4.0.2B_on_Broadwell.2FCore-M_chips)
-    *   [6.12 Lag in Windows guests](#Lag_in_Windows_guests)
-    *   [6.13 Screen flickering](#Screen_flickering)
-    *   [6.14 OpenGL 2.1 with i915 driver](#OpenGL_2.1_with_i915_driver)
+    *   [6.1 Tearing](#Tearing)
+    *   [6.2 Disable Vertical Synchronization (VSYNC)](#Disable_Vertical_Synchronization_.28VSYNC.29)
+    *   [6.3 SNA issues](#SNA_issues)
+    *   [6.4 DRI3 issues](#DRI3_issues)
+    *   [6.5 Font and screen corruption in GTK+ applications (missing glyphs after suspend/resume)](#Font_and_screen_corruption_in_GTK.2B_applications_.28missing_glyphs_after_suspend.2Fresume.29)
+    *   [6.6 Blank screen during boot, when "Loading modules"](#Blank_screen_during_boot.2C_when_.22Loading_modules.22)
+    *   [6.7 X freeze/crash with intel driver](#X_freeze.2Fcrash_with_intel_driver)
+    *   [6.8 Baytrail complete freeze](#Baytrail_complete_freeze)
+    *   [6.9 Adding undetected resolutions](#Adding_undetected_resolutions)
+    *   [6.10 Weathered colors (color range problem)](#Weathered_colors_.28color_range_problem.29)
+    *   [6.11 Backlight is not adjustable](#Backlight_is_not_adjustable)
+    *   [6.12 Corruption/Unresponsiveness in Chromium and Firefox](#Corruption.2FUnresponsiveness_in_Chromium_and_Firefox)
+    *   [6.13 Kernel crashing w/kernels 4.0+ on Broadwell/Core-M chips](#Kernel_crashing_w.2Fkernels_4.0.2B_on_Broadwell.2FCore-M_chips)
+    *   [6.14 Lag in Windows guests](#Lag_in_Windows_guests)
+    *   [6.15 Screen flickering](#Screen_flickering)
+    *   [6.16 OpenGL 2.1 with i915 driver](#OpenGL_2.1_with_i915_driver)
+    *   [6.17 KMS Issue: console is limited to small area](#KMS_Issue:_console_is_limited_to_small_area)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -208,48 +208,6 @@ options i915 enable_gvt=1
 
 ## Tips and tricks
 
-### Tear-free video
-
-The SNA acceleration method causes tearing for some people. To fix this, enable the `"TearFree"` option in the driver by adding the following line to your [configuration file](#Xorg_configuration):
-
- `/etc/X11/xorg.conf.d/20-intel.conf` 
-```
-Section "Device"
-  Identifier  "Intel Graphics"
-  Driver      "intel"
-  Option      "TearFree" "true"
-EndSection
-```
-
-See the [original bug report](https://bugs.freedesktop.org/show_bug.cgi?id=37686) for more info.
-
-**Note:**
-
-*   This option may not work when `SwapbuffersWait` is `false`.
-*   This option may increases memory allocation considerably and reduce performance. [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=37686#c123)
-*   This option is problematic for applications that are very picky about vsync timing, like [Super Meat Boy](https://en.wikipedia.org/wiki/Super_Meat_Boy "wikipedia:Super Meat Boy").
-*   This option does not work with UXA acceleration method, only with SNA.
-
-### Disable Vertical Synchronization (VSYNC)
-
-Useful when:
-
-*   Chomium/Chrome has lags and slow performance due to GPU and runs smoothly with --disable-gpu switch
-*   glxgears test does not show desired performance
-
-The intel-driver uses [Triple Buffering](http://www.intel.com/support/graphics/sb/CS-004527.htm) for vertical synchronization, this allows for full performance and avoids tearing. To turn vertical synchronization off (e.g. for benchmarking) use this `.drirc` in your home directory:
-
- `~/.drirc` 
-```
-<device screen="0" driver="dri2">
-	<application name="Default">
-		<option name="vblank_mode" value="0"/>
-	</application>
-</device>
-```
-
-**Warning:** Do not use [driconf](https://www.archlinux.org/packages/?name=driconf) to create this file. It is buggy and will set the wrong driver.
-
 ### Setting scaling mode
 
 This can be useful for some full screen applications:
@@ -274,23 +232,59 @@ $ xrandr --output LVDS1 --set "scaling mode" *param*
 
 where `*param*` is one of `"Full"`, `"Center"` or `"Full aspect"`.
 
-**Note:** This option currently does not work for external displays (e.g. VGA, DVI, HDMI, DP). [[6]](https://bugs.freedesktop.org/show_bug.cgi?id=90989)
-
-### KMS Issue: console is limited to small area
-
-One of the low-resolution video ports may be enabled on boot which is causing the terminal to utilize a small area of the screen. To fix, explicitly disable the port with an i915 module setting with `video=SVIDEO-1:d` in the kernel command line parameter in the bootloader. See [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for more info.
-
-If that does not work, try disabling TV1 or VGA1 instead of SVIDEO-1\. Video port names can be listed with [xrandr](/index.php/Xrandr "Xrandr").
+**Note:** This option currently does not work for external displays (e.g. VGA, DVI, HDMI, DP). [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=90989)
 
 ### Hardware accelerated H.264 decoding on GMA 4500
 
-The [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) package only provides hardware accelerated MPEG-2 decoding for GMA 4500 series GPUs. The H.264 decoding support is maintained in a separated g45-h264 branch, which can be used by installing [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) package. Note however that this support is experimental and its development has been abandoned. Using the VA-API with this driver on a GMA 4500 series GPU will offload the CPU but may not result in as smooth a playback as non-accelerated playback. Tests using mplayer showed that using vaapi to play back an H.264 encoded 1080p video halved the CPU load (compared to the XV overlay) but resulted in very choppy playback, while 720p worked reasonably well [[7]](https://bbs.archlinux.org/viewtopic.php?id=150550). This is echoed by other experiences [[8]](http://www.emmolution.org/?p=192&cpage=1#comment-12292). Setting the preallocated video ram size higher in bios results in much better hardware decoded playback. Even 1080p h264 works well if this is done. Smooth playback (1080p/720p) works also with [mpv-git](https://aur.archlinux.org/packages/mpv-git/) in combination with [ffmpeg-git](https://aur.archlinux.org/packages/ffmpeg-git/) and [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/). With MPV and the Firefox plugin "Watch with MPV"[[9]](https://addons.mozilla.org/de/firefox/addon/watch-with-mpv/) it is possible to watch hardware accelerated YouTube videos.
+The [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) package only provides hardware accelerated MPEG-2 decoding for GMA 4500 series GPUs. The H.264 decoding support is maintained in a separated g45-h264 branch, which can be used by installing [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) package. Note however that this support is experimental and its development has been abandoned. Using the VA-API with this driver on a GMA 4500 series GPU will offload the CPU but may not result in as smooth a playback as non-accelerated playback. Tests using mplayer showed that using vaapi to play back an H.264 encoded 1080p video halved the CPU load (compared to the XV overlay) but resulted in very choppy playback, while 720p worked reasonably well [[6]](https://bbs.archlinux.org/viewtopic.php?id=150550). This is echoed by other experiences [[7]](http://www.emmolution.org/?p=192&cpage=1#comment-12292). Setting the preallocated video ram size higher in bios results in much better hardware decoded playback. Even 1080p h264 works well if this is done. Smooth playback (1080p/720p) works also with [mpv-git](https://aur.archlinux.org/packages/mpv-git/) in combination with [ffmpeg-git](https://aur.archlinux.org/packages/ffmpeg-git/) and [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/). With MPV and the Firefox plugin "Watch with MPV"[[8]](https://addons.mozilla.org/de/firefox/addon/watch-with-mpv/) it is possible to watch hardware accelerated YouTube videos.
 
 ### Setting brightness and gamma
 
 See [Backlight](/index.php/Backlight "Backlight").
 
 ## Troubleshooting
+
+### Tearing
+
+The SNA acceleration method causes tearing on some machines. To fix this, enable the `"TearFree"` option in the driver by adding the following line to your [configuration file](#Xorg_configuration):
+
+ `/etc/X11/xorg.conf.d/20-intel.conf` 
+```
+Section "Device"
+  Identifier  "Intel Graphics"
+  Driver      "intel"
+  Option      "TearFree" "true"
+EndSection
+```
+
+See the [original bug report](https://bugs.freedesktop.org/show_bug.cgi?id=37686) for more info.
+
+**Note:**
+
+*   This option may not work when `SwapbuffersWait` is `false`.
+*   This option may increases memory allocation considerably and reduce performance. [[9]](https://bugs.freedesktop.org/show_bug.cgi?id=37686#c123)
+*   This option is problematic for applications that are very picky about vsync timing, like [Super Meat Boy](https://en.wikipedia.org/wiki/Super_Meat_Boy "wikipedia:Super Meat Boy").
+*   This option does not work with UXA acceleration method, only with SNA.
+
+### Disable Vertical Synchronization (VSYNC)
+
+Useful when:
+
+*   Chomium/Chrome has lags and slow performance due to GPU and runs smoothly with --disable-gpu switch
+*   glxgears test does not show desired performance
+
+The intel-driver uses [Triple Buffering](http://www.intel.com/support/graphics/sb/CS-004527.htm) for vertical synchronization, this allows for full performance and avoids tearing. To turn vertical synchronization off (e.g. for benchmarking) use this `.drirc` in your home directory:
+
+ `~/.drirc` 
+```
+<device screen="0" driver="dri2">
+	<application name="Default">
+		<option name="vblank_mode" value="0"/>
+	</application>
+</device>
+```
+
+**Warning:** Do not use [driconf](https://www.archlinux.org/packages/?name=driconf) to create this file. It is buggy and will set the wrong driver.
 
 ### SNA issues
 
@@ -470,6 +464,12 @@ The update of [mesa](https://www.archlinux.org/packages/?name=mesa) from version
 ```
 
 **Note:** the reason of this step back was Chromium and other apps bad experience. If needed, you might edit the drirc file in a "app-specific" style, see [here](https://dri.freedesktop.org/wiki/ConfigurationInfrastructure/), to disable gl2.1 on executable chromium for instance.
+
+### KMS Issue: console is limited to small area
+
+One of the low-resolution video ports may be enabled on boot which is causing the terminal to utilize a small area of the screen. To fix, explicitly disable the port with an i915 module setting with `video=SVIDEO-1:d` in the kernel command line parameter in the bootloader. See [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") for more info.
+
+If that does not work, try disabling TV1 or VGA1 instead of SVIDEO-1\. Video port names can be listed with [xrandr](/index.php/Xrandr "Xrandr").
 
 ## See also
 

@@ -102,7 +102,7 @@ See [Openbox Menus](http://openbox.org/wiki/Help:Menus) for further help on crea
 
 ### Volume control
 
-Tint2 does not come with a volume control applet. See [List_of_applications/Multimedia#Volume_control](/index.php/List_of_applications/Multimedia#Volume_control "List of applications/Multimedia").
+Tint2 does not come with a volume control applet. See [List of applications/Multimedia#Volume control](/index.php/List_of_applications/Multimedia#Volume_control "List of applications/Multimedia").
 
 ## Running tint2
 

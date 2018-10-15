@@ -97,7 +97,7 @@ Los ejemplos de las secciones siguientes producirán el mismo resultado, esto es
 
 ### Utilizar setxkbmap
 
-La herramienta *setxkbmap* establece la distribución del teclado para un servidor X activo y mantiene la configuración solo durante la sesión en curso. No obstante, puede utilizarse [xinitrc](/index.php/Xinitrc "Xinitrc") para hacer que la configuración se mantenga después de los reinicios. Esto último es útil para establecer una configuración específica para nuestra sesión de usuario distinta de la establecida para todo el sistema por los [archivos de configuración de X](#Using_X_configuration_files).
+La herramienta *setxkbmap* establece la distribución del teclado para un servidor X activo y mantiene la configuración solo durante la sesión en curso. No obstante, puede utilizarse [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") para hacer que la configuración se mantenga después de los reinicios. Esto último es útil para establecer una configuración específica para nuestra sesión de usuario distinta de la establecida para todo el sistema por los [archivos de configuración de X](#Using_X_configuration_files).
 
 Su uso es como sigue:
 
@@ -223,7 +223,7 @@ $ xset r rate *delay* [*rate*]
 
 ```
 
-Por ejemplo, para establecer una cadencia typematic de 200ms y una tasa typematic de 30Hz, utilice la siguiente orden (use [xinitrc](/index.php/Xinitrc "Xinitrc") para mantener permanente la configuración):
+Por ejemplo, para establecer una cadencia typematic de 200ms y una tasa typematic de 30Hz, utilice la siguiente orden (use [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") para mantener permanente la configuración):
 
 ```
 $ xset r rate 200 30

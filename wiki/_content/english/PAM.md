@@ -154,7 +154,7 @@ PAM modules from the [Official repositories](/index.php/Official_repositories "O
 
 	is an article about integrating LDAP client or server-side authentication with `pam_ldap.so`.
 
-*   [Yubikey#Two-factor authentication with SSH](/index.php/Yubikey#Two-factor_authentication_with_SSH "Yubikey")
+*   [YubiKey#Two-factor authentication with SSH](/index.php/YubiKey#Two-factor_authentication_with_SSH "YubiKey")
 
 	relies on `pam_yubico.so` in the PAM stack to enable authentication via the proprietary Yubikey.
 

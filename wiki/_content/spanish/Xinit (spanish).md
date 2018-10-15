@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Xinit](/index.php/Xinit "Xinit"), revisada por última vez el **2018-10-12**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Xinit&diff=0&oldid=535133) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Xinit](/index.php/Xinit "Xinit"), revisada por última vez el **2018-10-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Xinit&diff=0&oldid=535133) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -24,11 +24,11 @@ De [Wikipedia](https://en.wikipedia.org/wiki/es:xinit "wikipedia:es:xinit"):
     *   [2.2 xserverrc](#xserverrc)
 *   [3 Utilización](#Utilizaci.C3.B3n)
 *   [4 Inicio automático de X al inicio de sesión](#Inicio_autom.C3.A1tico_de_X_al_inicio_de_sesi.C3.B3n)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Override xinitrc from command line](#Override_xinitrc_from_command_line)
-    *   [5.2 Switching between desktop environments/window managers](#Switching_between_desktop_environments.2Fwindow_managers)
-    *   [5.3 Starting applications without a window manager](#Starting_applications_without_a_window_manager)
-    *   [5.4 Output redirection using startx](#Output_redirection_using_startx)
+*   [5 Consejos y trucos](#Consejos_y_trucos)
+    *   [5.1 Sobrescribir xinitrc desde la línea de órdenes](#Sobrescribir_xinitrc_desde_la_l.C3.ADnea_de_.C3.B3rdenes)
+    *   [5.2 Cambio entre entornos de escritorio/gestores de ventanas](#Cambio_entre_entornos_de_escritorio.2Fgestores_de_ventanas)
+    *   [5.3 Inicio de aplicaciones sin un administrador de ventanas](#Inicio_de_aplicaciones_sin_un_administrador_de_ventanas)
+    *   [5.4 Redirección de salida utilizando startx.](#Redirecci.C3.B3n_de_salida_utilizando_startx.)
 
 ## Instalación
 
@@ -140,75 +140,75 @@ Véase también [Fish#Start X at login](/index.php/Fish#Start_X_at_login "Fish")
 
 **Sugerencia:** Este método se puede combinar con el [inicio de sesión automático a la consola virtual](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console").
 
-## Tips and tricks
+## Consejos y trucos
 
-### Override xinitrc from command line
+### Sobrescribir xinitrc desde la línea de órdenes
 
-If you have a working `~/.xinitrc`, but just want to try other window manager or desktop environment, you can run it by issuing *startx* followed by the path to the window manager:
+Si tiene un `~/.xinitrc` en funcionamiento, pero solo desea probar otro administrador de ventanas o entorno de escritorio, puede ejecutarlo introduciendo *startx* seguido de la ruta al administrador de ventanas:
 
 ```
 $ startx /full/path/to/window-manager
 
 ```
 
-If the window manager takes arguments, they need to be quoted to be recognized as part of the first parameter of *startx*:
+Si el administrador de ventanas tiene argumentos, deben citarse para ser reconocidos como parte del primer parámetro de *startx*:
 
 ```
 $ startx "/full/path/to/window-manager --key value"
 
 ```
 
-Note that the full path is **required**. Optionally, you can also specify custom options for [#xserverrc](#xserverrc) script by appending them after `--`, e.g.:
+Tenga en cuenta que se **requiere** la ruta completa. Opcionalmente, también puede especificar opciones personalizadas para el script [#xserverrc](#xserverrc) añadiéndolas después de `--`, por ejemplo:
 
 ```
 $ startx /usr/bin/enlightenment -- -br +bs -dpi 96
 
 ```
 
-See also [startx(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1).
+Véase también [startx(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1).
 
-**Tip:** This can be used even to start a regular GUI programs but without any of the window manager features. See also [#Starting applications without a window manager](#Starting_applications_without_a_window_manager) and [Running program in separate X display](/index.php/Running_program_in_separate_X_display "Running program in separate X display").
+**Sugerencia:** Esto se puede utilizar incluso para iniciar un programa gráfico normal pero sin ninguna de las funciones del administrador de ventanas. Véase también [#Inicio de aplicaciones sin un administrador de ventanas](#Inicio_de_aplicaciones_sin_un_administrador_de_ventanas) y [Ejecutando programa en una pantalla X separada](/index.php/Running_program_in_separate_X_display "Running program in separate X display")
 
-### Switching between desktop environments/window managers
+### Cambio entre entornos de escritorio/gestores de ventanas
 
-If you are frequently switching between different desktop environments or window managers, it is convenient to either use a [display manager](/index.php/Display_manager "Display manager") or expand `.xinitrc` to make the switching possible.
+Si está cambiando con frecuencia entre diferentes entornos de escritorio o administradores de ventanas, es conveniente utilizar un [administrador de pantalla](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") o expandir `.xinitrc` para hacer posible el cambio.
 
-The following example `~/.xinitrc` shows how to start a particular desktop environment or window manager with an argument:
+El siguiente `~/.xinitrc` de ejemplo muestra como iniciar un entorno de escritorio o administrador de ventanas en particular con un argumento:
 
  `~/.xinitrc` 
 ```
 ...
 
-# Here Xfce is kept as default
+# Aquí Xfce se mantiene por defecto
 session=${1:-xfce}
 
 case $session in
     i3|i3wm           ) exec i3;;
     kde               ) exec startkde;;
     xfce|xfce4        ) exec startxfce4;;
-    # No known session, try to run it as command
+    # No hay sesión conocida, intento ejecutarlo como orden
     *                 ) exec $1;;
 esac
 
 ```
 
-To pass the argument *session*:
+Para pasar el argumento *session*:
 
 ```
 $ xinit *session*
 
 ```
 
-or
+o
 
 ```
 $ startx ~/.xinitrc *session*
 
 ```
 
-### Starting applications without a window manager
+### Inicio de aplicaciones sin un administrador de ventanas
 
-It is possible to start only specific applications without a window manager, although most likely this is only useful with a single application shown in full-screen mode. For example:
+Es posible iniciar solo aplicaciones específicas sin un administrador de ventanas, aunque lo más probable es que esto solo sea útil con una sola aplicación que se muestre en modo de pantalla completa. Por ejemplo:
 
  `~/.xinitrc` 
 ```
@@ -218,12 +218,12 @@ exec chromium
 
 ```
 
-With this method you need to set each application window's geometry through its own configuration files, if possible at all.
+Con este método, debe establecer la geometría de cada ventana de la aplicación a través de sus propios archivos de configuración, si es posible.
 
-**Tip:** This method can be useful to launch graphical games, especially on systems where excluding the memory or CPU usage of a window manager or desktop environment, and possible accessory applications, can help improve the game's execution performance.
+**Sugerencia:** Este método puede ser útil para lanzar juegos gráficos, especialmente en sistemas donde excluir el uso de la memoria o la CPU de un administrador de ventanas o entorno de escritorio, y posibles aplicaciones accesorias, puede ayudar a mejorar el rendimiento del juego.
 
-See also [Display manager#Starting applications without a window manager](/index.php/Display_manager#Starting_applications_without_a_window_manager "Display manager").
+Véase también [Display manager#Starting applications without a window manager](/index.php/Display_manager#Starting_applications_without_a_window_manager "Display manager").
 
-### Output redirection using startx
+### Redirección de salida utilizando startx.
 
-See [Xorg#Broken redirection](/index.php/Xorg#Broken_redirection "Xorg") for details.
+Véase [Xorg#Broken redirection](/index.php/Xorg#Broken_redirection "Xorg") para más detalles.

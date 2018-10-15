@@ -32,6 +32,7 @@ Related articles
             *   [4.6.1.2 Set default DHCP client](#Set_default_DHCP_client)
     *   [4.7 Minimal WPAConfigSection](#Minimal_WPAConfigSection)
     *   [4.8 resolv.conf](#resolv.conf)
+    *   [4.9 Starting netctl-auto on insertion of pluggable WiFi module (usually USB)](#Starting_netctl-auto_on_insertion_of_pluggable_WiFi_module_.28usually_USB.29)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Job for netctl@wlan(...).service failed](#Job_for_netctl.40wlan.28....29.service_failed)
     *   [5.2 dhcpcd: ipv4_addroute: File exists](#dhcpcd:_ipv4_addroute:_File_exists)
@@ -443,6 +444,12 @@ WPAConfigSection=(
 ### resolv.conf
 
 If you use `DNS*` options in your profile, *netctl* calls [resolvconf](/index.php/Resolvconf "Resolvconf") to overwrite [resolv.conf](/index.php/Resolv.conf "Resolv.conf").
+
+### Starting netctl-auto on insertion of pluggable WiFi module (usually USB)
+
+When you unplug a USB WiFi dongle, netctl-auto reacts intelligently by stopping netctl-auto@interface.service and wpa_actiond. But when plugging interface back in, netctl-auto@interface.service doesn't auto-start. The following (example) [udev](/index.php/Udev "Udev") rule can help:
+
+ `$ cat /etc/udev/rules.d/13-start-netctl-auto-on-wifi-plug.rules `  `ACTION=="move",  ENV{SUBSYSTEM}=="net", ENV{INTERFACE}=="wlp0s20u1", TAG+="systemd",  ENV{SYSTEMD_WANTS}="netctl-auto@wlp0s20u1.service"` 
 
 ## Troubleshooting
 

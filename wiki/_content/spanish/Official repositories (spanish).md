@@ -13,13 +13,13 @@ Un [repositorio de software](https://en.wikipedia.org/wiki/es:Repositorio "wikip
 ## Contents
 
 *   [1 Antecedentes históricos](#Antecedentes_hist.C3.B3ricos)
-*   [2 [core]](#.5Bcore.5D)
-*   [3 [extra]](#.5Bextra.5D)
-*   [4 [community]](#.5Bcommunity.5D)
+*   [2 Core](#Core)
+*   [3 Extra](#Extra)
+*   [4 Community](#Community)
 *   [5 multilib](#multilib)
-*   [6 [testing]](#.5Btesting.5D)
-*   [7 [community-testing]](#.5Bcommunity-testing.5D)
-*   [8 [multilib-testing]](#.5Bmultilib-testing.5D)
+*   [6 Testing](#Testing)
+*   [7 Community-testing](#Community-testing)
+*   [8 Multilib-testing](#Multilib-testing)
 
 ## Antecedentes históricos
 
@@ -37,7 +37,7 @@ Después de [numerosos problemas](https://www.archlinux.org/news/please-avoid-ke
 
 A finales 2009, principios de 2010, con la llegada de unos nuevos sistemas de archivos y el deseo de apoyarlos durante la instalación, junto con la conciencia de que [core] nunca se definió claramente (simplemente «paquetes importantes, seleccionados por los desarrolladores»), los repositorios recibieron una descripción más precisa (véase más adelante).
 
-## [core]
+## Core
 
 Este depósito se encuentra en `.../core/os/` desde su mirror favorito.
 
@@ -58,13 +58,13 @@ Contiene paquetes que:
 
 **Nota:** Este depósito era incluido en los soportes de instalación, por lo que podía construirse un sistema de base totalmente funcional sin acceso a Internet. Esto ya no es posible. El acceso a Internet se necesario ahora con el fin de instalar un nuevo sistema. Véase [esto](/index.php/Pacman_tips#Installing_packages_from_a_CD.2FDVD_or_USB_stick "Pacman tips") si desea crear un repositorio local con paquetes desde [core] o desde cualquiera de los otros repositorios.
 
-## [extra]
+## Extra
 
 Este depósito se encuentra en `.../extra/os/` desde su mirror favorito.
 
 Contiene todos los paquetes que no se ajustan a los requisitos para estar en [core]. Por ejemplo: Xorg, gestores de ventanas, navegadores Web, reproductores multimedia, herramientas para trabajar con lenguajes como Python y Ruby, y mucho otros.
 
-## [community]
+## Community
 
 Este depósito se encuentra en `.../community/os/` con su mirror favorito.
 
@@ -78,7 +78,7 @@ Contiene el software de 32 bits y las bibliotecas que se pueden utilizar para ej
 
 Para obtener más información, véase [Multilib](/index.php/Multilib "Multilib").
 
-## [testing]
+## Testing
 
 **Advertencia:** Tenga cuidado al activar el repositorio [testing]. Su sistema puede volverse inestable después de realizar una actualización. Solo los usuarios experimentados que saben cómo hacer frente a una potencial rotura del sistema deben utilizarlo.
 
@@ -98,13 +98,13 @@ Tenga en cuenta que no se trata de un repositorio que contenga «la más recient
 
 Si activa [testing], también debe activar [community-testing].
 
-## [community-testing]
+## Community-testing
 
 Este repositorio es como el repositorio [testing] pero con los paquetes que son candidatos para el repositorio [community].
 
 Si lo activa, también tiene que activar [testing].
 
-## [multilib-testing]
+## Multilib-testing
 
 Este repositorio es como el repositorio [testing] pero con los paquetes que son candidatos para el repositorio [multilib].
 

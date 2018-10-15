@@ -91,7 +91,7 @@ unset DBUS_SESSION_BUS_ADDRESS
 exec startxfce4
 ```
 
-Some desktop environments may require [D-Bus](/index.php/D-Bus "D-Bus") session. For example, starting [Gnome](/index.php/Gnome "Gnome"):
+Some desktop environments may require [D-Bus](/index.php/D-Bus "D-Bus") session. For example, starting [GNOME](/index.php/GNOME "GNOME"):
 
  `~/.vnc/xstartup` 
 ```
@@ -104,7 +104,7 @@ exec dbus-launch gnome-session
 Make sure `~/.vnc/xstartup` has a execute permission:
 
 ```
-chmod u+x ~/.vnc/xstartup
+$ chmod u+x ~/.vnc/xstartup
 
 ```
 
@@ -155,9 +155,10 @@ ExecStop=/usr/bin/vncserver -kill %i
 WantedBy=multi-user.target
 ```
 
-**Note:** If you plan to use [Xfce](/index.php/Xfce "Xfce") desktop environment on VNC server then [D-Bus](/index.php/D-Bus "D-Bus") starting before VNC server may be required. Just add `ExecStartPre=/usr/bin/dbus-launch` entry in `[Service]` section of unit file.
+**Note:**
 
-**Note:** Do not run this service if your local area network is untrusted.
+*   If you plan to use [Xfce](/index.php/Xfce "Xfce") desktop environment on VNC server then [D-Bus](/index.php/D-Bus "D-Bus") starting before VNC server may be required. Just add `ExecStartPre=/usr/bin/dbus-launch` entry in `[Service]` section of unit file.
+*   Do not run this service if your local area network is untrusted.
 
 [Start](/index.php/Start "Start") `vncserver@*:1*.service` and optionally [enable](/index.php/Enable "Enable") it to run at boot time/shutdown.
 

@@ -433,6 +433,8 @@ You may need to [start](/index.php/Start "Start") `winbind.service` in order to 
 
 The [smbclient](https://www.archlinux.org/packages/?name=smbclient) package provides a driver to resolve host names using WINS. To enable it, add `wins` to the “hosts” line in `/etc/nsswitch.conf`.
 
+You can test WINS resolution with `nmblookup`. Note that WINS resolution requires incoming traffic originating from port 137.
+
 #### Disable NetBIOS/WINS support
 
 When not using NetBIOS/WINS host name resolution, it may be preferred to disable this protocol:

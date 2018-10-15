@@ -1,7 +1,7 @@
 **Note:** This page far from completed. Some not mentioned items could be same as [XPS 15 9560](/index.php/XPS_15_9560 "XPS 15 9560")
 
 | **Device/Functionality** | **Status** |
-| [Suspend](#Suspend_and_Hibernate) | Buggy |
+| [Suspend](#Suspend) | Buggy |
 | [Hibernate](#Suspend_and_Hibernate) | Not tested |
 | [Integrated Graphics](#Graphics) | Working |
 | [Discrete Nvidia Graphics](#Graphics) | Buggy |
@@ -14,8 +14,32 @@
 | Card Reader | Working |
 | Function/Multimedia Keys | Working |
 | [Power Management](#Power_Saving) | Buggy |
-| [EFI firmware updates](#UEFI) | Not tested |
+| [EFI firmware updates](#EFI_firmware_updates) | Working |
 | [Fingerprint reader](#Fingerprint_reader) | Not working |
+
+## Contents
+
+*   [1 Suspend](#Suspend)
+*   [2 Graphics](#Graphics)
+    *   [2.1 bbswitch](#bbswitch)
+*   [3 EFI firmware updates](#EFI_firmware_updates)
+
+## Suspend
+
+By default, the very inefficient s2idle suspend variant is incorrectly selected. This is probably due to the BIOS. The much more efficient deep variant should be selected instead:
+
+```
+ $ cat /sys/power/mem_sleep 
+ [s2idle] deep
+ $ echo s2idle|sudo tee /sys/power/mem_sleep
+ $ cat /sys/power/mem_sleep 
+ s2idle [deep]
+
+```
+
+To make the change permanent add `mem_sleep_default=deep` to your kernel parameters.
+
+Read more regarding the sleep variants on the kernel documentation [[1]](https://www.kernel.org/doc/html/v4.18/admin-guide/pm/sleep-states.html).
 
 ## Graphics
 
@@ -23,4 +47,8 @@ Integrated graphics works well out of the box.
 
 ### bbswitch
 
-Discrete (GeForce GTX 1050 Ti) graphics card do not work well with bbswich. It won't power on/off (see *[[1]](https://bbs.archlinux.org/viewtopic.php?id=238389))
+Discrete (GeForce GTX 1050 Ti) graphics card do not work well with bbswich. It won't power on/off (see *[[2]](https://bbs.archlinux.org/viewtopic.php?id=238389))
+
+## EFI firmware updates
+
+This device is supported by [Fwupd](/index.php/Fwupd "Fwupd").

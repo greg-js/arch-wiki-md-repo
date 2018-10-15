@@ -95,7 +95,7 @@ Las soluciones siguientes están disponibles:
 
 ### Manual
 
-Para iniciar Plasma con [xinit](/index.php/Xinit "Xinit")/*startx*, añada `exec startkde` a su archivo `.xinitrc`. Si desea iniciar Xorg en el inicio de sesión, consulte arrancar X al iniciar sesión [Start X at login](/index.php/Start_X_at_login "Start X at login"). Para iniciar una sesión de Plasma en Wayland desde una consola, ejecute `startplasmacompositor`.
+Para iniciar Plasma con [xinit](/index.php/Xinit_(Espa%C3%B1ol) "Xinit (Español)")/*startx*, añada `exec startkde` a su archivo `.xinitrc`. Si desea iniciar Xorg en el inicio de sesión, véase [arrancar X al iniciar sesión](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)"). Para iniciar una sesión de Plasma en Wayland desde una consola, ejecute `startplasmacompositor`.
 
 ## Configuración
 

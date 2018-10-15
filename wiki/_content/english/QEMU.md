@@ -396,7 +396,7 @@ In Arch Linux, device files for raw partitions are, by default, owned by *root* 
 
 After doing so, you can attach the partition to a QEMU virtual machine as a virtual disk.
 
-However, things are a little more complicated if you want to have the *entire* virtual machine contained in a partition. In that case, there would be no disk image file to actually boot the virtual machine since you cannot install a bootloader to a partition that is itself formatted as a file system and not as a partitioned device with a MBR. Such a virtual machine can be booted either by specifying the [kernel](/index.php/Kernel "Kernel") and [initrd](/index.php/Initramfs "Initramfs") manually, or by simulating a disk with a MBR by using linear [RAID](/index.php/RAID "RAID").
+However, things are a little more complicated if you want to have the *entire* virtual machine contained in a partition. In that case, there would be no disk image file to actually boot the virtual machine since you cannot install a bootloader to a partition that is itself formatted as a file system and not as a partitioned device with a MBR. Such a virtual machine can be booted either by specifying the [kernel](/index.php/Kernel "Kernel") and [initrd](/index.php/Initrd "Initrd") manually, or by simulating a disk with a MBR by using linear [RAID](/index.php/RAID "RAID").
 
 #### By specifying kernel and initrd manually
 

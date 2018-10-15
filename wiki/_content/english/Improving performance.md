@@ -375,7 +375,7 @@ The performance of the Mesa drivers can be configured via [drirc](https://dri.fr
 
 As with CPUs, overclocking can directly improve performance, but is generally recommended against. There are several packages in the [AUR](/index.php/AUR "AUR"), such as [amdoverdrivectrl](https://aur.archlinux.org/packages/amdoverdrivectrl/) (ATI) and [nvclock](https://aur.archlinux.org/packages/nvclock/) (NVIDIA).
 
-See [AMDGPU#Overclocking](/index.php/AMDGPU#Overclocking "AMDGPU") or [NVIDIA/Tips_and_tricks#Enabling_overclocking](/index.php/NVIDIA/Tips_and_tricks#Enabling_overclocking "NVIDIA/Tips and tricks").
+See [AMDGPU#Overclocking](/index.php/AMDGPU#Overclocking "AMDGPU") or [NVIDIA/Tips and tricks#Enabling overclocking](/index.php/NVIDIA/Tips_and_tricks#Enabling_overclocking "NVIDIA/Tips and tricks").
 
 ## RAM and swap
 

@@ -13,7 +13,7 @@ Deacuerdo a [Wikipedia](https://en.wikipedia.org/wiki/Icewm "wikipedia:Icewm"), 
     *   [4.1 Menú](#Men.C3.BA)
     *   [4.2 Temas](#Temas)
 *   [5 Gestores de Archivos](#Gestores_de_Archivos)
-*   [6 See also](#See_also)
+*   [6 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
 ## Instalación
 
@@ -37,7 +37,7 @@ exec icewm-session
 
 ```
 
-Vea [xinitrc](/index.php/Xinitrc "Xinitrc") para mas información.
+Vea [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") para mas información.
 
 ## IceWM como WM para Escritorios
 
@@ -92,9 +92,9 @@ Se debe señalar que IceWM es un gestor de ventanas y por lo tanto no incluye un
 
 **Note:** Para una mejor lista de Gestores de Archivos, vea [File managers](/index.php/Category:File_managers "Category:File managers").
 
-## See also
+## Véase también
 
-*   [Xinitrc](/index.php/Xinitrc "Xinitrc")
+*   [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)")
 *   [Sitio Oficial de IceWM](https://ice-wm.org/)
 *   [IceWM - The Cool Window Manager](http://www.osnews.com/story.php/7774/IceWM--The-Cool-Window-Manager/) - Detallada introducción en OSNews
 *   [IceWM - A desktop for Windows emigrants](http://polishlinux.org/apps/window-managers/icewm-a-desktop-for-windows-emmigrants/) - Intoducción y tutorial en polishlinux.org

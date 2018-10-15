@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting"), revisada por última vez el **2018-09-29**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=General_troubleshooting&diff=0&oldid=543735) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting"), revisada por última vez el **2018-10-14**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=General_troubleshooting&diff=0&oldid=545148) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -333,7 +333,7 @@ extra/libusb-compat 0.1.5-1
 
 ```
 
-En este caso, el paquete [libusb-compat](https://www.archlinux.org/packages/?name=libusb-compat) necesita ser [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)").
+En este caso, el paquete [libusb-compat](https://www.archlinux.org/packages/?name=libusb-compat) necesita ser [instalado](/index.php/Install_(Espa%C3%B1ol) "Install (Español)").
 
 El error también puede significar que el paquete que ha utilizado para instalar el programa no enumera la biblioteca como una dependencia en su [PKGBUILD](/index.php/PKGBUILD_(Espa%C3%B1ol) "PKGBUILD (Español)"): si se trata de un paquete oficial, [informe del error](/index.php/Report_a_bug "Report a bug"); si se trata de un paquete de [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)"), informe a su mantenedor en su página del sitio web de AUR.
 

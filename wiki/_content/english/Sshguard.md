@@ -3,7 +3,7 @@ Related articles
 *   [fail2ban](/index.php/Fail2ban "Fail2ban")
 *   [ssh](/index.php/Ssh "Ssh")
 
-**Warning:** Using an IP blacklist will stop trivial attacks but it relies on an additional daemon and successful logging (the partition containing /var can become full, especially if an attacker is pounding on the server). Additionally, with the knowledge of your IP address, the attacker can send packets with a spoofed source header and get you locked out of the server. [SSH keys](/index.php/SSH_keys "SSH keys") provide an elegant solution to the problem of brute forcing without these problems.
+**Warning:** Using an IP blacklist will stop trivial attacks but it relies on an additional daemon and successful logging (the partition containing /var can become full, especially if an attacker is pounding on the server). Additionally, with the knowledge of your IP address, the attacker can send packets with a spoofed source header and get you locked out of the server. [SSH keys](/index.php/SSH_keys "SSH keys") provide an elegant solution to brute forcing without these problems.
 
 [sshguard](http://www.sshguard.net) is a daemon that protects [SSH](/index.php/SSH "SSH") and other services against brute-force attacks, similar to [fail2ban](/index.php/Fail2ban "Fail2ban").
 
@@ -171,17 +171,35 @@ Finally [restart](/index.php/Restart "Restart") `sshguard.service`
 
 ### Moderate banning example
 
-A slightly more aggressive banning rule than the default one is proposed here to illustrate various options. It monitors [sshd](/index.php/Sshd "Sshd") and [vsftpd](/index.php/Vsftpd "Vsftpd") via logs from the *systemd journal*. It blocks attackers after 2 attempts for 180 sec with subsequent block time longer by a factor of 1.5\. Note that this multiplicative delay feature is internal and not controlled by the below settings. The attackers are remembered for up to 3600 sec and permanently blacklisted after 10 attempts (10 attempts having each a cost of 10, explaining the "100" parameter in the blacklist setting). It blocks not only the attacker's IP but all the IPv4 subnet 24 ([CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") notation).
+A slightly more aggressive banning rule than the default one is proposed here to illustrate various options:
 
+*   It monitors [sshd](/index.php/Sshd "Sshd") and [vsftpd](/index.php/Vsftpd "Vsftpd") via logs from the [Systemd#Journal](/index.php/Systemd#Journal "Systemd")
+*   It blocks attackers after 2 attempts (each having a cost of 10, explaining the `20` value of the `THRESHOLD` parameter) for 180 seconds with subsequent block time longer by a factor of 1.5\. Note that this 1.5 multiplicative delay is internal and not controlled in the settings
+*   Attackers are permanently blacklisted after 10 attempts (10 attempts having each a cost of 10, explaining the `100` value in the `BLACKLIST_FILE` parameter)
+*   It blocks not only the attacker's IP but all the IPv4 subnet 24 ([CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing "wikipedia:Classless Inter-Domain Routing") notation)
+
+ `/etc/sshguard.conf` 
 ```
+# Full path to backend executable (required, no default)
 BACKEND="/usr/lib/sshguard/sshg-fw-iptables"
-LOGREADER="LANG=C /usr/bin/journalctl -afb -p info -n1 -t sshd -t vsftpd -o cat"
-THRESHOLD=20
-BLOCK_TIME=180
-DETECTION_TIME=3600
-BLACKLIST_FILE=100:/var/db/sshguard/blacklist.db
-IPV4_SUBNET=24
 
+# Log reader command (optional, no default)
+LOGREADER="LANG=C /usr/bin/journalctl -afb -p info -n1 -t sshd -t vsftpd -o cat"
+
+# How many problematic attempts trigger a block
+THRESHOLD=20
+# Blocks last at least 180 seconds
+BLOCK_TIME=180
+# The attackers are remembered for up to 3600 seconds
+DETECTION_TIME=3600
+
+# Blacklist threshold and file name
+BLACKLIST_FILE=100:/var/db/sshguard/blacklist.db
+
+# IPv6 subnet size to block. Defaults to a single address, CIDR notation. (optional, default to 128)
+IPV6_SUBNET=64
+# IPv4 subnet size to block. Defaults to a single address, CIDR notation. (optional, default to 32)
+IPV4_SUBNET=24
 ```
 
 ### Aggressive banning

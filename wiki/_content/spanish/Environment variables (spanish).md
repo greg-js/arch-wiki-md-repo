@@ -91,7 +91,7 @@ Para actualizar la variable es necesario volver a iniciar sesión o evaluar el a
 
 #### Aplicaciones gráficas
 
-Para colocar variables de entorno para aplicaciones gráficas, se pueden colocar las variables en [xinitrc](/index.php/Xinitrc "Xinitrc") (o [xprofile](/index.php/Xprofile "Xprofile") cuando se utiliza un [administrador gráfico](/index.php/Display_manager "Display manager")), por ejemplo:
+Para colocar variables de entorno para aplicaciones gráficas, se pueden colocar las variables en [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") (o [xprofile](/index.php/Xprofile "Xprofile") cuando se utiliza un [administrador gráfico](/index.php/Display_manager "Display manager")), por ejemplo:
 
  `~/.xinitrc` 
 ```

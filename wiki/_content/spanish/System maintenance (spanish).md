@@ -81,7 +81,7 @@ Consulte los consejos de [Pacman tips#List of installed packages](/index.php/Pa
 
 ### Base de datos Pacman
 
-Consulte las sugerencias de [Pacman tips#Back-up the pacman database](/index.php/Pacman_tips#Back-up_the_pacman_database "Pacman tips").
+Consulte las sugerencias de [Pacman tips#Backup the pacman database](/index.php/Pacman_tips#Backup_the_pacman_database "Pacman tips").
 
 ### Encabezados LUKS
 

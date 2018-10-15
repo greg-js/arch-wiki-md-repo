@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [VLC media player](/index.php/VLC_media_player "VLC media player"), revisada por última vez el **2018-10-04**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=VLC_media_player&diff=0&oldid=546037) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [VLC media player](/index.php/VLC_media_player "VLC media player"), revisada por última vez el **2018-10-04**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=VLC_media_player&diff=0&oldid=546129) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Desde la [página de inicio](https://www.videolan.org/vlc/) del proyecto:
 
@@ -16,11 +16,11 @@ Desde la [página de inicio](https://www.videolan.org/vlc/) del proyecto:
     *   [5.2 Reproducción de contenido transmitido desde un servidor DLNA local](#Reproducci.C3.B3n_de_contenido_transmitido_desde_un_servidor_DLNA_local)
     *   [5.3 Control usando teclas de acceso rápido o cli](#Control_usando_teclas_de_acceso_r.C3.A1pido_o_cli)
     *   [5.4 Previniendo múltiples instancias](#Previniendo_m.C3.BAltiples_instancias)
-    *   [5.5 Aceleración de video por hardware](#Aceleraci.C3.B3n_de_video_por_hardware)
+    *   [5.5 Aceleración de vídeo por hardware](#Aceleraci.C3.B3n_de_v.C3.ADdeo_por_hardware)
     *   [5.6 Servicio de systemd](#Servicio_de_systemd)
     *   [5.7 Soporte de Chromecast](#Soporte_de_Chromecast)
 *   [6 Solución de problemas](#Soluci.C3.B3n_de_problemas)
-    *   [6.1 Video roto u otro problema después de la actualización](#Video_roto_u_otro_problema_despu.C3.A9s_de_la_actualizaci.C3.B3n)
+    *   [6.1 Vídeo roto u otro problema después de la actualización](#V.C3.ADdeo_roto_u_otro_problema_despu.C3.A9s_de_la_actualizaci.C3.B3n)
     *   [6.2 Fallo de segmentación](#Fallo_de_segmentaci.C3.B3n)
     *   [6.3 Faltan iconos en los menús desplegables](#Faltan_iconos_en_los_men.C3.BAs_desplegables)
     *   [6.4 Error al abrir el backend VDPAU](#Error_al_abrir_el_backend_VDPAU)
@@ -117,18 +117,18 @@ $ dbus-send --print-reply --session --dest=org.mpris.MediaPlayer2.vlc /org/mpris
 
 La configuración predeterminada para VLC es abrir una nueva instancia del programa para cada archivo que se abre. Esto puede ser molesto si está utilizando VLC para algo como reproducir su colección de música. Puede deshabilitar esto en *Herramientas> Preferencias> Interfaz> Instancias> Permitir solo una instancia* . Opcionalmente, marque "Encolar archivos cuando se encuentre en modo de instancia", que mantiene la reproducción del archivo actual y agrega cualquier archivo recién abierto a la lista de reproducción actual.
 
-### Aceleración de video por hardware
+### Aceleración de vídeo por hardware
 
-Vea [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
+Véase [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration").
 
-VLC intenta automáticamente usar una API disponible, pero puede anularla yendo a "Herramientas> Preferencias> Entrada y códecs" y seleccionando la opción adecuada en "Decodificación acelerada por hardware", por ejemplo. `API de aceleración de video (VA)` para VA-API o `Video Decode y API de presentación para Unix (VDPAU)` para VDPAU.
+VLC intenta automáticamente usar una API disponible, pero puede anularla yendo a "Herramientas> Preferencias> Entrada y códecs" y seleccionando la opción adecuada en "Decodificación acelerada por hardware", por ejemplo. `API de aceleración de vídeo (VA)` para VA-API o `Video Decode y API de presentación para Unix (VDPAU)` para VDPAU.
 
 ### Servicio de systemd
 
-La interfaz web de VLC se puede iniciar desde systemd. Primero, necesitas crear un usuario predeterminado. Este ejemplo utilizará UID 75 ya que no está reservado de acuerdo con [DeveloperWiki:UID / GID Database](/index.php/DeveloperWiki:UID_/_GID_Database "DeveloperWiki:UID / GID Database").
+La interfaz web de VLC se puede iniciar desde systemd. Primero, necesita crear un usuario predeterminado:
 
 ```
-# useradd -c "VLC daemon" -d / -G audio -M -p \! -r -s /usr/bin/nologin -u 75 -U vlcd
+# useradd -c "VLC daemon" -d / -G audio -M -p \! -r -s /usr/bin/nologin -U vlcd
 
 ```
 
@@ -164,7 +164,7 @@ Instale los paquetes:
 
 ## Solución de problemas
 
-### Video roto u otro problema después de la actualización
+### Vídeo roto u otro problema después de la actualización
 
 De vez en cuando, VLC tendrá algunos problemas con la configuración incluso en versiones menores. Antes de realizar informes de errores, elimine o cambie el nombre de su configuración ubicada en `~/.config/vlc` y confirme si el problema sigue ahí.
 
@@ -203,11 +203,11 @@ $ gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons tru
 
 consulte [Hardware video acceleration#Failed to open VDPAU backend](/index.php/Hardware_video_acceleration#Failed_to_open_VDPAU_backend "Hardware video acceleration").
 
-Como su sistema probablemente no admita VDPAU, debería decirle a VLC que use VA-API en su lugar, vea[#Hardware video acceleration](#Hardware_video_acceleration).
+Como su sistema probablemente no admita VDPAU, debería decirle a VLC que use VA-API en su lugar, véase [#Aceleración de vídeo por hardware](#Aceleraci.C3.B3n_de_v.C3.ADdeo_por_hardware).
 
 ### No se reproducen a través de SFTP los nombres de los archivos multimedia que contienen espacios
 
-Si VLC no reproduce ningún video o archivo de audio a través de SFTP, asegúrese de tener instalado [sshfs](https://www.archlinux.org/packages/?name=sshfs).
+Si VLC no reproduce ningún vídeo o archivo de audio a través de SFTP, asegúrese de tener instalado [sshfs](https://www.archlinux.org/packages/?name=sshfs).
 
 Si se niega a reproducir cualquier archivo multimedia que contenga espacios a través de SFTP y siempre solicita autenticación, cambie la línea Exec en el archivo `vlc.desktop` a:
 

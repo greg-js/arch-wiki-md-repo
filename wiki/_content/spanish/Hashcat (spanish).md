@@ -1,7 +1,7 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Hashcat](/index.php/Hashcat "Hashcat"), revisada por última vez el **2018-10-04**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Hashcat&diff=0&oldid=546051) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Hashcat](/index.php/Hashcat "Hashcat"), revisada por última vez el **2018-10-14**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Hashcat&diff=0&oldid=546060) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
-[Hashcat](https://hashcat.net/hashcat/) Es una potente utilidad para recuperar contraseñas hash. Es compatible con más de 200 algoritmos hash. Puede utilizar CPU, GPU y otros aceleradores por hardware.
+[Hashcat](https://en.wikipedia.org/wiki/es:Hashcat "wikipedia:es:Hashcat") es una potente utilidad para recuperar contraseñas hash. Es compatible con más de 200 algoritmos hash. Puede utilizar CPU, GPU y otros aceleradores por hardware.
 
 ## Instalación
 
@@ -19,3 +19,7 @@ hashcat -m *tipo_hash* *archivo_hash* *archivo_diccionario*
 ```
 
 Puede encontrar más ejemplos y detalles de uso en la [wiki de Hashcat](https://hashcat.net/wiki/).
+
+## Véase también
+
+*   [Sitio web oficial](https://hashcat.net/hashcat/)

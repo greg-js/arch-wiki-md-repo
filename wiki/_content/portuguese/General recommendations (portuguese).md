@@ -91,7 +91,7 @@ Os comandos [su](/index.php/Su "Su") e [sudo](/index.php/Sudo "Sudo") permitem q
 
 ### Gerenciamento de serviço
 
-Arch Linux usa [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") como o processo [init](/index.php/Init "Init"), que é um gerenciador de sistema e serviço para Linux. Para dar manutenção em sua instalação do Arch Linux, é uma boa ideia aprender os básicos sobre ele. Interação com o *systemd* é feita com o comando *systemctl*. Leia o [systemd (Português)#Uso básico systemctl](/index.php/Systemd_(Portugu%C3%AAs)#Uso_b.C3.A1sico_systemctl "Systemd (Português)") para mais informações.
+Arch Linux usa [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") como o processo [init](/index.php/Init "Init"), que é um gerenciador de sistema e serviço para Linux. Para dar manutenção em sua instalação do Arch Linux, é uma boa ideia aprender os básicos sobre ele. Interação com o *systemd* é feita com o comando *systemctl*. Leia o [systemd (Português)#Uso básico do systemctl](/index.php/Systemd_(Portugu%C3%AAs)#Uso_b.C3.A1sico_do_systemctl "Systemd (Português)") para mais informações.
 
 ### Manutenção de sistema
 

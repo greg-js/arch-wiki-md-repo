@@ -80,11 +80,11 @@ To set color to Steel Series Keyboard use [MSIKLM](https://github.com/Gibtnix/MS
 
 #### GS63-8RE
 
-Use the instructions on [MSI_GS65#Lights](/index.php/MSI_GS65#Lights "MSI GS65") to install [msi-perkeyrgb](https://aur.archlinux.org/packages/msi-perkeyrgb/).
+Use the instructions on [MSI GS65#Lights](/index.php/MSI_GS65#Lights "MSI GS65") to install [msi-perkeyrgb](https://aur.archlinux.org/packages/msi-perkeyrgb/).
 
 ### Sleep
 
-If the laptop doesn't fully enter sleep mode, bluetooth and mobile light stay on and sleep light does not come on. Then try reinstalling [tlp](/index.php/Tlp "Tlp").
+If the laptop doesn't fully enter sleep mode, bluetooth and mobile light stay on and sleep light does not come on. Then try reinstalling [TLP](/index.php/TLP "TLP").
 
 ### Web Camera
 
@@ -96,7 +96,7 @@ If the laptop doesn't fully enter sleep mode, bluetooth and mobile light stay on
 
 #### GS63-8RE
 
-After installing [nvidia](/index.php/Nvidia "Nvidia"), [bumblebee](/index.php/Bumblebee "Bumblebee"), and [bbswitch](/index.php/Bbswitch "Bbswitch") while running [KDE](/index.php/KDE "KDE") power usage is down to ~7W or 9 hours according to [powertop](/index.php/Powertop "Powertop").
+After installing [NVIDIA](/index.php/NVIDIA "NVIDIA"), [bumblebee](/index.php/Bumblebee "Bumblebee"), and [bbswitch](/index.php/Bbswitch "Bbswitch") while running [KDE](/index.php/KDE "KDE") power usage is down to ~7W or 9 hours according to [powertop](/index.php/Powertop "Powertop").
 
 ## Misc
 

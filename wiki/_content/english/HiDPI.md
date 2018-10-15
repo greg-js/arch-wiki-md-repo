@@ -55,7 +55,7 @@ Not all software behaves well in high-resolution mode yet. Here are listed most 
     *   [7.1 Side display](#Side_display)
     *   [7.2 Multiple external monitors](#Multiple_external_monitors)
     *   [7.3 Mirroring](#Mirroring)
-    *   [7.4 Scripts](#Scripts)
+    *   [7.4 Tools](#Tools)
 *   [8 Linux console](#Linux_console)
 *   [9 See also](#See_also)
 
@@ -564,12 +564,13 @@ $ xrandr --output HDMI --scale 2x2
 
 You may adjust the "sharpness" parameter on your monitor settings to adjust the blur level introduced with scaling.
 
-### Scripts
+### Tools
 
-There are several scripts which automate the commands described above.
+There are several tools which automate the commands described above.
 
 *   [This script](https://gist.github.com/wvengen/178642bbc8236c1bdb67) extend a non-HiDPI external display above a HiDPI internal display.
 *   [xrandr-extend](https://github.com/ashwinvis/xrandr-extend).
+*   [xlayoutdisplay](https://aur.archlinux.org/packages/xlayoutdisplay/) is a CLI front end for xrandr which detects and sets correct DPI: [README](https://github.com/alex-courtis/xlayoutdisplay)
 
 ## Linux console
 

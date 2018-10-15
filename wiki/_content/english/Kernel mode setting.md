@@ -64,7 +64,7 @@ If you are using a custom EDID file (not applicable for the built-in resolutions
 
 ### My fonts are too tiny
 
-See [Linux_console#Fonts](/index.php/Linux_console#Fonts "Linux console") for how to change your console font to a large font. The Terminus font ([terminus-font](https://www.archlinux.org/packages/?name=terminus-font)) is available in many sizes, such as `ter-132n` which is larger.
+See [Linux console#Fonts](/index.php/Linux_console#Fonts "Linux console") for how to change your console font to a large font. The Terminus font ([terminus-font](https://www.archlinux.org/packages/?name=terminus-font)) is available in many sizes, such as `ter-132n` which is larger.
 
 Alternatively, [disabling modesetting](#Disabling_modesetting) might switch to lower resolution and make fonts appear larger.
 

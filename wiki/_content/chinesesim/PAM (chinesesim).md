@@ -89,7 +89,7 @@ auth      required  pam_unix.so     try_first_pass nullok
 auth      optional  pam_permit.so
 ```
 
-[pam_unix(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/pam_unix.8) 说明如下：“本认证 （ `pam_unix.so` ）用于检查用户密码作为认证。默认情况不允许密码为空的用户进入”。而 `pam_permit.so` 允许密码为空的情况。如果将 `rerquired` 和 `optional` 交换位置，则两种情况都将允许无密码登录。
+[pam_unix(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_unix.8) 说明如下：“本认证 （ `pam_unix.so` ）用于检查用户密码作为认证。默认情况不允许密码为空的用户进入”。而 `pam_permit.so` 允许密码为空的情况。如果将 `rerquired` 和 `optional` 交换位置，则两种情况都将允许无密码登录。
 
 第二种情况恰好相反，默认情况下创建如下的文件：
 
@@ -152,7 +152,7 @@ auth      optional  pam_permit.so
 
 	`pam_ldap.so` 介绍集成 LDAP 主对端认证过程
 
-*   [Yubikey#Two-factor authentication with SSH](/index.php/Yubikey#Two-factor_authentication_with_SSH "Yubikey")
+*   [YubiKey#Two-factor authentication with SSH](/index.php/YubiKey#Two-factor_authentication_with_SSH "YubiKey")
 
 	`pam_yubico.so` 通过私有的 Yubikey 进行认证
 

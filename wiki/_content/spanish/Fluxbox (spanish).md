@@ -58,7 +58,7 @@ Los archivos de configuración de Fluxbox del sistema se encuentran en la carpet
 *   startup: las aplicaciones que se iniciaran al arrancar fluxbox. Mira abajo para .xinitrc y/o [aquí](http://fluxbox-wiki.org/index.php?title=Editing_the_startup_file)
 *   overlay: un archivo de configuración para anular los elementos de los estilos. Mirar [aquí](http://fluxbox-wiki.org/index.php?title=Style_overlay).
 *   apps: guarda configuraciones especificas para las aplicaciones (posición en la pantalla, tamaño de la venta, etc). Mira [aquí](http://fluxbox-wiki.org/index.php?title=Editing_the_apps_file)
-*   windowmenu: fichero de configuración para cambiar el menú de las ventanas. Mira en [[2]](http://fluxbox-wiki.org/index.php?title=Editing_the_windowmenu)
+*   windowmenu: fichero de configuración para cambiar el menú de las ventanas. Mira en [[1]](http://fluxbox-wiki.org/index.php?title=Editing_the_windowmenu)
 
 En el directorio hay otros archivos de configuración menos importantes. Los archivos mas importantes son init, menu, keys y tal vez startup.
 
@@ -263,7 +263,7 @@ Fluxbox, WindowMaker y algunos gestores de ventanas ligeros tienen un "Slit". En
 
 ### Auto arrancar aplicaciones
 
-La manera de Archlinux de auto arrancar es poner el código en el archivo `~/.xinitrc`. Por favor, mire [Xinitrc](/index.php/Xinitrc "Xinitrc"). Sin embargo, fluxbox provee un metodo para hacerlo al arrancar. El archivo `~/.fluxbox/startup` es un script para auto arrancar programas cuando lo hace el. tambien se puede usar para editar variables del sistema, etc. El símbolo # sirve para escribir un comentario.
+La manera de Archlinux de auto arrancar es poner el código en el archivo `~/.xinitrc`. Por favor, véase [Xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)"). Sin embargo, fluxbox provee un metodo para hacerlo al arrancar. El archivo `~/.fluxbox/startup` es un script para auto arrancar programas cuando lo hace el. tambien se puede usar para editar variables del sistema, etc. El símbolo # sirve para escribir un comentario.
 
 Un ejemplo:
 

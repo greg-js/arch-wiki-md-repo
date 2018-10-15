@@ -234,25 +234,23 @@ For a headless configuration the [xf86-video-dummy](https://www.archlinux.org/pa
  `/etc/X11/xorg.conf.d/10-headless.conf` 
 ```
 Section "Monitor"
-        Identifier "Monitor0"
+        Identifier "dummy_monitor"
         HorizSync 28.0-80.0
         VertRefresh 48.0-75.0
-        ModeLine "1920x1080" 148.800 1920 2448 2492 2622 1080 1084 1089 1135 +hsync +vsync
+        Modeline "1920x1080" 172.80 1920 2040 2248 2576 1080 1081 1084 1118
 EndSection
 
 Section "Device"
-        Identifier "Card0"
+        Identifier "dummy_card"
         VideoRam 256000
         Driver "dummy"
 EndSection
 
 Section "Screen"
-        Identifier "Screen0"
-        Device "Card0"
-        Monitor "Monitor0"
+        Identifier "dummy_screen"
+        Device "dummy_card"
+        Monitor "dummy_monitor"
         SubSection "Display"
-                Depth 24
-                Modes "1920x1080"
         EndSubSection
 EndSection
 ```

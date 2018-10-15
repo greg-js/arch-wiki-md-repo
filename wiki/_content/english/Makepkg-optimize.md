@@ -109,11 +109,11 @@ After the first building phase, bind the PGO folder:
 
 Once the package is [installed](/index.php/Pacman#Additional_commands "Pacman"), test-run its executables.
 
-For the second building phase, remove the original package file and do not pass `-c` to `makechrootpkg`:
+For the second building phase, overwrite the original package file and do not pass `-c` to `makechrootpkg`:
 
 **Note:** If you have rebooted, be sure to rebind the PGO folder before rebuilding. Alternatively, use [fstab](/index.php/Fstab "Fstab") to bind these folders persistently.
 
 ```
-$ rm *.pkg.tar.xz; makechrootpkg -r "$CHROOT" -- --config /etc/makepkg-optimize.conf
+$ makechrootpkg -r "$CHROOT" -- -f --config /etc/makepkg-optimize.conf
 
 ```

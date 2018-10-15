@@ -196,13 +196,14 @@ This article is a general list of applications sorted by category, as a referenc
             *   [3.3.3.2 Python IDEs](#Python_IDEs)
             *   [3.3.3.3 Educational IDEs](#Educational_IDEs)
         *   [3.3.4 Debuggers](#Debuggers)
-        *   [3.3.5 GUI builders](#GUI_builders)
-        *   [3.3.6 Hex editors](#Hex_editors)
-        *   [3.3.7 JSON tools](#JSON_tools)
-        *   [3.3.8 UML modelers](#UML_modelers)
-        *   [3.3.9 API documentation browsers](#API_documentation_browsers)
-        *   [3.3.10 Issue tracking systems](#Issue_tracking_systems)
-        *   [3.3.11 Game development](#Game_development)
+        *   [3.3.5 Lexing and parsing](#Lexing_and_parsing)
+        *   [3.3.6 GUI builders](#GUI_builders)
+        *   [3.3.7 Hex editors](#Hex_editors)
+        *   [3.3.8 JSON tools](#JSON_tools)
+        *   [3.3.9 UML modelers](#UML_modelers)
+        *   [3.3.10 API documentation browsers](#API_documentation_browsers)
+        *   [3.3.11 Issue tracking systems](#Issue_tracking_systems)
+        *   [3.3.12 Game development](#Game_development)
     *   [3.4 Text input](#Text_input)
         *   [3.4.1 Character selectors](#Character_selectors)
         *   [3.4.2 On-screen keyboards](#On-screen_keyboards)
@@ -253,7 +254,9 @@ This article is a general list of applications sorted by category, as a referenc
         *   [4.2.6 Formula editors](#Formula_editors)
     *   [4.3 Markup languages](#Markup_languages)
         *   [4.3.1 Markdown](#Markdown)
-            *   [4.3.1.1 Markdown editors](#Markdown_editors)
+            *   [4.3.1.1 Python implementations](#Python_implementations)
+            *   [4.3.1.2 Ruby implementations](#Ruby_implementations)
+            *   [4.3.1.3 Markdown editors](#Markdown_editors)
         *   [4.3.2 Typesetting systems](#Typesetting_systems)
         *   [4.3.3 TeX editors](#TeX_editors)
         *   [4.3.4 TeX formula editors](#TeX_formula_editors)
@@ -763,43 +766,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 ### Web servers
 
-See also [Category:Web server](/index.php/Category:Web_server "Category:Web server").
-
-*   **[Apache](/index.php/Apache "Apache")** — A high performance Unix-based HTTP server.
-
-	[http://www.apache.org/dist/httpd](http://www.apache.org/dist/httpd) || [apache](https://www.archlinux.org/packages/?name=apache)
-
-*   **[Caddy](/index.php/Caddy "Caddy")** — HTTP/2 web server with automatic HTTPS
-
-	[https://caddyserver.com/](https://caddyserver.com/) || [caddy](https://aur.archlinux.org/packages/caddy/)
-
-*   **darkhttpd** — A small and secure static webserver
-
-	[https://unix4lyfe.org/darkhttpd/](https://unix4lyfe.org/darkhttpd/) || [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd)
-
-*   **[Hiawatha](/index.php/Hiawatha "Hiawatha")** — Secure and advanced webserver.
-
-	[https://www.hiawatha-webserver.org/](https://www.hiawatha-webserver.org/) || [hiawatha](https://www.archlinux.org/packages/?name=hiawatha)
-
-*   **[Lighttpd](/index.php/Lighttpd "Lighttpd")** — A secure, fast, compliant and very flexible web-server.
-
-	[http://www.lighttpd.net/](http://www.lighttpd.net/) || [lighttpd](https://www.archlinux.org/packages/?name=lighttpd)
-
-*   **[nginx](/index.php/Nginx "Nginx")** — Lightweight HTTP server and IMAP/POP3 proxy server.
-
-	[https://nginx.org/](https://nginx.org/) || [nginx](https://www.archlinux.org/packages/?name=nginx)
-
-*   **shttpd** — Supported fork of the thttpd web server
-
-	[http://freecode.com/projects/shttpd](http://freecode.com/projects/shttpd) || [shttpd](https://aur.archlinux.org/packages/shttpd/)
-
-*   **Webfs** — Simple and instant http server for mostly static content.
-
-	[http://linux.bytesex.org/misc/webfs.html](http://linux.bytesex.org/misc/webfs.html) || [webfs](https://www.archlinux.org/packages/?name=webfs)
-
-*   **yaws** — Web server/framework written in Erlang
-
-	[http://yaws.hyber.org/](http://yaws.hyber.org/) || [yaws](https://www.archlinux.org/packages/?name=yaws)
+See [Web server](/index.php/Web_server "Web server").
 
 ### ACME clients
 
@@ -5152,6 +5119,40 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[https://wiki.gnome.org/Apps/Sysprof](https://wiki.gnome.org/Apps/Sysprof) || [sysprof](https://www.archlinux.org/packages/?name=sysprof)
 
+#### Lexing and parsing
+
+[Lex](https://en.wikipedia.org/wiki/Lex_(software) and [Yacc](https://en.wikipedia.org/wiki/Yacc "wikipedia:Yacc") are part of POSIX.
+
+*   **[flex](https://en.wikipedia.org/wiki/Flex_(lexical_analyser_generator) "wikipedia:Flex (lexical analyser generator)")** — A tool for generating text-scanning programs, alternative to Lex.
+
+	[https://github.com/westes/flex](https://github.com/westes/flex) || [flex](https://www.archlinux.org/packages/?name=flex)
+
+*   **[Berkeley Yacc](https://en.wikipedia.org/wiki/Berkeley_Yacc "wikipedia:Berkeley Yacc")** — Berkeley reimplementation of the Unix parser generator Yacc.
+
+	[https://invisible-island.net/byacc/](https://invisible-island.net/byacc/) || [byacc](https://www.archlinux.org/packages/?name=byacc)
+
+*   **[GNU Bison](https://en.wikipedia.org/wiki/GNU_bison "wikipedia:GNU bison")** — The GNU general-purpose parser generator, alternative to *byacc*.
+
+	[https://www.gnu.org/software/bison/](https://www.gnu.org/software/bison/) || [bison](https://www.archlinux.org/packages/?name=bison)
+
+And then there are also:
+
+*   **[ANTLR](https://en.wikipedia.org/wiki/ANTLR "wikipedia:ANTLR")** — Parser generator, written in Java, for parsing structured text or binary files.
+
+	[http://www.antlr.org/](http://www.antlr.org/) || [antlr4](https://www.archlinux.org/packages/?name=antlr4)
+
+*   **LPeg** — Pattern-matching library, based on PEGs, for Lua.
+
+	[http://www.inf.puc-rio.br/~roberto/lpeg/](http://www.inf.puc-rio.br/~roberto/lpeg/) || [lua-lpeg](https://www.archlinux.org/packages/?name=lua-lpeg), [lua52-lpeg](https://www.archlinux.org/packages/?name=lua52-lpeg), [lua51-lpeg](https://www.archlinux.org/packages/?name=lua51-lpeg)
+
+*   **peg/leg** — Recursive-descent parser generators for C.
+
+	[http://piumarta.com/software/peg/](http://piumarta.com/software/peg/) || [peg](https://www.archlinux.org/packages/?name=peg)
+
+*   **Ragel** — Compiles finite state machines from regular languages into executable C, C++, Objective-C, or D code.
+
+	[http://www.colm.net/open-source/ragel/](http://www.colm.net/open-source/ragel/) || [ragel](https://www.archlinux.org/packages/?name=ragel)
+
 #### GUI builders
 
 *   **[FLUID](https://en.wikipedia.org/wiki/FLUID "wikipedia:FLUID")** — FLTK GUI designer.
@@ -5216,7 +5217,7 @@ See also [Wikipedia:Comparison of hex editors](https://en.wikipedia.org/wiki/Com
 
 	[http://kmkeen.com/jshon/](http://kmkeen.com/jshon/) || [jshon](https://www.archlinux.org/packages/?name=jshon)
 
-*   the Elvish [shell](/index.php/Shell "Shell") ([elvish](https://aur.archlinux.org/packages/elvish/)) has built-in support for JSON
+*   the [Elvish](/index.php/Elvish "Elvish") shell has built-in support for JSON
 
 #### UML modelers
 
@@ -6342,15 +6343,45 @@ See also the [official website](https://daringfireball.net/projects/markdown/) a
 
 *   **Discount** — A Markdown implementation written in C.
 
-	[https://www.pell.portland.or.us/~orc/Code/discount/](https://www.pell.portland.or.us/~orc/Code/discount/) || [discount](https://www.archlinux.org/packages/?name=discount)
+	[https://www.pell.portland.or.us/~orc/Code/discount/](https://www.pell.portland.or.us/~orc/Code/discount/) || [discount](https://www.archlinux.org/packages/?name=discount), [ruby-rdiscount](https://www.archlinux.org/packages/?name=ruby-rdiscount)
+
+*   **lowdown** — Markdown translator producing HTML5 and roff documents in the ms and man formats.
+
+	[https://kristaps.bsd.lv/lowdown/](https://kristaps.bsd.lv/lowdown/) || [lowdown](https://aur.archlinux.org/packages/lowdown/)
 
 *   **Marked** — Markdown parser and compiler built for speed.
 
 	[https://marked.js.org/](https://marked.js.org/) || [marked](https://www.archlinux.org/packages/?name=marked)
 
+*   [Pandoc](/index.php/Pandoc "Pandoc") also supports Markdown.
+
+##### Python implementations
+
+*   **CommonMark-py** — Python parser for the CommonMark Markdown specification.
+
+	[https://github.com/rtfd/CommonMark-py](https://github.com/rtfd/CommonMark-py) || [python-commonmark](https://www.archlinux.org/packages/?name=python-commonmark), [python2-commonmark](https://www.archlinux.org/packages/?name=python2-commonmark)
+
 *   **M2R** — Markdown to reStructuredText converter.
 
-	[https://github.com/miyakogi/m2r](https://github.com/miyakogi/m2r) || [m2r](https://www.archlinux.org/packages/?name=m2r)
+	[https://github.com/miyakogi/m2r](https://github.com/miyakogi/m2r) || [m2r](https://www.archlinux.org/packages/?name=m2r), [python2-m2r](https://www.archlinux.org/packages/?name=python2-m2r)
+
+*   **Mistune** — The fastest markdown parser in pure Python with renderer feature.
+
+	[https://github.com/lepture/mistune](https://github.com/lepture/mistune) || [python-mistune](https://www.archlinux.org/packages/?name=python-mistune), [python2-mistune](https://www.archlinux.org/packages/?name=python2-mistune)
+
+*   **Python-Markdown** — Extensible Python implementation of John Gruber's Markdown.
+
+	[https://github.com/Python-Markdown/markdown](https://github.com/Python-Markdown/markdown) || [python-markdown](https://www.archlinux.org/packages/?name=python-markdown), [python2-markdown](https://www.archlinux.org/packages/?name=python2-markdown)
+
+##### Ruby implementations
+
+*   **kramdown** — Fast, pure Ruby Markdown superset converter, using a strict syntax definition.
+
+	[https://kramdown.gettalong.org/](https://kramdown.gettalong.org/) || [ruby-kramdown](https://www.archlinux.org/packages/?name=ruby-kramdown)
+
+*   **Maruku** — Pure Ruby Markdown-superset interpreter.
+
+	[https://github.com/bhollis/maruku](https://github.com/bhollis/maruku) || [ruby-maruku](https://www.archlinux.org/packages/?name=ruby-maruku)
 
 ##### Markdown editors
 
@@ -6412,7 +6443,7 @@ See also the [official website](https://daringfireball.net/projects/markdown/) a
 
 	[http://sile-typesetter.org/](http://sile-typesetter.org/) || [sile](https://aur.archlinux.org/packages/sile/)
 
-*   **[TeX](/index.php/TeX_Live "TeX Live")** — A high-quality typesetting system popular in academia.
+*   **[TeX](/index.php/TeX "TeX")** — A high-quality typesetting system popular in academia.
 
 	[https://tug.org/](https://tug.org/) || [texlive-core](https://www.archlinux.org/packages/?name=texlive-core)
 

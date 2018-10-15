@@ -42,7 +42,7 @@ Xfce es un entorno de escritorio al igual que [GNOME](/index.php/GNOME_(Espa%C3%
 
 Antes de Empezar, asegurate que haz instalado y configurado correctamante el [Servidor X](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)").
 
-**Note:** Xfce algo modular. esto significa que no tienes que instalar o usar todas sus partes, puedes elegir solamente aquellos elementos que deseas usar.
+**Nota:** Xfce algo modular. esto significa que no tienes que instalar o usar todas sus partes, puedes elegir solamente aquellos elementos que deseas usar.
 
 El sistema Xfce básico puede ser [instalado](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") mediante un grupo de paquetes contenidos en [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/), disponible en los [Repositorios Oficiales](/index.php/Official_repositories "Official repositories").
 
@@ -63,7 +63,7 @@ Hay dos maneras de iniciar Xfce (de hecho, cualquier Entorno de Escritorio o Ges
 
 ### Manualmente
 
-**Note:** Mira [xinitrc](/index.php/Xinitrc "Xinitrc") para detalles, como preservar la sesión logind (y/o consolekit).
+**Nota:** Véase [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") para detalles, como preservar la sesión logind (y/o consolekit).
 
 y agrega la siguiente linea
 
@@ -95,7 +95,7 @@ fi
 exec startxfce4
 ```
 
-**Note:** La manera correcta de iniciar Xfce es mediante el comando `startxfce4`, no utilices `xfce4-session` directamente, dado que ya esta contenido en `startxfce4`.
+**Nota:** La manera correcta de iniciar Xfce es mediante el comando `startxfce4`, no utilices `xfce4-session` directamente, dado que ya esta contenido en `startxfce4`.
 
 ### Apagado, Reinicio y Automontaje en Xfce
 

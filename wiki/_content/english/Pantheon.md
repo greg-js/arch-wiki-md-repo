@@ -41,9 +41,7 @@ Although the [elementary OS](https://elementary.io/) release schedule and toolch
 
 #### Unofficial repository
 
-**Note:** The pantheon repository is no more, from now on pantheon packages will be available in the extra-alucryd repository, and they will be signed.
-
-[Alucryd's unofficial repo](https://github.com/alucryd/aur-alucryd/tree/master/pantheon) contains more and more up-to-date packages than the few available in the [community repository](/index.php/Community_repository "Community repository"). To use it add the following lines at the top of your sources in `/etc/pacman.conf`:
+Alucryd's unofficial repository contains more and more [up-to-date](https://github.com/alucryd/aur-alucryd/tree/master/pantheon) packages than the few available in the [community repository](/index.php/Community_repository "Community repository"). To use it add the following lines at the top of your sources in `/etc/pacman.conf`:
 
 ```
 [extra-alucryd]
@@ -53,7 +51,7 @@ Server = https://pkgbuild.com/~alucryd/$repo/$arch
 
 #### AUR
 
-The [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for the pantheon packages are also available in the [AUR](/index.php/AUR "AUR").
+Alternatively, the [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for the pantheon packages are also available in the [AUR](/index.php/AUR "AUR").
 
 ### Desktop Environment
 
@@ -101,7 +99,7 @@ These are some of the original, patched, and selected packages that comprise the
 *   [pantheon-music](https://www.archlinux.org/packages/?name=pantheon-music) or [pantheon-music-git](https://aur.archlinux.org/packages/pantheon-music-git/): Audio player formerly known as "Noise"
 *   [pantheon-videos](https://www.archlinux.org/packages/?name=pantheon-videos) or [pantheon-videos-git](https://aur.archlinux.org/packages/pantheon-videos-git/): Video player formerly known as "Audience"
 *   [pantheon-calendar-git](https://aur.archlinux.org/packages/pantheon-calendar-git/): Calendar application formerly known as "Maya", integrates with [wingpanel-indicator-datetime-git](https://aur.archlinux.org/packages/wingpanel-indicator-datetime-git/)
-*   [epiphany-pantheon-bzr](https://aur.archlinux.org/packages/epiphany-pantheon-bzr/): Web browser replacing [midori-granite](https://aur.archlinux.org/packages/midori-granite/)
+*   [epiphany-pantheon](https://aur.archlinux.org/packages/epiphany-pantheon/): Web browser replacing [midori-granite](https://aur.archlinux.org/packages/midori-granite/)
 *   [pantheon-mail-git](https://aur.archlinux.org/packages/pantheon-mail-git/): Email client developed from [geary](https://www.archlinux.org/packages/?name=geary)
 *   [pantheon-screenshot](https://aur.archlinux.org/packages/pantheon-screenshot/) or [pantheon-screenshot-git](https://aur.archlinux.org/packages/pantheon-screenshot-git/): Screenshot tool
 *   [eidete-bzr](https://aur.archlinux.org/packages/eidete-bzr/): Simple screencaster

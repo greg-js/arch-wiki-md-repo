@@ -1168,43 +1168,43 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 ##### 图形界面
 
-*   **[Akregator](https://en.wikipedia.org/wiki/Kontact#News_Feed_Aggregator "wikipedia:Kontact")** — News aggregator for KDE, part of [kdepim](https://www.archlinux.org/groups/x86_64/kdepim/).
+*   **[Akregator](https://en.wikipedia.org/wiki/Kontact#News_Feed_Aggregator "wikipedia:Kontact")** — 为KDE设计的新闻集成, 是[kdepim](https://www.archlinux.org/groups/x86_64/kdepim/)的一部分.
 
 	[http://kde.org/applications/internet/akregator/](http://kde.org/applications/internet/akregator/) || [kdepim-akregator](https://www.archlinux.org/packages/?name=kdepim-akregator)
 
-*   **Blam** — Simple newsreader for GNOME written in C Sharp.
+*   **Blam** — 用C#写的为GNOME设计的简易新闻阅读器.
 
 	[https://git.gnome.org/browse/blam](https://git.gnome.org/browse/blam) || [blam](https://aur.archlinux.org/packages/blam/)
 
-*   **[BlogBridge](https://en.wikipedia.org/wiki/BlogBridge "wikipedia:BlogBridge")** — Excellent Java-based aggregator, which gives users the option to synchronize their feeds across multiple computers. Though according to the official website, project is not being supported any more.
+*   **[BlogBridge](https://en.wikipedia.org/wiki/BlogBridge "wikipedia:BlogBridge")** — 很棒的基于Java的集成, 它让用户可以选择同步在电脑间的供稿. 不过根据官网的消息, 这个项目已经不再被支持了.
 
 	[http://blogbridge.com](http://blogbridge.com) || [blogbridge](https://aur.archlinux.org/packages/blogbridge/)
 
-*   **[Liferea](https://en.wikipedia.org/wiki/Liferea "wikipedia:Liferea")** — GTK+ news aggregator for online news feeds and weblogs.
+*   **[Liferea](https://en.wikipedia.org/wiki/Liferea "wikipedia:Liferea")** — 为在线新闻供稿和博客设计的GTK+新闻集成.
 
 	[http://liferea.sourceforge.net](http://liferea.sourceforge.net) || [liferea](https://www.archlinux.org/packages/?name=liferea)
 
-*   **RSS Guard** — Very tiny RSS and ATOM news reader developed using Qt framework.
+*   **RSS Guard** — 用qt框架设计的非常轻量的RSS和ATOM新闻阅读器.
 
 	[https://bitbucket.org/skunkos/rssguard](https://bitbucket.org/skunkos/rssguard) || [rssguard](https://www.archlinux.org/packages/?name=rssguard)
 
-*   **[RSSOwl](https://en.wikipedia.org/wiki/RSSOwl "wikipedia:RSSOwl")** — Powerful aggregator for RSS and Atom feeds, written in Java using Eclipse Rich Client Platform and SWT as a widget toolkit.
+*   **[RSSOwl](https://en.wikipedia.org/wiki/RSSOwl "wikipedia:RSSOwl")** — 为RSS和Atom供稿设计的强大集成，用的是Eclipse富客户端平台并用Java写成，用SWT作部件工具箱.
 
 	[http://boreal.rssowl.org](http://boreal.rssowl.org) || [rssowl](https://aur.archlinux.org/packages/rssowl/)
 
-*   **[Thunderbird](/index.php/Thunderbird "Thunderbird")** — Email client from Mozilla which also functions as a pretty nice news aggregator.
+*   **[Thunderbird](/index.php/Thunderbird "Thunderbird")** — Mozilla公司的邮件客户端，也用作一个非常棒的新闻集成.
 
 	[http://www.mozilla.org/thunderbird/](http://www.mozilla.org/thunderbird/) || [thunderbird](https://www.archlinux.org/packages/?name=thunderbird)
 
-*   **Tickr (formerly News)** — GTK-based RSS Reader that displays feeds as a smooth scrolling line on your Desktop, as known from TV stations.
+*   **Tickr (formerly News)** — 基于GTK的RSS阅读器，在桌面上以平滑的滚动线形式显示从电视台得到的新闻
 
 	[http://newsrssticker.com/](http://newsrssticker.com/) || [tickr](https://aur.archlinux.org/packages/tickr/)
 
-*   **Urssus** — Cross platform GUI news aggregator.
+*   **Urssus** — 跨平台GUI新闻集成.
 
 	[https://code.google.com/p/urssus/](https://code.google.com/p/urssus/) || [urssus](https://aur.archlinux.org/packages/urssus/)
 
-*   **QuiteRSS** — RSS/Atom feed reader written on Qt/С++.
+*   **QuiteRSS** — 用Qt/C++写的RSS/Atom新闻阅读器.
 
 	[http://quiterss.org/](http://quiterss.org/) || [quiterss](https://www.archlinux.org/packages/?name=quiterss)
 

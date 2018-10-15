@@ -31,13 +31,13 @@ $ xbindkeys -d > ~/.xbindkeysrc
 
 ```
 
-Now you can either edit `~/.xbindkeysrc` to set keybindings, or you can do that with the GUI.
+Now you can either edit `~/.xbindkeysrc` to set keybindings, or you can do that with the [#GUI method](#GUI_method).
 
-**Tip:** After you made a change, execute `xbindkeys -p` to reload the configuration file and apply the changes.
+**Tip:** After you made a change, execute `xbindkeys --poll-rc` to reload the configuration file and apply the changes.
 
 ### Volume control
 
-Here is an example configuration file that binds Fn key combos on a laptop to *pactl* commands that adjust sound volume. Note that pound (#) symbols can be used to create comments.
+Here is an example configuration file that binds `Fn` key combos on a laptop to *pactl* commands that adjust sound volume. Note that pound (#) symbols can be used to create comments.
 
 ```
 # Increase volume
@@ -94,7 +94,14 @@ $ xbindkeys_config
 To find the keycodes for a particular key, enter the following command:
 
 ```
-$ xbindkeys -k
+$ xbindkeys --key
+
+```
+
+or the following to grab multiple keys:
+
+```
+$ xbindkeys --multikey
 
 ```
 
@@ -107,11 +114,17 @@ A blank window will pop up. Press the key(s) to which you wish to assign a comma
 
 ```
 
-The first line represents a command. The second contains the state (0x8) and keycode (32) as reported by `xev`. The third line contains the keysyms associated with the given keycodes. To use this output, copy either one of the last two lines to `~/.xbindkeysrc` and replace "(Scheme function)" with the command you wish to perform.
+1.  The first line represents a command.
+2.  The second line contains the state (0x8) and keycode (32) as reported by the tool *xev*.
+3.  The third line contains the keysyms associated with the given keycodes.
 
-**Tip:** Use `xbindkeys -mk` to keep the key prompt open for multiple keypresses. Press `q` to quit.
+To use this output, copy either one of the last two lines to `~/.xbindkeysrc` and replace "(Scheme function)" with the command you wish to perform.
 
-To identify mouse buttons, you can use xev, see [[1]](https://blog.hanschen.org/2009/10/13/mouse-shortcuts-with-xbindkeys/).
+To identify mouse buttons, *xev* can be used, see [[1]](https://blog.hanschen.org/2009/10/13/mouse-shortcuts-with-xbindkeys/).
+
+**Tip:** If the multikey mode is used, press `q` to quit the window.
+
+**Note:** *xev* is provided within the [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev) package, see [xev(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xev.1) for more information.
 
 ## Making changes permanent
 
@@ -136,7 +149,7 @@ The XF86Audio* and other multimedia keys [[2]](http://wiki.linuxquestions.org/wi
 
 ```
 
-However, to actually call the keys themselves you can use tools like [xdotool](https://www.archlinux.org/packages/?name=xdotool) (from [official repositories](/index.php/Official_repositories "Official repositories")) and [xmacro](https://aur.archlinux.org/packages/xmacro/) (from the [AUR](/index.php/AUR "AUR")). Unfortunately since you would already be holding down some modifier key (Super or Shift, for example), X will see the result as `Super-XF86AudioLowerVolume` which will not do anything useful. Here is a script based on *xmacro* and *xmodmap* from the [xorg-xmodmap](https://www.archlinux.org/packages/?name=xorg-xmodmap) package for doing this[[3]](https://bbs.archlinux.org/viewtopic.php?pid=843395).
+However, to actually call the keys themselves you can use tools like [xdotool](https://www.archlinux.org/packages/?name=xdotool) and [xmacro](https://aur.archlinux.org/packages/xmacro/). Unfortunately since you would already be holding down some modifier key (Super or Shift, for example), X will see the result as `Super-XF86AudioLowerVolume` which will not do anything useful. Here is a script based on *xmacro* and *xmodmap* from the [xorg-xmodmap](https://www.archlinux.org/packages/?name=xorg-xmodmap) package for doing this[[3]](https://bbs.archlinux.org/viewtopic.php?pid=843395).
 
 ```
 #!/bin/sh
@@ -173,4 +186,4 @@ If the command for a keybind works via the xdotool in command line, but not when
 
 ```
 
-This will make the F7 key play/pause audio. Where the "xdotool" command would work in commandline, if the "+ Release" is removed it will fail with xbindkeys.
+This will make the `F7` key play/pause audio. Where the "xdotool" command would work in commandline, if the "+ Release" is removed it will fail with xbindkeys.

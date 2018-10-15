@@ -48,7 +48,7 @@ Consulte [Dm-crypt/Encrypting an entire system](/index.php/Dm-crypt/Encrypting_a
 
 ## Cifrar el espacio de intercambio
 
-[Dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption") versará sobre cómo añadir una partición de intercambio a un sistema cifrado, si se necesita. La partición de intercambio puede estar cifrada para proteger los datos de intercambio expuestos del sistema. Esta parte detalla métodos [con](/index.php/Dm-crypt/Swap_Encryption#With_suspend-to-disk_support "Dm-crypt/Swap Encryption") y [sin](/index.php/Dm-crypt/Swap_Encryption#Without_suspend-to-disk_support "Dm-crypt/Swap Encryption") soporte para suspender-en-disco.
+[Dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption") versará sobre cómo añadir una partición de intercambio a un sistema cifrado, si se necesita. La partición de intercambio puede estar cifrada para proteger los datos de intercambio expuestos del sistema. Esta parte detalla métodos [con](/index.php/Dm-crypt/Swap_encryption#With_suspend-to-disk_support "Dm-crypt/Swap encryption") y [sin](/index.php/Dm-crypt/Swap_encryption#Without_suspend-to-disk_support "Dm-crypt/Swap encryption") soporte para suspender-en-disco.
 
 ## Especialidades
 

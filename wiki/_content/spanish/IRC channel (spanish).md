@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [IRC channel](/index.php/IRC_channel "IRC channel"), revisada por última vez el **2018-09-29**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=IRC_channel&diff=0&oldid=544842) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [IRC channel](/index.php/IRC_channel "IRC channel"), revisada por última vez el **2018-10-14**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=IRC_channel&diff=0&oldid=546966) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -9,7 +9,7 @@ Artículos relacionados
 
 **Nota:** No modifique esta página a menos que sea un operador de canal en #archlinux. Le invitamos a que use la página de discusión.
 
-Para unirse a los canales [IRC](https://en.wikipedia.org/wiki/es:Internet_Relay_Chat se incluye en el artículo oficial de [instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)").
+Para unirse a los canales [IRC](https://en.wikipedia.org/wiki/es:Internet_Relay_Chat se incluye en el [artículo sobre la instalación](/index.php/Installation_guide_(Espa%C3%B1ol) "Installation guide (Español)") oficial.
 
 Debe familiarizarse con nuestro [código de conducta](/index.php/Code_of_conduct_(Espa%C3%B1ol) "Code of conduct (Español)") y en particular con el de [IRC](/index.php/Code_of_conduct_(Espa%C3%B1ol)#IRC "Code of conduct (Español)") antes de unirse a cualquiera de los canales oficiales. Para obtener una lista de las abreviaturas comúnmente utilizadas, véase [terminología de Arch](/index.php/Arch_terminology_(Espa%C3%B1ol) "Arch terminology (Español)") y [jerga de IRC](http://www.ircbeginner.com/ircinfo/abbreviations.html).
 

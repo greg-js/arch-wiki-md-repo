@@ -17,47 +17,48 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
 *   [2 Signed](#Signed)
     *   [2.1 arcanisrepo](#arcanisrepo)
     *   [2.2 archlinuxcn](#archlinuxcn)
-    *   [2.3 archsec](#archsec)
-    *   [2.4 archstrike](#archstrike)
-    *   [2.5 archzfs](#archzfs)
-    *   [2.6 ashleyis](#ashleyis)
-    *   [2.7 aur-archlinux](#aur-archlinux)
-    *   [2.8 blackeagle-pre-community](#blackeagle-pre-community)
-    *   [2.9 boyska64](#boyska64)
-    *   [2.10 catalyst](#catalyst)
-    *   [2.11 catalyst-hd234k](#catalyst-hd234k)
-    *   [2.12 city](#city)
-    *   [2.13 coderkun-aur](#coderkun-aur)
-    *   [2.14 coderkun-aur-audio](#coderkun-aur-audio)
-    *   [2.15 eatabrick](#eatabrick)
-    *   [2.16 eschwartz](#eschwartz)
-    *   [2.17 ffy00](#ffy00)
-    *   [2.18 herecura](#herecura)
-    *   [2.19 holo](#holo)
-    *   [2.20 ivasilev](#ivasilev)
-    *   [2.21 jlk](#jlk)
-    *   [2.22 linux-macbook](#linux-macbook)
-    *   [2.23 llvm-svn](#llvm-svn)
-    *   [2.24 markzz](#markzz)
-    *   [2.25 miffe](#miffe)
-    *   [2.26 mikelpint](#mikelpint)
+    *   [2.3 archstrike](#archstrike)
+    *   [2.4 archzfs](#archzfs)
+    *   [2.5 ashleyis](#ashleyis)
+    *   [2.6 aur-archlinux](#aur-archlinux)
+    *   [2.7 blackeagle-pre-community](#blackeagle-pre-community)
+    *   [2.8 catalyst](#catalyst)
+    *   [2.9 catalyst-hd234k](#catalyst-hd234k)
+    *   [2.10 city](#city)
+    *   [2.11 coderkun-aur](#coderkun-aur)
+    *   [2.12 coderkun-aur-audio](#coderkun-aur-audio)
+    *   [2.13 eatabrick](#eatabrick)
+    *   [2.14 eschwartz](#eschwartz)
+    *   [2.15 ffy00](#ffy00)
+    *   [2.16 fusion809](#fusion809)
+    *   [2.17 herecura](#herecura)
+    *   [2.18 holo](#holo)
+    *   [2.19 ivasilev](#ivasilev)
+    *   [2.20 jlk](#jlk)
+    *   [2.21 linux-macbook](#linux-macbook)
+    *   [2.22 llvm-svn](#llvm-svn)
+    *   [2.23 markzz](#markzz)
+    *   [2.24 miffe](#miffe)
+    *   [2.25 mikelpint](#mikelpint)
+    *   [2.26 Minerva W Science](#Minerva_W_Science)
     *   [2.27 mobile](#mobile)
     *   [2.28 nah](#nah)
     *   [2.29 pkgbuilder](#pkgbuilder)
     *   [2.30 post-factum kernels](#post-factum_kernels)
-    *   [2.31 qt-debug](#qt-debug)
-    *   [2.32 quarry](#quarry)
-    *   [2.33 repo-ck](#repo-ck)
-    *   [2.34 seblu](#seblu)
-    *   [2.35 seiichiro](#seiichiro)
-    *   [2.36 sergej-repo](#sergej-repo)
-    *   [2.37 siosm-aur](#siosm-aur)
-    *   [2.38 sublime-text](#sublime-text)
-    *   [2.39 subtitlecomposer](#subtitlecomposer)
-    *   [2.40 tredaelli-systemd](#tredaelli-systemd)
-    *   [2.41 trinity](#trinity)
-    *   [2.42 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-    *   [2.43 xyne-x86_64](#xyne-x86_64)
+    *   [2.31 QOwnNotes](#QOwnNotes)
+    *   [2.32 qt-debug](#qt-debug)
+    *   [2.33 quarry](#quarry)
+    *   [2.34 repo-ck](#repo-ck)
+    *   [2.35 seblu](#seblu)
+    *   [2.36 seiichiro](#seiichiro)
+    *   [2.37 sergej-repo](#sergej-repo)
+    *   [2.38 siosm-aur](#siosm-aur)
+    *   [2.39 sublime-text](#sublime-text)
+    *   [2.40 subtitlecomposer](#subtitlecomposer)
+    *   [2.41 tredaelli-systemd](#tredaelli-systemd)
+    *   [2.42 trinity](#trinity)
+    *   [2.43 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+    *   [2.44 xyne-x86_64](#xyne-x86_64)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -67,21 +68,15 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [3.6 archlinuxgr](#archlinuxgr)
     *   [3.7 archlinuxgr-kde4](#archlinuxgr-kde4)
     *   [3.8 dx37essentials](#dx37essentials)
-    *   [3.9 fusion809](#fusion809)
-    *   [3.10 heftig](#heftig)
-    *   [3.11 home-thaodan](#home-thaodan)
-    *   [3.12 jkanetwork](#jkanetwork)
-    *   [3.13 mesa-git](#mesa-git)
-    *   [3.14 Minerva W Science](#Minerva_W_Science)
-    *   [3.15 mingw-w64](#mingw-w64)
-    *   [3.16 ownstuff](#ownstuff)
-    *   [3.17 pantheon](#pantheon)
-    *   [3.18 pietma](#pietma)
-    *   [3.19 pnsft-pur](#pnsft-pur)
-    *   [3.20 QOwnNotes](#QOwnNotes)
-    *   [3.21 rakudo](#rakudo)
-    *   [3.22 rust-git](#rust-git)
-    *   [3.23 zrootfs](#zrootfs)
+    *   [3.9 heftig](#heftig)
+    *   [3.10 home-thaodan](#home-thaodan)
+    *   [3.11 jkanetwork](#jkanetwork)
+    *   [3.12 mesa-git](#mesa-git)
+    *   [3.13 mingw-w64](#mingw-w64)
+    *   [3.14 ownstuff](#ownstuff)
+    *   [3.15 pantheon](#pantheon)
+    *   [3.16 pietma](#pietma)
+    *   [3.17 pnsft-pur](#pnsft-pur)
 
 ## Adding your repository to this page
 
@@ -128,21 +123,6 @@ Server = http://repo.archlinuxcn.org/$arch
 #Server = https://cdn.repo.archlinuxcn.org/$arch
 ## or install archlinuxcn-mirrorlist-git and use the mirrorlist
 #Include = /etc/pacman.d/archlinuxcn-mirrorlist
-
-```
-
-### archsec
-
-*   **Maintainer:** [The ArchSec Team](https://archsec.info)
-*   **Description:** A repository of binaries compiled from a hardened toolchain
-*   **Upstream page:** [https://archsec.info/](https://archsec.info/)
-*   **Key-ID:** 500773F3B282BEDB4D960B0F3C6F2219257C9E23
-
-**Note:** ArchSec-specific instructions can be found at [https://archsec.info/docs/config/](https://archsec.info/docs/config/)
-
-```
-[archsec]
-Server = https://archsec.info/$repo/$arch
 
 ```
 
@@ -209,18 +189,6 @@ Server = https://repo.itmettke.de/aur/$repo/$arch
 ```
 [blackeagle-pre-community]
 Server = https://repo.herecura.be/$repo/$arch
-
-```
-
-### boyska64
-
-*   **Maintainer:** boyska
-*   **Description:** Personal repository: cryptography, sdr, mail handling and misc; don't expect packages to be upgraded promptly, I am a zealot of slackness
-*   **Key-ID:** 0x7395DCAE58289CA9
-
-```
-[boyska64]
-Server = http://boyska.degenerazione.xyz/archrepo
 
 ```
 
@@ -321,6 +289,20 @@ Server = https://pkgbuild.com/~eschwartz/repo/$arch
 ```
 [ffy00]
 Server = https://pkgbuild.com/~ffy00/repo
+
+```
+
+### fusion809
+
+*   **Maintainer:** [Horne](https://aur.archlinux.org/account/fusion809%7CBrenton)] (brentonhorne77 at gmail dot com).
+*   **Description:** Provides a few AUR and other packages I like. Like CodeLite and bleeding-edge (latest release within 1 day of its release) GVim (GTK+2 interface).
+*   **Package list:** [http://download.opensuse.org/repositories/home:/fusion809/Arch_Extra/x86_64/](http://download.opensuse.org/repositories/home:/fusion809/Arch_Extra/x86_64/)
+*   **Key-ID:** 03264DDCD606DC98
+*   **Keyfile:** [https://download.opensuse.org/repositories/home:/fusion809/Arch_Extra/x86_64/home_fusion809_Arch_Extra.key](https://download.opensuse.org/repositories/home:/fusion809/Arch_Extra/x86_64/home_fusion809_Arch_Extra.key)
+
+```
+[home_fusion809_Arch_Extra]
+Server = https://download.opensuse.org/repositories/home:/fusion809/Arch_Extra/$arch
 
 ```
 
@@ -439,6 +421,19 @@ Server = https://mikelpint.github.io/repository/archlinux/repo
 
 ```
 
+### Minerva W Science
+
+*   **Maintainer:** Minerva W
+*   **Description:** [OpenFOAM](/index.php/OpenFOAM "OpenFOAM") packages.
+*   **Key-ID:** 3FF21B78117507DA
+*   **Keyfile:** [https://download.opensuse.org/repositories/home:/Minerva_W:/Science/Arch_Extra/x86_64/home_Minerva_W_Science_Arch_Extra.key](https://download.opensuse.org/repositories/home:/Minerva_W:/Science/Arch_Extra/x86_64/home_Minerva_W_Science_Arch_Extra.key)
+
+```
+[home_Minerva_W_Science_Arch_Extra]
+Server = https://download.opensuse.org/repositories/home:/Minerva_W:/Science/Arch_Extra/$arch 
+
+```
+
 ### mobile
 
 *   **Maintainer:** [farwayer](https://keybase.io/farwayer)
@@ -481,13 +476,26 @@ Server = https://pkgbuilder-repo.chriswarrick.com/
 
 *   **Maintainer**: [Oleksandr Natalenko aka post-factum](https://aur.archlinux.org/account/post-factum)
 *   **Upstream page**: [https://gitlab.com/post-factum/pf-kernel/wikis/README](https://gitlab.com/post-factum/pf-kernel/wikis/README)
-*   **Description**: [pf-kernel](/index.php/Kernel#Major_patchsets "Kernel") and other packages by its developer, post-factum
+*   **Description**: [pf-kernel](/index.php/Kernel#Major_patchsets "Kernel") packages by its developer, post-factum
 *   **Key-ID:**: 95C357D2AF5DA89D
 *   **Keyfile**: [https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/home_post-factum_kernels_Arch.key](https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/x86_64/home_post-factum_kernels_Arch.key)
 
 ```
 [home_post-factum_kernels_Arch]
 Server = https://download.opensuse.org/repositories/home:/post-factum:/kernels/Arch/$arch
+
+```
+
+### QOwnNotes
+
+*   **Maintainer:** [Patrizio Bekerle](https://aur.archlinux.org/account/pbek) (pbek), QOwnNotes author
+*   **Description:** QOwnNotes is a open source notepad and todo list manager with markdown support and [ownCloud](/index.php/OwnCloud "OwnCloud") integration.
+*   **Key-ID:** FFC43FC94539B8B0
+*   **Keyfile:** [https://download.opensuse.org/repositories/home:/pbek:/QOwnNotes/Arch_Extra/x86_64/home_pbek_QOwnNotes_Arch_Extra.key](https://download.opensuse.org/repositories/home:/pbek:/QOwnNotes/Arch_Extra/x86_64/home_pbek_QOwnNotes_Arch_Extra.key)
+
+```
+[home_pbek_QOwnNotes_Arch_Extra]
+Server = https://download.opensuse.org/repositories/home:/pbek:/QOwnNotes/Arch_Extra/$arch
 
 ```
 
@@ -747,18 +755,6 @@ Server = https://dx37.gitlab.io/$repo/$arch
 
 ```
 
-### fusion809
-
-*   **Maintainer:** [Brenton Horne](/index.php?title=User:Fusion809&action=edit&redlink=1 "User:Fusion809 (page does not exist)") (brentonhorne77 at gmail dot com).
-*   **Description:** Provides a few AUR and other packages I like. Like CodeLite and bleeding-edge (latest release within 1 day of its release) GVim (GTK+2 interface).
-*   **Package list:** [http://download.opensuse.org/repositories/home:/fusion809/Arch_Extra/x86_64/](http://download.opensuse.org/repositories/home:/fusion809/Arch_Extra/x86_64/)
-
-```
-[home_fusion809_Arch_Extra]
-Server = https://download.opensuse.org/repositories/home:/fusion809/Arch_Extra/$arch
-
-```
-
 ### heftig
 
 *   **Maintainer:** [Jan Steffens](https://www.archlinux.org/people/developers/#heftig)
@@ -804,17 +800,6 @@ Server = http://repo.jkanetwork.com/repo/$repo/
 ```
 [mesa-git]
 Server = https://pkgbuild.com/~lcarlier/$repo/$arch
-
-```
-
-### Minerva W Science
-
-*   **Maintainer:**
-*   **Description:** [OpenFOAM](/index.php/OpenFOAM "OpenFOAM") packages.
-
-```
-[home_Minerva_W_Science_Arch_Extra]
-Server = https://download.opensuse.org/repositories/home:/Minerva_W:/Science/Arch_Extra/$arch 
 
 ```
 
@@ -875,51 +860,5 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 ```
 [pnsft-pur]
 Server = https://downloads.sourceforge.net/project/pnsft-aur/pur/x86_64
-
-```
-
-### QOwnNotes
-
-*   **Maintainer:** [Patrizio Bekerle](https://aur.archlinux.org/account/pbek) (pbek), QOwnNotes author
-*   **Description:** QOwnNotes is a open source notepad and todo list manager with markdown support and [ownCloud](/index.php/OwnCloud "OwnCloud") integration.
-
-```
-[home_pbek_QOwnNotes_Arch_Extra]
-Server = https://download.opensuse.org/repositories/home:/pbek:/QOwnNotes/Arch_Extra/$arch
-
-```
-
-### rakudo
-
-*   **Maintainer:** spider-mario <spidermario@free.fr>
-*   **Description:** Rakudo Perl6
-
-```
-[rakudo]
-Server = https://spider-mario.quantic-telecom.net/archlinux/$repo/$arch
-
-```
-
-### rust-git
-
-*   **Maintainer:** Tatsuyuki Ishi <ishitatsuyuki@gmail.com>
-*   **Description:** Packages of rust-git and others. Normally updated weekly.
-
-```
-[rust-git]
-Server = https://tatsuyuki.kdns.info/archlinux/$repo/$arch
-
-```
-
-### zrootfs
-
-*   **Maintainer:** Isabell Cowan <isabellcowan@gmail.com>
-*   **Description:** For Haswell and Broadwell architecture processors with size in mind.
-
-**Note:** This repo has not been maintained since 2016-03-14\. There are no guarantees as to how long it will be kept online.
-
-```
-[zrootfs]
-Server = https://www.izzette.com/izzi/zrootfs-old
 
 ```

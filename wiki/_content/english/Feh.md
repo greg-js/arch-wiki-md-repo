@@ -63,7 +63,7 @@ Other scaling options include:
 To restore the background on the next session, add the following to your startup file (e.g. `~/.xinitrc`, `~/.config/openbox/autostart`, etc.):
 
 ```
-$ ~/.fehbg &
+~/.fehbg &
 
 ```
 

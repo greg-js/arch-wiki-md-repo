@@ -20,9 +20,10 @@
 
 ## 安装
 
-[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")位于[官方仓库](/index.php/%E5%AE%98%E6%96%B9%E4%BB%93%E5%BA%93 "官方仓库")的[nginx](https://www.archlinux.org/packages/?name=nginx) 软件包。
+[安装](/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Pacman (简体中文)")位于[官方仓库](/index.php/%E5%AE%98%E6%96%B9%E4%BB%93%E5%BA%93 "官方仓库")的[nginx-mainline](https://www.archlinux.org/packages/?name=nginx-mainline) 软件包。
+
 ```
-# pacman -S nginx
+# pacman -S nginx-mainline
 
 ```
 
@@ -59,7 +60,7 @@
 
 FastCGI，也称为FCGI，是一个外部服务与Web服务器的接口协议。FastCGI是早期的通用网关接口(CGI)的增强版本。 FastCGI致力于减少网页服务器与CGI程序之间的开销，从而使服务器可以同时处理更多的网页请求。
 
-Nginx为了许多外部工具和服务而引入FastCGI技术，例如[Perl](/index.php?title=Perl&action=edit&redlink=1 "Perl (page does not exist)"), [PHP](/index.php/PHP "PHP") 和 [Python](/index.php/Python "Python")。所以，在FastCGI服务启动之前，它们都是不能使用的。
+Nginx为了许多外部工具和服务而引入FastCGI技术，例如[Perl](/index.php/Perl "Perl"), [PHP](/index.php/PHP "PHP") 和 [Python](/index.php/Python "Python")。所以，在FastCGI服务启动之前，它们都是不能使用的。
 
 #### PHP 集成
 

@@ -51,4 +51,4 @@ see [Java#Applications not resizing with WM, menus immediately closing](/index.p
 
 ## See also
 
-[List of applications/Internet#Download_managers](/index.php/List_of_applications/Internet#Download_managers "List of applications/Internet").
+[List of applications/Internet#Download managers](/index.php/List_of_applications/Internet#Download_managers "List of applications/Internet").

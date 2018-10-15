@@ -10,7 +10,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [usbguard](https://aur.archlinux.org/packages/usbguard/) package, or [usbguard-git](https://aur.archlinux.org/packages/usbguard-git/) for the development version.
+[Install](/index.php/Install "Install") the [usbguard](https://www.archlinux.org/packages/?name=usbguard) package, or [usbguard-git](https://aur.archlinux.org/packages/usbguard-git/) for the development version.
 
 ## Configuration
 

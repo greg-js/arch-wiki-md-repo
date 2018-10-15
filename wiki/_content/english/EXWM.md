@@ -83,25 +83,15 @@ EXWM can be used in place of openbox, allowing you to still use [LXDE](/index.ph
 
 Before doing this, make sure you have your init file for emacs already set up to run EXWM (see above)
 
-First, run
+*lxsession* uses the [window manager](/index.php/Window_manager "Window manager") defined in `~/.config/lxsession/LXDE/desktop.conf` ([Openbox](/index.php/Openbox "Openbox") by default). If this file does not exist, it searches in `/etc/xdg/lxsession/LXDE/desktop.conf` instead.
+
+Replace `openbox-lxde` in either file with emacs:
 
 ```
-lxsession-edit
+[Session]
+window_manager=emacs
 
 ```
-
-and go to the Advanced Options tab. Replace openbox with emacs. Then, run
-
-```
-lxsession-default-apps
-
-```
-
-Go to the Core Applications tab, and ensure the Windows Manager option is also set to emacs.
-
-Now, go to the Autostart tab and uncheck the pcmanfm --desktop option. You can choose to keep the lxpanel option checked if you would still like to use it.
-
-Log out, select LXDE from your login manager, and it will load emacs and init your EXWM environment automatically.
 
 ### lxsession-logout
 

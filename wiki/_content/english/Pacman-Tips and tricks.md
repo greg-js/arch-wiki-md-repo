@@ -376,6 +376,35 @@ $ sudo -u http darkhttpd /var/cache/pacman/pkg --no-server-id
 
 You could also run darkhttpd as a systemd service for convenience. Just add this server at the top of your `/etc/pacman.d/mirrorlist` in client machines with `Server = http://mymirror:8080`. Make sure to keep your mirror updated.
 
+If you're already running a web server for some other purpose, you might wish to reuse that as your local repo server instead of darkhttpd. For example, say you already serve a site with [nginx](/index.php/Nginx "Nginx"), you can add an nginx server block listening on port 8080:
+
+ `/etc/nginx/nginx.conf` 
+```
+http {
+    # ... other nginx server configs up here
+
+    server {
+        listen 8080;
+        root /var/cache/pacman/pkg;
+        server_name myarchrepo.localdomain;
+        try_files $uri $uri/;
+    }
+}
+
+```
+
+Remember to restart nginx after making this change.
+
+Whichever web server you use, remember to open port 8080 to local traffic (and you probably want to deny anything not local), so add a rule like the following to [iptables](/index.php/Iptables "Iptables"):
+
+ `/etc/iptables/iptables.rules` 
+```
+-A TCP -s 192.168.0.0/16 -p tcp -m tcp --dport 8080 -j ACCEPT
+
+```
+
+Remember to restart iptables after making this change.
+
 #### Distributed read-only cache
 
 There are Arch-specific tools for automatically discovering other computers on your network offering a package cache. Try [pacredir](https://www.archlinux.org/packages/?name=pacredir), [pacserve](/index.php/Pacserve "Pacserve"), [pkgdistcache](https://aur.archlinux.org/packages/pkgdistcache/), or [paclan](https://aur.archlinux.org/packages/paclan/). pkgdistcache uses Avahi instead of plain UDP which may work better in certain home networks that route instead of bridge between WiFi and Ethernet.

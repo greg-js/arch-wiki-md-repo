@@ -21,7 +21,7 @@ The preferred method is to use *udev* because it uses hardware information (whic
 
 ## Identifying scancodes
 
-You need to know the *scancodes* of keys you wish to remap. See [Extra keyboard keys#Identifying scancodes](/index.php/Extra_keyboard_keys#Identifying_scancodes "Extra keyboard keys") for details.
+You need to know the *scancodes* of keys you wish to remap. See [Keyboard_input#Identifying scancodes](/index.php/Keyboard_input#Identifying_scancodes "Keyboard input") for details.
 
 ## Using udev
 

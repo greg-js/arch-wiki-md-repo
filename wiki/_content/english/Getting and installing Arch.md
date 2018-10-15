@@ -15,7 +15,7 @@ Alternatively, run `pacman-key -v archlinux-<version>-x86_64.iso.sig` from an ex
 
 ## Installation methods
 
-The table below offers an overview of the common ways to boot the installation media. As the installation process retrieves packages from a remote repository, these methods require an internet connection; see [Offline installation of packages](/index.php/Offline_installation_of_packages "Offline installation of packages") and [Archiso#Installation without Internet access](/index.php/Archiso#Installation_without_Internet_access "Archiso") when none is available.
+The table below offers an overview of the common ways to boot the installation media. As the installation process retrieves packages from a remote repository, these methods require an internet connection; see [Offline installation of packages](/index.php/Offline_installation_of_packages "Offline installation of packages") and [Installation without internet access](/index.php/Installation_without_internet_access "Installation without internet access") when none is available.
 
 **Note:**
 

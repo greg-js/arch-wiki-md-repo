@@ -50,7 +50,7 @@ Um pacote do Arch é nada mais que um pacote tar, ou "tarball", comprimido usand
 *   `.BUILDINFO`: contém informações necessárias para compilações reproduzíveis. Esse arquivo está presente somente se um pacote está compilado com pacman 5.1 ou mais recente.
 *   `.MTREE`: contém *hashes* e *timestamps* dos arquivos, que são incluídos na base de dados local de forma que o pacman possa verificar a integridade do pacote.
 *   `.INSTALL`: um arquivo opcional usado para executar comandos após o estágio instalação/atualização/remoção. (Esse arquivo está presente apenas se especificado no `PKGBUILD`.)
-*   `.Changelog`: um arquivo opcional mantido pelo mantenedor do pacote documentando as chances do pacote. (Ele não está presente em todos pacotes.)
+*   `.Changelog`: um arquivo opcional mantido pelo mantenedor do pacote documentando as mudanças do pacote. (Ele não está presente em todos pacotes.)
 
 ### Pacotes meta e grupos
 
@@ -218,7 +218,7 @@ Por favor, leia [AUR (Português)#Enviando pacotes](/index.php/AUR_(Portugu%C3%A
 ### Avisos
 
 *   Antes de você automatizar o processo de compilação do pacote, você deve tê-lo feito manualmente pelo menos uma vez, a menos que você saiba *exatamente* o que você está fazendo *desde já*, caso em que você não precisaria estar lendo isso em primeiro lugar. Infelizmente, apesar de uma boa quantidade de autores de programas seguirem o ciclo de compilação de 3 etapas de "`./configure`; `make`; `make install`", não é sempre que isso ocorre e as coisas podem dar muito errado se você tiver que aplicar patches para fazer tudo funcionar. Regra do polegar: Se você não puder fazer o programa compilar a partir do tarball fonte e fazê-lo ser instalado para um subdiretório temporário definido, você não precisa se quer empacotá-lo. Não há nenhum pozinho mágico no `makepkg` que faça os problemas do código-fonte sumirem.
-*   Em alguns casos, os pacotes nem mesmo estão disponíveis e você tem que usar alguma coisa como `sh installer.run` para fazê-los funcionar. Você terá que fazer uma boa pesquisa (ler os READMEs, instruções de INSTALL, páginas man, talvez ebuilds do Gentoo ou outros instaladores de pacote, possivelmente até os MAKEFILEs ou o código-fonte) para fazê-lo funcionar. Em alguns casos realmente sérios, você tem que editar os arquivos fontes para fazê-los funcionar. Porém, `makepkg` precisa ser completamente autônomo, com nenhuma entrada de usuário. Portanto, se você precisa editar os makefiles, você pode ter juntar um patch personalizado ao `PKGBUILD` e instalá-lo de dentro da função `prepare()`, ou você pode ter que usar alguns comandos `sed` de dentro da função `prepare()`.
+*   Em alguns casos, os pacotes nem mesmo estão disponíveis e você tem que usar alguma coisa como `sh installer.run` para fazê-los funcionar. Você terá que fazer uma boa pesquisa (ler os READMEs, instruções de INSTALL, páginas man, talvez ebuilds do Gentoo ou outros instaladores de pacote, possivelmente até os MAKEFILEs ou o código-fonte) para fazê-lo funcionar. Em alguns casos realmente sérios, você tem que editar os arquivos fontes para fazê-los funcionar. Porém, `makepkg` precisa ser completamente autônomo, com nenhuma entrada de usuário. Portanto, se você precisa editar os makefiles, você pode ter que juntar um patch personalizado ao `PKGBUILD` e instalá-lo de dentro da função `prepare()`, ou você pode ter que usar alguns comandos `sed` de dentro da função `prepare()`.
 
 ## Diretrizes mais detalhadas
 

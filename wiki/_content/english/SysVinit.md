@@ -85,7 +85,7 @@ See also `man 5 inittab` and `man 8 init`.
 
 ### Through bootloader
 
-To change the runlevel the system boots into, simply add the desired runlevel `n` to the respective bootloader's configuration line. A common application of this is [Xinit#Autostart_X_at_login](/index.php/Xinit#Autostart_X_at_login "Xinit"). To boot to the desired runlevel, add its number to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") (e.g. `3` for runlevel 3).
+To change the runlevel the system boots into, simply add the desired runlevel `n` to the respective bootloader's configuration line. A common application of this is [Xinit#Autostart X at login](/index.php/Xinit#Autostart_X_at_login "Xinit"). To boot to the desired runlevel, add its number to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") (e.g. `3` for runlevel 3).
 
 The run-level was appended to the end so the kernel knows what run-level to start with. To use another init program (e.g. [systemd](/index.php/Systemd "Systemd")), add `init=/usr/lib/systemd/systemd` or similar.
 

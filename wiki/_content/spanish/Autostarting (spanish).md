@@ -57,7 +57,7 @@ Véase [Command-line shell#Configuration files](/index.php/Command-line_shell#Co
 
 ## En el inicio de Xorg
 
-*   [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") si está iniciando [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") manualmente con [xinit](/index.php/Xinit "Xinit").
+*   [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") si está iniciando [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") manualmente con [xinit](/index.php/Xinit_(Espa%C3%B1ol) "Xinit (Español)").
 *   [xprofile](/index.php/Xprofile_(Espa%C3%B1ol) "Xprofile (Español)") si está usando un [gestor de pantalla](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)").
 
 ## En el inicio del entorno de escritorio

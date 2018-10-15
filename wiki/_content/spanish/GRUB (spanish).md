@@ -82,7 +82,7 @@ En una configuración BIOS/[GPT](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) 
 
 **Nota:**
 
-*   Antes de intentar este método tenga en cuenta que no todos los sistemas serán capaces de soportar este esquema de particionado. Lea más sobre [GUID partition table](/index.php/GUID_Partition_Table_(Espa%C3%B1ol)#Sistemas_BIOS "GUID Partition Table (Español)").
+*   Antes de intentar este método tenga en cuenta que no todos los sistemas serán capaces de soportar este esquema de particionado. Lea más sobre [GUID partition table](/index.php/Partitioning_(Espa%C3%B1ol)#GUID_Partition_Table "Partitioning (Español)").
 *   Esta partición adicional solo la necesita GRUB, en un esquema de particionado BIOS/GPT. Anteriormente, GRUB, en un esquema de particionado BIOS/MBR, usaba el espacio posterior al MBR para insertar su `core.img`. En una tabla de particionado GPT, sin embargo, no se puede garantizar que exista espacio suficiente (después del MBR y) antes de la primera partición.
 *   Para sistemas [UEFI](/index.php/Unified_Extensible_Firmware_Interface_(Espa%C3%B1ol) "Unified Extensible Firmware Interface (Español)") esta partición adicional no es necesaria, ya que en este caso no se lleva a cabo su incustración en los sectores de arranque. Sin embargo, los sistemas UEFI aún requieren una partición EFI del sistema «*[EFI system partition](/index.php/EFI_system_partition "EFI system partition")*».
 

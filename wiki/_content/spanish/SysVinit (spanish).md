@@ -105,7 +105,7 @@ Donde `id` es un identificador único para la entrada (sólo un nombre, sin efec
 
 ### A través del gestor de arranque
 
-Para cambiar el nivel de ejecución (runlevel) al iniciar el sistema, simplemente agregue el nivel de ejecución deseado `n` a la línea de configuración del gestor de arranque. Una solución similar a ésto se consigue con [inittab](/index.php/Start_X_at_login#inittab "Start X at login"). Para arrancar con el nivel de ejecución deseado, agregue su número a los [parámetros del Kernel](/index.php/Kernel_parameters "Kernel parameters") (por ejemplo, `3` para el runlevel 3).
+Para cambiar el nivel de ejecución (runlevel) al iniciar el sistema, simplemente agregue el nivel de ejecución deseado `n` a la línea de configuración del gestor de arranque. Una solución similar a ésto se consigue con [inittab](#inittab). Para arrancar con el nivel de ejecución deseado, agregue su número a los [parámetros del Kernel](/index.php/Kernel_parameters "Kernel parameters") (por ejemplo, `3` para el runlevel 3).
 
 El nivel de ejecución se añade al final, por lo que el kernel sabe el nivel de ejecución que debe iniciar. Para utilizar otro programa de inicio (por ejemplo, [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)")), añada `init=/bin/systemd` o similar.
 

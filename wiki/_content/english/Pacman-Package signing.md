@@ -224,7 +224,7 @@ error: PackageName: signature from "XXX" is unknown trust
 
 ```
 
-This occurs because the key is not present and/or not trusted in the local pacman-key gpg database. Pacman does not seem to always be able to check if the key was received and marked as trusted before continuing. Mitigate by [manually signing the untrusted key locally](/index.php/Pacman/Package_signing#Adding_unofficial_keys "Pacman/Package signing") or [resetting all the keys](/index.php/Pacman/Package_signing#Resetting_all_the_keys "Pacman/Package signing").
+This occurs because the key is not present and/or not trusted in the local pacman-key gpg database. Pacman does not seem to always be able to check if the key was received and marked as trusted before continuing. Mitigate by [manually signing the untrusted key locally](#Adding_unofficial_keys) or [resetting all the keys](#Resetting_all_the_keys).
 
 ### Updating keys via proxy
 

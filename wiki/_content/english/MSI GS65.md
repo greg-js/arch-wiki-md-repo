@@ -28,7 +28,8 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
     *   [1.5 Keyboard](#Keyboard)
         *   [1.5.1 Lights](#Lights)
         *   [1.5.2 Button Mapping](#Button_Mapping)
-            *   [1.5.2.1 Unmapped Buttons](#Unmapped_Buttons)
+            *   [1.5.2.1 Airplane Mode Key Combination](#Airplane_Mode_Key_Combination)
+            *   [1.5.2.2 Unmapped Buttons](#Unmapped_Buttons)
     *   [1.6 Touchpad](#Touchpad)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Webcam is not detected](#Webcam_is_not_detected)
@@ -164,12 +165,17 @@ And reloading the keymapping database:
 
 The commit [[1]](https://github.com/systemd/systemd/commit/e05c8b44622afe4256f3bb361cfb2c7db32fff8e) to fix this in systemd has been merged and should be available in the next release of systemd (240).
 
+##### Airplane Mode Key Combination
+
+The airplane mode key combination (FN + F10) is disabled by default. Adding the following kernel parameters activates airplane mode:
+
+`acpi_osi=! acpi_osi="Windows 2009"`
+
 ##### Unmapped Buttons
 
 The following buttons don't have any function or keycodes.
 
 *   FN + F7
-*   FN + F10 (airplane mode)
 *   FN + Home
 
 ### Touchpad
@@ -223,19 +229,7 @@ Waking from suspend will have wifi in airplane mode. [[2]](https://askubuntu.com
 
 ```
 
-Wifi can be reactivated in a few ways:
-
-```
-   # rfkill unblock all
-
-```
-
-```
-   # modprobe iwlwifi
-
-```
-
-Or by hibernating and rebooting.
+Wifi can be reactivated by either using the [airplane mode key combination](#Airplane_Mode_Button) twice or by hibernating and rebooting.
 
 A way to mitigate this is by setting systemd to hibernate instead of suspending.
 
@@ -310,6 +304,7 @@ x86_64 unknown unknown
 Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 Bus 001 Device 002: ID 1038:1122 SteelSeries ApS 
 Bus 001 Device 003: ID 8087:0aaa Intel Corp. 
+Bus 001 Device 005: ID 5986:211c Acer, Inc
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```

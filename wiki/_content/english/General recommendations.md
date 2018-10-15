@@ -311,7 +311,7 @@ You may wish to install a set of TrueType fonts, as only unscalable bitmap fonts
 
 A plethora of information on the subject can be found in the [Fonts](/index.php/Fonts "Fonts") and [Font configuration](/index.php/Font_configuration "Font configuration") articles.
 
-If spending a significant amount of time working from the virtual console (i.e. outside an X server), users may wish to change the console font to improve readability; see [Linux_console#Fonts](/index.php/Linux_console#Fonts "Linux console").
+If spending a significant amount of time working from the virtual console (i.e. outside an X server), users may wish to change the console font to improve readability; see [Linux console#Fonts](/index.php/Linux_console#Fonts "Linux console").
 
 ### GTK+ and Qt themes
 

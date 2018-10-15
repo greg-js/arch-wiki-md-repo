@@ -63,7 +63,7 @@ Los paquetes en los repositorios de prueba deben probarse y firmarse antes de se
 
 ### Crear y adoptar paquetes de AUR
 
-El repositorio [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") contiene los scripts de los paquetes realizados por la comunidad para que los usuarios pueden instalar fácilmente software que no está en los repositorios oficiales. Los paquetes más populares terminan incluyéndose en el repositorio oficial [community](/index.php/Arch_User_Repository_(Espa%C3%B1ol)#community "Arch User Repository (Español)").
+El repositorio [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") contiene los scripts de los paquetes realizados por la comunidad para que los usuarios pueden instalar fácilmente software que no está en los repositorios oficiales. Los paquetes más populares terminan incluyéndose en el [repositorio oficial de la comunidad](/index.php/Official_repositories_(Espa%C3%B1ol)#Community "Official repositories (Español)").
 
 Se puede ayudar mediante la creación y adopción de paquetes.
 

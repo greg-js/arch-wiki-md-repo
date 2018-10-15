@@ -8,7 +8,7 @@ In general, a [domain name](https://en.wikipedia.org/wiki/Domain_name "wikipedia
 ## Contents
 
 *   [1 Name Service Switch](#Name_Service_Switch)
-    *   [1.1 Check if you can resolve domain names](#Check_if_you_can_resolve_domain_names)
+    *   [1.1 Resolve a domain name using NSS](#Resolve_a_domain_name_using_NSS)
 *   [2 Glibc resolver](#Glibc_resolver)
     *   [2.1 Overwriting of /etc/resolv.conf](#Overwriting_of_.2Fetc.2Fresolv.conf)
     *   [2.2 Limit lookup time](#Limit_lookup_time)
@@ -21,10 +21,10 @@ In general, a [domain name](https://en.wikipedia.org/wiki/Domain_name "wikipedia
 
 ## Name Service Switch
 
-The [Name Service Switch](https://en.wikipedia.org/wiki/Name_Service_Switch "wikipedia:Name Service Switch") (NSS) facility is part of the GNU C Library ([glibc](https://www.archlinux.org/packages/?name=glibc)) and backs the [getaddrinfo(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/getaddrinfo.3) API, used to resolve domain names. NSS allows system databases to be provided by separate services, whose search order can be configured by the administrator in [nsswitch.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nsswitch.conf.5). The database responsible for domain name resolution is the `hosts` database, for which glibc offers the following services:
+The [Name Service Switch](https://en.wikipedia.org/wiki/Name_Service_Switch "wikipedia:Name Service Switch") (NSS) facility is part of the GNU C Library ([glibc](https://www.archlinux.org/packages/?name=glibc)) and backs the [getaddrinfo(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/getaddrinfo.3) API, used to resolve domain names. NSS allows system databases to be provided by separate services, whose search order can be configured by the administrator in [nsswitch.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nsswitch.conf.5). The database responsible for domain name resolution is the *hosts* database, for which glibc offers the following services:
 
-*   `file`: reads the `/etc/hosts` file, see [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5)
-*   `dns`: the [glibc resolver](#Glibc_resolver) which reads `/etc/resolv.conf`, see [resolv.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolv.conf.5)
+*   *file*: reads the `/etc/hosts` file, see [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5)
+*   *dns*: the [glibc resolver](#Glibc_resolver) which reads `/etc/resolv.conf`, see [resolv.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolv.conf.5)
 
 [Systemd](/index.php/Systemd "Systemd") provides three NSS services for hostname resolution:
 
@@ -32,9 +32,9 @@ The [Name Service Switch](https://en.wikipedia.org/wiki/Name_Service_Switch "wik
 *   [nss-myhostname(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nss-myhostname.8) - provides hostname resolution without having to edit `/etc/hosts`, described in [Network configuration#Local hostname resolution](/index.php/Network_configuration#Local_hostname_resolution "Network configuration")
 *   [nss-mymachines(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nss-mymachines.8) - provides hostname resolution for the names of local [systemd-machined(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-machined.8) containers
 
-### Check if you can resolve domain names
+### Resolve a domain name using NSS
 
-NSS databases can be queried with [getent(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/getent.1). You can resolve a domain name through NSS using:
+NSS databases can be queried with [getent(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/getent.1). A domain name can be resolved through NSS using:
 
 ```
 $ getent hosts *domain_name*
@@ -99,7 +99,7 @@ That way you can refer to local hosts such as `mainmachine1.example.com` as simp
 
 ## Resolvers
 
-The Glibc resolver provides only the most basic necessities, it does not cache queries or provide any security features. If you desire more functionality use another resolver.
+The Glibc resolver provides only the most basic necessities, it does not cache queries nor provides any security features. If you require more functionality, use another resolver.
 
 **Tip:**
 
@@ -132,7 +132,7 @@ In the table below, the columns have the following meaning:
 
 ## Privacy
 
-DNS is not encrypted, so you may want to use a [resolver](#Resolver) that supports an encrypted protocol, like [DNS over TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS"), [DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") or [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt").
+DNS is not encrypted, so you may want to use a [resolver](#Resolvers) that supports an encrypted protocol, like [DNS over TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS"), [DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") or [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt").
 
 Most DNS servers keep a log of IP addresses and sites visited on a more or less temporary basis. The data collected can be used to perform various statistical studies. Personally-identifying information have value and can also be rented or sold to third parties. [Alternative DNS services](/index.php/Alternative_DNS_services "Alternative DNS services") provides a list of popular services, check their privacy policy for information about how user data is handled.
 

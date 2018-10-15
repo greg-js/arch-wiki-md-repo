@@ -458,43 +458,7 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 ### Web servers
 
-See also [Category:Web server](/index.php/Category:Web_server "Category:Web server").
-
-*   **[Apache](/index.php/Apache "Apache")** — A high performance Unix-based HTTP server.
-
-	[http://www.apache.org/dist/httpd](http://www.apache.org/dist/httpd) || [apache](https://www.archlinux.org/packages/?name=apache)
-
-*   **[Caddy](/index.php/Caddy "Caddy")** — HTTP/2 web server with automatic HTTPS
-
-	[https://caddyserver.com/](https://caddyserver.com/) || [caddy](https://aur.archlinux.org/packages/caddy/)
-
-*   **darkhttpd** — A small and secure static webserver
-
-	[https://unix4lyfe.org/darkhttpd/](https://unix4lyfe.org/darkhttpd/) || [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd)
-
-*   **[Hiawatha](/index.php/Hiawatha "Hiawatha")** — Secure and advanced webserver.
-
-	[https://www.hiawatha-webserver.org/](https://www.hiawatha-webserver.org/) || [hiawatha](https://www.archlinux.org/packages/?name=hiawatha)
-
-*   **[Lighttpd](/index.php/Lighttpd "Lighttpd")** — A secure, fast, compliant and very flexible web-server.
-
-	[http://www.lighttpd.net/](http://www.lighttpd.net/) || [lighttpd](https://www.archlinux.org/packages/?name=lighttpd)
-
-*   **[nginx](/index.php/Nginx "Nginx")** — Lightweight HTTP server and IMAP/POP3 proxy server.
-
-	[https://nginx.org/](https://nginx.org/) || [nginx](https://www.archlinux.org/packages/?name=nginx)
-
-*   **shttpd** — Supported fork of the thttpd web server
-
-	[http://freecode.com/projects/shttpd](http://freecode.com/projects/shttpd) || [shttpd](https://aur.archlinux.org/packages/shttpd/)
-
-*   **Webfs** — Simple and instant http server for mostly static content.
-
-	[http://linux.bytesex.org/misc/webfs.html](http://linux.bytesex.org/misc/webfs.html) || [webfs](https://www.archlinux.org/packages/?name=webfs)
-
-*   **yaws** — Web server/framework written in Erlang
-
-	[http://yaws.hyber.org/](http://yaws.hyber.org/) || [yaws](https://www.archlinux.org/packages/?name=yaws)
+See [Web server](/index.php/Web_server "Web server").
 
 ### ACME clients
 

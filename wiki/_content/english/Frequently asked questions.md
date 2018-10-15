@@ -72,7 +72,7 @@ Arch Linux follows the *file system hierarchy* for operating systems using the [
 
 ### I am a complete GNU/Linux beginner. Should I use Arch?
 
-If you are a beginner and want to use Arch, you must be willing to invest time into learning a new system, and accept that Arch is designed as a DIY (Do-It-Yourself) distribution; it is the user who assembles the system.
+If you are a beginner and want to use Arch, you must be willing to invest time into learning a new system, and accept that Arch is designed as a 'do-it-yourself' distribution; it is the user who assembles the system.
 
 Before asking for help, do your own independent research by Googling, searching the forum and the superb documentation provided by the Arch Wiki. *There is a reason these resources were made available to you in the first place.* Many thousands of *volunteered* hours have been spent compiling this excellent information.
 
@@ -80,7 +80,7 @@ See also [Arch terminology#RTFM](/index.php/Arch_terminology#RTFM "Arch terminol
 
 ### Is Arch designed to be used as a server? A desktop? A workstation?
 
-Arch is not designed for any particular type of use. Rather, it is designed for a particular type of *user*. Arch targets competent users who enjoy its do-it-yourself nature, and who further exploit it to shape the system to fit their unique needs. Therefore, in the hands of its target user base, Arch can be used for virtually any purpose. Many use Arch on both their desktops and workstations. And of course, archlinux.org runs on Arch.
+Arch is not designed for any particular type of use. Rather, it is designed for a particular type of *user*. Arch targets competent users who enjoy its 'do-it-yourself' nature, and who further exploit it to shape the system to fit their unique needs. Therefore, in the hands of its target user base, Arch can be used for virtually any purpose. Many use Arch on both their desktops and workstations. And of course, archlinux.org runs on Arch.
 
 ### I really like Arch, except the development team needs to implement feature X
 
@@ -108,7 +108,7 @@ Possibly so. Feel free to volunteer your time! Visit the [forums](https://bbs.ar
 
 Is your network configured correctly? Have a look at the [Network configuration](/index.php/Network_configuration "Network configuration") article.
 
-Also note that Arch Linux does not come with [traffic shaping](https://en.wikipedia.org/wiki/Traffic_shaping "wikipedia:Traffic shaping") enabled. Thus, it is possible that if a program on it somehow utilizes your internet connection to the full – regardless if it is over P2P or classic client-server connections – other local ones will find it clogged, resulting in severe lags and timeouts. Relief can be provided by [firewalls](/index.php/Firewalls "Firewalls") such as Shorewall or Vuurmuur; there are also static scripts for [iproute2](https://www.archlinux.org/packages/?name=iproute2) (such as [this derivative](http://serendipity.ruwenzori.net/index.php/2008/06/01/modified-wondershaper-for-better-voip-qos) of Wondershaper), which allow shaping on the network layer.
+Also note that Arch Linux does not come with [traffic shaping](https://en.wikipedia.org/wiki/Traffic_shaping "wikipedia:Traffic shaping") enabled. Thus, it is possible that if a program on it somehow utilizes your internet connection to the full – regardless if it is over P2P or classic client-server connections – other local ones will find it clogged, resulting in severe lags and timeouts. Relief can be provided by [firewalls](/index.php/Firewalls "Firewalls") such as *Shorewall* or *Vuurmuur*; there are also static scripts for [iproute2](https://www.archlinux.org/packages/?name=iproute2) (such as [this derivative](http://serendipity.ruwenzori.net/index.php/2008/06/01/modified-wondershaper-for-better-voip-qos) of *Wondershaper*), which allow shaping on the network layer.
 
 ### Why is Arch using all my RAM?
 
@@ -128,7 +128,7 @@ Swap:          3.0G        881M        2.1G
 
 It is important to note the difference between "free" and "available" memory. In the above example, a laptop with 2.8G of total RAM appears to be using most of it, with only 283M as free memory. However, 1.4G of it is "buff/cache". There is still 1.2G available for starting new applications, without swapping. See `man free(1)` for detail. The result of all this? Performance!
 
-See [this wonderful article](http://www.linuxjournal.com/article/2770) if your curiosity has been piqued! There is also a website dedicated to clearing this confusion: [http://www.linuxatemyram.com/](http://www.linuxatemyram.com/)
+See [this wonderful article](http://www.linuxjournal.com/article/2770) if your curiosity has been piqued. There is also a website dedicated to clearing this confusion: [http://www.linuxatemyram.com/](http://www.linuxatemyram.com/)
 
 ### Where did all my free space go?
 

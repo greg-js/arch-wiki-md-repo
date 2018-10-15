@@ -114,7 +114,7 @@ export SSH_AUTH_SOCK
 
 See [Xfce#SSH agents](/index.php/Xfce#SSH_agents "Xfce") for use in Xfce.
 
-If you use [I3](/index.php/I3 "I3") and ssh is not showing the password prompt, giving the following error
+If you use [i3](/index.php/I3 "I3") and ssh is not showing the password prompt, giving the following error
 
 ```
 sign_and_send_pubkey: signing failed: agent refused operation

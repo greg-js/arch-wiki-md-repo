@@ -234,7 +234,7 @@ There are several flags that can be set during the configuration of the slots. T
 
 ### The LED
 
-The YubiKey has a small green LED able to communicate with you. Its message to you actually depends on the currently used [USB connection mode](#The_.28USB_Connection.2FTransport.29_Modes_of_the_YubiKey) of your YubiKey.
+The YubiKey has a small green LED able to communicate with you. Its message to you actually depends on the currently used [#USB connection modes](#USB_connection_modes) of your YubiKey.
 
 The possible messages are:
 

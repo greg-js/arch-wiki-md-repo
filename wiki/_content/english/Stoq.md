@@ -33,7 +33,7 @@ After running Stoq for the first time, you will need to configure the database l
 
 To connect to the database locall, you must [install](/index.php/Install "Install") the [postgresql](https://www.archlinux.org/packages/?name=postgresql).
 
-If the PostgreSQL database cluster has not been initialized yet, please follow the [PostgreSQL#Initial_configuration](/index.php/PostgreSQL#Initial_configuration "PostgreSQL") first.
+If the PostgreSQL database cluster has not been initialized yet, please follow the [PostgreSQL#Initial configuration](/index.php/PostgreSQL#Initial_configuration "PostgreSQL") first.
 
 As root, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `postgresql.service`.
 
@@ -53,7 +53,7 @@ The main Stoq configuration file is located at `~/.stoq/stoq.conf`.
 
 ### Configure stoq-server
 
-If the PostgreSQL database cluster has not been initialized yet, please follow the [PostgreSQL#Initial_configuration](/index.php/PostgreSQL#Initial_configuration "PostgreSQL") first.
+If the PostgreSQL database cluster has not been initialized yet, please follow the [PostgreSQL#Initial configuration](/index.php/PostgreSQL#Initial_configuration "PostgreSQL") first.
 
 As root, [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `postgresql.service`.
 

@@ -37,7 +37,7 @@ Related articles
 
 [acpid](https://www.archlinux.org/packages/?name=acpid) viene con una serie de acciones predefinidas para eventos activados, como lo que debería suceder cuando presionas el botón de encendido en tu máquina. De forma predeterminada, estas acciones se definen en `/etc/acpi/handler.sh`, que se ejecuta después de detectar cualquier evento ACPI (según lo determinado por `/etc/acpi/events/anything` )
 
-Lo siguiente es un pequeño ejemplo de una acción de este tipo. En este caso, cuando se presiona el botón de Suspensión, acpid ejecuta el comando `echo -n mem >/sys/power/state` que *debería* colocar la computadora en un estado de suspensión (hibernación):
+Lo siguiente es un pequeño ejemplo de una acción de este tipo. En este caso, cuando se presiona el botón de Suspensión, acpid ejecuta la orden `echo -n mem >/sys/power/state` que *debería* colocar la computadora en un estado de suspensión (hibernación):
 
 ```
 button/sleep)
@@ -51,7 +51,7 @@ button/sleep)
 
 Desafortunadamente, no todas las computadoras etiquetan los eventos ACPI de la misma manera. Por ejemplo, el botón de suspensión puede identificarse en una máquina como *SLPB* y en otra como *SBTN*.
 
-Para determinar cómo se reconocen sus botones o atajos `Fn`, ejecute el siguiente comando:
+Para determinar cómo se reconocen sus botones o atajos `Fn`, ejecute la siguiente orden:
 
 ```
 # journalctl -f
@@ -99,7 +99,7 @@ $4 00000b31
 
 Como habrá notado, el botón de suspensión en la salida del ejemplo se reconoce realmente como *SBTN*, en lugar de la etiqueta *SLPB* especificada en el archivo `/etc/acpi/handler.sh` predeterminado. Para que la función de suspensión funcione correctamente en esta máquina, debería reemplazar *SLPB)* por *SBTN)*.
 
-Al utilizar esta información como base, puede personalizar fácilmente el archivo `/etc/acpi/handler.sh` para ejecutar una variedad de comandos según el evento que se active. Véase la sección [#Consejos y trucos](#Consejos_y_trucos) a continuación para conocer otros comandos usados comúnmente.
+Al utilizar esta información como base, puede personalizar fácilmente el archivo `/etc/acpi/handler.sh` para ejecutar una variedad de órdenes según el evento que se active. Véase la sección [#Consejos y trucos](#Consejos_y_trucos) a continuación para conocer otras órdenes usadas comúnmente.
 
 ### Configuración alternativa
 
@@ -187,7 +187,7 @@ event=button/volumeup
 action=amixer set Master 5+
 ```
 
-**Nota:** Estos comandos pueden no funcionar como se espera con PulseAudio. [[1]](https://lists.freedesktop.org/archives/pulseaudio-discuss/2015-December/025062.html) Para una funcionalidad completa, ejecute comandos como el usuario actual mientras especifica la [variable de entorno](/index.php/Environment_variables_(Espa%C3%B1ol) "Environment variables (Español)") `XDG_RUNTIME_DIR`, por ejemplo con `sudo -u *usuario* XDG_RUNTIME_DIR=/run/user/*1000* pactl`.
+**Nota:** Estas órdenes pueden no funcionar como se espera con PulseAudio. [[1]](https://lists.freedesktop.org/archives/pulseaudio-discuss/2015-December/025062.html) Para una funcionalidad completa, ejecute las órdenes como el usuario actual mientras especifica la [variable de entorno](/index.php/Environment_variables_(Espa%C3%B1ol) "Environment variables (Español)") `XDG_RUNTIME_DIR`, por ejemplo con `sudo -u *usuario* XDG_RUNTIME_DIR=/run/user/*1000* pactl`.
 
 **Sugerencia:** Desactive o vincule los botones de volumen en Xorg para evitar conflictos con otras aplicaciones. Véase [Xmodmap](/index.php/Xmodmap "Xmodmap") para más detalles.
 
@@ -247,9 +247,9 @@ esac
 
 ### Obtener el nombre de usuario de la pantalla actual
 
-Para ejecutar comandos que dependan de [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)"), es necesario definir la visualización X así como el archivo MIT Magic Cookie (a través de XAUTHORITY). Después es tener una credencial de seguridad que proporciona acceso de lectura y escritura al servidor X, a la pantalla y a cualquier dispositivo de entrada (Véase [xauth(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xauth.1)).
+Para ejecutar órdenes que dependan de [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)"), es necesario definir la visualización X así como el archivo MIT Magic Cookie (a través de XAUTHORITY). Después es tener una credencial de seguridad que proporciona acceso de lectura y escritura al servidor X, a la pantalla y a cualquier dispositivo de entrada (Véase [xauth(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xauth.1)).
 
-Véase [[3]](https://gist.githubusercontent.com/AladW/de1c5676d93d05a5a0e1/raw/16e010ecda9f2328e1e22d4e02ac814ed27717b4/gistfile1.txt) para una función de ejemplo cuando se usa [xinitrc](/index.php/Xinitrc "Xinitrc").
+Véase [[3]](https://gist.githubusercontent.com/AladW/de1c5676d93d05a5a0e1/raw/16e010ecda9f2328e1e22d4e02ac814ed27717b4/gistfile1.txt) para una función de ejemplo cuando se usa [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)").
 
 **Nota:**
 

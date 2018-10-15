@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"), revisada por última vez el **2018-10-01**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=545397) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"), revisada por última vez el **2018-10-14**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=545703) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -83,7 +83,7 @@ Estas distribuciones ya no se desarrollan, pero muestran algo de la historia que
 *   [ALOBE](https://sourceforge.net/projects/alobearchlinuxoldboyeditionv1/)
 *   [ArchBox](https://sourceforge.net/projects/archbox-linux/)
 *   [Arch Linux WSL Edition](https://github.com/alwsl/alwsl)
-*   [Aseman OS](https://asemanos.gitlab.io/)
+*   [Aseman OS](https://sourceforge.net/projects/asemanos/)
 *   [Astian OS](https://sourceforge.net/projects/astian-os/)
 *   [Audiophile Linux](http://www.ap-linux.com/) 
 *   [Feliz](https://sourceforge.net/projects/feliz/)

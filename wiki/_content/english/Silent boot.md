@@ -8,6 +8,7 @@ This page is for those who prefer to limit the verbosity of their system to a st
 *   [4 startx](#startx)
 *   [5 fsck](#fsck)
 *   [6 Make GRUB silent](#Make_GRUB_silent)
+*   [7 Retaining the vendor logo from BIOS](#Retaining_the_vendor_logo_from_BIOS)
 
 ## Kernel parameters
 
@@ -121,3 +122,22 @@ GRUB_RECORDFAIL_TIMEOUT=$GRUB_TIMEOUT
 **Note:** If you set `GRUB_TIMEOUT=0` and `GRUB_HIDDEN_TIMEOUT=1` (or any positive value), set `GRUB_RECORDFAIL_TIMEOUT=$GRUB_HIDDEN_TIMEOUT` instead of `GRUB_RECORDFAIL_TIMEOUT=$GRUB_TIMEOUT`. Otherwise pressing `Esc` on boot to show GRUB menu will not work.
 
 Lastly, regenerate `grub.cfg` file.
+
+## Retaining the vendor logo from BIOS
+
+Modern UEFI systems display a vendor logo on boot until handing over control to the bootloader; e.g. Lenovo laptops display a bright red Lenovo logo. This vendor logo is typically blanked by the bootloader (if standard GRUB is used) or by the kernel.
+
+To prevent the kernel from blanking the vendor logo, Linux 4.19 introduced a new configuration option `FRAMEBUFFER_CONSOLE_DEFERRED_TAKEOVER` that retains the contents of the framebuffer until text needs to be printed on the framebuffer console. When combined with a low loglevel (to prevent text from being printed), the vendor logo can be retained while the system is initialized.
+
+[Video demonstration](https://www.youtube.com/watch?v=5DW2JgJmsuY)
+
+At the time of writing, Linux 4.19 has not been released yet, so you must [compile the 4.19.0-rc7 (or newer) kernel](/index.php/Kernel#Compilation "Kernel") with `CONFIG_FRAMEBUFFER_CONSOLE_DEFERRED_TAKEOVER=y`.
+
+The kernel command line should use `loglevel=3` or `rd.udev.log_priority=3` as mentioned above. Note that if you often receive `Core temperature above threshold, cpu clock throttled` messages in the kernel log, you need to use log level 2 to silence these at boot time. Alternatively, if you're compiling the kernel anyway, adjust the log level of the message in `arch/x86/kernel/cpu/mcheck/therm_throt.c`.
+
+If you use [Intel graphics](/index.php/Intel_graphics "Intel graphics"), set `i915.fastboot=1` in the kernel command line to avoid unnecessary modesetting (and screen blanking) on boot.
+
+*Further reading:*
+
+*   [Phoronix: Linux 4.19 Adds Deferred Console Takeover Support For FBDEV - Cleaner Boot Process](https://www.phoronix.com/scan.php?page=news_item&px=Linux-4.19-FBDEV-Defer-Console)
+*   [Hans de Goede: Adding deferred fbcon console takeover to the Fedora kernels](https://lists.fedoraproject.org/archives/list/kernel@lists.fedoraproject.org/thread/3MWCKJ2DVJPC4INXPKB4ECFZLA7X5RTI/)

@@ -69,7 +69,7 @@ De [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Logi
 
 ## Bloques para construir LVM
 
-*Logical Volume Management* (en adelante LVM, siglas en inglés) hace uso de la función [device-mapper](http://sources.redhat.com/dm/) del kernel de Linux para proporcionar un sistema de particiones independientes de la estructura subyacente del disco. Con LVM es posible crear un espacio de almacenamiento abstracto así como distintas «particiones virtuales», por lo que es más fácil de [agrandar/encoger](#Redimensionar_los_vol.C3.BAmenes) particiones (siempre sujeto a posibles limitaciones de su sistema de archivos).
+*Logical Volume Management* (en adelante LVM, siglas en inglés) hace uso de la función [device-mapper](http://sources.redhat.com/dm/) del kernel de Linux para proporcionar un sistema de particiones independientes de la estructura subyacente del disco. Con LVM es posible crear un espacio de almacenamiento abstracto así como distintas «particiones virtuales», por lo que es más fácil de [agrandar/encoger](#Redimensionar_vol.C3.BAmenes) particiones (siempre sujeto a posibles limitaciones de su sistema de archivos).
 
 Las particiones virtuales permiten añadir/eliminar particiones sin tener que preocuparse acerca de si se tiene suficiente espacio contiguo en un disco concreto, ni quedar atrapado en el fdisking de un disco en uso (y preguntándose si el kernel está utilizando una tabla de particiones vieja o nueva), ni tener que mover otras particiones en el camino. Esto es un asunto que afecta estrictamente a la facilidad de gestión: LVM no proporciona ninguna seguridad.
 

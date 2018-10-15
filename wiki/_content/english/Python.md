@@ -110,7 +110,7 @@ Sections above refer to the reference implementation of Python, called CPython. 
 *   [Jython](http://www.jython.org/) is a Python 2.7 implementation built in Java. It allows easy integration of Python and Java code, but is not fully compatible with CPython libraries. It is often used to provide Python as a scripting language in a bigger Java application.
 *   [IronPython](http://ironpython.net/) is a Python 2.7 implementation built in .NET - it achieves the same goals as Jython, but for .NET languages (like C#/VB).
 *   [MicroPython](https://micropython.org/) is a limited Python 3.4 implementation targeting microcontrollers and other embedded environments (like UEFI), but is incompatible with most standard packages due to [minor syntax changes and severely limited standard library](http://docs.micropython.org/en/latest/pyboard/genrst/index.html). It is often used for prototyping in with embedded environments (as it provides a Python REPL).
-*   [More implementations are available](https://en.wikipedia.org/wiki/Python_(programming_language)#Implementations), although most are no longer maintained due to improvements in the most popular ones.
+*   [More implementations are available](https://en.wikipedia.org/wiki/Python_(programming_language)#Implementations "wikipedia:Python (programming language)"), although most are no longer maintained due to improvements in the most popular ones.
 
 ### Old versions
 

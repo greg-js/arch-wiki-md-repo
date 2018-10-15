@@ -82,7 +82,7 @@ Xorg 的相关错误可以查看 [Xorg#Troubleshooting](/index.php/Xorg#Troubles
 
 ### Pacman 数据库
 
-参考 [Pacman tips#Back-up the pacman database](/index.php/Pacman_tips#Back-up_the_pacman_database "Pacman tips").
+参考 [Pacman tips#Backup the pacman database](/index.php/Pacman_tips#Backup_the_pacman_database "Pacman tips").
 
 ### LUKS headers
 

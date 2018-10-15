@@ -60,7 +60,7 @@ See [List of applications/Multimedia#mpv-based](/index.php/List_of_applications/
 
 ## Configuration
 
-*mpv* comes with good all-around defaults that should work well on computers with weaker/older video cards. However, if you have a computer with a more modern video card then mpv allows you to do a great deal of configuration to achieve better video quality (limited only by the power of your video card). To do this one only needs to create a few configuration files (they do not exist by default).
+*mpv* comes with good all-around defaults that should work well on computers with weaker/older video cards. However, if you have a computer with a more modern video card then *mpv* allows you to do a great deal of configuration to achieve better video quality (limited only by the power of your video card). To do this one only needs to create a few configuration files (they do not exist by default).
 
 **Note:** Configuration files are read system-wide from `/etc/mpv` and per-user from `~/.config/mpv` (unless the [environment variable](/index.php/Environment_variable "Environment variable") `XDG_CONFIG_HOME` is set), where per-user settings override system-wide settings, all of which are overridden by the command line. User specific configuration is suggested since it may require some trial and error.
 
@@ -119,22 +119,16 @@ In `mpv.conf` it is possible to create *profiles* which are essentially just "gr
 *   Create special profiles for special content.
 *   *nest* profiles so that you can make more complicated *profiles* out of simpler ones.
 
-Creating a profile is easy. The area at the top of `mpv.conf` is called the top level, any options you write there will kick into effect once mpv is started. However, once you define a profile by writing its name in brackets then every option you write below it (until you define a new profile) is considered part of that profile. Here is an example `mpv.conf`:
+Creating a profile is easy. The area at the top of `mpv.conf` is called the top level, any options you write there will kick into effect once *mpv* is started. However, once you define a profile by writing its name in brackets then every option you write below it (until you define a new profile) is considered part of that profile. Here is an example `mpv.conf`:
 
 ```
 profile=myprofile2        #Top level area, load myprofile2
 ontop=yes                 #Always on top
 
-```
-
-```
 [myprofile1]              #A simple profile, top level area ends here
 profile-desc="a profile"  #Optional description for profile
 fs=yes                    #Start in full screen
 
-```
-
-```
 [myprofile2]              #Another simple profile
 profile=gpu-hq            #A built in profile that comes with mpv
 log-file=~~/log           #Sets a location for writing a log file, ~~/ translates to ~/.config/mpv
@@ -143,7 +137,7 @@ log-file=~~/log           #Sets a location for writing a log file, ~~/ translate
 
 There are only two lines within the top level area and there are two separate profiles defined below it. When *mpv* starts it sees the first line, loads the options in `myprofile2` (which means it loads the options in `gpu-hq` and `log-file=~~/log`) finally it loads `ontop=yes` and finishes starting up. Note, `myprofile1` is never loaded because it's never called in the top level area.
 
-Alternatively one could call mpv from the command line with:
+Alternatively one could call *mpv* from the command line with:
 
 ```
 $ mpv --profile=myprofile1 video.mkv
@@ -195,7 +189,7 @@ See [https://mpv.io/manual/master/#files](https://mpv.io/manual/master/#files) f
 
 *mpv* has a [large variety of scripts](https://github.com/mpv-player/mpv/wiki/User-Scripts) that extend the functionality of the player. To this end, it has internal bindings for both Lua and JavaScript (added recently).
 
-Scripts are typically installed by putting them in the `~/.config/mpv/scripts/` directory (you may have to create it first). After that they will be automatically loaded when mpv starts (this behavior can be altered with other mpv options). Some scripts come with their own installation and configuration instructions, so make sure to have a look. In addition some scripts are old, broken, and unmaintained.
+Scripts are typically installed by putting them in the `~/.config/mpv/scripts/` directory (you may have to create it first). After that they will be automatically loaded when mpv starts (this behavior can be altered with other *mpv* options). Some scripts come with their own installation and configuration instructions, so make sure to have a look. In addition some scripts are old, broken, and unmaintained.
 
 ### JavaScript
 
@@ -209,7 +203,7 @@ There are a lot of interesting Lua scripts for mpv. If you would like to make yo
 
 #### mpv-stats
 
-[mpv-stats](https://github.com/Argon-/mpv-stats/) (or simply *stats*) is a Lua script that outputs a lot of live statistics showing how well mpv is currently doing. It is very useful for making sure that your hardware can keep up with your configuration and for comparing different configurations. Since version [v0.28.0](https://github.com/mpv-player/mpv/releases/tag/v0.28.0), the script is built into [mpv](https://www.archlinux.org/packages/?name=mpv) and can be toggled on or off with the `i` or `I` keys (by default).
+[mpv-stats](https://github.com/Argon-/mpv-stats/) (or simply *stats*) is a Lua script that outputs a lot of live statistics showing how well *mpv* is currently doing. It is very useful for making sure that your hardware can keep up with your configuration and for comparing different configurations. Since version [v0.28.0](https://github.com/mpv-player/mpv/releases/tag/v0.28.0), the script is built into [mpv](https://www.archlinux.org/packages/?name=mpv) and can be toggled on or off with the `i` or `I` keys (by default).
 
 #### mpv-webm
 
@@ -219,7 +213,7 @@ There are a lot of interesting Lua scripts for mpv. If you would like to make yo
 
 #### mpv-mpris
 
-The C plugin [mpv-mpris](https://github.com/hoyon/mpv-mpris) allows other applications to integrate with mpv via the MPRIS protocol. For example, with mpv-mpris installed, [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) can automatically pause video playback in mpv when a phone call arrives.
+The C plugin [mpv-mpris](https://github.com/hoyon/mpv-mpris) allows other applications to integrate with *mpv* via the MPRIS protocol. For example, with mpv-mpris installed, [kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect) can automatically pause video playback in *mpv* when a phone call arrives.
 
 Install [mpv-mpris](https://aur.archlinux.org/packages/mpv-mpris/) and follow the post-installation instructions displayed by Pacman.
 
@@ -229,7 +223,7 @@ Vapoursynth is an alternative to AviSynth that can be used on Linux and allows f
 
 To use vapoursynth filters you have to install the [vapoursynth](https://www.archlinux.org/packages/?name=vapoursynth) package (or [vapoursynth-git](https://aur.archlinux.org/packages/vapoursynth-git/)) and compile *mpv* with the `--enable-vapoursynth` build flag.
 
-This is easier to do by first installing Vapoursynth and then installing (or re-installing if it's already installed) [mpv-git](https://aur.archlinux.org/packages/mpv-git/). The configure script for [mpv-git](https://aur.archlinux.org/packages/mpv-git/) will auto-detect Vapoursynth (as long as it has already been installed) and it will automatically compile mpv with support for Vapoursynth without having to manually change any configure options or anything (this makes it very easy to update mpv as well).
+This is easier to do by first installing Vapoursynth and then installing (or re-installing if it's already installed) [mpv-git](https://aur.archlinux.org/packages/mpv-git/). The configure script for [mpv-git](https://aur.archlinux.org/packages/mpv-git/) will auto-detect Vapoursynth (as long as it has already been installed) and it will automatically compile *mpv* with support for Vapoursynth without having to manually change any configure options or anything (this makes it very easy to update *mpv* as well).
 
 ### SVP 4 Linux (SmoothVideoProject)
 
@@ -241,7 +235,7 @@ It has three main features and each one can be disabled/enabled as one chooses (
 2.  [Black bar lighting](https://www.svp-team.com/wiki/Manual:Outer_lighting) ([youtube video](https://www.youtube.com/watch?v=yTzTpW3kTBE)) - If the image has an aspect ratio that produces black bars on your display then SVP will illuminate the black bars with "lights" generated by the content on the screen. It has some amount of customization but the defaults are pretty close to optimal.
 3.  [LED ambient lighting control](https://www.svp-team.com/wiki/Manual:SVPlight) ([youtube video](https://www.youtube.com/watch?v=UUM2n-8kIJ8)) - Has the ability to control LED ambient lighting attached to your television.
 
-Once you have mpv compiled with Vapoursynth support it's fairly easy to get SVP working with mpv. Simply install [svp](https://aur.archlinux.org/packages/svp/), open the SVP program to let it assess your system performance (you may want to close other programs first so that it gets an accurate reading), and finally add the following mpv profile to your mpv.conf (taken from [here](https://www.svp-team.com/wiki/SVP:mpv)):
+Once you have *mpv* compiled with Vapoursynth support it's fairly easy to get SVP working with *mpv*. Simply install [svp](https://aur.archlinux.org/packages/svp/), open the SVP program to let it assess your system performance (you may want to close other programs first so that it gets an accurate reading), and finally add the following *mpv* profile to your mpv.conf (taken from [here](https://www.svp-team.com/wiki/SVP:mpv)):
 
  `mpv.conf` 
 ```
@@ -254,14 +248,14 @@ resume-playback=no                  # Not compatible with SVP
 #opengl-early-flush=yes
 ```
 
-Then, in order to use SVP you must have the SVP program running in the background before opening the file using mpv with that profile. Either do:
+Then, in order to use SVP you must have the SVP program running in the background before opening the file using *mpv* with that profile. Either do:
 
 ```
 $ mpv --profile=svp video.mkv
 
 ```
 
-or set `profile=svp` in the top-level portion of the mpv [config](#Profiles).
+or set `profile=svp` in the top-level portion of the *mpv* [config](#Profiles).
 
 If you want to use hardware decoding then you must use a copy-back decoder since normal decoders are not compatible with Vapoursynth (choose a `hwdec` option that ends in `-copy`). For instance:
 
@@ -271,7 +265,7 @@ hwdec-codecs=all
 
 ```
 
-Either way, hardware decoding is discouraged by mpv devs and is not likely to make a significant difference in performance.
+Either way, hardware decoding is discouraged by *mpv* developers and is not likely to make a significant difference in performance.
 
 ## Tips and Tricks
 
@@ -283,7 +277,7 @@ See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardwa
 
 **Note:** The main difference between hardware decoding and software decoding is that in software decoding the file will be decompressed and then moved onto the video card whereas with hardware decoding it will be moved to the video card first and then decompressed. In either case, video *playback* will still be hardware accelerated via the video card.
 
-Unlike *mplayer* and *mplayer2*, *mpv* has both VA-API and VDPAU support built-in. To enable it, run *mpv* with the `--hwdec='method'` option. You can find list of all available methods looking in the [mpv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpv.1) manual. To make this persistent, add the line `hwdec=*method*` to your configuration file. If hardware decoding cannot be used, *mpv* will automatically fall back to software decoding.
+Unlike *mplayer* and *mplayer2*, *mpv* has both VA-API and VDPAU support built-in. To enable it, run *mpv* with the `--hwdec=*method*` option. You can find list of all available methods looking in the [mpv(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mpv.1) manual. To make this persistent, add the line `hwdec=*method*` to your configuration file. If hardware decoding cannot be used, *mpv* will automatically fall back to software decoding.
 
 The default video output driver, `gpu`, is the preferred video output driver and all others are offered only for compatibility purposes. If one encounters problems they may choose to use either `vo=vdpau` (if using `hwdec=vdpau`) or `vo=vaapi` (if using `hwdec=vaapi`) instead. This can affect the framedrop code used and cause other small differences.
 
@@ -295,7 +289,7 @@ Even with hardware decoding enabled, it will only be used for [some codecs](http
 
 Because GNOME in Wayland mode also runs an Xorg server, video acceleration will fail with `[vaapi] libva: va_getDriverName() failed with unknown libva error,driver_name=(null)`.
 
-To make *mpv* use the Wayland compositor, add the mpv option `opengl-backend=wayland`[[3]](https://github.com/01org/intel-vaapi-driver/issues/203#issuecomment-311299852). Note however that this will prevent the display of window decorations (titlebar and border).
+To make *mpv* use the Wayland compositor, add the `--opengl-backend=wayland` option (however this will prevent the display of window decorations). See [[3]](https://github.com/01org/intel-vaapi-driver/issues/203#issuecomment-311299852).
 
 ### Save position on quit
 
@@ -357,7 +351,7 @@ It may be needed to specify a valid user agent for HTTP streaming, e.g. `user-ag
 
 ### Improving mpv as a music player with Lua scripts
 
-The development of *mpv'*s Lua scripts are documented in [DOCS/man/lua.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/lua.rst) and examples are shown in [TOOLS/lua](https://github.com/mpv-player/mpv/tree/master/TOOLS/lua) of the [mpv repository](https://github.com/mpv-player/mpv). [This blog post](https://web.archive.org/web/20160320001546/http://bamos.github.io/2014/07/05/mpv-lua-scripting/) introduces the [music.lua](https://github.com/bamos/dotfiles/blob/master/.mpv/scripts/music.lua) script, which shows how Lua scripts can be used to improve mpv as a music player.
+The development of *mpv'*s Lua scripts are documented in [DOCS/man/lua.rst](https://github.com/mpv-player/mpv/blob/master/DOCS/man/lua.rst) and examples are shown in [TOOLS/lua](https://github.com/mpv-player/mpv/tree/master/TOOLS/lua) of the [mpv repository](https://github.com/mpv-player/mpv). [This blog post](https://web.archive.org/web/20160320001546/http://bamos.github.io/2014/07/05/mpv-lua-scripting/) introduces the [music.lua](https://github.com/bamos/dotfiles/blob/master/.mpv/scripts/music.lua) script, which shows how Lua scripts can be used to improve *mpv* as a music player.
 
 ### Twitch.tv streaming over mpv
 
@@ -431,7 +425,7 @@ If *mpv* runs but it just does not run well then a fourth thing that might be wo
 
 ### Fix jerky playback and tearing
 
-mpv defaults to using the OpenGL video output device setting on hardware that supports it. In cases such as trying to play video back on a 4K display using a Intel HD4XXX series card or similar, you will find video playback unreliable, jerky to the point of stopping entirely at times and with major tearing when using any opengl output setting. If you experience any of these issues, using the XV (XVideo) video output device may help:
+*mpv* defaults to using the OpenGL video output device setting on hardware that supports it. In cases such as trying to play video back on a 4K display using a Intel HD4XXX series card or similar, you will find video playback unreliable, jerky to the point of stopping entirely at times and with major tearing when using any opengl output setting. If you experience any of these issues, using the XV (XVideo) video output device may help:
 
  `~/.config/mpv/mpv.conf`  `vo=xv` 
 
@@ -452,7 +446,7 @@ vd-lavc-threads=<threads>
 
 ### Problems with window compositors
 
-Window compositors such as KWin or Mutter can cause trouble for playback smoothness. In such cases, it may help to set `x11-bypass-compositor=yes` to make mpv also disable window compositing when playing in windowed mode (if supported by the compositor).
+Window compositors such as KWin or Mutter can cause trouble for playback smoothness. In such cases, it may help to set `x11-bypass-compositor=yes` to make *mpv* also disable window compositing when playing in windowed mode (if supported by the compositor).
 
 With KWin compositing and hardware decoding, you may also want to set `x11-bypass-compositor=no` to keep compositing enabled in fullscreen, since reanabling compositing after leaving fullscreen may introduce stutter for a period of time.
 

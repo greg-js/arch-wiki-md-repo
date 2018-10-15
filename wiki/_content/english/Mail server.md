@@ -112,7 +112,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Sender_Policy_Framework "wikipedi
 To allow other mail exchangers to validate mails apparently sent from your domain, you need to set a DNS TXT record as explained in the [Wikipedia article](https://en.wikipedia.org/wiki/Sender_Policy_Framework "wikipedia:Sender Policy Framework"). To validate incoming mail using SPF you need to configure your mail transfer agent to use a SPF implementation. There are several [SPF implementations](http://www.openspf.org/Implementations) available, [libspf2](https://www.archlinux.org/packages/?name=libspf2), [perl-mail-spf](https://www.archlinux.org/packages/?name=perl-mail-spf) and [perl-mail-spf-query](https://www.archlinux.org/packages/?name=perl-mail-spf-query) can be found in the official repositories.
 
 <caption>SPF validation support</caption>
-| [Courier](/index.php/Courier_Mail_Server "Courier Mail Server") | Yes, built-in |
+| [Courier](/index.php/Courier "Courier") | Yes, built-in |
 | [Postfix](/index.php/Postfix "Postfix") | [Yes](/index.php/Postfix#Sender_Policy_Framework "Postfix") |
 | [Sendmail](/index.php/Sendmail "Sendmail") | through [Milter](https://en.wikipedia.org/wiki/Milter "wikipedia:Milter") and [spfmilter-acme](https://aur.archlinux.org/packages/spfmilter-acme/) |
 | [Exim](/index.php/Exim "Exim") | [experimental](https://github.com/Exim/exim/wiki/SPF), requires [libspf2](https://www.archlinux.org/packages/?name=libspf2) |

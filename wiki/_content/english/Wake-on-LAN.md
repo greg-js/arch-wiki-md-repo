@@ -19,11 +19,14 @@
         *   [3.2.1 Forward a port to the broadcast address](#Forward_a_port_to_the_broadcast_address)
 *   [4 Miscellaneous](#Miscellaneous)
     *   [4.1 Check reception of the magic packets](#Check_reception_of_the_magic_packets)
+        *   [4.1.1 Using netcat](#Using_netcat)
+        *   [4.1.2 Using ngrep](#Using_ngrep)
     *   [4.2 Example of WoL script](#Example_of_WoL_script)
 *   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Battery draining problem](#Battery_draining_problem)
-    *   [5.2 Realtek](#Realtek)
-    *   [5.3 alx driver support](#alx_driver_support)
+    *   [5.1 Wake-up after shutdown](#Wake-up_after_shutdown)
+    *   [5.2 Battery draining problem](#Battery_draining_problem)
+    *   [5.3 Realtek](#Realtek)
+    *   [5.4 alx driver support](#alx_driver_support)
 *   [6 See also](#See_also)
 
 ## Hardware settings
@@ -32,13 +35,7 @@ The target computer's motherboard and [Network Interface Controller](https://en.
 
 The Wake-on-LAN feature also has to be enabled in the computer's BIOS. Different motherboard manufacturers use slightly different language for this feature. Look for terminology such as "PCI Power up", "Allow PCI wake up event" or "Boot from PCI/PCI-E".
 
-It is known that some motherboards are affected by a bug that can cause immediate or random wake-up after a *shutdown* whenever the BIOS WoL feature is enabled (as discussed in [this thread](https://bbs.archlinux.org/viewtopic.php?id=173648) for example). The following actions in the BIOS preferences can solve this issue with some motherboards:
-
-1.  Disable all references to *xHCI* in the USB settings (note this will also disable USB 3.0 at boot time)
-2.  Disable *EuP 2013* if it is explicitly an option
-3.  Optionally enable wake-up on keyboard actions
-
-**Note:** There are mixed opinions as to the value of #3 above and it may be motherboard dependent.
+Note that some motherboards are affected by a bug that can cause immediate or random [#Wake-up after shutdown](#Wake-up_after_shutdown) whenever the BIOS WoL feature is enabled.
 
 ## Software configuration
 
@@ -105,9 +102,7 @@ Type=oneshot
 WantedBy=multi-user.target
 ```
 
-Alternatively install the [wol-systemd](https://aur.archlinux.org/packages/wol-systemd/) package.
-
-Then activate this new service by [starting](/index.php/Starting "Starting") `wol@*interface*.service`.
+Alternatively install the [wol-systemd](https://aur.archlinux.org/packages/wol-systemd/) package, then activate this new service by [starting](/index.php/Starting "Starting") `wol@*interface*.service`.
 
 #### udev
 
@@ -257,9 +252,11 @@ For notes on how to do it on a router with [OpenWrt](https://en.wikipedia.org/wi
 
 ### Check reception of the magic packets
 
-In order to make sure the WoL packets reach the target computer, one can listen to the UDP port, usually port 9, for magic packets.
+In order to make sure the WoL packets reach the target computer, one can listen to the UDP port, usually port 9, for magic packets. The magic packet frame expected contains 6 bytes of FF followed by 16 repetitions of the target computer's MAC (6 bytes each) for a total of 102 bytes.
 
-This can be performed by installing [gnu-netcat](https://www.archlinux.org/packages/?name=gnu-netcat) from the [official repositories](/index.php/Official_repositories "Official repositories") on the target computer and using the following command:
+#### Using netcat
+
+This can be performed by installing [gnu-netcat](https://www.archlinux.org/packages/?name=gnu-netcat) on the target computer and using the following command:
 
 ```
 # nc --udp --listen --local-port=9 --hexdump
@@ -268,7 +265,14 @@ This can be performed by installing [gnu-netcat](https://www.archlinux.org/packa
 
 Then wait for the incoming traffic to appear in the `nc` terminal.
 
-The magic packet frame expected contains 6 bytes of FF followed by 16 repetitions of the target computer's MAC (6 bytes each) for a total of 102 bytes.
+#### Using ngrep
+
+Install [ngrep](https://www.archlinux.org/packages/?name=ngrep) on the target computer and type the following command:
+
+```
+# ngrep '\xff{6}(.{6})\1{15}' -x port 9
+
+```
 
 ### Example of WoL script
 
@@ -301,6 +305,16 @@ esac
 ```
 
 ## Troubleshooting
+
+### Wake-up after shutdown
+
+It is known that some motherboards are affected by a bug that can cause immediate or random wake-up after a *shutdown* whenever the BIOS WoL feature is enabled (as discussed in [this thread](https://bbs.archlinux.org/viewtopic.php?id=173648) for example). The following actions in the BIOS preferences can solve this issue with some motherboards:
+
+1.  Disable all references to *xHCI* in the USB settings (note this will also disable USB 3.0 at boot time)
+2.  Disable *EuP 2013* if it is explicitly an option
+3.  Optionally enable wake-up on keyboard actions
+
+**Note:** There are mixed opinions as to the value of #3 above and it may be motherboard dependent.
 
 ### Battery draining problem
 

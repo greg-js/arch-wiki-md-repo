@@ -7,7 +7,7 @@
 | <small>1.2.2.</small> [Desarrollo de pacman](/index.php/Category:Pacman_development_(Espa%C3%B1ol) "Category:Pacman development (Español)") <small>(0)</small> |
 | <small>1.3.</small> [Proyectos de Arch](/index.php/Category:Arch_projects_(Espa%C3%B1ol) "Category:Arch projects (Español)") <small>(5)</small> |
 | <small>1.4.</small> [ArchWiki](/index.php/Category:ArchWiki_(Espa%C3%B1ol) "Category:ArchWiki (Español)") <small>(10)</small> |
-| <small>1.4.1.</small> [Ayuda](/index.php/Category:Help_(Espa%C3%B1ol) "Category:Help (Español)") <small>(13)</small> |
+| <small>1.4.1.</small> [Ayuda](/index.php/Category:Help_(Espa%C3%B1ol) "Category:Help (Español)") <small>(14)</small> |
 | <small>1.4.2.</small> [Listados](/index.php/Category:Lists_(Espa%C3%B1ol) "Category:Lists (Español)") <small>(20)</small> |
 | <small>1.4.3.</small> [Comparaciones de programas](/index.php/Category:Software_comparisons_(Espa%C3%B1ol) "Category:Software comparisons (Español)") <small>(1) (también en [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)"))</small> |
 | <small>1.5.</small> [Proceso de instalación](/index.php/Category:Installation_process_(Espa%C3%B1ol) "Category:Installation process (Español)") <small>(13)</small> |

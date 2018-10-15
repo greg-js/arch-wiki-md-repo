@@ -39,7 +39,7 @@ There are several ways to achieve this on Linux:
 *   The features supported by your GPU may vary. To see what your GPU supports see [#Verification](#Verification).
 
 <caption>VA-API</caption>
- [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) [[1]](https://github.com/01org/intel-vaapi-driver/blob/master/README) | [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver) [[2]](https://github.com/intel/media-driver/blob/master/README.md) | [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) | [Catalyst XvBA](/index.php/AMD_Catalyst#Video_acceleration "AMD Catalyst") | [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)
+ [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) [[1]](https://github.com/01org/intel-vaapi-driver/blob/master/README) | [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver) [[2]](https://github.com/intel/media-driver/blob/master/README.md) | [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) [[3]](https://www.x.org/wiki/RadeonFeature/) | [Catalyst XvBA](/index.php/AMD_Catalyst#Video_acceleration "AMD Catalyst") | [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)
 
 (VDPAU adapter)
 
@@ -48,17 +48,17 @@ There are several ways to achieve this on Linux:
 | MPEG2 | GMA 4500 and newer | Broadwell and newer | Radeon HD 6000 and newer | Radeon HD 4000 and newer | See VDPAU |
 | MPEG4 | No | No | Radeon HD 6000 and newer | Radeon HD 6000 and newer |
 | AVC (H.264) | GMA 4500, Ironlake Graphics and newer | Broadwell and newer | Radeon HD 2000 and newer | Radeon HD 4000 and newer |
-| HEVC (H.265) 8bit | Cherryview/Braswell and newer | Skylake and newer | Radeon R9 285 and newer | No |
-| HEVC (H.265) 10bit | ? | Broxton/Apollo Lake and newer | ? |
+| HEVC (H.265) 8bit | Cherryview/Braswell and newer | Skylake and newer | Radeon R9 Fury and newer | No |
+| HEVC (H.265) 10bit | ? | Broxton/Apollo Lake and newer | Radeon 400 and newer |
 | VC1 | Sandy Bridge Graphics and newer | Broadwell and newer | Radeon HD 2000 and newer | Radeon HD 4000 and newer |
 | VP8 | Broadwell and newer | No | No | No |
 | VP9 8bit | Broxton and newer | Broxton/Apollo Lake and newer | Raven Ridge and newer |
-| VP9 10bit | ? | Kaby Lake and newer | ? |
+| VP9 10bit | ? | Kaby Lake and newer |
 | Encoding |
 | MPEG2 | Ivy Bridge Graphics and newer | Broadwell and newer, excepted for Broxton/Apollo Lake | No | No | No |
 | AVC (H.264) | Sandy Bridge Graphics and newer | Broadwell and newer | Radeon HD 7000 and newer |
 | HEVC (H.265) 8bit | Skylake and newer | Skylake and newer | Raven Ridge and newer |
-| HEVC (H.265) 10bit | ? | Cannonlake and newer | ? |
+| HEVC (H.265) 10bit | ? | Cannonlake and newer |
 | VP8 | Cherryview/Braswell and newer | No |
 | VP9 8bit | Kaby Lake and newer | Icelake and newer |
 | VP9 10bit | ? |
@@ -71,7 +71,7 @@ There are several ways to achieve this on Linux:
 | MPEG2 | Radeon 9500 and newer, GeForce 8 and newer | GeForce 8 and newer | ? | No |
 | MPEG4 | Radeon HD 6000 and newer, GeForce 200 and newer | GeForce 200 and newer |
 | AVC (H.264) | Radeon HD 2000 and newer, GeForce 8 and newer | GeForce 8 and newer | See VA-API |
-| HEVC (H.265) | Radeon R9 285 and newer | GeForce 900 and newer | No |
+| HEVC (H.265) | Radeon R9 Fury and newer | GeForce 900 and newer | No |
 | VC1 | Radeon HD 2000 and newer, GeForce 8 and newer | GeForce 8 and newer |
 
 *   Supported by [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) instead.
@@ -107,7 +107,7 @@ The choice varies depending on your video card vendor:
 
 *   For Intel Graphics use VA-API.
 *   For NVIDIA cards use VDPAU.
-*   For AMD cards you can use both (with [mesa](https://www.archlinux.org/packages/?name=mesa)). The difference is really only in the application implementation [[3]](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/open-source-amd-linux/887994-vaapi-or-vdpau).
+*   For AMD cards you can use both (with [mesa](https://www.archlinux.org/packages/?name=mesa)). The difference is really only in the application implementation [[4]](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/open-source-amd-linux/887994-vaapi-or-vdpau).
 
 There are also two specific types of drivers for VA-API and VDPAU:
 

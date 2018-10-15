@@ -45,9 +45,9 @@ Esta pensado principalmente para usuarios con experiencia, desarrolladores y per
 
 Para ejecutar awesome sin un manejador de sesión, sólo agregue `exec awesome` a el script de inicio de su elección (ej. `~/.xinitrc`.)
 
-mira [xinitrc](/index.php/Xinitrc "Xinitrc") para mas infromación, como por ejemplo mantener la sesión logind (y/o consolekit).
+Véase [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") para mas información, como por ejemplo mantener la sesión logind (y/o consolekit).
 
-Sin embargo, se puede también iniciar awesome como usuario preestablecido sin ningún manejador de sesión y sin una contraseña, después que edite ~/.xinitrc y /etc/inittab adecuadamente. Ver el artículo [Start X at login](/index.php/Start_X_at_login "Start X at login").
+Sin embargo, se puede también iniciar awesome como usuario preestablecido sin ningún manejador de sesión y sin una contraseña, después que edite ~/.xinitrc y /etc/inittab adecuadamente. Véase [arrancar X al iniciar sesión](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)").
 
 ### Iniciando Awesome con un Gestor de Inicio
 

@@ -35,7 +35,7 @@ Subsystem sftp /usr/lib/ssh/sftp-server
 
 ```
 
-Access files with *sftp* or [SSHFS](/index.php/SSHFS "SSHFS"). Many standard [FTP clients](/index.php/List_of_applications#File_transfer_clients "List of applications") should work as well.
+Access files with *sftp* or [SSHFS](/index.php/SSHFS "SSHFS"). Many standard [FTP clients](/index.php/List_of_applications/Internet#FTP_clients "List of applications/Internet") should work as well.
 
 ## Configuration
 

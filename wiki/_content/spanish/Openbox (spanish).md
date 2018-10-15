@@ -53,7 +53,7 @@ Openbox es un gestor de ventanas ligero, altamente configurable y con amplia com
 
 Una vez instalado, pacman te indicará que copies los archivos `rc.xml`, `rc.xml`, `autostart` y `environment` de la configuración por defecto a `~/.config/openbox/`.
 
-**Note:** haz esto como un usuario normal, no como root.
+**Nota:** haz esto como un usuario normal, no como root.
 
 ```
 $ mkdir -p ~/.config/openbox
@@ -96,7 +96,7 @@ exec openbox-session
 
 ```
 
-mira [xinitrc](/index.php/Xinitrc "Xinitrc") para mas detalles.
+Véase [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") para mas detalles.
 
 Si usaste otro gestor de ventanas anteriormente (como xfwm) y ahora openbox no inicia después de cerrar la sesión de X, trata moviendo la carpeta autostart:
 
@@ -105,7 +105,7 @@ mv ~/.config/autostart ~/.config/autostart.bak
 
 ```
 
-**Note:** python2-xdg es requerido para iniciar openbox mediante xdg-autostart.
+**Nota:** python2-xdg es requerido para iniciar openbox mediante xdg-autostart.
 
 ## Openbox como WM junto a otros entornos de escritorio
 
@@ -271,7 +271,7 @@ Para utilizar obm-xdg, añada la siguiente línea a `~/.config/openbox/menu.xml`
 
 Ejecute entonces `openbox --reconfigure` para actualizar el menú de Openbox. Debería ver ahora en su menú, un submenú etiquetado como **xdg**.
 
-**Note:** Si no tiene GNOME instalado, deberá instalar entonces el paquete [gnome-menus](https://www.archlinux.org/packages/?name=gnome-menus) para que funcione obm-xdg.
+**Nota:** Si no tiene GNOME instalado, deberá instalar entonces el paquete [gnome-menus](https://www.archlinux.org/packages/?name=gnome-menus) para que funcione obm-xdg.
 
 ### openbox-menu
 
@@ -294,7 +294,7 @@ Descarga el script antes mencionado y guárdalo en el directorio que mas te pare
 
 Guarda el archivo y ejecuta `openbox --reconfigure`.
 
-**Note:** Si no tiene GNOME instalado, deberá instalar entonces el paquete [gnome-menus](https://www.archlinux.org/packages/?name=gnome-menus) para que funcione obm-xdg.
+**Nota:** Si no tiene GNOME instalado, deberá instalar entonces el paquete [gnome-menus](https://www.archlinux.org/packages/?name=gnome-menus) para que funcione obm-xdg.
 
 ### Generador Automático De Menú
 
@@ -337,7 +337,7 @@ Openbox proporciona un script de inicio de todo el sistema que se aplica a todos
 
 Otras instrucciones están disponibles en [Help:Autostart](http://openbox.org/wiki/Help:Autostart) en el sitio oficial de Openbox.
 
-**Note:** Todos los programas en el archivo autostart deben ser ejecutados como demonios o en segundo plano, de lo contrario los elementos en `/etc/xdg/openbox/autostart` no arrancán.
+**Nota:** Todos los programas en el archivo autostart deben ser ejecutados como demonios o en segundo plano, de lo contrario los elementos en `/etc/xdg/openbox/autostart` no arrancán.
 
 Openbox también se inicia cualquier archivo *.desktop en la carpeta `/etc/xdg/autostart`. Esto sucede independientemente del script de inicio del usuario. nm-applet, por ejemplo, instala un archivo en esta ubicación, y puede causar que se ejecute dos veces para los usuarios con el habitual `(sleep 3 && / usr / bin / nm-applet - sm-disable)` en su script de inicio. Hay una Discusión acerca de esto [[1]](https://bbs.archlinux.org/viewtopic.php?pid=993738).
 

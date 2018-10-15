@@ -109,7 +109,7 @@ KeePass is by default, installed at `/usr/share/keepass/`. Copy `plugin.plgx` to
 
 ### Yubikey
 
-[Yubikey](/index.php/Yubikey "Yubikey") can be integrated with KeePass thanks to contributors of KeePass plugins.
+[YubiKey](/index.php/YubiKey "YubiKey") can be integrated with KeePass thanks to contributors of KeePass plugins.
 
 1.  StaticPassword
 

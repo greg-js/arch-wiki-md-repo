@@ -1,6 +1,6 @@
 Artículos relacionados
 
-*   [Display Manager](/index.php/Display_Manager "Display Manager")
+*   [Display manager (Español)](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)")
 
 [SLiM](http://slim.berlios.de/) es un acronimo de Simple Login Manager. Slim es simple, ligero y fácilmente configurable. Slim es usado por algunos, ya que no requiere dependencias de [GNOME](/index.php/GNOME "GNOME") o [KDE](/index.php/KDE "KDE") y puede ayudar a hacer un sistema más claro para los usuarios que les gusta usar escritorios ligeros como [Xfce](/index.php/Xfce "Xfce"), [Openbox](/index.php/Openbox "Openbox") o [Fluxbox](/index.php/Fluxbox "Fluxbox").
 
@@ -42,7 +42,7 @@ SLiM puede ser cargado en el arranque añadiéndolo a la lista de Demonios en `r
 
 ### Un solo manejador de ventanas
 
-Para configurar SLim para cargar un solo entorno, edite su archivo [~/.xinitrc](/index.php/Xinitrc "Xinitrc") :
+Para configurar SLim para cargar un solo entorno, edite su archivo [~/.xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") :
 
 ```
 #!/bin/sh

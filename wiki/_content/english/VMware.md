@@ -293,7 +293,7 @@ If you notice the guest and/or the host frequently freezing when running a VM, y
 
 ```
 
-To make the change persistent across boots, add the [kernel parameter](/index.php/Kernel_parameters "Kernel parameters") `transparent_hugepage=never`.
+To make the change persistent across boots, add the [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `transparent_hugepage=never`.
 
 #### Ensure direct RAM access
 

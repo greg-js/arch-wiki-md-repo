@@ -144,7 +144,7 @@ Battery life can be improved by installing [powertop](https://www.archlinux.org/
 
 The fans may remain on even at low temperatures, draining the battery and producing an unpleasant noise that will only stop on reboot. This is due to the fans being controlled by the BIOS by default.
 
-To prevent this behavior, configure i8k as described in [Fan speed control#Dell_laptops](/index.php/Fan_speed_control#Dell_laptops "Fan speed control") and use [dell-bios-fan-control-git](https://aur.archlinux.org/packages/dell-bios-fan-control-git/) utility to disable BIOS control of fans which conflicts with i8k. You may also want to [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `dell-bios-fan-control.service` to ensure BIOS control of fans is disabled at boot.
+To prevent this behavior, configure i8k as described in [Fan speed control#Dell laptops](/index.php/Fan_speed_control#Dell_laptops "Fan speed control") and use [dell-bios-fan-control-git](https://aur.archlinux.org/packages/dell-bios-fan-control-git/) utility to disable BIOS control of fans which conflicts with i8k. You may also want to [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `dell-bios-fan-control.service` to ensure BIOS control of fans is disabled at boot.
 
 ## Bluetooth
 

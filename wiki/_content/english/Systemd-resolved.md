@@ -39,44 +39,27 @@ To use *systemd-resolved* [start](/index.php/Start "Start") and [enable](/index.
 
 ### DNS
 
-*systemd-resolved* has four different modes for handling the [resolv.conf](/index.php/Resolv.conf "Resolv.conf") (described in [systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8#.2FETC.2FRESOLV.CONF)). We will focus here on the two most relevant modes.
+*systemd-resolved* has four different modes for handling the [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution") (the four modes are described in [systemd-resolved(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-resolved.8#.2FETC.2FRESOLV.CONF)). We will focus here on the two most relevant modes.
 
-1.  The *systemd-resolved'*s **recommended** mode of operation: the DNS stub file `/run/systemd/resolve/stub-resolv.conf` contains both the local stub `127.0.0.53` as the only DNS servers and a list of search domains.
-2.  The mode in which *systemd-resolved* is a client of the `/etc/resolv.conf`. This mode preserves `/etc/resolv.conf` and is **compatible** with the procedures described in this page.
-
-The service users are advised to redirect the `/etc/resolv.conf` file to the local stub DNS resolver file `/run/systemd/resolve/stub-resolv.conf` managed by *systemd-resolved*. This propagates the systemd managed configuration to all the clients. This can be done by replacing `/etc/resolv.conf` with a symbolic link to the systemd stub:
-
-```
-# ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-
-```
+1.  Using the systemd DNS stub file - the systemd DNS stub file `/run/systemd/resolve/stub-resolv.conf` contains the local stub `127.0.0.53` as the only DNS server and a list of search domains. This is the **recommended** mode of operation. The service users are advised to redirect the `/etc/resolv.conf` file to the local stub DNS resolver file `/run/systemd/resolve/stub-resolv.conf` managed by *systemd-resolved*. This propagates the systemd managed configuration to all the clients. This can be done by replacing `/etc/resolv.conf` with a symbolic link to the systemd stub: `# ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf` 
+2.  Preserving *resolv.conf* - this mode preserves `/etc/resolv.conf` and *systemd-resolved* is simply a client of this file. This mode is less disruptive as `/etc/resolv.conf` can continue to be managed by other packages.
 
 **Tip:** The mode of operation of *systemd-resolved* is detected automatically, depending on whether `/etc/resolv.conf` is a symlink to the local stub DNS resolver file or contains server names.
 
 #### Setting DNS servers
 
-In order to check the DNS actually used by *systemd-resolved*, the command to use is:
-
-```
-$ resolvectl status
-
-```
+**Tip:** In order to check the DNS actually used by *systemd-resolved*, the command to use is: `$ resolvectl status` 
 
 ##### Automatically
 
-*systemd-resolved* can get name servers and search domains in two ways:
+*systemd-resolved* will work out of the box with a [network manager](/index.php/Network_manager "Network manager") using `/etc/resolv.conf`. No particular configuration is required since *systemd-resolved* will be detected by following the `/etc/resolv.conf` symlink. This is going to be the case with [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") or [NetworkManager](/index.php/NetworkManager "NetworkManager").
 
-1.  If the used [network manager](/index.php/Network_manager "Network manager") supports *systemd-resolved*; currently those are [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [NetworkManager](/index.php/NetworkManager "NetworkManager").
-2.  If the used [DHCP](/index.php/DHCP "DHCP") and [VPN](/index.php/VPN "VPN") clients support using *resolvconf* to set name servers and search domains. See [openresolv#Users](/index.php/Openresolv#Users "Openresolv") for a list of software that use *resolvconf*.
-
-For the first case no configuration is required since *systemd-resolved* will be detected by folowing the `/etc/resolv.conf` symlink.
-
-For the second case you need to [install](/index.php/Install "Install") [systemd-resolvconf](https://www.archlinux.org/packages/?name=systemd-resolvconf), it will provide the `/usr/bin/resolvconf` symlink.
+However, if the [DHCP](/index.php/DHCP "DHCP") and [VPN](/index.php/VPN "VPN") clients use the [resolvconf](https://en.wikipedia.org/wiki/resolvconf "wikipedia:resolvconf") program to set name servers and search domains (see [openresolv#Users](/index.php/Openresolv#Users "Openresolv") for a list of software that use *resolvconf*), the additional package [systemd-resolvconf](https://www.archlinux.org/packages/?name=systemd-resolvconf) is needed to provide the `/usr/bin/resolvconf` symlink.
 
 **Note:**
 
-*   *systemd-resolved'*s *resolvconf* interface is limited and may not work with all software that use it. See [resolvectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolvectl.1) for more information.
-*   The *resolvconf* interface in systemd 290 does not set nameservers. See [FS#59459](https://bugs.archlinux.org/task/59459) and [systemd issue 9423](https://github.com/systemd/systemd/issues/9423).
+*   *systemd-resolved* has a limited *resolvconf* interface and may not work with all the clients, see [resolvectl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolvectl.1) for more information.
+*   The *resolvconf* interface in systemd 239 does not set nameservers. See [FS#59459](https://bugs.archlinux.org/task/59459) and [systemd issue 9423](https://github.com/systemd/systemd/issues/9423).
 
 ##### Manually
 
@@ -94,7 +77,7 @@ DNS=91.239.100.100 89.233.43.71
 
 If *systemd-resolved* does not receive DNS server addresses from the [network manager](/index.php/Network_manager "Network manager") and no DNS servers are configured [manually](#Manually) then *systemd-resolved* falls back to the fallback DNS addresses to ensure that DNS resolution always works.
 
-**Note:** Since [systemd](https://www.archlinux.org/packages/?name=systemd) 239.2-1 fallback DNS is set to [Cloudflare](/index.php/Alternative_DNS_services#Cloudflare "Alternative DNS services"), [Quad9 without filtering](/index.php/Alternative_DNS_services#Quad9 "Alternative DNS services") (and without DNSSEC) and [Google](/index.php/Alternative_DNS_services#Google "Alternative DNS services") DNS servers, it that order. [[1]](https://git.archlinux.org/svntogit/packages.git/commit/trunk?h=packages/systemd&id=1129c0e187a3f81c2bf3737a4870f7adb0f81c23)
+**Note:** The fallback DNS are in this order: [Cloudflare](/index.php/Alternative_DNS_services#Cloudflare "Alternative DNS services"), [Quad9](/index.php/Alternative_DNS_services#Quad9 "Alternative DNS services") (without filtering and without DNSSEC) and [Google](/index.php/Alternative_DNS_services#Google "Alternative DNS services"); see the [systemd PKGBUILD](https://git.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/systemd#n103) where the servers are defined.
 
 The addresses can be changed by setting `FallbackDNS=` in [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5). E.g.:
 
@@ -167,7 +150,7 @@ The resolver provides [hostname](/index.php/Hostname "Hostname") resolution usin
 mDNS will only be activated for the connection if both the systemd-resolved's global setting (`MulticastDNS=` in [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5)) and the [network manager's](/index.php/Network_manager "Network manager") per-connection setting is enabled. By default *systemd-resolved* enables mDNS responder, but both [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") and [NetworkManager](/index.php/NetworkManager "NetworkManager") do not enable it for connections:
 
 *   For [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") the setting is `MulticastDNS=` in the `[Network]` section. See [systemd.network(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5).
-*   For [NetworkManager](/index.php/NetworkManager "NetworkManager") the setting is `mdns=` in the `[connection]` section, see [nm-settings(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nm-settings.5). The values are `0` - disabled, `1` - resolver only, `2` - resolver and responder. [[2]](https://cgit.freedesktop.org/NetworkManager/NetworkManager/tree/libnm-core/nm-setting-connection.h#n102)
+*   For [NetworkManager](/index.php/NetworkManager "NetworkManager") the setting is `mdns=` in the `[connection]` section, see [nm-settings(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nm-settings.5). The values are `0` - disabled, `1` - resolver only, `2` - resolver and responder. [[1]](https://cgit.freedesktop.org/NetworkManager/NetworkManager/tree/libnm-core/nm-setting-connection.h#n102)
 
 **Note:** If [Avahi](/index.php/Avahi "Avahi") has been installed, consider [disabling](/index.php/Disabling "Disabling") `avahi.service` and `avahi.socket` to prevent conflicts with *systemd-resolved*.
 

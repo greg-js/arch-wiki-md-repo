@@ -17,7 +17,9 @@
         *   [1.2.6 Formula editors](#Formula_editors)
     *   [1.3 Markup languages](#Markup_languages)
         *   [1.3.1 Markdown](#Markdown)
-            *   [1.3.1.1 Markdown editors](#Markdown_editors)
+            *   [1.3.1.1 Python implementations](#Python_implementations)
+            *   [1.3.1.2 Ruby implementations](#Ruby_implementations)
+            *   [1.3.1.3 Markdown editors](#Markdown_editors)
         *   [1.3.2 Typesetting systems](#Typesetting_systems)
         *   [1.3.3 TeX editors](#TeX_editors)
         *   [1.3.4 TeX formula editors](#TeX_formula_editors)
@@ -566,15 +568,45 @@ See also the [official website](https://daringfireball.net/projects/markdown/) a
 
 *   **Discount** — A Markdown implementation written in C.
 
-	[https://www.pell.portland.or.us/~orc/Code/discount/](https://www.pell.portland.or.us/~orc/Code/discount/) || [discount](https://www.archlinux.org/packages/?name=discount)
+	[https://www.pell.portland.or.us/~orc/Code/discount/](https://www.pell.portland.or.us/~orc/Code/discount/) || [discount](https://www.archlinux.org/packages/?name=discount), [ruby-rdiscount](https://www.archlinux.org/packages/?name=ruby-rdiscount)
+
+*   **lowdown** — Markdown translator producing HTML5 and roff documents in the ms and man formats.
+
+	[https://kristaps.bsd.lv/lowdown/](https://kristaps.bsd.lv/lowdown/) || [lowdown](https://aur.archlinux.org/packages/lowdown/)
 
 *   **Marked** — Markdown parser and compiler built for speed.
 
 	[https://marked.js.org/](https://marked.js.org/) || [marked](https://www.archlinux.org/packages/?name=marked)
 
+*   [Pandoc](/index.php/Pandoc "Pandoc") also supports Markdown.
+
+##### Python implementations
+
+*   **CommonMark-py** — Python parser for the CommonMark Markdown specification.
+
+	[https://github.com/rtfd/CommonMark-py](https://github.com/rtfd/CommonMark-py) || [python-commonmark](https://www.archlinux.org/packages/?name=python-commonmark), [python2-commonmark](https://www.archlinux.org/packages/?name=python2-commonmark)
+
 *   **M2R** — Markdown to reStructuredText converter.
 
-	[https://github.com/miyakogi/m2r](https://github.com/miyakogi/m2r) || [m2r](https://www.archlinux.org/packages/?name=m2r)
+	[https://github.com/miyakogi/m2r](https://github.com/miyakogi/m2r) || [m2r](https://www.archlinux.org/packages/?name=m2r), [python2-m2r](https://www.archlinux.org/packages/?name=python2-m2r)
+
+*   **Mistune** — The fastest markdown parser in pure Python with renderer feature.
+
+	[https://github.com/lepture/mistune](https://github.com/lepture/mistune) || [python-mistune](https://www.archlinux.org/packages/?name=python-mistune), [python2-mistune](https://www.archlinux.org/packages/?name=python2-mistune)
+
+*   **Python-Markdown** — Extensible Python implementation of John Gruber's Markdown.
+
+	[https://github.com/Python-Markdown/markdown](https://github.com/Python-Markdown/markdown) || [python-markdown](https://www.archlinux.org/packages/?name=python-markdown), [python2-markdown](https://www.archlinux.org/packages/?name=python2-markdown)
+
+##### Ruby implementations
+
+*   **kramdown** — Fast, pure Ruby Markdown superset converter, using a strict syntax definition.
+
+	[https://kramdown.gettalong.org/](https://kramdown.gettalong.org/) || [ruby-kramdown](https://www.archlinux.org/packages/?name=ruby-kramdown)
+
+*   **Maruku** — Pure Ruby Markdown-superset interpreter.
+
+	[https://github.com/bhollis/maruku](https://github.com/bhollis/maruku) || [ruby-maruku](https://www.archlinux.org/packages/?name=ruby-maruku)
 
 ##### Markdown editors
 
@@ -636,7 +668,7 @@ See also the [official website](https://daringfireball.net/projects/markdown/) a
 
 	[http://sile-typesetter.org/](http://sile-typesetter.org/) || [sile](https://aur.archlinux.org/packages/sile/)
 
-*   **[TeX](/index.php/TeX_Live "TeX Live")** — A high-quality typesetting system popular in academia.
+*   **[TeX](/index.php/TeX "TeX")** — A high-quality typesetting system popular in academia.
 
 	[https://tug.org/](https://tug.org/) || [texlive-core](https://www.archlinux.org/packages/?name=texlive-core)
 

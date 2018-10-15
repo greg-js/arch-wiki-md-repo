@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions"), revisada por última vez el **2018-09-29**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=542367) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions"), revisada por última vez el **2018-10-14**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=546178) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -13,18 +13,17 @@ Artículos relacionados
     *   [1.1 ¿Qué es Arch Linux?](#.C2.BFQu.C3.A9_es_Arch_Linux.3F)
     *   [1.2 ¿Por qué podría preferir no usar Arch?](#.C2.BFPor_qu.C3.A9_podr.C3.ADa_preferir_no_usar_Arch.3F)
     *   [1.3 ¿Qué arquitecturas soporta Arch?](#.C2.BFQu.C3.A9_arquitecturas_soporta_Arch.3F)
-    *   [1.4 ¿Tiene Arch soporte para CPU ARM?](#.C2.BFTiene_Arch_soporte_para_CPU_ARM.3F)
-    *   [1.5 ¿Sigue Arch el estándar de jerarquía del sistema de archivos de la Fundación Linux (FHS)?](#.C2.BFSigue_Arch_el_est.C3.A1ndar_de_jerarqu.C3.ADa_del_sistema_de_archivos_de_la_Fundaci.C3.B3n_Linux_.28FHS.29.3F)
-    *   [1.6 Soy un completo principiante en GNU/Linux. ¿Debo usar Arch?](#Soy_un_completo_principiante_en_GNU.2FLinux._.C2.BFDebo_usar_Arch.3F)
-    *   [1.7 ¿Arch está diseñado para ser utilizado como un servidor?, ¿un escritorio?, ¿una estación de trabajo](#.C2.BFArch_est.C3.A1_dise.C3.B1ado_para_ser_utilizado_como_un_servidor.3F.2C_.C2.BFun_escritorio.3F.2C_.C2.BFuna_estaci.C3.B3n_de_trabajo)
-    *   [1.8 A mí me gusta Arch, excepto que el equipo de desarrollo debería implementar la *«funcionalidad X»*](#A_m.C3.AD_me_gusta_Arch.2C_excepto_que_el_equipo_de_desarrollo_deber.C3.ADa_implementar_la_.C2.ABfuncionalidad_X.C2.BB)
-    *   [1.9 ¿Para cuándo la nueva versión disponible?](#.C2.BFPara_cu.C3.A1ndo_la_nueva_versi.C3.B3n_disponible.3F)
-    *   [1.10 ¿Es Arch Linux una distribución estable? ¿Tiene problemas con frecuencia?](#.C2.BFEs_Arch_Linux_una_distribuci.C3.B3n_estable.3F_.C2.BFTiene_problemas_con_frecuencia.3F)
-    *   [1.11 Arch necesita más prensa (es decir, publicidad)](#Arch_necesita_m.C3.A1s_prensa_.28es_decir.2C_publicidad.29)
-    *   [1.12 Arch necesita más programadores](#Arch_necesita_m.C3.A1s_programadores)
-    *   [1.13 ¿Por qué va mi internet tan lento en comparación con otros sistemas operativos?](#.C2.BFPor_qu.C3.A9_va_mi_internet_tan_lento_en_comparaci.C3.B3n_con_otros_sistemas_operativos.3F)
-    *   [1.14 ¿Por qué Arch está usando toda mi RAM?](#.C2.BFPor_qu.C3.A9_Arch_est.C3.A1_usando_toda_mi_RAM.3F)
-    *   [1.15 ¿De dónde vino todo mi espacio libre?](#.C2.BFDe_d.C3.B3nde_vino_todo_mi_espacio_libre.3F)
+    *   [1.4 ¿Sigue Arch el estándar de jerarquía del sistema de archivos de la Fundación Linux (FHS)?](#.C2.BFSigue_Arch_el_est.C3.A1ndar_de_jerarqu.C3.ADa_del_sistema_de_archivos_de_la_Fundaci.C3.B3n_Linux_.28FHS.29.3F)
+    *   [1.5 Soy un completo principiante en GNU/Linux. ¿Debo usar Arch?](#Soy_un_completo_principiante_en_GNU.2FLinux._.C2.BFDebo_usar_Arch.3F)
+    *   [1.6 ¿Arch está diseñado para ser utilizado como un servidor?, ¿un escritorio?, ¿una estación de trabajo](#.C2.BFArch_est.C3.A1_dise.C3.B1ado_para_ser_utilizado_como_un_servidor.3F.2C_.C2.BFun_escritorio.3F.2C_.C2.BFuna_estaci.C3.B3n_de_trabajo)
+    *   [1.7 A mí me gusta Arch, excepto que el equipo de desarrollo debería implementar la *«funcionalidad X»*](#A_m.C3.AD_me_gusta_Arch.2C_excepto_que_el_equipo_de_desarrollo_deber.C3.ADa_implementar_la_.C2.ABfuncionalidad_X.C2.BB)
+    *   [1.8 ¿Para cuándo la nueva versión disponible?](#.C2.BFPara_cu.C3.A1ndo_la_nueva_versi.C3.B3n_disponible.3F)
+    *   [1.9 ¿Es Arch Linux una distribución estable? ¿Tiene problemas con frecuencia?](#.C2.BFEs_Arch_Linux_una_distribuci.C3.B3n_estable.3F_.C2.BFTiene_problemas_con_frecuencia.3F)
+    *   [1.10 Arch necesita más prensa (es decir, publicidad)](#Arch_necesita_m.C3.A1s_prensa_.28es_decir.2C_publicidad.29)
+    *   [1.11 Arch necesita más programadores](#Arch_necesita_m.C3.A1s_programadores)
+    *   [1.12 ¿Por qué va mi internet tan lento en comparación con otros sistemas operativos?](#.C2.BFPor_qu.C3.A9_va_mi_internet_tan_lento_en_comparaci.C3.B3n_con_otros_sistemas_operativos.3F)
+    *   [1.13 ¿Por qué Arch está usando toda mi RAM?](#.C2.BFPor_qu.C3.A9_Arch_est.C3.A1_usando_toda_mi_RAM.3F)
+    *   [1.14 ¿De dónde vino todo mi espacio libre?](#.C2.BFDe_d.C3.B3nde_vino_todo_mi_espacio_libre.3F)
 *   [2 Administración de paquetes](#Administraci.C3.B3n_de_paquetes)
     *   [2.1 He encontrado un error con el paquete X. ¿Qué debo hacer?](#He_encontrado_un_error_con_el_paquete_X._.C2.BFQu.C3.A9_debo_hacer.3F)
     *   [2.2 Los paquetes que Arch deberían usar una única extensión. «.pkg.tar.gz» y «.pkg.tar.xz» son demasiado largos y/o confusos](#Los_paquetes_que_Arch_deber.C3.ADan_usar_una_.C3.BAnica_extensi.C3.B3n._.C2.AB.pkg.tar.gz.C2.BB_y_.C2.AB.pkg.tar.xz.C2.BB_son_demasiado_largos_y.2Fo_confusos)
@@ -66,11 +65,9 @@ Es posible que **no** desee usar Arch, si:
 
 ### ¿Qué arquitecturas soporta Arch?
 
-Arch sólo soporta la arquitectura x86_64 (a veces llamado amd64). El soporte para i686 fue eliminado en noviembre de 2017 [[1]](https://www.archlinux.org/news/phasing-out-i686-support/). Si su máquina no tiene soporte, considere cambiar a [Arch Linux 32](https://archlinux32.org/).
+Arch sólo soporta la arquitectura x86_64 (a veces llamado amd64). El soporte para i686 fue eliminado en noviembre de 2017 [[1]](https://www.archlinux.org/news/phasing-out-i686-support/).
 
-### ¿Tiene Arch soporte para CPU ARM?
-
-No, pero el proyecto [Arch Linux ARM](http://archlinuxarm.org/) proporciona un puerto de Arch Linux para varias plataformas ARM.
+Hay ports *no oficiales* para las arquitecturas i686 [[2]](https://archlinux32.org/) y [ARM](https://en.wikipedia.org/wiki/es:Arquitectura_ARM "wikipedia:es:Arquitectura ARM") [[3]](http://archlinuxarm.org/), cada uno con sus propios canales de la comunidad [[4]](http://ix.io/73w/irc)
 
 ### ¿Sigue Arch el estándar de jerarquía del sistema de archivos de la Fundación Linux (FHS)?
 

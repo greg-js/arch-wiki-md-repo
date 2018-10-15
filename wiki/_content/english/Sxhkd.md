@@ -23,7 +23,7 @@ Related articles
 
 ### Configuration file
 
-sxhkd defaults to `[$XDG_CONFIG_HOME](/index.php/$XDG_CONFIG_HOME "$XDG CONFIG HOME")/sxhkd/sxhkdrc` for its configuration file. An alternate configuration file can be specified with the `-c` option.
+sxhkd defaults to `$XDG_CONFIG_HOME/sxhkd/sxhkdrc` for its configuration file. An alternate configuration file can be specified with the `-c` option.
 
 Each line of the configuration file is interpreted as so:
 
