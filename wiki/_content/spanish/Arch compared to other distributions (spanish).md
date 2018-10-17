@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Arch compared to other distributions](/index.php/Arch_compared_to_other_distributions "Arch compared to other distributions"), revisada por última vez el **2018-10-14**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&diff=0&oldid=545077) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Arch compared to other distributions](/index.php/Arch_compared_to_other_distributions "Arch compared to other distributions"), revisada por última vez el **2018-10-16**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&diff=0&oldid=547912) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -135,7 +135,7 @@ A veces llamadas «distribuciones para novatos», las distribuciones adecuadas p
 ### Linux Mint
 
 *   [Linux Mint](https://www.linuxmint.com/) nació como un derivado [Ubuntu](#Ubuntu), y más tarde añadió LMDE (Linux Mint Debian Edition) que está basado en [#Debian](#Debian). Por otro lado, Arch es una distribución independiente que se basa en su propio [sistema de compilación](/index.php/Arch_Build_System_(Espa%C3%B1ol) "Arch Build System (Español)") y [repositorios](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
-*   Mint incluye varias herramientas gráficas para un mantenimiento más sencillo, llamadas *MintTools*. Arch solo proporciona herramientas simples de línea de comandos como [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") y deja la administración del sistema en manos del usuario.
+*   Mint incluye varias herramientas gráficas para un mantenimiento más sencillo, llamadas *MintTools*. Arch solo proporciona herramientas simples de línea de órdenes como [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)") y deja la administración del sistema en manos del usuario.
 *   Mint se publica con [Cinnamon](/index.php/Cinnamon "Cinnamon") o [MATE](/index.php/MATE_(Espa%C3%B1ol) "MATE (Español)") como sus GUI princiaples, y alternativamente [KDE](/index.php/KDE_(Espa%C3%B1ol) "KDE (Español)") o [Xfce4](/index.php/Xfce_(Espa%C3%B1ol) "Xfce (Español)").
 *   Las nuevas versiones de Mint se liberan cada seis meses, aproximadamente un mes después de Ubuntu. Cada versión se basa en el Ubuntu LTS más reciente y recibe soporte durante cinco años. Linux Mint Debian Edition (LMDE) se basa en Debian estable y solo recibe actualizaciones en los paquetes Mint y las actualizaciones de seguridad. Arch en cambio, es una distribución de lanzamiento continuo.
 
@@ -150,11 +150,8 @@ Mandriva Linux (anteriormente conocida como Mandrake Linux) se creó en 1998 con
 ## Los *BSD
 
 *   Los *BSD comparten un origen común y descienden directamente del trabajo realizado en UC Berkeley para proporcionar un sistema UNIX de redistribución libre. No son distribuciones GNU/Linux, más bien son sistemas operativos de tipo UNIX, derivadas del código UNIX original de AT&T.
-
 *   Arch y los *BSD comparten el concepto de una base y un sistema de ports estrechamente integrados. Sin embargo, a diferencia de las distribuciones GNU/Linux como Arch, el kernel de los *BSD y los programas del espacio de usuario (tanto la shell y las utilidades más comunes como *ls*, *cp*, *cat* y *ps*) se desarrollan conjuntamente en un único repositorio fuente.
-
-*   La licencia BSD es generalmente más protectora del *programador*, en contraste con la GPL, que favorece la protección del *código* en sí mismo. Arch está publicada bajo la licencia GPL.
-
+*   La [licencia BSD](https://en.wikipedia.org/wiki/es:Licencia_BSD "wikipedia:es:Licencia BSD") es permisiva, en contraste con la [GPL](https://en.wikipedia.org/wiki/es:GNU_General_Public_License "wikipedia:es:GNU General Public License"), que establece que los derivados deben publicarse bajo la misma licencia. Arch está publicada bajo la GPL.
 *   Para obtener más información sobre las variantes de los *BSD, véase esta [comparación de los sistemas operativos BSD](https://en.wikipedia.org/wiki/Comparison_of_BSD_operating_systems "wikipedia:Comparison of BSD operating systems").
 
 ## Véase también

@@ -5,11 +5,7 @@ Related articles
 *   [Xorg](/index.php/Xorg "Xorg")
 *   [Vulkan](/index.php/Vulkan "Vulkan")
 
-Owners of **AMD** (previously **ATI**) video cards have a choice between [proprietary driver](/index.php/AMD_Catalyst "AMD Catalyst") ([catalyst](https://aur.archlinux.org/packages/catalyst/)) and the open source drivers (<a class="mw-selflink selflink">ATI</a> for older or [AMDGPU](/index.php/AMDGPU "AMDGPU") for newer cards). This article covers the **ATI**/[Radeon](https://wiki.freedesktop.org/xorg/radeon/) open source driver for older cards.
-
-The open source driver is *on par* performance-wise with the proprietary driver for many cards. (See this [benchmark](https://www.phoronix.com/scan.php?page=article&item=radeonsi-cat-wow&num=1).)
-
-If unsure, try the open source driver first, it will suit most needs and is generally less problematic. See the [feature matrix](https://www.x.org/wiki/RadeonFeature) to know what is supported for the GPU. See the [decoder ring](https://www.x.org/wiki/RadeonFeature/#index5h2) to translate marketing names (e.g. Radeon HD4330) to chip names (e.g. R700).
+This article covers the [radeon](https://wiki.freedesktop.org/xorg/radeon/) open source driver which supports the majority of AMD (previously ATI) GPUs.
 
 ## Contents
 
@@ -52,10 +48,13 @@ If unsure, try the open source driver first, it will suit most needs and is gene
     *   [13.7 DisplayPort stays black on multimonitor mode](#DisplayPort_stays_black_on_multimonitor_mode)
     *   [13.8 R9-390 Poor Performance and/or Instability](#R9-390_Poor_Performance_and.2For_Instability)
     *   [13.9 QHD / UHD / 4k support over HDMI for older Radeon cards](#QHD_.2F_UHD_.2F_4k_support_over_HDMI_for_older_Radeon_cards)
+*   [14 See also](#See_also)
 
 ## Selecting the right driver
 
 Depending on the card you have, find the right driver in [Xorg#AMD](/index.php/Xorg#AMD "Xorg"). This page has instructions for **ATI**.
+
+If unsure, try this open source driver first, it will suit most needs and is generally less problematic. See the [feature matrix](https://www.x.org/wiki/RadeonFeature) to know what is supported and the [decoder ring](https://www.x.org/wiki/RadeonFeature/#index5h2) to translate marketing names (e.g. Radeon HD4330) to chip names (e.g. R700).
 
 ## Installation
 
@@ -618,3 +617,7 @@ Official kernel bug ticket with patch for 4.8: [https://bugzilla.kernel.org/show
 The patch introduces a new kernel parameter `radeon.hdmimhz` which alters the pixel clock limit.
 
 Be sure to use a high speed HDMI cable for this.
+
+## See also
+
+[Benchmark](https://www.phoronix.com/scan.php?page=article&item=radeonsi-cat-wow&num=1) showing the open source driver is on par performance-wise with the proprietary driver for many cards.

@@ -203,12 +203,12 @@ This is the main configuration file to configure the daemon itself. It defines b
 | nice-level | Since PulseAudio runs in userspace and involves inter-process communication, audio can be subject to dropouts if the daemon does not have enough CPU time to process the audio. The default usually is enough, but can be tweaked to give pulse the wanted priority over (or below) other applications. |<caption></caption>
 | exit-idle-time | If you want to run PulseAudio only when needed and use ALSA otherwise, you can set a delay in seconds after which the daemon will automatically shutdown after all clients are disconnected. Set it to -1 to disable this feature. |<caption></caption>
 | log-level | When debugging, you may want to increase the logging level of the daemon to see exactly why a specific module fails to load. High logging levels will sometimes print useful information such as detected minimum latency for the system, which can then be used to tweak `default-fragments` and `default-fragment-size-msec`. |<caption></caption>
-| default-sample-format | Usually does not need change, but if your sound card's native format is diffent performance and quality can be improved by setting the right format here. |<caption></caption>
+| default-sample-format | This usually does not need to be changed, but if your sound card's native format is different, performance and quality can be improved by setting the right format here. |<caption></caption>
 | default-sample-rate | The default sample rate user by pulse unless overriden at module level. Change this if your sound card does not support 44100Hz or if you wish to upsample all audio. See previous note about CPU usage. |<caption></caption>
-| alternate-sample-rate | To fix a common limitation where movies at 48000Hz were needlessly downsampled to 44100Hz, some modules support changing their sample rate dynamically to avoid resampling when possible. See manual for more in-depth information. Usually do not need any change. |<caption></caption>
+| alternate-sample-rate | To fix a common limitation where movies at 48000Hz were needlessly downsampled to 44100Hz, some modules support changing their sample rate dynamically to avoid resampling when possible. See manual for more in-depth information. This usually does not need to be changed. |<caption></caption>
 | default-channels | The default number of channels when not specified. Usually do not need any change as you can configure more channels on per-module basis. |<caption></caption>
 | default-fragments | Audio samples are split into multiple fragments of `default-fragment-size-msec` each. The larger the buffer is, the less likely audio will skip when the system is overloaded. On the downside this will increase the overall latency. Increase this value if you have issues. |<caption></caption>
-| default-fragment-size-msec | The size in milliseconds of each fragment. This is the amount of data that will be processed at once by the daemon. TODO: Verify |
+| default-fragment-size-msec | The size in milliseconds of each fragment. This is the amount of data that will be processed at once by the daemon. |
 
 #### default.pa
 

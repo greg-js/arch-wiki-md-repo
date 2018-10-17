@@ -200,3 +200,4 @@ Arch 作为滚动发行版，软件变化比较快，对应的文档变化也比
 | [Xmonad (简体中文)](/index.php/Xmonad_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xmonad (简体中文)") | 过期 | 无 | 无 |
 | [Xrandr (简体中文)](/index.php/Xrandr_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Xrandr (简体中文)") | 过期 | 无 | 无 |
 | [Python打包指引 (简体中文)](/index.php/Python%E6%89%93%E5%8C%85%E6%8C%87%E5%BC%95_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Python打包指引 (简体中文)") | 翻译中 | SherlockHolo | 无 |
+| [Java (简体中文)](/index.php/Java_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Java (简体中文)") | 翻译中 | CaCaCarrot | 无 |

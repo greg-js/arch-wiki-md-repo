@@ -13,7 +13,7 @@ Related articles
     *   [2.2 Extract audio](#Extract_audio)
 *   [3 Configuration](#Configuration)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Increasing download speeds](#Increasing_download_speeds)
+    *   [4.1 Faster downloads](#Faster_downloads)
     *   [4.2 Trim (partial download)](#Trim_.28partial_download.29)
     *   [4.3 URL from clipboard](#URL_from_clipboard)
 *   [5 See also](#See_also)
@@ -31,20 +31,20 @@ $ youtube-dl [OPTIONS] *URL*
 
 ```
 
-**Tip:** In some cases (like YouTube) *URL* can be substituted with the video *ID*.
+**Tip:** In some cases (like YouTube) *URL* can be substituted with the video ID.
 
 ### Format selection
 
-In cases where multiple formats of a video are available, youtube-dl will download the best ones by default.
+In cases where multiple formats of a video are available, *youtube-dl* will download the best ones by default.
 
-If you'd like to choose a specific one to download, first get a list of the available formats:
+To select a specific one to download, first get a list of the available formats:
 
 ```
 $ youtube-dl -F *URL*
 
 ```
 
-Note the format code for the version you want, and then run:
+Note the code of the format you want, then run:
 
 ```
 $ youtube-dl -f *format* *URL*
@@ -77,9 +77,9 @@ See [[1]](https://github.com/rg3/youtube-dl/blob/master/README.md#configuration)
 
 ## Tips and tricks
 
-### Increasing download speeds
+### Faster downloads
 
-Some websites throttle download speeds. You can often increase speeds by using [Aria2](/index.php/Aria2 "Aria2"), an external downloader which supports multi-connection downloads. Example:
+Some websites throttle transfer speeds. You can often get around this by using [Aria2](/index.php/Aria2 "Aria2"), an external downloader which supports multi-connection downloads. For example:
 
 ```
 $ youtube-dl --external-downloader aria2c --external-downloader-args '-c -j 3 -x 3 -s 3 -k 1M' *URL*
@@ -88,7 +88,7 @@ $ youtube-dl --external-downloader aria2c --external-downloader-args '-c -j 3 -x
 
 ### Trim (partial download)
 
-Parts of [DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP "wikipedia:Dynamic Adaptive Streaming over HTTP") videos can be downloaded by using the output of `youtube-dl -g -f *format* *URL*` as *ffmpeg* input with the `-ss`, `-t` and `-c copy` [options](http://ffmpeg.org/ffmpeg.html#Main-options).
+Parts of videos can be downloaded by using the output of `youtube-dl -g -f *format* *URL*` as *ffmpeg* input with the `-ss`, `-t` and `-c copy` [options](http://ffmpeg.org/ffmpeg.html#Main-options).
 
 ### URL from clipboard
 

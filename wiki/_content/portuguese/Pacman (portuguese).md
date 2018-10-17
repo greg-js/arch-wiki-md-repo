@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2018-08-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=537967) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman](/index.php/Pacman "Pacman"). Data da última tradução: 2018-10-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman&diff=0&oldid=537967) na versão em inglês.
 
 Artigos relacionados
 
@@ -641,7 +641,7 @@ Se o *pacman* for interrompido enquanto altera a base de dados, esse arquivo de 
 
 Esse erro se manifesta como `não encontrado na base de dados de sincronização`, `alvo não encontrado` ou `falha ao obter o arquivo`.
 
-Primeiramente, assegure-se de que o pacote realmente existe. Se você tem certeza que o pacote existe, sua lista de pacote pode estar desatualizada. Tente execute `pacman -Syyu` para forçar uma atualização de todas as listas de pacote e atualize. Também certifique-se que os [espelhos](/index.php/Espelhos "Espelhos") selecionados estejam atualizados e [repositórios](/index.php/Reposit%C3%B3rios "Repositórios") são configurados corretamente.
+Primeiramente, assegure-se de que o pacote realmente existe. Se você tem certeza que o pacote existe, sua lista de pacote pode estar desatualizada. Tente execute `pacman -Syyu` para forçar uma atualização de todas as listas de pacote e atualize. Também certifique-se que os [espelhos](/index.php/Espelhos "Espelhos") selecionados estejam atualizados e [repositórios](#Reposit.C3.B3rios_e_espelhos) são configurados corretamente.
 
 Pode ser também que aquele repositório contendo o pacote não está habilidade no seu sistema. Por exemplo, o pacote pode estar no repositório [multilib](/index.php/Multilib_(Portugu%C3%AAs) "Multilib (Português)"), mas o *multilib* não está habilitado em seu `pacman.conf`.
 

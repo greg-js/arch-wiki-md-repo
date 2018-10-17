@@ -1,16 +1,12 @@
 Related articles
 
-*   [ATI](/index.php/ATI "ATI")
 *   [AMDGPU](/index.php/AMDGPU "AMDGPU")
+*   [ATI](/index.php/ATI "ATI")
 *   [Xorg](/index.php/Xorg "Xorg")
 
-Owners of ATI/AMD video cards have a choice between AMD's proprietary driver ([catalyst](https://aur.archlinux.org/packages/catalyst/)) and the open source driver ([ATI](/index.php/ATI "ATI") for older or [AMDGPU](/index.php/AMDGPU "AMDGPU") for newer cards). This article covers the proprietary driver.
+This article covers the now legacy AMD proprietary Catalyst driver.
 
-AMD's Linux driver package *catalyst* was previously named *fglrx* (**F**ire**GL** and **R**adeon **X**). Only the package name has changed, while the kernel module retains its original *fglrx.ko* filename. Therefore, any mention of fglrx below is specifically in reference to the *kernel module*, **not the package**.
-
-**Note:** Catalyst packages are no longer offered in the official repositories. It is no longer updated by AMD and does not support the latest Xorg, so installing an old Xorg is required.
-
-Compared with the open source driver, Catalyst performs generally worse in 2D rendering and generally equal in 3D rendering, also having better power management, but it lacks efficient multi-head support. Catalyst does support OpenCL 2.0 though and that's the main difference between Catalyst and open source drivers. Supported devices are [ATI/AMD Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon") video cards with R600 to Volcanic Islands chipsets (Radeon HD 2xxx to Rx 300 cards). See the [Release notes](https://support.amd.com/en-us/kb-articles/Pages/AMDRadeonSoftwareCrimsonEdition15-12LINReleaseNotes.aspx), [Xorg decoder ring](https://www.x.org/wiki/RadeonFeature/#index5h2) or [this table](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units"), to translate *model* names (HD2400, HD6990) to/from *chip* names (R600, *Northern Islands* respectively).
+**Note:** Catalyst packages are no longer offered in the official repositories. It is no longer updated by AMD and does not support the latest Xorg. Installing an old Xorg is required.
 
 ## Contents
 
@@ -91,6 +87,8 @@ Compared with the open source driver, Catalyst performs generally worse in 2D re
 
 Depending on the card you have, find the right driver in [Xorg#AMD](/index.php/Xorg#AMD "Xorg"). This page has instructions for **Catalyst** and **Catalyst legacy**.
 
+Compared with the open source [ATI](/index.php/ATI "ATI") driver, Catalyst performs generally worse in 2D rendering, equal in 3D rendering and has better power management but lacks efficient multi-head support. Catalyst supports OpenCL 2.0 which is the main difference between it and the open source driver. Supported devices are [Radeon](https://en.wikipedia.org/wiki/Radeon "wikipedia:Radeon") video cards with chipsets from R600 to Volcanic Islands (HD 2xxx to Rx 300). See the [Release notes](https://support.amd.com/en-us/kb-articles/Pages/AMDRadeonSoftwareCrimsonEdition15-12LINReleaseNotes.aspx), [Xorg's decoder ring](https://www.x.org/wiki/RadeonFeature/#index5h2) or [this list](https://en.wikipedia.org/wiki/List_of_AMD_graphics_processing_units "wikipedia:List of AMD graphics processing units") to translate model and code names.
+
 ## Installation
 
 There are three ways of installing Catalyst on your system. One way is to use [Vi0L0's](https://aur.archlinux.org/account/Vi0l0/) (Arch's unofficial Catalyst maintainer) repository. This repository contains all the necessary packages. The second method you can use is the AUR; PKGBUILDs offered here are also made by Vi0L0 and are the same he uses to built packages for his repository. Lastly, you can install the driver directly from AMD.
@@ -102,6 +100,8 @@ Before choosing the method you prefer, you will have to see which driver you nee
 **Tip:** It is helpful to follow the instructions at [#Loading the module at boot](#Loading_the_module_at_boot) and [#Disable kernel mode setting](#Disable_kernel_mode_setting) before installing *catalyst-hook*, that way when *catalyst-hook* builds the *fglrx* module and regenerates the [Initramfs](/index.php/Initramfs "Initramfs"), your changes will be included instead of having to regenerate the [Initramfs](/index.php/Initramfs "Initramfs") twice.
 
 ### Installing the driver
+
+**Note:** AMD's Linux driver package *catalyst* was previously named *fglrx* (**F**ire**GL** and **R**adeon **X**). Only the package name has changed, while the kernel module retains its original `fglrx.ko` filename. Therefore, any mention of fglrx below is specifically in reference to the kernel module, **not the package**.
 
 #### Installing from the unofficial repository
 

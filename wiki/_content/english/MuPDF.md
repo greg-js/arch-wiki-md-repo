@@ -27,7 +27,7 @@ See [mupdf(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mupdf.1) or `mupdf --h
 
 **Note:** Options for [mupdf](https://www.archlinux.org/packages/?name=mupdf) and [mupdf-gl](https://www.archlinux.org/packages/?name=mupdf-gl) may differ.
 
-The application is started either from the command-line with `mupdf filename.pdf` or from a [file manager](/index.php/List_of_applications/Utilities#File_managers "List of applications/Utilities").
+The application is started either from the command-line with `mupdf *filename*.pdf` or from a [file manager](/index.php/List_of_applications/Utilities#File_managers "List of applications/Utilities").
 
 **Tip:** MuPDF can be sandboxed with [Firejail](/index.php/Firejail "Firejail").
 
@@ -41,7 +41,7 @@ When zoomed in, the document can be moved by using the left mouse button. Pressi
 
 ### MuPDF GL
 
-Press `I` to invert colours and `/` to search. See [[1]](https://mupdf.com/docs/manual-mupdf-gl.html).
+Press `I` to invert colours. See [[1]](https://mupdf.com/docs/manual-mupdf-gl.html) for the manual.
 
 ## See also
 

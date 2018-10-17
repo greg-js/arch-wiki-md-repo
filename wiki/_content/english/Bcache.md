@@ -471,7 +471,7 @@ The `/dev/bcache0` device will now exist. Type exit and continue booting. You mi
 
 ### /sys/fs/bcache/ does not exist
 
-The kernel you booted is not bcache enabled.
+The kernel you booted is not bcache enabled, or you the bcache [module is not loaded](/index.php/Kernel_module#Manual_module_handling "Kernel module")
 
 ## See also
 

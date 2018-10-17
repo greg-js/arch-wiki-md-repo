@@ -20,6 +20,7 @@ Related articles
         *   [3.1.1 Open-with extension](#Open-with_extension)
     *   [3.2 Dictionaries for spell checking](#Dictionaries_for_spell_checking)
     *   [3.3 KDE/GNOME integration](#KDE.2FGNOME_integration)
+    *   [3.4 Smooth Scrolling](#Smooth_Scrolling)
 *   [4 Plugins](#Plugins)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Screenshot of webpage](#Screenshot_of_webpage)
@@ -188,6 +189,37 @@ When your default language choice does not stick, see [#Firefox does not remembe
     *   Browser integration in [Plasma](/index.php/Plasma "Plasma"): requires [plasma-browser-integration](https://www.archlinux.org/packages/?name=plasma-browser-integration) and the [plasma-integration add-on](https://addons.mozilla.org/firefox/addon/plasma-integration/).
     *   [mozilla-extension-gnome-keyring-git](https://aur.archlinux.org/packages/mozilla-extension-gnome-keyring-git/) (all-JavaScript implementation) to integrate Firefox with [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"). To make firefox-gnome-keyring use your login keychain, set `extensions.gnome-keyring.keyringName` to `login` in `about:config`. Note the lowercase 'l' despite the the keychain name having an uppercase 'L' in Seahorse.
 
+### Smooth Scrolling
+
+In order to get smooth physics-based scrolling in Firefox, the `general.smoothScroll.msdPhysics` configurations can be changed to emulate a snappier behaviour like in other web browsers. For a quicker configuration, append the following to `~/.mozilla/firefox/**your-profile**/user.js` (requires restart):
+
+```
+user_pref("general.smoothScroll.lines.durationMaxMS", 125);
+user_pref("general.smoothScroll.lines.durationMinMS", 125);
+user_pref("general.smoothScroll.mouseWheel.durationMaxMS", 200);
+user_pref("general.smoothScroll.mouseWheel.durationMinMS", 100);
+user_pref("general.smoothScroll.msdPhysics.enabled", true);
+user_pref("general.smoothScroll.other.durationMaxMS", 125);
+user_pref("general.smoothScroll.other.durationMinMS", 125);
+user_pref("general.smoothScroll.pages.durationMaxMS", 125);
+user_pref("general.smoothScroll.pages.durationMinMS", 125);
+
+```
+
+Additionally the mouse wheel scroll settings have to be changed to react in a smooth way as well:
+
+```
+user_pref("mousewheel.min_line_scroll_amount", 30);
+user_pref("mousewheel.system_scroll_override_on_root_content.enabled", true);
+user_pref("mousewheel.system_scroll_override_on_root_content.horizontal.factor", 175);
+user_pref("mousewheel.system_scroll_override_on_root_content.vertical.factor", 175);
+user_pref("toolkit.scrollbox.horizontalScrollDistance", 6);
+user_pref("toolkit.scrollbox.verticalScrollDistance", 2);
+
+```
+
+If you have troubles on machines with varying performance, try modifying the `mousewheel.min_line_scroll_amount` until it feels snappy enough.
+
 ## Plugins
 
 **Note:** Firefox [has removed support](https://support.mozilla.org/en-US/kb/npapi-plugins) for [NPAPI](https://en.wikipedia.org/wiki/NPAPI "w:NPAPI") plugins, except for Flash.
@@ -214,7 +246,7 @@ You can *Take a Screenshot* by either clicking the *Page actions* button (the th
 **Note:**
 
 *   The *Save* button misleadingly uploads your screenshot to a firefox.com subdomain. Set `extensions.screenshots.upload-disabled` to `true` to disable this behaviour. [[3]](https://github.com/mozilla-services/screenshots/issues/3503)
-*   If you enabled [privacy.resistFingerprinting](/index.php/Firefox/Privacy#Anti-fingerprinting "Firefox/Privacy"), to take a screenshot of a website using the above method, you need to grant it *Extract Canvas Data* permission.
+*   If [privacy.resistFingerprinting](/index.php/Firefox/Privacy#Anti-fingerprinting "Firefox/Privacy") is enabled, to take a screenshot of a website using the above method, you need to grant it *Extract Canvas Data* permission.
 
 As an alternative you can use the full-page screenshot button in the *Developer Tools*, which you can open with `F12` (you might need to enable the button first).
 

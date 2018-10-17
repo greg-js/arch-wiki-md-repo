@@ -471,7 +471,7 @@ Server = http://cache.domain.local:8080/archlinux/$repo/os/$arch
 
 #### Synchronize pacman package cache using synchronization programs
 
-Use [Resilio Sync](/index.php/Resilio_Sync "Resilio Sync") or [Syncthing](/index.php/Syncthing "Syncthing") to synchronize the *pacman* cache folders (i.e. `/var/cache/pacman/pkg`).
+Use [Syncthing](/index.php/Syncthing "Syncthing") or [Resilio Sync](/index.php/Resilio_Sync "Resilio Sync") to synchronize the *pacman* cache folders (i.e. `/var/cache/pacman/pkg`).
 
 #### Preventing unwanted cache purges
 

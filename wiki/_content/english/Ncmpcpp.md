@@ -2,7 +2,7 @@ Related articles
 
 *   [mpd](/index.php/Mpd "Mpd")
 
-[*ncmpcpp*](http://rybczak.net/ncmpcpp) is an [mpd](/index.php/Mpd "Mpd") client (compatible with [mopidy](https://www.mopidy.com/)) with a UI very similar to *ncmpc*, but it provides new useful features such as support for regular expressions for library searches, extended song format, items filtering, the ability to sort playlists, and a local filesystem browser.
+[Ncmpcpp](http://rybczak.net/ncmpcpp) is an [mpd](/index.php/Mpd "Mpd") client (compatible with [mopidy](https://www.mopidy.com/)) with a UI very similar to *ncmpc*, but it provides new useful features such as support for regular expressions for library searches, extended song format, items filtering, the ability to sort playlists, and a local filesystem browser.
 
 To use it, a functional *mpd* must be present on the system since *ncmpcpp*/*mpd* work together in a client/server relationship.
 
@@ -16,7 +16,9 @@ To use it, a functional *mpd* must be present on the system since *ncmpcpp*/*mpd
     *   [4.2 Different views](#Different_views)
     *   [4.3 Other UI keys](#Other_UI_keys)
     *   [4.4 Playback modes](#Playback_modes)
-*   [5 Remapping keys](#Remapping_keys)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Remapping keys](#Remapping_keys)
+    *   [5.2 Autoset Tags from Filename and vice versa](#Autoset_Tags_from_Filename_and_vice_versa)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -128,17 +130,27 @@ And again in classic mode:
 
 This corresponds to the playback modes; ordered from left to right, they are:
 
-*   `r` - repeat mode **[r-----]**
+*   `r` - repeat mode **[r-----]** (Repeats the current track after reaching the end.)
 *   `z` - random mode **[-z----]**
-*   `y` - single mode **[--s---]** (Repeats the current track after reaching the end.)
+*   `y` - single mode **[--s---]** (Only plays a single track and then stops.)
 *   `R` - consume mode **[---c--]** (Removes the current track from playlist after reaching the end.)
 *   `x` - crossfade mode **[----x-]**
 
 The final "-" is only active when the user forces an update to the datebase via `u`.
 
-## Remapping keys
+## Tips and tricks
+
+### Remapping keys
 
 A listing of key bindings and their respective functions is available from within npmpcpp itself via hitting `F1`. Users may remap any of the default keys simply by copying `/usr/share/doc/ncmpcpp/bindings` to `~/.ncmpcpp/` and editing it.
+
+### Autoset Tags from Filename and vice versa
+
+In the Tag Editor you can select a directory with music and then select the `Filename` option in the middle section. This opens a little window with two options: `Get Tags from Filename` and `Rename files`. If you choose `Get Tags From Filename`, a popup with two windows is shown. On the left side you can enter a pattern that extracts the selected information from the filenames. You can also hit `Preview` to see what the result would look like. On the right side you can see the legend containing all the possible keywords to be used for extraction.
+
+A simple Example would be the pattern: `%a - %t`. If your files are named according to this pattern (Artist - Title) then this pattern would extract this information and set the Tags for the File.
+
+The other option `Rename Files` does the exact opposite. It takes the Tags from the audio files and creates a Filename from them.
 
 ## See also
 

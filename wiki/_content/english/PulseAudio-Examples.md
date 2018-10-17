@@ -422,11 +422,9 @@ pactl move-sink-input $INPUTID $BINAURALSINKNAME
 
 One of PulseAudio's unique features is its ability to stream audio from clients over TCP to a server running the PulseAudio daemon reliably within a LAN. Ensure that client and server systems agree on the time (e.g. use NTP), or audio streams may be choppy or may not work at all.
 
-To accomplish this, one needs to enable module-native-protocol-tcp.
-
 ### TCP support (networked sound)
 
-To enable the TCP module, add this to (or uncomment, if already there) `/etc/pulse/default.pa` on both the client and server:
+You need to enable the TCP module, on the server edit `/etc/pulse/default.pa` to add or uncomment:
 
 ```
 load-module module-native-protocol-tcp
@@ -451,13 +449,11 @@ If it is undesirable to copy the cookie file from clients, anonymous clients can
 
 ```
 
-Change the LAN IP subnet to match that of the those clients you wish to have access to the server.
+Change the LAN IP subnet to match that of those clients you wish to have access to the server.
 
 ### Zeroconf (Avahi) publishing
 
-For the remote PulseAudio server to appear in the PulseAudio Device Chooser (`pasystray`), load the appropriate zeroconf modules, and enable the [Avahi](/index.php/Avahi "Avahi") [daemon](/index.php/Daemon "Daemon").
-
-On both machines, the client and server, [install](/index.php/Install "Install") [pulseaudio-zeroconf](https://www.archlinux.org/packages/?name=pulseaudio-zeroconf) then [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `avahi-daemon.service`.
+For the remote PulseAudio server to appear in the PulseAudio Device Chooser (`pasystray`), load the appropriate zeroconf modules, and enable the [Avahi](/index.php/Avahi "Avahi") [daemon](/index.php/Daemon "Daemon"). On both machines, the client and server, [install](/index.php/Install "Install") [pulseaudio-zeroconf](https://www.archlinux.org/packages/?name=pulseaudio-zeroconf) then [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `avahi-daemon.service`.
 
 On the server, add `load-module module-zeroconf-publish` to `/etc/pulse/default.pa`. On the client, add `load-module module-zeroconf-discover` to `/etc/pulse/default.pa`. Now redirect any stream or complete audio output to the remote PulseAudio server by selecting the appropriate sink.
 

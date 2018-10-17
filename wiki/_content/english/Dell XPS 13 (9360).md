@@ -178,9 +178,9 @@ enable_psr=1
 
 ```
 
-Panel Self Refresh (PSR) is working for eDP 1.3 and up and does stop the creation of new frames when the screen content is static to save energy. If you experience problems with PSR try to set 'disable_power_well=0' or disable otherwise.
+Panel Self Refresh (PSR) is working for eDP 1.3 and up and does stop the creation of new frames when the screen content is static to save energy. If you experience problems with PSR try to set 'disable_power_well=0' or disable otherwise. It may also be required to add the `modconf` hook to [Mkinitcpio](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") to avoid a hang after resume on both Xorg and Wayland.
 
-**Tip:** If you use `enable_psr=1` may need to add the `modconf` hook to your [Mkinitcpio](/index.php/Mkinitcpio#HOOKS "Mkinitcpio") to avoid a hang after resume. The [xf86-video-intel-git](https://aur.archlinux.org/packages/xf86-video-intel-git/) package was required to solve the bug for me as well, even though I was using Wayland.
+**Note:** Some users have reported problems with `enable_psr==1` where on first boot or after resume the panel stays black once reaching the [desktop environment](/index.php/Desktop_environment "Desktop environment"), only refreshing after switching to and from a tty. In this case it is required to simply remove the option.
 
 ```
 NOT WORKING: semaphores=1 

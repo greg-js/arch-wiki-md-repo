@@ -110,7 +110,7 @@ KMS para tarjetas de vídeo ATI exige el controlador de código abierto de [Xorg
 
 1\. Retiraremos todos los controladores UMS en conflicto de la línea de órdenes del kernel:
 
-*   Eliminaremos todas las opciones `vga=` de la línea del *kernel* en el [archivo de configuración](/index.php/Boot_loader#Configuration_files "Boot loader") del gestor de arranque. El uso de otros controladores framebuffer (como `[uvesafb](/index.php/Uvesafb "Uvesafb")` o `radeonfb`) entrarán en conflicto con KMS.
+*   Eliminaremos todas las opciones `vga=` de la línea del *kernel* en el [archivo de configuración](/index.php/Boot_loader_(Espa%C3%B1ol)#Gestor_de_arranque "Boot loader (Español)") del gestor de arranque. El uso de otros controladores framebuffer (como `[uvesafb](/index.php/Uvesafb "Uvesafb")` o `radeonfb`) entrarán en conflicto con KMS.
 *   La velocidad del bus AGP la podemos ajustar con la opción `radeon.agpmode=x` en la línea del kernel, donde x puede tener los valores 1, 2, 4, 8 (velocidad AGP) o -1 (modo PCI).
 
 2\. De otro modo, cuando [initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol) "Mkinitcpio (Español)") se cargue:
@@ -124,13 +124,13 @@ Por último, **reinicie** el sistema.
 
 #### Inicio tardío
 
-*Con esta elección, KMS se activará cuando los módulos se carguen durante el [proceso de arranque](/index.php/Boot_process "Boot process")*.
+*Con esta elección, KMS se activará cuando los módulos se carguen durante el [proceso de arranque](/index.php/Boot_process_(Espa%C3%B1ol) "Boot process (Español)")*.
 
 Si tiene un kernel especial (por ejemplo, linux-zen), recuerde utilizar el archivo de configuración apropiado mkinitcpio, por ejemplo, `/ etc/mkinitcpio-zen.conf`. Estas instrucciones están escritas para el kernel por defecto ([linux](https://www.archlinux.org/packages/?name=linux)).
 
 **Nota:** Para soporte AGP, puede ser necesario añadir `intel_agp`, `ali_agp`, `ati_agp`, `amd_agp`, o `amd64_agp`) a los archivos .conf apropiados en `/etc/modules-load.d`.
 
-1.  Elimine todas las opciones `vga=` de la línea del *kernel* en el [archivo de configuración](/index.php/Boot_loader#Configuration_files "Boot loader") del gestor de arranque. El uso de otros controladores framebuffer (como `[uvesafb](/index.php/Uvesafb "Uvesafb")` o `radeonfb`) entrarán en conflicto con KMS. Retire cualquier otro módulo relacionado con framebuffer de `/etc/mkinitcpio.conf`. La opción `video=` puede ahora ser utilizada en conjunción con KMS.
+1.  Elimine todas las opciones `vga=` de la línea del *kernel* en el [archivo de configuración](/index.php/Boot_loader_(Espa%C3%B1ol)#Gestor_de_arranque "Boot loader (Español)") del gestor de arranque. El uso de otros controladores framebuffer (como `[uvesafb](/index.php/Uvesafb "Uvesafb")` o `radeonfb`) entrarán en conflicto con KMS. Retire cualquier otro módulo relacionado con framebuffer de `/etc/mkinitcpio.conf`. La opción `video=` puede ahora ser utilizada en conjunción con KMS.
 2.  **Reiniciar** el sistema.
 
 ## Optimizar prestaciones
@@ -237,9 +237,9 @@ Con el controlador radeon, el ahorro de energía está desactivado por defecto y
 
 Se puede elegir entre tres métodos diferentes:
 
-1.  [dynpm](#Dynamic_frequency_switching)
-2.  [profile](#Profile-based_frequency_switching)
-3.  [dpm](#Dynamic_power_management) (disponible desde el kernel 3.11)
+1.  [dynpm](#Variaci.C3.B3n_din.C3.A1mica_de_la_frecuencia)
+2.  [profile](#Variaci.C3.B3n_de_la_frecuencia.2C_basada_en_perfiles)
+3.  [dpm](#Gesti.C3.B3n_din.C3.A1mica_de_la_energ.C3.ADa) (disponible desde el kernel 3.11)
 
 **Es difícil decir cuál es el mejor en general, así que se tiene que decidir por cada cual.**
 
@@ -341,7 +341,7 @@ Los sensores térmicos se realizan a través de los chips i2c externos o a trav�
 
 Con el kernel 3.11, ASPM está activado por defecto, pero DPM no. Para activarlo, agregue el parámetro `radeon.dpm=1` en los [parámetros del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)").
 
-A diferencia de [dynpm](#Dynamic_frequency_switching), el método «dpm» utiliza el hardware de la GPU para cambiar dinámicamente los relojes y el voltaje según la carga de la GPU.
+A diferencia de [dynpm](#Variaci.C3.B3n_din.C3.A1mica_de_la_frecuencia), el método «dpm» utiliza el hardware de la GPU para cambiar dinámicamente los relojes y el voltaje según la carga de la GPU.
 
 Hay 3 modos de funcionamiento para elegir:
 
@@ -556,7 +556,7 @@ Si encuentra fallos gráficos cuando efectúa el login en su Entorno de Escritor
 
 Con el fin de funcionar sin un archivo de configuración, se recomienda que el grupo de paquetes `xorg-input-drivers` esté instalado.
 
-Los fallos también pueden estar relacionados con el [Kernel Mode Setting](/index.php/Kernel_mode_setting_(Espa%C3%B1ol) "Kernel mode setting (Español)"). Considere la posibilidad de [deshabilitar KMS.](#Desactivar_KMS)
+Los fallos también pueden estar relacionados con el [Kernel Mode Setting](/index.php/Kernel_mode_setting_(Espa%C3%B1ol) "Kernel mode setting (Español)"). Considere la posibilidad de [deshabilitar KMS](#Kernel_mode-setting_.28KMS.29).
 
 Se puede también intentar desactivar la opción `EXAPixmaps` en el archivo `/etc/X11/xorg.conf.d/20-radeon.conf`:
 
@@ -591,7 +591,7 @@ Si experimenta un rendimiento deficiente y dmesg muestra algo como esto
 
 ```
 
-compruebe si el controlador AGP de la placa base (por ejemplo, `via_agp`, `intel_agp`, etc.) se carga antes que el módulo `radeon`. Consulte [activación de KMS.](#Activar_KMS)
+compruebe si el controlador AGP de la placa base (por ejemplo, `via_agp`, `intel_agp`, etc.) se carga antes que el módulo `radeon`. Consulte [activación de KMS](#Kernel_mode-setting_.28KMS.29).
 
 ### TV mostrando un borde negro alrededor de la pantalla
 

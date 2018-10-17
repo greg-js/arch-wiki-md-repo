@@ -80,7 +80,7 @@ It will also be necessary to configure the file manager itself in respect to vol
 
 #### Standalone
 
-Another option is to install a separate [mount application](/index.php/List_of_applications#Mount_tools "List of applications"). The advantages of using this are:
+Another option is to install a separate [mount application](/index.php/List_of_applications/Utilities#Mount_tools "List of applications/Utilities"). The advantages of using this are:
 
 *   Less memory may be required to run as a background / [daemon](/index.php/Daemon "Daemon") process than a file manager
 *   It is not file manager specific, allowing them to be freely added, removed, and switched

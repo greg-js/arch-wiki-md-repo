@@ -96,10 +96,6 @@ Arch-specific groups that you can engage in.
 
 	Place for reddit users to discuss Arch related issues.
 
-	[Arch Linux Google Plus Community](https://plus.google.com/communities/113935870359973712582)
-
-	A Google Plus community for Arch Linux users to interact, post questions, or general Arch Linux news conversations.
-
 	[International communities](/index.php/International_communities "International communities")
 
 	Local communities and meet-up places for users.

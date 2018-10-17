@@ -1,3 +1,10 @@
+Ссылки по теме
+
+*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
+*   [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
+*   [Partitioning (Русский)](/index.php/Partitioning_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Partitioning (Русский)")
+*   [Unified Extensible Firmware Interface (Русский)](/index.php/Unified_Extensible_Firmware_Interface_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Unified Extensible Firmware Interface (Русский)")
+
 Master Boot Record (MBR) — это первый сектор (первые 512 байт) устройства хранения данных. MBR - это не партиция, а участок памяти, зарезервированный для загрузчика операционной системы и таблицы разделов диска.
 
 ## Contents

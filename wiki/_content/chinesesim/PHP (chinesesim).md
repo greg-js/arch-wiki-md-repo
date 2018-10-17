@@ -231,29 +231,29 @@ extension=apcu.so
 
 ### Aptana Studio
 
-[Aptana Studio](http://www.aptana.com/products/studio3.html) is an IDE for programming in PHP and web development. It can be installed with the [aptana-studio](https://aur.archlinux.org/packages/aptana-studio/) package. Does not have a PHP debugger as of version 3.2.2.
+[Aptana Studio](http://www.aptana.com/products/studio3.html) 是一个用于PHP和网页开发的IDE. 它能通过 [aptana-studio](https://aur.archlinux.org/packages/aptana-studio/) 包来安装. 没有3.2.2版本的PHP调试器.
 
 ### Eclipse PDT
 
-[Eclipse PDT](http://www.eclipse.org/pdt/) is the PHP variant of Eclipse. It can be installed with the [eclipse-php](https://www.archlinux.org/packages/?name=eclipse-php) package. See [Eclipse](/index.php/Eclipse "Eclipse") for more information.
+[Eclipse PDT](http://www.eclipse.org/pdt/) 是eclipse的PHP变种. 它能通过 [eclipse-php](https://www.archlinux.org/packages/?name=eclipse-php) 包来安装. 可阅览 [Eclipse](/index.php/Eclipse "Eclipse") 获取更多信息.
 
-You would need other plugins for JavaScript support and DB query.
+你可能需要其他插件来获取JavaScript支持和数据库查询.
 
 ### Komodo
 
-[Komodo](http://komodoide.com/) is an IDE with good integration for PHP+HTML+JavaScript. [Komodo Edit](http://komodoide.com/komodo-edit/) is a free editor-only variant. 可以通过 [komodo-edit](https://aur.archlinux.org/packages/komodo-edit/) 安装。
+[Komodo](http://komodoide.com/) 是一个集成了PHP+HTML+JavaScript的非常好的IDE. [Komodo Edit](http://komodoide.com/komodo-edit/) 是免费的只支持编辑的变种. 可以通过 [komodo-edit](https://aur.archlinux.org/packages/komodo-edit/) 安装。
 
 ### Netbeans
 
-[NetBeans IDE](https://netbeans.org/) is a complete IDE for many languages including PHP. Includes features like debugging, refactoring, code templating, autocomplete, XML features, and web design and development functionalities (very good CSS autocomplete functionality and PHP/JavaScript code notifications/tips). Install it with the [netbeans](https://www.archlinux.org/packages/?name=netbeans) package.
+[NetBeans IDE](https://netbeans.org/) 是一个用于很多语言的IDE，包括PHP. 它的特性包括调试、重构、代码模板、自动补全、XML特性、网页设计和其他开发功能（包括很棒的CSS自动补全功能和PHP/JavaScript代码建议）。 可以通过 [netbeans](https://www.archlinux.org/packages/?name=netbeans) 来安装.
 
 ### PhpStorm
 
-[JetBrains PhpStorm](https://en.wikipedia.org/wiki/PhpStorm "wikipedia:PhpStorm") is a commercial, cross-platform IDE for PHP built on JetBrains' IntelliJ IDEA platform. It can be installed with the [phpstorm](https://aur.archlinux.org/packages/phpstorm/) package, or with [phpstorm-eap](https://aur.archlinux.org/packages/phpstorm-eap/) for the 30-day trial version. You can get a free license for education from Jetbrains.[[1]](https://www.jetbrains.com/student/)
+[JetBrains PhpStorm](https://en.wikipedia.org/wiki/PhpStorm "wikipedia:PhpStorm") 是一个商业的、跨平台PHP IDE，它基于jetbrains的intellij IDEA平台。它可以通过[phpstorm](https://aur.archlinux.org/packages/phpstorm/) 来安装, 或者通过 [phpstorm-eap](https://aur.archlinux.org/packages/phpstorm-eap/) 来进行30天免费试用 version. 你可以从jetbrains获取免费的教育许可.[[1]](https://www.jetbrains.com/student/)
 
 ### Zend Studio
 
-[Zend Studio](http://www.zend.com/products/studio/) is the official PHP IDE, based on eclipse. The IDE has autocomplete, advanced code formatting, WYSIWYG html editor, refactoring, and all the eclipse features such as db access and version control integration and whatever you can get from other eclipse plugins. You can install it with the [zendstudio](https://aur.archlinux.org/packages/zendstudio/) package.
+[Zend Studio](http://www.zend.com/products/studio/) 是官方的基于Eclipse的PHP IDE. 这个IDE有自动补全、高级代码格式化、WYSIWYG HTML编辑器、重构和所有的Eclipse特性比如数据库访问和版本控制集成和你能从Eclipse获取的所有其他插件。你可以通过[zendstudio](https://aur.archlinux.org/packages/zendstudio/) 来安装.
 
 ## Commandline tools
 

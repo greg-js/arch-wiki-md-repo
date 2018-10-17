@@ -74,7 +74,7 @@ You can choose one of the following implementations:
 
 *   **[Dunst](/index.php/Dunst "Dunst")** — Minimalistic notification daemon for Linux designed to fit nicely into minimalistic windowmanagers like [dwm](/index.php/Dwm "Dwm").
 
-	[http://www.knopwob.org/dunst/](http://www.knopwob.org/dunst/) || [dunst](https://www.archlinux.org/packages/?name=dunst)
+	[https://dunst-project.org/](https://dunst-project.org/) || [dunst](https://www.archlinux.org/packages/?name=dunst)
 
 *   **LXQt Notification Daemon** — Notification server for [LXQt](/index.php/LXQt "LXQt").
 

@@ -46,28 +46,14 @@ DEVICE /dev/usb/hiddev[[0-15]]
 
 ```
 
-If apcupsd does not start, in `/etc/defaults/apcupsd` change:
-
-```
-ISCONFIGURED=no
-
-```
-
-to:
-
-```
-ISCONFIGURED=yes
-
-```
-
 ## Test
 
 First, [enable](/index.php/Enable "Enable") and start `apcupsd.service`.
 
 Next, wait about a minute and confirm the daemon is running and properly monitoring the battery:
 
+ `# apcaccess status` 
 ```
-# apcaccess status
 APC      : 001,033,0819
 DATE     : Sat Mar 05 SOMETIME 2005
 HOSTNAME : somehostname

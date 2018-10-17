@@ -1,3 +1,10 @@
+Related articles
+
+*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
+*   [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
+*   [Partitioning](/index.php/Partitioning "Partitioning")
+*   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
+
 A Master Boot Record (MBR) egy tárolóeszköz első 512 bájtja. Az MBR nem valamiféle partíció, hanem a rendszerbetöltő és a partíciós tábla számára fenntartott hely. Az MBR újabb alternatívája a [GUID Partíciós Tábla](/index.php/GUID_Partition_Table_(Magyar) "GUID Partition Table (Magyar)"), mely része a [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") specifikációnak.
 
 ## Contents

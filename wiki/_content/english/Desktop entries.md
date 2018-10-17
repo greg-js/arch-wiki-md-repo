@@ -1,6 +1,31 @@
 The [XDG Desktop Entry specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html) defines a standard for applications to integrate into application menus of [desktop environments](/index.php/Desktop_environment "Desktop environment") implementing the [XDG Desktop Menu](https://specifications.freedesktop.org/menu-spec/menu-spec-latest.html) specification.
 
-Each desktop entry must have a `Type` and a `Name` and can optionally define its appearance in the application menu.
+## Contents
+
+*   [1 Basics](#Basics)
+*   [2 Application entry](#Application_entry)
+    *   [2.1 File example](#File_example)
+    *   [2.2 Key definition](#Key_definition)
+    *   [2.3 Validation](#Validation)
+*   [3 Icons](#Icons)
+    *   [3.1 Common image formats](#Common_image_formats)
+    *   [3.2 Converting icons](#Converting_icons)
+    *   [3.3 Obtaining icons](#Obtaining_icons)
+    *   [3.4 Icon path](#Icon_path)
+*   [4 Tools](#Tools)
+    *   [4.1 gendesk](#gendesk)
+        *   [4.1.1 How to use](#How_to_use)
+    *   [4.2 lsdesktopf](#lsdesktopf)
+    *   [4.3 fbrokendesktop](#fbrokendesktop)
+*   [5 Tips and tricks](#Tips_and_tricks)
+    *   [5.1 Run a desktop file from a terminal](#Run_a_desktop_file_from_a_terminal)
+    *   [5.2 Hide desktop entries](#Hide_desktop_entries)
+    *   [5.3 Modify environment variables](#Modify_environment_variables)
+*   [6 See also](#See_also)
+
+## Basics
+
+Each desktop entry must have a `Type` and a `Name` key and can optionally define its appearance in the application menu.
 
 The three available types are:
 
@@ -14,31 +39,9 @@ The three available types are:
 
 	Directory
 
-	Defines the appearance of a submenu in the application menu. Link entries use the `.directory` file extension.
+	Defines the appearance of a submenu in the application menu. Directory entries use the `.directory` file extension.
 
 The following sections will roughly explain how these are created and validated.
-
-## Contents
-
-*   [1 Application entry](#Application_entry)
-    *   [1.1 File example](#File_example)
-    *   [1.2 Key definition](#Key_definition)
-    *   [1.3 Validation](#Validation)
-*   [2 Icons](#Icons)
-    *   [2.1 Common image formats](#Common_image_formats)
-    *   [2.2 Converting icons](#Converting_icons)
-    *   [2.3 Obtaining icons](#Obtaining_icons)
-    *   [2.4 Icon path](#Icon_path)
-*   [3 Tools](#Tools)
-    *   [3.1 gendesk](#gendesk)
-        *   [3.1.1 How to use](#How_to_use)
-    *   [3.2 lsdesktopf](#lsdesktopf)
-    *   [3.3 fbrokendesktop](#fbrokendesktop)
-*   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Run a desktop file from a terminal](#Run_a_desktop_file_from_a_terminal)
-    *   [4.2 Hide desktop entries](#Hide_desktop_entries)
-    *   [4.3 Modify environment variables](#Modify_environment_variables)
-*   [5 See also](#See_also)
 
 ## Application entry
 

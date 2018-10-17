@@ -1,3 +1,10 @@
+Articoli correlati
+
+*   [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
+*   [Unified Extensible Firmware Interface (Italiano)](/index.php/Unified_Extensible_Firmware_Interface_(Italiano) "Unified Extensible Firmware Interface (Italiano)")
+*   [Arch Boot Process (Italiano)](/index.php/Arch_Boot_Process_(Italiano) "Arch Boot Process (Italiano)")
+*   [Partitioning (Italiano)](/index.php/Partitioning_(Italiano) "Partitioning (Italiano)")
+
 Il Master Boot Record (MBR) comprende i primi 512 byte di un dispositivo di memorizzazione. Il MBR non è una partizione; è riservato al bootloader del sistema operativo e alla tabella delle partizioni del dispositivo di memorizzazione. Una nuova alternativa a MBR può essere la [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table"), che fa parte delle specifiche dell'[Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface_(Italiano) "Unified Extensible Firmware Interface (Italiano)").
 
 ## Contents

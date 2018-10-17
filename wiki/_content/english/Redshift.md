@@ -11,20 +11,21 @@ From the [Redshift project web page](http://jonls.dk/redshift/):
 
 *   [1 Installation](#Installation)
     *   [1.1 Front ends](#Front_ends)
-*   [2 Configuration](#Configuration)
+*   [2 Usage](#Usage)
     *   [2.1 Quick start](#Quick_start)
     *   [2.2 Autostart](#Autostart)
-    *   [2.3 Automatic location based on GeoClue2](#Automatic_location_based_on_GeoClue2)
-    *   [2.4 Automatic location based on GPS](#Automatic_location_based_on_GPS)
-    *   [2.5 Use real screen brightness](#Use_real_screen_brightness)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Screen 1 could not be found](#Screen_1_could_not_be_found)
-    *   [3.2 Left/right clicking the tray icon does not work](#Left.2Fright_clicking_the_tray_icon_does_not_work)
-    *   [3.3 Redshift makes the screen quickly flicker between the set color value of the screen and the default color value](#Redshift_makes_the_screen_quickly_flicker_between_the_set_color_value_of_the_screen_and_the_default_color_value)
-    *   [3.4 Redshift works fine when invoked as a command but fails when run as a systemd service](#Redshift_works_fine_when_invoked_as_a_command_but_fails_when_run_as_a_systemd_service)
-    *   [3.5 Redshift temporarily resets using some wine apps that reset gamma values](#Redshift_temporarily_resets_using_some_wine_apps_that_reset_gamma_values)
-    *   [3.6 Redshift GDBus.Error:org.freedesktop.DBus.Error.AccessDenied on start](#Redshift_GDBus.Error:org.freedesktop.DBus.Error.AccessDenied_on_start)
-*   [4 See also](#See_also)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Automatic location based on GeoClue2](#Automatic_location_based_on_GeoClue2)
+    *   [3.2 Automatic location based on GPS](#Automatic_location_based_on_GPS)
+    *   [3.3 Use real screen brightness](#Use_real_screen_brightness)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Screen 1 could not be found](#Screen_1_could_not_be_found)
+    *   [4.2 Left/right clicking the tray icon does not work](#Left.2Fright_clicking_the_tray_icon_does_not_work)
+    *   [4.3 Redshift makes the screen quickly flicker between the set color value of the screen and the default color value](#Redshift_makes_the_screen_quickly_flicker_between_the_set_color_value_of_the_screen_and_the_default_color_value)
+    *   [4.4 Redshift works fine when invoked as a command but fails when run as a systemd service](#Redshift_works_fine_when_invoked_as_a_command_but_fails_when_run_as_a_systemd_service)
+    *   [4.5 Redshift temporarily resets using some wine apps that reset gamma values](#Redshift_temporarily_resets_using_some_wine_apps_that_reset_gamma_values)
+    *   [4.6 Redshift GDBus.Error:org.freedesktop.DBus.Error.AccessDenied on start](#Redshift_GDBus.Error:org.freedesktop.DBus.Error.AccessDenied_on_start)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -36,11 +37,9 @@ The *redshift-gtk* command comes with the [redshift](https://www.archlinux.org/p
 
 Alternatives are [redshiftgui-bin](https://aur.archlinux.org/packages/redshiftgui-bin/) (GTK) and [redshift-qt](https://aur.archlinux.org/packages/redshift-qt/), [redshiftconf](https://aur.archlinux.org/packages/redshiftconf/) or [plasma5-applets-redshift-control](https://www.archlinux.org/packages/?name=plasma5-applets-redshift-control) and [plasma5-applets-redshift-control-git](https://aur.archlinux.org/packages/plasma5-applets-redshift-control-git/) (Qt).
 
-## Configuration
+## Usage
 
 Redshift will at least need your location to start (unless `-O` is used), meaning the latitude and longitude of your location. Redshift employs several routines for obtaining your location. If none of them works (e.g. none of the used helper programs is installed), you need to enter your location manually.
-
-Redshift reads the configuration file `~/.config/redshift/redshift.conf`, if it exists. However, Redshift does not create that configuration file, so you may want to create it manually. See [redshift.conf.sample](https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample).
 
 ### Quick start
 
@@ -68,13 +67,15 @@ where *TEMPERATURE* is the desired color temperature (between `1000` and `25000`
 
 There are several options to have redshift automatically started:
 
-*   By using a [systemd](/index.php/Systemd "Systemd") [user unit](/index.php/Systemd#Using_units "Systemd"). Two services are provided: `redshift.service` or `redshift-gtk.service`. Activate only one of them depending on whether or not you want the system tray icon.
-*   By adding a shell script with the contents `redshift &> /dev/null &` in `/etc/X11/xinit/xinitrc.d/`, and then make it executable with `chmod +x script_name.sh`.
-*   By adding `pgrep redshift &> /dev/null || redshift &> /dev/null &` to `~/.xinitrc` if you are using `startx`
-*   By right-clicking the system tray icon when Redshift-GTK or plasma5-applets-redshift-control is already launched and selecting 'Autostart'.
-*   By using your preferred window manager or desktop environment's autostart methods. For example in i3, the following line could be added to the config file: `exec --no-startup-id redshift-gtk`. On other desktop environments, [Desktop entries](/index.php/Desktop_entries "Desktop entries") inside `~/.config/autostart` can be used.
+*   By using a [systemd user unit](/index.php/Systemd#Using_units "Systemd"). Two services are provided: `redshift.service` and `redshift-gtk.service`. Activate only one of them depending on whether or not you want the system tray icon.
+*   By right-clicking the system tray icon when *redshift-gtk* or *plasma5-applets-redshift-control* is already launched and selecting *Autostart*.
+*   By placing a Redshift [Desktop entry](/index.php/Desktop_entry "Desktop entry") in `~/.config/autostart` or by adding `redshift&` to your window manager or desktop environment's [Autostarting](/index.php/Autostarting "Autostarting") method.
 
-**Note:** The Redshift services files contains `Restart=always` so the service will restart infinitely (see [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5)).
+**Note:** The Redshift service files contain `Restart=always` so they will restart infinitely. See [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5).
+
+## Configuration
+
+Redshift reads the configuration file `~/.config/redshift/redshift.conf`, if it exists. However, Redshift does not create that configuration file, so you may want to create it manually. See [redshift.conf.sample](https://raw.githubusercontent.com/jonls/redshift/master/redshift.conf.sample).
 
 ### Automatic location based on GeoClue2
 
@@ -92,6 +93,7 @@ users=
 
 **Note:**
 
+*   This workaround is not needed with Geoclue2 version 2.5.0 and above.
 *   If using [GNOME](/index.php/GNOME "GNOME"), also toggle Location Services to "On" in *Settings > Privacy*.
 *   Due possible bugs with geoclue2 and Redshift [[2]](https://github.com/jonls/redshift/issues/318), it may be required to use the `manual` location-provider instead, e.g. for Paris:
 

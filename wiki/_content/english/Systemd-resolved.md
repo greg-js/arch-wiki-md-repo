@@ -48,7 +48,11 @@ To use *systemd-resolved* [start](/index.php/Start "Start") and [enable](/index.
 
 #### Setting DNS servers
 
-**Tip:** In order to check the DNS actually used by *systemd-resolved*, the command to use is: `$ resolvectl status` 
+**Tip:** In order to check the DNS actually used by *systemd-resolved*, the command to use is:
+```
+$ resolvectl status
+
+```
 
 ##### Automatically
 

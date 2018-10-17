@@ -5447,7 +5447,7 @@ See also [udisks#Mount helpers](/index.php/Udisks#Mount_helpers "Udisks").
 
 *   **[Filelight](https://en.wikipedia.org/wiki/Filelight "wikipedia:Filelight")** — Disk usage analyzer that creates an interactive map of concentric, segmented rings that help visualise disk usage on your computer.
 
-	[http://methylblue.com/filelight/](http://methylblue.com/filelight/) || [filelight](https://www.archlinux.org/packages/?name=filelight)
+	[https://www.kde.org/applications/utilities/filelight](https://www.kde.org/applications/utilities/filelight) || [filelight](https://www.archlinux.org/packages/?name=filelight)
 
 *   **[GNOME Disk Usage Analyzer](https://en.wikipedia.org/wiki/Disk_Usage_Analyzer "wikipedia:Disk Usage Analyzer")** — Disk usage analyzer for the [GNOME](/index.php/GNOME "GNOME") desktop to check folder sizes and available disk space.
 

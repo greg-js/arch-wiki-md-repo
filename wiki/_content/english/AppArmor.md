@@ -212,9 +212,9 @@ To enable caching AppArmor profiles, uncomment:
 write-cache
 ```
 
-To change default cache location from `/etc/apparmor.d/cache.d/` to `/var/cache/apparmor/` add:
+To change default cache location (since 2.13.1 default cache location is `/var/cache/apparmor/`, previously it was `/etc/apparmor.d/cache.d/` add:
 
- `/etc/apparmor/parser.conf`  `cache-loc=/var/cache/apparmor` 
+ `/etc/apparmor/parser.conf`  `cache-loc=/path/to/location` 
 
 Reboot and check AppArmor startup time again to see improvement:
 

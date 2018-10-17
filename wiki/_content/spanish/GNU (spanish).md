@@ -28,7 +28,7 @@ Al final del proceso de instalación, un sistema Arch no es nada más que un nú
 
 ### Núcleo
 
-Mientras que [Hurd](http://www.gnu.org/s/hurd/hurd.html), el núcleo GNU, está bajo activo desarrollo, no existe aún una versión oficial. Por esta razón Arch y la mayoría de otros sistemas basados en GNU, usan el núcleo Linux. El [Proyecto Arch Hurd](/index.php/Arch_Hurd_Project "Arch Hurd Project") tiene como objetivo portar Arch Linux al núcleo Hurd.
+Mientras que [Hurd](http://www.gnu.org/s/hurd/hurd.html), el núcleo GNU, está bajo activo desarrollo, no existe aún una versión oficial. Por esta razón Arch y la mayoría de otros sistemas basados en GNU, usan el núcleo Linux. El [Proyecto Arch Hurd](/index.php/Arch_Hurd_Project_(Espa%C3%B1ol) "Arch Hurd Project (Español)") tiene como objetivo portar Arch Linux al núcleo Hurd.
 
 ### Colección de Software
 

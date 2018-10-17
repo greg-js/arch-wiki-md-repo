@@ -6,96 +6,120 @@ Hardware video acceleration makes it possible for the video card to decode/encod
 
 There are several ways to achieve this on Linux:
 
-*   **[Video Acceleration API](http://www.freedesktop.org/wiki/Software/vaapi)** (VA-API) is a specification and open source library to provide both hardware accelerated video encoding and decoding, developed by Intel.
-*   **[Video Decode and Presentation API for Unix](http://http.download.nvidia.com/XFree86/vdpau/doxygen/html/)** (VDPAU) is an open source library and API to offload portions of the video decoding process and video post-processing to the GPU video-hardware, developed by NVIDIA.
-*   X-Video Motion Compensation ([XvMC](/index.php/XvMC "XvMC")) is an extension for the X.Org Server, allowing video programs to offload portions of the video decoding process to the GPU video-hardware.
+*   [Video Acceleration API](https://www.freedesktop.org/wiki/Software/vaapi/) (VA-API) is a specification and open source library to provide both hardware accelerated video encoding and decoding, developed by Intel.
+*   [Video Decode and Presentation API for Unix](https://www.freedesktop.org/wiki/Software/VDPAU/) (VDPAU) is an open source library and API to offload portions of the video decoding process and video post-processing to the GPU video-hardware, developed by NVIDIA.
+*   [NVDECODE/NVENCODE](https://developer.nvidia.com/nvidia-video-codec-sdk) - proprietary APIs for hardware video acceleration used by NVIDIA Fermi, Kepler, Maxwell and Pascal generation GPUs.
+
+For pre-2007 video cards see [XvMC](/index.php/XvMC "XvMC").
 
 ## Contents
 
-*   [1 Support](#Support)
-    *   [1.1 Formats](#Formats)
-    *   [1.2 Software](#Software)
-*   [2 Installation](#Installation)
-    *   [2.1 Installing VA-API](#Installing_VA-API)
-    *   [2.2 Installing VDPAU](#Installing_VDPAU)
-*   [3 Verification](#Verification)
-    *   [3.1 Verifying VA-API](#Verifying_VA-API)
-    *   [3.2 Verifying VDPAU](#Verifying_VDPAU)
-*   [4 Configuration](#Configuration)
-    *   [4.1 Configuring VA-API](#Configuring_VA-API)
-    *   [4.2 Configuring VDPAU](#Configuring_VDPAU)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Failed to open VDPAU backend](#Failed_to_open_VDPAU_backend)
-    *   [5.2 VAAPI init failed](#VAAPI_init_failed)
-*   [6 See also](#See_also)
+*   [1 Driver support](#Driver_support)
+    *   [1.1 VA-API](#VA-API)
+    *   [1.2 VDPAU](#VDPAU)
+    *   [1.3 NVDEC/NVENC](#NVDEC.2FNVENC)
+*   [2 Software support](#Software_support)
+*   [3 Installation](#Installation)
+    *   [3.1 Intel](#Intel)
+    *   [3.2 NVIDIA](#NVIDIA)
+    *   [3.3 ATI/AMD](#ATI.2FAMD)
+    *   [3.4 Other drivers](#Other_drivers)
+*   [4 Verification](#Verification)
+    *   [4.1 Verifying VA-API](#Verifying_VA-API)
+    *   [4.2 Verifying VDPAU](#Verifying_VDPAU)
+*   [5 Configuration](#Configuration)
+    *   [5.1 Configuring VA-API](#Configuring_VA-API)
+    *   [5.2 Configuring VDPAU](#Configuring_VDPAU)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Failed to open VDPAU backend](#Failed_to_open_VDPAU_backend)
+    *   [6.2 VAAPI init failed](#VAAPI_init_failed)
 
-## Support
+## Driver support
 
-### Formats
+### VA-API
 
-**Note:**
-
-*   To choose the correct driver see [#Installation](#Installation).
-*   The features supported by your GPU may vary. To see what your GPU supports see [#Verification](#Verification).
-
-<caption>VA-API</caption>
- [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) [[1]](https://github.com/01org/intel-vaapi-driver/blob/master/README) | [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver) [[2]](https://github.com/intel/media-driver/blob/master/README.md) | [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) [[3]](https://www.x.org/wiki/RadeonFeature/) | [Catalyst XvBA](/index.php/AMD_Catalyst#Video_acceleration "AMD Catalyst") | [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)
+| Codec | [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) [[1]](https://github.com/01org/intel-vaapi-driver/blob/master/README) | [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver) [[2]](https://github.com/intel/media-driver/blob/master/README.md) | [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) [[3]](https://www.x.org/wiki/RadeonFeature/) [[4]](https://nouveau.freedesktop.org/wiki/VideoAcceleration/) | [Catalyst XvBA](/index.php/AMD_Catalyst#Video_acceleration "AMD Catalyst") | [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver)
 
 (VDPAU adapter)
 
  |
 | Decoding |
-| MPEG2 | GMA 4500 and newer | Broadwell and newer | Radeon HD 6000 and newer | Radeon HD 4000 and newer | See VDPAU |
+| MPEG2 | GMA 4500 and newer | Broadwell and newer | Radeon HD 6000 and newer
+GeForce 8 and newer | Radeon HD 4000 and newer | See [#VDPAU](#VDPAU) |
 | MPEG4 | No | No | Radeon HD 6000 and newer | Radeon HD 6000 and newer |
-| AVC (H.264) | GMA 4500, Ironlake Graphics and newer | Broadwell and newer | Radeon HD 2000 and newer | Radeon HD 4000 and newer |
+| AVC (H.264) | GMA 4500, Ironlake and newer | Broadwell and newer | Radeon HD 2000 and newer
+GeForce 8 and newer | Radeon HD 4000 and newer |
 | HEVC (H.265) 8bit | Cherryview/Braswell and newer | Skylake and newer | Radeon R9 Fury and newer | No |
-| HEVC (H.265) 10bit | ? | Broxton/Apollo Lake and newer | Radeon 400 and newer |
-| VC1 | Sandy Bridge Graphics and newer | Broadwell and newer | Radeon HD 2000 and newer | Radeon HD 4000 and newer |
+| HEVC (H.265) 10bit | Broxton and newer | Broxton/Apollo Lake and newer | Radeon 400 and newer |
+| VC1 | Sandy Bridge and newer | Broadwell and newer | Radeon HD 2000 and newer
+GeForce 9300 and newer | Radeon HD 4000 and newer |
 | VP8 | Broadwell and newer | No | No | No |
 | VP9 8bit | Broxton and newer | Broxton/Apollo Lake and newer | Raven Ridge and newer |
-| VP9 10bit | ? | Kaby Lake and newer |
+| VP9 10bit | Kaby Lake and newer | Kaby Lake and newer |
 | Encoding |
-| MPEG2 | Ivy Bridge Graphics and newer | Broadwell and newer, excepted for Broxton/Apollo Lake | No | No | No |
-| AVC (H.264) | Sandy Bridge Graphics and newer | Broadwell and newer | Radeon HD 7000 and newer |
+| MPEG2 | Ivy Bridge and newer | Broadwell and newer
+except Broxton/Apollo Lake | No | No | No |
+| AVC (H.264) | Sandy Bridge and newer | Broadwell and newer | Radeon HD 7000 and newer |
 | HEVC (H.265) 8bit | Skylake and newer | Skylake and newer | Raven Ridge and newer |
-| HEVC (H.265) 10bit | ? | Cannonlake and newer |
+| HEVC (H.265) 10bit | Kaby Lake and newer | Cannonlake and newer |
 | VP8 | Cherryview/Braswell and newer | No |
 | VP9 8bit | Kaby Lake and newer | Icelake and newer |
-| VP9 10bit | ? |
+| VP9 10bit | No |
 
-<caption>VDPAU</caption>
- [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) | [amdgpu-pro-vdpau](https://aur.archlinux.org/packages/amdgpu-pro-vdpau/)
-([AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") only) | [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl)
+*   Up until GeForce GTX 750.
+*   Supported by [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) instead.
+
+### VDPAU
+
+**Note:** VDPAU is not updated since September 2015 and is missing VP8 and VP9 support [[5]](https://gitlab.freedesktop.org/vdpau/libvdpau).
+
+| Codec | [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) [[6]](https://www.x.org/wiki/RadeonFeature/) [[7]](https://nouveau.freedesktop.org/wiki/VideoAcceleration/) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) [[8]](https://www.nvidia.com/page/purevideo_support.html) | [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl)
 (VA-API adapter) |
 | Decoding |
-| MPEG2 | Radeon 9500 and newer, GeForce 8 and newer | GeForce 8 and newer | ? | No |
-| MPEG4 | Radeon HD 6000 and newer, GeForce 200 and newer | GeForce 200 and newer |
-| AVC (H.264) | Radeon HD 2000 and newer, GeForce 8 and newer | GeForce 8 and newer | See VA-API |
-| HEVC (H.265) | Radeon R9 Fury and newer | GeForce 900 and newer | No |
-| VC1 | Radeon HD 2000 and newer, GeForce 8 and newer | GeForce 8 and newer |
+| MPEG2 | Radeon R300 and newer
+GeForce 8 and newer | GeForce 8 and newer | No |
+| MPEG4 | Radeon HD 6000 and newer
+GeForce 200 and newer | GeForce 200 and newer |
+| AVC (H.264) | Radeon HD 2000 and newer
+GeForce 8 and newer | GeForce 8 and newer | See [#VA-API](#VA-API) |
+| HEVC (H.265) 8bit | Radeon R9 Fury and newer | GeForce 900 and newer | No |
+| HEVC (H.265) 10bit | Radeon 400 and newer | No |
+| VC1 | Radeon HD 2000 and newer
+GeForce 9300 and newer | GeForce 8 and newer |
 
-*   Supported by [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) instead.
+*   Up until GeForce GTX 750.
 *   As of version 0.3, the VA GL driver does not support any other hardware decoder than H.264.
-*   [Except](https://en.wikipedia.org/wiki/Nvidia_PureVideo "wikipedia:Nvidia PureVideo") GeForce 8800 Ultra, 8800 GTX, 8800 GTS (320/640 MB).
 *   Except GeForce GTX 970 and GTX 980.
+*   NVIDIA implementation is limited to 8-bit streams [[9]](https://devtalk.nvidia.com/default/topic/940228/vdpau-expose-hevc-main10-support-where-available-on-die/) [[10]](https://us.download.nvidia.com/XFree86/Linux-x86_64/410.57/README/vdpausupport.html#vdpau-implementation-limits).
+*   [Except](https://en.wikipedia.org/wiki/Nvidia_PureVideo "wikipedia:Nvidia PureVideo") GeForce 8800 Ultra, 8800 GTX, 8800 GTS (320/640 MB).
 
-<caption>Nvidia NVDEC/NVENC ([NVIDIA](/index.php/NVIDIA "NVIDIA") only)</caption>
- Decoding (NVDEC) | Encoding (NVENC) |
-| MPEG-2 | Yes | No |
-| VC-1 | Yes | No |
-| AVC (H.264) | Yes | Yes |
-| HEVC (H.265) | Some Maxwell2 and newer | Pascal and newer |
-| VP8 | Maxwell2 and newer | No |
-| VP9 | Some Maxwell2 and newer | No |
+### NVDEC/NVENC
 
-### Software
+| Codec | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) |
+| [Decoding (NVDEC)](https://developer.nvidia.com/nvidia-video-codec-sdk#NVDECFeatures) | [Encoding (NVENC)](https://developer.nvidia.com/nvidia-video-codec-sdk#NVENCFeatures) |
+| MPEG-2 | Kepler and newer | No |
+| VC-1 |
+| AVC (H.264) | Kepler and newer |
+| HEVC (H.265) 8bit | Maxwell (GM206) and newer | Maxwell (2nd Gen) and newer |
+| HEVC (H.265) 10bit | Pascal and newer |
+| VP8 | Maxwell (2nd Gen) and newer | No |
+| VP9 8bit | Maxwell (GM206) and newer |
+| VP9 10bit | Pascal and newer |
+
+*   Except GM108 (not supported)
+*   Except GM108 and GP108 (not supported)
+
+## Software support
 
  VA-API | VDPAU | NVDEC/NVENC | Documentation |
 | [GStreamer](/index.php/GStreamer "GStreamer") | Yes, via [gstreamer-vaapi](https://www.archlinux.org/packages/?name=gstreamer-vaapi) | Yes, via [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) | Yes, via [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) | [GStreamer#Hardware video acceleration](/index.php/GStreamer#Hardware_video_acceleration "GStreamer") |
 | [VLC media player](/index.php/VLC_media_player "VLC media player") | Yes | Yes | No | [VLC media player#Hardware video acceleration](/index.php/VLC_media_player#Hardware_video_acceleration "VLC media player") |
 | [mpv](/index.php/Mpv "Mpv") | Yes | Yes | Yes | [mpv#Hardware decoding](/index.php/Mpv#Hardware_decoding "Mpv") |
 | [MPlayer](/index.php/MPlayer "MPlayer") | Yes, via [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/) | Yes | No | [MPlayer#Hardware video acceleration](/index.php/MPlayer#Hardware_video_acceleration "MPlayer") |
-| [Flash](/index.php/Flash "Flash") | No | NPAPI-only | No | [Flash#Configuration](/index.php/Flash#Configuration "Flash") |
+| [Flash](/index.php/Flash "Flash") | NPAPI-only
+via [freshplayerplugin](https://aur.archlinux.org/packages/freshplayerplugin/) | NPAPI-only
+via [freshplayerplugin](https://aur.archlinux.org/packages/freshplayerplugin/)
+or [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) | No | [Flash#Configuration](/index.php/Flash#Configuration "Flash") |
 | [Kodi](/index.php/Kodi "Kodi") | Yes | Yes | Yes | [Kodi#Hardware video acceleration](/index.php/Kodi#Hardware_video_acceleration "Kodi") |
 | [Firefox](/index.php/Firefox "Firefox") | No | No | No | [Hardware decoding on Linux tracker bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1210726) |
 | [Chromium](/index.php/Chromium "Chromium") | Yes, via [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/) | No | No | [Chromium#Hardware video acceleration](/index.php/Chromium#Hardware_video_acceleration "Chromium") |
@@ -103,55 +127,38 @@ There are several ways to achieve this on Linux:
 
 ## Installation
 
-The choice varies depending on your video card vendor:
+### Intel
 
-*   For Intel Graphics use VA-API.
-*   For NVIDIA cards use VDPAU.
-*   For AMD cards you can use both (with [mesa](https://www.archlinux.org/packages/?name=mesa)). The difference is really only in the application implementation [[4]](https://www.phoronix.com/forums/forum/linux-graphics-x-org-drivers/open-source-amd-linux/887994-vaapi-or-vdpau).
+[Intel graphics](/index.php/Intel_graphics "Intel graphics") open-source drivers support VA-API:
 
-There are also two specific types of drivers for VA-API and VDPAU:
+*   GMA 4500 series and newer GPUs up to Coffee Lake are supported by [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver).
+*   GMA 4500 H.264 decoding is supported by [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/), see [Intel#Hardware accelerated H.264 decoding on GMA 4500](/index.php/Intel#Hardware_accelerated_H.264_decoding_on_GMA_4500 "Intel").
+*   Intel HD Graphics series starting from CannonLake (or optionally from Broadwell) and newer are supported by [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver).
+
+### NVIDIA
+
+[Nouveau](/index.php/Nouveau "Nouveau") open-source driver supports both VA-API and VDPAU:
+
+*   GeForce 8 series and newer GPUs are supported by [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) and [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau).
+*   [Requires](https://nouveau.freedesktop.org/wiki/VideoAcceleration/#firmware) [nouveau-fw](https://aur.archlinux.org/packages/nouveau-fw/) firmware package, presently extracted from the NVIDIA binary driver.
+
+[NVIDIA](/index.php/NVIDIA "NVIDIA") proprietary driver supports VDPAU and NVDECODE/NVENCODE.
+
+### ATI/AMD
+
+[ATI](/index.php/ATI "ATI") and [AMDGPU](/index.php/AMDGPU "AMDGPU") open-source drivers support both VA-API and VDPAU:
+
+*   VDPAU on Radeon R300 and newer GPUs is supported by [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau).
+*   VA-API on Radeon HD 2000 and newer GPUs is supported by [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver).
+
+[AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") proprietary driver supports VA-API via [XvBA](/index.php/AMD_Catalyst#Video_acceleration "AMD Catalyst").
+
+[AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") proprietary driver supports both VA-API and VDPAU.
+
+### Other drivers
 
 *   [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver), which uses VDPAU as a backend for VA-API.
 *   [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl), which uses VA-API as a backend for VDPAU.
-
-For pre-2007 cards see [XvMC](/index.php/XvMC "XvMC").
-
-**Tip:** It is recommended to install and configure both VA-API and VDPAU to achieve support in different scenarios, e.g. [Flash](/index.php/Flash "Flash") does not support VA-API but can use the VDPAU VA-API backend.
-
-### Installing VA-API
-
-**Open source drivers:**
-
-*   [ATI](/index.php/ATI "ATI")/[AMDGPU](/index.php/AMDGPU "AMDGPU") Radeon 9500 and newer GPUs are supported by [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) with [mesa](https://www.archlinux.org/packages/?name=mesa).
-*   [Intel](/index.php/Intel "Intel")
-    *   Intel GMA 4500 series and newer GPUs up to Coffee Lake are supported by [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) with [mesa](https://www.archlinux.org/packages/?name=mesa).
-        *   To get better support on GMA 4500 consider using [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) instead, see [Intel#Hardware accelerated H.264 decoding on GMA 4500](/index.php/Intel#Hardware_accelerated_H.264_decoding_on_GMA_4500 "Intel") for instructions and caveats.
-    *   Intel HD Graphics series starting from CannonLake (or optionally from Broadwell) and newer are supported by [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver).
-*   [NVIDIA](/index.php/Nouveau "Nouveau") GeForce 8 series and newer GPUs are supported by [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) with [mesa](https://www.archlinux.org/packages/?name=mesa).
-
-**Proprietary drivers:**
-
-*   AMD cards depend on the driver:
-    *   [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") uses [xvba](/index.php/AMD_Catalyst#Video_acceleration "AMD Catalyst").
-    *   [AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") uses [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) + [amdgpu-pro-vdpau](https://aur.archlinux.org/packages/amdgpu-pro-vdpau/) (see [AMDGPU#AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU")).
-*   [NVIDIA](/index.php/NVIDIA "NVIDIA") GeForce 8 series and newer GPUs are supported by [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) (see [#Installing VDPAU](#Installing_VDPAU)).
-
-### Installing VDPAU
-
-**Open source drivers:**
-
-*   [ATI](/index.php/ATI "ATI")/[AMDGPU](/index.php/AMDGPU "AMDGPU") Radeon 9500 and newer GPUs are supported by [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau).
-*   [Intel](/index.php/Intel "Intel") GMA 4500 series and newer GPUs are supported by [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) (see [#Installing VA-API](#Installing_VA-API)).
-*   [NVIDIA](/index.php/Nouveau "Nouveau") GeForce 8 series and newer GPUs are supported by [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau). It [requires](http://nouveau.freedesktop.org/wiki/VideoAcceleration/#firmware) [nouveau-fw](https://aur.archlinux.org/packages/nouveau-fw/), which contains the required firmware to operate that is presently extracted from the NVIDIA binary driver.
-
-**Proprietary drivers:**
-
-*   AMD cards depend on the driver:
-    *   [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") uses [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) (see [#Installing VA-API](#Installing_VA-API)).
-    *   [AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") uses [amdgpu-pro-vdpau](https://aur.archlinux.org/packages/amdgpu-pro-vdpau/) (see [AMDGPU#AMDGPU PRO](/index.php/AMDGPU#AMDGPU_PRO "AMDGPU")).
-*   [NVIDIA](/index.php/NVIDIA "NVIDIA") GeForce 600 series and newer GPUs are supported by [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils).
-    *   GeForce 400/500 series are supported by [nvidia-390xx-utils](https://www.archlinux.org/packages/?name=nvidia-390xx-utils).
-    *   GeForce 8/9 and GeForce 100-300 series are supported by [nvidia-340xx-utils](https://www.archlinux.org/packages/?name=nvidia-340xx-utils).
 
 ## Verification
 
@@ -286,8 +293,10 @@ This does not represent the *configuration* however. The values above will not c
 You can override the [driver](http://www.freedesktop.org/wiki/Software/vaapi/#driversback-endsthatimplementva-api) for VA-API by using the `LIBVA_DRIVER_NAME` [environment variable](/index.php/Environment_variable "Environment variable"):
 
 *   For Intel Graphics use `i965` or `iHD`.
-*   For NVIDIA use `vdpau`.
-*   For AMD use either `radeonsi` or `vdpau`.
+*   For the open source Nouveau driver use `nouveau`.
+*   For the proprietary NVIDIA driver use `vdpau`.
+*   For the open source AMD driver use `radeonsi`.
+*   For the proprietary AMD Catalyst use `fglrx`.
 
 **Note:**
 
@@ -303,6 +312,7 @@ The correct driver name depends on your setup:
 
 *   For Intel Graphics or AMD Catalyst you [need](#Failed_to_open_VDPAU_backend) to set it to `va_gl`.
 *   For the open source AMD/ATI driver set it to the proper driver version depending on your GPU, see [#Verification](#Verification).
+*   For the open source Nouveau driver set it to `nouveau`.
 *   For NVIDIA's proprietary version set it to `nvidia`.
 
 **Note:**
@@ -322,9 +332,3 @@ However you may want to configure your media player to use VA-API instead, getti
 ### VAAPI init failed
 
 An error along the lines of `libva: /usr/lib/dri/i965_drv_video.so init failed` is encountered. This can happen because of improper detection of Wayland. One solution is to unset `$DISPLAY` so that mpv, mplayer, VLC, etc. do not assume it is X11\. Another mpv-specific solution is to add the parameter `--opengl-backend=wayland`.
-
-## See also
-
-*   [https://dri.freedesktop.org/wiki/Status/](https://dri.freedesktop.org/wiki/Status/)
-*   [https://developer.nvidia.com/video-encode-decode-gpu-support-matrix](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix)
-*   [https://github.com/intel/media-driver/#supported-platforms](https://github.com/intel/media-driver/#supported-platforms)

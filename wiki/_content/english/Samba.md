@@ -806,18 +806,7 @@ Possible solutions:
 
 ### Permission issues on AppArmor
 
-The following adjustments should be applied when using Samba together with [AppArmor](/index.php/AppArmor "AppArmor"):
-
-*   The pid file and log file paths used in the [samba](https://www.archlinux.org/packages/?name=samba) package differ from the ones used in the AppArmor profiles [[1]](https://gitlab.com/apparmor/apparmor/merge_requests/210). Change the `pid directory` to `var/run/samba/` and use a non-file `logging` backend:
-
- `/etc/samba/smb.conf` 
-```
-[global]
-pid directory = /var/run/samba/
-logging = systemd ; or syslog with syslog only
-```
-
-*   If using a [share path](#Creating_a_share) located outside of a home-directory, whitelist it in `/etc/apparmor.d/local/usr.sbin.smbd`. E.g.:
+If using a [share path](#Creating_a_share) located outside of a home-directory, whitelist it in `/etc/apparmor.d/local/usr.sbin.smbd`. E.g.:
 
  `/etc/apparmor.d/local/usr.sbin.smbd` 
 ```

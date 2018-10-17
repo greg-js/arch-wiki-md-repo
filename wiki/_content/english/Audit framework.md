@@ -1,12 +1,10 @@
 The Linux audit framework provides a CAPP-compliant ([Controlled Access Protection Profile](https://en.wikipedia.org/wiki/Controlled_Access_Protection_Profile "wikipedia:Controlled Access Protection Profile")) auditing system that reliably collects information about any security-relevant (or non-security-relevant) event on a system. It can help you track actions performed on a system.
 
-Linux audit helps make your system more secure by providing you with a means to analyze what is happening on your system in great detail. It does not, however, provide additional security itself—it does not protect your system from code malfunctions or any kind of exploits. Instead, Audit is useful for tracking these issues and helps you take additional security measures, to prevent them.
+Linux audit helps make your system more secure by providing you with means to analyze what is happening on your system in great detail. It does not, however, provide additional security itself—it does not protect your system from code malfunctions or any kind of exploits. Instead, Audit is useful for tracking these issues and helps you take additional security measures to prevent them.
 
 The audit framework works by listening to the event reported by the kernel and logging them to a log file.
 
-**Note:**
-
-*   Audit framework compatibility with containers was fixed in Linux 3.15, see `[[1]](https://bugzilla.redhat.com/show_bug.cgi?id=893751)`, however interpreting audit records may be difficult as support for namespace ID is still work in progress, see [[2]](https://github.com/linux-audit/audit-kernel/issues/32).
+**Note:** Audit framework compatibility with containers was fixed in Linux 3.15, see [[1]](https://bugzilla.redhat.com/show_bug.cgi?id=893751), however interpreting audit records may be difficult as support for namespace ID is still work in progress, see [[2]](https://github.com/linux-audit/audit-kernel/issues/32).
 
 ## Contents
 

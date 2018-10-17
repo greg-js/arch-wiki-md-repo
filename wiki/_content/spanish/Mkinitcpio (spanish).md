@@ -38,7 +38,7 @@ mkinitcpio es un script bash utilizado para generar un ramdisk inicial. En [mkin
 
 	*El ramdisk inicial es básicamente un entorno muy pequeño ("pre-userspace"), que carga varios módulos del kernel y establece los pasos preliminares necesarios antes de entregar el control a init. De esta manera usted puede tener, por ejemplo, sistemas de archivos cifrados y sistemas de archivos en el software RAID. Mkinitcpio también permite extensiones personalizadas con los hooks, la detección automática en tiempo de ejecución, y muchas otras características.*
 
-Tradicionalmente, el kernel es el responsable de la detección de hardware y las tareas de inicialización a principios del [proceso de arranque](/index.php/Boot_process "Boot process"), antes de montar el sistema de archivos root y pasar el control a `init`. Sin embargo, con los avances de la tecnología, estas actividades se han vuelto cada vez más complejas.
+Tradicionalmente, el kernel es el responsable de la detección de hardware y las tareas de inicialización a principios del [proceso de arranque](/index.php/Boot_process_(Espa%C3%B1ol) "Boot process (Español)"), antes de montar el sistema de archivos root y pasar el control a `init`. Sin embargo, con los avances de la tecnología, estas actividades se han vuelto cada vez más complejas.
 
 A día de hoy, el sistema de ficheros root se puede instalar en una amplia gama de hardware, de SCSI a SATA pasando por USB, el cual es monitoreado por una serie de controladores de unidades de diferentes fabricantes. Además, el sistema de ficheros root se puede comprimir o cifrar, en un software RAID o grupo de volumen lógico. La forma más fácil de manejar este rango de complejidad, es pasar la gestión al entorno userspace: el ramdisk inicial.
 

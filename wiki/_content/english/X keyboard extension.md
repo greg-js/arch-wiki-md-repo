@@ -1,6 +1,6 @@
 The [X keyboard extension](https://en.wikipedia.org/wiki/X_keyboard_extension "wikipedia:X keyboard extension"), or XKB, defines the way keyboards codes are handled in X, and provides access to internal translation tables. It is the basic mechanism that allows using multiple keyboard layouts in X.
 
-This article describes how to modify and create keyboard layouts. If you are looking for how to configure your keyboard, see [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg").
+This article describes how to modify and create keyboard layouts. If you are looking for how to configure your keyboard, see [Xorg/Keyboard configuration](/index.php/Xorg/Keyboard_configuration "Xorg/Keyboard configuration").
 
 ## Contents
 
@@ -108,7 +108,7 @@ The core XKB functionality is quite simple, and it's necessary to have a some id
 
 ### Tools and values
 
-Use xev (package [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev)) to get keycodes and to check how your keymap works.
+Use [xev](/index.php/Xev "Xev") (package [xorg-xev](https://www.archlinux.org/packages/?name=xorg-xev)) to get keycodes and to check how your keymap works.
 
 ```
 $ xev -event keyboard
@@ -127,7 +127,7 @@ Sample output:
 
 ```
 
-Note keycode 21, state 0x1 and keysym 0x2b aka plus. Keycode 21 is what input device supplied to X, typically a physical key index of some sort. The state represents modifier keys, 0x01 is Shift. Keycode together with the state value is what X sends to the application in XKeyEvent(3) structure. Keysym and corresponding string is what the client obtained using XLookupString(3) and friends.
+Note keycode 21, state 0x1 and keysym 0x2b aka plus. Keycode 21 is what input device supplied to X, typically a physical key index of some sort. The state represents modifier keys, 0x01 is Shift. Keycode together with the state value is what X sends to the application in [XKeyEvent(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/XKeyEvent.3) structure. Keysym and corresponding string is what the client obtained using [XLookupString(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/XLookupString.3) and friends.
 
 The bits in the state field have pre-defined names: `Shift`, `Lock`, `Control`, `Mod1`, `Mod2`, `Mod3`, `Mod4` and `Mod5`, lowest to highest. Thus, `Ctrl+Shift` is 0x05, and so on. Client applications typically only check the bits they need, so an application with normal keyboard input and `Ctrl+key` shortcuts usually makes no distinction between `Control` and `Control+Mod3` states.
 
@@ -672,7 +672,7 @@ Warning: four standard types, ONE_LEVEL, TWO_LEVEL, ALPHABETIC and KEYPAD, recei
 
 ### Using real modifiers in standard types
 
-Depending of your base configuration, there may be a lot of unused standard types like EIGHT_LEVEL or PC_RCONTROL_LEVEL2. Remove them to avoid doing unnecessary work.
+Depending of your base configuration, there may be a lot of unused standard types like EIGHT_LEVEL or PC_RCONTROL_LEVEL2\. Remove them to avoid doing unnecessary work.
 
 Now, some standard types use virtual modifiers. If you decide to use them, check Virtual modifiers below and skip this section. Otherwise, it's a good idea to get rid of them completely. Check the types you need, and either replace them with corresponding real ones, or remove relevant definitions. Example:
 

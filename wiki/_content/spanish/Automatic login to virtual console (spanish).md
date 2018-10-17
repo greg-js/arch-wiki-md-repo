@@ -1,3 +1,9 @@
+Artículos relacionados
+
+*   [Display manager (Español)](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)")
+*   [Silent boot (Español)](/index.php/Silent_boot_(Espa%C3%B1ol) "Silent boot (Español)")
+*   [Start X at login (Español)](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)")
+
 En este artículo se describe cómo acceder automáticamente a una [consola virtual](https://en.wikipedia.org/wiki/es:Virtual_console se describen en [Start X at Login](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)").
 
 ## Contents

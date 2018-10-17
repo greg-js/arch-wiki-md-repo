@@ -51,7 +51,7 @@ Related articles
         *   [4.12.1 Simplest way: fetch the entire repo](#Simplest_way:_fetch_the_entire_repo)
         *   [4.12.2 Partial fetch](#Partial_fetch)
         *   [4.12.3 Get other branches](#Get_other_branches)
-        *   [4.12.4 Possilbe Future alternative](#Possilbe_Future_alternative)
+        *   [4.12.4 Possible Future alternative](#Possible_Future_alternative)
 *   [5 Git server](#Git_server)
     *   [5.1 SSH](#SSH)
     *   [5.2 Smart HTTP](#Smart_HTTP)
@@ -749,7 +749,7 @@ $ git clone --no-local --depth 1 -b linux-4.17.y  ../linux-stable
 
 As usual, do `git pull` to update your snapshot.
 
-#### Possilbe Future alternative
+#### Possible Future alternative
 
 Git Virtual Filesystem (GVFS), developed by Microsoft, allows you to access git repositories without a local one. (See [this Microsoft blog](https://blogs.msdn.microsoft.com/bharry/2017/05/24/the-largest-git-repo-on-the-planet/) or the [Wikipedia artcile](https://en.wikipedia.org/wiki/Git_Virtual_File_System "wikipedia:Git Virtual File System").) It's not available in Linux yet.
 

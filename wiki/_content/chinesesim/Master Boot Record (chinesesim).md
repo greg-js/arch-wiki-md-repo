@@ -1,3 +1,10 @@
+相关文章
+
+*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
+*   [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
+*   [Partitioning](/index.php/Partitioning "Partitioning")
+*   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
+
 **翻译状态：** 本文是英文页面 [Master_Boot_Record](/index.php/Master_Boot_Record "Master Boot Record") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-25，点击[这里](https://wiki.archlinux.org/index.php?title=Master_Boot_Record&diff=0&oldid=445496)可以查看翻译后英文页面的改动。
 
 主引导记录 [Master Boot Record](https://en.wikipedia.org/wiki/Master_Boot_Record "w:Master Boot Record")(MBR) 是指一个存储设备的开头 512 字节。它包含操作系统的引导器和存储设备的分区表。在 [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") 系统的 [启动过程](/index.php/Boot_process "Boot process") 中扮演重要角色。
