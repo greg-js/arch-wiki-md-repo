@@ -7,7 +7,7 @@ Related articles
 
 ## Installation
 
-Install the [remmina](https://www.archlinux.org/packages/?name=remmina) package.
+[Install](/index.php/Install "Install") the [remmina](https://www.archlinux.org/packages/?name=remmina) package.
 
 For VNC support install the [libvncserver](https://www.archlinux.org/packages/?name=libvncserver) package.
 

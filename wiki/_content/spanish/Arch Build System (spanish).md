@@ -46,7 +46,7 @@ ABS es un concepto similar. ABS es un componente de un árbol de directorios (el
 
 	[PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
 
-	Un script de [Bash](/index.php/Bash "Bash") que contiene la dirección URL del código fuente junto con las instrucciones de compilación y de empaquetado.
+	Un script de [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") que contiene la dirección URL del código fuente junto con las instrucciones de compilación y de empaquetado.
 
 	[makepkg](/index.php/Makepkg "Makepkg")
 

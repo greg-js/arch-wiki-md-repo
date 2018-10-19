@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Category:Web server](/index.php/Category:Web_server "Category:Web server")
+*   [Category:Web applications](/index.php/Category:Web_applications "Category:Web applications")

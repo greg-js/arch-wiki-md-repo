@@ -5,7 +5,7 @@ Artículos relacionados
 *   [Mirrors](/index.php/Mirrors "Mirrors")
 *   [Creating packages](/index.php/Creating_packages "Creating packages")
 
-Para métodos generales para mejorar la flexibilidad de las sugerencias proporcionadas o del propio pacman, consulte [Core utilities](/index.php/Core_utilities "Core utilities") y [Bash](/index.php/Bash "Bash").
+Para métodos generales para mejorar la flexibilidad de las sugerencias proporcionadas o del propio pacman, consulte [Core utilities](/index.php/Core_utilities "Core utilities") y [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)").
 
 ## Contents
 

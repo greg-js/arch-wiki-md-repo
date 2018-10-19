@@ -5,109 +5,43 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Usage](#Usage)
-    *   [2.1 Autostarting](#Autostarting)
-    *   [2.2 Command only](#Command_only)
-    *   [2.3 Using a configuration file](#Using_a_configuration_file)
-        *   [2.3.1 Disable shadows for some windows](#Disable_shadows_for_some_windows)
-*   [3 Multihead](#Multihead)
-*   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 Conky](#Conky)
-    *   [4.2 dwm | dmenu](#dwm_.7C_dmenu)
-    *   [4.3 Firefox](#Firefox)
-    *   [4.4 slock](#slock)
-    *   [4.5 Corrupted screen contents with Intel graphics](#Corrupted_screen_contents_with_Intel_graphics)
-    *   [4.6 Freezing video playback](#Freezing_video_playback)
-    *   [4.7 Flicker](#Flicker)
-    *   [4.8 Fullscreen tearing](#Fullscreen_tearing)
-    *   [4.9 Lag when using xft fonts](#Lag_when_using_xft_fonts)
-    *   [4.10 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
-    *   [4.11 Tabbed windows](#Tabbed_windows)
-    *   [4.12 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
-    *   [4.13 Screentearing with NVIDIA's proprietary drivers](#Screentearing_with_NVIDIA.27s_proprietary_drivers)
-    *   [4.14 Lag with Nvidia proprietary drivers and FullCompositionPipeline](#Lag_with_Nvidia_proprietary_drivers_and_FullCompositionPipeline)
-*   [5 See also](#See_also)
+*   [2 Configuration](#Configuration)
+    *   [2.1 Disable shadows for some windows](#Disable_shadows_for_some_windows)
+*   [3 Usage](#Usage)
+*   [4 Multihead](#Multihead)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 Conky](#Conky)
+    *   [5.2 dwm | dmenu](#dwm_.7C_dmenu)
+    *   [5.3 Firefox](#Firefox)
+    *   [5.4 slock](#slock)
+    *   [5.5 Corrupted screen contents with Intel graphics](#Corrupted_screen_contents_with_Intel_graphics)
+    *   [5.6 Freezing video playback](#Freezing_video_playback)
+    *   [5.7 Flicker](#Flicker)
+    *   [5.8 Fullscreen tearing](#Fullscreen_tearing)
+    *   [5.9 Lag when using xft fonts](#Lag_when_using_xft_fonts)
+    *   [5.10 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
+    *   [5.11 Tabbed windows](#Tabbed_windows)
+    *   [5.12 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
+    *   [5.13 Screentearing with NVIDIA's proprietary drivers](#Screentearing_with_NVIDIA.27s_proprietary_drivers)
+    *   [5.14 Lag with Nvidia proprietary drivers and FullCompositionPipeline](#Lag_with_Nvidia_proprietary_drivers_and_FullCompositionPipeline)
+*   [6 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") [compton](https://www.archlinux.org/packages/?name=compton) or its [git](/index.php/Git "Git") version, [compton-git](https://aur.archlinux.org/packages/compton-git/).
+[Install](/index.php/Install "Install") the [compton](https://www.archlinux.org/packages/?name=compton) package or [compton-git](https://aur.archlinux.org/packages/compton-git/) for the development version. For a [Qt](/index.php/Qt "Qt")-based configuration GUI install [compton-conf](https://aur.archlinux.org/packages/compton-conf/) or [compton-conf-git](https://aur.archlinux.org/packages/compton-conf-git/).
 
-[compton-conf](https://aur.archlinux.org/packages/compton-conf/) or [compton-conf-git](https://aur.archlinux.org/packages/compton-conf-git/) package provide [Qt](/index.php/Qt "Qt")-based GUI for Compton configuration.
+## Configuration
 
-## Usage
+The default configuration is available in `/etc/xdg/compton.conf`. For modifications, it can be copied to `~/.config/compton.conf` or `~/.compton.conf`.
 
-See [compton(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/compton.1). Compton may be manually enabled or disabled at any time during a session, or autostarted as a background ([Daemon](/index.php/Daemon "Daemon")) process for sessions. There are also several optional arguments that may be used to tweak the compositing effects provided. These include:
-
-*   `-b`: Run as a background ([Daemon](/index.php/Daemon "Daemon")) process for a session (e.g. when autostarting for a [window manager](/index.php/Window_manager "Window manager") such as [Openbox](/index.php/Openbox "Openbox"))
-*   `-c`: Enable shadow effects
-*   `-C`: Disable shadow effects on panels and docks
-*   `-G`: Disable shadow effects for application windows and drag-and-drop objects
-*   `--config`: Use a specified configuration file
-
-Many more options are available, including to set timing, displays to be managed, and the opacity of menus, window borders, and inactive application menus. See the [Compton Man Page](https://github.com/chjj/compton/blob/master/man/compton.1.asciidoc) for further information.
-
-**Note:** If a different [composite manager](/index.php/Composite_manager "Composite manager") is running, it should be disabled before starting *compton*.
-
-### Autostarting
-
-How compton would be autostarted as a [Daemon](/index.php/Daemon "Daemon") process will depend on the [desktop environment](/index.php/Desktop_environment "Desktop environment") or [window manager](/index.php/Window_manager "Window manager") used. For example, for [Openbox](/index.php/Openbox "Openbox") the `~/.config/openbox/autostart` file must be edited, while for [i3](/index.php/I3 "I3") it would be the `~/.i3/config` file. Where necessary, compton may also be autostarted from [xprofile](/index.php/Xprofile "Xprofile") or [Xinitrc](/index.php/Xinitrc "Xinitrc"). Read the [startup files](/index.php/Startup_files "Startup files") article for further information.
-
-### Command only
-
-To manually enable default compositing effects during a session, use the following command:
+To use a custom configuration file with compton, use the following command:
 
 ```
-$ compton
+$ compton --config *path/to/*compton.conf
 
 ```
 
-Alternatively, to disable all shadowing effects during a session, the `-C` and `-G` arguments must be added:
-
-```
-$ compton -CG
-
-```
-
-To autostart compton as a background ([Daemon](/index.php/Daemon "Daemon")) process for a session, the `-b` argument must be used:
-
-```
-$ compton -b
-
-```
-
-To disable all shadowing effects from the [Daemon](/index.php/Daemon "Daemon") process, the `-C` and `-G` arguments must again be added:
-
-```
-$ compton -CGb
-
-```
-
-Finally, this is an example where additional arguments that require values to be set have been used:
-
-```
-$ compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88
-
-```
-
-### Using a configuration file
-
-The default configuration is available in `/etc/xdg/compton.conf`. For modifications, it can be copied to `~/.config/compton.conf`, or to `~/.compton.conf`.
-
-To use a custom configuration file with compton during a session, use the following command:
-
-```
-$ compton --config *path/to/compton.conf*
-
-```
-
-To auto-start compton as a background ([Daemon](/index.php/Daemon "Daemon")) process for a session, specify the `-b` argument:
-
-```
-$ compton --config *path/to/compton.conf* -b
-
-```
-
-#### Disable shadows for some windows
+### Disable shadows for some windows
 
 The `shadow-exclude` option can disable shadows for windows if required. For currently disabled windows, see [[1]](https://projects.archlinux.org/svntogit/community.git/tree/trunk/compton.conf?h=packages/compton#n80).
 
@@ -118,6 +52,55 @@ To disable shadows for menus add the following to wintypes in `compton.conf`:
 dropdown_menu = { shadow = false; };
 popup_menu    = { shadow = false; };
 utility       = { shadow = false; };
+
+```
+
+## Usage
+
+Compton may be manually enabled or disabled at any time during a session, or autostarted as a background process for sessions. There are also several optional arguments that may be used to tweak the compositing effects provided. These include:
+
+*   `-b`: Run as a background process for a session (e.g. when [autostarting](/index.php/Autostarting "Autostarting") for a window manager such as [Openbox](/index.php/Openbox "Openbox"))
+*   `-c`: Enable shadow effects
+*   `-C`: Disable shadow effects on panels and docks
+*   `-G`: Disable shadow effects for application windows and drag-and-drop objects
+*   `--config`: Use a specified configuration file
+
+Many more options are available, including to set timing, displays to be managed, and the opacity of menus, window borders, and inactive application menus. See [compton(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/compton.1).
+
+**Note:** If a different [composite manager](/index.php/Composite_manager "Composite manager") is running, it should be disabled before starting *compton*.
+
+To manually enable default compositing effects during a session, use the following command:
+
+```
+$ compton &
+
+```
+
+Alternatively, to disable all shadowing effects during a session, the `-C` and `-G` arguments must be added:
+
+```
+$ compton -CG
+
+```
+
+To autostart compton as a background process for a session, the `-b` argument can be used (may cause a display freeze):
+
+```
+$ compton -b
+
+```
+
+To disable all shadowing effects, the `-C` and `-G` arguments must again be added:
+
+```
+$ compton -CGb
+
+```
+
+Finally, this is an example where additional arguments that require values to be set have been used:
+
+```
+$ compton -cCGfF -o 0.38 -O 200 -I 200 -t 0 -l 0 -r 3 -D2 -m 0.88
 
 ```
 

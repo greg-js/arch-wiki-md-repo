@@ -36,7 +36,7 @@ $ env EDITOR=vim xterm
 
 ```
 
-El comando *set*, de [Bash](/index.php/Bash "Bash"), permite cambiar los valores de las opciones de shell y colocar los parámetros posicionales, o mostrar los nombres y valores de las variables de shell. Para más información, se puede consultar la documentación de *set*: [[1]](http://www.gnu.org/software/bash/manual/bash.html#The-Set-Builtin).
+El comando *set*, de [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)"), permite cambiar los valores de las opciones de shell y colocar los parámetros posicionales, o mostrar los nombres y valores de las variables de shell. Para más información, se puede consultar la documentación de *set*: [[1]](http://www.gnu.org/software/bash/manual/bash.html#The-Set-Builtin).
 
 Cada proceso almacena sus variables de entorno en el archivo `/proc/$PID/environ`, el cuál contiene cada par de nombre y valor delimitados por un carácter nulo (`\x0`). Se pude obtener un formato más legible con [sed](/index.php/Sed "Sed"), por ejemplo, `sed 's:\x0:
 :g' /proc/$PID/environ`.
@@ -51,7 +51,7 @@ Los siguientes archivos deben ser usados para definir variables de entorno globa
 
 *   `/etc/environment` es usado por el módulo pam_env y es independiente del lenguaje de shell, por lo que no se deben insertar scritps. Este archivo solamente acepta pares de la forma `*variable=valor*`. Para más detalles se pueden consultar los manuales [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) o [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5).
 
-*   Los archivos de configuración global de [shell](/index.php/Shell "Shell") inicializan variables y ejecutan scripts. Por ejemplo [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") o [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
+*   Los archivos de configuración global de [shell](/index.php/Shell "Shell") inicializan variables y ejecutan scripts. Por ejemplo [Bash (Español)#Archivos de configuración](/index.php/Bash_(Espa%C3%B1ol)#Archivos_de_configuraci.C3.B3n "Bash (Español)") o [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
 
 *   `/etc/profile` inicializa variables para shells con login solamente. Este archivo sí permite scripts y puede ser usado por todos los shells compatibles con [Bash](https://en.wikipedia.org/wiki/Bourne_shell "wikipedia:Bourne shell").
 
@@ -76,7 +76,7 @@ No siempre se requiere definir una variable de entorno de manera global. Por eje
 
 *   `~/.pam_environment` es el archivo de usuario equivalente a `/etc/security/pam_env.conf` [[2]](https://github.com/linux-pam/linux-pam/issues/6), usado por el módulo pam_env. Detalles en [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) y [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5).
 
-*   Archivos de configuración de usuario de [shell](/index.php/Shell "Shell"), por ejemplo [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") o [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
+*   Archivos de configuración de usuario de [shell](/index.php/Shell "Shell"), por ejemplo [Bash (Español)#Archivos de configuración](/index.php/Bash_(Espa%C3%B1ol)#Archivos_de_configuraci.C3.B3n "Bash (Español)") o [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
 
 *   `~/.profile` es usado por muchos shells como alternativa por defecto, [wikipedia:Unix shell#Configuration files](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files "wikipedia:Unix shell").
 
@@ -137,7 +137,7 @@ exec openbox
 
 *   `OLDPWD` contiene la ruta al directorio anterior al actual; esot es, el valor de `PWD` andes de ejecutar *cd*.
 
-*   `SHELL` contiene la ruta al [shell del usuario](http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap08.html#tag_08_03). Nótese que este no es necesariamente el mismo shell que se está ejecutando, aunque [Bash](/index.php/Bash "Bash") coloca esta variable al iniciar.
+*   `SHELL` contiene la ruta al [shell del usuario](http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap08.html#tag_08_03). Nótese que este no es necesariamente el mismo shell que se está ejecutando, aunque [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") coloca esta variable al iniciar.
 
 *   `TERM` contiene el tipo de terminal que se está ejecutando, por ejemplo, `xterm-256color`. Es usado por programas que se ejecutan en la terminal y que desean ocupar características específicas a cada tipo.
 

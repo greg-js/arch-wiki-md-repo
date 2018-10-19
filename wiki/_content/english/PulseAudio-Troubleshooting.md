@@ -33,6 +33,7 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
     *   [2.6 No microphone on Steam or Skype with enable-remixing = no](#No_microphone_on_Steam_or_Skype_with_enable-remixing_.3D_no)
     *   [2.7 Microphone distorted due to automatic adjustment](#Microphone_distorted_due_to_automatic_adjustment)
     *   [2.8 Microphone crackling with Realtek ALC892](#Microphone_crackling_with_Realtek_ALC892)
+    *   [2.9 Echo test](#Echo_test)
 *   [3 Audio quality](#Audio_quality)
     *   [3.1 Enable Echo/Noise-Cancellation](#Enable_Echo.2FNoise-Cancellation)
         *   [3.1.1 Possible 'aec_args' for 'aec_method=webrtc'](#Possible_.27aec_args.27_for_.27aec_method.3Dwebrtc.27)
@@ -561,6 +562,21 @@ and add the `use_ucm` option to
  `/etc/pulse/default.pa`  `load-module module-udev-detect use_ucm=0 tsched=0` 
 
 then restart pulseaudio.
+
+### Echo test
+
+If you are unsure about your microphone setup, you can hear the input from the microphone in real-time by enabling the [loopback module](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/#index57h3) ([source](https://answers.launchpad.net/ubuntu/+source/pulseaudio/+question/83742)):
+
+```
+pactl load-module module-loopback
+
+```
+
+The module will show up in the **Recording** tab of the [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) program, where the source and volume can be configured. While latency should be low, it should be sufficient to get a feeling of the sound quality as you will hear yourself speak in the microphone. To make the change permanent, add the following pulseaudio configuration:
+
+ `/etc/pulse/default.pa`  `load-module module-loopback` 
+
+Watch out for feedback! Be ready to lower all volumes in case the microphone picks up the output from the loudspeakers. Naturally, it is better to run such a test with headphones.
 
 ## Audio quality
 

@@ -93,7 +93,7 @@ apparmor module is loaded.
 
 ### Parsing profiles
 
-To load (enforce or complain), unload, reload, cache and stat profiles use `apparmor_parser`. The default action (`-a`) is to load a new profile in enforce mode, loading it in complain mode is possible using the `-C` switch, in order to overwrite an existing profile use the `-r` option and to remove a profile use `-R`. Each action may also apply to multiple profiles. Refer to [apparmor_parser(8)](https://man.cx/apparmor_parser(8)) man page for more information.
+To load (enforce or complain), unload, reload, cache and stat profiles use `apparmor_parser`. The default action (`-a`) is to load a new profile in enforce mode, loading it in complain mode is possible using the `-C` switch, in order to overwrite an existing profile use the `-r` option and to remove a profile use `-R`. Each action may also apply to multiple profiles. Refer to [apparmor_parser(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/apparmor_parser.8) man page for more information.
 
 ### Disabling loading
 
@@ -112,7 +112,7 @@ To prevent from loading AppArmor profiles at the next boot [disable](/index.php/
 
 To create new profiles the [Audit framework](/index.php/Audit_framework "Audit framework") should be running. This is because Arch Linux adopted [systemd](/index.php/Systemd "Systemd") and doesn't do kernel logging to file by default. AppArmor can grab kernel audit logs from the userspace auditd daemon, allowing you to build a profile.
 
-New AppArmor profiles can be created by utilizing [aa-genprof(8)](https://manpages.debian.org/unstable/apparmor-utils/aa-genprof.8.en.html) and [aa-logprof(8)](https://manpages.debian.org/unstable/apparmor-utils/aa-logprof.8.en.html) tools available in [apparmor](https://www.archlinux.org/packages/?name=apparmor) package. Detailed guide about using those tools is available at [AppArmor wiki - Profiling with tools](https://gitlab.com/apparmor/apparmor/wikis/Profiling_with_tools).
+New AppArmor profiles can be created by utilizing [aa-genprof(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/aa-genprof.8) and [aa-logprof(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/aa-logprof.8) tools available in [apparmor](https://www.archlinux.org/packages/?name=apparmor) package. Detailed guide about using those tools is available at [AppArmor wiki - Profiling with tools](https://gitlab.com/apparmor/apparmor/wikis/Profiling_with_tools).
 
 Alternatively profiles may be also created manually, see guide available at [AppArmor wiki - Profiling by hand](https://gitlab.com/apparmor/apparmor/wikis/Profiling_by_hand).
 
@@ -149,7 +149,7 @@ Most common use cases are covered by the following statements:
 
 Remember that those permission do not allow binaries to exceed the permission dictated by the Discretionary Access Control (DAC).
 
-This is merely a short overview, for a more detailed guide be sure to have a look at the [apparmor.d(5)](http://manpages.ubuntu.com/manpages/bionic/man5/apparmor.d.5.html) man page and [documentation](https://gitlab.com/apparmor/apparmor/wikis/AppArmor_Core_Policy_Reference).
+This is merely a short overview, for a more detailed guide be sure to have a look at the [apparmor.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/apparmor.d.5) man page and [documentation](https://gitlab.com/apparmor/apparmor/wikis/AppArmor_Core_Policy_Reference).
 
 ## Tips and tricks
 
@@ -193,7 +193,7 @@ $ ps aux | grep aa-notify
 
 **Note:** Depending on your specific system configuration there could be A LOT of notifications displayed.
 
-For more information, see [aa-notify(8)](https://manpages.debian.org/unstable/apparmor-notify/aa-notify.8.en.html).
+For more information, see [aa-notify(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/aa-notify.8).
 
 ### Speed-up AppArmor start by caching profiles
 

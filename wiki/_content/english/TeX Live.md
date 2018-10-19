@@ -177,3 +177,4 @@ To solve this, you need to either remove these files: `/etc/texmf/tex/generic/co
 *   [TeX Live documentation](https://tug.org/texlive/doc.html)
 *   [The TeX Live Guide](https://tug.org/texlive/doc/texlive-en/texlive-en.html) (not completely applicable)
 *   [TeX - LaTeX Stack Exchange](https://tex.stackexchange.com/)
+*   [Detexify LaTeX handwritten symbol recognition](http://detexify.kirelabs.org/)

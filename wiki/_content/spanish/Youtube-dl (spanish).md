@@ -100,7 +100,7 @@ Partes de [DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_H
 
 ### URL del portapapeles
 
-Se puede configurar un alias de shell o un método abreviado de teclado para descargar un video (o audio) de una URL seleccionada (o copiada) emitiéndolo desde la [X selection](https://en.wikipedia.org/wiki/X_Window_selection "wikipedia:X Window selection"). Ver [Clipboard#Tools](/index.php/Clipboard#Tools "Clipboard").
+Se puede configurar un alias de shell o un método abreviado de teclado para descargar un video (o audio) de una URL seleccionada (o copiada) emitiéndolo desde la [X selection](https://en.wikipedia.org/wiki/X_Window_selection "wikipedia:X Window selection"). Véase [herramientas de portapapeles](/index.php/Clipboard_(Espa%C3%B1ol)#Herramientas "Clipboard (Español)").
 
 ## Véase también
 

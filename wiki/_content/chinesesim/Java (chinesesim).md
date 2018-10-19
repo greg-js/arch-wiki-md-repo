@@ -1,13 +1,13 @@
 Related articles
 
-*   [Java Package Guidelines](/index.php/Java_Package_Guidelines "Java Package Guidelines")
+*   [Java package guidelines (简体中文)](/index.php/Java_package_guidelines_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Java package guidelines (简体中文)")
 *   [Java Runtime Environment Fonts](/index.php/Java_Runtime_Environment_Fonts "Java Runtime Environment Fonts")
 
 这是来自 [维基百科的文章](https://en.wikipedia.org/wiki/Java_(programming_language) "wikipedia:Java (programming language)"):
 
 	Java是由Sun微系统公司原创开发的编程语言并且在1995年发布，用作Sun微系统公司的Java平台的核心组件。它从C和C++派生了许多语法，但有一个简洁的对象模型和更少的底层组件。Java的应用一般被编译成能在([JVM](https://en.wikipedia.org/wiki/Java_virtual_machine "wikipedia:Java virtual machine"))运行的字节码，并能无视计算机结构。
 
-Arch Linux官方支持开源的 [OpenJDK](http://openjdk.java.net/) 版本7、8和10.所有的JVM都能无冲突的被安装，并切换到帮助脚本`archlinux-java`. 一些其他的Java环境也是可使用的，在 [AUR](/index.php/AUR "AUR")中，但官方并不支持。
+Arch Linux官方支持开源的 [OpenJDK](http://openjdk.java.net/) 版本7、8和10.所有的JVM都能无冲突的被安装，并切换到帮助脚本`archlinux-java`. 一些其他的Java环境也是可使用的，在 [Arch User Repository (简体中文)](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")中，但官方并不支持。
 
 ## Contents
 
@@ -202,13 +202,13 @@ exec /path/to/application "$@"
 
 **注意:** 这条信息同样适用于 `archlinux32-java` 的32位比特Java包, 如果它们的包或者可执行名字里有 `32` ，都可适用.
 
-这个分区的信息针对愿意提供包作为备份JVM给 [AUR](/index.php/AUR "AUR") 的贡献者， 并且能够用 `archlinux-java`集成Arch Linux JVM方案. 如果要这样的话，这些包应该:
+这个分区的信息针对愿意提供包作为备份JVM给 [Arch User Repository (简体中文)](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 的贡献者， 并且能够用 `archlinux-java`集成Arch Linux JVM方案. 如果要这样的话，这些包应该:
 
 *   把所有文件放在这里 `/usr/lib/jvm/java-${JAVA_MAJOR_VERSION}-${VENDOR_NAME}`
 *   确认所有的 [java-runtime-common](https://www.archlinux.org/packages/extra/any/java-runtime-common/files/) 和 [java-environment-common](https://www.archlinux.org/packages/extra/any/java-environment-common/files/) 提供的可执行链接在相关包里都是可用的
 *   把所有链接从 `/usr/bin` 移动到可执行文件里, 除非这些链接不属于 [java-runtime-common](https://www.archlinux.org/packages/extra/any/java-runtime-common/files/) 和 [java-environment-common](https://www.archlinux.org/packages/extra/any/java-environment-common/files/)
 *   用 `-${VENDOR_NAME}${JAVA_MAJOR_VERSION}` 的格式给手册页添加后缀 (查阅 [jre8-openjdk file list](https://www.archlinux.org/packages/extra/x86_64/jre8-openjdk/files/) 它的手册页用 `-openjdk8`做后缀)
-*   不要定义任何 [冲突](/index.php/PKGBUILD#conflicts "PKGBUILD") 和[替代](/index.php/PKGBUILD#replaces "PKGBUILD") ，用其他的JDK, `java-runtime`, `java-runtime-headless` 和 `java-environment`
+*   不要定义任何 [冲突](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#conflicts "PKGBUILD (简体中文)") 和[替代](/index.php/PKGBUILD_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#replaces "PKGBUILD (简体中文)") ，用其他的JDK, `java-runtime`, `java-runtime-headless` 和 `java-environment`
 *   在*安装函数* 里使用`archlinux-java` 脚本来把Java环境设置为默认 **如果没有其他可用的Java环境准备设置的话** (即: 这些包不应该 **强制** 被装为默认). 查阅 [officially supported Java environment package sources](https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/java7-openjdk) 做例子
 
 同时也该注意到:
@@ -225,7 +225,7 @@ exec /path/to/application "$@"
 
 ### 冒充另一个窗口管理器
 
-你可以使用 [wmname](https://www.archlinux.org/packages/?name=wmname) ，从 [suckless.org](http://tools.suckless.org/x/wmname)下载，来使JVM相信你是在运行一个不同的窗口管理器. 这可以解决在窗口管理器发生的Java GUIs渲染问题， 比如说 [Awesome](/index.php/Awesome "Awesome") 或者 [Dwm](/index.php/Dwm "Dwm") 或者 [Ratpoison](/index.php/Ratpoison "Ratpoison").
+你可以使用 [wmname](https://www.archlinux.org/packages/?name=wmname) ，从 [suckless.org](http://tools.suckless.org/x/wmname)下载，来使JVM相信你是在运行一个不同的窗口管理器. 这可以解决在窗口管理器发生的Java GUIs渲染问题， 比如说 [awesome (简体中文)](/index.php/Awesome_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Awesome (简体中文)") 或者 [Dwm (简体中文)](/index.php/Dwm_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dwm (简体中文)") 或者 [Ratpoison (简体中文)](/index.php/Ratpoison_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Ratpoison (简体中文)").
 
 ```
 $ wmname LG3D
@@ -238,11 +238,11 @@ $ wmname LG3D
 
 ### 难以辨认的字体
 
-除了下述的建议 [#Better font rendering](#Better_font_rendering), 可能还是有一些字体难以辨认. 如果是这样的话,有一个很好的机会能用Microsoft的字体. 在[AUR](/index.php/AUR "AUR")安装[ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) .
+除了下述的建议 [#更好的字体渲染](#.E6.9B.B4.E5.A5.BD.E7.9A.84.E5.AD.97.E4.BD.93.E6.B8.B2.E6.9F.93), 可能还是有一些字体难以辨认. 如果是这样的话,有一个很好的机会能用Microsoft的字体. 在[AUR](/index.php/AUR "AUR")安装[ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) .
 
 ### 一些应用缺少文字
 
-如果一些应用完全没有文字，你可以用下面的办法[#Tips and tricks](#Tips_and_tricks) 它在[FS#40871](https://bugs.archlinux.org/task/40871)里被建议.
+如果一些应用完全没有文字，你可以用下面的办法[#建议和技巧](#.E5.BB.BA.E8.AE.AE.E5.92.8C.E6.8A.80.E5.B7.A7) 它在[FS#40871](https://bugs.archlinux.org/task/40871)里被建议.
 
 ### 应用未调整WM大小，菜单快速关闭
 

@@ -219,7 +219,7 @@ To achieve semi-transparency in real transparency mode, the following setup must
 
 ```
 
-To reduce the transparency of the conky window, one can increase the value of `own_window_argb_value` towards 100.
+To reduce the transparency of the conky window, one can increase the value of `own_window_argb_value` towards 255.
 
 ### Do not minimize on Show Desktop
 

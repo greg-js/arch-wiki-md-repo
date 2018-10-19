@@ -427,8 +427,8 @@ Hardware:
 
 *   **CPU**: Intel(R) Core(TM) i5-6600K CPU @ 3.50GHz (OC'ed to 4.50)
 *   **Motherboard**: ASUS ROG MAXIMUS VIII GENE, v3801
-*   **GPU**: EVGA 1060 Superclocked, 6GB
-*   **RAM**: 16GB DDR4 (2x Kingston HyperX Fury)
+*   **GPU**: EVGA GTX 1080Ti
+*   **RAM**: 32GB DDR4 2400 (2x Ballistix)
 
 Configuration:
 

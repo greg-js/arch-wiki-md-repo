@@ -48,8 +48,6 @@ Arch Linux 的仓库中包含大量的软件包和编译脚本。用户可以按
 
 许多 Linux 发行版都试图变得更“用户友好”，Arch Linux 则一直是，永远会是“以用户为中心”。此发行版是为了满足贡献者的需求，而不是为了吸引尽可能多的用户。Arch 适用于乐于自己动手的用户，他们愿意花时间阅读文档，解决自己的问题。
 
-报告问题、完善 Wiki 社区文档、为其它用户提供技术支持。[Arch 用户仓库](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)") 收集用户贡献的软件包。Arch 开发者都是志愿者，活跃的贡献者很快就能称为开发人员。
-
 Arch 鼓励每一个用户 [参与](/index.php/Getting_involved "Getting involved") 和贡献，报告和帮助修复 [bugs](https://bugs.archlinux.org/)，提供软件包补丁和参加核心 [项目](https://projects.archlinux.org/)：Arch 开发者都是志愿者，通过持续的贡献成为团队的一员。*Archers* 可以自行贡献软件包到 [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"), 提升 [ArchWiki 文档质量](/index.php/Main_page "Main page"), 在 [论坛](https://bbs.archlinux.org/), [邮件列表](https://mailman.archlinux.org/mailman/listinfo/), [IRC](/index.php/IRC_channels "IRC channels") 中给其它用户提供技术支持. Arch Linux 是全球很多用户的选择，已经有很多 [国际社区](/index.php/International_communities "International communities")提供帮助和文档翻译。
 
 ## 通用

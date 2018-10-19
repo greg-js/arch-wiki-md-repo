@@ -30,19 +30,19 @@ The UEFI specification mandates support for the FAT12, FAT16, and FAT32 filesyst
 
 If you are installing Arch Linux on an UEFI-capable computer with an installed operating system, like [Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows") 10 for example, it is very likely that you already have an EFI system partition.
 
-To find out the disk partition scheme and the system partition, use [parted](/index.php/Parted "Parted") as root on the disk you want to boot from:
+To find out the disk partition scheme and the system partition, use [fdisk](/index.php/Fdisk "Fdisk") as root on the disk you want to boot from:
 
 ```
-# parted /dev/sd*x* print
+# fdisk -l /dev/sd*x*
 
 ```
 
 The command returns:
 
-*   The disk's partition table: it indicates `Partition Table: gpt` if the partition table is [GPT](/index.php/GPT "GPT") or `Partition Table: msdos` if it is [MBR](/index.php/MBR "MBR").
-*   The list of partitions on the disk: Look for the EFI system partition in the list, it is a small (usually about 100–550 MiB or 100–577 MB) partition with a `fat32` file system and with the flag `esp` enabled. To confirm this is the ESP, mount it and check whether it contains a directory named `EFI`, if it does this is definitely the ESP.
+*   The disk's partition table: it indicates `Disklabel type: gpt` if the partition table is [GPT](/index.php/GPT "GPT") or `Disklabel type: dos` if it is [MBR](/index.php/MBR "MBR").
+*   The list of partitions on the disk: Look for the EFI system partition in the list, it is a small (usually about 100–550 MiB) partition with a type `EFI System` or `EFI (FAT-12/16/32)`. To confirm this is the ESP, mount it and check whether it contains a directory named `EFI`, if it does this is definitely the ESP.
 
-**Warning:** When dual-booting, avoid reformatting the ESP, as this may includes file required to boot other operating systems.
+**Warning:** When dual-booting, avoid reformatting the ESP, as it may contain files required to boot other operating systems.
 
 If you found an existing EFI system partition, simply proceed to [#Mount the partition](#Mount_the_partition). If you did not find one, you will need to create it, proceed to [#Create the partition](#Create_the_partition).
 
@@ -101,6 +101,8 @@ The simplest scenarios for mounting EFI system partition are:
 *   [mount](/index.php/Mount "Mount") ESP to `/efi` and use a [boot loader](/index.php/Boot_loader "Boot loader") which has a driver for your root file system (eg. [GRUB](/index.php/GRUB "GRUB"), [rEFInd](/index.php/REFInd "REFInd")).
 *   [mount](/index.php/Mount "Mount") ESP to `/boot`. This is the preferred method when directly booting a [EFISTUB](/index.php/EFISTUB "EFISTUB") kernel from UEFI.
 
+**Note:** The ESP will usually contain a directory called `EFI` at the root of it, thus when mounting ESP to `/boot` you may encounter a directory path such as `/boot/EFI`. Do not confuse this path with the previously popular (and possibly still used by other Linux distributions) ESP mountpoint `/boot/efi`.
+
 ### Alternative mount points
 
 If you do not use one of the simple methods from [#Mount the partition](#Mount_the_partition), you will need to copy your boot files to ESP (referred to hereafter as `*esp*`).
@@ -113,7 +115,7 @@ If you do not use one of the simple methods from [#Mount the partition](#Mount_t
 
 ```
 
-**Note:** When using an Intel CPU, you may need to copy the [Microcode](/index.php/Microcode "Microcode") to the boot-entry location.
+**Note:** You may also need to copy the [Microcode](/index.php/Microcode "Microcode") to the boot-entry location.
 
 Furthermore, you will need to keep the files on the ESP up-to-date with later kernel updates. Failure to do so could result in an unbootable system. The following sections discuss several mechanisms for automating it.
 
@@ -281,8 +283,8 @@ ESP_DIR="*esp*/EFI/arch"
 
 build() {
 	cp -af /boot/vmlinuz-linux "${ESP_DIR}/"
-	# If ucode is used uncomment this line
-	#cp -af /boot/intel-ucode.img "${ESP_DIR}/"
+	[-e /boot/intel-ucode.img ](/index.php?title=-e_/boot/intel-ucode.img&action=edit&redlink=1 "-e /boot/intel-ucode.img (page does not exist)") && cp -af /boot/intel-ucode.img "${ESP_DIR}/"
+	[-e /boot/amd-ucode.img ](/index.php?title=-e_/boot/amd-ucode.img&action=edit&redlink=1 "-e /boot/amd-ucode.img (page does not exist)") && cp -af /boot/amd-ucode.img "${ESP_DIR}/"
 }
 
 help() {
@@ -315,7 +317,7 @@ Operation = Install
 Operation = Upgrade
 Target = boot/vmlinuz*
 Target = usr/lib/initcpio/*
-Target = boot/intel-ucode.img
+Target = boot/*-ucode.img
 
 [Action]
 Description = Copying linux and initramfs to EFI directory...
@@ -348,6 +350,7 @@ do
 done
 
 [[ -e /boot/intel-ucode.img ]] && cp -af /boot/intel-ucode.img "$ESP_DIR/"
+[[ -e /boot/amd-ucode.img ]] && cp -af /boot/amd-ucode.img "$ESP_DIR/"
 
 exit 0
 

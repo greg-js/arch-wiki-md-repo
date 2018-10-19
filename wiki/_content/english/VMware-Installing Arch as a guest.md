@@ -634,6 +634,8 @@ Do not forget to run:
 
 [Enable](/index.php/Enable "Enable") `vmtoolsd.service`.
 
+If this doesn't work, make sure you [restart](/index.php/Restart "Restart") the `vmtoolsd.service`.
+
 ### Drag and drop, copy/paste
 
 **Tip:** There is an unspecified relationship between it and *gtkmm3* that causes it to silently fail. This is documented in [FS#43159](https://bugs.archlinux.org/task/43159).

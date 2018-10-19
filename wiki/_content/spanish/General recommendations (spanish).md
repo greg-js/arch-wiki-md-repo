@@ -298,7 +298,7 @@ Los [motores de búsqueda de escritorio](/index.php/List_of_applications/Utiliti
 
 ### Entrega de correo electrónico local
 
-Una configuración predeterminada no proporciona una forma de sincronizar el correo electrónico. Para configurar *Postfix* para la entrega simple en el buzón local, véase [Postfix](/index.php/Postfix "Postfix"). Otras opciones son [SSMTP](/index.php/SSMTP "SSMTP"), [msmtp](/index.php/Msmtp "Msmtp") y [fdm](/index.php/Fdm "Fdm").
+Una configuración predeterminada no proporciona una forma de sincronizar el correo electrónico. Para configurar *Postfix* para la entrega simple en el buzón local, véase [Postfix](/index.php/Postfix "Postfix"). Otras opciones son [SSMTP](/index.php/SSMTP "SSMTP"), [msmtp](/index.php/Msmtp "Msmtp") y [fdm](/index.php/Fdm_(Espa%C3%B1ol) "Fdm (Español)").
 
 ### Impresión
 
@@ -358,7 +358,7 @@ Emacs es conocido por ofrecer opciones más allá de los usuales en la edición 
 
 ### Soporte del ratón
 
-Se puede preferir utilizar un ratón con la línea de comandos para operaciones de copiar y pegar en lugar del modo de copia tradicional de [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Véase [soporte del ratón](/index.php/General_purpose_mouse_(Espa%C3%B1ol) "General purpose mouse (Español)") para obtener instrucciones detalladas. Tenga en cuenta que ya puede hacer esto en [emuladores de terminal](/index.php/Terminal_emulator "Terminal emulator") con el [portapapeles](/index.php/Clipboard "Clipboard").
+Se puede preferir utilizar un ratón con la línea de comandos para operaciones de copiar y pegar en lugar del modo de copia tradicional de [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Véase [soporte del ratón](/index.php/General_purpose_mouse_(Espa%C3%B1ol) "General purpose mouse (Español)") para obtener instrucciones detalladas. Tenga en cuenta que ya puede hacer esto en [emuladores de terminal](/index.php/Terminal_emulator "Terminal emulator") con el [portapapeles](/index.php/Clipboard_(Espa%C3%B1ol) "Clipboard (Español)").
 
 ### Búfer de desplazamiento hacia atrás
 

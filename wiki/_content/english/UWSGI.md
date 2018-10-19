@@ -1,4 +1,4 @@
-uWSGI is a fast, self-healing and developer/sysadmin-friendly application container server coded in pure C.
+[uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/) is a fast, self-healing and developer/sysadmin-friendly application container server coded in pure C.
 
 There are alternatives written in Python such as [gunicorn](https://www.archlinux.org/packages/?name=gunicorn).
 

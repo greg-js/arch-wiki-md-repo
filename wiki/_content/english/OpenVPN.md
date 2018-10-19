@@ -179,24 +179,11 @@ tls-cipher TLS-DHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-128-GCM-SHA2
 
 #### Enabling compression
 
-Since OpenVPN v2.4 it is possible to use LZ4 compression over lzo. LZ4 generally offering the best performance with least CPU usage. For backwards compatibility with OpenVPN versions before v2.4, use lzo `comp-lzo`. Do **not** enable both compression options at the same time.
-
-To do so, configure `/etc/openvpn/server/server.conf` as such:
-
- `/etc/openvpn/server/server.conf` 
-```
-.
-compress lz4-v2
-push "compress lz4-v2"
-.
-
-```
-
-On the client set `--compress lz4` [[2]](https://community.openvpn.net/openvpn/wiki/DeprecatedOptions), although this may be deprecated in the near future.
+Enabling compression is not recommended by upstream; doing so opens to the server the so-called VORACLE attack vector. See [this](https://community.openvpn.net/openvpn/wiki/VORACLE) article.
 
 #### Deviating from the standard port and/or protocol
 
-It is generally recommended to use OpenVPN over UDP, because [TCP over TCP is a bad idea](http://sites.inka.de/bigred/devel/tcp-tcp.html)[[3]](http://adsabs.harvard.edu/abs/2005SPIE.6011..138H).
+It is generally recommended to use OpenVPN over UDP, because [TCP over TCP is a bad idea](http://sites.inka.de/bigred/devel/tcp-tcp.html)[[2]](http://adsabs.harvard.edu/abs/2005SPIE.6011..138H).
 
 Some networks may disallow OpenVPN connections on the default port and/or protocol. One strategy to circumvent this is to mimic HTTPS traffic which is very likely unobstructed.
 
@@ -280,7 +267,6 @@ Wed Dec 28 14:41:57 2011 bugs/95.126.136.73:48904 SENT CONTROL [bugs]: 'PUSH_REP
 ```
 Wed Dec 28 14:41:50 2011 OpenVPN 2.2.1 i686-pc-linux-gnu [SSL] [LZO2] [EPOLL] [eurephia] built on Aug 13 2011
 Wed Dec 28 14:41:50 2011 NOTE: OpenVPN 2.1 requires '--script-security 2' or higher to call user-defined scripts or executables
-Wed Dec 28 14:41:50 2011 LZO compression initialized
 .
 .
 Wed Dec 28 14:41:57 2011 GID set to nobody
@@ -305,7 +291,7 @@ read UDPv4 [EMSGSIZE Path-MTU=1407]: Message too long (code=90)
 
 ```
 
-In order to get the maximum segment size (MSS), the client needs to discover the smallest MTU along the path to the server. In order to do this ping the server and disable fragmentation, then specify the maximum packet size [[4]](https://www.sonassi.com/help/troubleshooting/setting-correct-mtu-for-openvpn):
+In order to get the maximum segment size (MSS), the client needs to discover the smallest MTU along the path to the server. In order to do this ping the server and disable fragmentation, then specify the maximum packet size [[3]](https://www.sonassi.com/help/troubleshooting/setting-correct-mtu-for-openvpn):
 
 ```
 # ping -M do -s 1500 -c 1 example.com
@@ -409,7 +395,7 @@ To connect to an OpenVPN server through Gnome's built-in network configuration d
 
 ## Routing client traffic through the server
 
-By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic (including web traffic) pass through the VPN, [append](/index.php/Append "Append") `push "redirect-gateway def1 bypass-dhcp"` to the configuration file (i.e. `/etc/openvpn/server/server.conf`) [[5]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) of the server. Note this is not a requirement and may even give performance issue:
+By default only traffic directly to and from an OpenVPN server passes through the VPN. To have all traffic (including web traffic) pass through the VPN, [append](/index.php/Append "Append") `push "redirect-gateway def1 bypass-dhcp"` to the configuration file (i.e. `/etc/openvpn/server/server.conf`) [[4]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) of the server. Note this is not a requirement and may even give performance issue:
 
 ```
 push "redirect-gateway def1 bypass-dhcp"
@@ -484,14 +470,14 @@ To apply the changes. [reload](/index.php/Reload "Reload")/[restart](/index.php/
 
 #### iptables
 
-In order to allow VPN traffic through an [iptables](/index.php/Iptables "Iptables") firewall, first create an iptables rule for NAT forwarding [[6]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server. An example (assuming the interface to forward to is named `eth0`):
+In order to allow VPN traffic through an [iptables](/index.php/Iptables "Iptables") firewall, first create an iptables rule for NAT forwarding [[5]](http://openvpn.net/index.php/open-source/documentation/howto.html#redirect) on the server. An example (assuming the interface to forward to is named `eth0`):
 
 ```
 iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 
 ```
 
-If the server cannot be pinged through the VPN, one may need to add explicit rules to open up TUN/TAP interfaces to all traffic. If that is the case, do the following [[7]](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn):
+If the server cannot be pinged through the VPN, one may need to add explicit rules to open up TUN/TAP interfaces to all traffic. If that is the case, do the following [[6]](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn):
 
 **Warning:** There are security implications for the following rules if one does not trust all clients which connect to the server. Refer to the [OpenVPN documentation on this topic](https://community.openvpn.net/openvpn/wiki/255-qconnection-initiated-with-xxxxq-but-i-cannot-ping-the-server-through-the-vpn) for more details.
 

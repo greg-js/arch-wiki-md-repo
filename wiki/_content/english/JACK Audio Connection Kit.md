@@ -35,7 +35,7 @@ From [Wikipedia:JACK Audio Connection Kit](https://en.wikipedia.org/wiki/JACK_Au
 
 ## Installation
 
-In order for JACK to work properly, your user needs to be [added](/index.php/Users_and_groups#Group_management "Users and groups") to the `realtime` group for access to higher ulimits defined in `/etc/security/limits.d/99-realtime-privileges.conf` (provided by the [realtime-privileges](https://www.archlinux.org/packages/?name=realtime-privileges) package), which is needed for realtime audio processing.
+In order for JACK to work properly, your user needs to be [added](/index.php/Users_and_groups#Group_management "Users and groups") to the `realtime` group for access to higher unlimits defined in `/etc/security/limits.d/99-realtime-privileges.conf` (provided by the [realtime-privileges](https://www.archlinux.org/packages/?name=realtime-privileges) package), which is needed for realtime audio processing.
 
 **Note:** You need to manually add your user to the `realtime` group even if you're using logind, since logind just handles access to direct hardware.
 

@@ -21,9 +21,6 @@ This article lists and describes [screenshot](https://en.wikipedia.org/wiki/Scre
         *   [1.2.5 Other desktop environments or window managers](#Other_desktop_environments_or_window_managers)
     *   [1.3 Packages including a screenshot utility](#Packages_including_a_screenshot_utility)
         *   [1.3.1 ImageMagick/GraphicsMagick](#ImageMagick.2FGraphicsMagick)
-            *   [1.3.1.1 Screenshot of multiple X screens](#Screenshot_of_multiple_X_screens)
-            *   [1.3.1.2 Screenshot of individual Xinerama heads](#Screenshot_of_individual_Xinerama_heads)
-            *   [1.3.1.3 Screenshot of the active/focused window](#Screenshot_of_the_active.2Ffocused_window)
         *   [1.3.2 GIMP](#GIMP)
         *   [1.3.3 imlib2](#imlib2)
         *   [1.3.4 FFmpeg](#FFmpeg)
@@ -221,64 +218,7 @@ If the `Print` above does not work, see [Extra keyboard keys](/index.php/Extra_k
 
 #### ImageMagick/GraphicsMagick
 
-An easy way to take a screenshot of your current system is using the [import(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/import.1) command:
-
-```
-$ import -window root screenshot.jpg
-
-```
-
-`import` is part of the [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) package.
-
-Running `import` without the `-window` option allows selecting a window or an arbitrary region interactively.
-
-**Note:** If you prefer **graphicsmagick** alternative, just prepend "gm", e.g. `$ gm import -window root screenshot.jpg`.
-
-##### Screenshot of multiple X screens
-
-If you run twinview or dualhead, simply take the screenshot twice and use `imagemagick` to paste them together:
-
-```
-import -window root -display :0.0 -screen /tmp/0.png
-import -window root -display :0.1 -screen /tmp/1.png
-convert +append /tmp/0.png /tmp/1.png screenshot.png
-rm /tmp/{0,1}.png
-
-```
-
-##### Screenshot of individual Xinerama heads
-
-Xinerama-based multi-head setups have only one virtual screen. If the physical screens are different in height, you will find dead space in the screenshot. In this case, you may want to take screenshot of each physical screen individually. As long as Xinerama information is available from the X server, the following will work:
-
-```
-#!/bin/sh
-xdpyinfo -ext XINERAMA | sed '/^  head #/!d;s///' |
-while IFS=' :x@,' read i w h x y; do
-        import -window root -crop ${w}x$h+$x+$y head_$i.png
-done
-
-```
-
-##### Screenshot of the active/focused window
-
-The following script takes a screenshot of the currently focused window. It works with EWMH/NetWM compatible X Window Managers. To avoid overwriting previous screenshots, the current date is used as the filename.
-
-```
-#!/bin/sh
-activeWinLine=$(xprop -root | grep "_NET_ACTIVE_WINDOW(WINDOW)")
-activeWinId=${activeWinLine:40}
-import -window "$activeWinId" /tmp/$(date +%F_%H%M%S_%N).png
-
-```
-
-Alternatively, the following should work regardless of EWMH support:
-
-```
-$ import -window "$(xdotool getwindowfocus -f)" /tmp/$(date +%F_%H%M%S_%N).png
-
-```
-
-**Note:** If screenshots of some programs (dwb and zathura) appear blank, try appending `-frame` or removing `-f` from the `xdotool` command.
+See [ImageMagick#Screenshot taking](/index.php/ImageMagick#Screenshot_taking "ImageMagick").
 
 #### GIMP
 

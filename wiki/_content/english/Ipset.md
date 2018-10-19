@@ -145,3 +145,5 @@ Please see the man page for ipset for further information.
 ## Optimization
 
 The [iprange](https://aur.archlinux.org/packages/iprange/) tool can help to reduce entries in ipset.conf by merging adjacent ranges or eliminating overlapped ranges. This can improve the router/firewall performance if the table size is huge. This tool can also convert a list of hostnames to IPs.
+
+Although ipset is designed to be able to scale well, that doesn't mean infinitely. In particular, some nations have very large IP address spaces; don't try to geoblock those countries with, say, a Raspberry Pi. It will both freeze up and get very hot!

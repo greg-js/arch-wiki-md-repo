@@ -141,7 +141,7 @@ El programa *login* muestra el contenido de [/etc/motd](https://en.wikipedia.org
 
 ## Intérprete de órdenes
 
-Una vez que el [intérprete de órdenes](/index.php/Shell "Shell") del usuario se inicia, normalmente ejecutará un archivo de configuración, como [bashrc](/index.php/Bashrc "Bashrc"), antes de presentar el indicador del intérprete de órdenes al usuario. Si la cuenta está configurada para [arrancar X al iniciar sesión](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)"), el archivo de configuración llamará a [startx](/index.php/Startx_(Espa%C3%B1ol) "Startx (Español)") o [xinit](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)").
+Una vez que el [intérprete de órdenes](/index.php/Shell "Shell") del usuario se inicia, normalmente ejecutará un archivo de configuración, como [bashrc](/index.php/Bashrc_(Espa%C3%B1ol) "Bashrc (Español)"), antes de presentar el indicador del intérprete de órdenes al usuario. Si la cuenta está configurada para [arrancar X al iniciar sesión](/index.php/Start_X_at_login_(Espa%C3%B1ol) "Start X at login (Español)"), el archivo de configuración llamará a [startx](/index.php/Startx_(Espa%C3%B1ol) "Startx (Español)") o [xinit](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)").
 
 ## GUI, xinit o wayland
 

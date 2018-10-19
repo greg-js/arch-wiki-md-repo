@@ -66,7 +66,7 @@ $ mkdir ~/bin/ && cd ~/bin/ && ln -s /bin/ld.bfd ./ld.gold
 
 ```
 
-Después modifique el archivo [.bashrc](/index.php/.bashrc ".bashrc") y agregue la linea siguiente:
+Después modifique el archivo [.bashrc](/index.php/.bashrc_(Espa%C3%B1ol) ".bashrc (Español)") y agregue la linea siguiente:
 
 ```
 export PATH=$HOME/bin:$PATH

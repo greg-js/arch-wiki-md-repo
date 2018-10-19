@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Core utilities](/index.php/Core_utilities "Core utilities"), revisada por última vez el **2018-09-30**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=545027) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Core utilities](/index.php/Core_utilities "Core utilities"), revisada por última vez el **2018-10-18**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=548086) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -62,14 +62,14 @@ La siguiente tabla enumera algunos comandos importantes con los que los usuarios
 
 ### Previniendo la pérdida de datos
 
-rm, mv, cp y las redirecciones de la línea de comandos eliminan o sobrescriben archivos sin preguntar. rm, mv y cp son compatibles con el indicador `-i` para avisar al usuario antes de cada eliminación / sobreescritura. A algunos usuarios les gusta habilitar el indicador `-i` de forma predeterminada utilizando [aliases](/index.php/Alias "Alias"). Sin embargo, estas configuraciones de la línea de comandos son peligrosas porque te acostumbra a ellas, lo que da como resultado la posible pérdida de datos cuando utiliza otro sistema o usuario que no tiene dicho indicador. La mejor forma de evitar la pérdida de datos es hacer [copias de seguridad](/index.php/Backup "Backup").
+rm, mv, cp y las redirecciones de la línea de comandos eliminan o sobrescriben archivos sin preguntar. rm, mv y cp son compatibles con el indicador `-i` para avisar al usuario antes de cada eliminación / sobreescritura. A algunos usuarios les gusta habilitar el indicador `-i` de forma predeterminada utilizando [alias](/index.php/Alias_(Espa%C3%B1ol) "Alias (Español)"). Sin embargo, estas configuraciones de la línea de comandos son peligrosas porque te acostumbra a ellas, lo que da como resultado la posible pérdida de datos cuando utiliza otro sistema o usuario que no tiene dicho indicador. La mejor forma de evitar la pérdida de datos es hacer [copias de seguridad](/index.php/Backup "Backup").
 
 ## No esenciales
 
 Esta tabla enumera las utilidades principales que a menudo son útiles.
 
 | Paquete | Comando | Descripción | Documentación | Alternativas |
-| incluidos en la línea de comandos | alias | define o muestra los aliases | [alias(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alias.1p) |
+| incluidos en la línea de comandos | alias | define o muestra los alias | [alias(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alias.1p) |
 | type | imprime el tipo de un comando | [type(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/type.1p) | [which(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/which.1) |
 | time | temporiza un comando | [time(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/time.1p) |
 | GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) | tee | lee de la entrada estándar y escribe en la salida estándar y archivos | [tee(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tee.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/tee-invocation.html) |

@@ -22,6 +22,9 @@
                 *   [1.2.2.3.2 Browsers based on qt5-webkit](#Browsers_based_on_qt5-webkit)
             *   [1.2.2.4 Other](#Other)
     *   [1.3 Web servers](#Web_servers)
+        *   [1.3.1 Specialized servers](#Specialized_servers)
+        *   [1.3.2 WSGI servers](#WSGI_servers)
+        *   [1.3.3 Performance testing](#Performance_testing)
     *   [1.4 ACME clients](#ACME_clients)
     *   [1.5 File sharing](#File_sharing)
         *   [1.5.1 Download managers](#Download_managers)
@@ -458,7 +461,111 @@ See also [Wikipedia:WebKit](https://en.wikipedia.org/wiki/WebKit "wikipedia:WebK
 
 ### Web servers
 
-See [Web server](/index.php/Web_server "Web server").
+A [web server](https://en.wikipedia.org/wiki/Web_server "wikipedia:Web server") serves HTML web pages and other files via HTTP to clients like [web browsers](/index.php/Category:Web_browser "Category:Web browser"). The major web servers can be interfaced with programs to serve dynamic content ([web applications](/index.php/Web_applications "Web applications")).
+
+See also [Category:Web server](/index.php/Category:Web_server "Category:Web server") and [Wikipedia:Comparison of web server software](https://en.wikipedia.org/wiki/Comparison_of_web_server_software "wikipedia:Comparison of web server software").
+
+*   **[Apache](/index.php/Apache "Apache")** — A high performance Unix-based HTTP server.
+
+	[http://www.apache.org/dist/httpd](http://www.apache.org/dist/httpd) || [apache](https://www.archlinux.org/packages/?name=apache)
+
+*   **[Caddy](/index.php/Caddy "Caddy")** — HTTP/2 web server with automatic HTTPS.
+
+	[https://caddyserver.com/](https://caddyserver.com/) || [caddy](https://aur.archlinux.org/packages/caddy/)
+
+*   **darkhttpd** — A small and secure static web server, does not support HTTPS.
+
+	[https://unix4lyfe.org/darkhttpd/](https://unix4lyfe.org/darkhttpd/) || [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd)
+
+*   **[Hiawatha](/index.php/Hiawatha "Hiawatha")** — Secure and advanced web server.
+
+	[https://www.hiawatha-webserver.org/](https://www.hiawatha-webserver.org/) || [hiawatha](https://www.archlinux.org/packages/?name=hiawatha)
+
+*   **[Lighttpd](/index.php/Lighttpd "Lighttpd")** — A secure, fast, compliant and very flexible web-server.
+
+	[http://www.lighttpd.net/](http://www.lighttpd.net/) || [lighttpd](https://www.archlinux.org/packages/?name=lighttpd)
+
+*   **[nginx](/index.php/Nginx "Nginx")** — Lightweight HTTP server and IMAP/POP3 proxy server.
+
+	[https://nginx.org/](https://nginx.org/) || [nginx](https://www.archlinux.org/packages/?name=nginx)
+
+*   **sthttpd** — Supported fork of the thttpd web server.
+
+	[https://github.com/blueness/sthttpd](https://github.com/blueness/sthttpd) || [sthttpd](https://www.archlinux.org/packages/?name=sthttpd)
+
+*   **Webfs** — Simple and instant web server for mostly static content.
+
+	[http://linux.bytesex.org/misc/webfs.html](http://linux.bytesex.org/misc/webfs.html) || [webfs](https://www.archlinux.org/packages/?name=webfs)
+
+*   **yaws** — Web server/framework written in Erlang.
+
+	[http://yaws.hyber.org/](http://yaws.hyber.org/) || [yaws](https://www.archlinux.org/packages/?name=yaws)
+
+The [Python](/index.php/Python "Python") standard library module [http.server](https://docs.python.org/library/http.server.html) can also be used from the command-line.
+
+#### Specialized servers
+
+*   **KatWeb** — A lightweight static web server and reverse proxy designed for the modern web.
+
+	[https://github.com/kittyhacker101/KatWeb](https://github.com/kittyhacker101/KatWeb) || [katweb](https://aur.archlinux.org/packages/katweb/)
+
+*   **Mongoose** — Embedded web server library, supports WebSocket and MQTT.
+
+	[https://github.com/cesanta/mongoose](https://github.com/cesanta/mongoose) || [mongoose](https://aur.archlinux.org/packages/mongoose/)
+
+*   **quark** — An extremly small and simple http get-only web server. It only serves static pages on a single host.
+
+	[http://tools.suckless.org/quark/](http://tools.suckless.org/quark/) || [quark-git](https://aur.archlinux.org/packages/quark-git/)
+
+*   **serve** — Static file serving and directory listing.
+
+	[https://github.com/zeit/serve](https://github.com/zeit/serve) || [server](https://aur.archlinux.org/packages/server/)
+
+*   **servy** — A tiny little web server, single binary, written in Rust.
+
+	[https://github.com/zethra/servy](https://github.com/zethra/servy) || [servy](https://aur.archlinux.org/packages/servy/)
+
+*   **webhook** — Small server for creating HTTP endpoints (hooks)
+
+	[https://github.com/adnanh/webhook](https://github.com/adnanh/webhook) || [webhook](https://aur.archlinux.org/packages/webhook/)
+
+*   **Woof** — An ad-hoc single file webserver; Web Offer One File.
+
+	[http://www.home.unix-ag.org/simon/woof.html](http://www.home.unix-ag.org/simon/woof.html) || [woof](https://aur.archlinux.org/packages/woof/)
+
+#### WSGI servers
+
+*   **Gunicorn** — A Python WSGI HTTP Server for UNIX.
+
+	[https://gunicorn.org/](https://gunicorn.org/) || [gunicorn](https://www.archlinux.org/packages/?name=gunicorn), [python2-gunicorn](https://www.archlinux.org/packages/?name=python2-gunicorn)
+
+*   **[uWSGI](/index.php/UWSGI "UWSGI")** — A fast, self-healing and developer/sysadmin-friendly application container server written in C.
+
+	[https://uwsgi-docs.readthedocs.io/](https://uwsgi-docs.readthedocs.io/) || [uwsgi](https://www.archlinux.org/packages/?name=uwsgi)
+
+*   **Waitress** — A WSGI server for Python 2 and 3.
+
+	[https://github.com/Pylons/waitress](https://github.com/Pylons/waitress) || [python-waitress](https://www.archlinux.org/packages/?name=python-waitress), [python2-waitress](https://www.archlinux.org/packages/?name=python2-waitress)
+
+Apache also supports WSGI with [mod_wsgi](/index.php/Mod_wsgi "Mod wsgi").
+
+#### Performance testing
+
+*   **http_load** — A webserver performance testing tool, runs in a single process.
+
+	[http://www.acme.com/software/http_load/](http://www.acme.com/software/http_load/) || [http_load](https://aur.archlinux.org/packages/http_load/)
+
+*   **httperf** — Can generate various HTTP workloads, written in C.
+
+	[https://github.com/httperf/httperf](https://github.com/httperf/httperf) || [httperf](https://aur.archlinux.org/packages/httperf/)
+
+*   **vegeta** — HTTP load testing tool, written in Go.
+
+	[https://github.com/tsenart/vegeta](https://github.com/tsenart/vegeta) || [vegeta](https://www.archlinux.org/packages/?name=vegeta)
+
+*   **Web Bench** — Benchmarking tool, uses fork() for simulating multiple clients.
+
+	[http://home.tiscali.cz/~cz210552/webbench.html](http://home.tiscali.cz/~cz210552/webbench.html) || [webbench](https://aur.archlinux.org/packages/webbench/)
 
 ### ACME clients
 

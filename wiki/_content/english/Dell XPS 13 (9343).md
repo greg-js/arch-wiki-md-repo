@@ -89,9 +89,11 @@ Backlight and its control work out-of-the-box:
 
 #### Dynamic Backlight/Brightness Control (DBC)
 
-You may notice that the screen looks dimmer than you expect or the screen overall brightness changes constantly. This behaviour is not a symptom of any monitor issue but a technology called **Dynamic Backlight/Brightness Control**, designed to save energy according to the content displayed on the screen.
+You may notice that the screen looks dimmer than you expect or the screen overall brightness changes constantly. This behaviour is not a symptom of any monitor issue but a technology called **Dynamic Backlight/Brightness Control (DBC)**, designed to save energy according to the content displayed on the screen.
 
-**Warning:** This feature is *automatic* and *not-controllable*. According to official Dell [source](http://www.dell.com/support/article/us/en/19/sln304876/xps-9343-9350-9360-and-9365-2-in-1-lcd-brightness-issues), only the **QHD+ model** have a chance to disable it via a firmware update.
+**Tip:** You can check this feature on this [website](https://tylerwatt12.com/dc/).
+
+**Warning:** This feature is *automatic* and *not-controllable*. According to official Dell [source](http://www.dell.com/support/article/us/en/19/sln304876/xps-9343-9350-9360-and-9365-2-in-1-lcd-brightness-issues), only the **QHD+ models** have a chance to disable it via a firmware update.
 
 ### SSD
 

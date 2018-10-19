@@ -6,7 +6,8 @@
     *   [1.3 mkinitcpio-chkcryptoboot](#mkinitcpio-chkcryptoboot)
         *   [1.3.1 Installation](#Installation)
         *   [1.3.2 Technical Overview](#Technical_Overview)
-    *   [1.4 Other methods](#Other_methods)
+    *   [1.4 AIDE](#AIDE)
+    *   [1.5 STARK](#STARK)
 *   [2 Using GPG, LUKS, or OpenSSL Encrypted Keyfiles](#Using_GPG.2C_LUKS.2C_or_OpenSSL_Encrypted_Keyfiles)
 *   [3 Remote unlocking of the root (or other) partition](#Remote_unlocking_of_the_root_.28or_other.29_partition)
     *   [3.1 Remote unlocking (hooks: systemd, systemd-tool)](#Remote_unlocking_.28hooks:_systemd.2C_systemd-tool.29)
@@ -129,12 +130,10 @@ With Arch Linux, changes to `/boot` are pretty frequent, for example by new kern
 echo "Pacman update [1] Quickcheck before updating" & 
 sudo -u <user> /usr/local/bin/chkboot_user.sh		# insert your logged on <user> 
 /usr/local/bin/chkboot.sh
-sync							# sync disks with any results 
 sudo -u <user> /usr/local/bin/chkboot_user.sh		# insert your logged on <user> 
 echo "Pacman update [2] Syncing repos for pacman" 
 pacman -Syu
 /usr/local/bin/chkboot.sh
-sync	
 sudo -u <user> /usr/local/bin/chkboot_user.sh		# insert your logged on <user>
 echo "Pacman update [3] All done, let us roll on ..."
 
@@ -168,9 +167,11 @@ In addition to hashing the boot loader, the hook also checks the parameters of t
 
 For BIOS systems the hook creates a hash of GRUB's first stage bootloader (installed to the first 446 bytes of the bootdevice) to compare at the later boot processes. The main second-stage GRUB bootloader `core.img` is not checked.
 
-### Other methods
+### AIDE
 
 Alternatively to above scripts, a hash check can be set up with [AIDE](/index.php/AIDE "AIDE") which can be customized via a very flexible configuration file.
+
+### STARK
 
 While one of these methods should serve the purpose for most users, they do not address all security problems associated with the unencrypted `/boot`. One approach which endeavours to provide a fully authenticated boot chain was published with POTTS as an academic thesis to implement the [STARK](http://www1.informatik.uni-erlangen.de/stark) authentication framework.
 

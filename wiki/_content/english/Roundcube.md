@@ -55,7 +55,7 @@ A SQLite DB will be created automagically by Roundcube. Ensure the file specifie
 
 ### Other Databases
 
-Roundcubemail has installation scripts for mssql, Oracle, and PostgreSQL.
+Roundcubemail has installation scripts for mssql, Oracle, and [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
 
 ### Roundcube
 

@@ -115,7 +115,7 @@ The config can be saved by utilizing `showconf`
 
 #### Example peer configuration
 
- `/etc/wireguard/30-wg0.conf` 
+ `/etc/wireguard/wg0.conf` 
 ```
 [Interface]
 Address = 10.0.0.1/32

@@ -52,6 +52,7 @@ There are various ways to transfer files between a computer and an Android devic
     *   [KDE Connect](/index.php/KDE_Connect "KDE Connect") ([kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect)) – integrates your Android device with the KDE desktop (featuring synced notifications & clipboard, multimedia control, and file/URL sharing).
     *   [sendanywhere](https://aur.archlinux.org/packages/sendanywhere/) – cross-platform file sharing
     *   [cloud synchronization clients](/index.php/Cloud_synchronization_clients "Cloud synchronization clients")
+    *   [Syncthing](/index.php/Syncthing "Syncthing")
 
 ## App development
 

@@ -125,7 +125,7 @@ logger_stdout_level=2
 
 **Tip:** You can set up the SSID with UTF-8 characters, so international characters will show properly. The option to enable it is `utf8_ssid=1`. Some clients may have problems with recognizing the correct encoding (e.g. [wpa_supplicant](/index.php/Wpa_supplicant "Wpa supplicant") or Windows 7).
 
-When starting hostapd, make sure the wireless [network interface](/index.php/Network_interface "Network interface") is brought up first, otherwise it will fail with the message "could not configure driver mode".
+When starting hostapd, make sure the wireless [network interface](/index.php/Network_interface "Network interface") is brought up first, otherwise it will fail with the message "could not configure driver mode". Also make sure that the interface is not managed by a network manager.
 
 For automatically starting hostapd, [enable](/index.php/Daemon "Daemon") the `hostapd.service`.
 

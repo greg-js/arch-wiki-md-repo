@@ -791,7 +791,7 @@ The disk layout is:
 
 ### Preparing the disk
 
-It is vital that the mapped device is filled with data. In particular this applies to the scenario use case we apply here.
+It is vital that the mapped device is filled with random data. In particular this applies to the scenario use case we apply here.
 
 See [dm-crypt/Drive preparation](/index.php/Dm-crypt/Drive_preparation "Dm-crypt/Drive preparation") and [dm-crypt/Drive preparation#dm-crypt specific methods](/index.php/Dm-crypt/Drive_preparation#dm-crypt_specific_methods "Dm-crypt/Drive preparation")
 
@@ -802,11 +802,11 @@ See [dm-crypt/Device encryption#Encryption options for plain mode](/index.php/Dm
 Using the device `/dev/sda`, with the twofish-xts cipher with a 512 bit key size and using a keyfile we have the following options for this scenario:
 
 ```
-# cryptsetup --hash=sha512 --cipher=twofish-xts-plain64 --offset=0 --key-file=/dev/sdc --key-size=512 open --type=plain /dev/sda cryptlvm
+# cryptsetup --cipher=twofish-xts-plain64 --offset=0 --key-file=/dev/sdc --key-size=512 open --type=plain /dev/sda cryptlvm
 
 ```
 
-Unlike encrypting with LUKS, the above command must be executed *in full* whenever the mapping needs to be re-established, so it is important to remember the cipher, hash and key file details.
+Unlike encrypting with LUKS, the above command must be executed *in full* whenever the mapping needs to be re-established, so it is important to remember the cipher, and key file details.
 
 We can now check a mapping entry has been made for `/dev/mapper/cryptlvm`:
 
@@ -814,6 +814,8 @@ We can now check a mapping entry has been made for `/dev/mapper/cryptlvm`:
 # fdisk -l
 
 ```
+
+**Tip:** A simpler alternative to using LVM (or MBR or GPT partitioning), advocated in the cryptsetup FAQ for cases where LVM is not necessary, is to just create a filesystem on the entirety of the mapped dm-crypt device.
 
 Next, we setup [LVM](/index.php/LVM "LVM") logical volumes on the mapped device. See [LVM#Installing Arch Linux on LVM](/index.php/LVM#Installing_Arch_Linux_on_LVM "LVM") for further details:
 
@@ -868,7 +870,7 @@ See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_config
 In order to boot the encrypted root partition, the following kernel parameters need to be set by the boot loader:
 
 ```
-cryptdevice=/dev/disk/by-id/*disk-ID-of-sda*:cryptlvm cryptkey=/dev/disk/by-id/*disk-ID-of-sdc*:0:512 crypto=sha512:twofish-xts-plain64:512:0:
+cryptdevice=/dev/disk/by-id/*disk-ID-of-sda*:cryptlvm cryptkey=/dev/disk/by-id/*disk-ID-of-sdc*:0:512 crypto=:twofish-xts-plain64:512:0:
 
 ```
 
