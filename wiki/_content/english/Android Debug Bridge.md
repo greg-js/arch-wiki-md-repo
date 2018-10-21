@@ -80,7 +80,7 @@ Then, to reload your new udev rules, execute:
 
 ```
 
-Make sure you are member of `adbusers` [group](/index.php/Group "Group") to access `adb` devices.
+Make sure you are member of `adbusers` [user group](/index.php/User_group "User group") to access `adb` devices.
 
 ### Configuring adb
 

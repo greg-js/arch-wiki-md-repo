@@ -8,7 +8,7 @@
     *   [image processing tools](/index.php/List_of_applications/Multimedia#Image_processing "List of applications/Multimedia")
     *   [audio converters](/index.php/List_of_applications/Multimedia#Audio_converters "List of applications/Multimedia")
     *   [video converters](/index.php/List_of_applications/Multimedia#Video_converters "List of applications/Multimedia")
-*   the `convert` command of [ImageMagick](/index.php/ImageMagick "ImageMagick") used to convert images
+*   the *convert* command of [ImageMagick](/index.php/ImageMagick "ImageMagick") used to convert images
 *   these articles:
     *   [Convert any Movie to DVD Video](/index.php/Convert_any_Movie_to_DVD_Video "Convert any Movie to DVD Video")
     *   [Convert a single drive system to RAID](/index.php/Convert_a_single_drive_system_to_RAID "Convert a single drive system to RAID")

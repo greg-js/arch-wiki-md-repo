@@ -170,7 +170,7 @@ Use the relative path instead:
 
 ### Permissions issues
 
-If you find that you cannot set the permissions on files properly, make sure the [user](/index.php/User "User")/[group](/index.php/Group "Group") are **both** on the client and server.
+If you find that you cannot set the permissions on files properly, make sure the [user](/index.php/User "User")/[user group](/index.php/User_group "User group") are **both** on the client and server.
 
 If all your files are owned by `nobody`, and you are using NFSv4, on both the client and server, you should ensure that the `nfs-idmapd.service` has been started.
 

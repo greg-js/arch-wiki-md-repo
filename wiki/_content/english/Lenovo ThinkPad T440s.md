@@ -52,7 +52,7 @@ EndSection
 
 ```
 
-Otherwise the defalut resolution is set to 96dpi.
+Otherwise the default resolution is set to 96dpi.
 
 If you have a 1920x1080 FHD panel installed and find that text and UI elements are too small, it may interest you to consider using [display scaling](/index.php/HiDPI "HiDPI") to adjust the size of UI elements to your preference. Integer HiDPI scaling is likely too excessive for a display of this resolution and size, so you will want to consider a fractional scaling solution.
 

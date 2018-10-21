@@ -1,4 +1,4 @@
-STATA is a general-purpose statistical software package for *nix, Windows and Mac. In the following you'll be presented with how to install STATA and the needed libraries.
+[Stata](https://www.stata.com/) is a general-purpose statistical software package for *nix, Windows and Mac. In the following you'll be presented with how to install Stata and the needed libraries.
 
 ## Contents
 

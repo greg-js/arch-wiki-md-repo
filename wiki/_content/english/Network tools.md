@@ -11,7 +11,8 @@ This page lists various network tools. *ping* and *ip* are covered by [Network c
 *   [1 Traceroute](#Traceroute)
 *   [2 Netcat](#Netcat)
 *   [3 Whois](#Whois)
-*   [4 See also](#See_also)
+*   [4 inetd](#inetd)
+*   [5 See also](#See_also)
 
 ## Traceroute
 
@@ -50,6 +51,10 @@ See also [Wikipedia:WHOIS](https://en.wikipedia.org/wiki/WHOIS "wikipedia:WHOIS"
 *   **jwhois** — An Internet Whois client
 
 	[https://www.gnu.org/software/jwhois/](https://www.gnu.org/software/jwhois/) || [jwhois](https://aur.archlinux.org/packages/jwhois/)
+
+## inetd
+
+Arch Linux does not have [inetd](https://en.wikipedia.org/wiki/inetd "wikipedia:inetd") but you can instead use [systemd](http://0pointer.de/blog/projects/inetd.html) or [xinetd](https://en.wikipedia.org/wiki/xinetd "wikipedia:xinetd") ([xinetd](https://www.archlinux.org/packages/?name=xinetd)).
 
 ## See also
 

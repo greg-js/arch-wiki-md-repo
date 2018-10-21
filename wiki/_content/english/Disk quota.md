@@ -170,7 +170,7 @@ Shows quotas on a specific partition:
 
 ```
 
-Show quotas that apply to a [user](/index.php/User "User")/[group](/index.php/Group "Group"):
+Show quotas that apply to a [user](/index.php/User "User")/[user group](/index.php/User_group "User group"):
 
 ```
 # quota -u *user*

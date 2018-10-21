@@ -64,14 +64,14 @@ Este documento es un índice con anotaciones a otros artículos populares e info
     *   [11.1 Tipos de letra](#Tipos_de_letra)
     *   [11.2 Temas para GTK+ y Qt](#Temas_para_GTK.2B_y_Qt)
 *   [12 Mejoras para la línea de comandos](#Mejoras_para_la_l.C3.ADnea_de_comandos)
-    *   [12.1 Mejoras de autocompletado con Tab](#Mejoras_de_autocompletado_con_Tab)
+    *   [12.1 Mejoras de autocompletado con tabulador](#Mejoras_de_autocompletado_con_tabulador)
     *   [12.2 Alias](#Alias)
-    *   [12.3 Shells alternativas](#Shells_alternativas)
+    *   [12.3 Intérpretes de línea de órdenes alternativos](#Int.C3.A9rpretes_de_l.C3.ADnea_de_.C3.B3rdenes_alternativos)
     *   [12.4 Complementos para bash](#Complementos_para_bash)
     *   [12.5 Salida coloreada](#Salida_coloreada)
     *   [12.6 Archivos comprimidos](#Archivos_comprimidos)
     *   [12.7 Indicador de la línea de comandos](#Indicador_de_la_l.C3.ADnea_de_comandos)
-    *   [12.8 Shell emacs](#Shell_emacs)
+    *   [12.8 Intérprete de línea de órdenes emacs](#Int.C3.A9rprete_de_l.C3.ADnea_de_.C3.B3rdenes_emacs)
     *   [12.9 Soporte del ratón](#Soporte_del_rat.C3.B3n)
     *   [12.10 Búfer de desplazamiento hacia atrás](#B.C3.BAfer_de_desplazamiento_hacia_atr.C3.A1s)
     *   [12.11 Administración de las sesiones](#Administraci.C3.B3n_de_las_sesiones)
@@ -88,7 +88,7 @@ Los usuarios y grupos son un mecanismo para el *control de acceso*; los administ
 
 ### Escalado de privilegios
 
-Los comandos [su](/index.php/Su_(Espa%C3%B1ol) "Su (Español)") y [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") le permiten ejecutar comandos como otro usuario. Por defecto, *su* lo transfiere a un shell de inicio de sesión como usuario root, y *sudo* le concede temporalmente privilegios de root para un solo comando. Véase sus respectivos artículos para las diferencias.
+Los comandos [su](/index.php/Su_(Espa%C3%B1ol) "Su (Español)") y [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)") le permiten ejecutar comandos como otro usuario. Por defecto, *su* lo transfiere a un intérprete de línea de órdenes de inicio de sesión como usuario root, y *sudo* le concede temporalmente privilegios de root para un solo comando. Véase sus respectivos artículos para las diferencias.
 
 ### Administración de servicios
 
@@ -324,17 +324,17 @@ Una gran parte de las aplicaciones con una interfaz gráfica para sistemas Linux
 
 Esta sección contiene pequeñas modificaciones que mejoran la usabilidad de los programas de línea de comandos. Para obtener más información, véase la categoría [Command shells](/index.php/Category:Command_shells_(Espa%C3%B1ol) "Category:Command shells (Español)").
 
-### Mejoras de autocompletado con Tab
+### Mejoras de autocompletado con tabulador
 
-Se recomienda configurar correctamente [autocompletado con Tab](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion") de inmediato, como se indica en el artículo de la shell elegida.
+Se recomienda configurar correctamente el [[Wikipedia:Command-line_completion|completado de la línea de órdenes] de inmediato, como se indica en el artículo del intérprete de línea de órdenes elegido.
 
 ### Alias
 
 Crear alias para un comando, o un grupo del mismo, es una forma de ahorrar tiempo al usar la línea de comandos. Esto es especialmente útil para tareas repetitivas que no requieren una alteración significativa de sus parámetros entre ejecuciones. Los alias más comunes que ahorran tiempo se pueden encontrar en [alias](/index.php/Bash_(Espa%C3%B1ol)#Alias "Bash (Español)"), que son fáciles de extrapolar también a [zsh](/index.php/Zsh_(Espa%C3%B1ol) "Zsh (Español)").
 
-### Shells alternativas
+### Intérpretes de línea de órdenes alternativos
 
-[Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") es el shell que está instalado por defecto en un sistema Arch. Sin embargo, los medios de instalación en vivo usan [zsh](/index.php/Zsh_(Espa%C3%B1ol) "Zsh (Español)") con el paquete de complemento [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config). Véase [listado de shells](/index.php/Command-line_shell#List_of_shells "Command-line shell") para conocer más alternativas.
+[Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") es el intérprete de línea de órdenes que está instalado por defecto en un sistema Arch. Sin embargo, los medios de instalación en vivo usan [zsh](/index.php/Zsh_(Espa%C3%B1ol) "Zsh (Español)") con el paquete de complemento [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config). Véase [listado de intérpretes de línea de órdenes](/index.php/Command-line_shell#List_of_shells "Command-line shell") para conocer más alternativas.
 
 ### Complementos para bash
 
@@ -352,9 +352,9 @@ Los archivos comprimidos se encuentran con frecuencia en un sistema GNU/Linux. [
 
 El indicador de la línea de comandos (PS1, o *console prompt*) se puede personalizar en gran medida. Véase [personalización del indicador de Bash](/index.php/Bash/Prompt_customization "Bash/Prompt customization") o [indficadores de Zsh](/index.php/Zsh_(Espa%C3%B1ol)#Prompts "Zsh (Español)") si usa Bash o Zsh, respectivamente.
 
-### Shell emacs
+### Intérprete de línea de órdenes emacs
 
-Emacs es conocido por ofrecer opciones más allá de los usuales en la edición de texto, una de ellas es un reemplazo completo de la shell. Véase [Emacs#Colored output issues](/index.php/Emacs#Colored_output_issues "Emacs") para obtener una solución con respecto a los caracteres ilegibles que pueden producirse al habilitar la salida coloreada.
+Emacs es conocido por ofrecer opciones más allá de los usuales en la edición de texto, una de ellas es un reemplazo completo del intérprete de línea de órdenes. Véase [Emacs#Colored output issues](/index.php/Emacs#Colored_output_issues "Emacs") para obtener una solución con respecto a los caracteres ilegibles que pueden producirse al habilitar la salida coloreada.
 
 ### Soporte del ratón
 

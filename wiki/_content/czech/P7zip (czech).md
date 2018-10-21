@@ -5,7 +5,7 @@ p7zip je port příkazového řádku [7-Zip](https://en.wikipedia.org/wiki/7zip 
 *   [1 Instalace](#Instalace)
 *   [2 Příklady](#P.C5.99.C3.ADklady)
 *   [3 Rozdíly mezi binárními soubory 7z, 7za a 7zr](#Rozd.C3.ADly_mezi_bin.C3.A1rn.C3.ADmi_soubory_7z.2C_7za_a_7zr)
-*   [4 Viz také](#Viz_tak.C3.A9)
+*   [4 Další zdroje](#Dal.C5.A1.C3.AD_zdroje)
 
 ## Instalace
 
@@ -48,11 +48,13 @@ $ 7za x -o<nazev slozky> <nazev archivu>
 
 ## Rozdíly mezi binárními soubory 7z, 7za a 7zr
 
-*   7z používá zásuvné moduly pro zpracování archivů.
-*   7za je samostatný spustitelný soubor. 7za zpracovává méně archivních formátů než 7z, ale nepotřebuje žádné další.
-*   7zr je samostatný spustitelný soubor. 7zr zpracovává méně archivních formátů než 7z, ale nepotřebuje žádné další. 7zr je "odlehčená verze" 7za, která zpracovává pouze 7z archivy.
+Balíček obsahuje tři binární soubory, `/usr/bin/7z`, `/usr/bin/7za`, a `/usr/bin/7zr`. Jejich manuálové stránky vysvětlují rozdíly:
 
-## Viz také
+*   [7z(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/7z.1) používá zásuvné moduly pro zpracování archivů.
+*   [7za(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/7za.1) je samostatný spustitelný soubor. 7za zpracovává méně archivních formátů než 7z, ale nepotřebuje žádné další.
+*   [7zr(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/7zr.1) je samostatný spustitelný soubor. 7zr zpracovává méně archivních formátů než 7z, ale nepotřebuje žádné další. 7zr je "odlehčená verze" 7za, která zpracovává pouze 7z archivy.
+
+## Další zdroje
 
 *   [Homepage.](http://p7zip.sourceforge.net/)
 *   [7zip homepage.](http://www.7-zip.org/download.html)

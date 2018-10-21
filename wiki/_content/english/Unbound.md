@@ -34,7 +34,7 @@ Related articles
         *   [3.2.1 Setting up unbound-control](#Setting_up_unbound-control)
         *   [3.2.2 Using unbound-control](#Using_unbound-control)
 *   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Block advertising](#Block_advertising)
+    *   [4.1 Domain blacklisting](#Domain_blacklisting)
     *   [4.2 Adding an authoritative DNS server](#Adding_an_authoritative_DNS_server)
     *   [4.3 WAN facing DNS](#WAN_facing_DNS)
     *   [4.4 Roothints systemd timer](#Roothints_systemd_timer)
@@ -392,7 +392,7 @@ Please refer to [unbound-control(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/
 
 ## Tips and tricks
 
-### Block advertising
+### Domain blacklisting
 
 You can use the following file and simply include it in your unbound configuration: [adservers](https://pgl.yoyo.org/adservers/serverlist.php?hostformat=unbound&showintro=0&startdate%5Bday%5D=&startdate%5Bmonth%5D=&startdate%5Byear%5D=&mimetype=plaintext)
 
@@ -404,14 +404,10 @@ server:
 
 ```
 
-**Note:** In order to return some OK statuses on those hosts, you can change the 127.0.0.1 redirection to a server you control and have that server respond with empty 204 replies, see [this page](http://www.shadowandy.net/2014/04/adblocking-nginx-serving-1-pixel-gif-204-content.htm)
+**Tip:**
 
-**Tip:** To convert a hosts file from another source to the unbound format do:
-```
-$ cat hosts | grep '^0\.0\.0\.0' | awk '{print "local-zone: \""$2"\" redirect
-local-data: \""$2" A 0.0.0.0\""}' > /etc/unbound/adservers
-
-```
+*   In order to return some OK statuses on those hosts, you can change the 127.0.0.1 redirection to a server you control and have that server respond with empty 204 replies, see [this page](http://www.shadowandy.net/2014/04/adblocking-nginx-serving-1-pixel-gif-204-content.htm)
+*   To convert a hosts file from another source to the unbound format do: `$ grep '^0\.0\.0\.0' *hostsfile* | awk '{print "local-zone: \""$2"\" always_nxdomain"}' > /etc/unbound/adservers` 
 
 ### Adding an authoritative DNS server
 

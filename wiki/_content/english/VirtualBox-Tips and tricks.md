@@ -276,7 +276,7 @@ Boot the host which will use the Arch Linux virtual machine. The command will ne
 
 	On a GNU/Linux host
 
-There is 3 ways to achieve this: login as root, changing the access right of the device with `chmod`, adding your user to the `disk` group. The latter way is the more elegant, let us proceed that way:
+There are 3 ways to achieve this: login as root, changing the access right of the device with `chmod`, adding your user to the `disk` group. The latter way is the more elegant, let us proceed that way:
 
 ```
 # gpasswd -a *your_user* disk

@@ -128,7 +128,7 @@ chmod *who*=*permissions* *filename*
 Where `*who*` is any from a range of letters, each signifying who is being given the permission. They are as follows:
 
 *   `u`: the [user](/index.php/User "User") that owns the file.
-*   `g`: the [group](/index.php/Group "Group") that the file belongs to.
+*   `g`: the [user group](/index.php/User_group "User group") that the file belongs to.
 *   `o`: the **o**ther users, i.e. everyone else.
 *   `a`: **a**ll of the above; use this instead of typing `ugo`.
 

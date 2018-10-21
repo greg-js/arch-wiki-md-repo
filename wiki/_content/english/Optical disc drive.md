@@ -612,7 +612,7 @@ See also [Wikipedia:Comparison of disc authoring software](https://en.wikipedia.
 
 ### CD
 
-Playback of audio CDs requires the [libcdio](https://www.archlinux.org/packages/?name=libcdio) package.
+Playback of audio CDs requires the [libcdio](https://www.archlinux.org/packages/?name=libcdio) package. To enable KDE Applications like Dolphin to read audio CDs install [audiocd-kio](https://www.archlinux.org/packages/?name=audiocd-kio).
 
 ### DVD
 

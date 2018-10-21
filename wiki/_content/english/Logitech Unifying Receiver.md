@@ -22,7 +22,7 @@ Several solutions are available:
 
 *   [pairing_tool](https://aur.archlinux.org/packages/pairing_tool/)
 
-The following packages use the [group](/index.php/Group "Group") plugdev, create the group (if doesn't exists), and add users to this group to avoid the need of running these as root:
+The following packages use the `plugdev` [user group](/index.php/User_group "User group"), create it if it does not exist, and add users to this group to avoid the need of running these as root:
 
 *   [solaar](https://www.archlinux.org/packages/?name=solaar) or [solaar-git](https://aur.archlinux.org/packages/solaar-git/)
 *   [ltunify-git](https://aur.archlinux.org/packages/ltunify-git/)

@@ -9,13 +9,14 @@ Related articles
 *   [1 IBM/Lenovo](#IBM.2FLenovo)
     *   [1.1 ThinkPad](#ThinkPad)
         *   [1.1.1 Edge series](#Edge_series)
-        *   [1.1.2 L series](#L_series)
-        *   [1.1.3 P series](#P_series)
-        *   [1.1.4 T series](#T_series)
-        *   [1.1.5 W series](#W_series)
-        *   [1.1.6 X series](#X_series)
-        *   [1.1.7 Yoga Series](#Yoga_Series)
-        *   [1.1.8 Helix Series](#Helix_Series)
+        *   [1.1.2 E series](#E_series)
+        *   [1.1.3 L series](#L_series)
+        *   [1.1.4 P series](#P_series)
+        *   [1.1.5 T series](#T_series)
+        *   [1.1.6 W series](#W_series)
+        *   [1.1.7 X series](#X_series)
+        *   [1.1.8 Yoga Series](#Yoga_Series)
+        *   [1.1.9 Helix Series](#Helix_Series)
 *   [2 Lenovo](#Lenovo)
     *   [2.1 IdeaPad](#IdeaPad)
     *   [2.2 B series](#B_series)
@@ -62,6 +63,14 @@ install CD version
 | Lenovo ThinkPad Edge E540 | 2015.08.01 | Yes | Yes | Yes | Yes | Yes | Yes* | NA | SD card (yes), Finger Print (yes), touch pad and trackpoint (yes), Webcam (yes) |
 | Lenovo ThinkPad Edge E545 | NA | Yes | Yes | Yes | Yes* | Not tested | Yes | NA | SD card (yes), touch pad and trackpoint (yes) Webcam (yes) | wifi works only with [broadcom-wl-dkms](https://www.archlinux.org/packages/?name=broadcom-wl-dkms) |
 | Lenovo ThinkPad Edge E580 | 2018.05.01 | Yes | Yes | Yes | Yes | Yes | Yes | NA | Fingerprint sensor doesn't work because of proprietary firmware |
+
+#### E series
+
+| Model version | Arch Linux
+install CD version
+ | Hardware support | Remarks |
+| Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
+| Lenovo ThinkPad E485 | 2018-10-01 | Yes | Yes | Yes | Yes | Not tested | Not tested | N/A | if screen stays black immediately after boot, add `iommu=soft` in [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") |
 
 #### L series
 

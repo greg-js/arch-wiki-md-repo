@@ -2,6 +2,8 @@
 
 Redirecting the mouse and keyboard is as simple as moving the mouse off the edge of your screen. Synergy also merges the clipboards of all the systems into one, allowing cut-and-paste between systems. Furthermore, it synchronizes screen savers so they all start and stop together and, if screen locking is enabled, only one screen requires a password to unlock them all.
 
+Work on Synergy has stalled recently due to Symless (the company behind Synergy) halting further development of the the 1.x branch and concentrating on 2.x branch, which is primarily closed-source, configured through a hosted web interface and requires a paid subscription. A fork called [Barrier](https://github.com/debauchee/barrier) was created to continue development of the 1.x branch, containing many bug fixes and new features.
+
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -35,15 +37,17 @@ Redirecting the mouse and keyboard is as simple as moving the mouse off the edge
 
 ### Arch Linux
 
-You can [install](/index.php/Install "Install") the [synergy](https://www.archlinux.org/packages/?name=synergy) package.
+You can [install](/index.php/Install "Install") the [synergy](https://www.archlinux.org/packages/?name=synergy) or [barrier](https://aur.archlinux.org/packages/barrier/) package.
+
+**Note:** If you install Barrier, commands and configuration files below are named "barrier" instead of "synergy" - you should use barrierc instead of synergyc, barriers instead of synergys, etc.
 
 ### Windows and macOS
 
-[Download](https://symless.com/synergy/) and run the newest installer from the official website. The official version is paid, although you may compile and run your own builds for free using [sources on GitHub](https://github.com/symless/synergy-core).
+[Download](https://symless.com/synergy/) and run the newest Synergy installer from the official website. The official version is paid, although you may compile and run your own builds for free using [sources on GitHub](https://github.com/symless/synergy-core). You can also install [Barrier](https://github.com/debauchee/barrier/releases) for free instead.
 
 ## Pre-configuration
 
-First determine the IP addresses and [host names](/index.php/Network_configuration#Set_the_hostname "Network configuration") for each machine and make sure each has a correct hosts file.
+First determine the IP addresses and [host names](/index.php/Network_configuration#Set_the_hostname "Network configuration") for each machine and make sure each has a correct hosts file. (You may use IP addresses instead of hostnames as well.)
 
 *   Arch Linux - `/etc/hosts`
 *   Windows - `C:\WINDOWS\system32\drivers\etc\hosts`
@@ -60,13 +64,11 @@ First determine the IP addresses and [host names](/index.php/Network_configurati
 
 ## Server configuration
 
-In synergy, the computer with keyboard and mouse you want to share is called server. See [Synergy Configuration File Format](https://github.com/symless/synergy-core/wiki/Text-Config) for a detailed description of all available sections and options.
+In Synergy, the computer with keyboard and mouse you want to share is called the server. See [Synergy Configuration File Format](https://github.com/symless/synergy-core/wiki/Text-Config) for a detailed description of all available sections and options.
 
 ### Arch Linux
 
-The configuration file for Arch Linux is `/etc/synergy.conf`. If it does not exist, create it using `/etc/synergy.conf.example`, whose comments should give you enough information for a basic configuration; if you need further reference, read the guide mentioned above.
-
-**Tip:** You may also use [quicksynergy](https://aur.archlinux.org/packages/quicksynergy/) from the [AUR](/index.php/AUR "AUR") which provide a GUI to simplify the configuration process.
+Synergy stores its configuration under `/etc/synergy.conf`, Barrier uses `/etc/barrier.conf` or `$HOME/.local/share/barrier/barrier.conf`. If the configuration file does not exist, you can use the provided GUI (started with `$ synergy` or `$ barrier`, or the desktop launcher) to create it visually. Alternatively you may create it by copying `/etc/synergy.conf.example` or `/usr/share/doc/barrier/barrier.conf.example`, whose comments should give you enough information for a basic configuration; if you need further reference or would like to use more advanced options not available from the GUI, read the guide mentioned above.
 
 **Tip:** Make sure the server port is not blocked. By default, synergy uses port 24800.
 
@@ -93,7 +95,7 @@ $ sed -e "s/.*=//" -i ~/.synergy/SSL/Fingerprints/Local.txt
 
 ```
 
-To activate the SSL plugin, add the `--enable-crypto` option.
+To activate the SSL plugin, add the `--enable-crypto` option. (Note that the Synergy GUI will not let you enable encryption without a valid license, whereas the Barrier GUI allows doing so.)
 
 *   Starting from the command line:
 

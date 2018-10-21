@@ -157,7 +157,7 @@ Start the application, choose a destination folder and click any button on the t
 
 Run `mtp-detect` to detect your device.
 
-If an error is returned, make sure your user is in the see `uucp` [group](/index.php/Group "Group").
+If an error is returned, make sure your user is in the `uucp` [user group](/index.php/User_group "User group").
 
 You can transfer files using the `mtp-connect` command.
 

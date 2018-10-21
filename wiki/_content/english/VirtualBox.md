@@ -127,7 +127,7 @@ The following modules are optional but are recommended if you do not want to be 
 
 ### Accessing host USB devices in guest
 
-To use the USB ports of your host machine in your virtual machines, add users that will be authorized to use this feature to the `vboxusers` [group](/index.php/Group "Group").
+To use the USB ports of your host machine in your virtual machines, add users that will be authorized to use this feature to the `vboxusers` [user group](/index.php/User_group "User group").
 
 ### Guest additions disc
 
@@ -284,7 +284,7 @@ To avoid this issue `/sbin/mount.vboxsf: mounting failed with the error: No such
 Two additional steps are needed in order for the mount point to be accessible from users other than root:
 
 *   the [virtualbox-guest-utils](https://www.archlinux.org/packages/?name=virtualbox-guest-utils) package created a group `vboxsf` (done in a previous step);
-*   your username must be in `vboxsf` [group](/index.php/Group "Group").
+*   your user must be in `vboxsf` [user group](/index.php/User_group "User group").
 
 #### Manual mounting
 
@@ -716,7 +716,7 @@ crw-rw---- 1 root uucp 4, 67 Feb  3 09:12 /dev/ttyS3
 
 ```
 
-Add your user to the `uucp` [group](/index.php/Group "Group").
+Add your user to the `uucp` [user group](/index.php/User_group "User group").
 
 ### Guest freezes after starting Xorg
 

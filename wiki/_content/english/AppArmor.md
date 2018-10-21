@@ -157,7 +157,7 @@ This is merely a short overview, for a more detailed guide be sure to have a loo
 
 The notification daemon displays desktop notifications whenever AppArmor denies a program access. To automatically start `aa-notify` daemon on login follow below steps:
 
-Install and enable [Audit framework](/index.php/Audit_framework "Audit framework"). Allow your desktop user to read audit logs in `/var/log/audit` by adding it to `audit` [group](/index.php/Group "Group"):
+Install and enable [Audit framework](/index.php/Audit_framework "Audit framework"). Allow your desktop user to read audit logs in `/var/log/audit` by adding it to `audit` [user group](/index.php/User_group "User group"):
 
 ```
 # groupadd -r audit
@@ -212,9 +212,10 @@ To enable caching AppArmor profiles, uncomment:
 write-cache
 ```
 
-To change default cache location (since 2.13.1 default cache location is `/var/cache/apparmor/`, previously it was `/etc/apparmor.d/cache.d/` add:
+To change default cache location add:
 
  `/etc/apparmor/parser.conf`  `cache-loc=/path/to/location` 
+**Note:** Since 2.13.1 default cache location is `/var/cache/apparmor/`, previously it was `/etc/apparmor.d/cache.d/`.
 
 Reboot and check AppArmor startup time again to see improvement:
 

@@ -3,7 +3,7 @@ Related articles
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
 *   [Boot loader](/index.php/Boot_loader "Boot loader")
 
-The [EFI system partition](https://en.wikipedia.org/wiki/EFI_system_partition "wikipedia:EFI system partition") (also called ESP or EFISYS) is an OS independent partition that acts as the storage place for the EFI bootloaders, applications and drivers to be launched by the UEFI firmware. It is mandatory for UEFI boot.
+The [EFI system partition](https://en.wikipedia.org/wiki/EFI_system_partition "wikipedia:EFI system partition") (also called ESP) is an OS independent partition that acts as the storage place for the EFI bootloaders, applications and drivers to be launched by the UEFI firmware. It is mandatory for UEFI boot.
 
 The UEFI specification mandates support for the FAT12, FAT16, and FAT32 filesystems (see [UEFI specification version 2.7, section 13.3.1.1](http://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1019485)), but any conformant vendor can optionally add support for additional filesystems; for example, Apple [Macs](/index.php/Mac "Mac") support (and by default use) their own HFS+ filesystem drivers.
 

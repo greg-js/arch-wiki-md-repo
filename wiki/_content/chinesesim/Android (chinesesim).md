@@ -263,7 +263,7 @@ SUBSYSTEM=="usb",ATTR{idVendor}=="[VENDOR ID]",ATTR{idProduct}=="[PRODUCT ID]",S
 
 ```
 
-确保你是 `adbusers` [group](/index.php/Group "Group") 的成员，以访问 `adb` 设备。
+确保你是 `adbusers` [user group](/index.php/User_group "User group") 的成员，以访问 `adb` 设备。
 
 #### 配置 adb
 

@@ -1,7 +1,7 @@
 Related articles
 
-*   [OpenVPN (client) in Linux containers](/index.php/OpenVPN_(client)_in_Linux_containers "OpenVPN (client) in Linux containers")
-*   [OpenVPN (server) in Linux containers](/index.php/OpenVPN_(server)_in_Linux_containers "OpenVPN (server) in Linux containers")
+*   [OpenVPN client in Linux Containers](/index.php/OpenVPN_client_in_Linux_Containers "OpenVPN client in Linux Containers")
+*   [OpenVPN server in Linux Containers](/index.php/OpenVPN_server_in_Linux_Containers "OpenVPN server in Linux Containers")
 *   [Easy-RSA](/index.php/Easy-RSA "Easy-RSA")
 
 This article describes a basic installation and configuration of [OpenVPN](http://openvpn.net), suitable for private and small business use. For more detailed information, please see the [OpenVPN 2.4 man page](https://community.openvpn.net/openvpn/wiki/Openvpn24ManPage) and the [OpenVPN documentation](http://openvpn.net/index.php/open-source/documentation). OpenVPN is a robust and highly flexible [VPN](https://en.wikipedia.org/wiki/VPN "wikipedia:VPN") daemon. It supports [SSL/TLS](https://en.wikipedia.org/wiki/SSL/TLS "wikipedia:SSL/TLS") security, [Ethernet bridging](https://en.wikipedia.org/wiki/Bridging_(networking) "wikipedia:Bridging (networking)"), [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol "wikipedia:Transmission Control Protocol") or [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol "wikipedia:User Datagram Protocol") [tunnel transport](https://en.wikipedia.org/wiki/Tunneling_protocol "wikipedia:Tunneling protocol") through [proxies](https://en.wikipedia.org/wiki/Proxy_server "wikipedia:Proxy server") or [NAT](https://en.wikipedia.org/wiki/Network_address_translation "wikipedia:Network address translation"). Additionally it has support for dynamic IP addresses and [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "wikipedia:Dynamic Host Configuration Protocol"), scalability to hundreds or thousands of users, and portability to most major OS platforms.
@@ -22,6 +22,7 @@ OpenVPN is designed to work with the [TUN/TAP](https://en.wikipedia.org/wiki/TUN
         *   [5.2.1 Hardening the server](#Hardening_the_server)
         *   [5.2.2 Enabling compression](#Enabling_compression)
         *   [5.2.3 Deviating from the standard port and/or protocol](#Deviating_from_the_standard_port_and.2For_protocol)
+        *   [5.2.4 Running multiple instances of OpenVPN on different ports on the physical machine](#Running_multiple_instances_of_OpenVPN_on_different_ports_on_the_physical_machine)
     *   [5.3 The client config profile](#The_client_config_profile)
         *   [5.3.1 Run as unprivileged user](#Run_as_unprivileged_user)
     *   [5.4 Converting certificates to encrypted .p12 format](#Converting_certificates_to_encrypted_.p12_format)
@@ -95,7 +96,7 @@ Read [Kernel modules](/index.php/Kernel_modules "Kernel modules") for more infor
 
 ## Connect to a VPN provided by a third party
 
-To connect to a VPN service provided by a third party, most of the following can most likely be ignored, especially regarding server setup. Begin with [#The client config profile](#The_client_config_profile) and skip ahead to [#Starting OpenVPN](#Starting_OpenVPN) after that. One should use the provider certificates and instructions, see [Category:VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") for examples that can be adapted to other providers. [OpenVPN (client) in Linux containers](/index.php/OpenVPN_(client)_in_Linux_containers "OpenVPN (client) in Linux containers") also has general applicable instructions, while it goes a step further by isolating an OpenVPN client process into a container.
+To connect to a VPN service provided by a third party, most of the following can most likely be ignored, especially regarding server setup. Begin with [#The client config profile](#The_client_config_profile) and skip ahead to [#Starting OpenVPN](#Starting_OpenVPN) after that. One should use the provider certificates and instructions, see [Category:VPN providers](/index.php/Category:VPN_providers "Category:VPN providers") for examples that can be adapted to other providers. [OpenVPN client in Linux Containers](/index.php/OpenVPN_client_in_Linux_Containers "OpenVPN client in Linux Containers") also has general applicable instructions, while it goes a step further by isolating an OpenVPN client process into a container.
 
 **Note:** Most free VPN providers will (often only) offer [PPTP](/index.php/PPTP_server "PPTP server"), which is drastically easier to setup and configure, but [not secure](http://poptop.sourceforge.net/dox/protocol-security.phtml).
 
@@ -145,10 +146,10 @@ Edit the file making a minimum of the following changes:
 ```
 ca ca.crt
 cert servername.crt
-key servername.key  # This file should be kept secret
+key servername.key
 dh dh.pem
 .
-tls-crypt ta.key # Replaces *tls-auth ta.key 0*
+tls-crypt ta.key
 .
 user nobody
 group nobody
@@ -199,6 +200,38 @@ proto tcp
 ```
 
 **Note:** The .ovpn client profile **must** contain a matching port and proto line to work properly!
+
+#### Running multiple instances of OpenVPN on different ports on the physical machine
+
+One can have multiple, concurrent instances of OpenVPN running on the same box. Each server needs to be defined in `/etc/openvpn/server/` as a separate .conf file. At a minimum, the parallel servers need to be running on different ports. A simple setup directs traffic connecting in to a separate IP pool. More advanced setups are beyond the scope of this guide.
+
+Consider this example, running 2 concurrent servers, one port 443/udp and another on port 80/tcp.
+
+First modify `/etc/openvpn/server/server.conf` created as so:
+
+ `/etc/openvpn/server/server.conf` 
+```
+.
+port 443
+proto udp
+server 10.8.0.0 255.255.255.0
+.
+
+```
+
+Now copy it and modify the copy to run on 80/tcp:
+
+ `/etc/openvpn/server/server2.conf` 
+```
+.
+port 80
+proto tcp
+server 10.8.1.0 255.255.255.0
+.
+
+```
+
+Be sure to setup the corresponding entries in the firewall, see the relevant sections in [OpenVPN#Firewall_configuration](/index.php/OpenVPN#Firewall_configuration "OpenVPN").
 
 ### The client config profile
 
@@ -446,6 +479,9 @@ Change `/etc/ufw/before.rules`, and [append](/index.php/Append "Append") the fol
 # Allow traffic from clients to the interface
 -A POSTROUTING -s 10.8.0.0/24 -o *interface* -j MASQUERADE
 
+# Optionally duplicate this line for each subnet if your setup requires it
+-A POSTROUTING -s 10.8.1.0/24 -o *interface* -j MASQUERADE
+
 # do not delete the "COMMIT" line or the NAT table rules above will not be processed
 COMMIT
 
@@ -474,6 +510,13 @@ In order to allow VPN traffic through an [iptables](/index.php/Iptables "Iptable
 
 ```
 iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
+
+```
+
+If running multiple servers on different IP pools, add a corresponding line for each one, for example:
+
+```
+iptables -t nat -A POSTROUTING -s 10.8.1.0/24 -o eth0 -j MASQUERADE
 
 ```
 

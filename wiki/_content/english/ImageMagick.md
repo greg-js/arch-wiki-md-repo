@@ -29,6 +29,15 @@ $ convert -append *input.pngs* *output.png*
 
 **Note:** The sign before an option is important. Opposite operations can be performed by using a *plus* instead of a *minus*.
 
+To crop part of multiple images and convert them to another format:
+
+```
+$ mogrify -crop *WIDTH***x***HEIGHT*+*X*+*Y* -format jpg *.png
+
+```
+
+Where *WIDTH* and *HEIGHT* is the cropped output image size, and *X* and *Y* is the offset from the input image size.
+
 ### Screenshot taking
 
 An easy way to take a screenshot of your current system is using the [import(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/import.1) command:

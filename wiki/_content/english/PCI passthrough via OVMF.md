@@ -256,7 +256,7 @@ OVMF is an open-source UEFI firmware for QEMU virtual machines. While it is poss
 
 [Libvirt](/index.php/Libvirt "Libvirt") is a wrapper for a number of virtualization utilities that greatly simplifies the configuration and deployment process of virtual machines. In the case of KVM and QEMU, the frontend it provides allows us to avoid dealing with the permissions for QEMU and make it easier to add and remove various devices on a live VM. Its status as a wrapper, however, means that it might not always support all of the latest qemu features, which could end up requiring the use of a wrapper script to provide some extra arguments to QEMU.
 
-After installing [qemu](https://www.archlinux.org/packages/?name=qemu), [libvirt](https://www.archlinux.org/packages/?name=libvirt), [ovmf](https://www.archlinux.org/packages/?name=ovmf), and [virt-manager](https://www.archlinux.org/packages/?name=virt-manager), add the path to your OVMF firmware image and runtime variables template to your libvirt config so `virt-install` or `virt-manager` can find those later on.
+After installing [qemu](https://www.archlinux.org/packages/?name=qemu), [qemu-block-iscsi](https://www.archlinux.org/packages/?name=qemu-block-iscsi), [libvirt](https://www.archlinux.org/packages/?name=libvirt), [ovmf](https://www.archlinux.org/packages/?name=ovmf), and [virt-manager](https://www.archlinux.org/packages/?name=virt-manager), add the path to your OVMF firmware image and runtime variables template to your libvirt config so `virt-install` or `virt-manager` can find those later on.
 
  `/etc/libvirt/qemu.conf` 
 ```
@@ -271,7 +271,7 @@ You can now [enable](/index.php/Enable "Enable") and [start](/index.php/Start "S
 
 The process of setting up a VM using `virt-manager` is mostly self-explanatory, as most of the process comes with fairly comprehensive on-screen instructions.
 
-If using `virt-manager`, you have to add your user to the libvirt [group](/index.php/Group "Group") to ensure authentication.
+If using `virt-manager`, you have to add your user to the `libvirt` [user group](/index.php/User_group "User group") to ensure authentication.
 
 However, you should pay special attention to the following steps :
 
@@ -1343,7 +1343,7 @@ user="*user*"
 
 ```
 
-If that does not work make sure your user account is added to the kvm and libvirt [groups](/index.php/Group "Group").
+If that does not work make sure your user is added to the `kvm` and `libvirt` [user groups](/index.php/User_group "User group").
 
 ### Host lockup after VM shutdown
 

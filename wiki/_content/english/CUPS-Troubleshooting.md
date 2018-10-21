@@ -358,7 +358,7 @@ The issue might have to do with the file permission change that had been made to
 
 #### Permission problem
 
-It may be needed to add the user to the `lp` and `sys` [groups](/index.php/Group "Group").
+It may be needed to add the user to the `lp` and `sys` [user groups](/index.php/User_group "User group").
 
 #### Virtual CDROM printers
 

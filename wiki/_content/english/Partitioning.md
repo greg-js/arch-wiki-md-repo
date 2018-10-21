@@ -16,7 +16,7 @@ The required information is stored in a [partition table](#Partition_table) sche
 
 Partition tables are created and modified using one of many [partitioning tools](#Partitioning_tools) which must be compatible to the chosen scheme of partitioning table. Available tools include [fdisk](/index.php/Fdisk "Fdisk") and [parted](/index.php/Parted "Parted").
 
-Once created, a partition must be formatted with an appropriate [file system](/index.php/File_system "File system") before data can be written to it.
+Once created, a partition must be formatted with an appropriate [file system](/index.php/File_system "File system") before files can be written to it.
 
 ## Contents
 

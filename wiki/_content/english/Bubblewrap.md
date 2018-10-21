@@ -1,6 +1,6 @@
-[bubblewrap](https://github.com/projectatomic/bubblewrap) is a lightweight [setuid](https://en.wikipedia.org/wiki/Setuid "wikipedia:Setuid") sandbox application developed from [Flatpak](/index.php/Flatpak "Flatpak") with a small installation footprint and minimal resource requirements. While the package is named bubblewrap, the actual command-line interface is [bwrap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bwrap.1). bubblewrap is expected to [anchor the sandbox mechanism](https://blog.torproject.org/blog/q-and-yawning-angel) of the [Tor Browser](/index.php/Tor_Browser "Tor Browser") (Linux) in the future. Notable features include support for cgroup/IPC/mount/network/PID/user/UTS [namespaces](https://en.wikipedia.org/wiki/Linux_namespaces "wikipedia:Linux namespaces") and [seccomp](https://en.wikipedia.org/wiki/Seccomp "wikipedia:Seccomp") filtering. Note that bubblewrap drops all [capabilities](/index.php/Capabilities "Capabilities") within a sandbox and that child tasks cannot gain greater privileges than its parent. Notable feature exclusions include the lack of explicit support for blacklisting/whitelisting file paths.
+[Bubblewrap](https://github.com/projectatomic/bubblewrap) is a lightweight [setuid](https://en.wikipedia.org/wiki/Setuid "wikipedia:Setuid") sandbox application developed from [Flatpak](/index.php/Flatpak "Flatpak") with a small installation footprint and minimal resource requirements. While the package is named bubblewrap, the actual command-line interface is [bwrap(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bwrap.1). Bubblewrap is expected to [anchor the sandbox mechanism](https://blog.torproject.org/blog/q-and-yawning-angel) of the [Tor Browser](/index.php/Tor_Browser "Tor Browser") (Linux) in the future. Notable features include support for cgroup/IPC/mount/network/PID/user/UTS [namespaces](https://en.wikipedia.org/wiki/Linux_namespaces "wikipedia:Linux namespaces") and [seccomp](https://en.wikipedia.org/wiki/Seccomp "wikipedia:Seccomp") filtering. Note that bubblewrap drops all [capabilities](/index.php/Capabilities "Capabilities") within a sandbox and that child tasks cannot gain greater privileges than its parent. Notable feature exclusions include the lack of explicit support for blacklisting/whitelisting file paths.
 
-**Warning:** Unlike when using a separate user and a separate log-in session, bubblewrap not only exposes security vulnerabilities in the kernel but also in the window compositor. Users should be aware that running untrustworthy code in bubblewrap is still not safe.
+**Warning:** Unlike when using a separate user and a separate log-in session, bubblewrap not only exposes security vulnerabilities in the kernel but also in the window compositor. Users should be aware that running untrustworthy code in Bubblewrap is still not safe.
 
 ## Contents
 
@@ -30,7 +30,7 @@
 
 ## Configuration
 
-bubblewrap can be called directly from the command-line and/or within [shell scripts](https://github.com/projectatomic/bubblewrap/blob/master/demos/bubblewrap-shell.sh) as part of a [complex wrapper](https://github.com/projectatomic/bubblewrap/blob/master/demos/flatpak-run.sh). Unlike applications such as [Firejail](/index.php/Firejail "Firejail") which automatically set `/var` and `/etc` to read-only within the sandbox, bubblewrap makes no such operating assumptions. It is up to the user to determine which configuration options to pass in accordance to the application being sandboxed. bubblewrap does not automatically create user namespaces when running with setuid privileges and can accommodate typical environment variables including `$HOME` and `$USER`.
+Bubblewrap can be called directly from the command-line and/or within [shell scripts](https://github.com/projectatomic/bubblewrap/blob/master/demos/bubblewrap-shell.sh) as part of a [complex wrapper](https://github.com/projectatomic/bubblewrap/blob/master/demos/flatpak-run.sh). Unlike applications such as [Firejail](/index.php/Firejail "Firejail") which automatically set `/var` and `/etc` to read-only within the sandbox, Bubblewrap makes no such operating assumptions. It is up to the user to determine which configuration options to pass in accordance to the application being sandboxed. Bubblewrap does not automatically create user namespaces when running with setuid privileges and can accommodate typical environment variables including `$HOME` and `$USER`.
 
 ## Usage examples
 
@@ -116,7 +116,7 @@ Create a more granular and complex [Unbound](/index.php/Unbound "Unbound") sandb
 
 ### Desktop
 
-Leverage bubblewrap within [desktop entries](/index.php/Desktop_entries "Desktop entries"):
+Leverage Bubblewrap within [desktop entries](/index.php/Desktop_entries "Desktop entries"):
 
 *   Bind as read-write the entire host `/` directory to `/` in the sandbox
 *   Re-bind as read-only the `/var` and `/etc` directories in the sandbox
@@ -458,5 +458,5 @@ It is recommended to use this if possible, but if not the developers recommend t
 
 ## See also
 
-*   [bubblewrap GitHub project page](https://github.com/projectatomic/bubblewrap)
+*   [GitHub repository](https://github.com/projectatomic/bubblewrap)
 *   [The Linux Kernel Archives: SECure COMPuting with filters](https://www.kernel.org/doc/Documentation/prctl/seccomp_filter.txt)

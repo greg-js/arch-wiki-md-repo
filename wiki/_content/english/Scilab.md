@@ -1,9 +1,3 @@
-[**Scilab**](http://www.scilab.org/) is free and open-source (licensed under the GPL-compatible [CeCILL license](https://en.wikipedia.org/wiki/CeCILL "w:CeCILL")), cross-platform (compatible with Linux, macOS and Windows NT) high-level interpreted programming language primarily intended for technical computing. Scilab is also the name of an integrated development environment for the Scilab programming language. Syntactically, the Scilab programming language, is similar to [Matlab](/index.php/Matlab "Matlab"), although not as similar as [GNU Octave](/index.php/GNU_Octave "GNU Octave"). Scilab is implemented in C, C++, Fortran and Java. Scilab is developed by [Scilab Enterprises](http://scilab.io/).
+Redirect to:
 
-## Installation
-
-Scilab is not in the official repositories of Arch Linux, so it must be installed from the [AUR](/index.php/AUR "AUR"):
-
-*   [scilab](https://aur.archlinux.org/packages/scilab/)
-*   [scilab-bin](https://aur.archlinux.org/packages/scilab-bin/)
-*   [scilab-git](https://aur.archlinux.org/packages/scilab-git/)
+*   [List of applications/Science#Scientific or technical computing](/index.php/List_of_applications/Science#Scientific_or_technical_computing "List of applications/Science")

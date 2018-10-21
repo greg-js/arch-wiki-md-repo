@@ -1,6 +1,6 @@
 From the [project web page](http://support.google.com/earth/bin/answer.py?hl=en&answer=176145):
 
-*"Google Earth allows you to travel the world through a virtual globe and view satellite imagery, maps, terrain, 3D buildings, and much more. With Google Earth's rich, geographical content, you are able to experience a more realistic view of the world. You can fly to your favorite place, search for businesses and even navigate through directions."*
+	Google Earth allows you to travel the world through a virtual globe and view satellite imagery, maps, terrain, 3D buildings, and much more. With Google Earth's rich, geographical content, you are able to experience a more realistic view of the world. You can fly to your favorite place, search for businesses and even navigate through directions.
 
 ## Contents
 

@@ -138,12 +138,10 @@ keycode 116 = Down Down Down Down Next Next
 keycode 117 = Next NoSymbol Next
 keycode 118 = Insert NoSymbol Insert
 keycode 119 = Delete NoSymbol Delete
-keycode 121 = XF86AudioMute NoSymbol XF86AudioMute
-keycode 122 = XF86AudioLowerVolume NoSymbol XF86AudioLowerVolume
-keycode 123 = XF86AudioRaiseVolume NoSymbol XF86AudioRaiseVolume
 keycode 124 = XF86PowerOff NoSymbol XF86PowerOff
 keycode 167 = XF86Forward NoSymbol XF86Forward
 keycode 182 = XF86Close NoSymbol XF86Close
+keycode 191 = XF86ScreenSaver NoSymbol XF86ScreenSaver
 
 ```
 

@@ -51,7 +51,7 @@ FTL is a DNS resolver/forwarder and a database-like wrapper/API that provides lo
 1.  Daily data are stored in RAM and are captured in real-time within `/run/log/pihole/pihole.log`
 2.  Historical data (i.e. over multiple days/weeks/months) are stored on the file system `/etc/pihole/pihole-FTL.db` written out at a user-specified interval.
 
-`pi-hole-ftl.service` is statically enabled; re/start it. See the [official documentation](https://docs.pi-hole.net/ftldns/configfile/) to configure FTL.
+`pihole-FTL.service` is statically enabled; re/start it. See the [official documentation](https://docs.pi-hole.net/ftldns/configfile/) to configure FTL.
 
 **Tip:** If Pi-hole is running on a [solid state drive](/index.php/Solid_state_drive "Solid state drive") (single-board computers SD, SSD, M.2/NVMe device, etc...) it is recommended to set the `DBINTERVAL` value to at least `60.0` to minimize writes to the database.
 

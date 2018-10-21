@@ -1,3 +1,10 @@
+Related articles
+
+*   [Security](/index.php/Security "Security")
+*   [pam_mount](/index.php/Pam_mount "Pam mount")
+*   [pam_abl](/index.php/Pam_abl "Pam abl")
+*   [pam_oath](/index.php/Pam_oath "Pam oath")
+
 [pam_usb](https://github.com/aluzzardi/pam_usb) provides hardware authentication for Linux using ordinary USB Flash Drives.
 
 It works with any application supporting [PAM](/index.php/PAM "PAM"), such as [su](/index.php/Su "Su") and [Display manager](/index.php/Display_manager "Display manager").

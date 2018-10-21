@@ -404,7 +404,7 @@ To activate the feature you need to [enable](/index.php/Enable "Enable") and [st
 
 Once the service is active, scripts can be added to the `/etc/NetworkManager/dispatcher.d` directory.
 
-Scripts must be owned by **root**, otherwise the dispatcher will not execute them. For added security, set [group](/index.php/Group "Group") ownership to root as well:
+Scripts must be owned by **root**, otherwise the dispatcher will not execute them. For added security, set group [ownership](/index.php/Ownership "Ownership") to root as well:
 
 ```
 # chown root:root /etc/NetworkManager/dispatcher.d/*10-script.sh*

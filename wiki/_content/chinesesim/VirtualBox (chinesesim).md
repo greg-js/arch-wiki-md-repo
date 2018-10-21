@@ -129,7 +129,7 @@
 
 ### 从客体系统访问主机 USB 设备
 
-将需要运行 VirtualBox 的用户名添加到 `vboxusers` [用户组](/index.php/Group "Group")，USB 设备才能被访问。
+将需要运行 VirtualBox 的用户名添加到 `vboxusers` [用户组](/index.php/User_group "User group")，USB 设备才能被访问。
 
 ### 客体机插件光盘
 

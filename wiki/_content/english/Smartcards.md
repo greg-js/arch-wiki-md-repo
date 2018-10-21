@@ -89,7 +89,7 @@ The browser needs to set the new security-related device. Open the **Security De
 
 ### Smargo/TV Card reader
 
-When interfacing with a TV-card for live TV and recording (PVR/DVR), you may need to assign the smartcard reader to the `video` [group](/index.php/Group "Group") allowing decryption. When using a Smargo Smartreader consider the following [udev](/index.php/Udev "Udev") rule:
+When interfacing with a TV-card for live TV and recording (PVR/DVR), you may need to assign the smartcard reader to the `video` [user group](/index.php/User_group "User group") allowing decryption. When using a Smargo Smartreader consider the following [udev](/index.php/Udev "Udev") rule:
 
  `/etc/udev/rules.d/98-smargo.rules`  `SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", GROUP="video", MODE="0666", SYMLINK+="smargo"` 
 

@@ -131,11 +131,11 @@ Chromium will use the GTK settings as described in [GTK+#Configuration](/index.p
 
 ### Force GPU acceleration
 
-**Warning:** Disabling the rendering blacklist may cause unstable behaviour, including crashes of the host. See the bug reports in `chrome://gpu`.
+**Warning:** Disabling the rendering blacklist may cause unstable behavior, including crashes of the host. See the bug reports in `chrome://gpu` for details.
 
-To force GPU acceleration, *enable* the flags: "Override software rendering list", "GPU rasterization", "Zero-copy rasterizer" in `chrome://flags`. Check if it is working in `chrome://gpu`. This may also alleviate tearing issues with the [radeon](/index.php/Radeon "Radeon") driver.
+To force GPU acceleration, *enable* the flags: `--ignore-gpu-blacklist`, `--enable-gpu-rasterization`, `--enable-zero-copy` in `chrome://flags` or [append](/index.php/Append "Append") to the [persistent configuration](/index.php/Chromium/Tips_and_tricks#Making_flags_persistent "Chromium/Tips and tricks"). Additionally the flag `--disable-gpu-driver-bug-workarounds` may need to be passed to prevent GPU workaround from being used. Flags in `chrome://gpu` should state "Hardware accelerated" when configured and available.
 
-If "Native GpuMemoryBuffers" under `chrome://gpu` mentions software rendering, you additionally need to pass the `--enable-native-gpu-memory-buffers` flag, or some optimizations (like the zero-copy rasterizer) won't do anything. This flag isn't available under `chrome://flags` - it must be passed in either the chromium-flags.conf file (as noted in [Chromium/Tips and tricks#Making flags persistent](/index.php/Chromium/Tips_and_tricks#Making_flags_persistent "Chromium/Tips and tricks")) or directly on the command line.
+For *Native GpuMemoryBuffers* the flag `--enable-native-gpu-memory-buffers` needs to be pass or some optimizations (like the zero-copy rasterizer) will use software rendering. The flag isn't available under `chrome://flags` and must be passed as a [persistent flag](/index.php/Chromium/Tips_and_tricks#Making_flags_persistent "Chromium/Tips and tricks") or directly from the command line.
 
 ### WebGL
 

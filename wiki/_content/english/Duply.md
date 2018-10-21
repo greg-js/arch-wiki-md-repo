@@ -1,6 +1,6 @@
 From [duply.net](http://www.duply.net/):
 
-	*Duply is a frontend for the mighty duplicity magic. [Duplicity](/index.php/Duplicity "Duplicity") is a python based shell application that makes encrypted incremental backups to remote storages.*
+	Duply is a frontend for the mighty duplicity magic. [Duplicity](/index.php/Duplicity "Duplicity") is a python based shell application that makes encrypted incremental backups to remote storages.
 
 ## Contents
 

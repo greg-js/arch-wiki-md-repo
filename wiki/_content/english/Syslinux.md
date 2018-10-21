@@ -230,8 +230,8 @@ Install the MBR:
 *   Copy Syslinux files to ESP:
 
 ```
-# mkdir *esp*/EFI
-# cp -r /usr/lib/syslinux/efi64 *esp*/EFI/syslinux
+# mkdir -p *esp*/EFI/syslinux
+# cp -r /usr/lib/syslinux/efi64/* *esp*/EFI/syslinux
 
 ```
 
@@ -249,7 +249,6 @@ where `/dev/sdXY` is the partition containing the bootloader.
 **Note:**
 
 *   The config file for UEFI is `*esp*/EFI/syslinux/syslinux.cfg`, not `/boot/syslinux/syslinux.cfg`. Files in `/boot/syslinux/` are BIOS specific and not related to UEFI Syslinux.
-
 *   When booted in BIOS mode, [efibootmgr](https://www.archlinux.org/packages/?name=efibootmgr) will not be able to set EFI nvram entry for `/EFI/syslinux/syslinux.efi`. To work around, place resources at the default EFI location: `*esp*/EFI/syslinux/* -> *esp*/EFI/BOOT/*` and `*esp*/EFI/syslinux/syslinux.efi -> *esp*/EFI/BOOT/bootx64.efi`
 
 ## Configuration

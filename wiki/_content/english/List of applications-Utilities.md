@@ -564,7 +564,7 @@ For managing *pacnew*/*pacsave* files, specialised tools exist. See [Pacnew and 
 
 *   **[Kompare](https://en.wikipedia.org/wiki/Kompare "wikipedia:Kompare")** — GUI front-end program for viewing and merging differences between source files. It supports a variety of diff formats and provides many options to customize the information level displayed.
 
-	[http://www.caffeinated.me.uk/kompare/](http://www.caffeinated.me.uk/kompare/) || [kompare](https://www.archlinux.org/packages/?name=kompare)
+	[https://www.kde.org/applications/development/kompare/](https://www.kde.org/applications/development/kompare/) || [kompare](https://www.archlinux.org/packages/?name=kompare)
 
 *   **[Meld](https://en.wikipedia.org/wiki/Meld_(software) "wikipedia:Meld (software)")** — Visual diff and merge tool that can compare files, directories, and version controlled projects.
 

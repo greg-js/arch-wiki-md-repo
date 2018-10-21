@@ -10,7 +10,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Ne
 
 *   NFS is not encrypted. Tunnel NFS through an encrypted protocol like [Kerberos](/index.php/Kerberos "Kerberos"), or [tinc](/index.php/Tinc "Tinc") when dealing with sensitive data.
 *   Unlike [Samba](/index.php/Samba "Samba"), NFS doesn't have any user authentication by default, client access is restricted by their IP-address/[hostname](/index.php/Hostname "Hostname").
-*   NFS expects the [user](/index.php/User "User") and/or [group](/index.php/Group "Group") ID's are the same on both the client and server. It is however possible to overrule the UID/GID by using `anonuid`/`anongid` with `all_squash` in `/etc/exports`.
+*   NFS expects the [user](/index.php/User "User") and/or [user group](/index.php/User_group "User group") ID's are the same on both the client and server. It is however possible to overrule the UID/GID by using `anonuid`/`anongid` with `all_squash` in `/etc/exports`.
 
 ## Contents
 

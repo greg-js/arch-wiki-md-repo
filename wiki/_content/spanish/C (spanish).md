@@ -1,9 +1,9 @@
 **Estado de la traducción**
-Este artículo es una traducción de [C](/index.php/C "C"), revisada por última vez el **2018-10-07**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=C&diff=0&oldid=548192) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [C](/index.php/C "C"), revisada por última vez el **2018-10-20**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=C&diff=0&oldid=548715) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 El kernel [Linux](/index.php/Linux_(Espa%C3%B1ol) "Linux (Español)") y las herramientas de usuario [GNU](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)") están escritos principalmente en [C](https://en.wikipedia.org/wiki/es:C_(lenguaje_de_programaci%C3%B3n) "wikipedia:es:C (lenguaje de programación)").
 
-Arch Linux utiliza la [Biblioteca de C de GNU](https://en.wikipedia.org/wiki/GNU_C_Library "wikipedia:GNU C Library") ([glibc](https://www.archlinux.org/packages/?name=glibc)) como la biblioteca estándar de C; es parte de [base](https://www.archlinux.org/groups/x86_64/base/).
+Arch Linux utiliza la [Biblioteca de C de GNU](https://en.wikipedia.org/wiki/GNU_C_Library "wikipedia:GNU C Library") ([glibc](https://www.archlinux.org/packages/?name=glibc)) como la biblioteca estándar de C; es parte del [grupo base](/index.php/Base_group "Base group").
 
 Puede usar [GNU toolchain](/index.php/GNU_toolchain "GNU toolchain") o [LLVM toolchain](/index.php/LLVM_toolchain "LLVM toolchain") para desarrollar software en C/[C++](https://en.wikipedia.org/wiki/C%2B%2B "wikipedia:C++")/[Objective-C](https://en.wikipedia.org/wiki/es:Objective-C "wikipedia:es:Objective-C").
 
@@ -40,7 +40,7 @@ Puede usar [GNU toolchain](/index.php/GNU_toolchain "GNU toolchain") o [LLVM too
 
 	[http://repo.or.cz/splint-patched.git](http://repo.or.cz/splint-patched.git) || [splint](https://www.archlinux.org/packages/?name=splint)
 
-*   [Clang](/index.php/Clang "Clang") tiene el analizador estático `scan-build`.
+*   [Clang](/index.php/Clang "Clang") tiene el analizador estático *scan-build*.
 
 ## Compiladores alternativos
 

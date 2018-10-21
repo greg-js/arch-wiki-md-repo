@@ -1,14 +1,14 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Bash](/index.php/Bash "Bash"), revisada por última vez el **2018-10-18**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Bash&diff=0&oldid=542792) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Bash](/index.php/Bash "Bash"), revisada por última vez el **2018-10-20**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Bash&diff=0&oldid=542792) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
-*   [Bash/Functions](/index.php/Bash/Functions "Bash/Functions")
-*   [Bash/Prompt customization](/index.php/Bash/Prompt_customization "Bash/Prompt customization")
-*   [Environment variables](/index.php/Environment_variables "Environment variables")
+*   [Bash/Funciones](/index.php/Bash/Functions_(Espa%C3%B1ol) "Bash/Functions (Español)")
+*   [Bash/Personalización del indicador](/index.php/Bash/Prompt_customization_(Espa%C3%B1ol) "Bash/Prompt customization (Español)")
+*   [Variables de entorno](/index.php/Environment_variables_(Espa%C3%B1ol) "Environment variables (Español)")
 *   [Readline](/index.php/Readline "Readline")
 *   [Fortune](/index.php/Fortune "Fortune")
-*   [Pkgfile](/index.php/Pkgfile "Pkgfile")
+*   [Pkgfile](/index.php/Pkgfile_(Espa%C3%B1ol) "Pkgfile (Español)")
 *   [Command-line shell](/index.php/Command-line_shell "Command-line shell")
 
 [Bash](https://www.gnu.org/software/bash/) (Bourne-again Shell) es un [intérprete de línea de órdenes](/index.php/Command-line_shell "Command-line shell")/lenguaje de programación por el [proyecto GNU](/index.php/GNU_Project_(Espa%C3%B1ol) "GNU Project (Español)"). Su nombre es un homenaje en referencia a su predecesor, el intérprete de línea de órdenes Bourne, que ha estado en desuso desde hace mucho tiempo. Bash se puede ejecutar en la mayoría de los sistemas operativos similares a UNIX, incluido GNU/Linux.
@@ -17,32 +17,32 @@ Artículos relacionados
 
 *   [1 Invocación](#Invocaci.C3.B3n)
     *   [1.1 Archivos de configuración](#Archivos_de_configuraci.C3.B3n)
-    *   [1.2 Shell and environment variables](#Shell_and_environment_variables)
-*   [2 Command line](#Command_line)
-    *   [2.1 Tab completion](#Tab_completion)
-        *   [2.1.1 Single-tab](#Single-tab)
-        *   [2.1.2 Common programs and options](#Common_programs_and_options)
-        *   [2.1.3 Customize per-command](#Customize_per-command)
-    *   [2.2 History](#History)
-        *   [2.2.1 History completion](#History_completion)
-        *   [2.2.2 Shorter history](#Shorter_history)
-    *   [2.3 Mimic Zsh run-help ability](#Mimic_Zsh_run-help_ability)
+    *   [1.2 Variables del intérprete de línea de órdenes y de entorno](#Variables_del_int.C3.A9rprete_de_l.C3.ADnea_de_.C3.B3rdenes_y_de_entorno)
+*   [2 Línea de órdenes](#L.C3.ADnea_de_.C3.B3rdenes)
+    *   [2.1 Completar con tabulador](#Completar_con_tabulador)
+        *   [2.1.1 Pulsación única del tabulador](#Pulsaci.C3.B3n_.C3.BAnica_del_tabulador)
+        *   [2.1.2 Órdenes comunes y opciones](#.C3.93rdenes_comunes_y_opciones)
+        *   [2.1.3 Personalizar por órdenes](#Personalizar_por_.C3.B3rdenes)
+    *   [2.2 Historial](#Historial)
+        *   [2.2.1 Completado del historial](#Completado_del_historial)
+        *   [2.2.2 Historial más corto](#Historial_m.C3.A1s_corto)
+    *   [2.3 Imitación de la capacidad de ejecutar la ayuda como Zsh](#Imitaci.C3.B3n_de_la_capacidad_de_ejecutar_la_ayuda_como_Zsh)
 *   [3 Alias](#Alias)
-*   [4 Tips and tricks](#Tips_and_tricks)
-    *   [4.1 Prompt customization](#Prompt_customization)
-    *   [4.2 Command not found](#Command_not_found)
-    *   [4.3 Disable Ctrl+z in terminal](#Disable_Ctrl.2Bz_in_terminal)
-    *   [4.4 Clear the screen after logging out](#Clear_the_screen_after_logging_out)
-    *   [4.5 Auto "cd" when entering just a path](#Auto_.22cd.22_when_entering_just_a_path)
+*   [4 Consejos y trucos](#Consejos_y_trucos)
+    *   [4.1 Personalización del indicador](#Personalizaci.C3.B3n_del_indicador)
+    *   [4.2 No se encontró la orden](#No_se_encontr.C3.B3_la_orden)
+    *   [4.3 Desactivar Control+z en el terminal](#Desactivar_Control.2Bz_en_el_terminal)
+    *   [4.4 Borrar la pantalla después de cerrar la sesión](#Borrar_la_pantalla_despu.C3.A9s_de_cerrar_la_sesi.C3.B3n)
+    *   [4.5 Auto "cd" al introducir solo una ruta](#Auto_.22cd.22_al_introducir_solo_una_ruta)
     *   [4.6 Autojump](#Autojump)
-    *   [4.7 Prevent overwrite of files](#Prevent_overwrite_of_files)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Line wrap on window resize](#Line_wrap_on_window_resize)
-    *   [5.2 Shell exits even if ignoreeof set](#Shell_exits_even_if_ignoreeof_set)
-*   [6 See also](#See_also)
-    *   [6.1 Tutorials](#Tutorials)
-    *   [6.2 Community](#Community)
-    *   [6.3 Examples](#Examples)
+    *   [4.7 Impedir la sobreescritura de archivos](#Impedir_la_sobreescritura_de_archivos)
+*   [5 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+    *   [5.1 Ajuste de línea al redimensionar la ventana](#Ajuste_de_l.C3.ADnea_al_redimensionar_la_ventana)
+    *   [5.2 Intérprete de línea de órdenes sale incluso si ignoreeof está definido](#Int.C3.A9rprete_de_l.C3.ADnea_de_.C3.B3rdenes_sale_incluso_si_ignoreeof_est.C3.A1_definido)
+*   [6 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+    *   [6.1 Tutoriales](#Tutoriales)
+    *   [6.2 Comunidad](#Comunidad)
+    *   [6.3 Ejemplos](#Ejemplos)
 
 ## Invocación
 
@@ -67,53 +67,55 @@ Véase la sección "6.2 Archivos de inicio de Bash" en `/usr/share/doc/bash/bash
 
 **Nota:**
 
-*   Login shells can be non-interactive when called with the `--login` argument.
-*   While interactive, *non-login* shells do **not** source `~/.bash_profile`, they still inherit the environment from their parent process (which may be a login shell). See [GregsWiki:ProcessManagement#On processes, environments and inheritance](https://mywiki.wooledge.org/ProcessManagement#On_processes.2C_environments_and_inheritance "gregswiki:ProcessManagement") for details.
+*   Los intérpretes de línea de órdenes de inicio de sesión pueden ser no interactivos cuando se llaman con el argumento `--login`.
+*   Mientras que los intérpretes de línea de órdenes interactivos que *no son de inicio de sesión* **no** cargan `~/.bash_profile`, aún heredan el entorno de su proceso principal (que puede ser un intérprete de línea de órdenes de inicio de sesión). Véase [sobre procesos, entornos y herencia](https://mywiki.wooledge.org/ProcessManagement#On_processes.2C_environments_and_inheritance "gregswiki:ProcessManagement") para obtener más información.
 
-### Shell and environment variables
+### Variables del intérprete de línea de órdenes y de entorno
 
-The behavior of Bash and programs run by it can be influenced by a number of environment variables. [Environment variables](/index.php/Environment_variables "Environment variables") are used to store useful values such as command search directories, or which browser to use. When a new shell or script is launched it inherits its parent's variables, thus starting with an internal set of shell variables[[1]](http://www.kingcomputerservices.com/unix_101/understanding_unix_shells_and_environment_variables.htm).
+El comportamiento de Bash y los programas ejecutados por él puede verse influido por una serie de variables de entorno. Las [variables de entorno](/index.php/Environment_variables_(Espa%C3%B1ol) "Environment variables (Español)") se utilizan para almacenar valores útiles, como los directorios de búsqueda de órdenes, o qué navegador utilizar. Cuando se inicia un nuevo intérprete de línea de órdenes o un script, hereda las variables de su padre (el proceso que lo lanza), por lo que comienza con un conjunto interno de variables del intérprete de línea de órdenes [[1]](http://www.kingcomputerservices.com/unix_101/understanding_unix_shells_and_environment_variables.htm).
 
-These shell variables in Bash can be exported in order to become environment variables:
+Estas variables del intérprete de línea de órdenes en Bash se pueden exportar para convertirse en variables de entorno:
 
 ```
-VARIABLE=content
+VARIABLE=contenido
 export VARIABLE
 
 ```
 
-or with a shortcut
+o con un atajo
 
 ```
-export VARIABLE=content
+export VARIABLE=contenido
 
 ```
 
-Environment variables are conventionally placed in `~/.profile` or `/etc/profile` so that other Bourne-compatible shells can use them.
+Las variables de entorno se colocan convencionalmente en `~/.profile` o `/etc/profile` para que otras intérpretes de línea de órdenes compatibles con Bourne puedan utilizarlas.
 
-See [Environment variables](/index.php/Environment_variables "Environment variables") for more general information.
+Véase [Variables de entorno](/index.php/Environment_variables_(Espa%C3%B1ol) "Environment variables (Español)") para más información en general.
 
-## Command line
+## Línea de órdenes
 
-Bash command line is managed by the separate library called [Readline](/index.php/Readline "Readline"). Readline provides [emacs](/index.php/Emacs "Emacs") and [vi](/index.php/Vi "Vi") styles of shortcuts for interacting with the command line, i.e. moving back and forth on the word basis, deleting words etc. It is also Readline's responsibility to manage [history](/index.php/Readline#History "Readline") of input commands. Last, but not least, it allows you to create [macros](/index.php/Readline#Macros "Readline").
+La línea de órdenes Bash es administrada por la biblioteca separada llamada [Readline](/index.php/Readline "Readline"). Readline proporciona los estilos de accesos directos de [emacs](/index.php/Emacs "Emacs") y [vi](/index.php/Vi "Vi") para interactuar con la línea de órdenes, es decir, moverse hacia adelante y atrás en la base de palabras, eliminar palabras, etc. También es responsabilidad de Readline el administrar [historial](/index.php/Readline#Historial "Readline") de órdenes de entrada. Por último, pero no menos importante, le permite crear [macros](/index.php/Readline#Macros "Readline").
 
-### Tab completion
+### Completar con tabulador
 
-[Tab completion](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion") is the option to auto-complete typed commands by pressing `Tab` (enabled by default).
+[Completar con tabulador](https://en.wikipedia.org/wiki/Command-line_completion "wikipedia:Command-line completion") es la opción para completar automáticamente las órdenes escritas presionando `Tabulador` (habilitada de manera predeterminada).
 
-#### Single-tab
+**Nota:** **(del traductor):** `Tabulador` también es conocido como `Tab`.
 
-It may require up to three tab-presses to show all possible completions for a command. To reduce the needed number of tab-presses, see [Readline#Faster completion](/index.php/Readline#Faster_completion "Readline").
+#### Pulsación única del tabulador
 
-#### Common programs and options
+Puede requerirse hasta tres pulsaciones de tabulador para mostrar todas las terminaciones posibles para una orden. Para reducir el número necesario de pulsaciones de tabulador, véase [Readline#Faster completion](/index.php/Readline#Faster_completion "Readline").
 
-By default, Bash only tab-completes commands, filenames, and variables. The package [bash-completion](https://www.archlinux.org/packages/?name=bash-completion) extends this by adding more specialized tab completions for common commands and their options, which can be enabled by sourcing `/usr/share/bash-completion/bash_completion`. With [bash-completion](https://www.archlinux.org/packages/?name=bash-completion), normal completions (such as `$ ls file.*<tab><tab>`) will behave differently; however, they can be re-enabled with `$ compopt -o bashdefault *program*` (see [[2]](https://bbs.archlinux.org/viewtopic.php?id=128471) and [[3]](https://www.gnu.org/software/bash/manual/html_node/Programmable-Completion-Builtins.html) for more detail).
+#### Órdenes comunes y opciones
 
-#### Customize per-command
+De forma predeterminada, Bash solo completa con tabulador órdenes, nombres de archivo y variables. El paquete [bash-completion](https://www.archlinux.org/packages/?name=bash-completion) lo extiende añadiendo opciones de completado más especializadas para las órdenes comunes y sus opciones, que se pueden habilitar mediante la obtención de `/usr/share/bash-completed/bash_completion`. Con [bash-completion](https://www.archlinux.org/packages/?name=bash-completion), las opciones de completado normales (tales como `$ ls file.*<tab><tab>`) se comportarán de manera distinta; sin embargo, se pueden volver a habilitar con `$ compopt -o bashdefault *programa*` (véase [[2]](https://bbs.archlinux.org/viewtopic.php?id=128471) y [[3]](https://www.gnu.org/software/bash/manual/html_node/Programmable-Completion-Builtins.html) para más detalles).
 
-**Note:** Using the `complete` builtin may cause conflicts with [bash-completion](https://www.archlinux.org/packages/?name=bash-completion).
+#### Personalizar por órdenes
 
-By default Bash only tab-completes file names following a command. You can change it to complete command names using `complete -c`:
+**Nota:** El uso de la orden incorporada `complete` puede causar conflictos con [bash-completion](https://www.archlinux.org/packages/?name=bash-completion).
+
+De forma predeterminada, Bash solo completa los nombres de archivo que siguen a una orden. Puede cambiarlo para completar los nombres de los comandos utilizando `complete -c`:
 
  `~/.bashrc` 
 ```
@@ -121,17 +123,17 @@ complete -c man which
 
 ```
 
-or complete command names and file names with `-cf`:
+o completar los nombres de las órdenes y los nombres de archivos con `-cf`:
 
  `complete -cf sudo` 
 
-See the Bash man page for more completion options.
+Véase la página del manual de Bash para más opciones de completado.
 
-### History
+### Historial
 
-#### History completion
+#### Completado del historial
 
-You can bind the up and down arrow keys to search through Bash's history (see: [Readline#History](/index.php/Readline#History "Readline") and [Readline Init File Syntax](https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html)):
+Puede enlazar las teclas de flecha arriba y abajo para buscar en el historial de Bash (véase: [Readline#History](/index.php/Readline#History "Readline") y [Sintaxis del archivo Init de Readline](https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html)):
 
  `~/.bashrc` 
 ```
@@ -140,7 +142,7 @@ You can bind the up and down arrow keys to search through Bash's history (see: [
 
 ```
 
-or to affect all readline programs:
+o que afecte a todos los programas de readline:
 
  `~/.inputrc` 
 ```
@@ -149,17 +151,17 @@ or to affect all readline programs:
 
 ```
 
-#### Shorter history
+#### Historial más corto
 
-The `HISTCONTROL` variable can prevent certain commands from being logged to the history. For example, to stop logging of repeated identical commands
+La variable `HISTCONTROL` puede evitar que ciertas órdenes se registren en el historial. Por ejemplo, para detener el registro de órdenes idénticas y repetidas
 
  `~/.bashrc`  `export HISTCONTROL=ignoredups` 
 
-or set it to `erasedups` to ensure that Bash's history will only contain one copy of each command (regardless of order). See the Bash man page for more options.
+o configúrelo en `erasedups` para asegurarse de que el historial de Bash solo contenga una copia de cada orden (independientemente de su ordenación). Véase la página del manual de Bash para más opciones.
 
-### Mimic Zsh run-help ability
+### Imitación de la capacidad de ejecutar la ayuda como Zsh
 
-[Zsh](/index.php/Zsh "Zsh") can invoke the manual for the command preceding the cursor by pressing `Alt+h`. A similar behaviour is obtained in Bash using this [Readline](/index.php/Readline "Readline") bind:
+[Zsh](/index.php/Zsh "Zsh") puede invocar el manual para la orden que precede al cursor presionando `Alt+h`. Un comportamiento similar se obtiene en Bash utilizando este enlace [Readline](/index.php/Readline "Readline"):
 
  `~/.bashrc` 
 ```
@@ -167,31 +169,31 @@ bind '"\eh": "\C-a\eb\ed\C-y\e#man \C-y\C-m\C-p\C-p\C-a\C-d\C-e"'
 
 ```
 
-This assumes are you using the (default) Emacs [editing mode](/index.php/Readline#Editing_mode "Readline").
+Esto asume que está utilizando el (predeterminado) [modo de edición](/index.php/Readline#Editing_mode "Readline") Emacs.
 
 ## Alias
 
-[alias](https://en.wikipedia.org/wiki/Alias_(command) is a command, which enables a replacement of a word with another string. It is often used for abbreviating a system command, or for adding default arguments to a regularly used command.
+[alias](https://en.wikipedia.org/wiki/es:Alias_(Unix) es una orden que permite reemplazar una palabra con otra cadena. A menudo se usa para abreviar una orden del sistema o para añadir argumentos predeterminados a una orden que se utiliza regularmente.
 
-Personal aliases are preferably stored in `~/.bashrc`, and system-wide aliases (which affect all users) belong in `/etc/bash.bashrc`. See [[4]](https://gist.github.com/anonymous/a9055e30f97bd19645c2) for example aliases.
+Los alias personales se almacenan preferiblemente en `~/.bashrc`, y los alias de todo el sistema (que afectan a todos los usuarios) pertenecen a `/etc/bash.bashrc`. Véase [[4]](https://gist.github.com/anonymous/a9055e30f97bd19645c2) para obtener ejemplos de alias.
 
-For functions, see [Bash/Functions](/index.php/Bash/Functions "Bash/Functions").
+Para las funciones, véase [Bash/Funciones](/index.php/Bash/Functions_(Espa%C3%B1ol) "Bash/Functions (Español)").
 
-## Tips and tricks
+## Consejos y trucos
 
-### Prompt customization
+### Personalización del indicador
 
-See [Bash/Prompt customization](/index.php/Bash/Prompt_customization "Bash/Prompt customization").
+Véase [Bach/Personalización del indicador](/index.php/Bash/Prompt_customization_(Espa%C3%B1ol) "Bash/Prompt customization (Español)").
 
-### Command not found
+### No se encontró la orden
 
-[pkgfile](/index.php/Pkgfile "Pkgfile") includes a "command not found" hook that will automatically search the official repositories, when entering an unrecognized command.
+[pkgfile](/index.php/Pkgfile "Pkgfile") incluye un *hook* de "No se encontró la orden" que buscará automáticamente en los repositorios oficiales, al ingresar una orden no reconocida.
 
-You need to [source](/index.php/Source "Source") the hook to enable it, for example:
+Necesita [cargar](/index.php/Source_(Espa%C3%B1ol) "Source (Español)") el *hook* para activarlo, por ejemplo:
 
  `~/.bashrc`  `source /usr/share/doc/pkgfile/command-not-found.bash` 
 
-Then attempting to run an unavailable command will show the following info:
+Luego, cuando intente ejecutar una orden que no esté disponible se mostrará la siguiente información:
 
  `$ abiword` 
 ```
@@ -200,9 +202,9 @@ abiword may be found in the following packages:
 
 ```
 
-**Note:** The pkgfile database may need to be updated before this will work. See [pkgfile#Installation](/index.php/Pkgfile#Installation "Pkgfile") for details.
+**Nota:** Es posible que deba actualizarse la base de datos pkgfile antes de que esto funcione. Véase [pkgfile (Español)#Instalación](/index.php/Pkgfile_(Espa%C3%B1ol)#Instalaci.C3.B3n "Pkgfile (Español)") para más detalles.
 
-An alternative "command not found" hook is provided by [command-not-found](https://aur.archlinux.org/packages/command-not-found/), which looks like this:
+Un *hook* alternativo a "No se encontró la orden" lo proporciona [command-not-found](https://aur.archlinux.org/packages/command-not-found/), que se ve así:
 
  `$ abiword` 
 ```
@@ -216,9 +218,9 @@ The command 'abiword' is provided by the following packages:
 
 ```
 
-### Disable Ctrl+z in terminal
+### Desactivar Control+z en el terminal
 
-You can disable the `Ctrl+z` feature (pauses/closes your application) by wrapping your command like this:
+Puede desactivar la función `Control+z` (detiene/cierra su aplicación) envolviendo su orden de la siguiente forma:
 
 ```
 #!/bin/bash
@@ -227,11 +229,11 @@ trap "" 20
 
 ```
 
-Now when you accidentally press `Ctrl+z` in [adom](https://aur.archlinux.org/packages/adom/) instead of `Shift+z` nothing will happen because `Ctrl+z` will be ignored.
+Ahora, cuando presione accidentalmente `Control+z` en [adom](https://aur.archlinux.org/packages/adom/) en lugar de `Mayúsculas+z` no pasará nada porque se ignorará `Control+z`.
 
-### Clear the screen after logging out
+### Borrar la pantalla después de cerrar la sesión
 
-To clear the screen after logging out on a virtual terminal:
+Para borrar la pantalla después de cerrar la sesión en un terminal virtual:
 
  `~/.bash_logout` 
 ```
@@ -240,17 +242,17 @@ reset
 
 ```
 
-### Auto "cd" when entering just a path
+### Auto "cd" al introducir solo una ruta
 
-Bash can automatically prepend `cd` when entering just a path in the shell. For example:
+Bash puede añadir automáticamente `cd` al introducir solo una ruta en el intérprete de línea de órdenes. Por ejemplo:
 
  `$ /etc` 
 ```
-bash: /etc: Is a directory
+bash: /etc: Es un directorio
 
 ```
 
-But after adding one line into `.bashrc` file:
+Pero después de añadir una línea al archivo `.bashrc`:
 
  `~/.bashrc` 
 ```
@@ -260,7 +262,7 @@ shopt -s autocd
 
 ```
 
-You get:
+Obtiene:
 
 ```
 [user@host ~]$ /etc
@@ -271,22 +273,22 @@ cd /etc
 
 ### Autojump
 
-[autojump](https://www.archlinux.org/packages/?name=autojump) allows navigating the file system by searching for strings in a database with the user's most-visited paths.
+[autojump](https://www.archlinux.org/packages/?name=autojump) permite navegar por el sistema de archivos buscando cadenas en una base de datos con las rutas más visitadas del usuario.
 
-After installation, `/etc/profile.d/autojump.bash` must be [sourced](/index.php/Source "Source") in order to start using the application.
+Después de la instalación, `/etc/profile.d/autojump.bash` debe ser [cargado](/index.php/Source_(Espa%C3%B1ol) "Source (Español)") para comenzar a utilizar la aplicación.
 
-### Prevent overwrite of files
+### Impedir la sobreescritura de archivos
 
-For the current session, to disallow existing regular files to be overwritten by redirection of shell output:
+Para la sesión actual, para no permitir que los archivos regulares existentes se sobrescriban mediante la redirección de la salida del intérprete de línea de órdenes:
 
 ```
 $ set -o noclobber
 
 ```
 
-This is identical to `set -C`.
+Esto es idéntico a `set -C`.
 
-To make the changes persistent for your user:
+Para hacer los cambios persistentes para su usuario:
 
  `~/.bashrc` 
 ```
@@ -294,18 +296,18 @@ To make the changes persistent for your user:
 set -o noclobber
 ```
 
-To manually overwrite a file while `noclobber` is set:
+Para sobrescribir manualmente un archivo mientras `noclobber` está establecido:
 
 ```
 $ echo "output" >| file.txt
 
 ```
 
-## Troubleshooting
+## Solución de problemas
 
-### Line wrap on window resize
+### Ajuste de línea al redimensionar la ventana
 
-When resizing a [terminal emulator](/index.php/Terminal_emulator "Terminal emulator"), Bash may not receive the resize signal. This will cause typed text to not wrap correctly and overlap the prompt. The `checkwinsize` shell option checks the window size after each command and, if necessary, updates the values of `LINES` and `COLUMNS`.
+Al redimensionar un [emulador de terminal](/index.php/Terminal_emulator "Terminal emulator"), Bash puede no recibir la señal de redimensionamiento. Esto hará que el texto escrito no se ajuste correctamente y se superponga en el indicador. La opción `checkwinsize` del intérprete de línea de órdenes comprueba el tamaño de la ventana después de cada comando y, si es necesario, actualiza los valores de `LÍNEAS` y `COLUMNAS`.
 
  `~/.bashrc` 
 ```
@@ -313,43 +315,43 @@ shopt -s checkwinsize
 
 ```
 
-### Shell exits even if ignoreeof set
+### Intérprete de línea de órdenes sale incluso si ignoreeof está definido
 
-If you have set the `ignoreeof` option and you find that repeatedly hitting `ctrl-d` causes the shell to exit, it is because this option only allows 10 consecutive invocations of this keybinding (or 10 consecutive EOF characters, to be precise), before exiting the shell.
+Si ha configurado la opción `ignoreeof` y se encuentra que al presionar repetidamente `ctrl-d` hace que se cierre el intérprete de línea de órdenes, es porque esta opción solo permite 10 invocaciones consecutivas de esta combinación de teclas (o 10 caracteres EOF consecutivos, para ser precisos), antes de salir del intérprete de línea de órdenes.
 
-To allow higher values, you have to use the IGNOREEOF variable.
+Para permitir valores más altos, tiene que utilizar la variable IGNOREEOF.
 
-For example:
+Por ejemplo:
 
 ```
 export IGNOREEOF=100
 
 ```
 
-## See also
+## Véase también
 
-*   [Wikipedia:Bash (Unix shell)](https://en.wikipedia.org/wiki/Bash_(Unix_shell) "wikipedia:Bash (Unix shell)")
-*   [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bashref.html), or `/usr/share/doc/bash/bashref.html`
-*   [Readline Init File Syntax](https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html)
-*   [The Bourne-Again Shell](http://www.aosabook.org/en/bash.html) - The third chapter of *The Architecture of Open Source Applications*
-*   [Shellcheck](http://shellcheck.net) - Check bash scripts for common errors (based on [shellcheck](https://github.com/koalaman/shellcheck))
-*   [PS1 generator](http://bashrcgenerator.com/) - generate your .bashrc/PS1 bash prompt with a drag and drop interface
-*   [Even more useful .bashrc commands](https://serverfault.com/questions/3743/what-useful-things-can-one-add-to-ones-bashrc)
+*   [Wikipedia:es:Bash](https://en.wikipedia.org/wiki/es:Bash "wikipedia:es:Bash")
+*   [Manual de referencia de Bash](https://www.gnu.org/software/bash/manual/bashref.html), o `/usr/share/doc/bash/bashref.html`
+*   [Sintaxis del archivo Init de Readline](https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html)
+*   [El intérprete de línea de órdenes Bourne-Again](http://www.aosabook.org/en/bash.html) - El capitulo tercero de *La arquitectura de las aplicaciones de código abierto*
+*   [Shellcheck](http://shellcheck.net) - Compruebe los scripts de bash en busca de errores comunes (basado en [shellcheck](https://github.com/koalaman/shellcheck))
+*   [PS1 generator](http://bashrcgenerator.com/) - genera su indicador de bash en .bashrc/PS1 con una interfaz de arrastrar y soltar
+*   [Órdenes aún más útiles en .bashrc](https://serverfault.com/questions/3743/what-useful-things-can-one-add-to-ones-bashrc)
 
-### Tutorials
+### Tutoriales
 
-*   [Greg's Wiki](https://mywiki.wooledge.org/ "gregswiki:")
+*   [Wiki de Greg](https://mywiki.wooledge.org/ "gregswiki:")
 *   [GregsWiki:BashGuide](https://mywiki.wooledge.org/BashGuide "gregswiki:BashGuide")
 *   [GregsWiki:BashFAQ](https://mywiki.wooledge.org/BashFAQ "gregswiki:BashFAQ")
-*   [Bash Hackers Wiki](http://wiki.bash-hackers.org/doku.php)
-*   [Bash Hackers Wiki: List of Bash online tutorials](http://wiki.bash-hackers.org/scripting/tutoriallist)
+*   [Wiki para Hackers de Bash](http://wiki.bash-hackers.org/doku.php)
+*   [Wiki para Hackers de Bash: Lista de tutoriales en línea de Bash](http://wiki.bash-hackers.org/scripting/tutoriallist)
 *   [Quote Tutorial](http://www.grymoire.com/Unix/Quote.html)
 
-### Community
+### Comunidad
 
-*   [An active and friendly IRC channel for Bash](ircs://chat.freenode.net#bash)
+*   [Un canal de IRC activo y amistoso para Bash](ircs://chat.freenode.net#bash)
 *   [Bashscripts.org](http://bashscripts.org)
 
-### Examples
+### Ejemplos
 
-*   [How to change the title of an xterm](http://tldp.org/HOWTO/Xterm-Title-4.html)
+*   [Cómo cambiar el título de un xterm](http://tldp.org/HOWTO/Xterm-Title-4.html)

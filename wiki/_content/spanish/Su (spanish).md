@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [su](/index.php/Su "Su"), revisada por última vez el **2018-09-29**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Su&diff=0&oldid=539200) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [su](/index.php/Su "Su"), revisada por última vez el **2018-10-20**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Su&diff=0&oldid=548761) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -91,7 +91,7 @@ alias su='su -l'
 
 ### su y wheel
 
-su de BSD permite únicamente a los miembros del [grupo](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)") «wheel» asumir la identidad del superusuario por defecto. Este no es el comportamiento por defecto de su en GNU, pero dicho comportamiento puede ser imitado usando [PAM](/index.php/PAM "PAM"). Descomente la línea apropiada en `/etc/pam.d/su` y `/etc/pam.d/su-l`:
+su de BSD permite únicamente a los miembros del [grupo de usuario](/index.php/User_group_(Espa%C3%B1ol) "User group (Español)") `wheel` asumir la identidad del superusuario por defecto. Este no es el comportamiento por defecto de su en GNU, pero dicho comportamiento puede ser imitado usando [PAM](/index.php/PAM "PAM"). Descomente la línea apropiada en `/etc/pam.d/su` y `/etc/pam.d/su-l`:
 
 ```
 auth required pam_wheel.so use_uid

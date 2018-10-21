@@ -23,7 +23,7 @@ The [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) [ins
 
 `/usr/bin/dumpcap` can only be executed by root and members of the `wireshark` group.
 
-Therefore to use Wireshark as a normal user you just have to add your user to the `wireshark` [group](/index.php/Group "Group"):
+Therefore to use Wireshark as a normal user you just have to add your user to the `wireshark` [user group](/index.php/User_group "User group"):
 
 ```
 # gpasswd -a *username* wireshark

@@ -288,4 +288,4 @@ usb 0x03f0 0x2504
 
 #### Parallel port scanners
 
-All devices attached to a parallel port are assumed to be printers, and are given a `lp` group. Either create a [udev](/index.php/Udev "Udev") rule to mark the relevant parallel port as `libsane_matched`, or add your user to the `lp` [group](/index.php/Group "Group"). CUPS also uses the `lp` group for read-only access to configuration files, so there are potential security implications to adding users to the `lp` group - see [CUPS#Connection Interfaces](/index.php/CUPS#Connection_Interfaces "CUPS") for more information.
+All devices attached to a parallel port are assumed to be printers, and are given a `lp` group. Either create a [udev](/index.php/Udev "Udev") rule to mark the relevant parallel port as `libsane_matched`, or add your user to the `lp` [user group](/index.php/User_group "User group"). CUPS also uses the `lp` group for read-only access to configuration files, so there are potential security implications to adding users to the `lp` group - see [CUPS#Connection Interfaces](/index.php/CUPS#Connection_Interfaces "CUPS") for more information.

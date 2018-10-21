@@ -1,3 +1,8 @@
+Related articles
+
+*   [Puppet Dashboard](/index.php/Puppet_Dashboard "Puppet Dashboard")
+*   [Puppet Server](/index.php/Puppet_Server "Puppet Server")
+
 From [Puppet web site](https://puppetlabs.com/puppet/what-is-puppet/):
 
 	Puppet is IT automation software that helps system administrators manage infrastructure throughout its lifecycle, from provisioning and configuration to patch management and compliance. Using Puppet, you can easily automate repetitive tasks, quickly deploy critical applications, and proactively manage change, scaling from 10s of servers to 1000s, on-premise or in the cloud.

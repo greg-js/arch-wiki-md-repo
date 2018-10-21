@@ -127,7 +127,7 @@ USER_NAME   HOSTNAME=(ALL) ALL
 
 ```
 
-и/или да дозволите члану [group](/index.php/Group "Group") wheel sudo приступ који не захтева шифру:
+и/или да дозволите члану [user group](/index.php/User_group "User group") wheel sudo приступ који не захтева шифру:
 
 ```
 %wheel      ALL=(ALL) NOPASSWD: ALL

@@ -1,3 +1,10 @@
+Related articles
+
+*   [Secure Shell](/index.php/Secure_Shell "Secure Shell")
+*   [One Time PassWord](/index.php/One_Time_PassWord "One Time PassWord")
+*   [Pam abl](/index.php/Pam_abl "Pam abl")
+*   [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator")
+
 This guide shows you how you can enable S/KEY one-time password authentication on your Arch.
 
 **Warning:** Do following actions on secure connection from a secure computer. A chain is as strong as its weakest link.

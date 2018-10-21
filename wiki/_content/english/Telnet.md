@@ -2,7 +2,7 @@
 
 ## Installation
 
-To use the telnet client to connect to other machines, [install](/index.php/Install "Install") [inetutils](https://www.archlinux.org/packages/?name=inetutils).
+The [inetutils](https://www.archlinux.org/packages/?name=inetutils) package, part of the [base group](/index.php/Base_group "Base group"), includes a telnet client.
 
 A telnet server can be configured with [systemd](/index.php/Systemd "Systemd") sockets or xinetd. telnetd via systemd requires only the inetutils package. To configure a telnet server with xinetd, install [xinetd](https://www.archlinux.org/packages/?name=xinetd) as well.
 

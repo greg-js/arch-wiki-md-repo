@@ -22,7 +22,7 @@ From [Wikipedia:TeamSpeak](https://en.wikipedia.org/wiki/TeamSpeak "wikipedia:Te
 
 ### Server
 
-Install the [teamspeak3-server](https://aur.archlinux.org/packages/teamspeak3-server/) package.
+Install the [teamspeak3-server](https://www.archlinux.org/packages/?name=teamspeak3-server) package.
 
 ## Server configuration and startup
 

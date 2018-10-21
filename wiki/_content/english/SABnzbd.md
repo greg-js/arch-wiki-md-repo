@@ -41,9 +41,9 @@ Further configuration can be done from within the UI (adding additional servers,
 
 ### Using systemd
 
-Both [sabnzbd](https://aur.archlinux.org/packages/sabnzbd/) and [sabnzbd-git](https://aur.archlinux.org/packages/sabnzbd-git/) provide the `sabnzbd.service` [systemd](/index.php/Systemd "Systemd") unit, create the [user](/index.php/User "User") and [group](/index.php/Group "Group") `sabnzbd`, and use `/opt/sabnzbd/sabnzbd.ini` for configuration.
+Both [sabnzbd](https://aur.archlinux.org/packages/sabnzbd/) and [sabnzbd-git](https://aur.archlinux.org/packages/sabnzbd-git/) provide the `sabnzbd.service` [systemd](/index.php/Systemd "Systemd") unit, create the [user](/index.php/User "User") and [user group](/index.php/User_group "User group") `sabnzbd`, and use `/opt/sabnzbd/sabnzbd.ini` for configuration.
 
-Add users to the `sabnzbd` [group](/index.php/Group "Group") to allow access to SABnzbd files.
+Add users to the `sabnzbd` [user group](/index.php/User_group "User group") to allow access to SABnzbd files.
 
 ### Starting SABnzbd as user
 

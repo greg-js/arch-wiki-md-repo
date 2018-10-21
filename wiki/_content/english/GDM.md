@@ -386,7 +386,7 @@ auth sufficient pam_succeed_if.so user ingroup nopasswdlogin
 
 ```
 
-Then, add the group `nopasswdlogin` to your system. See [Groups](/index.php/Group "Group") for group descriptions and group management commands.
+Then, add the group `nopasswdlogin` to your system. See [User group](/index.php/User_group "User group") for group descriptions and group management commands.
 
 Now, add your user to the `nopasswdlogin` group and you will only have to click on your username to login.
 

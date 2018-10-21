@@ -1,3 +1,7 @@
+Dle [Wikipedia](https://en.wikipedia.org/wiki/Kodek "wikipedia:Kodek") jde o zařízení nebo počítačový program, který dokáže transformovat datový proud (stream) nebo signál.
+
+Kodeky obecně využívají multimediální aplikace pro kódování nebo dekódování zvukových nebo video streamů. Aby bylo možné přehrávat kódované streamy, musí uživatel zajistit, že je nainstalován vhodný kodek.
+
 ## Contents
 
 *   [1 Kodeky Gstreamer](#Kodeky_Gstreamer)

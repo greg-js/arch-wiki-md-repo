@@ -1832,7 +1832,7 @@ See also [Wikipedia:List of SIP software#Servers](https://en.wikipedia.org/wiki/
 
 *   **[TeamSpeak](/index.php/TeamSpeak "TeamSpeak") Server** — Proprietary VoIP conference server.
 
-	[https://teamspeak.com/](https://teamspeak.com/) || [teamspeak3-server](https://aur.archlinux.org/packages/teamspeak3-server/)
+	[https://teamspeak.com/](https://teamspeak.com/) || [teamspeak3-server](https://www.archlinux.org/packages/?name=teamspeak3-server)
 
 *   **uMurmur** — Minimalistic Mumble server.
 

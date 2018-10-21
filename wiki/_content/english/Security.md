@@ -59,7 +59,7 @@ This article contains recommendations and best practices for [hardening](https:/
     *   [9.5 Proxies](#Proxies)
     *   [9.6 Managing SSL certificates](#Managing_SSL_certificates)
 *   [10 Authenticating packages](#Authenticating_packages)
-*   [11 Follow NVD/CVE alerts](#Follow_NVD.2FCVE_alerts)
+*   [11 Follow vulnerability alerts](#Follow_vulnerability_alerts)
 *   [12 Physical security](#Physical_security)
     *   [12.1 Locking down BIOS](#Locking_down_BIOS)
     *   [12.2 Bootloaders](#Bootloaders)
@@ -512,6 +512,8 @@ SupplementaryGroups=proc
 
 ## Sandboxing applications
 
+See also [Wikipedia:Sandbox (computer security)](https://en.wikipedia.org/wiki/Sandbox_(computer_security) "wikipedia:Sandbox (computer security)").
+
 **Note:** The user namespace configuration item `CONFIG_USER_NS` is currently enabled in [linux](https://www.archlinux.org/packages/?name=linux) (v4.14.5 or later), [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) (v4.14.15 or later) and [linux-hardened](https://www.archlinux.org/packages/?name=linux-hardened). Lack of it may prevent certain sandboxing features from being made available to applications. Unprivileged usage is disabled by default unless the `kernel.unprivileged_userns_clone` [sysctl](/index.php/Sysctl "Sysctl") is set to `1`, since it greatly increases the attack surface for local privilege escalation.
 
 ### Firejail
@@ -589,7 +591,7 @@ To check the blacklisting works as intended, you may re-open your preferred brow
 
 [Attacks on package managers](https://www.cs.arizona.edu/stork/packagemanagersecurity/attacks-on-package-managers.html#overview) are possible without proper use of package signing, and can affect even package managers with [proper signature systems](https://www.cs.arizona.edu/stork/packagemanagersecurity/faq.html). Arch uses package signing by default and relies on a web of trust from 5 trusted master keys. See [Pacman-key](/index.php/Pacman-key "Pacman-key") for details.
 
-## Follow NVD/CVE alerts
+## Follow vulnerability alerts
 
 Subscribe to the Common Vulnerabilities and Exposure (CVE) Security Alert updates, made available by National Vulnerability Database, and found on the [NVD Download webpage](https://nvd.nist.gov/download.cfm). The [Arch Linux Security Tracker](https://security.archlinux.org/) serves as a particularly useful resource in that it combines Arch Linux Security Advisory (ASA), Arch Linux Vulnerability Group (AVG) and CVE data sets in tabular format. See also [Arch Security Team](/index.php/Arch_Security_Team "Arch Security Team").
 

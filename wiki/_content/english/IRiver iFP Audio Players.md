@@ -108,7 +108,7 @@ Put the following into the file `/etc/udev/rules.d/ifpdev.rules`:
 
 ```
 
-And add the user you want to have permissions to the storage [group](/index.php/Group "Group"):
+And add the user you want to have permissions to the `storage` [user group](/index.php/User_group "User group"):
 
 ```
 # gpasswd -a username storage

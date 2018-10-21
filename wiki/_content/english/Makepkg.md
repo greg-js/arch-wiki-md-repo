@@ -39,6 +39,7 @@ Related articles
     *   [4.6 Makepkg fails to download dependencies when behind proxy](#Makepkg_fails_to_download_dependencies_when_behind_proxy)
         *   [4.6.1 Enable proxy by setting its URL in XferCommand](#Enable_proxy_by_setting_its_URL_in_XferCommand)
         *   [4.6.2 Enable proxy via sudoer's env_keep](#Enable_proxy_via_sudoer.27s_env_keep)
+    *   [4.7 Makepkg fails, but make succeeds](#Makepkg_fails.2C_but_make_succeeds)
 *   [5 See also](#See_also)
 
 ## Configuration
@@ -385,6 +386,18 @@ XferCommand = /usr/bin/curl -x http://username:password@proxy.proxyhost.com:80 -
 #### Enable proxy via sudoer's env_keep
 
 Alternatively, one may want to use sudoer's `env_keep` option, which enables preserving given variables the privileged environment. See [Sudo#Environment variables](/index.php/Sudo#Environment_variables "Sudo") for more information.
+
+### Makepkg fails, but make succeeds
+
+If something manually compiles using *make*, but fails through *makepkg*, it's almost certainly because `/etc/makepkg.conf` sets a compilation variable to something reasonable that usually works, but that what you're compiling is incompatible with. Try adding these flags to the PKGBUILD `options` array:
+
+`!buildflags`, to prevent its default `CPPFLAGS`, `CFLAGS`, `CXXFLAGS`, and `LDFLAGS`.
+
+`!makeflags`, to prevent its default `MAKEFLAGS`, in case you've edited `/etc/makepkg.conf` to enable parallel builds.
+
+`!debug`, to prevent its default `DEBUG_CFLAGS`, and `DEBUG_CXXFLAGS`, in case your package is a debug build.
+
+If any of these fix the problem, this could indicate you can report a bug upstream, if you isolate exactly which flag is causing the problem.
 
 ## See also
 

@@ -1,3 +1,8 @@
+Related articles
+
+*   [Puppet](/index.php/Puppet "Puppet")
+*   [Puppet Dashboard](/index.php/Puppet_Dashboard "Puppet Dashboard")
+
 ## Contents
 
 *   [1 Installation](#Installation)

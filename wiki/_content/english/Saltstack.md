@@ -1,8 +1,8 @@
 From [docs.saltstack.com](http://docs.saltstack.com/):
 
-	*Salt is a new approach to infrastructure management. Easy enough to get running in minutes, scalable enough to manage tens of thousands of servers, and fast enough to communicate with them in seconds.*
+	Salt is a new approach to infrastructure management. Easy enough to get running in minutes, scalable enough to manage tens of thousands of servers, and fast enough to communicate with them in seconds.
 
-	*Salt delivers a dynamic communication bus for instrastructures that can be used for orchestration, remote execution, configuration management and much more.*
+	Salt delivers a dynamic communication bus for instrastructures that can be used for orchestration, remote execution, configuration management and much more.
 
 ## Contents
 

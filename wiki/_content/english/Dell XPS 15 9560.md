@@ -26,6 +26,7 @@ This page contains recommendations for running Arch Linux on the Dell XPS 15 956
 *   [2 Power Management](#Power_Management)
     *   [2.1 Suspend and Hibernate](#Suspend_and_Hibernate)
     *   [2.2 Fan and temperature monitoring and control](#Fan_and_temperature_monitoring_and_control)
+    *   [2.3 Sensor kernel module and configuration](#Sensor_kernel_module_and_configuration)
 *   [3 Power Saving](#Power_Saving)
     *   [3.1 Disable discrete GPU](#Disable_discrete_GPU)
         *   [3.1.1 bbswitch method](#bbswitch_method)
@@ -93,6 +94,60 @@ Many of the thermometers can be read with [lm_sensors](/index.php/Lm_sensors "Lm
 Fan speeds can be monitored with `i8kctl` from [i8kutils-git](https://aur.archlinux.org/packages/i8kutils-git/). This laptop is not in the supported list so it is necessary to load the `i8k` kernel module with the `force=1` module option. See [Kernel modules#Setting module options](/index.php/Kernel_modules#Setting_module_options "Kernel modules"). It is also possible to manually control fan speeds (at your own risk) however with manual control only a subset of the possible speeds are available (0rpm, 2500rpm, 4800rpm) instead of (0rpm, 2500rpm, 3200rpm, 3700rpm, 4800rpm, and 5100rpm) in the firmware's automatic control. See [Fan speed control#Disable BIOS fan speed control](/index.php/Fan_speed_control#Disable_BIOS_fan_speed_control "Fan speed control").
 
 The thermometer on the discrete Nvidia GPU can be monitored with the `nvidia-smi` utility, which is part of [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils).
+
+### Sensor kernel module and configuration
+
+One avenue worth investigating is the use of the native kernel module dell-smm-hwmon:
+
+```
+$ modinfo dell-smm-hwmon | grep '^description'
+description:    Dell laptop SMM BIOS hwmon driver
+
+```
+
+If the module won't load, try the passing the option `ignore_dmi=1` when running modprobe:
+
+```
+# modprobe dell-smm-hwmon ignore_dmi=1
+
+```
+
+Upon successfully loading it you should see the following in your kernel logs and/or `dmesg`:
+
+```
+185:[    9.806060] dell_smm_hwmon: not running on a supported Dell system.
+186:[    9.806061] dell_smm_hwmon: vendor=Dell Inc., model=XPS 15 9550, version=x.y.z
+
+```
+
+Now the sensors command should be able to display some useful data:
+
+```
+$ sensors -f 
+dell_smm-virtual-0
+Adapter: Virtual device
+Processor Fan: 2490 RPM
+Video Fan:     2501 RPM
+CPU:           +105.8°F  
+Ambient:       +109.4°F  
+Ambient:       +104.0°F  
+Other:         +104.0°F  
+
+```
+
+You can make these settings permanent by adding the following to `/etc/modprobe.d/dell.conf`:
+
+```
+options dell-smm-hwmon ignore_dmi=1
+
+```
+
+And also by making the the HWMON_MODULES variable appears like so in `/etc/conf.d/lm_sensors`:
+
+```
+HWMON_MODULES="coretemp dell-smm-hwmon"
+
+```
 
 ## Power Saving
 
@@ -300,3 +355,4 @@ The NVidia/nouveau driver may cause any runs of `lspci`, starting an X server, o
 *   [Optimizing Dell XPS](https://www.reddit.com/r/Dell/comments/6s2e3w/optimizing_dell_xps_for_linux/)
 *   [Tutorial about how to change CPU thermal paste on XPS15 to avoid throttling](https://www.ultrabookreview.com/14875-fix-throttling-xps-15/)
 *   [[4]](https://www.displaylink.org/forum/showthread.php?t=65476&page=2)
+*   [Configuring the XPS to play nice with Linux thermal sensors (lm_sensors)](https://www.reddit.com/r/Dell/comments/9pdgid/configuring_the_xps_to_play_nice_with_linux/)

@@ -321,7 +321,7 @@ If your user does not have sufficient privileges to administer CUPS, the applica
 
 The CUPS server configuration is located in `/etc/cups/cupsd.conf` and `/etc/cups/cups-files.conf` (see [cupsd.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cupsd.conf.5) and [cups-files.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cups-files.conf.5)). After editing either file, [restart](/index.php/Restart "Restart") `org.cups.cupsd.service` to apply any changes. The default configuration is sufficient for most users.
 
-[Groups](/index.php/Group "Group") with printer administration privileges are defined in `SystemGroup` in the `/etc/cups/cups-files.conf`. The `sys` group is used by default.
+[User groups](/index.php/User_group "User group") with printer administration privileges are defined in `SystemGroup` in the `/etc/cups/cups-files.conf`. The `sys` group is used by default.
 
 [cups](https://www.archlinux.org/packages/?name=cups) is built with [libpaper](https://www.archlinux.org/packages/?name=libpaper) support and libpaper defaults to the **Letter** paper size. To avoid having to change the paper size for each print queue you add, edit `/etc/papersize` and set your system default paper size. See [papersize(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/papersize.5).
 
@@ -343,7 +343,7 @@ See [CUPS/Printer sharing](/index.php/CUPS/Printer_sharing "CUPS/Printer sharing
 
 **Note:** You may need to install [cups-pk-helper](https://www.archlinux.org/packages/?name=cups-pk-helper) for working this rules.
 
-Here's an example that allows members of the wheel [group](/index.php/Group "Group") to administer printers without a password:
+Here's an example that allows members of the wheel [user group](/index.php/User_group "User group") to administer printers without a password:
 
  `/etc/polkit-1/rules.d/49-allow-passwordless-printer-admin.rules` 
 ```

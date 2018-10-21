@@ -16,14 +16,16 @@ This article explains how to configure a network connection.
     *   [2.1 Check the status](#Check_the_status)
     *   [2.2 Load the module](#Load_the_module)
 *   [3 Network management](#Network_management)
-    *   [3.1 Network interfaces](#Network_interfaces)
-        *   [3.1.1 Listing network interfaces](#Listing_network_interfaces)
-        *   [3.1.2 Enabling and disabling network interfaces](#Enabling_and_disabling_network_interfaces)
-    *   [3.2 Static IP address](#Static_IP_address)
-    *   [3.3 IP addresses](#IP_addresses)
-    *   [3.4 Routing table](#Routing_table)
-    *   [3.5 DHCP](#DHCP)
-    *   [3.6 Network managers](#Network_managers)
+    *   [3.1 net-tools](#net-tools)
+    *   [3.2 iproute2](#iproute2)
+    *   [3.3 Network interfaces](#Network_interfaces)
+        *   [3.3.1 Listing network interfaces](#Listing_network_interfaces)
+        *   [3.3.2 Enabling and disabling network interfaces](#Enabling_and_disabling_network_interfaces)
+    *   [3.4 Static IP address](#Static_IP_address)
+    *   [3.5 IP addresses](#IP_addresses)
+    *   [3.6 Routing table](#Routing_table)
+    *   [3.7 DHCP](#DHCP)
+    *   [3.8 Network managers](#Network_managers)
 *   [4 Set the hostname](#Set_the_hostname)
     *   [4.1 Local hostname resolution](#Local_hostname_resolution)
     *   [4.2 Local network hostname resolution](#Local_network_hostname_resolution)
@@ -136,9 +138,23 @@ To set up a network connection, go through the following steps:
     *   [static IP address](#Static_IP_address)
     *   dynamic IP address: use [DHCP](#DHCP)
 
-Arch Linux has deprecated [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig") in favor of [iproute2](https://en.wikipedia.org/wiki/iproute2 "wikipedia:iproute2") (part of [base](https://www.archlinux.org/groups/x86_64/base/)). *iproute2* provides the [ip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8) command-line interface, used to manage [network interfaces](#Network_interfaces), [IP addresses](#IP_addresses) and the [routing table](#Routing_table). Be aware that configuration made using `ip` will be lost after a reboot. For persistent configuration, you can use a [network manager](/index.php/Network_manager "Network manager") or automate *ip* commands using scripts and [systemd units](/index.php/Systemd#Writing_unit_files "Systemd"). Also note that `ip` commands can generally be abbreviated, for clarity they are however spelled out in this article.
-
 **Note:** The installation image enables [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (`dhcpcd@*interface*.service`) for [wired network devices](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) on boot.
+
+### net-tools
+
+Arch Linux has deprecated [net-tools](https://www.archlinux.org/packages/?name=net-tools) in favor of [iproute2](https://www.archlinux.org/packages/?name=iproute2).[[2]](https://www.archlinux.org/news/deprecation-of-net-tools/)
+
+| Deprecated command | Replacement commands |
+| arp | ip neighbor |
+| [ifconfig](https://en.wikipedia.org/wiki/ifconfig "wikipedia:ifconfig") | ip address, ip link |
+| netstat | [ss](#Investigate_sockets) |
+| route | ip route |
+
+For a more complete rundown, see [this blog post](https://dougvitale.wordpress.com/2011/12/21/deprecated-linux-networking-commands-and-their-replacements/).
+
+### iproute2
+
+[iproute2](https://en.wikipedia.org/wiki/iproute2 "wikipedia:iproute2") is part of the [base group](/index.php/Base_group "Base group") and provides the [ip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8) command-line interface, used to manage [network interfaces](#Network_interfaces), [IP addresses](#IP_addresses) and the [routing table](#Routing_table). Be aware that configuration made using `ip` will be lost after a reboot. For persistent configuration, you can use a [network manager](/index.php/Network_manager "Network manager") or automate *ip* commands using scripts and [systemd units](/index.php/Systemd#Writing_unit_files "Systemd"). Also note that `ip` commands can generally be abbreviated, for clarity they are however spelled out in this article.
 
 ### Network interfaces
 
@@ -269,7 +285,7 @@ A network manager lets you manage network connection settings in so called netwo
 
 **Note:** There are many solutions to choose from, but remember that all of them are mutually exclusive; you should not run two daemons simultaneously.
 
-| Network manager | GUI | [Archiso](/index.php/Archiso "Archiso") [[2]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) | CLI tools | [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol "wikipedia:Point-to-Point Protocol") support
+| Network manager | GUI | [Archiso](/index.php/Archiso "Archiso") [[3]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) | CLI tools | [PPP](https://en.wikipedia.org/wiki/Point-to-Point_Protocol "wikipedia:Point-to-Point Protocol") support
 (e.g. 3G modem) | [DHCP client](#DHCP) | Systemd units |
 | [ConnMan](/index.php/ConnMan "ConnMan") | 8 unofficial | No | [connmanctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connmanctl.1) | Yes | internal | `connman.service` |
 | [netctl](/index.php/Netctl "Netctl") | 2 unofficial | Yes ([base](https://www.archlinux.org/groups/x86_64/base/)) | [netctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.1), wifi-menu | Yes | [dhcpcd](/index.php/Dhcpcd "Dhcpcd") or [dhclient](https://www.archlinux.org/packages/?name=dhclient) | `netctl-ifplugd@*interface*.service`, `netctl-auto@*interface*.service` |
@@ -313,7 +329,7 @@ To set the "pretty" hostname and other machine metadata, see [machine-info(5)](h
 
 The `myhostname` [Name Service Switch](/index.php/Name_Service_Switch "Name Service Switch") (NSS) module of [systemd](/index.php/Systemd "Systemd") provides local hostname resolution without having to edit `/etc/hosts` ([hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5)). It is enabled by default.
 
-Some clients may however still rely on `/etc/hosts`, see [[3]](https://lists.debian.org/debian-devel/2013/07/msg00809.html) [[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=87717#c55) for examples.
+Some clients may however still rely on `/etc/hosts`, see [[4]](https://lists.debian.org/debian-devel/2013/07/msg00809.html) [[5]](https://bugzilla.mozilla.org/show_bug.cgi?id=87717#c55) for examples.
 
 To configure the hosts file, add the following line to `/etc/hosts`:
 
@@ -548,7 +564,7 @@ There are also several relevant threads on the LKML.
 
 ### Explicit Congestion Notification
 
-[Explicit Congestion Notification](https://en.wikipedia.org/wiki/Explicit_Congestion_Notification "wikipedia:Explicit Congestion Notification") (ECN) may cause traffic problems with old/bad routers [[5]](https://bbs.archlinux.org/viewtopic.php?id=239892). As of [systemd 239](https://github.com/systemd/systemd/issues/9748), it is enabled for both ingoing and outgoing traffic.
+[Explicit Congestion Notification](https://en.wikipedia.org/wiki/Explicit_Congestion_Notification "wikipedia:Explicit Congestion Notification") (ECN) may cause traffic problems with old/bad routers [[6]](https://bbs.archlinux.org/viewtopic.php?id=239892). As of [systemd 239](https://github.com/systemd/systemd/issues/9748), it is enabled for both ingoing and outgoing traffic.
 
 To enable ECN only when requested by incoming connections (the reasonably safe, kernel default):
 

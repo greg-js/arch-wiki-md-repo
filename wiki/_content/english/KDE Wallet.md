@@ -17,6 +17,7 @@
 *   The chosen KWallet password must be the same as the current [user](/index.php/User "User") password.
 *   The wallet cannot be unlocked when using autologin.
 *   The wallet must be named `kdewallet` (default name). It does not unlock any other wallet(s).
+*   If using [KDE](/index.php/KDE "KDE"), one may want to disable *Close when last application stops using it* in KDE Wallet settings to prevent the wallet from being closed after each usage ([WiFi](/index.php/WiFi "WiFi")-passphrase unlock, etc.).
 *   It may be needed to remove the default created wallet first, thus removing all stored entries.
 *   If the kwallet Migration Assistant asks for a password after every login, rename or delete the `~/.kde4/share/apps/kwallet` folder.
 

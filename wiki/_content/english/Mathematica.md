@@ -4,7 +4,7 @@ Related articles
 *   [Sage-mathematics](/index.php/Sage-mathematics "Sage-mathematics")
 *   [Matlab](/index.php/Matlab "Matlab")
 
-[Mathematica](http://www.wolfram.com/mathematica/) is a commercial program used in scientific, engineering and mathematical fields. Here we explain how to install it.
+[Mathematica](https://en.wikipedia.org/wiki/Wolfram_Mathematica "wikipedia:Wolfram Mathematica") is a commercial program used in scientific, engineering and mathematical fields. Here we explain how to install it.
 
 ## Contents
 

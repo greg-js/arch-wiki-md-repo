@@ -22,7 +22,7 @@ Este artículo explica algunos métodos para solucionar problemas generales. Par
         *   [2.1.1 Control de flujo](#Control_de_flujo)
         *   [2.1.2 Desplazamiento hacia atrás](#Desplazamiento_hacia_atr.C3.A1s)
         *   [2.1.3 Salida de depuración](#Salida_de_depuraci.C3.B3n)
-    *   [2.2 Shell de recuperación](#Shell_de_recuperaci.C3.B3n)
+    *   [2.2 Intérprete de línea de órdenes de recuperación](#Int.C3.A9rprete_de_l.C3.ADnea_de_.C3.B3rdenes_de_recuperaci.C3.B3n)
     *   [2.3 Pantalla en blanco con una tarjeta gráfica Intel](#Pantalla_en_blanco_con_una_tarjeta_gr.C3.A1fica_Intel)
     *   [2.4 Atascado mientras se carga el kernel](#Atascado_mientras_se_carga_el_kernel)
     *   [2.5 Sistema no arrancable](#Sistema_no_arrancable)
@@ -31,7 +31,7 @@ Este artículo explica algunos métodos para solucionar problemas generales. Par
 *   [3 Kernel panics](#Kernel_panics)
     *   [3.1 Examinar los mensajes de pánico](#Examinar_los_mensajes_de_p.C3.A1nico)
         *   [3.1.1 Escenario de ejemplo: módulo defectuoso](#Escenario_de_ejemplo:_m.C3.B3dulo_defectuoso)
-    *   [3.2 Reiniciar en una shell de superusuario y solucionar el problema](#Reiniciar_en_una_shell_de_superusuario_y_solucionar_el_problema)
+    *   [3.2 Reiniciar en un intérprete de línea de órdenes de superusuario y solucionar el problema](#Reiniciar_en_un_int.C3.A9rprete_de_l.C3.ADnea_de_.C3.B3rdenes_de_superusuario_y_solucionar_el_problema)
 *   [4 Administrar paquetes](#Administrar_paquetes)
 *   [5 fuser](#fuser)
 *   [6 Permisos de sesión](#Permisos_de_sesi.C3.B3n)
@@ -162,15 +162,15 @@ También hay una serie de parámetros de depuración separados para permitir la 
 
 **Nota:** Si no puede desplazarse hacia atrás lo suficiente para ver la salida del arranque deseada, debe aumentar el tamaño del [búfer del desplazamiento hacia atrás](#Desplazamiento_hacia_atr.C3.A1s).
 
-### Shell de recuperación
+### Intérprete de línea de órdenes de recuperación
 
-Obtener un shell interactivo en algún momento del proceso de arranque puede ayudarle a identificar exactamente dónde y por qué está fallando algo. Hay varios parámetros del kernel para hacerlo, pero todos ellos lanzan un shell normal que le permite ejecutar `exit`, lo que posibilita al kernel reanudar lo que estaba haciendo:
+Obtener un intérprete de línea de órdenes interactivo en algún momento del proceso de arranque puede ayudarle a identificar exactamente dónde y por qué está fallando algo. Hay varios parámetros del kernel para hacerlo, pero todos ellos lanzan un intérprete de línea de órdenes normal que le permite ejecutar `exit`, lo que posibilita al kernel reanudar lo que estaba haciendo:
 
-*   `rescue` inicia un shell poco después de que el sistema de archivos raíz se vuelva a leer/escribir
-*   `emergency` inicia un shell incluso más temprano, antes de que se instalen la mayoría de los sistemas de archivos
-*   `init=/bin/sh` (como último recurso) cambia el programa init a un shell de superusuario *(root)*. `rescue` y `emergency` dependen de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), pero esto debería funcionar incluso si *systemd* falla
+*   `rescue` inicia un intérprete de línea de órdenes poco después de que el sistema de archivos raíz se vuelva a leer/escribir
+*   `emergency` inicia un intérprete de línea de órdenes incluso más temprano, antes de que se instalen la mayoría de los sistemas de archivos
+*   `init=/bin/sh` (como último recurso) cambia el programa init a un intérprete de línea de órdenes de superusuario *(root)*. `rescue` y `emergency` dependen de [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)"), pero esto debería funcionar incluso si *systemd* falla
 
-Otra opción es el shell de depuración de systemd que añade un shell de superusuario en `tty9` (accesible con Ctrl+Alt+F9). Se puede habilitar añadiendo `systemd.debug-shell` a los [parámetros del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)"), o [habilitando](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") `debug-shell.service`. Asegúrese de desactivar el servicio cuando lo haya hecho para evitar el riesgo de seguridad por dejar abierto un shell de superusuario en cada arranque.
+Otra opción es el intérprete de línea de órdenes de depuración de systemd que añade un intérprete de línea de órdenes de superusuario en `tty9` (accesible con Ctrl+Alt+F9). Se puede habilitar añadiendo `systemd.debug-shell` a los [parámetros del kernel](/index.php/Kernel_parameters_(Espa%C3%B1ol) "Kernel parameters (Español)"), o [habilitando](/index.php/Systemd_(Espa%C3%B1ol)#Usar_las_unidades "Systemd (Español)") `debug-shell.service`. Asegúrese de desactivar el servicio cuando lo haya hecho para evitar el riesgo de seguridad por dejar abierto un intérprete de línea de órdenes de superusuario en cada arranque.
 
 ### Pantalla en blanco con una tarjeta gráfica Intel
 
@@ -272,16 +272,16 @@ Podemos suponer entonces que el pánico ocurrió durante la rutina de inicializa
 *   Si el módulo se está iniciando durante la ejecución de *initramfs*, reinicie con el parámetro del kernel `rd.blacklist=firewire_core`.
 *   De lo contrario, reinicie con el parámetro del kernel `module_blacklist=firewire_core`.
 
-### Reiniciar en una shell de superusuario y solucionar el problema
+### Reiniciar en un intérprete de línea de órdenes de superusuario y solucionar el problema
 
-Necesitará un shell de superusuario para realizar cambios en el sistema para que no se produzca el pánico. Si se produce un pánico durante el arranque, existen varias estrategias para obtener un shell de superusuario antes de que la máquina se bloquee:
+Necesitará un intérprete de línea de órdenes de superusuario para realizar cambios en el sistema para que no se produzca el pánico. Si se produce un pánico durante el arranque, existen varias estrategias para obtener un intérprete de línea de órdenes de superusuario antes de que la máquina se bloquee:
 
 *   Reinicie con el parámetro del kernel `emergency`, `rd.emergency`, o `-b` para obtener una manera de iniciar sesión justo después de que se monte el sistema de archivos raíz y `systemd` se ha iniciado.
 
 **Nota:** En este punto, el sistema de archivos raíz se montará como **solo lectura**. Ejecute `# mount -o remount,rw /` para poder realizar cambios.
 
 *   Reinicie con el parámetro del kernel `rescue`, `rd.rescue`, `single`, `s`, `S`, o { {ic|1}} para poder iniciar sesión justo después de montar los sistemas de archivos locales.
-*   Reinicie con el parámetro del kernel `systemd.debug-shell=1` para obtener un shell de superusuario al iniciar en tty9\. Cambie a este presionando `Ctrl-Alt-F9`.
+*   Reinicie con el parámetro del kernel `systemd.debug-shell=1` para obtener un intérprete de línea de órdenes de superusuario al iniciar en tty9\. Cambie a este presionando `Ctrl-Alt-F9`.
 *   Experimente reiniciando con diferentes conjuntos de parámetros del kernel para posibilitar la deshabilitación de la función del kernel que está causando el pánico. Pruebe los "viejos recursos" `acpi=off` y `nolapic`.
 
 **Sugerencia:** Véase `Documentation/admin-guide/kernel-parameters.txt` en el código fuente del kernel de Linux para ver todos los parámetros.

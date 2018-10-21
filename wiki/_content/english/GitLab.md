@@ -45,6 +45,7 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
     *   [7.1 HTTPS is not green (gravatar not using https)](#HTTPS_is_not_green_.28gravatar_not_using_https.29)
     *   [7.2 Errors after updating](#Errors_after_updating)
     *   [7.3 Gitlab-Unicorn cannot access non-default repositories directory](#Gitlab-Unicorn_cannot_access_non-default_repositories_directory)
+    *   [7.4 Failed to connect to Gitaly](#Failed_to_connect_to_Gitaly)
 *   [8 See also](#See_also)
 
 ## Installation
@@ -133,7 +134,7 @@ For example, random strings can be generated with the following commands:
 
 In order to provide sufficient performance you will need a cache database. [Install](/index.php/Redis#Installation "Redis") and [configure](/index.php/Redis#Configuration "Redis") a Redis instance, being careful to the section dedicated to listening via a socket.
 
-*   Add the *gitlab* user to the *redis* [group](/index.php/Group "Group").
+*   Add the `gitlab` user to the `redis` [user group](/index.php/User_group "User group").
 
 *   Update the configuration files:
 
@@ -653,6 +654,15 @@ Finally, restart the gitlab services and test your site.
 ### Gitlab-Unicorn cannot access non-default repositories directory
 
 If a custom repository storage directory is set in `/home`, disable the `ProtectHome=true` parameter in the `gitlab-unicorn.service` (see [Systemd#Drop-in files](/index.php/Systemd#Drop-in_files "Systemd") and the [relevant forum thread on gitlab.com](https://forum.gitlab.com/t/cannot-change-repositores-location/9634/2)).
+
+### Failed to connect to Gitaly
+
+Sometimes, the Gitaly service won't get started, leaving GitLab unable to connect to Gitaly. The solution is simple:
+
+```
+# systemctl start gitlab-gitaly
+
+```
 
 ## See also
 

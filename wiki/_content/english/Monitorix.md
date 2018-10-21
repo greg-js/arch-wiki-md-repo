@@ -1,3 +1,9 @@
+Related articles
+
+*   [Anything-sync-daemon](/index.php/Anything-sync-daemon "Anything-sync-daemon")
+*   [lm_sensors](/index.php/Lm_sensors "Lm sensors")
+*   [hddtemp](/index.php/Hddtemp "Hddtemp")
+
 [Monitorix](http://www.monitorix.org/) is an open source, lightweight system monitoring tool designed to monitor as many services and system resources as possible. It has been created to be used under production UNIX/Linux servers, but due to its simplicity and small size many use it on embedded devices as well.
 
 ## Contents

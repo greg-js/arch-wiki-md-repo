@@ -2,7 +2,7 @@ Related articles
 
 *   [Intel C++](/index.php/Intel_C%2B%2B "Intel C++")
 
-[R](https://www.r-project.org/) is a "free software environment for statistical computing and graphics."
+[R](https://en.wikipedia.org/wiki/R_(programming_language) is a "free software environment for statistical computing and graphics."[[1]](https://www.r-project.org/)
 
 ## Contents
 
@@ -302,6 +302,7 @@ local({
 
 ## See also
 
+*   [Official website](https://www.r-project.org/)
 *   [RSeek](http://www.rseek.org/) A Google Custom Search Engine for R related material.
 *   [R for Data Science](http://r4ds.had.co.nz/) Online version of a CCA licensed book written by Garrett Grolemund and Hadley Wickham from RStudio, 2017.
 *   [R-bloggers](https://www.r-bloggers.com/) Aggregation site for (English) blogs related to R.

@@ -1,6 +1,6 @@
 From [the official website](https://www.passwordstore.org/):
 
-	*Password management should be simple and follow Unix philosophy. With pass, each password lives inside of a gpg encrypted file whose filename is the title of the website or resource that requires the password. These encrypted files may be organized into meaningful folder hierarchies, copied from computer to computer, and, in general, manipulated using standard command line file management utilities.*
+	Password management should be simple and follow Unix philosophy. With pass, each password lives inside of a gpg encrypted file whose filename is the title of the website or resource that requires the password. These encrypted files may be organized into meaningful folder hierarchies, copied from computer to computer, and, in general, manipulated using standard command line file management utilities.
 
 pass is a simple password manager for the command line. Pass is a shell script that makes use of existing tools like [GnuPG](/index.php/GnuPG "GnuPG"), [tree](https://www.archlinux.org/packages/?name=tree) and [Git](/index.php/Git "Git").
 

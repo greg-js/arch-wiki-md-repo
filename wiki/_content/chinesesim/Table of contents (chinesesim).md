@@ -9,6 +9,8 @@
 | <small>1.1.2.</small> [Pacman开发](/index.php/Category:Pacman_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Pacman development (简体中文)") <small>(1)</small> |
 | <small>1.2.</small> [Arch projects](/index.php/Category:Arch_projects_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch projects (简体中文)") <small>(1)</small> |
 | <small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:ArchWiki (简体中文)") <small>(6)</small> |
+| <small>1.3.1.</small> [Lists](/index.php/Category:Lists_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Lists (简体中文)") <small>(0)</small> |
+| <small>1.3.1.1.</small> [Lists of software](/index.php/Category:Lists_of_software_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Lists of software (简体中文)") <small>(1)</small> |
 | <small>1.4.</small> [Installation process](/index.php/Category:Installation_process_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Installation process (简体中文)") <small>(18)</small> |
 | <small>1.5.</small> [Live Arch系统](/index.php/Category:Live_Arch_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Live Arch systems (简体中文)") <small>(2)</small> |
 | <small>2.</small> [应用程序](/index.php/Category:Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Applications (简体中文)") <small>(6)</small> |
@@ -36,7 +38,7 @@
 | <small>2.17.</small> [Web applications](/index.php/Category:Web_applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web applications (简体中文)") <small>(0)</small> |
 | <small>2.17.1.</small> [Web admin interfaces](/index.php/Category:Web_admin_interfaces_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Web admin interfaces (简体中文)") <small>(1)</small> |
 | <small>2.18.</small> [Wine](/index.php/Category:Wine_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Wine (简体中文)") <small>(1)</small> |
-| <small>3.</small> [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)") <small>(13)</small> |
+| <small>3.</small> [开发](/index.php/Category:Development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Development (简体中文)") <small>(14)</small> |
 | <small>3.1.</small> [Arch开发](/index.php/Category:Arch_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Arch development (简体中文)") <small>(1) (同时还属于 [关于Arch](/index.php/Category:About_Arch_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:About Arch (简体中文)"))</small> |
 | <small>3.1.1.</small> [软件包开发](/index.php/Category:Package_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Package development (简体中文)") <small>(19)</small> |
 | <small>3.1.2.</small> [Pacman开发](/index.php/Category:Pacman_development_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Pacman development (简体中文)") <small>(1)</small> |

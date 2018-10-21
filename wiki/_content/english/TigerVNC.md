@@ -2,7 +2,7 @@ Related articles
 
 *   [x11vnc](/index.php/X11vnc "X11vnc")
 
-[TigerVNC](http://tigervnc.org/) is an implementation of the [VNC](https://en.wikipedia.org/wiki/VNC "wikipedia:VNC") protocol. This article focuses on the server functionality.
+[TigerVNC](http://tigervnc.org/) is an implementation of the [Virtual Network Computing](https://en.wikipedia.org/wiki/Virtual_Network_Computing "wikipedia:Virtual Network Computing") (VNC) protocol. This article focuses on the server functionality.
 
 ## Contents
 

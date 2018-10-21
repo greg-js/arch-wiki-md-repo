@@ -73,7 +73,7 @@ Add entries to [fstab](/index.php/Fstab "Fstab") to make the bind mount survive 
 
 **Note:** You do not need to create a group, it is possible to use `Match User` instead of `Match Group`.
 
-Create the `sftponly` [group](/index.php/Group "Group"):
+Create the `sftponly` [user group](/index.php/User_group "User group"):
 
 ```
 # groupadd sftponly 

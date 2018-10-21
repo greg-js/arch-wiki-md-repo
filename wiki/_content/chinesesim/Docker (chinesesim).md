@@ -29,11 +29,11 @@ Related articles
 *   [4 移除docker和镜像](#.E7.A7.BB.E9.99.A4docker.E5.92.8C.E9.95.9C.E5.83.8F)
 *   [5 有用的建议](#.E6.9C.89.E7.94.A8.E7.9A.84.E5.BB.BA.E8.AE.AE)
 *   [6 故障排除](#.E6.95.85.E9.9A.9C.E6.8E.92.E9.99.A4)
-    *   [6.1 docker0 Bridge gets no IP / no internet access in containers](#docker0_Bridge_gets_no_IP_.2F_no_internet_access_in_containers)
-    *   [6.2 Default number of allowed processes/threads too low](#Default_number_of_allowed_processes.2Fthreads_too_low)
-    *   [6.3 Error initializing graphdriver: devmapper](#Error_initializing_graphdriver:_devmapper)
-    *   [6.4 Failed to create some/path/to/file: No space left on device](#Failed_to_create_some.2Fpath.2Fto.2Ffile:_No_space_left_on_device)
-*   [7 See also](#See_also)
+    *   [6.1 docker0 网桥无法获取 IP / internet 到容器](#docker0_.E7.BD.91.E6.A1.A5.E6.97.A0.E6.B3.95.E8.8E.B7.E5.8F.96_IP_.2F_internet_.E5.88.B0.E5.AE.B9.E5.99.A8)
+    *   [6.2 默认的允许的进程/线程数太少](#.E9.BB.98.E8.AE.A4.E7.9A.84.E5.85.81.E8.AE.B8.E7.9A.84.E8.BF.9B.E7.A8.8B.2F.E7.BA.BF.E7.A8.8B.E6.95.B0.E5.A4.AA.E5.B0.91)
+    *   [6.3 初始化显卡驱动错误: devmapper](#.E5.88.9D.E5.A7.8B.E5.8C.96.E6.98.BE.E5.8D.A1.E9.A9.B1.E5.8A.A8.E9.94.99.E8.AF.AF:_devmapper)
+    *   [6.4 无法创建到某文件的路径: 设备没有多余的空间了](#.E6.97.A0.E6.B3.95.E5.88.9B.E5.BB.BA.E5.88.B0.E6.9F.90.E6.96.87.E4.BB.B6.E7.9A.84.E8.B7.AF.E5.BE.84:_.E8.AE.BE.E5.A4.87.E6.B2.A1.E6.9C.89.E5.A4.9A.E4.BD.99.E7.9A.84.E7.A9.BA.E9.97.B4.E4.BA.86)
+*   [7 查阅更多](#.E6.9F.A5.E9.98.85.E6.9B.B4.E5.A4.9A)
 
 ## 安装
 
@@ -46,11 +46,11 @@ Related articles
 
 注意到如果你有启用的vpn连接的话开启docker服务可能会失败。这样的话，试下开启docker服务前断开vpn连接。之后你可以自行重连vpn。
 
-如果你想以普通用户身份运行docker的话，添加你自己到 `docker` [group](/index.php/Group "Group").
+如果你想以普通用户身份运行docker的话，添加你自己到 `docker` [user group](/index.php/User_group "User group").
 
-**警告:** 任何加入到 `docker` 组的用户都和root用户等价. 查阅更多信息可访问 [here](https://github.com/docker/docker/issues/9976) 和 [here](https://docs.docker.com/engine/security/security/).
+**警告:** 任何加入到 `docker` 组的用户都和root用户等价. 查阅更多信息可访问 [这里](https://github.com/docker/docker/issues/9976) 和 [这里](https://docs.docker.com/engine/security/security/).
 
-**注意:** 因为 [linux](https://www.archlinux.org/packages/?name=linux) 4.15.0-1 的*vsyscalls*, 这被容器里的特定程序需要 (比如 *apt-get*), 被内核配置默认关闭了. 要重新启用的话, 添加 `vsyscall=emulate`到 [kernel parameter](/index.php/Kernel_parameter "Kernel parameter"). 查阅更多信息到 [FS#57336](https://bugs.archlinux.org/task/57336).
+**注意:** 因为 [linux](https://www.archlinux.org/packages/?name=linux) 4.15.0-1 的*vsyscalls*, 这被容器里的特定程序需要 (比如 *apt-get*), 被内核配置默认关闭了. 要重新启用的话, 添加 `vsyscall=emulate`到 [Kernel parameters (简体中文)](/index.php/Kernel_parameters_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel parameters (简体中文)"). 查阅更多信息到 [FS#57336](https://bugs.archlinux.org/task/57336).
 
 ## 配置
 
@@ -73,7 +73,7 @@ docker存储驱动 (或者是显卡驱动) 对性能有巨大影响. 它的工�
 
 然后, [restart](/index.php/Restart "Restart") docker.
 
-更多的选项信息能在 [user guide](https://docs.docker.com/engine/userguide/storagedriver/selectadriver/)查阅. 更多的 `daemon.json` 选项查阅 [dockerd documentation](https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file).
+更多的选项信息能在 [用户指导](https://docs.docker.com/engine/userguide/storagedriver/selectadriver/)查阅. 更多的 `daemon.json` 选项查阅 [dockerd文献](https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file).
 
 ### 远程 API
 
@@ -132,10 +132,7 @@ Environment="HTTPS_PROXY=192.168.1.1:8080"
 
 #### 容器配置
 
-```
-`docker.service` 文件里的设置并不会进入到容器里. 要实现这样的话必须设置 `ENV` 变量在 `Dockerfile` 里:
-
-```
+在 `docker.service` 文件里的设置并不会进入到容器里. 要实现这样的话必须设置 `ENV` 变量在你的 `Dockerfile` 里:
 
 ```
 FROM base/archlinux
@@ -148,7 +145,7 @@ ENV https_proxy="https://192.168.1.1:3128"
 
 ### 配置 DNS
 
-默认的，docker会让容器里的 `resolv.conf` 和主机里的 `/etc/resolv.conf` 匹配, 并过滤掉本地地址 (e.g. `127.0.0.1`). 如果这产生了一个空文件, 那么 [Google DNS servers](https://developers.google.com/speed/public-dns/) 就会被使用. 如果你用的是 [dnsmasq](/index.php/Dnsmasq "Dnsmasq") 一样的服务来提供域名解析的话, 你可能需要在 `/etc/resolv.conf` 添加入口给docker网络借口让它不被过滤掉.
+默认的，docker会让容器里的 `resolv.conf` 和主机里的 `/etc/resolv.conf` 匹配, 并过滤掉本地地址 (e.g. `127.0.0.1`). 如果这产生了一个空文件, 那么 [Google DNS servers](https://developers.google.com/speed/public-dns/) 就会被使用. 如果你用的是 [dnsmasq (简体中文)](/index.php/Dnsmasq_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dnsmasq (简体中文)") 一样的服务来提供域名解析的话, 你可能需要在 `/etc/resolv.conf` 添加入口给docker网络借口让它不被过滤掉.
 
 ### 在systemd-networkd用手动定义的网络运行Docker
 
@@ -323,13 +320,13 @@ done
 
 ## 故障排除
 
-### docker0 Bridge gets no IP / no internet access in containers
+### docker0 网桥无法获取 IP / internet 到容器
 
-Docker enables IP forwarding by itself, but by default [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") overrides the respective sysctl setting. Set `IPForward=yes` in the network profile. See [Internet sharing#Enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") for details.
+Docker会自己启用IP转发，但是默认 [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") 会覆盖对应的sysctl设置. 在网络配置文件里设置 `IPForward=yes` . 查阅 [Internet sharing#Enable packet forwarding](/index.php/Internet_sharing#Enable_packet_forwarding "Internet sharing") 获取细节.
 
-### Default number of allowed processes/threads too low
+### 默认的允许的进程/线程数太少
 
-If you run into error messages like
+如果你允许时得到下面的错误信息
 
 ```
 # e.g. Java
@@ -339,7 +336,7 @@ fork failed: Resource temporarily unavailable
 
 ```
 
-then you might need to adjust the number of processes allowed by systemd. The default is 500 (see `system.conf`), which is pretty small for running several docker containers. [Edit](/index.php/Edit "Edit") the `docker.service` with the following snippet:
+那么你可能需要调整被systemd允许的进程数. 默认的是 500 (see `system.conf`), 这对需要允许几个容器的话太少了. [Edit](/index.php/Edit "Edit") 并添加下面片段 `docker.service` :
 
  `# systemctl edit docker.service` 
 ```
@@ -347,35 +344,35 @@ then you might need to adjust the number of processes allowed by systemd. The de
 TasksMax=infinity
 ```
 
-### Error initializing graphdriver: devmapper
+### 初始化显卡驱动错误: devmapper
 
-If *systemctl* fails to start docker and provides an error:
+如果 *systemctl* 不能开启docker并提供了以下信息:
 
 ```
 Error starting daemon: error initializing graphdriver: devmapper: Device docker-8:2-915035-pool is not a thin pool
 
 ```
 
-Then, try the following steps to resolve the error. Stop the service, back up `/var/lib/docker/` (if desired), remove the contents of `/var/lib/docker/`, and try to start the service. See the open [GitHub issue](https://github.com/docker/docker/issues/21304) for details.
+那么尝试以下步骤来解决错误。停止docker服务，备份 `/var/lib/docker/` (如果需要的话), 移除`/var/lib/docker/`的内容, 尝试重启docker服务. 查阅 [GitHub issue](https://github.com/docker/docker/issues/21304) 获取更多细节.
 
-### Failed to create some/path/to/file: No space left on device
+### 无法创建到某文件的路径: 设备没有多余的空间了
 
-If you are getting an error message like this:
+如果你获取到的错误信息是像这样的话:
 
 ```
 ERROR: Failed to create some/path/to/file: No space left on device
 
 ```
 
-when building or running a Docker image, even though you do have enough disk space available, make sure:
+当创建或者运行Docker镜像时，尽管磁盘还有多余的空间。所以请确保:
 
-*   [Tmpfs](/index.php/Tmpfs "Tmpfs") is disabled or has enough memory allocation. Docker might be trying to write files into `/tmp` but fails due to restrictions in memory usage and not disk space.
-*   If you are using [XFS](/index.php/XFS "XFS"), you might want to remove the `noquota` mount option from the relevant entries in `/etc/fstab` (usually where `/tmp` and/or `/var/lib/docker` reside). Refer to [Disk quota](/index.php/Disk_quota "Disk quota") for more information, especially if you plan on using and resizing `overlay2` Docker storage driver.
-*   XFS quota mount options (`uquota`, `gquota`, `prjquota`, etc.) fail during re-mount of the file system. To enable quota for root file system, the mount option must be passed to initramfs as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") `rootflags=`. Subsequently, it should not be listed among mount options in `/etc/fstab` for the root (`/`) filesystem.
+*   [Tmpfs](/index.php/Tmpfs "Tmpfs") 被禁用了并且有足够的内存分配. Docker可能会尝试写入文件到 `/tmp` 但是失败了因为内存使用的限制和磁盘空间不足.
+*   如果你在使用 [XFS (简体中文)](/index.php/XFS_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "XFS (简体中文)"), 你可能得从相关入口移除 `noquota` 挂载选项在 `/etc/fstab`里 (通常是 `/tmp` 和/或 `/var/lib/docker` 在的地方). 查阅 [Disk quota](/index.php/Disk_quota "Disk quota") 获取更多信息, 特别是你计划使用和调整 `overlay2` Docker 存储驱动.
+*   XFS 的配额挂载选项在文件系统重新挂载时 (`uquota`, `gquota`, `prjquota`, 等等.) 失败了. 为了为root文件系统启用配额挂载选项必须作为 [Kernel parameters (简体中文)](/index.php/Kernel_parameters_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Kernel parameters (简体中文)") `rootflags=`传递到initramfs. 之后, 它就不应该在 `/etc/fstab`中的挂载选项中列出root (`/`) 文件系统.
 
-**Note:** There are some differences of XFS Quota compared to standard Linux [Disk quota](/index.php/Disk_quota "Disk quota"), [[1]](http://inai.de/linux/adm_quota) may be worth reading.
+**注意:** XFS配额和标准Linux[Disk quota](/index.php/Disk_quota "Disk quota"), [[1]](http://inai.de/linux/adm_quota) 是有区别的。这里值得一读.
 
-## See also
+## 查阅更多
 
 *   [Official website](https://www.docker.com)
 *   [Arch Linux on docs.docker.com](https://docs.docker.com/engine/installation/linux/archlinux/)

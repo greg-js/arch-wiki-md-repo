@@ -867,10 +867,10 @@ See [dm-crypt/System configuration#mkinitcpio](/index.php/Dm-crypt/System_config
 
 ### Configuring the boot loader
 
-In order to boot the encrypted root partition, the following kernel parameters need to be set by the boot loader:
+In order to boot the encrypted root partition, the following kernel parameters need to be set by the boot loader (note that 64 is the number of bytes in 512 bits):
 
 ```
-cryptdevice=/dev/disk/by-id/*disk-ID-of-sda*:cryptlvm cryptkey=/dev/disk/by-id/*disk-ID-of-sdc*:0:512 crypto=:twofish-xts-plain64:512:0:
+cryptdevice=/dev/disk/by-id/*disk-ID-of-sda*:cryptlvm cryptkey=/dev/disk/by-id/*disk-ID-of-sdc*:0:64 crypto=:twofish-xts-plain64:512:0:
 
 ```
 

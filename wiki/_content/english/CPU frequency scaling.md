@@ -262,7 +262,7 @@ ResultActive=yes
 
 Where the word *user* is replaced with the username of interest.
 
-The [desktop-privileges](https://aur.archlinux.org/packages/desktop-privileges/) package in the [AUR](/index.php/AUR "AUR") contains a similar `.pkla` file for authorizing all users of the `power` [group](/index.php/Group "Group") to change the governor.
+The [desktop-privileges](https://aur.archlinux.org/packages/desktop-privileges/) package in the [AUR](/index.php/AUR "AUR") contains a similar `.pkla` file for authorizing all users of the `power` [user group](/index.php/User_group "User group") to change the governor.
 
 ## Troubleshooting
 

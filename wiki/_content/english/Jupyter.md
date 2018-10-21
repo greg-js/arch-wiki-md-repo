@@ -1,4 +1,4 @@
-[Jupyter](http://jupyter.org/) is a project which produces browser-based interactive environments for programming, mathematics, and data science. It supports a number of languages via plugins ("kernels"), such as Python, Ruby, Haskell, R, Scala and Julia.
+[Jupyter](https://en.wikipedia.org/wiki/Project_Jupyter "wikipedia:Project Jupyter") is a project which produces browser-based interactive environments for programming, mathematics, and data science. It supports a number of languages via plugins ("kernels"), such as Python, Ruby, Haskell, R, Scala and Julia.
 
 Jupyter Notebook is the traditional and most stable application. [JupyterLab](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) has a new interface and is more suitable for working with larger projects consisting of multiple files. JupyterLab is considered "ready for daily use" since [version 0.33](https://github.com/jupyterlab/jupyterlab/blob/master/CHANGELOG.md#v0330).
 
@@ -13,6 +13,7 @@ Jupyter Notebook is the traditional and most stable application. [JupyterLab](ht
     *   [3.4 R](#R)
     *   [3.5 Sage math](#Sage_math)
     *   [3.6 Octave](#Octave)
+*   [4 See also](#See_also)
 
 ## Installation
 
@@ -77,3 +78,7 @@ Install the [sagemath-jupyter](https://www.archlinux.org/packages/?name=sagemath
 ### Octave
 
 Install the [jupyter-octave_kernel](https://aur.archlinux.org/packages/jupyter-octave_kernel/) package.
+
+## See also
+
+*   [Official website](http://jupyter.org/)

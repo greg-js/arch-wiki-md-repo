@@ -3,22 +3,35 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
-    *   [2.1 Lynx like navigation](#Lynx_like_navigation)
-*   [3 Usage](#Usage)
-*   [4 Last.fm scrobbling](#Last.fm_scrobbling)
-    *   [4.1 mocp-scrobbler](#mocp-scrobbler)
-*   [5 Front-ends](#Front-ends)
-*   [6 systemd service file](#systemd_service_file)
-*   [7 Troubleshooting](#Troubleshooting)
-    *   [7.1 MOC fails to start](#MOC_fails_to_start)
-    *   [7.2 Strange characters](#Strange_characters)
-    *   [7.3 FATAL_ERROR: Layout1 is malformed](#FATAL_ERROR:_Layout1_is_malformed)
-*   [8 See also](#See_also)
+*   [2 Front-ends](#Front-ends)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Lynx like navigation](#Lynx_like_navigation)
+    *   [3.2 systemd service file](#systemd_service_file)
+*   [4 Usage](#Usage)
+*   [5 Scrobbling](#Scrobbling)
+*   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 MOC fails to start](#MOC_fails_to_start)
+    *   [6.2 Strange characters](#Strange_characters)
+    *   [6.3 FATAL_ERROR: Layout1 is malformed](#FATAL_ERROR:_Layout1_is_malformed)
+*   [7 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [moc](https://www.archlinux.org/packages/?name=moc) package. The latest development version is available as [moc-svn](https://aur.archlinux.org/packages/moc-svn/). For [PulseAudio](/index.php/PulseAudio "PulseAudio") support install [moc-pulse](https://aur.archlinux.org/packages/moc-pulse/) or [moc-pulse-svn](https://aur.archlinux.org/packages/moc-pulse-svn/) for the development version.
+
+## Front-ends
+
+*   **mocicon** — GTK panel applet to control MOC
+
+	[http://mocicon.sourceforge.net/](http://mocicon.sourceforge.net/) || [mocicon](https://aur.archlinux.org/packages/mocicon/)
+
+*   **moc-tray** — Quick and easy access to mocp basic functions
+
+	[https://code.google.com/p/moc-tray/](https://code.google.com/p/moc-tray/) || [moc-tray](https://www.archlinux.org/packages/?name=moc-tray)
+
+*   **eXo** — Qt frontend to MOC, supports scrobbling
+
+	[https://bitbucket.org/blaze/exo/](https://bitbucket.org/blaze/exo/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 ## Configuration
 
@@ -49,6 +62,29 @@ go_up = U LEFT
 
 ```
 
+### systemd service file
+
+[Enable](/index.php/Enable "Enable") this service for the respective user:
+
+ `/etc/systemd/system/moc@.service` 
+```
+[Unit]
+Description=MOC server
+ConditionPathExists=/usr/bin/mocp
+After=network.target sound.target
+
+[Service]
+RemainAfterExit=yes
+User=%I
+ExecStart=/usr/bin/mocp -S
+ExecStop=/usr/bin/mocp -x
+WorkingDirectory=/home/%I/
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
 ## Usage
 
 Run *mocp* to start the server and interface. Some useful default shortcuts (press `h` for more):
@@ -75,11 +111,11 @@ Run *mocp* to start the server and interface. Some useful default shortcuts (pre
 
 To shut down the server, press `Shift+q` or run the `mocp -x` command.
 
-## Last.fm scrobbling
+## Scrobbling
 
-### mocp-scrobbler
+[mocp-scrobbler](https://aur.archlinux.org/packages/mocp-scrobbler/) is a Last.fm (and Libre.fm) scrobbler for MOC with support for now-playing notifications, daemonization and cache. It only depends on [Python](/index.php/Python "Python") 3.
 
-[mocp-scrobbler](https://aur.archlinux.org/packages/mocp-scrobbler/) is a Last.fm/Libre.fm scrobbler for MOC with support for now-playing notifications, daemonization and cache. It only depends on [Python](/index.php/Python "Python") 3.
+**Note:** To use Libre.fm instead of Last.fm change `hostname` from `post.audioscrobbler.com` to `turtle.libre.fm`.
 
 Copy the example file to your user config directory:
 
@@ -99,45 +135,6 @@ alias mocp='/usr/bin/mocp-scrobbler.py -d; mocp'
 ```
 
 In January of 2016 last.fm updated their password requirements, with all new and updated passwords requiring the inclusion of one of the following characters `!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~`, or a space. This is known to cause an authentication error with mocpscrob configurations which specify passwords not conforming to these new specifications. Changing one's password and updating the `~/.mocpscrob/config` password accordingly resolves this issue.
-
-If you want to use Libre.fm instead of Last.fm it is important to change `hostname` from `post.audioscrobbler.com` to `turtle.libre.fm`.
-
-## Front-ends
-
-*   **mocicon** — GTK panel applet to control MOC
-
-	[http://mocicon.sourceforge.net/](http://mocicon.sourceforge.net/) || [mocicon](https://aur.archlinux.org/packages/mocicon/)
-
-*   **moc-tray** — Quick and easy access to mocp basic functions
-
-	[https://code.google.com/p/moc-tray/](https://code.google.com/p/moc-tray/) || [moc-tray](https://www.archlinux.org/packages/?name=moc-tray)
-
-*   **eXo** — Qt frontend to MOC, supports scrobbling
-
-	[https://bitbucket.org/blaze/exo/](https://bitbucket.org/blaze/exo/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
-
-## systemd service file
-
- `/etc/systemd/system/moc@.service` 
-```
-[Unit]
-Description=MOC server
-ConditionPathExists=/usr/bin/mocp
-After=network.target sound.target
-
-[Service]
-RemainAfterExit=yes
-User=%I
-ExecStart=/usr/bin/mocp -S
-ExecStop=/usr/bin/mocp -x
-WorkingDirectory=/home/%I/
-
-[Install]
-WantedBy=multi-user.target
-
-```
-
-[Enable](/index.php/Enable "Enable") this service for the respective user.
 
 ## Troubleshooting
 

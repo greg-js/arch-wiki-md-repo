@@ -266,7 +266,7 @@ nvram = [
 
 使用 `virt-manager` 配置虚拟机的大部分过程都无需指导，只要按照屏幕上的提示即可。
 
-如果使用`virt-manager`，则必须将用户添加到libvirt[组](/index.php/Group "Group")。
+如果使用`virt-manager`，则必须将用户添加到libvirt[组](/index.php/User_group "User group")。
 
 但是，您仍应该特别注意如下步骤：
 
@@ -1177,7 +1177,7 @@ user="*user*"
 
 ```
 
-如果仍然不能工作，确保你的用户已经加入了kvm和libvirt[组](/index.php/Group "Group")。
+如果仍然不能工作，确保你的用户已经加入了kvm和libvirt[组](/index.php/User_group "User group")。
 
 ### 虚拟机关闭之后宿主机核心无响应
 

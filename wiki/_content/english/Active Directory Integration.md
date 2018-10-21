@@ -6,7 +6,7 @@ Related articles
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Active_Directory "w:Active Directory"):
 
-	*Active Directory (AD) is a [directory service](https://en.wikipedia.org/wiki/directory_service "wikipedia:directory service") that Microsoft developed for [Windows domain](https://en.wikipedia.org/wiki/Windows_domain "wikipedia:Windows domain") networks.*
+	Active Directory (AD) is a [directory service](https://en.wikipedia.org/wiki/directory_service "wikipedia:directory service") that Microsoft developed for [Windows domain](https://en.wikipedia.org/wiki/Windows_domain "wikipedia:Windows domain") networks.
 
 This article describes how to integrate an Arch Linux system with an existing Windows domain network using [Samba](/index.php/Samba "Samba").
 

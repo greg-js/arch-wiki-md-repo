@@ -244,7 +244,7 @@ Open the address where you have installed Nextcloud in a web browser (e.g., [htt
 
 To webserver read/write access to the *apps* directory (e.g. on "Cannot write into "apps" directory"), setup the correct permissions:
 
-**Note:** Replace `http` when using a different [user](/index.php/User "User")/[group](/index.php/Group "Group") for the webserver.
+**Note:** Replace `http` when using a different [user](/index.php/User "User")/[user group](/index.php/User_group "User group") for the webserver.
 
 ```
 # mkdir -p /usr/share/webapps/nextcloud/data

@@ -57,14 +57,14 @@ unixsocket /run/redis/redis.sock
 
 ```
 
-*   Set permission to the socket to all members of the *redis* [group](/index.php/Group "Group"):
+*   Set permission to the socket to all members of the `redis` [user group](/index.php/User_group "User group"):
 
 ```
 unixsocketperm 770
 
 ```
 
-*   Add users (e.g. *git*, *http*) to the *redis* [group](/index.php/Group "Group") so they can access and use the socket.
+*   Add users (e.g. *git*, *http*) to the `redis` [user group](/index.php/User_group "User group") so they can access and use the socket.
 
 Finally [restart](/index.php/Restart "Restart") the `redis.service`.
 

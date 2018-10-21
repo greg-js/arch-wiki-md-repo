@@ -94,4 +94,4 @@ Kmscon 通过默认的字体引擎 [pango](https://www.archlinux.org/packages/?n
 
 ```
 
-*   在版本 7 中，如果你不能控制声音，把你的用户添加到 **audio** [组](/index.php/Group "Group") 中。不过要注意这么做的缺点。（ [shortcomings](/index.php/Alsa#Installation "Alsa") ）
+*   在版本 7 中，如果你不能控制声音，把你的用户添加到 **audio** [组](/index.php/User_group "User group") 中。不过要注意这么做的缺点。（ [shortcomings](/index.php/Alsa#Installation "Alsa") ）

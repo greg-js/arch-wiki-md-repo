@@ -2140,7 +2140,7 @@ See also [Wikipedia:List of SIP software#Servers](https://en.wikipedia.org/wiki/
 
 *   **[TeamSpeak](/index.php/TeamSpeak "TeamSpeak") Server** — Proprietary VoIP conference server.
 
-	[https://teamspeak.com/](https://teamspeak.com/) || [teamspeak3-server](https://aur.archlinux.org/packages/teamspeak3-server/)
+	[https://teamspeak.com/](https://teamspeak.com/) || [teamspeak3-server](https://www.archlinux.org/packages/?name=teamspeak3-server)
 
 *   **uMurmur** — Minimalistic Mumble server.
 
@@ -4860,7 +4860,7 @@ For managing *pacnew*/*pacsave* files, specialised tools exist. See [Pacnew and 
 
 *   **[Kompare](https://en.wikipedia.org/wiki/Kompare "wikipedia:Kompare")** — GUI front-end program for viewing and merging differences between source files. It supports a variety of diff formats and provides many options to customize the information level displayed.
 
-	[http://www.caffeinated.me.uk/kompare/](http://www.caffeinated.me.uk/kompare/) || [kompare](https://www.archlinux.org/packages/?name=kompare)
+	[https://www.kde.org/applications/development/kompare/](https://www.kde.org/applications/development/kompare/) || [kompare](https://www.archlinux.org/packages/?name=kompare)
 
 *   **[Meld](https://en.wikipedia.org/wiki/Meld_(software) "wikipedia:Meld (software)")** — Visual diff and merge tool that can compare files, directories, and version controlled projects.
 
@@ -8140,7 +8140,7 @@ See also [Wikipedia:Comparison of numerical analysis software](https://en.wikipe
 
 *   **[Scilab](https://en.wikipedia.org/wiki/Scilab "wikipedia:Scilab")** — Matlab alternative used for numerical computations. Its syntax is not equivalent to that of Matlab, but it can be easily converted.
 
-	[http://www.scilab.org/](http://www.scilab.org/) || [scilab](https://aur.archlinux.org/packages/scilab/)
+	[http://www.scilab.org/](http://www.scilab.org/) || [scilab](https://aur.archlinux.org/packages/scilab/), [scilab-bin](https://aur.archlinux.org/packages/scilab-bin/), [scilab-git](https://aur.archlinux.org/packages/scilab-git/)
 
 #### Statistics
 

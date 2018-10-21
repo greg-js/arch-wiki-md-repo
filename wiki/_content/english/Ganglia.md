@@ -1,4 +1,4 @@
-Ganglia is a scalable distributed system monitor tool for high-performance computing systems such as clusters and grids. It allows the user to remotely view live or historical statistics (such as CPU load averages or network utilization) for all machines that are being monitored.
+[Ganglia](http://ganglia.sourceforge.net/) is a scalable distributed system monitor tool for high-performance computing systems such as clusters and grids. It allows the user to remotely view live or historical statistics (such as CPU load averages or network utilization) for all machines that are being monitored.
 
 Ganglia is available as the [ganglia](https://aur.archlinux.org/packages/ganglia/) package on the [AUR](/index.php/AUR "AUR"), along with the web frontend [ganglia-web](https://aur.archlinux.org/packages/ganglia-web/). There is also a reduced-dependency version named [ganglia-minimal](https://aur.archlinux.org/packages/ganglia-minimal/), which would be appropriate on boxes where you don't require `gmetad` and want to avoid pulling in `rrdtool` as a dependency, which would in turn pull in Cairo and Mesa.
 

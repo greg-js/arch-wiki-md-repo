@@ -358,6 +358,7 @@ No special syntax is used; flags are defined as if they were written in a termin
 
 Below is an example `chromium-flags.conf` file that defines the flags `--start-maximized --incognito`:
 
+ `~/.config/chromium-flags.conf` 
 ```
 # This line will be ignored.
 --start-maximized

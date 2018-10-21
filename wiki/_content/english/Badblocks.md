@@ -25,7 +25,7 @@ This can be done in a destructive write-mode that effectively [wipes](/index.php
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) package. See [badblocks(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/badblocks.8) for the usage.
+The [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) package is part of the [base group](/index.php/Base_group "Base group"). See [badblocks(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/badblocks.8) for the usage.
 
 ## Storage device fidelity
 

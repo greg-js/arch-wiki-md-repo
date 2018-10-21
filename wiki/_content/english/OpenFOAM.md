@@ -1,6 +1,6 @@
-The OpenFOAM® (Open Field Operation and Manipulation) CFD Toolbox is a free, open source CFD software package produced by OpenCFD Ltd. It has a large user base across most areas of engineering and science, from both commercial and academic organisations. OpenFOAM has an extensive range of features to solve anything from complex fluid flows involving chemical reactions, turbulence and heat transfer, to solid dynamics and electromagnetics. It includes tools for meshing, notably snappyHexMesh, a parallelised mesher for complex CAD geometries, and for pre- and post-processing. Almost everything (including meshing, and pre- and post-processing) runs in parallel as standard, enabling users to take full advantage of computer hardware at their disposal.
+According to [Wikipedia](https://en.wikipedia.org/wiki/OpenFOAM "wikipedia:OpenFOAM"):
 
-For more information on OpenFOAM and the OpenFOAM Foundation, please see [http://www.openfoam.com](http://www.openfoam.com) and [http://www.openfoam.org](http://www.openfoam.org) respectively.
+	OpenFOAM (for "Open source Field Operation And Manipulation") is a [C++](/index.php/C%2B%2B "C++") toolbox for the development of customized [numerical solvers](https://en.wikipedia.org/wiki/numerical_analysis "wikipedia:numerical analysis"), and pre-/post-processing utilities for the solution of [continuum mechanics](https://en.wikipedia.org/wiki/continuum_mechanics "wikipedia:continuum mechanics") problems, including [computational fluid dynamics](https://en.wikipedia.org/wiki/computational_fluid_dynamics "wikipedia:computational fluid dynamics") (CFD).
 
 ## Contents
 
@@ -13,6 +13,7 @@ For more information on OpenFOAM and the OpenFOAM Foundation, please see [http:/
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 zsh](#zsh)
     *   [3.2 Paraview not installed](#Paraview_not_installed)
+*   [4 See also](#See_also)
 
 ## Basic installation
 
@@ -70,3 +71,7 @@ This happens because the dependencies are installed as separate packages, and no
 
 *   Add `alias paraFoam='paraFoam -builtin'` to your `/opt/OpenFOAM/Open-FOAM-X.X/etc/bashrc`.
 *   For each project, `touch `echo "${PWD##*/}"`.foam` and then open the touched file from paraview.
+
+## See also
+
+*   [Official website](https://openfoam.org/)

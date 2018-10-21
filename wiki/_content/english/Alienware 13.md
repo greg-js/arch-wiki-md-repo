@@ -14,6 +14,7 @@ See the [Installation guide](/index.php/Installation_guide "Installation guide")
 *   [8 OLED screen doesn't light up after resume](#OLED_screen_doesn.27t_light_up_after_resume)
 *   [9 Switching Windows from RAID to AHCI mode](#Switching_Windows_from_RAID_to_AHCI_mode)
 *   [10 HDMI/Mini-DP audio](#HDMI.2FMini-DP_audio)
+*   [11 R1 freezes on suspend/hibernate](#R1_freezes_on_suspend.2Fhibernate)
 
 ## Getting Linux to boot
 
@@ -232,3 +233,29 @@ Source: [[1]](https://triplescomputers.com/blog/uncategorized/solution-switch-wi
 ## HDMI/Mini-DP audio
 
 The HDMI and the mini-DP are connected to the nvidia card, which means that in order for them to play audio you need to route it through the sound card attached to the nvidia device. However by default the GPU has its audio disabled for whatever reason. To enable it follow [NVIDIA/Troubleshooting#No audio over HDMI](/index.php/NVIDIA/Troubleshooting#No_audio_over_HDMI "NVIDIA/Troubleshooting")
+
+## R1 freezes on suspend/hibernate
+
+Due to firmware crashes with the ath10 wifi driver on R1 you may encounter system freezes upon suspend/hibernate. A workaround would be to unload the ath10 module before going down and load it back upon wake up. Put this in /usr/lib/systemd/system-sleep/suspend.sh and make it executable:
+
+```
+#!/bin/bash
+if [ "${1}" == "pre" ]; then
+   rmmod ath10k_pci ath10k_core
+   sleep 1
+elif [ "${1}" == "post" ]; then
+   modprobe ath10k_pci
+fi
+
+```
+
+Don't forget to
+
+```
+systemctl daemon reload
+
+```
+
+after that.
+
+Note that the nouveau driver also can be the source of problems with suspend, so if the above doesn't help, try to either blacklist it or install the non-free nvidia driver to replace it.

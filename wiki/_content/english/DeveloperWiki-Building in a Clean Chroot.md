@@ -62,7 +62,7 @@ $ CHROOT=$HOME/chroot
 Now create the chroot (the sub directory `root` is required because the `$CHROOT` directory will get other sub directories for clean working copies):
 
 ```
-# mkarchroot $CHROOT/root base-devel
+$ mkarchroot $CHROOT/root base-devel
 
 ```
 
@@ -79,7 +79,7 @@ Edit `~/.makepkg.conf` to set the packager name and any makeflags. Also adjust t
 Alternatively, provide a custom `pacman.conf` and `makepkg.conf` with the following:
 
 ```
-# mkarchroot -C <pacman.conf> -M <makepkg.conf> $CHROOT/root base-devel
+$ mkarchroot -C <pacman.conf> -M <makepkg.conf> $CHROOT/root base-devel
 
 ```
 
@@ -90,7 +90,7 @@ Alternatively, provide a custom `pacman.conf` and `makepkg.conf` with the follow
 Firstly, make sure the base chroot is up to date with:
 
 ```
-# arch-nspawn $CHROOT/root pacman -Syu
+$ arch-nspawn $CHROOT/root pacman -Syu
 
 ```
 
@@ -108,7 +108,7 @@ Passing the `-c` flag to `makechrootpkg` ensures that the working chroot is clea
 Packages can be installed manually to the working chroot by using:
 
 ```
-# makechrootpkg -r $CHROOT -I package-1.0-1-x86_64.pkg.tar.xz
+$ makechrootpkg -r $CHROOT -I package-1.0-1-x86_64.pkg.tar.xz
 
 ```
 
@@ -119,7 +119,7 @@ If done from a directory that contains a PKGBUILD, the package will then be buil
 Tell makechrootpkg to simply install a package to the working chroot after building by passing the -i arg. Arguments passed after the end-of-options marker `--` get passed to makepkg, so this calls `makepkg` with the `-i` arg.
 
 ```
-# makechrootpkg -r $CHROOT -- -i
+$ makechrootpkg -r $CHROOT -- -i
 
 ```
 

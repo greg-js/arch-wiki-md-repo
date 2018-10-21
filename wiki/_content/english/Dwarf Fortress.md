@@ -8,9 +8,10 @@ The game is played with keyboard only, though there exist [mods](http://dwarffor
 *   [2 Troubleshooting](#Troubleshooting)
 *   [3 Tools](#Tools)
     *   [3.1 Dwarf Therapist](#Dwarf_Therapist)
-    *   [3.2 SoundSense](#SoundSense)
-    *   [3.3 quickfort](#quickfort)
-    *   [3.4 StoneSense](#StoneSense)
+    *   [3.2 Manipulator](#Manipulator)
+    *   [3.3 SoundSense](#SoundSense)
+    *   [3.4 quickfort](#quickfort)
+    *   [3.5 StoneSense](#StoneSense)
 
 ## Installation
 
@@ -23,7 +24,7 @@ Alternatively there are some [AUR](/index.php/AUR "AUR") packages coming with bi
 *   [dwarffortress-phoebus](https://aur.archlinux.org/packages/dwarffortress-phoebus/) (requires enabling the [multilib](/index.php/Multilib "Multilib") repository)
 *   [dwarffortress-spacefox](https://aur.archlinux.org/packages/dwarffortress-spacefox/) (requires enabling the [multilib](/index.php/Multilib "Multilib") repository)
 
-You will need to be in the `games` [group](/index.php/Group "Group") to run Dwarf Fortress. If you are not in the `games` group, add yourself, then log out and back in again:
+Your user needs to be in the `games` [user group](/index.php/User_group "User group") to run Dwarf Fortress. If you are not in the `games` group, add yourself, then log out and back in again:
 
 ```
 # gpasswd -a *USERNAME* games
@@ -66,6 +67,10 @@ Alternatively, you can just give that permission to dwarftherapist:
 ```
 
 **Note:** The permissions will reset after an update to Dwarf Therapist. Consider using [pacman hooks](/index.php/Pacman_hooks "Pacman hooks") to automatically configure the permissions after an update.
+
+### Manipulator
+
+[Manipulator](https://dfhack.readthedocs.io/en/stable/docs/Plugins.html#manipulator) is an in-game alternative to Dwarf Therapist with most of its functionality, which does not require extra permissions. It is enabled by default in the [dfhack](https://aur.archlinux.org/packages/dfhack/) package.
 
 ### SoundSense
 

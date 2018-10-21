@@ -14,8 +14,9 @@
         *   [1.2.5 Schedule self-tests](#Schedule_self-tests)
         *   [1.2.6 Alert on temperature changes](#Alert_on_temperature_changes)
         *   [1.2.7 Complete smartd.conf example](#Complete_smartd.conf_example)
-*   [2 GUI Applications](#GUI_Applications)
-*   [3 See also](#See_also)
+*   [2 Console Applications](#Console_Applications)
+*   [3 GUI Applications](#GUI_Applications)
+*   [4 See also](#See_also)
 
 ## Smartmontools
 
@@ -257,11 +258,21 @@ Putting together all of the above gives the following example configuration:
 
  `/etc/smartd.conf`  `DEVICESCAN -a -o on -S on -n standby,q -s (S/../.././02|L/../../6/03) -W 4,35,40 -m <username or email>` 
 
+## Console Applications
+
+*   **skdump** — utility to monitor and manage SMART devices to monitor and report hard disk drive health.
+
+	[http://0pointer.de/blog/projects/being-smart.html](http://0pointer.de/blog/projects/being-smart.html) || [libatasmart](https://www.archlinux.org/packages/?name=libatasmart)
+
 ## GUI Applications
 
 *   **DisKMonitor** — KDE tools to monitor SMART devices and MDRaid health status.
 
 	[https://github.com/papylhomme/diskmonitor](https://github.com/papylhomme/diskmonitor) || [diskmonitor](https://aur.archlinux.org/packages/diskmonitor/)
+
+*   **Gnome Disks** — GNOME frontend which uses [libatasmart](https://www.archlinux.org/packages/?name=libatasmart) to monitor and report hard disk drive health (part of gnome desktop which also incorporates gsd-disk-utility-notify).
+
+	[https://gitlab.gnome.org/GNOME/gnome-disk-utility/](https://gitlab.gnome.org/GNOME/gnome-disk-utility/) || [gnome-disk-utility](https://www.archlinux.org/packages/?name=gnome-disk-utility)
 
 *   **GSmartControl** — GNOME frontend for the smartctl hard disk drive health inspection tool.
 

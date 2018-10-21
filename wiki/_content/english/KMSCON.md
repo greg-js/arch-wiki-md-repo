@@ -90,7 +90,7 @@ You may want to add `hwaccel` to `/etc/kmscon/kmscon.conf` if you have problems 
 
 ### No audio control
 
-As version 7, if you cannot control the audio, add your user to **audio** [group](/index.php/Group "Group"). Be aware of the [shortcomings](/index.php/Alsa#Installation "Alsa") of this choice.
+As version 7, if you cannot control the audio, add your user to the `audio` [user group](/index.php/User_group "User group"). Be aware of the [shortcomings](/index.php/Alsa#Installation "Alsa") of this choice.
 
 ### Vim doesn't clear terminal output
 

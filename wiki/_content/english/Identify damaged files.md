@@ -1,10 +1,10 @@
-This article gives details on how to find out which file owns a given block. The main purpose for doing so is finding out which file was damaged in the event a storage device develops any bad blocks (that way you'll know if you lost anything important).
+This article gives details on how to find out which file owns a given [disk sector](https://en.wikipedia.org/wiki/Disk_sector "wikipedia:Disk sector"). The main purpose for doing so is finding out which file was damaged in the event a storage device develops any [bad sectors](https://en.wikipedia.org/wiki/Bad_sector "wikipedia:Bad sector") (that way you will know if you lost anything important).
 
-For most of these commands you will have to be either root or a user that has direct read access to the drive you are checking (being a member of the disk group should be enough). As usual, a current backup is always a good idea, especially if imminent drive failure is suspected. [S.M.A.R.T.](/index.php/S.M.A.R.T. "S.M.A.R.T.") can help with determining that.
+For most of these commands you will have to be either root or a user that has direct read access to the drive you are checking (being a member of the disk group should be enough). As usual, a current backup is always a good idea, especially if imminent drive failure is suspected. [S.M.A.R.T.](/index.php/S.M.A.R.T. "S.M.A.R.T.") can help determining that.
 
 ## Contents
 
-*   [1 Finding bad blocks](#Finding_bad_blocks)
+*   [1 Finding bad sectors](#Finding_bad_sectors)
 *   [2 Filesystems](#Filesystems)
     *   [2.1 btrfs](#btrfs)
         *   [2.1.1 Find damaged files](#Find_damaged_files)
@@ -14,12 +14,18 @@ For most of these commands you will have to be either root or a user that has di
     *   [2.3 JFS](#JFS)
         *   [2.3.1 Debug the filesystem](#Debug_the_filesystem_2)
         *   [2.3.2 Find damaged files](#Find_damaged_files_3)
+    *   [2.4 ReiserFS and Reiser4](#ReiserFS_and_Reiser4)
+        *   [2.4.1 Debug the filesystem](#Debug_the_filesystem_3)
+        *   [2.4.2 Find damaged files](#Find_damaged_files_4)
+    *   [2.5 XFS](#XFS)
+        *   [2.5.1 Debug the filesystem](#Debug_the_filesystem_4)
+        *   [2.5.2 Find damaged files](#Find_damaged_files_5)
 *   [3 Force the disk to reallocate bad block](#Force_the_disk_to_reallocate_bad_block)
 *   [4 See also](#See_also)
 
-#### Finding bad blocks
+#### Finding bad sectors
 
-Just use the [badblocks](/index.php/Badblocks "Badblocks") command. There are a few scan modes supported by it. There's read-only mode (default) which is the least accurate. There is the destructive write-mode (`-w` option) which is the most accurate but takes longer and will (obviously) destroy all data on the drive, thus making it quite useless for matching blocks up to files. There is finally the non-destructive read-write mode which is probably as accurate as the destructive mode, the only real downside of which is it's probably the slowest. However, if a drive is known to be failing then read-only mode is probably still the safest.
+Use the [badblocks](/index.php/Badblocks "Badblocks") program. Note that *badblocks* calls sectors, blocks. It supports a few scan modes. There is read-only mode (default) which is the least accurate. There is the destructive write-mode (`-w` option) which is the most accurate but takes longer and will (obviously) destroy all data on the drive, thus making it quite useless for matching sectors up to files. There is finally the non-destructive read-write mode which is probably as accurate as the destructive mode, with the only real downside that it is probably the slowest. However, if a drive is known to be failing then read-only mode is probably still the safest.
 
 To do a verbose (`-v` option), read-only scan, run one of these commands (with `x` being the drive letter and `y` being partition number you want to scan):
 
@@ -179,7 +185,7 @@ Run the `testb` command again from the `debugfs` console on the bad block and it
 
 #### Debug the filesystem
 
-The *jfs_debugfs* tool will give you access to all the low level structures within any [JFS](/index.php/JFS "JFS") filesystem. Other filesystems such as the [ext3](/index.php/Ext3 "Ext3") and [ext4](/index.php/Ext4 "Ext4") filesystems have similar tools. It is probably a good idea to *umount* any filesystem before you run this on them. To use it just run:
+The *jfs_debugfs* command will give you access to all the low level structures within any [JFS](/index.php/JFS "JFS") filesystem. Other filesystems such as the [ext3](/index.php/Ext3 "Ext3") and [ext4](/index.php/Ext4 "Ext4") filesystems have similar tools. It is probably a good idea to *umount* any filesystem before you run this on them. To use it just run:
 
 ```
 # jfs_debugfs /dev/sdxy
@@ -227,6 +233,111 @@ Finally to find the damaged file you can simply use the gnu [find](/index.php/Fi
 ```
 
 Substitute `/` for the mountpoint of the filesystem that the *inode* belongs to. If you search root and have more than one filesystem mounted (who doesn't?) you can find multiple files with the same *inode* number on different filesystems, plus [find](/index.php/Find "Find") will take significantly longer. Remember, an *inode* is only unique to the filesystem that it's in.
+
+### ReiserFS and Reiser4
+
+#### Debug the filesystem
+
+The *debugreiserfs* command will give you access to all the low level structures within any ReiserFS/[Reiser4](/index.php/Reiser4 "Reiser4") filesystem.
+
+The first thing we want to do is get the block size from the filesystem in question. Just run:
+
+ `# debugreiserfs /dev/sdxy | grep '^Blocksize'`  `**Blocksize: 4096**` 
+
+In this case 4096 is the block size being used (it appears to be the default).
+
+If you did not run [badblocks](/index.php/Badblocks "Badblocks") using the block size that your filesystem is using then you will need to convert your block number(s) to match it (remember to use the block number(s) relative to the partition they're on).
+
+i.e. block number 100 with a block size of 1024 bytes becomes block number 25 at 4096 bytes. The formula is:
+
+```
+(original block number) / ((filesystem block size) / (badblocks block size))
+
+```
+
+Now the entire point of running this program (for the purpose of this article) is to get the *inode* number. Before continuing to debug it, unmount the partition. Then, run the command:
+
+#### Find damaged files
+
+```
+# debugreiserfs -1 *blocknumber* /dev/sdxy
+
+```
+
+This will return the information for what reiser filesystems refer to as a "leaf node". If you see a line stating `Looks like unformatted` then likely this means that the bad block belongs to free space and nothing important was damaged. If that line is absent and there is more output but no filenames then it likely means damage was done to a filesystem structure (at which point it might be a good idea to run at least a read-only fsck to see what's going on).
+
+If you see a `Name` column with filenames returned under it then it's possible any of these could be damaged (note: there may or may not be a way to more precisely narrow down the exact file damaged). The inode number(s) for listed file(s) seems to be the second number within square brackets listed under the `Object key` column (this is solely for informational purposes since we already have the filenames).
+
+Realistically if you do have a damaged block then you'll likely receive an Input/Output error. In this case you can try mounting the bad partition and then running this command on the mount point (per the smartmontools guide):
+
+```
+# tar -cO /mydir | cat >/dev/null
+
+```
+
+### XFS
+
+#### Debug the filesystem
+
+The *xfs_info* command will give you basic information about an [XFS](/index.php/XFS "XFS") formatted partition and the *xfs_db* command will give you access to all the low level structures within any [XFS](/index.php/XFS "XFS") filesystem.
+
+The first thing we want to do is get the block size from the filesystem in question. Just run:
+
+ `# xfs_info /dev/sdxy | grep bsize` 
+```
+data     =                       **bsize=4096**   blocks=127739, imaxpct=25
+naming   =version 2              **bsize=4096**   ascii-ci=0 ftype=1
+log      =internal               **bsize=4096**   blocks=855, version=2
+```
+
+In this case 4096 is the block size being used (it appears to be the default).
+
+If you did not run [badblocks](/index.php/Badblocks "Badblocks") using the block size that your filesystem is using then you will need to convert your block number(s) to match it (remember to use the block number(s) relative to the partition they're on).
+
+i.e. block number 100 with a block size of 1024 bytes becomes block number 25 at 4096 bytes. The formula is:
+
+```
+(original block number) / ((filesystem block size) / (badblocks block size))
+
+```
+
+Now the entire point of running this program (for the purpose of this article) is to get the *inode* number. Before continuing to debug it, unmount the partition. Then, run the command:
+
+```
+# xfs_db -c 'blockget -b **blocknumber'** /dev/sdxy
+
+```
+
+You should get output similar to this:
+
+```
+   setting block 0/9 to data
+   setting **inode to 131** for block 0/9
+   **inode 131** block 9 at offset 0
+
+```
+
+In this example we now know the inode is 131 and can proceed to the next section
+
+If instead you do not get an inode number in your output but do see the word *free* then likely this means that the bad block belongs to free space and nothing important was damaged.
+
+#### Find damaged files
+
+Finally to find the damaged file you can simply use the gnu [find](/index.php/Find "Find") utility. Mount your filesystem and run:
+
+```
+# find / -inum *inodenumber*
+
+```
+
+Substitute `/` for the mountpoint of the filesystem that the *inode* belongs to. If you search root and have more than one filesystem mounted (who doesn't?) you can find multiple files with the same *inode* number on different filesystems, plus [find](/index.php/Find "Find") will take significantly longer. Remember, an *inode* is only unique to the filesystem that it's in.
+
+Note: According to the *xfs_db* man page the *blockuse -n* command can be used in conjuction with *blockget -n -c **blocknumber*** in order to print file names. Testing this did not produce the desired results though it may be worth trying anyway since it is faster than the find method.
+
+```
+# xfs_db -c 'blockget -n -b *blocknumber*' -c 'blockuse -n' /dev/sdxy
+
+```
 
 ## Force the disk to reallocate bad block
 

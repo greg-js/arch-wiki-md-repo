@@ -1,4 +1,4 @@
-[Arduino](https://www.arduino.cc/) is an open-source electronics prototyping platform based on flexible, easy-to-use hardware and software. It is intended for artists, designers, hobbyists, and anyone interested in creating interactive objects or environments.
+[Arduino](https://en.wikipedia.org/wiki/Arduino "wikipedia:Arduino") is an open-source electronics prototyping platform based on flexible, easy-to-use hardware and software. It is intended for artists, designers, hobbyists, and anyone interested in creating interactive objects or environments.
 
 ## Contents
 
@@ -35,7 +35,7 @@
 ## Installation
 
 *   Install [arduino](https://www.archlinux.org/packages/?name=arduino) and [arduino-docs](https://www.archlinux.org/packages/?name=arduino-docs) for its offline documentation.
-*   Add yourself to the `uucp` and `lock` [groups](/index.php/Group "Group") (more information in the [#Accessing serial](#Accessing_serial) section).
+*   Add your user to the `uucp` and `lock` [user groups](/index.php/User_group "User group") (more information in the [#Accessing serial](#Accessing_serial) section).
 *   You may need to [load](/index.php/Kernel_modules "Kernel modules") the `cdc_acm` module.
 
 ### AVR Boards
@@ -311,6 +311,7 @@ see [Java#Applications not resizing with WM, menus immediately closing](/index.p
 
 ## See also
 
+*   [Official website](https://www.arduino.cc/)
 *   [https://bbs.archlinux.org/viewtopic.php?pid=295312](https://bbs.archlinux.org/viewtopic.php?pid=295312)
 *   [https://bbs.archlinux.org/viewtopic.php?pid=981348](https://bbs.archlinux.org/viewtopic.php?pid=981348)
 *   [http://answers.ros.org/question/9097/how-can-i-get-a-unique-device-path-for-my-arduinoftdi-device/](http://answers.ros.org/question/9097/how-can-i-get-a-unique-device-path-for-my-arduinoftdi-device/)

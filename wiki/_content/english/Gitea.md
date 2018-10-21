@@ -25,7 +25,7 @@ Related articles
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [gitea](https://www.archlinux.org/packages/?name=gitea), [gitea-bin](https://aur.archlinux.org/packages/gitea-bin/) or, [gitea-git](https://aur.archlinux.org/packages/gitea-git/) package.
+[Install](/index.php/Install "Install") the [gitea](https://aur.archlinux.org/packages/gitea/), [gitea-bin](https://aur.archlinux.org/packages/gitea-bin/) or, [gitea-git](https://aur.archlinux.org/packages/gitea-git/) package.
 
 Gitea requires the use of a database backend, the following are supported:
 
@@ -92,9 +92,9 @@ Make sure [SSH](/index.php/SSH "SSH") has been properly configured and running.
 
 #### Setup git user
 
-**Note:** The package [gitea-git](https://aur.archlinux.org/packages/gitea-git/) uses `gitea` as [user](/index.php/User "User")/[group](/index.php/Group "Group") instead of `git`. Users should only have to [#Configure SSH](#Configure_SSH).
+**Note:** The package [gitea-git](https://aur.archlinux.org/packages/gitea-git/) uses `gitea` as [user](/index.php/User "User")/[user group](/index.php/User_group "User group") instead of `git`. Users should only have to [#Configure SSH](#Configure_SSH).
 
-Create the `git` [group](/index.php/Group "Group") and home directory for `git`:
+Create the `git` [user group](/index.php/User_group "User group") and home directory for `git`:
 
 ```
 # groupadd --system git

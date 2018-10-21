@@ -116,9 +116,9 @@ static unsigned int defaultcs = 256;
 
 ```
 
-Tools exists to facilitate the creation of color palettes. e.g. [terminal.sexy](http://terminal.sexy) that has a set of pre-made ones and exports directly to the st config format.
+Tools exists to facilitate the creation of color palettes. For example [terminal.sexy](http://terminal.sexy) has a set of pre-made ones and exports directly to *st'*s format.
 
-For those wanting the solarized color scheme, there is a patch that implements it at [suckless.org](https://st.suckless.org/patches/solarized/): [st-solarized](https://aur.archlinux.org/packages/st-solarized/).
+There is a patch for the solarized color scheme that implements it. See [suckless.org](https://st.suckless.org/patches/solarized/) or the [st-solarized](https://aur.archlinux.org/packages/st-solarized/) package.
 
 ### Desktop entry
 

@@ -63,5 +63,5 @@ For the Intel Core 2 Duo (and all laptop cpu's) you must follow the instructions
 Hibernate/Suspend works out of the box with pm-utils however integration with HAL does not. In order for you to enable power-related settings like "Suspend on closing of Laptop Lid" in Gnome you will need to
 
 *   Copy `/usr/share/hal/fdi/policy/10osvendor/10-power-mgmt-policy.fdi` to `/etc/hal/fdi/policy/`.
-*   Add your user to the `power` [group](/index.php/Group "Group").
+*   Add your user to the `power` [user group](/index.php/User_group "User group").
 *   Restart the HAL service or your machine for the change take affect.

@@ -16,7 +16,6 @@ This article aims to assist users creating their own packages using the Arch Lin
 ## Contents
 
 *   [1 Overview](#Overview)
-    *   [1.1 Meta packages and groups](#Meta_packages_and_groups)
 *   [2 Preparation](#Preparation)
     *   [2.1 Prerequisite software](#Prerequisite_software)
     *   [2.2 Download and test the installation](#Download_and_test_the_installation)
@@ -49,14 +48,6 @@ An Arch package is no more than a tar archive, or 'tarball', compressed using [x
 *   `.MTREE`: contains hashes and timestamps of the files, which are included in the local database so that pacman can verify the integrity of the package.
 *   `.INSTALL`: an optional file used to execute commands after the install/upgrade/remove stage. (This file is present only if specified in the `PKGBUILD`.)
 *   `.Changelog`: an optional file kept by the package maintainer documenting the changes of the package. (It is not present in all packages.)
-
-### Meta packages and groups
-
-A package group is a set of related packages, defined by the packager, which can be installed or uninstalled simultaneously by using the group name as a substitute for each individual package name. While a group is not a package, it can be installed in a similar fashion to a package (see [Pacman#Installing package groups](/index.php/Pacman#Installing_package_groups "Pacman") and [PKGBUILD#groups](/index.php/PKGBUILD#groups "PKGBUILD")).
-
-A meta package, often (though not always) titled with the *-meta* suffix, provides similar functionality to a package group in that it enables multiple related packages to be installed or uninstalled simultaneously. Meta packages can be installed just like any other package (see [Pacman#Installing specific packages](/index.php/Pacman#Installing_specific_packages "Pacman")). The only difference between a meta package and a regular package is that a meta package is empty and exists purely to link related packages together via dependencies.
-
-The advantage of a meta package, compared to a group, is that any new member packages will be installed when the meta package itself is updated with a new set of dependencies. This is in contrast to a group where new group members will not be automatically installed. The disadvantage of a meta package is that it is not as flexible as a group; you can choose which group members you wish to install but you cannot choose which meta package dependencies you wish to install. Likewise, you can uninstall group members without having to remove the entire group. However, you cannot remove meta package dependencies without having to uninstall the meta package itself.
 
 ## Preparation
 

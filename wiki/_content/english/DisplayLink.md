@@ -280,6 +280,7 @@ For users that prefer to keep using "modesetting" driver, disabling page flippin
  `/usr/share/X11/xorg.conf.d/20-displaylink.conf` 
 ```
 Section "Device"
+  Identifier "DisplayLink"
   Driver "modesetting"
   Option "PageFlip" "false"
 EndSection 
