@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Chroot](/index.php/Chroot "Chroot")
+*   [Chroot#Using arch-chroot](/index.php/Chroot#Using_arch-chroot "Chroot")

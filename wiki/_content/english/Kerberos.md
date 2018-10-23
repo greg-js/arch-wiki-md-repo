@@ -32,7 +32,7 @@ Related articles
 
 [Install](/index.php/Install "Install") the [krb5](https://www.archlinux.org/packages/?name=krb5) package on your clients and server.
 
-It is **highly** recommended to use a [time sync daemon](/index.php/Time#Time_synchronization "Time") to keep client/server clocks in sync.
+It is **highly** recommended to use a [time synchronization](/index.php/Time_synchronization "Time synchronization") daemon to keep client/server clocks in sync.
 
 If hostname resolution has not been configured, you can manually add your clients and server to the [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5) file of each machine. Note that the FQDN (myclient.example.com) must be the first hostname after the IP address in the hosts file.
 
@@ -407,7 +407,7 @@ robert@EXAMPLE.COM
 
 ## NFS Security
 
-First, configure your [NFS server](/index.php/NFS#Server "NFS") server. Also see [NFS Troubleshooting](/index.php/NFS_Troubleshooting "NFS Troubleshooting"). Configuring a [time sync daemon](/index.php/Time#Time_synchronization "Time") on both the clients and the server is strongly recommended. Clock drift will cause this to break, and the error message will not be helpful.
+First, configure your [NFS server](/index.php/NFS#Server "NFS") server. Also see [NFS Troubleshooting](/index.php/NFS_Troubleshooting "NFS Troubleshooting"). Configuring a [time synchronization](/index.php/Time_synchronization "Time synchronization") daemon on both the clients and the server is strongly recommended. Clock drift will cause this to break, and the error message will not be helpful.
 
 Use the instructions in [Service principals and keytabs](#Service_principals_and_keytabs) to create a principal for the "nfs" service for both client and server, then put the client's keys in the client's keytab and the server's keys in the server's keytab.
 

@@ -286,7 +286,7 @@ See also [Wikipedia:Terminal multiplexer](https://en.wikipedia.org/wiki/Terminal
 
 	[http://byobu.co/](http://byobu.co/) || [byobu](https://aur.archlinux.org/packages/byobu/)
 
-*   **[dtach](/index.php/Dtach "Dtach")** — Program that emulates the detach feature of [screen](/index.php/Screen "Screen").
+*   **[dtach](/index.php/Dtach "Dtach")** — Program that emulates the detach feature of [GNU Screen](/index.php/GNU_Screen "GNU Screen").
 
 	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://www.archlinux.org/packages/?name=dtach)
 
@@ -1614,7 +1614,7 @@ See also [Cron](/index.php/Cron "Cron").
 
 #### Clock synchronization
 
-See [Time#Time synchronization](/index.php/Time#Time_synchronization "Time").
+See [Time synchronization](/index.php/Time_synchronization "Time synchronization").
 
 #### Screen management
 

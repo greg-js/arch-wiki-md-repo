@@ -1,4 +1,4 @@
-Questo articolo descrive come configurare ed eseguire NTPd (Network Time Protocol daemon), il metodo più diffuso per sincronizzare l'[orologio software](/index.php/Time "Time") di un sistema GNU/Linux con dei time server utilizzando il [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol"); se appositamente configurato, NTPd può far funzionare il computer stesso come un time server.
+Questo articolo descrive come configurare ed eseguire NTPd (Network Time Protocol daemon), il metodo più diffuso per sincronizzare l'[orologio software](/index.php/System_time "System time") di un sistema GNU/Linux con dei time server utilizzando il [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol"); se appositamente configurato, NTPd può far funzionare il computer stesso come un time server.
 
 ## Contents
 
@@ -77,7 +77,7 @@ restrict default kod nomodify notrap nopeer noquery
 
 **Nota:** Questo permetterà ad altre persone di interrogare il proprio time server. E' necessario aggiungere `noserve` per fermare il serving time.
 
-La documentazione completa per l'opzione "restrict" è reperibile in [ntp_acc()](http://jlk.fjfi.cvut.cz/arch/manpages/man/ntp_acc.). Per istruzioni dettagliate vedere [https://support.ntp.org/bin/view/Support/AccessRestrictions](https://support.ntp.org/bin/view/Support/AccessRestrictions).
+La documentazione completa per l'opzione "restrict" è reperibile in [ntp_acc()](https://jlk.fjfi.cvut.cz/arch/manpages/man/ntp_acc.). Per istruzioni dettagliate vedere [https://support.ntp.org/bin/view/Support/AccessRestrictions](https://support.ntp.org/bin/view/Support/AccessRestrictions).
 
 La linea seguente serve ad indicare a *ntpd* cosa può attraversare il proprio server; la seguente riga è sufficiente se non si sta configurando un server NTP:
 
@@ -126,7 +126,7 @@ logfile /var/log/ntp.log
 
 ### Altre risorse inerenti la configurazione NTP
 
-Infine, mai dimenticarsi delle pagine di manuale: c'è la possibilità che [ntp.conf(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/ntp.conf.5) possa rispondere a molti dubbi che siano rimasti (leggere anche le pagine di manuale correlate: `man {ntpd|ntp_auth|ntp_mon|ntp_acc|ntp_clock|ntp_misc}`).
+Infine, mai dimenticarsi delle pagine di manuale: c'è la possibilità che [ntp.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ntp.conf.5) possa rispondere a molti dubbi che siano rimasti (leggere anche le pagine di manuale correlate: `man {ntpd|ntp_auth|ntp_mon|ntp_acc|ntp_clock|ntp_misc}`).
 
 ## Utilizzo senza demone
 
@@ -162,7 +162,7 @@ ntpd -qg &
 
 ```
 
-Si dovrebbe anche aggiungere il demone `hwclock` al proprio [DAEMONS array](/index.php/Daemon_(Italiano)#SEsecuzione_automatica_all.27avvio "Daemon (Italiano)"), a meno che qualcos'altro, ad esempio un altro sistema operativo in dual boot, non aggiorni già l'orologio hardware. Vedere [Time#hwclock daemon](/index.php/Time#hwclock_daemon "Time") per maggiori informazioni.
+Si dovrebbe anche aggiungere il demone `hwclock` al proprio [DAEMONS array](/index.php/Daemon_(Italiano)#SEsecuzione_automatica_all.27avvio "Daemon (Italiano)"), a meno che qualcos'altro, ad esempio un altro sistema operativo in dual boot, non aggiorni già l'orologio hardware. Vedere [System time#hwclock daemon](/index.php/System_time#hwclock_daemon "System time") per maggiori informazioni.
 
 Affinché questo metodo funzioni è necessario fare in modo che, quando `rc.local` viene eseguito, la connessione di rete sia già stata inizializzata (ad esempio, non si dovrebbero avere in background demoni correlati alla rete in `/etc/rc.conf`)
 
@@ -286,7 +286,7 @@ Possibili alternative ad NTPd sono [Chrony](/index.php/Chrony "Chrony"), una con
 
 ## Vedere anche
 
-*   [Time](/index.php/Time "Time") (per maggiori informazioni sulla gestione del tempo nel computer)
+*   [System time](/index.php/System_time "System time") (per maggiori informazioni sulla gestione del tempo nel computer)
 
 ## Link esterni
 

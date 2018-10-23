@@ -151,9 +151,9 @@ If you want to revert to the hardware clock being in UTC, do:
 
 Be warned that, if the hardware clock is set to localtime, dealing with daylight saving time is messy. If the DST changes when your computer is off, your clock will be wrong on next boot ([there is a lot more to it](http://www.cl.cam.ac.uk/~mgk25/mswish/ut-rtc.html)). Recent kernels set the system time from the RTC directly on boot, assuming that the RTC is in UTC. This means that if the RTC is in local time, then the system time will first be set up wrongly and then corrected shortly afterwards on every boot. This is the root of certain weird bugs (time going backwards is rarely a good thing).
 
-One reason for allowing the RTC to be in local time is to allow dual boot with Windows ([which uses localtime](http://blogs.msdn.com/b/oldnewthing/archive/2004/09/02/224672.aspx)). However, Windows is able to deal with the RTC being in UTC with a simple [registry fix](/index.php/Time#UTC_in_Windows "Time"). It is recommended to configure Windows to use UTC, rather than Linux to use localtime. If you make Windows use UTC, also remember to disable the "Internet Time Update" Windows feature, so that Windows don't mess with the hardware clock, trying to sync it with internet time. You should instead leave touching the RTC and syncing it to internet time to Linux, by enabling an [NTP](/index.php/NTP "NTP") daemon, as suggested previously.
+One reason for allowing the RTC to be in local time is to allow dual boot with Windows ([which uses localtime](http://blogs.msdn.com/b/oldnewthing/archive/2004/09/02/224672.aspx)). However, Windows is able to deal with the RTC being in UTC with a simple [registry fix](/index.php/System_time#UTC_in_Windows "System time"). It is recommended to configure Windows to use UTC, rather than Linux to use localtime. If you make Windows use UTC, also remember to disable the "Internet Time Update" Windows feature, so that Windows don't mess with the hardware clock, trying to sync it with internet time. You should instead leave touching the RTC and syncing it to internet time to Linux, by enabling an [NTP](/index.php/NTP "NTP") daemon, as suggested previously.
 
-*   For more information, see [Time](/index.php/Time "Time").
+*   For more information, see [System time](/index.php/System_time "System time").
 
 ### وحدات النّواة
 

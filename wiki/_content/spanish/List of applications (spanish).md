@@ -52,7 +52,7 @@ Este artículo contiene un listado general de aplicaciones, ordenadas por catego
         *   [1.9.2 Interfaz gráfica](#Interfaz_gr.C3.A1fica_6)
     *   [1.10 Software de blog y CMS](#Software_de_blog_y_CMS)
     *   [1.11 Clientes de microblogging](#Clientes_de_microblogging)
-    *   [1.12 Protocolo de Tranferencia de Archivos (siglas en inglés FTP)](#Protocolo_de_Tranferencia_de_Archivos_.28siglas_en_ingl.C3.A9s_FTP.29)
+    *   [1.12 FTP](#FTP)
         *   [1.12.1 Clientes FTP](#Clientes_FTP)
         *   [1.12.2 Servidores FTP](#Servidores_FTP)
     *   [1.13 Otros](#Otros)
@@ -967,7 +967,7 @@ Pastebin es un servicio que permite pegar información dentro de los [canales IR
 
 	[http://turses.rtfd.org/](http://turses.rtfd.org/) || [turses](https://aur.archlinux.org/packages/turses/)
 
-### Protocolo de Tranferencia de Archivos (<small>siglas en inglés</small> FTP)
+### FTP
 
 [Wikipedia:es:File Transfer Protocol](https://en.wikipedia.org/wiki/es:File_Transfer_Protocol "wikipedia:es:File Transfer Protocol")
 
@@ -2972,11 +2972,11 @@ Vea también [Wikipedia:Comparison of command shells](https://en.wikipedia.org/w
 
 	[http://www.brain-dump.org/projects/abduco/](http://www.brain-dump.org/projects/abduco/) || [abduco](https://www.archlinux.org/packages/?name=abduco)
 
-*   **dtach** — Programa que emula la capacidad de desconexión de [screen](/index.php/Screen "Screen").
+*   **dtach** — Programa que emula la capacidad de desconexión de [GNU Screen](/index.php/GNU_Screen "GNU Screen").
 
 	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://www.archlinux.org/packages/?name=dtach)
 
-*   **[GNU Screen](/index.php/Screen "Screen")** — Gestor de ventanas a tamaño completo que multiplexa una terminal física.
+*   **[GNU Screen](/index.php/GNU_Screen "GNU Screen")** — Gestor de ventanas a tamaño completo que multiplexa una terminal física.
 
 	[https://gnu.org/s/screen/](https://gnu.org/s/screen/) || [screen](https://www.archlinux.org/packages/?name=screen)
 

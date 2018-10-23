@@ -34,7 +34,7 @@
 
 The default configuration is available in `/etc/xdg/compton.conf`. For modifications, it can be copied to `~/.config/compton.conf` or `~/.compton.conf`.
 
-To use a custom configuration file with compton, use the following command:
+To use another custom configuration file with compton, use the following command:
 
 ```
 $ compton --config *path/to/*compton.conf
@@ -225,9 +225,9 @@ On at least some Intel chipsets, DRI3 is known to cause [trouble](https://bugs.f
 
 ### Freezing video playback
 
-Some media players may experience an issue where the video will momentarily freeze while the audio continues to play. There is currently no known fix aside from stopping Compton while playing videos.
+Some media players may experience an issue where the video will momentarily freeze while the audio continues to play. This has been worked around in compton version 2, with full fix to be included in next release. If problem persists, you can try [compton-git](https://aur.archlinux.org/packages/compton-git/).
 
-See the [bug report](https://github.com/chjj/compton/issues/494).
+For more detail, see the [bug report](https://github.com/chjj/compton/issues/494).
 
 ### Flicker
 
@@ -253,7 +253,7 @@ If you experience heavy lag when using Xft fonts in applications such as [xterm]
 
 ```
 
-Or the xrender backend.
+or the xrender backend.
 
 See [[4]](https://github.com/chjj/compton/issues/152) for more information.
 
@@ -266,7 +266,7 @@ Try running Compton with:
 
 ```
 
-Or add
+or add
 
 ```
 backend = "xrender";

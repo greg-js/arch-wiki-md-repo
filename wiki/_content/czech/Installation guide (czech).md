@@ -191,7 +191,7 @@ Nastavte [časové pásmo](/index.php/Time_zone "Time zone") vytvořením symlin
 
 ```
 
-Spusťte `hwclock` pro vygenerovaní `/etc/adjtime`. Pokud je zvolen UTC standard, ostatní operační systémy (Windows) musí být nastaveny stejně. Pro více informací vizte [Time](/index.php/Time "Time").
+Spusťte `hwclock` pro vygenerovaní `/etc/adjtime`. Pokud je zvolen UTC standard, ostatní operační systémy (Windows) musí být nastaveny stejně. Pro více informací vizte [System time](/index.php/System_time "System time").
 
 ```
 # hwclock --systohc --*utc*

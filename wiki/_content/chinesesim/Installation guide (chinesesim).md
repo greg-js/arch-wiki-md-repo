@@ -229,7 +229,7 @@ Arch Linux 能在任何内存空间不小于 512MB 的 [x86_64](https://en.wikip
 
 ```
 
-这个命令假定硬件时间已经被设置为 [UTC时间](https://en.wikipedia.org/wiki/UTC "wikipedia:UTC")。详细信息请查看 [Time#Time standard](/index.php/Time#Time_standard "Time")。
+这个命令假定硬件时间已经被设置为 [UTC时间](https://en.wikipedia.org/wiki/UTC "wikipedia:UTC")。详细信息请查看 [System time#Time standard](/index.php/System_time#Time_standard "System time")。
 
 ### 本地化
 

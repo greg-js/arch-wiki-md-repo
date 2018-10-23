@@ -1,6 +1,6 @@
 Related articles
 
-*   [Time](/index.php/Time "Time")
+*   [System time](/index.php/System_time "System time")
 
 [OpenNTPD](http://www.openntpd.org/) (part of the OpenBSD project) is a daemon that can be used to synchronize the system clock to internet time servers using the Network Time Protocol, and can also act as a time server itself if needed. It implements the Simple Network Time Protocol version 4, as described in RFC 5905, and the Network Time Protocol version 3, as described in RFC 1305.
 

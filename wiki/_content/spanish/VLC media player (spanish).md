@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [VLC media player](/index.php/VLC_media_player "VLC media player"), revisada por última vez el **2018-10-04**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=VLC_media_player&diff=0&oldid=546129) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [VLC media player](/index.php/VLC_media_player "VLC media player"), revisada por última vez el **2018-10-22**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=VLC_media_player&diff=0&oldid=550109) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Desde la [página de inicio](https://www.videolan.org/vlc/) del proyecto:
 

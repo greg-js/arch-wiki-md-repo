@@ -153,7 +153,7 @@ Here are a few recommendations for programs that enhance the usability of a fram
 *   [fbff-git](https://aur.archlinux.org/packages/fbff-git/) - an ffmpeg-based media player
 *   [fbpdf-git](https://aur.archlinux.org/packages/fbpdf-git/) - a MuPDF-based PDF viewer, optionally supports DjVu or rendering via poppler
 *   [fbv](https://www.archlinux.org/packages/?name=fbv) - an image viewer
-*   [screen](/index.php/Screen "Screen") - a terminal multiplexer
+*   [GNU Screen](/index.php/GNU_Screen "GNU Screen") - a terminal multiplexer
 *   [w3m](https://www.archlinux.org/packages/?name=w3m) - a commandline web browser
 
 ## External Links

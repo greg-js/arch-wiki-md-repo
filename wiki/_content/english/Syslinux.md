@@ -152,7 +152,7 @@ Alternatively, for a FAT boot partition use *syslinux*, where the device is **un
 
 ```
 
-After this, proceed to install the Syslinux boot code (`mbr.bin` or `gptmbr.bin`) to the Master Boot Record 440-byte boot code region (not to be confused with MBR aka msdos partition table) of the disk, as described in the next sections, respectively.
+After this, proceed to install the Syslinux boot code (`mbr.bin` or `gptmbr.bin`) to the [Master Boot Record 440-byte boot code region](/index.php/Partitioning#Master_Boot_Record_.28bootstrap_code.29 "Partitioning") (not to be confused with [MBR aka msdos partition table](/index.php/Partitioning#Master_Boot_Record_.28partition_table.29 "Partitioning")) of the disk, as described in the next sections, respectively.
 
 **Note:** For a partitionless install, there is no need to install the Syslinux boot code to the MBR. You could skip below and jump to [#Configuration](#Configuration). See [[2]](https://unix.stackexchange.com/questions/103501/boot-partiotionless-disk-with-syslinux).
 

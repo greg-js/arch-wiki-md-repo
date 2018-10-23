@@ -5,34 +5,39 @@ Related articles
 *   [GTK+#Disable mouse paste](/index.php/GTK%2B#Disable_mouse_paste "GTK+")
 *   [Vim#Clipboard](/index.php/Vim#Clipboard "Vim")
 
-From [Wikipedia:Clipboard (computing)](https://en.wikipedia.org/wiki/Clipboard_(computing) "wikipedia:Clipboard (computing)"):
+According to [Wikipedia](https://en.wikipedia.org/wiki/Clipboard_(computing) "wikipedia:Clipboard (computing)"):
 
 	The clipboard is a facility used for short-term data storage and/or data transfer between documents or applications, via [copy and paste](https://en.wikipedia.org/wiki/copy_and_paste "wikipedia:copy and paste") operations.
 
 ## Contents
 
 *   [1 History](#History)
-*   [2 Background](#Background)
+*   [2 Selections](#Selections)
 *   [3 Tools](#Tools)
 *   [4 Managers](#Managers)
 *   [5 See also](#See_also)
 
 ## History
 
-In X10, "cut buffers" were introduced. These were limited buffers that stored arbitrary text and were used by most applications. However, they were inefficient and implementation of them varied, so selections were introduced. Cut buffers are long deprecated, and although some applications (such as xterm) may have legacy support for them, it is both not likely and not recommended that they be used.
+In X10, *cut buffers* were introduced. These were limited buffers that stored arbitrary text and were used by most applications. However, they were inefficient and implementation of them varied, so selections were introduced. Cut buffers are long deprecated, and although some applications (such as [xterm](/index.php/Xterm "Xterm")) may have legacy support for them, it is both not likely and not recommended that they be used.
 
-## Background
+## Selections
 
-The [ICCCM](https://tronche.com/gui/x/icccm/) (Inter-Client Communication Conventions Manual) standard defines three "selections": PRIMARY, SECONDARY, and CLIPBOARD. Despite the naming, all three are basically "clipboards". Rather than the old "cut buffers" system where arbitrary applications could modify data stored in the cut buffers, only one application may control or "own" a selection at one time. This prevents inconsistencies in the operation of the selections.
+[Freedesktop.org](/index.php/Freedesktop.org "Freedesktop.org") describes the two main *selections* as follows:[[1]](https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt)
 
-Of the three selections, users should only be concerned with PRIMARY and CLIPBOARD. SECONDARY is only used inconsistently and was intended as an alternate to PRIMARY. The majority of programs for Xorg, including [Qt](/index.php/Qt "Qt") and [GTK+](/index.php/GTK%2B "GTK+") applications, treat the the PRIMARY and CLIPBOARD selections in the [following way](https://specifications.freedesktop.org/clipboards-spec/clipboards-latest.txt):
+	PRIMARY
 
-*   The CLIPBOARD selection is used for explicit copy/paste commands involving keyboard shortcuts or menu items. Hence, it behaves like the single-clipboard system on Windows. Unlike PRIMARY, it can also handle [multiple data formats](https://stackoverflow.com/questions/3571179/how-does-x11-clipboard-handle-multiple-data-formats).
-*   The PRIMARY selection is used for the currently selected text, even if it is not explicitly copied, and for middle-mouse-click pasting. In some cases, pasting is also possible with a keyboard shortcut.
+	Used for the currently selected text, even if it is not explicitly copied, and for middle-mouse-click pasting. In some cases, pasting is also possible with a keyboard shortcut.
+
+	CLIPBOARD
+
+	Used for explicit copy/paste commands involving keyboard shortcuts or menu items. Hence, it behaves like the single-clipboard system on Windows. Unlike PRIMARY, it can also handle [multiple data formats](https://stackoverflow.com/questions/3571179/how-does-x11-clipboard-handle-multiple-data-formats).
+
+The majority of programs for [Xorg](/index.php/Xorg "Xorg"), including [Qt](/index.php/Qt "Qt") and [GTK+](/index.php/GTK%2B "GTK+") applications, follow this behavior. While [ICCCM](https://tronche.com/gui/x/icccm/) also defines a SECONDARY selection, it does not have a consensually agreed upon purpose. Despite the naming, all three selections are basically "clipboards". Rather than the old "cut buffers" system where arbitrary applications could modify data stored in the cut buffers, only one application may control or "own" a selection at one time. This prevents inconsistencies in the operation of the selections.
 
 See the [Keyboard shortcuts](/index.php/Keyboard_shortcuts "Keyboard shortcuts") page which lists the default shortcuts in many programs.
 
-It is also important to realize that according to the selection protocols, nothing is copied anywhere [until it is pasted](https://unix.stackexchange.com/questions/213840/how-to-toggle-or-turn-off-text-selection-being-sent-to-the-clipboard/213843#213843). For example, if you select some word in a terminal window, close the terminal and then want to paste it somewhere else, it will not work because the terminal is gone and the text has not been copied anywhere. If you want the word to be preserved after closing terminal window, consider installing a [clipboard manager](/index.php/Clipboard_manager "Clipboard manager").
+It is also important to realize that according to the selection protocols, nothing is copied [until it is pasted](https://unix.stackexchange.com/questions/213840/how-to-toggle-or-turn-off-text-selection-being-sent-to-the-clipboard/213843#213843). For example, if you select some word in a terminal window, close the terminal and then want to paste it somewhere else, it will not work because the terminal is gone and the text has not been copied anywhere. If you want the word to be preserved after closing terminal window, consider installing a [clipboard manager](/index.php/Clipboard_manager "Clipboard manager").
 
 **Note:** [Clipboard managers](#Managers) can significantly change the user experience, for example they might synchronize the PRIMARY and CLIPBOARD selections to emulate a single-clipboard system.
 

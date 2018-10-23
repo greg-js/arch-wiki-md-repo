@@ -274,7 +274,7 @@ $ ssh -t rtorrent@192.168.1.10 'screen -r'
 
 ```
 
-Или если вы использовали [tmux](/index.php/Tmux "Tmux") вместо [screen](/index.php/Screen "Screen"):
+Или если вы использовали [tmux](/index.php/Tmux "Tmux") вместо [GNU Screen](/index.php/GNU_Screen "GNU Screen"):
 
 ```
 $ ssh -t rtorrent@192.168.1.10 'tmux attach -t rtorrent'
@@ -550,7 +550,7 @@ For more information see: [Using XMLRPC with rtorrent](http://libtorrent.rakshas
 
 ## See also
 
-*   [Screen Tips](/index.php/Screen_Tips "Screen Tips")
+*   [GNU Screen](/index.php/GNU_Screen "GNU Screen")
 *   [Comparison of BitTorrent clients](https://en.wikipedia.org/wiki/Comparison_of_BitTorrent_clients "wikipedia:Comparison of BitTorrent clients") on Wikipedia
 *   [rTorrent Community Wiki](http://community.rutorrent.org/) - A public place for information on rTorrent and any project related to rTorrent, regarding setup, configuration, operations, and development
 *   [PyroScope](https://code.google.com/p/pyroscope/) - A collection of command line tools for rTorrent. It provides commands for creating and modifying torrent files, moving data on completion without having multiple watch folders, and mass-controlling download items via rTorrent's XML-RPC interface: searching, start/stop, deleting items with or without their data, etc. It also offers a documented [Python](/index.php/Python_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Python (Русский)") API

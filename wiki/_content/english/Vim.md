@@ -19,11 +19,12 @@ Related articles
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Line numbers](#Line_numbers)
     *   [5.2 Spell checking](#Spell_checking)
-    *   [5.3 Save cursor position](#Save_cursor_position)
-    *   [5.4 Replace vi command with Vim](#Replace_vi_command_with_Vim)
-    *   [5.5 DOS/Windows carriage returns](#DOS.2FWindows_carriage_returns)
-    *   [5.6 Empty space at the bottom of gVim windows](#Empty_space_at_the_bottom_of_gVim_windows)
-    *   [5.7 Vim as a pager](#Vim_as_a_pager)
+    *   [5.3 Save the previous runtime state](#Save_the_previous_runtime_state)
+    *   [5.4 Save cursor position](#Save_cursor_position)
+    *   [5.5 Replace vi command with Vim](#Replace_vi_command_with_Vim)
+    *   [5.6 DOS/Windows carriage returns](#DOS.2FWindows_carriage_returns)
+    *   [5.7 Empty space at the bottom of gVim windows](#Empty_space_at_the_bottom_of_gVim_windows)
+    *   [5.8 Vim as a pager](#Vim_as_a_pager)
 *   [6 Plugins](#Plugins)
     *   [6.1 Installation](#Installation_2)
         *   [6.1.1 Using the built-in package manager](#Using_the_built-in_package_manager)
@@ -178,27 +179,112 @@ By default, only English language dictionaries are installed. More dictionaries 
 *   You can enable spell checking for arbitrary file types (e.g. *.txt*) by using the FileType plugin and a custom rule for file type detection. To enable spell checking for any file ending with *.txt*, create the file `/usr/share/vim/vimfiles/ftdetect/plaintext.vim`, and insert the line `autocmd BufRead,BufNewFile *.txt setfiletype plaintext` into that file. Next, insert the line `autocmd FileType plaintext setlocal spell spelllang=*en_us*` into your `~/.vimrc` or `/etc/vimrc`, and then restart Vim. Alternatively, one can simply insert the line `autocmd BufRead,BufNewFile *.txt setlocal spell` into their `~/.vimrc` or `/etc/vimrc`, and then restart Vim. Be sure to edit this line (specifically `*.txt`) to include the filetype(s) intended for spell checking.
 *   To enable spell checking for LaTeX (or TeX) documents only, add `autocmd FileType **tex** setlocal spell spelllang=*en_us*` into your `~/.vimrc` or `/etc/vimrc`, and then restart Vim.
 
-### Save cursor position
+### Save the previous runtime state
 
-If you want the cursor to [appear in its previous position](http://vim.wikia.com/wiki/Restore_cursor_to_file_position_in_previous_editing_session) after you open a file, add the following to your `~/.vimrc`:
+Normally, exiting `vim` and resuming work again at a later time makes you lose a lot of information. Making up for that, before starting again where you left off, can be both time-consuming and tedious. If you ever want to start a vim session based on a previous runtime state, mainly two possibilities exist:
+
+*   Session files can be used to save the states of any number of particular sessions over time. One distinct session file may be used for each session or project of your interest. For that modality to be available, the version of `vim` you installed must have been compiled with the `+mksession` module.
+
+	Within a session, `:mksession[!] [my_session_name.vim]` will write a vim-script to *my_session_name.vim*, and by default, if you choose *not* to provide a file name, to file *Session.vim* in the current directory. The optional `!` will clobber a pre-existing session file with the same name and path.
+
+	To restore a `vim` session, just issue either:
 
 ```
-set viminfo='10,\"100,:100,%,n~/.viminfo
+vim -S [my_session_name.vim]
 
 ```
 
-where each parameter is identified by an identifier:
+	or
+
+```
+:source my_session_name.vim
+
+```
+
+	respectively from command line interface (some terminal) or in ex-mode from an already opened session buffer.
+
+	Exactly what is saved and additional details on session files options are extensively covered in the [vim documentation](http://vimdoc.sourceforge.net/htmldoc/usr_21.html#21.4). Commented examples are found [here](http://vim.wikia.com/wiki/Go_away_and_come_back).
+
+*   The `viminfo` file may also be used to store command line history, search string history, input-line history, registers' content, marks for files, location marks within files, last search/substitute pattern (to be used in search mode with `n` and `&` within the session), buffer list, and any global variables you may have defined.
+
+	Note that the `viminfo` file is independent from any session file you may have already created, or plan to create. For the `viminfo` modality to be available, the version of `vim` you installed must have been compiled with the `+viminfo` module.
+
+Configure what is kept in your `viminfo` file, by adding (for example) the following to your ~/[.vimrc](/index.php?title=.vimrc&action=edit&redlink=1 ".vimrc (page does not exist)") file:
+
+```
+set viminfo='10,\"100,:100,%,n~/.vim/.viminfo
+
+```
+
+	where each parameter is preceded by an identifier:
 
 ```
  'q  : q, number of edited file remembered
  \"m : m, number of lines saved for each register
  :p  : p, number of  history cmd lines remembered
  %   : saves and restore the buffer list
- n...: fully qualified path to the  `.viminfo` files (note this is a literal "*n*")
+ n...: fully qualified path to the `.viminfo` file -- *this is a literal "*n*"*.
 
 ```
 
-For this to work the version of `vim` you installed must have been compiled with the `viminfo` module.
+	Please refer to the official [viminfo documentation](http://vimdoc.sourceforge.net/htmldoc/options.html#'viminfo') for particulars on how a pre-existing `viminfo` file is modified as it is updated with current session information, say from several buffers in the current session you are in the process of exiting.
+
+### Save cursor position
+
+If you want the cursor to appear in its [previous position](http://vim.wikia.com/wiki/Restore_cursor_to_file_position_in_previous_editing_session) after you re-open a file, add the following to your `~/.vimrc`:
+
+```
+function! ResCur()	" Restore session with cursor in last position inside line
+  if line("'\"") > 1 && line("'\"") <= line('$') 
+    normal! g`"		
+    return 1
+  endif
+endfunction
+
+if has('folding')
+  function! UnfoldCur()
+    if !&foldenable
+      return
+    endif
+    let cl = line('.')
+    if cl <= 1
+      return
+    endif
+    let cf  = foldlevel(cl)
+    let uf  = foldlevel(cl - 1)
+    let min = (cf > uf ? uf : cf)
+    if min
+      execute 'normal!' min . 'zo'
+      return 1
+    endif
+  endfunction
+endif
+
+```
+
+The above snippet will take care of whether:
+
+	- folds exist(ed) when you last exited your previous file edition session
+
+	- the re-opened file only contains one line
+
+For those not (yet) familiar with vim scripting, the third line of the above snippet specifies that the cursor position will be ***exactly*** restored to its previous letter position, upon re-opening a file. Make `g`"` into `g'"` to restore cursor position to the last visited line instead. In that case the cursor will be positioned at line begin.
+
+Next, wrap your *autocommand* instruction ([`autocmd`](https://vimhelp.appspot.com/autocmd.txt.html)) in an *autogroup* ([`augroup`](http://vimdoc.sourceforge.net/htmldoc/autocmd.html#:augroup)) block , by also including the following in your `~/.vimrc`.
+
+```
+augroup resCur
+  autocmd!
+  if has('folding')
+    autocmd BufWinEnter * if ResCur() | call UnfoldCur() | endif
+  else
+    autocmd BufWinEnter * call ResCur()
+  endif
+augroup END
+
+```
+
+Both topics (*autocommands* and *autogroups*) are out of scope in this Wiki section, but can be reviewed in great depth in the official vim documentation. There is also extensive community help available [online](https://vi.stackexchange.com/questions), should the above example-snippet not perform to your liking or need modification.
 
 ### Replace vi command with Vim
 

@@ -242,4 +242,4 @@ Para simplificar mucho las cosas puede ejecutar este script desde una unidad de 
 
 ## Interfaces gráficas
 
-[Install](/index.php/Pacman "Pacman") [grsync](https://www.archlinux.org/packages/?name=grsync) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") [grsync](https://www.archlinux.org/packages/?name=grsync) desde los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").

@@ -205,7 +205,7 @@ Windows 的安装介质应该格式化为与硬盘分区表相同的模式,见�
 
 ## 时间标准
 
-*   推荐: 参照 [Time#UTC in Windows](/index.php/Time#UTC_in_Windows "Time") 将 Windows 和 Arch 的硬件时钟设置为 UTC,并停用 Windows 的自动更新时间服务 (因为 Windows 会重新成默认的 *localtime*).
+*   推荐: 参照 [System time#UTC in Windows](/index.php/System_time#UTC_in_Windows "System time") 将 Windows 和 Arch 的硬件时钟设置为 UTC,并停用 Windows 的自动更新时间服务 (因为 Windows 会重新成默认的 *localtime*).
 
 *   不推荐: 设置 Arch Linux 的硬件时钟为 *localtime* 并停用所有时间同步关联的服务,例如 [NTPd](/index.php/NTPd "NTPd") . 这会让 Windows 接管硬件时钟设置,因此你应该至少每年启动两次 Windows (例如当你所在的地区应用夏令时,在每年的春季和秋季启动一次). 同时,如果你这么做,就别在论坛里问为什么时钟慢了一个小时之类的问题了(特别是你有些时候没启动 Windows 的情况下).
 

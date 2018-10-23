@@ -1,3 +1,9 @@
+相关文章
+
+*   [GParted](/index.php/GParted "GParted")
+*   [fdisk](/index.php/Fdisk "Fdisk")
+*   [Partitioning](/index.php/Partitioning "Partitioning")
+
 **翻译状态：** 本文是英文页面 [GNU_Parted](/index.php/GNU_Parted "GNU Parted") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-10-07，点击[这里](https://wiki.archlinux.org/index.php?title=GNU_Parted&diff=0&oldid=440534)可以查看翻译后英文页面的改动。
 
 GNU Parted 是创建和处理分区表的工具，[GParted](/index.php/GParted "GParted") 是图形前端.

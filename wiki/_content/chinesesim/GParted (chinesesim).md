@@ -1,3 +1,9 @@
+相关文章
+
+*   [GNU Parted](/index.php/GNU_Parted "GNU Parted")
+*   [Gparted-Live](/index.php/Gparted-Live "Gparted-Live")
+*   [Partitioning](/index.php/Partitioning "Partitioning")
+
 **翻译状态：** 本文是英文页面 [GParted](/index.php/GParted "GParted") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2015-03-01，点击[这里](https://wiki.archlinux.org/index.php?title=GParted&diff=0&oldid=363208)可以查看翻译后英文页面的改动。
 
 [GParted](http://gparted.sourceforge.net/index.php) 是 GNU Parted 的 GTK+ 前端，也是 GNOME 官方指定的分区编辑程序。它可以建立/删除/更改/检查几乎[所有文件格式](http://gparted.sourceforge.net/features.php)的分分区，还可以管理驱动器盘符、参数和复制/粘贴整个分区。GParted 收录于 [extra] 库，还有 [Live CD](http://gparted.sourceforge.net/download.php) 版本。若要调整平常无法卸载的根文件系统所在分区，需要下载 Live CD.

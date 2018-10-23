@@ -264,9 +264,9 @@ Run [hwclock(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8) to genera
 
 ```
 
-This command assumes the hardware clock is set to [UTC](https://en.wikipedia.org/wiki/UTC "wikipedia:UTC"). See [Time#Time standard](/index.php/Time#Time_standard "Time") for details.
+This command assumes the hardware clock is set to [UTC](https://en.wikipedia.org/wiki/UTC "wikipedia:UTC"). See [System time#Time standard](/index.php/System_time#Time_standard "System time") for details.
 
-這個命令假定硬體時間已經被設置為 [UTC](https://en.wikipedia.org/wiki/UTC "wikipedia:UTC") 時間。詳細資訊請看 [Time#Time standard](/index.php/Time#Time_standard "Time")。
+這個命令假定硬體時間已經被設置為 [UTC](https://en.wikipedia.org/wiki/UTC "wikipedia:UTC") 時間。詳細資訊請看 [System time#Time standard](/index.php/System_time#Time_standard "System time")。
 
 ### Localization 語言環境
 

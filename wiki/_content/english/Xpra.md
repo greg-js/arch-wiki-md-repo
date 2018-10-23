@@ -1,6 +1,6 @@
 From the [Xpra website](http://xpra.org/):
 
-Xpra is '[screen](/index.php/Screen "Screen") for X': it allows you to run X programs, usually on a remote host, direct their display to your local machine, and then to disconnect from these programs and reconnect from the same or another machine, without losing any state. It gives you remote access to individual applications.
+Xpra is '[GNU Screen](/index.php/GNU_Screen "GNU Screen") for X': it allows you to run X programs, usually on a remote host, direct their display to your local machine, and then to disconnect from these programs and reconnect from the same or another machine, without losing any state. It gives you remote access to individual applications.
 
 *   Xpra is "rootless" or "seamless": programs you run under it show up on your desktop as regular programs, managed by your regular window manager.
 *   Sessions can be accessed over SSH, or password protected over plain TCP sockets.

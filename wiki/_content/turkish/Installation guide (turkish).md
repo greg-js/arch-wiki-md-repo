@@ -195,7 +195,7 @@ Yeni sistemin içine [root'u değiştir](/index.php/Change_root "Change root")([
 
 ```
 
-Bu komut sistem donanımının [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC") biçiminde olduğunu varsayar. Detaylar için [Zaman#Zaman standartları](/index.php/Time#Time_standard "Time") bölümüne bakınız.
+Bu komut sistem donanımının [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC") biçiminde olduğunu varsayar. Detaylar için [Zaman#Zaman standartları](/index.php/System_time#Time_standard "System time") bölümüne bakınız.
 
 ### Yerelleştirme(locale)
 

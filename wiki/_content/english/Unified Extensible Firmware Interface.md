@@ -7,7 +7,7 @@ Related articles
 
 **Warning:** While the choice to install in UEFI mode is forward looking, early vendor UEFI implementations *may* carry more bugs than their BIOS counterparts. It is advised to do a search relating to your particular motherboard model before proceeding.
 
-The [Unified Extensible Firmware Interface](http://www.uefi.org/) (UEFI or EFI for short) is a new model for the interface between operating systems and firmware. It provides a standard environment for booting an operating system and running pre-boot applications.
+The [Unified Extensible Firmware Interface](https://www.uefi.org/) (UEFI or EFI for short) is a new model for the interface between operating systems and firmware. It provides a standard environment for booting an operating system and running pre-boot applications.
 
 It is distinct from the commonly used "[MBR boot code](/index.php/Partitioning#Master_Boot_Record_.28bootstrap_code.29 "Partitioning")" method followed for [BIOS](https://en.wikipedia.org/wiki/BIOS "wikipedia:BIOS") systems. See [Arch boot process](/index.php/Arch_boot_process "Arch boot process") for their differences and the boot process using UEFI. To set up UEFI boot loaders, see [Arch boot process#Boot loader](/index.php/Arch_boot_process#Boot_loader "Arch boot process").
 
@@ -53,7 +53,7 @@ It is distinct from the commonly used "[MBR boot code](/index.php/Partitioning#M
 *   Unless specified as EFI 1.x, EFI and UEFI terms are used interchangeably to denote UEFI 2.x firmware.
 *   Apple's EFI implementation is neither a EFI 1.x version nor UEFI 2.x version but mixes up both. This kind of firmware does not fall under any one (U)EFI specification and therefore is not a standard UEFI firmware. Unless stated explicitly, these instructions are general and some of them may not work or may be different in [Apple Macs](/index.php/MacBook "MacBook").
 
-The latest UEFI specification can be found at [http://uefi.org/specifications](http://uefi.org/specifications).
+The latest UEFI specification can be found at [https://uefi.org/specifications](https://uefi.org/specifications).
 
 ## UEFI firmware bitness
 
@@ -233,7 +233,7 @@ You can download a BSD licensed UEFI Shell from Intel's TianoCore UDK/EDK2 proje
 *   [Precompiled UEFI Shell v1 binaries](https://github.com/tianocore/edk2/tree/master/EdkShellBinPkg) (not updated anymore upstream).
 *   [Precompiled UEFI Shell v2 binary with bcfg modified to work with UEFI pre-2.3 firmware](https://ptpb.pw/~Shell2.zip) - from Clover EFI bootloader.
 
-Shell v2 works best in UEFI 2.3+ systems and is recommended over Shell v1 in those systems. Shell v1 should work in all UEFI systems irrespective of the spec. version the firmware follows. More info at [ShellPkg](https://github.com/tianocore/tianocore.github.io/wiki/ShellPkg) and [this mail](http://edk2-devel.narkive.com/zCN4CEnb/inclusion-of-uefi-shell-in-linux-distro-iso).
+Shell v2 works best in UEFI 2.3+ systems and is recommended over Shell v1 in those systems. Shell v1 should work in all UEFI systems irrespective of the spec. version the firmware follows. More info at [ShellPkg](https://github.com/tianocore/tianocore.github.io/wiki/ShellPkg) and [this mail](https://edk2-devel.narkive.com/zCN4CEnb/inclusion-of-uefi-shell-in-linux-distro-iso).
 
 ### Launching UEFI Shell
 
@@ -251,7 +251,7 @@ More info at [https://software.intel.com/en-us/articles/efi-shells-and-scripting
 
 #### bcfg
 
-`bcfg` modifies the UEFI NVRAM entries which allows the user to change the boot entries or driver options. This command is described in detail in page 83 (Section 5.3) of the [UEFI Shell Specification 2.0](http://www.uefi.org/sites/default/files/resources/UEFI_Shell_Spec_2_0.pdf) document.
+`bcfg` modifies the UEFI NVRAM entries which allows the user to change the boot entries or driver options. This command is described in detail in page 83 (Section 5.3) of the [UEFI Shell Specification 2.0](https://www.uefi.org/sites/default/files/resources/UEFI_Shell_Spec_2_0.pdf) document.
 
 **Note:**
 
@@ -463,7 +463,7 @@ $ qemu-system-x86_64 -enable-kvm -m 1G -drive if=pflash,format=raw,readonly,file
 
 ### DUET for BIOS only systems
 
-DUET is a TianoCore project that enables chainloading a full UEFI environment from a BIOS system, in a way similar to BIOS OS booting. This method is being discussed extensively in [http://www.insanelymac.com/forum/topic/186440-linux-and-windows-uefi-boot-using-tianocore-duet-firmware/](http://www.insanelymac.com/forum/topic/186440-linux-and-windows-uefi-boot-using-tianocore-duet-firmware/). Pre-build DUET images can be downloaded from one of the repos at [https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer). Specific instructions for setting up DUET is available at [https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/blob/master/Migle_BootDuet_INSTALL.txt](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/blob/master/Migle_BootDuet_INSTALL.txt) .
+DUET is a TianoCore project that enables chainloading a full UEFI environment from a BIOS system, in a way similar to BIOS OS booting. This method is being discussed extensively in [https://www.insanelymac.com/forum/topic/186440-linux-and-windows-uefi-boot-using-tianocore-duet-firmware/](https://www.insanelymac.com/forum/topic/186440-linux-and-windows-uefi-boot-using-tianocore-duet-firmware/). Pre-build DUET images can be downloaded from one of the repos at [https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer). Specific instructions for setting up DUET is available at [https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/blob/master/Migle_BootDuet_INSTALL.txt](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/blob/master/Migle_BootDuet_INSTALL.txt) .
 
 You can also try [https://sourceforge.net/projects/cloverefiboot/](https://sourceforge.net/projects/cloverefiboot/) which provides modified DUET images that may contain some system specific fixes and is more frequently updated compared to the gitorious repos.
 
@@ -518,24 +518,24 @@ After reboot, any entries added to NVRAM should show up in the boot menu.
 ## See also
 
 *   [Wikipedia:UEFI](https://en.wikipedia.org/wiki/UEFI "wikipedia:UEFI")
-*   [UEFI Forum](http://www.uefi.org/home/) - contains the official [UEFI Specifications](http://uefi.org/specifications) - GUID Partition Table is part of UEFI Specification
+*   [UEFI Forum](https://www.uefi.org/home/) - contains the official [UEFI Specifications](https://uefi.org/specifications) - GUID Partition Table is part of UEFI Specification
 *   [UEFI boot: how does that actually work, then? - A blog post by AdamW](https://www.happyassassin.net/2014/01/25/uefi-boot-how-does-that-actually-work-then/)
 *   [Linux Kernel x86_64 UEFI Documentation](https://www.kernel.org/doc/Documentation/x86/x86_64/uefi.txt)
 *   [Intel's page on EFI](https://www.intel.com/content/www/us/en/architecture-and-technology/unified-extensible-firmware-interface/efi-homepage-general-technology.html)
 *   [Intel Architecture Firmware Resource Center](https://firmware.intel.com/)
 *   [Matt Fleming - The Linux EFI Boot Stub](https://firmware.intel.com/blog/linux-efi-boot-stub)
 *   [Matt Fleming - Accessing UEFI Variables from Linux](https://firmware.intel.com/blog/accessing-uefi-variables-linux)
-*   [Rod Smith - Linux on UEFI: A Quick Installation Guide](http://www.rodsbooks.com/linux-uefi/)
+*   [Rod Smith - Linux on UEFI: A Quick Installation Guide](https://www.rodsbooks.com/linux-uefi/)
 *   [UEFI Boot problems on some newer machines (LKML)](https://lkml.org/lkml/2011/6/8/322)
 *   [LPC 2012 Plumbing UEFI into Linux](https://linuxplumbers.ubicast.tv/videos/plumbing-uefi-into-linux/)
 *   [LPC 2012 UEFI Tutorial : part 1](https://linuxplumbers.ubicast.tv/videos/uefi-tutorial-part-1/)
 *   [LPC 2012 UEFI Tutorial : part 2](https://linuxplumbers.ubicast.tv/videos/uefi-tutorial-part-2/)
-*   [Intel's TianoCore Project](http://www.tianocore.org/) for Open-Source UEFI firmware which includes DuetPkg for direct BIOS based booting and OvmfPkg used in QEMU and Oracle VirtualBox
+*   [Intel's TianoCore Project](https://www.tianocore.org/) for Open-Source UEFI firmware which includes DuetPkg for direct BIOS based booting and OvmfPkg used in QEMU and Oracle VirtualBox
 *   [FGA: The EFI boot process](https://jdebp.eu/FGA/efi-boot-process.html)
 *   [Microsoft's Windows and GPT FAQ](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/windows-and-gpt-faq)
 *   [Convert Windows x64 from BIOS-MBR mode to UEFI-GPT mode without Reinstall](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/wikis/Windows_x64_BIOS_to_UEFI)
 *   [Create a Linux BIOS+UEFI and Windows x64 BIOS+UEFI bootable USB drive](https://gitlab.com/tianocore_uefi_duet_builds/tianocore_uefi_duet_installer/wikis/Linux_Windows_BIOS_UEFI_boot_USB)
-*   [Rod Smith - A BIOS to UEFI Transformation](http://rodsbooks.com/bios2uefi/)
+*   [Rod Smith - A BIOS to UEFI Transformation](https://rodsbooks.com/bios2uefi/)
 *   [EFI Shells and Scripting - Intel Documentation](https://software.intel.com/en-us/articles/efi-shells-and-scripting/)
 *   [UEFI Shell - Intel Documentation](https://software.intel.com/en-us/articles/uefi-shell/)
 *   [UEFI Shell - bcfg command info](http://www.hpuxtips.es/?q=node/293)

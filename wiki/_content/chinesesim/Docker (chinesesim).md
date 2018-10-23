@@ -5,6 +5,8 @@ Related articles
 *   [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd")
 *   [Vagrant](/index.php/Vagrant "Vagrant")
 
+**翻译状态：** 本文是英文页面 [Docker](/index.php/Docker "Docker") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-10-22，点击[这里](https://wiki.archlinux.org/index.php?title=Docker&diff=0&oldid=549067)可以查看翻译后英文页面的改动。
+
 [Docker](https://en.wikipedia.org/wiki/Docker_(software) 是一种打包、传输和运行任何程序作为轻量级容器的实用工具.
 
 ## Contents

@@ -400,7 +400,7 @@ Emacs除了用作编辑器，其高级功能更为出名，其中一项就是把
 
 ### 鼠标支持
 
-在控制台中，使用鼠标复制粘贴比传统 GNU [screen](/index.php/Screen "Screen") 操作方式方便许多。参见：[Console mouse support](/index.php/Console_mouse_support "Console mouse support")。
+在控制台中，使用鼠标复制粘贴比传统 [GNU screen](/index.php?title=GNU_screen&action=edit&redlink=1 "GNU screen (page does not exist)") 操作方式方便许多。参见：[Console mouse support](/index.php/Console_mouse_support "Console mouse support")。
 
 ### 页面回滚缓冲
 
@@ -408,7 +408,7 @@ Emacs除了用作编辑器，其高级功能更为出名，其中一项就是把
 
 ### 会话管理
 
-[tmux](/index.php/Tmux "Tmux")或[screen](/index.php/Screen "Screen")之类的终端复用器提供会话管理，在其中运行的程序不会因杀死终端、关闭X或用户登出而终止，只要终端复用器服务保持运行。随后，用户可以重新连接会话。
+[tmux](/index.php/Tmux "Tmux")或[GNU screen](/index.php?title=GNU_screen&action=edit&redlink=1 "GNU screen (page does not exist)")之类的终端复用器提供会话管理，在其中运行的程序不会因杀死终端、关闭X或用户登出而终止，只要终端复用器服务保持运行。随后，用户可以重新连接会话。
 
 ## 系统中文化
 

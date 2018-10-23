@@ -168,7 +168,7 @@ Num Lock 是多數鍵盤都有的切換鍵。若要在系統開機時啟用 Num 
 
 ### 滑鼠支援
 
-在終端機進行複製貼上，除了使用 GNU [screen](/index.php/Screen "Screen") 的傳統複製模式，也可以直接使用滑鼠。詳細步驟請參考[終端機滑鼠支援](/index.php/Console_mouse_support "Console mouse support")。
+在終端機進行複製貼上，除了使用 [GNU Screen](/index.php/GNU_Screen "GNU Screen") 的傳統複製模式，也可以直接使用滑鼠。詳細步驟請參考[終端機滑鼠支援](/index.php/Console_mouse_support "Console mouse support")。
 
 ### 頁面滾動緩衝
 
@@ -176,7 +176,7 @@ Num Lock 是多數鍵盤都有的切換鍵。若要在系統開機時啟用 Num 
 
 ### 作業階段管理
 
-使用終端機多工器 (如 [tmux](/index.php/Tmux "Tmux") 或 [screen](/index.php/Screen "Screen"))，程式可以在由分頁與面板組成的作業階段中執行。這些作業階段可以隨意拆解，因此就算使用者殺掉終端模擬器、終止 [X](/index.php/X "X") 或登出，只要終端機多工伺服器仍在運作，與作業階段相關聯的程式就會繼續在背景執行。若要和程式互動，必須重新連接作業階段。
+使用終端機多工器 (如 [tmux](/index.php/Tmux "Tmux") 或 [GNU Screen](/index.php/GNU_Screen "GNU Screen"))，程式可以在由分頁與面板組成的作業階段中執行。這些作業階段可以隨意拆解，因此就算使用者殺掉終端模擬器、終止 [X](/index.php/X "X") 或登出，只要終端機多工伺服器仍在運作，與作業階段相關聯的程式就會繼續在背景執行。若要和程式互動，必須重新連接作業階段。
 
 ## 輸入裝置
 

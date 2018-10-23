@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=544785) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [General recommendations](/index.php/General_recommendations "General recommendations"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=General_recommendations&diff=0&oldid=549342) na versão em inglês.
 
 Artigos relacionados
 
@@ -231,7 +231,7 @@ Essa seção está confinada a pequenos procedimentos de conectividade. Siga par
 
 ### Sincronização de relógio
 
-O [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") (NTP) é um protocolo para sincronizar os relógios de sistemas de computador em redes de dados de latência variável com comutação de pacotes. Veja [Time#Time synchronization](/index.php/Time#Time_synchronization "Time") para implementações de tal protocolo.
+O [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") (NTP) é um protocolo para sincronizar os relógios de sistemas de computador em redes de dados de latência variável com comutação de pacotes. Veja [Time synchronization](/index.php/Time_synchronization "Time synchronization") para implementações de tal protocolo.
 
 ### Segurança de DNS
 

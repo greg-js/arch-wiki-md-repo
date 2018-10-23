@@ -118,7 +118,7 @@ NeoMutt can be installed with the [neomutt](https://www.archlinux.org/packages/?
 
 This section covers [#IMAP](#IMAP), [#POP3](#POP3), [#Maildir](#Maildir) and [#SMTP](#SMTP) configuration.
 
-Note that Mutt will recognize by default two locations for its configuration file; `~/.muttrc` and `~/.mutt/muttrc`. Either location will work. In case you decide to put the initialization file somewhere else, use `$ mutt -F /path/to/.muttrc`. You should also know some prerequisite for Mutt configuration. Its syntax is very close to the Bourne Shell. For example, you can get the content of another config file:
+Mutt will, by default, search six locations for its configuration file; `~/.muttrc`, `~/.mutt/muttrc`, and `$XDG_CONFIG_HOME/mutt/muttrc`, first with `-MUTT_VERSION` appended, then without. Any of these locations will work. In case you decide to put the initialization file somewhere else, use `$ mutt -F /path/to/.muttrc`. You should also know some prerequisite for Mutt configuration. Its syntax is very close to the Bourne Shell. For example, you can get the content of another config file:
 
 ```
 source /path/to/other/config/file

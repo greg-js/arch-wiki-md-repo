@@ -213,7 +213,7 @@ Please read [AUR User Guidelines#Submitting packages](/index.php/AUR_User_Guidel
 
 ## More detailed guidelines
 
-**<a class="mw-selflink selflink">Package creation guidelines</a>**
+**[Package creation guidelines](/index.php/Arch_packaging_standards "Arch packaging standards")**
 
 * * *
 

@@ -736,7 +736,7 @@ Errors occured, no packages were upgraded.
 
 ```
 
-Make sure to correct the [time](/index.php/Time "Time"), for example with `ntpd -qg` run as root, and run `hwclock -w` as root before subsequent installations or upgrades.
+Make sure to correct the [system time](/index.php/System_time "System time"), for example with `ntpd -qg` run as root, and run `hwclock -w` as root before subsequent installations or upgrades.
 
 ### 'warning: current locale is invalid; using default "C" locale' 错误
 

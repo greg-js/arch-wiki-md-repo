@@ -744,7 +744,7 @@ Ocorreram erros e, portanto, nenhum pacote foi atualizado.
 
 ```
 
-Certifique-se de corrigir o [tempo](/index.php/Time "Time"), por exemplo com `ntpd -qg` executado como root, e execute `hwclock -w` como root antes de instalações ou atualizações subsequentes.
+Certifique-se de corrigir o [tempo](/index.php/System_time "System time"), por exemplo com `ntpd -qg` executado como root, e execute `hwclock -w` como root antes de instalações ou atualizações subsequentes.
 
 ### Erro 'aviso: locale atual é inválida; usando locale padrão "C"'
 

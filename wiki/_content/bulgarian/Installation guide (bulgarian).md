@@ -214,7 +214,7 @@ Arch Linux би трябвало да работи на всяка [x86_64](http
 
 ```
 
-Тази команда очаква часовника на устройството да бъде [UTC](https://en.wikipedia.org/wiki/UTC "wikipedia:UTC"). Вижте [Time#Time standard](/index.php/Time#Time_standard "Time") за детайли.
+Тази команда очаква часовника на устройството да бъде [UTC](https://en.wikipedia.org/wiki/UTC "wikipedia:UTC"). Вижте [System time#Time standard](/index.php/System_time#Time_standard "System time") за детайли.
 
 ### Локализиране
 

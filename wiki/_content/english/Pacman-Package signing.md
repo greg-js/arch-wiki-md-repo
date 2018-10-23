@@ -138,7 +138,7 @@ For debugging purposes, you can access *pacman'*s keyring directly with *gpg*, e
 
 ## Troubleshooting
 
-**Warning:** *pacman-key* depends on [time](/index.php/Time "Time"). If your system clock is wrong, you'll get:
+**Warning:** *pacman-key* depends on [system time](/index.php/System_time "System time"). If your system clock is wrong, you'll get:
 ```
 error: PackageName: signature from "User <email@archlinux.org>" is invalid
 error: failed to commit transaction (invalid or corrupted package (PGP signature))

@@ -3,7 +3,7 @@ Related articles
 *   [GIMP/CMYK support](/index.php/GIMP/CMYK_support "GIMP/CMYK support")
 *   [List of applications/Multimedia#Raster graphics editors](/index.php/List_of_applications/Multimedia#Raster_graphics_editors "List of applications/Multimedia")
 
-[GIMP](https://www.gimp.org/) is a powerful raster image editing program, and commonly used for photo retouching, image composition, and general graphic design work. It can be used as a simple paint program, an expert quality photo retouching program, an online batch processing system, a mass production image renderer, an image format converter, etc.
+[GIMP](https://en.wikipedia.org/wiki/GIMP "wikipedia:GIMP") is a powerful raster image editing program, and commonly used for photo retouching, image composition, and general graphic design work. It can be used as a simple paint program, an expert quality photo retouching program, an online batch processing system, a mass production image renderer, an image format converter, etc.
 
 ## Contents
 
@@ -89,6 +89,6 @@ Since GIMP rasterizes PDF files right from the start, it will not exploit intrin
 
 ## See also
 
-*   [Wikipedia:GIMP](https://en.wikipedia.org/wiki/GIMP "wikipedia:GIMP")
+*   [Official website](https://www.gimp.org/)
 *   [debian:GIMP](https://wiki.debian.org/GIMP "debian:GIMP")
 *   [Resources | GIMP Magazine](https://gimpmagazine.org/resources/) - Index of GIMP resources, tutorials, communities

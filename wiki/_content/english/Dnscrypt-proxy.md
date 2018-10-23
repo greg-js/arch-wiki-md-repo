@@ -165,7 +165,6 @@ If you configured *dnscrypt-proxy* to use a resolver with enabled [DNSSEC](/inde
 ```
 conf-file=/usr/share/dnsmasq/trust-anchors.conf
 dnssec
-dnssec-check-unsigned
 ```
 
 Restart `dnsmasq.service` to apply the changes.

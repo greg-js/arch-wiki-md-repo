@@ -234,7 +234,7 @@ Por favor lea [Arch User Repository#Submitting packages](/index.php/Arch_User_Re
 
 ## Directrices más detalladas
 
-**[Package creation guidelines](/index.php/Creating_packages "Creating packages")**
+**[Package creation guidelines](/index.php/Arch_packaging_standards "Arch packaging standards")**
 
 * * *
 

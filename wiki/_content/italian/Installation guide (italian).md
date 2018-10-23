@@ -195,7 +195,7 @@ Lanciare [hwclock(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8) per 
 
 ```
 
-Questo comando assume che il proprio orologio hardware sia impostato su [UTC](https://en.wikipedia.org/wiki/UTC "wikipedia:UTC"). Per dettagli vedere [Time#Time standard](/index.php/Time#Time_standard "Time").
+Questo comando assume che il proprio orologio hardware sia impostato su [UTC](https://en.wikipedia.org/wiki/UTC "wikipedia:UTC"). Per dettagli vedere [System time#Time standard](/index.php/System_time#Time_standard "System time").
 
 ### Locale
 

@@ -136,7 +136,7 @@ In questo modo si permetterà alla chiave di firmare i pacchetti.
 
 ## Risoluzione dei problemi
 
-**Attenzione:** *pacman-key* dipende dall'[orario](/index.php/Time "Time") di sistema. Se è impostato in maniera errata, si avrà il seguente errore:
+**Attenzione:** *pacman-key* dipende dall'[orario](/index.php/System_time "System time") di sistema. Se è impostato in maniera errata, si avrà il seguente errore:
 ```
 error: PackageName: signature from "User <email@archlinux.org>" is invalid
 error: failed to commit transaction (invalid or corrupted package (PGP signature))

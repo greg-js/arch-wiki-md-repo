@@ -47,9 +47,9 @@ Install [ceph](https://www.archlinux.org/packages/?name=ceph) on all nodes that 
 
 ### NTP Client
 
-**Warning:** You should synchronise the clocks on your monitor nodes to prevent clock drift (see [Time#Time skew](/index.php/Time#Time_skew "Time") for details), which can degrade the performance of your cluster or stop it from functioning entirely. The [official documentation](http://docs.ceph.com/docs/master/rados/configuration/mon-config-ref/#clock:) recommends that nodes run some form of clock synchronisation.
+**Warning:** You should synchronise the clocks on your monitor nodes to prevent clock drift (see [System time#Time skew](/index.php/System_time#Time_skew "System time") for details), which can degrade the performance of your cluster or stop it from functioning entirely. The [official documentation](http://docs.ceph.com/docs/master/rados/configuration/mon-config-ref/#clock:) recommends that nodes run some form of clock synchronisation.
 
-Install and run a time synchronisation client on the node. See [Time#Time synchronization](/index.php/Time#Time_synchronization "Time") for details.
+Install and run a time synchronisation client on the node. See [Time synchronization](/index.php/Time_synchronization "Time synchronization") for details.
 
 ## Bootstrapping a storage cluster
 

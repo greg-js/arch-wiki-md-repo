@@ -4,7 +4,7 @@ The most important package groups are:
 
 	base
 
-	The [base](https://www.archlinux.org/groups/x86_64/base/) group contains essential software like the [kernel](/index.php/Kernel "Kernel"), [Bash](/index.php/Bash "Bash"), the [core utilities](/index.php/Core_utilities "Core utilities"), [pacman](/index.php/Pacman "Pacman"), [netctl](/index.php/Netctl "Netctl") and [dhcpcd](/index.php/Dhcpcd "Dhcpcd").
+	The [base](https://www.archlinux.org/groups/x86_64/base/) group contains essential software like the [kernel](/index.php/Kernel "Kernel"), [Bash](/index.php/Bash "Bash"), the [core utilities](/index.php/Core_utilities "Core utilities") and [pacman](/index.php/Pacman "Pacman") and non-essential software like [dhcpcd](/index.php/Dhcpcd "Dhcpcd") and [netctl](/index.php/Netctl "Netctl").
 
 	base-devel
 

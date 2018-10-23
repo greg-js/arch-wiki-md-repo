@@ -27,6 +27,7 @@ Related articles
     *   [5.1 LDAP Segfault](#LDAP_Segfault)
     *   [5.2 Error: Incoming server already exists](#Error:_Incoming_server_already_exists)
     *   [5.3 Thunderbird UI freezes when receiving a new message](#Thunderbird_UI_freezes_when_receiving_a_new_message)
+    *   [5.4 LC_TIME environment variable not respected](#LC_TIME_environment_variable_not_respected)
 
 ## Installation
 
@@ -270,3 +271,7 @@ $ pacman -S thunderbird
 ### Thunderbird UI freezes when receiving a new message
 
 If Thunderbird is configured to show an alert when a new message arrives, or at launch, the lack of a notification daemon may freeze the interface (white screen) for many seconds. You can solve this issue by disabling alerts or installing a [notification server](/index.php/Desktop_notifications#Notification_servers "Desktop notifications").
+
+### LC_TIME environment variable not respected
+
+Thunderbird should use the `LC_TIME` environment variable for localization, but it might not do so in all contexts. Some problems can be mitigated by setting Edit > Preferences > Advanced > Date and Time Formatting to "Regional settings locale", a setting which was introduced in Thunderbird 56\. However, there is an [active bug report](https://bugzilla.mozilla.org/show_bug.cgi?id=1426907%7C) for this issue.

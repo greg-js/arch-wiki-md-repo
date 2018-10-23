@@ -12,7 +12,7 @@ To create a kernel module, you can read [The Linux Kernel Module Programming Gui
 ## Contents
 
 *   [1 Obtaining information](#Obtaining_information)
-*   [2 Automatic module handling](#Automatic_module_handling)
+*   [2 Automatic module loading with systemd](#Automatic_module_loading_with_systemd)
 *   [3 Manual module handling](#Manual_module_handling)
 *   [4 Setting module options](#Setting_module_options)
     *   [4.1 Manually at load time using modprobe](#Manually_at_load_time_using_modprobe)
@@ -30,7 +30,7 @@ To create a kernel module, you can read [The Linux Kernel Module Programming Gui
 
 Modules are stored in `/usr/lib/modules/*kernel_release*`. You can use the command `uname -r` to get your current kernel release version.
 
-**Note:** Module names often use underscores (`_`) or dashes (`-`); however, those symbols are interchangeable, both when using the `modprobe` command and in configuration files in `/etc/modprobe.d/`.
+**Note:** Module names often use underscores (`_`) or dashes (`-`); however, those symbols are interchangeable when using the `modprobe` command and in configuration files in `/etc/modprobe.d/`.
 
 To show what kernel modules are currently loaded:
 
@@ -74,11 +74,11 @@ $ modprobe --show-depends *module_name*
 
 ```
 
-## Automatic module handling
+## Automatic module loading with systemd
 
 Today, all necessary modules loading is handled automatically by [udev](/index.php/Udev "Udev"), so if you do not need to use any out-of-tree kernel modules, there is no need to put modules that should be loaded at boot in any configuration file. However, there are cases where you might want to load an extra module during the boot process, or blacklist another one for your computer to function properly.
 
-Kernel modules can be explicitly loaded during boot and are configured as a static list in files under `/etc/modules-load.d/`. Each configuration file is named in the style of `/etc/modules-load.d/<program>.conf`. Configuration files simply contain a list of kernel modules names to load, separated by newlines. Empty lines and lines whose first non-whitespace character is `#` or `;` are ignored.
+Kernel modules can be explicitly listed in files under `/etc/modules-load.d/` for systemd to load them during boot. Each configuration file is named in the style of `/etc/modules-load.d/<program>.conf`. Configuration files simply contain a list of kernel modules names to load, separated by newlines. Empty lines and lines whose first non-whitespace character is `#` or `;` are ignored.
 
  `/etc/modules-load.d/virtio-net.conf` 
 ```

@@ -369,7 +369,7 @@ WantedBy=wm.target
 
 Arch Linux builds the [systemd](https://www.archlinux.org/packages/?name=systemd) package with `--without-kill-user-processes`, setting `KillUserProcesses` to `no` by default. This setting causes user processes not to be killed when the user completely logs out. To change this behavior in order to have all user processes killed on the user's logout, set `KillUserProcesses=yes` in `/etc/systemd/logind.conf`.
 
-Note that changing this setting breaks terminal multiplexers such as [tmux](/index.php/Tmux "Tmux") and [screen](/index.php/Screen "Screen"). If you change this setting, you can still use a terminal multiplexer by using `systemd-run` as follows:
+Note that changing this setting breaks terminal multiplexers such as [tmux](/index.php/Tmux "Tmux") and [GNU Screen](/index.php/GNU_Screen "GNU Screen"). If you change this setting, you can still use a terminal multiplexer by using `systemd-run` as follows:
 
 ```
 $ systemd-run --scope --user *command* *args*

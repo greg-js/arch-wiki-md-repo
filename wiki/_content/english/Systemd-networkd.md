@@ -75,6 +75,7 @@ After making changes to a configuration file, [restart](/index.php/Restart "Rest
 
 **Note:**
 
+*   The options specified in the configuration files are case sensitive.
 *   In the examples below, `enp1s0` is the wired adapter and `wlp2s0` is the wireless adapter. These names can be different on different systems. It is also possible to use a wildcard, e.g. `Name=en*`.
 *   If you want to disable IPv6, see [IPv6#systemd-networkd](/index.php/IPv6#systemd-networkd_2 "IPv6").
 *   Set `DHCP=yes` to accept an IPv4 **and** IPv6 DHCP request to the `[Network]` section.

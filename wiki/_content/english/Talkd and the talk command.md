@@ -13,7 +13,7 @@ In either case, the tty is optional. It is used if you wish to talk to a local u
 ### Using xinetd
 
 1.  First, install the inetutils package, which contains talk and talkd. These also rely on xinetd, so install that as well. You might also need the screen command; it's in the screen package.
-2.  [Install](/index.php/Install "Install") [inetutils](https://www.archlinux.org/packages/?name=inetutils), [xinetd](https://www.archlinux.org/packages/?name=xinetd) and [Screen](/index.php/Screen "Screen").
+2.  [Install](/index.php/Install "Install") [inetutils](https://www.archlinux.org/packages/?name=inetutils), [xinetd](https://www.archlinux.org/packages/?name=xinetd) and [GNU Screen](/index.php/GNU_Screen "GNU Screen").
 3.  Configure the xinetd service entry by editing `/etc/xinetd.d/talk` and setting "disable = no".
 4.  If you are using tcp_wrappers or something similar, add an entry to `/etc/hosts.allow`: `talkd: 127.0.0.1` 
 5.  Now [start](/index.php/Start "Start") `xinetd.service`.

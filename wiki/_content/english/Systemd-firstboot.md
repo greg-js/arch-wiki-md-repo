@@ -1,4 +1,4 @@
-Starting with version 216 of [systemd](/index.php/Systemd "Systemd"), the command *systemd-firstboot* allows for setting of basic system settings before or during the first boot of a newly created system. The tool is able of initialize the following system settings: [timezone](/index.php/Time "Time"), [locale](/index.php/Locale "Locale"), [hostname](/index.php/Hostname "Hostname"), the root password, as well as automated generation of a machine ID.
+Starting with version 216 of [systemd](/index.php/Systemd "Systemd"), the command *systemd-firstboot* allows for setting of basic system settings before or during the first boot of a newly created system. The tool is able of initialize the following system settings: [timezone](/index.php/Timezone "Timezone"), [locale](/index.php/Locale "Locale"), [hostname](/index.php/Hostname "Hostname"), the root password, as well as automated generation of a machine ID.
 
 As *systemd-firstboot* interacts with the filesystem directly and doesn't make use of the related systemd services (such as timedatectl, hostnamectl or localectl), it should not be executed on an already running system.
 

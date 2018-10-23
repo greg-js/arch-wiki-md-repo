@@ -139,7 +139,7 @@ o con
 
 ## Solución de problemas
 
-**Advertencia:** pacman-key depende de [time](/index.php/Time "Time"). Si la hora del sistema no es la correcta, aparecerá lo siguiente:
+**Advertencia:** pacman-key depende de [system time](/index.php/System_time "System time"). Si la hora del sistema no es la correcta, aparecerá lo siguiente:
 
 	error: PackageName: signature from "User <email@archlinux.org>" is invalid
 

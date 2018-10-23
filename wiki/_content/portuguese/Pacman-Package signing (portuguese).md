@@ -137,7 +137,7 @@ Para fins de depuração, você pode acessar o chaveiro do *pacman* diretamente 
 
 ## Solução de problemas
 
-**Atenção:** *pacman-key* depende do [tempo](/index.php/Time "Time"). Se o relgógio do seu sistema estiver errado, você vai receber:
+**Atenção:** *pacman-key* depende do [tempo](/index.php/System_time "System time"). Se o relgógio do seu sistema estiver errado, você vai receber:
 ```
 erro: pacote: assinatura de "Usuário <email@archlinux.org>" é inválida
 erro: falha ao submeter transação (pacote inválido ou corrompido (assinatura PGP))

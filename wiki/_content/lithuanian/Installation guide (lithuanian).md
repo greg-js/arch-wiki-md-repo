@@ -214,7 +214,7 @@ Paleiskite [hwclock(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8) no
 
 ```
 
-Ši komanda daro prielaidą ka techninės įrangos laikrodis nustatytas į [UTC](https://en.wikipedia.org/wiki/UTC "wikipedia:UTC"). Daugiau detalių čia - [Laiko standartas](/index.php/Time#Time_standard "Time").
+Ši komanda daro prielaidą ka techninės įrangos laikrodis nustatytas į [UTC](https://en.wikipedia.org/wiki/UTC "wikipedia:UTC"). Daugiau detalių čia - [Laiko standartas](/index.php/System_time#Time_standard "System time").
 
 ### Lokalizacija
 

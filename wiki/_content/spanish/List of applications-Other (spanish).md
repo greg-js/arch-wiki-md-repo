@@ -66,11 +66,11 @@ Vea también [Wikipedia:Comparison of command shells](https://en.wikipedia.org/w
 
 	[http://www.brain-dump.org/projects/abduco/](http://www.brain-dump.org/projects/abduco/) || [abduco](https://www.archlinux.org/packages/?name=abduco)
 
-*   **dtach** — Programa que emula la capacidad de desconexión de [screen](/index.php/Screen "Screen").
+*   **dtach** — Programa que emula la capacidad de desconexión de [GNU Screen](/index.php/GNU_Screen "GNU Screen").
 
 	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://www.archlinux.org/packages/?name=dtach)
 
-*   **[GNU Screen](/index.php/Screen "Screen")** — Gestor de ventanas a tamaño completo que multiplexa una terminal física.
+*   **[GNU Screen](/index.php/GNU_Screen "GNU Screen")** — Gestor de ventanas a tamaño completo que multiplexa una terminal física.
 
 	[https://gnu.org/s/screen/](https://gnu.org/s/screen/) || [screen](https://www.archlinux.org/packages/?name=screen)
 

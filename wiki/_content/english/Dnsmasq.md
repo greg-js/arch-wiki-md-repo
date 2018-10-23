@@ -88,7 +88,6 @@ To validate [DNSSEC](/index.php/DNSSEC "DNSSEC") load the DNSSEC trust anchors p
 ```
 conf-file=/usr/share/dnsmasq/trust-anchors.conf
 dnssec
-dnssec-check-unsigned
 
 ```
 

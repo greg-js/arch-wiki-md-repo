@@ -163,7 +163,7 @@ See [dhcpcd-run-hooks(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dhcpcd-run-
 
 ## See also
 
-*   [Time](/index.php/Time "Time") (for more information on computer timekeeping)
+*   [System time](/index.php/System_time "System time") (for more information on computer timekeeping)
 *   [http://chrony.tuxfamily.org/](http://chrony.tuxfamily.org/)
 *   [http://www.ntp.org/](http://www.ntp.org/)
 *   [http://support.ntp.org/](http://support.ntp.org/)

@@ -203,7 +203,7 @@ DNS = 10.0.0.1
 
 [Peer]
 PublicKey = [SERVER PUBLICKEY]
-AllowedIPs = 0.0.0.0/0, ::0/0
+AllowedIPs = 0.0.0.0/0, ::/0
 Endpoint = [SERVER ENDPOINT]:51820
 PersistentKeepalive = 25
 ```

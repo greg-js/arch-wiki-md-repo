@@ -5,7 +5,7 @@ Related articles
 
 The [EFI system partition](https://en.wikipedia.org/wiki/EFI_system_partition "wikipedia:EFI system partition") (also called ESP) is an OS independent partition that acts as the storage place for the EFI bootloaders, applications and drivers to be launched by the UEFI firmware. It is mandatory for UEFI boot.
 
-The UEFI specification mandates support for the FAT12, FAT16, and FAT32 filesystems (see [UEFI specification version 2.7, section 13.3.1.1](http://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1019485)), but any conformant vendor can optionally add support for additional filesystems; for example, Apple [Macs](/index.php/Mac "Mac") support (and by default use) their own HFS+ filesystem drivers.
+The UEFI specification mandates support for the FAT12, FAT16, and FAT32 filesystems (see [UEFI specification version 2.7, section 13.3.1.1](https://www.uefi.org/sites/default/files/resources/UEFI%20Spec%202_7_A%20Sept%206.pdf#G17.1019485)), but any conformant vendor can optionally add support for additional filesystems; for example, Apple [Macs](/index.php/Mac "Mac") support (and by default use) their own HFS+ filesystem drivers.
 
 ## Contents
 
@@ -54,7 +54,7 @@ The following two sections show how to create an EFI system partition (ESP).
 
 **Note:** It is recommended to use [GPT](/index.php/GPT "GPT") for UEFI boot, because some UEFI firmwares do not allow UEFI/MBR boot.
 
-To avoid potential problems with some UEFI implementations, the ESP should be formatted with FAT32 and the size should be at least 512 MiB. 550 MiB is recommended to avoid MiB/MB confusion and accidentally creating FAT16 [[1]](http://www.rodsbooks.com/efi-bootloaders/principles.html), although larger sizes are fine.
+To avoid potential problems with some UEFI implementations, the ESP should be formatted with FAT32 and the size should be at least 512 MiB. 550 MiB is recommended to avoid MiB/MB confusion and accidentally creating FAT16 [[1]](https://www.rodsbooks.com/efi-bootloaders/principles.html), although larger sizes are fine.
 
 According to a Microsoft note[[2]](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-uefigpt-based-hard-drive-partitions#diskpartitionrules), the minimum size for the EFI system partition (ESP) would be 100 MiB, though this is not stated in the UEFI Specification. Note that for [Advanced Format](/index.php/Advanced_Format "Advanced Format") 4K Native drives (4-KiB-per-sector) drives, the size is at least 256 MiB, because it is the minimum partition size of FAT32 drives (calculated as sector size (4KiB) x 65527 = 256 MiB), due to a limitation of the FAT32 file format.
 
@@ -279,12 +279,12 @@ Then create the file `/etc/initcpio/install/esp-update-linux` which need to be e
  `/etc/initcpio/install/esp-update-linux` 
 ```
 # Directory to copy the kernel, the initramfs...
-ESP_DIR="*esp*/EFI/arch"
+ESP_DIR="''esp''/EFI/arch"
 
 build() {
 	cp -af /boot/vmlinuz-linux "${ESP_DIR}/"
-	[-e /boot/intel-ucode.img ](/index.php?title=-e_/boot/intel-ucode.img&action=edit&redlink=1 "-e /boot/intel-ucode.img (page does not exist)") && cp -af /boot/intel-ucode.img "${ESP_DIR}/"
-	[-e /boot/amd-ucode.img ](/index.php?title=-e_/boot/amd-ucode.img&action=edit&redlink=1 "-e /boot/amd-ucode.img (page does not exist)") && cp -af /boot/amd-ucode.img "${ESP_DIR}/"
+	[[ -e /boot/intel-ucode.img ]] && cp -af /boot/intel-ucode.img "${ESP_DIR}/"
+	[[ -e /boot/amd-ucode.img ]] && cp -af /boot/amd-ucode.img "${ESP_DIR}/"
 }
 
 help() {
@@ -292,6 +292,7 @@ help() {
 This hook copies the kernel to the ESP partition
 HELPEOF
 }
+
 ```
 
 To test that, just run:
@@ -364,4 +365,4 @@ It is possible to make the ESP part of a RAID1 array, but doing so brings the ri
 
 ## See also
 
-*   [The EFI system partition and the default boot behavior](http://blog.uncooperative.org/blog/2014/02/06/the-efi-system-partition/)
+*   [The EFI system partition and the default boot behavior](https://blog.uncooperative.org/blog/2014/02/06/the-efi-system-partition/)

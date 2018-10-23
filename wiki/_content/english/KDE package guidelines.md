@@ -1,4 +1,4 @@
-**[Package creation guidelines](/index.php/Creating_packages "Creating packages")**
+**[Package creation guidelines](/index.php/Arch_packaging_standards "Arch packaging standards")**
 
 * * *
 

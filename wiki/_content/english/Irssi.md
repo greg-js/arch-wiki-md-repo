@@ -39,7 +39,7 @@ For a detailed introduction see the [official documentation](https://irssi.org/d
 
 **Note:** This section assumes you already know the basics of IRC and have used other clients in the past
 
-A [terminal multiplexer](/index.php/Terminal_multiplexer "Terminal multiplexer") such as [tmux](/index.php/Tmux "Tmux") or [Screen](/index.php/Screen "Screen") is recommended. It allows the user to easily disconnect and reconnect to a session, and scripts such as [nicklist.pl](http://wouter.coekaerts.be/site/irssi/nicklist) depend on a secondary window. To start irssi, run:
+A [terminal multiplexer](/index.php/Terminal_multiplexer "Terminal multiplexer") such as [tmux](/index.php/Tmux "Tmux") or [GNU Screen](/index.php/GNU_Screen "GNU Screen") is recommended. It allows the user to easily disconnect and reconnect to a session, and scripts such as [nicklist.pl](http://wouter.coekaerts.be/site/irssi/nicklist) depend on a secondary window. To start irssi, run:
 
 ```
 $ irssi

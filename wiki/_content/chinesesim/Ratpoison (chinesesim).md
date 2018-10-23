@@ -1,6 +1,6 @@
 **翻译状态：** 本文是英文页面 [Ratpoison](/index.php/Ratpoison "Ratpoison") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-02-01，点击[这里](https://wiki.archlinux.org/index.php?title=Ratpoison&diff=0&oldid=418627)可以查看翻译后英文页面的改动。
 
-[Ratpoison](http://www.nongnu.org/ratpoison/)是一个用C语言编写的平铺式窗口管理器，它允许用户不用鼠标就能管理应用程序。它的界面收到[Screen](/index.php/Screen "Screen")的启发。
+[Ratpoison](http://www.nongnu.org/ratpoison/)是一个用C语言编写的平铺式窗口管理器，它允许用户不用鼠标就能管理应用程序。它的界面收到[GNU Screen](/index.php/GNU_Screen "GNU Screen")的启发。
 
 ## Contents
 

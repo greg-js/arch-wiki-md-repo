@@ -86,7 +86,7 @@ By default this command installs the package under `/usr/lib/node_modules/npm` a
 
 ##### Allow user-wide installations
 
-To allow *global* package installations for the current [user](/index.php/User "User"), set the `npm_config_prefix` [environment variable](/index.php/Environment_variables#Per_user "Environment variables"). This is used by both npm and yarn.
+To allow *global* package installations for the current [user](/index.php/User "User"), set the `npm_config_prefix` [environment variable](/index.php/Environment_variables#Per_user "Environment variables"). This is used by both npm and [yarn](https://yarnpkg.com/en/).
 
  `~/.profile` 
 ```

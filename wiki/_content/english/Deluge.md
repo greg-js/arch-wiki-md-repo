@@ -32,6 +32,7 @@ Related articles
         *   [5.4.1 SSH Tunnel](#SSH_Tunnel)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 No module named service_identity](#No_module_named_service_identity)
+    *   [6.2 Web ui .torrent upload does not work](#Web_ui_.torrent_upload_does_not_work)
 *   [7 See Also](#See_Also)
 
 ## Installation
@@ -358,6 +359,10 @@ client hostname verification.  Many valid certificate/hostname mappings may be r
 ```
 
 You may be missing [python2-service-identity](https://www.archlinux.org/packages/?name=python2-service-identity), which is an optional dependency to [python2-twisted](https://www.archlinux.org/packages/?name=python2-twisted). See [FS#43806](https://bugs.archlinux.org/task/43806).
+
+### Web ui .torrent upload does not work
+
+If you are running the web ui behind a reverse proxy, you need to allow embedding for .torrent upload to work (X-Frame-Options ALLOW)
 
 ## See Also
 

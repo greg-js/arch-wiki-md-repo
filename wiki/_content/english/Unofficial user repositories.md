@@ -28,38 +28,39 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.11 city](#city)
     *   [2.12 coderkun-aur](#coderkun-aur)
     *   [2.13 coderkun-aur-audio](#coderkun-aur-audio)
-    *   [2.14 eatabrick](#eatabrick)
-    *   [2.15 eschwartz](#eschwartz)
-    *   [2.16 ffy00](#ffy00)
-    *   [2.17 fusion809](#fusion809)
-    *   [2.18 herecura](#herecura)
-    *   [2.19 holo](#holo)
-    *   [2.20 ivasilev](#ivasilev)
-    *   [2.21 jlk](#jlk)
-    *   [2.22 linux-macbook](#linux-macbook)
-    *   [2.23 llvm-svn](#llvm-svn)
-    *   [2.24 markzz](#markzz)
-    *   [2.25 miffe](#miffe)
-    *   [2.26 mikelpint](#mikelpint)
-    *   [2.27 Minerva W Science](#Minerva_W_Science)
-    *   [2.28 mobile](#mobile)
-    *   [2.29 nah](#nah)
-    *   [2.30 pkgbuilder](#pkgbuilder)
-    *   [2.31 post-factum kernels](#post-factum_kernels)
-    *   [2.32 QOwnNotes](#QOwnNotes)
-    *   [2.33 qt-debug](#qt-debug)
-    *   [2.34 quarry](#quarry)
-    *   [2.35 repo-ck](#repo-ck)
-    *   [2.36 seblu](#seblu)
-    *   [2.37 seiichiro](#seiichiro)
-    *   [2.38 sergej-repo](#sergej-repo)
-    *   [2.39 siosm-aur](#siosm-aur)
-    *   [2.40 sublime-text](#sublime-text)
-    *   [2.41 subtitlecomposer](#subtitlecomposer)
-    *   [2.42 tredaelli-systemd](#tredaelli-systemd)
-    *   [2.43 trinity](#trinity)
-    *   [2.44 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-    *   [2.45 xyne-x86_64](#xyne-x86_64)
+    *   [2.14 disastrousaur](#disastrousaur)
+    *   [2.15 eatabrick](#eatabrick)
+    *   [2.16 eschwartz](#eschwartz)
+    *   [2.17 ffy00](#ffy00)
+    *   [2.18 fusion809](#fusion809)
+    *   [2.19 herecura](#herecura)
+    *   [2.20 holo](#holo)
+    *   [2.21 ivasilev](#ivasilev)
+    *   [2.22 jlk](#jlk)
+    *   [2.23 linux-macbook](#linux-macbook)
+    *   [2.24 llvm-svn](#llvm-svn)
+    *   [2.25 markzz](#markzz)
+    *   [2.26 miffe](#miffe)
+    *   [2.27 mikelpint](#mikelpint)
+    *   [2.28 Minerva W Science](#Minerva_W_Science)
+    *   [2.29 mobile](#mobile)
+    *   [2.30 nah](#nah)
+    *   [2.31 pkgbuilder](#pkgbuilder)
+    *   [2.32 post-factum kernels](#post-factum_kernels)
+    *   [2.33 QOwnNotes](#QOwnNotes)
+    *   [2.34 qt-debug](#qt-debug)
+    *   [2.35 quarry](#quarry)
+    *   [2.36 repo-ck](#repo-ck)
+    *   [2.37 seblu](#seblu)
+    *   [2.38 seiichiro](#seiichiro)
+    *   [2.39 sergej-repo](#sergej-repo)
+    *   [2.40 siosm-aur](#siosm-aur)
+    *   [2.41 sublime-text](#sublime-text)
+    *   [2.42 subtitlecomposer](#subtitlecomposer)
+    *   [2.43 tredaelli-systemd](#tredaelli-systemd)
+    *   [2.44 trinity](#trinity)
+    *   [2.45 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+    *   [2.46 xyne-x86_64](#xyne-x86_64)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -267,6 +268,20 @@ Server = http://arch.suruatoel.xyz/$repo/$arch/
 ```
 [coderkun-aur-audio]
 Server = http://arch.suruatoel.xyz/$repo/$arch/
+
+```
+
+### disastrousaur
+
+*   **Maintainer:** [TheGoliath](https://aur.archlinux.org/account/TheGoliath/)
+*   **Description:** AUR packages mostly useful for daily use. Supporting package and database signing.
+*   **Upstream page:** [https://mirror.repohost.de/disastrousaur](https://mirror.repohost.de/disastrousaur)
+*   **Key-ID:** CBAE582A876533FD
+*   **Keyfile:** [https://mirror.xdfr.de/disastrousaur.key](https://mirror.xdfr.de/disastrousaur.key)
+
+```
+[disastrousaur]
+Server = https://mirror.repohost.de/$repo
 
 ```
 

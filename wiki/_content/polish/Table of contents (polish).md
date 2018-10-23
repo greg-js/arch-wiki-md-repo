@@ -1,15 +1,24 @@
 | [Polski](/index.php/Category:Polski "Category:Polski") <small>(27)</small> |
 | <small>1.</small> [Applications](/index.php/Category:Applications_(Polski) "Category:Applications (Polski)") <small>(0)</small> |
-| <small>1.1.</small> [Internet applications](/index.php/Category:Internet_applications_(Polski) "Category:Internet applications (Polski)") <small>(1)</small> |
-| <small>1.2.</small> [Multimedia players](/index.php/Category:Multimedia_players_(Polski) "Category:Multimedia players (Polski)") <small>(2)</small> |
+| <small>1.1.</small> [Application launchers](/index.php/Category:Application_launchers_(Polski) "Category:Application launchers (Polski)") <small>(1)</small> |
+| <small>1.2.</small> [Internet applications](/index.php/Category:Internet_applications_(Polski) "Category:Internet applications (Polski)") <small>(1)</small> |
+| <small>1.2.1.</small> [Web browser](/index.php/Category:Web_browser_(Polski) "Category:Web browser (Polski)") <small>(1) (również w [Web](/index.php/Category:Web_(Polski) "Category:Web (Polski)"))</small> |
+| <small>1.3.</small> [Multimedia players](/index.php/Category:Multimedia_players_(Polski) "Category:Multimedia players (Polski)") <small>(2)</small> |
 | <small>2.</small> [ArchWiki](/index.php/Category:ArchWiki_(Polski) "Category:ArchWiki (Polski)") <small>(1)</small> |
 | <small>3.</small> [File managers](/index.php/Category:File_managers_(Polski) "Category:File managers (Polski)") <small>(1)</small> |
 | <small>4.</small> [Hardware](/index.php/Category:Hardware_(Polski) "Category:Hardware (Polski)") <small>(1)</small> |
 | <small>4.1.</small> [Graphics](/index.php/Category:Graphics_(Polski) "Category:Graphics (Polski)") <small>(2)</small> |
 | <small>4.2.</small> [Printers](/index.php/Category:Printers_(Polski) "Category:Printers (Polski)") <small>(1)</small> |
 | <small>5.</small> [Networking](/index.php/Category:Networking_(Polski) "Category:Networking (Polski)") <small>(2)</small> |
-| <small>5.1.</small> [Proxy servers](/index.php/Category:Proxy_servers_(Polski) "Category:Proxy servers (Polski)") <small>(1)</small> |
-| <small>5.2.</small> [Web server](/index.php/Category:Web_server_(Polski) "Category:Web server (Polski)") <small>(1)</small> |
+| <small>5.1.</small> [Protocols](/index.php/Category:Protocols_(Polski) "Category:Protocols (Polski)") <small>(0)</small> |
+| <small>5.1.1.</small> [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol_(Polski) "Category:File Transfer Protocol (Polski)") <small>(0)</small> |
+| <small>5.1.1.1.</small> [FTP servers](/index.php/Category:FTP_servers_(Polski) "Category:FTP servers (Polski)") <small>(1) (również w [Servers](/index.php/Category:Servers_(Polski) "Category:Servers (Polski)"))</small> |
+| <small>5.2.</small> [Proxy servers](/index.php/Category:Proxy_servers_(Polski) "Category:Proxy servers (Polski)") <small>(1)</small> |
+| <small>5.3.</small> [Servers](/index.php/Category:Servers_(Polski) "Category:Servers (Polski)") <small>(0)</small> |
+| <small>5.3.1.</small> [FTP servers](/index.php/Category:FTP_servers_(Polski) "Category:FTP servers (Polski)") <small>(1) (również w [File Transfer Protocol](/index.php/Category:File_Transfer_Protocol_(Polski) "Category:File Transfer Protocol (Polski)"))</small> |
+| <small>5.4.</small> [Web](/index.php/Category:Web_(Polski) "Category:Web (Polski)") <small>(0)</small> |
+| <small>5.4.1.</small> [Web browser](/index.php/Category:Web_browser_(Polski) "Category:Web browser (Polski)") <small>(1) (również w [Internet applications](/index.php/Category:Internet_applications_(Polski) "Category:Internet applications (Polski)"))</small> |
+| <small>5.5.</small> [Web server](/index.php/Category:Web_server_(Polski) "Category:Web server (Polski)") <small>(1)</small> |
 | <small>6.</small> [Pages sorted by topic](/index.php/Category:Pages_sorted_by_topic_(Polski) "Category:Pages sorted by topic (Polski)") <small>(0)</small> |
 | <small>6.1.</small> [About Arch](/index.php/Category:About_Arch_(Polski) "Category:About Arch (Polski)") <small>(6)</small> |
 | <small>6.1.1.</small> [Installation process](/index.php/Category:Installation_process_(Polski) "Category:Installation process (Polski)") <small>(2) (również w [Pages sorted by topic](/index.php/Category:Pages_sorted_by_topic_(Polski) "Category:Pages sorted by topic (Polski)"))</small> |

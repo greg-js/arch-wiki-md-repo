@@ -51,7 +51,7 @@ The backlog of a native terminal named `/dev/ttyN` may be accessed via `/dev/vcs
 
 ## Comparison of common emulators
 
-Unless the *Key combination* column states otherwise, the key combination is `Ctrl+Shift+c`.
+Unless the "Key combination" column states otherwise, the key combination is `Ctrl+Shift+c`.
 
 | Emulator | Select to PRIMARY | CLIPBOARD |
 | Key combination | Context menu | Window menu | Select |

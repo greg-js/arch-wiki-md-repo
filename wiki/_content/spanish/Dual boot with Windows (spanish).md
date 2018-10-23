@@ -171,7 +171,7 @@ La llave USB utilizada para instalar Windows 8.1 necesita una tabla de partició
 
 ## Estandares de Tiempo
 
-*   Recomendado: Configurar tanto Arch como Windows para utilizar UTC, siguiendo [Time#UTC in Windows](/index.php/Time#UTC_in_Windows "Time"). Además, prevenir que Windows sincronice la fecha y hora online, ya que de otra forma el reloj de hardware se configurará con *localtime*.
+*   Recomendado: Configurar tanto Arch como Windows para utilizar UTC, siguiendo [System time#UTC in Windows](/index.php/System_time#UTC_in_Windows "System time"). Además, prevenir que Windows sincronice la fecha y hora online, ya que de otra forma el reloj de hardware se configurará con *localtime*.
 
 *   No recomendado: Configurar Arch para utilizar *localtime* y deshabilitar cualquier servicio relacionado con la hora, como [NTPd](/index.php/NTPd "NTPd"). Esto hará que solo Windows pueda configurar la hora, por lo que deberá recordar arrancar Windows al menos dos veces por año (Primavera y Otoño) en caso de que se utilice [horario de verano](https://en.wikipedia.org/wiki/Daylight_saving_time_(Espa%C3%B1ol) "wikipedia:Daylight saving time (Español)"). POr favor no utilice los foros para preguntar porque su reloj esta adelantado o atrasado en 1 hora si es que pasa dias o semanas sin arrancar Windows.
 

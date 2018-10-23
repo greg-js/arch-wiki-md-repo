@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"), revisada por última vez el **2018-10-14**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=545703) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"), revisada por última vez el **2018-10-22**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=549566) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -61,6 +61,7 @@ El asterisco indica el año de la primera versión pública basada en Arch Linux
 *   [LinHES](http://linhes.org/) 
 *   [MagpieOS](https://sourceforge.net/projects/magpieos/) 
 *   [Manjaro Linux](https://sourceforge.net/projects/manjarolinux/) 
+*   [MorpheusArch](https://sourceforge.net/projects/morpheusarch-lxqt/) 
 *   [MSYS2](https://sourceforge.net/projects/msys2/) 
 *   [Namib](https://sourceforge.net/projects/namib-gnu-linux/) 
 *   [Netrunner Rolling](https://sourceforge.net/projects/netrunneros/) 
@@ -87,7 +88,6 @@ Estas distribuciones ya no se desarrollan, pero muestran algo de la historia que
 *   [Astian OS](https://sourceforge.net/projects/astian-os/)
 *   [Audiophile Linux](http://www.ap-linux.com/) 
 *   [Feliz](https://sourceforge.net/projects/feliz/)
-*   [MorpheusArch](https://sourceforge.net/projects/morpheusarch-lxqt/)
 *   [Ninja OS](https://sourceforge.net/projects/ninjaos/)
 *   [Nurunner Linux](http://nurunner.mkxt.net/index2.html)
 *   [Sonar](https://distrowatch.com/table.php?distribution=sonar) 

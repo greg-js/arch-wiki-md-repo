@@ -33,7 +33,7 @@ zypper se [-s] | emerge -S |
 pacman -Scc | dnf clean all | apt autoclean
 apt clean | zypper clean | eclean distfiles |
 | Remove dependencies that are no longer needed, because e.g. the package which needed the dependencies was removed. | pacman -Qdtq | pacman -Rs - | dnf autoremove | apt autoremove | zypper rm -u | emerge --depclean |
-| Remove packages no longer included in any repositories. | pacman -Qmq | pacman -Rs - | package-cleanup --orphans | aptitude purge '~o' |
+| Remove packages no longer included in any repositories. | pacman -Qmq | pacman -Rs - | dnf repoquery --extras | aptitude purge '~o' |
 | Mark a package previously installed as a dependency as explicitly required. | pacman -D --asexplicit | dnf mark install | apt-mark manual | emerge --select |
 | Install package(s) as dependency / without marking as explicitly required. | pacman -S --asdeps | dnf install => dnf mark remove | apt-mark auto | emerge -1 |
 | Only downloads the given package(s) without unpacking or installing them | pacman -Sw | dnf download | apt install --download-only (into the package cache)

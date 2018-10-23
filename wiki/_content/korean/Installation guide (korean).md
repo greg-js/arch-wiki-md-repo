@@ -192,7 +192,7 @@ UEFI모드가 [UEFI](/index.php/UEFI "UEFI") 마더보드에서 활성화되면 
 
 ```
 
-위 명령은 하드웨어 클럭을 [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC")로 설정합니다. 자세한 내용은 [시간 표준](/index.php/Time#Time_standard "Time")을 참고하십시오.
+위 명령은 하드웨어 클럭을 [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC")로 설정합니다. 자세한 내용은 [시간 표준](/index.php/System_time#Time_standard "System time")을 참고하십시오.
 
 ### 로캘
 

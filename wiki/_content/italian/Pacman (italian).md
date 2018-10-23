@@ -545,7 +545,7 @@ error: failed to commit transaction (invalid or corrupted package (PGP signature
 Errors occured, no packages were upgraded.
 
 ```
-Questo succede quando l'orologio di sistema non è impostato correttamente. Configurare l'[orario](/index.php/Time "Time") ed eseguire: `# hwclock -w` prima di provare di nuovo ad installare od aggiornare un pacchetto.
+Questo succede quando l'orologio di sistema non è impostato correttamente. Configurare l'[orario](/index.php/System_time "System time") ed eseguire: `# hwclock -w` prima di provare di nuovo ad installare od aggiornare un pacchetto.
 
 ### Continuo ad ottenere l'errore "failed to commit transaction (invalid or corrupted package)"
 

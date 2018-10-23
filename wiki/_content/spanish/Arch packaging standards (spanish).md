@@ -166,7 +166,7 @@ Consulte [PKGBUILD#license](/index.php/PKGBUILD#license "PKGBUILD").
 
 Asegúrate de leer antes esta guía. Hay puntos importantes listados en esta página que no se van a repetir en las siguientes páginas de guías. Las guías específicas se han creado como un añadido a los estándares listados en esta página.
 
-**[Package creation guidelines](/index.php/Creating_packages "Creating packages")**
+**[Package creation guidelines](/index.php/Arch_packaging_standards "Arch packaging standards")**
 
 * * *
 

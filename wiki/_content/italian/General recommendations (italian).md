@@ -158,7 +158,7 @@ I file compressi, o archivi, si trovano di frequente nell'utilizzo di un sistema
 
 ### Supporto per il mouse
 
-Usare il mouse per le operazioni di copia e incolla nella console può essere preferibile alla tradizionale modalità di copia di GNU [screen](/index.php/Screen "Screen"). Si guardi [Console mouse support (Italiano)](/index.php/Console_mouse_support_(Italiano) "Console mouse support (Italiano)") per istruzioni a riguardo.
+Usare il mouse per le operazioni di copia e incolla nella console può essere preferibile alla tradizionale modalità di copia di [GNU Screen](/index.php/GNU_Screen "GNU Screen"). Si guardi [Console mouse support (Italiano)](/index.php/Console_mouse_support_(Italiano) "Console mouse support (Italiano)") per istruzioni a riguardo.
 
 ### Scrollback buffer
 
@@ -166,7 +166,7 @@ Per poter salvare e visionare le schermate di testo precedenti che sono state pa
 
 ### Gestione delle sessioni
 
-Usando terminali in multiplexing come reso possibile da [tmux](/index.php/Tmux "Tmux") o [screen](/index.php/Screen "Screen") si possono organizzare i programmi in tab o pannelli che possono essere richiamati all'occorenza; così se l'utente dovesse chiudere l'emulatore di terminale, terminare [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)"), o uscire, i programmi associati alla sessione continueranno a girare in background fino a che il server del terminal multiplexer è attivo. Per poter di nuovo interagire con i programmi è necessario riconnettersi alla sessione.
+Usando terminali in multiplexing come reso possibile da [tmux](/index.php/Tmux "Tmux") o [GNU Screen](/index.php/GNU_Screen "GNU Screen") si possono organizzare i programmi in tab o pannelli che possono essere richiamati all'occorenza; così se l'utente dovesse chiudere l'emulatore di terminale, terminare [Xorg](/index.php/Xorg_(Italiano) "Xorg (Italiano)"), o uscire, i programmi associati alla sessione continueranno a girare in background fino a che il server del terminal multiplexer è attivo. Per poter di nuovo interagire con i programmi è necessario riconnettersi alla sessione.
 
 ## Input
 

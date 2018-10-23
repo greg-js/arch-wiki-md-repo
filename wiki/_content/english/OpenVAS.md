@@ -4,7 +4,7 @@
 
 *   [1 Pre-install](#Pre-install)
     *   [1.1 Redis](#Redis)
-    *   [1.2 haveged (optional)](#haveged_.28optional.29)
+    *   [1.2 haveged](#haveged)
 *   [2 Installation](#Installation)
 *   [3 Initial setup](#Initial_setup)
 *   [4 Getting started](#Getting_started)
@@ -27,7 +27,7 @@ databases 128
 
 ```
 
-*Note*: See the previous `OpenVAS redis configuration` document on how to calculate the `databases` number.
+**Note:** See the previous `OpenVAS redis configuration` document on how to calculate the `databases` number.
 
 Additionally comment out the following (and similar) `save` lines if present to avoid a stuck connection of the `openvas-scanner` to `redis`:
 
@@ -38,31 +38,33 @@ save 60 10000
 
 ```
 
-Create and add the following to /etc/openvas/openvassd.conf
+Create `/etc/openvas/openvassd.conf` and add the following:
 
 ```
 kb_location = /var/lib/redis/redis.sock
 
 ```
 
-Finally restart `redis`
+Finally restart `redis`:
 
 ```
 # systemctl restart redis
 
 ```
 
-### haveged (optional)
+### haveged
 
-If running OpenVAS in a virtual machine or any other system having a low entropy install [haveged](https://www.archlinux.org/packages/?name=haveged) to gather more entropy. This is required for e.g. the key material used for the encrypted credentials saved within the `openvas-manager` database.
+If running OpenVAS in a virtual machine or any other system having a low entropy, you can optionally [install](/index.php/Install "Install") [haveged](https://www.archlinux.org/packages/?name=haveged) to gather more entropy. This is required for the key material used for the encrypted credentials saved within the `openvas-manager` database.
 
 ## Installation
 
-Install the [openvas](https://www.archlinux.org/groups/x86_64/openvas/) package group from the [official repositories](/index.php/Official_repositories "Official repositories"). This group provides the [openvas-cli](https://www.archlinux.org/packages/?name=openvas-cli) command-line `omp` interface and [greenbone-security-assistant](https://www.archlinux.org/packages/?name=greenbone-security-assistant) web interface via the `gsad` daemon along with other OpenVAS dependencies.
+[Install](/index.php/Install "Install") the [openvas](https://www.archlinux.org/groups/x86_64/openvas/) package group from the [official repositories](/index.php/Official_repositories "Official repositories").
+
+This group provides the [openvas-cli](https://www.archlinux.org/packages/?name=openvas-cli) command-line `omp` interface and [greenbone-security-assistant](https://www.archlinux.org/packages/?name=greenbone-security-assistant) web interface via the `gsad` daemon along with other OpenVAS dependencies.
 
 ## Initial setup
 
-Create certificates for the server+client, default values were used
+Create certificates for the server and clients, default values were used:
 
 ```
 # openvas-manage-certs -a
@@ -78,16 +80,9 @@ Update the plugins and vulnerability data:
 
 ```
 
-*Note*: If GSA complains that the scapdata database is missing, it may be necessary to use greenbone-scapdata-sync --refresh
+**Note:** If GSA complains that the scapdata database is missing, it may be necessary to use greenbone-scapdata-sync --refresh.
 
-Start the scanner service:
-
-```
-# systemctl start openvas-scanner
-
-```
-
-Rebuild the database:
+[Start](/index.php/Start "Start") the `openvas-scanner` service, then rebuild the database:
 
 ```
 # openvasmd --rebuild --progress

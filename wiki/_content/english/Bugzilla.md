@@ -1,3 +1,9 @@
+Related articles
+
+*   [LAMP](/index.php/LAMP "LAMP")
+*   [MariaDB](/index.php/MariaDB "MariaDB")
+*   [Sqlite](/index.php/Sqlite "Sqlite")
+
 [Bugzilla](http://www.bugzilla.org/) is server software designed to help you manage software development.
 
 ## Contents

@@ -373,7 +373,6 @@ For dnsmasq to properly validate DNSSEC, create the following configuration file
 ```
 conf-file=/usr/share/dnsmasq/trust-anchors.conf
 dnssec
-dnssec-check-unsigned
 ```
 
 #### systemd-resolved

@@ -200,7 +200,7 @@ Uruchom [hwclock(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hwclock.8) by wy
 
 ```
 
-Ta komenda zakłada, że zegar sprzętowy komputera jest ustawiony w [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC"). Zobacz [Time#Time standard](/index.php/Time#Time_standard "Time") dla większej ilości informacji.
+Ta komenda zakłada, że zegar sprzętowy komputera jest ustawiony w [UTC](https://en.wikipedia.org/wiki/UTC "w:UTC"). Zobacz [System time#Time standard](/index.php/System_time#Time_standard "System time") dla większej ilości informacji.
 
 ### Język
 

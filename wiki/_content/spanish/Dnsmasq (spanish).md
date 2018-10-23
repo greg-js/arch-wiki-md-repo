@@ -250,7 +250,7 @@ Si inspecciona el archivo `/var/lib/misc/dnsmasq.leases` en el servidor, deberí
 
 ### Servidor TFTP
 
-dnsmasq tiene un servidor [TFTP](/index.php/TFTP "TFTP") incorporado.
+dnsmasq tiene un servidor [TFTP](/index.php/TFTP_(Espa%C3%B1ol) "TFTP (Español)") incorporado.
 
 Para utilizarlo, cree un directorio para la raíz de TFTP (por ejemplo `/srv/tftp`) para colocar los archivos transferibles.
 

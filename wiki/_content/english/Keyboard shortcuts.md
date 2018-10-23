@@ -131,26 +131,26 @@ A sample configuration and guide is available [here](http://users.softlab.ece.nt
 
 ### Key binding for X-selection-paste
 
-Users who prefer to work rather with the keyboard than the mouse may benefit from a key binding to the paste operation of the **middle mouse button**. This is especially useful in a keyboard-centered environment. A workflow example is:
+Users who prefer to work with the keyboard rather than the mouse may benefit from a key binding to the paste operation of the middle mouse button. This is especially useful in a keyboard-centered environment. A workflow example is:
 
 1.  In Firefox, select a string you want to google for (with the mouse).
 2.  Hit `Ctrl+k` to enter the "search engine" field.
-3.  Hit `F12` to paste the buffer, instead of moving the mouse pointer to the field and center-click to paste.
+3.  Hit `F9` to paste the buffer, instead of moving the mouse pointer to the field and middle-click to paste.
 
 **Note:** `Shift+Insert` has a similar yet different functionality, see [#Xorg](#Xorg): `Shift+Insert` inserts the clipboard buffer, not the x-selection-paste buffer. In some applications, these two buffers are mirrored.
 
-The method suggested here uses three packages available in the [official repositories](/index.php/Official_repositories "Official repositories"):
+The method suggested here uses the following three packages::
 
 *   [xsel](https://www.archlinux.org/packages/?name=xsel) to give access to the x-selection-buffer content.
 *   [Xbindkeys](/index.php/Xbindkeys "Xbindkeys") to bind a key-stroke to an action.
 *   [xvkbd](https://aur.archlinux.org/packages/xvkbd/) to pass the buffer string to the application by emulating keyboard input.
 
-This example binds the x-selection-paste operation to the `F12` key:
+This example binds the x-selection-paste operation to the `F9` key:
 
  `.xbindkeysrc` 
 ```
 "xvkbd -no-jump-pointer -xsendevent -text "\D1`xsel`" 2>/dev/null"
-    F12
+    F9
 
 ```
 
@@ -158,7 +158,7 @@ The `"\D1"` code prefixes a 100 ms pause to inserting the selection buffer (see 
 
 **Note:** Depending on your X configuration, you may need to drop the `-xsendevent` argument to xvkbd.
 
-The key codes for keys other than `F12` can be determined using `xbindkeys -k`.
+The key codes for keys other than `F9` can be determined using `xbindkeys -k`.
 
 References:
 

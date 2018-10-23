@@ -519,7 +519,7 @@ The [Python](/index.php/Python "Python") standard library module [http.server](h
 
 *   **serve** — Static file serving and directory listing.
 
-	[https://github.com/zeit/serve](https://github.com/zeit/serve) || [server](https://aur.archlinux.org/packages/server/)
+	[https://github.com/zeit/serve](https://github.com/zeit/serve) || [nodejs-serve](https://aur.archlinux.org/packages/nodejs-serve/)
 
 *   **servy** — A tiny little web server, single binary, written in Rust.
 

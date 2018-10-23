@@ -209,8 +209,9 @@ DirectoryIndex index.php index.phtml index.html
 
 *   Si el DocumentRoot está fuera de `/home/`, agergarlo
 
-en la variable `open_basedir</open> en el archivo <code>/etc/php/php.ini` como:
+en la variable `open_basedir</open> en el archivo `/etc/php/php.ini` como:`
 
+`
 ```
 open_basedir = /home/:/tmp/:/usr/share/pear/:/ruta/al/documentroot
 
@@ -368,3 +369,4 @@ $cfg[['Servers']][[$i]][['auth_type']]     = 'http';
 http://>hostname</phpMyAdmin/
 
 ```
+`

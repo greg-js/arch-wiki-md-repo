@@ -42,7 +42,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Ne
 
 Both client and server only require the [installation](/index.php/Install "Install") of the [nfs-utils](https://www.archlinux.org/packages/?name=nfs-utils) package.
 
-It is **highly** recommended to use a [time sync daemon](/index.php/Time#Time_synchronization "Time") to keep client/server clocks in sync. Without accurate clocks on all nodes, NFS can introduce unwanted delays.
+It is **highly** recommended to use a [time synchronization](/index.php/Time_synchronization "Time synchronization") daemon to keep client/server clocks in sync. Without accurate clocks on all nodes, NFS can introduce unwanted delays.
 
 ## Configuration
 

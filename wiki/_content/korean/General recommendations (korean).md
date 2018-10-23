@@ -192,7 +192,7 @@ Xorg가 GUI 환경 구현을 위한 기본적 프레임워크를 제공하지만
 
 ### 시계 동기화
 
-[Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") (NTP)는 패킷 교환, 가변 레이턴시 데이터 네트워크를 통해 컴퓨터 시스템 간 시간 동기화를 위한 네트워크 프로토콜입니다. [Time#Time synchronization](/index.php/Time#Time_synchronization "Time") 항목에서 아치리눅스에서 어떻게 NTP를 사용할 수 있는지를 확인할 수 있습니다.
+[Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") (NTP)는 패킷 교환, 가변 레이턴시 데이터 네트워크를 통해 컴퓨터 시스템 간 시간 동기화를 위한 네트워크 프로토콜입니다. [Time synchronization](/index.php/Time_synchronization "Time synchronization") 항목에서 아치리눅스에서 어떻게 NTP를 사용할 수 있는지를 확인할 수 있습니다.
 
 ### DNS 성능
 
@@ -374,4 +374,4 @@ Man 페이지 (혹은 매뉴얼 페이지)는 GNU/리눅스 유저에게 매우 
 
 ### 세션 관리
 
-[tmux](/index.php/Tmux "Tmux")나 [screen](/index.php/Screen "Screen")과 같은 다중 터미널 장치를 사용하면 프로그램을 임의로 탈착할 수 있는 탭과 pane으로 이루어진 세션 속에서 실행할 수 있습니다. 이럴 경우, 터미널 에뮬레이터를 끄거나, [X](/index.php/X "X") 세션을 종료하거나 로그오프하더라도 다중 터미널 장치 서버가 작동하고 있는 한 세션들 안에서 실행되고 있는 프로그램들은 계속해서 백그라운드에서 실행될 것입니다. 세션을 다시 부착해야 세션 속의 프로그램들과 상호작용할 수 있습니다.
+[tmux](/index.php/Tmux "Tmux")나 [GNU Screen](/index.php/GNU_Screen "GNU Screen")과 같은 다중 터미널 장치를 사용하면 프로그램을 임의로 탈착할 수 있는 탭과 pane으로 이루어진 세션 속에서 실행할 수 있습니다. 이럴 경우, 터미널 에뮬레이터를 끄거나, [X](/index.php/X "X") 세션을 종료하거나 로그오프하더라도 다중 터미널 장치 서버가 작동하고 있는 한 세션들 안에서 실행되고 있는 프로그램들은 계속해서 백그라운드에서 실행될 것입니다. 세션을 다시 부착해야 세션 속의 프로그램들과 상호작용할 수 있습니다.

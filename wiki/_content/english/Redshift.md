@@ -57,7 +57,7 @@ where *LATITUDE* is the latitude and *LONGITUDE* is the longitude of your locati
 To instantly adjusts the color temperature of your screen use:
 
 ```
-$ redshift -O *TEMPERATURE*
+$ redshift -P -O *TEMPERATURE*
 
 ```
 

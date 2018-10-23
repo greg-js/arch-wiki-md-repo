@@ -28,7 +28,7 @@ URxvt*termName: rxvt-unicode
 
 ```
 
-For [Screen](/index.php/Screen "Screen"), you can set it in your ~/.screenrc:
+For [GNU Screen](/index.php/GNU_Screen "GNU Screen"), you can set it in your ~/.screenrc:
 
 ```
 term screen-256color

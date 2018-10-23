@@ -33,7 +33,7 @@ $ radicale --help
 
 ### Integration
 
-Radicale can be integrated with HTTP webservers like Apache which support the mod_wgsi interface. This causes several options for the configuration of Radicale to be ignored, including: hosts, daemon, pid, ssl, certificate, key, protocol and ciphers keys in the [server] section of the config. Install the radicale module in the python path and write the .wgsi file (to document root).
+Radicale can be integrated with HTTP webservers like [Apache](/index.php/Apache "Apache") which support the mod_wgsi interface. This causes several options for the configuration of Radicale to be ignored, including: hosts, daemon, pid, ssl, certificate, key, protocol and ciphers keys in the [server] section of the config. Install the radicale module in the python path and write the .wgsi file (to document root).
 
 ```
 # import radicale

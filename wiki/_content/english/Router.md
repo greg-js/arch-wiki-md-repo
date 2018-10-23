@@ -231,7 +231,7 @@ See [Squid](/index.php/Squid "Squid") or [Polipo](/index.php/Polipo "Polipo") fo
 
 ### Time server
 
-To use the router as a time server, see [Time#Time synchronization](/index.php/Time#Time_synchronization "Time") for available Network Time Protocol (NTP) server implementations.
+To use the router as a time server, see [System time#Time synchronization](/index.php/System_time#Time_synchronization "System time") for available Network Time Protocol (NTP) server implementations.
 
 Then, configure shorewall or iptables to allow NTP traffic in and out.
 

@@ -1,4 +1,4 @@
-[tint2](https://gitlab.com/o9000/tint2) is a system panel/taskbar for Linux. It is described by its developers as "simple, unobtrusive and light". It can be configured to include (or not include), among other things, a system tray, a task list, a battery monitor and a clock. Its look can be configured a great deal, and it does not have many dependencies. This makes it ideal for users of window managers such as [Openbox](/index.php/Openbox "Openbox") which do not provide a panel.
+[tint2](https://gitlab.com/o9000/tint2) is a simple, unobtrusive and light [panel](/index.php/Panel "Panel") for [Xorg](/index.php/Xorg "Xorg"). It can be configured to include a system tray, a task list, a battery monitor and more. Its look is configurable and it only has few dependencies, making it ideal for window managers like [Openbox](/index.php/Openbox "Openbox"), that do not come with a panel.
 
 ## Contents
 
@@ -23,11 +23,11 @@
 
 ## Configuration
 
-tint2 has a configuration file in `~/.config/tint2/tint2rc`. A skeleton configuration file with the default settings is created the first time you run tint2\. You can then change this file to your liking. Full documentation on how to configure tint2 is found [here](https://gitlab.com/o9000/tint2/blob/master/doc/tint2.md#configuration). You can configure the fonts, colors, looks, location and more in this file. The tint2 package also contains a GUI configuration tool that can be launched by running `tint2conf`.
+*tint2* has a configuration file in `~/.config/tint2/tint2rc`. A skeleton configuration file with the default settings is created the first time you run *tint2*. You can then change this file to your liking. Full documentation on how to configure *tint2* is found [here](https://gitlab.com/o9000/tint2/blob/master/doc/tint2.md#configuration). You can configure the fonts, colors, looks, location and more in this file. The *tint2* package also contains a GUI configuration tool which can be launched with *tint2conf*.
 
 ### Application launchers
 
-With version 0.12, it has become possible to add application launchers to tint2\. It is necessary to add the following configuration options to your tint2 config file:
+With version 0.12, it has become possible to add application launchers to *tint2*. It is necessary to add the following configuration options to your *tint2* config file:
 
 Under `#Panel`:
 
@@ -50,37 +50,49 @@ launcher_item_app = /some/where/anotherapplication.desktop
 
 ```
 
-`panel_items` is a new configuration option which defines which items tint2 shows and in what order:
+`panel_items` is a new configuration option which defines which items *tint2* shows and in what order:
 
 	L
 
-	Show Launcher
+	shows the Launcher
 
 	T
 
-	Show Taskbar
+	shows the Taskbar
 
 	S
 
-	Show Systray
+	shows the Systray (also called notification area)
 
 	B
 
-	Show Battery status
+	shows the Battery status
 
 	C
 
-	Show Clock
+	shows the Clock
 
 	F
 
-	Expanded Spacer (only works without T)
+	adds an extensible spacer (freespace). You can specify more than one. Has no effect if `T` is also present. *(since 0.12)*
+
+	E
+
+	adds an executor plugin. You can specify more than one. *(since 0.12.4)*
+
+	P
+
+	adds a push button. You can specify more than one. *(since 0.14)*
+
+	:
+
+	adds a separator. You can specify more than one. *(since 0.13.0)*
 
 ### Applications menu in Openbox
 
-Since version 0.12, you have the ability to create launchers. Unfortunately, tint2 does not support nested menus yet, so there is no native function to enable an applications menu. This section describes a way to create a launcher for Openbox.
+Since version 0.12, you have the ability to create launchers. Unfortunately, *tint2* does not support nested menus yet, so there is no native function to enable an applications menu. This section describes a way to create a launcher for Openbox.
 
-Besides tint2 and Openbox, [install](/index.php/Install "Install") the [xdotool](https://www.archlinux.org/packages/?name=xdotool) package. Next, create a keybinding for opening the Openbox menu. For Openbox, this would require the following entry between the <keyboard> and </keyboard> tags in `~/.config/openbox/rc.xml`:
+Besides *tint2* and Openbox, [install](/index.php/Install "Install") the [xdotool](https://www.archlinux.org/packages/?name=xdotool) package. Next, create a keybinding for opening the Openbox menu. For Openbox, this would require the following entry between the <keyboard> and </keyboard> tags in `~/.config/openbox/rc.xml`:
 
 ```
  <keybind key="C-A-space">
@@ -96,26 +108,28 @@ $ xdotool key ctrl+alt+space
 
 ```
 
-If the menu you chose pops up under your mouse cursor, you have done it right! Now create a `open-openbox-menu.desktop` file inside the `~/.local/share/applications` directory. Add the line `Exec=xdotool key ctrl+alt+space` where `Ctrl+Alt+Space` are your chosen key combinations. Open your new `open-openbox-menu.desktop` file from your file manager and, once again, you should see the menu appear under your cursor. Now just add this to tint2 as a launcher, and you have your Openbox Applications Menu as a launcher for tint2\. If you need to place the menu at a fixed position, you can use `xdotool mousemove x y`. You can create a script and reference it in `open-openbox-menu.desktop` since it involves two commands.
+If the menu you chose pops up under your mouse cursor, you have done it right! Now create a `open-openbox-menu.desktop` file inside the `~/.local/share/applications` directory. Add the line `Exec=xdotool key ctrl+alt+space` where `Ctrl+Alt+Space` are your chosen key combinations. Open your new `open-openbox-menu.desktop` file from your file manager and, once again, you should see the menu appear under your cursor. Now just add this to *tint2* as a launcher, and you have your Openbox Applications Menu as a launcher for *tint2*. If you need to place the menu at a fixed position, you can use `xdotool mousemove x y`. You can create a script and reference it in `open-openbox-menu.desktop` since it involves two commands.
 
 See [Openbox Menus](http://openbox.org/wiki/Help:Menus) for further help on creating your own menu to use here, and [menumaker](https://www.archlinux.org/packages/?name=menumaker) to generate a nice full `menu.xml` for most (possibly all) of your installed programs.
 
+Since version 0.14, you have the ability to create buttons. Just add "xdotool key ctrl+alt+space" string from example above to button key action you want to be start menu action.
+
 ### Volume control
 
-Tint2 does not come with a volume control applet. See [List of applications/Multimedia#Volume control](/index.php/List_of_applications/Multimedia#Volume_control "List of applications/Multimedia").
+*tint2* does not come with a volume control applet. See [List of applications/Multimedia#Volume control](/index.php/List_of_applications/Multimedia#Volume_control "List of applications/Multimedia").
 
 ## Running tint2
 
 ### Openbox
 
-You can run tint2 by simply typing the command:
+You can run *tint2* by simply typing the command:
 
 ```
 $ tint2
 
 ```
 
-If you want to run tint2 when starting [Openbox](/index.php/Openbox "Openbox"), you will need to edit `~/.config/openbox/autostart` and add the following line:
+If you want to run *tint2* when starting [Openbox](/index.php/Openbox "Openbox"), you will need to edit `~/.config/openbox/autostart` and add the following line:
 
 ```
 tint2 &
@@ -124,18 +138,18 @@ tint2 &
 
 ### GNOME 3
 
-In GNOME 3, the Activities view has replaced the bottom panel and taskbar. To use tint2 in its place, run
+In GNOME 3, the Activities view has replaced the bottom panel and taskbar. To use *tint2* in its place, run
 
 ```
 $ gnome-session-properties
 
 ```
 
-and add `/usr/bin/tint2` as an application to run on start-up. The next time GNOME starts, tint2 will run automatically.
+and add `/usr/bin/tint2` as an application to run on start-up. The next time GNOME starts, *tint2* will run automatically.
 
 ### i3
 
-In [i3](/index.php/I3 "I3"), to use tint2 as a replacement for `i3status`, append the following line to end of the i3 configuration file:
+In [i3](/index.php/I3 "I3"), to use *tint2* as a replacement for `i3status`, append the following line to end of the i3 configuration file:
 
  `~/.i3/config`  `exec --no-startup-id tint2` 
 
@@ -143,7 +157,7 @@ and comment out or remove any section like `bar{status_command i3status`} from t
 
 ### Multiple panels
 
-Multiple tint2 panels can be simultaneously running by using executing tint2 with different configuration files:
+Multiple *tint2* panels can be simultaneously running by using executing *tint2* with different configuration files:
 
 ```
 tint2 -c <path_to_first_config_file>
@@ -153,9 +167,9 @@ tint2 -c <path_to_second_config_file>
 
 ## Enabling transparency
 
-To make tint2 look its best, some form of compositing may be required. To use compositing with Openbox see [Xorg#List of composite managers](/index.php/Xorg#List_of_composite_managers "Xorg"). A restart of tint2 may be required to enable transparency.
+To make *tint2* look its best, some form of compositing may be required. To use compositing with Openbox see [Xorg#List of composite managers](/index.php/Xorg#List_of_composite_managers "Xorg"). A restart of *tint2* may be required to enable transparency.
 
-If [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") is used solely to provide tint2 with transparency effects it can be run at boot by adding the following to `~/.config/openbox/autostart`:
+If [Xcompmgr](/index.php/Xcompmgr "Xcompmgr") is used solely to provide *tint2* with transparency effects it can be run at boot by adding the following to `~/.config/openbox/autostart`:
 
 ```
 # Launch Xcomppmgr and tint2 with openbox
@@ -170,7 +184,7 @@ See [Openbox](/index.php/Openbox "Openbox") for other (better) ways to make Xcom
 
 ### Fullscreen/Overlay
 
-To force tint2 to stay on top of the application (overlay), you need to set the panel_layer option appropriately. This can be helpful when you switch from a fullscreen window to a normal application using Alt-Tab. There is a discussion on this at [Crunchbang Forum](http://crunchbang.org/forums/viewtopic.php?pid=70048)
+To force *tint2* to stay on top of the application (overlay), you need to set the panel_layer option appropriately. This can be helpful when you switch from a fullscreen window to a normal application using Alt-Tab. There is a discussion on this at [Crunchbang Forum](http://crunchbang.org/forums/viewtopic.php?pid=70048)
 
 ```
  #Panel
@@ -181,7 +195,7 @@ To force tint2 to stay on top of the application (overlay), you need to set the 
 
 ### Third party extensions
 
-It is also possible to extend tint2 with other applications. To add third party extensions, check the "Pages" section in the Official Wiki link below.
+It is also possible to extend *tint2* with other applications. To add third party extensions, check the "Pages" section in the Official Wiki link below.
 
 ## See also
 

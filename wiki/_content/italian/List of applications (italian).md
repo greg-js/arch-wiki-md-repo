@@ -3047,11 +3047,11 @@ Si veda l'articolo principale: [Lista dei Gestori di Login disponibili](/index.p
 
 ##### Terminal multiplexers etc
 
-*   **dtach** — Programma che emula la funzione detach di [screen](/index.php/Screen "Screen")
+*   **dtach** — Programma che emula la funzione detach di [GNU Screen](/index.php/GNU_Screen "GNU Screen")
 
 	[http://dtach.sourceforge.net/](http://dtach.sourceforge.net/) || [dtach](https://www.archlinux.org/packages/?name=dtach)
 
-*   **[GNU Screen](/index.php/Screen "Screen")** — Window manager a schermo intero che effettua la multiplazione di un terminale fisico
+*   **[GNU Screen](/index.php/GNU_Screen "GNU Screen")** — Window manager a schermo intero che effettua la multiplazione di un terminale fisico
 
 	[https://gnu.org/s/screen/](https://gnu.org/s/screen/) || [screen](https://www.archlinux.org/packages/?name=screen)
 

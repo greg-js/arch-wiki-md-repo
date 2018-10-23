@@ -28,7 +28,7 @@ $ burpsuite
 
 ```
 
-and open the *Proxy -> Options*. In the *Proxy Listeners* section add a new interface. Set *Interface* to `127.0.0.1:8080` and make sure the *Running* checkbox is enabled.
+Open the *Proxy -> Options*. In the *Proxy Listeners* section add a new interface. Set *Interface* to `127.0.0.1:8080` and make sure the *Running* checkbox is enabled.
 
 Navigate to `[http://127.0.0.1:8080/](http://127.0.0.1:8080/)` in Firefox, click the *CA Certificate* link at top right and save the certificate file somewhere.
 

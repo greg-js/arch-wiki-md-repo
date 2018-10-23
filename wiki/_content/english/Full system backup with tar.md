@@ -125,7 +125,7 @@ fi
 To restore from a previous backup, mount all relevant partitions, change the current working directory to the root directory, and execute
 
 ```
-tar --xattrs -xpf $backupfile
+bsdtar --xattrs -xpf $backupfile
 
 ```
 

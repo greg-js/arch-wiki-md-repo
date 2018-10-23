@@ -1,4 +1,4 @@
-**Network Security Services (NSS)** is a set of libraries designed to support cross-platform development of security-enabled client and server applications.
+[Network Security Services](https://en.wikipedia.org/wiki/Network_Security_Services "wikipedia:Network Security Services") (**NSS**) is a set of libraries designed to support cross-platform development of security-enabled client and server applications.
 
 Applications built with NSS can support [SSL](https://en.wikipedia.org/wiki/SSL "wikipedia:SSL") v2 and v3, [TLS](https://en.wikipedia.org/wiki/TLS "wikipedia:TLS"), [PKCS](https://en.wikipedia.org/wiki/PKCS "wikipedia:PKCS") #5, #7, [PKCS #11](https://en.wikipedia.org/wiki/PKCS_11 "wikipedia:PKCS 11"), [PKCS #12](https://en.wikipedia.org/wiki/PKCS_12 "wikipedia:PKCS 12"), [S/MIME](https://en.wikipedia.org/wiki/S/MIME "wikipedia:S/MIME"), [X.509](https://en.wikipedia.org/wiki/X.509 "wikipedia:X.509") v3 certificates, and other security standards.
 

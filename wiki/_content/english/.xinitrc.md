@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Xinit](/index.php?title=Xinit&redirect=no "Xinit")
+*   [Xinit](/index.php/Xinit "Xinit")

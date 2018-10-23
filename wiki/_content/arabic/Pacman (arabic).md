@@ -518,7 +518,7 @@ error: failed to commit transaction (invalid or corrupted package (PGP signature
 Errors occured, no packages were upgraded. 
 
 ```
-It happens when the system clock is wrong. Set the [time](/index.php/Time "Time") and run: `# hwclock -w` before to try to install/upgrade a package again.
+It happens when the system clock is wrong. Set the [system time](/index.php/System_time "System time") and run: `# hwclock -w` before to try to install/upgrade a package again.
 
 ### I keep getting a "failed to commit transaction (invalid or corrupted package)" error
 

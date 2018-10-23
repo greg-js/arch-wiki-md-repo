@@ -2,9 +2,13 @@
 
 ## Installation
 
-Install the [bzr](https://www.archlinux.org/packages/?name=bzr) package. For the development version, install the [bzr-bzr](https://aur.archlinux.org/packages/bzr-bzr/) package. The Bazaar Explorer is provided by the [bzr-explorer](https://aur.archlinux.org/packages/bzr-explorer/) package.
+[Install](/index.php/Install "Install") the [bzr](https://www.archlinux.org/packages/?name=bzr) package. For the development version, install the [bzr-bzr](https://aur.archlinux.org/packages/bzr-bzr/) package. The Bazaar Explorer is provided by the [bzr-explorer](https://aur.archlinux.org/packages/bzr-explorer/) package.
 
-## Setting up Bazaar server with xinetd
+## Usage
+
+See [bzr(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/bzr.1).
+
+### Setting up Bazaar server with xinetd
 
 Add a `*bzr-usr*` [user](/index.php/User "User") if needed.
 

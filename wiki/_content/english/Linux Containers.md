@@ -349,7 +349,7 @@ before the bind mount lines.
 
 #### OpenVPN considerations
 
-Users wishing to run [OpenVPN](/index.php/OpenVPN "OpenVPN") within the container are direct to either [OpenVPN (client) in Linux containers](/index.php/OpenVPN_(client)_in_Linux_containers "OpenVPN (client) in Linux containers") and/or [OpenVPN (server) in Linux containers](/index.php/OpenVPN_(server)_in_Linux_containers "OpenVPN (server) in Linux containers").
+Users wishing to run [OpenVPN](/index.php/OpenVPN "OpenVPN") within the container are requested to direct to either [OpenVPN (client) in Linux containers](/index.php/OpenVPN_(client)_in_Linux_containers "OpenVPN (client) in Linux containers") and/or [OpenVPN (server) in Linux containers](/index.php/OpenVPN_(server)_in_Linux_containers "OpenVPN (server) in Linux containers").
 
 ## Managing containers
 

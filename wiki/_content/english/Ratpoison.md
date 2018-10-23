@@ -1,4 +1,4 @@
-[Ratpoison](http://www.nongnu.org/ratpoison/) is a tiling [window manager](/index.php/Window_manager "Window manager") written in C that allows the user to manage applications without a mouse. The user interface is inspired by [Screen](/index.php/Screen "Screen").
+[Ratpoison](http://www.nongnu.org/ratpoison/) is a tiling [window manager](/index.php/Window_manager "Window manager") written in C that allows the user to manage applications without a mouse. The user interface is inspired by [GNU Screen](/index.php/GNU_Screen "GNU Screen").
 
 ## Contents
 

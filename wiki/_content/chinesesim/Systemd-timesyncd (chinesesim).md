@@ -1,3 +1,12 @@
+Related articles
+
+*   [System time](/index.php/System_time "System time")
+*   [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon")
+*   [OpenNTPD](/index.php/OpenNTPD "OpenNTPD")
+*   [Chrony](/index.php/Chrony "Chrony")
+*   [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")
+*   [systemd](/index.php/Systemd "Systemd")
+
 **翻译状态：** 本文是英文页面 [Systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-06-13，点击[这里](https://wiki.archlinux.org/index.php?title=Systemd-timesyncd&diff=0&oldid=435960)可以查看翻译后英文页面的改动。
 
 来自于 [systemd mailing list](http://lists.freedesktop.org/archives/systemd-devel/2014-May/019537.html):

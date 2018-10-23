@@ -2,7 +2,7 @@
 
 *   [网络时间协议](/index.php/Network_Time_Protocol_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network Time Protocol (简体中文)")
 
-**翻译状态：** 本文是英文页面 [Time](/index.php/Time "Time") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-26，点击[这里](https://wiki.archlinux.org/index.php?title=Time&diff=0&oldid=442442)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [System time](/index.php/System_time "System time") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-08-26，点击[这里](https://wiki.archlinux.org/index.php?title=System+time&diff=0&oldid=442442)可以查看翻译后英文页面的改动。
 
 一个操作系统通过如下内容确定时间：时间数值、时间标准、时区和夏令时调节(中国已经废止)。本文分别介绍各个部分的定义及如何设置他们。要维护准确的系统时间，请参考 [网络时间协议](/index.php/Network_Time_Protocol_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network Time Protocol (简体中文)") 一文。
 

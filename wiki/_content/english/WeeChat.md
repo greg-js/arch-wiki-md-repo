@@ -188,7 +188,7 @@ See `/help key`.
 
 ### SSH connection lost when idle
 
-If you're connecting to your WeeChat through a remote shell using SSH, for example running it in [screen](/index.php/Screen "Screen") or [tmux](/index.php/Tmux "Tmux") you might experience getting disconnected after a while when idle. There are multiple factors in play why this might happen, but the easiest way to change this is to force the connection to be kept alive by appending this to your SSH-configuration on the remote shell.
+If you're connecting to your WeeChat through a remote shell using SSH, for example running it in [GNU Screen](/index.php/GNU_Screen "GNU Screen") or [tmux](/index.php/Tmux "Tmux") you might experience getting disconnected after a while when idle. There are multiple factors in play why this might happen, but the easiest way to change this is to force the connection to be kept alive by appending this to your SSH-configuration on the remote shell.
 
 This has nothing to do with WeeChat itself, but losing connection when idle won't happen with it's alternative [irssi](/index.php/Irssi "Irssi") by default, and thus is a common situation for those converting to WeeChat.
 

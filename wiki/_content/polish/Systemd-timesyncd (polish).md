@@ -1,3 +1,12 @@
+Related articles
+
+*   [System time](/index.php/System_time "System time")
+*   [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon")
+*   [OpenNTPD](/index.php/OpenNTPD "OpenNTPD")
+*   [Chrony](/index.php/Chrony "Chrony")
+*   [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")
+*   [systemd](/index.php/Systemd "Systemd")
+
 Za [listą dyskusyjną systemd](http://lists.freedesktop.org/archives/systemd-devel/2014-May/019537.html):
 
 	*systemd-timesyncd* jest usługą, która została dodana by synchronizować czas między komputerami w sieci. Implementuje klienta SNTP. W porównaniu do usług takich jak chrony lub serwer NTP, jest jedynie klientem i nie zawiera w sobie całej złożoności protokołu NTP, skupia się jedynie na pobieraniu i ustawianiu zegara. Jeżeli nie zamierzasz serwować do sieci czasu ze swojego lokalnego zegara, powinien być więcej niż wystarczający. Usługa uruchamiana jest z minimalnymi uprawnieniami i została powiązana z networkd aby działać tylko gdy jest dostępny internet. Usługa zapisuje stan zegara na dysk zanim ustawi korektę, w ten sposób ustala o ile przesuwać zegar na bardzo wczesnym etapie startu systemu tak aby urządzenia bez lub ze słabym RTC postępowały operując na w miarę właściwie ustawionym zegarze. Aby użyć tej usługi, grupa i użytkownik "systemd-timesync" muszą być utworzone.

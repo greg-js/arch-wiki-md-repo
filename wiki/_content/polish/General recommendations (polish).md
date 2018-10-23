@@ -227,7 +227,7 @@ This section is confined to small networking procedures. Head over to [Network c
 
 ### Clock synchronization
 
-The [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") (NTP) is a protocol for synchronizing the clocks of computer systems over packet-switched, variable-latency data networks. See [Time#Time synchronization](/index.php/Time#Time_synchronization "Time") for implementations of such protocol.
+The [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol "wikipedia:Network Time Protocol") (NTP) is a protocol for synchronizing the clocks of computer systems over packet-switched, variable-latency data networks. See [Time synchronization](/index.php/Time_synchronization "Time synchronization") for implementations of such protocol.
 
 ### DNS security
 

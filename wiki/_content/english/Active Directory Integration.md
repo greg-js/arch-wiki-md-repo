@@ -122,7 +122,7 @@ Replacing <IP1> and <IP2> with valid IP addresses for the AD servers. If your AD
 
 ### Configuring NTP
 
-Read [Time#Time synchronization](/index.php/Time#Time_synchronization "Time") to configure an NTP service.
+Read [System time#Time synchronization](/index.php/System_time#Time_synchronization "System time") to configure an NTP service.
 
 On the NTP servers configuration, use the IP addresses for the AD servers, as they typically run NTP as a service. Alternatively, you can use other known NTP servers provided the Active directory servers sync to the same stratum.
 

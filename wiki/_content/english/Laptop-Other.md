@@ -66,9 +66,11 @@ install CD version
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Gigabyte Aero 14k | 2018.01 | Intel integrated graphics: ok
 Nvidia GTX 1050 Ti: ok
-switching with optimus [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) | Intel HD Audio with [ALSA](/index.php/ALSA "ALSA"), [Jack](/index.php/Jack "Jack") and [PulseAudio](/index.php/PulseAudio "PulseAudio") | yes, with the included USB dongle | yes | not tested | Suspend-to-RAM and hibernation both work fine | -- | HDMI: ok
+switching with optimus [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) | Intel HD Audio with [ALSA](/index.php/ALSA "ALSA"), [Jack](/index.php/Jack "Jack") and [PulseAudio](/index.php/PulseAudio "PulseAudio") | yes, with the included USB dongle | yes | yes | Suspend-to-RAM and hibernation both work fine | -- | HDMI: ok
 
-SD Card: ok Thunderbolt: not tested Macro keys: not yet tested
+SD Card: ok
+Thunderbolt: not tested
+Macro keys: yes, but one has to define the mapping using the windows application
 
  | One needs to reset the BIOS to Windows 7 settings in order to be able to boot the ArchISO |
 

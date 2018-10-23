@@ -409,7 +409,7 @@ $ chmod 400 ~/.ssh/authorized_keys
 
 Mosh 有一个未写入文档的命令行选项：`--predict=experimental`，它可以产生更有力的本地按键响应。对降低键盘输入视觉上的延迟确认感兴趣的用户可能更喜欢这个预测模式。
 
-**提示：** Mosh 从设计上就不允许你访问会话的历史记录，请考虑安装终端复用工具，如 [tmux](/index.php/Tmux "Tmux") 或 [screen](/index.php/Screen "Screen") 。
+**提示：** Mosh 从设计上就不允许你访问会话的历史记录，请考虑安装终端复用工具，如 [tmux](/index.php/Tmux "Tmux") 或 [GNU Screen](/index.php/GNU_Screen "GNU Screen") 。
 
 ## 提示与技巧
 

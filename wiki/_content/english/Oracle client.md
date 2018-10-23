@@ -46,6 +46,7 @@ The packages required from the AUR are:
 *   [oracle-instantclient-sqlplus](https://aur.archlinux.org/packages/oracle-instantclient-sqlplus/) - SQL*Plus command line utility
 *   [oracle-instantclient-odbc](https://aur.archlinux.org/packages/oracle-instantclient-odbc/) - UnixODBC connectivity
 *   [oracle-instantclient-jdbc](https://aur.archlinux.org/packages/oracle-instantclient-jdbc/) - Java connectivity
+*   [oracle-instantclient-tools](https://aur.archlinux.org/packages/oracle-instantclient-tools/) - Data Pump, SQL*Loader and Workload Replay Client
 
 ### Installing each package
 
