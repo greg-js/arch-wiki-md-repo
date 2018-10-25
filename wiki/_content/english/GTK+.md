@@ -21,7 +21,7 @@ GTK+, The GIMP Toolkit, was initially made by the [GNU Project](/index.php/GNU_P
     *   [4.1 Basic theme configuration](#Basic_theme_configuration)
     *   [4.2 Dark theme variant](#Dark_theme_variant)
     *   [4.3 Keyboard shortcuts](#Keyboard_shortcuts)
-        *   [4.3.1 Emacs keybindings](#Emacs_keybindings)
+        *   [4.3.1 Emacs key bindings](#Emacs_key_bindings)
     *   [4.4 GNOME menu delay](#GNOME_menu_delay)
     *   [4.5 Reduce widget sizes](#Reduce_widget_sizes)
     *   [4.6 Hide CSD buttons](#Hide_CSD_buttons)
@@ -88,7 +88,7 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 *   **Arc** — A flat theme with a modern look and transparent elements. Includes: *Arc*, *Arc-Dark*, *Arc-Darker*
 
-	[https://github.com/horst3180/arc-theme](https://github.com/horst3180/arc-theme) || with transparency: [arc-gtk-theme](https://www.archlinux.org/packages/?name=arc-gtk-theme), without transparency: [arc-solid-gtk-theme](https://www.archlinux.org/packages/?name=arc-solid-gtk-theme)
+	[https://github.com/nicohood/arc-theme](https://github.com/nicohood/arc-theme) || with transparency: [arc-gtk-theme](https://www.archlinux.org/packages/?name=arc-gtk-theme), without transparency: [arc-solid-gtk-theme](https://www.archlinux.org/packages/?name=arc-solid-gtk-theme)
 
 *   **Breeze** — GTK+ version of KDE's default widget theme. Includes: *Breeze*, *Breeze-Dark*
 
@@ -256,21 +256,17 @@ gtk-can-change-accels = 1
 
 ```
 
-#### Emacs keybindings
+#### Emacs key bindings
 
-To get Emacs-like keybindings in gtk apps:
+To have Emacs-like key bindings in GTK+ applications add the following:
 
-For GTK2, add `gtk-key-theme-name = "Emacs"` to `~/.gtkrc-2.0`.
-
-For GTK3 add the following to the noted file:
-
- `~/.config/gtk-3.0/settings.ini` 
+ `~/.gtkrc-2.0`  `gtk-key-theme-name = "Emacs"`  `~/.config/gtk-3.0/settings.ini` 
 ```
 [Settings]
 gtk-key-theme-name = Emacs
 ```
 
-Then run:
+For GTK+3 also run:
 
 ```
 $ gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
@@ -332,12 +328,14 @@ See also [[1]](http://martin.ankerl.com/2008/10/10/how-to-make-a-compact-gnome-t
 
 ### Hide CSD buttons
 
-To remove the minimize and maximize buttons. [[3]](https://developer.gnome.org/gtk3/3.22/GtkSettings.html#GtkSettings--gtk-decoration-layout)
+To remove the minimize and maximize buttons from *gtk3* windows:
 
 ```
 gtk-decoration-layout=menu:close
 
 ```
+
+See [[3]](https://developer.gnome.org/gtk3/3.22/GtkSettings.html#GtkSettings--gtk-decoration-layout).
 
 ### Disable mouse paste
 
@@ -350,11 +348,11 @@ gtk-enable-primary-paste=false
 
 ### File-Chooser Startup-Location
 
-Open the file-chooser within the **current-working-directory** and not the **recent** location. Normally the **current-working-directory** is **home-directory**.
+Open the file-chooser within the **current working directory** and not the **recent** location. Normally the **current working directory** is the *Home* directory.
 
 **GTK+ 3**
 
-Modify DConf with *gsettings*, as the database file ($XDG_CONFIG_HOME/dconf/users) is binary:
+Change [setting](/index.php/GNOME#Configuration "GNOME") with the following command:
 
 ```
 $ gsettings set org.gtk.Settings.FileChooser startup-mode cwd
@@ -363,9 +361,12 @@ $ gsettings set org.gtk.Settings.FileChooser startup-mode cwd
 
 **GTK+ 2**
 
-Modify `~/.config/gtk-2.0/gtkfilechooser.ini` configuration file:
+Add the following to `~/.config/gtk-2.0/gtkfilechooser.ini`:
 
- `~/.config/gtk-2.0/gtkfilechooser.ini`  `StartupMode=cwd` 
+```
+StartupMode=cwd
+
+```
 
 ### Legacy scrolling behavior
 
@@ -526,7 +527,7 @@ To adjust the buttons in the header bar, use the `gtk-decoration-layout` setting
 
 ### cedilla ç/Ç instead of ć/Ć
 
-See [[6]](https://bugs.launchpad.net/ubuntu/+source/gtk+2.0/+bug/518056), and [[7]](https://bugs.launchpad.net/ubuntu/+source/gtk+2.0/+bug/518056/comments/37) for a workaround using Xcompose (US international layout).
+See [[6]](https://bugs.launchpad.net/ubuntu/+source/ibus/+bug/518056), and [[7]](https://bugs.launchpad.net/ubuntu/+source/ibus/+bug/518056/comments/37) for a workaround using Xcompose (US international layout).
 
 ### Suppress warning about accessibility bus
 

@@ -97,23 +97,15 @@ You see we have two displays here. LVDS1 and VGA1\. LVDS1 is the display interna
 
 ```
 
-We see that we have two stylus inputs who's ID's are `13` and `14`. We now need to simply map our inputs to our output like so:
+We see that we have two stylus inputs. We now need to simply map our inputs to our output like so:
 
 ```
-xinput --map-to-output 13 LVDS1
-xinput --map-to-output 14 LVDS1
-
-```
-
-You can automate this by putting these commands in your `~/.xinitrc` or similar. ID numbers are not guaranteed to persist between boots, but you can extract that info from xinput itself.
-
-```
-xinput --map-to-output $(xinput list --id-only "Serial Wacom Tablet WACf004 stylus") LVDS1
-xinput --map-to-output $(xinput list --id-only "Serial Wacom Tablet WACf004 eraser") LVDS1
+xinput --map-to-output 'Serial Wacom Tablet WACf004 stylus' LVDS1
+xinput --map-to-output 'Serial Wacom Tablet WACf004 eraser' LVDS1
 
 ```
 
-Also, the mapping will be lost if the touchscreen is disconnected and re-connected, for example, when switching monitors via a KVM. In that case it is better to use a udev rule. The [Calibrating Touchscreen](/index.php/Calibrating_Touchscreen "Calibrating Touchscreen") page has an example udev rule for the case when a transformation matrix has been calculated manually and needs to be applied automatically.
+You can automate this by putting these commands in your `~/.xinitrc` or similar. The mapping will be lost if the touchscreen is disconnected and re-connected, for example, when switching monitors via a KVM. In that case it is better to use a udev rule. The [Calibrating Touchscreen](/index.php/Calibrating_Touchscreen "Calibrating Touchscreen") page has an example udev rule for the case when a transformation matrix has been calculated manually and needs to be applied automatically.
 
 ## Touchegg
 

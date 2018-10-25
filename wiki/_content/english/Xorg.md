@@ -22,8 +22,6 @@ From [http://www.x.org/wiki/](http://www.x.org/wiki/):
     *   [1.1 Driver installation](#Driver_installation)
     *   [1.2 AMD](#AMD)
 *   [2 Running](#Running)
-    *   [2.1 Display manager](#Display_manager)
-    *   [2.2 Manually](#Manually)
 *   [3 Configuration](#Configuration)
     *   [3.1 Using .conf files](#Using_.conf_files)
     *   [3.2 Using xorg.conf](#Using_xorg.conf)
@@ -140,13 +138,7 @@ and newer | [various](https://en.wikipedia.org/wiki/List_of_AMD_graphics_process
 
 ## Running
 
-### Display manager
-
-A convenient way to start X, but one that requires an additional application and dependencies, is by using a [display manager](/index.php/Display_manager "Display manager").
-
-### Manually
-
-To start the X server without a display manager, see [xinit](/index.php/Xinit "Xinit").
+The [Xorg(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xorg.1) command is usually not run directly, instead the X server is started with either a [display manager](/index.php/Display_manager "Display manager") or [xinit](/index.php/Xinit "Xinit").
 
 ## Configuration
 

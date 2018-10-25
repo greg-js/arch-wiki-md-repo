@@ -8,7 +8,7 @@ Related articles
 
 *Core utilities* are the basic, fundamental tools of a [GNU](/index.php/GNU "GNU")/[Linux](/index.php/Linux "Linux") system. On Arch Linux they are found in the [base group](/index.php/Base_group "Base group"). This article provides an incomplete overview of them, links their documentation and describes useful alternatives. The scope of this article includes, but is not limited to, the [GNU coreutils](https://www.gnu.org/software/coreutils/coreutils.html). Most core utilities are traditional [Unix](https://en.wikipedia.org/wiki/Unix "wikipedia:Unix") tools (see [Heirloom](/index.php/Heirloom "Heirloom")) and many were standardized by [POSIX](https://en.wikipedia.org/wiki/POSIX "wikipedia:POSIX") but have been developed further to provide more features.
 
-Most command-line interfaces are documented in [man pages](/index.php/Man_page "Man page"), utilities by the [GNU Project](/index.php/GNU_Project "GNU Project") are documented in [Info manuals](/index.php/Info_manual "Info manual"), some [shells](/index.php/Shell "Shell") provide a `help` command for [shell](/index.php/Shell "Shell") builtin commands. Additionally most commands print their usage when run with the `--help` flag.
+Most command-line interfaces are documented in [man pages](/index.php/Man_page "Man page"), utilities by the [GNU Project](/index.php/GNU_Project "GNU Project") are documented in [Info manuals](/index.php/Info_manual "Info manual"), some [shells](/index.php/Shell "Shell") provide a `help` command for shell builtin commands. Additionally most utilities print their usage when run with the `--help` flag.
 
 ## Contents
 
@@ -25,9 +25,9 @@ Most command-line interfaces are documented in [man pages](/index.php/Man_page "
 
 ## Essentials
 
-The following table lists some important commands, Arch Linux users should be familiar with. See also [intro(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/intro.1).
+The following table lists some important utilities which Arch Linux users should be familiar with. See also [intro(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/intro.1).
 
-| Package | Command | Description | Documentation | Alternatives |
+| Package | Utility | Description | Documentation | Alternatives |
 | shell built-ins | cd | change directory | [cd(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cd.1p) |
 | GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) | ls | list directory | [ls(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ls.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html) | [exa](https://www.archlinux.org/packages/?name=exa), [tree](https://www.archlinux.org/packages/?name=tree) |
 | cat | concatenate files to stdout | [cat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cat.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/cat-invocation.html) | [tac(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tac.1) |
@@ -66,7 +66,7 @@ rm, mv, cp and shell redirections happily delete or overwrite files without aski
 
 This table lists core utilities that often come in handy.
 
-| Package | Command | Description | Documentation | Alternatives |
+| Package | Utility | Description | Documentation | Alternatives |
 | shell built-ins | alias | define or display aliases | [alias(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alias.1p) |
 | type | print the type of a command | [type(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/type.1p) | [which(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/which.1) |
 | time | time a command | [time(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/time.1p) |

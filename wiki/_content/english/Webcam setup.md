@@ -15,7 +15,8 @@ Most probably your webcam will work out of the box. Permissions to access video 
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 V4L1 support](#V4L1_support)
     *   [4.2 Microsoft Lifecam Studio/Cinema](#Microsoft_Lifecam_Studio.2FCinema)
-    *   [4.3 Check bandwidth used by USB webcams](#Check_bandwidth_used_by_USB_webcams)
+    *   [4.3 Skype](#Skype)
+    *   [4.4 Check bandwidth used by USB webcams](#Check_bandwidth_used_by_USB_webcams)
 
 ## Loading
 
@@ -172,6 +173,13 @@ options uvcvideo quirks=0x80
 ```
 
 **Note:** If delays are visible in the logs, or the camera works periodically, this workaround should apply generally. Bigger values such as `quirks=0x100` are possible.
+
+### Skype
+
+When testing the webcam, note the following:
+
+*   The echobot does not support videochat. Don't use it for testing your webcam.
+*   Skype might recognize different video/camera devices (/dev/video*). These will be listed as something like "integrated camera..." in a dropdown menu in the camera settings. Try each camera and wait a few seconds, because it takes time to switch to a different camera.
 
 ### Check bandwidth used by USB webcams
 

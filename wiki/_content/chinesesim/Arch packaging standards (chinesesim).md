@@ -80,7 +80,7 @@ optdepends=('cups: printing support'
 
 *   在填写**软件包描述（description）**时，请不要使用下定义的方式。比如说, "Nedit is a text editor for X11" 就可以简写为"A text editor for X11". 顺便注意保持descriptions在80个字符以内.
 *   尽量保持`PKGBUILD`文件中**每行**不超过100字符。
-*   如果可能的话, 从`PKGBUILD`文件中**去掉空行**（没有设置变量值的行）(如`provides`、`replaces`等)</li>
+*   如果可能的话, 从`PKGBUILD`文件中**去掉空行**（没有设置变量值的行）(如`provides`、`replaces`等)
 *   通常实践建议按照上文中的`PKGBUILD`示例**安排各变量顺序**。当然这不是强制性的，这里唯一强制要求的是满足**正确的bash语法**。
 *   变量名可能包含空格时，请使用引号，例如`"$pkgdir"` 和 `"$srcdir"`.
 *   请确保软件包的**完整性**，确保 [校验变量](/index.php/PKGBUILD#Integrity "PKGBUILD") 包含正确的数值，可以通过 {ic|updpkgsums}} 工具进行更新。
@@ -156,7 +156,7 @@ optdepends=('cups: printing support'
 
 请先阅读上面的手册—— 大多数的重点内容都在此页上面部分列出来了，他们将不会在下面这些手册中重复出现。这些特殊的手册是为了作为一些特殊类型的包的补充手册，而不是取代本手册。
 
-**[Package creation guidelines](/index.php/Creating_packages "Creating packages")**
+**[Package creation guidelines](/index.php/Arch_packaging_standards "Arch packaging standards")**
 
 * * *
 

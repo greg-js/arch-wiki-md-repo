@@ -290,7 +290,7 @@ Trackpoint 장치를 설정하려면 다음 [ThinkWiki](http://www.thinkwiki.org
 
 ## 시스템 서비스
 
-이 섹션은 [daemons](/index.php/Daemons "Daemons")와 연관이 있습니다. 더 자세한 정보는 [Category:Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services")의 항목들을 확인하십시오.
+이 섹션은 [daemons](/index.php/Daemons "Daemons")와 연관이 있습니다. 더 자세한 정보는 [Category:Daemons and system services](/index.php?title=Category:Daemons_and_system_services&action=edit&redlink=1 "Category:Daemons and system services (page does not exist)")의 항목들을 확인하십시오.
 
 ### 파일 색인 및 검색
 

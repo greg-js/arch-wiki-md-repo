@@ -306,7 +306,7 @@ Arch 是無縫升級的系統，軟體包更迭相當快速，因此使用者得
 
 ## 系統服務
 
-這一節涉及守護程序 (daemon)。更多資訊請參閱[守護程序與系統服務分類](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services")。
+這一節涉及守護程序 (daemon)。更多資訊請參閱[守護程序與系統服務分類](/index.php?title=Category:Daemons_and_system_services&action=edit&redlink=1 "Category:Daemons and system services (page does not exist)")。
 
 ### 檔案索引與查詢
 

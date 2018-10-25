@@ -21,7 +21,7 @@
 
 ## Instalacja
 
-Zainstaluj pakiet [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser) albo [qutebrowser-git](https://aur.archlinux.org/packages/qutebrowser-git/).
+[Zainstaluj](/index.php/Zainstaluj "Zainstaluj") pakiet [qutebrowser](https://www.archlinux.org/packages/?name=qutebrowser) albo [qutebrowser-git](https://aur.archlinux.org/packages/qutebrowser-git/).
 
 ## Podstawowe użycie
 

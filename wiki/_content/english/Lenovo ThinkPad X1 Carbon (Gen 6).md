@@ -212,7 +212,7 @@ You can verify the profile is active by running `colormgr get-devices`.
 
 **Note:** Some models of the 6th generation X1 Carbon seem to have issues with the TrackPoint and Touchpad working at the same time.
 
-**Note:** The following parameter will only work for kernel versions *after* v4.14.
+**Note:** The following parameter will only work for kernel versions *after* v4.14\. Fore more information, see [Lenovo ThinkPad X1 Carbon (Gen 5)#Bug: Trackpoint/Trackpad not working](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_5)#Bug:_Trackpoint.2FTrackpad_not_working "Lenovo ThinkPad X1 Carbon (Gen 5)").
 
 To get the TrackPoint and Touchpad to work at the same time, add `synaptics_intertouch=1` to the `psmouse` [kernel module](/index.php/Kernel_module "Kernel module") options, for example in the cmdline of the [boot loader](/index.php/Boot_loader "Boot loader"):
 

@@ -6020,6 +6020,10 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[http://brackets.io/](http://brackets.io/) || [brackets](https://aur.archlinux.org/packages/brackets/)
 
+*   **[Codelobster](https://en.wikipedia.org/wiki/Codelobster "w:Codelobster")** — Code editor for HTML, CSS, JavaScript and PHP.
+
+	[http://www.codelobster.com](http://www.codelobster.com) ||
+
 *   **Deepin Editor** — Simple text editor for Deepin desktop.
 
 	[https://github.com/linuxdeepin/deepin-editor](https://github.com/linuxdeepin/deepin-editor) || [deepin-editor](https://www.archlinux.org/packages/?name=deepin-editor)

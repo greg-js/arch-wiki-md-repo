@@ -13,9 +13,9 @@ Related articles
 
 *   [1 备份概览](#.E5.A4.87.E4.BB.BD.E6.A6.82.E8.A7.88)
 *   [2 数据同步](#.E6.95.B0.E6.8D.AE.E5.90.8C.E6.AD.A5)
-    *   [2.1 目录](#.E7.9B.AE.E5.BD.95)
-    *   [2.2 Table](#Table)
-*   [3 Incremental backups](#Incremental_backups)
+    *   [2.1 说明](#.E8.AF.B4.E6.98.8E)
+    *   [2.2 表格](#.E8.A1.A8.E6.A0.BC)
+*   [3 增量备份](#.E5.A2.9E.E9.87.8F.E5.A4.87.E4.BB.BD)
     *   [3.1 Single machine](#Single_machine)
         *   [3.1.1 Chunk-based increments](#Chunk-based_increments)
         *   [3.1.2 File-based increments](#File-based_increments)
@@ -42,45 +42,45 @@ Related articles
 *   [List of applications/Internet#Cloud synchronization clients](/index.php/List_of_applications/Internet#Cloud_synchronization_clients "List of applications/Internet")
 *   [Wikipedia:Comparison of file synchronization software](https://en.wikipedia.org/wiki/Comparison_of_file_synchronization_software "wikipedia:Comparison of file synchronization software")
 
-### 目录
+### 说明
 
-	Name
+	名字
 
 	应用的名字，链接到archwiki文章或者官方网站.
 
-	Package
+	包
 
 	到包的链接.
 
-	Implementation
+	实现
 
 	应用程序基于的编程语言，库或者实用程序.
 
-	Delta transfer
+	增量传输
 
 	仅仅文件修改过的 *部分* 会被传输.
 
-	Encrypted transfer
+	加密传输
 
 	当通过网络传输时默认加密.
 
-	FS metadata
+	FS元数据
 
 	文件的权限和属性是同步的 .
 
-	Resumable
+	可恢复
 
 	同步能继续，如果被打断的话.
 
-	Handles renames
+	处理重命名
 
 	移动过/或重命名过的文件会被监测并不会存储或者传输两次. 它通常意味着会计算文件或文件块的校验和.程序如果没有这项功能能通过和 [hsync](https://aur.archlinux.org/packages/hsync/)结合起来来实现, 这个程序 *只做* 同步命名.
 
-	Version control
+	版本控制
 
 	旧版本的文件也被备份了 (*反向增量备份*).
 
-	Change propagation
+	改变传播
 
 	指定能传播多少地点.
 
@@ -88,11 +88,11 @@ Related articles
 *   *bidirectional* 意味着两地点的双向传播
 *   *multidirectional* 意味着多地点的完全同步.
 
-	Conflict resolution
+	冲突解决方案
 
 	这个程序会要么自动要么交互的处理文件冲突, 即是它不静默的丢弃冲突文件. 这项属性不适应于只支持单方向传播的程序.
 
-	FS monitoring
+	FS监听
 
 	应用程序监听文件系统的变化来触发同步.
 
@@ -100,71 +100,71 @@ Related articles
 
 	应用程序提供命令行界面.
 
-	Other interfaces
+	其它界面
 
 	应用有的特殊用户界面, 比如. GUI, TUI, 或者基于网页.
 
-	License
+	证书
 
 	服务器程序和客户端程序的证书.
 
-	Other platforms
+	其它平台
 
 	不仅仅支持Linux.
 
-	Maintained
+	维护
 
 	项目还在被维护.
 
-	Specificity
+	特性
 
 	特别是能将应用程序和其它的区分开的特性的说明.
 
-### Table
+### 表格
 
-| Name | Package | Implementation | Delta transfer | Encrypted transfer | FS metadata | Resumable | Handles renames | Version control | Change propagation | Conflict resolution | FS monitoring | CLI | Other interfaces | License | Other platforms | Maintained | Specificity |
+| 名字 | 安装包 | 实现 | 增量传输 | 加密传输 | FS元数据 | 可恢复 | 处理重命名 | 版本控制 | 改变传播 | 冲突解决方案 | FS监听 | CLI | 其它界面 | 证书 | 其它平台 | 维护 | 特性 |
 | [FreeFileSync](https://www.freefilesync.org/) | [freefilesync](https://aur.archlinux.org/packages/freefilesync/) | C++ | ? | SFTP [[1]](http://www.freefilesync.org/faq.php#features) | ? | ? | Yes [[2]](http://www.freefilesync.org/faq.php#features) | Yes [[3]](http://www.freefilesync.org/manual.php?topic=versioning) | **uni**directional / **multi**directional | Yes | ? | No | Yes | GPL | Windows, macOS | Yes |
-| [git-annex](https://git-annex.branchable.com/) | [git-annex](https://www.archlinux.org/packages/?name=git-annex) | Haskell, git | rsync [[4]](http://git-annex.branchable.com/transferring_data/) | rsync [[5]](http://git-annex.branchable.com/transferring_data/) | ? | ? | ? | Yes | **multi**directional; with git remotes [[6]](http://git-annex.branchable.com/sync/) | renames conflicting files [[7]](http://git-annex.branchable.com/automatic_conflict_resolution/) | ? | Yes | [git-annex assistant](http://git-annex.branchable.com/assistant/) | GPLv3 | macOS, Android | Yes | Manage files with git |
-| [osync.sh](http://www.netpower.fr/osync) | [osync](https://aur.archlinux.org/packages/osync/) | Bash, based on rsync | rsync | rsync | ? | Yes | No | Yes | **bi**directional | keeps multiple versions of a file [[8]](http://www.netpower.fr/sites/default/files/soft/html-doc/osync_v1.2.html#toc-Subsubsection-1.3.1) | optional [[9]](https://github.com/deajan/osync#daemon-mode) | Yes | No | BSD | Yes |
-| [rclone](https://rclone.org/) | [rclone](https://www.archlinux.org/packages/?name=rclone) | Go | No [[10]](https://rclone.org/faq/#why-doesn-t-rclone-support-partial-transfers-binary-diffs-like-rsync) | ? | ? | ? | ? | ? | **uni**directional [[11]](https://rclone.org/faq/#can-rclone-do-bi-directional-sync) | ? | ? | Yes | [RcloneBrowser](https://github.com/mmozeiko/RcloneBrowser) | MIT | *BSD, Plan9, Solaris, Windows, macOS | Yes | Optimized for synchronization with cloud storage, behavior varies with the features supported by the remote location. |
+| [git-annex](https://git-annex.branchable.com/) | [git-annex](https://www.archlinux.org/packages/?name=git-annex) | Haskell, git | rsync [[4]](http://git-annex.branchable.com/transferring_data/) | rsync [[5]](http://git-annex.branchable.com/transferring_data/) | ? | ? | ? | Yes | **multi**directional; with git remotes [[6]](http://git-annex.branchable.com/sync/) | 重命名冲突文件 [[7]](http://git-annex.branchable.com/automatic_conflict_resolution/) | ? | Yes | [git-annex assistant](http://git-annex.branchable.com/assistant/) | GPLv3 | macOS, Android | Yes | 用git管理文件 |
+| [osync.sh](http://www.netpower.fr/osync) | [osync](https://aur.archlinux.org/packages/osync/) | Bash, based on rsync | rsync | rsync | ? | Yes | No | Yes | **bi**directional | 保存多版本的文件 [[8]](http://www.netpower.fr/sites/default/files/soft/html-doc/osync_v1.2.html#toc-Subsubsection-1.3.1) | 可选的 [[9]](https://github.com/deajan/osync#daemon-mode) | Yes | No | BSD | Yes |
+| [rclone](https://rclone.org/) | [rclone](https://www.archlinux.org/packages/?name=rclone) | Go | No [[10]](https://rclone.org/faq/#why-doesn-t-rclone-support-partial-transfers-binary-diffs-like-rsync) | ? | ? | ? | ? | ? | **uni**directional [[11]](https://rclone.org/faq/#can-rclone-do-bi-directional-sync) | ? | ? | Yes | [RcloneBrowser](https://github.com/mmozeiko/RcloneBrowser) | MIT | *BSD, Plan9, Solaris, Windows, macOS | Yes | 针对与云存储同步进行了优化, 表现因远程位置支持的特性而异. |
 | [rdiff-backup](http://www.nongnu.org/rdiff-backup/) | [rdiff-backup](https://www.archlinux.org/packages/?name=rdiff-backup) | Python 2, librsync | rsync | rsync | Yes | ? | No | Yes | **uni**directional | No | Yes | No | GPL | Win32 | ? |
-| [Resilio Sync](/index.php/Resilio_Sync "Resilio Sync") | [rslsync](https://aur.archlinux.org/packages/rslsync/) | C++ | Yes | Yes | ? | Yes | ? | Yes | **multi**directional | ? | ? | No | Web | Proprietary freemium | FreeBSD, Windows, macOS, Android, iOS, Windows Phone, Amazon Kindle Fire | Yes | P2P sync |
+| [Resilio Sync](/index.php/Resilio_Sync "Resilio Sync") | [rslsync](https://aur.archlinux.org/packages/rslsync/) | C++ | Yes | Yes | ? | Yes | ? | Yes | **multi**directional | ? | ? | No | Web | Proprietary freemium | FreeBSD, Windows, macOS, Android, iOS, Windows Phone, Amazon Kindle Fire | Yes | P2P 同步 |
 | [rsync](/index.php/Rsync "Rsync") | [rsync](https://www.archlinux.org/packages/?name=rsync) | C | Yes | SSH or native protocol | Yes | Yes | No | 
 
 *   `--link-dest` with hard links [[12]](http://www.ibm.com/developerworks/aix/library/au-spunix_rsync/index.html#backup)
 *   `--backup`
 
- | **uni**directional | No | Yes | [Rsync#Front-ends](/index.php/Rsync#Front-ends "Rsync") | GPLv3 | Win32 | Yes | Standard tool present on all Linux distributions. |
-| [SparkleShare](https://sparkleshare.org/) | [sparkleshare](https://www.archlinux.org/packages/?name=sparkleshare) | C#, git | Yes | AES-256 [[13]](https://github.com/hbons/SparkleShare/wiki/Client-Side-Encryption) | ? | ? | Yes | Yes | ? | ? | ? | No | Yes | GPLv3 | Windows, macOS | Yes | It can sync with any Git server over SSH. |
+ | **uni**directional | No | Yes | [Rsync#Front-ends](/index.php/Rsync#Front-ends "Rsync") | GPLv3 | Win32 | Yes | 在所有Linux发行本上的标准工具. |
+| [SparkleShare](https://sparkleshare.org/) | [sparkleshare](https://www.archlinux.org/packages/?name=sparkleshare) | C#, git | Yes | AES-256 [[13]](https://github.com/hbons/SparkleShare/wiki/Client-Side-Encryption) | ? | ? | Yes | Yes | ? | ? | ? | No | Yes | GPLv3 | Windows, macOS | Yes | 能通过SSH和任何Git服务器同步. |
 | [Syncany](https://www.syncany.org/) | [syncany](https://aur.archlinux.org/packages/syncany/) | Java | ? | ? | ? | ? | ? | ? | ? | ? | ? | Yes | Yes | GPLv3 | No [[14]](https://github.com/syncany/syncany/graphs/contributors) |
-| [Syncthing](/index.php/Syncthing "Syncthing") | [syncthing](https://www.archlinux.org/packages/?name=syncthing) | Go | Yes [[15]](http://docs.syncthing.net/users/faq.html#is-synchronization-fast) | Yes [[16]](http://docs.syncthing.net/users/security.html) | partial [[17]](http://docs.syncthing.net/users/faq.html#what-things-are-synced) | Yes | ? | Yes [[18]](http://docs.syncthing.net/users/versioning.html), previous versions moved to archive folder | **multi**directional | renames one file [[19]](https://docs.syncthing.net/users/faq.html#what-if-there-is-a-conflict) | Yes | Yes | Web, GTK | MPL v2 | BSD, Windows, macOS, Android, Kindle Paperwhite | Yes | P2P sync |
+| [Syncthing](/index.php/Syncthing "Syncthing") | [syncthing](https://www.archlinux.org/packages/?name=syncthing) | Go | Yes [[15]](http://docs.syncthing.net/users/faq.html#is-synchronization-fast) | Yes [[16]](http://docs.syncthing.net/users/security.html) | partial [[17]](http://docs.syncthing.net/users/faq.html#what-things-are-synced) | Yes | ? | Yes [[18]](http://docs.syncthing.net/users/versioning.html), previous versions moved to archive folder | **multi**directional | 重命名一个文件 [[19]](https://docs.syncthing.net/users/faq.html#what-if-there-is-a-conflict) | Yes | Yes | Web, GTK | MPL v2 | BSD, Windows, macOS, Android, Kindle Paperwhite | Yes | P2P sync |
 | [Synkron](http://synkron.sourceforge.net/) | [synkron](https://aur.archlinux.org/packages/synkron/) | C++ | ? | ? | ? | ? | ? | ? | **multi**directional | ? | ? | No | Qt | GPLv2 | Windows, macOS | [No](https://sourceforge.net/projects/synkron/) |
 | [taskd](/index.php/Taskd "Taskd") | [taskd](https://aur.archlinux.org/packages/taskd/) | C++, Python | Yes | Yes | ? | Yes | ? | ? | **multi**directional | ? | No | Yes | No | MIT | Android | Yes |
 | [Unison](/index.php/Unison "Unison") | [unison](https://www.archlinux.org/packages/?name=unison) | OCaml | Yes | Yes | partial [[20]](http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/unison-manual.html#perms) | optional [[21]](http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/unison-manual.html#speeding) | No | Yes [[22]](http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/unison-manual.html#backups) | **bi**directional | interactive | No | Yes | GTK2 | GPL | FreeBSD, Windows, macOS, Android | Yes [[23]](http://www.cis.upenn.edu/~bcpierce/unison/status.html) |
 
-## Incremental backups
+## 增量备份
 
-Applications that can do [incremental backups](https://en.wikipedia.org/wiki/Incremental_backup "wikipedia:Incremental backup") remember and take into account what data has been backed up during the last run (so-called "diffs") and eliminate the need to have duplicates of unchanged data. Restoring the data to a certain point in time would require locating the last full backup and all the incremental backups from then to the moment when it is supposed to be restored. This sort of backup is useful for those who do it very often.
+那些能 [增量备份](https://en.wikipedia.org/wiki/Incremental_backup "wikipedia:Incremental backup")的程序会记住并考虑上次账户运行期间备份的数据(所谓的 "差异") 并消除重复未更改数据的需要.将数据还原到特定时间点需要定位上次完整备份和所有增量备份到赢应恢复的时刻 . 这种备份方法对经常备份的人很有用.
 
-See also:
+可查阅:
 
 *   [List of applications/Security#Backup programs](/index.php/List_of_applications/Security#Backup_programs "List of applications/Security")
 *   [Wikipedia:List of backup software](https://en.wikipedia.org/wiki/List_of_backup_software "wikipedia:List of backup software")
 *   [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki/Comparison_of_backup_software "wikipedia:Comparison of backup software")
 *   [Wikipedia:Comparison of online backup services](https://en.wikipedia.org/wiki/Comparison_of_online_backup_services "wikipedia:Comparison of online backup services")
 
-**Legend:**
+**说明:**
 
-*   **Name**: the application name, linking to the ArchWiki article or the official website.
-*   **Package**: a link to the package.
-*   **Implementation**: the programming language, library, or utility that the application is based on.
-*   **Compressed storage**: compression is used for storage.
-*   **Encrypted storage**: encryption is used for storage.
-*   **Delta transfer**: only the modified *parts* of files are transferred.
-*   **Encrypted transfer**: data is encrypted by default when transferred over a network.
-*   **FS metadata**: file system permissions and attributes are backed up.
-*   **Easy access**: the backup is stored plainly in the file system, or is mountable as such.
-*   **Resumable**: the backup can be resumed without restarting it if interrupted.
+*   **Name**: 应用名字, 链接到archwiki文章或者官方网站.
+*   **Package**: 链接到安装包.
+*   **Implementation**: 程序基于的编程语言、库或者实用工具.
+*   **Compressed storage**: 用作存储的压缩方法.
+*   **Encrypted storage**: 加密被用作存储.
+*   **Delta transfer**: 只有文件修改过的 *部分* 会被传输.
+*   **Encrypted transfer**: 当通过网络传输时数据默认加密.
+*   **FS metadata**: 文件系统权限和属性也备份了.
+*   **Easy access**: 备份明确地存储在文件系统中，或者可以挂载.
+*   **Resumable**: 如果中断备份可以不重启继续.
 *   **Handles renames**: moved/renamed files are detected and not stored or transferred twice; it typically means that a checksum is computed for files or chunks thereof.
 *   **CLI**: the application is command-line driven, i.e. it is scriptable.
 *   **Other interfaces**: the application has the specified user interfaces, e.g. GUI, TUI, or web-based.

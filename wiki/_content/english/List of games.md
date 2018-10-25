@@ -553,6 +553,10 @@ See also [Wikipedia:List of massively multiplayer online games](https://en.wikip
 
 	[https://www.kde.org/applications/games/kubrick/](https://www.kde.org/applications/games/kubrick/) || [kubrick](https://www.archlinux.org/packages/?name=kubrick)
 
+*   **Marvellous Inc.** — MarvInc is a zachlike puzzle game with a story told through emails.
+
+	[https://github.com/MarvellousSoft/MarvInc](https://github.com/MarvellousSoft/MarvInc) || [marvinc-git](https://aur.archlinux.org/packages/marvinc-git/)
+
 *   **Palapeli** — Jigsaw puzzle game. Part of [kdegames](https://www.archlinux.org/groups/x86_64/kdegames/).
 
 	[https://www.kde.org/applications/games/palapeli/](https://www.kde.org/applications/games/palapeli/) || [palapeli](https://www.archlinux.org/packages/?name=palapeli)

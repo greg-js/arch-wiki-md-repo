@@ -89,7 +89,7 @@ extract() {
 
 **Nota:** Asegúrese de que `extglob` esté activado: `shopt -s extglob`, añadiéndolo a `~/.bashrc` (véase [Opciones que cambian el comportamiento de englobado](https://mywiki.wooledge.org/glob#Options_which_change_globbing_behavior "gregswiki:glob")).
 
-Otra forma de hacer esto es instalar un paquete especializado, véase [Herramientas de conveniencia de archivado y compresión](/index.php/Archiving_and_compression_tools#Convenience_tools "Archiving and compression tools").
+Otra forma de hacer esto es instalar un paquete especializado, véase [Herramientas convenientes de archivado y compresión](/index.php/Archiving_and_compression_tools_(Espa%C3%B1ol)#Herramientas_convenientes "Archiving and compression tools (Español)").
 
 ## cd y ls en uno
 

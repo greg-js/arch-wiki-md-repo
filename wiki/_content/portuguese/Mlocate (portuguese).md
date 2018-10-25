@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [mlocate](/index.php/Mlocate "Mlocate"). Data da última tradução: 2018-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Mlocate&diff=0&oldid=539494) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [mlocate](/index.php/Mlocate "Mlocate"). Data da última tradução: 2018-10-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Mlocate&diff=0&oldid=544335) na versão em inglês.
 
 Artigos relacionados
 
@@ -18,7 +18,7 @@ Enquanto o [GNU findutils](https://www.gnu.org/software/findutils/) também uma 
 
 ## Uso
 
-Antes que [locate(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locate.1) possa ser usado, o banco de dados precisará ser criado, isso é feito com o comando [updateb(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updateb.1), que (como o nome sugere) atualiza o banco de dados.
+Antes que [locate(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/locate.1) possa ser usado, o banco de dados precisará ser criado, isso é feito com o comando [updatedb(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/updatedb.8), que (como o nome sugere) atualiza o banco de dados.
 
 O pacote contém uma unidade `updatedb.timer`, que invoca uma atualização do banco de dados todos os dias. O timer é ativado logo após a instalação, [inicie](/index.php/Inicie "Inicie") manualmente se você quiser usá-lo antes de reinicializar. Você também pode executar manualmente *updatedb* como root a qualquer momento.
 

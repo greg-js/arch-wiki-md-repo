@@ -81,7 +81,7 @@ Véase también:
 *   [GTK+/Development#C](/index.php/GTK%2B/Development#C "GTK+/Development")
 *   [Desktop notifications#C](/index.php/Desktop_notifications#C "Desktop notifications")
 *   [Libcanberra#C](/index.php/Libcanberra#C "Libcanberra")
-*   [Archiving and compression#Compression libraries](/index.php/Archiving_and_compression#Compression_libraries "Archiving and compression")
+*   [Archiving and compression (Español)#Bibliotecas de compresión](/index.php/Archiving_and_compression_(Espa%C3%B1ol)#Bibliotecas_de_compresi.C3.B3n "Archiving and compression (Español)")
 *   [Wikipedia:Category:C libraries](https://en.wikipedia.org/wiki/Category:C_libraries "wikipedia:Category:C libraries")
 
 ## Véase también

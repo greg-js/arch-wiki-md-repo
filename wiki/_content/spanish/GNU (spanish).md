@@ -42,7 +42,7 @@ Mientras que [Hurd](http://www.gnu.org/s/hurd/hurd.html), el núcleo GNU, está 
 
 **utilidades esenciales:** El paquete [coreutils](https://www.archlinux.org/packages/?name=coreutils) contiene *"las utilidades básicas para manejo de archivos, shell y manipulación de texto"*[[3]](http://www.gnu.org/software/coreutils/).
 
-**compresión:** [gzip](https://www.archlinux.org/packages/?name=gzip) y [Tar](/index.php/Tar "Tar") manejan muchos paquetes para sistemas GNU/Linux. Por ejemplo, los paquetes del [Repositorio de Usuarios de Arch](/index.php/Arch_User_Repository "Arch User Repository") vienen en formato [Gzip](http://www.gnu.org/software/gzip/) [tarballs](http://www.gnu.org/software/tar/).
+**compresión:** [gzip](https://www.archlinux.org/packages/?name=gzip) y [Tar](/index.php/Tar_(Espa%C3%B1ol) "Tar (Español)") manejan muchos paquetes para sistemas GNU/Linux. Por ejemplo, los paquetes del [Repositorio de Usuarios de Arch](/index.php/Arch_User_Repository "Arch User Repository") vienen en formato [Gzip](http://www.gnu.org/software/gzip/) [tarballs](http://www.gnu.org/software/tar/).
 
 ## Herramientas de Desarrollo
 

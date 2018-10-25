@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [GTK+](/index.php/GTK%2B "GTK+"), revisada por última vez el **2018-10-11**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GTK%2B&diff=0&oldid=545475) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [GTK+](/index.php/GTK%2B "GTK+"), revisada por última vez el **2018-10-24**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GTK%2B&diff=0&oldid=550627) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -91,7 +91,7 @@ Se pueden instalar más temas desde los repositorios oficiales o desde [AUR](/in
 
 *   **Arc** — Un tema plano con un aspecto moderno y elementos transparentes. Incluye: *Arc*, *Arc-Dark*, *Arc-Darker*
 
-	[https://github.com/horst3180/arc-theme](https://github.com/horst3180/arc-theme) || con transparencia: [arc-gtk-theme](https://www.archlinux.org/packages/?name=arc-gtk-theme), sin transparencia: [arc-solid-gtk-theme](https://www.archlinux.org/packages/?name=arc-solid-gtk-theme)
+	[https://github.com/nicohood/arc-theme](https://github.com/nicohood/arc-theme) || con transparencia: [arc-gtk-theme](https://www.archlinux.org/packages/?name=arc-gtk-theme), sin transparencia: [arc-solid-gtk-theme](https://www.archlinux.org/packages/?name=arc-solid-gtk-theme)
 
 *   **Breeze** — Versión GTK+ del tema predeterminado de KDE. Incluye: *Breeze*, *Breeze-Dark*
 
@@ -261,19 +261,15 @@ gtk-can-change-accels = 1
 
 #### Combinaciones de teclas Emacs
 
-Para obtener combinaciones de teclas similares a Emacs en aplicaciones gtk:
+Para tener combinaciones de teclas similares a Emacs en aplicaciones GTK+, añada lo siguiente:
 
-Para GTK2, añada `gtk-key-theme-name="Emacs"` en `~/.gtkrc-2.0`.
-
-Para GTK3 añada lo siguiente al archivo anotado:
-
- `~/.config/gtk-3.0/settings.ini` 
+ `~/.gtkrc-2.0`  `gtk-key-theme-name = "Emacs"`  `~/.config/gtk-3.0/settings.ini` 
 ```
 [Settings]
 gtk-key-theme-name = Emacs
 ```
 
-Entonces ejecute:
+Para GTK+3 ejecute también:
 
 ```
 $ gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
@@ -335,12 +331,14 @@ Véase también [[1]](http://martin.ankerl.com/2008/10/10/how-to-make-a-compact-
 
 ### Ocultar los botones CSD
 
-Para eliminar los botones minimizar y maximizar. [[3]](https://developer.gnome.org/gtk3/3.22/GtkSettings.html#GtkSettings--gtk-decoration-layout)
+Para eliminar los botones minimizar y maximizar de las ventanas *gtk3*:
 
 ```
 gtk-decoration-layout=menu:close
 
 ```
+
+Véase [[3]](https://developer.gnome.org/gtk3/3.22/GtkSettings.html#GtkSettings--gtk-decoration-layout).
 
 ### Desactivar pegar desde el ratón
 
@@ -357,7 +355,7 @@ Abra el selector de archivos dentro del **directorio de trabajo actual** y no en
 
 **GTK+ 3**
 
-Modifique DConf con *gsettings*, ya que el archivo de base de datos ($XDG_CONFIG_HOME/dconf/users) es binario:
+Cambie el [ajuste](/index.php/GNOME#Configuration "GNOME") con la orden siguiente:
 
 ```
 $ gsettings set org.gtk.Settings.FileChooser startup-mode cwd
@@ -366,9 +364,12 @@ $ gsettings set org.gtk.Settings.FileChooser startup-mode cwd
 
 **GTK+ 2**
 
-Modifique el archivo de configuración `~/.config/gtk-2.0/gtkfilechooser.ini`:
+Añada lo siguiente a `~/.config/gtk-2.0/gtkfilechooser.ini`:
 
- `~/.config/gtk-2.0/gtkfilechooser.ini`  `StartupMode=cwd` 
+```
+StartupMode=cwd
+
+```
 
 ### Comportamiento de desplazamiento heredado
 
@@ -529,7 +530,7 @@ Para ajustar los botones en la barra superior, utilice la configuración `gtk-de
 
 ### Cedilla ç/Ç en lugar de ć/Ć
 
-Véase [[6]](https://bugs.launchpad.net/ubuntu/+source/gtk+2.0/+bug/518056), y [[7]](https://bugs.launchpad.net/ubuntu/+source/gtk+2.0/+bug/518056/comments/37) para una solución utilizando Xcompose (disposición internacional de EE.UU.).
+Véase [[6]](https://bugs.launchpad.net/ubuntu/+source/ibus/+bug/518056), y [[7]](https://bugs.launchpad.net/ubuntu/+source/ibus/+bug/518056/comments/37) para una solución utilizando Xcompose (disposición internacional de EE.UU.).
 
 ### Suprimir advertencia referente al bus de accesibilidad
 

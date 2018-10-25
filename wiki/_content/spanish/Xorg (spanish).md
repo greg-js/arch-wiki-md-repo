@@ -11,7 +11,7 @@ Artículos relacionados
 
 De [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
-	*El proyecto X.Org proporciona una implementación de código abierto del sistema de ventanas X. El trabajo de desarrollo se está haciendo conjuntamente con la comunidad freedesktop.org. La Fundación X.Org es una corporación educativa sin fines de lucro cuyo Consejo sirve a este fin, y cuyos Miembros encaminan este trabajo.*
+	El proyecto X.Org proporciona una implementación de código abierto del sistema de ventanas X. El trabajo de desarrollo se está haciendo conjuntamente con la comunidad freedesktop.org. La Fundación X.Org es una corporación educativa sin fines de lucro cuyo Consejo sirve a este fin, y cuyos Miembros encaminan este trabajo.
 
 **Xorg** es una aplicación pública, una implementación en código abierto del sistema X window versión 11\. Desde el momento que Xorg se convierte en la opción más popular entre los usuarios de Linux, su omnipresencia ha dado lugar a que sea un requisito cada vez más utilizado por las aplicaciones GUI (**G**raphical **U**ser **I**nterface), con la consiguiente adopción masiva por la mayoría de las distribuciones. Consulte el artículo de Wikipedia sobre [Xorg](https://en.wikipedia.org/wiki/X.Org_ServerX.Org "wikipedia:X.Org ServerX.Org") o visite el [sitio web de Xorg](http://www.x.org/wiki/) para más detalles.
 

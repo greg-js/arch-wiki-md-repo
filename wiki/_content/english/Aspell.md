@@ -28,7 +28,7 @@ You will then be dropped into a prompt with the file text displayed. From there 
 To list mispelled words from standard input:
 
 ```
-$ cat *somefile* | aspell list
+$ aspell list < *somefile*
 
 ```
 

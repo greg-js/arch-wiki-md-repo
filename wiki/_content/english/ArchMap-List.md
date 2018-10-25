@@ -1086,5 +1086,6 @@ You can use the following website to get your device's coordinates along with a 
 -43.590414, 172.380892 "grawlinson" # Christchurch, New Zealand
 36.718911, -4.427087 "AlonsoLP" # Málaga, Spain
 43.550649, 1.488707 "MiniKochi" # Toulouse, France
+40.054784,-74.2006784 "cozypjsam" # Lakewood, NJ, USA
 
 ```

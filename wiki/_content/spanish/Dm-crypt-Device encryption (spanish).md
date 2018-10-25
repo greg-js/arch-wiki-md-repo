@@ -155,7 +155,7 @@ Los valores predeterminados se comparan con un ejemplo de especificación cripto
  | `sha256` | `sha512` | Algoritmo de hash utilizado para [derivación de clave](/index.php/Disk_encryption_(Espa%C3%B1ol)#Metadatos_criptogr.C3.A1ficos "Disk encryption (Español)"). La versión 1.7.0 cambió los valores predeterminados de `sha1` a `sha256` «*no por razones de seguridad [sino] principalmente para evitar problemas de compatibilidad en sistemas endurecidos donde SHA1 ya está [siendo] eliminado*»[[1]](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.7/v1.7.0-ReleaseNotes). El antiguo valor predeterminado de `sha1` todavía se puede utilizar para la compatibilidad con versiones anteriores de *cryptsetup*, ya que es [considerado seguro](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects) (ver elemento 5.20). |
 | --iter-time
 
--yo
+-i
 
  | `2000` | `5000` | Número de milisegundos para gastar con el procesamiento de la frase de contraseña PBKDF2\. La versión 1.7.0 cambió los valores predeterminados de `1000` a `2000` paraa «*tratar de mantener el recuento de iteraciones PBKDF2 lo suficientemente alto y también aceptable para los usuarios.*»[[2]](https://www.kernel.org/pub/linux/utils/cryptsetup/v1.7/v1.7.0-ReleaseNotes). Esta opción solo es relevante para las operaciones LUKS que establecen o cambien frases de contraseña, como *luksFormat* o *luksAddKey*. Al especificar 0 como parámetro, se selecciona el valor predeterminado compilado. |
 | --use-{u,}random | `--use-urandom` | `--use-random` | Selecciona qué [generador de números aleatorios](/index.php/Random_number_generator "Random number generator") usar. Por citar la página del manual de cryptsetup: «En una situación de baja entropía (por ejemplo, en un sistema integrado), ambas selecciones son problemáticas. El uso de /dev/urandom puede dar lugar a claves débiles. El uso de /dev/random puede bloquear mucho tiempo, potencialmente para siempre, si no es suficiente la entropía puede ser cosechada por el kernel». |
@@ -804,7 +804,7 @@ Hay muchos tipos de archivos de claves. Cada tipo de archivo de claves utilizado
 
 #### Frase de contraseña
 
-Este es un archivo de claves que contiene una frase de contraseña simple. El beneficio de este tipo de archivo de claves es que si se pierde el archivo, los datos que contiene son conocidos y, con suerte, recordados fácilmente por el propietario del volumen cifrado. Sin embargo, la desventaja es que esto no agrega ninguna seguridad al ingresar una frase de contraseña durante el inicio inicial del sistema.
+Este es un archivo de claves que contiene una frase de contraseña simple. El beneficio de este tipo de archivo de claves es que si se pierde el archivo, los datos que contiene son conocidos y, con suerte, recordados fácilmente por el propietario del volumen cifrado. Sin embargo, la desventaja es que esto no agrega ninguna seguridad al ingresar una frase de contraseña durante la fase inicial del sistema.
 
 Ejemplo: `1234`
 

@@ -109,7 +109,7 @@ A list of available commands may be found [here](http://eclim.org/cheatsheet.htm
 
 **Note:** For C# completion to "just work" simply create an empty `.sln` file in current or parent directory. The rest of this section explains how to manually create a full working C# project.
 
-The easiest way to create a project is to use [monodevelop](https://aur.archlinux.org/packages/monodevelop/). The rest of this section explains how to manually create a C# project which can also be built from command line with `xbuild`.
+The easiest way to create a project is to use [monodevelop-stable](https://aur.archlinux.org/packages/monodevelop-stable/). The rest of this section explains how to manually create a C# project which can also be built from command line with `xbuild`.
 
 First create a solution file. Replace ***bold-italic*** names appropriately.
 

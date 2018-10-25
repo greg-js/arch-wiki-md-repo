@@ -22,7 +22,7 @@ Related articles
 
 ## Instalacja
 
-[Zainstaluj](https://wiki.archlinux.org/index.php/Help:Reading#Installation_of_packages) [snapd](https://aur.archlinux.org/packages/snapd/) lub pakiet [snapd-git](https://aur.archlinux.org/packages/snapd-git/).
+[Zainstaluj](/index.php/Zainstaluj "Zainstaluj") [snapd](https://aur.archlinux.org/packages/snapd/) lub pakiet [snapd-git](https://aur.archlinux.org/packages/snapd-git/).
 
 **Tip:** `snapd` instaluje skrypt `/etc/profile.d/snapd.sh` żeby wyeksportować ścieżki plików binarnych zainstalowanych z pakietem snapd. Uruchom ponownie komputer, aby zmiana zaczęła obowiązywać.
 

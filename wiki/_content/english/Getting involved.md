@@ -120,10 +120,6 @@ Community-developed software that focuses on Arch Linux.
 
 	Unofficial binary repositories maintained by community members.
 
-	[Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends")
-
-	Graphical front-ends for [pacman](/index.php/Pacman "Pacman").
-
 ### Other
 
 	[Xyne's Arch Linux Projects](http://xyne.archlinux.ca/projects/)

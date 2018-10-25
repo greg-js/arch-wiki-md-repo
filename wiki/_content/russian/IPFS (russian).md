@@ -1,5 +1,9 @@
 **Состояние перевода:** На этой странице представлен перевод статьи [IPFS](/index.php/IPFS "IPFS"). Дата последней синхронизации: 27 октября 2016\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=IPFS&diff=0&oldid=455306).
 
+Ссылки по теме
+
+[Daemons (Русский)](/index.php/Daemons_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Daemons (Русский)")
+
 From the [IPFS README.md on GitHub](https://github.com/ipfs/ipfs):
 
 	[IPFS](/index.php/IPFS "IPFS") (the [InterPlanetary File System](https://en.wikipedia.org/wiki/IPFS "wikipedia:IPFS")) is a new hypermedia distribution protocol, addressed by content and identities. [IPFS](/index.php/IPFS "IPFS") enables the creation of completely distributed applications. It aims to make the web faster, safer, and more open.

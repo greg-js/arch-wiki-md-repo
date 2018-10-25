@@ -23,7 +23,7 @@ This article covers the Arch Linux support for the Lenovo ThinkPad Edge E130 lap
 
 ## Installation
 
-No special steps are needed during setup, everyhing (WiFi, Network, Modem) seemed to work from setup media so you can follow [Installation guide](/index.php/Installation_guide "Installation guide") as usual.
+No special steps are needed during setup, everything (WiFi, Network, Modem) seemed to work from setup media so you can follow [Installation guide](/index.php/Installation_guide "Installation guide") as usual.
 
 ## Hardware
 
@@ -118,4 +118,4 @@ KMS lets you set high native resolution early during system boot. Follow guideli
 
 ### Plymouth
 
-[Plymouth](/index.php/Plymouth "Plymouth") provides a flicker-free graphical boot processs. Seemed to work without problems.
+[Plymouth](/index.php/Plymouth "Plymouth") provides a flicker-free graphical boot process. Seemed to work without problems.

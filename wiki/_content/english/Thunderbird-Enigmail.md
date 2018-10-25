@@ -1,15 +1,19 @@
-[Enigmail](https://www.enigmail.net) is a [Thunderbird](/index.php/Thunderbird "Thunderbird") [extension](https://addons.mozilla.org/thunderbird/addon/enigmail/) that allows writing and receiving email signed and/or encrypted with the OpenPGP standard. It relies on the [GnuPG](/index.php/GnuPG "GnuPG").
-
-Common packages include: [thunderbird-enigmail](https://aur.archlinux.org/packages/thunderbird-enigmail/) and [thunderbird-enigmail-bin](https://aur.archlinux.org/packages/thunderbird-enigmail-bin/).
+[Enigmail](https://www.enigmail.net) is a Thunderbird extension that allows writing and receiving email signed and encrypted with the OpenPGP standard. It relies on the [GnuPG](/index.php/GnuPG "GnuPG").
 
 ## Contents
 
-*   [1 Usage](#Usage)
-    *   [1.1 Sharing the public key](#Sharing_the_public_key)
-    *   [1.2 Encrypting emails](#Encrypting_emails)
-    *   [1.3 Decrypting emails](#Decrypting_emails)
-*   [2 Troubleshooting](#Troubleshooting)
-    *   [2.1 Blank draft messages](#Blank_draft_messages)
+*   [1 Installation](#Installation)
+*   [2 Usage](#Usage)
+    *   [2.1 Sharing the public key](#Sharing_the_public_key)
+    *   [2.2 Encrypting emails](#Encrypting_emails)
+    *   [2.3 Decrypting emails](#Decrypting_emails)
+*   [3 Troubleshooting](#Troubleshooting)
+    *   [3.1 Blank draft messages](#Blank_draft_messages)
+*   [4 See also](#See_also)
+
+## Installation
+
+Common packages include: [thunderbird-extension-enigmail](https://www.archlinux.org/packages/?name=thunderbird-extension-enigmail) and [thunderbird-enigmail-bin](https://aur.archlinux.org/packages/thunderbird-enigmail-bin/).
 
 ## Usage
 
@@ -19,7 +23,7 @@ To distribute the public key one may upload it to a [keyserver](https://en.wikip
 
 ### Encrypting emails
 
-Encryption does not always work properly with emails containing HTML. It is best to use plain text by choosing *Options > Delivery Format > Plain Text Only* in the new email window.
+Encryption does not always work properly with emails containing HTML. It is best to use plain text by choosing *Options* > *Delivery Format* > *Plain Text Only* in the new email window.
 
 Once the email is finished it can be signed through the *OpenPGP* menu.
 
@@ -47,3 +51,7 @@ Please ensure that you have a valid OpenPGP key, and that your account settings 
 ```
 
 and `gpg --list-keys` fails to show some keys that used to be there, see [GnuPG invalid packet workaround](http://jo-ke.name/wp/?p=111).
+
+## See also
+
+[https://addons.mozilla.org/thunderbird/addon/enigmail/](https://addons.mozilla.org/thunderbird/addon/enigmail/)

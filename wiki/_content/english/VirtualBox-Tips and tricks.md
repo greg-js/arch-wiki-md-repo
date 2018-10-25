@@ -80,10 +80,12 @@ Pay a close attention to the firmware interface (BIOS or UEFI) used to install t
 
  `ArchLinux_vm.vmx`  `firmware = "efi"` 
 
-Finally, ask your hypervisor to use the existing virtual disk you have converted and launch the virtual machine. {{Tip|
+Finally, ask your hypervisor to use the existing virtual disk you have converted and launch the virtual machine.
 
-*   On VirtualBox, if you do not want to browse the whole GUI to find the right location to add your new virtual drive device, you can [Replace a virtual disk manually from the .vbox file](/index.php/VirtualBox#Replace_a_virtual_disk_manually_from_the_.vbox_file "VirtualBox"), or use the `VBoxManage storageattach` described in [[VirtualBox#Increasing the size of VDI disks] or in the [VirtualBox manual page](https://www.virtualbox.org/manual/ch08.html#vboxmanage-storageattach).
-*   Similarly, in VMware products, you can replace the location of the current virtual disk location by adapting the *.vmdk* file location in your *.vmx* configuration file.}}
+**Tip:**
+
+*   On VirtualBox, if you do not want to browse the whole GUI to find the right location to add your new virtual drive device, you can [Replace a virtual disk manually from the .vbox file](/index.php/VirtualBox#Replace_a_virtual_disk_manually_from_the_.vbox_file "VirtualBox"), or use the `VBoxManage storageattach` described in [VirtualBox#Increasing the size of VDI disks](/index.php/VirtualBox#Increasing_the_size_of_VDI_disks "VirtualBox") or in the [VirtualBox manual page](https://www.virtualbox.org/manual/ch08.html#vboxmanage-storageattach).
+*   Similarly, in VMware products, you can replace the location of the current virtual disk location by adapting the *.vmdk* file location in your *.vmx* configuration file.
 
 ## Virtual machine launch management
 

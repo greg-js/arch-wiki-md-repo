@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Install from existing Linux](/index.php/Install_from_existing_Linux "Install from existing Linux"). Data da última tradução: 2018-10-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Install_from_existing_Linux&diff=0&oldid=545306) na versão em inglês.
+
 Artigos relacionados
 
 *   [Instalar a partir de SSH](/index.php/Instalar_a_partir_de_SSH "Instalar a partir de SSH")
@@ -67,6 +69,8 @@ Siga [Guia de instalação#Montar os sistemas de arquivos](/index.php/Guia_de_in
 Então, siga [Guia de instalação#Instalação](/index.php/Guia_de_instala%C3%A7%C3%A3o#Instala.C3.A7.C3.A3o "Guia de instalação"). Você pode pular [Guia de instalação#Selecionar os espelhos](/index.php/Guia_de_instala%C3%A7%C3%A3o#Selecionar_os_espelhos "Guia de instalação"), já que o host já deve ter a lista de espelhos correta.
 
 **Dica:** Para evitar baixar novamente todos os pacotes, considere seguir [Pacman/Dicas e truques#Cache do pacman compartilhado na rede](/index.php/Pacman/Dicas_e_truques#Cache_do_pacman_compartilhado_na_rede "Pacman/Dicas e truques") ou usara opção `-c` do *pacstrap*.
+
+**Dica:** Quando o gerenciador de boot Grub é usado, o comando `grub-mkconfig` pode detectar dispositivos incorretamente. Isso resultará no erro `Erro:nenhuma partição` ao tentar inicializar a partir do pendrive. Para resolver este problema, a partir do host executando o Arch Linux, monte as partições recém-instaladas, use `arch-chroot` na nova partição, depois instale e configure o grub. A última etapa pode requerer a desativação de `lvmetad` do `/etc/lvm/lvm.conf` configurando `use_lvmetad=0`.
 
 **Nota:** Se você quiser apenas criar uma cópia exata de uma instalação do Arch existente, também é possível copiar o sistema de arquivos para a nova partição. Com este método, você ainda precisará
 
@@ -286,7 +290,7 @@ use_lvmetad = 0
 
 Isto irá desencadear mais tarde um erro na inicialização no estágio initrd. Portanto, você deve alterá-lo depois da geração grub. Em um software RAID + LVM, as etapas seriam as seguintes:
 
-*   Após instalar o sistema, verifique seu [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") e as configurações do gerenciador de inicialização *(boot loader)*. Veja [Category:Boot loaders (Português)](/index.php/Category:Boot_loaders_(Portugu%C3%AAs) "Category:Boot loaders (Português)") para uma lista de gerenciadores de inicialização.
+*   Após instalar o sistema, verifique seu [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") e as configurações do gerenciador de inicialização *(boot loader)*. Veja [Processo de inicialização do Arch#Gerenciador de boot](/index.php/Processo_de_inicializa%C3%A7%C3%A3o_do_Arch#Gerenciador_de_boot "Processo de inicialização do Arch") para uma lista de gerenciadores de inicialização.
 *   Você pode precisar alterar seu `/etc/mdadm.conf` para refletir suas configurações de [RAID](/index.php/RAID "RAID") (se aplicável).
 *   Você pode precisar alterar seu`HOOKS` e `MODULES` de acordo com seus requisitos de [LVM](/index.php/LVM "LVM") e [RAID](/index.php/RAID "RAID"): `MODULES="dm_mod" HOOKS="base udev **mdadm_udev** ... block **lvm2** filesystems ..."`
 *   Você provavelmente vai precisar gerar novas imagens initrd com mkinitcpio. Veja [Mkinitcpio#Image creation and activation](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio").

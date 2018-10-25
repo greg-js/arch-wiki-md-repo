@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"). Data da última tradução: 2018-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&diff=0&oldid=541361) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [USB flash installation media](/index.php/USB_flash_installation_media "USB flash installation media"). Data da última tradução: 2018-10-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=USB_flash_installation_media&diff=0&oldid=548021) na versão em inglês.
 
 Artigos relacionados
 
@@ -16,8 +16,7 @@ Se você deseja executar uma instalação completa do Arch Linux a partir de uma
     *   [1.1 Usando ferramentas automáticas](#Usando_ferramentas_autom.C3.A1ticas)
         *   [1.1.1 No GNU/Linux](#No_GNU.2FLinux)
             *   [1.1.1.1 Usando dd](#Usando_dd)
-            *   [1.1.1.2 Usando liveusb-builder](#Usando_liveusb-builder)
-            *   [1.1.1.3 Usando etcher](#Usando_etcher)
+            *   [1.1.1.2 Usando etcher](#Usando_etcher)
         *   [1.1.2 No Windows](#No_Windows)
             *   [1.1.2.1 Usando Rufus](#Usando_Rufus)
             *   [1.1.2.2 Usando USBwriter](#Usando_USBwriter)
@@ -67,31 +66,9 @@ Execute o seguinte comando, substituindo `/dev/**sdx**` pela sua unidade, por ex
 
 Veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1) para mais informações sobre [dd](/index.php/Dd "Dd"). Veja [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1#DESCRIPTION) para mais informações sobre `oflag=sync`.
 
-##### Usando liveusb-builder
-
-[liveusb-builder](https://github.com/mytbk/liveusb-builder) é um conjunto de scripts para criar pendrive multiboot para distribuições GNU/Linux.
-
-**Nota:** Essa ferramenta foi testada apenas no Arch Linux. Se você está usando outra distribuição GNU/Linux, pode haver alguma diferença.
-
-[Instale](/index.php/Instale "Instale") [liveusb-builder-git](https://aur.archlinux.org/packages/liveusb-builder-git/).
-
-Baixe uma ISO recente do Arch Linux para seu diretório `~/isofiles`:
-
-```
-$ buildlive --downloadonly arch
-
-```
-
-Monte seu pendrive, suponha que você tenha apenas uma partição [FAT32](/index.php/FAT32 "FAT32") e faça um Live USB. Se o seu pendrive tiver um esquema de partição diferente ou você encontrar algum problema, por favor, verifique o [site do projeto](https://github.com/mytbk/liveusb-builder#usage).
-
-```
-$ buildlive --root /path/to/usb-drive arch
-
-```
-
 ##### Usando etcher
 
-[Etcher](https://etcher.io/) é um poderoso aplicador de imagem do sistema operacional criado com tecnologias web para garantir que o flash de um cartão SD ou unidade USB seja uma experiência agradável e segura. Ele protege você de gravar acidentalmente em seus discos rígidos, garante que todos os bytes de dados foram escritos corretamente e muito mais.
+[Etcher](https://etcher.io/) é um aplicador de imagem do sistema operacional criado com node.js e Electron, capaz que o *flashing* de um cartão SD ou unidade USB seja uma experiência agradável e segura. Ele protege você de gravar acidentalmente em seus discos rígidos e garante que todos os bytes de dados foram escritos corretamente e muito mais.
 
 #### No Windows
 
@@ -205,7 +182,7 @@ $ diskutil unmountDisk /dev/disk*X*
 Agora, copie o arquivo de imagem ISO para o dispositivo. O comando `dd` é similar à sua contraparte Linux, mas note o 'r' antes do modo 'disk' para modo *raw*, que torna a transferência muito mais rápida:
 
 ```
-# dd if=caminho/para/arch.iso of=/dev/**r**disk*X* bs=1M
+# dd if=caminho/para/arch.iso of=/dev/**r**disk*X* bs=1m
 
 ```
 

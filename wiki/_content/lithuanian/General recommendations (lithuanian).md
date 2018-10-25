@@ -285,7 +285,7 @@ The [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives") art
 
 ## Sistemos servisai
 
-This section relates to [daemons](/index.php/Daemons "Daemons"). For more, please see [Category:Daemons and system services](/index.php/Category:Daemons_and_system_services "Category:Daemons and system services").
+This section relates to [daemons](/index.php/Daemons "Daemons"). For more, please see [Category:Daemons and system services](/index.php?title=Category:Daemons_and_system_services&action=edit&redlink=1 "Category:Daemons and system services (page does not exist)").
 
 ### Failų indeksavimas ir paieška
 

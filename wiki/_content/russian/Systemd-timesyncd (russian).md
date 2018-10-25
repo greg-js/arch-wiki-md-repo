@@ -1,3 +1,12 @@
+Ссылки по теме
+
+*   [Time (Русский)](/index.php/Time_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Time (Русский)")
+*   [Network Time Protocol daemon (Русский)](/index.php/Network_Time_Protocol_daemon_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Network Time Protocol daemon (Русский)")
+*   [OpenNTPD](/index.php/OpenNTPD "OpenNTPD")
+*   [Chrony](/index.php/Chrony "Chrony")
+*   [systemd-networkd (Русский)](/index.php/Systemd-networkd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd-networkd (Русский)")
+*   [systemd (Русский)](/index.php/Systemd_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Systemd (Русский)")
+
 *systemd-timesyncd* это служба, которая была добавлена для синхронизации системных часов по сети. По сути, эта служба реализует упрощенный клиент SNTP. В отличие сложных реализаций NTP, *systemd-timesyncd* представляет только клиентскую часть, ориентируясь на запрос времени из одного удаленного сервера и синхронизации локальных часов с ним. Подробнее смотрите [список рассылки systemd](http://lists.freedesktop.org/archives/systemd-devel/2014-May/019537.html) (англ.)
 
 ## Установка

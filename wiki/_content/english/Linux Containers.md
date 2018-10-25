@@ -336,14 +336,12 @@ lxc.mount.entry = /dev/video0 dev/video0 none bind,optional,create=file
 
 ```
 
-If you still get a permission denied error in your LXC guest, then you may need to call `xhost +` in your host to allow the guest to connect to the host's display server. Take note of the security concerns of opening up your display server by doing this. In addition you might need to add the following line
+If you still get a permission denied error in your LXC guest, then you may need to call `xhost +` in your host to allow the guest to connect to the host's display server. Take note of the security concerns of opening up your display server by doing this. In addition you might need to add the following line **before** the above bind mount lines.
 
 ```
 lxc.mount.entry = tmpfs tmp tmpfs defaults
 
 ```
-
-before the bind mount lines.
 
 **Note:** This will not work if using *unprivileged* containers.
 

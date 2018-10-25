@@ -15,7 +15,7 @@
 
 ## Instalacja
 
-[Zainstaluj](https://wiki.archlinux.org/index.php/Help:Reading#Installation_of_packages) pakiet [neovim](https://www.archlinux.org/packages/?name=neovim) lub [neovim-git](https://aur.archlinux.org/packages/neovim-git/).
+[Zainstaluj](/index.php/Zainstaluj "Zainstaluj") pakiet [neovim](https://www.archlinux.org/packages/?name=neovim) lub [neovim-git](https://aur.archlinux.org/packages/neovim-git/).
 
 ## Konfiguracja
 

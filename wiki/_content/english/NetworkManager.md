@@ -83,7 +83,8 @@ Related articles
     *   [8.16 Unable to turn on wi-fi with Lenovo laptop (IdeaPad, Legion, etc.)](#Unable_to_turn_on_wi-fi_with_Lenovo_laptop_.28IdeaPad.2C_Legion.2C_etc..29)
     *   [8.17 Turn off hostname sending](#Turn_off_hostname_sending)
     *   [8.18 nm-applet disappears in i3wm](#nm-applet_disappears_in_i3wm)
-    *   [8.19 Disable NetworkManager when using dbus](#Disable_NetworkManager_when_using_dbus)
+    *   [8.19 nm-applet tray icons display wrongly](#nm-applet_tray_icons_display_wrongly)
+    *   [8.20 Disable NetworkManager when using dbus](#Disable_NetworkManager_when_using_dbus)
 *   [9 See also](#See_also)
 
 ## Installation
@@ -1023,6 +1024,12 @@ Environment="DISPLAY=:0.0"
 ```
 
 After reloading the daemons [restart](/index.php/Restart "Restart") `xfce4-notifyd.service`. Exit i3 and start it back up again and the applet should show on the tray.
+
+### nm-applet tray icons display wrongly
+
+Currently the tray icons of nm-applet are drawn on top of one another, i.e. the icon displaying wireless strength might show on top of the icon indicating no wired connection. This is apparently a GTK3 bug/problem: [https://gitlab.gnome.org/GNOME/gtk/issues/1280](https://gitlab.gnome.org/GNOME/gtk/issues/1280) .
+
+A patched version of GTK3 exists in AUR, which apparently fixes the tray icon bug: [gtk3-mushrooms](https://aur.archlinux.org/packages/gtk3-mushrooms/) .
 
 ### Disable NetworkManager when using dbus
 

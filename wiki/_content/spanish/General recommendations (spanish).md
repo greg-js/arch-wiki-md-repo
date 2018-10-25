@@ -346,7 +346,7 @@ Esta sección se desarrolla en [Color output in console](/index.php/Color_output
 
 ### Archivos comprimidos
 
-Los archivos comprimidos se encuentran con frecuencia en un sistema GNU/Linux. [Tar](/index.php/Core_utilities_(Espa%C3%B1ol)#Esenciales "Core utilities (Español)") es una de las herramientas de archivo más comúnmente utilizadas, y los usuarios deberían estar familiarizados con su sintaxis (los paquetes de Arch Linux, por ejemplo, son simplemente archivos tar comprimidos con xzip). Véase el artículo [archivado y compresión](/index.php/Archiving_and_compression "Archiving and compression").
+Los archivos comprimidos se encuentran con frecuencia en un sistema GNU/Linux. [Tar](/index.php/Core_utilities_(Espa%C3%B1ol)#Esenciales "Core utilities (Español)") es una de las herramientas de archivo más comúnmente utilizadas, y los usuarios deberían estar familiarizados con su sintaxis (los paquetes de Arch Linux, por ejemplo, son simplemente archivos tar comprimidos con xzip). Véase el artículo [archivado y compresión](/index.php/Archiving_and_compression_(Espa%C3%B1ol) "Archiving and compression (Español)").
 
 ### Indicador de la línea de comandos
 

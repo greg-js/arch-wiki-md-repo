@@ -59,7 +59,7 @@ Before running rTorrent, copy the example configuration file `/usr/share/doc/rto
 
 **Note:** See the rTorrent wiki article on this subject for more information: [Performance Tuning](https://github.com/rakshasa/rtorrent/wiki/Performance-Tuning)
 
-The values for the following options are dependent on the system's hardware and Internet connection speed. To find the optimal values read: [Optimize Your BitTorrent Download Speed](http://torrentfreak.com/optimize-your-BitTorrent-download-speed)
+The values for the following options are dependent on the system's hardware and Internet connection speed.
 
 ```
 throttle.min_peers.normal.set = 40

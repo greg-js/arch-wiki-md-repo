@@ -34,8 +34,8 @@ Related articles
     *   [5.3 Slow motion, graphical glitches, and crashes](#Slow_motion.2C_graphical_glitches.2C_and_crashes)
     *   [5.4 X11 on tty1, Wayland on tty2](#X11_on_tty1.2C_Wayland_on_tty2)
     *   [5.5 GNOME Wayland on tty1, Weston on tty2](#GNOME_Wayland_on_tty1.2C_Weston_on_tty2)
-    *   [5.6 weston-terminal](#weston-terminal)
-    *   [5.7 liteide](#liteide)
+    *   [5.6 Electron based applications / VS Code](#Electron_based_applications_.2F_VS_Code)
+    *   [5.7 weston-terminal](#weston-terminal)
     *   [5.8 screen recording](#screen_recording)
     *   [5.9 remote display](#remote_display)
     *   [5.10 Input grabbing in games, remote desktop and VM windows](#Input_grabbing_in_games.2C_remote_desktop_and_VM_windows)
@@ -375,10 +375,11 @@ EFL has complete Wayland support. To run a EFL application on Wayland, see Wayla
 | Liri Shell | Stacking | [Liri Shell](https://github.com/lirios/shell) is the desktop shell for [Liri](/index.php/Liri "Liri"), built using QtQuick and QtCompositor as a compositor for Wayland. |
 | Maynard | *(Unclear)* | [Maynard](https://github.com/raspberrypi/maynard) is a desktop shell client for Weston based on GTK. It was based on weston-gtk-shell, a project by Tiago Vignatti. Not under development. [[1]](https://github.com/raspberrypi/maynard/issues/54#issuecomment-303422302)[[2]](https://github.com/raspberrypi/maynard/issues/55#issuecomment-373808518) |
 | Motorcar | *(Unclear)* | [Motorcar](https://github.com/evil0sheep/motorcar) is a Wayland compositor to explore 3D windowing using virtual reality. |
-| Way Cooler | Tiling | [way-cooler](https://aur.archlinux.org/packages/way-cooler/) is a customizable (Lua config files) Wayland compositor written in Rust. Inspired by i3 and awesome. |
+| Way Cooler | Tiling | [Way Cooler](https://github.com/way-cooler/way-cooler) is a customizable (Lua config files) Wayland compositor written in Rust. Inspired by i3 and awesome. |
 | Maze Compositor | Floating 3D | [Maze Compositor](https://github.com/capisce/mazecompositor) is a 3D Qt based Wayland compositor |
 | Grefsen | Floating | [Grefsen](https://github.com/ec1oud/grefsen) is a Qt/Wayland compositor providing a minimal desktop environment. |
 | Waymonad | Tiling | [Waymonad](https://github.com/waymonad/waymonad) is a Wayland compositor based on ideas from and inspired by xmonad |
+| wayfire | Stacking | [Wayfire](https://github.com/WayfireWM/wayfire) is a general purpose compositor. |
 
 Some of installed wayland desktop clients might store information in `/usr/share/wayland-sessions/*.desktop` files about how to start them in wayland.
 
@@ -411,13 +412,18 @@ Gnome-shell users may experience display issues when they switch to Wayland from
 
 (20170106) apps started on GNOME with WAYLAND_DISPLAY set to weston make it not respond any more ([Wayland issue 99489](https://bugs.freedesktop.org/show_bug.cgi?id=99489))
 
+### Electron based applications / VS Code
+
+Try running with GDK_BACKEND=x11\. Example alias:
+
+```
+ $ alias code='GDK_BACKEND=x11 /usr/bin/code 2>/dev/null'
+
+```
+
 ### weston-terminal
 
 (20161229) core dump when started on gnome
-
-### liteide
-
-(20161229) [core dump](https://github.com/visualfc/liteide/issues/734)] on GNOME and Weston.
 
 ### screen recording
 

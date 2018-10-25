@@ -55,12 +55,7 @@ to switch VLC interface to French.
 
 VLC can be "skinned" for a different look and feel. You can get skins at the [skins website](https://www.videolan.org/vlc/skins.php).
 
-To install a skin download it and move it to:
-
-```
-~/.local/share/vlc/skins2
-
-```
+To install a skin download it and move it to `~/.local/share/vlc/skins2/`.
 
 Open up VLC, click *Tools > Preferences*. When the preferences window opens up you should be in the "Interface" tab
 
@@ -194,13 +189,14 @@ Execute these commands to reactivate these icons:
 ```
 $ gconftool-2 --type boolean --set /desktop/gnome/interface/buttons_have_icons true
 $ gconftool-2 --type boolean --set /desktop/gnome/interface/menus_have_icons true
+
 ```
 
 ### Failed to open VDPAU backend
 
 See [Hardware video acceleration#Failed to open VDPAU backend](/index.php/Hardware_video_acceleration#Failed_to_open_VDPAU_backend "Hardware video acceleration").
 
-Since your system probably doesn't support VDPAU you should tell VLC to use VA-API instead, see [#Hardware video acceleration](#Hardware_video_acceleration).
+Since your system probably does not support VDPAU you should tell VLC to use VA-API instead, see [#Hardware video acceleration](#Hardware_video_acceleration).
 
 ### No playback via SFTP of media files names containing spaces
 

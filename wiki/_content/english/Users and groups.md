@@ -11,19 +11,20 @@ Users and groups are used on GNU/Linux for [access control](https://en.wikipedia
 
 *   [1 Overview](#Overview)
 *   [2 Permissions and ownership](#Permissions_and_ownership)
-*   [3 File list](#File_list)
-*   [4 User management](#User_management)
-    *   [4.1 Example adding a user](#Example_adding_a_user)
-    *   [4.2 Example adding a system user](#Example_adding_a_system_user)
-    *   [4.3 Change a user's login name or home directory](#Change_a_user.27s_login_name_or_home_directory)
-    *   [4.4 Other examples of user management](#Other_examples_of_user_management)
-*   [5 User database](#User_database)
-*   [6 Group management](#Group_management)
-*   [7 Group list](#Group_list)
-    *   [7.1 User groups](#User_groups)
-    *   [7.2 System groups](#System_groups)
-    *   [7.3 Pre-systemd groups](#Pre-systemd_groups)
-    *   [7.4 Unused groups](#Unused_groups)
+*   [3 Shadow](#Shadow)
+*   [4 File list](#File_list)
+*   [5 User management](#User_management)
+    *   [5.1 Example adding a user](#Example_adding_a_user)
+    *   [5.2 Example adding a system user](#Example_adding_a_system_user)
+    *   [5.3 Change a user's login name or home directory](#Change_a_user.27s_login_name_or_home_directory)
+    *   [5.4 Other examples of user management](#Other_examples_of_user_management)
+*   [6 User database](#User_database)
+*   [7 Group management](#Group_management)
+*   [8 Group list](#Group_list)
+    *   [8.1 User groups](#User_groups)
+    *   [8.2 System groups](#System_groups)
+    *   [8.3 Pre-systemd groups](#Pre-systemd_groups)
+    *   [8.4 Unused groups](#Unused_groups)
 
 ## Overview
 
@@ -119,6 +120,10 @@ List files owned by a user or group with the *find* utility:
 A file's owning user and group can be changed with the [chown](/index.php/Chown "Chown") (change owner) command. A file's access permissions can be changed with the [chmod](/index.php/Chmod "Chmod") (change mode) command.
 
 See [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), and [Linux file permissions](http://www.linux.com/learn/tutorials/309527-understanding-linux-file-permissions) for additional detail.
+
+## Shadow
+
+The user, group and password management tools on Arch Linux come from the [shadow](https://www.archlinux.org/packages/?name=shadow) package, which is part of the [base group](/index.php/Base_group "Base group").
 
 ## File list
 

@@ -332,10 +332,14 @@ $ export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config`
  | [2.3.0](https://bugs.launchpad.net/bzr/+bug/195397/comments/15) | [[67]](https://bugs.launchpad.net/bzr/+bug/195397) | Discussion in upstream bug states that bazaar wil use `~/.config/bazaar` if it exists. The logfile `~/.bzr.log` might still be written. |
 | [Ruby#Bundler](/index.php/Ruby#Bundler "Ruby") | `~/.bundle` | [[68]](https://github.com/bundler/bundler/pull/6024) [[69]](https://github.com/bundler/bundler/issues/4333) | `$ export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME"/bundle BUNDLE_USER_CACHE="$XDG_CACHE_HOME"/bundle BUNDLE_USER_PLUGIN="$XDG_DATA_HOME"/bundle` |
 | [cargo](http://crates.io/) | `~/.cargo` | [[70]](https://github.com/rust-lang/cargo/issues/1734) [[71]](https://github.com/rust-lang/rfcs/pull/1615) [[72]](https://github.com/rust-lang/cargo/pull/5183) [[73]](https://github.com/rust-lang/cargo/pull/148) | `$ export CARGO_HOME="$XDG_DATA_HOME"/cargo` |
-| [ccache](/index.php/Ccache "Ccache") | `~/.ccache` | `$ export CCACHE_DIR="$XDG_CACHE_HOME"/ccache` |
+| [ccache](/index.php/Ccache "Ccache") | `~/.ccache` | `$ export CCACHE_CONFIGPATH="$XDG_CONFIG_HOME"/ccache.config`
+
+`$ export CCACHE_DIR="$XDG_CACHE_HOME"/ccache`
+
+ |
 | [ChezScheme](https://github.com/cisco/ChezScheme) | `~/.chezscheme_history` | `$ petite --eehistory "$XDG_DATA_HOME"/chezscheme/history` |
 | [conky](/index.php/Conky "Conky") | `~/.conkyrc` | [00481ee](https://github.com/brndnmtthws/conky/commit/00481ee9a97025e8e2acd7303d080af1948f7980) | [[74]](https://github.com/brndnmtthws/conky/issues/144) | `$ conky --config="$XDG_CONFIG_HOME"/conky/conkyrc` |
-| [coreutils](/index.php/Coreutils "Coreutils") | `~/.dircolors` | `$ source "$(dircolors "$XDG_CONFIG_HOME"/dircolors)"` |
+| [coreutils](/index.php/Coreutils "Coreutils") | `~/.dircolors` | `$ source $(dircolors "$XDG_CONFIG_HOME"/dircolors)` |
 | [crawl](http://www.dungeoncrawl.org/) | `~/.crawl` | The trailing slash is required:
 
 `$ export CRAWL_DIR="$XDG_DATA_HOME"/crawl/`

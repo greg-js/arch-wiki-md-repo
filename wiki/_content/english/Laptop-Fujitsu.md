@@ -15,3 +15,15 @@ Fingerprint scanner works with [fprint](/index.php/Fprint "Fprint").
 Also haven't found a way to rotate screen and disable the keyboard / touchpad automatically when switching to tablet mode, making tablet mode essentially unusable.
 
  |
+| Lifebook T904 | circa 2014 | ?? | ?? | ?? | Works (Intel) | ?? | ?? | ?? | According to the [Fprint wiki](/index.php/Fprint "Fprint"), the reader does not appear to be a [supported model](http://www.freedesktop.org/wiki/Software/fprint/libfprint/Supported_devices/).
+
+If the reader is unused, it is recommended that the device be physically disabled in the bios.
+
+ | Fan noise was an issue on initial BIOS revisions.
+
+The change log for BIOS version 1.08 noted a fan settings update which has since resolved the fan noise issue.
+
+User confirmations of the fix may be found after post #540 [[1]](http://forum.tabletpcreview.com/fujitsu/61570-official-t904-thread-54.html#post391747)
+
+ |
+| Amilo Se 1520 | circa 2007 | Works | Works poorly with [ALSA](/index.php/ALSA "ALSA"). Both SPDIF and the external microphone do not work. The internal microphone above the LCD works, however the volume can't be changed or the microphone disabled. | ?? | Works (ipw3945 chipset, see [Wireless network configuration#iwlegacy](/index.php/Wireless_network_configuration#iwlegacy "Wireless network configuration")) | ?? | Works | ?? | Touchpad works with [Synaptics](/index.php/Synaptics "Synaptics") | `Alt`+`Function` key commands work, but the special buttons on the left side of the keyboard do not work out of the box. |

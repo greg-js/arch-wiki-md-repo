@@ -350,7 +350,7 @@ alias scron="su -c $(printf "%q " "crontab -e")"
 
 ## run-parts issue
 
-cronie uses `run-parts` to carry out script in `cron.daily`/`cron.weekly`/`cron.monthly`. Be careful that the script name in these won't include a dot (.), e.g. `backup.sh`, since `run-parts` without options will ignore them (see: [run-parts(8)](http://jlk.fjfi.cvut.cz/arch/manpages/man/run-parts.8)).
+cronie uses `run-parts` to carry out script in `cron.daily`/`cron.weekly`/`cron.monthly`. Be careful that the script name in these won't include a dot (.), e.g. `backup.sh`, since `run-parts` without options will ignore them (see: [run-parts(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/run-parts.8)).
 
 ## Running X.org server-based applications
 
