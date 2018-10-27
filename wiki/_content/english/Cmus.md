@@ -31,7 +31,7 @@ set mixer.alsa.channel=Master
 
 ## Usage
 
-See [cmus(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cmus.1), [cmus-tutorial(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cmus-tutorial.1) and [cmus-remote(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cmus-remote.1).
+See [cmus(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cmus.1), [cmus-tutorial(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cmus-tutorial.7) and [cmus-remote(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cmus-remote.1).
 
 ## Configuration
 

@@ -52,6 +52,7 @@ The [official app](https://desktop.telegram.org/):
 *   [Arch Linux News](https://telegram.me/archlinuxnews) - Latest news form Arch web site.
 *   [Planet Arch](https://telegram.me/archplanet) - Latest posts from Planet Arch web site.
 *   [Arch Linux](https://telegram.me/archlinuxgroup) - Unofficial group for discussing everything about Arch Linux.
+*   [Arch Linux World](https://telegram.me/archlinuxworld) - Unofficial forum for discussing everything about Arch Linux.
 
 ### Unread messages counter for Telegram Desktop
 

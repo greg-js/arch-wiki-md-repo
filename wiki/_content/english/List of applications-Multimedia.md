@@ -1647,7 +1647,7 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 *   **[Natron](https://en.wikipedia.org/wiki/Natron_(software) "wikipedia:Natron (software)")** — Open-source compositing software. Node-graph based. Similar in functionalities to Adobe After Effects and Nuke by The Foundry.
 
-	[https://natron.fr/](https://natron.fr/) || [natron](https://aur.archlinux.org/packages/natron/)
+	[https://natrongithub.github.io/](https://natrongithub.github.io/) || [natron](https://aur.archlinux.org/packages/natron/)
 
 *   **[OpenShot](https://en.wikipedia.org/wiki/OpenShot_Video_Editor "wikipedia:OpenShot Video Editor")** — Non-linear video editor based on MLT framework.
 

@@ -33,7 +33,7 @@ If you are running the daemon (see below), just start any program with "trickle"
 Otherwise also specify upload and download limit as well as other configuration options (see [trickle(1)](https://github.com/mariusae/trickle/blob/master/trickle.1) for more information):
 
 ```
-# trickle -d200 -u50 pacman -Syu
+# trickle -s -d200 -u50 pacman -Syu
 
 ```
 

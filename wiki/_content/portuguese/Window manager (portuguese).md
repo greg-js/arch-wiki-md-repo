@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Window manager](/index.php/Window_manager "Window manager"). Data da última tradução: 2018-10-26\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Window_manager&diff=0&oldid=548106) na versão em inglês.
+
 Related articles
 
 *   [Xdg-menu](/index.php/Xdg-menu "Xdg-menu")

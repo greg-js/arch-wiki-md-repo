@@ -1,9 +1,9 @@
-**Status de tradução:** Esse artigo é uma tradução de [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console"). Data da última tradução: 2018-09-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_console&diff=0&oldid=544167) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console"). Data da última tradução: 2018-10-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_console&diff=0&oldid=547940) na versão em inglês.
 
 Artigos relacionados
 
 *   [Xorg/Keyboard configuration](/index.php/Xorg/Keyboard_configuration "Xorg/Keyboard configuration")
-*   [Teclas extras de teclados](/index.php/Extra_keyboard_keys "Extra keyboard keys")
+*   [Entrada de teclado](/index.php/Keyboard_input "Keyboard input")
 *   [Console do Linux#Fontes](/index.php/Console_do_Linux#Fontes "Console do Linux")
 
 Mapeamentos de teclado (conhecido pela abreviação inglesa como *keymaps*) para [console virtual](https://en.wikipedia.org/wiki/Virtual_console do sistema quanto as configurações de layout do teclado para o console virtual e o Xorg.

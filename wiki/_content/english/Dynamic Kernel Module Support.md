@@ -33,8 +33,6 @@ A good number of modules that lie outside the kernel source tree have a DKMS var
 
 ## Upgrades
 
-**Note:** [Pacman](/index.php/Pacman "Pacman") does not take dependencies into consideration when rebuilding DKMS modules. This will result in build failures if a DKMS module depends on another (e.g. [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/)). See bug report [FS#52901](https://bugs.archlinux.org/task/52901) for details. The [dkms-sorted](https://aur.archlinux.org/packages/dkms-sorted/) package adds experimental support for such dependencies; technically, it is a drop-in replacement for the `dkms` package. The most convenient way to try out dkms-sorted is to install it *before* you install any DKMS modules.
-
 Though the rebuild of the DKMS modules is usually seamless during a kernel upgrade, it may still happen that the rebuild fails. You should pay extra attention to the [Pacman](/index.php/Pacman "Pacman") output. This applies in particular if the system relies on the DKMS module to boot successfully and/or if you use DKMS with a custom kernel not in the [Official repositories](/index.php/Official_repositories "Official repositories").
 
 To deal with changes in the kernel, fix bugs, or add necessary features consider upgrading the DKMS package before rebooting.

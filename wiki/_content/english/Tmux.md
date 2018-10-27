@@ -470,6 +470,18 @@ For bash, simply add the following line of bash code to your .bashrc before your
 
 **Note:** This snippet ensures that tmux is not launched inside of itself (something tmux usually already checks for anyway). tmux sets $TMUX to the socket it is using whenever it runs, so if $TMUX isn't set or is length 0, we know we aren't already running tmux.
 
+Note that the above snippet will cause tmux to launch upon login to the virtual console as well as upon launching a terminal emulator inside X, thus preventing you from launching X manually with `startx`. To only launch tmux automatically when there's a graphical environment running, enclose the code in an if statement:
+
+ `~/.bashrc` 
+```
+if [[ $DISPLAY ]]; then
+    # If not running interactively, do not do anything
+    [[ $- != *i* ]] && return
+    [[ -z "$TMUX" ]] && exec tmux
+fi
+
+```
+
 Add the following snippet to start only one session (unless you start some manually), on login, try attach at first, only create a session if no tmux is running.
 
 ```

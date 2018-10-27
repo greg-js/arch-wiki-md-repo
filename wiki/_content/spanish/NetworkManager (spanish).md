@@ -71,10 +71,11 @@ NetworkManager se puede [instalar](/index.php/Help:Reading_(Espa%C3%B1ol)#Instal
 
 Network Manager tiene soporte para las redes VPN mediante un sistema basado en plug-ins. Si necesita asistencia técnica VPN a través del gestor de la red hay que instalar uno de los siguientes paquetes de los [repositorios oficiales](/index.php/Official_repositories "Official repositories"):
 
-*   [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect)
-*   [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn)
-*   [networkmanager-pptp](https://www.archlinux.org/packages/?name=networkmanager-pptp)
-*   [networkmanager-vpnc](https://www.archlinux.org/packages/?name=networkmanager-vpnc)
+*   [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect) (Cisco AnyConnect VPN, Juniper VPN/Palo Alto Networks GlobalProtect)
+*   [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn) (OpenVPN)
+*   [networkmanager-pptp](https://www.archlinux.org/packages/?name=networkmanager-pptp) (PPTP protocol)
+*   [networkmanager-vpnc](https://www.archlinux.org/packages/?name=networkmanager-vpnc) (VPNC/Cisco VPN)
+*   [networkmanager-strongswan](https://www.archlinux.org/packages/?name=networkmanager-strongswan) (L2TP and IPSec/IKEv2)
 
 ## Interfaces gráficas
 

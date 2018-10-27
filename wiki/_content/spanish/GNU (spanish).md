@@ -1,89 +1,123 @@
+**Estado de la traducción**
+Este artículo es una traducción de [GNU](/index.php/GNU "GNU"), revisada por última vez el **2018-10-25**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GNU&diff=0&oldid=550124) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 Artículos relacionados
 
 *   [Arch Linux](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)")
 *   [Utilidades principales](/index.php/Core_utilities_(Espa%C3%B1ol) "Core utilities (Español)")
 
-Tomado de [http://www.gnu.org/](http://www.gnu.org/)
+From [Wikipedia](https://en.wikipedia.org/wiki/es:GNU "wikipedia:es:GNU"):
 
-	*GNU es un sistema operativo similar a Unix que es software libre y respeta su libertad.*
+	GNU es un sistema operativo y una extensa colección de programas de computadora. GNU está compuesto en su totalidad de software libre, la mayoría de los cuales está licenciado bajo la Licencia Pública General (GPL) del propio Proyecto GNU. GNU es un acrónimo recursivo de "GNU's Not Unix!" *(¡GNU no es unix!)*.
 
-	*El Proyecto GNU se inició en 1984 para desarrollar el sistema GNU. El nombre «GNU» (que significa «ñu» en inglés) es un acrónimo recursivo de «GNU's Not Unix» (¡GNU No es Unix!) y en español se pronuncia fonéticamente, como una sílaba sin vocal entre la g y la n.*
-
-	*Los sistemas operativos parecidos a Unix se construyen a partir de un conjunto de aplicaciones, bibliotecas y herramientas de programación, además de un programa para alojar recursos e interactuar con el hardware, denominado núcleo.*
-
-Dado de que Arch Linux es una distribución basada en GNU/Linux, muchas de sus herramientas básicas pertenecen al proyecto GNU. Este artículo le dará una descripción de los componentes principales, así como también de otras útiles aplicaciones.
+Debido a que el kernel de GNU, [Hurd](https://www.gnu.org/s/hurd/hurd.html), no está listo para producción [[1]](https://www.gnu.org/software/hurd/hurd/status.html) GNU se utiliza generalmente con el kernel de Linux. [Arch Linux](/index.php/Arch_Linux_(Espa%C3%B1ol) "Arch Linux (Español)") es una distribución de GNU/Linux de este tipo, que utiliza software de GNU como el intérprete de línea de órdenes [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)"), *coreutils* de GNU, *toolchain* de GNU y muchas otras utilidades y bibliotecas. Esta página no intenta listar todos los paquetes GNU que son [casi 400](https://www.gnu.org/software/software.html#allgnupkgs) y solo destaca algunos.
 
 ## Contents
 
-*   [1 El Sistema Base](#El_Sistema_Base)
-    *   [1.1 Núcleo](#N.C3.BAcleo)
-    *   [1.2 Colección de Software](#Colecci.C3.B3n_de_Software)
-*   [2 Herramientas de Desarrollo](#Herramientas_de_Desarrollo)
-*   [3 Otras Herramientas](#Otras_Herramientas)
-*   [4 Enlaces](#Enlaces)
+*   [1 Texinfo](#Texinfo)
+*   [2 Sistema Base](#Sistema_Base)
+*   [3 Toolchain](#Toolchain)
+    *   [3.1 Sistema de construcción](#Sistema_de_construcci.C3.B3n)
+*   [4 Otros programas](#Otros_programas)
+*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
-## El Sistema Base
+## Texinfo
 
-Al final del proceso de instalación, un sistema Arch no es nada más que un núcleo Linux, las herramientas principales GNU y unas pocas herramientas de línea de comandos. La instalación mínima normalmente contiene [el grupo base](https://www.archlinux.org/groups/i686/base/).
+Los programas de GNU se documentan utilizando la sintaxis de composición tipográfica [Texinfo](https://en.wikipedia.org/wiki/es:Texinfo "wikipedia:es:Texinfo"). Puede ver los documentos de información utilizando el programa `info`, proporcionado por el paquete [texinfo](https://www.archlinux.org/packages/?name=texinfo), que forma parte de [base](https://www.archlinux.org/groups/x86_64/base/).
 
-### Núcleo
+Si bien la mayoría de los programas de GNU también tienen [páginas de manual](/index.php/Man_page_(Espa%C3%B1ol) "Man page (Español)"), los documentos de información tienden a ser más completos.
 
-Mientras que [Hurd](http://www.gnu.org/s/hurd/hurd.html), el núcleo GNU, está bajo activo desarrollo, no existe aún una versión oficial. Por esta razón Arch y la mayoría de otros sistemas basados en GNU, usan el núcleo Linux. El [Proyecto Arch Hurd](/index.php/Arch_Hurd_Project_(Espa%C3%B1ol) "Arch Hurd Project (Español)") tiene como objetivo portar Arch Linux al núcleo Hurd.
+## Sistema Base
 
-### Colección de Software
+*   **[GRUB](/index.php/GRUB_(Espa%C3%B1ol) "GRUB (Español)")** — GRUB es el gestor de arranque del proyecto GNU.
 
-**cargador de arranque (bootloader):** [GRUB](/index.php/GRUB "GRUB") es el cargador de arranque estándar para Arch Linux, el cual es ahora mantenido por [GNU](http://www.gnu.org/software/grub/).
+	[https://www.gnu.org/software/grub/](https://www.gnu.org/software/grub/) || [grub](https://www.archlinux.org/packages/?name=grub)
 
-**librería de C:** [glibc](https://www.archlinux.org/packages/?name=glibc) es *"la librería la cual define las 'llamadas al sistema' y otras funciones básicas como open, malloc, printf, exit... "*[[1]](http://www.gnu.org/software/libc/)
+*   **[Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)")** — Es un intérprete de línea de órdenes compatible con sh que incorpora características útiles del intérprete de línea de órdenes Korn (ksh) y del intérprete de línea de órdenes C (csh).
 
-**utilidades binarias:** [binutils](https://www.archlinux.org/packages/?name=binutils) provee una *"colección de herramientas de programación para la manipulación de código objeto en varios formatos de archivo"*[GNU_Binutils](https://en.wikipedia.org/wiki/GNU_Binutils "wikipedia:GNU Binutils").
+	[https://www.gnu.org/software/bash/](https://www.gnu.org/software/bash/) || [bash](https://www.archlinux.org/packages/?name=bash)
 
-**shell:** [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)"), otra aplicación basada en GNU [[2]](http://www.gnu.org/software/bash/), es el shell por defecto.
+*   **[Coreutils](/index.php/Coreutils_(Espa%C3%B1ol) "Coreutils (Español)")** — Coreutils proporciona las utilidades básicas de manipulación de archivos, intérprete de línea de órdenes y texto del sistema operativo GNU.
 
-**utilidades esenciales:** El paquete [coreutils](https://www.archlinux.org/packages/?name=coreutils) contiene *"las utilidades básicas para manejo de archivos, shell y manipulación de texto"*[[3]](http://www.gnu.org/software/coreutils/).
+	[https://www.gnu.org/software/coreutils/](https://www.gnu.org/software/coreutils/) || [coreutils](https://www.archlinux.org/packages/?name=coreutils)
 
-**compresión:** [gzip](https://www.archlinux.org/packages/?name=gzip) y [Tar](/index.php/Tar_(Espa%C3%B1ol) "Tar (Español)") manejan muchos paquetes para sistemas GNU/Linux. Por ejemplo, los paquetes del [Repositorio de Usuarios de Arch](/index.php/Arch_User_Repository "Arch User Repository") vienen en formato [Gzip](http://www.gnu.org/software/gzip/) [tarballs](http://www.gnu.org/software/tar/).
+*   **[gzip](https://en.wikipedia.org/wiki/es:gzip "wikipedia:es:gzip")** — gzip es tanto un formato de archivo como una aplicación para compresión y descompresión.
 
-## Herramientas de Desarrollo
+	[https://www.gnu.org/software/gzip/](https://www.gnu.org/software/gzip/) || [gzip](https://www.archlinux.org/packages/?name=gzip)
 
-Aunque no es necesario, los usuarios tiene la opción de instalar el grupo [base-devel](https://www.archlinux.org/groups/i686/base-devel/) en el cual se encuentran algunas herramientas de desarrollo. Este grupo es un requerimiento para construir paquetes del [Repositorio de usuarios de Arch](/index.php/Arch_User_Repository "Arch User Repository").
+*   **[tar](/index.php/Tar_(Espa%C3%B1ol) "Tar (Español)")** — Proporciona la capacidad de crear o descomprimir archivos tar, así como varios otros tipos de manipulación.
 
-Dentro del grupo **base-devel** hay muchos miembros de [GNU toolchain](https://en.wikipedia.org/wiki/GNU_toolchain "wikipedia:GNU toolchain"), los cuales son un *"una serie de proyectos que contienen las herramientas de programación producidas por el proyecto GNU. Estos proyectos forman un sistema integrado que es usado para programar tanto aplicaciones como sistemas operativos."*. Proyectos que son incluidos en el GNU toolchain:
+	[https://www.gnu.org/software/tar/](https://www.gnu.org/software/tar/) || [tar](https://www.archlinux.org/packages/?name=tar)
 
-**compilación y construcción:** [make](https://www.archlinux.org/packages/?name=make)
+## Toolchain
 
-**colección de compiladores:** [gcc](https://www.archlinux.org/packages/?name=gcc)
+La mayoría de las herramientas de [toolchain de GNU](https://en.wikipedia.org/wiki/es:GNU_toolchain "wikipedia:es:GNU toolchain") están en el grupo [base-devel](https://www.archlinux.org/groups/x86_64/base-devel/), excepto *glibc*, que está en [base](https://www.archlinux.org/groups/x86_64/base/) y GDB, que no está en ningún grupo.
 
-**enlazador, ensamblador y otras herramientas:** [binutils](https://www.archlinux.org/packages/?name=binutils)
+*   **[GNU make](https://en.wikipedia.org/wiki/es:Make "wikipedia:es:Make")** — Utilidad para mantener grupos de programas.
 
-**generador de analizadores sintácticos:** [bison](https://www.archlinux.org/packages/?name=bison)
+	[http://www.gnu.org/software/make](http://www.gnu.org/software/make) || [make](https://www.archlinux.org/packages/?name=make)
 
-**procesador de macros:** [m4](https://www.archlinux.org/packages/?name=m4)
+*   **[GCC](/index.php/GCC_(Espa%C3%B1ol) "GCC (Español)")** — La colección de compiladores GNU - frontends de C y C++.
 
-[GNU Build System](https://en.wikipedia.org/wiki/GNU_build_system "wikipedia:GNU build system") (también conocido como autotools):
+	[https://gcc.gnu.org/](https://gcc.gnu.org/) || [gcc](https://www.archlinux.org/packages/?name=gcc)
 
-	**configuración automática del código fuente:** [autoconf](https://www.archlinux.org/packages/?name=autoconf)
+*   **[glibc](https://en.wikipedia.org/wiki/es:glibc "wikipedia:es:glibc")** — Implementación de GNU de la biblioteca C.
 
-	**creación automática de archivos Makefile:** [automake](https://www.archlinux.org/packages/?name=automake)
+	[https://www.gnu.org/software/libc/](https://www.gnu.org/software/libc/) || [glibc](https://www.archlinux.org/packages/?name=glibc) (parte de [base](https://www.archlinux.org/groups/x86_64/base/))
 
-	**librería de scripts de soporte:** [libtool](https://www.archlinux.org/packages/?name=libtool)
+*   **[GNU Binutils](https://en.wikipedia.org/wiki/es:GNU_Binutils "wikipedia:es:GNU Binutils")** — Un conjunto de programas para ensamblar y manipular archivos binarios y de objetos. Incluye [ld](https://en.wikipedia.org/wiki/GNU_linker "wikipedia:GNU linker").
 
-## Otras Herramientas
+	[https://www.gnu.org/software/binutils/](https://www.gnu.org/software/binutils/) || [binutils](https://www.archlinux.org/packages/?name=binutils)
 
-Muchas otras herramientas opcionales GNU se encuentran disponibles en los [repositorios oficiales](/index.php/Official_repositories "Official repositories"):
+*   **[GNU bison](https://en.wikipedia.org/wiki/es:GNU_bison "wikipedia:es:GNU bison")** — El generador de analizadores *(parser generator)* de propósito general de GNU.
 
-**widget toolkit:** [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)")
+	[https://www.gnu.org/software/bison/bison.html](https://www.gnu.org/software/bison/bison.html) || [bison](https://www.archlinux.org/packages/?name=bison)
 
-**ambiente de escritorio:** [GNOME](/index.php/GNOME "GNOME")
+*   **[GNU m4](https://en.wikipedia.org/wiki/GNU_m4 "wikipedia:GNU m4")** — El procesador de macros de GNU.
 
-**reproductor flash:** [gnash-git](https://aur.archlinux.org/packages/gnash-git/)
+	[https://www.gnu.org/software/m4/](https://www.gnu.org/software/m4/) || [m4](https://www.archlinux.org/packages/?name=m4)
 
-**hoja de cálculo:** [Gnumeric](/index.php/Gnumeric "Gnumeric")
+*   **[GDB](https://en.wikipedia.org/wiki/es:GNU_Debugger "wikipedia:es:GNU Debugger")** — El depurador de GNU.
 
-**editor de imágenes:** [GIMP](/index.php/GIMP "GIMP")
+	[https://www.gnu.org/software/gdb/](https://www.gnu.org/software/gdb/) || [gdb](https://www.archlinux.org/packages/?name=gdb)
 
-**administrador de ventanas a pantalla completa:** [GNU Screen](/index.php/GNU_Screen "GNU Screen")
+### Sistema de construcción
 
-## Enlaces
+De [Wikipedia](https://en.wikipedia.org/wiki/es:GNU_build_system "wikipedia:es:GNU build system"):
 
-Para una lista de todos los proyectos actuales GNU, mire [todos los paquetes de GNU](http://www.gnu.org/software/software.html#allgnupkgs)
+	El sistema de construcción de GNU, también conocido como Autotools, es un conjunto de herramientas de programación diseñadas para ayudar a hacer que los paquetes de código fuente sean portables a muchos sistemas similares a Unix.
+
+*   **[GNU Autoconf](https://en.wikipedia.org/wiki/es:Autoconf "wikipedia:es:Autoconf")** — Herramienta para configurar automáticamente el código fuente.
+
+	[http://www.gnu.org/software/autoconf](http://www.gnu.org/software/autoconf) || [autoconf](https://www.archlinux.org/packages/?name=autoconf)
+
+*   **[GNU Automake](https://en.wikipedia.org/wiki/es:GNU_Automake "wikipedia:es:GNU Automake")** — Herramienta para crear Makefiles automáticamente.
+
+	[http://www.gnu.org/software/automake](http://www.gnu.org/software/automake) || [automake](https://www.archlinux.org/packages/?name=automake)
+
+*   **[GNU Libtool](https://en.wikipedia.org/wiki/es:GNU_Libtool "wikipedia:es:GNU Libtool")** — Una biblioteca genérico de soporte para script.
+
+	[http://www.gnu.org/software/libtool](http://www.gnu.org/software/libtool) || [libtool](https://www.archlinux.org/packages/?name=libtool)
+
+## Otros programas
+
+Muchas otras herramientas de GNU opcionales están disponibles en los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)"):
+
+*   [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), un entorno de escritorio
+*   [GIMP](/index.php/GIMP "GIMP"), un editor de imágenes
+*   [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)"), un kit de herramientas de widgets
+*   [Gnumeric](/index.php/Gnumeric "Gnumeric"), un programa de hoja de cálculo
+*   [GNU Parted](/index.php/GNU_Parted "GNU Parted"), un gestor de particiones
+*   [GNU Screen](/index.php/GNU_Screen "GNU Screen"), un multiplexor de terminal
+*   [GNU nano](/index.php/GNU_nano_(Espa%C3%B1ol) "GNU nano (Español)"), un editor de texto de línea de órdenes
+*   [GNU Emacs](/index.php/GNU_Emacs_(Espa%C3%B1ol) "GNU Emacs (Español)"), Un editor de texto extensible, personalizable y autodocumentado
+*   [GnuPG](/index.php/GnuPG_(Espa%C3%B1ol) "GnuPG (Español)"), una implementación de OpenPGP
+*   [GNU Octave](/index.php/GNU_Octave "GNU Octave"), un lenguaje de programación científica
+*   [GNU Readline](/index.php/Readline_(Espa%C3%B1ol) "Readline (Español)"), Una biblioteca de edición para interfaces de línea de órdenes
+
+## Véase también
+
+*   [https://www.gnu.org/](https://www.gnu.org/)
+*   [El manifiesto de GNU](https://www.gnu.org/gnu/manifesto)
+*   [Wikipedia:es:Anexo:Paquetes GNU](https://en.wikipedia.org/wiki/es:Anexo:Paquetes_GNU "wikipedia:es:Anexo:Paquetes GNU")
+*   El [proyecto Arch Hurd](https://archhurd.org/) tiene como objetivo portar Arch Linux al kernel Hurd.

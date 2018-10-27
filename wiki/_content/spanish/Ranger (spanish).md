@@ -3,8 +3,6 @@ Artículos relacionados
 *   [Midnight Commander](/index.php/Midnight_Commander "Midnight Commander")
 *   [vifm](/index.php/Vifm "Vifm")
 
-**Note:** Esta pagina se encuentra en proceso de traducción .
-
 [ranger](http://ranger.github.io/) es un administrador de archivos que se ejecuta directamente en la terminal, esta escrito en [Python](/index.php/Python "Python"). Los directorios se muestran en un panel con tres columnas. Para moverse entre ellas se usan las flechas de teclado, marcadores, el ratón o el historial de comandos. Las vistas previas y los contenidos se muestran automáticamente para la linea que se encuentre seleccionada.
 
 Entre sus características se encuentran: atajos de teclado vi-style, marcadores, seleccion de archivos o directorios, etiquetado, pestañas, historial de comandos, la posibilidad de hacer links simbólicos, múltiples modos de consola, y un visor de tareas. *ranger* tiene la posibilidad de editar sus atajos de teclado, incluyendo enlaces a scripts externos. Ranger tiene su propio [file opener](/index.php/File_opener "File opener"), [rifle(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rifle.1). Sus competidores mas cercanos [Vifm](/index.php/Vifm "Vifm") y [lf](https://github.com/gokcehan/lf).

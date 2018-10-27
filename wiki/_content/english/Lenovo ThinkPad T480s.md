@@ -87,6 +87,8 @@ Fingerprint sensor 06cb:009a is not supported by libfprint right now. There is a
 
 Without special configuration and with default firmware settings, power usage is a bit high (around 7,5W in idle). There are a few knobs to improve battery life:
 
+**Warning:** Changing Thunderbolt BIOS options has been reported to irreversibly brick ThinkPads. This is a BIOS bug. Until there is more information available on that matter (or a fix underway), use these options with care.
+
 *   Set "Thunderbolt BIOS Assist Mode" to "Enabled" in the EFI firmware interface. This seems to reduce number of idle wakeups.
 *   Disable unused peripherals under "Security" -> "I/O port access" in the firmware. This especially applies to the SD/MMC-cardreader, which seems to drain some power even when idle
 

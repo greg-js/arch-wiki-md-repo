@@ -36,9 +36,9 @@ See also [Wikipedia:Netcat](https://en.wikipedia.org/wiki/Netcat "wikipedia:Netc
 
 *   **openbsd-netcat** — TCP/IP swiss army knife. OpenBSD variant.
 
-	[https://packages.debian.org/sid/netcat-openbsd](https://packages.debian.org/sid/netcat-openbsd) || [netcat-openbsd](https://www.archlinux.org/packages/?name=netcat-openbsd)
+	[https://packages.debian.org/sid/netcat-openbsd](https://packages.debian.org/sid/netcat-openbsd) || [openbsd-netcat](https://www.archlinux.org/packages/?name=openbsd-netcat)
 
-Are more complex alternative is [socat](https://www.archlinux.org/packages/?name=socat).
+A more complex alternative is [socat](https://www.archlinux.org/packages/?name=socat).
 
 ## Whois
 

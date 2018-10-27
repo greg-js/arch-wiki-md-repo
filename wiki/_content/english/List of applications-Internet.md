@@ -25,65 +25,64 @@
         *   [1.3.1 Specialized servers](#Specialized_servers)
         *   [1.3.2 WSGI servers](#WSGI_servers)
         *   [1.3.3 Performance testing](#Performance_testing)
-    *   [1.4 ACME clients](#ACME_clients)
-    *   [1.5 File sharing](#File_sharing)
-        *   [1.5.1 Download managers](#Download_managers)
-            *   [1.5.1.1 Console](#Console_2)
-            *   [1.5.1.2 Graphical](#Graphical_2)
-        *   [1.5.2 Cloud storage servers](#Cloud_storage_servers)
-        *   [1.5.3 Cloud synchronization clients](#Cloud_synchronization_clients)
-        *   [1.5.4 FTP](#FTP)
-            *   [1.5.4.1 FTP clients](#FTP_clients)
-            *   [1.5.4.2 FTP servers](#FTP_servers)
-        *   [1.5.5 BitTorrent clients](#BitTorrent_clients)
-            *   [1.5.5.1 Console](#Console_3)
-            *   [1.5.5.2 Graphical](#Graphical_3)
-        *   [1.5.6 Other P2P networks](#Other_P2P_networks)
-        *   [1.5.7 Pastebin clients](#Pastebin_clients)
-    *   [1.6 Communication](#Communication)
-        *   [1.6.1 Email clients](#Email_clients)
-            *   [1.6.1.1 Console](#Console_4)
-            *   [1.6.1.2 Graphical](#Graphical_4)
-        *   [1.6.2 Mail servers](#Mail_servers)
-        *   [1.6.3 Mail retrieval agents](#Mail_retrieval_agents)
-        *   [1.6.4 Instant messaging clients](#Instant_messaging_clients)
-            *   [1.6.4.1 Multi-protocol clients](#Multi-protocol_clients)
-                *   [1.6.4.1.1 Console](#Console_5)
-                *   [1.6.4.1.2 Graphical](#Graphical_5)
-            *   [1.6.4.2 IRC clients](#IRC_clients)
-                *   [1.6.4.2.1 Console](#Console_6)
-                *   [1.6.4.2.2 Graphical](#Graphical_6)
-            *   [1.6.4.3 XMPP clients](#XMPP_clients)
-                *   [1.6.4.3.1 Console](#Console_7)
-                *   [1.6.4.3.2 Graphical](#Graphical_7)
-            *   [1.6.4.4 SIP clients](#SIP_clients)
-            *   [1.6.4.5 Matrix clients](#Matrix_clients)
-            *   [1.6.4.6 Tox clients](#Tox_clients)
-            *   [1.6.4.7 Serverless (decentralized) clients](#Serverless_.28decentralized.29_clients)
-            *   [1.6.4.8 Other IM clients](#Other_IM_clients)
-        *   [1.6.5 Instant messaging servers](#Instant_messaging_servers)
-            *   [1.6.5.1 IRC servers](#IRC_servers)
-            *   [1.6.5.2 XMPP servers](#XMPP_servers)
-            *   [1.6.5.3 SIP servers](#SIP_servers)
-            *   [1.6.5.4 Other IM servers](#Other_IM_servers)
-        *   [1.6.6 Collaborative software](#Collaborative_software)
-    *   [1.7 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
-        *   [1.7.1 News aggregators](#News_aggregators)
-            *   [1.7.1.1 Console](#Console_8)
-            *   [1.7.1.2 Graphical](#Graphical_8)
-        *   [1.7.2 Podcast clients](#Podcast_clients)
-            *   [1.7.2.1 Console](#Console_9)
-            *   [1.7.2.2 Graphical](#Graphical_9)
-        *   [1.7.3 Usenet newsreaders](#Usenet_newsreaders)
-            *   [1.7.3.1 Console](#Console_10)
-            *   [1.7.3.2 Graphical](#Graphical_10)
-        *   [1.7.4 Blog engines](#Blog_engines)
-        *   [1.7.5 Microblogging clients](#Microblogging_clients)
-            *   [1.7.5.1 Console](#Console_11)
-            *   [1.7.5.2 Graphical](#Graphical_11)
-    *   [1.8 Remote desktop](#Remote_desktop)
-        *   [1.8.1 Remote desktop clients](#Remote_desktop_clients)
-        *   [1.8.2 Remote desktop servers](#Remote_desktop_servers)
+    *   [1.4 File sharing](#File_sharing)
+        *   [1.4.1 Download managers](#Download_managers)
+            *   [1.4.1.1 Console](#Console_2)
+            *   [1.4.1.2 Graphical](#Graphical_2)
+        *   [1.4.2 Cloud storage servers](#Cloud_storage_servers)
+        *   [1.4.3 Cloud synchronization clients](#Cloud_synchronization_clients)
+        *   [1.4.4 FTP](#FTP)
+            *   [1.4.4.1 FTP clients](#FTP_clients)
+            *   [1.4.4.2 FTP servers](#FTP_servers)
+        *   [1.4.5 BitTorrent clients](#BitTorrent_clients)
+            *   [1.4.5.1 Console](#Console_3)
+            *   [1.4.5.2 Graphical](#Graphical_3)
+        *   [1.4.6 Other P2P networks](#Other_P2P_networks)
+        *   [1.4.7 Pastebin clients](#Pastebin_clients)
+    *   [1.5 Communication](#Communication)
+        *   [1.5.1 Email clients](#Email_clients)
+            *   [1.5.1.1 Console](#Console_4)
+            *   [1.5.1.2 Graphical](#Graphical_4)
+        *   [1.5.2 Mail servers](#Mail_servers)
+        *   [1.5.3 Mail retrieval agents](#Mail_retrieval_agents)
+        *   [1.5.4 Instant messaging clients](#Instant_messaging_clients)
+            *   [1.5.4.1 Multi-protocol clients](#Multi-protocol_clients)
+                *   [1.5.4.1.1 Console](#Console_5)
+                *   [1.5.4.1.2 Graphical](#Graphical_5)
+            *   [1.5.4.2 IRC clients](#IRC_clients)
+                *   [1.5.4.2.1 Console](#Console_6)
+                *   [1.5.4.2.2 Graphical](#Graphical_6)
+            *   [1.5.4.3 XMPP clients](#XMPP_clients)
+                *   [1.5.4.3.1 Console](#Console_7)
+                *   [1.5.4.3.2 Graphical](#Graphical_7)
+            *   [1.5.4.4 SIP clients](#SIP_clients)
+            *   [1.5.4.5 Matrix clients](#Matrix_clients)
+            *   [1.5.4.6 Tox clients](#Tox_clients)
+            *   [1.5.4.7 Serverless (decentralized) clients](#Serverless_.28decentralized.29_clients)
+            *   [1.5.4.8 Other IM clients](#Other_IM_clients)
+        *   [1.5.5 Instant messaging servers](#Instant_messaging_servers)
+            *   [1.5.5.1 IRC servers](#IRC_servers)
+            *   [1.5.5.2 XMPP servers](#XMPP_servers)
+            *   [1.5.5.3 SIP servers](#SIP_servers)
+            *   [1.5.5.4 Other IM servers](#Other_IM_servers)
+        *   [1.5.6 Collaborative software](#Collaborative_software)
+    *   [1.6 News, RSS, and blogs](#News.2C_RSS.2C_and_blogs)
+        *   [1.6.1 News aggregators](#News_aggregators)
+            *   [1.6.1.1 Console](#Console_8)
+            *   [1.6.1.2 Graphical](#Graphical_8)
+        *   [1.6.2 Podcast clients](#Podcast_clients)
+            *   [1.6.2.1 Console](#Console_9)
+            *   [1.6.2.2 Graphical](#Graphical_9)
+        *   [1.6.3 Usenet newsreaders](#Usenet_newsreaders)
+            *   [1.6.3.1 Console](#Console_10)
+            *   [1.6.3.2 Graphical](#Graphical_10)
+        *   [1.6.4 Blog engines](#Blog_engines)
+        *   [1.6.5 Microblogging clients](#Microblogging_clients)
+            *   [1.6.5.1 Console](#Console_11)
+            *   [1.6.5.2 Graphical](#Graphical_11)
+    *   [1.7 Remote desktop](#Remote_desktop)
+        *   [1.7.1 Remote desktop clients](#Remote_desktop_clients)
+        *   [1.7.2 Remote desktop servers](#Remote_desktop_servers)
 
 ## Internet
 
@@ -566,60 +565,6 @@ Apache also supports WSGI with [mod_wsgi](/index.php/Mod_wsgi "Mod wsgi").
 *   **Web Bench** — Benchmarking tool, uses fork() for simulating multiple clients.
 
 	[http://home.tiscali.cz/~cz210552/webbench.html](http://home.tiscali.cz/~cz210552/webbench.html) || [webbench](https://aur.archlinux.org/packages/webbench/)
-
-### ACME clients
-
-The [ACME](https://en.wikipedia.org/wiki/Automated_Certificate_Management_Environment "wikipedia:Automated Certificate Management Environment") protocol lets you request valid X.509 certificates from [certificate authorities](https://en.wikipedia.org/wiki/Certificate_authority "wikipedia:Certificate authority"), like [Let's Encrypt](https://letsencrypt.org/).
-
-See also [List of ACME clients](https://letsencrypt.org/docs/client-options/).
-
-*   **acme.sh** — A pure Unix shell script ACME client.
-
-	[https://github.com/Neilpang/acme.sh](https://github.com/Neilpang/acme.sh) || [acme.sh-git](https://aur.archlinux.org/packages/acme.sh-git/)
-
-*   **acme-client** — Secure Let's Encrypt client, written in C
-
-	[https://kristaps.bsd.lv/acme-client/](https://kristaps.bsd.lv/acme-client/) || [acme-client](https://aur.archlinux.org/packages/acme-client/)
-
-*   **acme-tiny** — A 200-line Python script to issue and renew TLS certs from Let's Encrypt.
-
-	[https://github.com/diafygi/acme-tiny](https://github.com/diafygi/acme-tiny) || [acme-tiny](https://www.archlinux.org/packages/?name=acme-tiny)
-
-*   **acmetool** — An easy-to-use ACME CLI.
-
-	[https://github.com/hlandau/acme](https://github.com/hlandau/acme) || [acmetool](https://aur.archlinux.org/packages/acmetool/), [acmetool-git](https://aur.archlinux.org/packages/acmetool-git/)
-
-*   **[Certbot](/index.php/Certbot "Certbot")** — ACME client recommended by Let's Encrypt.
-
-	[https://github.com/certbot/certbot](https://github.com/certbot/certbot) || [certbot](https://www.archlinux.org/packages/?name=certbot)
-
-*   **dehydrated** — ACME client, written in Bash.
-
-	[https://github.com/lukas2511/dehydrated](https://github.com/lukas2511/dehydrated) || [dehydrated](https://aur.archlinux.org/packages/dehydrated/), [dehydrated-git](https://aur.archlinux.org/packages/dehydrated-git/)
-
-*   **getssl** — ACME client, written in Bash.
-
-	[https://github.com/srvrco/getssl](https://github.com/srvrco/getssl) || [getssl](https://aur.archlinux.org/packages/getssl/), [getssl-git](https://aur.archlinux.org/packages/getssl-git/)
-
-*   **lego** — Lets Encrypt client and ACME library, written in Go.
-
-	[https://github.com/xenolf/lego](https://github.com/xenolf/lego) || [lego-git](https://aur.archlinux.org/packages/lego-git/)
-
-*   **letsencrypt-cli** — Yet another Letsencrypt (ACME) client using Ruby.
-
-	[https://github.com/zealot128/ruby-acme-cli](https://github.com/zealot128/ruby-acme-cli) || [letsencrypt-cli](https://aur.archlinux.org/packages/letsencrypt-cli/)
-
-*   **manuale** — A fully manual Let's Encrypt client, written in Python.
-
-	[https://github.com/veeti/manuale](https://github.com/veeti/manuale) || [manuale](https://aur.archlinux.org/packages/manuale/)
-
-*   **ruby-acme-client** — A Ruby client for the letsencrypt's ACME protocol.
-
-	[https://github.com/unixcharles/acme-client](https://github.com/unixcharles/acme-client) || [ruby-acme-client](https://aur.archlinux.org/packages/ruby-acme-client/)
-
-*   **simp_le** — Simple Let's Encrypt client, written in Python.
-
-	[https://github.com/zenhack/simp_le](https://github.com/zenhack/simp_le) || [simp_le-git](https://aur.archlinux.org/packages/simp_le-git/)
 
 ### File sharing
 
@@ -1190,6 +1135,10 @@ See also [Wikipedia:Comparison of email clients](https://en.wikipedia.org/wiki/C
 
 	[https://www.mailpile.is/](https://www.mailpile.is/) || [mailpile](https://aur.archlinux.org/packages/mailpile/)
 
+*   **Mailspring** — A beautiful, fast and maintained fork of @nylas Mail by one of the original authors.
+
+	[https://getmailspring.com/](https://getmailspring.com/) || [mailspring](https://aur.archlinux.org/packages/mailspring/)
+
 *   **[Nextcloud](/index.php/Nextcloud "Nextcloud") Mail** — An email webapp for NextCloud.
 
 	[https://github.com/nextcloud/mail](https://github.com/nextcloud/mail) || [nextcloud-app-mail](https://www.archlinux.org/packages/?name=nextcloud-app-mail)
@@ -1384,7 +1333,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 	[https://tools.suckless.org/sic/](https://tools.suckless.org/sic/) || [sic](https://aur.archlinux.org/packages/sic/)
 
-*   **[WeeChat](https://en.wikipedia.org/wiki/WeeChat "wikipedia:WeeChat")** — Modular, lightweight ncurses-based IRC client.
+*   **[WeeChat](/index.php/WeeChat "WeeChat")** — Modular, lightweight ncurses-based IRC client.
 
 	[https://weechat.org/](https://weechat.org/) || [weechat](https://www.archlinux.org/packages/?name=weechat)
 

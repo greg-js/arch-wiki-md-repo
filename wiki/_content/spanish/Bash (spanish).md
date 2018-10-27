@@ -6,7 +6,7 @@ Artículos relacionados
 *   [Bash/Funciones](/index.php/Bash/Functions_(Espa%C3%B1ol) "Bash/Functions (Español)")
 *   [Bash/Personalización del indicador](/index.php/Bash/Prompt_customization_(Espa%C3%B1ol) "Bash/Prompt customization (Español)")
 *   [Variables de entorno](/index.php/Environment_variables_(Espa%C3%B1ol) "Environment variables (Español)")
-*   [Readline](/index.php/Readline "Readline")
+*   [Readline](/index.php/Readline_(Espa%C3%B1ol) "Readline (Español)")
 *   [Fortune](/index.php/Fortune "Fortune")
 *   [Pkgfile](/index.php/Pkgfile_(Espa%C3%B1ol) "Pkgfile (Español)")
 *   [Command-line shell](/index.php/Command-line_shell "Command-line shell")
@@ -95,7 +95,7 @@ Véase [Variables de entorno](/index.php/Environment_variables_(Espa%C3%B1ol) "E
 
 ## Línea de órdenes
 
-La línea de órdenes Bash es administrada por la biblioteca separada llamada [Readline](/index.php/Readline "Readline"). Readline proporciona los estilos de accesos directos de [emacs](/index.php/Emacs "Emacs") y [vi](/index.php/Vi "Vi") para interactuar con la línea de órdenes, es decir, moverse hacia adelante y atrás en la base de palabras, eliminar palabras, etc. También es responsabilidad de Readline el administrar [historial](/index.php/Readline#Historial "Readline") de órdenes de entrada. Por último, pero no menos importante, le permite crear [macros](/index.php/Readline#Macros "Readline").
+La línea de órdenes Bash es administrada por la biblioteca separada llamada [Readline](/index.php/Readline_(Espa%C3%B1ol) "Readline (Español)"). Readline proporciona los estilos de accesos directos de [emacs](/index.php/Emacs_(Espa%C3%B1ol) "Emacs (Español)") y [vi](/index.php/Vi_(Espa%C3%B1ol) "Vi (Español)") para interactuar con la línea de órdenes, es decir, moverse hacia adelante y atrás en la base de palabras, eliminar palabras, etc. También es responsabilidad de Readline el administrar [historial](/index.php/Readline_(Espa%C3%B1ol)#Historial "Readline (Español)") de órdenes de entrada. Por último, pero no menos importante, le permite crear [macros](/index.php/Readline_(Espa%C3%B1ol)#Macros "Readline (Español)").
 
 ### Completar con tabulador
 
@@ -105,7 +105,7 @@ La línea de órdenes Bash es administrada por la biblioteca separada llamada [R
 
 #### Pulsación única del tabulador
 
-Puede requerirse hasta tres pulsaciones de tabulador para mostrar todas las terminaciones posibles para una orden. Para reducir el número necesario de pulsaciones de tabulador, véase [Readline#Faster completion](/index.php/Readline#Faster_completion "Readline").
+Puede requerirse hasta tres pulsaciones de tabulador para mostrar todas las terminaciones posibles para una orden. Para reducir el número necesario de pulsaciones de tabulador, véase [Readline (Español)#Completado más rápido](/index.php/Readline_(Espa%C3%B1ol)#Completado_m.C3.A1s_r.C3.A1pido "Readline (Español)").
 
 #### Órdenes comunes y opciones
 
@@ -133,7 +133,7 @@ Véase la página del manual de Bash para más opciones de completado.
 
 #### Completado del historial
 
-Puede enlazar las teclas de flecha arriba y abajo para buscar en el historial de Bash (véase: [Readline#History](/index.php/Readline#History "Readline") y [Sintaxis del archivo Init de Readline](https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html)):
+Puede enlazar las teclas de flecha arriba y abajo para buscar en el historial de Bash (véase: [Readline (Español)#Historial](/index.php/Readline_(Espa%C3%B1ol)#Historial "Readline (Español)") y [Sintaxis del archivo Init de Readline](https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html)):
 
  `~/.bashrc` 
 ```
@@ -161,7 +161,7 @@ o configúrelo en `erasedups` para asegurarse de que el historial de Bash solo c
 
 ### Imitación de la capacidad de ejecutar la ayuda como Zsh
 
-[Zsh](/index.php/Zsh "Zsh") puede invocar el manual para la orden que precede al cursor presionando `Alt+h`. Un comportamiento similar se obtiene en Bash utilizando este enlace [Readline](/index.php/Readline "Readline"):
+[Zsh](/index.php/Zsh "Zsh") puede invocar el manual para la orden que precede al cursor presionando `Alt+h`. Un comportamiento similar se obtiene en Bash utilizando este enlace [Readline](/index.php/Readline_(Espa%C3%B1ol) "Readline (Español)"):
 
  `~/.bashrc` 
 ```
@@ -169,7 +169,7 @@ bind '"\eh": "\C-a\eb\ed\C-y\e#man \C-y\C-m\C-p\C-p\C-a\C-d\C-e"'
 
 ```
 
-Esto asume que está utilizando el (predeterminado) [modo de edición](/index.php/Readline#Editing_mode "Readline") Emacs.
+Esto asume que está utilizando el (predeterminado) [modo de edición](/index.php/Readline_(Espa%C3%B1ol)#Modo_de_edici.C3.B3n "Readline (Español)") Emacs.
 
 ## Alias
 

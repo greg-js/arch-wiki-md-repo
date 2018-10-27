@@ -1087,5 +1087,7 @@ You can use the following website to get your device's coordinates along with a 
 36.718911, -4.427087 "AlonsoLP" # Málaga, Spain
 43.550649, 1.488707 "MiniKochi" # Toulouse, France
 40.054784,-74.2006784 "cozypjsam" # Lakewood, NJ, USA
+42.815365, -1.659304 "tuxpain" # Pamplona, Spain
+40.954970, 17.297039 "max.bra" # Monopoli, Italy
 
 ```

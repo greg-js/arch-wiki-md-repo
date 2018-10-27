@@ -321,7 +321,8 @@ After installing Arch Linux and booting, a single beep may be heard. To disable 
     *   If the system fails to wake from sleep, it can lose sync with the internal audio card and speakers/headphones may fail to work. In this case, put the system to sleep, and wake it again and audio functionality should be restored.
 *   The fingerprint sensor is a Validity VFS5011, which requires [a patched fprintd](https://github.com/abbradar/fprint_vfs5011) and is apparently highly unreliable.
 *   thinkpad_acpi:
-    *   Controlling the Fn-Lock, Mute, Mic Mute or 'glowing I' LEDs is apparently not possible.
+    *   To toggle Fn-Lock, press Fn + Esc, this will toggle the LED on the keyboard. While the Fn LED is on all Fn functionalities work as intended out of the box.
+    *   Controlling the 'glowing I' LED is apparently not possible.
     *   fan control does not seem to work.
 *   Graphics and Video:
     *   With the integrated GPU, [xrandr](/index.php/Xrandr "Xrandr") can crash while attaching or detaching displays connected via the dock.

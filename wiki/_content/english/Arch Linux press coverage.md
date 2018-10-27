@@ -2,22 +2,28 @@ See also [Wikipedia:Arch Linux](https://en.wikipedia.org/wiki/Arch_Linux "wikipe
 
 ## Contents
 
-*   [1 2017](#2017)
-*   [2 2016](#2016)
-*   [3 2015](#2015)
-*   [4 2014](#2014)
-*   [5 2013](#2013)
-*   [6 2012](#2012)
-*   [7 2011](#2011)
-*   [8 2010](#2010)
-*   [9 2009](#2009)
-*   [10 2008](#2008)
-*   [11 2007](#2007)
-*   [12 2006](#2006)
-*   [13 2005](#2005)
-*   [14 2004](#2004)
-*   [15 2003](#2003)
-*   [16 2002](#2002)
+*   [1 2018](#2018)
+*   [2 2017](#2017)
+*   [3 2016](#2016)
+*   [4 2015](#2015)
+*   [5 2014](#2014)
+*   [6 2013](#2013)
+*   [7 2012](#2012)
+*   [8 2011](#2011)
+*   [9 2010](#2010)
+*   [10 2009](#2009)
+*   [11 2008](#2008)
+*   [12 2007](#2007)
+*   [13 2006](#2006)
+*   [14 2005](#2005)
+*   [15 2004](#2004)
+*   [16 2003](#2003)
+*   [17 2002](#2002)
+
+## 2018
+
+*   [Best Linux distros 2018: the finest open source operating systems around](http://www.itpro.co.uk/operating-systems/28025/best-linux-distros-2018-the-finest-open-source-operating-systems-around) Clare Hopping, Bobby Hellard - itpro.co.uk 2018-10-22
+*   [10 Reasons to Install an Arch Linux-Based OS on Your PC](https://www.makeuseof.com/tag/reasons-install-arch-linux/) Bertel King, Jr. - makeuseof.com 2018-04-02
 
 ## 2017
 

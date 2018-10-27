@@ -55,7 +55,7 @@ Compruebe el gestor de Extensiones incorporado en LibreOffice, u [Obtenga extens
 Para revisar la ortografía necesitará hunspell y un diccionario de hunspell (como hunspell-es, hunspell-en, etc.)
 
 ```
-# pacman -S hunspell hunspell-es
+# pacman -S hunspell hunspell-es_es
 
 ```
 

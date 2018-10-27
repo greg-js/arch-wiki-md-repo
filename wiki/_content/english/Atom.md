@@ -47,7 +47,7 @@ More info on this issue in [Environment variables#Per user](/index.php/Environme
 
 ### Unable to delete files
 
-By default, [Electron](https://electron.atom.io/) apps use `gvfs-trash` to delete files. This command is deprecated and no longer exists, so the `ELECTRON_TRASH` environment variable must be used instead to specify which trash utility should be used.
+By default, [Electron](https://electron.atom.io/) apps use `gvfs-trash` to delete files. This command is [deprecated and no longer exists](https://github.com/electron/electron/issues/15011), so the `ELECTRON_TRASH` environment variable must be used instead to specify which trash utility should be used.
 
 For example, for deleting files under [Plasma](/index.php/Plasma "Plasma"):
 

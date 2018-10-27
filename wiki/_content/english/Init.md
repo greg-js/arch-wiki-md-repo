@@ -87,7 +87,7 @@ These components combine to the init *system*. Some inits include the service ma
 
 	[http://mmonit.com/monit/](http://mmonit.com/monit/) || [monit](https://www.archlinux.org/packages/?name=monit)
 
-*   **perp** — Persistent process (service) supervisor and managment framework for UNIX.
+*   **perp** — Persistent process (service) supervisor and management framework for UNIX.
 
 	[http://b0llix.net/perp/](http://b0llix.net/perp/) || [perp](https://aur.archlinux.org/packages/perp/)
 
@@ -147,7 +147,7 @@ Arch uses [timer](/index.php/Systemd#Timers "Systemd") files instead of [cron](/
 
 ### Dbus
 
-User instances of *dbus-daemon* are launched by [systemd/User](/index.php/Systemd/User "Systemd/User") [[7]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/). When requring IPC between desktop applications, restore `30-dbus.sh`:
+User instances of *dbus-daemon* are launched by [systemd/User](/index.php/Systemd/User "Systemd/User") [[7]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/). When requiring IPC between desktop applications, restore `30-dbus.sh`:
 
  `/etc/X11/xinit/xinitrc.d/30-dbus.sh` 
 ```

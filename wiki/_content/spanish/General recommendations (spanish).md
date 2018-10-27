@@ -338,7 +338,7 @@ Crear alias para un comando, o un grupo del mismo, es una forma de ahorrar tiemp
 
 ### Complementos para bash
 
-En la sección [consejos y trucos](/index.php/Bash_(Espa%C3%B1ol)#Consejos_y_trucos "Bash (Español)") de Bash se encuentra disponible una lista variada de configuraciones para Bash, historial de búsqueda y macros [Readline](/index.php/Readline "Readline").
+En la sección [consejos y trucos](/index.php/Bash_(Espa%C3%B1ol)#Consejos_y_trucos "Bash (Español)") de Bash se encuentra disponible una lista variada de configuraciones para Bash, historial de búsqueda y macros [Readline](/index.php/Readline_(Espa%C3%B1ol) "Readline (Español)").
 
 ### Salida coloreada
 

@@ -17,6 +17,7 @@ Synchronization is based on unique message identifiers (UIDs), so no identificat
         *   [5.1.1 Step #1: Get the certificates](#Step_.231:_Get_the_certificates)
         *   [5.1.2 Step #2: Setup mbsync](#Step_.232:_Setup_mbsync)
     *   [5.2 BAD Command with Exchange 2003](#BAD_Command_with_Exchange_2003)
+    *   [5.3 Emails on remote server have the wrong date](#Emails_on_remote_server_have_the_wrong_date)
 *   [6 External links](#External_links)
 
 ## Installing
@@ -389,6 +390,19 @@ PipelineDepth 1
 ```
 
 in the IMAPStore config part of the Exchange, this problem did not occur any more.
+
+### Emails on remote server have the wrong date
+
+This fix works when syncing with fastmail, but it likely applies to other services as well.
+
+If you move an email to a new folder using an email client, and mbsync causes the email to appear with the wrong date on the server, add this to your configuration file:
+
+```
+ CopyArrivalDate yes
+
+```
+
+For example, without this setting, moving an old email from Inbox to Archive using mu4e and then syncing to fastmail with mbsync will cause the email to appear in Archive but with the date of the sync.
 
 ## External links
 

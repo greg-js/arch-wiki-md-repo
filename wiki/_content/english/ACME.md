@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [List of applications/Internet#ACME clients](/index.php/List_of_applications/Internet#ACME_clients "List of applications/Internet")
+*   [Transport Layer Security#ACME](/index.php/Transport_Layer_Security#ACME "Transport Layer Security")

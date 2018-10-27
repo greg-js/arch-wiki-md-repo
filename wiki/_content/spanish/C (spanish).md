@@ -5,7 +5,7 @@ El kernel [Linux](/index.php/Linux_(Espa%C3%B1ol) "Linux (Español)") y las herr
 
 Arch Linux utiliza la [Biblioteca de C de GNU](https://en.wikipedia.org/wiki/GNU_C_Library "wikipedia:GNU C Library") ([glibc](https://www.archlinux.org/packages/?name=glibc)) como la biblioteca estándar de C; es parte del [grupo base](/index.php/Base_group "Base group").
 
-Puede usar [GNU toolchain](/index.php/GNU_toolchain "GNU toolchain") o [LLVM toolchain](/index.php/LLVM_toolchain "LLVM toolchain") para desarrollar software en C/[C++](https://en.wikipedia.org/wiki/C%2B%2B "wikipedia:C++")/[Objective-C](https://en.wikipedia.org/wiki/es:Objective-C "wikipedia:es:Objective-C").
+Puede usar [toolchain de GNU](/index.php/GNU_toolchain_(Espa%C3%B1ol) "GNU toolchain (Español)") o [LLVM toolchain](/index.php/LLVM_toolchain "LLVM toolchain") para desarrollar software en C/[C++](https://en.wikipedia.org/wiki/C%2B%2B "wikipedia:C++")/[Objective-C](https://en.wikipedia.org/wiki/es:Objective-C "wikipedia:es:Objective-C").
 
 ## Contents
 
@@ -26,7 +26,7 @@ Puede usar [GNU toolchain](/index.php/GNU_toolchain "GNU toolchain") o [LLVM too
 
 	[https://github.com/distcc/distcc](https://github.com/distcc/distcc) || [distcc](https://www.archlinux.org/packages/?name=distcc)
 
-*   **rr** — Herramienta ligera de grabación y depuración determinística para C/C++, utiliza [GDB](/index.php/GDB "GDB").
+*   **rr** — Herramienta ligera de grabación y depuración determinística para C/C++, utiliza [GDB](/index.php/GDB_(Espa%C3%B1ol) "GDB (Español)").
 
 	[https://rr-project.org/](https://rr-project.org/) || [rr](https://aur.archlinux.org/packages/rr/)
 

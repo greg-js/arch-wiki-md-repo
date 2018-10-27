@@ -7,11 +7,11 @@ Related articles
 *   [Java Runtime Environment Fonts](/index.php/Java_Runtime_Environment_Fonts "Java Runtime Environment Fonts")
 *   [X Logical Font Description](/index.php/X_Logical_Font_Description "X Logical Font Description")
 
-[Fontconfig](http://www.freedesktop.org/wiki/Software/fontconfig/) is a library designed to provide a list of available [fonts](/index.php/Fonts "Fonts") to applications, and also for configuration for how fonts get rendered: see [Wikipedia:Fontconfig](https://en.wikipedia.org/wiki/Fontconfig "wikipedia:Fontconfig"). The FreeType library [freetype2](https://www.archlinux.org/packages/?name=freetype2) renders the fonts, based on this configuration.
+[Fontconfig](http://www.freedesktop.org/wiki/Software/fontconfig/) is a library designed to provide a list of available [fonts](/index.php/Fonts "Fonts") to applications, and also for configuration for how fonts get rendered. The FreeType library renders the fonts, based on this configuration.
 
 Though Fontconfig is the standard in modern Linux, some applications rely on the original method of font selection and display, the [X Logical Font Description](/index.php/X_Logical_Font_Description "X Logical Font Description").
 
-The font rendering packages on Arch Linux includes support for *freetype2* with the bytecode interpreter (BCI) enabled. For better font rendering, especially with an LCD monitor, see [#Fontconfig configuration](#Fontconfig_configuration) and [Font configuration/Examples](/index.php/Font_configuration/Examples "Font configuration/Examples").
+The *freetype2* font rendering packages on Arch Linux include the bytecode interpreter (BCI) enabled, for better font rendering especially with an LCD monitor. See [#Fontconfig configuration](#Fontconfig_configuration) and [Font configuration/Examples](/index.php/Font_configuration/Examples "Font configuration/Examples").
 
 ## Contents
 
@@ -190,7 +190,7 @@ The autohinter attempts to do automatic hinting and disregards any existing hint
 
 Hintstyle is the amount of font reshaping done to line up to the grid. Hinting values are: `hintnone`, `hintslight`, `hintmedium`, and `hintfull`. `hintslight` will make the font more fuzzy to line up to the grid but will be better in retaining font shape (see [[2]](https://www.freetype.org/freetype2/docs/text-rendering-general.html)), while `hintfull` will be a crisp font that aligns well to the pixel grid but will lose a greater amount of font shape. `hintslight` implicitly uses the autohinter in a vertical-only mode in favor of font-native information for non-CFF (*.otf*) fonts.
 
-**`hintslight`** is the default setting. To change it:
+`hintslight` is the default setting. To change it:
 
 ```
   <match target="font">
@@ -632,7 +632,7 @@ Everything should now work as it did before the update, the *font alias* should 
 
 ## See also
 
-*   [fonts-conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fonts-conf.5)
+*   [Wikipedia:Fontconfig](https://en.wikipedia.org/wiki/Fontconfig "wikipedia:Fontconfig")
 *   [Fonts in X11R6.8.2](http://www.x.org/X11R6.8.2/doc/fonts.html) - Official Xorg font information
 *   [FreeType 2 overview](http://freetype.sourceforge.net/freetype2/)
 *   [Gentoo font-rendering thread](https://forums.gentoo.org/viewtopic-t-723341.html)

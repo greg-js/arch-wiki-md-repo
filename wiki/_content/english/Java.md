@@ -7,7 +7,7 @@ From the [Wikipedia article](https://en.wikipedia.org/wiki/Java_(programming_lan
 
 	Java is a programming language originally developed by Sun Microsystems and released in 1995 as a core component of Sun Microsystems' Java platform. The language derives much of its syntax from C and C++ but has a simpler object model and fewer low-level facilities. Java applications are typically compiled to bytecode that can run on any Java virtual machine ([JVM](https://en.wikipedia.org/wiki/Java_virtual_machine "wikipedia:Java virtual machine")) regardless of computer architecture.
 
-Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net/) versions 7, 8, and 10\. All these JVM can be installed without conflict and switched between using helper script `archlinux-java`. Several other Java environments are available in [AUR](/index.php/AUR "AUR") but are not officially supported.
+Arch Linux officially supports the open source [OpenJDK](https://openjdk.java.net/) versions 7, 8, 10, and 11\. All these JVM can be installed without conflict and switched between using helper script `archlinux-java`. Several other Java environments are available in [AUR](/index.php/AUR "AUR") but are not officially supported.
 
 ## Contents
 
@@ -58,7 +58,7 @@ Most executables of the Java installation are provided by direct links in `/usr/
 
 	Headless JRE
 
-	The minimal Java runtime - needed for executing non GUI Java programs.
+	The minimal Java runtime - needed for executing non-GUI Java programs.
 
 	Full JRE
 
@@ -69,9 +69,10 @@ Most executables of the Java installation are provided by direct links in `/usr/
 	[Java Development Kit](https://en.wikipedia.org/wiki/Java_Development_Kit "wikipedia:Java Development Kit") - needed for Java development, depends on full JRE.
 
 | Version | Headless JRE | Full JRE | JDK | Documentation | Sources |
-| [OpenJDK 10](http://openjdk.java.net/projects/jdk/10/) | [jre10-openjdk-headless](https://www.archlinux.org/packages/?name=jre10-openjdk-headless) | [jre10-openjdk](https://www.archlinux.org/packages/?name=jre10-openjdk) | [jdk10-openjdk](https://www.archlinux.org/packages/?name=jdk10-openjdk) | [openjdk10-doc](https://www.archlinux.org/packages/?name=openjdk10-doc) | [openjdk10-src](https://www.archlinux.org/packages/?name=openjdk10-src) |
-| [OpenJDK 8](http://openjdk.java.net/projects/jdk8/) | [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) | [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) | [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) | [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) | [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src) |
-| [OpenJDK 7](http://openjdk.java.net/projects/jdk7/) | [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) | [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) | [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) | [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) | [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src) |
+| [OpenJDK 11](https://openjdk.java.net/projects/jdk/11/) | [jre-openjdk-headless](https://www.archlinux.org/packages/?name=jre-openjdk-headless) | [jre-openjdk](https://www.archlinux.org/packages/?name=jre-openjdk) | [jdk-openjdk](https://www.archlinux.org/packages/?name=jdk-openjdk) | [openjdk-doc](https://www.archlinux.org/packages/?name=openjdk-doc) | [openjdk-src](https://www.archlinux.org/packages/?name=openjdk-src) |
+| [OpenJDK 10](https://openjdk.java.net/projects/jdk/10/) | [jre10-openjdk-headless](https://www.archlinux.org/packages/?name=jre10-openjdk-headless) | [jre10-openjdk](https://www.archlinux.org/packages/?name=jre10-openjdk) | [jdk10-openjdk](https://www.archlinux.org/packages/?name=jdk10-openjdk) | [openjdk10-doc](https://www.archlinux.org/packages/?name=openjdk10-doc) | [openjdk10-src](https://www.archlinux.org/packages/?name=openjdk10-src) |
+| [OpenJDK 8](https://openjdk.java.net/projects/jdk8/) | [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) | [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) | [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) | [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) | [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src) |
+| [OpenJDK 7](https://openjdk.java.net/projects/jdk7/) | [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) | [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) | [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) | [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) | [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src) |
 
 **IcedTea-Web** — Java Web Start and the deprecated Java browser plugin.
 
@@ -79,21 +80,21 @@ Most executables of the Java installation are provided by direct links in `/usr/
 
 **OpenJFX 8** — The open-source implementation of JavaFX. You [do not need](https://wiki.openjdk.java.net/display/OpenJFX/Repositories+and+Releases) to install this package if you are making use of Java SE (the Oracle's implementation of JRE and JDK described below). This package only concerns users of the open source implementation of Java (OpenJDK project).
 
-	[http://openjdk.java.net/projects/openjfx/](http://openjdk.java.net/projects/openjfx/) || [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx), [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc), [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src)
+	[https://openjdk.java.net/projects/openjfx/](https://openjdk.java.net/projects/openjfx/) || [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx), [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc), [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src)
 
-**OpenJDK EA** — Oracle's OpenJDK Early-Access Build for latest developement version.
+**OpenJDK EA** — Oracle's OpenJDK Early-Access Build for latest development version.
 
-	[http://jdk.java.net](http://jdk.java.net) || [openjdk-devel](https://aur.archlinux.org/packages/openjdk-devel/)
+	[https://jdk.java.net](https://jdk.java.net) || [openjdk-devel](https://aur.archlinux.org/packages/openjdk-devel/)
 
-**OpenJFX EA** — Oracle's OpenJFX Early-Access Build for latest developement version.
+**OpenJFX EA** — Oracle's OpenJFX Early-Access Build for latest development version.
 
-	[http://jdk.java.net/openjfx/](http://jdk.java.net/openjfx/) || [java-openjfx-devel](https://aur.archlinux.org/packages/java-openjfx-devel/)
+	[https://jdk.java.net/openjfx/](https://jdk.java.net/openjfx/) || [java-openjfx-devel](https://aur.archlinux.org/packages/java-openjfx-devel/)
 
 ### Other implementations
 
 **Java SE** — Oracle's implementation of JRE and JDK.
 
-	[http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) || [jre](https://aur.archlinux.org/packages/jre/) [jre9](https://aur.archlinux.org/packages/jre9/) [jre8](https://aur.archlinux.org/packages/jre8/) [jre7](https://aur.archlinux.org/packages/jre7/) [jre6](https://aur.archlinux.org/packages/jre6/) [jdk](https://aur.archlinux.org/packages/jdk/) [jdk9](https://aur.archlinux.org/packages/jdk9/) [jdk8](https://aur.archlinux.org/packages/jdk8/) [jdk7](https://aur.archlinux.org/packages/jdk7/) [jdk6](https://aur.archlinux.org/packages/jdk6/) [jdk5](https://aur.archlinux.org/packages/jdk5/) [jdk-devel](https://aur.archlinux.org/packages/jdk-devel/)
+	[https://www.oracle.com/technetwork/java/javase/downloads/index.html](https://www.oracle.com/technetwork/java/javase/downloads/index.html) || [jre](https://aur.archlinux.org/packages/jre/) [jre9](https://aur.archlinux.org/packages/jre9/) [jre8](https://aur.archlinux.org/packages/jre8/) [jre7](https://aur.archlinux.org/packages/jre7/) [jre6](https://aur.archlinux.org/packages/jre6/) [jdk](https://aur.archlinux.org/packages/jdk/) [jdk9](https://aur.archlinux.org/packages/jdk9/) [jdk8](https://aur.archlinux.org/packages/jdk8/) [jdk7](https://aur.archlinux.org/packages/jdk7/) [jdk6](https://aur.archlinux.org/packages/jdk6/) [jdk5](https://aur.archlinux.org/packages/jdk5/) [jdk-devel](https://aur.archlinux.org/packages/jdk-devel/)
 
 **OpenJ9** — Eclipse's implementation of JRE, contributed by IBM.
 
@@ -103,7 +104,7 @@ Most executables of the Java installation are provided by direct links in `/usr/
 
 	[https://developer.ibm.com/javasdk/](https://developer.ibm.com/javasdk/) || [jdk8-j9-bin](https://aur.archlinux.org/packages/jdk8-j9-bin/) [jdk7-j9-bin](https://aur.archlinux.org/packages/jdk7-j9-bin/) [jdk7r1-j9-bin](https://aur.archlinux.org/packages/jdk7r1-j9-bin/)
 
-**Parrot VM** — a VM with experimental support for Java [[1]](http://trac.parrot.org/parrot/wiki/Languages) through two different methods: either as a [Java VM bytecode translator](http://code.google.com/p/parrot-jvm/), or as a [Java compiler targeting the Parrot VM](https://github.com/chrisdolan/perk).
+**Parrot VM** — a VM with experimental support for Java [[1]](http://trac.parrot.org/parrot/wiki/Languages) through two different methods: either as a [Java VM bytecode translator](https://code.google.com/p/parrot-jvm/), or as a [Java compiler targeting the Parrot VM](https://github.com/chrisdolan/perk).
 
 	[http://www.parrot.org/](http://www.parrot.org/) || [parrot](https://aur.archlinux.org/packages/parrot/)
 
@@ -225,7 +226,7 @@ Due to the fact that the JDBC-drivers often use the port in the URL to establish
 
 ### Impersonate another window manager
 
-You may use the [wmname](https://www.archlinux.org/packages/?name=wmname) from [suckless.org](http://tools.suckless.org/x/wmname) to make the JVM believe you are running a different window manager. This may solve a rendering issue of Java GUIs occurring in window managers like [Awesome](/index.php/Awesome "Awesome") or [Dwm](/index.php/Dwm "Dwm") or [Ratpoison](/index.php/Ratpoison "Ratpoison").
+You may use the [wmname](https://www.archlinux.org/packages/?name=wmname) from [suckless.org](https://tools.suckless.org/x/wmname) to make the JVM believe you are running a different window manager. This may solve a rendering issue of Java GUIs occurring in window managers like [Awesome](/index.php/Awesome "Awesome") or [Dwm](/index.php/Dwm "Dwm") or [Ratpoison](/index.php/Ratpoison "Ratpoison").
 
 ```
 $ wmname LG3D
@@ -260,13 +261,13 @@ There are several things that may help:
 
 to the `LogHook` may help.
 
-See [[2]](http://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console) for more information.
+See [[2]](https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console) for more information.
 
 ### System freezes when debugging JavaFX Applications
 
 If your system freezes while debugging a JavaFX Application, you can try to supply the JVM option `-Dsun.awt.disablegrab=true`.
 
-See [http://bugs.java.com/view_bug.do?bug_id=6714678](http://bugs.java.com/view_bug.do?bug_id=6714678)
+See [https://bugs.java.com/view_bug.do?bug_id=6714678](https://bugs.java.com/view_bug.do?bug_id=6714678)
 
 ### JavaFX's MediaPlayer constructor throws an exception
 
@@ -287,7 +288,7 @@ which is a result of some incompatibilities of JavaFX with modern [ffmpeg](https
 
 Working solution is to install [ffmpeg-compat-55](https://aur.archlinux.org/packages/ffmpeg-compat-55/).
 
-See [http://www.reddit.com/r/archlinux/comments/70o8o6/using_a_javafx_mediaplayer_in_arch/](http://www.reddit.com/r/archlinux/comments/70o8o6/using_a_javafx_mediaplayer_in_arch/)
+See [https://www.reddit.com/r/archlinux/comments/70o8o6/using_a_javafx_mediaplayer_in_arch/](https://www.reddit.com/r/archlinux/comments/70o8o6/using_a_javafx_mediaplayer_in_arch/)
 
 ### Java applications cannot open external links
 
@@ -342,7 +343,7 @@ Some Java programs insist on using the cross platform Metal look and feel. In so
 
 In Java releases prior to version 9, the GTK LookAndFeel is linked against GTK2, whilst many newer desktop applications use GTK3\. This incompatibility between GTK versions may break applications utilizing Java plugins with GUI, as the mixing of GTK2 and GTK3 in the same process is not supported (for example, LibreOffice 5.0).
 
-Since [Java 9](http://openjdk.java.net/jeps/283), the GTK LookAndFeel can be run against GTK versions `2`, `2.2` and `3`, defaulting to GTK2\. This can be overridden by setting the following property:
+Since [Java 9](https://openjdk.java.net/jeps/283), the GTK LookAndFeel can be run against GTK versions `2`, `2.2` and `3`, defaulting to GTK2\. This can be overridden by setting the following property:
 
 `jdk.gtk.version=3`
 
@@ -370,4 +371,4 @@ Not setting this may result in java programs not being drawn properly.
 
 ## See also
 
-*   [Introduction to Programming Using Java](http://math.hws.edu/javanotes/)
+*   [Introduction to Programming Using Java](https://math.hws.edu/javanotes/)

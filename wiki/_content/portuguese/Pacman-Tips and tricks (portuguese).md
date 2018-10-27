@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2018-09-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=542522) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2018-10-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=547832) na versão em inglês.
 
 Artigos relacionados
 
@@ -38,12 +38,13 @@ Para métodos gerais para melhorar a flexibilidade das dicas fornecidas ou do *p
         *   [2.3.7 Prevenção de purgas de cache indesejadas](#Preven.C3.A7.C3.A3o_de_purgas_de_cache_indesejadas)
     *   [2.4 Recriar um pacote do sistema de arquivos](#Recriar_um_pacote_do_sistema_de_arquivos)
     *   [2.5 Lista de pacotes instalados](#Lista_de_pacotes_instalados)
-    *   [2.6 Listando todos os arquivos alterados de pacotes](#Listando_todos_os_arquivos_alterados_de_pacotes)
-    *   [2.7 Reinstalando todos pacotes](#Reinstalando_todos_pacotes)
-    *   [2.8 Restaurar a base de dados local do pacman](#Restaurar_a_base_de_dados_local_do_pacman)
-    *   [2.9 Recuperando um pendrive a partir de uma instalação existente](#Recuperando_um_pendrive_a_partir_de_uma_instala.C3.A7.C3.A3o_existente)
-    *   [2.10 Vendo um único arquivo dentro de um arquivo .pkg](#Vendo_um_.C3.BAnico_arquivo_dentro_de_um_arquivo_.pkg)
-    *   [2.11 Localizar aplicativos que usam bibliotecas de pacotes mais antigos](#Localizar_aplicativos_que_usam_bibliotecas_de_pacotes_mais_antigos)
+    *   [2.6 Instalar pacotes de uma lista](#Instalar_pacotes_de_uma_lista)
+    *   [2.7 Listando todos os arquivos alterados de pacotes](#Listando_todos_os_arquivos_alterados_de_pacotes)
+    *   [2.8 Reinstalando todos pacotes](#Reinstalando_todos_pacotes)
+    *   [2.9 Restaurar a base de dados local do pacman](#Restaurar_a_base_de_dados_local_do_pacman)
+    *   [2.10 Recuperando um pendrive a partir de uma instalação existente](#Recuperando_um_pendrive_a_partir_de_uma_instala.C3.A7.C3.A3o_existente)
+    *   [2.11 Vendo um único arquivo dentro de um arquivo .pkg](#Vendo_um_.C3.BAnico_arquivo_dentro_de_um_arquivo_.pkg)
+    *   [2.12 Localizar aplicativos que usam bibliotecas de pacotes mais antigos](#Localizar_aplicativos_que_usam_bibliotecas_de_pacotes_mais_antigos)
 *   [3 Desempenho](#Desempenho)
     *   [3.1 Velocidades de download](#Velocidades_de_download)
         *   [3.1.1 Powerpill](#Powerpill)
@@ -51,8 +52,7 @@ Para métodos gerais para melhorar a flexibilidade das dicas fornecidas ou do *p
         *   [3.1.3 aria2](#aria2)
         *   [3.1.4 Outros aplicativos](#Outros_aplicativos)
 *   [4 Utilitários](#Utilit.C3.A1rios)
-    *   [4.1 Wrappers do pacman](#Wrappers_do_pacman)
-    *   [4.2 Front-ends gráficos](#Front-ends_gr.C3.A1ficos)
+    *   [4.1 Gráficos](#Gr.C3.A1ficos)
 
 ## Manutenção
 
@@ -180,7 +180,7 @@ $ comm -23 <(curl https://git.archlinux.org/archiso.git/plain/configs/releng/pac
 Para listar todos os pacotes de desenvolvimento/instáveis, execute:
 
 ```
-$ pacman -Qq | grep -Ee '-(cvs|svn|git|hg|bzr|darcs)$'
+ $ pacman -Qq | grep -Ee '-(bzr|cvs|darcs|git|hg|svn)$'
 
 ```
 
@@ -378,6 +378,35 @@ $ sudo -u http darkhttpd /var/cache/pacman/pkg --no-server-id
 
 Você também poderia executar darkhttpd como um serviço systemd por conveniência. Basta adicionar esse servidor no topo de seu `/etc/pacman.d/mirrorlist` em máquinas clientes com `Server = http://meuespelho:8080`. Certifique-se de manter seu espelho atualizado.
 
+Se você já está executando um servidor web para alguma outra finalidade, você pode querer reutilizá-lo como seu servidor de repo local em vez de darkhttpd. Por exemplo, digamos que você já atende um site com [nginx](/index.php/Nginx "Nginx"), você pode adicionar um bloco de servidor nginx na porta 8080:
+
+ `/etc/nginx/nginx.conf` 
+```
+http {
+    # ... outras configs de servidor nginx aqui
+
+    server {
+        listen 8080;
+        root /var/cache/pacman/pkg;
+        server_name myarchrepo.localdomain;
+        try_files $uri $uri/;
+    }
+}
+
+```
+
+Lembre-se de reiniciar o nginx após fazer essa alteração.
+
+Seja qual for o servidor web que você usa, lembre-se de abrir a porta 8080 para o tráfego local (e provavelmente você quer negar qualquer coisa que não seja local), então adicione uma regra como a seguinte para [iptables](/index.php/Iptables "Iptables"):
+
+ `/etc/iptables/iptables.rules` 
+```
+-A TCP -s 192.168.0.0/16 -p tcp -m tcp --dport 8080 -j ACCEPT
+
+```
+
+Lembre-se de reiniciar o iptables após fazer essa alteração.
+
 #### Cache somente leitura distribuído
 
 Existem ferramentas específicas do Arch para descobrir automaticamente outros computadores em sua rede oferecendo um cache de pacote. Tente [pacredir](https://www.archlinux.org/packages/?name=pacredir), [pacserve](/index.php/Pacserve_(Portugu%C3%AAs) "Pacserve (Português)"), [pkgdistcache](https://aur.archlinux.org/packages/pkgdistcache/) ou [paclan](https://aur.archlinux.org/packages/paclan/). O pkgdistcache usa Avahi em vez de UDP simples, que pode funcionar melhor em determinadas redes domésticas que roteiam em vez de ponte entre WiFi e Ethernet.
@@ -444,7 +473,7 @@ Server = http://cache.domain.local:8080/archlinux/$repo/os/$arch
 
 #### Sincronizar cache de pacotes do pacman usando programas de sincronização
 
-Use [Resilio Sync](/index.php/Resilio_Sync "Resilio Sync") ou [Syncthing](/index.php/Syncthing "Syncthing") para sincronizar as pastas de cache do *pacman* (ou seja, `/var/cache/pacman/pkg`).
+Use [Syncthing](/index.php/Syncthing "Syncthing") ou [Resilio Sync](/index.php/Resilio_Sync "Resilio Sync") para sincronizar as pastas de cache do *pacman* (ou seja, `/var/cache/pacman/pkg`).
 
 #### Prevenção de purgas de cache indesejadas
 
@@ -467,44 +496,21 @@ Uma ferramenta alternativa seria [fakepkg](https://aur.archlinux.org/packages/fa
 
 ### Lista de pacotes instalados
 
-Manter uma lista de pacotes instalados explicitamente pode ser útil para acelerar a instalação em um novo sistema:
+Manter uma lista de todos os pacotes instalados explicitamente pode ser útil para, por exemplo, servidor de backup de um sistema ou acelerar a instalação em um novo sistema:
 
 ```
 $ pacman -Qqe > pkglist.txt
 
 ```
 
-**Nota:** Se a opção `-t` tivesse sido usada, ao reinstalar a lista todos os pacotes de nível superior não seriam definidos como dependências. Com a opção `-n`, pacotes externos (p. ex., do AUR) seriam omitidos da lista.
+**Nota:**
 
-Para instalar pacotes da lista backup, execute:
+*   Com a opção `-t`, os pacotes já necessários para outros pacotes explicitamente instalados não são mencionados. Se estiver reinstalando a partir desta lista, eles serão instalados, mas apenas como dependências.
+*   Com uma opção `-n`, pacotes externos (p. ex., do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)")) são omitidos da lista.
+*   Use `comm -13 <(pacman -Qqdt | sort) < (pacman -Qqdtt | sort) > optdeplist.txt` para também criar uma lista das dependências opcionais instaladas que pode ser reinstalada com `--asdeps`.
+*   Use `pacman -Qqem > foreignpkglist.txt` para criar a lista de AUR e outros pacotes externos que foram explicitamente instalados.
 
-```
-# pacman -S - < pkglist.txt
-
-```
-
-**Dica:**
-
-*   Para pular pacotes já instalados, use `--needed`.
-*   Use `comm -13 <(pacman -Qqdt | sort) <(pacman -Qqdtt | sort) > optdeplist.txt` para também criar uma lista de dependências opcionais instaladas que podem ser reinstaladas com `--asdeps`.
-
-No caso da lista incluir pacotes externos, tal como pacotes do [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), remova-os primeiro:
-
-```
-# pacman -S $(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))
-
-```
-
-Para remover todos os pacotes em seu sistema que não são mencionados na lista:
-
-```
-# pacman -Rsu $(comm -23 <(pacman -Qq | sort) <(sort pkglist.txt))
-
-```
-
-**Dica:** Essas tarefas podem ser automatizadas. Veja [bacpac](https://aur.archlinux.org/packages/bacpac/), [packup](https://aur.archlinux.org/packages/packup/), [pacmanity](https://aur.archlinux.org/packages/pacmanity/) e[pug](https://aur.archlinux.org/packages/pug/) para exemplos.
-
-Se você gostaria de manter uma lista atualizada de pacotes instalados explicitamente (p. ex., em combinação com um `/etc/` versionado), você pode configurar um [hook](/index.php/Pacman_(Portugu%C3%AAs)#Hooks "Pacman (Português)"). Por exemplo:
+Para manter uma lista atualizada de pacotes explicitamente instalados (p. ex., em combinação com um `/etc/` versionado), você pode configurar um [hook](/index.php/Pacman_(Portugu%C3%AAs)#Hooks "Pacman (Português)"). Exemplo:
 
 ```
 [Trigger]
@@ -513,14 +519,36 @@ Operation = Remove
 Type = Package
 Target = *
 
-```
-
-```
 [Action]
 When = PostTransaction
-Exec = /bin/sh -c '/usr/bin/pacman -Qqe > /etc/packages.txt'
+Exec = /bin/sh -c '/usr/bin/pacman -Qqe > /etc/pkglist.txt'
 
 ```
+
+### Instalar pacotes de uma lista
+
+Para instalar pacotes de uma lista salva anteriormente de pacotes, sem reinstalar pacotes já instalados que já estão atualizados, execute:
+
+```
+# pacman -S --needed - < pkglist.txt
+
+```
+
+No entanto, é provável que pacotes externos, como os do AUR ou instalados localmente, estejam presentes na lista. Para filtrar da lista os pacotes externos, a linha de comandos anterior pode ser enriquecida da seguinte forma:
+
+```
+ # pacman -S --needed $(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))
+
+```
+
+Eventualmente, para garantir que os pacotes instalados do seu sistema correspondam à lista e remova todos os pacotes que não são mencionados nela:
+
+```
+# pacman -Rsu $(comm -23 <(pacman -Qq | sort) <(sort pkglist.txt))
+
+```
+
+**Dica:** Essas tarefas podem ser automatizadas. Veja [bacpac](https://aur.archlinux.org/packages/bacpac/), [packup](https://aur.archlinux.org/packages/packup/), [pacmanity](https://aur.archlinux.org/packages/pacmanity/) e [pug](https://aur.archlinux.org/packages/pug/) para exemplos.
 
 ### Listando todos os arquivos alterados de pacotes
 
@@ -540,11 +568,11 @@ Para recuperação da base de dados, veja [#Restaurar a base de dados local do p
 Para reinstalar todos os pacotes nativos, use:
 
 ```
-# pacman -Qnq | pacman -S -
+# pacman -Qqn | pacman -S -
 
 ```
 
-Pacotes externos (do AUR) devem ser reinstalados separadamente; você pode listá-los com `pacman -Qmq`.
+Pacotes externos (do AUR) devem ser reinstalados separadamente; você pode listá-los com `pacman -Qqm`.
 
 *Pacman* preserva o [motivo de instalação](/index.php/Motivo_de_instala%C3%A7%C3%A3o "Motivo de instalação") por padrão.
 
@@ -661,6 +689,10 @@ Existem outros aplicativos de download que você pode usar com *pacman*. Aqui es
 
 	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://www.archlinux.org/packages/?name=lostfiles)
 
+*   **Pacmatic** — Wrapper do *pacman* para verificar o Arch News antes de atualizar, evitar atualizações parciais e avisar sobre alterações de arquivo de configuração.
+
+	[http://kmkeen.com/pacmatic](http://kmkeen.com/pacmatic) || [pacmatic](https://www.archlinux.org/packages/?name=pacmatic)
+
 *   **pacutils** — Biblioteca auxiliar para programas baseados no libalpm.
 
 	[https://github.com/andrewgregory/pacutils](https://github.com/andrewgregory/pacutils) || [pacutils](https://www.archlinux.org/packages/?name=pacutils)
@@ -672,6 +704,10 @@ Existem outros aplicativos de download que você pode usar com *pacman*. Aqui es
 *   **pkgtools** — Coleção de scripts para pacotes do Arch Linux.
 
 	[https://github.com/Daenyth/pkgtools](https://github.com/Daenyth/pkgtools) || [pkgtools](https://aur.archlinux.org/packages/pkgtools/)
+
+*   **[Powerpill](/index.php/Powerpill_(Portugu%C3%AAs) "Powerpill (Português)")** — Usa download paralelo e segmentado por meio do [aria2](/index.php/Aria2 "Aria2") e do [Reflector](/index.php/Reflector "Reflector") para tentar acelerar downloads para o *pacman*.
+
+	[https://xyne.archlinux.ca/projects/powerpill/](https://xyne.archlinux.ca/projects/powerpill/) || [powerpill](https://aur.archlinux.org/packages/powerpill/)
 
 *   **repoctl** — Ferramenta para ajudar a gerenciar repositórios locais.
 
@@ -685,52 +721,16 @@ Existem outros aplicativos de download que você pode usar com *pacman*. Aqui es
 
 	[https://github.com/wesbarnett/snap-pac](https://github.com/wesbarnett/snap-pac) || [snap-pac](https://www.archlinux.org/packages/?name=snap-pac)
 
-### Wrappers do pacman
+### Gráficos
 
-Veja também [Auxiliares do AUR#Wrappers do pacman](/index.php/Auxiliares_do_AUR#Wrappers_do_pacman "Auxiliares do AUR")
-
-*   **Pacmatic** — Wrapper do *pacman* para verificar o Arch News antes de atualizar, evitar atualizações parciais e avisar sobre alterações de arquivo de configuração.
-
-	[http://kmkeen.com/pacmatic](http://kmkeen.com/pacmatic) || [pacmatic](https://www.archlinux.org/packages/?name=pacmatic)
-
-*   **[Powerpill](/index.php/Powerpill_(Portugu%C3%AAs) "Powerpill (Português)")** — Usa download paralelo e segmentado por meio do [aria2](/index.php/Aria2 "Aria2") e do [Reflector](/index.php/Reflector "Reflector") para tentar acelerar downloads para o *pacman*.
-
-	[https://xyne.archlinux.ca/projects/powerpill/](https://xyne.archlinux.ca/projects/powerpill/) || [powerpill](https://aur.archlinux.org/packages/powerpill/)
-
-### Front-ends gráficos
-
-**Atenção:** PackageKit pode abrir permissões do sistema em formas inesperada e, do contrário, não é recomendado para uso geral. Veja [FS#50459](https://bugs.archlinux.org/task/50459) e [FS#57943](https://bugs.archlinux.org/task/57943).
+**Atenção:** PackageKit abre permissões do sistema por padrão e, do contrário, não é recomendado para uso geral. Veja [FS#50459](https://bugs.archlinux.org/task/50459) e [FS#57943](https://bugs.archlinux.org/task/57943).
 
 Veja também [Auxiliares do AUR#Gráficos](/index.php/Auxiliares_do_AUR#Gr.C3.A1ficos "Auxiliares do AUR").
 
-*   **Apper** — Gerenciador de aplicativo e pacotes para o KDE usando PackageKit.
-
-	[https://www.kde.org/applications/system/apper/](https://www.kde.org/applications/system/apper/) || [apper](https://www.archlinux.org/packages/?name=apper)
-
-*   **Arch-Update** — Indicador de atualização para o GNOME-Shell.
-
-	[https://github.com/RaphaelRochet/arch-update](https://github.com/RaphaelRochet/arch-update) || [gnome-shell-extension-arch-update](https://aur.archlinux.org/packages/gnome-shell-extension-arch-update/)
-
-*   **Arch-Update-Notifier** — Indicador de atualização para o KDE.
-
-	[https://github.com/I-Dream-in-Code/kde-arch-update-plasmoid](https://github.com/I-Dream-in-Code/kde-arch-update-plasmoid) || [plasma5-applets-kde-arch-update-notifier-git](https://aur.archlinux.org/packages/plasma5-applets-kde-arch-update-notifier-git/)
-
-*   **Discover** — Uma coleção de ferramentas de gerenciamento de pacotes para o KDE, usando PackageKit.
-
-	[https://projects.kde.org/projects/kde/workspace/discover](https://projects.kde.org/projects/kde/workspace/discover) || [discover](https://www.archlinux.org/packages/?name=discover)
-
-*   **GNOME Packagekit** — Ferramenta de gerenciamento de pacotes baseada em GTK+
-
-	[https://freedesktop.org/software/PackageKit/](https://freedesktop.org/software/PackageKit/) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
-
-*   **GNOME Software** — Gerenciador de aplicativos do GNOME. (Seleção curada para o GNOME)
-
-	[https://wiki.gnome.org/Apps/Software](https://wiki.gnome.org/Apps/Software) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
-
-*   **pcurses** — Gerenciamento de pacotes em um front-end curses.
-
-	[https://github.com/schuay/pcurses](https://github.com/schuay/pcurses) || [pcurses](https://www.archlinux.org/packages/?name=pcurses)
-
-*   **tkPacman** — Depende apenas de Tcl/Tk e X11 e interage com base de dados de pacotes via a CLI do *pacman*.
-
-	[http://sourceforge.net/projects/tkpacman](http://sourceforge.net/projects/tkpacman) || [tkpacman](https://aur.archlinux.org/packages/tkpacman/)
+| Nome | Escrito em | Toolkit gráfico | Pacotes do Arch Linux via | Especificidade |
+| [discover](https://www.archlinux.org/packages/?name=discover) | C++/QML | Qt 5 | [packagekit-qt5](https://www.archlinux.org/packages/?name=packagekit-qt5) | [AppStream](https://www.freedesktop.org/wiki/Distributions/AppStream/), [Flatpak](/index.php/Flatpak "Flatpak"), [fwupd](/index.php/Fwupd "Fwupd") |
+| [gnome-software](https://www.archlinux.org/packages/?name=gnome-software) | C | GTK+ 3 | [gnome-software-packagekit-plugin](https://www.archlinux.org/packages/?name=gnome-software-packagekit-plugin) | [AppStream](https://www.freedesktop.org/wiki/Distributions/AppStream/), [Flatpak](/index.php/Flatpak "Flatpak"), [fwupd](/index.php/Fwupd "Fwupd") |
+| [apper](https://www.archlinux.org/packages/?name=apper) | C++ | Qt 5 | [packagekit-qt5](https://www.archlinux.org/packages/?name=packagekit-qt5) | [AppStream](https://www.freedesktop.org/wiki/Distributions/AppStream/) |
+| [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit) | C | GTK+ 3 | [packagekit](https://www.archlinux.org/packages/?name=packagekit) | – |
+| [pcurses](https://www.archlinux.org/packages/?name=pcurses) | C++ | ncurses | pacman | – |
+| [tkpacman](https://aur.archlinux.org/packages/tkpacman/) | Tcl | Tk | pacman | – |

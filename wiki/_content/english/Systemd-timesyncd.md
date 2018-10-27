@@ -7,18 +7,9 @@ From the [systemd mailing list](http://lists.freedesktop.org/archives/systemd-de
 
 	*systemd-timesyncd* is a daemon that has been added for synchronizing the system clock across the network. It implements an SNTP client. In contrast to NTP implementations such as [chrony](/index.php/Chrony "Chrony") or the NTP reference server this only implements a client side, and does not bother with the full NTP complexity, focusing only on querying time from one remote server and synchronizing the local clock to it. Unless you intend to serve NTP to networked clients or want to connect to local hardware clocks this simple NTP client should be more than appropriate for most installations. The daemon runs with minimal privileges, and has been hooked up with networkd to only operate when network connectivity is available. The daemon saves the current clock to disk every time a new NTP sync has been acquired, and uses this to possibly correct the system clock early at bootup, in order to accommodate for systems that lack an RTC such as the Raspberry Pi and embedded devices, and make sure that time monotonically progresses on these systems, even if it is not always correct. To make use of this daemon a new system user and group "systemd-timesync" needs to be created on installation of systemd.
 
-## Contents
-
-*   [1 Installation](#Installation)
-*   [2 Configuration](#Configuration)
-*   [3 Usage](#Usage)
-*   [4 See also](#See_also)
-
-## Installation
-
-The *systemd-timesyncd* service is available with [systemd](https://www.archlinux.org/packages/?name=systemd).
-
 ## Configuration
+
+[Start/enable](/index.php/Start/enable "Start/enable") `systemd-timesyncd.service` which is available with [systemd](https://www.archlinux.org/packages/?name=systemd).
 
 When starting, *systemd-timesyncd* will read the configuration file from `/etc/systemd/timesyncd.conf`, which looks like this:
 

@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Package signing](/index.php/Pacman/Package_signing "Pacman/Package signing"). Data da última tradução: 2018-10-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Package_signing&diff=0&oldid=551079) na versão em inglês.
+
 Artigos relacionados
 
 *   [GnuPG](/index.php/GnuPG "GnuPG")
@@ -28,7 +30,8 @@ Exemplos de redes de confiança:
     *   [3.2 Desabilitando verificação de assinatura](#Desabilitando_verifica.C3.A7.C3.A3o_de_assinatura)
     *   [3.3 Redefinindo todas as chaves](#Redefinindo_todas_as_chaves)
     *   [3.4 Removendo pacotes obsoletos](#Removendo_pacotes_obsoletos)
-    *   [3.5 Atualizando chaves via proxy](#Atualizando_chaves_via_proxy)
+    *   [3.5 Assinatura tem confiança desconhecida](#Assinatura_tem_confian.C3.A7a_desconhecida)
+    *   [3.6 Atualizando chaves via proxy](#Atualizando_chaves_via_proxy)
 *   [4 Veja também](#Veja_tamb.C3.A9m)
 
 ## Configuração
@@ -213,6 +216,17 @@ Se você quiser remover ou redefinir todas as chaves instaladas no seu sistema, 
 Se os mesmos pacotes continuam falhando e você tem certeza que fez tudo que as coisas do *pacman-key* corretamente, tente removê-los em `rm /var/cache/pacman/pkg/*pacote_ruim**` de forma que sejam baixados novamente.
 
 Essa pode ser a solução se você obtiver uma mensagem como `erro: linux: assinatura de "usuário <usuário@exemplo.com.br>" é inválida` ou similar ao atualizar (i.e. você pode não ser a vítima de um ataque Man-in-The-Middle - MITM no final das contas, e sim o seu arquivo baixado estava corrompido).
+
+### Assinatura tem confiança desconhecida
+
+Algumas vezes ao executar `pacman -Suy`, você pode encontrar esse erro:
+
+```
+error: *nome-pacote*: a assinatura de "*empacotador*" tem confiança desconhecida
+
+```
+
+Isso ocorre porque a chave do `*empacotador*` usada no pacote `*nome-pacote*` não está presente e/ou não é confiável no banco de dados gpg local do pacman-key. O Pacman parece não conseguir sempre verificar se a chave foi recebida e marcada como confiável antes de continuar. Mitigue [assinando manualmente a chave não confiável localmente](#Adicionando_chaves_n.C3.A3o_oficiais) ou [redefinindo todas as chaves](#Redefinindo_todas_as_chaves).
 
 ### Atualizando chaves via proxy
 

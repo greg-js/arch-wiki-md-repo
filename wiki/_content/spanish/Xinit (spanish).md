@@ -138,7 +138,7 @@ Si desea permanecer conectado cuando finalice la sesión X, elimine `exec`.
 
 Véase también [Fish#Start X at login](/index.php/Fish#Start_X_at_login "Fish") e [inicio de sesión automático en Xorg sin gestor de pantallas](/index.php/Systemd/User_(Espa%C3%B1ol)#Inicio_de_sesi.C3.B3n_autom.C3.A1tico_en_Xorg_sin_gestor_de_pantallas "Systemd/User (Español)").
 
-**Sugerencia:** Este método se puede combinar con el [inicio de sesión automático a la consola virtual](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console").
+**Sugerencia:** Este método se puede combinar con el [inicio de sesión automático a la consola virtual](/index.php/Automatic_login_to_virtual_console_(Espa%C3%B1ol) "Automatic login to virtual console (Español)").
 
 ## Consejos y trucos
 

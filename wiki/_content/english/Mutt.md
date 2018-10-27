@@ -328,6 +328,10 @@ There are other variables that you may need to set. For example for use of START
 
  `set ssl_starttls = yes` 
 
+If your server uses the LOGIN authentication method you might need to specify this explicitly, despite the manual's claim that all methods are tried by default:
+
+ `set smtp_authenticators = "login"` 
+
 See [muttrc(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/muttrc.5) for more information.
 
 #### External SMTP support

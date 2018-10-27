@@ -127,7 +127,7 @@ En la etapa final del espacio de usuario inicial, la verdadera raíz se monta y 
 
 ## Getty
 
-[init](/index.php/Init "Init") llama a [getty](/index.php/Getty "Getty") una vez por cada [terminal virtual](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") (típicamente seis de ellos), lo que inicializa cada tty y solicita un nombre de usuario y una contraseña. Una vez que se proporcionan el nombre de usuario y la contraseña, getty los compara con `/etc/passwd` y `/etc/shadow`, luego llama al [inicio de sesión](#Inicio_de_sesi.C3.B3n). Alternativamente, getty puede iniciar un gestor de pantalla si hay uno presente en el sistema.
+[init](/index.php/Init "Init") llama a [getty](/index.php/Getty_(Espa%C3%B1ol) "Getty (Español)") una vez por cada [terminal virtual](https://en.wikipedia.org/wiki/Virtual_console "wikipedia:Virtual console") (típicamente seis de ellos), lo que inicializa cada tty y solicita un nombre de usuario y una contraseña. Una vez que se proporcionan el nombre de usuario y la contraseña, getty los compara con `/etc/passwd` y `/etc/shadow`, luego llama al [inicio de sesión](#Inicio_de_sesi.C3.B3n). Alternativamente, getty puede iniciar un gestor de pantalla si hay uno presente en el sistema.
 
 ## Gestor de pantallas
 

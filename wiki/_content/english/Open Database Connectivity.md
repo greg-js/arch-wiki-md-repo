@@ -67,7 +67,7 @@ Myodbc is ODBC driver/connector for mariadb.
 
 #### Installation
 
-Install the [myodbc](https://aur.archlinux.org/packages/myodbc/) package.
+Install the [mariadb-connector-odbc](https://aur.archlinux.org/packages/mariadb-connector-odbc/) package.
 
 #### Configuration
 

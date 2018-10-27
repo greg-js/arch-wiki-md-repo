@@ -1,4 +1,4 @@
-[Certbot](https://github.com/certbot/certbot) is [Electronic Frontier Foundation](https://www.eff.org/)'s [ACME client](/index.php/ACME_client "ACME client"), which is written in Python and provides conveniences like automatic web server configuration and a built-in webserver for the HTTP challenge. Certbot is recommended by [Let's Encrypt](https://letsencrypt.org/).
+[Certbot](https://github.com/certbot/certbot) is [Electronic Frontier Foundation](https://www.eff.org/)'s [ACME](/index.php/ACME "ACME") client, which is written in Python and provides conveniences like automatic web server configuration and a built-in webserver for the HTTP challenge. Certbot is recommended by [Let's Encrypt](https://letsencrypt.org/).
 
 ## Contents
 

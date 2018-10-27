@@ -4,14 +4,14 @@ Related articles
 
 [Pianobar](http://6xq.net/projects/pianobar/) is a free/open-source, console-based client for the personalized online radio [Pandora](http://www.pandora.com/) (only available in the USA).
 
-***Features***
+**Features**
 
-*   *play and manage (create, add more music, delete, rename, ...) stations*
-*   *rate songs and explain why they have been selected*
-*   *upcoming songs/song history*
-*   *customize keybindings and text output*
-*   *remote control and eventcmd interface (send tracks to last.fm, for example)*
-*   *proxy support for listeners outside the USA*
+*   play and manage (create, add more music, delete, rename, ...) stations
+*   rate songs and explain why they have been selected
+*   upcoming songs/song history
+*   customize keybindings and text output
+*   remote control and eventcmd interface (send tracks to last.fm, for example)
+*   proxy support for listeners outside the USA
 
 **Tip:** Since Pianobar is a command line interface based program it can be placed in a different vterm than your desktop and be left to run.
 

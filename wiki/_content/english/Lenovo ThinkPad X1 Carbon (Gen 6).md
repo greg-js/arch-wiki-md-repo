@@ -156,7 +156,9 @@ Some special buttons are not supported by X server due to keycode number limit.
 | `Fn+F11` | `0x49` | `374` `KEY_KEYBOARD` | Not recognized in [Wayland](/index.php/Wayland "Wayland") |
 | `Fn+F12` | `0x45` | `364` `KEY_FAVORITES` | Recognized correctly on [Wayland](/index.php/Wayland "Wayland") |
 
-You can remap unsupported keys using [udev hwdb](/index.php/Map_scancodes_to_keycodes "Map scancodes to keycodes"):
+You can remap unsupported keys so that they can be detected and mapped in X using [udev hwdb](/index.php/Map_scancodes_to_keycodes "Map scancodes to keycodes"):
+
+Note that `prog1` and `prog2` map to `KEY_PROG1` and `KEY_PROG2` in `/usr/include/linux/input-event-codes.h`. You can use any key code with a defined value less than 255\. The keycode hwdb expects is the lowercased text following `KEY_` in the above input event codes header file. eg: `KEY_COFFEE` would be `coffee`.
 
  `/etc/udev/hwdb.d/90-thinkpad-keyboard.hwdb` 
 ```
@@ -166,7 +168,7 @@ evdev:name:ThinkPad Extra Buttons:dmi:bvn*:bvr*:bd*:svnLENOVO*:pn*
 
 ```
 
-Update hwdb after editing the rule.
+To make the changes take effect:
 
 ```
 # udevadm hwdb --update

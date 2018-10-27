@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GDM](/index.php/GDM "GDM"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GDM&diff=0&oldid=545369) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GDM](/index.php/GDM "GDM"). Data da última tradução: 2018-10-26\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GDM&diff=0&oldid=548757) na versão em inglês.
 
 Artigos relacionados
 
@@ -35,7 +35,7 @@ Do [GDM - GNOME Display Manager](https://wiki.gnome.org/Projects/GDM): "O Gerenc
     *   [3.6 Definir as configurações de monitor padrão](#Definir_as_configura.C3.A7.C3.B5es_de_monitor_padr.C3.A3o)
     *   [3.7 Configurar permissão de acesso do servidor X](#Configurar_permiss.C3.A3o_de_acesso_do_servidor_X)
 *   [4 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
-    *   [4.1 Falha ao usar driver proprietários da NVIDIA](#Falha_ao_usar_driver_propriet.C3.A1rios_da_NVIDIA)
+    *   [4.1 Wayland e o driver proprietário da NVIDIA](#Wayland_e_o_driver_propriet.C3.A1rio_da_NVIDIA)
     *   [4.2 Falha no encerramento da sessão](#Falha_no_encerramento_da_sess.C3.A3o)
     *   [4.3 Xorg sem senha](#Xorg_sem_senha)
     *   [4.4 Usar backend do Xorg](#Usar_backend_do_Xorg)
@@ -388,7 +388,7 @@ auth sufficient pam_succeed_if.so user ingroup nopasswdlogin
 
 ```
 
-Em seguida, adicione o grupo `nopasswdlogin` ao seu sistema. Veja [Grupos](/index.php/Grupo "Grupo") para descrições de grupos e comandos de gerenciamento de grupos.
+Em seguida, adicione o grupo `nopasswdlogin` ao seu sistema. Veja [Usuários e grupos#Gerenciamento de grupo](/index.php/Usu%C3%A1rios_e_grupos#Gerenciamento_de_grupo "Usuários e grupos") para descrições de grupos e comandos de gerenciamento de grupos.
 
 Agora, adicione seu usuário ao grupo `nopasswdlogin` e você só terá que clicar no seu nome de usuário para se autenticar.
 
@@ -452,9 +452,9 @@ Você deve poder autenticar como root após reiniciar o GDM.
 
 #### Ocultar usuário da lista de login
 
-Os usuários da lista de usuários do gdm são reunidos por [AccountsService](https://www.freedesktop.org/wiki/Software/AccountsService/). Ele irá ocultar automaticamente os usuários do sistema (UID <1000). Para ocultar usuários comuns da lista de login, crie ou edite um arquivo com o nome do usuário para ocultar em `/var/lib/accountsservice/users/` para conter pelo menos:
+Os usuários da lista de usuários do gdm são reunidos por [AccountsService](https://www.freedesktop.org/wiki/Software/AccountsService/). Ele irá ocultar automaticamente os usuários do sistema (UID <1000). Para ocultar usuários comuns da lista de login, crie ou edite um arquivo com o nome do usuário para ocultar em `/var/lib/AccountsService/users/` para conter pelo menos:
 
- `/var/lib/accountsservice/users/*nome_de_usuário*` 
+ `/var/lib/AccountsService/users/*nome_de_usuário*` 
 ```
 [User]
 SystemAccount=true
@@ -494,7 +494,7 @@ As partes relevantes de `monitors.xml` para rotação e escala de tela são:
 
 As alterações entrarão em vigor no encerramento da sessão. Isso é necessário porque o GDM não respeita `xorg.conf`.
 
-**Nota:** Se você usa GDM sob o Wayland, você também deve usar um `monitors.xml` que foi criado sob Wayland. Veja [bug 748098 do GNOME](https://bugzilla.gnome.org/show_bug.cgi?id=748098) para mais informações. Alternativamente, você pode forçar o GDM a [#Usar backend do Xorg](#Usar_backend_do_Xorg) e usar um `monitors.xml` que foi criado sob Xorg.
+**Nota:** Se você usa GDM sob o Wayland, você também deve usar um `monitors.xml` que foi criado sob Wayland. Veja [bug 224 do GDM](https://gitlab.gnome.org/GNOME/gdm/issues/224) para mais informações. Alternativamente, você pode forçar o GDM a [#Usar backend do Xorg](#Usar_backend_do_Xorg) e usar um `monitors.xml` que foi criado sob Xorg.
 
 ### Configurar permissão de acesso do servidor X
 
@@ -506,9 +506,9 @@ Por exemplo, para conceder ao GDM o direito de acessar o servidor X, use o segui
 
 ## Solução de problemas
 
-### Falha ao usar driver proprietários da NVIDIA
+### Wayland e o driver proprietário da NVIDIA
 
-O GDM usa o backend [Wayland](/index.php/Wayland "Wayland") por padrão que entra em conflito com o driver NVIDIA. Desativar o backend Wayland pode habilitar o driver NVIDIA proprietário.
+O GDM não funciona bem no modo Wayland com o driver proprietário [NVIDIA](/index.php/NVIDIA "NVIDIA"). Ao usar esse driver, o GDM usará o Xorg em vez disso. [[7]](https://gitlab.gnome.org/GNOME/gdm/merge_requests/46)
 
 ### Falha no encerramento da sessão
 

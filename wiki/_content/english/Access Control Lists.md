@@ -1,4 +1,4 @@
-[Access control list](https://en.wikipedia.org/wiki/Access_Control_List "wikipedia:Access Control List") (ACL) provides an additional, more flexible permission mechanism for [file systems](/index.php/File_systems "File systems"). It is designed to assist with UNIX file permissions. ACL allows you to give permissions for any user or group to any disc resource.
+[Access control list](https://en.wikipedia.org/wiki/Access_Control_List "wikipedia:Access Control List") (ACL) provides an additional, more flexible permission mechanism for [file systems](/index.php/File_systems "File systems"). It is designed to assist with UNIX file permissions. ACL allows you to give permissions for any user or group to any disk resource.
 
 ## Contents
 

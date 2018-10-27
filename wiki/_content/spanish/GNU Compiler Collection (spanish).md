@@ -5,7 +5,7 @@ Artículos relacionados
 
 *   [LLVM](/index.php/LLVM "LLVM")
 
-La [colección de compiladores GNU](https://en.wikipedia.org/wiki/es:GNU_Compiler_Collection y [C++](/index.php/C%2B%2B_(Espa%C3%B1ol) "C++ (Español)").
+La [colección de compiladores GNU](https://en.wikipedia.org/wiki/es:GNU_Compiler_Collection e incluye front ends para [C](/index.php/C_(Espa%C3%B1ol) "C (Español)") y [C++](/index.php/C%2B%2B_(Espa%C3%B1ol) "C++ (Español)").
 
 ## Instalación
 

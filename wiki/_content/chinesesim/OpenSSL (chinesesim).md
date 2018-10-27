@@ -197,7 +197,7 @@ $ openssl req -new -sha256 -key private/key.pem -out req.csr
 
 ```
 
-**Tip:** You can get free certificates from the [Let's Encrypt](https://letsencrypt.org/) certificate authority using an [ACME client](/index.php/ACME_client "ACME client").
+**Tip:** You can get free certificates from the [Let's Encrypt](https://letsencrypt.org/) certificate authority using an [ACME](/index.php/ACME "ACME") client.
 
 ### 自签名证书
 

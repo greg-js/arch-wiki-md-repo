@@ -187,3 +187,4 @@ You'll want to be familiar with [compiling your own kernel](/index.php/Kernels "
 ## See also
 
 *   [Upgrading ACPI tables via initrd](https://www.kernel.org/doc/Documentation/acpi/initrd_table_override.txt)
+*   [How to Identify the Windows Version in ACPI by Using _OSI](https://docs.microsoft.com/en-us/windows-hardware/drivers/acpi/winacpi-osi)

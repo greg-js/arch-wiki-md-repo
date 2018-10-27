@@ -698,13 +698,13 @@ LVM allows you to take a snapshot of your system in a much more efficient way th
 You create snapshot logical volumes just like normal ones.
 
 ```
-# lvcreate --size 100M --snapshot --name snap01 /dev/vg0/pv
+# lvcreate --size 100M --snapshot --name snap01 /dev/vg0/lv
 
 ```
 
 With that volume, you may modify less than 100 MiB of data, before the snapshot volume fills up.
 
-Reverting the modified 'pv' logical volume to the state when the 'snap01' snapshot was taken can be done with
+Reverting the modified 'lv' logical volume to the state when the 'snap01' snapshot was taken can be done with
 
 ```
 # lvconvert --merge /dev/vg0/snap01

@@ -27,16 +27,17 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
     *   [4.2 Enabling IOMMU (Intel VT-d/AMD-Vi) support](#Enabling_IOMMU_.28Intel_VT-d.2FAMD-Vi.29_support)
 *   [5 Moving data between host and guest OS](#Moving_data_between_host_and_guest_OS)
     *   [5.1 Network](#Network)
-    *   [5.2 QEMU's built-in SMB server](#QEMU.27s_built-in_SMB_server)
-    *   [5.3 Mounting a partition inside a raw disk image](#Mounting_a_partition_inside_a_raw_disk_image)
-        *   [5.3.1 With manually specifying byte offset](#With_manually_specifying_byte_offset)
-        *   [5.3.2 With loop module autodetecting partitions](#With_loop_module_autodetecting_partitions)
-        *   [5.3.3 With kpartx](#With_kpartx)
-    *   [5.4 Mounting a partition inside a qcow2 image](#Mounting_a_partition_inside_a_qcow2_image)
-    *   [5.5 Using any real partition as the single primary partition of a hard disk image](#Using_any_real_partition_as_the_single_primary_partition_of_a_hard_disk_image)
-        *   [5.5.1 By specifying kernel and initrd manually](#By_specifying_kernel_and_initrd_manually)
-        *   [5.5.2 Simulate virtual disk with MBR using linear RAID](#Simulate_virtual_disk_with_MBR_using_linear_RAID)
-            *   [5.5.2.1 Alternative: use nbd-server](#Alternative:_use_nbd-server)
+    *   [5.2 QEMU's port forwarding](#QEMU.27s_port_forwarding)
+    *   [5.3 QEMU's built-in SMB server](#QEMU.27s_built-in_SMB_server)
+    *   [5.4 Mounting a partition inside a raw disk image](#Mounting_a_partition_inside_a_raw_disk_image)
+        *   [5.4.1 With manually specifying byte offset](#With_manually_specifying_byte_offset)
+        *   [5.4.2 With loop module autodetecting partitions](#With_loop_module_autodetecting_partitions)
+        *   [5.4.3 With kpartx](#With_kpartx)
+    *   [5.5 Mounting a partition inside a qcow2 image](#Mounting_a_partition_inside_a_qcow2_image)
+    *   [5.6 Using any real partition as the single primary partition of a hard disk image](#Using_any_real_partition_as_the_single_primary_partition_of_a_hard_disk_image)
+        *   [5.6.1 By specifying kernel and initrd manually](#By_specifying_kernel_and_initrd_manually)
+        *   [5.6.2 Simulate virtual disk with MBR using linear RAID](#Simulate_virtual_disk_with_MBR_using_linear_RAID)
+            *   [5.6.2.1 Alternative: use nbd-server](#Alternative:_use_nbd-server)
 *   [6 Networking](#Networking)
     *   [6.1 Link-level address caveat](#Link-level_address_caveat)
     *   [6.2 User-mode networking](#User-mode_networking)
@@ -302,6 +303,24 @@ $ qemu-system-x86_64 **-enable-kvm -machine q35,accel=kvm -device intel-iommu** 
 Data can be shared between the host and guest OS using any network protocol that can transfer files, such as [NFS](/index.php/NFS "NFS"), [SMB](/index.php/SMB "SMB"), [NBD](https://en.wikipedia.org/wiki/Network_Block_Device "wikipedia:Network Block Device"), HTTP, [FTP](/index.php/Very_Secure_FTP_Daemon "Very Secure FTP Daemon"), or [SSH](/index.php/SSH "SSH"), provided that you have set up the network appropriately and enabled the appropriate services.
 
 The default user-mode networking allows the guest to access the host OS at the IP address 10.0.2.2\. Any servers that you are running on your host OS, such as a SSH server or SMB server, will be accessible at this IP address. So on the guests, you can mount directories exported on the host via [SMB](/index.php/SMB "SMB") or [NFS](/index.php/NFS "NFS"), or you can access the host's HTTP server, etc. It will not be possible for the host OS to access servers running on the guest OS, but this can be done with other network configurations (see [#Tap networking with QEMU](#Tap_networking_with_QEMU)).
+
+### QEMU's port forwarding
+
+QEMU can forward ports from the host to the guest to enable e.g. connecting from the host to a SSH-server running on the guest.
+
+For example, to bind port 10022 on the host with port 22 (SSH) on the guest, start QEMU with a command like:
+
+```
+$ qemu-system-x86_64 *disk_image* -net nic -net user,hostfwd=*tcp::10022-:22*
+
+```
+
+Make sure the sshd is running on the guest and connect with:
+
+```
+$ ssh *guest-user*@localhost -p10022
+
+```
 
 ### QEMU's built-in SMB server
 

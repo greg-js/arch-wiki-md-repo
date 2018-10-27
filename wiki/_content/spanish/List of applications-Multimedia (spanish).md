@@ -169,7 +169,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://www.digikam.org/](http://www.digikam.org/) || [digikam](https://www.archlinux.org/packages/?name=digikam)
 
-*   **[GIMP](https://en.wikipedia.org/wiki/GIMP "wikipedia:GIMP")** — Suite de edición de imágenes en línea con los editores profesionales como [Adobe Photoshop](https://en.wikipedia.org/wiki/Adobe_Photoshop "wikipedia:Adobe Photoshop"). GIMP ([GNU](/index.php/GNU_Project "GNU Project") Image Manipulation Program) fue puesto en marcha a mediados de 1990 y ha adquirido un gran número de [plugins](/index.php/CMYK_support_in_The_GIMP "CMYK support in The GIMP") y herramientas adicionales.
+*   **[GIMP](https://en.wikipedia.org/wiki/GIMP Image Manipulation Program) fue puesto en marcha a mediados de 1990 y ha adquirido un gran número de [plugins](/index.php/CMYK_support_in_The_GIMP "CMYK support in The GIMP") y herramientas adicionales.
 
 	[http://www.gimp.org/](http://www.gimp.org/) || [gimp](https://www.archlinux.org/packages/?name=gimp)
 
@@ -319,7 +319,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	*«Una captura de pantalla (también llamada **screenshot** del inglés) es una imagen tomada por una computadora o un teléfono inteligente para capturar los elementos vistos en el monitor u otro dispositivo de salida visual.»*
 
-Véase el artículo de [ArchWiki](/index.php/Main_page "Main page") sobre este asunto para obtener más información: [Taking a screenshot](/index.php/Taking_a_screenshot "Taking a screenshot").
+Véase el artículo de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") sobre este asunto para obtener más información: [Taking a screenshot](/index.php/Taking_a_screenshot "Taking a screenshot").
 
 #### Screencast
 
@@ -367,7 +367,7 @@ Las utilidades *screencast* le permiten crear un vídeo del escritorio de su ord
 
 Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "wikipedia:es:Main Page") sobre este asunto para obtener más información: [Servidor de sonido](https://en.wikipedia.org/wiki/es:Servidor_de_sonido "wikipedia:es:Servidor de sonido").
 
-Véase el artículo de [ArchWiki](/index.php/Main_page "Main page") sobre este asunto para obtener más información: [Sound system](/index.php/Sound_system_(Espa%C3%B1ol) "Sound system (Español)").
+Véase el artículo de [ArchWiki](/index.php/Main_page_(Espa%C3%B1ol) "Main page (Español)") sobre este asunto para obtener más información: [Sound system](/index.php/Sound_system_(Espa%C3%B1ol) "Sound system (Español)").
 
 ### Reproductores de audio
 

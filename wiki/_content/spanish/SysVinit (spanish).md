@@ -155,7 +155,7 @@ su:S:wait:/sbin/sulogin -p
 
 ### Gettys e inicio de sesión
 
-Estas son los elementos básicos que se están ejecutando en sus terminales [gettys](/index.php/Getty "Getty"). La mayoría de las configuraciones por defecto tendrá gettys que se ejecutan en varios ttyS1-6, que hará visualizar en la pantalla el símbolo de login. Véase también openvt, chvt, stty, y ioctl.
+Estas son los elementos básicos que se están ejecutando en sus terminales [gettys](/index.php/Getty_(Espa%C3%B1ol) "Getty (Español)"). La mayoría de las configuraciones por defecto tendrá gettys que se ejecutan en varios ttyS1-6, que hará visualizar en la pantalla el símbolo de login. Véase también openvt, chvt, stty, y ioctl.
 
 ```
 c1:234:respawn:/sbin/agetty 9600 tty1 xterm-color

@@ -136,7 +136,7 @@ Esta es una administración básica que se aplica a la mayoría de los emuladore
 
 Esto pausa no solo la salida, sino también los programas que intentan imprimir en el terminal, ya que bloquearán sobre las llamadas `write()` mientras la salida esté en pausa. Si su *init* parece congelado, asegúrese de que la consola del sistema no esté en pausa.
 
-Para ver los mensajes de error que ya han mostrado, véase [Haga que los mensajes de inicio permanezcan en tty1](/index.php/Getty#Have_boot_messages_stay_on_tty1 "Getty").
+Para ver los mensajes de error que ya han mostrado, véase [Mantener los mensajes de arranque en tty1](/index.php/Getty_(Espa%C3%B1ol)#Mantener_los_mensajes_de_arranque_en_tty1 "Getty (Español)").
 
 #### Desplazamiento hacia atrás
 

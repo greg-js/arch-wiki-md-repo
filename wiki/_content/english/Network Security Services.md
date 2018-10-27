@@ -1,20 +1,25 @@
 [Network Security Services](https://en.wikipedia.org/wiki/Network_Security_Services "wikipedia:Network Security Services") (**NSS**) is a set of libraries designed to support cross-platform development of security-enabled client and server applications.
 
-Applications built with NSS can support [SSL](https://en.wikipedia.org/wiki/SSL "wikipedia:SSL") v2 and v3, [TLS](https://en.wikipedia.org/wiki/TLS "wikipedia:TLS"), [PKCS](https://en.wikipedia.org/wiki/PKCS "wikipedia:PKCS") #5, #7, [PKCS #11](https://en.wikipedia.org/wiki/PKCS_11 "wikipedia:PKCS 11"), [PKCS #12](https://en.wikipedia.org/wiki/PKCS_12 "wikipedia:PKCS 12"), [S/MIME](https://en.wikipedia.org/wiki/S/MIME "wikipedia:S/MIME"), [X.509](https://en.wikipedia.org/wiki/X.509 "wikipedia:X.509") v3 certificates, and other security standards.
+Applications built with NSS can support [SSL](https://en.wikipedia.org/wiki/SSL "wikipedia:SSL") v2 and v3, [TLS](/index.php/TLS "TLS"), [PKCS](https://en.wikipedia.org/wiki/PKCS "wikipedia:PKCS") #5, #7, [PKCS #11](https://en.wikipedia.org/wiki/PKCS_11 "wikipedia:PKCS 11"), [PKCS #12](https://en.wikipedia.org/wiki/PKCS_12 "wikipedia:PKCS 12"), [S/MIME](https://en.wikipedia.org/wiki/S/MIME "wikipedia:S/MIME"), [X.509](https://en.wikipedia.org/wiki/X.509 "wikipedia:X.509") v3 certificates, and other security standards.
+
+NSS is required by many packages, including, for example, [Chromium](/index.php/Chromium "Chromium") and [Firefox](/index.php/Firefox "Firefox").
 
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Certificate management](#Certificate_management)
     *   [2.1 List certificate DB](#List_certificate_DB)
-    *   [2.2 Import certificate](#Import_certificate)
-    *   [2.3 Edit certificate](#Edit_certificate)
-    *   [2.4 Delete certificate](#Delete_certificate)
+    *   [2.2 Generate an RSA private key](#Generate_an_RSA_private_key)
+    *   [2.3 Generate a certificate signing request](#Generate_a_certificate_signing_request)
+    *   [2.4 Generate a self-signed certificate](#Generate_a_self-signed_certificate)
+    *   [2.5 Import certificate](#Import_certificate)
+    *   [2.6 Edit certificate](#Edit_certificate)
+    *   [2.7 Delete certificate](#Delete_certificate)
 *   [3 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") [nss](https://www.archlinux.org/packages/?name=nss), available in the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") the [nss](https://www.archlinux.org/packages/?name=nss) package.
 
 ## Certificate management
 
@@ -33,6 +38,27 @@ To get details about certificate:
 
 ```
 $ certutil -d sql:$HOME/.pki/nssdb -L -n *certificate_nickname*
+
+```
+
+### Generate an RSA private key
+
+```
+$ certutil -G -d *database_directory* -g *keysize* -n *nickname*
+
+```
+
+### Generate a certificate signing request
+
+```
+$ certutil -S -s *subject* -n *nickname* -x -t C,C,C -o *file*
+
+```
+
+### Generate a self-signed certificate
+
+```
+$ certutil -S -s *subject* -n *nickname* -x -t C,C,C -o *file*
 
 ```
 

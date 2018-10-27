@@ -345,7 +345,7 @@ Install the [bluez](https://www.archlinux.org/packages/?name=bluez), [bluez-plug
 
 You can now disconnect your controller. The next time you hit the PlayStation button it will connect without asking anything else.
 
-Alternatively, you can press the share button and the PlayStation button simultaneously to put the gamepad in pairing mode, and pair as you would normally.
+Alternatively, you can hold the share button and the PlayStation button simultaneously (for a few seconds) to put the gamepad in pairing mode, and pair as you would normally.
 
 GNOME's Settings also provides a graphical interface to pair sixaxis controllers when connected by wire.
 

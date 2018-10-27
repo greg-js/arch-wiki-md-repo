@@ -25,27 +25,27 @@
 *   NV 的闭源驱动请参考 [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") 和 [Bumblebee](/index.php/Bumblebee "Bumblebee")
 *   其它驱动，包括 NV Nouveau 开源驱动和 AMD Radeon 请参考 [PRIME](/index.php/PRIME "PRIME")
 
-### Fully Power Down Discrete GPU
+### 完全关闭独立显卡
 
-You may want to turn off the high-performance graphics processor to save battery power, this can be done by installing the [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) package.
+你可能为了节约电量而希望关闭高性能图形处理器，你可以通过安装 [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) 包来实现。
 
-**Tip:** For kernels not in the [Official repositories](/index.php/Official_repositories "Official repositories"), the [acpi_call-dkms](https://www.archlinux.org/packages/?name=acpi_call-dkms) is an alternative. See also [DKMS](/index.php/DKMS "DKMS").
+**Tip:** 对于内核不是[Official_repositories_(简体中文)](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")的用户, [acpi_call-dkms](https://www.archlinux.org/packages/?name=acpi_call-dkms) 是代替方案. 参见 [DKMS](/index.php/DKMS "DKMS")。
 
-Once installed load the kernel module:
+安装后加载内核模块：
 
 ```
 # modprobe acpi_call
 
 ```
 
-With the kernel module loaded run the following:
+加载内核模块后执行以下命令：
 
 ```
 # /usr/share/acpi_call/examples/turn_off_gpu.sh
 
 ```
 
-This script will go through all the known data buses and attempt to turn them off. You will get an output similar to the following:
+此脚本将遍历所有已知数据总线并尝试将其关闭。您将获得类似于以下内容的输出：
 
 ```
 Trying \_SB.PCI0.P0P1.VGA._OFF: failed
@@ -78,11 +78,11 @@ Trying \_SB_.PCI0.VGA.PX02: failed
 
 ```
 
-See the "works"? This means the script found a bus which your GPU sits on and it has now turned off the chip. To confirm this, your battery time remaining should have increased. Currently, the chip will turn back on with the next reboot to get around this we do the following:
+看到“works!”了么？这意味着脚本找到了一个GPU所在的总线，现在它已经关闭了芯片。要确认这一点，您的电池剩余时间应该会增加。目前，芯片将在下次重启时重新启动，要解决此问题我们需要执行以下操作：
 
-**Note:** To turn the GPU back on just reboot.
+**Note:** 只需要重启就可以重新启用GPU。
 
-Add the kernel module to the array of modules to load at boot:
+将内核模块添加到模块列表以在引导时加载:
 
  `/etc/modules-load.d/acpi_call.conf` 
 ```
@@ -91,7 +91,7 @@ Add the kernel module to the array of modules to load at boot:
 acpi_call
 ```
 
-To turn off the GPU at boot we could just run the above script but honestly that is not very elegant so instead lets make use of systemd's tmpfiles.
+要在启动时关闭GPU，我们可以运行上面的脚本，但老实说这不是很优雅，所以我们可以使用systemd的tmpfiles。
 
  `/etc/tmpfiles.d/acpi_call.conf` 
 ```
@@ -99,6 +99,6 @@ To turn off the GPU at boot we could just run the above script but honestly that
 w /proc/acpi/call - - - - \\_SB.PCI0.PEG0.PEGP._OFF
 ```
 
-The above config will be loaded at boot by systemd. What it does is write the specific OFF signal to the `/proc/acpi/call` file. Obviously, replace the `\_SB.PCI0.PEG0.PEGP._OFF` with the one which works on your system (please note that you need to escape the backslash).
+上面的配置将由systemd在启动时加载。它的作用是将特定的OFF信号写入 `/proc/acpi/call` 文件。显然，需要将 `\_SB.PCI0.PEG0.PEGP._OFF` 替换为适用于您系统的那个（请注意您需要转义反斜杠）。
 
-**Tip:** If you are experiencing trouble hibernating or suspending the system after disabling the GPU, try to enable it again by sending the corresponding acpi_call. See also [Suspend/resume service files](/index.php/Power_management#Suspend.2Fresume_service_files "Power management").
+**Tip:** 如果您在禁用GPU后遇到休眠或暂停系统的问题，请尝试通过发送相应的acpi_call再次启用它。参加：[使用服务文件](/index.php/Power_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#.E4.BD.BF.E7.94.A8.E6.9C.8D.E5.8A.A1.E6.96.87.E4.BB.B6 "Power management (简体中文)").

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Core utilities](/index.php/Core_utilities "Core utilities"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=545027) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Core utilities](/index.php/Core_utilities "Core utilities"). Data da última tradução: 2018-10-26\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=550876) na versão em inglês.
 
 Artigos relacionados
 
@@ -8,9 +8,9 @@ Artigos relacionados
 *   [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")
 *   [Recomendações gerais](/index.php/Recomenda%C3%A7%C3%B5es_gerais "Recomendações gerais")
 
-*Utilitários principais* (ou *Core utilities*) são as ferramentas básicas e fundamentais de um sistema [GNU](/index.php/GNU_(Portugu%C3%AAs) "GNU (Português)")/[Linux](/index.php/Linux "Linux"). No Arch Linux eles são encontrados no grupo [base](https://www.archlinux.org/groups/x86_64/base/). Este artigo fornece uma visão geral incompleta deles, vincula sua documentação e descreve alternativas úteis. O escopo deste artigo inclui, mas não está limitado a, o [GNU coreutils](https://www.gnu.org/software/coreutils/coreutils.html). A maioria dos utilitários principais é ferramenta tradicional [Unix](https://en.wikipedia.org/wiki/pt:Unix "wikipedia:pt:Unix") (veja [Heirloom](/index.php/Heirloom "Heirloom")) e muitos foram padronizados pela [POSIX](https://en.wikipedia.org/wiki/pt:POSIX "wikipedia:pt:POSIX"), mas foram desenvolvidos para fornecer mais recursos.
+*Utilitários principais* (ou *Core utilities*) são as ferramentas básicas e fundamentais de um sistema [GNU](/index.php/GNU_(Portugu%C3%AAs) "GNU (Português)")/[Linux](/index.php/Linux "Linux"). No Arch Linux eles são encontrados no [grupo base](/index.php/Grupo_de_pacotes "Grupo de pacotes"). Este artigo fornece uma visão geral incompleta deles, vincula sua documentação e descreve alternativas úteis. O escopo deste artigo inclui, mas não está limitado a, o [GNU coreutils](https://www.gnu.org/software/coreutils/coreutils.html). A maioria dos utilitários principais é ferramenta tradicional [Unix](https://en.wikipedia.org/wiki/pt:Unix "wikipedia:pt:Unix") (veja [Heirloom](/index.php/Heirloom "Heirloom")) e muitos foram padronizados pela [POSIX](https://en.wikipedia.org/wiki/pt:POSIX "wikipedia:pt:POSIX"), mas foram desenvolvidos para fornecer mais recursos.
 
-A maioria das interfaces de linha de comando está documentada em [páginas man](/index.php/P%C3%A1ginas_man "Páginas man"), utilitários pelo [Projeto GNU](/index.php/Projeto_GNU "Projeto GNU") estão documentados em [manual info](/index.php/Manual_info "Manual info"), alguns [shells](/index.php/Shell_(Portugu%C3%AAs) "Shell (Português)") fornecem um `help` comando para comandos embutidos [shell](/index.php/Shell_(Portugu%C3%AAs) "Shell (Português)"). Além disso, a maioria dos comandos imprime seu uso quando executado com o sinalizador `--help`.
+A maioria das interfaces de linha de comando está documentada em [páginas man](/index.php/P%C3%A1ginas_man "Páginas man"), utilitários pelo [Projeto GNU](/index.php/Projeto_GNU "Projeto GNU") estão documentados em [manual info](/index.php/Manual_info "Manual info"), alguns [shells](/index.php/Shell_(Portugu%C3%AAs) "Shell (Português)") fornecem um `help` comando para comandos embutidos [shell](/index.php/Shell_(Portugu%C3%AAs) "Shell (Português)"). Além disso, a maioria dos utilitários imprime seu uso quando executado com o sinalizador `--help`.
 
 ## Contents
 
@@ -26,9 +26,9 @@ A maioria das interfaces de linha de comando está documentada em [páginas man]
 
 ## Essenciais
 
-A tabela a seguir lista alguns comandos importantes, com os quais os usuários do Arch Linux devem estar familiarizados. Veja também [intro(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/intro.1).
+A tabela a seguir lista alguns utilitários importantes com os quais os usuários do Arch Linux devem estar familiarizados. Veja também [intro(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/intro.1).
 
-| Pacote | Comando | Descrição | Documentação | Alternativas |
+| Pacote | Utilitário | Descrição | Documentação | Alternativas |
 | embutido no shell | cd | muda o diretório | [cd(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cd.1p) |
 | GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) | ls | lista o diretório | [ls(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ls.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html) | [exa](https://www.archlinux.org/packages/?name=exa), [tree](https://www.archlinux.org/packages/?name=tree) |
 | cat | concatena para stdout | [cat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cat.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/cat-invocation.html) | [tac(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tac.1) |
@@ -49,7 +49,8 @@ A tabela a seguir lista alguns comandos importantes, com os quais os usuários d
 | GNU [grep](https://www.archlinux.org/packages/?name=grep) | grep | imprime linhas correspondendo a um padrão | [grep(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/grep.1), [info](https://www.gnu.org/software/grep/manual/html_node/index.html) | [#Alternativas ao grep](#Alternativas_ao_grep) |
 | GNU [sed](https://www.archlinux.org/packages/?name=sed) | sed | editor de fluxo | [sed(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sed.1), [info](https://www.gnu.org/software/sed/manual/html_node/index.html), [uma linha](http://sed.sourceforge.net/sed1line_pt-BR.html) |
 | GNU [gawk](https://www.archlinux.org/packages/?name=gawk) | awk | linguagem de varredura e processamento de padrão | [gawk(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gawk.1), [info](https://www.gnu.org/software/gawk/manual/html_node/index.html) | [nawk](https://www.archlinux.org/packages/?name=nawk), [mawk](https://aur.archlinux.org/packages/mawk/) |
-| [util-linux](https://www.archlinux.org/packages/?name=util-linux) | [lsblk](/index.php/Lsblk "Lsblk") | lista dispositivos de bloco | [lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) |
+| [util-linux](https://www.archlinux.org/packages/?name=util-linux) | [dmesg](https://en.wikipedia.org/wiki/pt:dmesg |
+| [lsblk](/index.php/Lsblk "Lsblk") | lista dispositivos de bloco | [lsblk(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/lsblk.8) |
 | [mount](/index.php/Mount "Mount") | monta um sistema de arquivos | [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) |
 | [umount](/index.php/Umount "Umount") | desmonta um sistema de arquivos | [umount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/umount.8) |
 | [su](/index.php/Su "Su") | substitui o usuário | [su(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/su.1) | [sudo](/index.php/Sudo "Sudo") |
@@ -64,7 +65,7 @@ Os redirecionamentos rm, mv, cp e shell excluem ou sobrescrevem arquivos sem per
 
 Essa tabela lista utilitários principais que geralmente são úteis.
 
-| Pacote | Comando | Descrição | Documentação | Alternativas |
+| Pacote | Utilitário | Descrição | Documentação | Alternativas |
 | embutido no shell | alias | define ou exibe aliases | [alias(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alias.1p) |
 | type | imprime o tipo de um comando | [type(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/type.1p) | [which(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/which.1) |
 | time | obtenha o tempo de um comando | [time(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/time.1p) |

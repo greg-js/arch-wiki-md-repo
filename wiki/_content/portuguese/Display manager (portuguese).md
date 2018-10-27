@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Display manager](/index.php/Display_manager "Display manager"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Display_manager&diff=0&oldid=532694) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Display manager](/index.php/Display_manager "Display manager"). Data da última tradução: 2018-10-26\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Display_manager&diff=0&oldid=548090) na versão em inglês.
 
 Artigos relacionados
 
@@ -34,7 +34,7 @@ Um [gerenciador de exibição](https://en.wikipedia.org/wiki/X_display_manager_(
 
 *   **[nodm](/index.php/Nodm "Nodm")** — Gerenciador de exibição minimalista para logins automáticos.
 
-	[https://github.com/spanezz/nodm](https://github.com/spanezz/nodm) || [nodm](https://www.archlinux.org/packages/?name=nodm)
+	[https://github.com/spanezz/nodm](https://github.com/spanezz/nodm) || [nodm](https://www.archlinux.org/packages/?name=nodm) – [sem mantenedor desde 2018-10](https://github.com/spanezz/nodm/issues/8)
 
 *   **[Ly](/index.php/Ly "Ly")** — Gerenciador de exibição experimental para ncurses.
 

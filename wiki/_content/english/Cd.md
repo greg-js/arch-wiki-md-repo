@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [Core utilities](/index.php/Core_utilities "Core utilities")
+*   [Core utilities#Essentials](/index.php/Core_utilities#Essentials "Core utilities")

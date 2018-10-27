@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=544989) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2018-10-26\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=550509) na versão em inglês.
 
 Artigos relacionados
 
@@ -314,7 +314,6 @@ Para evitar conflitos com o pacman, arquivos unit fornecidos por pacotes não de
 
 *   Você pode usar *systemd-delta* para ver quais arquivos units foram sobrepostos ou estendidos e o que exatamente foi alterado.
 *   Use `systemctl cat *unit*` para ver o conteúdo de um arquivo unit e todos os trechos *drop-in* associados.
-*   O realce de sintaxe padrão para arquivos unit do *systemd* no [Vim](/index.php/Vim "Vim") é o mesmo para [arquivos INI](https://en.wikipedia.org/wiki/pt:Arquivo_INI "wikipedia:pt:Arquivo INI"). Porém, se você quiser algo mais específico do systemd, instale [vim-systemd](https://www.archlinux.org/packages/?name=vim-systemd).
 
 #### Arquivos unit de substituição
 

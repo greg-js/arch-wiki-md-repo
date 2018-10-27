@@ -220,11 +220,11 @@ This might actually be the solution if you get a message like `error: linux: sig
 Sometimes when running `pacman -Suy` you might encounter this error:
 
 ```
-error: PackageName: signature from "XXX" is unknown trust
+error: *package-name*: signature from "*packager*" is unknown trust
 
 ```
 
-This occurs because the key is not present and/or not trusted in the local pacman-key gpg database. Pacman does not seem to always be able to check if the key was received and marked as trusted before continuing. Mitigate by [manually signing the untrusted key locally](#Adding_unofficial_keys) or [resetting all the keys](#Resetting_all_the_keys).
+This occurs because the `*packager*`'s key used in the package `*package-name*` is not present and/or not trusted in the local pacman-key gpg database. Pacman does not seem to always be able to check if the key was received and marked as trusted before continuing. Mitigate by [manually signing the untrusted key locally](#Adding_unofficial_keys) or [resetting all the keys](#Resetting_all_the_keys).
 
 ### Updating keys via proxy
 

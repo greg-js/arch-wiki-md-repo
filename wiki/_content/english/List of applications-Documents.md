@@ -786,7 +786,7 @@ See also [#Markup languages](#Markup_languages).
 
 *   **[Pandoc](https://en.wikipedia.org/wiki/Pandoc "wikipedia:Pandoc")** — Swiss-army knife for converting markup and document formats.
 
-	[http://johnmacfarlane.net/pandoc](http://johnmacfarlane.net/pandoc) || [pandoc](https://www.archlinux.org/packages/?name=pandoc)
+	[http://johnmacfarlane.net/pandoc](http://johnmacfarlane.net/pandoc) || [pandoc](https://www.archlinux.org/packages/?name=pandoc), [pandoc-bin](https://aur.archlinux.org/packages/pandoc-bin/)
 
 *   **unoconv** — Libreoffice-based document converter.
 

@@ -26,7 +26,7 @@ GTK+, The GIMP Toolkit, was initially made by the [GNU Project](/index.php/GNU_P
     *   [4.5 Reduce widget sizes](#Reduce_widget_sizes)
     *   [4.6 Hide CSD buttons](#Hide_CSD_buttons)
     *   [4.7 Disable mouse paste](#Disable_mouse_paste)
-    *   [4.8 File-Chooser Startup-Location](#File-Chooser_Startup-Location)
+    *   [4.8 File-chooser start-up location](#File-chooser_start-up_location)
     *   [4.9 Legacy scrolling behavior](#Legacy_scrolling_behavior)
     *   [4.10 Disable overlay scrollbars](#Disable_overlay_scrollbars)
         *   [4.10.1 Remove overlay scroll indicators](#Remove_overlay_scroll_indicators)
@@ -62,10 +62,10 @@ In GTK+ 2, the default theme is *Raleigh*, but Arch Linux has a custom configura
 
 To force a specific theme, set the following [environment variables](/index.php/Environment_variables "Environment variables"):
 
-*   For GTK+ 2, use `GTK2_RC_FILES`. For example to launch [GIMP](/index.php/GIMP "GIMP") with the theme *Industrial*:
+*   For GTK+ 2, use `GTK2_RC_FILES`. For example to launch [GIMP](/index.php/GIMP "GIMP") with the theme *Raleigh*:
 
 ```
-$ GTK2_RC_FILES=/usr/share/themes/Industrial/gtk-2.0/gtkrc gimp
+$ GTK2_RC_FILES=/usr/share/themes/Raleigh/gtk-2.0/gtkrc gimp
 
 ```
 
@@ -346,7 +346,7 @@ gtk-enable-primary-paste=false
 
 ```
 
-### File-Chooser Startup-Location
+### File-chooser start-up location
 
 Open the file-chooser within the **current working directory** and not the **recent** location. Normally the **current working directory** is the *Home* directory.
 

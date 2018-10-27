@@ -314,7 +314,7 @@ Of course your window title string can include output from [embedding commands](
 
 ## See also
 
-*   Community examples and screenshots in the Forum thread: [What's your PS1?](https://bbs.archlinux.org/viewtopic.php?id=50885)
+*   Community examples and screenshots in the Forum thread: [What's your PS1?](https://bbs.archlinux.org/viewtopic.php?id=50885) (only accessible if logged in)
 *   [Gentoo's `/etc/bash/bashrc`](https://gitweb.gentoo.org/repo/gentoo.git/tree/app-shells/bash/files/bashrc). See also [gentoo-bashrc](https://aur.archlinux.org/packages/gentoo-bashrc/).
 *   [tput(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tput.1)
     *   [tput reference on bash-hackers.org](http://wiki.bash-hackers.org/scripting/terminalcodes)

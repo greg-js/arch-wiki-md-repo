@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Init](/index.php/Init "Init"). Data da última tradução: 2018-10-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Init&diff=0&oldid=551065) na versão em inglês.
+
 Artigos relacionados
 
 *   [Processo de inicialização do Arch](/index.php/Processo_de_inicializa%C3%A7%C3%A3o_do_Arch "Processo de inicialização do Arch")
@@ -29,73 +31,73 @@ Esses componentes combinam-se com o *sistema* init. Algumas entradas incluem o g
 
 ## Inits (integrados)
 
-*   **anopa** — Init system built around the s6 supervision suite.
+*   **anopa** — Sistema de inicialização construído em torno do conjunto de supervisão s6.
 
 	[https://jjacky.com/anopa/](https://jjacky.com/anopa/) || [anopa](https://aur.archlinux.org/packages/anopa/)
 
-*   **GNU Shepherd** — Init system written in [Guile](https://www.gnu.org/software/guile/).
+*   **GNU Shepherd** — Sistema de inicialização escrito em [Guile](https://www.gnu.org/software/guile/).
 
 	[https://www.gnu.org/software/shepherd/](https://www.gnu.org/software/shepherd/) || [shepherd](https://aur.archlinux.org/packages/shepherd/)
 
-*   **[OpenRC](/index.php/OpenRC "OpenRC")** — Dependency-based init system.
+*   **[OpenRC](/index.php/OpenRC "OpenRC")** — Sistema de inicialização baseado em dependência.
 
 	[http://www.gentoo.org/proj/en/base/openrc/](http://www.gentoo.org/proj/en/base/openrc/) || [openrc](https://aur.archlinux.org/packages/openrc/) [openrc-arch-services-git](https://aur.archlinux.org/packages/openrc-arch-services-git/)
 
-*   **[systemd](/index.php/Systemd "Systemd")** — Dependency-based init system with aggressive parallelization, process supervision using cgroups, and the ability to depend on a given mount point or dbus service.
+*   **[systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)")** — Sistema de inicialização baseado em dependência com paralelização agressiva, supervisão de processo usando cgroups e a capacidade de depender de um ponto de montagem dado ou um serviço dbus.
 
 	[http://freedesktop.org/wiki/Software/systemd/](http://freedesktop.org/wiki/Software/systemd/) || [systemd](https://www.archlinux.org/packages/?name=systemd)
 
 ## Inits
 
-*   **[BusyBox](/index.php/BusyBox "BusyBox")** — Utilities for rescue and embedded systems.
+*   **[BusyBox](/index.php/BusyBox "BusyBox")** — Utilitários para sistemas de recuperação e embarcados.
 
 	[http://busybox.net/](http://busybox.net/) || [busybox](https://www.archlinux.org/packages/?name=busybox)
 
-*   **ninit** — Fork from [minit](http://www.fefe.de/minit/)
+*   **ninit** — Fork do [minit](http://www.fefe.de/minit/)
 
 	[http://riemann.fmi.uni-sofia.bg/ninit/](http://riemann.fmi.uni-sofia.bg/ninit/) || [ninit](https://aur.archlinux.org/packages/ninit/)
 
-*   **sinit** — Simple init initially based on Rich Felker’s minimal init.
+*   **sinit** — Inicialização simples inicialmente baseada no init mínimo de Rich Felker.
 
 	[http://core.suckless.org/sinit](http://core.suckless.org/sinit) || [sinit](https://aur.archlinux.org/packages/sinit/)
 
-*   **[SysVinit](/index.php/SysVinit "SysVinit")** — Traditional System V init.
+*   **[SysVinit](/index.php/SysVinit "SysVinit")** — Init tradicional do System V.
 
 	[http://savannah.nongnu.org/projects/sysvinit](http://savannah.nongnu.org/projects/sysvinit) || [sysvinit](https://aur.archlinux.org/packages/sysvinit/)
 
 ## Init scripts
 
-*   **initscripts-fork** — Maintained fork of SysVinit scripts in Arch Linux.
+*   **initscripts-fork** — Fork mantido dos scripts SysVinit no Arch Linux.
 
 	[https://bitbucket.org/TZ86/initscripts-fork/overview](https://bitbucket.org/TZ86/initscripts-fork/overview) || [initscripts-fork](https://aur.archlinux.org/packages/initscripts-fork/)
 
-*   **minirc** — Minimal init script designed for BusyBox.
+*   **minirc** — Script init mínimo projetado para BusyBox.
 
 	[https://github.com/hut/minirc/](https://github.com/hut/minirc/) || [minirc-git](https://aur.archlinux.org/packages/minirc-git/)
 
-*   **spark-rc** — A simple rc script to kickstart your system.
+*   **spark-rc** — Um script rc simples para iniciar seu sistema.
 
 	[https://gitlab.com/fbt/spark-rc](https://gitlab.com/fbt/spark-rc) || [spark-rc](https://aur.archlinux.org/packages/spark-rc/)
 
 ## Gerenciadores de serviços
 
-*   **daemontools** — Collection of tools for managing UNIX services.
+*   **daemontools** — Coleção de ferramentas para gerenciar serviços UNIX.
 
 	[http://cr.yp.to/daemontools.html](http://cr.yp.to/daemontools.html) || [daemontools](https://aur.archlinux.org/packages/daemontools/)
 
-*   **[Monit](/index.php/Monit "Monit")** — Monit is a process supervision tool for Unix and Linux. With monit, system status can be viewed directly from the command line, or via the native HTTP(S) web server.
+*   **[Monit](/index.php/Monit "Monit")** — Monit é uma ferramenta de supervisão de processos para Unix e Linux. Com o monit, o status do sistema pode ser visualizado diretamente a partir da linha de comando ou através do servidor da Web HTTP(S) nativo.
 
 	[http://mmonit.com/monit/](http://mmonit.com/monit/) || [monit](https://www.archlinux.org/packages/?name=monit)
 
-*   **perp** — Persistent process (service) supervisor and managment framework for UNIX.
+*   **perp** — Supervisor de processo persistente (serviço) e estrutura de gerenciamento para UNIX.
 
 	[http://b0llix.net/perp/](http://b0llix.net/perp/) || [perp](https://aur.archlinux.org/packages/perp/)
 
-*   **[runit](/index.php/Runit "Runit")** — UNIX init scheme with service supervision, a replacement for SysVinit, and other init schemes.
+*   **[runit](/index.php/Runit "Runit")** — Esquema de inicialização do UNIX com supervisão de serviço, uma substituição para o SysVinit e outros esquemas de inicialização.
 
 	[http://smarden.org/runit/](http://smarden.org/runit/) || [runit](https://aur.archlinux.org/packages/runit/)
 
-*   **s6** — Small suite of programs for UNIX, designed to allow service supervision in the line of daemontools and runit.
+*   **s6** — Pequeno conjunto de programas para UNIX, projetado para permitir a supervisão de serviço na linha de daemontools e runit.
 
 	[http://skarnet.org/software/s6/](http://skarnet.org/software/s6/) || [s6](https://aur.archlinux.org/packages/s6/)
 
@@ -103,57 +105,57 @@ Esses componentes combinam-se com o *sistema* init. Algumas entradas incluem o g
 
 ### Migrar serviços em execução
 
-To run daemons under the new init, save a list of running daemons:
+Para executar daemons sob o novo init, salve uma lista de daemons em execução:
 
 ```
 $ systemctl list-units --state=running "*.service" > daemons.list
 
 ```
 
-and configure the [#Init scripts](#Init_scripts) accordingly. See also [[2]](http://unix.stackexchange.com/questions/175380/how-to-list-all-running-daemons).
+e configure os [#Scripts init](#Scripts_init) adequadamente. Veja também [[2]](http://unix.stackexchange.com/questions/175380/how-to-list-all-running-daemons).
 
-**Note:** [systemd-tmpfiles(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles.8), [kernel modules](/index.php/Kernel_modules "Kernel modules") and [sysctl](/index.php/Sysctl "Sysctl") may also need configuration.
+**Nota:** [systemd-tmpfiles(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-tmpfiles.8), [módulos de kernel](/index.php/Kernel_modules "Kernel modules") e [sysctl](/index.php/Sysctl "Sysctl") também podem precisar de configuração.
 
 ### logind
 
-[logind](http://www.freedesktop.org/wiki/Software/systemd/logind/) requires *systemd* to be the init process. [[3]](http://www.freedesktop.org/wiki/Software/systemd/InterfacePortabilityAndStabilityChart/) As such, [local sessions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") and other functionality is not available.
+[logind](http://www.freedesktop.org/wiki/Software/systemd/logind/) exige *systemd* para ser o processo init. [[3]](http://www.freedesktop.org/wiki/Software/systemd/InterfacePortabilityAndStabilityChart/) Portanto, [sessões locais](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") e outras funcionalidades não estão disponíveis.
 
-**Tip:** A standalone version of *logind* is available as [elogind-git](https://aur.archlinux.org/packages/elogind-git/) [[4]](https://lists.gnu.org/archive/html/guix-devel/2015-04/msg00352.html)
+**Dica:** Uma versão autônoma do *logind* está disponível como [elogind-git](https://aur.archlinux.org/packages/elogind-git/) [[4]](https://lists.gnu.org/archive/html/guix-devel/2015-04/msg00352.html)
 
-	Device permissions
+	Permissões de dispositivo
 
-Add users to respective [user groups](/index.php/User_group "User group") for device access and reboot. Current group membership should first be checked with `id *user*`.
-
-```
-# usermod -a -G video,audio,power,disk,storage,optical,lp,scanner *user*
+Adicione usuários aos respectivos [grupos de usuários](/index.php/Grupos_de_usu%C3%A1rios "Grupos de usuários") para acesso ao dispositivo e reinicialize. A associação atual ao grupo deve primeiro ser verificada com `id *usuário*`.
 
 ```
+# usermod -a -G video,audio,power,disk,storage,optical,lp,scanner *usuário*
 
-See also [Users and groups#Pre-systemd groups](/index.php/Users_and_groups#Pre-systemd_groups "Users and groups"). To create group rules for use with [Polkit](/index.php/Polkit "Polkit"), see [Polkit#Bypass password prompt](/index.php/Polkit#Bypass_password_prompt "Polkit").
+```
 
-	Rootless X (1.16)
+Veja também [Usuários e grupos#Grupos pré-systemd](/index.php/Usu%C3%A1rios_e_grupos#Grupos_pr.C3.A9-systemd "Usuários e grupos"). Para criar regras de grupo para usar com [Polkit](/index.php/Polkit "Polkit"), veja [Polkit#Bypass password prompt](/index.php/Polkit#Bypass_password_prompt "Polkit").
 
-As `Xorg.wrap` does not check if logind is active [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=86975#c5), [root rights for Xorg](/index.php/Xorg#Rootless_Xorg "Xorg") need be enabled manually:
+	X sem root (1.16)
+
+Como `Xorg.wrap` não verifica se logind está ativo [[5]](https://bugs.freedesktop.org/show_bug.cgi?id=86975#c5), [permissões de root para Xorg](/index.php/Xorg#Rootless_Xorg "Xorg") precisam se habilitadas manualmente:
 
  `/etc/X11/Xwrapper.config`  `needs_root_rights = yes` 
 
-	Power management
+	Gerenciamento de energia
 
-See [pm-utils](https://aur.archlinux.org/packages/pm-utils/) and [acpid](/index.php/Acpid "Acpid") to replace [Power management with systemd](/index.php/Power_management#Power_management_with_systemd "Power management").
+Veja [pm-utils](https://aur.archlinux.org/packages/pm-utils/) e [acpid](/index.php/Acpid "Acpid") para substituir [gerenciamento de energia por systemd](/index.php/Power_management#Power_management_with_systemd "Power management").
 
 ### Tarefas agendadas
 
-Arch uses [timer](/index.php/Systemd#Timers "Systemd") files instead of [cron](/index.php/Cron "Cron") by default. See [archlinux-cronjobs](https://github.com/notfoss/archlinux-cronjobs) for basic cron jobs.
+Arch usa arquivos [timer](/index.php/Systemd_(Portugu%C3%AAs)#Timers "Systemd (Português)") em vez do [cron](/index.php/Cron "Cron"), por padrão. Veja [archlinux-cronjobs](https://github.com/notfoss/archlinux-cronjobs) para trabalhos de cron básicos.
 
 ### Dbus
 
-User instances of *dbus-daemon* are launched by [systemd/User](/index.php/Systemd/User "Systemd/User") [[6]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/). When requring IPC between desktop applications, restore `30-dbus.sh`:
+As instâncias de usuário do *dbus-daemon* são iniciadas pelo [systemd/User](/index.php/Systemd/User "Systemd/User") [[6]](https://www.archlinux.org/news/d-bus-now-launches-user-buses/). Ao solicitar IPC entre aplicativos de desktop, restaure `30-dbus.sh`:
 
  `/etc/X11/xinit/xinitrc.d/30-dbus.sh` 
 ```
 #!/bin/bash
 
-# launches a session dbus instance
+# inicia uma instância de sessão dbus
 if [ -z "${DBUS_SESSION_BUS_ADDRESS-}" ] && type dbus-launch >/dev/null; then
   eval $(dbus-launch --sh-syntax --exit-with-session)
 fi
@@ -163,46 +165,46 @@ fi
 
 ### systemd-nspawn
 
-[systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") is a tool for systemd systems. Since Linux 2.6.19 it is however possible to run systemd on a non-systemd system by using PID namespace. For it, the kernel needs to be configured with `CONFIG_PID_NS` and `CONFIG_NAMESPACES`).
+[systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn") é uma ferramenta para sistemas systemd. Desde o Linux 2.6.19, no entanto, é possível executar o systemd em um sistema não-systemd usando o espaço de nome de PID. Para isso, o kernel precisa ser configurado com `CONFIG_PID_NS` e `CONFIG_NAMESPACES`).
 
-The PID namespace creates a new hierarchy of processes starting with PID 1\. In addition to this, systemd requires a chrooted root filesystem to be mounted. Hence, you have to at least make a bind mount, because otherwise some services will fail with
+O espaço de nome de PID cria uma nova hierarquia de processos que começam com o PID 1\. Além disso, o systemd exige que um sistema de arquivos raiz "chrootado" seja montado. Portanto, você precisa pelo menos fazer uma montagem de ligação, porque senão alguns serviços falharão com
 
 ```
 "Failed at step NAMESPACE spawning" due to "Invalid operation" 
 
 ```
 
-as systemd tries to remount the root with `private` option.
+pois o systemd tenta remontar a raiz com a opção `private`.
 
-To setup a chroot with a new PID namespace you can use jchroot.[[7]](http://vincent.bernat.im/en/blog/2011-jchroot-isolation.html) [[8]](https://github.com/vincentbernat/jchroot). Make sure not to mount `/proc` inside the new root before chrooting, otherwise systemd will detect the chroot environment. You can mount it later once systemd is running.
+Para configurar um chroot com um novo namespace PID, você pode usar o jchroot [[7]](http://vincent.bernat.im/en/blog/2011-jchroot-isolation.html) [[8]](https://github.com/vincentbernat/jchroot). Certifique-se de não montar `/proc` dentro da nova raiz antes de fazer o chroot, caso contrário, o systemd detectará o ambiente chroot. Você pode montá-lo depois que o systemd estiver em execução.
 
 ### Substituindo udev
 
-**Warning:** Replacing udev is not required as *systemd-udev* is functional without *systemd* as PID 1\. Some replacements such as *eudev* can also not coexist with [systemd](https://www.archlinux.org/packages/?name=systemd)—ensure an alternative init is booted **prior** to their installation.
+**Atenção:** Substituir o udev não é necessário, já que *systemd-udev* é funcional sem *systemd* como PID 1\. Algumas substituições como *eudev* também não podem coexistir com [systemd](https://www.archlinux.org/packages/?name=systemd) – garanta um init alternativo está inicializado **antes** em sua instalação.
 
-*   **eudev** — eudev is a fork of udev started by the Gentoo project. It is primarily designed and tested with OpenRC.
+*   **eudev** — O eudev é um fork do udev iniciado pelo projeto Gentoo. É principalmente projetado e testado com OpenRC.
 
 	[https://wiki.gentoo.org/wiki/Eudev](https://wiki.gentoo.org/wiki/Eudev) || [eudev](https://aur.archlinux.org/packages/eudev/) [eudev-git](https://aur.archlinux.org/packages/eudev-git/)
 
-*   **mdev** — Device manager for usage in embedded systems.
+*   **mdev** — Gerenciador de dispositivos para uso em sistemas embarcados.
 
 	[https://git.busybox.net/busybox/plain/docs/mdev.txt](https://git.busybox.net/busybox/plain/docs/mdev.txt) || [busybox](https://www.archlinux.org/packages/?name=busybox)
 
-*   **vdev** — A virtual device manager for unix.
+*   **vdev** — Um gerenciador de dispositivos virtuais para unix.
 
 	[https://github.com/jcnelson/vdev.git](https://github.com/jcnelson/vdev.git) || [vdev-git](https://aur.archlinux.org/packages/vdev-git/)
 
-*   **smdev** — smdev is a simple program to manage device nodes. It is mostly compatible with mdev but doesn't have all of its features.
+*   **smdev** — O smdev é um programa simples para gerenciar nós de dispositivos. É principalmente compatível com o mdev, mas não possui todos os seus recursos.
 
 	[http://git.suckless.org/smdev/](http://git.suckless.org/smdev/) || [smdev-git](https://aur.archlinux.org/packages/smdev-git/)
 
 ## Veja também
 
-*   [Debian init system debate](https://wiki.debian.org/Debate/initsystem)
-*   [How to run s6-svscan as process 1](http://skarnet.org/software/s6/s6-svscan-1.html)
-*   [Replace systemd with busybox + minirc](https://bbs.archlinux.org/viewtopic.php?id=162606&p=1)
-*   [Experiments of Manjaro](http://www.troubleshooters.com/linux/init/manjaro_experiments.htm)
+*   [Debate sobre o sistema de inicialização do Debian](https://wiki.debian.org/Debate/initsystem)
+*   [Como executar o s6-svscan como processo 1](http://skarnet.org/software/s6/s6-svscan-1.html)
+*   [Substitua o systemd com busybox + minirc](https://bbs.archlinux.org/viewtopic.php?id=162606&p=1)
+*   [Experimentos do Manjaro](http://www.troubleshooters.com/linux/init/manjaro_experiments.htm)
 *   [Init vs. runsv](https://busybox.net/~vda/init_vs_runsv.html)
-*   [Demystifying the init system](https://felipec.wordpress.com/2013/11/04/init/)
-*   [A history of modern init systems (1992-2015)](http://blog.darknedgy.net/technology/2015/09/05/0/)
-*   [Comparison of init systems (gentoo wiki)](https://wiki.gentoo.org/wiki/Comparison_of_init_systems)
+*   [Desmistificando o sistema init](https://felipec.wordpress.com/2013/11/04/init/)
+*   [Uma história de sistemas init modernos (1992-2015)](http://blog.darknedgy.net/technology/2015/09/05/0/)
+*   [Comparação de sistemas init (gentoo wiki)](https://wiki.gentoo.org/wiki/Comparison_of_init_systems)

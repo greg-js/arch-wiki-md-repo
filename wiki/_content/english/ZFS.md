@@ -66,6 +66,7 @@ As a result:
         *   [7.6.2 Incorrect hostid](#Incorrect_hostid)
     *   [7.7 Devices have different sector alignment](#Devices_have_different_sector_alignment)
     *   [7.8 Pool resilvering stuck/restarting/slow?](#Pool_resilvering_stuck.2Frestarting.2Fslow.3F)
+    *   [7.9 Fix slow boot caused by failed import of unavailable pools in the initramfs zpool.cache](#Fix_slow_boot_caused_by_failed_import_of_unavailable_pools_in_the_initramfs_zpool.cache)
 *   [8 Tips and tricks](#Tips_and_tricks)
     *   [8.1 Embed the archzfs packages into an archiso](#Embed_the_archzfs_packages_into_an_archiso)
     *   [8.2 Encryption in ZFS using dm-crypt](#Encryption_in_ZFS_using_dm-crypt)
@@ -114,8 +115,6 @@ Users can make use of DKMS [Dynamic Kernel Module Support](/index.php/Dynamic_Ke
 Install [zfs-dkms](https://aur.archlinux.org/packages/zfs-dkms/) or [zfs-dkms-git](https://aur.archlinux.org/packages/zfs-dkms-git/) and apply the post-install instructions given by these packages.
 
 **Tip:** Add an `IgnorePkg` entry to [pacman.conf](/index.php/Pacman.conf "Pacman.conf") to prevent these packages from upgrading when doing a regular update.
-
-**Note:** Pacman does not take dependencies into consideration when rebuilding DKMS modules. This will result in build failures when pacman tries to rebuild DKMS modules after a kernel upgrade. See bug report [FS#52901](https://bugs.archlinux.org/task/52901) for details. The [dkms-sorted](https://aur.archlinux.org/packages/dkms-sorted/) package adds experimental support for such dependencies; technically, it is a drop-in replacement for the `dkms` package. The most convenient way to try out dkms-sorted is to install it *before* you install any DKMS modules.
 
 ## Experimenting with ZFS
 
@@ -794,12 +793,7 @@ ZFS: No hostid found on kernel command line or /etc/hostid.
 
 This warning occurs because the ZFS module does not have access to the spl hosted. There are two solutions, for this. Either place the spl hostid in the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") in the boot loader. For example, adding `spl.spl_hostid=0x00bab10c`.
 
-The other solution is to make sure that there is a hostid in `/etc/hostid`, and then regenerate the initramfs image. Which will copy the hostid into the initramfs image.
-
-```
-# mkinitcpio -p linux
-
-```
+The other solution is to make sure that there is a hostid in `/etc/hostid`, and then [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") image. Which will copy the hostid into the initramfs image.
 
 ### Pool cannot be found while booting from SAS/SCSI devices
 
@@ -842,12 +836,7 @@ To see the available pools, use,
 
 It is necessary to export a pool because of the way ZFS uses the hostid to track the system the zpool was created on. The hostid is generated partly based on the network setup. During the installation in the archiso the network configuration could be different generating a different hostid than the one contained in the new installation. Once the zfs filesystem is exported and then re-imported in the new installation, the hostid is reset. See [Re: Howto zpool import/export automatically? - msg#00227](http://osdir.com/ml/zfs-discuss/2011-06/msg00227.html).
 
-If ZFS complains about "pool may be in use" after every reboot, properly export pool as described above, and then rebuild ramdisk in normally booted system:
-
-```
-# mkinitcpio -p linux
-
-```
+If ZFS complains about "pool may be in use" after every reboot, properly export pool as described above, and then [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs") in normally booted system.
 
 #### Incorrect hostid
 
@@ -924,6 +913,31 @@ errors: No known data errors
 ### Pool resilvering stuck/restarting/slow?
 
 According to the ZFSonLinux github it's a known issue since 2012 with ZFS-ZED which causes the resilvering process to constantly restart, sometimes get stuck and be generally slow for some hardware. The simplest mitigation is to stop zfs-zed.service until the resilver completes
+
+### Fix slow boot caused by failed import of unavailable pools in the initramfs zpool.cache
+
+Your boot time can be significantly impacted if you update your intitramfs (eg when doing a kernel update) when you have additional but non-permanently attached pools imported because these pools will get added to your initramfs zpool.cache and ZFS will attempt to import these extra pools on every boot, regardless of whether you have exported it and removed it from your regular zpool.cache.
+
+If you notice ZFS trying to import unavailable pools at boot, first run:
+
+```
+$ zdb -C
+
+```
+
+To check you zpool.cache for pools you don't want imported at boot. If this command is showing (a) additional, currently unavailable pool(s), run:
+
+```
+# zpool set cachefile=/etc/zfs/zpool.cache zroot
+
+```
+
+To clear the zpool.cache of any pools other than zroot, then rebuild your initramfs:
+
+```
+# mkinitcpio -p linux
+
+```
 
 ## Tips and tricks
 
