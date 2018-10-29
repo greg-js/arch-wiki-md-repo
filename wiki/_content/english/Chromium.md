@@ -7,6 +7,16 @@ Related articles
 
 [Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser) is an open-source graphical web browser based on the [Blink](https://en.wikipedia.org/wiki/Blink_(web_engine) rendering engine. It is the basis for the proprietary Google Chrome browser.
 
+Google Chrome has following notable built-in features over Chromium:
+
+*   [Flash player](https://en.wikipedia.org/wiki/Flash_player "wikipedia:Flash player"), also available via [pepper-flash](https://www.archlinux.org/packages/?name=pepper-flash).
+*   Widevine [EME](https://en.wikipedia.org/wiki/Encrypted_Media_Extensions "wikipedia:Encrypted Media Extensions") for e.g. Netflix, also available via [chromium-widevine](https://aur.archlinux.org/packages/chromium-widevine/).
+*   [Native client](https://en.wikipedia.org/wiki/Native_client "wikipedia:Native client") (NaCl). Support for native client (NaCl) has been dropped from Chromium packages since version 54, see [FS#51511](https://bugs.archlinux.org/task/51511).
+
+See these [two](https://chromium.googlesource.com/chromium/src/+/master/docs/chromium_browser_vs_google_chrome.md) [articles](https://www.howtogeek.com/202825/what%E2%80%99s-the-difference-between-chromium-and-chrome/) for an explanation of the differences between Chromium and Chrome.
+
+See [List of applications#Blink-based](/index.php/List_of_applications#Blink-based "List of applications") for other browsers based on Chromium.
+
 ## Contents
 
 *   [1 Installation](#Installation)
@@ -34,39 +44,18 @@ Related articles
 
 ## Installation
 
-The open-source project, **Chromium**, can be [installed](/index.php/Install "Install") with the [chromium](https://www.archlinux.org/packages/?name=chromium) package.
+There are several packages available to [install](/index.php/Install "Install") Chromium with:
 
-Other alternatives include:
+*   [chromium](https://www.archlinux.org/packages/?name=chromium) – stable release.
+*   [chromium-dev](https://aur.archlinux.org/packages/chromium-dev/) – development release.
+*   [chromium-snapshot-bin](https://aur.archlinux.org/packages/chromium-snapshot-bin/) – nightly build.
+*   [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/), [chromium-vaapi-bin](https://aur.archlinux.org/packages/chromium-vaapi-bin/) – packages with [VA-API](/index.php/VA-API "VA-API") support, for configuration see [#Hardware video acceleration](#Hardware_video_acceleration).
 
-*   **Chromium Dev Channel** — the development version
+Google Chrome packages:
 
-	[https://chromereleases.googleblog.com/](https://chromereleases.googleblog.com/) || [chromium-dev](https://aur.archlinux.org/packages/chromium-dev/)
-
-*   **Chromium snapshot builds** — the untested nightly version
-
-	[https://build.chromium.org/](https://build.chromium.org/) || [chromium-snapshot-bin](https://aur.archlinux.org/packages/chromium-snapshot-bin/)
-
-*   **Chromium with VA-API support** — see [#Hardware video acceleration](#Hardware_video_acceleration)
-
-	[https://chromium-review.googlesource.com/c/chromium/src/+/532294](https://chromium-review.googlesource.com/c/chromium/src/+/532294) || [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/)
-
-The derived browser, **Google Chrome**, which automatically installs Flash Player and Widevine [EME](https://en.wikipedia.org/wiki/Encrypted_Media_Extensions "wikipedia:Encrypted Media Extensions") (for e.g. Netflix), can be [installed](/index.php/Install "Install") with the [google-chrome](https://aur.archlinux.org/packages/google-chrome/) package.
-
-Other alternatives include:
-
-*   **Google Chrome Beta Channel** — the beta version
-
-	[https://www.google.com/chrome/browser/beta.html](https://www.google.com/chrome/browser/beta.html) || [google-chrome-beta](https://aur.archlinux.org/packages/google-chrome-beta/)
-
-*   **Google Chrome Dev Channel** — the development version
-
-	[https://www.google.com/chrome/](https://www.google.com/chrome/) || [google-chrome-dev](https://aur.archlinux.org/packages/google-chrome-dev/)
-
-**Note:** Support for native client (NaCl) has been dropped in [chromium](https://www.archlinux.org/packages/?name=chromium) version 54, see [FS#51511](https://bugs.archlinux.org/task/51511). Opening NaCl applications will display this error message: "This plugin is not supported". The [google-chrome](https://aur.archlinux.org/packages/google-chrome/) package supports NaCl.
-
-See these [two](https://chromium.googlesource.com/chromium/src/+/master/docs/chromium_browser_vs_google_chrome.md) [articles](https://www.howtogeek.com/202825/what%E2%80%99s-the-difference-between-chromium-and-chrome/) for an explanation of the differences between Chromium and Chrome.
-
-On top of the different Chromium build channels, a number of forks exist with more or less special features; see [List of applications#Blink-based](/index.php/List_of_applications#Blink-based "List of applications").
+*   [google-chrome](https://aur.archlinux.org/packages/google-chrome/) – stable release.
+*   [google-chrome-beta](https://aur.archlinux.org/packages/google-chrome-beta/) – beta release.
+*   [google-chrome-dev](https://aur.archlinux.org/packages/google-chrome-dev/) – development release.
 
 ## Configuration
 

@@ -297,7 +297,7 @@ polkit.addRule(function(action, subject) {
 
 NetworkManager does not directly handle proxy settings, but if you are using [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE"), you could use [proxydriver](http://marin.jb.free.fr/proxydriver/) which handles proxy settings using NetworkManager's information. proxydriver is found in the package [proxydriver](https://aur.archlinux.org/packages/proxydriver/).
 
-In order for *proxydriver* to be able to change the proxy settings, you would need to execute this command, as part of the GNOME startup process (*System > Preferences > Startup Applications*):
+In order for *proxydriver* to be able to change the proxy settings, you would need to execute this command, as part of the GNOME startup process (see [GNOME#Autostart](/index.php/GNOME#Autostart "GNOME")).
 
 ```
 xhost +si:localuser:*username*
@@ -394,7 +394,7 @@ dns=systemd-resolved
 
 **Tip:** If [openresolv](/index.php/Openresolv "Openresolv") has a subscriber for the [local DNS resolver](/index.php/Domain_name_resolution#Resolvers "Domain name resolution"), set the local server address in `/etc/resolvconf.conf` and [configure NetworkManager to use openresolv](#Use_openresolv).
 
-With an already working caching DNS server, the DNS server address can be specified in NetworkManagers' settings (usually by right-clicking the applet). Setup will depend on the type of front-end used; the process usually involves right-clicking on the applet, editing (or creating) a profile, and then choosing DHCP type as *Automatic (specify addresses)*. The DNS addresses will need to be entered and are usually in this form: `127.0.0.1, *DNS-server-one*, ...`.
+With an already working caching DNS server, the DNS server address can be specified in NetworkManager's settings (usually by right-clicking the applet). Setup will depend on the type of front-end used; the process usually involves right-clicking on the applet, editing (or creating) a profile, and then choosing DHCP type as *Automatic (specify addresses)*. The DNS addresses will need to be entered and are usually in this form: `127.0.0.1, *DNS-server-one*, ...`.
 
 ## Network services with NetworkManager dispatcher
 
@@ -504,6 +504,43 @@ umount -a -l -t cifs
 
 *   Make sure this script is located in the `pre-down.d` sub-directory as shown above, otherwise it will unmount all shares on any connection state change.
 *   Since NetworkManager 0.9.8, the *pre-down* and *down* events are not executed on shutdown or restart, see [this bug report](https://bugzilla.gnome.org/show_bug.cgi?id=701242) for more info.
+
+An alternative is to use the script as seen in [NFS#Using a NetworkManager dispatcher](/index.php/NFS#Using_a_NetworkManager_dispatcher "NFS"):
+
+ `/etc/NetworkManager/dispatcher.d/30-smb.sh` 
+```
+#!/bin/bash
+
+# Find the connection UUID with "nmcli con show" in terminal.
+# All NetworkManager connection types are supported: wireless, VPN, wired...
+WANTED_CON_UUID="CHANGE-ME-NOW-9c7eff15-010a-4b1c-a786-9b4efa218ba9"
+
+if [[ "$CONNECTION_UUID" == "$WANTED_CON_UUID" ]]; then
+
+    # Script parameter $1: NetworkManager connection name, not used
+    # Script parameter $2: dispatched event
+
+    case "$2" in
+        "up")
+            mount -a -t cifs
+            ;;
+        "pre-down");&
+        "vpn-pre-down")
+            umount -l -a -t cifs >/dev/null
+            ;;
+    esac
+fi
+
+```
+
+**Note:** This script ignores mounts with the `noauto` option, remove this mount option or use `auto` to allow the dispatcher to manage these mounts.
+
+Create a symlink inside `/etc/NetworkManager/dispatcher.d/pre-down` to catch the `pre-down` events:
+
+```
+# ln -s /etc/NetworkManager/dispatcher.d/30-smb.sh /etc/NetworkManager/dispatcher.d/pre-down.d/30-smb.sh
+
+```
 
 #### Mounting of NFS shares
 

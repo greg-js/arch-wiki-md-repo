@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Data da última tradução: 2018-09-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=542235) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=548485) na versão em inglês.
 
 Artigos relacionados
 
@@ -13,7 +13,7 @@ Artigos relacionados
 *   [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes")
 *   [Auxiliares do AUR](/index.php/Auxiliares_do_AUR "Auxiliares do AUR")
 
-O Arch User Repository (AUR) ou, em português, Repositório de Usuário do Arch é um repositório dirigido pela comunidade para usuários do Arch. Ele contém descrições de pacotes ([PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")) que permitem a você compilar um pacote de um fonte com o [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e depois instalar via [pacman](/index.php/Pacman_(Portugu%C3%AAs)#Comandos_adicionais "Pacman (Português)"). O AUR foi criado para organizar e compartilhar novos pacotes da comunidade e ajudar a acelerar a inclusão dos pacotes populares no repositório [community](/index.php/Community_(Portugu%C3%AAs) "Community (Português)"). Este documento explica como usuários podem acessar e utilizar o AUR.
+O Arch User Repository (AUR) ou, em português, Repositório de Usuário do Arch é um repositório dirigido pela comunidade para usuários do Arch. Ele contém descrições de pacotes ([PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")) que permitem a você compilar um pacote de um fonte com o [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e depois instalar via [pacman](/index.php/Pacman_(Portugu%C3%AAs)#Comandos_adicionais "Pacman (Português)"). O AUR foi criado para organizar e compartilhar novos pacotes da comunidade e ajudar a acelerar a inclusão dos pacotes populares no [repositório community](/index.php/Reposit%C3%B3rio_community "Repositório community"). Este documento explica como usuários podem acessar e utilizar o AUR.
 
 Um bom número de novos pacotes que entram para os repositórios oficiais iniciam no AUR. No AUR, usuários são capazes de contribuir com seus próprios pacotes (PKGBUILD e arquivos relacionados). A comunidade do AUR tem a capacidade de votar a favor os pacotes no AUR. Se um pacote se torna popular o bastante -- desde que tenha uma licença compatível e uma boa técnica de empacotamento -- ele pode ser colocado no repositório *community* (diretamente acessível pelo [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") ou [abs](/index.php/Abs_(Portugu%C3%AAs) "Abs (Português)")).
 
@@ -171,7 +171,7 @@ Outras flags úteis são
 
 A [Interface Web do AUR](https://aur.archlinux.org) possui um recurso de comentários que permite aos usuários enviar sugestões e feedback ao contribuidor do PKGBUILD. Evite colar patches ou PKGBUILDs na seção de comentários. Eles logo tornam-se obsoletos e terminam tomando muito espaço sem necessidade. Ao invés disso, envie por e-mail os arquivos ao mantenedor ou até mesmo use um [pastebin](/index.php/Pastebin "Pastebin").
 
-Uma das atividades mais fáceis para **todos** os usuários do Arch é navegar no AUR e **votar** em seus pacotes prediletos, usando a interface online. Todos os pacotes são elegíveis para serem adotados por um TU (Trusted User) para a inclusão no repositório [community](/index.php/Community_(Portugu%C3%AAs) "Community (Português)"), e a contagem de votos é uma das coisas levadas em consideração nesse processo; votar é do interesse de todos!
+Uma das atividades mais fáceis para **todos** os usuários do Arch é navegar no AUR e **votar** em seus pacotes prediletos, usando a interface online. Todos os pacotes são elegíveis para serem adotados por um TU (Trusted User) para a inclusão no [repositório community](/index.php/Reposit%C3%B3rio_community "Repositório community"), e a contagem de votos é uma das coisas levadas em consideração nesse processo; votar é do interesse de todos!
 
 ## Compartilhando e mantendo pacotes
 
@@ -257,6 +257,7 @@ Se você já criou um repositório git, você pode simplesmente criar um remoto 
 
 ```
 $ git remote add *nome_remoto* ssh://aur@aur.archlinux.org/*nome_pacote*.git
+$ git branch --set-upstream-to=*nome_remoto*/master master
 $ git fetch *nome_remoto*
 
 ```
@@ -320,7 +321,7 @@ Há suporte à sintaxe do [Python-Markdown](https://python-markdown.github.io/) 
 
 ### O que é o AUR?
 
-O AUR (Arch User Repository) é um lugar para onde a comunidade do Arch Linux pode enviar [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") de aplicativos, bibliotecas, etc., e compartilhá-los com toda a comunidade. Outros usuários poderão então votar pelos seus favoritos para que sejam transferidos para o repositório [community] de forma a serem compartilhados com os usuários do Arch Linux em forma de binário.
+O AUR (Arch User Repository) é um lugar para onde a comunidade do Arch Linux pode enviar [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") de aplicativos, bibliotecas, etc., e compartilhá-los com toda a comunidade. Outros usuários poderão então votar pelos seus favoritos para que sejam transferidos para o [repositório community](/index.php/Reposit%C3%B3rio_community "Repositório community") de forma a serem compartilhados com os usuários do Arch Linux em forma de binário.
 
 ### Que tipo de pacote é permitido no AUR?
 
@@ -339,11 +340,11 @@ ssh aur@aur.archlinux.org vote <NOME_PACOTE>
 
 ### O que é um Trusted User / TU?
 
-Um [(Trusted User)](/index.php/AUR_Trusted_User_Guidelines_(Portugu%C3%AAs) "AUR Trusted User Guidelines (Português)"), abreviado como TU, é uma pessoa que é escolhida para supervisionar o AUR e o repositório [community](/index.php/Community_(Portugu%C3%AAs) "Community (Português)"). Eles são os que mantêm PKGBUILDs populares no *community* e de forma geral mantêm o AUR funcionando.
+Um [(Trusted User)](/index.php/AUR_Trusted_User_Guidelines_(Portugu%C3%AAs) "AUR Trusted User Guidelines (Português)"), abreviado como TU, é uma pessoa que é escolhida para supervisionar o AUR e o [repositório community](/index.php/Reposit%C3%B3rio_community "Repositório community"). Eles são os que mantêm PKGBUILDs populares no *community* e de forma geral mantêm o AUR funcionando.
 
 ### Qual é a diferença entre o Arch User Repository e repositório [community]?
 
-O Arch User Repository é onde todos os PKGBUILDs que os usuários submetem são armazenados e têm que ser compilados manualmente com [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"). Quando os PKGBUILDs recebem interesse e suporte suficiente da comunidade, eles são movidos para o repositório [community](/index.php/Community_(Portugu%C3%AAs) "Community (Português)") (mantido pelos TUs), onde os pacotes binários podem ser instalados com o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)").
+O Arch User Repository é onde todos os PKGBUILDs que os usuários submetem são armazenados e têm que ser compilados manualmente com [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)"). Quando os PKGBUILDs recebem interesse e suporte suficiente da comunidade, eles são movidos para o [repositório community](/index.php/Reposit%C3%B3rio_community "Repositório community") (mantido pelos TUs), onde os pacotes binários podem ser instalados com o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)").
 
 ### Foo no AUR está desatualizado; o que devo fazer?
 
@@ -381,7 +382,7 @@ Se quiser ter o seu PKGBUILD analisado, publique-o na [lista de discussão aur-g
 
 ### Como que faz para um PKGBUILD ir para o repositório *community*?
 
-Normalmente, são necessários pelo menos 10 votos para que alguma coisa seja transferida para [community](/index.php/Community_(Portugu%C3%AAs) "Community (Português)"). Contudo, se um TU tiver interesse em dar suporte a um pacote, geralmente este será encontrado no repositório.
+Normalmente, são necessários pelo menos 10 votos para que alguma coisa seja transferida para o [repositório community](/index.php/Reposit%C3%B3rio_community "Repositório community"). Contudo, se um TU tiver interesse em dar suporte a um pacote, geralmente este será encontrado no repositório.
 
 Atingir o mínimo de votos não é o único requisito, tem que haver um TU interessado em manter o pacote. TUs não são obrigados a mover um pacote para o repositório *community* mesmo se este tiver milhares de votos.
 
@@ -405,7 +406,7 @@ Veja também [Manutenção do sistema#Use pacotes de software aprovados](/index.
 
 ### Por que foo desapareceu do AUR?
 
-É possível que o pacote tenha sido adotado por um TU e agora esteja no repositório [community](/index.php/Community_(Portugu%C3%AAs) "Community (Português)").
+É possível que o pacote tenha sido adotado por um TU e agora esteja no [repositório community](/index.php/Reposit%C3%B3rio_community "Repositório community").
 
 Pacotes podem ter sido excluídos, se eles não preencherem as [#Regras de envio](#Regras_de_envio). Veja os [histórico do aur-requests](https://lists.archlinux.org/pipermail/aur-requests/) pelo motivo da exclusão.
 

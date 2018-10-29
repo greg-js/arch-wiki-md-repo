@@ -3,7 +3,7 @@ Este artículo es una traducción de [Core utilities](/index.php/Core_utilities 
 
 Artículos relacionados
 
-*   [Command-line shell](/index.php/Command-line_shell "Command-line shell")
+*   [Intérprete de línea de órdenes](/index.php/Command-line_shell_(Espa%C3%B1ol) "Command-line shell (Español)")
 *   [Usuarios y grupos](/index.php/Users_and_groups_(Espa%C3%B1ol) "Users and groups (Español)")
 *   [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)")
 *   [pacman](/index.php/Pacman_(Espa%C3%B1ol) "Pacman (Español)")
@@ -11,7 +11,7 @@ Artículos relacionados
 
 Las *utilidades principales* son las herramientas básicas y fundamentales de un sistema [GNU](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)")/[Linux](/index.php/Linux_(Espa%C3%B1ol) "Linux (Español)"). En Arch Linux se encuentran en el [grupo base](/index.php/Base_group "Base group"). Este artículo proporciona una visión general e incompleta de ellos, vincula su documentación y describe alternativas útiles. El alcance de este artículo incluye, pero no se limita, a [GNU coreutils](https://www.gnu.org/software/coreutils/coreutils.html). La mayoría de los servicios básicos son herramientas tradicionales [Unix](https://en.wikipedia.org/wiki/es:Unix "wikipedia:es:Unix") (véase [Heirloom](/index.php/Heirloom "Heirloom")) y muchos fueron estandarizados por [POSIX](https://en.wikipedia.org/wiki/es:POSIX "wikipedia:es:POSIX") pero se han seguido desarrollado para proporcionar más funciones.
 
-La mayoría de las interfaces de línea de comandos están documentadas en las [páginas del manual](/index.php/Man_page_(Espa%C3%B1ol) "Man page (Español)"), las utilidades del [Proyecto GNU](/index.php/GNU_Project_(Espa%C3%B1ol) "GNU Project (Español)") están documentadas en los [manuales de información](/index.php/Info_manual_(Espa%C3%B1ol) "Info manual (Español)"), algunos [intérpretes de comandos](/index.php/Shell "Shell") proporcionan un comando `help` para los comandos incorporados de la [línea de comandos](/index.php/Shell "Shell"). Además, la mayoría de los comandos imprimen su uso cuando se ejecutan con el indicador `--help`.
+La mayoría de las interfaces de línea de órdenes están documentadas en las [páginas del manual](/index.php/Man_page_(Espa%C3%B1ol) "Man page (Español)"), las utilidades del [Proyecto GNU](/index.php/GNU_Project_(Espa%C3%B1ol) "GNU Project (Español)") están documentadas en los [manuales de información](/index.php/Info_manual_(Espa%C3%B1ol) "Info manual (Español)"), algunos [intérpretes de órdenes](/index.php/Shell_(Espa%C3%B1ol) "Shell (Español)") proporcionan una orden `help` para las órdenes incorporadas de la [línea de órdenes](/index.php/Shell_(Espa%C3%B1ol) "Shell (Español)"). Además, la mayoría de las órdenes imprimen su uso cuando se ejecutan con el indicador `--help`.
 
 ## Contents
 
@@ -28,10 +28,10 @@ La mayoría de las interfaces de línea de comandos están documentadas en las [
 
 ## Esenciales
 
-La siguiente tabla enumera algunos comandos importantes con los que los usuarios de Arch Linux deben estar familiarizados. Véase también [intro(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/intro.1).
+La siguiente tabla lista algunas órdenes importantes con los que los usuarios de Arch Linux deben estar familiarizados. Véase también [intro(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/intro.1).
 
-| Paquete | Comando | Descripción | Documentación | Alternativas |
-| incluído en la línea de comandos | cd | cambia de directorio | [cd(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cd.1p) |
+| Paquete | Orden | Descripción | Documentación | Alternativas |
+| incluido en la línea de órdenes | cd | cambia de directorio | [cd(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cd.1p) |
 | GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) | ls | lista el directorio | [ls(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ls.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html) | [exa](https://www.archlinux.org/packages/?name=exa), [tree](https://www.archlinux.org/packages/?name=tree) |
 | cat | concatena archivos a la salida estándar | [cat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cat.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/cat-invocation.html) | [tac(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tac.1) |
 | mkdir | crea un directorio | [mkdir(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkdir.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/mkdir-invocation.html) |
@@ -63,16 +63,16 @@ La siguiente tabla enumera algunos comandos importantes con los que los usuarios
 
 ### Previniendo la pérdida de datos
 
-rm, mv, cp y las redirecciones de la línea de comandos eliminan o sobrescriben archivos sin preguntar. rm, mv y cp son compatibles con el indicador `-i` para avisar al usuario antes de cada eliminación / sobreescritura. A algunos usuarios les gusta habilitar el indicador `-i` de forma predeterminada utilizando [alias](/index.php/Alias_(Espa%C3%B1ol) "Alias (Español)"). Sin embargo, estas configuraciones de la línea de comandos son peligrosas porque te acostumbra a ellas, lo que da como resultado la posible pérdida de datos cuando utiliza otro sistema o usuario que no tiene dicho indicador. La mejor forma de evitar la pérdida de datos es hacer [copias de seguridad](/index.php/Backup "Backup").
+rm, mv, cp y las redirecciones de la línea de órdenes eliminan o sobrescriben archivos sin preguntar. rm, mv y cp son compatibles con el indicador `-i` para avisar al usuario antes de cada eliminación / sobreescritura. A algunos usuarios les gusta habilitar el indicador `-i` de forma predeterminada utilizando [alias](/index.php/Alias_(Espa%C3%B1ol) "Alias (Español)"). Sin embargo, estas configuraciones de la línea de órdenes son peligrosas porque te acostumbra a ellas, lo que da como resultado la posible pérdida de datos cuando utiliza otro sistema o usuario que no tiene dicho indicador. La mejor forma de evitar la pérdida de datos es hacer [copias de seguridad](/index.php/Backup "Backup").
 
 ## No esenciales
 
 Esta tabla enumera las utilidades principales que a menudo son útiles.
 
-| Paquete | Comando | Descripción | Documentación | Alternativas |
-| incluidos en la línea de comandos | alias | define o muestra los alias | [alias(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alias.1p) |
-| type | imprime el tipo de un comando | [type(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/type.1p) | [which(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/which.1) |
-| time | temporiza un comando | [time(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/time.1p) |
+| Paquete | Orden | Descripción | Documentación | Alternativas |
+| incluidos en la línea de órdenes | alias | define o muestra los alias | [alias(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alias.1p) |
+| type | imprime el tipo de una orden | [type(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/type.1p) | [which(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/which.1) |
+| time | temporiza una orden | [time(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/time.1p) |
 | GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) | tee | lee de la entrada estándar y escribe en la salida estándar y archivos | [tee(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tee.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/tee-invocation.html) |
 | mktemp | crea un archivo o directorio temporal | [mktemp(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mktemp.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html) |
 | cut | imprime partes seleccionadas de líneas | [cut(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cut.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/cut-invocation.html) |
@@ -153,7 +153,7 @@ Las siguientes tres herramientas tienen como objetivo reemplazar grep para la b�
 
 #### Filtros interactivos
 
-*   **[fzf](/index.php/Fzf "Fzf")** — Buscador difuso de línea de comandos de propósito general, potenciado por find por defecto.
+*   **[fzf](/index.php/Fzf "Fzf")** — Buscador difuso de línea de órdenes de propósito general, potenciado por find por defecto.
 
 	[Https://github.com/junegunn/fzf](Https://github.com/junegunn/fzf) || [fzf](https://www.archlinux.org/packages/?name=fzf), [fzf-git](https://aur.archlinux.org/packages/fzf-git/)
 
@@ -165,7 +165,7 @@ Las siguientes tres herramientas tienen como objetivo reemplazar grep para la b�
 
 	[Https://github.com/peco/peco](Https://github.com/peco/peco) || [peco](https://aur.archlinux.org/packages/peco/), [peco-git](https://aur.archlinux.org/packages/peco-git/)
 
-*   **percol** — Añade algo del filtrado interactivo al concepto de conducto (pipe) tradicional del intérprete de comandos de UNIX.
+*   **percol** — Añade algo del filtrado interactivo al concepto de conducto (pipe) tradicional del intérprete de línea de órdenes de UNIX.
 
 	[Https://github.com/mooz/percol](Https://github.com/mooz/percol) || [percol](https://www.archlinux.org/packages/?name=percol), [percol-git](https://aur.archlinux.org/packages/percol-git/)
 

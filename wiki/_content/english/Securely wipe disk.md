@@ -89,7 +89,7 @@ Disassembling Flash memory devices, unsoldering the chips and analyzing data con
 
 For more information see:
 
-*   [SSD memory cell clearing](/index.php/SSD_memory_cell_clearing "SSD memory cell clearing")
+*   [Solid state drive/Memory cell clearing](/index.php/Solid_state_drive/Memory_cell_clearing "Solid state drive/Memory cell clearing")
 *   [Reliably Erasing Data From Flash-Based Solid State Drives](http://www.usenix.org/events/fast11/tech/full_papers/Wei.pdf).
 *   [#Select a target](#Select_a_target)
 
@@ -103,9 +103,7 @@ A single, full overwrite with zeros or random data does not lead to any recovera
 
 ## Select a target
 
-**Note:** Fdisk will not work on [GPT](/index.php/GPT "GPT") formatted devices. Use gdisk ([gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)) instead.
-
-Use fdisk to locate all read/write devices the user has read acess to.
+Use [fdisk](/index.php/Fdisk "Fdisk") to locate all read/write devices the user has read access to.
 
 Check the output for lines that start with devices such as `/dev/sd"X"`.
 
@@ -122,6 +120,7 @@ Disk identifier: 0x00ff784a
    Device Boot      Start         End      Blocks   Id  System
 /dev/sda1   *        2048      206847      102400   83  Linux
 /dev/sda2          206848   488397167   244095160   83  Linux
+
 ```
 
 Or the Arch Install Medium written to a 4GB USB thumb drive:
@@ -136,6 +135,7 @@ Disk identifier: 0x526e236e
 
    Device Boot      Start         End      Blocks   Id  System
 /dev/sdb1   *           0      802815      401408   17  Hidden HPFS/NTFS
+
 ```
 
 If you are worried about unintentional damage of important data on the primary computer, consider using an isolated environment such as a virtual environment (VirtualBox, VMWare, QEMU, etc...) with direct connected disk drives to it or a single computer only with a storage disk(s) that need to be wiped booted from a [Live Media](/index.php/Archiso "Archiso")(USB, CD, PXE, etc...) or use a script to [prevent wiping mounted partitions by typo](/index.php/Securely_wipe_disk/Tips_and_tricks#Prevent_wiping_mounted_partitions "Securely wipe disk/Tips and tricks").
@@ -160,7 +160,7 @@ If you have an [Advanced Format](/index.php/Advanced_Format "Advanced Format") h
 
 **Warning:** These methods show the block size the drive reports to the kernel. However, many Advanced Format drives incorrectly understate the physical block size as 512.
 
-**Tip:** This script helps to calculate parameters to wipe a device/partition with dd [genwipe.sh](https://aur.archlinux.org/packages/genwipe.sh/), e.g. `genwipe.sh /dev/sd"XY"`.
+**Tip:** This script helps to calculate parameters to wipe a device/partition with dd [genwipe.sh](https://aur.archlinux.org/packages/genwipe.sh/), e.g.`genwipe.sh /dev/sd"XY"`.
 
 ### Calculate blocks to wipe manually
 
@@ -289,7 +289,17 @@ The redirected output can be used both for creation of the files to rewrite free
 
 In the following are examples that can be used to rewrite the partition or a block device by redirecting [stdout](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-3.html) from other utilities:
 
- `$ cat /dev/urandom > /dev/sd"XY"`  `cat: write error: No space left on device`  `$ xz -z0 /dev/urandom -c > /dev/sd"XY"`  `xz: (stdout): Write error: No space left on device`  `$ dd if=/dev/urandom > /dev/sd"XY"` 
+ `$ cat /dev/urandom > /dev/sd"XY"` 
+```
+cat: write error: No space left on device
+
+```
+ `$ xz -z0 /dev/urandom -c > /dev/sd"XY"` 
+```
+xz: (stdout): Write error: No space left on device
+
+```
+ `$ dd if=/dev/urandom > /dev/sd"XY"` 
 ```
 dd: writing to ‘standard output’: No space left on device
 20481+0 records in
@@ -303,6 +313,7 @@ The file copy command `cp` can also be used to rewrite the device, because it ig
 ```
  cp: error writing ‘/dev/sd"XY"’: No space left on device
  cp: failed to extend ‘/dev/sd"XY"’: No space left on device
+
 ```
 
 To show speed and time you can use [pv](https://www.archlinux.org/packages/?name=pv):

@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall"), revisada por última vez el **2018-09-05**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Simple_stateful_firewall&diff=0&oldid=538197) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 Artículos relacionados
 
 *   [Firewalls](/index.php/Firewalls "Firewalls")
@@ -5,9 +8,6 @@ Artículos relacionados
 *   [Nftables#Simple stateful firewall](/index.php/Nftables#Simple_stateful_firewall "Nftables")
 *   [Router](/index.php/Router "Router")
 *   [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall")
-
-**Estado de la traducción**
-Este artículo es una traducción de [Simple stateful firewall](/index.php/Simple_stateful_firewall "Simple stateful firewall"), revisada por última vez el **2018-09-05**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Simple_stateful_firewall&diff=0&oldid=538197) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 	Según [Wikipedia (en inglés)](https://en.wikipedia.org/wiki/Stateful_firewall "wikipedia:Stateful firewall")
 

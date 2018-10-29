@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2018-09-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=543459) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=549207) na versão em inglês.
 
 Artigos relacionados
 
@@ -18,14 +18,16 @@ Esse artigo explica como configurar uma conexão de rede.
     *   [2.1 Verificando o estado](#Verificando_o_estado)
     *   [2.2 Carregando o módulo](#Carregando_o_m.C3.B3dulo)
 *   [3 Gerenciamento de rede](#Gerenciamento_de_rede)
-    *   [3.1 Interfaces de rede](#Interfaces_de_rede)
-        *   [3.1.1 Listando interfaces de rede](#Listando_interfaces_de_rede)
-        *   [3.1.2 Habilitando e desabilitando interfaces de rede](#Habilitando_e_desabilitando_interfaces_de_rede)
-    *   [3.2 Endereço IP estático](#Endere.C3.A7o_IP_est.C3.A1tico)
-    *   [3.3 Endereços IP](#Endere.C3.A7os_IP)
-    *   [3.4 Tabela de roteamento](#Tabela_de_roteamento)
-    *   [3.5 DHCP](#DHCP)
-    *   [3.6 Gerenciadores de rede](#Gerenciadores_de_rede)
+    *   [3.1 net-tools](#net-tools)
+    *   [3.2 iproute2](#iproute2)
+    *   [3.3 Interfaces de rede](#Interfaces_de_rede)
+        *   [3.3.1 Listando interfaces de rede](#Listando_interfaces_de_rede)
+        *   [3.3.2 Habilitando e desabilitando interfaces de rede](#Habilitando_e_desabilitando_interfaces_de_rede)
+    *   [3.4 Endereço IP estático](#Endere.C3.A7o_IP_est.C3.A1tico)
+    *   [3.5 Endereços IP](#Endere.C3.A7os_IP)
+    *   [3.6 Tabela de roteamento](#Tabela_de_roteamento)
+    *   [3.7 DHCP](#DHCP)
+    *   [3.8 Gerenciadores de rede](#Gerenciadores_de_rede)
 *   [4 Configurando um hostname](#Configurando_um_hostname)
     *   [4.1 Resolução de hostname local](#Resolu.C3.A7.C3.A3o_de_hostname_local)
     *   [4.2 Resolução de hostname de rede local](#Resolu.C3.A7.C3.A3o_de_hostname_de_rede_local)
@@ -92,7 +94,7 @@ Para cada resposta que você recebe, o ping imprime uma linha como acima. Para m
 
 Observe que os computadores podem ser configurados para não responder às solicitações de echo ICMP.[[1]](https://unix.stackexchange.com/questions/412446/how-to-disable-ping-response-icmp-echo-in-linux-all-the-time)
 
-Quando você não receber nenhuma resposta, você pode usar um [traceroute](https://en.wikipedia.org/wiki/pt:traceroute "wikipedia:pt:traceroute") ([traceroute(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/traceroute.8) ou [tracepath(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tracepath.8)) para diagnosticar ainda mais a rota para o host.
+Quando você não receber nenhuma resposta, você pode executar um [traceroute](/index.php/Traceroute_(Portugu%C3%AAs) "Traceroute (Português)") para diagnosticar ainda mais a rota para o host.
 
 **Nota:** Se você receber um erro como `ping: icmp open socket: Operation not permitted` ao executar *ping*, tente reinstalar o pacote [iputils](https://www.archlinux.org/packages/?name=iputils).
 
@@ -138,9 +140,23 @@ Para configurar uma conexão de rede, siga as etapas abaixo:
     *   [endereço IP estático](#Endere.C3.A7o_IP_est.C3.A1tico)
     *   endereço IP dinâmico: use [DHCP](#DHCP)
 
-Arch Linux tornou obsoleto o [ifconfig](https://en.wikipedia.org/wiki/pt:ifconfig "wikipedia:pt:ifconfig") em favor do [iproute2](https://en.wikipedia.org/wiki/iproute2 "wikipedia:iproute2") (parte do [base](https://www.archlinux.org/groups/x86_64/base/)). *iproute2* fornece a interface de linha de comando [ip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8), usada para gerenciar to [interfaces de rede](#Interfaces_de_rede), [endereços IP](#Endere.C3.A7os_IP) e a [tabela de roteamento](#Tabela_de_roteamento). Esteja ciente que a configuração feita usando `ip` será perdida após a reinicialização. Para uma configuração persistente, você pode usar um [gerenciador de rede](/index.php/Gerenciador_de_rede "Gerenciador de rede") ou automatizar comandos *ip* usando scripts e [units de systemd](/index.php/Systemd_(Portugu%C3%AAs)#Escrevendo_arquivos_unit "Systemd (Português)"). Note também que os comandos `ip` geralmente podem ser abreviados, mas por melhor entendimento eles foram escritos na versão longa neste artigo.
+**Nota:** A imagem de instalação habilita [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (`dhcpcd@*interface*.service`) para [dispositivos de rede cabeada](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) na inicialização.
 
-**Nota:** A imagem de instalação habilita [dhcpcd](/index.php/Dhcpcd "Dhcpcd") (`dhcpcd@*interface*.service`) para [dispositivos de rede cabeados](https://git.archlinux.org/archiso.git/tree/configs/releng/airootfs/etc/udev/rules.d/81-dhcpcd.rules) na inicialização.
+### net-tools
+
+Arch Linux tornou [net-tools](https://www.archlinux.org/packages/?name=net-tools) obsoleto em favor do [iproute2](https://www.archlinux.org/packages/?name=iproute2).[[2]](https://www.archlinux-br.org/noticias/155/)
+
+| Comando obsoleto | Comandos substitutos |
+| arp | ip neighbor |
+| [ifconfig](https://en.wikipedia.org/wiki/pt:ifconfig "wikipedia:pt:ifconfig") | ip address, ip link |
+| netstat | [ss](#Investigar_soquetes) |
+| route | ip route |
+
+Para um resumo mais completo, veja [essa publicação de blogue](https://dougvitale.wordpress.com/2011/12/21/deprecated-linux-networking-commands-and-their-replacements/).
+
+### iproute2
+
+[iproute2](https://en.wikipedia.org/wiki/iproute2 "wikipedia:iproute2") faz parte do [grupo base](/index.php/Grupo_de_pacotes "Grupo de pacotes") e fornece a interface de linha de comando [ip(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ip.8), usado para gerenciar [interfaces de rede](#Interfaces_de_rede), [endereços IP](#Endere.C3.A7os_IP) e a [tabela de roteamento](#Tabela_de_roteamento). Esteja ciente de que a configuração feita usando `ip` será perdida após uma reinicialização. Para uma configuração persistente, você pode usar um [gerenciador de rede](/index.php/Gerenciador_de_rede "Gerenciador de rede") ou automatizar comandos *ip* usando scripts e [units de systemd](/index.php/Systemd_(Portugu%C3%AAs)#Escrevendo_arquivos_unit "Systemd (Português)"). Observe também que os comandos `ip` geralmente podem ser abreviados, para maior clareza eles são descritos neste artigo.
 
 ### Interfaces de rede
 
@@ -272,7 +288,7 @@ Um gerenciador de rede permite que você gerencie configurações de conexão de
 **Nota:** Existem muitas soluções para escolher, mas lembre-se de que todas elas são mutuamente exclusivas; você não deve executar dois daemons simultaneamente.
 
 | Gerenciador
-de rede | GUI | [Archiso](/index.php/Archiso "Archiso") [[2]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) | Ferramentas CLI | Suporte a [PPP](https://en.wikipedia.org/wiki/pt:Point-to-Point_Protocol "wikipedia:pt:Point-to-Point Protocol") (ex., Modem 3G) | [Cliente DHCP](#DHCP) | Units de systemd |
+de rede | GUI | [Archiso](/index.php/Archiso "Archiso") [[3]](https://git.archlinux.org/archiso.git/tree/configs/releng/packages.x86_64) | Ferramentas CLI | Suporte a [PPP](https://en.wikipedia.org/wiki/pt:Point-to-Point_Protocol "wikipedia:pt:Point-to-Point Protocol") (ex., Modem 3G) | [Cliente DHCP](#DHCP) | Units de systemd |
 | [ConnMan](/index.php/ConnMan "ConnMan") | 8 não oficiais | Não | [connmanctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/connmanctl.1) | Sim | interno | `connman.service` |
 | [netctl](/index.php/Netctl "Netctl") | 2 não oficiais | Sim ([base](https://www.archlinux.org/groups/x86_64/base/)) | [netctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/netctl.1), wifi-menu | Sim | [dhcpcd](/index.php/Dhcpcd "Dhcpcd") ou [dhclient](https://www.archlinux.org/packages/?name=dhclient) | `netctl-ifplugd@*interface*.service`, `netctl-auto@*interface*.service` |
 | [NetworkManager](/index.php/NetworkManager_(Portugu%C3%AAs) "NetworkManager (Português)") | Sim | Não | [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1), [nmtui(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1) | Sim | interno, [dhcpcd](/index.php/Dhcpcd "Dhcpcd") ou [dhclient](https://www.archlinux.org/packages/?name=dhclient) | `NetworkManager.service` |
@@ -313,9 +329,9 @@ Para configurar um hostname "bonito" e outros metadados de máquina, veja [machi
 
 ### Resolução de hostname local
 
-O módulo [Name Service Switch](/index.php/NSS_(Portugu%C3%AAs) "NSS (Português)") (NSS) `myhostname` do [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") fornece resolução de hostname local sem ter que editar `/etc/hosts` ([hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5)). Ele está habilitado por padrão.
+O módulo [Name Service Switch](/index.php/Name_Service_Switch_(Portugu%C3%AAs) "Name Service Switch (Português)") (NSS) `myhostname` do [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") fornece resolução de hostname local sem ter que editar `/etc/hosts` ([hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5)). Ele está habilitado por padrão.
 
-Alguns clientes, porém, podem depender de `/etc/hosts`, veja [[3]](https://lists.debian.org/debian-devel/2013/07/msg00809.html) [[4]](https://bugzilla.mozilla.org/show_bug.cgi?id=87717#c55) por exemplos.
+Alguns clientes, porém, podem depender de `/etc/hosts`, veja [[4]](https://lists.debian.org/debian-devel/2013/07/msg00809.html) [[5]](https://bugzilla.mozilla.org/show_bug.cgi?id=87717#c55) por exemplos.
 
 Para configurar o arquivo hosts, adicione a seguinte linha ao `/etc/hosts`:
 
@@ -550,7 +566,7 @@ Há também vários tópicos relevantes no LKML.
 
 ### Notificação de Congestionamento Explícito
 
-[Explicit Congestion Notification](https://en.wikipedia.org/wiki/Explicit_Congestion_Notification "wikipedia:Explicit Congestion Notification") (ECN), Notificação de Congestionamento Explícito, pode causar problemas de tráfego com roteadores antigos/ruins [[5]](https://bbs.archlinux.org/viewtopic.php?id=239892). Desde o [systemd 239](https://github.com/systemd/systemd/issues/9748), está habilitado para tráfego de entrada e de saída.
+[Explicit Congestion Notification](https://en.wikipedia.org/wiki/Explicit_Congestion_Notification "wikipedia:Explicit Congestion Notification") (ECN), Notificação de Congestionamento Explícito, pode causar problemas de tráfego com roteadores antigos/ruins [[6]](https://bbs.archlinux.org/viewtopic.php?id=239892). Desde o [systemd 239](https://github.com/systemd/systemd/issues/9748), está habilitado para tráfego de entrada e de saída.
 
 Para habilitar apenas ECN quando requisitado pelas conexões de entrada (padrão do kernel razoavelmente seguro):
 

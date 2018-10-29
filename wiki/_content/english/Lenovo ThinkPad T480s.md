@@ -87,7 +87,7 @@ Fingerprint sensor 06cb:009a is not supported by libfprint right now. There is a
 
 Without special configuration and with default firmware settings, power usage is a bit high (around 7,5W in idle). There are a few knobs to improve battery life:
 
-**Warning:** Changing Thunderbolt BIOS options has been reported to irreversibly brick ThinkPads. This is a BIOS bug. Until there is more information available on that matter (or a fix underway), use these options with care.
+**Warning:** Changing Thunderbolt BIOS options has been reported to irreversibly brick ThinkPads [[1]](https://forums.lenovo.com/t5/ThinkPad-P-and-W-Series-Mobile/Lenovo-P52-bricked-by-selecting-BIOS-thunderbolt-support-for/td-p/4207538) [[2]](https://www.notebookcheck.net/Some-recent-ThinkPads-can-be-destroyed-by-changing-a-UEFI-BIOS-setting.346156.0.html) [[3]](https://www.reddit.com/r/thinkpad/comments/9qmqd2/thinkpad_p1_serious_issue_with_bricked_bios/). This is a BIOS bug. Until there is more information available on that matter (or a fix underway), use these options with care.
 
 *   Set "Thunderbolt BIOS Assist Mode" to "Enabled" in the EFI firmware interface. This seems to reduce number of idle wakeups.
 *   Disable unused peripherals under "Security" -> "I/O port access" in the firmware. This especially applies to the SD/MMC-cardreader, which seems to drain some power even when idle
@@ -96,7 +96,7 @@ As of Kernel 4.15, DisplayPort PSR (Panel self refresh) is disabled by default a
 
 ## Thermal Throttling Fix
 
-Workaround for Linux throttling issues on Lenovo T480 / T480s / X1C6 notebooks as described here.
+Workaround for Linux throttling issues on Lenovo T480 / T480s / X1C6 notebooks as described [here](https://www.reddit.com/r/thinkpad/comments/870u0a/t480s_linux_throttling_bug/).
 
 This script forces the CPU package power limit (PL1/2) to 44 W (29 W on battery) and the temperature trip point to 95 'C (85 'C on battery) by overriding default values in MSR and MCHBAR every 5 seconds (30 on battery) to block the Embedded Controller from resetting these values to default.
 

@@ -14,7 +14,7 @@ Related articles
 
 ## Installation
 
-Install [sickrage](https://aur.archlinux.org/packages/sickrage/) or [sickrage-git](https://aur.archlinux.org/packages/sickrage-git/). Or install [sickrage2-git](https://aur.archlinux.org/packages/sickrage2-git/), a fork of sickrage. It contains the application and a systemd service file.
+Install [sickrage](https://aur.archlinux.org/packages/sickrage/) or [sickrage-git](https://aur.archlinux.org/packages/sickrage-git/). Or install [sickrage2-git](https://aur.archlinux.org/packages/sickrage2-git/), a fork of sickrage. Note: this fork is now called SickChill. It contains the application and a systemd service file.
 
 ### Running as a systemd service
 

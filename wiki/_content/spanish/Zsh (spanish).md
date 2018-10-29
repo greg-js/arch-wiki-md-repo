@@ -69,7 +69,7 @@ $ zsh /usr/share/zsh/functions/Newuser/zsh-newuser-install -f
 
 ### Hacer que Zsh sea la shell por defecto
 
-Consulte [Command-line shell (Español)#Cambiando la shell por defecto](/index.php?title=Command-line_shell_(Espa%C3%B1ol)&action=edit&redlink=1 "Command-line shell (Español) (page does not exist)").
+Consulte [Command-line shell (Español)#Cambiando la shell por defecto](/index.php/Command-line_shell_(Espa%C3%B1ol)#Cambiando_la_shell_por_defecto "Command-line shell (Español)").
 
 **Sugerencia:** Si va a remplazar [bash](https://www.archlinux.org/packages/?name=bash), puede que quiera mover parte del código de `~/.bashrc` a `~/.zshrc` (p. ej: la definición del prompt y los [alias](/index.php/Bash_(Espa%C3%B1ol)#Alias "Bash (Español)") y de `~/.bash_profile` a `~/.zprofile` (p. ej:Xinitrc (Español)
 

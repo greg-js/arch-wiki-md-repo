@@ -51,7 +51,7 @@ Las columnas tienen el siguiente significado:
 
 	Un asterisco denota funcionalidad habilitada específicamente por el usuario.
 
-*   **Completado de shell**: [tab completion](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion") está disponible para los [shells](/index.php/Shell "Shell") listados.
+*   **Completado de shell**: [tab completion](https://en.wikipedia.org/wiki/Command-line_completion "w:Command-line completion") está disponible para los [intérpretes de línea de órdenes](/index.php/Shell_(Espa%C3%B1ol) "Shell (Español)") listados.
 
 **Nota:**
 

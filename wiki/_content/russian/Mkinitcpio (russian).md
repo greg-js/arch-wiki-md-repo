@@ -165,7 +165,7 @@ BINARIES="kexec"
 
 Параметр `HOOKS` наиболее важный в файле настроек. Хуки - это небольшие скрипты, которые описывают что будет добавлено к образу, а также дополнительные действия, выполняемые при загрузке системы. Хуки указываются по имени и выполняются по порядку.
 
-The default `HOOKS` setting should be sufficient for most simple, single disk setups. For root devices which are stacked or multi-block devices such as [LVM](/index.php/LVM "LVM"), [mdadm](/index.php/Software_RAID_and_LVM "Software RAID and LVM"), or [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), see the respective wiki pages for further necessary configuration.
+Значение по умолчанию для `HOOKS` должно быть достаточным для большинства простых установок с одним диском. Для корневых устройств, которые являются многоуровневыми или многоблочными устройствами, такими как [LVM](/index.php/LVM "LVM"), [mdadm](/index.php/Software_RAID_and_LVM "Software RAID and LVM") или [dm-crypt](/index.php/Dm-crypt "Dm-crypt"), см. cоответствующие страницы вики для дальнейшей необходимой конфигурации.
 
 #### Build hooks
 
@@ -187,15 +187,15 @@ $ mkinitcpio -H udev
 
 #### Runtime hooks
 
-Runtime hooks - хуки выполняемые в initramfs. Располагаются в `/usr/lib/initcpio/hooks`. Для любого runtime хука существует хук сборки с таким же именем, в котором имеется вызов `add_runscript`, указывающий на добавление runtime хука в образ. Они запускаются по порядку записи в `HOOKS` за исключением cleanup хуков. Runtime хуки могут содержать несколько функций:
+Runtime hooks - хуки периода выполнения располагаются в `/usr/lib/initcpio/hooks`, пользовательские хуки могут быть помещены в `/etc/initcpio/hooks` Для любого хука периода исполнения всегда должен быть хук сборки с тем же именем, в котором имеется вызов `add_runscript`, указывающий на добавление хука периода исполнения в образ. Эти файлы обрабатываются командным интерпретатором ash из busybox во время раннего пользовательского пространства. Они запускаются по порядку записи в `HOOKS` за исключением хуков очистки. Runtime хуки могут содержать несколько функций:
 
-`run_earlyhook`: Functions of this name will be run once the API file systems have been mounted and the kernel command line has been parsed. This is generally where additional daemons, such as udev, which are needed for the early boot process are started from.
+`run_earlyhook`: Функции с таким именем будут запускаться однажды после установки API файловых систем и обработки командной строки ядра. Как правило, здесь запускаются дополнительные демоны, такие как udev, необходимые для раннего процесса загрузки.
 
-`run_hook`: Functions of this name are run shortly after the early hooks. This is the most common hook point, and operations such as assembly of stacked block devices should take place here.
+`run_hook`: Функции с таким именем запускаются вскоре после ранних хуков. Это наиболее распространенная точка хуков, и здесь должны выполняться операции, такие как сборка многоуровневых блочных устройств.
 
-`run_latehook`: Functions of this name are run after the root device has been mounted. This should be used, sparingly, for further setup of the root device, or for mounting other file systems, such as `/usr`.
+`run_latehook`: Функции c этим именем запускаются после установки корневого устройства. Это следует использовать, умеренно, для дальнейшей настройки корневого устройства или для установки других файловых систем, таких как `/usr`.
 
-`run_cleanuphook`: Functions of this name are run as late as possible, and in the reverse order of how they are listed in the `HOOKS` setting in the config file. These hooks should be used for any last minute cleanup, such as shutting down any daemons started by an early hook.
+`run_cleanuphook`: Функции с этим именем запускаются как можно позже, и в порядке обратном, порядку их перечисления в `HOOKS` файла конфигурации. Эти хуки должны использоваться для любой очистки в последнюю минуту, например, для закрытия всех демонов, запущенных ранними хуками.
 
 #### Доступные хуки
 

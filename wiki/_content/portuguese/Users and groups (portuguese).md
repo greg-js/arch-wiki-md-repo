@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2018-09-28\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=544159) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=550515) na versão em inglês.
 
 Artigos relacionados
 
@@ -13,23 +13,22 @@ Usuários e grupos são usados no GNU/Linux para [controle de acesso](https://en
 
 *   [1 Visão geral](#Vis.C3.A3o_geral)
 *   [2 Permissões e propriedade](#Permiss.C3.B5es_e_propriedade)
-*   [3 Lista de arquivos](#Lista_de_arquivos)
-*   [4 Gerenciamento de usuário](#Gerenciamento_de_usu.C3.A1rio)
-    *   [4.1 Exemplo de adicionar um usuário](#Exemplo_de_adicionar_um_usu.C3.A1rio)
-    *   [4.2 Exemplo de adicionar um usuário do sistema](#Exemplo_de_adicionar_um_usu.C3.A1rio_do_sistema)
-    *   [4.3 Alterar um nome de login ou diretório home do usuário](#Alterar_um_nome_de_login_ou_diret.C3.B3rio_home_do_usu.C3.A1rio)
-    *   [4.4 Outros exemplos de gerenciamento de usuário](#Outros_exemplos_de_gerenciamento_de_usu.C3.A1rio)
-*   [5 Base de dados de usuários](#Base_de_dados_de_usu.C3.A1rios)
-*   [6 Gerenciamento de grupo](#Gerenciamento_de_grupo)
-*   [7 Lista de grupos](#Lista_de_grupos)
-    *   [7.1 Grupos de usuário](#Grupos_de_usu.C3.A1rio)
-    *   [7.2 Grupos de sistema](#Grupos_de_sistema)
-    *   [7.3 Grupos pré-systemd](#Grupos_pr.C3.A9-systemd)
-    *   [7.4 Grupos sem uso](#Grupos_sem_uso)
+*   [3 Shadow](#Shadow)
+*   [4 Lista de arquivos](#Lista_de_arquivos)
+*   [5 Gerenciamento de usuário](#Gerenciamento_de_usu.C3.A1rio)
+    *   [5.1 Exemplo de adicionar um usuário](#Exemplo_de_adicionar_um_usu.C3.A1rio)
+    *   [5.2 Exemplo de adicionar um usuário do sistema](#Exemplo_de_adicionar_um_usu.C3.A1rio_do_sistema)
+    *   [5.3 Alterar um nome de login ou diretório home do usuário](#Alterar_um_nome_de_login_ou_diret.C3.B3rio_home_do_usu.C3.A1rio)
+    *   [5.4 Outros exemplos de gerenciamento de usuário](#Outros_exemplos_de_gerenciamento_de_usu.C3.A1rio)
+*   [6 Base de dados de usuários](#Base_de_dados_de_usu.C3.A1rios)
+*   [7 Gerenciamento de grupo](#Gerenciamento_de_grupo)
+*   [8 Lista de grupos](#Lista_de_grupos)
+    *   [8.1 Grupos de usuário](#Grupos_de_usu.C3.A1rio)
+    *   [8.2 Grupos de sistema](#Grupos_de_sistema)
+    *   [8.3 Grupos pré-systemd](#Grupos_pr.C3.A9-systemd)
+    *   [8.4 Grupos sem uso](#Grupos_sem_uso)
 
 ## Visão geral
-
-	*"root" redireciona aqui. Para o diretório raiz (root), veja [Partitioning#/](/index.php/Partitioning#.2F "Partitioning").*
 
 Um *usuário* é qualquer pessoa que use um computador. Nesse caso, estamos descrevendo os nomes que representam esses usuários. Pode ser Maria ou Guilherme, e eles podem usar os nomes SraDragao ou Pirata no lugar de seu nome real. Tudo o que importa é que o computador possui um nome para cada conta que ele cria, e é esse o nome pelo qual uma pessoa ganha acesso para usar o computador. Alguns serviços do sistema também são executados usando contas de usuários restritas ou privilegiadas.
 
@@ -123,6 +122,10 @@ Liste arquivos que pertencem a um usuário ou grupo com o utilitário *find*:
 O usuário e o grupo donos de um arquivo podem ser alterados com o comando [chown](/index.php/Chown "Chown") (*change owner* ou mudar o dono). As permissões de acesso a um arquivo podem ser alteradas com o comando [chmod](/index.php/Chmod "Chmod") (*change mode* ou mudar o modo).
 
 Veja [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1) e [Permissões de acesso a arquivos e diretórios](http://www.guiafoca.org/cgs/guia/inic_interm/ch-perm.html) para detalhes adicionais.
+
+## Shadow
+
+As ferramentas de gerenciamento de usuários, grupos e senhas no Arch Linux vem com o pacote [shadow](https://www.archlinux.org/packages/?name=shadow), que é parte do [grupo base](/index.php/Grupo_de_pacotes "Grupo de pacotes").
 
 ## Lista de arquivos
 
@@ -353,8 +356,6 @@ O comando *pwck* pode ser usado para verificar a integridade da base de dados de
 **Nota:** Os padrões do Arch Linux dos arquivos são criados como arquivos *.pacnew* pelas novas versões do pacote [filesystem](https://www.archlinux.org/packages/?name=filesystem). A menos que o *pacman* emita mensagens relacionadas para ação, esses arquivos *.pacnew* podem, e devem, ser desconsiderados/removidos. Novos usuários e grupos padrão obrigatórios são adicionados ou re-adicionados conforme necessário por [systemd-sysusers(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-sysusers.8).
 
 ## Gerenciamento de grupo
-
-	*"Grupo" redireciona para aqui. Para grupos de pacotes, veja [Grupo de pacotes](/index.php/Grupo_de_pacotes "Grupo de pacotes").*
 
 `/etc/group` é o arquivo que define os grupos no sistema (veja [group(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) para detalhes).
 

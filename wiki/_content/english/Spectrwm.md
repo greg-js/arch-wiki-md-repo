@@ -27,6 +27,10 @@ Spectrwm is written in C and configured with a text configuration file. It was p
 
 [Install](/index.php/Install "Install") the [spectrwm](https://www.archlinux.org/packages/?name=spectrwm) package.
 
+You will need to set an available font for the status bar. Check installed fonts with the `fc-list` command and set one in the `bar_font` field in your local configuration file. For example:
+
+ `~/.spectrwm.conf`  `bar_font = *xos4 Terminus:pixelsize=14*` 
+
 The modkey (the main key to issue commands with) is set to Mod4, which is usually the `Super` key.
 
 There is also a screen lock key binding, which by default calls xlock from the [xlockmore](https://www.archlinux.org/packages/?name=xlockmore) package.

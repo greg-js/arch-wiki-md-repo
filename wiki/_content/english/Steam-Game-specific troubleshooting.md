@@ -255,6 +255,7 @@
         *   [5.116.3 No audio](#No_audio_4)
         *   [5.116.4 Slow loading textures](#Slow_loading_textures)
     *   [5.117 Terraria](#Terraria)
+        *   [5.117.1 Input Issues](#Input_Issues)
     *   [5.118 This War of Mine](#This_War_of_Mine)
         *   [5.118.1 Game does not start](#Game_does_not_start_12)
         *   [5.118.2 Sound glitches with Steam native](#Sound_glitches_with_Steam_native)
@@ -2123,6 +2124,12 @@ If you are using Chris' FPS Configs or any other FPS config, you may have set `m
 ### Terraria
 
 See the KNOWN ISSUES & WORKAROUNDS​ section of the [release announcement](http://forums.terraria.org/index.php?threads/terraria-1-3-0-8-can-mac-linux-come-out-play.30287/).
+
+#### Input Issues
+
+The symptoms of this problem are: When moving after standing still, your character seems to vary their speed, if wearing running boots they don't activate. When jumping with an item for double jumping sometimes you double jump even if you just jumped once. Going up/down ropes seems slow/choppy.
+
+The solution is to preload the system SDL2 libraries: `LD_PRELOAD='/usr/$LIB/libSDL2-2.0.so:/usr/lib32/libSDL2-2.0.so'` For more information: [Terraria Forums](https://forums.terraria.org/index.php?threads/keyboard-input-bug-involving-linux.56763/page-2#post-1533051)
 
 ### This War of Mine
 

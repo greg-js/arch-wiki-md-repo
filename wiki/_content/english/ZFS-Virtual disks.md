@@ -113,7 +113,7 @@ Summarizing Toponce's guidance:
 
 ### Linear Span
 
-This setup is for a JBOD, good for 3 or less drives normally, where space is still a concern and your not ready to move to full features of ZFS yet because of it. RaidZ will be your better bet once you achieve enough space to satisfy, since this setup is NOT taking advantage of the full features of ZFS, but has its roots safely set in a beginning array that will suffice for years until you build up your hard drive collection.
+This setup is for a JBOD, good for 3 or less drives normally, where space is still a concern and you are not ready to move to full features of ZFS yet because of it. RaidZ will be your better bet once you achieve enough space to satisfy, since this setup is NOT taking advantage of the full features of ZFS, but has its roots safely set in a beginning array that will suffice for years until you build up your hard drive collection.
 
 Assemble the Linear Span:
 

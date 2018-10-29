@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Wireshark](/index.php/Wireshark "Wireshark"). Data da última tradução: 2018-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wireshark&diff=0&oldid=532698) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Wireshark](/index.php/Wireshark "Wireshark"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wireshark&diff=0&oldid=548767) na versão em inglês.
 
 O [Wireshark](https://www.wireshark.org/) é um analisador de pacotes livre e de código aberto. Ele é usado para solucionar de problemas de rede, análise, desenvolvimento de software e protocolo de comunicação e educação.
 
@@ -25,7 +25,7 @@ O [script de instalação](/index.php/PKGBUILD_(Portugu%C3%AAs)#install "PKGBUIL
 
 `/usr/bin/dumpcap` só pode ser executado como *root* e membros do grupo `wireshark`.
 
-Então, para usar Wireshark como um usuário normal, você só precisa adicionar seu usuário ao [grupo](/index.php/Grupo "Grupo") `wireshark`:
+Então, para usar Wireshark como um usuário normal, você só precisa adicionar seu usuário ao [grupo de usuários](/index.php/Grupo_de_usu%C3%A1rios "Grupo de usuários") `wireshark`:
 
 ```
  # gpasswd -a *nome-de-usuário* wireshark

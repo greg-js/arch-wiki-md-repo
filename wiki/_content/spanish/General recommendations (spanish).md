@@ -334,7 +334,7 @@ Crear alias para un comando, o un grupo del mismo, es una forma de ahorrar tiemp
 
 ### Intérpretes de línea de órdenes alternativos
 
-[Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") es el intérprete de línea de órdenes que está instalado por defecto en un sistema Arch. Sin embargo, los medios de instalación en vivo usan [zsh](/index.php/Zsh_(Espa%C3%B1ol) "Zsh (Español)") con el paquete de complemento [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config). Véase [listado de intérpretes de línea de órdenes](/index.php/Command-line_shell#List_of_shells "Command-line shell") para conocer más alternativas.
+[Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") es el intérprete de línea de órdenes que está instalado por defecto en un sistema Arch. Sin embargo, los medios de instalación en vivo usan [zsh](/index.php/Zsh_(Espa%C3%B1ol) "Zsh (Español)") con el paquete de complemento [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config). Véase el [listado de intérpretes de línea de órdenes](/index.php/Command-line_shell_(Espa%C3%B1ol)#Listado_de_int.C3.A9rpretes_de_l.C3.ADnea_de_.C3.B3rdenes "Command-line shell (Español)") para conocer más alternativas.
 
 ### Complementos para bash
 

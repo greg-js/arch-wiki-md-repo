@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch Build System](/index.php/Arch_Build_System "Arch Build System"). Data da última tradução: 2018-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Build_System&diff=0&oldid=540727) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch Build System](/index.php/Arch_Build_System "Arch Build System"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Build_System&diff=0&oldid=545084) na versão em inglês.
 
 Artigos relacionados
 
@@ -63,7 +63,7 @@ ABS é um conceito similar. ABS é feito de uma árvore de diretórios que pode 
 
 ### Árvore SVN
 
-Os [repositórios](/index.php/Reposit%C3%B3rios "Repositórios") *core*, *extra* e *testing* estão no repositório SVN *packages* para *[checkout](#Checkout_n.C3.A3o-recursivo)*. Os repositórios *community* e *multilib* estão no repositório SVN *community*.
+Os [repositórios](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") *core*, *extra* e *testing* estão no repositório SVN *packages* para *[checkout](#Checkout_n.C3.A3o-recursivo)*. Os repositórios *community* e *multilib* estão no repositório SVN *community*.
 
 Cada pacote possui seu próprio subdiretório. Dentro dele há diretórios `repos` e `trunk`. `repos` é expandido por nome de repositório (ex.: *core*) e arquitetura. PKGBUILDs e arquivos localizados em `repos` são usados em compilações oficiais. Arquivos localizados no `trunk` são usados pelos desenvolvedores na preparação antes de serem copiados para `repos`.
 
@@ -111,7 +111,7 @@ Para obter o [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Portugu�
 
 **Atenção:** Não baixe todo o repositório; siga apenas as instruções abaixo. O repositório SVN todo é gigantesco. Não apenas vai gastar uma quantidade absurda de espaço em disco, mas também vai ocupar o servidor do archlinux.org para você baixá-lo. Se você abusar desse serviço, seu endereço pode ser bloqueado. Nunca use o SVN público para qualquer tipo de *scripting*.
 
-Para fazer *checkout* dos [repositórios](/index.php/Reposit%C3%B3rios "Repositórios") *core*, *extra* e *testing*:
+Para fazer *checkout* dos [repositórios](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais") *core*, *extra* e *testing*:
 
 ```
 $ svn checkout --depth=empty svn://svn.archlinux.org/packages

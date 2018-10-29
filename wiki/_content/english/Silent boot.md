@@ -131,9 +131,9 @@ To prevent the kernel from blanking the vendor logo, Linux 4.19 introduced a new
 
 [Video demonstration](https://www.youtube.com/watch?v=5DW2JgJmsuY)
 
-At the time of writing, Linux 4.19 has not been released yet, so you must [compile the 4.19.0-rc7 (or newer) kernel](/index.php/Kernel#Compilation "Kernel") with `CONFIG_FRAMEBUFFER_CONSOLE_DEFERRED_TAKEOVER=y`.
+At the time of writing, Linux 4.19 is available in the [testing](/index.php/Testing "Testing") repository and is compiled with `CONFIG_FRAMEBUFFER_CONSOLE_DEFERRED_TAKEOVER=y`.
 
-The kernel command line should use `loglevel=3` or `rd.udev.log_priority=3` as mentioned above. Note that if you often receive `Core temperature above threshold, cpu clock throttled` messages in the kernel log, you need to use log level 2 to silence these at boot time. Alternatively, if you're compiling the kernel anyway, adjust the log level of the message in `arch/x86/kernel/cpu/mcheck/therm_throt.c`.
+The kernel command line should use `loglevel=3` or `rd.udev.log_priority=3` as mentioned above. Note that if you often receive `Core temperature above threshold, cpu clock throttled` messages in the kernel log, you need to use log level 2 to silence these at boot time. Alternatively, if you compile your own kernel, adjust the log level of the message in `arch/x86/kernel/cpu/mcheck/therm_throt.c`.
 
 If you use [Intel graphics](/index.php/Intel_graphics "Intel graphics"), set `i915.fastboot=1` in the kernel command line to avoid unnecessary modesetting (and screen blanking) on boot.
 

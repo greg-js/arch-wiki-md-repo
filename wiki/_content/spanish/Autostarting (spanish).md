@@ -53,7 +53,7 @@ Utilice un observador de eventor [inotify](https://en.wikipedia.org/wiki/inotify
 
 ## En el inicio / fin del intérprete de comandos
 
-Véase [Command-line shell#Configuration files](/index.php/Command-line_shell#Configuration_files "Command-line shell").
+Véase [Command-line shell (Español)#Archivos de configuración](/index.php/Command-line_shell_(Espa%C3%B1ol)#Archivos_de_configuraci.C3.B3n "Command-line shell (Español)").
 
 ## En el inicio de Xorg
 

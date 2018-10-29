@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). Data da última tradução: 2018-09-22\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Domain_name_resolution&diff=0&oldid=542529) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Domain name resolution](/index.php/Domain_name_resolution "Domain name resolution"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Domain_name_resolution&diff=0&oldid=547859) na versão em inglês.
 
 Artigos relacionados
 
@@ -10,7 +10,7 @@ Em geral, um [nome de domínio](https://en.wikipedia.org/wiki/pt:Dom%C3%ADnio "w
 ## Contents
 
 *   [1 Name Service Switch](#Name_Service_Switch)
-    *   [1.1 Verifique se você consegue resolver nomes de domínio](#Verifique_se_voc.C3.AA_consegue_resolver_nomes_de_dom.C3.ADnio)
+    *   [1.1 Resolva um nome de domínio usando NSS](#Resolva_um_nome_de_dom.C3.ADnio_usando_NSS)
 *   [2 Resolvedor do glibc](#Resolvedor_do_glibc)
     *   [2.1 Sobrescrita do /etc/resolv.conf](#Sobrescrita_do_.2Fetc.2Fresolv.conf)
     *   [2.2 Limitar o tempo de pesquisa](#Limitar_o_tempo_de_pesquisa)
@@ -23,12 +23,10 @@ Em geral, um [nome de domínio](https://en.wikipedia.org/wiki/pt:Dom%C3%ADnio "w
 
 ## Name Service Switch
 
-	*"NSS (Português)" redireciona para cá. Para as bibliotecas criptográficas da Mozilla, veja [Network Security Services](/index.php/Network_Security_Services "Network Security Services").*
+O recurso [Name Service Switch](https://en.wikipedia.org/wiki/pt:Name_Service_Switch "wikipedia:pt:Name Service Switch") (NSS) é parte da biblioteca C do GNU ([glibc](https://www.archlinux.org/packages/?name=glibc)) e apoia a API [getaddrinfo(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/getaddrinfo.3), usada para resolver nomes de domínio. O NSS permite que bancos de dados do sistema sejam fornecidos por serviços separados, cuja ordem de pesquisa pode ser configurada pelo administrador no [nsswitch.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nsswitch.conf.5). O banco de dados responsável pela resolução de nomes de domínio é o banco de dados *hosts*, para o qual a glibc oferece os seguintes serviços:
 
-O recurso [Name Service Switch](https://en.wikipedia.org/wiki/pt:Name_Service_Switch "wikipedia:pt:Name Service Switch") (NSS) é parte da biblioteca C do GNU ([glibc](https://www.archlinux.org/packages/?name=glibc)) e apoia a API [getaddrinfo(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/getaddrinfo.3), usada para resolver nomes de domínio. O NSS permite que bancos de dados do sistema sejam fornecidos por serviços separados, cuja ordem de pesquisa pode ser configurada pelo administrador no [nsswitch.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nsswitch.conf.5). O banco de dados responsável pela resolução de nomes de domínio é o banco de dados `hosts`, para o qual a glibc oferece os seguintes serviços:
-
-*   `file`: lê o arquivo `/etc/hosts`, veja [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5)
-*   `dns`: o [resolvedor do glibc](#Resolvedor_do_glibc) que lê `/etc/resolv.conf`, veja [resolv.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolv.conf.5)
+*   *file*: lê o arquivo `/etc/hosts`, veja [hosts(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hosts.5)
+*   *dns*: o [resolvedor do glibc](#Resolvedor_do_glibc) que lê `/etc/resolv.conf`, veja [resolv.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolv.conf.5)
 
 [Systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") fornece três serviços NSS para resolução de hostname:
 
@@ -36,9 +34,9 @@ O recurso [Name Service Switch](https://en.wikipedia.org/wiki/pt:Name_Service_Sw
 *   [nss-myhostname(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nss-myhostname.8) - fornece resolução de hostname sem ter que editar `/etc/hosts`, descrito em [Configuração de rede#Resolução de hostname local](/index.php/Configura%C3%A7%C3%A3o_de_rede#Resolu.C3.A7.C3.A3o_de_hostname_local "Configuração de rede")
 *   [nss-mymachines(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nss-mymachines.8) - fornece resolução de hostname para os nomes de contêineres locais de [systemd-machined(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-machined.8)
 
-### Verifique se você consegue resolver nomes de domínio
+### Resolva um nome de domínio usando NSS
 
-Bancos de dados NSS podem ser consultados com [getent(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/getent.1). Você pode resolver um nome de domínio por meio do NSS usando:
+Bancos de dados NSS podem ser consultados com [getent(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/getent.1). Um nome de domínio pode ser resolvido por meio do NSS usando:
 
 ```
 $ getent hosts *nome_domínio*
@@ -105,7 +103,7 @@ Dessa forma, você pode se referir a hosts locais como `maquinaprincipal1.exempl
 
 ## Resolvedores
 
-O resolvedor do Glibc fornece apenas as necessidades mais básicas, não armazena em cache as consultas nem fornece nenhum recurso de segurança. Se você deseja mais funcionalidade, use outro resolvedor.
+O resolvedor do Glibc fornece apenas as necessidades mais básicas, não armazena em cache as consultas nem fornece nenhum recurso de segurança. Se você precisar de mais funcionalidade, use outro resolvedor.
 
 **Dica:**
 
@@ -119,13 +117,13 @@ Na tabela abaixo, as colunas têm o seguinte sentido:
 *   *Recursor*: pode [consultar recursivamente](https://en.wikipedia.org/wiki/Name_server#Recursive_query "wikipedia:Name server") o nome de domínio iniciando da [zona raiz do DNS](https://en.wikipedia.org/wiki/DNS_root_zone "wikipedia:DNS root zone").
 *   *Compatibilidade com resolvconf*: pode adquirir servidores de nomes e domínios de pesquisa, para usar solicitações de encaminhamento, de softwares que os definem usando [resolvconf](/index.php/Resolvconf_(Portugu%C3%AAs) "Resolvconf (Português)").
 *   *Valida DNSSEC*: [valida](https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions#The_lookup_procedure "wikipedia:Domain Name System Security Extensions") respostas de consulta de DNS usando [DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)").
-*   *DNS por TLS*: tem suporte a comunicação criptografada com servidor(es) DNS upstream usando o protocolo [DNS over TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS").
-*   *DNS por HTTPS*: tem suporte a comunicação criptografada com servidor(es) DNS upstream usando o protocolo [DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS").
+*   *DNS por TLS*: suporte ao protocolo [DNS over TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS").
+*   *DNS por HTTPS*: suporte ao protocolo experimental [DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS").
 
-| Resolvedor | Cache | Recursor | Compatibilidade *resolvconf* | Valida DNSSEC | DNS por TLS | DNS por HTTPS | Notas |
+| Resolvedor | Cache | Recursor | Compatibilidade *resolvconf* | Valida DNSSEC | DNS por TLS | DNS por HTTPS |
 | [glibc](#Resolvedor_do_glibc) | Não | Não | [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Não | Não | Não |
 | [BIND](/index.php/BIND "BIND") | Sim | Sim | se inscreve no [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Sim | ? | ? |
-| [dnscrypt-proxy](/index.php/Dnscrypt-proxy_(Portugu%C3%AAs) "Dnscrypt-proxy (Português)") | Sim | Não | Não | Não | Não | Sim | Implementa um cliente de protocolo [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt"). |
+| [dnscrypt-proxy](/index.php/Dnscrypt-proxy_(Portugu%C3%AAs) "Dnscrypt-proxy (Português)") | Sim | Não | Não | Não | Não | Sim |
 | [dnsmasq](/index.php/Dnsmasq_(Portugu%C3%AAs) "Dnsmasq (Português)") | Sim | Não | se inscreve no [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Sim | [Não](http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2018q2/012131.html) | Não |
 | [Knot Resolver](/index.php/Knot_Resolver "Knot Resolver") | Sim | Sim | Não | Sim | Sim | [Não](https://gitlab.labs.nic.cz/knot/knot-resolver/issues/243) |
 | [pdnsd](/index.php/Pdnsd "Pdnsd") | Sim | Sim | se inscreve no [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Não | Não | Não |
@@ -133,15 +131,18 @@ Na tabela abaixo, as colunas têm o seguinte sentido:
 | [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") | Sim | Não | [systemd-resolvconf](/index.php/Systemd-resolvconf "Systemd-resolvconf") | Sim | Inseguro | [Não](https://github.com/systemd/systemd/issues/8639) |
 | [Unbound](/index.php/Unbound "Unbound") | Sim | Sim | se inscreve no [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") | Sim | Sim | [Não](https://nlnetlabs.nl/bugs-script/show_bug.cgi?id=1200) |
 
-1.  Do [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5): *Note que o resolvedor não é capaz de autenticar o servidor, ele é vulnerável a ataques "man-in-the-middle".* [[2]](https://github.com/systemd/systemd/issues/9397) Além disso, o único modo suportado é "opportunistic", o que *torna o DNS-over-TLS vulnerável a ataques de "downgrade"*.
+1.  Implementa um cliente de protocoolo [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt").
+2.  Do [resolved.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/resolved.conf.5): *Note que o resolvedor não é capaz de autenticar o servidor, ele é vulnerável a ataques "man-in-the-middle".* [[2]](https://github.com/systemd/systemd/issues/9397) Além disso, o único modo suportado é "opportunistic", o que *torna o DNS-over-TLS vulnerável a ataques de "downgrade"*.
 
 ## Privacidade
+
+DNS não está criptografado, então você pode querer usar um [resolvedor](#Resolvedores) que tem suporte a um protocolo criptografado, como [DNS over TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS"), [DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") ou [DNSCrypt](https://en.wikipedia.org/wiki/DNSCrypt "wikipedia:DNSCrypt").
 
 A maioria dos servidores DNS mantém um registro de endereços IP e sites visitados em uma base mais ou menos temporária. Os dados coletados podem ser usados para realizar vários estudos estatísticos. Informações de identificação pessoal têm valor e também podem ser alugadas ou vendidas a terceiros. O artigo [Serviços DNS alternativos](/index.php/Alternative_DNS_services "Alternative DNS services") fornece uma lista de serviços populares, verifique sua política de privacidade para obter informações sobre como os dados do usuário são manipulados.
 
 ## Utilitários de pesquisa
 
-Para consultar servidores DNS específicos e registros DNS/[DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)"), você pode usar utilitários de pesquisa de DNS dedicados. Essas ferramentas implementam o próprio DNS e não usam [NSS](/index.php/NSS_(Portugu%C3%AAs) "NSS (Português)").
+Para consultar servidores DNS específicos e registros DNS/[DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)"), você pode usar utilitários de pesquisa de DNS dedicados. Essas ferramentas implementam o próprio DNS e não usam [NSS](/index.php/Name_Service_Switch_(Portugu%C3%AAs) "Name Service Switch (Português)").
 
 *   [ldns](https://www.archlinux.org/packages/?name=ldns) fornece [drill(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/drill.1), que é uma ferramenta projetada para obter informações do DNS.
 

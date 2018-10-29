@@ -20,31 +20,31 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.3 archstrike](#archstrike)
     *   [2.4 archzfs](#archzfs)
     *   [2.5 ashleyis](#ashleyis)
-    *   [2.6 aur-archlinux](#aur-archlinux)
-    *   [2.7 blackeagle-pre-community](#blackeagle-pre-community)
-    *   [2.8 chaotic-aur](#chaotic-aur)
-    *   [2.9 catalyst](#catalyst)
-    *   [2.10 catalyst-hd234k](#catalyst-hd234k)
-    *   [2.11 city](#city)
-    *   [2.12 coderkun-aur](#coderkun-aur)
-    *   [2.13 coderkun-aur-audio](#coderkun-aur-audio)
-    *   [2.14 disastrousaur](#disastrousaur)
-    *   [2.15 eatabrick](#eatabrick)
-    *   [2.16 eschwartz](#eschwartz)
-    *   [2.17 ffy00](#ffy00)
-    *   [2.18 fusion809](#fusion809)
-    *   [2.19 herecura](#herecura)
-    *   [2.20 holo](#holo)
-    *   [2.21 ivasilev](#ivasilev)
-    *   [2.22 jlk](#jlk)
-    *   [2.23 linux-macbook](#linux-macbook)
-    *   [2.24 llvm-svn](#llvm-svn)
-    *   [2.25 markzz](#markzz)
-    *   [2.26 miffe](#miffe)
-    *   [2.27 mikelpint](#mikelpint)
-    *   [2.28 Minerva W Science](#Minerva_W_Science)
-    *   [2.29 mobile](#mobile)
-    *   [2.30 nah](#nah)
+    *   [2.6 blackeagle-pre-community](#blackeagle-pre-community)
+    *   [2.7 chaotic-aur](#chaotic-aur)
+    *   [2.8 catalyst](#catalyst)
+    *   [2.9 catalyst-hd234k](#catalyst-hd234k)
+    *   [2.10 city](#city)
+    *   [2.11 coderkun-aur](#coderkun-aur)
+    *   [2.12 coderkun-aur-audio](#coderkun-aur-audio)
+    *   [2.13 disastrousaur](#disastrousaur)
+    *   [2.14 eatabrick](#eatabrick)
+    *   [2.15 eschwartz](#eschwartz)
+    *   [2.16 ffy00](#ffy00)
+    *   [2.17 fusion809](#fusion809)
+    *   [2.18 herecura](#herecura)
+    *   [2.19 holo](#holo)
+    *   [2.20 ivasilev](#ivasilev)
+    *   [2.21 jlk](#jlk)
+    *   [2.22 linux-macbook](#linux-macbook)
+    *   [2.23 llvm-svn](#llvm-svn)
+    *   [2.24 markzz](#markzz)
+    *   [2.25 miffe](#miffe)
+    *   [2.26 mikelpint](#mikelpint)
+    *   [2.27 Minerva W Science](#Minerva_W_Science)
+    *   [2.28 mobile](#mobile)
+    *   [2.29 nah](#nah)
+    *   [2.30 nexus](#nexus)
     *   [2.31 pkgbuilder](#pkgbuilder)
     *   [2.32 post-factum kernels](#post-factum_kernels)
     *   [2.33 QOwnNotes](#QOwnNotes)
@@ -69,16 +69,17 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [3.5 archlinuxfr](#archlinuxfr)
     *   [3.6 archlinuxgr](#archlinuxgr)
     *   [3.7 archlinuxgr-kde4](#archlinuxgr-kde4)
-    *   [3.8 dx37essentials](#dx37essentials)
-    *   [3.9 heftig](#heftig)
-    *   [3.10 home-thaodan](#home-thaodan)
-    *   [3.11 jkanetwork](#jkanetwork)
-    *   [3.12 mesa-git](#mesa-git)
-    *   [3.13 mingw-w64](#mingw-w64)
-    *   [3.14 ownstuff](#ownstuff)
-    *   [3.15 pantheon](#pantheon)
-    *   [3.16 pietma](#pietma)
-    *   [3.17 pnsft-pur](#pnsft-pur)
+    *   [3.8 craftdestiny](#craftdestiny)
+    *   [3.9 dx37essentials](#dx37essentials)
+    *   [3.10 heftig](#heftig)
+    *   [3.11 home-thaodan](#home-thaodan)
+    *   [3.12 jkanetwork](#jkanetwork)
+    *   [3.13 mesa-git](#mesa-git)
+    *   [3.14 mingw-w64](#mingw-w64)
+    *   [3.15 ownstuff](#ownstuff)
+    *   [3.16 pantheon](#pantheon)
+    *   [3.17 pietma](#pietma)
+    *   [3.18 pnsft-pur](#pnsft-pur)
 
 ## Adding your repository to this page
 
@@ -165,20 +166,6 @@ Server = http://archzfs.com/$repo/x86_64
 ```
 [ashleyis]
 Server = http://arch.ashleytowns.id.au/repo/$arch
-
-```
-
-### aur-archlinux
-
-*   **Maintainer:** Marc Mettke <marc@itmettke.de>
-*   **Description:** Auto Build of Most Popular AUR Packages
-*   **Upstream page:** [https://repo.itmettke.de/status/](https://repo.itmettke.de/status/)
-*   **Archive:** [https://repo.itmettke.de/aur-archive/](https://repo.itmettke.de/aur-archive/)
-*   **Key-ID:** [7448C890582975CD](https://pgp.mit.edu/pks/lookup?op=vindex&search=0x7448C890582975CD)
-
-```
-[aur-archlinux]
-Server = https://repo.itmettke.de/aur/$repo/$arch
 
 ```
 
@@ -487,6 +474,21 @@ Server = https://repo.nah.nz/$repo
 
 ```
 
+### nexus
+
+*   (former aur-archlinux)
+*   **Maintainer:** Marc Mettke <marc@itmettke.de>
+*   **Description:** Auto Build of Most Popular AUR Packages
+*   **Upstream page:** [https://repo.itmettke.de/status/](https://repo.itmettke.de/status/)
+*   **Archive:** [https://repo.itmettke.de/nexus-archive/](https://repo.itmettke.de/nexus-archive/)
+*   **Key-ID:** [7448C890582975CD](https://pgp.mit.edu/pks/lookup?op=vindex&search=0x7448C890582975CD)
+
+```
+[nexus]
+Server = https://repo.itmettke.de/$repo/$arch
+
+```
+
 ### pkgbuilder
 
 *   **Maintainer:** [Chris Warrick](https://chriswarrick.com/)
@@ -767,6 +769,17 @@ Server = http://archlinuxgr.tiven.org/archlinux/$arch
 ```
 [archlinuxgr-kde4]
 Server = http://archlinuxgr.tiven.org/archlinux-kde4/$arch
+
+```
+
+### craftdestiny
+
+*   **Maintainer:** [LinuxVieLoisir](https://craftdestiny.ml)
+*   **Description:** A Craft Destiny repository is there to avoid long compilation on some software. It also adds some very useful additional software.
+
+```
+[craftdestiny]
+Server = https://miroir.craftdestiny.ml/archlinux-repo/
 
 ```
 

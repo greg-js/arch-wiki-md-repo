@@ -1087,14 +1087,14 @@ See [systemd.mount](http://www.freedesktop.org/software/systemd/man/systemd.moun
 
 See [ZED: The ZFS Event Daemon](https://ramsdenj.com/2016/08/29/arch-linux-on-zfs-part-3-followup.html) for more information.
 
-At the minimum, an email forwarder, such as [msmtp](/index.php/Msmtp "Msmtp"), is required to accomplish this. Make sure it is working correctly.
+An email forwarder, such as [S-nail](/index.php/S-nail "S-nail") (installed as part of [base](https://www.archlinux.org/packages/?name=base)), is required to accomplish this. Test it to be sure it is working correctly.
 
 Uncomment the following in the configuration file:
 
  `/etc/zfs/zed.d/zed.rc` 
 ```
  ZED_EMAIL_ADDR="root"
- ZED_EMAIL_PROG="mail"
+ ZED_EMAIL_PROG="mailx"
  ZED_NOTIFY_VERBOSE=0
  ZED_EMAIL_OPTS="-s '@SUBJECT@' @ADDRESS@"
 
@@ -1102,11 +1102,21 @@ Uncomment the following in the configuration file:
 
 Update 'root' in `ZED_EMAIL_ADDR="root"` to the email address you want to receive notifications at.
 
-If you want to receive an email no matter the state of your pool, you will want to set `ZED_NOTIFY_VERBOSE=1`.
+If you're keeping your mailrc in your home directory, you can tell mail to get it from there by setting `MAILRC`:
+
+ `/etc/zfs/zed.d/zed.rc` 
+```
+export MAILRC=/home/<user>/.mailrc
+
+```
+
+This works because ZED sources this file, so `mailx` sees this environment variable.
+
+If you want to receive an email no matter the state of your pool, you will want to set `ZED_NOTIFY_VERBOSE=1`. You will need to do this temporary to test.
 
 Start and enable `zfs-zed.service`.
 
-If you set verbose to 1, you can test by running a scrub.
+With `ZED_NOTIFY_VERBOSE=1`, you can test by running a scrub: `sudo zpool scrub <pool-name>`.
 
 ### Wrap shell commands in pre & post snapshots
 

@@ -1,8 +1,10 @@
+**Status de tradução:** Esse artigo é uma tradução de [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_Linux_Archive&diff=0&oldid=545028) na versão em inglês.
+
 Artigos relacionados
 
 *   [Fazendo downgrade de pacotes](/index.php/Fazendo_downgrade_de_pacotes "Fazendo downgrade de pacotes")
 
-O **Arch Linux Archive** (também conhecido como **ALA**), antigamente conhecido como **Arch Linux Rollback Machine** (ou **ARM**), armazena *snapshots de repositórios oficiais*, *imagens iso* e *traballs de bootstrap* ao longo do tempo.
+O **Arch Linux Archive** (também conhecido como **ALA**), antigamente conhecido como **Arch Linux Rollback Machine** (ou **ARM**), armazena *snapshots de repositórios oficiais*, *imagens iso* e *tarballs de bootstrap* ao longo do tempo.
 
 **Você pode usá-lo para**
 

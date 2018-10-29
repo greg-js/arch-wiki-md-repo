@@ -2,7 +2,7 @@ Related articles
 
 *   [Official repositories web interface](/index.php/Official_repositories_web_interface "Official repositories web interface")
 
-The [Aurweb RPC interface](https://aur.archlinux.org/rpc.php) is a lightweight [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call "wikipedia:Remote procedure call") interface for the [AUR](/index.php/AUR "AUR"). Queries are send as HTTP GET requests and the server responds with [JSON](http://www.json.org/).
+The [Aurweb RPC interface](https://aur.archlinux.org/rpc.php) is a lightweight [RPC](https://en.wikipedia.org/wiki/Remote_procedure_call "wikipedia:Remote procedure call") interface for the [AUR](/index.php/AUR "AUR"). Queries are sent as HTTP GET requests and the server responds with [JSON](http://www.json.org/).
 
 **Note:** This article describes v5 of the RPC Interface API, as updated with AUR v4.7.0 on July 7, 2018.
 
@@ -114,7 +114,7 @@ https://aur.archlinux.org/rpc/?v=5&type=info&arg[]=foo&arg[]=bar
 
 ### Return types
 
-The return payload is of one format, and currently has three main types. The response will always return a type so that the user can determine if the result of an operation was an error or not.
+The return payload is of one format and currently has three main types. The response will always return a type so that the user can determine if the result of an operation was an error or not.
 
 The format of the return payload is:
 
@@ -199,7 +199,7 @@ Example of `*ReturnType*` `multiinfo`:
 
 ### jsonp
 
-If you are working with a javascript page, and need a json callback mechanism, you can do it. You just need to provide an additional callback variable. This callback is usually handled via the javascript library, but here is an example.
+If you are working with a javascript page, and need a JSON callback mechanism, you can do it. You just need to provide an additional callback variable. This callback is usually handled via the javascript library, but here is an example.
 
 Example Query:
 
@@ -219,12 +219,12 @@ This would automatically call the JavaScript function `jsonp1192244621103` with 
 
 ## Limitations
 
-*   HTTP GET requests are limited to URI of 8190 bytes maximum length. However, the official AUR instance running on a nginx server with HTTP/2 uses the [default URI maximum length](https://nginx.org/en/docs/http/ngx_http_v2_module.html#http2_max_field_size) limit of 4443 bytes. Info requests with more than about 200 packages as argument will need to be split.
+*   HTTP GET requests are limited to URI of 8190 bytes maximum length. However, the official AUR instance running on a nginx server with HTTP/2 uses the [default URI maximum length](https://nginx.org/en/docs/http/ngx_http_v2_module.html#http2_max_field_size) limit of 4443 bytes. Info requests with more than about 200 packages as an argument will need to be split.
 *   The API rate is limited to a maximum of 4000 requests per day per IP.
 
 ## Reference clients
 
-Sometimes things are easier to understand with examples. A few reference implementations (jQuery, python, ruby) are available at the following url: [https://github.com/cactus/random/tree/2b72a1723bfc8ae64eed6a3c40cb154accae3974/aurjson_examples](https://github.com/cactus/random/tree/2b72a1723bfc8ae64eed6a3c40cb154accae3974/aurjson_examples)
+Sometimes things are easier to understand with examples. A few reference implementations (jQuery, python, ruby) are available at the following URL: [https://github.com/cactus/random/tree/2b72a1723bfc8ae64eed6a3c40cb154accae3974/aurjson_examples](https://github.com/cactus/random/tree/2b72a1723bfc8ae64eed6a3c40cb154accae3974/aurjson_examples)
 
 ## Associated code
 

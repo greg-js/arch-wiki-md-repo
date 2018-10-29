@@ -1,3 +1,5 @@
+**Warning:** The dhcp6 client of systemd has a buffer overflow vulnerability.[[1]](https://nvd.nist.gov/vuln/detail/CVE-2018-15688)
+
 Related articles
 
 *   [systemd](/index.php/Systemd "Systemd")

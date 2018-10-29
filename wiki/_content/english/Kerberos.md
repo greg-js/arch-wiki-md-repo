@@ -26,6 +26,7 @@ Related articles
     *   [8.1 NFS Server](#NFS_Server)
     *   [8.2 NFS Client](#NFS_Client)
 *   [9 Troubleshooting](#Troubleshooting)
+    *   [9.1 Cannot set GSSAPI authentication names](#Cannot_set_GSSAPI_authentication_names)
 *   [10 See also](#See_also)
 
 ## Installation
@@ -453,12 +454,16 @@ nfsserver:/srv/export on /mnt type nfs4 (rw,relatime,vers=4.1,rsize=131072,wsize
 
 ## Troubleshooting
 
+### Cannot set GSSAPI authentication names
+
 ```
 Cannot set GSSAPI authentication names, aborting
 
 ```
 
 Your realm is missing either the `kadmin/admin` or `kadmin/changepw` principal.
+
+For clients, invalid arguments/options may happen on first setup if rpc-gssd is not loaded. Loading it is usually acomplished by [enabling](/index.php/Enabling "Enabling") and [starting](/index.php/Starting "Starting") `nfs-client.target`, but after first setup this target will need a [restart](/index.php/Restart "Restart").
 
 ## See also
 

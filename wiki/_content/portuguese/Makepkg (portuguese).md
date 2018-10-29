@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Makepkg](/index.php/Makepkg "Makepkg"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Makepkg&diff=0&oldid=549263) na versão em inglês.
+
 Artigos relacionados
 
 *   [Criando pacotes](/index.php/Criando_pacotes "Criando pacotes")
@@ -32,8 +34,13 @@ O *makepkg* é fornecido pelo pacote [pacman](https://www.archlinux.org/packages
 *   [4 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
     *   [4.1 Makepkg algumas vezes falha ao assinar um pacote sem perguntar pela palavra-chave de assinatura](#Makepkg_algumas_vezes_falha_ao_assinar_um_pacote_sem_perguntar_pela_palavra-chave_de_assinatura)
     *   [4.2 CFLAGS/CXXFLAGS/LDFLAGS no makepkg.conf não funcionam para pacotes baseados no CMAKE](#CFLAGS.2FCXXFLAGS.2FLDFLAGS_no_makepkg.conf_n.C3.A3o_funcionam_para_pacotes_baseados_no_CMAKE)
-    *   [4.3 Especificando diretório de instalação para pacotes baseados em QMAKE](#Especificando_diret.C3.B3rio_de_instala.C3.A7.C3.A3o_para_pacotes_baseados_em_QMAKE)
-    *   [4.4 AVISO: O pacote contém referência para $srcdir](#AVISO:_O_pacote_cont.C3.A9m_refer.C3.AAncia_para_.24srcdir)
+    *   [4.3 CFLAGS/CXXFLAGS no makepkg.conf não funcionam para pacotes baseados no QMAKE](#CFLAGS.2FCXXFLAGS_no_makepkg.conf_n.C3.A3o_funcionam_para_pacotes_baseados_no_QMAKE)
+    *   [4.4 Especificando diretório de instalação para pacotes baseados em QMAKE](#Especificando_diret.C3.B3rio_de_instala.C3.A7.C3.A3o_para_pacotes_baseados_em_QMAKE)
+    *   [4.5 AVISO: O pacote contém referência para $srcdir](#AVISO:_O_pacote_cont.C3.A9m_refer.C3.AAncia_para_.24srcdir)
+    *   [4.6 Makepkg falha em baixar dependências quando por trás de um proxy](#Makepkg_falha_em_baixar_depend.C3.AAncias_quando_por_tr.C3.A1s_de_um_proxy)
+        *   [4.6.1 Habilitar proxy definindo sua URL no XferCommand](#Habilitar_proxy_definindo_sua_URL_no_XferCommand)
+        *   [4.6.2 Habilitar proxy via env_keep do sudoers](#Habilitar_proxy_via_env_keep_do_sudoers)
+    *   [4.7 Makepkg falha, mas make obtém sucesso](#Makepkg_falha.2C_mas_make_obt.C3.A9m_sucesso)
 *   [5 Veja também](#Veja_tamb.C3.A9m)
 
 ## Configuração
@@ -287,31 +294,16 @@ Esse erro está atualmente sendo rastreado: [FS#49946](https://bugs.archlinux.or
 
 ### CFLAGS/CXXFLAGS/LDFLAGS no makepkg.conf não funcionam para pacotes baseados no CMAKE
 
-Para fazer o CMake usar as variáveis definidas no arquivo de configuração do *makepkg*, passe as variáveis para *cmake* na função `build()`. Por exemplo:
+Para fazer o CMake usar as variáveis definidas no `makepkg.conf`, Basta não especificar `-DCMAKE_BUILD_TYPE` ao configurar um projeto de cmake. [[6]](https://lists.archlinux.org/pipermail/arch-dev-public/2018-March/029181.html)
+
+Isso fará com que o cmake use um tipo de compilação de `None` , o que usa as variáveis de ambiente como `CFLAGS`, `CPPFLAGS`, etc.
+
+### CFLAGS/CXXFLAGS no makepkg.conf não funcionam para pacotes baseados no QMAKE
+
+Qmake configura automaticamente a variável `CFLAGS` e `CXXFLAGS` de acordo com o que você pensa que deveria ser a configuração correta. Para deixar o qmake usar as variáveis definidas no arquivo de configuração do makepkg, você deve editar o PKGBUILD e passar as variáveis [QMAKE_CFLAGS](http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cflags) e [QMAKE_CXXFLAGS](http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cxxflags) ao qmake. Por exemplo:
 
  `PKGBUILD` 
 ```
-...
-
-build() {
-  ...
-
-  cmake \
-
-    -DCMAKE_C_FLAGS:STRING="${CFLAGS}" \
-
-    -DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS}" \ 
-
-    -DCMAKE_EXE_LINKER_FLAGS:STRING="${LDFLAGS}" \
-    -DCMAKE_SHARED_LINKER_FLAGS:STRING="${LDFLAGS}" \
-  ...
-}
-
-=== CFLAGS/CXXFLAGS no makepkg.conf não funcionam para pacotes baseados no QMAKE ===
-
-Qmake configura automaticamente a variável {{ic|CFLAGS}} e {{ic|CXXFLAGS}} de acordo com o que você pensa que deveria ser a configuração correta. Para deixar o qmake usar as variáveis definidas no arquivo de configuração do makepkg, você deve editar o PKGBUILD e passar as variáveis [http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cflags QMAKE_CFLAGS] e [http://doc.qt.io/qt-5/qmake-variable-reference.html#qmake-cxxflags QMAKE_CXXFLAGS] ao qmake. Por exemplo:
-
-{{hc|PKGBUILD|<nowiki>
 ...
 
 build() {
@@ -371,7 +363,39 @@ $ grep -R "$(pwd)/src" pkg/
 
 ```
 
-[Link](http://www.mail-archive.com/arch-general@archlinux.org/msg15561.html) para a discussão.
+### Makepkg falha em baixar dependências quando por trás de um proxy
+
+Quando o *makepkg* chama dependências, ele chama o pacman para instalar os pacotes, o que requer privilégios administrativos via *sudo*. No entanto, o *sudo* não passa nenhuma [variável de ambiente](/index.php/Vari%C3%A1vel_de_ambiente "Variável de ambiente") para o ambiente privilegiado, e inclui as variáveis relacionadas ao proxy `ftp_proxy`, `http_proxy`, `https_proxy` e `no_proxy`.
+
+Para que ter o *makepkg* funcionando por trás de um proxy, você tem que fazer um dos seguintes métodos.
+
+#### Habilitar proxy definindo sua URL no XferCommand
+
+O XferCommand pode ser definido para usar a URL de proxy desejada no `/etc/pacman.conf`. Adicione ou descomente a linha a seguir em seu `pacman.conf`[[7]](http://www.mail-archive.com/arch-general@archlinux.org/msg15561.html):
+
+ `/etc/pacman.conf` 
+```
+...
+XferCommand = /usr/bin/curl -x http://usuário:senha@proxy.proxyhost.com:80 -L -C - -f -o %o %u
+...
+
+```
+
+#### Habilitar proxy via env_keep do sudoers
+
+Alternativamente, pode-se usar a opção `env_keep` do sudoers, a qual permite preservar as variáveis de ambiente dadas no ambiente privilegiado. Veja [Sudo#Environment variables](/index.php/Sudo#Environment_variables "Sudo") para mais informações.
+
+### Makepkg falha, mas make obtém sucesso
+
+Se algo compilar manualmente usando *make*, mas falhar através do *makepkg*, é quase certo que seja porque o `/etc/makepkg.conf` define uma variável de compilação para algo razoável que normalmente funcione, mas que seja incompatível com o que você esteja compilando. Tente adicionar esses sinalizadores ao array `options` do PKGBUILD:
+
+`!buildflags`, para evitar seu `CPPFLAGS`, `CFLAGS`, `CXXFLAGS` e `LDFLAGS` padrão.
+
+`!makeflags`, para evitar seu `MAKEFLAGS` padrão, caso você tenha editado `/etc/makepkg.conf` para habilitar compilações paralelas.
+
+`!debug`, para evitar seu `DEBUG_CFLAGS` e `DEBUG_CXXFLAGS` padrão, no caso de seu pacote ser uma compilação de depuração.
+
+Se qualquer um deles resolver o problema, isso pode indicar que você pode relatar um erro no envio de dados, se você isolar exatamente qual sinalizador está causando o problema.
 
 ## Veja também
 

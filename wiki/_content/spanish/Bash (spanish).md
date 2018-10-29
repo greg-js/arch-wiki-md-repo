@@ -9,9 +9,9 @@ Artículos relacionados
 *   [Readline](/index.php/Readline_(Espa%C3%B1ol) "Readline (Español)")
 *   [Fortune](/index.php/Fortune "Fortune")
 *   [Pkgfile](/index.php/Pkgfile_(Espa%C3%B1ol) "Pkgfile (Español)")
-*   [Command-line shell](/index.php/Command-line_shell "Command-line shell")
+*   [Intérprete de línea de órdenes](/index.php/Command-line_shell_(Espa%C3%B1ol) "Command-line shell (Español)")
 
-[Bash](https://www.gnu.org/software/bash/) (Bourne-again Shell) es un [intérprete de línea de órdenes](/index.php/Command-line_shell "Command-line shell")/lenguaje de programación por el [proyecto GNU](/index.php/GNU_Project_(Espa%C3%B1ol) "GNU Project (Español)"). Su nombre es un homenaje en referencia a su predecesor, el intérprete de línea de órdenes Bourne, que ha estado en desuso desde hace mucho tiempo. Bash se puede ejecutar en la mayoría de los sistemas operativos similares a UNIX, incluido GNU/Linux.
+[Bash](https://www.gnu.org/software/bash/) (Bourne-again Shell) es un [intérprete de línea de órdenes](/index.php/Command-line_shell_(Espa%C3%B1ol) "Command-line shell (Español)")/lenguaje de programación por el [proyecto GNU](/index.php/GNU_Project_(Espa%C3%B1ol) "GNU Project (Español)"). Su nombre es un homenaje en referencia a su predecesor, el intérprete de línea de órdenes Bourne, que ha estado en desuso desde hace mucho tiempo. Bash se puede ejecutar en la mayoría de los sistemas operativos similares a UNIX, incluido GNU/Linux.
 
 ## Contents
 

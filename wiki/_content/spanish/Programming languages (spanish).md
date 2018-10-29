@@ -58,7 +58,7 @@ Tenga en cuenta que algunos de los lenguajes mencionados anteriormente también 
 
 ## Lenguajes de intérprete de línea de órdenes
 
-[Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") es parte del grupo [base](https://www.archlinux.org/groups/x86_64/base/). Para otros, véase [Intérprete de línea de órdenes](/index.php/Command-line_shell "Command-line shell").
+[Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") es parte del grupo [base](https://www.archlinux.org/groups/x86_64/base/). Para otros, véase [Intérprete de línea de órdenes](/index.php/Command-line_shell_(Espa%C3%B1ol) "Command-line shell (Español)").
 
 ## Véase también
 

@@ -316,7 +316,7 @@ Para instalar algunos teclados MIDI M-Audio, necesitará el paquete de firmware 
 
 ### Mensaje de "No se puede bloquear el área de memoria (No se puede asignar memoria)" en el inicio
 
-Consulte [Realtime process management#Configuring PAM](/index.php/Realtime_process_management#Configuring_PAM "Realtime process management") y asegurarse de que el usuario está en el [grupo](/index.php/Grupo "Grupo") `realtime`.
+Consulte [Realtime process management#Configuring PAM](/index.php/Realtime_process_management#Configuring_PAM "Realtime process management") y asegurarse de que el usuario está en el [grupo de usuario](/index.php/Grupo_de_usuario "Grupo de usuario") `realtime`.
 
 ### Jack2-dbus y qjackctl errores
 

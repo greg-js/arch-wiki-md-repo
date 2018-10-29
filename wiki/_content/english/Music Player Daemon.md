@@ -145,7 +145,7 @@ audio_output {
 }
 ```
 
-User will also have to edit `/etc/pulse/client.conf` and change the `autospawn` option to `yes` in order to allow the MPD user to use *pulseaudio*. It will be necessary to restart *pulseaudio* after making this modification.
+User will also have to edit `/etc/pulse/client.conf` and change the `autospawn` option to `yes` in order to allow the MPD user to use PulseAudio. It will be necessary to restart PulseAudio after making this modification.
 
 #### Autostart with systemd
 
@@ -250,11 +250,11 @@ A separate client is needed to control MPD. See a long list of clients at the [m
 
 ### Console
 
-*   **clerk** — MPD client using rofi.
+*   **clerk** — MPD client using [Rofi](/index.php/Rofi "Rofi").
 
 	[https://github.com/carnager/clerk](https://github.com/carnager/clerk) || [clerk-git](https://aur.archlinux.org/packages/clerk-git/)
 
-*   **FMUI** — Console user interface created with fzf and mpc.
+*   **FMUI** — Console user interface created with [fzf](/index.php/Fzf "Fzf") and mpc.
 
 	[https://github.com/seebye/fmui](https://github.com/seebye/fmui) || [fmui-git](https://aur.archlinux.org/packages/fmui-git/)
 

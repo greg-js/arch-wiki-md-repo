@@ -1,104 +1,222 @@
-Artigos relacionados
+**Status de tradução:** Esse artigo é uma tradução de [NetworkManager](/index.php/NetworkManager "NetworkManager"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=NetworkManager&diff=0&oldid=550618) na versão em inglês.
+
+Related articles
 
 *   [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede")
 *   [Configuração de rede sem fio](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio "Configuração de rede sem fio")
-*   [Category:Network configuration (Português)](/index.php/Category:Network_configuration_(Portugu%C3%AAs) "Category:Network configuration (Português)")
 
-O [NetworkManager](http://www.gnome.org/projects/NetworkManager/) é um programa que provê a detecção e configuração automática de redes para computadores. As funcionalidades do NetworkManager são úteis para redes sem fio e cabeadas. Nas redes sem fio, o NetworkManager terá preferência pelas redes que já conhece, e possui a habilidade para trocar para a rede mais confiável sempre que disponível. Aplicações preparadas para o NetworkManager podem trocar do modo online para o offline. O NetworkManager tem preferência pelas redes cabeadas em detrimento das wireless, e possui suporte a certos tipos de VPN. Foi originalmente desenvolvido pela Red Hat e agora, é hospedado no projeto [GNOME (Português)](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)").
+O [NetworkManager](http://www.gnome.org/projects/NetworkManager/) é um programa que provê a detecção e configuração automática de redes para computadores. As funcionalidades do NetworkManager são úteis para redes sem fio e cabeadas. Nas redes sem fio, o NetworkManager terá preferência pelas redes que já conhece, e possui a habilidade para trocar para a rede mais confiável sempre que disponível. Aplicativos preparados para o NetworkManager podem trocar do modo online para o offline. O NetworkManager tem preferência pelas redes cabeadas em detrimento das redes sem fio, e possui suporte a certos tipos de VPN. Foi originalmente desenvolvido pela Red Hat e agora, é hospedado no projeto [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)").
+
+**Atenção:** Por padrão, as senhas de Wi-Fi são armazenadas em texto simples, veja [#Senhas de Wi-Fi criptografadas](#Senhas_de_Wi-Fi_criptografadas).
 
 ## Contents
 
 *   [1 Instalação](#Instala.C3.A7.C3.A3o)
-    *   [1.1 Suporte a VPN](#Suporte_a_VPN)
-    *   [1.2 PPPoE / DSL](#PPPoE_.2F_DSL)
-*   [2 Front-ends](#Front-ends)
-    *   [2.1 GNOME](#GNOME)
-    *   [2.2 KDE Plasma](#KDE_Plasma)
-    *   [2.3 XFCE](#XFCE)
-    *   [2.4 Openbox](#Openbox)
-    *   [2.5 Outros desktops ou gerenciadores de janelas](#Outros_desktops_ou_gerenciadores_de_janelas)
-    *   [2.6 Linha de comando](#Linha_de_comando)
-        *   [2.6.1 nmcli](#nmcli)
-        *   [2.6.2 nmtui](#nmtui)
-        *   [2.6.3 nmcli-dmenu](#nmcli-dmenu)
-*   [3 Veja também](#Veja_tamb.C3.A9m)
+    *   [1.1 Suporte a banda larga móvel](#Suporte_a_banda_larga_m.C3.B3vel)
+    *   [1.2 Suporte a PPPoE / DSL](#Suporte_a_PPPoE_.2F_DSL)
+    *   [1.3 Suporte a VPN](#Suporte_a_VPN)
+*   [2 Uso](#Uso)
+    *   [2.1 Exemplos de nmcli](#Exemplos_de_nmcli)
+*   [3 Front-ends](#Front-ends)
+    *   [3.1 GNOME](#GNOME)
+    *   [3.2 KDE Plasma](#KDE_Plasma)
+    *   [3.3 nm-applet](#nm-applet)
+        *   [3.3.1 Appindicator](#Appindicator)
+    *   [3.4 nmcli-dmenu](#nmcli-dmenu)
+*   [4 Configuração](#Configura.C3.A7.C3.A3o)
+    *   [4.1 Habilitar NetworkManager](#Habilitar_NetworkManager)
+    *   [4.2 Habilitar NetworkManager Wait Online](#Habilitar_NetworkManager_Wait_Online)
+    *   [4.3 Configurar as permissões de PolicyKit](#Configurar_as_permiss.C3.B5es_de_PolicyKit)
+    *   [4.4 Configurações de proxy](#Configura.C3.A7.C3.B5es_de_proxy)
+    *   [4.5 Verificando conectividade](#Verificando_conectividade)
+    *   [4.6 Cliente DHCP](#Cliente_DHCP)
+    *   [4.7 Cache de DNS e DNS dividido](#Cache_de_DNS_e_DNS_dividido)
+        *   [4.7.1 dnsmasq](#dnsmasq)
+            *   [4.7.1.1 Configuração personalizada](#Configura.C3.A7.C3.A3o_personalizada)
+            *   [4.7.1.2 IPv6](#IPv6)
+            *   [4.7.1.3 DNSSEC](#DNSSEC)
+        *   [4.7.2 systemd-resolved](#systemd-resolved)
+        *   [4.7.3 Outros métodos](#Outros_m.C3.A9todos)
+*   [5 Serviços de rede com o NetworkManager dispatcher](#Servi.C3.A7os_de_rede_com_o_NetworkManager_dispatcher)
+    *   [5.1 Evitando o esgotamento de tempo limite do dispatcher](#Evitando_o_esgotamento_de_tempo_limite_do_dispatcher)
+    *   [5.2 Exemplos de dispatcher](#Exemplos_de_dispatcher)
+        *   [5.2.1 Montar pasta remota com sshfs](#Montar_pasta_remota_com_sshfs)
+        *   [5.2.2 Montagem de compartilhamentos SMB](#Montagem_de_compartilhamentos_SMB)
+        *   [5.2.3 Montagem de compartilhamentos NFS](#Montagem_de_compartilhamentos_NFS)
+        *   [5.2.4 Usar dispatcher para ativar rede sem fio automaticamente dependendo de cabo LAN estar conectado](#Usar_dispatcher_para_ativar_rede_sem_fio_automaticamente_dependendo_de_cabo_LAN_estar_conectado)
+        *   [5.2.5 Usar dispatcher para conectar a uma VPN após uma conexão de rede ser estabelecida](#Usar_dispatcher_para_conectar_a_uma_VPN_ap.C3.B3s_uma_conex.C3.A3o_de_rede_ser_estabelecida)
+        *   [5.2.6 OpenNTPD](#OpenNTPD)
+*   [6 Testando](#Testando)
+*   [7 Dicas e truques](#Dicas_e_truques)
+    *   [7.1 Senhas de Wi-Fi criptografadas](#Senhas_de_Wi-Fi_criptografadas)
+        *   [7.1.1 Usando GNOME Keyring](#Usando_GNOME_Keyring)
+        *   [7.1.2 Usando KDE Wallet](#Usando_KDE_Wallet)
+    *   [7.2 Compartilhando conexão internet pelo Wi-Fi](#Compartilhando_conex.C3.A3o_internet_pelo_Wi-Fi)
+    *   [7.3 Compartilhando conexão internet por Ethernet](#Compartilhando_conex.C3.A3o_internet_por_Ethernet)
+    *   [7.4 Verificando se a conectividade está ativa dentro de um script ou trabalho cron](#Verificando_se_a_conectividade_est.C3.A1_ativa_dentro_de_um_script_ou_trabalho_cron)
+    *   [7.5 Conectar a uma rede com segredo na inicialização](#Conectar_a_uma_rede_com_segredo_na_inicializa.C3.A7.C3.A3o)
+    *   [7.6 Desbloquear automaticamente o chaveiro após o login](#Desbloquear_automaticamente_o_chaveiro_ap.C3.B3s_o_login)
+        *   [7.6.1 GNOME](#GNOME_2)
+        *   [7.6.2 Gerenciador de login SLiM](#Gerenciador_de_login_SLiM)
+    *   [7.7 OpenConnect com senha no KWallet](#OpenConnect_com_senha_no_KWallet)
+    *   [7.8 Ignorar dispositivos específicos](#Ignorar_dispositivos_espec.C3.ADficos)
+    *   [7.9 Configurando aleatorização de endereço MAC](#Configurando_aleatoriza.C3.A7.C3.A3o_de_endere.C3.A7o_MAC)
+    *   [7.10 Habilitar extensões de privacidade IPv6](#Habilitar_extens.C3.B5es_de_privacidade_IPv6)
+    *   [7.11 Trabalhando com conexões cabeadas](#Trabalhando_com_conex.C3.B5es_cabeadas)
+    *   [7.12 resolv.conf](#resolv.conf)
+        *   [7.12.1 Usar openresolv](#Usar_openresolv)
+    *   [7.13 Usando iwd como o backend de Wi-Fi](#Usando_iwd_como_o_backend_de_Wi-Fi)
+*   [8 Solução de problemas](#Solu.C3.A7.C3.A3o_de_problemas)
+    *   [8.1 Nenhum prompt para senha de redes Wi-Fi seguras](#Nenhum_prompt_para_senha_de_redes_Wi-Fi_seguras)
+    *   [8.2 Nenhum tráfego via túnel PPTP](#Nenhum_tr.C3.A1fego_via_t.C3.BAnel_PPTP)
+    *   [8.3 Gerenciamento de rede desabilitado](#Gerenciamento_de_rede_desabilitado)
+    *   [8.4 Problemas com cliente DHCP interno](#Problemas_com_cliente_DHCP_interno)
+    *   [8.5 Problemas DHCP com dhclient](#Problemas_DHCP_com_dhclient)
+    *   [8.6 Modem 3G não detectado](#Modem_3G_n.C3.A3o_detectado)
+    *   [8.7 Desligando WLAN em laptops](#Desligando_WLAN_em_laptops)
+    *   [8.8 Reversão de configurações de endereço IP estático para DHCP](#Revers.C3.A3o_de_configura.C3.A7.C3.B5es_de_endere.C3.A7o_IP_est.C3.A1tico_para_DHCP)
+    *   [8.9 Não é possível editar conexões como usuário normal](#N.C3.A3o_.C3.A9_poss.C3.ADvel_editar_conex.C3.B5es_como_usu.C3.A1rio_normal)
+    *   [8.10 Esquecer rede sem fio oculta](#Esquecer_rede_sem_fio_oculta)
+    *   [8.11 VPN não funciona no GNOME](#VPN_n.C3.A3o_funciona_no_GNOME)
+    *   [8.12 Impossibilidade de se conectar a redes sem fio europeias visíveis](#Impossibilidade_de_se_conectar_a_redes_sem_fio_europeias_vis.C3.ADveis)
+    *   [8.13 Conexão automática a VPN na inicialização não funciona](#Conex.C3.A3o_autom.C3.A1tica_a_VPN_na_inicializa.C3.A7.C3.A3o_n.C3.A3o_funciona)
+    *   [8.14 Gargalo no systemd](#Gargalo_no_systemd)
+    *   [8.15 Desconexões de rede regulares, latência, pacotes perdidos (WiFi)](#Desconex.C3.B5es_de_rede_regulares.2C_lat.C3.AAncia.2C_pacotes_perdidos_.28WiFi.29)
+    *   [8.16 Impossibilidade de ligar o Wi-Fi com laptop Lenovo (IdeaPad, Legion, etc.)](#Impossibilidade_de_ligar_o_Wi-Fi_com_laptop_Lenovo_.28IdeaPad.2C_Legion.2C_etc..29)
+    *   [8.17 Desligar envido de hostname](#Desligar_envido_de_hostname)
+    *   [8.18 nm-applet desaparece no i3wm](#nm-applet_desaparece_no_i3wm)
+    *   [8.19 Ícones de bandeja do nm-applet exibidos incorretamente](#.C3.8Dcones_de_bandeja_do_nm-applet_exibidos_incorretamente)
+    *   [8.20 Desabilitar NetworkManager ao usar dbus](#Desabilitar_NetworkManager_ao_usar_dbus)
+*   [9 Veja também](#Veja_tamb.C3.A9m)
 
 ## Instalação
 
-Basta instalar o pacote [networkmanager](https://www.archlinux.org/packages/?name=networkmanager). Este pacote não inclui o software de bandeja(tray) *nm-applet*, que é parte integrante do pacote [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet). Possui funcionalidades básicas de DHCP. Para que todas as funcionalidades estejam acessíveis, incluindo as que envolvem IPv6, instale o pacote [dhclient](https://www.archlinux.org/packages/?name=dhclient).
+O NetworkManager pode ser [instalado](/index.php/Instala "Instala") com o pacote [networkmanager](https://www.archlinux.org/packages/?name=networkmanager), que contém um daemon, uma interface de linha de comando (`nmcli`) e uma interface baseada em curses (`nmtui`). Tem funcionalidade para suporte básico a DHCP. Para DHCP cheio de recursos e se você precisar de suporte a IPv6, o [dhclient](https://www.archlinux.org/packages/?name=dhclient) o integra. Após a instalação, você deve [habilitar o daemon](#Habilitar_NetworkManager).
 
-**Note:** Garanta que nenhum outro serviço de configuração de rede esteja rodando; de fato, caso hajam vários eles irão conflitar. Você pode encontrar a lista dos serviços com `systemctl --type=service` e então poderá pará-los através do [stop](/index.php/Systemd_(Portugu%C3%AAs)#Usando_units "Systemd (Português)").
+Interfaces adicionais:
+
+*   [nm-connection-editor](https://www.archlinux.org/packages/?name=nm-connection-editor) para uma interface gráfica de usuário,
+*   [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) para um miniaplicativo de bandeja de sistema (`nm-applet`).
+
+**Nota:** Você deve garantir que nenhum outro serviço que deseje configurar a rede esteja em execução; na verdade, vários serviços de rede entrarão em conflito. Você pode encontrar uma lista dos serviços em execução no momento com `systemctl --type=service` e, em seguida, [parar](/index.php/Parar "Parar"). Veja [#Configuração](#Configura.C3.A7.C3.A3o) para ativar o serviço NetworkManager.
+
+### Suporte a banda larga móvel
+
+[Instale](/index.php/Instale "Instale") os pacotes [modemmanager](https://www.archlinux.org/packages/?name=modemmanager), [mobile-broadband-provider-info](https://www.archlinux.org/packages/?name=mobile-broadband-provider-info) e [usb_modeswitch](https://www.archlinux.org/packages/?name=usb_modeswitch) para um suporte a conexão de banda larga móvel. Veja [USB 3G Modem#Network Manager](/index.php/USB_3G_Modem#Network_Manager "USB 3G Modem") para detalhes.
+
+### Suporte a PPPoE / DSL
+
+[Instale](/index.php/Instale "Instale") o pacote [rp-pppoe](https://www.archlinux.org/packages/?name=rp-pppoe) para suporte a conexão PPPoE/DSL. Para realmente adicionar uma conexão PPPoE, use `nm-connection-editor` e adicione uma nova conexão DSL/PPPoE.
 
 ### Suporte a VPN
 
-O suporte a VPN é dado através de um sistema de plug-in. Instale o pacote do sistema de VPN que lhe for conveniente da seguinte lista:
+O suporte do NetworkManager VPN é baseado em um sistema de plug-in. Se você precisar de suporte VPN via NetworkManager, você precisa instalar um dos seguintes pacotes:
 
-*   [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect)
-*   [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn)
-*   [networkmanager-pptp](https://www.archlinux.org/packages/?name=networkmanager-pptp)
-*   [networkmanager-vpnc](https://www.archlinux.org/packages/?name=networkmanager-vpnc)
+*   [networkmanager-openconnect](https://www.archlinux.org/packages/?name=networkmanager-openconnect) para [OpenConnect](/index.php/OpenConnect "OpenConnect")
+*   [networkmanager-openvpn](https://www.archlinux.org/packages/?name=networkmanager-openvpn) para [OpenVPN](/index.php/OpenVPN "OpenVPN")
+*   [networkmanager-pptp](https://www.archlinux.org/packages/?name=networkmanager-pptp) para [PPTP Client](/index.php/PPTP_Client "PPTP Client")
+*   [networkmanager-vpnc](https://www.archlinux.org/packages/?name=networkmanager-vpnc) para [Vpnc](/index.php/Vpnc "Vpnc")
+*   [networkmanager-strongswan](https://www.archlinux.org/packages/?name=networkmanager-strongswan) para [strongSwan](/index.php/StrongSwan "StrongSwan")
+*   [networkmanager-fortisslvpn-git](https://aur.archlinux.org/packages/networkmanager-fortisslvpn-git/)
+*   [networkmanager-iodine-git](https://aur.archlinux.org/packages/networkmanager-iodine-git/)
+*   [networkmanager-libreswan](https://aur.archlinux.org/packages/networkmanager-libreswan/)
 *   [networkmanager-l2tp](https://aur.archlinux.org/packages/networkmanager-l2tp/)
+*   [networkmanager-ssh-git](https://aur.archlinux.org/packages/networkmanager-ssh-git/)
+*   [networkmanager-sstp](https://aur.archlinux.org/packages/networkmanager-sstp/)
+*   [networkmanager-wireguard-git](https://aur.archlinux.org/packages/networkmanager-wireguard-git/) para [WireGuard](/index.php/WireGuard "WireGuard")
 
-**Warning:** Suporte a VPN é [instável](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), verifique se os parâmetros dos serviços foram corretamente aplicados de acordo com o que foi configurado na interface gráfica a cada atualização de pacotes.[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=755350) [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=758772) [FS#47535](https://bugs.archlinux.org/task/47535)
+**Atenção:** Suporte a VPN é [instável](https://bugzilla.gnome.org/buglist.cgi?quicksearch=networkmanager%20vpn), verifique as opções de processos daemon definidos via a GUI corretamente e certifique-se em cada lançamento do pacote.[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=755350)
 
-### PPPoE / DSL
+## Uso
 
-Instale o pacote [rp-pppoe](https://www.archlinux.org/packages/?name=rp-pppoe) para suporte a conexões PPPoE / DSL.
+NetworkManager vem com [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1) e [nmtui(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1).
+
+### Exemplos de nmcli
+
+Lista redes wifi próximas:
+
+```
+$ nmcli device wifi list
+
+```
+
+Conecta a uma rede wifi:
+
+```
+$ nmcli device wifi connect *SSID* password *senha*
+
+```
+
+Conecta a uma rede oculta:
+
+```
+$ nmcli device wifi connect *SSID* password *senha* hidden yes
+
+```
+
+Conecta a um wifi na interface de rede `wlan1`:
+
+```
+$ nmcli device wifi connect *SSID* password *senha* ifname wlan1 *nome_perfil*
+
+```
+
+Desconecta uma interface:
+
+```
+$ nmcli device disconnect ifname eth0
+
+```
+
+Reconecta uma interface marcada como desconectada:
+
+```
+$ nmcli connection up uuid *UUID*
+
+```
+
+Obtém uma lista de UUIDs:
+
+```
+$ nmcli connection show
+
+```
+
+Vê uma lista de dispositivos de rede e seus estados:
+
+```
+$ nmcli device
+
+```
+
+Desliga o wifi:
+
+```
+$ nmcli radio wifi off
+
+```
 
 ## Front-ends
 
-Para facilidade de configuração de novas redes, provavelmente usuários irão utilizar algum applet. Interfaces gráficas deste tipo geralmente ficam na área de notificação(tray) permitindo a seleção de redes e configuração do NetworkManager. Diversos tipos de applets existem para cada conjunto de interfaces gráficas.
+Para configurar e ter acesso fácil ao NetworkManager, a maioria dos usuários desejará instalar um applet. Esse front-end da GUI geralmente reside na bandeja do sistema (ou na área de notificação) e permite a seleção de rede e a configuração do NetworkManager. Vários ambientes de área de trabalho possuem seu próprio applet. Caso contrário, você pode usar [#nm-applet](#nm-applet).
 
 ### GNOME
 
-O [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) do [GNOME (Português)](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") funciona em todos os ambientes.
-
-Para armazenar credenciais de conexões (Wireless/DSL) instale e configure o [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring").
-
-Esteja ciente que marcar a opção de conexão `Tornar disponível para todos`, fará com que o NetworkManager armazene as senhas arquivo texto, e tal arquivo só será acessível pelo usuário root ou outros usando o via `nm-applet`.
+O [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") tem uma ferramenta embutida, acessível a partir das configurações de Rede.
 
 ### KDE Plasma
 
-Instale o applet [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm).
+[Instale](/index.php/Instale "Instale") o pacote [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm).
 
-### XFCE
+### nm-applet
 
-Apesar do [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) funcionar no [Xfce](/index.php/Xfce "Xfce"), para que as notificações sejam exibidas corretamente(inclusive as de erro), o `nm-applet` precisa de alguma implementação das especificações de notificação do Freedesktop (veja [Projeto Galapago](http://www.galago-project.org/specs/notification/0.9/index.html)). Para habilitar tais notificações, instale o pacote [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd).
+[network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) é um front-end em GTK+ 3 que funciona sob ambientes Xorg com uma bandeja de sistema.
 
-Sem este daemon de notificação, o `nm-applet` irá imprimir mensagens como as abaixo no stdout/stderr:
+Para armazenar conexões secretas, instale e configure [GNOME/Keyring](/index.php/GNOME/Keyring "GNOME/Keyring").
 
-```
-(nm-applet:24209): libnotify-WARNING **: Failed to connect to proxy
-** (nm-applet:24209): WARNING **: get_all_cb: couldn't retrieve
-system settings properties: (25) Launch helper exited with unknown
-return code 1.
-** (nm-applet:24209): WARNING **: fetch_connections_done: error
-fetching connections: (25) Launch helper exited with unknown return
-code 1.
-** (nm-applet:24209): WARNING **: Failed to register as an agent:
-(25) Launch helper exited with unknown return code 1
+Esteja ciente de que depois de ativar a opção caixa de seleção `Disponibilizar para outros usuários` para uma conexão, o NetworkManager armazena a senha em texto simples, embora o respectivo arquivo seja acessível apenas para root (ou outros usuários via `nm-applet`). Veja [#Senhas de Wi-Fi criptografadas](#Senhas_de_Wi-Fi_criptografadas).
 
-```
-
-`nm-applet` funcionará normalmente, mas sem as devidas notificações.
-
-Caso o `nm-applet` não exiba a tela de captura de senhas para a rede wifi, desconectando imediatamente após uma tentativa de conexão, você pode precisar do pacote [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring).
-
-Caso o applet não apareça, instale o pacote [xfce4-indicator-plugin](https://aur.archlinux.org/packages/xfce4-indicator-plugin/). [[3]](http://askubuntu.com/questions/449658/networkmanager-tray-nm-applet-is-gone-after-upgrade-to-14-04-trusty)
-
-### Openbox
-
-Para funcionar corretamente no [Openbox](/index.php/Openbox "Openbox"), o applet do GNOME requer o pacote [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd) para gerenciar as notificações pelos mesmos motivos do XFCE, e o pacote [gnome-icon-theme](https://www.archlinux.org/packages/?name=gnome-icon-theme) para que o applet seja exibido corretamente na área de notificação.
-
-Se você deseja armazenar credenciais de autenticação, poderá ter que configurar o [gnome-keyring](/index.php/Gnome-keyring "Gnome-keyring").
-
-O `nm-applet` instala o arquivo de autostart `/etc/xdg/autostart/nm-applet.desktop`. Caso você tenha problemas(`nm-applet` iniciando duplicado ou não iniciando), veja [Openbox#Autostart](/index.php/Openbox#Autostart "Openbox") ou [[4]](https://bbs.archlinux.org/viewtopic.php?pid=993738) para obter a solução.
-
-### Outros desktops ou gerenciadores de janelas
-
-Nos cenários restantes, é recomendado a utilização do applet GNOME. Certifique-se de que o pacote [gnome-icon-theme](https://www.archlinux.org/packages/?name=gnome-icon-theme) está instalado, e para armazenar credenciais o [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") configurado.
-
-Para rodar o `nm-applet` sem uma área de notificação, você pode usar o [trayer](https://www.archlinux.org/packages/?name=trayer) ou [stalonetray](https://www.archlinux.org/packages/?name=stalonetray). Exemplo de script para ser adicionado ao seu path:
+Para executar `nm-applet` sem uma bandeja do sistema, você pode usar [trayer](https://www.archlinux.org/packages/?name=trayer) ou [stalonetray](https://www.archlinux.org/packages/?name=stalonetray). Por exemplo, você pode adicionar um script como este em seu caminho:
 
  `nmgui` 
 ```
@@ -109,36 +227,817 @@ killall nm-applet
 
 ```
 
-Ao fechar o *stalonetray*, também fechará o `nm-applet` economizando recursos logo após você terminar a configuração de rede.
+Quando você fecha a janela *stalonetray*, ela fecha `nm-applet` também, então nenhuma memória extra é usada quando você terminar as configurações de rede.
 
-### Linha de comando
+O applet pode mostrar notificações de eventos, como conexão ou desconexão de uma rede WiFi. Para que essas notificações sejam exibidas, verifique se você tem um servidor de notificação instalado - consulte [Notificações na área de trabalho](/index.php/Desktop_notifications "Desktop notifications"). Se você usar o applet sem um servidor de notificação, poderá ver algumas mensagens em stdout/stderr e o aplicativo poderá ser interrompido. Veja [[2]](https://bugzilla.gnome.org/show_bug.cgi?id=788313).
 
-Os seguintes aplicativos são úteis para o gerenciamento de redes sem um servidor X.
+Para executar `nm-applet` com tais notificações desabilitadas, inicie o miniaplicativo com o seguinte comando:
 
-#### nmcli
+```
+$ nm-applet --no-agent
 
-Um frontend de linha de comando, incluído no pacote [networkmanager](https://www.archlinux.org/packages/?name=networkmanager).
+```
 
-Para maiores detalhes veja [nmcli(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmcli.1). Exemplos:
+**Dica:** `nm-applet` pode ser iniciado automaticamente com um [arquivo desktop de inicialização automática](/index.php/XDG_Autostart_(Portugu%C3%AAs) "XDG Autostart (Português)"), para adicionar a opção --no-agent, modifique a linha Exec, p.ex.,
+```
+Exec=nm-applet --no-agent
 
-*   Para conectar a uma rede sem fio: `nmcli dev wifi connect <name> password <password>` 
-*   Para conectar a uma rede sem fio através da interface `wlan1`: `nmcli dev wifi connect <name> password <password> iface wlan1 [profile name]` 
-*   Para desconectar uma interface: `nmcli dev disconnect iface eth0` 
-*   Para reconectar uma interface marcada como desconectada: `nmcli con up uuid <uuid>` 
-*   Para gerar uma lista dos UUIDs: `nmcli con show` 
-*   Para gerar uma lista das conexões e seus estados: `nmcli dev` 
-*   Para desabilitar a rede sem fio: `nmcli r wifi off` 
+```
 
-#### nmtui
+#### Appindicator
 
-A interface em curses *nmtui* é parte integrante do pacote [networkmanager](https://www.archlinux.org/packages/?name=networkmanager).
+O suporte do Appindicator está disponível em *nm-applet*, entretanto, ele não é compilado no pacote oficial, veja [FS#51740](https://bugs.archlinux.org/task/51740). Para usar o nm-applet em um ambiente Appindicator, substitua [network-manager-applet](https://www.archlinux.org/packages/?name=network-manager-applet) por [network-manager-applet-indicator](https://aur.archlinux.org/packages/network-manager-applet-indicator/) e, em seguida, inicie o applet com o seguinte comando:
 
-Para maiores detalhes veja [nmtui(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nmtui.1).
+```
+$ nm-applet --indicator
 
-#### nmcli-dmenu
+```
 
-Outra alternativa existente é o pacote [networkmanager-dmenu-git](https://aur.archlinux.org/packages/networkmanager-dmenu-git/) que é um pequeno script para gerenciar conexões do NetworkManager através do *dmenu* ao invés do `nm-applet`. Provê todas as funcionalidades essenciais já existentes no NetworkManager como conectar a redes cabeadas ou sem fio, criar novas conexões wifi, capturar senhas quando necessário, iniciar conexões de VPN já existentes, habilitar/desabilitar a rede e executar o utilitário gráfico *nm-connection-editor*.
+### nmcli-dmenu
+
+Como alternativa, existe o [networkmanager-dmenu-git](https://aur.archlinux.org/packages/networkmanager-dmenu-git/), que é um pequeno script para gerenciar as conexões do NetworkManager com o *dmenu* em vez do `nm-applet`. Ele fornece todos os recursos essenciais, como conexão com conexões Wi-Fi ou com fio existentes do NetworkManager, conexão a novas conexões Wi-Fi, solicitações de senha, se necessário, conexão VPN existente, habilitação/desabilitação de rede e inicialização da interface gráfica *nm-connection-editor*.
+
+## Configuração
+
+O NetworkManager exigirá algumas etapas adicionais para poder funcionar corretamente. Certifique-se de ter configurado `/etc/hosts` como descrito na seção [Configuração de rede#Configurando um hostname](/index.php/Configura%C3%A7%C3%A3o_de_rede#Configurando_um_hostname "Configuração de rede").
+
+### Habilitar NetworkManager
+
+O NetworkManager é [controlado](/index.php/Systemd_(Portugu%C3%AAs)#Usando_units "Systemd (Português)") com a unit de [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") `NetworkManager.service`. Depois que o daemon do NetworkManager for iniciado, ele se conectará automaticamente a qualquer "conexão do sistema" disponível que já tenha sido configurada. Quaisquer "conexões de usuário" ou conexões não configuradas precisarão de *nmcli* ou de um applet para configurar e conectar.
+
+O NetworkManager possui um arquivo de configuração global em `/etc/NetworkManager/NetworkManager.conf`. Os arquivos de configuração de adição podem ser colocados em `/etc/NetworkManager/conf.d/`. Geralmente, nenhuma configuração precisa ser feita para os padrões globais.
+
+### Habilitar NetworkManager Wait Online
+
+Se você tiver serviços que falham se eles forem iniciados antes que a rede esteja ativa, você pode usar o `NetworkManager-wait-online.service` além do `NetworkManager.service`. Isso, no entanto, raramente é necessário porque a maioria dos daemons em rede é inicializada corretamente, mesmo que a rede ainda não tenha sido configurada.
+
+Em alguns casos, o serviço ainda falhará ao iniciar com sucesso na inicialização devido à configuração de tempo limite em `/usr/lib/systemd/system/NetworkManager-wait-online.service` ser muito curta. Altere o tempo limite padrão de 30 para um valor mais alto.
+
+### Configurar as permissões de PolicyKit
+
+Veja [General troubleshooting#Session permissions](/index.php/General_troubleshooting#Session_permissions "General troubleshooting") para como configurar uma sessão de trabalho.
+
+Com uma sessão de trabalho, você tem várias opções para conceder os privilégios necessários ao NetworkManager:
+
+*   *Opção 1.* Execute um agente de autenticação [Polkit](/index.php/Polkit "Polkit") ao efetuar login, como `/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1` (parte do [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome)). Você será solicitado a fornecer sua senha sempre que adicionar ou remover uma conexão de rede.
+*   *Opção 2.* [Adicione](/index.php/Usu%C3%A1rios_e_grupos#Gerenciamento_de_grupo "Usuários e grupos") a si próprio ao grupo `wheel`. Você não precisará inserir sua senha, mas a sua conta de usuário também poderá receber outras permissões, como a capacidade de usar o [sudo](/index.php/Sudo "Sudo") sem digitar a senha do root.
+*   *Opção 3.* [Adicione](/index.php/Usu%C3%A1rios_e_grupos#Gerenciamento_de_grupo "Usuários e grupos") a si próprio ao grupo `network` e crie o seguinte arquivo:
+
+ `/etc/polkit-1/rules.d/50-org.freedesktop.NetworkManager.rules` 
+```
+polkit.addRule(function(action, subject) {
+  if (action.id.indexOf("org.freedesktop.NetworkManager.") == 0 && subject.isInGroup("network")) {
+    return polkit.Result.YES;
+  }
+});
+
+```
+
+	Todos os usuários do grupo `network` poderão adicionar e remover redes sem uma senha. Isso não funcionará em [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)") se você não tiver uma sessão ativa com *systemd-logind*.
+
+### Configurações de proxy
+
+O NetworkManager não lida diretamente com configurações de proxy, mas se você estiver usando o [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") ou [KDE](/index.php/KDE "KDE"), você pode usar o [proxydriver](http://marin.jb.free.fr/proxydriver/) que lida com configurações de proxy usando Informações do NetworkManager. O proxydriver é encontrado no pacote [proxydriver](https://aur.archlinux.org/packages/proxydriver/).
+
+Para que o *proxydriver* possa alterar as configurações do proxy, você precisaria executar este comando, como parte do processo de inicialização do GNOME (*Sistema > Preferências > Aplicativos de inicialização*):
+
+```
+xhost +si:localuser:*nome_de_usuário*
+
+```
+
+Veja também as [configurações de proxy](/index.php/Proxy_settings "Proxy settings").
+
+### Verificando conectividade
+
+NetworkManager pode tentar alcançar uma página na Internet ao conectar a uma rede. [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) está configurado por padrão em `/usr/lib/NetworkManager/conf.d/20-connectivity.conf` para verificar a conectividade com o archlinux.org. Para usar um servidor web diferente ou desabilitar a verificação de conectividade, crie `/etc/NetworkManager/conf.d/20-connectivity.conf`, veja "connectivity section" em [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).
+
+Para aqueles por trás de um [captive portal](https://en.wikipedia.org/wiki/Captive_portal "wikipedia:Captive portal"), o gerenciador de área de trabalhado pode abrir automaticamente uma janela pedindo por credenciais.
+
+### Cliente DHCP
+
+Por padrão, o NetworkManager usará seu cliente DHCP interno, baseado em systemd-networkd. Para usar um cliente DHCP diferente, [instale](/index.php/Instale "Instale") uma das alternativas:
+
+*   [dhclient](https://www.archlinux.org/packages/?name=dhclient) - Cliente DHCP da ISC.
+*   [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) - [dhcpcd](/index.php/Dhcpcd "Dhcpcd").
+
+**Atenção:** NetworkManger não oferece suporte ao uso de dhcpcd para IPv6\. Veja [issue #5 do NetworkManager](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/issues/5).
+
+Para alterar o backend do cliente DHCP, defina a opção `dhcp=*dhcp_client_name*` na seção `[main]` do arquivo de configuração do NetworkManager. Por exemplo:
+
+ `/etc/NetworkManager/conf.d/dhcp-client.conf` 
+```
+[main]
+dhcp=dhclient
+```
+
+### Cache de DNS e DNS dividido
+
+O NetworkManager possui um plugin para habilitar o cache DNS e DNS dividido usando [dnsmasq](/index.php/Dnsmasq_(Portugu%C3%AAs) "Dnsmasq (Português)") ou [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved"), ou [Unbound](/index.php/Unbound "Unbound") (via dnssec-trigger). As vantagens dessa configuração são que as pesquisas de DNS serão armazenadas em cache, encurtando os tempos de resolução e as pesquisas de DNS dos hosts de VPN serão roteadas para os servidores DNS da VPN relevantes. Isso é especialmente útil se você estiver conectado a mais de uma VPN.
+
+#### dnsmasq
+
+Certifique-se que [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) está instalado. Então, crie `/etc/NetworkManager/conf.d/dns.conf` e adicione o seguinte a ele:
+
+ `/etc/NetworkManager/conf.d/dns.conf` 
+```
+[main]
+dns=dnsmasq
+```
+
+Agora, [reinicie](/index.php/Reinicie "Reinicie") `NetworkManager.service`. NetworkManager vai iniciar automaticamente o dnsmasq e adicionar `127.0.0.1` ao `/etc/resolv.conf`. Os servidores DNS atuais pode ser localizados no `/run/NetworkManager/resolv.conf`. Você pode verificar se dnsmasq está sendo usado fazendo a mesma procura DNS duas vezes com `drill example.com` e verificando o servidor e tempos de consulta.
+
+**Nota:** Você não precisa iniciar `dnsmasq.service` ou editar `/etc/dnsmasq.conf`. O NetworkManager iniciará o dnsmasq sozinho sem usar o serviço systemd e sem ler o(s) arquivo(s) de configuração padrão do dnsmasq.
+
+##### Configuração personalizada
+
+Configurações personalizadas podem ser criadas para o *dnsmasq* criando arquivos de configuração em `/etc/NetworkManager/dnsmasq.d/`. Por exemplo, para alterar o tamanho do cache DNS (armazenado na RAM):
+
+ `/etc/NetworkManager/dnsmasq.d/cache.conf`  `cache-size=1000` 
+**Dica:** Verifique a sintaxe do arquivo de configuração com `dnsmasq --test --conf-file=/dev/null --conf-dir=/etc/NetworkManager/dnsmasq.d`.
+
+Veja [dnsmasq(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dnsmasq.8) para todas as opções disponíveis.
+
+##### IPv6
+
+Habilitar o `dnsmasq` no NetworkManager pode interromper as pesquisas de DNS somente do IPv6 (ou seja, `drill -6 [hostname`}) que, de outra forma, funcionariam. Para resolver isso, a criação do arquivo a seguir configurará o *dnsmasq* para também ouvir o loopback do IPv6:
+
+ `/etc/NetworkManager/dnsmasq.d/ipv6_listen.conf`  `listen-address=::1` 
+
+Além disso, o `dnsmasq` também não prioriza o DNS IPv6 upstream. Infelizmente, o NetworkManager não faz isso ([Bug do Ubuntu](https://bugs.launchpad.net/ubuntu/+source/network-manager/+bug/936712)). Uma solução alternativa seria desabilitar o DNS IPv4 na configuração do NetworkManager, supondo que exista.
+
+##### DNSSEC
+
+A instância dnsmasq iniciada pelo NetworkManager por padrão não validará [DNSSEC](/index.php/DNSSEC_(Portugu%C3%AAs) "DNSSEC (Português)") desde que seja iniciada com a opção `--proxy-dnssec`. Ele irá confiar em qualquer informação DNSSEC obtida do servidor DNS upstream.
+
+Para que o dnsmasq valide corretamente o DNSSEC, crie o seguinte arquivo de configuração:
+
+ `/etc/NetworkManager/dnsmasq.d/dnssec.conf` 
+```
+conf-file=/usr/share/dnsmasq/trust-anchors.conf
+dnssec
+```
+
+#### systemd-resolved
+
+O NetworkManager pode usar o [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") como um resolvedor e cache de DNS. Certifique-se de que *systemd-resolved* esteja configurado corretamente e que `systemd-resolved.service` esteja [iniciado](/index.php/Iniciado "Iniciado") antes de usá-lo.
+
+systemd-resolved vai ser usado automaticamente se `/etc/resolv.conf` é um [link simbólico](/index.php/Systemd-resolved#DNS "Systemd-resolved") para `/run/systemd/resolve/stub-resolv.conf`, `/run/systemd/resolve/resolv.conf` ou `/usr/lib/systemd/resolv.conf`.
+
+Você pode habilitá-lo explicitamente definindo a opção `dns=` no [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5):
+
+ `/etc/NetworkManager/conf.d/dns.conf` 
+```
+[main]
+dns=systemd-resolved
+```
+
+#### Outros métodos
+
+**Dica:** Se [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)") tem um assinante para o [resolvedor local de DNS](/index.php/Resolu%C3%A7%C3%A3o_de_nome_de_dom%C3%ADnio#Resolvedores "Resolução de nome de domínio"), defina o endereço de servidor local no `/etc/resolvconf.conf` e [configure o NetworkManager para usar openresolv](#Usar_openresolv).
+
+Com um servidor DNS em cache já em funcionamento, o endereço do servidor DNS pode ser especificado nas configurações do NetworkManager (geralmente clicando com o botão direito do mouse no miniaplicativo). A instalação dependerá do tipo de front-end usado; o processo geralmente envolve clicar com o botão direito do mouse no miniaplicativo, editar (ou criar) um perfil e, em seguida, escolher o tipo de DHCP como *Automático (especificar endereços)*. Os endereços DNS precisarão ser inseridos e geralmente estão neste formato: `127.0.0.1, *Servidor-DNS-um*, ...`.
+
+## Serviços de rede com o NetworkManager dispatcher
+
+Existem alguns serviços de rede que você não desejará executar até que o NetworkManager exiba uma interface. O NetworkManager tem a capacidade de iniciar serviços quando você se conecta a uma rede e os interrompe quando você desconecta (por exemplo, ao usar [NFS](/index.php/NFS "NFS"), [SMB](/index.php/SMB "SMB") e [NTPd](/index.php/NTPd "NTPd")).
+
+Para ativar o recurso, você precisa [habilitar](/index.php/Habilitar "Habilitar") e [iniciar](/index.php/Inicia "Inicia") o `NetworkManager-dispatcher.service`.
+
+Quando o serviço estiver ativo, os scripts poderão ser adicionados ao diretório `/etc/NetworkManager/dispatcher.d`.
+
+Os scripts devem pertencer ao **root**, caso contrário o distribuidor não os executará. Para maior segurança, defina a [propriedade](/index.php/Ownership "Ownership") de grupo como root:
+
+```
+# chown root:root /etc/NetworkManager/dispatcher.d/*10-script.sh*
+
+```
+
+Certifique-se que o arquivo tem as permissões corretas:
+
+```
+# chmod 755 /etc/NetworkManager/dispatcher.d/*10-script.sh*
+
+```
+
+Os scripts serão executados em ordem alfabética no momento da conexão e em ordem alfabética inversa no momento da desconexão. Para garantir a ordem em que aparecem, é comum usar caracteres numéricos antes do nome do script (por exemplo, `10-portmap` ou `30-netfs` (o que garante que *portmapper* esteja ativo antes que as montagens do NFS sejam tentadas).
+
+Scripts vão receber os seguintes argumentos:
+
+*   **Nome da interface:** p. ex., `eth0`
+*   **Status da interface:** *up* ou *down*
+*   **Status da VPN:** *vpn-up* ou *vpn-down*
+
+**Atenção:** Se você se conectar a redes estrangeiras ou públicas, esteja ciente de quais serviços você está iniciando e quais servidores você espera que estejam disponíveis para eles se conectarem. Você pode criar uma falha de segurança iniciando os serviços errados enquanto estiver conectado a uma rede pública.
+
+### Evitando o esgotamento de tempo limite do dispatcher
+
+Se o acima está funcionando, então esta seção não é relevante. No entanto, há um problema geral relacionado à execução de scripts do dispatcher que demoram mais para serem executados. Inicialmente, foi utilizado um tempo limite interno de apenas três segundos. Se o script chamado não foi concluído a tempo, ele foi morto. Mais tarde, o tempo limite foi estendido para cerca de 20 segundos (veja o [Rastreador de erros](https://bugzilla.redhat.com/show_bug.cgi?id=982734) para mais informações). Se o tempo limite ainda criar o problema, uma solução alternativa poderá ser modificar o arquivo de serviço do distribuidor `/usr/lib/systemd/system/NetworkManager-dispatcher.service` para permanecer ativo após a saída:
+
+ `/etc/systemd/system/NetworkManager-dispatcher.service.d/remain_after_exit.conf` 
+```
+[Service]
+RemainAfterExit=yes
+```
+
+Agora, inicie e habilite o serviço modificado `NetworkManager-dispatcher` service.
+
+**Atenção:** Adicionar a linha `RemainAfterExit` a ele impedirá que o dispatcher feche. Infelizmente, o dispatcher **tem** para fechar antes que possa executar seus scripts novamente. Com ele, o dispatcher não irá expirar, mas também não será fechado, o que significa que os scripts só serão executados uma vez por inicialização. Portanto, não adicione a linha a menos que o tempo limite esteja causando um problema.
+
+### Exemplos de dispatcher
+
+#### Montar pasta remota com sshfs
+
+Como o script é executado em um ambiente muito restritivo, você precisa exportar `SSH_AUTH_SOCK` para se conectar ao seu agente SSH. Existem diferentes maneiras de conseguir isso, veja [esta mensagem](https://bbs.archlinux.org/viewtopic.php?pid=1042030#p1042030) para obter mais informações. O exemplo abaixo funciona com [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring"), e irá pedir a senha se você ainda não estiver desbloqueado. Caso o NetworkManager conecte-se automaticamente no login, é provável que o *gnome-keyring* ainda não tenha iniciado e a exportação irá falhar (daí o sleep). O `UUID` para correspondência pode ser encontrado com o comando `nmcli connection status` ou `nmcli connection list`.
+
+```
+#!/bin/sh
+USER='nome_de_usuário'
+REMOTE='usuário@host:/caminho/remoto'
+LOCAL='/caminho/local'
+
+interface=$1 status=$2
+if [ "$CONNECTION_UUID" = "*uuid*" ]; then
+  case $status in
+    up)
+      SSH_AUTH_SOCK=$(find /tmp -maxdepth 1 -type s -user "$USER" -name 'ssh')
+      export SSH_AUTH_SOCK
+      su "$USER" -c "sshfs $REMOTE $LOCAL"
+      ;;
+    down)
+      fusermount -u "$LOCAL"
+      ;;
+  esac
+fi
+
+```
+
+#### Montagem de compartilhamentos SMB
+
+Alguns compartilhamentos [SMB](/index.php/SMB "SMB") estão disponíveis apenas em determinadas redes ou locais (por exemplo, em casa). Você pode usar o distribuidor para montar apenas compartilhamentos SMB que estejam presentes em seu local atual.
+
+O script a seguir verificará se nos conectamos a uma rede específica e montamos os compartilhamentos de acordo:
+
+ `/etc/NetworkManager/dispatcher.d/30-mount-smb.sh` 
+```
+#!/bin/sh
+
+# Localiza o UUID de conexão com "nmcli connection show" no terminal.
+# Todos os tipos de conexão do NetworkManager têm suporte: sem fio, VPN, com fio...
+if [ "$2" = "up" ]; then
+  if [ "$CONNECTION_UUID" = "uuid" ]; then
+    mount /your/mount/point & 
+    # adicione mais compartilhamentos conforme necessário
+  fi
+fi
+
+```
+
+O script a seguir desmontará todos os compartilhamentos antes de uma desconexão de uma rede específica:
+
+ `/etc/NetworkManager/dispatcher.d/pre-down.d/30-mount-smb.sh` 
+```
+#!/bin/sh
+umount -a -l -t cifs
+
+```
+
+**Nota:**
+
+*   Certifique-se de que este script esteja localizado no subdiretório `pre-down.d`, conforme mostrado acima, caso contrário, ele desmontará todos os compartilhamentos em qualquer alteração de estado de conexão.
+*   Desde o NetworkManager 0.9.8, os eventos *pre-down* e *down* não são executados no desligamento ou reinicialização, veja [este relatório de erro](https://bugzilla.gnome.org/show_bug.cgi?id=701242) para mais informações.
+
+#### Montagem de compartilhamentos NFS
+
+Veja [NFS#Using a NetworkManager dispatcher](/index.php/NFS#Using_a_NetworkManager_dispatcher "NFS").
+
+#### Usar dispatcher para ativar rede sem fio automaticamente dependendo de cabo LAN estar conectado
+
+A ideia é ligar o Wi-Fi apenas quando o cabo LAN estiver desconectado (por exemplo, ao desconectá-lo de um laptop) e para que o Wi-Fi seja desativado automaticamente, assim que o cabo LAN for conectado novamente.
+
+Crie o seguinte script de dispatcher ([Fonte](http://superuser.com/questions/233448/disable-wlan-if-wired-cable-network-is-available)), substituindo `LAN_interface` pelo seu.
+
+ `/etc/NetworkManager/dispatcher.d/wlan_auto_toggle.sh` 
+```
+#!/bin/sh
+
+if [ "$1" = "LAN_interface" ]; then
+    case "$2" in
+        up)
+            nmcli radio wifi off
+            ;;
+        down)
+            nmcli radio wifi on
+            ;;
+    esac
+fi
+
+```
+
+**Nota:** Você obter uma lista de interfaces usando [nmcli](#Exemplos_de_nmcli). As interfaces ethernet (LAN) iniciam com `en`, p.ex., `enp0s5`
+
+#### Usar dispatcher para conectar a uma VPN após uma conexão de rede ser estabelecida
+
+Neste exemplo, queremos nos conectar automaticamente a uma conexão VPN definida anteriormente após a conexão a uma rede Wi-Fi específica. A primeira coisa a fazer é criar o script de dispatcher que define o que fazer depois de estarmos conectados à rede.
+
+**Nota:** Esse script vai precisar de [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) para usar `iwgetid`.
+ `/etc/NetworkManager/dispatcher.d/vpn-up` 
+```
+#!/bin/sh
+VPN_NAME="nome da conexão VPN definido no NetworkManager"
+ESSID="ESSID da rede Wi-Fi (não o nome da conexão)"
+
+interface=$1 status=$2
+case $status in
+  up|vpn-down)
+    if iwgetid | grep -qs ":\"$ESSID\""; then
+      nmcli connection up id "$VPN_NAME"
+    fi
+    ;;
+  down)
+    if iwgetid | grep -qs ":\"$ESSID\""; then
+      if nmcli connection show --active | grep "$VPN_NAME"; then
+        nmcli connection down id "$VPN_NAME"
+      fi
+    fi
+    ;;
+esac
+
+```
+
+Se você quiser se conectar automaticamente à VPN para todas as redes Wi-Fi, use a seguinte definição do ESSID: `ESSID=$(iwgetid -r)`. Lembre-se de definir as permissões do script [de acordo com isso](#Servi.C3.A7os_de_rede_com_o_NetworkManager_dispatcher).
+
+A tentativa de se conectar com o script acima ainda pode falhar com `NetworkManager-dispatcher.service` reclamando sobre "nenhum segredo de VPN válido", por causa de [como os segredos VPN são armazenados](http://developer.gnome.org/NetworkManager/0.9/secrets-flags.html). Felizmente, existem diferentes opções para fornecer ao script acima acesso à sua senha de VPN.
+
+1: Um deles requer a edição do arquivo de configuração de conexão VPN para fazer com que o NetworkManager armazene os segredos por si só, em vez de dentro de um chaveiro [que será inacessível por root](https://bugzilla.redhat.com/show_bug.cgi?id=710552): abra `/etc/NetworkManager/system-connections/*nome de sua conexão VPN*` e altere as `password-flags` e `secret-flags` de `1` para `0`.
+
+Se isso não funcionar sozinho, talvez seja necessário criar um `passwd-file` em um local seguro com as mesmas permissões e propriedade que o script do dispatcher, contendo o seguinte:
+
+ `/path/to/passwd-file` 
+```
+vpn.secrets.password:SUA_SENHA
+
+```
+
+O script deve ser alterado de acordo, para que obtenha a senha do arquivo:
+
+ `/etc/NetworkManager/dispatcher.d/vpn-up` 
+```
+#!/bin/sh
+VPN_NAME="nome de conexão VPN definida no NetworkManager"
+ESSID="ESSID de rede Wi-Fi (nenhum nome de conexão)"
+
+interface=$1 status=$2
+case $status in
+  up|vpn-down)
+    if iwgetid | grep -qs ":\"$ESSID\""; then
+      nmcli connection up id "$VPN_NAME" passwd-file /path/to/passwd-file
+    fi
+    ;;
+  down)
+    if iwgetid | grep -qs ":\"$ESSID\""; then
+      if nmcli connection show --active | grep "$VPN_NAME"; then
+        nmcli connection down id "$VPN_NAME"
+      fi
+    fi
+    ;;
+esac
+
+```
+
+2: Alternativamente, altere a `password-flags` e coloque a senha diretamente no arquivo de configuração adicionando a seção `vpn-secrets`:
+
+```
+ [vpn]
+ ....
+ password-flags=0
+
+ [vpn-secrets]
+ password=*senha_senha*
+
+```
+
+**Nota:** Agora pode ser necessário reabrir o editor de conexão do NetworkManager e salvar as senhas/segredos da VPN novamente.
+
+#### OpenNTPD
+
+Veja [OpenNTPD#Using NetworkManager dispatcher](/index.php/OpenNTPD#Using_NetworkManager_dispatcher "OpenNTPD").
+
+## Testando
+
+Os miniaplicativos do NetworkManager são projetados para serem carregados no início da sessão, portanto, nenhuma configuração adicional deve ser necessária para a maioria dos usuários. Se você já desativou suas configurações de rede anteriores e desconectou-se da sua rede, agora pode testar se o NetworkManager funcionará. O primeiro passo é [iniciar](/index.php/Inicia "Inicia") `NetworkManager.service`.
+
+Alguns miniaplicativos fornecerão um arquivo `.desktop` para que o miniaplicativo NetworkManager possa ser carregado através do menu do aplicativo. Se isso não acontecer, você terá que descobrir o comando para usar ou efetuar logout e efetuar login novamente para iniciar o miniaplicativo. Depois que o applet é iniciado, ele provavelmente começará a pesquisar conexões de rede com a autoconfiguração com um servidor DHCP.
+
+Para iniciar o miniaplicativo do GNOME nos gerenciadores de janela não compatíveis com xdg, como [awesome](/index.php/Awesome "Awesome"):
+
+```
+nm-applet --sm-disable &
+
+```
+
+Para endereços IP estáticos, você terá que configurar o NetworkManager para entendê-los. O processo geralmente envolve clicar com o botão direito do mouse no applet e selecionar algo como 'Editar conexões'.
+
+## Dicas e truques
+
+### Senhas de Wi-Fi criptografadas
+
+By default, NetworkManager stores passwords in clear text in the connection files at `/etc/NetworkManager/system-connections/`. To print the stored passwords, use the following command:
+
+```
+# grep -H '^psk=' /etc/NetworkManager/system-connections/*
+
+```
+
+The passwords are accessible to the root user in the filesystem and to users with access to settings via the GUI (e.g. `nm-applet`).
+
+It is preferable to save the passwords in encrypted form in a keyring instead of clear text. The downside of using a keyring is that the connections have to be set up for each user.
+
+#### Usando GNOME Keyring
+
+The keyring daemon has to be started and the keyring needs to be unlocked for the following to work.
+
+Furthermore, NetworkManager needs to be configured not to store the password for all users. Using GNOME `nm-applet`, run `nm-connection-editor` from a terminal, select a network connection, click `Edit`, select the `Wifi-Security` tab and click on the right icon of password and check `Store the password only for this user`.
+
+#### Usando KDE Wallet
+
+Using KDE's [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm), click the applet, click on the top right `Settings` icon, click on a network connection, in the `General settings` tab, untick `all users may connect to this network`. If the option is ticked, the passwords will still be stored in clear text, even if a keyring daemon is running.
+
+If the option was selected previously and you un-tick it, you may have to use the `reset` option first to make the password disappear from the file. Alternatively, delete the connection first and set it up again.
+
+### Compartilhando conexão internet pelo Wi-Fi
+
+You can share your internet connection (e.g. 3G or wired) with a few clicks. You will need a supported Wi-Fi card (Cards based on Atheros AR9xx or at least AR5xx are probably best choice). Please note that a [firewall](/index.php/Firewall "Firewall") may interfere with internet sharing.
+
+*   [Install](/index.php/Install "Install") the [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package to be able to actually share the connection.
+
+Create the shared connection:
+
+*   Click on applet and choose *Create new wireless network*.
+*   Follow wizard (if using WEP, be sure to use 5 or 13 character long password, different lengths will fail).
+    *   Choose either [Hotspot](https://fedoraproject.org/wiki/Features/RealHotspot "fedora:Features/RealHotspot") or Ad-hoc as Wi-Fi mode.
+
+The connection will be saved and remain stored for the next time you need it.
+
+**Note:** Android does not support connecting to Ad-hoc networks. To share a connection with Android use infrastructure mode (i.e. set Wi-Fi mode to "Hotspot").
+
+### Compartilhando conexão internet por Ethernet
+
+Scenario: your device has internet connection over wi-fi and you want to share the internet connection to other devices over ethernet.
+
+Requirements:
+
+*   [Install](/index.php/Install "Install") the [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package to be able to actually share the connection.
+*   Your internet connected device and the other devices are connected over a suitable ethernet cable (this usually means a cross over cable or a switch in between).
+*   Internet sharing is not blocked by a [firewall](/index.php/Firewall "Firewall").
+
+Steps:
+
+*   Run `nm-connection-editor` from terminal.
+*   Add a new ethernet connection.
+*   Give it some sensible name. For example "Shared Internet"
+*   Go to "IPv4 Settings".
+*   For "Method:" select "Shared to other computers".
+*   Save
+
+Now you should have a new option "Shared Internet" under the Wired connections in NetworkManager.
+
+### Verificando se a conectividade está ativa dentro de um script ou trabalho cron
+
+Some *cron* jobs require networking to be up to succeed. You may wish to avoid running these jobs when the network is down. To accomplish this, add an **if** test for networking that queries NetworkManager's *nm-tool* and checks the state of networking. The test shown here succeeds if any interface is up, and fails if they are all down. This is convenient for laptops that might be hardwired, might be on wireless, or might be off the network.
+
+```
+if [ $(nm-tool|grep State|cut -f2 -d' ') == "connected" ]; then
+    #Whatever you want to do if the network is online
+else
+    #Whatever you want to do if the network is offline - note, this and the else above are optional
+fi
+
+```
+
+This useful for a `cron.hourly` script that runs *fpupdate* for the F-Prot virus scanner signature update, as an example. Another way it might be useful, with a little modification, is to differentiate between networks using various parts of the output from *nm-tool*; for example, since the active wireless network is denoted with an asterisk, you could grep for the network name and then grep for a literal asterisk.
+
+### Conectar a uma rede com segredo na inicialização
+
+By default, NetworkManager will not connect to networks requiring a secret automatically on boot. This is because it locks such connections to the user who makes it by default, only connecting after they have logged in. To change this, do the following:
+
+1.  Right click on the `nm-applet` icon in your panel and select Edit Connections and open the Wireless tab
+2.  Select the connection you want to work with and click the Edit button
+3.  Check the boxes “Connect Automatically” and “Available to all users”
+
+Log out and log back in to complete.
+
+### Desbloquear automaticamente o chaveiro após o login
+
+NetworkManager requires access to the login keyring to connect to networks requiring a secret. Under most circumstances, this keyring is unlocked automatically at login, but if it is not, and NetworkManager is not connecting on login, you can try the following.
+
+#### GNOME
+
+*   In `/etc/pam.d/gdm` (or your corresponding daemon in `/etc/pam.d`), add these lines at the end of the "auth" and "session" blocks if they do not exist already:
+
+```
+ auth            optional        pam_gnome_keyring.so
+ session         optional        pam_gnome_keyring.so  auto_start
+
+```
+
+*   In `/etc/pam.d/passwd`, use this line for the 'password' block:
+
+```
+ password    optional    pam_gnome_keyring.so
+
+```
+
+	Next time you log in, you should be asked if you want the password to be unlocked automatically on login.
+
+#### Gerenciador de login SLiM
+
+See [SLiM#Gnome Keyring](/index.php/SLiM#Gnome_Keyring "SLiM").
+
+### OpenConnect com senha no KWallet
+
+While you may type both values at connection time, [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) 0.9.3.2-1 and above are capable of retrieving OpenConnect username and password directly from [KWallet](/index.php/KWallet "KWallet").
+
+Open "KDE Wallet Manager" and look up your OpenConnect VPN connection under "Network Management|Maps". Click "Show values" and enter your credentials in key "VpnSecrets" in this form (replace *username* and *password* accordingly):
+
+```
+form:main:username%SEP%*username*%SEP%form:main:password%SEP%*password*
+
+```
+
+Next time you connect, username and password should appear in the "VPN secrets" dialog box.
+
+### Ignorar dispositivos específicos
+
+Sometimes it may be desired that NetworkManager ignores specific devices and does not try to configure addresses and routes for them. You can quickly and easily ignore devices by MAC or interface-name by using the following in `/etc/NetworkManager/conf.d/unmanaged.conf`:
+
+```
+[keyfile]
+unmanaged-devices=mac:00:22:68:1c:59:b1;mac:00:1E:65:30:D1:C4;interface-name:eth0
+
+```
+
+After you have put this in, [restart](/index.php/Daemon "Daemon") NetworkManager, and you should be able to configure interfaces without NetworkManager altering what you have set.
+
+### Configurando aleatorização de endereço MAC
+
+**Note:** Disabling MAC address randomization may be needed to get (stable) link connection [[3]](https://bbs.archlinux.org/viewtopic.php?id=220101) and/or networks that restrict devices based on their MAC Address or have a limit network capacity.
+
+MAC randomization can be used for increased privacy by not disclosing your real MAC address to the network.
+
+NetworkManager supports two types MAC Address Randomization: randomization during scanning, and for network connections. Both modes can be configured by modifying `/etc/NetworkManager/NetworkManager.conf` or by creating a separate configuration file in `/etc/NetworkManager/conf.d/` which is recommended since the aforementioned config file may be overwritten by NetworkManager.
+
+Randomization during Wi-Fi scanning is enabled by default, but it may be disabled by adding the following lines to `/etc/NetworkManager/NetworkManager.conf` or a dedicated configuration file under `/etc/NetworkManager/conf.d`:
+
+ `/etc/NetworkManager/conf.d/wifi_rand_mac.conf` 
+```
+[device]
+wifi.scan-rand-mac-address=no
+```
+
+MAC randomization for network connections can be set to different modes for both wireless and ethernet interfaces. See [the Gnome blog post](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/) for more details on the different modes.
+
+In terms of MAC randomization the most important modes are stable and random. Stable generates a random MAC address when you connect to a new network and associates the two permanently. This means that you will use the same MAC address every time you connect to that network. In contrast, random will generate a new MAC address every time you connect to a network, new or previously known. You can configure the MAC randomization by adding the desired configuration under `/etc/NetworkManager/conf.d`.
+
+```
+[device-mac-randomization]
+# "yes" is already the default for scanning
+wifi.scan-rand-mac-address=yes
+
+[connection-mac-randomization]
+# Randomize MAC for every ethernet connection
+ethernet.cloned-mac-address=random
+# Generate a random MAC for each WiFi and associate the two permanently.
+wifi.cloned-mac-address=stable
+
+```
+
+See the following [GNOME blogpost](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/) for more details.
+
+### Habilitar extensões de privacidade IPv6
+
+See [IPv6#NetworkManager](/index.php/IPv6#NetworkManager "IPv6").
+
+### Trabalhando com conexões cabeadas
+
+By default, NetworkManager generates a connection profile for each wired ethernet connection it finds. At the point when generating the connection, it does not know whether there will be more ethernet adapters available. Hence, it calls the first wired connection "Wired connection 1". You can avoid generating this connection, by configuring `no-auto-default` (see [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5)), or by simply deleting it. Then NetworkManager will remember not to generate a connection for this interface again.
+
+You can also edit the connection (and persist it to disk) or delete it. NetworkManager will not re-generate a new connection. Then you can change the name to whatever you want. You can use something like nm-connection-editor for this task.
+
+### resolv.conf
+
+*NetworkManager* overwrites [resolv.conf](/index.php/Resolv.conf "Resolv.conf") by default.
+
+This can be stopped by adding `dns=none` to the `[main]` section in `/etc/NetworkManager/NetworkManager.conf`.
+
+After that `/etc/resolv.conf` might be a broken symlink that you will need to remove. Then, just create a new `/etc/resolv.conf` file.
+
+*NetworkManager* also offers hooks via so called dispatcher scripts that can be used to alter the `/etc/resolv.conf` after network changes. See [#Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher) and [NetworkManager(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.8) for more information.
+
+#### Usar openresolv
+
+To configure NetworkManager to use [openresolv](/index.php/Openresolv "Openresolv"), set the `rc-manager` option to `resolvconf` with a configuration file in `/etc/NetworkManager/conf.d/`:
+
+ `/etc/NetworkManager/conf.d/rc-manager.conf` 
+```
+[main]
+rc-manager=resolvconf
+```
+
+Others options are available in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).
+
+### Usando iwd como o backend de Wi-Fi
+
+To enable the experimental [iwd](/index.php/Iwd "Iwd") backend create the following configuration file:
+
+ `/etc/NetworkManager/conf.d/wifi_backend.conf` 
+```
+[device]
+wifi.backend=iwd
+```
+
+## Solução de problemas
+
+### Nenhum prompt para senha de redes Wi-Fi seguras
+
+When trying to connect to a secured Wi-Fi network, no prompt for a password is shown and no connection is established. This happens when no keyring package is installed. An easy solution is to install [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring). If you want the passwords to be stored in encrypted form, follow [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") to set up the *gnome-keyring-daemon*.
+
+### Nenhum tráfego via túnel PPTP
+
+PPTP connection logins successfully; you see a ppp0 interface with the correct VPN IP address, but you cannot even ping the remote IP address. It is due to lack of MPPE (Microsoft Point-to-Point Encryption) support in stock Arch pppd. It is recommended to first try with the stock Arch [ppp](https://www.archlinux.org/packages/?name=ppp) as it may work as intended.
+
+To solve the problem it should be sufficient to install the [ppp-mppe](https://aur.archlinux.org/packages/ppp-mppe/) package.
+
+See also [WPA2 Enterprise#MS-CHAPv2](/index.php/WPA2_Enterprise#MS-CHAPv2 "WPA2 Enterprise").
+
+### Gerenciamento de rede desabilitado
+
+When NetworkManager shuts down but the pid (state) file is not removed, you will see a `Network management disabled` message. If this happens, remove the file manually:
+
+```
+# rm /var/lib/NetworkManager/NetworkManager.state
+
+```
+
+### Problemas com cliente DHCP interno
+
+If you have problems with getting an IP address using the internal DHCP client, consider using another DHCP client, see [#DHCP client](#DHCP_client) for instructions. This workaround might solve problems in big wireless networks like eduroam.
+
+### Problemas DHCP com dhclient
+
+If you have problems with getting an IP address via DHCP, try to add the following to your `/etc/dhclient.conf`:
+
+```
+ interface "eth0" {
+   send dhcp-client-identifier 01:aa:bb:cc:dd:ee:ff;
+ }
+
+```
+
+Where `aa:bb:cc:dd:ee:ff` is the MAC address of this NIC. The MAC address can be found using the `ip link show *interface*` command from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package.
+
+### Modem 3G não detectado
+
+See [USB 3G Modem#Network Manager](/index.php/USB_3G_Modem#Network_Manager "USB 3G Modem").
+
+### Desligando WLAN em laptops
+
+Sometimes NetworkManager will not work when you disable your Wi-Fi adapter with a switch on your laptop and try to enable it again afterwards. This is often a problem with *rfkill*. To check if the driver notifies *rfkill* about the wireless adapter's status, use:
+
+```
+$ watch -n1 rfkill list all
+
+```
+
+If one identifier stays blocked after you switch on the adapter you could try to manually unblock it with (where X is the number of the identifier provided by the above output):
+
+```
+# rfkill event unblock X
+
+```
+
+### Reversão de configurações de endereço IP estático para DHCP
+
+Due to an unresolved bug, when changing default connections to a static IP address, `nm-applet` may not properly store the configuration change, and will revert to automatic DHCP.
+
+To work around this issue you have to edit the default connection (e.g. "Auto eth0") in `nm-applet`, change the connection name (e.g. "my eth0"), uncheck the "Available to all users" checkbox, change your static IP address settings as desired, and click **Apply**. This will save a new connection with the given name.
+
+Next, you will want to make the default connection not connect automatically. To do so, run `nm-connection-editor` (**not** as root). In the connection editor, edit the default connection (e.g. "Auto eth0") and uncheck "Connect automatically". Click **Apply** and close the connection editor.
+
+### Não é possível editar conexões como usuário normal
+
+See [#Set up PolicyKit permissions](#Set_up_PolicyKit_permissions).
+
+### Esquecer rede sem fio oculta
+
+Since hidden networks are not displayed in the selection list of the Wireless view, they cannot be forgotten (removed) with the GUI. You can delete one with the following command:
+
+```
+# rm /etc/NetworkManager/system-connections/*SSID*
+
+```
+
+This works for any other connection.
+
+### VPN não funciona no GNOME
+
+When setting up OpenConnect or vpnc connections in NetworkManager while using GNOME, you will sometimes never see the dialog box pop up and the following error appears in `/var/log/errors.log`:
+
+```
+localhost NetworkManager[399]: <error> [1361719690.10506] [nm-vpn-connection.c:1405] get_secrets_cb(): Failed to request VPN secrets #3: (6) No agents were available for this request.
+
+```
+
+This is caused by the GNOME NM Applet expecting dialog scripts to be at `/usr/lib/gnome-shell`, when NetworkManager's packages put them in `/usr/lib/networkmanager`. As a "temporary" fix (this bug has been around for a while now), make the following symlink(s):
+
+*   For OpenConnect: `ln -s /usr/lib/networkmanager/nm-openconnect-auth-dialog /usr/lib/gnome-shell/`
+*   For VPNC (i.e. Cisco VPN): `ln -s /usr/lib/networkmanager/nm-vpnc-auth-dialog /usr/lib/gnome-shell/`
+
+This may need to be done for any other NM VPN plugins as well, but these are the two most common.
+
+### Impossibilidade de se conectar a redes sem fio europeias visíveis
+
+WLAN chips are shipped with a default [regulatory domain](/index.php/Wireless_network_configuration#Respecting_the_regulatory_domain "Wireless network configuration"). If your access point does not operate within these limitations, you will not be able to connect to the network. Fixing this is easy:
+
+1.  [Install](/index.php/Install "Install") [crda](https://www.archlinux.org/packages/?name=crda)
+2.  Uncomment the correct Country Code in `/etc/conf.d/wireless-regdom`
+3.  Reboot the system, because the setting is only read on boot
+
+### Conexão automática a VPN na inicialização não funciona
+
+The problem occurs when the system (i.e. NetworkManager running as the root user) tries to establish a VPN connection, but the password is not accessible because it is stored in the Gnome keyring of a particular user.
+
+A solution is to keep the password to your VPN in plaintext, as described in step (2.) of [#Use dispatcher to connect to a VPN after a network connection is established](#Use_dispatcher_to_connect_to_a_VPN_after_a_network_connection_is_established).
+
+You do not need to use the dispatcher described in step (1.) to auto-connect anymore, if you use the new "auto-connect VPN" option from the `nm-applet` GUI.
+
+### Gargalo no systemd
+
+Over time the log files (`/var/log/journal`) can become very large. This can have a big impact on boot performance when using NetworkManager, see: [Systemd#Boot time increasing over time](/index.php/Systemd#Boot_time_increasing_over_time "Systemd").
+
+### Desconexões de rede regulares, latência, pacotes perdidos (WiFi)
+
+NetworkManager does a scan every 2 minutes.
+
+Some WiFi drivers have issues when scanning for base stations whilst connected/associated. Symptoms include VPN disconnects/reconnects and lost packets, web pages failing to load and then refresh fine.
+
+Running `journalctl -f` will indicate that this is taking place, messages like the following will be contained in the logs at regular intervals.
+
+```
+NetworkManager[410]: <info>  (wlp3s0): roamed from BSSID 00:14:48:11:20:CF (my-wifi-name) to (none) ((none))
+
+```
+
+There is a patched version of NetworkManager which should prevent this type of scanning: [networkmanager-noscan](https://aur.archlinux.org/packages/networkmanager-noscan/).
+
+Alternatively, if roaming is not important, the periodic scanning behavior can be disabled by locking the BSSID of the access point in the WiFi connection profile.
+
+### Impossibilidade de ligar o Wi-Fi com laptop Lenovo (IdeaPad, Legion, etc.)
+
+There is an issue with the `ideapad_laptop` module on some Lenovo models due to the wi-fi driver incorrectly reporting a soft block. The card can still be manipulated with `netctl`, but managers like NetworkManager break. You can verify that this is the problem by checking the output of `rfkill list` after toggling your hardware switch and seeing that the soft block persists.
+
+[Unloading](/index.php/Modprobe "Modprobe") the `ideapad_laptop` module should fix this. (**warning**: this may disable the laptop keyboard and touchpad also!).
+
+### Desligar envido de hostname
+
+NetworkManager by default sends the hostname to the DHCP server. Hostname sending can only be disabled per connection not globally ([GNOME Bug 768076](https://bugzilla.gnome.org/show_bug.cgi?id=768076)).
+
+To disable sending your hostname to the DHCP server for a specific connection, add the following to your network connection file:
+
+ `/etc/NetworkManager/system-connections/*your_connection_file*` 
+```
+...
+[ipv4]
+dhcp-send-hostname=false
+...
+[ipv6]
+dhcp-send-hostname=false
+...
+```
+
+### nm-applet desaparece no i3wm
+
+If you use the `xfce4-notifyd.service` for notifications you must [edit](/index.php/Edit "Edit") the unit and add the following:
+
+ `/etc/systemd/user/xfce4-notifyd.service.d/display_env.conf` 
+```
+[Service]
+Environment="DISPLAY=:0.0"
+```
+
+After reloading the daemons [restart](/index.php/Restart "Restart") `xfce4-notifyd.service`. Exit i3 and start it back up again and the applet should show on the tray.
+
+### Ícones de bandeja do nm-applet exibidos incorretamente
+
+Currently the tray icons of nm-applet are drawn on top of one another, i.e. the icon displaying wireless strength might show on top of the icon indicating no wired connection. This is apparently a GTK3 bug/problem: [https://gitlab.gnome.org/GNOME/gtk/issues/1280](https://gitlab.gnome.org/GNOME/gtk/issues/1280) .
+
+A patched version of GTK3 exists in AUR, which apparently fixes the tray icon bug: [gtk3-mushrooms](https://aur.archlinux.org/packages/gtk3-mushrooms/) .
+
+### Desabilitar NetworkManager ao usar dbus
+
+It might not be obvious, but the service automatically starts through *dbus*. To completely disable it you can [mask](/index.php/Mask "Mask") `NetworkManager.service` and `NetworkManager-dispatcher.service`.
 
 ## Veja também
 
-*   [NetworkManager para Administradores Parte 1](http://blogs.gnome.org/dcbw/2015/02/16/networkmanager-for-administrators-part-1/)
+*   [NetworkManager for Administrators Part 1](http://blogs.gnome.org/dcbw/2015/02/16/networkmanager-for-administrators-part-1/)
+*   [Wikipedia:NetworkManager](https://en.wikipedia.org/wiki/NetworkManager "wikipedia:NetworkManager")

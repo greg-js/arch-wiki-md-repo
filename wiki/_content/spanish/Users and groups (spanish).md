@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Users and groups](/index.php/Users_and_groups "Users and groups"), revisada por última vez el **2018-09-29**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=544897) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Users and groups](/index.php/Users_and_groups "Users and groups"), revisada por última vez el **2018-10-27**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=550515) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -14,19 +14,20 @@ Los usuarios y grupos se utilizan en GNU/Linux para el [control de acceso](https
 
 *   [1 Descripción](#Descripci.C3.B3n)
 *   [2 Permisos y propiedad](#Permisos_y_propiedad)
-*   [3 Lista de archivos](#Lista_de_archivos)
-*   [4 Administración de usuarios](#Administraci.C3.B3n_de_usuarios)
-    *   [4.1 Ejemplo para añadir un usuario](#Ejemplo_para_a.C3.B1adir_un_usuario)
-    *   [4.2 Ejemplo para añadir un usuario del sistema](#Ejemplo_para_a.C3.B1adir_un_usuario_del_sistema)
-    *   [4.3 Cambio del nombre de inicio de sesión de un usuario o el directorio personal](#Cambio_del_nombre_de_inicio_de_sesi.C3.B3n_de_un_usuario_o_el_directorio_personal)
-    *   [4.4 Otros ejemplos de administración de usuarios](#Otros_ejemplos_de_administraci.C3.B3n_de_usuarios)
-*   [5 Base de datos del usuario](#Base_de_datos_del_usuario)
-*   [6 Administración de grupos](#Administraci.C3.B3n_de_grupos)
-*   [7 Listado de grupos](#Listado_de_grupos)
-    *   [7.1 Grupos de usuarios](#Grupos_de_usuarios)
-    *   [7.2 Grupos del sistema](#Grupos_del_sistema)
-    *   [7.3 Grupos pre-systemd](#Grupos_pre-systemd)
-    *   [7.4 Grupos no utilizados](#Grupos_no_utilizados)
+*   [3 Shadow](#Shadow)
+*   [4 Lista de archivos](#Lista_de_archivos)
+*   [5 Administración de usuarios](#Administraci.C3.B3n_de_usuarios)
+    *   [5.1 Ejemplo para añadir un usuario](#Ejemplo_para_a.C3.B1adir_un_usuario)
+    *   [5.2 Ejemplo para añadir un usuario del sistema](#Ejemplo_para_a.C3.B1adir_un_usuario_del_sistema)
+    *   [5.3 Cambio del nombre de inicio de sesión de un usuario o el directorio personal](#Cambio_del_nombre_de_inicio_de_sesi.C3.B3n_de_un_usuario_o_el_directorio_personal)
+    *   [5.4 Otros ejemplos de administración de usuarios](#Otros_ejemplos_de_administraci.C3.B3n_de_usuarios)
+*   [6 Base de datos del usuario](#Base_de_datos_del_usuario)
+*   [7 Administración de grupos](#Administraci.C3.B3n_de_grupos)
+*   [8 Listado de grupos](#Listado_de_grupos)
+    *   [8.1 Grupos de usuarios](#Grupos_de_usuarios)
+    *   [8.2 Grupos del sistema](#Grupos_del_sistema)
+    *   [8.3 Grupos pre-systemd](#Grupos_pre-systemd)
+    *   [8.4 Grupos no utilizados](#Grupos_no_utilizados)
 
 ## Descripción
 
@@ -46,13 +47,13 @@ De [En Unix todo es un archivo](http://ph7spot.com/musings/in-unix-everything-is
 
 	El sistema operativo UNIX cristaliza un par de ideas y conceptos unificadores que dieron forma a su diseño, interfaz de usuario, cultura y evolución. Uno de los más importantes probablemente sea el mantra: "todo es un archivo", considerado ampliamente como uno de los puntos definitorios de UNIX.
 
-	Este principio de diseño fundamental consiste en proporcionar un paradigma unificado para acceder a una amplia gama de recursos de entrada/salida: documentos, directorios, discos duros, CD-ROM, módems, teclados, impresoras, monitores, terminales e incluso algunas comunicaciones entre procesos y redes. El truco es proporcionar una abstracción común para todos estos recursos, cada uno de los cuales los padres de UNIX llamaron «archivo». Como cada «archivo» está expuesto a través de la misma API, se puede utilizar el mismo conjunto de comandos básicos para leer/escribir en un disco, teclado, documento o dispositivo de red.
+	Este principio de diseño fundamental consiste en proporcionar un paradigma unificado para acceder a una amplia gama de recursos de entrada/salida: documentos, directorios, discos duros, CD-ROM, módems, teclados, impresoras, monitores, terminales e incluso algunas comunicaciones entre procesos y redes. El truco es proporcionar una abstracción común para todos estos recursos, cada uno de los cuales los padres de UNIX llamaron «archivo». Como cada «archivo» está expuesto a través de la misma API, se puede utilizar el mismo conjunto de órdenes básicas para leer/escribir en un disco, teclado, documento o dispositivo de red.
 
 De [Extendiendo la abstracción de archivo de UNIX para fines generales de administración de redes](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.597.4699&rep=rep1&type=pdf):
 
-	Una abstracción fundamental, muy potente y consistente, proporcionada en UNIX y los sistemas operativos compatibles es la abstracción de archivos. Muchos servicios del sistema operativo e interfaces de dispositivos se implementan para proporcionar una metáfora de archivo o sistema de archivos a las aplicaciones. Esto permite nuevos usos y aumenta en gran medida el poder de las aplicaciones existentes — herramientas simples diseñadas para usos específicos pueden, con las abstracciones de archivos de UNIX, utilizarse de maneras novedosas. Una herramienta simple, como cat, diseñada para leer uno o más archivos y enviar los contenidos a la salida estándar, se puede utilizar para leer desde dispositivos E/S *(entrada/salida)* a través de archivos de dispositivos especiales, que generalmente se encuentran en el directorio `/dev`. En muchos sistemas, la grabación y reproducción de audio se puede hacer simplemente con los comandos, «{`cat /dev/audio > miarchivo`» y «{`cat miarchivo > /dev/audio`», respectivamente.
+	Una abstracción fundamental, muy potente y consistente, proporcionada en UNIX y los sistemas operativos compatibles es la abstracción de archivos. Muchos servicios del sistema operativo e interfaces de dispositivos se implementan para proporcionar una metáfora de archivo o sistema de archivos a las aplicaciones. Esto permite nuevos usos y aumenta en gran medida el poder de las aplicaciones existentes — herramientas simples diseñadas para usos específicos pueden, con las abstracciones de archivos de UNIX, utilizarse de maneras novedosas. Una herramienta simple, como cat, diseñada para leer uno o más archivos y enviar los contenidos a la salida estándar, se puede utilizar para leer desde dispositivos E/S *(entrada/salida)* a través de archivos de dispositivos especiales, que generalmente se encuentran en el directorio `/dev`. En muchos sistemas, la grabación y reproducción de audio se puede hacer simplemente con las órdenes, «{`cat /dev/audio > miarchivo`» y «{`cat miarchivo > /dev/audio`», respectivamente.
 
-Cada archivo en un sistema GNU/Linux es propiedad de un usuario y un grupo. Además, hay tres tipos de permisos de acceso: lectura, escritura y ejecución. Los permisos de acceso pueden aplicarse de forma diferente al usuario propietario del archivo, al grupo propietario y a otros (aquellos que no tienen la propiedad). Uno puede determinar los propietarios y permisos de un archivo al ver el formato de listado extenso del comando [ls](/index.php/Core_utilities_(Espa%C3%B1ol)#Esenciales "Core utilities (Español)"):
+Cada archivo en un sistema GNU/Linux es propiedad de un usuario y un grupo. Además, hay tres tipos de permisos de acceso: lectura, escritura y ejecución. Los permisos de acceso pueden aplicarse de forma diferente al usuario propietario del archivo, al grupo propietario y a otros (aquellos que no tienen la propiedad). Uno puede determinar los propietarios y permisos de un archivo al ver el formato de listado extenso de la orden [ls](/index.php/Core_utilities_(Espa%C3%B1ol)#Esenciales "Core utilities (Español)"):
 
  `$ ls -l /boot/` 
 ```
@@ -73,7 +74,7 @@ total 16
 drwxrwx--- 1 root vboxsf 16384 Jan 29 11:02 sf_Shared
 ```
 
-En este ejemplo, la carpeta `sf_Shared` es propiedad del usuario *root* y del grupo *vboxsf*. También es posible determinar los propietarios y los permisos de un archivo con el comando stat:
+En este ejemplo, la carpeta `sf_Shared` es propiedad del usuario *root* y del grupo *vboxsf*. También es posible determinar los propietarios y los permisos de un archivo con la orden stat:
 
 El usuario propietario:
 
@@ -118,9 +119,13 @@ Puede listar los archivos que pertenecen a un usuario o a un grupo con la orden 
 
 ```
 
-El usuario y el grupo propietarios de un archivo pueden ser cambiados con el comando [chown](/index.php/Chown "Chown") (***ch**ange **own**er*). Los permisos de acceso a un archivo se pueden cambiar con el comando [chmod](/index.php/Chmod "Chmod") (***ch**ange **mod**e*).
+El usuario y el grupo propietarios de un archivo pueden ser cambiados con la orden [chown](/index.php/Chown "Chown") (***ch**ange **own**er*). Los permisos de acceso a un archivo se pueden cambiar con la orden [chmod](/index.php/Chmod "Chmod") (***ch**ange **mod**e*).
 
 Véase [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chmod.1), y [Linux file permissions](http://www.linux.com/learn/tutorials/309527-understanding-linux-file-permissions) para obtener información adicional.
+
+## Shadow
+
+Las herramientas de gestión de usuarios, grupos y contraseñas en Arch Linux provienen del paquete [shadow](https://www.archlinux.org/packages/?name=shadow), que forma parte del [grupo base](/index.php/Base_group "Base group").
 
 ## Lista de archivos
 
@@ -136,12 +141,12 @@ Véase [chown(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/chown.1), [chmod(1)
 
 ## Administración de usuarios
 
-Para listar los usuarios que actualmente están conectados en el sistema, se puede usar el comando *who*. Para listar todas las cuentas de usuario existentes, incluidas sus propiedades almacenadas en la [base de datos del usuario](#Base_de_datos_del_usuario), ejecute `passwd -Sa` como superusuario. Véase [passwd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/passwd.1) para la descripción del formato de salida.
+Para listar los usuarios que actualmente están conectados en el sistema, se puede usar la orden *who*. Para listar todas las cuentas de usuario existentes, incluidas sus propiedades almacenadas en la [base de datos del usuario](#Base_de_datos_del_usuario), ejecute `passwd -Sa` como superusuario. Véase [passwd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/passwd.1) para la descripción del formato de salida.
 
 Para añadir un nuevo usuario, utilice el ocmando *useradd*:
 
 ```
-# useradd -m -g *grupo_inicial* -G *grupos_adicionales* -s *intérprete_de_comandos* *nombre_de_usuario*
+# useradd -m -g *grupo_inicial* -G *grupos_adicionales* -s *intérprete_de_línea_de_órdenes* *nombre_de_usuario*
 
 ```
 
@@ -159,24 +164,24 @@ Para añadir un nuevo usuario, utilice el ocmando *useradd*:
 
 	`-s`/`--shell`
 
-	define la ruta y el nombre de archivo del intérprete de comandos de inicio de sesión predeterminado del usuario. Una vez que se completa el arranque, el intérprete de comandos de inicio de sesión predeterminado es el que se especifica aquí. Asegúrese de que el intérprete de comandos elegido esté instalado si es distinto a [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)").
+	define la ruta y el nombre de archivo del intérprete de línea de órdenes de inicio de sesión predeterminado del usuario. Una vez que se completa el arranque, el intérprete de línea de órdenes de inicio de sesión predeterminado es el que se especifica aquí. Asegúrese de que el intérprete de línea de órdenes elegido esté instalado si es distinto a [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)").
 
-**Advertencia:** Para poder iniciar sesión, el intérprete de comandos de inicio de sesión debe ser uno de los listados en `/etc/shells`; de lo contrario, el módulo [PAM](/index.php/PAM "PAM") `pam_shell` negará la solicitud de inicio de sesión. En particular, no use la ruta `/usr/bin/bash` en lugar de `/bin/bash`, a menos que esté configurada correctamente en `/etc/shells`.
+**Advertencia:** Para poder iniciar sesión, el intérprete de línea de órdenes de inicio de sesión debe ser uno de los listados en `/etc/shells`; de lo contrario, el módulo [PAM](/index.php/PAM "PAM") `pam_shell` negará la solicitud de inicio de sesión. En particular, no use la ruta `/usr/bin/bash` en lugar de `/bin/bash`, a menos que esté configurada correctamente en `/etc/shells`.
 
 **Nota:** La contraseña del usuario recién creado debe definirse después, utilizando *passwd* como se muestra en [#Ejemplo para añadir un usuario](#Ejemplo_para_a.C3.B1adir_un_usuario).
 
-Cuando el intérprete de comandos de inicio de sesión no es funcional, por ejemplo, cuando la cuenta de usuario se crea para un servicio específico, se puede especificar `/usr/bin/nologin` en lugar de un intérprete de comandos normal para rechazar amablemente el inicio de sesión (véase [nologin(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nologin.8)).
+Cuando el intérprete de línea de órdenes de inicio de sesión no es funcional, por ejemplo, cuando la cuenta de usuario se crea para un servicio específico, se puede especificar `/usr/bin/nologin` en lugar de un intérprete de línea de órdenes normal para rechazar amablemente el inicio de sesión (véase [nologin(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nologin.8)).
 
 ### Ejemplo para añadir un usuario
 
-Para añadir un nuevo usuario llamado `archie`, creando su directorio de inicio y usando todos los valores predeterminados en términos de grupos, nombres de carpetas, intérpretes de comandos utilizados y otros parámetros:
+Para añadir un nuevo usuario llamado `archie`, creando su directorio de inicio y usando todos los valores predeterminados en términos de grupos, nombres de carpetas, intérpretes de órdenes utilizados y otros parámetros:
 
 ```
 # useradd --create-home archie
 
 ```
 
-**Sugerencia:** El valor predeterminado utilizado para el intérprete de comandos de inicio de sesión de la nueva cuenta se puede mostrar usando `useradd --default`. El valor predeterminado es Bash, se puede especificar un intérprete de comandos diferente con la opción `-s`/`--shell`.
+**Sugerencia:** El valor predeterminado utilizado para el intérprete de línea de órdenes de inicio de sesión de la nueva cuenta se puede mostrar usando `useradd --default`. El valor predeterminado es Bash, se puede especificar un intérprete de línea de órdenes diferente con la opción `-s`/`--shell`.
 
 Aunque no es necesario proteger al usuario `archie` recién creado con una contraseña, se recomienda encarecidamente hacerlo:
 
@@ -185,7 +190,7 @@ Aunque no es necesario proteger al usuario `archie` recién creado con una contr
 
 ```
 
-El comando *useradd* anterior también creará automáticamente un grupo llamado `archie` con el mismo GID que el UID del usuario `archie` y lo convierte en el grupo predeterminado para `archie` al iniciar sesión. Hacer que cada usuario tenga su propio grupo (con nombre de grupo igual al nombre de usuario y GID igual al UID) es la forma de añadir usuarios preferida.
+La orden *useradd* anterior también creará automáticamente un grupo llamado `archie` con el mismo GID que el UID del usuario `archie` y lo convierte en el grupo predeterminado para `archie` al iniciar sesión. Hacer que cada usuario tenga su propio grupo (con nombre de grupo igual al nombre de usuario y GID igual al UID) es la forma de añadir usuarios preferida.
 
 También puede hacer que el grupo predeterminado sea distinto usando la opción `-g`, pero tenga en cuenta que en sistemas multiusuario, no se recomienda utilizar un único grupo predeterminado (por ejemplo, `users`) para cada usuario. La razón es que, por lo general, el método para facilitar el acceso de escritura compartido para grupos específicos de usuarios establece el valor de usuario [umask](/index.php/Umask "Umask") en `002`, lo que significa que el grupo predeterminado siempre tendrá acceso de escritura a cualquier archivo que cree. Véase también [User Private Groups](https://security.ias.edu/how-and-why-user-private-groups-unix). Si un usuario debe ser miembro de un grupo específico, especifique ese grupo como un grupo suplementario al crear el usuario.
 
@@ -198,13 +203,13 @@ En el escenario recomendado, donde el grupo predeterminado tiene el mismo nombre
 
 De lo contrario, se utiliza el grupo predeterminado del creador del archivo (generalmente el mismo que el nombre de usuario).
 
-Si se requiere un cambio de GID temporalmente, también puede usar el comando *newgrp* para cambiar el GID predeterminado del usuario a otro GID en tiempo de ejecución. Por ejemplo, después de ejecutar `newgrp *nombre_de_grupo*` los archivos creados por el usuario se asociarán con el GID de `*nombre_de_grupo*`, sin necesidad de volver a iniciar sesión. Para volver al GID predeterminado, ejecute *newgrp* sin un nombre de grupo.
+Si se requiere un cambio de GID temporalmente, también puede usar la orden *newgrp* para cambiar el GID predeterminado del usuario a otro GID en tiempo de ejecución. Por ejemplo, después de ejecutar `newgrp *nombre_de_grupo*` los archivos creados por el usuario se asociarán con el GID de `*nombre_de_grupo*`, sin necesidad de volver a iniciar sesión. Para volver al GID predeterminado, ejecute *newgrp* sin un nombre de grupo.
 
 ### Ejemplo para añadir un usuario del sistema
 
 Los usuarios del sistema se pueden usar para ejecutar procesos/demonios bajo un usuario diferente, protegiendo (por ejemplo, con [chown](/index.php/Chown "Chown")) en archivos y/o directorios y más ejemplos de fortalecimiento informático.
 
-Con el comando siguiente se crea un usuario del sistema sin acceso al intérprete de comandos y sin un directorio personal `home` (opcionalmente se añade el parámetro `-U` para crear un grupo con el mismo nombre que el usuario, y se añade el usuario a este grupo):
+Con la orden siguiente se crea un usuario del sistema sin acceso al intérprete de línea de órdenes y sin un directorio personal `home` (opcionalmente se añade el parámetro `-U` para crear un grupo con el mismo nombre que el usuario, y se añade el usuario a este grupo):
 
 ```
 # useradd -r -s /usr/bin/nologin *usuario*
@@ -239,18 +244,18 @@ Para cambiar el nombre de inicio de sesión de un usuario:
 
 **Advertencia:** Asegúrese de no haber iniciado sesión como el usuario cuyo nombre va a cambiar. Abra un nuevo tty (`Ctrl+Alt+F1`) e inicie sesión como superusuario o como otro usuario y haga *su* como superusuario. El usermod debería evitar que hagas esto por error.
 
-Cambiar un nombre de usuario es seguro y fácil cuando se hace correctamente, simplemente use el comando [usermod](#Otros_ejemplos_de_administraci.C3.B3n_de_usuarios). Si el usuario está asociado a un grupo con el mismo nombre, puede cambiarle el nombre con el comando [groupmod](#Administraci.C3.B3n_de_grupos).
+Cambiar un nombre de usuario es seguro y fácil cuando se hace correctamente, simplemente use la orden [usermod](#Otros_ejemplos_de_administraci.C3.B3n_de_usuarios). Si el usuario está asociado a un grupo con el mismo nombre, puede cambiarle el nombre con la orden [groupmod](#Administraci.C3.B3n_de_grupos).
 
 Alternativamente, el archivo `/etc/passwd` puede modificarse directamente, véase [#Base de datos del usuario](#Base_de_datos_del_usuario) para una introducción a su formato.
 
 Tenga también en cuenta las siguientes notas:
 
-*   Si está utilizando [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)"), asegúrese de actualizar `/etc/sudoers` para reflejar el nuevo nombre de usuario (a través del comando visudo como superusuario).
+*   Si está utilizando [sudo](/index.php/Sudo_(Espa%C3%B1ol) "Sudo (Español)"), asegúrese de actualizar `/etc/sudoers` para reflejar el nuevo nombre de usuario (a través de la orden visudo como superusuario).
 *   Los [crontabs](/index.php/Cron#Crontab_format "Cron") personales debe ajustarse al cambiar el nombre del archivo del usuario en `/var/spool/cron` del antiguo al nuevo nombre, y luego abrir `crontab -e` para cambiar las rutas relevantes y ajustar los permisos del archivo en consecuencia.
 *   Los archivos/carpetas personales de [Wine](/index.php/Wine_(Espa%C3%B1ol) "Wine (Español)") contenidos en `~/.wine/drive_c/users`, `~/local/share/applications/wine/Programs` y posiblemente otros necesiten ser renombrados/modificados manualmente.
 *   Es posible que sea necesario volver a instalar ciertos complementos de Thunderbird, como [Enigmail](https://www.enigmail.net/index.php/en/).
-*   Cualquier cosa en su sistema (atajos de escritorio, scripts del intérprete de comandos, etc.) que use una ruta de acceso absoluta a su directorio personal (es decir, `/home/nombreantiguo`) deberá modificarse para reflejar su nuevo nombre. Para evitar estos problemas en los scripts del intérprete de comandos, use las variables `~` o `$HOME` para definir el directorios personal.
-*   Además, no olvide modificar en consecuencia los archivos de configuración en `/etc` que dependan de su ruta absoluta (es decir, Samba, CUPS, etc.). Una buena forma de aprender qué archivos necesita actualizar implica usar el comando grep de esta manera: `grep -r {usuario_antiguo} *`
+*   Cualquier cosa en su sistema (atajos de escritorio, scripts del intérprete de línea de órdenes, etc.) que use una ruta de acceso absoluta a su directorio personal (es decir, `/home/nombreantiguo`) deberá modificarse para reflejar su nuevo nombre. Para evitar estos problemas en los scripts del intérprete de línea de órdenes, use las variables `~` o `$HOME` para definir el directorios personal.
+*   Además, no olvide modificar en consecuencia los archivos de configuración en `/etc` que dependan de su ruta absoluta (es decir, Samba, CUPS, etc.). Una buena forma de aprender qué archivos necesita actualizar implica usar la orden grep de esta manera: `grep -r {usuario_antiguo} *`
 
 ### Otros ejemplos de administración de usuarios
 
@@ -261,7 +266,7 @@ Para añadir un usuario a otros grupos utilice (`*grupos_adicionales*` es una li
 
 ```
 
-**Advertencia:** Si la opción `-a` se omite en el comando *usermod* anterior, el usuario se elimina de todos los grupos que no figuran en `*grupos_adicionales*` (es decir, el usuario solo será miembro de los grupos que figuran en `*grupos_adicionales*`).
+**Advertencia:** Si la opción `-a` se omite en la orden *usermod* anterior, el usuario se elimina de todos los grupos que no figuran en `*grupos_adicionales*` (es decir, el usuario solo será miembro de los grupos que figuran en `*grupos_adicionales*`).
 
 Alternativamente, puede usarse *gpasswd*. Aunque el nombre de usuario solo se puede añadir (o eliminar) de un grupo a la vez:
 
@@ -293,7 +298,7 @@ Para marcar la contraseña de un usuario como caducada y solicitarles que creen 
 
 ```
 
-Las cuentas de usuario se pueden eliminar con el comando *userdel*:
+Las cuentas de usuario se pueden eliminar con la orden *userdel*:
 
 ```
 # userdel -r *usuario*
@@ -302,7 +307,7 @@ Las cuentas de usuario se pueden eliminar con el comando *userdel*:
 
 La opción `-r` especifica que el directorio de inicio y la cola de mensajes del usuario también deben eliminarse.
 
-Para cambiar el intérprete de comandos de inicio de sesión del usuario:
+Para cambiar el intérprete de línea de órdenes de inicio de sesión del usuario:
 
 ```
 # usermod -s */bin/bash* *usuario*
@@ -316,7 +321,7 @@ Para cambiar el intérprete de comandos de inicio de sesión del usuario:
 La información del usuario local se almacena en el archivo de texto sin formato `/etc/passwd`: cada una de sus líneas representa una cuenta de usuario y tiene siete campos delimitados por dos puntos.
 
 ```
-*cuenta:contraseña:UID:GID:GECOS:directorio:intérprete_de_comandos*
+*cuenta:contraseña:UID:GID:GECOS:directorio:intérprete_de_línea_de_órdenes*
 
 ```
 
@@ -324,13 +329,13 @@ Donde:
 
 *   `*cuenta*` es el nombre de usuario. Este campo no puede estar vacío. Se aplican las reglas de nomenclatura estándar de *NIX.
 *   `*contraseña*` es la contraseña del usuario
-    **Advertencia:** El archivo `passwd` es legible para todo el mundo, por lo que almacenar las contraseñas (con hash o sin él) en este archivo es inseguro. En cambio, Arch Linux utiliza [contraseñas ocultas (shadowed)](/index.php/Security#Password_hashes "Security"): el campo `contraseña` contendrá un carácter de marcador de posición (`x`) que indica que la contraseña hash se guarda en el archivo de acceso restringido `/etc/shadow`. Por esta razón, se recomienda cambiar siempre las contraseñas usando el comando **passwd**.
+    **Advertencia:** El archivo `passwd` es legible para todo el mundo, por lo que almacenar las contraseñas (con hash o sin él) en este archivo es inseguro. En cambio, Arch Linux utiliza [contraseñas ocultas (shadowed)](/index.php/Security#Password_hashes "Security"): el campo `contraseña` contendrá un carácter de marcador de posición (`x`) que indica que la contraseña hash se guarda en el archivo de acceso restringido `/etc/shadow`. Por esta razón, se recomienda cambiar siempre las contraseñas usando la orden **passwd**.
 
 *   `*UID*` es la identificación numérica del usuario. En Arch, el primer nombre de inicio de sesión (después del superusuario) es UID 1000 de forma predeterminada; las entradas subsecuentes de UID para los usuarios deberían ser mayores a 1000.
 *   `*GID*` es la identificación numérica del grupo principal para el usuario. Los valores numéricos para los GID se enumeran en [/etc/group](#Administraci.C3.B3n_de_grupos).
-*   `*GECOS*` es un campo opcional utilizado con fines informativos; generalmente contiene el nombre de usuario completo, pero también puede ser utilizado por servicios como *finger* y se puede administrar con el comando [chfn](#Otros_ejemplos_de_administraci.C3.B3n_de_usuarios). Este campo es opcional y puede dejarse en blanco.
-*   `*directorio*` es utilizado por el comando de inicio de sesión para establecer la variable de entorno `$HOME`. Varios servicios con sus propios usuarios usan `/`, pero los usuarios normales generalmente establecen una carpeta bajo `/home`.
-*   `*intérprete_de_comandos*` es la ruta al [intérprete de comandos](/index.php/Command_shell "Command shell") predeterminado del usuario. Este campo es opcional y su valor predeterminado es `/bin/bash`.
+*   `*GECOS*` es un campo opcional utilizado con fines informativos; generalmente contiene el nombre de usuario completo, pero también puede ser utilizado por servicios como *finger* y se puede administrar con la orden [chfn](#Otros_ejemplos_de_administraci.C3.B3n_de_usuarios). Este campo es opcional y puede dejarse en blanco.
+*   `*directorio*` es utilizado por la orden de inicio de sesión para establecer la variable de entorno `$HOME`. Varios servicios con sus propios usuarios usan `/`, pero los usuarios normales generalmente establecen una carpeta bajo `/home`.
+*   `*intérprete_de_línea_de_órdenes*` es la ruta al [intérprete de línea de órdenes](/index.php/Command_shell_(Espa%C3%B1ol) "Command shell (Español)") predeterminado del usuario. Este campo es opcional y su valor predeterminado es `/bin/bash`.
 
 Ejemplo:
 
@@ -341,7 +346,7 @@ jack:x:1001:100:Jack Smith,algún comentario va aquí,,:/home/jack:/bin/bash
 
 Desglosado, esto significa: usuario `jack`, cuya contraseña está en `/etc/shadow`, cuyo UID es 1001 y cuyo grupo principal es 100\. Jack Smith es su nombre completo y existe un comentario asociado a su cuenta; su directorio personal es `/home/jack` y está usando [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)").
 
-El comando *pwck* se puede usar para verificar la integridad de la base de datos del usuario. Puede ordenar la lista de usuarios por GID al mismo tiempo, lo que puede ser útil para comparar:
+La orden *pwck* se puede usar para verificar la integridad de la base de datos del usuario. Puede ordenar la lista de usuarios por GID al mismo tiempo, lo que puede ser útil para comparar:
 
 ```
 # pwck -s
@@ -354,7 +359,7 @@ El comando *pwck* se puede usar para verificar la integridad de la base de datos
 
 `/etc/group` es el archivo que define los grupos en el sistema (véase [group(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/group.5) para más detalles).
 
-El comando `groups` muestra la pertenencia al grupo:
+La orden `groups` muestra la pertenencia al grupo:
 
 ```
 $ groups *usuario*
@@ -377,7 +382,7 @@ $ cat /etc/group
 
 ```
 
-Cree un nuevo grupo con el comando `groupadd`:
+Cree un nuevo grupo con la orden `groupadd`:
 
 ```
 # groupadd *grupo*
@@ -416,9 +421,9 @@ Puede eliminar un usuario de un grupo:
 
 Si el usuario está actualmente conectado, debe cerrar la sesión y volver a entrar para que el cambio surta efecto.
 
-El comando *grpck* se puede utilizar para comprobar la integridad de los archivos de grupo del sistema.
+La orden *grpck* se puede utilizar para comprobar la integridad de los archivos de grupo del sistema.
 
-Las actualizaciones del paquete [filesystem](https://www.archlinux.org/packages/?name=filesystem) crean archivos *.pacnew*. Al igual que los archivos *.pacnew* para la [#Base de datos del usuario](#Base_de_datos_del_usuario), estos pueden descartarse/eliminarse, porque la secuencia de comandos de instalación añade cualquier grupo nuevo requerido.
+Las actualizaciones del paquete [filesystem](https://www.archlinux.org/packages/?name=filesystem) crean archivos *.pacnew*. Al igual que los archivos *.pacnew* para la [#Base de datos del usuario](#Base_de_datos_del_usuario), estos pueden descartarse/eliminarse, porque la secuencia de órdenes de instalación añade cualquier grupo nuevo requerido.
 
 ## Listado de grupos
 

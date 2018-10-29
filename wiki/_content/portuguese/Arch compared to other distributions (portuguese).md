@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Arch compared to other distributions](/index.php/Arch_compared_to_other_distributions "Arch compared to other distributions"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&diff=0&oldid=547912) na versão em inglês.
+
 Artigos relacionados
 
 *   [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)")
@@ -6,7 +8,7 @@ Artigos relacionados
 
 Esta página tenta estabelecer uma comparação entre o Arch Linux e outras distribuições GNU/Linux populares e sistemas operacionais semelhantes ao UNIX. Os resumos que se seguem são descrições breves que podem ajudar uma pessoa a decidir se o Arch Linux atenderá às suas necessidades. Embora revisões e descrições possam ser úteis, a experiência de primeira mão é invariavelmente a melhor maneira de comparar distribuições.
 
-Para uma comparação mais completa, veja [w:Comparison of operating systems](https://en.wikipedia.org/wiki/Comparison_of_operating_systems "w:Comparison of operating systems") e [w:Comparison of Linux distributions](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions "w:Comparison of Linux distributions").
+Para uma comparação mais completa, veja [Wikipedia:Comparison of operating systems](https://en.wikipedia.org/wiki/Comparison_of_operating_systems "wikipedia:Comparison of operating systems") e [Wikipedia:Comparison of Linux distributions](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions "wikipedia:Comparison of Linux distributions").
 
 Em todos os itens a seguir, apenas o Arch Linux é comparado com outras distribuições. Os *ports* comunitários que suportam arquiteturas diferentes de x86_64 podem ser encontradas listadas entre as [distribuições baseadas no Arch](/index.php/Distribui%C3%A7%C3%B5es_baseadas_no_Arch "Distribuições baseadas no Arch").
 
@@ -25,7 +27,7 @@ Em todos os itens a seguir, apenas o Arch Linux é comparado com outras distribu
     *   [3.2 Linux Mint](#Linux_Mint)
     *   [3.3 openSUSE](#openSUSE)
     *   [3.4 Mandriva/Mageia](#Mandriva.2FMageia)
-*   [4 Os *BSDs](#Os_.2ABSDs)
+*   [4 Os BSDs](#Os_BSDs)
 *   [5 Veja também](#Veja_tamb.C3.A9m)
 
 ## Baseados em código-fonte
@@ -75,33 +77,21 @@ Essas distribuições oferecem uma ampla gama de vantagens e pontos fortes e pod
 ### Fedora
 
 *   O [Fedora](https://getfedora.org/) é desenvolvido pela comunidade, ainda que corporativamente apoiado pela Red Hat; muitas vezes é apresentado como um sistema de lançamento de teste. Os pacotes e projetos do Fedora migram para a RHEL e alguns eventualmente são adotados por outras distribuições. O Arch não possui lançamentos fixos e não serve como um ramo de teste para outra distribuição.
-
 *   Os pacotes do Fedora usam o formato RPM com o gerenciador de pacotes DNF. Arch usa [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") para gerenciar pacotes tar.xz.
-
 *   O Fedora se recusa a incluir software não livre em repositórios oficiais devido à sua dedicação ao software livre, embora repositórios de terceiros estejam disponíveis para esses pacotes. Arch é mais indulgente em sua disposição para software não livre, deixando o discernimento para o usuário.
-
 *   O Fedora oferece muitas opções de instalação, incluindo um instalador gráfico, bem como uma opção mínima. Os "spins" do Fedora também oferecem sortimentos alternativos de ambientes de desktop para escolher, cada um com uma modesta variedade de pacotes padrão. O Arch, por outro lado, fornece apenas alguns scripts destinados a facilitar o processo de uma instalação mínima do sistema base.
-
 *   O Fedora possui um ciclo de lançamento programado, mas oferece suporte oficial a atualizações de versões discretas com a ferramenta FedUp. O Arch é um sistema de lançamento contínuo (*rolling release*).
-
 *   O Arch possui um sistema de *ports*, enquanto o Fedora não.
-
 *   Arch e Fedora são direcionados para usuários experientes e desenvolvedores. Ambos incentivam fortemente os seus usuários a contribuir para o desenvolvimento do projeto.
-
 *   O Fedora ganhou muito reconhecimento comunitário pela integração do SELinux, pacotes compilados GCJ (para remover a necessidade do JRE da Oracle) e contribuição prolífica de *upstream*; Red Hat e, portanto, os desenvolvedores do Fedora, por extensão, contribuem com a maior percentagem do código do kernel do Linux em comparação com qualquer outro projeto.
-
 *   O Arch Linux fornece o que é amplamente considerado como o wiki de distribuição mais abrangente e compreensivo. O wiki do Fedora é usado no sentido original da palavra "wiki", ou uma maneira de trocar informações rapidamente entre desenvolvedores, testadores e usuários. Não se destina a ser uma base de conhecimento de usuários finais como do Arch. O wiki do Fedora se assemelha a um rastreador de problemas ou a uma wiki corporativa.
 
 ### Slackware
 
 *   O [Slackware](http://www.slackware.com/) usa scripts de inicialização do tipo BSD, enquanto o Arch usa [systemd](/index.php/Systemd_(Portugu%C3%AAs) "Systemd (Português)").
-
 *   O Arch fornece um sistema de gerenciamento de pacotes no [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") que, ao contrário das ferramentas padrão do Slackware, oferece resolução de dependência automática e permite atualizações automatizadas do sistema. Os usuários do Slackware geralmente preferem seu método de resolução de dependência manual, citando o nível de controle do sistema que os concede, bem como o excelente fornecimento de bibliotecas pré-instaladas e dependências da Slackware.
-
 *   O Arch é um sistema de lançamento contínua. O Slackware é visto como mais conservador em seu ciclo de lançamento, preferindo pacotes comprovadamente estáveis. O Arch é mais "bleeding edge" a este respeito.
-
 *   O Arch Linux fornece muitos milhares de pacotes binários dentro de seus repositórios oficiais, enquanto os repositórios oficiais do Slackware são mais modestos.
-
 *   O Arch oferece o [Arch Build System](/index.php/Arch_Build_System_(Portugu%C3%AAs) "Arch Build System (Português)"), um sistema de *ports* reais e também [AUR](/index.php/AUR_(Portugu%C3%AAs) "AUR (Português)"), uma coleção muito grande de PKGBUILDs contribuídos pelos usuários. O Slackware oferece um sistema similar, embora mais fino, em [slackbuilds.org](http://www.slackbuilds.org), que é um repositório semioficial de Slackbuilds, que é análogo ao Arch PKGBUILDs. Os usuários do Slackware geralmente serão bastante confortáveis com a maioria dos aspectos do Arch.
 
 ## Amigáveis para iniciantes
@@ -111,20 +101,15 @@ Essas distribuições oferecem uma ampla gama de vantagens e pontos fortes e pod
 ### Ubuntu
 
 *   O [Ubuntu](https://www.ubuntu.com/) é uma distribuição popular baseada no Debian e patrocinada comercialmente pela Canonical Ltd., enquanto o Arch é um sistema desenvolvido de forma independente criado a partir do zero.
-
 *   Os dois projetos têm objetivos muito diferentes e são direcionados para uma base de usuários diferente. O Arch é projetado para usuários que desejam uma abordagem "faça você mesmo", enquanto o Ubuntu fornece um sistema pré-configurado. O Arch apresenta um design mais simples a partir da instalação base em diante, confiando no usuário para personalizá-lo para suas próprias necessidades específicas. Muitos usuários do Arch começaram no Ubuntu e, eventualmente, migraram para o Arch.
-
 *   O desenvolvimento do Arch não é direcionado a uma interface de usuário específica, além do que a comunidade oferece suporte. Além disso, a natureza comercial da Canonical levou-os a algumas decisões controversas, como a inclusão de propagandas no menu *Dash* da Unity e a coleta de dados do usuário. Arch é um projeto independente, liderado pela comunidade sem agenda comercial.
-
 *   Ubuntu move entre lançamentos discretos a cada 6 meses, enquanto o Arch é um sistema de lançamento contínuo.
-
 *   O Arch oferece um sistema de compilação de pacotes de portas e o [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)"), onde os usuários podem compartilhar pacotes de origem para o gerenciador de pacotes [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"). O Ubuntu usa um [apt](https://en.wikipedia.org/wiki/pt:Advanced_Packaging_Tool "wikipedia:pt:Advanced Packaging Tool") mais complexo e permite a redistribuição de pacotes binários através de [Personal Package Archives](https://launchpad.net/ubuntu/+ppas).
-
 *   As duas comunidades também diferem em alguns aspectos. A comunidade do Arch é muito menor e é fortemente encorajada a contribuir para a distribuição. Em contraste, a comunidade Ubuntu é relativamente grande e, portanto, pode tolerar uma porcentagem muito maior de usuários que não contribuem ativamente para o desenvolvimento, empacotamento ou a manutenção do repositório.
 
 ### Linux Mint
 
-*   [Linux Mint](https://www.linuxmint.com/) nasceu como uma derivação do [Ubuntu](#Ubuntu) e, posteriormente, adicionou o LMDE (Linux Mint Debian Edition), que é baseado no [#Debian](#Debian). Por outro lado, o Arch é uma distribuição independente que depende do seu próprio [sistema de compilação](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") e [repositórios](/index.php/Reposit%C3%B3rios "Repositórios").
+*   [Linux Mint](https://www.linuxmint.com/) nasceu como uma derivação do [Ubuntu](#Ubuntu) e, posteriormente, adicionou o LMDE (Linux Mint Debian Edition), que é baseado no [#Debian](#Debian). Por outro lado, o Arch é uma distribuição independente que depende do seu próprio [sistema de compilação](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)") e [repositórios](/index.php/Reposit%C3%B3rios_oficiais "Repositórios oficiais").
 *   O Mint inclui várias ferramentas gráficas para facilitar a manutenção, chamadas *MintTools*. O Arch fornece apenas ferramentas de linha de comando simples, como o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") e deixa o gerenciamento do sistema ser organizado pelo usuário.
 *   O Mint é fornecido principalmente com [Cinnamon](/index.php/Cinnamon "Cinnamon") ou [MATE](/index.php/MATE "MATE") como sua interface gráfica e, alternativamente, [KDE](/index.php/KDE "KDE") ou [Xfce4](/index.php/Xfce4 "Xfce4").
 *   Novas versões do Mint são lançadas a cada seis meses, cerca de um mês após o Ubuntu. Cada lançamento é baseado no Ubuntu LTS mais recente e há suporte por cinco anos. O Linux Mint Debian Edition (LMDE) é baseado em Debian Stable e só recebe atualizações em pacotes do Mint e atualizações de segurança. O Arch é, em vez disso, uma distribuição completamente de lançamento contínuo.
@@ -137,15 +122,12 @@ O [openSUSE](https://www.opensuse.org/) é centrado em torno do formato do pacot
 
 O Mandriva Linux (anteriormente Mandrake Linux) foi criado em 1998 com o objetivo de tornar o GNU/Linux fácil de usar para todos; é baseado em RPM e usa o gerenciador de pacotes urpmi. Mageia é um *fork* do Mandriva criado por ex-funcionários do Mandriva que se opõe à posição comercial de sua distribuição principal, sendo um projeto sem fins lucrativos e orientado pela comunidade. O Arch assume uma abordagem mais simples do que Mandriva ou Mageia, sendo baseada em texto e confia mais na configuração manual e destina-se a usuários intermediários a avançados.
 
-## Os *BSDs
+## Os BSDs
 
-*   Os *BSDs compartilham uma origem comum e descem diretamente do trabalho realizado na Universidade da Califórnia em Berkeley para produzir um sistema UNIX redistribuível livremente e sem custo. Eles não são distribuições GNU/Linux, mas sim sistemas operacionais semelhantes a UNIX, e derivam do código original do UNIX da AT&T.
-
-*   O Arch e os *BSDs compartilham o conceito de um sistema base bem integrado e de *ports*. No entanto, ao contrário das distribuições GNU/Linux, como o Arch, o kernel e os programas de *userland* do BSD (como o shell e os utilitários principais, como *ls*, *cp*, *cat* e *ps*) são desenvolvidos juntos em um único repositório de fontes.
-
-*   A licença BSD geralmente é mais protetora do *codificador*, em contraste com a GPL, que favorece a proteção do *código* em si. O Arch é lançado sob a GPL.
-
-*   Para aprender mais sobre as variantes *BSD, veja [Wikipedia:Comparison of BSD operating systems](https://en.wikipedia.org/wiki/Comparison_of_BSD_operating_systems "wikipedia:Comparison of BSD operating systems").
+*   Os BSDs compartilham uma origem comum e descem diretamente do trabalho realizado na Universidade da Califórnia em Berkeley para produzir um sistema UNIX redistribuível livremente e sem custo. Eles não são distribuições GNU/Linux, mas sim sistemas operacionais semelhantes a UNIX, e derivam do código original do UNIX da AT&T.
+*   O Arch e os BSDs compartilham o conceito de um sistema base bem integrado e de *ports*. No entanto, ao contrário das distribuições GNU/Linux, como o Arch, o kernel e os programas de *userland* do BSD (como o shell e os utilitários principais, como *ls*, *cp*, *cat* e *ps*) são desenvolvidos juntos em um único repositório de fontes.
+*   A [licença BSD](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_BSD "wikipedia:pt:Licença BSD") é permissiva, em contraste com a [GPL](https://en.wikipedia.org/wiki/pt:Licen%C3%A7a_P%C3%BAblica_Geral_GNU "wikipedia:pt:Licença Pública Geral GNU"), que tem a estipulação que deriva da necessidade de ser lançado sob a mesma licença. Arch é lançado sob a GPL.
+*   Para aprender mais sobre as variantes BSD, veja [Wikipedia:Comparison of BSD operating systems](https://en.wikipedia.org/wiki/Comparison_of_BSD_operating_systems "wikipedia:Comparison of BSD operating systems").
 
 ## Veja também
 

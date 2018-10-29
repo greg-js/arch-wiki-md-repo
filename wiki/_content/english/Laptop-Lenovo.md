@@ -257,6 +257,7 @@ install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
 | Lenovo V110-15ISK | ??? | Yes | Yes | Yes | Yes | Not Tested | Yes | NA | SD Card (Not Tested), USB 3.0 (Not Tested), HDMI Out (Not Tested), Touchpad (Yes), Webcam (Yes) |
+| Lenovo V330-15IKB | 2018.10.01 | Yes | Yes | Yes | Yes | Not Tested | Yes | NA | Fingerprint (No), Touchpad (Yes), Webcam (Yes) |
 
 ### Y series
 

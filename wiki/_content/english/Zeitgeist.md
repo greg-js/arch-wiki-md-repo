@@ -2,7 +2,7 @@
 
 ## Installation
 
-Install [zeitgeist](https://www.archlinux.org/packages/?name=zeitgeist) from the [official repositories](/index.php/Official_repositories "Official repositories"), which includes the daemon and the datahub. The daemon receives metadata from data sources, and provides them to applications using D-Bus. The datahub provides passive plugins which insert events into Zeitgeist.
+[Install](/index.php/Install "Install") [zeitgeist](https://www.archlinux.org/packages/?name=zeitgeist) from the [official repositories](/index.php/Official_repositories "Official repositories"), which includes the daemon and the datahub. The daemon receives metadata from data sources, and provides them to applications using D-Bus. The datahub provides passive plugins which insert events into Zeitgeist.
 
 To configure what gets logged by Zeitgeist, install [activity-log-manager](https://www.archlinux.org/packages/?name=activity-log-manager) which provides a graphical user interface where you can filter out specific folders, file types, and applications.
 

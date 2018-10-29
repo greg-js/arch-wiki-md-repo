@@ -1,4 +1,4 @@
-De [Wikipedia:D (lenguaje de programación)](https://es.wikipedia.org/wiki/D_(lenguaje_de_programaci%C3%B3n))
+De [Wikipedia: D (lenguaje de programación)](https://en.wikipedia.org/wiki/es:D_(lenguaje_de_programaci%C3%B3n) "wikipedia:es:D (lenguaje de programación)")
 
 	"D es un lenguaje de programación de propósito general desarrollado por Walter Bright cuya primera versión apareció en 1999\. Se origina como un rediseño de C++, con un enfoque más pragmático, pero no es un lenguaje puramente derivado del anterior. D ha mantenido algunas características de C++ y también está influido por otros conceptos de otros lenguajes como Java, C# y Eiffel. Una versión estable fue lanzada el 2 de enero de 2007.".
 
@@ -12,7 +12,7 @@ De [Wikipedia:D (lenguaje de programación)](https://es.wikipedia.org/wiki/D_(le
 
 ## Instalación
 
-Para programar en D necesitas dos cosas: un compilador de D y una biblioteca. La forma más sencilla de comenzar rápidamente es instalar el grupo de paquetes [dlang-dmd](https://www.archlinux.org/groups/x86_64/dlang-dmd/). Proporcionará el compilador oficial ([dmd](https://www.archlinux.org/packages/?name=dmd)), la biblioteca estándar [libphobos](https://www.archlinux.org/packages/?name=libphobos) y [dtools](https://www.archlinux.org/packages/?name=dtools), una colección de pequeñas herramientas de desarrollo.
+Para programar en D necesita dos cosas: un compilador de D y una biblioteca. La forma más sencilla de comenzar rápidamente es instalar el grupo de paquetes [dlang-dmd](https://www.archlinux.org/groups/x86_64/dlang-dmd/). Proporcionará el compilador oficial ([dmd](https://www.archlinux.org/packages/?name=dmd)), la biblioteca estándar [libphobos](https://www.archlinux.org/packages/?name=libphobos) y [dtools](https://www.archlinux.org/packages/?name=dtools), una colección de pequeñas herramientas de desarrollo.
 
 ## Probando la instalación
 
@@ -28,21 +28,21 @@ void main() {
 
 ```
 
-Pega el código en un archivo, llámalo "hello.d" (sin comillas) y ejecuta
+Pegue el código en un archivo, llámalo "hello.d" (sin comillas) y ejecute
 
 ```
 $ dmd hello.d
 
 ```
 
-en el mismo directorio que el archivo. Entonces deberías poder ejecutar el programa con:
+en el mismo directorio que el archivo. Entonces debería poder ejecutar el programa con:
 
 ```
 $ ./hello
 
 ```
 
-También puedes ejecutar
+También puede ejecutar
 
 ```
 $ dmd -run hello.d
@@ -53,7 +53,7 @@ que simplemente compilará y ejecutará sin dejar ningún archivo de objeto en e
 
 ## Consideraciones
 
-Sin embargo, hay distintas opciones posibles con respecto al compilador que elijas. El estándar (primera referencia) es dmd, pero [gdc](https://www.archlinux.org/packages/?name=gdc) (Compilador GNU D) y [ldc](https://www.archlinux.org/packages/?name=ldc) (Compilador LLVM D) también son populares. Esos también están en [community].
+Sin embargo, hay distintas opciones posibles con respecto al compilador que elija. El estándar (primera referencia) es dmd, pero [gdc](https://www.archlinux.org/packages/?name=gdc) (Compilador GNU D) y [ldc](https://www.archlinux.org/packages/?name=ldc) (Compilador LLVM D) también son populares. Esos también están en [community].
 
 A partir de abril de 2017 [el backend de dmd ahora es FOSS](https://github.com/dlang/dmd/pull/6680) (Boost-licensed). Los 3 compiladores comparten el mismo código de front-end y, por lo tanto, tienen soporte casi idéntico para las características del idioma (asumiendo la misma versión de front-end).
 
@@ -69,5 +69,5 @@ A partir de abril de 2017 [el backend de dmd ahora es FOSS](https://github.com/d
 ## Ver también
 
 *   [Phobos GitHub repository](https://github.com/D-Programming-Language/phobos/)
-*   [The D Programming Language](http://dlang.org/) - Página oficial de D
+*   [The D Programming Language](http://dlang.org/) - Página web oficial de D
 *   [Planet D](http://planet.dsource.org/) - Una colección de blogs sobre D

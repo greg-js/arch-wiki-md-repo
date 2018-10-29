@@ -22,7 +22,9 @@ This page contains instructions, tips, pointers, and links for installing and co
 *   [3 Booting](#Booting)
     *   [3.1 Boot from USB](#Boot_from_USB)
 *   [4 Graphics Drivers](#Graphics_Drivers)
-*   [5 Console fonts](#Console_fonts)
+*   [5 Audio](#Audio)
+*   [6 WiFi](#WiFi)
+*   [7 Console fonts](#Console_fonts)
 
 ## Compatibility
 
@@ -42,6 +44,9 @@ The laptop works surprisingly well with Arch Linux, but requires a kernel with m
     *   May cause issues with dedicated graphics (if equipped)
 *   Keyboard function and media keys, including volume and brightness adjustment of the keyboard and screen backlights.
 *   Wireless Networking
+    *   May need a tweak from [#WiFi](#WiFi) if Wireless Networking hardware disconnects during use
+*   Speakers / Headphones
+    *   Speakers sometimes have a hissing noise that can be fixed, details in [#Audio](#Audio)
 *   Dedicated Nvidia graphics (If equipped)
     *   With big caveats, detailed below.
 
@@ -78,6 +83,25 @@ Booting from USB is possible by reordering boot devices in the UEFI setup.
 The standard [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) driver works with the Surface Book devices.
 
 For devices equipped with dedicated Nvidia graphics, the [nvidia](https://www.archlinux.org/packages/?name=nvidia) driver supports the dedicated GPU.
+
+## Audio
+
+Surface Book 2 devices exhibit a hissing noise at times. This can be fixed by installing [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) and running the following commands:
+
+```
+amixer -c 0 sset 'Auto-Mute Mode' Disabled
+sudo alsactl store
+
+```
+
+## WiFi
+
+Since September 2018, Surface Book 2 WiFi may power off during use. When this happens, it is not visible in lspci and rebooting is a way to get it back on. However, this behavior can be prevented by installing [iw](https://www.archlinux.org/packages/?name=iw) and running the following command as root:
+
+```
+# iw dev wlp1s0 set power_save off
+
+```
 
 ## Console fonts
 

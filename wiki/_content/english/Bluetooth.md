@@ -57,6 +57,10 @@ Related articles
 
 	[http://www.bluez.org/](http://www.bluez.org/) || [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils)
 
+**Tip:** To automate bluetoothctl commands, use `echo -e "<command1>
+<command2>
+" | bluetoothctl`
+
 #### Graphical
 
 The following packages allow for a graphical interface to customize Bluetooth.
@@ -75,7 +79,7 @@ The following packages allow for a graphical interface to customize Bluetooth.
 
 	[https://projects.kde.org/projects/kde/workspace/bluedevil](https://projects.kde.org/projects/kde/workspace/bluedevil) || [bluedevil](https://www.archlinux.org/packages/?name=bluedevil)
 
-*   **Blueberry** — Linux Mint's spin-off of GNOME Bluetooth, which works in all desktop environments. *Blueberry* doesn't support receiving files through Obex Object Push.
+*   **Blueberry** — Linux Mint's spin-off of GNOME Bluetooth, which works in all desktop environments. *Blueberry* does not support receiving files through Obex Object Push.
 
 	[https://github.com/linuxmint/blueberry](https://github.com/linuxmint/blueberry) || [blueberry](https://www.archlinux.org/packages/?name=blueberry)
 
@@ -456,7 +460,7 @@ bluetoothd: connect error: Connection refused (111)
 
 ```
 
-This may be because you have already paired the device with another operating system using the same bluetooth adapter (e.g., dual-booting). Some devices can't handle multiple pairings associated with the same MAC address (i.e., bluetooth adapter). You can fix this by re-pairing the device. Start by removing the device:
+This may be because you have already paired the device with another operating system using the same bluetooth adapter (e.g., dual-booting). Some devices cannot handle multiple pairings associated with the same MAC address (i.e., bluetooth adapter). You can fix this by re-pairing the device. Start by removing the device:
 
 ```
 $ bluetoothctl
@@ -481,7 +485,7 @@ try installing [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=p
 
 ### Device does not show up in scan
 
-Some devices using bluetooth low energy do not appear when scanning with bluetoothctl, for example the Logitech MX Master. The simplest way I've found to connect them is by installing [bluez-utils-compat](https://aur.archlinux.org/packages/bluez-utils-compat/), then [start](/index.php/Start "Start") `bluetooth.service` and do:
+Some devices using bluetooth low energy do not appear when scanning with bluetoothctl, for example the Logitech MX Master. The simplest way I have found to connect them is by installing [bluez-utils-compat](https://aur.archlinux.org/packages/bluez-utils-compat/), then [start](/index.php/Start "Start") `bluetooth.service` and do:
 
 ```
 # bluetoothctl

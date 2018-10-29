@@ -13,10 +13,11 @@ This article describes how to setup a [Linux Container](/index.php/Linux_Contain
 *   [1 Host setup](#Host_setup)
 *   [2 Container setup](#Container_setup)
     *   [2.1 LXC config](#LXC_config)
-    *   [2.2 Needed packages within the container](#Needed_packages_within_the_container)
-    *   [2.3 Package setup](#Package_setup)
-        *   [2.3.1 OpenVPN](#OpenVPN)
-        *   [2.3.2 ufw](#ufw)
+    *   [2.2 LXD config](#LXD_config)
+    *   [2.3 Needed packages within the container](#Needed_packages_within_the_container)
+    *   [2.4 Package setup](#Package_setup)
+        *   [2.4.1 OpenVPN](#OpenVPN)
+        *   [2.4.2 ufw](#ufw)
 
 ## Host setup
 
@@ -43,6 +44,47 @@ lxc.mount.entry = /dev/net dev/net none bind,create=dir
 lxc.cgroup.devices.allow = c 10:200 rwm
 
 ```
+
+### LXD config
+
+If you're running under LXD, as far as I know you cannot use the configs for LXC config within a lxd configuration. It is also not needed. Running an openvpn service in a lxc/lxd configuration can lead to this errors:
+
+```
+"Note: Cannot set tx queue length on tun0: Operation not permitted (errno=1)
+....
+openvpn_execve: unable to fork: Resource temporarily unavailable (errno=11)
+Exiting due to fatal error"
+
+```
+
+To fix these errors you have to managed with "LimitNPROC" in the predefined daemons.
+
+There are 2 ways to solve it. I advise the first
+
+1\. running:
+
+```
+$ systemctl edit openvpn-server@.service
+$ systemctl edit openvpn-client@.service
+$ systemctl edit openvpn@.service
+
+```
+
+Add
+
+```
+[Service]
+LimitNPROC=infinity
+
+```
+
+save it and run 'systemctl daemon-reload'
+
+2\. look for the daemon-scripts in /lib/systemd/system/ and comment out the lines with "LimitNPROC"
+
+save it and run 'systemctl daemon-reload'
+
+See also [LXD#Modify_processes_and_files_limit](/index.php/LXD#Modify_processes_and_files_limit "LXD"), [[1]](https://askubuntu.com/a/1012436), [[2]](https://unix.stackexchange.com/a/468067) and [[3]](https://unix.stackexchange.com/a/345596).
 
 ### Needed packages within the container
 

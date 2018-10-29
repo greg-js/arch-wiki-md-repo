@@ -45,6 +45,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
         *   [5.1.1 Microarchitecture, Processor and Platform](#Microarchitecture.2C_Processor_and_Platform)
         *   [5.1.2 PCI Devices](#PCI_Devices)
         *   [5.1.3 USB Devices](#USB_Devices)
+        *   [5.1.4 Input Devices](#Input_Devices)
 
 ## Configuration
 
@@ -306,5 +307,17 @@ Bus 001 Device 002: ID 1038:1122 SteelSeries ApS
 Bus 001 Device 003: ID 8087:0aaa Intel Corp. 
 Bus 001 Device 005: ID 5986:211c Acer, Inc
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+```
+
+#### Input Devices
+
+ `ls -lah /dev/input/by-id` 
+```
+total 0
+drwxr-xr-x 2 root root  80 Oct 27 11:24 .
+drwxr-xr-x 4 root root 480 Oct 27 11:24 ..
+lrwxrwxrwx 1 root root   9 Oct 27 09:14 usb-SteelSeries_SteelSeries_KLC-event-if01 -> ../event5
+lrwxrwxrwx 1 root root  10 Oct 27 11:24 usb-SunplusIT_Inc_HD_Webcam-event-if00 -> ../event10
 
 ```

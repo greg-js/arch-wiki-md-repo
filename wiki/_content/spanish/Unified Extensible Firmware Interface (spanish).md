@@ -1,12 +1,12 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), revisada por última vez el **2018-08-31**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&diff=0&oldid=538790) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 Artículos relacionados
 
 *   [EFI system partition (Español)](/index.php/EFI_system_partition_(Espa%C3%B1ol) "EFI system partition (Español)")
 *   [Arch boot process (Español)](/index.php/Arch_boot_process_(Espa%C3%B1ol) "Arch boot process (Español)")
 *   [GUID Partition Table (Español)](/index.php/GUID_Partition_Table_(Espa%C3%B1ol) "GUID Partition Table (Español)")
 *   [Secure Boot](/index.php/Secure_Boot "Secure Boot")
-
-**Estado de la traducción**
-Este artículo es una traducción de [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface"), revisada por última vez el **2018-08-31**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&diff=0&oldid=538790) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 **Advertencia:** Si bien es cieto que la instalación en modalidad UEFI es la opción a la que se tiende, no obstante, hay que advertir que las primeras implementaciones de UEFI «pueden» tener más inconvenientes que beneficios que su opositor BIOS. Por tanto, es recomendable hacer una búsqueda relacionada con su modelo de placa base particular para obtener información sobre la conveniencia de optar por la modalidad UEFI antes de continuar.
 

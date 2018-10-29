@@ -6,7 +6,7 @@ Related articles
 
 From [MediaTomb - Free UPnP MediaServer](http://mediatomb.cc/):
 
-	*MediaTomb is an open source (GPL) UPnP MediaServer with a nice web user interface, it allows you to stream your digital media through your home network and listen to/watch it on a variety of UPnP compatible devices.*
+	MediaTomb is an open source (GPL) UPnP MediaServer with a nice web user interface, it allows you to stream your digital media through your home network and listen to/watch it on a variety of UPnP compatible devices.
 
 MediaTomb enables users to stream digital media to UPnP compatible devices like the PlayStation 3 (the Xbox 360 is not yet supported). Several alternatives exist, such as [FUPPES](http://sourceforge.net/projects/fuppes), [ps3mediaserver](http://code.google.com/p/ps3mediaserver/), and uShare. One of MediaTomb's distinguishing features is the ability to customize the server layout based on extracted metadata (scriptable virtual containers); MediaTomb is highly flexible.
 

@@ -56,7 +56,7 @@ Vea también [Wikipedia:es:Bootsplash](https://en.wikipedia.org/wiki/es:Bootspla
 
 #### Intérpretes de comandos
 
-Vea el artículo principal: [Línea de comandos](/index.php?title=Command-line_shell_(Espa%C3%B1ol)&action=edit&redlink=1 "Command-line shell (Español) (page does not exist)").
+Vea el artículo principal: [Línea de comandos](/index.php/Command-line_shell_(Espa%C3%B1ol) "Command-line shell (Español)").
 
 Vea también [Wikipedia:Comparison of command shells](https://en.wikipedia.org/wiki/Comparison_of_command_shells "wikipedia:Comparison of command shells").
 

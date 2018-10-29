@@ -41,8 +41,8 @@ After:
 UPSCABLE usb
 
 UPSTYPE usb
-
-DEVICE /dev/usb/hiddev[[0-15]]
+# For USB UPSes, leave the DEVICE directive blank.
+DEVICE
 
 ```
 

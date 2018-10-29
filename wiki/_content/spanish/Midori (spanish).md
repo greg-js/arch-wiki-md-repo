@@ -34,12 +34,11 @@ Algunas de sus características son:
 
 ## Instalación
 
-Hay disponibles versiones GTK+2 y GTK+3 de Midori que pueden [instalarse](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)"), con los paquetes [midori](https://www.archlinux.org/packages/?name=midori) y [midori-gtk3](https://www.archlinux.org/packages/?name=midori-gtk3) respectivamente, mediante los [repositorios oficiales](/index.php/Official_repositories_(Espa%C3%B1ol) "Official repositories (Español)").
+Hay varios opciones disponibles:
 
-Versiones de desarrollo están disponibles en [AUR](/index.php/AUR_(Espa%C3%B1ol) "AUR (Español)"):
-
-*   [midori-gtk2-bzr](https://aur.archlinux.org/packages/midori-gtk2-bzr/) - versión de desarrollo en GTK+2.
-*   [midori-bzr](https://aur.archlinux.org/packages/midori-bzr/) - versión de desarrollo basado en WebKitGTK3 y GTK+3.
+1.  Midori estable puede ser [instalado](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") con el paquete [midori](https://www.archlinux.org/packages/?name=midori).
+2.  Midori establo que carece del requisito de [Zeitgeist](/index.php/Zeitgeist "Zeitgeist") está disponible con el paquete [midori-no-zeitgeist](https://aur.archlinux.org/packages/midori-no-zeitgeist/).
+3.  La versión de desarrollo también está disponible con el paquete [midori-bzr](https://aur.archlinux.org/packages/midori-bzr/).
 
 ## Extensiones
 

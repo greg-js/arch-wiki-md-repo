@@ -19,7 +19,7 @@ Cualquier método funcionará incluso con el sistema en ejecución. Dado que sue
 
 ## Con un solo comando
 
-Este comando depende de que la expansión de llaves este disponible en los intérpretes de órdenes [bash](https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html) y [zsh](http://zsh.sourceforge.net/Doc/Release/Expansion.html#Brace-Expansion). Cuando use otro [intérprete de órdenes](/index.php/Shell "Shell"), los patrones `--exclude` deben repetirse manualmente.
+Este comando depende de que la expansión de llaves este disponible en los intérpretes de órdenes [bash](https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html) y [zsh](http://zsh.sourceforge.net/Doc/Release/Expansion.html#Brace-Expansion). Cuando use otro [intérprete de órdenes](/index.php/Shell_(Espa%C3%B1ol) "Shell (Español)"), los patrones `--exclude` deben repetirse manualmente.
 
 ```
 # rsync -aAXv --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} /* */ruta/a/la/carpeta/de/respaldo*
@@ -28,7 +28,7 @@ Este comando depende de que la expansión de llaves este disponible en los inté
 
 Usando el conjunto de opciones `-aAX`, los ficheros son transferidos en modo archivo, asegurándose que los enlaces simbólicos, dispositivos, permisos y atributos de propiedad,tiempos de modificación, [ACLs](/index.php/ACL_(Espa%C3%B1ol) "ACL (Español)") y atributos extendidos son preservados.
 
-La opción `--exclude` hará que aquellos ficheros que coincidan con los patrones dados sean excluidos. Los contenidos de `/dev`, `/proc`, `/sys`, `/tmp` y `/run` se excluyeron porque son inicializados al cargar el sistema (mientras que las carpetas en si mismas *no* son creadas), `/lost+found` es específico del sistema de archivos. Entrecomillar los patrones de exclusión evitará su expansión por parte del [intérprete de ordenes](/index.php/Shell "Shell"), lo que es necesario cuando, por ejemplo, se hacen copias de seguridad por [SSH (Español)](/index.php/SSH_(Espa%C3%B1ol) "SSH (Español)").
+La opción `--exclude` hará que aquellos ficheros que coincidan con los patrones dados sean excluidos. Los contenidos de `/dev`, `/proc`, `/sys`, `/tmp` y `/run` se excluyeron porque son inicializados al cargar el sistema (mientras que las carpetas en si mismas *no* son creadas), `/lost+found` es específico del sistema de archivos. Entrecomillar los patrones de exclusión evitará su expansión por parte del [intérprete de ordenes](/index.php/Shell_(Espa%C3%B1ol) "Shell (Español)"), lo que es necesario cuando, por ejemplo, se hacen copias de seguridad por [SSH (Español)](/index.php/SSH_(Espa%C3%B1ol) "SSH (Español)").
 
 **Nota:**
 

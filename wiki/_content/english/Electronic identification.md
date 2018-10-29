@@ -17,7 +17,7 @@ An [electronic identification](https://en.wikipedia.org/wiki/Electronic_identifi
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [ccid](https://www.archlinux.org/packages/?name=ccid) package. [ACS](https://www.acs.com.hk/en/product-lines/2/pc-linked-smart-card-readers/) smart card also require the [acsccid](https://aur.archlinux.org/packages/acsccid/) package. After installation, [enable](/index.php/Enable "Enable") `pcscd.socket`.
+[Install](/index.php/Install "Install") the [ccid](https://www.archlinux.org/packages/?name=ccid) package. [ACS](https://www.acs.com.hk/en/product-lines/2/pc-linked-smart-card-readers/) smart card also require the [acsccid](https://www.archlinux.org/packages/?name=acsccid) package. After installation, [enable](/index.php/Enable "Enable") `pcscd.socket`.
 
 ### Belgium
 

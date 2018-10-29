@@ -23,7 +23,7 @@ For pre-2007 video cards see [XvMC](/index.php/XvMC "XvMC").
     *   [3.1 Intel](#Intel)
     *   [3.2 NVIDIA](#NVIDIA)
     *   [3.3 ATI/AMD](#ATI.2FAMD)
-    *   [3.4 Other drivers](#Other_drivers)
+    *   [3.4 Translation layers](#Translation_layers)
 *   [4 Verification](#Verification)
     *   [4.1 Verifying VA-API](#Verifying_VA-API)
     *   [4.2 Verifying VDPAU](#Verifying_VDPAU)
@@ -88,7 +88,6 @@ GeForce 8 and newer | GeForce 8 and newer | See [#VA-API](#VA-API) |
 GeForce 9300 and newer | GeForce 8 and newer |
 
 *   Up until GeForce GTX 750.
-*   As of version 0.3, the VA GL driver does not support any other hardware decoder than H.264.
 *   Except GeForce GTX 970 and GTX 980.
 *   NVIDIA implementation is limited to 8-bit streams [[9]](https://devtalk.nvidia.com/default/topic/940228/vdpau-expose-hevc-main10-support-where-available-on-die/) [[10]](https://us.download.nvidia.com/XFree86/Linux-x86_64/410.57/README/vdpausupport.html#vdpau-implementation-limits).
 *   [Except](https://en.wikipedia.org/wiki/Nvidia_PureVideo "wikipedia:Nvidia PureVideo") GeForce 8800 Ultra, 8800 GTX, 8800 GTS (320/640 MB).
@@ -112,18 +111,20 @@ GeForce 9300 and newer | GeForce 8 and newer |
 ## Software support
 
  VA-API | VDPAU | NVDEC/NVENC | Documentation |
-| [GStreamer](/index.php/GStreamer "GStreamer") | Yes, via [gstreamer-vaapi](https://www.archlinux.org/packages/?name=gstreamer-vaapi) | Yes, via [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) | Yes, via [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) | [GStreamer#Hardware video acceleration](/index.php/GStreamer#Hardware_video_acceleration "GStreamer") |
-| [VLC media player](/index.php/VLC_media_player "VLC media player") | Yes | Yes | No | [VLC media player#Hardware video acceleration](/index.php/VLC_media_player#Hardware_video_acceleration "VLC media player") |
-| [mpv](/index.php/Mpv "Mpv") | Yes | Yes | Yes | [mpv#Hardware decoding](/index.php/Mpv#Hardware_decoding "Mpv") |
-| [MPlayer](/index.php/MPlayer "MPlayer") | Yes, via [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/) | Yes | No | [MPlayer#Hardware video acceleration](/index.php/MPlayer#Hardware_video_acceleration "MPlayer") |
-| [Flash](/index.php/Flash "Flash") | NPAPI-only
-via [freshplayerplugin](https://aur.archlinux.org/packages/freshplayerplugin/) | NPAPI-only
-via [freshplayerplugin](https://aur.archlinux.org/packages/freshplayerplugin/)
-or [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) | No | [Flash#Configuration](/index.php/Flash#Configuration "Flash") |
-| [Kodi](/index.php/Kodi "Kodi") | Yes | Yes | Yes | [Kodi#Hardware video acceleration](/index.php/Kodi#Hardware_video_acceleration "Kodi") |
-| [Firefox](/index.php/Firefox "Firefox") | No | No | No | [Hardware decoding on Linux tracker bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1210726) |
-| [Chromium](/index.php/Chromium "Chromium") | Yes, via [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/) | No | No | [Chromium#Hardware video acceleration](/index.php/Chromium#Hardware_video_acceleration "Chromium") |
 | [FFmpeg](/index.php/FFmpeg "FFmpeg") | Yes | Yes | Yes | [FFmpeg#Hardware video acceleration](/index.php/FFmpeg#Hardware_video_acceleration "FFmpeg") |
+| [GStreamer](/index.php/GStreamer "GStreamer") | Yes, via [gstreamer-vaapi](https://www.archlinux.org/packages/?name=gstreamer-vaapi) | Yes, via [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) | Yes, via [gst-plugins-bad](https://www.archlinux.org/packages/?name=gst-plugins-bad) | [GStreamer#Hardware video acceleration](/index.php/GStreamer#Hardware_video_acceleration "GStreamer") |
+| [Kodi](/index.php/Kodi "Kodi") | Yes | Yes | Yes | [Kodi#Hardware video acceleration](/index.php/Kodi#Hardware_video_acceleration "Kodi") |
+| [mpv](/index.php/Mpv "Mpv") | Yes | Yes | Yes | [mpv#Hardware decoding](/index.php/Mpv#Hardware_decoding "Mpv") |
+| [VLC media player](/index.php/VLC_media_player "VLC media player") | Yes | Yes | No | [VLC media player#Hardware video acceleration](/index.php/VLC_media_player#Hardware_video_acceleration "VLC media player") |
+| [MPlayer](/index.php/MPlayer "MPlayer") | [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/) | Yes | No | [MPlayer#Hardware video acceleration](/index.php/MPlayer#Hardware_video_acceleration "MPlayer") |
+| [Flash](/index.php/Flash "Flash") | NPAPI only:
+[freshplayerplugin](https://aur.archlinux.org/packages/freshplayerplugin/) | NPAPI only:
+[flashplugin](https://www.archlinux.org/packages/?name=flashplugin) or
+[freshplayerplugin](https://aur.archlinux.org/packages/freshplayerplugin/) | No | [Browser plugins#Adobe Flash Player](/index.php/Browser_plugins#Adobe_Flash_Player "Browser plugins") |
+| [Chromium](/index.php/Chromium "Chromium") | [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/) | No | No | [Chromium#Hardware video acceleration](/index.php/Chromium#Hardware_video_acceleration "Chromium") |
+| [Firefox](/index.php/Firefox "Firefox") | No | No | No | [Bug report](https://bugzilla.mozilla.org/show_bug.cgi?id=1210726) |
+
+**Tip:** To reduce CPU usage while watching YouTube where VP8/VP9 hardware decoding is not available use h264ify extension for [Firefox](https://addons.mozilla.org/en-US/firefox/addon/h264ify/) and [Chromium](https://chrome.google.com/webstore/detail/h264ify/aleakchihdccplidncghkekgioiakgal).
 
 ## Installation
 
@@ -131,18 +132,21 @@ or [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) | No | [F
 
 [Intel graphics](/index.php/Intel_graphics "Intel graphics") open-source drivers support VA-API:
 
+*   HD Graphics series starting from CannonLake (or optionally from Broadwell) and newer are supported by [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver).
 *   GMA 4500 series and newer GPUs up to Coffee Lake are supported by [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver).
 *   GMA 4500 H.264 decoding is supported by [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/), see [Intel#Hardware accelerated H.264 decoding on GMA 4500](/index.php/Intel#Hardware_accelerated_H.264_decoding_on_GMA_4500 "Intel").
-*   Intel HD Graphics series starting from CannonLake (or optionally from Broadwell) and newer are supported by [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver).
 
 ### NVIDIA
 
 [Nouveau](/index.php/Nouveau "Nouveau") open-source driver supports both VA-API and VDPAU:
 
-*   GeForce 8 series and newer GPUs are supported by [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) and [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau).
+*   GeForce 8 series and newer GPUs up until GeForce GTX 750 are supported by [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) and [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau).
 *   [Requires](https://nouveau.freedesktop.org/wiki/VideoAcceleration/#firmware) [nouveau-fw](https://aur.archlinux.org/packages/nouveau-fw/) firmware package, presently extracted from the NVIDIA binary driver.
 
-[NVIDIA](/index.php/NVIDIA "NVIDIA") proprietary driver supports VDPAU and NVDECODE/NVENCODE.
+[NVIDIA](/index.php/NVIDIA "NVIDIA") proprietary driver supports VDPAU and NVDECODE/NVENCODE:
+
+*   VDPAU is supported on GeForce 8 series and newer via [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils).
+*   NVDECODE/NVENCODE are supported on Kepler and newer via [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils).
 
 ### ATI/AMD
 
@@ -153,12 +157,18 @@ or [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) | No | [F
 
 [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") proprietary driver supports VA-API via [XvBA](/index.php/AMD_Catalyst#Video_acceleration "AMD Catalyst").
 
-[AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") proprietary driver supports both VA-API and VDPAU.
+[AMDGPU PRO](/index.php/AMDGPU_PRO "AMDGPU PRO") proprietary driver is built on top of AMDGPU driver and supports both VA-API and VDPAU.
 
-### Other drivers
+### Translation layers
 
-*   [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver), which uses VDPAU as a backend for VA-API.
-*   [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl), which uses VA-API as a backend for VDPAU.
+To get VA-API support when device driver provides none:
+
+*   [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) – VDPAU backend for VA-API.
+*   [libva-vdpau-driver-chromium](https://aur.archlinux.org/packages/libva-vdpau-driver-chromium/) – VDPAU backend for VA-API, patched to work with Chromium.
+
+To get VDPAU support when device driver provides none:
+
+*   [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) – VA-API backend for VDPAU, [only H.264 support](https://github.com/i-rinat/libvdpau-va-gl/issues/67#issuecomment-318470175).
 
 ## Verification
 

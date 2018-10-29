@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Iptables](/index.php/Iptables "Iptables"), revisada por última vez el **2018-09-04**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Iptables&diff=0&oldid=536649) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 Artículos relacionados
 
 *   [Fail2ban](/index.php/Fail2ban "Fail2ban")
@@ -5,9 +8,6 @@ Artículos relacionados
 *   [Sshguard (Español)](/index.php/Sshguard_(Espa%C3%B1ol) "Sshguard (Español)")
 *   [Simple stateful firewall (Español)](/index.php/Simple_stateful_firewall_(Espa%C3%B1ol) "Simple stateful firewall (Español)")
 *   [Sysctl#TCP/IP stack hardening](/index.php/Sysctl#TCP.2FIP_stack_hardening "Sysctl")
-
-**Estado de la traducción**
-Este artículo es una traducción de [Iptables](/index.php/Iptables "Iptables"), revisada por última vez el **2018-09-04**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Iptables&diff=0&oldid=536649) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 *iptables* es una utilidad de línea de órdenes para configurar el [cortafuegos](/index.php/Firewalls_(Espa%C3%B1ol) "Firewalls (Español)") del kernel de Linux implementado como parte del proyecto [Netfilter](https://en.wikipedia.org/wiki/es:Netfilter "wikipedia:es:Netfilter"). El término *iptables* también se usa comúnmente para referirse a dicho cortafuegos del kernel. Puede configurarse directamente con iptables, o usando uno de los muchos frontend existentes de [consola](#De_consola) y [gráficos](#Gr.C3.A1ficos). El término *iptables* se usa para [IPv4](https://en.wikipedia.org/wiki/IPv4 "wikipedia:IPv4"), y el término *ip6tables* para [IPv6](/index.php/IPv6 "IPv6"). Tanto *iptables* como *ip6tables* tienen la misma sintaxis, pero algunas opciones son específicas de IPv4 o de IPv6.
 

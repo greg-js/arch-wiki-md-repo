@@ -36,7 +36,7 @@ $ env EDITOR=vim xterm
 
 ```
 
-El comando *set*, de [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)"), permite cambiar los valores de las opciones de shell y colocar los parámetros posicionales, o mostrar los nombres y valores de las variables de shell. Para más información, se puede consultar la documentación de *set*: [[1]](http://www.gnu.org/software/bash/manual/bash.html#The-Set-Builtin).
+El comando *set*, de [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)"), permite cambiar los valores de las opciones del intérprete de línea de órdenes y colocar los parámetros posicionales, o mostrar los nombres y valores de las variables del intérprete de línea de órdenes. Para más información, se puede consultar la documentación de *set*: [[1]](http://www.gnu.org/software/bash/manual/bash.html#The-Set-Builtin).
 
 Cada proceso almacena sus variables de entorno en el archivo `/proc/$PID/environ`, el cuál contiene cada par de nombre y valor delimitados por un carácter nulo (`\x0`). Se pude obtener un formato más legible con [sed](/index.php/Sed "Sed"), por ejemplo, `sed 's:\x0:
 :g' /proc/$PID/environ`.
@@ -45,15 +45,15 @@ Cada proceso almacena sus variables de entorno en el archivo `/proc/$PID/environ
 
 ### Globalmente
 
-La mayoría de las distribuciones de Linux permiten agregar o cambiar las definiciones de las variables de entorno en `/etc/profile`. Existen también archivos de configuración con variables de entorno específicas para algunos paquetes, como `/etc/locale.conf`. En principio, cualquier script de shell se puede usar para inicializar variables de entorno, pero siguiendo convenciones tradicionales de UNIX, estas declaraciones deben estar presentes en sólo algunos archivos particulares.
+La mayoría de las distribuciones de Linux permiten agregar o cambiar las definiciones de las variables de entorno en `/etc/profile`. Existen también archivos de configuración con variables de entorno específicas para algunos paquetes, como `/etc/locale.conf`. En principio, cualquier script del intérprete de línea de órdenes se puede usar para inicializar variables de entorno, pero siguiendo convenciones tradicionales de UNIX, estas declaraciones deben estar presentes en sólo algunos archivos particulares.
 
-Los siguientes archivos deben ser usados para definir variables de entorno globales: `/etc/environment`, `/etc/profile` y archivos shell de configuración específicos. Cada uno de estos archivos tiene diferentes limitaciones, por lo que se debe seleccionar el adecuado de acuerdo a los propósitos de la variable.
+Los siguientes archivos deben ser usados para definir variables de entorno globales: `/etc/environment`, `/etc/profile` y archivos del intérprete de línea de órdenes de configuración específicos. Cada uno de estos archivos tiene diferentes limitaciones, por lo que se debe seleccionar el adecuado de acuerdo a los propósitos de la variable.
 
-*   `/etc/environment` es usado por el módulo pam_env y es independiente del lenguaje de shell, por lo que no se deben insertar scritps. Este archivo solamente acepta pares de la forma `*variable=valor*`. Para más detalles se pueden consultar los manuales [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) o [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5).
+*   `/etc/environment` es usado por el módulo pam_env y es independiente del lenguaje del intérprete de línea de órdenes, por lo que no se deben insertar scritps. Este archivo solamente acepta pares de la forma `*variable=valor*`. Para más detalles se pueden consultar los manuales [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) o [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5).
 
-*   Los archivos de configuración global de [shell](/index.php/Shell "Shell") inicializan variables y ejecutan scripts. Por ejemplo [Bash (Español)#Archivos de configuración](/index.php/Bash_(Espa%C3%B1ol)#Archivos_de_configuraci.C3.B3n "Bash (Español)") o [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
+*   Los archivos de configuración global del [intérprete de línea de órdenes](/index.php/Shell_(Espa%C3%B1ol) "Shell (Español)") inicializan variables y ejecutan scripts. Por ejemplo [Bash (Español)#Archivos de configuración](/index.php/Bash_(Espa%C3%B1ol)#Archivos_de_configuraci.C3.B3n "Bash (Español)") o [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
 
-*   `/etc/profile` inicializa variables para shells con login solamente. Este archivo sí permite scripts y puede ser usado por todos los shells compatibles con [Bash](https://en.wikipedia.org/wiki/Bourne_shell "wikipedia:Bourne shell").
+*   `/etc/profile` inicializa variables para los intérpretes de línea de órdenes con inicio de sesión solamente. Este archivo sí permite scripts y puede ser usado por todos los intérpretes de línea de órdenes compatibles con [Bash](https://en.wikipedia.org/wiki/Bourne_shell "wikipedia:Bourne shell").
 
 En este ejemplo se agrega la carpeta `~/bin` al `PATH` para el usuario respectivo. Para hacer esto, solamente es necesario colocar lo siguiente en un archivo de configuración (`/etc/profile` o `/etc/bash.bashrc`):
 
@@ -76,9 +76,9 @@ No siempre se requiere definir una variable de entorno de manera global. Por eje
 
 *   `~/.pam_environment` es el archivo de usuario equivalente a `/etc/security/pam_env.conf` [[2]](https://github.com/linux-pam/linux-pam/issues/6), usado por el módulo pam_env. Detalles en [pam_env(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.8) y [pam_env.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pam_env.conf.5).
 
-*   Archivos de configuración de usuario de [shell](/index.php/Shell "Shell"), por ejemplo [Bash (Español)#Archivos de configuración](/index.php/Bash_(Espa%C3%B1ol)#Archivos_de_configuraci.C3.B3n "Bash (Español)") o [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
+*   Archivos de configuración de usuario del [intérprete de línea de órdenes](/index.php/Shell_(Espa%C3%B1ol) "Shell (Español)"), por ejemplo [Bash (Español)#Archivos de configuración](/index.php/Bash_(Espa%C3%B1ol)#Archivos_de_configuraci.C3.B3n "Bash (Español)") o [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
 
-*   `~/.profile` es usado por muchos shells como alternativa por defecto, [wikipedia:Unix shell#Configuration files](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files "wikipedia:Unix shell").
+*   `~/.profile` es usado por muchos intérpretes de línea de órdenes como alternativa por defecto, [wikipedia:Unix shell#Configuration files](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files "wikipedia:Unix shell").
 
 Para agregar una carpeta al `PATH` para uso local, se puede colocar lo siguiente en `~/.bash_profile`:
 
@@ -101,7 +101,7 @@ export GUIVAR=value
 
 ### Por sesión
 
-En algunas ocasiones se necesitan definiciones aún más estrictas. Se puede querer correr temporalmente ejecutables desde un directorio específico sin tener que escribir la ruta absoluta de cada uno, o editar el archivo de configuración de shell para el poco tiempo que se ocuparán.
+En algunas ocasiones se necesitan definiciones aún más estrictas. Se puede querer correr temporalmente ejecutables desde un directorio específico sin tener que escribir la ruta absoluta de cada uno, o editar el archivo de configuración del intérprete de línea de órdenes para el poco tiempo que se ocuparán.
 
 En estos casos, se puede definir la variable `PATH` solamente en la sesión actual, usando el comando *export*. Mientras no se cierre la sesión, la variable `PATH` usará las configuraciones temporales. Para agregar una carpeta al `PATH` específico de una sesión se debe ejecutar:
 
@@ -126,7 +126,7 @@ exec openbox
 
 	Esto hará que *xdg-open* use *exo-open* (el cuál es más amigable con el usuario) porque asume que está corriendo dentro de Xfce. Se puede utilizar *exo-preferred-applications* para configurar.
 
-*   `PATH` contiene una lista, separada por dos puntos, de directorios en los que el sistema buscará archivos ejecutables. Cuando un comando normal (por ejemplo, *ls*, *rc-upadte* o *ic|emerge*) es interpretado por el shell (por ejemplo, *bash* o *zsh*), este busca un archivo ejecutable con el mismo nombre en los directorios del `PATH` y lo ejecuta. Para correr un ejecutable cuyo directorio no está enlistado en el `PATH`, se debe escribir la ruta completa: `/bin/ls`.
+*   `PATH` contiene una lista, separada por dos puntos, de directorios en los que el sistema buscará archivos ejecutables. Cuando un comando normal (por ejemplo, *ls*, *rc-upadte* o *ic|emerge*) es interpretado por el intérprete de línea de órdenes (por ejemplo, *bash* o *zsh*), este busca un archivo ejecutable con el mismo nombre en los directorios del `PATH` y lo ejecuta. Para correr un ejecutable cuyo directorio no está enlistado en el `PATH`, se debe escribir la ruta completa: `/bin/ls`.
 
 **Note:** Por razones de seguridad es recomendable no incluir el directorio actual (`.`) en el `PATH`: se puede conducir al usuario a ejecutar archivos malignos
 .
@@ -137,7 +137,7 @@ exec openbox
 
 *   `OLDPWD` contiene la ruta al directorio anterior al actual; esot es, el valor de `PWD` andes de ejecutar *cd*.
 
-*   `SHELL` contiene la ruta al [shell del usuario](http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap08.html#tag_08_03). Nótese que este no es necesariamente el mismo shell que se está ejecutando, aunque [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") coloca esta variable al iniciar.
+*   `SHELL` contiene la ruta al [intérprete de línea de órdenes del usuario](http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap08.html#tag_08_03). Nótese que este no es necesariamente el mismo intérprete de línea de órdenes que se está ejecutando, aunque [Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") coloca esta variable al iniciar.
 
 *   `TERM` contiene el tipo de terminal que se está ejecutando, por ejemplo, `xterm-256color`. Es usado por programas que se ejecutan en la terminal y que desean ocupar características específicas a cada tipo.
 
@@ -154,7 +154,7 @@ export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'gedit'; else echo 'nano'; fi)"
 
 *   `MAIL` contiene la ubicación de los correos electrónicos de entrada. La configuración tradicional es `/var/spool/mail/$LOGNAME`.
 
-*   `BROWSER` contiene la ruta al navegador web. Es útil establecerla en un archivo de configuración de shell de manera que cambie de manera dinámica según el entorno gráfico:
+*   `BROWSER` contiene la ruta al navegador web. Es útil establecerla en un archivo de configuración del intérprete de línea de órdenes de forma que cambie de manera dinámica según el entorno gráfico:
 
 ```
 if [ -n "$DISPLAY" ]; then

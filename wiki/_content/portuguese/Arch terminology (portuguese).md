@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch terminology](/index.php/Arch_terminology "Arch terminology"). Data da última tradução: 2018-09-18\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_terminology&diff=0&oldid=539889) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch terminology](/index.php/Arch_terminology "Arch terminology"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_terminology&diff=0&oldid=547937) na versão em inglês.
 
 A intenção desta página é desmistificar os termos comumente usados pela comunidade do Arch Linux. Sinta-se à vontade para adicionar ou modificar quaisquer termos, mas por favor use a opção de editar da opção específica. Se você decidir adicionar algum termo, por favor adicione-o em ordem alfabética.
 
@@ -64,7 +64,7 @@ O [Arch Linux Archive](/index.php/Arch_Linux_Archive_(Portugu%C3%AAs) "Arch Linu
 
 ## AUR
 
-O [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)") (AUR) é um repositório dirigido por uma comunidade de usuários do Arch. Ele contém descrições de pacotes ([PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")) que permitem que você compile um pacote da fonte com o [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e, então, instale-o via [pacman](/index.php/Pacman_(Portugu%C3%AAs)#Comandos_adicionais "Pacman (Português)"). O AUR foi criado e organizado para compartilhar novos pacotes da comunidade ajudando a acelerar a inclusão de pacotes populares para o repositório [community](/index.php/Community_(Portugu%C3%AAs) "Community (Português)"). Esse documento explica como usuários podem acessar e utilizar o AUR.
+O [Arch User Repository](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)") (AUR) é um repositório dirigido por uma comunidade de usuários do Arch. Ele contém descrições de pacotes ([PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)")) que permitem que você compile um pacote da fonte com o [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") e, então, instale-o via [pacman](/index.php/Pacman_(Portugu%C3%AAs)#Comandos_adicionais "Pacman (Português)"). O AUR foi criado e organizado para compartilhar novos pacotes da comunidade ajudando a acelerar a inclusão de pacotes populares para o [repositório community](/index.php?title=Reposit%C3%B3rio_community_(Portugu%C3%AAs)&action=edit&redlink=1 "Repositório community (Português) (page does not exist)"). Esse documento explica como usuários podem acessar e utilizar o AUR.
 
 Um bom número de novos pacotes que entram nos repositórios oficiais iniciam no AUR. No AUR, usuários são capazes de contribuir suas próprias compilações de pacote (PKGBUILD e arquivos relacionados). A comunidade do AUR possui a habilidade de votar a favor ou contra pacotes no AUR. Se um pacote se torna popular o suficiente — desde que tenha uma licença compatível e uma boa técnica de empacotamento — ele pode ser inserido no repositório *community* (diretamente acessível por [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") ou [abs](/index.php/Abs_(Portugu%C3%AAs) "Abs (Português)")).
 
@@ -90,7 +90,7 @@ Veja [Repositório local personalizado](/index.php/Reposit%C3%B3rio_local_person
 
 ## Developer
 
-Desenvolvedores são semideuses trabalhando para melhorar o Arch sem qualquer ganho financeiro. [Desenvolvedores](https://www.archlinux.org/people/developers/) são deixados para trás somente por seus deuses, Judd Vinet e Aaron Griffin, os quais por sua vez são deixados para trás por tacos.
+Desenvolvedores são semideuses trabalhando para melhorar o Arch sem qualquer ganho financeiro. [Desenvolvedores](https://www.archlinux.org/people/developers/) são deixados para trás somente por seus deuses, Judd Vinet e Aaron Griffin.
 
 ## extra/[extra]
 
@@ -137,13 +137,7 @@ O [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)"), gerenciado
 
 ## Package maintainer
 
-Mantenedor de pacote é o papel responsável por atualizar pacotes na medida em que novas versões são disponibilizadas pelo *upstream*, além de fornecer suporte em relatórios de erros sobre eles. O termo pode se aplicar a qualquer um dos seguintes:
-
-*   Um desenvolvedor do Arch Linux que mantém um pacote de software em um dos repositórios oficiais (*core*, *extra* ou *testing*).
-*   Um [Trusted User](/index.php/AUR_Trusted_User_Guidelines_(Portugu%C3%AAs) "AUR Trusted User Guidelines (Português)") da comunidade que mantém pacotes de software no repositório de comunidade extraoficiais/sem suporte.
-*   Um usuário normal que mantém um [PKGBUILD](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") e arquivos fontes locais no [AUR](/index.php/Arch_User_Repository_(Portugu%C3%AAs) "Arch User Repository (Português)").
-
-O mantenedor de um pacote é a pessoa atualmente responsável pelo pacote. Mantenedores anteriores deve ser listado como contribuidores no PKGBUILD junto com outros que contribuíram para o pacote.
+Veja [Mantenedor de pacotes](/index.php/Mantenedor_de_pacotes "Mantenedor de pacotes").
 
 ## pacman
 

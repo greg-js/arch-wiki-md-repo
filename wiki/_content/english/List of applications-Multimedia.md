@@ -1469,6 +1469,10 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 	[https://github.com/kanishka-linux/kawaii-player](https://github.com/kanishka-linux/kawaii-player) || [kawaii-player](https://aur.archlinux.org/packages/kawaii-player/)
 
+*   **KittehPlayer** — A YouTube-like video player based on Qt, QML and [mpv](/index.php/Mpv "Mpv").
+
+	[https://github.com/NamedKitten/KittehPlayer](https://github.com/NamedKitten/KittehPlayer) || [kittehplayer](https://aur.archlinux.org/packages/kittehplayer/)
+
 *   **Media Player Classic Qute Theater** — Clone of [Media Player Classic](https://en.wikipedia.org/wiki/Media_Player_Classic "wikipedia:Media Player Classic") reimplimented in Qt and based on [mpv](/index.php/Mpv "Mpv").
 
 	[https://github.com/cmdrkotori/mpc-qt](https://github.com/cmdrkotori/mpc-qt) || [mpc-qt](https://aur.archlinux.org/packages/mpc-qt/)

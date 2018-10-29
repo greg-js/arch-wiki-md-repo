@@ -37,9 +37,10 @@ This article is a general list of applications sorted by category, as a referenc
                 *   [1.2.2.3.2 Browsers based on qt5-webkit](#Browsers_based_on_qt5-webkit)
             *   [1.2.2.4 Other](#Other)
     *   [1.3 Web servers](#Web_servers)
-        *   [1.3.1 Specialized servers](#Specialized_servers)
-        *   [1.3.2 WSGI servers](#WSGI_servers)
-        *   [1.3.3 Performance testing](#Performance_testing)
+        *   [1.3.1 Static web servers](#Static_web_servers)
+        *   [1.3.2 Specialized web servers](#Specialized_web_servers)
+        *   [1.3.3 WSGI servers](#WSGI_servers)
+        *   [1.3.4 Performance testing](#Performance_testing)
     *   [1.4 File sharing](#File_sharing)
         *   [1.4.1 Download managers](#Download_managers)
             *   [1.4.1.1 Console](#Console_2)
@@ -780,10 +781,6 @@ See also [Category:Web server](/index.php/Category:Web_server "Category:Web serv
 
 	[https://caddyserver.com/](https://caddyserver.com/) || [caddy](https://aur.archlinux.org/packages/caddy/)
 
-*   **darkhttpd** — A small and secure static web server, does not support HTTPS.
-
-	[https://unix4lyfe.org/darkhttpd/](https://unix4lyfe.org/darkhttpd/) || [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd)
-
 *   **[Hiawatha](/index.php/Hiawatha "Hiawatha")** — Secure and advanced web server.
 
 	[https://www.hiawatha-webserver.org/](https://www.hiawatha-webserver.org/) || [hiawatha](https://www.archlinux.org/packages/?name=hiawatha)
@@ -800,25 +797,19 @@ See also [Category:Web server](/index.php/Category:Web_server "Category:Web serv
 
 	[https://github.com/blueness/sthttpd](https://github.com/blueness/sthttpd) || [sthttpd](https://www.archlinux.org/packages/?name=sthttpd)
 
-*   **Webfs** — Simple and instant web server for mostly static content.
-
-	[http://linux.bytesex.org/misc/webfs.html](http://linux.bytesex.org/misc/webfs.html) || [webfs](https://www.archlinux.org/packages/?name=webfs)
-
 *   **yaws** — Web server/framework written in Erlang.
 
 	[http://yaws.hyber.org/](http://yaws.hyber.org/) || [yaws](https://www.archlinux.org/packages/?name=yaws)
 
-The [Python](/index.php/Python "Python") standard library module [http.server](https://docs.python.org/library/http.server.html) can also be used from the command-line.
+#### Static web servers
 
-#### Specialized servers
+*   **darkhttpd** — A small and secure static web server, does not support HTTPS.
+
+	[https://unix4lyfe.org/darkhttpd/](https://unix4lyfe.org/darkhttpd/) || [darkhttpd](https://www.archlinux.org/packages/?name=darkhttpd)
 
 *   **KatWeb** — A lightweight static web server and reverse proxy designed for the modern web.
 
 	[https://github.com/kittyhacker101/KatWeb](https://github.com/kittyhacker101/KatWeb) || [katweb](https://aur.archlinux.org/packages/katweb/)
-
-*   **Mongoose** — Embedded web server library, supports WebSocket and MQTT.
-
-	[https://github.com/cesanta/mongoose](https://github.com/cesanta/mongoose) || [mongoose](https://aur.archlinux.org/packages/mongoose/)
 
 *   **quark** — An extremly small and simple http get-only web server. It only serves static pages on a single host.
 
@@ -831,6 +822,18 @@ The [Python](/index.php/Python "Python") standard library module [http.server](h
 *   **servy** — A tiny little web server, single binary, written in Rust.
 
 	[https://github.com/zethra/servy](https://github.com/zethra/servy) || [servy](https://aur.archlinux.org/packages/servy/)
+
+*   **Webfs** — Simple and instant web server for mostly static content.
+
+	[http://linux.bytesex.org/misc/webfs.html](http://linux.bytesex.org/misc/webfs.html) || [webfs](https://www.archlinux.org/packages/?name=webfs)
+
+The [Python](/index.php/Python "Python") standard library module [http.server](https://docs.python.org/library/http.server.html) can also be used from the command-line.
+
+#### Specialized web servers
+
+*   **Mongoose** — Embedded web server library, supports WebSocket and MQTT.
+
+	[https://github.com/cesanta/mongoose](https://github.com/cesanta/mongoose) || [mongoose](https://aur.archlinux.org/packages/mongoose/)
 
 *   **webhook** — Small server for creating HTTP endpoints (hooks)
 
@@ -3848,6 +3851,10 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 *   **Kawaii-Player** — Audio/video manager and multimedia player (based on [mpv](/index.php/Mpv "Mpv")) with PC-to-PC casting feature, along with functionalities of portable media server and torrent streaming server.
 
 	[https://github.com/kanishka-linux/kawaii-player](https://github.com/kanishka-linux/kawaii-player) || [kawaii-player](https://aur.archlinux.org/packages/kawaii-player/)
+
+*   **KittehPlayer** — A YouTube-like video player based on Qt, QML and [mpv](/index.php/Mpv "Mpv").
+
+	[https://github.com/NamedKitten/KittehPlayer](https://github.com/NamedKitten/KittehPlayer) || [kittehplayer](https://aur.archlinux.org/packages/kittehplayer/)
 
 *   **Media Player Classic Qute Theater** — Clone of [Media Player Classic](https://en.wikipedia.org/wiki/Media_Player_Classic "wikipedia:Media Player Classic") reimplimented in Qt and based on [mpv](/index.php/Mpv "Mpv").
 
