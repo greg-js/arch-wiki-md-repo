@@ -812,11 +812,11 @@ unmanaged-devices=mac:00:22:68:1c:59:b1;mac:00:1E:65:30:D1:C4;interface-name:eth
 
 ```
 
-After you have put this in, [restart](/index.php/Daemon "Daemon") NetworkManager, and you should be able to configure interfaces without NetworkManager altering what you have set.
+After you have put this in, [restart](/index.php/Restart "Restart") `NetworkManager.service`, and you should be able to configure interfaces without NetworkManager altering what you have set.
 
 ### Configuring MAC address randomization
 
-**Note:** Disabling MAC address randomization may be needed to get (stable) link connection [[3]](https://bbs.archlinux.org/viewtopic.php?id=220101) and/or networks that restrict devices based on their MAC Address or have a limit network capacity.
+**Note:** Disabling MAC address randomization may be needed to get (stable) link connection [[4]](https://bbs.archlinux.org/viewtopic.php?id=220101) and/or networks that restrict devices based on their MAC Address or have a limit network capacity.
 
 MAC randomization can be used for increased privacy by not disclosing your real MAC address to the network.
 

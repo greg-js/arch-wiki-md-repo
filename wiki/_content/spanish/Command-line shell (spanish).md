@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Command-line shell](/index.php/Command-line_shell "Command-line shell"), revisada por última vez el **2018-10-27**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Command-line_shell&diff=0&oldid=551650) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Command-line shell](/index.php/Command-line_shell "Command-line shell"), revisada por última vez el **2018-10-29**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Command-line_shell&diff=0&oldid=551892) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -83,61 +83,62 @@ Todos estos intérpretes de línea de órdenes se pueden enlazar desde `/usr/bin
 
 ## Cambiar su intérprete de línea de órdenes predeterminado
 
-After installing one the above shells, you can execute that shell inside of your current shell, by just running its executable. If you want to be served that shell when you login however, you will need to change your default shell.
+Después de instalar uno de los intérpretes de línea de órdenes anteriores, puede ejecutar ese intérprete de línea de órdenes dentro de su intérprete de línea de órdenes actual, simplemente ejecutándolo. Sin embargo, si quiere que le sirvan ese intérprete de línea de órdenes cuando inicie sesión, deberá cambiar su intérprete de línea de órdenes predeterminado.
 
-To list all installed shells, run:
+Para listar todos los intérpretes de línea de órdenes instalados, ejecute:
 
 ```
 $ chsh -l
 
 ```
 
-And to set one as default for your user do:
+Y para configurar uno como predeterminado para su usuario haga:
 
 ```
-$ chsh -s *full-path-to-shell*
+$ chsh -s *ruta-completa-al-intérprete-de-línea-de-órdenes*
 
 ```
 
-where *full-path-to-shell* is the full path as given by `chsh -l`.
+donde *ruta-completa-al-intérprete-de-línea-de-órdenes* es la ruta completa dada por `chsh -l`.
 
-If you now log out and log in again, you will be greeted by the other shell.
+Si ahora se desconecta y vuelve a iniciar sesión, será recibido por el otro intérprete de línea de órdenes.
 
 ## Archivos de configuración
 
-To autostart programs in console or upon login, you can use shell startup files/directories. Read the documentation for your shell, or its ArchWiki article, e.g. [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash") or [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
+Para iniciar automáticamente los programas en la consola o al iniciar sesión, puede usar los archivos/directorios de inicio del intérprete de línea de órdenes. Lea la documentación de su intérprete de línea de órdenes o su artículo de ArchWiki, por ejemplo [Bash (Español)#Archivos de configuración](/index.php/Bash_(Espa%C3%B1ol)#Archivos_de_configuraci.C3.B3n "Bash (Español)") o [Zsh#Startup/Shutdown files](/index.php/Zsh#Startup.2FShutdown_files "Zsh").
 
-See also [Wikipedia:Unix shell#Configuration files](https://en.wikipedia.org/wiki/Unix_shell#Configuration_files "wikipedia:Unix shell").
+Véase también [Wikipedia:es:Shell de Unix#Archivos de configuración para shells](https://en.wikipedia.org/wiki/es:Shell_de_Unix#Archivos_de_configuraci.C3.B3n_para_shells "wikipedia:es:Shell de Unix").
 
 ### /etc/profile
 
-Upon login, all Bourne-compatible shells source `/etc/profile`, which in turn sources any readable `*.sh` files in `/etc/profile.d/`: these scripts do not require an interpreter directive, nor do they need to be executable. They are used to set up an environment and define application-specific settings.
+Al iniciar sesión, todas las cargas *(sources)* en `/etc/profile` compatibles con el intérprete de línea de órdenes Bourne, que a su vez cargan los archivos `*.sh` legible en `/etc/profile.d/`: estos scripts no requieren una directiva de intérprete, ni necesitan ser ejecutables. Se utilizan para configurar un entorno y definir configuraciones específicas de la aplicación.
 
 ## Entrada y salida
 
-See also [GregsWiki](https://mywiki.wooledge.org/BashGuide/InputAndOutput "gregswiki:BashGuide/InputAndOutput") and [I/O Redirection](http://www.tldp.org/LDP/abs/html/io-redirection.html).
+Véase también [GregsWiki](https://mywiki.wooledge.org/BashGuide/InputAndOutput "gregswiki:BashGuide/InputAndOutput") y [Redirección E/S](http://www.tldp.org/LDP/abs/html/io-redirection.html).
 
-*   Redirections truncate files before commands are executed: `*command* *file* > *file*` will therefore not work as expected. While some commands ([sed](/index.php/Sed "Sed") for example) provide an option to edit files in-place, many do not. In such cases you can use the [sponge(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sponge.1) command from the [moreutils](https://www.archlinux.org/packages/?name=moreutils) package.
-*   Because *cat* is not built into the shell, on many occasions you may find it more convenient to use a [redirection](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)"), for example in scripts, or if you care a lot about performance. In fact `< *file*` does the same as `cat *file*`.
-*   POSIX-compliant shells support [Here Documents](http://tldp.org/LDP/abs/html/here-docs.html):
+*   Las redirecciones truncan los archivos antes de ejecutar las órdenes: `*orden* *archivo* > *archivo*` por lo tanto no funcionará como se esperaba. Mientras que algunas órdenes ([sed](/index.php/Sed_(Espa%C3%B1ol) "Sed (Español)"), por ejemplo) proporcionan una opción para editar archivos al momento, muchos no lo hacen. En esos casos puede utilizar la orden [sponge(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sponge.1) del paquete [moreutils](https://www.archlinux.org/packages/?name=moreutils).
+*   Debido a que *cat* no está integrado en el intérprete de línea de órdenes, en muchas ocasiones puede resultarle más conveniente utilizar una [redirección](https://en.wikipedia.org/wiki/Redirection_(computing) "wikipedia:Redirection (computing)"), por ejemplo en scripts, o si le importa mucho el rendimiento. De hecho, `< *archivo*` hace lo mismo que `cat *archivo*`.
+
+*   Los intérpretes de línea de órdenes compatibles con POSIX soportan [Documentos aquí](http://tldp.org/LDP/abs/html/here-docs.html) *(Here Documents)*:
 
 ```
 $ cat << EOF
-one
-two
-three
+uno
+dos
+tres
 EOF
 
 ```
 
-*   Shell [pipelines](https://en.wikipedia.org/wiki/Pipeline_(Unix) operate on stdout by default. To operate on [stderr(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/stderr.3) you can redirect *stderr* to *stdout* with `*command* 2>&1 | *othercommand*` or, for Bash 4, `*command* |& *othercommand*`.
-*   Remember that many GNU [core utilities](/index.php/Core_utilities "Core utilities") accept files as arguments, so for example `grep *pattern* < *file*` is replaceable with `grep *pattern* *file*`.
+*   Las [tuberías](https://en.wikipedia.org/wiki/Pipeline_(Unix) del intérprete de línea de órdenes operan en la salida estándar *(stdout)* por defecto. Para operar en [stderr(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/stderr.3) puede redireccionar *stderr* a *stdout* con `*orden* 2>&1 | *otra-orden*` o, en Bash 4, `*orden* |& *otra-orden*`.
+*   Recuerde que muchas [utilidades principales](/index.php/Core_utilities_(Espa%C3%B1ol) "Core utilities (Español)") de GNU aceptan archivos como argumentos, por lo que, por ejemplo `grep *patrón* < *archivo*` se puede reemplazar por `grep *patrón* *archivo*`.
 
 ## Véase también
 
-*   [Evolution of shells in Linux](http://www.ibm.com/developerworks/linux/library/l-linux-shells/index.html) on the IBM developerWorks
-*   [terminal.sexy](https://terminal.sexy/) — Terminal Color Scheme Designer
-*   [Hyperpolyglot](http://hyperpolyglot.org/unix-shells) — Side-by-side comparison of shell syntaxes
-*   [UNIX Power Tools](http://docstore.mik.ua/orelly/unix/upt/index.htm) — General command-line tool usage
-*   [commandlinefu.com](https://www.commandlinefu.com/commands/browse) — Command-line snippets sharing
+*   [Evolución de los intérpretes de línea de órdenes en Linux](http://www.ibm.com/developerworks/linux/library/l-linux-shells/index.html) en IBM developerWorks
+*   [terminal.sexy](https://terminal.sexy/) — Diseñador de esquemas de color de terminal
+*   [Hyperpolyglot](http://hyperpolyglot.org/unix-shells) — Comparación lado-a-lado de las sintaxis del intérprete de línea de órdenes
+*   [UNIX Power Tools](http://docstore.mik.ua/orelly/unix/upt/index.htm) — Utilización general de la herramienta de línea de comandos
+*   [commandlinefu.com](https://www.commandlinefu.com/commands/browse) — Compartir fragmentos de línea de órdenes
 *   [List of applications#Terminal emulators](/index.php/List_of_applications#Terminal_emulators "List of applications")

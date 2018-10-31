@@ -21,13 +21,13 @@
 
 ### Przejście z vima
 
-Neovim korzysta z `$XDG_CONFIG_HOME/nvim` zamiast z `~/.vim` jako swój głowny folder konfiguracyjny i `$XDG_CONFIG_HOME/nvim/init.vim` zamiast z `~/.vimrc` jako swój głowny plik konfiguracyjny.
+Neovim korzysta z `$XDG_CONFIG_HOME/nvim`, zamiast z `~/.vim`, jako swojego głównego folderu konfiguracyjnego i `$XDG_CONFIG_HOME/nvim/init.vim`, zamiast z `~/.vimrc`, jako swojego głownego pliku konfiguracyjnego.
 
-Zobacz [nvim-from-vim](https://neovim.io/doc/user/nvim.html#nvim-from-vim) lub komende neovima `:help nvim-from-vim` żeby użyć swoją konfiguracje vima w neovimie.
+Zobacz [nvim-from-vim](https://neovim.io/doc/user/nvim.html#nvim-from-vim) lub komendę neovima `:help nvim-from-vim`, żeby użyć swoją konfigurację vima w neovimie.
 
 #### Ładowanie dodatków vima
 
-Jeśli chciałbyś użyć wtyczek, definicji składni lub innych dodatków które są zainstalowane dla vima, możesz dodać domyślną ścieżkę vima dla neovim poprzez dodanie jej do `rtp`. Na przykład możesz uruchomić w nvim następującą rzecz lub dodać ją do swojego pliku konfiguracji neovima:
+Jeśli chciałbyś użyć wtyczek, definicji składni lub innych dodatków, które są zainstalowane dla vima, możesz dodać domyślną ścieżkę vima dla neovima poprzez dodanie jej do `rtp`. Na przykład możesz uruchomić w nvim następującą rzecz lub dodać ją do swojego pliku konfiguracji neovima:
 
 ```
 set rtp^=/usr/share/vim/vimfiles/

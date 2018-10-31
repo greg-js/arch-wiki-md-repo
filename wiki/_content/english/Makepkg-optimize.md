@@ -43,7 +43,7 @@ $ makepkg --config /etc/makepkg-optimize.conf
 
 ```
 
-**Note:** Building with [profile-guided optimization](https://en.wikipedia.org/wiki/Profile-guided_optimization "wikipedia:Profile-guided optimization") requires that a package be built and installed *twice*. The first phase initiates profile generation in `$PROFDEST/$pkgbase.gen`; the second applies them and moves them to `$PROFDEST/$pkgbase.used`.
+**Note:** [Profile-guided optimization](https://en.wikipedia.org/wiki/Profile-guided_optimization "wikipedia:Profile-guided optimization") requires that a package be built and installed *twice*. The first phase initiates profile generation in `$PROFDEST/$pkgbase.gen`; the second applies them and moves them to `$PROFDEST/$pkgbase.used`.
 
 ## Build an optimized package in a clean chroot
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [IRC channel](/index.php/IRC_channel "IRC channel"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=IRC_channel&diff=0&oldid=545060) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [IRC channel](/index.php/IRC_channel "IRC channel"). Data da última tradução: 2018-10-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=IRC_channel&diff=0&oldid=546966) na versão em inglês.
 
 Artigos relacionados
 

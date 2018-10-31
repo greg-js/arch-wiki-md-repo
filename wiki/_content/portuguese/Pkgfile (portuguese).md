@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Pkgfile](/index.php/Pkgfile "Pkgfile"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pkgfile&diff=0&oldid=549364) na versão em inglês.
+
 Artigos relacionados
 
 *   [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)")

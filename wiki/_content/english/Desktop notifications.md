@@ -57,7 +57,7 @@ In order to use libnotify, you have to install a [notification server](#Notifica
 
 In other desktop environments, the notification server needs to be launched using your WM's/DE's "autostart" option.
 
-It can also be launched on the first call via [D-Bus](/index.php/D-Bus "D-Bus"), adding the following configuration to its services directory `/usr/share/dbus-1/services` respectively `$XDG_DATA_HOME/dbus-1/services`, e.g.
+After install the [notification-daemon](https://www.archlinux.org/packages/?name=notification-daemon) package, the notification server can be launched on the first call via [D-Bus](/index.php/D-Bus "D-Bus"), adding the following configuration to its services directory `/usr/share/dbus-1/services` respectively `$XDG_DATA_HOME/dbus-1/services`, e.g.
 
  `org.freedesktop.Notifications.service` 
 ```

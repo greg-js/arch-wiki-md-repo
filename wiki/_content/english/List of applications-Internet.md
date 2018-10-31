@@ -143,6 +143,10 @@ See also [Network configuration#Network managers](/index.php/Network_configurati
 
 	[http://www.infradead.org/openconnect/](http://www.infradead.org/openconnect/) || [openconnect](https://www.archlinux.org/packages/?name=openconnect)
 
+*   **[Openswan](/index.php/Openswan "Openswan")** — IPsec-based VPN Solution.
+
+	[https://www.openswan.org/](https://www.openswan.org/) || [openswan](https://aur.archlinux.org/packages/openswan/)
+
 *   **[OpenVPN](/index.php/OpenVPN "OpenVPN")** — To connect to OpenVPN VPNs.
 
 	[https://openvpn.net/](https://openvpn.net/) || [openvpn](https://www.archlinux.org/packages/?name=openvpn)

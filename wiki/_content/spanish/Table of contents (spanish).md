@@ -17,7 +17,7 @@
 | <small>2.1.1.</small> [Desarrollo de paquetes](/index.php/Category:Package_development_(Espa%C3%B1ol) "Category:Package development (Español)") <small>(9)</small> |
 | <small>2.1.2.</small> [Desarrollo de pacman](/index.php/Category:Pacman_development_(Espa%C3%B1ol) "Category:Pacman development (Español)") <small>(1)</small> |
 | <small>2.2.</small> [Entornos de desarrollo integrados](/index.php/Category:Integrated_development_environments_(Espa%C3%B1ol) "Category:Integrated development environments (Español)") <small>(2)</small> |
-| <small>2.3.</small> [Lenguaje de programación](/index.php/Category:Programming_languages_(Espa%C3%B1ol) "Category:Programming languages (Español)") <small>(11)</small> |
+| <small>2.3.</small> [Lenguaje de programación](/index.php/Category:Programming_languages_(Espa%C3%B1ol) "Category:Programming languages (Español)") <small>(13)</small> |
 | <small>2.3.1.</small> [Intérpretes de órdenes](/index.php/Category:Command_shells_(Espa%C3%B1ol) "Category:Command shells (Español)") <small>(5) (también en [Línea de órdenes](/index.php/Category:Command-line_(Espa%C3%B1ol) "Category:Command-line (Español)"))</small> |
 | <small>2.4.</small> [Editores de texto](/index.php/Category:Text_editors_(Espa%C3%B1ol) "Category:Text editors (Español)") <small>(3) (también en [Aplicaciones](/index.php/Category:Applications_(Espa%C3%B1ol) "Category:Applications (Español)"))</small> |
 | <small>2.5.</small> [Sistema de control de versiones](/index.php/Category:Version_Control_System_(Espa%C3%B1ol) "Category:Version Control System (Español)") <small>(3)</small> |

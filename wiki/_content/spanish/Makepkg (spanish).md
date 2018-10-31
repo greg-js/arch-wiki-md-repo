@@ -135,14 +135,14 @@ $ makepkg -c
 
 El sistema de construcción [make](https://www.archlinux.org/packages/?name=make) usa las `MAKEFLAGS` como variables de entorno para especificar opciones adicionales. Las variables también pueden ser definidas en el archivo `/etc/makepkg.conf`.
 
-Usuarios con sistemas que poseen múltiples núcleos o CPU pueden especificar el número de trabajos a ejecutar simultáneamente. Esto se puede realizar usando *nproc* para determinar el numero de de procesadores disponibles, v.g. modificando la linea `MAKEFLAGS` en `/etc/makepkg.conf`.
+Usuarios con sistemas que poseen múltiples núcleos o CPU pueden especificar el número de trabajos a ejecutar simultáneamente. Esto se puede realizar usando *nproc* para determinar el número de procesadores disponibles, v.g. modificando la línea `MAKEFLAGS` en `/etc/makepkg.conf`.
 
 ```
 MAKEFLAGS="**-j$(nproc)**"
 
 ```
 
-Para decirle al compilador que use un número especifico de núcleos al momento de compilar, se usa el mismo parámetro `-j<numero_de_núcleos>`. El numero recomendado es *n*+1, donde *n* es la cantidad de núcleos de tu procesador.
+Para decirle al compilador que use un número especifico de núcleos al momento de compilar, se usa el mismo parámetro `-j<numero_de_núcleos>`. El número recomendado es *n*+1, donde *n* es la cantidad de núcleos de tu procesador.
 
 Por ejemplo un procesador de 2 núcleos (2+1=3):
 

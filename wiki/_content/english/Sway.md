@@ -6,9 +6,9 @@
 
 *   [1 Status](#Status)
 *   [2 Installation](#Installation)
-*   [3 Starting sway](#Starting_sway)
+*   [3 Starting](#Starting)
     *   [3.1 From a TTY, on login](#From_a_TTY.2C_on_login)
-    *   [3.2 Using a display manager](#Using_a_display_manager)
+    *   [3.2 From a display manager](#From_a_display_manager)
 *   [4 Configuration](#Configuration)
     *   [4.1 Keymap](#Keymap)
     *   [4.2 Statusbar](#Statusbar)
@@ -45,13 +45,13 @@ At the time of writing, *sway 1.0-beta* - based on the new [wlroots](https://git
 
 It's advisable to always update *wlroots* when you update *sway*, due to tight dependencies.
 
-## Starting sway
+## Starting
 
 **Tip:** See [Wayland#GUI libraries](/index.php/Wayland#GUI_libraries "Wayland") for appropriate environment variables to set for window decoration libraries.
 
 ### From a TTY, on login
 
-You can start sway by simply typing `sway` from your TTY. To start sway from tty1 on login with default US keyboard edit `.bash_profile` use this code:
+You can start sway by simply typing *sway* from your TTY. To start sway from tty1 on login with default US keyboard edit `.bash_profile` use this code:
 
  `~/.bash_profile` 
 ```
@@ -61,7 +61,7 @@ fi
 
 ```
 
-### Using a display manager
+### From a display manager
 
 **Note:** Sway does not support display managers officially.
 

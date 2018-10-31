@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Namcap](/index.php/Namcap "Namcap"). Data da última tradução: 2018-10-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Namcap&diff=0&oldid=547022) na versão em inglês.
+
 Namcap é uma ferramenta para verificar pacotes binários e PKGBUILDs fonte para erros comuns de empacotamento, que também pode ser habilitado automaticamente. Ele foi criado por [Jason Chu](https://www.archlinux.org/people/developer-fellows/#jason).
 
 **Alterações**: O arquivo [NEWS](https://git.archlinux.org/namcap.git/tree/NEWS) no repositório Git contém as alterações em relação versões anteriores de forma concisa.

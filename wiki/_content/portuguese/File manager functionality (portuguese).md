@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [File manager functionality](/index.php/File_manager_functionality "File manager functionality"). Data da última tradução: 2018-10-04\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=File_manager_functionality&diff=0&oldid=545704) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [File manager functionality](/index.php/File_manager_functionality "File manager functionality"). Data da última tradução: 2018-10-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=File_manager_functionality&diff=0&oldid=551262) na versão em inglês.
 
 Artigos relacionados
 
@@ -82,7 +82,7 @@ Também será necessário configurar o gerenciador de arquivos em relação ao g
 
 #### Autônomo
 
-Outra opção é instalar um [aplicativo de montagem](/index.php/List_of_applications#Mount_tools "List of applications") separado. As vantagens de usar isso são:
+Outra opção é instalar um [aplicativo de montagem](/index.php/List_of_applications/Utilities#Mount_tools "List of applications/Utilities") separado. As vantagens de usar isso são:
 
 *   Menos memória pode ser necessária para ser executada como um processo de segundo plano [daemon](/index.php/Daemon_(Portugu%C3%AAs) "Daemon (Português)") do que um gerenciador de arquivos
 *   Não é específico do gerenciador de arquivos, permitindo que sejam livremente adicionados, removidos e alternados

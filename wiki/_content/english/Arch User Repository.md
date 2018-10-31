@@ -257,7 +257,6 @@ If you have already created a git repository, you can simply create a remote for
 
 ```
 $ git remote add *remote_name* ssh://aur@aur.archlinux.org/*package_name*.git
-$ git branch --set-upstream-to=*remote_name*/master master
 $ git fetch *remote_name*
 
 ```

@@ -12,7 +12,7 @@ De [Wikipedia](https://en.wikipedia.org/wiki/es:xinit "wikipedia:es:xinit"):
 
 	El programa **xinit** permite a un usuario iniciar manualmente un servidor de pantalla [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)"). El script [startx(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1) es un front-end para [xinit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xinit.1).
 
-*xinit* y *startx* toman un argumento opcional de la aplicación cliente. Si no proporciona uno, buscarán `~/.xinitrc` para ejecutarse como un script del intérprete de línea de órdenes para iniciar las aplicaciones cliente. Executar `xinit /usr/bin/foo` es por lo tanto equivalente a ejecutar `xinit` con `exec foo` en su `~/.xinitrc`.
+*xinit* y *startx* toman un argumento opcional de la aplicación cliente. Si no proporciona uno, buscarán `~/.xinitrc` para ejecutarse como un script del intérprete de línea de órdenes para iniciar las aplicaciones cliente. Ejecutar `xinit /usr/bin/foo` es por lo tanto equivalente a ejecutar `xinit` con `exec foo` en su `~/.xinitrc`.
 
 *xinit* se utiliza normalmente para iniciar [administradores de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") o [entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)"). Aunque también puede utilizar *xinit* para ejecutar aplicaciones gráficas sin un administrador de ventanas, muchas aplicaciones gráficas esperan un administrador de ventanas compatible con [Wikipedia:Extended Window Manager Hints](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints inician [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)") y, generalmente, [xprofile](/index.php/Xprofile_(Espa%C3%B1ol) "Xprofile (Español)").
 

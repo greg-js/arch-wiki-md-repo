@@ -96,10 +96,20 @@ sudo alsactl store
 
 ## WiFi
 
-Since September 2018, Surface Book 2 WiFi may power off during use. When this happens, it is not visible in lspci and rebooting is a way to get it back on. However, this behavior can be prevented by installing [iw](https://www.archlinux.org/packages/?name=iw) and running the following command as root:
+Since September 2018, Surface Book 2 WiFi may power off during use. When this happens, it is not visible in lspci and rebooting is a way to get it back on. However, this behavior can be prevented (temporarily) by installing [iw](https://www.archlinux.org/packages/?name=iw) and running the following command as root:
 
 ```
 # iw dev wlp1s0 set power_save off
+
+```
+
+To permanently fix the issue with NetworkManager, add this to your [NetworkManager](/index.php/NetworkManager "NetworkManager") config. (Such as /etc/NetworkManager/NetworkManager.conf)
+
+```
+[connection]
+wifi.powersave = 2
+[device]
+wifi.scan-rand-mac-address=false
 
 ```
 

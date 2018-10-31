@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [System maintenance](/index.php/System_maintenance "System maintenance"). Data da última tradução: 2018-09-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=542230) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [System maintenance](/index.php/System_maintenance "System maintenance"). Data da última tradução: 2018-10-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=546559) na versão em inglês.
 
 Artigos relacionados
 

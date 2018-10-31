@@ -28,7 +28,7 @@ Pamiętaj, że jeżeli myślisz, że czegoś brakuje na tej stronie, dodaj to! O
 
 ## Repozytoria deweloperów
 
-Garstka "stałych klientów" ma własne repozytoria z progukcją w toku, pracą i gałęziami z funkcjonalnościami, etc. Niektóre są wylistowane tutaj, ale czuj się zachęcony, aby dodać więcej o których możliwe, że wiesz.
+Garstka "stałych klientów" ma własne repozytoria z produkcją w toku, pracą i gałęziami z funkcjonalnościami, etc. Niektóre są wylistowane tutaj, ale czuj się zachęcony, aby dodać więcej o których możliwe, że wiesz.
 
 ### Allan McRae
 

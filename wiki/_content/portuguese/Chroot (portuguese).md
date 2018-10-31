@@ -1,10 +1,12 @@
+**Status de tradução:** Esse artigo é uma tradução de [chroot](/index.php/Chroot "Chroot"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Chroot&diff=0&oldid=552163) na versão em inglês.
+
 Artigos relacionados
 
-*   [PRoot (Português)](/index.php/PRoot_(Portugu%C3%AAs) "PRoot (Português)")
-*   [Linux Containers (Português)](/index.php/Linux_Containers_(Portugu%C3%AAs) "Linux Containers (Português)")
+*   [PRoot](/index.php/PRoot_(Portugu%C3%AAs) "PRoot (Português)")
+*   [Linux Containers](/index.php/Linux_Containers_(Portugu%C3%AAs) "Linux Containers (Português)")
 *   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
 
-[Chroot](https://en.wikipedia.org/wiki/pt:Chroot "wikipedia:pt:Chroot") é uma operação que altera o diretório raiz aparente para o processo atual de execução e seus filhos. Um programa que é executado em tal ambiente modificado não consegue acessar os arquivos e comandos fora dessa árvore de diretórios ambiental. Esse ambiente modificado é chamado de um *prisão chroot* (ou *chroot jail*).
+[chroot](https://en.wikipedia.org/wiki/pt:Chroot "wikipedia:pt:Chroot") é uma operação que altera o diretório raiz aparente para o processo atual de execução e seus filhos. Um programa que é executado em tal ambiente modificado não consegue acessar os arquivos e comandos fora dessa árvore de diretórios ambiental. Esse ambiente modificado é chamado de um *prisão chroot* (ou *chroot jail*).
 
 ## Contents
 
@@ -36,15 +38,10 @@ Veja também [Wikipedia:Chroot#Limitations](https://en.wikipedia.org/wiki/Chroot
 ## Requisitos
 
 *   Privilégio de *root*.
-
 *   Outro ambiente Linux, como um LiveCD ou mídia flash USB (ex.: pendrive), ou outra distribuição Linux.
-
 *   Ambientes com igual arquitetura; i.e. o chroot de e chroot para. A arquitetura do ambiente atual pode ser descoberta com: `uname -m` (ex.: i686 ou x86_64).
-
 *   Módulos de kernel carregados que são necessários no ambiente chroot.
-
 *   Swap habilitado se necessário: `# swapon /dev/sd*xY*` 
-
 *   Conexão com a Internet estabelecida, se necessário.
 
 ## Uso

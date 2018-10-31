@@ -642,98 +642,98 @@ Para endereços IP estáticos, você terá que configurar o NetworkManager para 
 
 ### Senhas de Wi-Fi criptografadas
 
-By default, NetworkManager stores passwords in clear text in the connection files at `/etc/NetworkManager/system-connections/`. To print the stored passwords, use the following command:
+Por padrão, o NetworkManager armazena senhas em texto não criptografado nos arquivos de conexão em `/etc/NetworkManager/system-connections/`. Para imprimir as senhas armazenadas, use o seguinte comando:
 
 ```
 # grep -H '^psk=' /etc/NetworkManager/system-connections/*
 
 ```
 
-The passwords are accessible to the root user in the filesystem and to users with access to settings via the GUI (e.g. `nm-applet`).
+As senhas são acessíveis ao usuário root no sistema de arquivos e aos usuários com acesso às configurações através da GUI (por exemplo, `nm-applet`).
 
-It is preferable to save the passwords in encrypted form in a keyring instead of clear text. The downside of using a keyring is that the connections have to be set up for each user.
+É preferível salvar as senhas em formato criptografado em um chaveiro, em vez de texto não criptografado. A desvantagem de usar um chaveiro é que as conexões precisam ser configuradas para cada usuário.
 
 #### Usando GNOME Keyring
 
-The keyring daemon has to be started and the keyring needs to be unlocked for the following to work.
+O daemon do conjunto de chaves deve ser iniciado e o chaveiro precisa ser desbloqueado para que o seguinte funcione.
 
-Furthermore, NetworkManager needs to be configured not to store the password for all users. Using GNOME `nm-applet`, run `nm-connection-editor` from a terminal, select a network connection, click `Edit`, select the `Wifi-Security` tab and click on the right icon of password and check `Store the password only for this user`.
+Além disso, o NetworkManager precisa ser configurado para não armazenar a senha para todos os usuários. Usando o GNOME `nm-applet`, execute `nm-connection-editor` em um terminal, selecione uma conexão de rede, clique em `Editar`, selecione `Segurança Wi-Fi` e clique no ícone à direita da senha e marque `Armazenar a senha somente para este usuário`.
 
 #### Usando KDE Wallet
 
-Using KDE's [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm), click the applet, click on the top right `Settings` icon, click on a network connection, in the `General settings` tab, untick `all users may connect to this network`. If the option is ticked, the passwords will still be stored in clear text, even if a keyring daemon is running.
+Usando o [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) do KDE, clique no applet, clique no ícone `Configurações` na parte superior direita, clique em uma conexão de rede, na guia `Configurações gerais`, desmarque `Todos os usuários podem se conectar nesta rede`. Se a opção estiver marcada, as senhas ainda serão armazenadas em texto não criptografado, mesmo que um daemon de chaveiro esteja em execução.
 
-If the option was selected previously and you un-tick it, you may have to use the `reset` option first to make the password disappear from the file. Alternatively, delete the connection first and set it up again.
+Se a opção foi selecionada anteriormente e você desmarcá-la, você pode ter que usar a opção `reset` primeiro para fazer a senha desaparecer do arquivo. Como alternativa, exclua a conexão primeiro e configure-a novamente.
 
 ### Compartilhando conexão internet pelo Wi-Fi
 
-You can share your internet connection (e.g. 3G or wired) with a few clicks. You will need a supported Wi-Fi card (Cards based on Atheros AR9xx or at least AR5xx are probably best choice). Please note that a [firewall](/index.php/Firewall "Firewall") may interfere with internet sharing.
+Você pode compartilhar sua conexão com a Internet (por exemplo, 3G ou com fio) com apenas alguns cliques. Você precisará de uma placa Wi-Fi (placas baseadas em Atheros AR9xx ou pelo menos AR5xx são provavelmente a melhor escolha). Por favor, note que um [firewall](/index.php/Firewall "Firewall") pode interferir no compartilhamento de internet.
 
-*   [Install](/index.php/Install "Install") the [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package to be able to actually share the connection.
+*   [Instale](/index.php/Instale "Instale") o pacote [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) para poder realmente compartilhar a conexão.
 
-Create the shared connection:
+Crie a conexão compartilhada:
 
-*   Click on applet and choose *Create new wireless network*.
-*   Follow wizard (if using WEP, be sure to use 5 or 13 character long password, different lengths will fail).
-    *   Choose either [Hotspot](https://fedoraproject.org/wiki/Features/RealHotspot "fedora:Features/RealHotspot") or Ad-hoc as Wi-Fi mode.
+*   Clique no miniaplicativo e escolha *Criar nova rede sem fio*.
+*   Siga o assistente (se estiver usando WEP, certifique-se de usar uma senha com 5 a 13 caracteres, pois tamanhos diferentes falharão).
+    *   Escolha [Hotspot](https://fedoraproject.org/wiki/Features/RealHotspot "fedora:Features/RealHotspot") ou Ad-hoc como modo Wi-Fi.
 
-The connection will be saved and remain stored for the next time you need it.
+A conexão será salva e permanecerá armazenada para a próxima vez que você precisar dela.
 
-**Note:** Android does not support connecting to Ad-hoc networks. To share a connection with Android use infrastructure mode (i.e. set Wi-Fi mode to "Hotspot").
+**Nota:** O Android não possui suporte a conexão a redes ad-hoc. Para compartilhar uma conexão com o Android, use o modo infraestrutura (por exemplo, defina o modo Wi-Fi como "Hotspot").
 
 ### Compartilhando conexão internet por Ethernet
 
-Scenario: your device has internet connection over wi-fi and you want to share the internet connection to other devices over ethernet.
+Cenário: o seu dispositivo está conectado à Internet através de wi-fi e pretende compartilhar a conexão à Internet a outros dispositivos através da rede ethernet.
 
-Requirements:
+Requisitos:
 
-*   [Install](/index.php/Install "Install") the [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) package to be able to actually share the connection.
-*   Your internet connected device and the other devices are connected over a suitable ethernet cable (this usually means a cross over cable or a switch in between).
-*   Internet sharing is not blocked by a [firewall](/index.php/Firewall "Firewall").
+*   [Instale](/index.php/Instale "Instale") o pacote [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) para ser capaz de compartilhar a conexão.
+*   Seu dispositivo conectado à internet e outros dispositivos estarem conectados por um cabo ethernet adequado (isso geralmente significa um cabo *cross* ou um switch entre eles).
+*   Compartilhamento de Internet não estar bloqueado por um [firewall](/index.php/Firewall "Firewall").
 
-Steps:
+Etapas:
 
-*   Run `nm-connection-editor` from terminal.
-*   Add a new ethernet connection.
-*   Give it some sensible name. For example "Shared Internet"
-*   Go to "IPv4 Settings".
-*   For "Method:" select "Shared to other computers".
-*   Save
+*   Executar `nm-connection-editor` do terminal.
+*   Adicionar uma nova conexão ethernet.
+*   Dê um nome sensato. Por exemplo, "Internet compartilhada"
+*   Acesse "Configurações IPv4".
+*   Para "Método:" selecione "Compartilhado com outros computadores".
+*   Salve
 
-Now you should have a new option "Shared Internet" under the Wired connections in NetworkManager.
+Agora, você deve ter uma nova opção "Internet compartilhada" sob as conexões cabeadas no NetworkManager.
 
 ### Verificando se a conectividade está ativa dentro de um script ou trabalho cron
 
-Some *cron* jobs require networking to be up to succeed. You may wish to avoid running these jobs when the network is down. To accomplish this, add an **if** test for networking that queries NetworkManager's *nm-tool* and checks the state of networking. The test shown here succeeds if any interface is up, and fails if they are all down. This is convenient for laptops that might be hardwired, might be on wireless, or might be off the network.
+Alguns trabalhos de *cron* exigem conectividade para serem bem-sucedidos. Você pode evitar a execução desses trabalhos quando a rede estiver inoperante. Para isso, adicione um teste **if** para redes que consulte a *nm-tool* do NetworkManager e verifique o estado da rede. O teste mostrado aqui é bem-sucedido se qualquer interface estiver ativa e falhará se todos estiverem inativos. Isso é conveniente para laptops que podem ser conectados, podem estar sem fio ou podem estar fora da rede.
 
 ```
 if [ $(nm-tool|grep State|cut -f2 -d' ') == "connected" ]; then
-    #Whatever you want to do if the network is online
+    #Qualquer coisa que você deseje fazer se a rede estiver online
 else
-    #Whatever you want to do if the network is offline - note, this and the else above are optional
+    #Qualquer coisa que você deseje fazer se a rede estiver offline - note, isso e qualquer outra coisa acima é opcional
 fi
 
 ```
 
-This useful for a `cron.hourly` script that runs *fpupdate* for the F-Prot virus scanner signature update, as an example. Another way it might be useful, with a little modification, is to differentiate between networks using various parts of the output from *nm-tool*; for example, since the active wireless network is denoted with an asterisk, you could grep for the network name and then grep for a literal asterisk.
+Isso é útil para um script `cron.hourly` que executa o *fpupdate* para a atualização da assinatura do scanner de vírus F-Prot, como exemplo. Outra maneira que pode ser útil, com uma pequena modificação, é diferenciar entre redes usando várias partes da saída do *nm-tool*; por exemplo, como a rede sem fio ativa é denotada com um asterisco, você pode usar o nome da rede e, em seguida, o grep para um asterisco literal.
 
 ### Conectar a uma rede com segredo na inicialização
 
-By default, NetworkManager will not connect to networks requiring a secret automatically on boot. This is because it locks such connections to the user who makes it by default, only connecting after they have logged in. To change this, do the following:
+Por padrão, o NetworkManager não se conectará a redes que exigem um segredo automaticamente na inicialização. Isso ocorre porque ele bloqueia essas conexões para o usuário que faz isso por padrão, conectando-se somente depois de terem efetuado login. Para alterar isso, faça o seguinte:
 
-1.  Right click on the `nm-applet` icon in your panel and select Edit Connections and open the Wireless tab
-2.  Select the connection you want to work with and click the Edit button
-3.  Check the boxes “Connect Automatically” and “Available to all users”
+1.  Clique com o botão direito do mouse no ícone do `nm-applet` em seu painel e selecione Editar conexões e abra a guia Sem fio
+2.  Selecione a conexão com a qual você deseja trabalhar e clique no botão Editar
+3.  Marque as caixas "Conectar automaticamente" e "Disponível para todos os usuários"
 
-Log out and log back in to complete.
+Encerre e inicie novamente a sessão para completar.
 
 ### Desbloquear automaticamente o chaveiro após o login
 
-NetworkManager requires access to the login keyring to connect to networks requiring a secret. Under most circumstances, this keyring is unlocked automatically at login, but if it is not, and NetworkManager is not connecting on login, you can try the following.
+O NetworkManager requer acesso ao chaveiro de login para se conectar a redes que exigem um segredo. Na maioria das circunstâncias, esse chaveiro é desbloqueado automaticamente no login, mas se não for, e o NetworkManager não está se conectando no login, você pode tentar o seguinte.
 
 #### GNOME
 
-*   In `/etc/pam.d/gdm` (or your corresponding daemon in `/etc/pam.d`), add these lines at the end of the "auth" and "session" blocks if they do not exist already:
+*   No `/etc/pam.d/gdm` (ou seu daemon correspondente no `/etc/pam.d`), adicione estas linhas no final dos blocos "auth" e "session" se eles ainda não existirem:
 
 ```
  auth            optional        pam_gnome_keyring.so
@@ -741,35 +741,35 @@ NetworkManager requires access to the login keyring to connect to networks requi
 
 ```
 
-*   In `/etc/pam.d/passwd`, use this line for the 'password' block:
+*   No `/etc/pam.d/passwd`, use essa linha para o bloco "password":
 
 ```
  password    optional    pam_gnome_keyring.so
 
 ```
 
-	Next time you log in, you should be asked if you want the password to be unlocked automatically on login.
+	Na próxima vez que fizer login, você deverá ser perguntado se deseja que a senha seja desbloqueada automaticamente no login.
 
 #### Gerenciador de login SLiM
 
-See [SLiM#Gnome Keyring](/index.php/SLiM#Gnome_Keyring "SLiM").
+Veja [SLiM#Gnome Keyring](/index.php/SLiM#Gnome_Keyring "SLiM").
 
 ### OpenConnect com senha no KWallet
 
-While you may type both values at connection time, [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) 0.9.3.2-1 and above are capable of retrieving OpenConnect username and password directly from [KWallet](/index.php/KWallet "KWallet").
+Enquanto você pode digitar os dois valores no momento da conexão, o [plasma-nm](https://www.archlinux.org/packages/?name=plasma-nm) 0.9.3.2-1 e acima são capazes de obter o nome de usuário e a senha do OpenConnect diretamente do [KWallet](/index.php/KWallet "KWallet").
 
-Open "KDE Wallet Manager" and look up your OpenConnect VPN connection under "Network Management|Maps". Click "Show values" and enter your credentials in key "VpnSecrets" in this form (replace *username* and *password* accordingly):
-
-```
-form:main:username%SEP%*username*%SEP%form:main:password%SEP%*password*
+Abra o "Gerenciador de carteiras do KDE" e procure a sua conexão OpenConnect VPN em "Gerenciamento de rede | Mapas". Clique em "Mostrar valores" e insira suas credenciais na chave "VpnSecrets" neste formulário (substitua "nome_de_usuário" e "senha"):
 
 ```
+form:main:username%SEP%*nome_de_usuário*%SEP%form:main:password%SEP%*senha*
 
-Next time you connect, username and password should appear in the "VPN secrets" dialog box.
+```
+
+Da próxima vez que você se conectar, o nome de usuário e a senha deverão aparecer na caixa de diálogo "Segredos de VPN".
 
 ### Ignorar dispositivos específicos
 
-Sometimes it may be desired that NetworkManager ignores specific devices and does not try to configure addresses and routes for them. You can quickly and easily ignore devices by MAC or interface-name by using the following in `/etc/NetworkManager/conf.d/unmanaged.conf`:
+Às vezes, pode ser desejado que o NetworkManager ignore dispositivos específicos e não tente configurar endereços e rotas para eles. Você pode rapidamente e facilmente ignorar dispositivos por MAC ou por nome de interface usando o seguinte em `/etc/NetworkManager/conf.d/unmanaged.conf`:
 
 ```
 [keyfile]
@@ -777,7 +777,7 @@ unmanaged-devices=mac:00:22:68:1c:59:b1;mac:00:1E:65:30:D1:C4;interface-name:eth
 
 ```
 
-After you have put this in, [restart](/index.php/Daemon "Daemon") NetworkManager, and you should be able to configure interfaces without NetworkManager altering what you have set.
+Depois de colocar isso, [reinicie](/index.php/Reinicie "Reinicie") o `NetworkManager.service`, e você deve ser capaz de configurar interfaces sem o NetworkManager alterar o que você definiu.
 
 ### Configurando aleatorização de endereço MAC
 

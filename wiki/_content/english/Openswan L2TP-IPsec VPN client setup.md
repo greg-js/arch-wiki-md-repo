@@ -99,7 +99,7 @@ length bit = yes
 
 ```
 
-This file configures xl2tpd with the connection name, server IP address(which again, please remember to change to your servers address) and various options that will be passed to pppd once the tunnel is set up.
+This file configures xl2tpd with the connection name, server IP address (which again, please remember to change to your servers address) and various options that will be passed to pppd once the tunnel is set up.
 
 Now modify `/etc/ppp/options.l2tpd.client`:
 

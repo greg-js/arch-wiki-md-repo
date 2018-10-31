@@ -182,6 +182,8 @@ $ journalctl --user -u myunit.service
 
 ```
 
+Note that journald will not write user journals for users with UIDs below 1000, instead [directing](https://github.com/systemd/systemd/blob/a33687b792908aa6c9f4c0b22e8935643ee0ddb6/src/journal/journald-server.c#L402) everything to the system journal.
+
 ## Temporary files
 
 *systemd-tmpfiles* allows users to manage custom volatile and temporary files and directories just like in the system-wide way (see [systemd#Temporary files](/index.php/Systemd#Temporary_files "Systemd")). User-specific configuration files are read from `~/.config/user-tmpfiles.d/` and `~/.local/share/user-tmpfiles.d/`, in that order. For this functionality to be used, it is needed to enable the necessary systemd user units for your user:

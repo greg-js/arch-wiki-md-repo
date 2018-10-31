@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Getting and installing Arch](/index.php/Getting_and_installing_Arch "Getting and installing Arch"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Getting_and_installing_Arch&diff=0&oldid=544275) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Getting and installing Arch](/index.php/Getting_and_installing_Arch "Getting and installing Arch"). Data da última tradução: 2018-10-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Getting_and_installing_Arch&diff=0&oldid=547682) na versão em inglês.
 
 A mídia de instalação e suas assinaturas [GnuPG](/index.php/GnuPG "GnuPG") podem ser obtidas a partir da página de [Download](https://archlinux.org/download/).
 
@@ -17,7 +17,7 @@ Alternativamente, execute `pacman-key -v archlinux-<versão>-x86_64.iso.sig` de 
 
 ## Métodos de instalação
 
-A tabela abaixo oferece uma visão geral das maneiras comuns de inicializar a mídia de instalação. Como o processo de instalação recupera pacotes de um repositório remoto, esses métodos exigem uma conexão com a Internet; veja [Instalação offline de pacotes](/index.php/Offline_installation_of_packages "Offline installation of packages") e [Archiso#Installation without Internet access](/index.php/Archiso#Installation_without_Internet_access "Archiso") quando nenhum estiver disponível.
+A tabela abaixo oferece uma visão geral das maneiras comuns de inicializar a mídia de instalação. Como o processo de instalação recupera pacotes de um repositório remoto, esses métodos exigem uma conexão com a Internet; veja [Instalação offline de pacotes](/index.php/Offline_installation_of_packages "Offline installation of packages") e [Installation without internet access](/index.php/Installation_without_internet_access "Installation without internet access") quando nenhum estiver disponível.
 
 **Nota:**
 

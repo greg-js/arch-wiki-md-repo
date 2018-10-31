@@ -24,19 +24,19 @@ OpenStack is a global collaboration of developers and cloud computing technologi
 
 ### 计算(Nova)
 
-[nova](https://aur.archlinux.org/packages/nova/) is available in the [AUR](/index.php/AUR "AUR").
+[nova-liberty](https://aur.archlinux.org/packages/nova-liberty/) is available in the [AUR](/index.php/AUR "AUR").
 
 ### 网络(Neutron)
 
-[neutron-server](https://aur.archlinux.org/packages/neutron-server/) is available in the [AUR](/index.php/AUR "AUR").
+[neutron-liberty](https://aur.archlinux.org/packages/neutron-liberty/) is available in the [AUR](/index.php/AUR "AUR").
 
 ### 镜像服务(Glance)
 
-[glance](https://aur.archlinux.org/packages/glance/) is available in the [AUR](/index.php/AUR "AUR").
+[glance-liberty](https://aur.archlinux.org/packages/glance-liberty/) is available in the [AUR](/index.php/AUR "AUR").
 
 ### 块存储(Cinder)
 
-[cinder-icehouse](https://aur.archlinux.org/packages/cinder-icehouse/) is available in the [AUR](/index.php/AUR "AUR").
+[cinder-kilo](https://aur.archlinux.org/packages/cinder-kilo/) is available in the [AUR](/index.php/AUR "AUR").
 
 ### 对象存储(Swift)
 
@@ -44,11 +44,11 @@ Swift is not available in Arch, yet.
 
 ### 鉴证(Keystone)
 
-[keystone](https://www.archlinux.org/packages/?name=keystone) is available in the [AUR](/index.php/AUR "AUR").
+[keystone-liberty](https://aur.archlinux.org/packages/keystone-liberty/) is available in the [AUR](/index.php/AUR "AUR").
 
 ### 监控台(Horizon)
 
-[horizon-deb](https://aur.archlinux.org/packages/horizon-deb/) is available in the [AUR](/index.php/AUR "AUR").
+[horizon-liberty](https://aur.archlinux.org/packages/horizon-liberty/) is available in the [AUR](/index.php/AUR "AUR").
 
 ### Telemetry (Ceilometer)
 
@@ -79,9 +79,9 @@ For manual creation, the *essential* steps are:
 *   Installing a boot loader (e.g. [GRUB](/index.php/GRUB "GRUB") or [extlinux](/index.php/Extlinux "Extlinux"))
 *   Installing and configuring [cloud-init](/index.php/Cloud-init "Cloud-init")
 *   Adding an unpriviliged user able to run [sudo](/index.php/Sudo "Sudo") without a password
-*   Configuring `eth0` for [DHCP](/index.php?title=DHCP&action=edit&redlink=1 "DHCP (page does not exist)")
+*   Configuring `eth0` for [DHCP](/index.php/DHCP "DHCP")
     *   Configuring [udev](/index.php/Udev "Udev") to name network interfaces `eth*`
-    *   Configuring [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") to use [DHCP](/index.php?title=DHCP&action=edit&redlink=1 "DHCP (page does not exist)") on `eth0`
+    *   Configuring [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") to use [DHCP](/index.php/DHCP "DHCP") on `eth0`
 *   Installing [SSH](/index.php/SSH "SSH") server
 *   Adjusting [initramfs](/index.php/Initramfs "Initramfs") creation and regenerating initramfs images
     *   Disabling the `autodetect` hook (since autodetection works differently from a chroot)

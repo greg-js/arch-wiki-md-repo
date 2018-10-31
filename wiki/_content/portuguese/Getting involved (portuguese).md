@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Getting involved](/index.php/Getting_involved "Getting involved"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Getting_involved&diff=0&oldid=544843) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Getting involved](/index.php/Getting_involved "Getting involved"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Getting_involved&diff=0&oldid=550410) na versão em inglês.
 
 Na biologia, o [mutualismo](https://en.wikipedia.org/wiki/pt:Mutualismo_(biologia) é uma interação entre dois organismos onde ambos tem benefícios. Este princípio se aplica aos membros proativos da comunidade Arch, que desejam contribuir e se envolver com o projeto em prol de sua distribuição Linux favorita. Esta participação beneficia não apenas membros da comunidade e seguidores do Arch, mas também, toda a gama dos usuários de [software livre e de código aberto](https://en.wikipedia.org/wiki/pt:https://pt.wikipedia.org/wiki/Software_livre_e_de_c%C3%B3digo_aberto "wikipedia:pt:https://pt.wikipedia.org/wiki/Software livre e de código aberto").
 
@@ -92,10 +92,6 @@ Grupos específicos do Arch, que podem ser de seu interesse.
 
 	Repositório de terceiros e fórum de discussões de usuários Arch Linux com conhecimento em áudio.
 
-	[Arch Linux Subreddit](http://www.reddit.com/r/archlinux/)
-
-	Lugar de usuários Reddit, para discutir assuntos relacionados ao Arch.
-
 	[Arch Linux Google Plus Community](https://plus.google.com/communities/113935870359973712582)
 
 	Uma comunidade no Google Plus para usuários Arch Linux interagirem, fazer perguntas ou conversas de notícias em geral sobre o Arch Linux.
@@ -123,10 +119,6 @@ Softwares desenvolvidos pela comunidade com foco no Arch.
 	[Repositórios não-oficiais de usuários](/index.php/Unofficial_user_repositories "Unofficial user repositories")
 
 	Repositórios não-oficiais de binários mantidos por membros da comunidade.
-
-	[Frontends GUI do pacman](/index.php/Pacman/Tips_and_tricks_(Portugu%C3%AAs)#Front-ends_gr.C3.A1ficos "Pacman/Tips and tricks (Português)")
-
-	Ferramentas gráficas para o [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)").
 
 ### Outros
 

@@ -24,7 +24,7 @@ XFS is a high-performance journaling file system created by Silicon Graphics, In
 
 ## Installation
 
-The tools to manage XFS partions are in the [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) package, which is included in the default base installation.
+The tools to manage XFS partitions are in the [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs) package, which is included in the default base installation.
 
 ## Data corruption
 
@@ -56,7 +56,7 @@ Once unmounted, run the [xfs_repair(8)](https://jlk.fjfi.cvut.cz/arch/manpages/m
 
 ## Integrity
 
-xfsprogs 3.2.0 has introduced a new on-disk format (v5) that includes a metadata checksum scheme called [Self-Describing Metadata](https://www.kernel.org/doc/Documentation/filesystems/xfs-self-describing-metadata.txt). Based upon CRC32 it provides for example additional protection against metadata corruption during unexpected power losses. Checksum is enabled by default when using xfsprogs 3.2.3 or later. If you need read-write mountable xfs for older kernel, It can be easily disable using the `-m crc=0` switch when calling [mkfs.xfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.xfs.8).
+xfsprogs 3.2.0 has introduced a new on-disk format (v5) that includes a metadata checksum scheme called [Self-Describing Metadata](https://www.kernel.org/doc/Documentation/filesystems/xfs-self-describing-metadata.txt). Based upon CRC32 it provides for example additional protection against metadata corruption during unexpected power losses. Checksum is enabled by default when using xfsprogs 3.2.3 or later. If you need read-write mountable xfs for older kernel, It can be easily disabled using the `-m crc=0` switch when calling [mkfs.xfs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mkfs.xfs.8).
 
 ```
 # mkfs.xfs -m crc=0 /dev/*target_partition*

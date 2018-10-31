@@ -250,7 +250,7 @@ The [Archfonts Python script](https://github.com/ternstor/distrofonts) can be us
 *   [Courier Prime](https://quoteunquoteapps.com/courierprime/) ([ttf-courier-prime](https://aur.archlinux.org/packages/ttf-courier-prime/)) – Courier font alternative optimized for screenplays
 *   [Croscore fonts](https://en.wikipedia.org/wiki/Croscore_fonts "wikipedia:Croscore fonts") ([ttf-croscore](https://www.archlinux.org/packages/?name=ttf-croscore)) – Google's substitute for Windows' Arial, Times New Roman, and Courier New
 *   [DejaVu fonts](https://en.wikipedia.org/wiki/DejaVu_fonts "wikipedia:DejaVu fonts") ([ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu)) – Bitstream Vera modified for greater Unicode coverage
-*   [Droid](https://en.wikipedia.org/wiki/Droid_(font) ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid), included in [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)) – default font for older Android versions
+*   [Droid](https://en.wikipedia.org/wiki/Droid_(font) ([ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid)) – default font for older Android versions
 *   [Roboto](https://en.wikipedia.org/wiki/Roboto "wikipedia:Roboto") ([ttf-roboto](https://www.archlinux.org/packages/?name=ttf-roboto)) – default font for newer Android versions
 *   [Google Noto](https://en.wikipedia.org/wiki/Noto_fonts "wikipedia:Noto fonts") ([noto-fonts](https://www.archlinux.org/packages/?name=noto-fonts)) – Unicode
 *   [Liberation fonts](https://en.wikipedia.org/wiki/Liberation_fonts "wikipedia:Liberation fonts") ([ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation)) – free metric-compatible substitute for the Arial, Arial Narrow, Times New Roman and Courier New fonts found in Windows and Microsoft Office products
@@ -313,7 +313,7 @@ Relevant websites:
 *   [ttf-mph-2b-damase](https://www.archlinux.org/packages/?name=ttf-mph-2b-damase) - Covers full plane 1 and several scripts
 *   [xorg-fonts-type1](https://www.archlinux.org/packages/?name=xorg-fonts-type1) - IBM Courier and Adobe Utopia sets of [PostScript fonts](https://en.wikipedia.org/wiki/PostScript_fonts "wikipedia:PostScript fonts")
 *   [all-repository-fonts](https://aur.archlinux.org/packages/all-repository-fonts/) - Meta package for all fonts in the official repositories.
-*   [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/) - a huge collection of free fonts (including Ubuntu, Inconsolata, Droid, etc.) - Note: Your font dialog might get very long as >100 fonts will be added.
+*   [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/) - a huge collection of free fonts (including Ubuntu, Inconsolata, Roboto, etc.) - Note: Your font dialog might get very long as >100 fonts will be added.
 
 ### Non-latin scripts
 

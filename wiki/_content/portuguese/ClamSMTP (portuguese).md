@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [ClamSMTP](/index.php/ClamSMTP "ClamSMTP"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=ClamSMTP&diff=0&oldid=549013) na versão em inglês.
+
 [ClamSMTP](http://thewalter.net/stef/software/clamsmtp/) é uma ferramenta de filtragem de vírus muito simples para qualquer servidor SMTP. É muito útil com o MTA do Postfix, portanto, o artigo a seguir se aplica a isso e fornece um exemplo de uma configuração simples.
 
 Os requisitos básicos são uma instalação do [Postfix](/index.php/Postfix "Postfix") de trabalho com usuários configurados e um daemon [ClamAV](/index.php/ClamAV_(Portugu%C3%AAs) "ClamAV (Português)") em funcionamento, portanto, certifique-se de tê-los instalado e configurado corretamente.

@@ -2,7 +2,9 @@
 
 You can control your computer keyboard backlight via the [D-Bus](/index.php/D-Bus "D-Bus") interface. The benefits of using it are that no modification to device files is required and it is vendor agnostic.
 
-Here is an example implementation in [Python](/index.php/Python "Python") 3. [Install](/index.php/Install "Install") [upower](https://www.archlinux.org/packages/?name=upower) and [python-dbus](https://www.archlinux.org/packages/?name=python-dbus) packages then place the following script in `/usr/local/bin/` and make it executable. You can then map your keyboard shortcuts to run `/usr/local/bin/kb-light.py + x` and `/usr/local/bin/kb-light.py - x` to increase and decrease your keyboard backlight level by `x`.
+Here is an example implementation in [Python](/index.php/Python "Python") 3.
+
+[Install](/index.php/Install "Install") [upower](https://www.archlinux.org/packages/?name=upower) and [python-dbus](https://www.archlinux.org/packages/?name=python-dbus) packages then place the following script in `/usr/local/bin/` and make it executable. You can then map your keyboard shortcuts to run `/usr/local/bin/kb-light.py + x` and `/usr/local/bin/kb-light.py - x` to increase and decrease your keyboard backlight level by `x`.
 
 **Tip:** You should try with an x = 1 to determine the limits of the keyboard backlight levels
  `/usr/local/bin/kb-light.py` 
@@ -76,6 +78,7 @@ ExecStart=/bin/chmod 666 /sys/class/leds/asus::kbd_backlight/brightness
 
 [Install]
 WantedBy=multi-user.target
+
 ```
 
 You are now able to use a keyboard backlight changer script. For an example, see [ASUS G55VW#keyboard backlight script](/index.php/ASUS_G55VW#keyboard_backlight_script "ASUS G55VW").

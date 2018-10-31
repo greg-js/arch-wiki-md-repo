@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [dhcpd](/index.php/Dhcpd "Dhcpd"). Data da última tradução: 2018-10-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Dhcpd&diff=0&oldid=547387) na versão em inglês.
+
 Artigos relacionados
 
 *   [dhcpcd](/index.php/Dhcpcd "Dhcpcd")
@@ -22,7 +24,7 @@ O *dhcpd* é o servidor DHCP da [Internet Systems Consortium](http://www.isc.org
 
 ## Uso
 
-*dhcpd* inclui um arquivo unit `dhcpd4.service`, que pode ser usado para [controlar](/index.php/Habilite "Habilite") o daemon. Ele inicia o daemon para *todas* as [interfaces de rede](/index.php/Interfaces_de_rede "Interfaces de rede"). Veja [#Ouvindo apenas em uma interface](#Ouvindo_apenas_em_uma_interface) para uma alternativa.
+*dhcpd* inclui um arquivo unit `dhcpd.service`, que pode ser usado para [controlar](/index.php/Habilite "Habilite") o daemon. Ele inicia o daemon para *todas* as [interfaces de rede](/index.php/Interfaces_de_rede "Interfaces de rede"). Veja [#Ouvindo apenas em uma interface](#Ouvindo_apenas_em_uma_interface) para uma alternativa.
 
 ## Configuração
 
@@ -47,7 +49,7 @@ Para ter seu IP estático atribuído na inicialização, veja [Configuração de
 O `dhcpd.conf` padrão contém muitos exemplos descomentados, então mude-o:
 
 ```
-# mv /etc/dhcpd.conf /etc/dhcpd.conf.example
+# cp /etc/dhcpd.conf.example /etc/dhcpd.conf
 
 ```
 

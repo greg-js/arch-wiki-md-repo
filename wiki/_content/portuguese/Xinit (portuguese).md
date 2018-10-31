@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Xinit](/index.php/Xinit "Xinit"). Data da última tradução: 2018-08-14\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Xinit&diff=0&oldid=528270) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Xinit](/index.php/Xinit "Xinit"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Xinit&diff=0&oldid=550558) na versão em inglês.
 
 Artigos relacionados
 

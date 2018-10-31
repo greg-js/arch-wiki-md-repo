@@ -434,13 +434,13 @@ The standard target is `default.target`, which is a symlink to `graphical.target
 To verify the current target with *systemctl*:
 
 ```
-# systemctl get-default
+$ systemctl get-default
 
 ```
 
 To change the default target to boot into, change the `default.target` symlink. With *systemctl*:
 
- `$ systemctl set-default multi-user.target` 
+ `# systemctl set-default multi-user.target` 
 ```
 Removed /etc/systemd/system/default.target.
 Created symlink /etc/systemd/system/default.target -> /usr/lib/systemd/system/graphical.target.

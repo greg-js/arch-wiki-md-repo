@@ -2,6 +2,12 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/ImageMagick "wikipedia:Im
 
 	ImageMagick is a free and open-source software suite for displaying, converting, and editing raster image and vector image files. It can read and write over 200 image file formats.
 
+**Note:** Parsing PDF, EPS, PS and XPS is currently disabled due to its inherent insecurity [FS#59778](https://bugs.archlinux.org/task/59778). It might be re-enabled by changing the following line in /etc/ImageMagick-7/policy.xml:
+```
+<policy domain="coder" rights="none" pattern="{PS,PS2,PS3,EPS,PDF,XPS}" />
+
+```
+
 ## Contents
 
 *   [1 Installation](#Installation)

@@ -28,6 +28,7 @@ Related articles
         *   [5.3.1 Use a skin](#Use_a_skin)
         *   [5.3.2 Live patching](#Live_patching)
     *   [5.4 In-home streaming](#In-home_streaming)
+    *   [5.5 Steam Controller](#Steam_Controller)
 *   [6 Troubleshooting](#Troubleshooting)
 *   [7 See also](#See_also)
 
@@ -194,6 +195,10 @@ And the [#Launch options](#Launch_options) should be something like:
 Steam has built-in support for [in-home streaming](http://store.steampowered.com/streaming/).
 
 See [this Steam Community guide](https://steamcommunity.com/sharedfiles/filedetails/?id=680514371) on how to setup a headless in-home streaming server on Linux.
+
+### Steam Controller
+
+Normally a Steam controller requires the use of the Steam-overlay. In non-Steam native Linux games however the overlay may not be practical. For that, while the Steam client is running it will maintain a "desktop configuration". With your Steam controller, configure the desktop configuration for it as a generic XBOX controller. As long as the Steam client is running you can then use your Steam controller in other games, such as GOG games, as an XBOX controller. Make sure to select your type of controller to map to in "general controller settings".
 
 ## Troubleshooting
 

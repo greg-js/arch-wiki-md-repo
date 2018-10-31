@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Creating packages](/index.php/Creating_packages "Creating packages"). Data da última tradução: 2018-08-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Creating_packages&diff=0&oldid=535803) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Creating packages](/index.php/Creating_packages "Creating packages"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Creating_packages&diff=0&oldid=548741) na versão em inglês.
 
 Artigos relacionados
 
@@ -18,7 +18,6 @@ Esse artigo objetiva auxiliar usuários na criação de seus próprios pacotes u
 ## Contents
 
 *   [1 Visão Geral](#Vis.C3.A3o_Geral)
-    *   [1.1 Pacotes meta e grupos](#Pacotes_meta_e_grupos)
 *   [2 Preparação](#Prepara.C3.A7.C3.A3o)
     *   [2.1 Pré-requisito de software](#Pr.C3.A9-requisito_de_software)
     *   [2.2 Baixe e teste a instalação](#Baixe_e_teste_a_instala.C3.A7.C3.A3o)
@@ -51,14 +50,6 @@ Um pacote do Arch é nada mais que um pacote tar, ou "tarball", comprimido usand
 *   `.MTREE`: contém *hashes* e *timestamps* dos arquivos, que são incluídos na base de dados local de forma que o pacman possa verificar a integridade do pacote.
 *   `.INSTALL`: um arquivo opcional usado para executar comandos após o estágio instalação/atualização/remoção. (Esse arquivo está presente apenas se especificado no `PKGBUILD`.)
 *   `.Changelog`: um arquivo opcional mantido pelo mantenedor do pacote documentando as mudanças do pacote. (Ele não está presente em todos pacotes.)
-
-### Pacotes meta e grupos
-
-Um grupo de pacotes é um conjunto de pacotes relacionados, definido pelo empacotador, que pode ser instalado ou desinstalado simultaneamente usando o nome de grupo como um substituto para cada nome de pacote individual. Enquanto um grupo não é um pacote, ele pode ser instalado de forma similar a um pacote, veja [Pacman (Português)#Instalando grupos de pacotes](/index.php/Pacman_(Portugu%C3%AAs)#Instalando_grupos_de_pacotes "Pacman (Português)") e [PKGBUILD (Português)#groups](/index.php/PKGBUILD_(Portugu%C3%AAs)#groups "PKGBUILD (Português)").
-
-Um pacote meta, frequentemente (mas nem sempre) intitulado com o sufixo *-meta*, fornece funcionalidade similar a um grupo de pacotes no sentido que ele permite múltiplos pacotes relacionados serem instalados ou desinstalados simultaneamente. Pacotes meta podem ser instalados como qualquer outro pacote (veja [Pacman (Português)#Instalando pacotes específicos](/index.php/Pacman_(Portugu%C3%AAs)#Instalando_pacotes_espec.C3.ADficos "Pacman (Português)")). A única diferença entre um pacote meta e um pacote comum é que um pacote meta é vazio e existe apenas para fazer um vínculo de pacotes relacionados por meio de dependências.
-
-A vantagem de um pacote meta, comparado com um grupo, é que quaisquer novos pacotes membros serão instalados quando o pacote meta em si for atualizado com um novo conjunto de dependências. Isso é um contraste a um grupo em que novos membros de grupos não serão instalados automaticamente. A desvantagem de um pacote meta é que ele não é tão flexível quanto um grupo — você pode escolher quais membros do grupo você deseja instalar, mas não pode escolher qual dependência do pacote meta você deseja instalar. Da mesma forma, você pode desinstalar membros do grupo sem ter que remover todo o grupo. Porém você não pode remover dependências de pacotes meta sem ter que desinstalar o pacote meta em si.
 
 ## Preparação
 
@@ -200,7 +191,9 @@ Namcap vai:
 2.  Varrer todos os arquivos ELF no pacote usando `ldd`, relatando automaticamente quais pacotes com as bibliotecas compartilhadas estão faltando no `depends` e quais podem ser omitidas como dependências transitivas
 3.  Pesquisar heuristicamente por dependências em falta ou redundantes
 
-e muito mais. Se habitue a verificar seus pacotes com namcap para evitar de ter que corrigir os erros mais simples após envio do pacote.
+e muito mais.
+
+Se habitue a verificar seus pacotes com namcap para evitar de ter que corrigir os erros mais simples após envio do pacote.
 
 ## Enviando pacotes para o AUR
 

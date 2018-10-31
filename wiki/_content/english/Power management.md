@@ -566,14 +566,14 @@ By default it looks like this:
 
 #### PCI Runtime Power Management
 
- `/etc/udev/rules.d/pci_pm.rules`  `ACTION=="add", SUBSYSTEM=="pci", ATTR{power/control}="auto"` 
+ `/etc/udev/rules.d/pci_pm.rules`  `SUBSYSTEM=="pci", ATTR{power/control}="auto"` 
 
 The rule above powers all unused devices down, but some devices will not wake up again. To allow runtime power management only for devices that are known to work, use simple matching against vendor and device IDs (use `lspci -nn` to get these values):
 
  `/etc/udev/rules.d/pci_pm.rules` 
 ```
 # whitelist for pci autosuspend
-ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x1234", ATTR{device}=="0x1234", ATTR{power/control}="auto"
+SUBSYSTEM=="pci", ATTR{vendor}=="0x1234", ATTR{device}=="0x1234", ATTR{power/control}="auto"
 
 ```
 
@@ -582,10 +582,9 @@ Alternatively, to blacklist devices that are not working with PCI runtime power 
  `/etc/udev/rules.d/pci_pm.rules` 
 ```
 # blacklist for pci runtime power management
-ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x1234", ATTR{device}=="0x1234", GOTO="power_pci_rules_end"
+SUBSYSTEM=="pci", ATTR{vendor}=="0x1234", ATTR{device}=="0x1234", ATTR{power/control}:="on"
 
-ACTION=="add", SUBSYSTEM=="pci", ATTR{power/control}="auto"
-LABEL="power_pci_rules_end"
+SUBSYSTEM=="pci", ATTR{power/control}="auto"
 
 ```
 

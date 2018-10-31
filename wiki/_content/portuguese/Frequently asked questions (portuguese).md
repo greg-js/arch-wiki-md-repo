@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions"). Data da última tradução: 2018-09-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=542367) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions"). Data da última tradução: 2018-10-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=547713) na versão em inglês.
 
 Artigos relacionados
 
@@ -12,18 +12,17 @@ Artigos relacionados
     *   [1.1 O que é o Arch Linux?](#O_que_.C3.A9_o_Arch_Linux.3F)
     *   [1.2 Por que eu não gostaria de usar o Arch?](#Por_que_eu_n.C3.A3o_gostaria_de_usar_o_Arch.3F)
     *   [1.3 A quais arquiteturas o Arch dá suporte?](#A_quais_arquiteturas_o_Arch_d.C3.A1_suporte.3F)
-    *   [1.4 O Arch oferece suporte a CPUs ARM?](#O_Arch_oferece_suporte_a_CPUs_ARM.3F)
-    *   [1.5 O Arch segue o Filesystem Hierarchy Standard (FHS) da Linux Foundation?](#O_Arch_segue_o_Filesystem_Hierarchy_Standard_.28FHS.29_da_Linux_Foundation.3F)
-    *   [1.6 Eu sou um completo iniciante no GNU/Linux. Eu deveria usar o Arch?](#Eu_sou_um_completo_iniciante_no_GNU.2FLinux._Eu_deveria_usar_o_Arch.3F)
-    *   [1.7 O Arch é projetado para ser usado como um servidor? Um desktop? Uma estação de trabalho?](#O_Arch_.C3.A9_projetado_para_ser_usado_como_um_servidor.3F_Um_desktop.3F_Uma_esta.C3.A7.C3.A3o_de_trabalho.3F)
-    *   [1.8 Eu realmente gosto do Arch, exceto que a equipe de desenvolvimento precisa implementar o recurso X](#Eu_realmente_gosto_do_Arch.2C_exceto_que_a_equipe_de_desenvolvimento_precisa_implementar_o_recurso_X)
-    *   [1.9 Quando o novo lançamento estará disponível?](#Quando_o_novo_lan.C3.A7amento_estar.C3.A1_dispon.C3.ADvel.3F)
-    *   [1.10 O Arch Linux é uma distribuição estável? Vou presenciar frequentes quebras?](#O_Arch_Linux_.C3.A9_uma_distribui.C3.A7.C3.A3o_est.C3.A1vel.3F_Vou_presenciar_frequentes_quebras.3F)
-    *   [1.11 O Arch precisa de mais divulgação (i.e. propaganda)](#O_Arch_precisa_de_mais_divulga.C3.A7.C3.A3o_.28i.e._propaganda.29)
-    *   [1.12 O Arch precisa de mais desenvolvedores](#O_Arch_precisa_de_mais_desenvolvedores)
-    *   [1.13 Por que a minha internet está tão mais lenta em comparação com outros sistemas operacionais?](#Por_que_a_minha_internet_est.C3.A1_t.C3.A3o_mais_lenta_em_compara.C3.A7.C3.A3o_com_outros_sistemas_operacionais.3F)
-    *   [1.14 Por que o Arch está usando toda minha RAM?](#Por_que_o_Arch_est.C3.A1_usando_toda_minha_RAM.3F)
-    *   [1.15 Para onde foi todo meu espaço livre?](#Para_onde_foi_todo_meu_espa.C3.A7o_livre.3F)
+    *   [1.4 O Arch segue o Filesystem Hierarchy Standard (FHS) da Linux Foundation?](#O_Arch_segue_o_Filesystem_Hierarchy_Standard_.28FHS.29_da_Linux_Foundation.3F)
+    *   [1.5 Eu sou um completo iniciante no GNU/Linux. Eu deveria usar o Arch?](#Eu_sou_um_completo_iniciante_no_GNU.2FLinux._Eu_deveria_usar_o_Arch.3F)
+    *   [1.6 O Arch é projetado para ser usado como um servidor? Um desktop? Uma estação de trabalho?](#O_Arch_.C3.A9_projetado_para_ser_usado_como_um_servidor.3F_Um_desktop.3F_Uma_esta.C3.A7.C3.A3o_de_trabalho.3F)
+    *   [1.7 Eu realmente gosto do Arch, exceto que a equipe de desenvolvimento precisa implementar o recurso X](#Eu_realmente_gosto_do_Arch.2C_exceto_que_a_equipe_de_desenvolvimento_precisa_implementar_o_recurso_X)
+    *   [1.8 Quando o novo lançamento estará disponível?](#Quando_o_novo_lan.C3.A7amento_estar.C3.A1_dispon.C3.ADvel.3F)
+    *   [1.9 O Arch Linux é uma distribuição estável? Vou presenciar frequentes quebras?](#O_Arch_Linux_.C3.A9_uma_distribui.C3.A7.C3.A3o_est.C3.A1vel.3F_Vou_presenciar_frequentes_quebras.3F)
+    *   [1.10 O Arch precisa de mais divulgação (i.e. propaganda)](#O_Arch_precisa_de_mais_divulga.C3.A7.C3.A3o_.28i.e._propaganda.29)
+    *   [1.11 O Arch precisa de mais desenvolvedores](#O_Arch_precisa_de_mais_desenvolvedores)
+    *   [1.12 Por que a minha internet está tão mais lenta em comparação com outros sistemas operacionais?](#Por_que_a_minha_internet_est.C3.A1_t.C3.A3o_mais_lenta_em_compara.C3.A7.C3.A3o_com_outros_sistemas_operacionais.3F)
+    *   [1.13 Por que o Arch está usando toda minha RAM?](#Por_que_o_Arch_est.C3.A1_usando_toda_minha_RAM.3F)
+    *   [1.14 Para onde foi todo meu espaço livre?](#Para_onde_foi_todo_meu_espa.C3.A7o_livre.3F)
 *   [2 Gerenciamento de pacote](#Gerenciamento_de_pacote)
     *   [2.1 Eu encontrei um erro no pacote X. O que eu devo fazer?](#Eu_encontrei_um_erro_no_pacote_X._O_que_eu_devo_fazer.3F)
     *   [2.2 Os pacotes do Arch precisam usar uma nomenclatura única. ".pkg.tar.gz" e "pkg.tar.xz" é muito longo e/ou confuso](#Os_pacotes_do_Arch_precisam_usar_uma_nomenclatura_.C3.BAnica._.22.pkg.tar.gz.22_e_.22pkg.tar.xz.22_.C3.A9_muito_longo_e.2Fou_confuso)
@@ -56,7 +55,7 @@ Veja o artigo [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (P
 
 Você pode **não** querer usar o Arch, se:
 
-*   você não tem habilidade/tempo/desejo para uma distribuição GNU/Linux do tipo *"faça você mesmo"*.
+*   você não tem habilidade/tempo/desejo para uma distribuição GNU/Linux do tipo *faça você mesmo*.
 *   você precisa de suporte a uma arquitetura diferente de x86_64.
 *   você insiste em usar uma distribuição que só fornece software livre conforme definido pela GNU.
 *   você acredita que um sistema operacional deve se autoconfigurar, vir pronto para usar e incluir um conjunto padrão completo de softwares e ambiente de área de trabalho na mídia de instalação.
@@ -65,11 +64,9 @@ Você pode **não** querer usar o Arch, se:
 
 ### A quais arquiteturas o Arch dá suporte?
 
-O Arch só oferece suporte à arquitetura x86_64 (algumas vezes chamada de amd64). Suporte à i686 foi desativado em Novembro de 2017[[1]](http://www.archlinux-br.org/noticias/260/). Se sua máquina não possuir suporte, considere trocar para [Arch Linux 32](https://archlinux32.org/).
+O Arch só oferece suporte à arquitetura x86_64 (algumas vezes chamada de amd64). Suporte à i686 foi desativado em Novembro de 2017[[1]](http://www.archlinux-br.org/noticias/260/).
 
-### O Arch oferece suporte a CPUs ARM?
-
-Não, mas o projeto [Arch Linux ARM](http://archlinuxarm.org/) fornece um *port* do Arch Linux para várias plataformas ARM. Veja [[2]](http://ix.io/73w/irc).
+Há portes *não oficiais* para as CPUs da arquitetura i686 [[2]](https://archlinux32.org/) e da [ARM](https://en.wikipedia.org/wiki/pt:Arquitetura_ARM "wikipedia:pt:Arquitetura ARM") [[3]](http://archlinuxarm.org/), cada um com seus próprios canais comunitários. [[4]](http://ix.io/73w/irc)
 
 ### O Arch segue o Filesystem Hierarchy Standard (FHS) da Linux Foundation?
 
@@ -77,7 +74,7 @@ O Arch Linux segue FHS (em português, *hierarquia de sistema de arquivos*) para
 
 ### Eu sou um completo iniciante no GNU/Linux. Eu deveria usar o Arch?
 
-Se você é um iniciante e deseja usar o Arch, você deve estar disposto a investir tempo para aprender um novo sistema, e aceitar que o Arch é projetado como uma distribuição de "faça você mesmo"; é o usuário que monta o sistema.
+Se você é um iniciante e deseja usar o Arch, você deve estar disposto a investir tempo para aprender um novo sistema, e aceitar que o Arch é projetado como uma distribuição de *faça você mesmo*; é o usuário que monta o sistema.
 
 Antes de pedir ajuda, faça sua própria pesquisa em mecanismos de pesquisa, em fóruns e nas várias fantásticas documentações fornecidas pelo Arch Wiki. *Há uma razão para que estes recursos tenham sido disponibilizados*. Muitos milhares de *horas de voluntários* foram gastos compilando essas informações excelentes.
 
@@ -113,7 +110,7 @@ Possivelmente. Sinta-se livre para ser um voluntário! Visite os [fóruns](https
 
 Sua rede está configurada corretamente? Dê uma olhada no artigo [Configuração de rede](/index.php/Configura%C3%A7%C3%A3o_de_rede "Configuração de rede").
 
-Note também que o Arch Linux não vêm com [traffic shaping](https://en.wikipedia.org/wiki/pt:Traffic_shaping "wikipedia:pt:Traffic shaping") (modelagem de tráfego) habilitado. Então, é possível que se um programa de alguma forma utiliza sua conexão de internet por inteiro – independente de ser por conexões P2P ou cliente-servidor clássicas – outros locais vão considerar supersaturados, resultando em severos atrasos e tempos limites esgotados. Um alívio pode ser fornecido por [firewalls](/index.php/Firewalls "Firewalls") como Shorewall ou Vuurmuur; há também scritps estáticos para [iproute2](https://www.archlinux.org/packages/?name=iproute2) (como [esse derivado](http://serendipity.ruwenzori.net/index.php/2008/06/01/modified-wondershaper-for-better-voip-qos) do Wondershaper), que permitem a modelagem na camada de rede.
+Note também que o Arch Linux não vêm com [traffic shaping](https://en.wikipedia.org/wiki/pt:Traffic_shaping "wikipedia:pt:Traffic shaping") (modelagem de tráfego) habilitado. Então, é possível que se um programa de alguma forma utiliza sua conexão de internet por inteiro – independente de ser por conexões P2P ou cliente-servidor clássicas – outros locais vão considerar supersaturados, resultando em severos atrasos e tempos limites esgotados. Um alívio pode ser fornecido por [firewalls](/index.php/Firewalls "Firewalls") como *Shorewall* ou *Vuurmuur*; há também scripts estáticos para [iproute2](https://www.archlinux.org/packages/?name=iproute2) (como [esse derivado](http://serendipity.ruwenzori.net/index.php/2008/06/01/modified-wondershaper-for-better-voip-qos) do *Wondershaper*), que permitem a modelagem na camada de rede.
 
 ### Por que o Arch está usando toda minha RAM?
 
@@ -133,7 +130,7 @@ Swap:          3.0G        881M        2.1G
 
 É importante notar a diferença entre memória "free" (livre) e "available" (disponível). No exemplo acima, um laptop com 2.8G de RAM total parece estar usando a maioria dela, com apenas 283M como memória livre. Porém, 1.4G disto é "buff/cache". Há ainda 1.2G disponível para iniciar aplicativos, sem fazer swap. Veja `man free(1)` para detalhes. O resultado de tudo isso? Desempenho!
 
-Veja [esse maravilhoso artigo](http://www.linuxjournal.com/article/2770) se você ficou curioso! Há também um site dedicado a esclarecer essa confusão: [http://www.linuxatemyram.com/](http://www.linuxatemyram.com/)
+Veja [esse maravilhoso artigo](http://www.linuxjournal.com/article/2770) se você ficou curioso. Há também um site dedicado a esclarecer essa confusão: [http://www.linuxatemyram.com/](http://www.linuxatemyram.com/)
 
 ### Para onde foi todo meu espaço livre?
 

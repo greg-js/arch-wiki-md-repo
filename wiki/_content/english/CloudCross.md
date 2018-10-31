@@ -54,7 +54,7 @@ $ ccross --prefer remote
 
 ```
 
-But, in any case, you have to remember that no local or remote files are not deleted permanently. You can always recover them from the Recycle Bin in the `cloud` (if supported by the service) or `.trash` folders synchronized folder.
+But, in any case, you have to remember that no local or remote files are not deleted permanently. You can always recover them from the Recycle Bin in the `cloud` (if supported by the service) or `.trash` synchronized folders.
 
 ### Constant upload / download office files
 

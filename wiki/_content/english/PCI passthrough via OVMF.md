@@ -22,7 +22,7 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
         *   [5.1.1 CPU topology](#CPU_topology)
         *   [5.1.2 XML examples](#XML_examples)
             *   [5.1.2.1 4c/1t CPU w/o Hyperthreading Example](#4c.2F1t_CPU_w.2Fo_Hyperthreading_Example)
-            *   [5.1.2.2 4c/2t Intel CPU pinning example](#4c.2F2t_Intel_CPU_pinning_example)
+            *   [5.1.2.2 6c/2t Intel CPU pinning example](#6c.2F2t_Intel_CPU_pinning_example)
             *   [5.1.2.3 4c/2t AMD CPU example](#4c.2F2t_AMD_CPU_example)
     *   [5.2 Huge memory pages](#Huge_memory_pages)
         *   [5.2.1 Transparent huge pages](#Transparent_huge_pages)
@@ -360,7 +360,7 @@ If you don't need all cores for the guest, it would then be preferable to leave 
 
 ```
 
-##### 4c/2t Intel CPU pinning example
+##### 6c/2t Intel CPU pinning example
 
  `$ virsh edit [vmname]` 
 ```

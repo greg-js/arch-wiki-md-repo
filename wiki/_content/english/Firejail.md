@@ -108,7 +108,24 @@ To use Firejail by default for all applications for which it has profiles, run t
 
 This creates symbolic links in `/usr/local/bin` pointing to `/usr/bin/firejail`, for all programs for which firejail has default profiles.
 
-**Tip:** To run a program with custom Firejail setting, simple prefix *firejail* as seen in [#Usage](#Usage).
+**Tip:** A [pacman hook](/index.php/Pacman_hook "Pacman hook") can be used to automatically run `firecfg` on [pacman](/index.php/Pacman "Pacman") operations: `/etc/pacman.d/hooks/firejail.hook` 
+```
+[Trigger]
+Type = File
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Target = bin/*
+Target = usr/bin/*
+Target = usr/local/bin/*
+Target = usr/share/applications/*.desktop
+
+[Action]
+Description = Configure symlinks in /usr/local/bin based on firecfg.config...
+When = PostTransaction
+Depends = firejail
+Exec = /bin/sh -c 'firecfg &>/dev/null'
+```
 
 To manually map individual applications execute:
 
@@ -120,6 +137,7 @@ To manually map individual applications execute:
 **Note:**
 
 *   `/usr/local/bin` should be set before `/usr/bin` in the `PATH` [environment variable](/index.php/Environment_variable "Environment variable").
+*   To run a symbolic program with custom Firejail setting, simple prefix *firejail* as seen in [#Usage](#Usage).
 *   For a daemon, you will need to overwrite the systemd unit file for that daemon to call firejail, see [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd").
 *   `firecfg` doesn't work with some cli shells such as: `tar`, `curl`, `wget`, and `git` which need to be symlinked manually.
 *   Symbolic links to `gzip` and `xz` interfere with `makepkg`'s ability to preload `libfakeroot.so`. See [BBS#230913](https://bbs.archlinux.org/viewtopic.php?id=230913).

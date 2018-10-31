@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=548485) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Data da última tradução: 2018-10-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch_User_Repository&diff=0&oldid=551990) na versão em inglês.
 
 Artigos relacionados
 
@@ -179,7 +179,7 @@ Usuários podem **compartilhar** PKGBUILDs usando o Arch User Repository, o qual
 
 ### Enviando pacotes
 
-**Atenção:** Antes de tentar enviar um pacote, espera-se que você esteja familiarizado com os [Arch Packaging Standards](/index.php/Arch_packaging_standards_(Portugu%C3%AAs) "Arch packaging standards (Português)") (*padrões de empacotamento do Arch*) e todos os artigos sob "Artigos relacionados". **Verifique cuidadosamente** se o que você está enviando está correto. Pacotes que violam as regras podem ser **excluídos** sem qualquer aviso.
+**Atenção:** Antes de tentar enviar um pacote, espera-se que você esteja familiarizado com os [Arch Packaging Standards](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch") (*padrões de empacotamento do Arch*) e todos os artigos sob "Artigos relacionados". **Verifique cuidadosamente** se o que você está enviando está correto. Pacotes que violam as regras podem ser **excluídos** sem qualquer aviso.
 
 Se você de alguma forma esta incerto sobre o pacote ou o processo de compilação/envio mesmo após ler essa seção duas vezes, envie o PKGBUILD para a [lista de discussão do AUR](https://mailman.archlinux.org/mailman/listinfo/aur-general), o [fórum do AUR](https://bbs.archlinux.org/viewforum.php?id=4) nos fóruns do Arch ou peça em nosso [canal IRC](/index.php/Canal_IRC "Canal IRC") por revisão pública antes de adicioná-lo ao AUR.
 
@@ -257,7 +257,6 @@ Se você já criou um repositório git, você pode simplesmente criar um remoto 
 
 ```
 $ git remote add *nome_remoto* ssh://aur@aur.archlinux.org/*nome_pacote*.git
-$ git branch --set-upstream-to=*nome_remoto*/master master
 $ git fetch *nome_remoto*
 
 ```
