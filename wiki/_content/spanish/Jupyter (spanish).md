@@ -1,4 +1,4 @@
-[Jupyter](https://en.wikipedia.org/wiki/Project_Jupyter "wikipedia:Project Jupyter") es un proyecto que produce entornos interactivos basados en navegadores web para programación, matemáticas y ciencia de datos. Es compatible con varios idiomas a través de complementos ("kernels"), como Python, Ruby, Haskell, R, Scala y Julia.
+[Jupyter](https://en.wikipedia.org/wiki/Project_Jupyter "wikipedia:Project Jupyter") es un proyecto que produce entornos interactivos basados en navegadores web para programación, matemáticas y ciencia de datos. Es compatible con varios lenguajes a través de complementos ("kernels"), como Python, Ruby, Haskell, R, Scala y Julia.
 
 Jupyter Notebook es la aplicación tradicional y la más estable . [JupyterLab](https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906) tiene una nueva interfaz y es más adecuado para trabajar con proyectos más grandes que constan de varios archivos. JupyterLab se considera "listo para su uso diario" desde la [versión 0.33](https://github.com/jupyterlab/jupyterlab/blob/master/CHANGELOG.md#v0330).
 

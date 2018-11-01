@@ -13,8 +13,6 @@ This document defines the standard for packaging Common Language Runtime (.NET) 
 *   [2 Sample PKGBUILDs](#Sample_PKGBUILDs)
     *   [2.1 xbuild](#xbuild)
         *   [2.1.1 Unsigned DLL](#Unsigned_DLL)
-    *   [2.2 NAnt](#NAnt)
-    *   [2.3 Prebuild](#Prebuild)
 
 ## Packaging gotchas
 
@@ -80,7 +78,3 @@ package() {
 }
 
 ```
-
-### NAnt
-
-### Prebuild

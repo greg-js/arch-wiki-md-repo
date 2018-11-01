@@ -43,7 +43,7 @@ Asterisco indica o ano do primeiro lançamento público baseado no Arch Linux.
 *   [ArchLabs](https://sourceforge.net/projects/archlabs-linux-minimo/) 
 *   [Arch Linux 32](https://archlinux32.org/) 
 *   [Arch Linux ARM](https://archlinuxarm.org/) 
-*   [Archman OS](https://sourceforge.net/projects/archman-os/) 
+*   [Archman GNU/Linux](http://archman.org/en/) 
 *   [Archphile](https://sourceforge.net/projects/archphile/) 
 *   [ArchStrike](https://archstrike.org/) 
 *   [Arch XFerience](https://sourceforge.net/projects/arch-xferience/) 

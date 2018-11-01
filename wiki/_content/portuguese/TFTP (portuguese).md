@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [TFTP](/index.php/TFTP "TFTP"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=TFTP&diff=0&oldid=549262) na versão em inglês.
+
 O [Trivial File Transfer Protocol](https://en.wikipedia.org/wiki/pt:Trivial_File_Transfer_Protocol "wikipedia:pt:Trivial File Transfer Protocol") (TFTP) fornece uma forma minimalista para transferir arquivos. É geralmente usado como uma parte da inicialização do [PXE](/index.php/PXE "PXE") ou para atualizar configuração ou firmware em dispositivos que possuem memória limitada, tal como roteadores, telefones IP e impressoras.
 
 ## Contents

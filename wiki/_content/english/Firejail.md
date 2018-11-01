@@ -115,7 +115,6 @@ Type = File
 Operation = Install
 Operation = Upgrade
 Operation = Remove
-Target = bin/*
 Target = usr/bin/*
 Target = usr/local/bin/*
 Target = usr/share/applications/*.desktop

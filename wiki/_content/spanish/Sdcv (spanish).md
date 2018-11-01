@@ -3,17 +3,17 @@
 ## Contents
 
 *   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Uso](#Uso)
+*   [2 Utilización](#Utilizaci.C3.B3n)
 *   [3 Añadir diccionarios](#A.C3.B1adir_diccionarios)
 *   [4 Consejos](#Consejos)
     *   [4.1 Alias ​​sdcv](#Alias_.E2.80.8B.E2.80.8Bsdcv)
-*   [5 Ver también](#Ver_tambi.C3.A9n)
+*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
 ## Instalación
 
 [sdcv](https://www.archlinux.org/packages/?name=sdcv) está disponible en los repositorios oficiales.
 
-## Uso
+## Utilización
 
 [sdcv](https://www.archlinux.org/packages/?name=sdcv) se puede iniciar desde la línea de comando:
 
@@ -52,7 +52,7 @@ alias def="/usr/bin/sdcv"
 
 ```
 
-## Ver también
+## Véase también
 
 *   [Página web oficial](http://sdcv.sourceforge.net/)
 *   [Publicar en askubuntu.com](https://askubuntu.com/a/191268)

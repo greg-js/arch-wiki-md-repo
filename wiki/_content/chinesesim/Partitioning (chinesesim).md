@@ -2,6 +2,7 @@
 
 *   [File systems](/index.php/File_systems "File systems")
 *   [fdisk](/index.php/Fdisk "Fdisk")
+*   [gdisk](/index.php/Gdisk "Gdisk")
 *   [parted](/index.php/Parted "Parted")
 *   [fstab](/index.php/Fstab "Fstab")
 *   [LVM](/index.php/LVM "LVM")
@@ -10,9 +11,9 @@
 *   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
 
-**翻译状态：** 本文是英文页面 [Partitioning](/index.php/Partitioning "Partitioning") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-12，点击[这里](https://wiki.archlinux.org/index.php?title=Partitioning&diff=0&oldid=488464)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Partitioning](/index.php/Partitioning "Partitioning") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-11-01，点击[这里](https://wiki.archlinux.org/index.php?title=Partitioning&diff=0&oldid=548479)可以查看翻译后英文页面的改动。
 
-[分区](https://en.wikipedia.org/wiki/Disk_partitioning "w:Disk partitioning")是将硬盘的可用空间划分为多个可以独立访问的区块。
+[分区](https://en.wikipedia.org/wiki/Disk_partitioning "wikipedia:Disk partitioning")是将硬盘的可用空间划分为多个可以独立访问的区块。
 
 可以为一个硬盘划分一个或者多个分区。一些场景需要使用多个分区：例如双重或多重启动，使用 [swap](/index.php/Swap "Swap") 分区等。此外，分区也可以从逻辑上隔离数据，例如为音频和视频数据创建单独的分区。下面将会讨论通用的分区方案。
 
@@ -28,6 +29,7 @@
     *   [1.3 选择 GPT 还是 MBR](#.E9.80.89.E6.8B.A9_GPT_.E8.BF.98.E6.98.AF_MBR)
     *   [1.4 Btrfs 分区](#Btrfs_.E5.88.86.E5.8C.BA)
     *   [1.5 备份](#.E5.A4.87.E4.BB.BD)
+    *   [1.6 恢复](#.E6.81.A2.E5.A4.8D)
 *   [2 分区方案](#.E5.88.86.E5.8C.BA.E6.96.B9.E6.A1.88)
     *   [2.1 单root分区](#.E5.8D.95root.E5.88.86.E5.8C.BA)
     *   [2.2 多分区](#.E5.A4.9A.E5.88.86.E5.8C.BA)
@@ -36,9 +38,8 @@
         *   [2.3.2 /boot](#.2Fboot)
         *   [2.3.3 /home](#.2Fhome)
         *   [2.3.4 /var](#.2Fvar)
-        *   [2.3.5 /tmp](#.2Ftmp)
-        *   [2.3.6 Swap](#Swap)
-        *   [2.3.7 /data](#.2Fdata)
+        *   [2.3.5 Swap](#Swap)
+        *   [2.3.6 /data](#.2Fdata)
     *   [2.4 布局示例](#.E5.B8.83.E5.B1.80.E7.A4.BA.E4.BE.8B)
         *   [2.4.1 UEFI/GPT 示例](#UEFI.2FGPT_.E7.A4.BA.E4.BE.8B)
         *   [2.4.2 MBR/BIOS 示例](#MBR.2FBIOS_.E7.A4.BA.E4.BE.8B)
@@ -54,7 +55,7 @@
 
 ## 分区表
 
-**Note:** 可以用 `parted */dev/sda* print` 或 `fdisk -l */dev/sda*` 查看当前分区信息，`*/dev/sda*` 是设备名。
+**Tip:** 可以用 `parted */dev/sda* print` 或 `fdisk -l */dev/sda*` 查看当前分区信息，`*/dev/sda*` 是设备名。
 
 分区信息被存放在分区表中。目前有两种主流的模式：传统的 [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") 和新的 [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")。后者功能更强大，解决了许多MBR的限制。
 
@@ -78,7 +79,7 @@
 
 #### 引导记录
 
-MBR 前面的 446 字节是启动代码区域，在 BIOS 系统中通常包含启动加载器的第一部分。请参阅[Wikipedia:主引导记录](https://en.wikipedia.org/wiki/%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95 "wikipedia:主引导记录")
+MBR 前面的 446 字节是启动代码区域，在 BIOS 系统中通常包含启动加载器的第一部分。请参阅[Wikipedia:主引导记录](https://en.wikipedia.org/wiki/%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95 "wikipedia:主引导记录")。可以用 [dd](/index.php/Dd "Dd") 备份和恢复启动代码。
 
 ### GUID 分区表
 
@@ -87,6 +88,8 @@ GPT方案中只有一种分区类型，**主分区**。磁盘和RAID卷中包含
 [GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table "w:GUID Partition Table") (GPT) 是 [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface") 标准定义的分区规范。使用 [globally unique identifiers](https://en.wikipedia.org/wiki/Globally_unique_identifier "w:Globally unique identifier") (GUIDs), 或 Linux 中的 UUID 定义分区和 [分区类型](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table"). 设计上是为了替换 [#Master Boot Record](#Master_Boot_Record)。
 
 [Wikipedia:GUID磁碟分割表](https://en.wikipedia.org/wiki/GUID%E7%A3%81%E7%A2%9F%E5%88%86%E5%89%B2%E8%A1%A8 "wikipedia:GUID磁碟分割表")
+
+GUID 分区表的磁盘开始位置有一个 [protective Master Boot Record](https://en.wikipedia.org/wiki/GUID_Partition_Table#Protective_MBR_.28LBA_0.29 "wikipedia:GUID Partition Table") (PMBR)，用以处理不支持 GPT 软件的访问。这段 MBR 和真正的 MBR 一样，可以用在支持 BIOS/GPT 启动的启动管理器中。
 
 ### 选择 GPT 还是 MBR
 
@@ -111,7 +114,15 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 
 ### 备份
 
-请参阅 [fdisk#Backup and restore partition table](/index.php/Fdisk#Backup_and_restore_partition_table "Fdisk")。
+请参阅 [fdisk#Backup and restore partition table](/index.php/Fdisk#Backup_and_restore_partition_table "Fdisk") 或 [gdisk#Backup and restore partition table](/index.php/Gdisk#Backup_and_restore_partition_table "Gdisk").
+
+### 恢复
+
+可以用 [gpart](https://www.archlinux.org/packages/?name=gpart) 恢复被破坏的 MBR，详情参考 [gpart(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/gpart.8)。
+
+第一个 GPT 头(located at the start of the disk) from the secondary GPT header (located at the end of the disk) or vice versa. See [gdisk#Recover GPT header](/index.php/Gdisk#Recover_GPT_header "Gdisk").
+
+Another option is [TestDisk](/index.php/File_recovery#Testdisk_and_PhotoRec "File recovery"), which supports recovering lost partitions on both MBR and GPT.
 
 ## 分区方案
 
@@ -173,10 +184,6 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 
 除了其他数据以外，还包括[ABS](/index.php/ABS "ABS") 树和 [pacman](/index.php/Pacman "Pacman") 缓存。保留缓存的包提供了包[降级](/index.php/Downgrade "Downgrade")的能力，因此非常有用。也正因为这样，`/var` 的大小会随着时间推移而增长。尤其是 pacman 缓存将会随着新软件的安装、系统的升级而增长。在磁盘空间不足的时候，可以安全的清理这个目录。`/var` 分配 8-12 GB 对于桌面系统来说是比较合适的取值，具体取值取决于安装的软件数量。。
 
-#### /tmp
-
-默认情况下这个目录已经是一个独立分区，systemd 将其挂载为*tmpfs*。
-
 #### Swap
 
 [swap](/index.php/Swap "Swap") 分区提供能够被作为虚拟内存的内存空间。[swap file](/index.php/Swap#Swap_file "Swap") 也可以实现同样的功能，并且它们之间没有明显的性能区别，但是后者更易于根据需要调整大小。如果没有使用休眠特性的话，swap 分区*可以*被多个系统共享。查看 [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate") 了解如何通过 swap 分区或文件休眠。
@@ -193,24 +200,26 @@ Btrfs可以独占整个存储设备并替代 [MBR](/index.php/MBR "MBR") 和 [GP
 
 #### UEFI/GPT 示例
 
-| Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Bootable flag | Suggested size |
-| /boot | /dev/sd**x**1 | [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | Yes | 260–512 MiB |
-| [SWAP] | /dev/sd**x**2 | Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
-| / | /dev/sd**x**3 | Linux | No | Remainder of the device |
+| Mount point | Partition | [Partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") | [Partition attributes](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries_.28LBA_2-33.29 "wikipedia:GUID Partition Table") | Suggested size |
+| `/boot` or `/efi` | `/dev/sda1` | `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`: [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | 550 MiB |
+| `/` | `/dev/sda2` | `4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709`: Linux x86-64 root (/) | 23 - 32 GiB |
+| `[SWAP]` | `/dev/sda3` | `0657FD6D-A4AB-43C4-84E5-0933C84B4F4F`: Linux [swap](/index.php/Swap "Swap") | More than 512 MiB |
+| `/home` | `/dev/sda4` | `933AC7E1-2EB4-4F13-B844-0E14E2AEF915`: Linux /home | Remainder of the device |
 
 #### MBR/BIOS 示例
 
-| Mount point | Partition | [Partition type](https://en.wikipedia.org/wiki/Partition_type "w:Partition type") | Bootable flag | Suggested size |
-| [SWAP] | /dev/sd**x**1 | Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
-| / | /dev/sd**x**2 | Linux | Yes | Remainder of the device |
+| Mount point | Partition | [Partition type ID](https://en.wikipedia.org/wiki/Partition_type "wikipedia:Partition type") | [Boot flag](https://en.wikipedia.org/wiki/Boot_flag "wikipedia:Boot flag") | Suggested size |
+| `/` | `/dev/sda1` | `83`: Linux | Yes | 23 - 32 GiB |
+| `[SWAP]` | `/dev/sda2` | `82`: Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
+| `/home` | `/dev/sda3` | `83`: Linux | No | Remainder of the device |
 
 #### UEFI 带单独的 /home
 
-| Mount point | Partition | [Partition type (GUID)](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "w:GUID Partition Table") | Bootable flag | Suggested size |
-| /boot | /dev/sd**x**1 | [EFI system partition](/index.php/EFI_system_partition "EFI system partition") | Yes | More than 512 MiB |
-| / | /dev/sd**x**2 | Linux | No | 15 - 20 GiB |
-| [SWAP] | /dev/sd**x**3 | Linux [swap](/index.php/Swap "Swap") | No | More than 512 MiB |
-| /home | /dev/sd**x**4 | Linux | No | Remainder of the device |
+| Mount point | Partition | [Partition type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") | [Partition attributes](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries_.28LBA_2-33.29 "wikipedia:GUID Partition Table") | Suggested size |
+| None | `/dev/sda1` | `21686148-6449-6E6F-744E-656564454649`: [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition") | 1 MiB |
+| `/` | `/dev/sda2` | `4F68BCE3-E8CD-4DB1-96E7-FBCAF984B709`: Linux x86-64 root (/) | `2`: Legacy BIOS bootable | 23 - 32 GiB |
+| `[SWAP]` | `/dev/sda3` | `0657FD6D-A4AB-43C4-84E5-0933C84B4F4F`: Linux [swap](/index.php/Swap "Swap") | More than 512 MiB |
+| `/home` | `/dev/sda4` | `933AC7E1-2EB4-4F13-B844-0E14E2AEF915`: Linux /home | Remainder of the device |
 
 ## 分区工具
 

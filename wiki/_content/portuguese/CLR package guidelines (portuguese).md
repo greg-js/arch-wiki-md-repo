@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [CLR package guidelines](/index.php/CLR_package_guidelines "CLR package guidelines"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=CLR_package_guidelines&diff=0&oldid=552255) na versão em inglês.
+
 **[Diretrizes de criação de pacotes](/index.php/Criando_pacotes "Criando pacotes")**
 
 * * *
@@ -13,8 +15,6 @@ Este documento define o padrão para a empacotamento de projetos Common Language
 *   [2 Exemplos de PKGBUILD](#Exemplos_de_PKGBUILD)
     *   [2.1 xbuild](#xbuild)
         *   [2.1.1 Unsigned DLL](#Unsigned_DLL)
-    *   [2.2 NAnt](#NAnt)
-    *   [2.3 Prebuild](#Prebuild)
 
 ## Pegadinhas de empacotamento
 
@@ -80,7 +80,3 @@ package() {
 }
 
 ```
-
-### NAnt
-
-### Prebuild

@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Ext4](/index.php/Ext4 "Ext4"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Ext4&diff=0&oldid=549940) na versão em inglês.
+
 Artigos relacionados
 
 *   [File systems](/index.php/File_systems "File systems")

@@ -110,7 +110,7 @@ Hardware:
 
 Configuration:
 
-*   **Host Kernel**: Kernel version Linux 4.7.2-1 (No ACS patch).
+*   **Host Kernel**: Kernel version Linux 4.7.2-1.
 *   Using **libvirt QEMU/KVM with OVMF**: link to domain XMLs/scripts/notes: [https://github.com/manbearpig3130/MBP-VT-d-gaming-machine](https://github.com/manbearpig3130/MBP-VT-d-gaming-machine)
 *   **Host OS**: Arch Linux
 *   **Guest OS**: Windows 10 Pro
@@ -121,8 +121,7 @@ Configuration:
 *   CPU pinning increased performance considerably.
 *   Windows boots straight into Steam big picture mode on primary display (43" Sony Bravia). Overall an awesome gaming machine that meets my gaming needs and lust for GNU/Linux at the same time.
 *   **Quirks**:
-*   I sometimes have to reinstall the AMD drivers in Windows to get HDMI audio working properly, or roll back to Windows HDMI driver.
-*   I find that if I allow Windows to go through its shutdown procedure it has trouble booting again. To get around this I force off the machine in virtual machine manager gui.
+*   I sometimes have to reinstall the AMD drivers in Windows to get HDMI audio working properly, or roll back to Windows HDMI driver. I normally use a USB headset which works fine anyway.
 
 ### Bretos' Virtual Gaming Setup
 

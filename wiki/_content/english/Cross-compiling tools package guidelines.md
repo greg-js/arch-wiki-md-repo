@@ -25,7 +25,7 @@
 
 ## Important note
 
-This page describes the new way of doing things, inspired by the following packages in `[community]`:
+This page describes the new way of doing things, inspired by the following packages:
 
 *   [mingw-w64-gcc](https://aur.archlinux.org/packages/mingw-w64-gcc/) and other packages from `mingw-w64-*` series
 *   [arm-none-eabi-gcc](https://www.archlinux.org/packages/?name=arm-none-eabi-gcc) and other packages from `arm-none-eabi-*` series
@@ -35,7 +35,7 @@ This page describes the new way of doing things, inspired by the following packa
 
 **Warning:** Using incompatible versions of packages for toolchain compilation leads to inevitable failures. By default consider **all** versions incompatible.
 
-The following strategies allows you to select compatible vesions of gcc, binutils, kernel and C library:
+The following strategies allows you to select compatible versions of gcc, binutils, kernel and C library:
 
 *   General rules:
     *   there is a correlation between gcc and binutils releases, use simultaneously released versions;
@@ -72,13 +72,16 @@ Latest versions of gcc and binutils use non-conflicting paths for sysroot and li
 Typically, `./configure` would have at least following parameters:
 
 ```
-_target=<your-target> # e.g. i686-pc-mingw32
+_target=*your_target*
 _sysroot=/usr/lib/${_target}
 ...
 ./configure \
-    --prefix=${_sysroot} --sysroot=${_sysroot} \
+    --prefix=${_sysroot} \
+    --sysroot=${_sysroot} \
     --bindir=/usr/bin
 ```
+
+where `*your_target*` can be, e.g., "i686-pc-mingw32".
 
 ## Example
 
@@ -180,4 +183,4 @@ and vice versa may result in different outcomes (often caused by recursive self-
 
 ## See also
 
-[http://wiki.osdev.org/GCC_Cross-Compiler](http://wiki.osdev.org/GCC_Cross-Compiler)
+*   [http://wiki.osdev.org/GCC_Cross-Compiler](http://wiki.osdev.org/GCC_Cross-Compiler)

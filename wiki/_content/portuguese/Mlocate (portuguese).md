@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [mlocate](/index.php/Mlocate "Mlocate"). Data da última tradução: 2018-10-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Mlocate&diff=0&oldid=544335) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [mlocate](/index.php/Mlocate "Mlocate"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Mlocate&diff=0&oldid=544335) na versão em inglês.
 
 Artigos relacionados
 

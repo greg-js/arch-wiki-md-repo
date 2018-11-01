@@ -190,6 +190,13 @@ To set the GPU clock for the maximum pstate 7 on a Polaris GPU to 1209MHz and 90
 
 ```
 
+The same procedure can be applied to VRAM pstates, e.g.:
+
+```
+# echo "m 2 1850 850" > /sys/class/drm/card0/device/pp_od_clk_voltage
+
+```
+
 **Warning:** Double check the entered values, as mistakes might instantly cause fatal hardware damage!
 
 To apply, run
@@ -213,6 +220,21 @@ You can reset to the default values using this:
 
 ```
 
+It is also possible to forbid the driver so switch to certain pstates, e.g. to workaround problems with deep powersaving pstates like flickering artifacts or stutter. To force the highest VRAM pstate on a Polaris RX 5xx card, while still allowing the GPU itself to run with lower clocks, run:
+
+```
+# echo "manual" > /sys/class/drm/card0/device/power_dpm_force_performance_level
+# echo "2" >  /sys/class/drm/card0/device/pp_dpm_mclk
+
+```
+
+Allow only the three highest GPU pstates:
+
+```
+# echo "5 6 7" >  /sys/class/drm/card0/device/pp_dpm_sclk
+
+```
+
 To set the allowed maximum power consumption of the GPU to e.g. 50 Watts, run
 
 ```
@@ -220,7 +242,7 @@ To set the allowed maximum power consumption of the GPU to e.g. 50 Watts, run
 
 ```
 
-If the video card bios doesn't provide a maximum value above the default setting, you can only decrease the power limit, but not increase.
+Until Linux kernel 4.21/5.1, it will only be possible to decrease the value, not increase.
 
 **Note:** The above procedure was tested with a Polaris RX 560 card. There may be different behavior or bugs with different GPUs.
 

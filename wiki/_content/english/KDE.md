@@ -27,9 +27,10 @@ KDE is a software project currently comprising of a [desktop environment](/index
         *   [3.1.1 Plasma desktop](#Plasma_desktop)
             *   [3.1.1.1 Themes](#Themes)
                 *   [3.1.1.1.1 Qt and GTK+ Applications Appearance](#Qt_and_GTK.2B_Applications_Appearance)
-            *   [3.1.1.2 Widgets](#Widgets)
-            *   [3.1.1.3 Sound applet in the system tray](#Sound_applet_in_the_system_tray)
-            *   [3.1.1.4 Disable panel shadow](#Disable_panel_shadow)
+            *   [3.1.1.2 Faces](#Faces)
+            *   [3.1.1.3 Widgets](#Widgets)
+            *   [3.1.1.4 Sound applet in the system tray](#Sound_applet_in_the_system_tray)
+            *   [3.1.1.5 Disable panel shadow](#Disable_panel_shadow)
         *   [3.1.2 Window decorations](#Window_decorations)
         *   [3.1.3 Icon themes](#Icon_themes)
         *   [3.1.4 Space efficiency](#Space_efficiency)
@@ -163,6 +164,12 @@ The recommended theme for a pleasant appearance in GTK+ applications is [breeze-
 In some themes, tooltips in GTK+ applications have white text on white backgrounds making it difficult to read. To change the colors in GTK2 applications, find the section for tooltips in the `.gtkrc-2.0` file and change it. For GTK3 application two files need to be changed, `gtk.css` and `settings.ini`. It might also help to uncheck the option to *Apply colors to non-Qt applications* under *System Settings* > *Colors*.
 
 Some GTK2 programs like [vuescan-bin](https://aur.archlinux.org/packages/vuescan-bin/) still look hardly usable due to invisible checkboxes with the Breeze or Adwaita skin in a Plasma session. To workaround this, install and select e.g. the Numix-Frost-Light skin of the [numix-frost-themes](https://aur.archlinux.org/packages/numix-frost-themes/) under *System Settings* > *Application Style* > *GNOME Application Style (GTK)* > *Select a GTK2 Theme:*. Numix-Frost-Light looks similar to Breeze.
+
+##### Faces
+
+User's face can be set through *System Settings > Accounts Details > User Manager*.
+
+If *User Manager* is not found, install [user-manager](https://www.archlinux.org/packages/?name=user-manager) to get it.
 
 ##### Widgets
 

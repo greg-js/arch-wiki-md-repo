@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [GNOME package guidelines](/index.php/GNOME_package_guidelines "GNOME package guidelines"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME_package_guidelines&diff=0&oldid=549983) na versão em inglês.
+
 **[Diretrizes de criação de pacotes](/index.php/Criando_pacotes "Criando pacotes")**
 
 * * *
@@ -11,12 +13,13 @@ Os pacotes do [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") no
 *   [1 URL fonte](#URL_fonte)
     *   [1.1 Usando tarball de lançamento](#Usando_tarball_de_lan.C3.A7amento)
     *   [1.2 Usando um commit do repositório Git](#Usando_um_commit_do_reposit.C3.B3rio_Git)
-*   [2 GConf schemas](#GConf_schemas)
-*   [3 GSettings schemas](#GSettings_schemas)
-*   [4 Documentação do Scrollkeeper](#Documenta.C3.A7.C3.A3o_do_Scrollkeeper)
-*   [5 Cache de ícones do GTK](#Cache_de_.C3.ADcones_do_GTK)
-*   [6 Arquivos .desktop](#Arquivos_.desktop)
-*   [7 Arquivos .install](#Arquivos_.install)
+*   [2 Compilando com meson](#Compilando_com_meson)
+*   [3 GConf schemas](#GConf_schemas)
+*   [4 GSettings schemas](#GSettings_schemas)
+*   [5 Documentação do Scrollkeeper](#Documenta.C3.A7.C3.A3o_do_Scrollkeeper)
+*   [6 Cache de ícones do GTK](#Cache_de_.C3.ADcones_do_GTK)
+*   [7 Arquivos .desktop](#Arquivos_.desktop)
+*   [8 Arquivos .install](#Arquivos_.install)
 
 ## URL fonte
 
@@ -56,7 +59,45 @@ Substitua *hash_de_um_commit* com a hash do commit Git desejado.
 
 Note que já que o fonte é baixado com *git*, então [git](https://www.archlinux.org/packages/?name=git) deve estar no `makedepends` e somas de verificação devem ser definidas para *SKIP*, assim como ocorreria com qualquer outro pacote VCS. O uso da função `pkgver()` é altamente recomendado, de forma que defina o `pkgver` adequadamente para o hash de commit fornecido.
 
-**Note:** GNOME já usou [https://git.gnome.org](https://git.gnome.org) em vez do [https://gitlab.gnome.org](https://gitlab.gnome.org). Links antigos devem ser devem ser redirecionados automaticamente para o novo domínio gitlab.gnome.org, mas pode ser interessante atualizar manualmente a URL do seu fonte.
+**Note:** GNOME já usou [https://git.gnome.org](https://git.gnome.org), mas então migrou para o [https://gitlab.gnome.org](https://gitlab.gnome.org)[[4]](https://www.gnome.org/news/2018/05/gnome-moves-to-gitlab-2/). Links antigos devem ser redirecionados automaticamente para o novo domínio gitlab.gnome.org, mas pode ser interessante atualizar manualmente a URL do seu fonte.
+
+## Compilando com meson
+
+Muitos softwares do GNOME migraram o sistema de compilação para o [Meson](https://mesonbuild.com/), consequentemente descartando o suporte a [GNU Autotools](/index.php/Sistema_de_Compila%C3%A7%C3%A3o_do_GNU "Sistema de Compilação do GNU"). Isso significa que você usará *./configure* e *make* neste caso.
+
+Para compilar usando o Meson, adicione o pacote [meson](https://www.archlinux.org/packages/?name=meson) para [makedepends](/index.php/PKGBUILD_(Portugu%C3%AAs)#makedepends "PKGBUILD (Português)") e execute seu comando *meson*, incluindo opcionalmente todas as opções desejadas suportadas pelo software alvo. O pacote [ninja](https://www.archlinux.org/packages/?name=ninja) também será usado neste sistema de compilação, mas é uma dependência do [meson](https://www.archlinux.org/packages/?name=meson), então você não precisa incluí-lo no vetor *makedepends*.
+
+As funções [build()](/index.php/Criando_pacotes#build.28.29 "Criando pacotes"), [check()](/index.php/Criando_pacotes#check.28.29 "Criando pacotes") e [package()](/index.php/Criando_pacotes#package.28.29 "Criando pacotes") devem ser parecer com:
+
+ `PKGBUILD` 
+```
+makedepends=(meson)
+
+build() {
+  meson --prefix /usr --buildtype=plain *fonte* *build*
+  ninja -C *build*
+}
+
+check() {
+  ninja -C *build* check
+}
+
+package() {
+  DESTDIR="$pkgdir" ninja -C *build* install
+}
+```
+
+sendo que
+
+*   *fonte* é o diretório contendo o código-fonte extraído como, por exemplo, *$pkgname* ou *$pkgname-$pkgver*; e
+*   *build* é o diretório que conterá os arquivos binários a serem instalados. Normalmente o nome de diretório "build" é usado, então você pode querer mantê-lo para padronização, mas você pode renomeá-lo para o que mais lhe agradar.
+
+**Nota:**
+
+*   Alguns softwares não suportam a chamada de *meson* de fora do diretório raiz do código-fonte. Se este for o seu caso, adapte o bloco de código acima simplesmente adicionando `cd *fonte*` ao início das três funções acima, e também alterando a linha de comando *meson* acima para `meson . *build*`.
+*   Se o software não tiver regras de teste definidas (caso em que o bloco de código acima falharia para construir o pacote), remova/comente a toda a função *check()*.
+
+**Dica:** Para alternar uma opção de compilação no *meson*, anexe os sinalizadores `-D*opção=valor*` à linha de comando do *meson*, em que *opção* é uma opção suportada para o software de destino que você está compilando, e *valor* é um valor válido para a *opção* fornecida. Então, por exemplo, se o software tem uma opção *gtk_doc* como *false* por padrão e você quer habilitá-la, acrescente `-Dgtk_doc=true` à linha de comando do *meson*. Leia os arquivos `meson.build` e `meson_options.txt` no diretório-raiz do código-fonte para encontrar as opções disponíveis.
 
 ## GConf schemas
 
@@ -88,15 +129,15 @@ Ele pode ser desabilitado usando a opção `--disable-scrollkeeper` no **./confi
 
 ## Cache de ícones do GTK
 
-Alguns ícones de instalação de pacotes no tema do ícone do hicolor. Esses pacotes devem depender de [gtk-update-icon-cache](https://www.archlinux.org/packages/?name=gtk-update-icon-cache).
+Alguns ícones de instalação de pacotes no tema do ícone do hicolor.
 
-Não chame `gtk-update-icon-cache` no arquivo .install, pois o cache de ícone é atualizado via [hooks do pacman](/index.php/Pacman_(Portugu%C3%AAs)#Hooks "Pacman (Português)") desde [gtk-update-icon-cache](https://www.archlinux.org/packages/?name=gtk-update-icon-cache)=3.20.3-2.
+Não chame `gtk-update-icon-cache` no arquivo .install, pois o cache de ícone é atualizado via [hooks do pacman](/index.php/Pacman_(Portugu%C3%AAs)#Hooks "Pacman (Português)") desde [gtk-update-icon-cache](https://www.archlinux.org/packages/?name=gtk-update-icon-cache)=3.20.3-2\. Tais pacotes *não* devem depender de [gtk-update-icon-cache](https://www.archlinux.org/packages/?name=gtk-update-icon-cache), pois qualquer aplicativo que faz uso de caches de ícones gtk vai instalar o pacote com o hook e fará uma atualização de banco de dados completa e retroativa.
 
 ## Arquivos .desktop
 
-Muitos pacotes instalam arquivos `.desktop` compatíveis com Freedesktop.org e registram entradas tipo MIME neles. Eles devem depender de [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils).
+Muitos pacotes instalam arquivos `.desktop` compatíveis com Freedesktop.org e registram entradas tipo MIME neles.
 
-Não chame `update-desktop-database` no arquivo .install, pois a base de dados é atualizada automaticamente via [hooks do pacman](/index.php/Pacman_(Portugu%C3%AAs)#Hooks "Pacman (Português)") desde [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils)=0.22-2.
+Não chame `update-desktop-database` no arquivo .install, pois a base de dados é atualizada automaticamente via [hooks do pacman](/index.php/Pacman_(Portugu%C3%AAs)#Hooks "Pacman (Português)") desde [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils)=0.22-2\. Tais pacotes *não* devem depender de [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils), pois qualquer desktop que faz uso de arquivos de desktop vai instalar o pacote com o hook e fará uma atualização de banco de dados completa e retroativa.
 
 ## Arquivos .install
 

@@ -320,7 +320,9 @@ When the SATA-controller is set to `RAID On` in Bios, the SSD is not recognized.
 
 ## Touchpad
 
-The touchpad has no explicit buttons. The buttons are built into the pads surface. There is a small line printed on the pad separating left from right click button. The pad has a **middle button** built in! (works with libinput without any configuration): To issue a middle click, simply press on the middle area right between the virtual left and click buttons - so on the small printed separator line.
+The touchpad has no explicit buttons. The button is built into the pad's surface. There is a small line printed on the pad separating left/right click areas, and libinput does the same separation in software.
+
+Libinput also provides a middle button – to issue a middle click, simply press on the middle area right between the virtual left and right buttons (i.e. on the small printed separator line).
 
 ### Remove psmouse errors from dmesg
 

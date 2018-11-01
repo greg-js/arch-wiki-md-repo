@@ -1,6 +1,6 @@
-Zainteresowany w rozwijaniu Pacmana? Ta strona powinna pomóc Tobie zacząć.
+Jesteś zainteresowany w rozwijaniu Pacmana? Ta strona powinna tobie pomóc zacząć.
 
-Pamiętaj, że jeżeli myślisz, że czegoś brakuje na tej stronie, dodaj to! Obecni deweloperzy pacmana nie muszą wiedzię czego ludzie potrzebują wiedzieć i co powinno być na tej stronie.
+Pamiętaj, że jeżeli, twoim zdaniem, na tej stronie brakuje jakiś niezbędnych informacji, to dodaj je! Deweloperzy pacmana nie zawsze są świadomi tego, jakie potrzeby mają użytkownicy i co powinno znaleźć się na tej stronie.
 
 ## Contents
 

@@ -30,6 +30,7 @@ GTK+, The GIMP Toolkit, was initially made by the [GNU Project](/index.php/GNU_P
     *   [4.9 Legacy scrolling behavior](#Legacy_scrolling_behavior)
     *   [4.10 Disable overlay scrollbars](#Disable_overlay_scrollbars)
         *   [4.10.1 Remove overlay scroll indicators](#Remove_overlay_scroll_indicators)
+    *   [4.11 Examples](#Examples)
 *   [5 GDK backends](#GDK_backends)
     *   [5.1 Broadway backend](#Broadway_backend)
     *   [5.2 Wayland backend](#Wayland_backend)
@@ -42,11 +43,10 @@ GTK+, The GIMP Toolkit, was initially made by the [GNU Project](/index.php/GNU_P
     *   [6.6 Titlebar background color mismatch](#Titlebar_background_color_mismatch)
     *   [6.7 Wrong focus events with tiling window managers](#Wrong_focus_events_with_tiling_window_managers)
     *   [6.8 Thumbnail support for GTK+ 2 file dialog](#Thumbnail_support_for_GTK.2B_2_file_dialog)
-    *   [6.9 Button/menu icons in some apps in GNOME Wayland session](#Button.2Fmenu_icons_in_some_apps_in_GNOME_Wayland_session)
+    *   [6.9 Button and menu icons](#Button_and_menu_icons)
     *   [6.10 GTK+ 3 without polkit](#GTK.2B_3_without_polkit)
     *   [6.11 Some GTK+ 2 themes only change the UI color palette](#Some_GTK.2B_2_themes_only_change_the_UI_color_palette)
-*   [7 Examples](#Examples)
-*   [8 See also](#See_also)
+*   [7 See also](#See_also)
 
 ## Installation
 
@@ -77,6 +77,8 @@ $ GTK2_RC_FILES=/usr/share/themes/Raleigh/gtk-2.0/gtkrc gimp
 $ GTK_THEME=Adwaita:dark gnome-calculator
 
 ```
+
+**Note:** To apply the above to desktop shortcuts (or launchers) see [Desktop entries#Modify environment variables](/index.php/Desktop_entries#Modify_environment_variables "Desktop entries").
 
 More themes can be installed from the official repositories or the [AUR](/index.php/AUR "AUR"). Manually extracted themes go in `~/.themes/` or `~/.local/share/themes/` directory.
 
@@ -217,7 +219,7 @@ GTK+ settings can be specified manually in configuration files, but desktop envi
 
 To manually change the GTK+ theme, icons, font and font size, add the following to the configuration files, for example:
 
-**GTK+ 2:**
+*   GTK+ 2:
 
  `~/.gtkrc-2.0` 
 ```
@@ -226,7 +228,7 @@ gtk-theme-name = "Adwaita"
 gtk-font-name = "DejaVu Sans 11"
 ```
 
-**GTK+ 3:**
+*   GTK+ 3:
 
  `$XDG_CONFIG_HOME/gtk-3.0/settings.ini` 
 ```
@@ -398,6 +400,51 @@ The positions of the overlay scrollbars are indicated by thin dashed lines in th
 /* Remove dotted lines from GTK+ 3 applications */
 undershoot.top, undershoot.right, undershoot.bottom, undershoot.left { background-image: none; }
 
+```
+
+### Examples
+
+GTK+ example configurations:
+
+**Note:** May be ignored by some [desktop environments](/index.php/Desktop_environments "Desktop environments") (e.g. [GNOME](/index.php/GNOME "GNOME")).
+ `~/.gtkrc-2.0` 
+```
+gtk-theme-name="Arc-Dark"
+gtk-icon-theme-name="breeze-dark"
+gtk-font-name="Sans 11"
+gtk-cursor-theme-name="Breeze_Amber"
+gtk-cursor-theme-size=0
+gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
+gtk-toolbar-icon-size=GTK_ICON_SIZE_SMALL_TOOLBAR
+gtk-button-images=0
+gtk-menu-images=0
+gtk-enable-event-sounds=0
+gtk-enable-input-feedback-sounds=0
+gtk-xft-antialias=1
+gtk-xft-hinting=1
+gtk-xft-hintstyle="hintslight"
+gtk-xft-rgba="rgb"
+```
+ `~/.config/gtk-3.0/settings.ini` 
+```
+[Settings]
+gtk-theme-name=Arc-Dark
+gtk-icon-theme-name=breeze-dark
+gtk-font-name=Sans 11
+gtk-cursor-theme-name=Breeze_Amber
+gtk-cursor-theme-size=0
+gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
+gtk-toolbar-icon-size=GTK_ICON_SIZE_SMALL_TOOLBAR
+gtk-button-images=0
+gtk-menu-images=0
+gtk-enable-event-sounds=0
+gtk-enable-input-feedback-sounds=0
+gtk-xft-antialias=1
+gtk-xft-hinting=1
+gtk-xft-hintstyle=hintslight
+gtk-xft-rgba=rgb
+gtk-decoration-layout=menu:close
+# gtk-application-prefer-dark-theme=1
 ```
 
 ## GDK backends
@@ -577,9 +624,9 @@ NautilusWindow {
 
 Install [gtk2-patched-filechooser-icon-view](https://aur.archlinux.org/packages/gtk2-patched-filechooser-icon-view/) to have the option to view files as thumbnails instead of list in the GTK+ file chooser.
 
-### Button/menu icons in some apps in GNOME Wayland session
+### Button and menu icons
 
-Your `~/.config/gtk-3.0/settings.ini` file is misconfigured. This can happend if you try other GTK+ based desktop environments. These are the offending values:
+For some applications in GNOME's Wayland session. Your `~/.config/gtk-3.0/settings.ini` file is misconfigured. This can happen if you try other GTK+ based desktop environments. These are the offending values:
 
  `~/.config/gtk-3.0/settings.ini` 
 ```
@@ -597,51 +644,6 @@ GTK+3 depends on polkit through colord, which is required for printing. However 
 ### Some GTK+ 2 themes only change the UI color palette
 
 Depending on the theme of choice's support for GTK+ 2, UI controls may still have the default Raleigh appearance, possibly with a different color palette. This is due to these themes requiring the GTK+ 2 Murrine engine, which is missing (GTK+ 2 programs should complain about it on their standard error output). Install the [gtk-engine-murrine](https://www.archlinux.org/packages/?name=gtk-engine-murrine) package.
-
-## Examples
-
-GTK+ 2 configuration example:
-
- `~/.gtkrc-2.0` 
-```
-# GTK theme
-include "/usr/share/themes/Clearlooks/gtk-2.0/gtkrc"
-
-# Font
-style "myfont" {
-    font_name = "DejaVu Sans 8"
-}
-widget_class "*" style "myfont"
-gtk-font-name = "DejaVu Sans 8"
-
-# Icon theme
-gtk-icon-theme-name = "Tango"
-
-# Toolbar style
-gtk-toolbar-style = GTK_TOOLBAR_ICONS
-```
-
-GTK+ 3 example of a configuration as converted from GTK+ 2.x to GTK+ 3.x by [lxappearance](https://www.archlinux.org/packages/?name=lxappearance):
-
- `$XDG_CONFIG_HOME/gtk-3.0/settings.ini` 
-```
-[Settings] 
-gtk-theme-name=TraditionalOk
-gtk-icon-theme-name=Fog
-gtk-font-name=Luxi Sans 12
-gtk-cursor-theme-name=mate
-gtk-cursor-theme-size=24
-gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
-gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
-gtk-button-images=1
-gtk-menu-images=1
-gtk-enable-event-sounds=0
-gtk-enable-input-feedback-sounds=0
-gtk-xft-antialias=1
-gtk-xft-hinting=1
-gtk-xft-hintstyle=hintslight
-gtk-xft-rgba=rgb
-```
 
 ## See also
 

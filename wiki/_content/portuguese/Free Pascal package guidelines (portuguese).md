@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Free Pascal package guidelines](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Free_Pascal_package_guidelines&diff=0&oldid=552258) na versão em inglês.
+
 **[Diretrizes de criação de pacotes](/index.php/Criando_pacotes "Criando pacotes")**
 
 * * *
@@ -6,7 +8,7 @@
 
 Esta página explica como escrever [PKGBUILDs](/index.php/PKGBUILD_(Portugu%C3%AAs) "PKGBUILD (Português)") para software construído com o [Free Pascal Compiler (FPC)](http://freepascal.org). Atualmente, existem duas opções para a criação de software do Linux, bem como várias opções para construir software em outros destinos usando compiladores cruzados do FPC:
 
-*   [fpc](https://www.archlinux.org/packages/?name=fpc) fornece um compilador visando apenas a CPU de seu host (x86_64).
+*   [fpc](https://www.archlinux.org/packages/?name=fpc) fornece um compilador visando apenas a CPU de seu host (x86_64 somente).
 *   [fpc-multilib](https://aur.archlinux.org/packages/fpc-multilib/) fornece um compilador para host x86_64 visando ambientes Linux com CPU i686 e x86_64\. Isso também vai fornecer o pacote de driver de compilador FPC [ppcross386](https://aur.archlinux.org/packages/ppcross386/).
 
 ## Contents

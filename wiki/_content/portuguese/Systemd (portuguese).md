@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2018-10-26\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=550509) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=551975) na versão em inglês.
 
 Artigos relacionados
 
@@ -436,13 +436,13 @@ O target padrão é `default.target`, que é um link simbólico para `graphical.
 Para verificar o target atual com *systemctl*:
 
 ```
-# systemctl get-default
+$ systemctl get-default
 
 ```
 
 Para alterar o target padrão a ser inicializado, altere o link simbólico `default.target`. Com *systemctl*:
 
- `$ systemctl set-default multi-user.target` 
+ `# systemctl set-default multi-user.target` 
 ```
 Removed /etc/systemd/system/default.target.
 Created symlink /etc/systemd/system/default.target -> /usr/lib/systemd/system/graphical.target.

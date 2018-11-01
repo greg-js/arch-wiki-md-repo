@@ -43,7 +43,7 @@ Controlling the charge thresholds using D-Bus without root privileges is possibl
 
 ### Graphical interface
 
-[tlpui-git](https://aur.archlinux.org/packages/tlpui-git/) is a GTK user interface for TLP written in Python. Software is currently in beta.
+[tlpui-git](https://aur.archlinux.org/packages/tlpui-git/) is a GTK user interface for TLP written in Python. As of 31 October 2018, the software is still in beta.
 
 ## Configuration
 

@@ -32,8 +32,10 @@ This page contains advanced Firefox configuration options and performance tweaks
         *   [2.2.5 Hide window border and title bar](#Hide_window_border_and_title_bar)
         *   [2.2.6 Auto-hide Bookmarks Toolbar](#Auto-hide_Bookmarks_Toolbar)
         *   [2.2.7 Remove sidebar width restrictions](#Remove_sidebar_width_restrictions)
-        *   [2.2.8 Unreadable input fields with KDE Breeze Dark theme](#Unreadable_input_fields_with_KDE_Breeze_Dark_theme)
-        *   [2.2.9 Unreadable input fields with dark GTK+ themes](#Unreadable_input_fields_with_dark_GTK.2B_themes)
+        *   [2.2.8 Unreadable input fields with dark GTK+ themes](#Unreadable_input_fields_with_dark_GTK.2B_themes)
+            *   [2.2.8.1 Override input field color with CSS](#Override_input_field_color_with_CSS)
+            *   [2.2.8.2 Change the GTK theme](#Change_the_GTK_theme)
+            *   [2.2.8.3 Change the GTK theme for content process only](#Change_the_GTK_theme_for_content_process_only)
     *   [2.3 Tabs in title bar](#Tabs_in_title_bar)
     *   [2.4 Web content CSS settings](#Web_content_CSS_settings)
         *   [2.4.1 Import other CSS files](#Import_other_CSS_files)
@@ -342,19 +344,17 @@ The extension [Classic Theme Restorer](https://addons.mozilla.org/firefox/addon/
 
 ```
 
-#### Unreadable input fields with KDE Breeze Dark theme
-
-If you are using [KDE](/index.php/KDE "KDE") desktop in conjunction with Breeze Dark theme, you might find that some input fields have dark background, which makes text unreadable. A solution to this issue is to use a non-dark GTK theme along with a dark Firefox theme. Similarly, by using a dark Firefox theme your browser will look the way you want.
-
 #### Unreadable input fields with dark GTK+ themes
 
 When using a dark [GTK+](/index.php/GTK%2B "GTK+") theme, one might encounter Internet pages with unreadable input and text fields (e.g. text input field with white text on white background). This can happen because the site only sets either background or text color, and Firefox takes the other one from the theme.
 
-To prevent Firefox from using theme's colors in web pages one can set `browser.display.use_system_colors` to `false` in `about:config`.
+To prevent Firefox from using theme's colors in web pages confirm `browser.display.use_system_colors` is set to `false` in `about:config`.
+
+##### Override input field color with CSS
 
 The extension [Text Contrast for Dark Themes](https://addons.mozilla.org/firefox/addon/text-contrast-for-dark-themes/) sets the other color as needed to maintain contrast.
 
-Another workaround is to explicitly set standard colors for all web pages in `userContent.css` or using the [stylus add-on](https://addons.mozilla.org/firefox/addon/styl-us/).
+Alternatively set the standard colors explicitly for all web pages in `userContent.css` or using the [stylus add-on](https://addons.mozilla.org/firefox/addon/styl-us/).
 
 The following sets input fields to standard black text / white background; both can be overridden by the displayed site, so that colors are seen as intended:
 
@@ -372,17 +372,20 @@ input:not(.urlbar-input):not(.textbox-input):not(.form-control):not([type='check
 }
 ```
 
-Alternatively, force Firefox to use a light theme (e.g. "Adwaita:light"):
+##### Change the GTK theme
 
-1.  Copy `/usr/share/applications/firefox.desktop` to `~/.local/share/applications/firefox.desktop` and replace all occurrences of `Exec=firefox` with `Exec=env GTK_THEME=Adwaita:light firefox`.
-2.  Close all running instances of Firefox and restart your window manager/desktop environment.
+To force Firefox to use a light theme (e.g. Adwaita) for both web content and UI, copy `/usr/share/applications/firefox.desktop` to `~/.local/share/applications/` and replace all occurrences of `Exec=firefox` with `Exec=env GTK_THEME=Adwaita firefox`, and restart Firefox. See also [GTK+#Themes](/index.php/GTK%2B#Themes "GTK+").
 
-Another way to change gtk theme for content process only, which keeps dark UI theming, but enforces light theme for rendering webpage itself:
+##### Change the GTK theme for content process only
 
-1.  Open `about:config` in the address bar
-2.  Create a new string type preference (*right mouse button > New > String*) named `widget.content.gtk-theme-override`
-3.  Set the value to the light theme to use for rendering purposes (e.g. `Adwaita`)
-4.  Restart Firefox
+**Note:** Works with multiprocess enabled. [[3]](https://bugzilla.mozilla.org/show_bug.cgi?id=1158076#c145)
+
+Another way is to change the GTK theme for the content process only, which keeps dark UI theming, but enforces light theme for rendering webpage itself:
+
+1.  Open `about:config` in the address bar.
+2.  Create a new string type preference (`right mouse button` *> New > String*) named `widget.content.gtk-theme-override`.
+3.  Set the value to the light theme to use for rendering purposes (e.g. `Adwaita`).
+4.  Restart Firefox.
 
 ### Tabs in title bar
 
@@ -619,7 +622,7 @@ Install [libu2f-host](https://www.archlinux.org/packages/?name=libu2f-host) for 
 
 Firefox supports the Fido U2F authentication protocol. However, it's disabled by default. To enable it set `security.webauth.u2f` to `true` in `about:config`.
 
-**Note:** Firefox does not inplement the entire U2F protocol [[3]](https://www.yubico.com/2017/11/how-to-navigate-fido-u2f-in-firefox-quantum/). Some sites might not work correctly.
+**Note:** Firefox does not inplement the entire U2F protocol [[4]](https://www.yubico.com/2017/11/how-to-navigate-fido-u2f-in-firefox-quantum/). Some sites might not work correctly.
 
 ## See also
 

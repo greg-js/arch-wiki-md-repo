@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Cross-compiling tools package guidelines](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Cross-compiling_tools_package_guidelines&diff=0&oldid=552263) na versão em inglês.
+
 **[Diretrizes de criação de pacotes](/index.php/Criando_pacotes "Criando pacotes")**
 
 * * *
@@ -25,7 +27,7 @@
 
 ## Nota importante
 
-Esta página descreve a nova maneira de fazer as coisas, inspirada nos seguintes pacotes no `[community]`:
+Esta página descreve a nova maneira de fazer as coisas, inspirada nos seguintes pacotes:
 
 *   [mingw-w64-gcc](https://aur.archlinux.org/packages/mingw-w64-gcc/) e outros pacotes da série `mingw-w64-*`
 *   [arm-none-eabi-gcc](https://www.archlinux.org/packages/?name=arm-none-eabi-gcc) e outros pacotes da série `arm-none-eabi-*`
@@ -72,13 +74,16 @@ As versões mais recentes do gcc e do binutils usam caminhos não conflitantes p
 Geralmente, `./configure` teria pelo menos os seguintes parâmetros:
 
 ```
-_target=<seu-alvo> # p. ex., i686-pc-mingw32
+_target=*seu_alvo*
 _sysroot=/usr/lib/${_target}
 ...
 ./configure \
-    --prefix=${_sysroot} --sysroot=${_sysroot} \
+    --prefix=${_sysroot} \
+    --sysroot=${_sysroot} \
     --bindir=/usr/bin
 ```
+
+sendo que `*seu_alvo*` pode ser, p. ex., "i686-pc-mingw32"
 
 ## Exemplo
 
@@ -180,4 +185,4 @@ e vice-versa pode resultar em resultados diferentes (geralmente causados por aut
 
 ## Veja também
 
-[http://wiki.osdev.org/GCC_Cross-Compiler](http://wiki.osdev.org/GCC_Cross-Compiler)
+*   [http://wiki.osdev.org/GCC_Cross-Compiler](http://wiki.osdev.org/GCC_Cross-Compiler)
