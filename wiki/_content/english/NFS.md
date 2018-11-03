@@ -48,9 +48,9 @@ It is **highly** recommended to use a [time synchronization](/index.php/Time_syn
 
 ### Server
 
-Configuration options can be set in `/etc/nfs.conf`. Users setting up a simple configuration may not need to edit this file.
+Global configuration options are set in `/etc/nfs.conf`. Users of simple configurations should not need to edit this file.
 
-The NFS server needs a list of exports (shared directories) which are defined in `/etc/exports`. NFS shares defined in `/etc/exports` are relative to the so-called NFS root. A good security practice is to define an NFS root in a discrete directory tree under the server's root file system which will keep users limited to that mount point. Bind mounts are used to link the share mount point to the actual directory elsewhere on the [filesystem](/index.php/Filesystem "Filesystem").
+The NFS server needs a list of exports (directories to share) which are defined in `/etc/exports`. These shares are relative to the so-called NFS root. A good security practice is to define a NFS root in a discrete directory tree under the server's root file system which will keep users limited to that mount point. Bind mounts are used to link the share mount point to the actual directory elsewhere on the [filesystem](/index.php/Filesystem "Filesystem").
 
 Consider this following example wherein:
 
@@ -65,7 +65,7 @@ Consider this following example wherein:
 
 **Note:** [ZFS](/index.php/ZFS "ZFS") filesystems require special handling of bindmounts, see [ZFS#Bind mount](/index.php/ZFS#Bind_mount "ZFS").
 
-To make it stick across reboots, add the bind mount to [fstab](/index.php/Fstab "Fstab"):
+To make the bind mount persistent across reboots, add it to [fstab](/index.php/Fstab "Fstab"):
 
  `/etc/fstab` 
 ```
@@ -107,6 +107,8 @@ For more information about all available options see [exports(5)](https://jlk.fj
 #### Starting the server
 
 [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `nfs-server.service`.
+
+**Warning:** A hard dependency of serving NFS (`rpc-gssd.service`) will wait until the [random number generator](/index.php/Random_number_generator "Random number generator") pool is sufficiently initialized possibly delaying the boot process. This is particularly prevalent on headless servers. It is *highly* recommended to populate the entropy pool using a utility such as [Rng-tools](/index.php/Rng-tools "Rng-tools") (if [TPM](/index.php/TPM "TPM") is supported) or [Haveged](/index.php/Haveged "Haveged") in these scenarios.
 
 If you are exporting ZFS shares, also start and enable `zfs-share.service`. Without this, ZFS shares will no longer be exported after a reboot.
 
@@ -247,7 +249,7 @@ To apply changes, [Restart](/index.php/Restart "Restart") `iptables.service`.
 
 ### Client
 
-Users intending to use NFS4 with [Kerberos](/index.php/Kerberos "Kerberos") need to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `nfs-client.target`, which starts `rpc-gssd.service`. The rpc-gssd .service will wait until the [random number generator](/index.php/Random_number_generator "Random number generator") pool is initialized possibly delaying the boot process, make sure there is enough entropy available to avoid delays at boot time.
+Users intending to use NFS4 with [Kerberos](/index.php/Kerberos "Kerberos") need to [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `nfs-client.target`.
 
 #### Manual mounting
 

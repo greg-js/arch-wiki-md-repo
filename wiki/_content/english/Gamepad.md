@@ -701,13 +701,13 @@ To fix the button mapping of PS4 controller you can use the following command wi
 
 Dualshock 4 V1 and V2 are both like 3 devices, touchpad, motion control, and joypad.
 
-With somes softwares like Parsec and Shadow cloud gaming streaming apps, motion control is in conflict with joypad, you can disable touchpad and motion control with :
+With somes softwares like Parsec and Shadow cloud gaming streaming apps, motion control is in conflict with joypad, you can disable touchpad and motion control by adding the following udev rule :
 
-`sudo nano /etc/udev/rules.d/51-disable-DS3-and-DS4-motion-controls.rules`
-
-Then copy/paste and register :
-
-`SUBSYSTEM=="input", ATTRS{name}=="*Controller Motion Sensors", RUN+="/bin/rm %E{DEVNAME}", ENV{ID_INPUT_JOYSTICK}="" SUBSYSTEM=="input", ATTRS{name}=="*Controller Touchpad", RUN+="/bin/rm %E{DEVNAME}", ENV{ID_INPUT_JOYSTICK}=""`
+ `/etc/udev/rules.d/51-disable-DS3-and-DS4-motion-controls.rules` 
+```
+SUBSYSTEM=="input", ATTRS{name}=="*Controller Motion Sensors", RUN+="/bin/rm %E{DEVNAME}", ENV{ID_INPUT_JOYSTICK}=""
+SUBSYSTEM=="input", ATTRS{name}=="*Controller Touchpad", RUN+="/bin/rm %E{DEVNAME}", ENV{ID_INPUT_JOYSTICK}=""
+```
 
 This should work in USB and Bluetooth mode. (If you want use bluetooth mode, press "home" button and "share" button together, white led of gamepad should blink very quickly, then add wireless controller with your bluetooth manager (bluez, gnome-bluetooth...)
 

@@ -18,7 +18,6 @@ Related articles
 *   [3 Configuration](#Configuration)
     *   [3.1 Auto power-on after boot](#Auto_power-on_after_boot)
 *   [4 Audio](#Audio)
-    *   [4.1 Using your computer's speakers as a bluetooth headset](#Using_your_computer.27s_speakers_as_a_bluetooth_headset)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Deprecated BlueZ tools](#Deprecated_BlueZ_tools)
     *   [5.2 gnome-bluetooth](#gnome-bluetooth)
@@ -167,34 +166,25 @@ ExecStart=/usr/lib/bluetooth/bluetoothd --plugin=policy
 
 ## Audio
 
-In order to be able to use audio equipment like bluetooth headphones or speakers, you need to install the additional [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) package.
+In order to be able to use audio equipment like bluetooth headphones or speakers, you need to install the additional [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) package. With a default PulseAudio installation you should immediately be able to stream audio from a bluetooth device to your speakers.
+
+If you have a system-wide PulseAudio setup make sure the user running the daemon (usually `pulse`) is in the `lp` group and you load the bluetooth modules in your PulseAudio config:
+
+ `/etc/pulse/system.pa` 
+```
+...
+load-module module-bluetooth-policy
+load-module module-bluetooth-discover
+...
+```
 
 Please have a look at the [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset") page for more information about bluetooth audio and bluetooth headsets.
-
-### Using your computer's speakers as a bluetooth headset
-
-In order to enable your system to be detected as an A2DP sink (e.g. to play music from your phone via your computer speakers), add the following to the file `/etc/bluetooth/audio.conf` (create it if not present):
-
-```
-[General]
-Enable=Source
-
-```
-
-Then enable the A2DP Bluez plugin by adding the `--plugin=a2dp` flag to the `ExecStart` command in the bluetooth systemd unit file:
-
- `/etc/systemd/system/bluetooth.service.d/a2dp.conf` 
-```
-[Service]
-ExecStart=
-ExecStart=/usr/lib/bluetooth/bluetoothd --plugin=a2dp
-```
 
 ## Troubleshooting
 
 ### Deprecated BlueZ tools
 
-Eight BlueZ tools [were deprecated](https://git.kernel.org/pub/scm/bluetooth/bluez.git/commit/?id=b1eb2c4cd057624312e0412f6c4be000f7fc3617) and removed from [bluz-utils](https://www.archlinux.org/packages/?name=bluz-utils), although not all of them were superseded by newer tools. The [bluez-utils-compat](https://aur.archlinux.org/packages/bluez-utils-compat/) package provides an alternative version of [bluz-utils](https://www.archlinux.org/packages/?name=bluz-utils) with the deprecated tools.
+Eight BlueZ tools [were deprecated](https://git.kernel.org/pub/scm/bluetooth/bluez.git/commit/?id=b1eb2c4cd057624312e0412f6c4be000f7fc3617) and removed from [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils), although not all of them were superseded by newer tools. The [bluez-utils-compat](https://aur.archlinux.org/packages/bluez-utils-compat/) package provides an alternative version of [bluez-utils](https://www.archlinux.org/packages/?name=bluez-utils) with the deprecated tools.
 
 | Deprecated tool | Most likely replacement |
 | [gatttool](https://manpages.debian.org/stretch/bluez/gatttool.1.en.html) | btgatt-client, [D-Bus Gatt API](https://git.kernel.org/cgit/bluetooth/bluez.git/tree/doc/gatt-api.txt) |

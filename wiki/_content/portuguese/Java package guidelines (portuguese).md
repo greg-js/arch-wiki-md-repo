@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Java package guidelines](/index.php/Java_package_guidelines "Java package guidelines"). Data da última tradução: 2018-11-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Java_package_guidelines&diff=0&oldid=552331) na versão em inglês.
+
 **[Diretrizes de criação de pacotes](/index.php/Criando_pacotes "Criando pacotes")**
 
 * * *
@@ -35,7 +37,7 @@ O empacotamento de aplicativos Java no Arch vai levar um pouco mais de trabalho 
 
 *   Você não precisa compilar aplicativos Java do fonte. Muito pouca otimização entra no processo de compilação, como os binários criados no gcc. Se o pacote fonte fornecer uma maneira fácil de compilar a partir da fonte, vá em frente e usá-lo, mas se é mais fácil apenas pegar uma versão binária de um arquivo jar ou um instalador, você também pode usar isso.
 
-*   Coloque todos os arquivos jar (e nenhum outro arquivo) distribuídos com o programa em um diretório `/usr/share/java/meuprograma`. Isso inclui todos os arquivos jar de dependências distribuídos com o aplicativo. No entanto, o esforço deve ser feito para colocar bibliotecas de dependências comuns ou grandes em seus próprios pacotes. Isso só pode acontecer se o programa não depende de uma versão específica de uma biblioteca de dependências.
+*   Coloque todos os arquivos jar (e nenhum outro arquivo) distribuídos com o programa em um diretório `/usr/share/java/*meuprograma*`. Isso inclui todos os arquivos jar de dependências distribuídos com o aplicativo. No entanto, o esforço deve ser feito para colocar bibliotecas de dependências comuns ou grandes em seus próprios pacotes. Isso só pode acontecer se o programa não depende de uma versão específica de uma biblioteca de dependências.
 
 	Esta regra possibilita refatorar iterativamente as dependências. Ou seja, o pacote e todas as suas dependências podem ser colocados em um diretório no primeiro momento. Depois disso, as principais dependências podem ser refatoradas uma a uma. Observe que alguns aplicativos incluem dependências agrupadas dentro do arquivo jar principal. Ou seja, eles desfazem o jar das dependências agrupadas e as incluem no jar principal. Tais dependências geralmente são muito pequenas e há pouco interesse em refaturá-las.
 
@@ -45,24 +47,24 @@ O empacotamento de aplicativos Java no Arch vai levar um pouco mais de trabalho 
 
 ```
 #!/bin/sh
-exec /usr/bin/java -jar '/usr/share/java/NOMEPROGRAMA/NOMEPROGRAMA.jar' "$@"
+exec /usr/bin/java -jar '/usr/share/java/*meuprograma*/*meuprograma*.jar' "$@"
 ```
 
 	e como isso para arquivos com uma única classe:
 
 ```
 #!/bin/sh
-exec /usr/bin/java '/usr/share/java/NOMEPROGRAMA/NOMECLASSEPROGRAMA' "$@"
+exec /usr/bin/java '/usr/share/java/*meuprograma*/*classedomeuprograma'* "$@"
 ```
 
 *   Defina o `CLASSPATH` usando a opção `-cp` para o interpretador Java a menos que haja um motivo explícito para não fazer isso (por exemplo, o `CLASSPATH` é usado como um mecanismo de plugin). O `CLASSPATH` deve incluir todos os arquivos jar no diretório `/usr/share/java/meuprograma`, bem como arquivos jar que são de bibliotecas de dependências que foram refatoradas para outros diretórios. Você pode usar alguma coisa como o código a seguir:
 
 ```
-for nome in /usr/share/java/meuprograma/*.jar ; do
+for nome in /usr/share/java/*meuprograma*/*.jar ; do
   CP=$CP:$nome
 done
 CP=$CP:/usr/share/java/dep1/dep1.jar
-java -cp $CP meuprograma.java.MainClass
+java -cp $CP *meuprograma*.java.MainClass
 ```
 
 *   Certifique-se de que o script shell é executável!
@@ -94,15 +96,15 @@ Os pacotes Java podem especificar `java-runtime` ou `java-environment` como depe
 
 Para a maioria dos pacotes, `java-runtime` é o que é necessário para simplesmente executar software escrito em Java. `java-runtime` é uma dependência virtual fornecida por:
 
-*   [jre9-openjdk](https://www.archlinux.org/packages/?name=jre9-openjdk) (livre)
+*   [jre10-openjdk](https://www.archlinux.org/packages/?name=jre10-openjdk) (livre)
 *   [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) (livre)
 *   [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) (livre)
 *   [java-gcj-compat](https://aur.archlinux.org/packages/java-gcj-compat/) (livre)
 *   [jre](https://aur.archlinux.org/packages/jre/) (não livre)
 
-`java-environment` (ex.: JDK) é necessário por pacotes que vão precisar o código fonte Java em código de bytes. `java-environment` é uma dependência virtual fornecida por:
+`java-environment` (p.ex., JDK) é necessário por pacotes que vão precisar o código fonte Java em código de bytes. `java-environment` é uma dependência virtual fornecida por:
 
-*   [jdk9-openjdk](https://www.archlinux.org/packages/?name=jdk9-openjdk) (livre)
+*   [jdk10-openjdk](https://www.archlinux.org/packages/?name=jdk10-openjdk) (livre)
 *   [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) (livre)
 *   [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) (livre)
 *   [jdk](https://aur.archlinux.org/packages/jdk/) (não livre)

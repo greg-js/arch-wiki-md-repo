@@ -601,7 +601,7 @@ pulseaudio --start
 
 ```
 
-and check if the module is activated by starting `pavucontrol`. Under `Recoding` the input device should show `Echo-Cancel Source Stream from"`.
+and check if the module is activated by starting `pavucontrol`. Under `Recording` the input device should show `Echo-Cancel Source Stream from"`.
 
 If you want existing streams to be automatically moved to the new sink and source, you have to load the [module-switch-on-connect](#Automatically_switch_to_Bluetooth_or_USB_headset) with `ignore_virtual=no` before.
 

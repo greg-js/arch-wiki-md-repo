@@ -273,9 +273,10 @@ where *desktop-name* can be option such as *GNOME*, *Xfce*, *KDE* etc. A desktop
 
 ### Modify environment variables
 
-Edit the `Exec` command by prepending `env`, for example:
+Edit the `Exec=` command line by prepending *env*, for example:
 
  `~/.local/share/applications/abiword.desktop`  `Exec=env LANG=he_IL.UTF-8 abiword %U` 
+**Tip:** It may be preferable to copy the `.desktop` file to the `~/.local/share/applications/` directory instead of modifying it in the `/usr/share/applications/` one.
 
 ## See also
 

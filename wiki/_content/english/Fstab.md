@@ -37,10 +37,11 @@ A simple `/etc/fstab`, using kernel name descriptors:
 
  `/etc/fstab` 
 ```
-# <device>             <dir>         <type>    <options>             <dump> <fsck>
-/dev/sda1              /             ext4      noatime               0      1
-/dev/sda2              none          swap      defaults              0      0
-/dev/sda3              /home         ext4      noatime               0      2
+# <device>        <dir>        <type>        <options>        <dump> <fsck>
+/dev/sda1         /            ext4          noatime          0      1
+/dev/sda2         none         swap          defaults         0      0
+/dev/sda3         /home        ext4          noatime          0      2
+
 ```
 
 *   `<device>` describes the block special device or remote filesystem to be mounted; see [#Identifying filesystems](#Identifying_filesystems).
@@ -70,11 +71,11 @@ Run `lsblk -f` to list the partitions and prefix the values in the *NAME* column
 
  `/etc/fstab` 
 ```
-# <device>      <dir> <type> <options>                                                                                            <dump> <fsck>
-/dev/sda1       /boot vfat   defaults                                                                                             0      2
-/dev/sda2       /     ext4   defaults                                                                                             0      1
-/dev/sda3       /home ext4   defaults                                                                                             0      2
-/dev/sda4       none  swap   defaults                                                                                             0      0
+# <device>        <dir>        <type>        <options>        <dump> <fsck>
+/dev/sda1         /boot        vfat          defaults         0      2
+/dev/sda2         /            ext4          defaults         0      1
+/dev/sda3         /home        ext4          defaults         0      2
+/dev/sda4         none         swap          defaults         0      0
 
 ```
 
@@ -84,11 +85,11 @@ Run `lsblk -f` to list the partitions, and prefix the values in the *LABEL* colu
 
  `/etc/fstab` 
 ```
-# <device>      <dir> <type> <options>                                                                                            <dump> <fsck>
-LABEL=EFI       /boot vfat   defaults                                                                                             0      2
-LABEL=SYSTEM    /     ext4   defaults                                                                                             0      1
-LABEL=DATA      /home ext4   defaults                                                                                             0      2
-LABEL=SWAP      none  swap   defaults                                                                                             0      0
+# <device>        <dir>        <type>        <options>        <dump> <fsck>
+LABEL=EFI         /boot        vfat          defaults         0      2
+LABEL=SYSTEM      /            ext4          defaults         0      1
+LABEL=DATA        /home        ext4          defaults         0      2
+LABEL=SWAP        none         swap          defaults         0      0
 
 ```
 
@@ -100,11 +101,11 @@ Run `lsblk -f` to list the partitions, and prefix the values in the *UUID* colum
 
  `/etc/fstab` 
 ```
-# <device>                                <dir> <type> <options>                                                                                            <dump> <fsck>
-UUID=CBB6-24F2                            /boot vfat   defaults                                                                                             0      2
-UUID=0a3407de-014b-458b-b5c1-848e92a327a3 /     ext4   defaults                                                                                             0      1
-UUID=b411dc99-f0a0-4c87-9e05-184977be8539 /home ext4   defaults                                                                                             0      2
-UUID=f9fe0b69-a280-415d-a03a-a32752370dee none  swap   defaults                                                                                             0      0
+# <device>                                <dir> <type> <options> <dump> <fsck>
+UUID=CBB6-24F2                            /boot vfat   defaults  0      2
+UUID=0a3407de-014b-458b-b5c1-848e92a327a3 /     ext4   defaults  0      1
+UUID=b411dc99-f0a0-4c87-9e05-184977be8539 /home ext4   defaults  0      2
+UUID=f9fe0b69-a280-415d-a03a-a32752370dee none  swap   defaults  0      0
 
 ```
 
@@ -116,11 +117,11 @@ Run `blkid` to list the partitions, and use the *PARTLABEL* values without the q
 
  `/etc/fstab` 
 ```
-# <device>                           <dir> <type> <options>                                                                                            <dump> <fsck>
-PARTLABEL=EFI\040SYSTEM\040PARTITION /boot vfat   defaults                                                                                             0      2
-PARTLABEL=GNU/LINUX                  /     ext4   defaults                                                                                             0      1
-PARTLABEL=HOME                       /home ext4   defaults                                                                                             0      2
-PARTLABEL=SWAP                       none  swap   defaults                                                                                             0      0
+# <device>                           <dir> <type> <options> <dump> <fsck>
+PARTLABEL=EFI\040SYSTEM\040PARTITION /boot vfat   defaults  0      2
+PARTLABEL=GNU/LINUX                  /     ext4   defaults  0      1
+PARTLABEL=HOME                       /home ext4   defaults  0      2
+PARTLABEL=SWAP                       none  swap   defaults  0      0
 
 ```
 
@@ -132,11 +133,11 @@ Run `blkid` to list the partitions, and use the *PARTUUID* values without the qu
 
  `/etc/fstab` 
 ```
-# <device>                                    <dir> <type> <options>                                                                                          <dump> <fsck>
-PARTUUID=d0d0d110-0a71-4ed6-936a-304969ea36af /boot vfat   defaults                                                                                           0      2
-PARTUUID=98a81274-10f7-40db-872a-03df048df366 /     ext4   defaults                                                                                           0      1
-PARTUUID=7280201c-fc5d-40f2-a9b2-466611d3d49e /home ext4   defaults                                                                                           0      2
-PARTUUID=039b6c1c-7553-4455-9537-1befbc9fbc5b none  swap   defaults                                                                                           0      0
+# <device>                                    <dir> <type> <options> <dump> <fsck>
+PARTUUID=d0d0d110-0a71-4ed6-936a-304969ea36af /boot vfat   defaults  0      2
+PARTUUID=98a81274-10f7-40db-872a-03df048df366 /     ext4   defaults  0      1
+PARTUUID=7280201c-fc5d-40f2-a9b2-466611d3d49e /home ext4   defaults  0      2
+PARTUUID=039b6c1c-7553-4455-9537-1befbc9fbc5b none  swap   defaults  0      0
 
 ```
 
@@ -174,7 +175,11 @@ noauto,x-systemd.automount,x-systemd.device-timeout=30,_netdev
 
 If you have encrypted filesystems with keyfiles, you can also add the `noauto` parameter to the corresponding entries in `/etc/crypttab`. *systemd* will then not open the encrypted device on boot, but instead wait until it is actually accessed and then automatically open it with the specified keyfile before mounting it. This might save a few seconds on boot if you are using an encrypted RAID device for example, because systemd does not have to wait for the device to become available. For example:
 
- `/etc/crypttab`  `data /dev/md0 /root/key noauto` 
+ `/etc/crypttab` 
+```
+data /dev/md0 /root/key noauto
+
+```
 
 You may also specify an idle timeout for a mount with the `x-systemd.idle-timeout` flag. For example:
 
@@ -213,12 +218,9 @@ UUID=47FA-4071     /home/username/Camera<font color="grey">\040</font>Pictures  
 Below atime options can impact drive performance.
 
 *   The `strictatime` option updates the access time of the files every time they are accessed. This is more purposeful when Linux is used for servers; it does not have much value for desktop use. The drawback about the `strictatime` option is that even reading a file from the page cache (reading from memory instead of the drive) will still result in a write!
-
 *   The `noatime` option fully disables writing file access times to the drive every time you read a file. This works well for almost all applications, except for those that need to know if a file has been read since the last time it was modified. The write time information to a file will continue to be updated anytime the file is written to with this option enabled.
-
 *   The `nodiratime` option disables the writing of file access times only for directories while other files still get access times written.
-
-**Note:** `noatime` implies `nodiratime`. [You do not need to specify both](http://lwn.net/Articles/244941/).
+    **Note:** `noatime` implies `nodiratime`. [You do not need to specify both](http://lwn.net/Articles/244941/).
 
 *   `relatime` updates the access time only if the previous access time was earlier than the current modify or change time. In addition, since Linux 2.6.30, the access time is always updated if the previous access time was more than 24 hours old. This option is used when the `defaults` option, `atime` option (which means to use the kernel default, which is `relatime`; see [mount(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8) and [wikipedia:Stat (system call)#Criticism of atime](https://en.wikipedia.org/wiki/Stat_(system_call)#Criticism_of_atime "wikipedia:Stat (system call)")) or no options at all are specified.
 
@@ -246,4 +248,3 @@ If for some reason the root partition has been improperly mounted read only, rem
 *   [Full device listing including block device](http://www.kernel.org/pub/linux/docs/lanana/device-list/devices-2.6.txt)
 *   [Filesystem Hierarchy Standard](http://www.pathname.com/fhs/2.2/index.html)
 *   [30x Faster Cache and Site Speed with TMPFS](https://www.askapache.com/optimize/super-speed-secrets/)
-*   [Adding Samba shares to /etc/fstab](/index.php/Samba#As_mount_entry "Samba")

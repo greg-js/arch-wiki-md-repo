@@ -15,7 +15,8 @@ This document covers standards and guidelines on writing [PKGBUILDs](/index.php/
     *   [4.1 distutils](#distutils)
     *   [4.2 setuptools](#setuptools)
     *   [4.3 pip](#pip)
-*   [5 Notes](#Notes)
+*   [5 Check](#Check)
+*   [6 Notes](#Notes)
 
 ## Package naming
 
@@ -112,6 +113,53 @@ python -O -m compileall "${pkgdir}/path/to/module"
 ```
 
 **Warning:** Use of *pip* and/or wheel packages is discouraged in favor of setuptools source packages, and should only be used when the latter is not a viable option (for example, packages which **only** come with wheel sources, and therefore cannot be installed using setuptools).
+
+## Check
+
+Most python projects providing a testsuite use nosetests or pytest to run tests with `test` in the name of the file or directory containing the testsuite. In general, simply running `nosetests` or `pytest` is enough to run the testsuite.
+
+```
+ check(){
+   cd "$srcdir/foo-$pkgver"
+
+   # For nosetests
+   nosetests
+
+   # For pytest
+   pytest
+ }
+
+```
+
+If there is a compiled C extension, the tests need to be run using a `$PYTHONPATH` hack in order to find and load it.
+
+```
+ check(){
+   cd "$srcdir/foo-$pkgver"
+
+   # For nosetests
+   PYTHONPATH="$PWD/build/lib.linux-$CARCH-3.7" nosetests
+
+   # For pytest
+   PYTHONPATH="$PWD/build/lib.linux-$CARCH-3.7" pytest
+ }
+
+```
+
+Some projects provide `setup.py` entry points for running the test. This works for both `pytest` and `nosetests`.
+
+```
+ check(){
+   cd "$srcdir/foo-$pkgver"
+
+   # For nosetests
+   python setup.py nosetests
+
+   # For pytest - needs python-pytest-runner
+   python setup.py pytest
+ }
+
+```
 
 ## Notes
 

@@ -205,7 +205,7 @@ install CD version
 | [Lenovo IdeaPad Z580](/index.php/Lenovo_IdeaPad_Z580 "Lenovo IdeaPad Z580") | Yes | Yes | Yes | Yes | Yes | Yes | Yes | NA |
 | [Lenovo IdeaPad 720s](/index.php/Lenovo_IdeaPad_720s "Lenovo IdeaPad 720s") | 2018.03.01 | Yes | Yes | NA* | Yes | Yes | Yes | NA | Fingerprint reader not working | *requires USB or USB C dongle |
 | [Lenovo IdeaPad 720s (Ryzen)](/index.php/Lenovo_IdeaPad_720s_(Ryzen) "Lenovo IdeaPad 720s (Ryzen)") | 2018.02.01 | Not tested | Not tested | Yes* | No | Not tested | Not tested | NA | Fingerprint reader not tested but most likely not working | *requires USB or USB C dongle |
-| Lenovo Ideapad 320 | 2018.03.01 | Not tested | Not tested | Yes | Not tested | Not tested | Not tested | NA | To stop constant annoying messages by AMD-Vi, use 'iommu=soft' & 'amd_iommu=off' in kernel arguments |
+| Lenovo Ideapad 320 | 2018.03.01 | Yes | Yes | Yes | Yes | Not tested | Not tested | NA | To stop constant annoying messages by AMD-Vi, use 'iommu=soft' & 'amd_iommu=off' in kernel arguments |
 | Lenovo Ideapad N24 | 2018.04.01 | Yes | Yes | NA | Yes | Not tested | Not tested | NA | Touchscreen |
 
 ### B series

@@ -2,17 +2,21 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/ImageMagick "wikipedia:Im
 
 	ImageMagick is a free and open-source software suite for displaying, converting, and editing raster image and vector image files. It can read and write over 200 image file formats.
 
+**Note:** Parsing PDF, EPS, PS and XPS is currently disabled due to its inherent insecurity [FS#59778](https://bugs.archlinux.org/task/59778). It might be re-enabled by changing the following line in `/etc/ImageMagick-7/policy.xml`:
+```
+<policy domain="coder" rights="none" pattern="{PS,PS2,PS3,EPS,PDF,XPS}" />
+
+```
+
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Usage](#Usage)
-    *   [2.1 Taking a screenshot](#Taking_a_screenshot)
-        *   [2.1.1 of multiple X screens](#of_multiple_X_screens)
-        *   [2.1.2 of individual Xinerama heads](#of_individual_Xinerama_heads)
-        *   [2.1.3 of the active/focused window](#of_the_active.2Ffocused_window)
-*   [3 Troubleshooting](#Troubleshooting)
-    *   [3.1 Documents](#Documents)
-*   [4 See also](#See_also)
+    *   [2.1 Screenshot taking](#Screenshot_taking)
+        *   [2.1.1 Screenshot of multiple X screens](#Screenshot_of_multiple_X_screens)
+        *   [2.1.2 Screenshot of individual Xinerama heads](#Screenshot_of_individual_Xinerama_heads)
+        *   [2.1.3 Screenshot of the active/focused window](#Screenshot_of_the_active.2Ffocused_window)
+*   [3 See also](#See_also)
 
 ## Installation
 
@@ -40,7 +44,7 @@ $ mogrify -crop *WIDTH***x***HEIGHT*+*X*+*Y* -format jpg *.png
 
 Where *WIDTH* and *HEIGHT* is the cropped output image size, and *X* and *Y* is the offset from the input image size.
 
-### Taking a screenshot
+### Screenshot taking
 
 An easy way to take a screenshot of your current system is using the [import(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/import.1) command:
 
@@ -55,7 +59,7 @@ Running `import` without the `-window` option allows selecting a window or an ar
 
 **Note:** If you prefer **graphicsmagick** alternative, just prepend "gm", e.g. `$ gm import -window root screenshot.jpg`.
 
-#### of multiple X screens
+#### Screenshot of multiple X screens
 
 If you run twinview or dualhead, simply take the screenshot twice and use `imagemagick` to paste them together:
 
@@ -67,7 +71,7 @@ rm /tmp/{0,1}.png
 
 ```
 
-#### of individual Xinerama heads
+#### Screenshot of individual Xinerama heads
 
 Xinerama-based multi-head setups have only one virtual screen. If the physical screens are different in height, you will find dead space in the screenshot. In this case, you may want to take screenshot of each physical screen individually. As long as Xinerama information is available from the X server, the following will work:
 
@@ -80,7 +84,7 @@ done
 
 ```
 
-#### of the active/focused window
+#### Screenshot of the active/focused window
 
 The following script takes a screenshot of the currently focused window. It works with EWMH/NetWM compatible X Window Managers. To avoid overwriting previous screenshots, the current date is used as the filename.
 
@@ -100,17 +104,6 @@ $ import -window "$(xdotool getwindowfocus -f)" /tmp/$(date +%F_%H%M%S_%N).png
 ```
 
 **Note:** If screenshots of some programs (dwb and zathura) appear blank, try appending `-frame` or removing `-f` from the `xdotool` command.
-
-## Troubleshooting
-
-### Documents
-
-Parsing PDF, EPS, PS and XPS is currently disabled due to its inherent insecurity [FS#59778](https://bugs.archlinux.org/task/59778). It might be re-enabled by changing the following line in `/etc/ImageMagick-7/policy.xml`:
-
-```
-<policy domain="coder" rights="none" pattern="{PS,PS2,PS3,EPS,PDF,XPS}" />
-
-```
 
 ## See also
 

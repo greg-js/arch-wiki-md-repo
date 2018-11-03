@@ -53,7 +53,7 @@ Alternatively, there are several ways to accomplish this:
 
 #### Spellchecker
 
-For spellchecking you will need [hunspell](https://www.archlinux.org/packages/?name=hunspell) and dictionary for hunspell (like [hunspell-en](https://www.archlinux.org/packages/?name=hunspell-en), [hunspell-de](https://www.archlinux.org/packages/?name=hunspell-de), etc), for hyphenation rules you will need [hyphen](https://www.archlinux.org/packages/?name=hyphen) ([hyphen-en](https://www.archlinux.org/packages/?name=hyphen-en), [hyphen-de](https://www.archlinux.org/packages/?name=hyphen-de), etc) and for a thesaurus, [libmythes](https://www.archlinux.org/packages/?name=libmythes).
+For spellchecking you will need [hunspell](https://www.archlinux.org/packages/?name=hunspell) and dictionary for hunspell (like [hunspell-en_US](https://www.archlinux.org/packages/?name=hunspell-en_US), [hunspell-de](https://www.archlinux.org/packages/?name=hunspell-de), etc), for hyphenation rules you will need [hyphen](https://www.archlinux.org/packages/?name=hyphen) ([hyphen-en](https://www.archlinux.org/packages/?name=hyphen-en), [hyphen-de](https://www.archlinux.org/packages/?name=hyphen-de), etc) and for a thesaurus, [libmythes](https://www.archlinux.org/packages/?name=libmythes).
 
 #### Other extensions installed by default
 

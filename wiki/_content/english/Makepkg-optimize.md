@@ -74,7 +74,7 @@ $ arch-nspawn "$CHROOT"/root pacman -U /root/nodejs-svgo-1.1.1-1-any.pkg.tar.xz
 
 #### Create a profile-guided optimization cache
 
-First, create a folder in the same place, inside and outside of the chroot, to store [profiles](https://en.wikipedia.org/wiki/Profile-guided_optimization "wikipedia:Profile-guided optimization"):
+First, create a folder in the same place, inside and outside of the chroot, to store [profiles](https://gcc.gnu.org/onlinedocs/gcc/Gcov-Data-Files.html):
 
 ```
 # mkdir -m 777 {"$CHROOT"/root,}/mnt/pgo

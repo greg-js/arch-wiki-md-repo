@@ -32,10 +32,10 @@
 
 从[2012-10-13版安装介质](https://www.archlinux.org/news/systemd-is-now-the-default-on-new-installations/)开始，安装程序已经默认安装[systemd](https://www.archlinux.org/packages/?name=systemd) 和 [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat)。本部分帮助还在使用[sysvinit](https://aur.archlinux.org/packages/sysvinit/) 和 initscripts 的用户迁移到 **systemd**.
 
-**注意:** 如果是在 VPS 中使用 Arch，请先阅读：[Virtual Private Server#Moving_your_VPS_from_initscripts_to_systemd](/index.php/Virtual_Private_Server#Moving_your_VPS_from_initscripts_to_systemd "Virtual Private Server")。
+**注意:** 如果是在 VPS 中使用 Arch，请先阅读：[Arch Linux VPS](/index.php/Arch_Linux_VPS "Arch Linux VPS")。
 
 *   阅读[该站](http://freedesktop.org/wiki/Software/systemd/)，了解 systemd。
-*   systemd 自己有一套日志（**journal**）系统，用于代替 **syslog**。两者也可以共存，参见后面的[日志部分](#.E6.97.A5.E5.BF.97)。
+*   systemd 自己有一套日志（**journal**）系统，用于代替 **syslog**。
 *   虽然 systemd 可以替换 **cron**、**acpid**、**xinetd** 等的部分功能。至少目前还可以继续使用这些服务，无需立即切换。
 *   交互式 initscripts 启动脚本在 systemd 中无法工作。
 

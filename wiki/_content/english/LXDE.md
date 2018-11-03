@@ -34,7 +34,6 @@ From project [home page](http://lxde.org/):
     *   [3.9 LXPanel icons](#LXPanel_icons)
     *   [3.10 LXPanel menus](#LXPanel_menus)
     *   [3.11 Use a different window manager](#Use_a_different_window_manager)
-    *   [3.12 Shutdown, reboot, suspend and hibernate options (LXSession-logout)](#Shutdown.2C_reboot.2C_suspend_and_hibernate_options_.28LXSession-logout.29)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 NTFS with Chinese characters](#NTFS_with_Chinese_characters)
     *   [4.2 LXPanel crashes with some themes or browsing particular web pages](#LXPanel_crashes_with_some_themes_or_browsing_particular_web_pages)
@@ -214,10 +213,6 @@ window_manager=compiz
 Alternatively, you can autostart `wm --replace` using the method defined in [#Lxsession](#Lxsession) where *wm* is the name of the window manager executable being started. This method does mean that Openbox will be started first on each login and will then immediately be replaced by the autostarted window manager.
 
 Note that since openbox dispatches the desktop-wide keyboard shortcuts in LXDE, users who want to replace it and still use these shortcuts will need to reimplement this functionality themselves. A good option is [xbindkeys](/index.php/Xbindkeys "Xbindkeys").
-
-### Shutdown, reboot, suspend and hibernate options (LXSession-logout)
-
-This requires installation of [upower](https://www.archlinux.org/packages/?name=upower).
 
 ## Troubleshooting
 

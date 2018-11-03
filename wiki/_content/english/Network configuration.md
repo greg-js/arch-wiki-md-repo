@@ -70,10 +70,10 @@ To troubleshoot a network connection, go through the following conditions and en
 3.  Your network interface has an [IP address](#IP_addresses).
 4.  Your [routing table](#Routing_table) is correctly set up.
 5.  You can [ping](#Ping) a local IP address (e.g. your default gateway).
-6.  You can [ping](#Ping) a public IP address (e.g. `8.8.8.8`), if you cannot it may be related to your default gateway or your internet service provider.
+6.  You can [ping](#Ping) a public IP address (e.g. `8.8.8.8`).
 7.  [Check if you can resolve domain names](/index.php/Check_if_you_can_resolve_domain_names "Check if you can resolve domain names") (e.g. `archlinux.org`).
 
-**Tip:** `8.8.8.8` is a static address that is easy to remember. It is the address of Google's primary DNS server, therefore it can be considered reliable, and is generally not blocked by content filtering systems and proxies.
+**Tip:** `8.8.8.8` is Google's DNS server and is easy to remember.
 
 ### Ping
 
@@ -88,11 +88,9 @@ PING www.example.com (93.184.216.34): 56(84) data bytes
 ...
 ```
 
-For every reply you receive ping prints a line like above. For more information see the [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) manual.
+For every reply you receive, the ping utility will print a line like the above. For more information see the [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8) manual. Note that computers can be configured not to respond to ICMP echo requests. [[1]](https://unix.stackexchange.com/questions/412446/how-to-disable-ping-response-icmp-echo-in-linux-all-the-time)
 
-Note that computers can be configured not to respond to ICMP echo requests.[[1]](https://unix.stackexchange.com/questions/412446/how-to-disable-ping-response-icmp-echo-in-linux-all-the-time)
-
-When you receive no reply, you can run a [traceroute](/index.php/Traceroute "Traceroute") to further diagnose the route to the host.
+If you receive no reply, this may be related to your default gateway or your Internet Service Provider (ISP). You can run a [traceroute](/index.php/Traceroute "Traceroute") to further diagnose the route to the host.
 
 **Note:** If you receive an error like `ping: icmp open socket: Operation not permitted` when executing *ping*, try to re-install the [iputils](https://www.archlinux.org/packages/?name=iputils) package.
 

@@ -100,27 +100,19 @@ GRANT ALL ON mattermostdb.* TO mmuser;
 
 1\. [Install](/index.php/PostgreSQL#Installation "PostgreSQL") and [configure](/index.php/PostgreSQL#Initial_configuration "PostgreSQL") [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
 
-2\. Connect to the server as user `postgres`:
-
-	 `sudo -u postgres psql` 
-
-3.a. Create the Mattermost database:
-
-	 `CREATE DATABASE mattermostdb;` 
+2\. Choose between TCP or UNIX Socket, and jump to the corresponding section.
 
 **Note:** When Mattermost and PostgreSQL are on the same machine, you should use a Unix socket, as it is faster and more secure.
 
 #### With TCP socket
 
-3.b. Create `mmuser` user and give it the rights on the database:
+3\. Create the new user while connecting to the server as `postgres` user (you will be prompted for a password for the new user):
 
-```
-CREATE USER mmuser WITH PASSWORD 'mmuser_password';
-GRANT ALL PRIVILEGES ON DATABASE mattermostdb to mmuser;
+	 `sudo -u postgres createuser -P mmuser` 
 
-```
+4\. Create the Gitea database, owned by `mmuser` user:
 
-4\. Exit out of `psql` with `\q`.
+	 `sudo -u postgres createdb -O mmuser mattermostdb` 
 
 5\. [PostgreSQL#Configure PostgreSQL to be accessible from remote hosts](/index.php/PostgreSQL#Configure_PostgreSQL_to_be_accessible_from_remote_hosts "PostgreSQL")
 
@@ -130,15 +122,13 @@ GRANT ALL PRIVILEGES ON DATABASE mattermostdb to mmuser;
 
 #### With Unix socket
 
-3.b. Create `mattermost` user and give it the rights on the database:
+3\. Create the new user while connecting to the server as `postgres` user:
 
-```
-CREATE USER mattermost;
-GRANT ALL PRIVILEGES ON DATABASE mattermostdb to mattermost;
+	 `sudo -u postgres createuser mattermost` 
 
-```
+4\. Create the Gitea database, owned by `mattermost` user:
 
-4\. Exit out of `psql` with `\q`.
+	 `sudo -u postgres createdb -O mattermost mattermostdb` 
 
 5\. Setup the Unix socket by adding the following line to `/var/lib/postgres/data/pg_hba.conf`:
 
@@ -149,8 +139,6 @@ GRANT ALL PRIVILEGES ON DATABASE mattermostdb to mattermost;
 7\. Verify it works:
 
 	 `$ sudo -u mattermost psql --dbname=mattermostdb --username=mattermost` 
-
-Continue with [#Setting up Mattermost](#Setting_up_Mattermost).
 
 ### Configuring Mattermost
 

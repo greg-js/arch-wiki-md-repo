@@ -63,7 +63,7 @@ tor = always
 
 ## Creating ZeroNet sites
 
-All operations, including editing ZeroNet site files, should be done as user `zeronet`. Use `--config_file` to specify the configuration file. `/etc/zeronet.conf` use `/var/lib/zeronet` as data directory by defaul. For example:
+All operations, including editing ZeroNet site files, should be done as user `zeronet`. Use `--config_file` to specify the configuration file. `/etc/zeronet.conf` use `/var/lib/zeronet` as data directory by default. For example:
 
 ```
 $ sudo -u zeronet python2 zeronet.py --config_file /etc/zeronet.conf

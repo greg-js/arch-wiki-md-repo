@@ -1,6 +1,6 @@
 **Note:** [https://julialang.org/](https://julialang.org/) contiene una documentación magnífica y de código abierto. La información no específica a Arch debería aportarse allí.
 
-[Julia](https://julialang.org/) es un lenguaje de programación dinámico de alto nivel y alto rendimiento para computación numérica. Proporciona un sofisticado compilador, ejecución paralela distribuida, precisión numérica y una extensa biblioteca de funciones matemáticas.
+[Julia](https://julialang.org/) es un lenguaje de programación dinámico de alto nivel y alto rendimiento para computación numérica. Proporciona un sofisticado compilador, ejecución paralela distribuida, precisión numérica y una extensa librería de funciones matemáticas.
 
 ## Contents
 

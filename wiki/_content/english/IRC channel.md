@@ -51,12 +51,12 @@ To register with NickServ, follow the [freenode FAQ](https://freenode.net/kb/ans
 
 Arch operators are ops in both **#archlinux** and **#archlinux-offtopic**. See the list below, or run `/msg phrik listops` on freenode.
 
-If you for some reason need the help of an op, do not be shy to `/query` or `/msg` us. Here is the list of ops as of 8 Feb 2016:
+If you for some reason need the help of an op, do not be shy to `/query` or `/msg` us. Here is the list of ops as of 1 Nov 2018:
 
 *   alad
-*   brain0
+*   amcrae
 *   falconindy
-*   gehidore
+*   gehidore / man
 *   grawity
 *   heftig
 *   jelle

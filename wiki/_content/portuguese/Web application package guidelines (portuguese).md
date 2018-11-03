@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Web application package guidelines](/index.php/Web_application_package_guidelines "Web application package guidelines"). Data da última tradução: 2018-11-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Web_application_package_guidelines&diff=0&oldid=552529) na versão em inglês.
+
 **[Diretrizes de criação de pacotes](/index.php/Criando_pacotes "Criando pacotes")**
 
 * * *

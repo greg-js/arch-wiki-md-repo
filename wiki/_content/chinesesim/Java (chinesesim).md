@@ -7,7 +7,7 @@ Related articles
 
 	Java是由Sun微系统公司原创开发的编程语言并且在1995年发布，用作Sun微系统公司的Java平台的核心组件。它从C和C++派生了许多语法，但有一个简洁的对象模型和更少的底层组件。Java的应用一般被编译成能在([JVM](https://en.wikipedia.org/wiki/Java_virtual_machine "wikipedia:Java virtual machine"))运行的字节码，并能无视计算机结构。
 
-Arch Linux官方支持开源的 [OpenJDK](http://openjdk.java.net/) 版本7、8和10.所有的JVM都能无冲突的被安装，并切换到帮助脚本`archlinux-java`. 一些其他的Java环境也是可使用的，在 [Arch User Repository (简体中文)](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")中，但官方并不支持。
+Arch Linux官方支持开源的 [OpenJDK](https://openjdk.java.net/) 版本7、8、10和11.所有的JVM都能无冲突的被安装，并切换到帮助脚本`archlinux-java`. 一些其他的Java环境也是可使用的，在 [Arch User Repository (简体中文)](/index.php/Arch_User_Repository_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch User Repository (简体中文)")中，但官方并不支持。
 
 ## Contents
 
@@ -69,9 +69,10 @@ Arch Linux官方支持开源的 [OpenJDK](http://openjdk.java.net/) 版本7、8�
 	[Java Development Kit](https://en.wikipedia.org/wiki/Java_Development_Kit "wikipedia:Java Development Kit") - 需要用来搭建Java开发环境, 依赖于 full JRE.
 
 | 版本 | Headless JRE | Full JRE | JDK | 文献 | 来源 |
-| [OpenJDK 10](http://openjdk.java.net/projects/jdk/10/) | [jre10-openjdk-headless](https://www.archlinux.org/packages/?name=jre10-openjdk-headless) | [jre10-openjdk](https://www.archlinux.org/packages/?name=jre10-openjdk) | [jdk10-openjdk](https://www.archlinux.org/packages/?name=jdk10-openjdk) | [openjdk10-doc](https://www.archlinux.org/packages/?name=openjdk10-doc) | [openjdk10-src](https://www.archlinux.org/packages/?name=openjdk10-src) |
-| [OpenJDK 8](http://openjdk.java.net/projects/jdk8/) | [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) | [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) | [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) | [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) | [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src) |
-| [OpenJDK 7](http://openjdk.java.net/projects/jdk7/) | [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) | [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) | [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) | [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) | [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src) |
+| [OpenJDK 11](https://openjdk.java.net/projects/jdk/11/) | [jre-openjdk-headless](https://www.archlinux.org/packages/?name=jre-openjdk-headless) | [jre-openjdk](https://www.archlinux.org/packages/?name=jre-openjdk) | [jdk-openjdk](https://www.archlinux.org/packages/?name=jdk-openjdk) | [openjdk-doc](https://www.archlinux.org/packages/?name=openjdk-doc) | [openjdk-src](https://www.archlinux.org/packages/?name=openjdk-src) |
+| [OpenJDK 10](https://openjdk.java.net/projects/jdk/10/) | [jre10-openjdk-headless](https://www.archlinux.org/packages/?name=jre10-openjdk-headless) | [jre10-openjdk](https://www.archlinux.org/packages/?name=jre10-openjdk) | [jdk10-openjdk](https://www.archlinux.org/packages/?name=jdk10-openjdk) | [openjdk10-doc](https://www.archlinux.org/packages/?name=openjdk10-doc) | [openjdk10-src](https://www.archlinux.org/packages/?name=openjdk10-src) |
+| [OpenJDK 8](https://openjdk.java.net/projects/jdk8/) | [jre8-openjdk-headless](https://www.archlinux.org/packages/?name=jre8-openjdk-headless) | [jre8-openjdk](https://www.archlinux.org/packages/?name=jre8-openjdk) | [jdk8-openjdk](https://www.archlinux.org/packages/?name=jdk8-openjdk) | [openjdk8-doc](https://www.archlinux.org/packages/?name=openjdk8-doc) | [openjdk8-src](https://www.archlinux.org/packages/?name=openjdk8-src) |
+| [OpenJDK 7](https://openjdk.java.net/projects/jdk7/) | [jre7-openjdk-headless](https://www.archlinux.org/packages/?name=jre7-openjdk-headless) | [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) | [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) | [openjdk7-doc](https://www.archlinux.org/packages/?name=openjdk7-doc) | [openjdk7-src](https://www.archlinux.org/packages/?name=openjdk7-src) |
 
 **IcedTea-Web** — Java web第一步 但是是一个被弃用的Java浏览器插件.
 
@@ -79,21 +80,21 @@ Arch Linux官方支持开源的 [OpenJDK](http://openjdk.java.net/) 版本7、8�
 
 **OpenJFX 8** — JavaFX的开源实现. 你[不需要](https://wiki.openjdk.java.net/display/OpenJFX/Repositories+and+Releases) 安装这个包，如果你使用Java SE的话 (下面要讲的Oracle的JRE和JDK实现). 这个包仅仅是因为担心Java开源实现的用户 (OpenJDK 项目).
 
-	[http://openjdk.java.net/projects/openjfx/](http://openjdk.java.net/projects/openjfx/) || [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx), [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc), [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src)
+	[https://openjdk.java.net/projects/openjfx/](https://openjdk.java.net/projects/openjfx/) || [java-openjfx](https://www.archlinux.org/packages/?name=java-openjfx), [java-openjfx-doc](https://www.archlinux.org/packages/?name=java-openjfx-doc), [java-openjfx-src](https://www.archlinux.org/packages/?name=java-openjfx-src)
 
 **OpenJDK EA** — Oracle的OpenJDK为最新开发版本的早期接入.
 
-	[http://jdk.java.net](http://jdk.java.net) || [openjdk-devel](https://aur.archlinux.org/packages/openjdk-devel/)
+	[https://jdk.java.net](https://jdk.java.net) || [openjdk-devel](https://aur.archlinux.org/packages/openjdk-devel/)
 
 **OpenJFX EA** — Oracle的OpenJFK为最新开发版本的早期接入.
 
-	[http://jdk.java.net/openjfx/](http://jdk.java.net/openjfx/) || [java-openjfx-devel](https://aur.archlinux.org/packages/java-openjfx-devel/)
+	[https://jdk.java.net/openjfx/](https://jdk.java.net/openjfx/) || [java-openjfx-devel](https://aur.archlinux.org/packages/java-openjfx-devel/)
 
 ### 其他实现
 
 **Java SE** — Oracle的JRE和JDK实现.
 
-	[http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) || [jre](https://aur.archlinux.org/packages/jre/) [jre9](https://aur.archlinux.org/packages/jre9/) [jre8](https://aur.archlinux.org/packages/jre8/) [jre7](https://aur.archlinux.org/packages/jre7/) [jre6](https://aur.archlinux.org/packages/jre6/) [jdk](https://aur.archlinux.org/packages/jdk/) [jdk9](https://aur.archlinux.org/packages/jdk9/) [jdk8](https://aur.archlinux.org/packages/jdk8/) [jdk7](https://aur.archlinux.org/packages/jdk7/) [jdk6](https://aur.archlinux.org/packages/jdk6/) [jdk5](https://aur.archlinux.org/packages/jdk5/) [jdk-devel](https://aur.archlinux.org/packages/jdk-devel/)
+	[https://www.oracle.com/technetwork/java/javase/downloads/index.html](https://www.oracle.com/technetwork/java/javase/downloads/index.html) || [jre](https://aur.archlinux.org/packages/jre/) [jre9](https://aur.archlinux.org/packages/jre9/) [jre8](https://aur.archlinux.org/packages/jre8/) [jre7](https://aur.archlinux.org/packages/jre7/) [jre6](https://aur.archlinux.org/packages/jre6/) [jdk](https://aur.archlinux.org/packages/jdk/) [jdk9](https://aur.archlinux.org/packages/jdk9/) [jdk8](https://aur.archlinux.org/packages/jdk8/) [jdk7](https://aur.archlinux.org/packages/jdk7/) [jdk6](https://aur.archlinux.org/packages/jdk6/) [jdk5](https://aur.archlinux.org/packages/jdk5/) [jdk-devel](https://aur.archlinux.org/packages/jdk-devel/)
 
 **OpenJ9** — Eclipse的JRE实现，由IBM贡献
 
@@ -103,7 +104,7 @@ Arch Linux官方支持开源的 [OpenJDK](http://openjdk.java.net/) 版本7、8�
 
 	[https://developer.ibm.com/javasdk/](https://developer.ibm.com/javasdk/) || [jdk8-j9-bin](https://aur.archlinux.org/packages/jdk8-j9-bin/) [jdk7-j9-bin](https://aur.archlinux.org/packages/jdk7-j9-bin/) [jdk7r1-j9-bin](https://aur.archlinux.org/packages/jdk7r1-j9-bin/)
 
-**Parrot VM** — 一个对Java [[1]](http://trac.parrot.org/parrot/wiki/Languages)提供实验支持的虚拟机 ，通过两种方式，一种是 [Java VM bytecode translator](http://code.google.com/p/parrot-jvm/)，另一种是[Java compiler targeting the Parrot VM](https://github.com/chrisdolan/perk).
+**Parrot VM** — 一个对Java [[1]](http://trac.parrot.org/parrot/wiki/Languages)提供实验支持的虚拟机 ，通过两种方式，一种是 [Java VM bytecode translator](https://code.google.com/p/parrot-jvm/)，另一种是[Java compiler targeting the Parrot VM](https://github.com/chrisdolan/perk).
 
 	[http://www.parrot.org/](http://www.parrot.org/) || [parrot](https://aur.archlinux.org/packages/parrot/)
 
@@ -225,7 +226,7 @@ exec /path/to/application "$@"
 
 ### 冒充另一个窗口管理器
 
-你可以使用 [wmname](https://www.archlinux.org/packages/?name=wmname) ，从 [suckless.org](http://tools.suckless.org/x/wmname)下载，来使JVM相信你是在运行一个不同的窗口管理器. 这可以解决在窗口管理器发生的Java GUIs渲染问题， 比如说 [awesome (简体中文)](/index.php/Awesome_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Awesome (简体中文)") 或者 [Dwm (简体中文)](/index.php/Dwm_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dwm (简体中文)") 或者 [Ratpoison (简体中文)](/index.php/Ratpoison_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Ratpoison (简体中文)").
+你可以使用 [wmname](https://www.archlinux.org/packages/?name=wmname) ，从 [suckless.org](https://tools.suckless.org/x/wmname)下载，来使JVM相信你是在运行一个不同的窗口管理器. 这可以解决在窗口管理器发生的Java GUIs渲染问题， 比如说 [awesome (简体中文)](/index.php/Awesome_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Awesome (简体中文)") 或者 [Dwm (简体中文)](/index.php/Dwm_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Dwm (简体中文)") 或者 [Ratpoison (简体中文)](/index.php/Ratpoison_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Ratpoison (简体中文)").
 
 ```
 $ wmname LG3D
@@ -260,13 +261,13 @@ $ wmname LG3D
 
 到 `LogHook` 可以起作用.
 
-查阅[[2]](http://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console) 可以获取更多信息.
+查阅[[2]](https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console) 可以获取更多信息.
 
 ### 当调试JavaFX程序的时候系统卡住
 
 当你调试JavaFX程序的时候系统卡住了，你可以尝试提供JVM以下选项 `-Dsun.awt.disablegrab=true`.
 
-查阅 [http://bugs.java.com/view_bug.do?bug_id=6714678](http://bugs.java.com/view_bug.do?bug_id=6714678)
+查阅 [https://bugs.java.com/view_bug.do?bug_id=6714678](https://bugs.java.com/view_bug.do?bug_id=6714678)
 
 ### JavaFX 的 MediaPlayer 构造函数抛出了一个 exception
 
@@ -287,7 +288,7 @@ Caused by: MediaException: UNKNOWN : com.sun.media.jfxmedia.MediaException: Cou
 
 解决办法是安装 [ffmpeg-compat-55](https://aur.archlinux.org/packages/ffmpeg-compat-55/).
 
-查阅 [http://www.reddit.com/r/archlinux/comments/70o8o6/using_a_javafx_mediaplayer_in_arch/](http://www.reddit.com/r/archlinux/comments/70o8o6/using_a_javafx_mediaplayer_in_arch/)
+查阅 [https://www.reddit.com/r/archlinux/comments/70o8o6/using_a_javafx_mediaplayer_in_arch/](https://www.reddit.com/r/archlinux/comments/70o8o6/using_a_javafx_mediaplayer_in_arch/)
 
 ### Java程序无法打开外部链接
 
@@ -342,7 +343,7 @@ alias java='java "$_SILENT_JAVA_OPTIONS"'
 
 在Java的版本9之前, GTK的外观和感觉是与GTK2链接的，但是同时许多更新的桌面程序用的是GTK3\. 这种GTK版本间的不兼容性可能打断程序使用Java的GUI插件，因为同一个进程里GTK2和GTK3的混合不被支持 (例如, LibreOffice 5.0).
 
-从 [Java 9](http://openjdk.java.net/jeps/283)以来, GTK的外观和感觉可以和GTK的版本 `2`, `2.2` 和 `3`一起运行, 默认GTK2\. 这可以通过设置下面的属性来覆盖:
+从 [Java 9](https://openjdk.java.net/jeps/283)以来, GTK的外观和感觉可以和GTK的版本 `2`, `2.2` 和 `3`一起运行, 默认GTK2\. 这可以通过设置下面的属性来覆盖:
 
 `jdk.gtk.version=3`
 
@@ -370,4 +371,4 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 ## 参阅
 
-*   [Introduction to Programming Using Java](http://math.hws.edu/javanotes/)
+*   [Introduction to Programming Using Java](https://math.hws.edu/javanotes/)

@@ -24,7 +24,6 @@ Related articles
 *   [8 Troubleshooting](#Troubleshooting)
     *   [8.1 Improve performance of small transactions](#Improve_performance_of_small_transactions)
     *   [8.2 Prevent disk writes when idle](#Prevent_disk_writes_when_idle)
-    *   [8.3 Cannot connect to database through pg_connect()](#Cannot_connect_to_database_through_pg_connect.28.29)
 
 ## Installation
 
@@ -502,8 +501,4 @@ If you are using PostgresSQL on a local machine for development and it seems slo
 
 PostgreSQL periodically updates its internal "statistics" file. By default, this file is stored on disk, which prevents disks from spinning down on laptops and causes hard drive seek noise. It is simple and safe to relocate this file to a memory-only file system with the following configuration option:
 
- `/var/lib/postgres/data/postgresql.conf`  `stats_temp_directory = '/run/postgresql'` 
-
-### Cannot connect to database through pg_connect()
-
-Install [php-pgsql](https://www.archlinux.org/packages/?name=php-pgsql) and edit the `php.ini` file uncommenting the lines `extension=pdo_pgsql` and `extension=pgsql`, then restart `httpd`.
+ `/var/lib/postgres/data/postgresql.conf`  `stats_temp_directory = '/run/postgresql'`

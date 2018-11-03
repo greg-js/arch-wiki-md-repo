@@ -102,7 +102,7 @@ Another easy option is to use USB tethering with an Android device. For more inf
 
 If you have neither, the only option is to use the onboard wireless adapter. Depending on your model, you may have the Broadcom BCM43602, which is supported by the open source brcmfac which is included by default in the kernel (see [here](/index.php/Broadcom_wireless#brcm80211 "Broadcom wireless")). If this is the case, you should have wireless available from the installer.
 
-Unfortunately, other BCM43xx chipsets my only be supported by a [proprietary driver](/index.php/Broadcom_wireless "Broadcom wireless") which is unavailable in the installation environment. It is possible to build the package driver [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) on a separate system, but it **must** be built against the exact same kernel version used by the installer. Build the package in a separate machine as follows:
+Unfortunately, other BCM43xx chipsets may only be supported by a [proprietary driver](/index.php/Broadcom_wireless "Broadcom wireless") which is unavailable in the installation environment. It is possible to build the package driver [broadcom-wl](https://www.archlinux.org/packages/?name=broadcom-wl) on a separate system, but it **must** be built against the exact same kernel version used by the installer. Build the package in a separate machine as follows:
 
 ```
 $ curl -O [https://aur.archlinux.org/cgit/aur.git/snapshot/broadcom-wl.tar.gz](https://aur.archlinux.org/cgit/aur.git/snapshot/broadcom-wl.tar.gz)

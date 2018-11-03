@@ -102,6 +102,6 @@ edit the file
 and add this:
 
 ```
-local/xf86-video-amdgpu
+blacklist ideapad_laptop
 
 ```

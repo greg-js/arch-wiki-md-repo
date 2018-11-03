@@ -159,9 +159,9 @@ The following [widget toolkit](https://en.wikipedia.org/wiki/Widget_toolkit "wik
 
 	[https://riverbankcomputing.com/software/pyqt/intro](https://riverbankcomputing.com/software/pyqt/intro) || [python2-pyqt4](https://aur.archlinux.org/packages/python2-pyqt4/) [python2-pyqt5](https://www.archlinux.org/packages/?name=python2-pyqt5) [python-pyqt4](https://aur.archlinux.org/packages/python-pyqt4/) [python-pyqt5](https://www.archlinux.org/packages/?name=python-pyqt5)
 
-*   **pySide** — [Qt](/index.php/Qt "Qt") bindings
+*   **pySide2** — [Qt](/index.php/Qt "Qt") bindings
 
-	[https://wiki.qt.io/PySide](https://wiki.qt.io/PySide) || [python2-pyside](https://aur.archlinux.org/packages/python2-pyside/) [python-pyside](https://aur.archlinux.org/packages/python-pyside/)
+	[https://wiki.qt.io/PySide2](https://wiki.qt.io/PySide2) || [pyside2](https://www.archlinux.org/packages/?name=pyside2) [pyside2-tools](https://www.archlinux.org/packages/?name=pyside2-tools)
 
 *   **pyGTK** — [GTK+ 2](/index.php/GTK%2B "GTK+") bindings
 

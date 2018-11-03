@@ -18,6 +18,9 @@ For many applications (most of which are Windows ones) there are neither sources
 *   [3 Package naming](#Package_naming)
 *   [4 File placement](#File_placement)
 *   [5 Missing files](#Missing_files)
+    *   [5.1 Files can only be obtained in an distributed archive/installer](#Files_can_only_be_obtained_in_an_distributed_archive.2Finstaller)
+    *   [5.2 Files can only be obtained in an distributed compact-disk or other type of optical disk media](#Files_can_only_be_obtained_in_an_distributed_compact-disk_or_other_type_of_optical_disk_media)
+    *   [5.3 Files can be obtained from several ways](#Files_can_be_obtained_from_several_ways)
 *   [6 Advanced topics](#Advanced_topics)
     *   [6.1 Custom DLAGENTS](#Custom_DLAGENTS)
     *   [6.2 Unpacking](#Unpacking)
@@ -79,31 +82,31 @@ Again, analyze existing packages (if present) and decide whether or not you want
 
 ## Missing files
 
-For most commercial games there is no way to (legally) download game files, which is the preferable way to get them for normal packages. Even when it is possible to download files after providing a password (like with all [Humble Indie Bundle](https://en.wikipedia.org/wiki/Humble_Indie_Bundle "wikipedia:Humble Indie Bundle") games) asking user for this password and downloading somewhere in `build` function is not recommended for a variety of reasons (for example, the user may have no Internet access but have all files downloaded and stored locally). The following options should be considered:
+For most commercial games there is no way to (legally) download game files, which is the preferable way to get them for normal packages. Even when it is possible to download files after providing a password (like with all [Humble Indie Bundle](https://en.wikipedia.org/wiki/Humble_Indie_Bundle "wikipedia:Humble Indie Bundle") games) asking user for this password and downloading somewhere in `build` function is not recommended for a variety of reasons (for example, the user may have no Internet access but have all files downloaded and stored locally).
 
-*   **There is only one way to obtain files**
+The subsections below provide recommendations for a few situations you may encounter.
 
-*   Software is distributed in archive/installer
+### Files can only be obtained in an distributed archive/installer
 
-	Add the required file to `sources` array:
+The software is only available via that archive/installer file, which must be obtained in order get the missing files.
 
-	 `sources=(... "*originalname*::**file://***originalname*")` 
+Add the required archive/installer to the `source` array, renaming source filename so the source's link in AUR web interface looks different from names of files included in source tarball:
 
-	This way the link to file in AUR web interface will look different from names of files included in source tarball.
+ `sources=(... "*originalname*::**file:**//*originalname*")` 
 
-	Add following comment on package page:
+Also add a pinned comment like the one below to the package page in AUR, and explain the details in PKGBUILD source:
 
-	 `Need archive/installer to work.` 
+ `Need archive/installer to work.` 
 
-	and explain the details in PKGBUILD source.
+### Files can only be obtained in an distributed compact-disk or other type of optical disk media
 
-*   Software is distributed on compact-disk
+The software is only available via an optical disk media (e.g. CD, DVD, Bluray etc.), which must be inserted into the optical disk drive in order get the missing files.
 
-	Add installer script and `.install` file to package contents, like in package [tsukihime-en](https://aur.archlinux.org/packages/tsukihime-en/).
+Add an installer script and an `.install` file to the package contents, like [tsukihime-en](https://aur.archlinux.org/packages/tsukihime-en/).
 
-*   **There are several ways to obtain files**
+### Files can be obtained from several ways
 
-Copying files from disk / downloading from Net / getting from archive during `build` phase may look like a good idea but it is not recommended because it limits the user's possibilities and makes package installation interactive (which is generally discouraged and just annoying). Again, a good installer script and `.install` file can work instead.
+Copying files from disk, downloading from Net or getting from archive during `build` phase may look like a good idea but it is not recommended because it limits the user's possibilities and makes package installation interactive (which is generally discouraged and just annoying). Again, a good installer script and `.install` file can work instead.
 
 Few examples of various strategies for obtaining files required for package:
 

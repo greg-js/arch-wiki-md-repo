@@ -151,6 +151,8 @@ The followings are commands to launch Mozc tools.
 *   Mozc Hand Writing: `$ /usr/lib/mozc/mozc_tool --mode=hand_writing`
 *   Mozc Character Palette: `$ /usr/lib/mozc/mozc_tool --mode=character_palette`
 
+**Note:** If the handwriting window displays an error when attempting to input handwriting, mozc may not have a handwriting module. One possible solution is to install [tegaki-models-zinnia-japanese](https://aur.archlinux.org/packages/tegaki-models-zinnia-japanese/) and re-open the window.
+
 ### Use CapsLock as Eisu_toggle key on ASCII layout keyboard
 
 In all of the preset keymap styles of Mozc, the command *Toggle alphanumeric mode* on *Composition* mode is assigned to the `Eisu` (Eisu_toggle), `Hiragana/Katakana` or `Muhenkan` key, but the ASCII keyboard has none of them.

@@ -20,7 +20,7 @@ Writing [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for software written in [Rub
 
 For libraries, use `ruby-$gemname`. For applications, use the program name. In either case, the name should be entirely lowercase.
 
-Always use `ruby-` prefix even if `$gemname` already starts with word `ruby`. It is needed to avoid future name clashes in case if a gem with shorter name appear. It also makes names more easily parseble by tools (think about PKGBUILD generators/version or dependency checkers, etc...).
+Always use `ruby-` prefix even if `$gemname` already starts with word `ruby`. It is needed to avoid future name clashes in case if a gem with shorter name appear. It also makes names more easily parsable by tools (think about PKGBUILD generators/version or dependency checkers, etc...).
 
 ### Versioned packages
 

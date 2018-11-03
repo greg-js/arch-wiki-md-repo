@@ -8,7 +8,7 @@
 | <small>1.2.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
 | <small>1.3.</small> [Arch projects](/index.php/Category:Arch_projects "Category:Arch projects") <small>(9) (also in [Software projects](/index.php/Category:Software_projects "Category:Software projects"))</small> |
 | <small>1.4.</small> [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki") <small>(13)</small> |
-| <small>1.4.1.</small> [Disambiguation pages](/index.php/Category:Disambiguation_pages "Category:Disambiguation pages") <small>(25)</small> |
+| <small>1.4.1.</small> [Disambiguation pages](/index.php/Category:Disambiguation_pages "Category:Disambiguation pages") <small>(26)</small> |
 | <small>1.4.2.</small> [Help](/index.php/Category:Help "Category:Help") <small>(15)</small> |
 | <small>1.4.3.</small> [Lists](/index.php/Category:Lists "Category:Lists") <small>(6)</small> |
 | <small>1.4.3.1.</small> [Lists of software](/index.php/Category:Lists_of_software "Category:Lists of software") <small>(23) (also in [Software](/index.php/Category:Software "Category:Software"))</small> |
@@ -174,7 +174,7 @@
 | <small>5.1.11.5.</small> [Television](/index.php/Category:Television "Category:Television") <small>(4)</small> |
 | <small>5.1.11.5.1.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
 | <small>5.1.11.6.</small> [Video](/index.php/Category:Video "Category:Video") <small>(6) (also in [File formats](/index.php/Category:File_formats "Category:File formats"))</small> |
-| <small>5.1.12.</small> [Office](/index.php/Category:Office "Category:Office") <small>(16)</small> |
+| <small>5.1.12.</small> [Office](/index.php/Category:Office "Category:Office") <small>(17)</small> |
 | <small>5.1.12.1.</small> [TeX](/index.php/Category:TeX "Category:TeX") <small>(3)</small> |
 | <small>5.1.13.</small> [Password managers](/index.php/Category:Password_managers "Category:Password managers") <small>(2) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
 | <small>5.1.14.</small> [Science](/index.php/Category:Science "Category:Science") <small>(11)</small> |

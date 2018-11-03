@@ -17,4 +17,4 @@ For usage see [official documentation](https://kafka.apache.org/quickstart#quick
 *   C - [librdkafka-git](https://aur.archlinux.org/packages/librdkafka-git/)
 *   Python - [https://github.com/dpkp/kafka-python](https://github.com/dpkp/kafka-python)
 *   Php - [php-rdkafka](https://aur.archlinux.org/packages/php-rdkafka/)
-*   Perl - [perl16-pkafka](https://aur.archlinux.org/packages/perl16-pkafka/)
+*   Perl - [perl6-pkafka](https://aur.archlinux.org/packages/perl6-pkafka/)

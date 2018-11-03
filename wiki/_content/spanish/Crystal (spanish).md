@@ -49,7 +49,7 @@ Los fragmentos del administrador de dependencias también están disponibles en 
 
 *   [Página web oficial](http://crystal-lang.org)
 *   [Documentación oficial](http://crystal-lang.org/docs/)
-*   [La biblioteca estándar de referencia](http://crystal-lang.org/api/)
+*   [La referencia de la librería estándar](http://crystal-lang.org/api/)
 *   [Repositorio oficial en Github](https://github.com/crystal-lang/crystal)
 *   [Evaluación de código online](https://play.crystal-lang.org/#/cr)
 *   [#crystal-lang IRC channel](http://webchat.freenode.net/?channels=#crystal-lang)

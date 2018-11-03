@@ -4,7 +4,7 @@
 *   [Uniform Look for QT and GTK Applications (简体中文)](/index.php/Uniform_Look_for_QT_and_GTK_Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Uniform Look for QT and GTK Applications (简体中文)")
 *   [GTK+ (简体中文)](/index.php/GTK%2B_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "GTK+ (简体中文)")
 
-**翻译状态：** 本文是英文页面 [Qt](/index.php/Qt "Qt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-11-15，点击[这里](https://wiki.archlinux.org/index.php?title=Qt&diff=0&oldid=456523)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Qt](/index.php/Qt "Qt") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-11-02，点击[这里](https://wiki.archlinux.org/index.php?title=Qt&diff=0&oldid=547169)可以查看翻译后英文页面的改动。
 
 [Qt](http://qt-project.org/) 是一个跨平台的应用程序和组件工具，使用标准 C++编写，通过大量使用代码生成器 [Meta Object Compiler(moc)](http://qt-project.org/doc/qt-4.8/moc.html)以及数个宏来扩展语言的功能。它有一些更重要的特性包括：
 
@@ -12,7 +12,7 @@
 *   完善的国际化支持。
 *   提供 SQL 数据访问、XML 解析、线程管理、网络支持和统一的文件处理跨平台应用编程接口。
 
-Qt 框架正在成为主要的开发平台，是 [KDE](/index.php/KDE "KDE") 软件社区和其它一些重要开源和闭源应用的基石，例如 [VLC](/index.php/VLC "VLC")、[VirtualBox](/index.php/VirtualBox "VirtualBox")、[Opera](/index.php/Opera "Opera")、[Mathematica](/index.php/Mathematica "Mathematica")和[Skype](/index.php/Skype "Skype") 等等。
+Qt 框架正在成为主要的开发平台，是 [KDE](/index.php/KDE "KDE") 软件社区和其它一些重要开源和闭源应用的基石，例如 [VLC](/index.php/VLC "VLC")、[VirtualBox](/index.php/VirtualBox "VirtualBox")、[Opera](/index.php/Opera "Opera") 和 [Mathematica](/index.php/Mathematica "Mathematica") 等等。
 
 ## Contents
 
@@ -36,13 +36,14 @@ Qt 框架正在成为主要的开发平台，是 [KDE](/index.php/KDE "KDE") 软
         *   [4.3.4 Python (PySide)](#Python_.28PySide.29)
         *   [4.3.5 C#](#C.23)
         *   [4.3.6 Ruby](#Ruby)
-        *   [4.3.7 Java](#Java)
-        *   [4.3.8 Perl](#Perl)
-        *   [4.3.9 Lua](#Lua)
+        *   [4.3.7 Perl](#Perl)
+        *   [4.3.8 Lua](#Lua)
 *   [5 问题解决](#.E9.97.AE.E9.A2.98.E8.A7.A3.E5.86.B3)
-    *   [5.1 Icon theme is not applied](#Icon_theme_is_not_applied)
-    *   [5.2 Theme not applied to root applications](#Theme_not_applied_to_root_applications)
-    *   [5.3 Qt4 style not respected](#Qt4_style_not_respected)
+    *   [5.1 Qt programs crash when opening file dialogs under GNOME Wayland](#Qt_programs_crash_when_opening_file_dialogs_under_GNOME_Wayland)
+    *   [5.2 Disable/Change Qt journal logging behaviour](#Disable.2FChange_Qt_journal_logging_behaviour)
+    *   [5.3 Icon theme is not applied](#Icon_theme_is_not_applied)
+    *   [5.4 Theme not applied to root applications](#Theme_not_applied_to_root_applications)
+    *   [5.5 Qt4 style not respected](#Qt4_style_not_respected)
 *   [6 参阅](#.E5.8F.82.E9.98.85)
 
 ## 安装
@@ -172,15 +173,6 @@ For more information on Qt Style Sheets see the [official documentation](http://
 Unlike Qt4, Qt5 doesn't ship a qtconfig utility to configure fonts, icons or styles. Instead, it will try to use the settings from the running DE. In KDE or GNOME this works well, but in other less popular DEs or WM it can lead to missing icons in Qt5 applications. One way to solve this is to fake the running desktop environment by setting `XDG_CURRENT_DESKTOP=KDE` or `GNOME`, and then using the corresponding configuration application to set the desired icon set.
 
 Another solution is provided by the [qt5ct](https://www.archlinux.org/packages/?name=qt5ct) package, which provides a DE independent Qt5 QPA and a configuration utility. After installing the package, run `qt5ct` to set an icon theme, and set the environment variable `QT_QPA_PLATFORMTHEME="qt5ct"` so that the settings are picked up by Qt applications. Alternatively, use `--platformtheme qt5ct` as argument to the Qt5 application.
-
-To automatically set `QT_QPA_PLATFORMTHEME` for user session, add the following line to `~/.profile`.
-
-```
-[ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"
-
-```
-
-This will export `QT_QPA_PLATFORMTHEME` environment variable for the whole user session. Note that this doesn't work on [enlightenment](/index.php/Enlightenment "Enlightenment") because it has its own custom environment variable setting instead of getting it from `~/.profile` file.
 
 如果遇到了下列错误，并且一些图标依然不在一些应用程序中出现，安装[oxygen](https://www.archlinux.org/packages/?name=oxygen)和[oxygen-icons](https://www.archlinux.org/packages/?name=oxygen-icons)：
 
@@ -363,26 +355,7 @@ sys.exit(app.exec_())
 
 #### C#
 
-*   Package: [kdebindings-qyoto](https://aur.archlinux.org/packages/kdebindings-qyoto/)
-*   Website: [http://techbase.kde.org/Development/Languages/Qyoto](http://techbase.kde.org/Development/Languages/Qyoto)
-*   Build with: `mcs -pkg:qyoto hello.cs`
-*   Run with: `mono hello.exe`
-
- `hello.cs` 
-```
-using System;
-using Qyoto;
-
-public class Hello {
-    public static int Main(String[] args) {
-        new QApplication(args);
-        new QLabel("Hello world!").Show();
-
-        return QApplication.Exec();
-    }
-}
-
-```
+参考: [QtSharp](https://gitlab.com/ddobrev/QtSharp).
 
 #### Ruby
 
@@ -401,33 +374,6 @@ hello.show
 app.exec
 
 ```
-
-#### Java
-
-*   Package: [qtjambi](https://aur.archlinux.org/packages/qtjambi/) or [qtjambi-beta](https://aur.archlinux.org/packages/qtjambi-beta/).
-*   Website: [http://qt-jambi.org/](http://qt-jambi.org/)
-*   Build with: `javac Hello.java -cp /opt/qtjambi-beta/qtjambi-linux64-community-4.7.0/qtjambi-4.7.0.jar`.
-*   Run with: `java -cp /opt/qtjambi-beta/qtjambi-linux64-community-4.7.0/qtjambi-4.7.0.jar:. Hello`.
-
- `Hello.java` 
-```
-import com.trolltech.qt.gui.*;
-
-public class Hello
-{
-    public static void main(String args[])
-    {
-        QApplication.initialize(args);
-        QLabel hello = new QLabel("Hello World!");
-
-        hello.show();
-        QApplication.exec();
-    }
-}
-
-```
-
-**Note:** The build instructions and example have been tested on the beta version of Qt Jambi 4.7.0.
 
 #### Perl
 
@@ -465,6 +411,29 @@ label:show()
 **Note:** QtLua is not designed to develop an application in pure Lua but rather to extend a Qt C++ application using Lua as scripting language.
 
 ## 问题解决
+
+### Qt programs crash when opening file dialogs under GNOME Wayland
+
+Under a GNOME Wayland environment, Qt programs such as Smplayer and Calibre may crash when opening a "FileDiag" (e.g. the "Open file" or "Save as" dialogs), because by default Qt tries to use the native GTK FileDiag, but the invocation assumes the use of X11 and would segfault in Wayland. This issue can be worked around in two ways:
+
+*   Force the use of X11 GDK backend for these Qt programs.
+
+```
+GDK_BACKEND=x11 some_qt_program
+
+```
+
+*   Install the latest git snapshot of [qgnomeplatform-git](https://aur.archlinux.org/packages/qgnomeplatform-git/), which contains a fix. The platform plugin should work automatically under GNOME (3.20 or later); if not, manually set the [environment variable](/index.php/Environment_variables#Using_pam_env "Environment variables"): `QT_QPA_PLATFORMTHEME=qgnomeplatform` . This also has the effect of [uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
+
+### Disable/Change Qt journal logging behaviour
+
+When using [KDE](/index.php/KDE "KDE") and/or any other Qt [desktop environment](/index.php/Desktop_environment "Desktop environment") debug info may be frequently be logged in the [systemd journal](/index.php/Systemd_journal "Systemd journal").
+
+Set `QT_LOGGING_RULES` as [environment variable](/index.php/Environment_variable "Environment variable") to change this behaviour, e.g. to completely disable logging:
+
+ `/etc/environment`  `QT_LOGGING_RULES='*=false'` 
+
+To allow only debug logging, use `QT_LOGGING_RULES="*.debug=false"`.
 
 ### Icon theme is not applied
 

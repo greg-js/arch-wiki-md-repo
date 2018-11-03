@@ -2,7 +2,7 @@
 
 *   [General recommendations (简体中文)](/index.php/General_recommendations_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "General recommendations (简体中文)")
 
-**翻译状态：** 本文是英文页面 [System_maintenance](/index.php/System_maintenance "System maintenance") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-10-16，点击[这里](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=484864)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [System_maintenance](/index.php/System_maintenance "System maintenance") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-11-02，点击[这里](https://wiki.archlinux.org/index.php?title=System_maintenance&diff=0&oldid=546559)可以查看翻译后英文页面的改动。
 
 要持续使用 Arch linux，需要进行系统日常维护，每个用户都应该及时维护系统。
 
@@ -24,10 +24,11 @@
     *   [3.4 注意更新时的提醒](#.E6.B3.A8.E6.84.8F.E6.9B.B4.E6.96.B0.E6.97.B6.E7.9A.84.E6.8F.90.E9.86.92)
     *   [3.5 处理配置文件更新](#.E5.A4.84.E7.90.86.E9.85.8D.E7.BD.AE.E6.96.87.E4.BB.B6.E6.9B.B4.E6.96.B0)
     *   [3.6 回退有问题的更新](#.E5.9B.9E.E9.80.80.E6.9C.89.E9.97.AE.E9.A2.98.E7.9A.84.E6.9B.B4.E6.96.B0)
-    *   [3.7 使用包管理器安装软件](#.E4.BD.BF.E7.94.A8.E5.8C.85.E7.AE.A1.E7.90.86.E5.99.A8.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6)
-    *   [3.8 选择开源驱动](#.E9.80.89.E6.8B.A9.E5.BC.80.E6.BA.90.E9.A9.B1.E5.8A.A8)
-    *   [3.9 谨慎使用非官方或测试不足的软件包](#.E8.B0.A8.E6.85.8E.E4.BD.BF.E7.94.A8.E9.9D.9E.E5.AE.98.E6.96.B9.E6.88.96.E6.B5.8B.E8.AF.95.E4.B8.8D.E8.B6.B3.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [3.10 更新镜像列表](#.E6.9B.B4.E6.96.B0.E9.95.9C.E5.83.8F.E5.88.97.E8.A1.A8)
+    *   [3.7 检查孤立和未使用软件包](#.E6.A3.80.E6.9F.A5.E5.AD.A4.E7.AB.8B.E5.92.8C.E6.9C.AA.E4.BD.BF.E7.94.A8.E8.BD.AF.E4.BB.B6.E5.8C.85)
+    *   [3.8 使用包管理器安装软件](#.E4.BD.BF.E7.94.A8.E5.8C.85.E7.AE.A1.E7.90.86.E5.99.A8.E5.AE.89.E8.A3.85.E8.BD.AF.E4.BB.B6)
+    *   [3.9 选择开源驱动](#.E9.80.89.E6.8B.A9.E5.BC.80.E6.BA.90.E9.A9.B1.E5.8A.A8)
+    *   [3.10 谨慎使用非官方或测试不足的软件包](#.E8.B0.A8.E6.85.8E.E4.BD.BF.E7.94.A8.E9.9D.9E.E5.AE.98.E6.96.B9.E6.88.96.E6.B5.8B.E8.AF.95.E4.B8.8D.E8.B6.B3.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
+    *   [3.11 更新镜像列表](#.E6.9B.B4.E6.96.B0.E9.95.9C.E5.83.8F.E5.88.97.E8.A1.A8)
 *   [4 清理文件系统](#.E6.B8.85.E7.90.86.E6.96.87.E4.BB.B6.E7.B3.BB.E7.BB.9F)
     *   [4.1 软件包缓存](#.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.BC.93.E5.AD.98)
     *   [4.2 不需要的软件包](#.E4.B8.8D.E9.9C.80.E8.A6.81.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.8C.85)
@@ -82,7 +83,7 @@ Xorg 的相关错误可以查看 [Xorg#Troubleshooting](/index.php/Xorg#Troubles
 
 ### Pacman 数据库
 
-参考 [Pacman tips#Backup the pacman database](/index.php/Pacman_tips#Backup_the_pacman_database "Pacman tips").
+参考 [pacman/Tips and tricks#Backup the pacman database](/index.php/Pacman/Tips_and_tricks#Backup_the_pacman_database "Pacman/Tips and tricks").
 
 ### LUKS headers
 
@@ -112,7 +113,7 @@ Xorg 的相关错误可以查看 [Xorg#Troubleshooting](/index.php/Xorg#Troubles
 
 避免 [部分更新](#.E4.B8.8D.E6.94.AF.E6.8C.81.E9.83.A8.E5.88.86.E5.8D.87.E7.BA.A7)，不要运行 `pacman -Sy` 而是运行 `pacman -Syu`.
 
-避免 pacman 的 `--force` 选项，**尤其是** `pacman -Syu --force` 这种可能更新多个软件包的时候。`--force` 忽略文件冲突，可能导致文件丢失！如果系统按正常维护，这个选项仅应该在 Arch 开发者明确指导的情况下使用，在 Arch 主页会有通知。
+一般情况下，避免使用 pacman 的 `--force` 选项，**尤其要避免** `pacman -Syu --force` 这种可能更新多个软件包的指令。`--force` 忽略文件冲突，可能导致文件丢失！如果系统按正常维护，Arch 开发者会给出明确的指导，在 Arch 主页会有通知。
 
 避免使用 `-d` 选项，`pacman -Rdd package` 会在删除软件包时跳过依赖关系检查。如果删除了系统必要的依赖关系，可能导致系统损坏。
 
@@ -126,7 +127,7 @@ Arch Linux 是滚动发行版，新[库](https://en.wikipedia.org/wiki/Library_(
 
 如果进行了部分升级，二进制包因为找不到链接库而损坏，**不要通过简单的符号链接进行修正**。库升级 [soname](https://en.wikipedia.org/wiki/soname "wikipedia:soname") 是因为它们**不再向前兼容**。只要 *pacman* 可以运行，使用更新的源进行 `pacman -Syu` 就能修复这些问题。
 
-pacman 软件包提供的 *checkupdates* 脚本可以检查更新但不进行实际安装。
+[pacman-contrib](https://www.archlinux.org/packages/?name=pacman-contrib) 软件包提供的 *checkupdates* 脚本可以检查更新但不进行实际安装。
 
 ### 注意更新时的提醒
 
@@ -147,6 +148,14 @@ pacman 可能会创建 `.pacnew` 和 `.pacsave` 文件，这是 pacman 会通知
 然后看看 [https://www.archlinux.org/](https://www.archlinux.org/) 中有没有新闻，然后再到论坛上查找类似的问题，如果都没有找到，可用到 [论坛](https://bbs.archlinux.org), [IRC](/index.php/IRC "IRC") 中发帖求助。
 
 [降级](/index.php/Downgrading_packages "Downgrading packages") 是最后的解决方案。
+
+### 检查孤立和未使用软件包
+
+更新系统后，可能有些软件包不再需要，或者不再属于官方软件仓库。
+
+用 `pacman -Qtd` 命令查找之前作为依赖安装，现在不再需要的软件包。如果孤立的包还是需要的，可用修改 [安装原因](/index.php/Installation_reason "Installation reason")。如果不再需要，可用将其删除。
+
+除此之外，有些软件包可能已经不再属于远程仓库，但是依然还安装在本地，用 `pacman -Qm` 命令查找所有这些软件包。注意此命令会包含手动安装的软件，例如 [AUR](/index.php/AUR "AUR") 中的软件。
 
 ### 使用包管理器安装软件
 
@@ -229,3 +238,4 @@ Arch 的滚动发行让用户可以使用最新的功能和上游更新，但是
 ## 参阅
 
 *   [Arch News Bash Script](https://bbs.archlinux.org/viewtopic.php?id=146850)
+*   [Automatic Arch System Maintenance](https://bbs.archlinux.org/viewtopic.php?pid=1791008)

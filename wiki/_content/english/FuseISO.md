@@ -38,13 +38,15 @@ $ fusermount -u *directory*
 
 ```
 
-It works fine even with many other unmount tools like *pumount* or *umount*. The `fusermount -u` command can be used to disconnect any other storage devices that were mounted by other mount tools.
+The command can be used to disconnect other storage devices mounted by other mount tools.
 
 ## Integration
 
 ### GNOME Files
 
-For users of GNOME there is an easy way of using fuseiso from the nautilus-context menu. First you will need the [filemanager-actions](https://www.archlinux.org/packages/?name=filemanager-actions) package, then you need to save the following scripts to a folder of your choice (eg. `/usr/local/bin`):
+For users of GNOME there is an easy way of using fuseiso from the nautilus-context menu.
+
+First you will need the [filemanager-actions](https://www.archlinux.org/packages/?name=filemanager-actions) package, then you need to save the following scripts to a folder of your choice (e.g. `~/.local/bin/`):
 
  `filemanager-actions-iso-mount.sh` 
 ```
@@ -67,10 +69,10 @@ For users of GNOME there is an easy way of using fuseiso from the nautilus-conte
 
 ```
 
-and make them executable:
+Make them executable:
 
 ```
-chmod +x */path_to_scripts/*filemanager-actions-iso-*
+$ chmod +x /*path_to_scripts*/filemanager-actions-iso-*
 
 ```
 
@@ -80,7 +82,7 @@ Add a new action with the following settings:
 
 *   Label: *Mount ISO*
 *   Icon: A symbol of your choice (eg: *gtk-cdrom*)
-*   Path: `*/path_to_scripts/*filemanager-actions-iso-mount.sh`
+*   Path: `/*path_to_scripts*/filemanager-actions-iso-mount.sh`
 *   Parameters: *%F*
 *   Working directory: *%d*
 *   Basenames: **.iso ; *.nrg ; *.bin ; *.img ; *.mdf (for each add a seperated entry)*
@@ -93,7 +95,7 @@ And a second one:
 
 *   Label: *Unmount ISO*
 *   Icon: A symbol of your choice (eg: *gtk-cdrom*)
-*   Path: `*/path_to_scripts/*filemanager-actions-iso-umount.sh`
+*   Path: `/*path_to_scripts*/filemanager-actions-iso-umount.sh`
 *   Parameters: *%F*
 *   Working directory: *%d*
 *   Basenames: **.iso ; *.nrg ; *.bin ; *.img ; *.mdf (for each add a seperated entry)*

@@ -17,7 +17,7 @@ At the moment, there are relatively few [Lisp](https://en.wikipedia.org/wiki/Lis
 
 There is at least one package in the base repository ([libgpg-error](https://www.archlinux.org/packages/?name=libgpg-error)) that includes lisp files, which are placed in `/usr/share/common-lisp/source/gpg-error`. In keeping with this, other lisp packages should also place their files in `/usr/share/common-lisp/source/*pkgname*`.
 
-The package directory should be the name of the lisp package, not what it's called in the [Arch repository](/index.php/Official_repositories "Official repositories") (or [AUR](/index.php/AUR "AUR")). This applies even to single-file packages.
+The package directory should be the name of the lisp package, not what it's called in Arch's [official repositories](/index.php/Official_repositories "Official repositories") (or [AUR](/index.php/AUR "AUR")). This applies even to single-file packages.
 
 For example, a Lisp package called *"cl-ppcre"* should be called `cl-ppcre` in AUR and reside in `/usr/share/common-lisp/source/**cl-ppcre**`. A Lisp package called *"alexandria"* should be called `cl-alexandria` in AUR and reside in `/usr/share/common-lisp/source/**alexandria**`.
 
@@ -67,7 +67,7 @@ $op $*
 
 ```
 
-Of course, for this example to work, there needs to be a symlink to package.asd in the asdf system directory. During package compilation, a stanza such as this will do the trick...
+Of course, for this example to work, there needs to be a symlink to *package*.asd in the asdf system directory. During package compilation, a stanza such as this will do the trick...
 
 ```
 pushd ${_lispdir}/systems
@@ -77,7 +77,7 @@ popd
 
 ```
 
-...where `$_lispdir` is `$pkgdir/usr/share/common-lisp`. By linking to a relative, rather than an absolute, path, it's possible to guarantee that the link will not break post-install.
+where `$_lispdir` is `$pkgdir/usr/share/common-lisp`. By linking to a relative, rather than an absolute, path, it's possible to guarantee that the link will not break post-install.
 
 ## Lisp-specific packaging
 

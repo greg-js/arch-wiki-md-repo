@@ -9,7 +9,7 @@ To add a new user:
 *   upgrade to a "developer" on flyspray
 *   upgrade to a "developer" on the forums
 *   upgrade to a "developer" on AUR
-*   upgrade to a "Administrator" on the wiki: [Special:Userrights](/index.php/Special:UserRights "Special:UserRights")
+*   upgrade to a "archdev" and "cosysop" on the wiki: [Special:Userrights](/index.php/Special:UserRights "Special:UserRights")
 *   subscribe them to arch-dev and arch-dev-public Mailing lists
 *   add to [https://dev.archlinux.org/admin](https://dev.archlinux.org/admin) users table
 *   give password to #archlinux-dev

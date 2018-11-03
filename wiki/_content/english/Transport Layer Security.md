@@ -96,8 +96,10 @@ Programs to check TLS:
 
 Websites to check TLS:
 
-*   [https://www.ssllabs.com/ssltest/](https://www.ssllabs.com/ssltest/) (only HTTPS)
+*   [https://dev.ssllabs.com/ssltest/](https://dev.ssllabs.com/ssltest/) (only HTTPS)
 *   [https://www.checktls.com/](https://www.checktls.com/) (only email)
+*   [https://www.htbridge.com/ssl/](https://www.htbridge.com/ssl/) (any port)
+*   [https://tls.imirhil.fr/tls](https://tls.imirhil.fr/tls) (any port)
 
 ## Miscellaneous
 

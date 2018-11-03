@@ -10,9 +10,6 @@
     *   [2.3 kmap_atomic and kunmap_atomic deprecated](#kmap_atomic_and_kunmap_atomic_deprecated)
 *   [3 VTune Amplifier XE 2011](#VTune_Amplifier_XE_2011)
     *   [3.1 Installing VTune](#Installing_VTune)
-*   [4 VTune 9.1](#VTune_9.1)
-    *   [4.1 Installing VTune](#Installing_VTune_2)
-    *   [4.2 Installing driver](#Installing_driver)
 
 ## Linux 4.0
 
@@ -116,29 +113,3 @@ You can now start vtune:
 ```
 
 For ease-of-use I suggest you move the ./opt/intel/vtune_amplifier_xe_2011 to your homefolder or similar and add a symlink to the amplxe-gui binary to one of your PATH folders or similar.
-
-## VTune 9.1
-
-Installing Intel VTune 9.1 on Arch Linux
-
-### Installing VTune
-
-*   download VTune
-*   download [patch](http://archlinux-stuff.googlecode.com/files/vtune-linux-9.1-arch.patch.gz)
-*   unpack VTune and patch its scripts
-*   install rpm from [AUR/rpm4](https://aur.archlinux.org/packages.php?ID=24605)
-*   do rpm --initdb
-*   run VTune installer
-
-### Installing driver
-
-(VTune does not work on my 2.6.31 kernel, so you may be need to install kernel26-lts)
-
-*   download driver [patch](http://archlinux-stuff.googlecode.com/files/vtune-linux-9.1-driver.patch.gz)
-*   copy the driver sources from /opt/intel/vtune/vdk/src to a new directory and patch them.
-*   do ./configure and make
-    *   if your build fails with 'the frame size of 1140 bytes is larger than 1024 bytes', append -Wframe-larger-than=2048 to EXTRA_CFLAGS in Makefile
-*   cp vtune_drv*.ko /lib/modules/misc/vtune_drv.ko # copy the module to the kernel modules directory
-*   depmod -AeF /boot/System.map26 #rebuild module maps and resolve symbols
-*   modprobe vtune_drv #activate the module
-    *   As of kernel 2.6.31 there was an api change, find_task_by_pid_ns() cannot be found. The only recourse is to downgrade your kernel to 2.6.30 or to wait for Intel to update the driver source code. If someone has a patch that resolves the issue you can post it here.

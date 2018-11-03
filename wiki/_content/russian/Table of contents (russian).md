@@ -1,4 +1,4 @@
-| [Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский") <small>(442)</small> | [English](/index.php/Category:English "Category:English") <small>(2)</small> |
+| [Русский](/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9 "Category:Русский") <small>(443)</small> | [English](/index.php/Category:English "Category:English") <small>(2)</small> |
 | <small>1.</small> [Об Arch](/index.php/Category:About_Arch_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:About Arch (Русский)") <small>(17)</small> | <small>1.</small> [About Arch](/index.php/Category:About_Arch "Category:About Arch") <small>(18)</small> |
  <small>1.1.</small> [Arch community](/index.php/Category:Arch_community "Category:Arch community") <small>(5)</small> |
  <small>1.1.1.</small> [Classroom](/index.php/Category:Classroom "Category:Classroom") <small>(2)</small> |
@@ -8,7 +8,7 @@
  <small>1.2.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small> |
 | <small>1.2.</small> [Arch projects](/index.php/Category:Arch_projects_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Arch projects (Русский)") <small>(1)</small> | <small>1.3.</small> [Arch projects](/index.php/Category:Arch_projects "Category:Arch projects") <small>(9) (also in [Software projects](/index.php/Category:Software_projects "Category:Software projects"))</small> |
 | <small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:ArchWiki (Русский)") <small>(4)</small> | <small>1.4.</small> [ArchWiki](/index.php/Category:ArchWiki "Category:ArchWiki") <small>(13)</small> |
- <small>1.4.1.</small> [Disambiguation pages](/index.php/Category:Disambiguation_pages "Category:Disambiguation pages") <small>(25)</small> |
+ <small>1.4.1.</small> [Disambiguation pages](/index.php/Category:Disambiguation_pages "Category:Disambiguation pages") <small>(26)</small> |
 | <small>1.3.1.</small> [Справка](/index.php/Category:Help_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Help (Русский)") <small>(10)</small> | <small>1.4.2.</small> [Help](/index.php/Category:Help "Category:Help") <small>(15)</small> |
 | <small>1.3.2.</small> [Lists](/index.php/Category:Lists_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Lists (Русский)") <small>(1)</small> | <small>1.4.3.</small> [Lists](/index.php/Category:Lists "Category:Lists") <small>(6)</small> |
 | <small>1.3.2.1.</small> [Lists of software](/index.php/Category:Lists_of_software_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Lists of software (Русский)") <small>(18) (Также в [Software](/index.php/Category:Software_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Software (Русский)"))</small> | <small>1.4.3.1.</small> [Lists of software](/index.php/Category:Lists_of_software "Category:Lists of software") <small>(23) (also in [Software](/index.php/Category:Software "Category:Software"))</small> |
@@ -208,7 +208,7 @@
  <small>5.1.11.5.1.</small> [TV cards](/index.php/Category:TV_cards "Category:TV cards") <small>(11) (also in [Hardware](/index.php/Category:Hardware "Category:Hardware"))</small> |
  <small>5.1.11.6.</small> [Video](/index.php/Category:Video "Category:Video") <small>(6) (also in [File formats](/index.php/Category:File_formats "Category:File formats"))</small> |
 | <small>6.1.13.</small> [Проигрыватель](/index.php/Category:Multimedia_players_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Multimedia players (Русский)") <small>(4)</small> |
- <small>5.1.12.</small> [Office](/index.php/Category:Office "Category:Office") <small>(16)</small> |
+ <small>5.1.12.</small> [Office](/index.php/Category:Office "Category:Office") <small>(17)</small> |
  <small>5.1.12.1.</small> [TeX](/index.php/Category:TeX "Category:TeX") <small>(3)</small> |
  <small>5.1.13.</small> [Password managers](/index.php/Category:Password_managers "Category:Password managers") <small>(2) (also in [Security](/index.php/Category:Security "Category:Security"))</small> |
  <small>5.1.14.</small> [Science](/index.php/Category:Science "Category:Science") <small>(11)</small> |
@@ -357,7 +357,7 @@
  <small>6.17.1.</small> [Network monitoring](/index.php/Category:Network_monitoring "Category:Network monitoring") <small>(9) (also in [Networking](/index.php/Category:Networking "Category:Networking"))</small> |
  <small>6.17.2.</small> [System monitors](/index.php/Category:System_monitors "Category:System monitors") <small>(10) (also in [Applications](/index.php/Category:Applications "Category:Applications"))</small> |
  <small>6.18.</small> [Notification](/index.php/Category:Notification "Category:Notification") <small>(2)</small> |
-| <small>7.14.</small> [Управление пакетами](/index.php/Category:Package_management_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Package management (Русский)") <small>(19)</small> | <small>6.19.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(31)</small> |
+| <small>7.14.</small> [Управление пакетами](/index.php/Category:Package_management_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Package management (Русский)") <small>(20)</small> | <small>6.19.</small> [Package management](/index.php/Category:Package_management "Category:Package management") <small>(31)</small> |
 | <small>7.15.</small> [Управление питанием](/index.php/Category:Power_management_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Power management (Русский)") <small>(8)</small> | <small>6.20.</small> [Power management](/index.php/Category:Power_management "Category:Power management") <small>(19)</small> |
 | <small>7.16.</small> [Скрипты](/index.php/Category:Scripts_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Scripts (Русский)") <small>(2)</small> |
 | <small>7.17.</small> [Безопасность](/index.php/Category:Security_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Category:Security (Русский)") <small>(20)</small> | <small>6.21.</small> [Security](/index.php/Category:Security "Category:Security") <small>(36)</small> |

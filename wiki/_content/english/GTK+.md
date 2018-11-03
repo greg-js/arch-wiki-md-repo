@@ -58,20 +58,20 @@ Two versions of GTK+ are currently available in the [official repositories](/ind
 
 ## Themes
 
-In GTK+ 2, the default theme is *Raleigh*, but Arch Linux has a custom configuration file at `/usr/share/gtk-2.0/gtkrc`, which sets the default theme to *Adwaita*. In GTK+ 3, the default theme is *Adwaita*, but *HighContrast*, *HighContrastInverse* and *Raleigh* themes are also included.
+In GTK+ 2, the default theme is Raleigh, but Arch Linux has a custom configuration file at `/usr/share/gtk-2.0/gtkrc`, which sets the default theme to Adwaita. In GTK+ 3, the default theme is Adwaita, but HighContrast, HighContrastInverse and Raleigh themes are also included.
 
 To force a specific theme, set the following [environment variables](/index.php/Environment_variables "Environment variables"):
 
-*   For GTK+ 2, use `GTK2_RC_FILES`. For example to launch [GIMP](/index.php/GIMP "GIMP") with the theme *Raleigh*:
+*   For GTK+ 2, use `GTK2_RC_FILES`. For example to launch [GIMP](/index.php/GIMP "GIMP") with the theme Raleigh:
 
 ```
 $ GTK2_RC_FILES=/usr/share/themes/Raleigh/gtk-2.0/gtkrc gimp
 
 ```
 
-**Tip:** `gtkrc` can also be a custom file in your home directory created by any of the [#Configuration tools](#Configuration_tools).
+**Tip:** `gtkrc` can also be a custom file in your home directory created by any of the [#Configuration tools](#Configuration_tools). See [#Examples](#Examples).
 
-*   For GTK+ 3, use `GTK_THEME`. For example to launch GNOME Calculator with the dark variant of *Adwaita*:
+*   For GTK+ 3, use `GTK_THEME`. For example to launch GNOME Calculator with the dark variant of Adwaita:
 
 ```
 $ GTK_THEME=Adwaita:dark gnome-calculator
@@ -84,27 +84,27 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 **GTK+ 2 and GTK+ 3.20 or newer are supported:**
 
-*   **Adapta** — An adaptive Gtk+ theme based on Material Design Guidelines. Includes: *Adapta*, *Adapta-Eta*, *Adapta-Nokto*, *Adapta-Nokto-Eta*
+*   **Adapta** — An adaptive Gtk+ theme based on Material Design Guidelines. Includes: Adapta, Adapta-Eta, Adapta-Nokto, Adapta-Nokto-Eta
 
 	[https://github.com/tista500/Adapta](https://github.com/tista500/Adapta) || [adapta-gtk-theme](https://www.archlinux.org/packages/?name=adapta-gtk-theme)
 
-*   **Arc** — A flat theme with a modern look and transparent elements. Includes: *Arc*, *Arc-Dark*, *Arc-Darker*
+*   **Arc** — A flat theme with a modern look and transparent elements. Includes: Arc, Arc-Dark, Arc-Darker
 
 	[https://github.com/nicohood/arc-theme](https://github.com/nicohood/arc-theme) || with transparency: [arc-gtk-theme](https://www.archlinux.org/packages/?name=arc-gtk-theme), without transparency: [arc-solid-gtk-theme](https://www.archlinux.org/packages/?name=arc-solid-gtk-theme)
 
-*   **Breeze** — GTK+ version of KDE's default widget theme. Includes: *Breeze*, *Breeze-Dark*
+*   **Breeze** — GTK+ version of KDE's default widget theme. Includes: Breeze, Breeze-Dark
 
 	[https://cgit.kde.org/breeze-gtk.git](https://cgit.kde.org/breeze-gtk.git) || [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk)
 
-*   **Deepin** — Default theme for the Deepin desktop. Includes: *deepin*, *deepin-dark*
+*   **Deepin** — Default theme for the Deepin desktop. Includes: deepin, deepin-dark
 
 	[https://github.com/linuxdeepin/deepin-gtk-theme](https://github.com/linuxdeepin/deepin-gtk-theme) || [deepin-gtk-theme](https://www.archlinux.org/packages/?name=deepin-gtk-theme)
 
-*   **GNOME Extra Themes** — Extra themes for the GNOME desktop. Includes: *Adwaita*, *Adwaita-dark*, *HighContrast*
+*   **GNOME Extra Themes** — Extra themes for the GNOME desktop. Includes: Adwaita, Adwaita-dark, HighContrast
 
 	[https://gitlab.gnome.org/GNOME/gnome-themes-extra](https://gitlab.gnome.org/GNOME/gnome-themes-extra) || [gnome-themes-extra](https://www.archlinux.org/packages/?name=gnome-themes-extra)
 
-*   **MATE Themes** — Default themes for the MATE desktop. Includes: *BlackMATE*, *Blue-Submarine*, *BlueMenta*, *ContrastHighInverse*, *Green-Submarine*, *GreenLaguna*, *Menta*, *TraditionalGreen*, *TraditionalOk*
+*   **MATE Themes** — Default themes for the MATE desktop. Includes: BlackMATE, Blue-Submarine, BlueMenta, ContrastHighInverse, Green-Submarine, GreenLaguna, Menta, TraditionalGreen, TraditionalOk
 
 	[https://github.com/mate-desktop/mate-themes](https://github.com/mate-desktop/mate-themes) || [mate-themes](https://www.archlinux.org/packages/?name=mate-themes)
 
@@ -112,7 +112,7 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 	[https://github.com/nana-4/materia-theme](https://github.com/nana-4/materia-theme) || [materia-gtk-theme](https://www.archlinux.org/packages/?name=materia-gtk-theme)
 
-*   **Numix** — A flat and light theme with a modern look (GNOME, Openbox, Unity, Xfce). Includes: *Numix*
+*   **Numix** — A flat and light theme with a modern look (GNOME, Openbox, Unity, Xfce). Includes: Numix
 
 	[https://github.com/shimmerproject/Numix](https://github.com/shimmerproject/Numix) || [numix-gtk-theme](https://www.archlinux.org/packages/?name=numix-gtk-theme)
 
@@ -134,7 +134,7 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 **Only GTK+ 2 is supported:**
 
-*   **GTK+ Engines** — Theme engines for GTK+ 2\. Includes: *Clearlooks*, *Crux*, *Industrial*, *Mist*, *Redmond*, *ThinIce*
+*   **GTK+ Engines** — Theme engines for GTK+ 2\. Includes: Clearlooks, Crux, Industrial, Mist, Redmond, ThinIce
 
 	[https://github.com/GNOME/gtk-engines](https://github.com/GNOME/gtk-engines) || [gtk-engines](https://www.archlinux.org/packages/?name=gtk-engines)
 

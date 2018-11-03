@@ -9,38 +9,130 @@ Related articles
 
 *   [1 Installation](#Installation)
 *   [2 Configuration](#Configuration)
-    *   [2.1 MariaDB/MySQL](#MariaDB.2FMySQL)
+    *   [2.1 PostgreSQL](#PostgreSQL)
+        *   [2.1.1 With TCP socket](#With_TCP_socket)
+        *   [2.1.2 With Unix socket](#With_Unix_socket)
+    *   [2.2 MariaDB/MySQL](#MariaDB.2FMySQL)
 *   [3 Usage](#Usage)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Enable SSH Support](#Enable_SSH_Support)
-        *   [4.1.1 Setup git user](#Setup_git_user)
-        *   [4.1.2 Configure SSH](#Configure_SSH)
-        *   [4.1.3 Add SSH-keys for an user](#Add_SSH-keys_for_an_user)
+        *   [4.1.1 Setup your domain](#Setup_your_domain)
+        *   [4.1.2 Setup git user](#Setup_git_user)
+        *   [4.1.3 Configure SSH](#Configure_SSH)
     *   [4.2 Disable HTTP protocol](#Disable_HTTP_protocol)
     *   [4.3 Configure nginx as reverse proxy](#Configure_nginx_as_reverse_proxy)
-    *   [4.4 Enable Dark Theme](#Enable_Dark_Theme)
+    *   [4.4 Binding on restricted ports](#Binding_on_restricted_ports)
+    *   [4.5 Enable Dark Theme](#Enable_Dark_Theme)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Database error on startup after upgrade to 1.5.0](#Database_error_on_startup_after_upgrade_to_1.5.0)
 *   [6 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [gitea](https://aur.archlinux.org/packages/gitea/), [gitea-bin](https://aur.archlinux.org/packages/gitea-bin/) or, [gitea-git](https://aur.archlinux.org/packages/gitea-git/) package.
+[Install](/index.php/Install "Install") the [gitea](https://www.archlinux.org/packages/?name=gitea) or [gitea-git](https://aur.archlinux.org/packages/gitea-git/) package.
 
 Gitea requires the use of a database backend, the following are supported:
 
 *   [MariaDB](/index.php/MariaDB "MariaDB")/[MySQL](/index.php/MySQL "MySQL")
 *   [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")
 *   [SQLite](/index.php/SQLite "SQLite")
-*   [TiDB](https://github.com/pingcap/tidb)
+*   [TiDB](https://github.com/pingcap/tidb) (not packaged in the repos though)
 
 ## Configuration
 
-The user configuration file should be located at `/etc/gitea/app.ini`. Do **not** edit the main configuration file (`/var/lib/gitea/conf/app.ini`), since this file is included in the binary and will be overwritten on each update. Instead copy (if not exists already) `/var/lib/gitea/custom/conf/app.ini.sample` to `/etc/gitea/app.ini`.
+The user configuration file is located at `/etc/gitea/app.ini`. Do **not** edit the main configuration file (`/var/lib/gitea/conf/app.ini`), since this file is included in the binary and will be overwritten on each update.
 
-Gitea repository data will be saved into `/var/lib/gitea/repos/`, or if using [gitea-git](https://aur.archlinux.org/packages/gitea-git/) into `/home/gitea/gitea-repositories`. It is possible to set overrule this location in `/etc/gitea/app.ini`.
+Gitea repository data will be saved into `/var/lib/gitea/repos/`, or if using [gitea-git](https://aur.archlinux.org/packages/gitea-git/) into `/home/gitea/gitea-repositories`. It is possible to overrule this location in `/etc/gitea/app.ini`.
 
 See the [Gitea docs](https://docs.gitea.io/en-us/customizing-gitea/) for more configuration examples.
+
+### PostgreSQL
+
+[Install](/index.php/PostgreSQL#Installation "PostgreSQL") and [configure](/index.php/PostgreSQL#Initial_configuration "PostgreSQL") [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
+
+Choose between TCP or UNIX Socket, and jump to the corresponding section.
+
+**Note:** When Gitea and PostgreSQL are on the same machine, you should use a Unix socket, as it is faster and more secure.
+
+#### With TCP socket
+
+Create the new user while connecting to the server as `postgres` user (you will be prompted for a password for the new user):
+
+```
+[postgres]$ createuser -P gitea
+
+```
+
+Create the Gitea database, owned by `gitea` user:
+
+```
+[postgres]$ createdb -O gitea gitea
+
+```
+
+[PostgreSQL#Configure PostgreSQL to be accessible from remote hosts](/index.php/PostgreSQL#Configure_PostgreSQL_to_be_accessible_from_remote_hosts "PostgreSQL")
+
+Verify it works:
+
+```
+$ psql --host=*ip_address* --dbname=gitea --username=gitea --password
+
+```
+
+Configure Gitea:
+
+ `/etc/gitea/app.ini` 
+```
+DB_TYPE             = postgres
+HOST                = *hostadress:port*
+NAME                = gitea
+USER                = gitea
+; Use PASSWD = `your password` for quoting if you use special characters in the password.
+PASSWD              = **password**
+```
+
+#### With Unix socket
+
+Create the new user while connecting to the server as `postgres` user:
+
+```
+[postgres]$ createuser git
+
+```
+
+Create the Gitea database, owned by `git` user:
+
+```
+[postgres]$ createdb -O git gitea
+
+```
+
+Setup the Unix socket by adding the following line to `/var/lib/postgres/data/pg_hba.conf`:
+
+```
+local    gitea           git           peer
+
+```
+
+[Restart](/index.php/Restart "Restart") `postgresql.service`.
+
+Verify it works:
+
+```
+[git]$ psql --dbname=gitea --username=git
+
+```
+
+Configure Gitea:
+
+ `/etc/gitea/app.ini` 
+```
+DB_TYPE             = postgres
+HOST                = /run/postgresql/
+NAME                = gitea
+USER                = git
+PASSWD              =
+```
 
 ### MariaDB/MySQL
 
@@ -82,72 +174,45 @@ PASSWD   = **password**
 
 When running Gitea for the first time it should redirect to `[http://localhost:3000/install](http://localhost:3000/install)`.
 
+**Note:** You might want to configure a reverse proxy to access remotely, e.g. [nginx](/index.php/Gitea#Configure_nginx_as_reverse_proxy "Gitea").
+
 **Note:** If you want Gitea to listen on all interfaces, set `HTTP_ADDR = 0.0.0.0` in `/etc/gitea/app.ini`.
 
 ## Tips and tricks
 
 ### Enable SSH Support
 
-Make sure [SSH](/index.php/SSH "SSH") has been properly configured and running.
+Make sure [SSH](/index.php/SSH "SSH") is properly configured and running.
+
+#### Setup your domain
+
+You might want to set `SSH_DOMAIN`, e.g.:
+
+ `/etc/gitea/app.ini`  `SSH_DOMAIN                 = git.domain.tld` 
 
 #### Setup git user
 
-**Note:** The package [gitea-git](https://aur.archlinux.org/packages/gitea-git/) uses `gitea` as [user](/index.php/User "User")/[user group](/index.php/User_group "User group") instead of `git`. Users should only have to [#Configure SSH](#Configure_SSH).
+**Note:** The package [gitea-git](https://aur.archlinux.org/packages/gitea-git/) uses `gitea` as [user](/index.php/User "User")/[user group](/index.php/User_group "User group") instead of `git`. Users should only have to eventually [#Configure SSH](#Configure_SSH).
 
-Create the `git` [user group](/index.php/User_group "User group") and home directory for `git`:
-
-```
-# groupadd --system git
-# usermod -d /home/git -s /usr/bin/bash git
-# mkhomedir_helper git
+Set the home directory to gitea datadir (necessary to find users keys) and the shell to bash (for gitea commands to be properly executed) for `git`:
 
 ```
+# usermod -d /var/lib/gitea/ -s /usr/bin/bash git
 
-Update `/etc/gitea/app.ini` with the home-directory of the user:
-
- `/etc/gitea/app.ini` 
-```
-[server]
-; Disable SSH feature when not available
-DISABLE_SSH = **false**
-; Domain name to be exposed in clone URL
-SSH_DOMAIN = %(DOMAIN)s
-; Port number to be exposed in clone URL
-SSH_PORT = **22**
-; Root path of SSH directory, default is '~/.ssh', but you have to use '/home/git/.ssh'.
-SSH_ROOT_PATH = **/home/git/.ssh** ; /home/gitea/.ssh when using gitea-git
 ```
 
 #### Configure SSH
 
-Update the [SSH configuration](/index.php/Secure_Shell#Configuration_2 "Secure Shell") with `AuthorizedKeysFile .ssh/authorized_keys` and `AllowUsers git` or `AllowUsers gitea` when using [gitea-git](https://aur.archlinux.org/packages/gitea-git/), e.g.:
+If you use `AllowUsers` in your [SSH configuration](/index.php/Secure_Shell#Configuration_2 "Secure Shell"), add `AllowUsers git` (or `AllowUsers gitea` when using [gitea-git](https://aur.archlinux.org/packages/gitea-git/)) to it, e.g.:
 
  `/etc/ssh/sshd_config` 
 ```
-Port 22
-AuthorizedKeysFile **.ssh/authorized_keys**
-UseDNS no
-PermitUserEnvironment **yes**
-PermitRootLogin no
-PasswordAuthentication no
-PermitEmptyPasswords no
+...
 AllowUsers archie **git**
-PubkeyAuthentication yes
-PrintMotd no
-Subsystem sftp /usr/lib/ssh/sftp-server
+...
 ```
 
-Make sure to set the correct [permissions](/index.php/SSH_keys#Key_ignored_by_the_server "SSH keys") for the [SSH keys](/index.php/SSH_keys "SSH keys").
-
-[Restart](/index.php/Restart "Restart") `gitea.service` and `sshd.service`
-
-#### Add SSH-keys for an user
-
-Generate a [SSH key pair](/index.php/SSH_keys#Generating_an_SSH_key_pair "SSH keys") on the **client** (if not exists already).
-
-Copy the contents of the (newly) generated `~/.ssh/id_rsa.pub` to **Add Key** on the **Your Settings**, **SSH Keys** on the Gitea webinterface.
-
-You should now be able to use SSH-authentication to manage the repositories, without entering an username/password.
+[Restart](/index.php/Restart "Restart") `sshd.service` if you use it (nothing to do if you use `sshd.socket`).
 
 ### Disable HTTP protocol
 
@@ -155,55 +220,51 @@ By default, the ability to interact with repositories by HTTP protocol is enable
 
 ### Configure nginx as reverse proxy
 
-**Tip:** [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") is a free, automated, and open certificate authority. A plugin is available to request valid SSL certificates straight from the command line and automatic configuration.
+The following is an example of using [nginx](/index.php/Nginx#Managing_server_entries "Nginx") as reverse proxy for Gitea over unix socket (you need to [provide the SSL certificate](/index.php/Transport_Layer_Security#Obtaining_a_certificate "Transport Layer Security")):
 
-The following is an example of using [nginx](/index.php/Nginx#Managing_server_entries "Nginx") as reverse proxy for Gitea including [OpenSSL](/index.php/OpenSSL "OpenSSL"):
-
- `/etc/nginx/servers-available/git` 
+ `/etc/nginx/servers-available/gitea.conf` 
 ```
-upstream gitea {
-    server 127.0.0.1:3000;
-}
-
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
     server_name git.domain.tld;
-    root /var/lib/gitea/public;
-    access_log off;
-    error_log off;
+
+    ssl_certificate /path/to/fullchain.pem;
+    ssl_certificate_key /path/to/privkey.pem;
 
     location / {
-      try_files maintain.html $uri $uri/index.html @node;
-    }
-
-    location @node {
-      client_max_body_size 0;
-      proxy_pass [http://localhost:3000](http://localhost:3000);
-      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-      proxy_set_header X-Real-IP $remote_addr;
-      proxy_set_header Host $http_host;
-      proxy_set_header X-Forwarded-Ssl on;
-      proxy_set_header X-Forwarded-Proto $scheme;
-      proxy_max_temp_file_size 0;
-      proxy_redirect off;
-      proxy_read_timeout 120;
+        proxy_pass [http://unix:/run/gitea/gitea.socket](http://unix:/run/gitea/gitea.socket);
     }
 }
 ```
 
-Update the *server* section of `app.ini`:
+Update the `[server]` section of `app.ini`:
 
  `/etc/gitea/app.ini` 
 ```
 [server]
-PROTOCOL               = http
-DOMAIN                 = git.domain.tld
+PROTOCOL                   = unix
+DOMAIN                     = git.domain.tld
+ROOT_URL                   = [https://git.domain.tld](https://git.domain.tld)
+HTTP_ADDR                  = /run/gitea/gitea.socket
+LOCAL_ROOT_URL             =
 ```
 
 **Note:** You do not need to activate any SSL certificate options in `/etc/gitea/app.ini`.
 
 Finally update the *cookie* section - set `COOKIE_SECURE` to `true`.
+
+### Binding on restricted ports
+
+If you use the built-in SSH server and want Gitea to bind it on port 22, or if you want to bind Gitea webserver directly on ports 80/443 (that is in a setup without proxy), you will need to add a [drop-in systemd unit override](/index.php/Systemd#Drop-in_files "Systemd"):
+
+ `/etc/systemd/system/gitea.service.d/override.conf` 
+```
+[Service]
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+PrivateUsers=false
+```
 
 ### Enable Dark Theme
 

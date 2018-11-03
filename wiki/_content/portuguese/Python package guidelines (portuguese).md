@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines"). Data da última tradução: 2018-09-17\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Python_package_guidelines&diff=0&oldid=538740) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines"). Data da última tradução: 2018-11-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Python_package_guidelines&diff=0&oldid=552495) na versão em inglês.
 
 **[Diretrizes de criação de pacotes](/index.php/Criando_pacotes "Criando pacotes")**
 
@@ -17,7 +17,8 @@ Esse documento cobre padrões e diretrizes na escrita de [PKGBUILDs](/index.php/
     *   [2.1 distutils](#distutils)
     *   [2.2 setuptools](#setuptools)
     *   [2.3 pip](#pip)
-*   [3 Notas](#Notas)
+*   [3 Verificação](#Verifica.C3.A7.C3.A3o)
+*   [4 Notas](#Notas)
 
 ## Nome do pacote
 
@@ -114,6 +115,53 @@ python -O -m compileall "${pkgdir}/caminho/para/o/módulo"
 ```
 
 **Atenção:** O uso de pacotes *pip* e/ou de wheel é desencorajado em favor dos pacotes fonte setuptools, e deve ser usado somente quando o último não é uma opção viável (por exemplo, pacotes que **somente** vêm com roda fontes e, portanto, não pode ser instalado usando setuptools).
+
+## Verificação
+
+A maioria dos projetos python que fornecem *testsuites* (que são conjunto ou coleção de testes) usam *nosetests* ou *pytest* para executar os testes com `test` no nome do arquivo ou diretório contendo a *testsuite*. Em geral, só executar `nosetests` ou `pytest` é o suficiente para executar a *testsuite*.
+
+```
+ check(){
+   cd "$srcdir/foo-$pkgver"
+
+   # Para nosetests
+   nosetests
+
+   # Para pytest
+   pytest
+ }
+
+```
+
+Se houver uma extensão C compilada, os testes precisam ser executados usando um hack `$PYTHONPATH` para localizá-la e carregá-la.
+
+```
+ check(){
+   cd "$srcdir/foo-$pkgver"
+
+   # Para nosetests
+   PYTHONPATH="$PWD/build/lib.linux-$CARCH-3.7" nosetests
+
+   # Para pytest
+   PYTHONPATH="$PWD/build/lib.linux-$CARCH-3.7" pytest
+ }
+
+```
+
+Alguns projetos fornecem pontos de entrada no `setup.py` para executar o teste. Isso funciona para `pytest` e `nosetests`.
+
+```
+ check(){
+   cd "$srcdir/foo-$pkgver"
+
+   # para nosetests
+   python setup.py nosetests
+
+   # Para pytest - precisa de python-pytest-runner
+   python setup.py pytest
+ }
+
+```
 
 ## Notas
 

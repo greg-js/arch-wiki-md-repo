@@ -28,7 +28,7 @@ $ printenv
 
 **Note:** Some environment variables are user-specific. Check by comparing the outputs of *printenv* as an unprivileged user and as *root*.
 
-The `env` utility can be used to run a command under a modified environment. The following example will launch *xterm* with the environment variable `EDITOR` set to `vim`. This will not affect the global environment variable `EDITOR`.
+The *env* utility can be used to run a command under a modified environment. The following example will launch *xterm* with the environment variable `EDITOR` set to `vim`. This will not affect the global environment variable `EDITOR`.
 
 ```
 $ env EDITOR=vim xterm

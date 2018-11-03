@@ -424,6 +424,7 @@ Description=rTorrent
 # set TERM according to your terminal
 Environment="TERM=xterm"
 #Environment="TERM=linux" 
+# Type=forking is not required if ExecStart command is run using dtach -N (i.e dtach will run on foreground).
 Type=forking
 KillMode=none
 ExecStart=-/usr/bin/dtach -n /home/sam/run/dtach_fifos/fifo -e "^T" /usr/bin/rtorrent 
@@ -436,6 +437,8 @@ ExecStop=/usr/bin/killall -w -s INT /usr/bin/rtorrent
 WantedBy=multi-user.target
 
 ```
+
+Note the hyphen in `ExecStart=-/usr/bin/dtach` part, which allows failure exit code also to denote successfull termination. This is likely because of a current issue[[1]](https://github.com/crigler/dtach/issues/12). An alternative is to use `SuccessExitStatus=1` in the service section.
 
 The service can be controlled with [systemctl --user](/index.php/Systemctl_--user "Systemctl --user"). When it is started, you can attach to the session:
 

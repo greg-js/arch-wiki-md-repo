@@ -83,7 +83,7 @@ September, 26th-28th (2008, mini-LBW) |
 | Site | [http://www.socallinuxexpo.org/scale6x/](http://www.socallinuxexpo.org/scale6x/) |
 | Where | Los Angeles, USA |
 | When | February 8th-10th (2008) |
-| Since |  ? |
+| Since | ? |
 | Arch presence | not yet :( |
 
 # More Resources

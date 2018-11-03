@@ -35,7 +35,7 @@ Packaging Java applications in Arch is going to take quite a bit more work for p
 
 *   You do not need to compile Java applications from source. Very little optimization goes into the compile process, as with gcc created binaries. If the source package provides an easy way to build from source go ahead and use it, but if its easier to just grab a binary release of a jar file or an installer you may use that as well.
 
-*   Place all jar files (and no other files) distributed with the program in a `/usr/share/java/myprogram` directory. This includes all dependency jar files distributed with the application. However, effort should be made to place common or large dependency libraries into their own packages. This can only happen if the program does not depend on a specific version of a dependency library.
+*   Place all jar files (and no other files) distributed with the program in a `/usr/share/java/*myprogram*` directory. This includes all dependency jar files distributed with the application. However, effort should be made to place common or large dependency libraries into their own packages. This can only happen if the program does not depend on a specific version of a dependency library.
 
 	This rule makes it possible to iteratively refactor dependencies. That is, the package and all its dependencies can be placed into one directory at first. After this has been tested, major dependencies can be refactored out one at a time. Note that some applications include bundled dependencies inside the main jar file. That is, they unjar the bundled dependencies and include them in the main jar. Such dependencies are usually very small and there is little point in refactoring them.
 
@@ -45,24 +45,24 @@ Packaging Java applications in Arch is going to take quite a bit more work for p
 
 ```
 #!/bin/sh
-exec /usr/bin/java -jar '/usr/share/java/PROGRAMNAME/PROGRAMNAME.jar' "$@"
+exec /usr/bin/java -jar '/usr/share/java/*myprogram*/*myprogram*.jar' "$@"
 ```
 
 	and like this for single class files:
 
 ```
 #!/bin/sh
-exec /usr/bin/java '/usr/share/java/PROGRAMNAME/PROGRAMCLASSNAME' "$@"
+exec /usr/bin/java '/usr/share/java/*myprogram*/*myprogramclassname'* "$@"
 ```
 
-*   Set the `CLASSPATH` using the `-cp` option to the Java interpreter unless there is an explicit reason not to (ie: the `CLASSPATH` is used as a plugin mechanism). The `CLASSPATH` should include all jar files in the `/usr/share/java/myprogram` direcory, as well as jar files that are from dependency libraries that have been refactored to other directories. You can use something like the following code:
+*   Set the `CLASSPATH` using the `-cp` option to the Java interpreter unless there is an explicit reason not to (ie: the `CLASSPATH` is used as a plugin mechanism). The `CLASSPATH` should include all jar files in the `/usr/share/java/*myprogram*` direcory, as well as jar files that are from dependency libraries that have been refactored to other directories. You can use something like the following code:
 
 ```
-for name in /usr/share/java/myprogram/*.jar ; do
+for name in /usr/share/java/*myprogram*/*.jar ; do
   CP=$CP:$name
 done
 CP=$CP:/usr/share/java/dep1/dep1.jar
-java -cp $CP myprogram.java.MainClass
+java -cp $CP *myprogram*.java.MainClass
 ```
 
 *   Make sure the shell script is executable!

@@ -51,6 +51,7 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | DCP-7020 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or Brother's driver. |
 | DCP-7030 | [brother-dcp7030](https://aur.archlinux.org/packages/brother-dcp7030/) |
 | DCP-7065DN | [brother-dcp7065dn](https://aur.archlinux.org/packages/brother-dcp7065dn/) |
+| DCP-J515W | [brother-dcp-j515w](https://aur.archlinux.org/packages/brother-dcp-j515w/) |
 | FAX-2820 | [brother-cups-wrapper-laser](https://aur.archlinux.org/packages/brother-cups-wrapper-laser/) |
 | FAX-2840 | [brother-fax2840](https://aur.archlinux.org/packages/brother-fax2840/) | Or [foomatic](/index.php/CUPS#Foomatic "CUPS") - works mostly with `hpijs-pcl5e.ppd`. Same as the HL-2170W. |
 | FAX-2940 | [brother-fax2940](https://aur.archlinux.org/packages/brother-fax2940/) |
@@ -243,7 +244,8 @@ There are many possible drivers for Canon printers. [Many Canon printers](http:/
 | LBP7200C series |
 | LBP7210Cdn |
 | LBP9100C |
-| MF4720w | [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/) |
+| MF365Cx | [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/) |
+| MF4720w |
 | MG4200 series | [cnijfilter-mg4200](https://aur.archlinux.org/packages/cnijfilter-mg4200/) | Avoid the [web interface](/index.php/CUPS#Web_interface "CUPS") when adding the printer as it won't find the PPD file. |
 | MX490 | [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/)
 [cnijfilter2-bin](https://aur.archlinux.org/packages/cnijfilter2-bin/) |

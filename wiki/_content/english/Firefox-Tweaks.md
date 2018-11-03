@@ -346,9 +346,7 @@ The extension [Classic Theme Restorer](https://addons.mozilla.org/firefox/addon/
 
 #### Unreadable input fields with dark GTK+ themes
 
-When using a dark [GTK+](/index.php/GTK%2B "GTK+") theme, one might encounter Internet pages with unreadable input and text fields (e.g. text input field with white text on white background). This can happen because the site only sets either background or text color, and Firefox takes the other one from the theme.
-
-To prevent Firefox from using theme's colors in web pages confirm `browser.display.use_system_colors` is set to `false` in `about:config`.
+When using a dark [GTK+](/index.php/GTK%2B "GTK+") theme, one might encounter Internet pages with unreadable input and text fields (e.g. text input field with white text on white background). This can happen because the site only sets either background or text color, and Firefox takes the other one from the theme. To prevent Firefox from using theme's colors in web pages confirm `browser.display.use_system_colors` is set to `false` in `about:config`.
 
 ##### Override input field color with CSS
 
@@ -374,16 +372,16 @@ input:not(.urlbar-input):not(.textbox-input):not(.form-control):not([type='check
 
 ##### Change the GTK theme
 
-To force Firefox to use a light theme (e.g. Adwaita) for both web content and UI, copy `/usr/share/applications/firefox.desktop` to `~/.local/share/applications/` and replace all occurrences of `Exec=firefox` with `Exec=env GTK_THEME=Adwaita firefox`, and restart Firefox. See also [GTK+#Themes](/index.php/GTK%2B#Themes "GTK+").
+To force Firefox to use a light theme (e.g. Adwaita) for both web content and UI, see [Firefox#Dark themes](/index.php/Firefox#Dark_themes "Firefox").
 
 ##### Change the GTK theme for content process only
 
 **Note:** Works with multiprocess enabled. [[3]](https://bugzilla.mozilla.org/show_bug.cgi?id=1158076#c145)
 
-Another way is to change the GTK theme for the content process only, which keeps dark UI theming, but enforces light theme for rendering webpage itself:
+To force Firefox to use a light theme (e.g. Adwaita) for web content only:
 
 1.  Open `about:config` in the address bar.
-2.  Create a new string type preference (`right mouse button` *> New > String*) named `widget.content.gtk-theme-override`.
+2.  Create a new `widget.content.gtk-theme-override` string type entry (`right mouse button` *> New > String*).
 3.  Set the value to the light theme to use for rendering purposes (e.g. `Adwaita`).
 4.  Restart Firefox.
 

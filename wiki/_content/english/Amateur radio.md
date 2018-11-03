@@ -168,7 +168,7 @@ These are audio alarm recordings of a North American English speaker that do not
 
 ### Logging
 
-*   [cqrlog](https://aur.archlinux.org/packages/cqrlog/) – a popular Linux logging program
+*   [cqrlog-bin](https://aur.archlinux.org/packages/cqrlog-bin/) – a popular Linux logging program
 *   [fdlog](https://aur.archlinux.org/packages/fdlog/) – a Field Day Logger with networked nodes
 *   [klog](https://aur.archlinux.org/packages/klog/) – a Ham radio logging program for Linux / KDE.
 *   [qle](https://aur.archlinux.org/packages/qle/) – QSO Logger and log Editor for amateur radio operators written in Perl

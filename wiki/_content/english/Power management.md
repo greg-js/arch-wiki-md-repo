@@ -192,7 +192,7 @@ See the [sleep.conf.d(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/sleep.conf.
 
 #### Suspend/resume service files
 
-Service files can be hooked into *suspend.target*, *hibernate.target* and *sleep.target* to execute actions before or after suspend/hibernate. Separate files should be created for user actions and root/system actions. [Enable](/index.php/Enable "Enable") the `suspend@*user*` and `resume@*user*` services to have them started at boot. Examples:
+Service files can be hooked into *suspend.target*, *hibernate.target*, *sleep.target*, *hybrid-sleep.target* and *suspend-then-hibernate.target* to execute actions before or after suspend/hibernate. Separate files should be created for user actions and root/system actions. [Enable](/index.php/Enable "Enable") the `suspend@*user*` and `resume@*user*` services to have them started at boot. Examples:
 
  `/etc/systemd/system/suspend@.service` 
 ```

@@ -68,7 +68,7 @@ i  8A
 
 ```
 
-Each of these identifiers, and corresponding hex numbers represent some of the info that a given device exposes. For starters, **v** is the *vendor id* and **d** is the *device id* - these are very standard numbers, and are the same exact numbers that tools like **hwd** uses to lookup a device. You can even find websites to look up specific hardware identification based on the vendor and device ids, for instance, [http://www.pcidatabase.com/](http://www.pcidatabase.com/)
+Each of these identifiers, and corresponding hex numbers represent some of the info that a given device exposes. For starters, **v** is the *vendor id* and **d** is the *device id* - these are very standard numbers, and are the same exact numbers that tools like **hwd** uses to lookup a device. You can even find websites to look up specific hardware identification based on the vendor and device ids, for instance, [https://devicehunt.com/](https://devicehunt.com/)
 
 We can also see these numbers here:
 

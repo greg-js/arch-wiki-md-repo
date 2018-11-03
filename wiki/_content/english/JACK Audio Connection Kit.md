@@ -245,7 +245,7 @@ You need not restart your computer or anything. Just edit the alsa config files,
 
 Remember to start it as a **user**. If you start it with `jackd` -d alsa" as user X, it will not work for user Y.
 
-Another approach, using ALSA loopback device (more complex but probably more robust), is described in [this article](http://alsa.opensrc.org/Jack_and_Loopback_device_as_Alsa-to-Jack_bridge).
+Another approach, using ALSA loopback device (more complex but probably more robust), is described in [this article](https://alsa.opensrc.org/Jack_and_Loopback_device_as_Alsa-to-Jack_bridge).
 
 ### GStreamer
 

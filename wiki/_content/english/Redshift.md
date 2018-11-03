@@ -290,9 +290,6 @@ users=
 
 *   [Redshift website](http://jonls.dk/redshift)
 *   [Redshift on github](http://github.com/jonls/redshift)
-*   **sct** — set color temperature
-
-	[http://www.tedunangst.com/flak/post/sct-set-color-temperature](http://www.tedunangst.com/flak/post/sct-set-color-temperature) || [sct](https://aur.archlinux.org/packages/sct/)
-
-*   [xflux-gui-git](https://aur.archlinux.org/packages/xflux-gui-git/)
 *   [Wikipedia:Redshift_(software)](https://en.wikipedia.org/wiki/Redshift_(software) "wikipedia:Redshift (software)")
+*   [sct](https://aur.archlinux.org/packages/sct/) - set color temperature [[6]](http://www.tedunangst.com/flak/post/sct-set-color-temperature)
+*   [xflux-gui-git](https://aur.archlinux.org/packages/xflux-gui-git/)

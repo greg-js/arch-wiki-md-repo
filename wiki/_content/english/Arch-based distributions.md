@@ -7,6 +7,8 @@ Related articles
 
 **Warning:** Arch-based distributions are **not** supported by the Arch community or developers. See [Code of conduct#Arch Linux distribution support *only*](/index.php/Code_of_conduct#Arch_Linux_distribution_support_.2Aonly.2A "Code of conduct")
 
+**Note:** Please use the discussion page to suggest edits to this article: [Talk:Arch-based distributions](/index.php/Talk:Arch-based_distributions "Talk:Arch-based distributions").
+
 This page lists OS distributions which are derived from Arch Linux **either in whole or in part**, to help enforce the [Arch Linux trademark policy](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy"). Although it intends to be as comprehensive as possible, it is not an exhaustive list. SourceForge project links are preferred to simplify maintenance.
 
 ## Contents

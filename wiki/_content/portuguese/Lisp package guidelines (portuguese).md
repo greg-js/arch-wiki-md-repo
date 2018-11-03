@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Lisp package guidelines](/index.php/Lisp_package_guidelines "Lisp package guidelines"). Data da última tradução: 2018-11-02\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Lisp_package_guidelines&diff=0&oldid=552575) na versão em inglês.
+
 **[Diretrizes de criação de pacotes](/index.php/Criando_pacotes "Criando pacotes")**
 
 * * *

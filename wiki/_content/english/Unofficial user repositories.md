@@ -57,10 +57,9 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [2.40 siosm-aur](#siosm-aur)
     *   [2.41 sublime-text](#sublime-text)
     *   [2.42 subtitlecomposer](#subtitlecomposer)
-    *   [2.43 tredaelli-systemd](#tredaelli-systemd)
-    *   [2.44 trinity](#trinity)
-    *   [2.45 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
-    *   [2.46 xyne-x86_64](#xyne-x86_64)
+    *   [2.43 trinity](#trinity)
+    *   [2.44 Webkit2Gtk-unstable](#Webkit2Gtk-unstable)
+    *   [2.45 xyne-x86_64](#xyne-x86_64)
 *   [3 Unsigned](#Unsigned)
     *   [3.1 alucryd](#alucryd)
     *   [3.2 alucryd-multilib](#alucryd-multilib)
@@ -76,10 +75,11 @@ If you want to create your own custom repository, follow [pacman tips#Custom loc
     *   [3.12 jkanetwork](#jkanetwork)
     *   [3.13 mesa-git](#mesa-git)
     *   [3.14 mingw-w64](#mingw-w64)
-    *   [3.15 ownstuff](#ownstuff)
-    *   [3.16 pantheon](#pantheon)
-    *   [3.17 pietma](#pietma)
-    *   [3.18 pnsft-pur](#pnsft-pur)
+    *   [3.15 minzord](#minzord)
+    *   [3.16 ownstuff](#ownstuff)
+    *   [3.17 pantheon](#pantheon)
+    *   [3.18 pietma](#pietma)
+    *   [3.19 pnsft-pur](#pnsft-pur)
 
 ## Adding your repository to this page
 
@@ -184,7 +184,8 @@ Server = https://repo.herecura.be/$repo/$arch
 ### chaotic-aur
 
 *   **Maintainer:** [PedroHLC](https://github.com/pedrohlc)
-*   **Description:** Auto builds AUR packages the maintainer uses, updated hourly (except llvm-svn which is daily, and xen weekly). Hosted in São Carlos, SP, Brazil. x86_64 only.
+*   **Description:** Auto builds AUR packages the maintainer uses, update them hourly (a few are daily). Hosted in São Carlos, SP, Brazil. x86_64 only.
+*   **Note:** Older packages were not built from clean chroot, if you find missing dependencies report it to AUR package. wine-tkg-git packages are built from TkG's github. See [maintainer's notes](http://lonewolf-builder.duckdns.org/chaotic-aur/about.txt).
 *   **Key-ID:** [[1]](http://pool.sks-keyservers.net/pks/lookup?search=0x3056513887B78AEB&fingerprint=on&op=index), fingerprint `EF92 5EA6 0F33 D0CB 85C4 4AD1 3056 5138 87B7 8AEB`
 
 ```
@@ -402,7 +403,7 @@ Server = https://repos.uni-plovdiv.net/archlinux/$repo/$arch
 
 *   **Maintainer:** [Mark Weiman (markzz)](/index.php/User:Markzz "User:Markzz")
 *   **Description:** Packages that markzz maintains or uses on the AUR; this includes Linux with the vfio patchset ([linux-vfio](https://aur.archlinux.org/packages/linux-vfio/) and [linux-vfio-lts](https://aur.archlinux.org/packages/linux-vfio-lts/)), and packages to maintain a Debian package repository.
-*   **Key ID:** 3CADDFDD
+*   **Key ID:** DEBB9EE4
 
 **Note:** If you want to add the key by installing the *markzz-keyring* package, temporarily add `SigLevel = Never` into the repository section.
 
@@ -636,20 +637,6 @@ Server = http://smoothware.net/$repo/$arch
 
 ```
 
-### tredaelli-systemd
-
-*   **Maintainer:** [Timothy Redaelli](https://www.archlinux.org/people/trusted-users/#tredaelli)
-*   **Description:** systemd rebuilt with unofficial OpenVZ patch (kernel < 2.6.32-042stab111.1)
-*   **Key-ID:** Not required, as maintainer is a TU
-
-**Note:** `[tredaelli-systemd]` must be put before `[core]` in `/etc/pacman.conf`
-
-```
-[tredaelli-systemd]
-Server = https://pkgbuild.com/~tredaelli/repo/systemd/$arch
-
-```
-
 ### trinity
 
 *   **Maintainer:** Michael Manley <mmanley@nasutek.com>
@@ -855,6 +842,17 @@ Server = https://pkgbuild.com/~lcarlier/$repo/$arch
 [mingw-w64]
 Server = https://downloads.sourceforge.net/project/mingw-w64-archlinux/$arch
 #Server = http://amr.linuxd.org/archlinux/$repo/os/$arch
+
+```
+
+### minzord
+
+*   **Maintainer:** Minzord
+*   **Description:** A Minzord repository is there to avoid long compilation on some software. It also adds some very useful additional software.
+
+```
+[minzord]
+Server = https://minzordos.000webhostapp.com/Repo/
 
 ```
 

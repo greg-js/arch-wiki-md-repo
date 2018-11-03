@@ -40,6 +40,6 @@ Puede instalar Ethereum Wallet a través del paquete [mist](https://aur.archlinu
 
 Si usa la versión de GitHub, descargue la más reciente para Linux con extensión zip: `Ethereum-Wallet-linux64-*version*.zip`; descomprima el archivo y ejecute `./ethereumwallet`.
 
-Si la aplicación no se inicia con `error while loading shared libraries: libgtk-x11-2.0.so: cannot open shared object file: No such file or directory`, instale la biblioteca [GTK+ 2](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") .
+Si la aplicación no se inicia con `error while loading shared libraries: libgtk-x11-2.0.so: cannot open shared object file: No such file or directory`, instale la librería [GTK+ 2](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)") .
 
 Wallet también implementa un nodo Ethereum.

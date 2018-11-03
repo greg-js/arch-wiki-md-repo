@@ -1,13 +1,13 @@
-[Stata](https://www.stata.com/) es un paquete de software estadístico de propósito general para *nix, Windows y Mac. A continuación se le explicará cómo instalar Stata y las bibliotecas necesarias.
+[Stata](https://www.stata.com/) es un paquete de software estadístico de propósito general para *nix, Windows y Mac. A continuación se le explicará cómo instalar Stata y las librerías necesarias.
 
 ## Contents
 
-*   [1 Bibliotecas necesarias](#Bibliotecas_necesarias)
+*   [1 Librerías necesarias](#Librer.C3.ADas_necesarias)
 *   [2 Instalar Stata](#Instalar_Stata)
 *   [3 Consejos y trucos](#Consejos_y_trucos)
 *   [4 Solución de problemas](#Soluci.C3.B3n_de_problemas)
 
-## Bibliotecas necesarias
+## Librerías necesarias
 
 Stata depende de [libpng12](https://www.archlinux.org/packages/?name=libpng12). Stata también utiliza el framework GTK+.
 
@@ -45,7 +45,7 @@ Y ejecute el archivo de instalación:
 
 Siga las instrucciones y terminará la instalación de Stata.
 
-En una instalación predeterminada de Arch Linux, los iconos no se mostrarán si se inicia. Esto se debe a que Stata se está construyendo contra versiones anteriores de bibliotecas. Consulte la sección de solución de problemas para saber cómo solucionarlo.
+En una instalación predeterminada de Arch Linux, los iconos no se mostrarán si se inicia. Esto se debe a que Stata se está construyendo contra versiones anteriores de librerías. Consulte la sección de solución de problemas para saber cómo solucionarlo.
 
 ## Consejos y trucos
 
@@ -59,4 +59,4 @@ PATH=$PATH:/usr/local/stata12/
 
 ## Solución de problemas
 
-Stata 12 y 13 se crearon al menos en versiones anteriores de libpng y zlib. Por lo tanto, faltarán íconos al iniciar Xstata (la interfaz gráfica). La solución **NO** es volver a una versión anterior de las bibliotecas de su sistema, sino seguir los consejos proporcionados por el departamento técnico de StataCorp [aquí](http://www.statalist.org/forums/forum/general-stata-discussion/general/2199-linux-stata-bug-libpng-on-newer-opensuse-posiblemente-other-distributions). Implica compilar las versiones anteriores de libpng y zlib y colocarlas en una carpeta con la que su sistema no interactuará. Luego se debe hacer un wrapper para Stata para hacer referencia a estas bibliotecas. Estos pasos se han automatizado mediante un script en bitbucket, que se encuentra [aquí](https://bitbucket.org/vilhuberl/stata-png-fix).
+Stata 12 y 13 se crearon al menos en versiones anteriores de libpng y zlib. Por lo tanto, faltarán íconos al iniciar Xstata (la interfaz gráfica). La solución **NO** es volver a una versión anterior de las librerías de su sistema, sino seguir los consejos proporcionados por el departamento técnico de StataCorp [aquí](http://www.statalist.org/forums/forum/general-stata-discussion/general/2199-linux-stata-bug-libpng-on-newer-opensuse-posiblemente-other-distributions). Implica compilar las versiones anteriores de libpng y zlib y colocarlas en una carpeta con la que su sistema no interactuará. Luego se debe hacer un wrapper para Stata para hacer referencia a estas librerías. Estos pasos se han automatizado mediante un script en bitbucket, que se encuentra [aquí](https://bitbucket.org/vilhuberl/stata-png-fix).

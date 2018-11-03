@@ -11,7 +11,7 @@ The HP 2560p is a subnotebook with an Intel i5 or Intel i7 processor inside. Due
 | [Webcam](/index.php/Webcam "Webcam") | Yes |
 | [Fingerprint reader](/index.php/Fprint "Fprint") | No |
 | Pointstick | Yes |
-| [eSATA Port](/index.php/Udev#Detect_new_eSATA_drives "Udev") | Not tested |
+| eSATA Port | Yes |
 | Backlight | Yes |
 | Function keys | Yes |
 | Cardreader | Yes |

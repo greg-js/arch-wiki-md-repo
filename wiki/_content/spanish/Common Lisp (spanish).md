@@ -39,7 +39,7 @@ SBCL presenta un compilador de generación de código nativo altamente optimizad
 
 ## Quicklisp
 
-[Quicklisp](https://www.quicklisp.org/beta/) ([quicklisp](https://aur.archlinux.org/packages/quicklisp/)) es un administrador de paquetes escrito en common lisp para cargar bibliotecas common lisp. Funciona en todas las implementaciones importantes de common lisp, y es la opción dominante para mantener paquetes common lisp dentro de la comunidad de common lisp.
+[Quicklisp](https://www.quicklisp.org/beta/) ([quicklisp](https://aur.archlinux.org/packages/quicklisp/)) es un administrador de paquetes escrito en common lisp para cargar librerías common lisp. Funciona en todas las implementaciones importantes de common lisp, y es la opción dominante para mantener paquetes common lisp dentro de la comunidad de common lisp.
 
 ## SLIME
 

@@ -11,7 +11,7 @@ From the [project page](http://linrunner.de/en/tlp/tlp.html):
 
 *   [1 Installation](#Installation)
     *   [1.1 ThinkPads only](#ThinkPads_only)
-    *   [1.2 Graphical interface](#Graphical_interface)
+    *   [1.2 Front end](#Front_end)
 *   [2 Configuration](#Configuration)
     *   [2.1 Force battery (BAT) configuration](#Force_battery_.28BAT.29_configuration)
     *   [2.2 Btrfs](#Btrfs)
@@ -24,7 +24,7 @@ From the [project page](http://linrunner.de/en/tlp/tlp.html):
 
 ## Installation
 
-[Install](/index.php/Install "Install") [tlp](https://www.archlinux.org/packages/?name=tlp) from the [official repositories](/index.php/Official_repositories "Official repositories") - pay attention to its optional dependencies that may help provide additional power saving.
+[Install](/index.php/Install "Install") the [tlp](https://www.archlinux.org/packages/?name=tlp) package. Note its optional dependencies may help provide additional power saving.
 
 To complete TLP's install, you must [enable](/index.php/Enable "Enable") the systemd services `tlp.service` and `tlp-sleep.service`. You should also [mask](/index.php/Mask "Mask") the systemd service `systemd-rfkill.service` and socket `systemd-rfkill.socket` to avoid conflicts and assure proper operation of TLP's radio device switching options.
 
@@ -41,9 +41,9 @@ See the TLP FAQ, section ["Which kernel module?"](http://linrunner.de/en/tlp/doc
 
 Controlling the charge thresholds using D-Bus without root privileges is possible using [threshy](https://aur.archlinux.org/packages/threshy/) and it's example Qt user interface [threshy-gui](https://aur.archlinux.org/packages/threshy-gui/).
 
-### Graphical interface
+### Front end
 
-[tlpui-git](https://aur.archlinux.org/packages/tlpui-git/) is a GTK user interface for TLP written in Python. As of 31 October 2018, the software is still in beta.
+[tlpui-git](https://aur.archlinux.org/packages/tlpui-git/) is a [GTK](/index.php/GTK "GTK") user interface for TLP written in Python. As of October 2018, the software is still in beta.
 
 ## Configuration
 

@@ -1,6 +1,6 @@
 **Warning:** AUR helpers are **not supported** by Arch Linux. You should become familiar with the [manual build process](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") in order to be prepared to troubleshoot problems.
 
-**Note:** Do not edit this article prior to discussion in [Talk:AUR helpers](/index.php/Talk:AUR_helpers "Talk:AUR helpers").
+**Note:** Please use the discussion page to suggest edits to this article: [Talk:AUR helpers](/index.php/Talk:AUR_helpers "Talk:AUR helpers").
 
 AUR helpers automate certain usage of the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Most AUR helpers can search for packages in the AUR and retrieve their [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") – others additionally assist with the build and install process.
 
@@ -15,7 +15,6 @@ Since AUR helpers are unsupported, they are not present in the [official reposit
 *   [3 Download and build](#Download_and_build)
 *   [4 Pacman wrappers](#Pacman_wrappers)
 *   [5 Graphical](#Graphical)
-    *   [5.1 Update notifiers](#Update_notifiers)
 *   [6 Libraries](#Libraries)
 *   [7 Maintenance](#Maintenance)
 *   [8 Uploading](#Uploading)
@@ -92,8 +91,8 @@ The columns have the following meaning:
 | Name | Written in | File review | Diff view | Git clone | Reliable parser | Reliable solver | Split packages | Clean build | Batch interaction | Shell completion | Specificity |
 | [aurutils](https://aur.archlinux.org/packages/aurutils/) | Bash/C | Yes | Yes | Yes | Yes | Yes | Yes | Yes | 1 | zsh | [vifm](/index.php/Vifm "Vifm"), [local repository](/index.php/Local_repository "Local repository"), [package signing](/index.php/Package_signing "Package signing"), [clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot") support, sort by votes/popularity |
 | [bauerbill](https://aur.archlinux.org/packages/bauerbill/) | Python | Yes | No | Yes | Yes | Yes | Yes | Yes | 1 | bash, zsh | trust management, [ABS](/index.php/ABS "ABS") support, extends *powerpill*, `bb-wrapper` for *pacman* wrapping |
+| [rua](https://aur.archlinux.org/packages/rua/) | Rust | Yes | [No](https://github.com/vn971/rua/issues/1) | Yes | [Yes](https://github.com/vn971/rua/commit/fc8c2f3) | Yes | Yes | Yes | 1 | bash, zsh, fish | tar artifact inspections (SUID, install file etc), isolated build, offline build |
 | [PKGBUILDer](https://aur.archlinux.org/packages/PKGBUILDer/) | Python | Optional | [No](https://github.com/Kwpolska/pkgbuilder/issues/36) | Yes | Yes | Yes | [Partial](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | 1* | – | automatic builds by default, use `-F` to disable; multilingual, `pb-wrapper` for *pacman* wrapping |
-| [rua](https://aur.archlinux.org/packages/rua/) | Rust | Yes | [No](https://github.com/vn971/rua/issues/1) | Yes | [No](https://github.com/vn971/rua/issues/3) | Yes | Yes | Yes | 1 | bash, zsh, fish | tar artifact inspections (SUID, install file etc), isolated build, offline build |
 | [repofish](https://aur.archlinux.org/packages/repofish/) | Bash | Optional | Yes | Yes | No | No | No | Yes | 1* | – | automatic builds by default, use `check` or `update` to disable; [local repository](/index.php/Local_repository "Local repository") support |
 | [aurget](https://aur.archlinux.org/packages/aurget/) | Bash | Optional | [No](https://github.com/pbrisbin/aurget/issues/41) | No | No | No | [No](https://github.com/pbrisbin/aurget/issues/40) | Yes | – | bash, zsh | sort by votes |
 | [naaman](https://aur.archlinux.org/packages/naaman/)
@@ -129,28 +128,31 @@ The columns have the following meaning:
 
 ## Graphical
 
-**Warning:**
+**Warning:** Usage of graphical AUR helpers may lead to a defective system, for example through unattended [partial upgrades](/index.php/Partial_upgrades "Partial upgrades").
 
-*   Graphical AUR helpers are typically aimed at [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"). Their use in [Arch Linux](/index.php/Arch_Linux "Arch Linux") may lead to a defective system, for example through unattended [partial upgrades](/index.php/Partial_upgrades "Partial upgrades").
-*   If a helper has *known* problematic behavior, it is colored with a red entry.
+*   **Argon** — GTK+ 3 pacman wrapper written in Python.
 
-| Name | Written in | GUI toolkit | Notes |
-| [argon](https://aur.archlinux.org/packages/argon/) | Python | GTK+ 3 | – |
-| [cylon](https://aur.archlinux.org/packages/cylon/) | Bash | TUI | – |
-| [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/) | Vala | GTK+ 3 | uses [libalpm(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3) instead of [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8) |
-| [pakku-gui](https://aur.archlinux.org/packages/pakku-gui/) | Python | GTK+ 3 | – |
-| [PkgBrowser](https://aur.archlinux.org/packages/PkgBrowser/) | Python | Qt 5 | read-only browser for repository packages and AUR |
-| [octopi](https://aur.archlinux.org/packages/octopi/) | C++ | Qt 5 | [enabled on install](https://github.com/aarnt/octopi/blob/271c7e1/octopi.install) notifier service regularly [performs partial upgrades](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) |
+	[https://github.com/14mRh4X0r/arch-argon](https://github.com/14mRh4X0r/arch-argon) || [argon](https://aur.archlinux.org/packages/argon/)
 
-### Update notifiers
+*   **Cylon** — TUI pacman wrapper written in Bash.
 
-| Name | Package | Written in | GUI toolkit |
-| aarchup | [aarchup](https://aur.archlinux.org/packages/aarchup/) | C | GTK+ 2 |
-| arch-update | [gnome-shell-extension-arch-update](https://aur.archlinux.org/packages/gnome-shell-extension-arch-update/) | JavaScript | Clutter |
-| kalu | [kalu](https://aur.archlinux.org/packages/kalu/) | C | GTK+ 3 |
-| pactray | [pactray](https://aur.archlinux.org/packages/pactray/) | Python | GTK+ 3 |
-| Arch Updater | [plasma5-applets-kde-arch-update-notifier-git](https://aur.archlinux.org/packages/plasma5-applets-kde-arch-update-notifier-git/) | C++/QML | Qt 5 |
-| updatehint | [updatehint](https://aur.archlinux.org/packages/updatehint/) | Bash | GTK+ 3 |
+	[https://github.com/gavinlyonsrepo/cylon](https://github.com/gavinlyonsrepo/cylon) || [cylon](https://aur.archlinux.org/packages/cylon/)
+
+*   **Pamac** — Standalone GTK+ 3 package manager using [libalpm(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3) written in Vala.
+
+	[https://gitlab.manjaro.org/applications/pamac](https://gitlab.manjaro.org/applications/pamac) || [pamac-aur](https://aur.archlinux.org/packages/pamac-aur/)
+
+*   **Pakku GUI** — GTK+ 3 frontend for pakku written in Python.
+
+	[https://gitlab.com/mrvik/pakku-gui](https://gitlab.com/mrvik/pakku-gui) || [pakku-gui](https://aur.archlinux.org/packages/pakku-gui/)
+
+*   **PkgBrowser** — Qt 5 read-only browser for repository packages and AUR written in Python.
+
+	[https://bitbucket.org/kachelaqa/pkgbrowser](https://bitbucket.org/kachelaqa/pkgbrowser) || [pkgbrowser](https://aur.archlinux.org/packages/pkgbrowser/)
+
+*   **Octopi** — Qt 5 pacman wrapper written in C++. May lead to defective system as [enabled on install](https://github.com/aarnt/octopi/blob/271c7e1/octopi.install) notifier service [regularly performs](https://github.com/aarnt/octopi/issues/134#issuecomment-142099266) [partial upgrades](/index.php/Partial_upgrades "Partial upgrades").
+
+	[https://octopiproject.wordpress.com/](https://octopiproject.wordpress.com/) || [octopi](https://aur.archlinux.org/packages/octopi/)
 
 ## Libraries
 

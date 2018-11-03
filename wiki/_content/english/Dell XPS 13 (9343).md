@@ -109,7 +109,7 @@ Some higher-end models do not use the Dell-branded Broadcom adapter, instead the
 
 ### Bluetooth
 
-**Note:** For uers with Intel wireless adapter with both Wi-Fi and Bluetooth, the Bluetooth interface should be available out-of-the-box, as the required firmware is included in [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware).
+**Note:** For users with Intel wireless adapter with both Wi-Fi and Bluetooth, the Bluetooth interface should be available out-of-the-box, as the required firmware is included in [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware).
 
 The Broadcom Bluetooth firmware is not available in the kernel ([source](http://tech.sybreon.com/2015/03/15/xps13-9343-ubuntu-linux/)), so you need to install [bcm20702a1-firmware](https://aur.archlinux.org/packages/bcm20702a1-firmware/) and reboot if you want to use Bluetooth.
 

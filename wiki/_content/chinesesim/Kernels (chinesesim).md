@@ -6,7 +6,7 @@
 *   [Linux-ck (简体中文)](/index.php/Linux-ck_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Linux-ck (简体中文)")
 *   [sysctl](/index.php/Sysctl "Sysctl")
 
-**翻译状态：** 本文是英文页面 [Kernels](/index.php/Kernels "Kernels") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2017-06-01，点击[这里](https://wiki.archlinux.org/index.php?title=Kernels&diff=0&oldid=477606)可以查看翻译后英文页面的改动。
+**翻译状态：** 本文是英文页面 [Kernels](/index.php/Kernels "Kernels") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-11-02，点击[这里](https://wiki.archlinux.org/index.php?title=Kernels&diff=0&oldid=545349)可以查看翻译后英文页面的改动。
 
 来自 [Wikipedia](https://en.wikipedia.org/wiki/Kernel_(computing) "wikipedia:Kernel (computing)"):
 
@@ -16,28 +16,16 @@
 
 ## Contents
 
-*   [1 预编译的内核](#.E9.A2.84.E7.BC.96.E8.AF.91.E7.9A.84.E5.86.85.E6.A0.B8)
-    *   [1.1 官方软件包](#.E5.AE.98.E6.96.B9.E8.BD.AF.E4.BB.B6.E5.8C.85)
-    *   [1.2 AUR 软件包](#AUR_.E8.BD.AF.E4.BB.B6.E5.8C.85)
-*   [2 补丁与补丁集](#.E8.A1.A5.E4.B8.81.E4.B8.8E.E8.A1.A5.E4.B8.81.E9.9B.86)
-    *   [2.1 如何安装](#.E5.A6.82.E4.BD.95.E5.AE.89.E8.A3.85)
-    *   [2.2 主要补丁集](#.E4.B8.BB.E8.A6.81.E8.A1.A5.E4.B8.81.E9.9B.86)
-        *   [2.2.1 -ck](#-ck)
-        *   [2.2.2 -rt](#-rt)
-        *   [2.2.3 -bld](#-bld)
-        *   [2.2.4 Tiny-Patches](#Tiny-Patches)
-        *   [2.2.5 -pf](#-pf)
-    *   [2.3 独立补丁](#.E7.8B.AC.E7.AB.8B.E8.A1.A5.E4.B8.81)
-        *   [2.3.1 Reiser4](#Reiser4)
-        *   [2.3.2 fbsplash](#fbsplash)
-*   [3 编译](#.E7.BC.96.E8.AF.91)
-    *   [3.1 使用 Arch 构建系统(ABS)(推荐)](#.E4.BD.BF.E7.94.A8_Arch_.E6.9E.84.E5.BB.BA.E7.B3.BB.E7.BB.9F.28ABS.29.28.E6.8E.A8.E8.8D.90.29)
-    *   [3.2 传统方式](#.E4.BC.A0.E7.BB.9F.E6.96.B9.E5.BC.8F)
+*   [1 官方支持的内核](#.E5.AE.98.E6.96.B9.E6.94.AF.E6.8C.81.E7.9A.84.E5.86.85.E6.A0.B8)
+*   [2 编译](#.E7.BC.96.E8.AF.91)
+    *   [2.1 使用 Arch 构建系统(ABS)(推荐)](#.E4.BD.BF.E7.94.A8_Arch_.E6.9E.84.E5.BB.BA.E7.B3.BB.E7.BB.9F.28ABS.29.28.E6.8E.A8.E8.8D.90.29)
+    *   [2.2 传统方式](#.E4.BC.A0.E7.BB.9F.E6.96.B9.E5.BC.8F)
+*   [3 Patches and patchsets](#Patches_and_patchsets)
+    *   [3.1 Major patchsets](#Major_patchsets)
+    *   [3.2 Other patchsets](#Other_patchsets)
 *   [4 参见](#.E5.8F.82.E8.A7.81)
 
-## 预编译的内核
-
-### 官方软件包
+## 官方支持的内核
 
 	[linux](https://www.archlinux.org/packages/?name=linux)
 
@@ -54,144 +42,6 @@
 	[linux-zen](https://www.archlinux.org/packages/?name=linux-zen)
 
 	[ZEN Kernel](https://github.com/zen-kernel/zen-kernel) 是一些内核黑客合作的结果，提供了适合日常使用的优秀内核。
-
-### AUR 软件包
-
-对于下面的 [AUR](/index.php/AUR "AUR") 软件包，"预先编译" 意味着这些软件包被持续维护、测设和验证，有些软件包可以通过 [Unofficial repositories](/index.php/Unofficial_repositories "Unofficial repositories") 非官方软件仓库获取。
-
-	[linux-aufs_friendly](https://aur.archlinux.org/packages/linux-aufs_friendly/)
-
-	兼容 aufs 的 linux 内核及模块，适合使用 [docker](/index.php/Docker "Docker") 的场景.
-
-	[linux-ck](https://aur.archlinux.org/packages/linux-ck/)
-
-	Linux 内核加 Con Kolivas 的 ck1 补丁。
-
-	通过 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") 可以配置的功能包括: BFQ 调度器, nconfig, localmodconfig 和使用当前运行内核的 config。
-
-	[linux-fbcondecor](https://aur.archlinux.org/packages/linux-fbcondecor/)
-
-	The Linux Kernel and modules with [fbcondecor support](/index.php/Fbsplash "Fbsplash").
-
-	[linux-git](https://aur.archlinux.org/packages/linux-git/)
-
-	Linux kernel and modules built using sources from [Linus Torvalds' Git repository](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git).
-
-	[linux-ice](https://aur.archlinux.org/packages/linux-ice/)
-
-	The Linux Kernel and modules with gentoo-sources patchset and [TuxOnIce](/index.php/TuxOnIce "TuxOnIce") support.
-
-	[linux-libre](https://aur.archlinux.org/packages/linux-libre/), [linux-libre-lts](https://aur.archlinux.org/packages/linux-libre-lts/), [linux-libre-rt](https://aur.archlinux.org/packages/linux-libre-rt/), [linux-libre-xen](https://aur.archlinux.org/packages/linux-libre-xen/)
-
-	The Linux Kernels without "binary blobs".
-
-	[linux-lqx](https://aur.archlinux.org/packages/linux-lqx/)
-
-	[Liquorix](http://liquorix.net) is a distro kernel replacement built using a Debian-targeted configuration and the ZEN kernel sources. Designed for desktop, multimedia, and gaming workloads, it is often used as a Debian Linux performance replacement kernel. Damentz, the maintainer of the Liquorix patchset, is a developer for the ZEN patchset as well.
-
-	[linux-lts310](https://aur.archlinux.org/packages/linux-lts310/)
-
-	The Linux 3.10 Long-Term Support Kernel and modules.
-
-	[linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)
-
-	The Mainline Linux Kernel and modules.
-
-	[linux-mptcp](https://aur.archlinux.org/packages/linux-mptcp/)
-
-	The Linux Kernel and modules with [Multipath TCP](http://multipath-tcp.org/) support.
-
-	[linux-pf](https://aur.archlinux.org/packages/linux-pf/)
-
-	Linux kernel and modules with the pf-kernel patch [-ck patchset (BFS included), TuxOnIce, BFQ] and aufs3.
-
-	[linux-rt](https://aur.archlinux.org/packages/linux-rt/)
-
-	Linux kernel with the realtime patch set. Improves latency and introduces hard realtime support. [https://rt.wiki.kernel.org/](https://rt.wiki.kernel.org/)
-
-	[linux-tresor](https://aur.archlinux.org/packages/linux-tresor/)/[linux-lts-tresor](https://aur.archlinux.org/packages/linux-lts-tresor/)
-
-	The current/LTS Linux Kernel and modules with integrated [TRESOR](https://www1.informatik.uni-erlangen.de/tresor)
-
-	[linux-vfio](https://aur.archlinux.org/packages/linux-vfio/)/[linux-vfio-lts](https://aur.archlinux.org/packages/linux-vfio-lts/)
-
-	The Linux kernel and a few patches written by Alex Williamson (acs override and i915) to enable the ability to do PCI Passthrough with KVM on some machines.
-
-## 补丁与补丁集
-
-There are lots of reasons to patch your kernel, the major ones are for performance or support for non-mainline features such as reiser4 file system support. Other reasons might include fun and to see how it is done and what the improvements are.
-
-However, it is important to note that the best way to increase the speed of your system is to first tailor your kernel to your system, especially the architecture and processor type. For this reason using pre-packaged versions of custom kernels with generic architecture settings is not recommended or really worth it. A further benefit is that you can reduce the size of your kernel (and therefore build time) by not including support for things you do not have or use. For example, you might start with the stock kernel config when a new kernel version is released and remove support for things like bluetooth, video4linux, 1000Mbit ethernet, etc.; functionality you know you will not require for your specific machine. Although this page is not about customizing your kernel config, it is recommended as a first step--before moving on to using a patchset once you have grasped the fundamentals involved.
-
-The config files for the Arch kernel packages can be used as a starting point. They are in the Arch package source files, for example [[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/linux) linked from [linux](https://www.archlinux.org/packages/?name=linux). The config file of your currently running kernel may also be available in your file system at `/proc/config.gz` if the `CONFIG_IKCONFIG_PROC` kernel option is enabled.
-
-### 如何安装
-
-The installation process of custom kernel packages relies on the Arch Build System (ABS). If you have not built any custom packages yet you may consult the following articles: [Arch Build System](/index.php/Arch_Build_System "Arch Build System") and [Creating packages](/index.php/Creating_packages "Creating packages").
-
-If you have not actually patched or customized a kernel before it is not that hard and there are many PKGBUILDs on the forum for individual patchsets. However, you are advised to start from scratch with a bit of research on the benefits of each patchset, rather than just arbitrarily picking one. This way you will learn much more about what you are doing rather than just choosing a kernel at startup and then be left wondering what it actually does.
-
-See [#编译](#.E7.BC.96.E8.AF.91).
-
-**Note:** Do not forget to change the boot options in your bootloader, e.g. [GRUB](/index.php/GRUB "GRUB"), to use the new kernel.
-
-### 主要补丁集
-
-First of all it is important to note that patchsets are developed by a variety of people. Some of these people are actually involved in the production of the linux kernel and others are hobbyists, which may reflect its level of reliability and stability.
-
-It is also worth noting that some patchsets are built on the back of other patchsets (which may or may not be reflected in the title of the patch). Patchsets (and kernel updates) can be released **very** frequently and often it is not worth keeping up with ALL of them; so, do not go crazy, unless you make it your hobby!
-
-You can search Google for more sets, but remember to use quotes (`"-nitro"`, for example); otherwise, Google will deliberately **NOT** show the results you want!
-
-**Note:** This section is for **information only** - clearly no guarantees of stability or reliability are implied by inclusion on this page.
-
-#### -ck
-
-[Linux-ck](/index.php/Linux-ck "Linux-ck") contains patches designed to improve system responsiveness with specific emphasis on the desktop, but suitable to any workload. The patches are created and maintained by Con Kolivas, his site is at [http://users.tpg.com.au/ckolivas/kernel/](http://users.tpg.com.au/ckolivas/kernel/). Con maintains a full set but also provides the patches broken down so you can add only those you prefer.
-
-The -ck patches can be found at [http://ck.kolivas.org/patches/](http://ck.kolivas.org/patches/)
-
-#### -rt
-
-This patchset is maintained by a small group of core developers, led by Ingo Molnar. This patch allows nearly all of the kernel to be preempted, with the exception of a few very small regions of code ("raw_spinlock critical regions"). This is done by replacing most kernel spinlocks with mutexes that support priority inheritance, as well as moving all interrupt and software interrupts to kernel threads.
-
-It further incorporates high resolution timers - a patch set, which is independently maintained.
-
-[as said from the [Real-Time Linux Wiki](https://rt.wiki.kernel.org/index.php/CONFIG_PREEMPT_RT_Patch)]
-
-patch at [https://www.kernel.org/pub/linux/kernel/projects/rt/](https://www.kernel.org/pub/linux/kernel/projects/rt/)
-
-#### -bld
-
-**Warning:** This patch is in development.
-
-BLD is best described as a O(1) CPU picking technique. Which is done by reordering CPU runqueues based on runqueue loads. In other words, it keeps the scheduler aware of the load changes, which helps scheduler to keep runqueues in an order. This technique does not depend on scheduler ticks. The two most simple things in this technique are: load tracking and runqueue ordering; these are relatively simpler operations. Load tracking will be done whenever a load change happens on the system and based on this load change runqueue will be ordered. So, if we have an ordered runqueue from lowest to highest, then picking the less (or even busiest) runqueue is easy. Scheduler can pick the lowest runqueue without calculation and comparison at the time of placing a task in a runqueue. And while trying to distribute load at sched_exec and sched_fork our best choice is to pick the lowest busiest runqueue of the system. And in this way, system remains balanced without doing any load balancing. At the time of try_to_wake_up picking the idlest runqueue is topmost priority but it has been done as per domain basis to utilize CPU cache properly and it's an area where more concentration is requires.
-
-Google Code web page: [https://code.google.com/p/bld/](https://code.google.com/p/bld/)
-
-#### Tiny-Patches
-
-The goal of [Linux Tiny](http://elinux.org/Linux_Tiny) is to reduce its memory and disk footprint, as well as to add features to aid working on small systems. Target users are developers of embedded system and users of small or legacy machines such as 386s.
-
-Patch releases against the mainstream Linux kernel have been discontinued. The developers chose to focus on a few patches and spend their time trying to get them merged into the mainline kernel.
-
-#### -pf
-
-[linux-pf](https://aur.archlinux.org/packages/linux-pf/) is yet another Linux kernel fork which provides you with a handful of awesome features not merged into mainline. It is based on neither existing Linux fork nor patchset, although some unofficial ports may be used if required patches have not been released officially. The most prominent patches of linux-pf are TuxOnIce, the CK patchset (most notably BFS), AUFS3, LinuxIMQ, l7 filter and BFQ.
-
-See [linux-pf](/index.php/Linux-pf "Linux-pf") for more information.
-
-### 独立补丁
-
-这里有一些补丁可以直接应用在任何一个主流内核中，或加入到其它补丁集中（可能需要一些调整）。I have included some common ones for starters.
-
-#### Reiser4
-
-[Reiser4](/index.php/Reiser4 "Reiser4")
-
-#### fbsplash
-
-[fbsplash](/index.php/Fbsplash "Fbsplash")
 
 ## 编译
 
@@ -210,6 +60,83 @@ Arch Linux 提供了多种内核构建方式。
 使用传统方式的一个优点是在其他发行版中也可以使用。
 
 参见 [传统方式](/index.php/Kernels/Compilation/Traditional "Kernels/Compilation/Traditional") **.**
+
+## Patches and patchsets
+
+There are lots of reasons to patch your kernel, the major ones are for performance or support for non-mainline features such as [reiser4](/index.php/Reiser4 "Reiser4") file system support. Other reasons might include fun and to see how it is done and what the improvements are.
+
+However, it is important to note that the best way to increase the speed of your system is to first tailor your kernel to your system, especially the architecture and processor type. For this reason using pre-packaged versions of custom kernels with generic architecture settings is not recommended or really worth it. A further benefit is that you can reduce the size of your kernel (and therefore build time) by not including support for things you do not have or use. For example, you might start with the stock kernel config when a new kernel version is released and remove support for things like bluetooth, video4linux, 1000Mbit ethernet, etc.; functionality you know you will not require for your specific machine. Although this page is not about customizing your kernel config, it is recommended as a first step--before moving on to using a patchset once you have grasped the fundamentals involved.
+
+The config files for the Arch kernel packages can be used as a starting point. They are in the Arch package source files, for example [[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/linux) linked from [linux](https://www.archlinux.org/packages/?name=linux). The config file of your currently running kernel may also be available in your file system at `/proc/config.gz` if the `CONFIG_IKCONFIG_PROC` kernel option is enabled.
+
+If you have not actually patched or customized a kernel before it is not that hard and there are many PKGBUILDs on the forum for individual patchsets. However, you are advised to start from scratch with a bit of research on the benefits of each patchset, rather than just arbitrarily picking one. This way you will learn much more about what you are doing rather than just choosing a kernel at startup and then be left wondering what it actually does.
+
+**Warning:** Patchsets are developed by a variety of people. Some of these people are actually involved in the production of the linux kernel and others are hobbyists, which may reflect its level of reliability and stability.
+
+### Major patchsets
+
+*   **[Linux-ck](/index.php/Linux-ck "Linux-ck")** — Contains patches by Con Kolivas designed to improve system responsiveness with specific emphasis on the desktop, but suitable to any workload.
+
+	[http://ck.kolivas.org/patches/](http://ck.kolivas.org/patches/) || [linux-ck](https://aur.archlinux.org/packages/linux-ck/)
+
+*   **[pf-kernel](https://gitlab.com/post-factum/pf-kernel/)** — Provides you with a handful of awesome features not merged into mainline. It is based on neither existing Linux fork nor patchset, although some unofficial ports may be used if required patches have not been released officially. The most prominent patches of linux-pf are PDS CPU scheduler and UKSM.
+
+	[https://gitlab.com/post-factum/pf-kernel/wikis/README](https://gitlab.com/post-factum/pf-kernel/wikis/README) || Packages:
+
+*   [Repository](/index.php/Unofficial_user_repositories#post-factum_kernels "Unofficial user repositories") by pf-kernel developer, [post-factum](https://aur.archlinux.org/account/post-factum)
+*   [Repository](/index.php/Unofficial_user_repositories#home-thaodan "Unofficial user repositories"), [linux-pf](https://aur.archlinux.org/packages/linux-pf/), [linux-pf-preset-default](https://aur.archlinux.org/packages/linux-pf-preset-default/), [linux-pf-lts](https://aur.archlinux.org/packages/linux-pf-lts/) by pf-kernel fork developer, [Thaodan](https://aur.archlinux.org/account/Thaodan)
+
+*   **[Realtime kernel](/index.php/Realtime_kernel "Realtime kernel")** — Maintained by a small group of core developers, led by Ingo Molnar. This patch allows nearly all of the kernel to be preempted, with the exception of a few very small regions of code ("raw_spinlock critical regions"). This is done by replacing most kernel spinlocks with mutexes that support priority inheritance, as well as moving all interrupt and software interrupts to kernel threads.
+
+	[https://wiki.linuxfoundation.org/realtime/start](https://wiki.linuxfoundation.org/realtime/start) || [linux-rt](https://aur.archlinux.org/packages/linux-rt/), [linux-rt-lts](https://aur.archlinux.org/packages/linux-rt-lts/)
+
+### Other patchsets
+
+Some of the listed packages may also be available as binary packages via [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories").
+
+*   **AppArmor** — The [Mandatory Access Control](https://en.wikipedia.org/wiki/Mandatory_access_control "wikipedia:Mandatory access control") (MAC) system, implemented upon the [Linux Security Modules](https://en.wikipedia.org/wiki/Linux_Security_Modules "wikipedia:Linux Security Modules") (LSM). While [linux](https://www.archlinux.org/packages/?name=linux) supports apparmor this kernel has the required [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") enabled by default.
+
+	[AppArmor](/index.php/AppArmor "AppArmor") || [linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/)
+
+*   **Aufs** — The aufs-compatible linux kernel and modules, useful when using [docker](/index.php/Docker "Docker").
+
+	[http://aufs.sourceforge.net/](http://aufs.sourceforge.net/) || [linux-aufs_friendly](https://aur.archlinux.org/packages/linux-aufs_friendly/)
+
+*   **BLD** — Best described as a O(1) CPU picking technique. Which is done by reordering CPU runqueues based on runqueue loads. In other words, it keeps the scheduler aware of the load changes, which helps scheduler to keep runqueues in an order. This technique does not depend on scheduler ticks. The two most simple things in this technique are: load tracking and runqueue ordering; these are relatively simpler operations. Load tracking will be done whenever a load change happens on the system and based on this load change runqueue will be ordered. So, if we have an ordered runqueue from lowest to highest, then picking the less (or even busiest) runqueue is easy. Scheduler can pick the lowest runqueue without calculation and comparison at the time of placing a task in a runqueue. And while trying to distribute load at sched_exec and sched_fork our best choice is to pick the lowest busiest runqueue of the system. And in this way, system remains balanced without doing any load balancing. At the time of try_to_wake_up picking the idlest runqueue is topmost priority but it has been done as per domain basis to utilize CPU cache properly and it's an area where more concentration is requires.
+
+	[https://github.com/rmullick/bld-patches](https://github.com/rmullick/bld-patches) || [linux-bld](https://aur.archlinux.org/packages/linux-bld/)
+
+*   **Git** — Linux kernel and modules built using sources from Linus Torvalds' Git repository
+
+	[https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git) || [linux-git](https://aur.archlinux.org/packages/linux-git/)
+
+*   **Libre** — The Linux Kernels without "binary blobs".
+
+	[https://www.fsfla.org/ikiwiki/selibre/linux-libre/](https://www.fsfla.org/ikiwiki/selibre/linux-libre/) || [linux-libre](https://aur.archlinux.org/packages/linux-libre/)
+
+*   **Liquorix** — Kernel replacement built using Debian-targeted configuration and the ZEN kernel sources. Designed for desktop, multimedia, and gaming workloads, it is often used as a Debian Linux performance replacement kernel. Damentz, the maintainer of the Liquorix patchset, is a developer for the ZEN patchset as well.
+
+	[https://liquorix.net](https://liquorix.net) || [linux-lqx](https://aur.archlinux.org/packages/linux-lqx/)
+
+*   **Longterm 4.4** — Long-term support (LTS) Linux 4.4 kernel and modules.
+
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux-lts44](https://aur.archlinux.org/packages/linux-lts44/)
+
+*   **Mainline** — The Mainline Linux Kernel and modules.
+
+	[https://www.kernel.org/](https://www.kernel.org/) || [linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)
+
+*   **MultiPath TCP** — The Linux Kernel and modules with Multipath TCP support.
+
+	[https://multipath-tcp.org/](https://multipath-tcp.org/) || [linux-mptcp](https://aur.archlinux.org/packages/linux-mptcp/)
+
+*   **[Reiser4](/index.php/Reiser4 "Reiser4")** — Successor filesystem for ReiserFS, developed from scratch by Namesys and Hans Reiser.
+
+	[https://sourceforge.net/projects/reiser4/files/](https://sourceforge.net/projects/reiser4/files/) ||
+
+*   **VFIO** — The Linux kernel and a few patches written by Alex Williamson (acs override and i915) to enable the ability to do PCI Passthrough with KVM on some machines.
+
+	[https://lwn.net/Articles/499240/](https://lwn.net/Articles/499240/) || [linux-vfio](https://aur.archlinux.org/packages/linux-vfio/), [linux-vfio-lts](https://aur.archlinux.org/packages/linux-vfio-lts/)
 
 ## 参见
 
