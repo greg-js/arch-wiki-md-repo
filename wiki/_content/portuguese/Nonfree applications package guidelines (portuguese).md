@@ -1,4 +1,6 @@
-**[Diretrizes de criação de pacotes](/index.php/Criando_pacotes "Criando pacotes")**
+**Status de tradução:** Esse artigo é uma tradução de [Nonfree applications package guidelines](/index.php/Nonfree_applications_package_guidelines "Nonfree applications package guidelines"). Data da última tradução: 2018-11-03\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Nonfree_applications_package_guidelines&diff=0&oldid=552590) na versão em inglês.
+
+**[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
 * * *
 
@@ -18,6 +20,9 @@ Para muitos aplicativos (a maioria dos quais são do Windows), não há fontes n
 *   [3 Nomenclatura de pacotes](#Nomenclatura_de_pacotes)
 *   [4 Colocação de arquivos](#Coloca.C3.A7.C3.A3o_de_arquivos)
 *   [5 Arquivos em falta](#Arquivos_em_falta)
+    *   [5.1 Os arquivos só podem ser obtidos em um pacote/instalador distribuído](#Os_arquivos_s.C3.B3_podem_ser_obtidos_em_um_pacote.2Finstalador_distribu.C3.ADdo)
+    *   [5.2 Os arquivos só podem ser obtidos em um CD distribuído ou outro tipo de mídia de disco ótico](#Os_arquivos_s.C3.B3_podem_ser_obtidos_em_um_CD_distribu.C3.ADdo_ou_outro_tipo_de_m.C3.ADdia_de_disco_.C3.B3tico)
+    *   [5.3 Os arquivos podem ser obtidos de várias maneiras](#Os_arquivos_podem_ser_obtidos_de_v.C3.A1rias_maneiras)
 *   [6 Tópicos avançados](#T.C3.B3picos_avan.C3.A7ados)
     *   [6.1 DLAGENTS personalizados](#DLAGENTS_personalizados)
     *   [6.2 Desempacotamento](#Desempacotamento)
@@ -79,31 +84,31 @@ Novamente, analise os pacotes existentes (se houver) e decida se deseja ou não 
 
 ## Arquivos em falta
 
-Para a maioria dos jogos comerciais, não há como (legalmente) baixar arquivos de jogos, o que é a maneira preferida de obtê-los para pacotes normais. Mesmo quando é possível baixar arquivos após fornecer uma senha (como com todos os jogos do [Humble Indie Bundle](https://en.wikipedia.org/wiki/pt:Humble_Indie_Bundle "wikipedia:pt:Humble Indie Bundle")) solicitando ao usuário essa senha e fazendo o download em alguma parte da função `build`, não é recomendado por várias razões (por exemplo, o usuário pode não ter acesso à Internet, mas ter todos os arquivos baixados e armazenados localmente). As seguintes opções devem ser consideradas:
+Para a maioria dos jogos comerciais, não há como (legalmente) baixar arquivos de jogos, o que é a maneira preferida de obtê-los para pacotes normais. Mesmo quando é possível baixar arquivos após fornecer uma senha (como com todos os jogos do [Humble Indie Bundle](https://en.wikipedia.org/wiki/pt:Humble_Indie_Bundle "wikipedia:pt:Humble Indie Bundle")) solicitando ao usuário essa senha e fazendo o download em alguma parte da função `build`, não é recomendado por várias razões (por exemplo, o usuário pode não ter acesso à Internet, mas ter todos os arquivos baixados e armazenados localmente).
 
-*   **Há apenas uma forma de obter os arquivos**
+As subseções abaixo fornecem recomendações para algumas situações que você pode encontrar.
 
-*   O software é distribuído em pacote/instalador
+### Os arquivos só podem ser obtidos em um pacote/instalador distribuído
 
-	Adicione o arquivo necessário para o vetor `sources`:
+O software só está disponível através desse arquivo de pacote/instalador, que deve ser obtido para obter os arquivos em falta.
 
-	 `sources=(... "*nome-original*::**file://***nome-original*")` 
+Adicione o pacote/instalador necessário a um vetor `source`, renomeando o nome do arquivo de origem para que o link da origem na interface web do AUR seja diferente dos nomes dos arquivos incluídos no tarball de origem:
 
-	Desta forma, o link para o arquivo na interface web do AUR será diferente dos nomes dos arquivos incluídos no tarball de origem.
+ `source=(... "*nomeoriginal*::**file:**//*nomeoriginal*")` 
 
-	Adicione o seguinte comentário na página do pacote:
+Adicione também um comentário fixado como o abaixo na página do pacote no AUR e explique os detalhes no PKGBUILD:
 
-	 `Need archive/installer to work.` 
+ `Need archive/installer to work.` 
 
-	e explicar os detalhes no vetor de fontes do PKGBUILD.
+### Os arquivos só podem ser obtidos em um CD distribuído ou outro tipo de mídia de disco ótico
 
-*   O software é distribuído em um disco compacto
+O software só está disponível através de uma mídia de disco óptico (por exemplo, CD, DVD, Bluray, etc.), que deve ser inserido na unidade de disco ótico para obter os arquivos em falta.
 
-	Adicione um script de instalação e um arquivo `.install` ao conteúdo do pacote, como no pacote [tsukihime-en](https://aur.archlinux.org/packages/tsukihime-en/).
+Adicione um script instalador e um arquivo `.install` ao conteúdo do pacote, como em [tsukihime-en](https://aur.archlinux.org/packages/tsukihime-en/).
 
-*   **Há várias formas de obter arquivos**
+### Os arquivos podem ser obtidos de várias maneiras
 
-Copiar arquivos do disco / fazer o download da Internet / obter do arquivo durante a fase `build` pode parecer uma boa ideia, mas não é recomendado porque limita as possibilidades do usuário e torna a instalação do pacote interativa (o que geralmente é desencorajado e irritante). Novamente, um bom script de instalação e um arquivo `.install` podem funcionar.
+Copiar arquivos do disco, fazer o download da internet ou sair do arquivo durante a fase `build` pode parecer uma boa ideia, mas não é recomendado porque limita as possibilidades do usuário e torna a instalação do pacote interativa (o que geralmente é desencorajado e irritante). Novamente, um bom script de instalação e um arquivo `.install` podem funcionar.
 
 Alguns exemplos de várias estratégias para obter arquivos necessários para o pacote:
 

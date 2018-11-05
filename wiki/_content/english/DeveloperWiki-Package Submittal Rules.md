@@ -1,4 +1,4 @@
-# Considerations
+## Considerations
 
 Once a contributor uploads a package to the AUR they are considered the contributor. If they made a mistake it is acceptable to replace the package with a new one, or request that it's just removed from the AUR.
 

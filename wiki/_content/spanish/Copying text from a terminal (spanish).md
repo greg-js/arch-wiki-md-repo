@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Copying text from a terminal](/index.php/Copying_text_from_a_terminal "Copying text from a terminal"), revisada por última vez el **2018-11-02**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Copying_text_from_a_terminal&diff=0&oldid=552587) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 La mayoría de los emuladores de terminal maduros permiten a los usuarios copiar o guardar sus contenidos.
 
 ## Contents

@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Mono](/index.php/Mono "Mono"), revisada por última vez el **2018-11-01**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Mono&diff=0&oldid=552396) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 De [Wikipedia](https://en.wikipedia.org/wiki/es:Proyecto_Mono "wikipedia:es:Proyecto Mono"):
 
 	Mono es el nombre de un proyecto de código abierto iniciado por Ximian respaldado por Microsoft y actualmente impulsado por Novell (tras la adquisición de Ximian) para crear un grupo de herramientas libres, basadas en GNU/Linux y compatibles con .NET según lo especificado por el ECMA.

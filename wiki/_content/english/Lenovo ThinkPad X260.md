@@ -15,6 +15,8 @@ The Lenovo ThinkPad X260 is the successor to the [Lenovo ThinkPad X240](/index.p
 
 Some X260's come with vfs (Validity Sensors) fingerprint readers. If this is the case then you will need to additionally install [libfprint-git](https://aur.archlinux.org/packages/libfprint-git/), along with fprintd. See [fprint](/index.php/Fprint "Fprint") for details.
 
+**Note:** The VFS 5011 fingerprint sensor (USB vendor ID/product ID: 138a:0017) is supported as of libfprint v0.6.0 so the AUR package is no longer needed. ([source](https://www.thinkwiki.org/wiki/Integrated_Fingerprint_Reader)) This fingerprint reader has been successfully tested using [libfprint](https://www.archlinux.org/packages/?name=libfprint) v0.8.2-1
+
 ### Use Print Key for Context Menu Key
 
 The keyboard of the X250, X260 and X270 has got a print screen key between the right ALT and CTRL key, where normally the context menu key is located. In the case you use the context menu key more often than the print screen key, you can use the print screen key for opening the context menu by configuring it with [Xmodmap](/index.php/Xmodmap "Xmodmap"):

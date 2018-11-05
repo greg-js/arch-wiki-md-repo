@@ -214,7 +214,7 @@ Add an IP address to an interface:
 *   the address is given in [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing") to also supply a [subnet mask](https://en.wikipedia.org/wiki/Subnetwork "wikipedia:Subnetwork")
 *   `+` is a special symbol that makes `ip` derive the [broadcast address](https://en.wikipedia.org/wiki/Broadcast_address "wikipedia:Broadcast address") from the IP address and the subnet mask
 
-**Note:** Make sure manually assigned IP addresses do not conflict with DHCP assigned ones. See [this forum thread](http://www.raspberrypi.org/forums/viewtopic.php?f=28&t=16797).
+**Note:** Make sure manually assigned IP addresses do not conflict with DHCP assigned ones.
 
 Delete an IP address from an interface:
 

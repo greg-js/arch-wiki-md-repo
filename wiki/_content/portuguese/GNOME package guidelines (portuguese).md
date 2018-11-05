@@ -1,6 +1,6 @@
 **Status de tradução:** Esse artigo é uma tradução de [GNOME package guidelines](/index.php/GNOME_package_guidelines "GNOME package guidelines"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME_package_guidelines&diff=0&oldid=549983) na versão em inglês.
 
-**[Diretrizes de criação de pacotes](/index.php/Criando_pacotes "Criando pacotes")**
+**[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
 * * *
 

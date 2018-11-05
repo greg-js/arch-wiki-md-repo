@@ -25,7 +25,7 @@ The [KDE](/index.php/KDE "KDE") packages on Arch Linux follow a certain schema.
     *   [6.2 Runners](#Runners_2)
     *   [6.3 Service menus](#Service_menus_2)
     *   [6.4 Themes](#Themes_2)
-*   [7 .install files](#.install_files)
+*   [7 Icons and .desktop files installation](#Icons_and_.desktop_files_installation)
 
 ## Build directory
 
@@ -135,18 +135,8 @@ Service menus packages should be named `kf5-servicemenus-*servicename*` so that 
 
 Plasma themes packages should be named `plasma5-themes-*themename*` so that they are recognizable as Plasma 5-related packages.
 
-## .install files
+## Icons and .desktop files installation
 
-For many [KDE](/index.php/KDE "KDE") packages, all `.install` files look almost exactly the same. Some packages install icons in the hicolor icon theme; use the `xdg-icon-resource` utility provided by the [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils) package, which is a dependency of the [qt4](https://www.archlinux.org/packages/?name=qt4) package. So use this line:
+Some [KDE](/index.php/KDE "KDE") software provide icons in the hicolor icon theme and `.desktop` files, which must be installed via [pacman hooks](/index.php/Pacman#Hooks "Pacman"). Refrain from using installation command for these type of files in a `.install`, as it would result in unnecessary double execution of them.
 
-```
-xdg-icon-resource forceupdate --theme hicolor &> /dev/null
-
-```
-
-Many packages install Freedesktop.org compatible `.desktop` files and register MimeType entries in them. Running `update-desktop-database` in `post_install` is recommended as that tool is provided by the [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils) package which is a dependency of the [qt4](https://www.archlinux.org/packages/?name=qt4) package. So use this line:
-
-```
-update-desktop-database -q
-
-```
+The [qt4](https://www.archlinux.org/packages/?name=qt4) package already depends on [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils), [hicolor-icon-theme](https://www.archlinux.org/packages/?name=hicolor-icon-theme) and [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils), so if your package depends [qt4](https://www.archlinux.org/packages/?name=qt4), no other action should be needed (i.e. no need to add these packages to `depends` array).

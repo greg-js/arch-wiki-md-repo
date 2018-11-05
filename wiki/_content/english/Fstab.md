@@ -29,6 +29,7 @@ The `mount` command will use fstab, if just one of either directory or device is
     *   [3.3 Filepath spaces](#Filepath_spaces)
     *   [3.4 atime options](#atime_options)
     *   [3.5 Remounting the root partition](#Remounting_the_root_partition)
+    *   [3.6 GPT partition automounting](#GPT_partition_automounting)
 *   [4 See also](#See_also)
 
 ## Usage
@@ -242,6 +243,10 @@ If for some reason the root partition has been improperly mounted read only, rem
 # mount -o remount,rw /
 
 ```
+
+### GPT partition automounting
+
+On a [GPT](/index.php/GPT "GPT") partitioned disk it is possible to omit `/`, `/home`, `/srv` and swap partitions from `/etc/fstab` by partitioning according to the [Discoverable Partitions Specification](https://www.freedesktop.org/wiki/Specifications/DiscoverablePartitionsSpec/). See [systemd#GPT partition automounting](/index.php/Systemd#GPT_partition_automounting "Systemd").
 
 ## See also
 

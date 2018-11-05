@@ -287,7 +287,7 @@ O artigo [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives"
 
 ## Serviço de sistema
 
-Essa seção está relacionada a [daemons](/index.php/Daemons_(Portugu%C3%AAs) "Daemons (Português)"). Para mais, por favor veja [Category:Daemons and system services (Português)](/index.php/Category:Daemons_and_system_services_(Portugu%C3%AAs) "Category:Daemons and system services (Português)").
+Essa seção está relacionada a [daemons](/index.php/Daemons_(Portugu%C3%AAs) "Daemons (Português)").
 
 ### Índice e pesquisa por arquivo
 

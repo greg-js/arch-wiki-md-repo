@@ -117,7 +117,7 @@ This command will show you all the events logged according to your rules related
 
 ### Using keys
 
-One of the great features of the audit framework is its hability to use `keys` to manage events, such a usage is recommended.
+One of the great features of the audit framework is its ability to use `keys` to manage events, such a usage is recommended.
 
 You can use the `-k` option in your rules to be able to find related events easily :
 
@@ -135,7 +135,7 @@ Then, if you search for events with the key `KEY_pwd`, ausearch will display onl
 
 ### Look for abnormalies
 
-The `aureport` tool can be used to quickly report any anormal event performed on the system, it includes network interfaces used in promiscous mode, process or thread crashing or exiting with ENOMEM error etc.
+The `aureport` tool can be used to quickly report any abnormal event performed on the system, it includes network interfaces used in promiscous mode, process or thread crashing or exiting with ENOMEM error etc.
 
 The easiest way to use `aureport` is :
 

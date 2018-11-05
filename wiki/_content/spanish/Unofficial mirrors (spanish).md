@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Unofficial mirrors](/index.php/Unofficial_mirrors "Unofficial mirrors"), revisada por última vez el **2018-10-29**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Unofficial_mirrors&diff=0&oldid=551973) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 Estos [mirrors](/index.php/Mirrors_(Espa%C3%B1ol) "Mirrors (Español)") *no* están listados en `/etc/pacman.d/mirrorlist`.
 
 ## Contents

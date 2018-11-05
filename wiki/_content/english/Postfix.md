@@ -134,7 +134,7 @@ To see all of your configs, type `postconf`. To see how you differ from the defa
 
 **Warning:** If you deploy [TLS](https://en.wikipedia.org/wiki/TLS "wikipedia:TLS"), be sure to follow [weakdh.org's guide](https://weakdh.org/sysadmin.html) to prevent FREAK/Logjam. Since mid-2015, the default settings have been safe against [POODLE](https://en.wikipedia.org/wiki/POODLE "wikipedia:POODLE"). For more information see [Server-side TLS](/index.php/Server-side_TLS "Server-side TLS").
 
-To obtain a certificate, see [OpenSSL#Certificates](/index.php/OpenSSL#Certificates "OpenSSL").
+You need to [obtain a certificate](/index.php/Obtain_a_certificate "Obtain a certificate").
 
 For more information, see [Postfix TLS Support](http://www.postfix.org/TLS_README.html).
 
@@ -403,7 +403,7 @@ example.com dane-only
 
 ```
 
-**Note:** For global mandatory DANE, change `smtp_tls_security_level` to `dane-only`. Be aware that this makes Postfix tempfail on all delivieres that do not use DANE at all!
+**Note:** For global mandatory DANE, change `smtp_tls_security_level` to `dane-only`. Be aware that this makes Postfix tempfail (respond with a `4.X.X` error code) on all deliveries that do not use DANE at all!
 
 Full documentation is found [here](http://www.postfix.org/TLS_README.html#client_tls_dane).
 

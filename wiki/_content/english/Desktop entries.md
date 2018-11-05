@@ -45,11 +45,11 @@ The following sections will roughly explain how these are created and validated.
 
 ## Application entry
 
-Desktop entries for applications, or *.desktop* files, are generally a combination of meta information resources and a shortcut of an application. These files usually reside in `/usr/share/applications` or `/usr/local/share/applications` for applications installed system-wide, or `~/.local/share/applications` for user-specific applications. User entries take precedence over system entries.
+Desktop entries for applications, or `.desktop` files, are generally a combination of meta information resources and a shortcut of an application. These files usually reside in `/usr/share/applications/` or `/usr/local/share/applications/` for applications installed system-wide, or `~/.local/share/applications/` for user-specific applications. User entries take precedence over system entries.
 
 ### File example
 
-Following is an example of its structure with additional comments. The example is only meant to give a quick impression, and does not show how to utilize all possible entry keys. The complete list of keys can be found in the [freedesktop.org specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#recognized-keys).
+Following is an example of its structure with additional comments. The example is only meant to give a quick impression, and does not show how to utilize all possible entry keys. The complete list of keys can be found in the [freedesktop specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#recognized-keys).
 
 ```
 [Desktop Entry]
@@ -85,7 +85,7 @@ Categories=Education;Languages;Java;
 
 ### Key definition
 
-All Desktop recognized desktop entries can be found on the [freedesktop.org](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#recognized-keys) site. For example, the `Type` key defines three types of desktop entries: Application (type 1), Link (type 2) and Directory (type 3).
+All recognized entries can be found on the [freedesktop](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#recognized-keys) site. For example, the `Type` key defines three types of desktop entries: Application (type 1), Link (type 2) and Directory (type 3).
 
 *   `Version` key does not stand for the version of the application, but for the version of the desktop entry specification to which this file complies.
 
@@ -112,10 +112,10 @@ This should be avoided, as it will only be confusing to users. The `Name` key sh
 
 ### Validation
 
-As some keys have become deprecated over time, you may want validate your desktop entries using [desktop-file-validate(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/desktop-file-validate.1) which is part of the [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils) package. To validate, run
+As some keys have become deprecated over time, you may want validate your desktop entries using [desktop-file-validate(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/desktop-file-validate.1) which is part of the [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils) package. To validate, run:
 
 ```
-$ desktop-file-validate <your desktop file>
+$ desktop-file-validate <*your desktop file*>
 
 ```
 

@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Poclbm](/index.php/Poclbm "Poclbm"), revisada por última vez el **2018-10-30**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Poclbm&diff=0&oldid=552088) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 [Poclbm](https://github.com/m0mchil/poclbm) (Python OpenCL Bitcoin miner) es un script de Python que mina Bitcoins usando un dispositivo compatible con OpenCL.
 
 ## Contents

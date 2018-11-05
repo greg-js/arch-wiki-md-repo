@@ -1,11 +1,11 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Roles](/index.php/Roles "Roles"), revisada por última vez el **2018-10-23**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Roles&diff=0&oldid=550389) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Roles](/index.php/Roles "Roles"), revisada por última vez el **2018-11-05**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Roles&diff=0&oldid=552750) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [Arch Linux](/index.php/Arch_Linux "Arch Linux") es mantenido por individuos de los siguientes roles (entre otros):
 
 	Desarrollador
 
-	Los [desarrolladores](https://www.archlinux.org/people/developers/) mantienen los repositorios [core](/index.php/Core_(Espa%C3%B1ol) "Core (Español)") y [extra](/index.php/Extra_(Espa%C3%B1ol) "Extra (Español)"), desarrollan y mantienen los servidores `*.archlinux.org`.
+	Los [desarrolladores](https://www.archlinux.org/people/developers/) mantienen los repositorios [core](/index.php/Core_(Espa%C3%B1ol) "Core (Español)") y [extra](/index.php/Extra_(Espa%C3%B1ol) "Extra (Español)"), desarrollan [proyectos de Arch](/index.php/Category:Arch_projects_(Espa%C3%B1ol) "Category:Arch projects (Español)") y mantienen los servidores `*.archlinux.org`.
 
 	Usuario de confianza
 

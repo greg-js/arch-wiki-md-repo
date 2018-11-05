@@ -71,7 +71,12 @@ The first step is to generate an RSA private key. Before generating the key, set
 
 A certificate can be obtained either from a certificate authority with a [Certificate Signing Request](https://en.wikipedia.org/wiki/Certificate_signing_request "wikipedia:Certificate signing request") (CSR) or [self-signed](https://en.wikipedia.org/wiki/Self-signed_certificate "wikipedia:Self-signed certificate"). While self-signed certificates can be generated easily, clients will reject them by default, meaning that every client needs to be configured to trust the self-signed certificate.
 
-The actual generation commands are described in the implementation articles.
+For the actual generation commands refer to the article of the used implementation:
+
+*   [OpenSSL#Usage](/index.php/OpenSSL#Usage "OpenSSL")
+*   [GnuTLS#Usage](/index.php/GnuTLS#Usage "GnuTLS")
+*   [Network Security Services#Usage](/index.php/Network_Security_Services#Usage "Network Security Services")
+*   [mbed TLS#Usage](/index.php/Mbed_TLS#Usage "Mbed TLS")
 
 **Tip:** You can get free certificates from the [Let's Encrypt](https://letsencrypt.org/) certificate authority with [ACME](#ACME).
 

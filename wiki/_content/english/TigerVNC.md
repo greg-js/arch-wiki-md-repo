@@ -207,7 +207,7 @@ vncconfig -nowin &
 As mentioned in [#Installation](#Installation), the *tigervnc* package also provides the x0vncserver binary which allows direct control over a physical X session. Invoke it like so:
 
 ```
-$ x0vncserver -display :0 -passwordfile ~/.vnc/passwd
+$ x0vncserver -rbfauth ~/.vnc/passwd
 
 ```
 
@@ -219,25 +219,28 @@ For more information, see [x0vncserver(1)](https://jlk.fjfi.cvut.cz/arch/manpage
 
 In order to have a VNC Server running x0vncserver, which is the easiest way for most users to quickly have remote access to the current desktop, you can create a systemd unit as follows replacing the user and the options with the desired ones:
 
- `/etc/systemd/system/x0vncserver.service` 
+ `~/.config/systemd/user/x0vncserver.service` 
 ```
 [Unit]
 Description=Remote desktop service (VNC)
-After=syslog.target network.target
 
 [Service]
-Type=forking
-User=foo
-ExecStart=/usr/bin/sh -c '/usr/bin/x0vncserver -display :0 -rfbport 5900 -passwordfile /home/foo/.vnc/passwd &'
+Type=simple
+# wait for Xorg started by ${USER}
+ExecStartPre=/bin/sh -c 'while ! pgrep -U "$USER" Xorg; do sleep 2; done'
+ExecStart=/usr/bin/x0vncserver -rfbauth /home/${USER}/.vnc/passwd
+# or login with your username & password
+#ExecStart=/usr/bin/x0vncserver -PAMService=login -PlainUsers=${USER} -SecurityTypes=TLSPlain
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
 ```
 
 **Note:**
 
 *   This unit will only be useful if the user in the unit is currently running a X session.
 *   Do not run this service if your local area network is untrusted.
+*   You may need read man page for more detail.
 
 ## Connecting to vncserver
 

@@ -50,7 +50,7 @@ It is **highly** recommended to use a [time synchronization](/index.php/Time_syn
 
 Global configuration options are set in `/etc/nfs.conf`. Users of simple configurations should not need to edit this file.
 
-The NFS server needs a list of exports (directories to share) which are defined in `/etc/exports`. These shares are relative to the so-called NFS root. A good security practice is to define a NFS root in a discrete directory tree under the server's root file system which will keep users limited to that mount point. Bind mounts are used to link the share mount point to the actual directory elsewhere on the [filesystem](/index.php/Filesystem "Filesystem").
+The NFS server needs a list of exports (directories to share) which are defined in `/etc/exports`. These shares are relative to the so-called NFS root. A good security practice is to define a NFS root in a discrete directory tree which will keep users limited to that mount point. Bind mounts are used to link the share mount point to the actual directory elsewhere on the [filesystem](/index.php/Filesystem "Filesystem").
 
 Consider this following example wherein:
 

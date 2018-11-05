@@ -1,4 +1,6 @@
-**[Diretrizes de criação de pacotes](/index.php/Criando_pacotes "Criando pacotes")**
+**Status de tradução:** Esse artigo é uma tradução de [OCaml package guidelines](/index.php/OCaml_package_guidelines "OCaml package guidelines"). Data da última tradução: 2018-11-04\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=OCaml_package_guidelines&diff=0&oldid=553087) na versão em inglês.
+
+**[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
 * * *
 
@@ -98,4 +100,4 @@ package() {
 }
 ```
 
-Tenha em mente que muitos pacotes OCaml frequentemente precisarão de parâmetros extras para o `make` e `make install`. Lembre-se também de remover a opção **!strip** e alterar a arquitetura se o pacote não produzir bytecode.
+Tenha em mente que muitos pacotes OCaml frequentemente precisarão de parâmetros extras para o `make` e `make install`. Lembre-se também de remover a opção `!strip` e alterar a arquitetura se o pacote não produzir bytecode.

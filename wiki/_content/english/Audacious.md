@@ -39,7 +39,7 @@ For the Qt5 interface install the [audacious-qt5](https://aur.archlinux.org/pack
 
 #### Winamp
 
-To add classic Winamp skins to Audacious, just copy them to either `~/.local/share/audacious/Skins` (user only) or `/usr/share/audacious/Skins` (system wide), then select them from the *Skinned Interface* tab in *Preferences*. Alternatively drag the skin file directly into the list view of available skins.
+To add classic Winamp skins to Audacious, just copy them to either `~/.local/share/audacious/Skins/` (user only) or `/usr/share/audacious/Skins/` (system wide), then select them from the *Skinned Interface* tab in *Preferences*. Alternatively drag the skin file directly into the list view of available skins.
 
 ### Plugins
 

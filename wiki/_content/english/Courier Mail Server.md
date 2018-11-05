@@ -47,7 +47,7 @@ Any other mail transfer agents (like Cyrus) or SMTP servers (Sendmail, Postfix, 
 
 **Warning:** If you deploy [TLS](https://en.wikipedia.org/wiki/TLS "wikipedia:TLS"), be sure to [disable SSLv3](https://disablessl3.com/) to prevent the POODLE vulnerability and follow [Server-side TLS](/index.php/Server-side_TLS "Server-side TLS").
 
-To obtain a certificate, see [OpenSSL#Certificates](/index.php/OpenSSL#Certificates "OpenSSL").
+You need to [obtain a certificate](/index.php/Obtain_a_certificate "Obtain a certificate").
 
 ## Authuserdb authentication
 

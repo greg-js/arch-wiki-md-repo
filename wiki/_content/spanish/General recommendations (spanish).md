@@ -288,7 +288,7 @@ El artículo sobre [discos de estado sólido](/index.php/Solid_State_Drives "Sol
 
 ## Servicios del sistema
 
-Esta sección se relaciona con el artículos sobre los [demonios](/index.php/Daemons_(Espa%C3%B1ol) "Daemons (Español)"). Para obtener más información, véase la categoría [daemons y servicios del sistema](/index.php/Category:Daemons_and_system_services_(Espa%C3%B1ol) "Category:Daemons and system services (Español)").
+Esta sección se relaciona con el artículos sobre los [demonios](/index.php/Daemons_(Espa%C3%B1ol) "Daemons (Español)").
 
 ### Índice de archivos y búsqueda
 

@@ -164,6 +164,8 @@ ExecStart=
 ExecStart=/usr/lib/bluetooth/bluetoothd --plugin=policy
 ```
 
+Some users may experience disconnection, and you may try to remove the added `--plugin=policy` flag.
+
 ## Audio
 
 In order to be able to use audio equipment like bluetooth headphones or speakers, you need to install the additional [pulseaudio-bluetooth](https://www.archlinux.org/packages/?name=pulseaudio-bluetooth) package. With a default PulseAudio installation you should immediately be able to stream audio from a bluetooth device to your speakers.

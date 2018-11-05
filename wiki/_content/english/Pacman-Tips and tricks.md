@@ -723,10 +723,26 @@ There are other downloading applications that you can use with *pacman*. Here th
 
 **Warning:** PackageKit opens up system permissions by default, and is otherwise not recommended for general usage. See [FS#50459](https://bugs.archlinux.org/task/50459) and [FS#57943](https://bugs.archlinux.org/task/57943).
 
-| Name | Written in | GUI toolkit | Arch Linux packages via | Specificity |
-| [discover](https://www.archlinux.org/packages/?name=discover) | C++/QML | Qt 5 | [packagekit-qt5](https://www.archlinux.org/packages/?name=packagekit-qt5) | [AppStream](https://www.freedesktop.org/wiki/Distributions/AppStream/), [Flatpak](/index.php/Flatpak "Flatpak"), [fwupd](/index.php/Fwupd "Fwupd") |
-| [gnome-software](https://www.archlinux.org/packages/?name=gnome-software) | C | GTK+ 3 | [gnome-software-packagekit-plugin](https://www.archlinux.org/packages/?name=gnome-software-packagekit-plugin) | [AppStream](https://www.freedesktop.org/wiki/Distributions/AppStream/), [Flatpak](/index.php/Flatpak "Flatpak"), [fwupd](/index.php/Fwupd "Fwupd") |
-| [apper](https://www.archlinux.org/packages/?name=apper) | C++ | Qt 5 | [packagekit-qt5](https://www.archlinux.org/packages/?name=packagekit-qt5) | [AppStream](https://www.freedesktop.org/wiki/Distributions/AppStream/) |
-| [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit) | C | GTK+ 3 | [packagekit](https://www.archlinux.org/packages/?name=packagekit) | – |
-| [pcurses](https://www.archlinux.org/packages/?name=pcurses) | C++ | ncurses | pacman | – |
-| [tkpacman](https://aur.archlinux.org/packages/tkpacman/) | Tcl | Tk | pacman | – |
+*   **Apper** — Qt 5 application and package manager using PackageKit written in C++. Supports [AppStream metadata](https://www.freedesktop.org/wiki/Distributions/AppStream/).
+
+	[https://userbase.kde.org/Apper](https://userbase.kde.org/Apper) || [apper](https://www.archlinux.org/packages/?name=apper)
+
+*   **Discover** — Qt 5 application manager using PackageKit written in C++/QML. Supports [AppStream metadata](https://www.freedesktop.org/wiki/Distributions/AppStream/), [Flatpak](/index.php/Flatpak "Flatpak") and [firmware updates](/index.php/Fwupd "Fwupd").
+
+	[https://userbase.kde.org/Discover](https://userbase.kde.org/Discover) || [discover](https://www.archlinux.org/packages/?name=discover)
+
+*   **GNOME PackageKit** — GTK+ 3 package manager using PackageKit written in C.
+
+	[https://freedesktop.org/software/PackageKit/](https://freedesktop.org/software/PackageKit/) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
+
+*   **GNOME Software** — GTK+ 3 application manager using PackageKit written in C. Supports [AppStream metadata](https://www.freedesktop.org/wiki/Distributions/AppStream/), [Flatpak](/index.php/Flatpak "Flatpak") and [firmware updates](/index.php/Fwupd "Fwupd").
+
+	[https://wiki.gnome.org/Apps/Software](https://wiki.gnome.org/Apps/Software) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
+
+*   **pcurses** — Curses TUI pacman wrapper written in C++.
+
+	[https://github.com/schuay/pcurses](https://github.com/schuay/pcurses) || [pcurses](https://www.archlinux.org/packages/?name=pcurses)
+
+*   **tkPacman** — Tk pacman wrapper written in Tcl.
+
+	[https://sourceforge.net/projects/tkpacman](https://sourceforge.net/projects/tkpacman) || [tkpacman](https://aur.archlinux.org/packages/tkpacman/)

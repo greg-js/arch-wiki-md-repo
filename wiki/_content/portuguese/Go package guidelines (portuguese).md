@@ -1,4 +1,6 @@
-**[Diretrizes de criação de pacotes](/index.php/Criando_pacotes "Criando pacotes")**
+**Status de tradução:** Esse artigo é uma tradução de [Go package guidelines](/index.php/Go_package_guidelines "Go package guidelines"). Data da última tradução: 2018-11-03\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Go_package_guidelines&diff=0&oldid=552778) na versão em inglês.
+
+**[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
 * * *
 
@@ -38,31 +40,31 @@ O pacote [go](https://www.archlinux.org/packages/?name=go) contém a ferramenta 
 
 ### Empacotamento
 
-*   Go projects are either just library files, just executables or both. Choose the appropriate way of packaging them. There are several examples below.
-*   Some Go applications or libraries have not been updated to the latest version of Go yet.
-    *   Running `go build -fix` may often work, but it may have to be fixed by the developer. Report an issue upstream if this is the case.
-*   Several Go projects do not have a version number or a license file.
-    *   Use license=('unknown') and report an issue to the developer if a license file is missing.
-    *   Use version "0.1", "1" or the git-revision (or equivalent for other version control systems) if the version number is missing.
-    *   Alternatively, use the current date as the version number, in this form `YYYYMMDD`.
+*   Os projetos Go são apenas arquivos de biblioteca, apenas executáveis ou ambos. Escolha a maneira apropriada de empacotá-los. Existem vários exemplos abaixo.
+*   Alguns aplicativos ou bibliotecas do Go ainda não foram atualizados para a versão mais recente do Go.
+    *   A execução de `go build -fix`  muitas vezes pode funcionar, mas pode ter de ser corrigida pelo desenvolvedor. Relate um problema upstream, se este for o caso.
+*   Vários projetos do Go não possuem um número de versão ou um arquivo de licença.
+    *   Use license=('unknown') e relate um problema ao desenvolvedor se um arquivo de licença estiver faltando.
+    *   Use a versão "0.1", "1" ou a git-revision (ou equivalente para outros sistemas de controle de versão) se o número da versão estiver faltando.
+    *   Como alternativa, use a data atual como o número da versão, desta forma `AAAAMMDD`.
 
 ## Exemplos de PKGBUILDs
 
 ### Exemplo de PKGBUILD para um aplicativo escrito em Go
 
 ```
-# Maintainer: NAME <EMAIL>
+# Maintainer: NOME <EMAIL>
 
-pkgname=PACKAGE NAME
+pkgname=NOME PACOTE
 pkgver=1.2.3
 pkgrel=1
-pkgdesc="PACKAGE DESCRIPTION"
-arch=('x86_64' 'i686')
-url="http://SERVER/$pkgname/"
+pkgdesc="DESCRIÇÃO PACOTE"
+arch=('x86_64')
+url="http://SERVIDOR/$pkgname/"
 license=('MIT')
 makedepends=('go')
 options=('!strip' '!emptydirs')
-source=("http://SERVER/$pkgname/$pkgname-$pkgver.tar.gz")
+source=("http://SERVIDOR/$pkgname/$pkgname-$pkgver.tar.gz")
 sha256sums=('00112233445566778899aabbccddeeff')
 
 build() {
@@ -89,18 +91,18 @@ package() {
 ### Exemplo de PKGBUILD para quando apenas um único arquivo fonte está disponível
 
 ```
-# Maintainer: NAME <EMAIL>
+# Maintainer: NOME <EMAIL>
 
-pkgname=PACKAGE NAME
+pkgname=NOME PACOTE
 pkgver=1.2.3
 pkgrel=1
-pkgdesc="PACKAGE DESCRIPTION"
-arch=('x86_64' 'i686')
-url="http://SERVER/$pkgname/"
+pkgdesc="DESCRIÇÃO PACOTE"
+arch=('x86_64')
+url="http://SERVIDOR/$pkgname/"
 license=('GPL3')
 makedepends=('go')
 options=('!strip' '!emptydirs')
-source=("http://SERVER/$pkgname/$pkgname.go")
+source=("http://SERVIDOR/$pkgname/$pkgname.go")
 sha256sums=('00112233445566778899aabbccddeeff')
 
 build() {
@@ -122,24 +124,24 @@ package() {
 
 #### Usando *go get*
 
-This is the recommended way, instead of the method below.
+Esta é a forma recomendada, em vez do método acima.
 
-Here is a way that relies on go get.
+Aqui está uma forma que depende do go get.
 
-You probably will not need to modify the build() or package() functions at all, only the variables at the top (pkgname etc).
+Você provavelmente não precisará modificar as funções build() ou package(), apenas as variáveis no topo (pkgname etc).
 
-If this does not work, test with go get first.
+Se isso não funcionar, teste com got get primeiro.
 
-**Note:** Remove `/...` if the PKGBUILD fails!
+**Nota:** Remova `/...` se o PKGBUILD falhar!
 
 ```
-# Maintainer: NAME <EMAIL>
+# Maintainer: NOME <EMAIL>
 
 pkgname=codesearch
 pkgver=20120515
 pkgrel=1
 pkgdesc="Code indexing and search written in Go"
-arch=('x86_64' 'i686')
+arch=('x86_64')
 url="https://github.com/google/codesearch"
 license=('BSD')
 depends=('go')
@@ -174,29 +176,27 @@ package() {
 # vim:set ts=2 sw=2 et:
 ```
 
-Thanks to Rémy Oudompheng‎ for this one.
+Obrigado a Rémy Oudompheng‎ por este aqui.
 
 #### Usando *go get*
 
-Here is another way that relies on `go get`.
+Aqui está uma outra forma que depende de `go get`.
 
-You probably will not need to modify the build() or package() functions at all, only the variables at the top (pkgname etc).
-
-If this does not work, test with `go get` first.
+Você provavelmente não precisará modificar as funções build() ou package(), apenas as variáveis no topo (pkgname etc). If this does not work, test with `go get` first.
 
 ```
-# Maintainer: NAME <EMAIL>
+# Maintainer: NOME <EMAIL>
 
-pkgname=PACKAGE NAME
+pkgname=NOME PACOTE
 pkgver=1.2.3
 pkgrel=1
-pkgdesc="PACKAGE DESCRIPTION"
-arch=('x86_64' 'i686')
-url="http://SERVER/$pkgname/"
+pkgdesc="DESCRIÇÃO PACOTE"
+arch=('x86_64')
+url="http://SERVIDOR/$pkgname/"
 license=('MIT')
 makedepends=('go' 'git')
 options=('!strip' '!emptydirs')
-_gourl=SERVER.NET/PATH/MODULENAME
+_gourl=SERVIDOR.NET/CAMINHO/NOMEMÓDULO
 
 build() {
   export GOROOT=/usr/lib/go

@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Locale](/index.php/Locale "Locale"). Data da última tradução: 2018-11-04\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Locale&diff=0&oldid=550402) na versão em inglês.
+
 Artigos relacionados
 
 *   [Variáveis de ambiente](/index.php/Vari%C3%A1veis_de_ambiente "Variáveis de ambiente")

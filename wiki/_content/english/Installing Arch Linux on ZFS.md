@@ -157,7 +157,7 @@ With these example commands, we will create a basic boot environment compatible 
 If you have just created your zpool, it will be mounted in a dir at the root of your tree named after the pool (ie /zroot). If the following set commands fail, you may need to unmount any ZFS filesystems first:
 
 ```
-# zfs umount -a
+# zfs unmount -a
 
 ```
 

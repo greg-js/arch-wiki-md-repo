@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Bioperl](/index.php/Bioperl "Bioperl"), revisada por última vez el **2018-10-30**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Bioperl&diff=0&oldid=552022) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 [Bioperl](http://bioperl.org/) es un conjunto de scripts en el lenguaje de programación Perl para ayudar a investigadores en la [Biología Computacional](https://en.wikipedia.org/wiki/es:Biolog%C3%ADa_computacional "wikipedia:es:Biología computacional") y la [Bioinformática](https://en.wikipedia.org/wiki/es:Bioinform%C3%A1tica "wikipedia:es:Bioinformática").
 
 ## Contents

@@ -508,6 +508,5 @@ Workaround: find proper UI description file (`DialogButtonMenu.xml`) and tweak e
 
 *   [Kodi Wiki](https://kodi.wiki/view/Main_Page) - Excellent resource with much information about Arch Linux specifically
 *   [Wikipedia:Kodi (software)](https://en.wikipedia.org/wiki/Kodi_(software) "wikipedia:Kodi (software)")
-*   [http://superrepo.org/](http://superrepo.org/) - xbmc Plug-in library
 *   [http://www.hdpfans.com/thread-329076-1-1.html](http://www.hdpfans.com/thread-329076-1-1.html) - Kodi/xbmc Chinese plug-in library installation method
 *   [https://github.com/taxigps/xbmc-addons-chinese](https://github.com/taxigps/xbmc-addons-chinese) - xbmc-addons-chinese: Addon scripts, plugins, and skins for XBMC Media Center. Special for chinese laguage.

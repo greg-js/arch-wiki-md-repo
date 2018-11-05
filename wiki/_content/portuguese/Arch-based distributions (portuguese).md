@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"). Data da última tradução: 2018-10-26\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=550641) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Arch-based distributions](/index.php/Arch-based_distributions "Arch-based distributions"). Data da última tradução: 2018-11-04\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Arch-based_distributions&diff=0&oldid=552513) na versão em inglês.
 
 Artigos relacionados
 
@@ -8,6 +8,8 @@ Artigos relacionados
 *   [DeveloperWiki:TrademarkPolicy](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy")
 
 **Atenção:** **Não** há suporte a distribuições baseadas no Arch pela comunidade ou desenvolvedores do Arch. Veja [Código de conduta#Suporte *apenas* à distribuição Arch Linux](/index.php/C%C3%B3digo_de_conduta#Suporte_.2Aapenas.2A_.C3.A0_distribui.C3.A7.C3.A3o_Arch_Linux "Código de conduta")
+
+**Nota:** Por favor, use a página de discussão para sugerir edições a este artigo: [Talk:Arch-based distributions](/index.php/Talk:Arch-based_distributions "Talk:Arch-based distributions").
 
 Esta página lista as distribuições do sistema operacional que são derivadas do Arch Linux **no todo ou em parte**, para ajudar a aplicar a [Política de marca registrada do Arch Linux](/index.php/DeveloperWiki:TrademarkPolicy "DeveloperWiki:TrademarkPolicy"). Embora pretenda ser o mais abrangente possível, não é uma lista exaustiva. Os links do projeto SourceForge são preferidos para simplificar a manutenção.
 

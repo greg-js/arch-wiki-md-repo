@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Sdcv](/index.php/Sdcv "Sdcv"), revisada por última vez el **2018-10-27**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Sdcv&diff=0&oldid=551752) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 [Sdcv](https://dushistov.github.io/sdcv/) es un diccionario de línea de comandos. Proporciona acceso a los diccionarios en formato [StarDict](https://en.wikipedia.org/wiki/es:StarDict "wikipedia:es:StarDict").
 
 ## Contents

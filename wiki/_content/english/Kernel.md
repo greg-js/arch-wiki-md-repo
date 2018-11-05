@@ -69,6 +69,10 @@ If you have not actually patched or customized a kernel before it is not that ha
 
 	[http://ck.kolivas.org/patches/](http://ck.kolivas.org/patches/) || [linux-ck](https://aur.archlinux.org/packages/linux-ck/)
 
+*   **[Intel Clearlinux patches](https://github.com/clearlinux-pkgs/linux/)** — Maintained by Intel. The patches optimize kernel for performance and security, from the Cloud to the Edge, designed for customization, and manageability. It also provides [WireGuard](/index.php/WireGuard "WireGuard") as its module.
+
+	[https://github.com/clearlinux-pkgs/linux](https://github.com/clearlinux-pkgs/linux) || [linux-clear](https://aur.archlinux.org/packages/linux-clear/)
+
 *   **[pf-kernel](https://gitlab.com/post-factum/pf-kernel/)** — Provides you with a handful of awesome features not merged into mainline. It is based on neither existing Linux fork nor patchset, although some unofficial ports may be used if required patches have not been released officially. The most prominent patches of linux-pf are PDS CPU scheduler and UKSM.
 
 	[https://gitlab.com/post-factum/pf-kernel/wikis/README](https://gitlab.com/post-factum/pf-kernel/wikis/README) || Packages:

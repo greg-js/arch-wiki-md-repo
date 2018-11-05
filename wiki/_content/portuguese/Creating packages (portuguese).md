@@ -215,7 +215,7 @@ Por favor, leia [AUR (Português)#Enviando pacotes](/index.php/AUR_(Portugu%C3%A
 
 ## Diretrizes mais detalhadas
 
-**[Diretrizes de criação de pacotes](/index.php/Criando_pacotes "Criando pacotes")**
+**[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
 * * *
 

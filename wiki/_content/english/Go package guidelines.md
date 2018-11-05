@@ -6,7 +6,7 @@
 
 [Go](https://en.wikipedia.org/wiki/Go_(programming_language) is well supported on Arch Linux.
 
-The [go](https://www.archlinux.org/packages/?name=go) package contains the **go** tool (for running `go fix`, `go build` etc). There is also [gcc-go](https://www.archlinux.org/packages/?name=gcc-go) which provides `gccgo`.
+The [go](https://www.archlinux.org/packages/?name=go) package contains the *go* tool (for running `go fix`, `go build` etc). There is also [gcc-go](https://www.archlinux.org/packages/?name=gcc-go) which provides `gccgo`.
 
 ## Contents
 
@@ -57,7 +57,7 @@ pkgname=PACKAGE NAME
 pkgver=1.2.3
 pkgrel=1
 pkgdesc="PACKAGE DESCRIPTION"
-arch=('x86_64' 'i686')
+arch=('x86_64')
 url="http://SERVER/$pkgname/"
 license=('MIT')
 makedepends=('go')
@@ -95,7 +95,7 @@ pkgname=PACKAGE NAME
 pkgver=1.2.3
 pkgrel=1
 pkgdesc="PACKAGE DESCRIPTION"
-arch=('x86_64' 'i686')
+arch=('x86_64')
 url="http://SERVER/$pkgname/"
 license=('GPL3')
 makedepends=('go')
@@ -139,7 +139,7 @@ pkgname=codesearch
 pkgver=20120515
 pkgrel=1
 pkgdesc="Code indexing and search written in Go"
-arch=('x86_64' 'i686')
+arch=('x86_64')
 url="https://github.com/google/codesearch"
 license=('BSD')
 depends=('go')
@@ -191,7 +191,7 @@ pkgname=PACKAGE NAME
 pkgver=1.2.3
 pkgrel=1
 pkgdesc="PACKAGE DESCRIPTION"
-arch=('x86_64' 'i686')
+arch=('x86_64')
 url="http://SERVER/$pkgname/"
 license=('MIT')
 makedepends=('go' 'git')

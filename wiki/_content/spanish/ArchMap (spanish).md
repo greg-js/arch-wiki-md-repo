@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [ArchMap](/index.php/ArchMap "ArchMap"), revisada por última vez el **2018-10-26**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=ArchMap&diff=0&oldid=551255) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 Artículos relacionados
 
 *   [Google Earth](/index.php/Google_Earth "Google Earth")
@@ -17,13 +20,13 @@ El proyecto **ArchMap** crea un mapa de usuarios de Arch Linux de todo el mundo.
 
 ## Historia
 
-**ArchMap** fue creado originalmente por [User: xterminus](/index.php/User:Xterminus "User:Xterminus"). Creó archivos jpeg que se podían descargar desde esta página. Sin embargo, ya no tenía tiempo para mantenerlos, así que abandonó el proyecto.
+**ArchMap** fue creado originalmente por [User:xterminus](/index.php/User:Xterminus "User:Xterminus"). Creó archivos jpeg que se podían descargar desde esta página. Sin embargo, ya no tenía tiempo para mantenerlos, así que abandonó el proyecto.
 
-Cuando se lanzó Google Earth para Linux, [User: brain0](/index.php/User:Brain0 "User:Brain0") volvió a crear el proyecto.
+Cuando se lanzó Google Earth para Linux, [User:brain0](/index.php/User:Brain0 "User:Brain0") volvió a crear el proyecto.
 
 La tercera versión de ArchMap se basó en Google Maps.
 
-La versión actual fue iniciada por [User: Alux](/index.php/User:Alux "User:Alux") con la ayuda de [User: Kyrias](/index.php/User:Kyrias "User:Kyrias") y [User: Fsckd](/index.php/User:Fsckd "User:Fsckd").
+La versión actual fue iniciada por [User:Alux](/index.php/User:Alux "User:Alux") con la ayuda de [User:Kyrias](/index.php/User:Kyrias "User:Kyrias") y [User:Fsckd](/index.php/User:Fsckd "User:Fsckd").
 
 ### Capturas de pantalla
 

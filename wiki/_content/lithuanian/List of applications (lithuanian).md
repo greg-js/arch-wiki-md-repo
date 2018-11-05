@@ -3810,7 +3810,7 @@ See also [Wikipedia:Comparison of video player software](https://en.wikipedia.or
 
 	[https://wiki.gnome.org/Apps/Videos](https://wiki.gnome.org/Apps/Videos) || [totem](https://www.archlinux.org/packages/?name=totem)
 
-*   **Movie Monad** — Free and simple to use video player made with Haskell using [GStreamer](/index.php/GStreamer "GStreamer").
+*   **Movie Monad** — Free and simple to use video player made with Haskell using [GStreamer](/index.php/GStreamer "GStreamer") and GTK+. Precompiled and no Haskell dependency in run-time.
 
 	[https://lettier.github.io/movie-monad/](https://lettier.github.io/movie-monad/) || [movie-monad](https://aur.archlinux.org/packages/movie-monad/)
 

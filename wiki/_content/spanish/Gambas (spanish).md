@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Gambas](/index.php/Gambas "Gambas"), revisada por última vez el **2018-10-29**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Gambas&diff=0&oldid=551930) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 [Gambas](https://en.wikipedia.org/wiki/es:Gambas "wikipedia:es:Gambas") es un dialecto orientado a objetos del lenguaje de programación BASIC, así como el entorno de desarrollo integrado que lo acompaña.
 
 ## Instalación

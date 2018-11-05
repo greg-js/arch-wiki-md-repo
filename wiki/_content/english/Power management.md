@@ -80,7 +80,10 @@ These are the more popular scripts and tools designed to help power saving:
 
 	[https://01.org/powertop/](https://01.org/powertop/) || [powertop](https://www.archlinux.org/packages/?name=powertop)
 
-*   [systemd](/index.php/Systemd "Systemd")
+*   **[systemd](/index.php/Systemd "Systemd")** — A system and service manager.
+
+	[https://freedesktop.org/wiki/Software/systemd/](https://freedesktop.org/wiki/Software/systemd/) || [systemd](https://www.archlinux.org/packages/?name=systemd)
+
 *   **[TLP](/index.php/TLP "TLP")** — Advanced power management for Linux.
 
 	[http://linrunner.de/tlp](http://linrunner.de/tlp) || [tlp](https://www.archlinux.org/packages/?name=tlp)
@@ -135,7 +138,7 @@ The specified action for each event can be one of `ignore`, `poweroff`, `reboot`
 | `HandleLidSwitchDocked` | Triggered when the lid is closed if the system is inserted in a docking station, or more than one display is connected. | `ignore` |
 | `HandleLidSwitchExternalPower` | Triggered when the lid is closed if the system is connected to external power. | action set for `HandleLidSwitch` |
 
-To apply any changes, [restart](/index.php/Restart "Restart") the `systemd-logind` daemon (be warned that this will terminate all login sessions that might still be open).
+To apply any changes, [restart](/index.php/Restart "Restart") `systemd-logind.service` (be warned that this will terminate all login sessions that might still be open).
 
 **Note:** *systemd* cannot handle AC and Battery ACPI events, so if you use [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools") or other similar tools [acpid](/index.php/Acpid "Acpid") is still required.
 
@@ -307,7 +310,7 @@ WantedBy=sleep.target
 The output of any custom script will be logged by *systemd-suspend.service*, *systemd-hibernate.service* or *systemd-hybrid-sleep.service*. You can see its output in *systemd*'s [journal](/index.php/Systemd#Journal "Systemd"):
 
 ```
-# journalctl -b -u systemd-suspend
+# journalctl -b -u systemd-suspend.service
 
 ```
 
@@ -349,7 +352,7 @@ When performing lid switches in short succession, *logind* will delay the suspen
 ...
 HoldoffTimeoutSec=30s
 ...
-
+</nowiki>
 ```
 
 #### Suspend from corresponding laptop Fn key not working
@@ -357,7 +360,7 @@ HoldoffTimeoutSec=30s
 If, regardless of the setting in logind.conf, the sleep button does not work (pressing it does not even produce a message in syslog), then logind is probably not watching the keyboard device. [[3]](http://lists.freedesktop.org/archives/systemd-devel/2015-February/028325.html) Do:
 
 ```
-# journalctl | grep "Watching system buttons"
+# journalctl --grep="Watching system buttons"
 
 ```
 
@@ -372,13 +375,12 @@ May 25 21:28:19 vmarch.lan systemd-logind[210]: Watching system buttons on /dev/
 
 Notice no keyboard device. Now obtain ATTRS{name} for the parent keyboard device [[4]](http://systemd-devel.freedesktop.narkive.com/Rbi3rjNN/patch-1-2-logind-add-support-for-tps65217-power-button) :
 
+ `# udevadm info -a /dev/input/by-path/*-kbd` 
 ```
-# udevadm info -a /dev/input/by-path/*-kbd
 ...
 KERNEL=="event0"
 ...
 ATTRS{name}=="AT Translated Set 2 keyboard"
-
 ```
 
 Now write a custom udev rule to add the "power-switch" tag:
@@ -400,7 +402,7 @@ Restart services and reload rules:
 
 ```
 
-Now you should see "Watching system buttons on /dev/input/event0" in syslog
+Now you should see `Watching system buttons on /dev/input/event0` in syslog.
 
 ## Power saving
 
@@ -520,8 +522,8 @@ In this example, `%k` is a specifier for the kernel name of the matched device. 
 Additional power saving functions of Intel wireless cards with `iwlwifi` driver can be enabled by passing the correct parameters to the kernel module. Making it persistent can be achieved by adding the line below to `/etc/modprobe.d/iwlwifi.conf` file:
 
 ```
- options iwlwifi power_save=1 d0i3_disable=0 uapsd_disable=0
- options iwldvm force_cam=0
+options iwlwifi power_save=1 d0i3_disable=0 uapsd_disable=0
+options iwldvm force_cam=0
 
 ```
 
@@ -556,13 +558,17 @@ If believing the computer has support for ASPM it can be forced on for the kerne
 To adjust to `powersave` do (the following command will not work unless enabled):
 
 ```
-# echo powersave | tee /sys/module/pcie_aspm/parameters/policy
+# echo powersave > /sys/module/pcie_aspm/parameters/policy
 
 ```
 
 By default it looks like this:
 
- `$ cat /sys/module/pcie_aspm/parameters/policy`  `[default] performance powersave` 
+ `$ cat /sys/module/pcie_aspm/parameters/policy` 
+```
+[default] performance powersave
+
+```
 
 #### PCI Runtime Power Management
 

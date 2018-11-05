@@ -11,14 +11,11 @@ This article will provide an example of how to install and configure Arch Linux 
 
 *   [1 Introduction](#Introduction)
     *   [1.1 Swap space](#Swap_space)
-    *   [1.2 MBR vs. GPT](#MBR_vs._GPT)
-    *   [1.3 Boot loader](#Boot_loader)
+    *   [1.2 Boot loader](#Boot_loader)
 *   [2 Installation](#Installation)
     *   [2.1 Load kernel modules](#Load_kernel_modules)
     *   [2.2 Prepare the hard drives](#Prepare_the_hard_drives)
-        *   [2.2.1 Install gdisk](#Install_gdisk)
-        *   [2.2.2 Partition hard drives](#Partition_hard_drives)
-        *   [2.2.3 Clone partitions with sgdisk](#Clone_partitions_with_sgdisk)
+        *   [2.2.1 Partition hard drives](#Partition_hard_drives)
     *   [2.3 RAID installation](#RAID_installation)
         *   [2.3.1 Synchronization](#Synchronization)
         *   [2.3.2 Scrubbing](#Scrubbing)
@@ -64,17 +61,11 @@ Although [RAID](/index.php/RAID "RAID") and [LVM](/index.php/LVM "LVM") may seem
 
 Many tutorials treat the swap space differently, either by creating a separate RAID1 array or a LVM logical volume. Creating the swap space on a separate array is not intended to provide additional redundancy, but instead, to prevent a corrupt swap space from rendering the system inoperable, which is more likely to happen when the swap space is located on the same partition as the root directory.
 
-### MBR vs. GPT
-
-See also [Wikipedia:GUID Partition Table](https://en.wikipedia.org/wiki/GUID_Partition_Table "wikipedia:GUID Partition Table").
-
-The widespread [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record") (MBR) partitioning scheme, dating from the early 1980s, imposed limitations which affected the use of modern hardware. [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table") (GPT) is a new standard for the layout of the partition table based on the [UEFI](https://en.wikipedia.org/wiki/Unified_Extensible_Firmware_Interface "wikipedia:Unified Extensible Firmware Interface") specification derived from Intel. Although GPT provides a significant improvement over a MBR, it does require the additional step of creating an additional partition at the beginning of each disk for GRUB2 (see: [GRUB#GUID Partition Table (GPT) specific instructions](/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions "GRUB")).
-
 ### Boot loader
 
-This tutorial will use [SYSLINUX](/index.php/Syslinux "Syslinux") instead of [GRUB](/index.php/GRUB "GRUB"). GRUB when used in conjunction with [GPT](/index.php/GPT "GPT") requires an additional [BIOS Boot Partition](/index.php/GRUB#GPT_specific_instructions "GRUB").
+This tutorial will use [Syslinux](/index.php/Syslinux "Syslinux") instead of [GRUB](/index.php/GRUB "GRUB"). GRUB when used in conjunction with [GPT](/index.php/GPT "GPT") requires an additional [BIOS boot partition](/index.php/BIOS_boot_partition "BIOS boot partition").
 
-GRUB supports the default style of metadata currently created by mdadm (i.e. 1.2) when combined with an initramfs, which has replaced in Arch Linux with [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). SYSLINUX only supports version 1.0, and therefore requires the `--metadata=1.0` option.
+GRUB supports the default style of metadata currently created by mdadm (i.e. 1.2) when combined with an initramfs, which has replaced in Arch Linux with [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"). Syslinux only supports version 1.0, and therefore requires the `--metadata=1.0` option.
 
 Some boot loaders (e.g. [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy"), [LILO](/index.php/LILO "LILO")) will not support any 1.x metadata versions, and instead require the older version, 0.90\. If you would like to use one of those boot loaders make sure to add the option `--metadata=0.90` to the `/boot` array during [RAID installation](#RAID_installation).
 
@@ -82,9 +73,9 @@ Some boot loaders (e.g. [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy"), [LI
 
 Obtain the latest installation media and boot the Arch Linux installer as outlined in [Getting and installing Arch](/index.php/Getting_and_installing_Arch "Getting and installing Arch").
 
-#### Load kernel modules
+### Load kernel modules
 
-Enter another TTY terminal by typing `Alt`+`F2`. Load the appropriate RAID (e.g. `raid0`, `raid1`, `raid5`, `raid6`, `raid10`) and LVM (i.e. `dm-mod`) modules. The following example makes use of RAID1 and RAID5.
+[Load](/index.php/Kernel_module#Manual_module_handling "Kernel module") the appropriate RAID (e.g. `raid0`, `raid1`, `raid5`, `raid6`, `raid10`) and LVM (i.e. `dm-mod`) modules. The following example makes use of RAID1 and RAID5.
 
 ```
 # modprobe raid1
@@ -95,40 +86,18 @@ Enter another TTY terminal by typing `Alt`+`F2`. Load the appropriate RAID (e.g.
 
 ### Prepare the hard drives
 
-**Note:** If your hard drives are already prepared and all you want to do is activate RAID and LVM jump to [Activate existing RAID devices and LVM volumes](#Activate_existing_RAID_devices_and_LVM_volumes). This can be achieved with alternative partitioning software (see: [Article](http://yannickloth.be/blog/2010/08/01/installing-archlinux-with-software-raid1-encrypted-filesystem-and-lvm2/)).
-
-Each hard drive will have a 100MB `/boot` partition, 2048MB `/swap` partition, and a `/` partition that takes up the remainder of the disk.
+Each hard drive will have a 200 MiB `/boot` partition, 2048 MiB `/swap` partition, and a `/` partition that takes up the remainder of the disk.
 
 The boot partition must be RAID1; i.e it cannot be striped (RAID0) or RAID5, RAID6, etc.. This is because GRUB does not have RAID drivers. Any other level will prevent your system from booting. Additionally, if there is a problem with one boot partition, the boot loader can boot normally from the other two partitions in the `/boot` array.
 
-#### Install gdisk
-
-Since most disk partitioning software (i.e. fdisk and sfdisk) does not support GPT you will need to install [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk) to set the partition type of the boot loader partitions.
-
-Update the [pacman](/index.php/Pacman "Pacman") database:
-
-```
-$ pacman-db-upgrade
-
-```
-
-Refresh the package list:
-
-```
-$ pacman -Syy
-
-```
-
-Install **gptfdisk**.
-
 #### Partition hard drives
 
-We will use `gdisk` to create three partitions on each of the three hard drives (i.e. `/dev/sda`, `/dev/sdb`, `/dev/sdc`):
+We will use [gdisk](/index.php/Gdisk "Gdisk") to create three partitions on each of the three hard drives (i.e. `/dev/sda`, `/dev/sdb`, `/dev/sdc`):
 
 ```
    Name        Flags      Part Type  FS Type          [Label]        Size (MB)
 -------------------------------------------------------------------------------
-   sda1        Boot        Primary   linux_raid_m                       100.00  # /boot
+   sda1        Boot        Primary   linux_raid_m                       200.00  # /boot
    sda2                    Primary   linux_raid_m                      2000.00  # /swap
    sda3                    Primary   linux_raid_m                     97900.00  # /
 
@@ -146,30 +115,17 @@ and type the following commands at the prompt:
 1.  Add a new partition: `n`
 2.  Select the default partition number: `Enter`
 3.  Use the default for the first sector: `Enter`
-4.  For `sda1` and `sda2` type the appropriate size in MB (i.e. `+100MB` and `+2048M`). For `sda3` just hit `Enter` to select the remainder of the disk.
+4.  For `sda1` and `sda2` type the appropriate size in MiB (i.e. `+200M` and `+2048M`). For `sda3` just hit `Enter` to select the remainder of the disk.
 5.  Select `Linux RAID` as the partition type: `fd00`
 6.  Write the table to disk and exit: `w`
 
-Repeat this process for `/dev/sdb` and `/dev/sdc` or use the alternate `sgdisk` method below. You may need to reboot to allow the kernel to recognize the new tables.
+Repeat this process for `/dev/sdb` and `/dev/sdc` or use alternatively use *sgdisk* to clone the partition layout to the other drives, see [gdisk#Backup and restore partition table](/index.php/Gdisk#Backup_and_restore_partition_table "Gdisk"). You may need to reboot to allow the kernel to recognize the new tables.
 
 **Note:** Make sure to create the same exact partitions on each disk. If a group of partitions of different sizes are assembled to create a RAID partition, it will work, but *the redundant partition will be in multiples of the size of the smallest partition*, leaving the unallocated space to waste.
 
-#### Clone partitions with sgdisk
-
-If you are using GPT, then you can use `sgdisk` to clone the partition table from `/dev/sda` to the other two hard drives:
-
-```
-$ sgdisk --backup=table /dev/sda
-$ sgdisk --load-backup=table /dev/sdb
-$ sgdisk --load-backup=table /dev/sdc
-
-```
-
-**Note:** When using this method to clone the partition table of an active drive onto a replacement drive for the same system (e.g. RAID drive replacement), use `sgdisk -G /dev/<newDrive>` to re-randomise the UUID of the disk and partitions to ensure they are unique.
-
 ### RAID installation
 
-After creating the physical partitions, you are ready to setup the **/boot**, '**/swap**, and **/** arrays with `mdadm`. It is an advanced tool for RAID management that will be used to create a `/etc/mdadm.conf` within the installation environment.
+After creating the physical partitions, you are ready to setup the **/boot**, **/swap**, and **/** arrays with `mdadm`. It is an advanced tool for RAID management that will be used to create a `/etc/mdadm.conf` within the installation environment.
 
 Create the **/** array at `/dev/md0`:
 
@@ -185,9 +141,10 @@ Create the **/swap** array at `/dev/md1`:
 
 ```
 
-**Note:** If the only reason you are using RAID is to prevent stored data loss (i.e. you're not concerned about some running applications crashing in the event of a disk failure), then there is no reason to RAID the swap partitions -- you can use them as multiple individual swap partitions.
+**Note:**
 
-**Note:** If you plan on installing a boot loader that does not support the 1.x version of RAID metadata make sure to add the `--metadata=0.90` option to the following command.
+*   If the only reason you are using RAID is to prevent stored data loss (i.e. you are not concerned about some running applications crashing in the event of a disk failure), then there is no reason to RAID the swap partitions -- you can use them as multiple individual swap partitions.
+*   If you plan on installing a boot loader that does not support the 1.x version of RAID metadata make sure to add the `--metadata=0.90` option to the following command.
 
 Create the **/boot** array at `/dev/md2`:
 
@@ -207,12 +164,10 @@ After you create a RAID volume, it will synchronize the contents of the physical
 
 ```
 
-**Tip:** Follow the synchronization in another TTY terminal by typing `Alt+F3` and then execute the above command.
-
 Further information about the arrays is accessible with:
 
 ```
-# mdadm --misc --detail /dev/md[012] | less
+# mdadm --misc --detail /dev/md[012]
 
 ```
 
@@ -270,13 +225,13 @@ The check operation scans the drives for bad sectors and mismatches. Bad sectors
 
 ##### General Notes on Scrubbing
 
-**Note:** Users may alternatively echo **repair** to /sys/block/md0/md/sync_action but this is ill-advised since if a mismatch in the data is encountered, it would be automatically updated to be consistent. The danger is that we really don't know whether it's the parity or the data block that's correct (or which data block in case of RAID1). It's luck-of-the-draw whether or not the operation gets the right data instead of the bad data.
+**Note:** Users may alternatively *echo* `repair` to `/sys/block/md0/md/sync_action` but this is ill-advised since if a mismatch in the data is encountered, it would be automatically updated to be consistent. The danger is that we really do not know whether it is the parity or the data block that is correct (or which data block in case of RAID1). It is luck-of-the-draw whether or not the operation gets the right data instead of the bad data.
 
 It is a good idea to set up a cron job as root to schedule a periodic scrub. See [raid-check](https://aur.archlinux.org/packages/raid-check/) which can assist with this.
 
 ##### RAID1 and RAID10 Notes on Scrubbing
 
-Due to the fact that RAID1 and RAID10 writes in the kernel are unbuffered, an array can have non-0 mismatch counts even when the array is healthy. These non-0 counts will only exist in transient data areas where they don't pose a problem. However, since we can't tell the difference between a non-0 count that is just in transient data or a non-0 count that signifies a real problem. This fact is a source of false positives for RAID1 and RAID10 arrays. It is however recommended to still scrub to catch and correct any bad sectors there might be in the devices.
+Due to the fact that RAID1 and RAID10 writes in the kernel are unbuffered, an array can have non-0 mismatch counts even when the array is healthy. These non-0 counts will only exist in transient data areas where they do not pose a problem. However, since we cannot tell the difference between a non-0 count that is just in transient data or a non-0 count that signifies a real problem. This fact is a source of false positives for RAID1 and RAID10 arrays. It is however recommended to still scrub to catch and correct any bad sectors there might be in the devices.
 
 ### LVM installation
 
@@ -363,7 +318,7 @@ Confirm that LVM has created the LVs with:
 Since the installer builds the initrd using `/etc/mdadm.conf` in the target system, you should update that file with your RAID configuration. The original file can simply be deleted because it contains comments on how to fill it correctly, and that is something mdadm can do automatically for you. So let us delete the original and have mdadm create you a new one with the current setup:
 
 ```
-# mdadm --examine --scan > /etc/mdadm.conf
+# mdadm --examine --scan >> /etc/mdadm.conf
 
 ```
 
@@ -381,10 +336,7 @@ Follow the directions outlined the in [#Installation](#Installation) section unt
 
 #### mkinitcpio.conf
 
-[mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") can use a hook to assemble the arrays on boot. For more information see [mkinitcpio Using RAID](/index.php/Mkinitcpio#Using_RAID "Mkinitcpio").
-
-1.  Add the `dm_mod` module to the `MODULES` list in `/etc/mkinitcpio.conf`.
-2.  Add the `mdadm_udev` and `lvm2` hooks to the `HOOKS` list in `/etc/mkinitcpio.conf` after `udev`.
+[mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") can use a hook to assemble the arrays on boot. For more information see [mkinitcpio Using RAID](/index.php/Mkinitcpio#Using_RAID "Mkinitcpio"). Add the `mdadm_udev` and `lvm2` hooks to the `HOOKS` array in `/etc/mkinitcpio.conf` after `udev`.
 
 ### Conclusion
 
@@ -397,7 +349,7 @@ Once it is complete you can safely reboot your machine:
 
 ### Install the bootloader on the Alternate Boot Drives
 
-Once you have successfully booted your new system for the first time, you will want to install the bootloader onto the other two disks (or on the other disk if you have only 2 HDDs) so that, in the event of disk failure, the system can be booted from any of the remaining drives (e.g. by switching the boot order in the BIOS). The method depends on the bootloader system you're using:
+Once you have successfully booted your new system for the first time, you will want to install the bootloader onto the other two disks (or on the other disk if you have only 2 HDDs) so that, in the event of disk failure, the system can be booted from any of the remaining drives (e.g. by switching the boot order in the BIOS). The method depends on the bootloader system you are using:
 
 #### Syslinux
 

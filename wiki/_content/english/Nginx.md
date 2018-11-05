@@ -13,7 +13,7 @@ This article describes how to set up nginx and how to optionally integrate it wi
         *   [3.2.2 Running under different user](#Running_under_different_user)
         *   [3.2.3 Server blocks](#Server_blocks)
             *   [3.2.3.1 Managing server entries](#Managing_server_entries)
-        *   [3.2.4 TLS/SSL](#TLS.2FSSL)
+        *   [3.2.4 TLS](#TLS)
         *   [3.2.5 Per-User Directories](#Per-User_Directories)
     *   [3.3 FastCGI](#FastCGI)
         *   [3.3.1 PHP implementation](#PHP_implementation)
@@ -194,16 +194,16 @@ To remove a `server`:
 
 [Reload](/index.php/Reload "Reload")/[restart](/index.php/Restart "Restart") `nginx.service` to enable the new configuration.
 
-#### TLS/SSL
+#### TLS
 
-[OpenSSL](/index.php/OpenSSL "OpenSSL") provides TLS/SSL support and is installed by default on Arch installations.
+[OpenSSL](/index.php/OpenSSL "OpenSSL") provides TLS support and is installed by default on Arch installations.
 
 **Tip:**
 
 *   You may want to read the [ngx_http_ssl_module](http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_certificate) docs first before configuring SSL.
 *   [Let’s Encrypt](/index.php/Let%E2%80%99s_Encrypt "Let’s Encrypt") is a free, automated, and open certificate authority. A plugin is available to request valid SSL certificates straight from the command line and automatic configuration.
-*   Mozilla has a useful [SSL/TLS article](https://wiki.mozilla.org/Security/Server_Side_TLS "mozillawiki:Security/Server Side TLS") as well as an [automated tool](https://mozilla.github.io/server-side-tls/ssl-config-generator/) to help create a more secure configuration.
-*   [Cipherli.st](https://cipherli.st) provides strong SSL implementation examples and tutorial for most modern webservers.
+*   Mozilla has a useful [TLS article](https://wiki.mozilla.org/Security/Server_Side_TLS "mozillawiki:Security/Server Side TLS") as well as an [automated tool](https://mozilla.github.io/server-side-tls/ssl-config-generator/) to help create a more secure configuration.
+*   [Cipherli.st](https://cipherli.st) provides strong TLS implementation examples and tutorial for most modern webservers.
 
 **Warning:** If you plan on implementing TLS, know that some variations and implementations are [still vulnerable to attack](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security")[[2]](https://weakdh.org/#affected). For details on these current vulnerabilities within TLS and how to apply appropriate changes to nginx, visit [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html)
 
@@ -234,7 +234,7 @@ If you need to create a CSR, follow these instructions instead of the above:
 
 **Note:** For more *openssl* options, read its [man page](https://www.openssl.org/docs/apps/openssl.html) or peruse its [extensive documentation](https://www.openssl.org/docs/).
 
-Basic example of `/etc/nginx/nginx.conf` using SSL:
+Basic example of `/etc/nginx/nginx.conf` using TLS:
 
  `/etc/nginx/nginx.conf` 
 ```

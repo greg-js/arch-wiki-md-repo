@@ -44,8 +44,8 @@ Version: ThinkPad X1 Carbon 6th
 
 *   [1 BIOS](#BIOS)
     *   [1.1 Updates](#Updates)
-        *   [1.1.1 Automatic Linux Vendor Firmware Service](#Automatic_Linux_Vendor_Firmware_Service)
-        *   [1.1.2 Manual Installation](#Manual_Installation)
+        *   [1.1.1 Automatic (Linux Vendor Firmware Service)](#Automatic_.28Linux_Vendor_Firmware_Service.29)
+        *   [1.1.2 Manual](#Manual)
 *   [2 Suspend issues](#Suspend_issues)
     *   [2.1 Enabling S3](#Enabling_S3)
     *   [2.2 Verifying S3](#Verifying_S3)
@@ -73,11 +73,11 @@ In case your `efivars` are not properly set it is most likely due to you not bei
 
 ### Updates
 
-#### Automatic Linux Vendor Firmware Service
+#### Automatic (Linux Vendor Firmware Service)
 
 [In August of 2018 Lenovo has joined](https://blogs.gnome.org/hughsie/2018/08/06/please-welcome-lenovo-to-the-lvfs/) the [Linux Vendor Firmware Service(LVFS)](https://fwupd.org/) project, which enables firmware updates from within the OS. BIOS updates (and possibly other firmware such as the Thunderbolt controller) can be queried for and installed through [fwupd](/index.php/Fwupd "Fwupd").
 
-#### Manual Installation
+#### Manual
 
 [BIOS update 1.31](https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-carbon-6th-gen-type-20kh-20kg/downloads) was released on 2018-10-02\. Obtain [geteltorito](https://aur.archlinux.org/packages/geteltorito/) and run `geteltorito.pl -o bios-update.img n23ur12w.iso` on the downloaded ISO file to create a valid [El Torito](https://en.wikipedia.org/wiki/El_Torito_(CD-ROM_standard) image file, then flash this file on a USB drive via `dd` like you would flash [Arch installation media](/index.php/USB_flash_installation_media "USB flash installation media"). For further information see [flashing BIOS from Linux](/index.php/Flashing_BIOS_from_Linux#Bootable_optical_disk_emulation "Flashing BIOS from Linux").
 

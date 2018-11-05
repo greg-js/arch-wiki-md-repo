@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [D](/index.php/D "D"), revisada por última vez el **2018-10-26**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=D&diff=0&oldid=551202) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 De [Wikipedia: D (lenguaje de programación)](https://en.wikipedia.org/wiki/es:D_(lenguaje_de_programaci%C3%B3n) "wikipedia:es:D (lenguaje de programación)")
 
 	"D es un lenguaje de programación de propósito general desarrollado por Walter Bright cuya primera versión apareció en 1999\. Se origina como un rediseño de C++, con un enfoque más pragmático, pero no es un lenguaje puramente derivado del anterior. D ha mantenido algunas características de C++ y también está influido por otros conceptos de otros lenguajes como Java, C# y Eiffel. Una versión estable fue lanzada el 2 de enero de 2007.".

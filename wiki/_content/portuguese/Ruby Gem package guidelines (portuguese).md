@@ -1,6 +1,6 @@
 **Status de tradução:** Esse artigo é uma tradução de [Ruby Gem package guidelines](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines"). Data da última tradução: 2018-11-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Ruby_Gem_package_guidelines&diff=0&oldid=552527) na versão em inglês.
 
-**[Diretrizes de criação de pacotes](/index.php/Criando_pacotes "Criando pacotes")**
+**[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
 * * *
 

@@ -37,7 +37,7 @@ The columns have the following meaning:
 
 	Reliable parser
 
-	Ability to handle complex packages by using the provided metadata (RPC/.SRCINFO) instead of PKGBUILD [parsing](https://en.wikipedia.org/wiki/Parsing#Parser "w:Parsing"), such as [aws-cli-git](https://aur.archlinux.org/packages/aws-cli-git/).
+	Ability to handle complex packages by using the provided metadata ([RPC](/index.php/Aurweb_RPC_interface "Aurweb RPC interface")/.SRCINFO) instead of PKGBUILD [parsing](https://en.wikipedia.org/wiki/Parsing#Parser "w:Parsing"), such as [aws-cli-git](https://aur.archlinux.org/packages/aws-cli-git/).
 
 	Reliable solver
 
@@ -80,11 +80,12 @@ The columns have the following meaning:
 | [auracle-git](https://aur.archlinux.org/packages/auracle-git/) | C++ | Yes | [Yes](https://github.com/falconindy/auracle/commit/c73bbee) | Yes | Yes | bash | print build order |
 | [pbget](https://aur.archlinux.org/packages/pbget/) | Python | Yes | Yes | Yes | – | – | – |
 | [yaah](https://aur.archlinux.org/packages/yaah/) | Bash | Yes | Optional | Yes | – | bash | – |
-| [cower](https://aur.archlinux.org/packages/cower/) | C | Yes | No | Yes | – | bash, zsh | regex support, sort by votes/popularity |
 | [package-query](https://aur.archlinux.org/packages/package-query/) | C | Yes | – | [No](https://github.com/archlinuxfr/package-query/issues/135) | – | – | search only |
 | [repoctl](https://aur.archlinux.org/packages/repoctl/) | Go | Yes | No | [Yes](https://github.com/goulash/pacman/blob/master/aur/aur.go) | – | zsh | local repository support |
 | [aurel](https://aur.archlinux.org/packages/aurel/)
 <small>([discontinued](https://bbs.archlinux.org/viewtopic.php?pid=1522459#p1522459))</small> | Emacs Lisp | Yes | No | Yes | – | – | Emacs integration |
+| [cower](https://aur.archlinux.org/packages/cower/)
+<small>([discontinued](https://github.com/falconindy/cower#description))</small> | C | Yes | No | Yes | – | bash, zsh | regex support, sort by votes/popularity |
 
 ## Download and build
 
@@ -94,11 +95,12 @@ The columns have the following meaning:
 | [rua](https://aur.archlinux.org/packages/rua/) | Rust | Yes | [No](https://github.com/vn971/rua/issues/1) | Yes | [Yes](https://github.com/vn971/rua/commit/fc8c2f3) | Yes | Yes | Yes | 1 | bash, zsh, fish | tar artifact inspections (SUID, install file etc), isolated build, offline build |
 | [PKGBUILDer](https://aur.archlinux.org/packages/PKGBUILDer/) | Python | Optional | [No](https://github.com/Kwpolska/pkgbuilder/issues/36) | Yes | Yes | Yes | [Partial](https://github.com/Kwpolska/pkgbuilder/issues/39) | Yes | 1* | – | automatic builds by default, use `-F` to disable; multilingual, `pb-wrapper` for *pacman* wrapping |
 | [repofish](https://aur.archlinux.org/packages/repofish/) | Bash | Optional | Yes | Yes | No | No | No | Yes | 1* | – | automatic builds by default, use `check` or `update` to disable; [local repository](/index.php/Local_repository "Local repository") support |
-| [aurget](https://aur.archlinux.org/packages/aurget/) | Bash | Optional | [No](https://github.com/pbrisbin/aurget/issues/41) | No | No | No | [No](https://github.com/pbrisbin/aurget/issues/40) | Yes | – | bash, zsh | sort by votes |
 | [naaman](https://aur.archlinux.org/packages/naaman/)
 <small>([discontinued](https://github.com/enckse/naaman/issues/20#issuecomment-433781874))</small> | Python | Optional | No | Yes | Yes | [Partial](https://github.com/enckse/naaman/issues/19) | [Partial](https://github.com/enckse/naaman/issues/20) | Yes | 1* | bash | automatic builds by default, use `--fetch` to disable; use `-d` to enable the solver |
 | [spinach](https://aur.archlinux.org/packages/spinach/)
 <small>([discontinued](https://github.com/floft/spinach))</small> | Bash | [Yes](https://github.com/floft/spinach/commit/5455747) | No | No | No | No | No | Yes | – | – | – |
+| [aurget](https://aur.archlinux.org/packages/aurget/)
+<small>(stalled)</small> | Bash | Optional | [No](https://github.com/pbrisbin/aurget/issues/41) | No | No | No | [No](https://github.com/pbrisbin/aurget/issues/40) | Yes | – | bash, zsh | sort by votes |
 | [burgaur](https://aur.archlinux.org/packages/burgaur/)
 <small>([discontinued](https://github.com/m45t3r/burgaur/issues/7#issuecomment-365599675))</small> | Python/C | Optional | No | No | No | No | No | Yes | – | – | wrapper for *cower* |
 
@@ -156,13 +158,15 @@ The columns have the following meaning:
 
 ## Libraries
 
+*   [aur.rs](https://github.com/zeyla/aur.rs) — Rust library for accessing [Aurweb RPC interface](/index.php/Aurweb_RPC_interface "Aurweb RPC interface").
+
 *   **haskell-archlinux** — Library to access the AUR and package metadata from the Haskell programming language.
 
-	[http://hackage.haskell.org/package/archlinux](http://hackage.haskell.org/package/archlinux) || [haskell-archlinux](https://aur.archlinux.org/packages/haskell-archlinux/)
+	[https://hackage.haskell.org/package/archlinux](https://hackage.haskell.org/package/archlinux) || [haskell-archlinux](https://aur.archlinux.org/packages/haskell-archlinux/)
 
 *   **python3-aur** — Python 3 modules for accessing AUR package information and automating AUR interactions.
 
-	[http://xyne.archlinux.ca/projects/python3-aur](http://xyne.archlinux.ca/projects/python3-aur) || [python3-aur](https://aur.archlinux.org/packages/python3-aur/)
+	[https://xyne.archlinux.ca/projects/python3-aur](https://xyne.archlinux.ca/projects/python3-aur) || [python3-aur](https://aur.archlinux.org/packages/python3-aur/)
 
 ## Maintenance
 

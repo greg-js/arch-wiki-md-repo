@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Heirloom](/index.php/Heirloom "Heirloom"), revisada por última vez el **2018-10-30**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Heirloom&diff=0&oldid=552042) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 El [proyecto Heirloom](http://heirloom.sourceforge.net/) mantiene herramientas y utilidades clásicas de UNIX para sistemas operativos modernos de código abierto.
 
 Las utilidades proporcionadas por los paquetes correspondientes se instalan en `/usr/heirloom/bin/` y `/usr/heirloom/lib/`. Algunas utilidades POSIX se proporcionan adicionalmente en `/usr/heirloom/bin/posix/`.

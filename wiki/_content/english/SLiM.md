@@ -31,6 +31,7 @@ Related articles
     *   [3.11 Move the whole session to another VT](#Move_the_whole_session_to_another_VT)
     *   [3.12 Automatically mount your encrypted /home on login](#Automatically_mount_your_encrypted_.2Fhome_on_login)
     *   [3.13 Change Keyboard Layout](#Change_Keyboard_Layout)
+    *   [3.14 Screen Lock](#Screen_Lock)
 *   [4 All Slim Options](#All_Slim_Options)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Shutdown or Reboot Stalled](#Shutdown_or_Reboot_Stalled)
@@ -313,6 +314,35 @@ Section  "InputClass"
           **# Keyboard layouts**
           **Option "XkbLayout" "*dvorak*"**
 EndSection
+
+```
+
+### Screen Lock
+
+Slim includes slimlock, a screen lock feature. To use it, just run *slimlock*.
+
+Slimlock reads some configuration from */etc/slim.conf* and its own configuration file */etc/slimlock.conf*.
+
+To prevent VT switching whilst locked, set **tty_lock** to **1** in *slimlock.conf*. This also requires that that you have write access to */dev/console* and that slimlock has the *sys_sys_tty_config* capability. One way to achieve this is set slimlock to suid root:
+
+```
+ chmod +4000 slimlock
+ chown root: slimlock
+
+```
+
+An alternative is to setcap and permit your uid to write to /dev/console.
+
+```
+ sudo setcap cap_sys_tty_config+ep /usr/bin/slimlock
+ sudo chmod o+rw /dev/console
+
+```
+
+You can use [xss-lock](https://www.archlinux.org/packages/?name=xss-lock) to lock the screen automatically:
+
+```
+ xss-lock -- /usr/bin/slimlock &
 
 ```
 

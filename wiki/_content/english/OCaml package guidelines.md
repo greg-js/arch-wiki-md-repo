@@ -98,4 +98,4 @@ package() {
 }
 ```
 
-Keep in mind that many OCaml Packages will often need extra parameters passed to make and make install. Also remember to remove the *'!strip'* option and change the architecture if the package does not produce bytecode.
+Keep in mind that many OCaml Packages will often need extra parameters passed to make and make install. Also remember to remove the `!strip` option and change the architecture if the package does not produce bytecode.

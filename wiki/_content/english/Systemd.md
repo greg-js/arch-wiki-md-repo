@@ -39,6 +39,7 @@ From the [project web page](http://freedesktop.org/wiki/Software/systemd):
 *   [4 Temporary files](#Temporary_files)
 *   [5 Timers](#Timers)
 *   [6 Mounting](#Mounting)
+    *   [6.1 GPT partition automounting](#GPT_partition_automounting)
 *   [7 Journal](#Journal)
     *   [7.1 Priority level](#Priority_level)
     *   [7.2 Facility](#Facility)
@@ -492,6 +493,12 @@ A timer is a unit configuration file whose name ends with *.timer* and encodes i
 *systemd* extends the usual [fstab](/index.php/Fstab "Fstab") capabilities and offers additional mount options. These affect the dependencies of the mount unit, they can for example ensure that a mount is performed only once the network is up or only once another partition is mounted. The full list of specific *systemd* mount options, typically prefixed with `x-systemd.`, is detailed in [systemd.mount(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5#FSTAB).
 
 An example of these mount options in the context of *automounting*, which means mounting only when the resource is required rather than automatically at boot time, is provided in [fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fstab").
+
+### GPT partition automounting
+
+On a [GPT](/index.php/GPT "GPT") partitioned disk [systemd-gpt-auto-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-gpt-auto-generator.8) will mount partitions following the [Discoverable Partitions Specification](https://www.freedesktop.org/wiki/Specifications/DiscoverablePartitionsSpec/), thus they can be omitted from `fstab`.
+
+The automounting for a partition can be disabled by changing the partition's [type GUID](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs "wikipedia:GUID Partition Table") or setting the partition attribute bit 63 "do not automount", see [gdisk#Prevent GPT partition automounting](/index.php/Gdisk#Prevent_GPT_partition_automounting "Gdisk").
 
 ## Journal
 

@@ -35,12 +35,7 @@
 *   [4 Регулировка задержки и скорости автоповтора](#.D0.A0.D0.B5.D0.B3.D1.83.D0.BB.D0.B8.D1.80.D0.BE.D0.B2.D0.BA.D0.B0_.D0.B7.D0.B0.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B8_.D0.B8_.D1.81.D0.BA.D0.BE.D1.80.D0.BE.D1.81.D1.82.D0.B8_.D0.B0.D0.B2.D1.82.D0.BE.D0.BF.D0.BE.D0.B2.D1.82.D0.BE.D1.80.D0.B0)
     *   [4.1 Через xset](#.D0.A7.D0.B5.D1.80.D0.B5.D0.B7_xset)
     *   [4.2 Через параметры запуска XServer](#.D0.A7.D0.B5.D1.80.D0.B5.D0.B7_.D0.BF.D0.B0.D1.80.D0.B0.D0.BC.D0.B5.D1.82.D1.80.D1.8B_.D0.B7.D0.B0.D0.BF.D1.83.D1.81.D0.BA.D0.B0_XServer)
-*   [5 Горячие клавиши (Keybinding)](#.D0.93.D0.BE.D1.80.D1.8F.D1.87.D0.B8.D0.B5_.D0.BA.D0.BB.D0.B0.D0.B2.D0.B8.D1.88.D0.B8_.28Keybinding.29)
-    *   [5.1 Сторонние инструменты](#.D0.A1.D1.82.D0.BE.D1.80.D0.BE.D0.BD.D0.BD.D0.B8.D0.B5_.D0.B8.D0.BD.D1.81.D1.82.D1.80.D1.83.D0.BC.D0.B5.D0.BD.D1.82.D1.8B)
-        *   [5.1.1 sxhkd](#sxhkd)
-        *   [5.1.2 actkbd](#actkbd)
-        *   [5.1.3 xbindkeys](#xbindkeys)
-*   [6 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
+*   [5 Смотрите также](#.D0.A1.D0.BC.D0.BE.D1.82.D1.80.D0.B8.D1.82.D0.B5_.D1.82.D0.B0.D0.BA.D0.B6.D0.B5)
 
 ## Просмотр настроек клавиатуры
 
@@ -313,34 +308,6 @@ $ xset r rate
 *   `-arinterval *милисекунды*` - устанавливает интервал автоповтора (длительность в миллисекундах, которая должна пройти между нажатиями, генерируемыми автоповтором).
 
 Для получения полного списка параметров X-сервера смотрите [Xserver(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/Xserver.1) и обратитесь к своему [экранному менеджеру](/index.php/%D0%AD%D0%BA%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80 "Экранный менеджер") для получения информации о том, как передать эти параметры.
-
-## Горячие клавиши (Keybinding)
-
-Когда мы находимся в графическом окружение, мы можем захотеть выполнить команду при нажатии определенной комбинации клавиш (то есть привязать команду к *keysym*). Существует несколько способов сделать это:
-
-*   Самый портативный способ. Использование инструментов низкого уровня, таких как [acpid](/index.php/Acpid_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Acpid (Русский)"). Не все клавиши поддерживаются, но конфигурация в унифицированном виде возможна для клавиш клавиатуры, подключения адаптера питания и даже для подключения наушников (un). Также трудно запускать программы внутри X сеанса правильно. Not all keys are supported, but configuration in uniform way is possible for keyboard keys, power adapter connection and even headphone jack (un)plugging events. It is also difficult to run programs inside X session correctly.
-*   Универсальный способ. Использование утилит [Xorg](/index.php/Xorg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xorg (Русский)") (например, [xbindkeys](/index.php/Xbindkeys_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xbindkeys (Русский)")) и, в конечном итоге, инструментов вашего окружения рабочего стола или оконного менеджера.
-*   Более быстрый способ. Использование сторонних программ, где все можно сделать в GUI, таких как Gnome Control Center.
-
-### Сторонние инструменты
-
-#### sxhkd
-
-Простой демон X hotkey с мощным и компактным синтаксисом конфигурации. Для получения дополнительной информации смотрите [sxhkd](/index.php/Sxhkd "Sxhkd").
-
-#### actkbd
-
-С [домашней страницы actkbd](http://users.softlab.ece.ntua.gr/~thkala/projects/actkbd/):
-
-	[actkbd](https://aur.archlinux.org/packages/actkbd/) (доступно в [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)")) - простой демон, который связывает действия с событиями клавиатуры. It recognises key combinations and can handle press, repeat and release events. В настоящее время он поддерживает только интерфейс linux-2.6 evdev. Он использует текстовый файл конфигурации, который содержит все привязки.
-
-Образец конфигурации и руководство по настройке можно найти [здесь](http://users.softlab.ece.ntua.gr/~thkala/projects/actkbd/latest/README).
-
-#### xbindkeys
-
-[xbindkeys](/index.php/Xbindkeys_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Xbindkeys (Русский)") позволяет расширенное сопоставление клавиш с действиями независимо от окружения рабочего стола.
-
-**Совет:** Если вы находите `xbindkeys` сложным в использование, попробуйте графический менеджер [xbindkeys_config-gtk2](https://aur.archlinux.org/packages/xbindkeys_config-gtk2/) из [AUR](/index.php/AUR_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "AUR (Русский)").
 
 ## Смотрите также
 

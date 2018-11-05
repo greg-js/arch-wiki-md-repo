@@ -22,9 +22,7 @@ From project [home page](http://lxde.org/):
     *   [2.2 Console](#Console)
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Application menu editing](#Application_menu_editing)
-    *   [3.2 Autostart](#Autostart)
-        *   [3.2.1 Desktop files](#Desktop_files)
-        *   [3.2.2 Lxsession](#Lxsession)
+    *   [3.2 Application autostart](#Application_autostart)
     *   [3.3 Bindings](#Bindings)
     *   [3.4 Cursors](#Cursors)
     *   [3.5 Digital clock applet time](#Digital_clock_applet_time)
@@ -36,8 +34,8 @@ From project [home page](http://lxde.org/):
     *   [3.11 Use a different window manager](#Use_a_different_window_manager)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 NTFS with Chinese characters](#NTFS_with_Chinese_characters)
-    *   [4.2 LXPanel crashes with some themes or browsing particular web pages](#LXPanel_crashes_with_some_themes_or_browsing_particular_web_pages)
-    *   [4.3 LXPanel smaller Task Bar icon size](#LXPanel_smaller_Task_Bar_icon_size)
+    *   [4.2 LXPanel crashes](#LXPanel_crashes)
+    *   [4.3 LXPanel Task Bar icon size](#LXPanel_Task_Bar_icon_size)
     *   [4.4 Fake transparency in LXTerminal](#Fake_transparency_in_LXTerminal)
 *   [5 See also](#See_also)
 
@@ -59,7 +57,7 @@ While it works mostly, there are some known issues with [gpicview](https://sourc
 
 ### Console
 
-To use **startx**, you will need to define LXDE in [xinitrc](/index.php/Xinitrc "Xinitrc"):
+To use *startx*, add to [xinitrc](/index.php/Xinitrc "Xinitrc"):
 
  `~/.xinitrc`  `exec startlxde` 
 
@@ -69,40 +67,17 @@ See also [Start X at login](/index.php/Start_X_at_login "Start X at login").
 
 ### Application menu editing
 
-The application menu works by resolving the `.desktop` files located in `/usr/share/applications`. Many desktop environments run programs that supersede these settings to allow customization of the menu. LXDE has yet to create an application menu editor but you can manually build them yourself if you are so inclined. Third party menu editor can be found in [AUR](/index.php/AUR "AUR") - [lxmed](https://aur.archlinux.org/packages/lxmed/)
+The application menu works by resolving the `.desktop` files located in `/usr/share/applications/` and `~/.local/share/applications/`. To add or edit a menu item, see [desktop entries](/index.php/Desktop_entries "Desktop entries"). Third party menu editor can be found in the [AUR](/index.php/AUR "AUR") (e.g. [lxmed](https://aur.archlinux.org/packages/lxmed/)).
 
-To add or edit a menu item, create or link to the `.desktop` file in `/usr/share/applications`, `/usr/local/share/applications`, or `~/.local/share/applications`. (The latter two have the advantage of putting your application outside of directories governed by `pacman`.) Consult [the desktop entry specification](http://standards.freedesktop.org/desktop-entry-spec/latest/) on freedesktop.org for structures of `.desktop` files.
+### Application autostart
 
-To remove items from the menu, instead of deleting the `.desktop` files, you can edit the file and add the following line in the file:
+Applications can be automatically started in a couple of ways:
 
-```
-NoDisplay=true
-
-```
-
-To expedite the process for a good number of files you can put it in a loop. For example:
-
-```
-$ cd /usr/share/applications
-$ for i in program1.desktop program2.desktop ...; do cp /usr/share/applications/$i \
-/home/user/.local/share/applications/; echo "NoDisplay=true" >> \
-/home/user/.local/share/applications/$i; done
-
-```
-
-This will work for all applications except KDE applications. For these, the only way to remove them from the menu is to log into KDE itself and use its menu editor. For every item that you do not want displayed, check the 'Show only in KDE' option. If adding NoDisplay=True will not work, you can add ShowOnlyIn=XFCE.
-
-### Autostart
-
-Applications can be automatically started in several ways.
-
-#### Desktop files
+*   With `.desktop` files
 
 LXDE implements [XDG Autostart](/index.php/XDG_Autostart "XDG Autostart").
 
-**Tip:** `.desktop` files can be manipulated with the [lxsession-edit](https://aur.archlinux.org/packages/lxsession-edit/) package.
-
-#### Lxsession
+*   Via LXsession
 
 Each line in `~/.config/lxsession/LXDE/autostart` represents a command to be executed. If a line starts with `@`, and the command following it crashes, the command is automatically re-executed. For example:
 
@@ -113,11 +88,11 @@ Each line in `~/.config/lxsession/LXDE/autostart` represents a command to be exe
 
 ```
 
-**Note:** Unlike Openbox, these commands do *not* end with a `&` symbol.
+**Note:** These commands do *not* end with a "&" symbol.
 
 There is also a global autostart file at `/etc/xdg/lxsession/LXDE/autostart`.
 
-**Note:** If both files are present, lxsession only executes the local file as of v0.4.9
+**Note:** If both files are present, LXsession only executes the local file as of v0.4.9
 
 ### Bindings
 
@@ -134,67 +109,45 @@ See [[1]](http://code.google.com/p/obkey/) for more information.
 
 ### Cursors
 
-LXAppearance, provided by the [lxappearance](https://www.archlinux.org/packages/?name=lxappearance) package, is a graphical tool that can determine a number of aspects of the user interface including the cursor theme. Settings configured using LXAppearance are written to `~/.gtkrc-2.0`, `~/.config/gtk-3.0/settings.ini`, and `~/.icons/default/index.theme`. See also [Cursor themes](/index.php/Cursor_themes "Cursor themes").
+[lxappearance](https://www.archlinux.org/packages/?name=lxappearance) is a graphical tool to set [GTK](/index.php/GTK "GTK") look and feel, including the cursor theme. Settings configured with LXAppearance are written to `~/.gtkrc-2.0`, `~/.config/gtk-3.0/settings.ini` and `~/.icons/default/index.theme`. See also [Cursor themes](/index.php/Cursor_themes "Cursor themes").
 
 ### Digital clock applet time
 
-You can right click on the digital clock applet on the panel and set how it displays the current time using the strftime format - see [strftime(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/strftime.3) for details.
+You can right click on the digital clock applet on the panel and set how it displays the current time using the strftime format. See [strftime(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/strftime.3) for details.
 
 ### Font settings
 
-See [Font configuration](/index.php/Font_configuration "Font configuration"). [lxappearance-obconf](https://www.archlinux.org/packages/?name=lxappearance-obconf) configures LXDE-specific settings.
+[lxappearance-obconf](https://www.archlinux.org/packages/?name=lxappearance-obconf) configures [Openbox](/index.php/Openbox "Openbox") settings. See also [Font configuration](/index.php/Font_configuration "Font configuration").
 
 ### Keyboard layout
 
-See [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") for generic instructions. A keyboard layout applet is included with *lxpanel*.
-
-See [#Autostart](#Autostart) for a way to automatically start *setxkbmap* in LXDE.
+[lxpanel](https://www.archlinux.org/packages/?name=lxpanel) includes a keyboard layout applet. See [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg") for generic instructions and [#Application autostart](#Application_autostart) to automatically start *setxkbmap* in LXDE.
 
 ### Screen locking
 
-LXDE does not come with a screen locker of its own; see [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") for alternatives.
+LXDE does not come with a screen locker of its own. See [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security") and [#Application autostart](#Application_autostart) on how to start them.
 
-Shipped script `/usr/bin/lxlock`, called by default from the ScreenLock icon, searches for a number of well known screen lockers and uses the first one it finds to lock the screen, see [lxlock on GitHub](https://github.com/lxde/lxsession/blob/master/lxlock/lxlock).
+The *Screen Lock* icon executes a script (located at `/usr/bin/lxlock`) which searches for a number of well known screen lockers and uses the first one it finds to lock the screen. See [lxlock](https://github.com/lxde/lxsession/blob/master/lxlock/lxlock) on GitHub.
 
-`/etc/xdg/lxsession/LXDE/autostart` from [lxde-common](https://www.archlinux.org/packages/?name=lxde-common) lists [XScreenSaver](/index.php/XScreenSaver "XScreenSaver"), which will be launched automatically. See [#Autostart](#Autostart) when using a different locker. See [DPMS](/index.php/DPMS "DPMS") on how to control the screen saver without external programs.
+`/etc/xdg/lxsession/LXDE/autostart` (from the [lxde-common](https://www.archlinux.org/packages/?name=lxde-common) package) lists [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") which will be launched automatically.
+
+See [DPMS](/index.php/DPMS "DPMS") on how to control the screen saver without external programs.
 
 ### LXPanel icons
 
-Default icons used by lxpanel are stored in `/usr/share/pixmaps` and any custom icons you want lxpanel to use need to be saved there as well.
+Default icons used by LXpanel are stored in `/usr/share/pixmaps/` and any custom icons should be saved there as well.
 
-You can change default icons for applications by taking the following steps:
-
-1.  Save the new icon to /usr/share/pixmaps
-2.  Use a text editor to open the `.desktop` file of the program whose icon you want to change in `/usr/share/applications`.
-3.  Change
-
-```
-Icon=/default/icon/.png
-
-```
-
-to:
-
-```
-Icon=/name/of/new/icon/added/to/pixmaps/.png
-
-```
+To change default icons for applications, see [Desktop entries#Icons](/index.php/Desktop_entries#Icons "Desktop entries").
 
 ### LXPanel menus
 
-The panel's menus can be configured in `/etc/xdg/menus/lxde-applications.menu` as per the [xdg-menu](/index.php/Xdg-menu "Xdg-menu") format to work with applications from other sessions (notably [MATE](/index.php/MATE "MATE")) to add some of the function-ability that lxde lacks.
+The panel's menus can be configured in `/etc/xdg/menus/lxde-applications.menu` as per the [xdg-menu](/index.php/Xdg-menu "Xdg-menu") format to work with applications from other sessions (notably [MATE](/index.php/MATE "MATE")) to add some of the function-ability that LXDE lacks.
 
 ### Use a different window manager
 
-*lxsession* uses the [window manager](/index.php/Window_manager "Window manager") defined in `~/.config/lxsession/LXDE/desktop.conf` ([Openbox](/index.php/Openbox "Openbox") by default). If this file does not exist, it searches in `/etc/xdg/lxsession/LXDE/desktop.conf` instead.
+LXsession uses the [window manager](/index.php/Window_manager "Window manager") defined in `~/.config/lxsession/LXDE/desktop.conf` ([Openbox](/index.php/Openbox "Openbox") by default). If this file does not exist, it searches in `/etc/xdg/lxsession/LXDE/desktop.conf` instead.
 
-Replace `openbox-lxde` in either file with a window manager of choice:
-
-```
-[Session]
-window_manager=openbox-lxde
-
-```
+Replace `openbox-lxde` in either file with a window manager of your choice:
 
 For metacity:
 
@@ -210,9 +163,7 @@ window_manager=compiz
 
 ```
 
-Alternatively, you can autostart `wm --replace` using the method defined in [#Lxsession](#Lxsession) where *wm* is the name of the window manager executable being started. This method does mean that Openbox will be started first on each login and will then immediately be replaced by the autostarted window manager.
-
-Note that since openbox dispatches the desktop-wide keyboard shortcuts in LXDE, users who want to replace it and still use these shortcuts will need to reimplement this functionality themselves. A good option is [xbindkeys](/index.php/Xbindkeys "Xbindkeys").
+Alternatively use `*WM* --replace` as defined in [#Application autostart](#Application_autostart), where *WM* is the name of the window manager executable being started. This means that *openbox* will be started first on each login and will then immediately be replaced. Note that Openbox and LXDE do not share the same `rc.xml` and keyboard shortcuts may differ. See [xbindkeys](/index.php/Xbindkeys "Xbindkeys").
 
 ## Troubleshooting
 
@@ -235,20 +186,20 @@ And then make it executable:
 
 ```
 
-### LXPanel crashes with some themes or browsing particular web pages
+### LXPanel crashes
 
-With some gtk themes, launching lxpanel will lead to the following error:
+With some [GTK](/index.php/GTK "GTK") themes, launching *lxpanel* will lead to the following error:
 
 ```
 lxpanel: cairo-scaled-font.c:459: _cairo_scaled_glyph_page_destroy: Assertion `!scaled_font->cache_frozen' failed.
 
 ```
 
-Try install [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu) in this case.
+In this case install [ttf-dejavu](https://www.archlinux.org/packages/?name=ttf-dejavu).
 
-If lxpanel crashes when browsing particular unicode web pages, try install [ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid).
+If lxpanel crashes when browsing particular unicode web pages, install [ttf-droid](https://www.archlinux.org/packages/?name=ttf-droid).
 
-### LXPanel smaller Task Bar icon size
+### LXPanel Task Bar icon size
 
 The icons of running applications do not match the set *Icon size* in *Panel Settings* > *Geometry* but are 4px smaller which makes some of them blurry. To have clear looking 32px icons in the Task Bar the set *Icon size* has to be 36px which would blur the icons of the rest of your active Panel Applets. To get around this create additional panel(s) and have them collectively make a single continuous looking panel by adjusting the Alignment and Margin in *Panel Settings* > *Geometry*.
 

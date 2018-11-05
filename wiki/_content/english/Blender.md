@@ -18,6 +18,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Blender_(software) "wikipedia:Ble
     *   [4.1 Blender is slow to select objects](#Blender_is_slow_to_select_objects)
     *   [4.2 Blender UI graphical corruption on AMDGPU driver](#Blender_UI_graphical_corruption_on_AMDGPU_driver)
     *   [4.3 Blender does not show the AMD card as an OpenCL rendering device](#Blender_does_not_show_the_AMD_card_as_an_OpenCL_rendering_device)
+    *   [4.4 Interface text](#Interface_text)
 *   [5 See also](#See_also)
 
 ## Installation
@@ -73,7 +74,11 @@ Blender only supports the official AMD proprietary drivers for rendering with Op
 
 After installation, the AMD GPU should now appear as a selectable device under *File > User Preferences > System > Compute Device*.
 
+### Interface text
+
+If fonts look small or blurry, their size can be increased (by a point or two) in *User Preferences > Themes > Text Style*. Selecting a bold font family as *Interface Font* in *User Preferences > Themes > System* can also greatly decrease blurriness.
+
 ## See also
 
 *   [Blender manual](https://docs.blender.org/manual/en/dev/)
-*   [/r/blender wiki](https://www.reddit.com/r/blender/wiki/index) on reddit.com
+*   [Blender wiki](https://www.reddit.com/r/blender/wiki/index) on Reddit

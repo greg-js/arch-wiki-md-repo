@@ -1,6 +1,4 @@
-Screen brightness might be tricky to control. On some machines physical hardware switches are missing and software solutions may not work well. However, it is generally possible; be sure to use a method that works for your hardware.
-
-There are many ways to adjust the screen backlight of a monitor, laptop or integrated panel (such as the iMac) using software, but depending on hardware and model, sometimes only some options are available. This article aims to summarize all possible ways to adjust the backlight.
+Screen brightness might be tricky to control. On some machines physical hardware switches are missing and software solutions may not work well. However, it is generally possible to find a functional method for a given hardware. This article aims to summarize all possible ways to adjust the backlight.
 
 ## Contents
 
@@ -8,7 +6,7 @@ There are many ways to adjust the screen backlight of a monitor, laptop or integ
 *   [2 ACPI](#ACPI)
     *   [2.1 Kernel command-line options](#Kernel_command-line_options)
     *   [2.2 Udev rule](#Udev_rule)
-*   [3 Switching off the backlight](#Switching_off_the_backlight)
+*   [3 Switch off the backlight](#Switch_off_the_backlight)
 *   [4 systemd-backlight service](#systemd-backlight_service)
 *   [5 Backlight utilities](#Backlight_utilities)
     *   [5.1 xbacklight](#xbacklight)
@@ -27,7 +25,7 @@ There are many ways to adjust the screen backlight of a monitor, laptop or integ
 
 ## Overview
 
-There are many ways to control brightness. According to this [discussion](https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/397617) and this [wiki page](https://wiki.ubuntu.com/Kernel/Debugging/Backlight) the control method can be divided into these categories:
+There are many ways to control brightness of a monitor, laptop or integrated panel (such as the iMac). According to this [discussion](https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-video-intel/+bug/397617) and this [wiki page](https://wiki.ubuntu.com/Kernel/Debugging/Backlight) the control method can be divided into these categories:
 
 *   brightness is controlled by vendor-specified hotkey and there is no interface for the OS to adjust the brightness.
 *   brightness is controlled by either the ACPI or the graphic driver.
@@ -41,7 +39,7 @@ The brightness of the screen backlight is adjusted by setting the power level of
 
 The name of the folder depends on the graphics card model.
 
- `# ls /sys/class/backlight/` 
+ `$ ls /sys/class/backlight/` 
 ```
 acpi_video0
 
@@ -51,7 +49,7 @@ In this case, the backlight is managed by an ATI graphics card. In the case of a
 
 The directory contains the following files and folders:
 
- `# ls /sys/class/backlight/acpi_video0/` 
+ `$ ls /sys/class/backlight/acpi_video0/` 
 ```
 actual_brightness  brightness         max_brightness     subsystem/    uevent             
 bl_power           device/            power/             type
@@ -60,7 +58,7 @@ bl_power           device/            power/             type
 
 The maximum brightness can be found by reading from `max_brightness`, which is often 15.
 
- `# cat /sys/class/backlight/acpi_video0/max_brightness` 
+ `$ cat /sys/class/backlight/acpi_video0/max_brightness` 
 ```
 15
 
@@ -69,7 +67,7 @@ The maximum brightness can be found by reading from `max_brightness`, which is o
 The brightness can be set by writing a number to `brightness`. Attempting to set a brightness greater than the maximum results in an error.
 
 ```
-# tee /sys/class/backlight/acpi_video0/brightness <<< 5
+# echo 5 > /sys/class/backlight/acpi_video0/brightness
 
 ```
 
@@ -115,16 +113,32 @@ SUBSYSTEM=="backlight", ACTION=="add", KERNEL=="acpi_video0", ATTR{brightness}="
 
 **Tip:** To set the backlight depending on power state, see [Power management#Using a script and an udev rule](/index.php/Power_management#Using_a_script_and_an_udev_rule "Power management") and use your favourite [backlight utility](#Backlight_utilities) in the script.
 
-## Switching off the backlight
+## Switch off the backlight
 
-Switching off the backlight (for example when one locks the notebook) can be useful to conserve battery energy. Ideally the following command inside of a graphical session should work:
-
-```
-$ sleep 1 && xset dpms force off
+Switching off the backlight (for example when one locks a notebook) can be useful to conserve battery energy. Ideally the following command should work for any [Xorg](/index.php/Xorg "Xorg") graphical session:
 
 ```
+xset dpms force off
 
-The backlight should switch on again on mouse movement or keyboard input. If the previous command does not work, there is a chance that `vbetool` works. Note, however, that in this case the backlight must be manually activated again. The command is as follows:
+```
+
+The backlight should switch on again on mouse movement or keyboard input. Alternately `xset s` could be used.
+
+The following example will toggle the screen saver timeout for a similar result (should be bound to a key):
+
+ `~/.local/bin/xlcd.sh` 
+```
+#!/usr/bin/dash
+read lcd < /tmp/lcd
+  if [ "$lcd" -eq "0" ]; then
+    xset s; echo 1 > /tmp/lcd; sleep 1 && notify-send -t 2000 LCD\ ON
+  else
+    xset s 3; echo 0 > /tmp/lcd; notify-send -t 2000 LCD\ OFF
+  fi
+
+```
+
+If the previous commands do not work, there is a chance that *vbetool* may work. Note, however, that in this case the backlight must be manually activated again. The command is as follows:
 
 ```
 $ vbetool dpms off
@@ -142,22 +156,9 @@ For example, this can be put to use when closing the notebook lid using [Acpid](
 
 ## systemd-backlight service
 
-The [systemd](/index.php/Systemd "Systemd") package includes the service `systemd-backlight@.service`, which is enabled by default and "static". It saves the backlight brightness level at shutdown and restores it at boot. The service uses the ACPI method described in [#ACPI](#ACPI), generating services for each folder found in `/sys/class/backlight/`. For example, if there is a folder named `acpi_video0`, it generates a service called `systemd-backlight@backlight:acpi_video0.service`. When using other methods of setting the backlight at boot, it is recommended to [mask](/index.php/Mask "Mask") the service `systemd-backlight@.service`.
+The [systemd](/index.php/Systemd "Systemd") package includes the service `systemd-backlight@.service`, which is enabled by default and "static". It saves the backlight brightness level at shutdown and restores it at boot. The service uses the ACPI method described in [#ACPI](#ACPI), generating services for each folder found in `/sys/class/backlight/`. For example, if there is a folder named `acpi_video0`, it generates a service called `systemd-backlight@backlight:acpi_video0.service`. When using other methods of setting the backlight at boot, it is recommended to stop systemd-backlight from restoring the backlight by setting the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") parameter `systemd.restore_state=0`. See [systemd-backlight@.service(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-backlight%40.service.8) for details.
 
-Some laptops have multiple video cards (e.g. Optimus) and the backlight restoration fails. Try [masking](/index.php/Systemd#Using_units "Systemd") an *instance* of the service, e.g. `systemd-backlight@backlight\:acpi_video1` for `acpi_video1`.
-
-From the systemd-backlight@.service man page:
-
-systemd-backlight understands the following kernel command line parameter:
-
-```
-systemd.restore_state=
-
-```
-
-Takes a boolean argument. Defaults to "1".
-
-If "0", does not restore the backlight settings on boot. However, settings will still be stored on shutdown.
+**Note:** Some laptops have multiple video cards (e.g. Optimus) and the backlight restoration fails. Try [masking](/index.php/Systemd#Using_units "Systemd") an instance of the service (e.g. `systemd-backlight@backlight:acpi_video1` for `acpi_video1`).
 
 ## Backlight utilities
 

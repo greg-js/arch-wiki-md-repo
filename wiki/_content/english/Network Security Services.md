@@ -7,7 +7,7 @@ NSS is required by many packages, including, for example, [Chromium](/index.php/
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Certificate management](#Certificate_management)
+*   [2 Usage](#Usage)
     *   [2.1 List certificate DB](#List_certificate_DB)
     *   [2.2 Generate an RSA private key](#Generate_an_RSA_private_key)
     *   [2.3 Generate a certificate signing request](#Generate_a_certificate_signing_request)
@@ -21,7 +21,7 @@ NSS is required by many packages, including, for example, [Chromium](/index.php/
 
 [Install](/index.php/Install "Install") the [nss](https://www.archlinux.org/packages/?name=nss) package.
 
-## Certificate management
+## Usage
 
 Use *certutil* utility provided with NSS to manage your certificates.
 

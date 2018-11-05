@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [OpenFOAM](/index.php/OpenFOAM "OpenFOAM"), revisada por última vez el **2018-10-31**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=OpenFOAM&diff=0&oldid=552226) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 Según [Wikipedia](https://en.wikipedia.org/wiki/es:OpenFOAM "wikipedia:es:OpenFOAM"):
 
 	OpenFOAM (Open Field Operation and Manipulation) es un software CFD gratuito y de código abierto, lanzado y desarrollado principalmente por OpenFoam Ltd desde 2004, siendo distribuido más tarde por la Fundación OpenFoam. Cuenta con una amplia base de usuarios en la mayoría de las áreas de ingeniería y ciencias, tanto de organizaciones comerciales como académicas. OpenFoam está organizado en un conjunto de módulos C++ que posibilitan la resolución de problemas, desde complejos flujos de fluidos que involucran reacciones químicas, turbulencias y transferencia de calor, hasta acústica, mecánica sólida y electromagnética.

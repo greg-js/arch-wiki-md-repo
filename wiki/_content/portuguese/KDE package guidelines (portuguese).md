@@ -1,4 +1,6 @@
-**[Diretrizes de criação de pacotes](/index.php/Criando_pacotes "Criando pacotes")**
+**Status de tradução:** Esse artigo é uma tradução de [KDE package guidelines](/index.php/KDE_package_guidelines "KDE package guidelines"). Data da última tradução: 2018-11-04\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=KDE_package_guidelines&diff=0&oldid=553068) na versão em inglês.
+
+**[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
 * * *
 
@@ -25,7 +27,7 @@ Os pacotes do [KDE](/index.php/KDE "KDE") no Arch Linux seguem um certo esquema.
     *   [6.2 Executores](#Executores_2)
     *   [6.3 Menus de serviço](#Menus_de_servi.C3.A7o_2)
     *   [6.4 Temas](#Temas_2)
-*   [7 Arquivos de .install](#Arquivos_de_.install)
+*   [7 Instalação de arquivos de ícones e .desktop](#Instala.C3.A7.C3.A3o_de_arquivos_de_.C3.ADcones_e_.desktop)
 
 ## Diretório de compilação
 
@@ -99,7 +101,7 @@ As mesmas regras que para o KDE4, mas você precisa forçar o *cmake* a usar o Q
 
 ### Módulo de Configuração do KDE
 
-Pacotes de módulo de configuração do KDE devem ser nomeados `kcm-*module*`.
+Pacotes de módulo de configuração do KDE devem ser nomeados `kcm-*módulo*`.
 
 ### Widgets do Plasma
 
@@ -135,18 +137,8 @@ Os pacotes de menus de serviço devem ser nomeados `kf5-servicemenus-*nome_do_se
 
 Os pacotes de temas de plasma devem ser nomeados `plasma5-themes-*nome_do_tema*` para que sejam reconhecidos como pacotes relacionados ao Plasma 5.
 
-## Arquivos de .install
+## Instalação de arquivos de ícones e .desktop
 
-Para muitos pacotes [KDE](/index.php/KDE "KDE"), todos os arquivos `.install` parecem quase exatamente os mesmos. Alguns pacotes instalam ícones no tema do ícone hicolor; use o utilitário `xdg-icon-resource` fornecido pelo pacote [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils), que é uma dependência do pacote [qt4](https://www.archlinux.org/packages/?name=qt4). Então use esta linha:
+Alguns softwares do [KDE](/index.php/KDE "KDE") fornecem ícones em arquivos de *hicolor icon theme* e `.desktop`, os quais devem ser instalados via [hooks do pacman](/index.php/Pacman_(Portugu%C3%AAs)#Hooks "Pacman (Português)"). Evite usar comando de instalação para esses tipos de arquivos em um `.install`, pois resultaria em desnecessária execução duplicada.
 
-```
-xdg-icon-resource forceupdate --theme hicolor &> /dev/null
-
-```
-
-Muitos pacotes instalam arquivos `.desktop` compatíveis com o Freedesktop.org e registram entradas MimeType neles. A execução do `update-desktop-database` em `post_install` é recomendada, já que essa ferramenta é fornecida pelo pacote [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils), que é uma dependência do pacote [qt4](https://www.archlinux.org/packages/?name=qt4). Então use esta linha:
-
-```
-update-desktop-database -q
-
-```
+O pacote [qt4](https://www.archlinux.org/packages/?name=qt4) já depende de [xdg-utils](https://www.archlinux.org/packages/?name=xdg-utils), [hicolor-icon-theme](https://www.archlinux.org/packages/?name=hicolor-icon-theme) e [desktop-file-utils](https://www.archlinux.org/packages/?name=desktop-file-utils), então se seu pacote depender do [qt4](https://www.archlinux.org/packages/?name=qt4), nenhuma outra ação deve ser necessária (isto é, desnecessário adicionar esses pacotes ao vetor de `depends`).

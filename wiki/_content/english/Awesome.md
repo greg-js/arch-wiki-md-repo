@@ -228,7 +228,7 @@ awful.key({ "Mod1" }, "Shift_L", function ) mykeyboardlayout.next_layout(); end)
 
 ```
 
-This require you to set up witch keyboard layouts you want to be able to switch between, either by the setxkbmap command or in xorg.
+This requires you to set up the keyboard layouts you want to be able to switch between either by the setxkbmap command or in X configuration files.
 
 Once you've found the appropriate command to setup your layouts, add it to [#Autostart](#Autostart).
 

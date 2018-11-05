@@ -4,7 +4,7 @@
 
 *   [1 Setting up DPMS in X](#Setting_up_DPMS_in_X)
 *   [2 Disabling DPMS](#Disabling_DPMS)
-*   [3 Modifying DPMS and screensaver settings using xset](#Modifying_DPMS_and_screensaver_settings_using_xset)
+*   [3 Modify DPMS and screensaver settings with a command](#Modify_DPMS_and_screensaver_settings_with_a_command)
 *   [4 DPMS interaction in a Linux console with setterm](#DPMS_interaction_in_a_Linux_console_with_setterm)
     *   [4.1 Prevent screen from turning off](#Prevent_screen_from_turning_off)
     *   [4.2 Pipe the output to a cat to see the escapes](#Pipe_the_output_to_a_cat_to_see_the_escapes)
@@ -67,11 +67,11 @@ EndSection
 
 ```
 
-## Modifying DPMS and screensaver settings using xset
+## Modify DPMS and screensaver settings with a command
 
-It is possible to turn off your monitor using the *xset* tool which is provided by [installing](/index.php/Install "Install") the [xorg-xset](https://www.archlinux.org/packages/?name=xorg-xset) package.
+It is possible to turn off your monitor with the *xset* command which is provided by the [xorg-xset](https://www.archlinux.org/packages/?name=xorg-xset) package.
 
-Example commands:
+Examples:
 
 | Command | Description |
 | xset s off | Disable screen saver blanking |

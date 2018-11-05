@@ -14,10 +14,9 @@ The Dell XPS 13 2-in-1 (9365) is the early 2017 model. It can be used like a tab
     *   [1.1 BIOS configuration](#BIOS_configuration)
 *   [2 Troubleshooting](#Troubleshooting)
     *   [2.1 Not waking from suspend](#Not_waking_from_suspend)
-    *   [2.2 Instant wake up from sleep when folding the screen](#Instant_wake_up_from_sleep_when_folding_the_screen)
-    *   [2.3 Screen not rotating](#Screen_not_rotating)
-    *   [2.4 Fingerprint sensor](#Fingerprint_sensor)
-    *   [2.5 Soundcard turning off and coil whine](#Soundcard_turning_off_and_coil_whine)
+    *   [2.2 Screen not rotating](#Screen_not_rotating)
+    *   [2.3 Fingerprint sensor](#Fingerprint_sensor)
+    *   [2.4 Soundcard turning off and coil whine](#Soundcard_turning_off_and_coil_whine)
 
 ## Installation
 
@@ -52,9 +51,7 @@ It is also needed to set the following settings [[2]](https://www.dell.com/commu
 
 This model only supports the S0 (s2idle) sleep mode. [[3]](https://patchwork.kernel.org/patch/9758513/) Change the suspend mode to `s2idle` by adding the `mem_sleep_default=s2idle` to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
-### Instant wake up from sleep when folding the screen
-
-Recent kernels might go to sleep whhen you fold the screen but wake up very shortly after. Upgrading your BIOS to [version 2.2.0](https://www.dell.com/support/home/us/en/04/drivers/driversdetails?driverId=THDDP&osCode=BIOSA&productCode=xps-13-9365-2-in-1-laptop) (requires Windows) seems to fix the issue.
+**Note:** As of 2018/11/5, this does not seem required anymore.
 
 ### Screen not rotating
 

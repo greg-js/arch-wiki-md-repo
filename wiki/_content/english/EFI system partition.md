@@ -279,7 +279,7 @@ Then create the file `/etc/initcpio/install/esp-update-linux` which need to be e
  `/etc/initcpio/install/esp-update-linux` 
 ```
 # Directory to copy the kernel, the initramfs...
-ESP_DIR="''esp''/EFI/arch"
+ESP_DIR="*esp*/EFI/arch"
 
 build() {
 	cp -af /boot/vmlinuz-linux "${ESP_DIR}/"

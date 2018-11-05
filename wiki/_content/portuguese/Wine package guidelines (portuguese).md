@@ -1,4 +1,6 @@
-**[Diretrizes de criação de pacotes](/index.php/Criando_pacotes "Criando pacotes")**
+**Status de tradução:** Esse artigo é uma tradução de [Wine package guidelines](/index.php/Wine_package_guidelines "Wine package guidelines"). Data da última tradução: 2018-11-04\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Wine_package_guidelines&diff=0&oldid=553089) na versão em inglês.
+
+**[Diretrizes de criação de pacotes](/index.php/Padr%C3%B5es_de_empacotamento_do_Arch "Padrões de empacotamento do Arch")**
 
 * * *
 
@@ -10,7 +12,7 @@ Muitos programas do Windows ainda podem ser úteis no Linux e, portanto, podemos
 
 *   [1 Coisas para verificar imediatamente](#Coisas_para_verificar_imediatamente)
     *   [1.1 Licença](#Licen.C3.A7a)
-    *   [1.2 Installador](#Installador)
+    *   [1.2 Instalador](#Instalador)
     *   [1.3 Portabilidade e limpeza](#Portabilidade_e_limpeza)
 *   [2 A diretriz em resumo](#A_diretriz_em_resumo)
     *   [2.1 Instalando](#Instalando)
@@ -31,7 +33,7 @@ Aqui dizemos que um programa é portátil se *nunca* escreve no registro ou fora
 
 Geralmente, as licenças estão em um arquivo de texto no diretório de instalação. Se você não conseguir encontrá-los, tente seguir as telas durante a instalação. Se nada for dito sobre reempacotamento, vá em frente. O autor não se importa. Caso contrário, a licença geralmente não permite a remoção de arquivos ou não permite a reempacotamento. No primeiro caso, apenas tenha cuidado para que o processo [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") não perca nenhum arquivo, você pode excluir arquivos desnecessários (por exemplo, desinstaladores) na fase `post_install`; no último caso, todo o processo de instalação deve ser feito na fase `post_install`. A fase `build` será apenas para copiar os arquivos de instalação.
 
-### Installador
+### Instalador
 
 É muito mais fácil trabalhar com arquivos compactados como `.zip` do que com instaladores do Windows. Se você não tiver escolha, pois o autor insiste em distribuir seu programa com um instalador, pesquise na Internet se é possível instalar silenciosamente o software. [MSFN](http://unattended.msfn.org/unattended.xp/page/list/switch/) geralmente é um bom lugar para pesquisar. Se não conseguir encontrar uma maneira, tente abrir o instalador com diferentes [utilitários de desempacotamento](/index.php/Nonfree_applications_package_guidelines#Unpacking "Nonfree applications package guidelines"); pode funcionar.
 

@@ -105,7 +105,7 @@ Chrony should now connect to the configured time servers and update your clock i
 
 The online/offline status can be automatically handled by dispatcher services for [networkmanager](https://www.archlinux.org/packages/?name=networkmanager) and [connman](https://www.archlinux.org/packages/?name=connman), see below.
 
-In conclusion, do not forget the user guide at `/usr/share/doc/chrony/chrony.txt`, which is likely to answer any doubts you could still have. [It is also available online.](http://chrony.tuxfamily.org/manual.html) See also the related man pages: `man {chrony|chronyc|chronyd|chrony.conf}`).
+In conclusion, refer to `/usr/share/doc/chrony/README`, which will point you to the right answer to any doubts you could still have. [Documentation is also available online.](http://chrony.tuxfamily.org/documentation.html) See also the related man pages: `man {chronyc|chronyd|chrony.conf}`).
 
 ## Usage
 

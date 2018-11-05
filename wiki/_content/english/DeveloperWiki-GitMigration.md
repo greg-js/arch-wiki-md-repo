@@ -99,7 +99,7 @@ Open points:
 Software dependent on svn and requiring migration:
 
 *   arch-commits - svn hook and perl script maintained in infrastructure.git
-*   archweb - [populate_signoffs hook](https://git.archlinux.org/archweb.git/tree/packages/management/commands/populate_signoffs.py), fetches commit message from svn to be shown in signoffs)
+*   archweb - [populate_signoffs hook](https://git.archlinux.org/archweb.git/tree/packages/management/commands/populate_signoffs.py), fetches commit message from svn to be shown in signoffs). Also [https://www.archlinux.org/svn/](https://www.archlinux.org/svn/) should be removed.
 *   infrastructure - disable [svnlog](https://git.archlinux.org/infrastructure.git/tree/roles/dbscripts/files/svnlog), arch-svntogit
 
 ## Security

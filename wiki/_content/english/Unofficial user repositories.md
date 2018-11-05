@@ -185,8 +185,8 @@ Server = https://repo.herecura.be/$repo/$arch
 
 *   **Maintainer:** [PedroHLC](https://github.com/pedrohlc)
 *   **Description:** Auto builds AUR packages the maintainer uses, update them hourly (a few are daily). Hosted in São Carlos, SP, Brazil. x86_64 only.
-*   **Note:** Older packages were not built from clean chroot, if you find missing dependencies report it to AUR package. wine-tkg-git packages are built from TkG's github. See [maintainer's notes](http://lonewolf-builder.duckdns.org/chaotic-aur/about.txt).
 *   **Key-ID:** [[1]](http://pool.sks-keyservers.net/pks/lookup?search=0x3056513887B78AEB&fingerprint=on&op=index), fingerprint `EF92 5EA6 0F33 D0CB 85C4 4AD1 3056 5138 87B7 8AEB`
+*   **Note:** See [maintainer's notes](http://lonewolf-builder.duckdns.org/chaotic-aur/about.txt).
 
 ```
 [chaotic-aur]

@@ -172,25 +172,16 @@ See [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardwa
 
 Since Linux 4.17, it is possible to adjust clocks and voltages of the graphics card via `/sys/class/drm/card0/device/pp_od_clk_voltage`. It is however required to unlock access to it in sysfs by appending the boot parameter `amdgpu.ppfeaturemask=0xffffffff`.
 
-After this, the range of allowed values must be increased to allow higher clocks than used by default. To allow the maximum GPU clock to be increased by e.g. up to 2%, run:
+**Note:** In sysfs, paths like `/sys/class/drm/...` are just symlinks and may change between reboots. Persistent locations can be found in `/sys/devices/`, e.g. `/sys/devices/pci0000:00/0000:00:01.0/0000:01:00.0/`. Adjust the commands accordingly for a reliable result.
 
-```
-echo "2" > /sys/class/drm/card0/device/pp_sclk_od
-
-```
-
-**Note:** Running cat `/sys/class/drm/card0/device/pp_sclk_od` does always return either 1 or 0, no matter the value added to it via `echo`.
-
-Unlike with previous kernel versions, this alone doesn't lead to a higher clock. The values in `pp_od_clk_voltage` for the pstates have to be adjusted as well. It's a good idea to get the default values as a guidance by simply reading the file. In this example, the default clock is 1196MHz and a range increase by 2% allows up to 1219MHz.
-
-To set the GPU clock for the maximum pstate 7 on a Polaris GPU to 1209MHz and 900mV voltage, run:
+To set the GPU clock for the maximum pstate 7 on e.g. a Polaris GPU to 1209MHz and 900mV voltage, run:
 
 ```
 # echo "s 7 1209 900" > /sys/class/drm/card0/device/pp_od_clk_voltage
 
 ```
 
-The same procedure can be applied to VRAM pstates, e.g.:
+The same procedure can be applied to the VRAM, e.g. maximum pstate 2 on Polaris 5xx series cards:
 
 ```
 # echo "m 2 1850 850" > /sys/class/drm/card0/device/pp_od_clk_voltage

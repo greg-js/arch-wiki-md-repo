@@ -24,7 +24,7 @@ The following applications can be used to browse or search for recent activity u
 
 *   **Catfish** — Versatile file searching tool.
 
-	[https://launchpad.net/catfish-search](https://launchpad.net/catfish-search) || [catfish](https://www.archlinux.org/packages/?name=catfish)
+	[https://docs.xfce.org/apps/catfish/start](https://docs.xfce.org/apps/catfish/start) || [catfish](https://www.archlinux.org/packages/?name=catfish)
 
 *   **GNOME Activity Journal** — Browse a chronological log of your activities and easily find files, contacts, etc.
 

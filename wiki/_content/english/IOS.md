@@ -353,7 +353,7 @@ In order to use this version of the iPod Shuffle under linux, you can use the py
     *   Last.fm support
     *   playlist support
 
-*   [[2]](http://www.gtkpod.org/libgpod/)
+*   [GTKPod](http://www.gtkpod.org/libgpod/)
     *   GTK interface (GNOME)
     *   Read your existing iTunesDB (i.e. import the existing contents of your iPod including play counts, ratings and on-the-go playlists).
     *   Add MP3, WAV, M4A (non-protected AAC), M4B (audio book), podcasts, and various video files (single files, directories or existing playlists) to the **iPod. You need a third party product to download podcasts, like 'bashpodder' or 'gpodder'

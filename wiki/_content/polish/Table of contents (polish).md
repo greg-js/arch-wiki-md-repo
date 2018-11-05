@@ -30,13 +30,13 @@
 | <small>7.1.</small> [O Arch Linuksie](/index.php/Category:About_Arch_(Polski) "Category:About Arch (Polski)") <small>(7)</small> |
 | <small>7.1.1.</small> [Proces instalacji](/index.php/Category:Installation_process_(Polski) "Category:Installation process (Polski)") <small>(2) (również w [Sortowanie według tematu](/index.php/Category:Pages_sorted_by_topic_(Polski) "Category:Pages sorted by topic (Polski)"))</small> |
 | <small>7.2.</small> [Rozwijanie Archa](/index.php/Category:Arch_development_(Polski) "Category:Arch development (Polski)") <small>(4)</small> |
-| <small>7.2.1.</small> [Rozwijanie pacmana](/index.php/Category:Pacman_development_(Polski) "Category:Pacman development (Polski)") <small>(1)</small> |
+| <small>7.2.1.</small> [Rozwijanie Pacmana](/index.php/Category:Pacman_development_(Polski) "Category:Pacman development (Polski)") <small>(1)</small> |
 | <small>7.3.</small> [Proces instalacji](/index.php/Category:Installation_process_(Polski) "Category:Installation process (Polski)") <small>(2) (również w [O Arch Linuksie](/index.php/Category:About_Arch_(Polski) "Category:About Arch (Polski)"))</small> |
 | <small>7.4.</small> [Administrowanie systemem](/index.php/Category:System_administration_(Polski) "Category:System administration (Polski)") <small>(0)</small> |
 | <small>7.4.1.</small> [Boot process](/index.php/Category:Boot_process_(Polski) "Category:Boot process (Polski)") <small>(1)</small> |
 | <small>7.4.2.</small> [Linia komend](/index.php/Category:Command-line_(Polski) "Category:Command-line (Polski)") <small>(0) (również w [Oprogramowanie](/index.php/Category:Software_(Polski) "Category:Software (Polski)"))</small> |
 | <small>7.4.2.1.</small> [Emulatory terminala](/index.php/Category:Terminal_emulators_(Polski) "Category:Terminal emulators (Polski)") <small>(1) (również w [Aplikacje](/index.php/Category:Applications_(Polski) "Category:Applications (Polski)"), [Emulacje](/index.php/Category:Emulation_(Polski) "Category:Emulation (Polski)"))</small> |
-| <small>7.4.3.</small> [Configuration files](/index.php/Category:Configuration_files_(Polski) "Category:Configuration files (Polski)") <small>(1)</small> |
+| <small>7.4.3.</small> [Pliki konfiguracyjne](/index.php/Category:Configuration_files_(Polski) "Category:Configuration files (Polski)") <small>(1)</small> |
 | <small>7.4.4.</small> [Menedżery kompozycji](/index.php/Category:Eye_candy_(Polski) "Category:Eye candy (Polski)") <small>(1)</small> |
 | <small>7.4.5.</small> [Multimedia](/index.php/Category:Multimedia_(Polski) "Category:Multimedia (Polski)") <small>(1)</small> |
 | <small>7.4.6.</small> [Bezpieczeństwo](/index.php/Category:Security_(Polski) "Category:Security (Polski)") <small>(0)</small> |

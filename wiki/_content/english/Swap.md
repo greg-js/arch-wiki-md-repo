@@ -105,7 +105,7 @@ lsblk -no UUID /dev/sd*xy*
 
 ### Activation by systemd
 
-[systemd](/index.php/Systemd "Systemd") activates swap partitions based on two different mechanisms. Both are executables in `/usr/lib/systemd/system-generators`. The generators are run on start-up and create native systemd units for mounts. The first, `systemd-fstab-generator`, reads the fstab to generate units, including a unit for swap. The second, `systemd-gpt-auto-generator` inspects the root disk to generate units. It operates on GPT disks only, and can identify swap partitions by their type code `82`.
+[systemd](/index.php/Systemd "Systemd") activates swap partitions based on two different mechanisms. Both are executables in `/usr/lib/systemd/system-generators`. The generators are run on start-up and create native systemd units for mounts. The first, `systemd-fstab-generator`, reads the fstab to generate units, including a unit for swap. The second, `systemd-gpt-auto-generator` inspects the root disk to generate units. It operates on GPT disks only, and can identify swap partitions by their type GUID, see [systemd#GPT partition automounting](/index.php/Systemd#GPT_partition_automounting "Systemd") for more information.
 
 ### Disabling swap
 

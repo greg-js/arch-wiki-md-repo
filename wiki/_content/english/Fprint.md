@@ -27,6 +27,8 @@ Make sure you have one of the supported finger scanners. You can check if your d
 
 ```
 
+**Note:** The above list of supported devices is not updated regularly and is not complete. Its worth testing your device using the instructions on this page even if it does not appear on that list, prior to resorting to [AUR](/index.php/AUR "AUR") packages.
+
 ## Installation
 
 [Install](/index.php/Install "Install") the [fprintd](https://www.archlinux.org/packages/?name=fprintd) package. [imagemagick](https://www.archlinux.org/packages/?name=imagemagick) might also be needed.
