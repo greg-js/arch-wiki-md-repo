@@ -15,9 +15,8 @@ Since AUR helpers are unsupported, they are not present in the [official reposit
 *   [3 Download and build](#Download_and_build)
 *   [4 Pacman wrappers](#Pacman_wrappers)
 *   [5 Graphical](#Graphical)
-*   [6 Libraries](#Libraries)
+*   [6 Other](#Other)
 *   [7 Maintenance](#Maintenance)
-*   [8 Uploading](#Uploading)
 
 ## Legend
 
@@ -80,7 +79,6 @@ The columns have the following meaning:
 | [auracle-git](https://aur.archlinux.org/packages/auracle-git/) | C++ | Yes | [Yes](https://github.com/falconindy/auracle/commit/c73bbee) | Yes | Yes | bash | print build order |
 | [pbget](https://aur.archlinux.org/packages/pbget/) | Python | Yes | Yes | Yes | – | – | – |
 | [yaah](https://aur.archlinux.org/packages/yaah/) | Bash | Yes | Optional | Yes | – | bash | – |
-| [package-query](https://aur.archlinux.org/packages/package-query/) | C | Yes | – | [No](https://github.com/archlinuxfr/package-query/issues/135) | – | – | search only |
 | [repoctl](https://aur.archlinux.org/packages/repoctl/) | Go | Yes | No | [Yes](https://github.com/goulash/pacman/blob/master/aur/aur.go) | – | zsh | local repository support |
 | [aurel](https://aur.archlinux.org/packages/aurel/)
 <small>([discontinued](https://bbs.archlinux.org/viewtopic.php?pid=1522459#p1522459))</small> | Emacs Lisp | Yes | No | Yes | – | – | Emacs integration |
@@ -156,23 +154,33 @@ The columns have the following meaning:
 
 	[https://octopiproject.wordpress.com/](https://octopiproject.wordpress.com/) || [octopi](https://aur.archlinux.org/packages/octopi/)
 
-## Libraries
+## Other
 
-*   [aur.rs](https://github.com/zeyla/aur.rs) — Rust library for accessing [Aurweb RPC interface](/index.php/Aurweb_RPC_interface "Aurweb RPC interface").
+*   **aur.rs** — Rust library for accessing [Aurweb RPC interface](/index.php/Aurweb_RPC_interface "Aurweb RPC interface")
 
-*   **haskell-archlinux** — Library to access the AUR and package metadata from the Haskell programming language.
+	[https://github.com/zeyla/aur.rs](https://github.com/zeyla/aur.rs) ||
 
-	[https://hackage.haskell.org/package/archlinux](https://hackage.haskell.org/package/archlinux) || [haskell-archlinux](https://aur.archlinux.org/packages/haskell-archlinux/)
+*   **haskell-aur** — Haskell library for accessing Aurweb RPC interface.
 
-*   **python3-aur** — Python 3 modules for accessing AUR package information and automating AUR interactions.
+	[https://hackage.haskell.org/package/aur](https://hackage.haskell.org/package/aur) || [haskell-aur](https://aur.archlinux.org/packages/haskell-aur/)
+
+*   **python3-aur** — Python 3 modules and helper utilities for accessing AUR package information and automating AUR interactions.
 
 	[https://xyne.archlinux.ca/projects/python3-aur](https://xyne.archlinux.ca/projects/python3-aur) || [python3-aur](https://aur.archlinux.org/packages/python3-aur/)
+
+*   **package-query** — Tool for querying [libalpm(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3) and the AUR.
+
+	[https://github.com/archlinuxfr/package-query](https://github.com/archlinuxfr/package-query) || [package-query](https://aur.archlinux.org/packages/package-query/)
 
 ## Maintenance
 
 *   **aur-out-of-date** — Uses hoster APIs to check AUR packages for upstream changes.
 
 	[https://github.com/simon04/aur-out-of-date](https://github.com/simon04/aur-out-of-date) || [aur-out-of-date](https://aur.archlinux.org/packages/aur-out-of-date/)
+
+*   **aurpublish** — Helper script to manage and upload AUR packages using [git-subtree(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-subtree.1). Uses [githooks(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/githooks.5) to verify the PKGBUILD integrity, generate .SRCINFO automatically, and create a commit message template.
+
+	[https://github.com/eli-schwartz/aurpublish](https://github.com/eli-schwartz/aurpublish) || [aurpublish](https://www.archlinux.org/packages/?name=aurpublish)
 
 *   **pkgbuild-watch** — Looks for changes on the upstream web pages.
 
@@ -185,11 +193,3 @@ The columns have the following meaning:
 *   **pkgoutofdate** — Parses the source URL from PKGBUILDs and tries to find new versions of packages by incrementing the version number and sending requests to the web server.
 
 	[https://github.com/anatol/pkgoutofdate](https://github.com/anatol/pkgoutofdate) || [pkgoutofdate-git](https://aur.archlinux.org/packages/pkgoutofdate-git/)
-
-## Uploading
-
-*   [aur4_import.sh](https://github.com/JonnyJD/PKGBUILDs/blob/master/_bin/aur4_import.sh) — Splits a package from a git repository with multiple packages, adding/updating `.SRCINFO` for every commit
-*   [aur4_make_submodule.sh](https://github.com/JonnyJD/PKGBUILDs/blob/master/_bin/aur4_make_submodule.sh) — Replaces a package in a bigger git repository with an AUR 4 submodule, including `.SRCINFO`
-*   **aurpublish** — Helper script to manage and upload AUR packages using [git-subtree(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-subtree.1). Uses [githooks(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/githooks.5) to verify the PKGBUILD integrity, generate .SRCINFO automatically, and create a commit message template.
-
-	[https://github.com/eli-schwartz/aurpublish](https://github.com/eli-schwartz/aurpublish) || [aurpublish](https://www.archlinux.org/packages/?name=aurpublish)

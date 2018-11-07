@@ -32,7 +32,7 @@ Para modificar parâmetros de serviço, edite `/etc/conf.d/atftpd`.
 
 ### dnsmasq
 
-Veja [dnsmasq#TFTP server](/index.php/Dnsmasq#TFTP_server "Dnsmasq").
+Veja [dnsmasq (Português)#Servidor TFTP](/index.php/Dnsmasq_(Portugu%C3%AAs)#Servidor_TFTP "Dnsmasq (Português)").
 
 ## Cliente
 

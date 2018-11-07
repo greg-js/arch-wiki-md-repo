@@ -49,9 +49,13 @@ Server = https://pkgbuild.com/~alucryd/$repo/$arch
 
 ```
 
+Do note that some packages are missing from the repository due to [issues](https://github.com/alucryd/aur-alucryd/issues/88#issuecomment-434606676) with upstream. You will have to supplement the repo with locally compiled packages.
+
 #### AUR
 
 Alternatively, the [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for the pantheon packages are also available in the [AUR](/index.php/AUR "AUR").
+
+As of 6 November 2018, [gala-git](https://aur.archlinux.org/packages/gala-git/) will fail to build with the current version of [mutter](https://www.archlinux.org/packages/?name=mutter), and will require a [downgrade](/index.php/Downgrading_packages "Downgrading packages") to the latest compatible version (3.28). (This is the reason why some packages are missing from the [unofficial repo](https://github.com/alucryd/aur-alucryd/tree/master/pantheon).) You can either downgrade, package [mutter](https://www.archlinux.org/packages/?name=mutter) 3.28 separately (do consider submitting to AUR if you do), or wait until upstream decides to adapt the most recent version. [gala-git](https://aur.archlinux.org/packages/gala-git/) is a dependency for a lot of packages; you need to take care of this for a lot of the applications.
 
 ### Desktop Environment
 

@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database"). Data da última tradução: 2018-08-15\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Restore_local_database&diff=0&oldid=533518) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Restore local database](/index.php/Pacman/Restore_local_database "Pacman/Restore local database"). Data da última tradução: 2018-11-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Restore_local_database&diff=0&oldid=553241) na versão em inglês.
 
 Sinais de que o pacman precisa de uma restauração da base de dados local:
 
@@ -19,6 +19,8 @@ Se não existe, *não* é possível continuar com este método. Você pode usar 
 ## Gerando a lista de recuperação de pacotes
 
 **Atenção:** Se por algum motivo o seu cache do [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") ou destino de pacotes do [makepkg](/index.php/Makepkg_(Portugu%C3%AAs) "Makepkg (Português)") contenham pacotes de outras arquiteturas, remova-os antes de continuar.
+
+[Instale](/index.php/Instale "Instale") o pacote [pacutils](https://www.archlinux.org/packages/?name=pacutils) para obter *paclog*.
 
 Crie um script de filtro de logs e torne-o executável:
 

@@ -18,7 +18,7 @@ If it does not exist, it is *not* possible to continue with this method. You may
 
 **Warning:** If for some reason your [pacman](/index.php/Pacman "Pacman") cache or [makepkg](/index.php/Makepkg "Makepkg") package destination contain packages for other architectures, remove them before continuation.
 
-[Install](/index.php/Install "Install") the [pacutils](https://www.archlinux.org/packages/?name=pacutils) package to get paclog.
+[Install](/index.php/Install "Install") the [pacutils](https://www.archlinux.org/packages/?name=pacutils) package to get *paclog*.
 
 Create the log filter script and make it executable:
 

@@ -1,6 +1,7 @@
 Related articles
 
 *   [Help:i18n](/index.php/Help:I18n "Help:I18n")
+*   [ArchWiki:Translation Team](/index.php/ArchWiki:Translation_Team "ArchWiki:Translation Team")
 *   [IRC channel](/index.php/IRC_channel "IRC channel")
 
 [https://archlinux.org](https://archlinux.org) is the home of the official Arch Linux website, forums, and wiki. However, several unofficial community-run sites are available for international users who would rather communicate in their own language. You can find a list of these communities below.

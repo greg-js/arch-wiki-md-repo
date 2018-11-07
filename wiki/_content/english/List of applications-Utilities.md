@@ -124,7 +124,7 @@ For a comprehensive list, see [Wikipedia:List of terminal emulators](https://en.
 
 	[https://www.kde.org/applications/system/konsole/](https://www.kde.org/applications/system/konsole/) || [konsole](https://www.archlinux.org/packages/?name=konsole)
 
-*   **kitty** — A modern, hackable, featureful, OpenGL based terminal emulator
+*   **[kitty](/index.php/Kitty "Kitty")** — A modern, hackable, featureful, OpenGL based terminal emulator
 
 	[https://github.com/kovidgoyal/kitty](https://github.com/kovidgoyal/kitty) || [kitty](https://www.archlinux.org/packages/?name=kitty)
 

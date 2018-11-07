@@ -32,6 +32,7 @@ Some of its features are:
     *   [3.2 Personal AdBlock filters](#Personal_AdBlock_filters)
     *   [3.3 Fix Pixelated Fonts](#Fix_Pixelated_Fonts)
     *   [3.4 Customizing Toolbars](#Customizing_Toolbars)
+    *   [3.5 Wayland](#Wayland)
 *   [4 See also](#See_also)
 
 ## Installation
@@ -170,6 +171,10 @@ Easy fix is to disable bitmap fonts, run:
 ### Customizing Toolbars
 
 Simple right-click somewhere on the top window to customize toolbars. It is possible to hide/show the statusbar, menubar, bookmarkbar and/or navigationbar.
+
+### Wayland
+
+Set `GTK_CSD=1` if you wish to enable client side decorations when running Midori under a window manager that uses Wayland.
 
 ## See also
 

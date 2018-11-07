@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [IRC channel](/index.php/IRC_channel "IRC channel")
+*   [IRC channel](/index.php?title=IRC_channel&redirect=no "IRC channel")

@@ -19,7 +19,6 @@ The [Aurweb RPC interface](https://aur.archlinux.org/rpc.php) is a lightweight [
     *   [1.3 jsonp](#jsonp)
 *   [2 Limitations](#Limitations)
 *   [3 Reference clients](#Reference_clients)
-*   [4 Associated code](#Associated_code)
 
 ## API usage
 
@@ -225,8 +224,3 @@ This would automatically call the JavaScript function `jsonp1192244621103` with 
 ## Reference clients
 
 Sometimes things are easier to understand with examples. A few reference implementations (jQuery, python, ruby) are available at the following URL: [https://github.com/cactus/random/tree/2b72a1723bfc8ae64eed6a3c40cb154accae3974/aurjson_examples](https://github.com/cactus/random/tree/2b72a1723bfc8ae64eed6a3c40cb154accae3974/aurjson_examples)
-
-## Associated code
-
-*   [python3-aur](https://aur.archlinux.org/packages/python3-aur/): Python modules for interacting with the remote AUR RPC interface, among other AUR services. See [python3-aur](http://xyne.archlinux.ca/projects/python3-aur/) for details.
-*   [python-aur](https://aur.archlinux.org/packages/python-aur/): Python modules for interacting with the remote AUR RPC interface (RPCv1).

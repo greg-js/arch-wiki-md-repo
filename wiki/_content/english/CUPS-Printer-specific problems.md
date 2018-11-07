@@ -244,7 +244,7 @@ There are many possible drivers for Canon printers. [Many Canon printers](http:/
 | LBP7200C series |
 | LBP7210Cdn |
 | LBP9100C |
-| MF365Cx | [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/) |
+| MF635Cx | [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/) |
 | MF4720w |
 | MG4200 series | [cnijfilter-mg4200](https://aur.archlinux.org/packages/cnijfilter-mg4200/) | Avoid the [web interface](/index.php/CUPS#Web_interface "CUPS") when adding the printer as it won't find the PPD file. |
 | MX490 | [cnijfilter2](https://aur.archlinux.org/packages/cnijfilter2/)

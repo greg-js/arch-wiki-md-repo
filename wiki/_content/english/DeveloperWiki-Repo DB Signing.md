@@ -68,6 +68,8 @@ A few restrictions should be added to this host:
 
 See proposal of [Bluewind](https://www.mail-archive.com/arch-dev-public@archlinux.org/msg25636.html).
 
+Implementation: [https://git.server-speed.net/users/flo/alass/](https://git.server-speed.net/users/flo/alass/)
+
 #### Signing from a 'secure' enclave (solution 2)
 
 Instead of sending arbitrary files into the 'secure' enclave, the enclave pulls the to be signed file and returns a new signed file.

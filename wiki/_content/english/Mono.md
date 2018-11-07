@@ -1,6 +1,6 @@
 From [Wikipedia](https://en.wikipedia.org/wiki/Mono_(software) "wikipedia:Mono (software)"):
 
-	*Mono is a [...] project to create a [.NET Framework](https://en.wikipedia.org/wiki/.NET_Framework compiler and a [Common Language Runtime](https://en.wikipedia.org/wiki/Common_Language_Runtime "wikipedia:Common Language Runtime").*
+	Mono is a [...] project to create a [.NET Framework](https://en.wikipedia.org/wiki/.NET_Framework compiler and a [Common Language Runtime](https://en.wikipedia.org/wiki/Common_Language_Runtime "wikipedia:Common Language Runtime").
 
 ## Contents
 
@@ -22,6 +22,8 @@ From [Wikipedia](https://en.wikipedia.org/wiki/Mono_(software) "wikipedia:Mono (
 If you need VisualBasic.Net support you have to [install](/index.php/Install "Install") the VisualBasic.Net interpreter with the package [mono-basic](https://aur.archlinux.org/packages/mono-basic/).
 
 MonoDevelop calls [xterm](/index.php/Xterm "Xterm") when you run your project. You might install it, when you're writing a console application.
+
+**Note:** Installing the package stores [certificate authorities](/index.php/Certificate_authorities "Certificate authorities") in `/usr/share/.mono/certs/Trust/` but removing the package does not remove them.[[1]](https://bbs.archlinux.org/viewtopic.php?id=201926)
 
 ## Running Mono applications
 
@@ -89,7 +91,7 @@ Try `mozroots --import --ask-remove` which should update monos certificates. `mo
 
 ### I get an error when building fsharp: "System.TypeInitializationException: The type initializer for 'System.Console' threw an exception"
 
-There is a recent bug in mcs that is used to build fsharp. A workaround is to use `export TERM=xterm`, as detailed here [[1]](https://github.com/mono/mono/issues/6752)
+There is a recent bug in mcs that is used to build fsharp. A workaround is to use `export TERM=xterm`, as detailed here [[2]](https://github.com/mono/mono/issues/6752)
 
 ## See also
 

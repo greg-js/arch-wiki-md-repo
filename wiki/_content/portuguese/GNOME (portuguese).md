@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2018-09-21\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=541788) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [GNOME](/index.php/GNOME "GNOME"). Data da última tradução: 2018-10-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=GNOME&diff=0&oldid=551660) na versão em inglês.
 
 Artigos relacionados
 
@@ -41,26 +41,24 @@ Artigos relacionados
         *   [6.1.8 Pesquisa](#Pesquisa)
     *   [6.2 Configurações avançadas](#Configura.C3.A7.C3.B5es_avan.C3.A7adas)
         *   [6.2.1 Aparência](#Apar.C3.AAncia)
-            *   [6.2.1.1 Temas GTK+ e temas de ícone](#Temas_GTK.2B_e_temas_de_.C3.ADcone)
-                *   [6.2.1.1.1 Tema global escuro](#Tema_global_escuro)
-            *   [6.2.1.2 Temas de gerenciador de janelas](#Temas_de_gerenciador_de_janelas)
-                *   [6.2.1.2.1 Altura da barra de título](#Altura_da_barra_de_t.C3.ADtulo)
-                *   [6.2.1.2.2 Ordem de botão de barra de título](#Ordem_de_bot.C3.A3o_de_barra_de_t.C3.ADtulo)
-                *   [6.2.1.2.3 Ocultar barra de título quando maximizado](#Ocultar_barra_de_t.C3.ADtulo_quando_maximizado)
-            *   [6.2.1.3 Temas do GNOME Shell](#Temas_do_GNOME_Shell)
-            *   [6.2.1.4 Ícones no menu](#.C3.8Dcones_no_menu)
-        *   [6.2.2 Área de trabalho](#.C3.81rea_de_trabalho)
-            *   [6.2.2.1 Ícones na área de trabalho](#.C3.8Dcones_na_.C3.A1rea_de_trabalho)
-            *   [6.2.2.2 Tela de bloqueio e plano de fundo](#Tela_de_bloqueio_e_plano_de_fundo)
-            *   [6.2.2.3 Desabilitar o canto superior esquerdo ativo](#Desabilitar_o_canto_superior_esquerdo_ativo)
-        *   [6.2.3 Extensões](#Extens.C3.B5es)
-        *   [6.2.4 Métodos de entrada](#M.C3.A9todos_de_entrada)
-        *   [6.2.5 Fontes](#Fontes)
-        *   [6.2.6 Inicialização automática](#Inicializa.C3.A7.C3.A3o_autom.C3.A1tica)
-        *   [6.2.7 Energia](#Energia)
-            *   [6.2.7.1 Configurar o comportamento do fechamento da tela de notebook](#Configurar_o_comportamento_do_fechamento_da_tela_de_notebook)
-            *   [6.2.7.2 Alterar ação de nível crítico da bateria](#Alterar_a.C3.A7.C3.A3o_de_n.C3.ADvel_cr.C3.ADtico_da_bateria)
-        *   [6.2.8 Ordenar aplicativos em pastas de aplicativo (app)](#Ordenar_aplicativos_em_pastas_de_aplicativo_.28app.29)
+            *   [6.2.1.1 Temas](#Temas)
+            *   [6.2.1.2 Altura da barra de título](#Altura_da_barra_de_t.C3.ADtulo)
+            *   [6.2.1.3 Ordem de botão de barra de título](#Ordem_de_bot.C3.A3o_de_barra_de_t.C3.ADtulo)
+            *   [6.2.1.4 Ocultar barra de título quando maximizado](#Ocultar_barra_de_t.C3.ADtulo_quando_maximizado)
+            *   [6.2.1.5 Temas do GNOME Shell](#Temas_do_GNOME_Shell)
+            *   [6.2.1.6 Ícones no menu](#.C3.8Dcones_no_menu)
+        *   [6.2.2 Pastas de grade de aplicativos](#Pastas_de_grade_de_aplicativos)
+        *   [6.2.3 Inicialização automática](#Inicializa.C3.A7.C3.A3o_autom.C3.A1tica)
+        *   [6.2.4 Área de trabalho](#.C3.81rea_de_trabalho)
+            *   [6.2.4.1 Ícones na área de trabalho](#.C3.8Dcones_na_.C3.A1rea_de_trabalho)
+            *   [6.2.4.2 Tela de bloqueio e plano de fundo](#Tela_de_bloqueio_e_plano_de_fundo)
+            *   [6.2.4.3 Desabilitar o canto superior esquerdo ativo](#Desabilitar_o_canto_superior_esquerdo_ativo)
+        *   [6.2.5 Extensões](#Extens.C3.B5es)
+        *   [6.2.6 Fontes](#Fontes)
+        *   [6.2.7 Métodos de entrada](#M.C3.A9todos_de_entrada)
+        *   [6.2.8 Energia](#Energia)
+            *   [6.2.8.1 Configurar o comportamento do fechamento da tela de notebook](#Configurar_o_comportamento_do_fechamento_da_tela_de_notebook)
+            *   [6.2.8.2 Alterar ação de nível crítico da bateria](#Alterar_a.C3.A7.C3.A3o_de_n.C3.ADvel_cr.C3.ADtico_da_bateria)
     *   [6.3 Usar um gerenciador de janela diferente](#Usar_um_gerenciador_de_janela_diferente)
 *   [7 Veja também](#Veja_tamb.C3.A9m)
 
@@ -85,9 +83,9 @@ GNOME possui três sessões disponíveis, todos usando o GNOME Shell.
 
 ## Iniciando
 
-O GNOME pode ser iniciado tanto graficamente, usando um [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição"), ou manualmente pelo console.
+O GNOME pode ser iniciado tanto graficamente, com um [gerenciador de exibição](/index.php/Gerenciador_de_exibi%C3%A7%C3%A3o "Gerenciador de exibição"), ou manualmente pelo console (podem faltar alguns recursos).
 
-**Nota:** Suporte para bloqueio de tela no GNOME (e muito mais) é fornecido pelo GDM. Se o GNOME não for iniciado usando o GDM, você terá que usar outro bloqueador de tela para fornecer esta funcionalidade. Veja [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
+**Nota:** Suporte para bloqueio de tela no GNOME (e muito mais) é fornecido pelo GDM. Se o GNOME não for iniciado com o GDM, outro bloqueador de tela pode ser usado para fornecer esta funcionalidade. Veja [List of applications/Security#Screen lockers](/index.php/List_of_applications/Security#Screen_lockers "List of applications/Security").
 
 ### Graficamente
 
@@ -97,7 +95,12 @@ Selecione a sessão: *GNOME*, *GNOME Clássico* ou *GNOME sobre Xorg* a partir d
 
 #### Sessões Xorg
 
-*   Para a sessão do GNOME sobre Xorg, adicione ao arquivo `~/.xinitrc`: `exec gnome-session`.
+*   Para a sessão do GNOME sobre Xorg, adicione ao arquivo `~/.xinitrc`:
+    ```
+    export GDK_BACKEND=x11
+    exec gnome-session
+    ```
+
 *   Para a sessão do GNOME Clássico, adicione ao arquivo `~/.xinitrc`:
     ```
     export XDG_CURRENT_DESKTOP=GNOME-Classic:GNOME
@@ -187,6 +190,8 @@ $ gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 
 
 ```
 
+**Dica:** Para alterar a temperatura do dia em uma sessão Wayland, instale [essa extensão](https://extensions.gnome.org/extension/1276/night-light-slider/).
+
 #### Data & hora
 
 Se o sistema possuir o [daemon de Network Time Protocol](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon") configurado, ele será usado pelo GNOME também. A sincronização pode ser definida para controle manual pelo menu, se necessário.
@@ -262,30 +267,16 @@ Configurações do GNOME (que são armazenadas no banco de dados DConf) também 
 
 #### Aparência
 
-##### Temas GTK+ e temas de ícone
+##### Temas
 
-Para instalar um novo tema ou conjunto de ícone, adicione `~/.local/share/themes` ou `~/.local/share/icons` relevantes, respectivamente (adicione a `/usr/share/` em vez de `~/.local/share/` para temas estarem disponíveis para todo sistema). Eles e outras configurações de GUI também pode ser definida em `~/.config/gtk-3.0/settings.ini`:
+O GNOME usa Adwaita por padrão. Para aplicar Adwaita dark apenas para aplicativos GTK+2, use o link simbólico a seguir:
 
- `~/.config/gtk-3.0/settings.ini` 
 ```
-[Settings]
-gtk-theme-name = Adwaita
-# próxima opção é aplicável apenas se o tema selecionado oferecer suporte
-gtk-application-prefer-dark-theme = true
-# define o nome e dimensão da fonte
-gtk-font-name = Sans 10
+$ ln -s /usr/share/themes/Adwaita-dark ~/.themes/Adwaita
 
 ```
 
-Localizações adicionais de tema:
-
-*   [DeviantArt](http://www.deviantart.com/browse/all/customization/skins/linuxutil/desktopenv/gnome/gtk3/).
-*   [gnome-look.org](http://gnome-look.org/index.php?xcontentmode=167).
-*   [Temas do GTK+ 3 no AUR](https://aur.archlinux.org/packages.php?O=0&K=gtk3&do_Search=Go).
-*   [Temas de cursor no AUR](https://aur.archlinux.org/packages.php?O=0&K=xcursor&do_Search=Go&PP=50&SB=v&SO=d).
-*   [Temas de ícones no AUR](https://aur.archlinux.org/packages.php?O=0&K=icon-theme&do_Search=Go&PP=50&SB=v&SO=d).
-
-Uma vez instalados, eles podem ser selecionados usando o Ajustes do GNOME ou GSettings - veja abaixo por comandos do GSettings:
+Para selecionar novos temas (mova-os para o diretório apropriado e) use o Ajustes do GNOME ou os comandos de GSettings abaixo:
 
 Para o tema do GTK+:
 
@@ -301,15 +292,11 @@ $ gsettings set org.gnome.desktop.interface icon-theme *nome-do-tema*
 
 ```
 
-###### Tema global escuro
+**Nota:** O gerenciador de janela segue o tema do GTK+. Usar `org.gnome.desktop.wm.preferences theme` está obsoleto e é ignorado.
 
-GNOME vai usar o tema leve do Adwaita por padrão, porém uma variante escura deste tema (chamada de *Tema global escuro*) também existe e pode ser selecionada usando o Ajustes ou editando o arquivo de configurações do GTK+ 3 - veja [GTK+#Dark theme variant](/index.php/GTK%2B#Dark_theme_variant "GTK+"). Alguns aplicativos, tal como o Visualizador de imagens (*eog*), usam o tema escuro por padrão. Deve-se observar que o tema global escuro só funciona com aplicativos GTK+ 3; alguns aplicativos GTK+ 3 só podem ter suporte parcial para o tema global escuro. Suporte no Qt e no GTK+ 2 ao tema global escuro podem ser adicionados no futuro.
+Veja [GTK+#Themes](/index.php/GTK%2B#Themes "GTK+") e [Icons#Manually](/index.php/Icons#Manually "Icons").
 
-##### Temas de gerenciador de janelas
-
-O tema do gerenciador de janelas segue o tema do GTK+. O uso de `org.gnome.desktop.wm.preferences theme` está obsoleto e é ignorado.
-
-###### Altura da barra de título
+##### Altura da barra de título
 
 **Nota:** Aplicar essa configuração reduz a barra de título do terminal do GNOME e do Chromium, mas não parece ter efeito sobre o tamanho da barra de título do Nautilus.
  `~/.config/gtk-3.0/gtk.css` 
@@ -330,7 +317,7 @@ headerbar.default-decoration button.titlebutton {
 
 Veja [[3]](https://ask.fedoraproject.org/en/question/10035/shrink-title-bar/?answer=86149#post-id-86149) para mais informações.
 
-###### Ordem de botão de barra de título
+##### Ordem de botão de barra de título
 
 Para definir a ordem para o gerenciador de janelas do GNOME (Mutter, Metacity):
 
@@ -341,7 +328,7 @@ $ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximi
 
 **Dica:** O caractere de dois pontos indica em qual lado da barra de título os botões de janela aparecerão.
 
-###### Ocultar barra de título quando maximizado
+##### Ocultar barra de título quando maximizado
 
 *   [Instale](/index.php/Instale "Instale") [gnome-shell-extension-pixel-saver-git](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver-git/) ou [gnome-shell-extension-pixel-saver](https://aur.archlinux.org/packages/gnome-shell-extension-pixel-saver/). Janelas maximizadas mesclam a barra de título com a barra de atividade, salvando pixels preciosos.
 
@@ -353,9 +340,7 @@ $ gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximi
 
 O tema do GNOME Shell em si é configurável. Para usar um tema de Shell, primeiro assegure-se de que você tenha o pacote [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) instalado. Então, habilite a extensão *User Themes*, pelo Ajustes do GNOME ou pela página web [GNOME Shell Extensions](https://extensions.gnome.org). Temas de shell podem então ser carregadas e selecionadas usando Ajustes do GNOME.
 
-Há vários temas de GNOME Shell disponíveis [no AUR](https://aur.archlinux.org/packages.php?O=0&K=gnome-shell-theme&do_Search=Go&PP=50&SB=v&SO=d).
-
-Temas de shell também pode ser baixados do [gnome-look.org](http://gnome-look.org/index.php?xcontentmode=191).
+Há vários temas de GNOME Shell disponíveis [no AUR](https://aur.archlinux.org/packages.php?O=0&K=gnome-shell-theme&do_Search=Go&PP=50&SB=v&SO=d). Temas de shell também pode ser baixados do [gnome-look.org](http://gnome-look.org/index.php?xcontentmode=191).
 
 ##### Ícones no menu
 
@@ -365,6 +350,59 @@ O esquema padrão do GNOME não exibe qualquer ícone nos menus. Para exibir íc
 $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/ButtonImages': <1>, 'Gtk/MenuImages': <1>}"
 
 ```
+
+#### Pastas de grade de aplicativos
+
+**Dica:** O scripts [gnome-catgen](https://github.com/prurigro/gnome-catgen) ([gnome-catgen-git](https://aur.archlinux.org/packages/gnome-catgen-git/)) permite que você gerencie pastas por meio da criação de arquivos em `~/.local/share/applications-categories` nomeados conforme cada categoria e contendo uma lista dos arquivos de área de trabalho pertencentes aos aplicativos que você gostaria de ter dentro. Opcionalmente, você pode fazer com que ele circule por cada aplicativo sem uma pasta e insira a categoria desejada até você Ctrl-C ou ficar sem aplicativos.
+
+No **dconf-editor**, navegue para `org.gnome.desktop.app-folders` e defina o valor de `folder-children` para um vetor de nomes de pastas separados por vírgula:
+
+```
+['Utilities', 'Sundry']
+
+```
+
+Adicione aplicativos usando o `gsettings`:
+
+```
+$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ apps "['alacarte.desktop', 'dconf-editor.desktop']"
+
+```
+
+Isso adiciona os aplicativos `alacarte.desktop` e `dconf-editor.desktop` à pastas Sundry. Isso também vai criar a pasta `org.gnome.desktop.app-folders.folders.Sundry`.
+
+Para nomear a pasta (se ela tiver nenhum nome que apareça no tipo dos aplicativos):
+
+```
+$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ name "Sundry"
+
+```
+
+Os aplicativos também podem ser ordenados por sua categoria (especificada em seu arquivo *.desktop*):
+
+```
+$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ categories "['Office']"
+
+```
+
+Se determinados aplicativos que corresponderem a uma categoria não forem desejados em uma pasta, exclusões podem ser definidas:
+
+```
+$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ excluded-apps "['libreoffice-draw.desktop']"
+
+```
+
+Para mais informações, veja [[4]](https://git.gnome.org/browse/gsettings-desktop-schemas/tree/schemas/org.gnome.desktop.app-folders.gschema.xml.in) e [[5]](https://wiki.gentoo.org/wiki/Gnome_Applications_Folders).
+
+#### Inicialização automática
+
+O GNOME implementa [XDG Autostart](/index.php/XDG_Autostart_(Portugu%C3%AAs) "XDG Autostart (Português)").
+
+O [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks) permite gerenciar entradas de "autostart".
+
+**Dica:** Se o botão de sinal de mais na seção de inicialização do Ajustes não estiver responsivo, tente iniciá-lo a partir do terminal usando o seguinte comando: `gnome-tweaks`. Veja o seguinte [tópico de fórum](https://bbs.archlinux.org/viewtopic.php?pid=1413631#p1413631).
+
+**Nota:** O diálogo obsoleto *gnome-session-properties* pode ser adicionado [instalando](/index.php/Instala "Instala") o pacote [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/).
 
 #### Área de trabalho
 
@@ -396,30 +434,20 @@ Você pode desabilitar o cano superior esquerdo ativo com o pacote [gnome-shell-
 
 #### Extensões
 
-**Nota:** O plugin de navegador do GNOME Shell que permite que usuários instalem extensões do [extensions.gnome.org](https://extensions.gnome.org) funciona sem mais configurações para navegadores como o [GNOME/Web](/index.php/GNOME/Web "GNOME/Web"). Para os navegadores [Firefox](/index.php/Firefox "Firefox"), Google Chrome/Chromium, Opera e Vivaldi, é necessário instralar [chrome-gnome-shell](https://www.archlinux.org/packages/?name=chrome-gnome-shell) e a extensão de navegador apropriada.
+O catálogo de extensões está disponível em [extensions.gnome.org](https://extensions.gnome.org). Elas podem ser instaladas e ativadas no navegador definindo o botão no canto superior esquerdo da tela para **ON** e clicando em **Install** no diálogo resultante (se a extensão em questão não estiver instalada). Extensões instaladas podem ser vistas em [extensions.gnome.org/local](https://extensions.gnome.org/local/), na qual atualizações podem ser verificadas. Extensões instaladas também podem ser habilitadas ou desabilitadas usando [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks).
 
-GNOME Shell pode ser personalizado com extensões por usuário ou para todo o sistema.
+**Nota:** Extensões do [extensions.gnome.org](https://extensions.gnome.org) podem ser instalados imediatamente com [GNOME/Web](/index.php/GNOME/Web "GNOME/Web"). Para outros navegadores, é necessário instalar [chrome-gnome-shell](https://www.archlinux.org/packages/?name=chrome-gnome-shell) e a extensão de navegador apropriada.
 
-O catálogo de extensões está disponível em [extensions.gnome.org](https://extensions.gnome.org). Por um usuário, elas podem ser instaladas e ativadas no navegador definindo o botão no canto superior direito da tela para **ON** e clicando em **Install** no diálogo resultante (se a extensão em questão não estiver instalada). Após a instalação, é mostrar na aba [extensions.gnome.org/local/](https://extensions.gnome.org/local/), qual tem que ser visitado, assim como verificar por atualizações disponíveis. Extensões instaladas também podem ser habilitadas ou desabilitadas usando [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks).
+O GNOME Shell pode ser personalizado com extensões por usuário ou por todo o sistema. A instalação de extensões com [pacman](/index.php/Pacman_(Portugu%C3%AAs) "Pacman (Português)") as disponibiliza para todos os usuários do sistema e automatiza o processo de atualização. O pacote [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) fornece um conjunto de extensões mantidas como parte do projeto GNOME (muitas das extensões incluídas são usadas pela sessão do GNOME Clássico). Usuários que desejem uma barra de tarefas, mas não desejam usar a sessão do GNOME Clássico, podem querer habilitar a extensão *Window list* (fornecida pelo pacote [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions)).
 
-Mais informações sobre extensões do GNOME shell estão disponíveis na [página de manual do GNOME Shell Extensions](https://extensions.gnome.org/about/).
-
-[Instalar](/index.php/Instalar "Instalar") extensões por um pacote torna-os disponível para todos os usuários do sistema e automatiza o processo de atualização.
-
-O pacote [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions) fornece um conjunto de extensões mantidas como parte do projeto GNOME (muitas das extensões incluídas são usadas pela sessão do GNOME Clássico).
-
-Usuários que desejem uma barra de tarefas, mas não desejam usar a sessão do GNOME Clássico, podem querer habilitar a extensão *Window list* (fornecida pelo pacote [gnome-shell-extensions](https://www.archlinux.org/packages/?name=gnome-shell-extensions)).
-
-A listagem de extensões atualmente habilitadas podem ser obtida com:
+Para listar as extensões atualmente habilitadas:
 
 ```
 $ gsettings get org.gnome.shell enabled-extensions
 
 ```
 
-#### Métodos de entrada
-
-O GNOME possui suporte integrado para [métodos de entrada](/index.php/M%C3%A9todos_de_entrada "Métodos de entrada") por meio do [IBus](/index.php/IBus "IBus"), só sendo necessário instalar [ibus](https://www.archlinux.org/packages/?name=ibus) e o motor do método de entrada (ex.: [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin) para Intelligent Pinyin); após a instalação, o motor de método de entrada podem ser adicionados como disposição de teclado nas configurações de "Idioma & região" do GNOME.
+Para mais informações sobre as extensões do shell do GNOME, veja [[6]](https://extensions.gnome.org/about/).
 
 #### Fontes
 
@@ -429,15 +457,9 @@ Fontes podem ser definidas para *Títulos de janelas*, *Interface* (aplicativos)
 
 Para *hinting*, RGBA provavelmente é melhor por atender a maioria dos tipos de monitores. Se as fontes aparecerem bloqueadas demais, reduza *hinting* para *Slight* ou *None*.
 
-#### Inicialização automática
+#### Métodos de entrada
 
-O GNOME implementa [XDG Autostart](/index.php/XDG_Autostart_(Portugu%C3%AAs) "XDG Autostart (Português)").
-
-O Ajustes, [gnome-tweaks](https://www.archlinux.org/packages/?name=gnome-tweaks), permite gerenciar entradas de de "autostart".
-
-**Dica:** Se o botão de sinal de mais na seção de inicialização do Ajustes não estiver responsivo, tente iniciá-la a partir do terminal usando o seguinte comando: `gnome-tweaks`. Veja o seguinte [tópico de fórum](https://bbs.archlinux.org/viewtopic.php?pid=1413631#p1413631).
-
-**Nota:** O diálogo obsoleto *gnome-session-properties* pode ser adicionado [instalando](/index.php/Instala "Instala") o pacote [gnome-session-properties](https://aur.archlinux.org/packages/gnome-session-properties/).
+O GNOME possui suporte integrado para [métodos de entrada](/index.php/M%C3%A9todos_de_entrada "Métodos de entrada") por meio do [IBus](/index.php/IBus "IBus"), só sendo necessário instalar [ibus](https://www.archlinux.org/packages/?name=ibus) e o motor do método de entrada (ex.: [ibus-libpinyin](https://www.archlinux.org/packages/?name=ibus-libpinyin) para Intelligent Pinyin); após a instalação, o motor de método de entrada podem ser adicionados como disposição de teclado nas configurações de "Idioma & região" do GNOME.
 
 #### Energia
 
@@ -473,7 +495,7 @@ org.gnome.settings-daemon.plugins.power critical-battery-action
 
 ##### Configurar o comportamento do fechamento da tela de notebook
 
-O Ajustes do GNOME é uma ferramenta que pode opcionalmente *inibir* a configuração do *systemd* para o evento de ACPI de fechar a tampa.[[4]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) Para *inibir* a configuração, inicie a ferramenta de ajustes e, sob a aba energia, marque a opção *Suspender quando a tampa do notebook é fechada*. Isso significa que o ssitema fará nada ao fechar a tampa do notebook em vez de suspender - o comportamento padrão. Marcando essa configuração, cria `~/.config/autostart/ignore-lid-switch-tweak.desktop` que vai iniciar automaticamente o inibidor da ferramenta Ajustes.
+O Ajustes do GNOME é uma ferramenta que pode opcionalmente *inibir* a configuração do *systemd* para o evento de ACPI de fechar a tampa.[[7]](http://ftp.gnome.org/pub/GNOME/sources/gnome-tweak-tool/3.17/gnome-tweak-tool-3.17.1.news) Para *inibir* a configuração, inicie a ferramenta de ajustes e, sob a aba energia, marque a opção *Suspender quando a tampa do notebook é fechada*. Isso significa que o ssitema fará nada ao fechar a tampa do notebook em vez de suspender - o comportamento padrão. Marcando essa configuração, cria `~/.config/autostart/ignore-lid-switch-tweak.desktop` que vai iniciar automaticamente o inibidor da ferramenta Ajustes.
 
 Se você não deseja suspender ou fazer nada ao fechar a tampa do notebook, você precisará se certificar de que a configuração acima **não** esteja marcada e, então, configure *systemd* com `HandleLidSwitch=*preferred_behaviour*` como descrito em [Power management#ACPI events](/index.php/Power_management#ACPI_events "Power management").
 
@@ -488,49 +510,6 @@ PercentageCritical=3
 PercentageAction=2
 CriticalPowerAction=HybridSleep
 ```
-
-#### Ordenar aplicativos em pastas de aplicativo (app)
-
-**Dica:** O script [gnome-catgen](https://github.com/prurigro/gnome-catgen) ([gnome-catgen-git](https://aur.archlinux.org/packages/gnome-catgen-git/)) permite que você gerencie as pastas por meio da criação de arquivos nos `~/.local/share/applications-categories` nomeados após cada categoria e contendo uma lista de arquivos desktop pertencendo aos aplicativos que você gostaria de ter dentro. Opcionalmente, você pode fazê-lo passar por cada aplicativo sem uma pasta e inserir a categoria desejada até pressionar Ctrl+C ou acabarem os aplicativos.
-
-No **dconf-editor**, navegue para `org.gnome.desktop.app-folders` e defina o valor de `folder-children` para um vetor de nomes de pastas separados por vírgula:
-
-```
-['Utilities', 'Sundry']
-
-```
-
-Adicione aplicativos usando `gsettings`:
-
-```
-$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ apps "['alacarte.desktop', 'dconf-editor.desktop']"
-
-```
-
-Isso adiciona os aplicativos `alacarte.desktop` e `dconf-editor.desktop` à pasta Sundry. Isso também vai criar a pasta `org.gnome.desktop.app-folders.folders.Sundry`.
-
-Para nomear a pasta (se ela não tiver um nome que aparece no topo dos aplicativos):
-
-```
-$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ name "Sundry"
-
-```
-
-Aplicativos também podem ser ordenados por sua categoria (especificado em seus arquivos *.desktop*):
-
-```
-$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ categories "['Office']"
-
-```
-
-Se certos aplicativos correspondendo a uma categoria não forem desejados em certa pasta, exclusões podem ser definidas:
-
-```
-$ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Sundry/ excluded-apps "['libreoffice-draw.desktop']"
-
-```
-
-Para mais informações, veja o [esquema app-folders](https://git.gnome.org/browse/gsettings-desktop-schemas/tree/schemas/org.gnome.desktop.app-folders.gschema.xml.in).
 
 ### Usar um gerenciador de janela diferente
 

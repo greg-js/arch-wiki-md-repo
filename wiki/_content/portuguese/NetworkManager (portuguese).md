@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [NetworkManager](/index.php/NetworkManager "NetworkManager"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=NetworkManager&diff=0&oldid=550618) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [NetworkManager](/index.php/NetworkManager "NetworkManager"). Data da última tradução: 2018-11-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=NetworkManager&diff=0&oldid=552019) na versão em inglês.
 
 Related articles
 
@@ -299,7 +299,7 @@ polkit.addRule(function(action, subject) {
 
 O NetworkManager não lida diretamente com configurações de proxy, mas se você estiver usando o [GNOME](/index.php/GNOME_(Portugu%C3%AAs) "GNOME (Português)") ou [KDE](/index.php/KDE "KDE"), você pode usar o [proxydriver](http://marin.jb.free.fr/proxydriver/) que lida com configurações de proxy usando Informações do NetworkManager. O proxydriver é encontrado no pacote [proxydriver](https://aur.archlinux.org/packages/proxydriver/).
 
-Para que o *proxydriver* possa alterar as configurações do proxy, você precisaria executar este comando, como parte do processo de inicialização do GNOME (*Sistema > Preferências > Aplicativos de inicialização*):
+Para que o *proxydriver* possa alterar as configurações do proxy, você precisaria executar este comando, como parte do processo de inicialização do GNOME (veja [GNOME (Português)#Inicialização automática](/index.php/GNOME_(Portugu%C3%AAs)#Inicializa.C3.A7.C3.A3o_autom.C3.A1tica "GNOME (Português)")):
 
 ```
 xhost +si:localuser:*nome_de_usuário*
@@ -506,6 +506,43 @@ umount -a -l -t cifs
 
 *   Certifique-se de que este script esteja localizado no subdiretório `pre-down.d`, conforme mostrado acima, caso contrário, ele desmontará todos os compartilhamentos em qualquer alteração de estado de conexão.
 *   Desde o NetworkManager 0.9.8, os eventos *pre-down* e *down* não são executados no desligamento ou reinicialização, veja [este relatório de erro](https://bugzilla.gnome.org/show_bug.cgi?id=701242) para mais informações.
+
+Uma alternativa é usar o script como visto em [NFS#Using a NetworkManager dispatcher](/index.php/NFS#Using_a_NetworkManager_dispatcher "NFS"):
+
+ `/etc/NetworkManager/dispatcher.d/30-smb.sh` 
+```
+#!/bin/bash
+
+# Descubra O UUID da conexão com "nmcli con show" no terminal.
+# Todos os tipos de conexão do NetworkManager têm suporte: wireless, VPN, wired...
+WANTED_CON_UUID="CHANGE-ME-NOW-9c7eff15-010a-4b1c-a786-9b4efa218ba9"
+
+if [[ "$CONNECTION_UUID" == "$WANTED_CON_UUID" ]]; then
+
+    # Parâmetro do script $1: Nome da conexão do NetworkManager, não usado
+    # Parâmetro do script $2: eventos despachado
+
+    case "$2" in
+        "up")
+            mount -a -t cifs
+            ;;
+        "pre-down");&
+        "vpn-pre-down")
+            umount -l -a -t cifs >/dev/null
+            ;;
+    esac
+fi
+
+```
+
+**Nota:** Este script ignora as montagens com a opção `noauto`, remove esta opção de montagem ou usa `auto` para permitir que o despachante gerencie essas montagens.
+
+Crie um link simbólico dentro de `/etc/NetworkManager/dispatcher.d/pre-down` para pegar os eventos `pre-down`:
+
+```
+# ln -s /etc/NetworkManager/dispatcher.d/30-smb.sh /etc/NetworkManager/dispatcher.d/pre-down.d/30-smb.sh
+
+```
 
 #### Montagem de compartilhamentos NFS
 

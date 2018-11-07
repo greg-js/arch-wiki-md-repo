@@ -568,7 +568,7 @@ Here, we will make a script to bind vfio-pci to all GPUs but the boot gpu. Creat
 ```
 #!/bin/sh
 
-for i in /sys/devices/pci*/*/boot_vga; do
+for i in /sys/bus/pci/devices/*/boot_vga; do
 	if [ $(cat "$i") -eq 0 ]; then
 		GPU="${i%/boot_vga}"
 		AUDIO="$(echo "$GPU" | sed -e "s/0$/1/")"

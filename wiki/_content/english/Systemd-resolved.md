@@ -156,7 +156,7 @@ mDNS will only be activated for the connection if both the systemd-resolved's gl
 *   For [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") the setting is `MulticastDNS=` in the `[Network]` section. See [systemd.network(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.network.5).
 *   For [NetworkManager](/index.php/NetworkManager "NetworkManager") the setting is `mdns=` in the `[connection]` section, see [nm-settings(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/nm-settings.5). The values are `0` - disabled, `1` - resolver only, `2` - resolver and responder. [[1]](https://cgit.freedesktop.org/NetworkManager/NetworkManager/tree/libnm-core/nm-setting-connection.h#n102)
 
-**Note:** If [Avahi](/index.php/Avahi "Avahi") has been installed, consider [disabling](/index.php/Disabling "Disabling") `avahi.service` and `avahi.socket` to prevent conflicts with *systemd-resolved*.
+**Note:** If [Avahi](/index.php/Avahi "Avahi") has been installed, consider [disabling](/index.php/Disabling "Disabling") `avahi-daemon.service` and `avahi-daemon.socket` to prevent conflicts with *systemd-resolved*.
 
 **Tip:** The default for all [NetworkManager](/index.php/NetworkManager "NetworkManager") connections can be set by creating a configuration file in `/etc/NetworkManager/conf.d/` and setting `connection.mdns=` in the `[connection]` section. For example the following will enable mDNS resolver for all connections: `/etc/NetworkManager/conf.d/mdns.conf` 
 ```

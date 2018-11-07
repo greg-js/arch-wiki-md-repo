@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [IRC channel](/index.php/IRC_channel "IRC channel"). Data da última tradução: 2018-10-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=IRC_channel&diff=0&oldid=546966) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [IRC channel](/index.php/IRC_channel "IRC channel"). Data da última tradução: 2018-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=IRC_channel&diff=0&oldid=552871) na versão em inglês.
 
 Artigos relacionados
 
@@ -53,12 +53,12 @@ Para registrar com NickServ, siga o [FAQ do freenode](https://freenode.net/kb/an
 
 Operadores do Arch são operadores em ambos **#archlinux** e **#archlinux-offtopic**. Veja abaixo a lista ou execute `/msg phrik listops` no freenode.
 
-Se você, por algum motivo, precisar de ajuda de um operador, não seja tímido para nos `/query` ou `/msg`. Aqui está a lista de operadores até 8 de fevereiro de 2016:
+Se você, por algum motivo, precisar de ajuda de um operador, não seja tímido para nos `/query` ou `/msg`. Aqui está a lista de operadores até 1º de novembro de 2018:
 
 *   alad
-*   brain0
+*   amcrae
 *   falconindy
-*   gehidore
+*   gehidore / man
 *   grawity
 *   heftig
 *   jelle

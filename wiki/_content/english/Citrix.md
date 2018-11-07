@@ -26,14 +26,14 @@ Next, create `/usr/share/applications/wfica.desktop` (Exec path may vary based o
 Name=Citrix ICA client
 Comment="Launch Citrix applications from .ica files"
 Categories=Network;
-Exec=/usr/bin/wfica
+Exec=/opt/Citrix/ICAClient/wfica
 Terminal=false
 Type=Application
 NoDisplay=true
 MimeType=application/x-ica;
 ```
 
-Now `xdg-open` will handle .ica extensions using `/usr/bin/wfica`.
+Now `xdg-open` will handle .ica extensions using `/opt/Citrix/ICAClient/wfica`.
 
 Note: if you are running Xfce and Chromium is opening the .ica files in the wrong application (e.g. a text editor), make sure you have `xorg-xprop` installed.
 

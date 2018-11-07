@@ -209,7 +209,7 @@ For more about running games, related system configuration tips, see [Gaming](/i
 
 *   **[Teeworlds](https://en.wikipedia.org/wiki/Teeworlds "wikipedia:Teeworlds")** — Fast-paced 2D multiplayer shooter
 
-	[https://www.teeworlds.com/](https://www.teeworlds.com/) || [teeworlds](https://www.archlinux.org/packages/?name=teeworlds)
+	[https://www.teeworlds.com/](https://www.teeworlds.com/) || [teeworlds](https://www.archlinux.org/packages/?name=teeworlds) (0.7 branch) or [teeworlds06](https://aur.archlinux.org/packages/teeworlds06/) (0.6 branch)
 
 *   **Tetrinet** — Multiplayer online Tetris game for up to six people.
 

@@ -21,8 +21,15 @@
         *   [4.4.1 OVMF虚拟机不能引导非EFI镜像](#OVMF.E8.99.9A.E6.8B.9F.E6.9C.BA.E4.B8.8D.E8.83.BD.E5.BC.95.E5.AF.BC.E9.9D.9EEFI.E9.95.9C.E5.83.8F)
 *   [5 性能调整](#.E6.80.A7.E8.83.BD.E8.B0.83.E6.95.B4)
     *   [5.1 CPU核心固定](#CPU.E6.A0.B8.E5.BF.83.E5.9B.BA.E5.AE.9A)
-        *   [5.1.1 超线程](#.E8.B6.85.E7.BA.BF.E7.A8.8B)
-    *   [5.2 静态大分页](#.E9.9D.99.E6.80.81.E5.A4.A7.E5.88.86.E9.A1.B5)
+        *   [5.1.1 CPU 拓扑](#CPU_.E6.8B.93.E6.89.91)
+        *   [5.1.2 XML 示例](#XML_.E7.A4.BA.E4.BE.8B)
+            *   [5.1.2.1 4c/1t 无超线程的例子](#4c.2F1t_.E6.97.A0.E8.B6.85.E7.BA.BF.E7.A8.8B.E7.9A.84.E4.BE.8B.E5.AD.90)
+            *   [5.1.2.2 6c/2t Intel CPU 固定的例子](#6c.2F2t_Intel_CPU_.E5.9B.BA.E5.AE.9A.E7.9A.84.E4.BE.8B.E5.AD.90)
+            *   [5.1.2.3 4c/2t AMD CPU 的例子](#4c.2F2t_AMD_CPU_.E7.9A.84.E4.BE.8B.E5.AD.90)
+    *   [5.2 内存大分页](#.E5.86.85.E5.AD.98.E5.A4.A7.E5.88.86.E9.A1.B5)
+        *   [5.2.1 透明大分页](#.E9.80.8F.E6.98.8E.E5.A4.A7.E5.88.86.E9.A1.B5)
+        *   [5.2.2 Static huge pages](#Static_huge_pages)
+        *   [5.2.3 Dynamic huge pages](#Dynamic_huge_pages)
     *   [5.3 CPU调速器](#CPU.E8.B0.83.E9.80.9F.E5.99.A8)
     *   [5.4 高DPC延迟](#.E9.AB.98DPC.E5.BB.B6.E8.BF.9F)
         *   [5.4.1 使用isolcpus固定CPU核心](#.E4.BD.BF.E7.94.A8isolcpus.E5.9B.BA.E5.AE.9ACPU.E6.A0.B8.E5.BF.83)
@@ -266,7 +273,7 @@ nvram = [
 
 使用 `virt-manager` 配置虚拟机的大部分过程都无需指导，只要按照屏幕上的提示即可。
 
-如果使用`virt-manager`，则必须将用户添加到libvirt[组](/index.php/User_group "User group")。
+如果使用`virt-manager`，则必须将用户添加到 `libvirt` [组](/index.php/User_group "User group")。
 
 但是，您仍应该特别注意如下步骤：
 
@@ -295,108 +302,133 @@ OVMF固件不支持启动非EFI介质。如果启动虚拟机之后您直接看�
 
 ### CPU核心固定
 
-默认情况下，KVM将虚拟机的操作作为虚拟处理器的多个线程运行（The default behavior for KVM guests is to run operations coming from the guest as a number of threads representing virtual processors）。这些线程由Linux调度程序管理，如同其他线程一样。并根据niceness和priority分配给任何可用的CPU核心。由于线程之间的切换会增加一些开销（因为切换会影响缓存，because context switching forces the core to change its cache between operations)，这可能会显著影响虚拟机的性能。CPU核心固定旨在解决这些问题，因为它会忽略Linux的线程调度并确保虚拟机的线程始终在特定的内核上运行。例如客户机的核心 0,1,2,3分别映射到宿主机的4,5,6,7 核心。
+默认情况下，KVM将虚拟机的操作作为虚拟处理器的多个线程运行（The default behavior for KVM guests is to run operations coming from the guest as a number of threads representing virtual processors）。这些线程由Linux调度程序管理，如同其他线程一样。并根据 niceness 和 priority 分配给任何可用的CPU核心。因此，当线程切换到另一个核心时，核心的高速缓存将无法发挥作用，这可能会显著影响虚拟机的性能。CPU核心固定旨在解决这些问题，因为它会忽略Linux的线程调度并确保虚拟机的线程始终在特定的内核上运行。例如客户机的核心 0,1,2,3 分别映射到宿主机的 4,5,6,7 核心。
 
 **注意:** 某些启用CPU核心固定的用户可能会遇到卡顿和短暂挂起的问题。尤其是在使用MuQSS调度程序的情况下（存在与linux-ck内核和linux-zen内核）。如果遇到类似的问题，您可能需要首先禁用固定，保证始终具有最大的即时响应性能。
+
+#### CPU 拓扑
+
+大多数现代CPU都支持硬件多任务处理，即 Intel CPU 上的超线程或 AMD CPU 上的 SMT。 超线程/SMT 让一个物理核心具有两个虚拟线程。您需要根据虚拟机和宿主机的用途来设置 CPU 核心固定。
+
+要查看您的 CPU 拓扑，运行 `lscpu -e`：
+
+**注意:** 需要特别注意 **"CORE"** 栏，它表明了虚拟核心和物理核心的对应关系。
+
+6c/12t Ryzen 5 1600 上的 `lscpu -e` 输出：
+
+```
+CPU NODE SOCKET CORE L1d:L1i:L2:L3 ONLINE MAXMHZ    MINMHZ
+0   0    0      0    0:0:0:0       yes    3800.0000 1550.0000
+1   0    0      0    0:0:0:0       yes    3800.0000 1550.0000
+2   0    0      1    1:1:1:0       yes    3800.0000 1550.0000
+3   0    0      1    1:1:1:0       yes    3800.0000 1550.0000
+4   0    0      2    2:2:2:0       yes    3800.0000 1550.0000
+5   0    0      2    2:2:2:0       yes    3800.0000 1550.0000
+6   0    0      3    3:3:3:1       yes    3800.0000 1550.0000
+7   0    0      3    3:3:3:1       yes    3800.0000 1550.0000
+8   0    0      4    4:4:4:1       yes    3800.0000 1550.0000
+9   0    0      4    4:4:4:1       yes    3800.0000 1550.0000
+10  0    0      5    5:5:5:1       yes    3800.0000 1550.0000
+11  0    0      5    5:5:5:1       yes    3800.0000 1550.0000
+
+```
+
+6c/12t Intel 8700k 上的 `lscpu -e` 输出：
+
+```
+CPU NODE SOCKET CORE L1d:L1i:L2:L3 ONLINE MAXMHZ    MINMHZ
+0   0    0      0    0:0:0:0       yes    4600.0000 800.0000
+1   0    0      1    1:1:1:0       yes    4600.0000 800.0000
+2   0    0      2    2:2:2:0       yes    4600.0000 800.0000
+3   0    0      3    3:3:3:0       yes    4600.0000 800.0000
+4   0    0      4    4:4:4:0       yes    4600.0000 800.0000
+5   0    0      5    5:5:5:0       yes    4600.0000 800.0000
+6   0    0      0    0:0:0:0       yes    4600.0000 800.0000
+7   0    0      1    1:1:1:0       yes    4600.0000 800.0000
+8   0    0      2    2:2:2:0       yes    4600.0000 800.0000
+9   0    0      3    3:3:3:0       yes    4600.0000 800.0000
+10  0    0      4    4:4:4:0       yes    4600.0000 800.0000
+11  0    0      5    5:5:5:0       yes    4600.0000 800.0000
+
+```
+
+如上所示，对于上面的 AMD CPU，CPU 0 和 CPU 1 对应 CORE 0，对于上面的英特尔 CPU，CPU 0 和 CPU 6 对应 CORE 0。
+
+如果您不需要虚拟机使用所有核心，那么最好给宿主机留下一个核心。选择要用于宿主机或虚拟机的核心应该基于CPU的特定硬件特性，但在大多数情况下，“CORE0”是宿主机的不错选择。如果为宿主机保留了任何核心，建议将模拟器和 iothreads（如果使用）固定到宿主机核心而不是虚拟 CPU 上。这可以提高性能并减少虚拟机的延迟，因为这些线程不会污染缓存或争抢虚拟 CPU 线程调度。如果虚拟机需要使用所有核心，那么固定模拟器或 iothreads 是没有必要的。
+
+#### XML 示例
+
+**注意:** 如果你的磁盘控制器没有启用 **iothread**，那就不要使用下面例子中的 **iothread**。**iothread**只在**virtio-scsi** 或是 **virtio-blk** 设备上工作。
+
+##### 4c/1t 无超线程的例子
+
  `$ virsh edit [vmname]` 
 ```
 ...
 <vcpu placement='static'>4</vcpu>
 <cputune>
-    <vcpupin vcpu='0' cpuset='4'/>
-    <vcpupin vcpu='1' cpuset='5'/>
-    <vcpupin vcpu='2' cpuset='6'/>
-    <vcpupin vcpu='3' cpuset='7'/>
+    <vcpupin vcpu='0' cpuset='0'/>
+    <vcpupin vcpu='1' cpuset='1'/>
+    <vcpupin vcpu='2' cpuset='2'/>
+    <vcpupin vcpu='3' cpuset='3'/>
 </cputune>
 ...
 
 ```
 
-#### 超线程
-
-如果您的CPU支持硬件多任务处理（即Intel芯片上的超线程），则可以通过两种方式处理CPU核心固定。超线程只是在一个CPU核心上具有两个逻辑处理器，因此，如果物理内核满载，另一个逻辑处理器不会有任何的帮助。如果您将虚拟机的线程固定在同一个物理核心的两个逻辑处理器上，当物理核心满载时，您实际上只使用了一个核心而不是两个。您也可以将虚拟机的每个线程都固定在不同的物理核心上，这取决于您在虚拟机运行时是否仍要在宿主机上执行一些任务。
-
-这是在具有超线程的四核心的机器上的 `/proc/cpuinfo` 的一部分内容。
-
- `$ grep -e "processor" -e "core id" -e "^$" /proc/cpuinfo` 
-```
-processor	: 0
-core id		: 0
-
-processor	: 1
-core id		: 1
-
-processor	: 2
-core id		: 2
-
-processor	: 3
-core id		: 3
-
-processor	: 4
-core id		: 0
-
-processor	: 5
-core id		: 1
-
-processor	: 6
-core id		: 2
-
-processor	: 7
-core id		: 3
-
-```
-
-如果您不打在虚拟机运行时在宿主机上运行任何计算量繁重的工作（或是不需要做任何事情），您可以将虚拟机的线程固定在每个逻辑处理器上，以便让虚拟机可以充分利用所有核心上的备用CPU时间。
-
-在上面提到的四核心机器上，配置就像这样：
+##### 6c/2t Intel CPU 固定的例子
 
  `$ virsh edit [vmname]` 
 ```
 ...
-<vcpu placement='static'>4</vcpu>
-<cputune>
-    <vcpupin vcpu='0' cpuset='4'/>
-    <vcpupin vcpu='1' cpuset='5'/>
-    <vcpupin vcpu='2' cpuset='6'/>
-    <vcpupin vcpu='3' cpuset='7'/>
-</cputune>
-...
-<cpu mode='custom' match='exact'>
-    ...
-    <topology sockets='1' cores='4' threads='1'/>
-    ...
-</cpu>
-...
-
-```
-
-如果您希望同时在宿主机和虚拟机上运行计算量繁重的任务，那么最好将有限的物理内核和它的线程固定在虚拟机上，将其余部分留给宿主机，避免两者竞争CPU时间。
-
-在上面提到的四核心机器上，配置就像这样：
-
- `$ virsh edit [vmname]` 
-```
-...
-<vcpu placement='static'>4</vcpu>
+<vcpu placement='static'>8</vcpu>
+<iothreads>1</iothreads>
 <cputune>
     <vcpupin vcpu='0' cpuset='2'/>
-    <vcpupin vcpu='1' cpuset='6'/>
+    <vcpupin vcpu='1' cpuset='8'/>
     <vcpupin vcpu='2' cpuset='3'/>
-    <vcpupin vcpu='3' cpuset='7'/>
+    <vcpupin vcpu='3' cpuset='9'/>
+    <vcpupin vcpu='4' cpuset='4'/>
+    <vcpupin vcpu='5' cpuset='10'/>
+    <vcpupin vcpu='6' cpuset='5'/>
+    <vcpupin vcpu='7' cpuset='11'/>
+    <emulatorpin cpuset='0,6'/>
+    <iothreadpin iothread='1' cpuset='0,6'/>
 </cputune>
-...
-<cpu mode='custom' match='exact'>
     ...
-    <topology sockets='1' cores='2' threads='2'/>
+    <topology sockets='1' cores='4' threads='2'/>
     ...
-</cpu>
-...
 
 ```
 
-### 静态大分页
+##### 4c/2t AMD CPU 的例子
 
-在处理需要大量内存的应用程序时，内存延迟可能会是一个问题，因为使用的内存分页越多，程序尝试跨分页访问信息的可能性就越高（页是基本的内存分配单位）。将分页解析为实际的内存地址需要多个步骤，因此CPU通常将信息缓存在最近使用的分页上，以加快后续的内存使用。使用大量内存的应用程序可能会遇到内存性能问题：例如，虚拟机使用 4GB 内存，分页大小为 4KB（这是普通分页的默认大小），这意味着缓存命中率可能会大幅降低并大幅增加内存延迟。大分页通过向应用程序提供更大的单个分页来缓解这个问题，从而增加了多个操作中连续位于同一分页的几率。这通常使用透明大分页来处理，通过动态管理大分页来满足需求。
+ `$ virsh edit [vmname]` 
+```
+...
+<vcpu placement='static'>8</vcpu>
+<iothreads>1</iothreads>
+<cputune>
+  <vcpupin vcpu='0' cpuset='2'/>
+  <vcpupin vcpu='1' cpuset='3'/>
+  <vcpupin vcpu='2' cpuset='4'/>
+  <vcpupin vcpu='3' cpuset='5'/>
+  <vcpupin vcpu='4' cpuset='6'/>
+  <vcpupin vcpu='5' cpuset='7'/>
+  <vcpupin vcpu='6' cpuset='8'/>
+  <vcpupin vcpu='7' cpuset='9'/>
+  <emulatorpin cpuset='0-1'/>
+  <iothreadpin iothread='1' cpuset='0-1'/>
+</cputune>
+    ...
+    <topology sockets='1' cores='4' threads='2'/>
+    ...
+
+```
+
+**注意:** 如果你需要进一步的 CPU 隔离，考虑在未使用的物理/虚拟核心上使用 **isolcpus** 内核选项。
+
+如果您不打算在使用虚拟机时在宿主机上进行计算繁重的工作（或是根本不打算在宿主机上做任何事情），您可以将虚拟线程固定在所有核心上以便充分使用 CPU 时间。不过，固定所有物理和虚拟核心可能会导致虚拟机出现延迟。
 
 但是，在具有PCI直通的虚拟机上，从透明大分页中受益是**不可能**的。因为 IOMMU 要求在虚拟机启动之后立即分配所有内存。因此，必须使用静态大分页才能从中受益。
 
@@ -417,6 +449,88 @@ core id		: 3
 ...
 
 ```
+
+### 内存大分页
+
+在处理需要大量内存的应用程序时，内存延迟可能会是一个问题，因为使用的内存分页越多，程序尝试跨分页访问信息的可能性就越高（页是基本的内存分配单位）。将分页解析为实际的内存地址需要多个步骤，因此CPU通常将信息缓存在最近使用的分页上，以加快后续的内存使用。使用大量内存的应用程序可能会遇到内存性能问题：例如，虚拟机使用 4GB 内存，分页大小为 4KB（这是普通分页的默认大小），总共104万页，这意味着缓存命中率可能会大幅降低并大幅增加内存延迟。大分页通过向应用程序提供更大的单个分页来缓解这个问题，从而增加了多个操作中连续位于同一分页的几率。
+
+#### 透明大分页
+
+QEMU 将在 QEMU 或 Libvirt 中自动使用 2 MiB 大小的透明大分页，但这可能并不那么顺利，在使用 VFIO 时，页面会在启动时锁定，并且在虚拟机首次启动时会预先分配透明的大分页。如果内存高度碎片化，或者虚拟机正在使用大部分剩余内存，则内核可能没有足够的2 MiB 页面来完全满足分配。在这种情况下，将会混合使用使用 2 MiB 和 4 KiB 分页，从而无法得到足够的性能提升。由于分页在 VFIO 模式下被锁定，因此内核无法在虚拟机启动后将这些 4 KiB 分页转换为大分页。THP（透明大分页）可用的 2 MiB 大页面数量与通过以下各节中描述的[#动态大分页](#.E5.8A.A8.E6.80.81.E5.A4.A7.E5.88.86.E9.A1.B5)机制相同。
+
+要查看全局使用的 THP 内存量：
+
+```
+$ grep AnonHugePages /proc/meminfo
+AnonHugePages:   8091648 kB
+
+```
+
+要查看特定 QEMU 实例所使用的 THP ，需要指定 QEMU 的 PID：
+
+```
+$ grep -P 'AnonHugePages:\s+(?!0)\d+' /proc/[PID]/smaps
+AnonHugePages:   8087552 kB
+
+```
+
+在这个例子中，虚拟机分配了 8388608 KiB 的内存，但只有 8087552 KiB 可通过 THP 获得。 剩下的301056KiB被分配为 4 KiB 分页。没有任何警告提示使用了 4 KiB 分页。因此，THP 的有效性在很大程度上取决于虚拟机启动时宿主机系统的内存碎片。如果这是不可接受的，建议使用[#固定大分页](#.E5.9B.BA.E5.AE.9A.E5.A4.A7.E5.88.86.E9.A1.B5)。
+
+Arch 内核已经编译并默认启用了 THP，默认为 `madvise` 模式。可在 `/sys/kernel/mm/transparent_hugepage/enabled` 查看。
+
+#### Static huge pages
+
+While transparent huge pages should work in the vast majority of cases, they can also be allocated statically during boot. This should only be needed to make use 1 GiB hugepages on machines that support it, since transparent huge pages normally only go up to 2 MiB.
+
+**Warning:** Static huge pages lock down the allocated amount of memory, making it unavailable for applications that are not configured to use them. Allocating 4 GiBs worth of huge pages on a machine with 8 GiB of memory will only leave you with 4 GiB of available memory on the host **even when the VM is not running**.
+
+To allocate huge pages at boot, one must simply specify the desired amount on their kernel command line with `hugepages=*x*`. For instance, reserving 1024 pages with `hugepages=1024` and the default size of 2048 KiB per huge page creates 2 GiB worth of memory for the virtual machine to use.
+
+If supported by CPU page size could be set manually. 1 GiB huge page support could be verified by `grep pdpe1gb /proc/cpuinfo`. Setting 1 GiB huge page size via kernel parameters : `default_hugepagesz=1G hugepagesz=1G hugepages=X`.
+
+Also, since static huge pages can only be used by applications that specifically request it, you must add this section in your libvirt domain configuration to allow kvm to benefit from them :
+
+ `$ virsh edit [vmname]` 
+```
+...
+<memoryBacking>
+	<hugepages/>
+</memoryBacking>
+...
+
+```
+
+#### Dynamic huge pages
+
+Hugepages could be allocated manually via `vm.nr_overcommit_hugepages` [sysctl](/index.php/Sysctl "Sysctl") parameter.
+
+ `/etc/sysctl.d/10-kvm.conf` 
+```
+vm.nr_hugepages = 0
+vm.nr_overcommit_hugepages = *num*
+```
+
+Where `*num*` - is the number of huge pages, which default size if 2 MiB. Pages will be automatically allocated, and freed after VM stops.
+
+More manual way:
+
+```
+# echo *num* > /sys/kernel/mm/hugepages/hugepages-2048kB/nr_hugepages
+# echo *num* > /sys/kernel/mm/hugepages/hugepages-1048576kB/nr_hugepages
+
+```
+
+For 2 MiB and 1 GiB page size respectively. And they should be manually freed in the same way.
+
+It is hardly recommended to drop caches, compact memory and wait couple of seconds before starting VM, as there could be not enough free contiguous memory for required huge pages blocks. Especially after some uptime of the host system.
+
+```
+# echo 3 > /proc/sys/vm/drop_caches
+# echo 1 > /proc/sys/vm/compact_memory
+
+```
+
+Theoretically, 1 GiB pages works as 2 MiB. But practically - no guaranteed way was found to get contiguous 1 GiB memory blocks. Each consequent request of 1 GiB blocks lead to lesser and lesser dynamically allocated count.
 
 ### CPU调速器
 

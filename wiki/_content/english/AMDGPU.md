@@ -233,7 +233,7 @@ To set the allowed maximum power consumption of the GPU to e.g. 50 Watts, run
 
 ```
 
-Until Linux kernel 4.21/5.1, it will only be possible to decrease the value, not increase.
+Until Linux kernel 4.20, it will only be possible to decrease the value, not increase.
 
 **Note:** The above procedure was tested with a Polaris RX 560 card. There may be different behavior or bugs with different GPUs.
 

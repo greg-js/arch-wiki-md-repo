@@ -51,6 +51,7 @@ For more information, see the [Trusted User Bylaws](https://aur.archlinux.org/tr
 | [ConnorBehan](https://aur.archlinux.org/packages.php?K=ConnorBehan&SeB=m) | Connor Behan | connor.behan@gmail.com |
 | [lfleischer](https://aur.archlinux.org/packages.php?K=lfleischer&SeB=m) | Lukas Fleischer | lfleischer at archlinux dot org |
 | [eworm](https://aur.archlinux.org/packages.php?K=eworm&SeB=m) | Christian Hesse | mail@eworm.de |
+| [dbermond](https://aur.archlinux.org/packages.php?K=dbermond&SeB=m) | Daniel Bermond | gmail-com: danielbermond |
 | [Dragonlord](https://aur.archlinux.org/packages.php?K=Dragonlord&SeB=m) | [Jaroslav Lichtblau](/index.php/User:Drag0nl0rd "User:Drag0nl0rd") | dragonlord @ aur archlinux org |
 | [dvzrv](https://aur.archlinux.org/packages.php?K=dvzrv&SeB=m) | [David Runge](/index.php/User:Davezerave "User:Davezerave") | dave@sleepmap.de |
 | [eschwartz](https://aur.archlinux.org/packages.php?K=eschwartz&SeB=m) | Eli Schwartz | eschwartz@archlinux.org |
@@ -66,6 +67,7 @@ For more information, see the [Trusted User Bylaws](https://aur.archlinux.org/tr
 | [jelly](https://aur.archlinux.org/packages.php?K=jelly&SeB=m) | Jelle van der Waa | jelle vdwaa nl |
 | [jleclanche](https://aur.archlinux.org/packages.php?K=jleclanche&SeB=m) | [Jerome Leclanche](/index.php/User:Jleclanche "User:Jleclanche") | jerome*@*leclan*.*ch |
 | [jsteel](https://aur.archlinux.org/packages.php?K=jsteel&SeB=m) | Jonathan Steel | jsteel at aur.archlinux.org |
+| [kgizdov](https://aur.archlinux.org/packages.php?K=kgizdov&SeB=m) | Konstantin Gizdov | arch@kge.pw |
 | [keenerd](https://aur.archlinux.org/packages.php?K=keenerd&SeB=m) | Kyle Keen | keenerd@gmail.com |
 | [Kyrias](https://aur.archlinux.org/packages.php?K=Kyrias&SeB=m) | [Johannes Löthberg](/index.php/User:Kyrias "User:Kyrias") | johannes@kyriasis.com |
 | [Lordheavy](https://aur.archlinux.org/packages.php?K=lordheavy&SeB=m) | [Laurent Carlier](/index.php/User:Lordheavy "User:Lordheavy") | lordheavym at gmail com |

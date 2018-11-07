@@ -1,20 +1,22 @@
+# Summary
+
 We will provide a package that contains a GPG keyring of the developers keys for import into the pacman keyring.
 
-## Overview of keyring
+# Overview of Keyring
 
-The GPG keyring for pacman is managed by pacman-key and stored in `/etc/pacman.d/gnupg`. This keyring is created using `pacman-key --init`, which also creates an ultimately trusted "Pacman Keychain Master Key". For a key to be accepted by pacman as trusted after being imported to the pacman keyring (`pacman-key --add/--recv-keys`), it must either be locally signed by the Pacman Keychain Master Key (`pacman-key --lsign <key>`), given ultimate trust (via `pacman-key --edit-key <key>`), or reachable from an ultimately trusted key through the PGP Web of Trust.
+The GPG keyring for pacman is managed by pacman-key and stored in /etc/pacman.d/gnupg. This keyring is created using "pacman-key --init", which also creates an ultimately trusted "Pacman Keychain Master Key". For a key to be accepted by pacman as trusted after being imported to the pacman keyring (pacman-key --add/--recv-keys), it must either be locally signed by the Pacman Keychain Master Key (pacman-key --lsign <key>), given ultimate trust (via pacman-key --edit-key <key>), or reachable from an ultimately trusted key through the PGP Web of Trust.
 
 The Arch Linux keyring will contain all packager GPG keys along with a number (~3) of "master" keys. A user will be required to manually verify, import and locally sign the master keys into their pacman keyring. The master keys will be well published on the Arch Linux site and across various developers websites allowing users to readily verify their authenticity. Every developer key will be signed by the master keys and so will be trusted through the web of trust.
 
-A package will be provided that contains the Arch developers GPG keys ready for import with `pacman-key --populate`. This package (and the files in this package) will be signed (detached) by an Arch master key (or all of them). The package contains the following files:
+A package will be provided that contains the Arch developers GPG keys ready for import with "pacman-key --populate". This package (and the files in this package) will be signed (detached) by an Arch master key (or all of them). The package contains the following files:
 
-*   `/usr/share/pacman/keyrings/arch.gpg` - the GPG keyring containing the developer keys (and probably the master keys)
-*   `/usr/share/pacman/keyrings/arch-revoked.gpg` - [OPTIONAL] a list of revoked keys
-*   `/usr/share/pacman/keyrings/arch-trusted` - [OPTIONAL] information about which keys need trusted to the form web of trust
+*   /usr/share/pacman/keyrings/arch.gpg - the GPG keyring containing the developer keys (and probably the master keys)
+*   /usr/share/pacman/keyrings/arch-revoked.gpg - [OPTIONAL] a list of revoked keys
+*   /usr/share/pacman/keyrings/arch-trusted - [OPTIONAL] information about which keys need trusted to the form web of trust
 
-For more details of the files and their format, see the PROVIDING A KEYRING FOR IMPORT section of [pacman-key(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman-key.8).
+For more details of the files and their format, see the PROVIDING A KEYRING FOR IMPORT section of "man pacman-key".
 
-## Areas needing finalized for package signing keyring
+# Areas Needing Finalized for Package Signing Keyring
 
 *   How many Arch master keys will there be?
     *   Note: need at least three to establish the web of trust (by default)

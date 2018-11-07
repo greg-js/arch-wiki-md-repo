@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Code of conduct](/index.php/Code_of_conduct "Code of conduct"). Data da última tradução: 2018-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Code_of_conduct&diff=0&oldid=552385) na versão em inglês.
+
 A comunidade Arch é uma comunidade técnica cujo propósito compartilhado é oferecer suporte e melhoria do Arch Linux.
 
 Arch Linux é uma distribuição movida pela comunidade; os desenvolvedores, equipe de suporte e pessoas que fornece assistência nos vários fóruns fazem todos em seu próprio tempo, motivados por um desejo compartilhado de fornecer um sistema base mínimo que pode ser configurado por um indivíduo para adequar às suas necessidades específicas. Este Código de Conduta foi desenvolvido ao longo de vários anos e reflete o *ethos* da comunidade de um sistema suporte funcional com uma alta taxa de sinal-ruído e uma expectativa explícita de autossuficiência e vontade de aprender.
@@ -118,7 +120,7 @@ Outras considerações nesta categoria incluem:
 
 #### Suporte *apenas* à distribuição Arch Linux
 
-Distribuições baseadas no Arch têm seus próprios fóruns de suporte e usuários daquelas distribuições devem encorajar ativamente a buscar suporte lá. Essas distribuições geralmente usam diferentes pacotes, versões de pacote, repositórios e fazem, silenciosamente, configurações personalizadas de sistemas, praticamente tornando impossível o suporte para tais projetos dentro do Arch Linux. O suporte técnico da comunidade terá como foco apenas a distribuição Arch Linux e o Arch User Repository. Tópicos concernentes a problemas com, e requisitando suportes para distribuições derivadas ou outros sistemas operacionais são proibidos.
+Distribuições baseadas no Arch têm seus próprios fóruns de suporte e usuários daquelas distribuições devem encorajar ativamente a buscar suporte lá. Essas distribuições geralmente usam diferentes pacotes, versões de pacote, repositórios ou fazem, silenciosamente, configurações personalizadas de sistemas, praticamente tornando impossível o suporte para tais projetos dentro do Arch Linux. O suporte técnico da comunidade terá como foco apenas a distribuição Arch Linux e o Arch User Repository. Postar tópicos concernentes a problemas com, e requisição de suporte para, distribuições derivadas ou outros sistemas operacionais são proibidos.
 
 #### Tópicos pessoais/retóricos
 
@@ -175,13 +177,13 @@ Tópicos que buscam informar sobre recomendações de produtos de informática s
 
 #### Tópicos antigos/"ressurreição de tópicos"
 
-Faça sua parte para manter o fórum organizado. Postar em tópicos antigos, ou "ressuscitar" tais tópicos é desencorajado na seção de problemas técnicos, pois pode potencialmente trazer a tona informação "zumbi"; postagens desatualizadas contem informações que não são mais relevantes devido a natureza *rolling release* do Arch, sendo mais adequado buscas em postagens mais recentes. E além do mais, páginas de suporte técnico devem permanecer sucintas, e múltiplas páginas de informação devem ser evitadas.
+Faça sua parte para manter o fórum organizado. Como o wiki é onde o Arch está documentado, postar em tópicos antigos ("ressuscitar" ou *"necrobumping"*) é desencorajado na seção de problemas técnicos, pois pode potencialmente trazer a tona informação "zumbi"; postagens desatualizadas contem informações que não são mais relevantes devido a natureza *rolling release* do Arch, sendo mais adequado buscas em postagens mais recentes. E além do mais, páginas de suporte técnico devem permanecer sucintas, e múltiplas páginas de informação devem ser evitadas.
 
-**Regra do polegar**
+**Regra geral**
 
-*   Se você possui uma pergunta, inicie um novo tópico e referencie um antigo se relevante.
+*   Se você possui uma pergunta, inicie um novo tópico e referencie um antigo se relevante. Você também pode relatar o tópico antigo para que a equipe possa fechá-lo.
 *   Se você possui algo a adicionar e julga que a informação é relacionada porém mais atualizada, inicie um novo tópico e relacione o antigo se desejado, porém, evite a duplicação de esforços postando informação que já está catalogada na Wiki do Arch
-*   Se você possui uma solução que é agnóstica a versão do software, a "ressurreição de tópico" pode ser algo apropriado.
+*   Se você possui uma solução que é agnóstica a versão do software, a ressurreição de tópico *pode* ser apropriado se o tópico não tiver mais que um ou dois anos.
 
 #### Proibição de tópicos vazios/*power-posting*
 
@@ -189,7 +191,7 @@ Faça sua parte para manter o fórum organizado. Postar em tópicos antigos, ou 
 
 Quando postar respostas a mensagens, certifique-se que tem algo a acrescentar. Estas postagens vazias tumultuam discussões, invalidam a função 'Mostrar novas postagens', e gastam banda e espaço no servidor.
 
-Tópicos que caem na série do "+1/-1", "eu também/concordo/discordo" serão trancados. Power posts podem deletados sem prévio aviso.
+Tópicos que caem na série do "+1/-1", "eu também/concordo/discordo" serão trancados. "Power posts" podem deletados sem prévio aviso.
 
 #### *Bumping*
 
@@ -197,7 +199,7 @@ Postar uma única palavra sem significado para atrair a atenção de um tópico 
 
 #### Publicação cruzada
 
-É o tipo de postagem onde a mesma pergunta é feita em diferentes sub-fóruns(por exemplo, postando no "Newbie Corner" e em "Installation"). Figura desperdício de recursos e não é permitido. Qualquer tópico que seja enquadrado como postagem cruzada será imediatamente trancado ou deletado.
+É o tipo de postagem onde a mesma pergunta é feita em diferentes subfóruns (por exemplo, postando no "Newbie Corner" e em "Installation"). Figura desperdício de recursos e não é permitido. Qualquer tópico que seja enquadrado como postagem cruzada será imediatamente trancado ou deletado.
 
 #### Espoliação(Hijacking) de Tópicos
 

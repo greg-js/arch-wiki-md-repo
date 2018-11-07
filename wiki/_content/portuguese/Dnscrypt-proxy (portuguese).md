@@ -151,7 +151,7 @@ forward-zone:
 
 ##### dnsmasq
 
-Configure o dnsmasq como um [cache DNS local](/index.php/Dnsmasq#DNS_server "Dnsmasq"). A configuração básica para trabalhar com *dnscrypt-proxy*:
+Configure o dnsmasq como um [cache DNS local](/index.php/Dnsmasq_(Portugu%C3%AAs)#Servidor_DNS "Dnsmasq (Português)"). A configuração básica para trabalhar com *dnscrypt-proxy*:
 
  `/etc/dnsmasq.conf` 
 ```

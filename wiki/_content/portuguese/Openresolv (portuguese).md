@@ -47,7 +47,7 @@ Clientes [VPN](/index.php/VPN "VPN"):
 Openresolv pode ser configurado para passar servidores de nome e domínios de pesquisa para resolvedores de DNS. Há suporte aos seguintes resolvedores:
 
 *   [Unbound](/index.php/Unbound "Unbound")
-*   [dnsmasq#openresolv](/index.php/Dnsmasq#openresolv "Dnsmasq")
+*   [dnsmasq (Português)#openresolv](/index.php/Dnsmasq_(Portugu%C3%AAs)#openresolv "Dnsmasq (Português)")
 *   [BIND](/index.php/BIND "BIND")
 *   [pdnsd](/index.php/Pdnsd "Pdnsd")
 

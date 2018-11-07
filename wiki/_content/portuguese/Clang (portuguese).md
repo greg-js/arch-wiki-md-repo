@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Clang](/index.php/Clang "Clang"). Data da última tradução: 2018-08-24\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Clang&diff=0&oldid=537466) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Clang](/index.php/Clang "Clang"). Data da última tradução: 2018-11-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Clang&diff=0&oldid=551753) na versão em inglês.
 
 [Clang](http://clang.llvm.org/) é um compilador [C](/index.php/C "C")/C++/Objective C//[CUDA](/index.php/CUDA "CUDA") baseado em [LLVM](/index.php/LLVM "LLVM"). É distribuído sob a licença BSD.
 

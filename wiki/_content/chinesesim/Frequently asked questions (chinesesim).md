@@ -1,6 +1,4 @@
-**翻译状态：** 本文是英文页面 [Frequently_asked_questions](/index.php/Frequently_asked_questions "Frequently asked questions") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-09-07，点击[这里](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=447663)可以查看翻译后英文页面的改动。
-
-除了本文，还建议你阅读一下[Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)") 和 [Arch terminology](/index.php/Arch_terminology "Arch terminology")。
+**翻译状态：** 本文是英文页面 [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2018-11-06，点击[这里](https://wiki.archlinux.org/index.php?title=Frequently+asked+questions&diff=0&oldid=547713)可以查看翻译后英文页面的改动。
 
 ## Contents
 
@@ -9,33 +7,31 @@
     *   [1.2 Q) 为什么我不想用Arch？](#Q.29_.E4.B8.BA.E4.BB.80.E4.B9.88.E6.88.91.E4.B8.8D.E6.83.B3.E7.94.A8Arch.EF.BC.9F)
     *   [1.3 Q) Arch Linux 支持什么架构?](#Q.29_Arch_Linux_.E6.94.AF.E6.8C.81.E4.BB.80.E4.B9.88.E6.9E.B6.E6.9E.84.3F)
     *   [1.4 Arch 遵循 FHS 吗?](#Arch_.E9.81.B5.E5.BE.AA_FHS_.E5.90.97.3F)
-    *   [1.5 Arch Linux 支持 ARM 处理器吗?](#Arch_Linux_.E6.94.AF.E6.8C.81_ARM_.E5.A4.84.E7.90.86.E5.99.A8.E5.90.97.3F)
-    *   [1.6 我是一个彻头彻尾的Linux新手，我应该用Arch吗？](#.E6.88.91.E6.98.AF.E4.B8.80.E4.B8.AA.E5.BD.BB.E5.A4.B4.E5.BD.BB.E5.B0.BE.E7.9A.84Linux.E6.96.B0.E6.89.8B.EF.BC.8C.E6.88.91.E5.BA.94.E8.AF.A5.E7.94.A8Arch.E5.90.97.EF.BC.9F)
-    *   [1.7 Q) Arch的安装和配置十分麻烦，社区的人总是让我去读那些死长死长的手册。](#Q.29_Arch.E7.9A.84.E5.AE.89.E8.A3.85.E5.92.8C.E9.85.8D.E7.BD.AE.E5.8D.81.E5.88.86.E9.BA.BB.E7.83.A6.EF.BC.8C.E7.A4.BE.E5.8C.BA.E7.9A.84.E4.BA.BA.E6.80.BB.E6.98.AF.E8.AE.A9.E6.88.91.E5.8E.BB.E8.AF.BB.E9.82.A3.E4.BA.9B.E6.AD.BB.E9.95.BF.E6.AD.BB.E9.95.BF.E7.9A.84.E6.89.8B.E5.86.8C.E3.80.82)
-    *   [1.8 Q) Arch是为服务器、桌面还是工作站设计的？](#Q.29_Arch.E6.98.AF.E4.B8.BA.E6.9C.8D.E5.8A.A1.E5.99.A8.E3.80.81.E6.A1.8C.E9.9D.A2.E8.BF.98.E6.98.AF.E5.B7.A5.E4.BD.9C.E7.AB.99.E8.AE.BE.E8.AE.A1.E7.9A.84.EF.BC.9F)
-    *   [1.9 我太喜欢Arch了，希望开发团队实现一个新功能](#.E6.88.91.E5.A4.AA.E5.96.9C.E6.AC.A2Arch.E4.BA.86.EF.BC.8C.E5.B8.8C.E6.9C.9B.E5.BC.80.E5.8F.91.E5.9B.A2.E9.98.9F.E5.AE.9E.E7.8E.B0.E4.B8.80.E4.B8.AA.E6.96.B0.E5.8A.9F.E8.83.BD)
-    *   [1.10 Q) 什么时候发布新版本？](#Q.29_.E4.BB.80.E4.B9.88.E6.97.B6.E5.80.99.E5.8F.91.E5.B8.83.E6.96.B0.E7.89.88.E6.9C.AC.EF.BC.9F)
-    *   [1.11 Q) Arch Linux 是否稳定？会不会经常坏掉？](#Q.29_Arch_Linux_.E6.98.AF.E5.90.A6.E7.A8.B3.E5.AE.9A.EF.BC.9F.E4.BC.9A.E4.B8.8D.E4.BC.9A.E7.BB.8F.E5.B8.B8.E5.9D.8F.E6.8E.89.EF.BC.9F)
-    *   [1.12 Q) Arch需要更多曝光（比如广告）。](#Q.29_Arch.E9.9C.80.E8.A6.81.E6.9B.B4.E5.A4.9A.E6.9B.9D.E5.85.89.EF.BC.88.E6.AF.94.E5.A6.82.E5.B9.BF.E5.91.8A.EF.BC.89.E3.80.82)
-    *   [1.13 Q) Arch需要更多开发者](#Q.29_Arch.E9.9C.80.E8.A6.81.E6.9B.B4.E5.A4.9A.E5.BC.80.E5.8F.91.E8.80.85)
-    *   [1.14 Q) 为什么Arch下网速比其他系统慢？](#Q.29_.E4.B8.BA.E4.BB.80.E4.B9.88Arch.E4.B8.8B.E7.BD.91.E9.80.9F.E6.AF.94.E5.85.B6.E4.BB.96.E7.B3.BB.E7.BB.9F.E6.85.A2.EF.BC.9F)
-    *   [1.15 Q) Arch为什么用了我的所有内存？](#Q.29_Arch.E4.B8.BA.E4.BB.80.E4.B9.88.E7.94.A8.E4.BA.86.E6.88.91.E7.9A.84.E6.89.80.E6.9C.89.E5.86.85.E5.AD.98.EF.BC.9F)
-    *   [1.16 Q) 我的磁盘空间被什么东西占用了？](#Q.29_.E6.88.91.E7.9A.84.E7.A3.81.E7.9B.98.E7.A9.BA.E9.97.B4.E8.A2.AB.E4.BB.80.E4.B9.88.E4.B8.9C.E8.A5.BF.E5.8D.A0.E7.94.A8.E4.BA.86.EF.BC.9F)
+    *   [1.5 我是一个彻头彻尾的Linux新手，我应该用Arch吗？](#.E6.88.91.E6.98.AF.E4.B8.80.E4.B8.AA.E5.BD.BB.E5.A4.B4.E5.BD.BB.E5.B0.BE.E7.9A.84Linux.E6.96.B0.E6.89.8B.EF.BC.8C.E6.88.91.E5.BA.94.E8.AF.A5.E7.94.A8Arch.E5.90.97.EF.BC.9F)
+    *   [1.6 Q) Arch的安装和配置十分麻烦，社区的人总是让我去读那些死长死长的手册。](#Q.29_Arch.E7.9A.84.E5.AE.89.E8.A3.85.E5.92.8C.E9.85.8D.E7.BD.AE.E5.8D.81.E5.88.86.E9.BA.BB.E7.83.A6.EF.BC.8C.E7.A4.BE.E5.8C.BA.E7.9A.84.E4.BA.BA.E6.80.BB.E6.98.AF.E8.AE.A9.E6.88.91.E5.8E.BB.E8.AF.BB.E9.82.A3.E4.BA.9B.E6.AD.BB.E9.95.BF.E6.AD.BB.E9.95.BF.E7.9A.84.E6.89.8B.E5.86.8C.E3.80.82)
+    *   [1.7 Q) Arch是为服务器、桌面还是工作站设计的？](#Q.29_Arch.E6.98.AF.E4.B8.BA.E6.9C.8D.E5.8A.A1.E5.99.A8.E3.80.81.E6.A1.8C.E9.9D.A2.E8.BF.98.E6.98.AF.E5.B7.A5.E4.BD.9C.E7.AB.99.E8.AE.BE.E8.AE.A1.E7.9A.84.EF.BC.9F)
+    *   [1.8 我太喜欢Arch了，希望开发团队实现一个新功能](#.E6.88.91.E5.A4.AA.E5.96.9C.E6.AC.A2Arch.E4.BA.86.EF.BC.8C.E5.B8.8C.E6.9C.9B.E5.BC.80.E5.8F.91.E5.9B.A2.E9.98.9F.E5.AE.9E.E7.8E.B0.E4.B8.80.E4.B8.AA.E6.96.B0.E5.8A.9F.E8.83.BD)
+    *   [1.9 Q) 什么时候发布新版本？](#Q.29_.E4.BB.80.E4.B9.88.E6.97.B6.E5.80.99.E5.8F.91.E5.B8.83.E6.96.B0.E7.89.88.E6.9C.AC.EF.BC.9F)
+    *   [1.10 Q) Arch Linux 是否稳定？会不会经常坏掉？](#Q.29_Arch_Linux_.E6.98.AF.E5.90.A6.E7.A8.B3.E5.AE.9A.EF.BC.9F.E4.BC.9A.E4.B8.8D.E4.BC.9A.E7.BB.8F.E5.B8.B8.E5.9D.8F.E6.8E.89.EF.BC.9F)
+    *   [1.11 Q) Arch需要更多曝光（比如广告）。](#Q.29_Arch.E9.9C.80.E8.A6.81.E6.9B.B4.E5.A4.9A.E6.9B.9D.E5.85.89.EF.BC.88.E6.AF.94.E5.A6.82.E5.B9.BF.E5.91.8A.EF.BC.89.E3.80.82)
+    *   [1.12 Q) Arch需要更多开发者](#Q.29_Arch.E9.9C.80.E8.A6.81.E6.9B.B4.E5.A4.9A.E5.BC.80.E5.8F.91.E8.80.85)
+    *   [1.13 Q) 为什么Arch下网速比其他系统慢？](#Q.29_.E4.B8.BA.E4.BB.80.E4.B9.88Arch.E4.B8.8B.E7.BD.91.E9.80.9F.E6.AF.94.E5.85.B6.E4.BB.96.E7.B3.BB.E7.BB.9F.E6.85.A2.EF.BC.9F)
+    *   [1.14 Q) Arch为什么用了我的所有内存？](#Q.29_Arch.E4.B8.BA.E4.BB.80.E4.B9.88.E7.94.A8.E4.BA.86.E6.88.91.E7.9A.84.E6.89.80.E6.9C.89.E5.86.85.E5.AD.98.EF.BC.9F)
+    *   [1.15 Q) 我的磁盘空间被什么东西占用了？](#Q.29_.E6.88.91.E7.9A.84.E7.A3.81.E7.9B.98.E7.A9.BA.E9.97.B4.E8.A2.AB.E4.BB.80.E4.B9.88.E4.B8.9C.E8.A5.BF.E5.8D.A0.E7.94.A8.E4.BA.86.EF.BC.9F)
 *   [2 软件包管理](#.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.AE.A1.E7.90.86)
-    *   [2.1 Q) 那个啥啥程序在什么软件包里面？](#Q.29_.E9.82.A3.E4.B8.AA.E5.95.A5.E5.95.A5.E7.A8.8B.E5.BA.8F.E5.9C.A8.E4.BB.80.E4.B9.88.E8.BD.AF.E4.BB.B6.E5.8C.85.E9.87.8C.E9.9D.A2.EF.BC.9F)
-    *   [2.2 Q) 我发现了某个软件包的错误，该怎么办？](#Q.29_.E6.88.91.E5.8F.91.E7.8E.B0.E4.BA.86.E6.9F.90.E4.B8.AA.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.9A.84.E9.94.99.E8.AF.AF.EF.BC.8C.E8.AF.A5.E6.80.8E.E4.B9.88.E5.8A.9E.EF.BC.9F)
-    *   [2.3 Q) Arch软件包需要独特的后缀名。“.pkg.tar.xz”太长了，而且令人困惑](#Q.29_Arch.E8.BD.AF.E4.BB.B6.E5.8C.85.E9.9C.80.E8.A6.81.E7.8B.AC.E7.89.B9.E7.9A.84.E5.90.8E.E7.BC.80.E5.90.8D.E3.80.82.E2.80.9C.pkg.tar.xz.E2.80.9D.E5.A4.AA.E9.95.BF.E4.BA.86.EF.BC.8C.E8.80.8C.E4.B8.94.E4.BB.A4.E4.BA.BA.E5.9B.B0.E6.83.91)
-    *   [2.4 Q) Pacman应该提供函数库接口，这样其他软件就可容易地获得软件包信息。](#Q.29_Pacman.E5.BA.94.E8.AF.A5.E6.8F.90.E4.BE.9B.E5.87.BD.E6.95.B0.E5.BA.93.E6.8E.A5.E5.8F.A3.EF.BC.8C.E8.BF.99.E6.A0.B7.E5.85.B6.E4.BB.96.E8.BD.AF.E4.BB.B6.E5.B0.B1.E5.8F.AF.E5.AE.B9.E6.98.93.E5.9C.B0.E8.8E.B7.E5.BE.97.E8.BD.AF.E4.BB.B6.E5.8C.85.E4.BF.A1.E6.81.AF.E3.80.82)
-    *   [2.5 Pacman需要某某功能！](#Pacman.E9.9C.80.E8.A6.81.E6.9F.90.E6.9F.90.E5.8A.9F.E8.83.BD.EF.BC.81)
-    *   [2.6 Arch的不同软件仓库分别有什么用？](#Arch.E7.9A.84.E4.B8.8D.E5.90.8C.E8.BD.AF.E4.BB.B6.E4.BB.93.E5.BA.93.E5.88.86.E5.88.AB.E6.9C.89.E4.BB.80.E4.B9.88.E7.94.A8.EF.BC.9F)
-    *   [2.7 仓库和镜像的区别是什么？](#.E4.BB.93.E5.BA.93.E5.92.8C.E9.95.9C.E5.83.8F.E7.9A.84.E5.8C.BA.E5.88.AB.E6.98.AF.E4.BB.80.E4.B9.88.EF.BC.9F)
-    *   [2.8 Q) 我刚刚安装了一个软件包，怎么启动呢？](#Q.29_.E6.88.91.E5.88.9A.E5.88.9A.E5.AE.89.E8.A3.85.E4.BA.86.E4.B8.80.E4.B8.AA.E8.BD.AF.E4.BB.B6.E5.8C.85.EF.BC.8C.E6.80.8E.E4.B9.88.E5.90.AF.E5.8A.A8.E5.91.A2.EF.BC.9F)
-    *   [2.9 Q) 在官方仓库中，为什么只为每个共享链接库提供一个版本？](#Q.29_.E5.9C.A8.E5.AE.98.E6.96.B9.E4.BB.93.E5.BA.93.E4.B8.AD.EF.BC.8C.E4.B8.BA.E4.BB.80.E4.B9.88.E5.8F.AA.E4.B8.BA.E6.AF.8F.E4.B8.AA.E5.85.B1.E4.BA.AB.E9.93.BE.E6.8E.A5.E5.BA.93.E6.8F.90.E4.BE.9B.E4.B8.80.E4.B8.AA.E7.89.88.E6.9C.AC.EF.BC.9F)
-    *   [2.10 Q) 执行pacman -Syu时，显示某个共享库需要升级，但依赖它的程序没有升级，我该怎么做呢？](#Q.29_.E6.89.A7.E8.A1.8Cpacman_-Syu.E6.97.B6.EF.BC.8C.E6.98.BE.E7.A4.BA.E6.9F.90.E4.B8.AA.E5.85.B1.E4.BA.AB.E5.BA.93.E9.9C.80.E8.A6.81.E5.8D.87.E7.BA.A7.EF.BC.8C.E4.BD.86.E4.BE.9D.E8.B5.96.E5.AE.83.E7.9A.84.E7.A8.8B.E5.BA.8F.E6.B2.A1.E6.9C.89.E5.8D.87.E7.BA.A7.EF.BC.8C.E6.88.91.E8.AF.A5.E6.80.8E.E4.B9.88.E5.81.9A.E5.91.A2.EF.BC.9F)
-    *   [2.11 会不会出现仓库中的内核主版本更新了，而某些驱动包没有一同升级的情况？](#.E4.BC.9A.E4.B8.8D.E4.BC.9A.E5.87.BA.E7.8E.B0.E4.BB.93.E5.BA.93.E4.B8.AD.E7.9A.84.E5.86.85.E6.A0.B8.E4.B8.BB.E7.89.88.E6.9C.AC.E6.9B.B4.E6.96.B0.E4.BA.86.EF.BC.8C.E8.80.8C.E6.9F.90.E4.BA.9B.E9.A9.B1.E5.8A.A8.E5.8C.85.E6.B2.A1.E6.9C.89.E4.B8.80.E5.90.8C.E5.8D.87.E7.BA.A7.E7.9A.84.E6.83.85.E5.86.B5.EF.BC.9F)
-    *   [2.12 Arch 使用软件包签名机制吗？](#Arch_.E4.BD.BF.E7.94.A8.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.AD.BE.E5.90.8D.E6.9C.BA.E5.88.B6.E5.90.97.EF.BC.9F)
-    *   [2.13 升级前该做什么?](#.E5.8D.87.E7.BA.A7.E5.89.8D.E8.AF.A5.E5.81.9A.E4.BB.80.E4.B9.88.3F)
-    *   [2.14 我知道某个包已经更新,但是 pacman 并没有发现更新](#.E6.88.91.E7.9F.A5.E9.81.93.E6.9F.90.E4.B8.AA.E5.8C.85.E5.B7.B2.E7.BB.8F.E6.9B.B4.E6.96.B0.2C.E4.BD.86.E6.98.AF_pacman_.E5.B9.B6.E6.B2.A1.E6.9C.89.E5.8F.91.E7.8E.B0.E6.9B.B4.E6.96.B0)
+    *   [2.1 Q) 我发现了某个软件包的错误，该怎么办？](#Q.29_.E6.88.91.E5.8F.91.E7.8E.B0.E4.BA.86.E6.9F.90.E4.B8.AA.E8.BD.AF.E4.BB.B6.E5.8C.85.E7.9A.84.E9.94.99.E8.AF.AF.EF.BC.8C.E8.AF.A5.E6.80.8E.E4.B9.88.E5.8A.9E.EF.BC.9F)
+    *   [2.2 Q) Arch软件包需要独特的后缀名。“.pkg.tar.xz”太长了，而且令人困惑](#Q.29_Arch.E8.BD.AF.E4.BB.B6.E5.8C.85.E9.9C.80.E8.A6.81.E7.8B.AC.E7.89.B9.E7.9A.84.E5.90.8E.E7.BC.80.E5.90.8D.E3.80.82.E2.80.9C.pkg.tar.xz.E2.80.9D.E5.A4.AA.E9.95.BF.E4.BA.86.EF.BC.8C.E8.80.8C.E4.B8.94.E4.BB.A4.E4.BA.BA.E5.9B.B0.E6.83.91)
+    *   [2.3 Q) Pacman应该提供函数库接口，这样其他软件就可容易地获得软件包信息。](#Q.29_Pacman.E5.BA.94.E8.AF.A5.E6.8F.90.E4.BE.9B.E5.87.BD.E6.95.B0.E5.BA.93.E6.8E.A5.E5.8F.A3.EF.BC.8C.E8.BF.99.E6.A0.B7.E5.85.B6.E4.BB.96.E8.BD.AF.E4.BB.B6.E5.B0.B1.E5.8F.AF.E5.AE.B9.E6.98.93.E5.9C.B0.E8.8E.B7.E5.BE.97.E8.BD.AF.E4.BB.B6.E5.8C.85.E4.BF.A1.E6.81.AF.E3.80.82)
+    *   [2.4 Pacman需要某某功能！](#Pacman.E9.9C.80.E8.A6.81.E6.9F.90.E6.9F.90.E5.8A.9F.E8.83.BD.EF.BC.81)
+    *   [2.5 仓库和镜像的区别是什么？](#.E4.BB.93.E5.BA.93.E5.92.8C.E9.95.9C.E5.83.8F.E7.9A.84.E5.8C.BA.E5.88.AB.E6.98.AF.E4.BB.80.E4.B9.88.EF.BC.9F)
+    *   [2.6 Q) 我刚刚安装了一个软件包，怎么启动呢？](#Q.29_.E6.88.91.E5.88.9A.E5.88.9A.E5.AE.89.E8.A3.85.E4.BA.86.E4.B8.80.E4.B8.AA.E8.BD.AF.E4.BB.B6.E5.8C.85.EF.BC.8C.E6.80.8E.E4.B9.88.E5.90.AF.E5.8A.A8.E5.91.A2.EF.BC.9F)
+    *   [2.7 Q) 在官方仓库中，为什么只为每个共享链接库提供一个版本？](#Q.29_.E5.9C.A8.E5.AE.98.E6.96.B9.E4.BB.93.E5.BA.93.E4.B8.AD.EF.BC.8C.E4.B8.BA.E4.BB.80.E4.B9.88.E5.8F.AA.E4.B8.BA.E6.AF.8F.E4.B8.AA.E5.85.B1.E4.BA.AB.E9.93.BE.E6.8E.A5.E5.BA.93.E6.8F.90.E4.BE.9B.E4.B8.80.E4.B8.AA.E7.89.88.E6.9C.AC.EF.BC.9F)
+    *   [2.8 Q) 执行pacman -Syu时，显示某个共享库需要升级，但依赖它的程序没有升级，我该怎么做呢？](#Q.29_.E6.89.A7.E8.A1.8Cpacman_-Syu.E6.97.B6.EF.BC.8C.E6.98.BE.E7.A4.BA.E6.9F.90.E4.B8.AA.E5.85.B1.E4.BA.AB.E5.BA.93.E9.9C.80.E8.A6.81.E5.8D.87.E7.BA.A7.EF.BC.8C.E4.BD.86.E4.BE.9D.E8.B5.96.E5.AE.83.E7.9A.84.E7.A8.8B.E5.BA.8F.E6.B2.A1.E6.9C.89.E5.8D.87.E7.BA.A7.EF.BC.8C.E6.88.91.E8.AF.A5.E6.80.8E.E4.B9.88.E5.81.9A.E5.91.A2.EF.BC.9F)
+    *   [2.9 会不会出现仓库中的内核主版本更新了，而某些驱动包没有一同升级的情况？](#.E4.BC.9A.E4.B8.8D.E4.BC.9A.E5.87.BA.E7.8E.B0.E4.BB.93.E5.BA.93.E4.B8.AD.E7.9A.84.E5.86.85.E6.A0.B8.E4.B8.BB.E7.89.88.E6.9C.AC.E6.9B.B4.E6.96.B0.E4.BA.86.EF.BC.8C.E8.80.8C.E6.9F.90.E4.BA.9B.E9.A9.B1.E5.8A.A8.E5.8C.85.E6.B2.A1.E6.9C.89.E4.B8.80.E5.90.8C.E5.8D.87.E7.BA.A7.E7.9A.84.E6.83.85.E5.86.B5.EF.BC.9F)
+    *   [2.10 升级前该做什么?](#.E5.8D.87.E7.BA.A7.E5.89.8D.E8.AF.A5.E5.81.9A.E4.BB.80.E4.B9.88.3F)
+    *   [2.11 我知道某个包已经更新,但是 pacman 并没有发现更新](#.E6.88.91.E7.9F.A5.E9.81.93.E6.9F.90.E4.B8.AA.E5.8C.85.E5.B7.B2.E7.BB.8F.E6.9B.B4.E6.96.B0.2C.E4.BD.86.E6.98.AF_pacman_.E5.B9.B6.E6.B2.A1.E6.9C.89.E5.8F.91.E7.8E.B0.E6.9B.B4.E6.96.B0)
+    *   [2.12 *X* 上游项目已经发布了一个新版本，多长时间 Arch 才会更新到新版本？](#X_.E4.B8.8A.E6.B8.B8.E9.A1.B9.E7.9B.AE.E5.B7.B2.E7.BB.8F.E5.8F.91.E5.B8.83.E4.BA.86.E4.B8.80.E4.B8.AA.E6.96.B0.E7.89.88.E6.9C.AC.EF.BC.8C.E5.A4.9A.E9.95.BF.E6.97.B6.E9.97.B4_Arch_.E6.89.8D.E4.BC.9A.E6.9B.B4.E6.96.B0.E5.88.B0.E6.96.B0.E7.89.88.E6.9C.AC.EF.BC.9F)
+    *   [2.13 如果需要一个老的软件库，可以 symlink 到新版本吗？](#.E5.A6.82.E6.9E.9C.E9.9C.80.E8.A6.81.E4.B8.80.E4.B8.AA.E8.80.81.E7.9A.84.E8.BD.AF.E4.BB.B6.E5.BA.93.EF.BC.8C.E5.8F.AF.E4.BB.A5_symlink_.E5.88.B0.E6.96.B0.E7.89.88.E6.9C.AC.E5.90.97.EF.BC.9F)
 *   [3 安装](#.E5.AE.89.E8.A3.85)
     *   [3.1 Q) Arch需要安装程序，比如带图形界面的。](#Q.29_Arch.E9.9C.80.E8.A6.81.E5.AE.89.E8.A3.85.E7.A8.8B.E5.BA.8F.EF.BC.8C.E6.AF.94.E5.A6.82.E5.B8.A6.E5.9B.BE.E5.BD.A2.E7.95.8C.E9.9D.A2.E7.9A.84.E3.80.82)
     *   [3.2 我安装了Arch，现在正面对一个命令行登陆界面，怎么办？](#.E6.88.91.E5.AE.89.E8.A3.85.E4.BA.86Arch.EF.BC.8C.E7.8E.B0.E5.9C.A8.E6.AD.A3.E9.9D.A2.E5.AF.B9.E4.B8.80.E4.B8.AA.E5.91.BD.E4.BB.A4.E8.A1.8C.E7.99.BB.E9.99.86.E7.95.8C.E9.9D.A2.EF.BC.8C.E6.80.8E.E4.B9.88.E5.8A.9E.EF.BC.9F)
@@ -45,10 +41,7 @@
     *   [4.1 Q) AUR是什么？](#Q.29_AUR.E6.98.AF.E4.BB.80.E4.B9.88.EF.BC.9F)
 *   [5 64-bit](#64-bit)
     *   [5.1 我如何确定我的处理器是否支持 x86_64?](#.E6.88.91.E5.A6.82.E4.BD.95.E7.A1.AE.E5.AE.9A.E6.88.91.E7.9A.84.E5.A4.84.E7.90.86.E5.99.A8.E6.98.AF.E5.90.A6.E6.94.AF.E6.8C.81_x86_64.3F)
-    *   [5.2 32-bit Arch 中的所有软件包都有 64bit 版本吗?](#32-bit_Arch_.E4.B8.AD.E7.9A.84.E6.89.80.E6.9C.89.E8.BD.AF.E4.BB.B6.E5.8C.85.E9.83.BD.E6.9C.89_64bit_.E7.89.88.E6.9C.AC.E5.90.97.3F)
-    *   [5.3 为什么使用64位?](#.E4.B8.BA.E4.BB.80.E4.B9.88.E4.BD.BF.E7.94.A864.E4.BD.8D.3F)
-    *   [5.4 我可以在Arch64下编译给i686用的32-bit软件包吗？](#.E6.88.91.E5.8F.AF.E4.BB.A5.E5.9C.A8Arch64.E4.B8.8B.E7.BC.96.E8.AF.91.E7.BB.99i686.E7.94.A8.E7.9A.8432-bit.E8.BD.AF.E4.BB.B6.E5.8C.85.E5.90.97.EF.BC.9F)
-    *   [5.5 我可以无需重新安装将我的系统从i686升级/切换到x86_64吗？](#.E6.88.91.E5.8F.AF.E4.BB.A5.E6.97.A0.E9.9C.80.E9.87.8D.E6.96.B0.E5.AE.89.E8.A3.85.E5.B0.86.E6.88.91.E7.9A.84.E7.B3.BB.E7.BB.9F.E4.BB.8Ei686.E5.8D.87.E7.BA.A7.2F.E5.88.87.E6.8D.A2.E5.88.B0x86_64.E5.90.97.EF.BC.9F)
+    *   [5.2 为什么使用64位?](#.E4.B8.BA.E4.BB.80.E4.B9.88.E4.BD.BF.E7.94.A864.E4.BD.8D.3F)
 
 ## 一般问题
 
@@ -69,15 +62,13 @@
 
 ### Q) Arch Linux 支持什么架构?
 
-Arch Linux 现在只支持 x86_64 (有时称为amd64) 架构，[对 i686 架构的支持将逐渐终结](https://www.archlinux.org/news/phasing-out-i686-support/)，如果你仍在使用 i686 版本，请参阅 [#我可以无需重新安装将我的系统从i686升级/切换到x86_64吗？](#.E6.88.91.E5.8F.AF.E4.BB.A5.E6.97.A0.E9.9C.80.E9.87.8D.E6.96.B0.E5.AE.89.E8.A3.85.E5.B0.86.E6.88.91.E7.9A.84.E7.B3.BB.E7.BB.9F.E4.BB.8Ei686.E5.8D.87.E7.BA.A7.2F.E5.88.87.E6.8D.A2.E5.88.B0x86_64.E5.90.97.EF.BC.9F)
+Arch Linux 现在只支持 x86_64 (有时称为amd64) 架构，[对 i686 架构的支持将逐渐终结](https://www.archlinux.org/news/phasing-out-i686-support/)。
+
+*非官方支持* 的移植版本： [i686](https://archlinux32.org/) 和 [ARM](https://en.wikipedia.org/wiki/ARM_architecture "wikipedia:ARM architecture") [[1]](http://archlinuxarm.org/)。
 
 ### Arch 遵循 [FHS](http://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html) 吗?
 
 Arch Linux 遵循适用于 [systemd](/index.php/Systemd "Systemd") 服务管理器的文件系统架构，[file-hierarchy(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/file-hierarchy.7) 包含了每个文件夹的解释和设计。 `/bin`, `/sbin` 和 `/usr/sbin` 现在是 `/usr/bin` 的符号链接，`/lib` (以及 `/lib64`) 是 `/usr/lib` 的符号链接。
-
-### Arch Linux 支持 ARM 处理器吗?
-
-没有,[Arch Linux ARM](http://archlinuxarm.org/) 提供了 Arch Linux 向几个 ARM 平台移植的解决方案.
 
 ### 我是一个彻头彻尾的Linux新手，我应该用Arch吗？
 
@@ -153,21 +144,7 @@ Swap:         1537          0       1537
 
 ## 软件包管理
 
-### Q) 那个啥啥程序在什么软件包里面？
-
-使用 [pkgfile](/index.php/Pkgfile "Pkgfile").
-
-```
-$ pkgfile *file_name*
-
-```
-
-例如，要查看`glxinfo`在哪个包里面：
-
-```
-$ pkgfile *glxinfo*
-
-```
+详情请参考 [pacman](/index.php/Pacman "Pacman")、[pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks") 和 [Official repositories](/index.php/Official_repositories "Official repositories")。
 
 ### Q) 我发现了某个软件包的错误，该怎么办？
 
@@ -192,10 +169,6 @@ $ pkgfile *glxinfo*
 如果有新想法，可以在 [pacman-dev](https://lists.archlinux.org//listinfo/pacman-dev/) 邮件列表进行讨论，或查看[官方论坛](https://bbs.archlinux.org/) 看看有没有类似想法。
 
 也欢迎你自己实现新功能。也许你的代码或补丁不会被官方接受，但他人可能会用到。
-
-### Arch的不同软件仓库分别有什么用？
-
-参见[官方软件仓库](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")。
 
 ### 仓库和镜像的区别是什么？
 
@@ -233,10 +206,6 @@ libbaz=1.5
 
 不可能。当内核主版本升级时，所有支持的驱动一定会一同更新。然而，如果你安装有非内核支持的驱动包，比如`catalyst`，内核升级可能导致系统挂机。你应当在内核升级时自行重编译它们。
 
-### Arch 使用软件包签名机制吗？
-
-是的，pacman 已经包含软件签名功能，请参见[package signing](/index.php/Package_signing "Package signing")。
-
 ### 升级前该做什么?
 
 在升级前,记得访问 [Arch Linux 新闻列表](https://www.archlinux.org/),[通告邮件列表](https://mailman.archlinux.org/mailman/listinfo/arch-announce/) (有时需要看看 [论坛](https://bbs.archlinux.org/)和[各个邮件列表](https://mailman.archlinux.org/mailman/listinfo/)),需要特别注意的事项都会列在那里.另见 [System maintenance#Upgrading the system](/index.php/System_maintenance#Upgrading_the_system "System maintenance").
@@ -244,6 +213,20 @@ libbaz=1.5
 ### 我知道某个包已经更新,但是 pacman 并没有发现更新
 
 可能是 *pacman* 镜像还没有同步,最好等等或是换个镜像服务器. [MirrorStatus](https://www.archlinux.org/mirrors/status/) 可以帮助你区分那些镜像服务器是最新的.
+
+### *X* 上游项目已经发布了一个新版本，多长时间 Arch 才会更新到新版本？
+
+软件包将会在准备好后发布，发布的时间取决于上游的变动和打包人员的精力。如果发布的是小版本，可能只需要几个小时。如果发布的是大版本更新，可能需要数周时间。此外，有些软件包会在 [testing](/index.php/Testing "Testing") 仓库中停留一段时间进行小范围测试。[软件包维护者](/index.php/Package_maintainer "Package maintainer") 会尽量快点将稳定版本发布到仓库。如果发下官方软件仓库中的软件过旧，可以在 [软件包页面](https://www.archlinux.org/packages/) 进行标记。
+
+### 如果需要一个老的软件库，可以 symlink 到新版本吗？
+
+如果幸运，这个方式可以用来救急。但是这不是一个正确的方式：
+
+*   软件库不会无缘无故更新版本 - API/ABI 可能发送变动，这些变动是否影响到使用只能听天由命。
+*   软件包管理器不会记录软链接，新手执行这种操作，可能引起不好恢复的错误。
+*   未被记录的老版本文件很快就会被忘掉，安全漏洞不会被修复。
+
+推荐的方式是使用或编写[兼容软件包](https://aur.archlinux.org/packages/?SeB=n&K=compat)，用其提供需要的版本。
 
 ## 安装
 
@@ -286,12 +269,6 @@ Windows 用户可以使用免费软件 [CPU-Z](http://www.cpuid.com/cpuz.php)，
 
 带有 AMD 的 "AMD64" 指令集或者英特尔的 "EM64T" 指令集的 CPU 兼容 x86_64 发行版和二进制包。
 
-### 32-bit Arch 中的所有软件包都有 64bit 版本吗?
-
-绝大部分官方软件包都有 64-bit 版本，但是有些 32bit 程序需要启用 [multilib](/index.php/Multilib "Multilib") 仓库才能使用。 [软件包差异页面](https://www.archlinux.org/packages/differences/) 列出了 multilib 软件包和 32bit 原始编译软件包的一些差异。
-
-有很少部分 [AUR](/index.php/AUR "AUR") 中的包只列出了 `'i686'`，但是大部分包都可以在64位环境工作，只需要添加 `'x86_64'` 到 [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")。
-
 ### 为什么使用64位?
 
 64位系统(大多数情况下)更快，而且更安全。更安全是由于拥有 [Address space layout randomization (ASLR)](https://en.wikipedia.org/wiki/Address_space_layout_randomization "wikipedia:Address space layout randomization") 、 [Position-independent code (PIC)](https://en.wikipedia.org/wiki/Position-independent_code "wikipedia:Position-independent code") 特性，以及 [NX Bit](https://en.wikipedia.org/wiki/NX_Bit "wikipedia:NX Bit") (它在i686内核中由于禁用了PAE而无法使用)。如果你的计算机在运行4GB或者更多的内容，应该使用64位系统，因为多余的内存无法被32位系统分配。
@@ -299,15 +276,3 @@ Windows 用户可以使用免费软件 [CPU-Z](http://www.cpuid.com/cpuz.php)，
 编程人员也更加倾向于不关心32位系统，因为新的x86 CPU通常都支持64位扩展。
 
 还有许多其他的理由让我们不使用32位系统，但是在内核、用户空间和单独的程序中我们没有办法列出所有的64位比32位做得好的地方。
-
-### 我可以在Arch64下编译给i686用的32-bit软件包吗？
-
-可以使用 [multilib](/index.php/Multilib "Multilib") 仓库并设置 [makepkg config](/index.php/Makepkg#Build_32-bit_packages_on_a_64-bit_system "Makepkg") 进行编译或者 [在 64-bit 系统中安装一个 32-bit 系统](/index.php/Install_bundled_32-bit_system_in_64-bit_system "Install bundled 32-bit system in 64-bit system").
-
-### 我可以无需重新安装将我的系统从i686升级/切换到x86_64吗？
-
-不可以。所有软件包都需要重新安装，有些配置文件也需要修改。但是重新安装时不需要重新分区和格式化磁盘，所以有机会导入所有的旧数据。
-
-可以用Arch64安装光盘启动系统，挂载磁盘，备份所有希望保留的非32-bit二进制文件（例如/home和/etc)，然后开始安装。
-
-参考：[Migrating Between Architectures Without Reinstalling](/index.php/Migrating_Between_Architectures_Without_Reinstalling "Migrating Between Architectures Without Reinstalling")。

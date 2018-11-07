@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2018-10-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=551914) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Network configuration](/index.php/Network_configuration "Network configuration"). Data da última tradução: 2018-11-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Network_configuration&diff=0&oldid=553184) na versão em inglês.
 
 Artigos relacionados
 
@@ -72,10 +72,10 @@ Para solucionar problemas de uma conexão de rede, siga as seguintes condições
 3.  Sua interface de rede tem um [endereço IP](#Endere.C3.A7os_IP).
 4.  Sua [tabela de roteamento](#Tabela_de_roteamento) está configurada corretamente.
 5.  Você pode [pingar](#Ping) um endereço IP local (por exemplo, seu gateway padrão).
-6.  Você pode [pingar](#Ping) um endereço IP público (por exemplo, `8.8.8.8`); se não puder, pode estar relacionado ao seu gateway padrão ou ao seu provedor de serviços de Internet.
+6.  Você pode [pingar](#Ping) um endereço IP público (por exemplo, `8.8.8.8`).
 7.  [Verifique se você consegue resolver nomes de domínio](/index.php/Verifique_se_voc%C3%AA_consegue_resolver_nomes_de_dom%C3%ADnio "Verifique se você consegue resolver nomes de domínio") (por exemplo, `archlinux.org`).
 
-**Dica:** `8.8.8.8` é um endereço estático fácil de lembrar. É o endereço do servidor DNS primário do Google, portanto, pode ser considerado confiável e geralmente não é bloqueado por sistemas de filtragem de conteúdo e proxies.
+**Dica:** `8.8.8.8` é o endereço de um servidor DNS do Google e é fácil de memorizar.
 
 ### Ping
 
@@ -90,11 +90,9 @@ PING www.example.com (93.184.216.34): 56(84) data bytes
 ...
 ```
 
-Para cada resposta que você recebe, o ping imprime uma linha como acima. Para mais informações, consulte o manual [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8).
+Para cada resposta que você recebe, o utilitário ping imprimirá uma linha como a acima. Para mais informações, consulte o manual [ping(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ping.8). Observe que os computadores podem ser configurados para não responder às solicitações de eco ICMP. [[1]](https://unix.stackexchange.com/questions/412446/how-to-disable-ping-response-icmp-echo-in-linux-all-the-time)
 
-Observe que os computadores podem ser configurados para não responder às solicitações de echo ICMP.[[1]](https://unix.stackexchange.com/questions/412446/how-to-disable-ping-response-icmp-echo-in-linux-all-the-time)
-
-Quando você não receber nenhuma resposta, você pode executar um [traceroute](/index.php/Traceroute_(Portugu%C3%AAs) "Traceroute (Português)") para diagnosticar ainda mais a rota para o host.
+Se você não receber nenhuma resposta, isso pode estar relacionado a seu gateway padrão ou a seu provedor de internet. Você pode executar um [traceroute](/index.php/Traceroute_(Portugu%C3%AAs) "Traceroute (Português)") para diagnosticar ainda mais a rota para o host.
 
 **Nota:** Se você receber um erro como `ping: icmp open socket: Operation not permitted` ao executar *ping*, tente reinstalar o pacote [iputils](https://www.archlinux.org/packages/?name=iputils).
 
@@ -218,7 +216,7 @@ Adicione um endereço IP a uma interface:
 *   o endereço é dado em [notação CIDR](https://en.wikipedia.org/wiki/pt:Classless_Inter-Domain_Routing#Nota.C3.A7.C3.A3o_standard "wikipedia:pt:Classless Inter-Domain Routing") para também fornecer uma [máscara de sub-rede](https://en.wikipedia.org/wiki/pt:Sub-rede "wikipedia:pt:Sub-rede")
 *   `+` é um símbolo especial que faz o `ip` derivar o [endereço broadcast](https://en.wikipedia.org/wiki/pt:Endere%C3%A7o_de_broadcast "wikipedia:pt:Endereço de broadcast") do endereço IP e a máscara de sub-rede
 
-**Nota:** Certifique-se que endereços IP atribuídos manualmente não conflitem com os atribuídos por DHCP. Veja [esse tópico do fórum](http://www.raspberrypi.org/forums/viewtopic.php?f=28&t=16797).
+**Nota:** Certifique-se que endereços IP atribuídos manualmente não conflitem com os atribuídos por DHCP.
 
 Exclui um endereço IP de uma interface:
 

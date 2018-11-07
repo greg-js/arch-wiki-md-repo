@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Environment variables](/index.php/Environment_variables "Environment variables"). Data da última tradução: 2018-10-01\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=540287) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Environment variables](/index.php/Environment_variables "Environment variables"). Data da última tradução: 2018-11-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Environment_variables&diff=0&oldid=552317) na versão em inglês.
 
 Artigos relacionados
 
@@ -30,7 +30,7 @@ $ printenv
 
 **Nota:** Algumas variáveis de ambiente são específicas do usuário. Verifique comparando as saídas de *printenv* como um usuários comum e como *root*.
 
-O utilitário `env` pode ser usado para executar um comando sob um ambiente modificado. O seguinte exemplo vai iniciar *xterm* com a variável de ambiente `EDITOR` definida para `vim`. Isso não afetará a variável de ambiente global `EDITOR`.
+O utilitário *env* pode ser usado para executar um comando sob um ambiente modificado. O seguinte exemplo vai iniciar *xterm* com a variável de ambiente `EDITOR` definida para `vim`. Isso não afetará a variável de ambiente global `EDITOR`.
 
 ```
 $ env EDITOR=vim xterm

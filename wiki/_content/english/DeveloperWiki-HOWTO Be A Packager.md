@@ -29,13 +29,13 @@
 
 Package guidelines can be found in the Arch Linux documentation. Please follow them closely.
 
-[Arch package guidelines](/index.php/Arch_package_guidelines "Arch package guidelines")
+[Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards")
 
 ## Preparation and Setup
 
 ### Installing the Packages
 
-Make sure you have the packages [devtools](https://www.archlinux.org/packages/?name=devtools) and [namcap](https://www.archlinux.org/packages/?name=namcap) installed.
+Make sure you have the packages `devtools` and `namcap` installed.
 
 ### SSH Config
 

@@ -85,7 +85,7 @@ The ThinkPad X1 Carbon supports setting a custom splash image at the earliest bo
 
 ## Suspend issues
 
-Since BIOS version 1.30, the X1 Carbon supports S3 mode when enabled in the BIOS menu (choose "Linux" sleep mode instead of the default "Windows 10"). See [#Automatic Linux Vendor Firmware Service](#Automatic_Linux_Vendor_Firmware_Service) for instructions to update and verify your BIOS version.
+Since BIOS version 1.30, the X1 Carbon supports S3 mode when enabled in the BIOS menu (choose "Linux" sleep mode instead of the default "Windows 10"). See [#Automatic (Linux Vendor Firmware Service)](#Automatic_.28Linux_Vendor_Firmware_Service.29) for instructions to update and verify your BIOS version.
 
 ### Enabling S3
 
@@ -178,7 +178,7 @@ To make the changes take effect:
 
 ### HDR Display Color Calibration
 
-For models with the 1440p HDR display, the default color profile can be corrected using an ICC calibration provided by [notebookcheck.net's review](https://www.notebookcheck.net/Lenovo-ThinkPad-X1-Carbon-2018-WQHD-HDR-i7-Laptop-Review.284682.0.html).
+For models with the 1440p HDR display, the default color profile can be corrected under Gnome using an ICC calibration provided by [notebookcheck.net's review](https://www.notebookcheck.net/Lenovo-ThinkPad-X1-Carbon-2018-WQHD-HDR-i7-Laptop-Review.284682.0.html).
 
 ```
  wget [https://www.notebookcheck.net/uploads/tx_nbc2/B140QAN02_0.icm](https://www.notebookcheck.net/uploads/tx_nbc2/B140QAN02_0.icm)

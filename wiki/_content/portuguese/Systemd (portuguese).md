@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=551975) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Systemd](/index.php/Systemd "Systemd"). Data da última tradução: 2018-11-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Systemd&diff=0&oldid=552652) na versão em inglês.
 
 Artigos relacionados
 
@@ -41,6 +41,7 @@ De [página web do projeto](http://freedesktop.org/wiki/Software/systemd):
 *   [4 Arquivos temporários](#Arquivos_tempor.C3.A1rios)
 *   [5 Timers](#Timers)
 *   [6 Montagem](#Montagem)
+    *   [6.1 Automontagem de partição GPT](#Automontagem_de_parti.C3.A7.C3.A3o_GPT)
 *   [7 Journal](#Journal)
     *   [7.1 Nível de prioridade](#N.C3.ADvel_de_prioridade)
     *   [7.2 Facilidade](#Facilidade)
@@ -494,6 +495,12 @@ O *systemd* é responsável pela montagem das partições e sistemas de arquivos
 O *systemd* estende os recursos habituais do [fstab](/index.php/Fstab "Fstab") e oferece opções adicionais de montagem. Eles afetam as dependências da unit de montagem, elas podem, por exemplo, garantir que uma montagem seja executada somente quando a rede estiver ativa ou apenas quando outra partição for montada. A lista completa de opções específicas de montagem *systemd*, tipicamente prefixadas com `x-systemd.`, é detalhada em [systemd.mount(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.mount.5#FSTAB).
 
 Um exemplo dessas opções de montagem no contexto de *automontagem*, que significa montar somente quando o recurso é necessário, e não automaticamente no momento da inicialização, é fornecido em [fstab#Automount with systemd](/index.php/Fstab#Automount_with_systemd "Fstab").
+
+### Automontagem de partição GPT
+
+Em um disco particionado em [GPT](/index.php/GPT "GPT"), [systemd-gpt-auto-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-gpt-auto-generator.8) vai montar partições seguindo a [Discoverable Partitions Specification](https://www.freedesktop.org/wiki/Specifications/DiscoverablePartitionsSpec/), de forma que elas podem ser omitidas do `fstab`.
+
+A automontagem para uma partição pode ser desabilitada alterando o [GUID do tipo](https://en.wikipedia.org/wiki/pt:Tabela_de_Parti%C3%A7%C3%A3o_GUID#Tipos_de_parti.C3.A7.C3.A3o_GUID "wikipedia:pt:Tabela de Partição GUID") da partição ou definindo o bit de atributo 63 "do not automount", veja [gdisk#Prevent GPT partition automounting](/index.php/Gdisk#Prevent_GPT_partition_automounting "Gdisk").
 
 ## Journal
 
