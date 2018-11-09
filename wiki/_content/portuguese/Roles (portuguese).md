@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Roles](/index.php/Roles "Roles"). Data da última tradução: 2018-10-26\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Roles&diff=0&oldid=550389) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Roles](/index.php/Roles "Roles"). Data da última tradução: 2018-11-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Roles&diff=0&oldid=552750) na versão em inglês.
 
 [Arch Linux](/index.php/Arch_Linux_(Portugu%C3%AAs) "Arch Linux (Português)") é mantido por indivíduos dos seguintes papéis (entre outros):
 

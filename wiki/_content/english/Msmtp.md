@@ -114,7 +114,7 @@ default: admin@domain.example
 
 ## Test functionality
 
-The account option (`--account=,-a` tells which account to use as sender:
+The account option (`--account=,-a`) tells which account to use as sender:
 
 ```
 $ echo "hello there username." | msmtp -a default *username*@domain.com

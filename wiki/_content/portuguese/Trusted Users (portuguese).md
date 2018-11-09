@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Trusted Users](/index.php/Trusted_Users "Trusted Users"). Data da última tradução: 2018-10-30\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Trusted_Users&diff=0&oldid=546583) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Trusted Users](/index.php/Trusted_Users "Trusted Users"). Data da última tradução: 2018-11-07\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Trusted_Users&diff=0&oldid=553439) na versão em inglês.
 
 Os [Trusted Users](https://www.archlinux.org/people/trusted-users/) (também conhecidos como *Usuários Confiáveis*) servem para os seguintes propósitos:
 

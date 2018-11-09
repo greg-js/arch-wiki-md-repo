@@ -54,7 +54,8 @@ GeForce 8 and newer | Radeon HD 4000 and newer |
 | VC1 | Sandy Bridge and newer | Broadwell and newer | Radeon HD 2000 and newer
 GeForce 9300 and newer | Radeon HD 4000 and newer |
 | VP8 | Broadwell and newer | No | No | No |
-| VP9 8bit | Broxton and newer | Broxton/Apollo Lake and newer | Raven Ridge and newer |
+| VP9 8bit | Broxton and newer
+Hybrid: Haswell to Skylake | Broxton/Apollo Lake and newer | Raven Ridge and newer |
 | VP9 10bit | Kaby Lake and newer | Kaby Lake and newer |
 | Encoding |
 | MPEG2 | Ivy Bridge and newer | Broadwell and newer
@@ -62,18 +63,20 @@ except Broxton/Apollo Lake | No | No | No |
 | AVC (H.264) | Sandy Bridge and newer | Broadwell and newer | Radeon HD 7000 and newer |
 | HEVC (H.265) 8bit | Skylake and newer | Skylake and newer | Raven Ridge and newer |
 | HEVC (H.265) 10bit | Kaby Lake and newer | Cannonlake and newer |
-| VP8 | Cherryview/Braswell and newer | No |
+| VP8 | Cherryview/Braswell and newer
+Hybrid: Haswell to Skylake | No |
 | VP9 8bit | Kaby Lake and newer | Icelake and newer |
 | VP9 10bit | No |
 
 *   Up until GeForce GTX 750.
 *   Supported by [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) instead.
+*   Hybrid VP8 encoder and VP9 decoder supported by [intel-hybrid-codec-driver](https://aur.archlinux.org/packages/intel-hybrid-codec-driver/). [[5]](https://github.com/01org/intel-hybrid-driver/blob/master/README)
 
 ### VDPAU
 
-**Note:** VDPAU is not updated since September 2015 and is missing VP8 and VP9 support [[5]](https://gitlab.freedesktop.org/vdpau/libvdpau).
+**Note:** VDPAU is not updated since September 2015 and is missing VP8 and VP9 support [[6]](https://gitlab.freedesktop.org/vdpau/libvdpau).
 
-| Codec | [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) [[6]](https://www.x.org/wiki/RadeonFeature/) [[7]](https://nouveau.freedesktop.org/wiki/VideoAcceleration/) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) [[8]](https://www.nvidia.com/page/purevideo_support.html) | [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl)
+| Codec | [mesa-vdpau](https://www.archlinux.org/packages/?name=mesa-vdpau) [[7]](https://www.x.org/wiki/RadeonFeature/) [[8]](https://nouveau.freedesktop.org/wiki/VideoAcceleration/) | [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) [[9]](https://www.nvidia.com/page/purevideo_support.html) | [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl)
 (VA-API adapter) |
 | Decoding |
 | MPEG2 | Radeon R300 and newer
@@ -89,7 +92,7 @@ GeForce 9300 and newer | GeForce 8 and newer |
 
 *   Up until GeForce GTX 750.
 *   Except GeForce GTX 970 and GTX 980.
-*   NVIDIA implementation is limited to 8-bit streams [[9]](https://devtalk.nvidia.com/default/topic/940228/vdpau-expose-hevc-main10-support-where-available-on-die/) [[10]](https://us.download.nvidia.com/XFree86/Linux-x86_64/410.57/README/vdpausupport.html#vdpau-implementation-limits).
+*   NVIDIA implementation is limited to 8-bit streams [[10]](https://devtalk.nvidia.com/default/topic/940228/vdpau-expose-hevc-main10-support-where-available-on-die/) [[11]](https://us.download.nvidia.com/XFree86/Linux-x86_64/410.57/README/vdpausupport.html#vdpau-implementation-limits).
 *   [Except](https://en.wikipedia.org/wiki/Nvidia_PureVideo "wikipedia:Nvidia PureVideo") GeForce 8800 Ultra, 8800 GTX, 8800 GTS (320/640 MB).
 
 ### NVDEC/NVENC
@@ -135,6 +138,7 @@ GeForce 9300 and newer | GeForce 8 and newer |
 *   HD Graphics series starting from CannonLake (or optionally from Broadwell) and newer are supported by [intel-media-driver](https://www.archlinux.org/packages/?name=intel-media-driver).
 *   GMA 4500 series and newer GPUs up to Coffee Lake are supported by [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver).
 *   GMA 4500 H.264 decoding is supported by [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/), see [Intel#Hardware accelerated H.264 decoding on GMA 4500](/index.php/Intel#Hardware_accelerated_H.264_decoding_on_GMA_4500 "Intel").
+*   Haswell to Skylake hybrid VP8 encoding and VP9 decoding is supported by [intel-hybrid-codec-driver](https://aur.archlinux.org/packages/intel-hybrid-codec-driver/).
 
 ### NVIDIA
 

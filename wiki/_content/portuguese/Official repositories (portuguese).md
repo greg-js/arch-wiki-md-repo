@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Official repositories](/index.php/Official_repositories "Official repositories"). Data da última tradução: 2018-10-26\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Official_repositories&diff=0&oldid=548744) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Official repositories](/index.php/Official_repositories "Official repositories"). Data da última tradução: 2018-11-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Official_repositories&diff=0&oldid=552926) na versão em inglês.
 
 Artigos relacionados
 
@@ -178,9 +178,9 @@ Certifique-se de [fazer relatórios de erros](/index.php/Diretrizes_de_relat%C3%
 Se você habilitou repositórios de teste, mas posteriormente decidir desabilitá-los, você deve:
 
 1.  Remover (comentar) eles do `/etc/pacman.conf`
-2.  Realizar um `# pacman -Syuu` para "retroceder" suas atualizações para esses repositórios.
+2.  Realizar um `pacman -Syuu` para "retroceder" suas atualizações para esses repositórios.
 
-O segundo item é opcional, mas tenha-o em mente que cas você tenha algum problema.
+O segundo item é opcional, mas tenha-o em mente caso você tenha algum problema.
 
 ## Repositórios de staging
 

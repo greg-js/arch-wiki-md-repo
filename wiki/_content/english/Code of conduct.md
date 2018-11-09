@@ -277,5 +277,5 @@ Each of the fora has an appeals process and if someone feels they were unjustly 
 If you feel that an egregious oversight has been made, or you need to alert staff to abusive behaviour, there are a number of avenues through which you can seek assistance or redress. These include:
 
 *   For the Forums: use the 'Report' button found below every text box, or email [forum@archlinux.org](mailto:forum@archlinux.org) to contact the forum admins.
-*   For the Wiki: contact the [ArchWiki:Administrators](/index.php/ArchWiki:Administrators "ArchWiki:Administrators")
+*   For the Wiki: contact the [ArchWiki:Maintenance Team](/index.php/ArchWiki:Maintenance_Team "ArchWiki:Maintenance Team")
 *   For the IRC channels: contact [one of the ops](/index.php/IRC_channel#Channel_operators "IRC channel")

@@ -740,6 +740,10 @@ See also [Wikipedia:Comparison of download managers](https://en.wikipedia.org/wi
 
 	[https://cozy-labs.github.io/cozy-desktop/](https://cozy-labs.github.io/cozy-desktop/) || [cozy-desktop](https://www.archlinux.org/packages/?name=cozy-desktop)
 
+*   **[Dolphin](/index.php/Dolphin "Dolphin")** — KDE file manager that supports Google Drive access via the KIO Gdrive plugin.
+
+	[https://community.kde.org/KIO_GDrive](https://community.kde.org/KIO_GDrive) || [dolphin](https://www.archlinux.org/packages/?name=dolphin) [kio-gdrive](https://www.archlinux.org/packages/?name=kio-gdrive)
+
 *   **drive** — Tiny program to pull or push Google Drive files.
 
 	[https://github.com/odeke-em/drive](https://github.com/odeke-em/drive) || [drive-bin](https://aur.archlinux.org/packages/drive-bin/)
@@ -1553,6 +1557,10 @@ See also [Tox](/index.php/Tox "Tox").
 *   **Toxygen** — Tox client written in pure Python3.
 
 	[https://github.com/toxygen-project/toxygen](https://github.com/toxygen-project/toxygen) || [toxygen-git](https://aur.archlinux.org/packages/toxygen-git/)
+
+*   **Venom** — a modern Tox client for the GNU/Linux desktop
+
+	[https://github.com/naxuroqa/Venom](https://github.com/naxuroqa/Venom) || [venom](https://aur.archlinux.org/packages/venom/)
 
 *   **µTox** — Lightweight Tox client.
 

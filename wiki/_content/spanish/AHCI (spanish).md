@@ -1,8 +1,8 @@
-[AHCI](https://en.wikipedia.org/wiki/es:AHCI "wikipedia:es:AHCI") (Advanced Host Controller Interface) es el modo de trabajo nativo para unidades SATA. AHCI tiene dos principales ventajas : compatibilidad con unidades SATA de acoplamiento activo (que simulan el comportamiento de las unidades USB) y [Native Command Queuing](https://en.wikipedia.org/wiki/es:_Native_Command_Queuing "wikipedia:es: Native Command Queuing") (NCQ). Ha estado presente en el kernel de Linux desde la versión 2.6.19 y se cargará automáticamente en el kernel actual de Arch.
+[AHCI](https://en.wikipedia.org/wiki/es:AHCI "wikipedia:es:AHCI") (Advanced Host Controller Interface) es el modo de trabajo nativo para unidades SATA. AHCI tiene dos principales ventajas: compatibilidad con unidades SATA de acoplamiento activo (que simulan el comportamiento de las unidades USB) y [Native Command Queuing](https://en.wikipedia.org/wiki/es:_Native_Command_Queuing "wikipedia:es: Native Command Queuing") (NCQ). Ha estado presente en el kernel de Linux desde la versión 2.6.19 y se cargará automáticamente en el kernel actual de Arch.
 
 ## Configurarlo desde la BIOS
 
-Si su BIOS estableció SATA como ATA heredado/paralelo, puede acceder a la configuración de BIOS dependiendo de la placa base; por lo general, se suele usar `Supr` para mostrar el menú.
+Si su BIOS estableció SATA como ATA heredado/paralelo, puede acceder a la configuración de BIOS dependiendo de la placa base que utilize; por lo general, se suele usar la tecla `Supr` para mostrar el menú.
 
 Una vez que las opciones de la BIOS estén disponibles, busque parámetros que se parezcan a:
 

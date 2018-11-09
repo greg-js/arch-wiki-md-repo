@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2018-10-25\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=547832) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks"). Data da última tradução: 2018-11-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Pacman/Tips_and_tricks&diff=0&oldid=553033) na versão em inglês.
 
 Artigos relacionados
 
@@ -725,12 +725,26 @@ Existem outros aplicativos de download que você pode usar com *pacman*. Aqui es
 
 **Atenção:** PackageKit abre permissões do sistema por padrão e, do contrário, não é recomendado para uso geral. Veja [FS#50459](https://bugs.archlinux.org/task/50459) e [FS#57943](https://bugs.archlinux.org/task/57943).
 
-Veja também [Auxiliares do AUR#Gráficos](/index.php/Auxiliares_do_AUR#Gr.C3.A1ficos "Auxiliares do AUR").
+*   **Apper** — Aplicativo Qt 5 e gerenciador de pacotes usando o PackageKit escrito em C++. Tem suporte a [metadados de AppStream](https://www.freedesktop.org/wiki/Distributions/AppStream/).
 
-| Nome | Escrito em | Toolkit gráfico | Pacotes do Arch Linux via | Especificidade |
-| [discover](https://www.archlinux.org/packages/?name=discover) | C++/QML | Qt 5 | [packagekit-qt5](https://www.archlinux.org/packages/?name=packagekit-qt5) | [AppStream](https://www.freedesktop.org/wiki/Distributions/AppStream/), [Flatpak](/index.php/Flatpak "Flatpak"), [fwupd](/index.php/Fwupd "Fwupd") |
-| [gnome-software](https://www.archlinux.org/packages/?name=gnome-software) | C | GTK+ 3 | [gnome-software-packagekit-plugin](https://www.archlinux.org/packages/?name=gnome-software-packagekit-plugin) | [AppStream](https://www.freedesktop.org/wiki/Distributions/AppStream/), [Flatpak](/index.php/Flatpak "Flatpak"), [fwupd](/index.php/Fwupd "Fwupd") |
-| [apper](https://www.archlinux.org/packages/?name=apper) | C++ | Qt 5 | [packagekit-qt5](https://www.archlinux.org/packages/?name=packagekit-qt5) | [AppStream](https://www.freedesktop.org/wiki/Distributions/AppStream/) |
-| [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit) | C | GTK+ 3 | [packagekit](https://www.archlinux.org/packages/?name=packagekit) | – |
-| [pcurses](https://www.archlinux.org/packages/?name=pcurses) | C++ | ncurses | pacman | – |
-| [tkpacman](https://aur.archlinux.org/packages/tkpacman/) | Tcl | Tk | pacman | – |
+	[https://userbase.kde.org/Apper](https://userbase.kde.org/Apper) || [apper](https://www.archlinux.org/packages/?name=apper)
+
+*   **Discover** — Gerenciador de aplicativos do Qt 5 usando o PackageKit escrito em C++/QML. Tem suporte a [metadados de AppStream](https://www.freedesktop.org/wiki/Distributions/AppStream/), [Flatpak](/index.php/Flatpak "Flatpak") e [atualizações de firmware](/index.php/Fwupd "Fwupd").
+
+	[https://userbase.kde.org/Discover](https://userbase.kde.org/Discover) || [discover](https://www.archlinux.org/packages/?name=discover)
+
+*   **GNOME PackageKit** — Gerenciador de pacotes GTK + 3 usando o PackageKit escrito em C.
+
+	[https://freedesktop.org/software/PackageKit/](https://freedesktop.org/software/PackageKit/) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
+
+*   **GNOME Software** — Gerenciador de aplicativos GTK + 3 usando PackageKit escrito em C. Tem suporte a [metadados de AppStream](https://www.freedesktop.org/wiki/Distributions/AppStream/), [Flatpak](/index.php/Flatpak "Flatpak") e [atualizações de firmware](/index.php/Fwupd "Fwupd").
+
+	[https://wiki.gnome.org/Apps/Software](https://wiki.gnome.org/Apps/Software) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
+
+*   **pcurses** — Wrapper TUI curses para o pacman escrito em C++.
+
+	[https://github.com/schuay/pcurses](https://github.com/schuay/pcurses) || [pcurses](https://www.archlinux.org/packages/?name=pcurses)
+
+*   **tkPacman** — Wrapper Tk para o pacman escrito em Tcl.
+
+	[https://sourceforge.net/projects/tkpacman](https://sourceforge.net/projects/tkpacman) || [tkpacman](https://aur.archlinux.org/packages/tkpacman/)

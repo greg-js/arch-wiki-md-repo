@@ -4,7 +4,7 @@ Related articles
 *   [Secure Boot](/index.php/Secure_Boot "Secure Boot")
 *   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
 
-**systemd-boot**, previously called **gummiboot**, is a simple UEFI [boot manager](/index.php/Boot_manager "Boot manager") which executes configured EFI images. The default entry is selected by a configured pattern (glob) or an on-screen menu. It is included with [systemd](https://www.archlinux.org/packages/?name=systemd), which is installed on an Arch system by default.
+**systemd-boot**, previously called **gummiboot** (German for: 'rubber dinghy'), is a simple UEFI [boot manager](/index.php/Boot_manager "Boot manager") which executes configured EFI images. The default entry is selected by a configured pattern (glob) or an on-screen menu to be navigated via arrow-keys. It is included with [systemd](https://www.archlinux.org/packages/?name=systemd), which is installed on an Arch system by default.
 
 It is simple to configure but it can only start EFI executables such as the Linux kernel [EFISTUB](/index.php/EFISTUB "EFISTUB"), UEFI Shell, GRUB, or the Windows Boot Manager.
 
@@ -164,7 +164,7 @@ options root=LABEL=*arch_os* rw
 
 In case you installed EFI shells and other EFI application into the ESP, you can use the following snippets.
 
-**Note:** The file path parameter for the `efi` line is relative to your *esp* mount point. If you are mounted on `/boot` and your EFI binaries reside at `/boot/EFI/xx.efi` and `/boot/yy.efi`, then you would specify the parameters as `efi /EFI/xx.efi` and `efi /yy.efi` respectfully.
+**Note:** The file path parameter for the `efi` line is relative to your *esp* mount point. If you are mounted on `/boot` and your EFI binaries reside at `/boot/EFI/xx.efi` and `/boot/yy.efi`, then you would specify the parameters as `efi /EFI/xx.efi` and `efi /yy.efi` respectively.
 
 Examples of loading custom UEFI Shell loaders:
 
@@ -172,11 +172,13 @@ Examples of loading custom UEFI Shell loaders:
 ```
 title   UEFI Shell x86_64 v1
 efi     /EFI/shellx64_v1.efi
+
 ```
  `*esp*/loader/entries/uefi-shell-v2-x86_64.conf` 
 ```
 title   UEFI Shell x86_64 v2
 efi     /EFI/shellx64_v2.efi
+
 ```
 
 ### Booting into EFI Firmware Setup

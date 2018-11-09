@@ -22,6 +22,7 @@ Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio pl
         *   [1.4.6 Connecting works, but I cannot play sound](#Connecting_works.2C_but_I_cannot_play_sound)
         *   [1.4.7 UUIDs has unsupported type](#UUIDs_has_unsupported_type)
         *   [1.4.8 PC shows device as paired, but is not recognized by device](#PC_shows_device_as_paired.2C_but_is_not_recognized_by_device)
+        *   [1.4.9 Device connects, then disconnects after a few moments](#Device_connects.2C_then_disconnects_after_a_few_moments)
 *   [2 Legacy method: ALSA-BTSCO](#Legacy_method:_ALSA-BTSCO)
     *   [2.1 Connecting the headset](#Connecting_the_headset)
         *   [2.1.1 Pairing the headset with your computer](#Pairing_the_headset_with_your_computer)
@@ -351,6 +352,28 @@ This message is a very common one and can be ignored.
 This might be due to the device not supporting bluetooth LE for pairing.
 
 Try setting `ControllerMode = bredr` in `/etc/bluetooth/main.conf`. See [[2]](http://unix.stackexchange.com/questions/292189/pairing-bose-qc-35-over-bluetooth-on-fedora).
+
+#### Device connects, then disconnects after a few moments
+
+If you see messages like the following in `journalctl` output, and your device fails to connect or disconnects shortly after connecting:
+
+```
+bluetoothd: Unable to get connect data for Headset Voice gateway: getpeername: Transport endpoint is not connected (107)
+bluetoothd: connect error: Connection refused (111)
+
+```
+
+This may be because you have already paired the device with another operating system using the same bluetooth adapter (e.g., dual-booting). Some devices cannot handle multiple pairings associated with the same MAC address (i.e., bluetooth adapter). You can fix this by re-pairing the device. Start by removing the device:
+
+```
+$ bluetoothctl
+[bluetooth]# devices
+Device XX:XX:XX:XX:XX:XX My Device
+[bluetooth]# remove XX:XX:XX:XX:XX:XX
+
+```
+
+Then [restart](/index.php/Restart "Restart") `bluetooth.service`, turn on your bluetooth adapter, make your device discoverable, re-scan for devices, and re-pair your device. Depending on your bluetooth manager, you may need to perform a full reboot in order to re-discover the device.
 
 ## Legacy method: ALSA-BTSCO
 

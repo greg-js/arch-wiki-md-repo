@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Mono](/index.php/Mono "Mono"), revisada por última vez el **2018-11-01**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Mono&diff=0&oldid=552396) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Mono](/index.php/Mono "Mono"), revisada por última vez el **2018-11-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Mono&diff=0&oldid=552396) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 De [Wikipedia](https://en.wikipedia.org/wiki/es:Proyecto_Mono "wikipedia:es:Proyecto Mono"):
 
@@ -70,7 +70,7 @@ Hello world!
 
 ## Desarrollo
 
-Empezar a desarrollar en Mono/C# es muy fácil. Sólo [instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el [MonoDevelop IDE](http://monodevelop.com/) con el paquete [monodevelop-stable](https://aur.archlinux.org/packages/monodevelop-stable/) o [monodevelop-git](https://aur.archlinux.org/packages/monodevelop-git/). Alternativamente, puede instalar el IDE [rider](https://aur.archlinux.org/packages/rider/).
+Empezar a desarrollar en Mono/C# es muy fácil. Solo [instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el [MonoDevelop IDE](http://monodevelop.com/) con el paquete [monodevelop-stable](https://aur.archlinux.org/packages/monodevelop-stable/) o [monodevelop-git](https://aur.archlinux.org/packages/monodevelop-git/). Alternativamente, puede instalar el IDE [rider](https://aur.archlinux.org/packages/rider/).
 
 Si desea el navegador de documentación API y algunas herramientas de testeo y desarrollo, instale [mono-tools](https://www.archlinux.org/packages/?name=mono-tools).
 

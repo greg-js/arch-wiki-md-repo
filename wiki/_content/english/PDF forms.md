@@ -12,7 +12,8 @@ This article is meant to guide (Arch)linux users to use PDF forms. Some of the i
     *   [1.3 Inkscape](#Inkscape)
     *   [1.4 Master PDF Editor](#Master_PDF_Editor)
     *   [1.5 LibreOffice Draw](#LibreOffice_Draw)
-    *   [1.6 Adobe Reader is unstable](#Adobe_Reader_is_unstable)
+    *   [1.6 PDF Studio](#PDF_Studio)
+    *   [1.7 Adobe Reader is unstable](#Adobe_Reader_is_unstable)
 
 ## Usage
 
@@ -59,6 +60,14 @@ The package can be [installed](/index.php/Install "Install") with [masterpdfedit
 ### LibreOffice Draw
 
 LibreOffice Draw can open and edit PDF files in much the same manner that Inkscape can. One can then re-export the edited PDF to a new file.
+
+### PDF Studio
+
+[PDF Studio](https://en.wikipedia.org/wiki/PDF_Studio "wikipedia:PDF Studio") is a proprietary, easy to use PDF editor that maintains full compatibility with the PDF Standard.
+
+You can [install](/index.php/Install "Install") it with [pdfstudio](https://aur.archlinux.org/packages/pdfstudio/).
+
+[PDF Studio Viewer](https://www.qoppa.com/pdfstudioviewer/) is a cross-platform PDF reader that is reliable and easy to use. PDF Studio Viewer can annotate PDF documents and fill interactive forms. For more editing features, Qoppa Software publishes PDF Studio Standard and Pro editions.
 
 ### Adobe Reader is unstable
 

@@ -12,46 +12,49 @@ Related articles
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Installation with refind-install script](#Installation_with_refind-install_script)
-        *   [1.1.1 Secure Boot](#Secure_Boot)
-            *   [1.1.1.1 Using PreLoader](#Using_PreLoader)
-            *   [1.1.1.2 Using shim](#Using_shim)
-                *   [1.1.1.2.1 Using hashes](#Using_hashes)
-                *   [1.1.1.2.2 Using Machine Owner Key](#Using_Machine_Owner_Key)
-            *   [1.1.1.3 Using your own keys](#Using_your_own_keys)
-    *   [1.2 Manual installation](#Manual_installation)
-    *   [1.3 Upgrading](#Upgrading)
-        *   [1.3.1 Pacman hook](#Pacman_hook)
-*   [2 Configuration](#Configuration)
-    *   [2.1 Passing kernel parameters](#Passing_kernel_parameters)
-        *   [2.1.1 For kernels automatically detected by rEFInd](#For_kernels_automatically_detected_by_rEFInd)
-            *   [2.1.1.1 refind_linux.conf](#refind_linux.conf)
-            *   [2.1.1.2 Without configuration](#Without_configuration)
-        *   [2.1.2 Manual boot stanzas](#Manual_boot_stanzas)
-*   [3 Installation alongside an existing UEFI Windows installation](#Installation_alongside_an_existing_UEFI_Windows_installation)
-*   [4 Tools](#Tools)
-    *   [4.1 UEFI shell](#UEFI_shell)
-    *   [4.2 Memtest86](#Memtest86)
-    *   [4.3 Key management tools](#Key_management_tools)
-        *   [4.3.1 HashTool](#HashTool)
-        *   [4.3.2 MokManager](#MokManager)
-        *   [4.3.3 KeyTool](#KeyTool)
-    *   [4.4 GPT fdisk (gdisk)](#GPT_fdisk_.28gdisk.29)
-    *   [4.5 iPXE](#iPXE)
-    *   [4.6 fwupdate](#fwupdate)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Using drivers in UEFI shell](#Using_drivers_in_UEFI_shell)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 Btrfs subvolume support](#Btrfs_subvolume_support)
-        *   [6.1.1 Auto detection](#Auto_detection)
-        *   [6.1.2 Manual boot stanza](#Manual_boot_stanza)
-    *   [6.2 Apple Macs](#Apple_Macs)
-    *   [6.3 VirtualBox](#VirtualBox)
-*   [7 See also](#See_also)
+*   [2 Installing the rEFInd Boot Manager](#Installing_the_rEFInd_Boot_Manager)
+    *   [2.1 Installation with refind-install script](#Installation_with_refind-install_script)
+        *   [2.1.1 Secure Boot](#Secure_Boot)
+            *   [2.1.1.1 Using PreLoader](#Using_PreLoader)
+            *   [2.1.1.2 Using shim](#Using_shim)
+                *   [2.1.1.2.1 Using hashes](#Using_hashes)
+                *   [2.1.1.2.2 Using Machine Owner Key](#Using_Machine_Owner_Key)
+            *   [2.1.1.3 Using your own keys](#Using_your_own_keys)
+    *   [2.2 Manual installation](#Manual_installation)
+    *   [2.3 Upgrading](#Upgrading)
+        *   [2.3.1 Pacman hook](#Pacman_hook)
+*   [3 Configuration](#Configuration)
+    *   [3.1 Passing kernel parameters](#Passing_kernel_parameters)
+        *   [3.1.1 For kernels automatically detected by rEFInd](#For_kernels_automatically_detected_by_rEFInd)
+            *   [3.1.1.1 refind_linux.conf](#refind_linux.conf)
+            *   [3.1.1.2 Without configuration](#Without_configuration)
+        *   [3.1.2 Manual boot stanzas](#Manual_boot_stanzas)
+*   [4 Installation alongside an existing UEFI Windows installation](#Installation_alongside_an_existing_UEFI_Windows_installation)
+*   [5 Tools](#Tools)
+    *   [5.1 UEFI shell](#UEFI_shell)
+    *   [5.2 Memtest86](#Memtest86)
+    *   [5.3 Key management tools](#Key_management_tools)
+        *   [5.3.1 HashTool](#HashTool)
+        *   [5.3.2 MokManager](#MokManager)
+        *   [5.3.3 KeyTool](#KeyTool)
+    *   [5.4 GPT fdisk (gdisk)](#GPT_fdisk_.28gdisk.29)
+    *   [5.5 iPXE](#iPXE)
+    *   [5.6 fwupdate](#fwupdate)
+*   [6 Tips and tricks](#Tips_and_tricks)
+    *   [6.1 Using drivers in UEFI shell](#Using_drivers_in_UEFI_shell)
+*   [7 Troubleshooting](#Troubleshooting)
+    *   [7.1 Btrfs subvolume support](#Btrfs_subvolume_support)
+        *   [7.1.1 Auto detection](#Auto_detection)
+        *   [7.1.2 Manual boot stanza](#Manual_boot_stanza)
+    *   [7.2 Apple Macs](#Apple_Macs)
+    *   [7.3 VirtualBox](#VirtualBox)
+*   [8 See also](#See_also)
 
 ## Installation
 
 [Install](/index.php/Install "Install") the [refind-efi](https://www.archlinux.org/packages/?name=refind-efi) package.
+
+## Installing the rEFInd Boot Manager
 
 rEFInd has **read-only** drivers for ReiserFS, Ext2, Ext4, Btrfs, ISO-9660, HFS+, and NTFS. Additionally rEFInd can use drivers from the UEFI firmware i.e. FAT (and HFS+ on Macs or ISO-9660 on some systems).
 
@@ -339,6 +342,8 @@ As a fallback mechanism rEFInd can:
 *   Detect kernel options (`ro` or `rw`) from [GPT partition attributes](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries_.28LBA_2-33.29 "wikipedia:GUID Partition Table") (using attribute `60` "read-only") or `/etc/fstab`.
 
 **Note:** rEFInd does not support escape codes (e.g. for [spaces](/index.php/Fstab#Filepath_spaces "Fstab")) in `/etc/fstab`.
+
+So if you merely copy the one file **refind.efi** onto the *esp* and launch it without any further ado (say via *UEFIshell* or **KeyTool.efi**) you still get a menu to boot from via autodetection, with no configuration required whatsoever - while installation may come down to copying the single file refind.efi .
 
 #### Manual boot stanzas
 

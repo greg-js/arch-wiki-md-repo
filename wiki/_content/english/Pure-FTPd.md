@@ -156,14 +156,14 @@ Make it private:
 
 #### Enable TLS
 
-Towards the bottom of `/etc/pure-ftpd.conf` you should find a section for TLS. Uncomment and change the TLS setting to `1` to enable both FTP and SFTP:
+Towards the bottom of `/etc/pure-ftpd.conf` you should find a section for TLS. Uncomment and change the TLS setting to `1` to enable both FTP and FTPS:
 
 ```
 TLS             1
 
 ```
 
-Now restart the `pure-ftpd.service` daemon and you should be able to log in with SFTP-enabled clients, e.g. [filezilla](https://www.archlinux.org/packages/?name=filezilla) or [SmartFTP](https://www.smartftp.com/).
+Now restart the `pure-ftpd.service` daemon and you should be able to log in with FTPS-enabled clients, e.g. [filezilla](https://www.archlinux.org/packages/?name=filezilla) or [SmartFTP](https://www.smartftp.com/).
 
 ## See also
 

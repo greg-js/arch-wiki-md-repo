@@ -17,12 +17,13 @@ For general methods to improve the flexibility of the provided tips or *pacman* 
         *   [1.1.4 Development packages](#Development_packages)
     *   [1.2 Listing files owned by a package with size](#Listing_files_owned_by_a_package_with_size)
     *   [1.3 Identify files not owned by any package](#Identify_files_not_owned_by_any_package)
-    *   [1.4 Removing unused packages (orphans)](#Removing_unused_packages_.28orphans.29)
-    *   [1.5 Removing everything but base group](#Removing_everything_but_base_group)
-    *   [1.6 Getting the dependencies list of several packages](#Getting_the_dependencies_list_of_several_packages)
-    *   [1.7 Listing changed backup files](#Listing_changed_backup_files)
-    *   [1.8 Backup the pacman database](#Backup_the_pacman_database)
-    *   [1.9 Check changelogs easily](#Check_changelogs_easily)
+    *   [1.4 Tracking unowned files created by packages](#Tracking_unowned_files_created_by_packages)
+    *   [1.5 Removing unused packages (orphans)](#Removing_unused_packages_.28orphans.29)
+    *   [1.6 Removing everything but base group](#Removing_everything_but_base_group)
+    *   [1.7 Getting the dependencies list of several packages](#Getting_the_dependencies_list_of_several_packages)
+    *   [1.8 Listing changed backup files](#Listing_changed_backup_files)
+    *   [1.9 Backup the pacman database](#Backup_the_pacman_database)
+    *   [1.10 Check changelogs easily](#Check_changelogs_easily)
 *   [2 Installation and recovery](#Installation_and_recovery)
     *   [2.1 Installing packages from a CD/DVD or USB stick](#Installing_packages_from_a_CD.2FDVD_or_USB_stick)
     *   [2.2 Custom local repository](#Custom_local_repository)
@@ -193,15 +194,48 @@ $ pacman -Qlq *package* | grep -v '/$' | xargs du -h | sort -h
 
 ### Identify files not owned by any package
 
-If your system has stray files not owned by any package (a common case if you do not [use the package manager to install software](/index.php/Enhance_system_stability#Use_the_package_manager_to_install_software "Enhance system stability")), you may want to find such files in order to clean them up. The general process for doing so is:
+If your system has stray files not owned by any package (a common case if you do not [use the package manager to install software](/index.php/Enhance_system_stability#Use_the_package_manager_to_install_software "Enhance system stability")), you may want to find such files in order to clean them up.
 
-1.  Create a sorted list of the files you want to check ownership of: `$ find /etc /opt /usr | sort > all_files.txt` 
-2.  Create a sorted list of the files tracked by *pacman* (and remove the trailing slashes from directories): `$ pacman -Qlq | sed 's|/$||' | sort > owned_files.txt` 
-3.  Find lines in the first list that are not in the second: `$ comm -23 all_files.txt owned_files.txt` 
+One method is to use `# pacreport --unowned-files` from [pacutils](https://www.archlinux.org/packages/?name=pacutils) which will list unowned files among other details.
 
-This process is tricky in practice because many important files are not part of any package (e.g. files generated at runtime, custom configs) and so will be included in the final output, making it difficult to pick out the files that can be safely deleted.
+Another is to list all files of interest and check them against pacman:
 
-**Tip:** The [lostfiles](https://www.archlinux.org/packages/?name=lostfiles) script performs similar steps, but also includes an extensive blacklist to remove common false positives from the output. [aconfmgr](https://github.com/CyberShadow/aconfmgr) ([aconfmgr-git](https://aur.archlinux.org/packages/aconfmgr-git/)) also allows tracking orphaned files using a configuration script.
+```
+# find /etc /usr /opt /var | LC_ALL=C pacman -Qqo - 2>&1 > /dev/null | cut -d ' ' -f 5-
+
+```
+
+**Tip:** The [lostfiles](https://www.archlinux.org/packages/?name=lostfiles) script performs similar steps, but also includes an extensive blacklist to remove common false positives from the output.
+
+### Tracking unowned files created by packages
+
+Most systems will slowly collect several [ghost](http://ftp.rpm.org/max-rpm/s1-rpm-inside-files-list-directives.html#S3-RPM-INSIDE-FLIST-GHOST-DIRECTIVE) files such as state files, logs, indexes, etc. through the course of usual operation.
+
+`pacreport` from [pacutils](https://www.archlinux.org/packages/?name=pacutils) can be used to track these files and their associations via `/etc/pacreport.conf` (see [pacreport(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacreport.1#FILES)).
+
+An example may look something like this (abridged):
+
+ `/etc/pacreport.conf` 
+```
+[Options]
+IgnoreUnowned = usr/share/applications/mimeinfo.cache
+
+[PkgIgnoreUnowned]
+alsa-utils = var/lib/alsa/asound.state
+bluez = var/lib/bluetooth
+ca-certificates = etc/ca-certificates/trust-source/*
+dbus = var/lib/dbus/machine-id
+glibc = etc/ld.so.cache
+grub = boot/grub/*
+linux = boot/initramfs-linux.img
+pacman = var/lib/pacman/local
+update-mime-database = usr/share/mime/magic
+
+```
+
+Then, when using `# pacreport --unowned-files`, any unowned files will be listed if the associated package is no longer installed (or if any new files have been created).
+
+Additionally, [aconfmgr](https://github.com/CyberShadow/aconfmgr) ([aconfmgr-git](https://aur.archlinux.org/packages/aconfmgr-git/)) allows tracking modified and orphaned files using a configuration script.
 
 ### Removing unused packages (orphans)
 

@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Fzf](/index.php/Fzf "Fzf"), revisada por última vez el **2018-11-04**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Fzf&diff=0&oldid=553024) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Fzf](/index.php/Fzf "Fzf"), revisada por última vez el **2018-11-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Fzf&diff=0&oldid=553024) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [fzf](https://github.com/junegunn/fzf) es un buscador difuso de línea de comandos de propósito general.
 
@@ -61,4 +61,4 @@ la terminación de fzf en fish se puede activar con funciones personalizadas: [h
 
 ### Vim
 
-El plugin básico [Vim](/index.php/Vim_(Espa%C3%B1ol) "Vim (Español)") ya está incluido dentro del paquete e instalado en el directorio global de plugins de Vim. Por lo tanto, no es necesario añadir nada a su `.vimrc` para poder usarlo. Pero sólo proporciona el comando FZF. Hay un plugin de Vim adicional hecho por el autor de fzf que define algunas funciones de conveniencia, véase [https://github.com/junegunn/fzf.vim](https://github.com/junegunn/fzf.vim).
+El plugin básico [Vim](/index.php/Vim_(Espa%C3%B1ol) "Vim (Español)") ya está incluido dentro del paquete e instalado en el directorio global de plugins de Vim. Por lo tanto, no es necesario añadir nada a su `.vimrc` para poder usarlo. Aunque solo proporciona el comando FZF. Hay un plugin de Vim adicional hecho por el autor de fzf que define algunas funciones de conveniencia, véase [https://github.com/junegunn/fzf.vim](https://github.com/junegunn/fzf.vim).

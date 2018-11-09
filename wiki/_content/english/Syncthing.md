@@ -26,6 +26,8 @@ Related articles
     *   [5.2 Run in VirtualBox](#Run_in_VirtualBox)
     *   [5.3 Running through a proxy](#Running_through_a_proxy)
 *   [6 Troubleshooting](#Troubleshooting)
+    *   [6.1 Database issue](#Database_issue)
+    *   [6.2 Others](#Others)
 
 ## Installation
 
@@ -213,5 +215,16 @@ and [restart](/index.php/Restart "Restart") the `syncthing@*myusername*.service`
 This file can be edited using systemd facility `systemd edit --full syncthing@*myusername*.service` according to the [systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd") section.
 
 ## Troubleshooting
+
+### Database issue
+
+One may encounter database issue at some stage. To force a rescan of files and resync of database use the following command:
+
+```
+$ syncthing -reset-database
+
+```
+
+### Others
 
 See [Debugging Syncthing](http://docs.syncthing.net/dev/debugging.html).

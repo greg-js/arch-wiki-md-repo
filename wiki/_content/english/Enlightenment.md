@@ -294,7 +294,7 @@ Create an Init, a Start and a Stop folder in your `~/.e16` folder: any .sh scrip
 
 #### Compositor
 
-Shadows, Transparent effects *et all* can be found in MMB or RMB /Settings, under Composite .
+Shadows, Transparent effects *et al* can be found in MMB or RMB /Settings, under Composite .
 
 ## See also
 

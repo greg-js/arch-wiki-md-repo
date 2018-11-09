@@ -158,12 +158,12 @@ DNS = 10.0.0.1
 
 [Route]
 Gateway = 10.0.0.1
-Route = 10.0.0.0/24
+Destination = 10.0.0.0/24
 ```
 
 ## Setup a VPN server
 
-Wireguard comes with a tool to quickly create and tear down VPN servers and clients, `wg-quick`. Note that the config file used here is not a valid config file that can be used with `wg setconf`, and that you'll possibly have to change at least the interface from `eth0` to the one you use.
+Wireguard comes with a tool to quickly get started with Wireguard: `wg-quick`. Note that the config file used here is not a valid config file that can be used with `wg setconf`, and that you'll possibly have to change at least the interface from `eth0` to the one you use.
 
 #### Server
 

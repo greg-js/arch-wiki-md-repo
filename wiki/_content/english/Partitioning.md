@@ -22,8 +22,8 @@ Once created, a partition must be formatted with an appropriate [file system](/i
 
 *   [1 Partition table](#Partition_table)
     *   [1.1 Master Boot Record](#Master_Boot_Record)
-        *   [1.1.1 Master Boot Record (partition table)](#Master_Boot_Record_.28partition_table.29)
-        *   [1.1.2 Master Boot Record (bootstrap code)](#Master_Boot_Record_.28bootstrap_code.29)
+        *   [1.1.1 Master Boot Record (bootstrap code)](#Master_Boot_Record_.28bootstrap_code.29)
+        *   [1.1.2 Master Boot Record (partition table)](#Master_Boot_Record_.28partition_table.29)
     *   [1.2 GUID Partition Table](#GUID_Partition_Table)
     *   [1.3 Choosing between GPT and MBR](#Choosing_between_GPT_and_MBR)
     *   [1.4 Partitionless disk](#Partitionless_disk)
@@ -68,6 +68,10 @@ The [Master Boot Record](https://en.wikipedia.org/wiki/Master_boot_record "wikip
 *   The MBR is not located in a partition; it is located at the first sector of the device (physical offset 0), preceding the first partition.
 *   The boot sector present on a partitionless device or within an individual partition is called a [volume boot record (VBR)](https://en.wikipedia.org/wiki/Volume_boot_record "wikipedia:Volume boot record") instead.
 
+#### Master Boot Record (bootstrap code)
+
+The first 440 bytes of MBR are the **bootstrap code area**. On BIOS systems it usually contains the first stage of the boot loader. The bootstrap code can be backed up, restored from backup or erased [using dd](/index.php/Dd#Backup_and_restore_MBR "Dd").
+
 #### Master Boot Record (partition table)
 
 In the MBR partition table (also known as DOS or MS-DOS partition table) there are 3 types of partitions:
@@ -81,10 +85,6 @@ In the MBR partition table (also known as DOS or MS-DOS partition table) there a
 Extended partitions can be thought of as containers for logical partitions. A hard disk can contain no more than one extended partition. The extended partition is also counted as a primary partition so if the disk has an extended partition, only three additional primary partitions are possible (i.e. three primary partitions and one extended partition). The number of logical partitions residing in an extended partition is unlimited. A system that dual boots with Windows will require for Windows to reside in a primary partition.
 
 The customary numbering scheme is to create primary partitions *sda1* through *sda3* followed by an extended partition *sda4*. The logical partitions on *sda4* are numbered *sda5*, *sda6*, etc.
-
-#### Master Boot Record (bootstrap code)
-
-The first 440 bytes of MBR are the **bootstrap code area**. On BIOS systems it usually contains the first stage of the boot loader. The bootstrap code can be backed up, restored from backup or erased [using dd](/index.php/Dd#Backup_and_restore_MBR "Dd").
 
 ### GUID Partition Table
 

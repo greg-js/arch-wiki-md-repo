@@ -25,7 +25,7 @@ This list is by no means complete. If you know of a community that is not listed
 *   [9 Lithuanian](#Lithuanian)
 *   [10 Persian](#Persian)
 *   [11 Polish](#Polish)
-*   [12 Portugese](#Portugese)
+*   [12 Portuguese](#Portuguese)
 *   [13 Russian](#Russian)
 *   [14 Serbian](#Serbian)
 *   [15 Spanish](#Spanish)
@@ -113,7 +113,7 @@ This list is by no means complete. If you know of a community that is not listed
 *   Forum: [http://forum.archlinux.org.pl/](http://forum.archlinux.org.pl/)
 *   Wiki: [Main page (Polski)](/index.php/Main_page_(Polski) "Main page (Polski)")
 
-## Portugese
+## Portuguese
 
 *   Homepage: [http://archlinux-br.org/](http://archlinux-br.org/)
 *   Forum: [http://forum.archlinux-br.org/](http://forum.archlinux-br.org/)

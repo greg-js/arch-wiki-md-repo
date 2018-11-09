@@ -74,6 +74,8 @@ The key's randomart image is:
 
 La [imagen de arte aleatorio](http://www.cs.berkeley.edu/~dawnsong/papers/randomart.pdf) fue [introducida en OpenSSH 5.1](http://www.openssh.com/txt/release-5.1) como una forma más simple de identificar la huella de la llave.
 
+**Nota:** Si utiliza una contraseña para su llave, es *muy recomendado* usar la opción `-o` en el comando `ssh-keygen`. Así, su llave privada se guardara en el nuevo formato de OpenSSH, el cual ha mejorado bastante contra ataques de fuerza bruta, pero no es soportado por versiones de OpenSSH inferiores a 6.5\. De acuerdo a [ssh-keygen(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ssh-keygen.1), llaves de Ed25519 siempre usan el nuevo formato. También use la opción `-a` para especificar el numero de rondas de KDF en el cifrado de la contraseña.
+
 También es posible agregar un comentario opcional a la llave publica con el parámetro `-C`, para identificar la llave más fácilmente en lugares como `~/.ssh/known_hosts`, `~/.ssh/authorized_keys` y `ssh-add -L`. Por ejemplo:
 
 ```

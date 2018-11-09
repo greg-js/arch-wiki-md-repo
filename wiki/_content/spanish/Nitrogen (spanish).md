@@ -1,51 +1,53 @@
-## Contents
+Related articles
 
-*   [1 Introduccion](#Introduccion)
-*   [2 Instalacion](#Instalacion)
-*   [3 Uso](#Uso)
-    *   [3.1 Colocando un fondo de escritorio](#Colocando_un_fondo_de_escritorio)
-    *   [3.2 Restaurando imagen de fondo](#Restaurando_imagen_de_fondo)
-
-# Introduccion
+*   [feh (Español)](/index.php/Feh_(Espa%C3%B1ol) "Feh (Español)")
 
 [Nitrogen](http://l3ib.org/nitrogen/) es un navegador/colocador de fondos de escritorio rapido y ligero para X.
 
-# Instalacion
+## Contents
 
-Nitrogen esta disponible en los repositorios standar:
+*   [1 Instalación](#Instalaci.C3.B3n)
+*   [2 Uso](#Uso)
+    *   [2.1 Seleccionando un fondo de escritorio](#Seleccionando_un_fondo_de_escritorio)
+    *   [2.2 Restaurando imagen de fondo](#Restaurando_imagen_de_fondo)
+*   [3 Solución de problemas](#Soluci.C3.B3n_de_problemas)
+    *   [3.1 Congelamiento con dos monitores](#Congelamiento_con_dos_monitores)
 
-```
-# pacman -S nitrogen
+## Instalación
 
-```
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [nitrogen](https://www.archlinux.org/packages/?name=nitrogen).
 
-# Uso
+## Uso
 
-Ejecute **nitrogen --help** para los una lista completa de detalles. Los siguientes ejemplos le setan util:
+Ejecute `nitrogen --help` para una lista completa de opciones. Los siguientes ejemplos le serán útil:
 
-## Colocando un fondo de escritorio
+### Seleccionando un fondo de escritorio
 
-Para ver y colocar una imagen desde un directorio ( recursivamente, esto significa que revisara las carpetas contenidas en el interior de la especificada), ejecute:
-
-```
-$ nitrogen /ruta/al/directorio/de/las/imagenes/
-
-```
-
-Para ver y colocar una imagen desde un directorio ( no recursivamente), ejecute:
+Para ver y seleccionar una imagen desde un directorio recursivamente, ejecute:
 
 ```
-$ nitrogen --no-recurse /ruta/al/directorio/de/las/imagenes/
+$ nitrogen /ruta/al/directorio/de/las/imágenes/
 
 ```
 
-## Restaurando imagen de fondo
-
-Para restaurar el fondo de escritorio en las sesiones subsecuentes, debe agregar esta linea a su archivo de inicio (ej: ~/.xinitrc, ~/.config/openbox/autostart.sh, etc.):
+Para ver y seleccionar una imagen desde un directorio en modo no recursivo, ejecute:
 
 ```
-nitrogen --restore &
+$ nitrogen --no-recurse /ruta/al/directorio/de/las/imágenes/
 
 ```
 
-**Note:** En versiones menores o iguales a la 1.5.2-1, al hacer doble click sobre la imagen esta se pone como vista previa, los cambios no se guradan, uno debe clickear sobre el boton aplicar para que la imagen se ponga como fondo y se restaure correctamente.
+### Restaurando imagen de fondo
+
+Para restaurar el fondo de escritorio en sesiones subsecuentes, [autoarranque](/index.php/Autostarting_(Espa%C3%B1ol) "Autostarting (Español)") el siguiente comando: `nitrogen --restore &`
+
+## Solución de problemas
+
+### Congelamiento con dos monitores
+
+Remueva la configuracion actual de nitrogen: [[1]](https://bbs.archlinux.org/viewtopic.php?id=46245)
+
+```
+$ rm -r ~/.config/nitrogen/
+
+```

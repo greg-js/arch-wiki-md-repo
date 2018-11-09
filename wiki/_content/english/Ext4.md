@@ -26,6 +26,7 @@ From [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4):
     *   [4.3 Increasing commit interval](#Increasing_commit_interval)
     *   [4.4 Turning barriers off](#Turning_barriers_off)
     *   [4.5 Disabling journaling](#Disabling_journaling)
+    *   [4.6 Making journals fast](#Making_journals_fast)
 *   [5 Enabling metadata checksums](#Enabling_metadata_checksums)
     *   [5.1 New filesystem](#New_filesystem)
     *   [5.2 Convert existing filesystem](#Convert_existing_filesystem)
@@ -283,7 +284,13 @@ In both cases it is better to copy (`cp`) files instead, because that leaves the
 
 The *ext4* file system records information about when a file was last accessed and there is a cost associated with recording it. With the `noatime` option, the access timestamps on the filesystem are not updated.
 
- `/etc/fstab`  `/dev/sda5    /    ext4    defaults,**noatime**    0    1` 
+ `/etc/fstab` 
+```
+/dev/sda5    /    ext4    defaults,**noatime**    0    1
+
+```
+
+Doing so breaks applications that rely on access time, see [fstab#atime options](/index.php/Fstab#atime_options "Fstab") for possible solutions.
 
 ### Increasing commit interval
 
@@ -313,6 +320,12 @@ Disabling the journal with *ext4* can be done with the following command on an u
 # tune2fs -O "^has_journal" /dev/sdXN
 
 ```
+
+### Making journals fast
+
+For those with concerns about both data integrity and performance, the journaling can be significantly sped up with the `journal_async_commit` mount option. Note that it [does not work with](https://patchwork.ozlabs.org/patch/414750/) the balanced default of `data=ordered`, so this is only recommended when the filesystem is already cautiously using `data=journal`.
+
+You can then format a dedicated device to journal to with `mke2fs -O journal_dev /dev/journal_device`. Use `tune2fs -J device=/dev/journal_device /dev/ext4_fs` to assign the journal to an existing device, or replace `tune2fs` with `mkfs.ext4` if you are making a new filesystem.
 
 ## Enabling metadata checksums
 

@@ -261,7 +261,7 @@ If you have more than one swap file or swap partition you should consider assign
 
 ```
 
-Or via the `--priority` parameter of swapon:
+Or via the `--priority` parameter of *swapon*:
 
 ```
 # swapon --priority 100 /dev/sda1

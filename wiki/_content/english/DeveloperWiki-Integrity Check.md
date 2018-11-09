@@ -7,18 +7,18 @@
 
 # Introduction
 
-A tool was written to check the integrity of official pkgbuilds (core, extra and community repository) :
+A tool was written to check the integrity of official pkgbuilds (core, extra and community repository):
 
-[https://projects.archlinux.org/?p=dbscripts.git;a=tree;f=cron-jobs/check_archlinux;hb=HEAD](https://projects.archlinux.org/?p=dbscripts.git;a=tree;f=cron-jobs/check_archlinux;hb=HEAD)
+[https://git.archlinux.org/dbscripts.git/tree/cron-jobs/check_archlinux/](https://git.archlinux.org/dbscripts.git/tree/cron-jobs/check_archlinux/)
 
-This tool is run automatically every Friday and the results for core and extra are sent to the [arch-dev-public ML](https://www.archlinux.org/mailman/listinfo/arch-dev-public), while the results for community are sent to the [aur-general ML](https://www.archlinux.org/mailman/listinfo/aur-general).
+This tool is run automatically every Friday and the results for core and extra are sent to the [arch-dev-public ML](https://lists.archlinux.org/listinfo/arch-dev-public), while the results for community are sent to the [aur-general ML](https://lists.archlinux.org/listinfo/aur-general).
 
 Example of the run on March 13th :
 
-*   [Integrity Check i686 of core,extra](https://www.archlinux.org/pipermail/arch-dev-public/2009-March/010715.html)
-*   [Integrity Check x86_64 of core,extra](https://www.archlinux.org/pipermail/arch-dev-public/2009-March/010716.html)
-*   [Integrity Check i686 of community](https://www.archlinux.org/pipermail/aur-general/2009-March/004054.html)
-*   [Integrity Check x86_64 of community](https://www.archlinux.org/pipermail/aur-general/2009-March/004055.html)
+*   [Integrity Check i686 of core,extra](https://lists.archlinux.org/pipermail/arch-dev-public/2009-March/010715.html)
+*   [Integrity Check x86_64 of core,extra](https://lists.archlinux.org/pipermail/arch-dev-public/2009-March/010716.html)
+*   [Integrity Check i686 of community](https://lists.archlinux.org/pipermail/aur-general/2009-March/004054.html)
+*   [Integrity Check x86_64 of community](https://lists.archlinux.org/pipermail/aur-general/2009-March/004055.html)
 
 The purpose of this page is to maintain a list of the currently reported problems, with links to the [Arch Linux Bugtracker](https://bugs.archlinux.org/). This will help to detect the new problems which need to be reported.
 

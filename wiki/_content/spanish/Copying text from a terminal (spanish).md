@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Copying text from a terminal](/index.php/Copying_text_from_a_terminal "Copying text from a terminal"), revisada por última vez el **2018-11-02**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Copying_text_from_a_terminal&diff=0&oldid=552587) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Copying text from a terminal](/index.php/Copying_text_from_a_terminal "Copying text from a terminal"), revisada por última vez el **2018-11-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Copying_text_from_a_terminal&diff=0&oldid=552587) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 La mayoría de los emuladores de terminal maduros permiten a los usuarios copiar o guardar sus contenidos.
 
@@ -81,7 +81,7 @@ A menos que la columna "Combinación de teclas" indique lo contrario, la combina
 | [tinyterm-git](https://aur.archlinux.org/packages/tinyterm-git/) | Sí | Sí | No | No | No |
 | [urxvt](/index.php/Urxvt "Urxvt") | Sí | Sí `Ctrl+Alt+c` | No | No | Opcional |
 | [xfce4-terminal](https://www.archlinux.org/packages/?name=xfce4-terminal) | Sí | Sí | Sí | Sí | No |
-| [xterm](/index.php/Xterm "Xterm") | Sí | Opcional[[1]](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=588785) | No | No | Yes |
+| [xterm](/index.php/Xterm "Xterm") | Sí | Opcional[[1]](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=588785) | No | No | Sí |
 | [Yakuake](/index.php/Yakuake "Yakuake") | Sí | Sí | Sí | No | Opcional |
 
 ## Casos especiales

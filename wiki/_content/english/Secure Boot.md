@@ -445,7 +445,7 @@ Launch firmware setup utility or KeyTool and enroll **db**, **KEK** and **PK** c
 
 If the used tool supports it prefer using *.auth* and *.esl* over *.cer*.
 
-**Warning:** Enrolling Platform Key sets Secure Boot in "User Mode", so it should be enrolled last.
+**Warning:** Enrolling Platform Key sets Secure Boot in "User Mode", leaving "Setup Mode", so it should be enrolled last in sequence.
 
 #### Using firmware setup utility
 

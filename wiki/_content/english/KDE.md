@@ -38,7 +38,7 @@ KDE is a software project currently comprising a [desktop environment](/index.ph
     *   [3.2 Printing](#Printing)
     *   [3.3 Samba/Windows support](#Samba.2FWindows_support)
     *   [3.4 KDE Desktop activities](#KDE_Desktop_activities)
-    *   [3.5 Power saving](#Power_saving)
+    *   [3.5 Power management](#Power_management)
     *   [3.6 Autostart](#Autostart)
     *   [3.7 Phonon](#Phonon)
         *   [3.7.1 Which backend should I choose?](#Which_backend_should_I_choose.3F)
@@ -79,7 +79,7 @@ KDE is a software project currently comprising a [desktop environment](/index.ph
     *   [6.4 Sound problems](#Sound_problems)
         *   [6.4.1 No sound after suspend](#No_sound_after_suspend)
         *   [6.4.2 MP3 files cannot be played when using the GStreamer Phonon backend](#MP3_files_cannot_be_played_when_using_the_GStreamer_Phonon_backend)
-    *   [6.5 Power management](#Power_management)
+    *   [6.5 Power management](#Power_management_2)
         *   [6.5.1 No Suspend/Hibernate options](#No_Suspend.2FHibernate_options)
     *   [6.6 KMail](#KMail)
         *   [6.6.1 Clean akonadi configuration to fix KMail](#Clean_akonadi_configuration_to_fix_KMail)
@@ -269,9 +269,11 @@ An GUI solution is available with [samba-mounter-git](https://aur.archlinux.org/
 
 [KDE Desktop Activities](https://userbase.kde.org/Plasma#Activities) are special workspaces where you can select specific settings for each activity that apply only when you are using said activity.
 
-### Power saving
+### Power management
 
-[Install](/index.php/Install "Install") [powerdevil](https://www.archlinux.org/packages/?name=powerdevil) for an integrated power saving service called "**Powerdevil Power Management**", that may adjust the power saving profile of the system and/or the brightness of the screen (if supported).
+[Install](/index.php/Install "Install") [powerdevil](https://www.archlinux.org/packages/?name=powerdevil) for an integrated Plasma power managing service. This service offers additional power saving features, monitor brightness control (if supported) and battery reporting including peripheral devices.
+
+An alternative package without [Networkmanager](/index.php/Networkmanager "Networkmanager") and [Bluez](/index.php/Bluez "Bluez") dependencies is provided by [powerdevil-light](https://aur.archlinux.org/packages/powerdevil-light/).
 
 **Note:** Powerdevil may not [inhibit](/index.php/Power_management#Power_managers "Power management") all logind settings (such as the lid close action for laptops). In these cases, the logind setting itself will need to be changed - see [Power management#Power management with systemd](/index.php/Power_management#Power_management_with_systemd "Power management").
 

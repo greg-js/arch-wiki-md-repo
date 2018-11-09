@@ -8,6 +8,8 @@
     *   [2.4 ~~Embed Ads by Google into content~~](#Embed_Ads_by_Google_into_content)
     *   [2.5 URI Linking](#URI_Linking)
     *   [2.6 Focus in Search](#Focus_in_Search)
+    *   [2.7 Direct package links by name](#Direct_package_links_by_name)
+    *   [2.8 Adopting archweb_manpages](#Adopting_archweb_manpages)
 
 ## Introduction
 
@@ -55,3 +57,15 @@ Implement a pacman:// URI as an option to quickly let users quickly install pack
 Is it possible to make ArchWiki to automatically focus on search box? It is common behavior. Look for example to [youtube](https://youtube.com) or [wikipedia](https://wikipedia.org). I feel uncomfortable, when I go to wiki.archlinux.org and additionally need to use mouse to focus on search field. I know about `Alt + Shift + f`, but it is not working, because alt+shift changes keyboard layout. — [Agent0](/index.php/User:Agent0 "User:Agent0") ([talk](/index.php/User_talk:Agent0 "User talk:Agent0")|[contribs](/index.php/Special:Contributions/Agent0 "Special:Contributions/Agent0")) 12:29, 17 November 2015 (UTC)
 
 	On HTML5 you just have to add the "autofocus" attribute to the input (in this case the element with id="searchInput"). -- **nucularJohn**
+
+### Direct package links by name
+
+On the ArchWiki we can only link to packages using the package search, for example [pacman](https://www.archlinux.org/packages/?name=pacman) links to [https://www.archlinux.org/packages/?name=pacman](https://www.archlinux.org/packages/?name=pacman), requiring the reader to always click twice to get to a package page. It would be nice if there were another argument like `direct` to directly take you to the respective package.
+
+--[Larivact](/index.php/User:Larivact "User:Larivact") ([talk](/index.php/User_talk:Larivact "User talk:Larivact")) 14:06, 4 November 2018 (UTC)
+
+### Adopting archweb_manpages
+
+[Lahwaacz](/index.php/User:Lahwaacz "User:Lahwaacz") developed and hosts [https://jlk.fjfi.cvut.cz/arch/manpages/](https://jlk.fjfi.cvut.cz/arch/manpages/), which is used on the ArchWiki for links to man pages, e.g. [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8). See [Template talk:Man#Sources](/index.php/Template_talk:Man#Sources "Template talk:Man") and the [GitHub repository](https://github.com/lahwaacz/archweb_manpages). I think this should be adopted as an official Arch Linux project if only for a nicer domain name (man.archlinux.org).
+
+--[Larivact](/index.php/User:Larivact "User:Larivact") ([talk](/index.php/User_talk:Larivact "User talk:Larivact")) 14:27, 4 November 2018 (UTC)

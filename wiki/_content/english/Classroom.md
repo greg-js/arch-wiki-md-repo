@@ -21,7 +21,7 @@ Classes are held in the IRC channel **#archlinux-classroom** on the [Freenode](h
 Classes are announced on the mailing list arch-general, the forums, and other broadcasting places like twitter. The following table lists classes being developed and classes announced. The stages for class development are drafting, scheduling, and canceled. Once a class has been announced, the date and time are given.
 
 | **Stage / Date** | **Class Title** | **Instructor(s)** | **Announcements and Notes** |
-| 2018-06-27 07:00 UTC | *Python for Beginners* | pulec | [https://github.com/archclassroom/python-beginners](https://github.com/archclassroom/python-beginners) |
+| 2019-01-23 07:00 UTC | *Python for Beginners* | pulec | [https://github.com/archclassroom/python-beginners](https://github.com/archclassroom/python-beginners) |
 | drafting | *C Programming* | HalosGhost | [https://ptpb.pw/r/~alcclass](https://ptpb.pw/r/~alcclass) |
 
 ### Previous classes
@@ -29,6 +29,7 @@ Classes are announced on the mailing list arch-general, the forums, and other br
 Classes that have already happened. (Maybe students and teachers could write up some info on the experience, similar to the arch con pages.)
 
 | **Date** | **Class Title** | **Instructor(s)** | **Logs** |
+| 2018-08-15 | *Python for Beginners* | pulec | [7:00 UTC](https://github.com/archclassroom/python-beginners) |
 | 2017-06-04 | *The Beginner's Guide to Arch Linux Package Management* | Eschwartz | [17:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2017-06-04-the_beginners_guide_to_arch_linux_package_management.txt) |
 | 2016-12-11 | *Getting started with Arch Linux packaging* | HalosGhost and meskarune | [19:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2016-12-11-getting_started_with_arch_linux_packaging.txt) |
 | 2016-07-16 | *Git for Gits* | polyzen and meskarune | [16:00 UTC](https://archwomen.org/media/project_classroom/classlogs/2016-07-16-git_for_gits.txt) |

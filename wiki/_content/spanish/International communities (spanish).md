@@ -1,10 +1,11 @@
 **Estado de la traducción**
-Este artículo es una traducción de [International communities](/index.php/International_communities "International communities"), revisada por última vez el **2018-11-04**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=International_communities&diff=0&oldid=553165) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [International communities](/index.php/International_communities "International communities"), revisada por última vez el **2018-11-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=International_communities&diff=0&oldid=553418) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
 *   [Ayuda:i18n](/index.php/Help:I18n_(Espa%C3%B1ol) "Help:I18n (Español)")
-*   [Canales IRC](/index.php/IRC_channel_(Espa%C3%B1ol) "IRC channel (Español)")
+*   [Equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)")
+*   [Canal IRC](/index.php/IRC_channel_(Espa%C3%B1ol) "IRC channel (Español)")
 
 [https://archlinux.org](https://archlinux.org) es el sitio web oficial de Arch Linux, junto con sus foros y wiki. Sin embargo, están disponibles varios sitios extraoficiales administrados por la comunidad para usuarios internacionales que prefieren comunicarse en su propio idioma. Puede encontrar una lista de estas comunidades a continuación.
 
@@ -77,9 +78,9 @@ Esta lista no esta de ninguna manera completa. Si conoce una comunidad que no fi
 
 ## Francés
 
-*   Página principal: [http://archlinux.fr/](http://archlinux.fr/)
-*   Foro: [http://forums.archlinux.fr/](http://forums.archlinux.fr/)
-*   Wiki: [http://wiki.archlinux.fr/](http://wiki.archlinux.fr/)
+*   Página principal: [https://archlinux.fr/](https://archlinux.fr/)
+*   Foro: [https://forums.archlinux.fr/](https://forums.archlinux.fr/)
+*   Wiki: [https://wiki.archlinux.fr/](https://wiki.archlinux.fr/)
 
 ## Griego
 
@@ -108,9 +109,8 @@ Esta lista no esta de ninguna manera completa. Si conoce una comunidad que no fi
 
 ## Lituano
 
-*   Página principal: [http://www.archlinux.lt/](http://www.archlinux.lt/)
 *   Foro: [http://sls.archlinux.lt/](http://sls.archlinux.lt/)
-*   Wiki: [Main page (Lietuviškai)](/index.php/Main_page_(Lietuvi%C5%A1kai) "Main page (Lietuviškai)")
+*   Wiki: [lt:Main page](https://wiki.archlinux.org/index.php/Main_page_(Lietuvi%C5%A1kai) "lt:Main page")
 
 ## Persa
 
@@ -138,9 +138,9 @@ Esta lista no esta de ninguna manera completa. Si conoce una comunidad que no fi
 
 ## Serbio
 
-*   Página principal: [http://archlinux.rs/](http://archlinux.rs/)
-*   Foro: [http://bbs.archlinux.rs/](http://bbs.archlinux.rs/)
-*   Wiki: [http://wiki.archlinux.rs/](http://wiki.archlinux.rs/)
+*   Página principal: [https://www.archlinux.rs/](https://www.archlinux.rs/)
+*   Foro: [https://bbs.archlinux.rs/](https://bbs.archlinux.rs/)
+*   Wiki: [sr:Main page](https://wiki.archlinux.org/index.php/Main_page_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "sr:Main page")
 
 ## Sueco
 

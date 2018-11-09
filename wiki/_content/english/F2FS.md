@@ -10,9 +10,8 @@ Related articles
 *   [2 Mounting a F2FS file system](#Mounting_a_F2FS_file_system)
 *   [3 Grow an F2FS file system](#Grow_an_F2FS_file_system)
 *   [4 Checking and repair](#Checking_and_repair)
-*   [5 Using F2FS for root partition](#Using_F2FS_for_root_partition)
-*   [6 Troubleshooting](#Troubleshooting)
-    *   [6.1 GRUB with root on F2FS](#GRUB_with_root_on_F2FS)
+*   [5 Troubleshooting](#Troubleshooting)
+    *   [5.1 GRUB with root on F2FS](#GRUB_with_root_on_F2FS)
 
 ## Creating a F2FS file system
 
@@ -66,14 +65,10 @@ where `*/dev/sdxY*` is the target F2FS volume to grow. See [resize.f2fs(8)](http
 
 Checking and repairs to f2fs file systems are accomplished with `fsck.f2fs` provided by [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools). See [fsck.f2fs(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fsck.f2fs.8) for available switches.
 
-## Using F2FS for root partition
-
-Support for F2FS filesystem has been added in [GNU Grub](/index.php/Grub "Grub") 2.03\. At the moment (november 2018) ArchLinux ships version 2.02 so if you want to use F2FS as root partition file system you will need to install the bootloader on a separate `/boot` partition, formatted in a compatible file system.
-
-In the case you have compiled and installed GRUB 2.03, make sure to have `rw` option instead of `ro` in your boot kernel parameters.
-
 ## Troubleshooting
 
 ### GRUB with root on F2FS
 
-When using [GRUB](/index.php/GRUB "GRUB") your freshly installed system might not boot after reboot. As GRUB does not support F2FS it is not able to extract the [UUID](/index.php/UUID "UUID") of your drive so it uses classic non-persistent `/dev/*sdXx*` names instead. In this case you might have to manually edit `/boot/grub/grub.cfg` and replace `root=/dev/*sdXx*` with `root=UUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*`. You can use the `blkid` command to get the UUID of your device, see [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
+Support for the F2FS filesystem has been added in the not yet released [GRUB](/index.php/GRUB "GRUB") version 2.03\. For now you need to install the boot loader to a separate `/boot` partition, formatted with a compatible file system. See [GRUB#F2FS and other unsupported file systems](/index.php/GRUB#F2FS_and_other_unsupported_file_systems "GRUB").
+
+As GRUB does not support F2FS it is not able to extract the [UUID](/index.php/UUID "UUID") of your drive so it uses classic non-persistent `/dev/*sdXx*` names instead. In this case you might have to manually edit `/boot/grub/grub.cfg` and replace `root=/dev/*sdXx*` with `root=UUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*`. You can use the `blkid` command to get the UUID of your device, see [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").

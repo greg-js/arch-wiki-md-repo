@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Poclbm](/index.php/Poclbm "Poclbm"), revisada por última vez el **2018-10-30**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Poclbm&diff=0&oldid=552088) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Poclbm](/index.php/Poclbm "Poclbm"), revisada por última vez el **2018-11-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Poclbm&diff=0&oldid=552088) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [Poclbm](https://github.com/m0mchil/poclbm) (Python OpenCL Bitcoin miner) es un script de Python que mina Bitcoins usando un dispositivo compatible con OpenCL.
 
@@ -18,7 +18,7 @@ A medida que se generan más bloques, la dificultad aumenta, y a día de hoy (a 
 
 Un pool es una red de ordenadores que minan en conjunto para generar un bloque, y la recompensa total se divide entre todas las personas que contribuyeron para generar el bloque, de modo que al usar un grupo obtendrá ingresos más pequeños pero regulares y con el hardware apropiado (ver más abajo) puede llegar a ser un negocio rentable.
 
-Cuando se realiza la minería, la CPU no es ideal e incluso una tarjeta gráfica de gama baja superará a una CPU de gama alta, por lo que sólo se usan GPUs para la minería, aunque, con la configuración correcta, la máquina utilizada para minar puede ser usada para otra cosa (por ejemplo un servidor web), y si solo está minando, entonces es plausible que quiera usar un CPU básico de un solo núcleo y una placa base de baja calidad. La RAM no se usa, por lo que 2 GB de RAM es más que suficiente.
+Cuando se realiza la minería, la CPU no es ideal e incluso una tarjeta gráfica de gama baja superará a una CPU de gama alta, por lo que solo se usan GPUs para la minería, aunque, con la configuración correcta, la máquina utilizada para minar puede ser usada para otra cosa (por ejemplo un servidor web), y si solo está minando, entonces es plausible que quiera usar un CPU básico de un solo núcleo y una placa base de baja calidad. La RAM no se usa, por lo que 2 GB de RAM es más que suficiente.
 
 **Nota:** Las tarjetas NVIDIA no son idóneas para la minería y desperdiciarán más dinero (en electricidad) que el que generarán, incluso aunque se use un pool, a si que a menos que lo haga para experimentar/divertirse, o si desea usar su ordenador como radiador (utilizo el mío en mi habitación y produce más calor que mi calentador eléctrico habitual) no vale la pena.
 
@@ -41,7 +41,7 @@ $ poclbm *nombre de usuario:contraseña@servidor:puerto*
 
 ```
 
-El minero habrá comenzado y mostrará una tasa de hash (x MH/s). Para salir use el `Ctrl + C`. Si tan sólo desea ejecutar el minero manualmente, eso es todo lo que necesita hacer.
+El minero habrá comenzado y mostrará una tasa de hash (x MH/s). Para salir use el `Ctrl + C`. Si tan solo desea ejecutar el minero manualmente, eso es todo lo que necesita hacer.
 
 ## Ejecutándolo como servicio de systemd
 

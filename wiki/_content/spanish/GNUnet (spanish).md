@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [GNUnet](/index.php/GNUnet "GNUnet"), revisada por última vez el **2018-11-03**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GNUnet&diff=0&oldid=552757) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [GNUnet](/index.php/GNUnet "GNUnet"), revisada por última vez el **2018-11-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GNUnet&diff=0&oldid=552757) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -42,7 +42,7 @@ Véase también [cómo iniciar y detener un par GNUnet](https://GNUnet.org/how-S
 
 ### Descargar
 
-Para utilizar *gnunet-gtk* para descargar un archivo, sólo tiene que buscar el archivo en la pestaña *Filesystem*. Cuando vea el archivo que desea, sólo tiene que descargarlo como lo haría con cualquier otro programa de intercambio de archivos P2P. Inícielo con:
+Para utilizar *gnunet-gtk* para descargar un archivo, solo tiene que buscar el archivo en la pestaña *Filesystem*. Cuando vea el archivo que desea, solo tiene que descargarlo como lo haría con cualquier otro programa de intercambio de archivos P2P. Inícielo con:
 
 ```
 # gnunet-fs-gtk

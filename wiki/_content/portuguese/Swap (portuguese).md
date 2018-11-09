@@ -1,3 +1,5 @@
+**Status de tradução:** Esse artigo é uma tradução de [Swap](/index.php/Swap "Swap"). Data da última tradução: 2018-11-08\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Swap&diff=0&oldid=553734) na versão em inglês.
+
 Artigos relacionados
 
 *   [fstab](/index.php/Fstab "Fstab")
@@ -166,7 +168,7 @@ Finalmente, edite o [fstab](/index.php/Fstab "Fstab") para adicionar uma entrada
 
 #### Remover arquivo swap
 
-To remove a swap file, it must be turned off first and then can be removed:
+Para remover um arquivo swap, ele deve primeiro ser desligado:
 
 ```
 # swapoff -a
@@ -174,86 +176,86 @@ To remove a swap file, it must be turned off first and then can be removed:
 
 ```
 
-Finally remove the relevant entry from `/etc/fstab`.
+Por fim, remova a entrada relevante do `/etc/fstab`.
 
 ### Automatizado
 
 #### systemd-swap
 
-[Install](/index.php/Install "Install") the [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap) package. Set `swapfc_enabled=1` in the *Swap File Chunked* section of `/etc/systemd/swap.conf`. [Start/enable](/index.php/Start/enable "Start/enable") the `systemd-swap` service. Visit the [authors GitHub](https://github.com/Nefelim4ag/systemd-swap) page for more information and setting up the [recommended configuration](https://github.com/Nefelim4ag/systemd-swap/blob/master/README.md#about-configuration).
+[Instale](/index.php/Instale "Instale") o pacote [systemd-swap](https://www.archlinux.org/packages/?name=systemd-swap). Defina `swapfc_enabled=1` NA seção *Swap File Chunked* do `/etc/systemd/swap.conf`. [Inicie/habilite](/index.php/Inicie/habilite "Inicie/habilite") o serviço `systemd-swap`. Visite a página do [autor no GitHub](https://github.com/Nefelim4ag/systemd-swap) para mais informações e instalação da [configuração recomendada](https://github.com/Nefelim4ag/systemd-swap/blob/master/README.md#about-configuration).
 
-**Note:** If the journal keeps showing the following warning `systemd-swap[..]: WARN: swapFC: ENOSPC` and no swap file is being created, you need to set `swapfc_force_preallocated=1` in `/etc/systemd/swap.conf`.
+**Nota:** Se o journal fica mostrando o aviso a seguir `systemd-swap[..]: WARN: swapFC: ENOSPC` e nenhum arquivo swap está sendo criado, você precisa definir `swapfc_force_preallocated=1` no `/etc/systemd/swap.conf`.
 
 ## Swap com dispositivo USB
 
-Thanks to the modularity offered by Linux, we can have multiple swap partitions spread over different devices. If you have a very full hard disk, a USB device can be used as a swap partition temporarily. However, this method has some severe disadvantages:
+Graças à modularidade oferecida pelo Linux, podemos ter várias partições de troca espalhadas por diferentes dispositivos. Se você tiver um disco rígido muito completo, um dispositivo USB pode ser usado temporariamente como partição de troca. No entanto, esse método tem algumas desvantagens severas:
 
-*   A USB device is slower than a hard disk
-*   Flash memory has a limited number of write cycles. Using it as a swap partition can kill it quickly
+*   Um dispositivo USB possivelmente é mais lento que um disco rígido
+*   A memória flash possui um número limitado de ciclos de gravação. Usá-lo como uma partição swap pode matá-lo rapidamente
 
-To add a USB device to swap, first take a USB flash drive and partition it for swap as described in [#Swap partition](#Swap_partition).
+Para adicionar um dispositivo USB à swap, primeiro pegue uma unidade flash USB e particione-a para a swap, conforme descrito em [#Partição swap](#Parti.C3.A7.C3.A3o_swap).
 
-Next open `/etc/fstab` and add
+Em seguida, abra `/etc/fstab` e adicione
 
 ```
 pri=0
 
 ```
 
-to the mount options of the *original* swap entry so that the USB swap partition will take priority over the old swap partition.
+para as opções de montagem da entrada de swap *original* para que a partição swap USB tenha prioridade sobre a partição swap antiga.
 
-This guide will work for other memory such as SD cards, etc.
+Esse guia vai funcionar para outras memórias tal como cartões SD, etc.
 
 ## Criptografia swap
 
-See [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
+Veja [dm-crypt/Swap encryption](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption").
 
 ## Desempenho
 
-Swap operations are usually significantly slower than directly accessing data in RAM. Disabling swap entirely to improve performance can sometimes lead to a degradation, since it decreases the memory available for VFS caches, causing more frequent and costly disk I/O.
+As operações de swap geralmente são significativamente mais lentas do que acessar diretamente os dados na RAM. A desativação total da swap para melhorar o desempenho pode levar a uma degradação, pois diminui a memória disponível para caches VFS, causando E/S de disco mais frequente e dispendiosa.
 
-Swap values can be adjusted to help performance:
+Os valores de swap podem ser ajustados para ajudar no desempenho:
 
 ### Swappiness
 
-The *swappiness* [sysctl](/index.php/Sysctl "Sysctl") parameter represents the kernel's preference (or avoidance) of swap space. Swappiness can have a value between 0 and 100, the default value is 60\. A low value causes the kernel to avoid swapping, a higher value causes the kernel to try to use swap space. Using a low value on sufficient memory is known to improve responsiveness on many systems.
+O parâmetro de [sysctl](/index.php/Sysctl "Sysctl") para *swappiness* (isto é, a capacidade de realizar swap) representa a preferência (ou evitação) do kernel a cerca do espaço de swap. Swappiness pode ter um valor entre 0 e 100, o valor padrão é 60\. Um valor baixo faz com que o kernel evite swap, um valor mais alto faz com que o kernel tente usar o espaço de swap. Sabe-se que usar um valor baixo em memória suficiente melhora a capacidade de resposta em muitos sistemas.
 
-To check the current swappiness value:
+Para verificar o valor atual de swappiness:
 
 ```
 $ cat /sys/fs/cgroup/memory/memory.swappiness
 
 ```
 
-or
+ou
 
 ```
 $ cat /proc/sys/vm/swappiness
 
 ```
 
-**Note:** As `/proc` is a lot less organized and is kept only for compatibility purposes, you are encouraged to use `/sys` instead.
+**Nota:** Como `/proc` é muito menos organizado e é mantido apenas para propósitos de compatibilidade, você é encorajado a usar `/sys`.
 
-To temporarily set the swappiness value:
+Para definir temporariamente o valor do swappiness:
 
 ```
 # sysctl vm.swappiness=10
 
 ```
 
-To set the swappiness value permanently, edit a *sysctl* configuration file
+Para definir permanentemente o valor de swappiness, edite um arquivo de configuração *sysctl*
 
  `/etc/sysctl.d/99-sysctl.conf`  `vm.swappiness=10` 
 
-To test and more on why this may work, take a look at [this article](http://rudd-o.com/en/linux-and-free-software/tales-from-responsivenessland-why-linux-feels-slow-and-how-to-fix-that).
+Para testar e mais sobre por que isso pode funcionar, dê uma olhada [neste artigo](http://rudd-o.com/en/linux-and-free-software/tales-from-responsivenessland-why-linux-feels-slow-and-how-to-fix-that).
 
 ### Pressão de cache VFS
 
-Another *sysctl* parameter that affects swap performance is `vm.vfs_cache_pressure`, which controls the tendency of the kernel to reclaim the memory which is used for caching of VFS caches, versus pagecache and swap. Increasing this value increases the rate at which VFS caches are reclaimed[[2]](http://doc.opensuse.org/documentation/leap/tuning/html/book.sle.tuning/cha.tuning.memory.html#cha.tuning.memory.vm.reclaim). For more information, see the [Linux kernel documentation](https://www.kernel.org/doc/Documentation/sysctl/vm.txt).
+Outro parâmetro *sysctl* que afeta o desempenho da swap é `vm.vfs_cache_pressure`, que controla a tendência do kernel para recuperar a memória que é usada para armazenamento em cache de caches VFS, versus cache de páginas e swap. Aumentar esse valor aumenta a taxa na qual os caches VFS são recuperados [[2]](http://doc.opensuse.org/documentation/leap/tuning/html/book.sle.tuning/cha.tuning.memory.html#cha.tuning.memory.vm.reclaim). Para mais informações, consulte a [documentação do kernel Linux](https://www.kernel.org/doc/Documentation/sysctl/vm.txt).
 
 ### Prioridade
 
-If you have more than one swap file or swap partition you should consider assigning a priority value (0 to 32767) for each swap area. The system will use swap areas of higher priority before using swap areas of lower priority. For example, if you have a faster disk (`/dev/sda`) and a slower disk (`/dev/sdb`), assign a higher priority to the swap area located on the fastest device. Priorities can be assigned in [fstab](/index.php/Fstab "Fstab") via the `pri` parameter:
+Se você tiver mais de um arquivo de swap ou partição de swap, considere atribuir um valor de prioridade (0 a 32767) para cada área de swap. O sistema usará áreas de swap de prioridade mais alta antes de usar áreas de swap de menor prioridade. Por exemplo, se você tiver um disco mais rápido (`/dev/sda`) e um disco mais lento (`/dev/sdb`), atribua uma prioridade mais alta à área de troca localizada no mais rápido dispositivo. Prioridades podem ser atribuídas em [fstab](/index.php/Fstab "Fstab") através do parâmetro `pri`:
 
 ```
 /dev/sda1 none swap defaults,pri=100 0 0
@@ -261,19 +263,19 @@ If you have more than one swap file or swap partition you should consider assign
 
 ```
 
-Or via the `--priority` parameter of swapon:
+Ou por meio do parâmetro `--priority` de *swapon*:
 
 ```
 # swapon --priority 100 /dev/sda1
 
 ```
 
-If two or more areas have the same priority, and it is the highest priority available, pages are allocated on a round-robin basis between them.
+Se duas ou mais áreas tiverem a mesma prioridade e for a prioridade mais alta disponível, as páginas serão alocadas em uma base round-robin entre elas.
 
 ### Usando zswap ou zram
 
-[Zswap](/index.php/Zswap "Zswap") is a Linux kernel feature providing a compressed write-back cache for swapped pages. This increases the performance and decreases the IO-Operations. [ZRAM](/index.php/ZRAM "ZRAM") creates a virtual compressed Swap-file in memory as alternative to a swapfile on disc.
+O [zswap](/index.php/Zswap "Zswap") é um recurso de kernel do Linux que fornece um cache de write-back compactado para páginas do swap. Isso aumenta o desempenho e diminui o operações de E/S. [ZRAM](/index.php/ZRAM "ZRAM") cria um arquivo swap compactado virtual na memória como alternativa a um arquivo swap no disco.
 
 ### Distribuição
 
-There is no necessity to use [RAID](/index.php/RAID "RAID") for swap performance reasons. The kernel itself can stripe swapping on several devices, if you just give them the same priority in the `/etc/fstab` file. Refer to [The Software-RAID HOWTO](http://unthought.net/Software-RAID.HOWTO/Software-RAID.HOWTO-2.html#ss2.3) for details.
+Não há necessidade de usar [RAID](/index.php/RAID "RAID") por motivos de desempenho de swap. O kernel em si pode distribuir a troca em vários dispositivos, se você apenas der a mesma prioridade no arquivo `/etc/fstab`. Consulte o [The Software-RAID HOWTO](http://unthought.net/Software-RAID.HOWTO/Software-RAID.HOWTO-2.html#ss2.3) para obter detalhes.
