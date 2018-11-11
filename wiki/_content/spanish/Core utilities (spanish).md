@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Core utilities](/index.php/Core_utilities "Core utilities"), revisada por última vez el **2018-10-21**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=549217) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Core utilities](/index.php/Core_utilities "Core utilities"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Core_utilities&diff=0&oldid=554173) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -11,7 +11,7 @@ Artículos relacionados
 
 Las *utilidades principales* son las herramientas básicas y fundamentales de un sistema [GNU](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)")/[Linux](/index.php/Linux_(Espa%C3%B1ol) "Linux (Español)"). En Arch Linux se encuentran en el [grupo base](/index.php/Base_group "Base group"). Este artículo proporciona una visión general e incompleta de ellos, vincula su documentación y describe alternativas útiles. El alcance de este artículo incluye, pero no se limita, a [GNU coreutils](https://www.gnu.org/software/coreutils/coreutils.html). La mayoría de los servicios básicos son herramientas tradicionales [Unix](https://en.wikipedia.org/wiki/es:Unix "wikipedia:es:Unix") (véase [Heirloom](/index.php/Heirloom "Heirloom")) y muchos fueron estandarizados por [POSIX](https://en.wikipedia.org/wiki/es:POSIX "wikipedia:es:POSIX") pero se han seguido desarrollado para proporcionar más funciones.
 
-La mayoría de las interfaces de línea de órdenes están documentadas en las [páginas del manual](/index.php/Man_page_(Espa%C3%B1ol) "Man page (Español)"), las utilidades del [Proyecto GNU](/index.php/GNU_Project_(Espa%C3%B1ol) "GNU Project (Español)") están documentadas en los [manuales de información](/index.php/Info_manual_(Espa%C3%B1ol) "Info manual (Español)"), algunos [intérpretes de órdenes](/index.php/Shell_(Espa%C3%B1ol) "Shell (Español)") proporcionan una orden `help` para las órdenes incorporadas de la [línea de órdenes](/index.php/Shell_(Espa%C3%B1ol) "Shell (Español)"). Además, la mayoría de las órdenes imprimen su uso cuando se ejecutan con el indicador `--help`.
+La mayoría de las interfaces de línea de órdenes están documentadas en las [páginas del manual](/index.php/Man_page_(Espa%C3%B1ol) "Man page (Español)"), las utilidades del [Proyecto GNU](/index.php/GNU_Project_(Espa%C3%B1ol) "GNU Project (Español)") están documentadas en los [manuales de información](/index.php/Info_manual_(Espa%C3%B1ol) "Info manual (Español)"), algunos intérpretes de línea de órdenes proporcionan una orden `help` para las órdenes incorporadas de la [línea de órdenes](/index.php/Shell_(Espa%C3%B1ol) "Shell (Español)"). Además, la mayoría de las utilidades imprimen su uso cuando se ejecutan con el indicador `--help`.
 
 ## Contents
 
@@ -28,9 +28,9 @@ La mayoría de las interfaces de línea de órdenes están documentadas en las [
 
 ## Esenciales
 
-La siguiente tabla lista algunas órdenes importantes con los que los usuarios de Arch Linux deben estar familiarizados. Véase también [intro(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/intro.1).
+La siguiente tabla lista algunas utilidades importantes las cuales los usuarios de Arch Linux deben estar familiarizados. Véase también [intro(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/intro.1).
 
-| Paquete | Orden | Descripción | Documentación | Alternativas |
+| Paquete | Utilidad | Descripción | Documentación | Alternativas |
 | incluido en la línea de órdenes | cd | cambia de directorio | [cd(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cd.1p) |
 | GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) | ls | lista el directorio | [ls(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/ls.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html) | [exa](https://www.archlinux.org/packages/?name=exa), [tree](https://www.archlinux.org/packages/?name=tree) |
 | cat | concatena archivos a la salida estándar | [cat(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cat.1), [info](https://www.gnu.org/software/coreutils/manual/html_node/cat-invocation.html) | [tac(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/tac.1) |
@@ -69,7 +69,7 @@ rm, mv, cp y las redirecciones de la línea de órdenes eliminan o sobrescriben 
 
 Esta tabla enumera las utilidades principales que a menudo son útiles.
 
-| Paquete | Orden | Descripción | Documentación | Alternativas |
+| Paquete | Utilidad | Descripción | Documentación | Alternativas |
 | incluidos en la línea de órdenes | alias | define o muestra los alias | [alias(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/alias.1p) |
 | type | imprime el tipo de una orden | [type(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/type.1p) | [which(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/which.1) |
 | time | temporiza una orden | [time(1p)](https://jlk.fjfi.cvut.cz/arch/manpages/man/time.1p) |

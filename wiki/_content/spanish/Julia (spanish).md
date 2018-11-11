@@ -1,7 +1,7 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Julia](/index.php/Julia "Julia"), revisada por última vez el **2018-10-29**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Julia&diff=0&oldid=551946) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Julia](/index.php/Julia "Julia"), revisada por última vez el **2018-11-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Julia&diff=0&oldid=551946) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
-**Note:** [https://julialang.org/](https://julialang.org/) contiene una documentación magnífica y de código abierto. La información no específica a Arch debería aportarse allí.
+**Nota:** [https://julialang.org/](https://julialang.org/) contiene una documentación magnífica y de código abierto. La información no específica a Arch debería aportarse allí.
 
 [Julia](https://julialang.org/) es un lenguaje de programación dinámico de alto nivel y alto rendimiento para computación numérica. Proporciona un sofisticado compilador, ejecución paralela distribuida, precisión numérica y una extensa librería de funciones matemáticas.
 

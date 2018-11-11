@@ -423,7 +423,7 @@ This combination puts colors to **bold** and <u>underlined</u> words in `xterm/u
 
 *   **prettyping** — Add some great features to ping monitoring. A wrapper around the standard ping tool with the objective of making the output prettier, more colorful, more compact, and easier to read.
 
-	[http://denilson.sa.nom.br/prettyping/](http://denilson.sa.nom.br/prettyping/) || [prettyping](https://aur.archlinux.org/packages/prettyping/)
+	[http://denilson.sa.nom.br/prettyping/](http://denilson.sa.nom.br/prettyping/) || [prettyping](https://www.archlinux.org/packages/?name=prettyping)
 
 ### Make
 

@@ -265,7 +265,7 @@ install CD version
 install CD version
  | Hardware support | Remarks |
 | Video | Sound | Ethernet | Wireless | Bluetooth | Power management | Modem | Other |
-| Lenovo Legion Y520 | 2017.12.01 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | SD card (Not tested), Webcam (Not tested), USB & USB 3.0 (Yes) | Tested December 2017 / Linux 4.14.8\. Must change SATA configuration in BIOS from RAID to AHCI in order to recognize SSD. |
+| Lenovo Legion Y520 | 2018.11.01 | Yes | Yes | Yes | Yes | Yes | Yes | Yes | SD card (Not tested), Webcam (Yes), USB & USB 3.0 (Yes), HDMI (Yes), USB-C (Not tested), Touchpad (Yes), NVMe M.2 SSD (Yes) | Tested November 2018 / Linux 4.18.6\. Must change SATA configuration in BIOS from RAID to AHCI in order to recognize SSD. |
 
 ## Special Notes (*):
 

@@ -34,7 +34,7 @@ $ youtube-dl [OPTIONS] *URL*
 
 ```
 
-**Tip:** En algunos casos (como YouTube) la *URL* puede sustituirse por el *ID* del video.
+**Sugerencia:** En algunos casos (como YouTube) la *URL* puede sustituirse por el *ID* del video.
 
 ### Selección de formato
 
@@ -67,6 +67,8 @@ Utilice `-x` para descargar solo el audio(requiere [FFmpeg](/index.php/FFmpeg "F
 $ youtube-dl -x -f bestaudio *URL*
 
 ```
+
+**Sugerencia:** Puede crear un [alias](/index.php/Alias_(Espa%C3%B1ol) "Alias (Español)") que busca la URL desde el portapapeles con [xclip](/index.php/Xclip_(Espa%C3%B1ol) "Xclip (Español)") usando `"$(xclip -o)"`.
 
 ## Configuración
 

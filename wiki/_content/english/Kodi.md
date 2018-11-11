@@ -179,7 +179,7 @@ Any PC with a supported IR receiver/remote, can use [LIRC](/index.php/LIRC "LIRC
 
 To work properly with Kodi, a file that maps the lirc events to Kodi keypresses is needed. Create an [XML](https://en.wikipedia.org/wiki/XML "wikipedia:XML") file at `~/.kodi/userdata/Lircmap.xml` (note the capital 'L').
 
-**Note:** Users running Kodi started with [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) will find the `kodi` user's home (`~`) under `/var/lib/kodi/` and should substitute this in for the shortcut above. Also make sure that if creating this file as the root user, it gets proper [ownership](/index.php/File_permissions_and_attributes#Changing_ownership "File permissions and attributes") as `kodi:kodi` when finished.
+**Note:** Users running Kodi started with [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) will find the `kodi` user's home (`~`) under `/var/lib/kodi/` and should substitute this in for the shortcut above. Also make sure that if creating this file as the root user, it gets proper [ownership](/index.php/Ownership "Ownership") as `kodi:kodi` when finished.
 
 `Lircmap.xml` format is as follows:
 

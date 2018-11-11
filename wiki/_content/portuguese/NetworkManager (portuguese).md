@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [NetworkManager](/index.php/NetworkManager "NetworkManager"). Data da última tradução: 2018-11-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=NetworkManager&diff=0&oldid=552019) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [NetworkManager](/index.php/NetworkManager "NetworkManager"). Data da última tradução: 2018-11-10\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=NetworkManager&diff=0&oldid=554414) na versão em inglês.
 
 Related articles
 
@@ -818,13 +818,13 @@ Depois de colocar isso, [reinicie](/index.php/Reinicie "Reinicie") o `NetworkMan
 
 ### Configurando aleatorização de endereço MAC
 
-**Note:** Disabling MAC address randomization may be needed to get (stable) link connection [[3]](https://bbs.archlinux.org/viewtopic.php?id=220101) and/or networks that restrict devices based on their MAC Address or have a limit network capacity.
+**Nota:** Desabilitar a aleatorização de endereço MAC pode ser necessário para obter uma conexão de link (estável) [[3]](https://bbs.archlinux.org/viewtopic.php?id=220101) e/ou redes que restrinjam dispositivos com base em seu endereço MAC ou tenham uma rede de limite capacidade.
 
-MAC randomization can be used for increased privacy by not disclosing your real MAC address to the network.
+A aleatorização de MAC pode ser usada para aumentar a privacidade, não revelando seu endereço MAC real à rede.
 
-NetworkManager supports two types MAC Address Randomization: randomization during scanning, and for network connections. Both modes can be configured by modifying `/etc/NetworkManager/NetworkManager.conf` or by creating a separate configuration file in `/etc/NetworkManager/conf.d/` which is recommended since the aforementioned config file may be overwritten by NetworkManager.
+O NetworkManager oferece suporte a dois tipos de aleatorização de endereços MAC: aleatorização durante a digitalização e para conexões de rede. Ambos os modos podem ser configurados modificando o `/etc/NetworkManager/NetworkManager.conf` ou criando um arquivo de configuração separado no `/etc/NetworkManager/conf.d/`, que é recomendado já que o primeiro arquivo de configuração acima pode ser substituído pelo NetworkManager.
 
-Randomization during Wi-Fi scanning is enabled by default, but it may be disabled by adding the following lines to `/etc/NetworkManager/NetworkManager.conf` or a dedicated configuration file under `/etc/NetworkManager/conf.d`:
+A aleatorização durante a varredura de Wi-Fi é ativada por padrão, mas pode ser desativada adicionando as seguintes linhas ao `/etc/NetworkManager/NetworkManager.conf` ou a um arquivo de configuração dedicado em `/etc/NetworkManager/conf.d`:
 
  `/etc/NetworkManager/conf.d/wifi_rand_mac.conf` 
 ```
@@ -832,48 +832,48 @@ Randomization during Wi-Fi scanning is enabled by default, but it may be disable
 wifi.scan-rand-mac-address=no
 ```
 
-MAC randomization for network connections can be set to different modes for both wireless and ethernet interfaces. See [the Gnome blog post](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/) for more details on the different modes.
+A aleatorização de MAC para conexões de rede pode ser definida para modos diferentes para interfaces sem fio e Ethernet. Veja a [publicação de blog do GNOME](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/) para mais detalhes sobre os diferentes modos.
 
-In terms of MAC randomization the most important modes are stable and random. Stable generates a random MAC address when you connect to a new network and associates the two permanently. This means that you will use the same MAC address every time you connect to that network. In contrast, random will generate a new MAC address every time you connect to a network, new or previously known. You can configure the MAC randomization by adding the desired configuration under `/etc/NetworkManager/conf.d`.
+Em termos de aleatorização de MAC, os modos mais importantes são `stable` e `random`. `stable` gera um endereço MAC aleatório quando você se conecta a uma nova rede e associa os dois permanentemente. Isso significa que você usará o mesmo endereço MAC sempre que se conectar a essa rede. Em contraste, `random` irá gerar um novo endereço MAC toda vez que você se conectar a uma rede, nova ou previamente conhecida. Você pode configurar a aleatorização do MAC adicionando a configuração desejada em `/etc/NetworkManager/conf.d`.
 
 ```
 [device-mac-randomization]
-# "yes" is already the default for scanning
+# "yes" já é o padrão para fazer varredura
 wifi.scan-rand-mac-address=yes
 
 [connection-mac-randomization]
-# Randomize MAC for every ethernet connection
+# Aleatoriza o MAC para cada conexão ethernet
 ethernet.cloned-mac-address=random
-# Generate a random MAC for each WiFi and associate the two permanently.
+# Gera um MAC aleatório para cada WiFi e associa a dois permanentemente.
 wifi.cloned-mac-address=stable
 
 ```
 
-See the following [GNOME blogpost](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/) for more details.
+Veja a seguinte [publicação de blog do GNOME](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/) para mais detalhes.
 
 ### Habilitar extensões de privacidade IPv6
 
-See [IPv6#NetworkManager](/index.php/IPv6#NetworkManager "IPv6").
+Veja [IPv6#NetworkManager](/index.php/IPv6#NetworkManager "IPv6").
 
 ### Trabalhando com conexões cabeadas
 
-By default, NetworkManager generates a connection profile for each wired ethernet connection it finds. At the point when generating the connection, it does not know whether there will be more ethernet adapters available. Hence, it calls the first wired connection "Wired connection 1". You can avoid generating this connection, by configuring `no-auto-default` (see [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5)), or by simply deleting it. Then NetworkManager will remember not to generate a connection for this interface again.
+Por padrão, o NetworkManager gera um perfil de conexão para cada conexão Ethernet com fio que encontrar. No momento em que gera a conexão, ele não sabe se haverá mais adaptadores Ethernet disponíveis. Por isso, ele chama a primeira conexão com fio "Conexão cabeada 1". Você pode evitar gerar essa conexão, configurando `no-auto-default` (consulte [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5)) ou simplesmente excluindo-a. Em seguida, o NetworkManager se lembrará de não gerar uma conexão para essa interface novamente.
 
-You can also edit the connection (and persist it to disk) or delete it. NetworkManager will not re-generate a new connection. Then you can change the name to whatever you want. You can use something like nm-connection-editor for this task.
+Você também pode editar a conexão (e persistir no disco) ou excluí-la. O NetworkManager não irá gerar novamente uma nova conexão. Então, você pode mudar o nome para o que você quiser. Você pode usar algo como o *nm-connection-editor* para esta tarefa.
 
 ### resolv.conf
 
-*NetworkManager* overwrites [resolv.conf](/index.php/Resolv.conf "Resolv.conf") by default.
+O *NetworkManager* sobrescreve o [resolv.conf](/index.php/Resolv.conf_(Portugu%C3%AAs) "Resolv.conf (Português)") por padrão.
 
-This can be stopped by adding `dns=none` to the `[main]` section in `/etc/NetworkManager/NetworkManager.conf`.
+Isso pode ser evitado adicionando `dns=none` à seção `[main]` no `/etc/NetworkManager/NetworkManager.conf`.
 
-After that `/etc/resolv.conf` might be a broken symlink that you will need to remove. Then, just create a new `/etc/resolv.conf` file.
+Após isso, o `/etc/resolv.conf` pode ser um link simbólico quebrado que você precisará remover. Então, basta criar um novo arquivo `/etc/resolv.conf`.
 
-*NetworkManager* also offers hooks via so called dispatcher scripts that can be used to alter the `/etc/resolv.conf` after network changes. See [#Network services with NetworkManager dispatcher](#Network_services_with_NetworkManager_dispatcher) and [NetworkManager(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.8) for more information.
+O *NetworkManager* também oferece "hooks" através de scripts chamados de "dispatchers" que podem ser usados para alterar o `/etc/resolv.conf` após as mudanças na rede. Consulte [#Serviços de rede com o NetworkManager dispatcher](#Servi.C3.A7os_de_rede_com_o_NetworkManager_dispatcher) e [NetworkManager(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.8) para mais informações.
 
 #### Usar openresolv
 
-To configure NetworkManager to use [openresolv](/index.php/Openresolv "Openresolv"), set the `rc-manager` option to `resolvconf` with a configuration file in `/etc/NetworkManager/conf.d/`:
+Para configurar o NetworkManager para usar o [openresolv](/index.php/Openresolv_(Portugu%C3%AAs) "Openresolv (Português)"), defina a opção `rc-manager` para o `resolvconf` com um arquivo de configuração em `/etc/NetworkManager/conf.d/`:
 
  `/etc/NetworkManager/conf.d/rc-manager.conf` 
 ```
@@ -881,11 +881,11 @@ To configure NetworkManager to use [openresolv](/index.php/Openresolv "Openresol
 rc-manager=resolvconf
 ```
 
-Others options are available in [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).
+Outras opções estão disponíveis no [NetworkManager.conf(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/NetworkManager.conf.5).
 
 ### Usando iwd como o backend de Wi-Fi
 
-To enable the experimental [iwd](/index.php/Iwd "Iwd") backend create the following configuration file:
+Para habilitar o backend experimental [iwd](/index.php/Iwd "Iwd"), crie o seguinte arquivo de configuração:
 
  `/etc/NetworkManager/conf.d/wifi_backend.conf` 
 ```
@@ -897,19 +897,19 @@ wifi.backend=iwd
 
 ### Nenhum prompt para senha de redes Wi-Fi seguras
 
-When trying to connect to a secured Wi-Fi network, no prompt for a password is shown and no connection is established. This happens when no keyring package is installed. An easy solution is to install [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring). If you want the passwords to be stored in encrypted form, follow [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") to set up the *gnome-keyring-daemon*.
+Ao tentar se conectar a uma rede Wi-Fi protegida, nenhum prompt de senha é exibido e nenhuma conexão é estabelecida. Isso acontece quando nenhum pacote de chaveiro é instalado. Uma solução fácil é instalar o [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring). Se você quiser que as senhas sejam armazenadas em formato criptografado, siga [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring") para configurar o *gnome-keyring-daemon*.
 
 ### Nenhum tráfego via túnel PPTP
 
-PPTP connection logins successfully; you see a ppp0 interface with the correct VPN IP address, but you cannot even ping the remote IP address. It is due to lack of MPPE (Microsoft Point-to-Point Encryption) support in stock Arch pppd. It is recommended to first try with the stock Arch [ppp](https://www.archlinux.org/packages/?name=ppp) as it may work as intended.
+Logins de conexão PPTP com êxito; você vê uma interface ppp0 com o endereço IP da VPN correto, mas não é possível efetuar o ping do endereço IP remoto. É devido à falta de suporte MPPE (Microsoft Point-to-Point Encryption) no arquivo Arch pppd. Recomenda-se primeiro tentar com o [ppp](https://www.archlinux.org/packages/?name=ppp) padrão do Arch, pois pode funcionar como pretendido.
 
-To solve the problem it should be sufficient to install the [ppp-mppe](https://aur.archlinux.org/packages/ppp-mppe/) package.
+Para resolver o problema, deve ser suficiente instalar o pacote [ppp-mppe](https://aur.archlinux.org/packages/ppp-mppe/).
 
-See also [WPA2 Enterprise#MS-CHAPv2](/index.php/WPA2_Enterprise#MS-CHAPv2 "WPA2 Enterprise").
+Veja também [WPA2 Empresarial#MS-CHAPv2](/index.php/WPA2_Empresarial#MS-CHAPv2 "WPA2 Empresarial").
 
 ### Gerenciamento de rede desabilitado
 
-When NetworkManager shuts down but the pid (state) file is not removed, you will see a `Network management disabled` message. If this happens, remove the file manually:
+Quando o NetworkManager for desligado, mas o arquivo pid (estado) não for removido, você verá uma mensagem `Network management disabled`. Se isso acontecer, remova o arquivo manualmente:
 
 ```
 # rm /var/lib/NetworkManager/NetworkManager.state
@@ -918,35 +918,35 @@ When NetworkManager shuts down but the pid (state) file is not removed, you will
 
 ### Problemas com cliente DHCP interno
 
-If you have problems with getting an IP address using the internal DHCP client, consider using another DHCP client, see [#DHCP client](#DHCP_client) for instructions. This workaround might solve problems in big wireless networks like eduroam.
+Se você tiver problemas para obter um endereço IP usando o cliente DHCP interno, considere usar outro cliente DHCP, consulte [#Cliente DHCP](#Cliente_DHCP) para obter instruções. Essa solução alternativa pode resolver problemas em grandes redes sem fio, como o eduroam.
 
 ### Problemas DHCP com dhclient
 
-If you have problems with getting an IP address via DHCP, try to add the following to your `/etc/dhclient.conf`:
+Se você tiver problemas ao obter um endereço IP via DHCP, tente adicionar o seguinte ao seu `/etc/dhclient.conf`:
 
 ```
  interface "eth0" {
-   send dhcp-client-identifier 01:aa:bb:cc:dd:ee:ff;
+   send dhcp-client-identifier 01:*aa:bb:cc:dd:ee:ff*;
  }
 
 ```
 
-Where `aa:bb:cc:dd:ee:ff` is the MAC address of this NIC. The MAC address can be found using the `ip link show *interface*` command from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package.
+sendo `*aa:bb:cc:dd:ee:ff*` o endereço MAC desta NIC. O endereço MAC pode ser localizado usando o comando `ip link show *interface*` com o pacote [iproute2](https://www.archlinux.org/packages/?name=iproute2).
 
 ### Modem 3G não detectado
 
-See [USB 3G Modem#Network Manager](/index.php/USB_3G_Modem#Network_Manager "USB 3G Modem").
+Veja [USB 3G Modem#Network Manager](/index.php/USB_3G_Modem#Network_Manager "USB 3G Modem").
 
 ### Desligando WLAN em laptops
 
-Sometimes NetworkManager will not work when you disable your Wi-Fi adapter with a switch on your laptop and try to enable it again afterwards. This is often a problem with *rfkill*. To check if the driver notifies *rfkill* about the wireless adapter's status, use:
+Às vezes o NetworkManager não funciona quando você desabilita o seu adaptador Wi-Fi com um botão em seu laptop e tenta habilitá-lo novamente depois. Isso geralmente é um problema com *rfkill*. Para verificar se o driver notifica *rfkill* sobre o status do adaptador sem fio, use:
 
 ```
 $ watch -n1 rfkill list all
 
 ```
 
-If one identifier stays blocked after you switch on the adapter you could try to manually unblock it with (where X is the number of the identifier provided by the above output):
+Se um identificador permanecer bloqueado depois de ligar o adaptador, você pode tentar desbloqueá-lo manualmente (onde X é o número do identificador fornecido pela saída acima):
 
 ```
 # rfkill event unblock X
@@ -955,93 +955,93 @@ If one identifier stays blocked after you switch on the adapter you could try to
 
 ### Reversão de configurações de endereço IP estático para DHCP
 
-Due to an unresolved bug, when changing default connections to a static IP address, `nm-applet` may not properly store the configuration change, and will revert to automatic DHCP.
+Devido a um erro não resolvido, ao alterar as conexões padrão para um endereço IP estático, o `nm-applet` pode não armazenar adequadamente a alteração de configuração e voltará ao DHCP automático.
 
-To work around this issue you have to edit the default connection (e.g. "Auto eth0") in `nm-applet`, change the connection name (e.g. "my eth0"), uncheck the "Available to all users" checkbox, change your static IP address settings as desired, and click **Apply**. This will save a new connection with the given name.
+Para contornar este problema você tem que editar a conexão padrão (por exemplo, "Auto eth0") em `nm-applet`, alterar o nome da conexão (por exemplo "meu eth0"), desmarque a caixa de seleção "Disponível para todos os usuários", altere suas configurações de endereço IP estático conforme desejado e clique em **Aplicar**. Isso salvará uma nova conexão com o nome fornecido.
 
-Next, you will want to make the default connection not connect automatically. To do so, run `nm-connection-editor` (**not** as root). In the connection editor, edit the default connection (e.g. "Auto eth0") and uncheck "Connect automatically". Click **Apply** and close the connection editor.
+Em seguida, você desejará fazer com que a conexão padrão não seja conectada automaticamente. Para fazer isso, execute `nm-connection-editor` (**não** como root). No editor de conexão, edite a conexão padrão (por exemplo, "Auto eth0") e desmarque "Conectar automaticamente". Clique em **Aplicar** e feche o editor de conexão.
 
 ### Não é possível editar conexões como usuário normal
 
-See [#Set up PolicyKit permissions](#Set_up_PolicyKit_permissions).
+Veja [#Configurar as permissões de PolicyKit](#Configurar_as_permiss.C3.B5es_de_PolicyKit).
 
 ### Esquecer rede sem fio oculta
 
-Since hidden networks are not displayed in the selection list of the Wireless view, they cannot be forgotten (removed) with the GUI. You can delete one with the following command:
+Como as redes ocultas não são exibidas na lista de seleção da tela de redes sem fio, elas não podem ser esquecidas (removidas) com a GUI. Você pode excluir um com o seguinte comando:
 
 ```
 # rm /etc/NetworkManager/system-connections/*SSID*
 
 ```
 
-This works for any other connection.
+Isso funciona para qualquer outra conexão.
 
 ### VPN não funciona no GNOME
 
-When setting up OpenConnect or vpnc connections in NetworkManager while using GNOME, you will sometimes never see the dialog box pop up and the following error appears in `/var/log/errors.log`:
+Ao configurar conexões OpenConnect ou vpnc no NetworkManager enquanto estiver usando o GNOME, você algumas vezes nunca verá a caixa de diálogo aparecer e o seguinte erro aparecerá em `/var/log/errors.log`:
 
 ```
 localhost NetworkManager[399]: <error> [1361719690.10506] [nm-vpn-connection.c:1405] get_secrets_cb(): Failed to request VPN secrets #3: (6) No agents were available for this request.
 
 ```
 
-This is caused by the GNOME NM Applet expecting dialog scripts to be at `/usr/lib/gnome-shell`, when NetworkManager's packages put them in `/usr/lib/networkmanager`. As a "temporary" fix (this bug has been around for a while now), make the following symlink(s):
+Isso é causado pelo fato do miniaplicativo de NM do GNOME esperar que os scripts de diálogo estejam em `/usr/lib/gnome-shell`, quando os pacotes do NetworkManager os colocam em `/usr/lib/networkmanager`. Como uma correção "temporária" (este bug já existe há algum tempo), faça os seguintes links simbólicos:
 
-*   For OpenConnect: `ln -s /usr/lib/networkmanager/nm-openconnect-auth-dialog /usr/lib/gnome-shell/`
-*   For VPNC (i.e. Cisco VPN): `ln -s /usr/lib/networkmanager/nm-vpnc-auth-dialog /usr/lib/gnome-shell/`
+*   Para OpenConnect: `ln -s /usr/lib/networkmanager/nm-openconnect-auth-dialog /usr/lib/gnome-shell/`
+*   Para VPNC (isto é, Cisco VPN): `ln -s /usr/lib/networkmanager/nm-vpnc-auth-dialog /usr/lib/gnome-shell/`
 
-This may need to be done for any other NM VPN plugins as well, but these are the two most common.
+Isso pode precisar ser feito para qualquer outro plug-in de VPN do NM, mas esses são os dois mais comuns.
 
 ### Impossibilidade de se conectar a redes sem fio europeias visíveis
 
-WLAN chips are shipped with a default [regulatory domain](/index.php/Wireless_network_configuration#Respecting_the_regulatory_domain "Wireless network configuration"). If your access point does not operate within these limitations, you will not be able to connect to the network. Fixing this is easy:
+Os chips WLAN são fornecidos com um padrão [domínio regulatório](/index.php/Configura%C3%A7%C3%A3o_de_rede_sem_fio#Respeitar_o_dom.C3.ADnio_regulat.C3.B3rio "Configuração de rede sem fio"). Se o seu ponto de acesso não operar dentro dessas limitações, você não conseguirá se conectar à rede. Consertar isso é fácil:
 
-1.  [Install](/index.php/Install "Install") [crda](https://www.archlinux.org/packages/?name=crda)
-2.  Uncomment the correct Country Code in `/etc/conf.d/wireless-regdom`
-3.  Reboot the system, because the setting is only read on boot
+1.  [Instale](/index.php/Instale "Instale") [crda](https://www.archlinux.org/packages/?name=crda)
+2.  Descomente o código de país correto em `/etc/conf.d/wireless-regdom`
+3.  Reinicie o sistema, pois a configuração está como somente leitura na inicialização
 
 ### Conexão automática a VPN na inicialização não funciona
 
-The problem occurs when the system (i.e. NetworkManager running as the root user) tries to establish a VPN connection, but the password is not accessible because it is stored in the Gnome keyring of a particular user.
+O problema ocorre quando o sistema (ou seja, o NetworkManager em execução como usuário root) tenta estabelecer uma conexão VPN, mas a senha não está acessível porque está armazenada no GNOME Keyring de um usuário específico.
 
-A solution is to keep the password to your VPN in plaintext, as described in step (2.) of [#Use dispatcher to connect to a VPN after a network connection is established](#Use_dispatcher_to_connect_to_a_VPN_after_a_network_connection_is_established).
+Uma solução é manter a senha em sua VPN em texto simples, conforme descrito na etapa (2.) de [#Usar dispatcher para conectar a uma VPN após uma conexão de rede ser estabelecida](#Usar_dispatcher_para_conectar_a_uma_VPN_ap.C3.B3s_uma_conex.C3.A3o_de_rede_ser_estabelecida).
 
-You do not need to use the dispatcher described in step (1.) to auto-connect anymore, if you use the new "auto-connect VPN" option from the `nm-applet` GUI.
+Você não precisa mais usar o dispatcher descrito na etapa (1.) para se conectar automaticamente, se você usar a nova opção "autoconectar VPN" na interface gráfica do `nm-applet`.
 
 ### Gargalo no systemd
 
-Over time the log files (`/var/log/journal`) can become very large. This can have a big impact on boot performance when using NetworkManager, see: [Systemd#Boot time increasing over time](/index.php/Systemd#Boot_time_increasing_over_time "Systemd").
+Com o tempo, os arquivos de log (`/var/log/journal`) podem se tornar muito grandes. Isso pode ter um grande impacto no desempenho da inicialização ao usar o NetworkManager, consulte: [Systemd (Português)#Tempo de inicialização aumentando com o tempo](/index.php/Systemd_(Portugu%C3%AAs)#Tempo_de_inicializa.C3.A7.C3.A3o_aumentando_com_o_tempo "Systemd (Português)").
 
 ### Desconexões de rede regulares, latência, pacotes perdidos (WiFi)
 
-NetworkManager does a scan every 2 minutes.
+O NetworkManager faz uma varredura a cada 2 minutos.
 
-Some WiFi drivers have issues when scanning for base stations whilst connected/associated. Symptoms include VPN disconnects/reconnects and lost packets, web pages failing to load and then refresh fine.
+Alguns drivers de WiFi apresentam problemas ao procurar estações base enquanto conectados/associados. Os sintomas incluem desconexões/reconexões de VPN e perda de pacotes, páginas da Web que não podem ser carregadas e, em seguida, atualizadas corretamente.
 
-Running `journalctl -f` will indicate that this is taking place, messages like the following will be contained in the logs at regular intervals.
+A execução `journalctl -f` indicará que isso está ocorrendo, mensagens como as seguintes estarão contidas nos logs em intervalos regulares.
 
 ```
 NetworkManager[410]: <info>  (wlp3s0): roamed from BSSID 00:14:48:11:20:CF (my-wifi-name) to (none) ((none))
 
 ```
 
-There is a patched version of NetworkManager which should prevent this type of scanning: [networkmanager-noscan](https://aur.archlinux.org/packages/networkmanager-noscan/).
+Existe uma versão corrigida do NetworkManager que deve evitar esse tipo de verificação: [networkmanager-noscan](https://aur.archlinux.org/packages/networkmanager-noscan/).
 
-Alternatively, if roaming is not important, the periodic scanning behavior can be disabled by locking the BSSID of the access point in the WiFi connection profile.
+Como alternativa, se o roaming não for importante, o comportamento de varredura periódica poderá ser desabilitado bloqueando o BSSID do ponto de acesso no perfil de conexão WiFi.
 
 ### Impossibilidade de ligar o Wi-Fi com laptop Lenovo (IdeaPad, Legion, etc.)
 
-There is an issue with the `ideapad_laptop` module on some Lenovo models due to the wi-fi driver incorrectly reporting a soft block. The card can still be manipulated with `netctl`, but managers like NetworkManager break. You can verify that this is the problem by checking the output of `rfkill list` after toggling your hardware switch and seeing that the soft block persists.
+Há um problema com o módulo `ideapad_laptop` em alguns modelos da Lenovo, devido ao driver wi-fi relatar incorretamente um bloco virtual. A placa ainda pode ser manipulada com `netctl`, mas os gerenciadores como o NetworkManager quebram. Você pode verificar se este é o problema, verificando a saída de `rfkill list` depois de alternar sua chave de hardware e ver que o bloco de software persiste.
 
-[Unloading](/index.php/Modprobe "Modprobe") the `ideapad_laptop` module should fix this. (**warning**: this may disable the laptop keyboard and touchpad also!).
+[Descarregar](/index.php/Modprobe "Modprobe") o módulo `ideapad_laptop` deve corrigir isso. (**atenção**: isso também pode desabilitar o teclado e o touchpad do laptop!).
 
 ### Desligar envido de hostname
 
-NetworkManager by default sends the hostname to the DHCP server. Hostname sending can only be disabled per connection not globally ([GNOME Bug 768076](https://bugzilla.gnome.org/show_bug.cgi?id=768076)).
+O NetworkManager, por padrão, envia o nome do host para o servidor DHCP. O envio de nome de host só pode ser desativado por conexão não globalmente ([Bug 768076 do GNOME](https://bugzilla.gnome.org/show_bug.cgi?id=768076)).
 
-To disable sending your hostname to the DHCP server for a specific connection, add the following to your network connection file:
+Para desabilitar o envio do seu nome de host para o servidor DHCP para uma conexão específica, adicione o seguinte ao seu arquivo de conexão de rede:
 
- `/etc/NetworkManager/system-connections/*your_connection_file*` 
+ `/etc/NetworkManager/system-connections/*seu_arquivo_de_conexão*` 
 ```
 ...
 [ipv4]
@@ -1054,7 +1054,7 @@ dhcp-send-hostname=false
 
 ### nm-applet desaparece no i3wm
 
-If you use the `xfce4-notifyd.service` for notifications you must [edit](/index.php/Edit "Edit") the unit and add the following:
+Se você usar o `xfce4-notifyd.service` para notificações, deverá [editar](/index.php/Editar "Editar") a unidade e adicionar o seguinte:
 
  `/etc/systemd/user/xfce4-notifyd.service.d/display_env.conf` 
 ```
@@ -1062,19 +1062,19 @@ If you use the `xfce4-notifyd.service` for notifications you must [edit](/index.
 Environment="DISPLAY=:0.0"
 ```
 
-After reloading the daemons [restart](/index.php/Restart "Restart") `xfce4-notifyd.service`. Exit i3 and start it back up again and the applet should show on the tray.
+Depois de recarregar os daemons, [reinicie](/index.php/Reinicie "Reinicie") o `xfce4-notifyd.service`. Saia do i3 e reinicie-o novamente, e o miniaplicativo deverá aparecer na área de notificação.
 
 ### Ícones de bandeja do nm-applet exibidos incorretamente
 
-Currently the tray icons of nm-applet are drawn on top of one another, i.e. the icon displaying wireless strength might show on top of the icon indicating no wired connection. This is apparently a GTK3 bug/problem: [https://gitlab.gnome.org/GNOME/gtk/issues/1280](https://gitlab.gnome.org/GNOME/gtk/issues/1280) .
+Atualmente, os ícones da área de notificação do nm-applet são desenhados uns em cima dos outros, ou seja, o ícone exibindo a força sem fio pode ser exibido na parte superior do ícone, indicando que não há conexão com fio. Isso aparentemente é um problema/bug do GTK3: [https://gitlab.gnome.org/GNOME/gtk/issues/1280](https://gitlab.gnome.org/GNOME/gtk/issues/1280) .
 
-A patched version of GTK3 exists in AUR, which apparently fixes the tray icon bug: [gtk3-mushrooms](https://aur.archlinux.org/packages/gtk3-mushrooms/) .
+Uma versão corrigida do GTK3 existe no AUR, que aparentemente corrige o erro do ícone da área de notificação: [gtk3-mushrooms](https://aur.archlinux.org/packages/gtk3-mushrooms/) .
 
 ### Desabilitar NetworkManager ao usar dbus
 
-It might not be obvious, but the service automatically starts through *dbus*. To completely disable it you can [mask](/index.php/Mask "Mask") `NetworkManager.service` and `NetworkManager-dispatcher.service`.
+Pode não ser óbvio, mas o serviço inicia automaticamente através de *dbus*. Para desativá-lo completamente, você pode aplicar [mask](/index.php/Mask_(Portugu%C3%AAs) "Mask (Português)") em `NetworkManager.service` e `NetworkManager-dispatcher.service`.
 
 ## Veja também
 
-*   [NetworkManager for Administrators Part 1](http://blogs.gnome.org/dcbw/2015/02/16/networkmanager-for-administrators-part-1/)
-*   [Wikipedia:NetworkManager](https://en.wikipedia.org/wiki/NetworkManager "wikipedia:NetworkManager")
+*   [NetworkManager para Administradores Parte 1](http://blogs.gnome.org/dcbw/2015/02/16/networkmanager-for-administrators-part-1/)
+*   [Wikipedia:pt:NetworkManager](https://en.wikipedia.org/wiki/pt:NetworkManager "wikipedia:pt:NetworkManager")

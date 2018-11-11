@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Abiword](/index.php/Abiword "Abiword"), revisada por última vez el **2018-11-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Abiword&diff=0&oldid=511501) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Abiword](/index.php/Abiword "Abiword"), revisada por última vez el **2018-11-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Abiword&diff=0&oldid=511501) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [Abiword](http://www.abisource.com/) es un procesador de textos que ofrece una alternativa más liviana que [LibreOffice](/index.php/LibreOffice_(Espa%C3%B1ol) "LibreOffice (Español)") Writer y [OpenOffice](/index.php/OpenOffice "OpenOffice") Writer, mientras que al mismo tiempo proporciona una gran funcionalidad. Abiword admite muchos tipos de documentos estándar, como documentos ODF, documentos Microsoft Word, documentos WordPerfect, documentos Rich Text Format y páginas web HTML.
 
@@ -57,7 +57,7 @@ El paquete [abiword](https://www.archlinux.org/packages/?name=abiword) viene con
 
 ### Solución para el cuelgue del diálogo de impresión
 
-**Note:** Este error ha sido reportado como inexistente para la versión 2.8.1 o superior. Sin embargo, esta sección permanecerá para las versiones anteriores o por si vuelve a aparecer
+**Nota:** Este error ha sido reportado como inexistente para la versión 2.8.1 o superior. Sin embargo, esta sección permanecerá para las versiones anteriores o por si vuelve a aparecer
 
 Por alguna razón, las versiones actuales de Abiword y libgnomeprint no se llevan bien. La plantilla predeterminada `.abw` hace que el programa se bloquee cuando el usuario intenta imprimir. La solución es forzar a abiword a trabajar con el formato `.rtf` en su lugar. Al seguir los pasos que se muestran a continuación, establecerá el formato de guardado predeterminado a .rtf y engañará a Abiword para que use un archivo `.rtf` como plantilla predeterminada.
 

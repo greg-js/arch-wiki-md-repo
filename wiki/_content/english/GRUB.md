@@ -649,6 +649,8 @@ To reinstall GRUB and fix the problem completely, changing `/dev/sda` if needed.
 
 GRUB does not support [F2FS](/index.php/F2FS "F2FS") file system. In case the root partition is on an unsupported file system, an alternative `/boot` partition with a supported file system must be created. In some cases, the development version of GRUB [grub-git](https://aur.archlinux.org/packages/grub-git/) may have native support for the file system.
 
+If GRUB is used with an unsupported filesystem it is not able to extract the [UUID](/index.php/UUID "UUID") of your drive so it uses classic non-persistent `/dev/*sdXx*` names instead. In this case you might have to manually edit `/boot/grub/grub.cfg` and replace `root=/dev/*sdXx*` with `root=UUID=*XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX*`. You can use the `blkid` command to get the UUID of your device, see [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming").
+
 ### Intel BIOS not booting GPT
 
 Some Intel BIOS's require at least one bootable MBR partition to be present at boot, causing GPT-partitioned boot setups to be unbootable.

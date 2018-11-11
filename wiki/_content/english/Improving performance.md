@@ -458,7 +458,7 @@ Add /dev/zram to your fstab.
 
 ### Using the graphic card's RAM
 
-In the unlikely case that you have very little RAM and a surplus of video RAM, you can use the latter as swap. See [Swap on video ram](/index.php/Swap_on_video_ram "Swap on video ram").
+In the unlikely case that you have very little RAM and a surplus of video RAM, you can use the latter as swap. See [Swap on video RAM](/index.php/Swap_on_video_RAM "Swap on video RAM").
 
 ## Network
 

@@ -2,34 +2,71 @@
 
 ## Contents
 
-*   [1 Редактирование в командной строке](#.D0.A0.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B2_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D0.BD.D0.BE.D0.B9_.D1.81.D1.82.D1.80.D0.BE.D0.BA.D0.B5)
-*   [2 История команд](#.D0.98.D1.81.D1.82.D0.BE.D1.80.D0.B8.D1.8F_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4)
-    *   [2.1 Поиск по истории](#.D0.9F.D0.BE.D0.B8.D1.81.D0.BA_.D0.BF.D0.BE_.D0.B8.D1.81.D1.82.D0.BE.D1.80.D0.B8.D0.B8)
-        *   [2.1.1 Избежание повторов](#.D0.98.D0.B7.D0.B1.D0.B5.D0.B6.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.B2.D1.82.D0.BE.D1.80.D0.BE.D0.B2)
-        *   [2.1.2 Удаление пробелов в начале строки](#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.B5.D0.BB.D0.BE.D0.B2_.D0.B2_.D0.BD.D0.B0.D1.87.D0.B0.D0.BB.D0.B5_.D1.81.D1.82.D1.80.D0.BE.D0.BA.D0.B8)
-*   [3 Макросы](#.D0.9C.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D1.8B)
-*   [4 Советы и хитрости](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.85.D0.B8.D1.82.D1.80.D0.BE.D1.81.D1.82.D0.B8)
-    *   [4.1 Отключение ^C](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.5EC)
+*   [1 Установка](#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0)
+*   [2 Редактирование в командной строке](#.D0.A0.D0.B5.D0.B4.D0.B0.D0.BA.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B2_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D0.BD.D0.BE.D0.B9_.D1.81.D1.82.D1.80.D0.BE.D0.BA.D0.B5)
+    *   [2.1 Индикатор режима при вводе](#.D0.98.D0.BD.D0.B4.D0.B8.D0.BA.D0.B0.D1.82.D0.BE.D1.80_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.B0_.D0.BF.D1.80.D0.B8_.D0.B2.D0.B2.D0.BE.D0.B4.D0.B5)
+    *   [2.2 Различные формы курсора для каждого из режимов](#.D0.A0.D0.B0.D0.B7.D0.BB.D0.B8.D1.87.D0.BD.D1.8B.D0.B5_.D1.84.D0.BE.D1.80.D0.BC.D1.8B_.D0.BA.D1.83.D1.80.D1.81.D0.BE.D1.80.D0.B0_.D0.B4.D0.BB.D1.8F_.D0.BA.D0.B0.D0.B6.D0.B4.D0.BE.D0.B3.D0.BE_.D0.B8.D0.B7_.D1.80.D0.B5.D0.B6.D0.B8.D0.BC.D0.BE.D0.B2)
+*   [3 История команд](#.D0.98.D1.81.D1.82.D0.BE.D1.80.D0.B8.D1.8F_.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4)
+    *   [3.1 Поиск по истории](#.D0.9F.D0.BE.D0.B8.D1.81.D0.BA_.D0.BF.D0.BE_.D0.B8.D1.81.D1.82.D0.BE.D1.80.D0.B8.D0.B8)
+        *   [3.1.1 Избежание повторов](#.D0.98.D0.B7.D0.B1.D0.B5.D0.B6.D0.B0.D0.BD.D0.B8.D0.B5_.D0.BF.D0.BE.D0.B2.D1.82.D0.BE.D1.80.D0.BE.D0.B2)
+        *   [3.1.2 Удаление пробелов в начале строки](#.D0.A3.D0.B4.D0.B0.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BF.D1.80.D0.BE.D0.B1.D0.B5.D0.BB.D0.BE.D0.B2_.D0.B2_.D0.BD.D0.B0.D1.87.D0.B0.D0.BB.D0.B5_.D1.81.D1.82.D1.80.D0.BE.D0.BA.D0.B8)
+*   [4 Макросы](#.D0.9C.D0.B0.D0.BA.D1.80.D0.BE.D1.81.D1.8B)
+*   [5 Советы и хитрости](#.D0.A1.D0.BE.D0.B2.D0.B5.D1.82.D1.8B_.D0.B8_.D1.85.D0.B8.D1.82.D1.80.D0.BE.D1.81.D1.82.D0.B8)
+    *   [5.1 Отключение ^C](#.D0.9E.D1.82.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B5_.5EC)
+
+## Установка
+
+Пакет [readline](https://www.archlinux.org/packages/?name=readline), скорее всего, уже установлен как зависимость [Bash](/index.php/Bash "Bash")
 
 ## Редактирование в командной строке
 
-По умолчанию Readline использует стиль сокращений Emacs для взаимодействия с командной строкой. Однако стиль редактирования vi также поддерживается. Так или иначе, библиотека предлагает огромный набор клавиатурных сокращений для редактирования вводимых данных [без использования клавиш управления курсором.](/index.php/Keyboard_without_cursor_keys "Keyboard without cursor keys")
+По умолчанию Readline использует стиль сокращений Emacs для взаимодействия с командной строкой. Однако стиль редактирования [vi](/index.php/Vi "Vi") также поддерживается. Для включения сочетаний клавиш в стиле [vi](/index.php/Vi "Vi"):
 
-Если вы являетесь пользователем [vi](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)") или [vim](/index.php/Vim_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Vim (Русский)"), возможно, вы захотите добавить следующую строку в `~/.inputrc` для включения сочетаний клавиш в стиле vi:
+ `~/.inputrc`  ` set editing-mode vi` 
+
+Чтобы включить такой режим только для [Bash](/index.php/Bash "Bash"):
+
+ `~/.bashrc`  ` set -o vi` 
+
+### Индикатор режима при вводе
+
+Имеется два режима редактирования vi - командый и вставочный. Вы можете включить отображение текущего режима:
+
+ `~/.inputrc` 
+```
+set show-mode-in-prompt on
 
 ```
-set editing-mode vi
+
+Команда выше отображает строчку в вводе (по умолчанию `(cmd)`/`(ins)`). Ее можно отредактировать посредством переменных `vi-ins-mode-string` и `vi-cmd-mode-string`.
+
+### Различные формы курсора для каждого из режимов
+
+Вы можете установить различную форму курсора для каждого мода, используя ["\1 .. \2" escapes](https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File-Syntax.html#index-vi_002dcmd_002dmode_002dstring):
+
+ `~/.inputrc` 
+```
+set vi-ins-mode-string \1\e[6 q\2
+set vi-cmd-mode-string \1\e[2 q\2
 
 ```
 
-Другой способ включить vi-сочетания клавиш - дописать следующую строку в `~/.bashrc`:
+This will set a block shaped cursor when in command mode and a pipe cursor when in insert mode.
 
+The Virtual Console uses different escape codes, so you should check first which term is being used:
+
+ `~/.inputrc` 
 ```
-set -o vi
-
+$if term=linux
+	set vi-ins-mode-string \1\e[?0c\2
+	set vi-cmd-mode-string \1\e[?8c\2
+$else
+	set vi-ins-mode-string \1\e[6 q\2
+	set vi-cmd-mode-string \1\e[2 q\2
+$endif
 ```
 
-Полезная информация по каждому стилю сокращений: [vi](http://www.catonmat.net/download/bash-vi-editing-mode-cheat-sheet.pdf)-стиль; [emacs](http://www.catonmat.net/download/readline-emacs-editing-mode-cheat-sheet.pdf)-стиль.
+See [software cursor for VGA](https://www.kernel.org/doc/Documentation/admin-guide/vga-softcursor.rst) for further details.
 
 ## История команд
 

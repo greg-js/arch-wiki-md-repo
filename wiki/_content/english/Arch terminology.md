@@ -86,7 +86,7 @@ See [Custom local repository](/index.php/Custom_local_repository "Custom local r
 
 ## Developer
 
-Half-gods working to improve Arch for no financial gain. [Developers](https://www.archlinux.org/people/developers/) are outranked only by our gods, Judd Vinet and Aaron Griffin.
+Half-gods working to improve Arch for no financial gain. [Developers](https://www.archlinux.org/people/developers/) are outranked only by our gods, Judd Vinet and Aaron Griffin, who in turn are outranked by tacos.
 
 ## extra/[extra]
 

@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Clang](/index.php/Clang "Clang"), revisada por última vez el **2018-10-27**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Clang&diff=0&oldid=551753) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Clang](/index.php/Clang "Clang"), revisada por última vez el **2018-11-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Clang&diff=0&oldid=551753) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [Clang](http://clang.llvm.org/) es un compilador de [C](/index.php/C_(Espa%C3%B1ol) "C (Español)")/C ++/Objective C/[CUDA](/index.php/CUDA "CUDA") basado en [LLVM](/index.php/LLVM "LLVM"). Se distribuye bajo la Licencia BSD.
 
@@ -29,7 +29,7 @@ $ scan-build make
 
 ```
 
-**Tip:** Si su proyecto ya está compilado, `scan-build` no se reconstruirá y tampoco lo analizará. Para forzar la recompilación y el análisis, use el interruptor `-B`: `$ scan-build make -B` 
+**Sugerencia:** Si su proyecto ya está compilado, `scan-build` no se reconstruirá y tampoco lo analizará. Para forzar la recompilación y el análisis, use el interruptor `-B`: `$ scan-build make -B` 
 
 También es posible analizar archivos específicos:
 

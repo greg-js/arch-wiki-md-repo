@@ -1,3 +1,7 @@
+Articoli correlati
+
+*   [Bash (Italiano)](/index.php/Bash_(Italiano) "Bash (Italiano)")
+
 **Readline** è una libreria del [progetto GNU](/index.php/GNU_Project "GNU Project") usata da [Bash](/index.php/Bash_(Italiano) "Bash (Italiano)") e da altre interfacce per la linea di comando per modificare ed interagire con la linea di comando. Prima di leggere questo articolo fare riferimento alla [home page](http://www.gnu.org/s/readline/) del progetto dato che in questo articolo saranno introdotte solo semplici configurazioni.
 
 ## Contents

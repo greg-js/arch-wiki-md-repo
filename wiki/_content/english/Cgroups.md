@@ -230,7 +230,7 @@ This is equivalent to these shell commands:
 
 ### Matlab
 
-Doing large calculations in [Matlab](/index.php/Matlab "Matlab") can crash your system, because Matlab does not have any protection against taking all your machine's memory or CPU. The following example shows a *cgroup* that constrains Matlab to 6 CPU cores and 5 GB of memory.
+Doing large calculations in [MATLAB](/index.php/MATLAB "MATLAB") can crash your system, because Matlab does not have any protection against taking all your machine's memory or CPU. The following example shows a *cgroup* that constrains Matlab to 6 CPU cores and 5 GB of memory.
 
  `/etc/cgconfig.conf` 
 ```

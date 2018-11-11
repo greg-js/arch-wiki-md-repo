@@ -378,7 +378,7 @@ $ export EM_PORTS="$XDG_DATA_HOME"/emscripten/cache
 $ emcc --em-config "$XDG_CONFIG_HOME"/emscripten/config --em-cache "$XDG_CACHE_HOME"/emscripten/cache`
 
  |
-| [freecad](https://www.archlinux.org/packages/?name=freecad) | `~/.FreeCAD` | [[79]](https://www.freecadweb.org/tracker/view.php?id=2956) | `$ freecad -u "$XDG_CONFIG_HOME"/FreeCAD/user.cfg -s "$XDG_CONFIG_HOME"/FreeCAD/system.cfg` |
+| [freecad](https://aur.archlinux.org/packages/freecad/) | `~/.FreeCAD` | [[79]](https://www.freecadweb.org/tracker/view.php?id=2956) | `$ freecad -u "$XDG_CONFIG_HOME"/FreeCAD/user.cfg -s "$XDG_CONFIG_HOME"/FreeCAD/system.cfg` |
 | [GDB](/index.php/GDB "GDB") | `~/.gdbinit` | `$ gdb -nh -x "$XDG_CONFIG_HOME"/gdb/init` |
 | [get_iplayer](https://aur.archlinux.org/packages/get_iplayer/) | `~/.get_iplayer` | `$ export GETIPLAYERUSERPREFS="$XDG_DATA_HOME"/get_iplayer` |
 | [getmail](/index.php/Getmail "Getmail") | `~/.getmail/getmailrc` | `$ getmail --rcfile="$XDG_CONFIG_HOME/getmail/getmailrc" --getmaildir="$XDG_DATA_HOME/getmail"` |

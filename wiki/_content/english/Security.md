@@ -563,7 +563,9 @@ You may want to harden authentication even more by using two-factor authenticati
 
 [Domain Name System](https://en.wikipedia.org/wiki/DNS "wikipedia:DNS") queries are, by default on most systems, sent and received unencrypted and without checking for authentication of receipt from qualified servers. This could then allow [man-in-the-middle attacks](https://en.wikipedia.org/wiki/Man-in-the-middle_attack "wikipedia:Man-in-the-middle attack"), whereby an attacker intercepts your DNS queries and modifies the responses to deliver you an IP address leading to a [phishing](https://en.wikipedia.org/wiki/Phishing "wikipedia:Phishing") page to collect your valuable information. You nor your browser would be aware since the DNS query was believed to be legitimate.
 
-[DNSSEC](/index.php/DNSSEC "DNSSEC") is a set of standards in place that would require DNS servers to provide clients with origin authentication of DNS data, authenticated denial of existence, and data integrity. It, however, is not yet widely used. With DNSSEC enabled, an attacker could not make modifications to your DNS queries, but would still be able to read them. [DNSCrypt](/index.php/DNSCrypt "DNSCrypt") uses cryptography to secure your communications with DNS resolvers.
+[DNSSEC](/index.php/DNSSEC "DNSSEC") is a set of standards in place that would require DNS servers to provide clients with origin authentication of DNS data, authenticated denial of existence, and data integrity. It, however, is not yet widely used. With DNSSEC enabled, an attacker could not make modifications to your DNS queries, but would still be able to read them.
+
+[DNSCrypt](/index.php/DNSCrypt "DNSCrypt") uses cryptography to secure your communications with DNS resolvers.
 
 If you have a domain name, set a [Sender Policy Framework](/index.php/Sender_Policy_Framework "Sender Policy Framework") policy to combat email spoofing.
 

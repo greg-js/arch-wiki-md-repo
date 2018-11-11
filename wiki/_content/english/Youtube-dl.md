@@ -92,7 +92,7 @@ Parts of videos can be downloaded by using the output of `youtube-dl -g -f *form
 
 ### URL from clipboard
 
-A shell alias or a keyboard shortcut can be set to download a video (or audio) of a selected (or copied) URL by outputting it from the [X selection](https://en.wikipedia.org/wiki/X_Window_selection "wikipedia:X Window selection"). See [Clipboard#Tools](/index.php/Clipboard#Tools "Clipboard").
+A shell [alias](/index.php/Alias "Alias") or a keyboard shortcut can be set to download a video (or audio) of a selected (or copied) URL by outputting it from the [X selection](https://en.wikipedia.org/wiki/X_Window_selection "wikipedia:X Window selection"). See [Clipboard#Tools](/index.php/Clipboard#Tools "Clipboard").
 
 ## See also
 

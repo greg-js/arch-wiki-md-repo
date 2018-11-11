@@ -15,6 +15,11 @@
     *   [3.5 Compilación del código](#Compilaci.C3.B3n_del_c.C3.B3digo)
     *   [3.6 Probando la construcción](#Probando_la_construcci.C3.B3n)
     *   [3.7 Crear una imagen para instalar](#Crear_una_imagen_para_instalar)
+*   [4 Instalación](#Instalaci.C3.B3n)
+    *   [4.1 Fastboot](#Fastboot)
+    *   [4.2 Dispositivos Samsung](#Dispositivos_Samsung)
+        *   [4.2.1 Heimdall](#Heimdall)
+        *   [4.2.2 Odin con Virtualbox](#Odin_con_Virtualbox)
 
 ## Explorando dispositivos de Android
 
@@ -264,3 +269,55 @@ make -j8 updatepackage
 ```
 
 Esto creara una imagen dentro de un archivo zip en el directorio `**out/target/product/hammerhead**`, asumiendo que *hammerhead* es su dispositivo. Este archivo zip ya se puede instalar.
+
+## Instalación
+
+En caso que se desee instalar el sistema original en su dispositivo después de probar diferentes ROMs, busque las instrucciones para su dispositivo en el [foro de XDA](http://forum.xda-developers.com/).
+
+### Fastboot
+
+Fastboot así como [ADB](/index.php/Android_Debug_Bridge_(Espa%C3%B1ol) "Android Debug Bridge (Español)") están incluidos en el paquete [android-tools](https://www.archlinux.org/packages/?name=android-tools).
+
+**Nota:** Restaurar el firmware de un dispositivo con `fastboot` puede ser complicado, una buena idea es revisar los foros de los [desarrolladores de XDA](http://www.xda-developers.com/) por un firmware original, el cual normalmente es un archivo `*.zip`. Dentro de este generalmente se encuentran los archivos del firmware y un script `flash-all.sh`. Por ejemplo, para el [Google Nexus](https://developers.google.com/android/nexus/images) o para el [OnePlus One en XDA](http://forum.xda-developers.com/oneplus-one/general/guide-return-opo-to-100-stock-t2826541).
+
+### Dispositivos Samsung
+
+Los dispositivos producidos por Samsung no se pueden (re-)instalar usando `fastboot`. La alternativa es usar **Heimdall** o **Odin**, usando una maquina virtual con Windows:
+
+#### Heimdall
+
+[Heimdall](http://glassechidna.com.au/heimdall/) es un set de herramientas que funciona en varias plataformas de codigo abierto usado para instalar firmware, también conocido como ROMs en dispositivos Samsung. Puede ser instalado con el paquete [heimdall](https://aur.archlinux.org/packages/heimdall/).
+
+Las instrucciones de instalacion se encuentran en [repositorio de GitLab](https://gitlab.com/BenjaminDobell/Heimdall/tree/master/Linux) o en los [foros de XDA](http://forum.xda-developers.com/showthread.php?t=1922461).
+
+#### Odin con Virtualbox
+
+**Nota:** Esta sección solo cubre la preparación y **no** la instalación. Busque en los [foros de XDA](http://www.xda-developers.com) para encontrar las indicaciones exactas para su dispositivo. Por ejemplo el [Samsung Galaxy S4](https://forum.xda-developers.com/showthread.php?t=2265477).
+
+Es posible restaurar el [firmware de Android](http://www.sammobile.com/firmwares/) en el dispositivo de Samsung usando [Odin](http://odindownload.com/), pero dentro de una maquina virtual, en este caso usando [VirtualBox](/index.php/VirtualBox_(Espa%C3%B1ol) "VirtualBox (Español)").
+
+Preparacion del anfitrion Arch Linux:
+
+1.  Instale el paquete [virtualbox](https://www.archlinux.org/packages/?name=virtualbox) junto con el [paquete de extensiones](/index.php/VirtualBox_(Espa%C3%B1ol)#Paquete_de_extensiones "VirtualBox (Español)") y [adiciones de huésped](/index.php/VirtualBox_(Espa%C3%B1ol)#Disco_de_.C2.ABGuest_Additions.C2.BB "VirtualBox (Español)").
+2.  Instale su versión preferida, pero compatible con Odin de Windows.
+3.  En la configuracion de VirtualBox de su sistema de Windows, navegue a *USB*, y asegúrese que la opción **USB 2.0 (EHCI)** esta habilitada.
+4.  Cuando la maquina virtual inicie, vaya al menú de *dispositivos > USB* y seleccione su dispositivo Samsung en la lista. El cual esta conectado a su computadora via USB
+
+Preparación del sistema huésped de Windows:
+
+1.  Instale los [controladores de Samsung](http://androidxda.com/download-samsung-usb-drivers).
+2.  Instale [Odin](http://odindownload.com/).
+3.  Descargue el [firmware de Samsung (Android)](http://www.sammobile.com/firmwares/) para su dispositivo.
+
+Compruebe que su configuración funciona:
+
+1.  Ponga su dispositivo en modo *Download* y conéctelo a su computadora con linux.
+2.  En la ventana de la maquina virtual seleccione su dispositivo *dispositivos > USB > ...Samsung...*
+3.  Inicie Odin en la maquina virtual, en la casilla blanca en la parte baja-izquierda de la ventana se debe leer algo similar a:
+
+```
+<ID:0/003> Added!!
+
+```
+
+lo cual indica que su dispositivo es visible para Odin y para el sistema operativo de Windows, ahora esta listo para instalar.

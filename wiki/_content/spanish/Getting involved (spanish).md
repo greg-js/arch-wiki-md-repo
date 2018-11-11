@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Getting involved](/index.php/Getting_involved "Getting involved"), revisada por última vez el **2018-09-29**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Getting_involved&diff=0&oldid=544843) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Getting involved](/index.php/Getting_involved "Getting involved"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Getting_involved&diff=0&oldid=552751) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 En biología evolutiva, la [cooperation](https://en.wikipedia.org/wiki/Co-operation_(evolution) describe las interacciones donde un individuo que paga un pequeño coste produce un beneficio mayor para otro u otros. Si es correspondido, de esta contribución costosa pueden beneficiarse todos los involucrados enormemente. Este principio también se aplica a los miembros proactivos de la comunidad de Arch que quieran involucrarse y colaborar con su distribución de Linux preferida. Esta participación no solo beneficia a los miembros de la comunidad y sus compañeros Archers, sino también a todos los usuarios del [software libre y de código abierto](https://en.wikipedia.org/wiki/es:Software_libre_y_de_c%C3%B3digo_abierto "wikipedia:es:Software libre y de código abierto").
 
@@ -24,7 +24,7 @@ En este artículo se describe cómo los usuarios nuevos o experimentados en Arch
     *   [2.3 Otros](#Otros)
 *   [3 FAQ](#FAQ)
     *   [3.1 ¿Cómo puedo convertirme en un desarrollador de Arch?](#.C2.BFC.C3.B3mo_puedo_convertirme_en_un_desarrollador_de_Arch.3F)
-    *   [3.2 ¿Cómo puedo ser un Trusted User?](#.C2.BFC.C3.B3mo_puedo_ser_un_Trusted_User.3F)
+    *   [3.2 ¿Cómo puedo ser un usuario de confianza?](#.C2.BFC.C3.B3mo_puedo_ser_un_usuario_de_confianza.3F)
     *   [3.3 ¿Cómo puedo ser un artista?](#.C2.BFC.C3.B3mo_puedo_ser_un_artista.3F)
 
 ## Proyectos oficiales de Arch Linux
@@ -63,7 +63,7 @@ Los paquetes en los repositorios de prueba deben probarse y firmarse antes de se
 
 ### Crear y adoptar paquetes de AUR
 
-El repositorio [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") contiene los scripts de los paquetes realizados por la comunidad para que los usuarios pueden instalar fácilmente software que no está en los repositorios oficiales. Los paquetes más populares terminan incluyéndose en el [repositorio oficial de la comunidad](/index.php/Official_repositories_(Espa%C3%B1ol)#Community "Official repositories (Español)").
+El repositorio [AUR](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)") contiene los scripts de los paquetes realizados por la comunidad para que los usuarios pueden instalar fácilmente software que no está en los repositorios oficiales. Los paquetes más populares terminan incluyéndose en el [repositorio oficial de la comunidad](/index.php/Official_repositories_(Espa%C3%B1ol)#community "Official repositories (Español)").
 
 Se puede ayudar mediante la creación y adopción de paquetes.
 
@@ -87,7 +87,7 @@ La comunidad de Arch mantiene muchos proyectos. ¡Siéntase libre de incluir el 
 
 Grupos específicos de Arch en los que puede participar.
 
-	[ArchMap](/index.php/ArchMap "ArchMap")
+	[ArchMap](/index.php/ArchMap_(Espa%C3%B1ol) "ArchMap (Español)")
 
 	Mapa de usuarios de Arch en Google Earth.
 
@@ -99,11 +99,7 @@ Grupos específicos de Arch en los que puede participar.
 
 	Lugar para usuarios de reddit para discutir temas relacionados con Arch.
 
-	[Arch Linux Google Plus Community](https://plus.google.com/communities/113935870359973712582)
-
-	Una comunidad de Google Plus para que los usuarios de Arch Linux puedan interactuar, hacer preguntas o conversaciones generales de noticias de Arch Linux.
-
-	[International communities](/index.php/International_communities "International communities")
+	[Comunidades internacionales](/index.php/International_communities_(Espa%C3%B1ol) "International communities (Español)")
 
 	Comunidades locales y lugares de encuentro para los usuarios.
 
@@ -111,7 +107,7 @@ Grupos específicos de Arch en los que puede participar.
 
 	Grupo con la intención de resolver los obstáculos posibles para las usuarias femeninas de Arch ([hilo del foro](https://bbs.archlinux.org/viewtopic.php?id=136184)).
 
-	[LinkedIn Group](http://www.linkedin.com/groups?gid=1399787)
+	[Grupo LinkedIn](http://www.linkedin.com/groups?gid=1399787)
 
 	Grupo Arch Linux para usuarios y profesionales.
 
@@ -119,17 +115,13 @@ Grupos específicos de Arch en los que puede participar.
 
 Software desarrollado por la comunidad centrado en Arch Linux.
 
-	[Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
+	[Repositorio de usuario de Arch](/index.php/Arch_User_Repository_(Espa%C3%B1ol) "Arch User Repository (Español)")
 
 	Un gran repositorio impulsado por la comunidad de usuarios de Arch.
 
 	[Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")
 
 	Repositorios de binarios no oficiales mantenidos por miembros de la comunidad.
-
-	[Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends")
-
-	Interfaces gráficas para [pacman](/index.php/Pacman "Pacman").
 
 ### Otros
 
@@ -149,7 +141,7 @@ He aquí una lista de cosas que puede hacer para ganar un poco de "notoriedad" e
 
 *   Establecer una reputación de ser útil al ofrecer asistencia cuando sea posible.
 *   Responder a las preguntas del foro, IRC y listas de correo.
-*   Únirse a los [Trusted Users](/index.php/Trusted_Users "Trusted Users") para obtener experiencia compilando y mostrando sus habilidades.
+*   Unirse a los [usuarios de confianza](/index.php/Trusted_Users_(Espa%C3%B1ol) "Trusted Users (Español)") para obtener experiencia compilando y mostrando sus habilidades.
 *   Enviar paquetes a AUR.
 *   Unirse a uno de los proyectos embrionarios que se pueden incorporar en su día a la corriente principal de Arch, o iniciar el suyo propio.
 *   Trabajar con *pacman*, *makepkg* u otros [proyectos de Arch](https://git.archlinux.org/) y enviar parches al sistema de seguimiento de errores *(bug tracker)*.
@@ -158,9 +150,9 @@ He aquí una lista de cosas que puede hacer para ganar un poco de "notoriedad" e
 *   Corregir errores de la wiki, añadir nuevas páginas, limpiar las páginas existentes y asegurarse de que los procedimientos estén al día.
 *   Presentar traducciones.
 
-### ¿Cómo puedo ser un Trusted User?
+### ¿Cómo puedo ser un usuario de confianza?
 
-Por favor, lea [Trusted Users#How do I become a TU?](/index.php/Trusted_Users#How_do_I_become_a_TU.3F "Trusted Users").
+Por favor, véase [¿Cómo me convierto en un TU?](/index.php/Trusted_Users_(Espa%C3%B1ol)#.C2.BFC.C3.B3mo_me_convierto_en_un_TU.3F "Trusted Users (Español)").
 
 ### ¿Cómo puedo ser un artista?
 

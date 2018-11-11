@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Xinit](/index.php/Xinit "Xinit"), revisada por última vez el **2018-10-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Xinit&diff=0&oldid=549210) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Xinit](/index.php/Xinit "Xinit"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Xinit&diff=0&oldid=550558) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -49,7 +49,7 @@ $ cp /etc/X11/xinit/xinitrc ~/.xinitrc
 
 ```
 
-Luego [edite](/index.php/Help:Reading_(Espa%C3%B1ol)#Adjuntar.2C_a.C3.B1adir.2C_crear_.2C_editar "Help:Reading (Español)") el archivo y reemplace los programas predeterminados con las órdenes deseadas. Recuerde que las líneas que siguen a una orden utilizando `exec` serían ignoradas. Por ejemplo, para iniciar `xscreensaver` en segundo plano y luego iniciar [openbox](/index.php/Openbox#Standalone "Openbox"), utilice lo siguiente:
+Luego [edite](/index.php/Help:Reading_(Espa%C3%B1ol)#Adjuntar.2C_a.C3.B1adir.2C_crear.2C_editar "Help:Reading (Español)") el archivo y reemplace los programas predeterminados con las órdenes deseadas. Recuerde que las líneas que siguen a una orden utilizando `exec` serían ignoradas. Por ejemplo, para iniciar `xscreensaver` en segundo plano y luego iniciar [openbox](/index.php/Openbox#Standalone "Openbox"), utilice lo siguiente:
 
  `~/.xinitrc` 
 ```

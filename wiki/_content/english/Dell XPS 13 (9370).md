@@ -89,12 +89,14 @@ Some other options that save battery life are:
 
 The nvme SSD is a Toshiba KXG50ZNV256G, KXG50ZNV512G or KXG50ZNV1T02\. The stock firmware version AADA4102 has severe problems when the ssd enters the lowest power state. This results in a unresponsive device (kernel complains about read-only filesystem) The problems can occur any time, but seem to have become way more common on Kernel 4.18 on battery power. [Firmware Version AADA4105](https://www.dell.com/support/home/us/en/19/drivers/driversdetails?driverid=c0pf8) seems to fix the problem.
 
-As the upgrade is only possible under windows and as even with upgraded driver the disk may be completely undected by the kernel because of the SSD not being responsive in the deepest sleep mode. The following kernel parameter works as a workaround, preventing the disk to enter the problematic sleep mode (see [Solid state drive/NVMe](/index.php/Solid_state_drive/NVMe "Solid state drive/NVMe")):
+As the upgrade is only possible under windows and as even with upgraded driver the disk may be completely undetected by the kernel because of the SSD not being responsive in the deepest sleep mode. The following kernel parameter works as a workaround, preventing the disk to enter the problematic sleep mode (see [Solid state drive/NVMe](/index.php/Solid_state_drive/NVMe "Solid state drive/NVMe")):
 
 ```
  nvme_core.default_ps_max_latency_us=6000
 
 ```
+
+Note : NVMe SSD should not be issued discards :[Solid state drive/NVMe#Discards](/index.php/Solid_state_drive/NVMe#Discards "Solid state drive/NVMe")
 
 ## Wifi
 
@@ -167,7 +169,7 @@ And finally to set the desired thermal mode that you identified with the command
 
 ## Power Saving
 
-To save more battery use [tlp](/index.php/Tlp "Tlp") package AND/OR [Powertop](/index.php/Powertop "Powertop").
+To save more battery use [TLP](/index.php/TLP "TLP") package AND/OR [Powertop](/index.php/Powertop "Powertop").
 
 You can monitor the used power and also the temperature of your machine with the [s-tui](https://aur.archlinux.org/packages/s-tui/) tool.
 

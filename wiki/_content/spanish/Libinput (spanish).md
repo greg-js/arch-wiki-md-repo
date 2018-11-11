@@ -1,8 +1,8 @@
 Artículos relacionados
 
-*   [Xorg](/index.php/Xorg "Xorg")
-*   [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics")
-*   [Wayland](/index.php/Wayland "Wayland")
+*   [Xorg (Español)](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)")
+*   [Touchpad Synaptics (Español)](/index.php/Touchpad_Synaptics_(Espa%C3%B1ol) "Touchpad Synaptics (Español)")
+*   [Wayland (Español)](/index.php/Wayland_(Espa%C3%B1ol) "Wayland (Español)")
 
 Desde la wiki de [libinput](https://freedesktop.org/wiki/Software/libinput/):
 
@@ -24,7 +24,7 @@ El controlador de entrada X.Org soporta la mayoría de [Xorg#dispositivos de ent
 
 Si desea utilizar *libinput* en [Wayland](/index.php/Wayland_(Espa%C3%B1ol) "Wayland (Español)") no es necesario hacer nada. El paquete [libinput](https://www.archlinux.org/packages/?name=libinput) debe ser instalado automáticamente como una dependencia de cualquier entorno gráfico que soporta Wayland, ningún controlador adicional es necesario.
 
-Si desea usar *libinput* con [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)"), [instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput), el cual es una envoltura de libinput y habilita el uso de dispositivos de entrada en X. Este controlador puede ser usado como un remplazo total para edev y Synaptics. En otras palabras, este controlador puede ser usado para reemplazar paquetes del estilo `xf86-input-`.
+Si desea usar *libinput* con [Xorg](/index.php/Xorg_(Espa%C3%B1ol) "Xorg (Español)"), [instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput), el cual es una envoltura de libinput y habilita el uso de dispositivos de entrada en X. Este controlador puede ser usado como un remplazo total para edev y Synaptics. En otras palabras, este controlador puede ser usado para reemplazar paquetes del estilo `xf86-input-`.
 
 Es deseable instalar el paquete [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput) para modificar configuraciones al iniciar el sistema.
 

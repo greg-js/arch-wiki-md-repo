@@ -123,7 +123,7 @@ shadow.service
 | [snmpd](/index.php/Snmpd "Snmpd") | snmpd | snmpd.service | Suite de aplicações para fornecimento e recebimento de instruções codificadas no protocolo SNMP. |
  soundmodem | soundmodem.service | Sistema de modem de rádio de bolso |
 | [spamassassin](https://www.archlinux.org/packages/?name=spamassassin) | spamd | spamassassin.service | Serviço de filtragem de spam. |
-| [openssh](/index.php/Openssh "Openssh") | sshd | sshd.service | OpenSSH. Daemon famoso de provimento de conexões do protocolo Secure Shell(ssh). |
+| [OpenSSH](/index.php/OpenSSH "OpenSSH") | sshd | sshd.service | OpenSSH. Daemon famoso de provimento de conexões do protocolo Secure Shell(ssh). |
  stunnel | stunnel.service | Permite encriptação arbitrária de conexões tcp dentro de um túnel SSL. |
  svnserve | svnserve.service | Servidor Subversion. |
 | [syslog-ng](/index.php/Syslog-ng "Syslog-ng") | syslog-ng | syslog-ng.service | Log de sistema de próxima geração. |

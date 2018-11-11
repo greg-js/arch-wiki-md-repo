@@ -12,4 +12,4 @@
 *   these articles:
     *   [Convert any Movie to DVD Video](/index.php/Convert_any_Movie_to_DVD_Video "Convert any Movie to DVD Video")
     *   [Convert a single drive system to RAID](/index.php/Convert_a_single_drive_system_to_RAID "Convert a single drive system to RAID")
-    *   [Convert ext2/ext3 partitions to ext4‎](/index.php/Convert_ext2/ext3_partitions_to_ext4 "Convert ext2/ext3 partitions to ext4")
+    *   [Convert ext2/ext3 partitions to ext4](/index.php/Convert_ext2/ext3_partitions_to_ext4 "Convert ext2/ext3 partitions to ext4")

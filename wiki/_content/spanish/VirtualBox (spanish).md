@@ -229,7 +229,7 @@ video=1360x768
 
 ```
 
-Además, es posible que desee configurar su [Arch boot process (Español)#Gestor de arranque)](/index.php/Arch_boot_process_(Espa%C3%B1ol)#Gestor_de_arranque.29 "Arch boot process (Español)") para usar la misma resolución. Si usa GRUB, consul [GRUB/Tips and tricks (Español)#Setting the framebuffer resolution](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol)#Setting_the_framebuffer_resolution "GRUB/Tips and tricks (Español)").
+Además, es posible que desee configurar su [Arch boot process (Español)#Gestor de arranque](/index.php/Arch_boot_process_(Espa%C3%B1ol)#Gestor_de_arranque "Arch boot process (Español)") para usar la misma resolución. Si usa GRUB, consul [GRUB/Tips and tricks (Español)#Setting the framebuffer resolution](/index.php/GRUB/Tips_and_tricks_(Espa%C3%B1ol)#Setting_the_framebuffer_resolution "GRUB/Tips and tricks (Español)").
 
 **Nota:** ni el parámetro del kernel `vga` ni la configuración de resolución del cargador de arranque (por ejemplo, `GRUB_GFXPAYLOAD_LINUX`) de GRUB, pueden arreglar el framebuffer, ya que están superados por la configuración de modo del kernel. La resolución del framebuffer debe ser establecida por el parámetro del kernel `video` como se describió anteriormente.
 

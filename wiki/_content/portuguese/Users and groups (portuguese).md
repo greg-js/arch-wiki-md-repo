@@ -1,3 +1,5 @@
+'
+
 **Status de tradução:** Esse artigo é uma tradução de [Users and groups](/index.php/Users_and_groups "Users and groups"). Data da última tradução: 2018-10-27\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Users_and_groups&diff=0&oldid=550515) na versão em inglês.
 
 Artigos relacionados
@@ -491,6 +493,6 @@ Os seguintes grupos estão atualmente sem uso para qualquer propósito:
 | daemon |
 | lock | Usado para acesso a arquivo de trava. Necessário para, por exemplo, [gnokii](https://www.archlinux.org/packages/?name=gnokii). |
 | mem |
-| network | Sem uso por padrão. Pode ser usado, por exemplo, para conceder acesso ao NetworkManager (veja [NetworkManager#Set up PolicyKit permissions](/index.php/NetworkManager#Set_up_PolicyKit_permissions "NetworkManager")). |
+| network | Sem uso por padrão. Pode ser usado, por exemplo, para conceder acesso ao NetworkManager (veja [NetworkManager (Português)#Configurar as permissões de PolicyKit](/index.php/NetworkManager_(Portugu%C3%AAs)#Configurar_as_permiss.C3.B5es_de_PolicyKit "NetworkManager (Português)")). |
 | power |
 | uuidd |

@@ -190,7 +190,7 @@ See also [Wikipedia:Comparison of numerical analysis software](https://en.wikipe
 
 	[https://www.scipy.org/](https://www.scipy.org/) || [python-matplotlib](https://www.archlinux.org/packages/?name=python-matplotlib)
 
-*   **[Octave](/index.php/Octave "Octave")** — [Matlab](/index.php/Matlab "Matlab")-like language and interface for numerical computations.
+*   **[Octave](/index.php/Octave "Octave")** — [MATLAB](/index.php/MATLAB "MATLAB")-like language and interface for numerical computations.
 
 	[https://www.gnu.org/software/octave/](https://www.gnu.org/software/octave/) || [octave](https://www.archlinux.org/packages/?name=octave)
 

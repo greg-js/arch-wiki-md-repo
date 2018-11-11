@@ -9,7 +9,7 @@
 
 ## Instalacja
 
-[proftpd](https://aur.archlinux.org/packages/proftpd/) jest dostępny w AUR. [Włącz](https://wiki.archlinux.org/index.php/Systemd#Using_units) i uruchom `proftpd.service`.
+[proftpd](https://aur.archlinux.org/packages/proftpd/) jest dostępny w AUR. [Włącz](/index.php/Systemd "Systemd") i uruchom `proftpd.service`.
 
 ## Konfiguracja
 

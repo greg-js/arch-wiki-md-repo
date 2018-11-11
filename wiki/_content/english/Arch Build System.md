@@ -57,7 +57,7 @@ ABS is a similar concept. ABS is made up of a directory tree that can be checked
 
 	The Arch User Repository is separate from ABS but AUR (unsupported) PKGBUILDs are built using makepkg to compile and package up software. In contrast to the ABS tree on your local machine, the AUR exists as a website interface. It contains many thousands of user-contributed PKGBUILDs for software which is unavailable as an official Arch package. If you need to build a package outside the official Arch tree, chances are it is in the AUR.
 
-**Warning:** Official PKGBUILDs assume that packages are [built in a clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot"). Building software on a *dirty* build system may fail or cause unexpected behaviour at runtime, because if the build system detects dependencies dynamically, the result depends on what packages are available on the build system.
+**Warning:** Official PKGBUILDs assume that packages are [built in a clean chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot"). Building software on a *dirty* build system may fail or cause unexpected behaviour at runtime, because if the build system detects dependencies dynamically, the result depends on what packages are available on the build system.
 
 ### SVN tree
 

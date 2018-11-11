@@ -404,7 +404,7 @@ Some window managers (e.g. [Compiz](/index.php/Compiz "Compiz"), [Enlightenment]
 
 *   **[Compton](/index.php/Compton "Compton")** — Compositor (a fork of xcompmgr-dana)
 
-	[https://github.com/chjj/compton](https://github.com/chjj/compton) || [compton](https://www.archlinux.org/packages/?name=compton)
+	[https://github.com/yshui/compton](https://github.com/yshui/compton) || [compton](https://www.archlinux.org/packages/?name=compton)
 
 *   **[Xcompmgr](/index.php/Xcompmgr "Xcompmgr")** — Composite window-effects manager
 

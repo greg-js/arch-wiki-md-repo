@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions"), revisada por última vez el **2018-10-14**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=546178) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Frequently asked questions](/index.php/Frequently_asked_questions "Frequently asked questions"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Frequently_asked_questions&diff=0&oldid=547713) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -75,7 +75,7 @@ Arch Linux sigue la *jerarquía del sistema de archivos* para sistemas operativo
 
 ### Soy un completo principiante en GNU/Linux. ¿Debo usar Arch?
 
-Si es un principiante y quiere usar Arch, tenga en cuanta únicamente que debe estar dispuesto a invertir un tiempo considerable en el aprendizaje de un nuevo sistema, así como aceptar el hecho de que Arch está diseñado fundamentalmente como una distribución DIY (*Do-It-Yourself*, Hágalo usted mismo). Es el usuario quien monta el sistema y controla en lo que se convertirá.
+Si es un principiante y quiere usar Arch, tenga en cuanta únicamente que debe estar dispuesto a invertir un tiempo considerable en el aprendizaje de un nuevo sistema, así como aceptar el hecho de que Arch está diseñado fundamentalmente como una distribución 'hazlo tú mismo'. Es el usuario quien monta el sistema y controla en lo que se convertirá.
 
 Antes de pedir ayuda, haga su propia investigación independiente buscando en Google, indagando en el foro (y leyendo el resto de estas preguntas frecuentes) y buscando en la excelente documentación proporcionada por la wiki de Arch. *Hay una razón por la que estos recursos se ponen a disposición del usuario en primer lugar.* Son muchos los *voluntarios* que dedican miles de horas compilando esta excelente información.
 
@@ -83,7 +83,7 @@ Véase también [Arch terminology#RTFM](/index.php/Arch_terminology#RTFM "Arch t
 
 ### ¿Arch está diseñado para ser utilizado como un servidor?, ¿un escritorio?, ¿una estación de trabajo
 
-Arch no está diseñado para un tipo de uso particular. Más bien, está diseñado para un tipo particular de *usuario*. Arch está dirigido a usuarios competentes que disfrutan de su naturaleza do-it-yourself, y que además la aprovechan para moldear el sistema y satisfacer sus necesidades. Por lo tanto, moldeado según los propósitos del usuario, Arch se puede utilizar prácticamente para cualquier propósito. Muchos utilizan Arch tanto en equipos de sobremesa como en estaciones de trabajo. Y por supuesto, archlinux.org se ejecuta en Arch.
+Arch no está diseñado para un tipo de uso particular. Más bien, está diseñado para un tipo particular de *usuario*. Arch está dirigido a usuarios competentes que disfrutan de su naturaleza 'hazlo tú mismo', y que además la aprovechan para moldear el sistema y satisfacer sus necesidades. Por lo tanto, moldeado según los propósitos del usuario, Arch se puede utilizar prácticamente para cualquier propósito. Muchos utilizan Arch tanto en equipos de sobremesa como en estaciones de trabajo. Y por supuesto, archlinux.org se ejecuta en Arch.
 
 ### A mí me gusta Arch, excepto que el equipo de desarrollo debería implementar la *«funcionalidad X»*
 
@@ -111,7 +111,7 @@ Posiblemente sea así. ¡No dude en ofrecer su tiempo! Visite los [foros](https:
 
 ¿Está su red configurada correctamente? Véase el artículo sobre la [configuración de red](/index.php/Network_configuration_(Espa%C3%B1ol) "Network configuration (Español)").
 
-También tenga en cuenta que Arch Linux no viene con [traffic shaping](https://en.wikipedia.org/wiki/Traffic_shaping "wikipedia:Traffic shaping") habilitado. Por lo tanto, es posible que si un programa, de alguna manera, utiliza su conexión de Internet al máximo –sin importar si se trata de P2P o de conexiones de un clásico client-server– otras conexiones locales se encontrarán obstruidas, traduciéndose en retrasos graves y tiempos de espera. El auxilio puede venir instalando un [firewalls](/index.php/Firewalls "Firewalls") como Shorewall o Vuurmuur; también hay scripts estáticos para [iproute2](https://www.archlinux.org/packages/?name=iproute2) (como por ejemplo [este derivado](http://serendipity.ruwenzori.net/index.php/2008/06/01/modified-wondershaper-for-better-voip-qos) de Wondershaper), que realiza precisamente esta tarea.
+También tenga en cuenta que Arch Linux no viene con [traffic shaping](https://en.wikipedia.org/wiki/Traffic_shaping como *Shorewall* o *Vuurmuur*; también hay scripts estáticos para [iproute2](https://www.archlinux.org/packages/?name=iproute2) (como por ejemplo [este derivado](http://serendipity.ruwenzori.net/index.php/2008/06/01/modified-wondershaper-for-better-voip-qos) de *Wondershaper*), que realiza precisamente esta tarea.
 
 ### ¿Por qué Arch está usando toda mi RAM?
 
@@ -131,7 +131,7 @@ Swap:          3.0G        881M        2.1G
 
 Es importante distinguir entre memoria «free» y «available». En el ejemplo anterior, un portátil con 2,8G de memoria RAM total parece estar utilizando la mayor parte de ella, y solo disponer de 283M de memoria libre. Sin embargo, 1,4G de la misma está en «buff/cache». Todavía hay 1,2G disponibles para iniciar nuevas aplicaciones, sin tener que acudir al espacio de intercambio. Véase `man free(1)` para obtener más detalles. ¿El resultado de todo esto? ¡Más rendimiento!
 
-Véase [este maravilloso artículo](http://www.linuxjournal.com/article/2770) ¡si su curiosidad se ha despertado! También hay un sitio web dedicado a aclarar esta confusión: [http://www.linuxatemyram.com/](http://www.linuxatemyram.com/)
+Véase [este maravilloso artículo](http://www.linuxjournal.com/article/2770) si ha despertado su curiosidad. También hay un sitio web dedicado a aclarar esta confusión: [http://www.linuxatemyram.com/](http://www.linuxatemyram.com/)
 
 ### ¿De dónde vino todo mi espacio libre?
 

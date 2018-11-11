@@ -15,7 +15,7 @@ Related articles
 
 ## Instalacja
 
-[Zainstaluj](https://wiki.archlinux.org/index.php/Help:Reading#Installation_of_packages) pakiet [rofi](https://www.archlinux.org/packages/?name=rofi).
+[Zainstaluj](/index.php/Help:Reading#Installation_of_packages "Help:Reading") pakiet [rofi](https://www.archlinux.org/packages/?name=rofi).
 
 ## Konfiguracja
 

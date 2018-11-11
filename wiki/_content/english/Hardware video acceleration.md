@@ -341,7 +341,7 @@ The correct driver name depends on your setup:
 
 This happens when you use [libvdpau-va-gl](https://www.archlinux.org/packages/?name=libvdpau-va-gl) without overriding `VDPAU_DRIVER`. VDPAU does not know what driver to use in this case for some reason and guesses wrongly. See [#Configuring VDPAU](#Configuring_VDPAU).
 
-However you may want to configure your media player to use VA-API instead, getting far better results. See [#Software](#Software).
+However you may want to configure your media player to use VA-API instead, getting far better results. See [#Software support](#Software_support).
 
 ### VAAPI init failed
 

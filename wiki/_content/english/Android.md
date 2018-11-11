@@ -50,9 +50,9 @@ There are various ways to transfer files between a computer and an Android devic
 *   Arch Linux software with Android counterparts
     *   client or server for protocols that can be used to transfer files (eg. [SSH](/index.php/SSH "SSH"), [FTP](/index.php/FTP "FTP"), [Samba](/index.php/Samba "Samba") or HTTP)
     *   [KDE Connect](/index.php/KDE_Connect "KDE Connect") ([kdeconnect](https://www.archlinux.org/packages/?name=kdeconnect)) – integrates your Android device with the KDE desktop (featuring synced notifications & clipboard, multimedia control, and file/URL sharing).
-    *   [sendanywhere](https://aur.archlinux.org/packages/sendanywhere/) – cross-platform file sharing
     *   [cloud synchronization clients](/index.php/Cloud_synchronization_clients "Cloud synchronization clients")
     *   [Syncthing](/index.php/Syncthing "Syncthing")
+    *   [sendanywhere](https://aur.archlinux.org/packages/sendanywhere/) – cross-platform file sharing
 
 ## App development
 
@@ -141,17 +141,21 @@ $ newgrp sdkusers
 
 ### Other IDEs
 
-Android Studio is the official Android development environment based on IntelliJ IDEA. Alternatively, you can use [Netbeans](/index.php/Netbeans "Netbeans") with the NBAndroid plugin. All are described below.
+Android Studio is the official Android development environment based on IntelliJ IDEA. Alternatively, you can use [Netbeans](/index.php/Netbeans "Netbeans") with the NBAndroid-V2\. All are described below.
 
 #### Netbeans
 
-If you prefer using [Netbeans](/index.php/Netbeans "Netbeans") as your IDE and want to develop Android applications, download the [NBAndroid](http://www.nbandroid.org) by going to *Tools > Plugins > Settings*.
+If you prefer using [Netbeans](/index.php/Netbeans "Netbeans") as your IDE and want to develop Android applications, use [NBAndroid-V2](https://github.com/NBANDROIDTEAM/NBANDROID-V2) .
 
-Add the following URL: [http://nbandroid.org/release81/updates/updates.xml](http://nbandroid.org/release81/updates/updates.xml)
+Install [android-sdk](https://aur.archlinux.org/packages/android-sdk/) package
 
-Then go to *Available Plugins* and install the *Android* and *JUnit* plugins. Once you have installed go to *Tools > Options > Miscellaneous > Android*.
+Add the following URL by going to *Tools > Plugins > Settings*:
 
-and select the path where the SDK is installed (`/opt/android-sdk` by default). That is it, now you can create a new Android project and start developing using Netbeans.
+| Netbeans version | URL |
+| Netbeans 8.1 | [http://server.arsi.sk/nbandroid81/updates.xml](http://server.arsi.sk/nbandroid81/updates.xml) |
+| Netbeans 8.2 | [http://server.arsi.sk/nbandroid82/updates.xml](http://server.arsi.sk/nbandroid82/updates.xml) |
+
+Then go to *Available Plugins* and install the *Gradle-Android-support* plugin.
 
 #### Eclipse
 

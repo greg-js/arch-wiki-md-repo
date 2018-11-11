@@ -88,7 +88,7 @@ Pressing `W` allows you to quickly search for options. Messages can be listed in
 
 ## Printing from alpine
 
-[Printing](/index.php/CUPS "CUPS") from Alpine directly to `lpr` does not work with special characters like Germanic umlauts in the Mail to be printed. The [a2ps](https://www.archlinux.org/packages/?name=a2ps) program does help. You can then edit `~/.pinerc`:
+[Printing](/index.php/Printing "Printing") from Alpine directly to `lpr` does not work with special characters like Germanic umlauts in the Mail to be printed. The [a2ps](https://www.archlinux.org/packages/?name=a2ps) program does help. You can then edit `~/.pinerc`:
 
 ```
 # Your default printer selection

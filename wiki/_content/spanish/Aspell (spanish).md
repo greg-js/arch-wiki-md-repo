@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Aspell](/index.php/Aspell "Aspell"), revisada por última vez el **2018-10-21**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Aspell&diff=0&oldid=549512) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Aspell](/index.php/Aspell "Aspell"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Aspell&diff=0&oldid=551516) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Del [sitio web oficial](http://aspell.net/): "GNU Aspell es un corrector ortográfico libre y de código abierto diseñado para eventualmente reemplazar [Ispell](https://en.wikipedia.org/wiki/Ispell "wikipedia:Ispell"). Se puede usar como una biblioteca o como un corrector ortográfico independiente."
 
@@ -31,7 +31,7 @@ A continuación aparecerá un indicador mostrando el texto del archivo. Desde al
 Para listar las palabras mal escritas desde la entrada estándar:
 
 ```
-$ cat *algúnarchivo* | aspell list
+$ aspell list < *algúnarchivo*
 
 ```
 

@@ -63,11 +63,13 @@ The vast majority of UEFI firmwares, including recent Apple Macs, use x86_64 UEF
 
 An x86_64 UEFI firmware does not include support for launching 32-bit EFI applications (unlike x86_64 Linux and Windows versions which include such support). Therefore the EFI application must be compiled for that specific firmware processor bitness/architecture.
 
+**Note:** The official ISO does not support booting on 32-bit (IA32) UEFI systems, see [#Booting 64-bit kernel on 32-bit UEFI](#Booting_64-bit_kernel_on_32-bit_UEFI) for available workarounds.
+
 ### Non Macs
 
-Check whether the directory `/sys/firmware/efi` exists, if it exists it means the kernel has booted in UEFI mode. In that case the UEFI bitness is same as kernel bitness.
+The UEFI firmware bitness can be found via the kernel's sysfs interface. Run `cat /sys/firmware/efi/fw_platform_size`, it will return `64` for a 64-bit (x86_64) UEFI or `32` for a 32-bit (IA32) UEFI. If the file does not exist, then you have not booted in UEFI mode.
 
-**Note:** Intel Atom System-on-Chip systems ship with 32-bit UEFI (as on 2 November 2013). See [#Booting 64-bit kernel on 32-bit UEFI](#Booting_64-bit_kernel_on_32-bit_UEFI) for more info. Also see [this Intel blog post](https://software.intel.com/en-us/blogs/2015/07/22/why-cheap-systems-run-32-bit-uefi-on-x64-systems).
+**Note:** Intel Atom System-on-Chip systems ship with 32-bit UEFI (as on 2 November 2013). See [this Intel blog post](https://software.intel.com/en-us/blogs/2015/07/22/why-cheap-systems-run-32-bit-uefi-on-x64-systems).
 
 ### Apple Macs
 
@@ -84,7 +86,7 @@ If the command returns EFI32 then it is IA32 (32-bit) EFI firmware. If it return
 
 ## Linux kernel config options for UEFI
 
-The required Linux Kernel configuration options for UEFI systems are:
+The required Linux Kernel configuration options[[1]](https://www.kernel.org/doc/Documentation/x86/x86_64/uefi.txt) for UEFI systems are:
 
 ```
 CONFIG_RELOCATABLE=y
@@ -116,9 +118,14 @@ CONFIG_EFI_PARTITION=y
 
 ```
 
-Retrieved from [https://www.kernel.org/doc/Documentation/x86/x86_64/uefi.txt](https://www.kernel.org/doc/Documentation/x86/x86_64/uefi.txt).
+EFI mixed-mode support - to boot a x64_64 kernel on a IA32 UEFI.
 
-**Note:** All of the above options are required to boot Linux via UEFI, and are enabled in Arch Linux [kernels](/index.php/Kernels "Kernels") in the official repositories.
+```
+CONFIG_EFI_MIXED=y
+
+```
+
+**Note:** All of the above options are enabled in Arch Linux [kernels](/index.php/Kernels "Kernels") in the official repositories.
 
 ## UEFI variables
 
@@ -135,12 +142,11 @@ Linux kernel exposes UEFI variables data to userspace via **efivarfs** (**EFI** 
 
 ### Requirements for UEFI variable support
 
-1.  Kernel processor [bitness](#UEFI_firmware_bitness) and UEFI processor bitness should match.
-2.  Kernel should be booted in UEFI mode (via [EFISTUB](/index.php/EFISTUB "EFISTUB") or any UEFI [bootloader](/index.php/Bootloader "Bootloader"), not via BIOS/CSM or Apple's "bootcamp" which is also BIOS/CSM).
-3.  EFI Runtime Services support should be present in the kernel (`CONFIG_EFI=y`, check if present with `zgrep CONFIG_EFI /proc/config.gz`).
-4.  EFI Runtime Services in the kernel SHOULD NOT be disabled via kernel cmdline, i.e. `noefi` kernel parameter SHOULD NOT be used.
-5.  `efivarfs` filesystem should be mounted at `/sys/firmware/efi/efivars`, otherwise follow [#Mount efivarfs](#Mount_efivarfs) section below.
-6.  `efivar` should list (option `-l`) the UEFI variables without any error.
+1.  Kernel should be booted in UEFI mode via [EFISTUB](/index.php/EFISTUB "EFISTUB") (optionally using a [boot manager](/index.php/Boot_manager "Boot manager")) or via the EFI handover protocol using a UEFI [boot loader](/index.php/Boot_loader "Boot loader"), not via BIOS or CSM, or Apple's Boot Camp which is also a CSM.
+2.  EFI Runtime Services support should be present in the kernel (`CONFIG_EFI=y`, check if present with `zgrep CONFIG_EFI /proc/config.gz`).
+3.  EFI Runtime Services in the kernel SHOULD NOT be disabled via kernel cmdline, i.e. `noefi` kernel parameter SHOULD NOT be used.
+4.  `efivarfs` filesystem should be mounted at `/sys/firmware/efi/efivars`, otherwise follow [#Mount efivarfs](#Mount_efivarfs) section below.
+5.  `efivar` should list (option `-l`/`--list`) the UEFI variables without any error.
 
 If UEFI Variables support does not work even after the above conditions are satisfied, try the below workarounds:
 

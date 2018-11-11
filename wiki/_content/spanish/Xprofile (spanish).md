@@ -1,36 +1,53 @@
-`~/.xprofile` y `/etc/xprofile` permiten ejecutar comandos al comienzo de la sesión de usuario de X, antes de que se inicie el [gestor de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)"). Por lo tanto, no se pueden utilizar para iniciar aplicaciones basadas ​​en ventanas. Véase para ello [Autostarting (Español)#Gráfica](/index.php/Autostarting_(Espa%C3%B1ol)#Gr.C3.A1fica "Autostarting (Español)").
+Artículos relacionados
 
-`xprofile` es similar a [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") (`~/.xinitrc` y `/etc/X11/xinit/xinitrc.d/`).
+*   [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)")
+
+**Estado de la traducción**
+Este artículo es una traducción de [xprofile](/index.php/Xprofile "Xprofile"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Xprofile&diff=0&oldid=540305) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
+Un archivo xprofile, `~/.xprofile` y `/etc/xprofile`, le permite ejecutar comandos al inicio de sesión del usuario X - antes de que se inicie el [gestor de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") .
+
+El archivo xprofile es similar en estilo a [xinitrc](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)").
 
 ## Compatibilidad
 
-xprofiles se proveen de forma nativa por:
+Los archivos xprofile son cargados de manera nativa por los siguientes gestores de pantalla:
 
-*   [GDM](/index.php/GDM "GDM") (`/etc/gdm/Xsession`)
-*   [KDM](/index.php/KDM "KDM") (`/usr/share/config/kdm/Xsession`)
-*   [LightDM](/index.php/LightDM "LightDM") (`/etc/lightdm/Xsession`)
-*   [LXDM](/index.php/LXDM "LXDM") (`/etc/lxdm/Xsession`)
+*   [GDM](/index.php/GDM_(Espa%C3%B1ol) "GDM (Español)") - `/etc/gdm/Xsession`
+*   [LightDM](/index.php/LightDM_(Espa%C3%B1ol) "LightDM (Español)") - `/etc/lightdm/Xsession`
+*   [LXDM](/index.php/LXDM "LXDM") - `/etc/lxdm/Xsession`
+*   [SDDM](/index.php/SDDM "SDDM") - `/usr/share/sddm/scripts/Xsession`
 
-### Hacerlo compatible con xinit
+### Cargar xprofile desde una sesión iniciada con xinit
 
-Es posible hacer que los archivos xprofiles sean compatibles con estos programas:
+Es posible cargar xprofile desde una sesión iniciada con uno de los siguientes programas:
 
 *   `startx`
 *   `xinit`
 *   [XDM](/index.php/XDM "XDM")
-*   [SLiM](/index.php/SLiM "SLiM")
-*   cualquier otro [Display manager (Español)](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") que utilice los archivos `~/.xsession` o `~/.xinitrc`
+*   Cualquier otro [gesto de pantalla](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") que utilize `~/.xsession` o `~/.xinitrc`
 
-Todos ellos ejecutan, directa o indirectamente, `~/.[xinitrc (Español)](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)")` (normalmente se obtienen de `/etc/skel/.xinitrc`), o de `/etc/X11/xinit/xinitrc` si no existe aquél. Es por ello que tenemos contenidos de xprofiles en esos archivos.
+Todos estos ejecutan, directa o indirectamente, `~/.xinitrc` o `/etc/X11/xinit/xinitrc` si no existe. Es por eso que xprofile tiene que ser cargado de estos archivos.
 
- `~/.xinitrc and /etc/X11/xinit/xinitrc and /etc/skel/.xinitrc` 
+ `~/.xinitrc and /etc/X11/xinit/xinitrc` 
 ```
 #!/bin/sh
 
-# Asegúrese de que esto se coloca antes de la orden 'exec' o no se ejecutará.
-[ -f /etc/xprofile ] && source /etc/xprofile
-[ -f ~/.xprofile ] && source ~/.xprofile
+# Asegúrese de que esto se encuentra antes del comando 'exec' o no se cargará.
+[ -f /etc/xprofile ] && . /etc/xprofile
+[ -f ~/.xprofile ] && . ~/.xprofile
 
 ...
+
+```
+
+## Configuración
+
+En primer lugar, cree el archivo `~/.xprofile` si aún no existe. Luego, simplemente agregue los comandos para los programas que desea que se inicien con la sesión. Véase abajo:
+
+ `~/.xprofile` 
+```
+tint2 &
+nm-applet &
 
 ```

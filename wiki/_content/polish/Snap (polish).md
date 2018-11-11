@@ -28,7 +28,7 @@ Related articles
 
 ## Konfiguracja
 
-Aby uruchomić demona `snapd`, gdy *snap* spróbuje go użyć, [uruchom](https://wiki.archlinux.org/index.php/Systemd#Using_units) i/lub [włącz](https://wiki.archlinux.org/index.php/Systemd#Using_units) `snapd.socket`.
+Aby uruchomić demona `snapd`, gdy *snap* spróbuje go użyć, [uruchom](/index.php/Systemd#Using_units "Systemd") i/lub [włącz](/index.php/Systemd#Using_units "Systemd") `snapd.socket`.
 
 ## Użycie
 

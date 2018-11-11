@@ -35,7 +35,7 @@ See [List of applications#Blink-based](/index.php/List_of_applications#Blink-bas
         *   [4.1.3 Tab font size is too large](#Tab_font_size_is_too_large)
     *   [4.2 Force GPU acceleration](#Force_GPU_acceleration)
     *   [4.3 WebGL](#WebGL)
-    *   [4.4 Zoomed-in GUI](#Zoomed-in_GUI)
+    *   [4.4 Incorrect HiDPI rendering](#Incorrect_HiDPI_rendering)
     *   [4.5 Password prompt on every start with GNOME Keyring](#Password_prompt_on_every_start_with_GNOME_Keyring)
     *   [4.6 Chromecasts in the network are not discovered](#Chromecasts_in_the_network_are_not_discovered)
     *   [4.7 Losing cookies and passwords when switching between desktop environments](#Losing_cookies_and_passwords_when_switching_between_desktop_environments)
@@ -87,12 +87,20 @@ Chromium uses [Network Security Services](/index.php/Network_Security_Services "
 
 ### Hardware video acceleration
 
-**Note:** You might need to [#Force GPU acceleration](#Force_GPU_acceleration) and see [Hardware video acceleration](/index.php/Hardware_video_acceleration "Hardware video acceleration") first.
+Accelerated video decoding using [VA-API](/index.php/VA-API "VA-API") is available on [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/) and [chromium-vaapi-bin](https://aur.archlinux.org/packages/chromium-vaapi-bin/).
 
-Accelerated video decoding via VA-API is available using [chromium-vaapi](https://aur.archlinux.org/packages/chromium-vaapi/) and can be enabled either by:
+**Note:**
 
-*   enabling `chrome://flags/#enable-accelerated-video` and `chrome://flags/#enable-accelerated-mjpeg-decode` flags;
-*   specifying `--enable-accelerated-video` and `--enable-accelerated-mjpeg-decode` on the command line or adding them to [persistent configuration](/index.php/Chromium/Tips_and_tricks#Making_flags_persistent "Chromium/Tips and tricks").
+*   [Verify VA-API](/index.php/Hardware_video_acceleration#Verifying_VA-API "Hardware video acceleration") has been enabled and working correctly.
+*   One may need to [#Force GPU acceleration](#Force_GPU_acceleration) as Chromium uses a GPU blacklist by default.
+*   On [AMDGPU](/index.php/AMDGPU "AMDGPU") video corruption may occur [[1]](https://bugs.freedesktop.org/show_bug.cgi?id=106490). A workaround is to export `allow_rgb10_configs=false` as [environment variable](/index.php/Environment_variable "Environment variable"):
+
+ `/etc/environment`  `allow_rgb10_configs=false` 
+
+To use hardware video acceleration:
+
+*   enable both `chrome://flags/#enable-accelerated-video` and `chrome://flags/#enable-accelerated-mjpeg-decode` flags;
+*   specifying `--enable-accelerated-video` and `--enable-accelerated-mjpeg-decode` as arguments or [append](/index.php/Append "Append") them to the [persistent configuration](/index.php/Chromium/Tips_and_tricks#Making_flags_persistent "Chromium/Tips and tricks").
 
 Additionally `--disable-gpu-driver-bug-workarounds` has been tested and confirmed to remove video freezes (especially when watching in fullscreen).
 
@@ -136,9 +144,11 @@ Visit `chrome://gpu/` for debugging information about WebGL support.
 
 Chromium can save incorrect data about your GPU in your user profile (e.g. if you use switch between an Nvidia card using Optimus and Intel, it will show the Nvidia card in `chrome://gpu` even when you're not using it or primusrun/optirun). Running using a different user directory, e.g, `chromium --user-data-dir=$(mktemp -d)` may solve this issue. For a persistent solution you can reset the GPU information by deleting `~/.config/chromium/Local\ State`.
 
-### Zoomed-in GUI
+### Incorrect HiDPI rendering
 
-Chromium's graphical interface will sometimes automatically scale for [HiDPI](/index.php/HiDPI "HiDPI") displays. To disable this, use `--force-device-scale-factor=1`.
+Chromium will automatically scale for a [HiDPI](/index.php/HiDPI "HiDPI") display, however this may cause an incorrect renderend GUI.
+
+The flag `--force-device-scale-factor=1` may be used to overrule the automatic scaling factor.
 
 ### Password prompt on every start with GNOME Keyring
 

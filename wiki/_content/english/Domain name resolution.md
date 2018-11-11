@@ -113,8 +113,8 @@ In the table below, the columns have the following meaning:
 *   *Recursor*: can [recursively query](https://en.wikipedia.org/wiki/Name_server#Recursive_query "wikipedia:Name server") the domain name starting from the [DNS root zone](https://en.wikipedia.org/wiki/DNS_root_zone "wikipedia:DNS root zone").
 *   *resolvconf compatibility*: can acquire name servers and search domains, to use for forwarding requests, from software that sets them using [resolvconf](/index.php/Resolvconf "Resolvconf").
 *   *Validates DNSSEC*: [validates](https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions#The_lookup_procedure "wikipedia:Domain Name System Security Extensions") DNS query responses using [DNSSEC](/index.php/DNSSEC "DNSSEC").
-*   *DNS over TLS*: supports the [DNS over TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS") protocol.
-*   *DNS over HTTPS*: supports the experimental [DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") protocol.
+*   *DNS over TLS*: supports forwarding using the [DNS over TLS](https://en.wikipedia.org/wiki/DNS_over_TLS "wikipedia:DNS over TLS") protocol.
+*   *DNS over HTTPS*: supports forwarding using the [DNS over HTTPS](https://en.wikipedia.org/wiki/DNS_over_HTTPS "wikipedia:DNS over HTTPS") protocol.
 
 | Resolver | Cache | Recursor | *resolvconf* compatibility | Validates DNSSEC | DNS over TLS | DNS over HTTPS |
 | [glibc](#Glibc_resolver) | No | No | [openresolv](/index.php/Openresolv "Openresolv") | No | No | No |
@@ -123,6 +123,7 @@ In the table below, the columns have the following meaning:
 | [dnsmasq](/index.php/Dnsmasq "Dnsmasq") | Yes | No | [openresolv](/index.php/Openresolv "Openresolv") subscriber | Yes | [No](http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2018q2/012131.html) | No |
 | [Knot Resolver](/index.php/Knot_Resolver "Knot Resolver") | Yes | Yes | No | Yes | Yes | [No](https://gitlab.labs.nic.cz/knot/knot-resolver/issues/243) |
 | [pdnsd](/index.php/Pdnsd "Pdnsd") | Yes | Yes | [openresolv](/index.php/Openresolv "Openresolv") subscriber | No | No | No |
+| [powerdns-recursor](https://www.archlinux.org/packages/?name=powerdns-recursor) | Yes | Yes | [No](https://roy.marples.name/projects/openresolv/config#pdns_recursor) | Yes | ? | ? |
 | [Stubby](/index.php/Stubby "Stubby") | No | No | No | Yes | Yes | No |
 | [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") | Yes | No | [systemd-resolvconf](/index.php/Systemd-resolvconf "Systemd-resolvconf") | Yes | Insecure | [No](https://github.com/systemd/systemd/issues/8639) |
 | [Unbound](/index.php/Unbound "Unbound") | Yes | Yes | [openresolv](/index.php/Openresolv "Openresolv") subscriber | Yes | Yes | [No](https://nlnetlabs.nl/bugs-script/show_bug.cgi?id=1200) |

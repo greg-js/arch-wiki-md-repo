@@ -75,7 +75,7 @@ This section lists daemons that track your clipboard, to provide a clipboard his
 
 *   **ClipIt** — Fork of Parcellite.It has both a command line and GUI mode available.
 
-	[https://sourceforge.net/projects/gtkclipit/](https://sourceforge.net/projects/gtkclipit/) || [clipit](https://aur.archlinux.org/packages/clipit/)
+	[https://github.com/CristianHenzel/ClipIt](https://github.com/CristianHenzel/ClipIt) || [clipit](https://aur.archlinux.org/packages/clipit/)
 
 *   **Clipman** — Clipboard manager plugin for the Xfce4 panel. It keeps the clipboard contents around while it is usually lost when you close an application. It is able to handle text and images, and has a feature to execute actions on specific text selections by matching them against regular expressions.
 

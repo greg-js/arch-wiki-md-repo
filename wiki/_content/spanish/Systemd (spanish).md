@@ -89,36 +89,36 @@ Consulte [systemd.unit(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.un
 
 **Sugerencia:** La mayoría de las siguientes órdenes también funcionan si se especifican varias unidades, vea [systemctl(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemctl.1) para más información.
 
-Activa una unidad de inmediato:
+**Activa** una unidad de inmediato:
 
  `# systemctl start *unidad*` 
 
-Desactiva una unidad de inmediato:
+**Desactiva** una unidad de inmediato:
 
  `# systemctl stop *unidad*` 
 
-Reinicia la unidad:
+**Reinicia** la unidad:
 
  `# systemctl restart *unidad*` 
 
-Hace que una unidad recargue su configuración:
+Hace que una unidad **recargue** su configuración:
 
  `# systemctl reload *unidad*` 
 
-Muestra el estado de una unidad, incluso si se está ejecutando o no:
+Muestra el **estado** de una unidad, incluso si se está ejecutando o no:
 
  `$ systemctl status *unidad*` 
 
-Comprueba si la unidad ya está habilitada o no:
+**Comprueba** si la unidad ya está habilitada o no:
 
  `$ systemctl is-enabled *unidad*` 
 
-Activa el inicio automático en el arranque:
+**Activa** el **inicio automático** en el arranque:
 
  `# systemctl enable *unidad*` 
 **Nota:** Si los servicios no tienen una sección `[Install]` significa, por lo general, que se les llama de forma automática por otros servicios. Pero si necesita instalarlos manualmente, utilice la orden siguiente, reemplazando `foo` con el nombre del servicio. `# ln -s /usr/lib/systemd/system/*foo*.service /etc/systemd/system/graphical.target.wants/` 
 
-Desactiva el inicio automático durante el arranque:
+**Desactiva** el **inicio automático** durante el arranque:
 
  `# systemctl disable *unidad*` 
 

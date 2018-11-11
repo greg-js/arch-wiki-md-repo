@@ -2,12 +2,12 @@
 
 * * *
 
-[Cifrar dispositivo](/index.php/Dm-crypt/Device_encryption_(Espa%C3%B1ol) "Dm-crypt/Device encryption (Español)") – [Preparar dispositivo](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol) "Dm-crypt/Drive preparation (Español)") – [Cifrar sistema de archivos no root](/index.php/Dm-crypt/Encrypting_a_non-root_file_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting a non-root file system (Español)") – [Cifrar un sistema completo](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting an entire system (Español)") – [Montar y acceder](/index.php/Dm-crypt/Mounting_at_login_(Espa%C3%B1ol) "Dm-crypt/Mounting at login (Español)") – [Especialidades](/index.php/Dm-crypt/Specialties_(Espa%C3%B1ol) "Dm-crypt/Specialties (Español)") – [Cifrar espacio de intercambio](/index.php/Dm-crypt/Swap_encryption_(Espa%C3%B1ol) "Dm-crypt/Swap encryption (Español)") – <a class="mw-selflink selflink">Configurar el sistema</a>
+[Preparar dispositivo](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol) "Dm-crypt/Drive preparation (Español)") – [Cifrar dispositivo](/index.php/Dm-crypt/Device_encryption_(Espa%C3%B1ol) "Dm-crypt/Device encryption (Español)") – [Cifrar sistema de archivos no root](/index.php/Dm-crypt/Encrypting_a_non-root_file_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting a non-root file system (Español)") – [Cifrar un sistema completo](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting an entire system (Español)") – [Cifrar espacio de intercambio](/index.php/Dm-crypt/Swap_encryption_(Espa%C3%B1ol) "Dm-crypt/Swap encryption (Español)") – [Montar y acceder a /home cifrado](/index.php/Dm-crypt/Mounting_at_login_(Espa%C3%B1ol) "Dm-crypt/Mounting at login (Español)") – <a class="mw-selflink selflink">Configurar el sistema</a> – [Especialidades](/index.php/Dm-crypt/Specialties_(Espa%C3%B1ol) "Dm-crypt/Specialties (Español)")
 
 **Estado de la traducción**
 Este artículo es una traducción de [Dm-crypt/System configuration](/index.php/Dm-crypt/System_configuration "Dm-crypt/System configuration"), revisada por última vez el **2018-10-26**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dm-crypt/System_configuration&diff=0&oldid=551201) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
-**Sugerencia:** Si necesita desbloquear de forma remota la raíz u otros sistemas de archivos de arranque temprano (máquinas sin encabezados, servidores distantes ...), siga las instrucciones específicas de [dm-crypt/Specialties#Remote unlocking of the root (or other) partition](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_.28or_other.29_partition "Dm-crypt/Specialties").
+**Sugerencia:** Si necesita desbloquear de forma remota la raíz u otros sistemas de archivos de arranque temprano (máquinas sin encabezados, servidores distantes ...), siga las instrucciones específicas de [dm-crypt/Specialties (Español)#Desbloqueo remoto de la partición (u otro volumen) raíz](/index.php/Dm-crypt/Specialties_(Espa%C3%B1ol)#Desbloqueo_remoto_de_la_partici.C3.B3n_.28u_otro_volumen.29_ra.C3.ADz "Dm-crypt/Specialties (Español)").
 
 ## Contents
 
@@ -165,7 +165,7 @@ También tenga en cuenta que si `cryptkey` no se especifica, por defecto es `/cr
 
 **Nota:** Si la inicialización del disco duro USB falla en el arranque, agregue `usb_storage` a la matriz `MODULES` de [mkinitcpio](/index.php/Mkinitcpio_(Espa%C3%B1ol)#M.C3.93DULOS "Mkinitcpio (Español)") [[3]](https://bugs.archlinux.org/task/60272).
 
-Véase también [dm-crypt/Device encryption (Español)#Archivos de calves](/index.php/Dm-crypt/Device_encryption_(Espa%C3%B1ol)#Archivos_de_calves "Dm-crypt/Device encryption (Español)").
+Véase también [dm-crypt/Device encryption (Español)#Archivos de claves](/index.php/Dm-crypt/Device_encryption_(Espa%C3%B1ol)#Archivos_de_claves "Dm-crypt/Device encryption (Español)").
 
 #### crypto
 
@@ -178,7 +178,7 @@ crypto=<hash>:<algoritmo de cifrado>:<tamaño clave>:<desplazamiento>:<salto>
 
 ```
 
-Los argumentos se relacionan directamente con las opciones de *cryptsetup*. Consulte [dm-crypt/Device encryption (Español)#Opciones de cifrado en la modalidad plain](/index.php/Dm-crypt/Device_encryption_(Espa%C3%B1ol)#Opciones_de_cifrado_en_la_modalidad_plain "Dm-crypt/Device encryption (Español)").
+Los argumentos se relacionan directamente con las opciones de *cryptsetup*. Consulte [dm-crypt/Device encryption (Español)#Opciones de cifrado para la modalidad plain](/index.php/Dm-crypt/Device_encryption_(Espa%C3%B1ol)#Opciones_de_cifrado_para_la_modalidad_plain "Dm-crypt/Device encryption (Español)")
 
 Para un disco cifrado con solo las opciones predeterminadas de *plain*, se deben especificar los argumentos de `crypto`, pero cada entrada se puede dejar en blanco:
 
@@ -297,7 +297,7 @@ rd.luks.options=timeout=0 rootflags=x-systemd.device-timeout=0
 
 El archivo `/etc/crypttab` (tabla de dispositivos cifrados) es similar al archivo [fstab (Español)](/index.php/Fstab_(Espa%C3%B1ol) "Fstab (Español)") y contiene una lista de dispositivos cifrados que se desbloquearán durante el inicio del sistema. Este archivo se puede utilizar para montar automáticamente dispositivos de intercambio cifrados o sistemas de archivos secundarios.
 
-`crypttab` se lee *antes* que `fstab`, por lo que los contenedores de dm-crypt se pueden desbloquear antes de que se monte el sistema de archivos que contiene en su interior. Tenga en cuenta que `crypttab` se lee *después* de que el sistema se haya iniciado, por lo tanto, no reemplaza el desbloqueo de particiones cifradas mediante el uso de hooks de [mkinitcpio](#mkinitcpio_.28Espa.C3.B1ol.29) y [opciones del cargador de arranque](#Boot_loader_.28Espa.C3.B1ol.29) como en el caso de la [partición raíz cifrada](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting an entire system (Español)"). El procesado de `crypttab` en el momento del arranque se realiza mediante `systemd-cryptsetup-generator` automáticamente.
+`crypttab` se lee *antes* que `fstab`, por lo que los contenedores de dm-crypt se pueden desbloquear antes de que se monte el sistema de archivos que contiene en su interior. Tenga en cuenta que `crypttab` se lee *después* de que el sistema se haya iniciado, por lo tanto, no reemplaza el desbloqueo de particiones cifradas mediante el uso de hooks de [mkinitcpio](#mkinitcpio) y [opciones del cargador de arranque](#Cargador_de_arranque) como en el caso de la [partición raíz cifrada](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting an entire system (Español)"). El procesado de `crypttab` en el momento del arranque se realiza mediante `systemd-cryptsetup-generator` automáticamente.
 
 Consulte [crypttab(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/crypttab.5) para obtener detalles, lea a continuación algunos ejemplos, y la sección [#Montaje en el momento del arranque](#Montaje_en_el_momento_del_arranque) para obtener instrucciones sobre cómo usar los UUID para montar un dispositivo cifrado.
 

@@ -13,7 +13,7 @@
     *   [1.10 Better namcap errors for version bumps](#Better_namcap_errors_for_version_bumps)
     *   [1.11 Listing all direct dependencies](#Listing_all_direct_dependencies)
     *   [1.12 Multiple kernel support](#Multiple_kernel_support)
-    *   [1.13 Out-of-tree kernel modules management](#Out-of-tree_kernel_modules_management)
+    *   [1.13 ~~Out-of-tree kernel modules management~~](#Out-of-tree_kernel_modules_management)
 
 ## The Big Idea Page
 
@@ -94,10 +94,12 @@ Our current way of managing kernel should be improved:
 
 <u>Possible solution:</u> A simple solution would be to put the kernel name inside the package name and use a meta package to pull the last version. Letting for example 3 kernels generations (3.17.x, 3.16.x, 3.15.x) before removing them (by conflicts).
 
-#### Out-of-tree kernel modules management
+#### ~~Out-of-tree kernel modules management~~
 
 Currently, we have 3 kernels (-arch, -lts, -grsec) and updating out-of-tree kernel modules is something time consuming. The frequency and the testing phase make things even more error prone.
 
 To simplify the situation, I'm suggesting to let DKMS manage them. This is particularly useful if we implement previous idea of multiple kernel support and make the number of kernel modules scalable.
 
 Of course, that make compilation of modules being done by every users, but, it mays be a fair trade as these modules don't make enough effort to be mainlined.
+
+	We now offer dkms versions of module packages as a matter of course, and, usually, compiled versions for at least the primary kernel. This is the best of both worlds. -- [Eschwartz](/index.php/User:Eschwartz "User:Eschwartz") ([talk](/index.php/User_talk:Eschwartz "User talk:Eschwartz")) 01:39, 11 November 2018 (UTC)

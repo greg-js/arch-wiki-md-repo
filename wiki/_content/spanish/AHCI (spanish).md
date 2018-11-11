@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [AHCI](/index.php/AHCI "AHCI"), revisada por última vez el **2018-11-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=AHCI&diff=0&oldid=553413) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 [AHCI](https://en.wikipedia.org/wiki/es:AHCI "wikipedia:es:AHCI") (Advanced Host Controller Interface) es el modo de trabajo nativo para unidades SATA. AHCI tiene dos principales ventajas: compatibilidad con unidades SATA de acoplamiento activo (que simulan el comportamiento de las unidades USB) y [Native Command Queuing](https://en.wikipedia.org/wiki/es:_Native_Command_Queuing "wikipedia:es: Native Command Queuing") (NCQ). Ha estado presente en el kernel de Linux desde la versión 2.6.19 y se cargará automáticamente en el kernel actual de Arch.
 
 ## Configurarlo desde la BIOS

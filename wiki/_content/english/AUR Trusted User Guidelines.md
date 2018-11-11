@@ -117,7 +117,7 @@ When you want to **release** a package, first copy the package along with its si
 *   **Update** the package directory: `svn update some-package`.
 *   **Change** to the package trunk directory: `cd some-package/trunk`.
 *   **Edit** the PKGBUILD, make necessary changes, update hashes with `updpkgsums`.
-*   **Build** the package: `makechrootpkg` or `extra-x86_64-build`. It is **mandatory** to build in a [clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot").
+*   **Build** the package: `makechrootpkg` or `extra-x86_64-build`. It is **mandatory** to build in a [clean chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot").
 *   **[Namcap](/index.php/Namcap "Namcap")** the PKGBUILD and the binary `pkg.tar.gz`.
 *   **Commit**, **Sign**, **Copy** and **Tag** the package using `communitypkg "commit message"`. This automates the following:
     *   **Commit** the changes to trunk: `svn commit`.

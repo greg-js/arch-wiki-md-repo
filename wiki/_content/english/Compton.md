@@ -1,6 +1,4 @@
-[Compton](https://github.com/chjj/compton) is a standalone [compositor](/index.php/Compositor "Compositor") for [Xorg](/index.php/Xorg "Xorg"), suitable for use with [window managers](/index.php/Window_managers "Window managers") that do not provide compositing. Compton is a fork of [xcompmgr-dana](http://oliwer.net/xcompmgr-dana/), which in turn is a fork of [xcompmgr](/index.php/Xcompmgr "Xcompmgr").
-
-**Note:** Compton is currently dormant (last code change 2016) and may cause issues depending on your configuration, see [#Troubleshooting](#Troubleshooting).
+[Compton](https://github.com/yshui/compton) is a standalone [compositor](/index.php/Compositor "Compositor") for [Xorg](/index.php/Xorg "Xorg"), suitable for use with [window managers](/index.php/Window_managers "Window managers") that do not provide compositing. Compton is a fork of [xcompmgr-dana](http://oliwer.net/xcompmgr-dana/), which in turn is a fork of [xcompmgr](/index.php/Xcompmgr "Xcompmgr").
 
 ## Contents
 
@@ -14,16 +12,15 @@
     *   [5.2 dwm | dmenu](#dwm_.7C_dmenu)
     *   [5.3 Firefox](#Firefox)
     *   [5.4 slock](#slock)
-    *   [5.5 Corrupted screen contents with Intel graphics](#Corrupted_screen_contents_with_Intel_graphics)
-    *   [5.6 Freezing video playback](#Freezing_video_playback)
-    *   [5.7 Flicker](#Flicker)
-    *   [5.8 Fullscreen tearing](#Fullscreen_tearing)
-    *   [5.9 Lag when using xft fonts](#Lag_when_using_xft_fonts)
-    *   [5.10 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
-    *   [5.11 Tabbed windows](#Tabbed_windows)
-    *   [5.12 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
-    *   [5.13 Screentearing with NVIDIA's proprietary drivers](#Screentearing_with_NVIDIA.27s_proprietary_drivers)
-    *   [5.14 Lag with Nvidia proprietary drivers and FullCompositionPipeline](#Lag_with_Nvidia_proprietary_drivers_and_FullCompositionPipeline)
+    *   [5.5 Freezing video playback](#Freezing_video_playback)
+    *   [5.6 Flicker](#Flicker)
+    *   [5.7 Fullscreen tearing](#Fullscreen_tearing)
+    *   [5.8 Lag when using xft fonts](#Lag_when_using_xft_fonts)
+    *   [5.9 Screen artifacts/screenshot issues when using AMD's Catalyst driver](#Screen_artifacts.2Fscreenshot_issues_when_using_AMD.27s_Catalyst_driver)
+    *   [5.10 Tabbed windows](#Tabbed_windows)
+    *   [5.11 Unable to change the background color with xsetroot](#Unable_to_change_the_background_color_with_xsetroot)
+    *   [5.12 Screentearing with NVIDIA's proprietary drivers](#Screentearing_with_NVIDIA.27s_proprietary_drivers)
+    *   [5.13 Lag with Nvidia proprietary drivers and FullCompositionPipeline](#Lag_with_Nvidia_proprietary_drivers_and_FullCompositionPipeline)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -122,6 +119,8 @@ seq 0 3 | xargs -l1 -I@ compton -b -d :0.@
 
 ## Troubleshooting
 
+Recent versions of compton do not work correctly with DRI2 acceleration and may exhibit severe flickering when DRI2 is in use ([compton bug](https://github.com/yshui/compton/issues/47), [mesa bug](https://bugs.freedesktop.org/show_bug.cgi?id=108651)). DRI3 is unaffected by this particular issue.
+
 The use of compositing effects may on occasion cause issues such as visual glitches when not configured correctly for use with other applications and programs.
 
 ### Conky
@@ -218,10 +217,6 @@ Otherwise, where using a configuration file:
 focus-exclude = "id = 0x1800001";
 
 ```
-
-### Corrupted screen contents with Intel graphics
-
-On at least some Intel chipsets, DRI3 is known to cause [trouble](https://bugs.freedesktop.org/show_bug.cgi?id=97916) for compton when the display resolution is changed or a new monitor is connected. This can happen with either the `intel` or `modesetting` driver. A workaround is to run compton with the `--paint-on-overlay` option.
 
 ### Freezing video playback
 

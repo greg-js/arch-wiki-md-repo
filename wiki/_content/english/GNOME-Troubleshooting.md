@@ -30,7 +30,7 @@ See [GNOME](/index.php/GNOME "GNOME") for the main article.
 *   [26 No H264 Video in Gnome Video Player (Totem)](#No_H264_Video_in_Gnome_Video_Player_.28Totem.29)
 *   [27 No suspend on LID closure](#No_suspend_on_LID_closure)
 *   [28 gnome-shell / gnome-session crashes on session startup](#gnome-shell_.2F_gnome-session_crashes_on_session_startup)
-*   [29 Low OpenGL performance and stuttering on proprietary NVIDIA driver](#Low_OpenGL_performance_and_stuttering_on_proprietary_NVIDIA_driver)
+*   [29 Low OpenGL performance and stuttering](#Low_OpenGL_performance_and_stuttering)
 *   [30 GNOME Wayland session not available](#GNOME_Wayland_session_not_available)
 *   [31 gnome-control-center is empty and does not list any categories](#gnome-control-center_is_empty_and_does_not_list_any_categories)
 *   [32 Gnome freezes for a second after using a Function (Fn) key shortcut](#Gnome_freezes_for_a_second_after_using_a_Function_.28Fn.29_key_shortcut)
@@ -341,9 +341,15 @@ $ gsettings set org.gnome.SessionManager auto-save-session false
 
 ```
 
-## Low OpenGL performance and stuttering on proprietary NVIDIA driver
+## Low OpenGL performance and stuttering
 
-[This](https://bugzilla.gnome.org/show_bug.cgi?id=781835) bug is much likely the cause of it. You should revert `383ba566bd7c2a76d0856015a66e47caedef06b6` commit in [mutter](https://www.archlinux.org/packages/?name=mutter). Use [ABS](/index.php/ABS "ABS") for this and add `git revert -n 383ba566bd7c2a76d0856015a66e47caedef06b6` to `prepare()` function. Or you can simply install [mutter-781835-workaround](https://aur.archlinux.org/packages/mutter-781835-workaround/)
+*   With proprietary NVIDIA driver
+
+[This](https://bugzilla.gnome.org/show_bug.cgi?id=781835) bug is much likely the cause of it. You should revert `383ba566bd7c2a76d0856015a66e47caedef06b6` commit in [mutter](https://www.archlinux.org/packages/?name=mutter). Use [ABS](/index.php/ABS "ABS") for this and add `git revert -n 383ba566bd7c2a76d0856015a66e47caedef06b6` to the `prepare()` function in the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") or simply install [mutter-781835-workaround](https://aur.archlinux.org/packages/mutter-781835-workaround/) instead.
+
+*   With free drivers
+
+If video playback stutters (a bit), try *GNOME on Xorg* instead of Wayland.
 
 ## GNOME Wayland session not available
 

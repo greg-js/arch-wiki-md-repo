@@ -218,13 +218,15 @@ Most monitors manufactured today use the Red, Green, Blue (RGB) specification. F
 
 ### Subpixel rendering
 
-[Subpixel rendering](https://en.wikipedia.org/wiki/Subpixel_rendering "wikipedia:Subpixel rendering") is a technique to improve sharpness of font rendering by effectively tripling the horizontal (or vertical) resolution through the use of subpixels. On Windows machines, this technique is called "ClearType". Subpixel rendering is covered by Microsoft patents and **disabled** by default on Arch Linux. To enable it, you have to re-compile [freetype2](https://www.archlinux.org/packages/?name=freetype2) and define the `FT_CONFIG_OPTION_SUBPIXEL_RENDERING` macro, or use e.g. the AUR package [freetype2-cleartype](https://aur.archlinux.org/packages/freetype2-cleartype/).
+[Subpixel rendering](https://en.wikipedia.org/wiki/Subpixel_rendering "wikipedia:Subpixel rendering") is a technique to improve sharpness of font rendering by effectively tripling the horizontal (or vertical) resolution through the use of subpixels. On Windows machines, this technique is called "ClearType".
 
-To enable subpixel rendering, make sure that correct pixel alignment (see above) is configured.
+FreeType implements it's own LCD-optimized rendering called [Harmony](http://lists.gnu.org/archive/html/freetype-commit/2017-03/msg00012.html). With this FreeType LCD rendering technology, the resulting output does not require additional LCD filtering, unlike Microsoft's patented Cleartype subpixel rendering where an LCD filter is recommended. See section below on how to enable LCD filter and it's benefits.
+
+Cleartype subpixel rendering is covered by Microsoft patents and **disabled** by default on Arch Linux. To enable it, you have to re-compile [freetype2](https://www.archlinux.org/packages/?name=freetype2) and define the `FT_CONFIG_OPTION_SUBPIXEL_RENDERING` macro, or use e.g. the AUR package [freetype2-cleartype](https://aur.archlinux.org/packages/freetype2-cleartype/).
 
 #### LCD filter
 
-When using subpixel rendering, you should enable the LCD filter, which is designed to reduce colour fringing. This is described under [LCD filtering](http://www.freetype.org/freetype2/docs/reference/ft2-lcd_filtering.html) in the FreeType 2 API reference. Different options are described under [FT_LcdFilter](http://www.freetype.org/freetype2/docs/reference/ft2-lcd_filtering.html#FT_LcdFilter), and are illustrated by this [LCD filter test](http://www.spasche.net/files/lcdfiltering/) page.
+When using Cleartype subpixel rendering, you should enable the LCD filter, which is designed to reduce colour fringing. This is described under [LCD filtering](https://www.freetype.org/freetype2/docs/reference/ft2-lcd_filtering.html) in the FreeType 2 API reference. Different options are described under [FT_LcdFilter](http://www.freetype.org/freetype2/docs/reference/ft2-lcd_filtering.html#FT_LcdFilter), and are illustrated by this [LCD filter test](http://www.spasche.net/files/lcdfiltering/) page.
 
 The `lcddefault` filter will work for most users. Other filters are available that can be used in special situations: `lcdlight`; a lighter filter ideal for fonts that look too bold or fuzzy, `lcdlegacy`, the original Cairo filter; and `lcdnone` to disable it entirely.
 

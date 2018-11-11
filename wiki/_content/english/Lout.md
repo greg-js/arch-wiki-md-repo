@@ -28,7 +28,7 @@ Lout supports only one byte encoding, thus you need to use specific character ma
 
 ```
 
-[iconv](/index.php/Core_utilities#Nonessentials "Core utilities") could be used to obtain required encoding, before feed source to lout:
+[iconv](/index.php/Iconv "Iconv") could be used to obtain required encoding, before feed source to lout:
 
 ```
 $ iconv -f utf-8 -t koi8-r example.lout example.koi8-r.lout

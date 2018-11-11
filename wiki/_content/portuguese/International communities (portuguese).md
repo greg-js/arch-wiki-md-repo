@@ -1,41 +1,43 @@
-**Status de tradução:** Esse artigo é uma tradução de [International communities](/index.php/International_communities "International communities"). Data da última tradução: 2018-10-26\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=International_communities&diff=0&oldid=544981) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [International communities](/index.php/International_communities "International communities"). Data da última tradução: 2018-11-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=International_communities&diff=0&oldid=553760) na versão em inglês.
 
 Artigos relacionados
 
 *   [Help:i18n](/index.php/Help:I18n_(Portugu%C3%AAs) "Help:I18n (Português)")
+*   [ArchWiki:Translation Team (Português)](/index.php/ArchWiki:Translation_Team_(Portugu%C3%AAs) "ArchWiki:Translation Team (Português)")
 *   [Canal IRC](/index.php/Canal_IRC "Canal IRC")
 
 [https://archlinux.org](https://archlinux.org) é ponto oficial do site, fóruns e wiki do Arch Linux. Porém, vários sites não oficiais mantidos pela comunidade estão disponíveis para usuários internacionais que prefeririam se comunicar em seu próprio idioma. Você pode encontrar uma lista dessas comunidades abaixo.
 
 Por favor, note que nosso wiki também oferece suporte a conteúdo internacionalizado. Além disso, temos um fórum internacional, no qual você pode publicar seu idioma nativo. Essas ferramentas podem ser usadas junto com, em paralelo a, ou como parte das comunidades internacionais listadas abaixo.
 
-Esta lista não está completa. Se você conhece uma comunidade que não está listada, sinta-se à vontade para adicioná-la. Se você está procurando por uma comunidade que não possui uma comunidade existente, inicie uma ou visite o [fórum Other Languages](https://bbs.archlinux.org/viewforum.php?id=30).
+Esta lista não está completa. Se você conhece uma comunidade que não está listada, sinta-se à vontade para adicioná-la. Se você está procurando por uma comunidade que não possui uma comunidade existente, inicie uma ou visite o [fórum "Other Languages"](https://bbs.archlinux.org/viewforum.php?id=30).
 
 ## Contents
 
-*   [1 Alemanha](#Alemanha)
-*   [2 Brasil](#Brasil)
-*   [3 China](#China)
-*   [4 Dinamarca](#Dinamarca)
-*   [5 Espanha e América Latina (España y América Latina)](#Espanha_e_Am.C3.A9rica_Latina_.28Espa.C3.B1a_y_Am.C3.A9rica_Latina.29)
-*   [6 França](#Fran.C3.A7a)
-*   [7 Grécia](#Gr.C3.A9cia)
-*   [8 Hungria](#Hungria)
-*   [9 Irã](#Ir.C3.A3)
-*   [10 Itália](#It.C3.A1lia)
-*   [11 Japão](#Jap.C3.A3o)
-*   [12 Lituânia](#Litu.C3.A2nia)
-*   [13 Polônia](#Pol.C3.B4nia)
-*   [14 Romênia](#Rom.C3.AAnia)
-*   [15 Rússia](#R.C3.BAssia)
+*   [1 Alemão](#Alem.C3.A3o)
+*   [2 Chinês](#Chin.C3.AAs)
+    *   [2.1 China](#China)
+    *   [2.2 Taiwan](#Taiwan)
+*   [3 Dinamarquês](#Dinamarqu.C3.AAs)
+*   [4 Espanhol](#Espanhol)
+*   [5 Francês](#Franc.C3.AAs)
+*   [6 Grego](#Grego)
+*   [7 Húngaro](#H.C3.BAngaro)
+*   [8 Italiano](#Italiano)
+*   [9 Japonês](#Japon.C3.AAs)
+*   [10 Lituano](#Lituano)
+*   [11 Persa](#Persa)
+*   [12 Polonês](#Polon.C3.AAs)
+*   [13 Português](#Portugu.C3.AAs)
+*   [14 Romeno](#Romeno)
+*   [15 Russo](#Russo)
 *   [16 Sérvia](#S.C3.A9rvia)
-*   [17 Suécia](#Su.C3.A9cia)
-*   [18 Taiwan](#Taiwan)
-*   [19 Turquia](#Turquia)
-*   [20 Ucrânia](#Ucr.C3.A2nia)
-*   [21 Vietnã](#Vietn.C3.A3)
+*   [17 Sueco](#Sueco)
+*   [18 Turco](#Turco)
+*   [19 Ucraniano](#Ucraniano)
+*   [20 Vietnamita](#Vietnamita)
 
-## Alemanha
+## Alemão
 
 *   Site: [https://www.archlinux.de/](https://www.archlinux.de/)
 *   Fórum: [https://bbs.archlinux.de/](https://bbs.archlinux.de/)
@@ -43,13 +45,9 @@ Esta lista não está completa. Se você conhece uma comunidade que não está l
 *   Arch Linux User Group Berlin: [https://archlinux.berlin/](https://archlinux.berlin/)
 *   Arch Linux User Group Luxembourg: [https://wiki.c3l.lu/doku.php?id=events:alugl](https://wiki.c3l.lu/doku.php?id=events:alugl)
 
-## Brasil
+## Chinês
 
-*   Site: [http://archlinux-br.org/](http://archlinux-br.org/)
-*   Fórum: [http://forum.archlinux-br.org/](http://forum.archlinux-br.org/)
-*   Wiki: [Main page (Português)](/index.php/Main_page_(Portugu%C3%AAs) "Main page (Português)")
-
-## China
+### China
 
 *   Site: [https://www.archlinuxcn.org/](https://www.archlinuxcn.org/)
 *   Fórum: [https://bbs.archlinuxcn.org/](https://bbs.archlinuxcn.org/)
@@ -57,13 +55,20 @@ Esta lista não está completa. Se você conhece uma comunidade que não está l
 *   Fórum: [http://tieba.baidu.com/f?kw=archlinux](http://tieba.baidu.com/f?kw=archlinux)
 *   Wiki: [Main page (简体中文)](/index.php/Main_page_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Main page (简体中文)")
 
-## Dinamarca
+### Taiwan
+
+*   Site: [https://archlinux.tw/](https://archlinux.tw/)
+*   Bate-papo do Telegram: [https://t.me/ArchLinuxTaiwan](https://t.me/ArchLinuxTaiwan)
+*   Fórum: [https://groups.google.com/forum/#!forum/archlinux-tw-general](https://groups.google.com/forum/#!forum/archlinux-tw-general)
+*   Wiki: [Main page (正體中文)](/index.php/Main_page_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Main page (正體中文)")
+
+## Dinamarquês
 
 *   Site: [http://www.archlinux.dk/](http://www.archlinux.dk/)
 *   Fórum: [http://forum.archlinux.dk/](http://forum.archlinux.dk/)
 *   Wiki: [Main page (Dansk)](/index.php/Main_page_(Dansk) "Main page (Dansk)")
 
-## Espanha e América Latina (España y América Latina)
+## Espanhol
 
 *   Site: [http://www.archlinux-es.org/](http://www.archlinux-es.org/)
 *   Fórum: [http://foros.archlinux-es.org/](http://foros.archlinux-es.org/)
@@ -71,35 +76,29 @@ Esta lista não está completa. Se você conhece uma comunidade que não está l
 *   Planet: [http://planeta.archlinux-es.org](http://planeta.archlinux-es.org)
 *   ArchlinuxLatinoamerica: [https://ArchlinuxLatinoamerica.wordpress.com/](https://ArchlinuxLatinoamerica.wordpress.com/)
 
-## França
+## Francês
 
-*   Site: [http://archlinux.fr/](http://archlinux.fr/)
-*   Fórum: [http://forums.archlinux.fr/](http://forums.archlinux.fr/)
-*   Wiki: [http://wiki.archlinux.fr/](http://wiki.archlinux.fr/)
+*   Site: [https://archlinux.fr/](https://archlinux.fr/)
+*   Fórum: [https://forums.archlinux.fr/](https://forums.archlinux.fr/)
+*   Wiki: [https://wiki.archlinux.fr/](https://wiki.archlinux.fr/)
 
-## Grécia
+## Grego
 
 *   Site: [http://archlinux.gr](http://archlinux.gr)
 *   Wiki: [Main page (Ελληνικά)](/index.php/Main_page_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC) "Main page (Ελληνικά)")
 
-## Hungria
+## Húngaro
 
 *   Site: [http://archlinux.hu/](http://archlinux.hu/)
 *   Fórum: [http://archlinux.hu/forum](http://archlinux.hu/forum)
 
-## Irã
-
-*   Site: [http://www.archusers.ir/](http://www.archusers.ir/)
-*   Fórum: [http://bbs.archusers.ir/](http://bbs.archusers.ir/)
-*   Wiki: [http://wiki.archusers.ir/](http://wiki.archusers.ir/)
-
-## Itália
+## Italiano
 
 *   Site: [http://www.archlinux.it/](http://www.archlinux.it/)
 *   Fórum: [http://www.archlinux.it/forum](http://www.archlinux.it/forum)
 *   Wiki: [Main page (Italiano)](/index.php/Main_page_(Italiano) "Main page (Italiano)")
 
-## Japão
+## Japonês
 
 *   Site: [https://www.archlinux.jp/](https://www.archlinux.jp/)
 *   Fórum: [https://bbs.archlinux.jp/](https://bbs.archlinux.jp/)
@@ -108,24 +107,35 @@ Esta lista não está completa. Se você conhece uma comunidade que não está l
 *   Planet: [https://planet.archlinux.jp/](https://planet.archlinux.jp/)
 *   Projetos: [https://github.com/ArchLinuxJP](https://github.com/ArchLinuxJP)
 
-## Lituânia
+## Lituano
 
-*   Site: [http://www.archlinux.lt/](http://www.archlinux.lt/)
 *   Fórum: [http://sls.archlinux.lt/](http://sls.archlinux.lt/)
-*   Wiki: [Main page (Lietuviškai)](/index.php/Main_page_(Lietuvi%C5%A1kai) "Main page (Lietuviškai)")
+*   Wiki: [lt:Main page](https://wiki.archlinux.org/index.php/Main_page_(Lietuvi%C5%A1kai) "lt:Main page")
 
-## Polônia
+## Persa
+
+*   Site: [http://www.archusers.ir/](http://www.archusers.ir/)
+*   Fórum: [http://bbs.archusers.ir/](http://bbs.archusers.ir/)
+*   Wiki: [http://wiki.archusers.ir/](http://wiki.archusers.ir/)
+
+## Polonês
 
 *   Fórum: [http://forum.archlinux.org.pl/](http://forum.archlinux.org.pl/)
 *   Wiki: [Main page (Polski)](/index.php/Main_page_(Polski) "Main page (Polski)")
 
-## Romênia
+## Português
+
+*   Site: [http://archlinux-br.org/](http://archlinux-br.org/)
+*   Fórum: [http://forum.archlinux-br.org/](http://forum.archlinux-br.org/)
+*   Wiki: [Main page (Português)](/index.php/Main_page_(Portugu%C3%AAs) "Main page (Português)")
+
+## Romeno
 
 *   Site: [http://archlinux.ro/](http://archlinux.ro/)
 *   Fórum: [http://bbs.archlinux.ro/](http://bbs.archlinux.ro/)
 *   Wiki: [http://wiki.archlinux.ro/](http://wiki.archlinux.ro/)
 
-## Rússia
+## Russo
 
 *   Site: [https://archlinux.org.ru/](https://archlinux.org.ru/)
 *   Fórum: [https://archlinux.org.ru/forum](https://archlinux.org.ru/forum)
@@ -135,34 +145,27 @@ Esta lista não está completa. Se você conhece uma comunidade que não está l
 
 ## Sérvia
 
-*   Site: [http://archlinux.rs/](http://archlinux.rs/)
-*   Fórum: [http://bbs.archlinux.rs/](http://bbs.archlinux.rs/)
-*   Wiki: [http://wiki.archlinux.rs/](http://wiki.archlinux.rs/)
+*   Site: [https://www.archlinux.rs/](https://www.archlinux.rs/)
+*   Fórum: [https://bbs.archlinux.rs/](https://bbs.archlinux.rs/)
+*   Wiki: [sr:Main page](https://wiki.archlinux.org/index.php/Main_page_(%D0%A1%D1%80%D0%BF%D1%81%D0%BA%D0%B8) "sr:Main page")
 
-## Suécia
+## Sueco
 
 *   Site: [http://archlinux.se/](http://archlinux.se/)
 
-## Taiwan
-
-*   Site: [https://archlinux.tw/](https://archlinux.tw/)
-*   Bate-papo do Telegram: [https://t.me/ArchLinuxTaiwan](https://t.me/ArchLinuxTaiwan)
-*   Fórum: [https://groups.google.com/forum/#!forum/archlinux-tw-general](https://groups.google.com/forum/#!forum/archlinux-tw-general)
-*   Wiki: [Main page (正體中文)](/index.php/Main_page_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87) "Main page (正體中文)")
-
-## Turquia
+## Turco
 
 *   Site: [https://archtr.org/](https://archtr.org/)
 *   Fórum: [https://forum.archtr.org/](https://forum.archtr.org/)
 *   Wiki: [Ana sayfa (Türkçe)](/index.php/Ana_sayfa_(T%C3%BCrk%C3%A7e) "Ana sayfa (Türkçe)")
 
-## Ucrânia
+## Ucraniano
 
 *   Tópico no fórum: [https://bbs.archlinux.org/viewtopic.php?id=27189](https://bbs.archlinux.org/viewtopic.php?id=27189)
 *   Bate-papo no Telegram: [https://t.me/archlinux_ukraine](https://t.me/archlinux_ukraine)
 *   Fórum da comunidade ucraniana de Linux: [https://linux.org.ua/](https://linux.org.ua/)
 
-## Vietnã
+## Vietnamita
 
 *   Site: [http://archlinuxvn.tuxfamily.org/](http://archlinuxvn.tuxfamily.org/) (vietnamita apenas)
 *   Wiki: [http://archlinuxvn.tuxfamily.org/](http://archlinuxvn.tuxfamily.org/)

@@ -48,20 +48,20 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | Printer | Driver/filter | Notes |
 | DCP-135C | [brother-dcp135c](https://aur.archlinux.org/packages/brother-dcp135c/) |
 | DCP-150C | [brother-dcp150c](https://aur.archlinux.org/packages/brother-dcp150c/) |
-| DCP-7020 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or Brother's driver. |
+| DCP-7020 | [foomatic](/index.php/Foomatic "Foomatic") | Or Brother's driver. |
 | DCP-7030 | [brother-dcp7030](https://aur.archlinux.org/packages/brother-dcp7030/) |
 | DCP-7065DN | [brother-dcp7065dn](https://aur.archlinux.org/packages/brother-dcp7065dn/) |
 | DCP-J515W | [brother-dcp-j515w](https://aur.archlinux.org/packages/brother-dcp-j515w/) |
 | FAX-2820 | [brother-cups-wrapper-laser](https://aur.archlinux.org/packages/brother-cups-wrapper-laser/) |
-| FAX-2840 | [brother-fax2840](https://aur.archlinux.org/packages/brother-fax2840/) | Or [foomatic](/index.php/CUPS#Foomatic "CUPS") - works mostly with `hpijs-pcl5e.ppd`. Same as the HL-2170W. |
+| FAX-2840 | [brother-fax2840](https://aur.archlinux.org/packages/brother-fax2840/) | Or [foomatic](/index.php/Foomatic "Foomatic") - works mostly with `hpijs-pcl5e.ppd`. Same as the HL-2170W. |
 | FAX-2940 | [brother-fax2940](https://aur.archlinux.org/packages/brother-fax2940/) |
-| HL-2030 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or [brother-hl2030](https://aur.archlinux.org/packages/brother-hl2030/) |
-| HL-2035 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Should be compatible with any drivers for the HL-2030. |
-| HL-2040 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or [brother-hl2040](https://aur.archlinux.org/packages/brother-hl2040/) |
-| HL-2130 | [foomatic](/index.php/CUPS#Foomatic "CUPS") (using the HL-2140 driver) | Or [hplip](https://www.archlinux.org/packages/?name=hplip) |
-| HL-2140 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or [brother-hl2140](https://aur.archlinux.org/packages/brother-hl2140/) |
-| HL-2170W | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or Brother's driver. |
-| HL-2230 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Same as HL-2170W. Select HL-2170W as the driver in CUPS admin when adding a printer. |
+| HL-2030 | [foomatic](/index.php/Foomatic "Foomatic") | Or [brother-hl2030](https://aur.archlinux.org/packages/brother-hl2030/) |
+| HL-2035 | [foomatic](/index.php/Foomatic "Foomatic") | Should be compatible with any drivers for the HL-2030. |
+| HL-2040 | [foomatic](/index.php/Foomatic "Foomatic") | Or [brother-hl2040](https://aur.archlinux.org/packages/brother-hl2040/) |
+| HL-2130 | [foomatic](/index.php/Foomatic "Foomatic") (using the HL-2140 driver) | Or [hplip](https://www.archlinux.org/packages/?name=hplip) |
+| HL-2140 | [foomatic](/index.php/Foomatic "Foomatic") | Or [brother-hl2140](https://aur.archlinux.org/packages/brother-hl2140/) |
+| HL-2170W | [foomatic](/index.php/Foomatic "Foomatic") | Or Brother's driver. |
+| HL-2230 | [foomatic](/index.php/Foomatic "Foomatic") | Same as HL-2170W. Select HL-2170W as the driver in CUPS admin when adding a printer. |
 | HL-2250DN | [brother-hl2250dn](https://aur.archlinux.org/packages/brother-hl2250dn/) |
 | HL-2270DW | [brother-hl2270dw](https://aur.archlinux.org/packages/brother-hl2270dw/) |
 | HL-2280DW | [brother-hl2280dw](https://aur.archlinux.org/packages/brother-hl2280dw/) |
@@ -70,8 +70,8 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | HL-3140CW | [brother-hl3140cw](https://aur.archlinux.org/packages/brother-hl3140cw/) | Use IPP and Brother's driver to avoid page-shrinking and endless blank printouts |
 | HL-3150CDW | [brother-hl3150cdw](https://aur.archlinux.org/packages/brother-hl3150cdw/) |
 | HL-3170CDW | [brother-hl3170cdw](https://aur.archlinux.org/packages/brother-hl3170cdw/) |
-| HL-5140 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or Brother's driver. |
-| HL-5340 | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Using the *Generic PCL 6/PCL XL Printer - CUPS+Gutenprint* ([gutenprint](https://www.archlinux.org/packages/?name=gutenprint) and [foomatic-db-gutenprint-ppds](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint-ppds)). Or Brother's driver, which may result in failed prints with postscript errors. |
+| HL-5140 | [foomatic](/index.php/Foomatic "Foomatic") | Or Brother's driver. |
+| HL-5340 | [foomatic](/index.php/Foomatic "Foomatic") | Using the *Generic PCL 6/PCL XL Printer - CUPS+Gutenprint* ([gutenprint](https://www.archlinux.org/packages/?name=gutenprint) and [foomatic-db-gutenprint-ppds](https://www.archlinux.org/packages/?name=foomatic-db-gutenprint-ppds)). Or Brother's driver, which may result in failed prints with postscript errors. |
 | HL-L2300D | [brother-hll2300d](https://aur.archlinux.org/packages/brother-hll2300d/) |
 | HL-L2350DW | [brother-hll2350dw](https://aur.archlinux.org/packages/brother-hll2350dw/) |
 | HL-L2380DW | [brother-hll2380dw](https://aur.archlinux.org/packages/brother-hll2380dw/) |
@@ -80,11 +80,11 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 | MFC-420CN | [brother-mfc-420cn](https://aur.archlinux.org/packages/brother-mfc-420cn/) |
 | MFC-440CN | [brother-mfc-440cn](https://aur.archlinux.org/packages/brother-mfc-440cn/) |
 | MFC-7360N | [brother-mfc7360n](https://aur.archlinux.org/packages/brother-mfc7360n/) |
-| MFC-7460DN | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Use the *Generic PCL 6 Printer wide margin - CUPS+Gutenprint* driver, with address `ipp://hostname-or-ip/pcl_p1`. |
+| MFC-7460DN | [foomatic](/index.php/Foomatic "Foomatic") | Use the *Generic PCL 6 Printer wide margin - CUPS+Gutenprint* driver, with address `ipp://hostname-or-ip/pcl_p1`. |
 | MFC-7840W | [brother-mfc-7840w](https://aur.archlinux.org/packages/brother-mfc-7840w/) |
 | MFC-9320CW | Install Brother's driver. |
 | MFC-9332CDW | [brother-mfc-9332cdw](https://aur.archlinux.org/packages/brother-mfc-9332cdw/) |
-| MFC-9840CDW | [foomatic](/index.php/CUPS#Foomatic "CUPS") | Or Brother's driver. This printer also works with the generic PCL-6 driver from the [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) package. Use **pcl_p1** for the printer's address when using the PCL-6 driver. |
+| MFC-9840CDW | [foomatic](/index.php/Foomatic "Foomatic") | Or Brother's driver. This printer also works with the generic PCL-6 driver from the [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) package. Use **pcl_p1** for the printer's address when using the PCL-6 driver. |
 | MFC-J470DW | [brother-mfc-j470dw](https://aur.archlinux.org/packages/brother-mfc-j470dw/) |
 | MFC-J4710DW | [brother-mfc-j4710dw](https://aur.archlinux.org/packages/brother-mfc-j4710dw/) |
 | MFC-J480DW | [brother-mfc-j480dw](https://aur.archlinux.org/packages/brother-mfc-j480dw/) | Use the `ipp` protocol as described in [#Network printers](#Network_printers). |
@@ -408,7 +408,7 @@ Most HP printers will use [hplip](https://www.archlinux.org/packages/?name=hplip
 | DeskJet 1000Cxi |
 | LaserJet P1606dn | [hplip](https://www.archlinux.org/packages/?name=hplip) + [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) | Or [foo2zjs-nightly](https://aur.archlinux.org/packages/foo2zjs-nightly/), or [AirPrint](/index.php/CUPS#CUPS "CUPS"). |
 | LaserJet Pro MFP M126nw | [hplip](https://www.archlinux.org/packages/?name=hplip) + [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) |
-| Photosmart 2575 | [hplip](https://www.archlinux.org/packages/?name=hplip) | Or use the hpijs driver in [foomatic](/index.php/CUPS#Foomatic "CUPS"). |
+| Photosmart 2575 | [hplip](https://www.archlinux.org/packages/?name=hplip) | Or use the hpijs driver in [foomatic](/index.php/Foomatic "Foomatic"). |
 | Printer | Driver/filter | Notes |
 
 ### HPLIP
@@ -470,7 +470,7 @@ If your printer is [listed as requiring a binary plugin](https://developers.hp.c
 ## Konica Minolta
 
 | Printer | Driver/filter | Notes |
-| Minolta Magicolor 1600W | [foomatic](/index.php/CUPS#Foomatic "CUPS") |
+| Minolta Magicolor 1600W | [foomatic](/index.php/Foomatic "Foomatic") |
 | Minolta Magicolor 1680MF |
 | Minolta Magicolor 1690MF |
 | Minolta Magicolor 2480MF |
@@ -540,7 +540,7 @@ Keep in mind you can use the automated installer but doing so will leave the res
 ## Oki
 
 | Printer | Driver/filter | Notes |
-| C110 | [foomatic](/index.php/CUPS#Foomatic "CUPS") |
+| C110 | [foomatic](/index.php/Foomatic "Foomatic") |
 | MC561 | [foomatic-db-nonfree](/index.php/CUPS#Foomatic "CUPS") |
 | Printer | Driver/filter | Notes |
 
@@ -574,8 +574,8 @@ For printers requiring the *cnijfilter* drivers, search for the correct driver [
 | Printer | Driver/filter | Notes |
 | DocuPrint 203A | [hplip](https://www.archlinux.org/packages/?name=hplip) | Using the **DocuPrint P8e(hpijs)** driver, or the Brother driver on FujiXerox's website (see [#Brother](#Brother) for more information on how to install custom Brother drivers). |
 | Phaser 3100MFP | Install Xerox's driver | See [#Phaser 3100MFP](#Phaser_3100MFP) for more instructions. |
-| Phaser 6115MFP | [foomatic](/index.php/CUPS#Foomatic "CUPS") |
-| Phaser 6121MFP | [foomatic](/index.php/CUPS#Foomatic "CUPS") |
+| Phaser 6115MFP | [foomatic](/index.php/Foomatic "Foomatic") |
+| Phaser 6121MFP | [foomatic](/index.php/Foomatic "Foomatic") |
 | Printer | Driver/filter | Notes |
 
 ### Custom drivers

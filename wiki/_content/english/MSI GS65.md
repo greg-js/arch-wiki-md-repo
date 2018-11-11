@@ -230,7 +230,7 @@ Waking from suspend will have wifi in airplane mode. [[2]](https://askubuntu.com
 
 ```
 
-Wifi can be reactivated by either using the [airplane mode key combination](#Airplane_Mode_Button) twice or by hibernating and rebooting.
+Wifi can be reactivated by either using the [airplane mode key combination](#Airplane_Mode_Key_Combination) twice or by hibernating and rebooting.
 
 A way to mitigate this is by setting systemd to hibernate instead of suspending.
 

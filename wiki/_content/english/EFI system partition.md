@@ -121,7 +121,7 @@ Furthermore, you will need to keep the files on the ESP up-to-date with later ke
 
 **Note:** If ESP is not mounted to `/boot`, make sure to not rely on the [systemd automount mechanism](/index.php/Fstab#Automount_with_systemd "Fstab") (including that of [systemd-gpt-auto-generator(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd-gpt-auto-generator.8)). Always have it mounted manually prior to the any system or kernel update, otherwise you may not be able to mount it after the update, locking you in the currently running kernel with no ability to update the copy of kernel on ESP.
 
-Alternatively [preload the required kernel modules on boot](/index.php/Kernel_module#Automatic_module_handling "Kernel module"), e.g.:
+Alternatively [preload the required kernel modules on boot](/index.php/Kernel_module#Automatic_module_loading_with_systemd "Kernel module"), e.g.:
 
  `/etc/modules-load.d/vfat.conf` 
 ```

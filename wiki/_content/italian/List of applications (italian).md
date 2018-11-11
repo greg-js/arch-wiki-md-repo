@@ -2549,7 +2549,7 @@ Si veda l'articolo principale: [List of applications/Documents (Italiano)#Docume
 
 	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://www.archlinux.org/packages/?name=freemat)
 
-*   **[Octave](/index.php/Octave "Octave")** — Linguaggio per il calcolo numerico con interfaccia simile a [Matlab](/index.php/Matlab "Matlab").
+*   **[Octave](/index.php/Octave "Octave")** — Linguaggio per il calcolo numerico con interfaccia simile a [MATLAB](/index.php/MATLAB "MATLAB").
 
 	[http://www.gnu.org/software/octave/](http://www.gnu.org/software/octave/) || [octave](https://www.archlinux.org/packages/?name=octave)
 

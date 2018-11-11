@@ -521,7 +521,7 @@ It is possible to control both volume and media playback via a combination of am
 
 ### Steam Keyboard
 
-The on screen Steam Keyboard that can be activated by the [Steam Controller](/index.php/Gamepad#Steam_Controller "Gamepad") appears to freeze after trying to type one character. This is because the client that is supposed to receive the input has to be focussed to receive it and the keyboard will wait until this input is successfully send. Manually focussing another client will send the input to this client and unfreeze the keyboard again until the next character is entered.
+The on screen Steam Keyboard that can be activated by the [Steam Controller](/index.php/Steam_Controller "Steam Controller") appears to freeze after trying to type one character. This is because the client that is supposed to receive the input has to be focussed to receive it and the keyboard will wait until this input is successfully send. Manually focussing another client will send the input to this client and unfreeze the keyboard again until the next character is entered.
 
 The trick to getting the keyboard to work correctly is to prevent it ever receiving focus. Add the following signal to your config (or merge with an existing client focus signal):
 

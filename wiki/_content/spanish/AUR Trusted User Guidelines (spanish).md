@@ -74,7 +74,7 @@ Así, el **proceso** de actualización de un paquete puede resumirse como
 
 *   **Actualizar** el directorio del paquete (`SVN actualizar algunos paquetes`)
 *   **Cambie** al directorio del paquete raiz (`cd algunos paquetes/raiz`)
-*   **Modificar** el PKGBUILD, hacer los cambios necesarios y `makepkg`. Se recomienda construir en un entorno chroot limpio. [chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot").
+*   **Modificar** el PKGBUILD, hacer los cambios necesarios y `makepkg`. Se recomienda construir en un entorno chroot limpio. [chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot").
 *   **[Namcap](/index.php/Namcap "Namcap")** el PKGBUILD y el pkg.tar.gz binario.
 *   **Confirmar** los cambios en el tronco (`confirmar svn`)
 *   **Copiar** el paquete a aur.archlinux.org (`scp pkgname-ver-rel-arch.pkg.tar.gz aur.archlinux.org:staging/community/`)

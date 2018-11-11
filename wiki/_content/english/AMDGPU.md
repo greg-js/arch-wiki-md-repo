@@ -37,7 +37,7 @@ Depending on the card you have, find the right driver in [Xorg#AMD](/index.php/X
 
 At the moment there is support for [Volcanic Islands (VI)](https://www.x.org/wiki/RadeonFeature/) (and newer) and experimental support for [Sea Islands (CI)](https://www.phoronix.com/scan.php?page=news_item&px=AMD-AMDGPU-Released) and [Southern Islands (SI)](https://www.phoronix.com/scan.php?page=news_item&px=AMDGPU-SI-Experimental-Code) cards. AMD has no plans to support pre-GCN GPUs.
 
-Owners of unsupported GPUs may use the open source [radeon](/index.php/ATI "ATI") or the [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") driver instead.
+Owners of unsupported GPUs may use the open source [radeon](/index.php/Radeon "Radeon") or the [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") driver instead.
 
 ## Installation
 

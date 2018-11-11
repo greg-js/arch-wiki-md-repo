@@ -710,7 +710,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page "w
 
 	[http://www.mplayerhq.hu/design7/news.html](http://www.mplayerhq.hu/design7/news.html) || [mplayer](https://www.archlinux.org/packages/?name=mplayer) (Véase también un fork muy similar: [mplayer2](https://aur.archlinux.org/packages/mplayer2/))
 
-*   **[mpv](/index.php/Mpv "Mpv")** — Reproductor de vídeo basado en MPlayer y mplayer2.
+*   **[mpv](/index.php/Mpv "Mpv")** — Reproductor multimedia basado en MPlayer y mplayer2.
 
 	[http://mpv.io](http://mpv.io) || [mpv](https://www.archlinux.org/packages/?name=mpv) [mpv-git](https://aur.archlinux.org/packages/mpv-git/)
 

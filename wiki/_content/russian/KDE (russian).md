@@ -11,7 +11,7 @@
 *   [Trinity](/index.php/Trinity "Trinity")
 *   [Uniform Look for Qt and GTK Applications (Русский)](/index.php/Uniform_Look_for_Qt_and_GTK_Applications_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Uniform Look for Qt and GTK Applications (Русский)")
 
-**Состояние перевода:** На этой странице представлен перевод статьи [KDE](/index.php/KDE "KDE"). Дата последней синхронизации: 8 ноября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=553635).
+**Состояние перевода:** На этой странице представлен перевод статьи [KDE](/index.php/KDE "KDE"). Дата последней синхронизации: 10 ноября 2018\. Вы можете [помочь](/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "ArchWiki Translation Team (Русский)") синхронизировать перевод, если в английской версии произошли [изменения](https://wiki.archlinux.org/index.php?title=KDE&diff=0&oldid=554306).
 
 KDE — проект, в настоящее время состоящий из [среды рабочего стола](/index.php/Desktop_environment_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Desktop environment (Русский)") (KDE Plasma), набора библиотек и фреймворков (KDE Frameworks), а также набора приложений (KDE Applications).
 
@@ -281,7 +281,7 @@ $ kcmshell5 autostart
 
 [Установите](/index.php/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5 "Установите") [powerdevil](https://www.archlinux.org/packages/?name=powerdevil) для получения встроенной службы управления энергопотреблением Plasma. Данная служба предлагает дополнительные возможности по оптимизации энергопотребления, регулировке яркости экрана (если поддерживается) и получению информации о состоянии аккумуляторов устройств.
 
-В качестве альтернативного пакета, который не зависит от [Networkmanager (Русский)](/index.php/Networkmanager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "Networkmanager (Русский)") и [Bluez](/index.php/Bluez "Bluez"), можно воспользоваться [powerdevil-light](https://aur.archlinux.org/packages/powerdevil-light/).
+В качестве альтернативного пакета, который не зависит от [NetworkManager (Русский)](/index.php/NetworkManager_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) "NetworkManager (Русский)") и [Bluez](/index.php/Bluez "Bluez"), можно воспользоваться [powerdevil-light](https://aur.archlinux.org/packages/powerdevil-light/).
 
 **Примечание:**
 

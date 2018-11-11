@@ -24,7 +24,7 @@
 *   重建 [initramfs 镜像](/index.php/Mkinitcpio "Mkinitcpio").
 *   更新或 [降级软件包](/index.php/Downgrading_packages "Downgrading packages").
 *   重置 [忘记的密码](/index.php/Password_recovery "Password recovery").
-*   在干净的 chroot 中构建软件包：[DeveloperWiki:Building in a Clean Chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot").
+*   在干净的 chroot 中构建软件包：[DeveloperWiki:Building in a clean chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot").
 
 参阅 [Wikipedia:Chroot#Limitations](https://en.wikipedia.org/wiki/Chroot#Limitations "wikipedia:Chroot").
 

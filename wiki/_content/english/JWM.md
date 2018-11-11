@@ -1,15 +1,10 @@
-**JWM** (Joe's Window Manager) is a lightweight [window manager](/index.php/Window_manager "Window manager") for [Xorg](/index.php/Xorg "Xorg") written in [C](https://en.wikipedia.org/wiki/C_(programming_language) "wikipedia:C (programming language)"). It is under active development and maintained by [Joe Wingbermuehle](http://joewing.net/about.shtml). It is the default window manager base for distributions such as [Puppy Linux](http://www.puppylinux.org/) and [Damn Small Linux](http://damnsmalllinux.org/).
-
-JWM uses approximately 5 MB of resident memory under normal operating conditions. As of January 2009, the size of the version present in the [official Arch Linux repositories](/index.php/Official_repositories "Official repositories") is under 76 KB packaged (compare to [dwm](/index.php/Dwm "Dwm") at under 17 KB) and under 171 KB installed (compare to dwm at 68 KB). A minimally compiled version consumes approximately 136 KB of disk space and occupies under 1500 KB of resident memory.
-
-Configuration is done via a single [XML](https://en.wikipedia.org/wiki/XML "wikipedia:XML") file `~/.jwmrc`, there is native support for customizable panels and buttons, and it includes [system tray](https://en.wikipedia.org/wiki/Taskbar "wikipedia:Taskbar") dock.
+**JWM** (Joe's Window Manager) is a lightweight [window manager](/index.php/Window_manager "Window manager") for [Xorg](/index.php/Xorg "Xorg") written in [C](https://en.wikipedia.org/wiki/C_(programming_language) "wikipedia:C (programming language)"). It is under active development and maintained by [Joe Wingbermuehle](http://joewing.net/about.html). It is the default window manager base for distributions like [Puppy Linux](http://www.puppylinux.org/) and [Damn Small Linux](http://damnsmalllinux.org/).
 
 ## Contents
 
 *   [1 Installation](#Installation)
 *   [2 Starting](#Starting)
 *   [3 Configuration](#Configuration)
-    *   [3.1 Overview of selected tags](#Overview_of_selected_tags)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Improve <Tasklist> contrast](#Improve_.3CTasklist.3E_contrast)
     *   [4.2 Logout and refresh](#Logout_and_refresh)
@@ -26,7 +21,7 @@ Configuration is done via a single [XML](https://en.wikipedia.org/wiki/XML "wiki
 
 ## Installation
 
-[Install](/index.php/Install "Install") [jwm](https://www.archlinux.org/packages/?name=jwm).
+[Install](/index.php/Install "Install") the [jwm](https://www.archlinux.org/packages/?name=jwm) package.
 
 **Warning:** Recent SVN snapshots (e.g. 500) have migrated to Mod key masks (e.g. `H` to `4`).
 
@@ -36,27 +31,16 @@ Run `jwm` with [xinit](/index.php/Xinit "Xinit").
 
 ## Configuration
 
-A sample configuration file is located at `/etc/system.jwmrc`. Create `~/.jwmrc`:
-
-```
-$ touch ~/.jwmrc
-
-```
-
-or:
+Configuration is done via a single [XML](https://en.wikipedia.org/wiki/XML "wikipedia:XML") file. There is native support for customizable panels and buttons, and a [system tray](https://en.wikipedia.org/wiki/Taskbar "wikipedia:Taskbar") dock. A sample configuration file is located at `/etc/system.jwmrc` which can be copied to the user configuration `~/.jwmrc`:
 
 ```
 $ cp -i /etc/system.jwmrc ~/.jwmrc
 
 ```
 
-Edit this file to establish the environment. See [JWM Configuration](http://joewing.net/programs/jwm/config.shtml) for a complete list of available tags, attributes and values.
+Edit this file to establish the environment. See [JWM Configuration](http://joewing.net/projects/jwm/config-2.3.html) for a complete list of available tags, attributes and values.
 
 **Note:** The rolling content of JWM Configuration is based on the latest SVN snapshot and may not reflect the options available in the the current release.
-
-### Overview of selected tags
-
-See [JWM Configuration](http://joewing.net/projects/jwm/config.shtml).
 
 ## Tips and tricks
 

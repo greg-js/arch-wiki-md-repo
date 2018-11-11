@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Creating packages](/index.php/Creating_packages "Creating packages"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Creating_packages&diff=0&oldid=548741) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Creating packages](/index.php/Creating_packages "Creating packages"). Data da última tradução: 2018-11-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Creating_packages&diff=0&oldid=553584) na versão em inglês.
 
 Artigos relacionados
 
@@ -229,6 +229,7 @@ PKGBUILDs para alguns pacotes podem ser gerados automaticamente.
 
 *   [Go](/index.php/Go "Go"): [go-makepkg](https://github.com/seletskiy/go-makepkg)
 *   [Haskell](/index.php/Haskell "Haskell"): [cblrepo](https://github.com/magthe/cblrepo)
+*   [Node.js](/index.php/Node.js "Node.js"): [nodejs-npm2arch](https://aur.archlinux.org/packages/nodejs-npm2arch/) [npm2arch](https://github.com/simon04/npm2arch%7Cigorvisi)
 *   [Python](/index.php/Python "Python"): [pipman-git](https://aur.archlinux.org/packages/pipman-git/), [pip2arch-git](https://aur.archlinux.org/packages/pip2arch-git/), [python-pypi2pkgbuild](https://aur.archlinux.org/packages/python-pypi2pkgbuild/)
 *   [Ruby](/index.php/Ruby "Ruby"): [gem2arch](https://aur.archlinux.org/packages/gem2arch/), [pacgem](https://aur.archlinux.org/packages/pacgem/)
 

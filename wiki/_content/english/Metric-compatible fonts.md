@@ -112,7 +112,7 @@ Google provides a high number of [fonts](https://www.google.com/fonts), includin
 
 #### Chrome OS
 
-Google ships open-source metric-compatible fonts with its operating system, Chrome OS, under the Apache License 2.0\. CrOS core (croscore, [ttf-croscore](https://www.archlinux.org/packages/?name=ttf-croscore)) is a collection of Arimo (sans), Tinos (serif) and Cousine (mono), also licensed from Ascender Corporation. A set of extra fonts, CrOS extra (crosextra) provides Carlito ([ttf-carlito](https://www.archlinux.org/packages/?name=ttf-carlito)) and Caladea ([ttf-caladea](https://aur.archlinux.org/packages/ttf-caladea/)) to match default fonts for Microsoft Word.
+Google ships open-source metric-compatible fonts with its operating system, Chrome OS, under the Apache License 2.0\. CrOS core (croscore, [ttf-croscore](https://www.archlinux.org/packages/?name=ttf-croscore)) is a collection of Arimo (sans), Tinos (serif) and Cousine (mono), also licensed from Ascender Corporation. A set of extra fonts, CrOS extra (crosextra) provides Carlito ([ttf-carlito](https://www.archlinux.org/packages/?name=ttf-carlito)) and Caladea ([ttf-caladea](https://www.archlinux.org/packages/?name=ttf-caladea)) to match default fonts for Microsoft Word.
 
 Since glyph mappings from [Symbol](https://en.wikipedia.org/wiki/Symbol_(typeface)#HTML are usually implemented in browsers, Google no longer ships SymbolNeu in croscore > 1.23.0\. You can get this font from [croscorefonts-1.23.0.tar.gz](https://gsdview.appspot.com/chromeos-localmirror/distfiles/croscorefonts-1.23.0.tar.gz).
 

@@ -3,7 +3,7 @@ Este artículo es una traducción de [FAT](/index.php/FAT "FAT"), revisada por �
 
 Artículos relacionados
 
-*   [File systems](/index.php/File_systems "File systems")
+*   [Sistema de archivos](/index.php/File_systems_(Espa%C3%B1ol) "File systems (Español)")
 
 De [Wikipedia:Tabla de asignación de archivos](https://en.wikipedia.org/wiki/es:Tabla_de_asignaci%C3%B3n_de_archivos "wikipedia:es:Tabla de asignación de archivos"):
 

@@ -1,35 +1,29 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Capi4hylafax](/index.php/Capi4hylafax "Capi4hylafax"), revisada por última vez el **2018-11-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Capi4hylafax&diff=0&oldid=460331) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 ### Instalación
 
-[Instale](/index.php/Help:Reading_(Espa%C3%B1ol)#Instalaci.C3.B3n_de_paquetes "Help:Reading (Español)") el paquete [capi4hylafax](https://www.archlinux.org/packages/?name=capi4hylafax) de los repositorios oficiales.
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [capi4hylafax](https://www.archlinux.org/packages/?name=capi4hylafax).
 
-### Configuración:
+### Configuración
 
-*   Ejecute 'faxsetup' como root para ajustar hylafax a sus necesidades.
-*   No intente de ninguna manera ejecutar faxaddmodem para dispositivos capi20!!!
-*   c2faxaddmodem' es una buena herramienta para configurar su tarjeta isdn.
-*   Ajuste var/spool/hylafax/etc/config/config.faxCAPI a sus necesidades, si es que necesita algo más.
-*   Añada 'hylafax' y 'capi4hylafax' a su lista de demonios en /etc/rc.conf.
-*   Asegúrese de que su dispositivo tenga los permisos correctos 'uucp', usuarios de udev deben
-*   reiniciar udev después de la instalación.
+Ejecute *faxsetup* como usuario root para ajustar hylafax a sus necesidades. Además, ajuste `/var/spool/hylafax/etc/config/config.faxCAPI` a sus necesidades.
 
-*   Añada las siguientes dos líneas a /var/spool/hylafax/etc/config:
+**Advertencia:** ¡No intente de ninguna de manera ejecutar faxaddmodem para dispositivos capi20!
 
-```
-   SendFaxCmd: /usr/bin/c2faxsend
+*c2faxaddmodem* es una buena herramienta para configurar su tarjeta RDSI.
 
-```
+[Inicie](/index.php/Start_(Espa%C3%B1ol) "Start (Español)") `hylafax.service` y `c2faxrecv.service`.
 
-### Notas:
+Asegúrese de que su dispositivo tenga los permisos correctos 'uucp'.
 
-*   para grabar su configuración, no olvide por favor añadir a /etc/pacman.conf
+Agregue la siguiente línea a `/var/spool/hylafax/etc/config`:
 
 ```
- NoUpgrade   = var/spool/hylafax/etc/config/config.faxCAPI
+SendFaxCmd: /usr/bin/c2faxsend
 
 ```
 
-*   Si necesita más de un controlador isdn lea por favor el manual de capi4hylafax.
+**Nota:** Si necesita más de un controlador rdsi, por favor lea el manual de capi4hylafax.
 
-Para hacer comentarios acerca del paquete utilice por favor este hilo: [https://bbs.archlinux.org/viewtopic.php?t=11089](https://bbs.archlinux.org/viewtopic.php?t=11089)
-
-Para pistas y consejos eche un vistazo por favor a la wiki [Hylafax](/index.php/Hylafax "Hylafax").
+Para sugerencias y consejos, véase [Hylafax](/index.php/Hylafax "Hylafax").

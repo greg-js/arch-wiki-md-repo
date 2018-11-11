@@ -34,7 +34,7 @@ Clientes [DHCP](/index.php/DHCP "DHCP") autônomos:
 [Gerenciadores de rede](/index.php/Gerenciadores_de_rede "Gerenciadores de rede"):
 
 *   [netctl](/index.php/Netctl "Netctl") (usado por padrão)
-*   [NetworkManager#Use openresolv](/index.php/NetworkManager#Use_openresolv "NetworkManager")
+*   [NetworkManager (Português)#Usar openresolv](/index.php/NetworkManager_(Portugu%C3%AAs)#Usar_openresolv "NetworkManager (Português)")
 
 Clientes [VPN](/index.php/VPN "VPN"):
 

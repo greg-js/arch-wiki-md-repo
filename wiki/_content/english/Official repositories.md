@@ -47,7 +47,7 @@ This repository can be found in `.../core/os/` on your favorite [mirror](/index.
 *   management and repair of supported [file systems](/index.php/File_systems "File systems")
 *   the system setup process (e.g. [openssh](https://www.archlinux.org/packages/?name=openssh))
 
-as well as dependencies of the above (not necessarily [makedepends](/index.php/PKGBUILD#makedepends "PKGBUILD")) and the [base group](/index.php/Base_group "Base group").
+as well as dependencies of the above (not necessarily [makedepends](/index.php/Makedepends "Makedepends")) and the [base group](/index.php/Base_group "Base group").
 
 *core* has fairly strict quality requirements. Developers/users need to signoff on updates before package updates are accepted. For packages with low usage, a reasonable exposure is enough: informing people about update, requesting signoffs, keeping in [#testing](#testing) up to a week depending on the severity of the change, lack of outstanding bug reports, along with the implicit signoff of the package maintainer.
 

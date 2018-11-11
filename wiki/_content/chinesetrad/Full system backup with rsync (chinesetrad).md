@@ -34,7 +34,7 @@ Related articles
 
 ## 使用 script
 
-底下的 script 也是提供一樣的備份方法，在備份的同時仍舊會保留 symbolic links, devices, permissions and ownerships, 以及其他的檔案屬性。你可以將你想要除外的部份放在 `--exclude` 的字串裏面。如果你想要瞭解更多，你可以參考 [rsync(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/rsync.1) 和 [date(1)](http://jlk.fjfi.cvut.cz/arch/manpages/man/date.1)。
+底下的 script 也是提供一樣的備份方法，在備份的同時仍舊會保留 symbolic links, devices, permissions and ownerships, 以及其他的檔案屬性。你可以將你想要除外的部份放在 `--exclude` 的字串裏面。如果你想要瞭解更多，你可以參考 [rsync(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/rsync.1) 和 [date(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/date.1)。
 
 **Note:** 如果你計劃將系統備份到 `/mnt` 或 `/media` 以外的地方，別忘了把他加入 --exclude 的清單中，以免造成無窮迴圈。
 

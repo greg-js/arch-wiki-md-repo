@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [IRC channel](/index.php/IRC_channel "IRC channel"). Data da última tradução: 2018-11-06\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=IRC_channel&diff=0&oldid=552871) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [IRC channel](/index.php/IRC_channel "IRC channel"). Data da última tradução: 2018-11-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=IRC_channel&diff=0&oldid=553406) na versão em inglês.
 
 Artigos relacionados
 
@@ -8,7 +8,7 @@ Artigos relacionados
 
 **Nota:** Não edite a [página em inglês](/index.php/IRC_channel "IRC channel") a menos que você seja um operador de canal no #archlinux. Você é bem-vindo para usar a [página de discussão](/index.php/Talk:IRC_channel "Talk:IRC channel").
 
-Para entrar nos canais [IRC](https://en.wikipedia.org/wiki/pt:Internet_Relay_Chat "wikipedia:pt:Internet Relay Chat"), você precisa de um [cliente IRC](/index.php/List_of_applications/Internet#IRC_clients "List of applications/Internet"). O cliente [Irssi](/index.php/Irssi "Irssi") é incluído na [mídia de instalação](/index.php/M%C3%ADdia_de_instala%C3%A7%C3%A3o "Mídia de instalação") oficial.
+Para usar [Internet Relay Chat](https://en.wikipedia.org/wiki/pt:Internet_Relay_Chat "wikipedia:pt:Internet Relay Chat") (IRC), você precisa de um [cliente IRC](/index.php/IRC_client "IRC client"). O [ambiente de instalação live](/index.php/Obtendo_e_instalando_o_Arch "Obtendo e instalando o Arch") inclui o cliente [Irssi](/index.php/Irssi "Irssi").
 
 Espera-se que você esteja familiarizado com nosso [Código de conduta](/index.php/C%C3%B3digo_de_conduta "Código de conduta") e o [Código de conduta#IRC](/index.php/C%C3%B3digo_de_conduta#IRC "Código de conduta") antes de entrar em qualquer um dos canais oficiais. Para uma lista da s abreviações comumente usadas, veja [Terminologia do Arch](/index.php/Terminologia_do_Arch "Terminologia do Arch") e [Jargão do IRC](http://www.ircbeginner.com/ircinfo/abbreviations.html).
 

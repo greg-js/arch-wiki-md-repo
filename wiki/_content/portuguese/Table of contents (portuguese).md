@@ -1,15 +1,16 @@
 | [Português](/index.php/Category:Portugu%C3%AAs "Category:Português") <small>(5)</small> |
-| <small>1.</small> [Sobre o Arch](/index.php/Category:About_Arch_(Portugu%C3%AAs) "Category:About Arch (Português)") <small>(16)</small> |
-| <small>1.1.</small> [Arch community](/index.php/Category:Arch_community_(Portugu%C3%AAs) "Category:Arch community (Português)") <small>(3)</small> |
+| <small>1.</small> [Sobre o Arch](/index.php/Category:About_Arch_(Portugu%C3%AAs) "Category:About Arch (Português)") <small>(15)</small> |
+| <small>1.1.</small> [Arch community](/index.php/Category:Arch_community_(Portugu%C3%AAs) "Category:Arch community (Português)") <small>(2)</small> |
 | <small>1.2.</small> [Desenvolvimento do Arch](/index.php/Category:Arch_development_(Portugu%C3%AAs) "Category:Arch development (Português)") <small>(4) (também em [Development](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)"))</small> |
-| <small>1.2.1.</small> [Desenvolvimento de pacotes](/index.php/Category:Package_development_(Portugu%C3%AAs) "Category:Package development (Português)") <small>(19)</small> |
-| <small>1.2.1.1.</small> [Arch package guidelines](/index.php/Category:Arch_package_guidelines_(Portugu%C3%AAs) "Category:Arch package guidelines (Português)") <small>(16)</small> |
-| <small>1.3.</small> [Arch projects](/index.php/Category:Arch_projects_(Portugu%C3%AAs) "Category:Arch projects (Português)") <small>(3)</small> |
-| <small>1.4.</small> [ArchWiki](/index.php/Category:ArchWiki_(Portugu%C3%AAs) "Category:ArchWiki (Português)") <small>(6)</small> |
-| <small>1.4.1.</small> [Help](/index.php/Category:Help_(Portugu%C3%AAs) "Category:Help (Português)") <small>(15)</small> |
-| <small>1.4.2.</small> [Lists](/index.php/Category:Lists_(Portugu%C3%AAs) "Category:Lists (Português)") <small>(2)</small> |
-| <small>1.4.2.1.</small> [Lists of software](/index.php/Category:Lists_of_software_(Portugu%C3%AAs) "Category:Lists of software (Português)") <small>(7) (também em [Software](/index.php/Category:Software_(Portugu%C3%AAs) "Category:Software (Português)"))</small> |
-| <small>1.5.</small> [Installation process](/index.php/Category:Installation_process_(Portugu%C3%AAs) "Category:Installation process (Português)") <small>(6)</small> |
+| <small>1.2.1.</small> [Desenvolvimento de pacotes](/index.php/Category:Package_development_(Portugu%C3%AAs) "Category:Package development (Português)") <small>(11)</small> |
+| <small>1.2.1.1.</small> [Arch package guidelines](/index.php/Category:Arch_package_guidelines_(Portugu%C3%AAs) "Category:Arch package guidelines (Português)") <small>(24)</small> |
+| <small>1.3.</small> [ArchWiki](/index.php/Category:ArchWiki_(Portugu%C3%AAs) "Category:ArchWiki (Português)") <small>(6)</small> |
+| <small>1.3.1.</small> [Help](/index.php/Category:Help_(Portugu%C3%AAs) "Category:Help (Português)") <small>(15)</small> |
+| <small>1.3.2.</small> [Lists](/index.php/Category:Lists_(Portugu%C3%AAs) "Category:Lists (Português)") <small>(2)</small> |
+| <small>1.3.2.1.</small> [Lists of software](/index.php/Category:Lists_of_software_(Portugu%C3%AAs) "Category:Lists of software (Português)") <small>(7) (também em [Software](/index.php/Category:Software_(Portugu%C3%AAs) "Category:Software (Português)"))</small> |
+| <small>1.4.</small> [Installation process](/index.php/Category:Installation_process_(Portugu%C3%AAs) "Category:Installation process (Português)") <small>(7)</small> |
+| <small>1.5.</small> [Live Arch systems](/index.php/Category:Live_Arch_systems_(Portugu%C3%AAs) "Category:Live Arch systems (Português)") <small>(1)</small> |
+| <small>1.6.</small> [Teams](/index.php/Category:Teams_(Portugu%C3%AAs) "Category:Teams (Português)") <small>(5)</small> |
 | <small>2.</small> [Applications](/index.php/Category:Applications_(Portugu%C3%AAs) "Category:Applications (Português)") <small>(0)</small> |
 | <small>2.1.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving_(Portugu%C3%AAs) "Category:Data compression and archiving (Português)") <small>(1)</small> |
 | <small>2.2.</small> [Emulation](/index.php/Category:Emulation_(Portugu%C3%AAs) "Category:Emulation (Português)") <small>(1)</small> |
@@ -22,8 +23,8 @@
 | <small>2.7.1.</small> [Web admin interfaces](/index.php/Category:Web_admin_interfaces_(Portugu%C3%AAs) "Category:Web admin interfaces (Português)") <small>(1)</small> |
 | <small>3.</small> [Development](/index.php/Category:Development_(Portugu%C3%AAs) "Category:Development (Português)") <small>(1)</small> |
 | <small>3.1.</small> [Desenvolvimento do Arch](/index.php/Category:Arch_development_(Portugu%C3%AAs) "Category:Arch development (Português)") <small>(4) (também em [Sobre o Arch](/index.php/Category:About_Arch_(Portugu%C3%AAs) "Category:About Arch (Português)"))</small> |
-| <small>3.1.1.</small> [Desenvolvimento de pacotes](/index.php/Category:Package_development_(Portugu%C3%AAs) "Category:Package development (Português)") <small>(19)</small> |
-| <small>3.1.1.1.</small> [Arch package guidelines](/index.php/Category:Arch_package_guidelines_(Portugu%C3%AAs) "Category:Arch package guidelines (Português)") <small>(16)</small> |
+| <small>3.1.1.</small> [Desenvolvimento de pacotes](/index.php/Category:Package_development_(Portugu%C3%AAs) "Category:Package development (Português)") <small>(11)</small> |
+| <small>3.1.1.1.</small> [Arch package guidelines](/index.php/Category:Arch_package_guidelines_(Portugu%C3%AAs) "Category:Arch package guidelines (Português)") <small>(24)</small> |
 | <small>3.2.</small> [Programming languages](/index.php/Category:Programming_languages_(Portugu%C3%AAs) "Category:Programming languages (Português)") <small>(1)</small> |
 | <small>3.2.1.</small> [Command shells](/index.php/Category:Command_shells_(Portugu%C3%AAs) "Category:Command shells (Português)") <small>(1) (também em [Command-line](/index.php/Category:Command-line_(Portugu%C3%AAs) "Category:Command-line (Português)"))</small> |
 | <small>4.</small> [Hardware](/index.php/Category:Hardware_(Portugu%C3%AAs) "Category:Hardware (Português)") <small>(0)</small> |
@@ -40,7 +41,7 @@
 | <small>4.7.</small> [Sound](/index.php/Category:Sound_(Portugu%C3%AAs) "Category:Sound (Português)") <small>(4) (também em [Multimedia](/index.php/Category:Multimedia_(Portugu%C3%AAs) "Category:Multimedia (Português)"))</small> |
 | <small>4.8.</small> [Storage](/index.php/Category:Storage_(Portugu%C3%AAs) "Category:Storage (Português)") <small>(1)</small> |
 | <small>5.</small> [Rede](/index.php/Category:Networking_(Portugu%C3%AAs) "Category:Networking (Português)") <small>(3)</small> |
-| <small>5.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System_(Portugu%C3%AAs) "Category:Domain Name System (Português)") <small>(4)</small> |
+| <small>5.1.</small> [Domain Name System](/index.php/Category:Domain_Name_System_(Portugu%C3%AAs) "Category:Domain Name System (Português)") <small>(5)</small> |
 | <small>5.2.</small> [Email](/index.php/Category:Email_(Portugu%C3%AAs) "Category:Email (Português)") <small>(0)</small> |
 | <small>5.2.1.</small> [Mail server](/index.php/Category:Mail_server_(Portugu%C3%AAs) "Category:Mail server (Português)") <small>(2) (também em [Servers](/index.php/Category:Servers_(Portugu%C3%AAs) "Category:Servers (Português)"))</small> |
 | <small>5.3.</small> [Internet applications](/index.php/Category:Internet_applications_(Portugu%C3%AAs) "Category:Internet applications (Português)") <small>(2)</small> |
@@ -75,7 +76,8 @@
 | <small>6.5.1.</small> [Red Hat](/index.php/Category:Red_Hat_(Portugu%C3%AAs) "Category:Red Hat (Português)") <small>(1)</small> |
 | <small>6.6.</small> [Software comparisons](/index.php/Category:Software_comparisons_(Portugu%C3%AAs) "Category:Software comparisons (Português)") <small>(2)</small> |
 | <small>6.7.</small> [Software projects](/index.php/Category:Software_projects_(Portugu%C3%AAs) "Category:Software projects (Português)") <small>(0)</small> |
-| <small>6.7.1.</small> [GNU](/index.php/Category:GNU_(Portugu%C3%AAs) "Category:GNU (Português)") <small>(2)</small> |
+| <small>6.7.1.</small> [Arch projects](/index.php/Category:Arch_projects_(Portugu%C3%AAs) "Category:Arch projects (Português)") <small>(4) (também em [DeveloperWiki](/index.php/Category:DeveloperWiki_(Portugu%C3%AAs) "Category:DeveloperWiki (Português)"))</small> |
+| <small>6.7.2.</small> [GNU](/index.php/Category:GNU_(Portugu%C3%AAs) "Category:GNU (Português)") <small>(2)</small> |
 | <small>6.8.</small> [Servidor X](/index.php/Category:X_server_(Portugu%C3%AAs) "Category:X server (Português)") <small>(5)</small> |
 | <small>6.8.1.</small> [Xorg commands](/index.php/Category:Xorg_commands_(Portugu%C3%AAs) "Category:Xorg commands (Português)") <small>(1) (também em [Commands](/index.php/Category:Commands_(Portugu%C3%AAs) "Category:Commands (Português)"))</small> |
 | <small>7.</small> [Administração do sistema](/index.php/Category:System_administration_(Portugu%C3%AAs) "Category:System administration (Português)") <small>(4)</small> |

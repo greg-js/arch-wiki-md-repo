@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Code of conduct](/index.php/Code_of_conduct "Code of conduct"), revisada por última vez el **2018-07-27**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Code_of_conduct&diff=0&oldid=513170) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Code of conduct](/index.php/Code_of_conduct "Code of conduct"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Code_of_conduct&diff=0&oldid=554455) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 La comunidad de Arch es una comunidad técnica cuyo propósito común es apoyar y mejorar Arch Linux.
 
@@ -164,7 +164,7 @@ Además del [código común](#C.C3.B3digo_de_conducta_.28Espa.C3.B1ol.29), cada 
 
 #### Colocar código e imágenes
 
-Por favor, use etiquetas [code] al pegar fragmentos de consola. Use también, por favor, el [cliente pastebin](/index.php/Pastebin#Pastebin_clients "Pastebin") a la hora de enviar una gran cantidad de código. **No** use [pastebin.com](http://pastebin.com/)—está bloqueado para algunos usuarios y tiene un historial de problemas molestos (javascript, anuncios, formato deficiente, etc). Para los usuarios de idiomas distintos al inglés: por favor, antepongan `LC_ALL=C` a las órdenes enviadas, de modo que la salida se vea en inglés. No publique fotos a pantalla completa, use miniaturas en su lugar. Cualquier imagen de dimensiones superiores a 250x250px o de tamaño mayor de 50Kb será eliminada. No publicar capturas de pantalla de salida de texto; publicar [the actual text](/index.php/Copying_text_from_a_terminal "Copying text from a terminal").
+Por favor, use etiquetas [code] al pegar fragmentos de consola. Use también, por favor, el [cliente pastebin](/index.php/Pastebin#Pastebin_clients "Pastebin") a la hora de enviar una gran cantidad de código. **No** use [pastebin.com](http://pastebin.com/)—está bloqueado para algunos usuarios y tiene un historial de problemas molestos (javascript, anuncios, formato deficiente, etc). Para los usuarios de idiomas distintos al inglés: por favor, antepongan `LC_ALL=C` a las órdenes enviadas, de modo que la salida se vea en inglés. No publique fotos a pantalla completa, use miniaturas en su lugar. Cualquier imagen de dimensiones superiores a 250x250px o de tamaño mayor de 50 kB será eliminada. No publicar capturas de pantalla de salida de texto; publicar [the actual text](/index.php/Copying_text_from_a_terminal "Copying text from a terminal").
 
 #### La vida es una calle de doble sentido
 
@@ -280,5 +280,5 @@ Cada uno de los foros tiene un proceso de apelación y si alguien siente que fue
 Si piensa que se ha producido un agravio notorio o necesita alertar al personal de una conducta abusiva, hay una serie de vías a las que puede recurrir para obtener reparación o asistencia. Estas incluyen:
 
 *   Para los foros: utilice el botón «Report» que se encuentra debajo de cada cuadro de texto, o el correo electrónico [forum@archlinux.org](mailto:forum@archlinux.org) para ponerse en contacto con los administradores del foro.
-*   Para la Wiki: contacte con los [administradores](/index.php/ArchWiki:Administrators "ArchWiki:Administrators").
+*   Para la Wiki: contacte con el [equipo de mantenimiento](/index.php/ArchWiki:Maintenance_Team_(Espa%C3%B1ol) "ArchWiki:Maintenance Team (Español)").
 *   Para los canales de IRC: contacte con [uno de los operadores](/index.php/IRC_channel#Channel_operators "IRC channel").

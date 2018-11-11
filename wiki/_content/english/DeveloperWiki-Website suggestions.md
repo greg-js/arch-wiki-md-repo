@@ -64,6 +64,16 @@ On the ArchWiki we can only link to packages using the package search, for examp
 
 --[Larivact](/index.php/User:Larivact "User:Larivact") ([talk](/index.php/User_talk:Larivact "User talk:Larivact")) 14:06, 4 November 2018 (UTC)
 
+	Packages can exist in multiple repositories, and formerly, in multiple architectures. This is why we never did this. Do you have a suggestion for figuring out which package it refers to? -- [Eschwartz](/index.php/User:Eschwartz "User:Eschwartz") ([talk](/index.php/User_talk:Eschwartz "User talk:Eschwartz")) 01:35, 11 November 2018 (UTC)
+
+	Redirect to a stable package with the given name if it exists, otherwise return a 404\. Exemplary URL:
+
+	[https://www.archlinux.org/packages/?stable_by_name=pacman](https://www.archlinux.org/packages/?stable_by_name=pacman)
+
+	--[Larivact](/index.php/User:Larivact "User:Larivact") ([talk](/index.php/User_talk:Larivact "User talk:Larivact")) 06:47, 11 November 2018 (UTC)
+
+	Figuring out if a pkgname is unique or not is very easy [in SQL](https://git.archlinux.org/archweb.git/tree/main/models.py#n88) - just `SELECT pkgname, repo, arch FROM Package WHERE pkgname = ?` and if you get just 1 result, you can show the package view, otherwise you have to show the package search view. -- [Lahwaacz](/index.php/User:Lahwaacz "User:Lahwaacz") ([talk](/index.php/User_talk:Lahwaacz "User talk:Lahwaacz")) 08:30, 11 November 2018 (UTC)
+
 ### Adopting archweb_manpages
 
 [Lahwaacz](/index.php/User:Lahwaacz "User:Lahwaacz") developed and hosts [https://jlk.fjfi.cvut.cz/arch/manpages/](https://jlk.fjfi.cvut.cz/arch/manpages/), which is used on the ArchWiki for links to man pages, e.g. [pacman(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/pacman.8). See [Template talk:Man#Sources](/index.php/Template_talk:Man#Sources "Template talk:Man") and the [GitHub repository](https://github.com/lahwaacz/archweb_manpages). I think this should be adopted as an official Arch Linux project if only for a nicer domain name (man.archlinux.org).

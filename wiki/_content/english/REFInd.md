@@ -62,6 +62,8 @@ rEFInd has **read-only** drivers for ReiserFS, Ext2, Ext4, Btrfs, ISO-9660, HFS+
 
 To find additional drivers see [The rEFInd Boot Manager: Using EFI Drivers: Finding Additional EFI Drivers](https://www.rodsbooks.com/refind/drivers.html#finding).
 
+To use the rEFInd, you must install it to the EFI system partition either using the [refind-install script](#Installation_with_refind-install_script) or [by copying the files and setting up the boot entry manually](#Manual_installation).
+
 ### Installation with refind-install script
 
 The rEFInd package includes the *refind-install* script to simplify the process of setting rEFInd as your default EFI boot entry. The script has several options for handling differing setups and UEFI implementations. See [refind-install(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/refind-install.8) or read the comments in the install script for explanations of the various installation options.
@@ -336,14 +338,14 @@ If you do not specify an `initrd=` parameter, rEFInd will automatically add it b
 
 ##### Without configuration
 
-As a fallback mechanism rEFInd can:
+If you merely install rEFInd onto the ESP and launch it without any further ado (say via UEFI shell or KeyTool) you still get a menu to boot from via autodetection, with no configuration required whatsoever.
+
+This is because rEFInd has a fallback mechanism that can:
 
 *   Identify the root partition (for `root=` parameter ) via the [Discoverable Partitions Specification](https://www.freedesktop.org/wiki/Specifications/DiscoverablePartitionsSpec/) or `/etc/fstab`.
 *   Detect kernel options (`ro` or `rw`) from [GPT partition attributes](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_entries_.28LBA_2-33.29 "wikipedia:GUID Partition Table") (using attribute `60` "read-only") or `/etc/fstab`.
 
 **Note:** rEFInd does not support escape codes (e.g. for [spaces](/index.php/Fstab#Filepath_spaces "Fstab")) in `/etc/fstab`.
-
-So if you merely copy the one file **refind.efi** onto the *esp* and launch it without any further ado (say via *UEFIshell* or **KeyTool.efi**) you still get a menu to boot from via autodetection, with no configuration required whatsoever - while installation may come down to copying the single file refind.efi .
 
 #### Manual boot stanzas
 

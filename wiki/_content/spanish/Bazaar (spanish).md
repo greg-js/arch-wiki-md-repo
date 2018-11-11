@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Bazaar](/index.php/Bazaar "Bazaar"), revisada por última vez el **2018-10-21**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Bazaar&diff=0&oldid=549368) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Bazaar](/index.php/Bazaar "Bazaar"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Bazaar&diff=0&oldid=550455) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 [Bazaar](https://bazaar.canonical.com/) es un sistema de control de versiones que le ayuda a rastrear el historial del proyecto a lo largo del tiempo y a colaborar fácilmente con otros.
 

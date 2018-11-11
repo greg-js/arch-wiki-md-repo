@@ -126,7 +126,7 @@ See also [Wikipedia:Comparison of numerical analysis software](https://en.wikipe
 
 	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://www.archlinux.org/packages/?name=freemat)
 
-*   **[Octave](/index.php/Octave "Octave")** — [Matlab](/index.php/Matlab "Matlab")-like language and interface for numerical computations.
+*   **[Octave](/index.php/Octave "Octave")** — [MATLAB](/index.php/MATLAB "MATLAB")-like language and interface for numerical computations.
 
 	[http://www.gnu.org/software/octave/](http://www.gnu.org/software/octave/) || [octave](https://www.archlinux.org/packages/?name=octave)
 

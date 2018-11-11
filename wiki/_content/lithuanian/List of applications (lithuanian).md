@@ -4028,6 +4028,10 @@ See also [Wikipedia:Comparison of video editing software](https://en.wikipedia.o
 
 	[http://cinelerra-cv.org/](http://cinelerra-cv.org/) || [cinelerra-cv](https://www.archlinux.org/packages/?name=cinelerra-cv)
 
+*   **[Davinci Resolve](https://en.wikipedia.org/wiki/Da_Vinci_Systems#da_Vinci_Resolve "wikipedia:Da Vinci Systems")** — Professional A/V post-production software suite.
+
+	[https://www.blackmagicdesign.com/products/davinciresolve/](https://www.blackmagicdesign.com/products/davinciresolve/) || [davinci-resolve](https://aur.archlinux.org/packages/davinci-resolve/)
+
 *   **[Flowblade](https://en.wikipedia.org/wiki/Flowblade "wikipedia:Flowblade")** — Multitrack non-linear video editor for Linux, designed to provide a fast, robust editing experience.
 
 	[https://github.com/jliljebl/flowblade](https://github.com/jliljebl/flowblade) || [flowblade](https://aur.archlinux.org/packages/flowblade/)
@@ -8102,7 +8106,7 @@ See also [Wikipedia:Comparison of numerical analysis software](https://en.wikipe
 
 	[https://www.scipy.org/](https://www.scipy.org/) || [python-matplotlib](https://www.archlinux.org/packages/?name=python-matplotlib)
 
-*   **[Octave](/index.php/Octave "Octave")** — [Matlab](/index.php/Matlab "Matlab")-like language and interface for numerical computations.
+*   **[Octave](/index.php/Octave "Octave")** — [MATLAB](/index.php/MATLAB "MATLAB")-like language and interface for numerical computations.
 
 	[https://www.gnu.org/software/octave/](https://www.gnu.org/software/octave/) || [octave](https://www.archlinux.org/packages/?name=octave)
 

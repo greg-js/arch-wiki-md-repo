@@ -52,7 +52,7 @@ En una instalación predeterminada de Arch Linux, los iconos no se mostrarán si
 
 ## Consejos y trucos
 
-Para agregar Stata a su ruta, agregue lo siguiente al final de su ruta en su [bashrc](/index.php/Bashrc "Bashrc"):
+Para agregar Stata a su ruta, agregue lo siguiente al final de su ruta en su [bashrc](/index.php/Bashrc_(Espa%C3%B1ol)#Archivos_de_configuraci.C3.B3n "Bashrc (Español)"):
 
  `~/.bashrc` 
 ```

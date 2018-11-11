@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Acer Aspire 2930](/index.php/Acer_Aspire_2930 "Acer Aspire 2930"), revisada por última vez el **2018-11-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Acer_Aspire_2930&diff=0&oldid=553269) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 ## Contents
 
 *   [1 Hardware](#Hardware)

@@ -32,7 +32,7 @@ Termite looks for configuration files in `$XDG_CONFIG_HOME/termite/config`, `~/.
 To start customizing termite copy the base example file to your home dir first:
 
 ```
- cp /etc/xdg/termite/config ~/.config/termite/config
+ $ cp /etc/xdg/termite/config ~/.config/termite/config
 
 ```
 

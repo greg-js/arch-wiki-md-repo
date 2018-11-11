@@ -29,7 +29,7 @@
 
 你可能为了节约电量而希望关闭高性能图形处理器，你可以通过安装 [acpi_call](https://www.archlinux.org/packages/?name=acpi_call) 包来实现。
 
-**Tip:** 对于内核不是[Official_repositories_(简体中文)](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")的用户, [acpi_call-dkms](https://www.archlinux.org/packages/?name=acpi_call-dkms) 是代替方案. 参见 [DKMS](/index.php/DKMS "DKMS")。
+**Tip:** 对于内核不是[Official repositories (简体中文)](/index.php/Official_repositories_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Official repositories (简体中文)")的用户, [acpi_call-dkms](https://www.archlinux.org/packages/?name=acpi_call-dkms) 是代替方案. 参见 [DKMS](/index.php/DKMS "DKMS")。
 
 安装后加载内核模块：
 

@@ -84,7 +84,7 @@ save it and run 'systemctl daemon-reload'
 
 save it and run 'systemctl daemon-reload'
 
-See also [LXD#Modify_processes_and_files_limit](/index.php/LXD#Modify_processes_and_files_limit "LXD"), [[1]](https://askubuntu.com/a/1012436), [[2]](https://unix.stackexchange.com/a/468067) and [[3]](https://unix.stackexchange.com/a/345596).
+See also [LXD#Modify processes and files limit](/index.php/LXD#Modify_processes_and_files_limit "LXD"), [[1]](https://askubuntu.com/a/1012436), [[2]](https://unix.stackexchange.com/a/468067) and [[3]](https://unix.stackexchange.com/a/345596).
 
 ### Needed packages within the container
 

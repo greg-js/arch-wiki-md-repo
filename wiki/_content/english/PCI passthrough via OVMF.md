@@ -11,6 +11,9 @@ Provided you have a desktop computer with a spare GPU you can dedicate to the ho
     *   [2.3 Gotchas](#Gotchas)
         *   [2.3.1 Plugging your guest GPU in an unisolated CPU-based PCIe slot](#Plugging_your_guest_GPU_in_an_unisolated_CPU-based_PCIe_slot)
 *   [3 Isolating the GPU](#Isolating_the_GPU)
+    *   [3.1 With vfio-pci built into the kernel (4.18.16.arch1 onwards)](#With_vfio-pci_built_into_the_kernel_.284.18.16.arch1_onwards.29)
+    *   [3.2 With vfio-pci loaded as a module](#With_vfio-pci_loaded_as_a_module)
+    *   [3.3 Verifying that the configuration worked](#Verifying_that_the_configuration_worked)
 *   [4 Setting up an OVMF-based guest VM](#Setting_up_an_OVMF-based_guest_VM)
     *   [4.1 Configuring libvirt](#Configuring_libvirt)
     *   [4.2 Setting up the guest OS](#Setting_up_the_guest_OS)
@@ -183,7 +186,7 @@ The following section details how to configure a GPU so those placeholder driver
 
 **Warning:** Once you reboot after this procedure, whatever GPU you have configured will no longer be usable on the host until you reverse the manipulation. Make sure the GPU you intend to use on the host is properly configured before doing this - your motherboard should be set to display using the host GPU.
 
-Starting with Linux 4.1, the kernel includes vfio-pci. This is a VFIO driver, meaning it fulfills the same role as pci-stub did, but it can also control devices to an extent, such as by switching them into their D3 state when they are not in use. Starting with Linux 4.18.16, vfio-pci is compiled-in as opposed to being a module.
+Starting with Linux 4.1, the kernel includes vfio-pci. This is a VFIO driver, meaning it fulfills the same role as pci-stub did, but it can also control devices to an extent, such as by switching them into their D3 state when they are not in use.
 
 Vfio-pci normally targets PCI devices by ID, meaning you only need to specify the IDs of the devices you intend to passthrough. For the following IOMMU group, you would want to bind vfio-pci with `10de:13c2` and `10de:0fbb`, which will be used as example values for the rest of this section.
 
@@ -195,17 +198,39 @@ IOMMU Group 13 06:00.1 Audio device: NVIDIA Corporation GM204 High Definition Au
 
 **Note:** You cannot specify which device to isolate using vendor-device ID pairs if the host GPU and the guest GPU share the same pair (i.e : if both are the same model). If this is your case, read [#Using identical guest and host GPUs](#Using_identical_guest_and_host_GPUs) instead.
 
-You can then add those vendor-device ID pairs to the default kernel parameters passed to vfio-pci at boot time.
-
- `/etc/default/grub`  `GRUB_CMDLINE_LINUX_DEFAULT=... vfio-pci.ids=10de:13c2,10de:0fbb` 
 **Note:** If, as noted in [#Plugging your guest GPU in an unisolated CPU-based PCIe slot](#Plugging_your_guest_GPU_in_an_unisolated_CPU-based_PCIe_slot), your pci root port is part of your IOMMU group, you **must not** pass its ID to `vfio-pci`, as it needs to remain attached to the host to function properly. Any other device within that group, however, should be left for `vfio-pci` to bind with.
 
-Since the grub configuration has been changed, its config file has to be regenerated.
+### With vfio-pci built into the kernel (4.18.16.arch1 onwards)
+
+Starting with version 4.18.16, the stock Arch Linux kernel comes with vfio-pci compiled within, as opposed to having it compiled it alongside the kernel but leaving it to be loaded as a module. This means all that should be required to isolate the GPU is to pass the device IDs as [kernel parameters](/index.php/Kernel_parameter "Kernel parameter"), like so:
+
+ `/etc/default/grub`  `GRUB_CMDLINE_LINUX_DEFAULT=... vfio-pci.ids=10de:13c2,10de:0fbb` 
+
+In the case of GRUB, since the configuration has been changed, its config file must also be regenerated.
 
 ```
  # grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
+
+### With vfio-pci loaded as a module
+
+If your kernel image does not include vfio-pci as a built-in module, the configuration differs slightly. First, the vendor-device ID pairs must be specified as default parameters passed to vfio-pci whenever it is inserted into the kernel.
+
+ `/etc/modprobe.d/vfio.conf`  `options vfio-pci ids=10de:13c2,10de:0fbb` 
+
+This, however, does not guarantee that vfio-pci will be loaded before other graphics drivers. To ensure that, we need to statically bind it in the kernel image alongside with its dependencies. That means adding, in this order, `vfio_pci`, `vfio`, `vfio_iommu_type1`, and `vfio_virqfd` to [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio"):
+
+ `/etc/mkinitcpio.conf`  `MODULES=(... vfio_pci vfio vfio_iommu_type1 vfio_virqfd ...)` 
+**Note:** If you also have another driver loaded this way for [early modesetting](/index.php/Kernel_mode_setting#Early_KMS_start "Kernel mode setting") (such as `nouveau`, `radeon`, `amdgpu`, `i915`, etc.), all of the aforementioned VFIO modules must precede it.
+
+Also, ensure that the modconf hook is included in the HOOKS list of `mkinitcpio.conf`:
+
+ `/etc/mkinitcpio.conf`  `HOOKS=(... modconf ...)` 
+
+Since new modules have been added to the initramfs configuration, you must [regenerate the initramfs](/index.php/Regenerate_the_initramfs "Regenerate the initramfs"). Should you change the IDs of the devices in `/etc/modprobe.d/vfio.conf`, you will also have to regenerate it, as those parameters must be specified in the initramfs to be known during the early boot stages.
+
+### Verifying that the configuration worked
 
 Reboot and verify that vfio-pci has loaded properly and that it is now bound to the right devices.
 

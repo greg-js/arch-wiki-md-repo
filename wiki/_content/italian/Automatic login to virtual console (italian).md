@@ -29,7 +29,7 @@ ExecStart=-/sbin/agetty --noclear -a *USERNAME* %I 38400
 WantedBy=getty.target
 ```
 
-**Tip:** È possibile cambiare `Type=idle` in `Type=simple` per permettere un leggero ritardo per l'esecuzione di agetty fino a che tutti i processi non siano completati. Questa opzione è molto utile quando si [avvia X al boot in modo automatico](/index.php/Far_partire_X_al_boot "Far partire X al boot"). Vedere [systemd.service(5)](http://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) per ulterioti informazioni.
+**Tip:** È possibile cambiare `Type=idle` in `Type=simple` per permettere un leggero ritardo per l'esecuzione di agetty fino a che tutti i processi non siano completati. Questa opzione è molto utile quando si [avvia X al boot in modo automatico](/index.php/Far_partire_X_al_boot "Far partire X al boot"). Vedere [systemd.service(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/systemd.service.5) per ulterioti informazioni.
 **Nota:** `Type=simple` può provocare messaggi di debug da parte di systemd che vanno a "sovrascrivere" le tty.
 
 **Nota:** Se si usa mingetty, cambiare /sbin/agetty con /sbin/mingetty

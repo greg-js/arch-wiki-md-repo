@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [AUR helpers](/index.php/AUR_helpers "AUR helpers"). Data da última tradução: 2018-11-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_helpers&diff=0&oldid=553189) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [AUR helpers](/index.php/AUR_helpers "AUR helpers"). Data da última tradução: 2018-11-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=AUR_helpers&diff=0&oldid=553496) na versão em inglês.
 
 **Atenção:** Auxiliares do AUR **não possuem suporte** pelo Arch Linux. Você deve se familiarizar com o [processo manual de compilação](/index.php/Arch_User_Repository_(Portugu%C3%AAs)#Instalando_pacotes "Arch User Repository (Português)") para estar preparado para diagnosticar e resolver problemas.
 
@@ -17,9 +17,8 @@ Como não há suporte aos auxiliares do AUR, eles não estão presentes nos [rep
 *   [3 Download e compilação](#Download_e_compila.C3.A7.C3.A3o)
 *   [4 Wrappers do pacman](#Wrappers_do_pacman)
 *   [5 Gráficos](#Gr.C3.A1ficos)
-*   [6 Bibliotecas](#Bibliotecas)
+*   [6 Outros](#Outros)
 *   [7 Manutenção](#Manuten.C3.A7.C3.A3o)
-*   [8 Envio](#Envio)
 
 ## Legenda
 
@@ -60,7 +59,6 @@ As colunas têm o seguinte significado:
 | [auracle-git](https://aur.archlinux.org/packages/auracle-git/) | C++ | Sim | [Sim](https://github.com/falconindy/auracle/commit/c73bbee) | Sim | Sim | Bash | imprime ordem de compilação |
 | [pbget](https://aur.archlinux.org/packages/pbget/) | Python | Sim | Sim | Sim | – | – | – |
 | [yaah](https://aur.archlinux.org/packages/yaah/) | Bash | Sim | Opcional | Sim | – | bash | – |
-| [package-query](https://aur.archlinux.org/packages/package-query/) | C | Sim | – | [Não](https://github.com/archlinuxfr/package-query/issues/135) | – | – | apenas pesquisa |
 | [repoctl](https://aur.archlinux.org/packages/repoctl/) | Go | Sim | Não | [Sim](https://github.com/goulash/pacman/blob/master/aur/aur.go) | – | zsh | suporte a repositório local |
 | [aurel](https://aur.archlinux.org/packages/aurel/)
 <small>([descontinuado](https://bbs.archlinux.org/viewtopic.php?pid=1522459#p1522459))</small> | Emacs Lisp | Sim | Não | Sim | – | – | Integração com Emacs |
@@ -71,7 +69,7 @@ As colunas têm o seguinte significado:
 
 | Nome | Escrito em | Revisão de arquivo | Ver diff | Git clone | Analisador confiável | Resolvedor confiável | Pacotes divididos | Compilação limpa | Interação em lote | Completação
 de shell | Especificidade |
-| [aurutils](https://aur.archlinux.org/packages/aurutils/) | Bash/C | Sim | Sim | Sim | Sim | Sim | Sim | Sim | 1 | zsh | suporte a [vifm](/index.php/Vifm "Vifm"), [repositório local](/index.php/Reposit%C3%B3rio_local "Repositório local"), [assinatura de pacote](/index.php/Assinatura_de_pacote "Assinatura de pacote"), [chroot limpo](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot"), ordena por votos/popularidade |
+| [aurutils](https://aur.archlinux.org/packages/aurutils/) | Bash/C | Sim | Sim | Sim | Sim | Sim | Sim | Sim | 1 | zsh | suporte a [vifm](/index.php/Vifm "Vifm"), [repositório local](/index.php/Reposit%C3%B3rio_local "Repositório local"), [assinatura de pacote](/index.php/Assinatura_de_pacote "Assinatura de pacote"), [chroot limpo](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot"), ordena por votos/popularidade |
 | [bauerbill](https://aur.archlinux.org/packages/bauerbill/) | Python | Sim | Não | Sim | Sim | Sim | Sim | Sim | 1 | bash, zsh | Gerenciamento de confiança, suporte a [ABS](/index.php/ABS_(Portugu%C3%AAs) "ABS (Português)"), estende o *powerpill*, `bb-wrapper` para interfacear o *pacman* |
 | [rua](https://aur.archlinux.org/packages/rua/) | Rust | Sim | [Não](https://github.com/vn971/rua/issues/1) | Sim | [Sim](https://github.com/vn971/rua/commit/fc8c2f3) | Sim | Sim | Sim | 1 | bash, zsh, fish | nspeções de artefatos tar (SUID, arquivo install etc), compilação isolada, compilação offline |
 | [PKGBUILDer](https://aur.archlinux.org/packages/PKGBUILDer/) | Python | Opcional | [Não](https://github.com/Kwpolska/pkgbuilder/issues/36) | Sim | Sim | Sim | [Parcial](https://github.com/Kwpolska/pkgbuilder/issues/39) | Sim | 1* | – | Compilações automáticas por padrão, use `-F` para desabilitar; multilíngue, `pb-wrapper` para interfacear o *pacman* |
@@ -138,23 +136,33 @@ de shell | Especificidade |
 
 	[https://octopiproject.wordpress.com/](https://octopiproject.wordpress.com/) || [octopi](https://aur.archlinux.org/packages/octopi/)
 
-## Bibliotecas
+## Outros
 
-*   [aur.rs](https://github.com/zeyla/aur.rs) — Biblioteca em Rust para acessar [interface RPC do Aurweb](/index.php/Interface_RPC_do_Aurweb "Interface RPC do Aurweb").
+*   **aur.rs** — Biblioteca em Rust para acessar [interface RPC do Aurweb](/index.php/Interface_RPC_do_Aurweb "Interface RPC do Aurweb")
 
-*   **haskell-archlinux** — Biblioteca para acessar os metadados de pacotes e AURa partir da linguagem de programação Haskell.
+	[https://github.com/zeyla/aur.rs](https://github.com/zeyla/aur.rs) ||
 
-	[https://hackage.haskell.org/package/archlinux](https://hackage.haskell.org/package/archlinux) || [haskell-archlinux](https://aur.archlinux.org/packages/haskell-archlinux/)
+*   **haskell-aur** — Biblioteca Haskell para acessar a interface RPC do Aurweb
 
-*   **python3-aur** — Módulos Python 3 para acessar as informações de pacote do AUR e automatizar as interações do AUR.
+	[https://hackage.haskell.org/package/aur](https://hackage.haskell.org/package/aur) || [haskell-aur](https://aur.archlinux.org/packages/haskell-aur/)
+
+*   **python3-aur** — Módulos Python 3 e utilitários auxiliares para acessar as informações de pacote do AUR e automatizar as interações do AUR.
 
 	[https://xyne.archlinux.ca/projects/python3-aur](https://xyne.archlinux.ca/projects/python3-aur) || [python3-aur](https://aur.archlinux.org/packages/python3-aur/)
+
+*   **package-query** — Ferramenta para consultar [libalpm(3)](https://jlk.fjfi.cvut.cz/arch/manpages/man/libalpm.3) e o AUR.
+
+	[https://github.com/archlinuxfr/package-query](https://github.com/archlinuxfr/package-query) || [package-query](https://aur.archlinux.org/packages/package-query/)
 
 ## Manutenção
 
 *   **aur-out-of-date** — Usa APIs do hospedeiro para verificar pacotes do AUR por alterações no upstream.
 
 	[https://github.com/simon04/aur-out-of-date](https://github.com/simon04/aur-out-of-date) || [aur-out-of-date](https://aur.archlinux.org/packages/aur-out-of-date/)
+
+*   **aurpublish** — Script auxiliar para gerenciar e fazer upload de pacotes do AUR usando [git-subtree(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-subtree.1). Usa [githooks(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/githooks.5) para verificar a integridade do PKGBUILD, gerar .SRCINFO automaticamente e criar um modelo de mensagem de commit.
+
+	[https://github.com/eli-schwartz/aurpublish](https://github.com/eli-schwartz/aurpublish) || [aurpublish](https://www.archlinux.org/packages/?name=aurpublish)
 
 *   **pkgbuild-watch** — Procura por alterações nas páginas web dos *upstreams*.
 
@@ -167,11 +175,3 @@ de shell | Especificidade |
 *   **pkgoutofdate** — Analisa a URL fonte dos PKGBUILDs e tenta localizar novas versões dos pacotes incrementando o número da versão e enviando requisições ao servidor web.
 
 	[https://github.com/anatol/pkgoutofdate](https://github.com/anatol/pkgoutofdate) || [pkgoutofdate-git](https://aur.archlinux.org/packages/pkgoutofdate-git/)
-
-## Envio
-
-*   [aur4_import.sh](https://github.com/JonnyJD/PKGBUILDs/blob/master/_bin/aur4_import.sh) — Divide um pacote de um repositório git com múltiplos pacotes, adicionando/atualizando `.SRCINFO` para cada commit
-*   [aur4_make_submodule.sh](https://github.com/JonnyJD/PKGBUILDs/blob/master/_bin/aur4_make_submodule.sh) — Substitui um pacote em um repositório git maior com um submódulo do AUR 4, incluindo `.SRCINFO`
-*   **aurpublish** — Scripts auxiliar para gerenciar e atualizar pacotes do AUR usando [git-subtree(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/git-subtree.1). Usa [githooks(5)](https://jlk.fjfi.cvut.cz/arch/manpages/man/githooks.5) para verificar a integridade do PKGBUILD, gera .SRCINFO automaticamente e cria um modelo de mensagem de commit.
-
-	[https://github.com/eli-schwartz/aurpublish](https://github.com/eli-schwartz/aurpublish) || [aurpublish](https://www.archlinux.org/packages/?name=aurpublish)

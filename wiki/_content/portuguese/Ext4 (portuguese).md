@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Ext4](/index.php/Ext4 "Ext4"). Data da última tradução: 2018-10-31\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Ext4&diff=0&oldid=549940) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Ext4](/index.php/Ext4 "Ext4"). Data da última tradução: 2018-11-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Ext4&diff=0&oldid=553601) na versão em inglês.
 
 Artigos relacionados
 
@@ -28,6 +28,7 @@ De [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4) (traduzido):
     *   [4.3 Aumentando o intervalo de commit](#Aumentando_o_intervalo_de_commit)
     *   [4.4 Desligando barreiras](#Desligando_barreiras)
     *   [4.5 Desabilitando journaling](#Desabilitando_journaling)
+    *   [4.6 Tornando journals rápidos](#Tornando_journals_r.C3.A1pidos)
 *   [5 Habilitando somas de verificação de metadados](#Habilitando_somas_de_verifica.C3.A7.C3.A3o_de_metadados)
     *   [5.1 Novo sistema de arquivos](#Novo_sistema_de_arquivos)
     *   [5.2 Converter sistema de arquivos existentes](#Converter_sistema_de_arquivos_existentes)
@@ -159,7 +160,7 @@ Para experimentar os benefícios do ext4, um processo de conversão irreversíve
 
 **Desvantagens:**
 
-*   As partições que contêm principalmente arquivos estáticos, como uma partição `/boot`, podem não se beneficiar dos novos recursos. Além disso, adicionar um diário (que está implícito ao mover uma partição ext2 para ext3/4) sempre incorre em despesas gerais de desempenho.
+*   As partições que contêm principalmente arquivos estáticos, como uma partição `/boot`, podem não se beneficiar dos novos recursos. Além disso, adicionar um journal (que está implícito ao mover uma partição ext2 para ext3/4) sempre incorre em despesas gerais de desempenho.
 *   Irreversível (as partições ext4 não podem ser "rebaixadas" para ext2/ext3\. No entanto, é compatível com versões anteriores até que a extensão e outras opções exclusivas estejam habilitadas)
 
 #### Procedimento
@@ -286,7 +287,13 @@ Em ambos os casos, é melhor copiar os arquivos (`cp`), porque isso deixa a opç
 
 O sistema de arquivos *ext4* registra informações sobre quando um arquivo foi acessado pela última vez e há um custo associado ao registro dele. Com a opção `noatime`, os timestamps de acesso no sistema de arquivos não são atualizados.
 
- `/etc/fstab`  `/dev/sda5    /    ext4    defaults,**noatime**    0    1` 
+ `/etc/fstab` 
+```
+/dev/sda5    /    ext4    defaults,**noatime**    0    1
+
+```
+
+Fazer isso quebra aplicativos que dependem do tempo de acesso, veja [fstab#atime options](/index.php/Fstab#atime_options "Fstab") para soluções possíveis.
 
 ### Aumentando o intervalo de commit
 
@@ -294,7 +301,7 @@ O intervalo de sincronização para dados e metadados pode ser aumentado, propor
 
 O 5 segundos padrão significa que, se a energia for perdida, será perdido tanto quanto os últimos 5 segundos de trabalho.
 
-Isso força uma sincronia completa de todos os dados/diários para mídia física a cada 5 segundos. O sistema de arquivos não será danificado, graças ao registro no *journaling*. O seguinte [fstab](/index.php/Fstab "Fstab") ilustra o uso de `commit`:
+Isso força uma sincronia completa de todos os dados/journals para mídia física a cada 5 segundos. O sistema de arquivos não será danificado, graças ao registro no *journaling*. O seguinte [fstab](/index.php/Fstab "Fstab") ilustra o uso de `commit`:
 
  `/etc/fstab`  `/dev/sda5    /    ext4   defaults,noatime,**commit=60**    0    1` 
 
@@ -318,6 +325,12 @@ Desabilitar o journal do *ext4* pode ser feito com o seguinte comando em um disc
 # tune2fs -O "^has_journal" /dev/sdXN
 
 ```
+
+### Tornando journals rápidos
+
+Para aqueles com preocupações sobre integridade e desempenho de dados, o registro no jornal pode ser significativamente acelerado com a opção de montagem `journal_async_commit`. Note que [não funciona](https://patchwork.ozlabs.org/patch/414750/) com o padrão balanceado de `data=ordered`, então isso é recomendado apenas quando o sistema de arquivos já estiver usando `data=journal` cautelosamente.
+
+Você pode, então, formatar um dispositivo dedicado para o journal com `mke2fs -O journal_dev /dev/journal_device`. Use `tune2fs -J device=/dev/journal_device /dev/ext4_fs` para atribuir o journal a um dispositivo existente ou substitua `tune2fs` por `mkfs.ext4` se você estiver criando um novo sistema de arquivos.
 
 ## Habilitando somas de verificação de metadados
 

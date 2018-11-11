@@ -25,26 +25,29 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
     *   [3.1 User switching](#User_switching)
 *   [4 Testing](#Testing)
 *   [5 Optional configuration and tweaks](#Optional_configuration_and_tweaks)
-    *   [5.1 Changing background images/colors](#Changing_background_images.2Fcolors)
-        *   [5.1.1 GTK+ greeter](#GTK.2B_greeter)
-            *   [5.1.1.1 GTK3 Theme](#GTK3_Theme)
-        *   [5.1.2 Webkit2 greeter](#Webkit2_greeter)
-        *   [5.1.3 Unity greeter](#Unity_greeter)
-        *   [5.1.4 KDE greeter](#KDE_greeter)
-        *   [5.1.5 Slick Greeter](#Slick_Greeter)
-    *   [5.2 Changing your avatar](#Changing_your_avatar)
-    *   [5.3 Sources of Arch-centric 64x64 icons](#Sources_of_Arch-centric_64x64_icons)
-    *   [5.4 Enabling autologin](#Enabling_autologin)
-    *   [5.5 Enabling interactive passwordless login](#Enabling_interactive_passwordless_login)
-    *   [5.6 Hiding system and services users](#Hiding_system_and_services_users)
-    *   [5.7 Migrating from SLiM](#Migrating_from_SLiM)
-    *   [5.8 Login using ~/.xinitrc](#Login_using_.7E.2F.xinitrc)
-    *   [5.9 NumLock on by default](#NumLock_on_by_default)
-    *   [5.10 Default session](#Default_session)
-    *   [5.11 Adjusting the login window's position](#Adjusting_the_login_window.27s_position)
-        *   [5.11.1 GTK+ greeter](#GTK.2B_greeter_2)
-    *   [5.12 VNC Server](#VNC_Server)
-    *   [5.13 Lock the screen using light-locker](#Lock_the_screen_using_light-locker)
+    *   [5.1 X session wrapper](#X_session_wrapper)
+        *   [5.1.1 Environment variables](#Environment_variables)
+        *   [5.1.2 Keymap](#Keymap)
+    *   [5.2 Changing background images/colors](#Changing_background_images.2Fcolors)
+        *   [5.2.1 GTK+ greeter](#GTK.2B_greeter)
+            *   [5.2.1.1 GTK3 Theme](#GTK3_Theme)
+        *   [5.2.2 Webkit2 greeter](#Webkit2_greeter)
+        *   [5.2.3 Unity greeter](#Unity_greeter)
+        *   [5.2.4 KDE greeter](#KDE_greeter)
+        *   [5.2.5 Slick Greeter](#Slick_Greeter)
+    *   [5.3 Changing your avatar](#Changing_your_avatar)
+    *   [5.4 Sources of Arch-centric 64x64 icons](#Sources_of_Arch-centric_64x64_icons)
+    *   [5.5 Enabling autologin](#Enabling_autologin)
+    *   [5.6 Enabling interactive passwordless login](#Enabling_interactive_passwordless_login)
+    *   [5.7 Hiding system and services users](#Hiding_system_and_services_users)
+    *   [5.8 Migrating from SLiM](#Migrating_from_SLiM)
+    *   [5.9 Login using ~/.xinitrc](#Login_using_.7E.2F.xinitrc)
+    *   [5.10 NumLock on by default](#NumLock_on_by_default)
+    *   [5.11 Default session](#Default_session)
+    *   [5.12 Adjusting the login window's position](#Adjusting_the_login_window.27s_position)
+        *   [5.12.1 GTK+ greeter](#GTK.2B_greeter_2)
+    *   [5.13 VNC Server](#VNC_Server)
+    *   [5.14 Lock the screen using light-locker](#Lock_the_screen_using_light-locker)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 Wrong locale displayed](#Wrong_locale_displayed)
     *   [6.2 Missing icons with GTK greeter](#Missing_icons_with_GTK_greeter)
@@ -144,6 +147,28 @@ Some greeters have their own configuration files. For example:
 [lightdm-webkit2-greeter](https://www.archlinux.org/packages/?name=lightdm-webkit2-greeter): `/etc/lightdm/lightdm-webkit2-greeter.conf`
 
 [lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter): `/etc/lightdm/lightdm-kde-greeter.conf`
+
+### X session wrapper
+
+If you are migrating from [xinit](/index.php/Xinit "Xinit"), you will notice that the display is not launched by your shell. This is because, as opposed to your shell starting the display (and the display inheriting the environment of your shell), LightDM starts your display and does not source your shell. LightDM launches the display by running a wrapper script and that finally exec's your graphic environment. By default, `/etc/lightdm/Xsessions.conf` is run.
+
+#### Environment variables
+
+The script checks and sources `/etc/profile`, `~/.profile`, `/etc/xprofile` and `~/.xprofile`, in that order. If you are using a shell that does not source any of these files, you can create an `~/.xprofile` to do so. (In this example, the login shell is [zsh](/index.php/Zsh "Zsh"))
+
+ `~/.xprofile` 
+```
+#!/bin/sh
+[[ -f ~/.config/zsh/.zshenv ]] && source ~/.config/zsh/.zshenv
+```
+
+If you have shell variables that are important for your display (such as Gtk or QT themes, GNUPG location, config overrides, etc.) this will let your graphic environment have access to your environment without having to be launched by your login shell.
+
+#### Keymap
+
+The script runs [Xkbmap](/index.php/Xkbmap "Xkbmap") with arguments provided in files `/etc/X11/Xkbmap`, `~/.Xkbmap`. If those files are not found, it runs [xmodmap](/index.php/Xmodmap "Xmodmap") with `/etc/X11/Xmodmap`, `~/.Xmodmap`. If using xkbmap, the files are parsed using cat. The following example works
+
+ `~/.xprofile`  `-model pc105 -layout us,us,tr -variant ,dvorak,f -option grp:caps_toggle` 
 
 ### Changing background images/colors
 

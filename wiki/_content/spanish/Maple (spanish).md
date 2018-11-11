@@ -35,7 +35,7 @@ Una vez que el paquete está instalado, deberá proporcionar un código de activ
 
 ### Error al determinar el ID de host del servidor de licencias
 
-Para que Maple acepte su código de activación, es posible que deba [instalar](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [ld-lsb](https://aur.archlinux.org/packages/ld-lsb/). Esto falsificará un runtime básico estándar de Linux y convencerá al servidor de autenticación para que acepte su código de activación válido. El paquete [lsb-release](https://www.archlinux.org/packages/?name=lsb-release) no resuelve este problema, como [la página de soporte de instalación de MapleSoft](http://www.maplesoft.com/support/Faqs/detail.aspx?sid=32610) puede llevar a uno a creer.
+Para que Maple acepte su código de activación, es posible que deba [instalar](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [ld-lsb](https://www.archlinux.org/packages/?name=ld-lsb). Esto falsificará un runtime básico estándar de Linux y convencerá al servidor de autenticación para que acepte su código de activación válido. El paquete [lsb-release](https://www.archlinux.org/packages/?name=lsb-release) no resuelve este problema, como [la página de soporte de instalación de MapleSoft](http://www.maplesoft.com/support/Faqs/detail.aspx?sid=32610) puede llevar a uno a creer.
 
 ### Ventana principal en blanco con gestores de ventanas de mosaico
 

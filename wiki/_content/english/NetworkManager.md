@@ -47,7 +47,7 @@ Related articles
 *   [6 Testing](#Testing)
 *   [7 Tips and tricks](#Tips_and_tricks)
     *   [7.1 Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords)
-        *   [7.1.1 Using Gnome-Keyring](#Using_Gnome-Keyring)
+        *   [7.1.1 Using GNOME Keyring](#Using_GNOME_Keyring)
         *   [7.1.2 Using KDE Wallet](#Using_KDE_Wallet)
     *   [7.2 Sharing internet connection over Wi-Fi](#Sharing_internet_connection_over_Wi-Fi)
     *   [7.3 Sharing internet connection over Ethernet](#Sharing_internet_connection_over_Ethernet)
@@ -688,7 +688,7 @@ The passwords are accessible to the root user in the filesystem and to users wit
 
 It is preferable to save the passwords in encrypted form in a keyring instead of clear text. The downside of using a keyring is that the connections have to be set up for each user.
 
-#### Using Gnome-Keyring
+#### Using GNOME Keyring
 
 The keyring daemon has to be started and the keyring needs to be unlocked for the following to work.
 
@@ -830,9 +830,9 @@ Randomization during Wi-Fi scanning is enabled by default, but it may be disable
 wifi.scan-rand-mac-address=no
 ```
 
-MAC randomization for network connections can be set to different modes for both wireless and ethernet interfaces. See [the Gnome blog post](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/) for more details on the different modes.
+MAC randomization for network connections can be set to different modes for both wireless and ethernet interfaces. See the [GNOME blog post](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/) for more details on the different modes.
 
-In terms of MAC randomization the most important modes are stable and random. Stable generates a random MAC address when you connect to a new network and associates the two permanently. This means that you will use the same MAC address every time you connect to that network. In contrast, random will generate a new MAC address every time you connect to a network, new or previously known. You can configure the MAC randomization by adding the desired configuration under `/etc/NetworkManager/conf.d`.
+In terms of MAC randomization the most important modes are `stable` and `random`. `stable` generates a random MAC address when you connect to a new network and associates the two permanently. This means that you will use the same MAC address every time you connect to that network. In contrast, `random` will generate a new MAC address every time you connect to a network, new or previously known. You can configure the MAC randomization by adding the desired configuration under `/etc/NetworkManager/conf.d`.
 
 ```
 [device-mac-randomization]
@@ -847,7 +847,7 @@ wifi.cloned-mac-address=stable
 
 ```
 
-See the following [GNOME blogpost](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/) for more details.
+See the following [GNOME blog post](https://blogs.gnome.org/thaller/2016/08/26/mac-address-spoofing-in-networkmanager-1-4-0/) for more details.
 
 ### Enable IPv6 Privacy Extensions
 
@@ -924,12 +924,12 @@ If you have problems with getting an IP address via DHCP, try to add the followi
 
 ```
  interface "eth0" {
-   send dhcp-client-identifier 01:aa:bb:cc:dd:ee:ff;
+   send dhcp-client-identifier 01:*aa:bb:cc:dd:ee:ff*;
  }
 
 ```
 
-Where `aa:bb:cc:dd:ee:ff` is the MAC address of this NIC. The MAC address can be found using the `ip link show *interface*` command from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package.
+Where `*aa:bb:cc:dd:ee:ff*` is the MAC address of this NIC. The MAC address can be found using the `ip link show *interface*` command from the [iproute2](https://www.archlinux.org/packages/?name=iproute2) package.
 
 ### 3G modem not detected
 
@@ -1000,7 +1000,7 @@ WLAN chips are shipped with a default [regulatory domain](/index.php/Wireless_ne
 
 ### Automatic connect to VPN on boot is not working
 
-The problem occurs when the system (i.e. NetworkManager running as the root user) tries to establish a VPN connection, but the password is not accessible because it is stored in the Gnome keyring of a particular user.
+The problem occurs when the system (i.e. NetworkManager running as the root user) tries to establish a VPN connection, but the password is not accessible because it is stored in the GNOME keyring of a particular user.
 
 A solution is to keep the password to your VPN in plaintext, as described in step (2.) of [#Use dispatcher to connect to a VPN after a network connection is established](#Use_dispatcher_to_connect_to_a_VPN_after_a_network_connection_is_established).
 

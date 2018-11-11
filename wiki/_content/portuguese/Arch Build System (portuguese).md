@@ -59,7 +59,7 @@ ABS é um conceito similar. ABS é feito de uma árvore de diretórios que pode 
 
 	O Arch User Repository é separado do ABS, mas PKGBUILDs do AUR (sem suporte) são compilados usando makepkg para compilar e empacotar software. Em contraste com a árvore do ABS em sua máquina local, o AUR existe como uma interface do website. Ele contém muitos milhares de PKGBUILDs contribuídos por usuários para software que está indisponível como um pacote oficial do Arch. Se você precisar compilar um pacote fora da árvore oficial do Arch, as chances são de que esteja no AUR.
 
-**Atenção:** PKGBUILDs oficiais presumem que pacotes são [compilados em um *chroot* limpo](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot"). Compilação de software em um sistema de compilação *sujo* pode falhar ou causar comportamentos inesperados em tempo de execução, porque se o sistema de compilação detecta dependências dinamicamente, o resultado depende de quais pacotes estão disponíveis no sistema de compilação.
+**Atenção:** PKGBUILDs oficiais presumem que pacotes são [compilados em um *chroot* limpo](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot"). Compilação de software em um sistema de compilação *sujo* pode falhar ou causar comportamentos inesperados em tempo de execução, porque se o sistema de compilação detecta dependências dinamicamente, o resultado depende de quais pacotes estão disponíveis no sistema de compilação.
 
 ### Árvore SVN
 

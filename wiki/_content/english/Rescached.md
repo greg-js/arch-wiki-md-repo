@@ -1,4 +1,4 @@
-[rescached](https://github.com/shuLhan/rescached) is a daemon to cache internet name and address resolution in local memory when running and in a disk cache when not running.
+[rescached](https://github.com/shuLhan/rescached-go) is a daemon to cache internet name and address resolution in local memory when running and in a disk cache when not running.
 
 *rescached* is not a reimplementation of a DNS server like BIND. The primary goal of *rescached* is only to cache DNS queries and answers to minimize unneeded traffic to the outside network. It is intended for personal systems or serving a small group of users.
 
@@ -62,4 +62,4 @@ Finally, [start](/index.php/Start "Start") and possibly [enable](/index.php/Enab
 *   For more information and configuration see the manpage of rescached
 *   For non-technical explanation you can read it [here](http://kilabit.info/journal/2009/12/04__rescached_is_here/index.html)
 *   For user documentation you can read it [here](http://kilabit.info/projects/rescached/doc/user/index.html)
-*   Report bug and feature requests are preferred on the [GitHub](https://github.com/shuLhan/rescached/issues)
+*   Report bug and feature requests are preferred on the [GitHub](https://github.com/shuLhan/rescached-go/issues)

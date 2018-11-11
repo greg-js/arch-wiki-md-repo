@@ -1,3 +1,7 @@
+相关文章
+
+*   [Bash (简体中文)](/index.php/Bash_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Bash (简体中文)")
+
 **Readline** is a library by the [GNU Project](/index.php/GNU_Project "GNU Project"), used by [Bash](/index.php/Bash "Bash") and other CLI-interface programs to edit and interact with the command line. Before reading this page please refer to the library home [page](http://www.gnu.org/s/readline/) as only subtle configuration will be introduced here.
 
 ## Contents

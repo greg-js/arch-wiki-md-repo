@@ -1,4 +1,4 @@
-[surfraw](http://surfraw.alioth.debian.org/) provides a fast UNIX command line interface to a variety of popular WWW search engines. Surfraw was originally created by Julian Assange.
+[Surfraw](https://en.wikipedia.org/wiki/Surfraw "wikipedia:Surfraw") provides a fast UNIX command line interface to a variety of popular WWW search engines. Surfraw was originally created by Julian Assange.
 
 ## Installation
 

@@ -1,9 +1,9 @@
 **Estado de la traducción**
-Este artículo es una traducción de [Programming languages](/index.php/Programming_languages "Programming languages"), revisada por última vez el **2018-10-14**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Programming_languages&diff=0&oldid=546057) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [Programming languages](/index.php/Programming_languages "Programming languages"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Programming_languages&diff=0&oldid=554155) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Esta página intenta listar todos los [lenguajes de programación](https://en.wikipedia.org/wiki/es:Lenguaje_de_programaci%C3%B3n "wikipedia:es:Lenguaje de programación") con un compilador / intérprete empaquetado para Arch Linux.
 
-*   [Ensamblador](https://en.wikipedia.org/wiki/es:Lenguaje_ensamblador "wikipedia:es:Lenguaje ensamblador") – `as` de [binutils](https://www.archlinux.org/packages/?name=binutils), [fasm](https://www.archlinux.org/packages/?name=fasm), [nasm](https://www.archlinux.org/packages/?name=nasm), [yasm](https://www.archlinux.org/packages/?name=yasm)
+*   [Ensamblador](https://en.wikipedia.org/wiki/es:Lenguaje_ensamblador "wikipedia:es:Lenguaje ensamblador") – *as* de [binutils](https://www.archlinux.org/packages/?name=binutils), [fasm](https://www.archlinux.org/packages/?name=fasm), [nasm](https://www.archlinux.org/packages/?name=nasm), [yasm](https://www.archlinux.org/packages/?name=yasm)
 *   [Ada](https://en.wikipedia.org/wiki/es:Ada_(lenguaje_de_programaci%C3%B3n) – [GCC](/index.php/GCC "GCC")
 *   [AWK](/index.php/AWK_(Espa%C3%B1ol) "AWK (Español)")
 *   [BASIC](https://en.wikipedia.org/wiki/es:BASIC "wikipedia:es:BASIC") – [freebasic](https://www.archlinux.org/packages/?name=freebasic)
@@ -58,7 +58,7 @@ Tenga en cuenta que algunos de los lenguajes mencionados anteriormente también 
 
 ## Lenguajes de intérprete de línea de órdenes
 
-[Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") es parte del grupo [base](https://www.archlinux.org/groups/x86_64/base/). Para otros, véase [Intérprete de línea de órdenes](/index.php/Command-line_shell_(Espa%C3%B1ol) "Command-line shell (Español)").
+[Bash](/index.php/Bash_(Espa%C3%B1ol) "Bash (Español)") es parte del [grupo base](/index.php/Base_group "Base group"). Para otros, véase [Intérprete de línea de órdenes](/index.php/Command-line_shell_(Espa%C3%B1ol) "Command-line shell (Español)").
 
 ## Véase también
 

@@ -19,8 +19,8 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
     *   [2.4 Secret strings](#Secret_strings)
     *   [2.5 Redis](#Redis)
     *   [2.6 Database backend](#Database_backend)
-        *   [2.6.1 MariaDB](#MariaDB)
-        *   [2.6.2 PostgreSQL](#PostgreSQL)
+        *   [2.6.1 PostgreSQL](#PostgreSQL)
+        *   [2.6.2 MariaDB](#MariaDB)
     *   [2.7 Firewall](#Firewall)
     *   [2.8 Initialize Gitlab database](#Initialize_Gitlab_database)
     *   [2.9 Adjust modifier bits](#Adjust_modifier_bits)
@@ -159,9 +159,66 @@ redis:
 
 ### Database backend
 
-A Database backend will be required before Gitlab can be run. Currently GitLab supports [MariaDB](/index.php/MariaDB "MariaDB") and [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"). By default, GitLab assumes you will use MySQL. Extra work is needed if you plan to use PostgreSQL.
+A database backend will be required before Gitlab can be run. GitLab [recommends](https://docs.gitlab.com/ce/install/installation.html#6-database) to use PostgreSQL.
+
+#### PostgreSQL
+
+Login to PostgreSQL and create the `gitlabhq_production` database along with its user. Remember to change `your_username_here` and `your_password_here` to the real values:
+
+```
+# psql -d template1
+
+```
+
+```
+template1=# CREATE USER your_username_here WITH PASSWORD 'your_password_here';
+template1=# ALTER USER your_username_here SUPERUSER;
+template1=# CREATE DATABASE gitlabhq_production OWNER your_username_here;
+template1=# \q
+```
+
+**Note:** The reason for creating the user as a superuser is that GitLab is trying to be "smart" and install extensions (not just create them in its own userspace). And this is only allowed by superusers in Postgresql.
+
+Try connecting to the new database with the new user to verify it works:
+
+```
+# psql -d gitlabhq_production
+
+```
+
+Copy the PostgreSQL template file before configuring it (overwriting the default MySQL configuration file):
+
+```
+# cp /usr/share/doc/gitlab/database.yml.postgresql /etc/webapps/gitlab/database.yml
+
+```
+
+Open the new `/etc/webapps/gitlab/database.yml` and set the values for `username:` and `password:`. For example:
+
+ `/etc/webapps/gitlab/database.yml` 
+```
+#
+# PRODUCTION
+#
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: gitlabhq_production
+  pool: 10
+  username: your_username_here
+  password: "your_password_here"
+  # host: localhost
+  # port: 5432
+  # socket: /tmp/postgresql.sock
+...
+
+```
+
+For our purposes (unless you know what you are doing), you do not need to worry about configuring the other databases listed in `/etc/webapps/gitlab/database.yml`. We only need to set up the production database to get GitLab working.
 
 #### MariaDB
+
+**Warning:** Using GitLab with MariaDB is [not recommended](https://docs.gitlab.com/ce/install/database_mysql.html). You may run into issues like `Specified key was too long; max key length is 767 bytes` when trying to use [MariaDB](/index.php/MariaDB "MariaDB").
 
 To set up MySQL (MariaDB) you need to create a database called `gitlabhq_production` along with a user (default: `gitlab`) who has full privileges to the database:
 
@@ -219,61 +276,6 @@ It should not be set as world readable, e.g. only processes running under the `g
 
 For more info and other ways to create/manage MySQL databases, see the [MariaDB documentation](https://mariadb.org/docs/) and the [GitLab official (generic) install guide](https://github.com/gitlabhq/gitlabhq/blob/master/doc/install/installation.md).
 
-#### PostgreSQL
-
-Login to PostgreSQL and create the `gitlabhq_production` database with along with its user. Remember to change `your_username_here` and `your_password_here` to the real values:
-
-```
-# psql -d template1
-
-```
-
-```
-template1=# CREATE USER your_username_here WITH PASSWORD 'your_password_here';
-template1=# ALTER USER your_username_here SUPERUSER;
-template1=# CREATE DATABASE gitlabhq_production OWNER your_username_here;
-template1=# \q
-```
-
-**Note:** The reason for creating the user as a superuser is that GitLab is trying to be "smart" and install extensions (not just create them in its own userspace). And this is only allowed by superusers in Postgresql.
-
-Try connecting to the new database with the new user to verify it works:
-
-```
-# psql -d gitlabhq_production
-
-```
-
-Copy the PostgreSQL template file before configuring it (overwriting the default MySQL configuration file):
-
-```
-# cp /usr/share/doc/gitlab/database.yml.postgresql /etc/webapps/gitlab/database.yml
-
-```
-
-Open the new `/etc/webapps/gitlab/database.yml` and set the values for `username:` and `password:`. For example:
-
- `/etc/webapps/gitlab/database.yml` 
-```
-#
-# PRODUCTION
-#
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: gitlabhq_production
-  pool: 10
-  username: your_username_here
-  password: "your_password_here"
-  # host: localhost
-  # port: 5432
-  # socket: /tmp/postgresql.sock
-...
-
-```
-
-For our purposes (unless you know what you are doing), you do not need to worry about configuring the other databases listed in `/etc/webapps/gitlab/database.yml`. We only need to set up the production database to get GitLab working.
-
 ### Firewall
 
 If you want to give direct access to your Gitlab installation through an [iptables](/index.php/Iptables "Iptables") firewall, you may need to adjust the port and the network address:
@@ -294,7 +296,7 @@ If you are behind a router, do not forget to forward this port to the running Gi
 
 ### Initialize Gitlab database
 
-Start the [Redis](/index.php/Redis "Redis") server before we create the database.
+Start the [Redis](/index.php/Redis "Redis") server and the `gitlab-gitaly.service` before initializing the database.
 
 Initialize the database and activate advanced features:
 

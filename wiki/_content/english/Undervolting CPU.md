@@ -27,7 +27,7 @@ Undervolting is a process through which voltage to computer processors and compo
 
 ### intel-undervolt
 
-[Intel-undervolt](https://github.com/kitsunyan/intel-undervolt) is a tool based on this [article](https://github.com/mihic/linux-intel-undervolt) for undervolting Haswell and newer Intel CPUs using [MSR](https://en.wikipedia.org/wiki/Model-specific_register) and MCHBAR registers. In addition, it also allows to change power and temperature limits.
+[Intel-undervolt](https://github.com/kitsunyan/intel-undervolt) is a tool based on this [article](https://github.com/mihic/linux-intel-undervolt) for undervolting Haswell and newer Intel CPUs using [MSR](https://en.wikipedia.org/wiki/Model-specific_register "wikipedia:Model-specific register") and MCHBAR registers. In addition, it also allows to change power and temperature limits.
 
 #### Installation
 

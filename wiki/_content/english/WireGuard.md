@@ -2,7 +2,7 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
 
 	Wireguard is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPSec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. WireGuard is designed as a general purpose VPN for running on embedded interfaces and super computers alike, fit for many different circumstances. Initially released for the Linux kernel, it plans to be cross-platform and widely deployable. It is currently under heavy development, but already it might be regarded as the most secure, easiest to use, and simplest VPN solution in the industry.
 
-**Warning:** *WireGuard has not undergone proper degrees of security auditing and the protocol is still subject to change.*[[1]](https://www.wireguard.com/#work-in-progress)
+**Warning:** WireGuard has not undergone proper degrees of security auditing and the protocol is still subject to change.[[1]](https://www.wireguard.com/#work-in-progress)
 
 ## Contents
 
@@ -18,18 +18,19 @@ From the [WireGuard](https://www.wireguard.com/) project homepage:
     *   [3.1 Server](#Server)
     *   [3.2 Client (tunnel all traffic)](#Client_.28tunnel_all_traffic.29)
 *   [4 Troubleshooting](#Troubleshooting)
-    *   [4.1 DKMS module not available](#DKMS_module_not_available)
-    *   [4.2 Routes are periodically reset](#Routes_are_periodically_reset)
-    *   [4.3 Connection loss with NetworkManager](#Connection_loss_with_NetworkManager)
-        *   [4.3.1 Using resolvconf](#Using_resolvconf)
-        *   [4.3.2 Using dnsmasq](#Using_dnsmasq)
-        *   [4.3.3 Using systemd-resolved](#Using_systemd-resolved)
+    *   [4.1 Routes are periodically reset](#Routes_are_periodically_reset)
+    *   [4.2 Connection loss with NetworkManager](#Connection_loss_with_NetworkManager)
+        *   [4.2.1 Using resolvconf](#Using_resolvconf)
+        *   [4.2.2 Using dnsmasq](#Using_dnsmasq)
+        *   [4.2.3 Using systemd-resolved](#Using_systemd-resolved)
 *   [5 Tips and tricks](#Tips_and_tricks)
     *   [5.1 Store private keys in encrypted form](#Store_private_keys_in_encrypted_form)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) package.
+[Install](/index.php/Install "Install") the [wireguard-tools](https://www.archlinux.org/packages/?name=wireguard-tools) package, which pulls in the [wireguard-dkms](https://www.archlinux.org/packages/?name=wireguard-dkms) package.
+
+You also need the header files for your [Linux kernel](/index.php/Linux_kernel "Linux kernel"), for example [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) or [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers), otherwise you will not be able to load the `wireguard` module of the *wireguard-dkms* package.
 
 ## Usage
 
@@ -47,7 +48,7 @@ Below commands will demonstrate how to setup a basic tunnel between two peers wi
 | Internal IP address | 10.0.0.1/24 | 10.0.0.2/24 |
 | wireguard listening port | UDP/48574 | UDP/39814 |
 
-The external addresses should already exist. For example, peer A should be able to ping peer B via `ping 10.10.10.2`, and vice versa. The internal addresses will be new addresses created by the `ip` commands below and will be shared internally within the new WireGuard network. The `/24` in the IP addresses is the [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing").
+The external addresses should already exist. For example, peer A should be able to ping peer B via `ping 10.10.10.2`, and vice versa. The internal addresses will be new addresses created by the *ip* commands below and will be shared internally within the new WireGuard network. The `/24` in the IP addresses is the [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation "wikipedia:Classless Inter-Domain Routing").
 
 #### Peer A setup
 
@@ -105,7 +106,7 @@ At this point one could reach the end of the tunnel:
 
 #### Persistent configuration
 
-The config can be saved by utilizing `showconf`
+The configuration can be saved by utilizing `showconf`:
 
 ```
 # wg showconf wg0 > /etc/wireguard/wg0.conf
@@ -163,7 +164,7 @@ Destination = 10.0.0.0/24
 
 ## Setup a VPN server
 
-Wireguard comes with a tool to quickly get started with Wireguard: `wg-quick`. Note that the config file used here is not a valid config file that can be used with `wg setconf`, and that you'll possibly have to change at least the interface from `eth0` to the one you use.
+Wireguard comes with a tool to quickly get started with Wireguard: *wg-quick*. Note that the configuration file used here is not a valid configuration file that can be used with `wg setconf`, and that you will possibly have to change at least the interface from `eth0` to the one you use.
 
 #### Server
 
@@ -220,27 +221,6 @@ to wait until devices are network ready before attempting wireguard connection.
 
 ## Troubleshooting
 
-### DKMS module not available
-
-If the following command does not list any module after you installed [wireguard-dkms](https://www.archlinux.org/packages/?name=wireguard-dkms),
-
-```
-$ modprobe wireguard && lsmod | grep wireguard
-
-```
-
-or if creating a new link returns
-
-```
-# ip link add dev wg0 type wireguard
-RTNETLINK answers: Operation not supported
-
-```
-
-you probably miss the linux headers.
-
-These headers are available in [linux-headers](https://www.archlinux.org/packages/?name=linux-headers) or [linux-lts-headers](https://www.archlinux.org/packages/?name=linux-lts-headers) depending of the kernel installed on your system.
-
 ### Routes are periodically reset
 
 Make sure that [NetworkManager](/index.php/NetworkManager "NetworkManager") is not managing your Wireguard interface:
@@ -255,7 +235,7 @@ unmanaged-devices=interface-name:wg0
 
 On desktop, connection loss can be experienced when all the traffic is tunnelled through a Wireguard interface: typically, the connection is seemingly lost after a while or upon new connection to an access point.
 
-By default `wg-quick` uses a resolvconf provider such as [openresolv](/index.php/Openresolv "Openresolv") to register new [DNS](/index.php/DNS "DNS") entries (i.e. `DNS` keyword in the configuration file). However [NetworkManager](/index.php/NetworkManager "NetworkManager") does not use resolvconf by default: every time a new [DHCP](/index.php/DHCP "DHCP") lease is acquired, [NetworkManager](/index.php/NetworkManager "NetworkManager") overwrites the global DNS addresses with the DHCP-provided ones which might not be available through the tunnel.
+By default *wg-quick* uses a resolvconf provider such as [openresolv](/index.php/Openresolv "Openresolv") to register new [DNS](/index.php/DNS "DNS") entries (i.e. `DNS` keyword in the configuration file). However [NetworkManager](/index.php/NetworkManager "NetworkManager") does not use resolvconf by default: every time a new [DHCP](/index.php/DHCP "DHCP") lease is acquired, [NetworkManager](/index.php/NetworkManager "NetworkManager") overwrites the global DNS addresses with the DHCP-provided ones which might not be available through the tunnel.
 
 #### Using resolvconf
 
@@ -267,7 +247,7 @@ See [Dnsmasq#openresolv](/index.php/Dnsmasq#openresolv "Dnsmasq") for configurat
 
 #### Using systemd-resolved
 
-At the time of writing (Sept. 2018), the resolvconf-compatible mode offered by [systemd-resolvconf](https://www.archlinux.org/packages/?name=systemd-resolvconf) does not work with `wg-quick`. However `systemd-resolved` can still be used by `wg-quick` through the `PostUp` hook. First make sure that NetworkManager is configured with `systemd-resolved`: [NetworkManager#systemd-resolved](/index.php/NetworkManager#systemd-resolved "NetworkManager") and then alter the tunnel configuration:
+At the time of writing (Sept. 2018), the resolvconf-compatible mode offered by [systemd-resolvconf](https://www.archlinux.org/packages/?name=systemd-resolvconf) does not work with *wg-quick*. However [systemd-resolved](/index.php/Systemd-resolved "Systemd-resolved") can still be used by *wg-quick* through the `PostUp` hook. First make sure that NetworkManager is configured with *systemd-resolved*: [NetworkManager#systemd-resolved](/index.php/NetworkManager#systemd-resolved "NetworkManager") and then alter the tunnel configuration:
 
  `/etc/wireguard/wg0.conf` 
 ```
@@ -283,19 +263,19 @@ Endpoint = [SERVER ENDPOINT]:51820
 PersistentKeepalive = 25
 ```
 
-Setting `"~."` as a domain name is necessary for `systemd-resolved` to give priority to the newly available DNS server.
+Setting `"~."` as a domain name is necessary for *systemd-resolved* to give priority to the newly available DNS server.
 
-No `PostDown` key is necessary as `systemd-resolved` automatically revert all parameters when `wg0` is torn down.
+No `PostDown` key is necessary as *systemd-resolved* automatically revert all parameters when `wg0` is torn down.
 
 ## Tips and tricks
 
 ### Store private keys in encrypted form
 
-It may be desirable to store private keys in encrypted form, such as through use of [pass](https://www.archlinux.org/packages/?name=pass). Just replace the PrivateKey line under [Interface] in your config file with:
+It may be desirable to store private keys in encrypted form, such as through use of [pass](https://www.archlinux.org/packages/?name=pass). Just replace the PrivateKey line under [Interface] in your configuration file with:
 
 ```
  PostUp = wg set %i private-key <(su user -c "export PASSWORD_STORE_DIR=/path/to/your/store/; pass WireGuard/private-keys/%i")
 
 ```
 
-where user is your username. See the `wg-quick(8)` man page for more details.
+where user is your username. See the [wg-quick(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/wg-quick.8) man page for more details.

@@ -273,7 +273,7 @@ An GUI solution is available with [samba-mounter-git](https://aur.archlinux.org/
 
 [Install](/index.php/Install "Install") [powerdevil](https://www.archlinux.org/packages/?name=powerdevil) for an integrated Plasma power managing service. This service offers additional power saving features, monitor brightness control (if supported) and battery reporting including peripheral devices.
 
-An alternative package without [Networkmanager](/index.php/Networkmanager "Networkmanager") and [Bluez](/index.php/Bluez "Bluez") dependencies is provided by [powerdevil-light](https://aur.archlinux.org/packages/powerdevil-light/).
+An alternative package without [NetworkManager](/index.php/NetworkManager "NetworkManager") and [Bluez](/index.php/Bluez "Bluez") dependencies is provided by [powerdevil-light](https://aur.archlinux.org/packages/powerdevil-light/).
 
 **Note:** Powerdevil may not [inhibit](/index.php/Power_management#Power_managers "Power management") all logind settings (such as the lid close action for laptops). In these cases, the logind setting itself will need to be changed - see [Power management#Power management with systemd](/index.php/Power_management#Power_management_with_systemd "Power management").
 

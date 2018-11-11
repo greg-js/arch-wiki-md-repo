@@ -31,7 +31,7 @@ Alterar a raiz geralmente é feito para executar a manutenção do sistema em si
 *   Reconstrução da [imagem de initramfs](/index.php/Mkinitcpio "Mkinitcpio").
 *   Atualizar ou [fazer downgrade de pacotes](/index.php/Fazer_downgrade_de_pacote "Fazer downgrade de pacote").
 *   Redefinir uma [senha esquecida](/index.php/Recupera%C3%A7%C3%A3o_de_senha "Recuperação de senha").
-*   Compilar pacotes em um *chroot* limpo, veja [DeveloperWiki:Building in a Clean Chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot").
+*   Compilar pacotes em um *chroot* limpo, veja [DeveloperWiki:Building in a clean chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot").
 
 Veja também [Wikipedia:Chroot#Limitations](https://en.wikipedia.org/wiki/Chroot#Limitations "wikipedia:Chroot").
 

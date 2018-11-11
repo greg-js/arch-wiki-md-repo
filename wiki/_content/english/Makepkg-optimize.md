@@ -30,7 +30,7 @@ To make optimizations available, install their backends: [graphite](https://www.
 
 [makepkg-optimize](https://aur.archlinux.org/packages/makepkg-optimize/) generates an additional [configuration file](https://jlk.fjfi.cvut.cz/arch/manpages/man/makepkg.conf.5), `/etc/makepkg-optimize.conf`, from your current [makepkg](/index.php/Makepkg "Makepkg") configuration with supplementary options for [COMPILE FLAGS](/index.php/Makepkg#Building_optimized_binaries "Makepkg"), [BUILD ENVIRONMENT](https://aur.archlinux.org/cgit/aur.git/tree/buildenv_ext.conf?h=makepkg-optimize), [GLOBAL PACKAGE OPTIONS](https://aur.archlinux.org/cgit/aur.git/tree/pkgopts_ext.conf?h=makepkg-optimize), [PACKAGE OUTPUT](https://aur.archlinux.org/cgit/aur.git/tree/destdirs_ext.conf?h=makepkg-optimize), and [COMPRESSION DEFAULTS](https://aur.archlinux.org/cgit/aur.git/tree/compress-param_max.conf?h=makepkg-optimize) that are disabled by default.
 
-**Warning:** Some packages may fail to build with certain optimizations and some software may experience runtime problems caused by over-optimization--even decreased performance.
+**Warning:** Some packages may fail to build with certain optimizations and over-optimization may cause problems for some programs--such as decreased performance and segmentation faults.
 
 ## Build an optimized package
 

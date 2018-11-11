@@ -117,7 +117,7 @@ For the built-in resolutions, refer to the table below. The **Name** column spec
 | 1680x1050 | edid/1680x1050.bin |
 | 1920x1080 | edid/1920x1080.bin |
 
-If you are doing early [KMS](/index.php/KMS "KMS"), you must include the custom EDID file in the [initramfs](#Early_KMS_start) otherwise you will run into problems.
+If you are doing [early KMS](#Early_KMS_start), you must include the custom EDID file in the initramfs, otherwise you will run into problems.
 
 ### Forcing modes
 

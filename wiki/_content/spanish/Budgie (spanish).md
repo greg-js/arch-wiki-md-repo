@@ -1,28 +1,34 @@
 Artículos relacionados
 
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [Window manager](/index.php/Window_manager "Window manager")
+*   [Entornos de escritorio](/index.php/Desktop_environment_(Espa%C3%B1ol) "Desktop environment (Español)")
+*   [Gestor de pantallas](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)")
+*   [Gestor de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)")
 *   [GTK+](/index.php/GTK%2B_(Espa%C3%B1ol) "GTK+ (Español)")
 
-Budgie es el escritorio por defecto del sistema operativo Solus, escrito desde cero. Además de un diseño más moderno, Budgie puede simular la apariencia del escritorio GNOME 2.
+**Estado de la traducción**
+Este artículo es una traducción de [Budgie](/index.php/Budgie "Budgie"), revisada por última vez el **2018-11-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Budgie&diff=0&oldid=534157) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
-En este momento Budgie está fuertemente en fase de desarrollo, por lo que se puede esperar pequeños errores y nuevas características con el paso del tiempo.
+[Budgie](https://budgie-desktop.org/home/) es el escritorio predeterminado de Solus Operating System, escrito desde cero. Además de un diseño más moderno, Budgie puede emular la apariencia y la sensación del escritorio GNOME 2.
+
+En este momento, Budgie está fuertemente en desarrollo, por lo que es de esperar que haya pequeños errores y que se vayan agregando nuevas características a medida que pase el tiempo.
 
 ## Contents
 
 *   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Comenzando](#Comenzando)
-*   [3 Uso](#Uso)
-*   [4 Ver también](#Ver_tambi.C3.A9n)
+*   [2 Puesta en marcha](#Puesta_en_marcha)
+*   [3 Utilización](#Utilizaci.C3.B3n)
+*   [4 Configuración](#Configuraci.C3.B3n)
+    *   [4.1 Cambiar la distribución de los botones](#Cambiar_la_distribuci.C3.B3n_de_los_botones)
+    *   [4.2 Usar un gestor de ventanas distinto](#Usar_un_gestor_de_ventanas_distinto)
+*   [5 Véase también](#V.C3.A9ase_tambi.C3.A9n)
 
 ## Instalación
 
-[Instalar](/index.php/Install "Install") la última version estable de [budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop) o [budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/) desde los repositorios git. Se recomienda instalar sus dependencias opcionales también para obtener un entorno de escritorio más completo, cómo así también instalar el grupo [gnome](https://www.archlinux.org/groups/x86_64/gnome/), que contiene las aplicaciones necesarias para la experiencia GNOME estándar.
+[Instale](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [budgie-desktop](https://www.archlinux.org/packages/?name=budgie-desktop) para la última versión estable o [budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/) para el git master actual. También se recomienda instalar las dependencias opcionales para obtener un entorno de escritorio aún más completo. Así mismo, también se recomienda instalar el grupo de paquetes [gnome](https://www.archlinux.org/groups/x86_64/gnome/), que contiene las aplicaciones necesarias para una experiencia estándar de GNOME.
 
-## Comenzando
+## Puesta en marcha
 
-Elegimos la sesión *Budgie Desktop* de nuestro [display manager (Español)](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") o editamos nuestro [xinitrc (Español)](/index.php/Xinitrc_(Espa%C3%B1ol) "Xinitrc (Español)") para incluir Budgie Desktop:
+Elija la sesión *Budgie Desktop* en el [gestor de pantallas](/index.php/Display_manager_(Espa%C3%B1ol) "Display manager (Español)") de su elección, o modifique [xinitrc](/index.php/Xinit_(Espa%C3%B1ol)#xinitrc "Xinit (Español)") para incluir Budgie Desktop:
 
  `~/.xinitrc` 
 ```
@@ -31,12 +37,33 @@ exec budgie-desktop
 
 ```
 
-## Uso
+## Utilización
 
-Puedes ver las notificaciones, ajustes de volumen y modificar la apariencia del escritorio con la barra lateral llamada "Raven". Podemos acceder a ella con las teclas `Super+N` o haciendo clic en el indicador de estado.
+Puede ver los mensajes de notificación, configurar el volumen y modificar la apariencia y sensación del escritorio con la barra lateral llamada "Raven". Se puede acceder a ella con la combinación `Super+N` o haciendo clic en el applet de indicador de estado.
 
-## Ver también
+## Configuración
 
-*   [Web Oficial del Proyecto Solus](https://solus-project.com/)
-*   [Repositorios git oficiales de Solus](https://git.solus-project.com/)
-*   [Estado de las versiones del proyecto Solus](https://build.solus-project.com/)
+La configuración de Budgie Desktop se realiza a través de la barra lateral, y los cambios en la configuración del sistema se realizan a través de [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center)
+
+### Cambiar la distribución de los botones
+
+La distribución de los botones de las ventanas se pueden cambiar utilizando [dconf](https://www.archlinux.org/packages/?name=dconf), [dconf-editor](https://www.archlinux.org/packages/?name=dconf-editor) o gsettings.
+
+Por ejemplo:
+
+```
+gsettings set com.solus-project.budgie-wm button-layout 'close,minimize,maximize:appmenu'
+gsettings set com.solus-project.budgie-helper.workarounds fix-button-layout 'close,minimize,maximize:menu'
+
+```
+
+### Usar un gestor de ventanas distinto
+
+Es posible utilizar un [gestor de ventanas](/index.php/Window_manager_(Espa%C3%B1ol) "Window manager (Español)") alternativo con Budgie. O bien defina una [sesión personalizada de GNOME](/index.php/GNOME/Tips_and_tricks#Custom_GNOME_sessions "GNOME/Tips and tricks") que reemplaze a *budgie-wm* con otro gestor de ventanas o bien [autoinicie](/index.php/GNOME#Autostart "GNOME") `*my-wm* --replace` donde *my-wm* es el nombre ejecutable del gestor de ventanas que desea usar.
+
+## Véase también
+
+*   [Wikipedia:Budgie (entorno de escritorio)](https://en.wikipedia.org/wiki/Budgie_(desktop_environment) "wikipedia:Budgie (desktop environment)")
+*   [Página web oficial de Budgie Desktop](https://budgie-desktop.org/)
+*   [repositorios oficiales de git para el desarrollo de Solus](https://git.solus-project.com/)
+*   [Estado de compilación para el proyectos Solus](https://build.solus-project.com/)

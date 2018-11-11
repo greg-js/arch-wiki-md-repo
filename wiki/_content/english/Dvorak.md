@@ -1,4 +1,4 @@
-This is a quick blurb for setting or converting your keymaps to dvorak instead of qwerty.
+This is a quick blurb for setting or converting your keymaps to [dvorak](https://en.wikipedia.org/wiki/Dvorak_Simplified_Keyboard "wikipedia:Dvorak Simplified Keyboard") instead of qwerty.
 
 ## Contents
 

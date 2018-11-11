@@ -131,7 +131,7 @@ Véase el artículo de [Wikipedia](https://en.wikipedia.org/wiki/es:Main_Page_(E
 
 	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://www.archlinux.org/packages/?name=freemat)
 
-*   **[Octave](/index.php/Octave "Octave")** — Lenguaje similar a [Matlab](/index.php/Matlab "Matlab") e interfaz para cálculos numéricos.
+*   **[Octave](/index.php/Octave "Octave")** — Lenguaje similar a [MATLAB](/index.php/MATLAB "MATLAB") e interfaz para cálculos numéricos.
 
 	[http://www.gnu.org/software/octave/](http://www.gnu.org/software/octave/) || [octave](https://www.archlinux.org/packages/?name=octave)
 

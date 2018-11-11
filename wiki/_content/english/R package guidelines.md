@@ -38,7 +38,7 @@ R packages listed in `Suggests` should be listed as [optdepends](/index.php/Optd
 
 Some packages require external tools, these are listed under `SystemRequirements`.
 
-[gcc-fortran](https://www.archlinux.org/packages/?name=gcc-fortran) is needed as a [makedepends](/index.php/PKGBUILD#makedepends "PKGBUILD") for some packages but is not always listed in the `DESCRIPTION` file.
+[gcc-fortran](https://www.archlinux.org/packages/?name=gcc-fortran) is needed as a [makedepends](/index.php/Makedepends "Makedepends") for some packages but is not always listed in the `DESCRIPTION` file.
 
 ## Source
 

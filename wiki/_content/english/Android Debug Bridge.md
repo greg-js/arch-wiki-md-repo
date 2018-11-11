@@ -10,6 +10,7 @@ The [Android Debug Bridge](https://developer.android.com/studio/command-line/adb
     *   [2.4 Configuring adb](#Configuring_adb)
     *   [2.5 Detect the device](#Detect_the_device)
     *   [2.6 Transferring files](#Transferring_files)
+    *   [2.7 Backup and Restore](#Backup_and_Restore)
 *   [3 Tools building on ADB](#Tools_building_on_ADB)
 *   [4 Troubleshooting](#Troubleshooting)
 
@@ -128,6 +129,35 @@ $ adb pull *<what-to-pull>* *<where-to-place>*
 ```
 
 Also see [#Tools building on ADB](#Tools_building_on_ADB).
+
+### Backup and Restore
+
+You can also backup and restore your device with adb. Moreover, no root is required to follow the process. The commands below led to backup your device to a single file which can also be successively restored.
+
+The command to create a backup is
+
+```
+$ adb backup -apk -shared -all -f backupFileName.ab
+
+```
+
+The command parameters list is
+
+```
+adb backup [-f <file>] [-apk|-noapk] [-shared|-noshared] [-all] [-system|nosystem] [<packages...>]
+
+```
+
+Then confirm the process on your device's display and provide a password whether a backup password has been set before.
+
+The command to restore a previous backup is
+
+```
+$ adb restore mybackup.ab
+
+```
+
+**Note:** Remember that restoring replaces your device contents with the backup.
 
 ## Tools building on ADB
 

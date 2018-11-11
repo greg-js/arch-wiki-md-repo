@@ -143,7 +143,7 @@
 
 	[http://euler.sourceforge.net](http://euler.sourceforge.net) || [euler](https://aur.archlinux.org/packages/euler/)
 
-*   **[FreeMat](https://en.wikipedia.org/wiki/FreeMat "wikipedia:FreeMat")** — 类[Matlab](/index.php/Matlab "Matlab")程序，支持相当数量的Matlab函数，同时拥有编程友好(codeless)的C, C++, Fortran语言接口，以及对分布式并行算法开发和3D可视化功能的支持。
+*   **[FreeMat](https://en.wikipedia.org/wiki/FreeMat "wikipedia:FreeMat")** — 类[MATLAB](/index.php/MATLAB "MATLAB")程序，支持相当数量的Matlab函数，同时拥有编程友好(codeless)的C, C++, Fortran语言接口，以及对分布式并行算法开发和3D可视化功能的支持。
 
 	[http://freemat.sourceforge.net/](http://freemat.sourceforge.net/) || [freemat](https://www.archlinux.org/packages/?name=freemat)
 
@@ -151,7 +151,7 @@
 
 	[http://www.gnuradio.org/redmine/projects/gnuradio/wiki](http://www.gnuradio.org/redmine/projects/gnuradio/wiki) || [gnuradio](https://www.archlinux.org/packages/?name=gnuradio)
 
-*   **[Octave](/index.php/Octave "Octave")** — 类[Matlab](/index.php/Matlab "Matlab")编程语言和接口，用于数值计算。
+*   **[Octave](/index.php/Octave "Octave")** — 类[MATLAB](/index.php/MATLAB "MATLAB")编程语言和接口，用于数值计算。
 
 	[http://www.gnu.org/software/octave/](http://www.gnu.org/software/octave/) || [octave](https://www.archlinux.org/packages/?name=octave)
 

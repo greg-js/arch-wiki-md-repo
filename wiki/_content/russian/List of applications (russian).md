@@ -4013,7 +4013,7 @@ eDonkey по-прежнему является второй по величин�
 
 	[http://gnuradio.org/redmine/projects/gnuradio/wiki](http://gnuradio.org/redmine/projects/gnuradio/wiki) || [gnuradio](https://www.archlinux.org/packages/?name=gnuradio)
 
-*   **[Octave](/index.php/Octave "Octave")** — Язык и интерфейс в стиле [Matlab](/index.php/Matlab "Matlab") для числовых вычислений
+*   **[Octave](/index.php/Octave "Octave")** — Язык и интерфейс в стиле [MATLAB](/index.php/MATLAB "MATLAB") для числовых вычислений
 
 	[http://www.gnu.org/software/octave/](http://www.gnu.org/software/octave/) || [octave](https://www.archlinux.org/packages/?name=octave)
 

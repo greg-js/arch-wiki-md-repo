@@ -84,7 +84,7 @@ opacity-rule = [
 
 Jeśli otwarcie nowej karty przez `Ctrl+Shift+t` kończy się niepowodzeniem z `no directory uri set`, uruchom `/etc/profile.d/vte.sh`. Zobacz [GNOME/Tips and tricks#New terminals adopt current directory](/index.php/GNOME/Tips_and_tricks#New_terminals_adopt_current_directory "GNOME/Tips and tricks").
 
-Jeśli nadal to się nie udaje, upewnij się, że [nazwa hosta](https://wiki.archlinux.org/index.php/HOSTNAME) jest poprawna. Zobacz [hostname(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.7).
+Jeśli nadal to się nie udaje, upewnij się, że [nazwa hosta](/index.php/HOSTNAME "HOSTNAME") jest poprawna. Zobacz [hostname(7)](https://jlk.fjfi.cvut.cz/arch/manpages/man/hostname.7).
 
 ### Błąd zdalnego SSH
 

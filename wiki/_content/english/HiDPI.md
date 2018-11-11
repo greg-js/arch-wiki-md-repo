@@ -467,7 +467,7 @@ According to [[3]](https://bugzilla.xamarin.com/show_bug.cgi?id=35870), Mono app
 
 ### MATLAB
 
-Recent versions (R2017b) of [Matlab](/index.php/Matlab "Matlab") allow to set the scale factor:
+Recent versions (R2017b) of [MATLAB](/index.php/MATLAB "MATLAB") allow to set the scale factor:
 
 ```
 >> s = settings;s.matlab.desktop.DisplayScaleFactor
@@ -574,7 +574,7 @@ There are several tools which automate the commands described above.
 
 ## Linux console
 
-The default [Linux console](https://en.wikipedia.org/wiki/Linux_console "w:Linux console") font will be very small on hidpi displays, the largest font present in the [kbd](https://www.archlinux.org/packages/?name=kbd) package is `latarcyrheb-sun32` and other packages like [terminus-font](https://www.archlinux.org/packages/?name=terminus-font) contain further alternatives, such as `ter-132n`(normal) and `ter-132b`(bold). See [Linux_console#Fonts](/index.php/Linux_console#Fonts "Linux console") for configuration details.
+The default [Linux console](https://en.wikipedia.org/wiki/Linux_console "w:Linux console") font will be very small on hidpi displays, the largest font present in the [kbd](https://www.archlinux.org/packages/?name=kbd) package is `latarcyrheb-sun32` and other packages like [terminus-font](https://www.archlinux.org/packages/?name=terminus-font) contain further alternatives, such as `ter-132n`(normal) and `ter-132b`(bold). See [Linux console#Fonts](/index.php/Linux_console#Fonts "Linux console") for configuration details.
 
 After changing the font, it is often garbled and unreadable when changing to other virtual consoles (`tty2-6`). To fix this you can [force specific mode](/index.php/Kernel_mode_setting#Forcing_modes_and_EDID "Kernel mode setting") for KMS, such as `video=2560x1600@60` (substitute in the native resolution of your HiDPI display), and reboot.
 

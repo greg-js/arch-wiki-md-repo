@@ -365,7 +365,7 @@ DisplayManager._1.reset:        /etc/X11/xdm/arch-xdm/Xreset
 
 ### For LightDM
 
-[LightDM](/index.php/LightDM "LightDM") has automatic multiseat detection, but if you need you can configure it on `/etc/lightdm/lightdm.conf`
+[LightDM](/index.php/LightDM "LightDM") has automatic multiseat detection (pulling from the seat list provided by `loginctl list-seats`), but if you need you can configure it on `/etc/lightdm/lightdm.conf`
 
 ```
 [LightDM]

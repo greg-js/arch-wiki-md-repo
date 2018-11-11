@@ -778,7 +778,7 @@ net.bridge.bridge-nf-call-arptables = 0
 
 Run `sysctl -p /etc/sysctl.d/10-disable-firewall-on-bridge.conf` to apply the changes immediately.
 
-See the [libvirt wiki](http://wiki.libvirt.org/page/Networking#Creating_network_initscripts) and [Fedora bug 512206](https://bugzilla.redhat.com/show_bug.cgi?id=512206). If you get errors by sysctl during boot about non-existing files, make the `bridge` module load at boot. See [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
+See the [libvirt wiki](http://wiki.libvirt.org/page/Networking#Creating_network_initscripts) and [Fedora bug 512206](https://bugzilla.redhat.com/show_bug.cgi?id=512206). If you get errors by sysctl during boot about non-existing files, make the `bridge` module load at boot. See [Kernel modules#Automatic module loading with systemd](/index.php/Kernel_modules#Automatic_module_loading_with_systemd "Kernel modules").
 
 Alternatively, you can configure [iptables](/index.php/Iptables "Iptables") to allow all traffic to be forwarded across the bridge by adding a rule like this:
 

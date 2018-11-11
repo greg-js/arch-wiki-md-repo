@@ -2,7 +2,7 @@ The [Linux](/index.php/Linux "Linux") kernel and the [GNU](/index.php/GNU "GNU")
 
 Arch Linux uses the [GNU C Library](https://en.wikipedia.org/wiki/GNU_C_Library "wikipedia:GNU C Library") ([glibc](https://www.archlinux.org/packages/?name=glibc)) as the C standard library; it is part of the [base group](/index.php/Base_group "Base group").
 
-You can use the [GNU toolchain](/index.php/GNU_toolchain "GNU toolchain") or the [LLVM toolchain](/index.php/LLVM_toolchain "LLVM toolchain") to develop software in C/[C++](https://en.wikipedia.org/wiki/C%2B%2B "wikipedia:C++")/[Objective-C](https://en.wikipedia.org/wiki/Objective-C "wikipedia:Objective-C").
+You can use the [GNU toolchain](/index.php/GNU_toolchain "GNU toolchain") or the [LLVM toolchain](/index.php/LLVM_toolchain "LLVM toolchain") to develop software in C, [C++](https://en.wikipedia.org/wiki/C%2B%2B "wikipedia:C++") or [Objective-C](https://en.wikipedia.org/wiki/Objective-C "wikipedia:Objective-C").
 
 ## Contents
 
@@ -69,7 +69,7 @@ See also [Wikipedia:List of compilers#C compilers](https://en.wikipedia.org/wiki
 
 *   **[GLib](https://en.wikipedia.org/wiki/GLib "wikipedia:GLib")** — Low-level system library by [GNOME](/index.php/GNOME "GNOME"), includes [GObject](https://en.wikipedia.org/wiki/GObject "wikipedia:GObject") and [GIO](https://en.wikipedia.org/wiki/GIO "wikipedia:GIO").
 
-	[https://wiki.gnome.org/Projects/GLib](https://wiki.gnome.org/Projects/GLib) || [glib](https://aur.archlinux.org/packages/glib/)
+	[https://wiki.gnome.org/Projects/GLib](https://wiki.gnome.org/Projects/GLib) || [glib2](https://www.archlinux.org/packages/?name=glib2)
 
 *   [GStreamer](/index.php/GStreamer "GStreamer") – pipeline-based multimedia framework
 

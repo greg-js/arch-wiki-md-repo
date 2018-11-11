@@ -373,7 +373,7 @@ Then press `Enter`.
 
 ## Known issues
 
-If Arch is being used as a client in a Synergy installation, the server may not be able to wake the client monitor. There are some workarounds, such as executing the following via [SSH](/index.php/SSH "SSH"), if ACPI is enabled (see: [Modifying DPMS and ScreenSaver settings with xset](/index.php/Display_Power_Management_Signaling#Modifying_DPMS_and_screensaver_settings_using_xset "Display Power Management Signaling")):
+If Arch is being used as a client in a Synergy installation, the server may not be able to wake the client monitor. There are some workarounds, such as executing the following via [SSH](/index.php/SSH "SSH"), if ACPI is enabled (see: [Display Power Management Signaling#Modify DPMS and screensaver settings with a command](/index.php/Display_Power_Management_Signaling#Modify_DPMS_and_screensaver_settings_with_a_command "Display Power Management Signaling")):
 
  `# xset dpms force on` 
 

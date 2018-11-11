@@ -1,4 +1,4 @@
-[PowerDNS](https://www.powerdns.com/) is a DNS server, written in C++ and licensed under the GPL. PowerDNS features a large number of different backends ranging from simple BIND style zonefiles to relational databases and load balancing/failover algorithms.
+[PowerDNS](https://www.powerdns.com/) is a DNS server, written in C++ and licensed under the GPL. PowerDNS features a large number of different backends ranging from simple [BIND](/index.php/BIND "BIND") style zonefiles to relational databases and load balancing/failover algorithms.
 
 ## Contents
 

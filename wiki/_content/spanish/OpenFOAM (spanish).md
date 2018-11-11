@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [OpenFOAM](/index.php/OpenFOAM "OpenFOAM"), revisada por última vez el **2018-10-31**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=OpenFOAM&diff=0&oldid=552226) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [OpenFOAM](/index.php/OpenFOAM "OpenFOAM"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=OpenFOAM&diff=0&oldid=552226) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Según [Wikipedia](https://en.wikipedia.org/wiki/es:OpenFOAM "wikipedia:es:OpenFOAM"):
 
@@ -59,7 +59,7 @@ alias of20x='source $FOAM_INST_DIR/OpenFOAM-2.0.x/etc/bashrc'
 
 ### zsh
 
-Algunas cosas directamente no funcionan si no está usando el bash. En el caso de zsh, necesitará el paquete [bash-completed](https://www.archlinux.org/packages/?name=bash-completed), y agregue lo siguiente a su `.zshrc` para que funcionen los scripts de OpenFOAM.
+Algunas cosas directamente no funcionan si no está usando el bash. En el caso de zsh, necesitará el paquete [bash-completion](https://www.archlinux.org/packages/?name=bash-completion), y agregue lo siguiente a su `.zshrc` para que funcionen los scripts de OpenFOAM.
 
 ```
 autoload bashcompinit

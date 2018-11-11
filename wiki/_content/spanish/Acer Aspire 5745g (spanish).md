@@ -1,3 +1,6 @@
+**Estado de la traducción**
+Este artículo es una traducción de [Acer Aspire 5745g](/index.php/Acer_Aspire_5745g "Acer Aspire 5745g"), revisada por última vez el **2018-11-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Acer_Aspire_5745g&diff=0&oldid=553285) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+
 ## Contents
 
 *   [1 Introducción](#Introducci.C3.B3n)

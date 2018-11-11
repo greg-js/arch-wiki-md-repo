@@ -174,7 +174,7 @@ PASSWD   = **password**
 
 When running Gitea for the first time it should redirect to `[http://localhost:3000/install](http://localhost:3000/install)`.
 
-**Note:** You might want to configure a reverse proxy to access remotely, e.g. [nginx](/index.php/Gitea#Configure_nginx_as_reverse_proxy "Gitea").
+**Note:** You might want to configure a reverse proxy to access remotely, e.g. [nginx](#Configure_nginx_as_reverse_proxy).
 
 **Note:** If you want Gitea to listen on all interfaces, set `HTTP_ADDR = 0.0.0.0` in `/etc/gitea/app.ini`.
 

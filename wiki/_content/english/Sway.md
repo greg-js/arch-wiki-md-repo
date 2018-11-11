@@ -21,7 +21,7 @@
     *   [5.1 dmenu replacement](#dmenu_replacement)
 *   [6 Known issues](#Known_issues)
     *   [6.1 Using i3-dmenu-desktop](#Using_i3-dmenu-desktop)
-    *   [6.2 Using VirtualBox](#Using_VirtualBox)
+    *   [6.2 VirtualBox](#VirtualBox)
     *   [6.3 Sway Socket Not Detected](#Sway_Socket_Not_Detected)
     *   [6.4 Incorrect Monitor Resolution](#Incorrect_Monitor_Resolution)
 *   [7 See also](#See_also)
@@ -239,9 +239,9 @@ You can still apply the patch manually through installing [sway-dmenu-desktop](h
 
 An alternative is to use [j4-dmenu-desktop](https://aur.archlinux.org/packages/j4-dmenu-desktop/), which is advertised as faster than i3-dmenu-desktop.
 
-### Using VirtualBox
+### VirtualBox
 
-Sway doesn't work well (or at all) under VirtualBox.
+Sway doesn't work well (or at all) under [VirtualBox](/index.php/VirtualBox "VirtualBox").
 
 ### Sway Socket Not Detected
 

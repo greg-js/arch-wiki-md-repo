@@ -106,14 +106,16 @@ exec your_window_manager
 
 ### GDM
 
-**注意:** GDM 已经不再执行 `/etc/gdm/Init` 中的脚本.
-
-安装 [numlockx](https://www.archlinux.org/packages/?name=numlockx) 并将下面内容加入 [~/.xprofile](/index.php/Xprofile "Xprofile"):
+因为`numlock-state`设置,要更改它，您必须更改相应的dconf键（并以`gdm`用户身份执行）
 
 ```
-if [ -x /usr/bin/numlockx ]; then
-      /usr/bin/numlockx on
-fi
+# su
+# su gdm -s /bin/sh #become gdm user with a shell
+sh$ export $(dbus-launch)
+sh$ GSETTINGS_BACKEND=dconf gsettings set org.gnome.settings-daemon.peripherals.keyboard numlock-state on
+sh$ exit 
+$ systemctl restart gdm
+#
 
 ```
 

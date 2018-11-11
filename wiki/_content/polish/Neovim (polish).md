@@ -38,7 +38,7 @@ set rtp^=/usr/share/vim/vimfiles/
 
 ### Zastępowanie vi i vim na neovim
 
-Ustawienie [wartości środowiska](https://wiki.archlinux.org/index.php/Environment_variables) `$VISUAL` i `$EDITOR` na nvim powinno być wystarczające w większości przypadków.
+Ustawienie [wartości środowiska](/index.php/Environment_variables "Environment variables") `$VISUAL` i `$EDITOR` na nvim powinno być wystarczające w większości przypadków.
 
 Niektóre programy mogą mieć mocno zakodowanego vi lub vima jako swój domyślny edytor tekstowy, żeby użyć neovima zamiast nich, zainstaluj [neovim-drop-in](https://aur.archlinux.org/packages/neovim-drop-in/).
 

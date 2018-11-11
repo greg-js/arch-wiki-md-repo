@@ -786,7 +786,7 @@ The disk layout is:
 
 **Tip:**
 
-*   It is also possible to use a single USB key by copying the keyfile to the initram directly. An example keyfile `/etc/keyfile` gets copied to the initram image by setting `FILES=(/etc/keyfile)` in `/etc/mkinitcpio.conf`. The way to instruct the `encrypt` hook to read the keyfile in the initram image is using `rootfs:` prefix before the filename, e.g. `cryptkey=rootfs:/etc/keyfile`.
+*   It is also possible to use a single USB key by copying the keyfile to the initramfs directly. An example keyfile `/etc/keyfile` gets copied to the initramfs image by setting `FILES=(/etc/keyfile)` in `/etc/mkinitcpio.conf`. The way to instruct the `encrypt` hook to read the keyfile in the initramfs image is using `rootfs:` prefix before the filename, e.g. `cryptkey=rootfs:/etc/keyfile`.
 *   Another option is using a passphrase with good [entropy](/index.php/Disk_encryption#Choosing_a_strong_passphrase "Disk encryption").
 
 ### Preparing the disk
@@ -815,7 +815,7 @@ We can now check a mapping entry has been made for `/dev/mapper/cryptlvm`:
 
 ```
 
-**Tip:** A simpler alternative to using LVM (or MBR or GPT partitioning), advocated in the cryptsetup FAQ for cases where LVM is not necessary, is to just create a filesystem on the entirety of the mapped dm-crypt device.
+**Tip:** A simpler alternative to using LVM, advocated in the cryptsetup FAQ for cases where LVM is not necessary, is to just create a filesystem on the entirety of the mapped dm-crypt device.
 
 Next, we setup [LVM](/index.php/LVM "LVM") logical volumes on the mapped device. See [LVM#Installing Arch Linux on LVM](/index.php/LVM#Installing_Arch_Linux_on_LVM "LVM") for further details:
 

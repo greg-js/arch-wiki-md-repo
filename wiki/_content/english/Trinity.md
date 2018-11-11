@@ -27,7 +27,7 @@ The suggested build order is specified in the [How to Build TDE](https://wiki.tr
 
 ## Building with Michael's PKGBUILD files
 
-**Note:** See [DeveloperWiki:Building in a Clean Chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot") to build the packages in a chroot.
+**Note:** See [DeveloperWiki:Building in a clean chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot") to build the packages in a chroot.
 
 [Build](/index.php/Makepkg "Makepkg") the packages in the following order, for example:
 

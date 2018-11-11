@@ -1,25 +1,17 @@
-[D-Bus](https://en.wikipedia.org/wiki/es:D-Bus "wikipedia:es:D-Bus") es un sistema bus de mensajes que proporciona una manera fácil para la comunicación entre procesos. Se trata de un demonio, que se puede ejecutar tanto en todo el sistema como para cada sesión de usuario, y un conjunto de bibliotecas que permiten a las aplicaciones utilizar D-Bus.
+**Estado de la traducción**
+Este artículo es una traducción de [D-Bus](/index.php/D-Bus "D-Bus"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=D-Bus&diff=0&oldid=550506) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
-## Contents
+[D-Bus](https://en.wikipedia.org/wiki/es:D-Bus "wikipedia:es:D-Bus") es un sistema de mensajes bus que proporciona un sencillo método de comunicación entre procesos. Consiste en un demonio, que puede ejecutarse tanto para todo el sistema como para cada sesión de usuario, y un conjunto de librerías para permitir que las aplicaciones usen D-Bus.
 
-*   [1 Instalación](#Instalaci.C3.B3n)
-*   [2 Iniciar la sesión de usuario](#Iniciar_la_sesi.C3.B3n_de_usuario)
-*   [3 Depurador de errores](#Depurador_de_errores)
-*   [4 Véase también](#V.C3.A9ase_tambi.C3.A9n)
+[dbus](https://www.archlinux.org/packages/?name=dbus) se extrae e instala como una dependencia de [systemd](https://www.archlinux.org/packages/?name=systemd) y el bus de sesión del usuario se [inicia automáticamente](https://www.archlinux.org/news/d-bus-now-launches-user-buses/) para cada usuario.
 
-## Instalación
+## Depuración
 
-Debido a que [systemd](/index.php/Systemd_(Espa%C3%B1ol) "Systemd (Español)") depende de [dbus](https://www.archlinux.org/packages/?name=dbus), D-Bus es habilitado automáticamente cuando se usa systemd.
+*   **D-Feet** — Herramienta de interfaz gráfica depuradora para D-Bus fácil de utlizar. D-Feet se puede usar para inspeccionar las interfaces D-Bus de los programas en ejecución e invocar métodos en esas interfaces.
 
-## Iniciar la sesión de usuario
-
-[gnome-session](/index.php/GNOME "GNOME"), [startkde](/index.php/KDE "KDE") y [startxfce4](/index.php/Xfce "Xfce") iniciarán automáticamente una sesión de D-Bus si no se está ejecutando. El archivo `~/.xinitrc` hará lo mismo.
-
-## Depurador de errores
-
-[d-feet](https://www.archlinux.org/packages/?name=d-feet) es una cómoda utilidad gráfica para depurar errores de D-Bus. D-Feet se pueden utilizar para inspeccionar las interfaces D-Bus al ejecutar programas e invocar métodos en otras interfaces. Véase [su página principal](https://wiki.gnome.org/DFeet) para más información.
+	[https://wiki.gnome.org/Apps/DFeet](https://wiki.gnome.org/Apps/DFeet) || [d-feet](https://www.archlinux.org/packages/?name=d-feet)
 
 ## Véase también
 
-*   [Página de D-Bus en freedesktop.org](http://www.freedesktop.org/wiki/Software/dbus)
-*   [Introducción a D-Bus](http://www.freedesktop.org/wiki/IntroductionToDBus) en freedesktop.org
+*   [Página web de D-Bus](https://www.freedesktop.org/wiki/Software/dbus/) - freedesktop.org
+*   [Introducción a D-Bus](https://www.freedesktop.org/wiki/IntroductionToDBus/) - freedesktop.org

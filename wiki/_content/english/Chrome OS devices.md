@@ -449,7 +449,7 @@ Then [rebuild your grub config](/index.php/GRUB#Generate_the_main_configuration_
 
 #### Baytrail based models
 
-Most baytrail models will work on [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) but a regression introduced by 4.5.0 broke it so if you desire a newer kernel then you can install [linux-max98090](https://aur.archlinux.org/packages/linux-max98090/). It is likely that you will also need to use `alsamixer` from [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) to turn on "Left Speaker Mixer Left DAC" and "Right Speaker Mixer Right DAC". For more information, see [[10]](https://bugs.archlinux.org/task/48936).
+Most baytrail models *worked* on [linux](https://www.archlinux.org/packages/?name=linux) but a regression introduced in 4.18.15 broke it, see bug report [[10]](https://lkml.org/lkml/2018/10/30/676). Either, rollback to 4.18.14, or, compile your own kernel using this patch [[11]](https://patchwork.kernel.org/patch/10667953). Patch has been applied to linux-next. It is likely that you will also need to use `alsamixer` from [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils) to turn on "Left Speaker Mixer Left DAC" and "Right Speaker Mixer Right DAC". For more information, see [[12]](https://bugs.archlinux.org/task/48936).
 
 #### Haswell based models
 
@@ -459,11 +459,11 @@ One or more of followings might help solving audio related issues, setting `snd_
 
  `/etc/modprobe.d/alsa.conf`  `options snd_hda_intel index=1 model=,alc283-chrome` 
 
-*   Use the `~/.asoundrc` file from [[11]](https://gist.githubusercontent.com/dhead666/52d6d7d97eff76935713/raw/5b32ee11a2ebbe7a3ee0f928e49b980361a57548/.asoundrc).
+*   Use the `~/.asoundrc` file from [[13]](https://gist.githubusercontent.com/dhead666/52d6d7d97eff76935713/raw/5b32ee11a2ebbe7a3ee0f928e49b980361a57548/.asoundrc).
 
 *   If having problems with headphones (perhaps no audio playing), try `alsactl restore` in terminal. Now, ALSA should automatically switch between channels when using headphones/speakers.
 
-*   To fix [Flash](/index.php/Flash "Flash") audio with PulseAudio, use the `~/.asoundrc` file from [[12]](https://gist.githubusercontent.com/dhead666/0eebff16cd9578c5e035/raw/d4c974fcd50565bf116c57b1884170ecb47f8bf6/.asoundrc).
+*   To fix [Flash](/index.php/Flash "Flash") audio with PulseAudio, use the `~/.asoundrc` file from [[14]](https://gist.githubusercontent.com/dhead666/0eebff16cd9578c5e035/raw/d4c974fcd50565bf116c57b1884170ecb47f8bf6/.asoundrc).
 
 #### Chromebook Pixel 2015
 
@@ -481,20 +481,20 @@ One or more of followings might help solving audio related issues, setting `snd_
 
 One way to set the hotkeys would be by using the [Sxhkd](/index.php/Sxhkd "Sxhkd") daemon. Besides [sxhkd](https://www.archlinux.org/packages/?name=sxhkd), this also requires [amixer](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture"), [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight), and [xautomation](https://www.archlinux.org/packages/?name=xautomation).
 
-*   See [[13]](https://gist.github.com/dhead666/191722ec04842d8d330b) for an example configuration in `~/.config/sxhkd/sxhkdrc`.
+*   See [[15]](https://gist.github.com/dhead666/191722ec04842d8d330b) for an example configuration in `~/.config/sxhkd/sxhkdrc`.
 
 #### Xbindkeys configuration
 
 Another way to configure hotkeys would be by using [Xbindkeys](/index.php/Xbindkeys "Xbindkeys"). Besides [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys) this requires [amixer](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture") and [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) and [xvkbd](https://aur.archlinux.org/packages/xvkbd/).
 
-*   See [[14]](https://gist.github.com/dhead666/08562a9a760b18b6e758) for an example configuration in `~/.xbindkeysrc`.
+*   See [[16]](https://gist.github.com/dhead666/08562a9a760b18b6e758) for an example configuration in `~/.xbindkeysrc`.
 *   See [vilefridge's xbindkeys configuration](https://bbs.archlinux.org/viewtopic.php?id=173418&p=3) for another example.
 
 ##### Alternate xbindkeys configuration
 
 [Volchange](http://pastie.org/9550960) (originated in the [Debian User Forums](http://www.debianuserforums.org/viewtopic.php?f=55&t=1453#p14351))) can manipulate the volume with PulseAudio instead of using [amixer](/index.php/Advanced_Linux_Sound_Architecture "Advanced Linux Sound Architecture"). Besides [Volchange](http://pastie.org/9550960) this requires [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight) and [xvkbd](https://aur.archlinux.org/packages/xvkbd/).
 
-*   Download the script from [[15]](http://pastie.org/9550960).
+*   Download the script from [[17]](http://pastie.org/9550960).
 *   Make it executable
 
 ```
@@ -502,11 +502,11 @@ $ chmod u+x ~/.local/bin/volchange
 
 ```
 
-See [[16]](https://gist.github.com/dhead666/4e23b506441ad424e26e) for a matching `~/.xbindkeysrc`.
+See [[18]](https://gist.github.com/dhead666/4e23b506441ad424e26e) for a matching `~/.xbindkeysrc`.
 
 #### Patch xkeyboard-config
 
-Another option is to install [xkeyboard-config-chromebook](https://aur.archlinux.org/packages/xkeyboard-config-chromebook/), for more details visit [[17]](https://github.com/dhead666/archlinux-pkgbuilds/tree/master/xkeyboard-config-chromebook).
+Another option is to install [xkeyboard-config-chromebook](https://aur.archlinux.org/packages/xkeyboard-config-chromebook/), for more details visit [[19]](https://github.com/dhead666/archlinux-pkgbuilds/tree/master/xkeyboard-config-chromebook).
 
 #### Mapping in Gnome with gsettings set
 
@@ -544,6 +544,6 @@ Follow Syslinux installation instructions carefully. Try manual installation to 
 
 *   [Developer Information for Chrome OS Devices at the Chromium Projects site](http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices)
 *   [BBS topic about the Acer C720](https://bbs.archlinux.org/viewtopic.php?id=173418) which include generic information on Haswell Based Chromebooks.
-*   Re-partitioning in Chrome OS [[18]](http://chromeos-cr48.blogspot.co.uk/2012/04/chrubuntu-1204-now-with-double-bits.html), [[19]](http://goo.gl/i817v)
+*   Re-partitioning in Chrome OS [[20]](http://chromeos-cr48.blogspot.co.uk/2012/04/chrubuntu-1204-now-with-double-bits.html), [[21]](http://goo.gl/i817v)
 *   [Brent Sullivan's the always updated list of Chrome OS devices](http://bit.ly/NewChromebooks)
 *   [Google Chromebook Comparison Chart](http://prodct.info/chromebooks/)

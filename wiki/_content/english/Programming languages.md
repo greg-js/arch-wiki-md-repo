@@ -1,6 +1,6 @@
 This page attempts to list all [programming languages](https://en.wikipedia.org/wiki/Programming_language "wikipedia:Programming language") with a compiler / interpreter packaged for Arch Linux.
 
-*   [Assembly](https://en.wikipedia.org/wiki/Assembly_language "wikipedia:Assembly language") – `as` of [binutils](https://www.archlinux.org/packages/?name=binutils), [fasm](https://www.archlinux.org/packages/?name=fasm), [nasm](https://www.archlinux.org/packages/?name=nasm), [yasm](https://www.archlinux.org/packages/?name=yasm)
+*   [Assembly](https://en.wikipedia.org/wiki/Assembly_language "wikipedia:Assembly language") – *as* of [binutils](https://www.archlinux.org/packages/?name=binutils), [fasm](https://www.archlinux.org/packages/?name=fasm), [nasm](https://www.archlinux.org/packages/?name=nasm), [yasm](https://www.archlinux.org/packages/?name=yasm)
 *   [Ada](https://en.wikipedia.org/wiki/Ada_(programming_language) – [GCC](/index.php/GCC "GCC")
 *   [AWK](/index.php/AWK "AWK")
 *   [BASIC](https://en.wikipedia.org/wiki/BASIC "wikipedia:BASIC") – [freebasic](https://www.archlinux.org/packages/?name=freebasic)
@@ -55,7 +55,7 @@ Note that some languages listed above also support some functional programming.
 
 ## Shell languages
 
-[Bash](/index.php/Bash "Bash") is part of [base](https://www.archlinux.org/groups/x86_64/base/). For others, see [Command-line shell](/index.php/Command-line_shell "Command-line shell").
+[Bash](/index.php/Bash "Bash") is part of the [base group](/index.php/Base_group "Base group"). For others, see [Command-line shell](/index.php/Command-line_shell "Command-line shell").
 
 ## See also
 

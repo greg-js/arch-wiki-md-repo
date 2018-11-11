@@ -1,5 +1,5 @@
 **Estado de la traducción**
-Este artículo es una traducción de [GNUnet](/index.php/GNUnet "GNUnet"), revisada por última vez el **2018-11-08**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GNUnet&diff=0&oldid=552757) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [GNUnet](/index.php/GNUnet "GNUnet"), revisada por última vez el **2018-11-09**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=GNUnet&diff=0&oldid=552757) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 Artículos relacionados
 
@@ -73,7 +73,7 @@ gnunet-unindex
 
 Suponga que ha olvidado los archivos que ha indexado, puede buscar los punteros en el directorio `/var/lib/gnunet/data/shared`, donde `GNUNET_HOME=/var/lib/gnunet` (definido por `gnunet-setup -d`).
 
-**Warning:** No edite este directorio usted mismo, utilice gnunet-insert y gnunet-unindex para realizar cambios. Esto se debe a que gnunet utiliza una base de datos para almacenar la información del archivo, y eliminar (o modificar) el contenido del directorio no eliminará las entradas de la base de datos gnunet.
+**Advertencia:** No edite este directorio usted mismo, utilice gnunet-insert y gnunet-unindex para realizar cambios. Esto se debe a que gnunet utiliza una base de datos para almacenar la información del archivo, y eliminar (o modificar) el contenido del directorio no eliminará las entradas de la base de datos gnunet.
 
 #### Modificar y eliminar archivos indexados
 

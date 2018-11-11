@@ -2,7 +2,7 @@
 
 * * *
 
-<a class="mw-selflink selflink">Cifrar dispositivo</a> – [Preparar dispositivo](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol) "Dm-crypt/Drive preparation (Español)") – [Cifrar sistema de archivos no root](/index.php/Dm-crypt/Encrypting_a_non-root_file_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting a non-root file system (Español)") – [Cifrar un sistema completo](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting an entire system (Español)") – [Montar y acceder](/index.php/Dm-crypt/Mounting_at_login_(Espa%C3%B1ol) "Dm-crypt/Mounting at login (Español)") – [Especialidades](/index.php/Dm-crypt/Specialties_(Espa%C3%B1ol) "Dm-crypt/Specialties (Español)") – [Cifrar espacio de intercambio](/index.php/Dm-crypt/Swap_encryption_(Espa%C3%B1ol) "Dm-crypt/Swap encryption (Español)") – [Configurar el sistema](/index.php/Dm-crypt/System_configuration_(Espa%C3%B1ol) "Dm-crypt/System configuration (Español)")
+[Preparar dispositivo](/index.php/Dm-crypt/Drive_preparation_(Espa%C3%B1ol) "Dm-crypt/Drive preparation (Español)") – <a class="mw-selflink selflink">Cifrar dispositivo</a> – [Cifrar sistema de archivos no root](/index.php/Dm-crypt/Encrypting_a_non-root_file_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting a non-root file system (Español)") – [Cifrar un sistema completo](/index.php/Dm-crypt/Encrypting_an_entire_system_(Espa%C3%B1ol) "Dm-crypt/Encrypting an entire system (Español)") – [Cifrar espacio de intercambio](/index.php/Dm-crypt/Swap_encryption_(Espa%C3%B1ol) "Dm-crypt/Swap encryption (Español)") – [Montar y acceder a /home cifrado](/index.php/Dm-crypt/Mounting_at_login_(Espa%C3%B1ol) "Dm-crypt/Mounting at login (Español)") – [Configurar el sistema](/index.php/Dm-crypt/System_configuration_(Espa%C3%B1ol) "Dm-crypt/System configuration (Español)") – [Especialidades](/index.php/Dm-crypt/Specialties_(Espa%C3%B1ol) "Dm-crypt/Specialties (Español)")
 
 **Estado de la traducción**
 Este artículo es una traducción de [Dm-crypt/Device encryption](/index.php/Dm-crypt/Device_encryption "Dm-crypt/Device encryption"), revisada por última vez el **2018-10-13**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=Dm-crypt/Device_encryption&diff=0&oldid=549519) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
@@ -630,7 +630,7 @@ Luego, se puede realizar una restauración utilizando los mismos valores que los
 
 El paquete [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) contiene la herramienta *cryptsetup-reencrypt*. Se puede usar para convertir un sistema de archivos sin cifrar existente a uno LUKS cifrado (opción `--new`) y eliminar permanentemente el cifrado LUKS (`--decrypt`) de un dispositivo. Como su nombre sugiere, también se puede usar para volver a cifrar un dispositivo cifrado con LUKS existente, sin embargo, no es posible volver a cifrarlo para un encabezado LUKS separado u otras modalidades de cifrado (por ejemplo, modo plain). Para volver a cifrar es posible cambiar las [#Opciones de cifrado para la modalidad LUKS](#Opciones_de_cifrado_para_la_modalidad_LUKS). Las acciones *cryptsetup-reencrypt* solo se pueden realizar en dispositivos sin montar. Consulte [cryptsetup-reencrypt(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/cryptsetup-reencrypt.8) para obtener más información.
 
-Una aplicación del recifrado puede ser asegurar los datos nuevamente después de que una frase de contraseña o [#Archivos de claves](#Archivos_de_claves) hayan sido comprometidos *y* no se puede estar seguro de que no se haya obtenido una copia del encabezado LUKS. Por ejemplo, si solo se ha utilizado el sistema cifrado por una frase de contraseña pero no se ha tenido acceso físico/lógico al dispositivo, sería suficiente cambiar solo la frase de contraseña/clave respectiva ([#Administración de claves](#Administraci.C3.B3n_de_claves)).
+Una aplicación del recifrado puede ser asegurar los datos nuevamente después de que una frase de contraseña o [#Archivos de claves](#Archivos_de_claves) hayan sido comprometidos *y* no se puede estar seguro de que no se haya obtenido una copia del encabezado LUKS. Por ejemplo, si solo se ha utilizado el sistema cifrado por una frase de contraseña pero no se ha tenido acceso físico/lógico al dispositivo, sería suficiente cambiar solo la frase de contraseña/clave respectiva ([#Gestión de claves](#Gesti.C3.B3n_de_claves).
 
 **Advertencia:** ¡Asegúrese siempre de que esté disponible una **copia de seguridad confiable** y verifique las opciones que especifique antes de usar la herramienta!
 
@@ -954,7 +954,7 @@ En este ejemplo, se supone que utiliza una unidad USB con formato FAT (módulo `
 
 Si tiene un teclado no estadounidense, puede resultar útil cargar la distribución del teclado antes de que se le solicite ingresar la contraseña para desbloquear la partición raíz en el inicio. Para esto, necesitará el hook `keymap` antes de `encrypt`.
 
-[regenere initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creaci.C3.B3n_de_la_imagen_y_activaci.C3.B3nregenerar_el_initramfs "Mkinitcpio (Español)").
+[regenere initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creaci.C3.B3n_de_la_imagen_y_activaci.C3.B3n "Mkinitcpio (Español)").
 
 ##### Configurar parámetros del kernel
 
@@ -1009,7 +1009,7 @@ Incluya la clave en la [matriz de FILES de mkinitcpio](/index.php/Mkinitcpio_(Es
 
  `/etc/mkinitcpio.conf`  `FILES=(/crypto_keyfile.bin)` 
 
-Finalmente [regenere initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creaci.C3.B3n_de_la_imagen_y_activaci.C3.B3nregenerar_el_initramfs "Mkinitcpio (Español)").
+Finalmente [regenere initramfs](/index.php/Mkinitcpio_(Espa%C3%B1ol)#Creaci.C3.B3n_de_la_imagen_y_activaci.C3.B3n "Mkinitcpio (Español)").
 
 En el siguiente reinicio, solo debe ingresar la frase de contraseña de descifrado del contenedor una vez.
 

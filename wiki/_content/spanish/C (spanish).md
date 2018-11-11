@@ -1,11 +1,11 @@
 **Estado de la traducción**
-Este artículo es una traducción de [C](/index.php/C "C"), revisada por última vez el **2018-10-20**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=C&diff=0&oldid=548715) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
+Este artículo es una traducción de [C](/index.php/C "C"), revisada por última vez el **2018-11-10**. Si advierte que la versión inglesa [ha cambiado](https://wiki.archlinux.org/index.php?title=C&diff=0&oldid=554150) puede ayudar a actualizar la traducción, bien por [usted mismo](/index.php/ArchWiki:Translation_Team/Contributing_(Espa%C3%B1ol) "ArchWiki:Translation Team/Contributing (Español)") o bien avisando al [equipo de traducción](/index.php/ArchWiki:Translation_Team_(Espa%C3%B1ol) "ArchWiki:Translation Team (Español)").
 
 El kernel [Linux](/index.php/Linux_(Espa%C3%B1ol) "Linux (Español)") y las herramientas de usuario [GNU](/index.php/GNU_(Espa%C3%B1ol) "GNU (Español)") están escritos principalmente en [C](https://en.wikipedia.org/wiki/es:C_(lenguaje_de_programaci%C3%B3n) "wikipedia:es:C (lenguaje de programación)").
 
 Arch Linux utiliza la [Biblioteca de C de GNU](https://en.wikipedia.org/wiki/GNU_C_Library "wikipedia:GNU C Library") ([glibc](https://www.archlinux.org/packages/?name=glibc)) como la biblioteca estándar de C; es parte del [grupo base](/index.php/Base_group "Base group").
 
-Puede usar [toolchain de GNU](/index.php/GNU_toolchain_(Espa%C3%B1ol) "GNU toolchain (Español)") o [LLVM toolchain](/index.php/LLVM_toolchain "LLVM toolchain") para desarrollar software en C/[C++](https://en.wikipedia.org/wiki/C%2B%2B "wikipedia:C++")/[Objective-C](https://en.wikipedia.org/wiki/es:Objective-C "wikipedia:es:Objective-C").
+Puede utilizar [toolchain de GNU](/index.php/GNU_toolchain_(Espa%C3%B1ol) "GNU toolchain (Español)") o [LLVM toolchain](/index.php/LLVM_toolchain "LLVM toolchain") para desarrollar software en C, [C++](https://en.wikipedia.org/wiki/C%2B%2B "wikipedia:C++") u [Objective-C](https://en.wikipedia.org/wiki/es:Objective-C "wikipedia:es:Objective-C").
 
 ## Contents
 
@@ -72,7 +72,7 @@ Véase también [Wikipedia:List of compilers#C compilers](https://en.wikipedia.o
 
 *   **[GLib](https://en.wikipedia.org/wiki/GLib "wikipedia:GLib")** — Biblioteca de sistema de bajo nivel por [GNOME](/index.php/GNOME_(Espa%C3%B1ol) "GNOME (Español)"), incluye [GObject](https://en.wikipedia.org/wiki/GObject "wikipedia:GObject") y [GIO](https://en.wikipedia.org/wiki/GIO "wikipedia:GIO").
 
-	[https://wiki.gnome.org/Projects/GLib](https://wiki.gnome.org/Projects/GLib) || [glib](https://aur.archlinux.org/packages/glib/)
+	[https://wiki.gnome.org/Projects/GLib](https://wiki.gnome.org/Projects/GLib) || [glib2](https://www.archlinux.org/packages/?name=glib2)
 
 *   [GStreamer](/index.php/GStreamer "GStreamer") – estructura multimedia basado en tuberías
 

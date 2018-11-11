@@ -40,8 +40,9 @@
 | <small>7.4.4.</small> [Menedżery kompozycji](/index.php/Category:Eye_candy_(Polski) "Category:Eye candy (Polski)") <small>(1)</small> |
 | <small>7.4.5.</small> [Multimedia](/index.php/Category:Multimedia_(Polski) "Category:Multimedia (Polski)") <small>(1)</small> |
 | <small>7.4.6.</small> [Bezpieczeństwo](/index.php/Category:Security_(Polski) "Category:Security (Polski)") <small>(0)</small> |
-| <small>7.4.6.1.</small> [Szyfrowanie](/index.php/Category:Encryption_(Polski) "Category:Encryption (Polski)") <small>(1)</small> |
-| <small>7.4.6.1.1.</small> [Szyfrowanie dysku](/index.php/Category:Disk_encryption_(Polski) "Category:Disk encryption (Polski)") <small>(8) (również w [Systemy plików](/index.php/Category:File_systems_(Polski) "Category:File systems (Polski)"))</small> |
+| <small>7.4.6.1.</small> [Authentication](/index.php/Category:Authentication_(Polski) "Category:Authentication (Polski)") <small>(1)</small> |
+| <small>7.4.6.2.</small> [Szyfrowanie](/index.php/Category:Encryption_(Polski) "Category:Encryption (Polski)") <small>(1)</small> |
+| <small>7.4.6.2.1.</small> [Szyfrowanie dysku](/index.php/Category:Disk_encryption_(Polski) "Category:Disk encryption (Polski)") <small>(8) (również w [Systemy plików](/index.php/Category:File_systems_(Polski) "Category:File systems (Polski)"))</small> |
 | <small>8.</small> [Oprogramowanie](/index.php/Category:Software_(Polski) "Category:Software (Polski)") <small>(0)</small> |
 | <small>8.1.</small> [Linia komend](/index.php/Category:Command-line_(Polski) "Category:Command-line (Polski)") <small>(0) (również w [Administrowanie systemem](/index.php/Category:System_administration_(Polski) "Category:System administration (Polski)"))</small> |
 | <small>8.1.1.</small> [Emulatory terminala](/index.php/Category:Terminal_emulators_(Polski) "Category:Terminal emulators (Polski)") <small>(1) (również w [Aplikacje](/index.php/Category:Applications_(Polski) "Category:Applications (Polski)"), [Emulacje](/index.php/Category:Emulation_(Polski) "Category:Emulation (Polski)"))</small> |

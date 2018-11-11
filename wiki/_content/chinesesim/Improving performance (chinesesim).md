@@ -266,7 +266,7 @@ GPU超频要比CPU超频简单得多，通过软件可以实时调整GPU时钟�
 
 ### 使用显存
 
-如果你的系统内存很小，而显存又过剩（这种奇葩系统还真少见），请参阅[Swap on video ram](/index.php/Swap_on_video_ram "Swap on video ram")的方法，将交换文件设置在显存上。
+如果你的系统内存很小，而显存又过剩（这种奇葩系统还真少见），请参阅[Swap on video RAM](/index.php/Swap_on_video_RAM "Swap on video RAM")的方法，将交换文件设置在显存上。
 
 ### 预读
 

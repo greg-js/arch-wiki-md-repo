@@ -231,7 +231,7 @@ server 10.8.1.0 255.255.255.0
 
 ```
 
-Be sure to setup the corresponding entries in the firewall, see the relevant sections in [OpenVPN#Firewall_configuration](/index.php/OpenVPN#Firewall_configuration "OpenVPN").
+Be sure to setup the corresponding entries in the firewall, see the relevant sections in [#Firewall configuration](#Firewall_configuration).
 
 ### The client config profile
 

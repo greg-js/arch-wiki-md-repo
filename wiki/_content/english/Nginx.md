@@ -207,7 +207,7 @@ To remove a `server`:
 
 **Warning:** If you plan on implementing TLS, know that some variations and implementations are [still vulnerable to attack](https://en.wikipedia.org/wiki/Transport_Layer_Security#Attacks_against_TLS.2FSSL "wikipedia:Transport Layer Security")[[2]](https://weakdh.org/#affected). For details on these current vulnerabilities within TLS and how to apply appropriate changes to nginx, visit [https://weakdh.org/sysadmin.html](https://weakdh.org/sysadmin.html)
 
-Create a private key and self-signed certificate. This is adequate for most installations that do not require a [CSR](/index.php/OpenSSL#Creating_certificate_signing_requests "OpenSSL"):
+Create a private key and self-signed certificate. This is adequate for most installations that do not require a [CSR](/index.php/OpenSSL#Generate_a_certificate_signing_request "OpenSSL"):
 
 ```
 # mkdir /etc/nginx/ssl

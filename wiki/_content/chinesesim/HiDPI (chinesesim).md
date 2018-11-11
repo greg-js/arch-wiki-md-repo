@@ -447,7 +447,7 @@ java -Dsun.java2d.uiScale=2 -jar some_application.jar
 
 ### MATLAB
 
-[Matlab](/index.php/Matlab "Matlab") 的近期版本(R2017b)可以设置缩放：
+[MATLAB](/index.php/MATLAB "MATLAB") 的近期版本(R2017b)可以设置缩放：
 
 ```
 >> s = settings;s.matlab.desktop.DisplayScaleFactor

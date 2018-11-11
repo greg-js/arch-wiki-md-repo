@@ -116,7 +116,7 @@ Quando você quiser publicar (**release**) um pacote, primeiro copie o pacote ju
 *   **Atualizar** o diretório de pacote (`svn update algum-pacote`)
 *   **Mudar** para o diretório trunk do pacote (`cd algum-pacote/trunk`)
 *   **Editar** o PKGBUILD, fazer alterações necessárias, atualizar o checksums com `updpkgsums`.
-*   **Compilar** o pacote: com `makechrootpkg` ou `extra-i686-build` e `extra-x86_64-build`. É **obrigatório** compilar em um [*chroot* limpo](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot").
+*   **Compilar** o pacote: com `makechrootpkg` ou `extra-i686-build` e `extra-x86_64-build`. É **obrigatório** compilar em um [*chroot* limpo](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot").
 *   **[Namcap](/index.php/Namcap_(Portugu%C3%AAs) "Namcap (Português)")** no PKGBUILD e no binário `pkg.tar.gz`.
 *   **Commit**, **Copiar** e **Tag** o pacote usando `communitypkg "mensagem de commit"`. Isso automatiza o seguinte:
     *   Fazer **commit** das alterações no trunk: `svn commit`.

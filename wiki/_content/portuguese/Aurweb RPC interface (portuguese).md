@@ -1,4 +1,4 @@
-**Status de tradução:** Esse artigo é uma tradução de [Aurweb RPC interface](/index.php/Aurweb_RPC_interface "Aurweb RPC interface"). Data da última tradução: 2018-11-05\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Aurweb_RPC_interface&diff=0&oldid=553215) na versão em inglês.
+**Status de tradução:** Esse artigo é uma tradução de [Aurweb RPC interface](/index.php/Aurweb_RPC_interface "Aurweb RPC interface"). Data da última tradução: 2018-11-09\. Você pode ajudar a sincronizar a tradução, se houver [alterações](https://wiki.archlinux.org/index.php?title=Aurweb_RPC_interface&diff=0&oldid=553497) na versão em inglês.
 
 Artigos relacionados
 
@@ -21,7 +21,6 @@ A [interface RPC do Aurweb](https://aur.archlinux.org/rpc.php) é uma interface 
     *   [1.3 jsonp](#jsonp)
 *   [2 Limitações](#Limita.C3.A7.C3.B5es)
 *   [3 Clientes de referência](#Clientes_de_refer.C3.AAncia)
-*   [4 Bibliotecas](#Bibliotecas)
 
 ## Uso da API
 
@@ -227,10 +226,3 @@ Isso chamaria automaticamente a função JavaScript `jsonp1192244621103` com o p
 ## Clientes de referência
 
 Às vezes, as coisas são mais fáceis de entender com exemplos. Algumas implementações de referência (jQuery, python, ruby) estão disponíveis na seguinte URL: [https://github.com/cactus/random/tree/2b72a1723bfc8ae64eed6a3c40cb154accae3974/aurjson_examples](https://github.com/cactus/random/tree/2b72a1723bfc8ae64eed6a3c40cb154accae3974/aurjson_examples)
-
-## Bibliotecas
-
-*   [aur.rs](https://github.com/zeyla/aur.rs): Biblioteca Rust para acessar a interface RPC do AUR.
-*   [haskell-archlinux](https://aur.archlinux.org/packages/haskell-archlinux/): Biblioteca Haskell para acessar o AUR e metadados de pacotes. Veja [hackage/archlinux](https://hackage.haskell.org/package/archlinux) para detalhes.
-*   [python3-aur](https://aur.archlinux.org/packages/python3-aur/): Módulos Python para interagir com a interface RPC remota de AUR, além de outros serviços do AUR. Veja [python3-aur](http://xyne.archlinux.ca/projects/python3-aur/) para detalhes.
-*   [python-aur](https://aur.archlinux.org/packages/python-aur/): Módulos Python para interagir com a interface RPC remota de AUR (RPCv1).

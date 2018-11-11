@@ -22,7 +22,7 @@ Este artículo trata sobre la configuración de un servidor svn en su máquina. 
         *   [1.4.2 Poblar el directorio](#Poblar_el_directorio)
         *   [1.4.3 Importar el proyecto](#Importar_el_proyecto)
         *   [1.4.4 Revisar prueba SVN](#Revisar_prueba_SVN)
-*   [2 Reparar Svnserve](#Reparar_Svnserve)
+*   [2 Configurar Svnserve](#Configurar_Svnserve)
     *   [2.1 Instalar el paquete](#Instalar_el_paquete)
     *   [2.2 Crear un repositorio](#Crear_un_repositorio_2)
     *   [2.3 Establecer políticas de acceso](#Establecer_pol.C3.ADticas_de_acceso)
@@ -47,7 +47,7 @@ El objetivo de este ejemplo es configurar Subversion, con Apache. ¿Por qué usa
 
 Instale [Apache HTTP Server](/index.php/Apache_HTTP_Server "Apache HTTP Server") como se describe en su artículo.
 
-Además de Apache, solo necesitará instalar el paquete [subversion](https://www.archlinux.org/packages/?name=subversion).
+Además de Apache, solo necesitará [instalar](/index.php/Install_(Espa%C3%B1ol) "Install (Español)") el paquete [subversion](https://www.archlinux.org/packages/?name=subversion).
 
 ### Configuración de Subversion
 
@@ -189,7 +189,7 @@ $ svn checkout [https://yourdomain.net/svn/REPO_NAME/](https://yourdomain.net/sv
 
 Si todo funcionó, ahora debería tener una copia revisada y en funcionamiento de su repositorio SVN recién creado.
 
-## Reparar Svnserve
+## Configurar Svnserve
 
 ### Instalar el paquete
 

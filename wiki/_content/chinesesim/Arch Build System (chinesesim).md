@@ -69,7 +69,7 @@ ABS(Arch Build System)指的是Arch的构建系统。这是一种从源代码编
 
 	ArchLinux社区的用户维护的软件仓库独立于ABS，包含[unsupported]的PKGBUILDs。它们同样可以可以通过ABS的makepkg工具来编译并打包成可安装软件。ABS 树位于本地机器，而 AUR 则是网站界面。包含成千上万用户共享的 PKGBUILD。如果需要编译官方 Arch 树之外的软件包，AUR 中已经存在的可能性非常大。
 
-**Warning:** 官方PKGBUILD假定包是在干净的chroot环境中构建的([built in a clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot")). 在*脏*的环境中构建可能会失败或者在运行时有意外行为。 因为如果编译系统动态检查依赖的话，编译结果会受到当前可用包的影响。
+**Warning:** 官方PKGBUILD假定包是在干净的chroot环境中构建的([built in a clean chroot](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot")). 在*脏*的环境中构建可能会失败或者在运行时有意外行为。 因为如果编译系统动态检查依赖的话，编译结果会受到当前可用包的影响。
 
 #### SVN目录树
 

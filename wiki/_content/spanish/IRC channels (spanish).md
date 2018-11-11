@@ -1,3 +1,3 @@
 Redirect to:
 
-*   [IRC channel (Español)](/index.php?title=IRC_channel_(Espa%C3%B1ol)&redirect=no "IRC channel (Español)")
+*   [Arch IRC channels (Español)](/index.php/Arch_IRC_channels_(Espa%C3%B1ol) "Arch IRC channels (Español)")

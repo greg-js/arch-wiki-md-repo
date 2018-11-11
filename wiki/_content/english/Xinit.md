@@ -9,9 +9,7 @@ From [Wikipedia](https://en.wikipedia.org/wiki/xinit "wikipedia:xinit"):
 
 	The **xinit** program allows a user to manually start an [Xorg](/index.php/Xorg "Xorg") display server. The [startx(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1) script is a front-end for [xinit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xinit.1).
 
-*xinit* and *startx* take an optional client program argument. If you do not provide one they will look for `~/.xinitrc` to run as a shell script to start up client programs. Executing `xinit /usr/bin/foo` is therefore equivalent to running `xinit` with `exec foo` in your `~/.xinitrc`.
-
-*xinit* is typically used to start [window managers](/index.php/Window_manager "Window manager") or [desktop environments](/index.php/Desktop_environment "Desktop environment"). While you can also use *xinit* to run GUI applications without a window manager, many graphical applications expect an [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "wikipedia:Extended Window Manager Hints") compliant window manager. `~/.xinitrc` is handy to run programs depending on X and set environment variables on X server startup. [Display managers](/index.php/Display_manager "Display manager") start [Xorg](/index.php/Xorg "Xorg") for you and generally source [xprofile](/index.php/Xprofile "Xprofile").
+*xinit* is typically used to start [window managers](/index.php/Window_manager "Window manager") or [desktop environments](/index.php/Desktop_environment "Desktop environment"). While you can also use *xinit* to run GUI applications without a window manager, many graphical applications expect an [EWMH](https://en.wikipedia.org/wiki/Extended_Window_Manager_Hints "wikipedia:Extended Window Manager Hints") compliant window manager. [Display managers](/index.php/Display_manager "Display manager") start [Xorg](/index.php/Xorg "Xorg") for you and generally source [xprofile](/index.php/Xprofile "Xprofile").
 
 ## Contents
 
@@ -33,9 +31,11 @@ From [Wikipedia](https://en.wikipedia.org/wiki/xinit "wikipedia:xinit"):
 
 ## Configuration
 
+*xinit* and *startx* take an optional client program argument, see [#Override xinitrc from command line](#Override_xinitrc_from_command_line). If you do not provide one they will look for `~/.xinitrc` to run as a shell script to start up client programs.
+
 ### xinitrc
 
-If `.xinitrc` is present in a user's home directory, *startx* and *xinit* execute it. Otherwise *startx* will run the default `/etc/X11/xinit/xinitrc`.
+`~/.xinitrc` is handy to run programs depending on X and set environment variables on X server startup. If it is present in a user's home directory, *startx* and *xinit* execute it. Otherwise *startx* will run the default `/etc/X11/xinit/xinitrc`.
 
 **Note:** *Xinit* has its own default behaviour instead of executing the file. See [xinit(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/xinit.1) for details.
 
@@ -55,7 +55,7 @@ xscreensaver &
 exec openbox-session
 ```
 
-**Note:** At the very least, ensure that the last if block in `/etc/X11/xinit/xinitrc` is present in your `.xinitrc` file to ensure that the scripts in `/etc/X11/xinit/xinitrc.d` are sourced.
+**Note:** At the very least, ensure that the last if block in `/etc/X11/xinit/xinitrc` is present in your `~/.xinitrc` file to ensure that the scripts in `/etc/X11/xinit/xinitrc.d` are sourced.
 
 Long-running programs started before the window manager, such as a screensaver and wallpaper application, must either fork themselves or be run in the background by appending an `&` sign. Otherwise, the script would halt and wait for each program to exit before executing the window manager or desktop environment. Note that some programs should instead not be forked, to avoid race bugs, as is the case of [xrdb](/index.php/Xrdb "Xrdb"). Prepending `exec` will replace the script process with the window manager process, so that X does not exit even if this process forks to the background.
 
@@ -144,14 +144,14 @@ See also [Fish#Start X at login](/index.php/Fish#Start_X_at_login "Fish") and [S
 If you have a working `~/.xinitrc`, but just want to try other window manager or desktop environment, you can run it by issuing *startx* followed by the path to the window manager:
 
 ```
-$ startx /full/path/to/window-manager
+$ startx /usr/bin/i3
 
 ```
 
 If the window manager takes arguments, they need to be quoted to be recognized as part of the first parameter of *startx*:
 
 ```
-$ startx "/full/path/to/window-manager --key value"
+$ startx "/usr/bin/*window-manager* --*key value*"
 
 ```
 
@@ -168,7 +168,7 @@ See also [startx(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/startx.1).
 
 ### Switching between desktop environments/window managers
 
-If you are frequently switching between different desktop environments or window managers, it is convenient to either use a [display manager](/index.php/Display_manager "Display manager") or expand `.xinitrc` to make the switching possible.
+If you are frequently switching between different desktop environments or window managers, it is convenient to either use a [display manager](/index.php/Display_manager "Display manager") or expand `~/.xinitrc` to make the switching possible.
 
 The following example `~/.xinitrc` shows how to start a particular desktop environment or window manager with an argument:
 

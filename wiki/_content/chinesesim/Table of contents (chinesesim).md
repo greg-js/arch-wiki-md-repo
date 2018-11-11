@@ -57,7 +57,7 @@
 | <small>4.4.</small> [图形](/index.php/Category:Graphics_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphics (简体中文)") <small>(16)</small> |
 | <small>4.5.</small> [硬件检测和疑难排解](/index.php/Category:Hardware_detection_and_troubleshooting_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Hardware detection and troubleshooting (简体中文)") <small>(4)</small> |
 | <small>4.6.</small> [影像设备](/index.php/Category:Imaging_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Imaging (简体中文)") <small>(2)</small> |
-| <small>4.7.</small> [输入设备](/index.php/Category:Input_devices_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Input devices (简体中文)") <small>(3)</small> |
+| <small>4.7.</small> [输入设备](/index.php/Category:Input_devices_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Input devices (简体中文)") <small>(4)</small> |
 | <small>4.7.1.</small> [Graphics tablet](/index.php/Category:Graphics_tablet_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Graphics tablet (简体中文)") <small>(1)</small> |
 | <small>4.7.2.</small> [键盘](/index.php/Category:Keyboards_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Keyboards (简体中文)") <small>(5)</small> |
 | <small>4.7.3.</small> [鼠标](/index.php/Category:Mice_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Category:Mice (简体中文)") <small>(3)</small> |

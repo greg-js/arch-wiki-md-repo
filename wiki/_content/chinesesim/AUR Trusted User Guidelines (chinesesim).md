@@ -119,13 +119,13 @@ svn checkout -N svn+ssh://svn-community@repos.archlinux.org/srv/repos/svn-commun
 *   **更新** 软件包目录 (`svn update some-package`)
 *   **改变当前目录** 到软件包的 trunk 目录 (`cd some-package/trunk`)
 *   **编辑** PKGBUILD，做出必要的更改，用 `updpkgsums` 更新校验和.
-*   **编译** 软件包：使用 `makechrootpkg` 或 `extra-i686-build`/`extra-x86_64-build`. **必须**在 [干净的chroot环境](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot") 中构建软件包。
+*   **编译** 软件包：使用 `makechrootpkg` 或 `extra-i686-build`/`extra-x86_64-build`. **必须**在 [干净的chroot环境](/index.php/DeveloperWiki:Building_in_a_clean_chroot "DeveloperWiki:Building in a clean chroot") 中构建软件包。
 *   **[Namcap](/index.php/Namcap "Namcap")** PKGBUILD 文件和 pkg.tar.gz 二进制包
 *   使用 `communitypkg "commit message"` **提交**、**签名**，**拷贝**并**标识** 此软件包。这将自动进行下面步骤
     *   将改变 **提交** 至 trunk (`svn commit`)
     *   **签署** 软件包: `gpg --detach-sign *.pkg.tar.xz`.
     *   将软件包和签名拷贝到 orion.archlinux.org (`scp pkgname-ver-rel-arch.pkg.tar.xz *.pkg.tar.xz.sig orion.archlinux.org:staging/community/`)
-    *   **标识** 此软件包 (`archrelease community-{i686,x86_64`})
+    *   **标识** 此软件包 ({{ic|archrelease community-{i686,x86_64}}})
 *   **更新** 软件仓库(`ssh orion.archlinux.org /community/db-update`)
 
 另外请阅读 [Packager Guide](/index.php/DeveloperWiki:HOWTO_Be_A_Packager "DeveloperWiki:HOWTO Be A Packager") 页面的 *Miscellaneours* 部分和 [SSH keys#ssh-agent](/index.php/SSH_keys#ssh-agent "SSH keys")。对于 *Avoid having to enter your password all the time* 部分，使用 orion.archlinux.org 而不要使用 gerolde.archlinux.org。

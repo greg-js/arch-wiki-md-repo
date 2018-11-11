@@ -5,7 +5,7 @@
 | VGA | Yes |
 | [Audio](/index.php/Audio "Audio") | Yes |
 | USB 3.0 | Yes |
-| [Ethernet](/index.php/Network "Network") | Yes |
+| [Ethernet](/index.php/Ethernet "Ethernet") | Yes |
 | [WLAN](/index.php/Wireless "Wireless") | Yes |
 | [Bluetooth](/index.php/Bluetooth "Bluetooth") | Not tested |
 | [Touchpad](/index.php/Touchpad "Touchpad") | Yes |

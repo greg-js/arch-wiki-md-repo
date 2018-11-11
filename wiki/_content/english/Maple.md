@@ -32,7 +32,7 @@ Once the package is installed, you will need to provide a license activation cod
 
 ### Failed to determine Host ID of license server
 
-In order to get Maple to accept your activation code, you may need to [install](/index.php/Install "Install") the [ld-lsb](https://aur.archlinux.org/packages/ld-lsb/) package. This will fake a standard Linux standard base runtime and convince the authentication server to accept your valid activation code. The [lsb-release](https://www.archlinux.org/packages/?name=lsb-release) package does not solve this issue, as the [MapleSoft installation support site](http://www.maplesoft.com/support/Faqs/detail.aspx?sid=32610) might lead one to believe.
+In order to get Maple to accept your activation code, you may need to [install](/index.php/Install "Install") the [ld-lsb](https://www.archlinux.org/packages/?name=ld-lsb) package. This will fake a standard Linux standard base runtime and convince the authentication server to accept your valid activation code. The [lsb-release](https://www.archlinux.org/packages/?name=lsb-release) package does not solve this issue, as the [MapleSoft installation support site](http://www.maplesoft.com/support/Faqs/detail.aspx?sid=32610) might lead one to believe.
 
 ### Blank main window with tiling window managers
 
